@@ -1,0 +1,55 @@
+\exercice{5800, rouget, 2010/10/16}
+\enonce[*** I]
+Soient $A$ et $B$ deux matrices carrées réelles symétriques positives. 
+Montrer que $\text{det}A +\text{det}B\leqslant\text{det}(A+B)$.
+\finenonce
+
+\noindication
+
+\correction
+Soient $A$ et $B$ deux matrices symétriques réelles positives.
+
+\textbf{1er cas.} Supposons qu'aucune des deux matrices $A$ ou $B$ n'est inversible, alors $\text{det}A +\text{det}B = 0$.
+
+D'autre part, la matrice $A+B$ est symétrique car $(\mathcal{S}_n(R),+,.)$ est un espace vectoriel et ses valeurs propres sont donc réelles. De plus, pour $X$ vecteur colonne donné, ${^t}X(A+B)X= {^t}XAX+{^t}XBX\geqslant 0$.
+
+La matrice $A+B$ est donc symétrique réelle positive. Par suite, les valeurs propres de la matrice $A+B$ sont des réels positifs et puisque $\text{det}(A+B)$ est le produit de ces valeurs propres, on a $\text{det}(A+B)\geqslant 0 =\text{det}A +\text{det}B$.
+
+\textbf{2ème cas.}
+Sinon, une des deux matrices $A$ ou $B$ est inversible (et donc automatiquement définie positive).
+Supposons par exemple $A$ définie positive.
+
+D'après l'exercice \ref{ex:rou2}, il existe une matrice inversible $M$ telle que $A ={^t}MM$. On peut alors écrire $A + B ={^t}MM + B ={^t}M(I_n+{^t}(M^{-1}BM^{-1})M$ et donc
+
+\begin{center}
+$\text{det}(A+B) =(\text{det}M)^2\text{det}(I_n+{^t}(M^{-1})BM^{-1}= (\text{det}M)^2\text{det}(I_n+C)$
+\end{center}
+
+ où $C ={^t}M^{-1}BM^{-1}$. La matrice $C$ est symétrique, positive car pour tout vecteur colonne $X$,
+ 
+ \begin{center}
+ ${^t}XCX={^t}X{^t}(M^{-1})BM^{-1} X ={^t}(M^{-1}X)B(M^{-1}X)\geqslant 0$
+ \end{center}
+ 
+ 
+et ses valeurs propres $\lambda_1$,..., $\lambda_n$ sont des réels positifs. Les valeurs propres de la matrice $I_n + C$ sont les réels $1 +\lambda_i$, $1\leqslant i\leqslant n$  et donc 
+
+\begin{center}
+$\text{det}(I_n+C) = (1+\lambda_1)...(1+\lambda_n)\geqslant 1 +\lambda_1...\lambda_n = 1 +\text{det}C$.
+\end{center}
+
+Maintenant, $\text{det}A = (\text{det}M)^2$ puis $\text{det}B=(\text{det}M)^2\text{det}C$ et donc
+
+\begin{center}
+$\text{det}A +\text{det}B =(\text{det}M)^2(1+\text{det}C)\leqslant (\text{det}M)^2\text{det}(I_n+C) = \text{det}(A+B)$.
+\end{center}
+
+On a montré que
+
+\begin{center}
+\shadowbox{
+$\forall(A,B)\in(\mathcal{S}_n^+(\Rr)$, $\text{det}A+\text{det}B\leqslant\text{det}(A+B)$.
+}
+\end{center}
+\fincorrection
+\finexercice

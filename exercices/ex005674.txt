@@ -1,0 +1,109 @@
+\exercice{5674, rouget, 2010/10/16}
+\enonce[***]
+$E =C^0(\Rr,\Rr)$. Pour $f$ élément de $E$, $\varphi(f)$ est l'application définie par :
+
+\begin{center}
+$\forall x\in\Rr^*$, $(\varphi(f))(x) =\frac{1}{x}\int_{0}^{x}f(t)\;dt$ si $x\neq 0$ et $(\varphi(f))(0) =f(0)$.
+\end{center}
+
+\begin{enumerate}
+ \item  Montrer que $\varphi$ est un endomorphisme de $E$. 
+
+\item  Etudier l'injectivité et la surjectivité de $\varphi$.
+
+\item  Déterminer les éléments propres de $\varphi$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Soit $f\in C^0(\Rr,\Rr)$. Soit $F$ une primitive de $f$ sur $\Rr$. Pour tout $x\in\Rr^*$, on a $(\varphi(f))(x)=\frac{F(x)-F(0)}{x-0}$.
+
+$F$ est continue sur $\Rr$ donc $\varphi(f)$ est continue sur $\Rr^*$. De plus, $F$ étant dérivable en $0$
+
+\begin{center} 
+$\displaystyle\lim_{\substack{x\rightarrow0\\
+x\neq0}}(\varphi(f))(x) =\displaystyle\lim_{\substack{x\rightarrow0\\
+x\neq0}}\frac{F(x)-F(0)}{x-0}= F'(0) = f(0) =(\varphi(f))(0)$.
+\end{center}
+
+Finalement $\varphi(f)$ est continue sur $\Rr$. Ainsi, $\varphi$ est une application de $E$ dans $E$. La linéarité de $\varphi$ est claire et finalement
+
+\begin{center}
+\shadowbox{
+$\varphi\in\mathcal{L}(C^0(\Rr,\Rr))$.
+}
+\end{center}
+
+\item  Si $f$ est dans $\text{Ker}(\varphi)$ alors $f(0) = 0$ et pour tout $x$ non nul, $\int_{0}^{x}f(t)\;dt=0$. Par dérivation on obtient $\forall x\in\Rr^*$, $f(x) = 0$ ce qui reste vrai pour $x=0$ et donc $f = 0$. Finalement $\text{Ker}(\varphi)=\{0\}$ et $\varphi$ est injective.
+
+$\varphi$ n'est pas surjective car pour toute $f\in E$, $\varphi(f)$ est de classe $C^1$ sur $\Rr^*$. Mais alors par exemple, l'application $g~:~x\mapsto|x-1|$ est dans $E$ mais n'est pas dans $\text{Im}(\varphi)$.
+
+\begin{center}
+\shadowbox{
+$\varphi$ est injective et n'est pas surjective.
+}
+\end{center}
+
+\item  On cherche $\lambda\in\Rr$ et $f$ continue sur $\Rr$ et non nulle telle que $\forall x\in\Rr,\;(\varphi(f))(x) =\lambda f(x)$. D'après la question précédente, $0$ n'est pas valeur propre de $\varphi$ et donc nécessairement $\lambda\neq0$.
+
+Pour $x = 0$, nécessairement $f(0) =\lambda f(0)$ et donc ou bien  $\lambda= 1$ ou bien $f(0) = 0$.
+
+On doit avoir pour tout $x\in\Rr^*$, $f(x)=\frac{1}{\lambda x}\int_{0}^{x}f(t)\;dt$. $f$ est nécessairement dérivable sur $\Rr^*$. Pour tout $x\in\Rr^*$, on a $\int_{0}^{x}f(t)\;dt=\lambda xf(x)$ et par dérivation, on obtient pour $x\in\Rr^*$,
+
+\begin{center}
+$f(x) =\lambda(xf'(x)+f(x))$.
+\end{center}
+
+Soit $I$ l'un des deux intervalles $]-\infty,0[$ ou $]0,+\infty[$.
+
+\begin{align*}\ensuremath
+\forall x\in I,\;f(x) =\lambda(xf'(x)+f(x))&\Rightarrow\forall x\in I,\;f'(x)+\frac{\lambda-1}{\lambda x}f(x) = 0\\
+ &\Rightarrow\forall x\in I,\;e^{\frac{(\lambda-1)\ln|x|}{\lambda}}f'(x)+\frac{\lambda-1}{\lambda x}e^{\frac{(\lambda-1)\ln|x|}{\lambda}}f(x) = 0\\
+  &\Rightarrow\forall x\in I,\;\left(|x|^{\frac{\lambda-1}{\lambda}}f\right)'(x)=0\\
+  &\Rightarrow\exists K\in\Rr/\;\forall x\in I,\;|x|^{\frac{\lambda-1}{\lambda}}f(x)=K\Rightarrow\exists K\in\Rr/\;\forall x\in I,\;f(x)=K|x|^{\frac{1-\lambda}{\lambda}}.
+\end{align*}
+				   
+
+\textbf{1er cas.} Si $\lambda\in]-\infty,0[\cup]1,+\infty[$ alors $\frac{1-\lambda}{\lambda}< 0$ et donc $\lim_{x \rightarrow 0}|x|^{\frac{1-\lambda}{\lambda}}=+\infty$. La fonction $x\mapsto K|x|^{\frac{1-\lambda}{\lambda}}$ ne peut donc être la restriction à $I$ d'une fonction continue sur $\Rr$ que dans le cas $K = 0$. Ceci fournit $f_{/]-\infty,0[}= 0$, $f_{/]0,+\infty[}= 0$ et $f(0)=0$ par continuité en $0$. Dons $f$ est nécessairement nulle  et $\lambda$ n'est pas valeur propre de $\varphi$ dans ce cas.
+
+\textbf{2ème cas.} Si $\lambda= 1$, les restriction de $f$ à $]-\infty,0[$ ou $]0,+\infty[$ sont constantes et donc, par continuité de $f$ en $0$, $f$ est constante sur $\Rr$. Réciproquement, les fonctions constantes $f$ vérifient bien $\varphi(f) = f$. Ainsi, $1$ est valeur propre de $f$ et le sous-espace propre associé est constitué des fonctions constantes.
+
+\textbf{3ème cas.} Si $\lambda\in]0,1[$, nécessairement $\exists(K_1,K_2)\in\Rr^2/\;\forall x\in\Rr,\;f(x)=\left\{
+\begin{array}{l}
+K_1x^{\frac{1}{\lambda}-1}\;\text{si}\;x\geq0\\
+K_2(-x)^{\frac{1}{\lambda}-1}\;\text{si}\;x < 0
+\end{array}
+\right.$. $f$ ainsi définie est bien continue sur $\Rr$. Calculons alors $\varphi(f)$.
+
+ 
+$(\varphi(f))(0)=f(0)=0$ puis si $x > 0$,
+
+\begin{center}
+$(\varphi(f))(x)=\frac{1}{x}\int_{0}^{x}K_1t^{\frac{1-\lambda}{\lambda}}\;dt=\frac{\lambda K_1}{x}x^{\frac{1}{\lambda}}=\lambda K_1 x^{\frac{1}{\lambda}-1}=\lambda f(x)$
+\end{center}
+
+et de même si $x < 0$. Enfin, $(\varphi(f))(0)=0=\lambda f(0)$. Finalement $\varphi(f) =\lambda f$. $\lambda$ est donc valeur propre de $\varphi$ ($K_1 = K_2 = 1$ fournit une fonction non nulle) et le sous-espace propre associé à $\lambda$ est de dimension $2$. Une base de ce sous-espace est $(f_1,f_2)$ où $\forall x\in\Rr$, $f_1(x)=\left\{
+\begin{array}{l}
+x^{\frac{1}{\lambda}-1}\;\text{si}\;x\geq0\\
+0\;\text{si}\;x < 0
+\end{array}
+\right.$ et $f_2(x) =\left\{
+\begin{array}{l}
+0\;\text{si}\;x\geq0\\
+(-x)^{\frac{1}{\lambda}-1}\;\text{si}\;x < 0
+\end{array}
+\right.$.
+
+Finalement
+
+\begin{center}
+\shadowbox{
+$\text{Sp}(\varphi)= ]0,1]$.
+}
+\end{center}
+\end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,64 @@
+\exercice{5283, rouget, 2010/07/04}
+\enonce[***]
+Montrer que le premier de l'an tombe plus souvent un dimanche qu'un samedi.
+\finenonce
+
+\noindication
+
+\correction
+
+\begin{enumerate}
+\item  Notre calendrier est $400$ ans périodique (et presque $4.7=28$ ans périodique).
+En effet,
+\begin{enumerate}
+\item la répartition des années bissextiles est $400$ ans périodique ($1600$ et $2000$ sont bissextiles mais $1700$, $1800$ et $1900$ ne le sont pas (entre autre pour regagner $3$ jours tous les $400$ ans et coller le plus possible au rythme du soleil))
+\item il y a un nombre entier de semaines dans une période de $400$ ans. En effet, sur $400$ ans, le quart des années, soit $100$ ans, moins $3$ années sont bissextiles et donc sur toute période de $400$ ans il y a $97$ années bissextiles et $303$ années non bissextiles.
+
+Une année non bissextile de $365$ jours est constituée de $52.7+1$ jours ou encore d'un nombre entier de semaines plus un jour et une année bissextile est constituée d'un nombre entier de semaine plus deux jours.
+
+Une période de $400$ ans est donc constituée d'un nombre entier de semaines plus~:~$97.2+303.1=194+303=497=7.71$ jours qui fournit encore un nombre entier de semaines.
+\end{enumerate}
+
+\item  Deux périodes consécutives de $28$ ans ne contenant pas d'exception (siècles non bissextiles) reproduisent le même calendrier. En effet, les $7$ années bissextiles fournissent un nombre entiers de semaines plus $2.7$ jours $=2$ semaines et les $21$ années non bissextiles fournissent un nombre entier de semaines plus $21.1$ jours $=3$ semaines.
+
+\item  D'après ce qui précède, il suffit de compter les 1ers de l'an qui tombe un dimanche ou un samedi sur une période de $400$ ans donnée, par exemple de $1900$ à $2299$ (inclus).
+
+On décompose cette période comme suit~:
+
+$$\begin{array}{c}
+1900,\;1901\rightarrow1928,\;1929\rightarrow1956,\;1957\rightarrow1984,\;1985\rightarrow2012,\;2013\rightarrow2040,\;
+2041\rightarrow2068,\;2069\rightarrow2096,\\
+2097\rightarrow2100,\;2101\rightarrow2128,\;2129\rightarrow2156,\;2157\rightarrow2184,\;2185\rightarrow2200,\;2201\rightarrow2228\;2229\rightarrow2256,\\
+2257\rightarrow2284,\;2285\rightarrow2299.
+\end{array}$$
+
+\item  On montre ensuite que sur toute période de $28$ ans sans siècle non bissextile, le premier de l'an tombe un même nombre de fois chaque jour de la semaine (Lundi, mardi,..). (La connaissance des congruences modulo $4$ et $7$ seraient bien utile). Quand on passe d'une année non bissextile à l'année suivante, comme une telle année contient un nombre entier de semaines plus un jour, le 1er de l'an tombe un jour plus tard l'année qui suit et deux jours plus tard si l'année est bissextile. Par exemple,
+
+1er janvier 1998~:~jeudi  1999~:~vendredi  2000~:~samedi  2001~:~Lundi  2002~:~Mardi 2003~:~Mercredi 2004~:~Jeudi 2005~:~samedi...
+
+Notons A,B,C,D,E,F,G les jours de la semaine. Sur une période de 28 ans sans siècle non bissextile finissant par exemple une année bissextile, on trouve la séquence suivante~:
+
+ABCD FGAB DEFG BCDE GABC EFGA CDEF (puis çà redémarre ABCD...) soit 4A, 4B, 4C, 4D, 4E, 4F, et 4G.
+
+\item  Il reste à étudier les périodes à exception (soulignées dans le 3)).
+
+Détermination du 1er janvier 1900.
+Le 1er janvier 1998 était un jeudi . Il en est donc de même du 1er janvier 1998-28 = 1970 et des premiers janvier 1942 et 1914 puis on remonte~:
+
+1914 Jeudi 1913 Mercredi 1912 Lundi 1911 Dimanche 1910 Samedi 1909 Vendredi 1908 Mercredi 1907 Mardi
+1906 Lundi 1905 Dimanche 1904 Vendredi 1903 Jeudi 1902 Mercredi 1901 Mardi 1900 Lundi (1900 n'est pas bissextile)
+
+Les premiers de l'an 2000, 2028 , 2056 et 2084 sont des samedis, 2088 un jeudi, 2092 un mardi, 2096 un dimanche et donc 2097 mardi 2098 mercredi 2099 jeudi 2100 vendredi.
+
+2101 est un samedi de même que 2129, 2157, 2185 ce qui donne de 2185 à 2200 inclus la séquence :
+
+S D L Ma J V S D Ma Me J V D L Ma Me
+
+2201 est un jeudi de même que 2285 ce qui donne de 2285 à 2299 inclus la séquence :
+
+J V S D Ma Me J V D L Ma Me V S D
+\end{enumerate}
+
+Le décompte des Lundis , mardis ... soulignés est : 6D 4L 6Ma 5Me 5J 6V 4S. Dans toute période de 400 ans, le 1er de l'an tombe $2$ fois de plus le dimanche que le samedi et donc plus souvent le dimanche que le samedi.
+\fincorrection
+\finexercice

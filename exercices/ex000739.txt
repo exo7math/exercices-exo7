@@ -1,0 +1,57 @@
+\exercice{739, bodin, 2001/11/01}
+\video{OFIk3Tj3QIA}
+\enonce
+ Soit $n \geq 2$ un entier fix\'e et $f:\R^{+} = [0,
++ \infty[ \longrightarrow \R$ la fonction d\'efinie par la formule
+suivante:
+$$ f (x) = \frac{1 + x^n}{(1 + x)^n}, \ \ x \geq 0.$$
+\begin{enumerate}
+  \item
+  \begin{enumerate}
+     \item Montrer que $f$ est d\'erivable sur $\R^{+}$ et calculer $f' (x)$
+pour $x \geq 0.$
+     \item En \'etudiant le signe de $f' (x)$ sur $\R^{+},$ montrer que $f$
+atteint un minimum sur $\R^{+}$ que l'on d\'eterminera.
+  \end{enumerate}
+  \item
+  \begin{enumerate}
+     \item En d\'eduire l'in\'egalit\'e suivante:
+$$ (1+ x)^n \leq 2^{n - 1} (1+ x^n), \ \ \forall x \in \R^{+}.$$
+     \item Montrer que si  $x \in \R^{+}$ et $y \in \R^{+}$ alors on a
+$$ (x + y)^n \leq 2^{n - 1} (x^n + y^n).$$
+   \end{enumerate}
+ \end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item
+  \begin{enumerate}
+  \item
+ Il est clair que la fonction $f$ est d\'erivable sur $\R^{+}$
+puisque c'est une fonction rationnelle sans p\^ole dans cet
+intervalle. De plus d'apr\`es la formule de la d\'eriv\'ee d'un
+quotient, on obtient pour $x \geq 0$ :
+$$ f' (x) = \frac{n (x^{n-1} - 1)}{(1 + x)^{n + 1}}.$$
+  \item  Par l'expression pr\'ec\'edente $f' (x)$ est du signe de $x^{n - 1} - 1$ sur $\R^{+}.$ Par
+cons\'equent on obtient: $ f' (x) \leq 0$ pour $0 \leq x \leq 1$
+et $ f' (x) \geq 0$ pour $x \geq 1.$ Il en r\'esulte que $f$ est
+d\'ecroissante sur $[0 , 1]$ et croissante sur $[1, + \infty[$ et
+par suite $f$ atteint son minimum sur $\R^{+}$ au point $1$ et ce
+minimum vaut $f (1) = 2^{1 - n}.$
+  \end{enumerate}
+\item
+  \begin{enumerate}
+  \item
+ Il   r\'esulte de la
+question 1.b que $f (x) \geq f (1)$ pour tout $x \in \R^{+}$ et
+donc
+$$ (1 + x)^n \leq 2^{n - 1} (1 + x^n).$$
+ \item En appliquant l'in\'egalit\'e pr\'ec\'edente avec $ x = b \slash
+a,$ on en d\'eduit imm\'ediatement l'in\'egalit\'e requise (le cas du couple $(0,0)$ étant trivial).
+  \end{enumerate}
+\end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,197 @@
+\exercice{5663, rouget, 2010/10/16}
+\enonce[****]
+Soient $A$ un élément de $\mathcal{M}_n(\Cc$) et $M$ l'élément de $\mathcal{M}_{2n}(\Cc)$ défini par blocs par $M=\left(
+\begin{array}{cc}
+A&4A\\
+A&A
+\end{array}
+\right)$.
+
+Calculer $\text{det}M$. Déterminer les éléments propres de $M$ puis montrer que $M$ est diagonalisable si et seulement si $A$ est diagonalisable.
+\finenonce
+
+\noindication
+
+\correction
+$\text{det}M=\text{det}\left(
+\begin{array}{cc}
+A&4A\\
+A&A
+\end{array}
+\right)=\text{det}\left(
+\begin{array}{cc}
+-3A&4A\\
+0&A
+\end{array}
+\right)$  ($\forall k\in\llbracket1,n\rrbracket$, $L_k\leftarrow L_k-L_{n+k}$) et donc $\text{det}M=\text{det}(A)\text{det}(-3A) = (-3)^n(\text{det}A)^2$.
+
+\begin{center}
+\shadowbox{
+$\text{det}M=(-3)^n(\text{det}A)^2$.
+}
+\end{center}
+
+L'idée de l'étude de $M$ qui suit vient de l'étude de la matrice de format $2$, $B=\left(
+\begin{array}{cc}
+1&4\\
+1&1
+\end{array}
+\right)$.
+
+Une diagonalisation rapide amène à $B=\left(
+\begin{array}{cc}
+-2&2\\
+1&1
+\end{array}
+\right)\times\left(
+\begin{array}{cc}
+-1&0\\
+0&3
+\end{array}
+\right)\times\frac{1}{4}\left(
+\begin{array}{cc}
+-1&2\\
+1&2
+\end{array}
+\right)$. Soit alors $P$ la matrice de format $2n$ définie par blocs par $P=\left(
+\begin{array}{cc}
+-2I_n&2I_{n}\\
+I_n&I_n
+\end{array}
+\right)$.
+Un calcul par blocs montre que $P$ est inversible et que $P^{-1}=\frac{1}{4}\left(
+\begin{array}{cc}
+-I_n&2I_{n}\\
+I_n&2I_n
+\end{array}
+\right)$ puis que
+
+\begin{center} 
+$P^{-1}MP=\frac{1}{4}\left(
+\begin{array}{cc}
+-I_n&2I_{n}\\
+I_n&2I_n
+\end{array}
+\right)\left(
+\begin{array}{cc}
+A&4A\\
+A&A
+\end{array}
+\right)\left(
+\begin{array}{cc}
+-2I_n&2I_{n}\\
+I_n&I_n
+\end{array}
+\right)=\frac{1}{4}\left(
+\begin{array}{cc}
+A&-2A\\
+3A&6A
+\end{array}
+\right)\left(
+\begin{array}{cc}
+-2I_n&2I_{n}\\
+I_n&I_n
+\end{array}
+\right)
+=\left(
+\begin{array}{cc}
+-A&0\\
+0&3A
+\end{array}
+\right)$.
+\end{center}
+
+On pose $N=\left(
+\begin{array}{cc}
+-A&0\\
+0&3A
+\end{array}
+\right)$. Puisque les matrices $M$ et $N$ sont semblables, $M$ et $N$ ont même polynôme caractéristique et de plus $M$ est diagonalisable si et seulement si $N$ l'est.
+
+Cherchons les vecteurs propres $Z$ de $N$ sous la forme $Z=\left(
+\begin{array}{c}
+X\\
+Y
+\end{array}
+\right)$ où $X$ et $Y$ sont des vecteurs colonnes de format $n$. Sois $\lambda\in\Cc$.
+
+\begin{center}
+$NZ=\lambda Z\Leftrightarrow\left(
+\begin{array}{cc}
+-A&0\\
+0&3A
+\end{array}
+\right)\left(
+\begin{array}{c}
+X\\
+Y
+\end{array}
+\right)=\lambda\left(
+\begin{array}{c}
+X\\
+Y
+\end{array}
+\right)\Leftrightarrow -AX =\lambda X\;\text{et}\;3AY =\lambda Y$.
+\end{center}
+
+Par suite
+
+\begin{align*}\ensuremath
+Z\;\text{est vecteur propre de}\;N\;\text{associé à}\;\lambda\Leftrightarrow(X\neq0\;\text{ou}\;Y\neq0)\;\text{et}\; 
+(X\in\text{Ker}(A+\lambda I)\;\text{et}\;Y\in\text{Ker}\left(A-\frac{\lambda}{3}I\right)).
+\end{align*}
+
+Une discussion suivant $\lambda$ s'en suit :
+
+\textbf{1er cas.} Si $-\lambda$ et $\frac{\lambda}{3}$ ne sont pas valeurs propres de $A$ alors $\lambda$ n'est pas valeur propre de $M$.
+
+\textbf{2ème cas.} Si $-\lambda$ est dans $\text{Sp}A$ et $\frac{\lambda}{3}$ n'y est pas, alors $\lambda$ est valeur propre de $M$.
+Le sous-espace propre associé est l'ensemble des $P\left(
+\begin{array}{c}
+X\\
+0
+\end{array}
+\right)=\left(
+\begin{array}{c}
+-2X\\
+X
+\end{array}
+\right)$ où $X$ décrit $\text{Ker}(A+\lambda I)$. La dimension de $E_\lambda$ est alors $\text{dim}(\text{Ker}(A+\lambda I)$.
+
+\textbf{3ème cas.} Si $-\lambda$ n'est pas dans $\text{Sp}A$ et $\frac{\lambda}{3}$ y est, alors $\lambda$ est valeur propre de $M$.
+Le sous-espace propre associé est l'ensemble des $P\left(
+\begin{array}{c}
+0\\
+Y
+\end{array}
+\right)=\left(
+\begin{array}{c}
+2Y\\
+Y
+\end{array}
+\right)$ où $Y$ décrit $\text{Ker}\left(A-\frac{\lambda}{3}I\right)$. La dimension de $E_\lambda$ est alors $\text{dim}\left(\text{Ker}\left(A-\frac{\lambda}{3}I\right)\right)$.
+
+\textbf{4ème cas.} Si $-\lambda$ est dans $\text{Sp}A$ et $\frac{\lambda}{3}$  aussi, alors $\lambda$ est valeur propre de $M$.
+Le sous-espace propre associé est l'ensemble des $P\left(
+\begin{array}{c}
+X\\
+Y
+\end{array}
+\right)=\left(
+\begin{array}{c}
+-2X+2Y\\
+X+Y
+\end{array}
+\right)$ où $X$ décrit $\text{Ker}(A+\lambda I)$  et $Y$ décrit $\text{Ker}\left(A-\frac{\lambda}{3}I\right)$. La dimension de $E_\lambda$ est alors $\text{dim}(\text{Ker}(A+\lambda I)) +\text{dim}\left(\text{Ker}\left(A-\frac{\lambda}{3}I\right)\right)$.
+
+Dans tous les cas, $\text{dim}(E_\lambda(M))=\text{dim}(E_{-\lambda}(A))+\text{dim}(E_{\lambda/3}(A))$ (et en particulier $\text{dim}(\text{Ker}M)=2\text{dim}(\text{Ker}A)$).
+Comme les applications $\lambda\mapsto -\lambda$ et $\lambda\mapsto\frac{\lambda}{3}$ sont des bijections de $\Cc$ sur lui-même,
+
+\begin{align*}\ensuremath
+A\;\text{est diagonalisable}&\Leftrightarrow\sum_{\lambda\in\Cc}^{}\text{dim}(E_{\lambda}(A)) = n\\
+ &\Leftrightarrow\sum_{\lambda\in\Cc}^{}\text{dim}(E_{\lambda}(A))+\sum_{\lambda\in\Cc}^{}\text{dim}(E_{\lambda}(A))= 2n\\
+ &\Leftrightarrow\sum_{\lambda\in\Cc}^{}\text{dim}(E_{-\lambda}(A))+\sum_{\lambda\in\Cc}^{}\text{dim}(E_{\lambda/3}(A))= 2n\\
+ &\Leftrightarrow M\;\text{est diagonalisable}.
+\end{align*}
+\fincorrection
+\finexercice

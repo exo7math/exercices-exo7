@@ -1,0 +1,36 @@
+\exercice{5399, rouget, 2010/07/06}
+\enonce[***I]
+Trouver tous les morphismes continus de $(\Rr,+)$.
+\finenonce
+
+\noindication
+
+\correction
+Soit $f$ un morphisme de $(\Rr,+)$, c'est-à-dire que $f$ est une application de $\Rr$ dans $\Rr$ vérifiant 
+$$\forall(x,y)\in\Rr^2,\;f(x+y)=f(x)+f(y).$$
+
+On sait déjà $f(0)=f(0+0)=f(0)+f(0)$ et donc $f(0)=0$. Puis, pour $x$ réel donné, $f(-x)+f(x)=f(-x+x)=f(0)=0$ et donc, pour tout réel $x$, $f(-x)=-f(x)$ ($f$ est donc impaire). On a aussi $n\in\Nn^*$ et $x\in\Rr$, $f(nx)=f(x)+...+f(x)=nf(x)$. De ce qui précède, on déduit~:
+
+$$\forall x\in\Rr,\;\forall n\in\Zz,\;f(nx)=nf(x).$$
+
+Soit $a=f(1)$. D'après ce qui précède, $\forall n\in\Zz,\;f(n)=f(n.1)=nf(1)=an$.
+
+Puis, pour $n\in\Nn^*$, $nf(\frac{1}{n})=f(n\frac{1}{n})=f(1)=a$ et donc $\forall n\in\Nn^*,\;f(\frac{1}{n})=a\frac{1}{n}$.
+
+Puis, pour $p\in\Zz$ et $q\in\Nn^*$, $f(\frac{p}{q})=pf(\frac{1}{q})=pa\frac{1}{q}=a\frac{p}{q}$.
+
+Finalement, 
+
+$$\forall r\in\Qq,\;f(r)=ar.$$
+
+Maintenant, si l'on n'a pas l'hypothèse de continuité, on ne peut aller plus loin. Supposons de plus que $f$ soit continue sur $\Rr$.
+
+Soit $x$ un réel. Puisque $\Qq$ est dense dans $\Rr$, il existe une suite $(r_n)_{n\in\Nn}$ de rationnels, convergente de limite $x$.
+
+$f$ étant continue en $x$, on a~:~
+
+$$f(x)=f(\lim_{n\rightarrow +\infty}r_n)=\lim_{n\rightarrow +\infty}f(r_n)=\lim_{n\rightarrow +\infty}ar_n=ax.$$
+
+Donc, si $f$ est un morphisme continu de $(\Rr,+)$, $f$ est une application linéaire de $\Rr$ dans $\Rr$. Réciproquement, les applications linéaires conviennent.
+\fincorrection
+\finexercice

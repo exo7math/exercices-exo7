@@ -1,0 +1,36 @@
+\exercice{5576, rouget, 2010/10/16}
+\enonce[**]
+\label{ex:rou14}
+Soient $F$, $G$ et $H$ trois sous-espaces d'un espace vectoriel $E$ de dimension finie sur $\Kk$.
+
+Montrer que : $\text{dim}(F+G+H)\leqslant\text{dim}F+\text{dim}G+\text{dim}H-\text{dim}(F\cap G)-\text{dim}(G\cap H)-\text{dim}(H\cap F)+\text{dim}(F\cap G\cap H)$.
+
+Trouver un exemple où l'inégalité est stricte.
+\finenonce
+
+\noindication
+
+\correction
+\begin{align*}\ensuremath
+\text{dim}(F+G+H)&=\text{dim}((F+G)+H)=\text{dim}(F+G)+\text{dim}H -\text{dim}((F+G)\cap H)\\
+ &=\text{dim}F+\text{dim}G+\text{dim}H -\text{dim}(F\cap G)-\text{dim}((F+G)\cap H).
+\end{align*}
+
+Maintenant , $F\cap H+G\cap H\subset (F+G)\cap H$ (car si $x$ est dans $F\cap H+G\cap H$ il existe $y$ dans $F$ et dans $H$ et $z$ dans $G$ et dans $H$ tel que $x = y+z$ et $x$ est bien dans $F+G$ et aussi dans $H$). Donc
+
+\begin{align*}\ensuremath
+\text{dim}((F+G)\cap H)&\geqslant\text{dim}(F\cap H + G\cap H)=\text{dim}(F\cap H)+\text{dim}(G\cap H)-\text{dim}((F\cap H)\cap (G\cap H))\\
+ &=\text{dim}(F\cap H)+\text{dim}(G\cap H)-\text{dim}(F\cap G\cap H)
+\end{align*}
+
+et finalement
+
+\begin{center}
+\shadowbox{
+$\text{dim}(F+G+H)\leqslant\text{dim}F+\text{dim}G+\text{dim}H-\text{dim}(F\cap G)-\text{dim}(F\cap H)-\text{dim}(G\cap H)+\text{dim}(F\cap G\cap H)$.
+}
+\end{center}
+
+Le cas de trois droites vectorielles de $\Rr^2$ deux à deux distinctes fournit un cas d'inégalité stricte.
+\fincorrection
+\finexercice

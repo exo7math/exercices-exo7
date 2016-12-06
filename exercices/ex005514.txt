@@ -1,0 +1,54 @@
+\exercice{5514, rouget, 2010/07/15}
+\enonce[**T]
+Soit $M(x,y,z)$ un point de $\Rr^3$ rapporté à un repère orthonormé. Déterminer la distance de $M$ à la droite 
+$(D)$ $\left\{
+\begin{array}{l}
+x+y+z+1=0\\
+2x+y+5z=2
+\end{array}
+\right.$. En déduire une équation du cylindre de révolution d'axe $(D)$ et de rayon $2$. 
+\finenonce
+
+\noindication
+
+\correction
+\textbullet~Déterminons un repère de $(D)$.
+\begin{center}
+$\left\{
+\begin{array}{l}
+x+y+z+1=0\\
+2x+y+5z=2
+\end{array}
+\right.\Leftrightarrow\left\{
+\begin{array}{l}
+x+y=-1-z\\
+2x+y=2-5z
+\end{array}
+\right.\Leftrightarrow\Leftrightarrow\left\{
+\begin{array}{l}
+x=3-4z\\
+y=-4+3z
+\end{array}
+\right.$. 
+\end{center}
+Un repère de $(D)$ est $\left(A,\overrightarrow{u}\right)$ où $A(3,-4,0)$ et $\overrightarrow{u}(-4,3,1)$.
+\textbullet~Soit $M(x,y,z)$ un point du plan. On sait que
+
+\begin{center}
+$d(A,(D))=\frac{\|\overrightarrow{AM}\wedge\overrightarrow{u}\|}{\|\overrightarrow{u}\|}=\frac{\sqrt{(y-3z+4)^2+(x+4z-3)^2+(3x+4y+7)^2}}{\sqrt{26}}$
+\end{center}
+\textbullet~Notons $\mathcal{C}$ le cylindre de révolution d'axe $(D)$ et de rayon $2$.
+\begin{center}
+$M(x,y,z)\in\mathcal{C}\Leftrightarrow d(A,(D))=2\Leftrightarrow(y-3z+4)^2+(x+4z-3)^2+(3x+4y+7)^2=104$
+\end{center}
+
+\begin{center}
+\shadowbox{
+\begin{tabular}{c}
+Une équation cartésienne  du cylindre de révolution d'axe $(D)$ et de rayon $2$ est\\
+$(y-3z+4)^2+(x+4z-3)^2+(3x+4y+7)^2=104$.
+\end{tabular}
+}
+\end{center}
+\fincorrection
+\finexercice

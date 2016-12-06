@@ -1,0 +1,30 @@
+\exercice{4911, quercia, 2010/03/17}
+\enonce[Croisillons sur une parabole, Centrale MP 2000]
+
+Pour $p>0$ on donne la courbe~$\Gamma$ d'équation $y^2=2px$.
+Soit un carré $ABCD$ tel que $B,D\in \Gamma$ et $A,C$ appartiennent
+à l'axe de symétrie de~$\Gamma$.
+
+\begin{enumerate}
+  \item Quelle relation lie les abscisses de $A$ et~$C$~?
+    
+  \item On construit une suite $(M_n)$ de points de~$Ox$, $M_n$ d'abscisse~$x_n$,
+    telle que $x_{n+1}>x_n$ et $M_nM_{n+1}$ est la diagonale
+    d'un carré dont les deux autres sommets appartiennent à~$\Gamma$.
+    Déterminer un équivalent de~$x_n$ quand~$n\to\infty$.
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $x_C-x_A = 2p\pm\sqrt{4p^2+8pxA}$.
+  \item $x_{n+1} = x_n + \sqrt{8px_n+4p^2}+2p
+                      = x_n\Bigl(1+\sqrt{\frac{8p}{x_n}}+ o\Bigl(\frac1{\sqrt{x_n}}\Bigr)\Bigr)$
+    donc $\sqrt{x_{n+1}} = \sqrt{x_n} + \sqrt{2p}+ o(1)$ et $x_n\sim 2pn^2$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

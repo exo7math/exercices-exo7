@@ -1,0 +1,57 @@
+\exercice{5855, rouget, 2010/10/16}
+\enonce[**]
+On munit $E =\ell^\infty(\Cc)$ le $\Cc$-espace vectoriel des suites bornées de la norme $\|u\|_\infty=\underset{n\in\Nn}{\text{sup}}\;|u_n|$.
+
+On considère les endomorphismes $\Delta$ et $C$ de $\ell^\infty(\Cc)$ définis par :
+
+\begin{center}
+$\forall u\in E$, $\Delta(u) = v$ où $\forall n\in\Nn$, $v_n = u_{n+1}-u_n$ et $\forall u\in E$, $C(u)=w$ où $\forall n\in\Nn$, $w_n= \frac{1}{n+1}\sum_{k=0}^{n}u_k$.
+\end{center}
+
+Montrer que $\Delta$ et $C$ sont continus sur $(E,\|\;\|_\infty)$ et calculer leur norme.
+\finenonce
+
+\noindication
+
+\correction
+(La linéarité de $\Delta$ est claire et de plus $\Delta$ est un endomorphisme de $E$ car si $u$ est une suite bornée, $\Delta(u)$ l'est encore. Plus précisément,)
+
+\begin{center}
+$\forall u\in E$, $\forall n\in\Nn$, $\left|\Delta(u)_n\right|\leqslant|u_n|+|u_{n+1}|\leqslant 2\|u\|_\infty$ et donc $\forall u\in E$, $\|\Delta(u)\|_\infty\leqslant 2\|u\|_\infty$.
+\end{center}
+
+Ceci montre que $\Delta$ est continu sur $E$ et $|||\Delta|||\leqslant2$. Ensuite, si $u$ est la suite définie par $\forall n\in\Nn$, $u_n = (-1)^n$ alors $u$ est un élément non nul de $E$ tel que $\|u\|_\infty=1$ et $\|\Delta(u)\|_\infty= 2$. En résumé,
+
+\textbullet~$\forall u\in E\setminus\{0\}$, $ \frac{\|\Delta(u)\|_\infty}{\|u\|_\infty}\leqslant2$,
+
+\textbullet~$\exists u\in E\setminus\{0\}$, $ \frac{\|\Delta(u)\|_\infty}{\|u\|_\infty}=2$.
+
+On en déduit que
+
+\begin{center}
+\shadowbox{
+$\Delta$ est continu sur $(E,\|\;\|_\infty)$ et $|||\Delta|||=2$.
+}
+\end{center}
+
+(La linéarité de $C$ est claire et $C$ est un endomorphisme de $E$ car si $u$ est bornée, $C(u)$ l'est encore. Plus précisément,)
+
+\begin{center}
+$\forall u\in E$, $\forall n\in\Nn$, $\left|(C(u))_n\right|\leqslant \frac{1}{n+1}\sum_{k=0}^{n}\|u\|_\infty =\|u\|_\infty$ et donc $\forall u\in E$, $\|C(u)\|_\infty\leqslant\|u\|_\infty$.
+\end{center}
+
+Par suite $T$ est continue sur $E$ et $|||T|||\leqslant1$. Ensuite, si $u$ est la suite définie par $\forall n\in\Nn$, $u_n = 1$ alors $u$ est un élément non nul de $E$ tel que $\|u\|_\infty=1$ et $\|C(u)\|_\infty=1$. En résumé,
+
+\textbullet~$\forall u\in E\setminus\{0\}$, $ \frac{\|C(u)\|_\infty}{\|u\|_\infty}\leqslant1$,
+
+\textbullet~$\exists u\in E\setminus\{0\}$, $ \frac{\|C(u)\|_\infty}{\|u\|_\infty}=1$.
+
+On en déduit que
+
+\begin{center}
+\shadowbox{
+$C$ est continu sur $(E,\|\;\|_\infty)$ et $|||C|||=1$.
+}
+\end{center}
+\fincorrection
+\finexercice

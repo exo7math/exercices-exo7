@@ -1,0 +1,61 @@
+\exercice{1015, cousquer, 2003/10/01}
+\video{dSfb2GXKgeU}
+\enonce
+Soit $E$ est un espace vectoriel de dimension finie et $F$ et $G$ deux
+sous-espaces vectoriels de $E$. Montrer que : 
+$$\dim(F+G) = \dim F+\dim G - \dim(F\cap G).$$
+\finenonce 
+
+\indication
+Partir d'une base $(e_1,\ldots, e_k)$ de $F\cap G$ et la compl\'eter par des vecteurs $(f_1,\ldots,f_\ell)$ en une base de $F$.
+Repartir de $(e_1,\ldots, e_k)$ pour la compléter par  des vecteurs $(g_1,\ldots,g_m)$ en une base de $G$.
+Montrer que $(e_1,\ldots, e_k,f_1,\ldots,f_\ell,g_1,\ldots,g_m)$ est une base de $F+G$.
+\finindication
+
+\correction
+\begin{enumerate}
+  \item
+$F\cap G$ est un sous-espace vectoriel de $E$ donc est de dimension finie.
+Soit $(e_1,\ldots, e_k)$ une base de $F\cap G$ avec $k=\dim F\cap G$.
+
+$(e_1,\ldots, e_k)$ est une famille libre dans $F$ donc on peut la compl\'eter en une base de $F$ 
+par le th\'eor\`eme de la base incompl\`ete.
+Soient donc $(f_1,\ldots,f_\ell)$ des vecteurs de $F$ tels que 
+$(e_1,\ldots, e_k,f_1,\ldots,f_\ell)$ soit une base de $F$.
+Nous savons que $k+\ell = \dim F$.
+Remarquons que les vecteurs $f_i$ sont dans $F\setminus G$ (car ils sont dans $F$ mais pas dans $F\cap G$).
+
+Nous repartons de la famille $(e_1,\ldots, e_k)$ mais cette fois nous la compl\'etons en une base de $G$ : soit donc $(g_1,\ldots,g_m)$ des vecteurs de $G$ tels que $(e_1,\ldots, e_k,g_1,\ldots,g_m)$ soit une base de $G$.
+Nous savons que $k+m = \dim G$.
+Remarquons que cette fois les vecteurs $g_i$ sont dans $G\setminus F$.
+
+\item Montrons que $\mathcal{B}=(e_1,\ldots, e_k,f_1,\ldots,f_\ell,g_1,\ldots,g_m)$ est une base de $F+G$.
+
+C'est une famille g\'en\'eratrice car $F=\mathrm{Vect}(e_1,\ldots, e_k,f_1,\ldots,f_\ell) \subset \mathrm{Vect}(\mathcal{B})$ et $G=\mathrm{Vect}(e_1,\ldots, e_k,g_1,\ldots,g_m) \subset \mathrm{Vect}(\mathcal{B})$. Donc $F+G \subset  \mathrm{Vect}(\mathcal{B})$.
+
+C'est une famille libre : en effet soit une combinaison lin\'eaire nulle
+$$a_1e_1+\cdots+ a_ke_k\quad + \quad b_1f_1+\cdots +b_\ell f_\ell \quad + \quad c_1 g_1+\cdots +c_m g_m=0.$$
+Notons $e=a_1e_1+\ldots +a_ke_k$, $f=b_1f_1+\cdots +b_\ell f_\ell$, $g=c_1 g_1+\cdots +c_m g_m$.
+Donc la combinaison lin\'eaire devient :
+$$e+f+g=0.$$
+Donc $g=-e-f$, or $e$ et $f$ sont dans $F$ donc $g$ appartient \`a $F$.
+Or les vecteurs $g_i$ ne sont pas dans $F$. Donc 
+$g=c_1 g_1+\cdots+ c_m g_m$ est n\'ecessairement le vecteur nul.
+Nous obtenons $c_1 g_1+\cdots+ c_m g_m=0$ c'est donc une combinaison lin\'eaire nulle pour la famille libre 
+$(g_1,\ldots,g_m)$. Donc tous les coefficients $c_1,\ldots,c_m$ sont nuls.
+
+Le reste de l'\'equation devient $a_1e_1+\cdots +a_ke_k+b_1f_1+\cdots +b_\ell f_\ell=0$,
+or $(e_1,\ldots, e_k,f_1,\ldots,f_\ell)$ est une base de $F$ donc tous les coefficients 
+$a_1,\ldots,a_k,b_1,\ldots,b_\ell$ sont nuls.
+
+Bilan : tous les coefficients sont nuls donc la famille est libre. Comme elle \'etait g\'en\'eratrice, c'est une base.
+
+
+  \item Puisque $\mathcal{B}$ est une base de $F+G$ alors la dimension de $F+G$ est le nombre de vecteurs de la base $\mathcal{B}$:
+$$\dim (F+G) = k + \ell + m.$$
+Or $k=\dim F\cap G$, $\ell = \dim F - k$, $m=\dim G - k$, donc 
+$$\dim (F+G) = \dim F + \dim G - \dim (F\cap G).$$
+
+\end{enumerate}
+\fincorrection
+\finexercice

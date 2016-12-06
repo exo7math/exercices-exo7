@@ -1,0 +1,21 @@
+\exercice{2811, burnol, 2009/12/15}
+\enonce
+Avec les mêmes notations on veut évaluer $\int_\gamma
+  \overline{z^{n}} \,dz$, $n\in\Zz$. Justifier les étapes
+  suivantes:
+\begin{align*}
+ \int_\gamma
+  \overline{z^{n}} \,dz &= \overline{\int_\gamma z^n \,\overline{dz}}\\
+\int_\gamma z^n \,\overline{dz}&= \int_{[B,C]}  z^n \,dz - \int_{[C,D]}
+  z^n  \,dz + \int_{[D,A]} z^n \,dz - \int_{[A,B]}z^n \,dz\;,
+\end{align*}
+et compléter le calcul, pour tout $n\in\Zz$.
+\finenonce
+\noindication
+\correction
+Pour toute fonction $f=u+iv$ \`a valeurs dans $\C$,  on a :
+$$\int _\gamma \overline{f(z)} dz =\int_0^1 (u-iv)(\gamma'_1+i\gamma'_2)dt =\overline{\int_0^1 (u+iv)(\gamma'_1-i\gamma'_2)dt}=
+\overline{\int_\gamma f(z) \overline{dz}}.$$
+Voir la correction de l'exercice \ref{ex:burnol2.2.1}.
+\fincorrection
+\finexercice

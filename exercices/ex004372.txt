@@ -1,0 +1,23 @@
+\exercice{4372, quercia, 2010/03/12}
+\enonce[Polytechnique MP 2002]
+
+Soit $\alpha\in{]0,\frac\pi2[}$ et $\lambda\in\R$.
+Chercher un équivalent pour $n\to\infty$ de
+$I_n =  \int_{x=0}^{\alpha}\sin(x)\exp(\lambda n\sin^2(x))\,d x$.
+
+\finenonce
+
+\noindication
+
+\correction
+Pour $\lambda\ne 0$~:
+$I_n = \Bigl[\frac{\exp(\lambda n\sin^2(x))}{2\lambda n\cos(x)}\Bigr]_{x=0}^\alpha
+- \int_{x=0}^{\alpha}\frac{\sin(x)}{2\lambda n\cos^2(x)}\exp(\lambda n\sin^2(x))\,d x
+= \frac{\exp(\lambda n\sin^2(\alpha))}{2\lambda n\cos(\alpha)} - \frac1{2\lambda n}
+- \frac{J_n}{2\lambda n}$
+avec $0\le J_n\le \frac{I_n}{\cos^2(\alpha)}$.
+Donc $I_n\sim \frac{\exp(\lambda n\sin^2(\alpha))}{2\lambda n\cos(\alpha)}$ si $\lambda > 0$
+et $I_n\sim - \frac1{2\lambda n}$ si $\lambda < 0$.
+\fincorrection
+
+\finexercice

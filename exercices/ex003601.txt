@@ -1,0 +1,16 @@
+\exercice{3601, quercia, 2010/03/10}
+\enonce[Réduction par blocs (Centrale MP 2003)]
+Soit~$A\in\mathcal{M}_n(\R)$ et $B = \begin{pmatrix}0&A\cr A&2A\cr\end{pmatrix}\in\mathcal{M}_{2n}(\R)$.
+Déterminer $\mathrm{Spec}(B)$ et fonction de $\mathrm{Spec}(A)$.
+
+\finenonce
+
+\noindication
+
+\correction
+Calcul du polynôme caractéristique de~$B$ par opérations en blocs.
+On obtient $$\chi_B(x) = \det(x^2I-2xA-A^2) = (-1)^n\chi_A\Bigl(\frac x{1+\sqrt2}\Bigr)\chi_A\Bigl(\frac x{1-\sqrt2}\Bigr)$$
+donc $$\mathrm{Spec}(B) = \{(1+\sqrt2)\lambda,\ \lambda\in\mathrm{Spec}(A)\} \cup \{(1-\sqrt2)\lambda,\ \lambda\in\mathrm{Spec}(A)\}.$$
+\fincorrection
+
+\finexercice

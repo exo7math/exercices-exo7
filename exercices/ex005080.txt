@@ -1,0 +1,109 @@
+\exercice{5080, rouget, 2010/06/30}
+\enonce[***I]
+Calculer les sommes suivantes~:
+
+\begin{enumerate}
+ \item  $\sum_{k=0}^{n}\cos(kx)$ et $\sum_{k=0}^{n}\sin(kx)$, ($x\in\Rr$ et $n\in\Nn$ donnés).
+ \item  $\sum_{k=0}^{n}\cos^2(kx)$ et $\sum_{k=0}^{n}\sin^2(kx)$, ($x\in\Rr$ et $n\in\Nn$ donnés).
+ \item  $\sum_{k=0}^{n}\dbinom{n}{k}\cos(kx)$ et $\sum_{k=0}^{n}\dbinom{n}{k}\sin(kx)$, ($x\in\Rr$ et $n\in\Nn$
+donnés).
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Soient $n\in\Nn$ et $x\in\Rr$. Posons $S_n=\sum_{k=0}^{n}\cos(kx)$ et $S_n'=\sum_{k=0}^{n}\sin(kx)$.
+\begin{itemize}
+\item[\textbf{1ère solution.}]
+
+$$S_n+iS_n'=\sum_{k=0}^{n}(\cos(kx)+i\sin(kx))=\sum_{k=0}^{n}e^{ikx}=\sum_{k=0}^{n}(e^{ix})^k.$$
+Maintenant, $e^{ix}=1\Leftrightarrow x\in2\pi\Zz$. Donc,
+
+\begin{itemize}
+\item[\textbf{1er cas.}] Si $x\in2\pi\Zz$, on a immédiatement $S_n=n+1$ et $S_n'=0$.
+\item[\textbf{2ème cas.}] Si x$\notin2\pi\Zz$,
+
+\begin{align*}
+S_n+iS_n'&=\frac{1-e^{i(n+1)x}}{1-e^{ix}}=\frac{e^{i(n+1)x/2}}{e^{ix/2}}\frac{e^{-i(n+1)x/2}-e^{i(n+1)x/2}}
+{e^{-i(n+1)x/2}+e^{i(n+1)x/2}}=e^{inx/2}\frac{-2i\sin\frac{(n+1)x}{2}}{-2i\sin\frac{x}{2}}\\
+ &=e^{inx/2}\frac{\sin\frac{(n+1)x}{2}}{\sin\frac{x}{2}}
+\end{align*}
+Par identification des parties réelles et imaginaires, on obtient
+
+\begin{center}
+\shadowbox{
+$
+\sum_{k=0}^{n}\cos(kx)=
+\left\{
+\begin{array}{l}
+\frac{\cos\frac{nx}{2}\sin\frac{(n+1)x}{2}}{\sin\frac{x}{2}}\;\mbox{si}\;x\notin2\pi\Zz\\
+n+1\;\mbox{si}\;x\in2\pi\Zz
+\end{array}
+\right.
+\;\mbox{et}\;\sum_{k=0}^{n}\sin(kx)=
+\left\{
+\begin{array}{l}
+\frac{\sin\frac{nx}{2}\sin\frac{(n+1)x}{2}}{\sin\frac{x}{2}}\;\mbox{si}\;x\notin2\pi\Zz\\
+0\;\mbox{si}\;x\in2\pi\Zz
+\end{array}
+\right.
+$
+}
+\end{center}
+
+\end{itemize}
+
+\item[\textbf{2ème solution.}]
+\begin{align*}
+2\sin\frac{x}{2}\sum_{k=0}^{n}\cos(kx)&=\sum_{k=0}^{n}2\sin\frac{x}{2}\cos(kx)=\sum_{k=0}^{n}(\sin(k+\frac{1}{2})x-\sin(
+k-\frac{1}{2})x)\\
+ &=\left(\sin\frac{x}{2}-\sin\frac{-x}{2}\right)+\left(\sin\frac{3x}{2}-\sin\frac{x}{2}\right)+\ldots+\left(\sin\frac{(2n-1)x}{2}-\sin\frac{(2n-3)x}{2}\right)\\
+  &+\left(\sin\frac{(2n+1)x}{2}-\sin\frac{(2n-1)x}{2}\right)\\
+ &=\sin\frac{(2n+1)x}{2}+\sin\frac{x}{2}=2\sin\frac{(n+1)x}{2}\cos\frac{nx}{2}
+\end{align*}
+et donc, si $x\notin2\pi\Zz$,...
+
+\end{itemize}
+
+ \item  Soient $n\in\Nn$ et $x\in\Rr$. Posons $S_n=\sum_{k=0}^{n}\cos^2(kx)$ et $S_n'=\sum_{k=0}^{n}\sin^2(kx)$. On
+a~:
+
+$$S_n+S_n'=\sum_{k=0}^{n}(\cos^2(kx)+\sin^2(kx))=\sum_{k=0}^{n}1=n+1,$$
+
+et
+
+$$S_n-S_n'=\sum_{k=0}^{n}(\cos^2(kx)-\sin^2(kx))=\sum_{k=0}^{n}\cos(2kx).$$
+
+D'après 1), si $x\in\pi\Zz$, on trouve immédiatement,
+
+$$\sum_{k=0}^{n}\cos^2(kx)=n+1\;\mbox{et}\;\sum_{k=0}^{n}\sin^2(kx)=0,$$
+
+et si $x\notin\pi\Zz$,
+
+$$S_n+S_n'=n+1\;\mbox{et}\;S_n-S_n'=\frac{\cos(nx)\sin(n+1)x}{\sin x},$$
+
+de sorte que
+
+$$S_n=\frac{1}{2}\left(n+1+\frac{\cos(nx)\sin(n+1)x}{\sin
+x}\right)\;\mbox{et}\;S_n'=\frac{1}{2}\left(n+1-\frac{\cos(nx)\sin(n+1)x}{\sin x}\right).$$
+
+ \item  Soient $n\in\Nn$ et $x\in\Rr$.
+
+\begin{align*}
+\left(\sum_{k=0}^{n}C_n^k\cos(kx)\right)+i\left(\sum_{k=0}^{n}C_n^k\sin(kx)\right)&=\sum_{k=0}^{n}C_n^ke^{ikx}
+=\sum_{k=0}^{n}C_n^k(e^{ix})^k1^{n-k}\\
+ &=(1+e^{ix})^n=(e^{ix/2}+e^{-ix/2})^ne^{inx/2}=2^n\cos^n\left(\frac{x}{2}\right)\left(\cos\frac{nx}{2}+i\sin\frac{nx}{2}\right).
+\end{align*}
+Par identification des parties réelles et imaginaires, on obtient alors
+
+\begin{center}
+\shadowbox{
+$\sum_{k=0}^{n}C_n^k\cos(kx)=2^n\cos^n\left(\frac{x}{2}\right)\cos\left(\frac{nx}{2}\right)\;\mbox{et}\;\sum_{k=0}^{n}C_n^k\sin(kx)=
+2^n\cos^n\left(\frac{x}{2}\right)\sin\left(\frac{nx}{2}\right).$
+}
+\end{center}
+\end{enumerate}
+\fincorrection
+\finexercice

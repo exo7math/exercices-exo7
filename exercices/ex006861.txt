@@ -1,0 +1,39 @@
+\exercice{6861, gijs, 2011/10/16}
+\enonce
+ Soit $c$ un point singulier essentiel d'une fonction
+$f$ holomorphe dans un disque pointé $U =\{ z\in {\Cc}\vert\ 0<\vert
+z-c\vert <\rho \}$. Le but de l'exercice est de démontrer que $f$ n'est
+injective dans aucun voisinage pointé de $c$.
+
+\begin{enumerate}  
+\item Montrer que pour tout $\gamma \in{\Cc}$ et tout $\varepsilon >0$, il
+existe $z'\in U$ et $\varepsilon '>0$ tels que
+$$\overline{D (f(z'),\varepsilon ')}\subset f(U) \cap 
+D(\gamma ,\varepsilon ),$$
+où $D(a,r)$ désigne le disque ouvert de centre $a$ et de rayon $r$.
+On pourra utiliser le théorème de Casorati-Weierstrass, puis remarquer que
+$f(U)$ est ouvert (la fonction $f$ est holomorphe donc ouverte).
+
+\item Pour $n\ge 1$, soit $U_n $ le disque pointé $\{ z\in {\Cc}\vert\ 0<\vert
+z-c\vert <\rho /n \}$. Soient $\gamma _0\in{\Cc}$ et $\varepsilon
+_0>0$. Construire par récurrence une suite strictement décroissante
+$(\varepsilon _n)_{n\ge 1}$ de réels strictement positifs et une suite
+$(z_n)_{n\ge 1}$, $z_n\in U_{n-1}$, vérifiant
+\begin{eqnarray*}
+\overline{D (f(z_1),\varepsilon_1 )}&\subset& f(U) \cap 
+D(\gamma_0 ,\varepsilon _0),\\
+\overline{D (f(z_{n+1}),\varepsilon_{n+1} )}&\subset& f(U_{n+1}) \cap 
+D(f(z_n) ,\varepsilon _n)\ \ {\rm pour\ }n\ge 1.\\
+\end{eqnarray*}
+En déduire qu'il existe  $a\in D(\gamma _0,\varepsilon _0)$  et une suite
+$(c_n)_{n\ge 0}$ de points de $U$ distincts deux à deux tels que
+$$\lim_{n\to +\infty}c_n= c{\rm\ \ et\ \ }\forall n,\ \ f(c_n)=a.$$
+Conclure.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\nocorrection
+
+\finexercice       

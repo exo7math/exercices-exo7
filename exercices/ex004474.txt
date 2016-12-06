@@ -1,0 +1,29 @@
+\exercice{4474, quercia, 2010/03/14}
+\enonce[$nu_n\to 0$]
+
+Soit $(u_n)$ une série convergente à termes positifs décroissants.
+
+\begin{enumerate}
+  \item Montrer que $nu_n\to 0$ lorsque $n\to\infty$.
+    
+  \item Montrer que $\sum_{u_k \ge 1/n} \frac 1{u_k} = \text{o}(n^2)$.
+    
+
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $nu_{2n} \le \sum_{k=n+1}^{2n} u_k$,
+             $nu_{2n+1} \le \sum_{k=n+2}^{2n+1} u_k$.
+  \item $\varepsilon > 0$ : Pour $k$ suffisament grand,
+             $u_k \le \frac \varepsilon k$,
+             donc $u_k \ge \frac 1n  \Rightarrow  k\le n\varepsilon$.
+             Alors $\sum_{u_k \ge 1/n} \frac 1{u_k} \le n^2\varepsilon + Kn$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

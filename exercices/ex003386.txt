@@ -1,0 +1,32 @@
+\exercice{3386, quercia, 2010/03/09}
+\enonce[$A, A^2, A^3$ données $ \Rightarrow  A^p$]
+
+Soit $A \in \mathcal{M}_n(K)$. On suppose qu'il existe $\lambda,\mu \in  K$ et
+$U,V \in \mathcal{M}_n(K)$ tels que :
+$\begin{cases} A   = \lambda  U + \mu  V \cr
+         A^2 = \lambda^2U + \mu^2V \cr
+         A^3 = \lambda^3U + \mu^3V.\cr\end{cases}$
+
+\begin{enumerate}
+  \item Montrer que : $\forall\ p \in \N^*,\  A^p = \lambda^pU + \mu^pV$
+    (chercher une relation linéaire entre $A$, $A^2$, $A^3$).
+    
+
+  \item On suppose ici $\lambda \ne \mu$, $\lambda\ne 0$ et $\mu\ne 0$.
+    Soit $X$ un vecteur propre de $A$. Montrer que $X$ est vecteur propre de
+    $U$ et de $V$ avec les valeurs propres $0,0$ ou $1,0$, ou $0,1$.
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $A^3 - (\lambda+\mu)A^2 + \lambda\mu A = 0$.
+  \item $U=\frac{\mu A-A^2}{\lambda(\mu-\lambda)}$, $V=\frac{\lambda A-A^2}{\mu(\lambda-\mu)}$
+    et la valeur propre est $0$, $\lambda$ ou $\mu$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

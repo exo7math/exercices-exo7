@@ -1,0 +1,124 @@
+\exercice{2609, delaunay, 2009/05/19}
+\enonce
+ Soit $a\in\R$ et $A$ la matrice
+$$A=\begin{pmatrix}0&1&0 \\  0&a&0 \\  0&a-2&2\end{pmatrix}.$$
+\begin{enumerate}
+ \item Pour quelles valeurs de $a$ la matrice $A$ est-elle diagonalisable ? 
+
+Lorsque $A$ est diagonalisable, déterminer une base de vecteurs propres de $A$.
+
+ \item Soit $E$ l'espace vectoriel des solutions du système $x'=Ax$, où $x$ est une fonction de la variable réelle $t$ à valeur dans $\R^3$.
+   \begin{enumerate}
+     \item  Lorsque $A$ est diagonalisable, donner une base de $E$ en fonction des vecteurs propres et des valeurs propres de $A$. Ecrire la solution générale du système.
+     \item Lorsque $A$ n'est pas diagonalisable, intégrer directement le système $x'=Ax$.
+    \end{enumerate}
+ \item Soit $E_0$ l'ensemble des éléments $s$ de $E$ tels que $\lim_{t\rightarrow+\infty}s(t)=\vec0$. Démontrer que $E_0$ est un sous-espace vectoriel de $E$. (hors barème) Déterminer sa dimension en fonction de $a$.
+ \item Soit $F$ l'ensemble des éléments $s$ de $E$ bornés sur $[0,+\infty[$. Démontrer que $F$ est un sous-espace vectoriel de $E$. (hors barème) Déterminer sa dimension en fonction de $a$.
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+ {\it Soit $a\in\R$ et $A$ la matrice
+$$A=\begin{pmatrix}0&1&0 \\  0&a&0 \\  0&a-2&2\end{pmatrix}.$$}
+\begin{enumerate}
+ \item {\it Pour quelles valeurs de $a$ la matrice $A$ est-elle diagonalisable ?}
+
+Déterminons le polynôme caractéristique de la matrice $A$.
+$$P_A(X)=\det (A-XI)=\begin{vmatrix}-X&1&0 \\  0&a-X&0 \\ 0&a-2&2-X\end{vmatrix}=-X(a-X)(2-X).$$
+Ce polynôme admet trois racines $0,a$ et $2$. Ainsi, si $a\notin\{0,2\}$ la matrice est diagonalisable. Examinons les cas $a=0$ et $a=2$.
+
+Si $a=0$, la valeur propre $0$ est valeur propre double, on a
+$$A=\begin{pmatrix}0&1&0 \\  0&0&0 \\  0&-2&2\end{pmatrix}.$$
+Le sous-espace propre associé à $0$ est égal à $\ker A=\{\vec u=(x,y,z),\ A\vec u=\vec 0\}$,
+$$\vec u\in\ker A\iff\left\{\begin{align*}y&=0 \\ -2y+2z&=0\end{align*}\right.\iff y=z=0.$$
+Le sous-espace propre associé à la valeur propre double $0$ est une droite vectorielle, la droite engendrée par $(1,0,0)$, la matrice n'est donc pas diagonalisable.
+
+Si $a=2$, la valeur propre $2$ est double, on a
+$$A=\begin{pmatrix}0&1&0 \\  0&2&0 \\  0&0&2\end{pmatrix}.$$
+Le sous-espace propre associé à $2$ est égal à $E_2=\{\vec u=(x,y,z),\ A\vec u=2\vec u\}$,
+$$\vec u\in E_2\iff\left\{\begin{align*}y&=2x \\ 2y&=2y \\ 2z&=2z\end{align*}\right.\iff y=2x.$$
+Le sous-espace propre associé à la valeur propre double $2$ est un plan vectoriel, le plan d'équation $y=2x$, la matrice est donc diagonalisable.
+
+Ainsi la matrice $A$ est diagonalisable si et seulement si $a\neq 0$.
+
+{\it Lorsque $A$ est diagonalisable, déterminons une base de vecteurs propres de $A$.}
+
+On a $a\neq 0$ et on distingue les cas $a\neq 2$ et $a=2$.
+
+Si $a\neq 2$, les sous-espaces propres associés aux valeurs propres $0$ et $2$ sont lisibles sur la matrice, on a
+$$E_0=\ker A=\R.(1,0,0)\quad{\hbox{et}}\quad E_2=\R.(0,0,1),$$
+On détermine $E_a=\{\vec u=(x,y,z),\ A\vec u=a\vec u\}$.
+$$\vec u\in E_a\iff\left\{\begin{align*}y&=ax \\  ay&=ay \\  (a-2)y+2z&=az\end{align*}\right.\iff\left\{\begin{align*}y&=ax \\  (a-2)y&=(a-2)z\end{align*}\right.\iff\left\{\begin{align*}y&=ax \\  y&=z\end{align*}\right.$$
+C'est la droite vectorielle engendrée par le vecteur $\vec e=(1,a,a)$. Ainsi, une base de vecteurs propres est donnée par les vecteurs $(1,0,0), (0,0,1)$ et $(1,a,a)$.
+
+Si $a=2$, nous avons vu que le sous-espace propre associé à la valeur propre double $2$ est le plan d'équation $y=2x$. 
+Ainsi, une base de vecteurs propres est donnée par les vecteurs $(1,0,0), (0,0,1)$ et $(1,2,0)$.
+
+ \item {\it Soit $E$ l'espace vectoriel des solutions du système $x'=Ax$, où $x$ est une fonction de la variable réelle $t$ à valeur dans $\R^3$.}
+   \begin{enumerate}
+     \item {\it Lorsque $A$ est diagonalisable, donnons une base de $E$ en fonction des vecteurs propres et des valeurs propres de $A$ et écrivons la solution générale du système.}
+
+Si $\lambda_1, \lambda_2, \lambda_3$ sont les valeurs propres de $A$ et $\vec e_1,\vec e_2$ et $\vec e_3$ les vecteurs propres associés, on sait qu'une base de l'espace des solutions du système différentiel $x'=Ax$ est donnée par 
+$$e^{\lambda_1 t}\vec e_1,\ e^{\lambda_2 t}\vec e_2,\ e^{\lambda_3 t}\vec e_3.$$
+Ainsi, si $a\neq 2$ cette base est donnée par
+$$(1,0,0),\ e^{2t}(0,0,1),\ e^{at}(1,a,a)$$
+et si $a=2$, elle est donnée par
+$$(1,0,0),\ e^{2t}(0,0,1),\ e^{2t}(1,2,0).$$
+     \item  {\it Lorsque $A$ n'est pas diagonalisable, intégrons directement le système $X'=AX$}.
+
+Lorsque $A$ n'est pas diagonalisable, $a=0$ et 
+$$A=\begin{pmatrix}0&1&0 \\  0&0&0 \\  0&-2&2\end{pmatrix}.$$
+Le système $X'=AX$ est équivalent à
+$$\begin{pmatrix}x'(t) \\  y'(t) \\  z'(t)\end{pmatrix}=\begin{pmatrix}0&1&0 \\  0&0&0 \\  0&-2&2\end{pmatrix}
+\begin{pmatrix}x(t) \\  y(t) \\  z(t)\end{pmatrix}\iff
+\left\{\begin{align*}x'&=y \\  y'&=0 \\  z'&=-2y+2z\end{align*}\right.$$
+Si $y'=0$, alors $y(t)=\alpha$, $\alpha\in\R$. Ainsi, si $x'=\alpha$, $x(t)=\alpha t+\beta$, $\beta\in\R$ et la troisième équation devient
+$$z'=2z-2\alpha$$
+et sa solution s'écrit $z(t)=\gamma e^{2t}+\alpha$, $\gamma\in\R$. D'où la solution générale du système
+$$X(t)=\begin{pmatrix}x(t) \\  y(t) \\  z(t)\end{pmatrix}=\begin{pmatrix}\alpha t+\beta \\  \alpha \\  \gamma e^{2t}+\alpha\end{pmatrix}=\alpha\begin{pmatrix}t \\ 1 \\ 1\end{pmatrix}+\beta\begin{pmatrix}1 \\ 0 \\ 0\end{pmatrix}+\gamma\begin{pmatrix}0 \\ 0 \\  e^{2t}\end{pmatrix}$$
+$(\alpha,\beta,\gamma)\in\R^3$.
+    \end{enumerate}
+ \item {\it Soit $E_0$ l'ensemble des éléments $s$ de $E$ tels que $\lim_{t\rightarrow+\infty}s(t)=\vec0$. Démontrons que $E_0$ est un sous-espace vectoriel de $E$}.
+
+Pour démontrer que $E_0$ est un sous-espace vectoriel de $E$, il suffit de démontrer que $0_E\in E_0$ et que $E_0$ est stable par combinaison linéaire. La fonction nulle est clairement dans $E_0$, par ailleurs, si $s_1$ et $s_2$ sont dans $E_0$ et si $a_1,a_2\in\R$, on a
+$$\lim_{t\rightarrow+\infty}a_1s_1(t)+a_2s_2(t)=\vec0$$
+ce qui prouve que $a_1s_1+a_2s_2\in E_0$.
+
+{\it Déterminons sa dimension en fonction de $a$.}
+
+Nous avons, dans tous les cas, une base de l'espace des solutions, donc l'écriture de la solution générale, on regarde alors les solutions de $E$ qui sont dans $E_0$.
+
+{\it 1er cas} : $a\neq 2$ et $a\neq 0$, la solution générale s'écrit
+$$s(t)=\alpha(1,0,0)+\beta(0,0,e^{2t})+\gamma(e^{at},ae^{at},ae^{at}),\ (\alpha,\beta,\gamma)\in\R^3.$$
+Ainsi, si $a>0$,  $s(t)\in E_0\iff s=\vec 0$, $\dim E_0=0$, 
+
+et si $a<0$, $s(t)\in E_0\iff \alpha=\beta=0$, $\dim E_0=1$.
+
+{\it 2ème cas} : $a=2$, la solution générale s'écrit
+$$s(t)=\alpha(1,0,0)+\beta(0,0,e^{2t})+\gamma(e^{2t},2e^{2t},0),\ (\alpha,\beta,\gamma)\in\R^3.$$
+Ainsi, $s(t)\in E_0\iff s=\vec 0$, $\dim E_0=0$.
+
+{\it 3ème cas} : $a=0$, la solution générale s'écrit
+$$s(t)=\alpha(1,0,0)+\beta(0,0,e^{2t})+\gamma(t,1,1),\ (\alpha,\beta,\gamma)\in\R^3.$$
+Ainsi, $s(t)\in E_0\iff s=\vec 0$, $\dim E_0=0$.
+ \item {\it Soit $F$ l'ensemble des éléments $s$ de $E$ bornés sur $[0,+\infty[$. Démontrons que $F$ est un sous-espace vectoriel de $E$.}
+
+Pour démontrer que $F$ est un sous-espace vectoriel de $E$, il suffit de démontrer que $0_E\in F$ et que $F$ est stable par combinaison linéaire. La fonction nulle est clairement dans $F$, par ailleurs, si $s_1$ et $s_2$ sont dans $E_0$ et si $a_1,a_2\in\R$, la fonction $a_1s_1(t)+a_2s_2(t)$ est bornée sur $[0,+\infty[$, donc dans $F$.
+
+{\it Déterminons sa dimension en fonction de $a$.}
+
+Comme dans le cas précédent, suivant la forme de la solution générale, on a
+
+si $a\geq0$, les seules solutions bornées sur $[0,+\infty[$ sont de la forme 
+
+$s(t)=\alpha(1,0,0),\ \alpha\in R$, ainsi $\dim F=1$.
+
+si $a<0$, les seules solutions bornées sur $[0,+\infty[$ sont de la forme 
+
+$s(t)=\alpha(1,0,0)+\gamma(e^{at},ae^{at},ae^{at})$, $\ (\alpha,\gamma)\in\R^2$, $\dim F=2$.
+
+\end{enumerate}
+\fincorrection
+\finexercice

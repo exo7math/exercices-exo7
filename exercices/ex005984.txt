@@ -1,0 +1,36 @@
+\exercice{5984, quinio, 2011/05/18}
+
+\enonce
+Un étudiant s'habille très vite le matin et prend, au hasard
+dans la pile d'habits, un pantalon, un tee-shirt, une paire de chaussettes;
+il y a ce jour-là dans l'armoire $5$ pantalons dont $2$ noirs, 
+$6$ tee-shirt dont $4$ noirs, $8$ paires de chaussettes, dont $5$ paires
+noires. Combien y-a-t-il de façons de s'habiller? Quelles sont les
+probabilités des événements suivants : il est tout en noir; une
+seule pièce est noire sur les trois.
+\finenonce
+
+\noindication
+
+\correction
+- Une tenue est un triplet $(P, T, C)$ : il y a $5\times 6\times 8=240$ tenues
+différentes;
+
+- <<Il est tout en noir>> : de combien de façons différentes ? 
+Réponse : de $2\times 4\times 5=40$ façons.
+
+La probabilité de l'événement <<Il est tout en
+noir>> est donc : $\frac{40}{240}=\frac{1}{6}$.
+
+- <<Une seule pièce est noire sur les trois >> : notons les événements :
+$N_{1}$ la première pièce (pantalon) est noire, $N_{2}$ la deuxième pièce (tee-shirt)
+ est noire, $N_{3}$ la troisième pièce
+(chaussette) est noire: l'événement est représenté par :
+$(N_{1}\cap \overline{N_{2}}\cap \overline{N_{3}})\cup (\overline{N_{1}}\cap
+N_{2}\cap \overline{N_{3}})\cup (\overline{N_{1}}\cap \overline{N_{2}}\cap
+N_{3})$.
+Ces trois événements sont disjoints, leurs probabilités
+s'ajoutent. La probabilité de l'événement <<une seule pièce est noire sur les trois>> est donc : 
+$0.325$.
+\fincorrection
+\finexercice

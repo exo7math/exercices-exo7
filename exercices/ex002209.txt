@@ -1,0 +1,70 @@
+\exercice{2209, debes, 2008/02/12}
+\enonce
+ Soit $G$ un groupe simple d'ordre $60$. 
+\smallskip
+
+(a) Montrer que $G$ n'admet pas de sous-groupe d'ordre $20$. 
+\smallskip
+
+(b) Montrer que si $G$ admet un sous-groupe $K$ d'ordre $12$, alors $K$ admet $4$
+$3$-Sylow. 
+\smallskip
+
+(c) Montrer que si $H$ et $K$ sont deux sous-groupes distinct d'ordre $4$ de $G$
+alors $H\cap K=\{1\}$. 
+\smallskip
+
+(d) Montrer que si $H$ est un $2$-Sylow, alors $H\not= \hbox{\rm Nor}_G(H)$.
+\smallskip
+
+(e) Montrer que $G$ poss\`ede $5$ $2$-Sylow.
+\smallskip
+
+(f) Conclure en consid\'erant l'action de $G$ par conjugaison sur les $5$-Sylow.
+\finenonce 
+
+\indication
+(a) Si $K$ est un sous-groupe d'ordre $20$, $K$ a un seul $5$-Sylow $L$ et donc
+$K\subset \hbox{\rm Nor}_G(L)$ ce qui entraine que l'ordre de $\hbox{\rm Nor}_G
+(L)$ est $20$ ou $60$. Mais alors il y aurait $1$ ou $3$ $5$-Sylow dans $G$. Or $1$
+est impossible car $G$ est simple et $3$ contredit les pr\'edictions du
+th\'eor\`eme de Sylow.
+\smallskip
+
+(b) Si $K$ a un unique $3$-Sylow $L$, $K\subset \hbox{\rm Nor}_G(L)$, et donc
+l'ordre de $\hbox{\rm Nor}_G (L)$ serait $12$ ou $60$. Il y aurait alors $5$ ou
+$1$ $3$-Sylow dans $G$. Comme ci-dessus, c'est impossible.
+\smallskip
+
+(c) Supposons que $H\cap K =<a>$ soit d'ordre $2$. Le centralisateur $\hbox{\rm
+Cen}_G(a)$ de $a$ contient $H$ et $K$, donc $H\cup K$. Son ordre est au moins  
+$6$ et est divisible par $4$. Les seules possibilit\'es sont $12$, $20$, $60$:
+
+- $60$ est impossible, car $<a>$ serait distingu\'e dans $G$
+
+- $20$ est impossible, d'apr\`es la question (a)
+
+- $12$ est impossible, car $\hbox{\rm Cen}_G(a)$ aurait $4$ $3$-Sylow d'apr\`es la
+question (b). Il ne resterait de la place que pour un seul $2$-Sylow ce qui
+contredit $H\cup K \subset \hbox{\rm Cen}_G(a)$.
+\smallskip
+
+(d) Si $H=\hbox{\rm Nor}_G(H)$, il y a $15$ $2$-Sylow, et donc $46$
+\'el\'ements d'ordre une puissance de $2$. Or il y a $6$ $5$-Sylow d'intersections
+deux \`a deux triviales, et donc $24$ \'el\'ements d'ordre $5$. L'in\'egalit\'e
+$46+24 > 60$ fournit une contradiction.
+\smallskip
+
+(e) Si $H$ est un $2$-Sylow, l'ordre de $\hbox{\rm Nor}_G(H)$ est $12$, $20$ ou
+$60$. Mais $20$ est exclu (question (a)) de m\^eme que $60$ ($G$ est simple). La
+seule possibilit\'e est $12$; il y a donc $5$ $2$-Sylow.
+\smallskip
+
+(f) L'action de $G$ par conjugaison sur les $5$-Sylow fournit un morphisme
+$c:G\rightarrow S_5$ qui est injectif (car $G$ est simple). Le groupe $G$ est donc
+isomorphe \`a son image $c(G)$ qui est un sous-groupe d'ordre $60$, donc d'indice
+$2$ dans $S_5$. C'est donc $A_5$.
+\finindication
+
+\nocorrection
+\finexercice

@@ -1,0 +1,25 @@
+\exercice{5415, rouget, 2010/07/06}
+\enonce[**]
+Montrer que pour tout réel strictement positif $x$, on a~:$\left(1+\frac{1}{x}\right)^x<e<\left(1+\frac{1}{x}\right)^{x+1}$.
+\finenonce
+
+\noindication
+
+\correction
+Montrons que ($\forall x>0,\;\left(1+\frac{1}{x}\right)^x<e<\left(1+\frac{1}{x}\right)^{x+1}$. Soit $x>0$.
+
+\begin{align*}\ensuremath
+\left(1+\frac{1}{x}\right)^x<e<\left(1+\frac{1}{x}\right)^{x+1}
+&\Leftrightarrow x\ln(1+\frac{1}{x})<1<(x+1)\ln(1+\frac{1}{x})\\
+ &\Leftrightarrow x(\ln(x+1)-\ln x)<1<(x+1)(\ln(x+1)-\ln x)\Leftrightarrow\frac{1}{x+1}<\ln(x+1)-\ln x<\frac{1}{x}.
+\end{align*} 
+
+Soit $x$ un réel strictement positif fixé. Pour $t\in[x,x+1]$, posons $f(t)=\ln t$. $f$ est continue sur $[x,x+1]$ et dérivable sur $]x,x+1[$. Donc, d'après le théorème des accroissements finis, il existe un réel $c$ dans $]x,x+1[$ tel que $f(x+1)-f(x)=(x+1-x)f'(c)$ ou encore
+
+$$\exists c\in]x,x+1[/\;\ln(x+1)-\ln x=\frac{1}{c},$$
+
+ce qui montre que $\forall x>0,\;\frac{1}{x+1}<\ln(x+1)-\ln x<\frac{1}{x}$, et donc que 
+
+$$\forall x>0,\;\left(1+\frac{1}{x}\right)^x<e<\left(1+\frac{1}{x}\right)^{x+1}.$$
+\fincorrection
+\finexercice

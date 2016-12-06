@@ -1,0 +1,110 @@
+\exercice{5745, rouget, 2010/10/16}
+\enonce[**]
+Déterminer le rayon de convergence de la série entière proposée dans chacun des cas suivants :
+
+\begin{enumerate}
+ \item  $\sum_{n=1}^{+\infty}(\ln n)^n z^n$
+\item  $\sum_{n=1}^{+\infty}\left(\sqrt{n}\right)^nz^n$
+\item  $\sum_{n=0}^{+\infty}\left(\ln(n!)\right)^2 z^n$
+\item  $\sum_{n=1}^{+\infty}\left(\frac{1}{2}\left(\ch\frac{1}{n}+\cos\frac{1}{n}\right)\right)^{n^4}z^n$
+\item  $\sum_{n=1}^{+\infty}\frac{C_{2n}^n}{n^n}z^n$
+\item  $\sum_{n=1}^{+\infty}\frac{\left(\ln(n!)\right)^a}{n!^b}z^n$
+\item  $\sum_{n=0}^{+\infty}\frac{a^n}{1+b^n}z^n$, $(a,b)\in(\Rr_+^*)^2$
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Soit $z\neq0$. Pour $n >e^{1/|z|}$, on a $|z|\ln n > 1$ et donc la suite $((\ln n)^nz^n)$ ne tend pas vers 0 quand $n$ tend vers $+\infty$. Ainsi, pour tout nombre complexe non nul $z$, la série proposée diverge grossièrement. 
+
+\begin{center}
+\shadowbox{
+$R = 0$.
+}
+\end{center}
+
+\item   Soit $z\neq0$. Pour $n >\frac{1}{|z|^2}$, on a $|z|\sqrt{n}> 1$ et donc la suite $((\sqrt{n})^nz^n)$ ne tend pas vers 0 quand $n$ tend vers $+\infty$. Pour tout nombre complexe non nul $z$, la série proposée diverge grossièrement. 
+
+\begin{center}
+\shadowbox{
+$R = 0$.
+}
+\end{center}
+
+\item  D'après la formule de \textsc{Stirling}
+
+\begin{center}
+$(\ln(n!))^2\underset{n\rightarrow+\infty}{\sim}\ln^2\left(\left(\frac{n}{e}\right)^n\sqrt{2\pi n}\right)=\left(\left(n+\frac{1}{2}\right)\ln n -n +\ln(\sqrt{2\pi)}\right)^2\underset{n\rightarrow+\infty}{\sim}n^2\ln^2n$.
+\end{center}
+
+La série entière proposée a même rayon de convergence que la série entière associée à la suite $(n^2\ln^2n)$. Comme $\lim_{n \rightarrow +\infty}\frac{(n+1)^2\ln^2(n+1)}{n^2\ln^2n}=1$, la règle de d'\textsc{Alembert} permet d'affirmer que
+
+\begin{center}
+\shadowbox{
+$R = 1$.
+}
+\end{center}
+
+\item 
+
+\begin{center}
+$n^4\ln\left(\frac{1}{2}\left(\ch\frac{1}{n}+\cos\frac{1}{n}\right)\right))\underset{n\rightarrow+\infty}{=}n^4\ln\left(1+\frac{1}{24n^4}+o\left(\frac{1}{n^4}\right)\right)\underset{n\rightarrow+\infty}{=}\frac{1}{24}+o(1) .$
+\end{center}
+
+Donc $\left(\frac{1}{2}\left(\ch\frac{1}{n}+\cos\frac{1}{n}\right)\right)^{n^4}\underset{n\rightarrow+\infty}{\sim}e^{1/24}$ et
+
+\begin{center}
+\shadowbox{
+$R = 1$.
+}
+\end{center}
+
+\item  Pour $n\in\Nn^*$, posons $a_n=\frac{C_{2n+2}^{n+1}}{(n+1)^{n+1}}$.
+
+\begin{align*}\ensuremath
+\frac{a_{n+1}}{a_n}&=\frac{(2n+2)!}{(2n)!}\times\frac{n!^2}{(n+1)!^2}\times\frac{n^n}{(n+1)^{n+1}}=\frac{(2n+2)(2n+1)n^n}{(n+1)^2(n+1)^{n+1}}=\frac{1}{n+1}\times\frac{4n+2}{n+1}\times\left(1+\frac{1}{n}\right)^{-n}\\
+ &\underset{n\rightarrow+\infty}{\sim}\frac{4}{ne}.
+\end{align*}
+
+et donc $\lim_{n \rightarrow +\infty}\left|\frac{a_{n+1}}{a_n}\right|=0$. D'après la règle de d'\textsc{Alembert},
+
+\begin{center}
+\shadowbox{
+$R = +\infty$.
+}
+\end{center}
+
+\item  On a vu que $\ln(n!)\underset{n\rightarrow+\infty}{\sim}n\ln n$. Donc la série entière proposée a même rayon de convergence que la série entière associée à la suite $\left(\frac{(n\ln n)^a}{n!^b}\right)$. Puis
+
+\begin{center}
+$\frac{((n+1)\ln(n+1))^a/(n+1)!^b}{(n\ln n)^a/n!^b}\underset{n\rightarrow+\infty}{\sim}\frac{1}{n^b}$
+\end{center}
+
+et donc, d'après la règle de d'\textsc{Alembert} 
+
+\begin{center}
+\shadowbox{
+si $b >0$, $R =+\infty$, si $b = 0$, $R = 1$ et si $b < 0$, $R = 0$.
+}
+\end{center}
+
+\item  Si $a=0$, $R=+\infty$. On suppose $a\neq0$.
+
+\textbullet~Si $b> 1$,  $\frac{a^n}{1+b^n}\underset{n\rightarrow+\infty}{\sim}\left(\frac{a}{b}\right)^n$ et donc $R =\frac{b}{a}$.
+
+\textbullet~Si $b= 1$,   $\frac{a^n}{1+b^n}=\frac{a^n}{2}$ et $R =a$.
+
+\textbullet~Si $0\leqslant b< 1$,  $\frac{a^n}{1+b^n}\underset{n\rightarrow+\infty}{\sim}a^n$ et $R =a$.
+
+Dans tous les cas 
+
+\begin{center}
+\shadowbox{
+$R=\frac{\text{Max}(1,b)}{a}$ si $a>0$ et $R=+\infty$ si $a=0$.
+}
+\end{center}
+\end{enumerate}
+\fincorrection
+\finexercice

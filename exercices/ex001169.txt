@@ -1,0 +1,62 @@
+\exercice{1169, cousquer, 2003/10/01}
+\video{JfeFfZxwyVI}
+\enonce
+ Discuter et résoudre suivant les valeurs des réels 
+$\lambda$, $a$, $b$, $c$, $d$ le système :
+$$ (S)\;\left\{\begin{array}{rcl}
+    (1+\lambda)x+y+z+t &=&a\\ 
+    x+(1+\lambda)y+z+t &=&b \\
+    x+y+(1+\lambda)z+t &=&c \\ 
+    x+y+z+(1+\lambda)t &=&d
+\end{array}\right.$$
+
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item On commence par simplifier le système en effectuant les opérations suivantes sur les lignes :
+$L_1 \leftarrow L_1 -L_4$, $L_2 \leftarrow L_2 -L_4$, $L_3 \leftarrow L_3 -L_4$ : 
+$$ (S) \iff \left\{\begin{array}{rcrcrcccl}
+    \lambda x &&  &&  &-& \lambda t &=& a-d\\ 
+     && \lambda y&  &&-& \lambda t &=&b-d \\
+    &&&&  \lambda z&-& \lambda t &=&c-d \\ 
+    x&+&y&+&z&+&(1+\lambda)t &=&d
+\end{array}\right.$$
+
+
+  \item Traitons le cas particulier $\lambda = 0$.
+Si $\lambda=0$ alors le système n'a des solutions que si $a=b=c=d$.
+Les solutions sont alors les $(x,y,z,t)$ qui vérifie $x+y+z+t=d$.
+(C'est un espace de dimension $3$ dans $\Rr^4$.)
+
+  \item Si $\lambda\neq 0$ alors on peut faire l'opération suivante sur la dernière ligne : 
+$L_4 \leftarrow L_4 - \frac 1\lambda L_1 - \frac1\lambda L_2 - \frac1\lambda L_3$ pour obtenir :
+$$ (S) \iff \left\{\begin{array}{rcrcrcccl}
+    \lambda x &&  &&  &-& \lambda t &=& a-d\\ 
+     && \lambda y&  &&-& \lambda t &=&b-d \\
+    &&&&  \lambda z&-& \lambda t &=&c-d \\ 
+    &&&&&&(\lambda+4)t &=&d - \frac 1\lambda(a+b+c-3d)
+\end{array}\right.$$
+
+
+
+  \item Cas particulier $\lambda=-4$. La dernière ligne devient
+$0=a+b+c+d$. 
+Donc si $a+b+c+d\neq 0$ alors il n'y a pas de solutions.
+
+Si $\lambda=-4$ et $a+b+c+d=0$ alors existe une infinité de solutions :
+$$\left\{\Big(t-\frac{a-d}{4}, t-\frac{b-d}{4}, t-\frac{c-d}{4}, t\Big) \mid t\in\Rr \right\}.$$
+
+  \item Cas général : $\lambda\neq 0$ et $\lambda\neq -4$.
+On calcule d'abord $t= \frac{1}{\lambda+4}\left(d - \frac 1\lambda(a+b+c-3d)\right)$ 
+et en remplaçant par la valeur de $t$ obtenue on en 
+déduit les valeurs pour 
+$x=t+\frac1\lambda(a-d),y=t+\frac1\lambda(b-d),z=t+\frac1\lambda(c-d)$. Il existe donc une solution unique :
+$$\left(\frac{(\lambda+3)a-b-c-d}{\lambda(\lambda+4)}, \frac{(\lambda+3)b-a-c-d}{\lambda(\lambda+4)}, \frac{(\lambda+3)c-a-b-d}{\lambda(\lambda+4)},\frac{(\lambda+3)d-a-b-c}{\lambda(\lambda+4)}\right).$$
+
+\end{enumerate}
+\fincorrection
+
+\finexercice

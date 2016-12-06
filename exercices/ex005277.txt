@@ -1,0 +1,93 @@
+\exercice{5277, rouget, 2010/07/04}
+\enonce[**I]
+On pose $u_0=1$, $v_0=0$, puis, pour $n\in\Nn$, $u_{n+1}=2u_n+v_n$ et $v_{n+1}=u_n+2v_n$.
+\begin{enumerate}
+\item  Soit $A=\left(
+\begin{array}{cc}
+2&1\\
+1&2
+\end{array}
+\right)$. Pour $n\in\Nn$, calculer $A^n$. En déduire $u_n$ et $v_n$ en fonction de $n$.
+\item  En utilisant deux combinaisons linéaires intéressantes des suites $u$ et $v$, calculer directement $u_n$ et $v_n$ en fonction de $n$.
+\end{enumerate}
+
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item 
+Posons $J=\left(
+\begin{array}{cc}
+1&1\\
+1&1
+\end{array}
+\right)
+$ de sorte que $A=I+J$. On a $J^2=2j$ et donc, plus généralement~:~$\forall k\geq1,\;J^k=2^{k-1}J$. Mais alors, puisque $I$ et $J$ commutent, la formule du binôme de \textsc{Newton} fournit pour $n$ entier naturel non nul donné~:
+
+\begin{align*}\ensuremath
+A^n&=(I+J)^n=I+\sum_{k=1}^{n}C_n^kJ^k=I+(\sum_{k=1}^{n}C_n^k2^{k-1})J=I+\frac{1}{2}(\sum_{k=0}^{n}C_n^k2^k-1)J\\
+ &=I+\frac{1}{2}((1+2)^n-1)J=I+\frac{1}{2}(3^n-1)J=\frac{1}{2}\left(
+\begin{array}{cc}
+3^n+1&3^n-1\\
+3^n-1&3^n+1
+\end{array}
+\right)
+\end{align*}
+
+ce qui reste vrai pour $n=0$. Donc,
+
+$$\forall n\in\Nn,\;A^n=\frac{1}{2}\left(
+\begin{array}{cc}
+3^n+1&3^n-1\\
+3^n-1&3^n+1
+\end{array}
+\right).$$
+
+Poour $n$ entier naturel donné, posons $X_n=\left(
+\begin{array}{c}
+u_n\\
+v_n
+\end{array}
+\right)$. Pour tout entier naturel $n$, on a alors $X_{n+1}=A.X_n$ et donc,
+
+\begin{align*}\ensuremath
+X_n=A^n.X_0=\frac{1}{2}\left(
+\begin{array}{cc}
+3^n+1&3^n-1\\
+3^n-1&3^n+1
+\end{array}
+\right)\left(
+\begin{array}{c}
+1\\
+0
+\end{array}
+\right)=\left(
+\begin{array}{c}
+\frac{3^n+1}{2}\\
+\frac{3^n-1}{2}
+\end{array}
+\right).
+\end{align*}
+
+Donc,
+
+$$\forall n\in\Nn,\;u_n=\frac{3^n+1}{2}\;\mbox{et}\;v_n=\frac{3^n-1}{2}.$$
+
+\item  Soit $n\in\Nn$. $u_{n+1}+v_{n+1}=3(u_n+v_n)$. Donc, la suite $u+v$ est une suite géométrique de raison $3$ et de premier terme $u_0+v_0=1$. On en déduit que 
+
+$$\forall n\in\Nn,\;u_n+v_n=3^n\;(I).$$
+
+De même, pour tout entier naturel $n$ $u_{n+1}-v_{n+1}=u_n-v_n$. Donc, la suite $u+v$ est une suite constante. Puisque $u_0-v_0=1$, on en déduit que
+
+$$\forall n\in\Nn,\;u_n-v_n=1\;(II).$$
+
+En additionnant et en retranchant $(I)$ et $(II)$, on obtient
+
+$$\forall n\in\Nn,\;u_n=\frac{3^n+1}{2}\;\mbox{et}\;v_n=\frac{3^n-1}{2}.$$
+
+\end{enumerate}
+
+\fincorrection
+\finexercice

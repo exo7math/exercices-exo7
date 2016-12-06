@@ -1,0 +1,81 @@
+\exercice{574, ridde, 1999/11/01}
+\video{1x3LSvkKLsM}
+\enonce
+ Soit $n \geq 1$.
+\begin{enumerate}
+\item Montrer que l'\'equation $\sum\limits_{k = 1}^n{x^k} = 1$ admet une unique solution,
+notée $a_n$, dans $[0, 1]$.
+\item Montrer que $ (a_n)_{n \in \Nn}$ est d\'ecroissante minor\'ee par $\frac12$.
+\item Montrer que $ (a_n)$ converge vers $\frac 12$.
+\end{enumerate}
+\finenonce 
+
+\indication
+On notera  $f_n : [0,1] \longrightarrow \Rr$ la fonction
+d\'efinie par $ f_n(x) = \sum_{k=1}^n x^k \ \ - 1.$
+\begin{enumerate}
+    \item C'est une \'etude de la fonction $f_n$.
+    \item On sait que $f_n(a_n)=0$. Montrer par un calcul que $f_n(a_{n-1}) > 0$,
+en d\'eduire la d\'ecroissance de $(a_n)$. En calculant $f_n(\frac 12)$ montrer que 
+la suite  $(a_n)$ est minor\'ee par $\frac 12$.
+    \item Une fois \'etablie la convergence de  $(a_n)$ vers une limite $\ell$,
+composer l'in\'egalit\'e $ \frac 12 \leqslant \ell < a_n$ par $f_n$. Conclure.
+\end{enumerate}
+\finindication
+
+\correction
+Notons $f_n : [0,1] \longrightarrow \Rr$ la fonction d\'efinie par :
+$$ f_n(x) = \sum_{k=1}^n x^k \ \ - 1.$$
+\begin{enumerate}
+  \item La fonction $f_n$ est continue
+sur $[0,1]$. De plus $f_n(0) = -1 < 0$ et $f_n(1) = n-1\geqslant 0$.
+D'apr\`es le th\'eor\`eme des valeurs interm\'ediaires, $f_n$, admet un
+z\'ero dans l'intervalle $[0,1]$. De plus elle strictement
+croissante (calculez sa d\'eriv\'ee) sur $[0,1]$ donc ce z\'ero est
+unique.
+  \item Calculons $f_n(a_{n-1})$.
+\begin{align*}
+f_n(a_{n-1}) &= \sum_{k=1}^{n} a_{n-1}^k  - 1 \\
+     &= a_{n-1}^n + \sum_{k=1}^{n-1} a_{n-1}^k  - 1 \\
+     &= a_{n-1}^n + f_{n-1}(a_{n-1})  \\
+     &= a_{n-1}^n \text{\ \  (car $f_{n-1}(a_{n-1})=0$ par d\'efinition de $a_{n-1}$).}
+\end{align*}
+
+Nous obtenons l'in\'egalit\'e
+$$ 0 = f_n(a_n) < f_n(a_{n-1}) = a_{n-1}^n.$$
+Or $f_n$ est strictement croissante, l'in\'egalit\'e ci-dessus
+implique donc $ a_n < a_{n-1}$.
+Nous venons de d\'emontrer que la suite $(a_n)_n$ est d\'ecroissante.
+
+
+Remarquons avant d'aller plus loin que $f_n(x)$ est la somme d'une
+suite g\'eom\'etrique :
+$$f_n(x) = \frac{1-x^{n+1}}{1-x}-2.$$
+
+\'Evaluons maintenant $f_n(\frac12)$, \`a l'aide de l'expression
+pr\'ec\'edente
+$$f_n(\frac12) = \frac{1-(\frac12)^{n+1}}{1-{\frac12}}-2 = -\frac 1 {2^n} < 0.$$
+Donc $ f_n(\frac12) < f_n(a_n)=0$ entra\^{\i}ne $\frac12 < a_n$.
+
+Pour r\'esumer, nous avons montré que la suite $(a_n)_n$ est
+strictement d\'ecroissante et minor\'ee par $\frac12$.
+
+\item Comme $(a_n)_n$ est
+d\'ecroissante et minor\'ee par $\frac12$ alors elle converge, nous
+notons $\ell$ sa limite :
+$$ \frac 12 \leqslant \ell < a_n.$$
+Appliquons $f_n$ (qui est strictement croissante) \`a cette
+in\'egalit\'e :
+ $$ f_n\left(\frac 12\right) \leqslant f_n(\ell) < f_n(a_n),$$
+qui s'\'ecrit aussi :
+$$ -\frac 1 {2^n} \leqslant f_n(\ell) < 0,$$
+et ceci quelque soit $n\geqslant 1$. La suite $(f_n(\ell))_n$ converge
+donc vers $0$ (th\'eor\`eme des  ``gendarmes''). Mais nous savons
+aussi que
+$$f_n(\ell) = \frac{1-\ell^{n+1}}{1-\ell}-2 ;$$
+donc $(f_n(\ell))_n$ converge vers $\frac{1}{1-\ell}-2$ car
+$(\ell^n)_n$ converge vers $0$. Donc
+$$\frac{1}{1-\ell}-2 = 0, \text{ d'o\`u } \ell = \frac12.$$
+\end{enumerate}
+\fincorrection
+\finexercice

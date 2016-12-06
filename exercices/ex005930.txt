@@ -1,0 +1,57 @@
+\exercice{5930, tumpach, 2010/11/11}
+\enonce
+On d\'efinit $m_{*}~:\mathcal{P}(\Omega) \rightarrow \mathbb{R}$
+par
+$$
+m_{*}(A) = \left\{\begin{array}{ll} 0 & \text{si}~A = \emptyset\\
+1 & \text{sinon}. \end{array}\right.
+$$
+\begin{enumerate}
+\item Montrer que $m_*$ est une mesure ext\'erieure. 
+\item Quels sont les ensembles $m_*$-mesurables ? 
+\item V\'erifier le th\'eor\`eme de Carath\'eodory sur cet exemple.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item Il est clair que $m_{*}(\emptyset)=0$ et que $m_{*}$ est
+monotone.
+
+Soit maintenant $\{A_i\}_{i\in \mathbb{N}}\subset
+\mathcal{P}(\Omega)$. Si parmi les $A_i$ il existe au moins un
+ensemble $A_j$ non vide, on a
+$$m_{*}(\bigcup\limits_i A_i)=1=m_{*}(A_j)\leq \sum\limits_i m_{*}(A_i).$$
+Si tous les $A_i$ sont vides, alors $\bigcup\limits_i A_i =
+\emptyset$, et donc
+$$m_{*}(\bigcup\limits_i A_i)=0=\sum\limits_i
+m_{*}(A_i).$$ Ainsi $m_{*}$ est $\sigma$-sous-aditive et par
+consequent $m_{*}$ est une mesure ext\'erieure.
+
+\item Les seuls ensembles mesurables sont
+$\emptyset$ et $\Omega$, puisque si $A\in \mathcal{P}(\Omega)$ est
+tel que $A\neq \emptyset$ et $A\neq \Omega$, alors, pour tout
+$Q\in \mathcal{P}(\Omega)$ non vide et non inclus dans $A$, on a
+$A\cap Q\neq \emptyset$ et $A^c \cap Q\neq \emptyset$, et donc
+$$m_{*}(A\cap Q)+m_{*}(A^c\cap Q)=1+1=2\neq m_{*}(Q)=\left\{
+\begin{array}{l}
+1 \\
+0 \;\;.\\
+\end{array}
+\right.$$
+
+\item Il est clair que l'ensemble des parties
+$m_{*}$-mesurables de $\Omega$,
+$\mathcal{M}_{m_{*}}=\{\emptyset,\Omega\}$, est une
+$\sigma$-alg\`ebre.
+
+Il est facile de voir aussi que
+$$\mu=m_{*}|_{\mathcal{M}_{m_{*}}},\,\mu(\emptyset)=0,\;\;\mu(\Omega)=1,$$
+est une mesure sur $(\Omega,\mathcal{M}_{m_{*}})$.
+
+\end{enumerate}
+\fincorrection
+
+\finexercice

@@ -1,0 +1,17 @@
+\exercice{4444, quercia, 2010/03/14}
+\enonce[Constante d'Euler (Centrale MP 2003)]
+Soit $S_n = \sum_{k=1}^{n-1}\frac1k - \frac1n - \ln n$ et
+$T_n = \sum_{k=1}^{n-1}\frac1k + \frac1n - \ln n$.
+Les suites $(S_n)$ et $(T_n)$  sont-elles adjacentes~?
+\finenonce
+
+\noindication
+
+\correction
+$T_{n+1}-T_n = \frac1{n+1}-\ln\Bigl(\frac{n+1}n\Bigr) = \frac1{n+1} -  \int_{t=n}^{n+1}\frac{d t}t < 0$
+
+$S_{n+1}-S_n = \frac2n-\frac1{n+1}-\ln\Bigl(\frac{n+1}n\Bigr)
+=\frac1n -  \int_{t=n}^{n+1}\Bigl(\frac1t-\frac1{t^2}\Bigr)\,d t > 0$.
+\fincorrection
+
+\finexercice

@@ -1,0 +1,36 @@
+\exercice{2354, queffelec, 2003/10/01}
+\enonce
+\begin{enumerate}
+\item Soit $C$ l'espace des fonctions continues r\'eelles sur $[0,1]$ muni de la
+m\'etrique
+$d_1(f,g)=\int_0^1\vert f-g\vert\ dx$, puis de la m\'etrique
+$d_\infty(f,g)=\sup_x\vert f(x)-g(x)\vert$. V\'erifier que l'applica\-tion
+$f\to \int_0^1 |f| dx$ de
+$C$ dans
+$\Rr$ est $1$-lipschitzienne dans les deux cas.   
+
+\item Soit $c$ l'espace des suites r\'eelles convergentes, muni de la m\'etrique
+$d(x,y)=\sup_n\vert x(n)-y(n)\vert$. Si on d\'esigne par $\ell(x)$ la limite de la
+suite $x$, montrer que $\ell$ est une application continue de $c$ dans $\Rr$. En
+d\'eduire que $c_0$ est ferm\'e dans $c$.
+\end{enumerate}
+\finenonce
+
+\indication
+\begin{enumerate}
+  \item $\ldots$.
+  \item Pour montrer que $c_0$ est fermé, l'écrire comme image réciproque de quelque chose.
+   \end{enumerate}
+\finindication
+
+\correction
+\begin{enumerate}
+  \item Soit $F$ l'application définie par
+$F(f) = \int_0^1 |f|.$ Alors 
+$$|F(f)-F(g)| = | \int_0^1 |f|-|g| | \le \int_0^1 |f-g| = d_1(f,g) \le d_\infty (f,g).$$ Donc pour les deux distances $d_1$ et $d_\infty$, $F$ est lipschitzienne de rapport $1$. 
+  \item Soit $\epsilon >0$ alors en posant $\eta = \epsilon$ on obtient la continuité : 
+si $d(x,y) < \epsilon$ alors $$|\ell(x)-\ell(y)| \leq \epsilon.$$ 
+Donc $\ell$ est continue, et $c_0 = \ell{-1}(\{0\})$ est un fermé , car c'est l'image réciproque du fermé $\{0\}$ par l'application continue $\ell$.
+   \end{enumerate}
+\fincorrection
+\finexercice

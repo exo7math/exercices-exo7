@@ -1,0 +1,22 @@
+\exercice{2369, mayer, 2003/10/01}
+\enonce 
+Soit $X = \{f\in {\cal C}(\Rr ) \; ; \; (1+x^ 2 ) |f(x)| \text{ soit born\'ee}\}$. On pose
+$N(f) = \sup_{x\in \Rr}(1+x^ 2 ) |f(x)|$. V\'erifier que $N$ est une norme, puis
+montrer que la forme lin\'eaire suivante $L$ est continue et calculer sa norme:
+$$ L:X\to \Rr \quad \mbox{d\'efinie par} \quad L(f) = \int _\Rr f(x) \; dx \; .$$
+
+\finenonce
+
+\indication
+Montrer que $\|L\|=\pi$.
+\finindication
+
+\correction
+$N$ est bien une norme. Et on a pour tout $x$, $(1+x^2)|f(x)| \le N(f)$.
+$$|L(f)| = |\int_\Rr f | \le \int_\Rr |f| \le  \int_\Rr \frac{N(f)}{1+x^2}dx 
+\le N(f) \int_\Rr \frac{1}{1+x^2} = N(f)[\Arctan x]_{-\infty}^{+\infty} = N(f)\pi.$$
+Donc pour tout $f$ on a 
+$$\frac{\int f}{N(f)} \le \pi.$$
+De plus pour $f(x) = \frac{1}{1+x^2}$ on obtient l'égalité. Donc la norme $\|L\|$ de l'application $L$ est $\pi$.
+\fincorrection
+\finexercice

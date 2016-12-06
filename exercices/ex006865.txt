@@ -1,0 +1,73 @@
+\exercice{6865, bodin, 2012/04/13}
+\video{qdUaqxk3B2s}
+\enonce
+Calculer les primitives suivantes par changement de variable.
+\begin{enumerate}
+  \item $\int (\cos x) ^{1234} \sin x \, d x$
+
+  \item $\int \frac 1{x\ln x} \, dx$
+
+  \item $\int \frac 1{3+\exp \left( -x\right)}dx$
+
+  \item $\int \frac{1}{\sqrt{4x-x^2}}dx$
+\end{enumerate}
+\finenonce 
+
+\indication
+\begin{enumerate}
+  \item $\int \cos^{1234} x   \sin x \, d x = -\frac 1{1235}\cos^{1235}x+c$ (changement de variable $u = \cos x$)
+
+  \item $\int \frac 1{x\ln x} \, dx=\ln \left| \ln x\right| +c$  (changement de variable $u=\ln x$)
+
+  \item $\int \frac 1{3+\exp \left( -x\right) }dx=\frac 13\ln \left( 3\exp
+x+1\right) +c$ (changement de variable  $u=\exp x$)
+
+  \item $\int \frac{1}{\sqrt{4x-x^2}}dx=\arcsin \left( \frac 12x-1\right) +c$  (changement de variable $u=\frac 12x-1$)
+\end{enumerate}
+\finindication
+
+\correction
+\begin{enumerate}
+  \item $\int (\cos x) ^{1234} \sin x \, d x$
+
+En posant le changement de variable $u = \cos x$ on a $x=\arccos u$ et $du = - \sin x \, dx$ et 
+on obtient 
+$$\int (\cos x) ^{1234} \sin x \, d x = \int u^{1234} (-du) = - \frac 1{1235} u^{1235} + c=  -\frac 1{1235}(\cos x)^{1235}+c$$
+Cette primitive est définie sur $\Rr$.
+
+  \item $\int \frac 1{x\ln x} \, dx$
+
+En posant le changement de variable $u=\ln x$ on a $x=\exp u$ et $du = \frac {dx}{x}$ on écrit :
+$$\int \frac 1{x\ln x} \, dx = \int \frac 1{\ln x} \frac{dx}{x} = \int \frac 1 u du= \ln |u| + c = \ln \left| \ln x\right| +c$$
+Cette primitive est définie sur $\left] 0,1\right[$ ou sur $\left] 1,+\infty \right[$ (la constante peut être différente pour chacun des intervalles).
+
+
+  \item $\int \frac 1{3+\exp \left( -x\right)}dx$
+
+Soit le changement de variable $u=\exp x$. Alors $x=\ln u$ et $du = \exp x \, dx$
+ce qui s'écrit aussi $dx = \frac{du}{u}$.
+$$\int \frac 1{3+\exp \left( -x\right) }dx = \int \frac{1}{3+\frac{1}{u}} \frac{du}{u}
+= \int \frac{1}{3u+1} du = \frac 13 \ln |3u+1| + c = \frac13\ln \left( 3\exp
+x+1\right) +c$$
+Cette primitive est définie sur $\Rr$.
+
+  \item $\int \frac{1}{\sqrt{4x-x^2}}dx$
+
+Le changement de variable a pour but de se ramener à quelque chose de connu.
+Ici nous avons une fraction avec une racine carrée au dénominateur et sous la racine un polynôme de degré $2$.
+Ce que l'on sait intégrer c'est
+$$\int \frac{1}{\sqrt{1-u^2}}du = \arcsin u + c,$$
+car on connaît la dérivée de la fonction $\arcsin(t)$ c'est $\arcsin'(t)=\frac{1}{\sqrt{1-t^2}}$.
+On va donc essayer de s'y ramener.
+Essayons d'écrire ce qu'il y a sous la racine, $4x-x^2$ sous la forme $1-t^2$ :
+$4x-x^2 =  4 - (x-2)^2 = 4 \bigg( 1 - \big(\frac 12 x - 1\big)^2\bigg)$.
+Donc il est naturel d'essayer le changement de variable $u= \frac 12 x - 1$
+pour lequel $4x-x^2=4(1-u^2)$ et $dx = 2du$. 
+
+$$\int \frac{1}{\sqrt{4x-x^2}}dx = \int \frac{1}{\sqrt{4(1-u^2)}} 2du = \int \frac{du}{\sqrt{1-u^2}}
+= \arcsin u + c = \arcsin \left( \frac 12x-1\right) +c$$
+La fonction $\arcsin u$ est définie et dérivable pour $u\in]-1,1[$ alors cette primitive est 
+définie sur $x \in \left] 0,4\right[$.
+\end{enumerate}
+\fincorrection
+\finexercice

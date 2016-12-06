@@ -1,0 +1,48 @@
+\exercice{1052, legall, 1998/09/01}
+\video{7AwRBOj2CYY}
+\enonce
+Soit 
+$A=\begin{pmatrix} 
+1 & 0 & 2 \cr
+0 & -1 & 1 \cr
+1 & -2 & 0 \cr
+\end{pmatrix}$. 
+Calculer $A^3-A$. En déduire que $A$ est inversible puis déterminer $A^{-1}$.
+\finenonce
+
+\indication
+Une fois que l'on a calculé $A^2$ et $A^3$ on peut en déduire $A^{-1}$ sans calculs.
+\finindication
+
+
+\correction
+
+On trouve 
+$$A^2 =
+\begin{pmatrix} 
+3 & -4 & 2 \cr
+1 & -1 & -1 \cr
+1 & 2 & 0 \cr
+\end{pmatrix}
+\qquad \text{ et } \qquad 
+A^3=
+\begin{pmatrix} 
+5 & 0 & 2 \cr
+0 & 3 & 1 \cr
+1 & -2 & 4 \cr
+\end{pmatrix}
+.$$
+
+Un calcul donne $A^3-A = 4 I$.
+En factorisant par $A$ on obtient $A\times (A^2-I) = 4I$.
+Donc $A \times \frac 1 4 (A^2-I) = I$, ainsi $A$ est inversible et
+$$A^{-1} = \frac 1 4 (A^2-I) = \frac 1 4
+\begin{pmatrix}
+2&-4&2\\
+1&-2&-1\\
+1&2&-1\\
+\end{pmatrix}.
+$$
+\fincorrection
+
+\finexercice

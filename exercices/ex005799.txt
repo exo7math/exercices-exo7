@@ -1,0 +1,25 @@
+\exercice{5799, rouget, 2010/10/16}
+\enonce[*** I]
+Montrer que le produit de deux matrices symétriques réelles positives est à valeurs propres réelles positives.
+\finenonce
+
+\noindication
+
+\correction
+\textbf{Remarque.} Il faut prendre garde au fait que le produit de deux matrices symétriques n'est pas nécessairement symétrique. Plus précisément, si $A$ et $B$ sont deux matrices symétriques alors 
+
+\begin{center}
+$AB\in\mathcal{S}_n(\Rr)\Leftrightarrow{^t}(AB) = AB\Leftrightarrow{^t}B{^t}A = AB\Leftrightarrow BA = AB$
+\end{center}
+
+et le produit de deux matrices symétriques est symétrique si et seulement si ces deux matrices commutent. Donc au départ, rien n'impose que les valeurs propres de $AB$ soient toutes réelles .
+
+Soient $A$ et $B$ deux matrices symétriques réelles positives. D'après l'exercice \ref{ex:rou2}, il existe deux matrices carrées $M$ et $N$ telles que $A ={^t}MM$ et $B={^t}NN$. On a alors $AB ={^t}MM{^t}NN$. La  matrice $AB$ a même polynôme caractéristique que la matrice $N({^t}MM{^t}N={^t}(M{^t}N)M{^t}N$. D'après l'exercice \ref{ex:rou2}, cette dernière matrice est symétrique positive et a donc des valeurs propres réelles positives. On a montré que les valeurs propres de la matrice $AB$ sont réelles et positives.
+
+\begin{center}
+\shadowbox{
+$\forall(A,B)\in(\mathcal{S}_n^+(\Rr)$, $\text{Sp}(AB)\subset\Rr^+$.
+}
+\end{center}
+\fincorrection
+\finexercice

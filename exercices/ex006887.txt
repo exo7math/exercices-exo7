@@ -1,0 +1,152 @@
+\exercice{6887, barraud, 2012/09/05}
+\video{D-wMy5vRJo4}
+% D'apres #1139 barraud
+\enonce
+  Calculer les déterminants suivant~:
+$$
+ \left\vert
+   \begin{matrix}
+     a_1   &a_2   &\cdots&a_n    \\
+     a_1   &a_1   &\ddots&\vdots \\
+     \vdots&\ddots&\ddots&a_2    \\
+     a_1   &\cdots&a_1   &a_1
+   \end{matrix}
+ \right\vert
+\qquad
+\left\vert
+\begin{matrix}
+  1    &      &        &1 \\
+  1    &1      & (0)   & \\
+       &\ddots &\ddots & \\  
+  (0)  &       &1      &1
+\end{matrix}
+\right\vert
+\qquad
+\left\vert
+\begin{matrix}
+    a+b  &    a   & \cdots &  a       \\
+     a   &   a+b  & \ddots & \vdots   \\
+  \vdots & \ddots & \ddots &  a       \\
+     a   & \cdots &    a   & a+b 
+\end{matrix}
+\right\vert
+$$
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item On retire la première colonne à toutes les autres colonnes 
+$$
+\Delta_1 =   \begin{vmatrix}
+     a_1   &a_2   &\cdots&a_n    \\
+     a_1   &a_1   &\ddots&\vdots \\
+     \vdots&\ddots&\ddots&a_2    \\
+     a_1   &\cdots&a_1   &a_1
+   \end{vmatrix}
+ =  \begin{vmatrix}
+     a_1   &a_2-a_1  & a_3-a_1 &\cdots&a_n -a_1   \\
+     a_1   &0  & &\ddots&\vdots \\
+     \vdots&\vdots &\ddots&\ddots&a_2-a_1    \\
+     a_1   &0&\cdots&0   & 0
+   \end{vmatrix}$$
+On développe par rapport à la dernière ligne :
+$$\Delta_1 = (-1)^{n-1}a_1 \begin{vmatrix}
+     a_2-a_1  &  &\cdots&a_n -a_1   \\
+     0  &\ddots &&\vdots \\
+     \vdots &\ddots&\ddots&    \\
+     0&\cdots&0   & a_2-a_1
+   \end{vmatrix}
+= (-1)^{n-1}a_1(a_2-a_1)^{n-1}
+$$
+Où l'on a reconnu le déterminant d'un matrice triangulaire supérieure.
+Donc 
+$$\Delta_1 = a_1(a_1-a_2)^{n-1}.$$
+
+
+  \item 
+On va transformer la matrice correspondante en une matrice triangulaire supérieure,
+on commence par remplacer la ligne $L_2$ par $L_2-L_1$ (on ne note que les coefficients non nuls) : 
+$$\Delta_2 =   \begin{vmatrix}
+  1 &      &    &   &+1 \\
+  1 &1      && &  \\
+   &1      &1  & &\\
+   & &\ddots &\ddots & \\
+  &  &       &1      &1
+\end{vmatrix}=
+ \begin{vmatrix}
+  1 &      &    &   &+1 \\
+  0 &1      && &  -1\\
+   &1      &1  & &\\
+   & &\ddots &\ddots & \\
+  &  &       &1      &1
+\end{vmatrix}
+$$
+Puis on remplace la ligne $L_3$ par $L_3-L_2$ (attention il s'agit de la nouvelle ligne $L_2$) et on 
+continue ainsi de suite jusqu'à $L_{n-1} \leftarrow L_{n-1}-L_{n-2}$ ($n$ est la taille de la matrice sous-jacente) :
+$$\Delta_2 =   \begin{vmatrix}
+  1 &      &    &   &&+1 \\
+  0 &1      && &  &-1\\
+    & 0      &1  & & &+1\\
+    & & 1      &1  & && \\
+   & &&\ddots &\ddots & \\
+  &  &       &&1      &1                 
+               \end{vmatrix}
+= \cdots = 
+\begin{vmatrix}
+  1 &      &    &   &&+1 \\
+  0 &1      && &  &-1\\
+    & 0      &1  & & &+1\\
+    & & \ddots      &\ddots  & &\vdots& \\
+   & &&0 &1 & (-1)^{n} \\
+  &  &       &&1      &1                 
+               \end{vmatrix}
+$$
+On fait attention pour le dernier remplacement $L_n \leftarrow L_n-L_{n-1}$ légèrement différent et qui conduit au déterminant d'une matrice triangulaire : :
+$$\Delta_2 = \begin{vmatrix}
+  1 &      &    &   &&+1 \\
+  0 &1      && &  &-1\\
+    & 0      &1  & & &+1\\
+    & & \ddots      &\ddots  & &\vdots& \\
+   & && &1 & (-1)^{n}\\
+  &  &       &&0      &1 - (-1)^{n}                 
+               \end{vmatrix}
+= 1 - (-1)^{n}.
+$$
+
+En conclusion $\Delta_2 = \begin{cases}
+                           0 & \text{ si $n$ est pair} \\
+                           2 & \text{ si $n$ est impair} \\                           
+                          \end{cases}$
+
+  \item
+On retire la colonne $C_1$ aux autres colonnes $C_i$ pour faire apparaître des $0$ :
+$$\Delta_3 = \begin{vmatrix}
+    a+b  &    a   & \cdots &  a       \\
+     a   &   a+b  & \ddots & \vdots   \\
+  \vdots & \ddots & \ddots &  a       \\
+     a   & \cdots &    a   & a+b 
+\end{vmatrix}
+= \begin{vmatrix}
+    a+b  &    -b   & & \cdots &  -b       \\
+     a   &   b     &   0 & \cdots        &  0   \\
+     a   &   0 &  \ddots & \ddots & \vdots   \\
+  \vdots & \ddots & \ddots &  b & 0       \\
+     a   &  0 & \cdots &    0   & b 
+\end{vmatrix}$$
+On remplace ensuite $L_1$ par $L_1+L_2+L_3+\cdots +L_n$
+(ou ce qui revient au même : faites les opérations 
+$L_1 \leftarrow L_1+L_2$ puis $L_1 \leftarrow L_1+L_3$,\ldots
+chacune de ces opérations fait apparaître un $0$ sur la première ligne)
+pour obtenir une matrice triangulaire inférieure :
+$$\Delta_3 = \begin{vmatrix}
+   na+b  &    0   & & \cdots &  0       \\
+     a   &   b     &   0 & \cdots        &  0   \\
+     a   &   0 &  \ddots & \ddots & \vdots   \\
+  \vdots & \ddots & \ddots &  b & 0       \\
+     a   &  0 & \cdots &    0   & b 
+\end{vmatrix}=(na+b)b^{n-1}.$$
+\end{enumerate}
+\fincorrection
+\finexercice

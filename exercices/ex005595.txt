@@ -1,0 +1,29 @@
+\exercice{5595, rouget, 2010/10/16}
+\enonce[***]
+Soit $G$ un sous-groupe de $GL(E)$ avec $\text{dim}E=n$ et $\text{card}G=p$.
+Soit $F=\{x\in E/\;\forall g\in G,\;g(x)=x\}$.
+
+Montrer que $\text{dim}F= \frac{1}{p}\sum_{g\in G}^{}\text{Tr}g$.
+\finenonce
+
+\noindication
+
+\correction
+Par la même méthode qu'au \ref{ex:rou32}, on voit que $f=\frac{1}{p}\sum_{g\in G}^{}g$ est un projecteur et donc $\frac{1}{p}\sum_{g\in G}^{}\text{Tr}g=\text{rg}f$. Maintenant, si $x$ est un élément de $F$ alors pour tout $g$ dans $G$, $g(x)=x$ et donc $f(x) = x$. Ainsi, un élément $x$ de $F$ est dans $\text{Im}f$. 
+
+Inversement, soit $x$ un élément de $\text{Im}f$. Pour $g\in G$, 
+
+\begin{center}
+$g(x)=g(f(x))=\frac{1}{p}\sum_{h\in G}^{}g\circ h(x)=\frac{1}{p}\sum_{h\in G}^{}h(x)=f(x)= x$.
+\end{center}
+
+(Comme au \ref{ex:rou32}, l'application qui, pour $g\in G$ 
+fixé, associe à un élément $h$ de $G$ l'élément $g\circ h$, est une permutation de $G$).
+
+Ainsi, l'élément $x$ de $\text{Im}f$ est dans $F$. On a montré que $F=\text{Im}f$. Puisque $f$ est un projecteur, on en déduit que
+
+\begin{center}
+$\text{dim}F=\text{rg}f=\text{Tr}f=\frac{1}{p}\sum_{g\in G}^{}\text{Tr}g$. 
+\end{center}
+\fincorrection
+\finexercice

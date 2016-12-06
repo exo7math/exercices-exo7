@@ -1,0 +1,83 @@
+\exercice{2639, debievre, 2009/05/19}
+\enonce
+Soit $f\colon \R^2\setminus\{(0,0)\}\longrightarrow \R$ 
+une fonction
+de classe $C^2$ et soient $r$ et $\theta$ les coordonn\'ees
+polaires standard dans le plan de telle sorte que
+l'association
+\[
+]0,+\infty[\times  ]0,2\pi[\longrightarrow  \R^2\setminus\{(0,0)\},
+\quad
+(r,\theta)\longmapsto (x,y)=(r\cos\theta, r\sin\theta),
+\]
+soit un changement de variables.
+Soit $F$ la fonction d\'efinie par 
+\[
+F(r,\theta)=f(r\cos\theta, r\sin\theta).
+\]
+C'est \lq\lq l'expression de $f$ 
+en coordonn\'ees polaires\rq\rq. 
+Montrer que
+\begin{equation}
+\frac{\partial^2 f}{\partial x^2}(x,y)+\frac{\partial^2 f}{\partial y^2}(x,y)=
+\frac{\partial^2F}{\partial r^2}(r,\theta)+\frac{1}{r}\frac{\partial F}{\partial r}(r,\theta)+\frac{1}{r^2}\frac{\partial^2 F}{\partial \theta^2}(r,\theta).
+\label{laplace}
+\end{equation}
+Cette formule
+calcule ``le Laplacien en coordonn\'ees polaires.'' 
+L'exercice ne d\'epend pas de la connaissance
+du Laplacien cependant.
+\finenonce
+
+\indication
+\begin{enumerate}
+ \item  Montrer que
+$$\frac{\partial^2F}{\partial r^2}+\frac{1}{r}\frac{\partial F}{\partial r}=
+\frac1r\frac{\partial}{\partial r} r\frac{\partial}{\partial r}F.$$
+ \item Montrer que
+$$r\frac{\partial F}{\partial r}=x\frac{\partial f}{\partial x}+y\frac{\partial f}{\partial y}.$$
+ \item Montrer que
+$$\frac{\partial F}{\partial \theta}=x\frac{\partial f}{\partial y}-y\frac{\partial f}{\partial x}$$
+ \item Utiliser ces r\'esultats, puis calculer encore un peu pour obtenir le r\'esultat souhait\'e. 
+\end{enumerate}
+\finindication
+
+\correction
+\begin{enumerate}
+\item $\frac{\partial }{\partial r}\left (r \frac{\partial F}{\partial r}\right)=
+\frac{\partial F}{\partial r} +r \frac{\partial^2 F}{\partial r^2}$
+
+\item $\frac{\partial F}{\partial r}=
+\frac{\partial f}{\partial x}\frac xr+ \frac{\partial f}{\partial y}\frac yr$
+
+\item $\frac{\partial F}{\partial \theta}=
+\frac{\partial f}{\partial x}\frac{\partial x}{\partial \theta}
++ \frac{\partial f}{\partial y}\frac{\partial y}{\partial \theta}
+= -y \frac{\partial f}{\partial x}+x\frac{\partial f}{\partial y}
+$
+
+\item En prenant la somme des trois \'equations suivantes
+\begin{align*}
+r^2 \frac{\partial^2 F}{\partial r^2}&=
+x^2 \frac{\partial^2 f}{\partial x^2}
++2xy \frac{\partial^2 f}{\partial x \partial y}
++
+y^2 \frac{\partial^2 f}{\partial y^2}
+\\
+r\frac{\partial F}{\partial r}&=
+x\frac{\partial f}{\partial x}+ y\frac{\partial f}{\partial y}
+\\
+\frac{\partial^2 F}{\partial \theta^2}&=
+x^2 \frac{\partial^2 f}{\partial y^2}
+-2xy \frac{\partial^2 f}{\partial x \partial y}
++
+y^2 \frac{\partial^2 f}{\partial x^2}
+-
+x \frac{\partial f}{\partial x}
+-
+y\frac{\partial f}{\partial y}
+\end{align*}
+on trouve le r\'esultat cherch\'e.
+\end{enumerate}
+\fincorrection
+\finexercice

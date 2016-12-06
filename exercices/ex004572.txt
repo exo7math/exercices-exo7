@@ -1,0 +1,31 @@
+\exercice{4572, quercia, 2010/03/14}
+\enonce[Division par $z-\rho$]
+
+Soit $a(z) = \sum_{n=0}^\infty a_nz^n$ une série entière de rayon de
+convergence infini et $\rho > 0$.
+
+On définit la série entière $b(z) = \sum_{n=0}^\infty b_nz^n$ de sorte que
+$(z-\rho)b(z) = a(z)$ en cas de convergence de $b(z)$.
+
+\begin{enumerate}
+  \item Prouver l'existence et l'unicité des coefficients $b_n$.
+    
+  \item Quel est le rayon de convergence de $b(z)$ ?
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Série produit de $a(z)$ et $\frac1{z-\rho}  \Rightarrow 
+             b_n = \sum_{k=0}^\infty a_{k+n+1}\rho^k$.
+  \item Si $a(\rho) \ne 0$ : $b(z)$ converge pour $|z|<\rho$ et tend vers
+             l'infini pour $z\to\rho^-  \Rightarrow  R = \rho$.\par
+             Si $a(\rho) = 0$ : $\forall\ r > \rho$, $|a_p| \le \frac M{r^p} \Rightarrow 
+             |b_n| \le \frac M{r^n(r-\rho)}  \Rightarrow  R=\infty$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

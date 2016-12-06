@@ -1,0 +1,34 @@
+\exercice{2419, drutu, 2007/10/01}
+\enonce 
+Soit $\R$ et soit $\mathcal{T}$ une collection de sous-ensembles de $\R$
+contenant $\emptyset$, $\R$ et tous les complementaires
+d'ensembles finis. Est-ce une topologie sur $\R$ ? Est-ce une
+topologie s\'epar\'ee ?
+\finenonce
+
+\noindication
+
+\correction
+Il faut donc d\'emontrer que la collection de sous-ensembles de
+$\R$ contenant $\emptyset$, $\R$ et tous les ensembles finis
+v\'erifie les propri\'et\'es d'une collection d'ensembles
+ferm\'es~:
+\begin{itemize}
+    \item toute int\'ersection d'ensembles ferm\'es est ferm\'e;
+    \item toute r\'eunion finie d'ensembles ferm\'es est ferm\'e;
+    \item $\emptyset$ et tout l'espace sont des ferm\'es.
+\end{itemize}
+
+Les trois propri\'et\'es sont \'evidemment v\'erifi\'ees dans ce
+cas.
+
+
+La topologie ainsi d\'efinie sur $\R$ n'est pas s\'epar\'ee. En
+effet deux ouverts non-vides $\Omega$ et $\Omega'$ sont sous la
+forme $\Omega=\R \setminus F$ et $\Omega'=\R \setminus F'$, o\`u
+$F,F'$ sont ou bien finis ou bien vides. Alors $\Omega \cap
+\Omega'=\R\setminus \left( F\cup F'\right)$ n'est pas vide, car
+sinon ceci impliquerait que $\R = F\cup F'$ est finie ou vide, ce
+qui est faux.
+\fincorrection
+\finexercice

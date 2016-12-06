@@ -1,0 +1,56 @@
+\exercice{5935, tumpach, 2010/11/11}
+\enonce
+Soit $\Omega = \mathbb{N}$, $\Sigma = \mathcal{P}(\mathbb{N})$ et
+$\mu$ la mesure de comptage sur $\mathbb{N}$ d\'efinie par~:
+$$
+\mu(E) = \sharp E = \sum_{k \in E} 1,
+$$
+o\`u $E\in \Sigma$. Soit $f~:\mathbb{N} \rightarrow \mathbb{R}$
+une fonction positive ou nulle. Montrer que $f$ est
+($\Sigma$-$\mathcal{B}(\mathbb{R})$)-mesurable et que~:
+$$
+\int_{\Omega} f d\mu = \sum_{n=1}^{\infty} f(n).
+$$
+\finenonce
+
+\noindication
+
+\correction
+Soit $\Omega = \mathbb{N}$, $\Sigma = \mathcal{P}(\mathbb{N})$ et
+$\mu$ la mesure de comptage sur $\mathbb{N}$ d\'efinie par~:
+$$
+\mu(E) = \sharp E = \sum_{k \in E} 1,
+$$
+o\`u $E\in \Sigma$. Soit $f~:\mathbb{N} \rightarrow \mathbb{R}$
+une fonction positive ou nulle. Pour tout bor\'elien $E$,
+$f^{-1}(E)$ appartient \`a $\mathcal{P}(\mathbb{N})$, donc $f$ est
+($\Sigma$-$\mathcal{B}(\mathbb{R})$)-mesurable. Par d\'efinition
+de l'int\'egrale,
+$$
+\int_{\Omega} f d\mu = \int_{0}^{\infty}
+\mu\left(S_{f}(t)\right)\,dt,
+$$
+o\`u $S_{f}(t) = \{n\in\Sigma, \,f(n)>t\}$. Pour tout
+$y\in[0,+\infty[$, posons $A_{y} := \{n\in\mathbb{N},\, f(n) =
+y\}$. Alors $$S_{f}(t) = \cup_{y
+> t}A_{y}$$ o\`u l'union est disjointe et o\`u $A_y$ est vide sauf
+pour un ensemble d\'enombrable $\{y_{i}\}_{i\in\mathbb{N}}$ de
+valeurs de $y$. Par $\sigma$-additivit\'e de la mesure $\mu$,
+$$
+\mu\left(S_{f}(t)\right) = \mu\left(\cup_{y_i > t} A_{y_{i}}
+\right) = \sum_{y_i
+> t} \mu\left(A_{y_{i}}\right) = \sum_{y_i > t}\mu\left(\{f = y_i
+\}\right).
+$$
+Ainsi~: 
+\begin{eqnarray*} \int_{\Omega} f d\mu & =&
+\int_{0}^{\infty}\sum_{y_i
+> t} \mu\left(\{f = y_i \}\right)\,dt = \sum_{i=0}^{\infty}
+\int_{0\leq t<y_{i}}\mu\left(\{f = y_i \}\right)\,dt \\&=&
+\sum_{i=0}^{\infty} y_i \cdot \mu\left(\{f = y_i \}\right) =
+\sum_{i=0}^{\infty} y_{i}\cdot\sharp\{n\in\mathbb{N}, f(n) =
+y_{i}\} = \sum_{n=0}^{\infty} f(n).
+\end{eqnarray*}
+\fincorrection
+
+\finexercice

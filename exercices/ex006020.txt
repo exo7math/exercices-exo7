@@ -1,0 +1,42 @@
+\exercice{6020, quinio, 2011/05/20}
+
+\enonce
+On effectue un contrôle de fabrication sur des pièces dont une
+proportion $p=0.02$ est défectueuse.
+\begin{enumerate}
+\item On contrôle un lot de 1000 pièces :
+
+Soit $X$ la variable aléatoire: <<nombre de pièces défectueuses
+parmi 1000>>.
+Quelle est la vraie loi de $X$ ? (on ne donnera que la forme générale);
+quel est son espérance, son écart-type ?
+
+\item En approchant cette loi par celle d'une loi normale adaptée, calculez
+la probabilité pour que $X$ soit compris entre 18 et 22 ($P[18 \leq X\leq 22]$) ; 
+on fera les calculs avec et sans correction de continuité.
+On fera également les calculs avec la vraie loi pour comparer.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item La loi de $X$ est la loi binomiale $B(1000;0.02)$, d'espérance 20, 
+d'écart-type $\sqrt{19.6}$.
+
+\item En approchant cette loi par celle d'une loi normale de paramètre
+$m=20$, écart-type $\sqrt{19.6}$.
+$P[18\leq X\leq 22]=P[(17.5-20)/\sqrt{19.6}\leq (X-20)/\sqrt{19.6}\leq
+(22.5-20)/\sqrt{19.6}]\simeq 0.428$.
+
+Sans correction de continuité on trouve $P[(17-20)/\sqrt{19.6}\leq
+(X-20)/\sqrt{19.6}\leq (22-20)/\sqrt{19.6}]\simeq 0.348$.
+
+Approchée par la loi de Poisson de paramètres : espérance 20 et
+variance 20, on trouve $P[18\leq X\leq 22]\simeq 0.423$.
+
+Enfin par la vraie loi binomiale: on trouve $P[18\leq X\leq 22]\simeq 0.427$.
+\end{enumerate}
+\fincorrection
+\finexercice

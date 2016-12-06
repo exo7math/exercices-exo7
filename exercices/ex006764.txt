@@ -1,0 +1,119 @@
+\exercice{6764, queffelec, 2011/10/16}
+\enonce[Fonction $\zeta $ de Riemann]
+
+On introduit la fonction ``Zeta'' :
+$$\zeta (s)=\sum_{n\ge 1}{1\over n^s}$$
+
+\subparagraph{I  Produit d'Euler}
+
+Montrer que $\zeta $ est holomorphe
+dans l'ouvert $\Omega =\{ z\in\C\vert \ \Re z>1\}$.
+
+Soient $p_1=2,p_2=3,\dots,p_n,\dots$ la suite des nombres premiers.
+Montrer que dans $\Omega $, on a $$\zeta (s)=\prod_{n\ge 1}{1\over
+1-p_n^{-s}}$$ 
+(produit d'Euler).
+
+\subparagraph{II Relation de $\zeta $ avec la répartition des
+nombres premiers}
+
+\begin{enumerate}  
+\item Montrer que $${\zeta '(s)\over \zeta (s)}=-\sum_{n\ge1}
+\lambda (n)n^{-s}$$ où $\lambda (n)=\ln p$ si $n$ est une puissance
+d'un nombre $p$ premier et $\lambda (n)=0$ si $n$ a au moins deux
+diviseurs premiers distincts.
+
+\item On a le théorème suivant :\\
+Théorème des nombres premiers (Hadamard-De la Vallée Poussin 1896) :
+Lorsque $x$ tend vers $+\infty$, la somme des $\lambda (n)$ pour $n\le
+x$ est équivalente à $x$.
+
+Démontrer que cette assertion est équivalente à dire que le nombre de
+nombres premiers plus petits que $x$ est équivalent à $x/\ln x$.
+\end{enumerate}
+
+
+\subparagraph{III Equation fonctionnelle de $\zeta $, démonstration
+par la formule de Poisson}
+
+Soit 
+$$\theta (t)=\sum_{n\in {\Zz}}e^{-\pi n^2t}$$
+$\theta $ vérifie l'équation fonctionnelle suivante :
+$$\forall t>0,\ \theta \left( {1\over t}\right)=\sqrt t\theta (t)$$
+On pose
+$$\psi (t)=\sum_{n\ge 1}e^{-\pi n^2t}$$
+On a évidemment $\theta (t)=1+2\psi (t)$.
+
+\begin{enumerate}  
+\item Soit $s$ tel que $\Re s>1/2$. Calculer $\int_0^{+\infty}e^{-\pi
+n^2t}t^{s-1}\ dt$ en fonction de $n$ et $\Gamma (s)$. En déduire que
+$$\int_0^{+\infty}\psi (t)t^{s-1}\ dt=\pi^{-s}\Gamma (s)\zeta (2s)$$
+
+\item Montrer que $F$ définie par
+$$F(z)=\int_1^{+\infty}\psi (t)t^z\ dt$$
+est une fonction entière. En écrivant
+$$\int_0^{+\infty}\psi (t)t^z\ dt=\int_0^1\psi (t)t^z\
+dt+\int_1^{+\infty}\psi (t)t^z\ dt$$
+et en effectuant dans la première partie de la somme le changement de
+variable $u=1/t$, puis en utilisant l'équation fonctionnelle de $\theta $,
+montrer que la fonction $L$ :
+$$L(s)=s(s-1)\pi^{-s/2}\Gamma \left({s\over 2}\right)\zeta (s)$$
+se prolonge en une fonction entière, invariante par la transformation
+$s$ donne $1-s$. Montrer alors que $\zeta $ se prolonge en une fonction
+méromorphe sur $\C$, ayant 1 pour seule singularité (pôle simple).
+Montrer enfin que $\mathrm{Res} (\zeta ,1)=1$.
+\end{enumerate}
+
+\subparagraph{IV  Equation fonctionnelle de $\zeta $, démonstration
+par le théorème des résidus}
+
+\begin{enumerate}  
+\item Soit $s$ tel que $\Re(s)>1$. Par la même méthode qu'au III.1.,
+montrer que
+$$\int_0^{+\infty}{t^{s-1}\over e^t-1}\ dt=\Gamma (s)\zeta (s)$$
+
+\item Pour tout $s$ de $\C$, on définit $F_s$ sur $\C\setminus
+[0,+\infty\mathclose[$ : 
+$$F_s(z)={\exp\left[ (s-1)\mathrm{Log}{(-z)}\right]\over
+\exp z-1}$$
+où $\mathrm{Log}$ est la détermination principale du logarithme. On définit 
+également le contour $A_{\varepsilon ,\varphi }$ :
+
+
+
+Calculer 
+$$\lim_{\varphi \to 0}\int_{A_{(\varepsilon ,\varphi )}}F_s(z)\ dz$$
+Montrer que pour $\Re s>1$ :
+$$\lim_{\varepsilon \to 0}\left(\lim_{\varphi \to
+0}\int_{A_{(\varepsilon ,\varphi )}}F_s(z)\ dz\right)=2i\sin{(\pi
+z)}\Gamma (s)\zeta (s)$$ Montrer que $\int_{A_{(\varepsilon ,\varphi
+)}}F_s(z)\ dz$ est en fait indépendant de $\varepsilon \in
+\mathopen]0,1\mathclose[$, puis que $$s\mapsto \lim_{\varphi \to
+0}\int_{A_{(\varepsilon ,\varphi )}}F_s(z)\ dz$$ est une fonction entière.
+En déduire que $\sin{(\pi s)}\Gamma (s)\zeta (s)$ se prolonge en une
+fonction entière.
+
+\item Soit $C_{n,\varepsilon ,\varphi }$ le chemin fermé :
+
+
+En appliquant la formule des résidus à $F_s$ sur $C_{n,\varepsilon
+,\varphi }$ pour $\Re s<0$, montrer que
+$$\forall s\in\C\setminus\{-{\Nn}\},\ \zeta
+(1-s)=2^{1-s}\pi^{-s}\Gamma (s)\cos{\left({\pi s\over 2}\right)}\zeta (s)
+$$
+
+\item Déduire de 3. que
+$$\forall s\in \C\setminus {\Zz},\ \Gamma (s)\Gamma
+(1-s)={\pi\over \sin{(\pi s)}}$$
+En utilisant l'équation fonctionnelle de {\bf III}, montrer alors que
+$$\forall s\in \C\setminus {\Zz},\ \Gamma (s)={2^{s-1}\over
+\sqrt\pi}\Gamma \left({1+s\over 2}\right)\Gamma \left({s\over
+2}\right)$$
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\nocorrection
+
+\finexercice       

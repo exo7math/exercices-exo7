@@ -1,0 +1,100 @@
+\exercice{5833, rouget, 2010/10/16}
+\enonce[***]
+Equation cartésienne du cylindre $(\mathcal{C})$ de direction $\overrightarrow{u}$ et de directrice $(C)$ dans les cas suivants :
+
+\begin{enumerate}
+ \item   $\overrightarrow{u}(1,0,1)$ et $(C)$ : $x = a\cos t$,  $y = b\sin t$,  $z =a\sin t\cos t$ ($a$ et $b$ tous deux non nuls).
+
+\item   $\overrightarrow{u}(0,1,1)$ et $(C)$ :  $\left\{
+\begin{array}{l}
+y+z=1\\
+x^2+y^2=1
+\end{array}
+\right.$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item 
+
+\begin{align*}\ensuremath
+M(x,y,z)\in(\mathcal{C})&\Leftrightarrow\exists\lambda\in\Rr,\;\exists m\in(C)/\;M = m +\lambda\overrightarrow{u}\Leftrightarrow\exists\lambda\in\Rr,\;\exists t\in\Rr/\;\left\{
+\begin{array}{l}
+x=a\cos t+\lambda\\
+y=b\sin t\\
+z=a\cos t\sin t+\lambda
+\end{array}
+\right.\\
+ &\Leftrightarrow\exists\lambda\in\Rr,\;\exists t\in\Rr/\;\left\{
+\begin{array}{l}
+\lambda=x-a\cos t\\
+y=b\sin t\\
+z=a\cos t\sin t+x-a\cos t
+\end{array}
+\right.\Leftrightarrow\exists t\in\Rr/\;\left\{
+\begin{array}{l}
+y=b\sin t\\
+z=a\cos t\sin t+x-a\cos t
+\end{array}
+\right.\\
+ &\Leftrightarrow\exists t\in\Rr/\;\left\{
+\begin{array}{l}
+y=b\sin t\\
+z-x=a\cos t(\sin t-1)
+\end{array}
+\right.\Leftrightarrow\exists t\in\Rr/\;\left\{
+\begin{array}{l}
+y=b\sin t\\
+b(z-x)=a\cos t(y-b)
+\end{array}
+\right.\\
+ &\Leftrightarrow b^4(z-x)^2+y^2a^2(y-b)^2=a^2b^2(y-b)^2.
+\end{align*}
+
+En effet,
+
+\textbullet~$\Rightarrow/$ s'il existe $t\in\Rr$ tel que $y=b\sin t$ et $b(z-x)=a\cos t(y-b)$ alors
+
+\begin{align*}\ensuremath
+b^4(z-x)^2+y^2a^2(y-b)^2&=b^2a^2\cos^2t(y-b)^2+b^2\sin^2ta^2(y-b)^2=a^2b^2(y-b)^2(\cos^2t+\sin^2t)\\
+ &=a^2b^2(y-b)^2.
+\end{align*}
+
+\textbullet~$\Leftarrow/$ Réciproquement, si $b^4(z-x)^2+y^2a^2(y-b)^2=a^2b^2(y-b)^2$ alors $
+b^4(z-x)^2=a^2(y-b)^2 (b^2-y^2)$ et donc
+
+ou bien $y=b$, ou bien $b^2-y^2\geqslant 0$. Par suite, il existe un réel $t$ tel que $y = b\sin t=b\sin(\pi-t)$ puis
+
+\begin{align*}\ensuremath
+b^4(z-x)^2=a^2(y-b)^2 (b^2-y^2)&\Rightarrow b^4(z-x)^2=a^2(b\sin t-b)^2b^2\cos^2t\Rightarrow b(z-x) =\pm a\cos t(b\sin t-b)\\
+ &\Rightarrow b(z-x) = a\cos t(y-b)\;\text{ou}\;b(z-x) = a\cos(\pi-t)(y-b)
+\end{align*}
+
+et il existe un réel $t'$ tel que $y=b\sin t'$ et $b(z-x) = a\cos t'(y-b)$.
+
+\item  
+
+\begin{align*}\ensuremath
+M(x,y,z)\in(\mathcal{C})&\Leftrightarrow\exists\lambda\in\Rr,\;\exists m\in(C)/\;M = m +\lambda\overrightarrow{u}\Leftrightarrow\exists\lambda\in\Rr,\;\exists (X,Y,Z)\in\Rr^3/\;\left\{
+\begin{array}{l}
+x=X\\
+y=Y+\lambda\\
+z=Z+\lambda\\
+Y+Z=1\\
+X^2+Y^2=1
+\end{array}
+\right.\\
+ &\Leftrightarrow\exists\lambda\in\Rr,\;\left\{
+\begin{array}{l}
+(y-\lambda)+(z-\lambda)=1\\
+x^2+(y-\lambda)^2=1
+\end{array}
+\right.\Leftrightarrow x^2 +\left(y- \frac{1}{2}(y+z-1)\right)^2 = 1\\
+ &\Leftrightarrow4x^2+(y-z+1)^2 = 4.
+\end{align*}
+\end{enumerate}
+\fincorrection
+\finexercice

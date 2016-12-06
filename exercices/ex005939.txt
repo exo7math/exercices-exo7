@@ -1,0 +1,63 @@
+\exercice{5939, tumpach, 2010/11/11}
+\enonce
+\begin{enumerate}
+\item  Soit $\{g_{n}\}_{n\in\mathbb{N}}$ une suite dans
+$\mathcal{M}^{+}(\Omega, \Sigma)$. Montrer que
+$$
+\int_{\Omega} \left(\sum_{n=1}^{+\infty} g_{n}\right)\,d\mu =
+\sum_{n=1}^{+\infty}\int_{\Omega} g_{n} \,d\mu.
+$$
+
+\item Montrer que
+$$
+\int_{0}^{+\infty} \frac{x^{s-1}}{e^x -1}\,dx = \Gamma(s)
+\zeta(s),
+$$
+o\`u $\Gamma$ est la fonction d'Euler et o\`u $\zeta(s) =
+\sum_{n=1}^{+\infty} n^{-s}$. (On pourra consid\'erer les
+fonctions $g_{n}(x) = x^{s-1} e^{-nx} \mathbf{1}_{[0, +\infty)}$.)
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  Soit $\{g_{n}\}_{n\in\mathbb{N}}$ une suite dans
+$\mathcal{M}^{+}(\Omega, \Sigma)$. Alors $f_{k} = \sum_{n=1}^{k}
+g_{n}$ est une suite croissante de $\mathcal{M}^{+}(\Omega,
+\Sigma)$. D'apr\`es le th\'eor\`eme de convergence monotone
+$$
+\int_{\Omega} \left(\sum_{n=1}^{+\infty} g_{n}\right)\,d\mu =
+\sum_{n=1}^{+\infty}\int_{\Omega} g_{n} \,d\mu.
+$$
+
+\item Posons $g_{n}(x) = x^{s-1} e^{-nx} \mathbf{1}_{[0, +\infty)}$. Les
+$g_{n}$ appartiennent \`a $\mathcal{M}^{+}(\Omega, \Sigma)$ pour
+tout $n\in\mathbb{N}$. D'apr\`es la question pr\'ec\'edente,
+$$
+\int_{\Omega} \left(\sum_{n=1}^{+\infty} g_{n}\right)\,d\mu =
+\sum_{n=1}^{+\infty}\int_{\Omega} g_{n} \,d\mu.
+$$
+Or d'une part,
+$$
+\int_{\Omega}g_{n} \,d\mu = \int_{\Omega} x^{s-1} e^{-nx}
+\mathbf{1}_{[0,+\infty)}\, dx = \frac{1}{n^s}\int_{0}^{+\infty} y^{s-1}
+e^{-y}\,dy = \frac{1}{n^s}\Gamma(s),
+$$
+donc
+$$
+\sum_{n=1}^{+\infty}\int_{\Omega} g_{n} \,d\mu =
+\sum_{n=1}^{\infty}\frac{1}{n^s}\Gamma(s) = \zeta(s) \Gamma(s).
+$$
+D'autre part,
+$$
+\int_{\Omega} \left(\sum_{n=1}^{+\infty} g_{n}\right)\,d\mu =
+\int_{0}^{+\infty} x^{s-1} \sum_{n=1}^{+\infty} e^{-nx}\,dx =
+\int_{0}^{+\infty} \frac{x^{s-1}}{e^x -1}\,dx,
+$$
+d'o\`u l'\'egalit\'e cherch\'ee.
+\end{enumerate}
+\fincorrection
+
+\finexercice

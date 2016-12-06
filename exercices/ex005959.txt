@@ -1,0 +1,96 @@
+\exercice{5959, tumpach, 2010/11/11}
+\enonce
+Soient $f\in L^1(\mathbb{R}^n)$ et $g\in L^p(\mathbb{R}^n)$ avec
+$1\leq p\leq +\infty$, o\`u $\mathbb{R}^n$ est muni de la mesure
+de Lebesgue. Montrer que, pour presque tout $x\in \mathbb{R}^n$,
+la fonction $y\mapsto f(x-y)\, g(y)$ est int\'egrable sur
+$\mathbb{R}^n$ et que le \emph{ produit de convolution} de $f$ et
+$g$ d\'efini par
+$$
+f*g(x) = \int_{\mathbb{R}^n} f(x-y) \,g(y)\,dy
+$$
+v\'erifie $f*g(x) = g*f(x)$ et
+$$
+\|f*g\|_{p} \leq \|f\|_{1}\,\|g\|_{p}.
+$$
+\finenonce
+
+\noindication
+
+\correction
+Soient $f\in L^1(\mathbb{R}^n)$ et $g\in L^p(\mathbb{R}^n)$ avec
+$1\leq p\leq +\infty$, o\`u $\mathbb{R}^n$ est muni de la mesure
+de Lebesgue. L'identit\'e $f*g(x) = g*f(x)$ s'obtient par
+changement de variable. En ce qui converne l'in\'egalit\'e $
+\|f*g\|_{p} \leq \|f\|_{1}\,\|g\|_{p}, $ on distingue les cas en
+fonction de la valeur de $p$.
+\begin{enumerate}
+\item Pour $p = + \infty$, c'est clair.
+
+\item Supposons que $p = 1$ et posons $F(x, y) =
+f(x-y)\,g(y)$. Pour presque tout $y\in\mathbb{R}^n$, on a~:
+$$
+\int_{\mathbb{R}^n} |F(x, y)|\,dx = |g(y)|
+\int_{\mathbb{R}^n}|f(x- y)|\,dx = |g(y)| \cdot\|f\|_1,
+$$
+et
+$$
+\int_{\mathbb{R}^n} dy \int_{\mathbb{R}^n}|F(x, y)|\,dx =
+\|f\|_1\,\|g\|_1.
+$$
+D'apr\`es le th\'eor\`eme de Tonelli, $F\in
+L^{1}\left(\mathbb{R}^n\times\mathbb{R}^n\right)$. D'apr\`es le
+th\'eor\`eme de Fubini, on a
+$$
+\int_{\mathbb{R}^n} |F(x, y)|\,dy <+\infty \quad\quad\text{pour
+presque tout }~x\in\mathbb{R}^n,
+$$
+et
+$$
+\int_{\mathbb{R}^n} dx \int_{\mathbb{R}^n}|F(x, y)|\,dy
+\leq\|f\|_1\,\|g\|_1.
+$$
+Ainsi, $$\|f*g\|_{1} = \int_{\mathbb{R}^n} \,dx |f*g(x)|
+=\int_{\mathbb{R}^n} \,dx \left|\int_{\mathbb{R}^{n}} F(x,
+y)\,dy\right| \leq\|f\|_1\,\|g\|_1.
+$$
+
+
+ \item Supposons que $1< p<+\infty$. Utilisons le cas
+ pr\'ec\'edent, en faisant jouer ici à $g^p$ le rôle alors joué par $g$. Alors pour presque tout $x\in\mathbb{R}^n$ fix\'e, la
+ fonction $y \mapsto |f(x-y)| |g(y)|^p$ est int\'egrable sur
+ $\mathbb{R}^n$, i.e. la fonction $y \mapsto |f(x-y)|^{\frac{1}{p}}
+ |g(y)|$ appartient \`a $L^p(\mathbb{R}^n)$. Soit $p'$ tel que
+ $\frac{1}{p} + \frac{1}{p'} = 1$. La fonction $y\mapsto
+ |f(x-y)|^{\frac{1}{p'}}$ appartient \`a $L^{p'}(\mathbb{R}^n)$
+ car $f\in L^1(\mathbb{R}^n)$ et la mesure de Lebesgue est invariante par translation.
+ D'apr\`es l'in\'egalit\'e de
+ H\"older,
+$$
+|f(x-y)| \,|g(y)| = |f(x-y)|^{\frac{1}{p}}
+\,|g(y)|\cdot|f(x-y)|^{\frac{1}{p'}}\in L^1(\mathbb{R}^n)
+$$
+et
+$$
+\int_{\mathbb{R}^n} |f(x-y)| \,|g(y)| \leq \left(
+\int_{\mathbb{R}^n} |f(x-y)|
+\,|g(y)|^p\right)^{\frac{1}{p}}\cdot\|f\|_1^{\frac{1}{p'}},
+$$
+ainsi
+$$
+|(f*g)(x)|^{p} \leq (|f|*|g|^p)(x)\cdot\|f\|_1^{\frac{p}{p'}}.
+$$
+D'apr\`es le cas pr\'ec\'edent, on voit que
+$$
+f*g\in L^p(\mathbb{R}^n) \quad \text{et}\quad \|f*g\|_p^{p} \leq
+\|f\|_1\|g\|_{p}^{p}\cdot\|f\|_1^{\frac{p}{p'}},
+$$
+c'est-\`a-dire
+$$
+\|f*g\|_p \leq \|f\|_1\cdot\|g\|_p.
+$$
+\end{enumerate}
+
+\fincorrection
+
+\finexercice

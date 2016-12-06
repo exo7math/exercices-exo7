@@ -1,0 +1,31 @@
+\exercice{1027, ridde, 1999/11/01}
+\video{GU9xDUgfz48}
+\enonce
+Soit $E$ et $F$ de dimensions finies et $u, v \in \mathcal{L} (E, F)$.
+\begin{enumerate}
+\item Montrer que $\text{rg} (u + v) \leq \text{rg} (u) + \text{rg} (v)$.
+\item En d\'eduire que $\left|\text{rg} (u) - \text{rg} (v)\right| \leq
+\text{rg} (u + v)$.
+\end{enumerate}
+
+\finenonce 
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Par la formule $\dim(G+H) = \dim(G)+\dim(H)-
+\dim(G\cap H)$, on sait que $\dim(G+H) \leqslant \dim(G)+\dim(H)$.
+Pour $G=\Im u$ et $H=\Im v$ on obtient :
+$\dim (\Im u+\Im v) \leqslant \dim \Im u +\dim \Im v$.
+Or $\Im (u+v) \subset \Im u+\Im v$.
+Donc $\text{rg} (u + v) \leq \text{rg} (u) + \text{rg} (v)$.
+  \item On applique la formule pr\'ec\'edente \`a $u+v$ et $-v$ :
+$\text{rg}  ((u+v)+(-v)) \leqslant \text{rg}  (u+v)+\text{rg} (-v)$, or $\text{rg} (-v)=\text{rg} (v)$
+donc $\text{rg} (u) \leqslant \text{rg} (u+v)+\text{rg} (v)$.
+Donc $\text{rg} (u)-\text{rg} (v)\leqslant \text{rg} (u+v)$.
+On recommence en \'echangeant $u$ et $v$ pour obtenir :
+$\left|\text{rg} (u) - \text{rg} (v)\right| \leq \text{rg} (u + v)$.
+\end{enumerate}
+\fincorrection
+\finexercice

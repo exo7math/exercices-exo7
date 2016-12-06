@@ -1,0 +1,81 @@
+\exercice{2613, delaunay, 2009/05/19}
+\enonce
+ Soit $E$ un espace vectoriel de dimension $n$. On cherche à déterminer une matrice $A\in{\cal M}_n(\R)$ telle que $A^2=-I_n$, où $I_n$ désigne la matrice identité d'ordre $n$. On notera $f$ l'endomorphisme de $E$ de matrice $A$ dans la base canonique.
+\begin{enumerate}
+ \item  Démontrer que l'existence d'une telle matrice implique la parité de $n$.
+
+ \item On suppose maintenant que $n=4$.
+   \begin{enumerate}
+   \item Démontrer que pour tout $\vec x\in E$, $\vec x\neq 0$, les vecteurs $\vec x$ et $f(\vec x)$ sont linéairement indépendants.
+
+   \item Soit $\vec x_1\neq0$, on note $F$ le sous-espace vectoriel de $E$ engendré par les vecteurs $\vec x_1$ et $f(\vec x_1)$.
+             \begin{enumerate}
+               \item Démontrer que $F$ est stable par $f$.
+
+               \item Soit $\vec x_2\in E$, on suppose que $\vec x_2\not\notin F$, démontrer que ${\cal B}=(\vec x_1,f(\vec x_1),\vec x_2,f(\vec x_2))$ est une base de $E$.
+             \end{enumerate}
+   \item  Ecrire la matrice $A$ de $f$ dans la base $\cal B$.
+   \item Calculer $\det f$ et $\det(\lambda\mathrm{id}_E-f)$ pour $\lambda\in\R$.
+   \item  L'endomorphisme $f$ admet-il des valeurs propres réelles ?
+  \end{enumerate}
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+ Soit $E$ un espace vectoriel de dimension $n$. On cherche à déterminer une matrice $A\in{\cal M}_n(\R)$ telle que $A^2=-I_n$, où $I_n$ désigne la matrice identité d'ordre $n$. On notera $f$ l'endomorphisme de $E$ de matrice $A$ dans la base canonique.
+\begin{enumerate}
+ \item {\it Démontrons que l'existence d'une telle matrice implique la parité de $n$.}
+
+Supposons qu'il existe $A\in{\cal M}_n(\R)$ telle que $A^2=-I_n$, on a alors
+$$\det(A^2)=(\det A)^2=(-1)^n,$$
+ce qui implique $n$ pair, car un carré est toujours positif.
+ \item  On suppose maintenant que $n=4$.
+   \begin{enumerate}
+   \item {\it Démontrons que pour tout $\vec x\in E$, $\vec x\neq 0$, les vecteurs $\vec x$ et $f(\vec x)$ sont linéairement indépendants.}
+
+Soit $\vec x\in E$, on suppose $\vec x\neq 0$, supposons qu'il existe des réels $a,b$ tels que $a\vec x+bf(\vec x)=\vec0$, on a alors
+$$a\vec x+bf(\vec x)=\vec0\Longrightarrow f(a\vec x+bf(\vec x))=\vec0\Longrightarrow af(\vec x)-b\vec x=\vec 0,$$
+car $f^2=-\mathrm{id}_E$. Or,
+$$\left\{\begin{align*}a\vec x+bf(\vec x)=\vec0 \\  af(\vec x)-b\vec x=\vec 0\end{align*}\right.\Longrightarrow(a^2+b^2)\vec x=\vec0,$$
+ce qui implique $a^2+b^2=0$ car $\vec x\neq \vec 0$, et, donc $a=b=0$. Ce qui prouve que les vecteurs $\vec x$ et $f(\vec x)$ sont linéairement indépendants.
+   \item  Soit $\vec x_1\neq0$, on note $F$ le sous-espace vectoriel de $E$ engendré par les vecteurs $\vec x_1$ et $f(\vec x_1)$.
+            \begin{enumerate}
+               \item {\it Démontrons que $F$ est stable par $f$.}
+
+Soit $\vec x\in F$, il existe $(a,b)\in\R^2$ tel que $\vec x=a\vec x_1+bf(\vec x_1)$, d'où
+$$f(\vec x)=f(a\vec x_1+bf(\vec x_1))=af(\vec x_1)+bf^2(\vec x)=af(\vec x_1)-b\vec x_1\in F.$$
+D'où la stabilité de $F$ par $f$.
+               \item  Soit $\vec x_2\in E$, on suppose que $\vec x_2\not\notin F$. 
+	       
+	       {\it Démontrons que ${\cal B}=(\vec x_1,f(\vec x_1),\vec x_2,f(\vec x_2))$ est une base de $E$.}
+La dimension de $E$ étant égale à $4$, il suffit de démontrer que les vecteurs sont linéairement indépendants. Supposons qu'il existe $(a_1,b_1,a_2,b_2)\in\R^4$ tel que $$a_1\vec x_1+b_1f(\vec x_1)+a_2\vec x_2+b_2f(\vec x_2)=\vec0,$$
+on a alors,
+$$a_2\vec x_2+b_2f(\vec x_2)\in F,$$
+et, comme $F$ est stable par $f$, 
+$$f(a_2\vec x_2+b_2f(\vec x_2))=a_2f(\vec x_2)-b_2\vec x_2\in F.$$
+Ce qui implique 
+$$(a_2^2+b_2^2)\vec x_2\in F\quad{\hbox{d'où}}\quad a_2^2+b_2^2=0 $$
+car on a supposé $\vec x_2\not\notin F$. On a donc $a_2=b_2=0$ et, par conséquent, $a_1\vec x_1+b_1f(\vec x_1)=0$, or les vecteurs $\vec x_1$ et $f(\vec x_1)$ sont linéairement indépendants, ce qui implique $a_1=b_1=0$. D'où l'indépendance des vecteurs $\vec x_1,f(\vec x_1),\vec x_2,f(\vec x_2)$.
+
+             \end{enumerate}
+   \item {\it Ecrivons la matrice $A$ de $f$ dans la base $\cal B$.}
+
+On calcule les images des vecteurs de la base $\cal B$. On a $f(\vec x_1)=f(\vec x_1)$, $f(f(\vec x_1))=-\vec x_1$, $f(\vec x_2)=f(\vec x_2)$, $f(f(\vec x_2))=-\vec x_2$. D'où la matrice
+$$A=\begin{pmatrix}0&-1&0&0 \\  1&0&0&0 \\ 0&0&0&-1 \\ 0&0&1&0\end{pmatrix}$$
+
+   \item {\it Calculons $\det f$ et $\det(\lambda\mathrm{id}_E-f)$ pour $\lambda\in\R$.}
+
+On a, en développant par blocs,
+$$\det f=\det A=\begin{vmatrix}0&-1&0&0 \\  1&0&0&0 \\ 0&0&0&-1 \\ 0&0&1&0\end{vmatrix}=
+\begin{vmatrix}0&-1 \\  1&0\end{vmatrix}.\begin{vmatrix}0&-1 \\  1&0\end{vmatrix}=1.$$
+De même,
+$$\det (\lambda\mathrm{id}_E-f)=\det (\lambda I_4-A)=\begin{vmatrix}\lambda&-1&0&0 \\  1&\lambda&0&0 \\ 0&0&\lambda&-1 \\ 0&0&1&\lambda\end{vmatrix}=\begin{vmatrix}\lambda&-1 \\  1&\lambda\end{vmatrix}.\begin{vmatrix}\lambda&-1 \\  1&\lambda\end{vmatrix}=(\lambda^2+1)^2.$$
+  \item {\it L'endomorphisme $f$ admet-il des valeurs propres réelles ?}
+
+Les valeurs propres réelles de $f$ sont les réels $\lambda$ qui annulent $\det (\lambda\mathrm{id}_E-f)$, ce sont donc les réels $\lambda$ tels que $\lambda^2+1=0$. Ainsi, $f$ n'admet pas de valeurs propres réelles.
+  \end{enumerate}
+\end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,105 @@
+\exercice{5469, rouget, 2010/07/10}
+\enonce
+Calculer les primitives des fonctions suivantes en précisant le ou les intervalles considérés~:
+$$
+\begin{array}{lllll}
+1)\;\frac{1}{x\ln x}&2)\;\Arcsin x&3)\;\Arctan x&4)\;\Arccos x&5)\;\Argsh x\\
+6)\;\Argch x&7)\;\Argth x&8)\;\ln(1+x^2)&9)\;e^{\Arccos x}&10)\;\cos x\ln(1+\cos x)\\
+11)\;\frac{\Arctan x}{\sqrt{x}}&12)\;\frac{xe^x}{(x+1)^2}&13)\;(\frac{x}{e})^x\ln x&14)\;x^n\ln x\;(n\in\Nn)&15)\;e^{ax}\cos(\alpha x)\;((a,\alpha)\in(\Rr^*)^2)\\
+16)\;\sin(\ln x)\;\mbox{et}\;\cos(\ln x)&17)\;\frac{\sqrt{x^n+1}}{x}&18)\;x^2e^x\sin x
+\end{array}
+$$
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  $\int_{}^{}\frac{1}{x\ln x}\;dx=\ln|\ln x|+C$.
+\item  $\int_{}^{}\Arcsin x\;dx=x\Arcsin x-\int_{}^{}\frac{x}{\sqrt{1-x^2}}\;dx=x\Arcsin x+\sqrt{1-x^2}+C$.
+\item  $\int_{}^{}\Arctan x\;dx=x\Arctan x-\int_{}^{}\frac{x}{1+x^2}\;dx=x\Arctan x-\frac{1}{2}\ln(1+x^2)+C$.
+\item  $\int_{}^{}\Arccos x\;dx=x\Arccos x+\int_{}^{}\frac{x}{\sqrt{1-x^2}}\;dx=x\Arccos x-\sqrt{1-x^2}+C$.
+\item  $\int_{}^{}\Argsh x\;dx=x\Argsh x-\int_{}^{}\frac{x}{\sqrt{1+x^2}}\;dx=x\Argsh x-\sqrt{1+x^2}+C$.
+\item  $\int_{}^{}\Argch x\;dx=x\Argch x-\int_{}^{}\frac{x}{\sqrt{x^2-1}}\;dx=x\Argch x-\sqrt{x^2-1}+C$.
+\item  $\int_{}^{}\Argth x\;dx=x\Argth x-\int_{}^{}\frac{x}{1-x^2}\;dx=x\Argth x+\frac{1}{2}\ln(1-x^2)+C$ (on est sur $]-1,1[$).
+\item  $\int_{}^{}\ln(1+x^2)\;dx=x\ln(1+x^2)-2\int_{}^{}\frac{x^2+1-1}{x^2+1}\;dx=x\ln(1+x^2)-2x+2\Arctan x+C$.
+\item  
+\begin{align*}\ensuremath
+\int_{}^{}e^{\mbox{\small{Arccos}}\;x}\;dx&=xe^{\mbox{\small{Arccos}}\;x}+\int_{}^{}\frac{x}{\sqrt{1-x^2}}e^{\mbox{\small{Arccos}}\;x}\;dx\\
+ &=xe^{\mbox{\small{Arccos}}\;x}-\sqrt{1-x^2}e^{\mbox{\small{Arccos}}\;x}+\int_{}^{}\sqrt{1-x^2}\frac{-1}{\sqrt{1-x^2}}
+ e^{\mbox{\small{Arccos}}\;x}\;dx
+\end{align*}
+
+et donc, $\int_{}^{}e^{\mbox{\small{Arccos}}\;x}\;dx=\frac{1}{2}(xe^{\mbox{\small{Arccos}}\;x}-\sqrt{1-x^2}e^{\mbox{\small{Arccos}}\;x})+C$.
+
+\item 
+\begin{align*}\ensuremath
+\int_{}^{}\cos x\ln(1+\cos x)\;dx&=\sin x\ln(1+\cos x)-\int_{}^{}\sin x\frac{-\sin x}{1+\cos x}\;dx=\sin x\ln(1+\cos x)-\int_{}^{}\frac{\cos^2x-1}{\cos x+1}\;dx\\
+ &=\sin x\ln(1+\cos x)-\int_{}^{}(\cos x-1)\;dx=\sin x\ln(1+\cos x)-\sin x+x+C.
+\end{align*}
+\item  $\int_{}^{}\frac{\Arctan x}{\sqrt{x}}\;dx=2\sqrt{x}\Arctan x-2\int_{}^{}\frac{\sqrt{x}}{x^2+1}\;dx$.
+
+Dans la dernière intégrale, on pose $u=\sqrt{x}$ et donc $x=u^2$ puis, $dx=2u\;du$. On obtient $\int_{}^{}\frac{\sqrt{x}}{x^2+1}\;dx=\int_{}^{}\frac{2u^2}{u^4+1}\;du$. Mais,
+\begin{align*}\ensuremath
+\frac{2u^2}{u^4+1}&=\frac{1}{\sqrt{2}}(\frac{u}{u^2-\sqrt{2}u+1}-\frac{u}{u^2+\sqrt{2}u+1})\\
+ &=\frac{1}{2\sqrt{2}}(\frac{2u-\sqrt{2}}{u^2-\sqrt{2}u+1}-\frac{2u+\sqrt{2}}{u^2+\sqrt{2}u+1})+\frac{1}{2}(\frac{1}{(u-\frac{1}{\sqrt{2}})^2+(\frac{1}{\sqrt{2}})^2}+\frac{1}{(u+\frac{1}{\sqrt{2}})^2+(\frac{1}{\sqrt{2}})^2}).
+\end{align*}
+
+Par suite,
+
+$$\int_{}^{}\frac{2u^2}{u^4+1}\;du=\frac{1}{2\sqrt{2}}\ln(\frac{u^2-\sqrt{2}u+1}{u^2+\sqrt{2}u+1})+\frac{1}{\sqrt{2}}
+(\Arctan(\sqrt{2}u-1)+\Arctan(\sqrt{2}u+1))+C,$$
+
+et donc,
+
+$$\int_{}^{}\frac{\Arctan x}{\sqrt{x}}\;dx=2\sqrt{x}\Arctan x-\frac{1}{\sqrt{2}}\ln(\frac{x-\sqrt{2x}+1}{x+\sqrt{2x}+1})-\sqrt{2}(\Arctan(\sqrt{2x}-1)+\Arctan(\sqrt{2x}+1))+C.$$
+
+\item  $\frac{x}{(x+1)^2}e^x=\frac{1}{x+1}e^x-\frac{1}{(x+1)^2}e^x=\left(\frac{1}{x+1}e^x\right)'$ et donc 
+$\int_{}^{}\frac{xe^x}{(x+1)^2}\;dx=\frac{e^x}{x+1}+C$.
+
+\item  $\int_{}^{}\left(\frac{x}{e}\right)^x\ln x\;dx=\int_{}^{}e^{x\ln x-x}\;d(x\ln x-x)=e^{x\ln x-x}+C=\left(\frac{x}{e}\right)^x\;dx$.
+
+\item  $\int_{}^{}x^n\ln x\;dx=\frac{x^{n+1}}{n+1}\ln x-\frac{1}{n+1}\int_{}^{}x^n\;dx=\frac{x^{n+1}}{n+1}\ln x-\frac{x^{n+1}}{(n+1)^2}+C$.
+
+\item  
+
+\begin{align*}\ensuremath
+\int_{}^{}e^{ax}\cos(\alpha x)\;dx&=\mbox{Re}\left(\int_{}^{}e^{(a+i\alpha)x}\;dx\right)=\mbox{Re}\left(\frac{e^{(a+i\alpha)x}}{a+i\alpha}\right)+C
+=\frac{e^{ax}}{a^2+\alpha^2}\mbox{Re}((a-i\alpha)(\cos(\alpha x)+i\sin(\alpha x))+C\\
+ &=\frac{e^{ax}(a\cos(\alpha x)+\alpha\sin(\alpha x))}{a^2+\alpha^2}+C
+\end{align*}
+
+\item $\int_{}^{}\sin(\ln x)\;dx=x\sin(\ln x)-\int_{}^{}\cos(\ln x)\;dx=x\sin(\ln x)-x\cos(\ln x)-\int_{}^{}\sin(\ln x)\;dx$ et donc 
+
+$\int_{}^{}\sin(\ln x)\;dx=\frac{x}{2}(\sin(\ln x)-\cos(\ln x))+C$.
+
+\item En posant $u=x^n$ et donc $du=nx^{n-1}dx$, on obtient
+
+$$\int_{}^{}\frac{\sqrt{x^n+1}}{x}\;dx=\int_{}^{}\frac{\sqrt{x^n+1}}{x^n}x^{n-1}\;dx=\frac{1}{n}\int_{}^{}\frac{\sqrt{u+1}}{u}\;du,$$
+
+puis en posant $v=\sqrt{u+1}$ et donc $u=v^2-1$ et $du=2vdv$, on obtient
+
+$$\int_{}^{}\frac{\sqrt{u+1}}{u}\;du=\int_{}^{}\frac{v}{v^2-1}\;2vdv=2\int_{}^{}\frac{v^2-1+1}{v^2-1}\;dv
+=2v+\ln\left|\frac{1-v}{1+v}\right|+C.$$
+
+Finalement,
+
+$$\int_{}^{}\frac{\sqrt{x^n+1}}{x}\;dx=\frac{1}{n}(2\sqrt{x^n+1}+\ln\left|
+\frac{1-\sqrt{x^n+1}}{1+\sqrt{x^n+1}}\right|)+C.$$
+
+\item $\int_{}^{}x^2e^x\sin x\;dx=\mbox{Im}(\int_{}^{}x^2e^{(1+i)x}\;dx)$. Or,
+
+\begin{align*}
+\int_{}^{}x^2e^{(1+i)x}\;dx&=x^2\frac{e^{(1+i)x}}{1+i}-\frac{2}{1+i}\int_{}^{}xe^{(1+i)x}\;dx
+=x^2\frac{e^{(1+i)x}}{1+i}-\frac{2}{1+i}(x\frac{e^{(1+i)x}}{1+i}-\int_{}^{}e^{(1+i)x}\;dx)\\
+ &=x^2\frac{(1-i)e^{(1+i)x}}{2}+ixe^{(1+i)x}-i\frac{e^{(1+i)x}}{1+i}+C\\
+ &=e^x(\frac{1}{2}x^2(1-i)(\cos x+i\sin x)+ix(\cos x+i\sin x)-\frac{1}{2}(1+i)(\cos x+i\sin x)+C.
+\end{align*}
+
+Par suite,
+
+$$\int_{}^{}x^2e^x\sin x\;dx=e^x(\frac{x^2}{2}(\cos x+\sin x)-x\sin x-\frac{1}{2}(\cos x-\sin x))+C.$$
+
+\end{enumerate}
+\fincorrection
+\finexercice

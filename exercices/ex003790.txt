@@ -1,0 +1,33 @@
+\exercice{3790, quercia, 2010/03/11}
+\enonce[Comparaison de valeurs propres]
+
+Soient $h \in \mathcal{L}(E)$ autoadjoint, $\vec x_0 \in E$ unitaire, $p$ la projection
+orthogonale sur $\text{vect}(\vec x_0)$, et $f = h+p$.
+
+On note $\lambda_1 \le \dots \le \lambda_n$ les valeurs propres de $h$ et
+$\mu_1 \le \dots \le \mu_n$ celles de $f$.
+
+Montrer que $\lambda_1 \le \mu_1 \le \dots \le \lambda_n \le \mu_n$.
+
+
+\finenonce
+
+\noindication
+
+\correction
+Soit
+$(\vec h_i)$ une base diagonale pour $h$,
+$H_i = \text{vect}\{\vec h_1, \dots, \vec h_i\}$
+et $(\vec f_i)$, $F_i$ idem pour $f$.
+
+Pour $\vec x \in F_k \cap H_{k-1}^\perp$,
+$\lambda_k\|\vec x\,\|^2 + (\vec x\mid\vec x_0)^2 \le
+ (h(\vec x)\mid\vec x) + (\vec x\mid\vec x_0)^2 =
+ (f(\vec x)\mid\vec x) \le \mu_k\|\vec x\,\|^2$.
+
+Pour $\vec x \in H_{k+1} \cap F_{k-1}^\perp \cap \vec x_0^\perp$,
+$\mu_k\|\vec x\,\|^2 \le (f(\vec x)\mid\vec x) = (h(\vec x)\mid\vec x)
+ \le \lambda_{k+1}\|\vec x\,\|^2$.
+\fincorrection
+
+\finexercice

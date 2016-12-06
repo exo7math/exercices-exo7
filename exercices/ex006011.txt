@@ -1,0 +1,27 @@
+\exercice{6011, quinio, 2011/05/20}
+
+\enonce
+Si dans une population une personne sur cent est un centenaire,
+quelle est la probabilité de trouver au moins un centenaire parmi $100$
+personnes choisies au hasard ? Et parmi $200$ personnes ?
+\finenonce
+
+\noindication
+
+\correction
+La probabilité $p=\frac{1}{100}$ étant faible, on peut appliquer la
+loi de Poisson d'espérance $100p=1$ au nombre $X$ de centenaires pris
+parmi cent personnes. On cherche donc: $P[X\geq 1]=1-P[X=0]=1-e^{-1}\simeq
+63\%$.
+
+Sur un groupe de $200$ personnes: l'espérance est 2 donc: $P[X'\geq 1]=1-e^{-2}\simeq 86\%.$
+La probabilité des événements : $[X' =1]$ et $[X' =2]$
+sont les mêmes et valent: $0.14$.
+Ainsi, sur 200 personnes, la probabilité de trouver exactement un
+centenaire vaut $0.14$, égale à la probabilité de trouver
+exactement deux centenaires. Cette valeur correspond au maximum de probabilité 
+pour une loi de Poisson d'espérance $2$ et se généralise.
+Si $X$ obeit à une loi de Poisson d'espérance $K$, alors le maximum de
+probabilité est obtenu pour les événements $[X=K-1]$ et $[X=K].$
+\fincorrection
+\finexercice

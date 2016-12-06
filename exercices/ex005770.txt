@@ -1,0 +1,153 @@
+\exercice{5770, rouget, 2010/10/16}
+\enonce[**** I (très long)]
+Montrer que pour tout réel $x$ strictement positif, $\int_{0}^{+\infty}\frac{e^{-xt}}{1+t^2}\;dt =\int_{0}^{+\infty}\frac{\sin t}{x+t}\;dt$ et en déduire $\int_{0}^{+\infty}\frac{\sin t}{t}\;dt$
+(indication : trouver une équation différentielle du second ordre vérifiée par ces deux fonctions).
+\finenonce
+
+\noindication
+
+\correction
+\textbf{Existence de $\int_{0}^{+\infty}\frac{e^{-tx}}{1+t^2}\;dt$.} Soit $x\geqslant0$. La fonction $t\mapsto\frac{e^{-tx}}{1+t^2}$ est continue sur $[0,+\infty[$ et est dominée par $\frac{1}{t^2}$ quand $t$ tend vers $+\infty$. Cette fonction est donc intégrable sur $[0,+\infty[$. Donc $\int_{0}^{+\infty}\frac{e^{-tx}}{1+t^2}\;dt$ existe pour tout réel positif $x$ et on pose $\forall x\geqslant 0$, $f(x)=\int_{0}^{+\infty}\frac{e^{-tx}}{1+t^2}\;dt$.
+
+\textbf{Continuité de $f$ sur $[0,+\infty[$.} Soit $\begin{array}[t]{cccc}
+\Phi~:&[0,+\infty[\times[0,+\infty[&\rightarrow&\Rr\\
+ &(x,t)&\mapsto&\frac{e^{-tx}}{1+t^2}
+ \end{array}$.
+ 
+
+\textbullet~Pour chaque $x\in[0,+\infty[$, la fonction $t\mapsto\Phi(x,t)$ est continue par morceaux sur $[0,+\infty[$.
+ 
+
+\textbullet~Pour chaque $t\in[0,+\infty[$, la fonction $x\mapsto\Phi(x,t)$ est continue sur $[0,+\infty[$.
+ 
+
+\textbullet~Pour chaque $(x,t)\in[0,+\infty[\times[0,+\infty[$,
+
+\begin{center}
+$|\Phi(x,t)|=\frac{e^{-tx}}{1+t^2}\;dt\leqslant\frac{1}{1+t^2}=\varphi_0(t)$.
+\end{center}
+
+De plus, la fonction $\varphi_0$ est continue et intégrable sur $[0,+\infty[$ car équivalente à $\frac{1}{t^2}$ quand $t$ tend vers $+\infty$.
+
+D'après le théorème de continuité des intégrales à paramètres, $f$ est continue sur $[0,+\infty[$. 
+
+\textbf{Dérivée seconde de $f$.} Soit $a>0$. On pose $\begin{array}[t]{cccc}
+\Phi~:&[0,+\infty[\times[a,+\infty[&\rightarrow&\Rr\\
+ &(x,t)&\mapsto&\frac{e^{-tx}}{1+t^2}
+ \end{array}$.
+ 
+
+En plus de ce qui précède, $\Phi$ admet sur $[a,+\infty[\times[0,+\infty[$ des dérivées partielles d'ordre $1$ et $2$ définies par
+ 
+\begin{center}
+$\forall(x,t)\in[a,+\infty[\times[0,+\infty[$, $\frac{\partial\Phi}{\partial x}(x,t)=-\frac{te^{-tx}}{1+t^2}$ et $\frac{\partial^2\Phi}{\partial x^2}(x,t)=\frac{t^2e^{-tx}}{1+t^2}$.
+\end{center}
+
+\textbullet~Pour chaque $x\in[a,+\infty[$, les fonctions $t\mapsto\frac{\partial\Phi}{\partial x}(x,t)$ et $t\mapsto\frac{\partial^2\Phi}{\partial x^2}(x,t)$ sont continues par morceaux sur $[0,+\infty[$.
+
+\textbullet~Pour chaque $t\in[0,+\infty[$, les fonctions $x\mapsto\frac{\partial\Phi}{\partial x}(x,t)$ et $x\mapsto\frac{\partial^2\Phi}{\partial x^2}(x,t)$ sont continues sur $[a,+\infty[$.
+
+\textbullet~Pour chaque $(x,t)\in[a,+\infty[\times[0,+\infty[$,
+
+\begin{center}
+$\left|\frac{\partial\Phi}{\partial x}(x,t)\right|=\frac{te^{-tx}}{1+t^2}\leqslant\frac{te^{-at}}{1+t^2}=\varphi_1(t)$ et $\left|\frac{\partial^2\Phi}{\partial x}(x,t)\right|=\frac{t^2e^{-tx}}{1+t^2}\leqslant\frac{t^2e^{-at}}{1+t^2}=\varphi_2(t)$.
+\end{center}
+
+De plus, les fonctions $\varphi_1$ et $\varphi_2$ sont continues par morceaux et intégrables sur $[0,+\infty[$ car négligeables devant $\frac{1}{t^2}$ quand $t$ tend vers $+\infty$.
+
+D'après une généralisation du théorème de dérivation des intégrales à paramètres, $f$ est de classe $C^2$ sur $[a,+\infty[$ et ses dérivées premières et secondes s'obtiennent par dérivation sous le signe somme. Ceci étant vrai pour tout $a>0$, $f$ est de classe $C^2$ sur $]0,+\infty[$ et
+
+\begin{center}
+\shadowbox{
+$\forall x>0$, $f'(x)=\int_{0}^{+\infty}\frac{te^{-tx}}{1+t^2}\;dt$ et $f''(x)=\int_{0}^{+\infty}\frac{t^2e^{-tx}}{1+t^2}\;dt$.
+}
+\end{center}
+
+\textbf{Equation différentielle vérifiée par $f$.} Pour $x>0$,
+
+\begin{center}
+$f''(x)+f(x)=\int_{0}^{+\infty}\frac{t^2e^{-tx}}{1+t^2}\;dt+\int_{0}^{+\infty}\frac{e^{-tx}}{1+t^2}\;dt=\int_{0}^{+\infty}e^{-tx}\;dt=\left[-\frac{e^{-tx}}{x}\right]_0^{+\infty}=\frac{1}{x}$.
+\end{center}
+
+\begin{center}
+\shadowbox{
+$\forall x>0$, $f(x)+f''(x)=\frac{1}{x}$.
+}
+\end{center}
+
+\textbf{Existence de $\int_{0}^{+\infty}\frac{\sin t}{x+t}\;dt$.} Si $x=0$, l'exercice \ref{ex:rou3}, 1)  montre que $\int_{0}^{+\infty}\frac{\sin t}{t}\;dt$ est une intégrale convergente.
+
+Si $x>0$, une intégration par parties fournit pour $A>0$
+
+\begin{center}
+$\int_{0}^{A}\frac{\sin t}{t+x}\;dt=-\frac{\cos A}{A+x}+\frac{1}{x}-\int_{0}^{A}\frac{\cos t}{(t+x)^2}\;dt$.
+\end{center}
+
+La fonction $t\mapsto\frac{\cos t}{(t+x)^2}$ est continue sur $[0,+\infty[$ et est dominée par $\frac{1}{t^2}$ quand $t$ tend vers $+\infty$. Cette fonction est donc intégrable sur $[0,+\infty[$. On en déduit que la fonction $A\mapsto\int_{0}^{A}\frac{\cos t}{(t+x)^2}\;dt$ a une limite réelle quand $A$ tend vers $+\infty$ et il en est de même de la fonction $A\mapsto\int_{0}^{A}\frac{\sin t}{t+x}\;dt$. Ainsi, pour chaque $x\in[0,+\infty[$, $\int_{0}^{+\infty}\frac{\sin t}{t+x}\;dt$ est une intégrale convergente. Pour $x\geqslant 0$, on peut donc poser $g(x)=\int_{0}^{+\infty}\frac{\sin t}{t+x}\;dt$.
+
+\textbf{Equation différentielle vérifiée par $g$.} Pour $x>0$, on pose $u=x+t$. on obtient
+
+\begin{center}
+$g(x)=\int_{0}^{+\infty}\frac{\sin t}{t+x}\;dt=\int_{x}^{+\infty}\frac{\sin(u-x)}{u}\;du=\cos x\int_{x}^{+\infty}\frac{\sin u}{u}\;du-\sin x\int_{x}^{+\infty}\frac{\cos u}{u}\;du$.
+\end{center}
+
+(car toutes les intégrales considérées sont convergentes). Maintenant, les fonctions $c~:~u\mapsto\frac{\cos u}{u}$ et $s~:~u\mapsto\frac{\sin u}{u}$ sont continues sur $]0,+\infty[$ et admettent donc des primitives sur $]0,+\infty[$. On note $C$ (respectivement $S$) une primitive de la fonction $c$ (respectivement $s$) sur $]0,+\infty[$). Pour tout réel $x>0$, $\int_{x}^{+\infty}\frac{\cos u}{u}\;du=\lim_{t \rightarrow +\infty}C(t)-C(x)$. On en déduit que la fonction $x\mapsto\int_{x}^{+\infty}\frac{\cos u}{u}\;du$ est de classe $C^1$ sur $]0,+\infty[$, de dérivée $-c$. De même, la fonction $x\mapsto\int_{x}^{+\infty}\frac{\sin u}{u}\;du$ est de classe $C^1$ sur $]0,+\infty[$, de dérivée $-s$. Mais alors la fonction $g$ est de classe $C^1$ sur $]0,+\infty[$ et pour tout réel $x>0$,
+
+\begin{align*}\ensuremath
+g'(x)&=-\sin x\int_{x}^{+\infty}\frac{\sin u}{u}\;du-\frac{\sin x\cos x}{x}-\cos x\int_{x}^{+\infty}\frac{\cos u}{u}\;du+\frac{\cos x\sin x}{x}\\
+ &=-\cos x\int_{x}^{+\infty}\frac{\cos u}{u}\;du-\sin x\int_{x}^{+\infty}\frac{\sin u}{u}\;du.
+\end{align*}
+
+La fonction $g'$ est encore de classe $C^1$ sur $]0,+\infty[$ et pour tout réel $x>0$,
+
+\begin{align*}\ensuremath
+g'(x)&=\sin x\int_{x}^{+\infty}\frac{\cos u}{u}\;du+\frac{\cos^2 x}{x}-\cos x\int_{x}^{+\infty}\frac{\sin u}{u}\;du+\frac{\sin^2 x}{x}\\
+ &=\frac{1}{x}-g(x).
+\end{align*}
+
+\begin{center}
+\shadowbox{
+$\forall x>0$, $g''(x)+g(x)=\frac{1}{x}$.
+}
+\end{center}
+
+\textbf{Egalité de $f$ et $g$ sur $]0,+\infty[$.} Pour tout réel $x>0$, $(f-g)''(x)+(f-g)(x)=0$. Donc il existe deux réels $\lambda$ et $\mu$ tels que $\forall x>0$, $(f-g)(x)=\lambda\cos x+\mu\sin x=A\cos(x+\varphi)$ pour $A=\sqrt{\lambda^2+\mu^2}$ et pour un certain $\varphi$.
+
+Maintenant, pour $x>0$, $|f(x)|=\int_{0}^{+\infty}\frac{e^{-tx}}{1+t^2}\;dt\leqslant\int_{0}^{+\infty}e^{-tx}\;dt=\frac{1}{x}$ et on en déduit que $\lim_{x \rightarrow +\infty}\frac{1}{x}=0$.
+
+Ensuite, $|g(x)\leqslant\left|\int_{x}^{+\infty}\frac{\sin u}{u}\;du\right|+\left|\int_{x}^{+\infty}\frac{\cos u}{u}\;du\right|$. Puisque les intégrales $\int_{1}^{+\infty}\frac{\sin u}{u}\;du$ et $\int_{1}^{+\infty}\frac{\cos u}{u}\;du$ sont des intégrales convergentes, on a $\lim_{x \rightarrow +\infty}\int_{x}^{+\infty}\frac{\sin u}{u}\;du=\lim_{x \rightarrow +\infty}\int_{x}^{+\infty}\frac{\cos u}{u}\;du=0$ et donc aussi $\lim_{x \rightarrow +\infty}g(x)=0$.
+
+Finalement, $\lim_{x \rightarrow +\infty}(f(x)-g(x))=0$ ce qui impose $A=0$ et donc $\forall x>0$, $f(x)=g(x)$.
+
+\begin{center}
+\shadowbox{
+$\forall x>0$, $\int_{0}^{+\infty}\frac{e^{-tx}}{1+t^2}\;dt=\int_{0}^{+\infty}\frac{\sin t}{t+x}\;dt$.
+}
+\end{center}
+
+\textbf{Continuité de $g$ en $0$ et valeur de $\int_{0}^{+\infty}\frac{\sin t}{t}\;dt$.} Pour $x>0$,
+
+\begin{align*}\ensuremath
+g(x)&=\cos x\int_{x}^{+\infty}\frac{\sin u}{u}\;du-\sin x\int_{x}^{+\infty}\frac{\cos u}{u}\;du\\
+ &=\cos x\int_{x}^{+\infty}\frac{\sin u}{u}\;du-\sin x\int_{1}^{+\infty}\frac{\cos u}{u}\;du+\sin x\int_{x}^{1}\frac{1-\cos u}{u}\;du-\sin x\ln x.
+\end{align*}
+
+Quand $x$ tend vers $0$, $\sin x\ln x\sim x\ln x$ et donc $\lim_{x \rightarrow 0}\sin x\ln x=0$. Ensuite, la fonction $u\mapsto\frac{1-\cos u}{u}$ est intégrable sur $]0,1]$ car continue sur $]0,1]$ et prolongeable par continuité en $0$. On en déduit que $\lim_{x \rightarrow 0}\sin x\int_{x}^{1}\frac{1-\cos u}{u}\;du=0\times\int_{0}^{1}\frac{1-\cos u}{u}\;du=0$. Il reste
+
+\begin{center}
+$\displaystyle\lim_{\substack{x\rightarrow0\\ x>0}}g(x)=\int_{0}^{+\infty}\frac{\sin t}{t}\;dt=g(0)$.
+\end{center}
+
+La fonction $g$ est donc continue en $0$. Puisque la fonction $f$ est également continue en $0$, on en déduit que
+
+\begin{center}
+$g(0)=\displaystyle\lim_{\substack{x\rightarrow0\\ x>0}}g(x)=\displaystyle\lim_{\substack{x\rightarrow0\\ x>0}}f(x)=f(0)=\int_{0}^{+\infty}\frac{1}{1+t^2}\;dt=\frac{\pi}{2}$.
+\end{center}
+
+\begin{center}
+\shadowbox{
+$\forall x\geqslant0$, $\int_{0}^{+\infty}\frac{e^{-tx}}{1+t^2}\;dt=\int_{0}^{+\infty}\frac{\sin t}{t+x}\;dt$ et en particulier, $\int_{0}^{+\infty}\frac{\sin t}{t}\;dt=\frac{\pi}{2}$.
+}
+\end{center}
+\fincorrection
+\finexercice

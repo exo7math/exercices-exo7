@@ -1,0 +1,47 @@
+\exercice{5963, tumpach, 2010/11/11}
+\enonce
+Calculer la transform\'ee de Fourier de la gaussienne d\'efinie,
+pour $x\in\mathbb{R}^n$, par $f(x) = e^{-\frac{a |x|^2}{2}}$, o\`u
+$a>0$.
+\finenonce
+
+\noindication
+
+\correction
+Supposons tout d'abord $n=1$. Soit la gaussienne d\'efinie pour
+$x\in\mathbb{R}$ par $f(x) = e^{-\frac{a x^2}{2}}$, o\`u $a>0$.
+Posons $$h(t) = \int_{\mathbb{R}} f(x) e^{-2\pi i tx}\,dx =
+\int_{\mathbb{R}} e^{-\frac{a x^2}{2}} e^{-2\pi i tx}\,dx.
+$$ D'apr\`es le th\'eor\`eme de convergence domin\'ee, $h$ est
+d\'erivable et
+\begin{eqnarray*} h'(t) &=& -2\pi i
+\int_{\mathbb{R}}x e^{-\frac{a x^2}{2}} e^{-2\pi i tx}\,dx =
+\left[2\pi i \frac{1}{a} e^{-\frac{a x^2}{2}}e^{-2\pi i tx}
+\right]_{-\infty}^{+\infty} + (2\pi i)^2 t \frac{1}{a}
+\int_{\mathbb{R}}e^{-\frac{a
+x^2}{2}}  e^{-2\pi i tx}\,dx\\
+& = & - (2\pi)^2 \frac{1}{a}t\cdot \,h(t).
+\end{eqnarray*}
+De plus, $$h(0) = \int_{\mathbb{R}} f(x) \,dx =  \int_{\mathbb{R}}
+ e^{-\frac{a x^2}{2}} \,dx = \int_{\mathbb{R}} e^{-u^2} \,du
+ \frac{\sqrt{2}}{\sqrt{a}} =  \frac{\sqrt{2\pi}}{\sqrt{a}}.$$
+La solution de l'\'equation diff\'erentielle $h'(t)  =  - (2\pi)^2
+\frac{1}{a}t \cdot\,h(t)$ avec condition initiale $h(0) =
+\frac{\sqrt{2\pi}}{\sqrt{a}}$ est
+$$
+h(t) = \sqrt{\frac{2\pi}{a}} e^{-\frac{(2\pi)^2}{a}
+\frac{t^2}{2}}.
+$$
+
+Pour $n>1$, on a~:
+\begin{eqnarray*}
+\int_{\mathbb{R}^n} f(x) e^{-2\pi i (t , x)}\,dx &=&
+\int_{\mathbb{R}^n} e^{-\frac{a |x|^2}{2}} e^{-2\pi i (t,
+x)}\,dx\\
+& = & \prod_{i = 1}^n \int_{\mathbb{R}}e^{-\frac{a x_i^2}{2}}
+e^{-2\pi i t_i
+x_i}\,dx_i = \prod_{i = 1}^n h(t_i) = \left(\sqrt{\frac{2\pi}{a}}\right)^{n} e^{-\frac{(2\pi)^2}{a}\frac{|t|^2}{2}}\\
+\end{eqnarray*}
+\fincorrection
+
+\finexercice

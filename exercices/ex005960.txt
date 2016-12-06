@@ -1,0 +1,48 @@
+\exercice{5960, tumpach, 2010/11/11}
+\enonce
+Soient $a, b>0$, et $f$ et $g$ les fonctions d\'efinies sur
+$\mathbb{R}^n$ par $f(x) = e^{-\frac{a |x|^2}{2}}$ et $g(x) =
+e^{-\frac{b |x|^2}{2}}$. Calculer $f*g(x)$.
+\finenonce
+
+\noindication
+
+\correction
+Soient $a, b>0$, et $f$ et $g$ les fonctions d\'efinies sur
+$\mathbb{R}^n$ par $f(x) = e^{-\frac{a |x|^2}{2}}$ et $g(x) =
+e^{-\frac{b |x|^2}{2}}$. On a
+\begin{eqnarray*}
+f*g(x)  =  \int_{\mathbb{R}^n} f(x-y)\,g(y)\,dy =
+\int_{\mathbb{R}^n} e^{-\left(\frac{a|x-y|^2 +
+b|y|^2}{2}\right)}\, dy
+\end{eqnarray*}
+Or
+\begin{eqnarray*}
+a|x-y|^2 + b|y|^2 &=& \sum_{i=1}^n a x_i^2 + (a + b) y_i^2 -2a x_i
+y_i\\
+& = & \sum_{i=1}^n a x_i^2 + (a + b)\left(y_i - \frac{a}{a+b} x_i
+\right)^2 - (a+b) \left(\frac{a x_i}{a+b} \right)^2\\
+& = & \sum_{i=1}^n \left(a - \frac{a^2}{a+b}\right) x_i^2 + (a +
+b)\left(y_i
+- \frac{a}{a+b} x_i \right)^2\\
+& = & \frac{ab}{a + b}|x|^2 +
+(a+b)\left|y-\frac{a}{a+b}x\right|^2.
+\end{eqnarray*}
+Ainsi
+\begin{eqnarray*}
+f*g(x)  & = & e^{-\frac{ab}{a +
+b}\frac{|x|^2}{2}}\int_{\mathbb{R}^n}
+e^{-\frac{(a+b)}{2}\left|y-\frac{a}{a+b}x\right|^2}\,dy =
+e^{-\frac{ab}{a + b}\frac{|x|^2}{2}}
+ \int_{\mathbb{R}^n} e^{-\frac{(a + b)}{2} |z|^2}\,dz
+ \end{eqnarray*}
+car la mesure de Lebesgue est invariante par translation. En
+utilisant $\int_{\mathbb{R}} e^{-t^2} \,dt = \sqrt{\pi}$, on
+obtient alors~:
+$$
+f*g(x) = \left(\frac{2\pi}{a + b}\right)^{\frac{n}{2}}
+e^{-\frac{ab}{a + b}\frac{|x|^2}{2}}.
+$$
+\fincorrection
+
+\finexercice

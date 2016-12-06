@@ -1,0 +1,56 @@
+\exercice{7005, megy, 2016/04/26}
+
+
+\enonce[Point de Vecten]
+
+Soit $ABC$ un triangle direct. On construit trois carrés qui s'appuient extérieurement sur les côtés $[AB]$, $[BC]$ et $[CA]$. Les centres respectifs de ces carrés sont notés $P$, $Q$ et $R$. Le but est de montrer que $(AQ)$, $(BR)$ et $(CP)$ sont concourantes. Le point de concours est appelé \emph{point de Vecten} du triangle.
+
+\begin{enumerate}
+
+\item Montrer que dans le carré construit sur $[AB]$, on a $p=\frac{a-ib}{1-i}$.
+
+ Démontrer des relations analogues pour les autres carrés.
+
+\item Montrer que $ABC$ et $PQR$ ont même centre de gravité.
+
+\item Montrer que $(AQ)$ et $(PR)$ sont perpendiculaires. Conclure.
+
+\end{enumerate}
+
+\finenonce
+
+
+
+\noindication
+
+
+
+\correction
+
+\begin{enumerate}
+
+\item Dans chaque carré, les sommets sont obtenus les uns des autres par rotations de $\pi/2$ par rapport aux centres. On a donc $a-p = i(b-p)$, $b-q = i(c-q)$ et $c-r = i(a-r)$. En développant ces expressions on obtient $p=\frac{a-ib}{1-i}$, $q=\frac{b-ic}{1-i}$ et $r=\frac{c-ia}{1-i}$.
+
+
+
+\item Le centre de gravité de $ABC$ en est l'isobarycentre, donc son affixe est $\frac13(a+b+c)$. Celui de $PQR$ a pour affixe $\frac13(p+q+r)$. Il s'agit donc simplement de montrer que $a+b+c=p+q+r$. Or d'après la question précédente, $p+q+r =  \frac{a-ib+b-ic+c-ia}{1-i} = a+b+c$, ce qu'il fallait démontrer.
+
+
+
+\item Il s'agit de montrer que l'argument de $\frac{q-a}{r-p}$ est $\pm \pi/2$. Pour cela, il suffit de calculer:
+\[
+\frac{q-a}{r-p}
+=\frac{b-a+i(a-c)}{c-a+i(b-a)}
+=-i
+\]
+
+On remarque que non seulement les segments sont perpendiculaires, mais ils sont de même longueur (ce qui n'était pas demandé).
+
+La question précédente montre que la droite $(AQ)$ est la hauteur  de $PQR$ issue de $Q$. Le même raisonnement appliqué aux deux autres carrés permet de montrer que $(AQ)$, $(BR)$ et $(CP)$ sont les hauteurs de $PQR$. Elles sont donc concourantes.
+
+\end{enumerate}
+
+\fincorrection
+
+\finexercice
+

@@ -1,0 +1,34 @@
+\exercice{4186, quercia, 2010/03/11}
+\enonce[Mines MP 2001]
+
+Soit une fonction $f$ de classe $\mathcal{C}^2$ sur le disque unité du plan, telle que son laplacien
+$\frac{\partial^2 f}{\partial x^2} + \frac{\partial^2 f}{\partial y^2}$ soit nul.
+
+\begin{enumerate}
+  \item Montrer $ \int_{\theta=0}^{2\pi}f(r\cos\theta,r\sin\theta)\,d\theta$
+    ne dépend pas de $r\in[0,1]$.
+    
+
+  \item Calculer alors $\iint_{D_r} f(x,y)\,d xd y$ $D_r$ étant le disque fermé
+    de centre $0$ et de rayon $r$.
+    
+ 
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item On pose $g(r,\theta) = f(r\cos\theta,r\sin\theta)$,
+    $h(r) =  \int_{\theta=0}^{2\pi}f(r\cos\theta,r\sin\theta)\,d\theta$ et l'on a
+    $0=\Delta f = \frac{\partial^2 g}{\partial r^2} + \frac1r\frac{\partial g}{\partial r} + \frac1{r^2}\frac{\partial^2 g}{\partial \theta^2}$
+    d'où~:
+    $$0=h''(r) + \frac1rh'(r) + \frac1{r^2}\Bigl[\frac{\partial g}{\partial \theta}(r,\theta)\Bigr]_{\theta=0}^{2\pi}$$
+    Le crochet est nul par $2\pi$-périodicité de $g$ donc $h''(r) + \frac1rh'(r) = 0$
+    soit $h'(r) = \frac Kr$ et $K=0$ par continuité de $h'$ en $0$.
+  \item $\pi r^2f(0,0)$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

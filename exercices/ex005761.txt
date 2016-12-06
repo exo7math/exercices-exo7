@@ -1,0 +1,107 @@
+\exercice{5761, rouget, 2010/10/16}
+\enonce[**** I Développement en série entière de la fonction $x\mapsto\tan x$]
+Pour $x\in\left]-\frac{\pi}{2},\frac{\pi}{2}\right[$, on pose $f(x) =\tan x$.
+
+\begin{enumerate}
+ \item  Montrer qu'il existe une suite de polynômes $(P_n)_{n\in\Nn}$ telle que pour tout entier naturel $n$, $f^{(n)}= P_n\circ f$ et que les $P_n$ sont à coefficients entiers naturels. (Utiliser $\tan' = 1+\tan^2$).
+
+\item  En utilisant la formule de \textsc{Taylor}-\textsc{Laplace}, montrer que la série de \textsc{Taylor} à l'origine de $f$ a un rayon de convergence $R$ supérieur ou égal à $\frac{\pi}{2}$.
+
+\item  On note $a_n$ les coefficients du développement précédent et $g$ la somme de la série entière associée à la suite $(a_n)_{n\in\Nn}$. Montrer que pour tout entier naturel non nul $n$, $(n+1)a_{n+1}= \sum_{k=0}^{n}a_ka_{n-k}$. En déduire que pour tout $x$ de $\left]-\frac{\pi}{2},\frac{\pi}{2}\right[$, $f(x) = g(x)$ et que $R=\frac{\pi}{2}$.
+
+\item  Calculer $a_0$, $a_1$, $a_2$,..., $a_7$.
+
+\item  Vérifier que la fonction $x\mapsto\tanh x$ est développable en série entière. Préciser le rayon et la valeur des coefficients en fonction des $a_n$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  La fonction $f$ est de classe $C^\infty$ sur $\left]-\frac{\pi}{2},\frac{\pi}{2}\right[$ en tant que quotient de fonctions de classe $C^\infty$ sur $\left]-\frac{\pi}{2},\frac{\pi}{2}\right[$ dont le dénominateur ne s'annule pas sur $\left]-\frac{\pi}{2},\frac{\pi}{2}\right[$ et de plus $f'= 1 + f^2$.
+
+Montrons par récurrence que pour tout naturel $n$, il existe un polynôme $P_n$ à coefficients entiers naturels tel que $f^{(n)}= P_n\circ f$ (ou encore $\forall x\in\left]-\frac{\pi}{2},\frac{\pi}{2}\right[$, $\tan^{(n)}(x) = P_n(\tan x)$).
+
+\textbullet~C'est vrai pour $n=0$ avec $P_0=X$ et pour $n =1$ avec $P_1= 1+X^2$.
+
+\textbullet~Soit $n\geqslant1$. Supposons que pour tout $k\in\llbracket0,n\rrbracket$, il existe un polynôme $P_k$ à coefficients entiers naturels tel que $f^{(k)}= P_k\circ f$. D'après la formule de \textsc{Leibniz},
+
+\begin{center}
+$f^{(n+1)}=(1+f^2)^{(n)}= (f^2)^{(n)}=\sum_{k=0}^{n}\dbinom{n}{k}f^{(k)}f^{(n-k)}=\left(\sum_{k=0}^{n}\dbinom{n}{k}P_kP_{n-k}\right)\circ f$
+\end{center}
+
+et le polynôme $P_{n+1}=\sum_{k=0}^{n}\dbinom{n}{k}P_kP_{n-k}$ est un polynôme à coefficients entiers naturels tel que $\tan^{(n+1)}=P_{n+1}\circ f$.
+
+\textbf{Remarque.} On aurait pu aussi dériver l'égalité $f^{(n)}=P_n\circ f$ pour obtenir $f^{(n+1)}= f'\times P_n'\circ f = (P_1\times P_n')\circ f$ mais on a déjà dans l'idée une relation de récurrence sur les coefficients du développement de $\tan$ qui n'est pas fournie par cette dernière égalité.
+
+\item  Soient $x\in\left[0,\frac{\pi}{2}\right[$ et $n\in\Nn$. La formule de \textsc{Taylor}-\textsc{Laplace} à l'ordre $n$ en $0$ fournit
+
+\begin{center}
+$f(x)=\sum_{k=0}^{n}\frac{f^{(k)}(0)}{k!}x^k+\int_{0}^{x}\frac{(x-t)^n}{n!}f^{(n+1)}(t)\;dt $.
+\end{center}
+
+Le 1) montre que pour tout réel $t$ de $\left[0,\frac{\pi}{2}\right[$ et tout entier naturel $k$, $f^{(k)}(t)=P_{k}(\tan t)\geqslant 0$.
+
+Donc, d'une part $\frac{f^{(k)}(0)}{k!}x^k\geqslant0$ et d'autre part,
+
+\begin{center}
+$\sum_{k=0}^{n}\frac{f^{(k)}(0)}{k!}x^k=f(x)-\int_{0}^{x}\frac{(x-t)^n}{n!}f^{(n+1)}(t)\;dt$.
+\end{center}
+
+La suite des sommes partielles de la série de terme général $\frac{f^{(k)}(0)}{k!}x^k\geqslant0$ est majorée et donc la série de terme général $\frac{f^{(k)}(0)}{k!}x^k$ converge.
+
+Ainsi, la série de \textsc{Taylor} de $f$ à l'origine converge pour tout réel $x$ de $\left[0,\frac{\pi}{2}\right[$. Son rayon de convergence $R$ est donc supérieur ou égal à $\frac{\pi}{2}$ (et donc la série de terme général $\frac{f^{(k)}(0)}{k!}x^k$ converge aussi pour $x\in\left]-\frac{\pi}{2},0\right]$). Il n'y a par contre aucune raison pour le moment pour que sa somme soit $f$.
+
+\item  Pour $n$ entier naturel donné, posons $a_n =\frac{f^{(n)}(0)}{n!}$ puis pour $x$ dans $\left]-\frac{\pi}{2},\frac{\pi}{2}\right[$, posons $g(x) =\sum_{n=0}^{+\infty}a_nx_n$.
+
+On a vu que $\forall n\in\Nn^*$, $P_{n+1}=\sum_{k=0}^{n}P_kP_{n-k}$. On divise les deux membres de ces égalités par $n!$ et on prend la valeur en $0$ ($=\tan0$). On obtient
+
+\begin{center}
+$\forall n\in\Nn^*$, $(n+1)a_{n+1}=a_ka_{n-k}$ et aussi $a_0 = 0$ et $a_1 = 1$.
+\end{center}
+
+Donc, pour $x\in\left]-\frac{\pi}{2},\frac{\pi}{2}\right[$,
+
+\begin{align*}\ensuremath
+g'(x)&=\sum_{n=0}^{+\infty}(n+1)a_{n+1}x^n=1+\sum_{n=1}^{+\infty}\left(\sum_{k=0}^{n}a_ka_{n-k}\right)x^n =1+\sum_{n=0}^{+\infty}\left(\sum_{k=0}^{n}a_ka_{n-k}\right)x^n=1 +\left(\sum_{n=0}^{+\infty}a_nx^n\right)^2\\
+ &= 1 + g^2(x).
+\end{align*}
+
+De plus, $g(0) = a_0 = 0$.
+
+Pour $x\in\left]-\frac{\pi}{2},\frac{\pi}{2}\right[$, posons alors $h(x) =\Arctan(g(x))$. La fonction $h$ est dérivable sur $\left]-\frac{\pi}{2},\frac{\pi}{2}\right[$ et pour $x\in\left]-\frac{\pi}{2},\frac{\pi}{2}\right[$
+
+\begin{center}
+$h'(x)=\frac{g'(x)}{1+g^2(x)}= 1$ puis $h(x) =h(0)+(x-0) = x$.
+\end{center}
+
+Ainsi, pour tout $x\in\left]-\frac{\pi}{2},\frac{\pi}{2}\right[$, $g(x) =\tan x = f(x)$. Ceci montre déjà que $f$ est développable en série entière sur $\left]-\frac{\pi}{2},\frac{\pi}{2}\right[$. Mais quand $x$ tend vers $\frac{\pi}{2}$  par valeurs inférieures, $g(x) = f(x)$ tend vers $+\infty$ et donc $R\leqslant\frac{\pi}{2}$ puis $R=\frac{\pi}{2}$.
+
+En résumé, la fonction tangente est développable en série entière sur $\left]-\frac{\pi}{2},\frac{\pi}{2}\right[$ et pour $x\in\left]-\frac{\pi}{2},\frac{\pi}{2}\right[$, $\tan x =\sum_{n=0}^{+\infty}a_nx^n$ où
+$a_0 = 0$, $a_1 = 1$ et $\forall n\in\Nn^*$, $(n+1)a_{n+1}=\sum_{k=0}^{n}a_ka_{n-k}$. De plus, $\forall n\in\Nn$, $a_{2n}= 0$ puisque la fonction tangente est impaire.
+
+\item  $a_0 = a_2 = a_4 = a_6 = 0$ puis $a_1 = 1$.
+
+$3a_3 = a_0a_2 + a_1^2 + a_2a_0 = 1$ et  donc $a_3 =\frac{1}{3}$.
+
+$5a_5 =2a_1a_3=\frac{2}{3}$ et donc $a_5 =\frac{2}{15}$.
+
+$7a_7 =2a_1a_5 + a_3^2=\frac{4}{15}+\frac{1}{9}=\frac{51}{135}=\frac{17}{45}$ et $a_7=\frac{17}{315}$.
+
+\begin{center}
+\shadowbox{
+$\forall x\in\left]-\frac{\pi}{2},\frac{\pi}{2}\right[$, $\tan x = x +\frac{x^3}{2}+\frac{2x^5}{15}+\frac{17x^7}{315}+ ...$
+}
+\end{center}
+
+\item  Pour tout  réel $x$, $\tanh(x) =\frac{1}{x}\tan(ix)$ et donc pour $x\in\left]-\frac{\pi}{2},\frac{\pi}{2}\right[$,
+
+\begin{center}
+$\tanh(x) =\frac{1}{i}\sum_{n=0}^{+\infty}a_{2n+1}(ix)^{2n+1}=\sum_{n=0}^{+\infty}(-1)^na_{2n+1}x^{2n+1}$.
+\end{center}
+
+Cette série entière a aussi pour rayon de convergence $\frac{\pi}{2}$.
+\end{enumerate}
+\fincorrection
+\finexercice

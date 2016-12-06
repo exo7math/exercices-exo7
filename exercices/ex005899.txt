@@ -1,0 +1,45 @@
+\exercice{5899, rouget, 2010/10/16}
+\enonce[**]
+Déterminer la différentielle en tout point de $\begin{array}[t]{cccc}
+f~:&\Rr^3\times\Rr^3&\rightarrow&\Rr\\
+ &(x,y)&\mapsto&x.y
+\end{array}$ et $\begin{array}[t]{cccc}
+g~:&\Rr^3\times\Rr^3&\rightarrow&\Rr\\
+ &(x,y)&\mapsto&x\wedge y
+\end{array}$.
+\finenonce
+
+\noindication
+
+\correction
+On munit $(\Rr^3)^2$ de la norme définie par $\forall(x,y)\in(\Rr^3)^2$, $\|(x,y)\|=\text{Max}\{\|h\|_2,\|k\|_2\}$.
+
+\textbullet~Soit $(a,b)\in(\Rr^3)^2$. Pour $(h,k)\in(\Rr^3)^2$,
+
+\begin{center}
+$f((a,b)+(h,h))=(a+h).(b+k)=a.b+a.h+b.k+h.k$,
+\end{center}
+
+et donc $f((a,b)+(h,h))-f((a,b))=(a.h+b.k)+h.k$. Maintenant l'application $L~:~(h,k)\mapsto a.h+b.k$ est linéaire et de plus, pour $(h,k)\neq(0,0)$,
+
+\begin{center}
+$|f((a,b)+(h,h))-f((a,b))-L((h,k))|=|h.k|\leqslant\|h\|_2\|k\|_2\leqslant\|(h,k)\|^2$,
+\end{center}
+
+et donc $ \frac{1}{\|(h,k)\|}|f((a,b)+(h,h))-f((a,b))-L((h,k))|\leqslant\|(h,k)\|$ puis
+
+\begin{center}
+$\lim_{(h,k) \rightarrow (0,0)} \frac{1}{\|(h,k)\|}|f((a,b)+(h,h))-f((a,b))-L((h,k))|=0$.
+\end{center}
+
+Puisque l'application $(h,k)\mapsto a.h+b.k$ est linéaire, on en déduit que $f$ est différentiable en $(a,b)$ et que $\forall(h,k)\in(\Rr^3)^2$, $df_{(a,b)}(h,k)=a.h+b.k$.
+
+La démarche est analogue pour le produit vectoriel :
+
+\begin{center}
+$ \frac{1}{\|(h,k)\|}\|(a+h)\wedge(b+k)-a\wedge b-a\wedge h-b\wedge k\|_2= \frac{\|h\wedge k\|_2}{\|(h,k)\|}\leqslant \frac{\|h\|_2\|k\|_2}{\|(h,k)\|}\leqslant\|(h,k)\|$.
+\end{center}
+
+Puisque l'application $(h,k)\mapsto a\wedge h+b\wedge k$ est linéaire, on en déduit que $g$ est différentiable en $(a,b)$ et que $\forall(h,k)\in(\Rr^3)^2$, $dg_{(a,b)}(h,k)=a\wedge h+b\wedge k$.
+\fincorrection
+\finexercice

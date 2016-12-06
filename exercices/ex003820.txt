@@ -1,0 +1,28 @@
+\exercice{3820, quercia, 2010/03/11}
+\enonce[X MP$^*$ 2001]
+
+Soient $A$ et $B$ deux matrices hermitiennes et  $C=A+B$. On note
+$a_1\ge a_2\ge \dots\ge a_n$ les valeurs propres de la première,
+$b_1\ge b_2\ge \dots\ge b_n$ celles de la deuxième, $c_1\ge c_2\ge \dots\ge c_n$ 
+celles de la troisième.
+Montrez que pour tout $i$ on a $c_i\ge a_i+b_n$.
+{\it Indication~:} se ramener au cas $b_n=0$.
+
+\finenonce
+
+\noindication
+
+\correction
+On remplace $A$ par $A + b_nI$ et $B$ par $B-b_nI$ ce
+qui ne modifie pas $C$. Maintenant les valeurs propres de~$B$ sont
+positves donc pour tou~$x\in\C^n$ on a $(Ax\mid x) \le (Cx\mid x)$.
+Soit $(x_1,\dots,x_n)$ une base orthonormale propre pour~$A$
+et $(y_1,\dots,y_n)$ une base orthonormale propre pour~$C$.
+Si $z\in\mathrm{vect}(x_1,\dots x_i)$ alors $(Az\mid z) \ge a_i\|z\|^2$
+et si $z\in\mathrm{vect}(y_i,\dots y_n)$ alors $(Az\mid z) \le (Cz\mid z) \le c_i\|z\|^2$.
+Or $\mathrm{vect}(x_1,\dots x_i)$ et $\mathrm{vect}(y_i,\dots y_n)$ ont une intersection
+non triviale (la somme des dimensions est égale à $n+1$) donc il existe
+$z\ne 0$ tel que $a_i\|z\|^2 \le c_i\|z\|^2$ d'où $a_i\le c_i$.
+\fincorrection
+
+\finexercice

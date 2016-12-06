@@ -1,0 +1,69 @@
+\exercice{2236, matos, 2008/04/23}
+\enonce
+Soit $A$ une matrice hermitienne inversible d\'ecompos\'ee en $A=M-N$ o\`u $M$ est inversible. Soit $B=I-M^{-1}A$ la matrice de l'it\'eration:
+$$x_{n+1}= Bx_n +c .$$
+Supposons que $M+M^* -A$ soit d\'efinie positive.
+\begin{enumerate}
+\item Soit $x$ un vecteur quelconque et on pose $y=Bx$. Montrer l'identit\'e:
+$$(x,Ax) - (y,Ay) = ((x-y), (M+M^*-A)(x-y)).$$
+\item Supposons que $A$ est d\'efinie positive. Soit $x\neq 0$ un vecteur propre de $B$ associ\'e \`a la valeur propre $\lambda$, $y=Bx=\lambda x$. Utiliser l'identit\'e pr\'ec\'edente pour montrer que $|\lambda|<1$. Que peut--on conclure sur la convergence de la m\'ethode?
+\item Supposons maintenant que $\rho (B)<1$. montrer que $A$ est d\'efinie positive.
+\item Supposons $A$ d\'ecompos\'ee par points ou par blocs sous la forme
+$$A=D-E-F \mbox{ avec } D \mbox{ d\'efinie positive} .$$
+Montrer que la m\'ethode de relaxation par points ou par blocs pour $0<w<2$ converge si et seulement si $A$ est d\'efinie positive.
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item Pour le membre de gauche on obtient
+
+$$(x,Ax)-(y,Ay)=(x,AM^{-1}Mx)+(M^{-1}Ax,Ax) -(M^{-1}Ax,AM^{-1}Ax)$$
+
+Pour le membre de droite on obtient
+$y=Bx=x-M^{-1}Ax\Rightarrow x-y=M^{-1}Ax$ et donc
+$$(x-y,(M+M^*-A)(x-y))=(M^{-1}Ax,(M+M^*-A)M^{-1}Ax)=$$ 
+$$(M^{-1}Ax, Ax)+(M^{-1}Ax,M^*M^{-1}Ax)-(M^{-1}Ax,AM^{-1}Ax)$$
+Mais
+$$(M^{-1}Ax,M^*M^{-1}Ax)=(x,(M^{-1}A)^*M^*M^{-1}Ax)=(x,AM^{-1}Ax)$$
+ce qui fini la d\'emonstration.
+\item $y=Bx=\lambda x\Rightarrow x-y=(1-\lambda )x$. En utilisant l'\'egalit\'e pr\'ec\'edente
+
+$(x,Ax)-(y,Ay)=(x,Ax)-(\lambda x,A(\lambda x))=(1-|\lambda|^2)(x,Ax)$
+
+$(x-y,(M+M^*-A)(x-y))=((1-\lambda )x, (M+M^*-A)((1-\lambda )x))=|1-\lambda
+|^2(x,(M+M^*-A)x)$
+
+et donc
+$$(1-|\lambda|^2)(x,Ax)=|1-\lambda|^2(x,(M+M^*-A)x)$$
+$\lambda$ ne peut pas \^etre $=1$ car sinon $y=Bx=x\Leftrightarrow x-M^{-1}Ax=x\Leftrightarrow
+M^{-1}Ax=0\Leftrightarrow x=0$. Donc $\lambda \neq 1$, $M+M^*-A$ d\'efinie positive,
+$|1-\lambda|^2>0$, $A$ d\'efinie positive impliquent que
+$1-|\lambda|^2>0\Leftrightarrow |\lambda|<1$. Donc $\rho (B)<1$ et la m\'ethode
+it\'erative converge.
+\item D\'emonstration par absurde. Supposons que ce n'est pas vrai: $\exists x_0\neq 0\quad
+  \alpha_0=(x_0,Ax_0)\leq 0$. Alors la suite $x_n=Bx_{n-1}=B^nx_0$ tend vers
+  $0$ et $\lim \alpha_n=\lim (x_n,Ax_n)=0$
+
+On utilise maintenant la relation de la question 1 avec $x=x_{n-1}$ et
+$y=Bx_{n-1}=x_n$ et on obtient
+$$\alpha_{n-1}-\alpha_n =(x_{n-1}-x_n, (M+M^*-A)(x_{n-1}-x_n)>0$$
+si $x_{n-1}-x_n\neq 0$ (ce qui est vrai car sinon $x_{n-1}=x_n=Bx_{n-1}$ et
+$B$ a une valeur propre $=1$)
+
+Donc $(\alpha_{n-1}-\alpha_n)$ est une suite strictement d\'ecroissante
+convergeant vers $0$ avec $\alpha_0<0$. Ceci est impossible et donc $A$ est
+d\'efinie positive
+\item Soit $A=D-E-F$ la d\'ecomposition usuelle de $A$. Comme $A$ est
+  hermitienne, $D=D^*$ et $F=E^*$. Pour la m\'ethode de relaxation on a
+  $M=D/w-E$ et donc
+$$M^*+M-A=D/w-F+D/w-E-D+E+F=\frac{2-w}{w}D$$
+qui est hermitienne. Pour $0<w<2$, $M^*+M-A$ est d\'efinie positive, alors des
+deux questions pr\'ec\'edentes on conclut que la m\'ethode converge ssi $A$
+est d\'efinie positive.
+
+\end{enumerate} 
+\fincorrection
+\finexercice

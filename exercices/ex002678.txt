@@ -1,0 +1,22 @@
+\exercice{2678, matexo1, 2002/02/01}
+
+\enonce
+En int{\'e}grant $e^{2iaz -z^2}$ le long du rectangle de sommets $0$, $R$, $R+ia$, $ia$, et
+en faisant tendre $R$ vers $+\infty $, montrer que l'on a
+$$ \int_0^{+\infty } e^{-x^2}\cos 2ax \,dx = {\sqrt \pi \over 2} e^{-a^2}.$$
+(On admettra la formule $\int_0^{+\infty }e^{-x^2}\,dx = \sqrt \pi /2$.)
+\finenonce
+\noindication
+\correction
+On int{\`e}gre $f(z) = e^{2iaz -z^2}$ sur le rectangle. Il n'y a aucun p{\^o}le, donc
+l'int{\'e}grale sur le rectangle est nulle; l'int{\'e}grale sur le c{\^o}t{\'e} $[R, R+ia]$ tend vers
+z{\'e}ro. On a donc
+$$\begin{array}{ccc}
+ \int_0^{+\infty } e^{2iax-x^2} \,dx &= \int_{[0,ia]} f(z)\,dz
+ + \int_{[ia, ia+\infty ]}f(z)\,dz \cr
+&=  \int_0^a  e^{-2ay+y^2}\,idy + \int_0^{+\infty } e^{(ia-x)(ia+x)}\,dx \cr
+&= i\int_0^a e^{y^2-2ay}\, dy + e^{-a^2}{\sqrt \pi \over 2}
+\end{array}$$
+d'o{\`u} le r{\'e}sultat en ne conservant que la partie r{\'e}elle.
+\fincorrection
+\finexercice

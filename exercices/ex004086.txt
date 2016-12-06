@@ -1,0 +1,29 @@
+\exercice{4086, quercia, 2010/03/11}
+\enonce[Centrale MP 2004]
+On considère l'équation différentielle~: $-y'' + \frac y{p^2} = f$
+où $p\in\N^*$ et $f$ est une fonction continue donnée.
+
+\begin{enumerate}
+  \item Donner les solutions de cette équation.
+    Montrer que $x \mapsto - \int_{t=0}^x pf(t)\sh\Bigl(\frac{x-t}p\Bigr)\,d t$
+    est solution.
+  \item Montrer qu'il existe une unique solution telle que $y(0) = y(1) = 0$.
+    On la note $u_p$.
+    
+  \item Montrer que $(u_p)$ converge simplement vers une fonction que l'on déterminera.
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item 
+  \item $u_p(x) = - \int_{t=0}^x pf(t)\sh\Bigl(\frac{x-t}p\Bigr)\,d t + \frac{\sh(x/p)}{\sh(1/p)} \int_{t=0}^1 pf(t)\sh\Bigl(\frac{1-t}p\Bigr)\,d t$.
+  \item TCD : lorsque $p\to\infty$ $u_p(x)\to - \int_{t=0}^x (x-t)f(t)\,d t + x \int_{t=0}^1 (1-t)f(t)\,d t =  \int_{t=0}^x t(1-x)f(t)\,d t +  \int_{t=x}^1 x(1-t)f(t)\,d t$
+    (primitive deuxième de~$-f$ s'annulant en~$0$ et~$1$).
+\end{enumerate}
+ \fincorrection
+
+\finexercice

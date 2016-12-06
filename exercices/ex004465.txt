@@ -1,0 +1,26 @@
+\exercice{4465, quercia, 2010/03/14}
+\enonce 
+
+On se donne $u_1$ et $a$ deux réels strictement positifs et l'on
+définit par récurrence la suite $(u_n)$ par $u_{n+1}=u_n+\frac1{n^a u_n}\cdotp$
+Étudiez la limite de la suite $(u_n)$, et, quand $a\le1$, en donner un
+équivalent.
+
+\finenonce
+
+\noindication
+
+\correction
+La suite $(u_n)$ est croissante donc tend vers $\ell\in{]0,+\infty]}$.
+On a $\ell$ fini si et seulement si la série télescopique
+$\sum(u_{n+1}-u_n) = \sum\frac1{n^au_n}$ est convergente, soit si et
+seulement si $a>1$.
+
+Pour $a< 1$ on a $u_{n+1}^2 = u_n^2 + \frac2{n^a} +  o\Bigl(\frac2{n^a}\Bigr)$
+donc $u_{n+1}^2-u_n^2\sim \frac2{n^a}$ et $u_n\sim\sqrt{\frac{2n^{1-a}}{1-a}}$
+(sommation des relations de comparaison).
+
+Pour $a=1$ on a de même $u_n\sim \sqrt{2\ln n}$.
+\fincorrection
+
+\finexercice

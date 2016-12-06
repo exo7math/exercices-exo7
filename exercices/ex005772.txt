@@ -1,0 +1,107 @@
+\exercice{5772, rouget, 2010/10/16}
+\enonce[*** I Polynômes de \textsc{Legendre}]
+Soit $E =\Rr[X]$. On munit $E$ du produit scalaire $P|Q =\int_{-1}^{1}P(t)Q(t)\;dt$.
+
+\begin{enumerate}
+ \item  Pour $n\in\Nn$, on pose $L_n=\left((X^2-1)^n\right)^{(n)}$.
+   \begin{enumerate}
+   \item Montrer que la famille $(L_n)_{n\in\Nn}$ est une base orthogonale de l'espace préhilbertien $(E,\;|\;)$.
+   \item Déterminer $\|L_n\|$ pour $n\in\Nn$.
+   \end{enumerate}
+\item  Déterminer l'orthonormalisée de \textsc{Schmidt} de la base canonique de $E$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+Soit $n\in\Nn$. Posons $\ell_n=(X^2-1)^n$ de sorte que $L_n=\ell_n^{(n)}$. $L_n$ est un polynôme de degré $n$ car $\ell_n$ est de degré $2n$.
+
+ 
+\begin{enumerate}
+ \item 
+   \begin{enumerate}
+   \item Soient $n\in\Nn^*$ et $P\in E$. Une intégration par parties fournit
+
+\begin{center}
+$\left(L_n|P\right)=\int_{-1}^{1}L_n(x)P(x)\;dx =\int_{-1}^{1}(\ell_n)^{(n)}(x) P(x)\;dx =\left[(\ell_n)^{(n-1)}(x) P(x)\right]_{-1}^1-\int_{-1}^{1}(\ell_n)^{(n-1)}(x) P'(x)\;dx$.
+\end{center}
+
+Maintenant, $-1$ et $1$ sont racines d'ordre $n$ du polynôme $\ell_n$ et donc, pour tout $k\in\llbracket0,n\rrbracket$, $-1$ et $1$ sont racines d'ordre $n-k$ de $\ell_n^{(k)}$ et en particulier racines de $(\ell_n)^{(k}$ pour $k\in\llbracket0,n-1\rrbracket$. Donc
+
+\begin{center}
+$\left(L_n|P\right)=-\int_{-1}^{1}(\ell_n)^{(n-1)}(x) P'(x)\;dx$.
+\end{center}
+
+Plus généralement, si pour un entier $k\in\llbracket0,n-1\rrbracket$, $\left(L_n|P\right)= (-1)^{k}\int_{-1}^{1}(\ell_n)^{(n-k)}(x) P^{(k)}(x)\;dx$ alors
+
+\begin{align*}\ensuremath
+\left(L_n|P\right)&= (-1)^{k}\left(\left[(\ell_n^{n-k-1}(x)P^{(k)}(x)\right]_{-1}^{1}-\int_{-1}^{1}(\ell_n)^{(n-k-1)}(x)P^{(k+1)}(x)\;dx\right)\\
+ &=(-1)^{k+1}\int_{-1}^{1}(\ell_n)^{(n-k-1)}(x) P^{(k+1)}(x)\;dx.
+\end{align*}
+
+On a montré par récurrence que pour tout entier $k\in\llbracket0,n\rrbracket$, 
+$\left(L_n|P\right)=(-1)^{k}\int_{-1}^{1}(\ell_n)^{(n-k)}(x) P^{(k)}(x)\;dx$. En particulier 
+
+\begin{center}
+$\left(L_n|P\right)=(-1)^{n}\int_{-1}^{1}\ell_n(x)P^{(n)}(x)\;dx=\int_{-1}^{1}(1-x^2)^nP^{(n)}(x)\;dx$/quad$(*)$.
+\end{center}
+
+Cette dernière égalité reste vraie pour $n=0$ et on a montré que
+
+\begin{center}
+\shadowbox{
+$\forall n\in\Nn$, $\forall P\in\Rr[X]$, $\left(L_n|P\right)=\int_{-1}^{1}\left(1-x^2\right)^nP^{(n)}(x)\;dx$.
+}
+\end{center}
+
+Soient alors $n$ et $p$ deux entiers naturels tels que $0\leqslant p<n$. Puisque $\text{deg}(L_p)=p<n$, on a $\left(L_n|L_p\right)=0$. On a montré que
+
+\begin{center}
+\shadowbox{
+La famille $(L_k)_{0\leqslant k\leqslant n}$ est une base orthogonale de l'espace $(\Rr[X],\;|\;)$.
+}
+\end{center}
+
+  \item
+On applique maintenant la formule $(*)$ dans le cas particulier $P =L_n$. On obtient 
+
+\begin{align*}\ensuremath
+\|L_n\|^2&=\int_{-1}^{1}\left(1-x^2\right)^nL_n^{(n)}(x)\;dx=2\times(2n)!\int_{0}^{1}(1-x^2)^n\;dx=2\times(2n)!\int_{\pi/2}^{0}(1-\cos^2t)^n(-\sin t)\;dt\\
+ &=2\times(2n)!\int_{0}^{\pi/2}\sin^{2n+1}t\;dt=2\times(2n)!W_{2n+1}\;(\text{intégrales de \textsc{Wallis}}).
+\end{align*}
+
+On \og sait \fg que  $\forall n\in\Nn$, $W_{2n+1}=\frac{2n}{2n+1}W_{2n-1}=\frac{(2n)\times(2n-2)\times\ldots\times2}{(2n+1)\times(2n-1)\times\ldots\times3}W_1 =\frac{2^{2n}n!^2}{(2n+1)!}$. On obtient alors 
+
+\begin{center}
+$\|L_n\|^2=\frac{2^{2n}n!^2}{(2n+1)!}\times2\times(2n)!=\frac{2^{2n+1}n!^2}{2n+1}$,
+\end{center}
+
+\begin{center}
+\shadowbox{
+$\forall n\in\Nn$, $\|L_n\|=\sqrt{\frac{2}{2n+1}}\frac{2^nn!}{2n+1}$.
+}
+\end{center}
+
+On en déduit que la famille $\left(\sqrt{\frac{2n+1}{2}}\frac{1}{2^nn!}L_n\right)_{n\in\Nn}$ est une base orthonormale de $(\Rr[X],\;|\;)$. Pour $n\in\Nn$, on pose $P_n=\sqrt{\frac{2n+1}{2}}\frac{1}{2^nn!}\left((X^2-1)^n\right)^{(n)}$.
+  \end{enumerate}
+
+\item  La famille $(P_n)_{n\in\Nn}$ est une base de orthonormée de $\Rr[X]$. Chaque $P_n$, $n\in\Nn$, est de degré $n$ et donc, $\forall n\in\Nn$, $\text{Vect}(P_0,...,P_n) =\text{Vect}(1,X,...,X^n)$ et de plus, pour $n\in\Nn$
+
+\begin{center}
+$P_n|X^n=\frac{1}{\text{dom}}\left((P_n)|\text{dom}(P_n)X^n\right)=\frac{1}{\text{dom}(P_n)}\left(P_n|P_n\right)$
+\end{center}
+
+car $P_n\in(P_0,\ldots,P_{n-1})^\bot=(1,X,\ldots,X^{n-1})^\bot=(\Rr_{n-1}[X])^\bot$. Ceci montre que $P_n|X^n>0$. 
+
+\begin{center}
+\shadowbox{
+\begin{tabular}{c}
+L'orthonormalisée de la base canonique de $\Rr[X]$ est la famille des polynômes de \textsc{Lengendre}\\
+$\left(\sqrt{\frac{2n+1}{2}}\frac{1}{2^nn!}\left((X^2-1)^n\right)^{(n)}\right)_{n\in\Nn}$.
+\end{tabular}
+}
+\end{center}
+\end{enumerate}
+\fincorrection
+\finexercice

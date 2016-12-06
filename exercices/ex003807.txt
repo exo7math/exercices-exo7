@@ -1,0 +1,28 @@
+\exercice{3807, quercia, 2010/03/11}
+\enonce[$I + a(X^tY - Y^tX)$ inversible]
+
+Soient $X,Y \in \mathcal{M}_{n,1}(\R)$ indépendantes, $a \in \R$ et $M$ la matrice
+$n\times n$ telle que $m_{ij} = x_iy_j - x_jy_i$.
+
+A quelle condition $I + aM$ est-elle inversible ?
+
+\finenonce
+
+\noindication
+
+\correction
+$M = X^tY - Y^tX$.
+
+Soit $Z \in \mathcal{M}_{n,1}(\R)$ tq $(I + aM)Z = 0$.
+Donc $Z \in \text{vect}(X,Y)$ : $Z = \lambda X + \mu Y$.
+
+on remplace :
+$$\left\{\begin{array}{lllll}
+ (1-a{}^tYX)\lambda &-& a{}^tYY\mu      &=&0 \cr
+ a{}^tXX\lambda     &+& (1+a{}^tYX)\mu  &=&0 \cr
+\end{array}\right.$$
+
+CNS $\iff a^2({}^tXX\,^tYY - ({}^tXY)^2) + 1 \ne 0$.
+\fincorrection
+
+\finexercice

@@ -1,0 +1,23 @@
+\exercice{2206, debes, 2008/02/12}
+\enonce
+ Soient $p$ et $q$ deux nombres premiers et $G$ un groupe
+d'ordre $p^2q$. On suppose que $p^2-1$ n'est pas divisible par $q$ et
+que $q-1$ n'est pas divisible par $p$. Montrer que $G$ est ab\'elien.
+\finenonce 
+
+\noindication
+\correction
+Le nombre de $q$-Sylow d'un groupe $G$ d'ordre $p^2q$ est $\equiv 1\
+[\hbox{\rm mod}\ q]$ et divise $p^2$. Ce ne peut \^etre ni $p$ ni $p^2$ car $p^2-1$
+est suppos\'e non divisible par $q$; c'est donc $1$. De m\^eme le nombre de
+$p$-Sylow est $\equiv 1\ [\hbox{\rm mod}\ p]$ et divise $q$ et ce ne peut \^etre
+$q$ car $q-1$ est suppos\'e non divisible par $p$; c'est donc $1$. Ainsi il y a 
+un unique $p$-Sylow $P$ d'ordre $p^2$, et donc ab\'elien, et un unique $q$-Sylow
+$Q$ d'ordre $q$, et donc cyclique, tous deux n\'ecessairement distingu\'es. Il en
+r\'esulte que tout \'el\'ement $x\in P$ commute avec tout \'el\'ement $y\in Q$:
+en effet le commutateur $xyx^{-1}y^{-1} = (xyx^{-1})y^{-1}= x(yx^{-1}y^{-1})$ est
+dans l'intersection $P\cap Q$ qui est le groupe trivial. Cela montre que le groupe
+$PQ$ est ab\'elien; il est isomorphe au produit direct $P\times Q$ et est donc de
+cardinal $|P|\hskip 2pt |Q| = p^2q=|G|$. D'o\`u finalement $G=PQ$ est ab\'elien.
+\fincorrection
+\finexercice

@@ -1,0 +1,94 @@
+\exercice{5136, rouget, 2010/06/30}
+\enonce[***T ESIM 1993]
+Pour $z\in\Cc$, on pose $\ch z=\frac{1}{2}(e^z+e^{-z})$, $\sh z=\frac{1}{2}(e^z-e^{-z})$ et $\tanh z=\frac{\sh z}{\ch
+z}$.
+\begin{enumerate}
+\item  Quels sont les nombres complexes $z$ pour lesquels $\tanh z$ existe~?
+\item  Résoudre dans $\Cc$ l'équation $\tanh z=0$.
+\item  Résoudre dans $\Cc$ le système $\left\{
+\begin{array}{l}
+|\Im z|<\frac{\pi}{2}\\
+|\tanh z|<1
+\end{array}\right.$.
+\item  Montrer que la fonction $\tanh$ réalise une bijection de $\Delta=\{z\in\Cc/\;|\Im z|<\frac{\pi}{4}\}$ sur
+$U=\{z\in\Cc/\;|z|<1\}$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+
+\begin{enumerate}
+ \item  Soit $z\in\Cc$. $\sh z$ et $\ch z$ sont définis et donc, $\tanh z$ existe si et seulement si $\ch z\neq0$. Or,
+
+$$\ch z=0\Leftrightarrow e^z+e^{-z}=0\Leftrightarrow e^{2z}=-1\Leftrightarrow e^{2z}=e^{i\pi}\Leftrightarrow2z\in i\pi+2i\pi\Zz\Leftrightarrow z\in i\left(\frac{\pi}{2}+\pi\Zz\right).$$
+$\tanh z$ existe si et seulement si $z\notin i\left(\frac{\pi}{2}+\pi\Zz\right)$.
+ \item  Soit $z\notin i\left(\frac{\pi}{2}+\pi\Zz\right)$.
+
+$$\tanh z=0\Leftrightarrow\sh z=0\Leftrightarrow e^z=e^{-z}\Leftrightarrow e^{2z}=1\Leftrightarrow 2z\in2i\pi\Zz\Leftrightarrow z\in i\pi\Zz.$$
+Comme $i\left(\frac{\pi}{2}+\pi\Zz\right)\cap i\pi\Zz=\varnothing$, $\tanh z=0$ si et seulement si $z\in i\pi\Zz$.
+ \item  Soit $z\notin i\left(\frac{\pi}{2}+\pi\Zz\right)$. Posons $z=x+iy$ où $(x,y)\in\Rr^2$.
+
+\begin{align*}
+|\tanh z|<1&\Leftrightarrow|e^z-e^{-z}|^2<|e^z+e^{-z}|^2\Leftrightarrow(e^z-e^{-z})(e^{{\bar z}}-e^{-{\bar z}})<(e^z+e^{-z})(e^{{\bar z}}+e^{-{\bar z}})\\
+ &\Leftrightarrow-e^{z-{\bar z}}-e^{-(z-{\bar z})}<e^{z-{\bar z}}+e^{-(z-{\bar z})}\Leftrightarrow2(e^{2iy}+e^{-2iy})>0\\
+ &\Leftrightarrow\cos(2y)>0
+\end{align*}
+Par suite,
+
+$$\left\{
+\begin{array}{l}
+|\Im z|<\frac{\pi}{2}\\
+|\tanh z|<1
+\end{array}
+\right.
+\Leftrightarrow
+\left\{
+\begin{array}{l}
+|y|<\frac{\pi}{2}\\
+\cos(2y)>0
+\end{array}
+\right.
+\Leftrightarrow
+|y|<\frac{\pi}{4}\Leftrightarrow z\in\Delta.$$
+ \item  Soit $z\in\Delta$.
+D'après 1), $\tanh z$ existe et d'après 3), $|\tanh z|<1$. Donc $z\in\Delta\Rightarrow\tanh z\in U$. Ainsi, $\tanh$ est une
+application de $\Delta$ dans $U$.
+Soit alors $Z\in U$ et $z\in\Delta$.
+
+$$\tanh z=Z\Leftrightarrow\frac{e^{2z}-1}{e^{2z}+1}=Z\Leftrightarrow e^{2z}=\frac{1+Z}{1-Z}.$$
+Puisque $Z\neq-1$, $\frac{1+Z}{1-Z}\neq0$ et on peut poser $\frac{1+Z}{1-Z}=re^{i\theta}$ où $r\in\Rr_+^*$ et
+$\theta\in]-\pi,\pi]$.
+
+Par suite,
+
+\begin{align*}
+e^{2z}=\frac{1+Z}{1-Z}&\Leftrightarrow e^{2z}=re^{i\theta}\Leftrightarrow e^{2x}=r\;\mbox{et}\;2y\in\theta+2\pi\Zz\\
+ &\Leftrightarrow x=\frac{1}{2}\ln r\;\mbox{et}\;y\in\frac{\theta}{2}+\pi\Zz
+\end{align*}
+Maintenant, on ne peut avoir $\theta=\pi$. Dans le cas contraire, on aurait $\frac{1+Z}{1-Z}=-r\in\Rr_-^*$ puis
+$Z=\frac{r+1}{r-1}\in\Rr$. Par suite, puisque $|Z|<1$, on aurait $Z\in]-1,1[$ et donc $\frac{1+Z}{1-Z}\in\Rr_+^*$ ce
+qui est une contradiction. Donc, $\theta\in]-\pi,\pi[$ puis $\frac{\theta}{2}\in]-\frac{\pi}{2},\frac{\pi}{2}[$.
+Mais alors,
+
+$$\left\{
+\begin{array}{l}
+\tanh z=Z\\
+z\in\Delta
+\end{array}
+\right.
+\Leftrightarrow\left\{
+\begin{array}{l}
+x=\frac{1}{2}\ln r\\
+y=\frac{\theta}{2}\rule{0mm}{6mm}
+\end{array}
+\right..$$
+Ainsi, tout élément $Z$ de $U$ a un et un seul antécédent $z$ dans $\Delta$ (à savoir
+$z=\frac{1}{2}\ln\left|\frac{1+Z}{1-Z}\right|+\frac{i}{2}\mbox{Arg}\left(\frac{1+Z}{1-Z}\right)$ où 
+$\mbox{Arg}\left(\frac{1+Z}{1-Z}\right)$ désigne l'argument de $\frac{1+Z}{1-Z}$ qui est dans $]-\pi,\pi[$).
+Finalement, $\tanh$ réalise donc une bijection de $\Delta$ sur $U$.
+\end{enumerate}
+
+\fincorrection
+\finexercice

@@ -1,0 +1,84 @@
+\exercice{2168, debes, 2008/02/12}
+\enonce
+\label{ex:deb68}
+On appelle cycle une permutation $\sigma $ v\'erifiant la propri\'et\'e
+suivante:  il existe une partition de $\{ 1, \dots , n \} $ en deux sous-ensembles
+$I$ et $J$ tels que la restriction de $\sigma $ \`a $I$ est l'identit\'e
+de $I$
+et il existe $a\in J$ tel que $J= \{ a, \sigma (a) , \dots , \sigma ^{r-1}
+(a)\} $ o\`u $r$ est le cardinal de $J$. Le sous-ensemble $J$ est appel\'e le
+support du cycle $\sigma $.
+
+Un tel cycle sera not\'e $(a, \sigma (a), \dots , \sigma ^{r-1} (a) )$
+\smallskip
+
+(a) Soit
+$\sigma
+\in S_n$ une permutation. On consid\`ere le sous-groupe
+$C$ engendr\'e par
+$\sigma$ dans
+$S_n$. Montrer que la restriction de $\sigma$ \`a chacune des orbites de
+$\{1, \dots ,n\} $ sous
+l'action de $C $ est un cycle, que ces diff\'erents cycles commutent entre
+eux, et que $\sigma $
+est le produit de ces cycles.
+\smallskip
+
+(b) D\'ecomposer en cycles les permutations suivantes de $\{ 1, \dots , 7\} $ :
+
+$\hskip 20mm 1\hskip 2mm 2\hskip 2mm 3\hskip 2mm 4\hskip 2mm 5\hskip 2mm 6\hskip 2mm 7 \hskip
+20mm  1\hskip 2mm 2\hskip 2mm 3\hskip 2mm 4\hskip 2mm 5\hskip 2mm 6\hskip 2mm 7\hskip 20mm   
+1\hskip 2mm 2\hskip 2mm 3\hskip 2mm 4\hskip 2mm 5\hskip 2mm 6\hskip 2mm 7$
+
+$\hskip 20mm 3\hskip 2mm 6\hskip 2mm 7\hskip 2mm 2\hskip 2mm 1\hskip 2mm 4\hskip 2mm 5 \hskip
+20mm  7\hskip 2mm 4\hskip 2mm 2\hskip 2mm 3\hskip 2mm 5\hskip 2mm 6\hskip 2mm 1\hskip 20mm    
+1\hskip 2mm 3\hskip 2mm 7\hskip 2mm 2\hskip 2mm 4\hskip 2mm 5\hskip 2mm 6$
+
+\smallskip
+(c) Montrer que si $\sigma $ est un cycle, $\sigma =(a, \sigma (a), \dots ,
+\sigma^{r-1}(a)) $, la
+conjugu\'ee $\tau \sigma \tau ^{-1} $ est un cycle et que
+$\tau \sigma \tau ^{-1} =(\tau (a), \tau (\sigma  (a)), \dots , \tau
+(\sigma ^{r-1} (a)))$.
+\smallskip
+
+(d) D\'eterminer toutes les classes de conjugaison des permutations dans $S_5$
+(on consid\'erera leur d\'ecomposition en cycles). D\'eterminer tous les
+sous-groupes distingu\'es de $S_5$.
+\finenonce 
+
+\indication
+(a) est une simple v\'erification.
+\smallskip
+
+(b) Les trois permutations s'\'ecrivent respectivement $(1\hskip 2pt 3\hskip 2pt 7\hskip 2pt
+5)\hskip 2pt (2\hskip 2pt 6\hskip 2pt 4)$, $(1\hskip 2pt 7)\hskip 2pt (2\hskip 2pt 4\hskip
+2pt 3)$ et $(2\hskip 2pt 3\hskip 2pt 7\hskip 2pt 6\hskip 2pt 5\hskip 2pt 4)$.
+\smallskip
+
+(c) est une simple v\'erification.
+\smallskip
+
+(d) {\bf Rappel:} De fa\c con g\'en\'erale, on dit qu'une permutation $\omega \in S_n$ est de
+type $1^{r_1}$-$2^{r_2}$-$\cdots$-$d^{r_d}$ o\`u $d, r_1,\ldots,r_d$ sont des entiers $\geq 0$
+tels que $r_1+\cdots+r_d=n$, si dans la d\'ecomposition de $\omega$ en cycles \`a support
+disjoints, figurent $r_1$ $1$-cycles (ou points fixes), $r_2$ $2$-cycles, ... et $r_d$
+$d$-cycles. En utilisant la question (c), il n'est pas difficile de montrer que deux
+permutations sont conjugu\'ees dans $S_n$ si et seulement si elles sont de m\^eme type.    
+Les classes de conjugaison de $S_n$ correspondent donc exactement \`a tous les types
+possibles.
+
+\smallskip
+On obtient ainsi facilement les classes de conjugaison de $S_5$. Soit maintenant $H$ un
+sous-groupe distingu\'e non trivial de $S_5$. D\`es que $H$ contient un \'el\'ement de $S_5$,
+il contient sa classe de conjugaison; $H$ est donc une r\'eunion de classes de conjugaison.
+En consid\'erant toutes les classes possibles que peut contenir $H$, on montre que $H=A_5$ ou
+$H=S_5$. Par exemple, si $H$ contient la classe 1-2-2, alors $H$ contient $(1\hskip 2pt
+2)\hskip 2pt (3\hskip 2pt 4) \times (1\hskip 2pt 3)\hskip 2pt (2\hskip 2pt 5) = (1\hskip 2pt
+4\hskip 2pt 3\hskip 2pt 2\hskip 2pt 5)$ et donc la classe des $5$-cycles. D'apr\`es
+l'exercice \ref{ex:deb67}, $H$ contient alors $A_5$. Le groupe $H$ est donc $A_5$ ou $S_5$. Les autres cas
+sont similaires.
+\finindication
+
+\nocorrection
+\finexercice

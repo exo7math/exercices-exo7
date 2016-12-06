@@ -1,0 +1,50 @@
+\exercice{5951, tumpach, 2010/11/11}
+\enonce
+Montrer que
+
+\begin{enumerate}
+ \item  $\displaystyle \lim_{n \to \infty} \int_0^n \left(1-\frac{x}{n}\right)^n
+x^{m}dx = m !$ \ (pour tout $m\in \mathbf{N}$).
+
+  \item  $\displaystyle \lim_{n \to \infty} \int_0^n \left(1+\frac{x}{n}\right)^n
+e^{-2x}dx = 1$.
+\end{enumerate}
+
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item Pour tout $x\in \mathbb{R}_+$
+et $n\in \mathbb{N}$ on a
+$$\left(1-\frac{x}{n}\right)^n \leq e^{-x}.$$ En effet, comme \, $\ln
+y\leq y-1$ \, pour $y>0$, on a \, $\ln y^{-\frac{1}{n}}\leq
+y^{-\frac{1}{n}}-1$,\, c'est-\`a-dire $\left(1 - \frac{\ln y}{n}
+\right)^{n} \leq y^{-1}$. Ainsi, en posant $x = \ln y$, il vient
+$\left(1-\frac{x}{n}\right)^n \leq e^{-x}$. De plus,
+$$
+\lim_{n\rightarrow+\infty} \left(1-\frac{x}{n} \right)^{n} =
+\lim_{n\rightarrow+\infty}e^{n\ln\left(1-\frac{x}{n} \right)} =
+\lim_{n\rightarrow+\infty}e^{n\left(-\frac{x}{n} +
+\frac{x}{n}\varepsilon\left(\frac{x}{n} \right) \right)},
+$$
+o\`u $\lim_{u\rightarrow 0}\varepsilon(u) = 0$. Ainsi
+$\lim_{n\rightarrow+\infty} \left(1-\frac{x}{n} \right)^{n} =
+e^{-x}$.
+
+
+Posons $f_n(x)=\left(1-\frac{x}{n}\right)^n x^m\mathbf{1}_{[0,n]}$. Alors
+en utilisant le th\'{e}or\`{e}me de convergence domin\'{e}e et
+sachant que \, $ \Gamma(m+1)=\int\limits_0^\infty e^{-x}x^m dx
+=m!$, on obtient le r\'{e}sultat.
+ 
+\item Soit $f_n(x)=\left(1+\frac{x}{n}\right)^n e^{-2x}\mathbf{1}_{[0,n]}$.
+Comme la suite $\{f_n(x)\}$ est croissante et \,
+$\lim\limits_{n\rightarrow \infty}f_n(x)=e^{-x}$, on obtient le
+r\'{e}sultat en appliquant le th\'{e}or\`{e}me de convergence
+monotone.
+\end{enumerate}
+\fincorrection
+
+\finexercice

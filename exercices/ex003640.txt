@@ -1,0 +1,36 @@
+\exercice{3640, quercia, 2010/03/10}
+\enonce[Polynômes trigonométriques]
+
+On note $f_n(x) = \cos nx$ et $g_n(x) = \sin nx$ ($x \in \R$, $n \in \N$).
+
+Soit $E_n$ l'espace engendré par la famille
+${\cal F}_n = (f_0,\dots,f_n,g_1,\dots,g_n)$.
+
+\begin{enumerate}
+  \item Montrer que pour $k \ge 1$, $(f_k,g_k)$ est libre.
+  \item Soit $\varphi : {E_n} \to {E_n}, f \mapsto {f''}$.
+    Chercher les sous-espaces propres de $\varphi$.
+    En déduire que ${\cal F}_n$ est libre.
+  \item On note $a_k = \frac{2k\pi}{2n+1}$ et
+    ${\varphi_k} : {E_n} \to \R, f \mapsto {f(a_k).}$
+
+    Montrer que $(\varphi_0,\dots,\varphi_{2n})$ est une base de $E_n^*$.
+    (On utilisera la fonction $f : x  \mapsto \prod_{k=1}^n (\cos x - \cos a_k)$)
+    
+
+  \item Soit $N \in \N^*$. On note $b_k = \frac{2k\pi}N$ et
+    ${\psi_k} : {E_n}\to \R, f \mapsto {f(b_k).}$
+    Montrer que $(\psi_0,\dots,\psi_{N-1})$ est libre si et seulement si
+    $N \le 2n+1$, et engendre $E_n^*$ si et seulement si $N \ge 2n+1$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+3. Rmq : coefficients de Fourrier :
+    $\alpha_p = \frac 2{2n+1}\sum_{k=0}^{2n} f(a_k)\cos(pa_k)$ et
+    $\beta_p = \frac 2{2n+1}\sum_{k=0}^{2n} f(a_k)\sin(pa_k)$.
+ \fincorrection
+
+\finexercice

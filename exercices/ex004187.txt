@@ -1,0 +1,36 @@
+\exercice{4187, quercia, 2010/03/11}
+\enonce[Mines MP 2001]
+
+Soient $f$ et $g$ deux fonctions de classe $\mathcal{C}^1$ sur $\R$ à valeurs
+dans $\R$ vérifiant~: $\forall\ x\in\R,\ f'(x)\ge 1$ et $|g'(x)| < 1$.
+Soit $\varphi$ définie sur $\R^2$ par $\varphi(x,y) = (f(x)+g(y), f(y) + g(x))$.
+
+\begin{enumerate}
+  \item Montrer que $\varphi$ est un $\mathcal{C}^1$-difféomorphisme de $\R^2$ sur $\varphi(\R^2)$.
+    
+
+  \item On suppose qu'il existe $k\in{]0,1[}$ tel que $\forall\ x\in\R$, $|g'(x)| < k$~;
+    montrer que $\varphi(\R^2) = \R^2$.
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $\det(J_\varphi(x,y)) =  f'(x)f'(y) - g'(x)g'(y) > 0$ donc le théorème
+    d'inversion locale s'applique, il suffit de vérifier l'injectivité de~$\varphi$.
+    Si $\varphi(x,y) = \varphi(u,v)$ alors~:
+    \begin{align*}&|x-u| \le |f(x)-f(u)| = |g(v)-g(y)| \le |v-y|\\
+               &|v-y| \le |f(v)-f(y)| = |g(x)-g(u)| \le |x-u|\\ 
+\end{align*}
+    d'où $|x-u| \le |x-u|$ et il y a inégalité stricte si $v\ne y$ ce qui est
+    absurde donc $v=y$ et de même $u=x$.
+  \item On a $\varphi(x,y) = (u,v)$ si et seulement si $x = f^{-1}(u-g(y))$ et
+    $y = f^{-1}(v - g(f^{-1}(u-g(y)))) = h(y)$. $h$ est $k^2$-lipschitzienne
+    donc le théorème du point fixe s'applique.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

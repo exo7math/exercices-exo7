@@ -1,0 +1,28 @@
+\exercice{5454, rouget, 2010/07/10}
+\enonce[***]
+Soit $a$ un réel strictement positif et $f$ une application de classe $C^1$ et strictement croissante sur $[0,a]$ telle que $f(0)=0$. Montrer que $\forall x\in[0,a],\;\forall y\in[0,f(a)],\;xy\leq\int_{0}^{x}f(t)\;dt+\int_{0}^{y}f^{-1}(t)\;dt$.
+\finenonce
+
+\noindication
+
+\correction
+Puisque $f$ est continue et strictement croissante sur $[0,a]$, $f$ réalise une bijection de $[0,a]$ sur $f([0,a])=[0,f(a)]$.
+
+Soit $x\in[0,a]$. Pour $y\in[0,f(a)]$, posons $g(y)=\int_{0}^{x}f(t)\;dt+\int_{0}^{y}f^{-1}(t)\;dt-xy$. Puisque $f$ est continue sur $[0,a]$, on sait que $f^{-1}$ est continue sur $[0,f(a)]$ et donc la fonction $y\mapsto\int_{0}^{y}f^{-1}(t)\;dt$ est définie et de classe $C^1$ sur $[0,f(a)]$. Donc $g$ est de classe $C^1$ sur 
+$[0,f(a)]$ et pour $y\in[0,f(a)]$, $g'(y)=f^{-1}(y)-x$.
+
+Or, $f$ étant strictement croissante sur $[0,a]$, $g'(y)>0\Leftrightarrow f^{-1}(y)>x\Leftrightarrow y>f(x)$. Par suite, $g'$ est strictement négative sur $[0,f(x)[$ et strictement positive sur $]f(x),f(a)]$, et $g$ est strictement décroissante sur $[0,f(x)]$ et strictement croissante sur $[f(x),f(a)]$. $g$ admet en $y=f(x)$ un minimum global égal à
+$g(f(x))=\int_{0}^{x}f(t)\;dt+\int_{0}^{f(x)}f^{-1}(t)\;dt-xf(x)$. Notons $h(x)$ cette expression.
+
+$f$ est continue sur $[0,a]$. Donc, $x\mapsto\int_{0}^{x}f(t)\;dt$ est de classe $C^1$ sur $[0,a]$. Ensuite $f$ est de classe $C^1$ sur $[0,a]$ à valeurs dans $[0,f(a)]$ et $y\mapsto\int_{0}^{y}f^{-1}(t)\;dt$ est de classe $C^1$ sur $[0,f(a)]$ (puisque $f^{-1}$ est continue sur $[0,f(a)]$). On en déduit que $x\mapsto\int_{0}^{f(x)}f^{-1}(t)\;dt$ est de classe $C^1$ sur $[0,a]$. Il en est de même de $h$ et pour $x\in[0,a]$,
+
+$$h'(x)=f(x)+f'(x)f^{-1}(f(x))-f(x)-xf'(x)=0.$$
+
+$h$ est donc constante sur $[0,a]$ et pour $x\in[0,a]$, $h(x)=h(0)=0$.
+
+On a montré que 
+
+$$\forall(x,y)\in[0,a]\times[0,f(a)],\;\int_{0}^{x}f(t)\;dt+\int_{0}^{y}f^{-1}(t)\;dt-xy\geq
+\int_{0}^{x}f(t)\;dt+\int_{0}^{f(x)}f^{-1}(t)\;dt-xf(x)=0.$$
+\fincorrection
+\finexercice

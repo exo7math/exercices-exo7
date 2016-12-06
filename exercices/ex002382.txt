@@ -1,0 +1,36 @@
+\exercice{2382, mayer, 2003/10/01}
+\enonce 
+On se donne une m\'etrique $d$ sur $X=[0,1]$ telle que
+l'identit\'e $ i: (X, |.|) \to (X,d)$ soit continue (i.e. la
+topologie d\'efinie par $d$ est moins fine que la topologie
+usuelle de $X$).
+\begin{enumerate}
+\item Montrer que tout sous-ensemble de $X$ compact pour la
+topologie usuelle est aussi compact pour la topologie d\'efinie
+par $d$; puis montrer cette propri\'et\'e pour les ferm\'es.
+\item En d\'eduire que la topologie d\'efinie par $d$ est la topologie
+usuelle.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+Dire que $ i: (X, |.|) \to (X,d)$ est continue c'est exactement dire que tout
+ensemble $U$ ouvert pour $d$ est ouvert pour $|.|$ (car $i^{-1}(U) = U$).
+\begin{enumerate}
+  \item Soit $K$ un compact pour $|.|$. Soit $U_i$, $i\in I$ tels
+que $K \subset \bigcup_{i\in I} U_i$ et tels que $U_i$ soient des ouverts pour $d$. Alors les $U_i$ sont aussi des ouverts pour la topologie définie par $|.|$. 
+Comme $K$ est compact pour $|.|$ alors on peut extraire un ensemble fini $J\subset I$ tel que $K \subset \bigcup_{i\in J} U_i$. Donc $K$ est aussi compact pour $d$. 
+
+Si $F$ est un fermé pour $|.|$ alors $F\subset [0,1]$ est compact pour $|.|$
+Donc compact pour $d$, donc fermé pour $d$. 
+
+  \item Si $U$ est un ouvert pour $d$ alors $U$ est un ouvert pour $|.|$.
+Car $i$ est continue. Réciproquement si $U$ est un ouvert pour $|.|$ alors
+$F = X\setminus U$ est un fermé pour $|.|$ donc $F$ est un fermé pour $d$ par la question précédente, donc $U = X \setminus F$ est un ouvert pour $d$.
+Conclusion les ouverts pour $|.|$ et $d$ sont les mêmes donc
+$|.|$ et $d$ définissent la même topologie.
+\end{enumerate}
+\fincorrection
+\finexercice

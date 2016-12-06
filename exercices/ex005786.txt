@@ -1,0 +1,24 @@
+\exercice{5786, rouget, 2010/10/16}
+\enonce[*** I]
+Montrer que la matrice de \textsc{Hilbert} $H_n =\left(\frac{1}{i+j-1}\right)_{1\leqslant i,j\leqslant n}$ est définie positive.
+\finenonce
+
+\noindication
+
+\correction
+La matrice $H_n$ est symétrique réelle. Soit $X=(x_i)_{1\leqslant i\leqslant n}\in\mathcal{M}_{n,1}(\Rr)$.
+
+\begin{align*}\ensuremath
+{^t}X H_n X&=\sum_{1\leqslant i,j\leqslant n}^{}\frac{x_ix_j}{i+j-1}=\sum_{1\leqslant i,j\leqslant n}^{}x_ix_j\int_{0}^{1}t^{i+j-2}\;dt =\int_{0}^{1}\left(\sum_{1\leqslant i,j\leqslant n}^{}x_ix_j t^{i+j-2}\right)dt\\
+ &=\int_{0}^{1}\left(\sum_{i=1}^{n}x_it^{i-1}\right)^2dt\geqslant0 .
+\end{align*}
+
+De plus, si $X\neq0$, le polynôme $\sum_{i=1}^{n}x_iY^{i-1}$ n'est pas le polynôme nul et donc, puisqu'un polynôme non nul admet un nombre fini de racines, la fonction $t\mapsto\left(\sum_{i=1}^{n}x_it^{i-1}\right)^2$. Ainsi, la fonction $t\mapsto\left(\sum_{i=1}^{n}x_it^{i-1}\right)^2$ est continue positive et non nulle sur $[0,1]$ et on en déduit que $\int_{0}^{1}\left(\sum_{i=1}^{n}x_it^{i-1}\right)^2\;dt>0$. On a montré que $\forall X\in\mathcal{M}_{n,1}(\Rr)\setminus\{0\}$, ${^t}X H_n X > 0$ et donc que
+
+\begin{center}
+\shadowbox{
+la matrice $H_n$ est symétrique définie positive.
+}
+\end{center}
+\fincorrection
+\finexercice

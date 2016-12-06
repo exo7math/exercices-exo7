@@ -1,0 +1,24 @@
+\exercice{2813, burnol, 2009/12/15}
+\enonce
+Soit $C$ un cercle de centre quelconque, parcouru dans le
+sens direct, et ne passant pas par l'origine. Calculer
+$\int_C z^n \,dz$ pour tout $n\in\Zz$ dans le cas où $C$
+encercle l'origine, et dans le cas où $C$ n'encercle pas
+l'origine. 
+\emph{Indication} pour $n=-1$: soit $w$ l'affixe du
+ centre du cercle, et $R$ son rayon. Paramétrer le cercle
+ par $z = w(1 + \frac{R}{|w|}e^{i\theta})$,
+ $-\pi<\theta\leq+\pi$, puis utiliser un développement en
+ série en distinguant les cas $R>|w|$ et $R<|w|$. Ou encore
+ invoquer la fonction $\mathrm{Log}(z/w)$.
+\finenonce
+\noindication
+\correction
+Dans le cas o\`u $C$ n'encercle pas l'origine la fonction $z\mapsto z^n$ est holomorphe au voisinage du disque
+bord\'e par $C$ et ceci pour tout $n\in \Z$. Par cons\'equent, $\int _C z^n dz=0$. Sinon on retrouve les valeurs
+obtenues pr\'ec\'edemment. On rappelle \'egalement que :
+$$\frac{1}{2i\pi}\int _C \frac{1}{z} dz$$
+est l'indice $\mathrm{Ind}(C,0)$ de la courbe $C$ par rapport \`a l'origine. Cet indice est $1$ lorsque $C$ encercle
+l'origine et $0$ sinon.
+\fincorrection
+\finexercice

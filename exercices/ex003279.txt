@@ -1,0 +1,129 @@
+\exercice{3279, quercia, 2010/03/08}
+\enonce[D{\'e}compositions pratiques des fractions rationnelles]
+
+          %+--------------------------------------------------------+
+          %|  D{\'e}compositions pratiques des fractions rationnelles   |
+          %+--------------------------------------------------------+
+
+
+\def \FFF#1/#2 {\frac {#1}{#2}}
+\def \AAA#1{(x-1)^{#1}}      
+\def \BBB#1{(x+1)^{#1}}      
+\def \CCC#1{(x^2+1)^{#1}}    
+\def \DDD#1{(x^2+x+1)^{#1}}  
+
+                        %+----------------------------+
+                        %|  {\'e}l{\'e}ments de 1{\`e}re esp{\`e}ce   |
+                        %+----------------------------+
+
+\bigskip 
+\textbf{{\'E}l{\'e}ments de 1{\`e}re esp{\`e}ce}
+
+\begin{align*}
+\FFF 1/(x^2-1)^5         =& \FFF1/32\AAA5 -\FFF5/64\AAA4 +\FFF15/128\AAA3
+-\FFF35/256\AAA2 +\FFF35/256({x-1}) \\ -&\FFF35/256({x+1}) -\FFF35/256\BBB2
+-\FFF15/128\BBB3 -\FFF15/64\BBB4 -\FFF1/32\BBB5 \cr  
+\FFF \CCC2/\AAA6             =& \FFF4/\AAA6 + \FFF8/\AAA5 + \FFF8/\AAA4 + \FFF4/\AAA3 + \FFF1/\AAA2 \cr
+\FFF x^3+x+1/x^4\AAA3      =& -\FFF1/x^4 -\FFF4/x^3 -\FFF9/x^2 -\FFF17/x +\FFF3/\AAA3 -\FFF8/\AAA2 +\FFF17/{{x-1}} \cr
+\FFF (x^2-x+1)^2/x^2\AAA2  =& 1 + \FFF1/x^2 + \FFF1/\AAA2 \cr
+\FFF x^2/(x^2-1)^2       =& \FFF1/4\AAA2 + \FFF1/4({x-1}) + \FFF1/4\BBB2 + \FFF1/4({x+1}) \cr
+\end{align*}
+
+\bigskip
+                                  %+----------+
+                                  %|  x^2+1   |
+                                  %+----------+
+
+\textbf{Du type $x^2+1$}
+
+\begin{align*}
+\FFF x^2/(x^2+1)^2       =& \FFF -1/\CCC2 + \FFF 1/{{x^2+1}} \cr
+\FFF x/(x^4-1)^2         =& \FFF1/16\AAA2 -\FFF1/8({x-1}) - \FFF1/16\BBB2 -\FFF1/8({x+1}) + \FFF x/4\CCC2 + \FFF x/4({x^2+1}) \cr
+\FFF x/({x-1})\CCC2        =& \FFF 1/4({x-1}) + \FFF 1-x/2\CCC2 - \FFF x+1/4({x^2+1}) \cr
+\FFF x^6/\CCC2\BBB2          =& 1 +\FFF1/4\BBB2 - \FFF1/{{x+1}} + \FFF x/2\CCC2 - \FFF {x+1/4}/{{x^2+1}} \cr
+\FFF x^6/({x^2+1})\AAA3    =& x + 3 + \FFF x-1/4({x^2+1}) + \FFF 1/2\AAA3 + \FFF 5/2\AAA2 + \FFF 19/4({x-1})  \cr
+\end{align*}
+
+\bigskip
+                                 %+------------+
+                                 %|  x^2+x+1   |
+                                 %+------------+
+
+\textbf{Du type $x^2+x+1$}
+
+\begin{align*}
+\FFF x/x^4+x^2+1         =& \FFF 1/2(x^2-x+1) - \FFF 1/2(x^2+x+1) \cr
+\FFF x^4+1/x^4+x^2+1     =& 1 + \FFF x/2(x^2+x+1) - \FFF x/2(x^2-x+1) \cr
+\FFF x^4+1/x^2\DDD2       = & \FFF1/x^2 -\FFF2/x -\FFF1/\DDD2 + \FFF2x+2/{{x^2+x+1}} \cr
+\FFF 3x^5-5x^4+4x^2-11x+1/\DDD6  =& -\FFF 23x+6/\DDD6 + \FFF 13x+18/\DDD5 + \FFF 3x-11/\DDD4 \cr
+\end{align*}
+
+\bigskip
+                     %+-----------------------------------+
+                     %|  autres {\'e}l{\'e}ments de 2{\`e}me esp{\`e}ce   |
+                     %+-----------------------------------+
+
+\textbf{Autres {\'e}l{\'e}ments de 2{\`e}me esp{\`e}ce}
+
+\begin{align*}
+\FFF x^8/x^6-1  =& x^2 + \FFF1/6 \biggl( \FFF1/x-1 -\FFF1/x+1 +\FFF2x+1/x^2+x+1 -\FFF2x-1/x^2-x+1 \biggr) \cr
+\FFF 1/x^4+1   =& \FFF1/2\sqrt2  \biggl( \FFF x+\sqrt2/x^2+x\sqrt2+1 - \FFF x-\sqrt2/x^2-x\sqrt2+1 \biggr) \cr
+\FFF x/x^4+1   =& \FFF 1/2\sqrt2 \biggl( \FFF 1/x^2-x\sqrt2+1 - \FFF 1/x^2+x\sqrt2+1 \biggr) \cr
+\FFF 1/x^5+1   =& \FFF 1/5({x+1}) - \FFF1/5 \biggl( \FFF {\omega x-2}/{x^2-\omega x+1}
+                   + \FFF {\omega'x-2}/{x^2-\omega'x+1} \biggr),\quad
+                   \omega = \FFF1+\sqrt5/2 ,\omega' = \FFF1-\sqrt5/2 \cr
+\end{align*}
+
+\bigskip
+                           %+-----------------------+
+                           %|  racines de l'unit{\'e}   |
+                           %+-----------------------+
+
+\textbf{Racines de l'unit{\'e}}
+
+\begin{align*}
+\FFF x^n+1/x^n-1         =& 1 + 2\sum_{k=0}^{n-1} \FFF \omega^k/n(x-\omega^k) ,\quad \omega = e^{2i\pi/n}\cr
+\FFF 1/x^n-1             =& \sum_{k=1 ; 2k \ne n}^{n-1} \FFF 2x\cos\alpha_k-2/n(x^2-2x\cos\alpha_k+1)
+                            + \FFF1/n(x-1) \ \left[ - \FFF1/n(x+1) \text{ si n est pair} \right],
+                            \quad \alpha_k = \FFF2k\pi/n \cr
+\sum_{k=0}^{n-1} \FFF 1/x-\omega^k        =& \FFF nx^{n-1}/x^n-1 ,\quad \omega = e^{2i\pi/n}\cr
+\sum_{k=0}^{n-1} \FFF 1/(x-\omega^k)^2    =& \FFF nx^{2n-2}+n(n-1)x^{n-2}/(x^n-1)^2
+                                             ,\quad \omega = e^{2i\pi/n}\quad(\text{d{\'e}riv{\'e}e})\cr
+\end{align*}
+
+\bigskip
+                        %+-----------------------------+
+                        %|  polyn{\^o}mes de Tchebychev    |
+                        %+-----------------------------+
+
+\textbf{Polyn{\^o}mes de Tchebychev}
+
+\begin{align*}
+\FFF 1/{\cos(n\arccos x)}  =& \FFF1/n \sum_{k=0}^{n-1} \FFF (-1)^k\sin\beta_k/x-\cos\beta_k ,\quad \beta_k = \FFF(2k+1)\pi/2n \cr
+\tan(n\arctan x)         =& \FFF1/n \sum_{k=0 ; 2k\ne n-1}^{n-1} \FFF1/\cos^2\beta_k(\tan\beta_k-x)
+                              \left[ + \FFF x/n \ \text{si n est impair} \right],\quad \beta_k = \FFF(2k+1)\pi/2n \cr
+\end{align*}
+
+\bigskip
+                                 %+-----------+
+                                 %|  divers   |
+                                 %+-----------+
+
+\textbf{Divers}
+
+\begin{align*}
+\FFF x^{2n}/{\CCC n}  =& \sum_{k=0}^n \FFF (-1)^kC_n^k/{\CCC k} \cr
+\FFF 1/(x^2-1)^n    =& \sum_{k=0}^{n-1} \FFF \Gamma_n^k/2^{n+k} \biggl( \FFF (-1)^k/(x-1)^{n-k} + \FFF (-1)^n/(x+1)^{n-k} \biggr) \cr
+\FFF 1/{\CCC n}      = & \sum_{k=0}^{n-1} \FFF (-1)^n\Gamma_n^k/2^{n+k} \biggl( \FFF {i^{k+n}}/(x-i)^{n-k} + \FFF {(-i)^{k+n}}/(x+i)^{n-k} \biggr) \cr
+\FFF n!/(x+1)(x+2)\dots(x+n)  =& \sum_{k=1}^n \FFF (-1)^{k-1}kC_n^k/x+k \cr
+\FFF x^2/x^4-2x^2\cos\alpha+1 =& \FFF1/4\cos(\alpha/2) \biggl(\FFF x/x^2-2x\cos(\alpha/2)+1 - \FFF x/x^2+2x\cos(\alpha/2)+1 \biggr), \quad \alpha\not\equiv0(\mathrm{mod}\,\pi)\cr
+\end{align*}
+
+
+\finenonce
+
+\noindication
+
+\nocorrection
+
+\finexercice 

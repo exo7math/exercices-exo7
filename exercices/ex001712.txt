@@ -1,0 +1,145 @@
+\exercice{1712, barraud, 2003/09/01}
+
+\enonce
+  On considère la matrice $A=
+  \begin{pmatrix}
+    a&-b&-c&-d\\
+    b& a& d&-c\\
+    c&-d& a& b\\
+    d& c&-b& a  
+  \end{pmatrix}
+$, avec $(b,c,d)\neq(0,0,0)$.
+\begin{enumerate}
+\item 
+  Calculer $A{}^t{A}$.
+  Que vaut $\det A$ au signe près~?
+
+\item
+  En étudiant le signe du terme en $a^{4}$ dans le déterminant de $A$,
+  montrer que $\det A=(a^{2}+b^{2}+c^{2}+d^{2})^{2}$. Sans calcul
+  supplémentaire, en déduire que le polynôme caractéristique de $A$ est
+  $\chi_{A}=((a-X)^{2}+b^{2}+c^{2}+d^{2})^{2}$.
+
+\item
+  $A$ est-elle diagonalisable sur $\R$~? (justifier)
+
+\item
+  On se place maintenant dans le cas où $a=1$, $b=c=d=-1$. Vérifier que
+  $(i\sqrt{3},1,1,1)$ et $(-1,i\sqrt{3},-1,1)$ sont des vecteurs propres
+  de $A$, puis diagonaliser $A$ sur $\C$.
+
+\item
+  Application~: résoudre le système récurent suivant (il n'est pas
+  nécessaire de calculer l'inverse de la matrice de passage de la
+  question précédente). On notera $\omega=1/2+i\sqrt{3}/2=e^{i\pi/3}$.
+$$
+\left\{
+  \begin{array}{ccr}
+    u_{n+1} &=& u_{n}+v_{n}+w_{n}+h_{n}\\
+    v_{n+1} &=&-u_{n}+v_{n}-w_{n}+h_{n}\\
+    w_{n+1} &=&-u_{n}+v_{n}+w_{n}-h_{n}\\
+    h_{n+1} &=&-u_{n}-v_{n}+w_{n}+h_{n}
+  \end{array}
+\right.
+\qquad
+\left\{
+  \begin{array}{ccr}
+    u_{0} &=&1\\
+    v_{0} &=&0\\
+    w_{0} &=&0\\
+    h_{0} &=&0
+  \end{array}
+\right.
+$$
+\end{enumerate}
+
+\finenonce
+
+\noindication
+
+\correction
+  \begin{enumerate}
+  \item 
+    $A{}^t{A}=(a^{2}+b^{2}+c^{2}+d^{2})\mathrm{id}$. Ainsi $\det
+    A*\det{}^t A=(\det A)^{2}=(a^{2}+b^{2}+c^{2}+d^{2})^{4}$ et donc
+    $\det A=\pm(a^{2}+b^{2}+c^{2}+d^{2})^{2}$.
+    
+  \item Dans l'expression $\det A =\sum_{\sigma\in
+     S_{4}}\epsilon(\sigma)\alpha_{1\sigma(1)}...\alpha_{4\sigma(4)}$ où
+   les coefficients de $A$ sont notés $\alpha_{ij}$, le seul terme en
+   $a^{4}$ est obtenu pour $\sigma=\mathrm{id}$, soit $\epsilon(\sigma)=+1$. On
+   en déduit que $\det A=(a^{2}+b^{2}+c^{2}+d^{2})^{2}$. Pour obtenir le
+   polynôme caractéristique de $A$, on remplace $a$ par $a-X$ dans $A$,
+   et on calcule le déterminant. On a donc
+   $\chi_{A}=((a-X)^{2}+b^{2}+c^{2}+d^{2})^{2}$
+
+ \item
+   $\forall\lambda\in\R, \chi_{A}(\lambda)>0$ car $(b,c,d)\neq(0,0,0)$.
+   Donc $A$ n'a pas de valeur propre réelle, donc $A$ n'est ni
+   diagonalisable ni triangularisable sur $\R$.
+
+ \item
+   $A(i\sqrt{3},1,1,1)=(1-i\sqrt{3}(i\sqrt{3},1,1,1))$ et
+   $A(-1,i\sqrt{3},-1,1)=(1-i\sqrt{3}(-1,i\sqrt{3},-1,1))$. Pour la
+   seconde valeur propre, qui est le conjugué de $1-i\sqrt{3}$, on
+   utilise les vecteurs conjugués. Ainsi, en posant $ P=
+ \begin{pmatrix}
+   i\sqrt{3} & -1         &-i\sqrt{3} & -1 \\ 
+   1         &  i\sqrt{3} & 1         & -i\sqrt{3}\\
+   1         & -1         & 1         & -1        \\
+   1         &  1         & 1         &  1
+ \end{pmatrix}
+   $ on a $P^{-1}AP=
+   \begin{pmatrix}
+     2\bar\omega &0          &0      &0\\
+     0           &2\bar\omega&0      &0\\  
+     0           &0          &2\omega&0\\
+     0           &0          &0      &2\omega
+\end{pmatrix}=D
+$.
+
+\item
+  Soit $X_{n}=(u_{n},v_{n},w_{n},h_{n})$. On a $\forall n \in\N,
+  X_{n+1}=AX_{n}$, d'où $\forall n\in\N, X_{n}=A^{n}X_{0}$. Or
+  $A^{n}X_{0}=PD^{n}P^{-1}X_{0}$. On en déduit que $X_{n}=
+  \begin{pmatrix}
+   2^{n}\bar\omega^{n}i\sqrt{3}
+ & -2^{n}\bar\omega^{n}         
+ &-2^{n}\omega^{n}i\sqrt{3} 
+ & -2^{n}\omega^{n} \\ 
+   2^{n}\bar\omega^{n}         
+ &  2^{n}\bar\omega^{n}i\sqrt{3} 
+ & 2^{n}\omega^{n}        
+ & -2^{n}\omega^{n}i\sqrt{3}\\
+   2^{n}\bar\omega^{n}         
+ & -2^{n}\bar\omega^{n}         
+ & 2^{n}\omega^{n}        
+ & -2^{n}\omega^{n}        \\
+   2^{n}\bar\omega^{n}         
+ &  2^{n}\bar\omega^{n}         
+ & 2^{n}\omega^{n}        
+ &  2^{n}\omega^{n}
+  \end{pmatrix}
+$. Posons $Y_{0}=P^{-1}X_{0}$. En résolvant le système $PX_{0}=Y_{0}$,
+on obtient $Y_{0}=(1/2i\sqrt{3},0,-1/2i\sqrt{3},0)$, et finalement~:
+$$
+X_{n}=1/2i\sqrt{3}
+\begin{pmatrix}
+  2^{n}(\bar\omega^{n}+\omega^{n})i\sqrt{3}\\
+  2^{n}(\bar\omega^{n}-\omega^{n})\\
+  2^{n}(\bar\omega^{n}-\omega^{n})\\
+  2^{n}(\bar\omega^{n}-\omega^{n})
+\end{pmatrix}=2^{n}
+\begin{pmatrix}
+  \cos \frac{n\pi}{3}\\
+  -\sin \frac{n\pi}{3}\\
+  -\sin \frac{n\pi}{3}\\
+  -\sin \frac{n\pi}{3}
+\end{pmatrix}
+$$
+\end{enumerate}
+\fincorrection
+
+
+\finexercice
+

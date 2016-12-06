@@ -1,0 +1,28 @@
+\exercice{3390, quercia, 2010/03/09}
+\enonce[INT ingénieurs 93]
+
+Soit $E = \{ \text{matrices de } \mathcal{M}_n(\R) \text{ antisymétriques}\}$ et
+$f : E \to  E,  M \mapsto {^t\!AM+MA}$ où $A \in \mathcal{M}_n(\R)$.
+
+\begin{enumerate}
+  \item Montrer que $f$ est un endomorphisme.
+  \item Quelle est la trace de $f$ ?
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item 
+  \item La base canonique de $E$ est $(F_{ij} = E_{ij}-E_{ji})_{1\le i<j \le n}$ où $(E_{ij})$
+est la base canonique de $\mathcal{M}_n(\R)$ :
+Si $M \in E$, la coordonnée de $M$ suivant $F_{ij}$ est le coefficient d'indices
+$i,j$ de $M$. En particulier, en notant $A = (a_{ij})$, la coordonnée de
+$f(F_{ij})$ suivant $F_{ij}$ est $a_{ii}+a_{jj}$, donc :
+$$\mathrm{tr} f = \sum_{i,j} (a_{ii} + a_{jj}) = (n-1)\mathrm{tr} A.$$
+\end{enumerate}
+ \fincorrection
+
+\finexercice

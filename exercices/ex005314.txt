@@ -1,0 +1,29 @@
+\exercice{5314, rouget, 2010/07/04}
+\enonce[***]
+On pose $\omega_k=e^{2ik\pi/n}$ et $Q=1+2X+...+nX^{n-1}$. Calculer $\prod_{k=0}^{n-1}Q(\omega_k)$.
+\finenonce
+
+\noindication
+
+\correction
+Tout d'abord
+$$Q=(1+X+...+X^n)'=(\frac{X^{n+1}-1}{X-1})'=\frac{(n+1)X^n(X-1)-X^{n+1}}{(X-1)^2}=\frac{nX^{n+1}-(n+1)X^n+1}{(X-1)^2}.$$
+
+Ensuite, $\omega_0=1$ et donc, $Q(\omega_0)=1+2+...+n=\frac{n(n+1)}{2}$. Puis, pour $1\leq k\leq n-1$, $\omega_k\neq1$ et donc, puisque $\omega_k^n=1$,
+
+$$Q(\omega_k)=\frac{n\omega_k^{n+1}-(n+1)\omega_k^n+1}{(\omega_k-1)^2}=\frac{n\omega_k-(n+1)+1}{(\omega_k-1)^2}
+=\frac{n}{\omega_k-1}.$$
+
+Par suite, 
+
+$$\prod_{k=0}^{n-1}Q(\omega_k)=\frac{n(n+1)}{2}\prod_{k=1}^{n-1}\frac{n}{\omega_k-1}=\frac{n^n(n+1)}{2\prod_{k=1}^{n-1}(\omega_k-1)}.$$
+
+Mais, $X^n-1=(X-1)(1+X+...+X^{n-1})$ et d'autre part $X^n-1=\prod_{k=0}^{n-1}(X-e^{2ik\pi/n})=(X-1)\prod_{k=1}^{n-1}(X-\omega_k)$. Par intégrité de $\Rr[X]$, $\prod_{k=1}^{n-1}(X-e^{2ik\pi/n})=1+X+...+X^{n-1}$ (Une autre rédaction possible est~:~$\forall z\in\Cc,\;(z-1)\prod_{k=1}^{n-1}(z-\omega_k)=(z-1)(1+z+...+z^{n-1})$ et donc $\forall z\in\Cc\setminus\{1\}$, $\prod_{k=1}^{n-1}(z-\omega_k)=1+z+...+z^{n-1}$ et finalement $\forall z\in\Cc,\;\prod_{k=1}^{n-1}(z-\omega_k)=1+z+...+z^{n-1}$ car les deux polynômes ci-contre coincident en une infinité de valeurs de $z$.)
+
+En particulier, $\prod_{k=1}^{n-1}(1-\omega_k)=1+1^2+...+1^{n-1}=n$ ou encore $\prod_{k=1}^{n-1}(\omega_k-1)=(-1)^{n-1}n$.
+Donc,
+
+$$\prod_{k=0}^{n-1}Q(\omega_k)=\frac{n^n(n+1)}{2}\frac{1}{(-1)^{n-1}n}=\frac{(-1)^{n-1}n^{n-1}(n+1)}{2}.$$
+
+\fincorrection
+\finexercice

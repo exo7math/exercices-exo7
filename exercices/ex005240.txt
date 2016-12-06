@@ -1,0 +1,69 @@
+\exercice{5240, rouget, 2010/06/30}
+\enonce[****]
+On pose $u_1=1$ et, $\forall n\in\Nn^*,\;u_{n+1}=1+\frac{n}{u_n}$. Montrer que $\lim_{n\rightarrow +\infty}(u_n-\sqrt{n})=\frac{1}{2}$.
+\finenonce
+
+\noindication
+
+\correction
+Tout d'abord , on montre facilement par récurrence que, pour tout entier naturel non nul $n$, $u_n$ existe et $u_n\geq1$.
+Mais alors, pour tout entier naturel non nul $n$, $1\leq u_{n+1}=1+\frac{n}{u_n}\leq1+n$. Par suite, pour $n\geq2$, $1\leq u_n\leq n$, ce qui reste vrai pour $n=1$.
+
+$$\forall n\in\Nn^*,\;1\leq u_n\leq n.$$
+Supposons momentanément que la suite $(u_n-\sqrt{n})_{n\geq1}$ converge vers un réel $\ell$. Dans ce cas :
+
+$$1+\frac{n}{u_n}=1+\frac{n}{\sqrt{n}+\ell+o(1)}=1+\sqrt{n}\frac{1}{1+\frac{\ell}{\sqrt{n}}+o\left(\frac{1}{\sqrt{n}}\right)}= 1+\sqrt{n}\left(1-\frac{\ell}{\sqrt{n}}+o\left(\frac{1}{\sqrt{n}}\right)\right)=\sqrt{n}+1-\ell+o(1).$$
+D'autre part,
+
+$$u_{n+1}=\sqrt{n+1}+\ell+o(1)=\sqrt{n}\left(1+\frac{1}{n}\right)^{1/2}+\ell+o(1)=\sqrt{n}+\ell+o(1),$$
+et donc $\ell-(1-\ell)=o(1)$ ou encore $2\ell-1=0$. Donc, si la suite $(u_n-\sqrt{n})_{n\geq1}$ converge vers un réel $\ell$, alors $\ell=\frac{1}{2}$.
+Il reste à démontrer que la suite $(u_n-\sqrt{n})_{n\geq1}$ converge.
+On note que pour tout entier naturel non nul,
+
+$$u_{n+1}-u_n=\frac{1}{u_n}(-u_n^2+u_n+n)=\frac{1}{u_n}\left(\frac{1}{2}(1+\sqrt{4n+1})-u_n\right)\left(u_n-\frac{1}{2}
+(1-\sqrt{4n+1})\right).$$
+Montrons par récurrence que pour $n\geq1$, $\frac{1}{2}(1+\sqrt{4n-3})\leq u_n\leq\frac{1}{2}(1+\sqrt{4n+1})$. Posons $v_n=\frac{1}{2}(1+\sqrt{4n-3})$ et $w_n=\frac{1}{2}(1+\sqrt{4n+1})$.
+
+Si $n=1$, $v_1=1\leq u_1=1\leq\frac{1}{2}(1+\sqrt{5})=w_1$.
+
+Soit $n\geq1$. Supposons que $v_n\leq u_n\leq w_n$. Alors, 
+
+$$1+\frac{2n}{\sqrt{4n+1}+1}\leq u_{n+1}=1+\frac{n}{u_n}\leq1+\frac{2n}{\sqrt{4n-3}+1}.$$
+
+Mais, pour $n\geq1$,
+
+\begin{align*}
+\mbox{sgn}(\frac{1}{2}(1+\sqrt{4n+5})-&(1+\frac{2n}{\sqrt{4n-3}+1}))=\mbox{sgn}((1+\sqrt{4n+5})(1+\sqrt{4n-3})-2(2n+1+\sqrt{4n-3}))\\
+ &=\mbox{sgn}(\sqrt{4n+5}(1+\sqrt{4n-3})-(4n+1+\sqrt{4n-3}))\\
+ &=\mbox{sgn}((4n+5)(1+\sqrt{4n-3})^2-(4n+1+\sqrt{4n-3})^2)\;(\mbox{par croissance de}\;x\mapsto x^2\;\mbox{sur}\;[0,+\infty[)\\
+ &=\mbox{sgn}((4n+5)(4n-2+2\sqrt{4n-3})-((4n+1)^2+2(4n+1)\sqrt{4n-3}+4n-3))\\
+ &=\mbox{sgn}(-8+8\sqrt{4n-3}) =\mbox{sgn}(\sqrt{4n-3}-1) =\mbox{sgn}((4n-3)-1)=\mbox{sgn}(n-1)=+
+\end{align*}
+
+Donc, $u_{n+1}\leq 1+1+\frac{2n}{\sqrt{4n-3}+1}\leq w_{n+1}$.
+
+D'autre part,
+
+$$1+\frac{2n}{\sqrt{4n+1}+1}=\frac{2n+1+\sqrt{4n+1}}{\sqrt{4n+1}+1}=\frac{(\sqrt{4n+1}+1)^2}{2(\sqrt{4n+1}+1)}
+=\frac{1}{2}(1+\sqrt{4n+1})=v_{n+1},$$ 
+
+et donc $v_{n+1}\leq u_{n+1}\leq w_{n+1}$.
+
+On a montré par récurrence que 
+
+$$\forall n\in\Nn^*,\;\frac{1}{2}(1+\sqrt{4n-3})\leq u_n\leq\frac{1}{2}(1+\sqrt{4n+1}),$$
+
+(ce qui montre au passage que $u$ est croissante).
+
+Donc, pour $n\geq1$,
+
+$$\frac{1}{2}+\sqrt{n-\frac{3}{4}}-\sqrt{n}\leq u_n-\sqrt{n}\leq\frac{1}{2}+\sqrt{n+\frac{1}{4}}-\sqrt{n},$$
+
+ou encore, pour tout $n\geq1$,
+ 
+$$\frac{1}{2}-\frac{3}{4}\frac{1}{\sqrt{n-\frac{3}{4}}+\sqrt{n}}\leq u_n-\sqrt{n}\leq\frac{1}{2}+\frac{1}{4}\frac{1}{\sqrt{n+\frac{1}{4}}+\sqrt{n}}.$$
+
+Maintenant, comme les deux suites 
+$(\frac{1}{2}-\frac{3}{4}\frac{1}{\sqrt{n-\frac{3}{4}}+\sqrt{n}})$ et $(\frac{1}{2}+\frac{1}{4}\frac{1}{\sqrt{n+\frac{1}{4}}+\sqrt{n}})$ convergent toutes deux vers $\frac{1}{2}$, d'après le théorème de la limite par encadrements, la suite $(u_n-\sqrt{n})_{n\geq1}$ converge vers $\frac{1}{2}$.
+\fincorrection
+\finexercice

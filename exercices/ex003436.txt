@@ -1,0 +1,38 @@
+\exercice{3436, quercia, 2010/03/10}
+\enonce[Déterminants $2\times2$ imposés]
+
+\def \dddd#1#2{\text{det}\bigl(\vec #1,\vec #2\bigr)}\relax
+Soient $\vec a, \vec b, \vec c, \vec d$ quatre vecteurs d'un ev $E$ de
+dimension 2. On note $\det$ le déterminant dans une base fixée de $E$.
+
+\begin{enumerate}
+  \item Démontrer que : $\dddd ab \dddd cd + \dddd ac \dddd db + \dddd ad \dddd bc = 0$.
+    \par
+    (Commencer par le cas où $(\vec a,\vec b)$ est libre)
+
+  \item On donne six scalaires : $d_{ab}, d_{ac}, d_{ad}, d_{cd}, d_{db}, d_{bc}$
+    tels que $d_{ab} d_{cd} + d_{ac} d_{db} + d_{ad} d_{bc} = 0$.
+    \par
+    Montrer qu'il existe des vecteurs $\vec a, \vec b, \vec c, \vec d$ tels que :
+    $\forall\ x,y,\ d_{xy} = \d xy$.
+   
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item 
+  \item %\def \dddd#1#2{\text{det}\bigl(\vec #1,\vec #2\bigr)}\relax
+    Si $d_{ab} \ne 0$, prendre 
+    $$\left\{
+    \begin{array}{lllll}
+    \vec c &=& -\frac {d_{bc}}{d_{ab}}\vec a &+& \frac {d_{ac}}{d_{ab}}\vec b \cr
+    \vec d &=& \phantom{-}\frac {d_{db}}{d_{ab}}\vec a
+                           &+& \frac {d_{ad}}{d_{ab}}\vec b.\cr
+\end{array}\right. $$
+\end{enumerate}
+ \fincorrection
+
+\finexercice

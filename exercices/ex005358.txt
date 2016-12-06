@@ -1,0 +1,32 @@
+\exercice{5358, rouget, 2010/07/04}
+\enonce[***]
+Soit $\sigma$ une permutation de $\{1,...,n\}$ et $k$ le nombre d'orbites de $\sigma$. Montrer que $\varepsilon(\sigma)=(-1)^{n-k}$.
+\finenonce
+
+\noindication
+
+\correction
+Montrons d'abord par récurrence sur $l\geq 2$ que la signature d'un cycle de longueur $l$ est $(-1)^{l-1}$.
+
+C'est connu pour $l=2$ (signature d'une transposition).
+
+Soit $l\geq 2$. Supposons que tout cycle de longueur $l$ ait pour signature $(-1)^{l-1}$. Soit $c$ un cycle de longueur $l+1$.
+
+On note $\{x_1,x_2,...,x_{l+1}\}$ le support de $c$ et on suppose que, pour $1\leq i\leq l$, $c(x_i)=x_{i+1}$ et que $c(x_{l+1})=x_1$.
+
+Montrons alors que $\tau_{x_1,x_{l+1}}\circ c$ est un cycle de longueur $l$. $\tau_{x_1,x_{l+1}}\circ c$ fixe déjà $x_{l+1}$ puis, si $1\leq i\leq l-1$, $\tau_{x_1,x_{l+1}}\circ c(x_i)=\tau_{x_1,x_{l+1}}(x_{i+1})=x_{i+1}$ (car $x_{i+1}$ n'est ni $x_1$, ni $x_{l+1}$), et enfin $\tau_{x_1,x_{l+1}}\circ c(x_l)=\tau_{x_1,x_{l+1}}(x_{l+1})=x_1$. 
+$\tau_{x_1,x_{l+1}}\circ c$ est donc bien un cycle de longueur $l$. Par hypothèse de récurrence, $\tau_{x_1,x_{l+1}}\circ c$ a pour signature $(-1)^{l-1}$ et donc, $c$ a pour signature $(-1)^{(l+1)-1}$.
+
+Montrons maintenant que si $\sigma$ est une permutation quelconque de $\{1,...,n\}$ ayant $k$ orbites la signature de $\sigma$ est $(-1)^{n-k}$.
+
+Si $\sigma$ est l'identité, $\sigma$ a $n$ orbites et le résultat est clair.
+
+Si $\sigma$ n'est pas l'identité, on décompose $\sigma$ en produit de cycles à supports disjoints.
+
+Posons $\sigma=c_1...c_p$ où $p$ désigne le nombre d'orbites de $\sigma$ non réduites à un singleton et donc $k-p$ est le nombre de points fixes de $\sigma$. Si $l_i$ est la longueur de $c_i$, on a donc $n=l_1+...+l_p+(k-p)$ ou encore $n-k=l_1+...+l_p-p$.
+
+Mais alors,
+
+$$\varepsilon(\sigma)=\prod_{i=1}^{p}\varepsilon(c_i)=\prod_{i=1}^{p}(-1)^{l_i-1}=(-1)^{l_1+...+l_p-p}=(-1)^{n-k}.$$
+\fincorrection
+\finexercice

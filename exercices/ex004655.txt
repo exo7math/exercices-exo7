@@ -1,0 +1,27 @@
+\exercice{4655, quercia, 2010/03/14}
+\enonce[$\sum_{n=1}^\infty \frac{\cos nx}{P(n)}$, $P =$ polynôme]
+
+\begin{enumerate}
+  \item Donner le développement en série de Fourier de la fonction $f$
+    $2\pi$-périodique telle que $f(x) = (\pi-x)^2$ sur $]0,2\pi[$.
+    
+  \item Soit $P$ un polynôme de degré 2 sans racines dans $\N^*$.
+    On pose $g(x) = \sum_{n=1}^\infty \frac{\cos nx}{P(n)}$.
+    Montrer que $g$ est de classe $\mathcal{C}^1$ par morceaux.
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $f(x) = \frac{\pi^2}3 + 4\sum_{n=1}^\infty
+             \frac{\cos nx}{n^2}$.
+  \item Soit $P(n) = an^2 + bn + c$.
+             Alors $f(x) - 4ag(x) = \frac{\pi^2}3
+             + 4\sum_{n=1}^\infty \frac{bn+c}{an^4+bn^3+cn^2}\cos nx$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

@@ -1,0 +1,51 @@
+\exercice{5157, rouget, 2010/06/30}
+\enonce[****]
+Montrer que pour $n\in\Nn$, $E(\frac{1}{3}(n+2-E(\frac{n}{25})))=E(\frac{8n+24}{25})$.
+\finenonce
+
+\noindication
+
+\correction
+Soit $n\in\Nn$. La division euclidienne de $n$ par $25$ fournit un quotient entier $q$ et et un
+reste $r$ élément de $\{0,1,...,24\}$ tels que $n=25q+r$.
+
+On a alors
+
+$$E(\frac{1}{3}(n+2-E(\frac{n}{25})))=E(\frac{25q+r+2-q}{3})=E(8q+\frac{r+2}{3})=8q+E(\frac{r+2}{3}),$$
+
+et
+
+$$E(\frac{8n+24}{25})=E(\frac{8(25q+r)+24}{25})=8q+E(\frac{8r+24}{25}).$$
+
+Pour montrer l'égalité de l'énoncé, il reste donc à vérifier les $25$ égalités $E(\frac{r+2}{3})=E(\frac{8r+24}{25})$,
+$0\leq r\leq 24$, $(*)$, ce qui peut déjà se vérifier \og~à la main~\fg.
+
+Diminuons encore le nombre de vérifications. La division euclidienne de $r$ par $3$ s'écrit $r=3k+l$ avec $0\leq
+l\leq2$. Mais alors,
+
+$$E(\frac{r+2}{3})=k+E(\frac{l+2}{3})\;\mbox{et}\;E(\frac{8r+24}{25})=E(\frac{25k-k+8l+24}{25})=k+E(\frac{-k+8l+
+24}{25}).$$
+
+Si $l=0$, $k$ varie de $0$ à $8$ et dans ce cas, $0\leq\frac{-k+24}{25}=\frac{-k+8l+24}{25}\leq\frac{24}{25}<1$. Par
+suite,
+
+$$E(\frac{-k+8l+24}{25})=0=E(\frac{2}{3})=E(\frac{l+2}{3}).$$
+
+On a ainsi vérifié $(*)$ quand $r\in\{0,3,6,9,12,15,18,21,24\}$.
+
+Si $l=1$ ou $l=2$, $E(\frac{l+2}{3})=1$ et d'autre part, $k$ varie de $0$ à $7$. Dans ce cas,
+
+$$1=\frac{-7+8+24}{25}\leq\frac{-k+8l+24}{25}\leq\frac{16+24}{25}<2$$
+
+et donc
+
+$$E(\frac{-k+8l+24}{25})=1=E(\frac{l+2}{3}).$$
+
+On a ainsi vérifié $(*)$ pour les autres valeurs de $r$. Finalement, on a montré que
+\begin{center}
+\shadowbox{
+$\forall n\in\Nn,\;E(\frac{1}{3}(n+2-E(\frac{n}{25})))=E(\frac{8n+24}{25}).$
+}
+\end{center}
+\fincorrection
+\finexercice

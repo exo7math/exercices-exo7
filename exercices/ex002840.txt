@@ -1,0 +1,30 @@
+\exercice{2840, burnol, 2009/12/15}
+\enonce
+\label{ex:burnol6.1}
+  Justifier les formules suivantes :
+lorsque $f$ présente en $z_0$ un pôle simple on a:
+$$\mathrm{Res}(f,z_0) = \lim_{z\to z_0} (z-z_0)f(z)$$
+Lorsque $f$ présente en $z_0$ un pôle d'ordre au plus $N$ on
+a:
+$$\mathrm{Res}(f,z_0) = \lim_{z\to z_0} \frac1{(N-1)!}\left(\frac{d}{dz}\right)^{N-1}(z-z_0)^N f(z)$$
+\finenonce
+\noindication
+\correction
+Si $f$ a un p\^ole d'ordre $N$ en $z_0$, on a, avec $a_{-N}\neq 0$,
+$$f(z) = \sum_{n= -N}^\infty a_n (z-z_0)^n = \frac{a_{-N}}{(z-z_0)^N} +...+\frac{a_{-1}}{z-z_0}+a_0+...$$
+D'o\`u
+$$(z-z_0)^N f(z) = a_{-N} +...+a_{-1} (z-z_0)^{N-1} +a_0 (z-z_0)^N+....$$
+ce qui donne
+$$\left(\frac{d}{dz}\right)^{N-1}\big[ (z-z_0)^N f(z) \big]= (N-1)! \,a_{-1} +o(z-z_0) .$$
+La formule en r\'esulte en faisant tendre $z$ vers $z_0$.
+Le cas $N=1$ est important pour la pratique. Notons que, si $f$ a un p\^ole simple en $z_0$, cette fonction s'\'ecrit $f=h/g$
+au voisinage de $z_0$ o\`u  $h,g$ sont des fonctions holomorphes au voisinage
+de $z_0$ telles que $h$ ne s'annule pas en $z_0$ et $g$ a un z\'ero simple en
+$z_0$, i.e. $g(z_0)=0$ et $g'(z_0)\neq 0$. Comme
+$$\mathrm{Res} (f, z_0) =\lim_{z\to z_0} (z-z_0) f(z) = h(z_0)\lim_{z\to z_0} \frac{z-z_0}{g(z)-g(z_0)} $$
+on a aussi la formule utile
+\begin{equation} \label{1}
+\mathrm{Res} (f, z_0) = \frac{h(z_0)}{g'(z_0)}.
+\end{equation}
+\fincorrection
+\finexercice

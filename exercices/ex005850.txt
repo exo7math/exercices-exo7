@@ -1,0 +1,37 @@
+\exercice{5850, rouget, 2010/10/16}
+\enonce[***]
+Calculer $\underset{\alpha\in]0,\pi[}{\text{Inf}}\left\{\underset{n\in\Zz}{\text{Sup}}|\sin(n\alpha)|\right\}$.
+\finenonce
+
+\noindication
+
+\correction
+Pour $\alpha\in]0,\pi[$, posons $f(\alpha) =\underset{n\in\Zz}{\text{Sup}}|\sin(n\alpha)|=\underset{n\in\Nn}{\text{Sup}}|\sin(n\alpha)|$.
+
+\textbullet~Tout d'abord $\forall\alpha\in]0,\pi[$, $\forall n\in\Nn$, $|\sin(n(\pi-\alpha))| = |\sin(n\alpha)|$ et donc $\forall\alpha\in]0,\pi[$, $f(\pi-\alpha) = f(\alpha)$.
+
+On en déduit que $\underset{\alpha\in]0,\pi[}{\text{Inf}}f(\alpha) =\underset{\alpha\in\left]0, \frac{\pi}{2}\right]}{\text{Inf}}f(\alpha)$.
+
+\textbullet~$f\left( \frac{\pi}{3}\right)=\text{sup}\left\{0, \frac{\sqrt{3}}{2}\right\}= \frac{\sqrt{3}}{2}$.
+
+\textbullet~Ensuite, si $\alpha\in\left[ \frac{\pi}{3}, \frac{\pi}{2}\right]$, $f(\alpha)\geqslant\sin(\alpha)\geqslant\sin\left( \frac{\pi}{3}\right)= \frac{\sqrt{3}}{2}=f\left( \frac{\pi}{3}\right)$.
+Par suite $\underset{\alpha\in\left]0, \frac{\pi}{2}\right]}{\text{Inf}}f(\alpha)=\underset{\alpha\in\left]0, \frac{\pi}{3}\right]}{\text{Inf}}f(\alpha)$.
+
+\textbullet~Soit alors $\alpha\in\left]0, \frac{\pi}{3}\right]$. Montrons qu'il existe un entier naturel non nul $n_0$ tel que $n_0\alpha\in\left[ \frac{\pi}{3}, \frac{2\pi}{3}\right]$.
+
+Il existe un unique entier naturel $n_1$ tel que $n_1\alpha\leqslant \frac{\pi}{3}<(n_1+1)\alpha$ à savoir $n_1= E\left( \frac{\pi}{3\alpha}\right)$.
+
+Mais alors, $ \frac{\pi}{3}<(n_1+1)\alpha= n\alpha+\alpha\leqslant \frac{\pi}{3}+ \frac{\pi}{3}= \frac{2\pi}{3}$ et l'entier $n_0=n_1+1$ convient.
+
+Ceci montre que $f(\alpha)\geqslant\sin \frac{\pi}{3}= \frac{\sqrt{3}}{2}=f\left( \frac{\pi}{3}\right)$.
+
+Finalement $\forall\alpha\in]0,\pi[$, $f(\alpha)\geqslant f\left( \frac{\pi}{3}\right)$ et donc 
+$\underset{\alpha\in]0,\pi[}{\text{Inf}}\left\{\underset{n\in\Zz}{\text{Sup}}|\sin(n\alpha)|\right\}=\underset{\alpha\in]0,\pi[}{\text{Min}}\left\{\underset{n\in\Zz}{\text{Sup}}|\sin(n\alpha)|\right\}=f\left( \frac{\pi}{3}\right)= \frac{\sqrt{3}}{2}$.
+
+\begin{center}
+\shadowbox{
+$\underset{\alpha\in]0,\pi[}{\text{Inf}}\left\{\underset{n\in\Zz}{\text{Sup}}|\sin(n\alpha)|\right\}= \frac{\sqrt{3}}{2}$.
+}
+\end{center}
+\fincorrection
+\finexercice

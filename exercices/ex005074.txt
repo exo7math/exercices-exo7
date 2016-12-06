@@ -1,0 +1,47 @@
+\exercice{5074, rouget, 2010/06/30}
+\enonce[***]
+Combien l'équation
+$$\tan x+\tan(2x)+\tan(3x)+\tan(4x)=0,$$
+possède-t-elle de solutions dans $[0,\pi]$~?
+\finenonce
+
+\noindication
+
+\correction
+Pour $x\in[0,\pi]$, posons $f(x)=\tan x+\tan(2x)+\tan(3x)+\tan(4x)$.
+
+\begin{align*}
+f(x)\;\mbox{existe}&\Leftrightarrow\tan x,\;\tan(2x),\;\tan(3x)\;\mbox{et}\;\tan(4x)\;\mbox{existent}\\
+ &\Leftrightarrow(x\notin\frac{\pi}{2}+\pi\Zz),\;(2x\notin\frac{\pi}{2}+\pi\Zz),\;(3x\notin\frac{\pi}{2}+\pi\Zz)\;\mbox{et}\;
+ (4x\notin\frac{\pi}{2}+\pi\Zz)\\
+ &\Leftrightarrow(x\notin\frac{\pi}{2}+\pi\Zz),\;(x\notin\frac{\pi}{4}+\frac{\pi}{2}\Zz),\;(x\notin\frac{\pi}{6}+
+ \frac{\pi}{3}\Zz)\;\mbox{et}\;(x\notin\frac{\pi}{8}+\frac{\pi}{4}\Zz)\\
+ &\Leftrightarrow x\notin\left\{\frac{\pi}{8},\frac{\pi}{6},\frac{\pi}{4},\frac{3\pi}{8},
+\frac{\pi}{2},\frac{5\pi}{8},\frac{3\pi}{4},\frac{5\pi}{6},\frac{7\pi}{8}\right\}.
+\end{align*}
+$f$ est définie et continue sur
+
+$$\left[0,\frac{\pi}{8}\right[\cup\left]\frac{\pi}{8},\frac{\pi}{6}\right[\cup\left]\frac{\pi}{6},\frac{\pi}{4}\right[\cup\left]\frac{\pi}{4},
+\frac{3\pi}{8}\right[\cup\left]\frac{3\pi}{8},\frac{\pi}{2}\right[\cup\left]\frac{\pi}{2},\frac{5\pi}{8}\right[\cup\left]\frac{5\pi}{8},
+\frac{3\pi}{4}\right[\cup\left]\frac{3\pi}{4},\frac{5\pi}{6}\right[\cup\left]\frac{5\pi}{6},\frac{7\pi}{8}\right[\cup\left]\frac{7\pi}{8},\pi\right].$$
+Sur chacun des dix intervalles précédents, $f$ est définie, continue et strictement croissante en tant que somme de
+fonctions strictement croissantes. La restriction de $f$ à chacun de ces dix intervalles est donc bijective de
+l'intervalle considéré sur l'intervalle image, ce qui montre déjà que l'équation proposée, que l'on note dorénavant
+$(E)$, a au plus une solution par intervalle et donc au plus dix solutions dans $[0,\pi]$.
+Sur $I=\left[0,\frac{\pi}{8}\right[$ ou $I=\left]\frac{7\pi}{8},\pi\right]$, puisque $f(0)=f(\pi)=0$, $(E)$ a exactement une
+solution dans $I$. Ensuite, dans l'expression de somme $f$, une et une seule des quatre fonctions est un infiniment
+grand en chacun des nombres considérés ci-dessus, à l'exception de $\frac{\pi}{2}$. En chacun de ces nombres, $f$ est un
+infiniment grand. L'image par $f$ de chacun des six intervalles ouverts n'ayant pas $\frac{\pi}{2}$ pour borne est donc
+$]-\infty,+\infty[$ et $(E)$ admet exactement une solution dans chacun de ces intervalles d'après le théorème des valeurs intermédiaires. Ceci porte le total à $6+2=8$
+solutions.
+En $\frac{\pi}{2}^-$, $\tan x$ et $\tan(3x)$ tendent vers $+\infty$ tandis que $\tan(2x)$ et $\tan(4x)$ tendent vers
+$0$. $f$ tend donc vers $+\infty$ en $\frac{\pi}{2}^-$, et de même $f$ tend vers $-\infty$ en $\frac{\pi}{2}^+$.
+L'image par $f$ de chacun des deux derniers intervalles est donc encore une fois $]-\infty,+\infty[$. Finalement,
+
+\begin{center}
+\shadowbox{
+$(E)\;\text{admet exactement dix solutions dans}\;[0,\pi].$
+}
+\end{center}
+\fincorrection
+\finexercice

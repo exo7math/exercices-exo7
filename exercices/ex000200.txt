@@ -1,0 +1,34 @@
+\exercice{200, bodin, 1998/09/01}
+\video{j8JoMNuw-vc}
+\enonce
+ Soit $ f:\Rr \rightarrow \Cc, \ t\mapsto e^{it}$. 
+Changer les ensembles de départ et d'arrivée afin que
+(la restriction de) $f$ devienne bijective.
+\finenonce 
+
+\indication
+Montrer que la restriction de $f$ définie par : 
+$[0,2\pi[ \longrightarrow \mathbb{U}$, $t\mapsto e^{it}$ est une bijection.
+Ici $\mathbb{U}$ est le cercle unit\'e de $\Cc$, c'est-\`a-dire 
+l'ensemble des nombres complexes de module \'egal \`a $1$. 
+\finindication
+
+\correction
+Considérons la restriction suivante de $f$ : $f_|:[0,2\pi[ \longrightarrow \mathbb{U}$, 
+$t\mapsto e^{it}$. Montrons que cette nouvelle application $f_|$ est bijective. Ici $\mathbb{U}$
+est le cercle unit\'e de $\Cc$ donn\'e par l'\'equation $(|z|=1)$.
+\begin{itemize}
+    \item[$\bullet$] $f_|$ est surjective car tout nombre complexe de $\mathbb{U}$ s'\'ecrit
+sous la forme polaire $e^{i\theta}$, et l'on peut choisir $\theta
+\in [0,2\pi[$.
+
+    \item[$\bullet$] $f_|$ est injective :
+\begin{align*}
+f_|(t) = f_|(t') &\Leftrightarrow e^{it}=e^{it'}\\
+&\Leftrightarrow t=t' +2k\pi \text{ avec } k\in \Zz\\
+&\Leftrightarrow t=t' \text{ car } t,t'\in[0,2\pi[ \text{ et donc }k=0.\\
+\end{align*}
+\end{itemize}
+En conclusion $f_|$ est injective et surjective donc bijective.
+\fincorrection
+\finexercice

@@ -1,0 +1,47 @@
+\exercice{2212, matos, 2008/04/23}
+\enonce[Quelques propri\'et\'es des normes matricielles]
+\begin{enumerate}
+\item Soit $A$ une matrice d'ordre $(m,n)$. D\'emontrer les in\'egalit\'es suivantes pour les normes $p$, $p=1,2, \infty$ et la norme de Frobenius:
+\begin{enumerate}
+\item $\|A\|_2 \leq \|A|_F \leq \sqrt{n} \|A|_2$
+\item $\max |a_{ij}| \leq \|A\|_2 \leq \sqrt{mn} \max |a_{ij}|$
+\item $ \displaystyle{\frac{1}{\sqrt{n}}}\|A\|_\infty \leq \|A\|_2 \leq \sqrt{m} \|A\|_\infty$
+\item $\displaystyle{\frac{1}{\sqrt{m}}}\|A\|_1 \leq \|A\|_2 \leq \sqrt{n} \|A\|_1$
+\end{enumerate}
+\item Soit $u\in\Rr^m$, $v\in\Rr^n$ et $E=uv^T$. Montrer que
+$$\|E\|_F = \|E\|_2 = \|u\|_2\|v\|_2$$
+$$\|E\|_\infty =\|u\|_\infty \|v\|_1$$
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item $\|A\|_2^2 =\rho (A^*A)$ rayon spectral de la matrice $A^*A$. D'un autre cot\^e on a:
+$$\|A\|^2_F =\mbox{tr} (A^*A) =\sum_{i=1}^n \lambda_i(A^*A) \left\{\begin{array}{l}\geq \rho (A^*A)\\ \leq n\rho (A^*A)\end{array}\right.$$
+o\`u tr est la trace de la matrice et $\lambda_i$ ses valeurs propres.
+\item $$\|A\|_2 \leq \|A\|_F =\left(\sum_{i,j}|a_{ij}|^2\right)^{1/2} \leq (mn\max_{i,j}|a_{ij}|^2 )^{1/2}=\sqrt{mn} \max_{i,j}|a_{ij}|$$
+Soit $x$ tel que : si $\max|a_{ij}| = |a_{i_0j_0}|$ alors on pose $x=e_{j_0}, \|x\|_2=1$. Alors
+
+$\|Ax\|^2_2=\sum_{i=1}^n|a_{i,j_0}|^2 \geq \max |a_{ij}|^2 \Rightarrow \mbox{sup} \|Ax\|^2_2 \geq \max |a_{ij}|^2$
+\item On rappelle que $\|A\|_{\infty} =\sum_{j=1}^n |a_{i_0j}|$ pour un certain $i_0$. Alors
+
+$ \|A\|_2^2\leq\|A\|_F^2=\sum_{i=1}^m\sum_{j=1}^n |a_{ij}|^2 \leq m\times \max_i\sum_{j=1}^n |a_{ij}|^2 \leq m \max \left(\sum_{j=1}^n|a_{ij}|\right)^2 =m\|A\|_\infty$
+
+Choisissons maintenant $x=(x_i)$ avec $x_i=$signe$(a_{i_0i})$. Alors
+$$\sum_{j=1}^n a_{i_0j}x_j = \sum_{j=1}^n|a_{i_0j}|=\|A\|_{\infty}$$
+$$\|x\|_2=\sqrt{n} \Rightarrow \|Ax\|^2_2 =\sum_{i=1}^m\left(\sum_{j=1}^n a_{ij}x_j\right)^2 \geq \|A\|_{\infty}^2\Rightarrow \frac{\|Ax\|_2}{\|x\|_2}\geq \frac{\|A\|_{\infty}}{\sqrt{n}}$$
+ce qui implique $\|A\|_2 \geq \|A\|_{\infty} /\sqrt{n}$
+\item M\^eme d\'emonstration que pr\'ec\'edemment ou alors constater que $\|A\|_1=\|A^T\|_{\infty}$.
+
+\item $\|E\|^2_F =\sum_{i,j} u_i^2v_j^2\sum_{i=1}^m\sum_{j=1}^n u_i^2v_j^2=\|u\|^2_2\|v\|^2_2$
+
+$$\|E\|_{\infty }= \max_i\left(\sum_{j=1}^n|u_iv_j|\right) =\max_i\left(|u_i|\sum_{j=1}^n|v_j|\right)=\|v\|_1\|u\|_{\infty}$$
+$\|Ex\|_2^2=\sum_{i=1}^m\left(u_i\sum_{j=1}^n v_jx_j\right)^2 =\sum_{i=1}^mu_i^2 \times (x,x)^2=\|u\|_2^2 (x,v)^2$
+
+$$\frac{\|Ex\|_2}{\|x\|_2}=\frac{(x,v)}{\|x\|_2} \|u\|_2 \Rightarrow \mbox{sup}_x\frac{\|Ex\|_2}{\|x\|_2}=\|v\|_2\|u\|_2$$
+\end{enumerate}
+
+\fincorrection
+\finexercice

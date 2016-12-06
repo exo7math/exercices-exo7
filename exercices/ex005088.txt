@@ -1,0 +1,137 @@
+\exercice{5088, rouget, 2010/06/30}
+\enonce[**]
+Simplifier les expressions suivantes :
+\begin{enumerate}
+\item  $f_1(x)=\Arcsin\left(\frac{x}{\sqrt{1+x^2}}\right)$.
+\item  $f_2(x)=\Arccos\left(\frac{1-x^2}{1+x^2}\right)$.
+\item  $f_3(x)=\Arcsin\sqrt{1-x^2}-\Arctan\left(\sqrt{\frac{1-x}{1+x}}\right)$.
+\item  $f_4(x)=\Arctan\frac{1}{2x^2}-\Arctan\frac{x}{x+1}+\Arctan\frac{x-1}{x}$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item   \textbf{1ère solution.} Pour tout réel $x$, $\sqrt{x^2+1}>\sqrt{x^2}=|x|$ et donc $-1<\frac{x}{\sqrt{x^2+1}}<
+1$. Ainsi $f_1$ est définie et dérivable sur $\Rr$, impaire, et pour tout réel $x$,
+
+$$f_1'(x)=\left(\frac{1}{\sqrt{x^2+1}}-\frac{1}{2}x\frac{2x}{(x^2+1)\sqrt{x^2+1}}\right)\frac{1}{\sqrt{1-\frac{x^2}{1+x^2}}}
+=\frac{1}{1+x^2}=\Arctan'(x).$$
+Donc il existe une constante réelle $C$ telle que pour tout réel $x$, $f_1(x)=\Arctan x+C$.
+$x=0$ fournit
+$C= 0$ et donc,
+
+\begin{center}
+\shadowbox{
+$\forall x\in\Rr,\;\Arcsin\left(\frac{x}{\sqrt{x^2+1}}\right)=\Arctan x.$
+}
+\end{center}
+\textbf{2ème solution.} Pour $x$ réel donné, posons $\theta=\Arctan x$. $\theta$ est dans
+$\left]-\frac{\pi}{2},\frac{\pi}{2}\right[$ et $x=\tan\theta$.
+
+\begin{align*}
+\frac{x}{\sqrt{x^2+1}}&=\frac{\tan\theta}{\sqrt{1+\tan^2\theta}}=\sqrt{\cos^2\theta}\tan\theta=\cos\theta\tan\theta\;
+(\mbox{car}\;\cos\theta>0)\\
+ &=\sin\theta
+\end{align*}
+et donc
+
+\begin{align*}
+f_1(x)&=\Arcsin(\sin\theta)=\theta\;(\mbox{car}\;\theta\;\mbox{est dans}\;\left]-\frac{\pi}{2},\frac{\pi}{2}\right[)\\
+ &=\Arctan x.
+\end{align*}
+ \item  \textbf{1ère solution.} Pour tout réel $x$, $-1<-1+\frac{2}{1+x^2}=\frac{1-x^2}{1+x^2}\leq-1+2=1$ (avec égalité
+si et seulement si $x=0$). $f_2$ est donc définie et continue sur $\Rr$, dérivable sur $\Rr^*$. Pour tout réel $x$ non nul,
+
+$$f_2'(x)=\frac{-2x(1+x^2)-2x(1-x^2)}{(1+x^2)^2}\frac{-1}{\sqrt{1-\left(\frac{1-x^2}{1+x^2}\right)^2}}=\frac{4x}{1+x
+^2}\frac{1}{\sqrt{4x^2}}=\frac{2\varepsilon}{1+x^2}$$
+où $\varepsilon$ est le signe de $x$. Donc il existe une
+constante réelle $C$ telle que pour tout réel positif $x$, $f_2(x)=2\Arctan x+C$ (y compris $x=0$ puisque $f$ est continue en $0$).\\
+$x= 0$ fournit $C=0$ et donc, pour
+tout réel positif $x$, $f_2(x)=2\Arctan x$. Par parité,
+
+\begin{center}
+\shadowbox{
+$\forall x\in\Rr,\;\Arccos\left(\frac{1-x^2}{1+x^2}\right)=2\Arctan|x|.$
+}
+\end{center}
+\textbf{2ème solution.} Soit $x\in\Rr$ puis $\theta=\Arctan x$. $\theta$ est dans
+$\left]-\frac{\pi}{2},\frac{\pi}{2}\right[$ et $x=\tan\theta$.
+
+$$\frac{1-x^2}{1+x^2}=\frac{1-\tan^2\theta}{1+\tan^2\theta}=\cos^2\theta(1-\tan^2\theta)=\cos^2\theta-\sin^2\theta=
+\cos(2\theta).$$
+Donc
+
+$$f_2(x)=\Arccos(\cos(2\theta))=\left\{
+\begin{array}{l}
+2\theta\;\mbox{si}\;\theta\in\left[0,\frac{\pi}{2}\right[\\
+-2\theta\;\mbox{si}\;\theta\in\left]-\frac{\pi}{2},0\right]
+\end{array}
+\right.
+=\left\{
+\begin{array}{l}
+2\Arctan x\;\mbox{si}\;x\geq0\\
+-2\Arctan x\;\mbox{si}\;x\leq0
+\end{array}
+\right.=2\Arctan|x|.$$
+
+ \item  La fonction $x\mapsto\Arcsin\sqrt{1-x^2}$ est définie et continue sur $[-1,1]$, dérivable sur $[-1,1]\setminus\{0\}$ car
+pour $x$ élément de $[-1,1]$, $1-x^2$ est élément de $[0,1]$ et vaut $1$ si et seulement si $x$ vaut $0$.
+$\frac{1-x}{1+x}$ est défini et positif si et seulement si $x$ est dans $]-1,1]$, et nul si et seulement si $x=1$.
+$f_3$ est donc définie et continue sur $]-1,1]$, dérivable sur $]-1,0[\cup]0,1[$. Pour $x$ dans $]-1,0[\cup]0,1[$, on
+note $\varepsilon$ le signe de $x$ et on
+a~:~
+
+$$f_3'(x)=-\frac{x}{\sqrt{1-x^2}}\frac{1}{\sqrt{1-(1-x^2)}}-\frac{-(1+x)-(1-x)}{(1+x)^2}
+\frac{1}{2\sqrt{\frac{1-x}{1+x}}}\frac{1}{1+\frac{1-x}{1+x}}=-\frac{\varepsilon}{\sqrt{1-x^2}}+\frac{1}{2}\frac{1
+}{\sqrt{1-x^2}}.$$
+Si $x$ est dans $]0,1[$, $f_3'(x)=-\frac{1}{2}\frac{1}{\sqrt{1-x^2}}=(-\frac{1}{2}\Arcsin)'(x)$.
+Donc, il existe un réel $C$ tel que, pour tout $x$ de $[0,1]$ (par continuité) $f_3(x)=-\frac{1}{2}\Arcsin x+C$. $x=1$
+fournit $C=\frac{\pi}{4}$. Donc,
+
+\begin{center}
+\shadowbox{
+$\forall x\in[0,1],\;f_3(x)=\frac{\pi}{4}-\frac{1}{2}\Arcsin x=\frac{1}{2}\Arccos x.$
+}
+\end{center}
+Si $x$ est dans $]-1,0[$, $f_3'(x)=\frac{3}{2}\frac{1}{\sqrt{1-x^2}}=(\frac{3}{2}\Arcsin)'(x)$. Donc il existe un
+réel $C'$ tel que, pour tout $x$ de $]-1,0]$ (par continuité) $f_3(x)=\frac{3}{2}\Arcsin x+C'$.
+$x=0$ fournit $\frac{\pi}{2}-\frac{\pi}{4}=C'$. Donc,
+
+\begin{center}
+\shadowbox{
+$\forall x\in]-1,0],\;f_3(x)=\frac{3}{2}\Arcsin x+\frac{\pi}{4}.$
+}
+\end{center}
+ \item  $f_4$ est dérivable sur $\mathcal{D}=\Rr\setminus\{-1,0\}$ et pour $x$ élément de $\mathcal{D}$, on a~:~
+
+\begin{align*}
+f_4'(x)&=-\frac{1}{x^3}\frac{1}{1+\frac{1}{4x^4}}-\frac{(x+1)-x}{(x+1)^2}\frac{1}{1+\frac{x^2}{(x+1)^2}}+\frac{x
+-(x-1)}{x^2}\frac{1}{1+\frac{(x-1)^2}{x^2}}\\
+ &=-\frac{4x}{4x^4+1}-\frac{1}{2x^2+1+2x}+\frac{1}{2x^2+1-2x}=-\frac{4x
+}{4x^4+1}+\frac{4x}{(2x^2+1)^2-4x^2}=0.
+\end{align*}
+$f_4$ est donc constante sur chacun des trois intervalles
+$]-\infty,-1[$, $]-1,0[$ et $]0,+\infty[$. Pour $x>0$, $f(x)=f(1)=0$. Pour $-1<x<0$,
+$\displaystyle f(x)=\lim_{
+\substack{
+t\rightarrow-1\\
+t>-1}
+}f(t)=\Arctan\frac{1}{2}-(-\frac{\pi}{2})+\Arctan2=\frac{\pi}{2}+\frac{\pi}{2}=\pi$.
+Pour $x<-1$, $f(x)=\lim_{t\rightarrow -\infty}f(t)=0$ et donc
+
+\begin{center}
+\shadowbox{
+$
+\forall x\in\Rr\setminus\{-1;0\},\;f_4(x)=\left\{
+\begin{array}{l}
+0\;\mbox{si}\;x\in]-\infty,-1[\cup]0,+\infty[\\
+\pi\;\mbox{si}\;x\in]-1,0[
+\end{array}\right.
+.$
+}
+\end{center}
+\end{enumerate}
+\fincorrection
+\finexercice

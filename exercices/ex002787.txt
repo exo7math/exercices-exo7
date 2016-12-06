@@ -1,0 +1,24 @@
+\exercice{2787, burnol, 2009/12/15}
+\enonce
+\label{ex:burnol1.1.5}
+Soit $f$ et $g$ deux fonctions $n$-fois dérivables au sens
+complexe sur un ouvert non vide $U$ (remarque: d'après le
+cours il suffit qu'elles soient dérivables une fois sur $U$
+pour qu'elles le soient un nombre quelconque de
+     fois). Montrer la formule de Leibniz généralisée: 
+\[ \forall z\in U\qquad (fg)^{(n)}(z) = \sum_{j=0}^n \binom{n}{j}
+f^{(j)}(z)g^{(n-j)}(z)\]
+\finenonce
+\noindication
+\correction
+La formule de Leibniz se montre par r\'ecurrence. Le cas $n=1$, c'est-\`a-dire $(fg)'=fg'+f'g$,
+a \'et\'e d\'emontr\'e dans l'exercice \ref{ex:burnol1.1.2}. Supposons alors que cette formule soit vraie au rang $n\geq 1$.
+Dans ce cas,
+$$\begin{aligned}
+(fg)^{(n+1)}(z) &=\frac{d}{dz} \left( (fg)^{(n)}\right)(z) =
+\sum_{j=0}^n  \binom{n}{j} \left\{ f^{(j+1)}(z)g^{(n-j)}(z)+f^{(j)}(z)g^{(n-j+1)}(z) \right\}\\
+&=\sum_{j=1}^{n+1}  \binom{n}{j-1}f^{(j)}(z)g^{(n+1-j)}(z) +\sum_{j=0}^{n}  \binom{n}{j}f^{(j)}(z)g^{(n+1-j)}(z) .
+\end{aligned}$$
+La conclusion vient du fait : $\binom{n}{j-1}+\binom{n}{j}=\binom{n+1}{j}$ qui est simple \`a v\'erifier.
+\fincorrection
+\finexercice

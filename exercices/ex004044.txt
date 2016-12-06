@@ -1,0 +1,50 @@
+
+\exercice{4044, quercia, 2010/03/11}
+
+\video{QO_S3C9WRgc}
+
+\enonce[Recherche d'équivalents]
+
+Donner des équivalents simples pour les fonctions suivantes :
+
+\begin{enumerate}
+  \item $2e^x - \sqrt{1+4x} - \sqrt{1+6x^2}$,            en $0$      
+  \item $(\cos x)^{\sin x} - (\cos x)^{\tan x}$,         en $0$      
+  \item $\arctan x + \arctan \frac 3x -\frac {2\pi}3$, en $\sqrt3$ 
+  \item $\sqrt{x^2+1} -2\sqrt[3]{x^3+x} + \sqrt[4]{x^4+x^2}$,  en $+\infty$
+  \item $\Argch\left(\frac1{\cos x}\right)$,            en $0$      
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+
+Il s'agit bien sûr de calculer un développement limité, le premier terme de ce développement donne l'équivalent cherché.
+
+\begin{enumerate}
+  \item 
+Le dl à l'ordre $3$ en $0$ est 
+$$2e^x - \sqrt{1+4x} - \sqrt{1+6x^2} = -\frac {11x^3}3 + o(x^3)$$
+donc 
+$$2e^x - \sqrt{1+4x} - \sqrt{1+6x^2} \sim -\frac {11x^3}3.$$
+
+  \item De même 
+$$(\cos x)^{\sin x} - (\cos x)^{\tan x} \sim \frac {x^5}4.$$
+
+  \item On pose $h=x-\sqrt 3$ alors 
+$$ \arctan x + \arctan \frac 3x -\frac {2\pi}3 = -\frac {h^2}{8\sqrt3} + o(h^2)$$
+donc 
+$$ \arctan x + \arctan \frac 3x -\frac {2\pi}3 \sim -\frac {(x-\sqrt 3)^2}{8\sqrt3}.$$
+
+  \item En $+\infty$
+$$\sqrt{x^2+1} -2\sqrt[3]{x^3+x} + \sqrt[4]{x^4+x^2}= \frac 1{12x} + o(\frac 1x)$$
+donc $$\sqrt{x^2+1} -2\sqrt[3]{x^3+x} + \sqrt[4]{x^4+x^2} \sim \frac 1{12x}.$$
+
+  \item Il faut distinguer les cas $x>0$ et $x<0$ pour trouver :
+$$\Argch\left(\frac1{\cos x}\right) \sim |x|.$$
+\end{enumerate}
+ \fincorrection
+
+\finexercice
+

@@ -1,0 +1,32 @@
+\exercice{3750, quercia, 2010/03/11}
+\enonce[Action de ${\cal O}(E)$ sur les sous-espaces vectoriels]
+Soit $E$ un espace euclidien de dimension $n$.
+Soient $F,G$ deux sous-espaces vectoriels de $E$ de même dimension.
+
+\begin{enumerate}
+  \item Montrer qu'il existe $u \in {\cal O}(E)$ tel que $u(F) = G$.
+  \item $(*)$ Montrer qu'il existe $u \in {\cal O}(E)$ tel que $u(F) = G$ et $u(G) = F$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item 
+  \item On raisonne par récurrence sur $d = \dim(F) = \dim(G)$.
+Pour $d=0$ il n'y a rien à prouver.
+
+Pour $d \ge 1$ on considère $a \in F$ et $b \in G$ unitaires tels que
+$(a\mid b)$ soit maximal.
+Soient $F_1$ l'orthogonal de $a$ dans $F$ et $G_1$ l'orthogonal de $b$ dans $G$
+(sous-espaces vectoriels de dimensions égales à $d-1$).
+Le choix de $a,b$ fait que $F_1$ est orthogonal à $b$ et $G_1$ est orthogonal
+à $a$, donc $F_1$ et $G_1$ sont tous deux inclus dans l'orthogonal de
+$\mathrm{vect}(a,b)$. On peut trouver un endomorphisme de cet orthogonal qui
+échange $F_1$ et $G_1$, que l'on complète par la symétrie orthogonale dans
+$\mathrm{vect}(a,b)$ qui échange $a$ et $b$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

@@ -1,0 +1,21 @@
+\exercice{4577, quercia, 2010/03/14}
+\enonce[Mines-Ponts MP 2004]
+Développer en série entière $f(x) = \sqrt{x+\sqrt{1+x^2}}$.
+\finenonce
+
+\noindication
+
+\correction
+$f(\sh y) = e^{y/2}$ d'où l'équation différentielle~:
+$(1+x^2)f''(x) + xf'(x) = \frac14f(x)$.
+
+En posant $f(x) = \sum_{n=0}^\infty a_n x^n$ on obtient
+$4(k+1)(k+2)a_{k+2} = -(2k+1)(2k-1)a_k$ avec $a_0 = f(0) = 1$ et $a_1 = f'(0) = \frac12$,
+d'où $a_{2p} = \frac{(-1)^{p+1}C_{4p-2}^{2p-1}}{p2^{4p}}$ si $p\ge 1$
+et $a_{2p+1} = \frac{(-1)^pC_{4p}^{2p}}{2^{4p+1}(2p+1)}$ si $p\ge 0$.
+
+Le rayon de convergence de la série correspondante est 1, ce qui
+valide la méthode (avec le théorème d'unicité de Cauchy-Lipschitz).
+\fincorrection
+
+\finexercice

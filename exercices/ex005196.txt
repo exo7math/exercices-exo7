@@ -1,0 +1,181 @@
+\exercice{5196, rouget, 2010/06/30}
+\enonce[**IT]
+On donne les points $A(1,2)$, $B(-2,1)$ et $C(0,4)$.
+\begin{enumerate}
+\item  Déterminer $\widehat{BAC}$ au degré près.
+\item  Déterminer l'aire du triangle $(ABC)$.
+\item  Déterminer son isobarycentre, son orthocentre, le centre de son cercle circonscrit puis une équation de ce cercle.
+\item  Déterminer une équation des bissectrices de l'angle $\widehat{BAC}$ puis de la bissectrice intérieure à l'angle $\widehat{A}$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+ $\;$(Notez bien l'alignement des points $G$, $H$ et $O$). 
+
+$$\includegraphics{../images/img005196-1}$$
+
+\begin{enumerate}
+\item  On a $AB=\sqrt{3^2+1^2}=\sqrt{10}$ et $AC=\sqrt{1+2^2}=\sqrt{5}$. Par suite,
+
+$$\cos(\widehat{BAC})=\frac{\overrightarrow{AB}.\overrightarrow{AC}}{AB.AC}=\frac{(-3)(-1)+(-1)(2)}{\sqrt{5}\sqrt{10}}=\frac{1}{5\sqrt{2}}.$$
+
+Par suite, $\widehat{BAC}=81^\circ$ à un degré près.
+\item  $\mbox{aire}(ABC)=\frac{1}{2}|\mbox{det}(\overrightarrow{AB},\overrightarrow{AC})|
+=\frac{1}{2}\mbox{abs}(\left|
+\begin{array}{cc}
+-3&-1\\
+-1&2
+\end{array}
+\right|)=\frac{7}{2}$.
+
+\item  Notons $G$ l'isobarycentre du triangle $(ABC)$. $z_G=\frac{1}{3}(z_A+z_B+z_C)=\frac{1}{3}(1+2i-2+i+4i)=\frac{1}{3}(-1+7i)$, et donc \shadowbox{$G(-\frac{1}{3},\frac{7}{3}).$}
+
+Notons $(x,y)$ les coordonnées de $\Omega$, le centre du cercle circonscrit au triangle $(ABC)$ (dans cette exercice, la lettre $O$ désigne certainement l'origine du repère).
+
+\begin{align*}
+\left\{
+\begin{array}{l}
+\Omega A=\Omega B\\
+\Omega A=\Omega C
+\end{array}
+\right.&
+\Rightarrow
+\left\{
+\begin{array}{l}
+(x-1)^2+(y-2)^2=(x+2)^2+(y-1)^2\\
+(x-1)^2+(y-2)^=x^2+(y-4)^2
+\end{array}
+\right.
+\Rightarrow
+\left\{
+\begin{array}{l}
+3x+y=0\\
+2x-4y=-11
+\end{array}
+\right.\\
+ &\Rightarrow x=-\frac{11}{14}\;\mbox{et}\;y=\frac{33}{14}\;(\mbox{d'après les formules de \textsc{Cramer}}),
+\end{align*}
+
+et donc 
+
+\shadowbox{$\Omega(-\frac{11}{14},\frac{33}{14})$.}
+
+Notons $(x,y)$ les coordonnées de l'orthocentre $H$ du triangle $(ABC)$.
+
+\begin{itemize}
+\item[\textbf{1ère solution.}]
+
+\begin{align*}
+\left\{
+\begin{array}{l}
+\overrightarrow{AH}.\overrightarrow{BC}=0\\
+\overrightarrow{BH}.\overrightarrow{AC}=0
+\end{array}
+\right.&
+\Rightarrow
+\left\{
+\begin{array}{l}
+2(x-1)+3(y-2)=0\\
+-(x+2)+2(y-1)=0
+\end{array}
+\right.
+\Rightarrow
+\left\{
+\begin{array}{l}
+2x+3y=8\\
+-x+2y=4
+\end{array}
+\right.\\
+ &\Rightarrow x=\frac{4}{7}\;\mbox{et}\;y=\frac{16}{7}\;(\mbox{d'après les formules de \textsc{Cramer}}),
+\end{align*}
+
+et donc, \shadowbox{$H(\frac{4}{7},\frac{16}{7})$.}
+
+\item[\textbf{2ème solution.}] Il est bien meilleur de connaître la relation d'\textsc{Euler} $\overrightarrow{\Omega H}=3\overrightarrow{\Omega G}$ et de l'utiliser.
+
+$$H=\Omega+3\overrightarrow{\Omega G}
+=\left(
+\begin{array}{c}
+-\frac{11}{14}\\
+\frac{33}{14}
+\end{array}
+\right)+3\left(
+\begin{array}{c}
+-\frac{1}{3}+\frac{11}{14}\\
+\frac{7}{3}-\frac{33}{14}
+\end{array}
+\right)
+=
+\left(
+\begin{array}{c}
+\frac{4}{7}\\
+\frac{16}{7}
+\end{array}
+\right).$$
+
+\end{itemize}
+
+Pour trouver le cercle circonscrit au triangle $(ABC)$, on a déjà le centre $\Omega$ et le rayon 
+
+$$\Omega A=\sqrt{(1+\frac{11}{14})^2+(2-\frac{33}{14})^2}=\frac{1}{14}\sqrt{25^2+5^2}=\frac{5}{14}\sqrt{5^2+1}=\frac{5\sqrt{26}}{14}.$$
+
+Il n'y a plus qu'à écrire l'équation cherchée~:
+
+$$(x+\frac{11}{14})^2+(y-\frac{33}{14})^2=\frac{325}{98}\;\mbox{ou encore}\;
+x^2+y^2+\frac{11}{7}x-\frac{33}{7}y+\frac{20}{7}=0.$$
+
+Néanmoins, on peut trouver directement une équation de ce cercle. Les points $A$, $B$ et $C$ n'étant pas alignés, on sait que le cercle circonscrit existe et est unique.
+
+Soient alors $(a,b,c)\in\Rr^3$ et $\mathcal{C}$ le cercle d'équation $x^2+y^2+ax+by+c=0$.
+
+\begin{align*}
+(A,B,C)\in\mathcal{C}^3&\Leftrightarrow
+\left\{
+\begin{array}{l}
+a+2b+c=-5\\
+-2a+b+c=-5\\
+4b+c=-16
+\end{array}
+\right.\Leftrightarrow
+\left\{
+\begin{array}{l}
+c=-4b-16
+a-2b=11\\
+-2a-3b=11
+\end{array}\right.
+\Leftrightarrow
+\left\{
+\begin{array}{l}
+a=\frac{11}{7}\quad(\mbox{\textsc{Cramer}})\\
+b=-\frac{33}{7}\\
+c=\frac{20}{7}
+\end{array}
+\right. 
+\end{align*}
+
+\item  Les bissectrices de l'angle $A$ sont les deux droites constituées des points à égale distance des droites $(AB)$ et $(AC)$. Ces deux droites admettent pour vecteurs normaux respectifs $\vec{n}_1(1,-3)$ et $\vec{n}_2(2,1)$.
+
+Soit $M(x,y)$ un point du plan.
+
+\begin{align*}
+d(M,(AB))=d(M,(AC))&\Leftrightarrow \frac{(\overrightarrow{AM}.\vec{n}_1)^2}{||\vec{n_1}||^2}=\frac{(\overrightarrow{AM}.\vec{n}_2)^2}{||\vec{n_2}||^2}\\
+ &\Leftrightarrow\frac{((x-1)-3(y-2))^2}{10}=\frac{(2(x-1)+(y-2))^2}{5}\Leftrightarrow(x-3y+5)^2=2(2x+y-4)^2\\
+ &\Leftrightarrow[(x-3y+5)+\sqrt{2}(2x+y-4)].[(x-3y+5)-\sqrt{2}(2x+y-4)]=0\\
+ &\Leftrightarrow(1+2\sqrt{2})x+(-3+\sqrt{2})y+5-4\sqrt{2}=0\;\mbox{ou}\;(1-2\sqrt{2})x-(3+\sqrt{2})y+5+4\sqrt{2}=0\\
+ &\Leftrightarrow y=(1+\sqrt{2})x+1-\sqrt{2}\;\mbox{ou}\;y=(1-\sqrt{2})x+1+\sqrt{2}
+\end{align*}
+
+La bissectrice intérieure $\delta_A$ de l'angle $\widehat{A}$ est la droite (pour certains, cette bissectrice est une demi-droite) passant par $A(2,1)$ et dirigée par le vecteur $\vec{u}=-\sqrt{10}.(\frac{1}{AB}\overrightarrow{AB}+\frac{1}{AC}\overrightarrow{AC})$. Ce vecteur a pour coordonnées $(3+\sqrt{2},1-2\sqrt{2})$.
+
+Soit $M(x,y)$ un point du plan.
+
+\begin{align*}
+M\in\delta_A&\Leftrightarrow\mbox{det}(\overrightarrow{AM},\vec{u})=0\Leftrightarrow(1-2\sqrt{2})(x-1)-(3+\sqrt{2})(y-2)=0\\
+ &\Leftrightarrow(1-2\sqrt{2})x-(3+\sqrt{2})y+5+4\sqrt{2}=0\Leftrightarrow y=(1-\sqrt{2})x+1+\sqrt{2}
+\end{align*}
+
+\end{enumerate}
+\fincorrection
+\finexercice

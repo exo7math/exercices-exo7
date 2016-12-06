@@ -1,0 +1,53 @@
+\exercice{2254, barraud, 2008/04/24}
+\enonce
+\label{exodessus}
+Lesquels de ces sous-ensembles donn\'es de $\Cc$
+sont des anneaux ? Lesquels sont des corps ?
+\begin{enumerate}
+  \item $\bigcup\limits_{n\in\Nn}10^{-n}\Zz$ ;
+  \item $\{\frac{m}{n}\mid m\in\Zz,n\in\Nn^*, (m,n)=1, p\nmid n\}$ ($p$ est
+un nombre premier fix\'e) ;
+  \item $\Zz[\sqrt{-1}]=\Zz +\Zz\sqrt{-1}$, 
+$\ \ \Zz[\sqrt{2}]=\Zz +\Zz\sqrt{2}$; 
+  \item $\Qq[\sqrt{-1}]=\Qq +\Qq\sqrt{-1}$, 
+$\ \ \Qq[\sqrt{2}]=\Qq +\Qq\sqrt{2}$. 
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+Ce sont tous des anneaux. Montrer que $A$ est stable par addition, par
+passage à l'opposé, contient $0$, est stable par multiplication et
+contient $1$. Le reste (associativité et distributivité) est automatique
+puisqu'il s'agit des restrictions des opérations usuelles sur $\Cc$)
+  \begin{enumerate}
+  \item 
+    $A$ est l'ensemble des nombres dont le développement décimal s'arrête
+    (``nombre fini de chiffres après la virgule'').
+
+    Stabilité par addition~: Soit $x=10^{-n}a$ et $y=10^{-m}b$. Supposons
+    par exemple que $n\geq m$. Alors $x+y=10^{-n}(a+10^{n-m}b)$ et
+    $a+10^{n-m}b\in\Zz$ donc $x+y\in A$. Les autres vérifications sont
+    analogues.
+
+    Ce n'est pas un corps~: $3$ n'est pas inversible, puisque si
+    $3\cdot10^{-n}a=1$, alors $3a=10^{n}$ donc $3|10^{n}$ ce qui est
+    impossible. Un élément est inversible ssi il est de la forme
+    $10^{-n}2^{\alpha}5^{\beta}$, $\alpha,\beta\in\Nn$.
+
+  \item
+    Stabilité par addition~: Soit $x=\frac{a}{b}\in A$ et
+    $y=\frac{c}{d}\in A$, avec $\pgcd(a,b)=\pgcd(c,d)=\pgcd(p,b)=\pgcd(p,d)=1$. Alors $x+y=\frac{ad+bc}{bd}$. 
+
+    Ce n'est pas un corps~: $p$ n'est pas inversible. Un élément est
+    inversible ssi ce n'est pas un multiple de $p$.
+
+  \item
+    N'est pas un corps~: $2$ n'est pas inversible. Les seuls éléments
+    inversibles sont $1,-1,i,-i$. En effet, si $z\in A^{\times}$, alors
+    $|z|\geq 1$ et $|z^{-1}|\geq 1$. Donc $|z|=1$ et $z\in\{\pm1,\pm
+    i\}$. Réciproquement, ces éléments sont bien tous inversibles.
+  \end{enumerate}
+\fincorrection
+\finexercice

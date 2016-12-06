@@ -1,0 +1,69 @@
+\exercice{5316, rouget, 2010/07/04}
+\enonce[****I]
+\begin{enumerate}
+\item  Soient $p$ un entier naturel et $a$ un réel. Donner le développement de $(\cos a+i\sin a)^{2p+1}$ puis en choisissant astucieusement $a$, déterminer $\sum_{k=1}^{p}\cotan^2\frac{k\pi}{2p+1}$. En déduire alors $\sum_{k=1}^{p}\frac{1}{\sin^2\frac{k\pi}{2p+1}}$.
+\item  Pour $n$ entier naturel non nul, on pose $u_n=\sum_{k=1}^{n}\frac{1}{k^2}$. Montrer que la suite $(u_n)_{n\in\Nn^*}$ converge (pour majorer $u_n$, on remarquera que $\frac{1}{k^2}\leq\frac{1}{k(k-1)}$).
+\item  Montrer que pour tout réel $x$ de $]0,\frac{\pi}{2}[$, on a $\cotan x<\frac{1}{x}<\frac{1}{\sin x}$.
+\item  En déduire un encadrement de $u_n$ puis la limite de $(u_n)$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  Pour tout réel $a$,
+
+$$e^{i(2p+1)a}=(\cos a+i\sin a)^{2p+1}=\sum_{j=0}^{2p+1}C_{2p+1}^{j}\cos^{2p+1-j}a(i\sin a)^j$$
+
+puis 
+
+$$\sin((2p+1)a)=\mbox{Im}(e^{i(2p+1)a})=\sum_{j=0}^{p}C_{2p+1}^{2j+1}\cos^{2(p-j)}a(-1)^j\sin^{2j+1}a.$$
+
+Pour $1\leq k\leq p$, en posant $a=\frac{k\pi}{2p+1}$, on obtient~: 
+
+$$\forall k\in\{1,...,p\},\;\sum_{j=0}^{p}C_{2p+1}^{2j+1}\cos^{2(p-j)}\frac{k\pi}{2p+1}(-1)^j\sin^{2j+1}
+\frac{k\pi}{2p+1}=0.$$
+ 
+Ensuite, pour $1\leq k\leq p$, $0<\frac{k\pi}{2p+1}<\frac{\pi}{2}$ et donc $\sin^{2p+1}
+\frac{k\pi}{2p+1}\neq0$. En divisant les deux membres de $(*)$ par $\sin^{2p+1}
+\frac{k\pi}{2p+1}$, on obtient~:
+
+$$\forall k\in\{1,...,p\},\;\sum_{j=0}^{p}(-1)^jC_{2p+1}^{2j+1}\cotan^{2(p-j)}\frac{k\pi}{2p+1}=0.$$
+
+Maintenant, les $p$ nombres $\cotan^2\frac{k\pi}{2p+1}$ sont deux à deux distincts. En effet, pour $1\leq k\leq p$, $0<\frac{k\pi}{2p+1}<\frac{\pi}{2}$. Or, sur $]0,\frac{\pi}{2}[$, la fonction $x\mapsto\cotan x$ est strictement décroissante et strictement positive, de sorte que la fonction $x\mapsto\cotan^2x$ est strictement décroissante et en particulier injective.
+
+Ces $p$ nombres deux à deux distintcs sont racines du polynôme $P=\sum_{j=0}^{p}(-1)^jC_{2p+1}^{2j+1}X^{p-j}$, qui est de degré $p$. Ce sont donc toutes les racines de $P$ (ces racines sont par suite simples et réelles). D'après les relations entre les coefficients et les racines d'un polynôme scindé, on a~:
+
+\begin{align*}\ensuremath
+\sum_{k=1}^{p}\cotan^2\frac{k\pi}{2p+1}=-\frac{-C_{2p+1}^3}{C_{2p+1}^1}=\frac{p(2p-1)}{3}.
+\end{align*}
+
+puis,
+
+$$\sum_{k=1}^{p}\frac{1}{\sin^2\frac{k\pi}{2p+1}}=\sum_{k=1}^{p}(1+\cotan^2\frac{k\pi}{2p+1})=p+\frac{p(2p-1)}{3}=\frac{2p(p+1)}{3}.$$
+
+\item  Pour $n$ entier naturel non nul donné, on a
+
+$$u_{n+1}-u_n=\sum_{k=1}^{n+1}\frac{1}{k^2}-\sum_{k=1}^{n}\frac{1}{k^2}=\frac{1}{(n+1)^2}>0,$$
+
+et la suite $(un)$ est strictement croissante. De plus, pour $n\geq2$,
+ 
+$$u_n=\sum_{k=1}^{n}\frac{1}{k^2}=1+\sum_{k=2}^{n}\frac{1}{k^2}<1+\sum_{k=2}^{n}\frac{1}{k(k-1)}=1+\sum_{k=2}^{n}(\frac{1}{k-1}-\frac{1}{k})=1+1-\frac{1}{n}<2.$$
+
+La suite $(u_n)$ est croissante et est majorée par $2$. Par suite, la suite $(u_n)$ converge vers un réel inférieur ou égal à $2$.
+
+\item  Pour $x$ élément de $[0,\frac{\pi}{2}]$, posons $f(x)=x-\sin x$ et $g(x)=\tan x-x$.
+$f$ et $g$ sont dérivables sur $[0,\frac{\pi}{2}]$ et pour $x$ élément de $[0,\frac{\pi}{2}]$, $f'(x)=1-\cos x$ et $g'(x)=\tan^2x$. $f'$ et $g'$ sont strictement positives sur $]0,\frac{\pi}{2}]$ et donc strictement croissantes sur $[0,\frac{\pi}{2}]$. Comme $f(0)=g(0)=0$, on en déduit que $f$ et $g$ sont strictement positives sur $]0,\frac{\pi}{2}[$.
+
+Donc, $\forall x\in]0,\frac{\pi}{2}[,\;0<\sin x<x<\tan x$ et par passage à l'inverse $\forall x\in]0,\frac{\pi}{2}[,\;0<\cotan x<\frac{1}{x}<\frac{1}{\sin x}$.
+
+\item  Pour $1\leq k\leq p$, $0<\frac{k\pi}{2p+1}<\frac{\pi}{2}$  et donc $0<\cotan\frac{k\pi}{2p+1}<\frac{2p+1}{k\pi}<\frac{1}{\sin\frac{k\pi}{2p+1}}$. Puis, $\cotan^2\frac{k\pi}{2p+1}<(\frac{(2p+1)^2}{\pi^2})\frac{1}{k^2}<\frac{1}{\sin\frac{k\pi}{2p+1}}$. En sommant ces inégalités, on obtient
+
+$$\frac{\pi^2p(2p-1)}{3(2p+1)^2}=\frac{\pi^2}{(2p+1)^2}\sum_{k=1}^{p}\cotan^2\frac{k\pi}{2p+1}<u_p=\sum_{k=1}^{p}
+\frac{1}{k^2}<\frac{\pi^2}{(2p+1)^2}\sum_{k=1}^{p}\frac{1}{\sin^2\frac{k\pi}{2p+1}}=\frac{2p(p+1)\pi^2}{3(2p+1)^2}.$$
+
+Les membres de gauche et de droite tendent vers $\frac{\pi^2}{6}$ quand $p$ tend vers l'infini et donc la suite $(u_p)$ tend vers $\frac{\pi^2}{6}$.
+\end{enumerate}
+\fincorrection
+\finexercice

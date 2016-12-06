@@ -1,0 +1,62 @@
+\exercice{6860, gijs, 2011/10/16}
+\enonce
+On se propose de calculer, à l'aide du théorème
+des résidus, la valeur de l'intégrale
+ $$I=\int_{-\infty}^{+\infty}\exp{(-\pi t^2)}\ dt.$$
+\begin{enumerate}
+\item Soit $a\in {\Rr}^*$ ; en intégrant la fonction $g(z)=\exp{(-\pi z^2)}$
+sur le rectangle de sommets $-R$, $R$, $R+ia$, $-R+ia$ ($R>0$), montrer
+que
+$$I=\int_{-\infty}^{+\infty}\exp{\left(-\pi(t+ia)^2\right)}\ dt.$$
+
+\medskip
+
+On pose : $f(z)=\exp{(i\pi z^2)}\tan{(\pi z)}$.
+
+\item  Quels sont les pôles de $f$ ? Préciser leur ordre.
+
+\medskip
+
+Soit $R>0$ ; on considère le parallélogramme $\Gamma _R$ de sommets
+$A=R+1+iR$, $B=R+iR$, $C=-R-iR$ et $D=-R+1-iR$, orienté dans le sens
+direct.
+
+
+
+\item Montrer que
+$$\int_{\Gamma _R}f(z)\ dz=2e^{-i\pi/4}.$$
+
+\item 
+  \begin{enumerate}
+  \item   Montrer que 
+$$\forall t\in [0,1],\ \vert \tan{(\pi (R+t+iR))\vert \le \coth{(\pi R)}}.$$
+
+  \item  En déduire que l'intégrale de $f$ sur le segment orienté $[A,B]$
+tend vers 0 quand $R$ tend vers $+\infty$.
+
+  \item  Montrer de même que l'intégrale de $f$ sur $[C,D]$ tend vers 0
+quand $R$ tend vers $+\infty$.
+  \end{enumerate}
+\item  On note $J$ et $K$ les intégrales de $f$ sur les segments
+orientés $[B,C]$ et $[D,A]$.
+  \begin{enumerate}
+  \item   Montrer que
+$$J+K=(-1+i)\int_{-R}^R e^{-2\pi t^2}\left( e^{-2\pi t+2i\pi t}-1\right)\
+dt.$$
+
+  \item En déduire que, quand $R$ tend vers $+\infty$, $J+K$ tend vers
+$$L=e^{3i\pi/4}\left(\int_{-\infty}^{+\infty} e^{-\pi (u^2+u\sqrt
+2-iu\sqrt 2)}\ du-\int_{-\infty}^{+\infty} e^{-\pi u^2}\ du\right) .$$
+
+  \item l'aide de la question 1. et d'un changement de variable,
+vérifier que $L=2Ie^{-i\pi/4}$.
+  \end{enumerate}
+\end{enumerate}
+\item Conclure.
+\finenonce
+
+\noindication
+
+\nocorrection
+
+\finexercice       

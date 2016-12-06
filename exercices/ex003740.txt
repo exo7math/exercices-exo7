@@ -1,0 +1,27 @@
+\exercice{3740, quercia, 2010/03/11}
+\enonce[Similitudes]
+
+On définit l'application $\varphi : A\in\mathcal{M}_n(\R) \mapsto \sum_{i,j}a_{i,j}^2$.
+Trouvez les matrices $P\in GL_n(\R)$ telles que
+pour tout $A$ on ait $\varphi(P^{-1}AP)=\varphi(A)$.	
+
+\finenonce
+
+\noindication
+
+\correction
+$\varphi(A) = \mathrm{tr}(A\,{}^t\!A)$ donc pour toute matrice $P$
+telle que $P\,{}^t\!P$ soit scalaire (non nulle) on a $\varphi(P^{-1}AP) = \varphi(A)$.
+Ces matrices sont les matrices de la forme $P = \lambda M$ avec $M$ orthogonale
+(matrices de similitude).
+
+Réciproquement, soit $P$ telle que $\varphi(P^{-1}AP) = \varphi(A)$ et
+$Q=P\,{}^t\!P$.
+
+On a par polarisation~:
+$\forall\ A,B,\ \mathrm{tr}(AQ\,{}^t\!B\,{}^t\!Q^{-1}) = \mathrm{tr}(A\,{}^t\!B)$ donc pour $B=QC$~:
+$\forall\ A,C\ \mathrm{tr}(AQ{}^tC) = \mathrm{tr}(A{}^tCQ)$ ce qui implique~:
+$\forall\ C,\ Q{}^tC = {}^tCQ$ et donc que $Q$ est scalaire.
+\fincorrection
+
+\finexercice

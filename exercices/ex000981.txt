@@ -1,0 +1,123 @@
+\exercice{981, liousse, 2003/10/01}
+\video{vlr-D0jhb-Q}
+\enonce
+\begin{enumerate}
+\item Montrer que les vecteurs 
+$v_1=(0,1,1)$, $v_2=(1,0,1)$ et $v_3=(1,1,0)$ forment une base de 
+$\Rr^3$. Trouver les composantes du vecteur $w=(1,1,1)$ dans cette base $(v_1,v_2,v_3)$.
+
+\item Montrer que les vecteurs 
+$v_1=(1,1,1)$, $v_2=(-1,1,0)$ et $v_3=(1,0,-1)$ forment une base de 
+$\Rr^3$. Trouver les composantes du vecteur $e_1=(1,0,0)$,
+$e_2=(0,1,0)$, $e_3=(0,0,1)$ et $w=(1,2,-3)$ dans cette base $(v_1,v_2,v_3)$.
+
+\item Dans $\Rr^3$, donner un exemple de famille libre qui n'est pas
+g\'en\'eratrice.
+
+\item Dans $\Rr^3$, donner un exemple de famille g\'en\'eratrice qui n'est pas libre.
+\end{enumerate}
+\finenonce 
+
+\indication
+\^Etre une base, c'est être libre et génératrice.
+Chacune de ces conditions se vérifie par un système linéaire.
+\finindication
+
+\correction
+\begin{enumerate}
+  \item Pour montrer que la famille $\{ v_1, v_2, v_3\}$ est une base nous allons 
+montrer que cette famille est libre et génératrice.
+
+
+  \begin{enumerate}
+    \item Montrons que la famille $\{ v_1, v_2, v_3\}$ est libre.
+Soit une combinaison linéaire nulle $a v_1+b v_2 + c v_3 = 0$, nous devons montrer qu'alors
+les coefficients $a,b,c$ sont nuls. Ici le vecteur nul est $0=(0,0,0)$
+
+\begin{align*}
+  &  a v_1+b v_2 + c v_3 = (0,0,0) \\
+\iff & a (0,1,1) + b(1,0,1) + c(1,1,0) = (0,0,0) \\
+\iff & (b+c,a+c,a+b)=(0,0,0) \\
+\iff & \begin{cases}
+       b+c = 0 \\
+       a+c = 0 \\
+       a+b = 0  \\
+       \end{cases} 
+\iff \begin{cases}
+       a = 0 \\
+       b = 0 \\
+       c = 0  \\
+       \end{cases} \\
+\end{align*}
+Ainsi les coefficients vérifient $a=b=c=0$, cela prouve que la famille est libre.
+
+    \item Montrons que la famille $\{ v_1, v_2, v_3\}$ est génératrice. Pour n'importe quel
+vecteur $v=(x,y,z)$ de $\Rr^3$ on doit trouver $a,b,c\in\Rr$ tels que $a v_1+b v_2 + c v_3 = v$.
+\begin{align*}
+  &  a v_1+b v_2 + c v_3 = v \\
+\iff & a (0,1,1) + b(1,0,1) + c(1,1,0) = (x,y,z) \\
+\iff & (b+c,a+c,a+b)=(x,y,z) \\
+\iff & \begin{cases}
+       b+c = x \\
+       a+c = y \quad (L_2) \\
+       a+b = z \quad (L_3) \\
+       \end{cases} 
+\iff  \begin{cases}
+       b+c = x \quad (L_1')\\
+       a+c = y \\
+       b-c = z-y  \quad(L_3')=(L_3-L_2)\\
+       \end{cases} \\
+\iff & \begin{cases}
+       2b = x+z-y \quad (L_1'+L_3') \\
+       a+c = y \\
+       2c = x-(z-y) \quad  (L_1'-L_3')  \\
+       \end{cases} 
+\iff  \begin{cases}
+       a = \frac12 (-x+y+z) \\
+       b = \frac12 (x-y+z) \\
+       c = \frac12 (x+y-z) \\
+       \end{cases} \\
+\end{align*}
+
+
+Pour $a= \frac12 (-x+y+z)$, $b= \frac12 (x-y+z)$, $c = \frac12 (x+y-z)$ nous avons donc
+la relation $av_1+bv_2+cv_3=(x,y,z)=v$. Donc la famille $\{ v_1, v_2, v_3\}$ est génératrice.
+
+
+    \item La famille est libre et génératrice  donc c'est une base.
+
+    \item Pour écrire  $w=(1,1,1)$ dans la base $(v_1,v_2,v_3)$  on peut résoudre le système correspondant
+à la relation $a v_1+b v_2 + c v_3 = w$.
+Mais en fait nous l'avons déjà résolu pour tout vecteur $(x,y,z)$, en particulier pour le vecteur
+$(1,1,1)$ la solution est $a=\frac 12$, $b=\frac 12$, $c=\frac 12$.
+Autrement dit $\frac 12 v_1+\frac 12 v_2 + \frac 12 v_3 = w$. Les coordonnées de $w$ dans la base $(v_1,v_2,v_3)$
+sont donc $(\frac12,\frac12,\frac12)$.
+
+  \end{enumerate} 
+
+
+  \item Pour montrer que la famille est libre et génératrice les calculs 
+sont similaires à ceux de la question précédente. Notons $\mathcal{B}$ la base $(v_1,v_2,v_3)$.
+
+Exprimons ensuite $e_1$ dans cette base, les calculs donnent : $e_1 = \frac 13 v_1-\frac 13 v_2 +\frac 13 v_3$. 
+Ses coordonnées dans la base $\mathcal{B}$ sont $(\frac13,-\frac13,\frac13)$.
+
+
+$e_2 = \frac 13 v_1+\frac 23 v_2 +\frac 13 v_3$. 
+Ses coordonnées dans $\mathcal{B}$ sont $(\frac13,\frac23,\frac13)$.
+
+$e_3 = \frac 13 v_1-\frac 13 v_2 -\frac 23 v_3$. 
+Ses coordonnées dans  $\mathcal{B}$ sont $(\frac13,-\frac13,-\frac23)$.
+
+
+Les calculs sont ensuite terminés, on remarque que $w=(1,2,-3)$ vaut en fait
+$w=e_1+2e_2-3e_3$ donc par nos calculs précédents $w=\frac 13 v_1-\frac 13 v_2 +\frac 13 v_3
++2(\frac 13 v_1+\frac 23 v_2 +\frac 13 v_3)-3(\frac 13 v_1-\frac 13 v_2 -\frac 23 v_3)
+=  2v_2 +3 v_3$. Les coordonnées de $w$ dans  $\mathcal{B}$ sont $(0,2, 3)$.
+
+  \item Par exemple la famille $\{(1,0,0),(0,1,0)\}$ est libre dans $\Rr^3$ mais pas g\'en\'eratrice.
+
+  \item La famille  $\{(1,0,0),(0,1,0),(0,0,1),(1,1,1)\}$ est g\'en\'eratrice dans $\Rr^3$ mais pas libre.
+\end{enumerate}
+\fincorrection
+\finexercice

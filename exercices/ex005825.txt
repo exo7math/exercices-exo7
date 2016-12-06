@@ -1,0 +1,244 @@
+\exercice{5825, rouget, 2010/10/16}
+\enonce[** I]
+Nature et \og éléments caractéristiques \fg~de la quadrique $(\mathcal{S})$ dont une équation dans un repère orthonormé donné $\mathcal{R}=(O,i,j,k)$ de l'espace de dimension $3$ est :
+
+\begin{enumerate}
+ \item  $x^2+y^2+z^2-2yz-4x+4y-1=0$.
+
+\item  $x^2+y^2+z^2+2xy-1=0$.
+
+\item  $x^2+y^2+z^2-2xy+2xz+3x-y+z+1=0$.
+
+\item  $x^2+4y^2+5z^2-4xy-2x+4y=0$.
+
+\item  $x^2-4x-3y-2=0$.
+
+\item  $7x^2-2y^2+4z^2+4xy+20xz+16yz-36x+72y-108z+36=0$.
+
+\item  $(x-y)(y-z)+(y-z)(z-x)+(z-x)(x-y)+(x-y) = 0$.
+
+\item  $xy+yz =1$.
+
+\item  $xy+yz+zx+2y+1=0$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Pour $(x,y,z)\in\Rr^3$, on pose $Q(x,y,z)=x^2+y^2+z^2-2yz$.
+
+Pour tout $(x,y,z)\in\Rr^3$, $x^2+y^2+z^2-2yz = x^2 + (y-z)^2 = X^2 + 2Y^2$ en posant $X = x$, $Y = \frac{1}{\sqrt{2}}(y-z)$ et $Z =\frac{1}{\sqrt{2}}(y+z)$ correspondant au changement de bases orthonormées de matrice $P =\left(
+\begin{array}{ccc}
+1&0&0\\
+\rule[-5mm]{0mm}{11mm}0&\frac{1}{\sqrt{2}}&\frac{1}{\sqrt{2}}\\
+0&-\frac{1}{\sqrt{2}}&\frac{1}{\sqrt{2}}
+\end{array}
+\right)$.
+
+Notons $\mathcal{R}'= (O,e_1,e_2,e_3)$ le repère orthonormé ainsi défini. La surface $(\mathcal{S})$ admet pour équation dans $\mathcal{R}?$ $X^2+2Y^2-4X+2\sqrt{2}(Y+Z) -1 = 0$ ou encore 
+
+\begin{center}
+$(X-2)^2 +2\left(Y+\frac{1}{\sqrt{2}}\right)^2=-2\sqrt{2}\left(Z-\frac{3}{\sqrt{2}}\right)$.
+\end{center}
+
+La surface $(\mathcal{S})$ est un paraboloïde elliptique de sommet $S$ de coordonnées $\left(2,\frac{1}{\sqrt{2}},\frac{3}{\sqrt{2}}\right)$ dans $\mathcal{R}'$ et donc $\left(2,2,1\right)$ dans $\mathcal{R}$.
+
+\item  En posant $X=\frac{1}{\sqrt{2}}(x+y)$, $Y=\frac{1}{\sqrt{2}}(-x+y)$ et $Z = z$, on obtient : $2X^2 + Z^2 = 1$.
+
+La surface $(\mathcal{S})$ est un cylindre elliptique d'axe $(OY)$ ou encore d'axe la droite d'équations $\left\{
+\begin{array}{l}
+y=-x\\
+z=0
+\end{array}
+\right.$. 
+
+\item  Pour $(x,y,z)\in\Rr^3$, posons $Q(x,y,z)=x^2+y^2+z^2-2xy+2xz$.
+
+La matrice de $Q$ dans la base canonique $(i,j,k)$ de $\Rr^3$ est $A=\left(
+\begin{array}{ccc}
+1&-1&1\\
+-1&1&0\\
+1&0&1
+\end{array}
+\right)$.
+
+\begin{align*}\ensuremath
+\chi_A&=\left|
+\begin{array}{ccc}
+1-X&-1&1\\
+-1&1-X&0\\
+1&0&1-X
+\end{array}
+\right|= (1-X)^3+(X-1)+(X-1) = (1-X)((1-X)^2 - 2)\\
+ &= (1-X)(1+\sqrt{2}-X)(1+\sqrt{2}-X).
+\end{align*}
+
+$Q$ est de rang $3$ et de signature $(2,1)$. La surface $(\mathcal{S})$ peut être un hyperboloïde à une ou deux nappes ou un cône de révolution.
+
+$\text{Ker}(A-I_3) =\text{Vect}(e_1)$ où $e_1=\frac{1}{\sqrt{2}}(0,1,1)$.
+  
+
+$\text{Ker}(A-(1+\sqrt{2})I_3)=\text{Vect}(e_2)$ où $e_2=\frac{1}{2}(\sqrt{2},-1,1)$ et  $\text{Ker}(A-(1-\sqrt{2})I_3)=\text{Vect}(e_3)$ où $e_3=\frac{1}{2}(\sqrt{2},1,-1)$
+
+ 
+La matrice de passage correspondante est la matrice $P=\left(
+\begin{array}{ccc}
+0&\frac{1}{\sqrt{2}}&\frac{1}{\sqrt{2}}\\
+\rule[-4mm]{0mm}{10mm}\frac{1}{\sqrt{2}}&-\frac{1}{2}&\frac{1}{2}\\
+\frac{1}{\sqrt{2}}&\frac{1}{2}&-\frac{1}{2}
+\end{array}
+\right)$.
+
+Déterminons une équation réduite de la surface $(\mathcal{S})$ dans le repère $(O,e_1,e_2,e_3)$.
+
+\begin{align*}\ensuremath
+X^2+&(1+\sqrt{2})Y^2+(1-\sqrt{2})Z^2+\frac{3}{\sqrt{2}}(Y+Z)-\frac{1}{2}(\sqrt{2}X-Y+Z)+\frac{1}{2}(\sqrt{2}X+Y-Z)+1 = 0\\
+ &\Leftrightarrow X^2+(1+\sqrt{2})\left(Y^2+\frac{3+\sqrt{2}}{2+\sqrt{2}}Y\right)+(1-\sqrt{2})\left(Z^2-\frac{3-\sqrt{2}}{2-\sqrt{2}}Z\right)+1 = 0\\
+ &\Leftrightarrow X^2+(1+\sqrt{2})\left(Y+\frac{3+\sqrt{2}}{2(2+\sqrt{2})}\right)^2-\frac{(3+\sqrt{2})^2}{8(1+\sqrt{2})}+(1-\sqrt{2})\left(Z-\frac{3-\sqrt{2}}{2(2-\sqrt{2})}\right)^2-\frac{(3-\sqrt{2})^2}{8(1-\sqrt{2})}+1 = 0\\
+ &\Leftrightarrow X^2+(1+\sqrt{2})\left(Y+1-\frac{\sqrt{2}}{4}\right)^2+(1-\sqrt{2})\left(Z-1-\frac{\sqrt{2}}{4}\right)^2 =\frac{11+6\sqrt{2}}{8(1+\sqrt{2})}+\frac{11-6\sqrt{2}}{8(1-\sqrt{2})}-1\\
+ &\Leftrightarrow X^2+(1+\sqrt{2})\left(Y+1-\frac{\sqrt{2}}{4}\right)^2+(1-\sqrt{2})\left(Z-1-\frac{\sqrt{2}}{4}\right)^2 =-\frac{3}{4}\\
+  &\Leftrightarrow-\frac{4}{3}X^2-\frac{4(1+\sqrt{2})}{3}\left(Y+1-\frac{\sqrt{2}}{4}\right)^2+\frac{4(\sqrt{2}-1)}{3}\left(Z-1-\frac{\sqrt{2}}{4}\right)^2 =1.
+\end{align*}
+
+La surface $(\mathcal{S})$ est un hyperboloïde à deux nappes de centre de coordonnées $\left(0,-1+\frac{\sqrt{2}}{4} ,1+\frac{\sqrt{2}}{4}\right)$ dans le repère $\mathcal{R}'$.
+
+\item  On pose $X =\frac{1}{\sqrt{5}}(x-2y)$, $Y =\frac{1}{\sqrt{5}}(2x+y)$ et $Z = z$. Dans le repère $\mathcal{R}'$ ainsi défini, la surface $(\mathcal{S})$ admet pour équation $5X^2 + 5Z^2-\frac{2}{\sqrt{5}}(X+2Y) +\frac{4}{\sqrt{5}}(-2X+Y) = 0$ ou encore 
+$5\left(X-\frac{1}{\sqrt{5}}\right)^2+5Z^2 = 1$.
+
+La surface $(\mathcal{S})$ est un cylindre de révolution d'axe la droite d'équations $\left\{
+\begin{array}{l}
+X=\frac{1}{\sqrt{5}}\\
+Z=0
+\end{array}
+\right.$  dans $\mathcal{R}'$ et de rayon $\frac{1}{\sqrt{5}}$.
+
+\item  $x^2-4x-3y-2 = 0\Leftrightarrow(x-2)^2 =3(y+2)$. La surface $(\mathcal{S})$ est un cylindre parabolique de direction $(Oz)$.
+
+\item  Pour $(x,y,z)\in\Rr^3$, posons $Q(x,y,z)= 7x^2-2y^2+4z^2+4xy+20xz+16yz$. La matrice de $Q$ dans la base canonique $(i,j,k)$ de $\Rr^3$ est $A =\left(
+\begin{array}{ccc}
+7&2&10\\
+2&-2&8\\
+10&8&4
+\end{array}
+\right)$.
+
+\begin{align*}\ensuremath
+\chi_A&=\left|
+\begin{array}{ccc}
+7-X&2&10\\
+2&-2-X&8\\
+10&8&4-X
+\end{array}
+\right|= (7-X)(X^2-2X-72) - 2(-2X-72) + 10(10X+36)\\
+ &= -X^3+9X^2+162X= -X(X+9)(X-18) .
+\end{align*}
+
+Donc $Q$ est de rang $2$ et de signature $(1,1)$.
+
+$(x,y,z)\in\text{Ker}(A)\Leftrightarrow\left\{
+\begin{array}{l}
+7x+2y+10z=0\\
+2x-2y+4z=0\\
+10x+8y+4z=0
+\end{array}
+\right.\Leftrightarrow\left\{
+\begin{array}{l}
+x-y=-4z\\
+5x+4y=-2z
+\end{array}
+\right.\Leftrightarrow\left\{
+\begin{array}{l}
+x=-2z\\
+y=2z
+\end{array}
+\right.$ et $\text{Ker}(A)=\text{Vect}(e_1)$ où $e_1=\frac{1}{3}(-2,2,1)$.
+  
+
+$(x,y,z)\in\text{Ker}(A+9I_3)\Leftrightarrow\left\{
+\begin{array}{l}
+16x+2y+10z=0\\
+2x+7y+8z=0\\
+10x+8y+13z=0
+\end{array}
+\right.\Leftrightarrow\left\{
+\begin{array}{l}
+y=-8x-5z\\
+z=-2x
+\end{array}
+\right.\Leftrightarrow\left\{
+\begin{array}{l}
+y=2x\\
+z=-2x
+\end{array}
+\right.$  et $\text{Ker}(A+9I_3)=\text{Vect}(e_2)$ où $e_2 =\frac{1}{3}(1,2,-2)$.
+
+$\text{Ker}(A-18I_3) =\text{Vect}(e_3)$ où $e3 =-e_1\wedge e_2 =\frac{1}{3}(2,1,2)$.
+
+La matrice de passage du changement de bases ainsi défini est $P =\frac{1}{3}\left(
+\begin{array}{ccc}
+-2&1&2\\
+2&2&1\\
+1&-2&2
+\end{array}
+\right)$.
+
+Déterminons une équation réduite de la surface $(\mathcal{S})$ dans le repère $\mathcal{R}'= (O,e_1,e_2,e_3)$
+
+\begin{align*}\ensuremath
+7x^2-&2y^2+4z^2+4xy+20xz+16yz-36x+72y-108z+36=0\\
+ &\Leftrightarrow-9Y^2+18Z^2 -12(-2X+Y+2Z)+24(2X+2Y+Z)-36(X-2Y+2Z)+36 = 0\\
+ &\Leftrightarrow-9Y^2+18Z^2+36X+108Y-72Z+36 = 0\Leftrightarrow-Y^2+2Z^2+4X+12Y-8Z+4=0\\
+ &\Leftrightarrow4(X+8)=(Y-6)^2 - 2(Z-2)^2.
+\end{align*}
+
+La surface $(\mathcal{S})$ est un paraboloïde hyperbolique. Son point selle est le point de cordonnées $(-8,6,2)$ dans le repère $\mathcal{R}'$.
+
+\item  La surface $(\mathcal{S})$ admet pour équation cartésienne : $x^2+y^2+z^2-xy-xz-zx-x+y = 0$.
+
+Pour $(x,y,z)\in\Rr^3$, posons $Q(x,y,z)= x^2+y^2+z^2-xy-xz-zx$. La matrice de $Q$ dans la base canonique $(i,j,k)$ de $\Rr^3$ est $A=\left(
+\begin{array}{ccc}
+1&-\frac{1}{2}&-\frac{1}{2}\\
+\rule[-4mm]{0mm}{10mm}-\frac{1}{2}&1&-\frac{1}{2}\\
+-\frac{1}{2}&-\frac{1}{2}&1
+\end{array}
+\right)$. $\text{Sp}(A)=\left(\frac{3}{2},\frac{3}{2},0\right)$. Un base orthonormée $(e_1,e_2,e_3)$ de vecteurs propres est la famille de matrice $P=\left(
+\begin{array}{ccc}
+\frac{1}{\sqrt{2}}&\frac{1}{\sqrt{6}}&\frac{1}{\sqrt{3}}\\
+\rule[-4mm]{0mm}{10mm}-\frac{1}{\sqrt{2}}&\frac{1}{\sqrt{6}}&\frac{1}{\sqrt{3}}\\
+0&-\frac{2}{\sqrt{6}}&\frac{1}{\sqrt{3}}
+\end{array}
+\right)$.
+
+Dans le repère $\mathcal{R}'=(O,e_1,e_2,e_3)$, la surface $(\mathcal{S})$ admet pour équation cartésienne 
+$\frac{3}{2}(X^2+Y^2) -\left(\frac{1}{\sqrt{2}}X+\frac{1}{\sqrt{6}}Y+\frac{1}{\sqrt{3}}Z\right)+\left(-\frac{1}{\sqrt{2}}X+\frac{1}{\sqrt{6}}Y+\frac{1}{\sqrt{3}}Z\right) = 0$ ou encore $\frac{3}{2}(X^2+Y^2) -\sqrt{2}X = 0$ ou enfin $\left(X-\frac{\sqrt{2}}{3}\right)^2 + Y^2 =\frac{2}{9}$.
+
+La surface $(\mathcal{S})$ est un cylindre de révolution d'axe la droite d'équation $\left\{
+\begin{array}{l}
+X=\frac{\sqrt{2}}{3}\\
+Y=0
+\end{array}
+\right.$ dans le repère $\mathcal{R}'$ et de rayon $\frac{\sqrt{2}}{3}$.
+
+\item  En posant $X=y$, $Y=\frac{1}{\sqrt{2}}(y+z)$ (et $Z=\frac{1}{\sqrt{2}}(-y+z)$, $xy + yz=0\Leftrightarrow XY=\sqrt{2}$.
+
+La surface $(\mathcal{S})$ est un cylindre hyperbolique.
+
+\item  Pour $(x,y,z)\in\Rr^3$, posons $Q(x,y,z)=xy+yz+zx$.
+
+La matrice de $Q$ dans la base canonique $(i,j,k)$ de $\Rr^3$ est $\frac{1}{2}\left(
+\begin{array}{ccc}
+0&1&1\\
+1&0&1\\
+1&1&0
+\end{array}
+\right)$. $\text{Sp}(A)=(-\frac{1}{2},-\frac{1}{2},1)$ et donc la surface $(\mathcal{S})$ est soit un hyperboloïde à une ou deux nappes, soit un cône du second degré et dans tous les cas une surface de révolution (puisque les deux valeurs propres négatives sont égales) d'axe de direction 
+$\text{Ker}(A-I_3) =\text{Vect}(1,1,1)$ et passant par le point critique $\Omega(-1,1,-1)$.
+
+Quand on se place dans le repère $(\Omega,i,j,k)$, la surface $(\mathcal{S}$) admet pour équation $XY+YZ+ZX +2 = 0$ (car $f(-1,1,-1)=2$) puis dans le repère $(\Omega,e_1,e_2,e_3)$, $-\frac{1}{2}X^2-\frac{1}{2}Y^2+Z^2 +2 = 0$ ou encore $\frac{1}{4}X^2+\frac{1}{4}Y^2-\frac{1}{2}Z^2=1$.
+
+La surface $(\mathcal{S})$ est un hyperboloïde de révolution à une nappe.
+\end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,199 @@
+\exercice{2234, matos, 2008/04/23}
+\enonce[M\'ethode de Givens Rapide]
+
+Soit $A\in\Rr^{m\times n}$. On veut construire une matrice $M\in \Rr^{m\times m}$ telle que
+\begin{itemize}
+\item $MA=S$ triangulaire sup\'erieure;
+\item $MM^T=D=$diag$(d_1,\cdots , d_m)$ , $d_i>0$
+\end{itemize}
+et appliquer cette factorisation de $A$ dans la r\'esolution de syst\`emes au sens des moindres carr\'es.
+\begin{enumerate}
+\item Donner la factorisation $QR$ de $A$ en termes de $M, D$ et $S$.
+\item On consid\`ere maintenant $m=2$. Soient $x=(x_1, x_2)^T$ et $D=$diag$(d_1,d_2)$ ($d_i>0$) donn\'es.
+\begin{enumerate}
+\item On d\'efinit
+$$M_1=\left(\begin{array}{cc}
+\beta_1 & 1\\ 1&\alpha_1\end{array}\right).$$
+Supposons $x_2\neq 0$. Calculer $M_1x$ et $M_1DM_1^T$.
+
+Comment choisir $\alpha_1$ et $\beta_1$ de fa\c con \`a ce que la deuxi\`eme composante de $M_1x$ soit nulle et que $M_1DM_1^T$ soit diagonale?
+
+Pour le choix pr\'ec\'edent d\'eterminer $\gamma_1$ tel que
+$$M_1x=\left(\begin{array}{c}
+x_2(1+\gamma_1)\\0\end{array}\right) \mbox{ et } M_1DM_1^T=\left(\begin{array}{cc}
+d_2(1+\gamma_1)&0\\0 & d_1(1+\gamma_1)\end{array}\right)$$
+\item Supposons $x_1\neq 0$. On d\'efinit
+$$M_2=\left(\begin{array}{cc}
+1&\alpha_2\\ \beta_2 &1\end{array}\right).$$
+Choisir $\alpha_2$ et $\beta_2$ de fa\c con \`a ce que
+$$M_2x=\left(\begin{array}{c}
+x_1(1+\gamma_2)\\0\end{array}\right) \mbox{ et } M_2DM_2^T=\left(\begin{array}{cc}
+d_1(1+\gamma_2)&0\\0 & d_2(1+\gamma_2)\end{array}\right)$$
+et d\'eterminer $\gamma_2$
+\item Montrer que l'on peut toujours choisir $M_i$ ($i=1,2$) de fa\c con \`a ce que le ``facteur de croissance'' $(1+\gamma_i)$ soit inf\'erieur \`a 2.
+\end{enumerate}
+\item Soit maintenant $m\in\Nn$ quelconque. D\'efinir les matrices $M_1(p,q)$ et $M_2(p,q)$ telles que
+$$\left(\begin{array}{cc}
+m_{pp}& m_{pq}\\
+m_{qp} & m_{qq}
+\end{array}\right)=\left(\begin{array}{cc}
+\beta_1& 1\\
+1 & \alpha_1
+\end{array}\right) \mbox{ ou } =\left(\begin{array}{cc}
+1& \alpha_2\\
+\beta_2 & 1
+\end{array}\right)$$
+\begin{itemize}
+\item $e_q^T M_i(p,q)x = 0$;
+\item $M_iDM_i^T$ matrice diagonale, avec $D=$diag$(d_1, \cdots ,d_n), d_i>0$
+\end{itemize}
+Ces matrices $M_i$ sont appel\'ees {\it matrice de Givens rapide}.
+\item D\'ecrire l'algorithme qui utilise les transformations de Givens rapides pour r\'eduire $A\in\Rr^{m\times n}$ \`a la forme triangulaire sup\'erieure ({\it m\'ethode de Givens rapide}):
+$$MA=R ,\ \ \ \ MM^T =\mbox{diag}(d_1, \cdots , d_m) .$$
+Les calculs doivent \^etre faits sur place.
+
+Quel est le co\^ut de cet algorithme? Comparer avec le co\^ut de la m\'ethode de Householder pour r\'eduire $A$ \`a la forme triangulaire sup\'erieure.
+\item Application \`a la r\'esolution d'un syst\`eme lin\'eaire au sens des moindres carr\'es.
+\begin{enumerate}
+\item Comment profiter des r\'esultats fournis par l'algorithme pr\'ec\'edent pour r\'esoudre
+$$\min_{x\in\Rr^n}\|Ax-b\|_2 \mbox{ avec } A\in\Rr^{m\times n} \ \ \ (m>n) ,\ \ \ b\in \Rr^m ?$$
+\item Quelles modifications introduire dans l'algorithme de la m\'ethode de Givens rapide pour qu'il r\'esolve le probl\`eme de moindres carr\'es de la question pr\'ec\'edente?
+\end{enumerate}
+\item {\it Application num\'erique}: r\'esoudre au sens des moindres carr\'es par la m\'ethode de Givens rapide le syst\`eme
+$$Ax=b, A=\left(\begin{array}{cc}1&4\\2&5\\3&6\end{array}\right) ,
+ b=\left(\begin{array}{c}7\\8\\9\end{array}\right)$$
+\item Consid\'erons maintenant le probl\`eme de moindres carr\'es
+\begin{equation}\label{ls}
+\min_{x\in\Rr^n}\|D(Ax-b)\|_2
+\end{equation}
+avec $A\in\Rr^{m\times n}$, $b\in\Rr^m$ , $D=$diag$(d_i)$ ($d_i>0$). Cela correspond \`a donner un poids diff\'erent \`a chaque \'equation du syst\`eme.
+
+Soit $M$ une matrice produit de matrices de Givens rapide v\'erifiant
+$$\left\{ \begin{array}{l}
+MA=R \mbox{ triangulaire sup\'erieure}\\
+MD^{-2}M^T =\tilde{D}=\mbox{diag}(\tilde{d}_i) , \  \ \ \tilde{d}_i>0
+\end{array}\right.$$
+Comment peut--on r\'esoudre le probl\`eme (\ref{ls})?
+
+Quelles adaptations faire \`a l'algorithme pr\'ec\'edent?
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+M\'ethode de Givens rapide
+\begin{enumerate}
+\item $MM^T=$diag$(d_1, \cdots , d_m)=\Delta^2$ avec $\Delta=$diag$ (\sqrt{d_1}, \cdots, \sqrt{d_m})$
+
+$\Delta^{-1}MM^T\Delta^{-1}=(\Delta^{-1}M)(\Delta^{-1}M)^T=I\Rightarrow \Delta^{-1}M$ est une matrice orthogonale
+
+ $A=M^{-1}S=(M^{-1}Delta \Delta^{-1} S=(\Delta^{-1}M)^{-1} (\Delta^{-1}S)=(\Delta^{-1}M)^{T} (\Delta^{-1}S)=(M^T\Delta^{-1})(\Delta^{-1}S)$
+
+Comme $\Delta^{-1}S$ est triangulaire sup\'erieure ona $ A=QR$ avec $Q=M^T\Delta^{-1}, R=\Delta^{-1}S$
+\item 
+\begin{enumerate}
+\item$$M_1x=\left(\begin{array}{c}\beta_1x_1 +x_2\\x_1+\alpha_1x_2\end{array}\right)  ,\quad M_1DM_1^T=\left(\begin{array}{cc}d_2+\beta_1^2 d_1 & d_1\beta_1 +d_2\alpha_1\\ d_1\beta_1 +d_2\alpha_1 & d_1+\alpha_1^2d_2\end{array}\right)$$
+Alors
+\begin{itemize} 
+\item $x_1+\alpha_1x_2=0\Leftrightarrow \alpha_1=-x_1/x_2$
+\item $d_1\beta_1 +d_2 (-x_1/x_2)=0\Leftrightarrow \beta_1=-\alpha_1 d_2/d_1=x_1d_2/(x_2d_1)$
+\end{itemize}
+ Pour le choix pr\'ec\'edent on veut d\'eterminer $\gamma_1$ tel que
+
+$x_2(1+\gamma_1)=\beta_1x_1 +x_2 =x_2(\beta_1x_1/x_2 +1) \Rightarrow \gamma_1= (d_2/d_1)(x_1/x_2)^2$ c'est-\`a-dire
+$$\gamma_1=-\alpha_1\beta_1$$
+pour cette valeur on a
+
+$d_2+\beta_1^2d_1 =d_2(1+\alpha_1^2d_2/d_1) = d_2(1+\gamma_1)$
+$d_1+\alpha_1^2d_2 =d_1(1+\alpha_1^2d_2/d_1) = d_2(1+\gamma_1)$
+\item le m\^eme type de calcul nous donne
+$$\beta_2=-x_2/x_1, \quad \alpha_2=-(d_1/d_2)\beta_2,\quad \gamma_2=-\alpha_2\beta_2 = (d_1/d_2)(x_2/x_1)^2$$
+\item on remarque que $\gamma_1 \gamma_2=1$ et donc soit $\gamma_1\leq 1$ , soit $\gamma_2\leq 1$
+
+\end{enumerate}
+\item $$\left(\begin{array}{cc} m_{pp} & m_{pq}\\m_{qp} & m_{qq}\end{array}\right)=\left(\begin{array}{cc} \beta_1 & 1\\1 & \alpha_1\end{array}\right)\mbox{ ou }\left(\begin{array}{cc} 1 & \alpha_2 \\\beta_2 & 1\end{array}\right)$$
+avec les $\alpha_i, \beta_i$ d\'efinis comme pr\'ec\'edemment.
+\item \emph{algorithme}
+
+$d_i=1$ pour $i=1, \cdots , m$
+
+Pour $p=1, \cdots , \min\{n,m-1\}$
+
+\hspace{1cm} Pour $q=p+1, \cdots , m$
+
+\hspace{1.5cm}si $a_{qp}\neq 0$ alors
+
+\hspace{2cm} $\alpha= -a_{pp}/a_{qp},\quad \beta=-\alpha d_q/d_p ,\quad \gamma =-\alpha\beta$
+
+\hspace{2cm}si $\gamma \leq 1$ alors
+
+\hspace{2.5cm} $\left(\begin{array}{ccc}a_{pp}& \cdots & a_{pn}\\a_{qp} & \cdots & a_{qn}\end{array}\right) \leftarrow \left(\begin{array}{cc}\beta & 1 \\ 1 & \alpha \end{array}\right)\left(\begin{array}{ccc}a_{pp}& \cdots & a_{pn}\\a_{qp} & \cdots & a_{qn}\end{array}\right)$
+
+\hspace{2.5cm}\'echanger $d_p$ et $d_q$
+
+\hspace{3cm} $d_p\leftarrow (1+\gamma d_p)$
+
+\hspace{3cm} $d_q\leftarrow (1+\gamma d_q)$
+
+\hspace{2cm}sinon
+
+\hspace{2.5cm} \'echanger $\alpha$ et $\beta$
+
+\hspace{2.5cm}$\alpha=1/\alpha$ , $\beta = 1/\beta $ , $\gamma = 1/\gamma $
+
+\hspace{2.5cm} $\left(\begin{array}{ccc}a_{pp}& \cdots & a_{pn}\\a_{qp} & \cdots & a_{qn}\end{array}\right) \leftarrow \left(\begin{array}{cc}1 & \alpha \\ \beta & 1 \end{array}\right)\left(\begin{array}{ccc}a_{pp}& \cdots & a_{pn}\\a_{qp} & \cdots & a_{qn}\end{array}\right)$
+
+\hspace{2.5cm} $d_p\leftarrow (1+\gamma d_p)$
+
+\hspace{2.5cm} $d_q\leftarrow (1+\gamma d_q)$
+
+le co\^ut de cet algorithme est de $n^2(m-n/3)$ flops.
+
+\item \begin{enumerate}
+\item on a $MA=R=\left(\begin{array}{c} S_1\\ 0\end{array}\right)$ avec $S_1$ triangulaire sup\'erieure et $MM^T=D=$diag$(d_1,\cdots , d_n)$. Donc la matrice $D^{-1/2}M$ est une matrice orthogonale
+
+$$\|Ax-b\|_2^2=\|D^{-1/2}MAx-D^{-1/2}Mb\|_2^2=\left\|D^{-1/2}\left[\left(\begin{array}{c}S_1\\0\end{array}\right) x-Mb\right]\right\|_2^2=$$
+$$=\left\|D^{-1/2}\left[\left(\begin{array}{c}S_1\\0\end{array}\right) x-\left(\begin{array}{c}c\\d\end{array}\right)\right]\right\|_2^2=\left\|D^{-1/2}\left(\begin{array}{c} S_1x-c\\d\end{array}\right)\right\|_2^2$$
+La solution est obtenue en r\'esolvant le syst\`eme triangulaire sup\'erieure $S_1x=c$ de taille $n\times n$.
+\item \begin{itemize}
+\item mise \`a jour de $b$ pour le calcul de $Mb$ en m\^eme temps que la mise \`a jour de $A$
+
+pour $p=1, \cdots ,\min \{n,m-1\}$
+
+\hspace{1cm} pour $q=p+1,\cdots , m$ faire 
+
+\hspace{1.5cm}$\left(\begin{array}{c}b_p\\b_q\end{array}\right)\leftarrow \left(\begin{array}{cc}\beta & 1\\ 1 & \alpha\end{array}\right)\left(\begin{array}{c}b_p\\b_q\end{array}\right)$ ou
+
+\hspace{1.5cm}$\left(\begin{array}{c}b_p\\b_q\end{array}\right)\leftarrow \left(\begin{array}{cc}1 & \alpha\\ \beta & 1\end{array}\right)\left(\begin{array}{c}b_p\\b_q\end{array}\right)$ 
+
+\item r\'esolution du syst\`eme triangulaire sup. $S_1x=c$
+
+$x_n\leftarrow b_n/a_{nn}$
+
+\hspace{1cm} Pour $i=n-1, \cdots , 1$ faire
+
+\hspace{1.5cm} $x_i\leftarrow (b_i-\sum_{j=i+1}^na_{ij}x_j)$
+\end{itemize}
+\end{enumerate}
+\item Application num\'erique:
+
+$$M=\frac{1}{24}\left(\begin{array}{ccc}8&16&24\\
+40 & 10 & -20\\
+15 & -30 & 15\end{array}\right),\quad D=\mbox{diag} (14/9,175/48,75/32)$$
+
+$$M[A,b]=\left(\begin{array}{ccc}14/3 & 32/3 & 50/3\\
+0&15/4 & 15/2\\
+0&0&0\end{array}\right), \quad x_{ls}=(-1,2)^T$$
+\item on a
+$$MD^{-2}M^T=\tilde{D} \Leftrightarrow (\tilde{D}^{-1/2}MD^{-1})(\tilde{D}^{-1/2}MD^{-1})^T=I$$
+donc
+ $(\tilde{D}^{-1/2}MD^{-1})$ est une matrice orthogonale et on obtient
+$$\|D(Ax-b)\|_2=\|\tilde{D}^{-1/2}MD^{-1}D(Ax-b)\|_2=\|\tilde{D}^{-1/2}(MAx-Mb)\|_2=$$
+$$=\left|\tilde{D}^{-1/2}\left(\begin{array}{c}Sx-c\\e\end{array}\right)\right|_2$$
+Donc le min est atteint pour $Sx=c$ avec $Mb=(C,e)^T$
+
+La modification dans l'algorithme pr\'ec\'edent consiste \`a initialiser la matrice diagonale $D$ avec $D^{-2}$ (au lieu de l'identit\'e).
+\end{enumerate}
+\fincorrection
+\finexercice

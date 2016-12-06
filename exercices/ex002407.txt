@@ -1,0 +1,76 @@
+\exercice{2407, mayer, 2003/10/01}
+\enonce 
+Soient $y\in {\cal C}([a,b])$ et $k\in {\cal C}([a,b]\times
+[a,b])$ des fonctions continues. On se propose de r\'esoudre
+l'\'equation (int\'egrale de Fredholm) suivante:
+\begin{equation}\label{eq 11}
+ x(s) -\int _a^b
+k(s,t) x(t) \, dt =y(s) \quad \text{pour} \; s\in [a,b] \;
+\end{equation}
+ d'inconnue $x\in{\cal C}([a,b])$. Pour ce faire on
+suppose que le "noyau" $k$ satisfait l'hypoth\`ese suivante:
+$$ \lambda := \max _{a\leq s\leq b} \int _a^b |k(s,t)|\, dt <1 \quad \left( \mbox{ou
+m\^eme} \quad \max_{a\leq s,t\leq b} |k(s,t)| <\frac{1}{b-a}
+\;\right) .$$
+\begin{enumerate}
+  \item Rappeler que $({\cal C}([a,b]),\| .\| _\infty)$ est
+un espace complet.
+\item Soit $x\in {\cal C}([a,b]) \mapsto Ax \in {\cal C}([a,b])$ l'application
+donn\'ee par
+$$(Ax)(s) :=\int _a^b k(s,t) x(t) \, dt +y(s)  \; .$$
+Noter que (\ref{eq 11}) \'equivaut \`a $Ax=x$ et qu'on cherche donc
+un point fixe de $x \mapsto Ax$. D\'eduire des hypoth\`eses faites
+sur $k$ qu'un tel point fixe $x\in {\cal C}([a,b])$ existe et que
+toute suite $A^n x_0$, $x_0\in{\cal C}([a,b])$, converge
+uniform\'ement vers ce point fixe $x$.
+\item {\it D\'ependance continue de la solution $x =
+x(y)$}.
+
+Soient $y_1,y_2\in{\cal C}([a,b])$ deux fonctions et $x_1,
+x_2\in{\cal C}([a,b])$ les deux solutions associ\'ees de (\ref{eq
+11}) ou, de fa\c{c}on \'equivalente, les points fixes des
+applications associ\'ees $x\mapsto A_i x$. Montrer que
+$$ \| x_1 - x_2\|_\infty = \| A_1 x_1 -A_2
+x_2\|_\infty\leq \|y_1 -y_2\|_\infty+ \lambda \|x_1 -x_2 \|_\infty \;
+.$$ En d\'eduire que
+$$\|x_1 -x_2\|_\infty    \leq \frac{1}{1-\lambda}\| y_1
+-y_2\|_\infty$$ et donc que la solution $x$ de (\ref{eq 11})
+d\'epend continuement de la fonction $y$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item ! !
+  
+  \item 
+\begin{align*}
+\| Ax_1 - Ax_2\|_\infty 
+  & = \| \int_a^b k(s,t)(x_1(t)-x_2(t))dt\|_\infty \\
+  & \le  \int_a^b \|k(s,t)\|_\infty \|x_1(t)-x_2(t)\|_\infty dt \\
+  & \le \|x_1(t)-x_2(t)\|_\infty \times \lambda \\
+  & < \|x_1(t)-x_2(t)\|_\infty.\\
+\end{align*}
+
+Donc $A$ est contractante et l'espace ambiant ${\cal C}([a,b])$ est complet, par le
+théorème du point fixe, $A$ admet un unique point fixe, $x$.
+De plus, pour tout fonction $x_0 \in{\cal C}([a,b])$, la suite
+$(A^nx_0)$ converge vers $x$, mais ici la norme est la norme uniforme donc
+$\|A^nx_0-x\|_\infty$ tend vers $0$. Donc $(A^nx_0)$ converge uniformément vers $x$.
+
+  \item
+\begin{align*}
+\|x_1-x_2\|_\infty & = \| A_1x_1-A_2x_2\|_\infty \quad \text{ car } A_ix_i=x_1, \\
+                   &= \| \int_a^b k_1(s,t) x_1(t)  dt +y_1(s)+ \int _a^b k_2(s,t) x_2(t) \, dt + y_2(s)  \|_\infty \\
+                    &\le \| \int_a^b k(s,t)(x_1(t)-x_2(t))dt\|_\infty + \|y_1-y_2\|_\infty \\
+  &\le \lambda\|x_1-x_2\|_\infty+\|y_1-y_2\|_\infty \\   
+\end{align*}
+Donc 
+$$\|x_1 -x_2\|_\infty    \leq \frac{1}{1-\lambda}\| y_1
+-y_2\|_\infty,$$
+ce qui exprime la dépendance continue de la solution par rapport à la fonction $y$.
+\end{enumerate}
+\fincorrection
+\finexercice

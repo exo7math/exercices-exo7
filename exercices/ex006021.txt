@@ -1,0 +1,43 @@
+\exercice{6021, quinio, 2011/05/20}
+
+\enonce
+ On effectue un contrôle sur des pièces de un euro
+dont une proportion $p=0,05$ est fausse et sur des pièces 
+de 2 euros dont une proportion $p'=0,02$ est fausse.
+Il y a dans un lot $500$ pièces dont $150$ pièces de 
+un euro et $350$ pièces de 2 euros.
+\begin{enumerate}
+\item On prend une pièce au hasard dans ce lot: quelle est la probabilité qu'elle soit fausse?
+
+\item Sachant que cette pièce est fausse, quelle est la probabilité
+qu'elle soit de un euro?
+
+\item On contrôle à présent un lot de 1000 pièces de un euro.
+Soit $X$ la variable aléatoire: <<nombre de pièces fausses parmi 1000>>.
+Quelle est la vraie loi de $X$ ? (on ne donnera que la forme générale);
+quelle est son espérance, son écart-type?
+
+\item En approchant cette loi par celle d'une loi normale adaptée, calculez
+la probabilité pour que $X$ soit compris entre 48 et 52.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item Soit $F$ l'événement <<la pièce est fausse>>; soit $U$ l'événement <<la pièce est un euro>>; 
+soit $D$ l'événement <<la pièce est deux euros>>. Alors
+$P(F)=P(F/U)P(U)+P(F/D)P(D)=2.9\%$.
+
+\item On cherche $P(U/F)=$($P(F/U)P(U))/P(F)=51.7\%$.
+
+\item $X$ la variable aléatoire <<nombre de pièces 
+fausses parmi 1000>> obéit à une loi binomiale$B(1000;5\%)$.
+Espérance: 50; écart-type: $\sigma =\sqrt{47.5}$.
+En approchant cette loi par une loi normale $N(50; \sigma)$,
+la probabilité pour que $X$ soit compris entre 48 et 52 est :
+$P[(47.5-50)/\sigma \leq (X-50)/\sigma \leq (52.5-50)/\sigma ]\simeq 28.3\%$.
+\end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,45 @@
+\exercice{734, gourio, 2001/09/01}
+\enonce
+Quel est le lieu des points d'inflexion (puis des extr\'{e}mums locaux) de $
+f_{\lambda } $ quand $\lambda $ d\'{e}crit ${\Rr}, $ o\`{u} :
+$$f_{\lambda }:x \mapsto \lambda e^{x}+x^{2}. $$
+\finenonce 
+
+\indication
+On distinguera les cas $\lambda \geq 0$ et $\lambda < 0$.
+Pour le cas $\lambda < 0$ on considerera des sous-cas.
+\finindication
+
+\correction
+\begin{enumerate}
+  \item 
+$f_\lambda'(x) = \lambda e^x+2x$, $f_\lambda''(x) = \lambda e^x+2$.
+Les points d'inflexion sont les racines de $f_\lambda''$,
+donc si $\lambda \geq 0$ il n'y a pas de point d'inflexion,
+si $\lambda < 0$ alors il y a un point d'inflexion 
+en $x_\lambda = \ln(-2/\lambda)$.
+  \item Si $\lambda \geq 0$ alors $f_\lambda''$ est toujours strictement positive, donc $f_\lambda'$ est strictement croissante, en $-\infty$
+la limite de $f_\lambda'$ est $-\infty$, en $+\infty$ la limite de $f_\lambda'$ est $+\infty$, donc il existe
+un unique r\'eel $y_\lambda$ tel que $f'_\lambda(y_\lambda)=0$. 
+$f_\lambda$ est d\'ecroissante sur $]-\infty,y_\lambda]$ et
+croissante sur $[y_\lambda, +\infty[$. Et en $y_\lambda$
+nous avons un minimum absolu.
+  \item Nous supposons $\lambda < 0$. Alors $f_\lambda''$ s'annule 
+seulement en $x_\lambda$. $f_\lambda'$ est croissante sur $]-\infty,x_\lambda]$ et d\'ecroissante sur $[x_\lambda, +\infty[$.
+Donc $f_\lambda'$ a des racines si et seulement si
+$f'(x_\lambda) \geq 0$. Or $f'(x_\lambda) = -2+2x_\lambda$.
+  \begin{enumerate}
+  \item Si $\lambda = -2/e$ alors $f_\lambda'(x_\lambda) = 0$.
+  Comme $f_\lambda''(x_\lambda)=0$ et $f_\lambda'''$ ne s'annule pas alors $x_\lambda$ est un point d'inflexion qui 
+n'est pas un extremum local.
+  \item Si $\lambda>-2/e$ alors $f_\lambda'(x_\lambda) <0$
+  donc $f_\lambda'$ est n\'egative donc $f$ est strictement d\'ecroissante.
+  Il n'y a pas d'extremum local.
+  \item Si $-2/e<\lambda<0$ alors $f_\lambda'(x_\lambda) > 0$.
+  Donc $f_\lambda'$ s'annule en deux points,
+  une fois sur $]-\infty,x_\lambda[$ et une sur $]x_\lambda,+\infty[$.
+  Ce sont des extremums locaux (minimum et maximum respectivement).
+  \end{enumerate}
+\end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,29 @@
+\exercice{5860, rouget, 2010/10/16}
+\enonce[**]
+Soit $N$ une norme sur $\mathcal{M}_n(\Rr)$.
+
+Montrer qu'il existe $k>0$ tel que $\forall(A,B)\in(\mathcal{M}_n(\Rr))^2$, $N(AB)\leqslant k(A)N(B)$.
+\finenonce
+
+\noindication
+
+\correction
+Soit $N$ une norme sur $\mathcal{M}_n(\Rr)$. D'après l'exercice \ref{ex:rou5}, $\|\;\|_1$ est une norme sous-multiplicative.
+
+Puisque $\mathcal{M}_n(\Rr)$ est un espace vectoriel de dimension finie sur $\Rr$, $N$ et $\|\;\|_1$ sont des normes équivalentes. Par suite, il existe deux réels strictement positifs $\alpha$ et $\beta$ tels que $\alpha\|\;\|_1\leqslant N\leqslant\beta\|\;\|_1$.
+
+Pour $(A,B)\in\left(\mathcal{M}_n(\Rr)\right)^2$,
+
+\begin{center}
+$N(AB)\leqslant\beta\|AB\|_1\leqslant\beta\|A\|_1\|B\|_1\leqslant \frac{\beta}{\alpha^2}N(A)N(B)$
+\end{center}
+
+et le réel $k= \frac{\beta}{\alpha^2}$ est un réel strictement positif tel que $\forall(A,B)\in(\mathcal{M}_n(\Rr))^2$, $N(AB)\leqslant kN(A)N(B)$.
+
+\textbf{Remarque.} Le résultat précédent signifie que $N'= \frac{1}{K}N$ est une norme sous-multiplicative car pour $(A,B)\in\left(\mathcal{M}_n(\Rr)\right)^2$,
+
+\begin{center}
+$N'(AB)= \frac{1}{k^2}N(AB)\leqslant \frac{1}{k^2}N(A)N(B)= \frac{1}{k}N(A) \frac{1}{k}N(B)=N'(A)N'(B)$.
+\end{center}
+\fincorrection
+\finexercice

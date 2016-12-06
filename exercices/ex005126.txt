@@ -1,0 +1,27 @@
+\exercice{5126, rouget, 2010/06/30}
+\enonce[**]
+Résoudre dans $\Cc$ l'équation $(z^2+1)^n-(z-1)^{2n}=0$.
+\finenonce
+
+\noindication
+
+\correction
+Posons, pour $n$ naturel non nul, $P=(X^2+1)^n-(X-1)^{2n}$.
+
+\begin{align*}
+P&=X^{2n}+\left(\mbox{termes de degré}\leq2n-2\right)-X^{2n}+2nX^{2n-1}+\left(\mbox{termes de degré}\;\leq2n-2\right)\\
+ &=2nX^{2n-1}+\left(\mbox{termes de degré}\leq2n-2\right).
+\end{align*}
+Donc $\mbox{deg}(P)=2n-1$ et $P$ admet dans $\Cc$, $2n-1$ racines, distinctes ou confondues.
+
+\begin{align*}
+(z^2+1)^n=(z-1)^{2n}&\Leftrightarrow\exists k\in\{0,...,n-1\}/\;z^2+1=\omega_k(z-1)^2\;\mbox{où}\;\omega_k=e^{2ik\pi/n}\\
+ &\Leftrightarrow\exists k\in\{0,...,n-1\}/\;(1-\omega_k)z^2+2\omega_kz+(1-\omega_k)=0
+\end{align*}
+Si $k=0$, l'équation précédente s'écrit $2z=0$ ou encore $z=0$.
+Si $k$ est élément de $\llbracket1,n-1\rrbracket$, $\Delta_k'=\omega_k^2-(1-\omega_k)^2=2\omega_k-1=2e^{2ik\pi/n}-1$.
+Soit $d_k$ une racine carrée dans $\Cc$ de $\Delta_k'$ (difficile à expliciter semble-t-il). On a
+$S=\{0\}\cup\left\{\frac{-e^{2ik\pi/n}\pm d_k}{1-e^{2ik\pi/n}},k\in\llbracket1,n-1\rrbracket\right\}$.
+
+\fincorrection
+\finexercice

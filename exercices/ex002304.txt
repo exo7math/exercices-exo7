@@ -1,0 +1,21 @@
+\exercice{2304, barraud, 2008/04/24}
+\enonce
+\begin{enumerate}
+  \item Quels sont les restes des division de $10^{100}$ par $13$ et par $19$ ?
+  \item Quel est le reste de la  division de $10^{100}$ par $247=13\cdot 19$ ? 
+En d\'eduire que  $10^{99}+1$ est multiple de $247$.
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+
+$13$ est premier et $100=12\cdot8+4$ donc $10^{100}\equiv
+10^{4}\equiv(-3)^{4}\equiv3\equiv-10[13]$. De même
+$10^{100}\equiv10^{-8}\equiv2^{8}\equiv9\equiv-10[19]$. En utilisant le
+lemme chinois, on en déduit que $10^{100}\equiv-10[247]$. Comme
+$\pgcd(10,247)=1$, on peut simplifier cette expression par $10$ et on a
+$10^{99}\equiv -1[247]$, et donc $247|10^{99}+1$.
+\fincorrection
+\finexercice

@@ -1,0 +1,26 @@
+\exercice{2170, debes, 2008/02/12}
+\enonce
+Soit $I$ un sous-ensemble de $\{ 1, \dots , n\} $ et
+$\sigma $ un cycle de support $I$. Soit $\tau $ une autre permutation.
+Montrer que $\tau $ commute avec $\sigma $ si et seulement si $\tau $
+laisse invariant $I$ et la restriction de $\tau $ \`a $I$ est \'egale \`a une
+puissance de la restriction de $\sigma $ \`a $I$.
+\finenonce 
+
+\noindication
+\correction
+Supposons $\sigma \tau = \tau \sigma$. Pour tout $x\notin I$, on a
+$\sigma(\tau(x))=\tau(\sigma(x))=\tau(x)$; $\tau(x)$, fix\'e par $\sigma$, n'appartient pas
+\`a $I$. Cela montre que le compl\'ementaire de $I$ est invariant par $\tau$. Comme $\tau$
+est injective, $I$ l'est aussi. Montrons que, sur $I$, $\tau$ est \'egal \`a une puissance de
+$\sigma$. Quitte \`a renum\'eroter $\{1,\ldots,n\}$, on peut supposer que
+$I=\{1,\ldots,m\}$ (o\`u $m\leq n$) et $\sigma|_I= (1\hskip 2pt 2\hskip 2pt\ldots\hskip 2pt
+m)$. L'entier $\tau(1)$ est dans $I$; soit $k$ l'unique entier entre
+$1$ et $m$ tel que $\tau(1)=\sigma^k(1)$. Pour tout $i\in I$, on a alors $\tau(i) = \tau
+\sigma^{i-1}(1) =
+\sigma^{i-1}\tau(1)= \sigma^{i-1}\sigma^{k}(1)=\sigma^{k}\sigma^{i-1}(1)=\sigma^{k}(i)$
+(l'identit\'e $\tau \sigma^{i-1}= \sigma^{i-1}\tau$ utilis\'ee dans le calcul d\'ecoule
+facilement de l'hypoth\`ese $\sigma \tau = \tau \sigma$). On obtient donc
+$\tau|_I=(\sigma|_I)^k$. L'implication r\'eciproque est facile.
+\fincorrection
+\finexercice

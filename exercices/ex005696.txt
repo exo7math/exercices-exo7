@@ -1,0 +1,17 @@
+\exercice{5696, rouget, 2010/10/16}
+\enonce[***]
+Nature de la série de terme général $u_n=\sin\left(\pi(2+\sqrt{3})^n\right)$.
+\finenonce
+
+\noindication
+
+\correction
+ Pour $n\in\Nn$, posons $u_n=\sin\left(\pi(2+\sqrt{3})^n\right)$. D'après la formule du binôme de \textsc{Newton}, $(2+\sqrt{3})^n=A_n +B_n\sqrt{3}$ où $A_n$ et $B_n$ sont des entiers naturels. Un calcul conjugué fournit aussi $(2-\sqrt{3})^n=A_n-B_n\sqrt{3}$. Par suite, $(2+\sqrt{3})^n+(2-\sqrt{3})^n= 2A_n$ est un entier pair. Par suite, pour $n\in\Nn$,
+
+\begin{center}
+$u_n =\sin\left(2A_n\pi-\pi(2-\sqrt{3})^n\right)=-\sin\left(\pi(2-\sqrt{3})^n\right)$.
+\end{center}
+
+Mais $0< 2-\sqrt{3}< 1$ et donc $(2-\sqrt{3})^n\underset{n\rightarrow+\infty}{\rightarrow}0$. On en déduit que $|u_n|\underset{n\rightarrow+\infty}{\sim}\pi(2-\sqrt{3})^n$ terme général d'une série géométrique convergente. Donc la série de terme général $u_n$ converge.
+\fincorrection
+\finexercice

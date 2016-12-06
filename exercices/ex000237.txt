@@ -1,0 +1,27 @@
+\exercice{237, bodin, 1998/09/01}
+\video{YVY_dCYJms8}
+\enonce
+
+ Soit $E$ un ensemble \`a $n$ \'el\'ements, et
+$A\subset E$ un sous-ensemble \`a $p$ \'el\'ements. Quel est le
+nombre de parties de $E$ qui contiennent un et un seul \'el\'ement
+de $A$ ?
+\finenonce 
+
+\indication
+Combien y-a-t'il de choix pour l'\'el\'ement de $A$ ?
+Combien y-a-t'il de choix pour le sous-ensemble de $E\setminus A$ ?
+\finindication
+
+\correction
+Fixons un \'el\'ement de $A$ ; dans $E\setminus A$ (de cardinal
+$n-p$), nous pouvons choisir $C_{n-p}^k$ ensembles \`a $k$
+\'el\'ements ($k = 0,1,\ldots,n$). Le nombre d'ensembles dans le
+compl\'ementaire de $A$ est donc
+$$ \sum_{k=0}^{n-p} C_{n-p}^{k} = 2^{n-p}.$$
+
+Pour le choix d'un \'el\'ement de $A$ nous avons $p$ choix, donc
+le nombre total d'ensembles qui v\'erifie la condition est :
+$$p2^{n-p}.$$
+\fincorrection
+\finexercice

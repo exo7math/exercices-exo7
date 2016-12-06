@@ -1,0 +1,42 @@
+\exercice{2231, matos, 2008/04/23}
+\enonce[Rotation de Givens]
+
+Soient $p,q : $ $1\leq p < q\leq n$, $c,s\in\Rr :$ $c^2+s^2=1$.\\
+On consid\`ere les matrices
+$$G=G_{p,q}(c,s)=\left(\begin{array}{ccccrccc}
+1&&&&&&&\\
+&\ddots &&&&&&\\
+&&1&&&&&\\
+&&&c&\cdots &-s&&\\
+&&&&\ddots  &&&\\
+&&&s&\cdots& c&&\\
+&&&&&&\ddots &\\
+&&\cdots &&&&&1
+\end{array}\right)$$
+\begin{enumerate}
+\item Ecrire $G$ comme perturb\'ee de $I$ par des matrices de rang 1.
+\item Montrer que $G$ est inversible, calculer $G^{-1}$, montrer que $G$ est orthogonale.
+\item Quelle est l'action de $G$ sur $A\in\Rr^{n\times n}$?
+\item Soit $A\in\Rr^{n\times n}$ avec $a_{pj}=\alpha , a_{qj}=\beta$. Peut--on trouver $G$ telle que $A'=GA$  v\'erifie:
+$$a'_{pj}=0 =\alpha ', \ \ \ a'_{qj}=0=\beta ' ?$$
+Est--ce que la solution est unique?
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item $G_{p,q}(c,s)= I +(c-1)e_pe_p^T + s e_qe_p^T -s e_qe_q^T + (c-1)e_pe_q^T$ avec $e_i$ les vecteurs de la base canonique.
+\item On montre que $e_i^TG^TGe_j=\delta_{ij} \quad \forall i,j=1, \cdots ,n$ et donc $G^TG=I$ ce qui permet de conclure que $G$ est inversible d'inverse $G^T$ et donc orthogonale.
+\item $e_i^TGA =e_i^TA= a_i^T$ pour $i\neq p,q$
+
+$e_p^TGA= ca_p^T-sa_q^T$, $e_q^TGA= sa_p^T+ca_q^T$, et donc $G$ change seulement les lignes $p$ et $q$
+\item On pose $\alpha =a_{pj}$ et $\beta = a_{qj}$ . On a donc \`a r\'esoudre dans le premier cas  le syst\`eme
+$$\left\{ \begin{array}{l} c\alpha -s\beta =0\\c^2+s^2=1\end{array}\right. \Leftrightarrow 
+\left\{ \begin{array}{l}c=\pm \beta /\sqrt{\alpha^2+\beta^2}\\s=\pm \alpha /\sqrt{\alpha^2+\beta^2}\end{array}\right.$$
+ce qui nous donne deux matrices $G$. Pour le deuxi\`eme cas et en proc\'edant de la  m\^eme fa\c con on obtient
+$$\left\{ \begin{array}{l}c=\pm \alpha /\sqrt{\alpha^2+\beta^2}\\s=\mp \beta /\sqrt{\alpha^2+\beta^2}\end{array}\right.$$
+\end{enumerate}
+\fincorrection
+\finexercice

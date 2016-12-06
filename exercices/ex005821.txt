@@ -1,0 +1,243 @@
+\exercice{5821, rouget, 2010/10/16}
+\enonce[**]
+L'espace de dimension $3$ est rapporté à un repère orthonormé $(O,i,j,k)$. On note $(\Gamma)$ la courbe d'équations
+
+\begin{center}
+$\left\{
+\begin{array}{l}
+y=x^2+x+1\\
+x+y+z-1=0
+\end{array}
+\right.$.
+\end{center}
+
+Montrer que $(\Gamma)$ est une parabole dont on déterminera le sommet, l'axe, le foyer et la directrice.
+
+\finenonce
+
+\noindication
+
+\correction
+$(\Gamma)$ est l'intersection d'un cylindre parabolique de direction $(Oz)$ et d'un plan non perpendiculaire à la direction de ce cylindre. On choisit un repère orthonormé $\mathcal{R}'=(\Omega,X,Y,Z)$ dans lequel le plan d'équation $x+y+z-1= 0$ dans le repère $\mathcal{R}=(O,x,y,z)$ soit le plan $(\Omega,X,Y)$  ou encore le plan d'équation $Z=0$ dans le repère $\mathcal{R}'$.
+
+On pose donc $Z =\frac{1}{\sqrt{3}}(x+y+z-1)$ puis par exemple $X =\frac{1}{\sqrt{2}}(x-y)$ et $Y=\frac{1}{\sqrt{6}}(x+y-2z)$ ce qui s?écrit
+
+\begin{center}
+$\left(
+\begin{array}{c}
+X\\
+Y\\
+Z
+\end{array}
+\right)=\left(
+\begin{array}{ccc}
+\frac{1}{\sqrt{2}}&-\frac{1}{\sqrt{2}}&0\\
+\rule[-4mm]{0mm}{10mm}\frac{1}{\sqrt{6}}&\frac{1}{\sqrt{6}}&-\frac{2}{\sqrt{6}}\\
+\frac{1}{\sqrt{3}}&\frac{1}{\sqrt{3}}&\frac{1}{\sqrt{3}}
+\end{array}
+\right)\left(
+\begin{array}{c}
+x\\
+y\\
+z
+\end{array}
+\right)+\left(
+\begin{array}{c}
+0\\
+0\\
+-\frac{1}{\sqrt{3}}
+\end{array}
+\right)$
+\end{center}
+
+ou encore
+
+\begin{center}
+$\left(
+\begin{array}{c}
+x\\
+y\\
+z
+\end{array}
+\right)=\left(
+\begin{array}{ccc}
+\frac{1}{\sqrt{2}}&\frac{1}{\sqrt{6}}&\frac{1}{\sqrt{3}}\\
+\rule[-4mm]{0mm}{10mm}-\frac{1}{\sqrt{2}}&\frac{1}{\sqrt{6}}&\frac{1}{\sqrt{3}}\\
+0&-\frac{2}{\sqrt{6}}&\frac{1}{\sqrt{3}}
+\end{array}
+\right)\left(
+\begin{array}{c}
+X\\
+Y\\
+Z
+\end{array}
+\right)+\left(
+\begin{array}{c}
+\frac{1}{3}\\
+\rule[-4mm]{0mm}{10mm}\frac{1}{3}\\
+\frac{1}{3}
+\end{array}
+\right)$
+\end{center}
+
+Dans le repère $\mathcal{R}'$, la courbe $(\Gamma)$ admet pour système d'équations 
+
+\begin{center}
+$\left\{
+\begin{array}{l}
+-\frac{1}{\sqrt{2}}X+\frac{1}{\sqrt{6}}Y+\frac{1}{\sqrt{3}}Z+\frac{1}{3}=\left(\frac{1}{\sqrt{2}}X+\frac{1}{\sqrt{6}}Y+\frac{1}{\sqrt{3}}Z+\frac{1}{3}\right)^2 +\left(\frac{1}{\sqrt{2}}X+\frac{1}{\sqrt{6}}Y+\frac{1}{\sqrt{3}}Z+\frac{1}{3}\right)+ 1\\
+Z=0
+\end{array}
+\right.$
+\end{center}
+
+ou encore
+
+\begin{center}
+$\left\{
+\begin{array}{l}
+-\frac{1}{\sqrt{2}}X+\frac{1}{\sqrt{6}}Y+\frac{1}{3}=\left(\frac{1}{\sqrt{2}}X+\frac{1}{\sqrt{6}}Y+\frac{1}{3}\right)^2 +\left(\frac{1}{\sqrt{2}}X+\frac{1}{\sqrt{6}}Y+\frac{1}{3}\right)+ 1\\
+Z=0
+\end{array}
+\right.$.
+\end{center}
+
+Continuons à deux coordonnées $X$ et $Y$ dans le plan $(\Omega,X,Y)$.
+
+\begin{align*}\ensuremath
+M(X,Y)\in(\Gamma)&\Leftrightarrow-\frac{1}{\sqrt{2}}X+\frac{1}{\sqrt{6}}Y+\frac{1}{3}=\left(\frac{1}{\sqrt{2}}X+\frac{1}{\sqrt{6}}Y+\frac{1}{3}\right)^2 +\left(\frac{1}{\sqrt{2}}X+\frac{1}{\sqrt{6}}Y+\frac{1}{3}\right)+ 1\\
+ &\Leftrightarrow\frac{1}{6}(\sqrt{3}X+Y)^2 + \frac{2}{3\sqrt{6}}(\sqrt{3}X+Y)+\frac{1}{9}+\sqrt{2}X+1=0\\
+ &\Leftrightarrow\frac{1}{6}(\sqrt{3}X+Y)^2+\frac{4\sqrt{2}}{3}X+\frac{2}{3\sqrt{6}}Y+\frac{10}{9}=0\\
+ &\Leftrightarrow(\sqrt{3}X+Y)^2+8\sqrt{2}X+\frac{2\sqrt{6}}{3}Y+\frac{20}{3}=0.
+\end{align*}
+
+On trouve déjà une conique du genre parabole. On pose maintenant $x'=\frac{1}{2}(\sqrt{3}X+Y)$ et $y'=\frac{1}{2}(-X+\sqrt{3}Y)$ correspondant aux formules de changement de repère
+$\left\{
+\begin{array}{l}
+x'=\frac{1}{2}(\sqrt{3}X+Y)\\
+\rule{0mm}{6mm}y'=\frac{1}{2}(-X+\sqrt{3}Y)
+\end{array}
+\right.$    ou encore  $\left\{
+\begin{array}{l}
+X=\frac{1}{2}(\sqrt{3}x'-y')\\
+\rule{0mm}{6mm}Y=\frac{1}{2}(x'+\sqrt{3}y')
+\end{array}
+\right.$.
+
+Dans le repère $(\Omega,x',y')$, une équation de la courbe $(\Gamma)$ est
+
+\begin{align*}\ensuremath
+(\sqrt{3}X+Y)^2+8\sqrt{2}X+\frac{2\sqrt{6}}{3}Y+\frac{20}{3}=0&\Leftrightarrow4x'^2+4\sqrt{2}(\sqrt{3}x'-y')+\frac{\sqrt{6}}{3}(x'+\sqrt{3}y')+\frac{20}{3}=0\\
+ &\Leftrightarrow x'^2+\frac{13}{2\sqrt{6}}x'-\frac{3}{2\sqrt{2}}y'+\frac{5}{3}=0\\
+ &\Leftrightarrow\left(x'+\frac{13}{4\sqrt{6}}\right)^2-\frac{3}{2\sqrt{2}}y'+\frac{5}{3}-\frac{169}{96}=0\Leftrightarrow\left(x'+\frac{13}{4\sqrt{6}}\right)^2=\frac{3}{2\sqrt{2}}\left(y'+\frac{1}{8\sqrt{2}}\right).
+\end{align*}
+
+$(\Gamma)$ est la parabole de paramètre $p=\frac{3}{4\sqrt{2}}$ et dont les éléments caractéristiques dans le repère $(\Omega,x',y')$ sont 
+
+$S\left(-\frac{13}{4\sqrt{6}},-\frac{1}{8\sqrt{2}}\right)$, $F = S +\frac{p}{2}(0,1)=\left(-\frac{13}{4\sqrt{6}},-\frac{1}{8\sqrt{2}}\right)+\frac{3}{8\sqrt{2}}(0,1)=\left(-\frac{13}{4\sqrt{6}},\frac{1}{4\sqrt{2}}\right)$   
+puis $K= S-\frac{p}{2}(0,1)=\left(-\frac{13}{4\sqrt{6}},-\frac{1}{8\sqrt{2}}\right)-\frac{3}{8\sqrt{2}}(0,1)=\left(-\frac{13}{4\sqrt{6}},-\frac{1}{2\sqrt{2}}\right)$ et  donc $(D)$ : $y'= -\frac{1}{2\sqrt{2}}$.
+
+On repasse maintenant dans le repère $(\Omega,X,Y)$. $S$ a pour coordonnées $\frac{1}{2}\left(
+\begin{array}{cc}
+\sqrt{3}&-1\\
+1&\sqrt{3}
+\end{array}
+\right)\left(
+\begin{array}{c}
+-\frac{13}{4\sqrt{6}}\\
+\rule{0mm}{6mm}-\frac{1}{8\sqrt{2}}
+\end{array}\right)=\left(
+\begin{array}{c}
+-\frac{25}{16\sqrt{2}}\\
+\rule{0mm}{6mm}-\frac{29}{16\sqrt{6}}
+\end{array}\right)$, $F$ a pour coordonnées $\frac{1}{2}\left(
+\begin{array}{cc}
+\sqrt{3}&-1\\
+1&\sqrt{3}
+\end{array}
+\right)\left(
+\begin{array}{c}
+-\frac{13}{4\sqrt{6}}\\
+\rule{0mm}{6mm}\frac{1}{4\sqrt{2}}
+\end{array}\right)=\left(
+\begin{array}{c}
+-\frac{7}{4\sqrt{2}}\\
+\rule{0mm}{6mm}-\frac{5}{4\sqrt{6}}
+\end{array}\right)$  
+puis $(D)$ a pour équation $-X+\sqrt{3}Y=-\frac{1}{\sqrt{2}}$.
+
+On revient enfin au repère $(O,x,y,z)$.
+
+Le point $S$ a pour coordonnées $\left(
+\begin{array}{ccc}
+\frac{1}{\sqrt{2}}&\frac{1}{\sqrt{6}}&\frac{1}{\sqrt{3}}\\
+\rule[-4mm]{0mm}{10mm}-\frac{1}{\sqrt{2}}&\frac{1}{\sqrt{6}}&\frac{1}{\sqrt{3}}\\
+0&-\frac{2}{\sqrt{6}}&\frac{1}{\sqrt{3}}
+\end{array}
+\right)\left(
+\begin{array}{c}
+-\frac{25}{16\sqrt{2}}\\
+\rule{0mm}{6mm}-\frac{29}{16\sqrt{6}}\\
+\rule{0mm}{6mm}0
+\end{array}\right)+\left(
+\begin{array}{c}
+\frac{1}{3}\\
+\rule[-4mm]{0mm}{10mm}\frac{1}{3}\\
+\frac{1}{3}
+\end{array}
+\right)=\left(
+\begin{array}{c}
+-\frac{3}{4}\\
+\rule[-4mm]{0mm}{10mm}\frac{13}{16}\\
+\frac{15}{16}
+\end{array}
+\right)$ 
+puis le point $F$ a pour coordonnées   $\left(
+\begin{array}{ccc}
+\frac{1}{\sqrt{2}}&\frac{1}{\sqrt{6}}&\frac{1}{\sqrt{3}}\\
+\rule[-4mm]{0mm}{10mm}-\frac{1}{\sqrt{2}}&\frac{1}{\sqrt{6}}&\frac{1}{\sqrt{3}}\\
+0&-\frac{2}{\sqrt{6}}&\frac{1}{\sqrt{3}}
+\end{array}
+\right)\left(
+\begin{array}{c}
+-\frac{7}{4\sqrt{2}}\\
+\rule{0mm}{6mm}-\frac{5}{4\sqrt{6}}\\
+\rule{0mm}{6mm}0
+\end{array}\right)+\left(
+\begin{array}{c}
+\frac{1}{3}\\
+\rule[-4mm]{0mm}{10mm}\frac{1}{3}\\
+\frac{1}{3}
+\end{array}
+\right)=\left(
+\begin{array}{c}
+-\frac{3}{4}\\
+\rule[-4mm]{0mm}{10mm}1\\
+\frac{3}{4}
+\end{array}
+\right)$
+et enfin 
+
+$(D)$ :  $\left\{
+\begin{array}{l}
+-\frac{1}{\sqrt{2}}(x-y)+\frac{\sqrt{3}}{\sqrt{6}}(x+y-2z)=-\frac{1}{\sqrt{2}}\\
+x+y+z-1=0
+\end{array}
+\right.$
+
+\begin{center}
+\shadowbox{
+\begin{tabular}{c}
+$(\Gamma)$ est la parabole de paramètre $p=\frac{3}{4\sqrt{2}}$, de sommet $S\left(-\frac{3}{4},\frac{13}{16},
+\frac{15}{16}\right)$, de foyer $F\left(-\frac{3}{4},1,\frac{3}{4}\right)$\\
+et de directrice $(D)$ : $\left\{
+\begin{array}{l}
+-y+z=\frac{1}{2}\\
+x+y+z-1=0
+\end{array}
+\right.$.
+\end{tabular}
+}
+\end{center}
+\fincorrection
+\finexercice

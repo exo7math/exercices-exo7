@@ -1,0 +1,40 @@
+\exercice{5152, rouget, 2010/06/30}
+\enonce[**I]
+\begin{enumerate}
+\item  Montrer que~:~$\forall x\in\Rr,\;E(x+1)=E(x)+1$.
+\item  Montrer que~:~$\forall(x,y)\in\Rr^2,\;E(x)+E(y)\leq E(x+y)$.
+\item  Montrer que~:~$\forall(x,y)\in\Rr^2,\;E(x)+E(y)+E(x+y)\leq E(2x)+E(2y)$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  Soit $x\in\Rr$. Alors, $E(x)\leq x<E(x)+1$ puis $E(x)+1\leq x+1<(E(x)+1)+1$. Comme $E(x)+1\in\Zz$, on a
+bien $E(x+1)=E(x)+1$.
+
+\item  Soient $(x,y)\in\Rr^2$. On a $E(x)+E(y)\leq x+y$. Ainsi, $E(x)+E(y)$ est un entier relatif inférieur ou égal
+à $x+y$. Comme $E(x+y)$ est le plus grand entier relatif inférieur ou égal à $x+y$, on a donc $E(x)+E(y)\leq E(x+y)$.
+
+Améliorons. $E(x)\leq x<E(x)+1$ et $E(y)\leq y<E(y)+1$ fournit $E(x)+E(y)\leq x+y<E(x)+E(y)+2$ et donc $E(x+y)$ vaut,
+suivant le cas, $E(x)+E(y)$ ou $E(x)+E(y)+1$ (et est dans tous les cas supérieur ou égal à $E(x)+E(y)$).
+
+\item  Soit $(x,y)\in\Rr^2$. Posons $k=E(x)$ et $l=E(y)$.
+\begin{itemize}
+\item[\textbf{1er cas.}] Si $x\in[k,k+\frac{1}{2}[$ et $y\in[l,l+\frac{1}{2}[$, alors $x+y\in[k+l,k+l+1[$ et donc $E(x+y)=k+l$,
+puis $E(x)+E(y)+E(x+y)=k+l+k+l=2k+2l$. D'autre part, $2x\in[2k,2k+1[$ et $2y\in[2l,2l+1[$. Par suite,
+$E(2x)+E(2y)=2k+2l$. Dans ce cas, $E(x)+E(y)+E(x+y)=E(2x)+E(2y)$.
+\item[\textbf{2ème cas.}] Si $x\in[k+\frac{1}{2},k+1[$ et $y\in[l,l+\frac{1}{2}[$, alors
+$x+y\in[k+l+\frac{1}{2},k+l+\frac{3}{2}[$ et donc $E(x+y)=k+l$ ou $k+l+1$,puis $E(x)+E(y)+E(x+y)=2k+2l$ ou $2k+2l+1$.
+D'autre part, $2x\in[2k+1,2k+2[$ et $2y\in[2l,2l+1[$. Par suite, $E(2x)+E(2y)=2k+2l+1$. Dans ce cas,
+$E(x)+E(y)+E(x+y)\leq E(2x)+E(2y)$.
+\item[\textbf{3ème cas.}] Si $x\in[k,k+\frac{1}{2}[$ et $y\in[l+\frac{1}{2},l+1[$, on a de
+même $E(x)+E(y)+E(x+y)\leq E(2x)+E(2y)$.
+\item[\textbf{4ème cas.}] Si $x\in[k+\frac{1}{2},k+1[$ et $y\in[l+\frac{1}{2},l+1[$, on a
+$E(x)+E(y)+E(x+y)=2k+2l+2=E(2x)+E(2y)$.
+\end{itemize}
+Finalement, on a dans tous les cas $E(x)+E(y)+E(x+y)\leq E(2x)+E(2y)$.
+\end{enumerate}
+\fincorrection
+\finexercice

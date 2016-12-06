@@ -1,0 +1,49 @@
+\exercice{5172, rouget, 2010/06/30}
+\enonce[**]
+ Soient $E$ un $\Kk$-espace vectoriel et $A$, $B$ et $C$ trois sous-espaces de $E$.
+\begin{enumerate}
+\item  Montrer que~:~$(A\cap B)+(A\cap C)\subset A\cap(B+C)$.
+\item  A-t-on toujours l'égalité~?
+\item  Montrer que~:~$(A\cap B)+(A\cap C)=A\cap(B+(A\cap C))$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  Soit $x\in E$.
+
+$x\in(A\cap B)+(A\cap C)\Rightarrow\exists y\in A\cap B,\;\exists z\in A\cap C/\;x=y+z$.
+
+$y$ et $z$ sont dans $A$ et donc $x=y+z$ est dans $A$ car $A$ est un sous-espace vectoriel de $E$.
+
+Puis $y$ est dans $B$ et $z$ est dans $C$ et donc $x=y+z$ est dans $B+C$.
+Finalement,
+
+$$\forall x\in E,\;[x\in(A\cap B)+(A\cap C)\Rightarrow x\in A\cap(B+C)].$$
+
+Autre démarche.
+
+$(A\cap B\subset B$ et $A\cap C\subset C)\Rightarrow(A\cap B)+(A\cap C)\subset B+C$ puis
+$(A\cap B\subset A$ et $A\cap C\subset A\Rightarrow (A\cap B)+(A\cap C)\subset A+A=A$, et finalement
+$(A\cap B)+(A\cap C)\subset A\cap(B+C)$.
+
+\item  Si on essaie de démontrer l'inclusion contraire, le raisonnement coince car la somme $y+z$ peut être dans
+$A$ sans que ni $y$, ni $z$ ne soient dans $A$.
+
+Contre-exemple. Dans $\Rr^2$, on considère $A=\Rr.(1,0)=\{(x,0),\;x\in\Rr\}$, $B=\Rr.(0,1)$ et $C=\Rr.(1,1)$.
+
+$B+C=\Rr^2$ et $A\cap(B+C)=A$ mais $A\cap B=\{0\}$ et $A\cap C=\{0\}$ et donc $(A\cap B)+(A\cap C)=\{0\}\neq
+A\cap(B+C)$.
+
+\item  $A\cap B\subset B\Rightarrow (A\cap B)+(A\cap C)\subset B+(A\cap C)$ mais aussi $(A\cap B)+(A\cap C)\subset
+A+A=A$. Donc, $(A\cap B)+(A\cap C)\subset A\cap(B+(A\cap C))$.
+
+Inversement, soit $x\in A\cap(B+(A\cap C))$ alors $x=y+z$ où $y$ est dans $B$ et $z$ est dans $A\cap C$. Mais alors,
+$x$ et $z$ sont dans $A$ et donc $y=x-z$ est dans $A$ et même plus précisément dans $A\cap B$. Donc,
+$x\in(A\cap B)+(A\cap C)$. Donc,  $A\cap(B+(A\cap C))\subset(A\cap B)+(A\cap C)$ et finalement, $A\cap(B+(A\cap
+C))=(A\cap B)+(A\cap C)$.
+\end{enumerate}
+\fincorrection
+\finexercice

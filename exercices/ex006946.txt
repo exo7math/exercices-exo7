@@ -1,0 +1,55 @@
+\exercice{6946, ruette, 2013/01/24}
+\enonce[Fonctions génératrices]
+Soit $N$ et $(X_n)_{n\geq 1}$ des variables aléatoires indépendantes intégrables 
+à valeurs dans $\Nn$, les $X_n$ ayant tous la même loi et $P(N=0)=0$. On
+pose $Y(\omega)=\sum_{n=1}^{N(\omega)}X_n(\omega)$.
+
+Exprimer la fonction génératrice de $Y$ en fonction des fonctions génératrices
+de $N$ et de $X_1$. Puis exprimer l'espérance de $Y$ en fonction de $E(N)$
+et de $E(X_1)$.
+\finenonce
+\noindication
+
+\correction
+Soit $G$ la fonction génératrice de $X_1$. Comme les $X_n$ ont la
+même loi que $X_1$, $G_{X_n}=G$. Par indépendance, la fonction génératrice
+de $S_n=X_1+\cdots+X_n$ est $G_{S_n}=G_{X_1}G_{X_2}\ldots G_{X_n}=G^n$.
+$$\left\{\omega\in\Omega\mid Y(\omega)=k\right\}=\bigcup_{n=1}^{+\infty}\{\omega\in\Omega\mid
+N(\omega)=n,\ X_1(\omega)+\cdots+X_n(\omega)=k\}$$ 
+et cette union d'ensembles
+est  disjointe, donc
+$\displaystyle
+P(Y=k)=\sum_{n=1}^{+\infty}P(N=n,\ X_1+\cdots+X_n=k).$\\
+De plus, pour $n$
+fixé, les variables aléatoires $N$ et $X_1+\cdots+X_n$ sont indépendantes, donc
+$$ P(Y=k)=\sum_{n=1}^{+\infty}P(N=n)P(X_1+\cdots+X_n=k).$$
+
+Les séries génératrices convergent pour $|x|\leq 1$. Pour tout $x\in [0,1]$,
+on a  : \begin{eqnarray*}
+G_Y(x)&=&\sum_{k=0}^{+\infty}\sum_{n=1}^{+\infty}P(N=n)P(X_1+\cdots+X_n=k)x^k
+=\sum_{n=1}^{+\infty}P(N=n)\sum_{k=0}^{+\infty}P(S_n=k)x^k\\
+&&\mbox{ (tous les termes sont positifs donc on peut inverser les sommes
+par Fubini-Tonelli)}\\
+G_Y(x)&=&\sum_{n=1}^{+\infty}P(N=n)G_{S_n}(x)
+=\sum_{n=1}^{+\infty}P(N=n)(G(x))^k=\sum_{n=0}^{+\infty}P(N=n)(G(x))^k
+=G_N(G(x))
+\end{eqnarray*}
+(on peut commencer la somme à $n=0$ car $P(N=0)=0$). Conclusion :
+$G_Y=G_N\circ G$ (l'égalité des séries pour $x\geq 0$ entraîne l'égalité
+des séries partout par identifications des coefficients). 
+
+\medskip
+Les fonctions génératrices sont toujours définies sur $[-1,1]$.
+Comme $X_1$ et $N$ sont intégrables,
+$G_N$ et $G$ sont dérivables et $G_N'(1)=E(N), G'(1)=E(X_1)$
+($G_N$ et $G$ n'étant définies a priori que sur $[-1,1]$, $G_N'(1)$ et
+$G'(1)$ sont en fait des dérivée à gauche en $1$, les dérivées à droite ne 
+sont peut-être pas définies). 
+Donc $G_Y=G_N\circ G$ est dérivable par composition
+(remarquons que $|G(x)|\leq\displaystyle\sum_{k=0}^{+\infty} P(X_1=k)=1$
+-- c'est le cas pour toute fonction génératrice -- donc
+$G([-1,1])\subset [-1,1]$ et la composition est bien définie).
+Comme $G(1)=1$, on a $G_Y'(1)=G'(1)G'_N(1)$.
+Conclusion : $Y$ est intégrable et $E(Y)=E(X_1)E(N)$.
+\fincorrection
+\finexercice

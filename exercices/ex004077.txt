@@ -1,0 +1,31 @@
+\exercice{4077, quercia, 2010/03/11}
+\enonce[Coefficients périodiques]
+
+Soit l'équation $(*) \Leftrightarrow y' + a(x)y = b(x)$ où $a,b$ sont des fonctions
+continues, $T$-périodiques.
+
+\begin{enumerate}
+  \item Montrer que si $y$ est solution de $(*)$, alors la fonction définie par
+    $z(x) = y(x+T)$ est aussi solution.
+  \item En déduire que si $ \int_{t=0}^T a(t)\,d t \ne 0$, alors $(*)$ admet une unique
+    solution $T$-périodique.
+    
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item 
+  \item Soient $y_0$ une solution particulière et $y_1$ une solution
+             non nulle de l'équation homogène : $y_1(x) = e^{-A(x)}$ avec
+             $A'=a$. Alors $y_0(x+T) = y_0(x) + \alpha y_1(x)$, et pour
+             une solution $y$ quelconque, $y = y_0 + \lambda y_1$ :
+             $y(x+T)-y(x) = (\alpha + \lambda(e^{-I}-1))y_1(x)$ où
+             $I =  \int_{t=0}^T a(t)\,d t$.
+\end{enumerate}
+\fincorrection
+
+\finexercice

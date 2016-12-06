@@ -1,0 +1,54 @@
+\exercice{2367, mayer, 2003/10/01}
+\enonce 
+\label{exoferm}
+Soit $X$ un espace norm\'e, $L:X\to \Rr$ une forme lin\'eaire non nulle
+et $H = L^{-1}(\{0\})$ son noyau.
+\begin{enumerate}
+\item Montrer que, si $L$ est continue, alors $H$ est un sous-espace ferm\'e dans $X$.
+\'Etablir la relation
+$$ \mathrm{dist}(a,H) = \frac{|L(a)|}{\|L\|} \quad \text{pour tout } a\in X \; .$$
+\item R\'eciproquement, supposons que le noyau $H$ est un ferm\'e. D\'emontrer alors
+que $\mathrm{dist}(a,H)>0$ d\`es que $a\in X\setminus H$ et en d\'eduire que $L$ est continue
+de norme au plus $|L(a)|/\mathrm{dist}(a,H)$.
+\item Peut-on g\'en\'eraliser ceci a des applications lin\'eaires entre espaces
+norm\'es?
+\end{enumerate}
+\finenonce
+
+\indication
+\begin{enumerate}
+  \item Montrer d'abord que $X$ se décompose sous la forme $H+\Rr.a$.
+  \item ...
+  \item Non ! Chercher un contre-exemple dans les exercices précédents.
+\end{enumerate}
+\finindication
+
+\correction
+\begin{enumerate}
+  \item Si $L(a) = 0$ alors $a\in H$ donc $\mathrm{dist}(a,H) = 0$ donc la relation est vraie. Supposons que $L(a) \neq 0$. Alors on a $X = H+\Rr.a$.
+En effet pour $x\in X$, il existe $\lambda \in \Rr$ tel que $L(x)=\lambda L(a)$. 
+Donc $L(x-\lambda a)=0$. Posons $h= x-\lambda a$, alors $h\in H$ et $x = h+\lambda a$ est la décomposition suivant $H+\Rr.a$.
+
+Si $L$ est continue alors $\| L\|$ est finie.
+
+\begin{align*}
+ \| L \| &= \sup_{x\in X, x \neq 0} \frac{\| L(x) \|}{\|x\|} \\
+         &= \sup_{h\in H, \lambda \in \Rr, h+\lambda a \neq0} \frac{\| L(h+\lambda a) \|}{\|h + \lambda a\|} \\
+         &= |L(a)|\sup_{h\in H, \lambda \in \Rr, h+\lambda a \neq0} \frac{|\lambda|}{\|h + \lambda a\|} \\
+         &= |L(a)|\sup_{h\in H} \frac{1}{\|h + a\|} \\
+         &= |L(a)|\frac{1}{\inf_{h\in H} {\|h + a\|}} \\
+         &= |L(a)|\frac{1}{\mathrm{dist}(a,H)} \\
+\end{align*}
+
+Ce qui était l'égalité demandée.
+
+  \item Si $H$ est fermé alors $\mathrm{dist}(a,H)>0$ si $a\notin H$ (voir les exercices sur les compacts), par l'égalité démontrée ci-dessus on a $\| L \|$ finie
+donc $L$ est continue.
+
+  \item Soit $X = \Rr[x]$. Pour $P(x) = \sum _{k=0}^p a_k x^k$
+on pose $\|P\|= \sup_k |a_k|$, et $V(P)(x) = \sum _{k=1}^n k a_k x^k$.
+Alors $\mathrm{Ker}\, V = \{0\}$ est fermé  mais $V$ n'est pas continue
+(voir l'exercice \ref{exopol}).
+\end{enumerate}
+\fincorrection
+\finexercice

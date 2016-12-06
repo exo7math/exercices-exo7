@@ -1,0 +1,20 @@
+\exercice{3449, quercia, 2010/03/10}
+\enonce[Centrale MP 2002]
+Soit un déterminant symétrique réel d'ordre impair dont les coefficients
+sont entiers, les diagonaux étant de plus pairs.
+Montrer que ce déterminant est pair.
+
+\finenonce
+
+\noindication
+
+\correction
+$\det(M) = \sum_{\sigma\in S_n}\varepsilon(\sigma)a_{1\sigma(1)}\dots a_{n\sigma(n)}$.
+Soit $\sigma\in S_n$ telle que $\sigma\ne\sigma^{-1}$. Alors les termes associés
+à $\sigma$ et $\sigma^{-1}$ sont égaux car $M$ est symétrique, donc la somme
+de ces deux termes est paire. Soit $\sigma\in S_n$ telle que $\sigma=\sigma^{-1}$.
+Alors comme $n$ est impair, il existe $i\in{[[1,n]]}$ tel que $\sigma(i)=i$
+donc le terme associé à~$\sigma$ est pair.
+\fincorrection
+
+\finexercice

@@ -1,0 +1,68 @@
+\exercice{5655, rouget, 2010/10/16}
+\enonce[***]
+Soit $E=\Rr_{3}[X]$. Pour $P$ élément de $E$, soit $f(P)$ le reste de la division euclidienne de $AP$ par $B$ où $A= X^4-1$ et $B = X^4 - X$.
+
+Vérifier que $f$ est un endomorphisme de $E$ puis déterminer $\text{Ker}f$, $\text{Im}f$ et les valeurs et vecteurs propres de $f$.
+\finenonce
+
+\noindication
+
+\correction
+Soit $P=aX^3+bX^2+cX+d\in\Rr_3[X]$
+
+\begin{center} 
+$AP - (X^4-X)P= (X-1)P = aX^4+(b-a)X^3+(c-b)X^2+(d-c)X-d = a(X^4-X)+(b-a)X^3+(c-b)X^2+(a+d-c)X-d$.
+\end{center}
+
+et donc $AP=(X^4-X)(P+a)+(b-a)X^3+(c-b)X^2+(a+d-c)X-d$ et donc $f(P) = (b-a)X^3+(c-b)X^2+(a+d-c)X-d$. Par suite, $f$ est un endomorphisme de $E$ et la matrice de $f$ dans la base canonique $(1,X,X^2,X^3)$ de $E$ est
+
+\begin{center}
+$A=\left(
+\begin{array}{cccc}
+-1&0&0&0\\
+1&-1&0&1\\
+0&1&-1&0\\
+0&0&1&-1
+\end{array}
+\right)$.
+\end{center}
+
+puis
+
+\begin{align*}\ensuremath
+\chi_A&=\left|
+\begin{array}{cccc}
+-1-X&0&0&0\\
+1&-1-X&0&1\\
+0&1&-1-X&0\\
+0&0&1&-1-X
+\end{array}
+\right|= (-1-X)\left|
+\begin{array}{ccc}
+-1-X&0&1\\
+1&-1-X&0\\
+0&1&-1-X
+\end{array}
+\right|\\
+ &= -(X+1)(-(X+1)^3+1) =X(X+1)(X^2+3X+3).
+\end{align*}
+
+ 
+$A$ admet quatre valeurs propres simples dans $\Cc$, deux réelles 0 et -1 et deux non réelles $-1+j$ et $-1+j^2$. $\chi_f$ n'est pas scindé sur $\Rr$ et donc $f$ n'est pas diagonalisable.
+
+\textbullet~Soit $P\in E$. $P\in\text{Ker}f\Leftrightarrow b-a = c-b = a+d-c = -d = 0\Leftrightarrow a=b=c\;\text{et}\;d=0$. $\text{Ker}f=\text{Vect}(X^3+X^2+X)$.
+
+\textbullet~Soit $P\in E$. $P\in\text{Ker}(f+Id)\Leftrightarrow b=c=a+d = 0\Leftrightarrow b=c=0\;\text{et}\;d=-a$. $\text{Ker}(f+Id)= \text{Vect}(X^3-1)$.
+
+\textbullet~$\text{rg}(f) = 3$ et immédiatement $\text{Im}f =\text{Vect}(X-1,X^2-X,X^3-X^2)$.
+
+Si $\Kk=\Cc$, on peut continuer :
+
+$P\in\text{Ker}(f+(1-j)Id)\Leftrightarrow b-ja = c-jb = a + d - jc = - jd = 0\Leftrightarrow b = ja,\;c = j^2a\;\text{et}\;d=0$.
+
+Donc  
+$\text{Ker}(f+(1-j)Id)=\text{Vect}(X^3+jX^2+j^2X)$ et en conjuguant $\text{Ker}(f+(1-j^2)Id) =\text{Vect}(X^3+j^2X^2+jX)$.
+
+\textbf{Remarque.} $B =X(X-1)(X-j)(X-j^2)$ et on a trouvé pour base de vecteurs propres les quatre polynômes de \textsc{Lagrange} $X^3-1 = (X-1)(X-j)(X-j^2)$ puis $X^3+X^2+X = X(X-j)(X-j^2)$ puis $X^3+jX^2+j^2X =X(X-1)(X-j^2)$ et enfin $X^3+j^2X^2+jX = X(X-1)(X-j )$. C'est une généralité. On peut montrer que si $E =\Cc_n[X]$ et si $B$ a $n+1$ racines deux à deux distinctes dans $\Cc$ alors $f$ est diagonalisable et une base de vecteurs propres est fournie par les polynômes de \textsc{Lagrange} associés aux racines de $B$ et ceci pour un polynôme $A$ quelconque.
+\fincorrection
+\finexercice

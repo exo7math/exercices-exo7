@@ -1,0 +1,72 @@
+%%%%%%%%%%%%%%%%%% PREAMBULE %%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt,a4paper]{article}
+
+\usepackage{amsfonts,amsmath,amssymb,amsthm}
+\usepackage[francais]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+%----- Ensemles : entiers, reels, complexes -----
+\newcommand{\Nn}{\mathbb{N}} \newcommand{\N}{\mathbb{N}}
+\newcommand{\Zz}{\mathbb{Z}} \newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Qq}{\mathbb{Q}} \newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Rr}{\mathbb{R}} \newcommand{\R}{\mathbb{R}}
+\newcommand{\Cc}{\mathbb{C}} \newcommand{\C}{\mathbb{C}}
+
+%----- Modifications de symboles -----
+\renewcommand {\epsilon}{\varepsilon}
+\renewcommand {\Re}{\mathop{\mathrm{Re}}\nolimits}
+\renewcommand {\Im}{\mathop{\mathrm{Im}}\nolimits}
+
+%----- Fonctions usuelles -----
+\newcommand{\ch}{\mathop{\mathrm{ch}}\nolimits}
+\newcommand{\sh}{\mathop{\mathrm{sh}}\nolimits}
+\renewcommand{\tanh}{\mathop{\mathrm{th}}\nolimits}
+\newcommand{\Arcsin}{\mathop{\mathrm{Arcsin}}\nolimits}
+\newcommand{\Arccos}{\mathop{\mathrm{Arccos}}\nolimits}
+\newcommand{\Arctan}{\mathop{\mathrm{Arctan}}\nolimits}
+\newcommand{\Argsh}{\mathop{\mathrm{Argsh}}\nolimits}
+\newcommand{\Argch}{\mathop{\mathrm{Argch}}\nolimits}
+\newcommand{\Argth}{\mathop{\mathrm{Argth}}\nolimits}
+\newcommand{\pgcd}{\mathop{\mathrm{pgcd}}\nolimits} 
+
+%----- Commandes special dessin a ajouter localement ------
+\usepackage{geometry}
+\usepackage{pstricks}
+\usepackage{pst-plot}
+\usepackage{pst-node}
+\usepackage{graphics,epsfig}
+
+\pagestyle{empty}
+
+% Que faire avec ce fichier monimage.tex ?
+%   1/ latex monimage.tex
+%   2/ dvips monimage.dvi
+%   3/ ps2eps monimage.ps
+%   4/ ps2pdf -dEPSCrop monimage.eps
+%   5/ Dans votre fichier d'exos \includegraphics{monimage}
+
+\begin{document}
+
+\begin{center}
+\begin{pspicture}(-4.5,-1)(4.5,4)
+\psplot{-2.5}{2.5}{x dup mul 2 div}
+\psdots(0,0.5)(1.5,1.125)(1.5,-0.5)
+\pspolygon(0,0.5)(1.5,1.125)(1.5,-0.5)
+\psplot{0}{3}{x 1.5 sub 1.5 mul 1.125 add}
+\uput[ur](0,0.5){$F$}
+\uput[u](1.5,1.125){$M$}
+\uput[d](1.5,-0.5){$H$}
+\uput[d](0.75,0){$P$}
+\uput[d](4,-0.5){$(D)$}
+\uput[u](4,0){$(T_0)$}
+\psline(-4.5,-0.5)(4.5,-0.5)
+\psline(-4.5,0)(4.5,0)
+\put(3,3){$(T)$}
+\put(2,2.8){$\mathcal{P}$}
+
+\end{pspicture}
+\end{center}
+
+\end{document}

@@ -1,0 +1,33 @@
+\exercice{5943, tumpach, 2010/11/11}
+\enonce
+Soit $\Omega = \mathbb{R}$, $\Sigma = \mathcal{B}(\mathbb{R})$ et
+$\mu$ la mesure de Lebesgue sur $\mathbb{R}$. Soit $f_{n} =
+-\frac{1}{n} \mathbf{1}_{[0, n]}$, $n\in\mathbb{N}$, et $f = 0$. Montrer
+que $f_{n}$ converge uniform\'ement vers $f$ sur $\mathbb{R}$ mais
+que
+$$\lim \inf_{n\rightarrow+\infty} \int_{\Omega} f_{n}\,d\mu  ~<~
+\int_{\Omega} f\,d\mu.
+$$
+Est-ce que cela contredit le lemme de Fatou ?
+\finenonce
+
+\noindication
+
+\correction
+En effet, pour tout $\varepsilon>0$, il existe $N_{\varepsilon} =
+\left[\frac{1}{\varepsilon} \right] + 1$ tel que $\forall n \geq
+N_{\varepsilon}$, $$ \sup_{x\in\mathbb{R}} |f_{n}(x) - f(x)| <
+\varepsilon,
+$$
+i.e. $f_{n}$ converge uniform\'ement vers $f$ sur $\mathbb{R}$. On
+a~:
+$$
+\lim \inf_{n\rightarrow +\infty} \int_{\Omega} f_{n}\,d\mu = \lim
+\inf_{n\rightarrow +\infty} - \int_{0}^{n} \frac{1}{n}\,d\mu = -1.
+$$
+D'autre part $\int_{\Omega} f\,d\mu = 0.$ Le lemme de Fatou ne
+s'applique pas car les fonctions $f_{n}$ ne sont pas \`a valeurs
+dans $[0, +\infty]$.
+\fincorrection
+
+\finexercice

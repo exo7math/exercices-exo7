@@ -1,0 +1,45 @@
+\exercice{4105, quercia, 2010/03/11}
+\enonce[Centrale MP 2001]
+
+\begin{enumerate}
+  \item Soit $f$ de classe $\mathcal{C}^1$ de $[0,\pi]$ dans $\R$ telle que $f(0) = f(\pi) = 0$.
+Montrer que $ \int_0^\pi f^2 \le  \int_0^\pi f'^2$.
+
+{\it Indication~: prolonger $f$ en une fonction impaire $2\pi$-périodique.}
+
+
+  \item Soit une fonction $q$ de classe $\mathcal{C}^1$ sur $[0,\pi]$, à valeurs
+dans $]-\infty,1[$. Montrer que l'unique fonction $x$ de classe $\mathcal{C}^2$
+s'annulant en $0$ et en $\pi$ et vérifiant l'équation différentielle
+$x''(t) + q(t)x(t) = 0$ est la fonction nulle.
+
+  \item Soit $f$ une fonction de classe $\mathcal{C}^1$ sur $[0,\pi]$ et deux réels $a,b$ fixés.
+Montrer qu'il existe une unique solution $x$ de classe $\mathcal{C}^2$ vérifiant $x(0) = a$,
+$x(\pi) = b$ et $x''(t) + q(t)x(t) = f(t)$.
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Après le prolongement indiqué on peut appliquer le relation
+de Parseval à $f$ et $f'$ sachant que $c_0(f) = 0$ par imparité et
+$|c_n(f)| = |c_n(f')|/n\le |c_n(f')|$ pour $n\ne0$.
+  \item $x''(t) + q(t)x(t) = 0  \Rightarrow   \int_0^\pi x'^2 = \Bigl[xx'\Bigr]_0^\pi -  \int_0^\pi xx''
+=  \int_0^\pi qx^2  \Rightarrow  x'=0  \Rightarrow  x=0$.
+
+Rmq: il n'est pas nécessaire d'avoir $q$ de classe $\mathcal{C}^1$.
+  \item Il existe $x_0$ de classe $\mathcal{C}^2$ vérifiant l'équation différentielle.
+Par différence avec $x_0$ on se ramène au cas $f = 0$ et il faut montrer
+que l'application $\varphi : {\cal S} \to {\R^2}, x \mapsto {(x(0),x(\pi))}$ est bijective,
+en notant $\cal S$ l'espace des solutions de l'équation homogène $x'' + qx = 0$.
+Or $\varphi$ est linéaire et est injective d'après la question précédente, c'est
+donc une bijection car $\dim{\cal S} = 2$.
+
+Remarque~: l'hypothèse $f$ de classe $\mathcal{C}^1$ est inutile, continue suffit.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

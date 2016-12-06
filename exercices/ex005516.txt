@@ -1,0 +1,115 @@
+\exercice{5516, rouget, 2010/07/15}
+\enonce[**]
+Montrer que les plans $(P_1)$~:~$z-2y=5$, $(P_2)$~:~$2x-3z=0$ et $(P_3)~:~3y-x=0$ admettent une parallèle commune. Ils définissent ainsi un prisme. Déterminer l'aire d'une section perpendiculaire.
+\finenonce
+
+\noindication
+
+\correction
+$\overrightarrow{u}\in\overrightarrow{P_1}\cap\overrightarrow{P_2}\cap\overrightarrow{P_3}\Leftrightarrow\left\{
+\begin{array}{l}
+z-2y=0\\
+2x-3z=0\\
+3y-x=0
+\end{array}
+\right.\Leftrightarrow\left\{
+\begin{array}{l}
+x=3y\\
+z=2y
+\end{array}
+\right.$.
+Ainsi, les plans $(P_1)$, $(P_2)$ et $(P_3)$ sont tous trois parallèles à la droite affine $(D)$ d'équations $\left\{
+\begin{array}{l}
+x=3y\\
+z=2y
+\end{array}
+\right.$. Ces plans définissent donc un prisme.
+Déterminons alors l'aire d'une section droite. Le plan $(P)$ d'équation $3x+y+2z=0$ est perpendiculaire à la droite $(D)$. Son intersection avec les plans $(P_1)$, $(P_2)$ et $(P_3)$ définit donc une section droite du prisme.
+\textbullet~Soit $M(x,y,z)$ un point de l'espace.
+
+\begin{center}
+$M\in(P_1)\cap(P_2)\cap(P)\Leftrightarrow
+\left\{
+\begin{array}{l}
+z-2y=5\\
+2x-3z=0\\
+3x+y+2z=0
+\end{array}
+\right.\Leftrightarrow\left\{
+\begin{array}{l}
+y=\frac{z-5}{2}\\
+x=\frac{3}{2}z\\
+\frac{9}{2}z+\frac{z-5}{2}+2z=0
+\end{array}
+\right.\Leftrightarrow\left\{
+\begin{array}{l}
+z=\frac{5}{14}\\
+y=-\frac{65}{28}\rule[-4mm]{0mm}{11mm}\\
+x=\frac{15}{28}
+\end{array}
+\right.$
+\end{center}
+Notons $A\left(\frac{15}{28},-\frac{65}{28},\frac{5}{14}\right)$.
+\textbullet~Soit $M(x,y,z)$ un point de l'espace.
+
+\begin{center}
+$M\in(P_1)\cap(P_3)\cap(P)\Leftrightarrow
+\left\{
+\begin{array}{l}
+z-2y=5\\
+3y-x=0\\
+3x+y+2z=0
+\end{array}
+\right.\Leftrightarrow\left\{
+\begin{array}{l}
+z=2y+5\\
+x=3y\\
+9y+y+2(2y+5)=0
+\end{array}
+\right.\Leftrightarrow\left\{
+\begin{array}{l}
+y=-\frac{5}{7}\\
+x=-\frac{15}{7}\rule[-4mm]{0mm}{11mm}\\
+z=\frac{25}{7}
+\end{array}
+\right.$
+\end{center}
+Notons $B\left(-\frac{15}{7},-\frac{5}{7},\frac{25}{7}\right)$.
+
+\textbullet~Soit $M(x,y,z)$ un point de l'espace.
+
+\begin{center}
+$M\in(P_2)\cap(P_3)\cap(P)\Leftrightarrow
+\left\{
+\begin{array}{l}
+2x-3z=0\\
+3y-x=0\\
+3x+y+2z=0
+\end{array}
+\right.\Leftrightarrow x=y=z=0$
+\end{center}
+Une section droite est $OAB$ où $A\left(\frac{15}{28},-\frac{65}{28},\frac{5}{14}\right)$ et $B\left(-\frac{15}{7},-\frac{5}{7},\frac{25}{7}\right)$. De plus
+
+\begin{align*}\ensuremath
+\text{aire de}(OAB)&=\frac{1}{2}\left\|\overrightarrow{OA}\wedge\overrightarrow{OB}\right\|=\frac{1}{2}\times\frac{5}{28}\times\frac{5}{7}\left\|\left(
+\begin{array}{c}
+3\\
+-13\\
+2
+\end{array}\right)
+\wedge
+\left(
+\begin{array}{c}
+-3\\
+-1\\
+5
+\end{array}\right)\right\|=\frac{1}{2}\times\frac{5}{28}\times\frac{5}{7}\sqrt{63^2+21^2+42^2}\\
+ &=\frac{1}{2}\times\frac{5}{28}\times\frac{5}{7}\times21\sqrt{3^2+1^2+2^2}=\frac{75}{4\sqrt{14}}
+\end{align*}
+\begin{center}
+\shadowbox{
+L'aire d'une section droite est $\frac{75}{4\sqrt{14}}$.
+}
+\end{center}
+\fincorrection
+\finexercice

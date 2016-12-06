@@ -1,0 +1,64 @@
+\exercice{5191, rouget, 2010/06/30}
+\enonce[****]
+Soient $\Kk$ un sous-corps de $\Cc$ et $E$ un $\Kk$-espace vectoriel de dimension finie $n$.
+\begin{enumerate}
+\item  Montrer que, pour tout endomorphisme $f$ de $\Rr^2$, on a~:
+
+\begin{center}
+$(\mbox{Ker}f=\mbox{Im}f)\Leftrightarrow(f^2=0\;\mbox{et}\;n=2\mbox{rg}f)\Leftrightarrow(f^2=0\;\mbox{et}\;
+\exists g\in\mathcal{L}(E)/\;f\circ g+g\circ f=Id_E)$.
+\end{center}
+
+\item  On suppose $\mbox{Ker}f=\mbox{Im}f$. Montrer qu'il existe une base $(u_1,...,u_p,v_1,...,v_p)$ de $E$ telle
+que~:
+
+\begin{center}
+$\forall i\in\{1,...,p\},\;f(u_i)=0\;\mbox{et}\;f(v_i)=u_i$.
+\end{center}
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+ \begin{enumerate}
+ \item  
+\textbullet~\textbf{(1)$\Rightarrow$(2).} Si $\mbox{Ker }f=\mbox{Im }f$, alors pour tout élément $x$ de $E$, $f(x)$ est dans
+$\mbox{Im }f=\mbox{Ker }f$ et donc $f(f(x))=0$. Par suite, $f^2=0$. De plus, d'après le théorème du rang,
+$n=\mbox{dim }(\mbox{Ker }f)+\mbox{rg }f=2\;\mbox{rg }f$ ce qui montre que $n$ est nécessairement pair et que
+$\mbox{rg }f=\frac{n}{2}$.
+\textbullet~\textbf{(2)$\Rightarrow$(3).} Si $f^2=0$ et $n=2\;\mbox{rg }f\;(\in2\Nn)$, cherchons un endomorphisme $g$ de $E$ tel que
+$f\circ g+g\circ f=Id_E$.
+Posons $r=\mbox{rg }f$ et donc $n=2r$, puis $F=\mbox{Ker }f=\mbox{Im }f$ ($\mbox{dim }F=r$).
+
+Soit $G$ un supplémentaire de $F$ dans $E$ ($\mbox{dim }G=r$).
+Soit $(e_1',...,e_r')$ une base de $G$. Pour $i\in\llbracket1,r\rrbracket$, on pose $e_i=f(e_i')$.
+Montrons que la famille $(e_1,...,e_r)$ est libre. Soit $(\lambda_1,...,\lambda_r)\in\Rr^r$.
+
+$$\sum_{i=1}^{r}\lambda_ie_i=0\Rightarrow f\left(\sum_{i=1}^{r}\lambda
+e_i'\right)=0\Rightarrow\sum_{i=1}^{r}\lambda_ie_i'\in\mbox{Ker }f\cap G=\{0\}\Rightarrow\forall
+i\in\{1,...,r\},\;\lambda_i=0,$$
+car la famille $(e_i')_{1\leq i\leq r}$ est libre. $(e_1,...,e_r)$ est une famille libre de $F=\mbox{Im }f$ de cardinal
+$r$ et donc une base de $F=\mbox{Ker }f=\mbox{Im }f$. Au passage, puisque $E=F\oplus G$, $(e_1,...,e_r,e_1',...,e_r')$ est
+une base de $E$.
+Soit alors $g$ l'endomorphisme de $E$ défini par les égalités~:~$\forall i\in\llbracket1,r\rrbracket,\;g(e_i)=e_i'$ et
+$g(e_i')=e_i$ ($g$ est entièrement déterminé par les images des vecteurs d'une base de $E$). Pour $i$ élément de
+$\llbracket1,r\rrbracket$, on a alors~:~
+
+$$(f\circ g+g\circ f)(e_i)=f(e_i')+g(0)=e_i+0= e_i,$$
+
+et
+
+$$(f\circ g+g\circ f)(e_i')=f(e_i)+g(e_i)=0+e_i'=e_i'.$$
+Ainsi, les endomorphismes $f\circ g+g\circ f$ et $Id_E$ coïncident sur une base de $E$ et donc $f\circ g+g\circ f=Id_E$.
+\textbullet~\textbf{(3)$\Rightarrow$(1).} Supposons que $f^2=0$ et qu'il existe $g\in\mathcal{L}(E)$ tel que $f\circ g+g\circ
+f=Id_E$.
+Comme $f^2=0$, on a déjà $\mbox{Im }f\subset\mbox{Ker }f$. D'autre part, si $x$ est un élément de $\mbox{Ker }f$, alors
+$x=f(g(x))+g(f(x))=f(g(x))\in\mbox{Im }f$ et on a aussi $\mbox{Ker }f\subset\mbox{Im }f$. Finalement,
+$\mbox{Ker }f=\mbox{Im }f$.
+
+ \item  L'existence d'une base $(e_1,...,e_p,e_1',...,e_p')$ de $E$ vérifiant les conditions de l'énoncé a été établie
+au passage (avec $p=r=\mbox{rg }f$).
+\end{enumerate}
+\fincorrection
+\finexercice

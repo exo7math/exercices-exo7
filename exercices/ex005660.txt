@@ -1,0 +1,29 @@
+\exercice{5660, rouget, 2010/10/16}
+\enonce[****]
+Soit $E$ un $\Cc$-espace vectoriel de dimension finie non nulle.
+
+Soient $u$ et $v$ deux endomorphismes de $E$ tels que $\exists(\alpha,\beta)\in\Cc^2/\;uv - vu =\alpha u + \beta v$. Montrer que $u$ et $v$ ont un vecteur propre en commun.
+\finenonce
+
+\noindication
+
+\correction
+\textbf{1er cas.} Supposons $\alpha=\beta= 0$ et donc $uv = vu$. Puisque $E$ est un $\Cc$-espace de dimension finie non nulle, $u$ admet au moins une valeur propre que l'on note $\lambda$. Le sous-espace propre $E_\lambda$ correspondant n'est pas réduit à $\{0\}$, est stable par $u$ et d'autre part stable par $v$ car $u$ et $v$ commutent. On note $u'$ et $v'$ les restrictions de $u$ et $v$ au sous-espace $E_\lambda$. $u'$ et $v'$ sont des endomorphismes de $E_\lambda$. De nouveau, $E_\lambda$ est un $\Cc$-espace de dimension finie non nulle et donc $v'$ admet au moins un vecteur propre $x_0$. Par construction, $x_0$ est un vecteur propre commun à $u$ et $v$.
+
+\textbf{2ème cas.} Supposons par exemple $\alpha\neq0$. 
+
+\begin{align*}\ensuremath
+uv - vu =\alpha u+\mu v&\Leftrightarrow(\alpha u+\beta v)\circ\frac{1}{\alpha}v -\frac{1}{\alpha}v\circ(\alpha u+\beta v) =\alpha u+\beta v\\
+ &\Leftrightarrow fg - gf = f\;\text{en posant}\;f =\alpha u+\beta v\;\text{et}\;g =\frac{1}{\alpha}v.
+\end{align*}
+
+On va chercher un vecteur propre commun à $u$ et $v$ dans le noyau de $f$. Montrons tout d'abord que $\text{Ker}f$ n'est pas nul (on sait montrer que $f$ est en fait nilpotent (exercice \ref{ex:rou9}) mais on peut montrer directement une propriété un peu moins forte).
+
+Si $f$ est inversible, l'égalité $fg - gf = f$ fournit $(g+Id)\circ f = f\circ g$ et donc $g+Id = f\circ g\circ f^{-1}$. Par suite, $g$ et $g+Id$ ont même polynôme caractéristique ou encore, si $\lambda$ est valeur propre de $g$ alors $\lambda+1$ est encore valeur propre de $g$. Mais alors $\lambda+2$, $\lambda+3$... sont aussi valeurs propres de $g$ et $g$ a une infinité de valeurs propres deux à deux distinctes. Ceci est exclu et donc $\text{Ker}f$ n'est pas réduit à $\{0\}$.
+
+ 
+Maintenant, si $x$ est un vecteur de $\text{Ker}f$, on a $f(g(x))= g(f(x))+f(x) = 0$ et $g(x)$ est dans $\text{Ker}f$. Donc $g$ laisse $\text{Ker}f$ stable et sa restriction à $\text{Ker}f$ est un endomorphisme de $\text{Ker}f$ qui admet au moins une valeur propre et donc au moins un vecteur propre. Ce vecteur est bien un vecteur propre commun à $f$ et $g$. 
+
+Enfin si $x$ est vecteur propre commun à $f$ et $g$ alors $x$ est vecteur propre de $v =\frac{1}{\alpha}g$ et de $u=\frac{1}{\alpha}(f-\beta v)$. $x$ est un vecteur propre commun à $u$ et $v$.
+\fincorrection
+\finexercice

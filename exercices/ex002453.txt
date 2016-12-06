@@ -1,0 +1,81 @@
+
+\exercice{2453, matexo1, 2002/02/01}
+\video{NwFtb_SYHA8}
+\enonce[Déterminant de Vandermonde]
+Montrer que
+$$\left|
+\begin{array}{ccccc}
+1 & t_1 & t_1^2 & \ldots & t_1^{n-1} \\
+1 & t_2 & t_2^2 & \ldots & t_2^{n-1} \\\
+\ldots&\ldots&\ldots& \ldots & \ldots \\
+1 & t_n & t_n^2 & \ldots & t_n^{n-1}
+\end{array}\right|
+ = \prod_{1 \le i < j \le n} (t_j - t_i) $$
+\finenonce
+
+\indication
+Faire les opérations suivantes sur les colonnes
+$C_n \leftarrow C_n-t_n C_{n-1}$,
+puis $C_{n-1} \leftarrow C_{n-1}-t_n C_{n-2}$,...,
+$C_2 \leftarrow  C_2-t_nC_1$.
+Développer par rapport a la bonne ligne et reconnaître
+que l'on obtient le déterminant recherché mais au rang $n-1$.
+\finindication
+
+\correction
+Notons $V_n$ le déterminant à calculer
+et $C_1,\ldots,C_n$ les colonnes de la matrice correspondante.
+
+Nous allons faire les opérations suivantes sur les colonnes
+en partant de la dernière colonne.
+$C_n$ est remplacée par $C_n-t_n C_{n-1}$,
+puis $C_{n-1}$ est remplacée par $C_{n-1}-t_n C_{n-2}$,...
+jusqu'à $C_2$ qui est remplacée par $C_2-t_nC_1$.
+On obtient donc
+
+$$V_n=\begin{vmatrix}
+1 & t_1 & t_1^2 & \ldots & t_1^{n-1} \\
+1 & t_2 & t_2^2 & \ldots & t_2^{n-1} \\\
+\ldots&\ldots&\ldots& \ldots & \ldots \\
+1 & t_n & t_n^2 & \ldots & t_n^{n-1}
+\end{vmatrix} 
+= 
+\begin{vmatrix}
+1 & t_1-t_n & t_1^2-t_1t_n & \ldots & t_1^{n-1}-t_1^{n-2}t_n \\
+1 & t_2-t_n & t_2^2-t_2t_n & \ldots & t_2^{n-1}-t_2^{n-2}t_n \\\
+\ldots&\ldots&\ldots& \ldots & \ldots \\
+1 & 0 & 0 & \ldots & 0
+\end{vmatrix}
+$$
+
+On développe par rapport à la dernière ligne et on écrit $t_i^k-t_i^{k-1}t_n=t_i^{k-1}(t_i-t_n)$ pour obtenir :
+$$V_n = (-1)^{n-1}\begin{vmatrix}
+ t_1-t_n & t_1(t_1-t_n) & \ldots & t_1^{n-2}(t_1-t_n) \\
+ t_2-t_n & t_2(t_2-t_n) & \ldots & t_2^{n-2}(t_2-t_n) \\\
+\ldots&\ldots& \ldots & \ldots \\
+ t_{n-1}-t_n & \ldots & \ldots & \ldots
+\end{vmatrix}$$
+
+Nous utilisons maintenant la linéarité du déterminant par rapport à chacune des lignes :
+on factorise la première ligne par $t_1-t_n$ ; la second par $t_2-t_n$,...
+On obtient 
+$$V_n = (-1)^{n-1}(t_1-t_n)(t_2-t_n)\cdots(t_{n-1}-t_n)
+\begin{vmatrix}
+1 & t_1 & t_1^2 & \ldots & t_1^{n-2} \\
+1 & t_2 & t_2^2 & \ldots & t_2^{n-2} \\\
+\ldots&\ldots&\ldots& \ldots & \ldots \\
+1 & t_{n-1} & t_{n-1}^2 & \ldots & t_{n-1}^{n-2}
+\end{vmatrix} 
+$$
+Donc $$V_n = V_{n-1}\prod_{j=1}^{n-1}(t_n-t_j).$$
+
+Si maintenant on suppose la formule connue pour $V_{n-1}$
+c'est-à-dire $V_{n-1}(t_1,\ldots,t_{n-1})
+= \prod_{1 \le i < j \le n-1} (t_j - t_i)$
+
+Alors on obtient par récurrence que
+$$V_n(t_1,\ldots,t_{n-1},t_n)= V_{n-1}(t_1,\ldots,t_{n-1})\prod_{j=1}^{n-1}(t_n-t_j) =  \prod_{1 \le i < j \le n} (t_j - t_i).$$
+
+\fincorrection
+\finexercice
+

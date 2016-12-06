@@ -1,0 +1,27 @@
+\exercice{5578, rouget, 2010/10/16}
+\enonce[**I]
+Soit $E$ un $\Kk$-espace vectoriel de dimension $n\geqslant3$. Montrer que l'intersection de $n-1$ hyperplans de $E$ est non nulle.
+\finenonce
+
+\noindication
+
+\correction
+Soit $n\geqslant3$. Montrons par récurrence que $\forall k\in\llbracket2,n-1\rrbracket$, si $H_1$,..., $H_k$ sont $k$ hyperplans de $E$, alors $\text{dim}(H_1\cap...\cap H_k)\geqslant n-k$.
+
+\textbullet~Pour $k=2$. Soient $H_1$ et $H_2$ deux hyperplans de $E$.
+
+$\text{dim}(H_1\cap H_2)=\text{dim}(H_1)+\text{dim}(H_2)-\text{dim}(H_1+H_2)\geqslant(n-1)+(n-1)-n=n-2$.
+
+\textbullet~Soit $k\in\llbracket2,n-3\rrbracket$. Supposons que la dimension d'une intersection de $k$ hyperplans de $E$ soit supérieure ou égale à $n-k$.
+
+Soient $H_1$,..., $H_k$, $H_{k+1}$ $k+1$ hyperplans de $E$.
+
+\begin{center}
+$\text{dim}(H_1\cap...\cap H_k\cap H_{k+1})=\text{dim}(H_1\cap...\cap H_k)+\text{dim}(H_{k+1})-\text{dim}((H_1\cap...\cap H_k)+H_{k+1})\geqslant(n-k)+(n-1)-n=n-(k+1)$,
+\end{center}
+
+ce qui démontre le résultat par récurrence.
+
+Pour $k=n-1$, on obtient en particulier $\text{dim}(H_1\cap...\cap H_{n-1})\geqslant n-(n-1)=1>0$ et donc $H_1\cap...\cap H_{n-1}\neq\{0\}$.
+\fincorrection
+\finexercice

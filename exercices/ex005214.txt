@@ -1,0 +1,24 @@
+\exercice{5214, rouget, 2010/06/30}
+\enonce[****]
+Soit $u_n$ le chiffre des unités de $C_n^k$, $k$ entier naturel fixé non nul et $n$ entier naturel supèrieur ou égal à $k$. Montrer que le nombre $0,u_ku_{k+1}u_{k+2}...$ est rationnel.
+\finenonce
+
+\noindication
+
+\correction
+Soient $k$ un entier naturel non nul et $n$ un entier naturel supérieur ou égal à $k$.
+
+\begin{align*}
+\binom{n+10\times k!}{k}&=\frac{(n+10\times k!)(n+10\times k!-1)...(n+10\times k!-k+1)}{k!}\\
+ &=\frac{n(n-1)...(n-k+1)+10\times k!\times K}{k!}\quad(\mbox{pour un certain entier}\;K)\\
+ &=\frac{n(n-1)...(n-k+1)}{k!}+10K=\binom{n}{k}+10K.
+\end{align*}
+La différence $\dbinom{n+10\times k!}{k}-\dbinom{n}{k}$ est donc divisible par $10$. Par suite, $\dbinom{n+10\times k!}{k}$ et $\dbinom{n}{k}$ ont même chiffre des unités en base 10. Ainsi, $\forall n\geq k,\;u_{n+10\times k!}=u_n$ et donc la suite $u$ est donc $10k!$-périodique. On sait alors que 
+
+\begin{center}
+\shadowbox{
+$0,u_ku_{k+1}u_{k+2}...$ est rationnel.
+}
+\end{center}
+\fincorrection
+\finexercice

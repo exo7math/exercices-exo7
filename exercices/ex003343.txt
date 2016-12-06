@@ -1,0 +1,38 @@
+\exercice{3343, quercia, 2010/03/09}
+\enonce[Endomorphisme nilpotent]
+
+Un endomorphisme $f \in \mathcal{L}(E)$ est dit {\it nilpotent\/} s'il existe
+$p \in \N$ tel que $f^p = 0$. Dans ce cas, {\it l'indice\/} de $f$ est le
+plus petit entier $p$ tel que $f^p = 0$.
+On considère $f\in\mathcal{L}(E)$ nilpotent d'indice $p$.
+
+\begin{enumerate}
+  \item Soit $\vec u \in E \setminus \mathrm{Ker} f^{p-1}$. Montrer que la famille
+    $\bigl(\vec u, f(\vec u), \dots, f^{p-1}(\vec u) \bigr)$ est libre.
+  \item En déduire que si $E$ est de dimension finie $n$, alors $f^n = 0$.
+  \item Soit $g \in GL(E)$ tel que $f\circ g = g\circ f$.
+    Montrer que $f + g \in GL(E) \dots$
+  \begin{enumerate}
+    \item en dimension finie.
+    \item pour $E$ quelconque.
+  \end{enumerate}
+  \item Dans $\mathcal{L}({ K^2})$, soient $f,g$ de matrices :
+     $\left(\begin{smallmatrix}0&0\cr1&0\end{smallmatrix}\right)$ et $\left(\begin{smallmatrix}0&1\cr-1&0\end{smallmatrix}\right)$.
+     Vérifier que $f$ est nilpotent, $g \in GL( K^2)$, mais ${f+g \notin GL( K^2)}$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+
+    3. (a) $(f+g)(\vec x) = \vec0  \Rightarrow  f^k(\vec x) + g\circ f^{k-1}(\vec x) = \vec0$. \par
+             Pour $k = p$   : $f^{k-1}(\vec x) = \vec0$, puis
+             pour $k = p-1$ : $f^{k-2}(\vec x) = \vec 0$, etc, jusqu'à $\vec x = \vec 0$.\\
+    3. (b) Même principe sur l'équation : $(f+g)(\vec x) = \vec y$.\par
+             On obtient : $(f+g)^{-1} = g^{-1} \circ \bigl( \mathrm{id} - g^{-1}\circ f
+             + g^{-2}\circ f^2 - \dots + (-1)^{p-1}g^{1-p}\circ f^{p-1} \bigr)$.
+
+ \fincorrection
+
+\finexercice

@@ -1,0 +1,35 @@
+\exercice{4365, quercia, 2010/03/12}
+\enonce[Centrale MP 2001]
+
+\begin{enumerate}
+  \item Développer, pour tout $x>0$, $s(x) =  \int_{t=0}^{+\infty}\frac{\sin t}{e^{xt}-1}\,d t$
+    en série de fractions rationnelles.
+  \item Montrer qu'en $0^+$, $s(x)$ est équivalente à $\frac\pi{2x}$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $s(x) =   \int_{t=0}^{+\infty} \sum_{k=1}^\infty\sin(t)e^{-kxt}\,d t$.
+
+On a $|\sin(t)e^{-kxt}| \le te^{-kxt}$ et $ \int_{t=0}^{+\infty}te^{-kxt}\,d t = \frac 1{k^2}$
+donc $\sum_{k=1}^{\infty} \int_{t=0}^{+\infty}|\sin(t)e^{-kxt}|\,d t$ converge
+ce qui légitime l'interversion intégrale-série.
+D'où $s(x) = \sum_{k=1}^\infty \int_{t=0}^{+\infty}\sin(t)e^{-kxt}\,d t
+           = \sum_{k=1}^{\infty}\frac1{k^2x^2+1}$.
+  \item Sachant (?) que $ \int_{t=0}^{+\infty}\frac{\sin t}t\,d t = \frac\pi2$, on obtient~:
+
+\begin{align*}
+xs(x)-\frac\pi2
+&=  \int_{t=0}^{+\infty}\Bigl(\frac{x\sin t}{e^{xt}-1}-\frac{\sin t}{t}\Bigr)\,d t\cr
+&=  \int_{u=0}^{+\infty}\Bigl(\frac{1}{e^{u}-1}-\frac{1}{u}\Bigr)\sin\Bigl(\frac ux\Bigr)\,d u\cr
+&= -x\Bigr[\underbrace{\Bigl(\frac{1}{e^{u}-1}-\frac{1}{u}\Bigr)}_{\to{\textstyle\frac12} \text{ si } u\to0^+}\cos\Bigl(\frac ux\Bigr)\Bigr]_{u=0}^{+\infty}
+   +x \int_{u=0}^{+\infty}\underbrace{\Bigl(\frac{-e^u}{(e^{u}-1)^2}+\frac{1}{u^2}\Bigr)}_{\to{\textstyle\frac1{12}\text{ si } u\to0^+ }}\cos\Bigl(\frac ux\Bigr)\,d u\cr
+&= x(\text{quantité bornée})\to 0 \text{ si } u\to0^+.\cr
+\end{align*}
+\end{enumerate}
+ \fincorrection
+
+\finexercice

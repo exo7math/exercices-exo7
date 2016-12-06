@@ -1,0 +1,29 @@
+\exercice{2087, bodin, 2008/02/04}
+\enonce
+Soit $f:[0,1]\rightarrow {\R}$ une application strictement
+croissante telle que $f(0)=0,\  f(1)=1$. Calculer :
+$$\lim_{n\rightarrow \infty }\int_{0}^{1}f^{n}(t) d t. $$
+\finenonce 
+\indication
+Il s'agit de montrer que la limite vaut $0$. Pour un $\alpha >0$ fix\'e on s\'eparera l'int\'egrale en deux partie selon que $f$ est plus petit ou plus grand que $1-\alpha$. 
+\finindication
+\correction
+Soit $\alpha>0$ fix\'e. Soit $0<x_0<1$ tel que pour tout $x \in [0,x_0]$, $f(x) \leqslant 1-\alpha$. 
+Ce $x_0$ existe bien car $f$ est strictement croissante
+et $f(0)=0$, $f(1)=1$.
+S\'eparons l'int\'egrale en deux :
+\begin{align*}
+\int_{0}^{1}f^{n}(t) dt 
+  &= \int_{0}^{x_0}f^{n}(t) dt+\int_{x_0}^{1}f^{n}(t) dt \\
+  &\leqslant \int_{0}^{x_0} (1-\alpha)^n dt + \int_{x_0}^{1} 1^n dt \\
+  &\leqslant x_0(1-\alpha)^n+(1-x_0) \\
+  &\leqslant (1-\alpha)^n+(1-x_0) \quad \text{ car } x_0 \leqslant 1 \\
+\end{align*}
+
+Soit maintenant donn\'e un $\epsilon >0$, on choisit $\alpha>0$ tel que 
+$1-x_0 \leqslant \frac \epsilon 2$ (en remarquant que si $\alpha \to 0$ alors $x_0(\alpha) \to 1$),
+puis il existe $n$ assez grand tel que $(1-\alpha)^n \leqslant \frac \epsilon 2$.
+Donc pour tout $\epsilon>0$ il existe $n$ assez grand tel que $\int_{0}^{1}f^{n}(t) dt \leqslant \epsilon$ .
+Donc $\int_{0}^{1}f^{n}(t) dt \to 0$.
+\fincorrection
+\finexercice

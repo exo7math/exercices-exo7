@@ -1,0 +1,150 @@
+\exercice{5980, tumpach, 2010/11/11}
+\enonce
+
+
+\textbf{Th\'eor\`eme}
+Soit $\{\varphi_{n}\}_{n\in\mathbb{N}}$ une suite de fonctions de
+$\mathbb{R}^n$ dans $\mathbb{R}$  telles que~:
+\begin{itemize}
+\item[(i)] $\int_{\mathbb{R}^n} \varphi_{n} = 1$ \item[(ii)] il
+existe une constante $K
+> 0$ telle que $~\sup_{n\in\mathbb{N}} \int_{\mathbb{R}^n} |\varphi_{n}|(x) \,dx \leq
+K$ \item[(iii)] Pour tout $\varepsilon>0$, on a
+$\lim_{n\rightarrow +\infty}\int_{\|x\|>\varepsilon}
+|\varphi_{n}(x)|\,dx = 0$.
+\end{itemize}
+Alors pour tout $f\in L^p(\mathbb{R}^n)$, $1\leq p <+\infty$,
+$\lim_{n\rightarrow+\infty}\|\varphi_{n}*f - f\|_p = 0$.
+
+
+\bigskip
+
+Le but de cet exercice est de d\'emontrer ce th\'eor\`eme.
+
+
+Soit $\{\varphi_{n}\}_{n\in\mathbb{N}}$ une suite de fonctions
+v\'erifiant les hypoth\`eses (i), (ii) et (iii) du
+th\'eor\`eme, et soit $1\leq p <+\infty$.
+\begin{enumerate}
+\item En notant $q$ l'exposant conjugu\'e de $p$ ($\frac{1}{p} +
+\frac{1}{q} = 1$), et en utilisant l'in\'egalit\'e de H\"older
+pour la mesure $d\nu(x) = |\varphi_n|(x)\,dx$, montrer que
+$$
+|\varphi_n * f - f|^p(x) \leq \left(\int_{\mathbb{R}^n}
+|\varphi_n|(x)\,dx \right)^{\frac{p}{q}} \left(\int_{\mathbb{R}^n}
+|f(x - y) - f(x)|^p |\varphi_n|(y)\,dy\right).
+$$
+\item En d\'eduire que
+$$
+\|\varphi_n * f - f\|_{p}^{p} \leq K^{\frac{p}{q}}
+\int_{\mathbb{R}^{n}} \|\tau_{y}f - f\|_{p}^p |\varphi_n(y)|\,dy.
+$$
+
+\item Soit $\delta>0$, montrer que
+$$
+\|\varphi_n * f - f\|_{p}^{p} \leq
+K^{\frac{p}{q}}\left(\sup_{|y|\leq\delta}\|\tau_{y}f - f\|_{p}^p +
+2^p\|f\|_{p}^{p}\int_{|y|>\delta} |\varphi_{n}(y)|\,dy \right).
+$$
+
+\item En d\'eduire le th\'eor\`eme cherch\'e.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+Soit $\{\varphi_{n}\}_{n\in\mathbb{N}}$ une suite de fonctions
+v\'erifiant les hypoth\`eses (i), (ii) et (iii) du
+th\'eor\`eme, et soit $1\leq p <+\infty$.
+\begin{enumerate}
+\item En notant $q$ l'exposant conjugu\'e de $p$ ($\frac{1}{p} +
+\frac{1}{q} = 1$), on a
+$$
+\begin{array}{lcl}
+|\varphi_n * f - f|^p(x)& = &|\int_{\mathbb{R}^n} f(x - y)
+\varphi_n(y)\,dy - f(x) \int_{\mathbb{R}^n}\varphi_n(y)\,dy|^{p}\\
+& & \\ & \leq & \left(\int_{\mathbb{R}^n} |f(x - y) - f(x)|
+|\varphi_n(y)|\,dy \right)^p.
+\end{array}
+$$
+En utilisant l'in\'egalit\'e de H\"older pour la mesure $d\nu(x) =
+|\varphi_n|(x)\,dx$, on a
+$$
+\begin{array}{lcl}
+|\varphi_n * f - f|^p(x) & \leq & \left(\int_{\mathbb{R}^{n}}
+1^{q}\,d\nu(y) \right)^{\frac{p}{q}}\left(
+\int_{\mathbb{R}^{n}}|f(x - y) -
+f(x)|^p\,d\nu(y)\right)^{\frac{p}{p}}\\
+& \leq & \left(\int_{\mathbb{R}^n} |\varphi_n|(y)\,dy
+\right)^{\frac{p}{q}} \left(\int_{\mathbb{R}^n} |f(x - y) -
+f(x)|^p |\varphi_n|(y)\,dy\right)\\ & \leq &
+K^{\frac{p}{q}}\left(\int_{\mathbb{R}^n} |f(x - y) - f(x)|^p
+|\varphi_n|(y)\,dy\right).
+\end{array}
+$$
+
+\item On en d\'eduit que
+$$
+\begin{array}{lcl}
+\|\varphi_n * f - f\|_{p}^{p} & \leq &
+K^{\frac{p}{q}}\int_{x\in\mathbb{R}^n}\left(\int_{y\in\mathbb{R}^n}|f(x
+- y) - f(x)|^p |\varphi_n|(y)\,dy\right)\,dx
+\end{array}
+$$
+D'apr\`es le th\'eor\`eme de Tonelli~:
+$$
+\begin{array}{lcl}
+\|\varphi_n * f - f\|_{p}^{p} & \leq &
+K^{\frac{p}{q}}\int_{y\in\mathbb{R}^n}\left(\int_{x\in\mathbb{R}^n}|f(x
+- y) - f(x)|^p \,dx\right)|\varphi_n|(y)\,dy\\ & \leq &
+ K^{\frac{p}{q}}
+\int_{\mathbb{R}^{n}} \|\tau_{y}f - f\|_{p}^p |\varphi_n(y)|\,dy.
+\end{array}
+$$
+
+\item Soit $\delta>0$, on a
+$$
+\begin{array}{lcl}
+ && \|\varphi_n * f - f\|_{p}^{p}  \\ & \leq &  K^{\frac{p}{q}}\left(
+\int_{|y|\leq \delta}\|\tau_{y}f - f\|_{p}^p |\varphi_n(y)|\,dy +
+\int_{|y|>\delta} \|\tau_{y}f - f\|_{p}^p |\varphi_n(y)|\,dy
+\right)\\ & \leq &
+K^{\frac{p}{q}}\left(\sup_{|y|\leq\delta}\|\tau_{y}f - f\|_{p}^p
+\int_{|y|\leq \delta} |\varphi_n(y)|\,dy + \int_{|y|>\delta}
+\left(\|\tau_{y}f\|_p + \|f\|_{p}\right)^p |\varphi_n(y)|\,dy
+\right)\\& \leq &
+K^{\frac{p}{q}}\left(K\,\sup_{|y|\leq\delta}\|\tau_{y}f -
+f\|_{p}^p
+ + \left(2\|f\|_{p}\right)^p \int_{|y|>\delta}
+|\varphi_n(y)|\,dy \right)\\
+& \leq & K^{\frac{p}{q}}\left(K\,\sup_{|y|\leq\delta}\|\tau_{y}f -
+f\|_{p}^p + 2^p\|f\|_{p}^{p}\int_{|y|>\delta} |\varphi_{n}(y)|\,dy
+\right).
+\end{array}
+$$
+
+
+
+\item Soit $\varepsilon>0$. Par continuit\'e des translations dans
+$L^p(\mathbb{R}^n)$ (cf l'exercice pr\'ec\'edent), il existe un
+$\delta>0$ tel que
+$$
+|y|\leq\delta\quad \Rightarrow \|\tau_{y}f - f\|_{p}^p <
+\frac{K^{-\left(\frac{p}{q}+1\right)}}{2}~ \varepsilon.
+$$
+D'apr\`es l'hypoth\`ese (iii), il existe un $N\in\mathbb{N}$ tel
+que pour $n>N$, on a
+$$
+\int_{|y|>\delta} |\varphi_{n}(y)|\,dy <
+\frac{K^{-\frac{p}{q}}}{2^{p+1}\|f\|_{p}^{p}}~ \varepsilon.
+$$
+Ainsi pour tout $n>N$,
+$$
+\|\varphi_n * f - f\|_{p}^{p} < \varepsilon,
+$$
+i.e. $\lim_{n\rightarrow+\infty}\|\varphi_n * f - f\|_{p} = 0$.
+\end{enumerate}
+\fincorrection
+
+\finexercice

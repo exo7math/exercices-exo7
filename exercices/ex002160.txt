@@ -1,0 +1,46 @@
+\exercice{2160, debes, 2008/02/12}
+\enonce
+\label{ex:le25}
+(a) Soit $p$ un nombre premier. Montrer que tout morphisme de groupes entre $\mathbb{F}_p ^n$
+et $\mathbb{F}_p^m$ est une application $\mathbb{F}_p$ -lin\'eaire.
+
+\smallskip
+(b) Montrer que le groupe des automorphismes de $\Z/p\Z$ est isomorphe au groupe
+multiplicatif $\mathbb{F}_p^{\ast}$.
+
+\smallskip
+(c) D\'eterminer le nombre d'automorphismes de $\mathbb{F}_p^n$.
+\finenonce 
+
+\noindication
+\correction
+(a) Soit $\varphi: \mathbb{F}_p^n \rightarrow \mathbb{F}_p^m$ un morphisme de groupes. Pour tout $n\in \Z$,
+on note $\overline n \in \Z/p\Z = \mathbb{F}_p$ sa classe modulo $p$. Tout \'el\'ement $\overline x
+\in \mathbb{F}_p^n$ peut s'\'ecrire $\overline x=(\overline{x_1},\ldots, \overline{x_n})$ avec
+$x=(x_1,\ldots,x_n) \in \Z^n$. On a alors $\varphi(\overline n \cdot \overline x)= \varphi
+(\overline{nx}) = \varphi (n \overline x) = n\varphi (\overline x) = \overline n \cdot
+\varphi (\overline x)$. Le morphisme $\varphi$ est donc compatible avec les lois
+externes de $\mathbb{F}_p^n$ et $\mathbb{F}_p^m$. Comme il est aussi additif, c'est une application
+$\mathbb{F}_p$-lin\'eaire.
+\smallskip
+
+(b) Consid\'erons l'application $V:\hbox{\rm Aut}(\Z/p\Z) \rightarrow \Z/p\Z$ qui \`a
+tout automorphisme $\chi$ associe $\chi (1)$. Cette application est \`a valeurs dans   
+$\Z/p\Z \setminus \{0\}$ (si $\chi \in \hbox{\rm Aut}(\Z/p\Z)$, alors $\hbox{\rm
+ker}(\chi)=\{0\}$). C'est un morphisme de $\hbox{\rm Aut}(\Z/p\Z)$ muni de la composition
+vers le groupe multiplicatif $\Z/p\Z \setminus \{0\} = \mathbb{F}_p^\times$: en effet si
+$\chi, \chi^\prime \in \hbox{\rm Aut}(\Z/p\Z)$ et si on pose $\chi^\prime (1)=\overline c$
+(classe de $c\in \Z$ modulo $p$), alors $(\chi \circ \chi^\prime) (1) = \chi(\overline c) = c
+\chi (1)= \overline c \cdot \chi(1) = \chi^\prime(1) \cdot \chi(1) =  \chi(1) \cdot
+\chi^\prime(1)$. Ce morphisme $V$ est de plus injectif puisque tout automorphisme $\chi$ de
+$\Z/p\Z$ est d\'etermin\'e par $\chi(1)$. Enfin, pour tout $\overline a\in \Z/p\Z$ non nul, la
+correspondance $\overline n \rightarrow \overline a \cdot \overline n$ induit un automorphisme
+$\chi$ de $\Z/p\Z$ tel que $\chi(1)=\overline a$. L'image du morphisme $V$ est donc tout
+$\mathbb{F}_p^\times$. Ce qui \'etablit l'isomorphisme demand\'e.
+\smallskip
+
+(c) D'apr\`es la question (a), il s'agit de compter le nombre d'automorphismes lin\'eaires du
+$\mathbb{F}_p$-espace vectoriel $\mathbb{F}_p^n$, qui est \'egal au nombre de bases de $\mathbb{F}_p^n$,
+c'est-\`a-dire $(p^n-1)(p^n-p)\cdots (p^n -p^{n-1})$.
+\fincorrection
+\finexercice

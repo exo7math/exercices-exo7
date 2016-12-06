@@ -1,0 +1,36 @@
+\exercice{2292, barraud, 2008/04/24}
+\enonce
+Soit $(x^3-x+2)$ l'id\'eal principal engendr\'e
+par $x^3-x+2$ dans l'anneau  $\Qq[x]$.
+\begin{enumerate}
+  \item Montrer que l'anneau quotient $\Qq[x]/(x^3-x+2)$ est un corps.
+  \item Soit $y$ l'image de $x$ dans $\Qq[x]/(x^3-x+2)$ par la surjection
+canonique. Calculer son inverse.
+  \item  Montrer que $1+y+y^2$ est non nul et calculer son inverse.
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction  
+\begin{enumerate}
+  \item 
+    Soit $P=x^{3}-x+2$. Sa réduction  $\bar{P}=x^{3}-x-1$ modulo $3$ est
+    de degré $3$ et n'a pas de racine, donc $\bar{P}$ est irréductible
+    dans $\Zz_{3}[x]$. Comme $P$ est primitif, on en déduit que $P$ est
+    irréductible dans $\Zz[x]$, puis dans $\Qq[x]$. Comme $\Qq[x]$ est
+    principal, on en déduit que $(P)$ est maximal, et donc que
+    $\Qq[x]/(P)$ est un corps.
+
+  \item
+    Dans $\Qq[x]/(P)$, on a $y^{3}-y+2=0$, donc $y(y^{2}-1)=-2$ et
+    finalement $y(\frac{1}{2}(1-y^{2}))=1$. Ainsi $y^{-1}=\frac{1}{2}(1-y^{2})$.
+
+  \item 
+    $1+y+y^{2}=\pi(1+x+x^{2})$. On a $\pgcd(P,1+x+x^{2})=1$, et plus
+    précisément, en utilisant l'algorithme d' Euclide~:
+    $13=(x+4)P-(x^{2}+3x-5)(x^{2}+x+1)$ donc
+    $(y^{2}+y+1)^{-1}=\frac{-1}{13}(y^{2}+3y-5)$.
+\end{enumerate}
+\fincorrection
+\finexercice

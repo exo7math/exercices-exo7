@@ -1,0 +1,57 @@
+\exercice{4703, quercia, 2010/03/16}
+\enonce[Étude de suites]
+
+Étudier la convergence de la suite $(u_n)$ définie par :
+\begin{enumerate}
+  \item $u_0 = a > 1$, $u_{n+1} = \frac 12\left(u_n + \frac a{u_n}\right)$.
+  \item $0 < u_0 < \frac {\sqrt5-1}2$, $u_{n+1} = 1 - u_n^2$.
+  \item $u_{n+1} = u_n-u_n^2$.
+  \item $u_0 = 0$, $u_{n+1} = u_n^2+\alpha$.
+  \item $u_{n+1} = u_n + \frac{1+u_n}{1+2u_n}$.
+  \item $u_0 \in\, [0,1]$, $u_{n+1} = \frac{\sqrt{u_n}}{\sqrt{u_n}+\sqrt{1-u_n}}$.
+  \item $u_{n+1} = \sqrt{2-u_n}$.
+  \item $u_{n+1} = \sqrt{4-3u_n}$.
+  \item $u_{n+1} = \frac{u_n-\ln(1+u_n)}{u_n^2}$.
+  \item $u_{n+1} = \frac3{2u_n^2+1}$.
+  \item $u_0 > 0$, $u_{n+1} = u_n^\alpha$.
+  \item $u_0 > 0$, $u_{n+1} = \alpha^{u_n}$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $u_n\searrow\sqrt a$, et $u_n-\sqrt a < \frac{a-\sqrt a}{(2\sqrt a)^{2^n-1}}$.
+  \item $u_{2n}\to0$, $u_{2n+1}\to1$.
+  \item Si $0\le u_0 \le 1$ : $u_n\searrow0$, sinon $u_n\searrow-\infty$.
+  \item \begin{itemize}	
+	  \item $\frac{1}{4} < \alpha$ : $u_n\to\infty$;
+	  \item $- \frac{3}{4} < \alpha \le \frac{1}{4}$: $u_n\to\frac{1-\sqrt{1-4a}}2$,
+	  \item $-1 < \alpha \le - \frac{3}{4}$: 
+	  $1$ point fixe et deux points réciproques. $(u_n)$ ne converge pas.
+	  \end{itemize}
+  \item Si $u_0 > {\scriptstyle-}\frac12$, $u_n\to\infty$;
+             si $u_0 < {\scriptstyle-}\frac12$, $u_n\to-1$.
+  \item $u_n\to\frac12$.
+  \item Thm du point fixe sur $]-\infty, \frac74]  \Rightarrow  u_n\to 1$.
+  \item Si $u_0\ne 1$, $\exists\ n \text{ tq } 4-3u_n < 0  \Rightarrow $ suite finie.
+  \item $u_n\to\alpha \approx 0.39754$.
+  \item 1 est point fixe, il y a deux points réciproques. $(u_n)$ ne converge pas.
+
+  \item \begin{itemize}
+       \item $1 < \alpha$: $u_n\to0$ si $u_0<1$, $u_n\to\infty$ si $u_0>1$
+       \item $-1 < \alpha <1$: $u_n\to 1$
+       \item $\alpha \le -1$: si $u_0 \ne 1$, $(u_n)$ diverge.
+    	\end{itemize}
+  \item \begin{itemize}
+       $e^{1/e}  < \alpha$: $u_n\to\infty$.
+       $1 < \alpha < e^{1/e}$: 2 pts fixes, $\beta<\gamma$. $u_n\to\beta$ si $u_0<\gamma$, 
+       et $u_n\to\infty$ si $u_0>\gamma$. 
+       $e^{-e} \le \alpha <  1$: 1 pt fixe, $\beta$, et $u_n\to\beta$.
+       $\alpha <  e^{-e}$: 1 point fixe et deux points réciproques. $(u_n)$ ne converge pas.
+    	\end{itemize} 
+\end{enumerate}
+ \fincorrection
+
+\finexercice

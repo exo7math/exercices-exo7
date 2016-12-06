@@ -1,0 +1,22 @@
+\exercice{2677, matexo1, 2002/02/01}
+
+\enonce
+Soit $a\in[0,1[$ un r{\'e}el. En int{\'e}grant $e^{az}/\cosh z$ le long du rectangle de
+sommets
+$-R$, $+R$, $R+i\pi $, $-R+i\pi $, montrer que l'on a
+$$ I= \int_{-\infty }^{+\infty } {e^{ax}\over \cosh x} \,dx = {\pi \over \cos(\pi a/2)}.$$
+\finenonce
+\noindication
+\correction
+Sur le c{\^o}t{\'e} $[R, R+i\pi ]$, la fonction $f(z) = e^{az}/\cosh z$ est major{\'e}e en module
+par
+$${e^{aR}\over |\cosh(R+iy)|} = {e^{aR}\over \cosh^2R -\sin^2 y}
+< {e^{aR}\over \cosh^2R -1} \to 0 \hbox{ quand }R\to \infty $$
+De m{\^e}me sur l'autre c{\^o}t{\'e}. L'int{\'e}grale sur le c{\^o}t{\'e} $[R+i\pi , -R+i\pi ]$ vaut
+$e^{ia\pi }\int_{-R}^R f(x)\,dx$.
+
+La fonction $f$ n'a qu'un p{\^o}le dans le rectangle, qui est $i\pi /2$. Donc {\`a} la limite
+$$ (1+e^{ia\pi }) I = 2i\pi  \mbox{\rm Res}(f, i\pi /2) = 2i\pi  {e^{ia\pi }\over i} = 2\pi  e^{ia\pi }$$
+et le r{\'e}sultat en divisant.
+\fincorrection
+\finexercice

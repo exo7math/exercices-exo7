@@ -1,0 +1,74 @@
+\exercice{5844, rouget, 2010/10/16}
+\enonce[**]
+\label{ex:rou6}
+Soient $A$ et $B$ des parties d'un espace vectoriel normé $E$. Montrer que
+
+\begin{enumerate}
+ \item  $\overline{(\overline{A})}=\overline{A}$ et $\overset{\circ}{\overset{\circ}{A}}=\overset{\circ}{A}$.
+
+\item   $A\subset B\Rightarrow \overline{A}\subset\overline{B}$ et$A\subset B\Rightarrow \overset{\circ}{A}\subset\overset{\circ}{B}$.
+
+\item  $\overline{A\cup B}=\overline{A}\cup\overline{B}$  et $\overset{\circ}{A\cap B}=\overset{\circ}{A}\cap\overset{\circ}{B}$.
+
+ 
+\item    $\overline{A\cap B}\subset\overline{A}\cap\overline{B}$  et $\overset{\circ}{A\cup B}\subset\overset{\circ}{A}\cup\overset{\circ}{B}$. Trouver un exemple où l'inclusion est stricte.
+ 
+
+\item  $\overset{\circ}{A\setminus B}=\overset{\circ}{A}\setminus\overline{B}$.
+
+\item  $\overline{\overset{\circ}{\overline{\overset{\circ}{A}}}}=\overline{\overset{\circ}{A}}$ et $\overset{\circ}{\overline{\overset{\circ}{\overline{A}}}}=\overset{\circ}{\overline{A}}$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Soit $A$ une partie de $E$. $\overline{A}$ est fermé et donc  $\overline{(\overline{A})}=\overline{A}$. $\overset{\circ}{A}$ est ouvert et donc $\overset{\circ}{\overset{\circ}{A}}=\overset{\circ}{A}$.
+
+\item  Soient $A$ et $B$ deux parties de $E$ telles que  $A\subset B$.
+
+\textbullet~Pour tout $x\in E$, $x\in\overline{A}\Rightarrow \forall V\in\mathcal{V}(x),\; V\cap A\neq\varnothing\Rightarrow \forall V\in\mathcal{V}(x),\;V\cap B\neq\varnothing\Rightarrow x\in\overline{B}$. Donc $\overline{A}\subset\overline{B}$.
+
+ 
+\textbullet~Pour tout $x\in E$, $x\in\overset{\circ}{A}\Rightarrow A\in\mathcal{V}(x)\Rightarrow B\in\mathcal{V}(x)\Rightarrow x\in\overset{\circ}{B}$. Donc $\overset{\circ}{A}\subset\overset{\circ}{B}$.
+
+\item  Soient $A$ et $B$ deux parties de $E$.
+
+$\overline{A}\cup\overline{B}$ est une partie fermée de $E$ contenant $A\cup B$. Donc  $\overline{A\cup B}\subset\overline{A}\cup\overline{B}$ (puisque $\overline{A\cup B}$ est le plus petit fermé de $E$ au sens de l'inclusion contenant $A\cup B$).
+
+Réciproquement, $A\subset A\cup B$ et $B\subset A\cup B\Rightarrow\overline{A}\subset\overline{A\cup B}$ et  $\overline{B}\subset\overline{A\cup B}\Rightarrow\overline{A}\cup\overline{B}\subset\overline{A\cup B}$.
+
+Finalement $\overline{A\cup B}=\overline{A}\cup\overline{B}$.
+
+$\overset{\circ}{A}\cap\overset{\circ}{B}$ est un ouvert contenu dans $A\cap B$ et donc $\overset{\circ}{A}\cap\overset{\circ}{B}\subset\overset{\circ}{A\cap B}$.
+
+Réciproquement ,  $A\cap B\subset A$ et $A\cap B\subset B\Rightarrow\overset{\circ}{A\cap B}\subset\overset{\circ}{A}$ et $\overset{\circ}{A\cap B}\subset\overset{\circ}{B}\Rightarrow\overset{\circ}{A\cap B}\subset\overset{\circ}{A}\cap\overset{\circ}{B}$.
+
+Finalement, $\overset{\circ}{A\cap B}=\overset{\circ}{A}\cap\overset{\circ}{B}$.
+
+\item  $\overline{A}\cap\overline{B}$ est un fermé contenant $A\cap B$ et donc  $\overline{A\cap B}\subset\overline{A}\cap\overline{B}$.
+
+On n'a pas nécessairement l'égalité. Si $A = [0,1[$ et $B = ]1,2]$, $A\cap B =\varnothing$ puis $\overline{A\cap B}=\varnothing$ mais $\overline{A}\cap\overline{B}= [0,1]\cap[1,2]=\{1\}\neq\varnothing$.
+
+$\overset{\circ}{A}\cup\overset{\circ}{B}$ est un ouvert contenu dans $A\cup B$ et donc $\overset{\circ}{A}\cup\overset{\circ}{B}\subset\overset{\circ}{A\cup B}$.
+
+On n'a pas nécessairement l'égalité. Si $A = [0,1]$ et $B =[1,2]$, $A\cup B =[0,2]$ puis $\overset{\circ}{A\cup B}=]0,2[$ mais $\overset{\circ}{A}\cup\overset{\circ}{B}=]0,1[\cup]1,2[\neq]0,2[$.
+
+\item  Soient $A$ et $B$ deux parties de $E$. Soit $x\in E$.
+
+\begin{align*}\ensuremath
+x\in\overset{\circ}{A\setminus B}&\Leftrightarrow A\setminus B\in\mathcal{V}(x)\Leftrightarrow\exists\mathcal{B}\;\text{boule ouverte de centre}\;x\;\text{telle que}\;\mathcal{B}\subset A\setminus B\\
+ &\Leftrightarrow \exists\mathcal{B}\;\text{boule ouverte de centre}\;x\;\text{telle que}\;\mathcal{B}\subset A\;\text{et}\;\mathcal{B}\subset{^c}B\Leftrightarrow A\in\mathcal{V}(x)\;\text{et}\;{^c}B\in\mathcal{V}(x)\\
+  &\Leftrightarrow x\in\overset{\circ}{A}\;\text{et}\;x\in\overset{\circ}{({^c}B)}\Leftrightarrow x\in\overset{\circ}{A}\;\text{et}\;x\in{^c}(\overline{B})\Leftrightarrow x\in\overset{\circ}{A}\cap{^c}(\overline{B})\Leftrightarrow x\in\overset{\circ}{A}\setminus\overline{B}.
+ \end{align*}
+ 
+
+Donc $\overset{\circ}{A\setminus B}=\overset{\circ}{A}\setminus\overline{B}$.
+
+\item  Soit $A$ une partie de $E$. $\overset{\circ}{\overline{\overset{\circ}{A}}}\subset\overline{\overset{\circ}{A}}\Rightarrow\overline{\overset{\circ}{\overline{\overset{\circ}{A}}}}\subset\overline{\overline{\overset{\circ}{A}}}=\overline{\overset{\circ}{A}}$. D'autre part $\overset{\circ}{A}\subset\overline{\overset{\circ}{A}}\Rightarrow\overset{\circ}{\overset{\circ}{A}}=\overset{\circ}{A}\subset\overset{\circ}{\overline{\overset{\circ}{A}}}\Rightarrow\overline{\overset{\circ}{A}}\subset\overline{\overset{\circ}{\overline{\overset{\circ}{A}}}}$. Finalement, $\overline{\overset{\circ}{A}}=\overline{\overset{\circ}{\overline{\overset{\circ}{A}}}}$.
+
+$\overset{\circ}{\overline{A}}\subset\overline{\overset{\circ}{\overline{A}}}\Rightarrow\overset{\circ}{\overset{\circ}{\overline{A}}}=\overset{\circ}{\overline{A}}\subset\overset{\circ}{\overline{\overset{\circ}{\overline{A}}}}$. D'autre part  $\overset{\circ}{\overline{A}}\subset\overline{A}\Rightarrow\overline{\overset{\circ}{\overline{A}}}\subset\overline{\overline{A}}=\overline{A}\Rightarrow\overset{\circ}{\overline{\overset{\circ}{\overline{A}}}}\subset\overset{\circ}{\overline{A}}$. Finalement, $\overset{\circ}{\overline{\overset{\circ}{\overline{A}}}}=\overset{\circ}{\overline{A}}$.
+\end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,47 @@
+\exercice{5450, rouget, 2010/07/10}
+\enonce[***]
+Etude complète de la fonction $f(x)=\frac{1}{x-1}\int_{1}^{x}\frac{t^2}{\sqrt{1+t^8}}\;dt$. 
+\finenonce
+
+\noindication
+
+\correction
+Pour $t$ réel, posons $g(t)=\frac{t^2}{\sqrt{1+t^8}}$ puis, pour $x$ réel, $G(x)=\int_{1}^{x}g(t)\;dt$. Puisque $g$ est définie et continue sur $\Rr$, $G$ est définie sur $\Rr$ et de classe $C^1$ et $G'=g$ ($G$ est la primitive de $g$ sur $\Rr$ qui s'annule en $1$). Plus précisément, $g$ est de classe $C^\infty$ sur $\Rr$ et donc $G$ est de classe $C^\infty$ sur $\Rr$.
+
+Finalement, $f$ est définie et de classe $C^\infty$ sur $]-\infty,1[\cup]1,+\infty[$.
+
+\textbf{Etude en 1.}
+
+Pour $x\neq1$, 
+
+$$f(x)=\frac{G(x)}{x-1}=\frac{G(1)+G'(1)(x-1)+\frac{G''(1)}{2}(x-1)^2+o((x-1)^2)}{x-1}=g(1)+g'(1)(x-1)+o((x-1)).$$
+
+Donc, $f$ admet en $1$ un développement limité d'ordre $1$. Par suite, $f$ se prolonge par continuité en $1$ en posant $f(1)=g(1)=\frac{1}{\sqrt{2}}$ puis le prolongement est dérivable en $1$ et $f'(1)=\frac{1}{2}g'(1)$. Or, pour tout réel $x$, $g'(x)=2x\frac{1}{\sqrt{1+x^8}}+x2.(-\frac{4x^7}{(1+x^8)\sqrt{1+x^8}})=2x\frac{1-x^8}{(1+x^8)\sqrt{1+x^8}}$ et $g'(1)=0$. Donc, $f'(1)=0$.
+
+\textbf{Dérivée. Variations}
+
+Pour $x\neq1$, $f'(x)=\frac{G'(x)(x-1)-G(x)}{(x-1)^2}$.
+
+$f'(x)$ est du signe de $h(x)=G'(x)(x-1)-G(x)$ dont la dérivée est $h'(x)=G''(x)(x-1)+G'(x)-G'(x)=(x-1)g'(x)$.
+$h'$ est du signe de $2x(1-x^8)(x-1)$ ou encore du signe de $-2x(1+x)$. $h$ est donc décroissante sur $]-\infty,-1]$ et sur $[0,+\infty[$ et croissante sur $[-1,0]$.
+
+Maintenant, quand $x$ tend vers $+\infty$ (ou $-\infty$), $G'(x)(x-1)=g(x)(x-1)\sim x\frac{1}{x^2}=\frac{1}{x}$ et donc $G'(x)(x-1)$ tend vers $0$. Ensuite, pour $x\geq1$
+
+$$0\leq G(x)\leq\int_{1}^{x}\frac{t^2}{\sqrt{t^8}}\;dt=1-\frac{1}{x}\leq1,$$
+
+et $G$ est bornée au voisinage de $+\infty$ (ou de $-\infty$). Comme $G$ est croissante sur $\Rr$, $G$ a une limite réelle en $+\infty$ et en $-\infty$. Cette limite est strictement positive en $+\infty$ et strictement négative en $-\infty$. Par suite, $h$ a une limite strictement positive en $-\infty$ et une limite strictement négative en $+\infty$.
+Sur $[0,+\infty[$, $h$ est décroissante et s'annule en $1$. Donc, $h$ est positive sur $[0,1]$ et négative sur $[1,+\infty[$.
+
+Ensuite, 
+
+$$h(-1)=\int_{-1}^{1}\frac{t^2}{\sqrt{1+t^8}}\;dt-\sqrt{2}=2\int_{0}^{1}\frac{t^2}{\sqrt{1+t^8}}\;dt-\sqrt{2}<2\int_{0}^{1}\frac{1}{\sqrt{2}}\;dt-\sqrt{2}=0,$$
+
+et $h(-1)<0$. $h$ s'annule donc, une et une seule fois sur $]-\infty,-1[$ en un certain réel $\alpha$ et une et une seule fois sur $]-1,0[$ en un certain réel $\beta$. De plus, $h$ est strictement positive sur $]-\infty,\alpha[$, strictement négative sur $]\alpha,\beta[$, strictement positive sur $]\beta,1[$ et strictement négative sur $]1,+\infty[$.
+
+$f$ est strictement croissante sur $]-\infty,\alpha]$, strictement décroissante sur $[\alpha,\beta]$, strictement croissante sur $[\beta,1]$ et strictement décroissante sur $[1,+\infty[$.
+
+\textbf{Etude en l'infini.}
+
+En $+\infty$ ou $-\infty$, $G$ a une limite réelle et donc $f$ tend vers $0$.
+\fincorrection
+\finexercice

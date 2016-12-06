@@ -1,0 +1,31 @@
+\exercice{5658, rouget, 2010/10/16}
+\enonce[****]
+Soit $A$ une matrice carrée de format $n$.
+
+Montrer que $A$ est nilpotente si et seulement si $\forall k\in\llbracket1,n\rrbracket$, $\text{Tr}(A^k) =0$.
+\finenonce
+
+\noindication
+
+\correction
+\textbullet~Si $A$ est nilpotente, pour tout $k\in\llbracket1,n\rrbracket$, $A^k$ est nilpotente et donc $0$ est l'unique valeur propre dans $\Cc$ de $A^k$. Par suite, $\forall k\in\llbracket1,n\rrbracket$, $\text{Tr}(A^k) = 0$.
+
+\textbullet~
+Réciproquement , supposons que $\forall k\in\llbracket1,n\rrbracket$, $\text{Tr}(A^k) = 0$ et  montrons alors que toutes les valeurs propres de $A$ dans $\Cc$ sont nulles. Ceci montrera que le polynôme caractéristique de $A$ est $(-X)^n$ et donc que $A$ est nilpotente d'après le théorème de \textsc{Cayley}-\textsc{Hamilton}.
+
+Soient $\lambda_1$,..., $\lambda_n$ les $n$ valeurs propres (distinctes ou confondues) de $A$ dans $\Cc$. Pour $k\in\llbracket1,n\rrbracket$, on pose $S_k =\lambda_1^k+...+\lambda_n^k$. Il s'agit de montrer que : $(\forall k\in\llbracket1,n\rrbracket,\;S_k =0)\Rightarrow(\forall j\in\llbracket1,n\rrbracket,\;\lambda_j =0)$.
+
+\textbf{1ère solution.}
+Les $S_k$, $1\leqslant k\leqslant n$, sont tous nuls et par combinaisons linéaires de ces égalités, on en déduit que pour tout polynôme $P$ de degré inférieur ou égal à $n$ et s'annulant en $0$, on a $P(\lambda_k) = 0$  (1). Il s'agit alors de bien choisir le polynôme $P$.
+
+Soit $i\in\llbracket1,n\rrbracket$. Soient $\mu_1$,..., $\mu_p$ les valeurs propres deux à deux distinctes de $A$ ($1\leqslant p\leqslant n$). On prend $P =X\prod_{j\neq i}^{}(X-\mu_j)$ si $p\geqslant2$ et $P = X$ si $p = 1$. $P$ est bien un polynôme de degré inférieur ou égal à $n$ et s'annule en $0$. L'égalité $P(\lambda_i)=0$ fournit $\lambda_i = 0$ ce qu'il fallait démontrer.
+
+\textbf{2ème solution.} Pour ceux qui savent que les sommes de \textsc{Newton} $S_k$ sont liées aux fonctions élémentaires en les $\lambda_i$  $\sigma_1$,..., $\sigma_n$ par les formules de \textsc{Newton} :
+
+\begin{center}
+$\forall k\leqslant n$, $S_k -\sigma_1S_{k-1}+...+(-1)^{k-1}\sigma_{k-1}S_1+ (-1)^kk\sigma_k = 0$.
+\end{center}
+
+Par suite, si tous les $S_k$, $1\leqslant k\leqslant n$, sont nuls alors immédiatement tous les $\sigma_k$, $1\leqslant k\leqslant n$, sont nuls et donc les $\lambda_i$ sont nuls car tous racines de l'équation $x^n = 0$.
+\fincorrection
+\finexercice

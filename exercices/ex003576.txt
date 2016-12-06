@@ -1,0 +1,36 @@
+\exercice{3576, quercia, 2010/03/10}
+\enonce[Crochet de Lie (Ens Cachan MP$^*$ 2003)]
+Soit $\Phi : {\mathcal{M}_n(\C)}\to {\mathcal{M}_n(\C)}$ un automorphisme d'ev tel que~:
+$\forall\ A,B\in\mathcal{M}_n(\C),\ \Phi([A,B]) = [\Phi(A),\Phi(B)]$ où $[X,Y] = XY - YX$.
+Montrer~: $\forall\ D\in\mathcal{M}_n(\C)$, ($D$ est diagonalisable) $\Leftrightarrow$ ($\Phi(D)$ est diagonalisable).
+
+{\it Indication~: considérer $\phi_D$ : $X  \mapsto[D,X]$ et montrer que
+($D$ est diagonalisable) $\Leftrightarrow$ ($\phi_D$ est diagonalisable).}
+
+\finenonce
+
+\noindication
+
+\correction
+Si $D$ est diagonalisable alors les applications $X \mapsto DX$ et $X \mapsto XD$
+le sont (annulateur scindé à racines simples) et elles commutent, donc elles sont
+simmultanément diagonalisables et leur différence, $\phi_D$, est aussi diagonalisable.
+
+Pour la réciproque, on commence par constater que si $P$ est un polynôme
+quelconque, alors~:
+$$\forall\ X\in\mathcal{M}_n(\C),\ P(\phi_D)(X) = \sum_{k=0}^{\deg(P)} (-1)^kD^kX\frac{P^{(k)}(D)}{k!}
+= \sum_{k=0}^{\deg(P)} (-1)^k\frac{P^{(k)}(D)}{k!}XD^k.$$
+(formule du binôme pour $P=X^m$ et linéarité de chaque membre par rapport à~$P$
+pour $P$ quelconque).
+
+Supposons $\phi_D$ diagonalisable, prenons~$P$ annulateur scindé à racines simples de~$\phi_D$,
+$X=U^tV$ où $U$ est un vecteur propre de~$D$
+associé à une certaine valeur propre~$\lambda$ et $V$ un vecteur arbitraire. Donc~:
+$$0 = \sum_{k=0}^{\deg(P)} (-1)^k\lambda^kU^tV\frac{P^{(k)}(D)}{k!}
+= U^tV\sum_{k=0}^{\deg(P)} (-1)^k\lambda^k\frac{P^{(k)}(D)}{k!}
+= U^tVP(D-\lambda I).$$
+Comme $U\ne 0$, ceci implique ${}^tVP(D-\lambda I) = 0$ pour tout~$V$,
+donc $P(D-\lambda I) = 0$. Ainsi $D-\lambda I$ est diagonalisable et $D$ itou.
+\fincorrection
+
+\finexercice

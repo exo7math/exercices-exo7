@@ -1,0 +1,24 @@
+\exercice{4360, quercia, 2010/03/12}
+\enonce 
+
+On pose pour $n\ge2$ $u_n= \int_{x=0}^{+\infty} \frac1{1+x^n}\, d x$.
+Montrer que la suite $(u_n)$ converge, puis que la série $\sum(u_n-1)$ converge
+également.
+
+\finenonce
+
+\noindication
+
+\correction
+$u_n \to 1$ (lorsque $n\to\infty$) par convergence dominée.
+
+$u_n-1 =  \int_{x=0}^1\Bigl(\frac{1+x^{n-2}}{1+x^n}-1\Bigr)\,d x
+       = \frac1n \int_{u=0}^1\frac{u^{1-1/n}}{1+u}(u^{-2/n}-1)\,d u$.
+
+On a $0\le u^{-2/n}-1=\exp\Bigl(-\frac{2\ln(u)}n\Bigr)-1\le -\frac{2\ln(u)}n\exp\Bigl(-\frac{2\ln(u)}n\Bigr)$
+
+d'où $0\le u_n\le\frac2{n^2} \int_{u=0}^1\frac{u^{1-3/n}(-\ln u)}{1+u}\,d u
+= O\Bigl(\frac1{n^2}\Bigr)$.
+\fincorrection
+
+\finexercice

@@ -1,0 +1,44 @@
+\exercice{6935, ruette, 2013/01/24}
+\enonce
+A l'issue d'une expérience de 1000 tirages, un générateur
+de chiffres aléatoires a donné les résultats suivants :
+\begin{center}
+\begin{tabular}
+[c]{|c|llllllllll|}%
+\hline
+chiffre & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 0\\
+nombre d'apparitions & 87 & 103 & 90 & 110 & 81 & 108 & 85 & 123 & 90
+& 123\\
+\hline
+\end{tabular}
+\end{center}
+ Tester au niveau 5\% l'hypothèse selon laquelle le générateur 
+simule de façon satisfaisante un tirage uniforme sur 
+les entiers $\{0,\ldots, 9\}$.
+\finenonce
+\noindication
+
+\correction
+Notons $X$ le résultat d'un tirage  d'un entier entre $0$
+et $9$ à l'aide de ce générateur et $p=(p_0,\ldots,p_9)$ sa loi. On cherche à tester
+l'hypothèse  $H_0$ : ``$p$ est la loi $\mathcal{U}_{\{0,\ldots,9\}}$''
+contre l'hypothèse $H_1$ : ``$p$ n'est pas la loi
+$\mathcal{U}_{\{0,\ldots,9\}}$'' au niveau $5\%$.
+Notons $N^{(i)}$ le nombre d'apparitions du chiffre $i$ sur $1000$ 
+tirages de chiffres à l'aide de ce générateur et
+$Z=\sum_{i=0}^{9}\frac{(N^{(i)}-100)^{2}}{100}$.\\ On rejette
+l'hypothèse $H_0$ au niveau $5\%$ si la valeur observée $z_{obs}$
+de $Z$ est telle que $P_{H_{0}}(Z\geq z_{obs})\leq 0,05$. Comme pour tout $i\in\{0,\ldots,9\}$,  $1000p_i=100$ est
+suffisamment grand,  on peut approximer la fonction de répartition de la  loi de
+$Z$ sous $H_0$ par celle du $\chi^{2}$ à $9$ degrés de
+liberté. Donc, on peut approximer $P_{H_{0}}(Z\geq z_{obs})$ par
+$1-F_{\chi^{2}_{9}}(z_{obs})$. A partir des valeurs observées pour les variables aléatoires
+$N^{(i)}$ qui sont données dans le tableau, on obtient
+$z_{obs}\simeq 21,86$. D'après la table de valeurs numériques de
+la loi du $\chi^2$, %\versun{donnée à l'annexe \ref{tablechi}},
+$F_{\chi^{2}_{9}}(z_{obs})$ est compris entre $0,99$ et
+$0,995$. Donc, au niveau $5\%$, on rejette l'hypothèse $H_0$. On
+rejette encore l'hypothèse $H_0$ au niveau $1\%$ mais pas au
+niveau $0,5\%$.  
+\fincorrection
+\finexercice

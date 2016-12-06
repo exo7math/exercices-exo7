@@ -1,0 +1,96 @@
+\exercice{2608, delaunay, 2009/05/19}
+\enonce
+Soit $A$ la matrice 
+$$A=\begin{pmatrix}1&0&0 \\  1&-1&0 \\  -1&2&-1\end{pmatrix}$$ 
+et $f$ l'endomorphisme de $\R^3$ associ\'e.
+\begin{enumerate}
+ \item  Factoriser le polyn\^ome caract\'eristique de $A$. 
+ \item D\'eterminer les sous-espaces propres et caract\'eristiques de $A$. 
+ \item D\'emontrer qu'il existe une base de $\R^3$ dans laquelle la matrice de $f$ est 
+$$B=\begin{pmatrix}1 & 0 & 0 \\  0&-1&2 \\ 0&0&-1\end{pmatrix}$$
+et trouver une matrice $P$ inversible telle que $ AP=PB$ (ou $A=PBP^{-1}$). 
+ \item Ecrire la d\'ecomposition de Dunford de $B$ (justifier). 
+ \item  Pour $t\in\R$, calculer $\exp tB$. 
+ \item Donner les solutions des syst\`emes diff\'erentiels $y'=By$ et $x'=Ax$, où $x$ et $y$ désignent des fonctions réelles à valeurs dans $\R^3$. 
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+{\it Soit $A$ la matrice 
+$$A=\begin{pmatrix}1&0&0 \\  1&-1&0 \\  -1&2&-1\end{pmatrix}$$ 
+et $f$ l'endomorphisme de $\R^3$ associ\'e.}
+\begin{enumerate}
+ \item {\it  Déterminons et factorisons le polyn\^ome caract\'eristique de $A$.} 
+
+On note $P_A(X)$ le polynôme caractéristique, on a
+$$P_A(X)=\begin{vmatrix}1-X&0&0 \\  1&-1-X&0 \\  -1&2&-1-X\end{vmatrix}=(-1-X)\begin{vmatrix}1-X&0 \\  1&-1-X\end{vmatrix}=(-1-X)^2(1-X).$$
+La matrice $A$ admet deux valeurs propres, $1$, valeur propre simple, et $-1$, valeur propre double.
+
+ \item {\it D\'eterminons les sous-espaces propres et les sous-espaces caract\'eristiques de $A$.}
+
+La valeur propre $1$ est simple, le sous-espace propre associé est égal au sous-espace caractéristique, c'est l'ensemble
+$$E_1=N_1=\{\vec u=(x,y,z)\in\R^3,\ A\vec u =\vec u\}.$$
+On a 
+$$\vec u\in E_1\iff \left\{\begin{align*}x&=x \\  x-y&=y \\  -x+2y-z&=z\end{align*}\right.\iff\left\{\begin{align*}x&=2y \\  z&=0\end{align*}\right.$$ 
+L'espace $E_1$ est une droite vectorielle dont un vecteur directeur $\vec e_1$ est donné, par exemple, par $\vec e_1=(2,1,0)$.
+
+Le sous-espace propre associé à la valeur propre $-1$ est défini par
+$$E_{-1}=\{\vec u=(x,y,z)\in\R^3,\ A\vec u =-\vec u\}.$$
+On a 
+$$\vec u\in E_{-1}\iff \left\{\begin{align*}x&=-x \\  x-y&=-y \\  -x+2y-z&=-z\end{align*}\right.
+\iff\left\{ \begin{align*}x&=0 \\  y&=0\end{align*}\right.$$ 
+L'espace $E_{-1}$ est une droite vectorielle dont un vecteur directeur $\vec e_2$ est donné, par exemple, par $\vec e_2=(0,0,1)$. La dimension de $E_{-1}$ n'est pas égale à la multiplicité de la racine, la matrice n'est pas diagonalisable. Déterminons le sous-espace caractéristique associé à la valeur propre $-1$. Pour cela calculons la matrice $(A+I)^2$.
+$$(A+I)^2=\begin{pmatrix}2&0&0 \\  1&0&0 \\  -1&2&0\end{pmatrix}^2=\begin{pmatrix}4&0&0 \\  2&0&0 \\  0&0&0\end{pmatrix}$$
+$$N_{-1}=\ker(A+I)^2=\{\vec u=(x,y,z)\in\R^3,\ x=0\}$$
+Le sous-espace caractéristique $N_{-1}$ est le plan vectoriel engendré par les vecteurs 
+
+$e_2=(0,0,1)$ et $e_3=(0,1,0)$.
+ \item  {\it D\'emontrons qu'il existe une base de $\R^3$ dans laquelle la matrice de $f$ est 
+$$B=\begin{pmatrix}1 & 0 & 0 \\  0&-1&2 \\ 0&0&-1\end{pmatrix}$$
+et trouvons une matrice $P$ inversible telle que $ AP=PB$ (ou $A=PBP^{-1}$).} 
+
+On considère les vecteurs $\vec e_1=(2,1,0)$ et $\vec e_2=(0,0,1)$ et on cherche un vecteur $\vec e\in N_{-1}$ tel que 
+$f(\vec e)=2\vec e_2-\vec e$. Notons $\vec e=(0,y,z)$,
+$$f(\vec e)=2\vec e_2-\vec e\iff y=1,$$
+le vecteur $\vec e=\vec e_3=(0,1,0)$ convient, on pouvait le voir directement sur la deuxième colonne de la matrice $A$.
+Ainsi, dans la base $(\vec e_1,\vec e_2,\vec e_3)$ avec $\vec e_1=(2,1,0)$, $\vec e_2=(0,0,1)$ et $\vec e_3=(0,1,0)$, la matrice de $f$ s'écrit
+$$B=\begin{pmatrix}1 & 0 & 0 \\  0&-1&2 \\ 0&0&-1\end{pmatrix}.$$
+La matrice $P$ cherchée est la matrice de passage qui exprime la base $(\vec e_1,\vec e_2,\vec e_3)$ dans la base canonique $(\vec i,\vec j,\vec k)$. On a
+$$P=\begin{pmatrix}2 & 0 & 0 \\  1&0&1 \\ 0&1&0\end{pmatrix}$$
+et $AP=PB$ ou $A=PBP^{-1}$. On peut calculer $P^{-1}$, c'est la matrice qui exprime les vecteurs $\vec i,\vec j$ et $\vec k$ dans la base 
+$(\vec e_1,\vec e_2,\vec e_3)$,
+$$P^{-1}=\begin{pmatrix}1/2 & 0 & 0 \\  0&0&1 \\ -1/2&1&0\end{pmatrix}.$$
+
+ \item  {\it Ecrivons la d\'ecomposition de Dunford de $B$.}  
+
+On a
+$$B=\begin{pmatrix}1 & 0 & 0 \\  0&-1&2 \\ 0&0&-1\end{pmatrix}=\underbrace{\begin{pmatrix}1 & 0 & 0 \\  0&-1&0 \\ 0&0&-1\end{pmatrix}}_D+\underbrace{\begin{pmatrix}0 & 0 & 0 \\  0&0&2 \\ 0&0&0\end{pmatrix}}_N.$$
+Il est clair que la matrice $D$ est diagonalisable puisque diagonale, on vérifie facilement que $N^2=0$, c'est-à-dire que la matrice $N$ est nilpotente et que les deux matrices commutent, $DN=ND$. Ainsi la décomposition $B=D+N$ est bien la décomposition de Dunford de la matrice $B$.
+ \item  {\it Pour $t\in\R$, calculons $\exp tB$}.
+
+ On utilise la décomposition de Dunford de la matrice $tB$, $tB=tD+tN$, on a donc 
+ $$\exp(tB)=\exp(tD+tN)=\exp(tD).\exp(tN)$$
+car les matrices commutent, par ailleurs, comme $D$ est diagonale, on a
+$$\exp(tD)=\begin{pmatrix}e^t & 0 & 0 \\  0&e^{-t}&0 \\ 0&0&e^{-t}\end{pmatrix},$$ 
+et comme $N^2=0$, on a
+$$\exp(tN)=I+tN=\begin{pmatrix}1 & 0 & 0 \\  0&1&2t \\ 0&0&1\end{pmatrix}.$$
+D'où
+$$\exp(tB)=\begin{pmatrix}e^t & 0 & 0 \\  0&e^{-t}&0 \\ 0&0&e^{-t}\end{pmatrix}\begin{pmatrix}1 & 0 & 0 \\  0&1&2t \\ 0&0&1\end{pmatrix}=\begin{pmatrix}e^t & 0 & 0 \\  0&e^{-t}&2te^{-t} \\ 0&0&e^{-t}\end{pmatrix}.$$
+ \item {\it Donnons les solutions des syst\`emes diff\'erentiels $y'=By$ et $x'=Ax$, où $x$ et $y$ désignent des fonctions réelles à valeurs dans $\R^3$.} 
+
+Les solutions du système différentiel $y'(t)=B.y(t)$ sont les fonctions $y(t)=\exp(tB).V$ où $V$ est un vecteur quelconque de $\R^3$. Donc
+$$y(t)=\begin{pmatrix}e^t & 0 & 0 \\  0&e^{-t}&2te^{-t} \\ 0&0&e^{-t}\end{pmatrix}\begin{pmatrix}a \\  b \\  c\end{pmatrix}=\begin{pmatrix}ae^t  \\  be^{-t}+2cte^{-t} \\  ce^{-t}\end{pmatrix},$$
+$(a,b,c)\in\R^3$.
+
+Pour trouver les solutions du système différentiel $x'(t)=A.x(t)$, on utilise le fait suivant
+$$P.y\quad{\hbox{est solution de}}\quad x'=A.x\iff y\quad{\hbox{est solution de}}\quad y'=(P^{-1}AP).y=B.y.$$
+Ainsi, les solutions du système $x'=A.x$ s'écrivent
+$$x(t)=P.\exp(tB).V$$
+où $V$ est un vecteur quelconque de $\R^3$. On remarque qu'il n'est pas utile de calculer la martrice $P^{-1}$. C'est-à-dire
+$$x(t)=\begin{pmatrix}2 & 0 & 0 \\  1&0&1 \\ 0&1&0\end{pmatrix}\begin{pmatrix}ae^t  \\  be^{-t}+2cte^{-t} \\  ce^{-t}\end{pmatrix}=\begin{pmatrix}2ae^t  \\  ae^{t}+ce^{-t} \\  be^{-t}+2cte^{-t}\end{pmatrix},$$
+$(a,b,c)\in\R^3$.
+\end{enumerate}
+\fincorrection
+\finexercice

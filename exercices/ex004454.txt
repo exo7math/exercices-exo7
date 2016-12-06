@@ -1,0 +1,35 @@
+\exercice{4454, quercia, 2010/03/14}
+\enonce[$(u_n)$ décroit]
+
+Soit $(u_n)_{n\ge 1}$ une suite réelle positive décroissante telle que
+$\sum u_n$ converge.
+
+\begin{enumerate}
+  \item Montrer que $nu_n \to 0$ lorsque $n\to\infty$.
+    $\Bigl($considérer $\sum_{k=n+1}^{2n} u_k \Bigr)$
+  \item Montrer que $\sum_{n=1}^\infty n(u_n - u_{n+1})$ converge et a même somme que $\sum_{n=1}^\infty u_n$.
+  \item Application : calculer pour $0 \le r < 1$ :
+    $\sum_{k=1}^\infty kr^k$ et $\sum_{k=1}^\infty k^2r^k$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item 
+  \item 
+  \item     $kr^k = k(u_k - u_{k+1})$ avec $u_k = \frac{r^k}{1-r}$
+    donc $\sum_{k=1}^\infty kr^k = \sum_{k=1}^\infty\frac{r^k}{1-r} = \frac r{(1-r)^2}$.
+    \par
+    De même, $S_n = \sum_{k=n}^\infty kr^k = \frac{(n-1)r^n}{1-r} +
+     \sum_{k=n}^\infty\frac{r^k}{1-r} = \frac{nr^n}{1-r} + \frac{r^{n+1}}{(1-r)^2}$.
+    
+    $k^2r^k = k(S_k - S_{k+1})$ et $(S_k)$ décroît d'où
+    $\sum_{k=1}^\infty k^2r^k = \sum_{k=1}^\infty S(k)
+    = \sum_{k=1}^\infty \Bigl(\frac{kr^k}{1-r}+\frac{r^{k+1}}{(1-r)^2}\Bigr)
+    = \frac{r+r^2}{(1-r)^3}$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

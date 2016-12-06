@@ -1,0 +1,39 @@
+\exercice{2284, barraud, 2008/04/24}
+\enonce
+Montrer que un id\'eal propre  $I$ de l'anneau
+$A$ est premier ssi quand le produit de deux id\'eaux est 
+contenue dans $I$, alors l'un de deux est contenu dans $I$.
+En d\'eduire que si $M$ est un id\'eal maximal de $A$, alors
+le seul id\'eal premier de $A$ qui contient $M^n$ est $M$.
+\finenonce 
+
+\noindication
+
+\correction
+  On rappelle que le produit de deux idéaux $I$ et $J$ est l'idéal
+  engendré par les produits de la forme $ab$ avec $a\in I$, $b\in J$~:
+  $$
+   I\cdot J=\{\sum_{i=0}^{N}a_{i}b_{i}, N\in\Nn, a_{i}\in I, b_{i}\in J\}
+  $$
+  \begin{itemize}
+  \item Si $I$ est un idéal premier~: Soient $J$ et  $K$ deux idéaux tels
+    que $J\cdot K\subset I$. Alors si $J\not\subset I$, $\exists a\in x
+    \setminus I$. Soit $y\in K$. On a $xy\in J\cdot K$ donc $xy\in I$.
+    Comme $I$ est premier, $x\in I$ ou $y\in I$. Mais $x\notin I$ donc
+    $y\in I$. Ainsi $\forall y\in K, y\in I$~: on a montré que~:
+    $J\not\subset I\Rightarrow K\subset I$. On a donc bien $J\subset I$
+    ou $K\subset I$.
+
+  \item
+    Si $\forall J,K \text{ idéaux},( J\cdot K\subset I\Rightarrow
+    J\subset I \text{ ou }K\subset I)$~: Soit $a,b\in A$ avec $ab\in I$.
+    Alors $(a)\cdot(b)=(ab)$ donc $(a)\subset I$ ou $(b)\subset I$ et
+    donc  $a\in I$ ou $b\in I$. $I$ est donc premier.
+  \end{itemize}
+
+  On a $M^{n}=M\cdot M^{n-1}$. Donc si $I$ est premier et contient
+  $M^{n}$ alors $I$ contient $M$ ou $M^{n-1}$, et par une récurrence
+  finie, on obtient que $I$ contient $M$. Ainsi~: $M\subset I\subsetneq
+  A$. Comme $M$ est maximal on en déduit que $M=I$.
+\fincorrection
+\finexercice

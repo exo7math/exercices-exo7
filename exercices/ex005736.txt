@@ -1,0 +1,38 @@
+\exercice{5736, rouget, 2010/10/16}
+\enonce[**]
+Pour $x>0$, on pose $f(x) =\sum_{n=0}^{+\infty}e^{-x\sqrt{n}}$. Trouver un équivalent simple de $f$ en $0$ à droite.
+\finenonce
+
+\noindication
+
+\correction
+Soit $x>0$. Pour $n\in\Nn^*$, $n^2e^{-x\sqrt{n}}=e^{-x\sqrt{n}+2\ln n}\underset{n\rightarrow+\infty}{=}o(1)$ d'après un théorème de croissances comparées. On en déduit que $e^{-x\sqrt{n}}\underset{n\rightarrow+\infty}{=}o\left(\frac{1}{n^2}\right)$ et donc que la série de terme général $e^{-x\sqrt{n}}$ converge. Ainsi, $f$ est bien définie sur $]0,+\infty[$.
+
+Soit $x\in]0,+\infty[$. La fonction $t\mapsto e^{-x\sqrt{t}}$ est décroissante sur $[0,+\infty[$. Donc, $\forall k\in\Nn$, $\int_{k}^{k+1}e^{-x\sqrt{t}}\;dt\leqslant e^{-x\sqrt{k}}$ et $\forall k\in\Nn^*$, $e^{-x\sqrt{k}}\leqslant\int_{k-1}^{k}e^{-x\sqrt{t}}\;dt$. En sommant ces inégalités, on obtient
+
+\begin{center}
+$\forall x\in]0,+\infty[$, $\int_{0}^{+\infty}e^{-x\sqrt{t}}\;dt\leqslant f(x)\leqslant1+\int_{0}^{+\infty}e^{-x\sqrt{t}}\;dt$\quad$(*)$.
+\end{center}
+
+Soit $x\in]0,+\infty[$. En posant $u=x\sqrt{t}$ et donc $t=\frac{u^2}{x^2}$ puis $dt=\frac{2u}{x^2}\;du$, on obtient
+
+\begin{center}
+$\int_{0}^{+\infty}e^{-x\sqrt{t}}\;dt=\frac{2}{x^2}\int_{0}^{+\infty}ue^{-u}\;du=\frac{2}{x^2}\times\Gamma(2)=\frac{2}{x^2}$.
+\end{center}
+
+L'encadrement $(*)$ s'écrit alors
+
+\begin{center}
+$\forall x\in]0,+\infty[$, $\frac{2}{x^2}\leqslant f(x)\leqslant1+\frac{2}{x^2}$.
+\end{center}
+
+Comme $\displaystyle\lim_{\substack{x\rightarrow0\\
+x>0}}\frac{2}{x^2}=+\infty$, on a montré que
+
+\begin{center}
+\shadowbox{
+$\sum_{n=0}^{+\infty}e^{-x\sqrt{n}}\underset{x\rightarrow0,\;x>0}{\sim}\frac{2}{x^2}$.
+}
+\end{center}
+\fincorrection
+\finexercice

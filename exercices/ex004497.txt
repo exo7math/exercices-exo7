@@ -1,0 +1,29 @@
+\exercice{4497, quercia, 2010/03/14}
+\enonce[Centrale MP 2002]
+
+Soient $a,b,c\in\N^*$. On pose $f(z) = \sum_{n=0}^\infty \frac{z^{bn}}{1-z^{an+c}}$.
+
+\begin{enumerate}
+  \item Étudier la convergence de la série et montrer qu'on peut intervertir
+    $b$ et $c$ dans la formule.
+
+
+  \item Développer en série entière~: $\sum_{m=1}^\infty\frac{z^{2m}}{1-z^m}$.
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Il y a convergence si $|z|<1$.
+On a alors $f(z) = \sum_{(n,p)\in\N^2}z^{anp + bn+cp}$.
+Il y a aussi convergence pour $|z|>1$ lorsque $a>b$ et on a dans ce cas~:
+$f(z) = \sum_{(n,p)\in\N\times\N^*}z^{-anp + bn - cp}$ (non symétrique en $b,c$).
+  \item $f(z) = \sum_{n=2}^\infty d_nz^n$ avec $d_n =$ nombre de diviseurs de~$n$
+dans~$[[1,n-1]]$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

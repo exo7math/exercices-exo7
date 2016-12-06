@@ -1,0 +1,110 @@
+\exercice{5171, rouget, 2010/06/30}
+\enonce[**I]
+Soit $E$ un $\Kk$-espace vectoriel et $f$ un élément de $\mathcal{L}(E)$.
+\begin{enumerate}
+\item  Montrer que $[\mbox{Ker}f=\mbox{Ker}f^2\Leftrightarrow\mbox{Ker}f\cap\mbox{Im}f=\{0\}]$ et $[\mbox{Im}f=\mbox{Im}f^2\Leftrightarrow
+E=\mbox{Ker}f+\mbox{Im}f]$ (où $f^2=f\circ f)$.
+\item  Par définition, un endomorphisme $p$ de $E$ est un projecteur si et seulement si $p^2=p$.
+
+Montrer que
+$$[p\;\mbox{projecteur}\Leftrightarrow Id-p\;\mbox{projecteur}]$$ puis que
+$$[p\;\mbox{projecteur}\Rightarrow\mbox{Im}p=\mbox{Ker}(Id-p)\;\mbox{et}\;\mbox{Ker}p=\mbox{Im}(Id-p)\;\mbox{et}\;
+E=\mbox{Ker}p\oplus\mbox{Im}p].$$
+
+\item  Soient $p$ et $q$ deux projecteurs, montrer que~:~$[\mbox{Ker}p=\mbox{Ker}q\Leftrightarrow p=p\circ
+q\;\mbox{et}\;q=q\circ p]$.
+\item  $p$ et $q$ étant deux projecteurs vérifiant $p\circ q+q\circ p=0$, montrer que $p\circ q=q\circ p=0$. Donner
+une condition nécessaire et suffisante pour que $p+q$ soit un projecteur lorsque $p$ et $q$ le sont. Dans ce
+cas, déterminer $\mbox{Im}(p+q)$ et $\mbox{Ker}(p+q)$ en fonction de $\mbox{Ker}p$, $\mbox{Ker}q$, $\mbox{Im}p$ et
+$\mbox{Im}q$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  On a toujours $\mbox{Ker}f\subset\mbox{Ker}f^2$.
+
+En effet, si $x$ est un vecteur de $\mbox{Ker}f$, alors $f^2(x)=f(f(x))=f(0)=0$ (car $f$ est linéaire) et $x$ est 
+dans $\mbox{Ker}f^2$.
+
+Montrons alors que~:~$[\mbox{Ker}f=\mbox{Ker}f^2\Leftrightarrow\mbox{Ker}f\cap\mbox{Im}f=\{0\}]$.
+Supposons que $\mbox{Ker}f=\mbox{Ker}f^2$ et montrons que $\mbox{Ker}f\cap\mbox{Im}f=\{0\}$.
+
+Soit $x\in\mbox{Ker}f\cap\mbox{Im}f$. Alors, d'une part f(x) = 0 et d'autre part, il existe $y$ élément de $E$ tel que
+$x=f(y)$. Mais alors, $f^2(y)=f(x)=0$ et $y\in\mbox{Ker}f^2=\mbox{Ker}f$. Donc, $x=f(y)=0$. On a montré
+que $\mbox{Ker}f=\mbox{Ker}f^2\Rightarrow\mbox{Ker}f\cap\mbox{Im}f=\{0\}$.
+
+Supposons que $\mbox{Ker}f\cap\mbox{Im}f=\{0\}$ et montrons que $\mbox{Ker}f=\mbox{Ker}f^2$.
+
+Soit $x\in\mbox{Ker}f^2$. Alors $f(f(x))=0$ et donc $f(x)\in\mbox{Ker}f\cap\mbox{Im}f=\{0\}$. Donc, $f(x)=0$ et $x$ est
+dans $\mbox{Ker}f$. On a ainsi montré que $\mbox{Ker}f^2\subset\mbox{Ker}f$ et, puisque l'on a toujours
+$\mbox{Ker}f\subset\mbox{Ker}f^2$, on a finalement $\mbox{Ker}f=\mbox{Ker}f^2$. On a montré
+que $\mbox{Ker}f\cap\mbox{Im}f=\{0\}\Rightarrow\mbox{Ker}f=\mbox{Ker}f^2$.
+
+On a toujours $\mbox{Im}f^2\subset\mbox{Im}f$. En effet~:~$y\in\mbox{Im}f^2\Rightarrow\exists x\in E/\;y=f^2(x)=f(f(x))
+\Rightarrow y\in\mbox{Im}f$.
+
+Supposons que $\mbox{Im}f=\mbox{Im}f^2$ et montrons que $\mbox{Ker}f+\mbox{Im}f=E$.
+Soit $x\in E$. Puisque $f(x)\in\mbox{Im}f=\mbox{Im}f^2$, il existe $t\in E$ tel que $f(x)=f^2(t)$. Soit
+alors $z=f(t)$ et $y=x-f(t)$. On a bien $x=y+z$ et $z\in\mbox{Im}f$. De plus, $f(y)=f(x)-f(f(t))=0$ et $y$ est bien
+élément de $\mbox{Ker}f$. On a donc montré que $E=\mbox{Ker}f+\mbox{Im}f$.
+
+Supposons que $\mbox{Ker}f+\mbox{Im}f=E$ et montrons que $\mbox{Im}f=\mbox{Im}f^2$.
+
+Soit $x\in E$. Il existe $(y,z)\in\mbox{Ker}f\times\mbox{Im}f$ tel que $x=y+z$. Mais alors $f(x)=f(z)\in\mbox{Im}f^2$
+car $z$ est dans $\mbox{Im}f$. Ainsi, pour tout $x$ de $E$, $f(x)$ est dans $\mbox{Im}f^2$ ce qui montre que
+$\mbox{Im}f\subset\mbox{Im}f^2$ et comme on a toujours $\mbox{Im}f^2\subset\mbox{Im}f$, on a montré que
+$\mbox{Im}f=\mbox{Im}f^2$.
+
+\item  $Id-p\;\mbox{projecteur}\Leftrightarrow(Id-p)^2=Id-p\Leftrightarrow Id-2p+p^2=Id-p\Leftrightarrow p^2=p\Leftrightarrow p\;\mbox{projecteur}$.
+
+Soit $x$ un élément de $E$.
+$x\in\mbox{Im}p\Rightarrow\exists y\in E/\;x=p(y)$. Mais alors $p(x)=p^2(y)=p(y)=x$. Donc,
+$\forall x\in E,\;(x\in\mbox{Im}p\Rightarrow p(x)=x)$.
+
+Réciproquement, si $p(x)=x$ alors bien sûr, $x$ est dans $\mbox{Im}p$.
+
+Finalement, pour tout vecteur $x$ de $E$, $x\in\mbox{Im}p\Leftrightarrow p(x)=x\Leftrightarrow(Id-p)(x)=0\Leftrightarrow x\in\mbox{Ker}(Id-p)$. On a
+montré que $\mbox{Im}p=\mbox{Ker}(Id-p)$.
+
+En appliquant ce qui précède à $Id -p$ qui est également un projecteur, on obtient
+$\mbox{Im}(Id-p)=\mbox{Ker}(Id-(Id-p))=\mbox{Ker}p$.
+
+Enfin, puisque $p^2=p$ et donc en particulier que $\mbox{Ker}p=\mbox{Ker}p^2$ et $\mbox{Im}p=\mbox{Im}p^2$, le 1) montre
+que $E=\mbox{Ker}p\oplus\mbox{Im}p$.
+
+\item 
+\begin{align*}
+p=p\circ q\;\mbox{et}\;q=q\circ p&\Leftrightarrow
+p\circ(Id-q)=0\;\mbox{et}\;q\circ(Id-p)=0\Leftrightarrow\mbox{Im}(Id-q)\subset\mbox{Ker}p\;\mbox{et}\;\mbox{Im}(Id-p)\subset
+\mbox{Ker}q\\
+ &\Leftrightarrow\mbox{Ker}q\subset\mbox{Ker}p\;\mbox{et}\;\mbox{Ker}p\subset\mbox{Ker}q\;(\mbox{d'après 2)})\\
+ &\Leftrightarrow\mbox{Ker}p=\mbox{Ker}q.
+\end{align*}
+
+\item  $p\circ q+q\circ p=0\Rightarrow p\circ q=(p\circ p)\circ q=p\circ(p\circ q)=-p\circ (q\circ p)$ et de même,
+$q\circ p=q\circ p\circ p=-p\circ q\circ p$. En particulier, $p\circ q=q\circ p$ et donc
+$0=p\circ q+q\circ p=2p\circ q=2q\circ p$ puis $p\circ q=q\circ p=0$.
+
+La réciproque est immédiate.
+
+$p+q\;\mbox{projecteur}\;\Leftrightarrow(p+q)^2=p+q\Leftrightarrow p^2+pq+qp+q^2=p+q\Leftrightarrow pq+qp= 0\Leftrightarrow pq=qp=0$ (d'après ci-dessus).
+Ensuite, $\mbox{Im}(p+q)=\{p(x)+q(x),\;x\in E\}\subset\{p(x)+q(y),\;(x,y)\in E^2\}=\mbox{Im}p+\mbox{Im}q$.
+
+Réciproquement, soit $z$ un élément de $\mbox{Im}p+\mbox{Im}q$. Il existe deux vecteurs $x$ et $y$ de $E$ tels que
+$z=p(x)+q(y)$. Mais alors, $p(z)=p^2(x)+pq(y)=p(x)$ et $q(z)=qp(x)+q^2(y)=q(y)$ et donc
+
+$$z=p(x)+p(y)=p(z)+q(z)=(p+q)(z)\in\mbox{Im}(p+q).$$
+
+Donc, $\mbox{Im}p+\mbox{Im}q\subset\mbox{Im}(p+q)$ et finalement, $\mbox{Im}(p+q)=\mbox{Im}p+\mbox{Im}q$.
+
+$\mbox{Ker}p\cap\mbox{Ker}q=\{x\in E/\;p(x)=q(x)=0\}\subset\{x\in E/\;p(x)+q(x)=0\}=\mbox{Ker}(p+q)$.
+
+Réciproquement, si $x$ est élément de $\mbox{Ker}(p+q)$ alors $p(x)+q(x)=0$. Par suite,
+$p(x)=p^2(x)+pq(x)=p(p(x)+q(x))=p(0)=0$ et $q(x)=qp(x)+q^2(x)=q(0)=0$. Donc, $p(x)=q(x)=0$ et
+$x\in\mbox{Ker}p\cap\mbox{Ker}q$. Finalement, $\mbox{Ker}(p+q)=\mbox{Ker}p\cap\mbox{Ker}q$.
+\end{enumerate}
+\fincorrection
+\finexercice

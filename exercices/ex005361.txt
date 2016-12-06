@@ -1,0 +1,43 @@
+\exercice{5361, rouget, 2010/07/04}
+\enonce[***]
+Dans $E=\Rr^n$, on considère l'hyperplan $H$ d'équation $x_1+...+x_n=0$ dans la base canonique $(e_i)_{1\leq i \leq n}$ de $E$. Pour $\sigma\in S_n$ donnée, on considère l'endomorphisme $f_\sigma$ de $E$ défini par~:~$\forall i\in E,\;f_\sigma(e_i)=e_{\sigma(i)}$.
+
+On pose alors $p=\frac{1}{n!}\sum_{\sigma\in S_n}^{}f_\sigma$. Montrer que $p$ est une projection dont on déterminera l'image et la direction.
+\finenonce
+
+\noindication
+
+\correction
+Pour $(x_1,...,x_n)\in E$, on pose $\varphi((x_1,...,x_n))=x_1+...+x_n$. $\varphi$ est une forme linéaire non nulle sur $E$ et $H$ est le noyau de $\varphi$. $H$ est donc bien un hyperplan de $E$.
+
+Il est clair que, pour $(\sigma,\sigma')\in S_n^2$, $f_\sigma\circ f_{\sigma'}=f_{\sigma\circ\sigma'}$.
+$(\mathcal{L}(E),+,.)$ est un espace vectoriel et donc, $p$ est bien un endomorphisme de $E$.
+
+$$p^2=\frac{1}{n!^2}\left(\sum_{\sigma\in S_n}^{}f_\sigma\right)^2=\sum_{(\sigma,\sigma')\in(S_n)^2}^{}f_\sigma\circ f_{\sigma'}.$$
+
+Mais, $(S_n,\circ)$ est un groupe fini. Par suite, l'application $\begin{array}[t]{ccc}
+S_n&\rightarrow&S_n\\
+\sigma&\mapsto&\sigma\circ\sigma'
+\end{array}$, injective (même démarche que dans l'exercice \ref{exo:suprou8ter}), est une permutation de $S_n$. On en déduit que, pour $\sigma'$ donnée, $\sum_{\sigma\in S_n}^{}f_{\sigma\circ\sigma'}=\sum_{\sigma\in S_n}^{}f_{\sigma}$. Ainsi, en posant $q=n!p$.
+
+$$p^2=\frac{1}{n!^2}\sum_{\sigma'\in S_n}^{}(\sum_{\sigma\in S_n}^{}f_{\sigma\circ\sigma'})=\frac{1}{n!^2}\sum_{\sigma'\in S_n}^{}q=\frac{1}{n!^2}.n!q=\frac{1}{n!}q=p.$$
+
+$p$ est donc une projection. Déterminons alors l'image et le noyau de $p$. Soit $i\in\{1,...,n\}$. 
+
+$$p(e_i)=\frac{1}{n!}\sum_{\sigma\in S_n}^{}f_\sigma(e_i)=\frac{1}{n!}\sum_{\sigma\in S_n}^{}e_{\sigma(i)}.$$
+
+Maintenant, il y a (bien sûr) autant de permuations $\sigma$ telles que $\sigma(i)=1$, que de permutations $\sigma$ telles que $\sigma(i)=2$,... ou de permutations $\sigma$ telles que $\sigma(i)=n$, à savoir $\frac{n!}{n}=(n-1)!$. Donc,
+
+$$\forall i\in\{1,...,n\},\;p(e_i)=\frac{1}{n!}\frac{n!}{n}\sum_{k=1}^{n}e_k=\frac{1}{n}\sum_{k=1}^{n}e_k.$$
+
+Posons $u=\frac{1}{n}\sum_{k=1}^{n}e_k$. D'après ce qui précède,
+
+$$\mbox{Im}p=\mbox{Vect}(p(e_1),...,p(e_n))=\mbox{Vect}(u).$$
+
+Ensuite, si $x=x_1e_1+...+x_ne_n$ est un élément de $E$,
+
+$$p(x)=0\Leftrightarrow\sum_{k=1}^{n}x_kp(e_k)=0\Leftrightarrow(\sum_{k=1}^{n}x_k)u=0\Leftrightarrow\sum_{k=1}^{n}x_k=0\Leftrightarrow x\in H.$$
+
+Ainsi, $p$ est la projection sur $\mbox{Vect}(u)$ parallèlement à $H$.
+\fincorrection
+\finexercice

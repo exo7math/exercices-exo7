@@ -1,0 +1,22 @@
+\exercice{3217, quercia, 2010/03/08}
+
+\enonce[$X^2-2X\cos\theta+1$ divise $X^{2n}-2X^n\cos(n\theta)+1$]
+Montrer que $X^2-2X\cos\theta+1$ divise $X^{2n}-2X^n\cos n\theta+1$.
+Pour $\sin\theta \ne 0$, chercher le quotient.
+\finenonce
+
+\noindication
+
+\correction
+$X^{2n}-2X^n\cos n\theta+1 = (X^n-e^{in\theta})(X^n-e^{-in\theta})$.
+
+$Q$
+$=\Bigl(\sum_{k=0}^{n-1} X^ke^{i(n-1-k)\theta}\Bigr)
+  \Bigl(\sum_{\ell=0}^{n-1} X^le^{-i(n-1-\ell)\theta}\Bigr)$ \par
+$= \sum_{k=0}^{n-1} X^k\Bigl({\sum_{p=0}^k e^{i(k-2p)\theta}}\Bigr)
+ + \sum_{k=n}^{2n-2} X^k\Bigl({\sum_{p=k-n+1}^{n-1} e^{i(k-2p)\theta}}\Bigr)$ \par
+$= \sum_{k=0}^{n-1} X^k \frac {\sin(k+1)\theta}{\sin\theta}
+ + \sum_{k=n}^{2n-2} X^k \frac {\sin(2n-k-1)\theta}{\sin\theta}$. \par
+
+\fincorrection
+\finexercice 

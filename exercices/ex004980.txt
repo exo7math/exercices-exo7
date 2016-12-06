@@ -1,0 +1,49 @@
+\exercice{4980, quercia, 2010/03/17}
+\enonce[Groupes d'isotropie]
+
+Déterminer {\it toutes\/} les isométries
+
+\begin{enumerate}
+  \item d'un tétraèdre régulier.
+  \item d'un cube.
+  \item de deux droites non coplanaires.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item       $24$ éléments :
+      \halign{ \hskip 5cm #\hfill&\quad(#)\cr
+      identité &1\cr
+      rotations autour de l'axe d'une face &8\cr
+      symétries \% plan médiateur d'une arête &6\cr
+      $\frac12$-tour autour de la perpendiculaire commune à deux arêtes opposées &3\cr
+      $\frac14$-tour autour de la perp. \dots + symétrie \% plan médian &6\cr }
+  \item       $48$ éléments :
+      \halign{ \hskip 5cm #&\hfill#\hfill&\quad(#)\cr
+      identité &&1\cr
+      symétries &\% plan médian d'une face &3\cr
+      &\% plan diagonal d'une face &6\cr
+      &\% axe d'une face &3\cr
+      &\% axe d'une arête &6\cr
+      &\% centre du cube &1\cr
+      rotation &$\pm 2\pi/3$ autour d'une diagonale &8\cr
+      &$\pm \pi/2$ autour de l'axe d'une face &6\cr
+      symétries-rotations &$\pm \pi/2$ \% axe face &6\cr
+      &$\pm \pi/3$ \% diagonale &8\cr }
+
+  \item       si les droites ne sont pas perpendiculaires :
+      \halign{ \hskip 5cm #\hfill&\quad(#)\cr
+      identité &1\cr
+      $\frac12$-tour autour de la perpendiculaire commune &1\cr
+      $\frac12$-tour autour d'une bissectrice &2\cr }
+      si elles sont perpendiculaires, il y a aussi :
+      \halign{ \hskip 5cm #\hfill&\quad(#)\cr
+      symétrie \% plan contenant une droite et la perp. commune &2\cr
+      symétrie-$\frac14$-tour autour de la perp. commune &2\cr }
+\end{enumerate}
+ \fincorrection
+
+\finexercice

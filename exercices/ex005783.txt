@@ -1,0 +1,68 @@
+\exercice{5783, rouget, 2010/10/16}
+\enonce[***]
+Soit $a\in\Cc\setminus[-1,1]$.
+
+\begin{enumerate}
+ \item 
+   \begin{enumerate}
+   \item Développer en série trigonométrique la fonction $f~:~t\mapsto\frac{1}{a-\cos t}$ (utiliser la racine de plus petit module, notée $b$,  de l'équation $z^2-az+1=0$).
+   \item La série obtenue est-elle la série de \textsc{Fourier} de $f$ ?
+   \end{enumerate}
+
+\item  Déduire de 1) la valeur des intégrales $I_n=\int_{0}^{\pi}\frac{\cos(nt)}{a-\cos t}\;dt$, $n\in\Nn$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item 
+   \begin{enumerate}
+   \item Soit $a\in\Cc\setminus[-1,1]$. Pour tout réel $t$, $a-\cos t\neq0$ et
+
+\begin{center}
+$\frac{1}{a-\cos t}=\frac{2}{2a-e^{it}-e^{-it}}=\frac{-2e^{it}}{(e^{it})^2-2ae^{it}+1}$.
+\end{center}
+
+L'équation $z^2-2az+1=0$ admet deux solutions non  nulles inverses l'une de l'autre. On note $b$ la solution de plus petit module de sorte que $|b|\leqslant1$.
+
+On ne peut avoir $|b|=1$ car alors il existe $\theta\in\Rr$ tel que $b=e^{i\theta}$. On en déduit que $2a=b+\frac{1}{b}=2\cos\theta\in[-2,2]$ puis que $a\in[-1,1]$ ce qui n'est pas. Donc $|b|\neq1$. Plus précisément, puisque $|b|\leqslant\left|\frac{1}{b}\right|$, on a $|b|<1$ et $\left|\frac{1}{b}\right|$. En particulier, $b\neq\frac{1}{b}$.
+
+Ensuite, pour $|t|<|b|$, on a
+
+\begin{align*}\ensuremath
+\frac{1}{a-\cos t}&=\frac{-2e^{it}}{(e^{it}-b)\left(e^{it}-\frac{1}{b}\right)}=\frac{2}{\frac{1}{b}-b}\left(\frac{b}{e^{it}-b}-\frac{1/b}{e^{it}-\frac{1}{b}}\right)=\frac{2b}{1-b^2}\left(\frac{be^{-it}}{1-be^{-it}}+\frac{1}{1-be^{it}}\right)\\
+ &=\frac{2b}{1-b^2}\left(be^{-it}\sum_{n=0}^{+\infty}b^ne^{-int}+\sum_{n=0}^{+\infty}b^ne^{int}\right)\;(\text{car}\;|be^{it}|=|be^{-it}|=|b|<1)\\
+ &=\frac{2b}{1-b^2}\left(\sum_{n=0}^{+\infty}b^{n+1}e^{-i(n+1)t}+\sum_{n=0}^{+\infty}b^ne^{int}\right)=\frac{2b}{1-b^2}\left(1+\sum_{n=1}^{+\infty}b^ne^{int}+\sum_{n=1}^{+\infty}b^{n}e^{-int}\right)\\
+ &=\frac{2b}{1-b^2}\left(1+2\sum_{n=1}^{+\infty}b^n\cos(nt)\right).
+\end{align*}
+
+\begin{center}
+\shadowbox{
+$\forall t\in\Rr$, $\frac{1}{a-\cos t}=\frac{2b}{1-b^2}\left(1+2\sum_{n=1}^{+\infty}b^n\cos(nt)\right)$.
+}
+\end{center}
+
+   \item Pour tout réel $t\in[-\pi,\pi]$ et tout entier naturel non nul $n$, on a $|b^n\cos(nt)|\leqslant|b|^n$. Comme la série numérique de terme général $|b|^n$ converge, on en déduit que la série de fonctions de terme général $t\mapsto b^n\cos(nt)$, $n\in\Nn$, converge normalement et donc uniformément sur le segment $[-\pi,\pi]$.
+
+On sait alors que la série obtenue est la série de \textsc{Fourier} de $f$.
+
+  \end{enumerate}
+
+\item  Puisque la fonction $f$ est paire, pour tout entier naturel $n$, $a_n(f)=\frac{2}{\pi}\int_{0}^{\pi}\frac{\cos(nt)}{a-\cos t}\;dt$. Donc, pour tout entier naturel $n$ (y compris pour $n=0$),
+
+\begin{center}
+$\int_{0}^{\pi}\frac{\cos(nt)}{a-\cos t}\;dt=\frac{\pi a_n(f)}{2}=\frac{2b^{n+1}\pi}{1-b^2}$
+\end{center}
+
+Finalement,
+
+\begin{center}
+\shadowbox{
+$\forall n\in\Nn$, $\int_{0}^{\pi}\frac{\cos(nt)}{a-\cos t}\;dt=\frac{2b^{n+1}\pi}{1-b^2}$.
+}
+\end{center}
+\end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,67 @@
+\exercice{5750, rouget, 2010/10/16}
+\enonce[**** Inverse d'une série entière]
+Soit  $\sum_{n=0}^{+\infty}a_nz^n$ une série entière de rayon $R > 0$ et telle que $a_0 = 1$ (ou plus généralement $a_0\neq 0$).
+
+\begin{enumerate}
+ \item  Montrer qu'il existe une et une seule suite $(b_n)_{n\in\Nn}$ telle que $\forall n\in\Nn$,  $\sum_{k=0}^{n}a_kb_{n-k}=\delta_{0,n}$.
+
+\item  Montrer que la série entière $\sum_{n=0}^{+\infty}b_nz^n$ a un rayon strictement positif.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+On cherche une série entière $\sum_{n=0}^{+\infty}b_nx^n$ de rayon $R$ strictement positif telle que $\left(\sum_{n=0}^{+\infty}a_nx^n\right)\left(\sum_{n=0}^{+\infty}b_n^xn\right) = 1$ pour $x$ élément d'un certain intervalle ouvert non vide de centre $0$.
+
+Cette égalité impose à la suite $(b_n)$ de vérifier le système d'équations $\left\{
+\begin{array}{l}
+a_0b_0=1\\
+a_0b_1+a_1b_0=0\\
+a_0b_2+a_1b_1+a_2b_0=0\\
+\rule{1.5cm}{0mm}\vdots\\
+a_0b_n+a_1b_{n-1}+\ldots+a_{n-1}b_1+a_nb_0=1\\
+\rule{2.5cm}{0mm}\vdots
+\end{array}
+\right.$
+
+\begin{enumerate}
+ \item  Montrons par récurrence que $\forall n\in\Nn$, $b_n$ existe et est unique.
+
+\textbullet~Puisque $a_0 = 1$, $a_0b_0=1\Leftrightarrow b_0=1$. Ceci montre l'existence et l'unicité de $b_0$.
+
+\textbullet~Soit $n\in\Nn$. Supposons avoir démontré l'existence et l'unicité de $b_0$, $b_1$, \ldots, $b_n$. 
+
+Alors $a_0b_{n+1}+a_1b_n+\ldots+a_nb_1+a_{n+1}b_0=0\Leftrightarrow b_{n+1}=-a_1b_n-\ldots-a_nb_1-a_{n+1}b_0$. Ceci montre l'existence
+
+et l'unicité de $b_{n+1}$.
+
+On a montré par récurrence que la suite $(b_n)$ existe et est unique.
+
+\item  Il faut alors vérifier que la série entière associée à la suite $(b_n)_{n\in\Nn}$ a un rayon de convergence strictement positif .
+
+Soit $R > 0$ le rayon de la série associée à la suite $(a_n)_{n\in\Nn}$ et soit $r$ un réel tel que $0 < r < R$.
+
+On sait que la suite $(a_nr^n)_{n\in\Nn}$ est bornée et il existe $M > 0$ tel que pour tout entier naturel $n$, $|a_n|\leqslant\frac{M}{r^n}$.
+
+$b_0 = 1$ puis $|b_1| = |-a_1b_0|\leqslant\frac{M}{r}$ puis $|b_2|=|-a_2b_0-a_1b_1|\leqslant\frac{M}{r^2}+\frac{M}{r}\times\frac{M}{r}=\frac{M(M+1)}{r^2}$ puis
+
+\begin{center}
+$|b_3| =|-a_3b_0-a_2b_1-a_1b_2|\leqslant\frac{M}{r^3}+\frac{M}{r^2}\times+\frac{M}{r}+\frac{M}{r}\times\frac{M(M+1)}{r^2}=\frac{M(M^2+2M+1)}{r^3}=\frac{M(M+1)^2}{r^3}$.
+\end{center}
+
+Montrons alors par récurrence que $\forall n\in\Nn^*$, $b_n|\leqslant\frac{M(M+1)^{n-1}}{r^n}$.
+
+\textbullet~C'est vrai pour $n=1$.
+
+\textbullet~Soit $n\geqslant1$, supposons que $\forall k\in\llbracket1,n\rrbracket$, $|b_k|\leqslant\frac{M(M+1)^{k-1}}{r^k}$. Alors 
+
+\begin{align*}\ensuremath
+\left|b_{n+1}\right|&\leqslant|-a_{n+1}b_0| +|-a_nb_1| + ...+ |-a_1b_n|\leqslant\frac{M}{r^{n+1}}+\sum_{k=1}^{n}\frac{M(M+1)^{k-1}}{r^k}\times\frac{M}{r^{n+1-k}}\\
+ &=\frac{M}{r^{n+1}}\left(1+ M\sum_{k=1}^{n}(M+1)^{k-1}\right)=\frac{M}{r^{n+1}}\left(1+ M\frac{(M+1)^n-1}{(M+1)-1}\right)=\frac{M(M+1)^n}{r^{n+1}}.
+\end{align*}
+
+On a montré par récurrence que pour tout entier naturel non nul $n$, $|b_n|\leqslant\frac{M(M+1)^n}{r^{n+1}}$. En particulier , le rayon $R'$ de la série entière associée à la suite $(b_n)_{n\in\Nn}$ vérifie $R'\geqslant\frac{r}{M+1}> 0$. Ceci valide les calculs initiaux sur $]-\rho,\rho[$ où $\rho=\text{Min}(R,R')>0$ et donc l'inverse d'une fonction $f$ développable en série entière à l'origine et telle que $f(0)\neq0$ est développable en série entière à l'origine.
+\end{enumerate}
+\fincorrection
+\finexercice

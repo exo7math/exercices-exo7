@@ -1,0 +1,51 @@
+\exercice{3292, quercia, 2010/03/08}
+
+\enonce[ENS MP 2002]
+  \item Soit $P\in\C[X]$ admettant deux racines distinctes et tel que $P''$
+    divise $P$. Montrer que $P$ est {\`a} racines simples.
+
+  \item Soit $P\in\R[X]$ admettant deux racines r{\'e}elles distinctes, et tel que
+    $P''$ divise $P$. Montrer que $P$ est scind{\'e} sur~$\R$ et {\`a} racines simples.
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item On suppose $P\ne 0$.  Soient $\alpha_1,\dots,\alpha_p$ les
+  racines de $P$ de multiplicit{\'e}s $m_1,\dots,m_p$ et
+  $n=m_1+\dots+m_p=\deg(P)$.  On a $\frac{P'}P =
+  \sum_i\frac{m_i}{X-\alpha_i}$ et $\sum_i\frac{-m_i}{(X-\alpha_i)^2}
+  = \Bigl(\frac{P'}P\Bigr)' = \frac{P''}P - \Bigl(\frac{P'}P\Bigr)^2 =
+  \frac{n(n-1)}{(X-\alpha)(X-\beta)} -
+  \Bigl(\sum_i\frac{m_i}{X-\alpha_i}\Bigr)^2$ o{\`u} $\alpha,\beta$ sont
+  les deux racines de~$P$ manquant dans~$P''$.  Si
+  $\alpha_i\notin\{\alpha,\beta\}$ alors en comparant les termes en
+  $1/(X-\alpha_i)^2$ des membres extr{\^e}mes on trouve $m_i=1$. De m{\^e}me
+  si $\alpha_i=\alpha\ne\beta$ ou l'inverse. Reste le cas
+  $\alpha_i=\alpha=\beta$ qui donne $-m_i = n(n-1) - m_i^2$ donc $m_i
+  = n$ ce qui contredit l'hypoth{\`e}se ``$P$ a deux racines distinctes''.
+\item Soient $\alpha_i<\alpha_j$ les deux plus petites racines r{\'e}elles
+  de~$P$. Si $\alpha_i$ est aussi racine de $P''$ alors $P$ et $P''$
+  changent de signe en $\alpha_i$ et, en rempla\c cant au besoin $P$
+  par $-P$, $P$ est convexe positif sur $]-\infty,\alpha_i[$ et
+  concave n{\'e}gatif sur $]\alpha_i,\alpha_j[$ ce qui est absurde.  Donc
+  $\alpha_i\in\{\alpha,\beta\}$. De m{\^e}me pour la plus grande racine
+  r{\'e}elle de~$P$, ce qui prouve que $\alpha$ et $\beta$ sont r{\'e}els. En
+  identifiant les {\'e}l{\'e}ments de premi{\`e}re esp{\`e}ce dans les deux
+  d{\'e}compositions de $P'/P$ on obtient~:
+  $$\forall\ i\in{[[1,n]]},\ \sum_{j\ne i}\frac2{\alpha_i-\alpha_j} =
+  \begin{cases}n(n-1)/(\alpha-\beta) & \text{ si } \alpha_i=\alpha,\cr
+    n(n-1)/(\beta-\alpha) &\text{ si } \alpha_i=\beta,\cr 0 &\text{
+      sinon.}\cr\end{cases}$$ En particulier pour
+  $\alpha_i\notin\{\alpha,\beta\}$ on a~: $\sum_{j\ne
+    i}\frac{\overline{\alpha_i}-\overline{\alpha_j}}{|\alpha_i-\alpha_j|^2}
+  = 0$ ce qui signifie que $\overline{\alpha_i}$ est barycentre des
+  $\overline{\alpha_j}$ avec des coefficients positifs, donc
+  appartient {\`a} l'enveloppe convexe des $\overline{\alpha_j}$, $j\ne
+  i$. Il en va de m{\^e}me sans les barres, et donc l'ensemble des racines
+  de $P$ n'a pas d'autres points extr{\'e}maux que $\alpha$ et $\beta$~;
+  il est inclus dans $[\alpha,\beta]$ donc dans~$\R$.
+\end{enumerate}
+\fincorrection
+\finexercice 

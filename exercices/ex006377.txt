@@ -1,0 +1,111 @@
+\exercice{6377, potyag, 2011/10/16}
+\enonce
+\label{pot:exo9}
+ Le but de cet exercice
+est de donner la construction d'un groupe libre et d'introduire la notion de
+ présentation d'un groupe.
+
+Soit $S=\{s_i\}_{i\in I}$ un ensemble quelconque qu'on appellera
+alphabet. Un mot dans l'alphabet $S$ est par définition une
+succession finie (ou vide) :
+
+$$w=s^{\epsilon_1}_{i_1}\cdot\cdot\cdot s^{\epsilon_k}_{i_k},\
+o\grave u\ \epsilon_i=\pm 1\ et\ s_{i_j}\in S,\
+k\in\N\hfill\eqno(1)$$
+
+
+Notons $W$ l'ensemble de tous les mots. Un mot $w\in W$ est dit
+réduit si son écriture (1)  ne contient pas deux lettres
+consécutives du type $ s^{\epsilon}_{i}$ et $ s^{-\epsilon}_{i}$.
+Les mots $w_1$ et $w_2$ sont dits voisins si $w_2=g s_i^{\epsilon}
+s_i^{-\epsilon} h$ et $w_1=g h$. Deux mots $f$ et $g$ s'appellent
+équivalents (on note $f\sim g$) s'il existe une succession finie
+de mots : $f=w_0, w_1, ..., w_n=g$ où les mots $w_i$ et
+$w_{i-1}$ sont voisins ($i\in\{1,...,n\}$).
+
+\begin{enumerate}
+\item Montrer que $\sim$ est une relation
+d'équivalence.
+
+
+
+Etant donné un mot $f=a_1 ... a_t$   (où $a_j=
+s_{i_j}^{\epsilon_j}$) définissons une suite de transformations
+appelée $R$-procédé :
+$R_0=e$ (le mot vide), $R_1=a_1$
+et 
+$$R_{i+1}= 
+\begin{cases}
+  R_i a_{i+1} & \text{ si } R_i \text{ n'est  pas un  mot réduit du type } Xa^{-1}_{i+1} \cr
+  X           & \text{ si } R_i \text{ est un mot réduit du type } Xa^{-1}_{i+1} \cr
+\end{cases}.$$
+
+
+Autrement dit un $R$-procédé consiste à faire
+toutes les simplifications de droite à gauche.
+
+\item On suppose que $w_1=a_1 ... a_r a_{r+1} ... a_t$ et $w_1=a_1
+... a_r s_j^{\epsilon} s_j^{-\epsilon} a_{r+1} ... a_t$ sont deux
+mots et que $R^i$ désigne le $R$-procédé appliqué au mot
+$w_i$. Montrer que $R^1_t=R^2_{t+2}$ c.-à.-d.
+$R^1(w_1)=R^2(w_2)$.
+En déduire que chaque classe de $W/\sim$
+contient un mot réduit et un seul.
+
+Pour deux classes $[w_i]\in W/\sim\ (i=1,2)$ définissons
+maintenant leur produit  comme suit (de gauche à droite) :
+
+$$[w_1] [w_2] = [w_1 w_2]\hfill\eqno (2).$$
+
+\item Démontrer que (2) ne dépend pas du choix des
+représentants des classes $[w_i]$. Montrer que l'ensemble
+$\displaystyle F=W/\sim$ muni de l'opération (2) est un
+groupe.
+
+
+Ce groupe s'appelle groupe libre engendré par $S$, on appelle
+les éléments de $S$ géné\-ra\-teurs libres de $F$.
+
+Soit maintenant $G$
+un groupe quelconque engendré par un système $X$ où
+$X=\{x_i\}_{i\in I}$ et $F$ est le groupe libre engendré par
+$S$. Supposons qu'il existe une bijection $f:S\mapsto X$ telle que
+$f(s_i)=x_i\ (i\in I)$.
+
+
+
+\item 
+  \begin{enumerate}
+  \item Montrer que $f$ se prolonge en un homomorphisme $f:F\mapsto
+  G$.
+
+
+  \item En particulier, en déduire que si ${\text { Card } (S)}= \text { Card } (S') $, alors
+   le groupe libre engendré par $S$ est isomorphe au le groupe libre engendré par
+  $S'$. 
+  \end{enumerate}
+
+Si de plus $\text { Card } (S) =n$ ce groupe est  noté $F_n$.
+
+
+Notons $H= {\text Ker}\ f$, et appelons un sous-ensemble
+$H'\subset H$ ensemble des relations de $G$ si le plus petit
+sous-groupe normal de $G$ contenant $H'$ co\"\i ncide avec $H$. La donnée
+du couple $S$, $H'$ définit le groupe $G$ à un
+isomorphisme près ($G$ est isomorphe au groupe quotient  $X/H$).
+La donnée d'un tel couple est notée $< S\ \vert\ H'> $
+ et s'appelle présentation de $G$.
+
+
+
+
+\item Montrer que le groupe libre ne contient pas d'élément non-trivial d'ordre
+fini.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\nocorrection
+
+\finexercice

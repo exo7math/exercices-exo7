@@ -1,0 +1,75 @@
+\exercice{1787, drutu, 2003/10/01}
+
+\enonce
+D\'eterminer les limites
+lorsqu'elles existent:
+\begin{enumerate}
+\item $\lim_{(x,y)\to (0,0)} \frac{x}{x^2+y^2}  $ 
+\item$ \lim_{(x,y)\to (0,0)} \frac{(x+2y)^3}{x^2+y^2} $ 
+\item$ \lim_{(x,y)\to (1,0)} \frac{\log (x+e^y)}{\sqrt{x^2+y^2}} $ 
+\item $\lim_{(x,y)\to (0,0)} \frac{x^4+y^3-xy}{x^4+y^2} $ 
+\item $ \lim_{(x,y)\to (0,0)} \frac{x^3y}{x^4+y^4}  $ ;
+\item $ \lim_{(x,y)\to (0,0)} \frac{(x^2+y^2)^2}{x^2-y^2} $ ;
+\item $ \lim_{(x,y)\to (0,0)} \frac{1-\cos xy}{y^2}  $ ;
+\item $ \lim_{(x,y)\to (0,0)} \frac{\sin x}{\cos y-\cosh x} $ 
+\end{enumerate}
+\finenonce
+
+\indication 
+\begin{enumerate}
+\item 
+R\'efuter l'existence de la limite \`a l'aide
+de l'\'etude des limites le long de deux courbes adapt\'ees.
+
+\item Utiliser les coordonn\'ees polaires dans le plan.
+
+\item Si $\lim_{(x,y) \to (x_0,y_0)}h(x,y)$ existe et est non nul
+alors 
+\[
+\lim_{(x,y) \to (x_0,y_0)}\frac{f(x,y)}{h(x,y)}=
+\frac{\lim_{(x,y) \to (x_0,y_0)}f(x,y)}{\lim_{(x,y) \to (x_0,y_0)}h(x,y)} .
+\]
+\item
+Chercher deux courbes dans
+le domaine de d\'efinition
+qui tendent vers l'origine
+telles que les limites, calcul\'ees le long de ces courbes,
+existent mais ont des valeures distinctes.
+\end{enumerate}
+\finindication
+
+\correction
+
+\begin{enumerate}  
+\item
+$\lim_{(x,y)\to (0,0),y=0} \frac{x}{x^2+y^2}$ n'existe pas
+d'o\`u $\lim_{(x,y)\to (0,0)} \frac{x}{x^2+y^2}  $ n'existe pas.
+
+\item
+$\frac{(x+2y)^3}{x^2+y^2} =r(\cos \varphi +2 \sin \varphi)^3$ d'o\`u
+$\left|\frac{(x+2y)^3}{x^2+y^2}\right| \leq 27 r$ et
+\[
+\lim_{(x,y)\to (0,0)} \frac{(x+2y)^3}{x^2+y^2} =0
+\]
+car $\lim_{(x,y)\to (0,0)} r=0$.
+
+\item  
+$\lim_{(x,y)\to (1,0)} {\sqrt{x^2+y^2}} =1 \ne 0$ et
+$\lim_{(x,y)\to (1,0)} {\log (x+e^y)}=\log 2$  d'o\`u
+\[
+\lim_{(x,y)\to (1,0)} \frac{\log (x+e^y)}{\sqrt{x^2+y^2}}=\log 2. 
+\]
+
+\item 
+$\mathrm{lim}_{\begin{smallmatrix}(x,y)\to (0,0)\\y=2\end{smallmatrix}} \frac{x^4+y^3-xy}{x^4+y^2} = 1$ tandis que
+$\mathrm{lim}_{\begin{smallmatrix}(x,y)\to (0,0)\\x=0\end{smallmatrix}} \frac{x^4+y^3-xy}{x^4+y^2} =0$ 
+ d'o\`u
+\[
+\lim_{(x,y)\to (0,0)} \frac{x^4+y^3-xy}{x^4+y^2} 
+\]
+n'existe pas.
+\end{enumerate}
+\fincorrection
+
+\finexercice
+

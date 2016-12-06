@@ -1,0 +1,44 @@
+\exercice{5685, rouget, 2010/10/16}
+\enonce
+Commutant de $\left(
+\begin{array}{ccc}
+1&0&-1\\
+1&2&1\\
+2&2&3
+\end{array}
+\right)$.
+\finenonce
+
+\noindication
+
+\correction
+Soit $A=\left(
+\begin{array}{ccc}
+1&0&-1\\
+1&2&1\\
+2&2&3
+\end{array}
+\right)$. $\chi_A=\left|
+\begin{array}{ccc}
+1-X&0&-1\\
+1&2-X&1\\
+2&2&3-X
+\end{array}
+\right|=(1-X)(X^2-5X+4)-(-2+2X)=(1-X)(X^2-5X+4+2)=-(X-1)(X-2)(X-3)$.
+
+$A$ est à valeurs propres réelles et simples. $A$ est diagonalisable dans $\Rr$ et les sous-espaces propres sont des droites.
+
+Si $M$ est une matrice qui commute avec $A$, $M$ laisse stable ces droites et donc si $P$ est une matrice inversible telle que $P^{-1}AP$ soit diagonale alors la matrice $P^{-1}MP$ est diagonale. Réciproquement une telle matrice commute avec $A$.
+
+\begin{center}
+$C(A)=\{P\text{diag}(a,b,c)P^{-1},\;(a,b,c)\in\Cc^3\}$.
+\end{center}
+
+On trouve $C(A)=\left\{\left(\begin{array}{ccc}
+2b-c&-a+2b-c&\frac{a-c}{2}\\
+-b+c&a-b+c&(-a+c)/2\\
+2c-2b&-2b+c&c
+\end{array}
+\right),\;(a,b,c)\in\Cc^3\right\}$. On peut vérifier que $C(A)=\text{Vect}(I,A,A^2)$.
+\fincorrection
+\finexercice

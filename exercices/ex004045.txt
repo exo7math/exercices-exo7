@@ -1,0 +1,50 @@
+\exercice{4045, quercia, 2010/03/11}
+\video{OchDDAXSqog}
+\enonce[Approximation de cos]
+Trouver $a,b\in\R$ tels que 
+$$\cos x - \frac{1+ax^2}{1+bx^2}$$
+soit un $o(x^n)$ en $0$ avec $n$ maximal.
+\finenonce
+
+\indication
+Identifier les dl de $\cos x$ et $\frac{1+ax^2}{1+bx^2}$ en $x=0$.
+\finindication
+
+\correction
+Le dl de $\cos x$ en $0$ à l'ordre $6$ est :
+$$\cos x = 1 - \frac{1}{2!} x^2 + \frac{1}{4!}x^4  - \frac{1}{6!} x^6 + o(x^6).$$
+
+Calculons celui de $\frac{1+ax^2}{1+bx^2}$ :
+
+\begin{align*}
+\frac{1+ax^2}{1+bx^2} 
+  & = (1+ax^2) \times \frac{1}{1+bx^2} \\
+  & = (1+ax^2)\times \big(1-bx^2+b^2x^4-b^3x^6+o(x^6) \big) \quad \text{ car } \frac{1}{1+u} = 1-u+u^2 - u^3+o(u^3) \\
+  &= \ \ \cdots  \qquad \text{ on développe } \\
+  &= 1 + (a-b) x^2 - b(a-b) x^4 + b^2(a-b) x^6 + o(x^6) \\
+\end{align*}
+
+Notons $\Delta(x) = \cos x - \frac{1+ax^2}{1+bx^2}$ alors 
+$$\Delta(x) = \big(-\frac12-(a-b)\big)x^2 + \big(\frac{1}{24} + b(a-b)\big) x^4 
++ \big(-\frac{1}{720}-b^2(a-b)\big) x^6 + o(x^6).$$
+
+Pour que cette différence soit la plus petite possible (lorsque $x$ est proche de $0$)
+il faut annuler le plus possible de coefficients de bas degré.
+On souhaite donc avoir 
+$$-\frac12-(a-b) = 0 \qquad \text{et} \qquad \frac{1}{24} + b(a-b)=0.$$
+En substituant l'égalité de gauche dans celle de droite on trouve :
+$$a=-\frac{5}{12}  \qquad \text{et} \qquad b=\frac{1}{12}.$$
+
+On obtient alors 
+$$\Delta(x) =  \big(-\frac{1}{720}-b^2(a-b)\big) x^6 + o(x^6) = \frac{1}{480} x^6 + o(x^6).$$
+
+\bigskip
+
+Avec notre choix de $a,b$ nous avons obtenu une très bonne approximation de $\cos x$.
+Par exemple lorsque l'on évalue  $\frac{1+ax^2}{1+bx^2}$ (avec $a=-\frac{5}{12}$ et $b=\frac{1}{12}$)
+en $x=0.1$ on trouve :
+$$0.9950041631\ldots$$
+Alors que 
+$$\cos(0.1)=0.9950041652\ldots$$
+En l'on trouve ici $\Delta(0.1) \simeq 2\times 10^{-9}$.
+\fincorrection

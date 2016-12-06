@@ -1,0 +1,54 @@
+\exercice{2605, delaunay, 2009/05/19}
+\enonce
+ Soit $u$ l'endomorphisme de $\R^3$ dont la matrice dans la base canonique est  
+$$A=\begin{pmatrix}-4&-2&-2 \\  2&0&2 \\  3&3&1\end{pmatrix}.$$ 
+\begin{enumerate}
+ \item D\'eterminer et factoriser le polyn\^ome caract\'eristique de $A$.
+ \item  D\'emontrer que les valeurs propres de $A$ sont $1$ et $-2$. D\'eterminer les sous-espaces propres associ\'es. 
+ \item D\'emontrer que $A$ est diagonalisable et donner une base de $\R^3$ dans laquelle la matrice de $u$ est diagonale.
+ \item Trouver une matrice $P$ telle que $P^{-1}AP$ soit diagonale.
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+{\it Soit $u$ l'endomorphisme de $\R^3$ dont la matrice dans la base canonique est}  
+$$A=\begin{pmatrix}-4&-2&-2 \\  2&0&2 \\  3&3&1\end{pmatrix}.$$ 
+\begin{enumerate}
+ \item  {\it D\'eterminons et factorisons le polyn\^ome caract\'eristique de $A$.}
+
+Par opérations sur les colonnes puis les lignes, on a
+$$P_A(X)=\begin{vmatrix}-4-X&-2&-2 \\  2&-X&2 \\  3&3&1-X\end{vmatrix}=\begin{vmatrix}-4-X&0&-2 \\  2&-X-2&2 \\  3&2+X&1-X\end{vmatrix},$$ d'où
+$$P_A(X)=\begin{vmatrix}-4-X&0&-2 \\  2&-X-2&2 \\  5&0&3-X\end{vmatrix}$$
+et, en développant par rapport à la deuxième colonne
+$$P_A(X)=-(X+2)[(-4-X)(3-X)+10]=-(X+2)(X^2+X-2)=-(X+2)^2(X-1).$$
+ \item {\it D\'emontrons que les valeurs propres de $A$ sont $1$ et $-2$ et d\'eterminons les sous-espaces propres associ\'es}.
+
+Les valeurs propres de $A$ sont les racines du polyn\^ome caracteristique, c'est-à-dire, $1$, valeur propre simple et, $-2$, valeur propre double.
+
+Notons $E_1$ le sous-espace propre associé à la valeur propre $1$, 
+$$E_1=\{\vec u=(x,y,z),\ A.\vec u=\vec u\}.$$
+Ainsi
+$$\vec u=(x,y,z)\in E_1\iff\left\{\begin{align*}-&5x-2y-2z=0 \\ &2x-y+2z=0 \\ &3x+3y=0\end{align*}\right.\iff
+\left\{\begin{align*}&y=-x \\ &3x+2z=0\end{align*}\right.$$
+Le sous-espace propre $E_1$ est donc une droite vectorielle dont un vecteur directeur est donné, par exemple, par $\vec e_1=(-2,2,3)$.
+
+Notons $E_{-2}$ le sous-espace propre associé à la valeur propre $-2$, 
+$$E_{-2}=\{\vec u=(x,y,z),\ A.\vec u=-2\vec u\}.$$
+Ainsi
+$$\vec u=(x,y,z)\in E_{-2}\iff\begin{align*}-&2x-2y-2z=0 \\ &2x+2y+2z=0 \\ &3x+3y+3z=0\end{align*}\iff
+x+y+z=0$$
+Le sous-espace propre $E_{-2}$ est donc le plan vectoriel d'équation $x+y+z=0$, dont une base est donnée, par exemple, par $\vec e_2=(1,-1,0)$ et $\vec e_3=(1,0,-1)$.
+ \item {\it D\'emontrons que $A$ est diagonalisable et donnons une base de $\R^3$ dans laquelle la matrice de $u$ est diagonale.}
+
+Les sous-espaces propres associés aux valeurs propres sont de dimension la multiplicité de la valeur propre correspondante, ce qui prouve que la matrice $A$ est diagonalisable. Dans la base $(\vec e_1,\vec e_2,\vec e_3)$la matrice de l'endomorphisme associé à $A$ est diagonale, elle s'écrit
+$$D=\begin{pmatrix}1&0&0 \\  0&-2&0 \\  0&0&-2\end{pmatrix}.$$ 
+ \item {\it Trouvons une matrice $P$ telle que $P^{-1}AP$ soit diagonale.}
+
+La matrice de changement de base qui exprime la base $(\vec e_1,\vec e_2,\vec e_3)$ des vecteurs propres, trouvés ci-dessus, dans la base canonique est la matrice $P$ cherchée
+$$P=\begin{pmatrix}-2&1&1 \\  2&-1&0 \\  3&0&-1\end{pmatrix}\ \ {\hbox{et}}\ \ P^{-1}={\frac{1}{3}}\begin{pmatrix}1&1&1 \\  2&-1&2 \\  3&3&0\end{pmatrix},$$
+elle est inversible et on a $P^{-1}AP=D$. (Le calcul de $P^{-1}$ n'était pas demandé, ni nécessaire). 
+\end{enumerate}
+\fincorrection
+\finexercice

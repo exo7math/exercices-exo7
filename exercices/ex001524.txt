@@ -1,0 +1,89 @@
+\exercice{1524, barraud, 2003/09/01}
+
+\enonce
+On considère un espace euclidien $(E,<>)$. On rappelle que l'adjoint
+$u^{*}$ d'un endomorphisme $u$ est l'endomorphisme caractérisé par~:
+$$
+\forall (x,y)\in E^{2},\ <u(x),y>=<x,u^{*}(y)>
+$$
+
+On dit qu'un endomorphisme $u$ de $E$ est une similitude de $E$ si et
+seulement si $u$ est la composée d'une homotétie et d'une isométrie,
+c'est à dire si et seulement si~:
+$$
+ \exists\alpha\in\R\setminus\{0\},\ \exists v\in O(E)\ /\ u=\alpha v.
+$$
+
+\begin{enumerate}
+\item
+Redémontrer l'équivalence entre les trois caractérisations suivantes des
+isométries~:
+\begin{align*}
+  v\text{ est une isométrie} 
+  &\Leftrightarrow \forall x\in E\quad \Vert v(x)\Vert=\Vert x\Vert\\
+  &\Leftrightarrow \forall (x,y)\in E^{2}\quad <v(x),v(y)>=<x,y>\\
+  &\Leftrightarrow v^{*}v=\mathrm{id}
+\end{align*}
+\end{enumerate}
+
+\bigskip
+
+On veut montrer l'équivalence des assertions suivantes~:
+
+\begin{enumerate}
+\item[{\it(i)}] 
+$u$ est une similitude
+\item[{\it(ii)}]
+il existe un réel $\lambda>0$ tel que 
+$$
+ u^{*}u=\lambda\mathrm{id}
+$$ 
+
+\item[{\it(iii)}]
+$u$ conserve l'orthogonalité, c'est à dire :
+$$
+ \forall(x,y)\in E^{2}, <x,y>=0\Leftrightarrow <u(x),u(y)>=0
+$$
+\end{enumerate}
+
+\bigskip
+
+
+\begin{enumerate}
+\setcounter{enumi}{1}
+\item
+  Montrer que $(i)\Rightarrow (ii)$, puis que $(ii)\Rightarrow(i)$.
+
+\item
+  Montrer que $(i)\Rightarrow(iii)$.
+
+\item  
+  On suppose $(iii)$.
+
+  \begin{enumerate}
+  \item 
+    Soit $x\in E$, $x\neq 0$.Montrer que
+    $$
+    \forall y\in E \quad x\bot y\Leftrightarrow u^{*}u(x)\bot y
+    $$
+  \item
+    En déduire que $u^{*}u(x)$ appartient à la droite engendrée par $x$. On
+    note $\lambda_{x}$ le réel tel que $u^{*}u(x)=\lambda_{x} x$.
+  \item
+    Montrer que~: $\forall t\in\R,\ \lambda_{tx}=\lambda_{x}$
+  \item
+    Montrer que, pour tout couple $(x,y)$ de vecteurs linéairement
+    indépendants de $E$, on a~: $\lambda_{x}=\lambda_{y}$. 
+  \item
+    En déduire que l'application $x\mapsto\lambda_{x}$ est constante.
+    Conclure.
+  \end{enumerate}
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\nocorrection
+
+\finexercice
+

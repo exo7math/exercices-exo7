@@ -1,0 +1,24 @@
+\exercice{5197, rouget, 2010/06/30}
+\enonce[*IT]
+Déterminer le projeté orthogonal du point $M(x_0,y_0)$ sur la droite $(D)$ d'équation $x+3y-5=0$ ainsi que son symétrique orthogonal.
+\finenonce
+
+\noindication
+
+\correction
+$(D)$ est une droite de vecteur normal $(1,3)$. Le projeté orthogonal $p(M_0)$ de $M_0$ sur $(D)$ est de la forme $M_0+\lambda.\vec{n}$ où $\lambda$ est un réel à déterminer. Le point $M_0+\lambda.\vec{n}$ a pour coordonnées $(x_0+\lambda,y_0+3\lambda)$.
+
+$$M_0+\lambda.\vec{n}\in(D)\Leftrightarrow(x_0+\lambda)+3(y_0+3\lambda)-5=0\Leftrightarrow\lambda=\frac{-x_0-3y_0+5}{10}.$$
+
+$p(M_0)$ a pour coordonnées $(x_0+\frac{-x_0-3y_0+5}{10},y_0+3\frac{-x_0-3y_0+5}{10})$ ou encore $(\frac{9x_0-3y_0+5}{10},\frac{-3x_0+y_0+15}{10})$.
+
+Le symétrique orthogonal $s(M_0)$ vérifie~:~$s(M_0)=M_0+2\overrightarrow{M_0p(M_0)}$.
+
+Ses coordonnées sont donc 
+$(x_0+2(\frac{9x_0-3y_0+5}{10}-x_0),y0+2(\frac{-3x_0+y_0+15}{10}-y_0)$ ou encore
+
+$(\frac{4x_0-3y_0+5}{5},\frac{-3x_0-4y_0+15}{5})$.
+
+(Remarque. Si on n'avait pas déjà $p(M_0)$ on aurait cherché le symétrique sous la forme $M_0+\lambda.\vec{n}$, $\lambda$ étant entièrement déterminé par la condition~:~le milieu du segment $[M_0,s(M_0)]$ appartient à $(D)$.)
+\fincorrection
+\finexercice

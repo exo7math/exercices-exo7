@@ -1,0 +1,62 @@
+\exercice{2261, barraud, 2008/04/24}
+\enonce
+\begin{enumerate}
+  \item Soit $A$ un anneau quelconque. Alors l'anneau de polyn\^omes $A[x]$ n'est pas un corps.
+  \item Montrer que pour un anneau int\`egre $A$, les polyn\^omes unitaires
+lin\'eaires de $A[x]$ sont irr\'eductibles.
+  \item D\'ecrire tous les polyn\^omes irr\'eductibles de $\Cc[x]$ et 
+de $\Rr[x]$.
+  \item D\'emontrer que pour tout  corps $K$, l'anneau de polyn\^omes 
+$K[x]$ a une infinit\'e de polyno\^mes unitaires irr\'eductibles.
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+ \begin{enumerate}
+  \item
+    Le polynôme $X$ n'est jamais inversible dans $A[X]$. Si $A$ n'est pas
+    intègre, comme $A\subset A[X]$, $A[X]$ ne l'est pas non plus et ne
+    peut pas être un corps. Si $A$ est intègre et si $X=PQ$, alors
+    $\deg(P)+\deg(Q)=1$ donc $P$ ou $Q$ est une constante. Supposons par
+    exemple que ce soit $P$. $P|X$ donc $P|1$ donc $P$ est inversible, et
+    $Q\sim X$.
+  \item
+    Soit $P=X+a$ un polynôme unitaire linéaire de $A[X]$. Supposons que 
+    $P=P_1P_2$. Comme $A$ estintègre, on a $\deg(P_1)+\deg(P_2)=1$, donc
+    $P_1$ ou $P_2$ est une constante. Supposons que ce soit $P_1$. Alors
+    $P_1|1$ et $P_1|a$. En particulier, $P_1$ est inversible, et donc 
+    $P_2\sim P$.
+  \item
+    Les polynômes irréductibles de $\Cc[X]$ sont les polynômes de degré 1
+    (théorème de Gauss).
+
+    Les irréductibles de $\Rr[X]$ sont les polynômes de degré 1  et les
+    polynômes de degré 2 sans racine réelles. En effet, soit
+    $P\in\Rr[X]$. $P$ se factorise sur $\Cc[X]$ sous la forme
+    $P=a\prod(X-\lambda_i)^{\nu_i}$ (avec $i\neq j\Rightarrow
+    \lambda_i\neq \lambda_j$). Comme cette factorisation est unique, et
+    que $P=\overline{P}$, on en déduit que si $\lambda_i$ est racine de
+    $P$ avec multiplicité $\nu_i$, alors il en va de même pour
+    $\overline{\lambda_i}$. Ainsi, on obtient une factorisation de $P$
+    dans $\Rr[X]$: $P=a\prod_{\lambda_i\in\Rr} (X-\lambda_i)^{\nu_i}
+    \prod(X^2-2\Re(\lambda_i)X+|\lambda_i|^2)^{\nu_i}$.
+
+    $P$ est donc irréductible ssi $P$ est de la forme $P=a(X-\lambda)$
+    avec $\lambda\in\Rr$ ou $P=a(X^2-2\Re(\lambda_i)X+|\lambda_i|^2)$
+    avec $\lambda\notin\Rr$.
+
+  \item
+     Supposons que $K[X]$ ait un nombre fini de polynômes unitaires
+     irréductibles $P_1,\dots ,P_k$. Soit alors $P=\prod_{i=1}^k P_i+1$.
+
+     Comme $K$ est un corps, les irréductibles sont de degré au moins
+     $1$, et donc $P$ n'est pas l'un des $P_i$. Comme $P$ est unitaire,
+     $P$ n'est pas irréductible. En particulier, l'un au moins des $P_i$
+     divise $P$. Supposons par exemple que ce soit $P_1$: $\exists Q\in
+     K[X], P=P_1Q$. Alors $P_1(Q-\prod_{i=2}^k P_i)=1$. Donc $P_1$ est
+     inversible, ce qui est faux.
+  \end{enumerate}
+\fincorrection
+\finexercice

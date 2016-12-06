@@ -1,0 +1,35 @@
+\exercice{5408, rouget, 2010/07/06}
+\enonce[*** Formule de \textsc{Taylor}-\textsc{Lagrange}]
+Soient $a$ et $b$ deux réels tels que $a<b$ et $n$ un entier naturel. Soit $f$ une fonction élément de $C^n([a,b],\Rr)\cap D^{n+1}(]a,b[,\Rr)$. Montrer qu'il existe $c\in]a,b[$ tel que 
+
+$$f(b)=\sum_{k=0}^{n}\frac{f^{(k)}(a)}{k!}(b-a)^k+\frac{(b-a)^{n+1}f^{(n+1)}(c)}{(n+1)!}.$$
+
+Indication. Appliquer le théorème de \textsc{Rolle} à la fonction $g(x)=f(b)-\sum_{k=0}^{n}\frac{f^{(k)}(x)}{k!}(b-x)^k-A\frac{(b-x)^{n+1}}{(n+1)!}$ où $A$ est intelligemment choisi.
+\finenonce
+
+\noindication
+
+\correction
+On a déjà $g(b)=f(b)-f(b)=0$. Puisque $a\neq b$, on peut choisir $A$ tel que $g(a)=0$ (à savoir $A=\frac{(n+1)!}{(b-a)^{n+1}}(f(b)-\sum_{k=0}^{n}\frac{f^{(k)}(a)}{k!}(b-a)^k$).
+
+Avec les hypothèses faites sur $f$, $g$ est d'autre part continue sur $[a,b]$ et dérivable sur $]a,b[$. Le théorème de \textsc{Rolle} permet alors d'affirmer qu'il existe $c\in]a,b[$ tel que $g'(c)=0$.
+
+Pour $x\in]a,b[$, on a
+
+\begin{align*}\ensuremath
+g'(x)&=-\sum_{k=0}^{n}\frac{f^{(k+1)}(x)}{k!}(b-x)^k+\sum_{k=1}^{n}\frac{f^{(k)}(x)}{(k-1)!}(b-x)^{k-1}
++A\frac{(b-x)^n}{n!}\\
+ &=-\sum_{k=0}^{n}\frac{f^{(k+1)}(x)}{k!}(b-x)^k+\sum_{k=0}^{n-1}\frac{f^{(k+1)}(x)}{k!}(b-x)^{k}
++A\frac{(b-x)^n}{n!}=-\sum_{k=0}^{n}\frac{f^{(n+1)}(x)}{n!}(b-x)^n+A\frac{(b-x)^n}{n!}\\
+ &=\frac{(b-x)^n}{n!}(A-f^{(n+1)}(x)).
+\end{align*}
+
+Ainsi, il existe $c\in]a,b[$ tel que $\frac{(b-c)^n}{n!}(A-f^{(n+1)}(c))=0$, et donc, puisque $c\neq b$, tel que $A=f^{(n+1)}(c)$.
+
+L'égalité $g(a)=0$ s'éxrit alors
+
+$$f(b)=\sum_{k=0}^{n}\frac{f^{(k)}(a)}{k!}(b-a)^k+\frac{(b-a)^{n+1}f^{(n+1)}(c)}{(n+1)!},$$
+
+pour un certain réel $c$ de $]a,b[$.
+\fincorrection
+\finexercice

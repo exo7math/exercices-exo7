@@ -1,0 +1,23 @@
+\exercice{2295, barraud, 2008/04/24}
+\enonce
+ L'id\'eal  principal $(x^2+y^2+1)$
+est-il maximal dans les anneaux $\Cc[x,y]$, $\Rr[x,y]$, $\Qq[x,y]$,
+$\Zz[x]$, $\Zz_2[x,y]$ ?
+\finenonce 
+
+\noindication
+
+\correction
+  Soit $f=x^{2}+y^{2}+1\in A[x,y]$ ($A=\Cc,\Rr,\Qq,\Zz,\Zz_{2}$). Soit
+  $B=A[y]$, et regardons $f$ comme un polynôme de $B[x]$. Le coefficient
+  dominant de $f$ (qui est $1$) est inversible dans $B$, donc on peut
+  effectuer la division euclidienne de tout polynôme par $f$~: $\forall
+  g\in B[y], \exists(q,r)\in B[x]^{2}, g=qf+r$ et $\deg_{x}r\leq 1$.
+  Notons $r=a(y)x+b(y), a,b\in A[y]$. De plus, pour des raisons de degré,
+  le quotient et le reste de cette division sont uniques. On peut donc
+  identifier $A[x,y]/(x^{2}+y^{2}+1)$ à $\{a(y)x+b(y),\ a(y),b(y)\in
+  A[y]\}$. Supposons que $\bar{y}$ soit inversible dans cet quotient. Il
+  existe $a,b\in A[y]$ tels que  $y(a(y)x+b(y))=\bar{1}$. On a donc
+  $ya(y)=0$ et $yb(y)=1$, ce qui est impossible.
+\fincorrection
+\finexercice

@@ -1,0 +1,115 @@
+\exercice{5871, rouget, 2010/10/16}
+\enonce[** I Exponentielle d'un endomorphisme anti-symétrique de $\Rr^3$]
+
+\begin{enumerate}
+ \item 
+ \begin{enumerate}
+ \item Soit $\overrightarrow{\omega}\in\Rr^3$. Pour $\overrightarrow{x}\in\Rr^3$, on pose $f_{\overrightarrow{\omega}}(\overrightarrow{x})=\overrightarrow{\omega}\wedge\overrightarrow{x}$. Vérifier que $f_{\overrightarrow{\omega}}\in\mathcal{A}(\Rr^3)$.
+
+ \item Réciproquement, soit $f\in\mathcal{A}(\Rr^3)$. Montrer qu'il existe un vecteur $\overrightarrow{\omega}$ unique tel que $f=f_{\overrightarrow{\omega}}$.
+  \end{enumerate}
+
+\item  Soit $\overrightarrow{\omega}\in\Rr^3$. Montrer que $\text{exp}(f_{\overrightarrow{\omega}})$ est une rotation dont on déterminera l'axe (quand celui-ci est défini) et l'angle.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item
+   \begin{enumerate}
+   \item  Soit $\overrightarrow{\omega}\in\Rr^3$. $f_{\overrightarrow{\omega}}$ est un endomorphisme de $\Rr^3$ par bilinéarité du produit vectoriel. De plus, pour $(\overrightarrow{x},\overrightarrow{y})\in(\Rr^3)^2$,
+
+\begin{center}
+$f_{\overrightarrow{\omega}}\left(\overrightarrow{x}\right).\overrightarrow{y}=\left(\overrightarrow{\omega}\wedge\overrightarrow{x}\right).\overrightarrow{y}=\left[\overrightarrow{\omega},\overrightarrow{x},\overrightarrow{y}\right]=-\left[\overrightarrow{\omega},\overrightarrow{y},\overrightarrow{x}\right]=-\left(\overrightarrow{\omega}\wedge\overrightarrow{y}\right).\overrightarrow{x}=-\overrightarrow{x}.f_{\overrightarrow{\omega}}\left(\overrightarrow{y}\right)$.
+\end{center}
+
+Donc,
+
+\begin{center}
+\shadowbox{
+$\forall\overrightarrow{x}\in\Rr^3$, $f_{\overrightarrow{\omega}}\in\mathcal{A}(\Rr^3)$.
+}
+\end{center}
+
+   \item Soit $\begin{array}[t]{cccc}
+\varphi~:&\Rr^3&\rightarrow&\mathcal{A}(\Rr^3)\\
+ &\overrightarrow{\omega}&\mapsto&f_{\overrightarrow{\omega}}
+\end{array}$. 
+
+\textbullet~Vérifions que $\varphi\in\mathcal{L}(\Rr^3,\mathcal{A}(\Rr^3))$. Soient $(\lambda_1,\lambda_2)\in\Rr^2$ et $(\overrightarrow{\omega}_1,\overrightarrow{\omega}_2)\in(\Rr^3)^2$. Pour tout $\overrightarrow{x}\in\Rr^3$,
+
+\begin{align*}\ensuremath
+\left(\varphi(\lambda_1\overrightarrow{\omega}_1+\lambda_2\overrightarrow{\omega}_2)\right)\left(\overrightarrow{x}\right)&=f_{\lambda_1\overrightarrow{\omega}_1+\lambda_2\overrightarrow{\omega}_2}\left(\overrightarrow{x}\right)=\left(\lambda_1\overrightarrow{\omega}_1+\lambda_2\overrightarrow{\omega}_2\right)\wedge=\lambda_1\left(\overrightarrow{\omega}_1\wedge\overrightarrow{x}\right)+\lambda_2\left(\overrightarrow{\omega}_2\wedge\overrightarrow{x}\right)\\
+ &=\lambda_1f_{\overrightarrow{\omega}_1}\left(\overrightarrow{x}\right)+\lambda_2f_{\overrightarrow{\omega}_2}\left(\overrightarrow{x}\right)=\left((\lambda_1\varphi(\overrightarrow{\omega}_1)+\lambda_2\varphi(\overrightarrow{\omega}_2)\right)\left(\overrightarrow{x}\right)
+\end{align*}
+
+et donc $\varphi(\lambda_1\overrightarrow{\omega}_1+\lambda_2\overrightarrow{\omega}_2)=\lambda_1\varphi(\overrightarrow{\omega}_1)+\lambda_2\varphi(\overrightarrow{\omega}_2)$. On a montré que $\varphi\in\mathcal{L}(\Rr^3,\mathcal{A}(\Rr^3))$.
+
+\textbullet~Vérifions que $\varphi$ est injective. Soit $\omega\in\Rr^3$.
+
+\begin{center}
+$\overrightarrow{\omega}\in\text{Ker}(\varphi)\Rightarrow f_{\overrightarrow{\omega}}=0\Rightarrow\forall\overrightarrow{x}\in\Rr^3$, $\overrightarrow{\omega}\wedge\overrightarrow{x}=\overrightarrow{0}$.
+\end{center}
+
+On applique alors ce dernier résultat à deux vecteurs non colinéaires $\overrightarrow{u}$ et $\overrightarrow{v}$. On obtient $\overrightarrow{\omega}\wedge\overrightarrow{u}=\overrightarrow{\omega}\wedge\overrightarrow{v}=\overrightarrow{0}$ et donc $\overrightarrow{x}\in\text{Vect}\left(\overrightarrow{u},\overrightarrow{v}\right)=\left\{\overrightarrow{0}\right\}$. On a montré que $\varphi$ est injective.
+
+\textbullet~Enfin, $\text{dim}\left(\mathcal{A}_3(\Rr)\right)= \frac{3\times(3-1)}{2}=3=\text{dim}(\Rr^3)<+\infty$. On en déduit que $\varphi$ est un isomorphisme de $\Rr^3$ sur $\mathcal{A}(\Rr^3)$. En particulier,
+
+\begin{center}
+\shadowbox{
+$\forall f\in\mathcal{A}(\Rr^3)$, $\exists\overrightarrow{\omega}\in\Rr^3/\;f=f_{\overrightarrow{\omega}}$.
+}
+\end{center}
+   \end{enumerate}
+
+\item  Soit $\overrightarrow{\omega}\in\Rr^3$. Si $\overrightarrow{\omega}=\overrightarrow{0}$, alors $f_{\overrightarrow{\omega}}=0$ et donc $\text{exp}\left(f_{\overrightarrow{\omega}}\right)=Id_{\Rr^3}$.
+
+On suppose dorénavant $\overrightarrow{\omega}\neq\overrightarrow{0}$. On pose $\overrightarrow{e_3}= \frac{1}{\left\|\overrightarrow{\omega}\right\|}\overrightarrow{\omega}$ puis on complète la famille orthonormale $\left(\overrightarrow{e_3}\right)$ en une base orthonormale directe $\left(\overrightarrow{e_1},\overrightarrow{e_2},\overrightarrow{e_3}\right)$ (en particulier $\overrightarrow{e_3}\wedge\overrightarrow{e_1}=\overrightarrow{e_2}$).
+
+\textbullet~Puisque $\overrightarrow{e_3}$ est colinéaire à $\overrightarrow{\omega}$, $f_{\overrightarrow{\omega}}\left(\overrightarrow{e_3}\right)=\overrightarrow{0}$. On en déduit que
+
+\begin{center}
+$\text{exp}\left(f_{\overrightarrow{\omega}}\right)\left(\overrightarrow{e_3}\right)=Id\left(\overrightarrow{e_3}\right)+f_{\overrightarrow{\omega}}\left(\overrightarrow{e_3}\right)+ \frac{1}{2}f_{\overrightarrow{\omega}}^2\left(\overrightarrow{e_3}\right)+ \frac{1}{6}f_{\overrightarrow{\omega}}^3\left(\overrightarrow{e_3}\right)+\ldots=\overrightarrow{e_3}$.
+\end{center}
+
+\textbullet~D'autre part, $f_{\overrightarrow{\omega}}\left(\overrightarrow{e_1}\right)=\overrightarrow{\omega}\wedge\overrightarrow{e_1}=\left\|\overrightarrow{\omega}\right\|\overrightarrow{e_3}\wedge\overrightarrow{e_1}=\left\|\overrightarrow{\omega}\right\|\overrightarrow{e_2}$ et de même $f_{\overrightarrow{\omega}}\left(\overrightarrow{e_2}\right)=-\left\|\overrightarrow{\omega}\right\|\overrightarrow{e_1}$.
+
+On en déduit que $f_{\overrightarrow{\omega}}^2\left(\overrightarrow{e_1}\right)=-\left\|\overrightarrow{\omega}\right\|^2\overrightarrow{e_1}$ et donc que 
+
+\begin{center}
+$\forall n\in\Nn$, $f_{\overrightarrow{\omega}}^{2n}\left(\overrightarrow{e_1}\right)=(-1)^n\left\|\overrightarrow{\omega}\right\|^{2n}\overrightarrow{e_1}$\quad puis\quad$f_{\overrightarrow{\omega}}^{2n+1}\left(\overrightarrow{e_1}\right)=(-1)^n\left\|\overrightarrow{\omega}\right\|^{2n+1}\overrightarrow{e_2}$.
+\end{center}
+
+Par suite,
+
+\begin{align*}\ensuremath
+\text{exp}\left(f_{\overrightarrow{\omega}}\right)\left(\overrightarrow{e_1}\right)&=\sum_{n=0}^{+\infty} \frac{1}{n!}f_{\overrightarrow{\omega}}^{n}\left(\overrightarrow{e_1}\right)\\
+ &=\left(\sum_{n=0}^{+\infty}(-1)^n \frac{\left\|\overrightarrow{\omega}\right\|^{2n}}{(2n)!}\right)\overrightarrow{e_1}+\left(\sum_{n=0}^{+\infty}(-1)^n \frac{\left\|\overrightarrow{\omega}\right\|^{2n+1}}{(2n+1)!}\right)\overrightarrow{e_2}\;(\text{somme de deux séries convergentes})\\
+ &=\cos\left(\left\|\overrightarrow{\omega}\right\|\right)\overrightarrow{e_1}+\sin\left(\left\|\overrightarrow{\omega}\right\|\right)\overrightarrow{e_2}.
+\end{align*}
+
+De même,
+
+\begin{center}
+$\forall n\in\Nn$, $f_{\overrightarrow{\omega}}^{2n}\left(\overrightarrow{e_2}\right)=(-1)^n\left\|\overrightarrow{\omega}\right\|^{2n}\overrightarrow{e_2}$\quad puis\quad$f_{\overrightarrow{\omega}}^{2n+1}\left(\overrightarrow{e_2}\right)=-(-1)^n\left\|\overrightarrow{\omega}\right\|^{2n+1}\overrightarrow{e_1}$.
+\end{center}
+
+et donc
+
+\begin{align*}\ensuremath
+\text{exp}\left(f_{\overrightarrow{\omega}}\right)\left(\overrightarrow{e_2}\right)&=\sum_{n=0}^{+\infty} \frac{1}{n!}f_{\overrightarrow{\omega}}^{n}\left(\overrightarrow{e_2}\right)=\left(\sum_{n=0}^{+\infty}(-1)^n \frac{\left\|\overrightarrow{\omega}\right\|^{2n}}{(2n)!}\right)\overrightarrow{e_2}-\left(\sum_{n=0}^{+\infty}(-1)^n \frac{\left\|\overrightarrow{\omega}\right\|^{2n+1}}{(2n+1)!}\right)\overrightarrow{e_1}\\
+ &=-\sin\left(\left\|\overrightarrow{\omega}\right\|\right)\overrightarrow{e_1}+\cos\left(\left\|\overrightarrow{\omega}\right\|\right)\overrightarrow{e_2}.
+\end{align*}
+
+Ainsi, la matrice de $\text{exp}\left(f_{\overrightarrow{\omega}}\right)$ dans la base orthonormée directe $\left(\overrightarrow{e_1},\overrightarrow{e_2},\overrightarrow{e_3}\right)$ est $\left(
+\begin{array}{ccc}
+\cos\left(\left\|\overrightarrow{\omega}\right\|\right)&-\sin\left(\left\|\overrightarrow{\omega}\right\|\right)&0\\
+\sin\left(\left\|\overrightarrow{\omega}\right\|\right)&\cos\left(\left\|\overrightarrow{\omega}\right\|\right)&0\\
+0&0&1
+\end{array}
+\right)$ et $\text{exp}(f_{\overrightarrow{\omega}})$ est la rotation d'angle $\left\|\overrightarrow{\omega}\right\|$ autour de $\overrightarrow{\omega}$.
+\end{enumerate}
+\fincorrection
+\finexercice

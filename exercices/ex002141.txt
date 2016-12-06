@@ -1,0 +1,26 @@
+\exercice{2141, debes, 2008/02/12}
+\enonce
+Soit $G$ un groupe et $\simeq $ une relation d'\'equivalence sur $G$. On suppose que
+cette relation est compatible avec la loi de groupe, c'est-\`a-dire que
+$$\forall x,y \in G \quad \forall x',y' \in G \quad  x\simeq x' \quad {\rm et}\quad 
+y\simeq y' \quad {\rm alors} \quad  xy\simeq x'y' $$
+Montrer que la classe $H$ de l'\'el\'ement neutre $1$ est un sous-groupe distingu\'e de
+$G$ et que  $$\forall x, x' \in G \quad x\simeq x' \quad \hbox{\rm est\quad
+\'equivalent \quad  \`a} \quad x'x^{-1} \in H$$
+\finenonce 
+
+\noindication 
+
+\correction 
+Etant donn\'es $y,z\in H$, on a $y\simeq 1$ et $z\simeq 1$. La
+compatibilit\'e de la loi donne d'une part $yz \simeq 1$, soit $yz \in H$, et d'autre
+part $y y^{-1} \simeq y^{-1}$ soit $y^{-1}\in H$. Cela montre que $H$ est un
+sous-groupe de $G$. Pour tout $x\in G$, on a aussi $xyx^{-1} \simeq x 1 x^{-1}=1$ et
+donc $xyx^{-1}\in H$. Le sous-groupe $H$ est donc distingu\'e.
+
+De plus, pour $x,x^\prime \in G$, si $x\simeq x^\prime$, alors par compatibilit\'e de
+la loi, on a $x^\prime x^{-1} \simeq x x^{-1} = 1$, c'est-\`a-dire $x^\prime x^{-1}\in
+H$. R\'eciproquement, si $x^\prime x^{-1}\in H$, alors $x^\prime x^{-1} \simeq 1$,
+et donc, par compatibilit\'e de la loi, $x\simeq x^\prime$.
+\fincorrection
+\finexercice

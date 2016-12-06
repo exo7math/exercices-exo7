@@ -1,0 +1,80 @@
+\exercice{4614, quercia, 2010/03/14}
+\enonce[Formules de Cauchy\label{Cauchy}]
+
+Soit $U$ un ouvert de~$\C$ contenant $0$ et $f : U \to \C$ analytique.
+On note $\sum_{n=0}^\infty a_nz^n$ le développement en série entière
+de $f$ en~$0$, $R$ son rayon et~$d$ la distance de~$0$ à~$\mathrm{fr}(U)$
+($d=+\infty$ si $U=\C$).
+
+\begin{enumerate}
+  \item Montrer, pour $0<r<\min(R,d)$ et $n\in\N$~:
+    $a_n = \frac1{2\pi} \int_{\theta=0}^{2\pi}\frac{f(re^{i\theta})}{r^ne^{in\theta}}\, d\theta$.
+    \label{formule-c}
+
+  \item Montrer que l'application $r \mapsto  \int_{\theta=0}^{2\pi}\frac{f(re^{i\theta})}{e^{in\theta}}\, d\theta$
+    est analytique sur~$[0,d[$ (minorer le rayon de convergence du
+    DSE de~$f$ en $r_0e^{i\theta}$ et majorer en module les coefficients lorsque
+    $\theta$ décrit~$[0,2\pi]$ et $r_0$ est fixé dans~$[0,d[$ à l'aide
+    d'un recouvrement ouvert de~$[0,2\pi]$). En déduire que l'égalité de la question \ref{formule-c}.\
+    a lieu pour tout $r\in{[0,d[}$.
+  \item Pour $0<r<d$ et $|z|<r$ on pose $g(z)= \frac1{2\pi} \int_{\theta=0}^{2\pi}\frac{f(re^{i\theta})}{re^{i\theta}-z}re^{i\theta}\, d\theta$.
+    Montrer que $g$ est la somme d'une série entière de rayon supérieur
+    ou égal à~$r$ et que $g$ coïncide avec $f$ sur $\mathring D(0,r)$.
+
+  \bigskip
+
+Applications~:
+  \item $R\ge d$.
+  \item Si $U=\C$ et $f$ est bornée alors $f$ est constante (théorème de Liouville).
+    
+  \item Si $P\in\C[X]$ ne s'annule pas alors $P$ est constant (théorème de d'Alembert-Gauss).
+    
+  \item Si $(f_n)$ est une suite de fonctions analytiques convergeant uniformément
+    sur~$U$ vers une fonction~$f$ alors $f$ est analytique sur~$U$ (théorème de Weierstrass, comparer avec le cas réel).
+    
+  \item La composée de deux fonctions analytiques est analytique.
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Calcul.
+  \item     Soit $0<r_0<d$ et $R(\theta)$ le rayon de la série de Taylor de~$f$ en $r_0e^{i\theta}$.
+    Le cercle de centre $0$ et de rayon $r_0$ est recouvert par les disques ouverts
+    $D(r_0e^{i\theta}, \frac12R(\theta))$, $\theta$ variant de $0$ à~$2\pi$,
+    donc on peut en extraire un recouvrement fini~; soit $\rho$ le rayon minimum
+    des disques extraits. Alors pour $0\le\theta\le2\pi$ on a $R(\theta) \ge \rho$
+    (cf. analycité de la somme d'une série entière dans le disque ouvert de convergence).
+    
+    D'après la première question on a~:
+    $\Bigl|\frac{f^{(n)}(r_0e^{i\theta})}{n!}\Bigr| \le \frac M{\rho^n}$
+    où $M$ majore $|f|$ sur $\overline D(0,r_0+\rho)$ d'où pour $|r-r_0|<\rho$~:
+    $$ \int_{\theta=0}^{2\pi}\frac{f(re^{i\theta})}{e^{in\theta}}\, d\theta
+      =  \int_{\theta=0}^{2\pi} \sum_{k=0}^\infty
+           \frac{f^{(k)}(r_0e^{i\theta})}{k!} (r-r_0)^k e^{i(k-n)\theta}\, d\theta
+      = \sum_{k=0}^\infty (r-r_0)^k  \int_{\theta=0}^{2\pi}
+           \frac{f^{(k)}(r_0e^{i\theta})}{k!} e^{i(k-n)\theta}\, d\theta.$$
+    ce qui démontre l'analycité de $\varphi = r \mapsto  \int_{\theta=0}^{2\pi}\frac{f(re^{i\theta})}{e^{in\theta}}\, d\theta$
+    sur $]0,d[$.
+    
+    Enfin, $\varphi(r) = a_nr^n$ au voisinage de~$0$ d'où $\varphi(r) = a_nr^n$
+    sur~$[0,d[$ par prolongement analytique.
+  \item $g(z)= \frac1{2\pi} \int_{\theta=0}^{2\pi}\frac{f(re^{i\theta})}{re^{i\theta}-z}re^{i\theta}\, d\theta
+                  = \frac1{2\pi} \int_{\theta=0}^{2\pi}f(re^{i\theta})\sum_{k=0}^\infty \frac{z^k}{r^ke^{ik\theta}}\, d\theta
+                  = \sum_{k=0}^\infty \frac{z^k}{2\pi} \int_{\theta=0}^{2\pi}\frac{f(re^{i\theta})}{r^ke^{ik\theta}}\, d\theta
+                  = \sum_{k=0}^\infty a_kz^k$.
+
+             Le rayon est au moins égal à~$r$ car $f$ est bornée sur $\overline D(0,r)$.
+  \item résulte de la question {3.}.
+  \item D'après la question {1.}, $|a_n| \le \|f\|_\infty/r^n$ pour tout $r>0$ donc $a_n = 0$ si $n\ge 1$.
+  \item $1/P$ est analytique bornée sur~$\C$.
+  \item On peut passer à la limite uniforme (ou dominée) dans la question {3.}.
+  \item $f(z) = \sum_{n=0}^\infty a_nz^n  \Rightarrow  f\circ g(z) = \sum_{n=0}^\infty a_ng^n(z)$
+      et il y a convergence localement uniforme.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

@@ -1,0 +1,35 @@
+\exercice{5712, rouget, 2010/10/16}
+\enonce[***]
+Convergence et somme de la série de terme général $u_n=\frac{\pi}{4}-\sum_{k=0}^{n}\frac{(-1)^k}{2k+1}$, $n\geqslant 0$.
+\finenonce
+
+\noindication
+
+\correction
+Soit $n\in\Nn$.
+
+\begin{align*}\ensuremath
+u_n&=\frac{\pi}{4}-\sum_{k=0}^{n}\frac{(-1)^k}{2k+1}=\int_{0}^{1}\frac{1}{1+t^2}\;dt-\sum_{k=0}^{n}(-1)^k\int_{0}^{1}t^{2k}\;dt=\int_{0}^{1}\frac{1}{1+t^2}\;dt-\int_{0}^{1}\frac{1-(-t^2)^{n+1}}{1+t^2}\;dt\\
+ &= (-1)^{n+1}\int_{0}^{1}\frac{t^{2n+2}}{1+t^2}\;dt.
+\end{align*}
+
+Par suite, pour $N\in\Nn$,
+
+\begin{align*}\ensuremath
+\sum_{n=0}^{N}u_n=\int_{0}^{1}\sum_{n=0}^{N}\frac{(-t^2)^{n+1}}{1+t^2}\;dt  =\int_{0}^{1}(-t^2)\frac{1-(-t^2)^{N+1}}{(1+t^2)^2}\;dt=-\int_{0}^{1}\frac{t^2}{(1+t^2)^2}\;dt+(-1)^{N+1}\int_{0}^{1}\frac{t^{2N+2}}{(1+t^2)^2}\;dt.
+\end{align*}
+
+Or $\left|(-1)^{N+1}\int_{0}^{1}\frac{t^{2N+2}}{(1+t^2)^2}\;dt\right|=\int_{0}^{1}\frac{t^{2N+2}}{(1+t^2)^2}\;dt\leqslant\int_{0}^{1}t^{2N+2}\;dt=\frac{1}{2N+3}$. Comme $\frac{1}{2N+3}$ tend vers $0$ quand $N$ tend vers $+\infty$, il en est de même de $(-1)^{N+1}\int_{0}^{1}\frac{t^{2N+2}}{(1+t^2)^2}\;dt$. On en déduit que la série de terme général $u_n$, $n\in\Nn$, converge et de plus
+
+\begin{align*}\ensuremath
+\sum_{n=0}^{+\infty}u_n&=-\int_{0}^{1}\frac{t^2}{(1+t^2)^2}\;dt=\int_{0}^{1}\frac{t}{2}\times\frac{-2t}{(1+t^2)^2}\;dt\\
+ &=\left[\frac{t}{2}\times\frac{1}{1+t^2}\right]_0^1-\int_{0}^{1}\frac{1}{2}\times\frac{1}{1+t^2}\;dt=\frac{1}{4}-\frac{\pi}{8}.
+\end{align*}
+
+\begin{center}
+\shadowbox{
+$\sum_{n=0}^{+\infty}\left(\frac{\pi}{4}-\sum_{k=0}^{n}\frac{(-1)^k}{2k+1}\right)=\frac{1}{4}-\frac{\pi}{8}$.
+}
+\end{center}
+\fincorrection
+\finexercice

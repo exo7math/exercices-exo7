@@ -1,0 +1,55 @@
+\exercice{5703, rouget, 2010/10/16}
+\enonce
+Convergence et somme éventuelle de la série de terme général
+
+\begin{center}
+\textbf{1) (**)} $u_n =\frac{2n^3-3n^2+1}{(n+3)!}$\qquad\textbf{2) (***)} $u_n=\frac{n!}{(a+1)(a+2)\ldots(a+n)}$, $n\geqslant1$, $a\in\Rr^{+*}$ donné.
+\end{center} 
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Soit $n\in\Nn$.
+
+\begin{align*}\ensuremath
+2n^3-3n^2+1&=2(n+3)(n+2)(n+1)-15n^2 - 22n -11= 2(n+3)(n+2)(n+1)-15(n+3)(n+2) +53n+79\\
+ &= 2(n+3)(n+2)(n+1)-15(n+3)(n+2)+53(n+3)-80
+\end{align*}
+
+Donc
+
+\begin{align*}\ensuremath
+\sum_{n=0}^{+\infty}\frac{2n^3-3n^2+1}{(n+3)!}&=\sum_{n=0}^{+\infty}\left(\frac{2}{n!}-\frac{15}{(n+1)!}+\frac{53}{(n+2)!}-\frac{80}{(n+3)!}\right)=2e-15(e-1)+53(e-2)-80\left(e-\frac{5}{2}\right)\\
+ &=-40e + 111.
+\end{align*}
+
+\begin{center}
+\shadowbox{
+$\sum_{n=0}^{+\infty}\frac{2n^3-3n^2+1}{(n+3)!}=-40e + 111$.
+}
+\end{center}
+
+\item  Pour $n\in\Nn$, on a $u_{n+1}=\frac{n+1}{a+n+1}u_n$. Par suite $(n+a+1)u_{n+1}= (n+1)u_n = (n+a)u_n + (1-a)u_n$ puis
+
+\begin{center}
+$(1-a)\sum_{k=1}^{n}u_k=\sum_{k=1}^{n}(k+a+1)u_{k+1}-\sum_{k=1}^{n}(k+a)u_k =(n+a+1)u_{n+1}-(a+1)u_1 =(n+a+1)u_{n+1}-1.$
+\end{center}
+
+Si $a = 1$, $\forall n\in\Nn^*$, $u_n=\frac{1}{n+1}$. Dans ce cas, la série diverge.
+
+Si $a\neq 1$, $\forall n\in\Nn^*$, $\sum_{k=1}^{n}u_k=\frac{1}{1-a}((n+a+1)u_{n+1} - 1)=\frac{1}{a-1}- \frac{1}{a-1}(a+n+1)u_{n+1}$.
+
+Si $a > 1$, la suite $u$ est strictement positive et la suite des sommes partielles $(S_n)$ est majorée par $\frac{1}{a-1}$. Donc la série de terme général $u_n$ converge. Il en est de même de la suite $((a+n+1)u_{n+1})$. Soit $\ell=\lim_{n \rightarrow +\infty}(a+n+1)u_{n+1}$.
+
+Si $\ell\neq0$, $u_{n+1}\underset{n\rightarrow+\infty}{\sim}\frac{\ell}{n+a+1}$ contredisant la convergence de la série de terme général $u_n$. Donc $\ell= 0$ et
+
+\begin{center}
+si $a > 1$,  $\sum_{n=1}^{+\infty}u_n=\frac{1}{a-1}$.
+\end{center}
+
+Si $0<a<1$, pour tout $n\in\Nn^*$, $u_n\geqslant\frac{1\times2\times\ldots\times n}{2\times3\ldots\times(n+1)}=\frac{1}{n+1}$. Dans ce cas, la série diverge.
+\end{enumerate}
+\fincorrection
+\finexercice

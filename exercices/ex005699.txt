@@ -1,0 +1,40 @@
+\exercice{5699, rouget, 2010/10/16}
+\enonce[****]
+Soit  $(u_n)_{n\in\Nn}$ une suite de réels strictement positifs telle que la série de terme général $u_n$ diverge.
+
+Pour $n\in\Nn$, on pose $S_n = u_0+...+u_n$. Etudier en fonction de $\alpha> 0$ la nature de la série de terme général $\frac{u_n}{(S_n)^\alpha}$.
+
+\finenonce
+
+\noindication
+
+\correction
+Etudions tout d'abord la convergence de la série de terme général $\frac{u_n}{S_n}$.
+
+Si  $\frac{u_n}{S_n}$ tend vers $0$ alors
+
+\begin{center}
+$0<\frac{u_n}{S_n}\underset{n\rightarrow+\infty}{\sim}-\ln\left(1-\frac{u_n}{S_n}\right)=\ln\left(\frac{S_{n-1}}{S_n}\right)=\ln(S_n) -\ln(S_{n-1})$.
+\end{center}
+
+Par hypothèse, $\lim_{n \rightarrow +\infty}S_n=+\infty$. On en déduit que la série de terme général $\ln(S_n) - \ln(S_{n-1})$ est divergente car  $\sum_{k=1}^{n}\ln(S_k) - \ln(S_{k-1}) =\ln(S_n)-\ln(S_0)\underset{n\rightarrow+\infty}{\rightarrow}+\infty$. Dans ce cas, la série de terme général $\frac{u_n}{S_n}$  diverge ce qui est aussi le cas si $\frac{u_n}{S_n}$ ne tend pas vers $0$.
+
+Donc, dans tous les cas, la série de terme général $\frac{u_n}{S_n}$  diverge.
+
+Si $\alpha\leqslant1$, puisque $S_n$ tend vers $+\infty$, à partir d'un certain rang on a $S_n^\alpha\leqslant S_n$ et donc  $\frac{u_n}{S_n^\alpha}\geqslant\frac{u_n}{S_n}$. Donc, si $\alpha\leqslant1$, la série de terme général  $\frac{u_n}{S_n^\alpha}$ diverge.
+
+Si $\alpha> 1$, puisque la suite $(S_n)$ est croissante,
+
+\begin{center}
+$0<\frac{u_n}{S_n^\alpha}=\frac{S_n-S_{n-1}}{S_n^\alpha}=\int_{S_{n-1}}^{S_n}\frac{dx}{S_n^\alpha}\leqslant\frac{dx}{x^\alpha}=\frac{1}{\alpha-1}\left(\frac{1}{S_{n-1}^{\alpha-1}}-\frac{1}{S_n^{\alpha-1}}\right)$,
+\end{center}
+
+qui est le terme général d'une série télescopique convergente puisque $\frac{1}{S_n^{\alpha-1}}$ tend vers $0$ quand $n$ tend vers l'infini. Dans ce cas, la série de terme général $\frac{u_n}{S_n^\alpha}$  converge.
+
+\begin{center}
+\shadowbox{
+La série de terme général $\frac{u_n}{S_n^\alpha}$ converge si et seulement si $\alpha>1$.
+}
+\end{center}
+\fincorrection
+\finexercice

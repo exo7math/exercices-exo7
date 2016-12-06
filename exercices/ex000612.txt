@@ -1,0 +1,48 @@
+\exercice{612, bodin, 1998/09/01}
+\video{OEzb_HFP0yM}
+\enonce
+\begin{enumerate}
+    \item Montrer que toute fonction p\'eriodique
+et non constante n'admet pas de limite en $+\infty$.
+    \item Montrer que toute fonction croissante
+et major\'ee admet une limite finie en $+\infty$.
+\end{enumerate}
+\finenonce
+ 
+\indication
+\begin{enumerate}
+    \item Raisonner par l'absurde.
+    \item Montrer que la limite est la borne sup\'erieure de l'ensemble des valeurs atteintes $f(\Rr)$.
+\end{enumerate}
+\finindication
+
+\correction
+\begin{enumerate}
+  \item Soit $p>0$ la p\'eriode: pour tout $x\in \Rr$,
+$f(x+p) = f(x)$. Par une r\'ecurrence facile on montre :
+$$ \forall n \in \Nn \qquad \forall x\in \Rr \qquad f(x+np)=f(x).$$
+Comme $f$ n'est pas constante il existe $a,b \in \Rr$ tels que $f(a)\not= f(b)$. Notons $x_n = a +np$ et $y_n = b+np$.
+Supposons, par l'absurde, que $f$ a une limite $\ell$ en $+\infty$.
+Comme $x_n \rightarrow +\infty$ alors $f(x_n) \rightarrow \ell$.
+Mais $f(x_n) = f(a +np) = f(a)$, donc $\ell = f(a)$. 
+De m\^eme avec la suite $(y_n)$: $y_n \rightarrow +\infty$ donc $f(y_n) \rightarrow \ell$ et $f(y_n) = f(b +np) = f(b)$, donc $\ell = f(b)$. 
+Comme $f(a) \not= f(b)$ nous obtenons une contradiction.
+  \item Soit $f: \Rr \longrightarrow \Rr$ une fonction croissante et major\'ee par $M\in \Rr$. 
+Notons 
+$$ F = f(\Rr) = \{ f(x) \ | \ x \in \Rr \}.$$
+$F$ est un ensemble (non vide) de $\Rr$, notons $\ell = \sup F$.
+Comme $M\in \Rr$ est un majorant de $F$, alors
+$\ell < +\infty$.
+Soit $\epsilon > 0$, par les propri\'et\'es du $\sup$
+il existe $y_0 \in F$ tel que $\ell - \epsilon \leq y_0 \leq \ell$.
+Comme $y_0\in F$, il existe $x_0 \in \Rr$ tel que $f(x_0) = y_0$.
+Comme $f$ est croissante alors:
+$$ \forall x\geq x_0 \qquad f(x) \geq f(x_0) = y_0 \geq \ell - \epsilon.$$
+De plus par la d\'efinition de $\ell$:
+$$\forall x\in \Rr \ \ f(x) \leq \ell.$$
+Les deux propri\'et\'es pr\'ec\'edentes s'\'ecrivent:
+$$ \forall x\geq x_0 \qquad \ell - \epsilon \leq f(x) \leq \ell.$$
+Ce qui exprime bien que la limite de $f$ en $+\infty$ est $\ell$.
+\end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,27 @@
+\exercice{2886, burnol, 2009/12/15}
+\enonce Soit $\alpha$ avec $|\alpha|<1$. On sait que
+$z\mapsto \phi_\alpha(z) = \frac{\alpha - z}{1 -
+\overline\alpha z}$ est un automorphisme du disque unité
+$D(0,1)$. Trouver $z_1$ et $z_2$ avec $\phi_\alpha(z_1) =
+z_2$, $\phi_\alpha(z_2) = z_1$. Deux points distincts
+arbitraires $z_1$ et $z_2$ étant donnés dans $D(0,1)$,
+montrer qu'il existe un automorphisme les échangeant et que
+cet automorphisme est unique à une rotation près (on se ramènera au cas où l'un
+des points est l'origine).
+\finenonce
+\noindication
+\correction
+On a $\Phi_\alpha (0) =\alpha$ et $\Phi_\alpha (\alpha )=0$. Remarquons que $\Phi_\alpha \circ \Phi_\alpha $ fixe l'origine.
+Par l'exercice \ref{ex:burnol2.6}, l'automorphisme $\Phi_\alpha \circ \Phi_\alpha $ de $D(0,1)$ est une rotation $z\mapsto e^{i\alpha}z$.
+Un calcul explicite montre que $\Phi_\alpha \circ \Phi_\alpha =\mathrm{Id}$, c'est \`a dire $\Phi_\alpha ^{-1}= \Phi_\alpha $.
+Soit $\Psi$ un automorphisme du disque unit\'e $D(0,1)$ tel que $\Psi (z_1)=z_2$. Alors
+$$\Psi \circ \Phi_{z_1}(0)= \Phi _{z_2}(0) \quad \Longleftrightarrow \quad
+\Phi_{z_2}^{-1}\circ \Psi \circ \Phi_{z_1} (0)=0$$
+et donc $A=\Phi_{z_2}^{-1}\circ \Psi \circ \Phi_{z_1}$ est un automorphisme du disque unit\'e fixant l'origine.
+ On en d\'eduit de nouveau que $A$ est une rotation: $A(z)=e^{i\alpha} z$. Par cons\'equent,
+ \begin{equation}\label{eq disque}\Psi = \Phi_{z_2}\circ A\circ \Phi_{z_1}^{-1}.\end{equation}
+ On vient de d\'eterminer la forme g\'en\'erale d'un automorphisme $\Psi $ du disque unit\'e v\'erifiant
+ $\Psi(z_1)=z_2$. Remarquons qu'il est unique ``\`a une rotation pr\`es''; $\Psi$ est d\'etermin\'e par \eqref{eq disque}
+ o\`u $A$ est une rotation quelconque.
+\fincorrection
+\finexercice

@@ -1,0 +1,35 @@
+\exercice{5342, rouget, 2010/07/04}
+\enonce
+Décomposer en produit de facteurs irréductibles dans $\Rr[X]$ le polynôme $X^6-2X^3\cos a+1$ où $a$ est un réel donné dans $[0,\pi]$.
+\finenonce
+
+\noindication
+
+\correction
+\begin{align*}\ensuremath
+P&=X^6-2X^3\cos a+1=(X^3-e^{ia})(X^3-e^{-ia})\\
+ &=(X-e^{ia/3})(X-je^{ia/3})(X-j^2e^{ia/3})(X-e^{-ia/3})(X-je^{-ia/3})(X-j^2e^{-ia/3})\\
+ &=(X^2-2X\cos\frac{a}{3}+1)(X^2-2X\cos(\frac{a}{3}+\frac{2\pi}{3})+1)(X^2-2X\cos(\frac{a}{3}-\frac{2\pi}{3})+1)
+\end{align*}
+ 
+Il reste à se demander 1) si les facteurs précédents sont irréductibles sur $\Rr$ et 2) si ces facteurs sont deux à deux distincts.
+
+Les trois facteurs de degré $2$ ont un discriminant réduit du type $\Delta'=\cos^2\alpha-1=-\sin^2\alpha$ et $\Delta'$ est nul si et seulement si $\alpha$ est dans $\pi\Zz$.
+
+Les cas particuliers sont donc ($\frac{a}{3}$ est dans $\pi\Zz$ et donc $a=0$) et ($\frac{a+2\pi}{3}$ est dans $\pi\Zz$ et donc $a=\pi$) et ($\frac{a-2\pi}{3}$ est dans $\pi\Zz$ ce qui n'a pas de solution dans $[0,\pi]$).
+
+\begin{itemize}
+\item[1er cas.] Si $a=0$.
+
+$$P=(X^2-2X+1)(X^2+X+1)(X^2+X+1)=(X-1)^2(X^2+X+1)^2.$$
+
+\item[2ème cas.] Si $a=\pi$, en remplaçant $X$ par $-X$ on obtient :
+
+$$P=(X+1)^2(X^2-X+1)^2.$$
+
+\item[3ème cas.] Si $a$ est dans $]0,\pi[$, les trois facteurs de degré $2$ sont irréductibles sur $\Rr$ et clairement deux à deux distincts. Donc 
+
+$$P=(X^2-2X\cos\frac{a}{3}+1)(X^2-2X\cos\frac{a+2\pi}{3}+1)(X^2-2X\cos\frac{a-2\pi}{3}+1).$$
+\end{itemize}
+\fincorrection
+\finexercice

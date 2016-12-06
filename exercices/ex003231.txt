@@ -1,0 +1,35 @@
+\exercice{3231, quercia, 2010/03/08}
+
+\enonce[{\'E}quations fonctionnelles]
+Trouver tous les polyn{\^o}mes $P \in {\C[X]}$ tels que \dots
+
+\begin{enumerate}
+  \item $P(X^2) = P(X-1)P(X+1)$.
+  \item $P(X^2) = P(X)P(X-1)$.
+  \item $P(X)P(X+2) + P(X^2) = 0$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item si $P(x) = 0$, alors $P\bigl((x-1)^2\bigr) = P\bigl((x+1)^2\bigr) = 0$.
+\\
+On a toujours $|x| < \max\{ |x-1|,|x+1| \}$ donc, s'il y a une racine
+de module $> 1$, il n'y a pas de racine de module maximal $ \Rightarrow  P = 0$.
+\\
+Or $\max\{ |x-1|,|x+1| \} \ge 1$ avec {\'e}galit{\'e} ssi $x = 0$.
+Donc $P = 0$ ou $P = 1$.
+  \item Si $x$ est racine, alors $x^2$ et $(x+1)^2$ le sont aussi.
+\\
+$ \Rightarrow  |x| = 0$ ou $1  \Rightarrow  |x+1| = 0$ ou $1  \Rightarrow  x \in \{0,-1,j,j^2 \}$.
+\\
+$x = 0$ ou $x = -1  \Rightarrow  P(1) = 0$ : exclus.
+\\
+Donc $P = a(X-j)^\alpha (X-j^2)^\beta$. On remplace
+$ \Rightarrow  P = (X^2 + X + 1)^\alpha$.
+  \item Seule racine possible : 1 $ \Rightarrow  P=-(X-1)^k$.
+\end{enumerate}
+\fincorrection
+\finexercice 

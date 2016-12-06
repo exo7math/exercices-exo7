@@ -1,0 +1,106 @@
+\exercice{5787, rouget, 2010/10/16}
+\enonce[*** I]
+\label{ex:rou2}
+\begin{enumerate}
+ \item  Soit $A$ une matrice carrée réelle de format $n$ et $S ={^t}AA$. Montrer que $S\in\mathcal{S}_n^+(\Rr)$.
+
+\item  Réciproquement, montrer que pour toute matrice $S$ symétrique positive, il existe une matrice $A$ carrée réelle de format $n$ telle que $S ={^t}AA$. A-t-on l'unicité de $A$ ?
+
+\item  Montrer que $S$ est définie positive si et seulement si $A$ est inversible.
+
+\item  Montrer que $\text{rg}(A) =\text{rg}(S)$.
+
+\item  (Racine carrée d'une matrice symétrique positive) Soit $S$ une matrice symétrique positive.
+
+Montrer qu'il existe une et une seule matrice $R$ symétrique positive telle que $R^2 = S$. 
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  ${^t}S={^t}({^t}AA)={^t}A{^t}({^t}A) ={^t}AA = S$. Donc $S\in\mathcal{S}_n(\Rr)$.
+
+Soit $X\in\mathcal{M}_{n,1}(\Rr)$, ${^t}XSX ={^t}X{^t}AAX ={^t}(AX)AX =\|AX\|_2^2\geqslant0$. Donc $S\in\mathcal{S}_n^+(\Rr)$.
+
+\begin{center}
+\shadowbox{
+$\forall A\in\mathcal{M}_n(\Rr)$, ${^t}AA\in\mathcal{S}_n^+(\Rr)$.
+}
+\end{center}
+
+\item  Soit $S\in\mathcal{S}_n^+(\Rr)$. D'après le théorème spectral, il existe $P$ dans $O_n(\Rr)$ et $D$ dans $\mathcal{D}_n(\Rr)$ telles que $S = PD{^t}P$.
+
+Posons $D =\text{diag}(\lambda_1,...,\lambda_n)$. Puisque $S$ est dans $\mathcal{S}_n^+(\Rr)$, $D$ est dans $\mathcal{D}_n^+(\Rr)$ et on peut poser $D'=\text{diag}(\sqrt{\lambda_1},...,\sqrt{\lambda_n})$ de sorte que $D'^2 = D$.
+On peut alors écrire
+
+\begin{center}
+$S = PD{^t}P =PD'D'{^t}P ={^t}(D{^t}P) D'{^t}P$,
+\end{center}
+
+et la matrice $A = D'{t}P$ convient.
+
+\begin{center}
+\shadowbox{
+$\forall S\in\mathcal{S}_n^+(\Rr)$, $\exists A\in\mathcal{M}_n(\Rr)/$ $S={^t}AA$.
+}
+\end{center}
+
+On a aussi ${^t}(-A)(-A) = S$ et comme en général  $-A\neq A$, on n'a pas l'unicité de la matrice $A$.
+
+\item  
+
+\begin{align*}\ensuremath
+S\;\text{définie positive}&\Leftrightarrow \forall X\in\mathcal{M}_{n,1}(\Rr)\setminus\{0\},\;{^t}XSX> 0\Leftrightarrow \forall X\in\mathcal{M}_{n,1}(\Rr)\setminus\{0\},\;\|AX\|_2^2 > 0\\
+ &\Leftrightarrow \forall X\in\mathcal{M}_{n,1}(\Rr)\setminus\{0\},\;AX\neq0
+\Leftrightarrow\text{Ker} A =\{0\}\Leftrightarrow A\in\mathcal{GL}_n(\Rr).
+\end{align*}
+
+\item  Montrons que les matrices $A$ et $S$ ont même noyau. Soit $X\in\mathcal{M}_{n,1}(\Rr)$. 
+
+\begin{center}
+$X\in\text{Ker}A\Rightarrow AX = 0\Rightarrow{^t}AAX = 0\Rightarrow SX = 0\Rightarrow X\in\text{Ker}S$,
+\end{center}
+
+et
+
+\begin{center}
+$X\in\text{Ker}S\Rightarrow{^t}AAX = 0\Rightarrow{^t}X{^t}AAX = 0\Rightarrow{^t}(AX)AX = 0\Rightarrow\|AX\|_2^2 = 0\Rightarrow AX = 0\Rightarrow X\in\text{Ker}A$.
+\end{center}
+
+Ainsi, $\text{Ker}({^t}AA)=\text{Ker}(A)$ et en particulier, grâce au théorème du rang, on a montré que
+
+\begin{center}
+\shadowbox{
+$\forall A\in\mathcal{M}_n(\Rr)$, $\text{rg}({^t}AA)=\text{rg}(A)$.
+}
+\end{center}
+
+\item  Soit $S\in\mathcal{S}_n^+(\Rr)$.
+
+\textbf{Existence.} D'après le théorème spectral, il existe $P_0\in O_n(\Rr)$ et $D_0\in\mathcal{D}_n^+(\Rr)$ telles que $S = P_0D_0{^t}P_0$.
+
+Posons $D_0 =\text{diag}(\lambda_1,...,\lambda_n)$ où les $\lambda_i$, $1\leqslant i\leqslant n$, sont des réels positifs puis $\Delta_0 =\text{diag}(\sqrt{\lambda_1},...,\sqrt{\lambda_n})$ et enfin 
+$R =P_0\Delta_0{^t}P_0$. La matrice $R$ est orthogonalement semblable à une matrice de $\mathcal{D}_n^+(\Rr)$ et est donc un élément de $\mathcal{S}_n^+(\Rr)$. Puis
+
+\begin{center}
+$R^2 = P_0\Delta_0^2{^t}P_0 = P_0D_0{^t}P_0 = S$.
+\end{center}
+
+\textbf{Unicité.} Soit $M$ un élément de $\mathcal{S}_n^+(\Rr)$ telle que $M^2 = S$.
+
+$M$ est diagonalisable d'après le théorème spectral et donc $\mathcal{M}_{n,1}(\Rr)=\underset{\lambda\in\text{Sp}(M)}{\oplus}E_M(\lambda)$. Mais si $\lambda$ est une valeur propre de $M$, $\text{Ker}(M-\lambda I_n)\subset\text{Ker}(M^2-\lambda^2I_n)=\text{Ker}(S-\lambda^2I_n)$. De plus, les valeurs propres de $M$ étant positive, les $\lambda^2$, $\lambda\in\text{Sp}(M)$, sont deux à deux distincts ou encore les $\text{Ker}(S-\lambda^2I_n)$, $\lambda\in\text{Sp}(M)$, sont deux à deux distincts.
+
+Ceci montre que pour chaque $\lambda\in\text{Sp}(M)$, $\text{Ker}(M-\lambda I_n)=\text{Ker}(S-\lambda^2I_n)$ et que les $\lambda^2$, $\lambda\in\text{Sp}(M)$, sont toutes les valeurs propres de $S$.
+
+Ainsi, nécessairement la matrice ${^t}P_0MP_0$ est une matrice diagonale $D$. L'égalité $M^2=S$ fournit $D^2=D_0$ puis $D=\Delta_0$ (car $D\in\mathcal{D}_n^+(\Rr)$) et finalement $M = R$.
+
+\begin{center}
+\shadowbox{
+$\forall S\in\mathcal{S}_n^+(\Rr)$, $\exists!R\in\mathcal{S}_n^+(\Rr)/\;R^2=S$.
+}
+\end{center}
+\end{enumerate}
+\fincorrection
+\finexercice

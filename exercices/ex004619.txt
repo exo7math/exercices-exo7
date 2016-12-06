@@ -1,0 +1,35 @@
+\exercice{4619, quercia, 2010/03/14}
+\enonce[Ulm MP$^*$ 2000]
+
+Soit $z_1,\dots,z_p\in \C$, $p_1,\dots,p_p \in \R^+$ tels que $\sum_{i=1}^p p_i=1$, et $\omega \in \R$.
+Pour $n>p$ on pose $z_n=e^{i\omega}\sum_{j=1}^p z_{n-j}p_j$.
+Étudier la suite $(z_n)$.
+\finenonce
+
+\noindication
+
+\correction
+On pose, sous réserve de convergence,
+$f(t) = \sum_{n=1}^\infty z_nt^n$. Alors~:
+$$f(t)
+=\sum_{n=1}^p z_nt^n + \sum_{j=1}^pe^{i\omega}p_j\sum_{n=p+1}^\infty z_{n-j}t^n
+=\sum_{n=1}^p z_nt^n + \sum_{j=1}^pe^{i\omega}p_jt^j\Bigl(f(t)-\sum_{n=1}^{p-j} z_nt^n\Bigr)
+$$
+soit~:
+$$\Bigl(1-\sum_{j=1}^pe^{i\omega}p_jt^j\Bigr)f(t) = P(t)f(t)
+= \sum_{n=1}^p z_nt^n - \sum_{j=1}^pe^{i\omega}p_jt^j\sum_{n=1}^{p-j} z_nt^n
+=Q(t),$$
+donc $f(t) = Q(t)/P(t)$. Réciproquement, soit $Q(t)/P(t) = \sum_{n=1}^\infty a_nt^n$~:
+en remontant les calculs précédents on voit que $(a_n)$ vérifie la même
+relation de récurrence que~$(z_n)$ avec les mêmes premiers termes d'où
+$z_n = a_n$ pour tout~$n$.
+
+Si $|t|< 1$ alors $\Bigl|\sum_{j=1}^pe^{i\omega}p_jt^j\Bigr|< 1$
+donc $P$ n'a pas de racine dans le disque unité ouvert.
+Si $P$ n'a pas non plus de racine sur le cercle unité alors le développement
+en série entière de $Q(t)/P(t)$ a un rayon $>1$ et $z_n\to0$ lorsque $n\to\infty$.
+Si $P$ admet des racines dans~$\mathbb{U}$ on peut déja dire que la suite $(z_n)$
+est bornée par $\max(|z_1|,\dots,|z_p|)$ puis\dots~?
+\fincorrection
+
+\finexercice

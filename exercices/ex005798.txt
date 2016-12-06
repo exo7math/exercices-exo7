@@ -1,0 +1,25 @@
+\exercice{5798, rouget, 2010/10/16}
+\enonce[**]
+Soit $A$ une matrice carrée réelle. Montrer que les matrices ${^t}AA$ et $A{^t}A$ sont orthogonalement semblables.
+\finenonce
+
+\noindication
+
+\correction
+Puisque les matrices $S_1 ={^t}AA$ et $S_2 = A{^t}A$ sont symétriques réelles, ces deux matrices sont à valeurs propres réelles. On sait d'autre part que si $M$ et $N$ sont deux matrices quelconques alors les matrices $MN$ et $NM$ ont même polynôme caractéristique.
+
+Notons alors $(\lambda_i)_{1\leqslant i\leqslant n}$ la famille des valeurs propres des matrices $S_1$ et $S_2$ et posons $D =\text{Diag}(\lambda_1,...\lambda_n)$. D'après le théorème spectral, il existe deux matrices orthogonales $P_1$ et $P_2$ telles que $S_1 =P_1D{^t}P_1$ et $S_2 = P_2D{^t}P_2$. Mais alors 
+
+\begin{center}
+$S_2=P_2({^t}P_1S_1P_1){^t}P_2= (P_2{^t}P_1)S_1{^t}(P_2{^t}P_1)$.
+\end{center}
+
+Comme la matrice $P_2{^t}P_1$ est orthogonale, on a montré que les matrices $S_1$ et $S_2$ sont orthogonalement semblables.
+
+\begin{center}
+\shadowbox{
+$\forall A\in\mathcal{M}_n(\Rr)$, les matrices ${^t}AA$ et $A{^t}A$ sont orthogonalement semblables.
+}
+\end{center}
+\fincorrection
+\finexercice

@@ -1,0 +1,65 @@
+\exercice{1247, vignal, 2001/09/01}
+\video{HpQ-7NAmPFs}
+\enonce
+ Calculer les limites suivantes
+$$\lim_{x\rightarrow 0}\frac{e^{x^2}-\cos x}{x^2}
+\quad\quad\lim_{x\rightarrow 0}\frac{\ln (1+x)-\sin x}{x}
+\quad\quad \lim_{x\rightarrow 0}\frac{\cos x-\sqrt{1-x^2}}{x^4}$$
+\finenonce
+
+\indication
+Il s'agit bien sûr de calculer d'abord des dl afin d'obtenir la limite.
+On trouve : 
+\begin{enumerate}
+  \item $\lim_{x\rightarrow 0}\frac{e^{x^2}-\cos x}{x^2} = \frac32$
+  \item $\lim_{x\rightarrow 0}\frac{\ln (1+x)-\sin x}{x} = 0$
+  \item $\lim_{x\rightarrow 0}\frac{\cos x-\sqrt{1-x^2}}{x^4}=\frac16$
+\end{enumerate}
+\finindication
+
+\correction
+\begin{enumerate}
+  \item 
+On a 
+$$e^{x^2} = 1+x^2+\frac{x^4}{2!} + o(x^4) \quad \text{ et } \quad  \cos x= 1-\frac{x^2}{2!}+\frac{x^4}{4!} + o(x^4)$$
+
+On s'aperçoit qu'en fait un dl à l'ordre $2$ suffit :
+$$e^{x^2}-\cos x 
+= \big(1+x^2 + o(x^2) \big) - \big(1-\frac{x^2}{2}+ o(x^2) \big)
+= \frac32 x^2 + o(x^2)$$
+Ainsi $\frac{e^{x^2}-\cos x}{x^2} = \frac32 + o(1)$ (où $o(1)$ désigne une fonction qui tend vers $0$)
+ et donc
+$$\lim_{x\rightarrow 0}\frac{e^{x^2}-\cos x}{x^2} = \frac32$$
+
+
+  \item 
+On sait que 
+$$\ln(1+x)=x-\frac{x^2}{2}+\frac{x^3}{3}+o(x^3) 
+\quad \text{ et } \quad \sin x = x-\frac{x^3}{3!} + o(x^3).$$
+
+Les dl sont distincts dès le terme de degré $2$ donc un dl à l'ordre $2$ suffit :
+$$\ln (1+x)-\sin x = \big(x - \frac{x^2}{2} + o(x^2) \big) - \big(x + o(x^2) \big) = -\frac{x^2}{2} + o(x^2)$$
+donc 
+$$\frac{\ln (1+x)-\sin x}{x} = -\frac{x}{2} + o(x)$$
+et ainsi 
+$$\lim_{x\rightarrow 0}\frac{\ln (1+x)-\sin x}{x} = 0.$$
+
+
+  \item 
+Sachant
+$$\cos x= 1-\frac{x^2}{2!}+\frac{x^4}{4!}+ o(x^4)$$
+et 
+$$\sqrt{1-x^2} = 1-\frac12x^2-\frac18x^4 + o(x^4)$$ alors
+
+\begin{align*}
+\frac{\cos x-\sqrt{1-x^2}}{x^4}
+ & =\frac{\big(1-\frac{x^2}{2}+\frac{x^4}{24}+ o(x^4)\big)-\big(1-\frac12x^2-\frac18x^4 + o(x^4)\big)}{x^4} \\
+ & = \frac{\frac 16 x^4 + o(x^4)}{x^4}  \\
+ &= \frac16+o(1) \\
+\end{align*}
+Ainsi 
+$$\lim_{x\rightarrow 0}\frac{\cos x-\sqrt{1-x^2}}{x^4}=\frac16$$
+\end{enumerate}
+\fincorrection
+
+\finexercice

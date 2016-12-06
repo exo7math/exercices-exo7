@@ -1,0 +1,30 @@
+\exercice{5872, rouget, 2010/10/16}
+\enonce[**]
+Pour $A\in\mathcal{M}_n(\Cc)$, calculer $\lim_{p \rightarrow +\infty}\left(I_n+ \frac{A}{p}\right)^p$.
+
+\finenonce
+
+\noindication
+
+\correction
+On munit $\mathcal{M}_n(\Cc)$ d'une norme sous-multiplicative notée $\|\;\|$. Soit $A\in\mathcal{M}_n(\Cc)$. Soit $p\in\Nn^*$.
+
+\begin{center}
+$\left\|\sum_{k=0}^{p} \frac{A^k}{k!}-\left(I+ \frac{A}{p}\right)^p\right\| =\left\|\sum_{k=0}^{p}\left( \frac{1}{k!}- \frac{C_p^k}{p^k}\right)A^k\right\|\leqslant\sum_{k=0}^{p}\left| \frac{1}{k!}- \frac{C_p^k}{p^k}\right|\|A\|^k $.
+\end{center}
+
+Maintenant, $\forall k\in\llbracket1,p\rrbracket$, $ \frac{1}{k!}- \frac{C_p^k}{p^k}= \frac{1}{k!}\left(1-  \frac{\overbrace{p\times(p-1)\times\ldots\times(p-k+1)}^{k}}{\underbrace{p\times p\times\ldots\times p}_{k}}\right)\geqslant 0$. Donc,
+
+\begin{center}
+$\sum_{k=0}^{p}\left| \frac{1}{k!}- \frac{C_p^k}{p^k}\right|\|A\|^k=\sum_{k=0}^{p} \frac{\|A\|^k}{k!}-\left(1+ \frac{\|A\|^p}{p}\right)^p\underset{n\rightarrow+\infty}{\rightarrow}e^{\|A\|}-e^{\|A\|}= 0$.
+\end{center}
+
+On en déduit que $\sum_{k=0}^{p} \frac{A^k}{k!}-\left(I+ \frac{A}{p}\right)^p$ tend vers $0$ quand $p$ tend vers $+\infty$ et puisque $\sum_{k=0}^{p} \frac{A^k}{k!}$ tend vers $\text{exp}(A)$ quand $p$ tend vers $+\infty$, il en est de même de $\left(I+ \frac{A}{p}\right)^p$.
+
+\begin{center}
+\shadowbox{
+$\forall A\in\mathcal{M}_n(\Cc)$, $\text{exp}(A)=\lim_{p \rightarrow +\infty}\left(I_n+ \frac{A}{p}\right)^p$.
+}
+\end{center}
+\fincorrection
+\finexercice

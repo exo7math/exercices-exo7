@@ -1,0 +1,33 @@
+\exercice{5379, rouget, 2010/07/06}
+\enonce
+Soit $E$ un ensemble contenant au moins $n$ éléments et $(f_1,f_2...,f_n)$ un $n$-uplet de fonctions de $E$ dans $\Cc$. Montrer que les propositions suivantes sont équivalentes~:
+\begin{enumerate}
+\item  la famille $(f_1,...,f_n)$ est libre ;
+\item  il existe $n$ éléments $a_1$, $a_2$,..., $a_n$ dans $E$ tels que $\mbox{det}(f_i(a_j))_{1\leq i,j\leq n}\neq0$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+$(1)\Rightarrow(2)$. Montrons par récurrence sur $n\geq1$ que~:~$(\forall(a_1,...,a_n)\in E^n/\;(\mbox{det}(f_i(a_j))_{1\leq i,j\leq n}= 0)\Rightarrow((f_1,...,f_n)$ liée).
+
+Pour $n=1$,
+
+$$(\forall a_1\in E/\;\mbox{det}(f_i(a_j))_{1\leq i,j\leq1}=0)\Rightarrow(\forall a_1/\;f_1(a_1)=0)\Rightarrow(f_1=0)\Rightarrow(f_1)\;\mbox{liée}.$$
+
+Soit $n\geq2$. Supposons que $(\forall(a_1,...,a_{n-1})\in E^{n-1}/\;\mbox{det}(f_i(a_j))_{1\leq i,j\leq n-1}=0)\Rightarrow(f_1,...,f_{n-1})$ liée.
+
+Soient $f_1$,..., $f_n$ $n$ fonctions telles que $\forall(a_1,...,a_n)\in E^n/\;\mbox{det}(f_i(a_j))_{1\leq i,j\leq n}=0$.
+
+Si $(f_1,...,f_{n-1})$ est liée alors $(f_1,...,f_n)$ est liée en tant que sur famille d'une famille liée. Si $(f_1,...,f_{n-1})$ est libre, par hypothèse de récurrence, il existe $a_1$,...,$a_{n-1}$ $n-1$ éléments de $E$ tels que $\mbox{det}(f_i(a_j))_{1\leq i,j\leq n-1}\neq 0$. Mais, par hypothèse, on a~:
+
+$$\forall x\in E,\;\mbox{det}(f_i(a_1),...,f_i(a_{n-1}),f_i(x))_{1\leq i\leq n}=0.$$
+
+En développant ce déterminant suivant sa dernière colonne, on obtient une égalité du type $\sum_{i=1}^{n}\lambda_if_i(x)=0$ où les $\lambda_i$ sont indépendants de $x$ ou encore une égalité du type $\sum_{i=1}^{n}\lambda_if_i=0$ avec $\lambda_n=\mbox{det}(f_i(a_j))_{1\leq i,j\leq n-1}\neq0$ ce qui montre encore que $(f_1,...,f_n)$ est liée.
+
+$(2)\Rightarrow(1)$. On suppose que $\exists(a_1,...,a_n)\in E^n/\;\mbox{det}(f_i(a_j))_{1\leq i,j\leq n}\neq 0)$. Montrons que $(f_1,...,f_n)$ est libre.
+
+Soit $(\lambda_1,...,\lambda_n)\in\Cc^n$ tel que $\sum_{i=1}^{n}\lambda_if_i=0$. En particulier~:~$\forall j\in\{1,...,n\},\;\sum_{i=1}^{n}\lambda_if_i(a_j)=0$. Les $n$ égalités précédentes fournissent un système d'équations linéaires en les $\lambda_i$ à $n$ inconnues, $n$ équations, de déterminant non nul et homogène ou encore un système de \textsc{Cramer} homogène dont on sait qu'il admet pour unique solution $(\lambda_1,...,\lambda_n)=(0,...,0)$. On a montré que $(f_1,...,f_n)$ est libre.
+\fincorrection
+\finexercice

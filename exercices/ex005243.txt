@@ -1,0 +1,26 @@
+\exercice{5243, rouget, 2010/06/30}
+\enonce[****]
+Soit $(u_n)=\left(\frac{p_n}{q_n}\right)$ avec $p_n\in\Zz$ et $q_n\in\Nn^*$, une suite de rationnels convergeant vers un irrationnel $x$. Montrer que les suites $(|p_n|)$ et $(q_n)$ tendent vers $+\infty$ quand $n$ tend vers $+\infty$.
+\finenonce
+
+\noindication
+
+\correction
+Soit $x$ un irrationnel et $(\frac{p_n}{q_n})_{n\in\Nn}$ une suite de rationnels tendant vers $x$ ($p_n$ entier relatif et $q_n$ entier naturel non nul, la fraction $\frac{p_n}{q_n}$ n'étant pas nécessairement irréductible). Supposons que la suite $(q_n)_{n\in\Nn}$ ne tende pas vers $+\infty$. Donc~:
+
+$$\exists A>0/\;(\forall n_0\in\Nn)(\exists n\geq n_0/\;q_n\geq A)$$ 
+
+ou encore, il existe une suite extraite $(q_{\varphi}(n))_{n\in\Nn}$ de la suite $(q_n)_{n\in\Nn}$ qui est bornée.
+
+La suite $(q_{\varphi}(n))_{n\in\Nn}$ est une suite d'entiers naturels qui est bornée, et donc cette suite ne prend qu'un nombre fini de valeurs. Mais alors, on peut extraire de la suite $(q_{\varphi}(n))_{n\in\Nn}$ et donc de la suite $(q_n)_{n\in\Nn}$ une suite $(q_{\psi(n)})_{n\in\Nn}$ qui est constante et en particulier convergente.
+
+La suite $(p_{\psi(n)})_{n\in\Nn}=(\frac{p_{\psi(n)}}{q_{\psi(n)}})_{n\in\Nn}(q_{\psi(n)})_{n\in\Nn}$ est aussi une suite d'entiers relatifs convergente et est donc constante à partir d'un certain rang.
+
+Ainsi, on peut extraire de la suite $(p_{\psi(n)})_{n\in\Nn}$ et donc de la suite $(p_n)_{n\in\Nn}$ une suite $(p_{\sigma(n)})_{n\in\Nn}$ constante.
+La suite $((q_{\sigma(n)})_{n\in\Nn}$ est également constante car extraite de la suite constante $(q_{\psi(n)})_{n\in\Nn}$ et finalement, on a extrait de la suite $(\frac{p_n}{q_n})_{n\in\Nn}$  une sous suite $(\frac{p_{\sigma(n)}}{q_{\sigma(n)}})_{n\in\Nn}$ constante.
+
+Mais la suite $(\frac{p_n}{q_n})_{n\in\Nn}$ tend vers $x$ et donc la suite extraite $(\frac{p_{\sigma(n)}}{q_{\sigma(n)}})_{n\in\Nn}$ tend vers $x$. Puisque $(\frac{p_{\sigma(n)}}{q_{\sigma(n)}})_{n\in\Nn}$ est constante, on a $\forall n\in\Nn,\;\frac{p_{\sigma(n)}}{q_{\sigma(n)}}=x$ et donc $x$ est rationnel. Contradiction .
+
+Donc la suite $(q_n)_{n\in\Nn}$ tend vers $+\infty$. Enfin si $(|p_n|)_{n\in\Nn}$ ne tend pas vers $+\infty$, on peut extraire de $(p_n)_{n\in\Nn}$ une sous-suite bornée $(p_{\varphi}(n))_{n\in\Nn}$. Mais alors, la suite $(\frac{p_{\varphi(n)}}{q_{\varphi(n)}})_{n\in\Nn}$ tend vers $x=0$ contredisant l'irrationnalité de $x$. Donc, la suite $(|p_n|)_{n\in\Nn}$ tend vers $+_infty$.
+\fincorrection
+\finexercice

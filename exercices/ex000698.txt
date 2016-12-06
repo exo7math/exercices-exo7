@@ -1,0 +1,62 @@
+\exercice{698, bodin, 1998/09/01}
+\video{yNbsJ0UALww}
+\enonce
+\'Etudier  la d\'erivabilit\'e des fonctions suivantes :
+$$f_1(x)=x^2\cos \frac{1}{x}, \text{\ \  si }x\not=0 \qquad ; \qquad f_1(0)=0 ;$$
+
+$$f_2(x)= \sin x \cdot \sin \frac{1}{x}, \text{\ \  si }x\not=0 \qquad ; \qquad f_2(0)=0 ;$$
+
+$$f_3(x) = \frac{|x|\sqrt{x^2-2x+1}}{x-1}, \text{\ \  si } x\not= 1 \qquad ; \qquad f_3(1)=1.$$
+\finenonce
+ 
+\indication
+Les probl\`emes sont seulement en $0$ ou $1$. 
+$f_1$ est d\'erivable en $0$ mais pas $f_2$.  $f_3$ n'est dérivable ni en $0$, ni en $1$.
+\finindication
+
+\correction
+\begin{enumerate}
+  \item La fonction $f_1$ est d\'erivable en dehors de $x=0$.
+En effet $x \mapsto \frac 1x$ est dérivable sur $\Rr^*$ et $x \mapsto \cos x$ est dérivable sur $\Rr$,
+donc par composition $x \mapsto  \cos \frac 1x$ est dérivable sur $\Rr^*$. Puis par multiplication par la fonction dérivable 
+$x \mapsto x^2$, la fonction $f_1$ est dérivable sur $\Rr^*$. 
+Par la suite on omet souvent ce genre de discussion ou on l'abrège sous la forme ``$f$ est dérivable sur $I$ comme somme, produit,
+composition de fonctions dérivables sur $I$''.
+
+Pour savoir si $f_1$ est d\'erivable en $0$ regardons le taux d'accroissement:
+$$ \frac{f_1(x)-f_1(0)}{x-0}= x\cos \frac 1 x.$$
+Mais $x \cos (1/x)$ tend vers $0$ (si $x\rightarrow 0$) car
+$|\cos (1/x)| \leq 1$.
+Donc le taux d'accroissement tend vers $0$. Donc $f_1$ est d\'erivable en $0$ et $f_1'(0)=0$.
+  \item Encore une fois $f_2$ est d\'erivable en dehors de $0$.
+Le taux d'accroissement en $x=0$ est :
+$$ \frac{f_2(x)-f_2(0)}{x-0}= \frac{\sin x}{x} \sin \frac 1 x$$
+Nous savons que $\frac{\sin x}{x} \rightarrow 1$ et que
+$\sin 1/x$ n'a pas de limite quand $x\rightarrow 0$. Donc le taux d'accroissement n'a pas de limite, donc $f_2$ n'est pas d\'erivable en $0$.
+  \item 
+La fonction $f_3$ s'\'ecrit :
+$$f_3(x) = \frac{|x||x-1|}{x-1}.$$
+\begin{itemize}
+  \item
+  Donc pour $x \geq 1$ on a $f_3(x) = x$ ;
+pour $0 \leq x < 1$ on a $f_3(x) = -x$ ;
+pour $x <0$ on a $f_3(x) = x$.
+
+\item La fonction $f_3$ est d\'efinie, continue et d\'erivable sur 
+$\Rr \setminus \{0,1\}$. Attention ! La fonction $x \mapsto |x|$ n'est pas dérivable en $0$.
+
+\item 
+La fonction $f_3$ n'est pas continue en $1$, en effet
+$\lim_{x \rightarrow 1+} f_3(x) = +1$ et  $\lim_{x \rightarrow 1-} f_3(x) = -1$. Donc la fonction n'est pas d\'erivable en $1$.
+
+\item
+La fonction $f_3$ est continue en $0$. 
+Le taux d'accroissement pour $x>0$ est 
+$$\frac{f_3(x)-f_3(0)}{x-0}= \frac{-x}{x} = -1$$
+et pour $x <0$, 
+$$\frac{f_3(x)-f_3(0)}{x-0}= \frac{x}{x} = +1.$$
+Donc le taux d'accroissement n'a pas de limite en $0$ et donc $f_3$ n'est pas d\'erivable en $0$.
+\end{itemize}
+\end{enumerate}
+\fincorrection
+\finexercice

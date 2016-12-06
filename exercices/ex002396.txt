@@ -1,0 +1,34 @@
+\exercice{2396, mayer, 2003/10/01}
+\enonce 
+On consid\`ere pour $x,y \in \Rr$, $d(x,y) =\|f(x) -f(y)\|$,
+o\`u $f$ est une application injective de $\Rr$ dans
+$\Rr ^2$. Montrer que cette distance est compl\`ete si et
+seulement si $f$ est d'image ferm\'ee dans $\Rr^2$.
+\finenonce
+
+\indication
+$f$ est injective uniquement afin que $d$ soit bien une distance. Raisonner par double implication.
+Utiliser la caractérisation d'un fermé par les suites.
+\finindication
+
+\correction
+$f$ est injective afin que $d$ soit bien une distance. On pose $F= f(\Rr)\subset \Rr^2$.
+\begin{enumerate}
+  \item $\Rightarrow$ Supposons que la distance $d$ soit complète. Soit $(y_n)$ une suite de $F$ qui converge vers $y\in \Rr^2$. Il faut montrer que $y\in F$.
+Il existe $x_n\in\Rr$, tel que $y_n=f(x_n)$. Comme
+$(y_n)$ est une suite convergente, c'est une suite de Cauchy de $\Rr^2$, or 
+$d(x_p,x_q) = \|f(x_p)-f(x_q)\| = \|y_p-y_q\|$. Donc $(x_n)$ est une suite de Cauchy pour $d$. 
+Comme $d$ est complète alors $(x_n)$ converge $x$, 
+comme  $x_n\rightarrow x$ 
+(pour $d$) alors $f(x_n)\rightarrow f(x)$ (pour $\|.\|$). 
+(Remarquons que par définition de $d$, l'application
+$f:(\Rr,d)\longrightarrow (\Rr^2,\|.\|)$ est continue.)
+Donc $(y_n)$ converge vers $f(x)$ et
+par unicité de la limite $f(x)=y$. Donc $y\in f(\Rr)=F$. Donc $F$ est fermé.
+
+  \item $\Leftarrow$ On suppose que $F$ est fermé. Soit $(u_n)$ une suite de Cauchy pour $(\Rr,d)$. Notons $y_n=f(x_n)$. Comme $d(u_p,u_q) = \|f(u_p)-f(u_q)\| = \|y_p-y_q\|$. Donc $(y_n)$ est une suite de Cauchy pour $(\Rr^2,\|.\|)$. Comme cet espace est complet alors $(y_n)$ converge vers $y$.
+Comme $y_n\in F$ et $F$ est fermé alors $y\in F$, donc il existe $x\in \Rr$ tel que $y=f(x)$. Il reste à montrer que $(x_n)$ tend vers $x$. En effet
+$d(x_n,x)=\|f(x_n)-f(x)\|=\|y_n-y\|$ tend vers $0$. Donc $(x_n)$ tend vers $x$ pour $d$. Donc $d$ est complète.
+\end{enumerate}
+\fincorrection
+\finexercice

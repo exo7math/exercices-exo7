@@ -1,0 +1,13 @@
+\exercice{2135, debes, 2008/02/12}
+\enonce
+Montrer que tout entier $n>0$ divise toujours $\varphi(2^n-1)$ (o\`u $\varphi$ est la fonction indicatrice d'Euler).
+\finenonce 
+
+\indication 
+Trouver l'ordre de $2$ modulo $2^n-1$.
+\finindication
+
+\correction
+Comme $2^n \equiv 1$ modulo $2^n-1$, l'ordre de $2$ modulo $2^n-1$, disons $m$, divise $n$. Si $m<n$, on aurait $2^m \equiv 1$ modulo $2^n-1$, c'est-\`a-dire $2^n-1$ divise $2^m-1$, ce qui n'est pas possible. L'ordre de $2$ modulo $2^n-1$ est donc $n$, et celui-ci doit diviser l'ordre de $(\Zz/(2^n-1)\Zz)^\times$, qui vaut $\varphi(2^n-1)$.
+\fincorrection
+\finexercice

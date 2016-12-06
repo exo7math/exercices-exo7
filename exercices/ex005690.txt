@@ -1,0 +1,111 @@
+\exercice{5690, rouget, 2010/10/16}
+\enonce
+Nature de la série de terme général 
+
+\textbf{1) (***)} $\sin\left(\frac{\pi n^2}{n+1}\right)$\qquad\textbf{2) (**)} $\frac{(-1)^n}{n+(-1)^{n-1}}$\qquad\textbf{3) (**)} $\ln\left(1+\frac{(-1)^n}{\sqrt{n}}\right)$\qquad\textbf{4) (***)} $\frac{e^{in\alpha}}{n}$, $\frac{\cos(n\alpha)}{n}$ et $\frac{\sin(n\alpha)}{n}$
+
+\textbf{5) (**)} $(-1)^n\frac{\ln n}{n}$\qquad\item  $(-1)^n\frac{P(n)}{Q(n)}$ où $P$ et $Q$ sont deux polynômes non nuls\qquad
+
+\textbf{7) (****)} $(\sin(n!\pi e))^p$ $p$ entier naturel non nul.
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Pour $n\in\Nn$,
+
+\begin{center}
+$u_n =\sin\left(\frac{\pi n^2}{n+1}\right)=\sin\left(\frac{\pi(n^2-1+1)}{n+1}\right)=\sin\left(\frac{\pi}{n+1}+(n-1)\pi\right)=(-1)^{n-1}\sin\left(\frac{\pi}{n+1}\right)$.
+\end{center}
+
+La suite $\left((-1)^{n-1}\sin\left(\frac{\pi}{n+1}\right)\right)_{n\in\Nn}$ est alternée en signe et sa valeur absolue tend vers 0 en décroissant. La série de terme général $u_n$ converge donc en vertu du critère spécial aux séries alternées.
+
+\item  (la suite $\left(\frac{1}{n+(-1)^{n-1}}\right)_{n\in\Nn}$ n'est pas décroisante à partir d'un certain rang).
+
+\begin{center}
+$u_n=\frac{(-1)^n}{n}\frac{1}{1+\frac{(-1)^{n-1}}{n}}\underset{n\rightarrow+\infty}{=}\frac{(-1)^n}{n}\left(1+O\left(\frac{1}{n}\right)\right)\underset{n\rightarrow+\infty}{=}\frac{(-1)^n}{n}+O\left(\frac{1}{n^2}\right)$.
+\end{center}
+
+La série de terme général $\frac{(-1)^n}{n}$ converge en vertu du critère spécial aux séries alternées et la série de terme général $O\left(\frac{1}{n^2}\right)$ est absolument convergente. On en déduit que la série de terme général $u_n$ converge.
+
+\item  $u_n=\ln\left(1+\frac{(-1)^n}{\sqrt{n}}\right)\underset{n\rightarrow+\infty}{=}\frac{(-1)^n}{\sqrt{n}}-\frac{1}{2n}+ O\left(\frac{1}{n^{3/2}}\right)$. Les séries de termes généraux respectifs $\frac{(-1)^n}{\sqrt{n}}$  et $O\left(\frac{1}{n^{3/2}}\right)$ sont convergentes et la série de terme général $-\frac{1}{2n}$  est divergente. Si la série de terme général $u_n$ convergeait alors la série de terme général $-\frac{1}{2n}=u_n-\frac{(-1)^n}{\sqrt{n}}-O\left(\frac{1}{n^{3/2}}\right)$ convergerait ce qui n'est pas. Donc la série de terme général $u_n$ diverge.
+
+\textbf{Remarque.} La série de terme général $u_n$ diverge bien que $u_n$ soit équivalent au terme général d'une série convergente.
+
+\item  Si $\alpha\in2\pi\Zz$, alors les deux premières séries divergent et la dernière converge.
+
+Soit $\alpha\notin2\pi\Zz$. Pour $n\in\Nn^*$, posons $v_n=e^{in\alpha}$ et $\varepsilon_n=\frac{1}{n}$ de sorte que $u_n=\varepsilon_nv_n$. Pour $n\in\Nn^*$, posons encore $V_n =\sum_{k=1}^{n}v_k$.
+
+Pour $(n ,p)\in(\Nn^*)^2$, posons enfin $R_n^p=\sum_{k=1}^{n+p}u_k-\sum_{k=1}^{n}u_k=\sum_{k=n+1}^{n+p}u_k$. (On effectue alors une transformation d'\textsc{Abel}).
+
+\begin{align*}\ensuremath
+R_n^p&=\sum_{k=n+1}^{n+p}\varepsilon_kv_k =\sum_{k=n+1}^{n+p}\varepsilon_k(V_k-V_{k-1}) =\sum_{k=n+1}^{n+p}\varepsilon_kV_k-\sum_{k=n+1}^{n+p}\varepsilon_kV_{k-1} =\sum_{k=n+1}^{n+p}\varepsilon_kV_k-\sum_{k=n}^{n+p-1}\varepsilon_{k+1}V_{k}\\
+ &=\varepsilon_{n+p}V_{n+p}-\varepsilon_{n+1}V_n+ \sum_{k=n+1}^{n+p-1}(\varepsilon_k-\varepsilon_{k+1})V_k.
+\end{align*}
+
+Maintenant, pour $n\in\Nn^*$, $V_n=e^{i\alpha}\frac{e^{in\alpha}-1}{e^{i\alpha}-1}=e^{i\alpha}\frac{\sin(n\alpha/2)}{\sin(\alpha/2)}$  et donc $\forall n\in\Nn^*$, $|V_n|\leqslant\frac{1}{|\sin(\alpha/2)|}$. Par suite, pour $(n,p)\in(\Nn^*)^2$
+
+\begin{align*}\ensuremath
+|R_n^p|&=\left|\frac{1}{n+p}V_{n+p}-\frac{1}{n+1}V_n+ \sum_{k=n+1}^{n+p-1}\left(\frac{1}{k}-\frac{1}{k+1}\right)V_k\right|&\\
+ &\leqslant\frac{1}{|\sin(\alpha/2)|}\left(\frac{1}{n+p}+\frac{1}{n+1}+ \sum_{k=n+1}^{n+p-1}\left(\frac{1}{k}-\frac{1}{k+1}\right)\right)\\
+ &=\frac{1}{|\sin(\alpha/2)|}\left(\frac{1}{n+p}+\frac{1}{n+1}+\frac{1}{n+1}-\frac{1}{n+p}\right)=\frac{2}{|\sin(\alpha/2)|(n+1)}\\
+  &\leqslant\frac{2}{n|\sin(\alpha/2)|}.
+\end{align*}
+
+Soit alors $\varepsilon$ un réel strictement positif. Pour $n\geqslant E\left(\frac{2}{\varepsilon|\sin(\alpha/2)|}\right)+ 1$ et p entier naturel non nul quelconque, on a $|R_n^p|<\varepsilon$.
+
+On a montré que $\forall\varepsilon>0$, $\exists n_0\in\Nn^*/$ $\forall(n,p)\in\Nn^*$, $(n\geqslant n_0\Rightarrow\left|\sum_{k=1}^{n+p}u_k-\sum_{k=1}^{n}u_k\right|<\varepsilon$.
+
+Ainsi, la série de terme général $u_n$ vérifie le critère de \textsc{Cauchy} et est donc convergente.
+Il en est de même des séries de termes généraux respectifs  $\frac{\cos(n\alpha)}{n}=\text{Re}\left(\frac{e^{in\alpha}}{n}\right)$ et $\frac{\sin(n\alpha)}{n}=\text{Im}\left(\frac{e^{in\alpha}}{n}\right)$.
+
+\item  Pour $x\in]0,+\infty[$, posons $f(x)=\frac{\ln x}{x}$. $f$ est dérivable sur $]0,+\infty[$ et $\forall x>e$, $f'(x)=\frac{1-\ln x}{x}< 0$.
+
+Donc, la fonction $f$ est décroissante sur $[e,+\infty[$. On en déduit que la suite $\left(\frac{\ln n}{n}\right)_{n\geqslant3}$ est une suite décroissante. Mais alors la série de terme général $(-1)^n\frac{\ln n}{n}$ converge en vertu du critère spécial aux séries alternées.
+
+\item  \textbullet~Si $\text{deg}P\geqslant\text{deg}Q$, $u_n$ ne tend pas vers $0$ et la série de terme général $u_n$ est grossièrement divergente.
+
+\textbullet~Si $\text{deg}P\leqslant\text{deg}Q - 2$, $u_n=O\left(\frac{1}{n^2}\right)$ et la série de terme général $u_n$ est absolument convergente.
+
+\textbullet~Si $\text{deg}P =\text{deg}Q - 1$, $u_n\underset{n\rightarrow+\infty}{=}(-1)^n\frac{\text{dom}P}{n\;\text{dom}Q}+O\left(\frac{1}{n^2}\right)$. $u_n$ est alors somme de deux termes généraux de séries convergentes et la série de terme général $u_n$ converge.
+
+En résumé, la série de terme général $u_n$ converge si et seulement si $\text{deg}P <\text{deg}Q$.
+
+\item  $e=\sum_{k=0}^{+\infty}\frac{1}{k!}$  puis pour $n\geqslant2$, $n!e=1+ n+\sum_{k=0}^{n-2}\frac{n!}{k!}+\sum_{k=n+1}^{+\infty}\frac{n!}{k!}$.
+
+Pour $0\leqslant k\leqslant n-2$, $\frac{n!}{k!}$ est un entier divisible par $n(n-1)$ et est donc un entier pair que l'on note $2K_n$. Pour $n\geqslant2$, on obtient
+
+\begin{center}
+$\sin(n!\pi e)=\sin\left(2K_n\pi+(n+1)\pi+\pi\sum_{k=n+1}^{+\infty}\frac{n!}{k!}\right)=(-1)^{n+1}\sin\left(\pi\sum_{k=n+1}^{+\infty}\frac{n!}{k!}\right)$.
+\end{center}
+
+Déterminons un développement limité à l'ordre $2$ de $\sum_{k=n+1}^{+\infty}\frac{n!}{k!}$ quand $n$ tend vers $+\infty$.
+
+\begin{center}
+$\sum_{k=n+1}^{+\infty}\frac{n!}{k!}=\frac{1}{n+1}+\frac{1}{(n+1)(n+2)}+\sum_{k=n+3}^{+\infty}\frac{n!}{k!}$.
+\end{center}
+
+Maintenant, pour $k\geqslant n+3$, $\frac{n!}{k!}=\frac{1}{k(k-1)\ldots(n+1)}\leqslant\frac{1}{(n+1)^{k-n}}$ et donc
+
+\begin{center} 
+$\sum_{k=n+3}^{+\infty}\frac{n!}{k!}\leqslant\sum_{k=n+3}^{+\infty}\frac{1}{(n+1)^{k-n}}=\frac{1}{(n+1)^3}\times\frac{1}{1-\frac{1}{n+1}}=\frac{1}{n(n+1)^2}\leqslant\frac{1}{n^3}$.
+\end{center}
+
+On en déduit que $\sum_{k=n+3}^{+\infty}\frac{n!}{k!}\underset{n\rightarrow+\infty}{=}o\left(\frac{1}{n^2}\right)$. Il reste
+
+\begin{center}
+$\sum_{k=n+1}^{+\infty}\frac{n!}{k!}\underset{n\rightarrow+\infty}{=}
+\frac{1}{n+1}+\frac{1}{(n+1)(n+2)}+o\left(\frac{1}{n^2}\right)\underset{n\rightarrow+\infty}{=}\frac{1}{n}\left(1+\frac{1}{n}\right)^{-1}+\frac{1}{n^2}+o\left(\frac{1}{n^2}\right)
+\underset{n\rightarrow+\infty}{=}\frac{1}{n}+o\left(\frac{1}{n^2}\right)
+$.
+\end{center}
+
+Finalement , $\sin(n!\pi e)\underset{n\rightarrow+\infty}{=}(-1)^{n+1}\sin\left(\frac{\pi}{n}+o\left(\frac{1}{n^2}\right)\right)=\frac{(-1)^{n+1}\pi}{n}+\left(\frac{1}{n^2}\right)$.
+
+$\sin(n!\pi e)$ est somme de deux termes généraux de séries convergentes et la série de terme général $\sin(n!\pi e)$ converge.
+
+Si $p\geqslant2$, $|\sin^p(n!\pi e)|\underset{n\rightarrow+\infty}{\sim}\frac{\pi^p}{n^p}$ et la série de terme général $\sin^p(n!\pi e)$ converge absolument.
+\end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,20 @@
+\exercice{4434, quercia, 2010/03/14}
+\enonce[$1/(1^2+2^2+...+n^2)$]
+
+On admet que $\sum_{k=1}^\infty \frac {(-1)^{k+1}}k = \ln 2$.
+Montrer que la série $\sum_{k=1}^\infty \frac1{1^2 + 2^2 + \dots + k^2}$ est
+convergente et calculer sa somme.
+
+
+\finenonce
+
+\noindication
+
+\correction
+$\frac 1{1^2 + 2^2 + \dots + k^2} = \frac 6k + \frac 6{k+1}
+         - \frac {24}{2k+1}
+          \Rightarrow  s_n = 18 - 24\sum_{k=1}^{2n+1} \frac{(-1)^{k+1}}k
+         + \frac 6{n+1} \to 18 - 24\ln 2$ lorsque $n\to\infty$.
+\fincorrection
+
+\finexercice

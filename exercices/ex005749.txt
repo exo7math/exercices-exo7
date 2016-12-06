@@ -1,0 +1,18 @@
+\exercice{5749, rouget, 2010/10/16}
+\enonce[*** I]
+Soient $P_n =\sum_{k=0}^{n}\frac{X^k}{k!}$ et $R > 0$ donné. Montrer que pour $n$ suffisamment grand, $P_n$ n'a pas de racine dans le disque fermé de centre $0$ et de rayon $R$.
+\finenonce
+
+\noindication
+
+\correction
+Soit $R > 0$. Notons $D_R$ le disque fermé de centre $0$ et de rayon $R$.
+Soient $z\in D_R$ et $n$ un entier naturel.
+
+\begin{center}
+$|P_n(z)| =\left|e^z - (e^z-P_n(z))\right|\geqslant|e^z|-|e^z-P_n(z)|\geqslant e^{-R}-|e^z-P_n(z)|$.
+\end{center}
+
+On sait que la suite de polynômes $(P_n)_{n\in\Nn}$ converge uniformément vers la fonction exponentielle sur $D_R$.Donc il existe un entier $n_0$ tel que pour tout $z\in D_R$ et tout entier $n\geqslant n_0$, $\left|e^z-P_n(z)\right|\leqslant\frac{1}{2}e^{-R}$. Pour $n\geqslant n_0$ et $z\in D_R$, $\left|P_n(z)\right|\geqslant\frac{1}{2}e^{-R}>0$ et $P_n$ ne s'annule pas dans $D_R$.
+\fincorrection
+\finexercice

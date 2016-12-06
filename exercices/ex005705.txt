@@ -1,0 +1,18 @@
+\exercice{5705, rouget, 2010/10/16}
+\enonce[**]
+Déterminer un équivalent simple de $\frac{n!}{(a+1)(a+2)\ldots(a+n)}$ quand $n$ tend vers l'infini ($a$ réel positif donné).
+\finenonce
+
+\noindication
+
+\correction
+(On applique la règle de \textsc{Raabe}-\textsc{Duhamel} qui n'est pas un résultat de cours.) Pour $n\in\Nn$, posons $u_n=\frac{n!}{(a+1)(a+2)\ldots(a+n)}$.
+
+\begin{center}
+$\frac{u_{n+1}}{u_n}=\frac{n+1}{a+n+1}=\left(1+\frac{1}{n}\right)\left(1+\frac{a+1}{n}\right)^{-1}\underset{n\rightarrow+\infty}{=}\left(1+\frac{1}{n}\right)\left(1-\frac{a+1}{n}+O\left(\frac{1}{n^2}\right)\right)\underset{n\rightarrow+\infty}{=}1-\frac{a}{n}+O\left(\frac{1}{n^2}\right)$,
+\end{center}
+
+et \og on sait \fg~qu'il existe un réel strictement positif $K$ tel que $u_n\underset{n\rightarrow+\infty}{\sim}\frac{K}{n^a}$.  
+
+\fincorrection
+\finexercice

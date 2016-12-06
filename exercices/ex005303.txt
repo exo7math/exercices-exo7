@@ -1,0 +1,57 @@
+\exercice{5303, rouget, 2010/07/04}
+\enonce[***I]
+On veut résoudre dans $\Zz^3$ l'équation $x^2+y^2=z^2$ (de tels triplets d'entiers relatifs sont appelés triplets pythagoriciens, comme par exemple $(3,4,5)$).
+\begin{enumerate}
+\item  Montrer que l'on peut se ramener au cas où $x\wedge y\wedge z=1$. Montrer alors que dans ce cas, $x$, $y$ et $z$ sont de plus deux à deux premiers entre eux.
+\item  On suppose que $x$, $y$ et $z$ sont deux à deux premiers entre eux. Montrer que deux des trois nombres $x$, $y$ et $z$ sont impairs le troisième étant pair puis que $z$ est impair.
+
+On suppose dorénavant que $x$ et $z$ sont impairs et $y$ est pair. On pose $y=2y'$, $X=\frac{z+x}{2}$ et $Z=\frac{z-x}{2}$.
+\item  Montrer que $X\wedge Z=1$ et que $X$ et $Z$ sont des carrés parfaits.
+\item  En déduire que l'ensemble des triplets pythagoriciens est l'ensemble des triplets de la forme
+
+$$(d(u^2-v^2),\;2duv,\;d(u^2+v^2))$$
+
+où $d\in\Nn$, $(u,v)\in\Zz^2$, à une permutation près des deux premières composantes.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  Posons $d=x\wedge y\wedge z$ puis $x=dx'$, $y=dy'$ et $z=dz'$ où $x'\wedge y'\wedge z'=1$.
+
+$$x^2+y^2=z^2\Leftrightarrow d^2({x'}^2+d^2{y'}^2)=d^2{z'}2\Leftrightarrow {x'}^2+{y'}^2={z'}^2,$$
+
+avec $x'\wedge y'\wedge z'=1$, ce qui montre que l'on peut se ramener au cas où $x$, $y$ et $z$ sont premiers entre eux.
+
+Supposons donc $x$, $y$ et $z$ premiers entre eux (dans leur ensemble). Soit $p$ un nombre premier. Si $p$ divise $x$ et $y$ alors $p$ divise $x^2+y^2=z^2$ et donc $p$ est également un facteur premier de $z$ contredisant le fait que $x$, $y$ et $z$ sont premiers entre eux. Donc, $x$ et $y$ sont premiers entre eux.
+
+Si $p$ divise $x$ et $z$ alors $p$ divise $z^2-x^2=y^2$ et donc $p$ est également un facteur premier de $y$, contredisant le fait que $x$, $y$ et $z$ sont premiers entre eux. Donc, $x$ et $z$ sont premiers entre eux. De même, $y$ et $z$ sont premiers entre eux. Finalement, $x$, $y$ et $z$ sont premiers entre eux deux à deux.
+
+\item  Puisque $x$, $y$ et $z$ sont deux à deux premiers entre eux, parmi les nombres $x$, $y$ et $z$, il y a au plus un nombre pair. Mais si ces trois nombres sont impairs, $x^2+y^2=z^2$ est pair en tant que somme de deux nombres impairs contredisant le fait que $z$ est impair. Ainsi, parmi les nombres $x$, $y$ et $z$, il y a exactement un nombre pair et deux nombres impairs.
+
+Si $x$ et $y$ sont impairs, alors d'une part, $z$ est pair et $z^2$ est dans $4\Zz$ et d'autre part $x^2$ et $y^2$ sont dans $1+4\Zz$. Mais alors, $x^2+y^2$ est dans $2+4\Zz$ excluant ainsi l'égalité $x^2+y^2=z^2$. Donc, $z$ est impair et l'un des deux nombres $x$ ou $y$ est pair. Supposons, quite à permuter les lettres $x$ et $y$, que $x$ est impair et $y$ est pair.
+
+Posons alors $y=2y'$ puis $X=\frac{z+x}{2}$ et $Z=\frac{z-x}{2}$ (puisque $x$ et $z$ sont impairs, $X$ et $Z$ sont des entiers). 
+
+\item  On a
+
+$$x^2+y^2=z^2\Leftrightarrow4{y'}^2=(z+x)(z-x)\Leftrightarrow{y'}^2=XZ.$$
+
+Un diviseur commun à $X$ et $Z$ divise encore $z=Z+X$ et $x=Z-X$ et est donc égal à $\pm1$ puisque $x$ et $z$ sont premiers  entre eux. $X$ et $Z$ sont des entiers premiers entre eux.
+
+Le produit des deux entiers $X$ et $Z$ est un carré parfait et ces entiers sont premiers entre eux. Donc, un facteur premier de $X$ n'apparaît pas dans $Z$ et apparaît donc dans $X$ à un exposant pair ce qui montre que $X$ est un carré parfait. De même, $Z$ est un carré parfait.
+ 
+\item  Donc, il existe deux entiers relatifs $u$ et $v$ tels que $X=u^2$ et $Z=v^2$. Mais alors, $z=Z+X=u^2+v^2$ et $x=Z-X=u^2-v^2$. Enfin, $y^2=z^2-x^2=(u^2+v^2)^2-(u^2-v^2)^2=4u^2v^2$ et donc, $y=2uv$ quite à remplacer $u$ par $-u$.
+
+En résumé, si $x^2+y^2=z^2$ alors il existe $(d,u,v)\in\Nn^*\times\Zz\times\Zz$ tel que $x=d(u^2-v^2)$, $y=2duv$ et $z=d(u^2+v^2)$ ou bien $x=2duv$, $y=d(u^2-v^2)$ et $z=d(u^2+v^2)$.
+
+Réciproquement, 
+
+$$(d(u^2-v^2))^2+(2duv)^2=d^2(u^4+2u^2v^2+v^4)=(d(u^2+v^2))^2,$$
+
+et on a trouvé tous les triplets Pythagoriciens. Par exemple, $d=1$, $u=2$ et $v=1$ fournissent le triplet $(3,4,5)$. $d=2$, $u=2$ et $v=1$ fournissent le triplet $(6,8,10)$ et $d=1$, $u=3$ et $v=2$ fournissent le triplet $(5,12,13)$.
+\end{enumerate}
+\fincorrection
+\finexercice

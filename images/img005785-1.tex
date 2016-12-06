@@ -1,0 +1,82 @@
+%%%%%%%%%%%%%%%%%% PREAMBULE %%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt,a4paper]{article}
+
+\usepackage{amsfonts,amsmath,amssymb,amsthm}
+\usepackage[francais]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+%----- Ensemles : entiers, reels, complexes -----
+\newcommand{\Nn}{\mathbb{N}} \newcommand{\N}{\mathbb{N}}
+\newcommand{\Zz}{\mathbb{Z}} \newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Qq}{\mathbb{Q}} \newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Rr}{\mathbb{R}} \newcommand{\R}{\mathbb{R}}
+\newcommand{\Cc}{\mathbb{C}} \newcommand{\C}{\mathbb{C}}
+
+%----- Modifications de symboles -----
+\renewcommand {\epsilon}{\varepsilon}
+\renewcommand {\Re}{\mathop{\mathrm{Re}}\nolimits}
+\renewcommand {\Im}{\mathop{\mathrm{Im}}\nolimits}
+
+%----- Fonctions usuelles -----
+\newcommand{\ch}{\mathop{\mathrm{ch}}\nolimits}
+\newcommand{\sh}{\mathop{\mathrm{sh}}\nolimits}
+\renewcommand{\tanh}{\mathop{\mathrm{th}}\nolimits}
+\newcommand{\Arcsin}{\mathop{\mathrm{Arcsin}}\nolimits}
+\newcommand{\Arccos}{\mathop{\mathrm{Arccos}}\nolimits}
+\newcommand{\Arctan}{\mathop{\mathrm{Arctan}}\nolimits}
+\newcommand{\Argsh}{\mathop{\mathrm{Argsh}}\nolimits}
+\newcommand{\Argch}{\mathop{\mathrm{Argch}}\nolimits}
+\newcommand{\Argth}{\mathop{\mathrm{Argth}}\nolimits}
+\newcommand{\pgcd}{\mathop{\mathrm{pgcd}}\nolimits} 
+
+%----- Commandes special dessin a ajouter localement ------
+\usepackage{geometry}
+\usepackage{pstricks}
+\usepackage{pst-plot}
+\usepackage{pst-node}
+\usepackage{graphics,epsfig}
+
+\newcmykcolor{DarkGreen}{0.4 0 0.76 0.3}
+\newcmykcolor{Goldenrod}{0 0.1 0.84 0}
+\newcmykcolor{Fuchsia}{0.47 0.91 0 0.08}
+
+\pagestyle{empty}
+
+% Que faire avec ce fichier monimage.tex ?
+%   1/ latex monimage.tex
+%   2/ dvips monimage.dvi
+%   3/ ps2eps monimage.ps
+%   4/ ps2pdf -dEPSCrop monimage.eps
+%   5/ Dans votre fichier d'exos \includegraphics{monimage}
+
+\begin{document}
+
+\begin{center}
+\begin{pspicture}(-4.5,-1.5)(4.5,1.5)
+\psaxes{->}(0,0)(-4.5,-1.5)(4.5,1.5)
+\psplot[linecolor=blue]{0}{1}{x 0.5 sub}
+\psplot[linecolor=blue]{1}{2}{x 1.5 sub}
+\psplot[linecolor=blue]{2}{3}{x 2.5 sub}
+\psplot[linecolor=blue]{3}{4}{x 3.5 sub}
+\psplot[linecolor=blue]{4}{4.3}{x 4.5 sub}
+\psplot[linecolor=blue]{-1}{0}{x 0.5 add}
+\psplot[linecolor=blue]{-2}{-1}{x 1.5 add}
+\psplot[linecolor=blue]{-3}{-2}{x 2.5 add}
+\psplot[linecolor=blue]{-4}{-3}{x 3.5 add}
+\psplot[linecolor=blue]{-4.4}{-4}{x 4.5 add}
+\psdots[linecolor=blue](0,-0.5)(1,-0.5)(2,-0.5)(3,-0.5)(4,-0.5)(-1,-0.5)(-2,-0.5)(-3,-0.5)(-4,-0.5)
+\rput{45}(0.03,0.53){\textcolor{blue}{$($}}
+\rput{45}(1.03,0.53){\textcolor{blue}{$($}}
+\rput{45}(2.03,0.53){\textcolor{blue}{$($}}
+\rput{45}(3.03,0.53){\textcolor{blue}{$($}}
+\rput{45}(4.03,0.53){\textcolor{blue}{$($}}
+\rput{45}(-0.97,0.53){\textcolor{blue}{$($}}
+\rput{45}(-1.97,0.53){\textcolor{blue}{$($}}
+\rput{45}(-2.97,0.53){\textcolor{blue}{$($}}
+\rput{45}(-3.97,0.53){\textcolor{blue}{$($}}
+\end{pspicture}
+\end{center}
+
+\end{document}

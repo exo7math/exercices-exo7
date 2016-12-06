@@ -1,0 +1,71 @@
+\exercice{5632, rouget, 2010/10/16}
+\enonce[***]
+\begin{enumerate}
+ \item  Soient $n\in\Nn^*$ puis $\varphi_1$,..., $\varphi_n$ et $\varphi$ $n+1$ formes linéaires sur un $\Kk$-espace vectoriel $E$ de dimension finie.
+
+Montrer que : $\left(\exists(\lambda_1,...,\lambda_n)\in\Kk^n/\;\varphi =\lambda_1\varphi_1+...+\lambda_n\varphi_n\Leftrightarrow\displaystyle\bigcap_{i=1}^{n}\text{Ker}\varphi_i\subset\text{Ker}\varphi\right)$.
+
+\item  Signification du résultat précédent : dans $\Rr^3$, équation d'un plan $P$ contenant $D~:~\left\{
+\begin{array}{l}
+x+y+z=0\\
+2x+3z=0
+\end{array}
+\right.$ et le vecteur $u=(1,1,1)$ ?
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Soit $\varphi\in E^*$. 
+
+\textbullet~$\Rightarrow/$ Supposons qu'il existe $(\lambda_1,\ldots,\lambda_n)\in\Kk^n$ tel que $\varphi=\lambda_1\varphi_1+...+\lambda_n\varphi_n$.
+
+Soit $x\in\displaystyle\bigcap_{i=1}^{n}\text{Ker}\varphi_i$. Alors $\varphi(x)=\lambda_1\varphi_1(x)+\ldots+\lambda_n\varphi_n(x)=0+\ldots+0=0$ et donc $x\in\text{Ker}\varphi$. On a montré que 
+$\displaystyle\bigcap_{i=1}^{n}
+\text{Ker}\varphi_i\subset\text{Ker}\varphi
+$.
+
+\textbullet~$\Leftarrow/$ Supposons tout d'abord la famille $(\varphi_1,\ldots,\varphi_n)$ libre. On complète éventuellement la famille libre $(\varphi_1,\ldots,\varphi_n)$ de $E^*$ en une base $(\varphi_1,\ldots,\varphi_n,\varphi_{n+1},\ldots,\varphi_p)$ de $E^*$ et on note $(e_1,\ldots,e_n,e_{n+1},\ldots,e_p)$ la préduale de la base $(\varphi_1,\ldots,\varphi_p)$.
+
+Soit $x=\sum_{i=1}^{p}x_ie_i$ un élément de $E$.
+
+\begin{center}
+$x\in\displaystyle\bigcap_{i=1}^{n}\text{Ker}\varphi_i\Leftrightarrow\forall i\in\llbracket1,n\rrbracket,\;\varphi_i(x)=0\Leftrightarrow\forall i\in\llbracket1,n\rrbracket,\;x_i=0\Leftrightarrow x\in\text{Vect}(e_{n+1},\ldots,e_p)$
+\end{center}
+
+(avec la convention usuelle $\text{Vect}(\varnothing)=\{0\}$ dans le cas $p=n$). Donc $\displaystyle\bigcap_{i=1}^{n}\text{Ker}\varphi_i=\text{Vect}(e_{n+1},\ldots,e_p)$.
+
+Soit alors $\varphi\in E^*$. Posons $\varphi=\sum_{i=1}^{p}\lambda_i\varphi_i$.
+
+\begin{align*}\ensuremath
+\displaystyle\bigcap_{i=1}^{n}\text{Ker}\varphi_i\subset\text{Ker}\varphi&\Rightarrow\text{Vect}(e_{n+1},\ldots,e_p)\subset\text{Ker}\varphi\Rightarrow\forall j\in\llbracket n+1,p\rrbracket,\;\varphi(e_j)=0\\
+ &\Rightarrow\forall j\in\llbracket n+1,p\rrbracket,\;\lambda_j=0\Rightarrow\varphi=\sum_{i=1}^{n}\lambda_i\varphi_i.
+\end{align*}
+
+Le résultat est donc démontré dans le cas où la famille $(\varphi_1,\ldots,\varphi_n)$ est libre.
+
+Si tous les $\varphi_i$, $1\leqslant i\leqslant n$, sont nuls alors $\displaystyle\bigcap_{i=1}^{n}\text{Ker}\varphi_i=E$ puis $\text{Ker}\varphi=E$ et donc $\varphi=0$. Dans ce cas aussi, $\varphi$ est combinaison linéaire des $\varphi_i$, $1\leqslant i\leqslant n$.
+
+Si les $\varphi_i$, $1\leqslant i\leqslant n$, ne sont pas tous nuls et si la famille $(\varphi_1,\ldots,\varphi_n)$ est liée, on extrait de la famille $(\varphi_1,\ldots,\varphi_n)$ génératrice de $\text{Vect}(\varphi_1,\ldots,\varphi_n)$ une base $\left(\varphi_{i_1},\ldots,\varphi_{i_m}\right)$ de $\text{Vect}(\varphi_1,\ldots,\varphi_n)$.
+
+On a $\displaystyle\bigcap_{i=1}^{n}\text{Ker}\varphi_i\subset\displaystyle\bigcap_{k=1}^{m}\text{Ker}\varphi_{i_k}$ mais d'autre part, tout $\varphi_i$, $1\leqslant i\leqslant n$, étant combinaison linéaire des $\varphi_{i_k}$, $1\leqslant k\leqslant m$, chaque $\text{Ker}\varphi_i$, $1\leqslant i\leqslant n$, contient $\displaystyle\bigcap_{k=1}^{m}\text{Ker}\varphi_{i_k}$ et donc $\displaystyle\bigcap_{k=1}^{m}\text{Ker}\varphi_{i_k}\subset\displaystyle\bigcap_{i=1}^{n}\text{Ker}\varphi_i$. Finalement, $\displaystyle\bigcap_{k=1}^{m}\text{Ker}\varphi_{i_k}=\displaystyle\bigcap_{i=1}^{n}\text{Ker}\varphi_i\subset\text{Ker}\varphi$. D'après l'étude du cas où la famille est libre, $\varphi$ est combinaison linéaire des $\varphi_{i_k}$, $1\leqslant k\leqslant m$ et donc des $\varphi_i$, $1\leqslant i\leqslant n$. La réciproque est démontrée dans tous les cas.
+
+\item  Soit $\varphi$ une forme linéaire sur $\Rr^3$ telle que $P=\text{Ker}\varphi$ (en particulier $\varphi$ n'est pas nulle).
+Soient $\varphi_1$ la forme linéaire $(x,y,z)\mapsto x+y+z$ et $\varphi_2$ la forme linéaire $(x,y,z)\mapsto2x+3z$. Alors la famille $(\varphi_1,\varphi_2)$ est une famille libre du dual de $\Rr^3$ et $D=\text{Ker}\varphi_1\cap\text{Ker}\varphi_2$. D'après 1)
+
+\begin{center}
+$D\subset P\Leftrightarrow\exists(a,b)\in\Rr^2\setminus\{(0,0)\}/\;\varphi= a\varphi_1+b\varphi_2$ (théorie des faisceaux),
+\end{center}
+
+puis
+
+\begin{center}
+$u\in P\Leftrightarrow a\varphi_1(u)+b\varphi_2(u) = 0\Leftrightarrow 3a + 5b = 0$.
+\end{center}
+
+Une équation de $P$ est donc $5(x+y+z)-3(2x+3z) = 0$ ou encore $-x + 5y -4z = 0$.
+\end{enumerate}
+\fincorrection
+\finexercice

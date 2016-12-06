@@ -1,0 +1,44 @@
+\exercice{1948, gineste, 2001/11/01}
+
+\enonce[Permutation dans la série harmonique alternée : Pringsheim (1883)]
+Pour tout
+entier $n>0$, soit $u(n)=(-1)^n/n$ .
+Soit $\sigma$ une permutation des entiers
+$>0$ et soit $\tau$ la permutation réciproque. On suppose de plus que
+
+(1) pour tout entier $p>0$ on a $\tau(2p-1)<\tau(2p+1)$ et
+$\tau(2p)<\tau(2p+2).$
+
+(2) Notant par $p(n)$ le nombre d'entiers $k$ tels que $1\leq k\leq n$ et
+$\sigma(k)$ est pair, alors $\alpha=\lim _{n\infty}p(n)/n$ existe et est dans
+$]0,1[.$
+
+\begin{enumerate}
+\item
+Dans le cas particulier o\`u $\sigma$ est définie par
+$$\sigma(3p)=2p,\ \sigma(3p+1)=4p+1,\ \sigma(3p+2)=4p+3$$
+pour tout entier $p>0,$ calculer explicitement $\tau$, et vérifier que $\sigma$ satisfait
+(1) et (2), en calculant $p(n)$ pour tout $n$ ainsi que $\alpha.$
+
+\item
+On note $f(n)=\sum_{k=1}^n1/k-\log n,$ et on rappelle le fait,
+vu en cours, que  $\lim _{n\infty}f(n)=\gamma$ existe (Constante d'Euler).
+On revient au cas général pour $\sigma$, on considère la série de terme
+général $v_n=u(\sigma(n))$ et on note $s_n=v_1+\cdots+v_n$.
+
+\item
+Montrer par récurrence  que
+$s_n=\sum_{k=1}^{p(n)}\frac{1}{2k}-\sum_{k=1}^{n-p(n)}\frac{1}{2k-1}$ et que
+$$s_n=\frac{1}{2}f(p(n))+\frac{1}{2}f(n-p(n))-f(2n-2p(n))
++\frac{1}{2}\log\frac{p(n)}{n-p(n)}-\log 2.$$
+En déduire que $\sum _{n=1}^{\infty}v_n$ converge
+et calculer sa somme en fonction de $\alpha.$
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\nocorrection
+
+\finexercice
+

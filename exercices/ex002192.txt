@@ -1,0 +1,36 @@
+\exercice{2192, debes, 2008/02/12}
+\enonce 
+Soit $G$ un $p$-groupe d'ordre $p^r$. 
+\smallskip
+
+(a) Montrer que pour tout entier $k\leq r$, $G$ poss\`ede un sous-groupe
+distingu\'e d'ordre $p^k$. 
+\smallskip
+
+(b) Montrer qu'il existe une suite $G_0=\{1\} \subset G_1 \subset \ldots \subset
+G_r=G$ de sous-groupes $G_i$ distingu\'es d'ordre $p^i$ ($i=1,\ldots,r$).
+\smallskip
+
+(c) Montrer que pour tout sous-groupe $H$ de $G$ d'ordre $p^s$ avec $s<r$, il
+existe un sous-groupe d'ordre $p^{s+1}$ de $G$ qui contient $H$.
+\finenonce 
+
+\indication
+Pour les trois \'enonc\'es (a), (b) et (c), raisonner par r\'ecurrence sur $r$    
+en utilisant le fait que le centre d'un $p$-groupe n'est pas trivial.
+\finindication
+
+\correction 
+(a) Soit $G$ un $p$-groupe d'ordre $p^r$. Son centre $Z(G)$ est un $p$-groupe    
+non trivial. Soit $x\in Z(G)\setminus\{1\}$. Si $p^\nu>0$ est son ordre, alors
+$x^{p^{\nu-1}}$ est d'ordre $p$ et dans $Z(G)$; on peut donc supposer que $x$
+lui-m\^eme est d'ordre $p$. Le groupe $<x>$ est distingu\'e dans
+$G$ et le groupe quotient $G/<x>$ est d'ordre $p^{r-1}$. Par hypoth\`ese
+de r\'ecurrence, pour tout $k\leq r$, le groupe $G/<x>$ poss\`ede un sous-groupe
+distingu\'e ${\cal H}$ d'ordre $p^{k-1}$. Soit $H$ le sous-groupe image r\'eciproque
+de ${\cal H}$ par la surjection canonique $G\rightarrow G/<x>$. Le sous-groupe $H$,
+image r\'eciproque par un morphisme d'un sous-groupe distingu\'e, est
+distingu\'e dans $G$ et ${\cal H}=H/<x>$, ce qui donne $|H| = |{\cal H}| \hskip 2pt
+|<x>| = p^k$. 
+\fincorrection
+\finexercice

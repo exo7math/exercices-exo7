@@ -1,0 +1,50 @@
+\exercice{5448, rouget, 2010/07/10}
+\enonce[**I Le lemme de \textsc{Lebesgue}]
+\begin{enumerate}
+\item  On suppose que $f$ est une fonction de classe $C^1$ sur $[a,b]$. Montrer que $\lim_{\lambda\rightarrow +\infty}\int_{a}^{b}\sin(\lambda t)f(t)\;dt=0$.
+\item  (***) Redémontrer le même résultat en supposant simplement que $f$ est continue par morceaux sur $[a,b]$ (commencer par le cas des fonctions en escaliers).
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  Puisque $f$ est de classe $C^1$ sur $[a,b]$, on peut effectuer une intégration par parties qui fournit pour $\lambda>0$~:
+
+$$\left|\int_{a}^{b}f(t)\sin(\lambda t)\;dt\right|=\left|\frac{1}{\lambda}(-\left[\cos(\lambda t)f(t)\right]_{a}^{b}+\int_{a}^{b}f'(t)\cos(\lambda t)\;dt)\right|\leq\frac{1}{\lambda}(|f(a)|+|f(b)|+\int_{a}^{b}|f'(t)|\;dt).$$ 
+
+Cette dernière expression tend vers $0$ quand $\lambda$ tend vers $+\infty$, et donc $\int_{a}^{b}f(t)\sin(\lambda t)\;dt$ tend vers $0$ quand $\lambda$ tend vers $+\infty$.
+
+\item  Si $f$ est simplement supposée continue par morceaux, on ne peut donc plus effectuer une intégration par parties.
+
+Le résultat est clair si $f=1$, car pour $\lambda>0$, $\left|\int_{a}^{b}\sin(\lambda t)\;dt\right|=...\leq\frac{2}{\lambda}$.
+
+Le résultat s'étend aux fonctions constantes par linéarité de l'intégrale puis aux fonctions constantes par morceaux par additivité par rapport à l'intervalle d'intégration, c'est-à-dire aux fonctions en escaliers.
+
+Soit alors $f$ une fonction continue par morceaux sur $[a,b]$. 
+
+Soit $\varepsilon>0$. On sait qu'il existe une fonction en escaliers $g$ sur $[a,b]$ telle que $\forall x\in[a,b],\;|f(x)-g(x)|<\frac{\varepsilon}{2(b-a)}$.
+
+Pour $\lambda>0$, on a alors 
+
+\begin{align*}\ensuremath
+\left|\int_{a}^{b}f(t)\sin(\lambda t)\;dt\right|&=\left|\int_{a}^{b}(f(t)-g(t))\sin(\lambda t)\;dt+\int_{a}^{b}g(t)\sin(\lambda t)\;dt\right|\\
+ &\leq\int_{a}^{b}|f(t)-g(t)|\;dt+\left|\int_{a}^{b}g(t)\sin(\lambda  t)\;dt\right|\leq(b-a)\frac{\varepsilon}{2(b-a)}+\left|\int_{a}^{b}g(t)\sin(\lambda t)\;dt\right|\\
+ &=\frac{\varepsilon}{2}+\left|\int_{a}^{b}g(t)\sin(\lambda t)\;dt\right|.
+\end{align*}
+
+Maintenant, le résultat étant établi pour les fonctions en esacliers, 
+
+$$\exists A>0/\;\forall\lambda\in\Rr,\;
+(\lambda>A\Rightarrow\left|\int_{a}^{b}g(t)\sin(\lambda t)\;dt\right|<\frac{\varepsilon}{2}).$$
+
+Pour $\lambda>A$, on a alors $\left|\int_{a}^{b}f(t)\sin(\lambda t)\;dt\right|<\frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon$. On a montré que 
+
+$$\forall\varepsilon>0,\exists A>0/\;\forall\lambda\in\Rr,\;(\lambda>A\Rightarrow\left|\int_{a}^{b}f(t)\sin(\lambda t)\;dt\right|<\varepsilon),$$
+
+et donc que $\int_{a}^{b}f(t)\sin(\lambda t)\;dt$ tend vers $0$ quand $\lambda$ tend vers $+\infty$.
+\end{enumerate}
+
+\fincorrection
+\finexercice

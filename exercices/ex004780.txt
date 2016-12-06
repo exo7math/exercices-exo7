@@ -1,0 +1,27 @@
+\exercice{4780, quercia, 2010/03/16}
+\enonce[Partie convexe dense]
+Soit $E$ un evn de dimension finie et $C \subset E$ convexe et dense.
+Montrer que $C=E$.
+\finenonce
+
+\noindication
+
+\correction
+On proc{\`e}de par r{\'e}currence sur~$n=\dim E$. Pour $n=1$, en confondant $E$ et $\R$,
+$C$ est un intervalle dense, c'est $\R$.
+Pour $n\ge 2$, soit $E = H\oplus{<a>}$ o{\`u} $H$ est un hyperplan de~$E$.
+On montre ci-dessous que $C' = C \cap H$ est une partie de~$H$ convexe et dense,
+donc {\'e}gale {\`a}~$H$, d'o{\`u} $H\subset C$ et ce pour tout~$H$. Ainsi $C=E$.
+
+Densit{\'e} de $C'$~: soit $x\in H$, et $(y_k)$, $(z_k)$ des suites d'{\'e}l{\'e}ments de~$C$
+convergeant respectivement vers $x+a$ et $x-a$. On {\'e}crit $y_k = y'_k + \lambda_ka$
+et $z_k = z'_k + \mu_ka$ avec $y'_k,z'_k\in H$ et $\lambda_k,\mu_k\in\R$.
+Par {\'e}quivalence des normes en dimension finie, on a $\lambda_k\xrightarrow[k\to\infty]{}1$
+et $\mu_k\xrightarrow[k\to\infty]{}-1$, donc le point $x_k = \frac{\lambda_kz_k-\mu_ky_k}{\lambda_k-\mu_k}$
+est bien d{\'e}fini et appartient {\`a}~$C'$ pour $k$ assez grand, et converge vers~$x$.
+
+Remarque~: Si $E$ est de dimension infinie, alors il contient des hyperplans non ferm{\'e}s,
+donc des parties strictes, convexes denses.
+\fincorrection
+
+\finexercice

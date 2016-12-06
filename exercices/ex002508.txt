@@ -1,0 +1,61 @@
+\exercice{2508, queffelec, 2009/04/01}
+\enonce
+Soit, dans ${\Rr^n}$, $F$
+un sous-espace ferm\'e, et soit $f:{\Rr^n}\to\Rr$ d\'efinie par
+$f(x)=d(x,F)$. On rappelle que $f$ est $1$-lipschitzienne, et que
+pour chaque $x$ il existe $y\in F$ tel que $f(x)=d(x,y)$.
+\begin{enumerate}
+\item On suppose que $f$ est diff\'erentiable en $x\notin F$.
+Montrer que $||Df(x)||_{{\cal L}(\Rr^n,\Rr)}\leq 1$.
+
+\item On consid\`ere la fonction $\varphi : t\in[0,1]\to
+f((1-t)x+ty)$; en calculant $\varphi'(0)$ de deux fa\c cons,
+montrer que $Df(x).{\frac{x-y}{||x-y||}}=1$ et $||Df(x)||_{{\cal
+L}(\Rr^n,\Rr)}= 1$.
+
+\item En d\'eduire que $y$ est unique.
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  Pour montrer que $||Df(x)||_{{\cal L}(\Rr^n,\Rr)}\leq 1$,
+il faut montrer que si $h \in \mathbb{R}^n$, on a $|Df(x).h|\leq
+||h||$. On a $$|Df(x).h|=|D_hf(x)|=|\lim_{t \rightarrow
+0}\frac{f(x+th)-f(x)}{t}|.$$ Or $f$ est $1$-lipschitzienne et donc
+$|f(x+th)-f(x)|\leq ||th||=t||h||.$ Par cons\'equent pour tout $h
+\in \mathbb{R}^n$, $|Df(x).h|\leq ||h||$ ce qui donne
+l'in\'egalit\'e demand\'ee. \item $$\varphi'(0)=\lim_{t
+\rightarrow 0}\frac{\varphi(t)-\varphi(0)}{t-0}=\lim_{t
+\rightarrow 0}\frac{f((1-t)x+ty)-f(x)}{t}=$$ $$\lim_{t \rightarrow
+0}\frac{f(x+t(y-x))-f(x)}{t}=Df(x).(y-x).$$ Ou encore, soit $\psi:
+\mathbb{R} \rightarrow \mathbb{R}^n$ l'application
+$\psi(t)=(1-t)x+ty$, on a alors $\varphi(t)=f \circ \psi$ et
+d'apr\`es la formule de diff\'erentielle d'une composition:
+$$\varphi'(0)=Df(\psi(0)).D\psi(0)=Df(x).(y-x).$$
+Or,
+$$d(x,F)=d(x,y)=||x-y||=\frac{1}{1-t}||(1-t)(x-y)||=$$
+$$\frac{1}{1-t}||[(1-t)x+ty]-[ty+(1-t)y]||
+=\frac{1}{1-t}d((1-t)x+ty,y).$$ Notons $x_t=(1-t)x+ty$, on a alors
+$$d(x_t,y)=(1-t)d(x,F).$$
+Or, $\varphi(t)=d(x_t,F) \leq d(x_t,y) \leq (1-t)d(x,y) \leq
+\varphi(0)$ et donc
+$$|\varphi'(0)|=\lim_{t
+\rightarrow 0}\frac{|\varphi(t)-\varphi(0)|}{t} =\lim_{t
+\rightarrow 0}\frac{\varphi(0)-\varphi(t)}{t}\geq$$
+$$ \lim_{t \rightarrow 0}\frac{d(x,y)-(1-t)d(x,y)}{t} \geq
+d(x,y)=||x-y||.$$ Donc
+$$|Df(x)(x-y)| \geq ||x-y||$$ d'o\`u la deuxi\`eme inégalité.
+\item Raisonnons par l'absurde. Supposons qu'il existe deux point
+$y_1$ et $y_2$ tels que $d(x,F)=d(x,y_1)=d(x,y_2).$ Alors, de la
+même manière que précédement, on a
+$Df(x).(x-y_1)=Df(x).(x-y_2)=d(x,F)$ et donc
+$Df(x).(x-y_1+x-y_2)=2d(x,F)$. Or, $||x-y_1+x-y_2||< 2d(x,F)$ car
+les vecteurs $x-y_1$ et $x-y_2$ ne sont pas alignés. Mais alors
+cela contredit le fait que $||Df(x)||_{\cal
+L(\mathbb{R}^n,\mathbb{R})}=1$.
+\end{enumerate}
+\fincorrection
+\finexercice

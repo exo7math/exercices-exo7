@@ -1,0 +1,21 @@
+\exercice{5698, rouget, 2010/10/16}
+\enonce[***]
+Soit $(u_n)_{n\in\Nn}$ une suite de réels positifs. Trouver la nature de la série de terme général $v_n =\frac{u_n}{(1+u_1)\ldots(1+u_n)}$, $n\geqslant1$,  connaissant la nature de la série de terme général $u_n$ puis en calculer la somme en cas de convergence.
+\finenonce
+
+\noindication
+
+\correction
+ Pour $n\geqslant2$, $v_n=\frac{u_n+1-1}{(1+u_1)\ldots(1+u_n)}=\frac{1}{(1+u_1)\ldots(1+u_{n-1})}-\frac{1}{(1+u_1)\ldots(1+u_n)}$  et d'autre part $v_1=1-\frac{1}{1+u_1}$. Donc, pour $n\geqslant2$
+
+\begin{center}
+$\sum_{k=1}^{n}v_k =1-\frac{1}{(1+u_1)\ldots(1+u_n)}$ (somme télescopique).
+\end{center}
+
+Si la série de terme général $u_n$ converge alors $\lim_{n \rightarrow +\infty}u_n=0$ et donc $0<u_n\underset{n\rightarrow+\infty}{\sim}\ln(1+u_n)$. Donc la série de terme général $\ln(1+u_n)$ converge ou encore la suite  $\left(\ln\left(\prod_{k=1}^{n}(1+u_k)\right)\right)_{n\geqslant1}$
+converge vers un certain réel $\ell$. Mais alors la suite $\left(\prod_{k=1}^{n}(1+u_k)\right)_{n\geqslant1}$ converge vers le réel strictement positif $P=e^{\ell}$.
+Dans ce cas, la suite $\left(\sum_{k=1}^{n}v_k\right)_{n\geqslant1}$ converge vers $1-\frac{1}{P}$.
+
+Si la série de terme général $u_n$ diverge alors la série de terme général $\ln(1+u_n)$ diverge vers $+\infty$ et il en est de même que la suite $\left(\prod_{k=1}^{n}(1+u_k)\right)_{n\geqslant1}$. Dans ce cas, la suite $\left(\sum_{k=1}^{n}v_k\right)_{n\geqslant1}$ converge vers $1$.
+\fincorrection
+\finexercice

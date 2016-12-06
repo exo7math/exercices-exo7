@@ -1,0 +1,42 @@
+\exercice{2262, barraud, 2008/04/24}
+\enonce
+\begin{enumerate}
+  \item Montrer que l'id\'eal 
+$(x, n)$ o\`u $n\in \Zz$, $n>1$ de l'anneau $\Zz[x]$ n'est pas principal.
+  \item Soit $A$ un anneau int\`egre. Montrer que
+$A[x]$  est principal ssi $A$ est un corps.
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+  \begin{enumerate}
+  \item
+    Supposons $(X,n)$ principal dans $\Zz[X]$: $(X,n)=(P_0)$. Alors
+    $P_0|n$ donc $P_0\in\Zz$, et $P_0|X$ donc $P_0=\pm1$. Ainsi
+    $(P_0)=\Zz[X]$. Or $(X,n)$ est l'ensemble des polynômes dont le terme
+    constant est un multiple de $n$: en effet, si $P\in(X,n)$, $\exists
+    A,B\in\Zz[X], P=AX+Bn$ donc le terme constant de $P$ est un multiple
+    de $n$. Réciproquement, si le terme constant de $P=\sum p_i X^i$ est
+    un multiple de $n$, $p_0=p'_0n$, alors $P=X(\sum_{i\geq
+      1}p_iX^i)+p'_0n\in(X,n)$. Ainsi, $1\notin(X,n)$. Donc $(X,n)$ n'est
+    pas principal.
+
+  \item
+    Si $A[X]$ est principal, soit $a\in A\setminus\{0\}$, et $I=(X,a)$.
+    $A[X]$ étant principal, $\exists P_0\in A[X], I=(P_0)$. Alors $P_0|a$
+    donc $P_0\in A$, et $P_0|X$ donc $P_0|1$ et $P_0$ est inversible. On
+    en déduit que $I=A[X]$. En particulier $1\in I$: $\exists U,V\in
+    A[X], XU+aV=1$. Le terme constant de $XU+aV$ est multiple de $a$ et
+    vaut $1$. $a$ est donc inversible.
+
+    Si $A$ est un corps, on dispose de la division euclidienne. Soit $I$
+    un idéal de $A[X]$. Soit $P_0$ un élément de $I\setminus\{0\}$ de
+    degré minimal. Soit $P\in I$. $\exists!(Q,R)\in A[X]^2, P=P_0Q+R$ et
+    $\deg(R)<\deg(P)$. Comme $R=P-P_0Q$, on a $R\in I$, et comme
+    $\deg(R)<\deg(P_0)$, on a $R=0$. Ainsi $P\in(P_0)$. On a donc
+    $I\subset(P_0)\subset I$.  
+  \end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,35 @@
+\exercice{5424, rouget, 2010/07/06}
+\enonce[***I]
+Soit $f$ de classe $C^1$ sur $\Rr$ vérifiant $\lim_{x\rightarrow +\infty}(f(x)+f'(x))=0$. Montrer que $\lim_{x\rightarrow +\infty}f(x)=\lim_{x\rightarrow +\infty}f'(x)=0$. (Indication. Considérer $g(x)=e^xf(x)$).
+\finenonce
+
+\noindication
+
+\correction
+Montrons que $\lim_{x\rightarrow +\infty}f(x)=0$.
+
+Pour $x$ réel, posons $g(x)=e^xf(x)$. $g$ est dérivable sur $R$ et $\forall x\in\Rr,\;g'(x)=e^x(f(x)+f'(x))$. Il s'agit donc maintenant de montrer que si $\lim_{x\rightarrow +\infty}e^{-x}g'(x)=0$ alors $\lim_{x\rightarrow +\infty}e^{-x}g(x)=0$.
+
+Soit $\varepsilon$ un réel strictement positif.
+
+$$\exists A>0/\;\forall x\in\Rr,\;(x\geq A\Rightarrow-\frac{\varepsilon}{2}<e^{-x}g'(x)<\frac{\varepsilon}{2}\Rightarrow-\frac{\varepsilon}{2}e^x\leq g'(x)\leq \frac{\varepsilon}{2}e^x).$$
+ 
+Pour $x$ réel donné supérieur ou égal à $A$, on obtient en intégrant sur $[A,x]$~:
+
+$$-\frac{\varepsilon}{2}(e^x-e^A)=\int_{A}^{x}-\frac{\varepsilon}{2}e^t\;dt\leq\int_{A}^{x}g'(t)\;dt=g(x)-g(A)\leq
+\frac{\varepsilon}{2}(e^x-e^A),$$
+
+et donc 
+
+$$\forall x\geq A,\;g(A)e^{-x}-\frac{\varepsilon}{2}(1-e^{A-x})\leq e^{-x}g(x)\leq g(A)e^{-x}+\frac{\varepsilon}{2}(1-e^{A-x}).$$
+
+Maintenant, $g(A)e^{-x}-\frac{\varepsilon}{2}(1-e^{A-x})$ et $g(A)e^{-x}+\frac{\varepsilon}{2}(1-e^{A-x})$ tendent respectivement vers $-\frac{\varepsilon}{2}$ et $\frac{\varepsilon}{2}$ quand $x$ tend vers $+\infty$. Donc,
+
+$$\exists B\geq A/\;\forall x\in\Rr,\;(x\geq B\Rightarrow g(A)e^{-x}-\frac{\varepsilon}{2}(1-e^{A-x})>-\varepsilon\;\mbox{et}\;<g(A)e^{-x}-\frac{\varepsilon}{2}(1-e^{A-x})
+<\varepsilon.$$
+
+Pour $x\geq B$, on a donc $-\varepsilon<e^{-x}g(x)<\varepsilon$.
+
+On a montré que $\forall\varepsilon>0,\;\exists B>0/\;\forall x\in\Rr,\;(x\geq B\Rightarrow|e-xg(x)|<\varepsilon)$ et donc $\lim_{x\rightarrow +\infty}e^{-x}g(x)=0$ ce qu'il fallait démontrer.
+\fincorrection
+\finexercice

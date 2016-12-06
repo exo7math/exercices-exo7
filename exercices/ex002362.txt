@@ -1,0 +1,29 @@
+\exercice{2362, mayer, 2003/10/01}
+\enonce 
+Soient $E$ et $F$ deux espaces norm\'es et $L:E\to F$ une application lin\'eaire
+v\'erifiant:
+\emph{$(L(x_n))_n$ est born\'ee dans $F$ pour toute suite $(x_n)_n$ de $E$
+tendant vers $0\in E$.}
+Montrer que $L$ est continue.
+\finenonce
+
+\indication
+La continuité de $L$ sur $E$ équivaut  la continuité en $0$.
+Par l'absurde supposer que $L$ n'est pas continue en $0$ et construire une suite
+$(x_n)$  qui tend vers $0$ mais avec $(L(x_n))$ non bornée.
+\finindication
+
+\correction
+Comme $L$ est linéaire il suffit de montrer que $L$ est continue en $0$.
+Supposons que cela ne soit pas vrai, alors il faut nier la continuité de $L$ en $0$ qui s'écrit :
+$$\forall \epsilon >0 \qquad \exists \eta >0 \qquad \forall x\in E  \qquad(\|x\|<\eta \Rightarrow \|L(x)\|<\epsilon).$$
+La négation s'écrit alors :
+$$\exists \epsilon >0 \qquad \forall \eta >0 \qquad \exists x \in E \qquad (\|x\|<\eta \ \text{ et }\  \|L(x)\| \ge \epsilon).$$
+Soit donc un tel $\epsilon >0$ de la négation, pour $\eta$ de la forme
+$\eta=\frac1n$, on obtient $y_n$ tel que $\|y_n\|<\frac1n$ et $\|L(y_n)\|\ge \epsilon$.
+On pose $x_n = \sqrt n y_n$, alors $\|x_n\| = \sqrt n \|y_n\| < \frac 1 {\sqrt n}$ donc $(x_n)$ est une suite de $E$ qui tend vers $0$. 
+Par contre $\| L(x_n) \| = \sqrt n \|L(y_n)\| \ge \epsilon \sqrt n$, donc
+la suite $(L(x_n))$ n'est pas bornée.
+Par contraposition nous avons obtenu le résultat souhaité.
+\fincorrection
+\finexercice

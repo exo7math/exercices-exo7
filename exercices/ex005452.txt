@@ -1,0 +1,20 @@
+\exercice{5452, rouget, 2010/07/10}
+\enonce[***]
+Soit $f$ une fonction de classe $C^1$ sur $[0,1]$ telle que $f(0)=0$. Montrer que $2\int_{0}^{1}f^2(t)\;dt\leq\int_{0}^{1}{f'}^2(t)\;dt$. 
+\finenonce
+
+\noindication
+
+\correction
+Pour $t\in[0,1]$,
+
+\begin{align*}\ensuremath
+f^2(t)&=\left(\int_{0}^{t}f'(u)\;du\right)^2\leq(\int_{0}^{t}{f'}^2(u)\;du)(\int_{0}^{t}1\;du)\quad(\textsc{Cauchy}-\textsc{Schwarz})\\
+ &=t\int_{0}^{t}{f'}^2(u)\;du\leq t\int_{0}^{1}{f'}^2(u)\;du,
+\end{align*}
+ 
+et donc, par croissance de l'intégrale,
+
+$$\int_{0}^{1}f^2(t)\;dt\leq\int_{0}^{1}t(\int_{0}^{1}{f'}^2(u)\;du)\;dt=(\int_{0}^{1}{f'}^2(u)\;du)\int_{0}^{1}t\;dt=\frac{1}{2}\int_{0}^{1}{f'}^2(u)\;du.$$
+\fincorrection
+\finexercice

@@ -1,0 +1,33 @@
+\exercice{3778, quercia, 2010/03/11}
+\enonce[Mineurs principaux positifs]
+
+Soit $A \in \mathcal{M}_n(\R)$ symétrique.
+Pour $1 \le p \le n$, on note $\Delta_p$ le déterminant
+de la sous-matrice $(a_{ij})_{1\le i\le p ; 1\le j\le p}$.
+
+\begin{enumerate}
+  \item Montrer que si $A$ est définie positive, alors tous les déterminants
+    $\Delta_p$ sont strictement positifs.
+  \item Réciproque : on suppose $\Delta_1 > 0, \dots, \Delta_n > 0$.
+    Montrer qu'il existe
+    une matrice $B$ triangulaire supérieure inversible telle $A = {}^tBB$.
+    En déduire que $A$ est définie positive.
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item 
+  \item Récurrence : pour $n=1$ c'est évident.\par
+             $n-1\to n$ : $A = \begin{pmatrix} A' &C' \cr {}^tC' &\alpha \cr\end{pmatrix}$
+             avec $A' = {}^tB'B'$.\par
+             On cherche $B = \begin{pmatrix} B' &X' \cr 0 &x \cr\end{pmatrix}$ d'où :
+             $X' = {}^tB'^{-1}C'$ et $x^2 = \alpha - {}^tX'X'
+                 = \frac{\det A}{\det A'} > 0$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

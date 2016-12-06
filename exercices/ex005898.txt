@@ -1,0 +1,146 @@
+\exercice{5898, rouget, 2010/10/16}
+\enonce[*** I]
+Résoudre les équations aux dérivées partielles suivantes :
+
+\begin{enumerate}
+ \item  $2 \frac{\partial f}{\partial x}- \frac{\partial f}{\partial y}= 0$ en posant $u = x+y$ et $v = x+2y$.
+
+\item  $x \frac{\partial f}{\partial y}-y \frac{\partial f}{\partial x}=0$ sur $\Rr^2\setminus\{(0,0)\}$ en passant en polaires.
+
+\item  $x^2 \frac{\partial^2f}{\partial x^2}+2xy \frac{\partial^2f}{\partial x\partial y}+y^2 \frac{\partial^2f}{\partial y^2}= 0$ sur $]0, +\infty[\times\Rr$ en posant $x = u$ et $y = uv$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Soit $f$ une application de classe $C^1$ sur $\Rr^2$. Posons $f(x,y)=g(u,v)$ où $u = x+y$ et $v = x+2y$. L'application $(x,y)\mapsto(x+y,x+2y)=(u,v)$ est un automorphisme de $\Rr^2$ et en particulier un $C^1$-difféormorphisme de $\Rr^2$ sur lui-même.
+
+\begin{center}
+$ \frac{\partial f}{\partial x}= \frac{\partial}{\partial x}(g(u,v))= \frac{\partial u}{\partial x}
+\times \frac{\partial g}{\partial u}+ \frac{\partial v}{\partial x}
+\times \frac{\partial g}{\partial v}= \frac{\partial g}{\partial u}+ \frac{\partial g}{\partial v}$
+\end{center}
+
+De même, $ \frac{\partial f}{\partial y}= \frac{\partial g}{\partial u}+2 \frac{\partial g}{\partial v}$ et donc
+
+\begin{center}
+$2 \frac{\partial f}{\partial x}- \frac{\partial f}{\partial y}=2 \frac{\partial g}{\partial u}+2 \frac{\partial g}{\partial v}- \frac{\partial g}{\partial u}-2 \frac{\partial g}{\partial v}= \frac{\partial g}{\partial u}$.
+\end{center}
+
+Par suite, $2 \frac{\partial f}{\partial x}- \frac{\partial f}{\partial y}=0\Leftrightarrow \frac{\partial g}{\partial u}=0\Leftrightarrow\exists h\in C^1(\Rr,\Rr)/\;\forall(u,v)\in\Rr^2,\;g(u,v)=h(v)\Leftrightarrow\exists h\in C^1(\Rr,\Rr)/\;\forall(x,y)\in\Rr^2,\;f(x,y)=h(x+2y)$.
+
+\begin{center}
+\shadowbox{
+Les solutions sont les $(x,y)\mapsto h(x+2y)$ où $h\in C^1(\Rr,\Rr)$.
+}
+\end{center}
+
+Par exemple, la fonction $(x,y)\mapsto\cos\sqrt{(x+2y)^2+1}$ est solution.
+
+\item  Soit $f$ une application de classe $C^1$ sur $\Rr^2\setminus\{(0,0)\}$. Posons $f(x,y)=g(r,\theta)$ où $x=r\cos\theta$ et $y=r\sin\theta$. L'application $(r,\theta)\mapsto(r\cos\theta,r\sin\theta)=(x,y)$ est un $C^1$-difféormorphisme de $]0,+\infty[\times[0,2\pi[$ sur $\Rr^2\setminus\{(0,0)\}$. De plus,
+
+\begin{center}
+$ \frac{\partial g}{\partial r}= \frac{\partial}{\partial r}(f(x,y))= \frac{\partial x}{\partial r} \frac{\partial f}{\partial x}+ \frac{\partial y}{\partial r} \frac{\partial f}{\partial y}=\cos\theta \frac{\partial f}{\partial x}+\sin\theta \frac{\partial f}{\partial y}$,
+\end{center}
+
+et
+
+\begin{center}
+$ \frac{\partial g}{\partial \theta}= \frac{\partial}{\partial \theta}(f(x,y))= \frac{\partial x}{\partial \theta} \frac{\partial f}{\partial x}+ \frac{\partial y}{\partial \theta} \frac{\partial f}{\partial y}=-r\sin\theta \frac{\partial f}{\partial x}+r\cos\theta \frac{\partial f}{\partial y}=x \frac{\partial f}{\partial y}-y \frac{\partial f}{\partial x}$.
+\end{center}
+
+Donc
+
+\begin{align*}\ensuremath
+ \frac{\partial f}{\partial y}-y \frac{\partial f}{\partial x}=0&\Leftrightarrow \frac{\partial g}{\partial \theta}=0\Leftrightarrow\exists h_1\in C^1(]0,+\infty[,\Rr)/\;\forall(r,\theta)\in]0,+\infty[\times[0,2\pi[,\;g(r,\theta)=h_1(r)\\
+ &\Leftrightarrow\exists h_1\in C^1(]0,+\infty[,\Rr)/\;\forall(x,y)\in\Rr^2\setminus\{(0,0)\},\;f(x,y)=h_1\left(\sqrt{x^2+y^2}\right)\\
+ &\Leftrightarrow\exists h\in C^1(]0,+\infty[,\Rr)/\;\forall(x,y)\in\Rr^2\setminus\{(0,0)\},\;f(x,y)=h(x^2+y^2).
+\end{align*}
+
+\begin{center}
+\shadowbox{
+Les solutions sont les $(x,y)\mapsto h(x^2+y^2)$ où $h\in C^1(]0,+\infty[,\Rr)$.
+}
+\end{center}
+
+\item  Soit $f$ une fonction de classe $C^2$ sur $]0,+\infty[\times\Rr$. D'après le théorème de \textsc{Schwarz}, $ \frac{\partial^2f}{\partial x\partial y}= \frac{\partial^2f}{\partial y\partial x}$.
+
+Soit $\begin{array}[t]{cccc}
+\varphi~:&]0,+\infty[\times\Rr&\rightarrow&]0,+\infty[\times\Rr\\
+ &(u,v)&\mapsto&(u,uv)=(x,y)
+\end{array}
+$. Donc si on pose $f(x,y)=g(u,v)$, on a $g=f\circ\varphi$.
+
+Soit $(x,y,u,v)\in]0,+\infty[\times\Rr\times]0,+\infty[\times\Rr$.
+
+\begin{center}
+$\varphi(u,v)=(x,y)\Leftrightarrow\left\{
+\begin{array}{l}
+u=x\\
+uv=y
+\end{array}
+\right.\left\{
+\begin{array}{l}
+u=x\\
+v= \frac{y}{x}
+\end{array}
+\right.$.
+\end{center}
+
+Ainsi, $\varphi$ est une bijection de $]0,+\infty[$ sur lui-même et sa réciproque est l'application 
+
+\begin{center}
+$\begin{array}[t]{cccc}
+\varphi^{-1}~:&]0,+\infty[\times\Rr&\rightarrow&]0,+\infty[\times\Rr\\
+ &(x,y)&\mapsto&\left(x, \frac{y}{x}\right)=(u,v)
+\end{array}
+$.
+\end{center}
+
+De plus, $\varphi$ est de classe $C^2$ sur $]0,+\infty[\times\Rr$ et son jacobien
+
+\begin{center}
+$J_\varphi(u,v)=\left|
+\begin{array}{cc}
+1&0\\
+v&u
+\end{array}
+\right|=u$
+\end{center}
+
+ne s'annule pas sur $]0,+\infty[\times\Rr$. On sait alors que $\varphi$ est un $C^2$-difféomorphisme de $]0,+\infty[\times\Rr$ sur lui-même.
+
+Puisque $g=f\circ\varphi$ et que $\varphi$ est un $C^2$-difféomorphisme de $]0,+\infty[\times\Rr$ sur lui-même, $f$ est de classe $C^2$ sur $]0,+\infty[\times\Rr$ si et seulement si $g$ est de classe $C^2$ sur $]0,+\infty[\times\Rr$.
+
+\textbullet~$ \frac{\partial f}{\partial x}= \frac{\partial u}{\partial x} \frac{\partial g}{\partial u}+ \frac{\partial v}{\partial x} \frac{\partial g}{\partial v}= \frac{\partial g}{\partial u}- \frac{y}{x^2} \frac{\partial g}{\partial v}$.
+
+\textbullet~$ \frac{\partial f}{\partial y}= \frac{\partial u}{\partial y} \frac{\partial g}{\partial u}+ \frac{\partial v}{\partial y} \frac{\partial g}{\partial v}= \frac{1}{x} \frac{\partial g}{\partial v}$.
+
+\textbullet~$ \frac{\partial^2f}{\partial x^2}= \frac{\partial}{\partial x}\left( \frac{\partial g}{\partial u}- \frac{y}{x^2} \frac{\partial g}{\partial v}\right)=\left( \frac{\partial^2g}{\partial u^2}- \frac{y}{x^2} \frac{\partial^2g}{\partial u\partial v}\right)+\left( \frac{2y}{x^3} \frac{\partial g}{\partial v}- \frac{y}{x^2} \frac{\partial^2g}{\partial u\partial v}+ \frac{y^2}{x^4} \frac{\partial^2g}{\partial v^2}\right)= \frac{\partial^2g}{\partial u^2}- \frac{2y}{x^2} \frac{\partial^2g}{\partial u\partial v}+ \frac{y^2}{x^4} \frac{\partial^2g}{\partial v^2}+ \frac{2y}{x^3} \frac{\partial g}{\partial v}$.
+
+\textbullet~$ \frac{\partial^2f}{\partial x\partial y}= \frac{\partial}{\partial y}\left( \frac{\partial g}{\partial u}- \frac{y}{x^2} \frac{\partial g}{\partial v}\right)= \frac{1}{x} \frac{\partial^2g}{\partial v\partial  v}- \frac{1}{x^2} \frac{\partial g}{\partial v}- \frac{y}{x^3} \frac{\partial^2g}{\partial v^2}$.
+
+\textbullet~$ \frac{\partial^2f}{\partial y^2}= \frac{\partial}{\partial y}\left( \frac{1}{x} \frac{\partial g}{\partial v}\right)= \frac{1}{x^2} \frac{\partial^2g}{\partial v^2}$.
+
+Ensuite,
+
+\begin{align*}\ensuremath
+x^2 \frac{\partial^2f}{\partial x^2}+2xy \frac{\partial^2f}{\partial x\partial y}+y^2 \frac{\partial^2f}{\partial y^2}&=x^2 \frac{\partial^2g}{\partial u^2}-2y \frac{\partial^2g}{\partial u\partial v}+ \frac{y^2}{x^2} \frac{\partial^2g}{\partial v^2}+ \frac{2y}{x} \frac{\partial g}{\partial v}+2y \frac{\partial^2g}{\partial v\partial  v}- \frac{2y}{x} \frac{\partial g}{\partial v}- \frac{2y^2}{x^2} \frac{\partial^2g}{\partial v^2}+ \frac{y^2}{x^2} \frac{\partial^2g}{\partial v^2}\\
+ &=x^2 \frac{\partial^2g}{\partial u^2}.
+\end{align*}
+
+Ainsi,
+
+\begin{align*}\ensuremath
+\forall(x,y)\in]0,+\infty[\times\Rr,&\;x^2 \frac{\partial^2f}{\partial x^2}(x,y)+2xy \frac{\partial^2f}{\partial x\partial y}(x,y)+y^2 \frac{\partial^2f}{\partial y^2}(x,y)=0\Leftrightarrow\forall(u,v)\in]0,+\infty[\times\Rr,\; \frac{\partial^2g}{\partial u^2}(u,v)=0\\
+ &\Leftrightarrow\exists h\in C^2(\Rr,\Rr)/\;\forall(u,v)\in]0,+\infty[\times\Rr,\; \frac{\partial g}{\partial u}(u,v)=h(v)\\
+  &\exists(h,k)\in(C^2(\Rr,\Rr))^2/\;\forall(u,v)\in]0,+\infty[\times\Rr,\;g(u,v)=uh(v)+k(v)\\
+  &\exists(h,k)\in(C^2(\Rr,\Rr))^2/\;\forall(x,y)\in]0,+\infty[\times\Rr,\;f(x,y)=xh(xy)+k(xy).
+\end{align*}
+
+Les fonctions solutions sont les $(x,y)\mapsto xh(xy)+k(xy)$ où $h$ et $k$ sont deux fonctions de classe $C^2$ sur $\Rr$.
+\end{enumerate}
+\fincorrection
+\finexercice

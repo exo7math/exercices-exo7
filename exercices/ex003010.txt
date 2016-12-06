@@ -1,0 +1,30 @@
+\exercice{3010, quercia, 2010/03/08}
+
+\enonce[Anneau de caract{\'e}ristique 2]
+Soit $A$ un anneau non nul tel que : $\forall\ x \in A,\ x^2 = x$.
+\begin{enumerate}
+  \item Exemple d'un tel anneau ?
+  \item Quels sont les {\'e}l{\'e}ments inversibles de $A$ ? 
+  \item Montrer que : $\forall\ x \in A,\ x+x = 0$.
+    En d{\'e}duire que $A$ est commutatif.
+  \item Pour $x,y \in A$ on pose :
+    $x \le y \iff \exists\ a \in A \text{ tel que } x=ay$.
+    Montrer que c'est une relation d'ordre.  
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item 
+  \item $1$.
+  \item $x+y = (x+y)^2 = x^2+y^2+xy+yx = x+y+xy+yx  \Rightarrow  xy+yx = 0$.\par
+             Pour $y = 1$ : $x+x = 0  \Rightarrow  1 = -1$.\par
+             Pour $y$ quelconque : $xy = -yx = yx$.
+  \item Antisym{\'e}trie : si $x = ay$, alors $xy = ay^2 = ay = x$.\par
+             Donc $(x\le y)$ et $(y\le x)  \Rightarrow  xy = x = y$.
+\end{enumerate}
+\fincorrection
+
+\finexercice   

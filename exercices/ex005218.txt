@@ -1,0 +1,89 @@
+\exercice{5218, rouget, 2010/06/30}
+\enonce[**** Sous groupes de $(\Rr,+)$]
+\begin{enumerate}
+\item  Montrer que les sous groupes du groupe $(\Rr,+)$ sont soit de la forme $a\Zz$, $a$ réel donné, soit denses dans $\Rr$.
+
+Indication~:~pour $G$ sous-groupe donné de $(\Rr,+)$, non réduit à $\{0\}$, considérer $a=\mbox{Inf }(G\cap]0;+\infty[)$ puis envisager les deux cas $a=0$ et $a>0$.
+
+(Definition~:~$G$ est dense dans $\Rr$ si et seulement si~:~$(\forall x\in\Rr,\;\forall\varepsilon>0,\;\exists y\in G/\;|y-x|<\varepsilon)$.
+\item  Application 1. Montrer que $\{a+b\sqrt{2},\;(a,b)\in\Zz^2\}$ est dense dans $\Rr$.
+\item  Application 2 (groupe des périodes d'une fonction).
+\begin{enumerate}
+\item Soit $f$ une fonction définie sur $\Rr$ à valeurs dans $\Rr$. Montrer que l'ensemble des périodes de $f$ est un sous groupe de $(\Rr,+)$ (ce sous-groupe est réduit à $\{0\}$ si $f$ n'est pas périodique).
+\item Montrer qu'une fonction continue sur $\Rr$ qui admet $1$ et $\sqrt{2}$ pour périodes, est constante sur $\Rr$.
+\end{enumerate}
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Soit $G$ un sous groupe non nul de $(\Rr,+)$ ($\{0\}=0.\Zz$ est du type voulu).
+Il existe dans $G$ un réel non nul $x_0$.
+Puisque $G$ est un sous groupe de $(\Rr,+)$, le réel $-x_0$ est aussi dans $G$ et l'un des deux réels $x_0$ ou $-x_0$ est strictement positif. Soit alors $A=G\cap]0,+\infty[$.
+D'après ce qui précède, $A$ est une partie non vide et minorée (par $0$) de $\Rr$. $A$ admet donc une borne inférieure que l'on note $a$.
+
+\textbf{1er cas.} Si $a=0$, montrons dans ce cas que $G$ est dense dans $\Rr$ (c'est par exemple le cas de $(\Qq,+)$).
+Soient $x$ un réel et $\varepsilon$ un réel strictement positif.
+Puisque $\mbox{inf }A=\mbox{inf}(G\cap]0,+\infty[)=0$, il existe dans $G$ un élément $g$ tel que $0<g<\varepsilon$. 
+Puis il existe un entier relatif $n$ tel que $ng\leq x-\varepsilon<(n+1)g$ à savoir $n=E\left(\frac{x-\varepsilon}{g}\right)$.
+Soit $y=(n+1)g$. D'une part, $y$ est dans $G$ (si $n+1=0$, $(n+1)g=0\in G$, si $n+1>0$, $(n+1)g=g+g+...+g\in G$ et si $n+1<0$, $(n+1)g=-(-(n+1)g)\in G$) et d'autre part
+
+$$x-\varepsilon<(n+1)g=ng+g<x-\varepsilon+\varepsilon=x.$$
+On a montré que $\forall x\in\Rr,\;\forall\varepsilon>0,\;\exists y\in G/\;x-\varepsilon<y<x$ et donc 
+\begin{center}
+\shadowbox{
+si $G\neq\{0\}$ et si $\text{inf}\left(G\cap]0,+\infty[\right)=0$, $G$ est dense dans $\Rr$.
+}
+\end{center}
+\textbf{2ème cas.} Si $a>0$, montrons dans ce cas que $G=a\Zz$. Pour cela, montrons tout d'abord que $a$ est dans $G$.
+Mais si $a$ n'est pas élément de $G$, par définition de $a$, il existe un réel $x$ dans $G\cap]a,2a[$ puis il existe un réel $y$ dans $G\cap]a,x[$. Le réel $x-y$ est alors dans $G\cap]0,a[$ ce qui est impossible. Donc $a$ est élément de $G$.
+Montrons alors que $G=a\Zz$. Puisque $a$ est dans $G$, $G$ contient encore $a+a=2a$, puis $a+a+a=3a$ et plus généralement tous les $na$, $n\in\Nn^*$. Puisque $G$ contient aussi les opposés de ces nombres et également $0=0\times a$, $G$ contient finalement tous les $na$, $n\in\Zz$. On a ainsi montré que $a\Zz\subset G$.
+Réciproquement, soit $x$ un élément de $G$ et $n=E\left(\frac{x}{a}\right)(\in\Zz)$. Alors, $n\leq\frac{x}{a}<n+1$ puis $0\leq x-na<a$. 
+Or, $x$ est dans $G$ et $na$ est dans $G$. Donc, $x-na$ est dans $G\cap[0,a[=\{0\}$, puis $x=na\in a\Zz$. On a ainsi montré l'inclusion contraire et donc $G=a\Zz$.
+
+\begin{center}
+\shadowbox{
+si $\text{inf}\left(G\cap]0,+\infty[\right)=a>0$, $G=a\Zz$.
+}
+\end{center}
+
+ \item  Soit $G=\{a+b\sqrt{2},\;(a,b)\in\Zz^2\}$. On vérifie aisément que $G$ est un sous-groupe de $(\Rr,+)$. Maintenant, la formule du binôme de \textsc{Newton} montre que, pour chaque entier naturel $n$,
+
+\begin{center}
+$(\sqrt{2}-1)^n\in G\cap]0,+\infty[$.
+\end{center}
+Or, $0<\sqrt{2}-1<1$ et donc $\lim_{n\rightarrow +\infty}(\sqrt{2}-1)^n=0$. Ceci montre que $\mbox{inf}(G\cap]0;+\infty[)=0$ et donc que $G$ est dense dans $\Rr$.
+ \item  
+  \begin{enumerate}
+  \item  Soit $f$ une application de $\Rr$ dans $\Rr$ et $G_f=\{T\in\Rr/\;\forall x\in\Rr,\;f(x+T)=f(x)\}$.
+$0$ est élément de $G_f$ (et c'est même le seul élément de $G_f$ si $f$ n'est pas périodique) et donc $G\neq\varnothing$.
+De plus, si $T$ et $T'$ sont deux éléments de $G$ alors, pour $x$ réel donné~:
+
+$$f(x+(T-T'))=f((x-T')+T)=f(x-T')=f(x-T'+T')=f(x),$$
+et $T-T'$ est encore un élément de $G$. On a montré que
+
+\begin{center}
+\shadowbox{
+$G_f$ est un sous groupe de $(\Rr,+)$.
+}
+\end{center}
+  \item Soit $f$ une application de $\Rr$ dans $\Rr$ admettant $1$ et $\sqrt{2}$ pour périodes. $G_f$ contient encore tous les nombres de la forme $a+b\sqrt{2},\;(a,b)\in\Zz^2$ et est donc dense dans $\Rr$.
+Montrons que si de plus $f$ est continue sur $\Rr$, $f$ est constante.
+Soit $x$ un réel quelconque. On va montrer que $f(x)=f(0)$.
+Remarque préliminaire : soit $T$ une période strictement positive de $f$.
+Il existe un entier relatif $p$ tel que $pT\leq x<(p+1)T$ à savoir $p=E\left(\frac{x}{T}\right)$. On a alors $f(x)=f(x-pT)$ avec $0\leq x-pT<T$.
+Soit alors $n\in\Nn^*$. Puisque $G_f$ est dense dans $\Rr$, il existe dans $G_f$ un réel $T_n$ tel que $0<T_n<\frac{1}{n}$ (ce qui implique que $\lim_{n\rightarrow +\infty}T_n=0$).
+Mais alors, puisque $0<x-E\left(\frac{x}{T_n}\right)T_n<T_n$, on a aussi $\lim_{n\rightarrow +\infty}x-E\left(\frac{x}{T_n}\right)T_n=0$.
+Maintenant, la suite $\left(f\left(x-E\left(\frac{x}{T_n}\right)T_n\right)\right)_{n\in\Nn^*}$ est constante égale à $f(x)$) et donc convergente vers $f(x)$. On en déduit que
+
+\begin{align*}
+f(x)&=\lim_{n\rightarrow +\infty}f\left(x-E\left(\frac{x}{T_n}\right)T_n\right)= f\left(\lim_{n\rightarrow +\infty}\left(x-E\left(\frac{x}{T_n}\right)T_n\right)\right)\quad(\mbox{par continuité de}\;f\;\text{en}\;0)\\
+ &=f(0)
+\end{align*}
+ce qu'il fallait démontrer.
+  \end{enumerate}
+\end{enumerate}
+\fincorrection
+\finexercice

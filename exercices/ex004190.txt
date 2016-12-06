@@ -1,0 +1,29 @@
+\exercice{4190, quercia, 2010/03/11}
+\enonce[$\int \varphi\circ f$, X MP$^*$ 2004]
+Soit~$E$ l'ensemble des fonctions continues de~$[0,1]$ dans~$\R$.
+On y définit une norme par~: $\|f\|=\sqrt{ \int_{t=0}^1 f^2(t)\,d t}$.
+Soit $\varphi : \R \to \R$ de classe $\mathcal{C}^2$ telle que $\varphi''$ est bornée.
+Pour~$f\in E$ on pose $T(f) =  \int_{t=0}^1\varphi(f(t))\,d t$.
+
+\begin{enumerate}
+  \item Montrer que l'application ainsi définie~$T : E \to \R$ est continue.
+
+  \item Montrer que~$T$ est différentiable en tout point.
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item ???
+  \item On a pour $a,b\in\R$~: $|\varphi(a+b) - \varphi(a) - b\varphi'(a)| \le \frac12\|\varphi''\|_\infty b^2$.
+
+Donc pour $f,h\in E$~: $|T(f+h) - T(f) - (h\mid \varphi'\circ f)| \le \frac12\|\varphi''\|_\infty \|h\|^2$,
+ce qui prouve que $T$ est différentiable en~$f$ de différentielle $h \mapsto(h\mid\varphi'\circ f)$.
+On en déduit alors que~$T$ est continue en~$f$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

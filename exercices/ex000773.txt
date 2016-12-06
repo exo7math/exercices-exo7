@@ -1,0 +1,24 @@
+\exercice{773, bodin, 1998/09/01}
+
+\enonce
+D\'emontrer les in\'egalit\'es : 
+$$ x- \frac{x^2}{2} < \ln (1+x) \text{ pour } x>0 \quad \text{et} \quad
+1+x \le e^x \text{ pour tout $x$ r\'eel}.$$
+
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+    \item Soit $f(x) = \ln(1+x)-x+x^2/2$ alors $f'(x)=\frac{1}{1+x}
+-1+x=\frac{x^2}{1+x} >0$. Donc $f$ est strictement croissante sur $[0,+\infty[$ et comme $f(0)=0$ alors $f(x) > f(0)=0$ pour $x>0$. Ce qui donne l'inégalité recherchée.
+  \item De même avec $g(x) = e^x-x-1$, $g'(x)=e^x-1$.
+Sur $[0,+\infty[$ $g'(x) \geq 0$ et $g$ est croissante
+sur $]-\infty,0]$, $g'(x)\leq 0$ et $g$ est décroissante. Comme
+ $g(0)=0$ alors pour tout $x\in\Rr$ $g(x)\geq 0$.
+\end{enumerate}
+\fincorrection
+
+\finexercice
+

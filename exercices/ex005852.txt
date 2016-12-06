@@ -1,0 +1,58 @@
+\exercice{5852, rouget, 2010/10/16}
+\enonce[*** I]
+Donner un développement à la précision $ \frac{1}{n^2}$ de la $n$-ième racine positive $x_n$ de l'équation $\tan x = x$.
+\finenonce
+
+\noindication
+
+\correction
+Posons $I_0=\left[0, \frac{\pi}{2}\right[$ puis pour $n\in\Nn^*$, $I_n=\left]- \frac{\pi}{2}+n\pi, \frac{\pi}{2}+n\pi\right[$ et enfin $D =\displaystyle\bigcup_{n\in\Nn}I_n$.
+
+Pour $x\in D$, posons $f(x) =\tan x -x$. La fonction $f$ est dérivable sur $D$ et pour $x\in D$, $f'(x) =\tan^2x$. La fonction $f$ est ainsi strictement croissante sur chaque $I_n$ et s'annule donc au plus une fois dans chaque $I_n$.
+
+$f(0) = 0$ et donc $f$ s'annule exactement une fois dans $I_0$ en $x_0=0$.
+
+Pour $n\in\Nn^*$, $f$ est continue sur $I_n$ et de plus $f\left(\left(- \frac{\pi}{2}+n\pi\right)^+\right)\times f\left(\left( \frac{\pi}{2}+n\pi\right)^-\right)=-\infty\times+\infty<0$. D'après le théorème des valeurs intermédiaires, $f$ s'annule au moins une fois dans $I_n$ et donc exactement une fois dans $I_n$.
+
+L'équation $\tan x = x$ admet donc dans chaque intervalle $I_n$, $n\in\Nn$, une et une seule solution notée $x_n$. De plus, $\forall n\geqslant1$, $f(n\pi) =-n\pi < 0$ et donc $x_n\in]n\pi, \frac{\pi}{2}+n\pi[$.
+
+Pour $n\geqslant1$, $n\pi< x_n < \frac{\pi}{2}+n\pi$ et donc $\lim_{n \rightarrow +\infty}x_n=+\infty$ puis $x_n\underset{n\rightarrow+\infty}{\sim}n\pi$ et même
+
+\begin{center}
+$x_n\underset{n\rightarrow+\infty}=n\pi+ O(1)$.
+\end{center}
+
+Ensuite, puisque $x_n-n\pi\in\left]0, \frac{\pi}{2}\right[$ et que $x_n=\tan(x_n)=\tan(x_n-n\pi)$, $x_n-n\pi=\Arctan(x_n)\underset{n\rightarrow+\infty}{\rightarrow} \frac{\pi}{2}$. Donc
+
+\begin{center}
+$x_n\underset{n\rightarrow+\infty}{=} n\pi+ \frac{\pi}{2}+o(1)$.
+\end{center}
+
+Posons $y_n = x_n-n\pi- \frac{\pi}{2}$. Alors d'après ce qui précède, $y_n\in\left]- \frac{\pi}{2},0\right[$ et $y_n\underset{n\rightarrow+\infty}{=} o(1)$. De plus, l'égalité $\tan(x_n)=x_n$ fournit $\tan(n\pi+ \frac{\pi}{2}+y_n) =n\pi+ \frac{\pi}{2}+y_n$ ou encore 
+
+\begin{center}
+$n\pi+ \frac{\pi}{2}+y_n = -\mathrm{cotan}(y_n)$.
+\end{center}
+
+Puisque $y_n\underset{n\rightarrow+\infty}{=}o(1)$, on obtient $n\underset{n\rightarrow+\infty}{\sim}- \frac{1}{y_n}$  ou encore $y_n\underset{n\rightarrow+\infty}{=} - \frac{1}{n\pi}+o\left( \frac{1}{n}\right)$. Donc
+
+\begin{center}
+$x_n\underset{n\rightarrow+\infty}{=} n\pi+ \frac{\pi}{2}- \frac{1}{n\pi}+o\left( \frac{1}{n}\right)$.
+\end{center}
+
+Posons $z_n = y_n+ \frac{1}{n\pi}= x_n-n\pi- \frac{\pi}{2}+ \frac{1}{n\pi}$. D'après ce qui précède, $\tan\left(- \frac{1}{n\pi}+z_n\right)=- \frac{1}{n\pi+ \frac{\pi}{2}- \frac{1}{n\pi}+z_n}$ et aussi $z_n\underset{n\rightarrow+\infty}{=}o\left( \frac{1}{n}\right)$. On en déduit que
+
+\begin{center}
+$z_n= \frac{1}{n\pi}-\Arctan\left( \frac{1}{n\pi+ \frac{\pi}{2}- \frac{1}{n\pi}+z_n}\right)\underset{n\rightarrow+\infty}{=} \frac{1}{n\pi}-\Arctan\left( \frac{1}{n\pi}- \frac{1}{2\pi n^2}+o\left( \frac{1}{n^2}\right)\right)\underset{n\rightarrow+\infty}{=} \frac{1}{2\pi n^2}+o\left( \frac{1}{n^2}\right)$.
+\end{center}
+
+Finalement
+
+\begin{center}
+\shadowbox{
+$x_n\underset{n\rightarrow+\infty}{=} n\pi+ \frac{\pi}{2}- \frac{1}{n\pi}+ \frac{1}{2\pi n^2}+o\left( \frac{1}{n^2}\right)$.
+}
+\end{center}
+
+\fincorrection
+\finexercice

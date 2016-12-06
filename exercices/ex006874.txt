@@ -1,0 +1,48 @@
+\exercice{6874, gammella, 2012/05/29}
+
+\enonce
+On considère le changement de variables en coordonnées sphériques suivant :
+$$  \left\{ \begin{array}{lll}
+x& = & r\cos \varphi\cos \theta\\
+y&= & r\cos \varphi\sin \theta \\
+z & = & r \sin \varphi \\
+\end{array} \right .$$
+\begin{enumerate}
+\item Calculer $dx$, $dy$, $dz$.
+
+\item  Vérifier que $x dx+ydy+zdz=rdr.$ En déduire 
+$ \frac{\partial r}{\partial x}$, $ \frac{\partial r}{\partial y}$ 
+et $ \frac{\partial r}{\partial z}$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item On vérifie que :
+\begin{enumerate}
+\item $dx= \cos \varphi \cos \theta dr-r\sin \varphi\cos \theta d\varphi-r\sin \theta\cos \varphi 
+d\theta$
+
+\item $dy = \cos \varphi \sin \theta dr-r\sin \varphi\sin \theta d\varphi+r\cos \theta\cos\varphi d\theta $
+\item $dz=\sin \varphi dr+r\cos \varphi d\varphi.$
+\end{enumerate}
+Par suite, on a :
+\begin{enumerate}
+\item $xdx= r\cos^2 \varphi \cos^2 \theta dr-r^2\sin \varphi\cos \varphi\cos^2 \theta d\varphi-r^2\sin \theta\cos \theta\cos^2 \varphi 
+d\theta$
+\item $ydy = r\cos^2\varphi \sin^2 \theta dr-r^2\sin \varphi\cos \varphi\sin^2 \theta d\varphi+r^2\cos \theta\sin \theta\cos^2\varphi d\theta $
+\item $zdz=r\sin^2 \varphi dr+r^2\cos \varphi \sin \varphi d\varphi.$
+\end{enumerate}
+
+\item En additionnant, on obtient $xdx+ydy+zdz=rdr$.
+On en déduit que :
+$$xdx+ydy+zdz=r(  \frac{\partial r}{\partial x}dx+  \frac{\partial r}{\partial y}dy+  \frac{\partial r}{\partial z}dz).$$
+Ainsi
+$$  \frac{\partial r}{\partial x}= \frac{x}{r}\quad\quad
+  \frac{\partial r}{\partial y}=\frac{y}{r} \quad\quad
+   \frac{\partial r}{\partial z}=\frac{z}{r}.$$
+  \end{enumerate}
+\fincorrection
+\finexercice

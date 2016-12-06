@@ -1,0 +1,17 @@
+\exercice{5397, rouget, 2010/07/06}
+\enonce[***]
+Soit $f$ continue sur $\Rr^+$ telle que, pour tout réel positif $x$, on ait $f(x^2)=f(x)$. Montrer que $f$ est constante sur $\Rr^+$. Trouver un exemple où $f$ n'est pas constante.
+\finenonce
+
+\noindication
+
+\correction
+Soit $x>0$. Pour tout naturel $n$, $f(x)=f(\sqrt{x})=f(x^{1/4})=...=f(x^{1/2^n})$. Or, à $x$ fixé, $\lim_{n\rightarrow +\infty}x^{1/2^n}=1$ et, $f$ étant continue en $1$, on a~:
+
+$$\forall x>0,\;f(x)=\lim_{n\rightarrow +\infty}f(x^{1/2^n})=f(1).$$
+
+$f$ est donc constante sur $]0,+\infty[$, puis sur $[0,+\infty[$ par continuité de $f$ en $0$.
+
+Pour $x\geq0$, posons $f(x)=0$ si $x\neq1$ et $f(x)=1$ si $x=1$. Pour $x\geq0$, on a $x^2=1\Leftrightarrow x=1$. $f$ vérifie donc~:~$\forall x\geq0,\;f(x^2)=f(x)$, mais $f$ n'est pas constante sur $\Rr^+$.
+\fincorrection
+\finexercice

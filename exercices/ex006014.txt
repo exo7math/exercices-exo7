@@ -1,0 +1,22 @@
+\exercice{6014, quinio, 2011/05/20}
+
+\enonce
+Une usine fabrique des billes de diamètre 8mm. Les erreurs d'usinage
+provoquent des variations de diamètre.
+On estime, sur les données antérieures, que l'erreur est une
+variable aléatoire qui obeit à une loi normale les paramètres étant :
+moyenne: $0$mm, écart-type: $0.02$mm. 
+On rejette les pièces dont le diamètre n'est pas compris entre $7.97$mm et $8.03$mm.
+Quelle est la proportion de billes rejetées?
+\finenonce
+
+\noindication
+
+\correction
+La probabilité qu'une bille soit rejetée est, en notant $D$ la
+variable aléatoire <<diamètre>>, $p=1-P[7.97\leq D\leq 8.03]$.
+Or $P[7.97\leq D\leq 8.03]=P[-\frac{0.03}{0.02}\leq \frac{D-8}{0.02}\leq 
+\frac{0.03}{0.02}]=F(1.5)-F(-1.5)=0.866\,4$.
+La proportion de billes rejetées est donc $p=13.4\%$.
+\fincorrection
+\finexercice

@@ -1,0 +1,17 @@
+\exercice{5422, rouget, 2010/07/06}
+\enonce[**]
+Soit $f$ de classe $C^1$ sur $\Rr_+^*$ telle que $\lim_{x\rightarrow +\infty}xf'(x)=1$. Montrer que $\lim_{x\rightarrow +\infty}f(x)=+\infty$.
+\finenonce
+
+\noindication
+
+\correction
+Puisque $\lim_{x\rightarrow +\infty}xf'(x)=1$, $\exists A>0/\;\forall x>0,\;(x\geq A\Rightarrow xf'(x)\geq\frac{1}{2})$.
+
+Soit $x$ un réel fixé supérieur ou égal à $A$. $\forall t\in[A,x],\;f'(t)\geq\frac{1}{2x}$ et donc, par croissance de l'intégrale, $\int_{A}^{x}f'(t)\;dt\geq\int_{A}^{x}\frac{1}{2t}\;dt$ ce qui fournit~:
+
+$$\forall x\geq A,\;f(x)\geq f(A)+\frac{1}{2}(\ln x-\ln A),$$
+
+et montre que $\lim_{x\rightarrow +\infty}f(x)=+\infty$.
+\fincorrection
+\finexercice

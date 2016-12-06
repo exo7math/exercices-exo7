@@ -1,0 +1,38 @@
+\exercice{3819, quercia, 2010/03/11}
+\enonce[X MP$^*$ 2001]
+
+Soit $A\in\mathcal{M}_n(\R)$ telle que $A^2 = -I_n$.
+
+\begin{enumerate}
+  \item Montrer que $n$ est pair.
+
+  \item Montrer que $A$ est semblable à~$A' = \begin{pmatrix}0 &-I_{n/2}\cr I_{n/2}&0\cr\end{pmatrix}$.
+
+  \item On suppose $A\in{\cal O}(n)$. Montrer que $A$ est semblable à la matrice~$A'$
+précédente avec une matrice de passage orthogonale.
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $\det(A)^2 = (-1)^n.$
+  \item $A$ est $\C$-diagonalisable (annulateur simple) et ses valeurs propres
+sont $i,-i$ avec la même multiplicité ($A$ est réelle). La matrice $A'$ donnée a
+les mêmes propriétés donc $A$ et $A'$ sont $\C$-semblables à la même matrice
+diagonale, et donc $\C$-semblables l'une à l'autre. Comme la $\C$-similitude
+entre matrices réelles est équivalente à la $\R$-similitude (résultat bien connu),
+$A$ et $A'$ sont $\R$-semblables.
+
+  \item Soit $e_1$ unitaire et $e'_1 = Ae_1$. Alors $e'_1$ est unitaire et
+$Ae'_1 = -e_1$ d'où $(e_1\mid e'_1) = (Ae_1\mid Ae'_1) = -(e_1\mid e'_1) = 0$
+donc $(e_1,e'_1)$ est une famille orthonormale. Si $F_1$ est le sous-espace vectoriel engendré
+par $(e_1,e'_1)$ alors $F_1^\bot$ est stable par $A$ donc on peut construire
+par récurrence une base orthonormale $(e_1,\dots,e_{n/2},e'_1,\dots,e'_{n/2})$
+telle que $Ae_i = e'_i$ et $Ae'_i = -e_i$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

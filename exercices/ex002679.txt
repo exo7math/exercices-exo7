@@ -1,0 +1,57 @@
+\exercice{2679, matexo1, 2002/02/01}
+
+\enonce
+Soit $R$ une fraction rationnelle, ou plus g{\'e}n{\'e}ralement une fonction
+ m{\'e}romorphe sur $\C$, sans p{\^o}le r{\'e}el.
+\begin{itemize}
+\item On souhaite calculer
+$$ I = \int_0^{+\infty } x R(x^4)\,dx $$
+Montrer que cela peut se faire par la m{\'e}thode des r{\'e}sidus, en int{\'e}grant sur un
+contour form{\'e} du bord du quart de cercle  $\{ 0< \arg z<{\pi \over 2}, |z|<a\}$.
+
+\item Application: calculer
+$$  \int_0^{+\infty } {x\over 1+x^8}\,dx .$$
+
+\item Plus g{\'e}n{\'e}ralement, montrer que si $n$ et $p$ sont des entiers, et $p\geq 3$, on
+peut calculer
+$$ I(n,p) = \int_0^{+\infty } x^n R(x^p)\, dx $$
+sous une condition sur $n$, $p$ que l'on pr{\'e}cisera.
+
+\item Application: calculer
+$$ I_{p} = \int_0^{+\infty } {x\over 1+x^{2p}} \,dx.$$
+\end{itemize}
+\finenonce
+\noindication
+\correction
+\begin{itemize}
+%\newfunction{Res}
+\item Le bord du quart de disque est form{\'e} de trois parties : le segment
+$[0,a]$, le quart de cercle, et le segment $[ia, 0]$. L'int{\'e}grale sur le quart de
+cercle tend vers z{\'e}ro quand $a\to \infty $ (lemme de Jordan), et en posant $z=iy$, on voit
+que
+$$ \int_{[ia,0]} z R(z^4)\,dz =  \int_0^a y R(y^4)\,dy $$
+donc l'int{\'e}grale sur le contour tend vers $2I$. Donc $I$ est {\'e}gal {\`a} $i\pi $ fois la
+somme des r{\'e}sidus de $zR(z^4)$ dans le quart de plan $\{\Re z>0, \Im z >0\}$.
+
+\item Les p{\^o}les sont $e^{i\pi /8}$ et $e^{i3\pi /8}$. 
+On trouve $I = \displaystyle{\pi \sqrt 2\over8}$.
+
+\item On int{\`e}gre de m{\^e}me sur le contour form{\'e} du bord de $\{0< \arg z < {2\pi \over
+p}, 0<|z|<a\}$. On obtient
+$$ \left(1 -e^{i 2\pi  {n+1\over p}}\right) I = 2\pi  i
+\sum_{\textstyle
+{{\rm p\hat oles\ } z_k\atop 0<\arg z_k<{2\pi \over p}}}
+\mbox{\rm Res}\left( z^n R(z^p), z_k\right)
+$$
+
+La formule n'est int{\'e}ressante que si le membre de gauche est non nul, c'est-{\`a}-dire
+si $n+1$ n'est pas un multiple de $p$.
+
+\item Dans ce cas, il faut donc $p\geq 2$. On est forc{\'e} de prendre une puissance
+paire, car on a suppos{\'e} $R$ sans racines r{\'e}elles: ici $R(x) = 1/(1+x^2)$, et $n=1$.
+Il y a deux p{\^o}les dans l'angle concern{\'e}, soit $e^{i\pi /2p}$ et $e^{i3\pi /2p}$. Le calcul
+est semblable au cas {\it (b)}, et donne
+$$ I_{p} = {\pi \over 2p \sin\displaystyle{\pi \over p}}.$$
+\end{itemize}
+\fincorrection
+\finexercice

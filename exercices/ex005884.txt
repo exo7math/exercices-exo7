@@ -1,0 +1,42 @@
+\exercice{5884, rouget, 2010/10/16}
+\enonce[***]
+Trouver toutes les fonctions $f$ dérivables sur $]0,+\infty[$ vérifiant $\forall x >0$, $f'(x) = f\left( \frac{3}{16x}\right)$.
+\finenonce
+
+\noindication
+
+\correction
+Soit $f$ une éventuelle solution. $f$ est dérivable sur $]0,+\infty[$ et pour tout réel $x>0$, $f'(x)=f\left( \frac{3}{16x}\right)$. On en déduit que $f'$ est dérivable sur $]0,+\infty[$ ou encore que $f$ est deux fois dérivable sur $]0,+\infty[$. En dérivant l'égalité initiale, on obtient pour tout réel $x$
+
+\begin{center}
+$f''(x)=- \frac{3}{16x^2}f'\left( \frac{3}{16x}\right)=- \frac{3}{16x^2}f\left( \frac{3/16}{(3/16)/x}\right)=- \frac{3}{16x^2}f(x)$,
+\end{center}
+
+et donc $f$ est solution sur $\Rr$ de l'équation différentielle $x^2y''+ \frac{3}{16}y=0$ $(E)$. Les solutions de $(E)$ sur $]0,+\infty[$ constituent un $\Rr$-espace vectoriel de dimension $2$. Cherchons une solution particulière de $(E)$ sur $]0,+\infty[$ de la forme $g_\alpha~:~x\mapsto x^\alpha$, $\alpha\in\Rr$.
+
+\begin{align*}\ensuremath
+f_\alpha\;\text{solution de}\;(E)\;\text{sur}\;]0,+\infty[&\Leftrightarrow\forall x>0,\;x^2\alpha(\alpha-1)x^{\alpha-2}+ \frac{3}{16}x^\alpha=0\Leftrightarrow\alpha^2-\alpha+ \frac{3}{16}=0\\
+ &\Leftrightarrow\alpha= \frac{1}{4}\;\text{ou}\;\alpha= \frac{3}{4}.
+\end{align*}
+
+Les deux fonctions $f_1~:~x\mapsto x^{1/4}$ et $f_2~:~x\mapsto x^{3/4}$ sont solutions de $(E)$ sur $]0,+\infty[$. Le wronskien de ces solutions est $w(x)=\left|
+\begin{array}{cc}
+x^{1/4}&x^{3/4}\\
+ \frac{1}{4}x^{-3/4}& \frac{3}{4}x^{-1/4}
+\end{array}
+\right|= \frac{1}{2}\neq0$ et donc $(f_1,f_2)$ est un système fondamental de solutions de $(E)$ sur $]0,+\infty[$. Ainsi, si $f$ est solution du problème, nécessairement $\exists(\lambda_1,\lambda_2)\in\Rr^2$ tel que $\forall x>0$, $f(x)=\lambda_1x^{1/4}+\lambda_2x^{3/4}$.
+
+Réciproquement, soit $f$ une telle fonction.
+
+Pour tout réel $x>0$, $f'(x)= \frac{\lambda_1}{4}x^{-3/4}+ \frac{3\lambda_2}{4}x^{-1/4}$ et $f\left( \frac{3}{16x}\right)= \frac{3^{1/4}\lambda_1}{2}x^{-1/4}+ \frac{3^{3/4}\lambda_2}{8}x^{-3/4}$. Donc
+
+\begin{align*}\ensuremath
+f\;\text{solution}&\Leftrightarrow\forall x>0,\; \frac{\lambda_1}{4}x^{-3/4}+ \frac{3\lambda_2}{4}x^{-1/4}= \frac{3^{1/4}\lambda_1}{2}x^{-1/4}+ \frac{3^{3/4}\lambda_2}{8}x^{-3/4}\\
+ &\Leftrightarrow\forall x>0,\; \frac{\lambda_1}{4}x^{-3/4}+ \frac{3\lambda_2}{4}x^{-1/4}= \frac{3^{1/4}\lambda_1}{2}x^{-1/4}+ \frac{3^{3/4}\lambda_2}{8}x^{-3/4}\\
+ &\Leftrightarrow\forall x>0,\; \frac{\lambda_1}{4}x^{1/4}+ \frac{3\lambda_2}{4}x^{3/4}= \frac{3^{1/4}\lambda_1}{2}x^{3/4}+ \frac{3^{3/4}\lambda_2}{8}x^{1/4}\;(\text{après multiplication par}\;x)\\
+ &\Leftrightarrow \frac{\lambda_1}{4}= \frac{3^{3/4}\lambda_2}{8}\;\text{et}\; \frac{3\lambda_2}{4}= \frac{3^{1/4}\lambda_1}{2}\Leftrightarrow\lambda_2= \frac{2}{3^{3/4}}\lambda_1.
+\end{align*}
+
+Les fonctions solutions sont les fonctions de la forme $x\mapsto\lambda\left(x^{1/4}+2\left( \frac{x}{3}\right)^{3/4}\right)$.
+\fincorrection
+\finexercice

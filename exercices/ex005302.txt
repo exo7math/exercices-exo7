@@ -1,0 +1,54 @@
+\exercice{5302, rouget, 2010/07/04}
+\enonce[***]
+Soit $(u_n)_{n\in\Nn}$ la suite définie par $u_0=0$, $u_1=1$ et $\forall n\in\Nn,\;u_{n+2}=u_{n+1}+u_n$ (suite de \textsc{Fibonacci}).
+\begin{enumerate}
+\item  Montrer que $\forall n\in\Nn^*,\;u_{n+1}u_{n-1}-u_n^2=(-1)^n$ et en déduire que $\forall n\in\Nn^*,\;u_n\wedge u_{n+1}=1$.
+\item  Montrer que $\forall n\in\Nn,\;\forall m\in\Nn^*,\;u_{m+n}=u_mu_{n+1}+u_{m-1}u_n$ et en déduire que $u_m\wedge u_n=u_{m\wedge n}$ pour $m$ et $n$ non nuls.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  Soit, pour $n$ entier naturel non nul donné, $v_n=u_{n+1}u_{n-1}-u_n^2$. Alors,
+
+$$v_{n+1}=u_{n+2}u_n-u_{n+1}^2=(u_n+u_{n+1})u_n-u_{n+1}(u_{n-1}+u_n)=u_n^2-u_{n+1}u_{n-1}=-v_n.$$
+
+La suite $v$ est donc une suite géométrique de raison $-1$ et on a~:
+
+$$\forall n\in\Nn^*,\;v_n=(-1)^{n-1}v_1=(-1)^n.$$
+
+Cette égalité s'écrit encore $((-1)^nu_{n-1})u_{n+1}+((-1)^{n+1}u_n)u_n=1$ et le théorème de \textsc{Bezout} permet d'affirmer que pour tout entier naturel $n$, les entiers $u_n$ et $u_{n+1}$ sont premiers entre eux (il est clair par récurrence que la suite $u$ est à valeurs entières).
+
+\item  Pour $m=1$ et $n$ entier naturel quelconque~:
+
+$$u_{n+m}=u_{n+1}=u_{n+1}u_1+u_nu_0=u_{n+1}u_m+u_{m-1}u_n.$$
+
+Pour $m=2$ et $n$ entier naturel quelconque~:
+
+$$u_{n+m}=u_{n+2}=u_{n+1}+u_n=u_{n+1}u_2+u_nu_1=u_{n+1}u_m+u_{m-1}u_n.$$
+
+Soit $m\geq1$. Supposons que pour tout entier naturel $n$, on a $u_{n+m}=u_{n+1}u_m+u_{m-1}u_n$ et $u_{n+m+1}=u_{n+1}u_{m+1}+u_mu_n$. Alors, pour tout entier naturel $n$,
+
+\begin{align*}\ensuremath
+u_{n+m+2}&=u_{n+m+1}+u_{n+m}=u_{n+1}u_{m+1}+u_mu_n+u_{n+1}u_m+u_{m-1}u_n\;(\mbox{par hypothèse de récurrence})\\
+ &=u_{n+1}(u_{m+1}+u_m)+u_n(u_m+u_{m-1})=u_{n+1}u_{m+2}+u_nu_{m+1}.
+\end{align*}
+
+ce qui démontre l'égalité proposée par récurrence.
+
+Soient $n$ et $m$ deux entiers naturels tels que $n\geq m$. La division euclidienne de $n$ par $m$ s'écrit $n=mq+r$ avec $q$ et $r$ entiers tels que $0\leq r\leq m-1$.
+
+Or, $u_{m+r}=u_mu_{r+1}+u_{m-1}u_r$. Par suite, un diviseur commun à $u_m$ et $u_r$ divise encore $u_m$ et $u_{m+r}$ et réciproquement un diviseur commun à $u_m$ et $u_{m+r}$ divise $u_{m-1}u_r$. Mais, $u_m$ et $u_{m-1}$ sont premiers entre eux et, d'après le théorème de \textsc{Gauss}, un diviseur commun à $u_m$ et $u_{m+r}$ divise $u_r$. Les diviseurs communs à $u_m$ et $u_r$ sont encore les diviseurs communs à $u_m$ et $u_{m+r}$ et donc~:
+
+$$u_m\wedge u_r=u_m\wedge u_{m+r}.$$
+ 
+Puis, par récurrence 
+
+$$u_m\wedge u_r=u_m\wedge u_{m+r}=u_m\wedge u_{2m+r}=...=u_m\wedge u_{qm+r}=u_m\wedge u_n.$$
+
+Ainsi, les algorithmes d'\textsc{Euclide} appliqués d'une part à $u_m$ et $u_n$ et d'autre part à $m$ et $n$ s'effectuent en parallèle et en particulier, $u_m\wedge u_n=u_{m\wedge n}.$
+\end{enumerate}
+\fincorrection
+\finexercice

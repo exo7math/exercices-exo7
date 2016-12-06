@@ -1,0 +1,29 @@
+\exercice{3791, quercia, 2010/03/11}
+\enonce[Mines P' 1996]
+
+Soit $E$ un espace euclidien et $f\in\mathcal{L}(E)$.
+
+\begin{enumerate}
+  \item Montrer~: $\mathrm{Ker} f = \Im f  \Rightarrow  f + f^* \in GL(E)$.
+
+
+  \item Montrer la réciproque lorsque l'on a $f^2 = 0$.
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Si $f(x) + f^*(x) = 0$ alors
+$f(x) \in \Im f \cap \Im f^* = \Im f \cap (\mathrm{Ker} f)^\bot
+                             = \Im f \cap (\Im f)^\bot$
+donc $f(x) = f^*(x) = 0$ et
+$x\in \mathrm{Ker} f \cap \mathrm{Ker} f^* = \mathrm{Ker} f \cap (\mathrm{Ker} f)^\bot$.
+  \item $f^2 = 0  \Rightarrow  \Im f \subset \mathrm{Ker} f$.\par
+$f+f^* \in GL(E)  \Rightarrow  \Im f + \Im f^* = \Im f + (\mathrm{Ker} f)^\bot = E                  \Rightarrow  \dim \Im f \ge \dim \mathrm{Ker} f$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

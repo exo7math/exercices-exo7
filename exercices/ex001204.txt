@@ -1,0 +1,26 @@
+\exercice{1204, ridde, 1999/11/01}
+
+\enonce
+ D\'eterminer les suites born\'ees qui v\'erifient
+$u_{n + 2} = 3u_{n + 1}-2u_n$.
+
+\finenonce
+
+\noindication
+
+\correction
+L'équation caractéristique est :
+$$r^2-3r+2=0$$
+dont les solutions sont $\lambda = 2$ et $\mu = 1$. Donc $u_n$ est
+de la forme
+$$u_n = \alpha 2^n + \beta 1^n = \alpha 2^n+\beta$$
+Or la suite $(2^n)_n$ tend vers $+\infty$. Donc si $(u_n)_n$ est
+bornée alors $\alpha = 0$. Donc $(u_n)_n$ est la suite constante
+égale à $\beta$. Réciproquement toute suite constante qui vérifie
+$u_n = \beta$ pour $n\in \Nn$ vérifie bien la relation de
+récurrence $u_{n+2} = 3u_{n+1}-2u_n$. Donc les suites cherchées
+sont les suites constantes.
+\fincorrection
+
+\finexercice
+

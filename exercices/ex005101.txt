@@ -1,0 +1,22 @@
+\exercice{5101, rouget, 2010/06/30}
+\enonce[**]
+Trouver $\lim_{x\rightarrow +\infty}\frac{(x^x)^x}{x^{(x^x)}}$.
+\finenonce
+
+\noindication
+
+\correction
+Pour $x>0$, $(x^x)^x=e^{x\ln(x^x)}=e^{x^2\ln x}$ et $x^{(x^x)}=e^{x^x\ln x}$. Par suite,
+
+$$\forall x>0,\;\frac{(x^x)^x}{x^{(x^x)}}=\text{exp}(\ln x(x^2-x^x)).$$
+Or, $x^2-x^x=-x^x(1-x^{2-x})=-e^{x\ln x}(1-e^{(2-x)\ln x})$. Quand $x$ tend vers $+\infty$, $(2-x)\ln x$ tend vers
+$-\infty$. Donc, $1-e^{(2-x)\ln x}$ tend vers $1$ puis $x^2-x^x$ tend vers $-\infty$. Mais alors, $\ln x(x^2-x^x)$ tend
+vers $-\infty$, puis $\frac{(x^x)^x}{x^{(x^x)}}=\mbox{exp}(\ln x(x^2-x^x))$ tend vers $0$.
+
+\begin{center}
+\shadowbox{
+$\lim_{x\rightarrow +\infty}\frac{(x^x)^x}{x^{(x^x)}}=0.$
+}
+\end{center}
+\fincorrection
+\finexercice

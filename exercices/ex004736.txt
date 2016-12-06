@@ -1,0 +1,29 @@
+\exercice{4736, quercia, 2010/03/16}
+\enonce[Caract{\'e}risation des fonctions continues]
+Soient $E$, $F$ deux espaces vectoriels norm{\'e}s et $f : E \to {F.}$
+
+Montrer que $f$ est continue 
+si et seulement si : $\forall\ A \subset E,\ f(\overline A) \subset \overline{f(A)}$\par
+si et seulement si : $\forall\ B \subset F,\ f^{-1}(\mathring B) \subset f^{-1}(B)^\circ$.\par
+
+\finenonce
+
+\noindication
+
+\correction
+Si $f$ est continue : 
+soit $x \in \overline A$ : $x = \lim a_n  \Rightarrow  f(x) = \lim f(a_n) \in \overline{f(A)}$.\par
+soit $x \in f^{-1}(B)^\circ$ : $f(x) \in \mathring B  \Rightarrow  \exists\ B(f(x),r) \subset B$,
+$\exists\ \delta > 0 \text{ tq } f(B(x,\delta)) \subset B(f(x),r)$\par
+$ \Rightarrow  B(x,\delta) \subset f^{-1}(B)$.
+
+si $f(\overline A) \subset \overline{f(A)}$ : 
+soit $B \subset F$ ferm{\'e} et $A = f^{-1}(B)$ :
+$f(\overline A) \subset B$ donc $\overline A \subset A$.
+
+si $f^{-1}(\mathring B) \subset f^{-1}(B)^\circ$ : 
+soit $B \subset F$ ouvert et $A = f^{-1}(B)$ :
+$\mathring A \supset f^{-1}(\mathring B) = A$.
+\fincorrection
+
+\finexercice

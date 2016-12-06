@@ -1,0 +1,34 @@
+\exercice{6904, ruette, 2013/01/24}
+\enonce
+L'entreprise Luminex fabrique des lampes, dont 80\% durent plus de 3000 heures. 
+Des tests sont effectués sur des échantillons de taille $n = 15$. 
+\begin{enumerate}
+\item
+Quelle est le nombre moyen de lampes qui ont une durée de vie inférieure à  3000 heures dans un échantillon de taille 15 ?
+\item
+Quelle est la probabilité que toutes les lampes de l'échantillon durent plus de 3000 heures ?
+\item
+Quelle est la probabilité que 13 lampes ou plus, dans un échantillon de taille 15, durent plus de 3000 heures ?
+\end{enumerate}
+\finenonce
+\noindication
+
+\correction
+\begin{enumerate}
+\item
+Une lampe tirée au hasard a une probabilité de $0,2$ d'avoir une durée de vie 
+inférieure à 3000 heures. Le nombre $X$ de lampes qui ont une durée de vie 
+inférieure à 3000 heures dans un échantillon de taille 15 tiré au hasard est 
+la somme de 15 variables de Bernoulli de paramètre $p=0,2$. Par conséquent, 
+il suit une loi binomiale $B(15;0,2)$. Son espérance vaut $E(X)=15\times 0,2=3$.
+\item
+C'est $p(X=0)={15\choose{0}}(0,2)^0 (0,8)^{15}\sim 0,0352$.
+\item
+C'est $p(X=0)+p(X=1)+p(X=2)$
+\begin{eqnarray*}
+&=&{15\choose{0}}(0,2)^0 (0,8)^{15}+{15\choose{1}}(0,2)^1 (0,8)^{14}+
+{15\choose{2}}(0,2)^2 (0,8)^{13}\\&=&0,0352+0,1319+0,2309\simeq 0,398.
+\end{eqnarray*}
+\end{enumerate}
+\fincorrection
+\finexercice

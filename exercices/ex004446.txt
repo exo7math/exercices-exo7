@@ -1,0 +1,27 @@
+\exercice{4446, quercia, 2010/03/14}
+\enonce[Mines MP 2003]
+Soit la suite de terme général $u_n = \frac{\ln 2}2 + \frac{\ln 3}3 + \dots + \frac{\ln n}n$.
+
+\begin{enumerate}
+  \item Donner un équivalent de~$u_n$ en~$+\infty$.
+    
+  \item Montrer que la suite de terme général~: $v_n = u_n - \frac{\ln^2n}2$ est convergente.
+    
+  \item Soit $\ell = \lim_{n\to\infty} v_n$. Donner un équivalent de~$v_n-\ell$.
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Comparaison série-intégrale~: $u_n\sim\frac{\ln^2 n}2$.
+  \item Comparaison série-intégrale encore ($v_n$ est la somme des aires entre
+    les rectangles aux points entiers et la courbe de~$t\to\ln(t)/t$).
+  \item $v_n-\ell = -\sum_{k=n}^\infty\Bigl( \int_{t=k}^{k+1}\frac{\ln t}t\,d t - \frac{\ln(k+1)}{k+1}\Bigr) = -\sum_{k=n}^\infty w_k$
+    avec $w_k\sim\frac{\ln k}{2k^2}$ donc $v_n-\ell\sim- \int_{t=n}^{+\infty}\frac{\ln t}{2t^2}\,d t\sim-\frac{\ln n}{2n}$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

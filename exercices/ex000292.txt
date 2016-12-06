@@ -1,0 +1,24 @@
+\exercice{292, bodin, 1998/09/01}
+\video{haNOPZqNwMY}
+\enonce
+ D\'eterminer les couples d'entiers naturels de pgcd
+18 et de somme 360. De m\^eme avec pgcd 18 et produit 6480.
+\finenonce 
+
+\noindication
+
+\correction
+Soient $a,b$ deux entiers de pgcd $18$ et de somme $360$. Soit
+$a',b'$ tel que $a = 18a'$ et $b=18b'$. Alors $a'$ et $b'$ sont
+premiers entre eux, et leur somme est $360/18 = 20$.
+
+Nous pouvons facilement \'enum\'erer tous les couples d'entiers
+naturels $(a',b')$ ($a'\leqslant b'$) qui v\'erifient cette condition,
+ce sont les couples  :
+$$(1,19),(3,17),(7,13),(9,11).$$
+
+Pour obtenir les couples $(a,b)$ recherch\'es ($a\leqslant b$), il
+suffit de multiplier les couples pr\'ec\'edents par $18$ :
+$$(18,342),(54,306),(126,234),(162,198).$$
+\fincorrection
+\finexercice

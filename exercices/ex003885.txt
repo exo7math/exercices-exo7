@@ -1,0 +1,30 @@
+\exercice{3885, quercia, 2010/03/11}
+\enonce[Fonction affine]
+Soit $f : \R \to \R$ vérifiant~:
+$\forall\ x,y,z\in\R,\ |x-y|<|x-z|  \Rightarrow  |f(x)-f(y)|<|f(x)-f(z)|$.
+Montrer successivement que $f$ est injective, monotone, continue, et enfin
+affine.
+
+\finenonce
+
+\noindication
+
+\correction
+Injectivité évidente.
+
+Monotonie~: pour $a<b<c$ on a $|a-b| < |a-c|$ et $|c-b| < |c-a|$ d'où les
+mêmes inégalités pour $f(a),f(b),f(c)$ ce qui prouve que $f(b)$ est strictement
+compris entre $f(a)$ et $f(c)$.
+
+Continuité~: soit $a\in\R$, $\delta>0$, $x=a-\delta$, $y=a+\delta$ et $z=a-4\delta$.
+On a $2\delta=|x-y|<|x-z|=3\delta$ donc $|f(x)-f(y)|<|f(x)-f(z)|$ et
+en faisant tendre $\delta$ vers~$0^+$~: $|f(a^-)-f(a^+)| \le |f(a^-)-f(a^-)| = 0$.
+
+Affine~: soient $x\in\R$, $h>0$, $z=x+h$ et $x-h<y<x$. On a $|f(x)-f(y)|<|f(x)-f(x+h)|$
+d'où en faisant tendre $y$ vers $(x-h)^+$~: $|f(x)-f(x-h)|\le|f(x)-f(x+h)|$.
+On obtient l'inégalité inverse en permutant $y$ et $z$, donc $f(x-h)$ et $f(x+h)$
+sont équidistants de $f(x)$ et, par injectivité de~$f$~:
+$f(x) = \frac{f(x-h)+f(x+h)}2$ ce qui permet de conclure avec la continuité de~$f$.
+\fincorrection
+
+\finexercice

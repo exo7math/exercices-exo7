@@ -1,0 +1,42 @@
+\exercice{2267, barraud, 2008/04/24}
+\enonce
+En utilisant les r\'eductions $\!\mod 2$ ou $\!\mod 3$
+montrer que les polyn\^omes
+\mbox{$x^5-6x^3+2x^2-4x+5$},
+\ \ \mbox{$7x^4+8x^3+11x^2-24x-455$}
+sont irr\'eductibles dans $\Zz[x]$.
+\finenonce 
+
+\noindication
+
+\correction
+  On raisonne comme pour l'exercice \ref{exoprec}. Soit $P=X^{5}-6X^{3}+2X^{2}-4X+5$,
+  $A,B$ deux polynômes tels que $P=AB$. En considérant la réduction
+  modulo $2$, on a $\bar{P}=X^{5}+1$ donc la décomposition en facteurs
+  irréductibles est $\bar{P}=(X+1)(X^{4}+X^{3}+X^{2}+X+1)$. Comme $P$ est
+  unitaire, $A$ et $B$ le sont aussi, et la réduction modulo $2$ préserve
+  donc le degré de $A$ et $B$. On en déduit que si $\bar{A}=X+1$, alors
+  $A$ est de degré 1.
+
+  La réduction modulo $3$ de $P$ devrait donc avoir une racine. Mais
+  $P\mod 3=X^{5}-X^{2}-X-1$ n'a pas de racine dans $\Zz/3\Zz$. On en
+  déduit que dans la réduction modulo $2$, la factorisation
+  $\bar{P}=`\bar{A}\bar{B}$ est triviale ($\bar{A}=1$ et
+  $\bar{B}=\bar{P}$ ou le contraire), puis que la factorisation $P=AB$
+  elle même est triviale ($A=\pm1$ et $B=\mp P$ ou le contraire). Ainsi,
+  $P$ est irréductible dans $\Zz[X]$. 
+
+  \bigskip
+
+  Pour $P=7X^{4}+8X^{3}+11X^{2}-24X-455$, on procède de la même façon. Si
+  $P=AB$, comme $7$ est premier, l'un des polynômes $A$ ou $B$ a pour
+  coefficient dominant $\pm7$ et l'autre $\mp1$.  On en déduit que les
+  réductions modulo $2$ ou $3$ préservent le degré de $A$ et de $B$. Les
+  décompositions en facteurs irréductibles sont les suivantes: $P\mod
+  2=(X^{2}+X+1)^{2}$ et $P\mod3=(X-1)(X^{3}-X-1)$. Si la factorisation
+  $P=AB$ est non triviale, alors les réductions modulo $2$ de $A$ et $B$
+  sont de degré $2$, et donc $\deg(A)=\deg(B)=2$. Mais la décomposition
+  modulo $3$ impose que ces degrés soient $1$ et $3$. La factorisation
+  $P=AB$ est donc nécessairement triviale, et $P$ est donc irréductible.
+\fincorrection
+\finexercice

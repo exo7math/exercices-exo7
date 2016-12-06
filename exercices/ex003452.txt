@@ -1,0 +1,44 @@
+\exercice{3452, quercia, 2010/03/10}
+ \enonce[Factorisation de polynômes]
+ 
+ Déterminer les cas d'annulation des déterminants suivants, puis les
+ calculer :
+
+ 
+ \begin{enumerate}
+   \item $\begin{vmatrix}1      &        &        & (1)    \cr
+                      & 1-x    &        &        \cr
+                      &        & \ddots &        \cr
+               (1)    &        &        & n-x    \cr \end{vmatrix} $.
+ 
+   \item $\begin{vmatrix}x     & a_1  & a_2   & \dots & a_n   \cr
+               a_1   & x    & a_2   & \dots & a_n   \cr
+               \vdots&      & \ddots&       & \vdots\cr
+               \vdots&      &       & \ddots& a_n   \cr
+               a_1   & a_2  & \dots & a_n   & x     \cr \end{vmatrix}$.
+ 
+   \item $\begin{vmatrix}a     &b  &c  &\dots &z     \cr
+               b     &b  &c  &      &z     \cr
+               c     &c  &c  &      &z     \cr
+               \vdots&   &   &\ddots&\vdots\cr
+               z     &z  &z  &\dots &z     \cr \end{vmatrix}$.
+ 
+   \item $\begin{vmatrix}\frac 1{a+x} & \frac 1{a+y} & \frac 1{a+z} \cr
+                \frac 1{b+x} & \frac 1{b+y} & \frac 1{b+z} \cr
+                \frac 1{c+x} & \frac 1{c+y} & \frac 1{c+z} \cr\end{vmatrix}$.
+     
+ \end{enumerate}
+ \finenonce
+ 
+ \noindication
+ 
+ \correction
+ \begin{enumerate}
+   \item $-x(1-x)(2-x)\dots(n-1-x)$.
+   \item $(x-a_1) \dots (x-a_n)( x + a_1 + \dots + a_n )$.
+   \item $z(y-z)(x-y) \dots (a-b)$. 
+   \item $\frac { V(a,b,c)V(x,y,z) }{ (a+x) \dots (c+z) }$.
+ \end{enumerate}
+  \fincorrection
+ 
+ \finexercice

@@ -1,0 +1,82 @@
+\exercice{2565, delaunay, 2009/05/19}
+\enonce
+Soit $A=(a_{ij})_{1\leq i,j\leq n}$ une matrice carr\'ee $n\times n$. On veut d\'emontrer le
+ r\'esultat suivant d\^u \`a Hadamard : Supposons que pour tout $i\in\{1,\cdots,n\}$, on ait
+$$|a_{ii}|>\sum_{j=1,j\neq i}^{n}|a_{ij}| $$
+alors $A$ est inversible.
+\begin{enumerate}  
+\item Montrer le r\'esultat pour $n=2$.
+  \item Soit $B$, la matrice obtenue en rempla\c cant, pour $j\geq 2$, chaque colonne $c_j$ de $A$ par la colonne
+$$ c_j-{\frac{a_{1j}}{a_{11}}}c_1 ,$$ Calculer les $b_{ij}$ en fonction des $a_{ij}$. Montrer que si les
+coefficients de $A$ satisfont les in\'egalit\'es ci-dessus, alors pour $i\geq 2$, on a
+$$|b_{ii}|>\sum_{j=2,j\neq i}^{n}|b_{ij}| .$$
+  \item D\'emontrer le r\'esultat de Hadamard pour $n$ quelconque.
+\end{enumerate}
+
+\finenonce 
+
+\noindication
+
+
+\correction
+Soit $A=(a_{ij})_{1\leq i,j\leq n}$ une matrice carr\'ee $n\times n$. On veut d\'emontrer le
+ r\'esultat suivant d\^u \`a Hadamard : Supposons que pour tout $i\in\{1,\cdots,n\}$, on ait
+$$|a_{ii}|>\sum_{j=1,j\neq i}^{n}|a_{ij}| $$
+alors $A$ est inversible.
+
+
+
+\begin{enumerate}  
+\item {\it Montrons le r\'esultat pour $n=2$.}
+
+Dans ce cas, la matrice $A$ s'\'ecrit 
+$$A=\begin{pmatrix}a_{11}&a_{12} \\  a_{21}&a_{22}\end{pmatrix}$$ et les hypoth\`eses deviennent
+$$|a_{11}|>|a_{12}|\ {\hbox{et}}\ |a_{22}|>|a_{21}|.$$
+La matrice $A$ est inversible si et seulement si son d\'eterminant est non nul, or 
+$$\det A=a_{11}a_{22}-a_{12}a_{21},$$
+ et, compte tenu des hypoth\`eses,
+$$|a_{11}a_{22}|=|a_{11}||a_{22}|>|a_{12}||a_{21}|=|a_{12}a_{21}|,$$
+ainsi$|a_{11}a_{22}|>|a_{12}a_{21}|$ donc $a_{12}a_{21}\neq a_{12}a_{21}$ et le d\'eterminant est non nul.
+
+  \item Soit $B$, la matrice obtenue en rempla\c cant, pour $j\geq 2$, chaque colonne $c_j$ de $A$ par la colonne
+$$ c_j-{\frac{a_{1j}}{a_{11}}}c_1 ,$$ {\it Calculons les $b_{ij}$ en fonction des $a_{ij}$. Montrons que si les
+coefficients de $A$ satisfont les in\'egalit\'es ci-dessus, alors pour $i\geq 2$, on a
+$$|b_{ii}|>\sum_{j=2,j\neq i}^{n}|b_{ij}| .$$}
+
+On a $$b_{ij}=a_{ij}-\frac{{a_{1j}}{a_{11}}}a_{i1}\ \ {\hbox{si}}\ \ j\geq2\ \ {\hbox{et}}\ \ b_{i1}=a_{i1}.$$
+ par l'in\'egalit\'e triangulaire, on a
+ \begin{align*}\sum_{j=2,j\neq i}|b_{ij}|&=\sum_{j=2,j\neq i}|a_{ij}-{\frac{a_{1j}}{a_{11}}}a_{i1}| \\ 
+&\leq \sum_{j=2,j\neq i}|a_{ij}|+\frac{|{a_{1j}|}{|a_{11}|}}|a_{i1}| \\ 
+&= \sum_{j=2,j\neq i}|a_{ij}|+\frac{|{a_{i1}|}{|a_{11}|}} \sum_{j=2,j\neq i}|a_{1j}|. 
+\end{align*}
+Mais, par hypoth\`ese, pour $i=1$, on a
+$$\sum_{j=2}^{n}|a_{1j}|<|a_{11}|,$$
+donc
+$$\sum_{j=2,j\neq i}^{n}|a_{1j}|<|a_{11}|-|a_{1i}|.$$
+D'o\`u, en rempla\c cant dans l'in\'egalit\'e pr\'ec\'edente
+\begin{align*}\sum_{j=2,j\neq i}|b_{ij}|
+&< \sum_{j=2,j\neq i}|a_{ij}|+ |a_{i1}|-\frac{{|a_{i1}|}{|a_{11}|}}|a_{1i}| \\ 
+&= \sum_{j=1,j\neq i}|a_{ij}|-\frac{{|a_{i1}|}{|a_{11}|}}|a_{1i}| \\ 
+&<|a_{ii}|-\frac{{|a_{i1}|}{|a_{11}|}}|a_{1i}| \\ 
+&\leq \left|a_{ii}-\frac{{a_{i1}}{a_{11}}}a_{1i}\right|=|b_{ii}|.
+\end{align*}
+
+  \item{\it  D\'emontrons le r\'esultat de Hadamard pour $n$ quelconque.}
+
+Soit $A=(a_{ij})_{1\leq i,j\leq n}$ une matrice carr\'ee $n\times n$, v\'erifiant pour tout $i\in\{1,\cdots,n\}$, 
+$$|a_{ii}|>\sum_{j=1,j\neq i}^{n}|a_{ij}| $$
+On veut d\'emontrer que $A$ est inversible.
+
+Le r\'esultat est vrai pour $n=2$, d'apr\`es la question $1)$. Soit $n$ arbitrairement fix\'e, supposons le r\'esultat vrai pour
+$n-1$ et d\'emontrons le pour $n$.
+
+On a $\det A=\det B$ o\`u $B$ est la matrice construite dans la question $2)$
+$$B=\begin{pmatrix}a_{11}&0&\cdots&0 \\ 
+\vdots& &({b_{ij}}_{(2\leq i,j\leq n)}) \\ 
+a_{n1}\end{pmatrix}$$
+Or, la matrice $({b_{ij}}_{(2\leq i,j\leq n)})$ est une matrice carr\'ee d'ordre $n-1$ qui v\'erifie les hypoth\`eses de
+Hadamard, d'apr\`es la question $2)$. Elle est donc inversible par hypoth\`ese de r\'ecurrence. Et, par cons\'equent, la 
+matrice $A$ est inversible car $a_{11}\neq 0$.
+\end{enumerate}
+\fincorrection
+\finexercice

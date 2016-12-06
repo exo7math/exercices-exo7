@@ -1,0 +1,27 @@
+\exercice{5597, rouget, 2010/10/16}
+\enonce[****]
+Montrer que tout hyperplan de $M_n(\Rr)$ contient des matrices inversibles.
+\finenonce
+
+\noindication
+
+\correction
+Soit $H$ un hyperplan de $\mathcal{M}_n(\Rr)$. $H$ est le noyau d'une forme linéaire non nulle $f$.
+
+Pour $M=(m_{i,j})_{1\leqslant i,j\leqslant n}$, posons $f(M)=\sum_{1\leqslant i,j\leqslant n}^{}a_{i,j}m_{i,j}$ où les $a_{i,j}$ sont $n^2$ scalaires indépendants de $M$ et non tous nuls.
+
+\textbf{1er cas.} Supposons qu'il existe deux indices distincts $k$ et $l$ tels que $a_{k,l}\neq0$.
+Soit $M=I_n-\frac{\sum_{i=1}^{n}a_{i,i}}{a_{k,l}}E_{k,l}$. $M$ est inversible car triangulaire à coefficients diagonaux tous non nuls et $M$ est dans $H$ car $f(M)=\sum_{i=1}^{n}a_{i,i}-a_{k,l}\frac{\sum_{i=1}^{n}a_{i,i}}{a_{k,l}}=0$.
+
+\textbf{2ème cas.} Si tous les $a_{k,l}$, $k\neq l$, sont nuls, $H$ contient la matrice inversible $\left(
+\begin{array}{ccccc}
+0&1&0&\ldots&0\\
+\vdots&\ddots&\ddots&\ddots&\vdots\\
+\vdots& & &\ddots&0\\
+0& & &\ddots&1\\
+1&0&\ldots&\ldots&0
+\end{array}
+\right)$.
+
+\fincorrection
+\finexercice

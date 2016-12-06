@@ -1,0 +1,33 @@
+\exercice{2799, burnol, 2009/12/15}
+\enonce
+  On considère la série entière $\sum_{k=0}^\infty
+z^{2^k}$. Quel est son rayon de convergence? On note $f(z)$
+sa somme. Que vaut $\lim_{t\to1} f(t)$? (on prend $0<t<1$; minorer $f$ par
+ses sommes partielles). Plus généralement que vaut $\lim_{t\to1}
+f(tw)$ (ici
+   encore $t$ est pris dans $]0,1[$), lorsque $w$ vérifie
+   une équation $w^{2^N} = 1$?
+En déduire qu'il est impossible de trouver un ouvert $U$
+   connexe intersectant $D(0,1)$ mais non inclus entièrement
+   dans $D(0,1)$ et une fonction holomorphe
+   $g(z)$ sur $U$ tels que $g = f$ sur $U\cap D(0,1)$. Pour
+   tout $z_0\in D(0,1)$ déterminer alors le rayon de
+convergence de la série de Taylor de $f$ au point $z_0$.
+\finenonce
+\noindication
+\correction
+Le rayon de convergence est $R=1$. Soit $0<t<1$ et \'etudions $f(t)=\sum_{k=0}^\infty t^{2^k}$.
+Il s'agit d'une s\'erie de termes positifs. D'o\`u
+$$f(t)\geq \sum_{k=0}^{N-1} t^{2^k} \quad \text{pour tout} \quad N\in \N .$$
+Il en r\'esulte  $\liminf_{t\to 1} f(t) \geq N$ or $N$ est arbitraire, donc $\lim_{t\to 1} f(t)=\infty$.
+Soit maintenant $w$ un nombre complexe du cercle unit\'e v\'erifiant $w^{2^N}=1$ pour un $N\in \N$.
+Dans ce cas $w^{2^k}=1$ pour tout $k\geq N$. Si de nouveau $0<t<1$, alors
+$$f(tw) = \sum_{k=0}^{N-1} (tw)^{2^k} + \sum_{k\geq N} t^{2^k}  .$$
+Lorsque $t\to 1$, alors la premi\`ere somme tend vers un nombre complexe (fini, en fait de module
+au plus $N$) et la deuxi\`eme vers $\infty$.
+Les nombres complexes $w$ ayant la propri\'et\'e $w^{2^N}=1$ pour un certain $N\in \N$ sont denses dans le
+cercle unit\'e $\{|z|=1\}$. Ceci, et le principe de prolongement analytique, interdit l'existence de la fonction
+$g$ holomorphe sur $U$ comme d\'ecrit dans l'exercice.
+Si $z_0\in D (0,1)$, alors le rayon de convergence de la s\'erie de Taylor de $f$ en $z_0$ est $R=1-|z_0|$.
+\fincorrection
+\finexercice

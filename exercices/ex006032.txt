@@ -1,0 +1,50 @@
+\exercice{6032, quinio, 2011/05/20}
+
+\enonce
+On s'intéresse au problème des algues toxiques qui
+atteignent certaines plages de France; après étude on constate que
+10\% des plages sont atteintes par ce type d'algues et on veut tester
+l'influence de rejets chimiques nouveaux sur l'apparition de ces algues.
+Pour cela 50 plages proches de zones de rejet chimiques, sont observées; 
+on compte alors le nombre de plages atteintes par l'algue nocive :
+on constate que 10 plages sont atteintes par l'algue.
+Pouvez-vous répondre à la question 
+<<Les rejets chimiques ont-t-il modifié, de façon significative, 
+avec le risque $\alpha =0.05$, le nombre de plages atteintes ?>> 
+\finenonce
+
+\noindication
+
+\correction
+Posons $H_{0}$ <<les rejets chimiques ne modifient pas le
+nombre de plages atteintes par les algues>>.
+
+Notons $p_{0}=0.1$ la proportion théorique de plages atteintes par
+l'algue verte avant les rejets chimiques; $p$ la proportion théorique de
+plages atteintes par l'algue verte après les rejets chimiques et $f$ la
+fréquence observée dans l'échantillon.
+
+Considérons alors la variable aléatoire $X_{i}$, $i\leq 50,$ qui a
+deux modalités: $1$ si la plage est atteinte, $0$ sinon. C'est une
+variable de Bernoulli, alors le nombre total de plages atteintes 
+dans l'échantillon est une variable aléatoire qui, sous $H_{0}$, obéit à
+une loi binomiale de paramètres $n=50$, $p_{0}=0.1$.
+
+Sous $H_{0}$, <<$p=p_{0}=0.1$>>  la variable 
+<<moyenne d'échantillon>> : 
+\begin{equation*}
+\overline{X}=\frac{\sum_{i=1}^{i=50}X_{i}}{n}
+\end{equation*}
+dont une réalisation est la fréquence observée, soit $\frac{10}{50}$, 
+obéit à une loi que l'on peut approcher par une loi normale
+de paramètres : moyenne $p_{0}$ et écart-type $\sqrt{\frac{p_{0}(1-p_{0})}{50}}$.
+
+A l'aide de la formule de cours, on détermine l'intervalle de confiance
+associé:
+$I\simeq [0.017;0.183]$. On constate que la fréquence observée est dans la zone de rejet
+(non chimique) : $0.2$ n'est pas dans
+l'intervalle de confiance au seuil $95$\%.
+On peut donc rejeter $H_{0}$ et conclure, au risque $0.05$, que les rejets
+chimiques modifient de façon significative le nombre de plages atteintes par l'algue.
+\fincorrection
+\finexercice

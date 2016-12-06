@@ -1,0 +1,15 @@
+\exercice{6920, ruette, 2013/01/24}
+\enonce
+Soit $U$ et $V$ deux variables aléatoires indépendantes de même loi, à
+valeurs dans $\{1,\ldots, N\}$. On pose $X=U-V$ et $Y=U+V$. Déterminer la
+covariance entre $X$ et $Y$.
+\finenonce
+\noindication
+
+\correction
+$\text{Cov}(X,Y)=E(XY)-E(X)E(Y)=E(XY)$ car $E(X)=E(U)-E(V)=0$ ($U, V$ ont
+même loi).
+$E(XY)=E((U-V)(U+V))=E(U^2)-E(V^2)=0$ ($U, V$ ont
+même loi). D'où $\text{Cov}(X,Y)=0$.
+\fincorrection
+\finexercice

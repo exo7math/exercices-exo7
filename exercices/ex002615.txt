@@ -1,0 +1,109 @@
+\exercice{2615, delaunay, 2009/05/19}
+\enonce
+{\bf Questions préliminaires} : 
+\begin{enumerate}
+ \item[(a)]  Soient  $E$ un espace vectoriel réel de dimension $n$ et  $u$ un endomorphisme de $E$. Soit $P\in\R[X]$ un polynôme. Soit $\lambda$ une valeur propre de $u$ et $\vec x$ un vecteur propre associé à $\lambda$. Démontrer que $\vec x$ est vecteur propre de l'endomorphisme $P(u)$ pour la valeur propre $P(\lambda)$.
+
+ \item[(b)] Enoncer le théorème de Hamilton-Cayley.
+\end{enumerate}
+
+ 
+Soit $$A=\begin{pmatrix} 1&0&0 \\ -9& 1&9 \\  9&0&-8\end{pmatrix}.$$
+\begin{enumerate}
+ \item  Déterminer les valeurs propres de $A$. Donner une base de vecteurs propres de $A$ et diagonaliser $A$.
+ \item On cherche à déterminer une matrice $B$ telle que $B^3=A$.
+
+\begin{enumerate}
+ \item Démontrer que si $\lambda$ est une valeur propre de $B$ alors $\lambda^3$ est une valeur propre de $A$.
+ \item  Déterminer les valeurs propres de $B$ et leur multiplicité.
+
+ \item Ecrire le polynôme caractéristique de $B$.
+ \item Déterminer $B$ telle que $B^3=A$. 
+\end{enumerate}
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+{\bf Questions préliminaires} : 
+ \begin{enumerate}
+\item[(a)] Soient  $E$ un espace vectoriel réel de dimension $n$ et  $u$ un endomorphisme de $E$. Soit $P\in\R[X]$ un polynôme. Soit $\lambda$ une valeur propre de $u$ et $\vec x$ un vecteur propre associé à $\lambda$. 
+ 
+{\it Démontrons que $\vec x$ est vecteur propre de l'endomorphisme $P(u)$ pour la valeur propre $P(\lambda)$.}
+ 
+On a $u(\vec x)=\lambda \vec x$, et, par récurrence sur $n$, pour tout $n\in\N$, $u^n(\vec x)=\lambda^n\vec x$. Notons 
+
+$P(X)=a_0+a_1X+a_2X^2+\dots+a_dX^d$, l'endomorphisme $P(u)$ vérifie
+\begin{align*}
+P(u)(\vec x)&=(a_0\mathrm{id}_E+a_1u+a_2u^2+\dots+a_du^d)(\vec x)\\
+  &=a_0\vec x+a_1\lambda\vec x+a_2\lambda^2\vec x+\dots+a_d\lambda^d\vec x\\
+  &=P(\lambda) \vec x \\
+\end{align*}
+
+ce qui prouve que le vecteur $\vec x$ est vecteur propre de l'endomorphisme $P(u)$ pour la valeur propre $P(\lambda)$.
+
+
+\item[(b)] 
+ Théorème de Hamilton-Cayley. Soient  $E$ un espace vectoriel réel de dimension $n$ et  $u$ un endomorphisme de $E$. Soit $P$ le polynôme caractéristique de $u$, alors $P(u)=0$ (le zéro étant celui de l'ensemble des endomorphisme de $E$)
+ 
+{\it Version matricielle} : Si $A\in{\cal M}_n(\C)$ est une matrice et $P_A$ son polynôme caractéristique, alors $P_A(A)=0$ (le zéro étant celui de ${\cal M}_n(\C)$).
+\end{enumerate}
+
+
+\bigskip 
+Soit $$A=\begin{pmatrix} 1&0&0\cr-9& 1&9\cr 9&0&-8\end{pmatrix}.$$
+ \begin{enumerate}
+\item {\it Déterminons les valeurs propres de $A$.} 
+ 
+Pour cela calculons son polynôme caractéristique :
+$$P_A(X)=\begin{vmatrix}1-X&0&0\cr -9&1-X&9\cr9&0&-8-X\end{vmatrix}=(1-X)^2(-8-X).$$
+La matrice $A$ admet deux valeurs propres, $1$ valeur propre double et $-8$ valeur propre simple. 
+ 
+{\it Déterminons une base de vecteurs propres de $A$.}
+ 
+Soit $\vec u=(x,y,z)$ un vecteur  propre associé à la valeur propre $1$, on a
+$$A.\vec u=\vec u\iff \left\{\begin{align*}x&=x\cr-9x+ y+9z&=y\cr 9x-8z&=z\end{align*}\right.\iff x=z$$
+Ainsi, le sous-espace propre associé à la valeur propre $1$ est un plan vectoriel dont les vecteurs $\vec e_1=(0,1,0)$ et $\vec e_2=(1,0,1)$ forment une base.
+ 
+Soit $\vec u=(x,y,z)$ un vecteur  propre associé à la valeur propre $-8$, on a
+$$A.\vec u=-8\vec u\iff \left\{\begin{align*}x&=-8x\cr-9x+ y+9z&=-8y\cr 9x-8z&=-8z\end{align*}\right.\iff \left\{\begin{align*}x&=0\cr z&=-y\end{align*}\right.$$
+Ainsi, le sous-espace propre associé à la valeur propre $-8$ est une droite vectorielle engendrée par le vecteur $\vec e_3=(0,1,-1)$. 
+ 
+Les vecteurs $\vec e_1,\vec e_2,\vec e_3$ ci-dessus forment une base de $E$ composée de vecteurs propres de $A$.
+
+{\it Diagonalisons $A$.}
+ 
+Dans cette base, la matrice s'écrit $D=\begin{pmatrix}1&0&0\cr0&1&0\cr0&0&-8\end{pmatrix}$ et on a
+$A=PDP^{-1}$ avec 
+
+$P=\begin{pmatrix}0&1&0\cr1&0&1\cr0&1&-1\end{pmatrix}$.
+ 
+ \item  On cherche à déterminer une matrice $B$ telle que $B^3=A$.
+ \begin{enumerate}
+ 
+\item {\it Démontrons que si $\lambda$ est une valeur propre de $B$ alors $\lambda^3$ est une valeur propre de $A$.}
+ 
+On considère le polynôme $P(X)=X^3$, on applique la question préliminaire a). Si $\lambda$ est une valeur propre de $B$, alors $P(\lambda)=\lambda^3$ est une valeur propre de $A=P(B)=B^3$. 
+
+ 
+\item {\it Déterminons les valeurs propres de $B$ et leur multiplicité.}
+ 
+Si $\lambda_1, \lambda_2,\lambda_3$ sont les valeurs propres de $B$ (elles existent toujours dans $\C$) et $\vec u_1,\vec u_2,\vec u_3$ les vecteurs propres associés, alors ces vecteurs sont aussi vecteurs propres de $A$ pour les valeurs propres $\lambda_1^3, \lambda_2^3,\lambda_3^3$. Sachant que les valeurs propres de $A$ sont $1$,$1$ et $-8$, on a $\lambda_1^3=\lambda_2^3=1$ et $\lambda_3^3=-8$. Ainsi les valeurs propres de $B$ sont $1$ de multiplicité $2$ et $-2$ de multiplicité $1$.
+ 
+\item {\it Ecrivons le polynôme caractéristique de $B$.}
+ 
+Compte tenu de la question précédente, on a
+$$P_B(X)=(1-X)^2(-2-X).$$
+ 
+\item {\it Déterminons $B$ telle que $B^3=A$.} 
+ 
+On a $P_B(X)=(1-X)^2(-2-X)=-X^3+3X-2$, or, d'après le théorème de Cayley-Hamilton, on a $P_B(B)=0$, c'est-à-dire $-B^3+3B-2I=0$, par conséquent
+$$A=B^3=3B-2I.$$
+Ainsi, $B=1/3(A+2I)$, d'où,
+$$B=1/3\begin{pmatrix}3&0&0\cr-9&3&9\cr9&0&-6\end{pmatrix}=\begin{pmatrix}1&0&0\cr-3&1&3\cr3&0&-2\end{pmatrix}.$$
+
+\end{enumerate}
+\end{enumerate}
+\fincorrection
+\finexercice

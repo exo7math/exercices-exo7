@@ -1,0 +1,51 @@
+\exercice{5345, rouget, 2010/07/04}
+\enonce
+Former une équation du sixième degré dont les racines sont les $\sin\frac{k\pi}{7}$ où $k\in\{-3,-2,-1,1,2,3\}$ puis montrer que ces six nombres sont irrationnels.
+\finenonce
+
+\noindication
+
+\correction
+Pour $k$ élément de $\{-3,-2,-1,1,2,3\}$, posons $x_k=\sin\frac{k\pi}{7}$ (les $x_k$ sont deux à deux opposés). Il faut calculer les coefficients du polynôme
+
+\begin{align*}\ensuremath
+P&=(X-\sin\frac{\pi}{7})(X-\sin\frac{2\pi}{7})(X-\sin\frac{3\pi}{7})(X+\sin\frac{\pi}{7})(X+\sin\frac{2\pi}{7})(X+\sin\frac{3\pi}{7})\\
+ &=(X^2-\sin^2\frac{\pi}{7})(X^2-\sin^2\frac{2\pi}{7})(X^2-\sin^2\frac{3\pi}{7})\\
+ &=(X^2-\frac{1}{2}(1-cos\frac{2\pi}{7}))(X^2-\frac{1}{2}(1-cos\frac{4\pi}{7}))
+ (X^2-\frac{1}{2}(1-cos\frac{6\pi}{7}))\\
+  &=\frac{1}{8}Q(-2X^2+1)
+\end{align*}
+
+où $Q(Y)=(\cos\frac{2\pi}{7}-Y)(\cos\frac{4\pi}{7}-Y)(\cos\frac{8\pi}{7}-Y)$.
+
+Posons $\omega=e^{2i\pi/7}$.
+
+\begin{align*}\ensuremath
+\cos\frac{2\pi}{7}\cos\frac{4\pi}{7}\cos\frac{6\pi}{7}&=\frac{1}{8}(\omega+\omega^6)(\omega^2+\omega^5)(\omega^3+\omega^4)
+=\frac{1}{8}(6+\omega^7+\omega^9+\omega^{10}+\omega^{11}+\omega^{12}+\omega^{14}+\omega^{15})\\
+ &=\frac{1}{8}(\omega^6+\omega^7+\omega^2+\omega^3+\omega^4+\omega^5+1+\omega)=\frac{1}{8}.
+\end{align*}
+
+Puis,
+
+\begin{align*}\ensuremath
+\cos\frac{2\pi}{7}\cos\frac{4\pi}{7}+\cos\frac{2\pi}{7}\cos\frac{6\pi}{7}+
+\cos\frac{6\pi}{7}\cos\frac{4\pi}{7}&=\frac{1}{4}((\omega+\omega^6)(\omega^2+\omega^5)+(\omega+\omega^6)(\omega^3+\omega^4)+(\omega^3+\omega^4)(\omega^2+\omega^5))\\
+ &=\frac{1}{4}(2\omega+2\omega^2+2\omega^3+2\omega^4+2\omega^5+2\omega^6)=\frac{-2}{4}=-\frac{1}{2}.
+\end{align*}
+
+Enfin,
+
+\begin{align*}\ensuremath
+\cos\frac{2\pi}{7}+\cos\frac{4\pi}{7}+\cos\frac{6\pi}{7}&=\frac{1}{2}(\omega+\omega^2+\omega^3+\omega^4+\omega^5+\omega^6)=-\frac{1}{2}
+\end{align*}
+
+Donc, $Q=\frac{1}{8}-(-\frac{1}{2})Y+(-\frac{1}{2})Y^2-Y^3=\frac{1}{8}(-8Y^3-4Y^2+4Y+1)$ puis,
+ 
+$$P=\frac{1}{64}(-8(-2X^2+1)^3-4(-2X^2+1)^2+4(-2X^2+1)+1)=\frac{1}{64}(64X^6-112X^4+54X^2-7).$$
+Une équation du $6$ème degré dont les solutions sont les sin est $64x^6-112x^4+54x^2-7=0$.
+
+Maintenant, si $r=$ ($p$ entier relatif non nul, $q$ entier naturel  non nul, $p$ et $q$ premiers entre eux) est une racine rationnelle de cette équation, alors, d'après l'exercice \ref{exo:suprou9}, $p$ divise $-7$ et $q$ divise $64$ et donc 
+$p$ est élément de $\{1,-1,7,-7\}$ et $q$ est élément de $\{1,2,4,8,16,32,64\}$. On vérifie aisémént qu'aucun des rationnels $r$ obtenu n'est racine de $P$ et donc les racines de $P$ sont irrationnelles.
+\fincorrection
+\finexercice

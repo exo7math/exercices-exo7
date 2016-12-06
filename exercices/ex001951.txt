@@ -1,0 +1,60 @@
+\exercice{1951, legall, 2003/10/01}
+
+\enonce
+
+  Soit $f$ la fonction $2\pi $-p\'eriodique sur $\Rr$ telle que 
+$f(x)=\vert x \vert $ si $\vert x \vert \leq \pi .$
+
+\begin{enumerate}
+
+\item D\'eterminer la s\'erie de Fourier de $f$.
+\item Calculer $\displaystyle{ \int _{-\pi}^\pi \vert x\vert ^2dx}$. 
+En d\'eduire la valeur de $\displaystyle{ \sum _{p=0} ^{\infty } 
+\frac{1}{(2p+1)^4}}.$
+
+\item Calculer $\displaystyle{ \sum _{p=1}^\infty \frac{1}{n^4}}$.
+
+\item Montrer que $\vert x\vert = \displaystyle{\frac{\pi }{2} 
+-\frac{4}{\pi} \sum _{p=0}^\infty \frac{ \cos (2p+1)x }{(2p+1)^2}}$.
+En d\'eduire les valeurs de
+$\displaystyle{ \sum _{p=0}^\infty \frac{1}{(2p+1)^2}}$
+puis  $\displaystyle{ \sum _{p=1}^\infty \frac{1}{n^2}}$.
+
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+
+	\item $a_0 = \pi$ et pour $n\ne 0$, $a_n = \frac{2}{\pi n^2} ((-1)^n - 1)$ (nul quand $n$ est pair), $b_n=0$.
+
+	\item Par la formule de Parseval 
+	\[
+	\frac{2 \pi^2}{3} 
+	= \frac{1}{\pi} \int_{-\pi}^\pi |x|^2 \, dx
+	= \frac{\pi^2}{2} + \frac{16}{\pi^2} \sum_{p=0}^\infty \frac{1}{(2p+1)^4}
+	\]
+	donc $\sum_{p=0}^\infty \frac{1}{(2p+1)^2} = \frac{\pi^4}{96}$.
+	
+	\item Comme
+	\[
+	\sum_{n=1}^\infty \frac{1}{n^4} = \sum_{p=1}^\infty \frac{1}{(2p)^2} + \sum_{p=0}^\infty \frac{1}{(2p+1)^2}
+	= \frac{1}{16} \sum_{n=1}^\infty \frac{1}{n^4} + \frac{\pi^4}{96}
+	\]
+	il vient $\displaystyle \sum_{n=1}^\infty \frac{1}{n^4} = \frac{15}{16} \frac{\pi^4}{96}
+	= \frac{\pi^4}{90}$.
+	
+	\item C'est le théorème de Dirichlet. Appliqué en $x=0$, cela implique que 
+	$\displaystyle \sum_{p=0}^\infty \frac{1}{(2p+1)^2} = \frac{\pi}{4} \frac{\pi}{2} = \frac{\pi^2}{8}$. 
+	On en déduit que $\displaystyle \sum_{p=0}^\infty \frac{1}{(2p+1)^2} = \frac{\pi^2}{6}$.
+	
+
+\end{enumerate}
+
+\fincorrection
+
+\finexercice
+

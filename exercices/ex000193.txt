@@ -1,0 +1,50 @@
+\exercice{193, bodin, 1998/09/01}
+\video{hBxRKn9zxFs}
+\enonce
+
+On consid\`ere quatre ensembles $A,B,C$ et $D$ et des applications $f:A\rightarrow B$, $g:B\rightarrow
+C$, $h:C\rightarrow D$. Montrer que :
+$$g\circ f\text{ injective } \Rightarrow f\text{ injective,}$$
+$$g\circ f\text{ surjective } \Rightarrow g\text{ surjective.}$$
+Montrer que :
+$$\big(\text{$g\circ f$ et $h\circ g$ sont bijectives }\big) \Leftrightarrow
+\big(\text{$f,g$ et $h$ sont bijectives}\big).$$
+\finenonce 
+
+\indication
+Pour la premi\`ere assertion le d\'ebut du raisonnement est : ``supposons
+que $g\circ f$ est injective, soient $a,a'\in A$ tels que $f(a)=f(a')$'',... 
+\`a vous de travailler, cela se termine par
+``...donc $a=a'$, donc $f$ est injective.''
+\finindication
+
+\correction
+\begin{enumerate}
+\item Supposons $g\circ f$ injective, et montrons que $f$ est injective :
+soient $a,\ a' \in A$ avec $f(a)=f(a')$ donc $g\circ f(a)=g\circ
+f(a')$ or $g\circ f$ est injective donc $a= a'$. Conclusion on a
+montr\'e : $$\forall a,a'  \in A \quad  f(a)=f(a') \Rightarrow
+a=a'$$ c'est la d\'efinition de $f$ injective.
+
+\item Supposons $g\circ f$ surjective, et montrons que $g$ est surjective :
+soit $c \in C$ comme $g\circ f$ est surjective il existe $a \in A$
+tel que  $g\circ f(a)=c$ ; posons $b = f(a)$, alors $g(b)=c$, ce
+raisonnement est valide quelque soit $c \in C$ donc $g$ est
+surjective.
+
+\item  Un sens est simple $(\Leftarrow)$ si $f$ et $g$ sont bijectives alors $g\circ f$ l'est \'egalement. De m\^eme avec $h\circ g$.
+
+\par
+
+Pour l'implication directe $(\Rightarrow)$ : si $g\circ f$ est
+bijective alors en particulier elle est surjective et donc
+d'apr\`es la question 2. $g$ est surjective.
+
+ Si $h\circ g$ est bijective, elle est en particulier  injective, donc $g$ est injective (c'est le 1.). Par cons\'equent $g$ est \`a la fois injective et
+surjective donc bijective.
+
+ Pour finir $f=g^{-1} \circ (g\circ f)$ est bijective comme compos\'ee d'applications bijectives, de m\^eme pour $h$.
+
+\end{enumerate}
+\fincorrection
+\finexercice

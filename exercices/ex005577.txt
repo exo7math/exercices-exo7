@@ -1,0 +1,51 @@
+\exercice{5577, rouget, 2010/10/16}
+\enonce[***]
+\label{ex:rou15}
+Soient $F_1$, $F_2$,..., $F_n$ $n$ sous-espaces vectoriels d'un espace $E$ de dimension finie sur $\Kk$ $(n\geqslant2)$.
+
+Montrer que $\text{dim}(F_1+...+F_n)\leqslant\text{dim}F_1+ ... +\text{dim}F_n$ avec égalité si et seulement si la somme est directe.
+\finenonce
+
+\noindication
+
+\correction
+Montrons par récurrence que $\forall n\geqslant2$, $\text{dim}(F_1+\ldots+F_n)\leqslant\text{dim}(F_1)+\ldots+\text{dim}(F_n)$.
+
+\textbullet~Pour $n=2$, $\text{dim}(F_1+F_2)=\text{dim}(F_1)+\text{dim}(F_2)-\text{dim}(F_1\cap F_2)\leqslant\text{dim}(F_1)+\text{dim}(F_2)$.
+
+\textbullet~Soit $n\geqslant2$. Supposons que si $F_1$,\ldots, $F_n$ sont $n$ sous-espaces de $E$, $\text{dim}(F_1+\ldots+F_n)\leqslant\text{dim}(F_1)+\text{dim}(F_n)$.
+
+Soient $F_1$,\ldots, $F_{n+1}$ $n+1$ sous-espaces de $E$.
+
+\begin{align*}\ensuremath
+\text{dim}(F_1+F_2+...+F_{n+1})&\leqslant\text{dim}(F_1+...+F_n) +\text{dim}(F_{n+1})\;(\text{d'après le cas}\;n=2)\\
+ &\leqslant \text{dim}(F_1)+ ... +\text{dim}(F_{n+1})\;(\text{par hypothèse de récurrence}).
+\end{align*} 
+
+Le résultat est démontré par récurrence.
+
+On sait que si la somme $F_1+\ldots+F_n$ est directe, on a $\text{dim}(F_1+\ldots+F_n)=\text{dim}(F_1)+\ldots+\text{dim}(F_n)$.
+
+Montrons par récurrence que $\forall n\geqslant,\;2\;[\text{dim}(F_1+...+F_n)=\text{dim}F_1 + ... + \text{dim}F_n]\Rightarrow\text{la somme}\;F_1+\ldots+F_n\;\text{est directe}]$.
+
+\textbullet~Pour n=2 , d'après le \ref{ex:rou14}, $\text{dim}(F_1+F_2)=\text{dim}(F_1)+\text{dim}(F_2)\Rightarrow\text{dim}(F_1\cap F_2)=0\Rightarrow F_1\cap F_2=\{0\}$.
+
+\textbullet~Soit $n\geqslant2$. Soient $F_1$,...,$F_{n+1}$ $n+1$ sous-espaces de $E$ tels que $\text{dim}(F_1+...+F_{n+1})=\text{dim}(F_1)+...+\text{dim}(F_{n+1})$.
+
+On sait que
+
+\begin{align*}\ensuremath
+\text{dim}(F_1)+...+\text{dim}(F_{n+1})&=\text{dim}(F_1+...+F_{n+1})\\ 
+ &=\text{dim}(F_1+...+F_n) +\text{dim}(F_{n+1})-\text{dim}((F_1+...+F_n)\cap F_{n+1})\\
+ &\leqslant\text{dim}(F_1)+...+\text{dim}(F_{n+1})-\text{dim}((F_1+...+F_n)\cap F_{n+1}),
+\end{align*}
+
+ 
+et donc $\text{dim}((F_1+...+F_n)\cap F_{n+1})\leqslant0$ puis $\text{dim}((F_1+...+F_n)\cap F_{n+1})= 0$. Par suite $(F_1+...+F_n)\cap F_{n+1}=\{0\}$ et aussi $\text{dim}(F_1)+...+\text{dim}(F_{n+1})=\text{dim}(F_1+...+F_n) +\text{dim}(F_{n+1})$ et donc $\text{dim}(F_1+...+F_n)=\text{dim}(F_1)+ ... +\text{dim}(F_n)$.
+
+Mais alors, par hypothèse de récurrence, la somme $F_1+...+F_n$ est directe et si l'on rappelle que 
+$(F_1+...+F_n)\cap F_{n+1}=\{0\}$, on a montré que la somme $F_1+...+F_{n+1}$ est directe.
+
+Le résultat est démontré par récurrence.
+\fincorrection
+\finexercice

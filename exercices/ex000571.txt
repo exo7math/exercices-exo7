@@ -1,0 +1,74 @@
+\exercice{571, bodin, 1998/09/01}
+\video{4ehFn1cnohc}
+\enonce
+ Soient $a$ et $b$ deux r\'eels, $a<b$. On consid\`ere la
+fonction $f:\lbrack a,b\rbrack\longrightarrow \lbrack a,b\rbrack$ suppos\'ee continue
+et une suite r\'ecurrente $(u_n)_n$ d\'efinie par :
+$$u_0\in\lbrack a,b\rbrack\ \ \text{et pour tout }\ n\in\N,\ \ u_{n+1}=f(u_n).$$
+\begin{enumerate}
+    \item On suppose ici que $f$ est croissante. Montrer que $(u_n)_n$
+est monotone et en d\'eduire sa convergence vers une solution de l'\'equation
+$f(x)=x$.
+    \item  \emph{Application.} Calculer la limite de la suite définie par :
+$$u_0=4\ \ \text{et pour tout }\ n\in\N,\ \ u_{n+1}=\frac{4u_n+5}{u_n+3}.$$
+    \item  On suppose maintenant que $f$ est d\'ecroissante. Montrer que les suites
+$(u_{2n})_n$ et $(u_{2n+1})_n$ sont monotones et convergentes.
+    \item  \emph{Application.} Soit
+$$u_0=\frac{1}{2}\ \ \text{et pour tout }\  n\in\N,\ \ u_{n+1}=(1-u_n)^2.$$
+\noindent Calculer les limites des suites $(u_{2n})_n$ et $(u_{2n+1})_n$.
+\end{enumerate}
+\finenonce 
+
+\indication
+Pour la premi\`ere question et la monotonie il faut raisonner par r\'ecurrence.
+Pour la troisi\`eme question, remarquer que si $f$ est d\'ecroissante alors $f\circ f$ est croissante
+et appliquer la premi\`ere question.
+\finindication
+
+\correction
+\begin{enumerate}
+    \item Si $u_0 \leqslant u_1$ alors comme $f$ est croissante $f(u_0)\leqslant f(u_1)$ donc $u_1 \leqslant u_2$, ensuite $f(u_1)\leqslant f(u_2)$ soit $u_2 \leqslant u_3$,... Par r\'ecurrence on montre que $(u_n)$ est d\'ecroissante. Comme elle est minor\'ee par $a$ alors elle converge. Si $u_0 \leqslant u_1$ alors la suite $(u_n)$ est croissante et major\'ee par $b$ donc converge.
+
+Notons $\ell$ la limite de $(u_n)_n$. Comme $f$ est continue alors
+$(f(u_n))$ tend vers $f(\ell)$. De plus la limite de $(u_{n+1})_n$
+est aussi $\ell$. En passant \`a la limite dans l'expression
+$u_{n+1}=f(u_n)$ nous obtenons l'\'egalit\'e $\ell = f(\ell)$.
+
+  \item La fonction $f$ définie par $f(x) = \frac{4x+5}{x+3}$ est continue et d\'erivable sur l'intervalle $[0,4]$ et $f([0,4])\subset [0,4]$.
+La fonction $f$ est croissante (calculez sa d\'eriv\'ee). Comme $u_0 =
+4$ et $u_1= 3$ alors $(u_n)$ est d\'ecroissante. Calculons la valeur
+de sa limite $\ell$. $\ell$ est solution de l'\'equation $f(x)=x$
+soit $4x+5=x(x+3)$. Comme $u_n \geqslant 0$ pour tout $n$ alors $\ell
+\geqslant 0$. La seule solution positive de l'équation du second degré $4x+5=x(x+3)$ est $\ell =
+\frac{1+\sqrt{21}}{2}=2,7912\ldots$
+
+  \item Si $f$ est d\'ecroissante alors $f\circ f$ est croissante (car $x\leqslant y \Rightarrow
+f(x)\geqslant f(y) \Rightarrow f\circ f(x)\leqslant  f\circ f(y)$). Nous
+appliquons la premi\`ere question avec la fonction $f\circ f$. La
+suite $(u_0, u_2 = f\circ f(u_0),u_4 = f\circ f(u_2),\ldots)$ est
+monotone et convergente. De m\^eme pour la suite $(u_1, u_3 =
+f\circ f(u_1),u_5 = f\circ f(u_3),\ldots)$.
+
+  \item La fonction $f$ définie par $f(x) = (1-x)^2$ est continue et d\'erivable de $[0,1]$ dans $[0,1]$.
+Elle est d\'ecroissante sur cet intervalle. Nous avons $u_0 =
+\frac12$, $u_1=\frac14$, $u_2=\frac{9}{16}$, $u_3 =
+0,19\ldots$,... Donc la suite $(u_{2n})$ est croissante, nous
+savons qu'elle converge et notons $\ell$ sa limite. La suite
+$(u_{2n+1})$ et d\'ecroissante,  notons $\ell'$ sa limite. Les
+limites $\ell$ et $\ell'$ sont des solutions de l'\'equation
+$f\circ f(x)=x$. Cette \'equation s'\'ecrit $(1-f(x))^2=x$, ou encore
+$(1-(1-x)^2)^2=x$ soit $x^2(2-x)^2=x$. Il y a deux solutions
+\'evidentes $0$ et $1$. Nous factorisons le polyn\^ome
+$x^2(2-x)^2-x$ en $x(x-1)(x-\lambda)(x-\mu)$ avec $\lambda$ et
+$\mu$ les solutions de l'\'equation $x^2-3x+1$ : $\lambda =
+\frac{3-\sqrt{5}}{2} = 0,3819\ldots$ et $\mu =
+\frac{3+\sqrt{5}}{2} > 1$. Les solutions de l'\'equation $f\circ
+f(x)=x$ sont donc $\{ 0,1,\lambda, \mu\}$. Comme $(u_{2n})$ est
+croissante et que $u_0 = \frac12$ alors  $(u_{2n})$ converge vers
+$\ell=1$ qui est le seul point fixe de $[0,1]$ sup\'erieur \`a
+$\frac12$. Comme $(u_{2n+1})$ est d\'ecroissante et que $u_1 =
+\frac14$ alors  $(u_{2n+1})$ converge vers $\ell'=0$ qui est le
+seul point fixe de $[0,1]$ inf\'erieur \`a $\frac14$.
+\end{enumerate}
+\fincorrection
+\finexercice

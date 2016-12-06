@@ -1,0 +1,128 @@
+\exercice{6883, romon, 2012/08/30}
+\enonce
+\begin{enumerate}
+  \item Soit $E$ un espace vectoriel de dimension finie, $F$ un fermé non 
+  vide de $E$ et $x \in E$ un point, appartenant ou non à $F$.
+  Montrer qu'il existe un point $\bar{x} \in F$ tel que
+  \[ 
+  \| x - \bar{x} \| = \inf_{z \in F} \| x - z \| . 
+  \]
+  (Question subsidiaire: ce point est-il unique?)
+  
+  \item On se place désormais dans l'espace vectoriel $\mathcal{M}_2 (
+  \mathbb{R})$ des matrices $2 \times 2$ à coefficients réels,
+  muni de la norme
+  \[ \left\| \left(\begin{array}{cc}
+       a & c\\
+       b & d
+     \end{array} \right) \right\| = \sqrt{a^2 + b^2 + c^2 + d^2} \]
+  et on considère l'ensemble $\text{SL}_2 (\mathbb{R})$
+  des matrices $\left(\begin{array}{cc}
+    a & c\\
+    b & d
+  \end{array} \right)$ de déterminant égal à $1$.
+  \begin{enumerate}
+    \item Montrer que $\text{SL}_2(\mathbb{R})$ est fermé dans $\mathcal{M}_2 (\mathbb{R})$.
+    
+    \item Montrer que $\text{SL}_2(\mathbb{R})$ n'est \emph{pas} bornée.
+    
+    \item Soit $f : \mathcal{M}_2 (\mathbb{R}) \rightarrow
+    \mathbb{R}$ la fonction qui à une matrice $M$ associe $f (M
+) = \| M \|$. On cherche la ou les matrices $M$ réalisant l'infimum de la fonction $f$
+    sur $\text{SL}_2(\mathbb{R})$, autrement dit la ou les matrices les plus proches de la matrice nulle.
+    \begin{enumerate}
+      \item Montrer que $f_{|\text{SL}_2(\mathbb{R})}$ est minorée et atteint son infimum.
+      
+      \item Calculer le gradient de $f$. Est-il toujours défini?
+      
+      \item Trouver le ou les extrema de $f_{|\text{SL}_2(\mathbb{R})}$. Montrer qu'il s'agit du
+      minimum et en déduire
+      \[
+      \inf_{M \in \text{SL}_2 (\mathbb{R})}  \| M \|.
+      \]
+    \end{enumerate}
+  \end{enumerate}
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Remarque: si $x\in F$, alors clairement $\bar{x}=x$ convient. \\
+  Comme $F \neq \varnothing$, il existe un point $y_0 \in F$ et posons
+  $r = \| x - y_0 \| \ge 0$ par hypothèse. On peut découper $F$
+  en deux morceaux : $F_0 = F \cap \bar{B} (x, r)$ et $F_1 = F -
+  F_0$. $F_0$ est non vide car il contient $y_0$. Quant aux points de $F_1$,
+  ils sont tous à une distance de $x$ strictement supérieure à $r$ donc
+  l'infimum de la distance sur $F$ est l'infimum sur $F_0$ :
+  \[ \inf_{z \in F} \| x - z \| = \inf_{z \in F_0} \| x - z
+     \| \le r \]
+  Or $F_0$ est fermé et borné, donc compact (car la dimension est finie),
+  et la fonction $z \mapsto \| x - z \|$ étant continue, elle est
+  bornée et atteint son minimum en un point $y$. 
+  \\
+  Question subsidiaire: $\bar{x}$ n'est pas unique (sauf dans certains cas, par exemple si $F$ est convexe);
+  contre-exemple: $F$ est un cercle et $x$ est son centre.
+  
+  \item
+  \begin{enumerate}
+    \item On voit que $\mathcal{M}_2 (\mathbb{R}) \simeq
+    \mathbb{R}^4$ et que la fonction déterminant est $g : (a, b, c, d
+) \mapsto ad - bc$. Cette fonction est continue car polynomiale en
+    les coordonnées donc $\text{SL}_2 (\mathbb{R}) = g^{-1}(\{1\})$ est un fermé.
+    
+    \item La suite de matrices 
+    $\displaystyle M_n = \begin{pmatrix} 1 & n \\ 0 & 1 \end{pmatrix}$ 
+    est dans $\text{SL}_2(\mathbb{R})$ sans être bornée ($\| M_n \| = \sqrt{2+n^2}$).
+    
+    \item
+    \begin{enumerate}
+      \item C'est une conséquence directe du (1) en prenant pour $x$ la matrice nulle.
+      
+      \item Écrivons $f (M) = \sqrt{a^2 + b^2 + c^2 + d^2}$,
+      alors $\nabla f (a, b, c, d) = \frac{1}{f (M)}
+      (a, b, c, d)$, défini à condition que $M$ ne soit pas
+      la matrice nulle (qui n'appartient pas $\text{SL}_2 (\mathbb{R}
+   )$ donc il n'y~a pas de problème).
+      
+      \item En un extremum on doit avoir $\nabla f = \lambda \nabla g$ (extrema liés) donc
+      \[ \frac{1}{\| M \|}  \left(\begin{array}{c}
+           a\\
+           b\\
+           c\\
+           d
+         \end{array} \right) = \lambda \left(\begin{array}{c}
+           d\\
+           - c\\
+           - b\\
+           a
+         \end{array} \right) 
+      \]
+      ce qui n'est possible que si $\lambda = \epsilon / \| M \|$
+      où $\epsilon \in \{ - 1, + 1 \}$, et que $d = \epsilon a$
+      et $c = - \epsilon b$ donc $M = \left(\begin{array}{cc}
+        a & - \epsilon b\\
+        b & \epsilon a
+      \end{array} \right)$. Si l'on rajoute la contrainte $\det M = 1$, il
+      vient que $\epsilon = + 1$ et $a^2 + b^2 = 1$. Donc les seuls extrema
+      possibles sont de la forme $M_{\theta} = \left(\begin{array}{cc}
+        \cos \theta & - \sin \theta\\
+        \sin \theta & \cos \theta
+      \end{array} \right)$ avec $\theta \in \mathbb{R}$, et pour toutes ces
+      matrices $\| M_{\theta} \| = \sqrt{2}$.
+      
+      Or d'après le (i) on sait que le minimum est atteint, et
+      de plus il doit satisfaire la relation de Lagrange car les gradients
+      sont bien définis. Il y a donc un infinité de minima (les rotations
+      $M_{\theta}$) et ils prennent la même valeur
+      \[ 
+      \inf_{M \in \text{SL}_2 (\mathbb{R})}  \| M
+      \| = \min_{M \in \text{SL}_2 (\mathbb{R})} 
+      \| M \| = \sqrt{2} . 
+      \]
+    \end{enumerate}
+  \end{enumerate}
+\end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,24 @@
+\exercice{3160, quercia, 2010/03/08}
+
+\enonce[Coefficients du bin{\^o}me]
+Soit $p$ un nombre premier.
+Montrer que $\sum_{k=0}^pC_p^kC_{p+k}^k\equiv 2^p+1(\mathrm{mod}\,{p^2})$.
+\finenonce
+
+\noindication
+
+\correction
+Pour $1\le k< p$~: $k!\,C_{p+k}^k
+=(p+1)\dots(p+k) \equiv k! (\mathrm{mod}\,{p})$ donc $C_{p+k}^k \equiv 1(\mathrm{mod}\,{p})$.
+De plus $C_p^k \equiv 0(\mathrm{mod}\, p)$ d'o{\`u} $C_p^kC_{p+k}^k\equiv C_p^k(\mathrm{mod}\,{p^2})$.
+
+Ensuite $(p-1)!\,C_{2p}^p = 2(p+1)\dots(p+p-1)\equiv2(p-1)!+2p\sum_{i=1}^{p-1}\frac{(p-1)!}i (\mathrm{mod}\,{p^2})
+\equiv2(p-1)!\Bigl(1+p\sum_{i=1}^{p-1}i'\Bigr) (\mathrm{mod}\,{p^2})$ o{\`u} $i'$ d{\'e}signe
+l'inverse de~$i$ modulo~$p$. L'application $x \mapsto x^{-1}$ est une permutation
+de $(\Z/p\Z)^*$ donc $\sum_{i=1}^{p-1}i'\equiv \frac{p(p-1)}2(\mathrm{mod}\, p)\equiv 0(\mathrm{mod}\, p)$,
+d'o{\`u} $C_p^pC_{2p}^p\equiv 2(\mathrm{mod}\,{p^2})$.
+
+Enfin $\sum_{k=0}^pC_p^kC_{p+k}^k \equiv 1 + \sum_{k=1}^{p-1}C_p^k + 2
+(\mathrm{mod}\,{p^2})\equiv 2^p+1(\mathrm{mod}\,{p^2})$.
+\fincorrection
+\finexercice 

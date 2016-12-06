@@ -1,0 +1,31 @@
+\exercice{3332, quercia, 2010/03/09}
+\enonce[Rang de $f+g$]
+
+Soient $E,F$ deux ev, $E$ de dimension finie, et $f,g \in \mathcal{L}(E,F)$.
+
+\begin{enumerate}
+  \item Démontrer que $\mathrm{rg}(f+g) \le \mathrm{rg}(f) + \mathrm{rg}(g)$.
+  \item Montrer qu'il y a égalité si et seulement si
+    $\Im f \cap \Im g = \{\vec 0_F \}$ et $\mathrm{Ker} f + \mathrm{Ker} g = E$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+  2. $\mathrm{rg}(f+g) = \mathrm{rg}(f) +\mathrm{rg}(g)$
+           $\iff \begin{cases}\Im f \cap \Im g = \{\vec 0_F \} \cr
+                        \Im( f+g ) = \Im f + \Im g       \cr\end{cases}$ \par
+           $\iff \begin{cases}\Im f \cap \Im g = \{\vec 0_F \} \cr
+                        \forall\ \vec x,\vec y,\ \exists\ \vec z\text{ tq } f(\vec x)+g(\vec y)=(f+g)(\vec z).\end{cases}$
+
+    
+
+    $ \Rightarrow $ : Donc $f(\vec x - \vec z) = g(\vec z - \vec y) = \vec 0$.
+            Pour $\vec y = \vec 0 : \vec x = (\vec x - \vec z) + \vec z \in \mathrm{Ker} f + \mathrm{Ker} g$.
+
+    $\Leftarrow$ : Soient $\vec x = \vec x_f + \vec x_g$ et $\vec y = \vec y_f + \vec y_g$ :
+            Alors $f(\vec x) + g(\vec y) = f(\vec x_g) + g(\vec y_f) = (f+g)(\vec x_g + \vec y_f)$.
+ \fincorrection
+
+\finexercice

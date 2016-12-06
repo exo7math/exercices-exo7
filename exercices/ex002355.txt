@@ -1,0 +1,24 @@
+\exercice{2355, queffelec, 2003/10/01}
+\enonce
+Soit $f,g$ deux applications continues de $X$ dans $Y$, espaces topologiques, $Y$ \'etant s\'epar\'e.
+Montrer que $\{f=g\}$ est ferm\'e dans $X$; en d\'eduire que si $f$ et $g$
+coïncident sur une partie dense de $X$, alors $f=g$.
+\finenonce
+
+\indication
+Montrer que le complémentaire est un ouvert. Si vous le souhaitez, placez-vous dans des espaces métriques.
+\finindication
+
+\correction
+Soit $A = \{ x \in X \mid f(x)=g(x) \}$. Alors soit 
+$C = X\setminus A = \{ x \in X \mid f(x) \neq g(x) \}$.
+Soit $x \in C$ comme $f(x)\neq g(x)$ et que $Y$ est séparé, il existe un voisinage ouvert $V_1$ de $f(x)$ et $V_2$ de $g(x)$ tel que 
+$V_1 \cap V_2 = \varnothing$.
+Notons $U = f^{-1}(V_1) \cap g^{-1}(V_2)$. Alors $U$ est un ouvert de $X$ contenant $x$. Maintenant pour 
+$x' \in U$, alors $f(x') \in V_1$,
+$g(x')\in V_2$ donc $f(x')\neq g(x')$, donc $x'\in C$. Bilan 
+$U$ est inclus dans $C$. Donc $C$ est ouvert.
+
+Application : si $A$ est dense dans $X$ alors $\bar A = X$, mais comme $A$ est fermé $A = \bar A$. Donc $A=X$, c'est-à-dire $f$ et $g$ sont égales partout. 
+\fincorrection
+\finexercice

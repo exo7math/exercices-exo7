@@ -1,0 +1,38 @@
+\exercice{2601, delaunay, 2009/05/19}
+\enonce
+Soit $A$ la matrice suivante :
+$$A=\begin{pmatrix}0&1 \\ 1&0\end{pmatrix}$$
+\begin{enumerate}
+ \item Diagonaliser la matrice $A$.
+ \item  Exprimer les solutions du syst\`eme diff\'erentiel $X'=AX$ dans une base de vecteurs propres et tracer ses trajectoires.  
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+Soit $A$ la matrice suivante :
+$$A=\begin{pmatrix}0&1 \\ 1&0\end{pmatrix}$$
+\begin{enumerate}
+ \item {\it Diagonalisons la matrice $A$.} (2 points)
+
+Son polyn\^ome caract\'eristique est \'egal \`a
+$$P_A(X)=\begin{vmatrix}-X&1 \\  1&-X\end{vmatrix}=X^2-1=(X-1)(X+1).$$
+La matrice $A$ admet deux valeurs propres distinctes, elle est donc diagonalisable.
+
+{\it D\'eterminons une base de vecteurs propres de $A$}. 
+
+Soit $\vec u=(x,y)\in\R^2$,
+$$A\vec u=\vec u\iff x=y\ {\hbox{et}}\ A\vec u=-\vec u\iff x=-y.$$
+Notons $\vec u_1=(1,1)$ et $\vec u_2=(-1,1)$, le vecteur $\vec u_1$ est un vecteur propre associ\'e \`a la valeur propre $1$ et le vecteur $\vec u_2$ est un vecteur propre associ\'e \`a la valeur propre $-1$, ils sont lin\'eairement ind\'ependants, ils forment donc une base de $\R^2$. Ainsi, on a $A=PDP^{-1}$, o\`u
+$$P=\begin{pmatrix}1&-1 \\  1&1\end{pmatrix}\ {\hbox{et}}\ D=\begin{pmatrix}1&0 \\  0&-1\end{pmatrix}$$
+
+ \item  {\it Exprimons les solutions du syst\`eme diff\'erentiel $X'=AX$ dans une base de vecteurs propres et tra\c cons ses trajectoires.} (3 points)
+
+Soit $Y$ tel que $PY=X$, on a alors 
+$$X'=AX\iff PY'=APY\iff Y'=P^{-1}APY\iff Y'=DY.$$
+Les solutions du syst\`eme diff\'erentiel $X'=AX$ dans la base de vecteurs propres $(\vec u_1,\vec u_2)$ sont les solutions du syst\`eme $Y'=DY$. Si $Y=(x,y)$, on a $x'(t)=x(t)$ et $y'(t)=-y(t)$, ainsi, les solutions du syst\`eme sont $x(t)=ae^t$ et $y(t)=be^{-t}$ o\`u $a$ et $b$ sont des constantes r\'eelles arbitraires. Les trajectoires, exprim\'ees dans la base de vecteurs propres $(\vec u_1,\vec u_2)$,  sont donc les courbes d'\'equation $y=c/x$ avec $c\in\R$, ce sont des branches d'hyperboles.
+
+\end{enumerate}
+\fincorrection
+\finexercice

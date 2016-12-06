@@ -1,0 +1,37 @@
+\exercice{2790, burnol, 2009/12/15}
+\enonce
+  En quels points la fonction $z\mapsto \overline{z}$
+  est-elle dérivable au sens complexe, et/ou holomorphe?
+  Même question pour les fonctions $z\mapsto x$ et $z\mapsto y$.
+\finenonce
+\noindication
+\correction
+La fonction $f(z)=\overline{z}$ n'est nulle part dérivable au sens complexe
+(et donc nulle part holomorphe): car
+$$\frac{1}{h} (f(z+h)-f(z))=\frac{\overline{h}}{h}$$
+et la limite de cette expression n'existe pas lorsque $h\to 0$.
+\medskip
+\emph{Remarque.} Plus g\'en\'eralement, une application $\R$--lin\'eaire de $\C$ dans $\C$ est de la forme
+\begin{equation}\label{eq::1}
+w\mapsto \alpha w +\beta \overline{w} 
+\end{equation}
+(ce n'est qu'une \'ecriture complexe des applications lin\'eaires de $\R^2$ dans $\R^2$) ; une telle application
+est holomorphe si et seulement si $\beta =0$.
+C'est exactement la diff\'erence entre diff\'erentiabilit\'e
+(donc r\'eelle) et holomorphie (d\'erivabilit\'e au sens complexe). En effet, les \'equations de Cauchy-Riemann
+sont \'equivalentes \`a l'\'equation $\frac{\partial}{\partial \overline{z}} f(z) =0$ o\`u
+$\frac{\partial}{\partial \overline{z}}=\frac{1}{2} \left( \frac{\partial}{\partial x}+i \frac{\partial}{\partial y}\right)$.
+C'est une r\'e\'ecriture complexe des \'equations de Cauchy-Riemann. Si vous avez une fonction $f$ diff\'erentiable,
+alors sa diff\'erentielle $D f(z)$ est une application lin\'eaire de la forme \eqref{eq::1}. Un calcul simple montre que dans
+ce cas
+$$\beta = \frac{\partial f}{\partial \overline{z}} (z) \quad et \quad \alpha = \frac{\partial f}{\partial z} (z) $$
+avec $\frac{\partial}{\partial z}=\frac{1}{2} \left( \frac{\partial}{\partial x}-i \frac{\partial}{\partial y}\right)$.
+De nouveau, $f$ est complexe diff\'erentiable en $z$ si et seulement si $\beta =\frac{\partial f}{\partial \overline{z}} (z)=0$.
+Dans ce cas $f'(z) = \frac{\partial f}{\partial z} (z)$.
+\bigskip
+Revenons \`a l'exercice. Si vous \^etes d'accord avec ma remarque, alors nous sommes aussi d'accord sur le fait que :
+$$z\mapsto x =\frac{z+\overline{z}}{2}$$
+n'est pas holomorphe. Ce raisonnement s'applique aussi \`a $z\mapsto y$. Nous reviendrons \`a ce
+genre d'applications dans l'exercice \ref{ex:burnol1.1.10}.
+\fincorrection
+\finexercice

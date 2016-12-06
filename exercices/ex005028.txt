@@ -1,0 +1,37 @@
+\exercice{5028, quercia, 2010/03/17}
+\enonce[Comparaison de longueurs (ENS MP 2002)]
+
+Soit $f : {[a,b]} \to \R$ continue concave, $\mathcal{C}^1$ par morceaux,
+$L_1$ la courbe paramétrée $x  \mapsto(x,f(x))$ et
+$L_2$ un chemin continu $\mathcal{C}^1$ par morceaux joignant
+les extrémités de $L_1$ et situé au-dessus de $L_1$.
+Montrer que la longueur de $L_2$ est supérieure ou égale à celle de $L_1$.
+
+
+\finenonce
+
+\noindication
+
+\correction
+Soit $(a_i)$ une subdivision de $[a,b]$ et $P$ la ligne brisée passant
+par les points $(a_i, f(a_i))$. On montre ci-dessous que pour toute courbe
+rectifiable $L$ située au dessus de $P$ et ayant même extrémités,
+on a $\mathrm{long}(L) \ge \mathrm{long}(P)$ (résultat intuitivement évident~:
+planter des clous aux points $(a_i,f(a_i))$ et attacher un élastique en
+$(a,f(a))$ et $(b,f(b))$, passant au dessus de ces clous).
+Cela étant montré, l'inégalité demandée en résulte en faisant tendre le pas
+de la subdivision vers zéro.
+
+Démonstration du thm de l'élastique~: par récurrence sur le nombre $n$ de
+segments de $P$. Pour $n=1$ c'est un fait connu.
+$n-1  \Rightarrow  n$~: si $L$ passe par $(a_1,f(a_1))$ alors l'hypothèse de récurrence
+s'applique. Sinon, notons $D$ la demi-droite issue de $(a_0,f(a_0))$ et
+passant par $(a_1,f(a_1))$. Par concavité, $P$ est en dessous de $D$. $L$
+contient un point d'abscisse $a_1$ strictement au dessus de $D$, et aboutit
+en $(b,f(b))$ en dessous de $D$, donc il existe un point $(u,v)$ sur $L \cap D$
+avec $u > a_1$. En rempla\c cant l'arc $(a_0,f(a_0))$ -- $(u,v)$ de $L$ par le
+segment correspondant on obtient une ligne $L'$ plus courte que $L$,
+encore au dessus de $P$, et qui relève du premier cas.
+\fincorrection
+
+\finexercice

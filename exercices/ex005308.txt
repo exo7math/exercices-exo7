@@ -1,0 +1,34 @@
+\exercice{5308, rouget, 2010/07/04}
+\enonce[***]
+Soit $u_n=10...01_2$.($n$ chiffres égaux à $0$). Déterminer l'écriture binaire de~:
+\begin{enumerate}
+ \item $u_n^2$,
+ \item $u_n^3$,
+ \item $u_n^3-u_n^2+u_n$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  $u_n^2=(2^{n+1}+1)^2=2^{2n+2}+2^{n+2}+1=10...010...01_2$ ($n-1$ puis $n+1$ chiffres $0$)
+\item 
+\begin{align*}\ensuremath
+u_n^3&=(2^{n+1}+1)^3=2^{3n+3}+3.2^{2n+2}+3.2^{n+1}+1=2^{3n+3}+(2+1).2^{2n+2}+(2+1).2^{n+1}+1\\
+ &=2^{3n+3}+2^{2n+3}+2^{2n+2}+2^{n+2}+2^{n+1}+1=10...0110...0110...01_2
+\end{align*}
+
+($n-1$ puis $n-1$ puis $n$ chiffres $0$)
+
+\item  
+
+\begin{align*}\ensuremath
+u_n^3-u_n^2+u_n&=2^{3n+3}+3.2^{2n+2}+3.2^{n+1}+1-2^{2n+2}-2^{n+2}-1+2^{n+1}+1=2^{3n+3}+2^{2n+3}+2^{n+2}+1\\
+ &=10...010...010...01
+\end{align*}
+
+($n-1$ puis $n$ puis $n+1$ chiffres $0$)
+\end{enumerate}
+\fincorrection
+\finexercice

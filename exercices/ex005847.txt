@@ -1,0 +1,148 @@
+\exercice{5847, rouget, 2010/10/16}
+\enonce[** I Distance d'un point à une partie]
+
+Soit $A$ une partie non vide d'un espace vectoriel normé $(E,\|\;\|)$.
+
+Pour $x\in E$, on pose $d_A(x) =d(x,A)$ où $d(x,A) =\text{Inf}\left\{\|x-a\|,\;a\in A\right\}$.
+
+\begin{enumerate}
+ \item  Justifier l'existence de $d_A(x)$ pour chaque $x$ de $E$.
+
+\item 
+  \begin{enumerate}
+  \item Montrer que si $A$ est fermée, $\forall x\in E$, $d_A(x) = 0\Leftrightarrow x\in A$.
+  \item Montrer que si $A$ est fermée et $E$ est de dimension finie, $\forall x\in E$, $\exists a\in A/\;d_A(x)=\|x-a\|$.
+  \end{enumerate}
+
+\item  Si $A$ est quelconque, comparer $d_A(x)$ et $d_{\overline{A}}(x)$.
+
+\item  Montrer $d_A$ est continue sur $E$.
+
+\item  A chaque partie fermée non vide $A$, on associe l'application $d_A$ définie ci-dessus. Montrer que l'application $A\mapsto d_A$  est injective.
+
+\item   Dans l'espace des applications continues sur $[0,1]$ à valeurs dans $\Rr$ muni de la norme de la convergence uniforme, on considère $A =\left\{f\in E/\;f(0)=0\;\text{et}\;\int_{0}^{1}f(t)\;dt\geqslant 1\right\}$. Calculer $d_A(0)$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Soit $x\in E$. $\left\{\|x-a\|,\;a\in A\right\}$ est une partie non vide et minorée (par $0$) de $\Rr$. $\left\{\|x-a\|,\;a\in A\right\}$ admet donc une borne inférieure dans $\Rr$. On en déduit l'existence de $d_A(x)$.
+
+\item 
+ \begin{enumerate}
+ \item Soit $A$ une partie fermée et non vide de $E$. Soit $x\in E$.
+
+\textbullet~Supposons que $x\in A$. Alors $0\leqslant f(x)=\text{Inf}\{\|x-a\|,\;a\in A\}\leqslant\|x-x\|=0$ et donc $d_A(x) = 0$.
+
+\textbullet~Supposons que $d_A(x)=0$. Par définition d'une borne inférieure, $\forall\varepsilon>0$ $\exists a_\varepsilon\in A/\;\|x-a_\varepsilon\| <\varepsilon$.
+
+Soit $V$ un voisinage de $x$. $V$ contient une boule ouverte de centre $x$ et de rayon $\varepsilon>0$ puis d'après ce qui précède, $V$ contient un élément de $A$. Finalement, $\forall V\in\mathcal{V}(x)$, $V\cap A\neq\varnothing$ et donc $x\in\overline{A}=A$.
+
+\begin{center}
+\shadowbox{
+Si $A$ est fermée, $\forall x\in E,\;(d_A(x) = 0\Leftrightarrow x\in A)$.
+}
+\end{center}
+
+ \item Posons $d=d_A(x)$. Pour chaque entier naturel $n$, il existe $a_n\in A$ tel que $d\leqslant \|x-a_n\|\leqslant d+ \frac{1}{n}$.
+
+La suite $(a_n)_{n\in\Nn}$ est bornée. En effet, $\forall n\in\Nn^*$ $\|a_n\|\leqslant \|a_n-x\|+\|x\|\leqslant d+ \frac{1}{n}+\| x\|\leqslant d+\|x\|+1$.
+
+Puisque $E$ est de dimension finie, d'après le théorème de \textsc{Bolzano}-\textsc{Weierstrass},  on peut extraire de la suite $(a_n)_{n\geqslant1}$ une suite $(a_{\varphi(n)})_{n\geqslant1}$ convergeant vers un certain élément $a$ de $E$.
+
+Ensuite, puisque $A$ est fermée, on en déduit que $a\in A$. Puis, comme
+
+\begin{center}
+$\forall n\in\Nn^*$, $d\leqslant\|x-a_{\varphi(n)}\| \leqslant d+ \frac{1}{\varphi(n)}$,
+\end{center}
+
+et puisque $\varphi(n)$ tend vers l'infini quand $n$ tend vers $+\infty$, on obtient quand $n$ tend vers l'infini, $d =\lim_{n \rightarrow +\infty}\|x-a_{\varphi(n)}\|$. Maintenant on sait que l'application $y\mapsto\|y\|$ est continue sur l'espace normé $(E,\|\;\|)$ et donc 
+
+\begin{center}
+$\lim_{n \rightarrow +\infty}\left\|x-a_{\varphi(n)}\right\|=\left\|x-\lim_{n \rightarrow +\infty}a_{\varphi(n)}\right\|=\|x-a\|$.
+\end{center}
+
+On a montré qu'il existe $a\in A$ tel que $d_A(x)=\|x-a\|$.
+  \end{enumerate}
+
+\item  Soit $x\in E$.
+
+Puisque $A\subset\overline{A}$, $d_{\overline{A}}(x)$ est un minorant de $\{\|x-a\|,\;a\in A\}$. Comme $d_A(x)$ est le plus grand des minorants de $\{\|x-a\|,\;a\in A\}$, on a donc $d_{\overline{A}}(x)\leqslant d_A(x)$.
+
+Soit alors $\varepsilon>0$. Il existe $y\in\overline{A}$ tel que $\|x-y\|<d(x,\overline{A})+ \frac{\varepsilon}{2}$ et puis il existe $a\in A$ tel que $\||y-a\| < \frac{\varepsilon}{2}$. On en déduit que
+
+\begin{center}
+$d_A(x)\leqslant \|x-a\|\leqslant\|x-y\|+\|y-a\|<d_{\overline{A}}(x)+ \frac{\varepsilon}{2}+ \frac{\varepsilon}{2}=d_{\overline{A}}(x)+\varepsilon$.
+\end{center}
+
+Ainsi, $\forall\varepsilon>0$, $d_A(x)<d_{\overline{A}}(x)+\varepsilon$. Quand $\varepsilon$ tend vers $0$, on obtient $d_A(x)\leqslant d_{\overline{A}}(x)$.
+
+Finalement 
+
+\begin{center}
+\shadowbox{
+$\forall x\in E$, $d_A(x)=d_{\overline{A}}(x)$.
+}
+\end{center}
+
+\item  Montrons que l'application $d_A$ est Lipschitzienne. Soit $(x,y)\in E^2$
+
+Soit $a\in A$. $d_A(x)\leqslant\|x-a\|\leqslant\|x-y\|+\|y-a\|$. Donc, $\forall a\in A$, $d_A(x) -\|x-y\|\leqslant \|y-a\| $ ou encore $d_A(x) -\|x-y\|$ est un minorant de $\{\|y-a\|,\;a\in A\}$. Puisque $d_A(y)$ est le plus grand des minorants de $\{\|y-a\|,\;a\in A\}$, on a donc $d_A(x) -\|x-y\|\leqslant d_A(y)$.
+
+En résumé, $\forall(x,y)\in E^2$, $d_A(x) - d_A(y)\leqslant\|x-y\|$. En échangeant les rôles de $x$ et $y$, on obtient $\forall(x,y)\in E^2$, $d_A(y) - d_A(x)\leqslant\|x-y\|$ et finalement
+
+\begin{center}
+$\forall(x,y)\in E^2$, $\left|d_A(x) - d_A(y)\right|\leqslant\|x-y\|$.
+\end{center}
+
+Ainsi l'application $\begin{array}[t]{cccc}d_A~:&(E,\|\;\|)&\rightarrow&(\Rr,|\;|)\\
+ &x&\mapsto&d_A(x)
+\end{array}$  est $1$-Lipschitzienne et en particulier $d_A$ est continue sur l'espace  vectoriel normé $(E,\|\;\|)$.
+
+\item  Soient $A$ et $B$ deux parties fermées et non vides de $E$ telles que $d_A = d_B$.
+
+Soit $a\in A$. $d_B(a) = d_A(a) = 0$ (d'après 2)) et donc $a\in B$ (d'après 2)). Ainsi $A\subset B$ puis, par symétrie des rôles, $B\subset A$ et finalement $A=B$.
+
+\item  ($A$ n'est pas un sous espace vectoriel de $E$.)
+
+Soit $f\in A$. $1\leqslant\int_{0}^{1}f(t)\;dt\leqslant\int_{0}^{1}|f(t)|\;dt\leqslant\|f\|_\infty$. Ainsi, $\forall f\in A$, $\|f\|_\infty\geqslant1$ et donc $d_A(0)\geqslant1$.
+
+Pour $n\in\Nn^*$ et $x\in[0,1]$, on pose $f_n(x)=\left\{
+\begin{array}{l}
+(n+1)x\;\text{si}\;x\in\left[0, \frac{1}{n}\right]\\
+1+ \frac{1}{n}\;x\in\left[ \frac{1}{n},1\right]
+\end{array}
+\right.$.
+
+$$\includegraphics{../images/img005847-1}$$
+
+
+Pour chaque entier naturel non nul $n$, la fonction $f_n$ est continue sur $[0,1]$ et  
+
+\begin{center}
+$\int_{0}^{1}f_n(x)\;dx = \frac{1}{2n}\left(1+ \frac{1}{n}\right)+\left(1- \frac{1}{n}\right)\left(1+ \frac{1}{n}\right)=1+ \frac{1}{2n}- \frac{1}{2n^2}\geqslant1$.
+\end{center}
+
+Donc, la suite $(f_n)_{n\geqslant1}$ est une suite d'éléments de $A$. On en déduit que $\forall n\in\Nn^*$, $d_A(0)\leqslant\|f_n\|_\infty= 1+ \frac{1}{n}$. 
+
+En résumé, $\forall n\in\Nn^*$, $1\leqslant d_A(0)\leqslant 1+ \frac{1}{n}$ et finalement 
+
+\begin{center}
+\shadowbox{
+$d_A(0)=1$.
+}
+\end{center}
+
+\textbf{Remarque.} $A$ est fermée mais la distance à $A$ n'est malgré tout pas atteinte. En effet
+
+\textbullet~Soit $(f_n)_{n\in\Nn}$ est une suite d'éléments de $A$ convergeant dans l'espace vectoriel normé $(E,\|\;\|_\infty)$ vers un certain élément $f$ de $E$.
+La suite de fonctions $(f_n)_{n\in\Nn}$ converge uniformément vers $f$ sur $[0,1]$ et donc d'une part, $f(0)=\lim_{n \rightarrow +\infty} f_n(0) = 0$ et d'autre part $\int_{0}^{1}f(x)\;dx=\int_{0}^{1}\lim_{n \rightarrow +\infty}f_n(x)\;dx=\lim_{n \rightarrow +\infty}\int_{0}^{1}f_n(x)\;dx\geqslant1$. Donc $f\in A$ et on a montré que $A$ est fermée.
+ 
+
+\textbullet~Supposons qu'il existe $f\in A$ telle que $\|f\|_\infty= 1$.
+Alors l'encadrement $1\leqslant\int_{0}^{1}f(x)\;dx\leqslant\|f\|_\infty= 1$ fournit $\int_{0}^{1}f(x)\;dx =\|f\|_\infty= 1$ puis $\int_{0}^{1}(\|f\|_\infty-f(x))\;dx = 0$ et donc $\|f\|_\infty- f = 0$ (fonction continue positive d'intégrale nulle) ou encore $f = 1$ ce qui contredit $f(0) = 0$. On ne peut donc pas trouver $f\in A$ tel que $d_A(0) =d(0,f)$.
+\end{enumerate}
+\fincorrection
+\finexercice

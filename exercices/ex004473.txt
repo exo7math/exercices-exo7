@@ -1,0 +1,30 @@
+\exercice{4473, quercia, 2010/03/14}
+\enonce[Césaro]
+
+\begin{enumerate}
+  \item Soient $k,p \in \N$ avec $k \le p$.
+    Montrer que $\sum_{n=k}^p \frac{{C_n^k}-C_n^{k+1}}{2^n}
+    = \frac{C_{p+1}^{k+1}}{2^p}$.
+    
+  \item Soit $(u_n)$ une série convergente.
+    On pose $v_n = \frac1{2^n} \sum_{p=0}^n C_n^pu_p$.
+    Montrer que la série $(v_n)$ est convergente.
+
+
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Récurrence sur $p$.
+  \item Transformation d'Abel et interversion de sommations :
+         $\sum_{n=0}^p v_n
+         = \sum_{k=0}^p \frac{C_{p+1}^{k+1}}{2^p}\sum_{n=0}^k u_n$.
+         \par Théorème de Césaro $ \Rightarrow  \sum v_n = 2\sum u_n$ .
+\end{enumerate}
+ \fincorrection
+
+\finexercice

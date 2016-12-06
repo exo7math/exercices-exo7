@@ -1,0 +1,37 @@
+\exercice{4362, quercia, 2010/03/12}
+\enonce[Centrale MP 2000]
+On considère $f(x)= \int_{t=0}^{+\infty}\frac{d t}{t^x(1+t)}$.
+
+\begin{enumerate}
+  \item Domaine de définition, monotonie, convexité de $f$ (sans dériver $f$).
+    
+  \item Continuité, dérivabilité, calcul de $f^{(k)}(x)$.
+  \item Donner un équivalent de $f(x)$ en $0$ et en $1$.
+    
+  \item Calculer $f(1/n)$ pour $n\in \N$, $n\ge 2$.
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $D_f = {]0,1[}$. $f$ est convexe sur~$]0,1[$ par intégration de
+    l'inégalité de convexité pour $x \mapsto t^{-x}$ et $f(x)\to +\infty$ (lorsque $x\to0$ ou $x\to 1$)
+    par convergence monotone donc $f$ décroît puis recroît.
+  \item 
+  \item En~$0$~: $\frac1{\strut t^x(1+t)} = \frac1{\strut t^{x+1}} - \frac1{\strut t^{x+1}(1+t)}$
+    donc $f(x) =   \int_{t=0}^1\frac{d t}{t^x(1+t)} + \frac1{\strut x}
+    -  \int_{t=1}^{+\infty} \frac{d t}{\strut t^{x+1}(1+t)} \sim \frac1{\strut x}.$
+    
+    En~$1$~: $\frac1{\strut t^x(1+t)} = \frac1{\strut t^x} - \frac{t^{1-x}}{\strut 1+t}$
+    donc $f(x) = \frac1{\strut 1-x} -  \int_{t=0}^1\frac{t^{1-x}}{\strut 1+t}\,d t
+    +  \int_{t=1}^{+\infty}\frac{d t}{t^x(1+t)} \sim \frac1{\strut 1-x}$.
+  \item $f(1/n) =_{(t=u^n)}  \int_{u=0}^{+\infty} \frac{nu^{n-1}\,d u}{u(1+u^n)}
+    =_{(v=1/u)}  \int_{v=0}^{+\infty} \frac{n\,d v}{1+v^n} = \frac\pi{\strut\sin(\pi/n)}$
+    (formule bien connue\dots)
+\end{enumerate}
+ \fincorrection
+
+\finexercice

@@ -1,0 +1,33 @@
+\exercice{4591, quercia, 2010/03/14}
+\enonce[Ens Ulm-Lyon-Cachan MP$^*$ 2003]
+Soit~$\alpha>0$. On considère la fonction $f_\alpha$ : $x \mapsto\sum_{n=1}^\infty e^{-n^\alpha}e^{inx}$.
+Montrer que~$f$ est $\mathcal{C}^\infty$. Donner une CNS sur~$\alpha$ pour que~$f$
+soit développable en série entière en tout point de~$\R$.
+
+\finenonce
+
+\noindication
+
+\correction
+Il y a dérivation terme à terme facilement et indéfiniment.
+
+DSE au voisinage de~$0$~: on envisage de permuter les $\Sigma$ dans~:
+$f_\alpha(x) = \sum_{n=1}^\infty\sum_{p=0}^\infty e^{-n^\alpha}\frac{(inx)^p}{p!}$,
+ce qui est légitime si la série $\sum_{n=1}^\infty e^{-n^\alpha}e^{n|x|}$ converge.
+On en déduit qu'une condition suffisante pour que~$f$ soit DSE au voisinage de~$0$
+est $\alpha \ge 1$ (avec convergence si $x\in{]-1,1[}$ pour $\alpha = 1$ et pour
+tout~$x\in\R$ si $\alpha > 1$).
+
+Cas $\alpha < 1$~: $|f^{(k)}(0)| = \sum_{n=1}^\infty e^{-n^\alpha}n^k
+\ge e^{-N^\alpha}N^k$ avec $N=\lfloor k^{1/\alpha}\rfloor$ donc pour $r>0$
+fixé et $k$ tendant vers l'infini on~a
+$\ln\Bigl(\Bigl|\frac{f^{(k)}(0)r^k}{k!}\Bigr|\Bigr) \sim
+ \Bigl(\frac1\alpha-1\Bigr)k\ln(k)$
+et la série de terme général $\frac{f^{(k)}(0)r^k}{k!}$ diverge grossièrement.
+
+DSE au voisinage de~$a\ne 0$~: même raisonnement en écrivant
+$f(x) = \sum_{n=1}^\infty\sum_{p=0}^\infty e^{-n^\alpha}e^{ina}\frac{(in(x-a))^p}{p!}$.
+En conclusion, $f$ est analytique sur~$\R$ si et seulement si~$\alpha\ge 1$.
+\fincorrection
+
+\finexercice

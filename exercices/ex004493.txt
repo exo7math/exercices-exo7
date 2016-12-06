@@ -1,0 +1,28 @@
+\exercice{4493, quercia, 2010/03/14}
+\enonce[Non interversion des sommations]
+
+On pose $a_{n,p} = \frac1{\strut n^2-p^2}$ si $n\ne p$ et $a_{n,n} = 0$.
+
+\begin{enumerate}
+  \item Expliquer simplement pourquoi la suite double $(a_{n,p})_{(n,p)\in\N^2}$
+    n'est pas sommable.
+    
+  \item Calculer $\sum_{n=0}^\infty\sum_{p=0}^\infty a_{n,p}$ et
+    $\sum_{p=0}^\infty\sum_{n=0}^\infty a_{n,p}$.
+    
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $\sum_{n=1}^\infty a_{n,n-1}$ diverge.
+  \item $\sum_{p=0}^\infty a_{n,p} = \frac1{4n^2}$ si $n\ne 0$, $-\frac{\pi^2}6$ si $n=0$.
+             $\sum_{n=0}^\infty\sum_{p=0}^\infty a_{n,p} = -\frac{\pi^2}{8}
+             =-\sum_{p=0}^\infty\sum_{n=0}^\infty a_{n,p}$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

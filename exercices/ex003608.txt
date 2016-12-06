@@ -1,0 +1,25 @@
+\exercice{3608, quercia, 2010/03/10}
+\enonce[$\dim(\mathrm{Ker} f^2) = 2\dim(\mathrm{Ker} f)$, Mines-Ponts MP 2005]
+
+Soit $E$ un espace vectoriel de dimension finie et $f\in\mathcal{L}(E)$ tel que
+$\dim(\mathrm{Ker} f^2) = 2\dim(\mathrm{Ker} f) = 2d$. Montrer que s'il existe $g\in\mathcal{L}(E)$
+et $k\in\N^*$ tels que $g^k = f$ alors $k$ divise $d$.
+
+
+\finenonce
+
+\noindication
+
+\correction
+En appliquant le théorème du rang à $f_{|\mathrm{Ker} f^2}$, on a~:
+$\dim(\mathrm{Ker} f^2) = \dim(\mathrm{Ker} f) + \dim(f(\mathrm{Ker} f^2))$, et $f(\mathrm{Ker} f^2)\subset \mathrm{Ker} f$,
+donc $f(\mathrm{Ker} f^2)= \mathrm{Ker} f$. Soit $G_i = \mathrm{Ker} g^i$. Montrons que $g(G_{i+1}) = G_i$
+pour tout~$i\in{[[0,k]]}$~: si $x\in G_{i+1}$ alors $g^i(g(x)) = g^{i+1}(x) = 0$
+donc $g(x)\in G_i$. Réciproquement, si $y\in G_i$ alors $y\in G_k = f(G_{2k})$,
+donc $y$ a un antécédant $x$ par $f$, cet antécédant appartient à $G_{i+k}$,
+et $y = g(g^{k-1}(x)) \in g(G_{i+1})$. On en déduit, avec le théorème du rang
+appliqué à $g_{|G_{i+1}}$, que $\dim(G_{i+1}) = \dim(G_i) + \dim(\mathrm{Ker} g)$
+pour tout~$i\in{[[0,k]]}$, d'où $d = \dim(G_k) = \dim(G_0) + k\dim(\mathrm{Ker} g) = k\dim(\mathrm{Ker} g)$.
+\fincorrection
+
+\finexercice

@@ -1,0 +1,45 @@
+\exercice{3248, quercia, 2010/03/08}
+
+\enonce[Polyn{\^o}mes positifs sur $\R$]
+Soit ${\cal E} = \{P \in {\R[X]}$ tq $\exists\ Q,R \in {\R[X]}$ tq $P = Q^2 + R^2 \}$.
+\begin{enumerate}
+  \item   Montrer que ${\cal E}$ est stable par multiplication.
+
+  \item   Montrer que ${\cal E} = \{P \in {\R[X]}$ tq $\forall\ x \in \R,\ P(x) \ge 0 \}$.
+
+  \item (Centrale MP 2000, avec Maple)
+    $P=65X^4-134X^3+190X^2-70X+29$. Trouver $A$ et $B$ dans $\Z [X]$ tels que $P=A^2+B^2$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $P = |Q+iR|^2$.
+  \item Factoriser $P$.
+  \item Avec Maple~: $P=\frac1{65\strut}Q\overline Q$ avec
+    $Q=65X^2+(49i-67)X+(42+11i)$ et $Q$ est irr{\'e}ductible sur $Q[i]$.
+    \let\l\lambda\def\m{\overline\lambda}%
+    Donc si $P=A^2+B^2 = (A+iB)(A-iB)$ avec $A,B$ polyn{\^o}mes {\`a} coefficients entiers
+    alors, quitte {\`a} changer $B$ en $-B$, il existe $\l\in\Q[i]$ tel que~:
+    $A+iB = \l Q$ et $A-iB=\m\overline Q$ d'o{\`u}~:
+    $$\begin{aligned}
+      2A  &= 65(\l+\m)X^2 + ((49i-67)\l-(49i+67)\m)X + ((42+11i)\l+(42-11i)\m)\cr
+      2iB &= 65(\l-\m)X^2 + ((49i-67)\l+(49i+67)\m)X + ((42+11i)\l-(42-11i)\m)\cr
+      \l\m &=65.\cr
+    \end{aligned}$$
+    En particulier $65\l\in \Z[i]$, {\'e}crivons $\l = \frac{u+iv}{\strut 65}$
+    avec $u,v\in\Z$~:
+    $$\begin{aligned}
+      A &= uX^2 -\frac{67u+49v}{\strut 65}X + \frac{42u-11v}{\strut 65}\cr
+      B &= vX^2 +\frac{49u-67v}{\strut 65}X + \frac{11u+42v}{\strut 65}\cr
+      u^2+v^2 &=65.\cr
+    \end{aligned}$$
+    $67u+49v$ est divisible par $65$ si et seulement si $u\equiv 8v(\mathrm{mod}\,{65})$
+    et dans ce cas les autres num{\'e}rateurs sont aussi multiples de~$65$.
+    La condition $u^2+v^2 = 65$ donne alors $v=\pm1, u=\pm8$ d'o{\`u}~:
+    $$A = \pm(8X^2 -9X + 5),   \qquad B = \pm(X^2 +5X + 2).$$
+\end{enumerate}
+\fincorrection
+\finexercice 

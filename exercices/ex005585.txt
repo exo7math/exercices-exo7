@@ -1,0 +1,108 @@
+\exercice{5585, rouget, 2010/10/16}
+\enonce[***I]
+Soient $A\in\mathcal{M}_{3,2}(\Rr)$ et $B\in\mathcal{M}_{2,3}(\Rr)$ telles que $AB=\left(
+\begin{array}{ccc}
+8&2&-2\\
+2&5&4\\
+-2&4&5
+\end{array}
+\right)$. Justifier l'existence de $A$ et $B$ puis calculer $BA$.
+\finenonce
+
+\noindication
+
+\correction
+Cherchons une matrice $A$ de format $(3,2)$ et une matrice $B$ de format $(2,3)$ telles que $AB=\left(
+\begin{array}{ccc}
+8&2&-2\\
+2&5&4\\
+-2&4&5
+\end{array}
+\right)$.
+
+Posons $E=\Rr^2$ et notons $(i,j)$ la base canonique de $E$.
+
+Posons $F=\Rr^3$ et notons $(e_1,e_2,e_3)$ la base canonique de $F$.
+
+Le problème posé matriciellement peut aussi s'énoncer en termes d'applications linéaires :
+trouvons $f\in\mathcal{L}(E,F)$ et $g\in\mathcal{L}(F,E)$ telles que $f\circ g(e_1)=8e_1+2e_2-2e_3$, $f\circ g(e_2)= 2e_1+5e_2+4e_3$ et
+$f\circ g(e_3) = -2e_1+4e_2+5e_3$.
+
+Remarquons tout d'abord que le problème posé n'a pas nécessairement de solution car par exemple $\text{rg}(f\circ g)\leqslant\text{Min}\{f,g\}\leqslant\text{dim}E=2$ et si la matrice proposée est de rang $3$ (c'est à dire inversible), le problème posé n'a pas de solution.
+
+Ici, $\left|
+\begin{array}{ccc}
+8&2&-2\\
+2&5&4\\
+-2&4&5
+\end{array}
+\right|=8\times9-2\times18-2\times18=0$ et la matrice proposée est de rang au plus $2$ puis de rang $2$ car ses deux premières colonnes ne sont pas colinéaires.
+
+Une relation de dépendance des colonnes est $C_1=2C_2-2C_3$.
+
+Un couple $(f,g)$ solution devra vérifier $f\circ g(e_1)=2f\circ g(e_2)-2f\circ g(e_3)$.
+
+Prenons n'importe quoi ou presque pour $g(e_2)$ et $g(e_3)$ mais ensuite prenons $g(e_1)= 2g(e_2) - 2g(e_3)$.
+
+Par exemple, posons $g(e_2) = i$, $g(e_3) =j$ et $g(e_1) = 2i-2j$ puis $f(i) = 2e_1+5e_2+4e_3$ et $f(j)=-2e_1+4e_2+5e_3$ ou encore soient $A=\left(
+\begin{array}{cc}
+2&-2\\
+5&4\\
+4&5
+\end{array}
+\right)$ et $B=\left(
+\begin{array}{ccc}
+2&1&0\\
+-2&0&1
+\end{array}
+\right)$. On a $AB=\left(
+\begin{array}{ccc}
+8&2&-2\\
+2&5&4\\
+-2&4&5
+\end{array}
+\right)$.
+
+Soient $A$ et $B$ deux matrices de formats respectifs $(3,2)$ et $(2,3)$ telles que $AB=\left(
+\begin{array}{ccc}
+8&2&-2\\
+2&5&4\\
+-2&4&5
+\end{array}
+\right)$. Calculons $BA$ (il n'y a bien sûr pas unicité de $A$ et $B$, mais l'énoncé suggère que le produit $BA$ doit être indépendant de $A$ et $B$).
+
+Tout d'abord 
+
+\begin{center}
+$(AB)^2=\left(
+\begin{array}{ccc}
+8&2&-2\\
+2&5&4\\
+-2&4&5
+\end{array}
+\right)\left(
+\begin{array}{ccc}
+8&2&-2\\
+2&5&4\\
+-2&4&5
+\end{array}
+\right)=\left(
+\begin{array}{ccc}
+72&18&-18\\
+18&45&36\\
+-18&36&45
+\end{array}
+\right)=9AB$.
+\end{center}
+
+De plus, $\text{rg}(BA)\geqslant\text{rg}(A(BA)B)=\text{rg}((AB)^2)=\text{rg}(9AB) =\text{rg}(AB)=2$ et donc $\text{rg}(BA)=2$ puis $BA\in\mathcal{GL}_2(\Rr)$.
+
+De l'égalité $(AB)^2=9AB$, on tire après multiplication à gauche par $B$ et à droite par $A$, $(BA)^3=9(BA)^2$ et, puisque $BA$ est une matrice carrée inversible et donc simplifiable pour la multiplication des matrices, $BA=9I_2$.
+
+\begin{center}
+\shadowbox{
+$BA=9I_2$.
+}
+\end{center}
+\fincorrection
+\finexercice

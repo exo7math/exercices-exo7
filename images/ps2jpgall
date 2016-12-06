@@ -1,0 +1,7 @@
+#!/bin/sh
+for psfile in `ls -1 *.eps`
+do
+  # jpgfile = `basename $psfile .eps`
+  # jpgfile = `echo $psfile | sed 's/eps/jpg/'`
+  convert -background white -density 300 -quality 90 "$psfile" "`basename $psfile .eps`.jpg" 
+done

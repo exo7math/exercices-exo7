@@ -1,0 +1,90 @@
+
+\exercice{1145, barraud, 2003/09/01}
+\video{YveAcpVpK2g}
+\enonce
+Soit $a$ un réel.
+On note $\Delta_n$ le déterminant suivant : 
+$$
+\Delta_n = 
+\left\vert
+\begin{matrix}
+       a   &    0   & \cdots & 0      & n-1 \\
+       0   &    a   & \ddots & \vdots & \vdots \\
+    \vdots & \ddots & \ddots & 0      & 2 \\
+       0   & \cdots &   0    & a      & 1 \\
+      n-1  & \cdots &   2    & 1      & a
+\end{matrix}
+\right\vert
+$$
+\begin{enumerate}
+  \item Calculer $\Delta_n$ en fonction de $\Delta_{n-1}$.
+  \item Démontrer que : $\displaystyle \forall n\geq2\quad
+\Delta_n=a^n-a^{n-2}\sum_{i=1}^{n-1}{i^2}$.
+\end{enumerate}
+ 
+\finenonce
+
+\indication
+Développer par rapport à la première colonne
+pour obtenir $\Delta_{n-1}$ et un autre déterminant facile à calculer
+en développant par rapport à sa première ligne.
+\finindication
+
+\correction
+\begin{enumerate}
+  \item En développant par rapport à la première colonne on trouve la relation suivante :
+
+$$\Delta_n = a \Delta_{n-1} + (-1)^{n-1}(n-1) 
+\left\vert
+\begin{matrix}
+       0   &    0   & \cdots & 0      & n-1 \\
+       a   &    0   & \ddots & \vdots & \vdots \\
+    \vdots & \ddots & \ddots & 0      & 3 \\
+       0   & \cdots &   a    & 0      & 2 \\
+       0  & \cdots &   0    & a      & 1
+\end{matrix}
+\right\vert
+$$
+Notons $\delta$ ce dernier déterminant (dont la matrice est de taille $n-1\times n-1$). 
+On le calcule en développant par rapport à la première ligne 
+$$\delta  = (-1)^{n-2}(n-1)
+\left\vert
+\begin{matrix}
+       a   &    0   & \cdots      & 0 \\
+       0   &    a   & \ddots      & \vdots \\
+    \vdots & \ddots & \ddots      & 0  \\
+       0   & \cdots &   0         & a
+\end{matrix}\right\vert
+= (-1)^{n-2}(n-1) a^{n-2}.
+$$
+Donc 
+$$\Delta_n = a \Delta_{n-1} - a^{n-2}(n-1)^2.$$
+
+  \item Prouvons la formule 
+$$\Delta_n=a^n-a^{n-2}\sum_{i=1}^{n-1}{i^2}$$
+par récurrence sur $n\ge 2$.
+
+\begin{itemize}
+  \item \textbf{Initialisation.} Pour $n=2$,
+$\Delta_2=\begin{vmatrix}a&1\\1&a\end{vmatrix}=a^2-1$
+donc la formule est vraie.
+
+  \item \textbf{Hérédité.} Supposons la formule vraie vraie au rang $n-1$,
+c'est-à-dire $\Delta_{n-1}=a^{n-1}-a^{n-3}\sum_{i=1}^{n-2}{i^2}$.
+Calculons $\Delta_n$ :
+\begin{align*}
+\Delta_n 
+  & = a \Delta_{n-1} - a^{n-2}(n-1)^2  \quad \text{ par la première question } \\
+  & = a\Big(a^{n-1}-a^{n-3}\sum_{i=1}^{n-2}{i^2} \Big) - a^{n-2}(n-1)^2 \quad \text{ par l'hypothèse de récurrence} \\
+  & = a^n -  a^{n-2}\sum_{i=1}^{n-2}{i^2} - a^{n-2}(n-1)^2 \\
+  & = a^n-a^{n-2}\sum_{i=1}^{n-1}{i^2}
+\end{align*}
+La formule est donc vraie au rang $n$.
+
+  \item \textbf{Conclusion.} Par le principe de récurrence la formule est vraie
+pour tout entier $n\ge 2$.
+\end{itemize}
+
+\end{enumerate}
+\fincorrection
+\finexercice

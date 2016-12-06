@@ -1,0 +1,28 @@
+\exercice{5988, quinio, 2011/05/18}
+
+\enonce
+Lors d'une loterie de Noël, $300$ billets sont
+vendus aux enfants de l'école ; $4$ billets sont gagnants.
+J'achète $10$ billets, quelle est la probabilité pour que je gagne au moins un lot?
+\finenonce
+
+\noindication
+
+\correction
+
+L'univers des possibles est ici l'ensemble des combinaisons de $10$ billets
+parmi les $300$ ; il y en a $\binom{300}{10}$.
+Je ne gagne rien si les $10$ billets achetés se trouvent parmi les $296$
+billets perdants, ceci avec la probabilité : 
+\begin{equation*}
+\frac{\binom{296}{10}}{\binom{300}{10}}.
+\end{equation*}
+
+La probabilité cherchée est celle de l'événement complémentaire : 
+\begin{equation*}
+1-\frac{\binom{296}{10}}{\binom{300}{10}}\simeq 0.127.
+\end{equation*}
+
+La probabilité est environ $12.7$\% de gagner au moins un lot.
+\fincorrection
+\finexercice

@@ -1,0 +1,38 @@
+\exercice{6031, quinio, 2011/05/20}
+
+\enonce
+Afin de mieux satisfaire leurs clients, une grande société
+fournisseur d'accès internet fait ses statistiques sur le nombre
+d'appels reçus en \emph{hotline}, elle pourra ainsi évaluer le temps
+d'attente pour le client et le nombre d'employés à mettre au
+standard; les résultats de l'enquête portent sur 200 séquences \
+consécutives de une minute, durant lesquelles le nombre d'appels moyen a 
+été de 3 appels par minute. On suppose que les appels sont répartis également dans le
+temps: on partage un intervalle de temps en unités de une seconde;
+alors dans chaque unité de temps, il y a au plus un appel.
+\begin{enumerate}
+\item Quelle est la loi de probabilité du nombre d'appels reçus
+en 4 minutes?
+\item Montrer que l'on peut approcher cette loi par une loi de Poisson.
+\item Donner un intervalle de confiance pour le nombre moyen d'appels en 4 minutes.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item L'intervalle de temps de $4$ minutes est la répétition de $240$
+secondes, au cours desquelles les appels surviennent de façon indépendante, avec la probabilité d'appel de $\frac{1}{20}$; la loi de
+probabilité du nombre d'appels reçus en $4$ minutes est donc une loi
+binomiale, de paramètres $n=240$ et $p=\frac{1}{20}$.
+\item Comme $n\geq 30$ et $np\leq 15,$ il est possible d'approcher cette loi
+par une loi de Poisson de paramètre $\lambda $ estimé par $np=12$.
+\item Un échantillon de taille $200$ a été réalisé pour
+estimer le nombre moyen d'appels par minute; c'est un échantillon de
+taille $50$ pour la variable précédente (nombre d'appels reçus
+en 4 minutes) qui suit une loi de Poisson d'espérance et de variance $12$. 
+Un intervalle de confiance au niveau 95\% pour la moyenne est $I_{\alpha}=[11;13]$.
+\end{enumerate}
+\fincorrection
+\finexercice

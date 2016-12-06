@@ -1,0 +1,35 @@
+\exercice{3595, quercia, 2010/03/10}
+\enonce[Centrale MP 2000]
+
+Si $A\in M_n(\C)$, on note $C(A)$ le commutant de $A$.
+\begin{enumerate}
+  \item Pour $n=2$, montrer que $C(A)$ est de dimension $2$ ou $4$, en donner une base.
+    
+  \item Pour $n\in \N^*$, montrer que $C(A)$ est de dimension $\ge n$ (traiter d'abord le cas où $A$
+    est diagonalisable).
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Par similitude on se ramène aux cas~:
+    $A=\left(\begin{smallmatrix}\lambda&0\cr0&\lambda\cr\end{smallmatrix}\right)$, $C(A) = \mathcal{M}_2(\C)$ ou
+    $A=\left(\begin{smallmatrix}\lambda&0\cr0&\mu\cr\end{smallmatrix}\right)$, $C(A) = \C[A]$ ou
+    $A=\left(\begin{smallmatrix}\lambda&1\cr0&\lambda\cr\end{smallmatrix}\right)$, $C(A) = \C[A]$.
+  \item Si $A$ est diagonalisable de valeurs propres $\lambda_i$
+    avec les multiplicités $n_i$ alors ${\dim(C(A)) = \sum n_i^2 \ge n}$.
+    
+    Dans le cas général, soit $(A_k)$ une suite de matrices diagonalisables
+    convergeant vers $A$ et $(C_k^1,\dots,C_k^n)$ une suite de $n$-uplets
+    de matrices commutant avec $A_k$ telles que $(C_k^1,\dots,C_k^n)$
+    est une famille orthonormale pour un produit scalaire quelconque choisi
+    sur $\mathcal{M}_n(\C)$. Par compacité il existe une sous-suite convergente, donc
+    $n$ matrices $C_\infty^i$ formant une famille orthonormale et commutant
+    avec~$A$ d'où $\dim(C(A))\ge n$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

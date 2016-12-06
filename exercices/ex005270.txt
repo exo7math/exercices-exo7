@@ -1,0 +1,21 @@
+\exercice{5270, rouget, 2010/07/04}
+\enonce[****]
+Montrer que tout hyperplan de $\mathcal{M}_n(\Kk)$ $(n\geq 2)$ contient au moins une matrice inversible.
+\finenonce
+
+\noindication
+
+\correction
+Soit $H$ un hyperplan de $\mathcal{M}_n(\Kk)$ et $f$ une forme linéaire non nulle sur $\mathcal{M}_n(\Kk)$ telle que $H=\mbox{Ker}f$.
+
+Pour $A=(a_{i,j})_{1\leq i,j\leq n}$, posons $f(A)=\sum_{1\leq i,j\leq n}^{}\alpha_{i,j}a_{i,j}$.
+
+\begin{itemize}
+\item[1er cas.] Supposons $\exists(i,j)\in\{1,...,n\}^2/\;i\neq j\;\mbox{et}\;\alpha_{i,j}\neq 0$. On pose alors $S=\sum_{k=1}^{n}\alpha_{k,k}$ et on considère $A=\sum_{k=1}^{n}E_{k,k}-\frac{S}{\alpha_{i,j}}E_{i,j}$. $A$ est triangulaire à coefficients diagonaux tous non nuls et est donc inversible.
+
+De plus, $f(A)=\sum_{k=1}^{n}\alpha_{k,k}-\frac{S}{\alpha_{i,j}}\alpha_{i,j}=S-S=0$ et $A$ est élément de $H$.
+
+\item[2ème cas.] Supposons $\forall(i,j)\in\{1,...,n\}^2,\;(i\neq j\Rightarrow \alpha_{i,j}=0)$. Alors, $\forall A\in\mathcal{M}_n(\Kk),\;f(A)=\sum_{i=1}^{n}\alpha_{i,i}a_{i,i}$. Soit $A=E_{n,1}+E_{2,1}+E_{3,2}+...+E_{n-1,n}$. $A$ est inversible car par exemple égale à la matrice de passage de la base canonique $(e_1,e_2,...,e_n)$ de $\Kk^n$ à la base $(e_n,e_1,...,e_{n-1})$. De plus, $f(A)=0$.
+\end{itemize}
+\fincorrection
+\finexercice

@@ -1,0 +1,28 @@
+\exercice{4184, quercia, 2010/03/11}
+\enonce[Centrale MP 2000]
+
+Soit ${f} : {\R^n} \to {\R^n}$ de classe $\mathcal{C}^1$ et $c>0$ tels que, pour tous $x,y$, 
+$\| f(x)-f(y)\| \ge c \|x-y\|$.
+
+\begin{enumerate}
+  \item Montrer que pour tous $x,h$, $\|d f_x(h)\|\ge c\|h\|$.
+
+  \item Montrer que $f$ est un $\mathcal{C}^1$-difféomorphisme sur $\R^n$ (pour la surjectivité on 
+    considèrera, si $a\in \R^n$, le minimum de $\|f(x)-a\|^2$).
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item 
+  \item $\|f(x)\|\to+\infty$ lorsque $\|x\|\to\infty$ donc $x \mapsto\|f(x)-a\|^2$
+    admet un minimum sur~$\R^n$. En ce point on a pour tout $h\in\R^n$~:
+    $(f(x)-a\mid d f_x(h)) = 0$ et $d f_x$ est surjective
+    (linéaire injective en dimension finie) donc $f(x)=a$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

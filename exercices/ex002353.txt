@@ -1,0 +1,52 @@
+\exercice{2353, queffelec, 2003/10/01}
+\enonce
+Soit $X$ un espace topologique et $f:X\to \Rr$.
+\begin{enumerate}
+\item Montrer que $f$ est continue si et seulement si pour tout $\lambda\in \Rr$, 
+les ensembles $\{x\ ;\ f(x)<\lambda\}$ et $\{x\ ;\ f(x)>\lambda\}$ sont des
+ouverts de $X$.
+
+\item Montrer que si $f$ est continue, pour tout $\omega$ ouvert de $\Rr$,
+$f^{-1}(\omega)$ est un $F_\sigma$ ouvert de $X$ ($F_\sigma$= r\'eunion
+d\'enombrable de ferm\'es).
+
+\end{enumerate}
+\finenonce
+
+\indication
+\begin{enumerate}
+  \item Utiliser le fait que tout ouvert de $\Rr$ est l'union dénombrable d'intervalles ouverts.
+  \item \'Ecrire un intervalle fermé comme union dénombrable d'intervalles
+ouverts, puis utiliser la même remarque que ci-dessus.
+   \end{enumerate}
+\finindication
+
+\correction
+\begin{enumerate}
+  \item Sens direct. Si $f$ est continue alors $\{x \mid f(x) < \lambda\} = 
+f^{-1}(]-\infty,\lambda[)$ est un ouvert comme image réciproque par une application continue de l'intervalle ouvert $]-\infty,\lambda[$. De même avec
+$]\lambda,+\infty[$.
+
+Réciproque. Tout d'abord, tout intervalle ouvert $]a,b[$, ($a<b$) peut s'écrire
+$$]a,b[= ]-\infty,b[ \cap ]a,+\infty[.$$
+Donc 
+$$f^{-1}(]a,b[) = f^{-1}(]-\infty,b[) \cap f^{-1}(]a,+\infty[)$$
+est une intersection de deux ouverts donc un ouvert de $X$.
+Soit $O$ un ouvert de $\Rr$, alors $O$ peut s'écrire comme l'union dénombrables d'intervalles ouverts :
+$$O = \bigcup_{i\in I} {]a_i,b_i[}.$$
+Donc 
+$$f^{-1}(O)= \bigcup_{i\in I} f^{-1}(]a_i,b_i[)$$
+est une union d'ouvert donc un ouvert de $X$ .
+  \item Nous le faisons d'abord pour un intervalle ouvert $]a,b[$.
+$$]a,b[ = \bigcup_{j\in\Nn^*} [a+\frac 1n,b-\frac 1n].$$
+Donc 
+$$f^{-1}(]a,b[) = \bigcup_{j\in\Nn^*} f^{-1}([a+\frac 1j,b-\frac 1j]),$$
+est une union dénombrable de fermés.
+Maintenant comme pour la première question, tout ouvert $O$ de $\Rr$
+s'écrit $O = \bigcup_{i\in I} ]a_i,b_i[$, avec $I$ dénombrable.
+Donc on peut écrire 
+$$f^{-1}(O)= \bigcup_{i\in I}\bigcup_{j\in\Nn^*} f^{-1}([a_i+\frac 1j,b_i-\frac 1j]),$$
+qui est une union dénombrable de fermés (mais c'est un ouvert !).
+   \end{enumerate}
+\fincorrection
+\finexercice

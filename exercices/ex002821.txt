@@ -1,0 +1,19 @@
+\exercice{2821, burnol, 2009/12/15}
+\enonce 
+On considère la fonction analytique $f(z) =
+\frac1{\sin(z)}$ sur l'ouvert $U$ complémentaire de
+$\pi\Zz$. Vérifier que la fonction $\sin(z)$ ne s'annule
+jamais sur $U$. Déterminer  en tout $z_0\in U$ donné le
+rayon de convergence du développement en série de Taylor de
+$f$. 
+\emph{Remarque :} il est déconseillé de chercher à résoudre ce
+problème en déterminant explicitement les coefficients des
+séries de  Taylor.
+\finenonce
+\noindication
+\correction
+On a $\sin (z) = \frac{1}{2i}(e^{iz}-e^{-iz})=0$ si et seulement si $e^{2i\pi z}=1$ ce qui est le cas si et seulement si $z\in \pi \Z$.
+Soit $z_0\in U=\C\setminus \pi \Z$. Alors, le rayon de convergence de la s\'eries de Taylor de $f$ est
+$$R= \mathrm{dist} (z_0 , \pi \Z ) = \min_{n\in \Z} |z_0 -\pi n| .$$
+\fincorrection
+\finexercice

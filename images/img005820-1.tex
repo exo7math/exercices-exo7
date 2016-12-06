@@ -1,0 +1,79 @@
+%%%%%%%%%%%%%%%%%% PREAMBULE %%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt,a4paper]{article}
+
+\usepackage{amsfonts,amsmath,amssymb,amsthm}
+\usepackage[francais]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+%----- Ensemles : entiers, reels, complexes -----
+\newcommand{\Nn}{\mathbb{N}} \newcommand{\N}{\mathbb{N}}
+\newcommand{\Zz}{\mathbb{Z}} \newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Qq}{\mathbb{Q}} \newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Rr}{\mathbb{R}} \newcommand{\R}{\mathbb{R}}
+\newcommand{\Cc}{\mathbb{C}} \newcommand{\C}{\mathbb{C}}
+
+%----- Modifications de symboles -----
+\renewcommand {\epsilon}{\varepsilon}
+\renewcommand {\Re}{\mathop{\mathrm{Re}}\nolimits}
+\renewcommand {\Im}{\mathop{\mathrm{Im}}\nolimits}
+
+%----- Fonctions usuelles -----
+\newcommand{\ch}{\mathop{\mathrm{ch}}\nolimits}
+\newcommand{\sh}{\mathop{\mathrm{sh}}\nolimits}
+\renewcommand{\tanh}{\mathop{\mathrm{th}}\nolimits}
+\newcommand{\Arcsin}{\mathop{\mathrm{Arcsin}}\nolimits}
+\newcommand{\Arccos}{\mathop{\mathrm{Arccos}}\nolimits}
+\newcommand{\Arctan}{\mathop{\mathrm{Arctan}}\nolimits}
+\newcommand{\Argsh}{\mathop{\mathrm{Argsh}}\nolimits}
+\newcommand{\Argch}{\mathop{\mathrm{Argch}}\nolimits}
+\newcommand{\Argth}{\mathop{\mathrm{Argth}}\nolimits}
+\newcommand{\pgcd}{\mathop{\mathrm{pgcd}}\nolimits} 
+
+%----- Commandes special dessin a ajouter localement ------
+\usepackage{geometry}
+\usepackage{pstricks}
+\usepackage{pst-plot}
+\usepackage{pst-node}
+\usepackage{graphics,epsfig}
+
+\newcmykcolor{DarkGreen}{0.4 0 0.76 0.3}
+\newcmykcolor{Goldenrod}{0 0.1 0.84 0}
+\newcmykcolor{Fuchsia}{0.47 0.91 0 0.08}
+
+\pagestyle{empty}
+
+% Que faire avec ce fichier monimage.tex ?
+%   1/ latex monimage.tex
+%   2/ dvips monimage.dvi
+%   3/ ps2eps monimage.ps
+%   4/ ps2pdf -dEPSCrop monimage.eps
+%   5/ Dans votre fichier d'exos \includegraphics{monimage}
+
+\begin{document}
+
+\begin{center}
+\begin{pspicture}(-3.5,-3.5)(3.5,3.5)
+\psdots[linecolor=blue](-2,0)(2,0)(1.732,1)
+\pscircle[linecolor=blue](0,0){2}
+\uput[dr](2,0){\textcolor{blue}{$A$}}
+\uput[ul](-2,0){\textcolor{blue}{$B$}}
+\psdots[linecolor=red](1.732,0.499)
+\uput[dl](1.732,0.499){\textcolor{red}{$M$}}
+\psdots(2,0.535)
+\psline[linecolor=blue](2,-3.5)(2,3.5)
+\uput[ur](2,0.535){$S$}
+\uput[r](2,3.5){\textcolor{blue}{$(\mathcal{D})$}}
+\psplot{0.5}{3}{3 sqrt x 3 sqrt sub mul neg 1 add}
+\uput[dl](1.732,1){\textcolor{blue}{$P$}}
+\uput[u](3.2,-1){$(\mathcal{T})$}
+\psline[linecolor=blue,linestyle=dashed](-3,0)(3,0)
+\psline[linecolor=red](1.732,-3.5)(1.732,3.5)
+\psplot[linecolor=red]{-3}{3}{0.535 x 2 add mul 4 div}
+\parametricplot[linecolor=red]{-180}{180}{t cos 2 mul t sin}
+\end{pspicture}
+\end{center}
+
+
+\end{document}

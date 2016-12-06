@@ -1,0 +1,18 @@
+\exercice{5279, rouget, 2010/07/04}
+\enonce[***]
+Combien y a-t-il de partitions d'un ensemble à $pq$ éléments en $p$ classes ayant chacune $q$ éléments~? (Si $E$ est un ensemble à $pq$ éléments et si $A_1$,..., $A_p$ sont $p$ parties de $E$, $A_1$,..., $A_p$ forment une partition de $E$ si et seulement si tout élément de $E$ est dans une et une seule des parties $A_i$. Il revient au même de dire que la réunion des $A_i$ est $E$ et que les $A_i$ sont deux à deux disjoints.)
+\finenonce
+
+\noindication
+
+\correction
+Il y a $C_{pq}^q$ choix possibles d'une première classe. Cette première classe étant choisie, il y a $C_{pq-q}^{q}=C_{(p-1)q}^q$ choix possibles de la deuxième classe... et $C_{q}^q$ choix possibles de la $p$-ième classe. Au total, il y a $C_{pq}^qC_{(p-1)q}^q...C_{q}^q$ choix possibles d'une première classe, puis d'une deuxième ...puis d'une $p$-ième.
+
+Maintenant dans le nombre $C_{pq}^qC_{(p-1)q}^q...C_{q}^q$, on a compté plusieurs fois chaque partition, chacune ayant été compté un nombre égal de fois.
+
+On a compté chaque partition autant de fois qu'il y a de permutations des $p$ classes à savoir $p!$. Le nombre cherché est donc~:  
+
+$$\frac{1}{p!}C_{pq}^qC_{(p-1)q}^q...C_{q}^q=\frac{1}{p!}\frac{(pq)!}{q!((p-1)q)!}\frac{((p-1)q)!}{q!((p-2)q)!}...
+\frac{(2q)!}{q!q!}\frac{q!}{q!0!}=\frac{(pq)!}{p!(q!)^p}.$$
+\fincorrection
+\finexercice

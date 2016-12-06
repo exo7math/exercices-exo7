@@ -1,0 +1,45 @@
+\exercice{724, bodin, 1998/09/01}
+\video{CfqCgc6zKgg}
+\enonce
+Soient $x$ et $y$ r\'eels avec $0<x<y$.
+\begin{enumerate}
+    \item Montrer que
+$$ x < \frac{y-x}{\ln y - \ln x} < y.$$
+    \item On consid\`ere la fonction $f$ d\'efinie sur
+$[0,1]$ par
+$$\alpha \mapsto f(\alpha) = \ln (\alpha x +(1-\alpha)y)-\alpha
+\ln x -(1-\alpha)\ln y.$$
+De l'\'etude de $f$ d\'eduire que pour tout $\alpha$ de $]0,1[$
+$$ \alpha
+\ln x +(1-\alpha)\ln y < \ln (\alpha x +(1-\alpha)y) .$$
+Interpr\'etation g\'eom\'etrique ?
+\end{enumerate}
+\finenonce 
+
+\indication
+\begin{enumerate}
+    \item Utiliser le th\'eor\`eme des accroissements finis avec la fonction $t \mapsto \ln t$
+    \item Montrer d'abord que $f''$ est n\'egative. Se servir du th\'eor\`eme des valeurs interm\'ediaires pour $f'$.
+\end{enumerate}
+\finindication
+
+\correction
+\begin{enumerate}
+  \item Soit $g(t) = \ln t$. Appliquons le th\'eor\`eme des accroissements finis sur $[x,y]$. Il existe $c \in ]x,y[$, 
+$g(y)-g(x) = g'(c)(y-x)$. Soit $\ln y - \ln x = \frac 1c (y-x)$.
+Donc $\frac{\ln y - \ln x}{y-x} = \frac 1c$.
+Or $x <c<y$ donc $\frac 1y < \frac 1c < \frac 1x$.
+Ce qui donne les in\'egalit\'es recherch\'ees. 
+  \item $f'(\alpha)= \frac{x-y}{\alpha x + (1-\alpha)y} - \ln x + \ln y$. Et $f''(\alpha) = -\frac{(x-y)^2}{(\alpha x + (1-\alpha)y)^2}$.
+Comme $f''$ est n\'egative alors $f'$ est d\'ecroissante sur $[0,1]$.
+Or $f'(0) = \frac{x-y - y(\ln x - \ln y)}{y} >0$ d'apr\`es la premi\`ere question et de m\^eme $f'(1) < 0$. Par le th\'eor\`eme des valeurs interm\'ediaires, il existe $c \in [x,y]$ tel que $f'(c) = 0$.
+Maintenant $f'$ est positive sur $[0,c]$ et n\'egative sur $[c,1]$.
+Donc $f$ est croissante sur $[0,c]$ et d\'ecroissante sur $[c,1]$.
+Or $f(0)=0$ et $f(1)=0$ donc pour tout $x\in[0,1]$, $f(x) \geq 0$.
+Cela prouve l'in\'egalit\'e demand\'ee.
+  \item G\'eom\'etriquement nous avons prouv\'e que la fonction $\ln$
+est concave, c'est-\`a-dire que la corde
+(le segment qui va de $(x,f(x))$ \`a $(y,f(y)$) est sous la courbe d'\'equation $y=f(x)$.
+\end{enumerate}
+\fincorrection
+\finexercice

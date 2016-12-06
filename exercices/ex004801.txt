@@ -1,0 +1,30 @@
+\exercice{4801, quercia, 2010/03/16}
+\enonce[Principe du maximum, ULM-Lyon-Cachan MP$^*$ 2005]
+
+Soit $P\in\C[X]$ et $U$ un ouvert de~$\C$ born{\'e}.
+Montrer que $\sup(|P(x)|,\ x\in U) = \sup(|P(x)|,\ x\in \mathrm{Fr}(U))$.
+
+
+\finenonce
+
+\noindication
+
+\correction
+On suppose $P$ non constant, sans quoi le r{\'e}sultat est trivial.
+Soit $S(X) = \sup(|P(x)|,\ x\in X)$.
+On a par inclusion et continuit{\'e}~: $S(\mathrm{Fr}(U)) \le S(\overline U) = S(U)$.
+Soit $x\in\overline U$ tel que $|P(x)| = S(\overline U)$. On d{\'e}montre
+par l'absurde que $x\in\mathrm{Fr}(U)$, ce qui entra{\^\i}ne l'{\'e}galit{\'e} demand{\'e}e.
+Supposons donc $x\in U$ et soit $n=\deg(P)$. Alors pour $\rho>0$ suffisament petit,
+et $\theta\in\R$, on a $x+\rho e^{i\theta}\in U$ et~:
+$$P(x+\rho e^{i\theta}) = P(x) + \rho e^{i\theta}P'(X) + \dots + \frac{\rho^n e^{in\theta}}{n!}P^{(n)}(x).$$
+avec $P^{(n)}(x) = P^{(n)} \ne 0$. On en d{\'e}duit~:
+$$2\pi |P(x)| = \Bigl| \int_{\theta=0}^{2\pi} P(x+\rho e^{i\theta})\,d \theta\Bigr|
+\le  \int_{\theta=0}^{2\pi} |P(x+\rho e^{i\theta})|\,d \theta \le 2\pi\, S(U) = 2\pi|P(x)|.$$
+On en d{\'e}duit que les in{\'e}galit{\'e}s sont des {\'e}galit{\'e}s, et en particulier que
+la quantit{\'e} $|P(x+\rho e^{i\theta})|$ est ind{\'e}pendante de $\rho$ et $\theta$.
+Il y a contradiction car $|P(x+\rho e^{i\theta})|^2$ est un polyn{\^o}me de
+degr{\'e} $2n$ en $\rho$.
+\fincorrection
+
+\finexercice

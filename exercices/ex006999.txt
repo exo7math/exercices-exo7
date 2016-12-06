@@ -1,0 +1,52 @@
+\exercice{6999, blanc-centi, 2015/07/04}
+\video{cNVcKnV6F2E}
+\enonce
+Résoudre sur $]0;\pi[$ l'équation différentielle
+$y''+y=\mathrm{cotan}\, x$, où $\mathrm{cotan}\, x = \frac{\cos x}{\sin x}$.
+\finenonce
+
+\indication
+Utiliser la méthode de variation de la constante.
+\finindication
+
+\correction
+Les solutions de l'équation homogène sont les $\lambda\cos x+\mu\sin x$. 
+En posant $y_1(x)=\cos x$ et $y_2(x)=\sin x$, on va chercher les solutions sous 
+la forme $\lambda y_1+\mu y_2$, vérifiant
+\begin{eqnarray*}
+\left\{\begin{array}{l}
+\lambda'y_1+\mu'y_2=0\\
+\lambda'y'_1+\mu'y'_2=\mathrm{cotan}\, x
+\end{array}\right.
+&\Longleftrightarrow&
+\left\{\begin{array}{l}
+\lambda'\cos x+\mu'\sin x=0\\
+\lambda'(-\sin x)+\mu'\cos x=\mathrm{cotan}\, x
+\end{array}\right.\\
+\ &\Longleftrightarrow&
+\left\{\begin{array}{l}
+\lambda'(x)=\frac{\begin{array}{|cc|}0&\sin x\\\mathrm{cotan}\, x&\cos x \end{array}}{\begin{array}{|cc|}\cos x&\sin x\\-\sin x&\cos x \end{array}}\\
+\ \\
+\mu'(x)=\frac{\begin{array}{|cc|}\cos x&0\\-\sin x&\mathrm{cotan}\, x \end{array}}{\begin{array}{|cc|}\cos x&\sin x\\-\sin x&\cos x \end{array}}
+\end{array}\right.
+\end{eqnarray*}
+d'après les formules de Cramer, où $\begin{array}{|cc|}\cos x&\sin x\\-\sin x&\cos x \end{array}=1$. On obtient donc 
+$$\left\{\begin{array}{l}
+\lambda'(x)=-\cos x\\
+\mu'(x)=\frac{\cos^2x}{\sin x}
+\end{array}\right.
+$$
+ce qui donne une primitive $\lambda(x)=-\sin x$. 
+
+Pour $\mu$, on cherche à primitiver 
+$\frac{\cos^2x}{\sin x}$ à l'aide du changement de variable $t=\cos x$ (et donc $\dd t= -\sin t \,\dd x$), 
+on calcule une primitive
+\begin{eqnarray*}
+\int \frac{\cos^2x}{\sin x}\,\dd x&=&-\int\frac{t^2}{1-t^2}\,\dd t=t-\int\frac{1}{1-t^2}\,\dd t\\ 
+ &=&t+\frac{1}{2}\ln(1-t) -\frac{1}{2}\ln(1-t)= \cos x + \frac{1}{2}\ln(1-\cos x) - \frac{1}{2}\ln(1-\cos x)
+\end{eqnarray*}
+En remplaçant, les solutions générales sont les 
+$$y(x)=c_1\cos x+c_2\sin x +  (-\sin x)\cos x+\left(\cos x + \frac{1}{2}\ln(1-\cos x) - \frac{1}{2}\ln(1-\cos x)\right)\sin x$$
+qui se simplifie $y(x)=c_1\cos x+c_2\sin x + \frac{1}{2}\sin x\ln\frac{1-\cos x}{1+\cos x}$, $c_1,c_2\in\Rr$.
+\fincorrection
+\finexercice

@@ -1,0 +1,68 @@
+\exercice{5628, rouget, 2010/10/16}
+\enonce[**I Exponentielle d'une matrice nilpotente]
+
+Pour $A$ matrice nilpotente donnée, on pose $\text{exp}A=\sum_{k=0}^{+\infty}\frac{A^k}{k!}$.
+
+\begin{enumerate}
+ \item  Montrer que si $A$ et $B$ commutent et sont nilpotentes alors $A+B$ est nilpotente et $\text{exp}(A+B) =\text{exp}A\times\text{exp}B$.
+
+\item  Montrer que $\text{exp}A$ est inversible.
+
+\item  Calculer $\text{exp}A$ où $A=\left(
+\begin{array}{ccccc}
+0&1&0&\ldots&0\\
+\vdots&\ddots&\ddots&\ddots&\vdots\\
+ & & &\ddots&0\\
+\vdots& & &\ddots&1\\
+0&\ldots& &\ldots&0
+\end{array}
+\right)$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Soient $p$ l'indice de nilpotence de $A$ et $q$ l'indice de nilpotence de $B$. Puisque $A$ et $B$ commutent, la formule du binôme de \textsc{Newton} fournit
+
+\begin{center}
+$(A+B)^{p+q-1}=\sum_{k=0}^{p+q-1}\dbinom{p+q-1}{k}A^kB^{p+q-1-k}$ 
+\end{center}
+
+Dans cette somme, 
+
+\textbullet~si $k\geqslant p$, $A^k=0$ et donc $A^kB^{p+q-1-k}= 0$
+
+\textbullet~si $k\leqslant p-1$ alors $p+q-1-k\geqslant q$ et encore une fois $B^{p+q-1-k}= 0$.
+
+Finalement, $(A+B)^{p+q-1}=\sum_{k=0}^{p+q-1}\dbinom{p+q-1}{k}A^kB^{p+q-1-k}=0$ et $A+B$ est nilpotente d'indice inférieur ou égal à $p+q-1$. 
+
+Les sommes définissant $\text{exp}A$, $\text{exp}B$ et $\text{exp}(A+B)$ sont finies car $A$, $B$ et $A+B$ sont nilpotentes et
+
+\begin{align*}\ensuremath
+\text{exp}(A+B)&=\sum_{k=0}^{+\infty}\frac{1}{k!}(A+B)^k=\sum_{k=0}^{+\infty}\sum_{i+j=k}^{}\frac{1}{i!j!}A^iB^j\\
+ &\left(\sum_{i=0}^{+\infty}\frac{1}{i!}A^i\right)\left(\sum_{j=0}^{+\infty}\frac{1}{j!}B^j\right)\;(\text{toutes les sommes sont finies})\\
+ &=\text{exp}A\times\text{exp}B.
+\end{align*}
+
+\item  Si $A$ est nilpotente, $-A$ l'est aussi et commute avec $A$. Donc $\text{exp}A\times\text{exp}(-A)=\text{exp}(A-A)=\text{exp}(0)=I_n$.
+
+$\text{exp}A$ est inversible à gauche et donc inversible et $(\text{exp}A)^{-1}=\text{exp}(-A)$.
+
+\item  Les puissances de $A$ sont bien connues et on trouve immédiatement
+
+\begin{center}
+$\text{exp}A=\left(
+\begin{array}{ccccc}
+1&\frac{1}{1!}&\frac{1}{2!}&\ldots&\frac{1}{(n-1)!}\\
+0&\ddots&\ddots&\ddots&\vdots\\
+\vdots&\ddots& & &\frac{1}{2!}\\
+\vdots& &\ddots&\ddots&\rule[-4mm]{0mm}{11mm}\frac{1}{1!}\\
+0&\ldots&\ldots&0&1
+\end{array}
+\right)$.
+\end{center}
+\end{enumerate}
+\fincorrection
+\finexercice

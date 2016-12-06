@@ -1,0 +1,82 @@
+\exercice{2181, debes, 2008/02/12}
+\enonce
+Soient $G$ un groupe et $H$ un sous-groupe d'indice fini dans $G$.  
+On d\'efinit sur $G$ la relation $xRy$ si et seulement si $x\in HyH$.
+\smallskip
+
+(a) Montrer que $R$ est une relation d'\'equivalence et que toute classe
+d'\'equivalence pour la relation $R$ est une union finie disjointe de classes 
+\`a gauche modulo $H$. 
+\smallskip
+
+Soit $HxH=\bigcup _{1\leq i\leq d(x)} x_i H$  la partition de la classe $HxH$ en
+classes \`a gauche distinctes.
+\smallskip
+
+(b) Soit $h\in H$ et $i$ un entier compris entre $1$ et $d(x)$; posons  $h\hskip
+2pt \ast \hskip 2pt x_iH= hx_iH$. Montrer que cette formule d\'efinit une action
+transitive de $H$ sur l'ensemble  des classes $x_1H, \dots, x_{d(x)} H$ et que le
+fixateur de $x_i H$ dans cette action est  $H\cap x_i Hx_i ^{-1}$. En d\'eduire que 
+
+$$d(x)=[H:H\cap x Hx ^{-1}]$$ 
+
+et qu'en particulier $d(x)$ divise l'ordre de $G$.
+\smallskip
+
+(c) Montrer que $H$ est distingu\'e dans  $G$  si et seulement si 
+$d(x)=1$  pour tout $x\in G$.
+\smallskip
+
+(d) On suppose que $G$ est fini et que $[G:H]=p$, o\`u $p$ est le plus petit 
+nombre premier divisant l'ordre de $G$. Le but de cette question est de montrer 
+que $H$ est distingu\'e dans $G$.
+
+\hskip 5mm (i) Montrer que pour tout $x\in G$ , $d(x)\leq p$. En d\'eduire que
+$d(x)=1$ ou $d(x)=p$. 
+
+\hskip 5mm (ii) Montrer que si $H$ n'est pas distingu\'e dans $G$, il existe une
+unique classe d'\'equivalence pour la relation $R$ et que $G=H$, ce qui contredit
+l'hypoth\`ese  $[G:H ]=p$.
+\finenonce 
+
+\noindication
+\correction
+(a) Que $R$ soit une relation d'\'equivalence est imm\'ediat. La classe d'un
+\'el\'ement $x\in G$ est l'ensemble $HxH$, lequel est \'egal \`a la r\'eunion
+des ensembles $hxH$ o\`u $h$ d\'ecrit $H$. Ces derniers ensembles sont des classes
+\`a gauche modulo $H$ et sont donc \'egaux ou disjoints.
+\smallskip
+
+(b) Pour tout $i=1,\ldots,d(x)$, $hx_iH$ est une classe \`a gauche, contenue dans
+$h(HxH)H \subset HxH$, donc est de la forme $x_jH$. La formule $h\hskip 2pt \ast
+\hskip 2pt x_iH= hx_iH$ d\'efinit ainsi une permutation de l'ensemble  des classes
+$x_1H, \dots, x_{d(x)} H$ (la permutation r\'eciproque est celle induite par
+$h^{-1}$) et donc une action de $H$ sur cet ensemble. Cette action est transitive:
+pour $i,j\in \{1,\ldots,d(x)\}$, $h=x_i^{-1}x_j$ v\'erifie $h\hskip 2pt \ast
+\hskip 2pt x_iH= x_jH$.
+
+\hskip 5mm Un \'el\'ement $h\in H$ est dans le fixateur $H(x_iH)$ d'une classe
+$x_iH$ si et seulement si $hx_iH=x_iH$ c'est-\`a-dire si $h\in x_iHx_i^{-1}$. D'o\`u
+$H(x_iH)= H\cap x_iHx_i^{-1}$. On obtient alors $d(x)= [H:(H\cap x_iHx_i^{-1})]$ ce
+qui prouve que $d(x)$ divise $|H|$ et donc aussi $|G|$.
+\smallskip
+
+(c) Si $H$ est distingu\'e dans $G$, alors classes \`a droite et classes \`a
+gauche modulo $H$ coincident d'o\`u $HxH=xHH=xH$ et donc $d(x)=1$ pour tout $x\in
+G$. Inversement, pour tout $x\in G$, si $d(x)=1$, alors $HxH=xH$ ce qui entraine
+$Hx\subset xH$ et donc $x^{-1}Hx \subset H$.
+\smallskip
+
+(d) (i) De fa\c con g\'en\'erale, on a $d(x) \leq [G:H]$. On a ainsi $d(x) \leq p$
+si $[G:H]=p$. Comme $d(x)$ divise $|G|$ et que $p$ est le plus petit premier
+divisant $|G|$, n\'ecessairement $d(x)=1$ ou $d(x)=p$.
+\smallskip
+
+(ii) Si $H$ n'est pas distingu\'e alors il existe $x\in G$ avec $d(x)\not=1$ et
+donc $d(x)=p$. Mais alors $\hbox{\rm card}(HxH) = d(x)\hskip 2pt |H| = p\hskip 2pt
+|H| = [G:H]\hskip 2pt |H| = |G|$. C'est-\`a-dire, il n'existe qu'une seule classe
+$HxH=G$, laquelle est aussi la classe de l'\'el\'ement neutre $H1H=H$, ce qui
+contredit l'hypoth\`ese $[G:H]=p>1$. Conclusion: le sous-groupe $H$ est distingu\'e
+dans $G$.
+\fincorrection
+\finexercice

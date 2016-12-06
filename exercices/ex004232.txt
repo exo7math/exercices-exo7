@@ -1,0 +1,26 @@
+\exercice{4232, quercia, 2010/03/12}
+\enonce[Maximum-minimum]
+
+Soient $a,b \in \R$. \'Etudier la convergence des suites $(a_n)$, $(b_n)$
+définies par :
+$$a_0=a,\ b_0=b,
+  \qquad a_{n+1} = \frac12 \int_{x=-1}^1 \min(x,b_n)\,d x,\
+                       b_{n+1} = \frac12 \int_{x=-1}^1 \max(x,a_n)\,d x.$$
+\finenonce
+
+\noindication
+
+\correction
+$a_{n+1} = \begin{cases} b_n &\text{ si } b_n < -1\cr
+                   -(b_n-1)^2/4 &\text{ si } -1\le b_n\le1\cr
+                   0 &\text{ si } b_n > 1,\cr\end{cases}$  
+
+$b_{n+1} = \begin{cases} 0 &\text{ si } a_n < -1\cr
+                   (a_n+1)^2/4 &\text{ si } -1\le a_n\le1\cr
+                   a_n &\text{ si } a_n > 1.\cr\end{cases}$
+\par
+Donc $a_{n+1} = f(a_{n-1})$, $b_{n+1} = g(b_{n-1})$.
+Point fixe : $a_n \to \sqrt8-3$, $b_n\to 3-\sqrt8$.
+ \fincorrection
+
+\finexercice

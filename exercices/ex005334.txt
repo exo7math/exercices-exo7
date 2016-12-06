@@ -1,0 +1,18 @@
+\exercice{5334, rouget, 2010/07/04}
+\enonce[**I]
+Déterminer deux polynômes $U$ et $V$ vérifiant $UX^n+V(1-X)^m=1$ et $\mbox{deg}(U)<m$ et $\mbox{deg}(V)<n$.
+\finenonce
+
+\noindication
+
+\correction
+\begin{align*}\ensuremath
+1&=(X+(1-X))^{n+m-1}=\sum_{k=0}^{n+m-1}C_{n+m-1}^{k}X^k(1-X)^{n+m-1-k}\\
+ &=\sum_{k=0}^{n-1}C_{n+m-1}^{k}X^k(1-X)^{n+m-1-k}
++\sum_{k=n}^{n+m-1}C_{n+m-1}^{k}X^k(1-X)^{n+m-1-k}\\ 
+ &=(1-X)^m\sum_{k=0}^{n-1}C_{n+m-1}^{k}X^k(1-X)^{n-1-k}+X^n\sum_{k=n}^{n+m-1}C_{n+m-1}^{k}X^{k-n}(1-X)^{n+m-1-k}
+\end{align*}
+
+Soient $U=\sum_{k=n}^{n+m-1}C_{n+m-1}^{k}X^{k-n}(1-X)^{n+m-1-k}$ et $V=\sum_{k=0}^{n-1}C_{n+m-1}^{k}X^k(1-X)^{n-1-k}$. $U$ et $V$ sont des polynômes tels que $UX^n+V(1-X)^m=1$. De plus, pour $n\leq k\leq n+m-1$, $\mbox{deg}(X^{k-n}(1-X)^{n+m-1-k})=k-n+n+m-1-k=m-1<m$ et donc $\mbox{deg}(U)<m$ et de même pour $0\leq k\leq n-1$, $\mbox{deg}(X^k(1-X)^{n-1-k})=k+n-1-k=n-1<n$ et $\mbox{deg}(V)<n$.
+\fincorrection
+\finexercice

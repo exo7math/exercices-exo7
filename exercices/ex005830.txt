@@ -1,0 +1,56 @@
+\exercice{5830, rouget, 2010/10/16}
+\enonce[***]
+Trouver une équation du cône de sommet $S$ circonscrit à la surface $(\mathcal{S})$ quand
+
+\begin{enumerate}
+ \item  $S(0,5,0)$ et $(\mathcal{S})$ : $x^2+y^2+z^2=9$,
+
+\item  $S(0,0,0)$ et $(\mathcal{S})$ : $x^2+xy+z-1=0$.  (Préciser la courbe de contact.)
+
+\end{enumerate}
+
+(\textbf{Définitions.} Le cône $(\mathcal{C})$ de sommet $S$ circonscrit à la surface $(\mathcal{S})$ est la réunion des tangentes à $(\mathcal{S})$ passant par $S$. D'autre part, une droite est tangente à la surface $(\mathcal{S})$ en un point $M$ si et seulement si elle passe par $M$ et est contenue dans le plan tangent à $(\mathcal{S})$ en $M$).
+\finenonce
+
+\noindication
+
+\correction
+Notons $(C)$ le cône de sommet $S$ circonscrit à la surface $(\mathcal{S})$.
+
+\begin{enumerate}
+ \item   Ici $(\mathcal{S})$ est la sphère de centre $O$ et de rayon $3$ et  le point $S$ est extérieur à cette sphère. Donc
+
+\begin{align*}\ensuremath
+M(x,y,z)\in(C)&\Leftrightarrow M=S\;\text{ou}\;M\neq S\;\text{et}\;d(O,(SM))= 3\Leftrightarrow M=S\;\text{ou}\;M\neq S\;\text{et}\;\|\overrightarrow{SO}\wedge\overrightarrow{SM}\|= 3\|\overrightarrow{SM}\|\\
+ &\Leftrightarrow\|\overrightarrow{SO}\wedge\overrightarrow{SM}\|= 3\|\overrightarrow{SM}\|\Leftrightarrow
+\|(0,5,0)\wedge(x,y-5,z) \| = 3\|(x,y-5,z)\|\\
+ &\Leftrightarrow(5z)^2+(5x)^2 =9(x^2+(y-5)^2+z^2)\Leftrightarrow16x^2-9(y-5)^2 +16z^2= 0.
+\end{align*}
+
+\item  Soit $M_0(x_0,y_0,z_0)$ un point de $(\mathcal{S})$ (c'est-à-dire tel que $x_0^2+x_0y_0+z_0-1 = 0$). $(\mathcal{S})$ est une surface du second degré. Une équation du plan tangent à $(\mathcal{S})$ en $M_0$ est fournie par la règle de dédoublement des termes : 
+
+\begin{center}
+$xx_0+\frac{1}{2}(y_0x+x_0y)+ \frac{1}{2}(z+z_0)-1 = 0$.
+\end{center}
+
+Ce plan tangent contient le point $S(0,0,0)$ si et seulement si $z_0 = 2$ ce qui montre déjà que la courbe de contact admet pour système d'équations  $\left\{
+\begin{array}{l}
+x^2+xy+z-1=0\\
+z=2
+\end{array}
+\right.$ ou encore$\left\{
+\begin{array}{l}
+x^2+xy+1=0\\
+z=2
+\end{array}
+\right.$. C'est une hyperbole du plan d'équation $z = 2$.
+
+Le cône de sommet $S$ circonscrit à $(\mathcal{S})$ est alors le cône de sommet $S$ et de directrice $(\mathcal{C})$ d'équations $\left\{
+\begin{array}{l}
+x^2+xy+1=0\\
+z=2
+\end{array}
+\right.$. On trouve la surface d'équation $4x^2+4xy+z^2 = 0$. C'est un cône du second degré.
+\end{enumerate}
+\fincorrection
+\finexercice

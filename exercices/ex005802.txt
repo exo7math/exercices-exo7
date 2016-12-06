@@ -1,0 +1,19 @@
+\exercice{5802, rouget, 2010/10/16}
+\enonce[*** I]
+Soit $f$ un endomorphisme d'un espace euclidien de dimension $n$ qui conserve l'orthogonalité. Montrer qu'il existe un réel positif $k$ tel que $\forall x\in E$, $\|f(x)\| = k\|x\|$.
+\finenonce
+
+\noindication
+
+\correction
+Il s'agit de montrer qu'un endomorphisme d'un espace euclidien $E$ qui conserve l'orthogonalité est une similitude.
+
+On peut raisonner sur une base orthonormée de $E$ que l'on note  $\mathcal{B}=(e_i)_{1\leqslant i\leqslant n}$. Par hypothèse, la famille $(f(e_i))_{1\leqslant i\leqslant n}$ est orthogonale. De plus, pour $i\neq j$, $(e_i+e_j)|(e_i-e_j)=\|e_i\|^2-\|e_j\|^2= 0$ et donc $f(e_i+e_j)|f(e_i-e_j) = 0$ ce qui fournit $\|f(e_i)\| =\|f(e_j)\|$. Soit $k$ la valeur commune des normes des $f(e_i)$, $1\leqslant i\leqslant n$.
+
+Si $k = 0$, tous les $f(e_i)$ sont nuls et donc $f$ est nulle.
+
+Si $k\neq0$, l'image par l'endomorphisme $\frac{1}{k}f$ de la base othonormée $\mathcal{B}$ est une base orthonormée. Donc l'endomorphisme $\frac{1}{k}f$ est un automorphisme orthogonal de $E$ et donc l'endomorphisme $\frac{1}{k}f$ conserve la norme.
+
+Dans tous les cas, on a trouvé un réel positif $k$ tel que $\forall x\in E$, $\|f(x)\| = k\|x\|$.
+\fincorrection
+\finexercice

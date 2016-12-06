@@ -1,0 +1,33 @@
+\exercice{5609, rouget, 2010/10/16}
+\enonce[***]
+On appelle idéal bilatère de l'anneau $(\mathcal{M}_n(\Kk),+,\times)$ tout sous-ensemble I de $\mathcal{M}_n(\Kk)$ tel que
+
+\begin{center}
+a) $(I,+)$ est un groupe et b) $\forall A\in I$,  $\forall M\in\mathcal{M}_n(\Kk)$, $AM\in I$ et $MA\in I$.
+\end{center}
+
+Déterminer tous les idéaux bilatères de l'anneau $(\mathcal{M}_n(\Kk),+,\times)$.
+\finenonce
+
+\noindication
+
+\correction
+$\{0\}$ est un idéal bilatère de l'anneau $\mathcal{M}_n(\Kk),+,\times)$.
+
+Soit $I$ un idéal non nul de de l'anneau $\mathcal{M}_n(\Kk),+,\times)$. Montrons que $I=\mathcal{M}_n(\Kk)$.
+
+Il existe une matrice $A$ non nulle dans $I$. Pour tout quadruplet d'indices $(i,j,k,l)$, $I$ contient le produit
+
+\begin{center}
+$E_{i,j}AE_{k,l}= \sum_{1\leqslant u,v\leqslant n}^{}a_{u,v}E_{i,j}E_{u,v}E_{k,l}=a_{j,k}E_{i,l}$.
+\end{center}
+
+$A$ est non nulle et on peut choisir $j$ et $k$ tels que $a_{j,k}$ soit non nul. $I$ contient alors $a_{j,k}E_{i,l}\frac{1}{a_{j,k}}I_n= E_{i,l}$. Finalement $I$ contient toutes les matrices élémentaires et donc encore toutes les sommes du type $\sum_{1\leqslant i,j\leqslant n}^{}m_{i,j}I_nE_{i,j}=(m_{i,j})_{1\leqslant i,j\leqslant n}$, c'est-à-dire $\mathcal{M}_n(\Kk)$ tout entier.
+
+\begin{center}
+\shadowbox{
+Les idéaux bilatères de l'anneau $\mathcal{M}_n(\Kk),+,\times)$ sont $\{0\}$ et $\mathcal{M}_n(\Kk)$.
+}
+\end{center}
+\fincorrection
+\finexercice

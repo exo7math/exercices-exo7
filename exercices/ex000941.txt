@@ -1,0 +1,26 @@
+\exercice{941, legall, 1998/09/01}
+\enonce
+ Soient  $E$  un espace vectoriel et  $\varphi $
+une application lin\' eaire de  $E$  dans  $E$. On suppose que
+$\hbox {Ker } (\varphi ) \cap \hbox{Im }(\varphi )=\{ 0\}$.
+Montrer que, si  $x \not \in \hbox {Ker } (\varphi )$  alors, pour
+tout  $n\in { \Nn }  : \varphi ^n(x)\not = 0$.
+
+\finenonce 
+
+\noindication
+
+\correction
+Montrons ceci par r\'ecurence : Pour $n=1$, l'assertion est triviale
+: $x\notin \ker \varphi \Rightarrow \varphi(x) \neq 0$. Supposons
+que si $x \notin \ker \varphi$ alors  $\varphi^{n-1}(x) \neq 0$,
+ ($n \geqslant 2$).
+Fixons $x \notin \ker \varphi$,
+ Alors par hypoth\`eses de r\'ecurrence
+$\varphi^{n-1}(x) \neq 0$, mais $\varphi^{n-1}(x) = \varphi(
+\varphi^{n-2}(x)) \in \mathop{\mathrm{Im}}\nolimits \varphi$ donc $\varphi^{n-1}(x) \notin
+\ker \varphi$ gr\^ace \`a l'hypoth\`ese sur $\varphi$. Ainsi
+$\varphi(\varphi^{n-1}(x)) \neq 0$, soit $\varphi^{n}(x)\neq 0$.
+Ce qui termine la r\'ecurrence.
+\fincorrection
+\finexercice

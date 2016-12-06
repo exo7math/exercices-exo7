@@ -1,0 +1,81 @@
+\exercice{2196, debes, 2008/02/12}
+\enonce
+ (a) Soit $G$ un groupe non ab\'elien d'ordre $12$. Soit $H$ un $3$-Sylow
+de $G$. On consid\`ere le morphisme $\theta: G \rightarrow S_{G/H}$ correspondant
+\`a l'action de $G$ par translation de $G$ sur $G/H$. Montrer que ce morphisme n'est
+pas injectif si et seulement si $H$ est distingu\'e dans $G$. En d\'eduire que si
+$H$ n'est pas distingu\'e dans $G$, le groupe $G$ est isomorphe \`a $A_4$.
+\smallskip
+
+(b) On suppose que $G$ n'est pas isomorphe \`a $A_4$. Montrer qu'alors $G$ admet
+un unique $3$-Sylow $H=\{ 1, a,a^2 \}$. Montrer ensuite que si $G$ contient un
+\'el\'ement $b$ d'ordre $4$, $a$ et $b$ v\'erifient les relations:
+$$a^3=b^4=1 \quad bab^{-1}= a^2=a^{-1}$$
+
+Montrer que dans le cas contraire $G\simeq D_6$.
+\smallskip
+
+(c) Donner la liste des classes d'isomorphisme de groupes d'ordre $12$.
+\finenonce 
+
+\noindication
+\correction
+(a) On a $\theta (g) (xH) = gx H$ $(g,x\in G)$. Le noyau de $\theta$
+est l'intersection de tous les conjugu\'es $xHx^{-1}$ de $H$, c'est-\`a-dire,
+d'apr\`es les th\'eor\`emes de Sylow, l'intersection de tous les $3$-Sylow de $G$.
+Comme l'intersection de deux $3$-Sylow distincts est triviale, le noyau est $\not=
+\{1\}$ si et seulement s'il n'existe qu'un seul $3$-Sylow, qui est alors
+automatiquement distingu\'e dans $G$.
+
+\hskip 5mm Si $H$ est non distingu\'e dans $G$, alors $\theta$ est injectif et
+fournit un isomorphisme entre $G$ et un sous-groupe de $S_4$. Ce sous-groupe devant
+\^etre d'ordre $12$ comme $G$, c'est n\'ecessairement $A_4$ (cf l'exercice \ref{ex:deb75}).
+\smallskip
+
+(b) Si $G$ n'est pas isomorphe \`a $A_4$, alors n\'ecessairement $H$  est
+distingu\'e dans $G$ et c'est alors l'unique $3$-Sylow de $G$. Notons $1,a,a^2$ les
+trois
+\'el\'ement distincts du groupe cyclique $H$.
+
+\hskip 5mm Supposons que $G$ contienne un \'el\'ement $b$ d'ordre $4$. On a
+$b^4=a^3=1$. D'autre part, la conjugaison par $b$ laissant invariant le sous-groupe
+distingu\'e $H=\hskip 2pt <a>$, l'\'el\'ement $bab^{-1}$ doit \^etre un
+g\'en\'erateur de $<a>$, c'est-\`a-dire $a$ ou $a^{-1}$. Mais la premi\`ere
+possibilit\'e est exclue car sinon $b$ serait dans le centre de $G$ et $G$ serait
+ab\'elien (cf exercice \ref{ex:le23}). La seconde possibilit\'e existe bien: on prend
+par exemple pour $G$ le produit semi direct $\Z/3\Z \times \hskip -6pt {\raise
+1.4pt\hbox{${\scriptscriptstyle |}$}} \Z/4\Z$ o\`u l'action de $\Z/4\Z$ sur
+$\Z/3\Z$ se fait \`a travers la surjection canonique $\Z/4\Z \rightarrow \Z/2\Z$,
+c'est-\`a-dire, les classes de $0$ et $2$ modulo $4$ agissent comme l'identit\'e et
+celles de $1$ et $3$ comme le passage \`a l'inverse.
+
+\hskip 5mm Supposons au contraire qu'aucun \'el\'ement de $G\setminus H$ soit
+d'ordre $4$. Les $2$-Sylow sont donc isomorphes au groupe de Klein $\Z/2\Z
+\times \Z/2\Z$. De plus, deux quelconques $B$ et $B^\prime$ d'entre eux sont
+forc\'ement d'intersection non triviale car sinon l'ensemble produit $B B^\prime$
+(qui est en bijection avec $B\times B^\prime$ par $(b,b^\prime)\rightarrow
+bb^\prime$) serait de cardinal $|B|\hskip 2pt |B^\prime| = 16>12$. Il y a donc
+strictement moins de $3\times 3 =9$ \'el\'ements d'ordre $2$ dans $G$. Comme
+$G\setminus H$ est de cardinal $9$, il existe dans $G$ un \'el\'ement $c$ 
+d'ordre $\not=2$. Cet \'el\'ement ne pouvant non plus \^etre  
+d'ordre $3$ ($H$ est le seul $3$-Sylow), ni d'ordre $4$ (par hypoth\`ese) est
+d'ordre $6$. Le groupe $<c>$ est alors d'indice $2$ et donc distingu\'e dans $G$.
+Comme $<c>$ est cyclique, il ne poss\`ede qu'un seul \'el\'ement d'ordre $2$. On
+peut donc trouver dans un $2$-Sylow de $G$ un \'el\'ement $d\in G\setminus <c>$
+d'ordre $2$. La conjugaison par $d$ induit un automorphisme de $<c>$ qui envoie $c$
+sur un g\'en\'erateur de $<c>$, c'est-\`a-dire ou bien $c$ ou bien $c^{-1}$. Mais la
+premi\`ere possibilit\'e est exclue car $G$ n'est pas ab\'elien. On a donc
+$dcd^{-1}=c^{-1}$; le groupe $G$ est dans ce cas isomorphe au groupe di\'edral
+$D_6$.
+\smallskip
+
+(c) Les groupes d'ordre $12$ sont 
+
+- les groupes ab\'eliens: $\Z/3Z \times \Z/4\Z \simeq \Z/12\Z$ et $\Z/3 \times
+\Z/2\Z \times \Z/2\Z \simeq \Z/6\Z \times \Z/2\Z$, et
+
+- les groupes non ab\'eliens: $A_4$, $\Z/3\Z \times \hskip -6pt {\raise
+1.4pt\hbox{${\scriptscriptstyle |}$}} \Z/4\Z$ (pour l'action donn\'ee ci-dessus)
+et $D_6$.  
+\fincorrection
+\finexercice

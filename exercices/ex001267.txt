@@ -1,0 +1,43 @@
+\exercice{1267, legall, 1998/09/01}
+\video{MY2kvANRkJo}
+\enonce
+Soit $f$ l'application de $\Rr$ dans $\Rr$ définie par
+$f(x)=\displaystyle{\frac{x^3}{1+x^6}}.$ Calculer $f^{(n)}(0)$ pour tout $n \in \Nn.$
+\finenonce
+
+\indication
+Calculer d'abord le dl puis utiliser une formule de Taylor.
+\finindication
+
+\correction
+Habituellement on trouve le développement limité d'une fonction 
+à partir des dérivées successives. Ici on va faire l'inverse.
+
+Calcul du dl (à un certain ordre) :
+\begin{align*}
+f(x) & = \frac{x^3}{1+x^6} = x^3 \frac{1}{1+x^6}\\
+     & =  x^3 \left( 1-x^6 + x^{12} - \cdots \pm x^{6\ell} \cdots \right) \\
+     &= x^3 - x^9 + x^{15} -\cdots \pm x^{3+6\ell} \cdots \\
+     &= \sum_{\ell \ge 0} (-1)^\ell x^{3+6\ell} \\
+\end{align*}
+
+Il s'agit d'identifier ce développement avec la formule de Taylor :
+$$f(x)=f(0)+f'(0)x+\frac{f''(0)}{2!}x^2 + \cdots + \frac{f^{(n)}(0)}{n!} x^n + \cdots$$
+
+
+Par unicité des DL, en identifiant les coefficients devant $x^n$ on trouve :
+$$\begin{cases}
+\frac{f^{(n)}(0)}{n!} = (-1)^\ell & \text{ si } n = 3+6\ell \\
+\frac{f^{(n)}(0)}{n!} = 0         & \text{ sinon.} \\    
+\end{cases}$$
+
+Si $n=3+6\ell$ (avec $\ell\in \Nn$) alors on peut écrire $\ell = \frac{n-3}{6}$
+et donc on peut conclure :
+$$\begin{cases}
+f^{(n)}(0) = (-1)^{\frac{n-3}{6}} \cdot n! & \text{ si } n \equiv 3 \pmod{6} \\
+f^{(n)}(0) = 0         & \text{ sinon.} \\    
+\end{cases}$$
+\fincorrection
+
+\finexercice
+

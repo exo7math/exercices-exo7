@@ -1,0 +1,44 @@
+\exercice{6940, ruette, 2013/01/24}
+\enonce[Calcul de loi, fonction de répartition]
+\begin{enumerate}
+\item Soit $X$ une variable aléatoire de loi normale $\mathcal{N}(0,1)$
+et $Z=X^2$. Calculer la fonction de répartition et la densité
+de $Z$.
+
+\textit{Remarque : la loi de $Z$ est appelée loi $\chi_2$ à 1 degré de liberté}.
+
+\item 
+Soit $Y$ une variable aléatoire de loi exponentielle $\mathcal{E}(\lambda)$. Déterminer 
+la loi de $Y^3$.
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\def\I1{{ \rm 1\:\!\!\! l}}
+\begin{enumerate}
+\item
+$P(Z\leq t)=0$ si $t<0$ et $P(Z\leq t)=P(-\sqrt{t}\leq X\leq \sqrt{t})$
+si $t\geq 0$. Donc, pour $t\geq 0$,
+$F_Z(t)=F_X(\sqrt{t})-F_X(-\sqrt{t})$.
+$F_X(t)$ est dérivable de dérivée $\frac{1}{\sqrt{2\pi}}e^{-t^2/2}$, donc 
+$F_Z$ est  
+dérivable sur $]0,+\infty[$ et $F_Z'(t)$ est la densité de $Z$.
+
+$F_Z'(t)=\frac{1}{2\sqrt{t}}(F_X'(\sqrt{t})+F_X'(-\sqrt{t}))$.
+Donc la densité de $Z$ est 
+%$f_Z(t)=\frac{1}{2\sqrt{t}}
+%(f_X(\sqrt{t})+f_X(-\sqrt{t}))$ si $t>0$.\\
+$f_Z(t)=\I1_{\Rr_+^*}(t)\frac{1}{\sqrt{2\pi t}}e^{-t/2}$.
+
+\item
+$F_{Y^3}(t)=P(Y^3\leq t)=P(Y\leq\sqrt[3]{t})=F_Y(\sqrt[3]{t})$. 
+On a $F_Y(t)=0$ si $t\leq 0$ et $F_Y(t)=\displaystyle\int_0^t \lambda e^{-\lambda t}\,
+dt=1-e^{-\lambda t}$ si $t>0$. Donc
+$F_{Y^3}(t)=0$ si $t\leq 0$ et $F_{Y^3}(t)=1-e^{-\lambda \sqrt[3]{t}}$ si
+$t>0$.
+La fonction de répartition est continue sur $\Rr$ et $C^1$ par morceaux 
+donc on peut dériver pour trouver la densité de $X^3$, qui est
+$\I1_{]0,+\infty[} \frac{\lambda}{3}t^{-2/3}e^{-\lambda \sqrt[3]{t}}$.
+\end{enumerate}
+\fincorrection
+\finexercice

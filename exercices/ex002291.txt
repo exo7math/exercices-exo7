@@ -1,0 +1,52 @@
+\exercice{2291, barraud, 2008/04/24}
+\addcommand{\usepackage[all]{xy}}
+\enonce
+ Soit $A$ un anneau, $B$ un sous-anneau de $A$,
+$I$ un id\'eal de $A$. 
+\begin{enumerate}
+  \item Montrer que $B\cap I$ est un id\'eal de $B$,
+$B+I=\{b+i\,|\, b\in B,\ i\in I\}$ est un sous-anneau
+de l'anneau $A$ et $I$ est un id\'eal de ce sous-anneau.
+  \item Montrer que l'anneau quotient $B/(B\cap I)$  est isomorphe \`a
+l'anneau quotient $(B+I)/I$. ({\it Indication :} Consid\'erer  le compos\'e de l'inclusion
+$B\to B+I$ avec la projection canonique  $B+I \to (B+I)/I$.)
+\end{enumerate}
+
+
+\finenonce 
+
+\noindication
+
+\correction
+  \begin{enumerate}
+  \item 
+    Soit $J=B\cap I$. Soit $x,y\in J$, $a,b\in B$, alors $ax+by\in B$
+    puisque $B$ est un sous-anneau de $A$. $ax+by\in I$ puisque $I$ est
+    un idéal. On en déduit que $J$ est un idéal.
+
+    $B+I$ est stable par addition (car $B$ et $I$ le sont). Soit
+    $\alpha=a+x\in B+I$ et $\beta= b+y\in B+I$. Alors
+    $\alpha\beta=(ab)+(ay+bx+xy)\in B+I$, donc $B+I$ est stable par
+    multiplication. $1\in B+I$, donc $B+I$ est un sous anneau de $A$.
+    $I\subset B+I$, et $I$ est absorbant pour la multiplication dans $A$,
+    donc aussi dans $B$~: $I$est un idéal de $B+I$.
+
+  \item
+    On a le diagramme (de morphismes d'anneaux) suivant~:
+    $$
+    \xymatrix{%
+      B\ar[r]^{i} 
+       \ar[d]^{{\pi_{0}}}
+       \ar@(ur,ul)[rr]^{\phi}
+      & B+I \ar[r]^{\pi} & (B+I)/I\\ 
+      B/\ker\phi\ar[urr]_{\sim}
+    }%
+    $$
+    Or, pour $x\in B$, on a~: $x\in\ker\phi \Leftrightarrow x=i(x)\in
+    \ker\pi=I$. Donc $\ker\phi=B\cap I$, et par suite~:
+    $$
+    B/(B\cap I)\sim (B+I)/I.
+    $$
+  \end{enumerate}
+\fincorrection
+\finexercice

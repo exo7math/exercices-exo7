@@ -1,0 +1,42 @@
+\exercice{6605, hueb, 2011/10/16}
+\enonce 
+Vérifier les
+propriétés suivantes de la transformation de Laplace $\mathcal{L}$
+:
+\begin{enumerate}
+\item $\mathcal{L}(c_1 F_1 + c_2 F_2) =c_1 \mathcal{L}(F_1) + c_2
+  \mathcal{L}(F_2)$.
+\item $\mathcal{L}(e^{at}F(t))(s) =(\mathcal{L} F)(s-a)$.
+\item Pour $G(t) = \begin{cases} F(t-a),\quad &t \geq a,\\
+    0, \quad &t \leq a,
+                \end{cases}$
+                on a $(\mathcal{L}G)(s) =e^{-as}(\mathcal{L}F)(s)\ (a
+                \geq 0)$.
+              \item Pour $F_a(t) = F(at)$ on a $(\mathcal{L}F_a)(s) =
+                \frac 1a (\mathcal{L}F)(\frac sa)$.
+              \item Pour $G(t) = \int_0^t F(u) du$ on a
+                $(\mathcal{L}G) (s) = \frac {(\mathcal{L} F)(s)} s$.
+              \item $\mathcal{L}(t^n F(t)) = (-1)^n (\mathcal{L}
+                F)^{(n)}$
+              \item Si $\lim_{t\to 0} \frac {F(t)}t$ existe,
+                $\mathcal{L}(\frac {F(t)}t)(s) = \int_s^{\infty}
+                (\mathcal{L} F)(\zeta) d \zeta$.\ 
+              \item Si $F$ est périodique, $F(t+T) = F(t)$, alors
+                $$(\mathcal{L}F)(s) = \frac 1{1-e^{-sT}}\int_0^T F(t)
+                e^{-st} dt$$
+              \item $\lim_{s \to +\infty} (\mathcal{L} F)(s) = 0$.
+              \item $\lim_{s \to +\infty} (\mathcal{L}F)(s) = 0$.
+              \item $\lim_{t \to 0, t > 0} F(t) = \lim_{s \to \infty}
+                s (\mathcal{L}F)(s)$ si les limites indiquées
+                existent (Théorème de la valeur initiale).
+              \item $\lim_{t \to \infty} F(t) = \lim_{s \to 0} s
+                (\mathcal{L} F)(s)$ si les limites indiquées
+                existent (Théorème de la valeur finale).
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\nocorrection
+
+\finexercice

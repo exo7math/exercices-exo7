@@ -1,0 +1,38 @@
+\exercice{5246, rouget, 2010/06/30}
+\enonce[***I]
+Soit $u_n$ l'unique racine positive de l'équation $x^n+x-1=0$. Etudier la suite $(u_n)$.
+\finenonce
+
+\noindication
+
+\correction
+Pour $n$ naturel non nul et $x$ réel positif, posons $f_n(x)=x^n+x-1$.
+
+Pour $x\geq0$, $f_1(x)=0\Leftrightarrow x=\frac{1}{2}$ et donc $u_1=\frac{1}{2}$.
+
+Pour $n\geq2$, $f_n$ est dérivable sur $\Rr^+$ et pour $x\geq 0$, $f_n'(x)=nx^{n-1}+1>0$.
+
+$f_n$ est ainsi continue et strictemnt croissante sur $\Rr^+$ et donc bijective de $\Rr^+$ sur $f_n(\Rr^+)=[f(0),\lim_{x\rightarrow +\infty}f_n(x)[=[-1,+\infty[$, et en particulier,
+
+$$\exists!x\in[0,+\infty[/\;f_n(x)=0.$$
+
+Soit $u_n$ ce nombre. Puisque $f_n(0)=-1<0$ et que $f_n(1)=1>0$, par stricte croissance de $f_n$ sur $[0,+\infty[$, on a~:
+
+$$\forall n\in\Nn,\;0<u_n<1.$$
+ 
+La suite $u$ est donc bornée.
+
+Ensuite, pour $n$ entier naturel donné et puisque $0<u_n<1$~:
+
+$$f_{n+1}(u_n)=u_n^{n+1}+u_n-1<u_n^n+u_n-1=f_n(u_n)=0=f_{n+1}(u_{n+1}),$$
+
+et donc $f_{n+1}(u_n)<f_{n+1}(u_{n+1})$ puis, par stricte croissance de $f_{n+1}$ sur $\Rr^+$, on obtient~:
+
+$$\forall n\in\Nn,\;u_n<u_{n+1}.$$
+
+La suite $u$ est bornée et strictement croissante. Donc, la suite $u$ converge vers un réel $\ell$, élément de $[0,1]$.
+
+Si $0\leq\ell<1$, il existe un rang $n_0$ tel que pour $n\geq n_0$, on a~:~$u_n\leq\ell+\frac{1-\ell}{2}=\frac{1+\ell}{2}$. Mais alors, pour $n\geq n_0$, on a $1-u_n=u_n^n\leq(\frac{1+\ell}{2})^n$ et quand $n$ tend vers vers $+\infty$, on obtient $1-\ell\leq0$ ce qui est en contradiction avec $0\leq\ell<1$. Donc, $\ell=1$.
+
+\fincorrection
+\finexercice

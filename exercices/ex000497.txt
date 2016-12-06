@@ -1,0 +1,50 @@
+\exercice{497, ridde, 1999/11/01}
+\video{TLQnc9s8vkc}
+\enonce
+ Soit $f : \Rr \rightarrow \Rr$  telle que
+$$\forall (x, y)\in \Rr^2 \quad  f(x + y) = f(x) + f(y).$$ 
+Montrer que
+\begin{enumerate}
+\item $\forall n\in \Nn \qquad f(n) = n \cdot f(1)$.
+\item $\forall n\in \Zz \qquad f(n) = n \cdot f(1)$.
+\item $\forall q\in \Qq \qquad f(q) = q \cdot f(1)$.
+\item $\forall x\in \Rr \qquad f(x) = x \cdot f(1)$ si $f$ est croissante.
+\end{enumerate}
+\finenonce 
+
+\indication
+\begin{enumerate}
+  \item $f(2)= f(1+1)= \cdots$, faire une r\'ecurrence.
+  \item $f((-n)+n)=\cdots$.
+  \item Si $q = \frac ab$, calculer $f(\frac ab + \frac ab + \cdots +\frac ab)$
+avec $b$ termes dans cette somme.
+  \item Utiliser la densit\'e
+de $\Qq$ dans $\Rr$ : pour $x\in\Rr$ fix\'e, prendre une suite de rationnels qui croit vers $x$, et une autre qui d\'ecroit vers $x$.
+\end{enumerate}
+\finindication
+
+\correction
+\begin{enumerate}
+\item  Calculons d'abord $f(0)$. Nous savons $f(1) = f(1+0) = f(1) +f(0)$, donc $f(0) = 0$.
+Montrons le r\'esultat demand\'e par r\'ecurrence : pour $n=1$, nous
+avons bien $f(1)=1\times f(1)$. Si $f(n) = n f(1)$ alors $f(n+1) =
+f(n) + f(1) = nf(1) + f(1) = (n+1)f(1)$.
+\item $0 = f(0) = f(-1 + 1) = f(-1) + f(1)$. Donc $f(-1) = - f(1)$. Puis comme ci-dessus $f(-n) = n f(-1)= -n f(1)$.
+\item Soit $q = \frac ab$. Alors $f(a) = f(\frac ab + \frac ab + \cdots +\frac ab) = f(\frac ab ) + \cdots + f(\frac ab)$
+($b$ termes dans ces sommes). Donc $f(a) = b f(\frac ab)$. Soit
+$a f(1) = b f(\frac ab)$. Ce qui s'\'ecrit aussi $f(\frac ab) =
+\frac ab f(1)$.
+\item Fixons $x \in \Rr$. Soit $(\alpha_i)$ une suite croissante de rationnels qui tend vers $x$. Soit
+$(\beta_i)$ une suite d\'ecroissante de rationnels qui tend vers $x$
+:
+$$\alpha_1\leq \alpha_2 \leq \alpha_3 \leq \ldots \leq x \leq \cdots \leq \beta_2 \leq \beta_1.$$
+Alors comme $\alpha_i \leq x \leq \beta_i$ et que $f$ est
+croissante nous avons $f(\alpha_i)\leq f(x) \leq f(\beta_i)$.
+D'apr\`es la question pr\'ec\'edent cette in\'equation devient : $\alpha_i
+f(1)\leq f(x)\leq \beta_i f(1)$. Comme $(\alpha_i)$ et $(\beta_i)$
+tendent vers $x$. Par le ``th\'eor\`eme des gendarmes'' nous obtenons
+en passant \`a la limite : $x f(1) \leq f(x) \leq xf(1)$.  Soit
+$f(x) = xf(1)$.
+\end{enumerate}
+\fincorrection
+\finexercice

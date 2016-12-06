@@ -1,0 +1,15 @@
+\exercice{6942, ruette, 2013/01/24}
+\enonce[Indépendance d'événements]
+
+Soient $A$ et $B$ deux événements indépendants. Montrer que
+$A\bot B^c$. En déduire que $A^c\bot B$ et $A^c\bot B^c$.
+\finenonce
+\noindication
+\correction
+$A=(A\cap B)\cup(A\cap B^c)$ et cette union est disjointe, donc
+$P(A\cap B^c)=P(A)-P(A\cap B)$. Par indépendance, $P(A\cap B)=P(A)P(B)$
+donc $P(A\cap B^c)=P(A)(1-P(B))=P(A)P(B^c)$, autrement dit $A\bot B^c$.
+On applique le résultat à $A'=B, B'=A$ et on trouve $A^c\bot B$.
+On réapplique le résultat à $A^c$ et $B$ pour trouver $A^c\bot B^c$.
+\fincorrection
+\finexercice

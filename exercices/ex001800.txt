@@ -1,0 +1,66 @@
+\exercice{1800, ridde, 1999/11/01}
+
+\enonce
+Soit la fonction $f \colon \R^{2} \longrightarrow \R$ d\'efinie par
+\[
+\begin{array}{lll}
+f(x, y)= xy\frac{x^{2}-y^{2}}
+{x^{2} + y^{2}}& \mathrm{ si } &(x, y) \neq (0,0),\\
+ f(0, 0)= 0
+\end{array}
+\]
+\'Etudier la continuit\'e de $f$. Montrer que $f$ est de classe $C^{1}$.
+\finenonce
+
+\indication
+Il est \'evident que, en tout point $(x,y)$ distinct de l'origine,
+la fonction $f$ est continue et que les d\'eriv\'ees partielles y
+existent et sont continues. Il suffit de montrer que
+$f$ est continue en $(0,0)$ et que les d\'eriv\'ees partielles y
+existent et y sont continues.
+\finindication
+
+\correction
+Puisque $\left|\frac{x^{2}-y^{2}}{x^{2} + y^{2}}\right|$ reste born\'e,
+\[
+\mathrm{lim}_{(x,y)\to (0,0)}f(x,y)= \mathrm{lim}_{(x,y)\to (0,0)}xy\frac{x^{2}-y^{2}}{x^{2} + y^{2}}
+= \mathrm{lim}_{(x,y)\to (0,0)}xy =0
+\]
+d'o\`u $f$ est continue en $(0,0)$.
+De m\^eme,
+\begin{align*}
+\mathrm{lim}_{(x,y)\to (0,0)}\frac{f(x,y)}x&= \mathrm{lim}_{(x,y)\to (0,0)}y\frac{x^{2}-y^{2}}{x^{2} + y^{2}}
+= \mathrm{lim}_{(x,y)\to (0,0)}y =0
+\\
+\mathrm{lim}_{(x,y)\to (0,0)}\frac{f(x,y)}y&= \mathrm{lim}_{(x,y)\to (0,0)}x\frac{x^{2}-y^{2}}{x^{2} + y^{2}}
+= \mathrm{lim}_{(x,y)\to (0,0)}x =0
+\end{align*}
+d'o\`u les d\'eriv\'ees partielles
+$\frac{\partial f}{\partial x}(0,0)$ et $\frac{\partial f}{\partial y}(0,0)$
+existent, et
+$\frac{\partial f}{\partial x}(0,0)=0$ et $\frac{\partial f}{\partial y}(0,0)=0$.
+En plus, en dehors de l'origine,
+\begin{align*}
+\frac{\partial f}{\partial x}&= \frac{f(x,y)}x + xy \frac{\partial}{\partial x}
+\frac{x^{2}-y^{2}}{x^{2} + y^{2}} = \frac{f(x,y)}x +  4\frac{x^{2}y^{3}}{(x^{2} + y^{2})^2}
+\\
+\frac{\partial f}{\partial y}&= \frac{f(x,y)}y +  xy \frac{\partial}{\partial y}
+\frac{x^{2}-y^{2}}{x^{2} + y^{2}}  = \frac{f(x,y)}x +  4\frac{x^{3}y^{2}}{(x^{2} + y^{2})^2} .
+\end{align*}
+Puisque
+\[
+\mathrm{lim}_{(x,y) \to (0,0)}\frac{x^{2}y^{3}}{(x^{2} + y^{2})^2}=0,\ 
+\mathrm{lim}_{(x,y) \to (0,0)}\frac{x^{3}y^{2}}{(x^{2} + y^{2})^2}=0,
+\]
+il s'ensuit que
+\[
+\mathrm{lim}_{(u,v) \to (0,0)}\frac{\partial f}{\partial x}(u,v) =0,\ 
+\mathrm{lim}_{(u,v) \to (0,0)}\frac{\partial f}{\partial y}(u,v) =0,
+\]
+d'o\`u les d\'eriv\'ees partielles $\frac{\partial f}{\partial x}$ et
+$\frac{\partial f}{\partial y}$ sont continues en $(0,0)$.
+
+\fincorrection
+
+\finexercice
+

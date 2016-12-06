@@ -1,0 +1,76 @@
+\exercice{5638, rouget, 2010/10/16}
+\enonce[****I Déterminant de \textsc{Cauchy}]
+Soient $a_1$,..., $a_n$, $b_1$,..., $b_n$ $2n$ nombres complexes tels que toutes les sommes $a_i+b_j$, $1\leqslant i,j\leqslant n$, soient non nulles. Calculer $C_n=\text{det}\left(\frac{1}{a_i+b_j}\right)_{1\leqslant i,j\leqslant n}$. Cas particulier : $\forall i\in\llbracket1,n\rrbracket$, $a_i= b_i =i$ (déterminant de \textsc{Hilbert}).
+\finenonce
+
+\noindication
+
+\correction
+Si deux des $a_i$ sont égaux ou deux des $b_j$ sont égaux, $C_n$ est nul car $C_n$ a soit deux lignes identiques, soit deux colonnes identiques.
+
+On suppose dorénavant que les $a_i$ sont deux à deux distincts de même que les $b_j$ (et toujours que les sommes $a_i+b_j$ sont toutes non nulles).
+
+Soit $n\in\Nn^*$. On note $L_1$,\ldots, $L_{n+1}$ les lignes de $C_{n+1}$.
+
+On effectue sur $C_{n+1}$ la transformation $L_{n+1}\leftarrow\sum_{i=1}^{n+1}\lambda_iL_i$ avec $\lambda_{n+1}\neq 0$.
+
+On obtient $C_{n+1}=\frac{1}{\lambda_{n+1}}D_{n+1}$ où $D_{n+1}$ est le  déterminant obtenu en remplaçant la dernière ligne de $C_{n+1}$ par la ligne $(R(b_1),...,R(b_{n+1}))$ avec $R=\sum_{i=1}^{n+1}\frac{\lambda_i}{X+a_i}$. On prend $R=\frac{(X-b_1)\ldots(X-b_n)}{(X+a_1)\ldots(X+a_{n+1})}$. 
+
+\textbullet~Puisque les $-a_i$ sont distincts des $b_j$, $R$ est  irréductible. 
+
+\textbullet~Puisque les $a_i$ sont deux à deux distincts, les pôles de $R$ sont simples.
+
+\textbullet~Puisque $\text{deg}((X-b_1)...(X-b_n))<\text{deg}((X+a_1)...(X+a_{n+1}))$, la partie entière de $R$ est nulle.
+
+$R$ admet donc effectivement une décomposition en éléments simples de la forme $R=\sum_{i=1}^{n+1}\frac{\lambda_i}{X+a_i}$ où $\lambda_{n+1}\neq 0$.
+
+Avec ce choix des $\lambda_i$, la dernière ligne de $D_{n+1}$ s'écrit $(0,...,0,R(b_{n+1}))$ et en développant $D_{n+1}$ suivant sa dernière ligne, on obtient la relation de récurrence : 
+
+\begin{center}
+$\forall n\in\Nn^*,\;C_{n+1}=\frac{1}{\lambda_{n+1}}R(b_{n+1})C_n$.
+\end{center}
+
+Calculons $\lambda_{n+1}$. Puisque $-a_{n+1}$ est un pôle simple de $R$, 
+
+\begin{center}
+$\lambda_{n+1}=\lim{x \rightarrow -a_{n+1}}(x+a_{n+1})R(x)=\frac{(-a_{n+1}-b_1)\ldots(-a_{n+1}-b_n)}{(-a_{n+1}+a_1)\ldots(-a_{n+1}+a_n)}=\frac{(a_{n+1}+b_1)\ldots(a_{n+1}+b_n)}{(a_{n+1}-a_1)\ldots(a_{n+1}-a_n)}$.
+\end{center}
+
+On en déduit que
+
+\begin{center}
+$\frac{1}{\lambda_{n+1}} R(b_{n+1}) =\frac{(a_{n+1}-a_1)\ldots(a_{n+1}-a_n)}{(a_{n+1}+b_1)\ldots(a_{n+1}+b_n)}\frac{(b_{n+1}-b_1)\ldots(b_{n+1}-b_n)}{(b_{n+1}+a_1)\ldots(b_{n+1}+a_n)}$
+\end{center}
+
+puis la relation de récurrence
+
+\begin{center}
+$\forall n\in\Nn^*,\;C_{n+1}=\frac{\prod_{i=1}^{n}(a_{n+1}-a_i)\prod_{i=1}^{n}(b_{n+1}-b_i)}{\prod_{i=n+1\;\text{ou}\;j=n+1}(a_{i}+b_j)}C_n$.
+\end{center}
+
+En tenant compte de $C_1=\frac{1}{a_1+b_1}$, on obtient par récurrence
+
+\begin{center}
+\shadowbox{
+$\text{det}\left(\frac{1}{a_i+b_j}\right)_{1\leqslant i,j\leqslant n}=\frac{\prod_{1\leqslant i<j\leqslant n}^{}(a_j-a_i)\prod_{1\leqslant i<j\leqslant n}^{}(b_j-b_i)}{\prod_{1\leqslant i,j\leqslant n}^{}(a_i+b_j)}=\frac{\text{Van}(a_i)_{1\leqslant i\leqslant n}\times\text{Van}(b_j)_{1\leqslant j\leqslant n}}{\prod_{1\leqslant i,j\leqslant n}^{}(a_i+b_j)}$.   
+}
+\end{center}
+
+(y compris dans les cas particuliers analysés en début d'exercice).
+
+Calcul du déterminant de \textsc{Hilbert}. On est dans le cas particulier où $\forall i\in\llbracket1,n\rrbracket$, $a_i = b_i = i$.
+D'abord
+
+\begin{center}
+$\text{Van}(1,...,n)=\prod_{j=2}^{n}\left(\prod_{i=1}^{j-1}(j-i)\right)=\prod_{j=2}^{n}(j-1)! =\prod_{j=1}^{n-1}i!$.
+\end{center}
+
+Puis $\prod_{1\leqslant i,j\leqslant n}^{}(i+j)=\prod_{i=1}^{n}\left(\prod_{j=1}^{n}(i+j)\right)=\prod_{i=1}^{n}\frac{(i+n)!}{i!}=$   et donc
+
+\begin{center}
+\shadowbox{
+$\forall n\in\Nn^*,\;H_n=\frac{\left(\prod_{i=1}^{n}i!\right)^4}{n!^2\prod_{i=1}^{2n}i!}$.
+}
+\end{center}  
+\fincorrection
+\finexercice

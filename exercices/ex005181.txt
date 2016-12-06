@@ -1,0 +1,61 @@
+\exercice{5181, rouget, 2010/06/30}
+\enonce[****]
+Soit $E$ un $\Kk$-espace vectoriel et soit $(u,v)\in(\mathcal{L}(E))^2$.
+\begin{enumerate}
+\item  Montrer que $[\mbox{Ker}v\subset\mbox{Ker}u\Leftrightarrow\exists w\in\mathcal{L}(E)/\;u=w\circ v]$.
+\item  En déduire que $[v\;\mbox{injectif}\Leftrightarrow\exists w\in\mathcal{L}(E)/\;w\circ v=Id_E]$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item 
+\begin{itemize}
+\item[$\Leftarrow$] Soit $(u,v)((\mathcal{L}(E))^2$. On suppose qu'il existe $w\in\mathcal{L}(E)$ tel que $u=w\circ
+v$. Soit $x$ un élément de $\mbox{Ker}v$. Alors $v(x)=0$ et donc $u(x)=w(v(x))=w(0)=0$. Mais alors, $x$ est dans
+$\mbox{Ker}u$. Donc $\mbox{Ker}v\subset{Ker}u$.
+
+\item[$\Rightarrow$] Supposons que $\mbox{Ker}v\subset\mbox{Ker}u$. On cherche à définir $w$, élément de
+$\mathcal{L}(E)$ tel que $w\circ v=u$. Il faut définir précisément $w$ sur $\mbox{Im}v$ car sur $E\setminus\mbox{Im}v$,
+on a aucune autre contrainte que la linéarité.
+
+Soit $y$ un élément de $\mbox{Im}v$. (Il existe $x$ élément de $E$ tel que $y=v(x)$. On
+a alors envie de poser $w(y)=u(x)$ mais le problème est que $y$, élément de $\mbox{Im}v$ donné peut avoir plusieurs
+antécédents $x$, $x'$... et on peut avoir $u(x)\neq u(x')$ de sorte que l'on n'aurait même pas défini une application
+$w$.)
+\end{itemize}
+
+Soient $x$ et $x'$ deux éléments de $E$ tels que $v(x)=v(x')=y$ alors $v(x-x')=0$ et donc
+$x-x'\in\mbox{Ker}v\subset\mbox{Ker}u$. Par suite, $u(x-x')=0$ ou encore $u(x)=u(x')$. En résumé, pour $y$ élément donné
+de $\mbox{Im}v$, il existe $x$ élément de $E$ tel que $v(x)=y$. On pose alors $w(y)=u(x)$ en notant que $w(y)$ est bien
+uniquement défini, car ne dépend pas du choix de l'antécédent $x$ de $y$ par $v$. $w$ n'est pas encore défini sur $E$
+tout entier. Notons $F$ un supplémentaire quelconque de $\mbox{Im}v$ dans $E$ (l'existence de $F$ est admise).
+
+Soit $X$ un élément de $E$. Il existe deux vecteurs $y$ et $z$, de $\mbox{Im}v$ et $F$ respectivement, tels que $X=y+z$.
+On pose alors $w(X)=u(x)$ où $x$ est un antécédent quelconque de $y$ par $v$ (on a pris pour restriction de $w$ à $F$
+l'application nulle). $w$ ainsi définie est une application de $E$ dans $E$ car, pour $X$ donné $y$ est uniquement
+défini puis $u(x)$ est uniquement défini (mais pas nécessairement $x$).
+
+Soit $x$ un élément de $E$ et $y=v(x)$. $w(v(x))=w(y)=w(y+0)=u(x)$ (car 1)$y$ est dans $\mbox{Im}v$ 2)$0$ est dans $F$
+3) $x$ est un antécédent de $y$ par $v$) et donc $w\circ v=u$.
+
+Montrons que $w$ est linéaire. Soient, avec les notations précédentes, $X_1=y_1+z_1$ et $X_2=y_2+z_2$ ...
+
+\begin{align*}
+w(X_1+X_2)&=w((y_1+y_2)+(z_1+z_2))=u(x_1+x_2)\quad(\mbox{car}\;y_1+y_2=v(x_1)+v(x_2)=v(x_1+x2))\\
+ &=u(x_1)+u(x_2)=w(X_1)+w(X_2)
+\end{align*}
+
+et
+
+$$w(\lambda X)=w(\lambda y+\lambda z)=u(\lambda x)=\lambda u(x)=\lambda w(X).$$
+
+\item  On applique 1) à $u=Id$.
+
+$$v\;\mbox{injective}\Leftrightarrow\mbox{Ker}v=\{0\}\Leftrightarrow\mbox{Ker}v=\mbox{Ker}Id\Leftrightarrow\exists w\in\mathcal{L}(E)/\;w\circ v=Id.$$
+
+\end{enumerate}
+\fincorrection
+\finexercice

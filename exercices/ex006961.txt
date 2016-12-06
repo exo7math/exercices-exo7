@@ -1,0 +1,60 @@
+\exercice{6961, blanc-centi, 2014/04/01}
+\video{8EYEgxhsGFA}
+\enonce
+Soit $n\in\Nn$. Montrer qu'il existe un unique $P\in\Cc[X]$ tel que 
+$$\forall z\in\Cc^* \qquad  P\left(z+\frac{1}{z}\right) = z^n+\frac{1}{z^n}$$
+
+Montrer alors que toutes les racines de $P$ sont réelles, simples, 
+et appartiennent à l'intervalle $[-2,2]$.
+\finenonce 
+
+\indication
+Pour l'existence, preuve par récurrence sur $n$. Pour les racines,
+montrer que $P(x)=2\cos(n\Arccos(x/2))$.
+\finindication
+
+\correction
+\begin{enumerate}
+  \item Commençons par remarquer que si $P$ et $Q$ sont deux polynômes 
+  qui conviennent, alors pour tout $z\in\Cc^*$, 
+$P\left(z+\frac{1}{z}\right)-Q\left(z+\frac{1}{z}\right)=0$. 
+En appliquant cette égalité à $z=e^{i\theta}$, on obtient 
+$(P-Q)(2\cos\theta)=0$. Le polynôme $P-Q$ a une infinité 
+de racines, donc il est nul, ce qui montre $P=Q$.
+  
+  \item Montrons l'existence de $P$ par récurrence forte sur $n$:
+  \begin{itemize}
+    \item Pour $n=0$, $P=2$ convient et pour $n=1$, $P=X$ convient.
+    
+    \item Passage des rangs $k\le n$ au rang $n+1$. 
+    Si on note $P_k$ le polynôme construit pour $k\le n$, on a 
+$$z^{n+1}+\frac{1}{z^{n+1}}=(z+\frac{1}{z})(z^n+\frac{1}{z^n})-(z^{n-1}+\frac{1}{z^{n-1}})
+=(z+\frac{1}{z})P_n(z+\frac{1}{z})-P_{n-1}(z+\frac{1}{z})$$
+donc $P_{n+1}(X)=XP_n(X)-P_{n-1}(X)$ convient.
+
+    \item On a ainsi construit $P_n$ pour tout $n$ (avec $\deg P_n =n$). 
+  \end{itemize}
+
+  \item Fixons $n$ et notons $P$ le polynôme obtenu.
+  Pour tout $\theta\in\R$, $P(e^{i\theta}+e^{-i\theta})=e^{in\theta}+e^{-in\theta}$ 
+  donc $P(2\cos(\theta))=2\cos(n\theta)$. 
+  
+  En posant $x=2\cos(\theta)$ et donc $\theta = \Arccos(\frac x2)$ on obtient la relation
+  Ainsi,
+$$P(x)=2\cos(n\Arccos(\frac x2)) \qquad \forall x\in[-2,2]$$
+Le polynôme dérivée est $P'(x)=\frac{n}{\sqrt{1-(\frac{x}{2})^2}}\sin(n\Arccos(\frac x2))$, 
+il s'annule en changeant de signe en chaque 
+$\alpha_k = 2\cos(\frac{k\pi}{n})$, ainsi $P'(\alpha_k)=0$ pour $k = 0,\ldots,n$.
+
+On calcule aussi que $P(\alpha_k) = \pm 2$.
+Le tableau de signe montre que $P$ est alternativement croissante 
+(de $-2$ à $+2$) puis décroissante (de $+2$ à $-2$) 
+sur chaque intervalle
+$[\alpha_{k+1}, \alpha_k]$, qui forment une partition de $[-2,2]$.
+D'après le théorème des valeurs intermédiaires, $P$ possède $n$ racines simples 
+(une dans chaque intervalle $[\alpha_{k+1}, \alpha_k]$) dans $[-2,2]$. 
+Puisque $P$ est de degré $n$, on a ainsi obtenu toutes ses racines.
+
+\end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,27 @@
+\exercice{6948, ruette, 2013/01/24}
+\enonce[Fonction caractéristique]
+Soit $X$ une variable aléatoire de loi exponentielle $\mathcal{E}(\lambda)$. Calculer sa
+fonction caractéristique.
+\finenonce
+\noindication
+
+\correction
+\def\I1{{ \rm 1\:\!\!\! l}}
+La densité de $X$ étant  $\I1_{\Rr^+}(x)\lambda e^{-\lambda x}$, on doit
+calculer
+$\displaystyle\varphi_X(t)=\int_0^{+\infty}e^{itx}\lambda e^{-\lambda x}dx$.
+On a
+$$
+\int_0^Me^{itx}\lambda e^{-\lambda x}dx
+=
+\lambda \left[\frac{1}{it-\lambda}e^{(it-\lambda)x}\right]_0^M
+=\frac{\lambda}{it-\lambda}\left(e^{(it-\lambda)M}-1\right)
+$$
+(remarquer que $it-\lambda\not=0$ car $t\in\Rr$ et $\lambda>0$).
+
+\medskip
+On a $|e^{(it-\lambda)M}|=|e^{it}|e^{-\lambda M}=e^{-\lambda M}\to 0$ quand
+$M\to +\infty$ donc l'intégrale est bien convergente et
+$\displaystyle\varphi_X(t)=\frac{\lambda}{\lambda-it}$.
+\fincorrection
+\finexercice

@@ -1,0 +1,49 @@
+\exercice{3799, quercia, 2010/03/11}
+\enonce[Centrale MP 2000 (avec Maple)]
+Soit~$E$ un espace euclidien, $u$ et~$v$ deux endomorphismes auto-adjoints
+de~$E$, $u$ étant défini positif.
+
+\begin{enumerate}
+  \item Montrer qu'il existe un unique endomorphisme~$w$ tel que
+    $u\circ w + w\circ u = v$. Que peut-on dire de~$w$~?
+
+  \item On suppose~$E$ de dimension~$3$, rapporté à une base orthonormale
+    dans laquelle $u$ et~$v$ ont pour matrices respectives
+    $A=\begin{pmatrix}4&1&1\cr 1&4&-1\cr1&-1&4\cr\end{pmatrix}$ et
+    $B=\begin{pmatrix}0&\phantom-0&-1\cr 0&0&1\cr -1&1&3\cr\end{pmatrix}$. Déterminer~$w$.
+
+  \item On revient au cas général. Si~$v$ est défini positif, que dire de~$w$~?
+    Si~$w$ est défini positif, que dire de~$v$~?   
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item On se place dans une base propre pour~$u$, soient
+    $U,V,W$ les matrices correspondantes avec $U = \mathrm{diag}(\lambda_i)$.
+    On doit donc résoudre $(\lambda_i+\lambda_j)W_{ij} = V_{ij}$ d'où
+    l'existence, l'unicité et la symétrie de~$w$.
+  \item 
+\begin{verbatim}
+> A := matrix([[4,1,1],[1,4,-1],[1,-1,4]]); B := matrix([[0,0,-1],[0,0,1],[-1,1,3]]);
+> eigenvals(A); eigenvects(A);
+> P := transpose(matrix([[1, 0, 1], [1, 1, 0],[-1, 1, 1]]));
+> A1 := evalm(P^(-1)&*A&*P); B1 := evalm(P^(-1)&*B&*P);
+> C1 := matrix(3,3);
+> for i from 1 to 3 do for j from 1 to 3 do C1[i,j] := B1[i,j]/(A1[i,i]+A1[j,j]) od od;
+> C := evalm(P&*C1&*P^(-1)); evalm(A&*C+C&*A-B);
+\end{verbatim}
+$ \Rightarrow  C=\frac1{140}\begin{pmatrix}11&-11&-33\cr -11&11&33\cr -33&33&69\cr\end{pmatrix}$.
+  \item Si $v$ est défini positif~: on a $(v(x)\mid x) = 2(u(x)\mid w(x))$ donc si $\lambda$ est
+    une valeur propre de~$w$ et~$x$ est un vecteur propre associé, on a
+    $\lambda = \frac{(v(x)\mid x)}{2(u(x)\mid x)} > 0$ d'où $w$ est défini positif.
+    
+    Cas $w$ défini positif et $v$ non positif~:
+    $U=\begin{pmatrix}1&0\cr0&2\cr\end{pmatrix}$, $W=\begin{pmatrix}1&1\cr1&1+x\end{pmatrix}$,
+    $V=\begin{pmatrix}2&3\cr3&4x+4\cr\end{pmatrix}$ avec $0<x<\frac18$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

@@ -1,0 +1,78 @@
+
+\exercice{6872, bodin, 2012/05/29}
+\video{SbWnWREUACY}
+\enonce
+Calculer (s'il existe) l'inverse des matrices :
+$$
+\begin{pmatrix} a & b \\ c & d \\ \end{pmatrix}
+\qquad 
+\begin{pmatrix} 1&2&1 \\ 1&2&-1\\ -2&-2&-1 \end{pmatrix}
+\qquad 
+\begin{pmatrix} 
+1 &\bar\alpha &\bar\alpha^2 \cr
+\alpha   &1          &\bar\alpha   \cr
+\alpha^2 &\alpha     &1            \cr \end{pmatrix} (\alpha \in \Cc)
+\qquad
+\begin{pmatrix} 
+0 & 1 & 1 & 1 \\ 1 & 0 & 1 & 1 \\ 1 & 1 & 0 & 1 \\ 1 & 1 & 1 & 0 \\ 
+\end{pmatrix}
+$$
+
+$$
+\begin{pmatrix}
+1 & 1 & \cdots &\cdots & 1 \\
+0 & 1 & \ddots & & \vdots  \\
+ & \ddots & \ddots & \ddots &  \vdots \\
+& \cdots & 0 & 1 & 1 \\
+0 & & \cdots & 0 & 1
+\end{pmatrix}
+\qquad 
+\begin{pmatrix}
+1 & 2 & 3 & \cdots & n \\
+0 & 1 & 2 & \cdots & \vdots \\
+  & \ddots & \ddots & \ddots &  \vdots \\
+\vdots &  & 0 & 1 & 2 \\
+ 0 & \cdots & & 0 & 1
+\end{pmatrix}
+$$
+\finenonce
+
+\noindication
+
+\correction
+
+\begin{enumerate}
+  \item  si le déterminant $ad-bc$ est non nul l'inverse est 
+$\frac{1}{ad-bc}\begin{pmatrix} d & -b \\ -c & a \\ \end{pmatrix}$
+  \item $\frac14 \begin{pmatrix} -4 & 0 & -4 \\ 3 & 1 & 2 \\2 & -2 & 0 \\  \end{pmatrix}$
+
+  \item si $|\alpha|\neq 1$ alors l'inverse est $\frac 1{1-\alpha\bar\alpha}
+            \begin{pmatrix} 1       &-\bar\alpha        &0           \cr
+                      -\alpha &1+\alpha\bar\alpha &-\bar\alpha \cr
+                      0       &-\alpha            &1           \cr\end{pmatrix}$
+
+   \item $\frac13 \begin{pmatrix}
+-2 & 1 & 1 & 1 \\ 1 & -2 & 1 & 1 \\ 1 & 1 & -2 & 1 \\ 1 & 1 & 1 & -2 \\
+                                      \end{pmatrix}$
+
+  \item $\begin{pmatrix}
+1 & -1 & 0 & \cdots & 0 \\
+0 & 1 & -1 & 0 & \cdots\\
+ & \ddots & \ddots & \ddots &  \\
+\vdots & & 0 & 1 & -1  \\
+0 & \cdots & \cdots & 0 & 1
+\end{pmatrix}$
+
+
+  \item $\begin{pmatrix}
+1 & -2 & 1 & 0 &\cdots & 0 \\
+ & 1 & -2 & 1 & 0 & \cdots\\
+ &  & 1 & -2 & 1 & 0 \\
+ & &  & \ddots & \ddots & \ddots \\
+ &  & (0) &  & 1 & -2 \\
+ &  &  & &  & 1
+\end{pmatrix}$
+\end{enumerate}
+\fincorrection
+\finexercice
+

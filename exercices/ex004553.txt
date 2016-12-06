@@ -1,0 +1,32 @@
+\exercice{4553, quercia, 2010/03/14}
+\enonce[Centrale MP 2001]
+
+Soit $S(t) = \sum_{n=1}^\infty \frac{t^n}{1-t^n}$.
+
+\begin{enumerate}
+  \item Pour quelles valeurs de $t$, $S$ est-elle définie~? Est-elle continue~?
+
+  \item Montrer qu'au voisinage de~$1^-$ on a $S(t) = -\frac{\ln(1-t)}{1-t} + O\Bigl(\frac1{1-t}\Bigr)$.
+On pourra développer $\ln(1-t)$ en série entière.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $-1<t<1$.
+  \item Pour $0\le t<1$ et $n\ge 2$ on a~:
+\begin{align*}
+(1-t)\frac{t^n}{1-t^n}
+&= \frac{t^n}{1+t+\dots+t^{n-1}}\cr
+&= \frac{t^n}{n} + \frac{t^n((1-t) + (1-t^2) + \dots + (1-t^{n-1}))}{n(1+t+\dots+t^{n-1})}\cr
+&= \frac{t^n}{n} + \frac{(t^n-t^{n+1})((n-1) + (n-2)t + \dots + t^{n-2})}{n(1+t+\dots+t^{n-1})}\cr
+\end{align*}
+d'où $0 \le (1-t)\frac{t^n}{1-t^n} - \frac{t^n}{n} \le \frac{n-1}{n}(t^n-t^{n+1}) \le t^n-t^{n+1}$
+(vrai aussi si $n=1$) et en sommant~:
+$$0\le (1-t)S(t) + \ln(1-t) \le 1.$$
+\end{enumerate}
+ \fincorrection
+
+\finexercice

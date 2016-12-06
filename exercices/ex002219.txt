@@ -1,0 +1,27 @@
+\exercice{2219, matos, 2008/04/23}
+\enonce
+Montrer que 
+\begin{enumerate} 
+\item cond$_2 (A) = \mu_n(A)/\mu_1(A)$ avec $\mu_n(A)$ et $\mu_1(A)$ respectivement la plus grande et la plus petite valeur singuli\`ere de $A$;
+\item si $A$ est normale alors
+$$\mbox{cond}_2(A) =\frac{\max_i |\lambda_i(A)|}{\min_i |\lambda_i(A)|} ;$$
+\item Si $A \in\Rr^{n\times n}$ est inversible, $Q\in\Rr^{n\times n}$ orthogonale alors
+$$\mbox{cond}_2(A)=\mbox{cond}_2(AQ)=\mbox{cond}_2(QA)$$
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item $\|A\|_2^2 =\rho (A^*A)=\max_i \lambda_i(A^*A) =\mu_1^2(A)$ la plus grande valeur singuli\`ere de $A$
+
+$\|A^{-1}\|_2^2=\rho (A^{-1}(A^{-1})^*)=\max_i \lambda_i((A^*A)^{-1}=\frac{1}{\mu_n(A)^2}$ avec $\mu_n(A)$ la plus petite valeur singuli\`ere de $A$. Donc
+$$\mbox{cond}_2(A)=\|A\|_2 \|A^{-1}\|_2=\mu_n(A)/\mu_1(A)$$
+\item Si $A$ est normale alors $\|A\|_2=\rho (A) $ rayon spectral. Donc
+$$A^{-1}=UD^{-1}U^* \Rightarrow (A^{-1})^* A^{-1} =U(D^{-1})^* D^{-1}U^*\Rightarrow \rho ((A^{-1})^*A^{-1})=1/\min_i |\lambda_i(A)|^2$$
+$$\mbox{cond}_2(A)=\max |\lambda_i(A)|/\min |\lambda_i(A)|$$
+\item cond$_2(QA)=\|QA\|_2 \|A^{-1}Q^*\|_2=\|A\|_2\|A^{-1}\|_2=$cond$_2(A)$.
+\end{enumerate}
+\fincorrection
+\finexercice

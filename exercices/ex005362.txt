@@ -1,0 +1,52 @@
+\exercice{5362, rouget, 2010/07/06}
+\enonce[**]
+Montrer que $\left|
+\begin{array}{ccc}
+-2a&a+b&a+c\\
+b+a&-2b&b+c\\
+c+a&c+b&-2c
+\end{array}\right|=4(b+c)(c+a)(a+b)$.
+\finenonce
+
+\noindication
+
+\correction
+Soit $(a,b,c)\in\Rr^3$. Notons $\Delta$ le déterminant de l'énoncé. Pour $x$ réel, on pose $D(x)=\left|
+\begin{array}{ccc}
+-2x&x+b&x+c\\
+b+x&-2b&b+c\\
+c+x&c+b&-2c
+\end{array}\right|$ (de sorte que $\Delta=D(a)$)). $D$ est un polynôme de degré inférieur ou égal à $2$. Le coefficient de $x^2$ vaut
+ 
+$$-(-2c)+(b+c)+(b+c)-(-2b)=4(b+c).$$
+Puis,
+
+$$D(-b)=\left|
+\begin{array}{ccc}
+2b&0&-b+c\\
+0&-2b&b+c\\
+c-b&c+b&-2c
+\end{array}\right|=2b(4bc-(b+c)^2)+2b(c-b)^2=0,$$
+et par symétrie des rôles de $b$ et $c$, $D(-c)=0$. De ce qui précède, on déduit que si $b\neq c$, $D(x)=4(b+c)(x+b)(x+c)$ (même si $b+c=0$ car alors $D$ est un polynôme de degré infèrieur ou égal à $1$ admettant au moins deux racines distinctes et est donc le polynôme nul).
+Ainsi, si $b\neq c$ (ou par symétrie des roles, si $a\neq b$ ou $a\neq c$), on a~:~$\Delta=4(b+c)(a+b)(a+c)$. Un seul cas n'est pas encore étudié à savoir le cas où $a=b=c$. Dans ce cas, 
+
+$$D(a)=\left|
+\begin{array}{ccc}
+-2a&2a&2a\\
+2a&-2a&2a\\
+2a&2a&-2a
+\end{array}\right|=8a^3\left|
+\begin{array}{ccc}
+-1&1&1\\
+1&-1&1\\
+1&1&-1
+\end{array}\right|=32a^3=4(a+a)(a+a)(a+a),$$
+ce qui démontre l'identité proposée dans tous les cas (on pouvait aussi conclure en constatant que, pour $a$ et $b$ fixés, la fonction $\Delta$ est une fonction continue de $c$ et on obtient la valeur de $\Delta$ pour $c=b$ en faisant tendre $c$ vers $b$ dans l'expression de $\Delta$ déjà connue pour $c\neq b$).
+
+\begin{center}
+\shadowbox{
+$\Delta=4(a+b)(a+c)(b+c)$.
+}
+\end{center}
+\fincorrection
+\finexercice

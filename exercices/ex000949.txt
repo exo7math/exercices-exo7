@@ -1,0 +1,27 @@
+\exercice{949, ridde, 1999/11/01}
+\enonce
+ Soit $f \in \mathcal{L} (E)$. Montrer que $\ker (f)
+\cap \text{Im} (f) = f (\ker (f\circ f))$.
+\finenonce 
+
+\indication
+Montrer la double inclusion.
+\finindication
+
+\correction
+Pour montrer l'\'egalit\'e $\ker f \cap \mathop{\mathrm{Im}}\nolimits f = f(\ker f^2)$, nous
+montrons la double inclusion.
+
+Soit $y\in \ker f \cap \mathop{\mathrm{Im}}\nolimits f$, alors $f(y) = 0$ et il existe $x$
+tel que $y=f(x)$. De plus $f^2(x) = f(f(x))=f(y) =0$ donc $x\in
+\ker f^2$. Comme $y = f(x)$ alors $y \in f(\ker f^2)$. Donc $\ker
+f \cap \mathop{\mathrm{Im}}\nolimits f \subset f(\ker f^2)$.
+
+
+Pour l'autre inclusion, nous avons d\'ej\`a que $ f(\ker f^2) \subset
+f(E) = \mathop{\mathrm{Im}}\nolimits f$. De plus $ f(\ker f^2) \subset \ker f$, car si $y\in
+f(\ker f^2)$ il existe $x\in \ker f^2$ tel que $y=f(x)$, et
+$f^2(x) = 0$ implique $f(y)=0$ donc $y\in \ker f$. Par cons\'equent
+$ f(\ker f^2) \subset \ker f \cap \mathop{\mathrm{Im}}\nolimits f $.
+\fincorrection
+\finexercice

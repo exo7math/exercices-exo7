@@ -1,0 +1,47 @@
+\exercice{2083, bodin, 2008/02/04}
+\enonce
+Calculer l'int\'egrale de $f:[a,b]\rightarrow \R$ comme
+limite de sommes de Riemann-Darboux dans les cas suivants:
+\begin{enumerate}
+\item $f(x)=\sin x$ et $f(x)=\cos x$ sur $[0,\frac \pi 2]$ et $x_k=\frac{k\pi }{2n}$, $k=0,1,...,n$,
+\item $g(x)=\frac 1x$ sur $\left[ a,b\right] \subset \R_{+}^{*}$ et $%
+x_k=aq^k$ , $k=0,1,...,n$ ($q$ \'etant \`a d\'eterminer),
+\item $h(x)=\alpha ^x$ sur $[a,b]$ , $\alpha >0$, et $x_k=a+(b-a).\frac kn$, $%
+k=0,1,...,n$.
+\end{enumerate}
+\finenonce 
+\indication
+  \begin{enumerate}
+  \item On pourra penser que le cosinus et le sinus sont les parties r\'eelles et imaginaires de la fonction $t \mapsto e^{it}$. On chercha donc d'abord \`a calculer $\int_0^{\frac \pi 2}  e^{it}\, dt$.
+  \item On choisira $q$ tel que $q^n = \frac ba$.
+  \end{enumerate}
+\finindication
+\correction
+  \begin{enumerate}
+  \item On calcul d'abord  $\int_0^{\frac \pi 2}  e^{it}\, dt$. Par le th\'eor\`eme de  Riemann-Darboux
+c'est la limite de 
+$$S_n = \sum_{k=0}^{n-1} (x_{k+1}-x_k) \cdot f(x_k).$$
+Pour $x_k = \frac{k\pi }{2n}$ (on obtient en fait un somme de Riemann) :
+$$S_n = \frac{\pi}{2n}\sum_{k=0}^{n-1}e^{\frac{ik\pi}{2n}}= \frac{\pi}{2n}\sum_{k=0}^{n-1}(e^{\frac{i\pi}{2n}})^k.$$
+Ce qui est une somme g\'eom\'etrique de somme $S_n = (1-i) \frac{\frac {\pi}{2n}}{1-e^{i\frac {\pi}{2n}}}$. La limite de ce taux d'accroissement est $1+i$ (en posant $u=\frac {\pi}{2n}$ et en remarquant que $\frac{e^{iu}-1}{u} \to i$ quand $u\to 0$).
+Donc $\int_0^{\frac \pi 2}  e^{it}\, dt=1+i$. Mais $e^{it} = \cos t+ i \sin t$ donc 
+$\int_0^{\frac \pi 2} \cos t \, dt + \int_0^{\frac \pi 2}\sin t \, dt = 1+i$.
+Par identification des parties r\'eelles et imaginaires on trouve : 
+$\int_0^{\frac \pi 2} \cos t \, dt = 1$ et $\int_0^{\frac \pi 2}\sin t \, dt = 1$.
+
+  \item On veut $x_k = aq^k$ ce qui donne bien $x_0=a$, mais il faut aussi $x_n = b$ donc
+$aq^n=b$, donc $q^n = \frac ba$ soit $q = (\frac ba)^{\frac 1 n}$.
+Nous cherchons la limite de $S'_n =  \sum_{k=0}^{n-1} (x_{k+1}-x_k) \cdot g(x_k).$
+Il est n'est pas trop dur de montrer que $S'_n = n(q-1)$.
+Pour trouver la limite quand $n\to +\infty$ c'est plus d\'elicat car $q$ d\'epend de $n$ :
+$S'_n= n(q-1)= n((\frac ba)^{\frac 1 n}-1) = n(e^{\frac1n \ln\frac ba}-1)$.
+En posant $u = \frac 1n$ et en remarquant que l'on obtient un taux d'accroissement on calcule :
+$S'_n = \frac 1 u(e^{ u \ln\frac ba}-1) \to  \ln \frac ba = \ln b - \ln a$.
+Donc $\int_a^b \frac {dt}{t} = \ln b - \ln a$.
+
+  \item \`A l'aide des sommes g\'eom\'etrique est des taux d'accroissement on trouve 
+$$\int_a^b \alpha^t \, dt = \frac{e^{\alpha b}- e^{\alpha a}}{\alpha}.$$
+
+  \end{enumerate}
+\fincorrection
+\finexercice

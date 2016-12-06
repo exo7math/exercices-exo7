@@ -1,0 +1,24 @@
+\exercice{5264, rouget, 2010/07/04}
+\enonce[***]
+\begin{enumerate}
+\item  Montrer qu'une matrice triangulaire supérieure est inversible si et seulement si ses coefficients diagonaux sont tous non nuls.
+\item  Montrer que toute matrice triangulaire supérieure est semblable à une matirce triangulaire inférieure.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  La démonstration la plus simple apparaîtra dans le chapitre suivant~:~le déterminant d'une matrice triangulaire est le produit de ses coefficients diagonaux. Cette matrice est inversible si et seulement si son déterminant est non nul ou encore si et seulement si aucun des coefficients diagonaux n'est nul.
+
+Pour l'instant, le plus simple est d'utiliser le rang d'une matrice. Si aucun des coefficients diagonaux n'est nul, on sait que le rang de la matrice est son format et donc que cette matrice est inversible.
+
+Réciproquement, notons $(e_1,...,e_n)$ la base canonique de $\mathcal{M}_{n,1}(\Kk)$. Supposons que $A$ soit une matrice triangulaire inférieure dont le coefficient ligne $i$, colonne $i$, est nul. Si $i=n$, la dernière colonne de $A$ est nulle et $A$ n'est pas de rang $n$ et donc n'est pas inversible. Si $i<n$, alors les $n-i+1$ dernières colonnes sont dans $\mbox{Vect}(e_{i+1},...,e_n)$ qui est de dimension au plus $n-i(<n-i+1)$, et encore une fois, la famille des colonnes de $A$ est liée.
+
+\item  Soit $A=(a_{i,j})_{1\leq i,j\leq n}$ une matrice triangulaire supérieure et $f$ l'endomorphisme de $\Kk^n$ de matrice $A$ dans la base canonique $\mathcal{B}=(e_1,...,e_n)$ de $\Kk^n$. Soit $\mathcal{B'}=(e_n,...,e_1)$. $\mathcal{B'}$ est encore une base de $\Kk^n$. Soit alors $P$ la matrice de passage de $\mathcal{B}$ à $\mathcal{B}'$ puis $A'$ la matrice de $f$ dans la base $\mathcal{B}'$. Les formules de changement de bases permettent d'affirmer que $A'=P^{-1}AP$ et donc que $A$ et $A'$ sont semblables.
+
+Vérifions alors que $A'$ est une matrice triangulaire inférieure. Pour $i\in\{1,...,n\}$, posons $e_i'=e_{n+1-i}$. $A$ est triangulaire supérieure. Donc, pour tout $i$, $f(e_i)\in\mbox{Vect}(e_1,...,e_i)$. Mais alors, pour tout $i\in\{1,...,n\}$, $f(e_{n+1-i}')\in\mbox{Vect}(e_n',...,e_{n+1-i}')$ ou encore, pour tout $i\in\{1,...,n\}$, $f(e_{i}')\in\mbox{Vect}(e_n',...,e_{i}')$. Ceci montre que $A'$ est une matrice triangulaire inférieure.
+\end{enumerate}
+\fincorrection
+\finexercice

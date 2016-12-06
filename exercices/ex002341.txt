@@ -1,0 +1,34 @@
+\exercice{2341, queffelec, 2003/10/01}
+
+\enonce
+Montrer que tout ouvert de $\Rr$ est union d\'enombrable d'intervalles ouverts
+deux \`a deux disjoints. 
+(\emph{Indication :} si $x\in O$ ouvert, consid\'erer $J_x$ qui est l'union des
+intervalles ouverts inclus dans $O$ et  contenant $x$). \'Enoncer un résultat similaire pour
+ les ouverts de $\Rr^n$.
+\finenonce
+
+\indication
+Montrer que $J_x$ est un intervalle ouvert ; que $J_x=J_y$ ou $J_x\cap J_y=\varnothing$.
+Et penser que $\Qq$ est dénombrable.
+\finindication
+
+\correction
+\begin{enumerate}
+  \item $J_x$ est un ouvert non vide car c'est une union d'ouverts contenant $x$. De plus $J_x$ est un intervalle car c'est une union d'intervalles contenant tous le point $x$. Donc $J_x$ est un intervalle ouvert. 
+On peut donc \'ecrire $\mathcal{O} = \cup_{x\in \mathcal{O}} J_x$. Mais cette union n'est pas n\'ecessairement d\'enombrable.
+
+Tout d'abord si $z\in J_x$ alors $J_x=J_z$. En effet soit $I$ un intervalle inclus dans $\mathcal{O}$ contenant $x$ et $z$. Si $x'\in J_x$, soit $J$ un intervalle inclus dans $\mathcal{O}$ contenant $x$ et $x'$. Alors $I\cup J$ est un intervalle (car $x$ est dans les deux intervalles $I$ et $J$), $I\cup J$ est inclus dans $\mathcal{O}$ et contient $x'$ et $z$. Donc $x'\in J_z$. Donc $J_x \subset J_z$. Enfin comme $z\in J_x$ on a aussi $x\in J_z$, donc on montrerait de même $J_z\subset J_x$. Donc $J_x=J_z$.
+
+Pour $x,y \in \mathcal{O}$ alors $J_x=J_y$ ou $J_x \cap J_y = \varnothing$. En effet supposons que $J_x\cap J_y \neq \varnothing$ et soit $z \in J_x \cap J_y$. Comme $z\in J_x$ alors $J_x=J_z$, comme 
+ $z\in J_y$ alors $J_y=J_z$. Donc $J_x=J_y$.
+
+Pour chaque intervalle ouvert $J_x$ il existe $q \in \Qq \cap J_x$, avec bien s\^ur $J_x = J_q$.
+ Comme $\Qq$ est d\'enombrable $\mathcal{O}\cap \Qq$ l'est aussi. On a ainsi \'ecrit
+$$\mathcal{O} = \bigcup_{q\in \mathcal{O}\cap \Qq} J_{q},$$
+ce qui \'etait demand\'e.
+  \item  Pour $\Rr^n$ on peut montrer le r\'esultat suivant : tout ouvert $\mathcal{O}$ de $\Rr^n$ s'\'ecrit comme l'union d\'enombrable de boules ouverte. On consid\'ere $J_x$ l'union des boules  ouvertes de rayon 
+rationnel centr\'ees en $x$,  ensuite on regarde seulement les $x$ appartenant \`a $\mathcal{O} \cap \Qq^n$. Par contrer on autorise deux boules à s'intersecter.
+\end{enumerate}
+\fincorrection
+\finexercice

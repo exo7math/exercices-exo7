@@ -1,0 +1,26 @@
+\exercice{5128, rouget, 2010/06/30}
+\enonce[**I]
+On note $U$ l'ensemble des nombres complexes de module $1$. Montrer que~:
+
+$$\forall z\in\Cc,\;(z\in U\setminus\{-1\}\Leftrightarrow\exists x\in\Rr/\;z=\frac{1+ix}{1-ix}).$$
+
+\finenonce
+
+\noindication
+
+\correction
+Soient $x\in\Rr$ et $z=\frac{1+ix}{1-ix}$. Puisque $1-ix\neq0$, $z$ est bien défini et
+$|z|=\frac{|1+ix|}{|1-ix|}=\frac{|1+ix|}{|\overline{1+ix}|}=1$. Enfin,
+$z=\frac{-1+ix+2}{1-ix}=-1+\frac{2}{1-ix}\neq-1$. On a montré que~:
+$$\forall x\in\Rr,\;\frac{1+ix}{1-ix}\in U\setminus\{-1\}.$$
+Réciproquement, soit $z\in U\setminus\{-1\}$. Il existe un réel $\theta\notin\pi+2\pi\Zz$ tel que $z=e^{i\theta}$. Mais
+alors,
+
+$$z=e^{i\theta}=\frac{e^{i\theta/2}}{e^{-i\theta/2}}=\frac{\cos\frac{\theta}{2}+i\sin\frac{\theta}{2}}
+{\cos\frac{\theta}{2}-i\sin\frac{\theta}{2}}=\frac{\cos\frac{\theta}{2}(1+i\tan\frac{\theta}{2})}
+{\cos\frac{\theta}{2}(1-i\tan\frac{\theta}{2})}=\frac{1+i\tan\frac{\theta}{2}}
+{1-i\tan\frac{\theta}{2}}\;(\cos\frac{\theta}{2}\neq0\;\mbox{car}\;\frac{\theta}{2}\notin\frac{\pi}{2}+\pi\Zz),
+$$
+et $z$ est bien sous la forme voulue avec $x=\tan\frac{\theta}{2}$.
+\fincorrection
+\finexercice

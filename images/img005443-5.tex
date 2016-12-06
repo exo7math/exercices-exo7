@@ -1,0 +1,77 @@
+%%%%%%%%%%%%%%%%%% PREAMBULE %%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt,a4paper]{article}
+
+\usepackage{amsfonts,amsmath,amssymb,amsthm}
+\usepackage[francais]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+%----- Ensemles : entiers, reels, complexes -----
+\newcommand{\Nn}{\mathbb{N}} \newcommand{\N}{\mathbb{N}}
+\newcommand{\Zz}{\mathbb{Z}} \newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Qq}{\mathbb{Q}} \newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Rr}{\mathbb{R}} \newcommand{\R}{\mathbb{R}}
+\newcommand{\Cc}{\mathbb{C}} \newcommand{\C}{\mathbb{C}}
+
+%----- Modifications de symboles -----
+\renewcommand {\epsilon}{\varepsilon}
+\renewcommand {\Re}{\mathop{\mathrm{Re}}\nolimits}
+\renewcommand {\Im}{\mathop{\mathrm{Im}}\nolimits}
+
+%----- Fonctions usuelles -----
+\newcommand{\ch}{\mathop{\mathrm{ch}}\nolimits}
+\newcommand{\sh}{\mathop{\mathrm{sh}}\nolimits}
+\renewcommand{\tanh}{\mathop{\mathrm{th}}\nolimits}
+\newcommand{\Arcsin}{\mathop{\mathrm{Arcsin}}\nolimits}
+\newcommand{\Arccos}{\mathop{\mathrm{Arccos}}\nolimits}
+\newcommand{\Arctan}{\mathop{\mathrm{Arctan}}\nolimits}
+\newcommand{\Argsh}{\mathop{\mathrm{Argsh}}\nolimits}
+\newcommand{\Argch}{\mathop{\mathrm{Argch}}\nolimits}
+\newcommand{\Argth}{\mathop{\mathrm{Argth}}\nolimits}
+\newcommand{\pgcd}{\mathop{\mathrm{pgcd}}\nolimits} 
+
+%----- Commandes special dessin a ajouter localement ------
+\usepackage{geometry}
+\usepackage{pstricks}
+\usepackage{pst-plot}
+\usepackage{pst-node}
+\usepackage{graphics,epsfig}
+
+\pagestyle{empty}
+
+% Que faire avec ce fichier monimage.tex ?
+%   1/ latex monimage.tex
+%   2/ dvips monimage.dvi
+%   3/ ps2eps monimage.ps
+%   4/ ps2pdf -dEPSCrop monimage.eps
+%   5/ Dans votre fichier d'exos \includegraphics{monimage}
+
+\begin{document}
+
+\begin{pspicture}(-8.1,-1.5)(0.1,6.7)
+\psset{xunit=1cm,yunit=1cm}
+\psaxes{->}(0,0)(-7.2,-1.3)(5.2,6.5)
+\psline[linestyle=dashed](1.57,-1.3)(1.57,6.2)
+\psline[linestyle=dashed](-1.57,-1.3)(-1.57,6.2)
+\psline[linestyle=dashed](4.72,-1.3)(4.72,6.2)
+\psline[linestyle=dashed](-4.72,-1.3)(-4.72,6.2)
+\psline[linestyle=dashed](3.141,0)(3.141,-1)
+\psline[linestyle=dashed](-3.141,0)(-3.141,-1)
+\psplot[plotpoints=10000]{4.89}{6}{x 3.14 div 180 mul sin x 3.14 div 180 mul cos div abs x 3.14 div 180 mul cos add}
+\psplot[plotpoints=10000]{-1.4}{1.4}{x 3.14 div 180 mul sin x 3.14 div 180 mul cos div abs x 3.14 div 180 mul cos add}
+\psplot[plotpoints=10000]{1.74}{4.55}{x 3.14 div 180 mul sin x 3.14 div 180 mul cos div abs x 3.14 div 180 mul cos add}
+\psplot[plotpoints=10000]{-4.55}{-1.74}{x 3.14 div 180 mul sin x 3.14 div 180 mul cos div abs x 3.14 div 180 mul cos add}
+\psplot[plotpoints=10000]{-6}{-4.89}{x 3.14 div 180 mul sin x 3.14 div 180 mul cos div abs x 3.14 div 180 mul cos add}
+\psline{->}(0,1)(0.7,1.7)
+\psline{->}(0,1)(-0.7,1.7)
+\psline{->}(3.141,-1)(3.841,-0.3)
+\psline{->}(3.141,-1)(2.441,-0.3)
+\psline{->}(-3.141,-1)(-2,441,-0.3)
+\psline{->}(-3.141,-1)(-3.841,-0.3)
+\uput[u](1.5,6.1){$y=f_2(x)$}
+\uput[u](3.141,0){$\pi$}
+\uput[u](-3.141,0){$-\pi$}
+\end{pspicture}
+
+\end{document}

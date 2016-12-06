@@ -1,0 +1,29 @@
+\exercice{4437, quercia, 2010/03/14}
+\enonce[$\Arctan(n+a) - \Arctan n$]
+
+Soit $a \in \R$.
+
+\begin{enumerate}
+  \item Montrer que la série de terme général $\Arctan(n+a) - \Arctan n$ est
+    convergente.
+    
+  \item On pose $S(a) = \sum_{k=0}^\infty (\Arctan(k+a) - \Arctan k)$.
+    Trouver $\lim_{a\to+\infty} S(a)$.
+    
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $\sim \frac a{n^2}$.
+  \item $S(a) \ge \sum_{k=0}^n \Arctan(k+a)-\Arctan k \to
+              \frac\pi2 + \Arctan 1 + \Arctan\frac12 + \dots
+              + \Arctan\frac1n
+               \Rightarrow  S(a) \to +\infty$ lorsque $a\to+\infty$ .
+\end{enumerate}
+ \fincorrection
+
+\finexercice

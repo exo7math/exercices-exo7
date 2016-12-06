@@ -1,0 +1,42 @@
+\exercice{2545, tahani, 2009/04/01}
+\enonce
+Donner l'allure de $C=\{(x,y)
+\in \mathbb{R}^2; x^4+y^3-y^2+x-y=0\}$ au voisinage des points
+$(0,0)$ et $(1,1)$.
+\finenonce 
+
+\noindication
+
+\correction
+Posons $f(x,y)=x^4+y^3-x^2-y^2+x-y$, $f(0,0)=0$ et $f(1,1)=0$.
+$\mathbb{R}$ est un espace de Banach et $f$ est de classe $C^1$
+car polynomiale.
+$$\frac{\partial f}{\partial y}=3y^2-2y-1$$
+\'Etude au point $(0,0)$, $\frac{\partial f}{\partial y}(0,0)=-1$,
+c'est un isomorphisme de $\mathbb{R}$. Nous sommes dans les
+conditions d'application du th\'eor\`eme des fonctions implicites.
+Il existe $I$ contenant $0$, $J$ contenant $0$ et $g: I
+\rightarrow J$, $C^1$ tel que $g(0)=0$ et $f(x,g(x))=0, \forall x
+\in I$. On a
+$$x^4+(g(x))^3-x^2-(g(x))^2+x-g(x)=0$$
+En d\'erivant on obtient:
+$$4x^3+3g^2(x)g'(x)-2x-2g(x)g'(x)+1-g'(x)=0$$
+d'o\`u $g'(0)=1$. On d\'erive encore:
+$$12x^2+6g(x)g'(x)^2+3g^2(x)g''(x)-2-2g'(x)^2-2g(x)g''(x)-g''(x)=0$$
+d'o\`u $$g''(0)=-4.$$ \'Etude au point $(1,1)$, $\frac{\partial
+f}{\partial y}(1,1)=0$. Ce n'est plus un diff\'eo, on ne peut pas
+appliquer le th\'eor\`eme des fonctions implicites. Dans ce cas,
+on prend la d\'eriv\'ee par rapport \`a la premì\`ere variable.
+$$\frac{\partial f}{\partial x}=4x^3-2x+1$$
+et donc $\frac{\partial f}{\partial x}(1,1)=3$. Donc, d'apr\`es le
+th\'eor\`eme des fonctions implicites, il existe $I$ contenant
+$1$, $J$ contenant $1$ et $g:I \rightarrow J$ de classe $C^1$ tels
+que $g(1)=1$ et $f(g(x),x)=0, \forall y \in I$. On a
+$$g(y)^4-g^2(y)+g(y)+y^3-y^2-y=0$$
+En d\'erivant
+$$4g^3g'-2gg'+g'+3y^2-2y-1=0$$
+d'o\`u $4g'(1)-g'(1)=0$ et donc $g'(1)=0$.
+$$12g^2(g')^2+4g^3g''-2gg''-2(g')^2+g''+6y-2=0$$
+d'o\`u $g''(1)=-4/3$.
+\fincorrection
+\finexercice

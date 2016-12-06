@@ -1,0 +1,69 @@
+\exercice{5220, rouget, 2010/06/30}
+\enonce[***IT]
+Soient $(u_n)_{n\in\Nn}$ une suite réelle et $(v_n)_{n\in\Nn}$ la suite définie par~:~$\forall n\in\Nn,\;v_n=\frac{u_0+u_1+...+u_n}{n+1}$.
+
+\begin{enumerate}
+\item  Montrer que si la suite $(u_n)_{n\in\Nn}$ vers un réel $\ell$, la suite $(v_n)_{n\in\Nn}$ converge et a pour limite $\ell$. Réciproque~?
+\item  Montrer que si la suite $(u_n)_{n\in\Nn}$ est bornée, la suite $(v_n)_{n\in\Nn}$ est bornée. Réciproque~?
+\item  Montrer que si la suite $(u_n)_{n\in\Nn}$ est croissante alors la suite $(v_n)_{n\in\Nn}$ l'est aussi.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Soit $\varepsilon>0$. Il existe un rang $n_0$ tel que, si $n\geq n_0$ alors $|u_n-\ell|<\frac{\varepsilon}{2}$. Soit $n$ un entier naturel strictement supérieur à $n_0$.
+
+\begin{align*}
+|v_n-\ell|&=\left|\frac{1}{n+1}\sum_{k=0}^{n}u_k-\ell\right|=\left|\frac{1}{n+1}\sum_{k=0}^{n}(u_k-\ell)\right|\\
+ &\leq\frac{1}{n+1}\sum_{k=0}^{n}|u_k-\ell|=\frac{1}{n+1}\sum_{k=0}^{n_0}|u_k-\ell|+\frac{1}{n+1}\sum_{k=n_0+1}^{n}|u_k-\ell|\\
+ &\leq\frac{1}{n+1}\sum_{k=0}^{n_0}|u_k-\ell|+\frac{1}{n+1}\sum_{k=n_0+1}^{n}\frac{\varepsilon}{2}\leq\frac{1}{n+1}\sum_{k=0}^{n_0}|u_k-\ell|+\frac{1}{n+1}\sum_{k=0}^{n}\frac{\varepsilon}{2}\\
+ &=\frac{1}{n+1}\sum_{k=0}^{n_0}|u_k-\ell|+\frac{\varepsilon}{2}
+\end{align*}
+Maintenant, $\sum_{k=0}^{n_0}|u_k-\ell|$ est une expression constante quand $n$ varie et donc, $\lim_{n\rightarrow +\infty}\frac{1}{n+1}\sum_{k=0}^{n_0}|u_k-\ell|=0$. Par suite, il existe un entier $n_1\geq n_0$ tel que pour $n\geq n_1$, $\frac{1}{n+1}\sum_{k=0}^{n_0}|u_k-\ell|<\frac{\varepsilon}{2}$.
+Pour $n\geq n_1$, on a alors $|v_n-\ell|<\frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon$.
+On a montré que $\forall\varepsilon>0,\;\exists n_1\in\Nn/\;(\forall n\in\Nn)(n\geq n_1\Rightarrow|v_n-\ell|<\varepsilon)$. La suite $(v_n)$ est donc convergente et $\lim_{n\rightarrow +\infty}v_n=\ell$.
+
+\begin{center}
+\shadowbox{
+Si la suite $u$ converge vers $\ell$ alors la suite $v$ converge vers $\ell$.
+}
+\end{center}
+La réciproque est fausse. Pour $n$ dans $\Nn$, posons $u_n=(-1)^n$. La suite $(u_n)$ est divergente. D'autre part, pour $n$ dans $\Nn$, $\sum_{k=0}^{n}(-1)^k$ vaut $0$ ou $1$ suivant la parité de $n$ et donc, dans tous les cas, $|v_n|\leq\frac{1}{n+1}$. Par suite, la suite $(v_n)$ converge et $\lim_{n\rightarrow +\infty}v_n=0$.
+ \item  Si $u$ est bornée, il existe un réel $M$ tel que, pour tout naturel $n$, $|u_n|\leq M$.
+Pour $n$ entier naturel donné, on a alors
+
+$$|v_n|\leq\frac{1}{n+1}\sum_{k=0}^{n}|u_k|\leq\frac{1}{n+1}\sum_{k=0}^{n}M=\frac{1}{n+1}(n+1)M=M.$$
+La suite $v$ est donc bornée.
+
+\begin{center}
+\shadowbox{
+Si la suite $u$ est bornée alors la suite $v$ est bornée.
+}
+\end{center}
+La réciproque est fausse. Soit $u$ la suite définie par~:~$\forall n\in\Nn,\;u_n=(-1)^nE\left(\frac{n}{2}\right)=
+\left\{
+\begin{array}{l}
+p\;\mbox{si}\;n=2p,\;p\in\Nn\\
+-p\;\mbox{si}\;n=2p+1,\;p\in\Nn
+\end{array}
+\right.$.
+$u$ n'est pas bornée car la suite extraite $(u_{2p})$ tend vers $+\infty$ quand $p$ tend vers $+\infty$. 
+Mais, si $n$ est impair, $v_n=0$, et si $n$ est pair, $v_n=\frac{1}{n+1}\times u_n=\frac{n}{2(n+1)}$, et dans tous les cas $|v_n|\leq\frac{1}{n+1}\frac{n}{2}\leq\frac{1}{n+1}\frac{n+1}{2}=\frac{1}{2}$ et la suite $v$ est bornée.
+ \item  Si $u$ est croissante, pour $n$ entier naturel donné on a~:
+
+\begin{align*}
+v_{n+1}-v_n&=\frac{1}{n+2}\sum_{k=0}^{n+1}u_k-\frac{1}{n+1}\sum_{k=0}^{n}u_k=\frac{1}{(n+1)(n+2)}\left((n+1)\sum_{k=0}^{n+1}u_k-(n+2)\sum_{k=0}^{n}u_k\right)\\
+ &=\frac{1}{(n+1)(n+2)}\left((n+1)u_{n+1}-\sum_{k=0}^{n}u_k\right)=\frac{1}{(n+1)(n+2)}\sum_{k=0}^{n}(u_{n+1}-u_k)\geq0.
+\end{align*}
+La suite $v$ est donc croissante.
+
+\begin{center}
+\shadowbox{
+Si la suite $u$ est croissante alors la suite $v$ est croissante.
+}
+\end{center}
+\end{enumerate}
+\fincorrection
+\finexercice

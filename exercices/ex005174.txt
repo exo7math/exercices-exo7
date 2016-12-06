@@ -1,0 +1,117 @@
+\exercice{5174, rouget, 2010/06/30}
+\enonce[***]
+Soit $\begin{array}[t]{cccc}
+f~:&[0,+\infty[\times[0,2\pi[&\rightarrow&\Rr^2\\
+ &(x,y)&\mapsto&(x\cos y,x\sin y)
+\end{array}$.
+
+\begin{enumerate}
+\item  $f$ est-elle injective~?~surjective~?
+\item  Soient $a$, $b$, $\alpha$ et $\beta$ quatre réels. Montrer qu'il existe $(c,\gamma)\in\Rr^2$ tel que~:~
+$\forall x\in\Rr,\;a\cos(x-\alpha)+b\cos(x-\beta)=c\cos(x-\gamma)$.
+\item  Soit $E$ le $\Rr$-espace vectoriel des applications de $\Rr$ dans $\Rr$. Soit $F=\{u\in
+E/\;\exists(a,b,\alpha,\beta)\in\Rr^4\;\mbox{tel que}\;\forall x\in\Rr,\;u(x)=a\cos(x-\alpha)+b\cos(2x-\beta)\}$.
+Montrer que $F$ est un sous-espace vectoriel de $E$.
+\item  Déterminer $\{\cos x,\sin x,\cos(2x),\sin(2x),1,\cos^2x,\sin^2x\}\cap F$.
+\item  Montrer que $(\cos x,\sin x,\cos(2x),\sin(2x))$ est une famille libre de $F$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  Pour tout $(y,y')$ élément de $[0,2\pi[^2$, $f((0,y))=f((0,y'))$ et f n'est pas injective.
+
+Montrons que $f$ est surjective.
+
+Soit $(X,Y)\in\Rr^2$.
+\begin{itemize}
+\item[-] Si $X=Y=0$, $f((0,0))=(0,0)$.
+\item[-] Si $X=0$ et $Y>0$, $f((Y,\frac{\pi}{2}))=(0,Y)$ avec $(Y,\frac{\pi}{2})$ élément de
+$[0,+\infty[\times[0,2\pi[$.
+\item[-] Si $X=0$ et $Y<0$, $f((-Y,\frac{3\pi}{2}))=(0,Y)$ avec $(-Y,\frac{3\pi}{2})$ élément
+de $[0,+\infty[\times[0,2\pi[$.
+\item[-] Si $X>0$ et $Y\geq0$, $f((\sqrt{X^2+Y^2},\Arctan\frac{Y}{X}))=(X,Y)$ avec
+$(\sqrt{X^2+Y^2},\Arctan\frac{Y}{X})$ élément de
+
+$[0,+\infty[\times[0,2\pi[$.
+\item[-] Si $X<0$ et $Y\geq0$, $f((\sqrt{X^2+Y^2},\pi+\Arctan\frac{Y}{X}))=(X,Y)$ avec
+$(\sqrt{X^2+Y^2},\pi+\Arctan\frac{Y}{X})$ élément de $[0,+\infty[\times[0,2\pi[$.
+\item[-] Si $X>0$ et $Y<0$, $f((\sqrt{X^2+Y^2},2\pi+\Arctan\frac{Y}{X}))=(X,Y)$ avec $(\sqrt{X^2+Y^2},
+2\pi+\Arctan\frac{Y}{X})$ élément de $[0,+\infty[\times[0,2\pi[$.
+\item[-] Si $X<0$ et $Y<0$, $f((\sqrt{X^2+Y^2},\pi+\Arctan\frac{Y}{X}))=(X,Y)$ avec
+$(\sqrt{X^2+Y^2},\pi+\Arctan\frac{Y}{X})$ élément de $[0,+\infty[\times[0,2\pi[$.
+\end{itemize}
+
+\item  Pour tout réel $x$, on a $a\cos(x-\alpha)+b\cos(x-\beta)=(a\cos\alpha+b\cos\beta)\cos
+x+(a\sin\alpha+b\sin\beta)\sin x$.
+
+D'après 1), $f$ est surjective et il existe $(c,\gamma)$ élément de $[0,+\infty[\times[0,2\pi[$ tel que
+$a\cos\alpha+b\cos\beta=c\cos\gamma$ et $a\sin\alpha+b\sin\beta=c\sin\gamma$. Donc,
+
+$$\exists(c,\gamma)\in[0,+\infty[\times[0,2\pi[/\;\forall
+x\in\Rr,\;a\cos(x-\alpha)+b\cos(x-\beta)=c(\cos xcos\gamma+\sin x\sin\gamma)=c\cos(x-\gamma).$$
+\item  $F$ est non vide car contient l'application nulle et est contenu dans $E$. De plus, pour $x$ réel,
+
+\begin{align*}
+a\cos(x-\alpha)+b\cos(2x-\beta)&+a'\cos(x-\alpha')+b'\cos(2x-\beta')\\
+ &=a\cos(x-\alpha)+a'\cos(x-\alpha')+b\cos(2x-\beta)
++b'\cos(2x-\beta')\\
+ &=a''cos(x-\alpha'')+b''\cos(2x-\beta''),
+\end{align*}
+
+pour un certain $(a',b'',\alpha'',\beta'')$ (d'après 2)). $F$ est un sous-espace vectoriel de $E$.
+
+\item 
+
+Pour tout réel $x$, $\cos x=1.\cos(x-0)+0.\cos(2x-0)$ et $x\mapsto\cos x$ est élément de $F$.
+
+Pour tout réel $x$, $\sin x=1.\cos(x-\frac{\pi}{2})+0.\cos(2x-0)$ et $x\mapsto\sin x$ est élément de $F$.
+
+Pour tout réel $x$, $\cos(2x)=0.\cos(x-0)+1.\cos(2x-0)$ et $x\mapsto\cos(2x)$ est élément de $F$.
+
+Pour tout réel $x$, $\sin(2x)=0.\cos(x-0)+1.\cos(2x-\frac{\pi}{2})$ et $x\mapsto\sin(2x)$ est élément de $F$.
+
+D'autre part, pour tout réel $x$, $\cos(2x)=2\cos^2x-1=1-2\sin^2x$ et donc,
+
+$$x\mapsto1\in F\Leftrightarrow x\mapsto\cos^2x\in F\Leftrightarrow x\mapsto\sin^2x\in F.$$
+
+Montrons alors que $1\notin F$.
+
+On suppose qu'il existe $(a,b,\alpha,\beta)\in\Rr^4$ tel que
+
+$$\forall x\in\Rr,\;a\cos(x-\alpha)+b\cos(2x-\beta)=1.$$
+
+En dérivant deux fois, on obtient~:
+
+$$\forall x\in\Rr,\;-a\cos(x-\alpha)-4b\cos(2x-\beta)=0,$$
+
+et donc en additionnant
+
+$$\forall x\in\Rr,\;-3b\cos(2x-\beta)=1,$$
+
+ce qui est impossible (pour $x=\frac{\pi}{4}+\frac{\beta}{2}$, on trouve $0$). Donc, aucune des trois
+dernières fonctions n'est dans $F$.
+
+\item  On a vu que $(x\mapsto\cos x,\;x\mapsto\sin x,\;x\mapsto\cos(2x),\;x\mapsto\sin(2x))$ est une famille
+d'éléments de $F$. Montrons que cette famille est libre.
+
+Soit $(a,b,c,d)\in\Rr^4$.
+
+Supposons que $\forall x\in\Rr,\;a\cos x+b\sin x+c\cos(2x)+d\sin(2x)=0$. En dérivant deux fois, on obtient $\forall
+x\in\Rr,\;-a\cos x-b\sin x-4c\cos(2x)-4d\sin(2x)=0$ et en additionnant~:~$\forall
+x\in\Rr,\;-3c\cos(2x)-3d\sin(2x)=0$. Donc,
+
+$$\forall x\in\Rr,\;\left\{
+\begin{array}{l}
+a\cos x+b\sin x=0\\
+c\cos(2x)+d\sin(2x)=0
+\end{array}
+\right..$$
+
+$x=0$ fournit $a=c=0$ puis $x=\frac{\pi}{4}$ fournit $b=d=0$. Donc, $(x\mapsto\cos x,\;x\mapsto\sin
+x,\;x\mapsto\cos(2x),\;x\mapsto\sin(2x))$ est une famille libre d'éléments de $F$.
+\end{enumerate}
+\fincorrection
+\finexercice

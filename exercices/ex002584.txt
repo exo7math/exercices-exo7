@@ -1,0 +1,64 @@
+\exercice{2584, delaunay, 2009/05/19}
+\enonce
+ Soit $A$ une matrice $2\times 2$ \`a coefficients r\'eels. On suppose que dans chaque colonne de $A$ la somme des coefficients est \'egale \`a $1$. 
+\begin{enumerate}
+ \item Soient $(x_1,x_2)$, $(y_1,y_2)$ deux vecteurs de $\R^2$, on suppose que  
+$$A\begin{pmatrix}x_1 \\  x_2\end{pmatrix}=\begin{pmatrix}y_1 \\  y_2\end{pmatrix}$$ 
+montrer qu'alors 
+$$y_1+y_2=x_1+x_2.$$
+ \item Soit le vecteur $\varepsilon=(1,-1)$, montrer que c'est un vecteur propre de $A$.
+On notera $\lambda$ sa valeur propre.
+ \item Montrer que si $v$ est un vecteur propre de $A$ non colin\'eaire \`a $\varepsilon$, alors la valeur propre
+associ\'ee \`a $v$ est \'egale \`a $1$.
+ \item  Soit $e_1=(1,0)$. Montrer que la matrice, dans la base $(e_1,\varepsilon)$, de l'endomorphisme associ\'e \`a $A$  est de la forme
+$$\begin{pmatrix}1&0  \\ \alpha&\lambda \end{pmatrix},$$
+o\`u $\alpha\in\R$.
+
+En d\'eduire que si $\lambda\neq 1$, alors $A$ est diagonalisable sur $\R$.
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+Soit $A$ une matrice $2\times 2$ \`a coefficients r\'eels. On suppose que dans chaque colonne de $A$ la somme des coefficients est \'egale \`a $1$. 
+\begin{enumerate}
+ \item Soient $(x_1,x_2)$, $(y_1,y_2)$ deux vecteurs de $\R^2$, on suppose que  
+$$A\begin{pmatrix}x_1 \\  x_2\end{pmatrix}=\begin{pmatrix}y_1 \\  y_2\end{pmatrix}$$ 
+montrons qu'alors 
+$$y_1+y_2=x_1+x_2.$$
+
+Compte tenu des hypoth\`eses, la matrice $A$ est de la forme
+$$\begin{pmatrix}a&b \\ 1-a&1-b\end{pmatrix},$$
+o\`u $a$ et $b$ sont des r\'eels. On a alors 
+$$\begin{pmatrix}a&b \\ 1-a&1-b\end{pmatrix}\begin{pmatrix}x_1 \\  x_2\end{pmatrix}=\begin{pmatrix}y_1 \\  y_2\end{pmatrix}\iff
+\left\{\begin{align*}ax_1+bx_2&=y_1 \\  (1-a)x_1+(1-b)x_2&=y_2\end{align*}\right.$$
+ce qui implique $y_1+y_2=x_1+x_2$.
+ \item Montrons que le vecteur $\varepsilon=(1,-1)$ est un vecteur propre de $A$.
+
+Si $A\varepsilon=\begin{pmatrix}y_1 \\  y_2\end{pmatrix}$, alors $y_1+y_2=0$ donc $y_2=-y_1$ et $A\varepsilon=y_1\varepsilon$, ce qui prouve que $\varepsilon$ est un vecteur propre. On peut aussi le voir de la mani\`ere suivante 
+$$A\varepsilon=\begin{pmatrix}a&b \\ 1-a&1-b\end{pmatrix}\begin{pmatrix}1 \\  -1\end{pmatrix}=
+\begin{pmatrix}a-b \\  b-a\end{pmatrix}=(a-b)\varepsilon.$$
+On note $\lambda=(a-b)$ sa valeur propre.
+ \item Montrons que si $v$ est un vecteur propre de $A$ non colin\'eaire \`a $\varepsilon$, alors la valeur propre associ\'ee \`a $v$ est \'egale \`a $1$.
+
+Soit $v=(x_1,x_2)$ un vecteur propre de $A$ non colin\'eaire \`a $\varepsilon$, notons $\mu$ sa valeur propre, on a $Av=\mu v$, et, d'apr\`es la question $1)$, on a $$x_1+x_2=\mu x_1+\mu x_2=\mu(x_1+x_2)$$
+ce qui implique $\mu=1$ car $v$ est suppos\'e non colin\'eaire \`a $\varepsilon$ donc $x_1+x_2\neq0$. 
+
+ \item  Soit $e_1=(1,0)$. Montrons que la matrice, dans la base $(e_1,\varepsilon)$, de l'endomorphisme associ\'e \`a $A$  est de la forme
+$$\begin{pmatrix}1&0  \\ \alpha&\lambda \end{pmatrix},$$
+o\`u $\alpha\in\R$.
+
+Pour cela on \'ecrit $Ae_1$ et $A\varepsilon$ dans la base $(e_1,\varepsilon)$. 
+On a d'une part $A\varepsilon=\lambda\varepsilon$ et, d'autre part,
+$$\begin{pmatrix}a&b \\ 1-a&1-b\end{pmatrix}\begin{pmatrix}1 \\  0\end{pmatrix}=\begin{pmatrix}a \\  1-a\end{pmatrix}
+=\begin{pmatrix}1 \\  0\end{pmatrix}+(a-1)\begin{pmatrix}1 \\  -1\end{pmatrix}.$$ 
+D'o\`u la matrice dans la base $(e_1,\varepsilon)$
+$$\begin{pmatrix}1&0 \\  \alpha&\lambda\end{pmatrix}$$
+o\`u $\alpha=a-1$ et $\lambda=a-b$.
+
+On en d\'eduit que si $\lambda\neq 1$, alors $A$ est diagonalisable sur $\R$.
+Le polyn\^ome caract\'eristique de $A$ est \'egal \`a $(1-X)(\lambda-X)$, ainsi, si $\lambda\neq 1$, il admet deux racines distinctes ce qui prouve que $A$ est diagonalisable.
+\end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,234 @@
+\exercice{5426, exo7, 2010/07/06}
+\enonce[IT]
+Etudier l'existence et la valeur éventuelle des limites suivantes
+\begin{enumerate}
+ \item $\lim_{x\rightarrow \pi/2}(\sin x)^{1/(2x-\pi)}$
+ \item $\lim_{x\rightarrow \pi/2}|\tan x|^{\cos x}$
+ \item $\lim_{n\rightarrow +\infty}\left(\cos(\frac{n\pi}{3n+1})+\sin(\frac{n\pi}{6n+1})\right)^n$
+ \item $\lim_{x\rightarrow 0}(\cos x)^{\ln|x|}$
+ \item $\lim_{x\rightarrow \pi/2}\cos x.e^{1/(1-\sin x)}$
+ \item $\lim_{x\rightarrow \pi/3}\frac{2\cos^2x+\cos x-1}{2\cos^2x-3\cos x+1}$
+ \item $\lim_{x\rightarrow 0}\left(\frac{1+\tan x}{1+\tanh x}\right)^{1/\sin x}$
+ \item $\lim_{x\rightarrow e,\;x<e}(\ln x)^{\ln(e-x)}$
+ \item $\lim_{x\rightarrow 1,\;x>1}\frac{x^x-1}{\ln(1-\sqrt{x^2-1})}$
+ \item $\lim_{x\rightarrow +\infty}\frac{x\ln(\ch x-1)}{x^2+1}$
+ \item $\lim_{x\rightarrow 0,\;x>0}\frac{(\sin x)^x-x^{\sin x}}{\ln(x-x^2)+x-\ln x}$
+ \item $\lim_{x\rightarrow +\infty}\left(\frac{\ln(x+1)}{\ln x}\right)^x$
+ \item $\lim_{x \rightarrow 1/\sqrt{2}}\frac{(\Arcsin x)^2-\frac{\pi^2}{16}}{2x^2-1}$
+ \item $\lim_{x\rightarrow +\infty}\left(\frac{\cos(a+\frac{1}{x})}{\cos a}\right)^x\;(\mbox{où}\;\cos a\neq0)$
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Si $x\in]0,\pi[$, $\sin x>0$, de sorte que la fonction proposée est bien définie sur un voisinage pointé de $\frac{\pi}{2}$ (c'est-à-dire un voisinage de $\frac{\pi}{2}$ auquel on a enlevé le point $\frac{\pi}{2}$) et de plus $(\sin x)^{1/(2x-\pi)}=e^{\ln(\sin x)/(2x-\pi)}$.
+Quand $x$ tend vers $\frac{\pi}{2}$, $\sin x$ tend vers $1$ et donc
+
+$$\ln(\sin x)\sim\sin x-1=-\left(1-\cos\left(\frac{\pi}{2}-x\right)\right)\sim-\frac{1}{2}\left(\frac{\pi}{2}-x\right)^2=-\frac{(2x-\pi)^2}{8}.$$
+Donc, $\frac{\ln(\sin x)}{2x-\pi}\sim-\frac{2x-\pi}{8}\rightarrow0$ et enfin $(\sin x)^{1/(2x-\pi)}=e^{\ln(\sin x)/(2x-\pi)}\rightarrow e^0=1$.
+
+\begin{center}
+\shadowbox{
+$\lim_{x \rightarrow \frac{\pi}{2}}(\sin x)^{1/(2x-\pi)}=1$.
+}
+\end{center}
+ \item  Si $x\in]0,\pi[\setminus\left\{\frac{\pi}{2}\right\}$, $|\tan x|>0$, de sorte que la fonction proposée est bien définie sur un voisinage pointé de $\frac{\pi}{2}$ et de plus $|\tan x|^{\cos x}=e^{\cos x\ln(|\tan x|)}$. Quand $x$ tend vers $\frac{\pi}{2}$, 
+
+$$\ln|\tan x|=\ln|\sin x|-\ln|\cos x|\sim-\ln|\cos x|,$$
+puis $\cos x\ln|\tan x|\sim-\cos x\ln|\cos x|\rightarrow0$ (car, quand $u$ tend vers $0$, $u\ln u\rightarrow 0$).
+Donc, $|\tan x|^{\cos x}=e^{\cos x\ln|\tan x|}\rightarrow e^0=1$.
+
+\begin{center}
+\shadowbox{
+$\lim_{x \rightarrow \frac{\pi}{2}}|\tan x|^{\cos x}=1$.
+}
+\end{center}
+ \item  Quand $n$ tend vers $+\infty$, $\cos\frac{n\pi}{3n+1}+\sin\frac{n\pi}{6n+1}\rightarrow\cos\frac{\pi}{3}+\sin\frac{\pi}{6}=1$ (et on est en présence d'une indétermination du type $1^{+\infty}$). Quand $n$ tend vers $+\infty$,
+
+\begin{align*}\ensuremath
+\cos\frac{n\pi}{3n+1}&=\cos\left(\frac{\pi}{3}\left(1+\frac{1}{3n}\right)^{-1}\right)
+=\cos\left(\frac{\pi}{3}-\frac{\pi}{9n}+o\left(\frac{1}{n}\right)\right)\\
+ &=\frac{1}{2}\cos\left(\frac{\pi}{9n}+o\left(\frac{1}{n}\right)\right)+\frac{\sqrt{3}}{2}\sin\left(\frac{\pi}{9n}+o\left(\frac{1}{n}\right)\right)=\frac{1}{2}\left(1+o\left(\frac{1}{n}\right)\right)+\frac{\sqrt{3}}{2}\left(\frac{\pi}{9n}+o\left(\frac{1}{n}\right)\right)\\
+  &=\frac{1}{2}+\frac{\sqrt{3}\pi}{18n}+o\left(\frac{1}{n}\right)
+\end{align*}
+De même, 
+
+\begin{align*}\ensuremath
+\sin\frac{n\pi}{6n+1}&=\sin\left(\frac{\pi}{6}\left(1+\frac{1}{6n}\right)^{-1}\right)=\sin\left(\frac{\pi}{6}-\frac{\pi}{36n}
++o\left(\frac{1}{n}\right)\right)\\
+ &=\frac{1}{2}\cos\left(\frac{\pi}{36n}+o\left(\frac{1}{n}\right)\right)-\frac{\sqrt{3}}{2}
+ \sin\left(\frac{\pi}{36n}+o\left(\frac{1}{n}\right)\right)
+ =\frac{1}{2}-\frac{\sqrt{3}\pi}{72n}+o\left(\frac{1}{n}\right).
+\end{align*}
+Puis, 
+
+$$n\ln\left(\cos\frac{n\pi}{3n+1}+\sin\frac{n\pi}{6n+1}\right)=n\ln\left(1+\frac{\sqrt{3}\pi}{24n}+ o\left(\frac{1}{n}\right)\right)= n\left(\frac{\sqrt{3}\pi}{24n}+o\left(\frac{1}{n}\right)\right)=\frac{\sqrt{3}\pi}{24}+o(1),$$
+et donc
+
+\begin{center}
+\shadowbox{
+$\lim_{n\rightarrow +\infty}\left(\cos\frac{n\pi}{3n+1}+\sin\frac{n\pi}{6n+1}\right)^n=e^{\sqrt{3}\pi/24}$.
+}
+\end{center}
+ \item  Quand $x$ tend vers $0$, $\ln(\cos x)\sim\cos x-1\sim-\frac{x^2}{2}$. Puis, $\ln|x|\ln(\cos x)\sim-\frac{x^2}{2}\ln|x|\rightarrow0$.
+Donc, $(\cos x)^{\ln|x|}\rightarrow e^0=1$.
+
+\begin{center}
+\shadowbox{
+$\lim_{x\rightarrow 0}(\cos x)^{\ln|x|}=1$.
+}
+\end{center}
+ \item  Quand $x$ tend vers $\frac{\pi}{2}$, $\frac{1}{1-\sin x}$ tend vers $+\infty$. Posons $h=x-\frac{\pi}{2}$ puis $\varepsilon=\mbox{sgn}(h)$, de sorte que 
+
+$$(\cos x)e^{1/(1-\sin x)}=-\varepsilon|\sin h|e^{1/(1-\cos h)}=-\varepsilon e^{\ln|\sin h|+\frac{1}{1-\cos h}}.$$
+Or, quand $h$ tend vers $0$, 
+
+$$\ln|\sin h|+\frac{1}{1-\cos h}=\frac{(1-\cos h)\ln|\sin h|+1}{1-\cos h}=\frac{(-\frac{h^2}{2}+o(h^2))(\ln|h|+o(\ln|h|))+1}{\frac{h^2}{2}+o(h^2)}=\frac{1+o(1)}{\frac{h^2}{2}+o(h^2)}
+\sim\frac{2}{h^2},$$ et donc, quand $h$ tend vers $0$, $\ln|\sin h|+\frac{1}{1-\cos h}\sim\frac{2}{h^2}\rightarrow+\infty$. Par suite,
+
+\begin{center}
+\shadowbox{
+$\lim_{x\rightarrow \pi/2,\;x<\pi/2}\cos(x)e^{1/(1-\sin x)}=+\infty$ et $\lim_{x\rightarrow \pi/2,\;x>\pi/2}\cos(x)e^{1/(1-\sin x)}=-\infty$.
+}
+\end{center}
+
+ \item  Pour $x\in\Rr$, $2\cos^2x-3\cos x+1=(2\cos x-1)(\cos x-1)$ et donc 
+
+$$\forall x\in\Rr,\;2\cos^2x-3\cos x+1=0\Leftrightarrow x\in\left(\pm\frac{\pi}{3}+2\pi\Zz\right)\cup2\pi\Zz.$$
+Pour $x\notin\left(\pm\frac{\pi}{3}+2\pi\Zz\right)\cup2\pi\Zz$,
+  
+$$\frac{2\cos^2x+\cos x-1}{2\cos^2x-3\cos x+1}=\frac{(2\cos x-1)(\cos x+1)}{(2\cos x-1)(\cos x-1)}
+=\frac{\cos x+1}{\cos x-1},$$
+et donc, $\lim_{x\rightarrow \pi/3}\frac{2\cos^2x+\cos x-1}{2\cos^2x-3\cos x+1}=\frac{\frac{1}{2}+1}{\frac{1}{2}-1}=-3$.
+
+\begin{center}
+\shadowbox{
+$\lim_{x\rightarrow \pi/3}\frac{2\cos^2x+\cos x-1}{2\cos^2x-3\cos x+1}=-3$.
+}
+\end{center}
+ \item  Quand $x$ tend vers $0$, 
+ 
+$$\frac{1+\tan x}{1+\tanh x}=\frac{1+x+o(x)}{1+x+o(x)}=(1+x+o(x)(1-x+o(x))=1+o(x).$$
+Puis, quand $x$ tend vers $0$,
+
+$$\frac{1}{\sin x}\ln\left(\frac{1+\tan x}{1+\tanh x}\right)=\frac{\ln(1+o(x))}{x+o(x)}=\frac{o(x)}{x+o(x)}=\frac{o(1)}{1+o(1)}\rightarrow0.$$
+Donc, 
+
+\begin{center}
+\shadowbox{
+$\lim_{x\rightarrow 0}\left(\frac{1+\tan x}{1+\tanh x}\right)^{1/\sin x}=1$.
+}
+\end{center}
+
+ \item  Quand $x$ tend vers $e$ par valeurs inférieures, $\ln(x)$ tend vers $1$ et donc
+
+$$\ln(\ln x)\sim\ln x-1=\ln\left(\frac{x}{e}\right)\sim\frac{x}{e}-1=-\frac{1}{e}(e-x),$$
+puis,
+
+$$\ln(e-x)\ln(\ln x)\sim-\frac{1}{e}(e-x)\ln(e-x)\rightarrow 0,$$
+et donc $(\ln x)^{\ln(e-x)}=e^{\ln(e-x)\ln(\ln x)}\rightarrow 1$.
+
+\begin{center}
+\shadowbox{
+$\displaystyle\lim_{\substack{x\rightarrow e\\ x<e}}(\ln x)^{\ln(e-x)}=1$.
+}
+\end{center}
+
+ \item  Quand $x$ tend vers $1$ par valeurs supérieures, $x\ln x\rightarrow0$, et donc
+
+$$x^x-1=e^{x\ln x}-1\sim x\ln x\sim1\times(x-1)=x-1.$$
+Ensuite, $\sqrt{x^2-1}$ tend vers $0$ et donc
+
+$$\ln(1-\sqrt{x^2-1})\sim-\sqrt{x^2-1}=-\sqrt{(x-1)(x+1)}\sim-\sqrt{2(x-1)}.$$
+Finalement, quand $x$ tend vers $1$ par valeurs supérieures, 
+
+$$\frac{x^x-1}{\ln(1-\sqrt{x^2-1})}\sim\frac{x-1}{-\sqrt{2(x-1)}}=-\frac{1}{\sqrt{2}}\sqrt{x-1}\rightarrow0.$$
+
+\begin{center}
+\shadowbox{
+$\displaystyle\lim_{\substack{x\rightarrow 1\\ x>e}}\frac{x^x-1}{\ln(1-\sqrt{x^2-1})}=0$.
+}
+\end{center}
+ \item  Quand $x$ tend vers $+\infty$, 
+
+$$\ln(\ch x-1)\sim\ln(\ch x)\sim\ln\left(\frac{e^x}{2}\right)=x-\ln2\sim x,$$ et donc 
+
+$$\frac{x\ln(\ch x-1)}{x^2+1}\sim\frac{x\times x}{x^2}=1.$$
+
+\begin{center}
+\shadowbox{
+$\displaystyle\lim_{x\rightarrow+\infty}\frac{x\ln(\ch x-1)}{x^2+1}=1$.
+}
+\end{center}
+\item  Quand $x$ tend vers $0$ par valeurs supérieures,
+
+$$\ln(x-x^2)+x-\ln x=x+\ln(1-x)=-\frac{x^2}{2}+o(x^2)\sim-\frac{x^2}{2}.$$
+Ensuite,
+
+$$(\sin x)^x=e^{x\ln(\sin x)}=e^{x\ln(x-\frac{x^3}{6}+o(x^3))}=e^{x\ln x}e^{x\ln(1-\frac{x^2}{6}+o(x^2))}=x^xe^{-\frac{x^3}{6}+o(x^3)}=x^x\left(1-\frac{x^3}{6}+o(x^3)\right),$$
+et,
+
+$$x^{\sin x}=e^{(x-\frac{x^3}{6}+o(x^3))\ln x}=e^{x\ln x}e^{-\frac{x^3\ln x}{6}+o(x^3\ln x)}=x^x\left(1-\frac{x^3\ln x}{6}+o(x^3\ln x)\right).$$
+Donc,
+
+$$(\sin x)^x-x^{\sin x}=x^x\left(1-\frac{x^3}{6}+o(x^3)\right)-x^x\left(1-\frac{x^3\ln x}{6}+o(x^3\ln x)\right)=x^x\left(\frac{x^3\ln x}{6}+o(x^3\ln x)\right)\sim\frac{x^3\ln x}{6},$$
+et enfin
+
+$$\frac{(\sin x)^x-x^{\sin x}}{\ln(x-x2^)+x-\ln x}\sim\frac{x^3\ln x/6}{-x^2/2}=-\frac{x\ln x}{3}\rightarrow0.$$
+
+\begin{center}
+\shadowbox{
+$\displaystyle\lim_{\substack{x\rightarrow 0\\ x>0}}\frac{(\sin x)^x-x^{\sin x}}{\ln(x-x2^)+x-\ln x}=0$.
+}
+\end{center}
+\item Quand $x$ tend vers $+\infty$,
+
+$$\ln(x+1)=\ln x+\ln\left(1+\frac{1}{x}\right)=\ln x+\frac{1}{x}+o\left(\frac{1}{x}\right),$$
+puis
+ 
+$$\frac{\ln(x+1)}{\ln x}=1+\frac{1}{x\ln x}+o\left(\frac{1}{x\ln x}\right).$$
+ 
+
+Ensuite,
+
+$$x\ln\left(\frac{\ln(x+1)}{\ln x}\right)=x\ln\left(1+\frac{1}{x\ln x}+o\left(\frac{1}{x\ln x}\right)\right)=\frac{1}{\ln x}+o\left(\frac{1}{\ln x}\right)\rightarrow0.$$
+Donc, $\left(\frac{\ln(x+1)}{\ln x}\right)^x=\text{exp}\left(x\ln\left(\frac{\ln(x+1)}{\ln x}\right)\right)\rightarrow e^0=1$.
+
+\begin{center}
+\shadowbox{
+$\displaystyle\lim_{x\rightarrow+\infty}\left(\frac{\ln(x+1)}{\ln x}\right)^x=1$.
+}
+\end{center}
+ \item Quand $x$ tend vers $\frac{1}{\sqrt{2}}$,
+
+\begin{align*}\ensuremath
+\frac{(\Arcsin x)^2-\frac{\pi^2}{16}}{2x^2-1}&=\frac{1}{2}\times\frac{\Arcsin x+\frac{\pi}{4}}{x+\frac{1}{\sqrt{2}}}
+\times\frac{\Arcsin x-\frac{\pi}{4}}{x-\frac{1}{\sqrt{2}}}\sim\frac{1}{2}\times\frac{\frac{\pi}{4}+\frac{\pi}{4}}{\frac{1}{\sqrt{2}}+\frac{1}{\sqrt{2}}}\times\frac{\Arcsin x-\frac{\pi}{4}}{x-\frac{1}{\sqrt{2}}}=\frac{\pi}{4\sqrt{2}}\frac{\Arcsin x-\frac{\pi}{4}}{x-\frac{1}{\sqrt{2}}}\\
+ &\rightarrow\frac{\pi}{4\sqrt{2}}(\Arcsin)'(\frac{1}{\sqrt{2}})=\frac{\pi}{4\sqrt{2}}\frac{1}{\sqrt{1-\frac{1}{2}}}=\frac{\pi}{4}.
+\end{align*}
+
+\begin{center}
+\shadowbox{
+$\lim_{x \rightarrow 1/\sqrt{2}}\frac{(\Arcsin x)^2-\frac{\pi^2}{16}}{2x^2-1}=\frac{\pi}{4}
+$.
+}
+\end{center}
+ \item Quand $x$ tend vers $+\infty$,
+
+\begin{align*}\ensuremath
+x\ln\left(\frac{\cos\left(a+\frac{1}{x}\right)}{\cos a}\right)&=x\ln\left(\cos\frac{1}{x}-\tan a\sin\frac{1}{x}\right)=x\ln\left(1-\frac{\tan a}{x}+o\left(\frac{1}{x}\right)\right)=x\left(-\frac{\tan a}{x}+o\left(\frac{1}{x}\right)\right)\\
+ &=-\tan a+o(1),
+\end{align*}
+et donc $\lim_{x\rightarrow +\infty}\left(\frac{\cos\left(a+\frac{1}{x}\right)}{\cos a}\right)^x=e^{-\tan a}$.
+
+\begin{center}
+\shadowbox{
+$\lim_{x\rightarrow +\infty}\left(\frac{\cos\left(a+\frac{1}{x}\right)}{\cos a}\right)^x=e^{-\tan a}
+$.
+}
+\end{center}
+\end{enumerate}
+\fincorrection
+\finexercice

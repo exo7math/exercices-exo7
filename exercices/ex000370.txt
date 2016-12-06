@@ -1,0 +1,64 @@
+\exercice{370, cousquer, 2003/10/01}
+\video{ndl3qcjN2vw} 
+\enonce
+Chercher tous les polynômes $P$ tels que $P+1$ soit divisible par $(X-1)^4$ et $P-1$ par $(X+1)^4$. 
+
+\medskip
+ 
+
+\emph{Indications.} 
+Commencer par trouver une solution particulière $P_0$ avec l'une des méthode suivantes :
+\begin{enumerate}
+\item à partir de la relation de Bézout entre  $(X-1)^4$ et $(X+1)^4$;
+\item en considérant le polynôme dérivé $P_0'$ et en cherchant un polynôme de degré minimal.
+\end{enumerate}
+Montrer que $P$ convient si et seulement si le polynôme $P-P_0$ est divisible par 
+$(X-1)^4(X+1)^4$, et en déduire toutes les solutions du problème.
+\finenonce 
+
+\noindication
+
+\correction
+\
+\begin{enumerate}
+\item On remarque que si $P$ est solution, alors $P+1=(X-1)^4A$ et par ailleurs $P-1=(X+1)^4B$, ce qui donne $1=\frac{A}{2}(X-1)^4+\frac{-B}{2}(X+1)^4$. Cherchons des polynômes $A$ et $B$ qui conviennent: pour cela, on écrit la relation de Bézout entre $(X-1)^4$ et $(X+1)^4$ qui sont premiers entre eux, et on obtient 
+$$\frac{A}{2}=\frac{5}{32}X^3+\frac{5}{8}X^2+\frac{29}{32}X+\frac{1}{2}$$
+$$\frac{-B}{2}=-\frac{5}{32}X^3+\frac{5}{8}X^2-\frac{29}{32}X+\frac{1}{2}$$
+On a alors par construction
+$$(X-1)^4A-1=2\bigg(1+(X+1)^4\frac{-B}{2}\bigg)=1+(X+1)^4B$$
+et $P_0=(X-1)^4A-1$ convient. En remplaçant, on obtient après calculs :
+$$P_0 = \frac{5}{16}X^7-\frac{21}{16}X^5+\frac{35}{16}X^3-\frac{35}{16}X$$
+
+
+\item Si $(X-1)^4$ divise $P+1$, alors $1$ est racine de multiplicité au moins $4$
+de $P+1$, et donc racine de multiplicité au moins $3$ de $P'$ : 
+alors $(X-1)^3$ divise $P'$. De même $(X+1)^3$ divise $P'$. 
+Comme  $(X-1)^3$ et  $(X+1)^3$ sont premiers entre eux, nécessairement $(X-1)^3(X+1)^3$ divise $P'$. 
+Cherchons un polynôme de degré minimal : on remarque que les primitives de 
+$$\lambda(X-1)^3(X+1)^3=\lambda(X^2-1)^3=\lambda(X^6-3X^4+3X^2-1)$$
+sont de la forme $P(X)=\lambda(\frac{1}{7}X^7-\frac{3}{5}X^5+X^3-X+a)$. 
+Si $P$ convient, nécessairement $1$ est racine de $P+1$ et $-1$ est racine de $P-1$, ce qui donne
+$\lambda(\frac{-16}{35}+a)=-1$ et $\lambda(\frac{16}{35}+a)=1$. 
+D'où $\lambda a=0$ et comme on cherche $P$ non nul, il faut $a=0$ et $\lambda=\frac{35}{16}$. 
+On vérifie que 
+$$P_0(X)=\frac{35}{16}(\frac{1}{7}X^7-\frac{3}{5}X^5+X^3-X)=\frac{5}{16}X^7-\frac{21}{16}X^5
++\frac{35}{16}X^3-\frac{35}{16}X$$
+ est bien solution du problème: le polynôme $A=P_0+1$ admet $1$ comme racine, i.e. $A(1)=0$, 
+ et sa dérivée admet $1$ comme racine triple donc $A'(1)=A''(1)=A'''(1)=0$, 
+ ainsi $1$ est racine de multiplicité au moins $4$ de $A$ et donc $(X-1)^4$ divise $A=P+1$. 
+ De même, $(X+1)^4$ divise $P-1$.
+\end{enumerate}
+
+
+Supposons que $P$ soit une solution du problème. On note toujours $P_0$ la solution particulière obtenue ci-dessus.
+Alors $P+1$ et $P_0+1$ sont divisibles par $(X-1)^4$, et $P-1$ et $P_0-1$ sont divisibles par $(X+1)^4$. 
+Ainsi $P-P_0=(P+1)-(P_0+1)=(P-1)-(P_0-1)$ est divisible par $(X-1)^4$ et par $(X+1)^4$. 
+Comme $(X-1)^4$ et $(X+1)^4$ sont premiers entre eux, nécessairement $P-P_0$ est divisible 
+par $(X-1)^4(X+1)^4$. Réciproquement, si $P=P_0+(X-1)^4(X+1)^4A$, alors $P+1$ est 
+bien divisible par $(X-1)^4$ et $P-1$ est divisible par $(X+1)^4$. 
+
+Ainsi les solutions sont exactement les polynômes de la forme
+$$P_0(X)+(X-1)^4(X+1)^4A(X)$$
+où $P_0$ est la solution particulière trouvée précédemment, et $A$ un polynôme quelconque.
+\fincorrection
+\finexercice

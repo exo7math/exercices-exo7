@@ -1,0 +1,29 @@
+\exercice{3188, quercia, 2010/03/08}
+
+\enonce[Centrale MP 2002]
+D{\'e}terminer tous les polyn{\^o}mes $P$ tels que $P(\C)\subset\R$
+puis tels que $P(\Q )\subset\Q$ et enfin tels que $P(\Q )=\Q$.
+\finenonce
+
+\noindication
+
+\correction
+Tout polyn{\^o}me {\`a} coefficients complexes non constant est surjectif sur~$\C$
+donc $P(\C)\subset\R \Leftrightarrow P = a$ (constante r{\'e}elle).
+
+On a par interpolation de Lagrange~: $P(\Q)\subset\Q \Leftrightarrow P\in\Q[X]$.
+
+Montrons que $P(\Q)=\Q \Leftrightarrow P=aX+b$ avec $a\in\Q^*$, $b\in\Q$~: la condition
+est clairement suffisante. Pour prouver qu'elle est n{\'e}cessaire, consid{\'e}rons
+un polyn{\^o}me {\'e}ventuel $P$ de degr{\'e} $n\ge 2$ tel que $P(\Q)=\Q$.
+On sait d{\'e}j{\`a} que $P$ est {\`a} coefficients rationnels, donc on peut
+l'{\'e}crire sous la forme~: $P = \frac{a_0+a_1X+\dots+a_nX^n}d$
+avec $a_i\in\Z$, $a_n\ne 0$ et $d\in\N^*$. Soit $\pi$ un nombre premier ne divisant
+ni $a_n$ ni $d$, et $x=p/q$ (forme irr{\'e}ductible) un rationnel tel que
+$P(x) = 1/\pi$. On a donc~:
+$\pi(a_0q^n+\dots+a_np^n) = dq^n$ ce qui implique que $\pi$ divise $q$.
+Il vient alors~: $a_np^n = dq^n/\pi - a_0q^n - \dots -a_{n-1}qp^{n-1}$ ce qui
+est impossible puisque $\pi$ est facteur du second membre ($n\ge 2$) mais
+pas du premier ($p\wedge q = 1$).
+\fincorrection
+\finexercice 

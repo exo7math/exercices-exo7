@@ -1,0 +1,178 @@
+\exercice{6809, gijs, 2011/10/16}
+\enonce
+{\it Introduction.\/}
+Si $A$ est une matrice $n\times n$ à coefficients
+réels, on sait que les solutions de l'équation 
+\begin{equation}
+\varphi'(t) = A\varphi(t)
+\tag{*}
+\end{equation}
+sont définies (au moins) sur l'intervalle $[0,\infty[$
+(et à valeurs dans $\Rr^n$). Dans la question 1.
+on vous demande de démontrer que, sous certaines
+hypothèses sur $A$, on a $ \lim_{t\to\infty}
+\varphi(t) = 0$.
+
+Le but des questions 2. et 3. est de
+démontrer les mêmes résultats pour l'équation
+perturbée
+\begin{equation}
+\varphi'(t) = A\varphi(t) + g(\varphi(t))
+\tag {**}
+\end{equation}
+où $g:\Rr^n \to \Rr^n$ est une fonction de classe $C^1$
+vérifiant $g(0) = 0$ et $g'(0) = 0$.
+
+\medskip
+
+Les questions 1. et 2. sont
+indépendantes. La question 3. utilise des
+résultats des questions 1. et 2.
+
+\begin{enumerate}
+\item
+Soit $M(n,\Rr)$ l'ensemble des matrices carrées 
+$n\times n$ à coefficients réels et $M(n,\Cc)$
+l'ensemble des matrices  $n\times n$ à
+coefficients complexes. Soit $\| \quad \| : \Cc^n \to
+\Rr$ la norme définie par $\|(x_1, \ldots, x_n)\|
+=  \max_{i} |x_i|$. 
+
+  \begin{enumerate}
+  \item
+Démontrer
+que pour tout $x\in\Cc^n$, $B\in M(n,\Cc)$ on a~:
+$$  \max_{i=1,\ldots,n} \left|{\sum_{j=1}^n B_{ij}x_j}\right|
+\le (\max_i \sum_j |B_{ij}|) \cdot (\max_j
+|x_j|)\ ,$$ 
+c'est-à-dire $\|Bx\| \le (\max_i
+\sum_j |B_{ij}) \cdot \|x\|$.
+
+
+  \item Soit $D\in M(n,\Cc)$ une matrice diagonale avec
+$(\lambda_1, \ldots,\lambda_n)$ sur la diagonale. Montrer
+que $\forall x\in \Cc^n$~: $\|Dx\| \le (\max_i 
+|\lambda_i|) \cdot \|x\|$.
+
+
+  \item
+Soit $A\in M(n,\Cc)$ diagonalisable et  $\lambda_1,
+\ldots,\lambda_n $ ses valeurs propres. Soit $\alpha =
+\max_i \Re \lambda_i$. Montrer qu'il existe une constante
+$K>0$ telle que $\forall x\in \Cc^n$, $\forall t\in
+[0,\infty[$~: $\|e^{tA}x\| \le K e^{\alpha t}
+\|x\|$.
+
+  \item
+Soit $A\in M(n,\Rr)$ diagonalisable sur $\Cc$ et
+$\lambda_1,
+\ldots,\lambda_n $ ses valeurs propres  (attention, ici
+$A$ est  à coefficients réels). Soit en plus $\alpha =
+\max_i \Re \lambda_i$  strictement inférieur à 0.
+Déduire de ce qui précède que si $\varphi(t)$ est
+solution de l'équation (*), alors $ \lim_{t\to
+\infty} \varphi(t) = 0$.
+  \end{enumerate}
+
+\item
+Soit $g:\Rr^n \to \Rr^n$ comme dans l'introduction.
+  \begin{enumerate}
+  \item
+ Démontrer que $\forall \epsilon>0$, $\exists
+\eta>0$, $\forall x,y\in \Rr^n$~: 
+$\|x\| < \eta$,
+$\|y\| < \eta$ $\Longrightarrow$ $\|g(x) - g(y)\|
+\le \epsilon \cdot \|x-y\|$.
+
+
+  \item
+Quelle est la solution de domaine de définition
+maximal (à préciser) de l'équa\-tion (**)
+vérifiant la condition initiale $\varphi(0) = 0$~?
+  \item
+Soit $I\subset \Rr$ un intervalle contenant 0. Démontrer
+qu'une application continue $\varphi:I \to \Rr^n$ est
+solution de l'équation (**) avec condition initiale
+$\varphi(0) = {x_0\in \Rr^n}$ si et seulement si on a sur
+$I$~: $$
+\varphi(t) = e^{tA} x_0 + \int_0^t e^{(t-s)A}
+g(\varphi(s))\,ds
+\ .
+$$
+Indication~: pour $\Longrightarrow$ on pourra considérer
+la fonction $\psi(t) = e^{-tA} \varphi(t)$.
+  \end{enumerate}
+
+\item
+Soit $g:\Rr^n \to \Rr^n$ comme dans l'introduction~;  soit
+$A$ et $\alpha$ comme dans 1.(d) et $K$ comme dans
+1.(c) Soit $\beta\in \Rr$ tel que
+$\alpha < \beta < 0$. En posant $\epsilon =
+(\beta-\alpha)/K$, la question 2.(a) nous donne un
+$\eta>0$. Soit finalement $x_0\in \Rr^n$ tel que $\|x_0\| < \eta/K$.
+
+On définit une suite de fonction $\varphi_p : [0, \infty[
+\ \to \Rr^n$ par les formules ${\varphi_0(t) =
+e^{tA} x_0}$ et 
+$$
+\varphi_{p+1}(t) = e^{tA} x_0 + \int_0^t e^{(t-s)A}
+g(\varphi_p(s)) \, ds
+\ .
+$$
+  \begin{enumerate}
+  \item
+Démontrer par récurrence que $\forall p\in \Nn$,
+$\forall t\in [0,\infty[$~: $\|\varphi_p(t)\| \le K
+e^{t\beta} \|x_0\|$.
+  \item
+Démontrer que $\chi(t) = \|\varphi_1(t) -
+\varphi_0(t)\|$ est une fonction bornée sur
+$[0,\infty[\,$.
+  \item
+Démontrer par récurrence que $\forall p\in \Nn$,
+$\forall t\in [0,\infty[$~: 
+$$
+\|\varphi_{p+1}(t) - \varphi_p(t)\|\le \left(
+\frac{\beta-\alpha}{-\alpha } \right)^p \cdot
+\sup_{s\in [0,\infty[} \|\varphi_1(s) - \varphi_0(s)\|
+\ .
+$$
+  \item
+En déduire que $\forall p,q\in \Nn$, $\forall t\in
+[0,\infty[$~: 
+$$
+\|\varphi_{p+q}(t) - \varphi_p(t)\| \le
+\left(\frac{\beta-\alpha}{-\alpha } \right)^p \cdot
+\left(1 - \frac{\beta-\alpha}{-\alpha } \right)^{-1}
+\cdot \sup_{s\in [0,\infty[} \| \varphi_1(s) -
+\varphi_0(s)\| \ .
+$$
+  \item
+Démontrer que la suite $(\varphi_p)$ converge vers une
+fonction $\varphi:[0,\infty[\ \to \Rr^n$ et que la
+convergence est uniforme.
+  \item
+Démontrer que $\varphi$ est continue et solution de
+l'équation (**) vérifiant $\varphi(0) = x_0$.
+  \item
+Démontrer que $\forall t\in [0,\infty[$~: $\|
+\varphi(t)\| \le K e^{t\beta} \|x_0\|$.
+  \item
+Déduire de ce qui précède qu'il existe un voisinage
+$U$ de $0\in \Rr^n$ (à préciser) tel que $\forall
+x_0\in U$ il existe un intervalle $I\subset \Rr$ et une
+fonction $\varphi:I \to \Rr^n$ vérifiant
+    \begin{enumerate} 
+    \item $\varphi$ est l'unique solution de (**) vérifiant $\varphi(0) = x_0$,
+    \item $[0,\infty[\ \subset I$,
+    \item $\lim_{t\to \infty} \varphi(t) = 0$.
+    \end{enumerate}
+  \end{enumerate}
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\nocorrection
+
+\finexercice

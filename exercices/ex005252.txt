@@ -1,0 +1,53 @@
+\exercice{5252, rouget, 2010/07/04}
+\enonce[***I]
+ Déterminer un équivalent le plus simple possible de chacune des suites suivantes quand $n$ tend vers $+\infty$.
+
+$$
+\begin{array}{lllll}
+1)\;\Arccos\frac{n-1}{n}&2)\;\Arccos\frac{1}{n}&3)\;\ch(\sqrt{n})&4)\;\left(1+\frac{1}{n}\right)^n&5)\;\frac{\Argch n}{\sqrt{n^4+n^2-1}}\\
+6)\;(1+\sqrt{n})^{-\sqrt{n}}&7)\;\ln(\cos\frac{1}{n})(\ln\sin\frac{1}{n})&8)\;(\frac{\pi}{2})^{3/5}-(\Arctan n)^{3/5}
+&9)\;\sqrt{1+\frac{(-1)^n}{\sqrt{n}}}-1
+\end{array}
+$$
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  Tout d'abord, pour $n\geq1$, $\frac{n-1}{n}$ existe et est élément de $[-1,1]$. Donc, $\Arccos\frac{n-1}{n}$ existe pour tout entier naturel non nul $n$.
+
+Quand $n$ tend vers $+\infty$, $\frac{n-1}{n}$ tend vers $1$ et donc $\Arccos\frac{n-1}{n}$ tend vers $0$. Mais alors,
+
+$$\Arccos\frac{n-1}{n}\sim\sin(\Arccos\frac{n-1}{n})=\sqrt{1-(\frac{n-1}{n})^2}=\frac{\sqrt{2n-1}}{n}\sim\frac{\sqrt{2}}{\sqrt{n}}.$$
+
+\item  $\Arccos\frac{1}{n}$ tend vers $1$ et donc $\Arccos\frac{1}{n}\sim1$.
+
+\item  $\ch(\sqrt{n})=\frac{1}{2}(e^{\sqrt{n}}+e^{-\sqrt{n}})\sim\frac{1}{2}e^{\sqrt{n}}$.
+
+\item  $n\ln(1+\frac{1}{n})\sim n.\frac{1}{n}=1$ et donc, $\left(1+\frac{1}{n}\right)^n=e^{n\ln(1+1/n)}$ tend vers $e$. Par suite, $\left(1+\frac{1}{n}\right)^n\sim e$.
+
+\item  $\Argch n$ existe pour $n\geq1$ et comme, pour $n\geq1$, $n^4+n^2-1\geq n^4>0$, $\frac{\Argch n}{\sqrt{n^4+n^2-1}}$ existe pour $n\geq1$.
+
+$$\Argch n=\ln(n+\sqrt{n^2-1})\sim\ln(n+n)=\ln(2n)=\ln n+\ln2\sim\ln n.$$
+
+Donc, $\frac{\Argch n}{\sqrt{n^4+n^2-1}}\sim\frac{\ln n}{\sqrt{n^4}}=\frac{\ln n}{n^2}$.
+
+\item   $-\sqrt{n}\ln(\sqrt{n}+1)=-\sqrt{n}\ln(\sqrt{n})-\sqrt{n}\ln(1+\frac{1}{\sqrt{n}})=-\sqrt{n}\ln(\sqrt{n})-\sqrt{n}(\frac{1}{\sqrt{n}}+o(\frac{1}{\sqrt{n}}))=-\sqrt{n}\ln(\sqrt{n})-1+o(1)$, et donc
+
+$$(1+\sqrt{n})^{-\sqrt{n}}=e^{-\sqrt{n}\ln(\sqrt{n})-1+o(1)}\sim e^{-\sqrt{n}\ln(\sqrt{n})-1}=\frac{1}{e}\frac{1}{\sqrt{n}^{\sqrt{n}}}.$$
+\item 
+
+$$\ln(\cos\frac{1}{n})(\ln\sin\frac{1}{n})\sim(\cos\frac{1}{n}-1)\ln(\frac{1}{n})\sim(-\frac{1}{2n^2})(-\ln n)=\frac{\ln n}{2n^2}.$$
+
+\item  $(\Arctan n)^{3/5}=(\frac{\pi}{2}-\Arctan\frac{1}{n})^{3/5}=(\frac{\pi}{2})^{3/5}(1-\frac{2}{\pi}(\frac{1}{n}+o(\frac{1}{n})))^{3/5}=(\frac{\pi}{2})^{3/5}(1-\frac{6}{5n\pi}+o(\frac{1}{n}))$, et donc
+
+$$(\frac{\pi}{2})^{3/5}-(\Arctan n)^{3/5}=(\frac{\pi}{2})^{3/5}(1-1+\frac{6}{5n\pi}+o(\frac{1}{n}))
+\sim(\frac{\pi}{2})^{3/5}\frac{6}{5n\pi}$$
+
+\item  Tout d'abord, pour $n\geq1$, $\left|\frac{(-1)^n}{\sqrt{n}}\right|=\frac{1}{\sqrt{n}}\leq 1$, et donc $1+\frac{(-1)^n}{\sqrt{n}}\geq0$, puis $\sqrt{1+\frac{(-1)^n}{\sqrt{n}}}-1$ existe. Ensuite, quand $n$ tend vers $+\infty$,
+
+$$\sqrt{1+\frac{(-1)^n}{\sqrt{n}}}-1\sim\frac{(-1)^n}{2\sqrt{n}}.$$
+\end{enumerate}
+\fincorrection
+\finexercice

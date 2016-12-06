@@ -1,0 +1,26 @@
+\exercice{5161, rouget, 2010/06/30}
+\enonce[***I]
+Montrer que $\forall n\in\Nn,\;(n\geq3\Rightarrow\sqrt{n}<\sqrt[n]{n!})$.
+
+(commencer par vérifier que pour $k=2,3,...,n$,
+on a~:~$(n-k+1)k>n$).
+\finenonce
+
+\noindication
+
+\correction
+Soit $n\in\Nn\setminus\{0,1,2\}$.
+
+$$n!^2=\prod_{k=1}^{n}(n+1-k)\prod_{k=1}^{n}k=\prod_{k=1}^{n}k(n+1-k).$$
+
+Maintenant, la fonction $x\mapsto x(n+1-x)$ est strictement croissante sur $[0,\frac{n+1}{2}]$ et
+strictement décroissante sur $[\frac{n+1}{2},n+1]$. Puisque $f(1)=f(n)=n$, on en déduit que pour $x\in[2,n-1]$,
+$f(x)>n$. Puisque $n\geq3$, on a $n-1\geq2$ et on peut écrire
+
+$$n!^2=n^2\prod_{k=2}^{n-1}k(n+1-k)>n^2\prod_{k=2}^{n-2}n=n^n,$$
+
+et donc,
+
+$$\sqrt[n]{n!}=(n!^2)^{1/(2n)}>(n^n)^{1/2n}=\sqrt{n}.$$
+\fincorrection
+\finexercice

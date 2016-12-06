@@ -1,0 +1,26 @@
+\exercice{6941, ruette, 2013/01/24}
+\enonce[Fonction de répartition]
+
+Soit $X$ une variable aléatoire réelle positive intégrable. Montrer que
+$\displaystyle E(X)=\int_0^{+\infty}(1-F(t))\,dt$.
+\finenonce
+\noindication
+\correction
+$\displaystyle 1-F(t)=P(X>t)=P_X(]t,+\infty[)=\int_{]t,+\infty[}1 \,dP_X(x)$.
+Donc
+$$ \int_0^{+\infty}(1-F(t))\,dt=\int_0^{+\infty}\left(\int_{]t,+\infty[}1 \,dP_X(x)\right)dt.$$  
+On applique Fubini-Tonelli, le domaine d'intégration
+étant $\{(t,x)\in\Rr^2 \mid 0\leq t<x\}$ :
+$$ \int_0^{+\infty}(1-F(t))\,dt=\int_{]0,+\infty[}\left(\int_{[0,x[}
+1\,dt\right)dP_X(x)=\int_{]0,+\infty[} xdP_X(x).$$
+Par ailleurs, comme $X$ est positive, 
+$$E(X)=\displaystyle\int_0^{+\infty}x\,dP_X(x),
+\quad\mbox{donc}\quad E(X)=0 \times P_X(\{0\})+\int_{]0,+\infty[}x\,dP_X(x).$$ 
+On en déduit
+que $\displaystyle E(X)=\int_0^{+\infty}(1-F(t))\,dt$.
+
+\medskip
+\textit{Remarque : si la loi de $X$ est continue, on n'a pas à se préoccuper
+si les intervalles sont ouverts ou fermés puisque $P(X>a)=P(X\geq a)$.}
+\fincorrection
+\finexercice

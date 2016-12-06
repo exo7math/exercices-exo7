@@ -1,0 +1,30 @@
+\exercice{759, gourio, 2001/09/01}
+\enonce
+Calculer :
+$$\lim_{x\rightarrow +\infty }e^{-x}(\ch ^{3}x-\sh ^{3}x) \quad \text{ et }\quad
+\lim\limits_{x\rightarrow +\infty }(x-\ln (\ch x)).$$
+\finenonce 
+
+\indication
+R\'eponses :
+\begin{enumerate}
+    \item $\frac 34$ ;
+    \item $\ln 2$.
+\end{enumerate}
+\finindication
+
+\correction
+\begin{enumerate}
+  \item Par la formule du binôme de Newton nous avons $\ch^3 x = \left( \frac{e^x+e^{-x}}{2} \right)^3 = \frac18 \left( e^{3x} +3 e^x + 3e^{-x} + e^{-3x} \right)$. Et de même $\sh^3 x = \left( \frac{e^x-e^{-x}}{2} \right)^3 = \frac18 \left( e^{3x} - 3 e^x + 3e^{-x} - e^{-3x} \right)$.
+Donc $e^{-x} (\ch ^{3}x-\sh ^{3}x) = \frac 18 e^{-x} (6 e^x + 2 e^{-3x}) = \frac 34 + \frac 14 e^{-4x}$
+qui tend vers $\frac 34$ lorsque $x$ tend vers $+\infty$.
+
+
+
+  \item $x- \ln(\ch x) = x - \ln(\frac{e^x + e^{-x}}{2}) = x - \ln(e^x + e^{-x}) + \ln 2 =
+x - \ln(e^x(1+e^{-2x})) + \ln 2 = x - x + \ln(1+e^{-2x}) + \ln 2
+= \ln(1+e^{-2x}) + \ln 2$.
+Lorsque $x\rightarrow +\infty$, $\ln(1+e^{-2x}) \rightarrow 0$ donc $x- \ln(\ch x)\rightarrow \ln 2$.
+\end{enumerate}
+\fincorrection
+\finexercice

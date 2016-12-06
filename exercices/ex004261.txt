@@ -1,0 +1,34 @@
+\exercice{4261, quercia, 2010/03/12}
+\enonce[Fonctions affines]
+Soit $E = \mathcal{C}([a,b])$, et $F=\{f\in \mathcal{C}^2([a,b]),\text{ tel que } f(a)=f'(a)=f(b)=f'(b)=0\}$.
+
+\begin{enumerate}
+  \item Soit $f\in E$. Montrer qu'il existe $g\in F$ vérifiant $g''=f$ si et
+    seulement si $ \int_{x=a}^b f(x)\,d x =  \int_{x=a}^b xf(x)\,d x = 0$.
+    
+  \item Soit $f\in E$ telle que $ \int_{x=a}^b f(x)g''(x)\,d x = 0$ pour toute
+    fonction $g\in F$. Montrer que $f$ est affine.
+    
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Il existe toujours une unique fonction $g$ de classe $\mathcal{C}^2$
+    telle que $g'' = f$, $g(a)=g'(a)=0$~: $g(x) =  \int_{t=a}^x(x-t)f(t)\,d t$
+    (Taylor-Intégral).
+  \item Soient $\lambda,\mu\in \R$ tels que $f_1\ :\ x \mapsto f(x) - \lambda-\mu x$
+    vérifie $ \int_{x=a}^b f_1(x)\,d x =  \int_{x=a}^b xf_1(x)\,d x = 0$.
+    On trouve $$\left\{\begin{array}{ll}(b-a)\lambda +(b^2-a^2)/2\mu &= - \int_{x=a}^bf(x)\,d x\cr
+                      (b^2-a^2)/2\lambda + (b^3-a^3)/3\mu &= - \int_{x=a}^bxf(x)\,d x\cr\end{array}\right.$$
+    et ce système a pour déterminant $(b-a)^4/12\ne 0$ donc $\lambda,\mu$
+    existent et sont uniques. Soit $g_1\in F$ telle que $g_1''=f_1$~:
+    $ \int_{x=a}^bg_1''(x)g''(x)\,d x = 0$ pour tout $g\in F$, en particulier
+    pour $g=g_1$ donc $g_1''=f_1=0$ et $f(x) = \lambda + \mu x$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

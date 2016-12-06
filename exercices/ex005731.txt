@@ -1,0 +1,115 @@
+\exercice{5731, rouget, 2010/10/16}
+\enonce[**]
+Soit $f(x) =\sum_{n=1}^{+\infty}\frac{(-1)^{n-1}}{\ln(nx)}$.
+
+\begin{enumerate}
+ \item  Domaine de définition de $f$. On étudie ensuite $f$ sur $]1,+\infty[$.
+
+\item  Continuité de $f$ et limites de $f$ en $1$ et $+\infty$.
+
+\item  Montrer que $f$ est de classe $C^1$ sur $]1,+\infty[$ et dresser son tableau de variation.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Pour $n$ entier naturel non nul, on note $f_n$ la fonction $x\mapsto\frac{(-1)^n}{\ln(nx)}$. Pour tout réel $x$, $f(x)$ existe si et seulement si chaque $f_n(x)$, $n\in\Nn^*$, existe et la série numérique de terme général $f_n(x)$, $n\in\Nn^*$, converge.
+
+Pour $n\in\Nn^*$ et $x\in\Rr$, $f_n(x)$ existe si et seulement si $x>0$ et $x\neq \frac{1}{n}$.
+
+Soit donc $x\in D =]0,+\infty[\setminus\left\{\frac{1}{p},\;p\in\Nn^*\right\}$.
+
+Pour $n>\frac{1}{x}$, on a $\ln(nx)>0$. On en déduit que la suite $\left(\frac{1}{\ln(nx)}\right)_{n\in\Nn^*}$ est positive et décroissante à partir d'un certain et tend vers $0$ quand $n$ tend vers $+\infty$. Ainsi, la série numérique de terme général $f_n(x)$ converge en vertu du critère spécial aux séries alternées et donc $f(x)$ existe. 
+
+\begin{center}
+\shadowbox{
+Le domaine de définition de $f$ est $D=]0,+\infty[\setminus\left\{\frac{1}{n},\;n\in\Nn^*\right\}$.
+}
+\end{center}
+
+\item  \textbf{Limite de $f$ en $+\infty$.}
+Soit $x > 1$. Donc $f(x)$ existe. Pour tout entier naturel non nul $n$, $\ln(nx) > 0$. On en déduit que la suite $\left(\frac{1}{\ln(nx)}\right)_{n\in\Nn^*}$ est décroissante. On sait alors que la valeur absolue de $f(x)$ est majorée par la valeur absolue du premier terme de la série. Ainsi
+
+\begin{center}
+$\forall x>1$, $|f(x)|\leqslant\left|\frac{(-1)^0}{\ln(x)}\right|=\frac{1}{\ln x}$,
+\end{center}
+
+et en particulier 
+
+\begin{center}
+\shadowbox{
+$\lim_{x \rightarrow +\infty}f(x) = 0$.
+}
+\end{center}
+
+On peut noter de plus que pour $x>1$, $f(x)$ est du signe du premier terme de la série à savoir $\frac{1}{\ln(x)}$ et donc $\forall x\in]1,+\infty[$, $f(x) > 0$.
+
+\textbf{Convergence uniforme sur$]1,+\infty[$.} D'après une majoration classique du reste à l'ordre $n$ alternée d'une série alternée, pour $x > 1$ et $n$ naturel non nul,
+
+\begin{center}
+$|R_n(x)| =\left|\sum_{k=n+1}^{+\infty}\frac{(-1)^{k-1}}{\ln(kx)}\right|\leqslant\left|\frac{(-1)^{n}}{\ln((n+1)x)}\right|=\frac{1}{\ln((n+1)x}\leqslant\frac{1}{n+1}$.
+\end{center}
+
+Donc, pour tout entier naturel non nul, $\underset{x\in]1,+\infty[}{\text{sup}}|R_n(x)|\leqslant\frac{1}{\ln(n+1)}$ et donc $\lim_{n \rightarrow +\infty}\underset{x\in]1,+\infty[}{\text{sup}}|R_n(x)|=0$. La série de fonctions de terme général $f_n$ converge uniformément vers sa somme sur $]1,+\infty[$.
+
+\textbf{Continuité sur $]1,+\infty[$.} Chaque fonction $f_n$, $n\in\Nn^*$ est continue sur $]1,+\infty[$ et donc $f$ est donc continue sur $]1,+\infty[$ en tant que limite uniforme sur $]1,+\infty[$ d'une suite de fonctions continues sur $]1,+\infty[$.
+
+\begin{center}
+\shadowbox{
+$f$ est continue sur $]1,+\infty[$.
+}
+\end{center}
+
+\textbf{Limite en $1$ à droite.} Soit $n\geqslant2$. Quand $x$ tend vers $1$ par valeurs supérieures, $f_n(x)$ tend vers $\ell_n=\frac{(-1)^{n-1}}{\ln(n)}$. Puisque la série de fonctions de terme général $f_n$, $n\geqslant2$, converge uniformément vers sa somme sur $]1,+\infty[$, le théorème d'interversion des limites permet d'affirmer que la série numérique de terme général $\ell_n$, $n\geqslant2$ converge et que la fonction $x\mapsto f(x) -\frac{1}{\ln(x)}=\sum_{n=2}^{+\infty}f_n(x)$ tend vers le réel $\sum_{n=2}^{+\infty}\frac{(-1)^{n-1}}{\ln(n)}$ quand $x$ tend vers $1$ par valeurs supérieures ou encore 
+
+\begin{center}
+\shadowbox{
+$f(x)\underset{x\rightarrow1^+}{=}\frac{1}{\ln x}+O(1)$ et en particulier, $\displaystyle\lim_{\substack{x\rightarrow1\\
+x>1}}f(x) = +\infty$.
+}
+\end{center}
+
+\item  La série de fonctions de terme général $f_n$, $n\geqslant1$, converge simplement vers la fonction $f$ sur $]1,+\infty[$. De plus chaque fonction $f_n$ est de classe $C^1$ sur $]1,+\infty[$ et pour $n\in\Nn^*$ et $x>1$, 
+
+\begin{center}
+$f_n'(x) =\frac{(-1)^n}{x\ln^2(nx)}$.
+\end{center}
+
+Il reste à vérifier la convergence uniforme de la série de fonctions de terme général $f_n'$ sur $]1,+\infty[$.
+
+Soit $x > 1$. La série de terme général $f_n'(x)$ est alternée car son terme général est alterné en signe et sa valeur absolue à savoir $\frac{1}{x\ln^2(nx)}$ tend vers zéro quand $n$ tend vers $+\infty$ en décroissant. Donc, d'après une majoration classique du reste à l'ordre $n$ d'une série alternée,
+
+\begin{center}
+$|R_n(x)|=\left|\sum_{k=n+1}^{+\infty}\frac{(-1)^k}{x\ln^2(kx)}\right|\leqslant\left|\frac{(-1)^{n+1}}{x\ln^2((n+1)x)}\right|=\frac{1}{x\ln^2((n+1)x)}\leqslant\frac{1}{\ln^2(n+1)}$.
+\end{center}
+
+Par suite, $\underset{x\in]1,+\infty[}{\text{sup}}|R_n(x)|\leqslant\frac{1}{\ln^2(n+1)}$ et donc $\lim_{n \rightarrow +\infty}\underset{x\in]1,+\infty[}{\text{sup}}|R_n(x)|=0$. Ainsi, la série de fonctions de terme général $f_n'$, $n\geqslant1$, converge uniformément sur $]1,+\infty[$.
+
+En résumé,
+
+\textbullet~la série de fonctions de terme général $f_n$, $n\geqslant1$, converge simplement vers $f$ sur $]1,+\infty[$,
+
+\textbullet~chaque fonction $f_n$, $n\geqslant1$, est de classe $C^1$ sur $]1,+\infty[$,
+
+\textbullet~la série de fonctions de terme général $f_n'$ converge uniformément sur $]1,+\infty[$.
+
+D'après un corollaire du théorème de dérivation terme à terme, $f$ est de classe $C^1$ sur $]1,+\infty[$ et sa dérivée s'obtient par dérivation terme à terme. 
+
+\begin{center}
+\shadowbox{
+$f$ est de classe $C^1$ sur $]1,+\infty[$ et $\forall x>1$, $f'(x) =\sum_{n=1}^{+\infty}\frac{(-1)^n}{x\ln^2(nx)}$.
+}
+\end{center}
+
+Pour $x >1$, puisque la série de somme $f'(x)$ est alternée, $f'(x)$ est du signe du premier terme de la somme à savoir $-\frac{1}{x\ln^2x}$. Par suite, $\forall x\in]-1,1[$, $f'(x)\leqslant0$ et $f$ est donc strictement décroissante sur $]1,+\infty[$.
+
+\begin{center}
+\shadowbox{
+La fonction $f$ est décroissante sur $]1,+\infty[$.
+}
+\end{center}
+\end{enumerate}
+\fincorrection
+\finexercice

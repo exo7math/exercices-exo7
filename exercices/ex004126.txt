@@ -1,0 +1,25 @@
+\exercice{4126, quercia, 2010/03/11}
+\enonce[$y'' = F(x,y)$, $y(a) = \alpha$, $y(b) = \beta$]
+
+
+Soit $F : {[a,b]\times \R} \to \R$ de classe $\mathcal{C}^1$ telle que pour tout
+$x \in {[a,b]}$, l'application $y \mapsto F(x,y)$ est strictement croissante.
+Montrer que pour tous $\alpha,\beta \in \R$, il existe au plus une solution à
+l'équation :
+$y'' = F(x,y)$ avec les conditions aux limites $y(a) = \alpha$, $y(b) = \beta$.
+
+
+
+\finenonce
+
+\noindication
+
+\correction
+Soient $y,z$ deux solutions distinctes. D'après Cauchy-Lipschitz,
+$y'(a) \ne z'(a)$, donc par exemple $y'(a) > z'(a)$.
+Soit $c > a$ maximal tel que : $\forall\ x \in {]a,c[}$, $y(x) > z(x)$.
+Donc $y-z$ est strictement positive convexe sur $[a,c]$, et s'annule en $a$ et $c$,
+ce qui est impossible.
+\fincorrection
+
+\finexercice

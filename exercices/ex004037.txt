@@ -1,0 +1,72 @@
+\exercice{4037, quercia, 2010/03/11}
+\video{jBtvOPwMUdQ}
+\enonce[tan$(x) = x$]
+\begin{enumerate}
+  \item  Montrer que l'équation $\tan x = x$ possède une unique solution
+   $x_n$ dans
+   $\left]n\pi-\frac \pi2, n\pi+\frac \pi2\right[$ $(n\in \N)$.
+  \item  Quelle relation lie $x_n$ et $\arctan(x_n)$ ? \label{relation}
+  \item  Donner un DL de $x_n$ en fonction de $n$ à l'ordre $0$ pour $n\to\infty$.
+  \item  En reportant dans la relation trouvée en \ref{relation},
+     obtenir un DL de $x_n$ à l'ordre 2.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Notons $I_n$ l'intervalle  $\left]n\pi-\frac \pi2, n\pi+\frac \pi2\right[$.
+Alors sur chaque $I_n$ la fonction définie par $f(x) = \tan x-x$ est un fonction continue et dérivable.
+De plus $f'(x) = 1+\tan^2x -1 = \tan ^2 x$. La dérivée est strictement positive sauf en un point où elle est nulle et ainsi 
+la fonction $f$ est strictement croissante sur $I_n$. La limite à gauche est $-\infty$ et
+la limite à droite est $+\infty$. Par le théorème des valeurs intermédiaires il existe un unique $x_n \in I_n$
+tel que $f(x_n)=0$ c'est-à-dire $\tan x_n=x_n$.
+
+  \item $x \mapsto \arctan x$ est la bijection réciproque de la restriction de la tangente  
+$\tan_| : ]-\frac\pi2,+\frac\pi2[ \to ]-\infty,+\infty[$. Sur ces intervalles on a bien
+$\tan x = y \iff x = \arctan y$. Mais si $y \notin ]-\frac\pi2,+\frac\pi2[$ il faut d'abord se ramener dans l'intervalle
+ $]-\frac\pi2,+\frac\pi2[$.
+
+Ainsi $x_n \in I_n$ donc $x_n-n\pi \in ]-\frac\pi2,+\frac\pi2[$.
+Maintenant $x_n = \tan (x_n)=\tan(x_n-n\pi)$. 
+
+Donc $\arctan x_n = \arctan \big(\tan(x_n-n\pi) \big) = x_n - n\pi$.
+Ainsi $$x_n = \arctan x_n + n\pi.$$
+
+
+L'erreur classique est de penser que $\arctan (\tan x) = x$. Ce qui n'est vrai que pour 
+$x \in ]-\frac\pi2,+\frac\pi2[$ !
+
+  \item Comme $x_n \in I_n$ alors $x_n \to +\infty$ lorsque $n\to +\infty$.
+
+On sait par ailleurs que pour $x>0$ on a $\arctan x + \arctan \frac 1x = \frac\pi 2$.
+Ainsi $\arctan x_n = \frac \pi 2 - \arctan \frac{1}{x_n}$
+
+Lorsque $n$ tend vers $+\infty$ alors $\frac{1}{x_n}\to 0$ donc 
+$\arctan \frac{1}{x_n} \to 0$.
+
+Ainsi 
+$$x_n = n\pi + \arctan x_n = n\pi +\frac \pi 2 - \arctan \frac{1}{x_n} = n\pi +\frac \pi 2 + o(1).$$
+
+  \item 
+
+On va utiliser le dl obtenu précédemment pour obtenir un dl à un ordre plus grand :
+
+\begin{align*}
+x_n 
+ & = n\pi + \arctan x_n \\
+ & = n\pi +\frac \pi 2 - \arctan \frac{1}{x_n} \\
+ & = n\pi +\frac \pi 2 - \arctan \frac{1}{n\pi +\frac \pi 2 + o(1)} \\
+ & = n\pi +\frac \pi 2 - \frac{1}{n\pi +\frac \pi 2 + o(1)} +o(\frac1{n^2}) \qquad \text{ car } \arctan u = u + o(u^2) \text{ en } u=0\\
+ & = n\pi +\frac \pi 2 - \frac{1}{n\pi} \frac{1}{1+\frac{1}{2n} + o(\frac1n)}+o(\frac1{n^2}) \\
+ & = n\pi +\frac \pi 2 - \frac{1}{n\pi}\big(1-\frac{1}{2n} + o(\frac1n) \big) +o(\frac1{n^2})\\
+ & = n\pi +\frac \pi 2 -\frac{1}{n\pi} + \frac{1}{2\pi n^2} + o(\frac1{n^2}) \\
+\end{align*}
+
+Ainsi en $+\infty$ on a le développement :
+$$x_n  = n\pi +\frac \pi 2 -\frac{1}{n\pi} + \frac{1}{2\pi n^2} + o(\frac1{n^2}).$$
+\end{enumerate}
+ \fincorrection
+
+\finexercice

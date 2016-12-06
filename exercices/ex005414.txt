@@ -1,0 +1,32 @@
+\exercice{5414, rouget, 2010/07/06}
+\enonce[***I]
+Montrer que la fonction définie sur $\Rr$ par $f(x)=e^{-1/x^2}$ si $x\neq0$ et $0$ si $x=0$ est de classe $C^\infty$ sur $\Rr$.
+\finenonce
+
+\noindication
+
+\correction
+$f$ est de classe $ ^\infty$ sur $\Rr^*$ en vertu de théorèmes généraux.
+
+Montrons par récurrence que $\forall n\in\Nn,\;\exists P_n\in\Rr[X]/\;\forall x\in\Rr^*,\;f^{(n)}(x)=\frac{P_n(x)}{x^{3n}}e^{-1/x^2}$.
+
+C'est vrai pour $n=0$ avec $P_0=1$.
+
+Soit $n\geq0$. Supposons que $\exists P_n\in\Rr[X]/\;\forall x\in\Rr^*,\;f^{(n)}(x)=\frac{P_n(x)}{x^{3n}}e^{-1/x^2}$. Alors, pour $x\in\Rr^*$,
+
+$$f^{(n+1)}(x)=(\frac{2}{x^3}\frac{P_n(x)}{x^{3n}}+(P_n'(x)\frac{1}{x^{3n}}-3nP_n(x)\frac{1}{x^{3n+1}})e^{-1/x^2}
+=\frac{P_{n+1}(x)}{3^{3(n+1)}}e^{-1/x^2},$$
+
+où $P_n+1=2P_n+X^3P_n'-3nX^2P_n$ est un polynôme. On a montré que 
+
+$$\forall n\in\Nn,\;\exists P_n\in\Rr[X]/\;\forall x\in\Rr^*,\;f^{(n)}(x)=\frac{P_n(x)}{x^{3n}}e^{-1/x^2}.$$
+
+Montrons alors par récurrence que pour tout entier naturel $n$, $f$ est de classe $C^n$ sur $\Rr$ et que $f^{(n)}(0)=0$.
+
+Pour $n=0$, $f$ est continue sur $\Rr^*$ et de plus, $\lim_{x\rightarrow 0,\;x\neq0}f(x)=0=f(0)$. Donc, $f$ est continue sur $\Rr$.
+
+Soit $n\geq0$. Supposons que $f$ est de classe $C^n$ sur $\Rr$ et que $f^{(n)}(0)=0$. Alors, d'une part $f$ est de classe $C^n$ sur $\Rr$ et $C^{n+1}$ sur $\Rr^*$ et de plus, d'après les théorèmes de croissances comparées, $f^{(n+1)}(x)=\frac{P_{n+1}(x)}{x^{3n+3}}e^{-1/x^2}$ tend vers $0$ quand $x$ tend vers $0$, $x\neq 0$. D'après un théorème classique d'analyse, $f$ est de classe $C^{n+1}$ sur $\Rr$ et en particulier, $f^{(n+1)}(0)=\lim_{x\rightarrow 0,\;x\neq0}f^{(n+1)}(x)=0$.
+
+On a montré par récurrence que $\forall n\in\Nn$, $f$ est de classe $C^n$ sur $\Rr$ et que $f^{(n)}(0)=0$. $f$ est donc de classe $C^\infty$ sur $\Rr$.
+\fincorrection
+\finexercice

@@ -1,0 +1,114 @@
+\exercice{5668, rouget, 2010/10/16}
+\enonce[***I Déterminant circulant]
+\label{ex:rou18}
+\begin{enumerate}
+ \item   Soit $J_n=\left(
+\begin{array}{ccccc}
+0&1&0&\ldots&0\\
+\vdots&\ddots&\ddots&\ddots&\vdots\\
+\vdots& & &\ddots&0\\
+0& & &\ddots&1\\
+1&0&\ldots&\ldots&0
+\end{array}
+\right)$   (de format $n\geqslant 3$). Diagonaliser $J_n$.
+
+\item  En déduire la valeur de $\left|
+\begin{array}{ccccc}
+a_0&a_1&\ldots&a_{n-2}&a_{n-1}\\
+a_{n-1}&a_0&a_1& &a_{n-2}\\
+\vdots& &\ddots&\ddots&\vdots\\
+a_2& &\ddots&a_0&a_1\\
+a_1&a_2&\ldots&a_{n-1}&a_0
+\end{array}
+\right|$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  $J^n = I$. $J$ annule le polynôme $X^n-1$ qui est à racines simples dans $\Cc$ et donc $J$ est diagonalisable dans $\Cc$.
+
+Les valeurs propres de $J$ sont à choisir parmi les racines $n$-èmes de $1$ dans $\Cc$. On pose $\omega=e^{2i\pi/n}$. Vérifions que $\forall k\in\llbracket0,n-1\rrbracket$, $\omega^k$ est valeur propre de $J$.
+
+Soient $k\in\llbracket0,n-1\rrbracket$ et $X =(x_j)_{1\leqslant j\leqslant n}$ un élément de $\mathcal{M}_{n,1}(\Cc)$.
+
+\begin{center}
+$JX =\omega^kX\Leftrightarrow\left\{
+\begin{array}{l}
+x_2=\omega^kx_1\\
+x_3=\omega^kx_2\\
+\vdots\\
+x_n=\omega^kx_{n-1}\\
+x_1=\omega^kx_n
+\end{array}
+\right.\Leftrightarrow\left\{
+\begin{array}{l}
+x_2=\omega^kx_1\\
+x_3=(\omega^k)^2x_1\\
+\vdots\\
+x_n=(\omega^k)^{n-1}x_{1}\\
+x_1=(\omega^k)^nx_1
+\end{array}
+\right.\Leftrightarrow\left\{
+\begin{array}{l}
+x_2=\omega^kx_1\\
+x_3=(\omega^k)^2x_1\\
+\vdots\\
+x_n=(\omega^k)^{n-1}x_{1}
+\end{array}
+\right.
+$
+\end{center}
+
+et donc
+
+\begin{center}
+$JX =\omega^kX\Leftrightarrow X\in\text{Vect}(U_k)\;\text{où}\;U_k=\left(
+\begin{array}{c}
+1\\
+\omega^k\\
+(\omega^k)^2\\
+\vdots\\
+(\omega^k)^{n-1}
+\end{array}
+\right)$.
+\end{center}
+
+Donc $\forall k\in\llbracket0,n-1\rrbracket$, $\omega^k$ est valeur propre de $J$. Les valeurs propres de $J$ sont les $n$ racines $n$-èmes de $1$. Ces valeurs propres sont toutes simples. Le sous espace propre associé à $\omega^k$, $0\leqslant k\leqslant n-1$, est la droite vectorielle $D_k=\text{Vect}(U_k)$.
+
+Soit $P$ la matrice de \textsc{Vandermonde} des racines $n$-èmes de l'unité c'est-à-dire $P=(\omega^{(j-1)(k-1)})_{0\leqslant j,k\leqslant n-1}$ puis $D =\text{diag}(1,\omega,...,\omega^{n-1})$, alors on a déjà vu que $P^{-1}=\frac{1}{n}\overline{P}$ (exercice \ref{ex:rou16}) et on a 
+
+\begin{center}
+\shadowbox{
+$J =PDP^{-1}$ avec $D =\text{diag}(\omega^{j})_{1\leqslant j\leqslant n}$, $P=\left(\omega^{(j-1)(k-1)}\right)_{1\leqslant j,k\leqslant n}$ et $P^{-1}=\frac{1}{n}\overline{P}$ avec $\omega=e^{2i\pi/n}$.
+}
+\end{center}
+
+\textbf{Remarque.} La seule connaissance de $D$ suffit pour le 2).
+
+\item  Soit $A$ la matrice de l'énoncé.
+
+\begin{center}
+$A= a_0I + a_1J + a_2J^2+...+a_{n-1}J^{n-1}= Q(J)$ où $Q = a_0+a_1X+...+a_{n-1}X^{n-1}$.
+\end{center}
+
+D'après 1), $A = P\times Q(D)\times P^{-1}$ et donc $A$ est semblable à la matrice $\text{diag}(Q(1),Q(\omega),...,Q(\omega^{n-1}))$. Par suite, $A$ a même déterminant que la matrice $\text{diag}(Q(1),Q(\omega),...,Q(\omega^{n-1}))$. D'où la valeur du déterminant circulant de l'énoncé :
+
+\begin{center}
+\shadowbox{
+$\left|
+\begin{array}{ccccc}
+a_0&a_1&\ldots&a_{n-2}&a_{n-1}\\
+a_{n-1}&a_0&a_1& &a_{n-2}\\
+\vdots& &\ddots&\ddots&\vdots\\
+a_2& &\ddots&a_0&a_1\\
+a_1&a_2&\ldots&a_{n-1}&a_0
+\end{array}
+\right|=\prod_{k=0}^{n-1}\left(\sum_{j=0}^{n-1}e^{2i(j-1)(k-1)\pi/n}a_j\right)$.
+}
+\end{center}
+\end{enumerate}
+\fincorrection
+\finexercice

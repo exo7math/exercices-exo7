@@ -1,0 +1,48 @@
+\exercice{3029, quercia, 2010/03/08}
+
+\enonce[Th{\'e}or{\`e}me de Wedderburn]
+On dit que $K$ est un corps gauche si $(K,+,\times)$ est un anneau et si $(K\setminus \{0\},\times)$ 
+est un groupe (non n{\'e}cessairement commutatif). On v{\'e}rifiera rapidement que la th{\'e}orie des espaces vectoriels est inchang{\'e}e si on 
+remplace le corps de base par un corps gauche.
+L'objet de l'exercice est de d{\'e}montrer le th{\'e}or{\`e}me de Wedderburn~:
+{\it tout corps gauche fini est commutatif.}
+
+Pour $n\in \N ^*$, soit ${\cal P}_n$ l'ensemble des racines $n$-{\`e}mes primitives de l'unit{\'e} dans $\C$.
+On pose $\Phi_1(X)=X-1$ et $\Phi_n(X)=\prod_{\zeta \in {\cal P}_n}(X-\zeta)$.
+$\Phi_n$ est appel{\'e} {\it le $n$-{\`e}me polyn{\^o}me cyclotomique}
+(son degr{\'e} est $\phi (n)$ o{\`u} $\phi$ est l'indicateur d'Euler).
+\begin{enumerate}
+  \item D{\'e}montrer : $(\forall\ n\in \N ^*)\ X^n-1 = \prod_{d|n} \Phi_d(X)$. 
+    En d{\'e}duire, par r{\'e}currence, que $\Phi_n(X)$ a tous ses coefficients dans $\Z$.
+  \item Calculer explicitement $\Phi_n(X)$ pour $n\le 16$.
+  \item D{\'e}montrer que, pour $p$ premier et $\alpha \in \N ^*$, $\Phi_{p^\alpha}(X)=
+    \sum_{k=0}^{p-1}X^{kp^{\alpha -1}}$.
+  \item Calculer le terme constant de chaque $\Phi_n$.
+  \item Montrer que, si $d<n$ et $d$ divise $n$, alors $X^d-1$ divise
+    $X^n-1$ dans $\Z [X]$, puis que $\Phi_n(X)$ divise $X^n-1$ et
+    $\frac{X^n-1}{X^d-1}$ dans $\Z [X]$.
+\\
+On consid{\`e}re $K$ un corps gauche fini et $Z(K)$ son centre, de cardinal $q$.
+  \item Montrer que $Z(K)$ est un corps commutatif. 
+  \item Montrer que $K$ est un $Z(K)$-espace vectoriel de dimension finie, not{\'e}e $n$.
+    Donner alors le cardinal de $K$ en fonction de $q$ et~$n$.
+  \item Soit $a\in K\setminus \{0\}$. On note $C_a=\{x\in K\,|\,ax=xa\}$. 
+    \\
+    Montrer que $C_a$ est un corps gauche, puis que c'est un
+    $Z(K)$-espace vectoriel de dimension finie $d$ divisant $n$ (on
+    montrera pour cela que $K$ est un $C_a$-espace vectoriel et l'on
+    {\'e}tudiera sa dimension).
+  \item On fait op{\'e}rer le groupe multiplicatif $K^*$ sur lui-m{\^e}me par automorphismes int{\'e}rieurs. 
+    \\
+    En consid{\'e}rant les orbites selon cette op{\'e}ration montrer que l'on a :
+$$q^n-1=q-1+\sum_{i=1}^k \frac{q^n-1}{q^{d_i}-1} \text{ avec, pour tout }i,\ d_i|n.$$
+  \item En d{\'e}duire que $\Phi_n(q)$ divise $q-1$.
+  \item En {\'e}tudiant $|\Phi_n(q)|$ montrer que $n=1$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\nocorrection
+
+\finexercice 

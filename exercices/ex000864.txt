@@ -1,0 +1,42 @@
+\exercice{864, bodin, 1998/09/01}
+\enonce
+R\'esoudre l'\'equation suivante :
+ $$ y^{\prime\prime}- y =-6\cos x + 2x\sin x. $$
+\finenonce 
+\noindication
+\correction
+ $ y^{\prime\prime}- y =-6\cos x + 2x\sin x $. Ici $f(r) =(r-1)(r+1)$ et l'\'equation
+homog\`ene a pour solutions :
+$$ y(x) = c_1 e^x +c_2e^{-x}  \hbox{ avec } c_1, c_2 \in \R .$$
+On remarque que la fonction $3\cos x$ v\'erifie l'\'equation :
+$y^{\prime\prime}- y =-6\cos x $, il nous reste donc \`a chercher
+une solution $y_1$ de l'\'equation $y^{\prime\prime}-y=2x\sin x$,
+car $y_p(x)=3\cos x+y_1(x)$ sera une solution de l'\'equation
+consid\'r\'ee. Pour cela, on remarque que $2x\sin x = \mathop{\mathrm{Im}}\nolimits
+(2xe^{ix})$ et on utilise la m\'ethode d\'ecrite plus haut pour
+trouver une solution $z_1$ de l'\'equation : $y^{\prime\prime}- y
+=2xe^{ix}$. On cherche $z_1$ sous la forme $P(x)e^{ix}$ o\`u $P$
+est un polyn\^ome de degr\'e 1 car $f(i)=-2\not =0$. On a
+$f^\prime(i)= 2i$, la condition $(*)$ sur $P$ est donc : $
+2iP^\prime(x)-2P(x) = 2x $ ce qui donne apr\`es identification
+$P(x) = -x-i$. Alors $y_1(x)=\mathop{\mathrm{Im}}\nolimits((-x+i)e^{ix})=-x\sin x-\cos x$.
+Les solutions  sont par cons\'equent les fonctions :
+$$y(x) = c_1 e^x +c_2e^{-x}+2\cos x -x\sin x  \hbox{ avec } c_1, c_2 \in \R. $$
+Autre m\'ethode pour trouver une solution de $ y^{\prime\prime}- y
+= 2x\sin x $  : On la cherche de la forme $y_1(x) = A(x)\sin x +
+B(x)\cos x $ o\`u $A,B$ sont des polyn\^omes de degr\'e 1 car $i$
+n'est pas racine de l'\'equation caract\'eristique ({\sl danger} :
+pour un second membre du type $Q(x)\sin (\beta x)e^{\alpha x}$ la
+discussion porte sur $\alpha+i\beta$ et non sur $\alpha$ ou
+$\beta$...). On calcule $y_1^\prime$, $y_1^{\prime\prime}$ et on
+applique l'\'equation \'etudi\'ee \`a $y_1$ \ldots on obtient la
+condition :
+$$ (A^{\prime\prime}-A-2B^\prime)\sin x +(B^{\prime\prime}-B-2A^\prime)= 2x\sin x$$
+qui sera r\'ealis\'ee si : $ \left\lbrace \begin{array}{c}
+                    A^{\prime\prime}-A-2B^\prime = 2x \\
+                    B^{\prime\prime}-B-2A^\prime = 0
+                \end{array} \right. . $ \\
+On \'ecrit : $A(x)= ax+b$ et $B(x)=cx+d$, apr\`es identification
+on obtient : $a=d=-1$, $b=c=0$, ce qui d\'etermine $y_1$.
+\fincorrection
+\finexercice

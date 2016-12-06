@@ -1,0 +1,48 @@
+\exercice{5480, rouget, 2010/07/10}
+\enonce[**]
+On considère l'équation différentielle $(E)$~:~$ax^2y''+bxy'+cy= 0$ ($a$, $b$, $c$ réels, $a\neq0$)
+pour $x\in]0,+\infty[$.
+
+\begin{enumerate}
+\item  Soit $y$ une fonction deux fois dérivable sur $]0,+\infty[$. Pour $t\in\Rr$, on pose $z(t)=y(e^t)$. Vérifier
+que $y$ est deux fois dérivable sur $]0,+\infty[$ si et seulement si $z$ est deux fois dérivable sur $\Rr$.
+
+\item  Effectuer le changement d'inconnue précédent dans l'équation différentielle $(E)$ et vérifier que la
+résolution de $(E)$ se ramène à la résolution d'une équation linéaire du second ordre à coefficients constants.
+\item  Résoudre sur $]0,+\infty[$, l'équation différentielle $x^2y''-xy'+y=0$.
+\end{enumerate}
+
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  Supposons $y$ deux fois dérivable sur $]0,+\infty[$. La fonction $t\mapsto e^t$ est deux fois dérivable sur
+$\Rr$ à valeurs dans $]0,+\infty[$ et la fonction $x\mapsto y(x)$ est deux fois dérivable sur $]0,+\infty[$. Donc,
+puisque pour tout réel $t$, $z(t)=y(e^t)$, la fonction $z$ est deux fois dérivable sur $\Rr$ en tant que composée de
+fonctions deux fois dérivables.
+Réciproquement, supposons que $z$ est deux fois dérivable sur $\Rr$. La fonction $x\mapsto\ln x$ est deux fois
+dérivable sur $]0,+\infty[$ à valeurs dans $\Rr$ et la fonction $t\mapsto z(t)$ est deux fois dérivable sur $\Rr$.
+Donc, puisque pour tout réel strictement positif $x$, $y(x)=z(\ln x)$, la fonction $y$ est deux fois dérivable sur
+$]0,+\infty[$.
+
+\item  Pour $t$ réel, posons donc $x=e^t$ puis, $z(t)=y(x)=y(e^t)$. Alors, $z'(t)=e^ty'(e^t)=xy'(x)$ puis
+$z''(t)=e^ty'(e^t)+(e^t)^2y''(e^t)=xy'(x)+x^2y''(x)$. Donc, $xy'(x)=z'(t)$ et $x^2y''(x)=z''(t)-xy'(x)=z''(t)-z'(t)$.
+
+Par suite,
+
+$$ax^2y''(x)+bxy'(x)+cy(x)=a(z''(t)-z'(t))+bz'(t)+cz(t)=az''(t)+(b-a)z'(t)+cz(t).$$
+
+Donc,
+
+$$\forall x>0,\;ax^2y''(x)+bxy'(x)+cy(x)=0\Leftrightarrow\forall t\in\Rr,\;az''(t)+(b-a)z'(t)+cz(t)=0.$$
+
+\item  On applique le 2) avec $a=1$, $b=-1$ et $c=1$. L'équation à résoudre sur $\Rr$ est alors $z''-2z'+z=0$. Les
+solutions de cette équation sur $\Rr$ sont les fonctions de la forme $t\mapsto(\lambda t+\mu)e^t$,
+$(\lambda,\mu)\in\Rr^2$. Les solutions sur $]0,+\infty[$ de l'équation initiale sont donc les fonctions de la forme
+$x\mapsto\lambda x\ln x+\mu x$, $(\lambda,\mu)\in\Rr^2$.
+
+\end{enumerate}
+\fincorrection
+\finexercice

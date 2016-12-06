@@ -1,0 +1,64 @@
+\exercice{1409, barraud, 2003/09/01}
+
+\enonce
+On note $\mathcal{S}_n$ le groupe sym\'{e}trique des permutations sur $n$ \'{e}l\'{e}ments.
+
+Soit $\rho$ un \emph{morphisme de groupes} de $(\mathcal{S}_n,\circ)$ dans $(\{-1,1\},\cdot)$,
+c'est \`{a} dire une application de $\mathcal{S}_n$ dans $\{-1,1\}$ satisfaisant
+$$
+  \forall(\sigma,\tau)\in\mathcal{S}_n\;\; \rho(\sigma\tau)=\rho(\sigma)\rho(\tau)
+$$
+\begin{enumerate}
+\item
+Calculer $\rho(\mathrm{id})$. Pour tout cycle $\gamma$ de longueur $p$, calculer $\gamma^{p}$. En
+d\'{e}duire que lorsque $p$ est impair, $\rho(\gamma)=1$.
+\item
+On suppose que pour toute transposition $\tau$, $\rho(\tau)=1$. Montrer que
+$\forall\sigma\in\mathcal{S}_n,\;\rho(\sigma)=1$
+\item
+On suppose maintenant qu'il existe une transposition $\tau_{0}=(a,b)$ pour laquelle
+$\rho(\tau_{0})=-1$.
+
+
+\begin{enumerate}
+\item[(a)]
+Pour un \'{e}l\'{e}ment $c\in\{1,\ldots,n\}\setminus\{a,b\}$, calculer $(a,b)(a,c)$. En d\'{e}duire
+que $\rho(a,c)=-1$.
+\item[(b)]
+Pour deux \'{e}l\'{e}ments distincts $c$ et $d$ de $\{1,\ldots,n\}$, calculer $(a,c)(a,d)(a,c)$.
+En d\'{e}duire que $\rho(c,d)=-1$.
+\item[(c)] En déduire que pour toute transposition $\tau$, $\rho(\tau)=-1$ puis 
+montrer que pour toute permutation $\sigma\in\mathcal{S}_n$, $\rho(\sigma)$ est la signature de
+$\sigma$.
+\end{enumerate}
+\item Quels sont tous les morphismes de groupes de $(\mathcal{S}_n,\circ)$ dans $(\{-1,1\},\cdot)$ ?
+\item
+
+On consid\`{e}re l'application $\varphi$ suivante :
+$$
+ \varphi :
+  \begin{array}{ccc}
+    \mathcal{S}_n & \rightarrow  & \{-1,1\} \\[3mm]
+    \sigma  & \mapsto & \prod_{i=1}^{n}\frac{\sigma(i)-\sigma(j)}{i-j}
+  \end{array}
+$$
+Montrer que $\forall(\sigma,\tau)\in\mathcal{S}_n,\;
+\varphi(\sigma\tau)=\varphi(\sigma)\varphi(\tau)$.
+
+En d\'{e}duire que
+$$
+ \forall\sigma\in\mathcal{S}_n,\;\;\epsilon(\sigma)=\prod_{i=1}^{n}\frac{\sigma(i)-\sigma(j)}{i-j},
+$$
+o\`{u} $\epsilon(\sigma)$ d\'{e}signe la signature de $\sigma$.
+\end{enumerate}
+
+
+
+\finenonce
+
+\noindication
+
+\nocorrection
+
+\finexercice
+

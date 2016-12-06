@@ -1,0 +1,53 @@
+\exercice{2421, drutu, 2007/10/01}
+\enonce 
+Soit $X$ un espace muni d'une m\'etrique $\mathrm{dist} : X\times X \to
+\R_+$.
+\begin{enumerate}
+  \item Montrer que si $f:\R_+ \to R_+$ est une fonction
+  croissante telle que $f(0)=0$ et $f(x+y)\leq f(x) +f(y)$ alors
+  $\mathrm{dist}_f (x,y)=f(\mathrm{dist} (x,y))$ est une m\'etrique sur $X$.
+  \item Montrer que
+$$
+\mathrm{dist}'(x,y)=\frac{\mathrm{dist}(x,y)}{1+\mathrm{dist} (x,y)}\, ,\; \forall x,y,
+$$ est une m\'etrique sur $X$.
+  \item Montrer que les m\'etriques $\mathrm{dist}$ et $\mathrm{dist}'$ sont
+  topologiquement \'equivalentes.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item  On v\'erifie facilement les trois propri\'et\'es de
+m\'etrique.
+  \item Soit $f:\R_+ \to \R_+ \, ,\,
+f(x)=\frac{x}{x+1}=1-\frac{1}{x+1}$. On a que $f(0)=0$ et
+$f'(x)=\frac{1}{(x+1)^2}$,
+  donc la fonction $f$ est croissante sur $\R_+$. L'in\'egalit\'e
+  $f(x+y)\leq f(x)+f(y)$ pour $x,y\in \R_+$ est \'equivalente \`a $$\frac{1}{x+y+1}\geq \frac{1}{x+1}+\frac{1}{y+1}-1
+  \Leftrightarrow \frac{1}{x+y+1}+1 \geq \frac{1}{x+1}+\frac{1}{y+1}\Leftrightarrow 1+x+y\leq (1+x)(1+y)\, .$$
+
+La derni\`ere \'egalit\'e est \'evidemment v\'erifi\'ee pour
+$x\geq 0\, ,\, y\geq 0\, $.
+  \item D'apr\`es le cours, la m\'etrique $\mathrm{dist}$ et la m\'etrique
+$\mathrm{dist}_2=\min (\mathrm{dist} ,1)$ sont topologiquement \'equivalentes.
+Ainsi il suffit de montrer que $\mathrm{dist}_1$ et $\mathrm{dist}_2$ sont
+topologiquement \'equivalentes.
+
+Puisque $1+\mathrm{dist} \geq 1$, on a que $ \mathrm{dist}_1\leq \mathrm{dist}$. Aussi
+$\mathrm{dist}_1\leq 1$, d'o\`u $\mathrm{dist}_1\leq \mathrm{dist}_2$.
+
+La fonction $f$ \'etant croissante, pour tout $x,y$ on a que
+$\mathrm{dist}_1(x,y)= f(\mathrm{dist} (x,y)) \geq f(\mathrm{dist}_2(x,y))$. D'autre part,
+$\mathrm{dist}_2(x,y)\leq 1$ implique
+$f(\mathrm{dist}_2(x,y))=\frac{\mathrm{dist}_2(x,y)}{1+\mathrm{dist}_2(x,y)}\geq
+\frac{\mathrm{dist}_2(x,y)}{2}$.
+
+On a obtenu que pour tout $x,y$,
+$$\frac{\mathrm{dist}_2(x,y)}{2}\leq \mathrm{dist}_1(x,y)\leq \mathrm{dist}_2(x,y)\, .$$
+
+Ainsi, les m\'etriques $\mathrm{dist}_1$ et $\mathrm{dist}_2$ sont \'equivalentes.
+\end{enumerate}
+\fincorrection
+\finexercice

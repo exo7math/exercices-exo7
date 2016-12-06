@@ -1,0 +1,74 @@
+\exercice{2870, burnol, 2009/12/15}
+\enonce
+Le but de ce problème est d'établir les deux formules importantes:
+\[ \forall z\in\Cc\setminus\Zz\quad \frac\pi{\sin \pi z} = \frac1{z} +
+\lim_{\substack{N\to+\infty \\ M\to+\infty}} 
+\sum_{\substack{-M\leq n \leq N \\ n\neq0}}
+\frac{(-1)^n}{z-n} = \frac1z + \sum_{n=1}^\infty (-1)^n\frac{2z}{z^2-n^2}\] 
+\[\forall z\in\Cc\qquad \sin(\pi z) = \lim_{N\to\infty} \pi z\prod_{n=1}^N (1 -
+\frac{z^2}{n^2})\]
+\begin{enumerate}
+  \item Montrer la convergence de la série
+$\sum_{n=1}^\infty \frac{(-1)^n}{z-n}$ (regarder les sommes
+partielles pour les indices pairs).
+  \item On pose $f(w) =  \frac\pi{\sin \pi
+w}$. Soit $z\notin\Zz$ fixé, soit $N>|z|-\frac12$ et ${\cal R}_N$ le carré
+$\{|x|\leq N+\frac12$, $|y|\leq N+\frac12\}$, et $C_N =
+\partial {\cal R}_N$ son
+bord parcouru dans le sens direct. Exprimer $\frac1{2\pi i}
+\int_{C_N} \frac{f(w)}{w-z}dw$ à l'aide du Théorème
+des résidus.
+  \item Montrer $\int_{C_N} \frac{f(w)}w dw = 0$ (on notera que $f$ est
+impaire) et en déduire :
+\[ \frac1{2\pi i} \int_{C_N} \frac{f(w)}{w-z}dw =
+\frac1{2\pi i} \int_{C_N} \frac\pi{\sin \pi 
+w}\frac{z}{w(w-z)}dw\]
+  \item On rappelle l'identité $\sin(w) = \sin(x)\ch(y) + i
+\cos(x)\sh(y)$ pour $w=x+iy$. Montrer $|\sin w|^2 = \sin^2
+x + \sh^2 y$ ($x,y\in\Rr\dots$). En déduire $|\sin(\pi w)| = \ch(\pi
+y)\geq 1$ sur les bords verticaux du carré et $|\sin(\pi w)|
+\geq \sh(\pi(N+\frac12))\geq \sh(\pi\frac12) =
+2.301\dots\geq1$ sur les bords horizontaux. 
+Conclure la preuve de
+\[ \frac\pi{\sin \pi z} = \frac1z + \sum_{n=1}^\infty
+(-1)^n\frac{2z}{z^2-n^2}\]  
+avec convergence uniforme pour $|z|$ borné.
+  \item Reprendre la même technique et prouver:
+\[ \forall z\in\Cc\setminus\Zz\quad\frac{\pi \cos(\pi
+z)}{\sin(\pi z)} = \lim_{N\to\infty} 
+\sum_{-N\leq n\leq N} \frac1{z-n} = \frac1z +
+\sum_{n=1}^\infty \frac{2z}{z^2-n^2}\;,\]
+avec convergence uniforme pour $|z|$ borné.
+  \item On veut maintenant prouver: $\sin(\pi z) = \lim_{N\to\infty}
+\pi z\prod_{n=1}^N (1 - 
+\frac{z^2}{n^2})$
+%
+On fixe une fois pour toutes $R>0$, et on va
+montrer la formule pour $|z|<R$. 
+Soit $N$ avec $N>R$ et notons $f_N(z) =
+\frac{\pi z}{\sin(\pi z)}\prod_{n=1}^N (1 - \frac{z^2}{n^2})$, prolongé
+par continuité en les $n$, $|n|\leq N$. Montrer que $f_N$
+est holomorphe et ne s'annule pas sur $D(0,R)$.
+  \item Soit $\gamma:[0,1]\to\Cc^*$ le chemin $\gamma(t) =
+f_N(tz)$. On a donc $\gamma(0) = 1$, $\gamma(1) = f_N(z)$,
+et $\gamma(t)\neq0$ pour tout $t$. Par un théorème démontré
+en cours (lequel?)
+on a 
+$\gamma(1) = \gamma(0)\exp\left(\int_\gamma \frac{dw}w\right) $.
+En déduire $f_N(z) = \exp\left(\int_0^1 \frac{f_N'(tz)}{f_N(tz)}
+zdt\right)$.
+  \item Soit $\epsilon>0$. En utilisant la convergence uniforme pour
+ $|z|$ borné
+ du développement en fractions de $\pi\cotg(\pi z)$,
+montrer que pour $N$ suffisamment grand, on a $|f_N'(w)|\leq
+ \epsilon |f_N(w)|$ pour tout $w\in D(0,R)$, puis en déduire
+\[ N\gg0\quad |z|<R \implies\quad |f_N(z)| \leq e^{\epsilon|z|} \leq
+ e^{\epsilon R} \] 
+  \item En déduire $\lim_{N\to\infty} f_N(z) = 1$,
+uniformément sur $D(0,R)$. Conclure la
+preuve du produit infini de Euler pour $\sin(z)$. 
+\end{enumerate}
+\finenonce
+\noindication
+\nocorrection
+\finexercice

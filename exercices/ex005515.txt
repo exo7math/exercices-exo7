@@ -1,0 +1,144 @@
+\exercice{5515, rouget, 2010/07/15}
+\enonce[**T]
+Dans $\Rr^3$ rapporté à un repère orthonormé, soient $(D)$ $\left\{
+\begin{array}{l}
+x+y+z+1=0\\
+2x+y+5z=2
+\end{array}
+\right.$ et $(D')$ $\left\{
+\begin{array}{l}
+x+y+z=2\\
+2x+y-5z=3
+\end{array}
+\right.$. Déterminer la distance de $(D)$ à $(D')$ puis la perpendiculaire commune à ces deux droites.
+\finenonce
+
+\noindication
+
+\correction
+\textbullet~Déterminons un repère de $(D)$.
+
+\begin{center}
+$\left\{
+\begin{array}{l}
+x+y+z+1=0\\
+2x+y+5z=2
+\end{array}
+\right.\Leftrightarrow\left\{
+\begin{array}{l}
+x+y=-z-1\\
+2x+y=-5z+2
+\end{array}
+\right.\Leftrightarrow\left\{
+\begin{array}{l}
+x=-4z+3\\
+y=3z-4
+\end{array}
+\right.$
+\end{center}
+Un repère de $(D)$ est $\left(A,\overrightarrow{u}\right)$ où $A(3,-4,0)$ et $\overrightarrow{u}(-4,3,1)$.
+\textbullet~Déterminons un repère de $(D')$.
+
+\begin{center}
+$\left\{
+\begin{array}{l}
+x+y+z=2\\
+2x+y-5z=3
+\end{array}
+\right.\Leftrightarrow\left\{
+\begin{array}{l}
+x+y=-z+2\\
+2x+y=5z+3
+\end{array}
+\right.\Leftrightarrow\left\{
+\begin{array}{l}
+x=6z+1\\
+y=-7z+1
+\end{array}
+\right.$
+\end{center}
+Un repère de $(D')$ est $\left(A',\overrightarrow{u'}\right)$ où $A'(1,1,0)$ et $\overrightarrow{u'}(6,-7,1)$.
+\textbullet~$\overrightarrow{u}\wedge\overrightarrow{u'}=\left(
+\begin{array}{c}
+-4\\
+3\\
+1
+\end{array}
+\right)\wedge\left(
+\begin{array}{c}
+6\\
+-7\\
+1
+\end{array}
+\right)=\left(
+\begin{array}{c}
+10\\
+10\\
+10
+\end{array}
+\right)\neq\overrightarrow{0}$.
+\rule{0mm}{5mm}Puisque $\overrightarrow{u}$ et $\overrightarrow{u'}$ ne sont pas colinéaires, les droites $(D)$ et $(D')$ ne sont parallèles. Ceci assure l'unicité de la perpendiculaire commune  à $(D)$ et $(D')$.
+\textbullet~On sait que la distance $d$ de $(D)$ à $(D')$ est donnée par
+
+\begin{center}
+$d=\frac{\text{abs}\left(\left[\overrightarrow{AA'},\overrightarrow{u},\overrightarrow{u'}\right]\right)}{\|\overrightarrow{u}\wedge\overrightarrow{u'}\|}$,
+\end{center}
+avec $[\overrightarrow{AA'},\overrightarrow{u},\overrightarrow{u'}]=\left|
+\begin{array}{ccc}
+-2&-4&6\\
+5&3&-7\\
+0&1&1
+\end{array}
+\right|=10\times(-2)+10\times5=30$ et donc $d=\frac{30}{10\sqrt{3}}=\sqrt{3}$.
+
+\begin{center}
+\shadowbox{
+$d((D),(D'))=\sqrt{3}$.
+}
+\end{center}
+
+\textbullet~Un système d'équations de la perpendiculaire commune est 
+$\left\{
+\begin{array}{l}
+\left[\overrightarrow{AM},\overrightarrow{u},\overrightarrow{u}\wedge\overrightarrow{u'}\right]=0\\
+\rule{0mm}{6mm}\left[\overrightarrow{A'M},\overrightarrow{u'},\overrightarrow{u}\wedge\overrightarrow{u'}\right]=0
+\end{array}
+\right.$. Or,
+
+\begin{center}
+$\frac{1}{10}\left[\overrightarrow{AM},\overrightarrow{u},\overrightarrow{u}\wedge\overrightarrow{u'}\right]=\left|
+\begin{array}{ccc}
+x-3&-4&1\\
+y+4&3&1\\
+z&1&1
+\end{array}
+\right|=2(x-3)+5(y+4)-7z=2x+5y-7z+14$,
+\end{center}
+et
+
+\begin{center}
+$\frac{1}{10}\left[\overrightarrow{A'M},\overrightarrow{u'},\overrightarrow{u}\wedge\overrightarrow{u'}\right]=\left|
+\begin{array}{ccc}
+x-1&6&1\\
+y-1&-7&1\\
+z&1&1
+\end{array}
+\right|=-8(x-1)-5(y-1)+13z=-8x-5y+13z+13$.
+\end{center}
+Donc
+
+\begin{center}
+\shadowbox{
+\begin{tabular}{c}
+un système d'équations cartésienne de la perpendiculaire commune à $(D)$ et $(D')$ est\\
+$\left\{
+\begin{array}{l}
+2x+5y-7z=-14\\
+8x+5y-13z=13
+\end{array}
+\right.$.
+\end{tabular}
+}
+\end{center}
+\fincorrection
+\finexercice

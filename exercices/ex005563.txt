@@ -1,0 +1,20 @@
+\exercice{5563, rouget, 2010/10/16}
+\enonce[** I]
+\label{ex:rou1}
+Soient $F$ et $G$ deux sous-espaces vectoriels d'un espace vectoriel $E$.
+
+Montrer que : $\left[(F\cup G\;\text{sous-espace de}\;E)\Leftrightarrow(F\subset G\;\text{ou}\;G\subset F)\right]$.
+\finenonce
+
+\noindication
+
+\correction
+$\Leftarrow)$ Si $F\subset G$ ou $G\subset F$ alors $F\cup G=G$ ou $F\cup G=F$. Dans tous les cas, $F\cup G$ est un sous-espace vectoriel.
+
+$\Rightarrow)$ Supposons que $F\not\subset G$ et que $F\cup G$ est un sous-espace vectoriel de $E$ et montrons que $G\subset F$.
+
+$F$ n'est pas inclus dans $G$ et donc il existe $x$ élément de $E$ qui est dans $F$ et pas dans $G$.
+
+Soit $y$ un élément de $G$. $x+y$ est dans $F\cup G$ car $x$ et $y$ y sont et car $F\cup G$ est un sous-espace vectoriel de $E$. Si $x+y$ est élément de $G$ alors $x=(x+y)-y$ l'est aussi ce qui est exclu. Donc $x+y$ est élément de $F$ et par suite $y=(x+y)-x$ est encore dans $F$. Ainsi, tout élément de $G$ est dans $F$ et donc $G\subset F$.
+\fincorrection
+\finexercice

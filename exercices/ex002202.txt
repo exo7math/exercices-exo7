@@ -1,0 +1,28 @@
+\exercice{2202, debes, 2008/02/12}
+\enonce
+D\'eterminer les sous-groupes de Sylow du groupe altern\'e $A_5$.
+\finenonce 
+
+\indication
+L'identification de chacun des $p$-Sylow ne pose pas de difficult\'e. Observer ensuite que les sous-groupes de Sylow sont deux \`a deux d'intersection r\'eduite \`a $\{1\}$ et determiner leur nombre en comptant les \'el\'ements d'ordre $2$, $3$ et $5$.
+\finindication
+
+\correction 
+\hskip 5mm Le groupe altern\'e $A_5$ est d'ordre $60=2^2.3.5$.
+
+\hskip 5mm Les  $5$-Sylow sont d'ordre $5$, donc cycliques; chacun est engendr\'e par un $5$-cycle et contient  $4$ $5$-cycles. Les  $5$-Sylow sont deux \`a deux d'intersection r\'eduite \`a $\{1\}$. Comme il y a $24$ $5$-cycles dans $A_5$, il y a $6$ $5$-Sylow.
+(On peut aussi utiliser les th\'eor\`emes de Sylow: Le nombre de $5$-Sylow est $\equiv 1\ [\hbox{\rm mod}\ 5]$ et divise $12$; c'est donc $1$ ou $6$. Comme ce ne peut \^etre $1$ (car il y aurait alors un unique $5$-Sylow qui serait distingu\'e, ce qui est impossible car $A_5$ est simple), 
+%(on peut voir aussi plus simplement que le sous-groupe 
+%engendr\'e par un $5$-cycle est un $5$-Sylow et qu'il n'est pas distingu\'e), 
+c'est $6$.)
+
+\hskip 5mm Les  $3$-Sylow sont d'ordre $3$, donc cycliques; chacun est engendr\'e par un $3$-cycle et contient  $2$ $3$-cycles. Les  $3$-Sylow sont deux \`a deux d'intersection r\'eduite \`a $\{1\}$. Comme il y a $20$ $3$-cycles dans $A_5$, il y a $10$ $3$-Sylow.
+(Par les th\'eor\`emes de Sylow: le nombre de $3$-Sylow est $\equiv 1\ [\hbox{\rm mod}\ 3]$ et divise $20$; c'est donc $1$, $4$ ou $10$.   Comme ci-dessus, ce ne peut \^etre $1$. Si c'etait $4$, la conjugaison de $A_5$ sur ces $3$-Sylow induirait un morphisme $A_5\rightarrow S_4$ non trivial (puisque cette action par conjugaison est transitive) et donc injectif (puisque le noyau, distingu\'e, est forc\'ement trivial). Or l'ordre de $A_5$ ne divise pas celui de $S_4$. Il y a donc 10 $3$-Sylow.)
+
+\hskip 5mm Les  $2$-Sylow sont d'ordre $4$, donc commutatifs. Comme il n'y a pas d'\'el\'ement d'ordre $4$ dans $A_5$, chaque $2$-Sylow est isomorphe au groupe $\Zz/2\Zz \times \Zz/2\Zz$; il est engendr\'e par deux produits de deux transpositions qui commutent et contient $3$ \'el\'ements d'ordre $2$. On voit ensuite que ces trois \'el\'ements d'ordre $2$ sont les $3$ produits de deux transpositions qui commutent qu'on peut former avec quatre \'el\'ements de $\{1,\ldots,5\}$. On en d\'eduit que les  $2$-Sylow sont deux \`a deux d'intersection r\'eduite \`a $\{1\}$. Il y a $15$ \'el\'ements d'ordre $2$ dans $A_5$ et il y a $5$ $2$-Sylow.
+
+
+\hskip 5mm Tout \'el\'ement de $A_5$ est d'ordre $1$, $2$, $3$ ou $5$ et est donc contenu dans un $p$-Sylow.
+On a bien $6.4+10.2 + 5.3+1 = 60$.
+\fincorrection
+\finexercice

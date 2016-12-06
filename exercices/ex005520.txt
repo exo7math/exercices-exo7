@@ -1,0 +1,40 @@
+\exercice{5520, rouget, 2010/07/15}
+\enonce[**]
+Soient $(D)$ la droite dont un système d'équations cartésiennes est 
+$\left\{
+\begin{array}{l}
+x+y+z=1\\
+x-2y-z=0
+\end{array}
+\right.$ et $(P)$ le plan d'équation cartésienne $x+3y+2z=6$. Déterminer la projetée (orthogonale) de $(D)$ sur $(P)$.
+\finenonce
+
+\noindication
+
+\correction
+Notons $p$ la projection orthogonale sur $(P)$.
+Un repère de $(D)$ est $\left(A,\overrightarrow{u}\right)$ où $A(0,-1,2)$ et $\overrightarrow{u}(1,2,-3)$. Un vecteur normal à $(P)$ est $\overrightarrow{n}(1,3,2)$. $\overrightarrow{u}$ et $\overrightarrow{n}$ ne sont pas colinéaires et donc $p(D)$ est une droite du plan $(P)$.
+Plus précisément, $p(D)$ est l'intersection du plan $(P)$ et du plan $(P')$ contenant $(D)$ et perpendiculaire à $(P)$. Un repère de $(P')$ est $\left(A,\overrightarrow{u},\overrightarrow{n}\right)$. Donc
+
+\begin{align*}\ensuremath
+M(x,y,z)\in(P')&\Leftrightarrow\left|
+\begin{array}{ccc}
+x&1&1\\
+y+1&2&3\\
+z-2&-3&2
+\end{array}
+\right|=0\Leftrightarrow13x-5(y+1)+(z-2)=0\Leftrightarrow13x-5y+z=7.
+\end{align*}
+
+\begin{center}
+\shadowbox{
+La projetée orthogonale de $(D)$ sur $(P)$ est la droite d'équations $\left\{
+\begin{array}{l}
+13x-5y+z=7\\
+x+3y+2z=6
+\end{array}
+\right.$.
+}
+\end{center}
+\fincorrection
+\finexercice

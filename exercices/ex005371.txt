@@ -1,0 +1,72 @@
+\exercice{5371, rouget, 2010/07/06}
+\enonce[**** Déterminant circulant]
+Soit $A=
+\left(
+\begin{array}{cccccc}
+a_1&a_2&\ldots& &\ldots&a_n\\
+a_n&a_1&a_2& & &a_{n-1}\\
+a_{n-1}&a_n&a_1& & &a_{n-2}\\
+\vdots& &\ddots&\ddots& &\vdots\\
+ & & &\ddots&\ddots&\vdots\\
+a_2&a_3&\ldots& &a_n&a_1
+\end{array}
+\right)
+$ et $P=(\omega^{(k-1)(l-1)})_{1\leq k,l\leq n}$ où $\omega=e^{2i\pi/n}$. Calculer $P^2$ et $PA$. En déduire $\mbox{det}A$.
+\finenonce
+
+\noindication
+
+\correction
+\textbullet~Soit $(k,l)\in\llbracket1,n\rrbracket^2$. Le coefficient ligne $k$, colonne $l$ de $P^2$ est
+
+$$\alpha_{k,l}=\sum_{u=1}^{n}\omega^{(k-1)(u-1)}\omega^{(u-1)(l-1)}=\sum_{u=1}^{n}\omega^{(k+l-2)(u-1)}=\sum_{u=0}^{n-1}(\omega^{k+l-2})^u.$$
+ 
+
+Or, $\omega^{k+l-2}=1\Leftrightarrow k+l-2\in n\Zz$. Mais, $0\leq k+l-2\leq 2n-2<2n$ et donc, $k+l-2\in n\Zz\Leftrightarrow k+l-2\in\{0,n\}\Leftrightarrow k+l=2\;\mbox{ou}\;k+l=n+2$. Dans ce cas, $\alpha_{k,l}=n$. Sinon, 
+
+$$\alpha_{k,l}=\frac{1-(\omega^{k+l-2})^n}{1-\omega^{k+l-2}}=\frac{1-1}{1-\omega^{k+l-2}}=0.$$
+Ainsi, $P^2=n\left(
+\begin{array}{ccccc}
+1&0&\ldots&\ldots&0\\
+0& & &0&1\\
+\vdots& &0&1&0\\
+ & & & & \\
+0&1&0&\ldots&0
+\end{array}
+\right)$.
+\textbullet~Soit $(k,l)\in\llbracket1,n\rrbracket^2$. Le coefficient ligne $k$, colonne $l$ de $P\overline{P}$ est
+
+$$\beta_{k,l}=\sum_{u=1}^{n}\omega^{(k-1)(u-1)}\omega^{-(u-1)(l-1)}=\sum_{u=1}^{n}(\omega^{k-l})^{u-1}.$$
+Or, $\omega^{k-l}=1\Leftrightarrow k-l\in n\Zz$. Mais, $-n<-(n-1)\leq k-l\leq n-1<n$ et donc $k-l\in n\Zz\Leftrightarrow k=l$. Dans ce cas, $\beta_{k,l}=n$. Sinon, $\beta_{k,l}=0$. Ainsi, $P\overline{P}=nI_n$ (ce qui montre que $P\in GL_n(\Cc)$ et $P^{-1}=\frac{1}{n}\overline{P}$).
+Calculons enfin $PA$. Il faut d'abord écrire proprement les coefficients de $A$. Le coefficient ligne $k$, colonne $l$ de $A$ peut s'écrire $a_{l-k+1}$ si l'on adopte la convention commode $a_{n+1}=a_1$, $a_{n+2}=a_2$ et plus généralement pour tout entier relatif $k$, $a_{n+k}=a_k$.
+Avec cette convention d'écriture, le coefficient ligne $k$, colonne $l$ de $PA$ vaut
+
+$$\sum_{u=1}^{n}\omega^{(k-1)(u-1)}a_{l-u+1}=\sum_{v=l-n+1}^{l}\omega^{(k-1)(l-v)}a_v.$$
+Puis on réordonne cette somme pour qu'elle commence par $a_1$.
+
+\begin{align*}\ensuremath
+\sum_{v=l-n+1}^{l}\omega^{(k-1)(l-v)}a_v&=\sum_{v=1}^{l}\omega^{(k-1)(l-v)}a_v
++\sum_{v=l-n+1}^{0}\omega^{(k-1)(l-v)}a_v\\
+ &=\sum_{v=1}^{l}\omega^{(k-1)(l-v)}a_v+\sum_{w=l+1}^{n}\omega^{(k-1)(l-w+n)}a_{w+n}\;(\mbox{en posant}\;w=v+n)\\
+ &=\sum_{v=1}^{l}\omega^{(k-1)(l-v)}a_v+\sum_{w=l+1}^{n}\omega^{(k-1)(l-w)}a_{w}\\
+ &=\sum_{v=1}^{n}\omega^{(k-1)(l-v)}a_v=\omega^{(k-1)(l-1)}\sum_{v=1}^{n}\omega^{(k-1)(1-v)}a_v
+\end{align*}
+(le point clé du calcul précédent est que les suites $(a_k)$ et $(\omega^k)$ ont la même période $n$ ce qui s'est traduit par
+$\omega^{(k-1)(l-w+n)}a_{w+n}=\omega^{(k-1)(l-v)}a_v$).
+Pour $k$ élément de $\llbracket1,n\rrbracket$, posons alors $S_k=\sum_{v=1}^{n}\omega^{(k-1)(1-v)}a_v$. On a montré que $PA=(\omega^{(k-1)(l-1)}S_k)_{1\leq k,l\leq n}$.
+
+Par linéarité par rapport à chaque colonne, on a alors
+
+\begin{center}
+$\mbox{det}(PA)=\mbox{det}(\omega^{(k-1)(l-1)}S_k)_{1\leq k,l\leq n}=\left(\prod_{k=1}^{n}S_k\right)\times\mbox{det}(\omega^{(k-1)(l-1)})_{1\leq k,l\leq n}=\left(\prod_{k=1}^{n}S_k\right)\times\mbox{det}P$.
+\end{center}
+Donc $(\mbox{det}P)(\mbox{det}A)=\left(\prod_{k=1}^{n}S_k\right)\mbox{det}P$ et finalement, puisque $\mbox{det}P\neq0$,
+
+\begin{center}
+\shadowbox{
+$\mbox{det}A=\prod_{k=1}^{n}\left(\sum_{v=1}^{n}\omega^{(k-1)(1-v)}a_v\right).$
+}
+\end{center}
+Par exemple, pour $n=3$, $\mbox{det}A=(a_1+a_2+a_3)(a_1+ja_2+j^2a_3)(a_1+j^2a_2+ja_3)$.
+\fincorrection
+\finexercice

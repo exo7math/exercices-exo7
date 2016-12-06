@@ -1,0 +1,57 @@
+\exercice{5775, rouget, 2010/10/16}
+\enonce[** I]
+On note $E$ l'ensemble des suites réelles de carrés sommables c'est-dire les suites réelles $(u_n)_{n\in\Nn}$ telles que
+
+\begin{center}
+$\sum_{n=0}^{+\infty}u_n^2<+\infty$.
+\end{center}
+
+\begin{enumerate}
+ \item  Montrer que $E$ est un $\Rr$-espace vectoriel.
+
+\item  Pour $(u,v)\in E^2$, on pose $\varphi(u,v)=\sum_{n=0}^{+\infty}u_nv_n$. Montrer que $\varphi$ est un produit scalaire sur $E$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Montrons que $E$ est un sous-espace de $(\Rr^\Nn,+,.)$. La suite nulle est élément de $E$. Soient $(u,v)\in E^2$ et $(\lambda,\mu)\in\Rr^2$.
+
+\begin{center}
+$0\leqslant(\lambda u+\mu v)^2=\lambda^2u^2+2\lambda\mu uv+\mu^2v^2\leqslant\lambda^2u^2+\lambda\mu(u^2+v^2)+\mu^2v^2=(\lambda^2+\lambda\mu)u^2+(\lambda\mu+\mu^2)v^2$.
+\end{center}
+
+Par hypothèse, la série de terme général $(\lambda^2+\lambda\mu)u_n^2+(\lambda\mu+\mu^2)v_n^2$ converge et on en déduit que la suite $\lambda u+\mu v$ est de carré sommable. On a montré que
+
+\begin{center}
+\shadowbox{
+$E$ est un sous-espace vectoriel de l'espace vectoriel $(\Rr^\Nn,+,.)$.
+}
+\end{center}
+
+\item  \textbullet~Soient $u$ et $v$ deux éléments de $E$. Pour tout entier naturel $n$,
+
+\begin{center}
+$|u_nv_n\leqslant\frac{1}{2}(u_n^2+v_n^2)$.
+\end{center}
+
+Ainsi, la série de terme général $u_nv_n$ est absolument convergente et donc convergente. Ceci montre que $\varphi(u,v)$ existe dans $\Rr$.
+
+\textbullet~La symétrie, la bilinéarité et la positivité de $\varphi$ sont claires. De plus, pour $u\in E$,
+
+\begin{center}
+$\varphi(u,u)=0\Rightarrow\sum_{n=0}^{+\infty}u_n^2=0\Rightarrow\forall n\in\Nn,\;u_n^2=0\Rightarrow u=0$.
+\end{center}
+
+En résumé, l'application $\varphi$ est une forme bilinéaire, symétrique, définie, positive et donc
+
+\begin{center}
+\shadowbox{
+l'application $\varphi$ est un produit scalaire sur $E$.
+}
+\end{center}
+\end{enumerate}
+\fincorrection
+\finexercice

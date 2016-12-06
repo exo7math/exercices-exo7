@@ -1,0 +1,67 @@
+\exercice{4744, quercia, 2010/03/16}
+\enonce[Diam{\`e}tres concourants (Ens Ulm MP$^*$ 2003)]
+\begin{enumerate}
+  \item Soit~$K$ un compact convexe de~$\R^2$ d'int{\'e}rieur non vide.
+    Soit~$O\in\mathring K$. Montrer qu'il existe une fonction
+    $f : \R \to {\R^+}$ continue $2\pi$-p{\'e}riodique telle qu'en coordonn{\'e}es polaires
+    de centre~$O$, $K$ est d{\'e}fini par~$\rho\le f(\theta)$.
+    
+
+  \item Soit~$g : {[0,1]} \to \R$ continue telle que
+    $ \int_{x=0}^{\pi}g(x)\cos(x)\,d x =  \int_{x=0}^{\pi}g(x)\sin(x)\,d x = 0$.
+    Montrer que~$g$ s'annule au moins deux fois sur~$]0,\pi[$.
+    
+
+  \item Soit~$G$ le centre de gravit{\'e} de~$K$. Montrer que~$G$ est le milieu
+    d'au moins trois "diam{\`e}tres" de~$K$ (trois segments joignant deux points de
+    la fronti{\`e}re).
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Pour~$\theta\in\R$, la demi-droite d'origine~$O$ et d'angle
+    polaire~$\theta$ coupe~$K$ selon un intervalle non trivial ($K$ est convexe
+    et $O$ est interieur {\`a}~$K$), ferm{\'e} born{\'e} ($K$ est compact).
+    On note~$f(\theta)$ la longueur de cet intervalle, ce qui d{\'e}finit
+    $f : \R \to {\R^{+*}}$ $2\pi$-p{\'e}riodique telle que $K = \{M(\rho,\theta)\text{ tq } 0\le \rho\le f(\theta)\}$.
+    
+    Continuit{\'e} de~$f$~: soit~$\theta_0\in\R$ et $\varepsilon>0$. Soit
+    $M(\rho_0,\theta_0)$ tel que $f(\theta_0)-\varepsilon<\rho_0<f(\theta_0)$.
+    Donc $M\in\mathring K$ et il existe~$\alpha>0$ tel que la boule de
+    centre~$M$ et de rayon~$\alpha$ est incluse dans~$K$ (faire un dessin).
+    Ainsi, pour tout~$\theta$
+    suffisament proche de~$\theta_0$ on a~$f(\theta)\ge OM > f(\theta_0)-\varepsilon$.
+    Consid{\'e}rons alors une hypoth{\'e}tique suite~$(\theta_k)$ de r{\'e}els convergeant
+    vers~$\theta_0$ telle que la suite $(f(\theta_k))$ ne converge pas vers~$f(\theta_0)$.
+    Comme la suite $(f(\theta_k))$ est born{\'e}e on peut, quitte {\`a} extraire une
+    sous-suite, supposer qu'elle converge vers un r{\'e}el~$\ell$ et le raisonnement
+    pr{\'e}c{\'e}dent montre que~$\ell>f(\theta_0)$. Si $M_k$ d{\'e}signe le point de~$K$
+    {\`a} la distance~$f(\theta_k)$ dans la direction d'angle polaire~$\theta_k$
+    alors la suite $(M_k)$ converge vers le point $M(\ell,\theta_0)$ qui doit
+    appartenir {\`a}~$K$ par compacit{\'e}, mais qui contredit la d{\'e}finition de~$f(\theta_0)$.
+  \item Si $g$ ne s'annule pas alors $ \int_{x=0}^{\pi}g(x)\sin(x)\,d x \ne 0$.
+    Si $g$ ne s'annule qu'en~$\alpha\in{[0,\pi]}$ alors $g$ est de signe constant
+    sur~$[0,\alpha]$ et sur~$[\alpha,\pi]$, les signes sont oppos{\'e}s, et on obtient encore
+    une contradiction en consid{\'e}rant $ \int_{x=0}^{\pi}g(x)\sin(x-\alpha)\,d x$
+    qui vaut~$0$ (d{\'e}velopper le sinus).
+  \item On choisit $O=G$. On a 
+    $\iint_{M\in K}\vec{OM} = \vec 0$, soit
+    ${ \int_{\theta=0}^{2\pi} f^3(\theta)\cos\theta\, d\theta =
+      \int_{\theta=0}^{2\pi} f^3(\theta)\sin\theta\, d\theta = 0}$, soit encore~:
+    $ \int_{\theta=0}^{\pi} (f^3(\theta)-f^3(\theta+\pi))\cos\theta\, d\theta =
+      \int_{\theta=0}^{\pi} (f^3(\theta)-f^3(\theta+\pi))\sin\theta\, d\theta = 0$.
+    D'apr{\`e}s la question pr{\'e}c{\'e}dente, il existe $\alpha\ne\beta\in{]0,\pi[}$ tels que
+    $f(\alpha) = f(\alpha+\pi)$ et $f(\beta) = f(\beta+\pi)$, ce qui prouve qu'il y
+    a au moins deux diam{\`e}tres de~$K$ dont~$O=G$ est le milieu. On prouve
+    l'existence d'un troisi{\`e}me diam{\`e}tre en d{\'e}calant l'origine des angles
+    polaires de fa\c con {\`a} avoir $f(0) = f(\pi)$, ce qui est possible vu l'existence
+    de~$\alpha,\beta$.
+\end{enumerate}
+\fincorrection
+
+
+\finexercice

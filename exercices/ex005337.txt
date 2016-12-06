@@ -1,0 +1,47 @@
+\exercice{5337, rouget, 2010/07/04}
+\enonce
+Soit $U_n$ l'ensemble des racines $n$-ièmes de l'unité dans $\Cc$. Ecrire sous forme d'une fraction rationnelle (ou encore réduire au même dénominateur) $F=\sum_{\omega\in U_n}^{}\frac{\omega X+1}{\omega^2X^2+\omega X+1}$.
+\finenonce
+
+\noindication
+
+\correction
+Pour $k$ élément de $\{0,...,n-1\}$, posons $\omega_k=e^{2ik\pi/n}$. Décomposons $F$ en éléments simples (sur $\Cc$).
+
+$$\frac{\omega X+1}{\omega^2X+\omega X+1}=\frac{\omega X+1}{(\omega X)^2+\omega X+1}=\frac{\omega X+1}{(\omega X-j)(\omega X-j^2)}=\frac{a}{\omega X-j}+\frac{b}{\omega X-j^2},$$
+ 
+avec $a=\frac{\omega\frac{j}{\omega}}{\omega\frac{j}{\omega}-j^2}=\frac{j+1}{j-j^2}=-\frac{-j^2}{j-j^2}=\frac{j}{j-1}$ et de même $b=\frac{j^2+1}{j^2-j}=-\frac{1}{j-1}$.
+Donc,
+
+\begin{align*}\ensuremath
+F&=\frac{1}{j-1}\sum_{k=0}^{n-1}(\frac{j}{\omega_k X-j}-\frac{1}{\omega_k X-j^2})=\frac{1}{j-1}\sum_{k=0}^{n-1}(\frac{j\omega_{-k}}{X-j\omega_{-k}}-\frac{\omega_{-k}}{X-j^2\omega_{-k}})
+ &=\frac{1}{j-1}\sum_{k=0}^{n-1}(\frac{j\omega_{k}}{X-j\omega_{k}}-\frac{\omega_{k}}{X-j^2\omega_{k}})
+\end{align*}
+ 
+Maintenant les $n$ nombres $j\omega_k$ sont deux à deux distincts et vérifient $(j\omega_k)^n=j^n$ et donc,
+
+$$\prod_{k=0}^{n-1}(X-j\omega_k)=X^n-j^n.$$
+
+$\sum_{k=0}^{n-1}\frac{j\omega_k}{X-j\omega_k}$ est donc la décomposition en éléments simples d'une fraction du type $\frac{P}{X^n-j^n}$ avec $\mbox{deg}P\leq n-1$. De plus, on sait que $j\omega_k=\frac{P(j\omega_k)}{n(j\omega_k)^{n-1}}$ et donc, $\forall k\in\{0,...,n-1\},\;P(j\omega_k)=nj^n$.
+Le polynôme $P-nj^n$ est de degré inférieur ou égal à $n-1$, admet les $n$ racines deux à deux distinctes $j\omega_k$ et est donc le polynôme nul. Par suite 
+
+$$\sum_{k=0}^{n-1}\frac{j\omega_{k}}{X-j\omega_{k}}=\frac{nj^n}{X^n-j^n}.$$
+
+De même, $\sum_{k=0}^{n-1}\frac{\omega_{k}}{X-j^2\omega_{k}}=\frac{nj^{2n-2}}{X^n-j^{2n}}$, puis 
+
+$$F=\frac{n}{j-1}(\frac{j^n}{X^n-j^n}-\frac{j^{2n-2}}{X^n-j^{2n}}).$$
+
+Si $n\in3\Zz$, posons $n=3p$, $p\in\Zz$. Dans ce cas,
+
+$$F=\frac{3p}{j-1}(\frac{1}{X^{3p}-1}-\frac{j}{X^{3p}-1})=\frac{3p}{1-X^{3p}}.$$
+ 
+Si $n\in3\Zz+1$, posons $n=3p+1$, $p\in\Zz$. Dans ce cas,
+
+$$F=\frac{3p+1}{j-1}(\frac{j}{X^{3p+1}-j}-\frac{1}{X^{3p+1}-j^2})=\frac{(3p+1)(X^{3p+1}+1)}{X^{6p+2}+X^{3p+1}+1}.$$
+ 
+Si $n\in3\Zz+2$, posons $n=3p+2$, $p\in\Zz$. Dans ce cas,
+
+$$F=\frac{3p+2}{j-1}(\frac{j^2}{X^{3p+2}-j^2}-\frac{j^2}{X^{3p+2}-j})=\frac{3p+2}{X^{6p+4}+X^{3p+2}+1}.$$
+
+\fincorrection
+\finexercice

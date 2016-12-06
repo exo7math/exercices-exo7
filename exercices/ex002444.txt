@@ -1,0 +1,46 @@
+
+\exercice{2444, matexo1, 2002/02/01}
+\video{GsaYq45QDFE}
+\enonce
+Soient $A, B$ deux matrices semblables (i.e. il existe $P$
+inversible telle que $B = P^{-1} A P$). Montrer que si l'une est
+inversible, l'autre aussi\,; que si l'une est idempotente, l'autre
+aussi\,; que si l'une est nilpotente, l'autre aussi\,; que si $A =
+\lambda I$, alors $A = B$.
+\finenonce
+
+\indication
+$A$ est \emph{idempotente} s'il existe un $n$ tel que $A^n=I$ (la matrice identité).
+
+$A$ est \emph{nilpotente} s'il existe un $n$ tel que $A^n=(0)$ (la matrice nulle).
+\finindication
+
+\correction
+Soit $A,B$ tel que $B = P^{-1} A P$.
+\begin{enumerate}
+  \item Supposons $A$ inversible, alors il existe $A'$ tel que $A\times A'=I$ et $A'\times A=I$.
+Notons alors $B'= P^{-1} A'P$. On a
+$$B \times B' = \big(P^{-1}A P \big)\times \big(P^{-1} A' P\big)=P^{-1}A \big(P P^{-1}\big)A' P 
+= P^{-1}A A' P=P^{-1} I P=I$$
+De même $B' \times B=I$. Donc $B$ est inversible d'inverse $B'$.
+
+  \item Supposons que $A^n=I$. Alors 
+$$\begin{array}{rcl}
+B^n 
+&=&\big(P^{-1} A P\big)^n= \big(P^{-1} A P \big)\big(P^{-1} A P \big)\cdots \big(P^{-1} A P \big) \\
+&=&P^{-1} A (P P^{-1}) A (P P^{-1}) \cdots  A P \\
+&=& P^{-1} A^n P  \\
+&=& P^{-1} I P = I \\
+\end{array}$$
+Donc $B$ est idempotente.
+
+  \item Si $A^n=(0)$ alors le même calcul qu'au-dessus conduit à $B^n=(0)$.
+
+  \item Si $A = \lambda I$ alors $B=P^{-1} (\lambda I) P = \lambda I \times P^{-1}P= \lambda I$
+(car la matrice $\lambda I$ commute avec toutes les matrices).
+\end{enumerate}
+
+\fincorrection
+
+\finexercice
+

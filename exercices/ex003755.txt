@@ -1,0 +1,40 @@
+\exercice{3755, quercia, 2010/03/11}
+\enonce[Groupe engendré par les réflexions]
+
+Soit $E$ un espace vectoriel hermitien et $G$ le sous-groupe
+de~$U(E)$ engendré par les réflexions.
+
+\begin{enumerate}
+  \item On suppose ici $\dim E\ge 2$.
+    Soient $u,v\in E$. Montrer qu'il existe une réflexion $\sigma$
+    échangeant $u$ et~$v$ si et seulement si $\|u\| = \|v\|$ et $(u\mid v)\in\R$.
+
+  \item Montrer que $G = \{f\in U(E)\ \text{ tq }\det(f)\in\{-1,1\}\}$.
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item 
+  \item Tout $f\in G$ vérifie $\det(f)\in\{-1,1\}$. Réciproquement,
+soit $f\in U(E)\ \text{ tq }\det(f)\in\{-1,1\}$ et $F = \mathrm{Ker}(f-\mathrm{id})$.
+On montre que $f$ est composée de réflexions par récurrence sur
+$p=\mathrm{codim} F$.
+
+$p=0  \Rightarrow  f=\mathrm{id}$. $p=1 \Rightarrow f$ est une réflexion car $F$ est un hyperplan et
+$F^\perp$ est stable par~$f$.
+
+$0,\dots,p-1 \Rightarrow p$~: soit $(e_1,\dots,e_n)$ une BON de~$E$ telle que
+$(e_{p+1},\dots,e_n)$ est une BON de~$F$ et $e_1$ est vecteur propre de~$f$.
+Soit $e'_1 = f(e_1) = \lambda e_1$, et
+$\sigma,\sigma'$ deux réflexions telles que $\sigma(e_1)=e_2$ et
+$\sigma'(e_2)=e'_1$. Alors $g=\sigma\circ\sigma'\circ f \in U(E)$,
+$\det(g) = \det(f) \in\{-1,1\}$ et $\mathrm{codim}(\mathrm{Ker}(g-\mathrm{id})) < p$
+donc $g$ est composée de réflexions et $f$ aussi.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

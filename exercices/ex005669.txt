@@ -1,0 +1,99 @@
+\exercice{5669, rouget, 2010/10/16}
+\enonce[***I Matrices de permutations]
+
+Pour $\sigma\in S_n$, $n\geqslant 2$, on définit la matrice $P_\sigma$ par $P_\sigma=(\delta_{i,\sigma(j)})_{1\leqslant i,j\leqslant n}$.
+
+\begin{enumerate}
+ \item  Calculer $\text{det}(P_\sigma)$ pour tout $\sigma\in S_n$.
+
+\item
+ \begin{enumerate}
+ \item Montrer que $\forall(\sigma,\sigma')\in S_n^2$, $P_\sigma\times P_{\sigma'}=P_{\sigma\circ\sigma'}$.
+ \item On pose $G=\{P_\sigma,\;\sigma\in S_n\}$. Montrer que $(G,\times)$ est un groupe isomorphe à $S_n$.
+  \end{enumerate}
+
+\item  Soit $A=(a_{i,j})_{1\leqslant i,j\leqslant n}\in \mathcal{M}_n(\Cc)$. Calculer $AP_\sigma$.
+
+\item  Trouver les valeurs propres d'une matrice de pemutation (on pourra utiliser le résultat hors programme : toute permutation se décompose de manière unique à l'ordre près des facteurs en produit de cycles à supports disjoints).
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Soit $\sigma\in S_n$.
+
+\begin{center}
+$\text{det}(P_\sigma)=\sum_{\sigma'\in S_n}^{}\varepsilon(\sigma')p_{\sigma'(1),1}\ldots p_{\sigma'(n),n}=\sum_{\sigma'\in S_n}^{}\varepsilon(\sigma')\delta_{\sigma'(1),\sigma(1)}\ldots \delta_{\sigma'(n),\sigma(n)}=\varepsilon(\sigma)$,
+\end{center}
+
+car $\delta_{\sigma'(1),\sigma(1)}\ldots \delta_{\sigma'(n),\sigma(n)}\neq0\Leftrightarrow\forall i\in\llbracket1,n\rrbracket,\;\sigma'(i)=\sigma(i)\Leftrightarrow \sigma'=\sigma$.
+
+\begin{center}
+\shadowbox{
+$\forall\sigma\in S_n$, $\text{det}(P_\sigma)=\varepsilon(\sigma)$.
+}
+\end{center}
+
+\item   
+  \begin{enumerate}
+  \item Soit $(\sigma,\sigma')\in S_n^2$. Soit $(i,j)\in\llbracket1,n\rrbracket^2$. Le coefficient ligne $i$, colonne $j$, de la matrice $P_\sigma\times P_{\sigma'}$ vaut
+
+\begin{center}
+$\sum_{k=1}^{n}\delta_{i,\sigma(k)}\delta_{k,\sigma'(j)}$.
+\end{center}
+
+Dans cette somme, si $k\neq\sigma'(j)$, le terme correspondant est nul et quand $k=\sigma'(j)$, le terme correspondant vaut $\delta_{i,\sigma(\sigma'(j))}$. Finalement, le coefficient ligne $i$, colonne $j$, de la matrice $P_\sigma\times P_{\sigma'}$ vaut $\delta_{i,\sigma(\sigma'(j))}$ qui est encore le coefficient ligne $i$, colonne $j$, de la matrice $P_{\sigma\circ\sigma'}$.
+
+\begin{center}
+\shadowbox{
+$\forall(\sigma,\sigma')\in S_n^2$, $P_\sigma\times P_{\sigma'}=P_{\sigma\circ\sigma'}$.
+}
+\end{center}
+
+  \item Montrons que $G$ est un sous-groupe du groupe $(GL_n(\Rr),\times)$. $G$ contient $I_n=P_{Id}$ et d'autre part, $G$ est contenu dans $GL_n(\Rr)$ d'après 1).
+
+\begin{center}
+\shadowbox{
+$(G,\times)$ est un sous-groupe de $(GL_n(\Rr),\times)$.
+}
+\end{center}
+  \end{enumerate}
+
+\item  Le coefficient ligne $i$, colonne $j$, de la matrice $AP_\sigma$ vaut
+
+\begin{center}
+$\sum_{k=1}^{n}a_{i,k}\delta_{k,\sigma(j)}=a_{i,\sigma(j)}$.
+\end{center}
+
+Par suite, si $C_1$,\ldots, $C_n$ désignent les colonnes de la matrice $A$, la matrice $AP_\sigma$ est la matrice dont les colonnes sont $C_{\sigma(1)}$,\ldots, $C_{\sigma(n)}$.
+
+\begin{center}
+\shadowbox{
+Si $A=(C_1\ldots C_n)$, $AP_\sigma=(C_{\sigma(1)}\ldots C_{\sigma(n)})$.
+}
+\end{center}
+
+\item  Commençons par trouver le polynôme caractéristique d'un cycle $c$ de longueur $\ell$ ($1\leqslant\ell\leqslant n$). Soit $f_c$ l'endomorphisme de $E=\Rr^n$ de matrice $P_c$ dans la base canonique de $\Rr^n$. Il existe une base de $E$ dans laquelle la matrice de $f_c$ est $\left(
+\begin{array}{cc}
+J_\ell&0_{\ell,n-\ell}\\
+0_{n-\ell,\ell}&I_{n-\ell}
+\end{array}
+\right)$ où la matrice $J_\ell$ est la matice de l'exercice \ref{ex:rou18}. Le polynôme caractéristique $\chi_{P_c}$ de $P_c$ est donc $(-1)^n(X-1)^{n-\ell}(X^\ell-1)$ (voir exercice \ref{ex:rou18}).
+
+Soit maintenant $\sigma\in S_n$. On note $f_\sigma$ l'endomorphisme de $E=\Rr^n$ de matrice $P_\sigma$ dans la base canonique de $\Rr^n$. $\sigma$ se décompose de manière unique à l'ordre près des facteurs en produit de cycles à supports disjoints, ces cycles commutant deux à deux.
+
+Posons donc $\sigma= c_1\circ...\circ c_p$, $p\geqslant1$, où les $c_i$, $1\leqslant i\leqslant p$, sont des cycles à supports disjoints, et notons $\ell_i$ la longueur du cycle $c_i$, $1\leqslant i\leqslant p$. Il existe une base de $E$ dans laquelle la matrice de $f_\sigma$ est $\left(
+\begin{array}{cccc}
+J_{\ell_1}&0&\ldots&0\\
+0&\ddots&\ddots&\vdots\\
+\vdots&\ddots&J_{\ell_p}&0\\
+0&\ldots&0&I_k
+\end{array}
+\right)$ où $k =n -\ell_1-...-\ell_p$ est le nombre de points fixes de $\sigma$.
+
+Le polynôme caratéristique cherché est donc $\chi_{P_\sigma}= (-1)^n(X^{\ell_1}-1)\ldots(X^{\ell_p}-1)(X-1)^{n-\ell_1-\ldots-\ell_p}$. On en déduit immédiatement les valeurs propres de $P_\sigma$.
+\end{enumerate}
+\fincorrection
+\finexercice

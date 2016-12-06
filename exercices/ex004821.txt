@@ -1,0 +1,55 @@
+\exercice{4821, quercia, 2010/03/16}
+\enonce[Rayon spectral (Centrale MP 2001)]
+
+Soit $E$ un espace vectoriel complexe de dimension finie.
+On consid{\`e}re un endomorphisme $f$ de~$E$ et on note
+$\rho(f) = \sup\{|\lambda|\text{ tq }\lambda\in\mathrm{Sp}(f)\}$
+(rayon spectral de~$f$).
+Soit $\nu$ une norme sur $\mathcal{L}(E)$.
+
+\begin{enumerate}
+  \item Montrer que $\rho(f)\le \lim_{p\to\infty}(\nu(f^p)^{1/p})$.
+    On pourra pour commencer supposer que $\nu$ est la norme subordonn{\'e}e
+    {\`a} une norme sur~$E$.
+    
+
+  \item Montrer que si $f$ est diagonalisable l'in{\'e}galit{\'e} pr{\'e}c{\'e}dente est une {\'e}galit{\'e}.
+    
+
+  \item {\'E}tudier le cas g{\'e}n{\'e}ral.
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Si $\nu$ est subordonn{\'e}e {\`a} $\|\ \|$~:
+    on a $|\lambda| \le \nu(f^p)^{1/p}$ pour toute valeur propre $\lambda$
+    et tout $p\ge 1$, donc il suffit de prouver que la suite $(x_p = \nu(f^p)^{1/p})$
+    est convergente. Soit $\ell = \inf\{x_p,\ p\ge 1\}$, $\varepsilon > 0$
+    et $p\ge 1$ tel que $x_p \le \ell+\varepsilon$. Pour $n> p$ on note
+    $n-1=pq+r$ la division euclidienne de $n-1$ par $p$ et l'on a~:
+    $$\nu(f^n) = \nu((f^p)^q\circ f^{r+1})
+               \le \nu(f^p)^q\nu(f^{r+1})$$
+    d'o{\`u}~:
+    $$\ell \le x_n \le x_p^{pq/n}x_{r+1}^{(r+1)/n}\le (\ell+\varepsilon)^{pq/n}\max(x_1,\dots,x_p)^{(r+1)/n}.$$
+    Le majorant tend vers $\ell+\varepsilon$ quand $n$ tend vers l'infini
+    donc pour $n$ assez grand on a $\ell \le x_n \le \ell+2\varepsilon$
+    ce qui prouve la convergence demand{\'e}e.
+    
+    Dans le cas o{\`u} $\nu$ est une norme quelconque sur $\mathcal{L}(E)$, il existe
+    une norme subordonn{\'e}e $\mu$ et deux r{\'e}els $a,b>0$ tels que $a\mu \le \nu\le b\mu$
+    et donc les suites $(\nu(f^p)^{1/p})$ et  $(\mu(f^p)^{1/p})$ ont m{\^e}me
+    limite par le th{\'e}or{\`e}me des gens d'armes.
+    Remarque~: il r{\'e}sulte de ceci que $\lim_{p\to\infty}(\nu(f^p)^{1/p})$
+    est ind{\'e}pendant de $\nu$.
+  \item Consid{\'e}rer la matrice de $f^p$ dans une base propre pour~$f$.
+  \item On sait que $f^p = \sum_{\lambda\in\mathrm{spec}(f)} \lambda^pP_\lambda(p)$
+    o{\`u} $P_\lambda$ est un polyn{\^o}me. D'o{\`u} $\rho(f) \le \nu(f^p)^{1/p}\le \rho(f)+ o(1)$
+    et donc $\nu(f^p)^{1/p}\xrightarrow[p\to\infty]{} \rho(f)$ (thm du rayon spectral).
+\end{enumerate}
+ \fincorrection
+
+\finexercice

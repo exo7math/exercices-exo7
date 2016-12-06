@@ -1,0 +1,106 @@
+\exercice{5336, rouget, 2010/07/04}
+\enonce
+Décomposer en éléments simples dans $C(X)$ les fractions rationnelles suivantes
+
+$$\begin{array}{lll}
+1)\;\frac{1}{X^n-1}&2)\;\frac{1}{(X-1)(X^n-1)}&3)\;\frac{n!}{(X-1)(X-2)...(X-n)}\\
+4)\;\frac{X^2}{X^4-2X^2\cos(2a)+1}&5)\;\frac{1}{X^{2n}+1}.
+\end{array}$$
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  Soit $P=X^n-1$ et $F=\frac{1}{P}$. La partie entière de $F$ est nulle et les pôles de F sont simples (car $P=X^n-1$ et $P'=nX^{n-1}$ n'ont pas de racines communes dans $\Cc$). De plus, $P=\prod_{k=0}^{n-1}(X-\omega_k)$ où $\omega_k=e^{2ik\pi/n}$. Donc, $F=\sum_{k=0}^{n-1}\frac{\lambda_k}{X-\omega_k}$ où 
+
+$$\lambda_k=\frac{1}{P'(\omega_k)}=\frac{1}{n\omega_k^{n-1}}=\frac{\omega_k}{n\omega_k^n}=\frac{\omega_k}{n}.$$
+
+Ainsi,
+
+$$\frac{1}{X^n-1}=\frac{1}{n}\sum_{k=0}^{n-1}\frac{e^{2ik\pi/n}}{X-e^{2ik\pi/n}}.$$
+
+\item   Soit $P=(X-1)(X^n-1)=(X-1)^2\prod_{k=1}^{n-1}\omega_k$ où $\omega_k=e^{2ik\pi/n}$. Soit $F=\frac{1}{P}$. La partie entière de $F$ est nulle. D'autre part, F admet un pôle double, à savoir $1$ et $n-1$ pôles simples à savoir les $\omega_k=e^{2ik\pi/n}$, $\leq k\leq n-1$. Donc, 
+
+$$F=\frac{a}{X-1}+\frac{b}{(X-1)^2}+\sum_{k=1}^{n-1}\frac{\lambda_k}{X-\omega_k}.$$ 
+
+$\lambda_k=\frac{1}{(n+1)\omega_k^n-n\omega_k^{n-1}-1}=\frac{1}{n(1-\omega_k^{n-1})}=\frac{\omega_k}{n(\omega_k-1)}$. Ensuite, 
+
+$$b=\lim_{x\rightarrow 1}(x-1)^2F(x)=\frac{1}{1^{n-1}+...+1^1+1}=\frac{1}{n}.$$
+
+Il reste à calculer $a$.
+
+\begin{align*}\ensuremath
+F-\frac{1}{n(X-1)^2}&=\frac{n-(X^{n-1}+X^{n-2}+...+X+1)}{n(X-1)^2(X^{n-1}+...+X+1)}
+=\frac{-X^{n-2}-2X^{n-3}-...-(n-2)X-(n-1))}{n(X-1)(X^{n-1}+...+X+1)}.
+\end{align*}
+
+Donc, $a=\lim_{x\rightarrow 1}(x-1)(F(x)-\frac{1}{n(x-1)^2})=\frac{-[(n-1)+(n-2)+...+2+1]}{n(1+1...+1)}=-\frac{n-1}{2n}$.
+
+Finalement,
+
+$$F=\frac{1}{n}(-\frac{n-1}{2n(X-1)}+\frac{1}{(X-1)^2}+\sum_{k=1}^{n-1}\frac{\omega_k}{\omega_k-1}\frac{1}{X-\omega_k}).$$
+
+\item  $\frac{n!}{(X-1)...(X-n)}=\sum_{k=1}^{n}\frac{\lambda_k}{X-k}$ avec
+
+$$\lambda_k=\lim_{x\rightarrow k}(x-k)F(x)=\frac{n!}{\prod_{j\neq k}^{}(j-k)}=\frac{n!}{(-1)^{n-k}(k-1)!(n-k)!}=n(-1)^{n-k}C_{n-1}^{k-1}.$$
+
+Donc,
+
+$$\frac{n!}{(X-1)...(X-n)}=\sum_{k=1}^{n}\frac{(-1)^{n-k}nC_{n-1}^{k-1}}{X-k}.$$
+
+\item  Posons $P=X^4-2X^2\cos(2a)+1$.
+
+\begin{align*}\ensuremath
+X^4-2X^2\cos(2a)+1&=(X^2-e^{2ia})(X^2-e^{-2ia})=(X-e^{ia})(X-e^{-ia})(X+e^{ia})(X+e^{-ia})\\
+ &(=(X^2-2X\cos a+1)(X^2+2X\cos a+1)).
+\end{align*}
+
+$P$ est à racines simples si et seulement si $e^{ia}\neq\pm e^{-ia}$ ce qui équivaut à $a\notin\frac{\pi}{2}\Zz$.
+
+\begin{itemize}
+\item[1er cas.] Si $a\in\pi\Zz$,
+
+$$F=\frac{X^2}{(X^2-1)^2}=\frac{a}{X-1}+\frac{b}{(X-1)^2}-\frac{a}{X+1}+\frac{b}{(X+1)^2}.$$
+
+$b=\lim_{x\rightarrow 1}(x-1)^2F(x)=\frac{1}{4}$ puis $x=0$ fournit $0=-2a+2b$ et donc $a=b=\frac{1}{4}$.
+
+$$F=\frac{X^2}{(X^2-1)^2}=\frac{1}{4}(\frac{1}{X-1}+\frac{1}{(X-1)^2}-\frac{1}{X+1}+\frac{1}{(X+1)^2}).$$
+
+\item[2ème cas.] Si $a\in\frac{\pi}{2}+\pi\Zz$,
+
+$$F=\frac{X^2}{(X^2+1)^2}=\frac{a}{X-i}+\frac{b}{(X-i)^2}-\frac{a}{X+i}+\frac{b}{(X+i)^2}.$$
+
+$b=\lim_{x\rightarrow i}(x-i)^2F(x)=\frac{i^2}{(i+i)^2}=\frac{1}{4}$ puis $x=0$ fournit $0=2ia-2b$ et donc $a=-ib=-\frac{i}{4}$.
+
+$$F=\frac{X^2}{(X^2+1)^2}=\frac{1}{4}(-\frac{i}{X-i}+\frac{1}{(X-i)^2}+\frac{i}{X+i}+\frac{1}{(X+i)^2}).$$
+
+\item[3ème cas.] Si $a\notin\frac{\pi}{2}\Zz$, puisque $F$ est réelle et paire,
+
+$$F=\frac{A}{X-e^{ia}}+\frac{\overline{A}}{X-e^{-ia}}-\frac{A}{X+e^{ia}}-\frac{\overline{A}}{X+e^{-ia}},$$
+
+avec 
+
+$$A=\frac{e^{2ia}}{(e^{ia}-e^{-ia})(e^{ia}+e^{ia})(e^{ia}+e^{-ia})}=\frac{e^{2ia}}{8i\sin a\cos ae^{ia}}=\frac{-ie^{ia}}{4\sin(2a)}.$$
+
+Donc,
+
+$$F=\frac{1}{4\sin(2a)}(-\frac{ie^{ia}}{X-e^{ia}}+\frac{ie^{-ia}}{X-e^{-ia}}+\frac{ie^{ia}}{X+e^{ia}}+\frac{ie^{-ia}}{X+e^{-ia}}).$$
+
+\end{itemize}
+
+\item  Le polynôme $X^{2n}+1=\prod_{k=0}^{2n-1}(X-e^{i(\frac{\pi}{2n}+\frac{2k\pi}{2n})})$ est à racines simples car n'a pas de racine commune avec sa dérivée. En posant $\omega_k=e^{i(\frac{\pi}{2n}+\frac{2k\pi}{2n})}$, on a
+
+$$\frac{1}{X^{2n}+1}=\sum_{k=0}^{2n-1}\frac{\lambda_k}{X-\omega_k},$$
+
+où 
+
+$$\lambda_k=\frac{1}{2n\omega_k^{2n-1}}=\frac{\omega_k}{2n\omega_k^{2n}}=-\frac{\omega_k}{2n}.$$
+
+Finalement,
+
+$$\frac{1}{X^{2n}+1}=-\frac{1}{2n}\sum_{k=0}^{2n-1}\frac{\omega_k}{X-\omega_k}.$$
+\end{enumerate}
+
+\fincorrection
+\finexercice

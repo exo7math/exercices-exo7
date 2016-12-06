@@ -1,0 +1,65 @@
+\exercice{5902, rouget, 2010/10/16}
+\enonce[***]
+Maximum du produit des distances d'un point $M$ intérieur à un triangle $ABC$ aux cotés de ce triangle.
+\finenonce
+
+\noindication
+
+\correction
+On pose $BC=a$, $CA=b$ et $AB=c$ et on note $\mathcal{A}$ l'aire du triangle $ABC$. Soit $M$ un point intérieur au triangle $ABC$. On note $I$, $J$ et $K$ les projetés orthogonaux de $M$ sur les droites $(BC)$, $(CA)$ et $(AB)$ respectivement. On pose $u=\text{aire de}\;MBC$, $v=\text{aire de}\;MCA$ et $w=\text{aire de}\;MAB$. On a
+
+\begin{center}
+$d(M,(BC))\times d(M,(CA))\times d(M,(AB))=MI\times MJ\times MK= \frac{2u}{a}\times \frac{2v}{b}\times \frac{2w}{c}= \frac{8}{abc}uv(\mathcal{A}-u-v)$.
+\end{center}
+
+Il s'agit alors de trouver le maximum de la fonction $f~:~(u,v)\mapsto uv(\mathcal{A}-u-v)$ sur le domaine 
+
+\begin{center}
+$T=\left\{(u,v)\in\Rr^2/\;u\geqslant0,\;v\geqslant0\;\text{et}\;u+v\leqslant\mathcal{A}\right\}$.
+\end{center}
+
+$T$ est un compact de $\Rr^2$. En effet :
+
+- $\forall(u,v)\in T^2$, $\|(u,v)\|_1=u+v\leqslant\mathcal{A}$ et donc $T$ est bornée.
+
+- Les applications $\varphi_1~:~(u,v)\mapsto u$, $\varphi_2~:~(u,v)\mapsto v$ et $\varphi_3~:~(u,v)\mapsto u+v$ sont continues sur $\Rr^2$ en tant que formes 
+
+linéaires sur un espace de dimension finie. Donc les ensembles $P_1=\{(u,v)\in\Rr^2/\;u\geqslant0\}=\varphi_1^{-1}([0,+\infty[)$,
+
+$P_2=\{(u,v)\in\Rr^2/\;v\geqslant0\}=\varphi_2^{-1}([0,+\infty[)$ et $P_3=\{(u,v)\in\Rr^2/\;u+v\leqslant0\}=\varphi_3^{-1}(]-\infty,0])$ sont des fermés de $\Rr^2$
+
+en tant qu'images réciproques de fermés par des applications continues. On en déduit que $T=P_1\cap P_2\cap P_3$ est un
+
+fermé de $\Rr^2$ en tant qu'intersection de fermés de $\Rr^2$.
+
+Puisque $T$ est un fermé borné de $\Rr^2$, $T$ est un compact de $\Rr^2$ puisque $\Rr^2$ est de dimension finie et d'après le théorème de \textsc{Borel}-\textsc{Lebesgue}.
+
+$f$ est continue sur le compact $T$ à valeurs dans $\Rr$ en tant que polynôme à plusieurs variables et donc $f$ admet un maximum sur $T$.
+
+Pour tout $(u,v)$ appartenant à la frontière de $T$, on a $f(u,v)=0$. Comme $f$ est strictement positive sur $\overset{\circ}{T}=\{(u,v)\in\Rr^2/\;u>0,\;v>0\;\text{et}\;u+v<0\}$, $f$ admet son maximum dans $\overset{\circ}{T}$. Puisque $f$ est de classe $C^1$ sur $\overset{\circ}{T}$ qui est un ouvert de $\Rr^2$, si $f$ admet un maximum en $(u_0,v_0)\in\overset{\circ}{T}$, $(u_0,v_0)$ est nécessairement un point critique de $f$. Soit $(u,v)\in\overset{\circ}{T}$.
+
+\begin{center}
+$\left\{
+\begin{array}{l}
+ \frac{\partial f}{\partial u}(u,v)=0\\
+\rule{0mm}{6mm} \frac{\partial f}{\partial v}(u,v)=0
+\end{array}
+\right.\Leftrightarrow\left\{
+\begin{array}{l}
+v(\mathcal{A}-2u-v)=0\\
+u(\mathcal{A}-u-2v)=0
+\end{array}
+\right.\Leftrightarrow\left\{
+\begin{array}{l}
+2u+v=\mathcal{A}\\
+u+2v=\mathcal{A}
+\end{array}
+\right.\Leftrightarrow u=v= \frac{\mathcal{A}}{3}$.
+\end{center}
+
+Puisque $f$ admet un point critique et un seul à savoir $(u_0,v_0)=\left( \frac{\mathcal{A}}{3}, \frac{\mathcal{A}}{3}\right)$, $f$ admet son maximum en ce point et ce maximum vaut $f(u_0,v_0)= \frac{\mathcal{A}^3}{27}$. Le maximum du produit des distances d'un point $M$ intérieur au triangle $ABC$ aux cotés de ce triangle est donc $ \frac{8\mathcal{A}^3}{27abc}$.
+
+\textbf{Remarque.} On peut démontrer que pour tout point $M$ intérieur au triangle $ABC$, on a $M=\text{bar}\left((A,\text{aire de}\;MBC),(B,\text{aire de}\;MAC),(C,\text{aire de}\;MAB)\right)$. Si maintenant $M$ est le point en lequel on réalise le maximum, les trois aires sont égales et donc le maximum est atteint en $G$ l'isobarycentre du triangle $ABC$.
+
+\fincorrection
+\finexercice

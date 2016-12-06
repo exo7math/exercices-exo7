@@ -1,0 +1,93 @@
+\exercice{2299, barraud, 2008/04/24}
+\enonce
+D\'emontrer que si $J$ est un id\'eal premier
+de l'anneau $\Zz[x]$, alors
+$$
+J=(0), \quad (p), \quad (f)\ \ \text{\ ou\ } \ \  (p,g),
+$$
+o\`u $p$ est premier, $f\in \Zz[x]$ est un polyn\^ome irr\'eductible
+de degr\'e positif et 
+$g$ est un polyn\^ome, tel que  sa r\'eduction modulo $p$ 
+est irr\'eductible sur  $\Zz_p$. 
+Le dernier cas, $J=(p,g)$ , nous donne la forme g\'en\'erale d'un id\'eal
+maximal dans $\Zz[x]$.
+{\it Le plan de la d\'emonstration est le suivant.}
+\begin{enumerate}
+  \item Soit $B$ un sous-anneau de l'anneau $A$, $I$ un id\'eal premier de
+$A$. Montrer que $B\cap I$ est  soit un id\'eal premier de $B$, soit
+l'anneau $B$ lui-m\^eme.
+  \item  Soit $J$ un id'eal premier de $\Zz[x]$. Montrer que 
+$\Zz\cap J=(0)$ ou $(p)$ o\`u $p$ est premier.
+  \item Supposons que $\Zz\cap J=(0)$. Montrer que si $J\ne (0)$,
+alors $J$ est engendr\'e par 
+un polyn\^ome primitif  de $J$ de degr\'e minimal.
+  \item Supposons que $\Zz\cap J=(p)$. Soit $r_p\,:\,\Zz[x]\to \Zz_p[x]$
+la r\'eduction modulo $p$. Montrer que l'id\'eal $r_p(J)$ est premier
+et que $J=(p,g)$.
+  \item Montrer que $J$ est maximal ssi $J=(p,g)$ o\`u
+$p$ est premier et $r_p(g)$ est irr\'eductible dans $\Zz_p[x]$.
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction  
+\begin{enumerate}
+  \item 
+    Soit $a,b\in B,\ ab\in I\cap B$. Alors $ab\in I$ donc $a\in I$ ou
+    $b\in I$. Comme $a,b\in B$, on a $a\in I\cap B$ ou $b\in I\cap B$.
+    Donc, si $I\cap B$ est propre, $I\cap B$ est premier.
+
+  \item
+    Soit $J$ un idéal premier de $\Zz[X]$. Alors $J\cap\Zz$ est soit
+    $\Zz$ soit un idéal premier de $\Zz$. Si $J\cap\Zz=\Zz$, alors $1\in
+    J$, et donc $J=\Zz[X]$, ce qui est exclu. On en déduit que $J=(0)$ ou
+    $J=(p)$ avec $p$ premier.
+
+  \item
+    On suppose $J\cap\Zz=(0)$ et $J\neq(0)$. Soit alors $f$ un polynôme
+    de $J\setminus\{0\}$ de degré minimal. Notons $f=c(f)f_{0}$ où
+    $f_{0}\in\Zz[x]$ est primitif. Comme $J$ est premier, on a $c(f)\in
+    J$ ou $f_{0}\in J$. Comme $J\cap\Zz=\{0\}$, le premier cas est exclu,
+    donc $f_{0}\in J$.
+
+    Soit maintenant $g\in J$. Soit $g=f_{0}q+r$ la division euclidienne de
+    $g$ par $f_{0}$ dans $\Qq$ ($q,r\in\Qq[x]$). Notons $q=\frac{a}{b}q_{0}$
+    avec $q_{0}\in\Zz[x]$ primitif, et $r=\frac{a'}{b'}r_{0}$, avec
+    $r_{0}\in\Qq[x]$ primitif.
+
+    Alors $bb'g=ab'\,q_{0}f_{0}+a'b\, r_{0}$ On en déduit que
+    $a'b\,r_{0}\in J$, et pour des raisons de degré, $r_{0}=0$.
+    Finalement, $bb'g=ab'\,q_{0}f_{0}$, et en considérant les contenus,
+    on en déduit que $bb'|ab'$, donc $b|a$, et donc $q\in\Zz[x]$. On en
+    déduit que $g\in(f_{0})$, et finalement $J=(f_{0})$.
+
+  \item
+    On suppose que $J\cap\Zz=(p)$. Soit $r_{p}$ la projection
+    $\Zz[x]\to\Zz_{p}[x]$. Soit $\alpha,\beta\in\Zz_{p}[x]$ tels que
+    $\alpha\beta\in r_{p}(J)$. Soit $f,g$ des représentants de $\alpha$
+    et $\beta$ (i.e. $r_{p}(f)=\alpha$, $r_{p}(g)=\beta$). Alors $fg\in
+    r_{p}^{-1}(r_{p}(J))=J+(p)=J$. Donc $f\in J$ ou $g\in J$, et donc
+    $\alpha\in r_{p}(J)$ ou $\beta\in r_{p}(J)$~: $r_{p}(J)$ est premier.
+    
+    $\Zz_{p}[x]$ est principal, donc il existe un polynôme $\pi$
+    irréductible dans $\Zz_{p}[x]$ tel que $r_{p}(J)=(\pi)$. Soit $g$ un
+    représentant de $\pi$. Alors $J=(p,g)$~: en effet, on a vu que
+    $J=r_{p}^{-1}((\pi))$ et $r_{p}^{-1}((\pi))=(g)+(p)=(p,g)$.
+
+  \item
+    Supposons $J$ maximal dans $\Zz[x]$. $J$ est en particulier premier,
+    donc a une des deux formes ci dessus. Supposons $J=(f)$, avec $f$
+    irréductible et primitif. Soit $p$ un nombre premier ne divisant pas
+    le coefficient dominant de $f$. Alors $J\subset(p,f)\subset\Zz[x]$,
+    mais $(p,f)\neq\Zz[x]$. En effet, sinon, il existerait $g,h\in\Zz[x]$
+    tels que $1=pg+fh$, et en considérant la réduction modulo $p$,
+    $\bar{f}$ serait inversible dans $\Zz_{p}[x]$~: comme
+    $\deg{\bar{f}}>0$, c'est impossible. On en déduit que $J$ n'est pas
+    maximal.
+
+    $J$ est donc de la forme $(p,g)$, avec $r_{p}(g)$ irréductible dans
+    $\Zz_{p}[x]$. 
+  \end{enumerate}
+\fincorrection
+\finexercice

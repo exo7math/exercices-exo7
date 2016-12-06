@@ -1,0 +1,33 @@
+\exercice{2277, barraud, 2008/04/24}
+\enonce
+ Soit $P\in \Zz[x]$.
+\begin{enumerate}
+  \item Supposons que $P(0)$, $P(1)$ soient impairs. Montrer que
+$P$ n'a pas de racine dans $\Zz$.
+(\emph{Indication :} Utiliser la r\'eduction modulo $2$.)
+  \item  Soit $n\in \Nn$ tel qu'aucun des entiers $P(0),\dots,P(n-1)$
+ne soit divisible par $n$. Montrer que
+$P$ n'a pas de racine dans $\Zz$.
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+  Si $P$ a une racine $\alpha$ dans $\Zz$, alors $P(\alpha)=0$, et en
+  considérant la réduction modulo $n$, $\bar{P}(\bar{\alpha})=0$, donc
+  $\bar{P}$ a une racine dans $\Zz/n\Zz$ pour tout $n$.
+  \begin{enumerate}
+  \item 
+     Si $P(0)$ et $P(1)$ sont impairs, $\bar{P}(\bar{0})=\bar{1}$ et
+     $\bar{P}(\bar{1})=\bar{1}$, donc $\bar{P}$ n'a pas de racine sur
+     $\Zz/2\Zz$. Donc $P$ n'a pas de racine sur $\Zz$.
+
+  \item
+     Si $n$ ne divise aucun des $P(0),\dots,P(n-1)$, alors
+     $\bar{P}(\bar{0})\neq 0$,\dots, $\bar{P}(\overline{n-1})\neq 0$,
+     donc $\bar{P}$ n'a pas de racine sur $\Zz/n\Zz$. Donc $P$ n'a pas de
+     racine sur $\Zz$.
+  \end{enumerate}
+\fincorrection
+\finexercice

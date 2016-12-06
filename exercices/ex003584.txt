@@ -1,0 +1,37 @@
+\exercice{3584, quercia, 2010/03/10}
+\enonce[$A$ et $2A$ sont semblables]
+
+Soit~$A\in\mathcal{M}_n(\C)$ nilpotente. Montrer que~$A$ et $2A$ sont semblables.
+
+
+\finenonce
+
+\noindication
+
+\correction
+Soit $f$ un endomorphisme d'un ev $E$ ayant $A$ pour matrice.
+On doit trouver $g\in GL(E)$ tel que $f\circ g = 2g\circ f$. Construction
+de~$g$ par récurrence sur $n=\dim E$.
+
+$n\le1$~: on a $f=0$ donc $g=\mathrm{id}_E$ convient.
+
+$0,\dots,n-1 \Rightarrow n$~: $f$ est non surjectif donc l'hypothèse de récurrence
+s'applique à~$f_{|\Im(f)}$. Soit $g_1\in GL(\Im(f))$ tel que
+$f(g_1(x)) = 2g_1(f(x))$ pour tout~$x\in\Im(f)$. Soit
+$E = H \oplus I \oplus K \oplus L$
+avec $H=\Im(f)\cap\mathrm{Ker}(f)$, $H \oplus I = \Im(f)$ et $H \oplus K = \mathrm{Ker}(f)$.
+La restriction de~$f$ à $I\oplus L$ induit un isomorphisme sur~$\Im(f)$,
+on note $\varphi$ l'isomorphisme réciproque. Soit~$g\in\mathcal{L}(E)$ définie par~:
+
+$$g(h+i+k+\ell) = g_1(h+i) + k + 2\varphi(g_1(f(\ell))).$$
+
+On vérifie facilement que $f\circ g = 2g\circ f$ et il reste à prouver
+que $g$ est injective. Si $x=h+i+k+\ell\in\mathrm{Ker} g$ alors
+$g(f(x)) = g_1(f(i+\ell)) = 0$ donc $i+\ell\in\mathrm{Ker} f = H\oplus K$ soit
+$i=\ell=0$. Il reste $g_1(h)+k=0$ ce qui implique $h=k=0$ car $g_1(h)\in \Im f
+= H\oplus I$.
+
+Remarque~: la démonstration passe à tout corps de caractéristique différente de~$2$.
+\fincorrection
+
+\finexercice

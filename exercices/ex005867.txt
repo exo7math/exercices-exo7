@@ -1,0 +1,25 @@
+\exercice{5867, rouget, 2010/10/16}
+\enonce[** I]
+On munit $\mathcal{M}_p(\Cc)$ d'une norme sous-multiplicative notée $\|\;\|$. Soit $A$ un élément de $\mathcal{M}_p(\Rr)$ tel que $\|A\|<1$. Montrer que la série de terme général $A^n$, $n\in\Nn$, converge puis que $\sum_{n=0}^{+\infty}A^n=(I-A)^{-1}$.
+
+En déduire que $\|(I-A)^{-1}-(I+A)\|\leqslant \frac{\|A\|^2}{1-\|A\|}$.
+\finenonce
+
+\noindication
+
+\correction
+Soit $A\in\mathcal{M}_p(\Cc)$ telle que $\|A\|<1$. Pour tout entier naturel $n$, on a $\|A^n\|\leqslant\|A\|^n$. Puisque $\|A\|<1$, la série numérique de terme général $\|A\|^n$, $n\in\Nn$, converge. Il en est de même de la série de terme général $\|A^n\|$ et donc la série de terme général $A^n$, $n\in\Nn$, converge absolument. 
+Puisque $\mathcal{M}_p(\Cc)$ est complet en tant que $\Cc$ espace de dimension finie, on en déduit que la série de terme général $A^n$, $n\in\Nn$, converge. De plus,
+
+\begin{align*}\ensuremath
+(I-A)\sum_{n=0}^{+\infty}A^n&=(I-A)\lim_{n \rightarrow +\infty}\left(\sum_{k=0}^{n}A^k\right)=\lim_{n \rightarrow +\infty}\left((I-A)\sum_{k=0}^{n}A^k\right)\;(\text{par continuité de l'application}\;M\mapsto(I-A)M)\\
+ &=\lim_{n \rightarrow +\infty}(I-A^{n+1})=I\;(\lim_{n \rightarrow +\infty}A^{n+1}=0\;\text{car}\;\forall n\in\Nn,\;\|A^{n+1}\|\leqslant\|A\|^{n+1}).
+\end{align*}
+
+Ainsi, la matrice $I-A$ est inversible à droite et donc inversible et de plus, $(I-A)^{-1}=\sum_{n=0}^{+\infty}A^n$. On en déduit encore
+
+\begin{center}
+$\|(I-A)^{-1}-(I+A)\|=\left\|\sum_{n=2}^{+\infty}A^n\right\|\leqslant\sum_{n=2}^{+\infty}\|A\|^n= \frac{\|A\|^2}{1-\|A\|}$.
+\end{center}
+\fincorrection
+\finexercice

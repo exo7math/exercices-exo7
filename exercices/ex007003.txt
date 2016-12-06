@@ -1,0 +1,59 @@
+\exercice{7003, blanc-centi, 2015/07/04}
+\video{lBNXBvuCSD0}
+\enonce
+\ \begin{enumerate}
+\item Résoudre sur $]0;+\infty[$ l'équation différentielle $x^2y''+y=0$ (utiliser le changement de variable $x=e^t$).
+\item Trouver toutes les fonctions de classe $\mathcal{C}^1$ sur $\R$ vérifiant
+$$\forall x\not=0,\ f'(x)=f\left(\frac{1}{x}\right)$$ 
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\ \begin{enumerate}
+\item En faisant le changement de variable $x=e^t$ (donc $t = \ln x$) et en posant 
+$z(t)=y(e^t)$ (donc $y(x) = z(\ln x)$, l'équation $x^2y''+y=0$ devient $z''-z'+z=0$, 
+dont les solutions sont les 
+$z(t)=e^{t/2}\cdot\left( \lambda\cos(\frac{\sqrt{3}}{2}t)+\mu\sin(\frac{\sqrt{3}}{2}t) \right)$,
+$\lambda,\mu\in\Rr$. 
+Autrement dit, 
+$$y(x)=\sqrt{x}\left(\lambda\cos(\frac{\sqrt{3}}{2}\ln x)+\mu\sin(\frac{\sqrt{3}}{2}\ln x)\right)$$
+\item Supposons que $f$ convienne: par hypothèse, $f$ est de classe $\mathcal{C}^1$, 
+donc $x\mapsto f(\frac{1}{x})$ est de classe $\mathcal{C}^1$ sur $\R^*$ et 
+par conséquent $f'$ aussi. Ainsi $f$ est nécessairement de classe 
+$\mathcal{C}^2$ sur $\R^*$ (en fait, en itérant le raisonnement, on montrerait 
+facilement que $f$ est $\mathcal{C}^\infty$ sur $\R^*$). 
+
+
+En dérivant l'équation $f'(x)=f\left(\frac{1}{x}\right)$, 
+on obtient 
+$$f''(x)=-\frac{1}{x^2}f'\left(\frac{1}{x}\right)$$
+et en réutilisant l'équation :
+$$f''(x)=-\frac{1}{x^2}f'\left(\frac{1}{x}\right)= -\frac{1}{x^2} f(x).$$
+Ainsi on obtient que $f$ est solution de $x^2y''+y=0$ sur $\R^*$. 
+Nécessairement, il existe $\lambda,\mu\in\Rr$ tels que 
+$$\forall x>0,\ f(x)=\sqrt{x}\left(\lambda\cos(\frac{\sqrt{3}}{2}\ln x)
++\mu\sin(\frac{\sqrt{3}}{2}\ln x)\right)$$
+
+
+Par hypothèse, $f$ est de classe $\mathcal{C}^1$ sur $\R$, en particulier 
+elle se prolonge en $0$ de façon $\mathcal{C}^1$. Cherchons à quelle condition 
+sur $\lambda,\mu$ cela est possible. Déjà, 
+$f(x)=\sqrt{x}\left(\lambda\cos(\frac{\sqrt{3}}{2}\ln x)+\mu\sin(\frac{\sqrt{3}}{2}\ln x)\right)
+\xrightarrow[x\to 0^+]{}0$ pour tous $\lambda,\mu$ ; donc $f(0)=0$. Mais
+$$\frac{f(x)-f(0)}{x-0}= \frac1{\sqrt{x}}
+\left(\lambda\cos(\frac{\sqrt{3}}{2}\ln x)+\mu\sin(\frac{\sqrt{3}}{2}\ln x)\right)$$ 
+n'a pas de limite en $0$ si $\lambda\neq0$ ou $\mu\neq0$. En effet, pour 
+$x_n=e^{\frac{2}{\sqrt{3}}(-2n\pi)}$, on a $x_n\to 0$ 
+mais $\frac{f(x_n)-f(0)}{x_n-0}=\frac{\lambda}{\sqrt{x_n}}$ qui admet une limite finie seulement si $\lambda = 0$.
+De même avec $x_n'=e^{\frac{2}{\sqrt{3}}(-2n\pi+\frac\pi2)}$ qui donne
+$\frac{f(x_n')-f(0)}{x_n'-0}=\frac{\mu}{\sqrt{x_n'}}$ et implique donc $\mu=0$.
+
+
+Par conséquent, la seule possibilité est $\lambda=\mu=0$. Ainsi $f$ est la fonction nulle, sur $[0,+\infty[$.
+Le même raisonnement s'applique sur $]-\infty,0]$. La fonction est donc nécessairement nulle sur $\Rr$.
+Réciproquement, la fonction constante nulle est bien solution du problème initial. 
+\end{enumerate}
+\fincorrection
+\finexercice

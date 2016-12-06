@@ -1,0 +1,39 @@
+\exercice{3804, quercia, 2010/03/11}
+\enonce[Centrale MP 2004]
+Soit $E$ un espace euclidien de dimension~$n$ et $p$ endomorphismes
+autoadjoints $u_1,\dots,u_p$. Soit $q_i$ la forme quadratique associée à~$u_i$
+($q_i(x) = (u_i(x)\mid x)$). On suppose~:
+$$\forall\ x\in E,\ q_1(x) + \dots + q_p(x) =
+\|x\|^2\quad\text{et}\quad\mathrm{rg}(u_1)+\dots+\mathrm{rg}(u_p) = n.$$
+
+\begin{enumerate}
+  \item Montrer que $u_1+\dots+u_p = \mathrm{id}_E$.
+
+  \item Montrer que $\Im(u_1)\oplus\dots\oplus\Im(u_p) = E$.
+
+  \item Montrer que les~$u_i$ sont en fait des projecteurs orthogonaux et que la
+    somme précédente est orthogonale.
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $u_1+\dots+u_p$ est l'endomorphisme autoadjoint associé à
+         $q_1+\dots+q_p$.
+  \item $\Im(u_1)+\dots+\Im(u_p) \supset\Im(u_1+\dots+u_p) = E$ et la somme
+         des dimensions est égale à~$\dim E$ donc la somme des sous-espaces est directe.
+  \item On a $\mathrm{Ker}(u_1) = \{x\in E\text{ tq }x = u_2(x) + \dots + u_p(x)\}
+\subset \Im(u_2+\dots+u_p) = \Im(u_2)\oplus\dots\oplus\Im(u_p)$ et les deux
+termes extrêmes ont même dimension, d'où $\mathrm{Ker}(u_1) = \Im(u_2)\oplus\dots\oplus\Im(u_p)$.
+Comme $u_1$ est autoadjoint, $\Im(u_1) \perp \mathrm{Ker}(u_1)$ ce qui prouve
+l'orthogonalité de la somme. De plus $\Im(u_1)\subset \mathrm{Ker}(u_j)$ pour $j\ge 1$
+donc $q_1(x) = \|x\|^2$ pour tout~$x\in\Im(u_1)$. En appliquant {\bf 1)} à
+$\Im(u_1)$ on obtient $u_1(x)=x$ pour tout~$x\in\Im(u_1)$ ce qui prouve
+que~$u_1$ est un projecteur, et c'est un projecteur orthogonal car autoadjoint.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

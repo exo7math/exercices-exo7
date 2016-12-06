@@ -1,0 +1,48 @@
+\exercice{2363, mayer, 2003/10/01}
+\enonce 
+Soient $E$ et $F$ deux espaces norm\'es r\'eels et $f:E\to F$ une application born\'ee sur
+la boule unit\'e de $E$ et v\'erifiant
+$$f(x+y)=f(x) +f(y)\quad  \text{pour tout } x, y \in E \; .$$
+Montrer que $f$ est lin\'eaire continue.
+
+\finenonce
+
+\indication
+Il faut montrer $f(\lambda x)=\lambda f(x)$ pour $\lambda\in\Rr$.
+Le faire pour $\lambda \in \Nn$, puis $\lambda \in \Zz$, puis 
+$\lambda \in \Qq$ et enfin $\lambda \in \Rr$.
+\finindication
+
+\correction
+\begin{enumerate}
+  \item Si $f$ est linéaire et bornée sur la boule unité alors elle est continue
+(voir le cours ou refaire la démonstration).
+  
+  \item Il reste à montrer que $f$ est linéaire : on a déjà 
+$f(x+y)=f(x)+f(y)$ pour tout $x,y$ reste donc à prouver $f(\lambda x) = \lambda f(x)$. Pour tout $\lambda \in \Rr$ et $x\in E$.
+  \begin{itemize}
+     \item Pour $\lambda \in \Zz$, c'est une récurrence, $f(2x) = f(x+x)= f(x)+f(x) = 2f(x)$. Puis $f(3x) = f(2x+x) =f(2x)+f(x)=2f(x)+f(x)=3f(x)$ etc.
+Donc $f(nx) = nf(x)$ pour $n\in \Nn$.
+De plus $0=f(0)=f(x+(-x))=f(x)+f(-x)$ donc $f(-x)=-f(x)$.
+Ensuite on a $f(-nx) = -nf(x)$ pour $n \in \Nn$.
+Bilan : pour tout $\lambda \in \Zz$ on a $f(\lambda x) = \lambda f(x)$.
+
+     \item Pour $\lambda \in \Qq$, soit $\lambda = \frac pq$, $p,q \in \Zz$.
+$$f(\frac pq x) = pf(\frac 1 q x) = \frac pqq f(\frac x q) = \frac pq f(q \frac xq) = \frac pq f(x).$$
+Nous avons utilisé intensivement le premier point. 
+     \item Soit $\lambda \in \Rr$ alors il existe une suite $(\lambda_n)$ d'élément de $\Qq$ qui converge vers $\lambda$. Fixons $x\in E$.
+$$f(\lambda x)-\lambda f (x) = f(\lambda x)-f(\lambda_nx)+f(\lambda_nx)-\lambda f(x)= f((\lambda-\lambda_n)x)+(\lambda_n-\lambda)f(x).$$
+Nous avons utilisé le second point.
+Soit $\epsilon \in \Qq_+^*$. Pour $n$ assez grand on a 
+ $\|(\lambda-\lambda_n)x \| < \epsilon$. Donc
+$\|\frac 1 \epsilon(\lambda-\lambda_n)x \| \in B(0,1)$ or $f$ est bornée sur
+la boule unité donc il existe $M>0$ tel que $f(\frac 1 \epsilon(\lambda-\lambda_n)x) \le M$ (quelque soit $n$). Donc $f(\lambda-\lambda_n)x) \le M\epsilon$
+($\epsilon$ est rationnel donc on peut le ``sortir''). 
+De même pour $n$ assez grand on a $(\lambda_n-\lambda)f(x) < \epsilon$. Maintenant
+$$ \|f(\lambda x)-\lambda f (x)\| \le \| f((\lambda-\lambda_n)x)\| + \| (\lambda_n-\lambda)f(x)\| < M\epsilon+\epsilon.$$
+Donc pour $x,\lambda$ fix\'es, $\|f(\lambda x)-\lambda f (x)\|$ est aussi petit que l'on veut, donc est nul ! D'o\`u $f(\lambda x)=\lambda f(x)$ pour $\lambda \in \Rr$.
+  \end{itemize}
+\end{enumerate}
+\fincorrection
+
+\finexercice

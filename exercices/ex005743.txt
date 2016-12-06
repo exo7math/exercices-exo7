@@ -1,0 +1,67 @@
+\exercice{5743, rouget, 2010/10/16}
+\enonce[**]
+\begin{enumerate}
+ \item  Montrer que pour $x$ réel de $[0,1[$, $-\ln(1-x) =\sum_{n=1}^{+\infty}\frac{x^n}{n}$.
+
+\item  Montrer que $\int_{0}^{1}\frac{\ln(t)\ln(1-t)}{t}\;dt =\sum_{n=1}^{+\infty}\frac{1}{n^3}$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Soit $x\in[0,1[$. Pour tout réel $t$ de $[0,x]$, on a $\frac{1}{1-t}=\sum_{n=0}^{+\infty}t^n$. Maintenant, pour tout réel $t\in[0,x]$ et tout entier naturel $n$, on a $|t|^n\leqslant x^n$. Puisque la série numérique de terme général $x^n$ converge, on en déduit que la série de fonctions de terme général $t\mapsto t^n$ converge normalement et donc uniformément sur le segment $[0,x]$. D'après le théorème d'intégration terme à terme sur un segment, on peut affirmer que
+
+\begin{center}
+$-\ln(1-x)=\int_{0}^{x}\frac{1}{1-t}\;dt=\sum_{n=0}^{+\infty}\int_{0}^{x}t^n\;dt=\sum_{n=0}^{+\infty}\frac{x^{n+1}}{n+1}=\sum_{n=1}^{+\infty}\frac{x^n}{n}$.
+\end{center}
+
+\begin{center}
+\shadowbox{
+$\forall t \in[0,1[$, $-\ln(1-t) =\sum_{n=1}^{+\infty}\frac{t^n}{n}$.
+}
+\end{center}
+
+\item  Par suite, pour $t\in]0,1[$,
+
+\begin{center}
+$\frac{\ln(t)\ln(1-t)}{t}=-\sum_{n=1}^{+\infty}\frac{t^{n-1}\ln t}{n}$.
+\end{center}
+
+Pour $t\in]0,1[$, posons $f(t)=\frac{\ln(t)\ln(1-t)}{t}$ puis pour $t\in]0,1]$ et $n\in\Nn^*$, posons $f_n(t)=-\frac{t^{n-1}\ln t}{n}$.
+
+Soit $n\in\Nn^*$. La fonction $f_n$ est continue sur $]0,1]$ et négligeable devant $\frac{1}{\sqrt{t}}$ quand $t$ tend vers $0$. La fonction $f_n$ est donc intégrable sur $]0,1]$. En particulier, la fonction $f_n$ est donc intégrable sur $]0,1[$. Calculons alors $\int_{0}^{1}f_n(t)\;dt$.
+
+Soit $a\in]0,1[$. Les deux fonctions $t\mapsto\frac{t^n}{n}$ et $t\mapsto-\ln t$ sont de classe $C^1$ sur le segment $[a,1]$. On peut donc effectuer une intégration par parties et on obtient
+
+\begin{center}
+$\int_{a}^{1}t^{n-1}(-\ln t)\;dt=\left[-\frac{t^n\ln t}{n}\right]_a^1+\frac{1}{n}\int_{a}^{1}t^{n-1}\;dt=\frac{a^n\ln a}{n}+\frac{1}{n^2}(1-a^n)$.
+\end{center}
+
+Quand $a$ tend vers $0$, on obtient $\int_{0}^{1}-t^{n-1}\ln t\;dt=\frac{1}{n^2}$ et donc $\int_{0}^{1}f_n(t)\;dt=\frac{1}{n^3}$. Puisque la fonction $f_n$ est positive sur $]0,1[$, on a encore $\int_{0}^{1}|f_n(t)|\;dt=\frac{1}{n^3}$. On en déduit que la série numérique de terme général $\int_{0}^{1}|f_n(t)|\;dt$ converge.
+
+En résumé,
+
+\textbullet~chaque fonction $f_n$ est continue par morceaux et intégrable sur $]0,1[$,
+
+\textbullet~la séries de fonctions de terme général $f_n$, $n\in\Nn^*$, converge simplement vers la fonction $f$ sur $]0,1[$ et la fonction $f$
+
+est continue sur $]0,1[$,
+
+\textbullet~$\sum_{n=1}^{+\infty}\int_{0}^{1}|f_n(t)|\;dt<+\infty$.
+
+D'après un théorème d'intégration terme à terme,
+
+\begin{center}
+$\int_{0}^{1}\frac{\ln(t)\ln(1-t)}{t}\;dt=\sum_{n=1}^{+\infty}\int_{0}^{1}\frac{-t^{n-1}\ln t}{n}\;dt=\sum_{n=1}^{+\infty}\frac{1}{n^3}$.
+\end{center}
+
+\begin{center}
+\shadowbox{
+$\int_{0}^{1}\frac{\ln(t)\ln(1-t)}{t}\;dt =\sum_{n=1}^{+\infty}\frac{1}{n^3}$.
+}
+\end{center}
+\end{enumerate}
+\fincorrection
+\finexercice

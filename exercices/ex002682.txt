@@ -1,0 +1,49 @@
+\exercice{2682, matexo1, 2002/02/01}
+
+\enonce
+Soit $a$ un r{\'e}el dans $]0,1[$. On souhaite calculer l'int{\'e}grale
+$$ I_a = \int_0^{+\infty } {x^{a-1} \over 1+x}\,dx $$
+
+Pour cela, on d{\'e}finit une fonction $f$ sur
+$\Omega =\C\setminus [0,+\infty [$ de la mani{\`e}re
+suivante:
+$$ f(z) = {\exp\left((a-1)\log z\right) \over 1+z} $$
+o{\`u} la fonction $\log$ est d{\'e}finie comme dans l'exercice pr{\'e}c{\'e}dent.
+\begin{itemize}
+\item Montrer que $f$ est m{\'e}romorphe sur $\Omega $. Quels en sont les p{\^o}les ?
+
+\item Soit $\varepsilon\in\left]0,1\right[$ et $R>1$ deux r{\'e}els.
+On consid{\`e}re {\`a} pr{\'e}sent le chemin~$C$ 
+r{\'e}union du segment $[\varepsilon, R]+0i$, du
+cercle de rayon~$R$, parcouru positivement, du segment
+$[R, \varepsilon]-0i$ et du cercle de rayon~$\varepsilon$
+parcouru n{\'e}gativement.
+Calculer $ \int_C f(z)\,dz $; en d{\'e}duire
+la valeur de $I_a$.
+\end{itemize}
+\finenonce
+\noindication
+\correction
+La fonction $f$ est m{\'e}romorphe comme compos{\'e}e de fonctions m{\'e}romorphes. Son
+unique p{\^o}le est $-1$. Le contour {\'e}tant enti{\`e}rement inclus dans le domaine $\Omega $, on a
+$$ \int_C f(z) \,dz = 2i\pi  \mbox{\rm Res}(f, -1) = 2i\pi  \left[\exp((a-1)\log z\right]_{z=-1}
+ = 2i\pi  e^{i(a-1)\pi } =-2i\pi  e^{ia\pi }$$
+
+Notons  $\gamma$ le petit cercle
+(orient{\'e} n{\'e}gativement), $\Gamma$ le grand cercle
+ (orient{\'e} positivement) dans
+$C$, et remarquons que sur le segment $[\varepsilon, R]+0i$,
+l'argument de $z$ doit {\^e}tre pris nul, tandis qu'il faut le
+prendre {\'e}gal {\`a} $2\pi $ sur le segment oppos{\'e}
+$[R,\varepsilon]-0i$. On obtient
+$$\int_C f(z) \,dz = \int_\varepsilon^R {x^{a-1}\over 1+x}\,dx
++\int_\Gamma f(z)\,dz +\int_R^\varepsilon {x^{a-1} e^{i2\pi
+(a-1)}\over 1+x}\,dx +\int_\gamma f(z)\,dz$$
+
+Lorsque $\varepsilon\to 0$ et $R\to 0$, $\int_\gamma f  \to 0$ et $\int_\Gamma f \to 0$ d'apr{\`e}s les
+lemmes de Jordan, car $|zf(z)|\to 0$ quand $|z|\to 0$ ou $+\infty $. Finalement
+$$ \int_C f(z)\,dz \to (1-e^{i2\pi a}) I $$
+et donc
+$$ I = {-2i\pi  e^{ia\pi }\over 1-e^{i2\pi a}} = {\pi \over \sin a\pi }.$$
+\fincorrection
+\finexercice

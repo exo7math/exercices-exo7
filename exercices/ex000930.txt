@@ -1,0 +1,36 @@
+\exercice{930, legall, 1998/09/01}
+\video{EQJ4bUFDuiQ}
+\enonce
+Soit $E$ un espace vectoriel de dimension $n$ et
+$\phi $  une application lin\'eaire de  $E$  dans lui-m\^eme telle que  $\phi ^n=0$  et
+$\phi ^{n-1}\not = 0$.
+Soit  $x\in E$  tel que  $\phi ^{n-1}(x )\not = 0$. Montrer que la
+famille  $\{ x,\phi(x),\phi^2(x), \ldots ,\phi ^{n-1}(x)\} $  est une base de $E$.
+
+\finenonce 
+
+\indication
+Prendre une combinaison lin\'eaire nulle et l'\'evaluer par $\phi^{n-1}$.
+\finindication
+
+\correction
+Montrons que la famille  $\{ x,\phi(x),\phi^2(x), \ldots , \phi ^{n-1}(x) \}$ est
+libre. Soient  $\lambda _0, \ldots , \lambda _{n-1} \in {\R}$ tels
+que  $\lambda _0 x + \lambda_1\phi(x)+\cdots + \lambda _{n-1} \phi ^{n-1}(x)=0$.
+Alors : $\phi ^{n-1} \big(\lambda _0 x+ \lambda_1\phi(x) + \cdots + \lambda _{n-1}
+\phi ^{n-1}(x)\big)=0$. Mais comme de plus $\phi ^n=0 $, on a
+l'\'egalit\'e $\phi ^{n-1} \big(\lambda _0 x+ \lambda_1\phi(x) + \cdots + \lambda
+_{n-1} \phi ^{n-1}(x)\big)=\phi ^{n-1} (\lambda _0 x ) + \phi
+^n \big(\lambda _1 x+ \cdots + \lambda _{n-1} \phi
+^{n-2}(x)\big)= \phi ^{n-1}(\lambda _0x)=\lambda _0 \phi ^{n-1}(x)$. Comme  $\phi
+^{n-1}(x) \not= 0$  on obtient  $\lambda _0=0$.
+
+\noindent En calculant ensuite  $\phi ^{n-2}\big(\lambda _1 \phi
+(x )+ \cdots + \lambda _{n-1} \phi ^{n-1}(x)\big)$  on obtient
+$\lambda _1=0$  puis, de proche en proche,  $\lambda_2=2$,\ldots, $\lambda _{n-1}=0$. 
+La famille  $\{ x, \phi(x), \ldots , \phi
+^{n-1}(x) \}$  est donc libre. En plus elle compte  $n$  vecteurs, comme
+$\dim E=n$  elle est libre et maximale et forme donc une base
+de $E$.
+\fincorrection
+\finexercice

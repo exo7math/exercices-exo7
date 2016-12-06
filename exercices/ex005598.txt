@@ -1,0 +1,43 @@
+\exercice{5598, rouget, 2010/10/16}
+\enonce[***]
+Soient $E$ un $\Cc$-espace vectoriel de dimension finie et $f$ un endomorphisme de $E$. Montrer qu'il existe un projecteur $p$ et un automorphisme $g$ de $E$ tel que $f=g\circ p$.
+\finenonce
+
+\noindication
+
+\correction
+Deux cas particuliers se traitent immédiatement.
+
+Si $f=0$, on prend $p=0$ et $g=Id_E$ et si $f\in\mathcal{GL}(E)$, on prend $p=Id_E$ et $g=f$. 
+
+On se place dorénavant dans le cas où $\text{Ker}f$ et $\text{Im}f$ ne sont pas réduit à ${0}$.
+
+Soit $F$ un supplémentaire de $\text{Ker}f$ dans $E$ et $G$ un  supplémentaire de $\text{Im}f$ dans $E$.
+
+On sait que la restriction $f'$ de $f$ à $F$ réalise un isomorphisme de $F$ sur $\text{Im}f$. D'autre part $\text{dim}\text{Ker}f=\text{dim}G<+\infty$ et donc $\text{Ker}f$ et $G$ sont isomorphes. Soit $\varphi$ un isomorphisme de $\text{Ker}f$ sur $G$.
+
+On définit une unique application linéaire $g$ en posant $g_{/\text{Ker}f}=\varphi$ et $g_{/F}=f'$.
+
+$g$ est un automorphisme de $E$. En effet,
+
+\begin{center}
+$g(E)=g(\text{Ker}f +F)=g(\text{Ker}f) +g(F)=\varphi(\text{Ker}f) + f'(F)=G +\text{Im}f=E$,
+\end{center}
+
+(puisque $\varphi$ et $f'$ sont des isomorphismes) et donc $g$ est surjective. Par suite $g$ est bijective de $E$ sur lui-même puisque $\text{dim}E<+\infty$.
+
+Soit $p$ la projection sur $F$ parallèlement à $\text{Ker}f$. On a
+
+\begin{center}
+$(g\circ p)_{/\text{Ker}f}= g\circ0_{/\text{Ker}f}= 0_{/\text{Ker}f}=f_{/\text{Ker}f}$ et $(g\circ p)_{/F}=g\circ Id_{/F}=f'=f_{/F}$.
+\end{center}
+
+Ainsi les endomorphismes $g\circ p$ et $f$ coïncident sur deux sous espaces supplémentaires de $E$ et donc $g\circ p=f$. Finalement, si on note $P(E)$ l'ensemble des projecteurs de $E$,
+
+\begin{center}
+\shadowbox{
+$\forall f\in\mathcal{L}(E)$, $\exists g\in\mathcal{GL}(E)$, $\exists p\in P(E)/\;f=g\circ p$.
+}
+\end{center}
+\fincorrection
+\finexercice

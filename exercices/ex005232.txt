@@ -1,0 +1,24 @@
+\exercice{5232, rouget, 2010/06/30}
+\enonce[***]
+Soit $u$ une suite complexe et $v$ la suite définie par $v_n=|u_n|$. On suppose que la suite $(\sqrt[n]{v_n})$ converge vers un réel positif $l$. Montrer que si $0\leq\ell<1$, la suite $(u_n)$ converge vers $0$ et si $\ell>1$, la suite $(v_n)$ tend vers $+\infty$.
+Montrer que si $\ell=1$, tout est possible.
+\finenonce
+
+\noindication
+
+\correction
+Supposons que la suite $(\sqrt[n]{v_n})$ tende vers le réel positif $\ell$.
+
+\begin{itemize}
+\item[\textbullet] Supposons que $0\leq\ell<1$. Soit $\varepsilon=\frac{1-\ell}{2}$.
+
+$\varepsilon$ est un réel strictement positif et donc, $\exists n_0\in\Nn/\;\forall n\in\Nn,(n\geq n_0\Rightarrow\sqrt[n]{v_n}<\ell+\frac{1-\ell}{2}=\frac{1+\ell}{2})$.
+
+Pour $n\geq n_0$, par croissance de la fonction $t\mapsto t^n$ sur $\Rr^+$, on obtient $|u_n|<\left(\frac{1+\ell}{2}\right)^n$. Or, $0<\frac{1+\ell}{2}<\frac{1+1}{2}=1$ et donc 
+$\left(\frac{1+\ell}{2}\right)^n$ tend vers $0$ quand $n$ tend vers $+\infty$. Il en résulte que $u_n$ tend vers  $0$ quand $n$ tend vers $+\infty$.
+
+\item[\textbullet] Supposons que $\ell>1$. $\exists n_0\in\Nn/\;\forall n\in\Nn,\;(n\geq n_0\Rightarrow\sqrt[n]{v_n}>\ell-\frac{\ell-1}{2}=\frac{1+\ell}{2})$. Mais alors, pour $n\geq n_0$, $|u_n|>\left(\frac{1+\ell}{2}\right)^n$. Or, $\frac{1+\ell}{2}>\frac{1+1}{2}=1$, et donc $\left(\frac{1+\ell}{2}\right)^n$ tend vers $+\infty$ quand $n$ tend vers $+\infty$. Il en résulte que $|u_n|$ tend vers $+\infty$ quand $n$ tend vers $+\infty$.
+\end{itemize}
+Soit, pour $\alpha$ réel et $n$ entier naturel non nul, $u_n=n^\alpha$. $\sqrt[n]{u_n}=e^{\alpha\frac{\ln n}{n}}$ tend vers $1$ quand $n$ tend vers $+\infty$, et ceci pour toute valeur de $\alpha$. Mais, si $\alpha<0$, $u_n$ tend vers $0$, si $\alpha=0$, $u_n$ tend vers $1$ et si $\alpha>0$, $u_n$ tend vers $+\infty$. Donc, si $\ell=1$, on ne peut rien conclure.
+\fincorrection
+\finexercice

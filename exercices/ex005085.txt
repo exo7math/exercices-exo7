@@ -1,0 +1,113 @@
+\exercice{5085, rouget, 2010/06/30}
+\enonce[***IT]
+\label{exo:suprou2}
+\begin{enumerate}
+ \item  Calculer $\Arccos x+\Arcsin x$ pour $x$ élément de $[-1,1]$.
+ \item  Calculer $\Arctan x+\Arctan\frac{1}{x}$ pour $x$ réel non nul.
+ \item  Calculer $\cos(\Arctan a)$ et $\sin(\Arctan a)$ pour $a$ réel donné.
+ \item  Calculer, pour $a$ et $b$ réels tels que $ab\neq1$, $\Arctan a+\Arctan b$ en fonction de $\Arctan\frac{a+b}{1-ab}$ (on étudiera d'abord
+$\cos(\Arctan a+\Arctan b)$ et on distinguera les cas $ab<1$, $ab>1$ et $a>0$, $ab>1$ et $a<0$).
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  \textbf{1ère solution}. Posons $f(x)=\Arccos x+\Arcsin x$ pour $x$ dans $[-1,1]$.
+$f$ est définie et continue sur $[-1,1]$, dérivable sur $]-1,1[$. De plus, pour $x$ dans
+$]-1,1[$,
+
+$$f'(x)=\frac{1}{\sqrt{1-x^2}}-\frac{1}{\sqrt{1-x^2}}= 0.$$
+Donc $f$ est constante sur $[-1,1]$ et pour $x$
+dans $[-1,1]$, $f(x)=f(0)=\frac{\pi}{2}$.
+
+\begin{center}
+\shadowbox{
+$\forall x\in[-1,1],\;\Arccos x+\Arcsin x=\frac{\pi}{2}.$
+}
+\end{center}
+\textbf{2ème solution}. Il existe un unique réel $\theta$ dans $[0,\pi]$ tel que $x=\cos\theta$, à savoir
+$\theta=\Arccos x$. Mais alors,
+
+$$\Arccos x+\Arcsin x=\theta+\Arcsin\left(\sin(\frac{\pi}{2}-\theta)\right)
+=\theta+\frac{\pi}{2}-\theta=\frac{\pi}{2}$$
+(car $\frac{\pi}{2}-\theta$ est dans
+$[-\frac{\pi}{2},\frac{\pi}{2}])$.
+ \item  \textbf{1ère solution}. Pour $x$ réel non nul, posons $f(x)=\Arctan x+\Arctan\frac{1}{x}$. $f$ est
+impaire.
+$f$ est dérivable sur $\Rr^*$ et pour tout réel $x$ non
+nul, $f'(x)=\frac{1}{1+x^2}-\frac{1}{x^2}\frac{1}{1+\frac{1}{x^2}}=0$. $f$ est donc constante sur $]-\infty,0[$ et
+sur $]0,+\infty[$ (mais pas nécessairement sur $\Rr^*$). Donc, pour $x>0$, $f(x)=f(1)=2\Arctan1=\frac{\pi}{2}$, et 
+puisque $f$ est impaire, pour $x< 0$, $f(x)=-f(-x)=-\frac{\pi}{2}$. Donc,
+
+\begin{center}
+\shadowbox{
+$\forall
+x\in\Rr^*,\;\Arctan 
+x+\Arctan\frac{1}{x}=\left\{
+\begin{array}{l}\frac{\pi}{2}\;\mbox{si}\;x>0\\-\frac{\pi}{2}\;\mbox{si}\;x<0
+\end{array}\right.=\frac{\pi}{2}\text{sgn}(x).$
+}
+\end{center}
+\textbf{2ème solution} Pour $x$ réel strictement positif donné, il existe un unique réel $\theta$ dans
+$\left]0,\frac{\pi}{2}\right[$ tel que $x=\tan\theta$ à savoir $\theta=\Arctan x$.
+Mais alors,
+
+$$\Arctan x+\Arctan\frac{1}{x}=\theta+\Arctan\left(\frac{1}{\tan\theta}\right)
+=\theta+\Arctan\left(\tan(\frac{\pi}{2}-\theta)\right)
+=\theta+\frac{\pi}{2}-\theta=\frac{\pi}{2}$$
+(car $\theta$ et $\frac{\pi}{2}-\theta$ sont éléments de
+$\left]0,\frac{\pi}{2}\right[)$.
+ \item  $\cos^2(\Arctan a)=\frac{1}{1+\tan^2(\Arctan a)}=\frac{1}{1+a^2}$. De plus , $\Arctan
+a$ est dans $]-\frac{\pi}{2},\frac{\pi}{2}[$ et donc $\cos(\Arctan a)>0$.
+On en déduit que pour tout réel $a$, $\cos(\Arctan a)=\frac{1}{\sqrt{1+a^2}}$ puis
+
+$$\sin(\Arctan a)=\cos(\Arctan a)\tan(\Arctan a)=\frac{a}{\sqrt{1+a^2}}.$$
+
+\begin{center}
+\shadowbox{
+$\forall a\in\Rr,\;\cos(\Arctan a)=\frac{1}{1+a^2}\;\mbox{et}\;\sin(\Arctan a)=\frac{a}{\sqrt{1+a^2}}.$
+}
+\end{center}
+ \item  D'après 3),
+
+$$\cos(\Arctan a+\Arctan b)=\cos(\Arctan a)\cos(\Arctan
+b)-\sin(\Arctan a)\sin(\Arctan b)=\frac{1-ab}{\sqrt{1+a^2}\sqrt{1+b^2}},$$
+ce qui montre déjà , puisque $ab\neq1$, que
+$\cos(\Arctan a+\Arctan b)\neq0$ et donc que $\tan(\Arctan a+\Arctan b)$ existe. On a immédiatement,
+
+$$\tan(\Arctan a+\Arctan b)=\frac{a+b}{1-ab}.$$
+Maintenant, $\Arctan a+\Arctan b$ est dans
+$\left]-\pi,-\frac{\pi}{2}\right[\cup\left]-\frac{\pi}{2},\frac{\pi}{2}\right[\cup\left]\frac{\pi}{2},\pi\right[$.
+
+\begin{itemize}
+\item[\textbf{1er cas.}] Si $ab<1$ alors $\cos(\Arctan a+\Arctan
+b)>0$ et donc $\Arctan a+\Arctan b$ est dans $\left]-\frac{\pi}{2},\frac{\pi}{2}\right[$.
+Dans ce cas, $\Arctan a+\Arctan b=\Arctan\left(\frac{a+b}{1-ab}\right)$.
+
+\item[\textbf{2ème cas.}]
+Si $ab>1$ alors $\cos(\Arctan a+\Arctan b)<0$ et donc $\Arctan a+\Arctan b$ est 
+dans $\left]-\pi,-\frac{\pi}{2}\right[\cup\left]\frac{\pi}{2},\pi\right[$. Si de plus $a>0$, 
+$\Arctan a+\Arctan b>-\frac{\pi}{2}$ et donc $\Arctan a+\Arctan b$ est dans 
+$\left]\frac{\pi}{2},\pi\right[$. Dans ce cas, $\Arctan a+\Arctan b-\pi$ est dans
+$\left]-\frac{\pi}{2},\frac{\pi}{2}\right[$ et a même tangente que 
+$\Arctan\frac{a+b}{1-ab}$. Donc, $\Arctan a+\Arctan 
+b=\Arctan\frac{a+b}{1-ab}+\pi$. Si $a<0$, on trouve de même $\Arctan a+\Arctan
+b=\Arctan\frac{a+b}{1-ab}-\pi$.
+\end{itemize}
+En résumé,
+
+\begin{center}
+\shadowbox{
+$\Arctan a+\Arctan b=
+\left\{\begin{array}{l}\rule[-4mm]{0mm}{0mm}\Arctan\frac{a+b}{1-ab}\;\mbox{si}\;ab<1\\
+\rule[-4mm]{0mm}{0mm}\Arctan\frac{a+b}{1-ab}
++\pi\;\mbox{si}\;ab>1\;\mbox{et}\;a>0\\
+\Arctan\frac{a+b}{1-ab}-\pi\;\mbox{si}\;ab>1\;
+\mbox{et}\;a<0\end{array}\right..$
+}
+\end{center}
+\end{enumerate}
+\fincorrection
+\finexercice

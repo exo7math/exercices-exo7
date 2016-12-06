@@ -1,0 +1,41 @@
+\exercice{2097, bodin, 2008/02/04}
+\video{JSvF3eC5EuA}
+\enonce
+Soit $\displaystyle I_{n} = \int_0^1 \frac{x^n}{1 + x}d x$.
+\begin{enumerate}
+\item En majorant la fonction int\'egr\'ee, montrer que
+$\lim_{n\to +\infty} I_{n}=0$.
+\item  Calculer $I_n + I_{n + 1}$.
+\item D\'eterminer $\displaystyle \lim_{n \rightarrow  + \infty} \left(\sum_{k = 1}^n \frac{
+ (-1)^{k + 1}}k\right)$.
+\end{enumerate}
+\finenonce 
+
+\indication
+  \begin{enumerate}
+  \item Majorer par $x^n$.
+  \item
+  \item On pourra calculer $(I_0+I_1)-(I_1+I_2)+(I_2+I_3)- \cdots$
+  \end{enumerate}
+\finindication
+
+\correction
+  \begin{enumerate}
+  \item Pour $x>0$ on a $\frac{x^n}{1+x} \leqslant x^n$,
+donc 
+$$I_n  \leqslant \int_0^1 x^n dx = \left[ \frac{1}{n+1} x^{n+1} \right]_0^1=\frac{1}{n+1}.$$
+Donc $I_n \to 0$ lorsque $n\to +\infty$.
+  \item $I_n+I_{n+1}=\int_0^1 x^n \frac {1+x}{1+x} dx =  \int_0^1 x^n dx=\frac{1}{n+1}$.
+  \item Soit $S_n = 1-\frac 12 + \frac13-\frac 14 +\cdots \pm \frac 1n = \sum_{k = 1}^n \frac{
+ (-1)^{k + 1}}k$.
+Par la question pr\'ec\'edente nous avons 
+$S_n = (I_0+I_1)-(I_1+I_2)+(I_2+I_3)- \cdots \pm (I_{n-1}+I_n)$.
+Mais d'autre part cette somme \'etant t\'elescopique cela conduit à $S_n = I_0 \pm I_n$.
+ Alors la limite de $S_n$ et donc de $\sum_{k = 1}^n \frac{
+ (-1)^{k + 1}}k$ (quand $n\to +\infty$) est $I_0$ car $I_n \to 0$.
+Un petit calcul montre que $I_0 = \int_0^1 \frac {dx}{1+x} = \ln 2$.
+Donc la somme altern\'ee des inverses des entiers converge vers $\ln 2$.
+  \end{enumerate}
+\fincorrection
+
+\finexercice

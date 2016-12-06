@@ -1,0 +1,24 @@
+\exercice{4445, quercia, 2010/03/14}
+\enonce[Constante d'Euler, Mines-Ponts MP 2005]
+
+Soit $u_{n,k}$ le reste de la division du $n$ par $k$.
+Quelle est la limite de $\frac1n\sum_{k=1}^n\frac{u_{n,k}}k$~?
+
+
+\finenonce
+
+\noindication
+
+\correction
+$\frac{u_{n,k}}k = \frac nk - \bigl[\frac nk\bigr]$, donc
+$v_n = \frac1n\sum_{k=1}^n\frac{u_{n,k}}k$ est une somme de Riemann pour
+l'intégrale $I =  \int_{t=0}^1 \Bigl(\frac1t - \bigl[\frac1t\bigr]\Bigr)\,d t$.
+La fonction $\varphi$ : $t \mapsto\frac1t - \bigl[\frac1t\bigr]$ est Riemann-intégrable
+sur $[0,1]$, donc $v_n\to I$ lorsque $n\to\infty$.
+
+Calcul de~$I$~: $I_n =  \int_{t=1/n}^1 \Bigl(\frac1t - \bigl[\frac1t\bigr]\Bigr)\,d t
+                     = \ln n - \sum_{k=1}^n \int_{t=\frac1{k+1}}^{\frac1k}k\,d t
+                     = \ln n - \sum_{k=1}^n\frac1{k+1} \to 1-\gamma = I$ lorsque $n\to\infty$.
+\fincorrection
+
+\finexercice

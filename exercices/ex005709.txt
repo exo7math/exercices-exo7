@@ -1,0 +1,30 @@
+\exercice{5709, rouget, 2010/10/16}
+\enonce[***]
+Soit $p\in\Nn^*$, calculer $\sum_{p\in\Nn^*}^{}\left(\sum_{n\in\Nn^*,\;n\neq p}^{}\frac{1}{n^2-p^2}\right)$ et $\sum_{n\in\Nn^*}^{}\left(\sum_{p\in\Nn^*,\;p\neq n}^{}\frac{1}{n^2-p^2}\right)$. Que peut-on en déduire ?
+\finenonce
+
+\noindication
+
+\correction
+Soit $p\in\Nn^*$. Pour $n\in\Nn^*\setminus\{p\}$, $\frac{1}{n^2-p^2}=\frac{1}{2p}\left(\frac{1}{n-p}-\frac{1}{n+p}\right)$. Donc pour $N > p$,
+
+\begin{align*}
+\sum_{1\leqslant n\leqslant N,\;n\neq p}^{}\frac{1}{n^2-p^2}&=\frac{1}{2p}\sum_{1\leqslant n\leqslant N,\;n\neq p}^{}\left(\frac{1}{n-p}-\frac{1}{n+p}\right)=\frac{1}{2p}\left(\sum_{1-p\leqslant k\leqslant N-p,\;k\neq 0}^{}\frac{1}{k}-\sum_{p+1\leqslant k\leqslant N+p,\;k\neq 2p}^{}\frac{1}{k}\right)\\
+ &=\frac{1}{2p}\left(-\sum_{k=1}^{p-1}\frac{1}{k}+\sum_{k=1}^{N-p}\frac{1}{k}-\sum_{k=1}^{N+p}\frac{1}{k}+\frac{1}{2p}+\sum_{k=1}^{p}\frac{1}{k}\right)=\frac{1}{2p}\left(\frac{3}{2p}-\sum_{k=N-p+1}^{N+p}\frac{1}{k}\right)
+\end{align*}
+
+Maintenant,  $\sum_{k=N-p+1}^{N+p}\frac{1}{k}=\frac{1}{N-p+1}+\ldots+\frac{1}{N+p}$ est une somme de $2p-1$ termes tendant vers $0$ quand $N$ tend vers $+\infty$. Puisque $2p-1$ est constant quand $N$ varie, $\lim_{N \rightarrow +\infty}\sum_{k=N-p+1}^{N+p}\frac{1}{k}=0$ et donc
+
+\begin{center}
+$\sum_{n\in\Nn^*,\;n\neq p}^{}\frac{1}{n^2-p^2}=\frac{1}{2p}\times\frac{3}{2p}=\frac{3}{4p^2}$ puis $\sum_{p\in\Nn^*}^{}\left(\sum_{n\in\Nn^*,\;n\neq p}^{}\frac{1}{n^2-p^2}\right)=\sum_{p=1}^{+\infty}\frac{3}{4p^2}=\frac{\pi^2}{8}$.
+\end{center}
+
+Pour $n\in\Nn^*$ donné, on a aussi $\sum_{p\in\Nn^*,\;p\neq n}^{}\frac{1}{n^2-p^2}=-\sum_{p\in\Nn^*,\;p\neq n}^{}\frac{1}{p^2-n^2}=-\frac{3}{4n^2}$ et donc
+
+\begin{center}
+$\sum_{n\in\Nn^*}^{}\left(\sum_{p\in\Nn^*,\;p\neq n}^{}\frac{1}{n^2-p^2}\right)=-\frac{\pi^2}{8}$.
+\end{center}
+
+On en déduit que la suite double $\left(\frac{1}{n^2-p^2}\right)_{(n,p)\in(\Nn^*)^2,\;n\neq p}$ n'est pas sommable.
+\fincorrection
+\finexercice

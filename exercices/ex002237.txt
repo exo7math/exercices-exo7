@@ -1,0 +1,45 @@
+\exercice{2237, matos, 2008/04/23}
+\enonce
+Soit $A=I-E-E^*$ une matrice carr\'ee d'ordre $N$ o\`u $E$ est une matrice strictement triangulaire inf\'erieure ($e_{ij}=0$ pour $i\leq j$). Pour r\'esoudre le syst\`eme $Ax=b
+$, on propose la m\'ethode it\'erative d\'efinie par
+$$\left\{ \begin{array}{ccc}
+(I-E)x_{2k+1}&=& E^* x_{2k} + b\\
+(I-E^*)x_{2k+2}&=& E x_{2k+1} + b
+\end{array}\right.$$
+\begin{enumerate}
+\item D\'eterminer $B$ et $c$ pour que l'on ait:
+$$x_{2k+2} =Bx_{2k} +c .$$
+V\'erifier que $B=M^{-1}N $ et $A=M-N$ avec $M=(I-E)(I-E^*)$ , $N=EE^*$.
+\item Montrer que $M^*+N$ est une matrice d\'efinie positive. En d\'eduire une condition n\'ecessaire et suffisante pour la convergence de la m\'ethode.
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item On a $x_{2k+1}=(I-E)^{-1}E^*x_{2k}+(I-E)^{-1}b$ et donc
+$$x_{2k+2}=(I-E^*)^{-1}E(I-E)^{-1}E^*x_{2k}+(I-E^*)^{-1}E(I-E)^{-1}b +
+(I-E^*)^{-1}b$$
+Mais $E(I-E)^{-1}=(I-E)^{-1}E$ et alors
+$$x_{2k+2}=(I-E^*)^{-1}(I-E)^{-1}EE^*x_{2k}+
+(I-E^*)^{-1}(I-E)^{-1}(E+I-E)b=M^{-1}Nx_{2k}+M^{-1}b$$
+avec
+$$M=(I-E)(I-E^*),\quad N=EE^*,\quad M-N=I-E-E^*=A$$
+\item $M^*+N=I-E-E^*+2EE^* $ et donc
+
+$v^*(M^*+N)v=\|v\|_2^2-v^*Ev-v^*E^*v+2v^*EE^*v=\|E^*v\|_2^2+(\|v\|_2^2+\|E^*v\|_2^2-2\mbox{Re}(v,E^*v))$
+On a l'in\'egalit\'e
+$$-2\|v\|\|E^*v\|\leq -2|(v,E^*v)|\leq -2|\mbox{Re}(v,E^*v)|$$
+et donc
+$$(\|v\|_2-\|E^*v\|_2)^2\leq \|v\|_2^2
++\|E^*v\|_2^2-2\mbox{Re}(v,E^*v)\Rightarrow$$
+$v^*(M^*+N)v\geq \|E^*v\|_2^2 +(\|v\|-\|E^*v\|_2)^2$ implique que
+$$v^*(M^*+N)b=0\Leftrightarrow \|E^*v\|_2=0 \mbox{ et }\|v\|_2=\|E^*v\|_2\Leftrightarrow
+\|v\|_2=0$$
+Donc $M^*+N$ est d\'efinie positive et en appliquant un r\'esultat d'un
+exercice pr\'ec\'edent on conclut que la m\'ethode converge ssi $A$ est
+d\'efinie positive.
+\end{enumerate}
+\fincorrection
+\finexercice

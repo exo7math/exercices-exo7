@@ -1,0 +1,27 @@
+\exercice{3316, quercia, 2010/03/09}
+\enonce[Commutants itérés]
+Soit $u\in\mathcal{L}(E)$. On pose pour $v\in\mathcal{L}(E)$~: $\varphi(v) = v\circ u - u\circ v$,
+et on note $c_i = \mathrm{Ker}\varphi^i$ ($c_0 = \{0\}$, $c_1$ est le commutant
+de~$u$, $c_2$ est l'ensemble des $v$ tels que $v\circ u - u\circ v$ commute
+avec $u$,\dots).
+
+\begin{enumerate}
+  \item Calculer $\varphi(v\circ w)$ en fonction de $v,w,\varphi(v)$ et $\varphi(w)$.
+
+  \item Montrer que $c = \bigcup_{i\in\N}c_i$ est une sous-algèbre de~$\mathcal{L}(E)$.
+
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $\varphi(v\circ w) = \varphi(v)\circ w + v\circ \varphi(w)$.
+  \item Par récurrence $\varphi^n(v\circ w) = \sum_{k=0}^n C_n^k\varphi^k(v)\circ\varphi^{n-k}(w)$
+donc si $v\in c_p$ et $w\in c_q$ alors $v\circ w\in c_{p+q-1}$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

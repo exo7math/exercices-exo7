@@ -1,0 +1,74 @@
+\exercice{886, legall, 1998/09/01}
+\video{1rxZQKF8yc0}
+\enonce
+D\' eterminer lesquels des
+ensembles $E_1$, $E_2$, $E_3$ et $E_4$ sont des sous-espaces
+vectoriels de ${\Rr}^3$. 
+
+ $E_1 =\{ (x,y,z)\in {\Rr}^3\ \mid \ 3x-7y = z \} $ 
+
+ $E_2 =\{(x,y,z)\in {\Rr}^3\ \mid \ x^2-z^2=0 \} $  
+
+ $E_3=\{ (x,y,z)\in {\Rr}^3\ \mid \ x+y-z=x+y+z=0 \} $ 
+
+ $E_4 =\{ (x,y,z)\in {\Rr}^3\ \mid \ z(x^2+y^2)=0 \} $
+\finenonce 
+
+\indication
+\begin{enumerate}
+\item $E_1$ est un sous-espace vectoriel.
+\item $E_2$ n'est pas un sous-espace vectoriel.
+\item $E_3$ est un sous-espace vectoriel.
+\item $E_4$ n'est pas un sous-espace vectoriel.
+\end{enumerate}
+\finindication
+
+\correction
+\begin{enumerate}
+  \item 
+
+    \begin{enumerate}
+    \item $(0,0,0) \in E_1$.
+    \item Soient $(x,y,z)$ et $(x',y',z')$ deux \' el\' ements
+de $E_1$. On a donc $3x-7y=z$ et $3x'-7y'=z'$. Donc $3(x+x')-7(y+y')=(z+z')$, d'où $(x+x',y+y',z+z')$  
+appartient \`a  $E_1$.
+
+\item Soit $\lambda \in {\R}$ et $(x,y,z)\in E_1$.  Alors la relation $3x-7y=z$ implique
+  que $3 (\lambda x) -7(\lambda y)=\lambda z$
+  donc que $\lambda(x,y,z)=(\lambda x,\lambda  y,\lambda  z)$ appartient \`a  $E_1$.
+    \end{enumerate}
+
+
+  
+  \item $E_2 =\{ (x,y,z)\in {\R}^3 \mid x^2-z^2=0 \} $ c'est-\`a-dire $E_2
+    =\{ (x,y,z)\in {\R}^3 \mid x=z \hbox{ ou } x=-z \} $. Donc
+    $(1, 0,-1)$ et $(1, 0, 1)$ appartiennent \`a $ E_2$ mais
+    $(1, 0,-1)+(1, 0, 1)=(2, 0, 0)$ n'appartient pas \`a $ E_2$ qui n'est en cons\' equence pas un
+sous-espace vectoriel de ${\R}^3$.
+
+
+
+\item $E_3$ est un sous-espace vectoriel de ${\R}^3$. En effet :
+    \begin{enumerate}
+    \item $(0, 0, 0) \in E_3$.
+    \item Soient $(x, y, z)$ et
+      $(x', y', z')$ deux \' el\'ements
+      de $E_3$. On a donc $x+y-z=x+y+z=0$ et $x'+y'-z'=x'+y'+z'=0$.
+      Donc $(x+x')+(y+y')-(z+z')= (x+x')+(y+y')+(z+z')=0$ et
+      $(x, y, z)+(x', y', z')=(x+x',y+y',z+z')$  appartient \`a  $E_3$.
+\item Soit $\lambda \in {\R}$ et $(x,y,z)\in E_3$.  Alors la relation $x+y-z=x+y+z=0$ implique
+  que $\lambda x+\lambda y-\lambda z=\lambda x+\lambda y+\lambda z=0$
+  donc que $\lambda (x, y, z)=(\lambda x,\lambda  y,\lambda  z)$ appartient \`a  $E_3$.
+    \end{enumerate}
+
+
+\item Les vecteurs $(1, 0, 0)$ et
+  $(0, 0, 1)$ appartiennent \`a $ E_4$
+  mais leur somme $(1, 0, 0)+(0, 0, 1)=(1, 0, 1)$  ne lui
+appartient pas donc $E_4$ n'est pas un sous-espace vectoriel de
+${\R}^3$.
+\end{enumerate}
+\fincorrection
+
+
+\finexercice

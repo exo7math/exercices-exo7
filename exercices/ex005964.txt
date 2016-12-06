@@ -1,0 +1,97 @@
+\exercice{5964, tumpach, 2010/11/11}
+\enonce
+Soit $\Omega$ un sous-ensemble de $\mathbb{R}^n$ dont la mesure de
+Lebesgue   est \emph{finie}~: $\mu(\Omega)< +\infty$. Pour tout
+$1\leq p <+\infty$, on note $L^p(\Omega)$ l'espace des fonctions
+$f~:\Omega \rightarrow \mathbb{C}$ telles que $\|f\|_{p} :=
+\left(\int_{\Omega} |f|^{p}(x)\,dx\right)^{\frac{1}{p}}<+\infty$
+modulo l'\'equivalence $f\sim g \Leftrightarrow f-g = 0 ~\mu-p.p$.
+L'espace des fonctions essentiellement born\'ees sera not\'e
+$L^{\infty}(\Omega).$
+\begin{enumerate}
+\item Montrer que si $q\leq p$, alors $L^{p}(\Omega) \subset
+L^{q}(\Omega)$. En particulier, pour $1<q<2<p$, on a~:
+$$
+L^{\infty}(\Omega) \subset L^{p}(\Omega) \subset L^{2}(\Omega)
+\subset L^{q}(\Omega) \subset L^{1}(\Omega).
+$$
+\item Soit $\mathcal{B}^{n}(0, 1)$ la boule unit\'e centr\'ee en
+$0$ de $\mathbb{R}^{n}$. En consid\'erant les fonctions
+$$
+f_{\alpha}(x)= |x|^{-\alpha}
+$$
+montrer que pour $q<p$, l'inclusion $L^{p}(\mathcal{B}^{n}(0,1))
+\subset L^{q}(\mathcal{B}^{n}(0,1))$ est stricte.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+Soit $\Omega$ un sous-ensemble de $\mathbb{R}^n$ dont la mesure de
+Lebesgue   est \emph{finie}~: $\mu(\Omega)< +\infty$. Pour tout
+$1\leq p <+\infty$, notons $L^p(\Omega)$ l'espace des fonctions
+$f~:\Omega \rightarrow \mathbb{C}$ telles que $\|f\|_{p} :=
+\left(\int_{\Omega} |f|^{p}(x)\,dx\right)^{\frac{1}{p}}<+\infty$
+modulo l'\'equivalence $f\sim g \Leftrightarrow f-g = 0 ~\mu-p.p$.
+L'espace des fonctions essentiellement born\'ees sera not\'e
+$L^{\infty}(\Omega).$
+\begin{enumerate} 
+\item Si $f\in L^{\infty}(\Omega)$, alors
+$$
+\| f \|_p^p = \int_{\Omega} |f|^{p}(x)\,dx \leq \|f\|_{\infty}^{p}
+\mu(\Omega)<+\infty,
+$$
+ainsi $L^{\infty}(\Omega) \subset L^{p}(\Omega)$ pour tout $p$ et
+$\|f\|_{p} \leq
+\|f\|_{\infty}\left(\mu(\Omega)\right)^{\frac{1}{p}}$. Montrons
+que si $q\leq p$, alors $L^{p}(\Omega) \subset L^{q}(\Omega)$.
+Soit $f\in L^{p}(\Omega)$, on a par exemple~:
+\begin{eqnarray*}
+\| f \|_q^q = \int_{\Omega}|f|^{q}(x)\,dx &=& \int_{\{|f|\geq1\}}|f|^{q}(x)\,dx
++
+\int_{\{|f|<1\}} |f|^{q}(x)\,dx \\
+& \leq & \int_{\{|f|\geq1\}}|f|^{p}(x)\,dx + \int_{\{|f|<1\}}
+1\,dx\\
+& \leq & \|f\|_{p}^{p} + \mu(\Omega)<+\infty.
+\end{eqnarray*}
+Ou encore, en utilisant l'in\'egalit\'e de H\"older pour les
+r\'eels conjugu\'es $r = \frac{p}{q} > 1$ et $r' =
+\frac{p}{p-q}$~:
+\begin{eqnarray*}
+\| f \|_q^q =  \int_{\Omega}|f|^{q}(x)\,dx &=& \left( \int_{\Omega}|f|^{q\cdot
+\frac{p}{q}}(x)\,dx\right)^{\frac{q}{p}}
+\left(\int_{\Omega} 1^{\frac{p}{p-q}}(x)\,dx\right)^{\frac{p-q}{p}} \\
+& = & \|f\|_{p}^{q}~\mu(\Omega)^{\frac{p-q}{p}},
+\end{eqnarray*}
+ce qui implique~:
+$$
+\|f\|_{q} \leq \|f\|_{p} \mu(\Omega)^{\frac{p-q}{qp}}.
+$$
+ En conclusion, pour $1<q<2<p$~:
+$$
+L^{\infty}(\Omega) \subset L^{p}(\Omega) \subset L^{2}(\Omega)
+\subset L^{q}(\Omega) \subset L^{1}(\Omega).
+$$
+
+
+\item Montrons que pour $q<p$, l'inclusion
+$L^{p}(\mathcal{B}^{n}(0,1)) \subset
+L^{q}(\mathcal{B}^{n}(0,1))$ est stricte. La fonction
+$f_{\alpha}$ appartient \`a $L^{\infty}(\mathcal{B}^{n}(0,1))$
+si et seulement $\alpha \leq 0$, et \`a
+$L^{p}(\mathcal{B}^{n}(0,1))$ avec $p<+\infty$ si et seulement
+si
+$$p\alpha - n +1 < 1 \Leftrightarrow \alpha < \frac{n}{p}
+$$
+Soit $1\leq q<p$, alors
+$f_{\frac{1}{2}\left(\frac{n}{p}+\frac{n}{q}\right)}$ appartient
+\`a $L^{q}(\mathcal{B}^{n}(0,1))\setminus
+L^{p}(\mathcal{B}^{n}(0,1))$. En particulier,
+$f_{\frac{1}{2}\left(\frac{n}{p}+\frac{n}{q}\right)}$ appartient
+\`a $L^{q}(\mathcal{B}^{n}(0,1))\setminus
+L^{\infty}(\mathcal{B}^{n}(0,1))$.
+\end{enumerate}
+\fincorrection
+
+\finexercice

@@ -1,0 +1,48 @@
+\exercice{5933, tumpach, 2010/11/11}
+\enonce
+Montrer les \'egalit\'es ensemblistes suivantes~:
+$$
+[a, b] =\bigcap_{n=1}^{\infty}\, ]a-\frac{1}{n}, b+\frac{1}{n}[
+\quad\quad\text{et}\quad\quad]a, b[ = \bigcup_{n=1}^{\infty}\, [a+
+\frac{1}{n}, b-\frac{1}{n}]
+$$
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item Montrons que $ [a, b] =\bigcap_{n=1}^{\infty}
+]a-\frac{1}{n}, b+\frac{1}{n}[$.
+\begin{itemize}
+\item Pour tout $n\in\mathbb{N}$, on a $[a, b] \subset\,
+]a-\frac{1}{n}, b+\frac{1}{n}[$. Donc $[a,
+b]\subset\bigcap_{n=1}^{\infty} ]a-\frac{1}{n}, b+\frac{1}{n}[$.
+\item Soit $x\in \bigcap_{n=1}^{\infty} ]a-\frac{1}{n},
+b+\frac{1}{n}[$. Alors pour tout $n\in\mathbb{N}$, on a~:
+$$a-\frac{1}{n} < x < b+\frac{1}{n}.$$ Ainsi
+$$\lim_{n\rightarrow+\infty}(a-\frac{1}{n})\leq x \leq
+\lim_{n\rightarrow+\infty}(b+\frac{1}{n}),
+$$
+c'est-\`a-dire $x\in[a, b]$. Donc $\bigcap_{n=1}^{\infty}
+]a-\frac{1}{n}, b+\frac{1}{n}[ \subset [a, b]$ et on a
+d\'emontr\'e l'\'egalit\'e entre ces deux ensembles.
+\end{itemize}
+
+\item Montrons que $]a, b[ = \bigcup_{n=1}^{\infty} [a+
+\frac{1}{n}, b-\frac{1}{n}]$.
+\begin{itemize}
+\item Pour tout $n\in\mathbb{N}$, on a $[a+ \frac{1}{n},
+b-\frac{1}{n}]\subset ]a,b[$, donc $\bigcup_{n=1}^{\infty} [a+
+\frac{1}{n}, b-\frac{1}{n}]\subset]a,b[$. 
+\item Soit
+$x\in\bigcup_{n=1}^{\infty} [a+ \frac{1}{n}, b-\frac{1}{n}]$.
+Alors il existe  $n\in\mathbb{N}$ tel que $x\in[a+ \frac{1}{n},
+b-\frac{1}{n}]$. Ainsi $x\in]a, b[$ et $\bigcup_{n=1}^{\infty} [a+
+\frac{1}{n}, b-\frac{1}{n}] \subset ]a, b[$, d'o\`u l'\'egalit\'e
+de ces deux ensembles.
+\end{itemize}
+\end{enumerate}
+\fincorrection
+
+\finexercice

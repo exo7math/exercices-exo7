@@ -1,0 +1,27 @@
+\exercice{6009, quinio, 2011/05/20}
+\enonce
+Un candidat se présente à un concours où, cette fois, les
+20 questions sont données sous forme de QCM. A chaque question, sont
+proposées 4 réponses, une seule étant exacte. L'examinateur fait
+le compte des réponses exactes données par les candidats.
+Certains candidats répondent au hasard à chaque question; pour
+ceux-la, définir une variable aléatoire associée à ce problème 
+et donner sa loi de probabilité, son espérance.
+\finenonce
+
+\noindication
+
+\correction
+Puisque les réponses sont données au hasard, chaque grille-réponses est en fait la 
+répétition indépendante de $20$ épreuves aléatoires (il y a $4^{20}$ grilles-réponses). 
+Pour chaque question la probabilité de succès est de $\frac{1}{4}$ et
+l'examinateur fait le compte des succès: la variable aléatoire $X$,
+nombre de bonnes réponses, obéit à une loi binomiale donc on a
+directement les résultats.
+Pour toute valeur de $k$ comprise entre $0$ et $20$:
+$P[X=k]=C_{20}^{k}(\frac{1}{4})^{k}(1-\frac{1}{4})^{20-k}$, ce qui
+donne la loi de cette variable aléatoire.
+
+Quelle est l'espérance d'un candidat fumiste? C'est $E(X)=np=5$
+\fincorrection
+\finexercice

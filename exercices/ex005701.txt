@@ -1,0 +1,42 @@
+\exercice{5701, rouget, 2010/10/16}
+\enonce[****]
+On sait que $1-\frac{1}{2}+\frac{1}{3}-\frac{1}{4}+\ldots=\ln2$.
+
+A partir de la série précédente, on construit une nouvelle série en prenant $p$ termes positifs, $q$ termes négatifs, $p$ termes positifs ... (Par exemple pour $p = 3$ et $q = 2$, on s'intéresse à $1+\frac{1}{3}+\frac{1}{5}-\frac{1}{2}-\frac{1}{4}+\frac{1}{7}+\frac{1}{9}+\frac{1}{11}-\frac{1}{6}-\frac{1}{8}+\ldots$). Convergence et somme de cette série.
+\finenonce
+
+\noindication
+
+\correction
+Pour $n\in\Nn^*$, on note $S_n$ la somme des $n$ premiers termes de la série considérée et on pose $H_n=\sum_{k=1}^{n}\frac{1}{k}$. Il est connu que $H_n\underset{n\rightarrow+\infty}{=}\ln n+\gamma+o(1)$.
+
+Soit $m\in\Nn^*$.
+
+\begin{align*}\ensuremath
+S_{m(p+q)}&=\left(1+\frac{1}{3}+\ldots+\frac{1}{2p-1}\right) -\left(\frac{1}{2}+\frac{1}{4}+\ldots+\frac{1}{2q}\right)+\left(\frac{1}{2p+1}+...+\frac{1}{4p-1}\right) -\left(\frac{1}{2q+2}+...+\frac{1}{4q}\right) +...\\
+ &\;+\left(\frac{1}{2(m-1)p+1}+...+\frac{1}{2mp-1}\right) -\left(\frac{1}{2(m-1)q+2}+...+\frac{1}{2mq}\right)\\
+ &=\sum_{k=1}^{mp}\frac{1}{2k-1}-\sum_{k=1}^{mq}\frac{1}{2k}=\sum_{k=1}^{2mp}\frac{1}{k}-\sum_{k=1}^{mp}\frac{1}{2k}-\sum_{k=1}^{mq}\frac{1}{2k}= H_{2mp} -\frac{1}{2}(H_{mp}+H_{mq})\\
+  &\underset{m\rightarrow+\infty}{=}(\ln(2mp)+\gamma) -\frac{1}{2}(\ln(mp) +\gamma+\ln(mq) +\gamma)+ o(1)=\ln2 +\frac{1}{2}\ln\left(\frac{p}{q}\right)+o(1).
+\end{align*}
+
+Ainsi, la suite extraite $(S_{m(p+q)})_{m\in\Nn^*}$ converge vers $\ln2 +\frac{1}{2}\ln\left(\frac{p}{q}\right)$.
+
+Montrons alors que la suite $(S_n)_{n\in\Nn^*}$ converge. Soit $n\in\Nn^*$. Il existe un unique entier naturel non nul $m_n$ tel que $m_n(p+q)\leqslant n <(m_n+1)(p+q)$ à savoir $m_n=E\left(\frac{n}{p+q}\right)$.
+
+\begin{align*}\ensuremath
+|S_n-S_{m_n(p+q)}|&\leqslant\frac{1}{2m_np+1}+\ldots+\frac{1}{2(m_n+1)p-1}+\frac{1}{2m_nq+2}+\frac{1}{2(m_n+1)q}\\
+ &\leqslant\frac{p}{2m_np+1}+\frac{q}{2m_nq+2}\leqslant\frac{1}{2m_n}+\frac{1}{2m_n}=\frac{1}{m_n}.
+\end{align*}
+
+Soit alors $\varepsilon>0$.
+
+Puisque $\lim_{n \rightarrow +\infty}m_n=+\infty$, il existe $n_0\in\Nn^*$ tel que pour $n\geqslant n_0$, $\frac{1}{m_n}<\frac{\varepsilon}{2}$ et aussi $\left|S_{m_n(p+q)}-\ln2-\frac{1}{2}\ln\left(\frac{p}{q}\right)\right|<\frac{\varepsilon}{2}$. Pour $n\geqslant n_0$, on a alors
+
+\begin{align*}\ensuremath
+\left|S_{n}-\ln2 -\frac{1}{2}\ln\left(\frac{p}{q}\right)\right|&\leqslant|S_n-S_{m_n(p+q)}|+\left|S_{m_n(p+q)}-\ln2-\frac{1}{2}\ln\left(\frac{p}{q}\right)\right|\leqslant\frac{1}{m_n}+\left|S_{m_n(p+q)}-\ln2-\frac{1}{2}\ln\left(\frac{p}{q}\right)\right|\\
+ &<\frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon.
+\end{align*}
+
+On a montré que $\forall \varepsilon>0,\;\exists n_0\in\Nn^*/\;\forall n\in\Nn,\;(n\geqslant n_0\Rightarrow\left|S_{n}-\left(\ln2 +\frac{1}{2}\ln\left(\frac{p}{q}\right)\right)\right|<\varepsilon)$ et donc, la série proposée converge et a pour somme $\ln2 +\frac{1}{2}\ln\left(\frac{p}{q}\right)$.
+\fincorrection
+\finexercice

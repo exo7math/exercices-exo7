@@ -1,0 +1,71 @@
+\exercice{2412, mayer, 2003/10/01}
+\enonce 
+\begin{enumerate}
+\item Soit $k>0$ et ${\cal F}$ l'ensemble des fonctions diff\'erentiables 
+$f:[a,b]\to \Rr$ telles que $|f'(t)|\leq k$
+pour tout $t \in ]a,b[$. Montrer que ${\cal F}$ est une famille \'equicontinue.
+\item Si $L>0$ et $f_n: \Rr^n \to \Rr^n $ est une suite d'applications $L$-lipschitziennes
+avec $\|f_n(0)\| = \sqrt 2$, alors montrer que l'on peut extraire une sous-suite convergente
+de $(f_n)$.
+\end{enumerate}
+\finenonce
+
+\indication
+Pour la deuxième question :
+\begin{enumerate}
+  \item Montrer que $\{ f_n \mid n\in \Nn \}$ est équicontinue.
+  \item Montrer que $ \{ f_n(x) \mid n\in \Nn \}$ est borné.
+  \item Applique le théorème d'Acoli sur le compact $\bar B(0,R)$.
+  \item Utiliser le procédé diagonal de Cantor ($R=1,2,3,\ldots$).
+\end{enumerate}
+\finindication
+
+\correction
+\begin{enumerate}
+  \item Pour $f\in {\cal F}$, par le théorème des accroissements finis, 
+pour tout $t_0,t\in [a,b]$ il existe $c\in]t_0,t[$ tel que
+$|f(t)-f(t_0)| = |f'(c)| |t-t_0|$. Donc $|f(t)-f(t_0)| \le k |t-t_0|$. 
+Fixons $t_0\in[a,b]$. Soit $\epsilon >0$, soit $\eta = \frac \epsilon k$ alors
+$$\forall t\in[a,b] \qquad |t-t_0| \le \eta \quad \Rightarrow \quad |f(t)-f(t_0)| \le k |t-t_0| \le \epsilon.$$
+Ce qui est exactement l'équicontinuité de $\mathcal{F}$ en $t_0$.
+Comme nous pouvons prendre pour $t_0$ n'importe quel point de $[a,b]$ alors
+$\mathcal{F}$ est équicontinue.
+
+  \item
+   \begin{enumerate}
+      \item Notons $\mathcal{H} = \{ f_n \mid n\in \Nn \}$.
+Pour $x_0,x \in \Rr^n$, $\|f_n(x)-f_n(x_0)\| \le L\|x-x_0\|$.
+Donc en posant $\eta = \frac\epsilon L$ comme ci-dessus on prouve l'équicontinuité de $\mathcal{H}$ en $x_0$, puis partout.
+      \item Notons $\mathcal{H}(x) = \{ f_n(x) \mid n\in \Nn \}$.
+Alors par hypothèse, 
+ $\mathcal{H}(0) \subset {\bar B} (0,\sqrt 2)$.
+Donc ${\bar {\cal H}}(0)$ est un fermé de ${\bar B}(0,\sqrt 2)$ qui est compact
+(nous somme dans $\Rr^n$), donc $\bar {\cal H}(0)$ est aussi compact, d'o\`u
+$\mathcal{H}(0)$ relativement compact.
+Maintenant nous avons $\| f_n(x)-f_n(0)\| \le L\|x-0\|$. Donc
+$\|f_n(x)\| \le L \| x \| + \sqrt 2$. Donc pour $x$ fixé, $f_n(x)\in
+{\bar B}(0, L \| x \| +\sqrt 2)$ ce qui implique que 
+$\mathcal{H}(x)$ est relativement compact.
+
+      \item Comme $\Rr^n$ n'est pas compact on ne peut pas appliquer directement le théorème d'Ascoli.
+Soit $B_R = \bar B(0,R)$ qui est un compact de $\Rr^n$. Notons $\mathcal{H}_R =
+ \{ {f_n}_{|B_R} \mid n\in \Nn \}$ la restriction de $\mathcal{H}$ à $B_R$.
+Alors par le théorème d'Ascoli, $\mathcal{H}_R$ est relativement compact.
+Donc de la suite $({f_n}_{|B_R})_n$ on peut extraire une sous-suite convergente (sur $B_R$).
+
+  \item Pour $R=1$ nous extrayons de $(f_n)_n$ une sous-suite $(f_{\phi_1(n)})_n$ qui converge sur $B_1$.
+Pour $R=2$, nous extrayons de  $(f_{\phi_1(n)})_n$ une sous-suite $(f_{\phi_2(n)})_n$  qui converge sur $B_2$.
+Puis par récurrence pour $R=N$, nous extrayons de  $(f_{\phi_{N-1}(n)})_n$ une sous-suite $(f_{\phi_N(n)})_n$  
+qui converge sur $B_N$. 
+Alors la suite $(f_{\phi_n(n)})_n$ converge sur $\Rr^n$. C'est le procédé diagonal de Cantor.
+En effet soit $x\in \Rr^n$ et soit  $N \ge \|x\|$. Alors
+$x \in B_N$ donc  $(f_{\phi_N(n)}(x))_n$ converge vers $f(x)$, mais 
+$(f_{\phi_n(n)})_{n\ge N}$ est extraite de $(f_{\phi_N(n)})_n$
+donc  $(f_{\phi_n(n)}(x))_{n}$ converge également vers $f(x)$.
+Nous venons de montrer que  $(f_{\phi_n(n)})_n$ converge simplement vers $f$
+sur tout $\Rr^n$.
+    \end{enumerate}
+
+\end{enumerate}
+\fincorrection
+\finexercice

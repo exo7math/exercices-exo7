@@ -1,0 +1,192 @@
+\exercice{5142, rouget, 2010/06/30}
+\enonce[IT]
+Cet exercice est consacré aux sommes de termes consécutifs d'une suite arithmétique ou d'une suite géométrique.
+\begin{enumerate}
+\item (*) Calculer $\sum_{i=3}^{n}i$, $n\in\Nn\setminus\{0,1,2\}$, $\sum_{i=1}^{n}(2i-1)$, $n\in\Nn^*$, et
+$\sum_{k=4}^{n+1}(3k+7)$, $n\in\Nn\setminus\{0,1,2\}$.
+
+\item (*) Calculer le nombre $1,1111...=\lim_{n\rightarrow +\infty}1,\underbrace{11...1}_n$ et le nombre
+$0,9999...=\lim_{n\rightarrow +\infty}0,\underbrace{99...9}_n$.
+
+\item (*) Calculer $\underbrace{1-1+1-...+(-1)^{n-1}}_n$,
+$n\in\Nn^*$.
+
+\item (*) Calculer
+$\frac{1}{2}+\frac{1}{4}+\frac{1}{8}+...=\lim_{n\rightarrow +\infty}\sum_{k=1}^{n}\frac{1}{2^k}$.
+
+\item (**) Calculer
+$\sum_{k=0}^{n}\cos\frac{k\pi}{2}$, $n\in\Nn$.
+
+\item (**) Soient $n\in\Nn$ et $\theta\in\Rr$. Calculer $\sum_{k=0}^{n}\cos(k\theta)$ et
+$\sum_{k=0}^{n}\sin(k\theta)$.
+
+\item (***) Pour $x\in[0,1]$ et $n\in\Nn^*$, on pose
+$S_n=\sum_{k=1}^{n}(-1)^{k-1}\frac{x^k}{k}$. Déterminer$\lim_{n\rightarrow +\infty}S_n$.
+
+\item (**) On pose $u_0=1$ et, pour $n\in\Nn$, $u_{n+1}=2u_n-3$.
+\begin{enumerate}
+\item Calculer la suite $(u_n-3)_{n\in\Nn}$.
+\item Calculer $\sum_{k=0}^{n}u_k$.
+\end{enumerate}
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  Soit $n\geq3$.
+
+$$\sum_{i=3}^{n}i=\frac{(3+n)(n-2)}{2}=\frac{(n-2)(n+3)}{2}.$$
+
+Soit $n\in\Nn^*$.
+
+$$\sum_{i=1}^{n}(2i-1)=\frac{(1+(2n-1))n}{2}=n^2$$
+
+et
+
+$$\sum_{k=4}^{n+1}(3k+7)=\frac{(19+3n+10)(n-2)}{2}=\frac{1}{2}(3n+29)(n-2)=\frac{1}{2}(3n^2+23n-58).$$
+
+\item  Soit $n\in\Nn^*$. Posons $u_n=1,\underbrace{11...1}_n$. On a
+
+$$u_n=1+\sum_{k=1}^{n}\frac{1}{10^k}=1+\frac{1}{10}\frac{1-\frac{1}{10^n}}{1-\frac{1}{10}}
+=1+\frac{1}{9}(1-\frac{1}{10^n})=\frac{10}{9}-\frac{1}{9.10^n}.$$
+
+Quand $n$ tend vers $+\infty$, $\frac{1}{9.10^n}$ tend vers $0$, et donc, $u_n$ tend vers $\frac{10}{9}$.
+\begin{center}
+\shadowbox{
+$1,11111....=\frac{10}{9}.$
+}
+\end{center}
+
+Soit $n\in\Nn^*$. Posons $u_n=0,\underbrace{99...9}_n$. On a
+
+$$u_n=\sum_{k=1}^{n}\frac{9}{10^k}=\frac{9}{10}\frac{1-\frac{1}{10^n}}{1-\frac{1}{10}}
+=1-\frac{1}{10^n}.$$
+
+Quand $n$ tend vers $+\infty$, $\frac{1}{10^n}$ tend vers $0$, et donc, $u_n$ tend vers $1$.
+\begin{center}
+\shadowbox{
+$0,9999....=1.$
+}
+\end{center}
+
+\item  Soit $n\in\Nn^*$. Posons $u_n=\underbrace{1-1+1-...+(-1)^{n-1}}_n$.  On a
+
+$$u_n=\sum_{k=0}^{n-1}(-1)^k=\frac{1-(-1)^n}{1-(-1)}=\frac{1}{2}(1-(-1)^n)=\left\{
+\begin{array}{l}
+0\;\mbox{si}\;n\;\mbox{est pair}\\
+1\;\mbox{si}\;n\;\mbox{est impair}
+\end{array}
+\right..$$
+
+\item  Soit $n\in\Nn^*$.
+$\sum_{k=1}^{n}\frac{1}{2^k}=\frac{1}{2}\frac{1-\frac{1}{2^n}}{1-\frac{1}{2}}=1-\frac{1}{2^n}$. Quand $n$ tend vers
+$+\infty$, on obtient
+\begin{center}
+\shadowbox{
+$\frac{1}{2}+\frac{1}{4}+\frac{1}{8}+...=1.$
+}
+\end{center}
+\item  Soit $n\in\Nn$.
+
+\begin{align*}
+\sum_{k=0}^{n}\cos\frac{k\pi}{2}&=\Re(\sum_{k=0}^{n}e^{ik\pi/2})(=\Re(\sum_{k=0}^{n}i^k))\\
+ &=\Re(\frac{1-e^{(n+1)i\pi/2}}{1-e^{i\pi/2}})=\Re(\frac{e^{i(n+1)\pi/4}}{e^{i\pi/4}}\frac{-2i\sin\frac{(n+1)\pi}{4}}
+ {-2i\sin\frac{\pi}{4}})=\sqrt{2}\sin\frac{(n+1)\pi}{4}\cos\frac{n\pi}{4}\\
+ &=\frac{1}{\sqrt{2}}\sin\frac{(2n+1)\pi}{4}+\frac{1}{2}
+=\left\{
+\begin{array}{l}
+1\;\mbox{si}\;n\in4\Nn\cup(4\Nn+1)\\
+0\;\mbox{si}\;n\in(4\Nn+2)\cup(4\Nn+3)
+\end{array}
+\right.
+\end{align*}
+
+En fait, on peut constater beaucoup plus simplement que $\cos0+\cos\frac{\pi}{2}+\cos\pi+\cos\frac{3\pi}{2}=1+0-1+0=0$,
+on a immédiatement $S_{4n}=1$, $S_{4n+1}=S_{4n}+0=1$, $S_{4n+2}=S_{4n+1}-1=0$ et $S_{4n+3}=S_{4n+2}+0=0$.
+\item  Soient $n\in\Nn$ et $\theta\in\Rr$. Posons $C_n=\sum_{k=0}^{n}\cos(k\theta)$ et
+$S_n=\sum_{k=0}^{n}\sin(k\theta)$. Alors, d'après la formule de \textsc{Moivre},
+
+$$C_n+iS_n=\sum_{k=0}^{n}(\cos(k\theta)+i\sin(k\theta))=\sum_{k=0}^{n}e^{ik\theta}=\sum_{k=0}^{n}(e^{i\theta})^k.$$
+
+\begin{itemize}
+\item[\textbf{- 1er cas.}] Si $\theta\notin2\pi\Zz$, alors $e^{i\theta}\neq1$. Par suite,
+
+$$C_n+iS_n=\frac{1-e^{i(n+1)\theta}}{1-e^{i\theta}}=e^{i\theta(n+1-1)/2}\frac{-2i\sin\frac{(n+1)\theta}{2}}{-2i\sin
+\frac{\theta}{2}}=e^{in\theta/2}\frac{\sin\frac{(n+1)\theta}{2}}{\sin
+\frac{\theta}{2}}.$$
+
+Par suite,
+
+$$C_n=\Re(C_n+iS_n)=\frac{\cos\frac{n\theta}{2}\sin\frac{(n+1)\theta}{2}}{\sin\frac{\theta}{2}}\;\mbox{et}\;S_n=\Im(C_
+n+iS_n)=\frac{\sin\frac{n\theta}{2}\sin\frac{(n+1)\theta}{2}}{\sin\frac{\theta}{2}}.$$
+
+\item[\textbf{- 2ème cas.}] Si $\theta\in2\pi\Zz$, on a immédiatement $C_n=n+1$ et $S_n=0$.
+\end{itemize}
+
+Finalement,
+\begin{center}
+\shadowbox{
+$\forall n\in\Nn,\;\sum_{k=0}^{n}\cos(k\theta)=
+\left\{
+\begin{array}{l}
+\frac{\cos\frac{n\theta}{2}\sin\frac{(n+1)\theta}{2}}{\sin\frac{\theta}{2}}\;\mbox{si}\;\theta\notin2\pi\Zz\\
+n+1\;\mbox{si}\;\theta\in2\pi\Zz
+\end{array}
+\right.
+\;\text{et}\;\sum_{k=0}^{n}\sin(k\theta)=
+\left\{
+\begin{array}{l}
+\frac{\sin\frac{n\theta}{2}\sin\frac{(n+1)\theta}{2}}{\sin\frac{\theta}{2}}\;\mbox{si}\;\theta\notin2\pi\Zz\\
+0\;\mbox{si}\;\theta\in2\pi\Zz
+\end{array}
+\right.
+.$
+}
+\end{center}
+
+\item  Soient $x\in[0,1]$ et $n\in\Nn^*$. Puisque $-x\neq1$, on a
+
+\begin{align*}
+S_n'(x)&=\sum_{k=1}^{n}(-1)^{k-1}x^{k-1}=\sum_{k=0}^{n-1}(-x)^{k}=\frac{1-(-x)^{n}}{1-(-x)}=\frac{1}{1+x}(1-(-x)^{n}).
+\end{align*}
+
+Par suite,
+
+$$S_n(x)=S_n(0)+\int_{0}^{x}S_n'(t)\;dt=\int_{0}^{x}\frac{1-(-t)^{n}}{1+t}\;dt=\int_{0}^{x}\frac{1}{1+t}\;dt-
+\int_{0}^{x}\frac{(-t)^{n}}{1+t}\;dt=\ln(1+x)-\int_{0}^{x}\frac{(-t)^{n}}{1+t}\;dt.$$
+
+Mais alors,
+
+$$|S_n(x)-\ln(1+x)|=\left|\int_{0}^{x}\frac{(-t)^{n}}{1+t}\;dt\right|\leq\int_{0}^{x}
+\left|\frac{(-t)^{n}}{1+t}\right|\;dt=\int_{0}^{x}\frac{t^n}{1+t}\;dt
+\leq\int_{0}^{x}t^{n}dt=\frac{x^{n+1}}{n+1}\leq\frac{1}{n+1}.$$
+
+Comme $\frac{1}{n+1}$ tend vers $0$ quand $n$ tend vers $+\infty$, on en déduit que
+\begin{center}
+\shadowbox{
+$\forall x\in[0,1],\;\lim_{n\rightarrow +\infty}\sum_{k=1}^{n}(-1)^{k-1}x^{k-1}=\ln(1+x).$
+}
+\end{center}
+En particulier, 
+\begin{center}
+\shadowbox{$\ln2=\lim_{n\rightarrow +\infty}(1-\frac{1}{2}+\frac{1}{3}-...+\frac{(-1)^{n-1}}{n})$}.
+\end{center}
+
+\item 
+
+\begin{enumerate}
+\item Soit $n\in\Nn$. $u_{n+1}-3=2u_n-6=2(u_n-3)$. La suite $(u_n-3)_{n\in\Nn}$ est donc une suite géométrique, de
+raion $q=2$ et de premier terme $u_0-3=-2$. On en déduit que, pour $n$ enteir naturel donné, $u_n-3=-2.2^n$. Donc,
+
+$$\forall n\in\Nn,\;u_n=3-2^{n+1}.$$
+
+\item Soit $n\in\Nn$.
+
+$$\sum_{k=0}^{n}u_k=\sum_{k=0}^{n}3-2\sum_{k=0}^{n}2^k=3(n+1)-2\frac{2^{n+1}-1}{2-1}=-2^{n+2}+3n+5.$$
+\end{enumerate}
+\end{enumerate}
+
+\fincorrection
+\finexercice

@@ -1,0 +1,32 @@
+\exercice{3528, quercia, 2010/03/10}
+\enonce[Ensi Chimie P 93]
+
+On considère le polynôme défini par :
+$\forall\ n \in \N,\ P_n(x) = x^n - \sum_{i=0}^{n-1} \alpha_ix^i$ avec
+$\alpha_0 > 0$ et $\alpha_i \ge 0$ pour $1 \le i \le n-1$.
+
+\begin{enumerate}
+  \item Montrer qu'il existe une unique racine dans $\R^{+*}$ pour $P_n$.
+    
+
+  \item Soit $A = \begin{pmatrix} 1       &1      &0      &\dots  &0      \cr
+                        2       &0      &1      &\ddots &\vdots \cr
+                        \vdots  &\vdots &\ddots &\ddots &0      \cr
+                        \vdots  &\vdots &       &\ddots &1      \cr
+                        n       &0      &\dots  &\dots  &0      \cr\end{pmatrix}$.
+    Montrer que $A$ admet une unique valeur propre réelle strictement positive.
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item La fonction $f_n : x  \mapsto \frac{P_n(x)}{x^n}$ croît strictement
+             de $-\infty$ à 1 quand $x$ varie de $0$ à $+\infty$.
+  \item $\chi_A(x) = (-1)^n\Bigl(x^n - \sum_{k=1}^n kx^{n-k}\Bigr)$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

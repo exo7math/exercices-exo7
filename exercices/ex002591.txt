@@ -1,0 +1,57 @@
+\exercice{2591, delaunay, 2009/05/19}
+\enonce
+ Soit $a\in\R$, notons $A$ la matrice suivante
+$$A=\begin{pmatrix}0&1 \\  -a&1+a\end{pmatrix}.$$
+On d\'efinit une suite $(u_n)_{n\in\N}$, par la donn\'ee de $u_0$ et $u_1$ et la relation de r\'ecurrence suivante, pour $n\in\N$
+$$u_{n+2}=(1+a)u_{n+1}-au_n$$
+\begin{enumerate}
+ \item Pour quelles valeurs de $a$ la matrice $A$ est-elle diagonalisable ?
+ \item Lorsque $A$ est diagonalisable, calculer $A^n$ pour $n\in \N$.
+ \item On suppose $A$ diagonalisable. On note $U_n$ le vecteur $U_{n}=\begin{pmatrix}u_{n} \\  u_{n+1}\end{pmatrix}$, exprimer $U_{n+1}$ en fonction de $U_n$ et de $A$, puis $U_n$ en fonction de $U_0$ et de $A$.
+
+\end{enumerate}
+
+\finenonce 
+
+\noindication
+
+\correction
+ Soit $a\in\R$, notons $A$ la matrice suivante
+$$A=\begin{pmatrix}0&1 \\  -a&1+a\end{pmatrix}.$$
+On d\'efinit une suite $(u_n)_{n\in\N}$, par la donn\'ee de $u_0$ et $u_1$ et la relation de r\'ecurrence suivante, pour $n\in\N$
+$$u_{n+2}=(1+a)u_{n+1}-au_n$$
+\begin{enumerate}
+ \item {\it Pour quelles valeurs de $a$ la matrice $A$ est-elle diagonalisable ?}
+
+Calculons le polyn\^ome caract\'eristique $P_A(X)$ :
+$$P_A(X)=\begin{vmatrix}-X&1 \\  -a& 1+a-X\end{vmatrix}=-X(1+a-X)+a=X^2-(1+a)X+a.$$
+La matrice $A$ est diagonalisable sur $\R$ si le polyn\^ome $P_A$ admet deux racines distinctes dans $\R$. En effet, si $P_A$ admet une racine double $r$ et $A$ diagonalisable, alors l'endomorphisme de matrice $A$ est \'egal \`a $r\mathrm{Id}_E$, ce qui n'est pas le cas. Calculons donc le discriminant du polyn\^ome caract\'eristique.
+$$\Delta=(1+a)^2-4a=1+a^2+2a-4a=1+a^2-2a=(1-a)^2.$$
+Ainsi la matrice $A$ est diagonalisable pour tout $a\neq 1$.
+ \item {\it Lorsque $A$ est diagonalisable, calculons $A^n$ pour $n\in \N$}.
+
+Lorsque $A$ est diagonalisable, il existe une matrice inversible $P$ et une matrice diagonale $D$ telles que $A=PDP^{-1}$, ainsi pour tout $n\in\N$, on a $A^n=PD^nP^{-1}$. D\'eterminons les matrices $P$ et $D$. Pour cela calculons les deux valeurs propres de $A$, ce sont les racines du polyn\^ome $P_A$, on a donc 
+$$\lambda_1={\frac{1+a+1-a}{2}}=1\ {\hbox{et}}\ \lambda_2={\frac{1+a-1+a}{2}}=a.$$
+D\'eterminons maintenant des vecteurs propres associ\'es aux valeurs propres $1$ et $a$. On cherche des vecteurs $\vec{e_1}$ et $\vec{e_2}$ tels que 
+$A\vec{e_1}=\vec{e_1}$ et $A\vec{e_2}=a\vec{e_2}$.
+$$\begin{pmatrix}0&1 \\  -a&1+a\end{pmatrix}\begin{pmatrix}x \\  y\end{pmatrix}=\begin{pmatrix}x \\  y\end{pmatrix}\iff y=x$$ et
+$$\begin{pmatrix}0&1 \\  -a&1+a\end{pmatrix}\begin{pmatrix}x \\  y\end{pmatrix}=a\begin{pmatrix}x \\  y\end{pmatrix}\iff y=ax$$
+ainsi on peut choisir $\vec e_1=(1,1)$ et $\vec e_2=(1,a)$. On a alors
+$$P=\begin{pmatrix}1&1 \\  1&a\end{pmatrix},\  D=\begin{pmatrix}1&0 \\  0&a\end{pmatrix},\ 
+P^{-1}={\frac{1} {a-1}}\begin{pmatrix}a&-1 \\  -1&1\end{pmatrix}.$$
+D'o\`u, pour tout $n\in\N$, 
+$$A^n=PD^nP^{-1}=P\begin{pmatrix}1&0 \\  0&a^n\end{pmatrix}P^{-1}={\frac{1} {a-1}}\begin{pmatrix}a-a^n&a^n-1 \\  a-a^{n+1}&a^{n+1}-1\end{pmatrix}$$
+ \item {\it On suppose $A$ diagonalisable. On note $U_n$ le vecteur $U_{n}=\begin{pmatrix}u_{n} \\  u_{n+1}\end{pmatrix}$,  on exprime $U_{n+1}$ en fonction de $U_n$ et de $A$, puis $U_n$ en fonction de $U_0$ et de $A$.}
+
+On a, par d\'efinition, pour tout $n\in\N$, $u_{n+2}=(1+a)u_{n+1}-au_n$, ainsi, 
+$$U_{n+1}=\begin{pmatrix}u_{n+1} \\  u_{n+2}\end{pmatrix}=\begin{pmatrix}0&1 \\  -a&1+a\end{pmatrix}\begin{pmatrix}u_{n} \\  u_{n+1}\end{pmatrix}=AU_n.$$
+On a donc $U_1=AU_0$, montrons par r\'ecurrence sur $n$, que pour tout $n\in\N$, $U_n=A^nU_0$. C'est vrai pour $n=0$, $U_0=A^0U_0=IU_0=U_0$ et pour $n=1$. Soit $n$ fix\'e pour lequel on suppose $U_n=A^nU_0$, on a alors $U^{n+1}=AU_n=A.A^nU_0=A^{n+1}U_0$, le r\'esultat est donc vrai pour tout entier naturel $n$.
+
+La matrice $A$ \'etant suppos\'ee diagonalisable, on a donc, pour $n\in\N$,
+$$U_n=A^nU_0=PD^nP^{-1}U_0={\frac {1}{a-1}}\begin{pmatrix}a-a^n&a^n-1 \\  a-a^{n+1}&a^{n+1}-1\end{pmatrix}\begin{pmatrix}u_{0} \\  u_{1}\end{pmatrix},$$
+ainsi on peut exprimer pour $n\in\N$, le terme g\'en\'eral de la suite $u_n$ en fonction des premiers termes $u_0$ et $u_1$, on a 
+$$u_n={\frac{1} {a-1}}\left((a-a^n)u_0+(a^n-1)u_1\right).$$
+
+\end{enumerate}
+\fincorrection
+\finexercice

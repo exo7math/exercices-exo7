@@ -1,0 +1,28 @@
+\exercice{4569, quercia, 2010/03/14}
+\enonce[Centrale MP 2003]
+On considère les suites $(a_n)$ et $(b_n)$ définies par :
+$a_n = \frac{\cos(n\pi/3)}{n^{1/3}}$, $b_n = \sin(a_n)$.
+\smallskip
+\begin{enumerate}
+  \item Déterminer les rayons de convergence des séries $\sum a_nx^n$ et $\sum b_nx^n$.
+    
+  \item Déterminer la nature de $\sum a_nx^n$ et $\sum b_nx^n$ en fonction de $x$.
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $(a_n)$ est bornée et $(na_n)$ ne l'est pas, donc $R_a = 1$. $|b_n|\sim|a_n|$ donc $R_b=1$.
+  \item Il y a doute seulement pour $x=\pm 1$. Le critère de convergence d'Abel (hors programme)
+    s'applique, $\sum a_nx^n$ converge si $x=\pm1$.
+    $b_n = a_n -\frac16a_n^3 +  O(n^{-5/3})$ et le critère d'Abel s'applique aussi
+    à $\sum a_n^3x^n$ (linéariser le $\cos^3$), il y a aussi convergence pour $x=\pm 1$.
+    
+    Résolution conforme au programme : regrouper par paquets de six termes.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

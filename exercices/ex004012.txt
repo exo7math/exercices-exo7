@@ -1,0 +1,27 @@
+\exercice{4012, quercia, 2010/03/11}
+\enonce
+\label{diffinie}Différences finies
+Soit $f:\R \to \R$ de classe $\mathcal{C}^\infty$ et $h > 0$.
+On pose : $$\Delta_hf(x) = \frac {f(x+h/2) - f(x-h/2)}h
+  \qquad \text{et}\quad
+\Delta_h^p = \underbrace{\Delta_h \circ \Delta_h \circ \dots \circ \Delta_h}%
+_{p \text{ fois}}.$$
+
+Par exemple, $\Delta_h^2f(x) = \frac {f(x+h) - 2f(x) + f(x-h)}{h^2}$.
+\begin{enumerate}
+  \item
+  \begin{enumerate}
+    \item   Montrer que : $\forall\ x \in \R,\ \exists\ \theta \in {]-1,1[} \text{ tq } \Delta_hf(x) = f'\left(x + \frac {\theta h}2\right)$.
+    \item   Montrer que : $\forall\ x \in \R,\ \exists\ \theta'\in {]-1,1[} \text{ tq } \Delta_hf(x) = f'(x) + \frac {h^2}{24} f^{(3)}\left( x + \frac{\theta' h}2\right)$.
+  \end{enumerate}
+  \item   Montrer par récurrence sur $p$ que :
+      $$\forall\ x \in \R,\ \exists\ \theta_p \in {]-p,p[} \text{ tq }
+      \Delta_h^pf(x) = f^{(p)}(x) + \frac {ph^2}{24} f^{(p+2)}\left( x + \frac{\theta_p h}2\right).$$
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\nocorrection
+
+\finexercice

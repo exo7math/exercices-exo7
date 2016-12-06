@@ -1,0 +1,46 @@
+\exercice{2398, mayer, 2003/10/01}
+\enonce 
+Soit $X={\cal C}^1([a,b])$.
+\begin{enumerate}
+\item Est-ce un espace complet si on le muni de la norme
+uniforme $\| . \| _\infty $?
+\item Consid\'erons maintenant, pour $f\in X$, la norme
+$$ N(f) = \sup _{t\in [a,b]} \|f(t)\| + \sup _{t\in [a,b]}
+\|f'(t)\|\; .$$ L'espace $(X,N)$ est-il complet?
+\end{enumerate}
+\finenonce
+
+\indication
+\begin{enumerate}
+  \item Intégrer l'exemple de l'exercice \ref{exocomp}.
+
+  \item Oui cet espace est complet, montrer-le !
+\end{enumerate}
+\finindication
+
+\correction
+\begin{enumerate}
+  \item On reprend l'exemple de l'exercice \ref{exocomp}. Et on définit
+ $g_n$ sur $[0,1]$ par $g_n(x) = \int_0^x f_n(t)dt$. Alors $g_n$ est $\mathcal{C}^1$, et converge (donc en particulier $(g_n)$ est de Cauchy). Elle converge vers $g$ qui n'est pas une fonction $\mathcal{C}^1$. Donc ce n'est pas un espace complet.
+
+
+  \item Soit $(f_n)$ une suite de Cauchy pour la norme $N$.
+Pour chaque $t\in[a,b]$, $(f_n(t))_n$ est une suite de Cauchy de $\Rr$
+donc converge. Notons $f(t)$ sa limite. 
+De même $(f_n'(t))_n$ est une suite de Cauchy de $\Rr$  donc converge vers $g(t)$.
+Nous allons montrer que $f$
+est dans $X$ et que $f_n$ converge vers $f$ pour $N$ et que $f'=g$.
+Soit $\epsilon > 0$. Il existe $n\in \Nn$ tel que
+Pour tout $p\ge 0$, 
+$$N(f_{n}-f_{n+p}) < \epsilon.$$
+En faisant tendre $p$ vers $+\infty$, $f_{n+p}$ converge (simplement) vers $f$.
+On obtient que
+$\|f_n-f\|_\infty$ et que $\|f_n'-g\|_\infty$ tendent vers $0$.
+Donc $f_n$ converge uniformément vers $f$. Comme les $f_n$ sont continues
+alors $f$ est continue. De même $f_n'$ converge uniformément vers $g$
+donc $g$ est continue. De plus cela implique que $g=f'$.(Rappel : si $(f_n)$ est une suite de fonctions $\mathcal{C}^1$ sur $[a,b]$ qui converge simplement vers $f$, et tel que $(f_n')$ converge uniformément vers $g$, alors $f$ est $\mathcal{C}^1$ et sa dérivée est $f'=g$.)
+Nous avons donc montrer que $N(f_n-f)$ tend vers $0$ et que $f$ est dans $X$.
+Donc $(X,N)$ est complet.
+ \end{enumerate}
+\fincorrection
+\finexercice

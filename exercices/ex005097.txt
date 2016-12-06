@@ -1,0 +1,55 @@
+\exercice{5097, rouget, 2010/06/30}
+\enonce[**I]
+\begin{enumerate}
+\item  Soit $f$ une fonction dérivable sur $\Rr$ à valeurs dans $\Rr$. Montrer que si $f$ est paire, $f'$ est
+impaire et si $f$ est impaire, $f'$ est paire.
+\item  Soient $n\in\Nn^*$ et $f$ une fonction $n$ fois dérivable sur $\Rr$ à valeurs dans $\Rr$. $f^{(n)}$
+désignant la dérivée $n$-ième de $f$, montrer que si $f$ est paire, $f^{(n)}$ est paire si $n$ est pair et impaire si
+$n$ est impair.
+\item  Soit $f$ une fonction continue sur $\Rr$ à valeurs dans $\Rr$. A-t-on des résultats analogues concernant les
+primitives de $f$~?
+\item  Reprendre les questions précédentes en remplaçant la condition \og~$f$ est paire (ou impaire)~\fg~par la
+condition \og~$f$ est $T$-périodique~\fg.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+
+\begin{enumerate}
+ \item  Soit $f$ une fonction dérivable sur $\Rr$ à valeurs dans $\Rr$. Si $f$ est paire, alors, pour tout réel $x$,
+$f(-x)=f(x)$. En dérivant cette égalité, on obtient
+
+$$\forall x\in\Rr,\;-f'(-x)=f'(x),$$
+et donc $f'$ est impaire. De même, si $f$ est impaire, pour tout réel $x$, on a $f(-x)=-f(x)$, et par dérivation on
+obtient pour tout réel $x$, $f'(-x)=f'(x)$. $f'$ est donc paire.
+
+\begin{center}
+\shadowbox{
+$(f\;\mbox{paire}\Rightarrow f'\;\mbox{impaire) et}\;(f\;\mbox{impaire}\Rightarrow f'\;\mbox{paire.})$
+}
+\end{center}
+ \item  Soient $n\in\Nn^*$ et $f$ une fonction $n$ fois dérivable sur $\Rr$ à valeurs dans $\Rr$. Supposons $f$
+paire. Par suite, pour tout réel $x$, $f(-x)=f(x)$. Immédiatement par récurrence, on a
+
+$$\forall x\in\Rr,\;f^{(n)}(-x)=(-1)^nf(x).$$
+Ceci montre que $f^{(n)}$ a la parité de $n$, c'est-à-dire que $f^{(n)}$ est une fonction paire quand $n$ est un
+entier pair et est une fonction impaire quand $n$ est un entier impair.
+De même, si $f$ est impaire et $n$ fois dérivable sur $\Rr$, $f^{(n)}$ a la parité contraire de celle de $n$.
+ \item  Soit $f$ une fonction continue sur $\Rr$ et impaire et $F$ une primitive de $f$. Montrons que $F$ est paire.
+Pour $x$ réel, posons $g(x)=F(x)-F(-x)$. $g$ est dérivable sur $\Rr$ et pour tout réel $x$,
+
+$$g'(x)=F'(x)+F'(-x)=f(x)+f(-x)=0.$$
+$g$ est donc constante sur $\Rr$ et par suite, pour tout réel $x$, $g(x)=g(0)=F(0)-F(0)=0$. Ainsi, $g$ est la fonction nulle et donc, pour
+tout réel $x$, $F(x)=F(-x)$. On a montré que $F$ est paire.
+Par contre, si $f$ est paire, $F$ n'est pas nécessairement impaire. Par exemple, la fonction $f~:~x\mapsto1$ est paire,
+mais $F~:~x\mapsto x+1$ est une primitive de $f$ qui n'est pas impaire.
+ \item  On montre aisément en dérivant une ou plusieurs fois l'égalité~:~$\forall x\in\Rr,\;f(x+T)=f(x)$, que les
+dérivées successives d'une fonction $T$-périodique sont $T$-périodiques. Par contre, il n'en est pas de même des
+primitives. Par exemple, si pour tout réel $x$, $f(x)=\cos^2x=\frac{1}{2}(1+\cos(2x))$, $f$ est $\pi$-périodique, mais
+la fonction $F~:~x\mapsto\frac{x}{2}+\frac{\sin(2x)}{4}$, qui est une primitive de $f$ sur $\Rr$, n'est pas
+$\pi$-périodique ni même périodique tout court.
+\end{enumerate}
+\fincorrection
+\finexercice

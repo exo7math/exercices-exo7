@@ -1,0 +1,33 @@
+\exercice{6879, gammella, 2012/05/29}
+
+\enonce
+Calculer le travail $W$ de la force $\vec{F}(x,y,z)=(yz,zx,xy)$ le long de l'hélice $H$ 
+paramétrée par $x=\cos t$, $y=\sin t$ et $z=t$ o\`u $t$ varie de $0$ à $ \frac{\pi}{4}$.
+\finenonce
+
+\noindication
+
+\correction
+Notons $\omega= yz dx + zx dy + xy dz$ la forme différentielle associée à $\vec{F}(x,y,z)$.
+Par définition de $W$, on a $W= \int_H \vec{F}. \vec{dl}=\int_H \omega.$
+D'après le paramétrage donné pour $H$, on a
+\begin{align*}
+W & = \int_0^{\frac{\pi}{4}} &yz dx + zx dy + xy dz \\
+  & = \int_0^{\frac{\pi}{4}}& ((\sin t )t (-\sin t)+t\cos^2 t + \cos t \sin t ) dt\\
+  & = \int_0^{\frac{\pi}{4}}&(t \cos(2t) +\cos t\sin t ) dt.
+\end{align*} 
+On a utilisé ici la formule trigonométrique : $\cos(2t)=\cos^2 t-\sin^2 t.$
+En faisant une intégration par parties, on constate que
+$$ \int_0^\frac{\pi}{4} t \cos(2t) dt =[ \frac{t \sin(2t)}{2}]_0^{\frac{\pi}{4}} -
+\int_0^{\frac{\pi}{4}}  \frac{\sin(2t)}{2} dt . $$ On en déduit que 
+$$W=  [  \frac{t \sin(2t)}{2}]_0^{\frac{\pi}{4}} +  \frac{1}{4} [\cos (2t)]_0^{\frac{\pi}{4}}
++ \frac{1}{2} [\sin^2 (t) ]_0^{\frac{\pi}{4}}
+=  \frac{\pi}{8} - \frac{1}{4}+ \frac{1}{4}=  \frac{\pi}{8}.$$
+Remarquons que $\omega=  yz dx + zx dy + xy dz$ est exacte. De plus, 
+on vérifie aisément que $\omega= d(xyz)$. On peut alors retrouver le résultat précédent en faisant :
+$$W= f(B)-f(A)$$ o\`u l'on a posé $f(x,y,z)=xyz$, 
+$$B=(\cos( \frac{\pi}{4}) , \sin(\frac{\pi}{4}) ,  \frac{\pi}{4})=
+( \frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2} ,  \frac{\pi}{4})$$
+et $$A=(\cos(0) , \sin(0) , 0)=(1, 0, 0).$$
+\fincorrection
+\finexercice

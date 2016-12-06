@@ -1,0 +1,160 @@
+\exercice{5780, rouget, 2010/10/16}
+\enonce[*** I Matrices et déterminants de \textsc{Gram}]
+Soit $E$ un espace préhilbertien réel.
+
+Pour $n\in\Nn^*$ et $(x_1, ... , x_n)$ dans $E^n$, on pose $G(x_1, ... , x_n) =\left(x_i | x_j\right)_{1\leqslant i,j\leqslant n}$ (matrice de \textsc{Gram}) puis $\gamma(x_1, ... , x_n) = \text{det}(G(x_1 , ... , x_n))$ (déterminant de \textsc{Gram}).
+
+\begin{enumerate}
+ \item  Montrer que $\text{rg}(G(x_1, ... , x_n)) =\text{rg}(x_1, ... ,x_n)$.
+
+\item  Montrer que la famille $(x_1, ... ,x_n)$ est liée si et seulement si $\gamma(x_1, ... , x_n) = 0$ et que la famille $(x_1, ... , x_n)$ est libre si et seulement si $\gamma(x_1, ... , x_n) > 0$.
+
+\item  On suppose que la famille $(x_1, ... , x_n)$ est libre dans $E$. On pose $F =\text{Vect} (x_1, ... , x_n)$. Pour $x\in E$, on note $p_F(x)$ la projection orthogonale de $x$ sur $F$ puis $d(x,F)$ la distance de $x$ à $F$ (c'est-à-dire $d(x,F) =\|x-p_F(x)\|^2$). Montrer que $d(x,F) =\sqrt{\frac{\gamma(x,x_1,\ldots,x_n)}{\gamma(x_1,\ldots,x_n)}}$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Soit $F =\text{Vect}(x_1,...,x_n)$ et $m =\text{dim}F$. Soit $\mathcal{B}= (e_i)_{1\leqslant i\leqslant m}$ une base orthonormée de $F$ puis $M$ la matrice de la famille $(x_j)_{1\leqslant j\leqslant n}$ dans la base $\mathcal{B}$ .$M$ est une matrice rectangulaire de format $(m,n)$.
+
+Soit $(i,j)\in\llbracket1,m\rrbracket\times\llbracket1,n\rrbracket$. Puisque la base $\mathcal{B}$ est orthonormée, le coefficient ligne $i$, colonne $j$ de la matrice ${^t}MM$ est
+
+\begin{center}
+$\sum_{k=1}^{m}m_{k,i}m_{k,j}=(x_i|x_j)$,
+\end{center}
+
+et on a donc
+
+\begin{center}
+$G(x_1,x_2,...,x_n) ={^t}MM$.
+\end{center}
+
+Puisque $\text{rg}(x_1,...,x_n) =\text{rg}M$, il s'agit de vérifier que $\text{rg}({^t}MM)=\text{rg}M$. Pour cela, montrons que les matrices $M$ et ${^t}MM$ ont même noyau.
+
+Soit $X\in\mathcal{M}_{n,1}(\Rr)$. $X\in\text{Ker}M\Rightarrow MX = 0\Rightarrow{^t}MMX = 0\Rightarrow X\in\text{Ker}({^t}MM)$ et aussi
+
+\begin{center}
+$X\in\text{Ker}({^t}MM)\Rightarrow{^t}MMX = 0\Rightarrow{^t}X{^t}MMX = 0\Rightarrow{^t}(MX)MX = 0\Rightarrow\|MX\|_2^2 = 0\Rightarrow MX = 0\Rightarrow X\in\text{Ker}M$.
+\end{center}
+
+Finalement, $\text{Ker}({^t}MM) =\text{Ker}M$ et donc, d'après le théorème du rang, $\text{rg}(x_1,...,x_n) =\text{rg}M =\text{rg}({^t}MM) =\text{rg}(G(x_1,x_2,...,x_n))$.
+
+\begin{center}
+\shadowbox{
+$\text{rg}(G(x_1,x_2,...,x_n))=\text{rg}(x_1,\ldots,x_n)$.
+}
+\end{center}
+
+\item  D'après 1), 
+
+\begin{align*}\ensuremath
+(x_1,...,x_n)\;\text{liée}&\Leftrightarrow \text{rg}(x_1,x_2,...,x_n)<\Leftrightarrow \text{rg}G(x_1,x_2,...,x_n)<n\Leftrightarrow G(x_1,x_2,...,x_n)\notin\mathcal{GL}_n(\Rr)\\
+ &\Leftrightarrow\gamma(x_1,x_2,...,x_n) = 0.
+\end{align*}
+
+De plus, quand la famille $(x_1,x_2,...,x_n)$ libre, avec les notations de la question 1), on a $m = n$ et la matrice $M$ est une matrice carrée. On peut donc écrire
+
+\begin{center} 
+$\gamma(x_1,x_2,...,x_n) =\text{det}({^t}MM)=\text{det}({^t}M)\times\text{det}(M)= (\text{det}M)^2 > 0$.
+\end{center}
+
+\begin{center}
+\shadowbox{
+\begin{tabular}{c}
+$(x_1,...,x_n)\;\text{liée}\Leftrightarrow\gamma(x_1,\ldots,x_n)=0$\\
+$(x_1,...,x_n)\;\text{libre}\Leftrightarrow\gamma(x_1,\ldots,x_n)>0$.
+\end{tabular}
+}
+\end{center}
+
+\item  \textbf{1ère solution.} Soit $x$ un vecteur de $E$ et $p_F(x)$ son projeté orthogonal sur $F$. Dans la première colonne de $\gamma(x,x_1,\ldots,x_n)$, le théorème de \textsc{Pythagore} permet d'écrire (puisque $x-p_F(x)\in F^\bot$)
+
+\begin{align*}\ensuremath
+\left(
+\begin{array}{c}
+(x|x)\\
+(x|x_1)\\
+\vdots\\
+(x|x_n)
+\end{array}
+\right)&=\left(
+\begin{array}{c}
+\|x-p_F(x)+p_F(x)\|^2\\
+(x-p_F(x)+p_F(x)|x_1)\\
+\vdots\\
+(x-p_F(x)+p_F(x)|x_n)
+\end{array}
+\right)=\left(
+\begin{array}{c}
+\|x-p_F(x)\|^2+\|p_F(x)\|^2\\
+(p_F(x)|x_1)\\
+\vdots\\
+(p_F(x)|x_n)
+\end{array}
+\right)\\
+ &=\left(
+\begin{array}{c}
+\|x-p_F(x)\|^2\\
+0\\
+\vdots\\
+0
+\end{array}
+\right)+\left(
+\begin{array}{c}
+(p_F(x)|p_F(x))\\
+(p_F(x)|x_1)\\
+\vdots\\
+(p_F(x)|x_n)
+\end{array}
+\right)
+\end{align*}
+
+Après avoir remplacé aussi en première ligne les $(x|x_i)$ par $(p_F(x)|x_i)$, on obtient par linéarité par rapport à la première colonne
+
+\begin{center}
+$\gamma(x,x_1,x_2,...,x_n) =\gamma(x-p_F(x),x_1,x_2,...,x_n) +\gamma(p_F(x),x_1,x_2,...,x_n)$
+\end{center}
+
+Maintenant, $p_F(x)$ est dans $F$ et donc la famille $(p_F(x),x_1,x_2,...,x_n)$ est liée puis d'après la question 2) $\gamma(p_F(x),x_1,x_2,...,x_n) = 0$. Il reste $\gamma(x,x_1,x_2,...,x_n) =\gamma(x-p_F(x),x_1,x_2,...,x_n)$ et en développant suivant la première colonne, on obtient
+
+\begin{center}
+$\forall x\in E,\;\gamma(x,x_1,\ldots,x_n)=\gamma(x- p_F(x),x_1,x_2,...,x_n) =\|x- p_F(x)\|^2\gamma(x_1,x_2,...,x_n)$.
+\end{center}
+
+Finalement 
+
+\begin{center}
+\shadowbox{
+$\|x- p_F(x)\|=\sqrt{\frac{\gamma(x,x_1,x_2,...,x_n)}{\gamma(x_1,x_2,...,x_n)}}$.
+}
+\end{center}
+
+\textbf{2ème solution.} Posons $p_F(x) =\sum_{i=1}^{n}\lambda_ix_i$ puis  $d =\|x-p_F(x)\|$ de sorte que
+
+\begin{center}
+$d^2 =(x-p_F(x))|(x-p_F(x)) =(x-p_F(x))|x =\|x\|^2 -(x|p_F(x))$.
+\end{center}
+
+D'autre part, pour chaque $i\in\llbracket1,n\rrbracket$, $x|x_i=(x-p_F(x)|x_I)+(p_F(x)|x_i)=(p_F(x)|x_i)$. Par suite, les $n+1$ réels $d^2$, $\lambda_1$,..., $\lambda_n$ sont solutions du système d'équations linéaires
+ 
+\begin{center}
+$\left\{
+\begin{array}{ll}
+d^2+&\lambda_1(x|x_1)+\ldots+\lambda_n(x|x_n)=\|x\|^2\\
+ &\lambda_1(x_1|x_1)+\ldots+\lambda_n(x_1|x_n)=(x|x_1)\\
+ &\rule{1,5cm}{0mm}\vdots\\
+ &\lambda_1(x_n|x_1)+\ldots+\lambda_n(x_n|x_n)=(x|x_n)
+\end{array}
+\right.$
+\end{center}
+
+Le déterminant de ce système vaut $\gamma(x_1,x_2,...,x_n)>0$ et le système est de \textsc{Cramer}. Le déterminant associé à $d^2$ est $\gamma(x,x_1,x_2,...,x_n)$ et les formules de \textsc{Cramer} refournissent
+
+\begin{center}
+$d^2=\frac{\gamma(x,x_1,\ldots,x_n)}{\gamma(x_1,\ldots,x_n)}$.
+\end{center}
+\end{enumerate}
+\fincorrection
+\finexercice

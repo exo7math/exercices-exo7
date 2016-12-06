@@ -1,0 +1,37 @@
+\exercice{5062, quercia, 2010/03/17}
+
+\enonce[Ensi Chimie P' 93]
+Soit $(\Gamma)$ : $\begin{cases} x(t) = a\cos(t)/\ch(mt)\cr
+                          y(t) = a\sin(t)/\ch(mt)\cr
+                          z(t) = a\tanh(mt).\cr\end{cases}$
+\begin{enumerate}
+  \item Montrer que $(\Gamma)$ est tracée sur une surface $(\Sigma)$ simple. Montrer que $(\Sigma)$
+    est de révolution autour de $Oz$ et donner son équation.
+  \item Montrer que $(\Gamma)$ coupe les méridiennes de $(\Sigma)$ suivant un angle constant (loxodromie).
+  \item Réciproquement, déterminer toutes les loxodromies de $(\Sigma)$.
+  \item Dessiner la projection de $(\Gamma)$ sur $xOy$.
+\end{enumerate}
+\finenonce
+
+\noindication 
+
+\correction
+
+\begin{enumerate}
+
+  \item $x^2+y^2+z^2=a^2$.
+  \item On paramètre $(\Sigma)$ par :
+             $\begin{cases} x = a\cos u/\ch v\cr y = a\sin u/\sh v\cr z = a\tanh v.\cr\end{cases}$\par
+        La tangente à la méridienne passant par $M(u,v)$ est dirigée par $\frac{\partial {\vec M}}{\partial v}$ et la tangente à $(\Gamma)$ passant par $M(t,mt)$ est dirigée par $\frac{\partial  {\vec M}}{\partial u} + m\frac{\partial {\vec M}}{\partial v}$. Après calculs, le cosinus de ces deux vecteurs vaut $\frac m{\sqrt{m^2+1}}$ donc est constant.
+  \item Une courbe tracée sur $(\Sigma)$ est définie par la donnée de $u$ et $v$ en fonction d'un paramètre $t$. Le cosinus de l'angle entre cette courbe et une méridienne de $(\Sigma)$ vaut $\frac{u'}{\sqrt{u'^2+v'^2}}$, donc est constant si et seulement si le rapport \frac{v'}{u'}$ est constant. En notant $m$ cette constante et en prenant $u(t)=t$, on trouve les courbes déduites de $(\Gamma)$ par rotation autour de $Oz$. 
+ \item 
+$$\centerline{\includegraphics[height=4cm]{../images/img005062-1}}$$
+%     \mapleplot{plot([1/cosh(t/3),t,t=-20..20],view=[-1..1,-1..1],coords=polar,axes=frame);}
+%     \hbox{\indent équation polaire $\rho = \frac{a}{\ch m\theta}$.}
+\end{enumerate}
+\fincorrection
+
+
+
+\finexercice
+

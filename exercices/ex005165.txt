@@ -1,0 +1,66 @@
+\exercice{5165, rouget, 2010/06/30}
+\enonce[**T]
+On munit $\Rr^n$ des lois produit usuelles. Parmi les sous-ensembles suivants $F$ de $\Rr^n$, lesquels
+sont des sous-espaces vectoriels~?
+
+$$\begin{array}{lll}
+1)\;F=\{(x_1,...,x_n)\in\Rr^n/\;x_1=0\}&2)\;F=\{(x_1,...,x_n)\in\Rr^n/\;x_1=1\}\\
+3)\;F=\{(x_1,...,x_n)\in\Rr^n/\;x_1=x_2\}&4)\;F=\{(x_1,...,x_n)\in\Rr^n/\;x_1+...+x_n=0\}\\
+5)\;F=\{(x_1,...,x_n)\in\Rr^n/\;x_1.x_2=0\}
+\end{array}$$
+\finenonce
+
+\noindication
+
+\correction
+Dans les cas où $F$ est un sous-espace, on a à chaque fois trois démarches possibles pour le
+vérifier~:
+
+\begin{itemize}
+\item[-] Utiliser la caractérisation d'un sous-espace vectoriel.
+\item[-] Obtenir $F$ comme noyau d'une forme linéaire ou plus généralement, comme noyau d'une application linéaire.
+\item[-] Obtenir $F$ comme sous-espace engendré par une famille de vecteurs.
+\end{itemize}
+
+Je vous détaille une seule fois les trois démarches.
+
+\begin{enumerate}
+\item 
+\begin{itemize}
+\item[\textbf{1ère démarche.}] $F$ contient le vecteur nul $(0,...,0)$ et donc $F\neq\varnothing$.
+Soient alors $((x_1,...,x_n),(x_1' ,...,x_n'))\in F^2$ et $(\lambda,\mu)\in\Rr^2$. On a
+
+$$\lambda(x_1,...,x_n)+\mu(x_1',...,x_n')=(\lambda x_1+\mu x_1',...,\lambda x_n+\mu x_n')$$
+
+avec $\lambda x_1+\mu x_1'=0$. Donc, $\lambda(x_1,...,x_n)+\mu(x_1',...,x_n')\in F$. $F$ est un sous-espace
+vectoriel de $\Rr^n$.
+\item[\textbf{2ème démarche.}] L'application $(x_1,...,x_n)\mapsto x_1$ est une forme linéaire sur $\Rr^n$ et $F$ en
+est lenoyau. $F$ est donc un sous-espace vectoriel de $\Rr^n$.
+\item[\textbf{3ème démarche.}]
+
+\begin{align*}
+F&=\{(0,x_2,...,x_n),\;(x_2,...,x_n)\in\Rr^{n-1}\}
+=\{x_2(0,1,0,...,0)+...+x_n(0,...,0,1),\;(x_2,...,x_n)\in\Rr^{n-1}\}\\
+ &=\mbox{Vect}((0,1,0,...,0),...,(0,...,0,1)).
+\end{align*}
+
+$F$ est donc un sous-espace vectoriel de $\Rr^n$.
+
+\end{itemize}
+
+\item  $F$ ne contient pas le vecteur nul et n'est donc pas un sous-espace vectoriel de $\Rr^n$.
+
+\item  (Ici, $n\geq2$). L'application $(x_1,...,x_n)\mapsto x_1-x_2$ est une forme linéaire sur $\Rr^n$ et $F$ en
+est le noyau. $F$ est donc un sous-espace vectoriel de $\Rr^n$.
+
+\item  L'application $(x_1,...,x_n)\mapsto x_1+...+x_n$ est une forme linéaire sur $\Rr^n$ et $F$ en est le
+noyau. $F$ est donc un sous-espace vectoriel de $\Rr^n$.
+
+\item  (Ici, $n\geq2$). Les vecteurs $e_1=(1,0,...,0)$ et $e_2=(0,1,0...,0)$ sont dans $F$ mais $e_1+e_2=
+(1,1,0...0)$ n'y est pas. $F$ n'est donc pas un sous espace vectoriel de $E$.
+
+\textbf{Remarque.} $F$ est la réunion des sous-espaces $\{(x_1,...,x_n)\in\Rr^n/\;x_1=0\}$ et
+$\{(x_1,...,x_n)\in\Rr^n/\;x_2=0\}$.
+\end{enumerate}
+\fincorrection
+\finexercice

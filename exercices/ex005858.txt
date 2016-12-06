@@ -1,0 +1,77 @@
+\exercice{5858, rouget, 2010/10/16}
+\enonce[***]
+\label{ex:rou5}
+Déterminer $s=\text{Sup}\left\{ \frac{\|AB\|}{\|A\|\|B\|},\;(A,B)\in(\mathcal{M}_n(\Cc)\setminus\{0\})^2\right\}$ quand $\|\;\|$ est 
+\begin{enumerate}
+ \item  $\|\;\|_1$, 
+ \item  $\|\;\|_2$, 
+ \item  $\|\;\|_\infty$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\textbullet~$\forall A=(a_{i,j})_{1\leqslant i,j\leqslant n}\in\mathcal{M}_n(\Rr)$, $\|A\|_\infty=\text{Max}\{|a_{i,j}|,\;1\leqslant i,j\leqslant n\}$.
+
+Soient $A=(a_{i,j})_{1\leqslant i,j\leqslant n}$ et $B=(b_{i,j})_{1\leqslant i,j\leqslant n}$. Posons $AB=(c_{i,j})_{1\leqslant i,j\leqslant n}$ où $\forall(i,j)\in\llbracket1,n\rrbracket^2$, $c_{i,j}=\sum_{k=1}^{n}a_{i,k}b_{k,j}$.
+
+Pour $(i,j)\in\llbracket1,n\rrbracket^2$,
+
+\begin{center}
+$|c_{i,j}|\leqslant\sum_{k=1}^{n}|a_{i,k}||b_{k,j}|\leqslant\sum_{k=1}^{n}\|A\|_\infty\|B\|_\infty=n\|A\|_\infty\|B\|_\infty$,
+\end{center}
+
+et donc, $\|AB\|_\infty\leqslant n\|A\|_\infty\|B\|_\infty$. Ainsi, $\forall(A,B)\in(\mathcal{M}_n(\Cc)\setminus\{0\})^2$, $ \frac{\|AB\|_\infty}{\|A\|_\infty\|B\|_\infty}\leqslant n$.
+
+De plus, pour $A_0=B_0=(1)_{1\leqslant i,j\leqslant n}\neq0$, $\|A_0\|_\infty=\|B_0\|_\infty=1$ puis $\|A_0B_0\|_\infty=\|nA_0\|_\infty=n$ et donc $ \frac{\|A_0B_0\|_\infty}{\|A_0\|_\infty\|B_0\|_\infty}=n$. Ceci montre que
+
+\begin{center}
+\shadowbox{
+$\text{Sup}\left\{ \frac{\|AB\|_\infty}{\|A\|_\infty\|B\|_\infty},\;(A,B)\in(\mathcal{M}_n(\Cc)\setminus\{0\})^2\right\}=n$.
+}
+\end{center}
+
+En particulier, $\|\;\|_\infty$ n'est pas une norme sous-multiplicative.
+
+\textbullet~$\forall A=(a_{i,j})_{1\leqslant i,j\leqslant n}\in\mathcal{M}_n(\Rr)$, $\|A\|_1=\sum_{1\leqslant i,j\leqslant n}^{}|a_{i,j}|$. Avec les notations précédentes,
+
+\begin{align*}\ensuremath
+\|AB\|_1&=\sum_{1\leqslant i,j\leqslant n}^{}|c_{i,j}|=\sum_{1\leqslant i,j\leqslant n}^{}\left|\sum_{k=1}^{n}a_{i,k}b_{k,j}\right|\\
+ &\leqslant\sum_{1\leqslant i,j\leqslant n}^{}\left(\sum_{k=1}^{n}|a_{i,k}||b_{k,j}|\right)=\sum_{1\leqslant i,j,k\leqslant n}^{}|a_{i,k}||b_{k,j}|\\
+ &\sum_{1\leqslant i,j,k,l\leqslant n}^{}|a_{i,j}||b_{k,l}|=\|A\|_1\|B\|_1.
+\end{align*}
+
+Donc $\forall(A,B)\in\left(\mathcal{M}_n(\Rr)\setminus\{0\}\right)^2$, $ \frac{\|AB\|_1}{\|A\|_1\|B\|_1}\leqslant 1$.
+
+De plus, pour $A_0=B_0=E_{1,1}$, on a $A_0B_=E_{1,1}$ et donc $ \frac{\|A_0B_0\|_1}{\|A_0\|_1\|B_0\|_1}=1$. Ceci montre que
+
+\begin{center}
+\shadowbox{
+$\text{Sup}\left\{ \frac{\|AB\|_1}{\|A\|_1\|B\|_1},\;(A,B)\in(\mathcal{M}_n(\Cc)\setminus\{0\})^2\right\}=1$.
+}
+\end{center}
+
+En particulier, $\|\;\|_1$ est une norme sous-multiplicative.
+
+\textbullet~$\forall A=(a_{i,j})_{1\leqslant i,j\leqslant n}\in\mathcal{M}_n(\Rr)$, $\|A\|_2=\sqrt{\sum_{1\leqslant i,j\leqslant n}^{}a_{i,j}^2}$. Avec les notations précédentes,
+
+\begin{align*}\ensuremath
+\|AB\|_2^2&=\sum_{1\leqslant i,j\leqslant n}^{}c_{i,j}^2=\sum_{1\leqslant i,j\leqslant n}^{}\left(\sum_{k=1}^{n}a_{i,k}b_{k,j}\right)^2\\
+ &\leqslant\sum_{1\leqslant i,j\leqslant n}^{}\left(\sum_{k=1}^{n}a_{i,k}^2\right)\left(\sum_{k=1}^{n}b_{k,j}^2\right)\;(\text{inégalité de \textsc{Cauchy}-\textsc{Schwarz}})\\
+ &=\sum_{1\leqslant i,j\leqslant n}^{}\left(\sum_{k=1}^{n}a_{i,k}^2\right)\left(\sum_{l=1}^{n}b_{l,j}^2\right)=\sum_{1\leqslant i,j,k,l\leqslant n}^{}a_{i,k}^2b_{l,j}^2=\left(\sum_{1\leqslant i,k\leqslant n}^{}a_{i,k}^2\right)\left(\sum_{1\leqslant j,l\leqslant n}^{}b_{l,j}^2\right)=\|A\|_2\|B\|_2
+\end{align*}
+
+Donc $\forall(A,B)\in\left(\mathcal{M}_n(\Rr)\setminus\{0\}\right)^2$, $ \frac{\|AB\|_2}{\|A\|_2\|B\|_2}\leqslant 1$.
+
+De plus, pour $A_0=B_0=E_{1,1}$, on a $A_0B_=E_{1,1}$ et donc $ \frac{\|A_0B_0\|_2}{\|A_0\|_2\|B_0\|_2}=1$. Ceci montre que
+
+\begin{center}
+\shadowbox{
+$\text{Sup}\left\{ \frac{\|AB\|_2}{\|A\|_2\|B\|_2},\;(A,B)\in(\mathcal{M}_n(\Cc)\setminus\{0\})^2\right\}=1$
+}
+\end{center}
+
+En particulier, $\|\;\|_2$ est une norme sous-multiplicative.
+\fincorrection
+\finexercice

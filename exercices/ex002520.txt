@@ -1,0 +1,51 @@
+\exercice{2520, queffelec, 2009/04/01}
+\enonce[partiel du 5 d\'ecembre 1999] 
+Soit $f:{\Rr^2}\to{\Rr^2}$ d\'efinie par
+$f(x,y)=(x^2-y,x^2+y^2)$ et $g=f\circ f$.
+\begin{enumerate}
+\item Montrer que $f$ et $g$ sont de classe $C^1$.
+
+\item Calculer en tout point $(x,y)\in{\Rr^2}$ la matrice
+jacobienne de $f$ not\'ee $Df{(x,y)}$; calculer la matrice
+jacobienne de $g$ au point $(0,0)$ not\'ee $Dg{(0,0)}$.
+
+\item Montrer qu'il existe $\rho>0$ tel que pour tout $(x,y)\in
+\overline{B_\rho((0,0))}$ (la boule ferm\'ee de centre $(0,0)$ et
+de rayon $\rho$) on a $||Dg{(x,y)}||\leq {\frac 1 2}$.
+
+\item Montrer que la fonction $g$ admet un unique point fixe dans
+$\overline{B_\rho((0,0))}$.
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item $f$ est de classe $C^\infty$ car ses coordonn\'ees le sont
+(polynômes). $g$ l'est car c'est la compos\'ee de deux fonctions
+$C^\infty$. 
+\item La matrice jacobienne de $f$ est:
+$$Df(x,y)=\left(\begin{array}{cc}
+2x & -1 \\ 2x & 2y
+\end{array}\right)
+$$ D'ap\`es la formule de diff\'erentielle d'une compos\'ee, on a
+$$Dg(x,y)=Df(f(x,y))\circ Df(x,y).$$
+Or $f(0,0)=0$ et $$Df(0,0)=\left(\begin{array}{cc}0& -1 \\0& 0
+\end{array}\right)$$
+et donc $$Dg(0,0)= \left(\begin{array}{cc}0& -1 \\0& 0
+\end{array}.\right)\left(\begin{array}{cc}0& -1 \\0& 0
+\end{array}\right)=0.$$
+\item Par continuit\'e de $Dg(x,y)$ \`a l'origine et en prenant
+$\epsilon=1/2$ on a:
+$$\exists \rho> 0, ||(x,y)-(0,0)||\leq \rho \Rightarrow
+||Dg(x,y)-Dg(0,0)|| \leq 1/2$$ d'o\`u le r\'esultat demand\'e.
+\item D'apr\`es les accroissements finis, pour tous $X,Y \in
+\mathbb{R}^2$, on a
+$$||g(X)-g(Y)|| \leq \sup_{Z \in \overline B_\rho((0,0))}||Dg(Z)||.||X-Y|| \leq 1/2||X-Y||$$
+et donc $g$ est contractante. Le Boule $\overline B_\rho((0,0))$
+la boule $\overline B_\rho((0,0))$ \'etant compacte et compl\`ete,
+le th\'eor\`eme du point fixe permet de conclure.
+\end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,78 @@
+%%%%%%%%%%%%%%%%%% PREAMBULE %%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt,a4paper]{article}
+
+\usepackage{amsfonts,amsmath,amssymb,amsthm}
+\usepackage[francais]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+%----- Ensemles : entiers, reels, complexes -----
+\newcommand{\Nn}{\mathbb{N}} \newcommand{\N}{\mathbb{N}}
+\newcommand{\Zz}{\mathbb{Z}} \newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Qq}{\mathbb{Q}} \newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Rr}{\mathbb{R}} \newcommand{\R}{\mathbb{R}}
+\newcommand{\Cc}{\mathbb{C}} \newcommand{\C}{\mathbb{C}}
+
+%----- Modifications de symboles -----
+\renewcommand {\epsilon}{\varepsilon}
+\renewcommand {\Re}{\mathop{\mathrm{Re}}\nolimits}
+\renewcommand {\Im}{\mathop{\mathrm{Im}}\nolimits}
+
+%----- Fonctions usuelles -----
+\newcommand{\ch}{\mathop{\mathrm{ch}}\nolimits}
+\newcommand{\sh}{\mathop{\mathrm{sh}}\nolimits}
+\renewcommand{\tanh}{\mathop{\mathrm{th}}\nolimits}
+\newcommand{\Arcsin}{\mathop{\mathrm{Arcsin}}\nolimits}
+\newcommand{\Arccos}{\mathop{\mathrm{Arccos}}\nolimits}
+\newcommand{\Arctan}{\mathop{\mathrm{Arctan}}\nolimits}
+\newcommand{\Argsh}{\mathop{\mathrm{Argsh}}\nolimits}
+\newcommand{\Argch}{\mathop{\mathrm{Argch}}\nolimits}
+\newcommand{\Argth}{\mathop{\mathrm{Argth}}\nolimits}
+\newcommand{\pgcd}{\mathop{\mathrm{pgcd}}\nolimits} 
+
+%----- Commandes special dessin a ajouter localement ------
+\usepackage{geometry}
+\usepackage{pstricks}
+\usepackage{pst-plot}
+\usepackage{pst-node}
+\usepackage{graphics,epsfig}
+
+\newcmykcolor{DarkGreen}{0.4 0 0.76 0.3}
+\newcmykcolor{Goldenrod}{0 0.1 0.84 0}
+\newcmykcolor{Fuchsia}{0.47 0.91 0 0.08}
+
+\pagestyle{empty}
+
+% Que faire avec ce fichier monimage.tex ?
+%   1/ latex monimage.tex
+%   2/ dvips monimage.dvi
+%   3/ ps2eps monimage.ps
+%   4/ ps2pdf -dEPSCrop monimage.eps
+%   5/ Dans votre fichier d'exos \includegraphics{monimage}
+
+\begin{document}
+
+\begin{center}
+\begin{pspicture}(-9.5,-3.6)(6,3.6)
+\psset{xunit=0.8cm,yunit=0.8cm}
+\psaxes{->}(0,0)(-11.5,-4.5)(7.5,4.5)
+\parametricplot[linecolor=blue]{-180}{180}{6 2 t cos add div t cos mul 6 2 t cos add div t sin mul}
+\psdots[linecolor=blue](-6,0)(-2,0)(2,0)
+\psdots[linecolor=red](0,0)(-4,0)
+\uput[u](-2,0.1){\textcolor{blue}{$\Omega$}}
+\uput[ul](-6,0.1){\textcolor{blue}{$A'$}}
+\uput[ur](2,0.1){\textcolor{blue}{$A$}}
+\uput[u](-2,3.464){\textcolor{blue}{$B$}}
+\uput[d](-2,3.464){\textcolor{blue}{$B'$}}
+\uput[u](-4,0){\textcolor{red}{$F'$}}
+\uput[ur](0,0){\textcolor{red}{$F$}}
+\psline[linecolor=red,linestyle=dashed](6,-4.5)(6,4.5)
+\psline[linecolor=red,linestyle=dashed](-10,-4.5)(-10,4.5)
+\uput[r](6,4.5){\textcolor{red}{$(D)$}}
+\uput[l](-10,4.5){\textcolor{red}{$(D')$}}
+\end{pspicture}
+\end{center}
+
+
+\end{document}

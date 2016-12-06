@@ -1,0 +1,19 @@
+\exercice{5814, rouget, 2010/10/16}
+\enonce[*** I]
+Soit $A$ une matrice carrée réelle symétrique définie positive. Montrer que le déterminant de $A$ est inférieur ou égal au produit de ses coefficients diagonaux (utiliser l'exercice \ref{ex:rou8}).
+\finenonce
+
+\noindication
+
+\correction
+ Puisque la matrice $A$ est définie positive, il existe d'après le l'exercice \ref{ex:rou8} une matrice triangulaire supèrieure inversible $T$ telle que $A={^t}TT$. Posons alors $T= (t_{i,j})_{1\leqslant i,j\leqslant n}$.
+
+\begin{center}
+$\text{det}(A)= (\text{det}(T))^2=t_{1,1}^2 ...t_{n,n}^2$
+\end{center}
+
+Mais pour $i\in\llbracket1,n\rrbracket$, $a_{i,i}=\sum_{k=1}^{n}t_{k,i}^2\geqslant t_{i,i}^2$ et donc $\text{det}(A)\leqslant\prod_{i=1}^{n}a_{i,i}$.
+
+\textbf{Remarque.} On a montré au passage que les coefficients diagonaux $a_{i,i}$ de $A$ étaient des réels strictement positifs.
+\fincorrection
+\finexercice

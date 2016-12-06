@@ -1,0 +1,46 @@
+\exercice{5471, rouget, 2010/07/10}
+\enonce
+Condition nécessaire et suffisante sur $a$, $b$, $c$ et $d$ pour que les primitives de $\frac{(x-a)(x-b)}{x-c)^2(x-d)^2}$ soient rationnelles ($a$, $b$, $c$ et $d$ réels donnés).
+\finenonce
+
+\noindication
+
+\correction
+Si $c\neq d$, les primitives considérées sont rationnelles si et seulement si il existe $A$ et $B$ tels que
+
+$$\frac{(x-a)(x-b)}{(x-c)^2(x-d)^2}=\frac{A}{(x-c)^2}+\frac{B}{(x-d)^2}\;(*)$$
+
+\begin{align*}\ensuremath
+(*)&\Leftrightarrow\exists(A,B)\in\Rr^2/\;\left\{
+\begin{array}{l}
+A+B=1\\
+-2(Ad+Bc)=-(a+b)\\
+Ad^2+Bc^2=ab
+\end{array}
+\right.\Leftrightarrow\exists(A,B)\in\Rr^2/\;\left\{
+\begin{array}{l}
+B=1-A\\
+A(d-c)+c=\frac{1}{2}(a+b)\\
+Ad^2+Bc^2=ab
+\end{array}
+\right.
+\\
+ &\Leftrightarrow\exists(A,B)\in\Rr^2/\;\left\{
+\begin{array}{l}
+A=\frac{a+b-2c}{2(d-c)}\\
+B=\frac{2d-a-b}{2(d-c)}\\
+Ad^2+Bc^2=ab
+\end{array}
+\right.
+\Leftrightarrow\frac{a+b-2c}{2(d-c)}d^2+\frac{2d-a-b}{2(d-c)}c^2=ab\\
+ &\Leftrightarrow d^2(a+b-2c)+c^2(2d-a-b)=2ab(d-c)\Leftrightarrow(a+b)(d^2-c^2)-2cd(d-c)=2ab(d-c)\\
+ &\Leftrightarrow2cd+(a+b)(c+d)=2ab\Leftrightarrow(a+b)(c+d)=2(ab-cd).
+\end{align*}
+
+Si $c=d$, il existe trois nombres $A$, $B$ et $C$ tels que $(x-a)(x-b)=A(x-c)^2+B(x-c)+C$ et donc tels que
+
+$$\frac{(x-a)(x-b)}{(x-c)^4}=\frac{A}{(x-c)^2}+\frac{B}{(x-c)^3}+\frac{C}{(x-c)^4}.$$
+
+Dans ce cas, les primitives sont rationnelles. Finalement, les primitives considérées sont rationnelles si et seulement si $c=d$ ou ($c\neq d$ et $(a+b)(c+d)=2(ab-cd)$).
+\fincorrection
+\finexercice

@@ -1,0 +1,38 @@
+\exercice{4546, quercia, 2010/03/14}
+\enonce[Fonctions $\zeta$ et $\eta$]
+
+Pour $x>1$ on pose $\zeta(x) = \sum_{n=1}^\infty \frac1{\strut n^x}$
+et pour $x>0$~: $\eta(x) = \sum_{n=1}^\infty \frac{(-1)^{n-1}}{\strut n^x}$.
+
+\begin{enumerate}
+  \item \'Etablir pour $x>1$~: $\eta(x) = (1-2^{1-x})\zeta(x)$.
+    En déduire $\zeta(x) \sim \frac 1{x-1}$ pour $x\to1^+$.
+
+  \item Montrer que $\zeta(x) = \frac 1{x-1} + \gamma +  o(1)$.
+    On remarquera que $\frac 1{x-1} =  \int_{t=1}^{+\infty} \frac{d t}{\strut t^x}$.
+    
+
+  \item En déduire la valeur de $\sum_{n=1}^\infty \frac{(-1)^n\ln n}n$.
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item 
+  \item $\zeta(x) - \frac 1{x-1} =
+    \sum_{n=1}^\infty \left(\frac 1{\strut n^x} -  \int_{t=n}^{n+1} \frac{d t}{\strut t^x} \right)$.
+
+    A $n$ fixé, $\frac 1{n^x} -  \int_{t=n}^{n+1} \frac{d t}{t^x}\to
+                 \frac 1n -  \int_{t=n}^{n+1} \frac{d t}t$
+   lorsque $x\to1^+$ et la convergence est monotone donc lorsque $x\to1^+$
+
+    $\zeta(x) - \frac 1{x-1} \to
+    \sum_{n=1}^\infty \left(\frac 1n -  \int_{t=n}^{n+1} \frac{d t}t\right) = \gamma$.
+  \item $\sum_{n=1}^\infty \frac{(-1)^n\ln n}n = \eta'(1) = \gamma\ln 2 - \frac12\ln(2)^2$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

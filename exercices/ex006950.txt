@@ -1,0 +1,73 @@
+\exercice{6950, ruette, 2013/01/24}
+\enonce[Lemme de Borel-Cantelli **]
+Soit $(X_n)_{n\geq 1}$ une suite de variables aléatoires indépendantes de même
+loi exponentielle $\mathcal{E}(1)$.
+%de densité $\I1_{\Rr_+}(x)e^{-x}$. 
+\begin{enumerate}
+\item
+En utilisant le lemme de Borel-Cantelli, montrer que
+$$
+P(X_n>\alpha \ln n\mbox{ pour une infinité de }n)=\left\{
+\begin{array}[c]{ll}0 \mbox{ si } \alpha>1\\ 1\mbox{ si }\alpha\leq 1
+\end{array}\right.
+$$
+\item
+En déduire que $\displaystyle\limsup_{n\to+\infty} \frac{X_n}{\ln n}=1$ 
+presque sûrement.
+\end{enumerate}
+\finenonce
+\noindication
+
+\correction
+\begin{enumerate}
+\item
+On pose $A_n(\alpha)=\{X_n>\alpha \ln n\}$
+et $A(\alpha)=\limsup A_n(\alpha)$.
+Les $(A_n(\alpha))_{n\geq 1}$ sont des événements indépendants. 
+Si $\alpha\geq 0$ alors $\alpha\ln n\geq 0$ et 
+$P(A_n(\alpha))=\displaystyle\int_{\alpha\ln n}^{+\infty}e^{-x}\,dx=e^{-\alpha\ln n}
+=\frac{1}{n^{\alpha}}$, donc $\displaystyle\sum P(A_n(\alpha))=
+\sum\frac{1}{n^{\alpha}}$. C'est une série de Riemann. 
+Si $\alpha>1$ la série converge et le lemme de Borel-Cantelli implique que
+$P(A(\alpha))=0$.
+Si $0\leq \alpha\leq 1$ la série diverge et le lemme de Borel-Cantelli
+implique que $P(A(\alpha))=1$. Si $\alpha<0$ alors $P(A_n(\alpha))=1$ pour tout $n$
+parce que $X_n$ est positive presque sûrement, donc on a $P(A(\alpha))=1$. Ce qui
+répond à la question 1.
+\item
+Pour tout $\epsilon>0$, on
+a $P(A(1-\epsilon))=1$. Or
+$A(1-\epsilon)=\left\{\frac{X_n}{\ln n}>1-\epsilon \mbox{ pour une 
+infinité de }n\right\}$, donc si $\omega$ appartient à $A(1-\epsilon)$ alors
+$\displaystyle\limsup_{n\to+\infty}\frac{X_n(\omega)}{n}\geq 1-\epsilon$. Soit $N_k$
+le complémentaire de
+$A(1-1/k)$ et $N=\bigcup_{k\geq 1} N_k$.
+On a $P(N_k)=0$ donc $P(N)\leq \sum_{k\geq 1}P(N_k)=0$
+(somme dénombrable d'ensembles de mesures nulles). Si
+$\omega\not \in N$ alors $\forall k\geq 1$, $\omega\not \in N_k$
+donc $\displaystyle\limsup_{n\to+\infty}\frac{X_n(\omega)}{n}\geq 1-1/k$, et
+comme $1/k$ tend vers $0$ alors $\displaystyle\limsup_{n\to+\infty}\frac{X_n(\omega)}{n}\geq 1$ $\forall \omega\not\in N$.
+
+\medskip
+$\forall\epsilon>0$, on a $P(A(1+\epsilon))=0$ donc $P((A(1+\epsilon))^c)=1$.
+Or 
+$$
+(A(1+\epsilon))^c=\liminf (A_n(1+\epsilon))^c=\left\{\frac{X_n}{n}\leq \alpha 
+\mbox{ à partir d'un certain rang}\right\},$$ 
+donc si $\omega\in (A(1+\epsilon))^c$ 
+alors $\displaystyle \limsup_{n\to +\infty}\frac{X_n}{\ln n}\leq 1+\epsilon$.
+Soit $N'=\displaystyle\bigcup_{k\geq 1} A(1+1/k)$.
+On a $P(A(1+1/k))=0$ pour tout $k\geq 1$ donc $P(N')=0$. Si
+$\omega\not \in N'$ alors pour tout $k\geq 1$, $\omega\in (A(1+1/k))^c$
+donc 
+$$\limsup_{n\to+\infty}\frac{X_n(\omega)}{n}\leq 1+1/k,$$ 
+et comme $1/k$ tend vers $0$ alors $\displaystyle\limsup_{n\to+\infty}\frac{X_n(\omega)}{n}\leq 1$.
+
+
+Conclusion : $\forall \omega\not\in N\cup N'$ alors $\displaystyle \limsup_{n\to+\infty}
+\frac{X_n(\omega)}{\ln n}=1$. Autrement dit
+$\displaystyle\limsup_{n\to+\infty}\frac{X_n}{\ln n}=1$ presque sûrement, puisque
+$P(N\cup N')\leq P(N)+P(N')=0$.
+\end{enumerate}
+\fincorrection
+\finexercice

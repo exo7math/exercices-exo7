@@ -1,0 +1,32 @@
+\exercice{4084, quercia, 2010/03/11}
+\enonce[Polytechnique PC 2002]
+Soit l'équation différentielle~:
+$(E)\Leftrightarrow u''(x) + (k-2d\cos(x))u(x)= 0$.
+
+\begin{enumerate}
+  \item Existence et domaine de définition des solutions
+    maximales $A$ et $B$ telles que
+    $A(0)=1$, $A'(0)=0$ et $B(0)=0$, $B'(0)=1$.
+
+
+  \item Montrer que $A$ est paire et $B$ est impaire.
+
+
+  \item Montrer que $A(k,d,x) = A(k,0,x) +
+    2d \int_{t=0}^xB(d,0,x-t)A(k,d,x)\cos(t)\,d t$.
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item thm de Cauchy-Lipschitz linéaire.
+  \item $x \mapsto A(-x)$ et $x \mapsto -B(-x)$ sont solutions de $(E)$ et
+    vérifient les bonnes conditions initiales.
+  \item Résoudre $u''(x) + ku(x) = 2d\cos(x)u(x)$ par la formule de Duhamel.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

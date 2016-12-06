@@ -1,0 +1,65 @@
+\exercice{2793, burnol, 2009/12/15}
+\enonce
+Cet exercice propose une variante pour développer la
+théorie de la fonction exponentielle.\medskip
+\begin{enumerate}
+  \item On se donne une fonction $f$ qui est $n+1$-fois dérivable au sens
+  complexe  sur le disque ouvert $D(0,R)$ (on
+  sait qu'une fois suffit mais on ne va pas utiliser ce
+  théorème difficile ici). Soit
+  $z\in D(0,R)$. En appliquant la formule de Taylor avec
+  reste intégral de Lagrange à la fonction de la variable
+  réelle $t\mapsto g(t) = f(tz)$ pour $0\leq t\leq 1$,
+  prouver:
+\[ f(z) = f(0) + f'(0) z + \frac{f^{(2)}(0)}2 z^2 + \dots +
+  \frac{f^{(n)}(0)}{n!} z^n + z^{n+1}\int_0^1
+  \frac{(1-t)^{n}}{n!} f^{(n+1)}(tz)\,dt\]  
+  \item On suppose que $f$ est dérivable au sens complexe une fois sur
+  $D(0,R)$ et vérifie $f'=f$ et $f(0) = 1$. Montrer que $f$
+  est infiniment dérivable au sens complexe. En utilisant
+  la question précédente montrer :
+\[ \left| f(z) - \sum_{k=0}^n \frac{z^k}{k!}\right| \leq
+   (\sup_{|w|\leq |z|} |f(w)|)
+   \frac{|z|^{n+1}}{(n+1)!}\]
+et en déduire que, pour tout $z\in \Cc$ on a : $f(z) = \sum_{k=0}^\infty \frac{z^k}{k!}$.
+  \item Réciproquement on considère la fonction $F(z) =
+  \sum_{k=0}^\infty \frac{z^k}{k!}$. Vérifier que le rayon
+  de convergence est infini. Établir par un calcul direct
+  que $F'(0)$ existe et vaut $1$. En utilisant le théorème sur
+  les séries doubles, montrer $F(z+w) = F(z)F(w)$. En
+  déduire ensuite que $F$ est holomorphe sur $\Cc$ et vérifie
+  $F' = F$.
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+  \item La formule de Taylor avec reste int\'egral est
+$$g(b)= g(a) +g'(a)(b-a) +...+ \frac{g^{(n)} (a)}{n!} (b-a)^n+ \int_a^b \frac{(b-t)^n}{n!} g^{(n+1)}(t)\, dt$$
+puis on remplace avec $a=0$ et $b=1$.
+  \item Si $f'=f$ et si $f$ est $n$--fois d\'erivable au sens complexe, alors
+$\lim_{h \to 0}(f^{(n)} (z+h) -f^{(n)} (z))/h
+=\lim_{h \to 0}(f^{(n-1)} (z+h) -f^{(n-1)} (z))/h=f^{(n)}(z)$.
+Par r\'ecurrence on en d\'eduit, d'une part, que $f$ est infiniment d\'erivable et, d'autre part, que $f^{(n)}(z)=f(z)$
+pour tout $n\geq 0$. En particulier, $f^{(n)} (0)=1$ pour tout $n\geq 0$. En utilisant la formule de Taylor de la question précédente
+on a donc
+$$\begin{aligned}
+\left| f(z) - \sum_{k=0}^n \frac{z^k}{k!} \right| &\leq |z|^{n+1} \int_0^1 \frac{(1-u)^n}{n!} |f^{(n+1)} (uz)| \, du\\
+&\leq |z|^{n+1} \sup_{|w|\leq |z|} |f^{(n+1)} (w)|\int_0^1 \frac{(1-u)^n}{n!}\, du
+\leq \sup_{|w|\leq |z|} |f (w)|\frac{|z|^{n+1} }{(n+1)!}.
+\end{aligned}$$
+Cette derni\`ere expression tend vers $0$ lorsque $n\to \infty$. D'o\`u $f(z)=\sum_{k=0}^\infty \frac{z^k}{k!}$.
+  \item Fixons $z\in \Cc$ et notons $a_k=\frac{z^k}{k!}$. Alors :
+$$ \left| \frac{a_{k+1}}{a_k}\right| = |z| \frac{1}{k+1} \to 0 $$
+lorsque $k\to \infty$. On en d\'eduit que le rayon de convergence de cette s\'erie est $\infty$ (d'Alembert) et que
+$F$ est holomorphe sur $\C$. De plus :
+$$F'(z) = \sum_{k\geq 1} \frac{kz^{k-1}}{k!}=F(z)$$
+pour tout $z\in \Cc$. Par le th\'eor\`eme sur les s\'eries doubles (en fait l'exercice \ref{ex:burnol1.1.6})
+$$\begin{aligned}
+F(z)F(w) &= \sum_{k=0}^\infty \sum_{j=0}^k \frac{z^j}{j!}\frac{w^{k-j}}{(k-j)!}
+=\sum_{k=0}^\infty \frac{1}{k!} \sum_{j=0}^k \frac{k!}{j! (k-j)!} z^j w^{k-j}\\
+&= \sum_{k=0}^\infty \frac{1}{k!} (z+w)^k =F(z+w).
+\end{aligned}$$
+\end{enumerate}
+\fincorrection
+\finexercice

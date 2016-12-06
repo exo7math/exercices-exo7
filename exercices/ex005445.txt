@@ -1,0 +1,39 @@
+\exercice{5445, rouget, 2010/07/10}
+\enonce[**I]
+\begin{enumerate}
+\item  Soit $f$ une application de classe $C^1$ sur $[0,1]$ telle que $f(1)\neq0$.
+
+Pour $n\in\Nn$, on pose $u_n=\int_{0}^{1}t^nf(t)\;dt$. Montrer que $\lim_{n\rightarrow +\infty}u_n=0$ puis déterminer un équivalent simple de $u_n$ quand $n$ tend vers $+\infty$ (étudier $\lim_{n\rightarrow +\infty}nu_n$).
+\item  Mêmes questions en supposant que $f$ est de classe $C^2$ sur $[0,1]$ et que $f(1)=0$ et $f'(1)\neq0$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  $f$ est continue sur le segment $[0,1]$ et est donc bornée sur ce segment. Soit $M$ un majorant de $|f|$ sur $[0,1]$. Pour $n\in\Nn$,
+
+$$|u_n|\leq\int_{0}^{1}t^n|f(t)|\;dt\leq M\int_{0}^{1}t^n\;dt=\frac{M}{n+1},$$
+
+et comme $\lim_{n\rightarrow +\infty}\frac{M}{n+1}=0$, on a montré que $\lim_{n\rightarrow +\infty}u_n=0$.
+
+Soit $n\in\Nn$. Puisque $f$ est de classe $C^1$ sur $[0,1]$, on peut effectuer une intégration par parties qui fournit
+
+$$u_n=\left[\frac{t^{n+1}}{n+1}f(t)\right]_{0}^{1}-\frac{1}{n+1}\int_{0}^{1}t^{n+1}f'(t)\;dt=\frac{f(1)}{n+1}-\frac{1}{n+1}\int_{0}^{1}t^{n+1}f'(t)\;dt.$$
+
+Puisque $f'$ est continue sur $[0,1]$, $\lim_{n\rightarrow +\infty}\int_{0}^{1}t^{n+1}f'(t)\;dt=0$ ou encore $-\frac{1}{n+1}\int_{0}^{1}t^{n+1}f'(t)\;dt=o(\frac{1}{n})$. D'autre part, puisque $f(1)\neq0$, $\frac{f(1)}{n+1}\sim\frac{f(1)}{n}$ ou encore $\frac{f(1)}{n+1}=\frac{f(1)}{n}+o(\frac{1}{n})$. Finalement, $u_n=\frac{f(1)}{n}+o(\frac{1}{n})$, ou encore
+
+$$u_n\sim\frac{f(1)}{n}.$$
+
+\item  Puisque $f$ est de classe $C^1$ sur $[0,1]$ et que $f(1)=0$, une intégration par parties fournit
+
+$u_n=-\frac{1}{n+1}\int_{0}^{1}t^{n+1}f'(t)\;dt$. Puisque $f'$ est de classe $C^1$ sur $[0,1]$ et que $f'(1)\neq0$, le 1) appliqué à $f'$ fournit
+
+$$u_n=-\frac{1}{n+1}\int_{0}^{1}t^{n+1}f'(t)\;dt\sim-\frac{1}{n}\frac{f'(1)}{n}=-\frac{f'(1)}{n^2}.$$
+
+Par exemple, $\int_{0}^{1}t^n\sin\frac{\pi t}{2}\;dt\sim\frac{1}{n}$ et $\int_{0}^{1}t^n\cos\frac{\pi t}{2}\;dt\sim\frac{\pi}{2n^2}$
+\end{enumerate}
+
+\fincorrection
+\finexercice

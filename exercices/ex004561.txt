@@ -1,0 +1,50 @@
+\exercice{4561, quercia, 2010/03/14}
+\enonce[Fraction rationnelle de meilleure approximation (Ens Ulm-Lyon-Cachan MP$^*$ 2003)]
+On note~$R$ l'ensemble des fractions rationnelles continues sur~$[0,1]$
+et pour $m,n\in\N$~:
+
+$R_{m,n} = \{f\in R\text{ tel que }\exists\ P,Q\in\R[X]\text{ tel que }\deg(P)\le m,\ \deg(Q)\le n\text{ et }f=P/Q\}$.
+
+\begin{enumerate}
+  \item $R$ est-il un espace vectoriel~? Si oui en trouver une base. Même question pour~$R_{m,n}$.
+    
+  \item Soient $m,n$ fixés. On note $d = \inf\{\|g-f\|,\ f\in R_{m,n}\}$
+    où $g$ désigne une fonction continue de~$[0,1]$ dans~$\R$ et ${\|h\| = \sup\{|h(x)|,\ x\in[0,1]\}}$.
+    Montrer qu'il existe $r_0\in R_{m,n}$ tel que $\|g-r_0\| = d$.
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $R$ est trivialement un $\R$-espace vectoriel. Le théorème de décomposition en éléments
+    simples donne une base de~$R$ en se limitant aux éléments simples n'ayant pas de pôle dans~$[0,1]$.
+
+    $R_{m,n}$ n'est pas un espace vectoriel. Par exemple $\frac1{X+1}$ et $\frac1{X+2}$ appartiennent
+    à~$R_{0,1}$ mais pas leur somme.
+  \item Soit $(f_k)$ une suite d'éléments de~$R_{m,n}$ telle que $\|g-f_k\|\to d$ quand $k\to\infty$.
+    On note $f_k=P_k/Q_k$ avec $P_k\in\R_m[X]$, $Q_k\in\R_n[X]$ et $\|Q_k\|=1$.
+    On a $\|P_k\| \le \|g-f_k\| + \|g\|$ donc les suites $(P_k)$ et $(Q_k)$
+    sont bornées dans $\R_m[X]$ et $\R_n[X]$. Quitte à prendre une sous-suite, on se ramène
+    au cas $P_k\to P\in\R_m[X]$ et $Q_k\to Q\in\R_n[X]$ (quand $k\to\infty$) avec de plus
+    $\|Q\|=1$.
+    
+    Si $Q$ n'a pas de racine dans~$[0,1]$, il existe $\alpha>0$ tel
+    que $|Q(x)| \ge \alpha$ pour tout~$x\in[0,1]$, donc $|Q_k(x)| \ge \frac12\alpha$
+    pour tout~$x\in[0,1]$ et tout~$k$ assez grand. On en déduit que la suite $(P_k/Q_k)$
+    converge uniformément vers $P/Q$ sur~$[0,1]$ et que $r_0=P/Q$ convient.
+    
+    Si $Q$ admet dans~$[0,1]$ des racines $a_1,\dots,a_p$ de multiplicités $\alpha_1,\dots,\alpha_p$,
+    on note $Q^0 = \prod_i(X-a_i)^{\alpha_i}$ et $Q^1 = Q/Q^0$.
+    Soit $M = \max\{\|g-f_k\|,\ k\in\N\}$. Pour tous $x\in[0,1]$ et $k\in\N$ on a
+    $|g(x)Q_k(x)-P_k(x)|\le M|Q_k(x)|$ donc à la limite, $|g(x)Q(x)-P(x)|\le M|Q(x)|$
+    pour tout~$x\in[0,1]$. Ceci implique que $Q^0$ divise~$P$, on note $P^1=P/Q^0$.
+    Alors pour tout~$x\in[0,1]$ et $k\in\N$ on a $|g(x)Q^0(x)-P_k(x)Q^0(x)/Q_k(x)|\le \|g-f_k\||Q^0(x)|$,
+    d'où $|g(x)Q^0(x)-P^1(x)Q^0(x)/Q^1(x)|\le d|Q^0(x)|$ et finalement $r_0=P^1/Q^1$
+    convient.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

@@ -1,0 +1,32 @@
+\exercice{3371, quercia, 2010/03/09}
+\enonce[Centre des matrices triangulaires unipotentes]
+
+On note ${\cal G} = \{ A = (a_{ij}) \in \mathcal{M}_n(K)$ tq $a_{ij} = 0$ si $i>j$ et
+        $a_{ii} = 1 \}$.
+
+\begin{enumerate}
+  \item Montrer que $\cal G$ est un sous-groupe de $GL_n( K)$.
+  \item En utilisant la base canonique de $\mathcal{M}_n(K)$, déterminer le centre de
+    $\cal G$, et montrer que c'est un groupe commutatif isomorphe à
+    $( K,+)$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item 
+  \item Pour $i<j$, on doit avoir $M(I+E_{ij}) = (I+E_{ij})M  \Rightarrow 
+    \begin{cases} a_{ki} = 0 &\text{si } k \ne i \cr
+            a_{jk} = 0 &\text{si }k \ne j \cr\end{cases} 
+	    \Rightarrow 
+    M = \begin{pmatrix} 1 &0      &\dots  &0      &*      \cr
+                      &\ddots &\ddots &       &0      \cr
+                      &       &\ddots &\ddots &\vdots \cr
+                      &0      &       &\ddots &0      \cr
+                      &       &       &       &1      \cr \end{pmatrix}$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

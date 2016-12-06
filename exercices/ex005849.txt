@@ -1,0 +1,25 @@
+\exercice{5849, rouget, 2010/10/16}
+\enonce[***]
+Soit $u$ une suite bornée d'un espace vectoriel normé de dimension finie ayant une unique valeur d'adhérence. Montrer que la suite $u$ converge.
+\finenonce
+
+\noindication
+
+\correction
+Soit $u = (u_n)_{n\in\Nn}$ une suite bornée de l'espace normé $(E,\|\;\|)$ ayant une unique valeur d'adhérence que l'on note $\ell$. Montrons que la suite $u$ converge vers $\ell$.
+
+Supposons par l'absurde que la suite $u$ ne converge pas vers $\ell$. Donc
+
+\begin{center}
+$\exists\varepsilon>0/\;\forall n_0\in\Nn,\;\exists n\geqslant n_0/\;\|u_n-\ell\|\geqslant\varepsilon$\quad$(*)$.
+\end{center}
+
+$\varepsilon$ est ainsi dorénavant fixé.
+
+En appliquant $(*)$ à $n_0 = 0$, il existe un rang $\varphi(0)\geqslant n_0 = 0$ tel que $\|u_{\varphi(0)}-\ell\|\geqslant\varepsilon$.
+
+Puis en prenant $n_0=\varphi(0)+1$, il existe un rang $\varphi(1)>\varphi(0)$ tel que $\|u_{\varphi(1)}-\ell\|\geqslant\varepsilon$ ... et on construit ainsi par récurrence une suite extraite $(u_{\varphi(n)})_{n\in\Nn}$ telle que $\forall n\in\Nn$, $\|u_{\varphi(n)}-\ell\|\geqslant\varepsilon$.
+
+Maintenant, la suite $u$ est bornée et il en est de même de la suite $(u_{\varphi(n)})$. Puisque $E$ est de dimension finie, le théorème de \textsc{Bolzano}-\textsc{Weierstrass} permet d'affirmer qu'il existe une suite $(u_{\psi(n)})_{n\in\Nn}$ extraite de $(u_{\varphi(n)})$ et donc de $u$ convergeant vers un certain $\ell'\in E$. $\ell'$ est donc une valeur d'adhérence de la suite $u$. Mais quand $n$ tend vers $+\infty$ dans l'inégalité $\|u_{\psi(n)}-\ell\|\geqslant\varepsilon$, on obtient $\|\ell'-\ell\|\geqslant\varepsilon$ et donc $\ell\neq\ell'$. Ceci constitue une contradiction et donc $u$ converge vers $\ell$.
+\fincorrection
+\finexercice

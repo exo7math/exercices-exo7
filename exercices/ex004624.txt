@@ -1,0 +1,23 @@
+\exercice{4624, quercia, 2010/03/14}
+\enonce[Chimie P 1996]
+
+Développer en série de Fourier $f\ :\ t  \mapsto \frac1{1-\cos\alpha\cos t}$
+avec $0<\alpha<\pi$.
+Indication~: on pourra utiliser une relation de récurrence entre les
+coefficients à partir de $(1-\cos\alpha\cos t)f(t) = 1$.
+\finenonce
+
+\noindication
+
+\correction
+$$\left\{\begin{array}{lll}2a_k &= &(a_{k-1}+a_{k+1})\cos\alpha\cr
+       a_0 &= &a_1\cos\alpha+2\hfill\cr\end{array}\right.
+       \Rightarrow  a_k = A\tan(\frac\pi4-\frac\alpha2)^k
+                                          + B\mathrm{cotan}(\frac\pi4-\frac\alpha2)^k.$$
+
+Comme $a_k\to 0$ (lorsque $k\to\infty$) on a $B=0$ d'où $A=\frac2{\sin\alpha}$.
+Finalement, $f(t) = \frac2{\sin\alpha}\Bigl(\frac12+\sum_{k=1}^\infty
+\Bigl(\frac{1-\sin\alpha}{\cos\alpha}\Bigr)^k\cos(kt)\Bigr)$.
+\fincorrection
+
+\finexercice

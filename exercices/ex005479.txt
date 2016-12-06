@@ -1,0 +1,169 @@
+\exercice{5479, rouget, 2010/07/10}
+\enonce[**]
+Résoudre sur $\Rr$ les équations différentielles~:~
+
+$$
+\begin{array}{lll}
+1)\;y''-2y'+2y=x\cos x\ch x&2)\;y''+6y'+9y=x^2e^{2x}&3)\;y''-2y'+y=\ch x\\
+4)\;y''-2ky'+(1+k^2)y=e^x\sin x,\;k\in\Rr\setminus\{1\}
+\end{array}
+$$
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  L'équation caractéristique de l'équation homogène $y''-2y'+2y=0$ est $r^2-2r+2=0$ dont les racines sont $1-i$
+et $1+i$. Les solutions de l'équation homogène sont les fonctions de la forme $x\mapsto e^x(\lambda\cos x+\mu\sin
+x),\;(\lambda,\mu)\in\Rr^2$. L'équation avec second membre s'écrit
+
+$$y''-2y'+2y=
+\frac{x}{4}(e^{(1+i)x}+e^{(-1+i)x}+e^{(1-i)x}+e^{(-1-i)x}).$$
+
+On applique alors le principe de superposition des solutions.
+
+Recherche d'une solution particulière de l'équation $y''-2y'+2y=xe^{(1+i)x}$.
+
+$1+i$ est racine simple de l'équation caractéristique et donc
+l'équation précédente admet une solution particulière de la forme $f~:~x\mapsto(ax^2+bx)e^{(1+i)x}$. D'après la formule
+de \textsc{Leibniz}~:
+
+\begin{align*}\ensuremath
+f''-2f'+2f&=(((1+i)^2(ax^2+bx)+2(1+i)(2ax+b)+2a)\\
+ &\;-2((1+i)(ax^2+bx)+(2ax+b))+2(ax^2+bx))e^{(1+i)x}\\
+ &=(2(1+i)(2ax+b)+2a-2((2ax+b)))e^{(1+i)x}=(2i(2ax+b)+2a)e^{(1+i)x}\\
+ &=(4iax+2a+2ib)e^{(1+i)x}
+\end{align*}
+
+puis,
+
+$$f''-2f'+2f=xe^{(1+i)x}\Leftrightarrow4ia=1\;\mbox{et}\;2ib+2a=0\Leftrightarrow a=-\frac{i}{4}\;\mbox{et}\;b=\frac{1}{4}.$$
+
+Une solution particulière de l'équation $y''-2y'+2y=xe^{(1+i)x}$ est $x\mapsto\frac{1}{4}(-ix^2+x)e^{(1+i)x}$. Par
+conjugaison, une solution particulière de l'équation $y''-2y'+2y=xe^{(1-i)x}$ est
+$x\mapsto\frac{1}{4}(ix^2+x)e^{(1-i)x}$.
+
+Recherche d'une solution particulière de l'équation $y''-2y'+2y=xe^{(-1+i)x}$.
+
+$-1+i$ n'est pas racine de l'équation caractéristique et donc
+l'équation précédente admet une solution particulière de la forme $f~:~x\mapsto(ax+b)e^{(-1+i)x}$. D'après la formule
+de \textsc{Leibniz}~:
+
+\begin{align*}\ensuremath
+f''-2f'+2f&=(((-1+i)^2(ax+b)+2(-1+i)a)-2((-1+i)(ax+b)+a)+2(ax+b))e^{(-1+i)x}\\
+ &=((ax+b)(-2i-2(-1+i)+2)+2(-1+i)a-2a)e^{(-1+i)x}\\
+ &=(4(1-i)(ax+b)-2(2-i)a)e^{(1+i)x}=(4(1-i)ax-2(2-i)a+4(1-i)b)e^{(1+i)x}
+\end{align*}
+
+puis,
+
+\begin{align*}\ensuremath
+f''-2f'+2f=xe^{(-1+i)x}&\Leftrightarrow4(1-i)a=1\;\mbox{et}\;4(1-i)b-2(2-i)a=0\\
+ &\Leftrightarrow
+a=\frac{1+i}{8}\;\mbox{et}\;b=\frac{(2-i)(1+i)}{16(1-i)}=\frac{(3+i)(1+i)}{32}=\frac{1+2i}{16}.
+\end{align*}
+
+Une solution particulière de l'équation $y''-2y'+2y=xe^{(-1+i)x}$ est $x\mapsto\frac{1}{16}(2(1+i)x+1+2i)e^{(-1+i)x}$.
+Par conjugaison, une solution particulière de l'équation $y''-2y'+2y=xe^{(-1-i)x}$ est
+$x\mapsto\frac{1}{16}(2(1-i)x+1-2i)e^{(-1-i)x}$.
+
+Une solution particulière de l'équation $y''-2y'+2y=x\cos x\ch x$ est donc
+
+\begin{align*}\ensuremath
+\frac{1}{4}&(2\mbox{Re}(\frac{1}{4}(-ix^2+x)e^{(1+i)x}+\frac{1}{16}(2(1+i)x+1+2i)e^{(-1+i)x})\\
+ &=\frac{1}{32}\mbox{Re}(4(-ix^2+x)(\cos x+i\sin x)e^x+(2x+1+2(x+1)i)(\cos x+i\sin x)e^{-x}\\
+ &=\frac{1}{32}(4(x\cos x+x^2\sin x)e^x+((2x+1)\cos x-2(x+1)\sin x)e^{-x})
+\end{align*}
+
+Les solutions sur $\Rr$ de l'équation proposée sont les fonctions de la forme $x\mapsto(\frac{1}{8}(x\cos x+x^2\sin
+x)+\lambda\cos x+\mu\sin x)e^x+((2x+1)\cos x-2(x+1)\sin x)e^{-x})$, $(\lambda,\mu)\in\Rr^2$.
+
+\item  L'équation caractéristique de l'équation homogène $y''+6y'+9y=0$ est $r^2+6r+9=0$ qui admet la racine double
+$r=-3$. Les solutions de l'équation homogène sont les fonctions de la forme $x\mapsto
+e^{-3x}(\lambda x+\mu),\;(\lambda,\mu)\in\Rr^2$.
+
+$2$ n'est pas racine de l'équation caractéristique et donc
+l'équation proposée admet une solution particulière de la forme $f~:~x\mapsto(ax^2+bx+c)e^{2x}$. D'après la formule
+de \textsc{Leibniz}~:
+
+\begin{align*}\ensuremath
+f''+6f'+9f&=((4(ax^2+bx+c)+4(2ax+b)+2a)+6(2(ax^2+bx+c)+(2ax+b))+9(ax^2+bx+c))e^{2x}\\
+ &=(25(ax^2+bx+c)+10(2ax+b)+2a)e^{2x}=(25ax^2+(20a+25b)x+2a+10b+25c)e^{2x}
+\end{align*}
+
+puis,
+
+$$f''+6f'+9f=x^2e^{2x}\Leftrightarrow25a=1\;\mbox{et}\;20a+25b=0\;\mbox{et}\;2a+10b+25c=0\Leftrightarrow
+a=\frac{1}{25}\;\mbox{et}\;b=-\frac{4}{125}\;\mbox{et}\;c=\frac{6}{625}.$$
+Une solution particulière de l'équation $y''+6y'+9y=x^2e^{2x}$ est $x\mapsto\frac{1}{625}(25x^2-20x+6)e^{2x}$.
+
+Les solutions sur $\Rr$ de l'équation proposée sont les fonctions de la forme
+$x\mapsto\frac{1}{625}(25x^2-20x+6)e^{2x}+(\lambda x+\mu)e^{-3x}$, $(\lambda,\mu)\in\Rr^2$.
+
+\item  L'équation caractéristique de l'équation homogène $y''-2y'+y=0$ est $r^2-2r+1=0$ qui admet la racine double
+$r=1$. Les solutions de l'équation homogène sont les fonctions de la forme $x\mapsto
+e^{x}(\lambda x+\mu),\;(\lambda,\mu)\in\Rr^2$.
+
+Le second membre s'écrit $\frac{1}{2}(e^{x}+e^{-x})$. Appliquons le principe de superposition des solutions.
+
+Recherche d'une solution particulière de l'équation $y''-2y'+y=e^{x}$.
+
+$1$ est racine double de l'équation caractéristique et donc
+l'équation proposée admet une solution particulière de la forme $f~:~x\mapsto ax^2e^{x}$. D'après la formule
+de \textsc{Leibniz}~:
+
+\begin{align*}\ensuremath
+f''-2f'+f&=((ax^2+2(2ax)+2a)-2(ax^2+(2ax))+ax^2)e^{2x}=2ae^{x}
+\end{align*}
+
+puis,
+
+$$f''-2f'+f=e^{x}\Leftrightarrow2a=1\Leftrightarrow a=\frac{1}{2}.$$
+Une solution particulière de l'équation $y''-2y'+y=e^{x}$ est $x\mapsto\frac{1}{2}x^2e^{x}$.
+
+Recherche d'une solution particulière de l'équation $y''-2y'+y=e^{-x}$.
+
+$-1$ n'est pas racine de l'équation caractéristique et donc
+l'équation proposée admet une solution particulière de la forme $f~:~x\mapsto ae^{-x}$.
+
+\begin{align*}\ensuremath
+f''-2f'+f&=(a+2a+a)e^{-x}=4ae^{-x}
+\end{align*}
+
+puis,
+
+$$f''-2f'+f=e^{-x}\Leftrightarrow a=\frac{1}{4}.$$
+Une solution particulière de l'équation $y''-2y'+y=e^{-x}$ est $x\mapsto\frac{1}{4}e^{-x}$.
+
+Les solutions sur $\Rr$ de l'équation proposée sont les fonctions de la forme
+$x\mapsto(\frac{x^2}{4}+\lambda x+\mu)e^x+\frac{1}{8}e^{-x}$, $(\lambda,\mu)\in\Rr^2$.
+
+\item  Soit $k\in\Rr$. L'équation caractéristique de l'équation homogène $y''-2ky'+(1+k^2)y=0$ est $r^2-2kr+1+k^2=0$
+dont le discriminant réduit vaut $-1=i^2$. Cette équation admet donc pour racines $k+i$ et $k-i$. Les solutions de
+l'équation homogène sont les fonctions de la forme $x\mapsto e^{kx}(\lambda\cos x+\mu\sin x),\;(\lambda,\mu)\in\Rr^2$.
+
+Le second membre s'écrit $\mbox{Im}(e^{(1+i)x})$. Résolvons donc l'équation $y''-2y'+y=e^{(1+i)x}$.
+
+Si $k\neq1$, $1+i$ n'est pas racine de l'équation caractéristique et donc
+l'équation proposée admet une solution particulière de la forme $f~:~x\mapsto ae^{(1+i)x}$. Or,
+
+\begin{align*}\ensuremath
+f''-2kf'+(1+k^2)f&=a((1+i)^2-2k(1+i)+1+k^2)e^{(1+i)x}=((k-1)^2-2(k-1)i)ae^{(1+i)x}
+\end{align*}
+
+et donc,
+
+$$f''-2kf'+(1+k^2)f=e^{(1+i)x}\Leftrightarrow a=\frac{1}{k-1}\frac{1}{k-1-2i}=\frac{k-1+2i}{(k-1)(k^2-2k+5)}.$$
+Une solution particulière de l'équation $y''-2y'+y=e^{(1+i)x}$ est $x\mapsto\frac{k-1-2i}{(k-1)(k^2-2k+5)}e^{(1+i)x}$
+et une solution particulière de l'équation $y''-2y'+y=e^{x}\sin x$ est
+
+$$\frac{1}{(k-1)(k^2-2k+5)}\mbox{Im}((k-1-2i)(\cos x+i\sin x)e^x=\frac{1}{(k-1)(k^2-2k+5)}(-2\cos x+(k-1)\sin x)e^x.$$
+
+Si $k\neq1$, les solutions de l'équation proposée sont les fonctions de la forme
+
+$$x\mapsto\frac{1}{(k-1)(k^2-2k+5)}(-2\cos x+(k-1)\sin x)e^x+(\lambda\cos x+\mu\sin x)e^{kx},\;(\lambda,\mu)\in\Rr.$$
+
+\end{enumerate}
+\fincorrection
+\finexercice

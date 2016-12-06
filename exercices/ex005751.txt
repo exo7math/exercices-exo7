@@ -1,0 +1,26 @@
+\exercice{5751, rouget, 2010/10/16}
+\enonce[*** I]
+Pour $n\in\Nn$, on pose $W_n=\int_{0}^{\pi/2}\cos^nt\;dt$. Rayon de convergence et somme de la série entière associée à la suite $(W_n)_{n\in\Nn}$.
+\finenonce
+
+\noindication
+
+\correction
+On a déjà vu que $W_n\underset{n\rightarrow+\infty}{\sim}\sqrt{\frac{\pi}{2n}}$ et la règle de d'\textsc{Alembert} fournit $R = 1$. Soit $x\in]-1,1[$.
+
+Pour tout $t\in\left[0,\frac{\pi}{2}\right]$ et tout entier naturel $n$, $\left|x^n\cos^nt\right|\leqslant|x|^n$. Comme la série numérique de terme général $|x|^n$, $n\in\Nn$, converge, la série de fonctions de terme général $t\mapsto x^ncos^nt$ est normalement et donc uniformément convergente sur le segment $\left[0,\frac{\pi}{2}\right]$. D'après le théorème d'intégration terme à terme sur un segment,
+
+\begin{align*}\ensuremath
+\sum_{n=0}^{+\infty}W_nx^n&=\sum_{n=0}^{+\infty}x^n\int_{0}^{\pi/2}\cos^nt\;dt  =\int_{0}^{\pi/2}\left(\sum_{n=0}^{+\infty}x^n\cos^nt\right)dt =\int_{0}^{\pi/2}\frac{1}{1-x\cos t}\;dt\\
+ &=\int_{0}^{1}\frac{1}{1-x\frac{1-u^2}{1+u^2}}\frac{2du}{1+u^2}\;(\text{en posant}\;u=\tan\left(\frac{t}{2}\right))\\
+ &=2\int_{0}^{1}\frac{1}{(1+x)u^2+(1-x)}\;du=2\times\frac{1}{1+x}\times\frac{1}{\sqrt{\frac{1-x}{1+x}}}\left[\Arctan\left(\frac{u}{\sqrt{\frac{1-x}{1+x}}}\right)\right]_0^1\\
+ &= \frac{2}{\sqrt{1-x^2}}\Arctan\sqrt{\frac{x+1}{x-1}}.
+\end{align*}
+
+\begin{center}
+\shadowbox{
+$\forall x\in]-1,1[$, $\sum_{n=0}^{+\infty}W_nx^n=\frac{2}{\sqrt{1-x^2}}\Arctan\sqrt{\frac{x+1}{x-1}}$.
+}
+\end{center}
+\fincorrection
+\finexercice

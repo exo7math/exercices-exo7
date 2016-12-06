@@ -1,0 +1,37 @@
+\exercice{3693, quercia, 2010/03/11}
+\enonce[X MP$^*$ 2000]
+
+Soit $E$ un espace euclidien de dimension $n>1$. Trouver toutes les fonctions $f$
+de $E$ dans $\R$ continues telles que $u\perp v \Rightarrow f(u+v)=f(u)+f(v)$.
+\finenonce
+
+\noindication
+
+\correction
+$f$ linéaire et $f = x \mapsto\|x\|^2$ conviennent et l'ensemble~$\cal E$
+des fonctions $f$ vérifiant la propriété est stable par combinaison
+linéaire donc toute fonction de la forme $x \mapsto\ell(x) + a\|x\|^2$
+avec $\ell\in E^*$ et $a\in\R$ convient. On montre que ce sont les
+seules~:
+Soit $f\in{\cal E}$ l'on décompose en sa partie paire $f_p$
+et sa partie impaire~$f_i$. Alors $f_p,f_i\in{\cal E}$.
+
+Soient $x,y\in E$ avec $\|x\|=\|y\|$ et $x\perp y$.
+On a $f_i(x\pm y) = f_i(x)\pm f_i(y)$ et $f_i(2x) = f_i(x+y) + f_i(x-y) = 2f_i(x)$.
+Ensuite, $f_i(2x) + f_i(x) -f_i(y) = f_i(2x+y) + f_i(x-2y) = f_i(3x-y) = f_i(3x) - f_i(y)$
+d'où $f_i(3x) = 3f_i(x)$ et de proche en proche $f_i(kx) = kf_i(x)$ pour $k\in\N$
+puis pour $k\in\Z,\Q,\R$ successivement vu la continuité de~$f$.
+En prenant une base $(e_1,\dots,e_n)$ orthonormale on a
+$f(x_1e_1+\dots+x_ne_n) = x_1f(e_1)+\dots+x_nf(e_n)$ pour tous $x_1,\dots,x_n$
+réels donc $f_i$ est linéaire.
+
+Soient à présent $x,y\in E$ avec $\|x\|=\|y\|$
+alors $f_p(x+y) + f_p(x-y) = f(2x)$ et $f_p(x+y) + f_p(y-x) = f_p(2y)$
+d'où $f_p(2x) = f_p(2y)$. Ainsi $f_p$ est constante sur les sphères
+de centre~$0$. On écrit $f_p(x) = \varphi(\|x\|^2)$ avec $\varphi : {\R^+} \to \R$
+prolongée à $\R$ par imparité ($f_p(0) = 0$ de manière évidente)
+et on a $\varphi(a^2+b^2) = f_p(ae_1+be_2) = f_p(ae_1)+f_p(be_2) = \varphi(a^2)+\varphi(b^2)$
+d'où l'on conclut que $\varphi$ est linéaire.
+\fincorrection
+
+\finexercice

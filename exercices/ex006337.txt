@@ -1,0 +1,46 @@
+\exercice{6337, queffelec, 2011/10/16}
+\enonce
+On rappelle les différentes méthodes pour résoudre un système différentiel
+linéaire à coefficients constants $X'(t)= A.X(t)$ sur $E$ de dimension finie:
+\begin{enumerate}
+\item On met $A$ sous forme triangulaire et on résout de proche en proche
+le nou\-veau système obtenu par changement de base avant de revenir au système
+initial.
+
+\item On met $A$ sous forme de Dunford, $P^{-1}AP=D+N$, où $D$ semi-simple
+et
+$N$ nilpotente, qui commutent. On calcule ainsi $e^{tA}.X_0$, la solution
+valant
+$X_0$ au temps $t=0$.
+
+\item On utilise le théorème de Cayley-Hamilton pour établir des
+relations entre les puissances de $A$ et calculer ainsi $e^{tA}$.
+
+
+\item (cf. Cartan) On décompose $E=\oplus_i E_i$ en sous-espaces
+caractéris\-tiques, on calcule $e^{tA_i}$ où $A_i=A_{|E_i}$, puis
+$X(t)=\sum_ie^{tA_i}v_i$, si $X_0=\sum_iv_i$.
+
+\item On cherche une
+base de solutions par identification sous la forme de polyn\^omes-exponentielles,
+suivant le résultat du cours.
+\end{enumerate}    
+
+Résoudre les systèmes différentiels de matrice :
+
+$$
+\begin{pmatrix}1 & 1\\ 2 & 0\end{pmatrix};
+\quad 
+\begin{pmatrix}
+0 & 1 & -12 \\  -1 & 2  &-20\\ 1
+& 0 & -5 \end{pmatrix};\quad 
+\begin{pmatrix}1 & 0 & -1&1 \\  0&1 & 1  &0\\ 0&0&1 & 0  
+\\0&0&1 & 0   \end{pmatrix}
+$$ 
+\finenonce
+
+\noindication
+
+\nocorrection
+
+\finexercice

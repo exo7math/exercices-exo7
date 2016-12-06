@@ -1,0 +1,67 @@
+\exercice{5965, tumpach, 2010/11/11}
+\enonce
+Soit $\Omega = \mathbb{N}$ muni de la mesure de comptage. Pour
+tout $1\leq p <+\infty$, on note $\ell^p$ l'espace des suites
+complexes $(u_{n})_{n\in\mathbb{N}}$ telles que $\|u\|_{p} :=
+\left(\sum_{i=0}^{+\infty}
+|u_{n}|^{p}\right)^{\frac{1}{p}}<+\infty$. L'espace des suites
+born\'ees sera not\'e $\ell^{\infty}.$
+\begin{enumerate}
+\item Montrer que si $q\leq p$, alors $\ell^{q}\subset \ell^{p}$.
+En particulier, pour $1<q<2<p$, on a~:
+$$
+\ell^{1} \subset \ell^{q} \subset \ell^{2} \subset \ell^{p}
+\subset \ell^{\infty}.
+$$
+\item En consid\'erant les suites $u^{(\alpha)}_{n} =
+n^{-\alpha}$, montrer que pour $q<p$, l'inclusion $\ell^{q}
+\subset \ell^{p}$ est stricte.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+Soit $\Omega = \mathbb{N}$ muni de la mesure de comptage. Pour
+tout $1\leq p <+\infty$, on note $\ell^p$ l'espace des suites
+complexes $(u_{n})_{n\in\mathbb{N}}$ telles que $\|u\|_{p} :=
+\left(\sum_{i=0}^{+\infty}
+|u_{n}|^{p}\right)^{\frac{1}{p}}<+\infty$. L'espace des suites
+born\'ees sera not\'e $\ell^{\infty}.$
+\begin{enumerate}
+\item Montrons que si $q\leq p$, alors $\ell^{q}\subset \ell^{p}$.
+Soit $(u_{n})_{n\in\mathbb{N}}\in \ell^{q}$. Comme
+$$
+\sum_{i=0}^{+\infty} |u_{n}|^{q} <+\infty,
+$$
+il existe un rang $N$ tel que pour $n> N$, $|u_{n}|^{q}< 1$. En
+particulier la suite $(u_{n})_{n\in\mathbb{N}}$ appartient \`a
+$\ell^{\infty}$
+ et
+$$\|u\|_{\infty} \leq \max\{u_{0}, \dots, u_{N}, 1\}.$$
+De plus, pour $n> N$, on a $|u_{n}|^{p} \leq |u_{n}|^{q}$ et
+$$
+\sum_{i=N+1}^{+\infty} |u_{n}|^{p} \leq \sum_{i=N+1}^{+\infty}
+|u_{n}|^{q}\leq \|u\|_{q}^{q} <+\infty,
+$$
+ce qui implique que $\|u\|_{p} < +\infty$. En conclusion, pour
+$1<q<2<p$, on a~:
+$$
+\ell^{1} \subset \ell^{q} \subset \ell^{2} \subset \ell^{p}
+\subset \ell^{\infty}.
+$$
+\item La suite $u^{(\alpha)}_{n} = n^{-\alpha}$ appartient \`a
+$\ell^{\infty}$ pour tout $\alpha\geq 0$ et \`a $\ell^{p}$ avec
+$1\leq p <+\infty$ si et seulement si $\alpha p>1$, i.e $\alpha>
+\frac{1}{p}$. En particulier la suite constante \'egale \`a $1$
+appartient \`a $\ell^{\infty}$ mais n'appartient \`a aucun
+$\ell^{p}$ pour $p<+\infty$. Soit $1<q<p<+\infty$. Pour tout
+$\alpha$ tel que $\frac{1}{p} < \alpha < \frac{1}{q}$, la suite
+$u^{(\alpha)}$ appartient \`a $\ell^{p}\setminus \ell^q$. C'est le
+cas en particulier pour $\alpha = \frac{1}{2}\left(\frac{1}{p} +
+\frac{1}{q} \right)$. Ainsi l'inclusion $\ell^{q} \subset
+\ell^{p}$ est stricte lorsque $q< p$.
+\end{enumerate}
+\fincorrection
+
+\finexercice

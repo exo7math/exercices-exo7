@@ -1,0 +1,47 @@
+\exercice{2607, delaunay, 2009/05/19}
+\enonce
+ Soit $A$ la matrice 
+$$A=\begin{pmatrix}1&0&0 \\  -1&2&1 \\  0&0&2\end{pmatrix}$$ 
+et $f$ l'endomorphisme de $\R^3$ associ\'e.
+\begin{enumerate}
+ \item  Déterminer les valeurs propres de $A$.
+ \item  Déterminer, sans calculs, des vecteurs $\vec u$ et $\vec v$ tels que $f(\vec u)=2\vec u$ et $f(\vec v)=2\vec v+\vec u$.
+ \item  Soit $\vec e$ tel que $f(\vec e)=\vec e$. Démontrer que $(\vec e,\vec u,\vec v)$ est une base de $\R^3$ et écrire la matrice de $f$ dans cette base.
+ \item La matrice $A$ est-elle diagonalisable ? (Justifier.)
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+{\it Soit $A$ la matrice 
+$$A=\begin{pmatrix}1&0&0 \\  -1&2&1 \\  0&0&2\end{pmatrix}$$ 
+et $f$ l'endomorphisme de $\R^3$ associ\'e.}
+\begin{enumerate}
+ \item  {\it Déterminons les valeurs propres de $A$.}
+
+Calculons les racines du polynôme caractéristique $P_A(X)$ :
+$$P_A(X)=\begin{vmatrix}1-X&0&0 \\  -1&2-X&1 \\  0&0&2-X\end{vmatrix}=(2-X)^2(1-X).$$
+Les valeurs propres de $A$ sont $\lambda_1=1$, valeur propre simple et $\lambda_2=2$, valeur propre double.
+
+ \item {\it Déterminons, sans calculs, des vecteurs $\vec u$ et $\vec v$ tels que $f(\vec u)=2\vec u$ et $f(\vec v)=2\vec v+\vec u$.}
+
+Si l'on note $(\vec e_1,\vec e_2, \vec e_3)$, la base dans laquelle est exprimée la matrice $A$ de l'endomorphisme $f$, on remarque que 
+$$f(\vec e_2)=2\vec e_2\quad{\hbox{et}}\quad f(\vec e_3)=\vec e_2+2\vec e_3.$$
+Ainsi, les vecteurs $\vec u=\vec e_2$ et $\vec v=\vec e_3$ répondent-ils à la question.
+ \item  {\it Soit $\vec e$ tel que $f(\vec e)=\vec e$. Démontrons que $(\vec e,\vec u,\vec v)$ est une base de $\R^3$ et écrivons la matrice de $f$ dans cette base.}
+
+Notons $\vec e=(x,y,z)$ alors
+$$f(\vec e)=\vec e\iff\left\{\begin{align*}x&=x \\  -x+2y+z&=y \\  2z&=z\end{align*}\right.
+\iff\left\{\begin{align*}z&=0 \\   x&=y\end{align*}\right.$$
+Le vecteur $\vec e=(1,1,0)$ convient. Les vecteurs $\vec e$, $\vec u$ et $\vec v$ sont linéairement indépendants, ils forment donc une base de $\R^3$. La matrice de $f$ dans cette base s'écrit
+$$B=\begin{pmatrix}1&0&0 \\  0&2&1 \\  0&0&2\end{pmatrix}$$
+
+ \item  {\it La matrice $A$ est-elle diagonalisable ?} 
+
+Le sous-espace propre associé à la valeur propre $2$ est l'ensemble des vecteurs $(x,y,z)$ tels que 
+$$\left\{\begin{align*}x&=2x \\  -x+2y+z&=2y \\  2z&=2z\end{align*}\right.\iff\left\{\begin{align*}x&=0 \\   z&=0\end{align*}\right.$$
+C'est une droite vectorielle, sa dimension n'est donc pas égale à la multiplicité de la valeur propre $2$ comme racine du polynôme caractéristique, la matrice $A$ n'est pas diagonalisable.
+\end{enumerate}
+\fincorrection
+\finexercice

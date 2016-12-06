@@ -1,0 +1,46 @@
+\exercice{6010, quinio, 2011/05/20}
+
+\enonce
+Dans une poste d'un petit village, on remarque qu'entre 10 heures
+et 11 heures, la probabilité pour que deux personnes entrent durant 
+la même minute est considérée comme nulle et que l'arrivée des
+personnes est indépendante de la minute considérée. 
+On a observé que la probabilité pour qu'une personne se présente entre la
+minute $n$ et la minute $n+1$ est: $p = 0.1$. On veut calculer la probabilité 
+pour que : 3,4,5,6,7,8... personnes se présentent au guichet entre 10h et 11h.
+\begin{enumerate}
+\item Définir une variable aléatoire adaptée, puis répondre au problème considéré.
+
+\item Quelle est la probabilité pour que au moins 10 personnes
+se présentent au guichet entre 10h et 11h?
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+Une variable aléatoire adaptée à ce problème est le nombre $X$ de personnes 
+se présentant au guichet entre 10h et 11h. Compte tenu
+des hypothèses, on partage l'heure en $60$ minutes. Alors $X$ suit une
+loi binomiale de paramètres $n=60$ et $p=0.1$. On est dans le cas de
+processus poissonnien : on peut approcher la loi de $X$ par la loi de
+Poisson de paramètre $\lambda =60\times 0.1=6$.
+L'espérance de $X$ est donc $E(X)=6$;
+
+On peut alors calculer les probabilités demandées:
+$P[X=k]=\frac{6^{k}e^{-6}}{k!}$. Valeurs lues dans une table ou calculées :
+$P[X=3]\simeq 0.9\%;$ $P[X=4]\simeq 13.4\%;$ $P[X=5]=P[X=6]\simeq
+\,16.1\%;$
+$P[X=7]\,\simeq 13.8\%;P[X=8]\simeq 10.3\,\%.$
+
+Remarque : de façon générale si le paramètre 
+$\lambda$ d'une loi de Poisson est un entier $K$, on a:
+$P[X=K-1]=\frac{K^{K-1}e^{-K}}{(K-1)!}=\frac{K^{K}e^{-K}}{K!}=P[X=K]\,.$
+
+Calculons maintenant la probabilité pour que au moins $10$
+personnes se présentent au guichet entre $10$h et $11$h: C'est $P[X\geq
+10]=1-\sum_{k=0}^{9}\frac{6^{k}e^{-6}}{k!}\simeq 8.392\times
+10^{-2}.$
+
+\fincorrection
+\finexercice

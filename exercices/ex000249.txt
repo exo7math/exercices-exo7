@@ -1,0 +1,20 @@
+\exercice{249, bodin, 1998/09/01}
+\video{akuNAnpeHZM}
+\enonce
+Combien $15!$ admet-il de diviseurs ?
+
+\finenonce 
+
+\indication
+Il ne faut surtout pas chercher \`a calculer $15!=1\times2\times3\times4\times\cdots\times15$, mais profiter du fait
+qu'il est d\'ej\`a ``presque'' factoris\'e.
+\finindication
+
+\correction
+\'Ecrivons la d\'ecomposition de  $15 !=1.2.3.4\ldots15$ en facteurs premiers. $15 !  = 2^{11}.3^6.5^3.7^2 .11.13$.
+Un diviseur de $15 !$ s'\'ecrit $d = 2^{\alpha}.3^\beta.5^\gamma.7^\delta .11^\epsilon.13^\eta$
+avec $0 \leq \alpha \leq 11$, $0 \leq \beta \leq 6$, $0 \leq \gamma \leq 3$, $0 \leq \delta \leq 2$,
+$0 \leq \epsilon \leq 1$, $0 \leq \eta \leq 1$. De plus tout nombre $d$ de cette forme est un diviseur de $15 !$.
+Le nombre de diviseurs est donc $(11+1)(6+1)(3+1)(2+1)(1+1)(1+1) = 4032$.
+\fincorrection
+\finexercice

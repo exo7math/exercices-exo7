@@ -1,0 +1,48 @@
+\exercice{959, legall, 1998/09/01}
+\video{ce0mL82x6Y0}
+\enonce
+Soit $E = \Rr_n[X]$ et soient $A$ et $B$ deux polyn\^omes \`a coefficients réels de
+degr\'e $n+1$. On consid\`ere l'application $f$ qui \`a tout polyn\^ome $P$ de $E$, associe
+le reste de la division euclidienne de $AP$ par $B$.
+\begin{enumerate}
+    \item Montrer que $f$ est un endomorphisme de $E$.
+    \item Montrer l'\'equivalence
+$$
+f \hbox{ est bijective} \Longleftrightarrow \hbox{$A$ et $B$ sont premiers entre eux}.
+$$
+\end{enumerate}
+\finenonce 
+
+\indication
+Résultats utiles d'arithmétique des polynômes : la division euclidienne, le théorème de Bézout,
+le lemme de Gauss.
+\finindication
+
+\correction
+\begin{enumerate}
+  \item Soit $P \in E$ et $\lambda \in \Rr$, alors la division euclidienne de $AP$ par $B$ s'\'ecrit $AP= Q\cdot B + R$, donc en multipliant par $\lambda$ on obtient :
+$A\cdot (\lambda P)= (\lambda Q)B+\lambda R$.
+ce qui est la division euclidienne de $A\cdot (\lambda P)$ par $B$, 
+donc si $f(P)= R$ alors $f(\lambda P)=\lambda R$. Donc $f(\lambda P)=\lambda f(P)$.
+
+Soient $P, P' \in E$. On \'ecrit les divisions euclidiennes :
+$$AP= Q\cdot B + R,\quad  AP'=Q'\cdot B+R'.$$
+En additionnant :
+$$A(P+P')=(Q+Q')B+(R+R')$$
+qui est la division euclidienne de $A(P+P')$ par $B$.
+Donc si $f(P)=R$, $f(P')=R'$ alors $f(P+P')=R+R'=f(P)+f(P')$.
+
+Donc $f$ est lin\'eaire.
+  \item Sens $\Rightarrow$. Supposons $f$ est bijective, donc en particulier $f$ est surjective,
+    en particulier il existe $P\in E$ tel que $f(P)=1$ ($1$ est le polyn\^ome constant \'egale \`a $1$). La division euclidienne est donc $AP=BQ+1$, autrement dit 
+$AP-BQ=1$. Par le th\'eor\`eme de B\'ezout, $A$ et $B$ sont premiers entre eux.
+
+  \item Sens $\Leftarrow$. Supposons $A, B$ premiers entre eux. Montrons que $f$ est injective.
+Soit $P\in E$ tel que $f(P)=0$. Donc la division euclidienne s'\'ecrit : $AP=BQ+0$.
+Donc $B$ divise $AP$. Comme $A$ et $B$ sont premiers entre eux, par le lemme de Gauss,
+alors $B$ divise $P$. Or $B$ est de degr\'e $n+1$ et $P$ de degr\'e moins que $n$, 
+donc la seule solution est $P=0$. Donc $f$ est injective. 
+Comme $f : E\longrightarrow E$ est injective et $E$ est de dimension finie, alors $f$ est bijective.
+\end{enumerate}
+\fincorrection
+\finexercice

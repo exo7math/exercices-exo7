@@ -1,0 +1,36 @@
+\exercice{4197, quercia, 2010/03/11}
+\enonce[Centrale MP 2001]
+
+$D_1$, $D_2$, $D_3$ sont trois droites d'un plan portant les côtés
+d'un triangle équilatéral de côté~$a$.
+On pose $$\varphi : {D_1\times D_2\times D_3} \to \R, {(M,N,P)} \mapsto {MN+NP+PM.}$$
+Déterminer $\min\varphi$ et les triplets $(M,N,P)$ où ce minimum est atteint.
+
+\finenonce
+
+\noindication
+
+\correction
+Le minimum demandé existe car $\varphi(M,N,P)\to+\infty$ quand l'un au
+moins des points $M,N,P$ tend vers l'infini sur sa droite personnelle.
+Soient $D_1\cap D_2 = \{A\}$, $D_2\cap D_3 = \{B\}$, $D_3\cap D_1 = \{C\}$
+et $A'$, $B'$, $C'$ les milieux de $[B,C]$, $[C,A]$ et $[A,B]$.
+Déjà on a $\varphi(B',C',A') = \frac32a$ et $\varphi(A,N,P) \ge 2AP \ge a\sqrt3$
+donc le minimum n'est pas atteint lorsque l'un des points $M,N,P$ est confondu
+avec l'un des points $A,B,C$, ni non plus si l'un des points $M,N,P$
+est hors du triangle $ABC$.
+Pour $N,P$ fixés hors de $D_1$, on fait varier $M$ sur $D_1$~: $M = A + t\vec{AB}$ avec $t\in\R$
+et on considère $f(t) = \varphi(M,N,P)$.
+Alors $f'(t) = \Bigl(\vec{AB} \mid \frac{\vec{MN}}{MN} + \frac{\vec{MP}}{MP}\Bigr)$
+donc $f(t)$ est minimal lorsque $D_1$ est la bissectrice extérieure des
+demi-droites $[MN)$ et $[MP)$.
+
+Soit $(M,N,P)$ un triplet réalisant le minimum de~$\varphi$ et $\alpha,\beta,\gamma$
+les angles du triangle $MNP$ en $P,M$ et $N$. Les angles du triangle
+$AMN$ sont $\pi/3$, $(\pi-\beta)/2$ et $(\pi-\gamma)/2$ d'où
+$2\pi/3 = \beta+\gamma = \pi-\alpha$ et donc $\alpha = \pi/3 = \beta = \gamma$.
+On en déduit que $(MP)$ est paralèle à $(AB)$, $(MN)$ à $(BC)$ et $(NP)$ à $(AC)$
+puis que $(M,N,P) = (B',C',A')$.
+\fincorrection
+
+\finexercice

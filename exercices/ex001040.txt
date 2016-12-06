@@ -1,0 +1,48 @@
+\exercice{1040, liousse, 2003/10/01}
+\video{XwtvirsK2HU}
+\enonce
+Effectuer le produit des  matrices  :
+$$\left( \begin{array}{cc} 2 & 1  \\ 3& 2 \end{array} \right)\times
+ \left( \begin{array}{cc}1 & -1  \\ 1& 2 \end{array} \right) \ \ \ \  \left( \begin{array}
+ {ccc} 1 & 2 & 0  \\ 3 & 1 & 4 \end{array} \right) 
+\times
+\left( \begin{array}{ccc} -1 &-1& 0 \\ 1 & 4 & -1 \\ 2 & 1 & 2\end{array} \right)
+ \ \ \ \ \left( \begin{array}{ccc} a &b& c \\ c & b & a \\ 1 & 1 & 1\end{array} \right)
+\times
+ \left( \begin{array}{ccc} 1 &a& c \\ 1 & b & b \\ 1 & c & a\end{array} \right)$$
+\finenonce
+
+\noindication
+
+\correction
+Si $C = A \times B$ alors on obtient le coefficient $c_{ij}$ (situé à la $i$-ème ligne et la $j$-ème colonne
+de $C$) en effectuant le produit scalaire du $i$-ème vecteur-ligne de $A$ avec le $j$-éme vecteur colonne de $B$.
+
+On trouve  
+$$\left( \begin{array}{cc} 2 & 1  \\ 3& 2 \end{array} \right)\times
+ \left( \begin{array}{cc}1 & -1  \\ 1& 2 \end{array} \right)
+= \begin{pmatrix}
+  3 & 0 \\
+  5 & 1 \\  
+  \end{pmatrix}$$
+
+$$\left( \begin{array}
+ {ccc} 1 & 2 & 0  \\ 3 & 1 & 4 \end{array} \right) 
+\times
+\left( \begin{array}{ccc} -1 &-1& 0 \\ 1 & 4 & -1 \\ 2 & 1 & 2\end{array} \right)
+= \begin{pmatrix}
+  1 & 7 & -2 \\
+  6 & 5 & 7 \\ 
+  \end{pmatrix}$$
+
+$$\left( \begin{array}{ccc} a &b& c \\ c & b & a \\ 1 & 1 & 1\end{array} \right)
+\times
+ \left( \begin{array}{ccc} 1 &a& c \\ 1 & b & b \\ 1 & c & a\end{array} \right) 
+ = \begin{pmatrix}
+    a + b + c & a^2+b^2+c^2 & 2ac + b^2 \\
+    a + b + c & 2ac + b^2   & a^2+b^2+c^2 \\
+    3         &  a+b+c      & a+b+c \\
+\end{pmatrix}$$
+\fincorrection
+\finexercice
+

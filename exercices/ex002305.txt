@@ -1,0 +1,33 @@
+\exercice{2305, barraud, 2008/04/24}
+\enonce
+ Soit $C=A\times B$ le produit direct de deux anneaux.
+D\'ecrire les ensembles des \'el\'ements inversibles, des diviseurs
+de z\'ero et des \'el\'ements nilpotents de l'anneau $C$.
+\finenonce 
+
+\noindication
+
+\correction
+
+$C=A\times B$.
+\begin{align*}
+(a,b)\in (A\times B)^{\times}
+\Leftrightarrow&
+\exists(c,d)\in A\times B, \ (a,b)(c,d)=(1,1)\\
+\Leftrightarrow&
+\exists(c,d)\in A\times B, \ ac=1 \text{ et } bd=1\\
+\Leftrightarrow&
+a\in A^{\times} \text{ et } b\in B^{\times}\\
+\end{align*}
+ donc $(A\times B)^{\times}=A^{\times}\times B^{\times}$.
+
+De même, on obtient que l'ensemble $\mathcal{D}_{A\times B}$ des
+diviseurs de $0$ de $A\times B$ est
+$$
+\mathcal{D}_{A\times
+  B}=\mathcal{D}_{A}\times B\cup A\times\mathcal{D}_{B}\cup
+(A\setminus\{0\})\times\{0\}\cup\{0\}\times(B\setminus\{0\}).
+$$
+Enfin, pour les nilpotents $Nil(A\times B)=Nil(A)\times Nil(B)$.
+\fincorrection
+\finexercice

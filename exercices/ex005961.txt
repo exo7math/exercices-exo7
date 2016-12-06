@@ -1,0 +1,102 @@
+\exercice{5961, tumpach, 2010/11/11}
+\enonce
+\begin{enumerate}
+\item Pour tout $t>0$, on pose~:
+$$
+f_{t}(x) = \left(4\pi t \right)^{-\frac{n}{2}}
+e^{-\frac{|x|^2}{4t}}.
+$$
+\begin{enumerate}
+  \item Montrer que, pour tout $t>0$, $\int_{\mathbb{R}^n}
+f_t(x)\,dx = 1$. 
+  \item
+ Montrer  que, pour tout $\delta>0$, $\lim_{t\rightarrow
+0}\int_{\{|x|>\delta\}} f_t(x)\,dx = 0$.
+\end{enumerate}
+(On dit que $f_t$ est une \emph{approximation de la distribution de Dirac.})
+\item Soit $g$ une fonction continue born\'ee. Montrer que $f_t*g$
+est bien d\'efinie et que
+$$\lim_{t\rightarrow 0} f_t*g(x) = g(x).$$
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item Pour tout $t>0$, on pose~:
+$$
+f_{t}(x) = \left(4\pi t \right)^{-\frac{n}{2}}
+e^{-\frac{|x|^2}{4t}}.
+$$
+\begin{enumerate}
+\item On a
+\begin{eqnarray*}
+\int_{\mathbb{R}^n} f_t(x)\,dx & = & \left(4\pi t
+\right)^{-\frac{n}{2}} \int_{\mathbb{R}^n}
+e^{-\frac{|x|^2}{4t}}\,dx\\
+& = & \left(4\pi t \right)^{-\frac{n}{2}} \prod_{i= 1}^{n}
+\int_{\mathbb{R}} e^{-\frac{x_i^2}{4t}}\,dx_i.
+\end{eqnarray*}
+Sachant que $\int_{\mathbb{R}} e^{-t^2} \,dt = \sqrt{\pi}$, on en
+d\'eduit que
+$$
+\int_{\mathbb{R}^n} f_t(x)\,dx  = 1.
+$$
+
+ \item
+ Soit $\varepsilon>0$. Puisque $f_1$ est int\'egrable sur $\mathbb{R}^{n}$,
+ il existe un $R>0$ tel que $$\int_{\mathcal{B}(0, R)^c} f_1(x)\,dx < \varepsilon.$$
+ On remarque que $f_t(x) = t^{-\frac{n}{2}}\,f_1\left(\frac{x}{\sqrt{t}}
+ \right)$. On a alors,
+\begin{eqnarray*}
+\int_{\mathcal{B}(0, \delta)^c} f_t(x)\,dx &=&
+\int_{\mathcal{B}(0,
+\delta)^c}t^{-\frac{n}{2}}\,f_1\left(\frac{x}{\sqrt{t}}
+ \right) \,dx = t^{-\frac{n}{2}}\,\int_{\mathcal{B}\left(0,
+\frac{\delta}{\sqrt{t}}\right)^c} f_1(z) \,t^{\frac{n}{2}}\,dz
+\\&=& \int_{\mathcal{B}\left(0, \frac{\delta}{\sqrt{t}}\right)^c} f_1(z)\,dz
+\leq \varepsilon,
+\end{eqnarray*}
+d\`es que $t < \frac{\delta^2}{R^2}$.
+\end{enumerate}
+
+
+
+\item Soit $g$ une fonction continue  born\'ee. Alors il existe
+$M>0$ tel que $|g|< M$ et
+$$
+ \int_{\mathbb{R}^n} |f_t(x-y) \,g(y)|\,dy \leq M \int_{\mathbb{R}^n}
+ f_t(x-y)\,dy = M<+\infty,
+$$
+ainsi $y \mapsto f_t(x-y) \,g(y)$ est int\'egrable et $f_t*g$ est
+bien d\'efinie.  Puisque $\int_{\mathbb{R}^n} f_t(x) \,dx = 1$, on
+a
+\begin{eqnarray*}
+\left|f_t*g(x) - g(x) \right| 
+  &= \left| \int_{\mathbb{R}^n} f_t(y)g(x-y)\,dy - \int_{\mathbb{R}^n} f_t(y)g(x)\,dy \right| \\
+  &\leq \int_{\mathbb{R}^n} f_t(y) \left|g(x-y) - g(x)\right|\,dy. \\
+\end{eqnarray*}
+Soit $\varepsilon>0$. Puisque $g$ est continue en
+$x\in\mathbb{R}^n$, il existe $\delta>0$ tel que $|y|< \delta
+\Rightarrow |g(x-y) - g(x)|<\varepsilon$. Alors
+\begin{eqnarray*}
+\left|f_t*g(x) - g(x) \right| &\leq& \int_{\mathcal{B}(0, \delta)}
+f_t(y) \left|g(x-y) - g(x)\right|\,dy  \\ && + \int_{\mathcal{B}(0,
+\delta)^c} f_t(y) \left|g(x-y) - g(x)\right|\,dy\\
+&\leq & \varepsilon \int_{\mathcal{B}(0, \delta)} f_t(y)\,dy +
+2M\int_{\mathcal{B}(0, \delta)^c} f_t(y)\,dy\\
+&\leq& \varepsilon + 2M\int_{\mathcal{B}(0, \delta)^c} f_t(y)\,dy.
+\end{eqnarray*}
+D'apr\`es la question 1.(b), il existe $t_0>0$ tel que pour $t<
+t_0$, $\int_{\mathcal{B}(0, \delta)^c} f_t(y)\,dy \leq
+\frac{\varepsilon}{2M}$. Ainsi pour $t<t_0$,
+$$
+\left|f_t*g(x) - g(x) \right|< 2\varepsilon,
+$$
+i.e.
+$$\lim_{t\rightarrow 0} f_t*g(x) = g(x).$$
+\end{enumerate}
+\fincorrection
+
+\finexercice

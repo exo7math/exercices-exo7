@@ -1,0 +1,30 @@
+\exercice{5211, rouget, 2010/06/30}
+\enonce[**]
+Soit $A=\left\{\frac{1}{n}+(-1)^n,\;n\in\Nn^*\right\}$. Déterminer $\mbox{sup }A$ et $\mbox{inf }A$.
+\finenonce
+
+\noindication
+
+\correction
+
+Posons pour $n$ entier naturel non nul $u_n=\frac{1}{n}+(-1)^n$ de sorte que $A=\{u_n,\;n\in\Nn^*\}=\left\{0,\frac{1}{2}+1,\frac{1}{3}-1,\frac{1}{4}+1,\frac{1}{5}-1,...\right\}$.
+Pour $n\geq1$, $u_{2n}=1+\frac{1}{2n}$. Donc $\forall n\in\Nn^*$, $1<u_{2n}\leq\frac{3}{2}$.
+Pour $n\geq1$, $u_{2n-1}=-1+\frac{1}{2n-1}$. Donc $\forall n\in\Nn^*$, $-1<u_{2n-1}\leq0$.
+Par suite, $\forall n\in\Nn^*,\;-1<u_n\leq\frac{3}{2}$. Donc, $\mbox{sup }A$ et $\mbox{inf }A$ existent dans $\Rr$ et de plus $-1\leq\mbox{inf }A\leq\mbox{sup }A\leq\frac{3}{2}$.
+Ensuite, $\frac{3}{2}=u_2\in A$. Donc,
+
+\begin{center}
+\shadowbox{
+$\mbox{sup }A=\mbox{max }A=\frac{3}{2}$.
+}
+\end{center}
+Enfin, pour chaque entier naturel non nul $n$, ona $-1\leq\mbox{inf }A\leq u_{2n-1}=-1+\frac{1}{2n-1}$. On fait tendre  $n$ tend vers l'infini dans cet encadrement, on obtient
+
+\begin{center}
+\shadowbox{
+$\mbox{inf }A=-1$
+}
+\end{center}
+(cette borne inférieure n'est pas un minimum).
+\fincorrection
+\finexercice

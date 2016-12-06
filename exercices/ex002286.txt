@@ -1,0 +1,57 @@
+\exercice{2286, barraud, 2008/04/24}
+\enonce
+\begin{enumerate}
+  \item Trouver le nombre d'\'el\'ements de l'anneau
+quotient $\Zz[\sqrt{d}]/(m)$ o\`u $m\in \Zz$ et $m\ne 0$.
+  \item L'id\'eal principal endendr\'e par $2$ est-il premier
+dans l'anneau $\Zz[\sqrt{d}]$ ?
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+  Soit $\alpha=a+b\sqrt{d}\in\Zz[\sqrt{d}]$. Soit $a=mp+a'$ la division
+  euclidienne de $a$ par $m$, et $b=mq+b'$ celle de $b$ par $m$. Alors
+  $\alpha=m(p+q\sqrt{d})+a'+b'\sqrt{d}$. On en déduit que chaque classe
+  du quotient $\Zz[\sqrt{d}]/(m)$ a un représentant dans
+  $$
+    \mathcal{C}=\Big\{a+b\sqrt{d},\  (a,b)\in\{0,\dots,m-1\}^{2}\Big\}
+  $$
+  Par ailleurs si deux éléments $a+b\sqrt{d}$ et $a'+b'\sqrt{d}$ de cet
+  ensemble sont dans la même classe, alors $\exists c,d\in\Zz, \
+  a+b\sqrt{d}=(a'+b'\sqrt{d})+m(c+d\sqrt{d})$. On en déduit que $a=a'+mc$
+  et $b=b'+md$, et donc $a=a'$, $b=b'$.
+ 
+  Ainsi chaque classe de $\Zz[\sqrt{d}]/(m)$ a un représentant unique
+  dans $\mathcal{C}$. $\Zz[\sqrt{d}]/(m)$ et $\mathcal{C}$ sont donc en
+  bijection~: en particulier, $\Zz[\sqrt{d}]/(m)$ a $m^{2}$ éléments.
+  
+
+  \emph{Remarque}~: on a
+  $$
+    \Zz[\sqrt{d}]\sim \Zz[X]/(X^{2}-d).
+  $$
+  En effet l'application $\phi:\Zz[X]/(X^{2}-d)\to\Zz[\sqrt{d}]$,
+  $\bar{P}\mapsto P(\sqrt{d})$ est bien définie (si $\bar(P)=\bar{Q}$,
+  alors $P(\sqrt{d})=Q(\sqrt{d})$), et c'est un morphisme d'anneaux. De
+  plus, si $\phi(P)=0$, notons $P=Q(X^{2}-d)+(aX+b)$ la division
+  euclidienne de $P$ par $X^{2}-d$. En évaluant en $\sqrt{d}$, on a
+  $a\sqrt{d}+b=0$ donc $R=0$. On en déduit que $(X^{2}-d)|P$, i.e.
+  $\bar{P}=0$. On en déduit que $\ker\phi=\{0\}$, donc $\phi$ est
+  injective. Par ailleurs $\forall(a,b)\in\Zz^{2},
+  \phi(a+bX)=a+b\sqrt{d}$ donc $\phi$ est surjective.
+
+  \medskip
+
+  Si $d$ est pair, comme $\sqrt{d}\cdot\sqrt{d}=|d|\in(2)$ alors que
+  $\sqrt{d}\notin(2)$, $(2)$ n'est pas premier.
+
+  Si $d$ est impair~: $(1+\sqrt{d})(1+\sqrt{d})=(1+d)+2\sqrt{d}\in(2)$,
+  mais $(1+\sqrt{d})\notin(2)$ donc $(2)$ n'est pas premier.
+
+  \emph{Remarque}~: $\Zz[\sqrt{d}]/(2)\sim\Zz_{2}[X]/(X^{2}+\bar{d})$.
+  $(X^{2}+\bar{d})$ est $X^{2}$ ou $X^{2}+1$. Aucun de ces deux polynômes
+  n'est irréductible. Donc le quotient ne saurait être intègre.
+\fincorrection
+\finexercice

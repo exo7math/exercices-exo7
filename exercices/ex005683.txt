@@ -1,0 +1,79 @@
+\exercice{5683, rouget, 2010/10/16}
+\enonce[***]
+Soit $f$ l'endomorphisme de $\Rr^3$ dont la matrice dans la base canonique est $A$. Trouver les sous espaces stables par $f$ dans chacun des cas suivants :
+
+\begin{enumerate}
+ \item  $A =\left(
+\begin{array}{ccc}
+1&1&-1\\
+1&1&1\\
+1&1&1
+\end{array}
+\right)$
+\item  $A=\left(
+\begin{array}{ccc}
+2&2&1\\
+1&3&1\\
+1&2&2
+\end{array}
+\right)$
+\item  $A=\left(
+\begin{array}{ccc}
+6&-6&5\\
+-4&-1&10\\
+7&-6&4
+\end{array}
+\right)$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  $\chi_A=\left|
+\begin{array}{ccc}
+1-X&1&-1\\
+1&1-X&1\\
+1&1&1-X
+\end{array}
+\right|=(1-X)(X^2-2X)-(2-X)+(2-X) = -X(X-1)(X-2)$.
+
+On est dans le cas d'une matrice diagonalisable avec 3 valeurs propres simples.
+
+\textbf{Recherche des droites stables.} Dans chacun des cas, les droites stables sont les droites engendrées par des vecteurs propres. On obtient immédiatement les 3 droites stables : $E_0=\text{Vect}(e1)$ où $e_1=(1,-1,0)$, $E_1=\text{Vect}(e_2)$ où $e_2=(1,-1,-1)$ et $E_2=\text{Vect}(e_3)$ où $e_3=(0,1,1)$.
+
+\textbf{Recherche des plans stables.} Soit $P$ un plan stable par $f$. La restriction de $f$ à $P$ est un endomorphisme de $P$ et on sait de plus que le polynôme caractéristique de $f_{/P}$ divise celui de $f$. $f_{/P}$ est diagonalisable car $f$ l'est  car on dispose d'un polynôme scindé à racines simples annulant $f$ et donc $f_{/P}$. On en déduit que $P$ est engendré par deux vecteurs propres indépendants de $f_{/P}$ qui sont encore vecteurs propres de $f$. On obtient trois plans stables : $P_1 =\text{Vect}(e_2,e_3)$, $P_2 =\text{Vect}(e_1,e_3)$ et $P_3 =\text{Vect}(e_1,e_2)$.
+
+\item  $\chi_A=\left|
+\begin{array}{ccc}
+2-X&2&1\\
+1&3-X&1\\
+1&2&2-X
+\end{array}
+\right|=(2-X)(X^2-5X+4)-(-2X+2)+(X-1) = (1-X)((X-2)(X-4)-2-1) = (1-X)(X^2+6X-5) = -(X-1)^2(X-5)$. Puis $E_1$ est le plan d'équation $x+2y+z=0$ et $E_5=\text{Vect}((1,1,1))$.
+
+On est toujours dans le cas diagonalisable mais avec une valeur propre double.
+
+Les droites stables sont $E_5=\text{Vect}((1,1,1))$ et n'importe quelle droite contenue dans $E_1$. Une telle droite est engendrée par un vecteur de la forme $(x,y,-x-2y)$  avec $(x,y)\neq(0,0)$.
+
+\textbf{Recherche des plans stables.} Soit $P$ un plan stable par $f$. $f$ est diagonalisable et donc $f_{/P}$ est un endomorphisme diagonalisable de $P$. Par suite, $P$ est engendré par deux vecteurs propres indépendants de $f$. On retrouve le plan propre de $f$ d'équation $x+2y+z=0$ et les plans engendrés par $(1,1,1)$ et un vecteur quelconque non nul du plan d'équation $x+2y+z=0$. L'équation générale d'un tel plan est $(-a-3b)x+(2a+2b)y+(b-a)z = 0$ où $(a,b)\neq(0,0)$.
+
+\item  $\chi_A=\left|
+\begin{array}{ccc}
+6-X&-6&5\\
+-4&-1-X&10\\
+7&-6&4-X
+\end{array}
+\right|=(6-X)(X^2-3X+56)+4(6X+6)+7(5X-55)=-X^3+9X^2-15X-25=-(X+1)(X^2-10X+25)=-(X+1)(X-5)^2$.
+
+$E_{-1}=\text{Vect}(10,15,4)$ et $E_5=\text{Vect}((1,1,1))$. On est dans le cas où $A$ admet une valeur propre simple et une double mais n'est pas diagonalisable. Les droites stables par $f$ sont les deux droites propres.
+
+\textbf{Recherche des plans stables.} Soit $P$ un plan stable par $f$. Le polynôme caractéristique de $f_{/P}$ est unitaire et divise celui de $f$. Ce polynôme caractéristique est donc soit $(X-1)(X-5)$ soit $(X-5)^2$.
+
+Dans le premier cas, $f_{/P}$ est diagonalisable et $P$ est nécessairement le plan $\text{Vect}((10,15,4))+\text{Vect}((1,1,1))$  c'est-à-dire le plan d'équation $11x -6y -5z =0$.
+
+Dans le deuxième cas, $\chi_{f_{/P}}=(X-5)^2$ et $5$ est l'unique valeur propre de $f_{/P}$.  Le théorème de \textsc{Cayley}-\textsc{Hamilton} montre que $(f_{/P}-5Id)^2 = 0$ et donc $P$ est contenu dans $\text{Ker}(f-5Id)^2$. $\text{Ker}(f-5Id)^2$ est le plan d'équation $x=z$ qui est bien sûr stable par $f$ car $(f-5Id)^2$ commute avec $f$.
+\end{enumerate}
+\fincorrection
+\finexercice

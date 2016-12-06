@@ -1,0 +1,112 @@
+\exercice{5647, rouget, 2010/10/16}
+\enonce[***]
+Soient $A$, $B$, $C$ et $D$ quatre matrices carrées de format $n$. Montrer que si $C$ et $D$ commutent et si $D$ est inversible alors $\text{det}\left(
+\begin{array}{cc}
+A&B\\
+C&D
+\end{array}
+\right)=\text{det}(AD-BC)$. Montrer que le résultat persiste si $D$ n'est pas inversible.
+\finenonce
+
+\noindication
+
+\correction
+Si $D$ est inversible, un calcul par blocs fournit
+ 
+ 
+\begin{center}
+$\left(
+\begin{array}{cc}
+A&B\\
+C&D
+\end{array}
+\right)\left(
+\begin{array}{cc}
+D&0\\
+-C&D^{-1}
+\end{array}
+\right)=\left(
+\begin{array}{cc}
+AD-BC&BD^{-1}\\
+CD-DC&I
+\end{array}
+\right)=\left(
+\begin{array}{cc}
+AD-BC&BD^{-1}\\
+0&I
+\end{array}
+\right)$ (car $C$ et $D$ commutent)
+\end{center}
+
+et donc, puisque
+
+\begin{align*}\ensuremath
+\text{det}\left(\left(
+\begin{array}{cc}
+A&B\\
+C&D
+\end{array}
+\right)\left(
+\begin{array}{cc}
+D&0\\
+-C&D^{-1}
+\end{array}
+\right)\right)&=\text{det}\left(
+\begin{array}{cc}
+A&B\\
+C&D
+\end{array}
+\right)\text{det}\left(
+\begin{array}{cc}
+D&0\\
+-C&D^{-1}
+\end{array}
+\right)=\text{det}\left(
+\begin{array}{cc}
+A&B\\
+C&D
+\end{array}
+\right)\times\text{det}D\times\text{det}D^{-1}\\
+ &=\text{det}\left(
+\begin{array}{cc}
+A&B\\
+C&D
+\end{array}
+\right)
+\end{align*}
+
+et que $\text{det}\left(
+\begin{array}{cc}
+AD-BC&BD^{-1}\\
+0&I
+\end{array}
+\right)=\text{det}(AD-BC)$, on a bien $\text{det}\left(
+\begin{array}{cc}
+A&B\\
+C&D
+\end{array}
+\right)=\text{det}(AD-BC)$ (si $C$ et $D$ commutent).
+
+Si $D$ n'est pas inversible, $\text{det}(D-xI)$ est un polynôme en $x$ de degré $n$ et donc ne s'annule qu'un nombre fini de fois. Par suite, la matrice $D-xI$ est inversible sauf peut-être pour un nombre fini de valeurs de $x$. D'autre part, pour toute valeur de $x$, les matrices $C$ et $D-xI$ commutent et d'après ce qui précède, pour toutes valeurs de $x$ sauf peut-être pour un nombre fini, on a
+
+\begin{center}
+$\text{det}\text{det}\left(
+\begin{array}{cc}
+A&B\\
+C&D
+\end{array}
+\right)=\text{det}(A(D-xI)-BC)$.
+\end{center}
+
+Ces deux expressions sont encore des polynômes en $x$ qui coïncident donc en une infinité de valeurs de $x$ et sont donc égaux. Ces deux polynômes prennent en particulier la même valeur en $0$ et on a montré que
+
+\begin{center}
+si $C$ et $D$ commutent, $\text{det}\left(
+\begin{array}{cc}
+A&B\\
+C&D
+\end{array}
+\right)=\text{det}(AD-BC)$.
+\end{center}
+\fincorrection
+\finexercice

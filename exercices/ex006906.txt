@@ -1,0 +1,31 @@
+\exercice{6906, ruette, 2013/01/24}
+\enonce
+ On lance $10$ fois une pièce supposée bien équilibrée. 
+ On désigne par $X$ la fréquence du nombre de fois où pile a 
+ été obtenu (c'est-à-dire le nombre de pile divisé
+par 10).   
+\begin{enumerate}
+\item Quelle est  la loi de $X$ ?
+\item Avec quelle probabilité $X$  est-elle strictement au dessus de 0,5 ?
+\item Avec quelle probabilité $X$ est-elle comprise entre 0,4 et 0,6 (bornes
+incluses) ?
+\item Déterminer le plus petit entier $a>0$ telle que la probabilité que $X$ 
+soit dans l'intervalle $[0,5-\frac{a}{10},0,5+\frac{a}{10}]$ soit supérieure à $95\%$. 
+\item On lance la pièce $10$ fois. Elle tombe $3$ fois sur pile et
+$7$ fois sur face. D'après vous la pièce est-elle bien
+équilibrée (on justifiera sa réponse  en utilisant la question
+3~? Même question si on obtient 1 fois pile et 9 fois face.
+\end{enumerate}
+\finenonce
+\noindication
+
+\correction
+\begin{enumerate}
+\item $Y\sim B(10,1/2)$, $X=Y/10$. 
+\item $P(X>0,5)=P(Y>5)=P(Y=6,7,8,9,10)\simeq 0,377$.
+\item $P(0,4\le X\le 0,6)=P(4\le Y\le 6)=P(Y=4,5,6)\simeq 0,656$
+\item $P(3\le Y\le 7)\simeq 0,891$. $P(2\le Y\le 8)\simeq 0,978$. Donc $a=3$.
+\item Oui. Non.
+\end{enumerate}
+\fincorrection
+\finexercice

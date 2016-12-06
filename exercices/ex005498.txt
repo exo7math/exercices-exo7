@@ -1,0 +1,40 @@
+\exercice{5498, rouget, 2010/07/10}
+\enonce[**IT]
+Soit $r$ la rotation de $\Rr^3$, euclidien orienté, dont l'axe est orienté par $k$ unitaire et dont une mesure de l'angle est $\theta$.
+Montrer que pour tout $x$ de $\Rr^3$, $r(x)=(\cos\theta)x+(\sin\theta)(k\wedge x)+2(x.k)\sin^2(\frac{\theta}{2})k$.
+Application~:~écrire la matrice dans la base canonique (orthonormée directe de $\Rr^3$) de la rotation autour de $k=\frac{1}{\sqrt{2}}(e_1+e_2)$ et d'angle $\theta=\frac{\pi}{3}$.
+\finenonce
+
+\noindication
+
+\correction
+Si $x$ est colinéaire à $k$, $r(x)=x$, et si $x\in k^\bot,\;r(x)=(\cos\theta)x+(\sin\theta)k\wedge x$.
+Soit $x\in E$. On écrit $x=x_1+x_2$ où $x_1\in k^\bot$ et $x_2\in\mbox{Vect}(k)$. On a $x_2=(x.k)k$ (car $k$ est unitaire) et $x_1=x-(x.k)k$. Par suite,
+
+\begin{align*}\ensuremath
+r(x)&=r(x_1)+r(x_2)=(\cos\theta)x_1+(\sin\theta)k\wedge x_1+x_2=(\cos\theta)(x-(x.k)k)+(\sin\theta)k\wedge x+(x.k)k\\
+ &=(\cos\theta)x+(1-\cos\theta)(x.k)k+sin\theta(k\wedge x)=(\cos\theta)x+2\sin^2\left(\frac{\theta}{2}\right)(x.k)k+sin\theta(k\wedge x)
+\end{align*}
+\textbf{Application.} Si $k=\frac{1}{\sqrt{2}}(e_1+e_2)$ et $\theta=\frac{\pi}{3}$, pour tout vecteur $x$, on a~:
+
+$$r(x)=\frac{1}{2}x+\frac{1}{2}(x.k)k+\frac{\sqrt{3}}{2}(k\wedge x),$$
+puis,
+$r(e_1)=\frac{1}{2}e_1+\frac{1}{4}(e_1+e_2)-\frac{\sqrt{3}}{2\sqrt{2}}e_3=\frac{1}{4}(3e_1+e_2-\sqrt{6}e_3)$
+
+$r(e_2)=\frac{1}{2}e_2+\frac{1}{4}(e_1+e_2)+\frac{\sqrt{3}}{2\sqrt{2}}e_3=\frac{1}{4}(e_1+3e_2+\sqrt{6}e_3)$
+
+$r(e_3)=\frac{1}{2}e_3+\frac{\sqrt{3}}{2\sqrt{2}}(-e_2+e_1)=\frac{1}{4}(\sqrt{6}e_1-\sqrt{6}e_2+2e_3)$.
+
+\begin{center}
+\shadowbox{
+La matrice cherchée est $\frac{1}{4}\left(
+\begin{array}{ccc}
+3&1&\sqrt{6}\\
+1&3&-\sqrt{6}\\
+-\sqrt{6}&\sqrt{6}&2
+\end{array}
+\right)$.
+}
+\end{center}
+\fincorrection
+\finexercice

@@ -1,0 +1,35 @@
+\exercice{2657, matexo1, 2002/02/01}
+\video{2r2CIG013os}
+\enonce
+Calculer
+$$\ell = \lim_{x\to+\infty}\left(\frac{\ln(x+1)}{\ln x}\right)^x.$$
+Donner un équivalent de 
+$$\left(\frac{\ln(x+1)}{\ln x}\right)^x - \ell$$
+lorsque $x \to +\infty$.
+\finenonce
+
+\indication
+Faites un développement faisant intervenir des $x$ et des $\ln x$.
+Trouvez $\ell=1$.
+\finindication
+
+\correction
+
+$$\ln(x+1) = \ln \Big(x \times (1+\frac1x)\Big) = \ln x+\ln\big(1+{\frac1x}\big) = \ln x + \frac 1x + o(\frac1x)$$
+Donc 
+$$\frac{\ln(x+1)}{\ln x} = 1 + \frac1{x\ln x} + o(\frac1{x\ln x}).$$
+Ainsi
+\begin{align*}
+\left(\frac{\ln(x+1)}{\ln x}\right)^x 
+  & = \exp\left( x \ln \left( \frac{\ln(x+1)}{\ln x}\right) \right)  \\
+  & = \exp\left( x \ln \left(1 + \frac1{x\ln x} + o(\frac1{x\ln x})\right)  \right)  \\
+  & = \exp\left( x \left(\frac1{x\ln x} + o(\frac1{x\ln x})\right) \right)  \\
+  & = \exp\left( \frac1{\ln x} + o(\frac1{\ln x})\right)  \\
+  & = 1 + \frac1{\ln x} + o(\frac1{\ln x}) \\
+\end{align*}
+On en déduit immédiatement que 
+$$\lim_{x\to+\infty}\left(\frac{\ln(x+1)}{\ln x}\right)^x = 1$$
+et que lorsque $x\to + \infty$
+$$\left(\frac{\ln(x+1)}{\ln x}\right)^x - 1 \sim \frac1{\ln x}.$$
+\fincorrection
+\finexercice

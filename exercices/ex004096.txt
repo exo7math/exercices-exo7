@@ -1,0 +1,46 @@
+\exercice{4096, quercia, 2010/03/11}
+\enonce[Zéros entrelacés (Centrale MP 2003)]
+Soient $r$ et $q$ deux fonctions continues définies sur~$I={[a,b]}$ telles que~:
+$\forall\ x\in I,\ r(x)\ge q(x)$.
+On considère les équations différentielles~:
+$$(E_1)\Leftrightarrow y'' + qy = 0,
+  \qquad (E_2)\Leftrightarrow z'' + rz = 0.$$
+\begin{enumerate}
+  \item Soit~$y$ une solution de~$(E_1)$ et $x_0,x_1$ deux zéros consécutifs
+    de~$y$. $y'(x_0)$ et $y'(x_1)$ peuvent-ils être nuls~? Que dire de leurs signes~?
+    
+  \item Soit~$z$ une solution de~$(E_2)$. On considère
+    $W(x) = \begin{vmatrix}y(x)&z(x)\cr y'(x)&z'(x)\cr\end{vmatrix}$. Calculer $W'(x)$
+    et $W(x_1)-W(x_0)$.
+    
+  \item Montrer que $z$ a un zéro dans~$]x_0,x_1[$ ou $z(x_0)=z(x_1)=0$.
+    
+  \item Soit~$u$ une solution de~$(E_1)$. Montrer que $u$ est soit proportionnelle
+    à~$y$, soit admet un unique zéro dans~$]x_0,x_1[$.
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item On suppose $y\ne 0$ sinon $y$ n'a pas de zéros consécutifs.
+    Comme $y(x_0) = 0$, on a $y'(x_0)\ne 0$ sinon $y=0$. Ceci implique que chaque
+    zéro de~$y$ est isolé, donc la notion de zéros consécutifs est pertinente.
+    Enfin, $y'(x_0)$ et $y'(x_1)$ sont de signes opposés sinon il existe un
+    autre zéro dans~$]x_0,x_1[$.
+    
+  \item $W' = (q-r)yz$. $W(x_1)-W(x_0) = y'(x_0)z(x_0) - y'(x_1)z(x_1)$ (non simplifiable).
+  \item Si $z$ ne s'annule pas dans $]x_0,x_1[$ alors $W'$ est de signe constant
+    sur cet intervalle. L'examen des différents cas possibles de signe apporte une
+    contradiction entre les signes de~$W'$ et de~$W(x_1)-W(x_0)$ si $z(x_0)\ne 0$
+    ou $z(x_1) \ne 0$.
+  \item On prend $r=q$, $z=u$. Si $u(x_0)\ne 0$
+    alors $u$ admet un zéro dans~$]x_0,x_1[$ et en permutant les rôles de~$u$ et~$y$,
+    le prochain zéro éventuel de~$u$ vient après $y_1$.
+    Sinon, $u = \frac{u'(x_0)}{y'(x_0)}y$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

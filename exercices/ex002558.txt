@@ -1,0 +1,47 @@
+\exercice{2558, tahani, 2009/04/01}
+\enonce 
+On consid\`ere l'\'equation
+$$x'=3x^{2/3} \mbox{                          :} (1)$$
+avec condition initiale $x(0)=0$.
+\begin{enumerate}
+\item Soit $\varphi$ une solution de $(1)$ d\'efinie sur
+$\mathbb{R}$ telle que $\varphi(0)=0$; on pose $\lambda=\inf \{ t
+\leq 0; \varphi(t)=0\} \leq +\infty$. Montrez que $\varphi$ est
+identiquement nulle sur $(\lambda,\mu)$. 
+\item Montrer que
+$\varphi$ vaut $(t-\lambda)^3$ si $t\leq \lambda$, $0$ sur
+$[\lambda, \mu]$ et $(t-\mu)^3$ si $t \geq \mu$; en d\'eduire
+toutes les solutions maximales de $(1)$ d\'efinies sur
+$\mathbb{R}$ avec $x(0)=0$.
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item Soit $\lambda_n$ et $\mu_n$ deux suites de points tels que
+$\varphi(\lambda_n)=\varphi(\mu_n)=0$ et convergeant
+respectivement vers $\lambda$ et $\mu$, il reste \`a montrer que
+$\varphi$ est nulle sur chaque interval $[\lambda_n,\mu_n]$. Soit
+$c$ un extremum de $\varphi$ sur cet interval, on a alors
+necessairement $\varphi'(c)=0$ et donc $3c^{2/3}=0$ et donc $c=0$
+et donc $\varphi(c)=\varphi(0)=0$. Par cons\'equent le sup et le
+min de $\varphi$ sur $[\lambda_n,\mu_n]$ sont nuls et donc
+$\varphi$ est aussi nulle sur cet intervalle. En passant \`a la
+limite, on a prouv\'e que $\varphi$ est nulle sur $]\lambda,\mu[$.
+\item On v\'erifie que les solutions propos\'ees v\'erifient
+l'\'equation diff\'erentielle $(1)$. La fonction $x^{2/3}$ est
+lipschitzienne par rapport \`a $x$ d\`es que $x\neq 0$. Si
+$\varphi_2$ est une solution maximale sur $\mathbb{R}$ v\'erifiant
+$\varphi_2(0)=0$, il existe alors n\'ecessairement $\lambda, \mu$
+(d\'efinis pr\'ec\'edement) tels que $\varphi_2$ est nulle sur
+$]\lambda,\mu[$. Par continuit\'e de la solution elle v\'erifie
+$\varphi(\lambda)=\varphi(\mu)=0$. Mais alors
+$\varphi_2'-\varphi=0$ est donc $\varphi_2=\varphi+K$ o\`u $K$ est
+une constante donn\'ee. Du fait que
+$\varphi_2(\lambda)=\varphi(\lambda)+K=0+K=0$, on a $K=0$ ce qui
+termine la d\'emonstration.
+\end{enumerate}
+\fincorrection
+\finexercice

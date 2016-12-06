@@ -1,0 +1,42 @@
+\exercice{2623, debievre, 2009/05/19}
+\enonce
+
+Soit $f$ la fonction sur $\R^2$ d\'efinie par $f(x,y)= x\cos y + y\exp x$. 
+\begin{enumerate}
+ \item  Calculer ses d\'eriv\'ees partielles.
+ \item Soit $v=(\cos \theta, \sin \theta)$, $\theta\in [0,2\pi[$. Calculer $D_vf(0,0)$. Pour quelle(s) valeurs de $\theta$ cette d\'eriv\'ee directionnelle de $f$ est-elle maximale/minimale? Que cela signifie-t-il?
+\end{enumerate}
+\finenonce
+
+\indication 
+Interpr\'eter
+la d\'eriv\'ee directionnelle \`a l'aide de l'intersection du graphe 
+de la fonction avec un plan convenable.
+\finindication
+
+\correction
+\begin{enumerate}  
+\item $\frac{\partial f}{\partial x}=\cos y + y\exp x$,\ 
+$\frac{\partial f}{\partial y}=-x\sin y + \exp x $.
+
+\item $D_vf(0,0)=\cos \theta \,\frac{\partial f}{\partial x}(0,0)
++\sin \theta \,\frac{\partial f}{\partial y}(0,0)
+=\cos \theta +\sin \theta$.
+Cette d\'eriv\'ee directionnelle de $f$ est maximale
+quand $\sin \theta = \cos \theta = \frac{\sqrt{2}}{2}$, c.a.d. quand
+  $\theta =\frac \pi 4$,
+et minimale quand $\sin \theta = \cos \theta = -\frac{\sqrt{2}}{2}$, 
+c.a.d. quand  $\theta =\frac 54 \pi$.
+
+Signification g\'eom\'etrique:
+Le plan engendr\'e par le vecteur $(\cos \theta,\sin \theta ,0)$ 
+et l'axe des $z$ rencontre le graphe $z=f(x,y)$ en une courbe.
+Cette courbe est de pente maximale en valeur absolue pour
+$\cos \theta=\sin \theta=\frac{\sqrt{2}}{2}$ et
+$\cos \theta=\sin \theta=-\frac{\sqrt{2}}{2}$ (m\^eme plan).
+Les deux signes s'expliquent par les deux orientations possibles de cette courbe
+(sens du param\'etrage).
+\end{enumerate}
+\fincorrection
+\finexercice
+

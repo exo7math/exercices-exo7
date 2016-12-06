@@ -1,0 +1,23 @@
+\exercice{4699, quercia, 2010/03/16}
+\enonce[Polytechnique MP$^*$ 2000]
+Soit $h$ croissante de~$\R^+$ dans $\R^+$, tendant vers~$+\infty$ en~$+\infty$,
+et telle que $h(x+1)-h(x)$ tend vers~$0$ en~$+\infty$.
+Soit~$V$ l'ensemble des valeurs d'adh{\'e}rence de la suite de terme g{\'e}n{\'e}ral~$e^{ih(n)}$
+Montrer que $V$ est exactement le cercle trigonom{\'e}trique
+(i.e. $\{z\in\C,\ |z|=1\}$).
+
+
+\finenonce
+
+\noindication
+
+\correction
+Si $e^{i\alpha}$ n'est pas valeur d'adh{\'e}rence alors il existe
+$\delta>0$ tel que $|e^{ih(n)}-e^{i\alpha}|> \delta$ pour tout~$n$
+assez grand donc l'ensemble $\bigcup_{k\in\N}[\alpha-\delta+2k\pi,\alpha-\delta+2k\pi]$
+ne contient aucun terme de la suite $(h(n))$ pour $n$ assez grand ce qui
+contredit les hypoth{\`e}ses $h(n)\xrightarrow[n\to\infty]{}+\infty$ et
+$h(n+1)-h(n)\xrightarrow[n\to\infty]{}0$.
+\fincorrection
+
+\finexercice

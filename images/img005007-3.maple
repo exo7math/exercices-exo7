@@ -1,0 +1,8 @@
+x:=sqrt((t^2-2)/(t^4-1));
+u:=sqrt((1-2*t^2)/(1-t^4));
+p1:=plot([x,t*x,t=-1..1],-2..3,-2..2):
+p2:=plot([t*u,u,t=0..sqrt(1/2)],-2..3,-2..2):
+p3:=plot([t*u,-u,t=0..sqrt(1/2)],-2..3,-2..2):
+p4:=plot([abs(t),t,t=-2..2],-2..3,-2..2,color=yellow):
+with(plots):
+print(display({p1,p2,p3,p4}));

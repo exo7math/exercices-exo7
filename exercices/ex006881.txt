@@ -1,0 +1,55 @@
+\exercice{6881, gammella, 2012/05/29}
+
+\enonce
+En utilisant la formule de Green-Riemann, calculer
+$I= \iint_{\mathcal{D}} xydxdy$
+o\`u $$\mathcal{D}=\{(x,y)\in \Rr^2\, |\, x\geq0; y\geq 0;x+y\leq 1\}.$$
+\finenonce
+
+\indication
+On rappelle la formule de Green-Riemann qui permet de faire le lien entre intégrale
+double et intégrale curviligne :
+
+\textbf{Théorème.} 
+Soit $\mathcal{D}$ un domaine de $\Rr^2$ limité par une courbe
+fermée $\mathcal{C}$ que l'on suppose coupée
+par toute parallèle aux axes en deux points au plus. On considère une forme
+différentielle
+$\omega=Pdx+Qdy$  définie sur $\mathcal{D}$. Si
+les fonctions $P$ et $Q$ sont de classe $C^{1}$, on a :
+$$\int_{\mathcal{ C}^+} Pdx+Qdy=\iint_{\mathcal{D}} ( \frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y} ) dx dy$$
+o\`u l'on a noté $\mathcal{C}^{+}$ la courbe $\mathcal{C}$ que l'on a
+orientée dans le sens direct.
+\finindication
+
+\correction
+On rapporte le plan à un repère orthonormé direct d'origine $O$.
+D'après la formule de Green-Riemann, en choisissant de prendre $P=0$ et
+$Q=x^2y$ de sorte que  $ \frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}=xy$, on obtient :
+$$I= \iint_{\mathcal{D}} xydxdy=\int_{T} x^2ydy$$
+o\`u l'on a noté $T$ le triangle $OAB$ orienté dans le sens direct
+avec $O(0,0)$, $A(1,0)$ et $B(1,1)$.
+Ainsi 
+$$I=\iint_{\mathcal{D}} xydxdy=\int_{\overset{\frown}{OA}} x^2ydy
++\int_{\overset{\frown}{AB}} x^2ydy+
+\int_{\overset{\frown}{BO}} x^2ydy.$$
+L'intégrale curviligne d'une forme différentielle sur un chemin est indépendant du paramétrage choisi 
+pour ce chemin. Pour le calcul, nous choisissons de paramétrer
+$\overset{\frown}{OA}$ par $x=t$ et $y=0$ avec $t$ variant de $0$ à $1$ et ainsi
+$\int_{\overset{\frown}{OA}} x^2ydy=0$. 
+De m\^eme, nous choisissons de paramétrer
+$\overset{\frown}{BO}$ par $x=0$ et $y=t$ avec $t$ variant de $1$ à $0$ et ainsi
+$\int_{\overset{\frown}{BO}} x^2ydy=0$. 
+Enfin, nous choisissons de paramétrer
+$\overset{\frown}{AB}$ par $x=t$ et $y=1-t$ avec $t$ allant de $1$ à $0$ et donc :
+$$I= \iint_{\mathcal{D}} xydxdy=\int_{\overset{\frown}{AB}} x^2ydy
+= \int_1^0  \frac{t^2(1-t) }{2}(-dt)
+= \int_0^1  \frac{t^2(1-t)}{2} dt = 
+   \frac{1}{24}.$$
+ Remarquons qu'il n'aurait pas été plus difficile ici de calculer directement l'intégrale
+ double sans utiliser la formule de Green-Riemann :
+ $$\iint_{\mathcal{D}} xy dx dy=
+  \int_{0^1} (\int_{0}^{1-x} xy dy) dx=  \int_0^1 x [\frac{y^2}{2}]_0^{1-x} dx
+ = \int_0^1 x\frac{(1-x)^2}{2}dx =  \frac{1}{24}.$$
+\fincorrection
+\finexercice

@@ -1,0 +1,34 @@
+\exercice{2229, matos, 2008/04/23}
+\enonce[Matrices de Householder]
+
+\begin{enumerate}
+\item Soit $v$ un vecteur r\'eel v\'erifiant $v^Tv=1$. Montrer que la matrice de Householder
+$$H(v)=I-2vv^T$$
+repr\'esente une sym\'etrie par rapport au sous--espace vectoriel form\'e par les vecteurs orthogonaux aux vecgteurs $v$. En d\'eduire que $\det (H(v))=-1$.
+\item D\'emontrer que toute matrice orthogonale est le produit de au plus $n$ matrices de Householder. En d\'eduire une interpr\'etation g\'eom\'etrique des matrices orthogonales.
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item
+Soit $P$ l'op\'erateur de projection dans le sous-espace $U$ de dimension 1 g\'en\'er\'e par $v$. Alors $Q=I-P$ est l'op\'erateur de projection sur l'hyperplan $U^{\bot}$ orthogonal \`a $U$. On a d\'ej\`a vu que $Pw=vv^Tw\quad \forall w$, et donc $Qw=w-vv^Tw$. On obtient
+
+$P(H(v)w) =P(w_(2v^Tw)v)=(v^Tw)v-2v^Twvv^Tv=-(v^Tw)v=-Pw$
+
+
+$Q(H(v)w)= H(v)w -P(H(v)w)=w-2vv^Tw+v^Twv=w-v^Twv=Qw$.
+
+La matrice $H(v)$ repr\'esente donc une sym\'etrie par rapport \`a l'hyperplan $U^{\bot}$. On conclut que les vecteurs de $U^{\bot}$ sont invariants par $H(v)$.
+
+$V(v)w=w\quad \forall w\in U^{\bot}, \quad \mbox{dim} U^{\bot}=n-1\Rightarrow \lambda =1$ est valeur propre de $H(v)$ avec multiplicit\'e $n-1$.
+
+$H(v)v=-v\mp \lambda =-1$ est valeur propre de multiplicit\'e 1. Donc
+ $$\det H(v)=\prod_{i=1}^n \lambda_i(H(v))=-1$$
+\item On sait qu'il exite des matrices de Householder $H_1, H_1, \ldots ,H_{n-1}$ telles que $H_{n-1}\cdots H_1A=A_{n}$ matrice triangulaire sup\'erieure. Comme $A$ est orthogonale on conclut que $A_n$ est orthogonale. Mais une matrice triangulaire sup\'erieure orthogonale est forc\'ement diagonale $\Rightarrow A_n=$diag$(\pm 1)$. On peut s'arranger pour que  $(A_n)_{ii} >0 \quad i=1,\ldots, n-1.$ Donc soit $A_n=I$ soit $A_n=$diag$(1,1,\ldots , 1,-1)=H(e_n)$ et finalement la matrice orthogonale $A$ s'\'ecrit
+$$A=H_1 \cdots H_{n-1}H(e_n)$$
+\end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,52 @@
+\exercice{48, bodin, 1998/09/01}
+\video{b63m6T3TlsY}
+\enonce
+
+\begin{enumerate}
+    \item R\'esoudre $z^3 = 1$ et montrer que les racines s'\'ecrivent $1$, $j$, $j^2$.
+Calculer $1+j+j^2$ et en d\'eduire les racines de $1+z+z^2 =0$.
+    \item R\'esoudre $z^n = 1$ et montrer que les racines s'\'ecrivent
+ $1,\epsilon,\ldots,\epsilon^{n-1}$. En d\'eduire les racines de $1+z+z^2+\cdots+z^{n-1} =0$.
+Calculer, pour $p \in \Nn$, $1+\epsilon^p+\epsilon^{2p}+\cdots+\epsilon^{(n-1)p}$.
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+\textbf{Calcul de racine $n$-i\`eme.} Soit $z\in\Cc$ tel que
+$z^n=1$, d\'ej\`a $|z|^n=1$ et donc $|z|=1$. \'Ecrivons $z =
+e^{i\theta}$. L'\'equation devient
+$$e^{in\theta} = e^{0} =1
+\Leftrightarrow n\theta = 0 + 2k\pi, \ k\in \Zz \Leftrightarrow \theta =
+\frac{2k\pi}{n}, \ k\in \Zz.$$ Les solution sont donc
+$$\mathcal{S} = \left\lbrace e^{\frac{2ik\pi}{n}}, \ k\in \Zz\right\rbrace.$$
+Comme le polyn\^ome $z^n-1$ est de degr\'e $n$ il a au plus $n$
+racines. Nous choisissons pour repr\'esentants :
+$$\mathcal{S} = \left\lbrace e^{\frac{2ik\pi}{n}}, \ k= 0,\ldots,n-1\right\rbrace.$$
+De plus si $\epsilon = e^{\frac{2i\pi}{n}}$ alors $\mathcal{S} =
+\left\lbrace \epsilon^k, \ k= 0,\ldots,n-1\right\rbrace.$ Ces
+racines sont les sommets d'un polygone r\'egulier \`a $n$
+c\^ot\'es inscrit dans le cercle unit\'e.
+
+
+
+Soit $P(z) = \sum_{k=0}^{n-1}z^k=\frac{1-z^{n}}{1-z}$ pour
+$z\not=1$. Donc quelque soit $z\in\mathcal{S}\setminus\{ 1 \}$
+$P(z) = 0$, nous avons ainsi trouver $n-1$ racines pour $P$ de
+degr\'e $n-1$, donc l'ensemble des racines de $P$ est exactement
+$\mathcal{S}\setminus\{ 1 \}$.
+
+
+
+
+Pour conclure soit  $Q_p(z) = \sum_{k=0}^{n-1}\epsilon^{kp}$.\\
+Si $p = 0 +\ell n$, $\ell \in \Zz$ alors $\epsilon^{kp}=\epsilon^{k\ell n}=(\epsilon^n)^{k \ell}
+=1^{k \ell}=1$. Donc $Q_p(z)  = \sum_{k=0}^{n-1} 1 = n$. \\
+Sinon $Q_p(z)$ est la somme d'une suite g\'eom\'etrique de raison
+$\epsilon^p$ :
+$$ Q_p(z) = \frac{1-\left( \epsilon^p \right)^n}{1-\epsilon^p}
+= \frac{1-\left( \epsilon^n \right)^p}{1-\epsilon^p} =
+\frac{1-1}{1-\epsilon^p}=0.$$
+\fincorrection
+\finexercice

@@ -1,0 +1,20 @@
+\exercice{5223, rouget, 2010/06/30}
+\enonce[**]
+Soit $(u_n)_{n\in\Nn}$ une suite arithmétique ne s'annulant pas. Montrer que pour tout entier naturel $n$, on a $\sum_{k=0}^{n}\frac{1}{u_ku_{k+1}}=\frac{n+1}{u_0u_{n+1}}$.
+\finenonce
+
+\noindication
+
+\correction
+Soit $r$ la raison de la suite $u$.
+Pour tout entier naturel $k$, on a 
+
+\begin{center}
+$\frac{r}{u_ku_{k+1}}=\frac{u_{k+1}-u_k}{u_ku_{k+1}}=\frac{1}{u_k}-\frac{1}{u_{k+1}}$.
+\end{center}
+En sommant ces égalités, on obtient~:
+
+$$r\sum_{k=0}^{n}\frac{1}{u_ku_{k+1}}=\sum_{k=0}^{n}\left(\frac{1}{u_k}-\frac{1}{u_{k+1}}\right)=\frac{1}{u_0}-\frac{1}{u_{n+1}}=\frac{u_{n+1}-u_0}{u_0u_{n+1}}=\frac{(n+1)r}{u_0u_{n+1}}.$$
+Si $r\neq0$, on obtient $\sum_{k=0}^{n}\frac{1}{u_ku_{k+1}}=\frac{(n+1)}{u_0u_{n+1}}$, et si $r=0$ (et $u_0\neq0$), $u$ est constante et le résultat est immédiat.
+\fincorrection
+\finexercice

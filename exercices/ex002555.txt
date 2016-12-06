@@ -1,0 +1,48 @@
+\exercice{2555, tahani, 2009/04/01}
+\enonce
+Trouver le volume maximum
+d'une boite rectangulaire inscrite dans la sph\`ere d'\'equation
+$x^2+y^2+z^2=R^2$.
+\finenonce 
+
+\noindication
+
+\correction
+Le volume d'une boite \'etant invariant par rotations, on peut
+toujours supposer que toutes les boites sont centr\'ees \`a
+l'origine et on des cot\'es parall\`eles aux axes de
+coordonn\'ees. Par cons\'equent, la donn\'ee d'un point $(x,y,z)$
+sur la sph\`ere d\'efinit de mani\`ere unique une boite
+rectangulaire dont l'un des sommets est le point $(x,y,z)$. On
+prendra $x,y$ et $z$ positifs car une telle boite a toujours un
+sommet dans le secteur positif de l'espace. Par cons\'equent, on
+doit maximiser la fonction volume $g(x,y,z)=8xyz$ sur la
+sous-vari\'et\'e $S$ d\'efinie par l'\'equation $f=0$ avec
+$f(x,y,z)=x^2+y^2+z^2-R^2$. Un point critique de $g$ sur $S$
+v\'erifie $$Dg(x,y,z)=\lambda Df(x,y,z)$$ et $f(x,y,z)=0$. On a
+obtient alors le syst\`eme d'\'equations:
+$$\begin{array}{c}
+8yz=2x \\
+8xz=2y \\
+8xy=2z \\
+x^2+y^2+z^2=R^2
+\end{array}$$
+
+Par cons\'equent
+$$\begin{array}{c}
+8xyz=2x^2 \\
+8xyz=2y^2 \\
+8xyz=2z^2 \\
+x^2+y^2+z^2=R^2
+\end{array}$$
+et donc comme $x, y$ et $z$ sont positifs, on a
+$x=y=z=\frac{R}{\sqrt{3}}$. Or $g$ est continue et $S^+=S\cap \{x
+\geq 0; y \geq 0; z \geq0\}$ est un compact. Comme $g$ est nulle
+sur le bord de $S^+$, le maximum de $g$ est ateint en un point
+critique de $g$ dans l'int\'erieur de $S^+$. Le seul point
+critique de $g$ est donc bien ce maximum recherch\'e. Ici, il n'y
+a pas eu besoin de calculer la hessienne de $g$ sur $S$ par la
+formule: $$H=D^2g-\lambda D^2f$$ o\`u $\lambda$ est le coefficient
+de lagrange trouv\'e pr\'ec\'edemment.
+\fincorrection
+\finexercice

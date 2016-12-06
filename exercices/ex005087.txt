@@ -1,0 +1,37 @@
+\exercice{5087, rouget, 2010/06/30}
+\enonce[***I]
+Existence et calcul de $\int_{0}^{\sin^2x}\Arcsin\sqrt{t}\;dt+\int_{0}^{\cos^2x}\Arccos\sqrt{t}\;dt$.
+\finenonce
+
+\noindication
+
+\correction
+Pour $x$ réel, on pose
+$f(x)=\int_{0}^{\sin^2x}\Arcsin\sqrt{t}\;dt+\int_{0}^{\cos^2x}\Arccos\sqrt{t}\;dt$.\\
+La fonction $t\mapsto\Arcsin\sqrt{t}$ est continue sur $[0,1]$. Donc, la fonction $y\mapsto\int_{0}^{y}\Arcsin\sqrt{t}\;dt$ est définie et dérivable sur $[0,1]$. De
+plus, $x\mapsto\sin^2x$ est définie et dérivable sur $\Rr$ à valeurs dans 
+$[0,1]$. Finalement, la fonction $x\mapsto\int_{0}^{\sin^2x}\Arcsin\sqrt{t}\;dt$ est définie
+et dérivable sur $\Rr$.
+De même, la fonction $t\mapsto\Arccos\sqrt{t}$ est continue sur $[0,1]$. Donc, la fonction $y\mapsto\int_{0}^{y}\Arccos\sqrt{t}\;dt$ est définie et dérivable sur $[0,1]$. De plus, la fonction $x\mapsto\cos^2x$ est définie
+et dérivable sur $\Rr$, à valeurs dans $[0,1]$. Finalement, la fonction $x\mapsto\int_{0}^{\cos^2x}\Arccos\sqrt{t}\;dt$ est définie
+et dérivable sur $\Rr$.
+Donc, $f$ est définie et dérivable sur $\Rr$ et, pour tout réel $x$,
+
+\begin{align*}
+f'(x)&=2\sin x\cos x\Arcsin(\sqrt{\sin^2x})-2\sin x\cos x\Arccos(\sqrt{\cos^2x})\\
+ &=2\sin x\cos x\left(\Arcsin(|\sin x|)-\Arccos(|\cos x|)\right).
+\end{align*}
+On note alors que $f$ est $\pi$-pérodique et paire. Pour $x$ élément de
+$[0,\frac{\pi}{2}]$, $f'(x)=2\sin x\cos x(x-x)=0$. $f$ est donc constante sur $[0,\frac{\pi}{2}]$ et pour $x$ élément
+de $[0,\frac{\pi}{2}]$,
+$f(x)=f\left(\frac{\pi}{4}\right)=\int_{0}^{1/2}\Arcsin\sqrt{t}\;dt+\int_{0}^{1/2}\Arccos\sqrt{t}dt=\int_{0}^{1/2}\frac{\pi}{2}\;dt=
+\frac{\pi}{4}$. Mais alors, par parité et $\pi$-périodicité,
+
+\begin{center}
+\shadowbox{
+$\forall
+x\in\Rr,\;\int_{0}^{\sin^2x}\Arcsin\sqrt{t}\;dt+\int_{0}^{\cos^2x}\Arccos\sqrt{t}\;dt=\frac{\pi}{4}.$
+}
+\end{center}
+\fincorrection
+\finexercice

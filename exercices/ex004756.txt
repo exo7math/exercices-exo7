@@ -1,0 +1,31 @@
+\exercice{4756, quercia, 2010/03/16}
+\enonce[ENS Lyon MP 2002]
+Soit $E$ un espace vectoriel norm{\'e} sur $\R$ ou $\C$ de dimension finie,
+et $u\in\mathcal{L}(E)$ tel que pour tout $x\in E$ la suite $(u^n(x))_{n\in\N}$ est
+born{\'e}e.
+
+\begin{enumerate}
+  \item Montrer que la suite $(\|\hskip-1pt|u^n\|\hskip-1pt|)_{n\in\N}$ est born{\'e}e.
+
+  \item D{\'e}terminer la limite quand $n\to\infty$ de $\frac1{n+1}\sum_{i=0}^n u^i(x)$.
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Soit $(e_1,\dots,e_p)$ une base de~$E$. On remplace la norme sur $E$
+         par la norme infinie associ{\'e}e {\`a} $(e_1,\dots,e_p)$. Alors
+         $\|\hskip-1pt|u^n\|\hskip-1pt| \le \sum_{i=1}^p\|u^n(e_i)\|$.
+  \item Trigonaliser fortement $u$ (ou son prolongement au complexifi{\'e} de~$E$).
+         Comme $(u^n)$ est born{\'e}, les valeurs propres de~$u$ sont de module inf{\'e}rieur
+         ou {\'e}gal {\`a}~$1$, et pour celles de module $1$ le bloc triangulaire associ{\'e}
+         est en fait diagonal.
+         On trouve $\frac1{n+1}\sum_{i=0}^n u^i \xrightarrow[n\to\infty]{}$ projection sur
+         $\mathrm{Ker}(u-\mathrm{id})$ parall{\`e}lement {\`a} $\Im(u-\mathrm{id})$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

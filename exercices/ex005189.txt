@@ -1,0 +1,51 @@
+\exercice{5189, rouget, 2010/06/30}
+\enonce[**]
+Soit $f\in\mathcal{L}(\Rr^2)$. Pour $(x,y)\in\Rr^2$, on pose $f((x,y))=(x',y')$.
+\begin{enumerate}
+\item  Rappeler l'écriture générale de $(x',y')$ en fonction de $(x,y)$.
+\item  Si on pose $z=x+iy$ et $z'=x'+iy'$ (où $i^2=-1$), montrer que~:~$\exists(a,b)\in\Cc^2/\;\forall
+z\in\Cc,\;z'=az+b{\bar z}$.
+
+\item  Réciproquement, montrer que l'expression ci-dessus définit un unique endomorphisme de
+$\Rr^2$ (en clair, l'expression complexe d'un endomorphisme de $\Rr^2$ est $z'=az+b{\bar z}$).
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Pour $(x,y)\in\Rr^2$, posons $f((x,y))=(x',y')$.
+
+\begin{center}
+$f\in\mathcal{L}(\Rr^2)\Leftrightarrow\exists(\alpha,\beta,\gamma,\delta)\in\Rr^4/\;\forall(x,y)\in\Rr^2,\;\left\{
+\begin{array}{l}
+x'=\alpha x+\gamma y\\
+y'=\beta x+\delta y
+\end{array}
+\right.$.
+\end{center}
+ \item  Avec les notations précédentes,
+
+\begin{align*}
+z'&=x'+iy'=(\alpha x+\gamma y)+i(\beta x+\delta y)
+=(\alpha\frac{z+{\bar z}}{2}+\gamma\frac{z-{\bar z}}{2i})+i(\beta\frac{z+{\bar z}}{2}+\delta\frac{z-{\bar z}}{2i})\\
+ &=\left(\frac{\alpha+\delta}{2}+i\frac{\beta-\gamma}{2}\right)z+\left(\frac{\alpha-\delta}{2}+i\frac{\beta+\gamma}{2}\right){\bar z}
+=az+b{\bar z}
+\end{align*}
+où $a=\frac{\alpha+\delta}{2}+i\frac{\beta-\gamma}{2}$ et $b=\frac{\alpha-\delta}{2}+i\frac{\beta+\gamma}{2}$.
+ \item  Réciproquement, si $z'=az+b{\bar z}$, en posant $a=a_1+ia_2$ et $b=b_1+ib_2$ où $(a_1,a_2,b_1,b_2)\in\Rr^4$, on
+obtient~:
+
+$$x'+iy'=(a_1+ia_2)(x+iy)+(b_1+ib_2)(x-iy)=(a_1+b_1)x+(-a_2+b_2)y+i\left((a_2+b_2)x+(a_1-b_1)y\right)$$
+et donc,
+
+$$\left\{
+\begin{array}{l}
+x'=(a_1+b_1)x+(b_2-a_2)y\\
+y'=(a_2+b_2)x+(a_1-b_1)y
+\end{array}
+\right..$$
+\end{enumerate}
+\fincorrection
+\finexercice

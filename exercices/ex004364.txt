@@ -1,0 +1,25 @@
+\exercice{4364, quercia, 2010/03/12}
+\enonce[Polytechnique MP$^*$ 2000]
+
+Existence et continuité de $f(x) = \int_{t=-\infty}^{+\infty} \frac{e^{-|x+t|}\cos(x+t)}{\sqrt{|t|}(1+|t|)}\,d t$.
+Montrer que $f$ est intégrable.
+\finenonce
+
+\noindication
+
+\correction
+$I_a =  \int_{x=-a}^a|f(x)|\,d x
+\le  \int_{x=-a}^a \int_{t=-\infty}^{+\infty} \frac{e^{-|x+t|}}{\sqrt{|t|}(1+|t|)}\,d t\,d x
+=  \int_{t=-\infty}^{+\infty} \int_{x=-a}^a \frac{e^{-|x+t|}}{\sqrt{|t|}(1+|t|)}\,d x\,d t$.
+\smallskip
+On a $ \int_{x=-a}^a e^{-|x+t|}\,d x = 
+\begin{cases}2-2e^{-a}\ch t & \text{ si } |t|<a\cr
+       2e^{-|t|}\sh a & \text{ si } |t|\ge a,\cr\end{cases}$
+\smallskip
+donc $I_a \le  \int_{t=0}^a \frac{2\,d t}{(1+t)\sqrt t} +
+               \int_{t=a}^{+\infty}\frac{4e^{-t}\sh a}{(1+a)\sqrt a}\,d t
+          = 4\Arctan(\sqrt a) + \frac{4e^{-a}\sh a}{(1+a)\sqrt a}
+          \le \text{cste}$.
+\fincorrection
+
+\finexercice

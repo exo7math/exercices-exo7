@@ -1,0 +1,87 @@
+\exercice{2597, delaunay, 2009/05/19}
+\enonce
+ Soit $A$ la matrice 
+$$A=\begin{pmatrix}1&-1&0 \\  1&0&-1 \\  -1&0&2\end{pmatrix}$$ 
+et $f$ l'endomorphisme de $\R^3$ associ\'e.
+\begin{enumerate}
+ \item Factoriser le polyn\^ome caract\'eristique de $A$. 
+ \item D\'eterminer les sous-espaces propres et caract\'eristiques de $A$. 
+ \item D\'emontrer qu'il existe une base de $\R^3$ dans laquelle la matrice de $f$ est 
+$$B=\begin{pmatrix}1 & 1 & 0 \\  0&1&1 \\ 0&0&1\end{pmatrix}$$
+et trouver une matrice $P$ inversible telle que $A=PBP^{-1}$. 
+ \item Ecrire la d\'ecomposition de Dunford de $B$ (justifier). 
+ \item  Pour $t\in\R$, calculer $\exp tB$.
+ \item  Donner les solutions des syst\`emes diff\'erentiels $Y'=BY$ et $X'=AX$. 
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+Soit $A$ la matrice 
+$$A=\begin{pmatrix}2&0&-1 \\  -1&1&1 \\  0&-1&0\end{pmatrix}$$ 
+et $f$ l'endomorphisme de $\R^3$ associ\'e.
+\begin{enumerate}
+ \item  {\it Factorisons le polyn\^ome caract\'eristique de $A$}.
+
+Le polyn\^ome caract\'eristique de $A$ est le polyn\^ome 
+$$\begin{align*}P_A(X)=\begin{vmatrix}2-X&0&-1 \\ -1&1-X&1 \\  0&-1&-X\end{vmatrix}
+&=(2-X)\begin{vmatrix}1-X&1 \\ -1&-X\end{vmatrix}-\begin{vmatrix}-1&1-X \\  0&-1\end{vmatrix} \\ 
+&=(2-X)(X^2-X+1)-1 \\ 
+&=-X^3+3X^2-3X+1=(1-X)^3\end{align*}$$
+
+ \item {\it D\'eterminons les sous-espaces propres et caract\'eristiques de $A$}.
+
+La matrice $A$ admet une unique valeur propre $\lambda=1$, comme $A\neq I$, elle n'est pas diagonalisable. Son sous-espace caract\'eristique est \'egal \`a $\ker(A-I_3)^3=\R^3$. En effet, d'apr\`es le th\'eor\`eme de Hamilton-Cayley, on a $P_A(A)=0$, c'est-\`a-dire $(A-I_3)^3=0$. Son sous-espace propre est \'egal \`a $\ker(A-I_3)$.
+$$\ker(A-I_3)=\{\vec u\in\R^3/\ A\vec u=\vec u\}=\{(x,y,z)\in\R^3/\ x=z=-y\}.$$
+C'est la droite vectorielle engendr\'ee par le vecteur $\vec u_1=(1,-1,1)$.
+ \item {\it D\'emontrons qu'il existe une base de $\R^3$ dans laquelle la matrice de $f$ est 
+$$B=\begin{pmatrix}1 & 1 & 0 \\  0&1&1 \\ 0&0&1\end{pmatrix}$$
+et trouver une matrice $P$ inversible telle que $A=PBP^{-1}$}.
+
+Le vecteur $\vec u_1$ v\'erifie $A\vec u_1=u_1$, on cherche un vecteur $\vec u_2=(x,y,z)$ tel que 
+$A\vec u_2=\vec u_1+\vec u_2$.
+$$\begin{align*}A\vec u_2=\vec u_1+\vec u_2&\iff\begin{pmatrix}2&0&-1 \\  -1&1&1 \\  0&-1&0\end{pmatrix}
+\begin{pmatrix}x \\  y \\  z\end{pmatrix}=\begin{pmatrix}1+x \\  -1+y \\  1+z\end{pmatrix} \\ 
+&\iff\begin{pmatrix}2x-z \\  -x+y+z \\  -y\end{pmatrix}=\begin{pmatrix}1+x \\  -1+y \\  1+z\end{pmatrix}\end{align*}$$
+On obtient donc $z-x=z+y=-1$, le vecteur $\vec u_2=(1,-1,0)$ convient. On cherche alors un vecteur $\vec u_3=(x,y,z)$ tel que $A\vec u_3=\vec u_2+\vec u_3$.
+$$\begin{align*}A\vec u_3=\vec u_2+\vec u_3\iff
+\begin{pmatrix}2x-z \\  -x+y+z \\  -y\end{pmatrix}=\begin{pmatrix}1+x \\ -1+y \\  z\end{pmatrix}\end{align*}$$
+on obtient alors $x+y=x-z=1$. Le vecteur $\vec u_3=(1,0,0)$ convient.
+Ainsi, dans la base $(\vec u_1, \vec u_2, \vec u_3)$ la matrice de $f$ est \'egale \`a $B$. La matrice $P$ cherch\'ee est 
+$$P=\begin{pmatrix}1& 1 & 1 \\ -1&-1&0 \\ 1&0&0\end{pmatrix},$$
+on a bien $A=PBP^{-1}$ et $B=P^{-1}AP$.
+ \item  {\it Ecrivons la d\'ecomposition de Dunford de $B$}.
+
+On a 
+$$B=\begin{pmatrix}1 & 1 & 0 \\  0&1&1 \\ 0&0&1\end{pmatrix}=\begin{pmatrix}1 & 0 & 0 \\  0&1&0 \\ 0&0&1\end{pmatrix}+
+\begin{pmatrix}0& 1 & 0 \\  0&0&1 \\ 0&0&0\end{pmatrix}=I_3+N$$
+Si $N=\begin{pmatrix}0& 1 & 0 \\  0&0&1 \\ 0&0&0\end{pmatrix}$ alors $N^2=\begin{pmatrix}0& 0 & 1 \\  0&0&0 \\ 0&0&0\end{pmatrix}$ et $N^3=0$. La matrice $I_3$ est diagonale, la matrice $N$ est nilpotente, les matrices $I_3$ et $N$ commutent, c'est donc bien la d\'ecomposition de Dunford de $B$.
+
+ \item {\it Pour $t\in\R$, calculons} $\exp tB$. 
+
+On a, pour $t\in\R$, $tB=tI_3+tN$, ainsi $\exp tB=\exp(tI_3+tN)=(\exp tI_3)(\exp tN)$ car les matrices $tI_3$ et $tN$ commutent. Par ailleurs, $\exp tI_3=e^tI_3$ et $\exp tN=I+tN+{\frac{t^2}{2}}N^2$. On a donc
+$$\exp tB=e^t\begin{pmatrix}1&t&t^2/2 \\ 0&1&t \\ 0&0&1\end{pmatrix}.$$
+
+ \item {\it Donnons les solutions des syst\`emes diff\'erentiels $Y'=BY$ et $X'=AX$.}
+
+Int\'egrons le syst\`eme $Y'=BY$, sa solution g\'en\'erale s'\'ecrit
+$$Y(t)=(\exp tB) Y_0,$$
+o\`u $Y_0$ est un vecteur de $\R^3$. 
+
+Int\'egrons alors le syst\`eme $X'=AX$. Remarquons que si $PY$ est solution de $X'=AX$, on a 
+$$(PY)'=A(PY)\iff PY'=APY\iff Y'=P^{-1}APY\iff Y'=BY$$
+ainsi $Y$ est solution de $Y'=BY$, la solution g\'en\'erale du syst\`eme $X'=AX$ s\'ecrit donc
+$$\begin{align*}X(t)=P(\exp tB)Y_0&=e^t\begin{pmatrix}1& 1 &1 \\  -1&-1&0 \\ 1&0&0\end{pmatrix}\begin{pmatrix}1&t&t^2/2 \\ 0&1&t \\ 0&0&1\end{pmatrix}Y_0 \\  &=e^t
+\begin{pmatrix}1& t+1& t^2/2+t+1 \\  -1&-t-1&-t^2/2-t \\  1&t&t^2/2\end{pmatrix}\begin{pmatrix}a \\  b \\  c\end{pmatrix}\end{align*}$$
+o\`u $Y_0=(a,b,c)$ est un vecteur de $\R^3$. Ou encore
+$$\left\{\begin{align*}
+x(t)&=e^t(a+b(t+1)+c(t^2/2+t+1)) \\  y(t)&=e^t(-a-b(t+1)-c(t^2/2+t)) \\  z(t)&=e^t(a+bt+ct^2/2)
+\end{align*}\right.$$ ou encore
+
+$$\begin{pmatrix}x(t) \\  y(t) \\  z(t)\end{pmatrix}=a\begin{pmatrix}e^t \\  -e^t \\  e^t\end{pmatrix}+
+b\begin{pmatrix}e^t(t+1) \\  -e^t(t+1) \\  te^t\end{pmatrix}+c\begin{pmatrix}e^t(t^2/2+t+1) \\  -e^t(t^2/2+t) \\  e^t t^2/2\end{pmatrix}$$
+avec $(a,b,c)\in\R^3$.
+\end{enumerate}
+\fincorrection
+\finexercice

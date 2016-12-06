@@ -1,0 +1,45 @@
+\exercice{2915, quercia, 2010/03/08}
+
+\enonce[Formule du crible]
+Soient $A_1, \dots, A_n$\ $n$ ensembles finis.
+\begin{enumerate}
+\item
+  \begin{enumerate}
+  \item Calculer $\mathrm{Card}\,(A_1\cup A_2 \cup A_3)$ et $\mathrm{Card}\,(A_1\cup A_2\cup A_3\cup A_4)$.
+  \item Sugg{\'e}rer une formule pour $\mathrm{Card}\,(A_1\cup \dots \cup A_n)$.
+    \label{devine}
+  \end{enumerate}
+\item D{\'e}monstration de la formule : On note $E = \bigcup_{i=1}^n A_i$,
+  et pour $x \in E$ on pose $f_i(x) = \begin{cases}1 &\text{si }x \in
+    A_i \cr 0 &\text{ sinon.}\end{cases}$
+  \begin{enumerate}
+  \item Soient $x_1,\dots,x_n \in \R$. D{\'e}velopper compl{\`e}tement
+    $p = (1-x_1)\times \dots \times (1-x_n)$.
+  \item En consid{\'e}rant la somme $\sum_{x \in E}\, (1-f_1(x))  \dots (1-f_n(x))$,
+    d{\'e}montrer la formule \ref{devine}.
+  \end{enumerate}
+\item Applications :
+  \begin{enumerate}
+     \item D{\'e}terminer le nombre d'applications $f : {\{1,\dots,p\}} \to {\{1,\dots,n\}}$
+    non surjectives.
+     \item D{\'e}terminer le nombre de permutations d'un ensemble {\`a} $n$ {\'e}l{\'e}ments ayant au moins
+    un point fixe.
+  \end{enumerate}  
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item 
+  \item
+  \item 
+  \begin{enumerate}
+    \item $\sum_{k=1}^n (-1)^kC_n^k(n-k)^p$.
+    \item $\sum_{k=1}^n \frac{(-1)^kn!}{k!}$.
+  \end{enumerate}
+\end{enumerate}
+\fincorrection
+
+\finexercice 

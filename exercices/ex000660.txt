@@ -1,0 +1,34 @@
+\exercice{660, gourio, 2001/09/01}
+\enonce
+Soit $f:[0,1]\rightarrow [0,1]$ continue telle que $f\circ f=f$.
+On note $E_{f}=\{x\in [0,1]|f(x)=x\}$. Montrer que $E_{f}\neq \varnothing$
+puis que c'est un intervalle de ${\Rr}$.
+
+Trouver toutes les fonctions $f:[0,1]\rightarrow [0,1]$ continues telles que $f \circ f = f$.
+\finenonce 
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Soit $x\in[0,1]$ et $y=f(x) \in [0,1]$.
+Alors $f(y)=y$ car $f(f(x)) = f(x)$. Donc $E_f \not= \varnothing$.
+Nous venons de montrer que $I = f([0,1])$ est inclus dans $E_f$.
+  \item Montrons r\'eciproquement $E_f$ est inclus dans $I$.
+Soit $x\in[0,1]$ tel que $f(x)=x$ alors $x \in I=f([0,1])$
+(car $x = f(x)$ !). 
+Ainsi $E_f = I = f([0,1])$. Mais l'image de l'intervalle $[0,1]$ par la fonction continue $f$ est un intervalle donc 
+$E_f$ est un intervalle.
+  \item La réciproque est vraie : une fonction continue pour laquelle $E_f = f([0,1])$  v\'erifie aussi $f\circ f = f$.
+En effet pour $x \in [0,1]$ et $y = f(x)$ alors $y \in f([0,1])$ donc $y \in E_f$. Donc $f(y)=y$, autrement dit $f(f(x))=f(x)$.
+
+Les fonctions continues qui vérifient $f \circ = f$ sont donc exactement les fonctions continues telles que $E_f = f([0,1])$.
+Pour une telle fonction si l'on note $[a,b] = E_f$ alors 
+$f$ est définie sur $[0,a]$ par n'importe qu'elle fonction continue prenant ses valeurs entre $a$ et $b$,
+et valant $a$ en $a$ : $f([0,a]) \subset [a,b]$ et $f(a)=a$.
+Elle est ensuite définie par l'identité sur $[a,b]$ : pour tout $x\in [a,b]$, $f(x)=x$.
+Et enfin sur $[b,1]$ elle est définie par n'importe quelle fonction continue prenant ses valeurs entre $a$ et $b$,
+et valant $b$ en $b$ : $f([b,1]) \subset [a,b]$ et $f(b)=b$.
+\end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,65 @@
+\exercice{1337, legall, 1998/09/01}
+
+\enonce
+
+Soit  $G$  un groupe, $e$  son \' el\' ement neutre. Un
+\' el\' ement  $g$  de  $G$  est
+dit {\em d'ordre  $n\in {\Nn}$}  si  $g^n=e$  et  $g^k\not = e$  pour tout
+entier  $k<n$. $g$  est dit {\em d'ordre fini} si il est d'ordre  $n$  pour
+un  $n$  quelconque.
+\begin{enumerate}
+    \item Montrer que  $Gl_2({\Rr})$  contient des \' el\' ements d'ordre $2$  et
+des \' el\' ements qui ne sont pas d'ordre fini.
+    \item Soit  $\varphi $  un homomorphisme de  $G$  \`a valeurs
+dans  $H$  et  $g$  un \' el\' ement de  $ G$  d'ordre  $n$. Montrer que :
+
+ - $\varphi (g)$  est d'ordre fini
+inf\' erieur ou \' egal \`a  $n$.
+
+ - Si  $\varphi $  est injectif, l'ordre de  $\varphi (g)$  est \' egal \`a  $n$.
+    \item Montrer que si  $G$  n'a qu'un nombre fini d'\' el\' ements, tous ses \' el\' ements
+ ont un ordre fini.
+\end{enumerate}
+
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+    \item La matrice  $\begin{pmatrix}
+0& 1 \cr 1 & 0 \cr \end{pmatrix}$  est d'ordre  $2$. La matrice
+$\begin{pmatrix} 1 & 0 \cr 0 & 2 \cr \end{pmatrix}$  n'est pas
+d'ordre fini puisque, pour tout  $n\in {\N}$ : $\begin{pmatrix} 1
+& 0 \cr 0 & 2 \cr \end{pmatrix}^n=\begin{pmatrix} 1 & 0 \cr 0 &
+2^n \cr \end{pmatrix}\not = \begin{pmatrix} 1 & 0 \cr 0 & 1 \cr
+\end{pmatrix}$.
+    \item Notons  $e_G$  et  $e_H$  les \' el\' ements neutres respectifs
+de  $G$  et de  $H$. Soit  $g$  un \' el\' ement de  $G$  d'ordre
+$n$.
+
+-  Alors  $\varphi (g)^n=\varphi (g^n)=\varphi (e_G)=e_H$. Donc
+$\varphi (g)$  est d'ordre inf\' erieur ou \' egal \`a  $n$, ordre
+de  $g$.
+
+- Supposons  $\varphi $  injectif et  $\varphi (g)$  d'ordre
+strictement inf\' erieur \`a  $n$, c'est \`a dire qu'il existe
+$p<n$  tel que : $\varphi (g)^p=e_H$. Alors  $\varphi (g^p)=e_H$
+donc, puisque  $\varphi$  est injectif et  $\varphi (e_G)=e_H$, on
+a aussi : $g^p=e_G$, ce qui est impossible puisque l'ordre de  $g$
+est  $n$.
+    \item Raisonnons par l'absurde : Soit  $G$  un groupe fini.
+Supposons qu'il existe dans  $G$  un \' el\' ement  $g$  n'\'
+etant pas d'ordre fini. Comme  $G$  est un groupe, on peut
+consid\' erer  $X=\{ g^k \ k\in {\N}\} $. Or, pour  $i\not = j \ :
+\ g^i \not = g^j$. En effet, supposons  $i<j$. Si  $g^i  = g^j$
+alors  $g^{j-i}=e_G$  et  $g$  est d'ordre inf\' erieur ou \' egal
+\`a  $j-i$, donc fini, ce qui est impossible. $X$  est donc un
+ensemble infini.
+ $G$  contient un ensemble infini donc est infini, ce qui est absurde, donc  $g$  ne
+ peut \^etre que d'ordre fini.
+\end{enumerate}
+\fincorrection
+
+\finexercice
+

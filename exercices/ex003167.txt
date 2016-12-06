@@ -1,0 +1,25 @@
+\exercice{3167, quercia, 2010/03/08}
+
+\enonce[Ensi PC 1999]
+D{\'e}terminer les poly{\^o}mes $P \in \R_{2n-1}(X)$ tels que
+$P(X)+1$ est multiple de $(X-1)^n$ et
+$P(X)-1$ est multiple de $(X+1)^n$.
+\finenonce
+
+\noindication
+
+\correction
+$P(X) = -1 + Q(X)\times(X-1)^n \Leftrightarrow (X+1)^n \mid Q(X)(X-1)^n-2
+\Leftrightarrow X^n \mid Q(X-1)(X-2)^n-2$.
+Soit $2 = A(X)(X-2)^n + X^nB(X)$ la division suivant les puissances croissantes
+de $2$ par $(X-2)^n$ {\`a} l'ordre~$n$.
+On obtient $X^n\mid Q(X-1)-A(X)$ soit $Q(X) = A(X+1) + X^nR(X)$ et
+$\deg(P)< 2n \Leftrightarrow R=0$.
+Calcul de $A(X)$ par d{\'e}veloppement limit{\'e}~:  
+$\frac{1}{(1+x)^n} = \sum_{k=0}^{n-1}\binom{-n}{k}x^k + O(x^n)$ donc~:
+$$
+A(X) = \frac{(-1)^n}{2^{n-1}}\sum_{k=0}^{n-1}\binom{-n}{k}\frac{(-1)^kX^k}{2^k}
+     = \sum_{k=0}^{n-1}C_{n+k-1}^k(-1)^n\frac{X^k}{2^{n+k-1}}
+$$
+\fincorrection
+\finexercice 

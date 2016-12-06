@@ -1,0 +1,56 @@
+\exercice{2619, debievre, 2009/05/19}
+\enonce
+\begin{enumerate}
+  \item Soit $(A_n)$ ($n\in\N$) 
+une suite de parties ouvertes de $\R^2$. Est-ce que la
+r\'eunion des $A_n$ est encore une partie ouverte? Et leur intersection?
+  \item M\^eme question pour une famille de parties ferm\'ees. 
+\end{enumerate}
+\finenonce
+
+\indication 
+Exploiter le fait que le compl\'ementaire d'un ouvert est ferm\'e
+et que le compl\'ementaire d'un ferm\'e est ouvert.
+\finindication
+
+\correction
+\begin{enumerate} 
+\item La r\'eunion $\cup_n A_n$ d'une suite 
+de parties ouvertes $A_n$ de $\R^2$
+est bien une partie ouverte
+de $\R^2$. En effet, soit $q$ un point de $\cup_n A_n$. Alors il existe
+$n_0$ tel que $q$ appartienne \`a $A_{n_0}$. Puisque 
+$A_{n_0}$ est ouvert, il existe un disque ouvert $D$
+dans $A_{n_0}$ tel que $q$ appartienne \`a $D$. 
+Par cons\'equent, il existe un disque ouvert $D$
+dans $\cup_n A_n$ tel que $q$ appartienne \`a $D$. 
+
+L'intersection $\cap_n A_n$  d'une suite 
+de parties ouvertes $A_n$ de $\R^2$ n'est pas n\'ecessairement
+ouverte. Par exemple, dans $\R$, l'intersection des intervalles ouverts
+$]-1/n,1/n[$ est la partie $\{0\}\subseteq \R$
+qui n'est pas ouverte.
+
+\item  La r\'eunion $\cup_n B_n$ d'une suite 
+de parties ferm\'ees $B_n$ de $\R^2$
+n'est pas n\'ecessairement
+une partie  ferm\'ee de $\R^2$.
+Car le compl\'ementaire $\mathcal C(\cup_n B_n)$ de $\cup_n B_n$
+est l'intersection $\cap_n \mathcal CB_n$ des compl\'ementaires
+et c'est donc l'intersection d'une suite $\left (\mathcal C B_n\right)$
+de parties ouvertes  de $\R^2$ qui, d'apr\`es (1.), n'est pas 
+ n\'ecessairement
+une partie ouverte de $\R^2$.
+De m\^eme,
+l'intersection $\cap_n B_n$ d'une suite 
+de parties ferm\'ees $B_n$ de $\R^2$
+est bien une partie ferm\'ee
+de $\R^2$. 
+Car le compl\'ementaire $\mathcal C(\cap_n B_n)$ de $\cap_n B_n$
+est la r\'eunion $\cup_n \mathcal CB_n$ des compl\'ementaires
+et c'est donc la r\'eunion d'une suite  $\left(\mathcal C B_n\right)$
+de parties ouvertes de $\R^2$ qui, d'apr\`es (1.),
+est une partie ouverte de $\R^2$.
+\end{enumerate}
+\fincorrection
+\finexercice

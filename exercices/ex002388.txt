@@ -1,0 +1,53 @@
+\exercice{2388, mayer, 2003/10/01}
+\enonce 
+Dans $\Rr^2$, soit $B_a$ l'ensemble $\{a\}\times ]0,1]$ si $a$
+est rationnel et $B_a=\{a\}\times [-1,0]$ si $a$ est irrationnel.
+Montrer que $B = \bigcup _{a\in \Rr } B_a$ est une partie
+connexe de $\Rr^2$.
+\finenonce
+
+\indication
+ Définir $g : \Rr \longrightarrow \{0,1\}$ tel que $g(x)$ prend  la valeur
+qu'a $f$ sur $B_x$.
+Montrer pour chaque points de $\Rr\setminus \Qq$, $g$ est constante dans un voisinage 
+de ce point,
+puis faire la m\^eme chose pour un point de $\Qq$. Conclure.
+\finindication
+
+\correction
+L'ensemble $B$ est connexe si
+et seulement si toute fonction continue $f:B\to \{0,1\}$ est
+constante. Soit alors $f:B\to \{0,1\}$ une fonction continue et
+montrons qu'elle est constante.
+Remarquons que la restriction de $f$ \`a tout ensemble $B_a$ est constante ($B_a$ est connexe).
+
+On définit $g : \Rr \longrightarrow \{0,1\}$ tel que $g(x)$ prend  la valeur
+qu'a $f$ sur $B_x$.
+Nous allons montrer que $g$ est localement constante (on ne sait pas si $g$ est continue).
+
+\begin{itemize}
+\item Soit $a \notin \Qq$ alors on a $(a,0)\in B$, $f$ est une fonction continue et
+$\{f(a,0)\}$ est un ouvert de $\{0,1\}$, donc $f^{-1}(\{ f(a,0) \})$ est un ouvert de $B$.
+Donc il existe $\epsilon >0$ tel que si
+$(x,y) \in (]a-\epsilon,a+\epsilon[\times ]-\epsilon,\epsilon[)\times B$ alors
+$f(x,y)=f(a,0)$. Alors pour $x\in ]a-\epsilon,a+\epsilon[$ on a $g(x)=g(a)$ :
+si $x\notin \Qq$ alors $g(x)=f(x,0)=f(a,0)=g(a)$; et si $x\in \Qq$ alors
+$g(x)= f(x,\frac \epsilon 2) = f(a,0)=g(a)$.
+Donc $g$ est localement constante au voisinage des point irrationnels.
+
+  \item Si $a\in \Qq$ et soit $b\in ]0,1]$ alors $f$ est continue en $(a,b)$ donc il existe
+$\epsilon >0$ tel que pour tout $x\in ]a-\epsilon,a+\epsilon[\cap \Qq$,
+$g(x)=f(x,b)=f(a,b)=g(a)$.
+Si maintenant $x\in ]a-\epsilon,a+\epsilon[\cap (\Rr \setminus \Qq)$, on prend une 
+suite $(x_n)$ de rationnels qui tendent vers $x$. 
+Comme $f$ est continue alors
+$g(a)=g(x_n)=f(x_n,b)$ tend vers $f(x,b)=g(x)$. Donc $g(a)=g(x)$.
+Nous avons montrer que $g$ est localement constante au voisinage des point rationnels.
+
+  \item Bilan : $g$ est localement constante sur $\Rr$.
+\end{itemize}
+
+Comme $\Rr$ est connexe, alors $g$ est constante sur $\Rr$. Donc
+$f$ est constante sur $\Rr$. Ce qu'il fallait démontrer.
+\fincorrection
+\finexercice

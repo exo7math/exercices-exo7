@@ -1,0 +1,149 @@
+\exercice{5542, rouget, 2010/07/15}
+\enonce[**IT]
+Le plan est rapporté à un repère orthonormé $\mathcal{R}=(0,\overrightarrow{i},\overrightarrow{j})$.
+Nature et éléments caractéristiques de la courbe dont une équation en repère orthonormé est
+\begin{enumerate}
+ \item $y=\frac{1}{x}$,
+ \item $41x^2-24xy+34y^2-106x+92y+74=0$,
+ \item $x^2+2xy+y^2+3x-2y+1=0$,
+ \item $(x-y+1)^2+(x+y-1)^2=0$,
+ \item $x^2+y^2-3x-y+3=0$,
+ \item $x(x-1)+(y-2)(y-3)=0$,
+ \item $(x+y+1)(x-y+3)=3$,
+ \item $(2x+y-1)^2-3(x+y)=0$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  On note $\mathcal{H}$ l'hyperbole considérée. On tourne de $\frac{\pi}{4}$. Pour cela, on pose $\left\{
+\begin{array}{l}
+x=\frac{1}{\sqrt{2}}(X-Y)\\
+y=\frac{1}{\sqrt{2}}(X+Y)
+\end{array}
+\right.$. On a alors
+
+$$y=\frac{1}{x}\Leftrightarrow xy=1\Leftrightarrow \frac{1}{2}(X-Y)(X+Y)=1\Leftrightarrow\frac{X^2}{\left(\sqrt{2}\right)^2}-\frac{Y^2}{\left(\sqrt{2}\right)^2}=1.$$
+Ainsi, si $\mathcal{R}$ est le repère orthonormé initial $\left(O,\overrightarrow{i},\overrightarrow{j}\right)$ et $\mathcal{R}'$ est le repère
+$\left(O,\overrightarrow{I},\overrightarrow{J}\right)$ où $\overrightarrow{I}=\frac{1}{\sqrt{2}}(\overrightarrow{i}+\overrightarrow{j})$ et
+$\overrightarrow{J}=\frac{1}{\sqrt{2}}(-\overrightarrow{i}+\overrightarrow{j})$, une équation de $\mathcal{H}$ dans $\mathcal{R}$ est $xy=1$ et une
+équation de $\mathcal{H}$ dans $\mathcal{R}'$ est $\frac{X^2}{(\sqrt{2})^2}-\frac{Y^2}{(\sqrt{2})^2}=1$. On obtient
+$a=b=\sqrt{2}$, $c=\sqrt{a^2+b^2}=2$ et $e=\frac{c}{a}=\sqrt{2}$.
+Les formules de changement de repère s'écrivent $\left\{
+\begin{array}{l}
+x=\frac{1}{\sqrt{2}}(X-Y)\\
+y=\frac{1}{\sqrt{2}}(X+Y)
+\end{array}
+\right.$ et les formules inverses s'écrivent
+
+$\left\{
+\begin{array}{l}
+X=\frac{1}{\sqrt{2}}(x+y)\\
+y=\frac{1}{\sqrt{2}}(-x+y)
+\end{array}
+\right.$ (dans ce qui suit, les coordonnées d'un point dans $\mathcal{R}'$ seront notées avec $\mathcal{R}'$ en indice
+alors que les coordonnées dans $\mathcal{R}$ seront notées sans écrire $\mathcal{R}$ en indice).
+
+$\shadowbox{\mbox{Centre}\;O(0,0)}$.
+
+Asymptotes~:~bien sûr, les axes $(Ox)$ et $(Oy)$.
+
+Axe focal~:~l'axe $(OX)$ ou encore la droite d'équation $y=x$ (dans $\mathcal{R}$).
+
+Sommets~:~$A(\sqrt{2},0)_{\mathcal{R}'}$, $A'(-\sqrt{2},0)_{\mathcal{R}'}$ et donc
+$\shadowbox{\mbox{Sommets}\;A(1,1)\;\mbox{et}\;A'(-1,-1)}$.
+
+Foyers~:~$F(2,0)_{\mathcal{R}'}$, $F'(-2,0)_{\mathcal{R}'}$ et
+donc \shadowbox{Foyers\;$F(\sqrt{2},\sqrt{2})$\; et \;$F'(-\sqrt{2},-\sqrt{2})$.}
+
+Directrices~:~les droites d'équations $X=\pm\frac{a}{e}=\pm1$ et donc dans $\mathcal{R}$, les droites d'équations
+respectives $x+y=\pm\sqrt{2}$.
+
+%41x^2-24xy+34y^2-106x+92y+74=0
+ \item  Le discriminant de cette conique vaut $41\times34-12^2=1250>0$. Il s'agit donc d'une conique du genre ellipse.
+On pose $\left\{
+\begin{array}{l}
+x=\cos(\theta)X-\sin(\theta)Y\\
+y=\sin(\theta)X+\cos(\theta)Y
+\end{array}
+\right.$ et on détermine $\theta$ (ou plutôt $\cos\theta$ et $\sin\theta$) de sorte que le terme en $XY$ disparaisse.
+Mais, le coefficient de $XY$ dans
+
+$$41x^2-24xy+34y^2=41(\cos(\theta)X-\sin(\theta)Y)^2-24(\cos(\theta)X-\sin(\theta)Y)(\sin(\theta)X+\cos(\theta)Y)+
+34(\sin(\theta)X+\cos(\theta)Y)^2,$$
+vaut
+
+$$-82\cos\theta\sin\theta-24(\cos^2\theta-\sin^2\theta)+68\cos\theta\sin\theta=-24(\cos^2\theta-\sin^2\theta)
+-14\cos\theta\sin\theta.$$
+Ce coefficient est nul si et seulement si $-12\cos^2\theta+12\sin^2\theta-7\cos\theta\sin\theta=0$ ou encore, après division
+par $\cos^2\theta$, $12\tan^2\theta-7\tan\theta-12=0$. On peut alors prendre $\tan\theta=\frac{4}{3}$, puis on peut prendre
+$\cos\theta=\frac{1}{\sqrt{1+\tan^2\theta}}=\frac{3}{5}$ et
+$\sin\theta=\cos\theta\tan\theta=\frac{3}{5}\frac{4}{3}=\frac{4}{5}$.
+
+Posons donc $\left\{
+\begin{array}{l}
+x=\frac{3X-4Y}{5}\\
+y=\frac{4X+3Y}{5}
+\end{array}\right.$ $(*)$. On a alors
+
+\begin{align*}\ensuremath
+41x^2-24xy+34y^2-106x+92y+74&=\frac{1}{25}(41(3X-4Y)^2-24(3X-4Y)(4X+3Y)+34(4X+3Y)^2\\
+ &\;-530(3X-4Y)+460(4X+3Y)+1850)\\
+ &=\frac{1}{25}(625X^2+1250Y^2+250X+3500Y+1850)\\
+ &=25\left(X^2+2Y^2+\frac{2}{5}X+\frac{28}{5}Y+\frac{74}{25}\right)
+\end{align*}
+Une équation de la courbe dans le repère défini par $(*)$ est donc
+$X^2+2Y^2+\frac{2}{5}X+\frac{28}{5}Y+\frac{74}{25}=0$. Ensuite,
+
+\begin{center}
+$X^2+2Y^2+\frac{2}{5}X+\frac{28}{5}Y+\frac{74}{25}=0\Leftrightarrow\left(X+\frac{1}{5}\right)^2+2\left(Y+\frac{7}{5}\right)^2=1\Leftrightarrow\left(X+\frac{1}{5}\right)^2+\frac{\left(Y+\frac{7}{5}\right)^2}{\left(\sqrt{2}\right)^2}=1$.
+\end{center}
+$\mathcal{C}$ est une ellipse. On trouve $a=1$, $b=\sqrt{2}$, $c=1$ $e=\frac{1}{\sqrt{2}}$ puis
+Centre $\Omega\left(1,-1\right)$. Axe focal : $3x+4y+1=0$ et axe non focal : $-4x+3y+7=0$.
+
+Sommets : $A\left(\frac{8}{5},-\frac{1}{5}\right)$, $A'\left(\frac{2}{5},-\frac{9}{5}\right)$, $B\left(1-\frac{4\sqrt{2}}{5},-1+\frac{3\sqrt{2}}{5}\right)$ et $B'\left(1+\frac{4\sqrt{2}}{5},-1-\frac{3\sqrt{2}}{5}\right)$.
+
+Foyers : $F\left(\frac{1}{5},-\frac{2}{5}\right)$ et $F'\left(\frac{9}{5},-\frac{8}{5}\right)$. Directrices : $4x-3y+3=0$ et $4x-3y+17=0$.
+ \item  $x^2+2xy+y^2=(x+y)^2$. On pose donc $\left\{
+\begin{array}{l}
+X=\frac{1}{\sqrt{2}}(x-y)\\
+Y=\frac{1}{\sqrt{2}}(x+y)
+\end{array}
+\right.$ ou encore $\left\{
+\begin{array}{l}
+x=\frac{1}{\sqrt{2}}(X+Y)\\
+y=\frac{1}{\sqrt{2}}(-X+Y)
+\end{array}
+\right.$.
+
+\begin{align*}\ensuremath
+x^2+2xy+y^2+3x-2y+1=0&\Leftrightarrow 2Y^2+\frac{3}{\sqrt{2}}(X+Y)-\frac{2}{\sqrt{2}}(-X+Y)+1=0\\
+ &\Leftrightarrow 2\left(Y+\frac{1}{4\sqrt{2}}\right)^2+\frac{5}{\sqrt{2}}X+\frac{15}{16}=0\Leftrightarrow\left(Y+\frac{1}{4\sqrt{2}}\right)^2=-\frac{5}{2\sqrt{2}}\left(X+\frac{3}{8\sqrt{2}}\right).
+\end{align*}
+$\mathcal{C}$ est une parabole de paramètre $p=\frac{5}{4\sqrt{2}}$.
+
+Sommet : $S\left(-\frac{5}{16},\frac{1}{16}\right)$. Axe focal : $x+y+\frac{1}{4}=0$.
+
+Foyer : $F\left(-\frac{5}{8},\frac{3}{8}\right)$. Directrice : $x-y-\frac{1}{4}=0$.
+ \item  $\mathcal{C}$ est le point d'intersection des droites d'équation $x-y+1=0$ et $x+y-1=0$ c'est-à-dire le point de coordonnées $(0,1)$.
+
+ \item  $x^2+y^2-3x-y+3=\left(x-\frac{3}{2}\right)^2+\left(y-\frac{1}{2}\right)^2+\frac{1}{2}>0$ et donc $\mathcal{C}$ est vide.
+ \item  $x(x-1)+(y-2)(y-3)=0$ est une équation du cercle de diamètre $[AB]$ où $A(0,2)$ et $B(1,3)$.
+ \item  Si on pose $\left\{
+\begin{array}{l}
+X=x+y+1\\
+Y=x-y+3
+\end{array}
+\right.$, on effectue un changement de repère non orthonormé. Dans le nouveau repère, $\mathcal{C}$ admet pour équation cartésienne $XY=3$ et donc $\mathcal{C}$ est une hyperbole. Avec le changement de repère effectué, on obtient directement les éléments affines de cette hyperbole mais pas ses éléments métriques : hyperbole d'asymptotes les droites d'équations $x+y+1=0$ et $x-y+3=0$ et donc de centre $(-2,1)$.
+Pour obtenir l'axe focal, l'excentricité, les foyers et les directrices il faut faire un changement de repère orthonormé.
+ \item   Si on pose $\left\{
+\begin{array}{l}
+X=2x+y+1\\
+Y=3x+3y
+\end{array}
+\right.$, $\mathcal{C}$ admet pour équation cartésienne dans le nouveau repère $Y=X^2$ et donc $\mathcal{C}$ est une parabole. Pour obtenir ces éléments métriques, il faut un changement de repère orthonormé.
+\end{enumerate}
+\fincorrection
+\finexercice

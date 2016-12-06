@@ -1,0 +1,98 @@
+
+\exercice{1265, legall, 2003/10/01}
+\video{c-IqNr313V8}
+\enonce
+Déterminer:
+\begin{enumerate}
+\item
+\begin{enumerate}
+\item $\displaystyle \lim _{x \rightarrow +\infty} \sqrt{x^2+3x+2} +x$
+\item $\displaystyle \lim _{x \rightarrow -\infty} \sqrt{x^2+3x+2} +x$
+\end{enumerate}
+
+\item $\displaystyle \lim _{x \rightarrow 0^+}(\Arctan x)^{\frac{1}{x^2}}$
+
+\item $\displaystyle \lim _{x \rightarrow 0} \frac{(1+3x)^{\frac{1}{3}}-1-\sin x}{1-\cos x}$
+\end{enumerate}
+
+\finenonce
+
+\indication
+Il s'agit de faire un dl afin de trouver la limite.
+\begin{enumerate}
+  \item 
+  \begin{enumerate}
+    \item $\displaystyle \lim_{x \rightarrow +\infty} \sqrt {x^2+3x+2} +x = + \infty$
+    \item $\displaystyle \lim_{x \rightarrow -\infty} \sqrt {x^2+3x+2} +x = -\frac32$
+  \end{enumerate}
+  \item $\displaystyle \lim_{x \rightarrow 0^+}(\Arctan x )^{\frac{1}{x^2}}=0$
+  \item $\displaystyle \lim_{x \rightarrow 0} \frac{(1+3x)^{\frac{1}{3}}-1-\sin x}{1-\cos x}=-2$
+\end{enumerate}
+
+\finindication
+
+\correction
+\begin{enumerate}
+  \item 
+  \begin{enumerate}
+    \item La première limite n'est pas une forme indéterminée, en effet 
+$$\lim_{x \rightarrow +\infty} \sqrt {x^2+3x+2}  = +\infty \quad \text{ et } \quad \lim_{x \rightarrow +\infty} x = +\infty$$
+donc 
+$$\lim_{x \rightarrow +\infty} \sqrt {x^2+3x+2} +x = + \infty$$
+    \item Lorsque $x\to -\infty$ la situation est tout autre car
+$$\lim_{x \rightarrow -\infty} \sqrt {x^2+3x+2} = +\infty \quad \text{ et } \quad \lim_{x \rightarrow -\infty} x = -\infty$$
+donc $\sqrt {x^2+3x+2} +x$ est une forme indéterminée !
+
+Calculons un développement limité à l'ordre $1$ en $-\infty$ en faisant très attention au signe (car par exemple $|x|=-x$):
+\begin{align*}
+\sqrt{x^2+3x+2} +x 
+  & = |x| \left( \sqrt{1+\frac{3}{x}+\frac{2}{x^2}} -1 \right) \\
+  & = |x| \left( 1+\frac12\left(\frac{3}{x}+\frac{2}{x^2}\right)+o(\frac1x) \ -1)  \right) \\
+  & = |x| \left( \frac12\frac{3}{x}+o(\frac1x) \right) \\
+  & = -\frac32 + o(1) \\
+\end{align*}
+Et donc  
+$$\lim_{x \rightarrow -\infty} \sqrt {x^2+3x+2} +x = -\frac32$$
+
+  \end{enumerate}
+  \item 
+Nous utiliserons que 
+
+\begin{align*}
+(\Arctan x)^{\frac{1}{x^2}}
+  & = \exp\left(\frac{1}{x^2} \ln \left( \Arctan x \right) \right) \\
+  & = \exp\left(\frac{1}{x^2} \ln \big( x + o(x)\big) \right) \quad \text{ car } \Arctan x = x + o(x) \\
+\end{align*}
+Mais lorsque $x\to 0^+$ on sait que $\ln (x+o(x)) \to -\infty$, $x^2 \to 0$ 
+donc :
+$$\lim_{x\to0^+} \frac{\ln (x+o(x))}{x^2} = -\infty$$
+
+Composé avec l'exponentielle on trouve :
+$$\lim_{x \rightarrow 0^+}(\Arctan x )^{\frac{1}{x^2}}=0$$
+
+
+
+  \item 
+Effectuons le dl à l'ordre $2$ :
+comme 
+$$(1+x)^\alpha = 1+\alpha x + \frac{\alpha(\alpha-1)}{2}x^2+o(x^2)$$
+alors
+$$(1+3x)^{\frac{1}{3}} = 1+x-x^2 + o(x^2).$$
+
+$$\sin x = x + o(x^2) \quad \text{ et } \cos x = 1 - \frac{x^2}{2!} + o(x^2).$$
+Ainsi
+
+\begin{align*}
+\frac{(1+3x)^{\frac{1}{3}}-1-\sin x}{1-\cos x}  
+ & = \frac{-x^2+o(x^2)}{\frac12x^2 + o(x^2)} \\
+ & = \frac{-1+o(1)}{\frac12 + o(1)} \quad \text{ après factorisation par } x^2 \\
+ &= -2 + o(1) \\
+\end{align*}
+Donc 
+
+$$\lim_{x \rightarrow 0} \frac{(1+3x)^{\frac{1}{3}}-1-\sin x}{1-\cos x}=-2$$
+
+\end{enumerate}
+\fincorrection
+\finexercice
+

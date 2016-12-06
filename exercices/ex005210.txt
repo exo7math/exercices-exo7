@@ -1,0 +1,30 @@
+\exercice{5210, rouget, 2010/06/30}
+\enonce[**IT]
+\label{exo:suprou2bis}
+Soient $A$ et $B$ deux parties de $\Rr$, non vides et bornées. Montrer que $\mbox{sup }A$, $\mbox{sup }B$, $\mbox{sup}(A+B)$, $\mbox{inf }A$, $\mbox{inf B}$, $\mbox{inf }(A+B)$ existent et que l'on a $\mbox{sup }(A+B)=\mbox{sup }A+\mbox{sup }B$ et $\mbox{inf }(A+B)=\mbox{inf }A+\mbox{inf }B$. ($A+B$ désigne l'ensemble des sommes d'un élément de $A$ et d'un élément de $B$).
+\finenonce
+
+\noindication
+
+\correction
+$A$ et $B$ sont deux parties non vides et majorées de $\Rr$ et admettent donc des bornes supérieures notées respectivement $\alpha$ et $\beta$.
+Pour tout $(a,b)\in A\times B$, on a $a+b\leq\alpha+\beta$. Ceci montre que $A+B$ est une partie non vide et majorée de $\Rr$, et donc que $\mbox{sup}(A+B)$ existe dans $\Rr$. (De plus, puisque $\alpha+\beta$ est un majorant de $A+B$, on a déjà $\mbox{sup}(A+B)\leq\alpha+\beta$).
+Soit alors $\varepsilon>0$.
+Il existe $a\in A$ et $b\in B$ tels que $\alpha-\frac{\varepsilon}{2}<a\leq\alpha$ et $\beta-\frac{\varepsilon}{2}<b\leq\beta$, et donc tels que $\alpha+\beta-\varepsilon<a+b\leq\alpha+\beta$.
+
+En résumé,
+
+\begin{center}
+\textbf{(1)} $\forall(a,b)\in A\times B,\;a+b\leq\alpha+\beta$ et \textbf{(2)} $\forall\varepsilon>0,\;\exists(a,b)\in A\times B/\;a+b>\alpha+\beta-\varepsilon$.
+\end{center}
+
+On en déduit que
+
+\begin{center}
+\shadowbox{
+$\mbox{sup}(A+B)=\alpha+\beta=\mbox{sup }A+\mbox{sup }B$.
+}
+\end{center}
+Pour les bornes inférieures, on peut refaire le travail précédent en l'adaptant ou appliquer le résultat précédent aux ensembles $-A$ et $-B$ car $\text{Inf}A=-\text{sup}(-A)$.
+\fincorrection
+\finexercice

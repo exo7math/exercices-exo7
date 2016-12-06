@@ -1,0 +1,57 @@
+\exercice{5662, rouget, 2010/10/16}
+\enonce[****]
+Montrer que toute matrice de trace nulle est semblable à une matrice de diagonale nulle.
+\finenonce
+
+\noindication
+
+\correction
+On montre le résultat par récurrence sur $n\in\Nn^*$ le format de $A$.
+
+\textbullet~C'est clair pour $n = 1$.
+
+\textbullet~Soit $n\geqslant1$. Supposons que toute matrice de format $n$ et de trace nulle soit semblable à une matrice de diagonale nulle.
+
+Soient $A$ une matrice carrée de format $n+1$ et de trace nulle puis $f$ l'endomorphisme de $\Kk^{n+1}$ de matrice $A$ dans la base canonique $(e_1,...,e_{n+1})$ de $\Kk^{n+1}$.
+
+Si $f$ est une homothétie de rapport noté $k$, alors $0=\text{Tr}(f)=k(n+1)$ et donc $k = 0$ puis $f = 0$ puis $A = 0$. Dans ce cas, $A$ est effectivement semblable à une matrice de diagonale nulle.
+
+Sinon $f$ n'est pas une homothétie et on sait qu'il existe un vecteur $u$ de $E$ tel que la famille $(u,f(u))$ soit libre (voir exercice \ref{ex:rou25}). On complète la famille libre $(u,f(u))$ en une base de $E$. Le coefficient ligne 1, colonne 1, de la matrice de $f$ dans cette base est nul. Plus précisément, $A$ est semblable à une matrice de la forme $\left(
+\begin{array}{cccccc}
+0&\times&\ldots& &\ldots&\times\\
+1& & & & \\
+0& & &  & \\
+\vdots& & &A'& & \\
+\vdots& \\
+0&
+\end{array}
+\right)$.
+
+Puis $\text{Tr}A'=\text{Tr}A= 0$ et par hypothèse de récurrence, $A'$ est semblable à une matrice $A_1$ de diagonale nulle ou encore il existe $A_1$ matrice carrée de format $n$ et de diagonale nulle et $Q\in GL_n(\Kk)$ telle que $Q^{-1}A'Q = A_1$.
+
+Mais alors, si on pose $P=\left(
+\begin{array}{cccc}
+1&0&\ldots&0\\
+0& & & \\
+\vdots& &Q& \\
+0& & & 
+\end{array}
+\right)$, $P$ est inversible car $\text{det}(P)=1\times\text{det}(Q)\neq0$ et un calcul par blocs montre que $P^{-1}=\left(
+\begin{array}{cccc}
+1&0&\ldots&0\\
+0& & & \\
+\vdots& &Q^{-1}& \\
+0& & & 
+\end{array}
+\right)$ puis que $P^{-1}AP=\left(
+\begin{array}{cccccc}
+0&\times&\ldots& &\ldots&\times\\
+\times& & & & \\
+\vdots& & &  & \\
+ & & &A_1& & \\
+\vdots& \\
+\times&
+\end{array}
+\right)$ est de diagonale nulle.
+\fincorrection
+\finexercice

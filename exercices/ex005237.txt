@@ -1,0 +1,19 @@
+\exercice{5237, rouget, 2010/06/30}
+\enonce[**T]
+Etudier les deux suites $u_n=\sum_{k=0}^{n}\frac{1}{k!}$ et $v_n=u_n+\frac{1}{n.n!}$.
+
+\finenonce
+
+\noindication
+
+\correction
+Il est immédiat que $u$ croit strictement et que $v-u$ est strictement positive et tend vers $0$.
+De plus, pour $n$ entier naturel donné, 
+
+$$v_{n+1}-v_n=\frac{1}{(n+1)!}+\frac{1}{(n+1)\times(n+1)!}-\frac{1}{n\times n!}=\frac{n(n+1)+n-(n+1)^2}{n(n+1)\times(n+1)!}=\frac{-1}{n(n+1)\times(n+1)!}< 0,$$
+et la suite $v$ est strictement décroissante. Les suites $u$ et $v$ sont donc adjacentes et convergent vers une limite commune (à savoir $e$).
+ 
+
+(Remarque. Dans ce cas, la convergence est très rapide. On a pour tout entier naturel non nul $n$,  $\sum_{k=0}^{n}\frac{1}{k!}<e<\sum_{k=0}^{n}\frac{1}{k!}+\frac{1}{n\times n!}$ et $n=5$ fournit par exemple $2,716...<e<2,718...$).
+\fincorrection
+\finexercice

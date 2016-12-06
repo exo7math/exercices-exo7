@@ -1,0 +1,27 @@
+\exercice{4543, quercia, 2010/03/14}
+\enonce[Ensi PC 1999]
+
+Soit $f_n(x) = \frac{(-1)^n\cos^nx}{n+1}$.
+
+\begin{enumerate}
+  \item \'Etudier la convergence de $f(x) = \sum_{n=0}^\infty f_n(x)$.
+
+  \item Montrer la convergence de la série de terme général
+    $u_n =  \int_{x=0}^{\pi/2} f_n(x)\,d x$.
+
+  \item En déduire $\sum_{n=0}^\infty u_n$ sous forme d'une intégrale.
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item cva si $|\cos x| < 1$, scv si $\cos x = 1$, dv si $\cos x = -1$.
+  \item TCM en regroupant les termes deux par deux.
+  \item $ \int_{x=0}^{\pi/2} -\ln(1-\cos x)\,d x$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

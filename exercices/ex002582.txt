@@ -1,0 +1,31 @@
+\exercice{2582, delaunay, 2009/05/19}
+\enonce
+Soit $a\in\R$ et $A$ la matrice suivante
+$$A=\begin{pmatrix}1&0&a \\  0&a&1 \\  a&1&0\end{pmatrix}$$
+
+\begin{enumerate}
+ \item Calculer le d\'eterminant de $A$ et d\'eterminer 
+pour quelles valeurs de $a$ la matrice est inversible.
+ \item Calculer $A^{-1}$ lorsque $A$ est inversible.
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+ Soit $a\in\R$ et $A$ la matrice suivante
+$$A=\begin{pmatrix}1&0&a \\  0&a&1 \\  a&1&0\end{pmatrix}$$
+\begin{enumerate}
+ \item Calculons le d\'eterminant de $A$ et d\'eterminons 
+pour quelles valeurs de $a$ la matrice est inversible.
+
+$$\det A=\begin{vmatrix}1&0&a \\  0&a&1 \\  a&1&0\end{vmatrix}=\begin{vmatrix}a&1 \\ 1&0\end{vmatrix}+a\begin{vmatrix}0&a \\  a&1\end{vmatrix}=-1-a^3.$$
+La matrice $A$ est inversible si et seulement si son d\'eterminant est non nul, c'est-\`a-dire si et seulement si $1+a^3\neq 0$, ce qui \'equivaut \`a $a\neq-1$ car $a\in \R$.
+ \item Calculons $A^{-1}$ lorsque $A$ est inversible, c'est-\`a-dire $a\neq-1$. Pour cela nous allons d\'eterminer la comatrice $\tilde A$ de $A$. On a 
+$$\tilde A=\begin{pmatrix}-1&a&-a^2 \\  a&-a^2&-1 \\  -a^2&-1&a\end{pmatrix},$$
+on remarque que $\tilde A=^t\!\!\!\tilde A$ et on a bien $A ^t\!\!\tilde A=^t\!\!\!\tilde AA=(-1-a^3)I_3$ d'o\`u
+$$A^{-1}={\frac{1}{(-1-a^3)}}\tilde A={\frac{1}{-1-a^3}}\begin{pmatrix}-1&a&-a^2 \\  a&-a^2&-1 \\  -a^2&-1&a\end{pmatrix}.$$
+
+\end{enumerate}
+\fincorrection
+\finexercice

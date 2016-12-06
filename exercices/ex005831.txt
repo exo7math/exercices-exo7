@@ -1,0 +1,62 @@
+\exercice{5831, rouget, 2010/10/16}
+\enonce[***]
+Pour quelles valeurs de $\lambda$ la surface $(\mathcal{S})$ d'équation $x(\lambda-y)+y(\lambda-z)+z(\lambda-x)-\lambda=0$ est-elle un cône du second degré ? En préciser alors le sommet et une directrice.
+\finenonce
+
+\noindication
+
+\correction
+Une équation de $(\mathcal{S})$ est encore $xy+yz+zx-\lambda x-\lambda y-\lambda z+\lambda=0$.
+
+La matrice de la forme quadratique $Q~:~(x,y,z)\mapsto xy+yz+zx$ dans la base $(i,j,k)$ est $A= \frac{1}{2}
+\left(
+\begin{array}{ccc}
+0&1&1\\
+1&0&1\\
+1&1&0
+\end{array}
+\right)$ est les valeurs propres de cette matrice sont $- \frac{1}{2}$, $- \frac{1}{2}$ et $1$. Le rang de $Q$ est $3$ et sa signature est $(1,2)$. La surface $(\mathcal{S})$ est à priori soit un hyperboloïde, soit un cône du second degré. Donc $(\mathcal{S})$ est un cône du second degré si et seulement si son (unique) centre de symétrie qui est aussi l'unique point critique de la fonction $f~:~(x,y,z)\mapsto x(\lambda-y)+y(\lambda-z)+z(\lambda-x)-\lambda$ appartient à $(\mathcal{S})$.
+
+\textbf{Point critique.}
+
+\begin{center}
+$\left\{
+\begin{array}{l}
+ \frac{\partial f}{\partial x}(x,y,z)=0\\
+ \frac{\partial f}{\partial y}(x,y,z)=0\\
+ \frac{\partial f}{\partial z}(x,y,z)=0
+\end{array}
+\right.
+\Leftrightarrow \left\{
+\begin{array}{l}
+y+z=\lambda\\
+z+x=\lambda\\
+x+y=\lambda
+\end{array}
+\right.\Leftrightarrow x=y=z= \frac{\lambda}{2}$.
+\end{center} 
+
+On note alors $\Omega$ le point de coordonnées $\left( \frac{\lambda}{2}, \frac{\lambda}{2}, \frac{\lambda}{2}\right)$.
+
+$(\mathcal{S})$ est un cône $\Leftrightarrow\Omega\in(\mathcal{S})\Leftrightarrow \frac{3\lambda^2}{4}-\lambda =0\Leftrightarrow\lambda\in\left\{0, \frac{4}{3}\right\}$.
+
+\textbullet~Si $\lambda=0$, $(\mathcal{S})$ admet pour équation $xy+yz+zx = 0$.
+Dans le repère $(O,X,Y,Z)$ où $X=/dfrac{1}{\sqrt{2}}(x-y)$, $Y = \frac{1}{\sqrt{6}}(x+y-2z)$ et $Z = \frac{1}{\sqrt{3}}(x+y+z)$, $(\mathcal{S})$ admet pour équation cartésienne $- \frac{1}{2}X^2-  \frac{1}{2}Y^2+ \frac{1}{2}Z^2 = 0$ ou encore $(\mathcal{S})$ est le cône de révolution de sommet 
+$O$ et de section droite le cercle d'équations $\left\{
+\begin{array}{l}
+Z=1\\
+X^2+Y^2+Z^2=3
+\end{array}
+\right.$ dans $(O,X,Y,Z)$ ou encore $\left\{
+\begin{array}{l}
+x+y+z=\sqrt{3}\\
+x^2+y^2+z^2=3
+\end{array}
+\right.$ dans $(O,x,y,z)$.
+
+Puisque $(\mathcal{S})$ est un cône de révolution de sommet $O$ et d'axe la droite d'équations $x=y=z$, il est plus interessant de fournir le demi angle au sommet $\theta$. Le point $A(1,1,1)$ est sur l'axe et le point $M(2,2-1)$ est sur le cône. Donc $\theta=\Arccos\left( \frac{\left|\overrightarrow{OA}.\overrightarrow{OM}\right|}{OA\times OM}\right)=\Arccos\left( \frac{3}{3\sqrt{3}}\right)=\Arccos\left( \frac{1}{\sqrt{3}}\right)$. 
+
+\textbullet~Si $\lambda= \frac{4}{3}$, $(\mathcal{S})$ admet pour équation $xy+yz+zx- \frac{4}{3}(x+y+z) + \frac{4}{3}= 0$ dans $(O,i,j,k)$  ou encore 
+$XY+XZ+YZ = 0$ dans $(\Omega,i,j,k)$ ce qui ramène au cas précédent.
+\fincorrection
+\finexercice

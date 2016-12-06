@@ -1,0 +1,45 @@
+\exercice{5195, rouget, 2010/06/30}
+\enonce[**I]
+$(ABC)$ est un vrai triangle.
+\begin{enumerate}
+\item  Montrer que ses médianes sont concourantes en $G$ l'isobarycentre de $(ABC)$.
+\item  Montrer que ses médiatrices sont concourantes en $O$ le centre du cercle circonscrit à $(ABC)$.
+\item  Montrer que ses hauteurs sont concourantes en $H$ l'orthocentre de $(ABC)$ puis montrer la relation d'\textsc{Euler}~:
+
+$\overrightarrow{OH}=3\overrightarrow{OG}$ (considérer l'homothétie de centre $G$ et de rapport $-2$).
+\item  Montrer que ses  bissectrices (intérieures) sont concourantes en $I$ le centre du cercle inscrit.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  Soit $G$ l'isobarycentre du triangle $(ABC)$. On a donc $G=\mbox{bar}(A(1),B(1),C(1))$. Notons $A'$, $B'$ et $C'$ les milieux respectifs des côtés $[B,C]$, $[C,A]$ et $[A,B]$. D'après le théorème du barycentre partiel, 
+$G=\mbox{bar}(A(1),A'(2))$. En particulier, $G$ est sur la médiane $(AA')$. De même, $G$ est sur la médiane $(BB')$ et sur la médiane $(CC')$.
+
+Finalement, $G$ est sur les trois médianes. les trois médianes sont donc concourantes en $G$.
+
+\item  Les droites $(BC)$ et $(CA)$ ne sont pas parallèles. Par suite, les médiatrices respectives des côtés $[B,C]$ et $[C,A]$ ne sont pas parallèles. Elles sont donc sécantes en un point que l'on note $O$. Par définition de $O$, on a $OA=OB=OC$. $O$ est donc à égale distance de $A$ et $B$ et est ainsi sur la médiatrice de $[A,B]$. Finalement, les trois médiatrices sont concourantes en $O$. De plus, $O$ étant à égale distance de $A$, $B$ et $C$, le cercle de centre $O$ et de rayon $OA$ passe par $B$ et $C$.
+
+Réciproquement, un cercle passant par $A$, $B$ et $C$ a pour centre un point à égale distance de ces points et donc nécessairement de centre $O$ et de rayon $OA$. Ceci démontre l'existence et l'unicité du cercle circonscrit au triangle $(ABC)$~:~c'est le cercle de centre $O$ et de rayon $OA$.
+
+\item  Les hauteurs issues de $A$ et $B$ ne sont pas parallèles (car perpendiculaires à deux droites non parallèles). Elles admettent ainsi un et un seul point d'intersection. Ceci assure l'unicité d'un point commun aux trois hauteurs.
+
+Soit $h$ l'homthétie de centre $G$ et de rapport $-2$. Puisque $\overrightarrow{GA}=-2\overrightarrow{GA}$, on a $h(A')=A$ et de même $h(B')=B$ et $h(C')=C$.
+
+Par $h$, l'image de la médiatrice de $[B,C]$, c'est-à-dire de la droite passant par $A'$ et perpendiculaire à $(BC)$ est la droite passant par $h(A')=A$ et perpendiculaire à $(BC)$ (car parallèle à la médiatrice de $[B,C]$). Cette droite est la hauteur issue de $A$ du triangle $(ABC)$. De même, les images des médiatrices de $[C,A]$ et $[A,B]$ sont respectivement les hauteurs issues de $B$ et $C$.
+
+Le point $O$ est sur les trois médiatrices. Son image par $h$ est donc sur les trois hauteurs (d'où l'existence d'un point commun aux trois hauteurs). Ces trois hauteurs sont ainsi concourantes en un point noté $H$ et appelé l'orthocentre du triangle $(ABC)$. De plus, l'égalité $h(O)=H$ s'écrit $\overrightarrow{GH}=-2\overrightarrow{GO}$ ou encore $\overrightarrow{G0}+\overrightarrow{OH}=2\overrightarrow{OG}$ ou enfin,
+
+\begin{center}
+\shadowbox{$\overrightarrow{OH}=3\overrightarrow{OG}$  \textsc{Euler}.}
+\end{center}
+
+Les trois points $O$, $G$ et $H$, s'ils sont deux à deux distincts, sont en particulier alignés sur une droite appelée \textbf{droite d'}\textsc{Euler} du triangle $(ABC)$.
+
+\item  Deux bissectrices intérieures ne sont pas parallèles (démontrez-le) et sont donc sécantes en un point $I$ à égale distance des trois côtés et à l'intérieur du triangle $(ABC)$. Ce point étant à égale distance des trois côtés est centre du cercle tangent intérieurement aux trois côtés, le cercle inscrit.
+
+\end{enumerate}
+\fincorrection
+\finexercice

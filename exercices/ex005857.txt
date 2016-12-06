@@ -1,0 +1,27 @@
+\exercice{5857, rouget, 2010/10/16}
+\enonce[**]
+On munit $E=\mathcal{M}_n(\Rr)$ de la norme $N$ définie par $\forall A\in E$, $N(A)=\underset{1\leqslant i\leqslant n}{\text{Sup}}\left\{\sum_{j=1}^{n}|a_{i,j}|\right\}$ (on admet que $N$ est une norme sur $E$).
+
+Soit $f$ l'application de $E$ dans $\Rr$ définie par $\forall A\in E$, $f(A)=\text{Tr}(A)$. Démontrer que l'application $f$ est continue sur $(E,N)$ et déterminer $|||f|||$.
+\finenonce
+
+\noindication
+
+\correction
+L'application $f$ est linéaire de $(E,N)$ dans $(\Rr,|\;|)$. Soit $A=(a_{i,j})_{1\leqslant i,j\leqslant n}\in E$.
+
+\begin{align*}\ensuremath
+|f(A)|&=|\text{Tr}(A)|\leqslant\sum_{i=1}^{n}|a_{i,i}|\\
+ &\leqslant\sum_{i=1}^{n}\left(\sum_{j=1}^{n}|a_{i,j}|\right)\leqslant\sum_{i=1}^{n}N(A)=nN(A).
+\end{align*}
+ 
+
+Ceci montre déjà que $f$ est continue sur $(E,N)$ et que $|||f|||\leqslant n$. De plus, si $A=I_n\neq0$, $ \frac{|f(A)|}{N(A)}= \frac{n}{1}=n$. Donc
+
+\begin{center}
+\shadowbox{
+$f$ est continue sur $(E,N)$ et $|||f|||=n$.
+}
+\end{center}
+\fincorrection
+\finexercice

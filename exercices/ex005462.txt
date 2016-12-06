@@ -1,0 +1,25 @@
+\exercice{5462, rouget, 2010/07/10}
+\enonce[***]
+Soit $f$ une fonction de classe $C^1$ sur $[a,b]$ telle que $f(a)=f(b)=0$ et soit $M=\mbox{sup}\{|f '(x)|,\;x\in[a,b]\}$. Montrer que $\left|\int_{a}^{b}f(x)\;dx\right|\leq M\frac{(b-a)^2}{4}$. 
+\finenonce
+
+\noindication
+
+\correction
+Soit $F$ une primitive de $f$ sur $[a,b]$. $F$ est de classe $C^2$ sur le segment $[a,b]$ et l'inégalité de \textsc{Taylor}-\textsc{Lagrange} permet d'écrire
+
+$$|F(\frac{a+b}{2})-F(a)-\frac{b-a}{2}F'(a)|\leq\frac{1}{2}\frac{(b-a)^2}{4}\sup\{|F''(x)|,\;x\in[a,b]\}.$$
+
+Mais $F'(a)=f(a)=0$ et $F''=f'$. Donc,
+
+$$|F(\frac{a+b}{2})-F(a)|\leq\frac{1}{2}M\frac{(b-a)^2}{4}.$$
+
+De même, puisque $F'(b)=f(b)=0$,
+
+$$|F(\frac{a+b}{2})-F(b)|\leq\frac{1}{2}M\frac{(b-a)^2}{4}.$$
+
+Mais alors,
+
+$$\left|\int_{a}^{b}f(t)\;dt\right|=|F(b)-F(a)|\leq|F(b)-F(\frac{a+b}{2})|+|F(\frac{a+b}{2})-F(a)|\leq\frac{1}{2}M\frac{(b-a)^2}{4}+\frac{1}{2}M\frac{(b-a)^2}{4}=M\frac{(b-a)^2}{4}.$$
+\fincorrection
+\finexercice

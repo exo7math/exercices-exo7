@@ -1,0 +1,70 @@
+\exercice{1506, barraud, 2003/09/01}
+
+\enonce
+On considère un espace euclidien $(E,<>)$.
+
+\begin{enumerate}
+\item
+\textbf{Théorème de Pythagore :}
+
+Soient $u$ et $v$ deux vecteurs orthogonaux de $E$. Calculer $||u+v||^{2}$. Illustrer le
+résultat obtenu à l'aide d'un dessin.
+
+\item
+\textbf{Projection orthogonale et distance à un sous-espace :}
+
+Soit $F$ un sous-espace de $E$. On rappelle que $E=F\oplus F^{\bot}$, et donc que tout
+vecteur $x$ de $E$ se décompose de manière unique en une somme $x=x_{1}+_{2}$ avec
+$x_{1}\in F$ et $x_{2}\in F^{\bot}$. Le vecteur $x_{1}$ s'appelle alors la projection
+orthogonale de $x$ sur $F$.
+\begin{enumerate}
+  \item
+Montrer que l'application $p$ qui à un vecteur asocie sa projection orthogonale sur $E$
+est une application linéaire. Vérifier que : $\forall y\in F, <x-p(x),y>=0$.
+  \item\label{q: proj-realise-d}
+On considère maintenant un vecteur $x$ de $E$. On appelle distance de $x$ à $F$ le nombre
+$\mathrm{dist}(x,F)=\inf_{y\in F}\Vert x-y\Vert$.
+
+Pour $y\in F$, vérifier que $x-p(x)$ et $y-p(x)$ sont orthogonaux. Utiliser alors la
+question 1 pour montrer que $||x-y||^{2}\geq ||x-p(x)||^{2}$. Illustrer sur un dessin.
+
+En déduire que $\mathrm{dist}(x,F)=||x-p(x)||$. 
+
+\item\label{q: proj-en-coord}
+Soit $(e_{1},\ldots,e_{r})$ une base orthonormée de $F$. Montrer que
+$p(x)=\sum_{i=1}^{r}<x,e_{i}>\;e_{i}$.
+\end{enumerate}
+
+\item
+\textbf{Espace de polynômes :}
+
+Sur l'espace $E=\R_{3}[X]$, on considère la forme bilinéaire définie par :
+$$
+  <P,Q>=\frac{1}{2}\int_{-1}^{1}P(t)Q(t)dt.
+$$
+\begin{enumerate}
+\item
+Montrer qu'il s'agit d'un produit scalaire (on admet que l'intégrale sur $[-1,1]$ d'une
+fonction $f$ continue et positive est nulle si et seulement si $f$ est nulle sur $[-1,1]$)
+
+\item\label{q: Schmidt}
+A l'aide du procédé de Schmidt appliqué à la base $(1,X,X^{2})$, construire une base
+orthonormée de $\R_{2}[X]$ pour ce produit scalaire.
+\item
+On considère le polynôme $P_{0}=X^{3}$. Calculer la projection
+orthogonale de $X^{3}$ sur $\R_{2}[X]$. En déduire que pour ce produit
+scalaire, on a :
+$$
+  \mathrm{dist}(X^{3},\R^{2}[X])=\frac{2}{5\sqrt{7}}\ .
+$$
+\end{enumerate}
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\nocorrection
+
+\finexercice
+

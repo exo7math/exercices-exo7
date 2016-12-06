@@ -1,0 +1,50 @@
+\exercice{5086, rouget, 2010/06/30}
+\enonce[*IT]
+\label{exo:suprou3}
+Etablir pour ch, sh et th les formules d'addition, de duplication et de linéarisation.
+\finenonce
+
+\noindication
+
+\correction
+\ 
+\begin{center}
+\shadowbox{
+$\begin{array}{ccc}
+\ch(a+b)=\ch a\ch b+\sh a\sh b&\mbox{et}&\ch(a-b)=\ch a\ch b-\sh a\sh b,\\
+\sh(a+b)=\sh a\ch b+\ch a\sh b&\mbox{et}&\sh(a-b)=\sh a\ch b-\sh b\ch a\\
+\tanh(a+b)=\frac{\tanh a+\tanh
+b}{1+\tanh a\tanh b}&\mbox{et}&\tanh(a-b)=\frac{\tanh a-\tanh b}{1-\tanh a\tanh b}.
+\end{array}$
+}
+\end{center}
+Deux
+démonstrations~:
+
+$$\ch a\ch b+\sh a\sh b=\frac{1}{4}((e^a+e^{-a})(e^b+e^{-b})+(e^a-e^{-a})(e^b-e^{-b})) =
+\frac{1}{2}(e^{a+b}+e^{-a-b})=\ch(a+b).$$
+
+$$\tanh(a+b)=\frac{\sh(a+b)}{\ch(a+b)}=\frac{\sh a\ch b+\sh b\ch
+a}{\ch a\ch b+\sh a\sh b}=\frac{\tanh a+\tanh b}{1+\tanh a\tanh b}$$
+après division
+du numérateur et du dénominateur par le nombre non nul $\ch a\ch b$.
+En appliquant à $a=b=x$, on
+obtient~:~
+
+\begin{center}
+\shadowbox{
+$\forall x\in\Rr,\;\ch(2x)=\ch^2x+sh^2x=2ch^2x-1=2sh^2x+1,\;\sh(2x)=2\sh x\ch x\;\mbox{et}\;
+\tanh(2x)=\frac{2\tanh
+x}{1+\tanh^2x}.$
+}
+\end{center}
+En additionnant entre elles les formules d'addition, on obtient les formules de linéarisation~:
+
+$$\ch a\ch
+b=\frac{1}{2}(\ch(a+b)+\ch(a-b)),\;\sh a\sh
+b=\frac{1}{2}(\ch(a+b)-\ch(a-b))\;\mbox{et}\;\sh a\ch b=\frac{1}{2}(\sh(a+b)+\sh(a-b)),$$
+et en particulier
+
+$$\ch^2x=\frac{\ch(2x)+1}{2}\;\mbox{et}\;\sh^2x=\frac{\ch(2x)-1}{2}.$$
+\fincorrection
+\finexercice

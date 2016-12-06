@@ -1,0 +1,74 @@
+\exercice{2578, delaunay, 2009/05/19}
+\enonce
+Soient $a,b,c$ des r\'eels v\'erifiant $a^2+b^2+c^2=1$ et
+$P$ la matrice r\'eelle $3\times3$ suivante :
+$$P=\begin{pmatrix}a^2&ab&ac \\  ab&b^2&bc \\  ac&bc&c^2\end{pmatrix}$$
+\begin{enumerate}  
+  \item Calculer le d\'eterminant de $P$.
+  \item D\'eterminer les sous-espaces vectoriels de $\R^3$, $\ker P$ et $\Im P$.
+  \item Soit $Q=I-P$, calculer $P^2$, $PQ$, $QP$ et $Q^2$.
+  \item Caract\'eriser g\'eom\'etriquement $P$ et $Q$.
+ \end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+{\it Soient $a,b,c$ des r\'eels v\'erifiant $a^2+b^2+c^2=1$ et
+$P$ la matrice r\'eelle $3\times3$ suivante} :
+$$P=\begin{pmatrix}a^2&ab&ac \\  ab&b^2&bc \\  ac&bc&c^2\end{pmatrix}$$
+\begin{enumerate} 
+   \item Calculons le d\'eterminant de $P$.
+$$\det P=\begin{vmatrix}a^2&ab&ac \\  ab&b^2&bc \\  ac&bc&c^2\end{vmatrix}=abc\begin{vmatrix}a&a&a \\  b&b&b \\  c&c&c\end{vmatrix}=0.$$
+  \item D\'eterminons les sous-espaces vectoriels de $\R^3$, $\ker P$ et $\Im P$.
+$$\ker P=\left\{(x,y,z)\in\R^3,\ \begin{pmatrix}a^2&ab&ac \\  ab&b^2&bc \\  ac&bc&c^2\end{pmatrix}
+\begin{pmatrix}x \\  y \\  z\end{pmatrix}=\begin{pmatrix}0 \\  0 \\  0\end{pmatrix}\right\},$$
+on a 
+$$(x,y,z)\in\ker P\iff\left\{\begin{align*}a(ax+by+cz)&=0 \\  b(ax+by+cz)&=0 \\  c(ax+by+cz)&=0 \\ \end{align*}\right.$$
+Or, $a,b$ et $c$ ne sont pas simultan\'ement nuls car $a^2+b^2+c^2=1$, ainsi
+$$\ker P=\{(x,y,z)\in\R^3,\ ax+by+cz=0\},$$
+c'est le plan vectoriel d'\'equation $ax+by+cz=0$.
+
+L'image de $P$ est le sous-espace de $\R^3$ engendr\'e par les vecteurs colonnes de la matrice $P$. Sachant que 
+$\dim \ker P+\dim\Im P=\dim \R^3=3$, on sait que la dimension de l'image de $P$ est \'egale \`a $1$, c'est-\`a-dire que l'image est une droite vectorielle. En effet, les vecteurs colonnes de $P$ sont les vecteurs
+$$\begin{pmatrix}a^2 \\  ab \\  ac\end{pmatrix},\begin{pmatrix}ab \\  b^2 \\  bc\end{pmatrix}, \begin{pmatrix}ac \\  bc \\  c^2\end{pmatrix}$$
+c'est-\`a-dire
+$$a\begin{pmatrix}a \\  b \\  c\end{pmatrix},b\begin{pmatrix}a \\  b \\  c\end{pmatrix}, c\begin{pmatrix}a \\  b \\  c\end{pmatrix}.$$
+Le sous-espace $\Im P$ est donc la droite vectorielle engendr\'ee par le vecteur $\begin{pmatrix}a \\  b \\  c\end{pmatrix}$.
+
+  \item Soit $Q=I-P$, calculons $P^2$, $PQ$, $QP$ et $Q^2$.
+  \begin{align*}
+  P^2&=\begin{pmatrix}a^2&ab&ac \\  ab&b^2&bc \\  ac&bc&c^2\end{pmatrix}\begin{pmatrix}a^2&ab&ac \\  ab&b^2&bc \\  ac&bc&c^2\end{pmatrix} \\  &=
+\begin{pmatrix}a^4+a^2b^2+a^2c^2 & a^3b+ab^3+abc^2 & a^3c+ab^2c+ac^3  \\  
+a^3b+ab^3+abc^2 & a^2b^2+b^4+b^2c^2 & a^2bc+b^3c+bc^3 \\ 
+a^3c+ab^2c+ac^3 & a^2bc+b^3c+bc^3 & a^2c^2+b^2c^2+c^4\end{pmatrix}
+ \\ &=\begin{pmatrix}a^2(a^2+b^2+c^2)&ab(a^2+b^2+c^2)&ac(a^2+b^2+c^2) \\ 
+ ab(a^2+b^2+c^2)&b^2(a^2+b^2+c^2)&bc(a^2+b^2+c^2)
+  \\  ac(a^2+b^2+c^2)&bc(a^2+b^2+c^2)&c^2(a^2+b^2+c^2)\end{pmatrix} \\ &=
+ \begin{pmatrix}a^2&ab&ac \\  ab&b^2&bc \\  ac&bc&c^2\end{pmatrix}=P.  
+ \end{align*}
+Car $a^2+b^2+c^2=1$.
+
+
+Si $Q=I-P$, on a
+$$PQ=P(I-P)=PI-P^2=P-P=0,$$
+$$QP=(I-P)P=IP-P^2=P-P=0$$ et
+$$Q^2=(I-P)(I-P)=I^2-IP-PI+P^2=I-P-P+P=I-P=Q.$$
+
+
+  \item Caract\'erisons g\'eom\'etriquement $P$ et $Q$.
+
+
+Nous avons vu que le noyau de $P$ \'etait \'egal au plan vectoriel d'\'equation $ax+by+cz=0$ et que  son image de \'etait la droite vectorielle engendr\'ee par le vecteur $(a,b,c)$. 
+Par ailleurs, on a $P^2=P$, \'egalit\'e qui caract\'erise les projecteurs, l'endomorphisme de matrice $P$ est donc la projection sur $\Im P$ suivant la direction $\ker P$.
+
+Soit $X\in \R^3$, on a 
+$$QX=0\iff IX-PX=0\iff PX=X\iff X\in \Im P,$$ 
+ainsi $\ker Q=\Im P$. D'autre part,
+$$Q=I-P=\begin{pmatrix}1-a^2&-ab&-ac \\  -ab&1-b^2&-bc \\  -ac&-bc&1-c^2\end{pmatrix}=
+\begin{pmatrix}b^2+c^2&-ab&-ac \\  -ab&a^2+c^2&-bc \\  -ac&-bc&a^2+b^2\end{pmatrix}.$$
+On a $\dim\Im Q=2$ et les vecteurs colonnes de $Q$ v\'erifient l'\'equation $ax+by+cz=0$, ainsi $\Im Q=\ker P$. L'\'egalit\'e $Q^2=Q$ prouve que $Q$ est \'egalement un projecteur, c'est la projection sur $\Im Q$ dirig\'ee par $\ker Q$.
+
+  \end{enumerate}
+\fincorrection
+\finexercice

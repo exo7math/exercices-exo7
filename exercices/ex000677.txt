@@ -1,0 +1,40 @@
+\exercice{677, bodin, 1998/09/01}
+\video{C7uoURImunQ}
+\enonce
+Les fonctions suivantes sont-elles prolongeables par continuit\'e sur
+$\R$ ?
+$$ a)\ f(x)=\sin x \cdot \sin \frac{1}{x}\ ;\ \ \
+b)\ g(x)=\frac{1}{x}\ln\frac{e^x+e^{-x}}{2}\ ;$$
+$$c)\ h(x)=\frac{1}{1-x}-\frac{2}{1-x^2}\ .$$
+\finenonce 
+
+\indication
+Oui pour le deux premi\`eres en posant $f(0)=0$, $g(0)=0$, non pour la troisi\`eme.
+\finindication
+
+\correction
+\begin{enumerate}
+  \item La fonction est d\'efinie sur $\Rr^*$ t elle est continue sur $\Rr^*$. Il faut d\'eterminer un \'eventuel prolongement par continuit\'e en $x=0$, c'est-\`a-dire savoir si $f$ a une limite en $0$.
+$$|f(x)| = |\sin x| |\sin 1/x| \leq |\sin x|.$$
+Donc $f$ a une limite en $0$ qui vaut $0$. 
+Donc en posant $f(0) = 0$, nous obtenons une fonction $f : \Rr \longrightarrow \Rr$ qui est continue.
+  \item La fonction $g$ est d\'efinie et continue sur $\Rr^*$. 
+Etudions la situation en $0$. Il faut remarquer que $g$ est la taux d'accroissement en
+$0$ de la fonction $k(x) = \ln \frac{e^x+e^{-x}}{2}$ : en effet $g(x)=\frac{k(x)-k(0)}{x-0}$.
+Donc si $k$ est dérivable en $0$ alors la limite de $g$ en $0$ est \'egale \`a
+la valeur de $k'$ en $0$. 
+
+Or la fonction $k$ est dérivable sur $\Rr$ et $k'(x) = \frac{e^x-e^{-x}}{e^x+e^{-x}}$
+donc $k'(0)=0$. Bilan : en posant $g(0)=0$ nous obtenons une fonction $g$ d\'efinie et continue sur $\Rr$.
+
+  \item $h$ est d\'efinie et continue sur $\Rr \setminus \{ -1,1 \}$.
+$$h(x) = \frac{1}{1-x} - \frac{2}{1-x^2} = \frac{1+x-2}{(1-x)(1+x)}
+= \frac{-1+x}{(1-x)(1+x)} = \frac{-1}{(1+x)}.$$
+Donc $h$ a pour limite $-\frac 12$ quand $x$ tend vers $1$.
+Et donc en posant $h(1) = -\frac 12$, nous d\'efinissons une fonction
+continue sur $\Rr \setminus \{ -1 \}$.
+En $-1$ la fonction $h$ ne peut \^etre prolong\'ee continuement,
+car en $-1$, $h$ n'admet de limite finie.
+\end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,105 @@
+%%%%%%%%%%%%%%%%%% PREAMBULE %%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt,a4paper]{article}
+
+\usepackage{amsfonts,amsmath,amssymb,amsthm}
+\usepackage[francais]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+%----- Ensemles : entiers, reels, complexes -----
+\newcommand{\Nn}{\mathbb{N}} \newcommand{\N}{\mathbb{N}}
+\newcommand{\Zz}{\mathbb{Z}} \newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Qq}{\mathbb{Q}} \newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Rr}{\mathbb{R}} \newcommand{\R}{\mathbb{R}}
+\newcommand{\Cc}{\mathbb{C}} \newcommand{\C}{\mathbb{C}}
+
+%----- Modifications de symboles -----
+\renewcommand {\epsilon}{\varepsilon}
+\renewcommand {\Re}{\mathop{\mathrm{Re}}\nolimits}
+\renewcommand {\Im}{\mathop{\mathrm{Im}}\nolimits}
+
+%----- Fonctions usuelles -----
+\newcommand{\ch}{\mathop{\mathrm{ch}}\nolimits}
+\newcommand{\sh}{\mathop{\mathrm{sh}}\nolimits}
+\renewcommand{\tanh}{\mathop{\mathrm{th}}\nolimits}
+\newcommand{\Arcsin}{\mathop{\mathrm{Arcsin}}\nolimits}
+\newcommand{\Arccos}{\mathop{\mathrm{Arccos}}\nolimits}
+\newcommand{\Arctan}{\mathop{\mathrm{Arctan}}\nolimits}
+\newcommand{\Argsh}{\mathop{\mathrm{Argsh}}\nolimits}
+\newcommand{\Argch}{\mathop{\mathrm{Argch}}\nolimits}
+\newcommand{\Argth}{\mathop{\mathrm{Argth}}\nolimits}
+\newcommand{\pgcd}{\mathop{\mathrm{pgcd}}\nolimits} 
+
+%----- Commandes special dessin a ajouter localement ------
+\usepackage{geometry}
+\usepackage{pstricks}
+\usepackage{pst-plot}
+\usepackage{pst-node}
+\usepackage{graphics,epsfig}
+
+\newcmykcolor{DarkGreen}{0.4 0 0.76 0.3}
+\newcmykcolor{Goldenrod}{0 0.1 0.84 0}
+\newcmykcolor{Fuchsia}{0.47 0.91 0 0.08}
+
+\pagestyle{empty}
+
+% Que faire avec ce fichier monimage.tex ?
+%   1/ latex monimage.tex
+%   2/ dvips monimage.dvi
+%   3/ ps2eps monimage.ps
+%   4/ ps2pdf -dEPSCrop monimage.eps
+%   5/ Dans votre fichier d'exos \includegraphics{monimage}
+
+\begin{document}
+
+\begin{center}
+\begin{pspicture}(-1,-1)(5,5)
+\pscustom[fillstyle=solid,fillcolor=Goldenrod,linestyle=none]
+{
+\psplot{1}{1.442}{x dup mul}
+\psline(1.442,0)(1,0)
+}
+\pscustom[fillstyle=solid,fillcolor=white,linestyle=none]
+{
+\psplot{0.9}{1.442}{x sqrt}
+\psline(1.442,0)(0.9,0)
+}
+\pscustom[fillstyle=solid,fillcolor=Goldenrod,linestyle=none]
+{
+\psplot{1.442}{3}{x 3 mul sqrt}
+\psline(3,0)(1.442,0)
+}
+\pscustom[fillstyle=solid,fillcolor=white,linestyle=none]
+{
+\psplot{1.4}{2.1}{x sqrt}
+\psline(2.1,0)(1.4,0)
+}
+\pscustom[fillstyle=solid,fillcolor=white,linestyle=none]
+{
+\psplot{2.08}{3.1}{x dup mul 3 div}
+\psline(3.1,0)(2.08,0)
+}
+\psline{->}(-0.5,0)(5,0)
+\psline{->}(0,-0.5)(0,5)
+\psplot[linecolor=blue]{0}{5}{x sqrt}
+\psplot[linecolor=blue]{0}{5}{x 3 mul sqrt}
+\psplot[linecolor=blue]{0}{2.2}{x dup mul}
+\psplot[linecolor=blue]{0}{3.9}{x dup mul 3 div}
+\psplot[linestyle=dashed]{0}{3}{x dup mul 2 div}
+\psplot[linestyle=dashed]{0}{5}{x 1.5 mul sqrt}
+%\psdots(3,3)
+%\psdots(1.442,2.08)
+%\psdots(1,1)
+%\psdots(2.08,1.442)
+\uput[r](5,2.23){\textcolor{blue}{$y^2=2p_1x$}}
+\uput[r](5,3.87){\textcolor{blue}{$y^2=2p_1x$}}
+\uput[u](2.2,4.84){\textcolor{blue}{$x^2=2q_1y$}}
+\uput[u](4.1,4.9){\textcolor{blue}{$x^2=2q_2y$}}
+\uput[u](3,4.5){$x^2=2qy$}
+\uput[r](5,2.73){$y^2=2px$}
+\psdots(1.817,1.65)
+\end{pspicture}
+\end{center}
+
+\end{document}

@@ -1,0 +1,51 @@
+\exercice{5968, tumpach, 2010/11/11}
+\enonce
+Soit $\{f_{n}\}_{n\in\mathbb{N}}$ la suite de fonctions d\'efinies
+par~:
+$$
+f_{n}(x) = \sqrt{n} \mathbf{1}_{[n, n+\frac{1}{n}]}(x).
+$$
+\begin{enumerate}
+\item Montrer que $f_{n}$ converge faiblement vers $0$ dans
+$L^{2}([0, +\infty[)$ mais ne converge pas fortement dans $L^2([0,
++\infty[)$.
+
+\item Montrer que $f_{n}$ converge fortement vers $0$ dans
+$L^{p}([0, +\infty[)$ pour $p<2$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+Soit $\{f_{n}\}_{n\in\mathbb{N}}$ la suite de fonctions d\'efinies
+par~:
+$$
+f_{n}(x) = \sqrt{n} \mathbf{1}_{[n, n+\frac{1}{n}]}(x).
+$$
+\begin{enumerate}
+\item Quelque soit $g$ continue \`a support compact,
+$$
+\int_{[0, +\infty[} f_{n}(x) g(x)\,dx = \sqrt{n}
+\int_{n}^{n+\frac{1}{n}} g(x)\,dx \rightarrow 0
+$$
+quand $n\rightarrow +\infty$. Par densit\'e des fonctions
+continues \`a support compact, $f_{n}$ converge faiblement vers
+$0$. Comme $f_n$ converge presque partout vers $0$ on conclut
+comme pr\'ec\'edemment que $f_n$ ne converge pas fortement vers
+$0$ dans $L^2([0, +\infty[)$ car
+$$
+\|f_{n}\|_{2} = 1.
+$$
+
+\item Pour $p<2$, on a~:
+$$
+\int_{[0, +\infty[} |f_{n}(x)|\,dx = \int_{n}^{n+\frac{1}{n}}
+n^{\frac{p}{2}}\,dx = n^{ \frac{p}{2}-1} \rightarrow 0,
+$$
+donc $f_{n}$ converge fortement vers $0$ dans $L^{p}([0,
++\infty[)$.
+\end{enumerate}
+\fincorrection
+
+\finexercice

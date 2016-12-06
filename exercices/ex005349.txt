@@ -1,0 +1,72 @@
+\exercice{5349, rouget, 2010/07/04}
+\enonce
+Déterminer $\lambda$ et $\mu$ complexes tels que les zéros de $z^4-4z^3-36z^2+\lambda z+\mu$ soient en progression arithmétique. Résoudre alors l'équation.
+\finenonce
+
+\noindication
+
+\correction
+Posons $P=X^4-4X^3-36X^2+\lambda X+\mu$.
+ 
+\begin{align*}\ensuremath
+(\lambda,\mu)\;\mbox{solution}&\Leftrightarrow\exists(z,r)\in\Cc^2/\;\mbox{les racines de}\;P\;\mbox{soient}\;z,z+r,z+2r,z+3r\\
+  &\Leftrightarrow\exists(z,r)\in\Cc^2/\;\left\{
+ \begin{array}{l}
+ \sigma_1=4\\
+ \sigma_2=-36\\
+ \sigma_3=-\lambda\\
+ \sigma_4=\mu
+ \end{array}
+ \right.
+ \\
+ &\Leftrightarrow\exists(z,r)\in\Cc^2/\;\left\{
+ \begin{array}{l}
+ 4z+6r=4\\
+ z(3z+6r)+(z+r)(2z+5r)+(z+2r)(z+3r)=-36\\
+ \sigma_3=-\lambda\\
+ \sigma_4=\mu
+ \end{array}
+ \right.
+ \\
+ &\Leftrightarrow\exists(z,r)\in\Cc^2/\;\left\{
+ \begin{array}{l}
+ 2z+3r=2\\
+ 6z^2+18rz+11r^2=-36\\
+ \sigma_3=-\lambda\\
+ \sigma_4=\mu
+ \end{array}
+ \right.
+ \\
+ &\Leftrightarrow\exists(z,r)\in\Cc^2/\;\left\{
+ \begin{array}{l}
+ z=1-\frac{3}{2}r\\
+ 6(1-\frac{3}{2}r)^2+18(1-\frac{3}{2}r)r+11r^2=-36\\
+ \sigma_3=-\lambda\\
+ \sigma_4=\mu
+ \end{array}
+ \right.
+ \\
+ &\Leftrightarrow\exists(z,r)\in\Cc^2/\;\left\{
+ \begin{array}{l}
+ -\frac{5}{2}r^2+42=0\\
+ z=1-\frac{3}{2}r\\
+ \sigma_3=-\lambda\\
+ \sigma_4=\mu
+ \end{array}
+ \right.
+\end{align*}
+
+D'où la solution (les deux valeurs opposées de $r$ fournissent évidemment la même progression arithmétique)
+$r=2\sqrt{\frac{21}{5}}$ puis $z=1-3\sqrt{\frac{21}{5}}$ puis les racines $z_1=1-3\sqrt{\frac{21}{5}}$, $z_2=1-\sqrt{\frac{21}{5}}$, $z_3=1+\sqrt{\frac{21}{5}}$ et $z_4=1+3\sqrt{\frac{21}{5}}$, obtenues pour 
+
+$$\lambda=z_1z_2z_3z_4=(1-3\sqrt{\frac{21}{5}})(1-\sqrt{\frac{21}{5}})(1+\sqrt{\frac{21}{5}})
+(1+3\sqrt{\frac{21}{5}})= (1-9\frac{21}{5})(1-\frac{21}{5})=\frac{2994}{25},$$
+ 
+et 
+
+\begin{align*}\ensuremath
+\mu&=(1-3\sqrt{\frac{21}{5}})(1-\frac{21}{5})+(1-9\frac{21}{5})(1-\sqrt{\frac{21}{5}})+(1-9\frac{21}{5})(1+\sqrt{\frac{21}{5}})+(1-\frac{21}{5})(1+3\sqrt{\frac{21}{5}})\\
+ &=2(1-\frac{21}{5})+2(1-9\frac{21}{5})=2(2-10\frac{21}{5})=-80
+\end{align*}
+\fincorrection
+\finexercice

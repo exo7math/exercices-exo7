@@ -1,0 +1,51 @@
+\exercice{4430, quercia, 2010/03/14}
+\enonce[Calcul de sommes]
+
+Calculer les sommes des séries suivantes : 
+\begin{enumerate}
+  \item $\sum_{k=2}^\infty \frac 1{k^2-1}$.
+  \item $\sum_{k=1}^\infty \frac 1{k(k+1)(k+2)}$.
+  \item $\sum_{k=1}^\infty \frac 1{k(k+1)\dots(k+p)}$.
+  \item $\sum_{k=0}^\infty \frac 1{k^3+8k^2+17k+10}$.
+  \item $\sum_{k=1}^\infty \ln\left(1+\frac2{k(k+3)}\right)$.
+  \item $\sum_{k=2}^\infty \ln\left(1-\frac1{k^2}\right)$.
+  \item $\sum_{k=0}^\infty \ln\left(\cos\frac\alpha{2^k}\right)$.
+  \item $\sum_{k=0}^\infty 2^{-k}\tan(2^{-k}\alpha)$.
+  \item $\sum_{k=0}^\infty \frac{2k^3-3k^2+1}{(k+3)!}$.
+  \item $\sum_{n=p}^\infty C_n^p x^n$.
+  \item $\sum_{k=1}^\infty \frac{x^k}{(1-x^k)(1-x^{k+1})}$.
+  \item $\sum_{k=1}^\infty \frac{k-n[k/n]}{k(k+1)}$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $\frac 34$.
+  \item $\frac 14$.
+  \item $S_p - (p+1)S_{p+1} = S_p - \frac 1{(p+1)!} \Rightarrow 
+             S_p=\frac 1{pp!}$.
+  \item $\frac{23}{144}$.
+  \item $\ln 3$.
+  \item $-\ln 2$.
+  \item $\ln\left(\frac{\sin2\alpha}{2\alpha}\right)$.
+  \item $\frac1\alpha-2\mathrm{cotan}(2\alpha)$.
+  \item $109 - 40e$.
+  \item $\frac{x^p}{(1-x)^{p+1}}$ pour $|x|<1$ par récurrence.
+  \item $\frac x{(1-x)^2}$ si $|x| <1$,
+             $\frac 1{(1-x)^2}$ si $|x| > 1$.
+  \item $S_n = \sum_{q=0}^\infty\sum_{r=1}^{n-1}
+                       \frac r{(qn+r)(qn+r+1)}
+                  = \sum_{q=0}^\infty\sum_{r=1}^{n-1}
+                       \frac r{qn+r} - \frac r{qn+r+1}$.
+                  \par
+             $S_n = \sum_{q=0}^\infty \left(\frac 1{qn+1} + \frac 1{qn+2}
+                       + \dots + \frac 1{qn+n} - \frac 1{q+1}\right)
+                  = \lim_{N\to\infty}\left(\sum_{k=1}^{(N+1)n} \frac 1k
+                       - \sum_{k=1}^{N+1} \frac 1k \right)
+                  = \ln n$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

@@ -1,0 +1,21 @@
+\exercice{5627, rouget, 2010/10/16}
+\enonce[***I]
+Soient $A$ et $B$ deux éléments de $\mathcal{M}_n(\Rr)$. Montrer que si $A$ et $B$ sont semblables dans $\mathcal{M}_n(\Cc)$, elles le sont dans $\mathcal{M}_n(\Rr)$.
+\finenonce
+
+\noindication
+
+\correction
+Soient $A$ et $B$ deux matrices carrées réelles de format $n$ semblables dans $\mathcal{M}_n(\Cc)$.
+
+Il existe $P$ élément de $\mathcal{GL}_n(\Cc)$ telle que $PB =AP$ (bien plus manipulable que $B=P^{-1}AP$).
+
+Posons $P=Q+iR$ où $Q$ et $R$ sont des matrices réelles. 
+Par identification des parties réelles et imaginaires, on a $QB=AQ$ et $RB=AR$ mais cet exercice n'en est pas pour autant achevé car $Q$ ou $R$ n'ont aucune raison d'être inversibles.
+
+On a $QB=AQ$ et $RB= AR$ et donc plus généralement pour tout réel $x$, $(Q+xR)B=A(Q+xR)$.
+
+Maintenant, $\text{det}(Q+xR)$ est un polynôme à coefficients réels en $x$ mais n'est pas le polynôme nul car sa valeur en $i$ (tel que $i^2 = -1$) est $\text{det}P$ qui est non nul. Donc il n'existe qu'un nombre fini de réels $x$, éventuellement nul, tels que $\text{det}(Q+xR) = 0$. En particulier, il existe au moins un réel $x_0$ tel que la matrice $P_0=Q+x_0R$ soit inversible. $P_0$ est une matrice réelle inversible telle que $P_0A=BP_0$ et $A$ et $B$ sont bien semblables dans $\mathcal{M}_n(\Rr)$.
+
+\fincorrection
+\finexercice

@@ -1,0 +1,81 @@
+\exercice{5977, tumpach, 2010/11/11}
+\enonce 
+
+
+\emph{Le but de cet exercice est de d\'emontrer le th\'eor\`eme
+de Plancherel.} 
+
+\textbf{D\'efinition.}
+Soient $f, g\in L^1(\mathbb{R}^n)$. On note $\hat{f}$ la
+transform\'ee de Fourier d\'efinie par
+$$
+\hat{f}(y) = \int_{\mathbb{R}^n} f(x)\,e^{-2\pi i (y, x)} \,dx,
+$$
+o\`u $(\cdot, \cdot)$ d\'esigne le produit scalaire de
+$\mathbb{R}^n.$ 
+
+\bigskip
+
+\textbf{Th\'eor\`eme de Plancherel.}
+Si $f \in L^{1}(\mathbb{R}^n)\cap L^2(\mathbb{R}^{n})$, alors
+$\|\hat{f}\|_{2} = \| f\|_{2}$.
+
+\bigskip
+
+
+Soit $f \in L^{1}(\mathbb{R}^n)\cap
+L^2(\mathbb{R}^{n})$.
+\begin{enumerate}
+\item Montrer que $\|\hat{f}\|_{\infty}\leq \|f\|_{1}$.
+
+\item Montrer que la fonction $g_{\varepsilon}(k) = |\hat{f}(k)|^2
+\,e^{-\varepsilon\pi|k|^2}$ appartient \`a
+$L^{1}(\mathbb{R}^{n})$.
+
+\item Montrer que $$\int_{\mathbb{R}^{n}} g_{\varepsilon}(k)\,dk =
+\int_{\mathbb{R}^{3n}} \bar{f}(x) f(y) e^{2\pi i (k, x-y)}
+e^{-\varepsilon \pi |k|^2}\,dx dy dk.$$
+
+ \item Sachant que la transform\'ee de Fourier de la
+gaussienne $h_{\varepsilon}(x) = e^{-\pi \varepsilon |x|^2}$
+($\varepsilon>0$, $x\in\mathbb{R}^n$) est donn\'ee par
+$\hat{h}_{\varepsilon}(k) = {\varepsilon}^{-\frac{n}{2}}
+e^{-\frac{\pi|k|^2}{\varepsilon}}$, montrer que
+$$\int_{\mathbb{R}^{n}} g_{\varepsilon}(k)\,dk =
+\int_{\mathbb{R}^{2n}}{\varepsilon}^{-\frac{n}{2}}
+e^{-\frac{\pi|x-y|^2}{\varepsilon}} \bar{f}(x) f(y) \,dx dy.$$
+
+\item Soit $\{s_{\varepsilon}\}_{\varepsilon>0}$ la famille de
+fonctions d\'efinies par~:
+$$
+s_{\varepsilon} = \int_{\mathbb{R}^n} {\varepsilon}^{-\frac{n}{2}}
+e^{-\frac{\pi|x-y|^2}{\varepsilon}} \bar{f}(x)\,dx.
+$$
+Quelle est la limite dans $L^{2}(\mathbb{R}^{n})$ de
+$s_{\varepsilon}$ lorsque $\varepsilon$ tend vers $0$?
+
+
+\item Montrer que $$\lim_{\varepsilon\rightarrow 0}
+\int_{\mathbb{R}^{n}} g_{\varepsilon}(k)\,dk =
+\int_{\mathbb{R}^{n}} (\lim_{\varepsilon\rightarrow
+0}s_{\varepsilon}) f(y) \,dy.$$
+
+
+\item Montrer que $\lim_{\varepsilon\rightarrow 0}
+\int_{\mathbb{R}^{n}} g_{\varepsilon}(k)\,dk =
+\|\hat{f}\|_{2}^2$.
+
+\item En d\'eduire que $\|\hat{f}\|_{2} = \| f\|_{2}$.
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+cf E.~Lieb et M.~Loss, \emph{Analysis}, p.118, American Mathematical Society (2001).
+(Pour la question~6, on peut utiliser la continuit\'e du produit
+scalaire dans $L^{2}(\mathbb{R}^{n})$.)
+\fincorrection
+
+\finexercice

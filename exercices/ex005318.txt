@@ -1,0 +1,33 @@
+\exercice{5318, rouget, 2010/07/04}
+\enonce[**T]
+Pour quelles valeurs de l'entier naturel $n$ le polynôme $(X+1)^n-X^n-1$ est-il divisible par $X^2+X+1$~?
+\finenonce
+
+\noindication
+
+\correction
+Soit $n\in\Nn$.
+
+\begin{align*}\ensuremath
+(X+1)^n-X^n-1\;\mbox{est divisible par}\;X^2+X+1&\Leftrightarrow j\;\mbox{et}\;j^2\;\mbox{sont racines de}\;(X+1)^n-X^n-1\\
+ &\Leftrightarrow j\;\mbox{est racine de}\;(X+1)^n-X^n-1\\
+ &(\mbox{car}\;(X+1)^n-X^{n-1}\;\mbox{est dans}\;\Rr[X])\\
+ &\Leftrightarrow(j+1)^n-j^n-1=0\Leftrightarrow(-j^2)^n-j^n-1=0.
+\end{align*}
+
+Si $n\in6\Zz$, $(-j^2)^n-j^n-1=-3\neq0$.
+ 
+Si $n\in1+6\Zz$, $(-j^2)^n-j^n-1=-j^2-j-1=0$.
+ 
+Si $n\in2+6\Zz$, $(-j^2)^n-j^n-1=j-j^2-1=2j\neq0$.
+ 
+Si $n\in3+6\Zz$, $(-j^2)^n-j^n-1=-3\neq0$.
+ 
+Si $n\in4+6\Zz$, $(-j^2)^n-j^n-1=j^2-j-1=2j^2\neq0$.
+ 
+Si $n\in5+6\Zz$, $(-j^2)^n-j^n-1=-j-j^2-1=0$.
+
+En résumé, $(X+1)^n-X^n-1$ est divisible par $X^2+X+1$ si et seulement si $n$ est dans $(1+6\Zz)\cup(5+6\Zz)$.
+
+\fincorrection
+\finexercice

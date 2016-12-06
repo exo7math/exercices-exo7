@@ -1,0 +1,59 @@
+\exercice{4198, quercia, 2010/03/11}
+\enonce[Centrale MP 2006]
+$E$ désigne l'espace affine euclidien classique. $D_1$, $D_2$, $D_3$
+sont trois droites deux à deux non parallèles.
+\smallskip
+Soit $f : {D_1\times D_2\times D_3} \to \R, {(M_1,M_2,M_3)} \mapsto
+{\|\vec{M_1M_2}\|^2 + \|\vec{M_2M_3}\|^2 + \|\vec{M_3M_1}\|^2.}$
+
+\begin{enumerate}
+  \item Montrer que $f$ admet un minimum atteint pour un unique triplet.
+    
+
+  \item Dans le cas où $D_1$, $D_2$, $D_3$ sont coplanaires et délimitent
+    un triangle équilatéral, trouver ce triplet.
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item On fixe $A_i\in D_i$ et $\vec u_i$ un vecteur directeur
+    de~$D_i$. Soit $M_i = A_i + x_i\vec u_i$. Alors
+
+    \begin{align*}f(M_1,M_2,M_3) &= f(A_1,A_2,A_3)\\
+                    &+ 2\Bigl(
+                        (\vec{A_1A_2}\mid x_2\vec u_2 - x_1\vec u_1)
+                      + (\vec{A_2A_3}\mid x_3\vec u_3 - x_2\vec u_2)
+                      + (\vec{A_3A_1}\mid x_1\vec u_1 - x_3\vec u_3)
+                     \Bigr)\\
+                    &+ \Bigl(
+                        \|x_2\vec u_2 - x_1\vec u_1\|^2
+                      + \|x_3\vec u_3 - x_2\vec u_2\|^2
+                      + \|x_1\vec u_1 - x_3\vec u_3\|^2
+                     \Bigr)\\
+                    &= a + b(x_1,x_2,x_3) + c(x_1,x_2,x_3).
+\end{align*}
+
+    $b$ est une forme linéaire et $c$ est une forme quadratique positive,
+    et même définie positive car $\vec u_1,\vec u_2,\vec u_3$ sont deux
+    à deux non colinéaires. Il en résulte que
+    $f(M_1,M_2,M_3) \to +\infty$ lorsque $|x_1|+|x_2|+|x_3|\to\infty$, donc par
+    continuité, $f$ admet un minimum.
+    
+    Choisissons alors $A_1,A_2,A_3$ de sorte que $f(A_1,A_2,A_3)$ soit égal
+    à ce minimum. On a alors $b=0$ car $(A_1,A_2,A_3)$ est point critique
+    de~$f$, d'où $f(M_1,M_2,M_3) > f(A_1,A_2,A_3)$ si $(x_1,x_2,x_3)\ne(0,0,0)$
+    vu la définie-positivité de~$c$. Ceci prouve l'unicité du triplet
+    où $f$ atteint son minimum.
+  \item On soup\c conne fortement le triplet constitué des milieux
+    des côtés. En notant $A_1,A_2,A_3$ ces milieux, il suffit de
+    vérifier que la forme linéaire $b$ de la réponse précédente
+    est nulle, et c'est clairement le cas après regroupement autour
+    de~$x_1$, $x_2$, $x_3$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

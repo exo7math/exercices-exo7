@@ -1,0 +1,102 @@
+
+\fiche{f00142, tumpach, 2010/11/11}
+
+Exercices : Barbara Tumpach
+
+Relecture : François Lescure
+
+\titre{Intégrales généralisées et théorie de la mesure }
+
+\section{Rappel} 
+
+
+\textbf{D\'efinition.}
+Soit $f: (a, b)\rightarrow \mathbb{R}$ une fonction
+Riemann-int\'egrable sur tout segment $[\alpha, \beta]\subset (a,
+b)$ (on admet les cas o\`u $a=-\infty$ et/ou $b=+\infty$).
+Supposons que la fonction $F(\alpha, \beta) =
+\int_{\alpha}^{\beta} f(x)\,dx$ poss\`ede une limite $I$ lorsque
+$\alpha\rightarrow a$ et $\beta\rightarrow b$. On dit alors que
+l'int\'egrale g\'en\'eralis\'ee ou impropre $\int_{a}^{b}
+f(x)\,dx$ est convergente et que $I$ est la valeur de cette
+int\'egrale.
+
+\bigskip
+
+\textbf{Proposition.}(Condition de Cauchy)
+%\label{cauchy}
+Soit $f: [a, +\infty[\rightarrow \mathbb{R}$ une fonction
+Riemann-int\'egrable sur tout segment $[a, x]$, $x>a$. Pour que
+l'int\'egrale impropre $\int_{a}^{+\infty} f(x)\,dx$ soit
+convergente, il faut et il suffit que l'int\'egrale $\int_{x}^{x'}
+f(t)\,dt$ tende vers $0$ lorsque $x$ et $x'$ tendent
+ vers $+\infty$.
+ 
+\bigskip
+
+\textbf{Th\'eor\`eme.}
+%\label{th}
+Soit $f$ une fonction Riemann-int\'egrable sur $[a,b]$. Posons
+pour tout $x\in[a,b]$, $F(x) = \int_{a}^{x} f(t)\,dt$. Alors $F$
+est continue sur $[a, b]$. De plus, si $f$ est continue en un
+point $x$ de $[a, b]$, alors $F$ est d\'erivable en $x$ et $F'(x)
+= f(x)$.
+
+\bigskip
+
+\textbf{D\'efinition.}
+\'Etant donn\'e une fonction r\'eelle $g$ sur $[a, b]$, on appelle
+\emph{primitive} de $g$ sur $[a, b]$ une fonction $G~:[a,
+b]\rightarrow\mathbb{R}$ telle que $G$ est d\'erivable en tout
+point $x\in[a,b]$ et $G'(x) = g(x)$. Une fonction
+Riemann-int\'egrable $f$ sur $[a, b]$ n'admet pas n\'ecessairement
+de primitive, mais si $f$ est continue sur $[a, b]$, le
+th\'eor\`eme ci-dessus assure que $F(x):=\int_{a}^{x} f(t)\,dt$ est
+une primitive de $f$.
+
+\bigskip
+
+\textbf{Th\'eor\`eme.}(Th\'eor\`eme de continuit\'e d'une int\'egrale d\'ependant d'un param\`etre)
+%\label{cont}
+Soient $\Lambda$ un espace m\'etrique, $a$ et $b$ deux nombres
+r\'eels tels que $a< b$, et $f~:[a, b] \times \Lambda \rightarrow
+\mathbb{R}$ une application continue. Alors la fonction
+$F~:\Lambda \rightarrow \mathbb{R}$ d\'efinie par $F(\lambda) =
+\int_{a}^{b} f(t, \lambda)\,dt$ est continue. 
+
+\bigskip
+
+\textbf{Th\'eor\`eme.}(Th\'eor\`eme de d\'erivabilit\'e d'une int\'egrale d\'ependant d'un param\`etre)
+%\label{der}
+Soient $\Lambda$ un ouvert de $\mathbb{R}$, $a$ et $b$ deux
+nombres r\'eels tels que $a< b$, et $f~:[a, b] \times \Lambda
+\rightarrow \mathbb{R}$ une application continue. On suppose que
+la fonction $f$ poss\`ede une d\'eriv\'ee partielle
+$\frac{\partial f}{\partial \lambda}(t, \lambda)$ par rapport \`a
+la deuxi\`eme variable qui soit une fonction continue sur $[a, b]
+\times \Lambda$. Alors la fonction $F~: \Lambda \rightarrow
+\mathbb{R}$ d\'efinie par $F(\lambda) = \int_{a}^{b} f(t,
+\lambda)\,dt$ est de classe $\mathcal{C}^{1}$ et sa d\'eriv\'ee
+vaut $F'(\lambda) = \int_{a}^{b} \frac{\partial f}{\partial
+\lambda}(t, \lambda)\,dt$. 
+
+\bigskip
+
+\textbf{Th\'eor\`eme.}
+%\label{unif}
+Soit $F_{n}$ est une suite de fonctions de classe
+$\mathcal{C}^{k}$, $k\geq1$, qui converge uniform\'ement vers $F$.
+Supposons que, pour tout $1\leq j \leq k$, la suite des
+$j^{\text{i\`eme}}$ d\'eriv\'ees $F^{(j)}_{n}$ converge
+uniform\'ement vers une fonction $g_{j}$. Alors $F$ est de classe
+$\mathcal{C}^{k}$ et la d\'eriv\'ee $j^{\text{i\`eme}}$ de $F$
+vaut $F^{(j)} = g_{j}$.
+
+\section{Intégrales généralisées}
+\insertion{5925}
+
+\section{Théorie de la mesure} 
+\insertion{5926, 5927}
+
+\finfiche 
+

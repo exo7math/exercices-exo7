@@ -1,0 +1,50 @@
+\exercice{900, liousse, 2003/10/01}
+\video{aMookydUKT4}
+\enonce
+Soient dans $\Rr^4$ les
+vecteurs $v_1=(1,2,3,4)$ et $v_2=(1,-2,3,-4)$. Peut-on
+d\'eterminer $x$ et $y$ pour que $(x,1,y,1) \in \text{Vect}\{ v_1, v_2 \}$ ? 
+Et pour que $(x,1,1,y) \in \text{Vect}\{v_1,v_2 \}$ ?
+\finenonce 
+
+\indication
+On ne peut pas pour le premier, mais on peut pour le second.
+\finindication
+
+\correction
+\begin{enumerate}
+\item 
+\begin{align*}
+& (x,1,y,1) \in \text{Vect}\{v_1,v_2\} \\ 
+\iff& \exists \lambda,\mu\in \Rr \qquad (x,1,y,1) = \lambda(1,2,3,4)+\mu(1,-2,3,-4) \\
+\iff& \exists \lambda,\mu\in \Rr \qquad (x,1,y,1) = (\lambda,2\lambda,3\lambda,4\lambda)+(\mu,-2\mu,3\mu,-4\mu) \\
+\iff& \exists \lambda,\mu\in \Rr \qquad (x,1,y,1) = (\lambda+\mu,2\lambda-2\mu,3\lambda+3\mu,4\lambda-4\mu) \\
+\implies& \exists \lambda,\mu\in \Rr \qquad 1 = 2(\lambda-\mu) \text{ et } 1=4(\lambda-\mu) \\
+\implies& \exists \lambda,\mu\in \Rr \qquad \lambda-\mu= \frac 12 \text{ et } \lambda-\mu=\frac14 \\
+\end{align*}
+Ce qui est impossible (quelque soient $x,y$). Donc on ne peut pas trouver de tels $x,y$.
+
+\item On fait le m\^eme raisonnement : 
+\begin{align*}
+& (x,1,1,y) \in \text{Vect}\{v_1,v_2\} \\ 
+iff&\ \exists \lambda,\mu\in \Rr \qquad (x,1,1,y) = (\lambda+\mu,2\lambda-2\mu,3\lambda+3\mu,4\lambda-4\mu) \\
+\iff& \exists \lambda,\mu\in \Rr \qquad 
+\begin{cases}
+  x &= \lambda + \mu \\
+  1  &= 2\lambda -2\mu \\
+  1 &= 3\lambda +3\mu \\
+  y &= 4\lambda -4 \mu \\
+ \end{cases} \\
+\iff& \exists \lambda,\mu\in \Rr \qquad 
+\begin{cases}
+  \lambda &= \frac 5{12} \\
+  \mu &=  -\frac1{12} \\
+  x &= \frac 13 \\
+  y &=  2 \\  
+\end{cases}.\\
+\end{align*}  
+Donc le seul vecteur $(x,1,1,y)$ qui convienne est $(\frac13,1,1,2)$.
+\end{enumerate}
+\fincorrection
+
+\finexercice

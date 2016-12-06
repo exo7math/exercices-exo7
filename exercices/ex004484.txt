@@ -1,0 +1,62 @@
+\exercice{4484, quercia, 2010/03/14}
+\enonce[Produits infinis, Polytechnique 2000]
+
+On considère une suite $(a_n)$ de réels et on définit $P_N=\prod_{n=1}^N(1+a_n)$
+et $S_N=\sum_{n=1}^N a_n$.
+
+\begin{enumerate}
+  \item  On suppose que pour tout $n$, $a_n\ge 0$. 
+  \begin{enumerate}
+    \item  Montrer que, pour tout $N$, $1+S_N\le P_N \le e^{S_N}$.
+    \item Comparer les convergences respectives des suites $(S_N)$ et $(P_N)$.
+  \end{enumerate}
+  \item On suppose maintenant que pour tout $n$, $-1\le a_n\le 0$. 
+  \begin{enumerate}
+    \item La relation précédente est-elle encore vérifiée ?
+    
+    \item Discuter de la convergence des suites $(S_N)$ et $(P_N)$.
+ \end{enumerate} 
+  \item On suppose que $(a_n)$ est de signe quelconque et que pour tout $n$, $1+a_n> 0$.
+    On suppose de plus que la série $\sum a_n$ converge. 
+    Montrer que $(P_N)$ a une limite et que cette limite est
+    nulle si et seulement si $\sum a_n^2$ diverge.
+    
+  \item Complément. On suppose que la suite $(a_n)$ est complexe, que pour tout $n$ $|a_n|<1$ et que la 
+    série $\sum |a_n|$ est convergente.
+  \begin{enumerate}
+     \item Montrer que $\prod_{n=1}^{\infty} (1+|a_n|)$ existe, puis que $\prod_{n=1}^{\infty} (1+a_n)$
+    existe $\Bigl($on pourra  démontrer et utiliser l'inégalité $\Bigl|\prod_{n=1}^{N} (1+a_n)-1\Bigr|\le
+    \prod_{n=1}^{N} (1+|a_n|)-1\Bigr)$.
+    
+     \item Montrer que $\prod_{n=1}^{\infty} (1+a_n)$ n'est pas nul.
+  \end{enumerate}
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item 
+  \item   
+  \begin{enumerate}
+    \item $1+S_N\le P_N$ n'est plus triviale mais reste vraie par récurrence
+    (la différence est une fonction décroissante de~$a_1$).
+    \item
+  \end{enumerate}
+  \item La suite $(P_Ne^{-S_N})$ est positive décroissante donc converge,
+    ce qui entraîne la convergence de $(P_N)$.
+    On a $P_N \to 0$ ssi $P_Ne^{-S_N} \to 0$ (lorsque $N\to\infty$)
+    soit ssi la série de terme général $\ln(1+a_n)-a_n\sim-\frac{a_n^2}{\strut 2}$
+    diverge.
+  \item 
+   \begin{enumerate}
+     \item Démontrer l'inégalité en développant les deux membres.
+    Sachant que la suite $(P_N)$ est bornée on en déduit qu'elle est de Cauchy
+    donc converge.
+     \item
+   \end{enumerate}
+\end{enumerate}
+ \fincorrection
+
+\finexercice

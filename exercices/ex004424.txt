@@ -1,0 +1,24 @@
+\exercice{4424, quercia, 2010/03/14}
+\enonce[$1/(1+n^2u_n)$, Mines-Ponts MP 2005]
+
+Soit $(u_n)$ une suite réelle positive et $v_n = \frac1{1+n^2u_n}$.
+Montrer que $\sum u_n$ converge $ \Rightarrow  \sum v_n$ diverge.
+\'Etudier le cas où $\sum u_n$ diverge.
+
+
+
+\finenonce
+
+\noindication
+
+\correction
+Si $\sum u_n$ et $\sum v_n$ convergent alors $n^2u_n\to \infty$ (lorsque $n\to\infty$)
+donc $u_nv_n \sim 1/n^2$. Alors les suites $(\sqrt{u_n})$ et $(\sqrt{v_n})$
+sont de carrés sommables tandis que la suite $(\sqrt{u_nv_n})$ n'est pas sommable,
+c'est absurde.
+
+Si $\sum u_n$ diverge on ne peut rien dire~: avec $u_n=1$ on a $\sum v_n$
+convergente tandis qu'avec $u_n=\frac1{n}$ on a $\sum v_n$ divergente.
+\fincorrection
+
+\finexercice

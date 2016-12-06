@@ -1,0 +1,49 @@
+\exercice{5256, rouget, 2010/07/04}
+\enonce[***I]
+Soit $u$ la suite définie par $u_0=\frac{\pi}{2}$ et, $\forall n\in\Nn,\;u_{n+1}=\sin(u_n)$.
+\begin{enumerate}
+\item  Montrer que la suite $u$ est strictement positive, décroissante de limite nulle.
+\item  On admet que si $u$ est une suite de limite nulle, alors, quand $n$ tend vers $+\infty$, $\sin(u_n)=u_n-\frac{u_n^3}{6}+o(u_n^3)$.
+
+Déterminer un réel $\alpha$ tel que la suite $v_n=u_{n+1}^\alpha-u_n^\alpha$ ait une limite réelle non nulle. En appliquant le lemme de \textsc{Césaro} à la suite $(v_n)$, en déduire un équivalent simple de $u_n$ quand $n$ tend vers $+\infty$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  Il est immédiat que la suite $u$ est définie et à valeurs dans $[-1,\frac{\pi}{2}]$.
+
+Plus précisément, $u_0\in]0,\frac{\pi}{2}]$, et si pour $n\geq0$, $u_n\in]0,\frac{\pi}{2}]$, alors $u_{n+1}\in]0,1]\subset]0,\frac{\pi}{2}]$. On a montré par récurrence que, $\forall n\in\Nn,\;u_n\in]0,\frac{\pi}{2}]$.
+
+Montrons que pour tout réel $x\in]0,\frac{\pi}{2}]$, on a $\sin x>x$. Pour $x\in[0,\frac{\pi}{2}]$, posons $f(x)=x-\sin x$. $f$ est dérivable sur $[0,\frac{\pi}{2}]$ et pour $x\in[0,\frac{\pi}{2}]$, $f'(x)=1-\cos x$. Par suite, $f'$ est strictement positive sur $]0,\frac{\pi}{2}]$ et donc strictement croissante sur $[0,\frac{\pi}{2}]$. Mais alors, pour $x\in]0,\frac{\pi}{2}]$, on a $f(x)>f(0)=0$.
+
+Soit $n\in\Nn$. Puisque $u_n\in]0,\frac{\pi}{2}]$, on a $u_{n+1}=\sin(u_n)<u_n$. La suite $u$ est donc strictement décroissante. Puisque la suite $u$ est d'autre part minorée par $0$, la suite $u$ converge vers un réel noté $\ell$. Puisque pour tout $n\in\Nn$, $0<u_n\leq\frac{\pi}{2}$, on a $0\leq\ell\leq\frac{\pi}{2}$. Mais alors, par continuité de la fonction $x\mapsto\sin x$ sur $[0,\frac{\pi}{2}]$ et donc en $\ell$, on a
+
+$$\ell=\lim_{n\rightarrow +\infty}u_{n+1}=\lim_{n\rightarrow +\infty}\sin(u_n)=\sin(\lim_{n\rightarrow +\infty}u_n)=\sin(\ell).$$
+
+Or, si $x\in]0,\frac{\pi}{2}]$, $\sin x<x$ et en particulier $\sin x\neq x$. Donc, $\ell=0$.
+
+La suite $u$ est strictement positive, strictement décroissante, de limite nulle.
+
+\item  Soit $\alpha\in\Rr$. Puisque $u_{n}$ tend vers $0$ quand $n$ tend vers $+\infty$,
+
+$$u_{n+1}^\alpha=(\sin(u_n))^\alpha=(u_n-\frac{u_n^3}{6}+o(u_n^3))^\alpha=u_n^\alpha(1-\frac{u_n^2}{6}+o(u_n^2))^\alpha
+=u_n^\alpha(1-\frac{\alpha u_n^2}{6}+o(u_n^2))=u_n^\alpha-\frac{\alpha u_n^{2+\alpha}}{6}+o(u_n^{2+\alpha}).$$
+
+et donc, $u_{n+1}^\alpha-u_n^\alpha=-\frac{\alpha u_n^{2+\alpha}}{6}+o(u_n^{2+\alpha})$. En prenant $\alpha=-2$, on obtient alors
+
+$$v_n=\frac{1}{u_{n+1}^2}-\frac{1}{u_n^2}=\frac{1}{3}+o(1).$$
+
+D'après le lemme de \textsc{Césaro}, $\frac{1}{n}\sum_{k=0}^{n-1}v_k$ tend également vers $\frac{1}{3}$. Mais,
+
+$$\frac{1}{n}\sum_{k=0}^{n-1}v_k=\frac{1}{n}\sum_{k=0}^{n-1}(\frac{1}{u_{k+1}^2}-\frac{1}{u_k^2})=\frac{1}{n}
+(\frac{1}{u_n^2}-\frac{1}{u_0^2}).$$
+
+Ainsi, $\frac{1}{n}(\frac{1}{u_n^2}-\frac{1}{u_0^2})=\frac{1}{3}+o(1)$ puis, $\frac{1}{u_n^2}=\frac{n}{3}+\frac{1}{u_0^2}+o(n)=\frac{n}{3}+o(n)$. Donc, $\frac{1}{u_n^2}\sim\frac{n}{3}$, puis $u_n^2\sim\frac{3}{n}$ et enfin, puisque la suite $u$ est strictement positive,
+
+$$u_n\sim\sqrt{\frac{3}{n}}.$$
+\end{enumerate}
+\fincorrection
+\finexercice

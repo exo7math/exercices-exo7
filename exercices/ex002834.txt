@@ -1,0 +1,25 @@
+\exercice{2834, burnol, 2009/12/15}
+\enonce
+  Déterminer la partie singulière, le résidu, et
+  le terme constant des séries de Laurent à
+l'origine pour les fonctions:
+\begin{enumerate}
+\item $f(z) = \frac1{\sin z}$
+\item $f(z) = \frac1{\sin z - \sh z}$
+\item $f(z) = \frac1{z\sin(z)\sh(z)}$
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+  \item Comme $\sin(z) =z -\frac{z^3}{3!}+... =z(1+o(z))$,
+$$f(-z) =\frac{1}{\sin(z)} =\frac{1}{z}(1+o(z))^{-1} =\frac{1}{z} (1+o(z)) = \frac{1}{z} +o(1) .$$
+Par cons\'equent $f$ poss\`ede un p\^ole simple \`a l'origine (ce qui est \'evident puisque $\sin(z)$ poss\`ede un z\'ero simple \`a l'origine) et $\mathrm{Res} (f,0) =1$. On l'obtient aussi par la formule de l'exercice \ref{ex:burnol6.1} et le fait que l'origine est un p\^ole simple:
+$$\mathrm{Res} (f,0) =\lim_{z\to 0} z f(z) = \lim_{z\to 0} \frac{z}{\sin(z)} =1.$$
+La partie singuli\`ere de la s\'erie de Laurent est $\frac{1}{z}$ et le terme constant est $0$.
+  \item On a $\sin(z) -\sh(z) =(z-\frac{z^3}{3!} +\frac{z^5}{5!}+O(z^7)) -(z+\frac{z^3}{3!} +\frac{z^5}{5!}+O(z^7)) =-\frac{z^3}{3} + O(z^7)$. D'o\`u
+$$f(z) =\frac{1}{\sin(z) -\sh(z)} = -\frac{3}{z^3} (1+O(z^4)) =-\frac{3}{z^3} + O(z).$$
+  \item  On obtient de mani\`ere analogue que $$f(z) =\frac{1}{z \sin(z) \sh(z)} =\frac{1}{z^3} +O(z).$$
+\end{enumerate}
+\fincorrection
+\finexercice

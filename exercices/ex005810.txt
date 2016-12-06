@@ -1,0 +1,85 @@
+\exercice{5810, rouget, 2010/10/16}
+\enonce[***]
+Soit $S$ une matrice symétrique réelle, définie positive. Pour $(x_1,...,x_n)\in\Rr^n$, on pose 
+
+\begin{center}
+$Q((x_1,...,x_n)) = -\text{det}\left(\begin{array}{cccc}
+0&x_1&\ldots&x_n\\
+x_1& & & \\
+\vdots& &S& \\
+x_n& & & 
+\end{array}
+\right)$.
+\end{center}
+
+Montrer que $Q$ est une forme quadratique définie positive.
+\finenonce
+
+\noindication
+
+\correction
+Posons $X=\left(
+\begin{array}{c}
+x_1\\
+\vdots\\
+x_n
+\end{array}
+\right)$ et $A =\left(\begin{array}{cccc}
+0&x_1&\ldots&x_n\\
+x_1& & & \\
+\vdots& &S& \\
+x_n& & & 
+\end{array}
+\right)=\left(
+\begin{array}{cc}
+0&{^t}X\\
+X&S
+\end{array}\right)$.
+
+Un calcul par blocs fournit $\left(
+\begin{array}{cc}
+0&{^t}X\\
+X&S
+\end{array}\right)\left(
+\begin{array}{cc}
+1&0\\
+0&S^{-1}
+\end{array}\right)=\left(
+\begin{array}{cc}
+0&{^t}XS^{-1}\\
+X&I_n
+\end{array}\right)$  puis
+
+\begin{center}
+$\left(
+\begin{array}{cc}
+0&{^t}X\\
+X&S
+\end{array}\right)\left(
+\begin{array}{cc}
+1&0\\
+0&S^{-1}
+\end{array}\right)\left(
+\begin{array}{cc}
+-1&0\\
+X&I_n
+\end{array}\right)=\left(
+\begin{array}{cc}
+0&{^t}XS^{-1}\\
+X&I_n
+\end{array}\right)\left(
+\begin{array}{cc}
+-1&0\\
+X&I_n
+\end{array}\right)=\left(
+\begin{array}{cc}
+{^t}XS^{-1}X&{^t}XS^{-1}\\
+0&I_n
+\end{array}\right)$.
+\end{center}
+
+On en déduit que $\text{det}(A)\times\text{det}(S^{-1})\times(-1)={^t}XS^{-1}X$ puis que $Q(X)=-\text{det}(A)={^t}X((\text{det}(S))S^{-1})X ={^t}XS'X$ où $S'=(\text{det}(S))S^{-1}$.
+
+Maintenant, la matrice $S$ est définie positive et donc ses valeurs propres sont des réels strictement positifs. Les valeurs propres de la matrice $S'$ sont les $\frac{\text{det}(S)}{\lambda}$ où $\lambda$ décrit le spectre de $S$ et donc la matrice $S'$ est aussi une matrice symétrique définie positive. $Q$ est donc une forme quadratique définie positive.
+\fincorrection
+\finexercice

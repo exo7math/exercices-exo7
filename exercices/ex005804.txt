@@ -1,0 +1,41 @@
+\exercice{5804, rouget, 2010/10/16}
+\enonce[**]
+La matrice $\left(
+\begin{array}{cccc}
+n-1&-1&\ldots&-1\\
+-1&\ddots&\ddots&\vdots\\
+\vdots&\ddots&\ddots&-1\\
+-1&\ldots&-1&n-1
+\end{array}
+\right)$ est-elle positive ? définie ?
+\finenonce
+
+\noindication
+
+\correction
+\textbf{1ère solution.} (n'utilisant pas les valeurs propres)
+Soient $A$ la matrice de l'énoncé puis $X =(x_i)_{1\leqslant i\leqslant n}$ un élément de $\mathcal{M}_{n,1}(\Rr)$.
+
+\begin{align*}\ensuremath
+{^t}XAX&= (n-1)\sum_{i=1}^{n}x_i^2 -\sum_{i\neq j}^{}x_ix_j=\sum_{i\neq j}^{}(x_i^2- x_ix_j)=\frac{1}{2}\left(\sum_{i\neq j}^{}x_i^2-2 x_ix_j+x_j^2\right)\\
+ &=\sum_{i\neq j}(x_i-x_j)^2\geqslant 0
+\end{align*}
+
+et donc la matrice $A$ est positive. De plus, si $X=\left(1\right)_{1\leqslant i\leqslant n}\neq0$, ${^t}XAX= 0$ et donc la matrice $A$ n'est pas définie.
+
+\textbf{2ème solution.} La matrice $A$ est symétrique réelle. Donc ses valeurs propres sont réelles et $A$ est diagonalisable. Par suite, la dimension de chacun de des sous-espaces propres de $A$ est égale à l'ordre de multiplicité de la valeur propre correspondante.
+
+On note alors que $\text{rg}(A - nI_n) = 1$ et donc $n$ est valeur propre de $A$ d'ordre $n-1$. Soit $\lambda$ la valeur propre manquante.
+\begin{center}
+$(n-1)n+\lambda=\text{Tr}A = n(n-1)$.
+\end{center}
+
+Donc $\lambda= 0$. Ainsi, $\text{Sp}(A)\subset\Rr^+$ et donc la matrice $A$ est positive mais $0$ est valeur propre de $A$ et donc la matrice $A$ n'est pas définie.
+
+\begin{center}
+\shadowbox{
+La matrice $A$ est positive et non définie.
+}
+\end{center}
+\fincorrection
+\finexercice

@@ -1,0 +1,35 @@
+\exercice{2405, mayer, 2003/10/01}
+\enonce 
+\label{exoiter}
+Soit $(X,d)$ un espace m\'etrique complet et soit $f: X\to X$ une
+application telle que l'une de ces it\'er\'ees $f^n$ est
+strictement contractante, i.e. il existe $\rho <1$ tel que
+$$ d(f^n(x),f^n(y)) \leq \rho d(x,y) \quad \mbox{pour tout} \quad
+x,y\in X \; .$$ Montrer que $f$ poss\`ede un unique point fixe.
+Faire le rapprochement avec l'exercice \ref{exn13}.
+\finenonce
+
+\indication
+Montrer que l'unique point fixe $x$ de $f^n$, est un point fixe de $f$.
+Pour cela écrire l'égalité $f^n(x)=x$ et composée habilement cette égalité.
+Pour conclure utiliser l'unicité du point fixe de $f^n$.
+\finindication
+
+\correction
+Notons $g=f^n$. Alors $g$ est une application strictement contractante dans $X$ complet donc $g$ possède un unique point fixe que nous notons $x$.
+Montrons l'unicité d'un point fixe pour $f$. Soit
+$y\in X$ tel que $f(y)=y$ alors $g(y)=f^n(y)=y$. Donc $y$ est aussi un point fixe pour $g$, donc $y=x$. 
+
+Il reste à montrer que $f$ possède effectivement bien un tel point fixe.
+Nous avons 
+\begin{align*}
+ & f^n(x)=x \\
+ \Rightarrow \qquad & f(f^n(x))=f(x) \\
+\Rightarrow \qquad & f^n(f(x))=f(x) \\
+\Rightarrow \qquad & g(f(x))=f(x) \\
+\end{align*}
+Nous venons de prouver que $f(x)$ est un point fixe de $g$. 
+Comme $g$ possède un unique point fixe $x$ alors $f(x)=x$ !!
+Donc $x$ est bien un point fixe pour $f$.
+\fincorrection
+\finexercice

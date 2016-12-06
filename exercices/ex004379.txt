@@ -1,0 +1,43 @@
+\exercice{4379, quercia, 2010/03/12}
+\enonce[ENS Lyon MP${}^*$ 2004]
+\begin{enumerate}
+  \item Soit $f : {[a,b]} \to \R$ de classe $\mathcal{C}^2$ et $F(x) =  \int_{t=a}^b
+    f(t)e^{-itx}\,d t$ avec $a<0<b$. Montrer que $F(x)\to0$ lorsque $x\to+\infty$.
+    
+  \item Montrer que $F(x) = \frac{f(a)e^{-iax} - f(b)e^{-ibx}}{ix} +  o\Bigl(\frac1x\Bigr)$.
+    
+  \item Montrer la convergence de l'intégrale
+    $I= \int_{t=-\infty}^{+\infty}e^{-it^2/2}\,d t$.
+    
+  \item Soit $g(x) =  \int_{t=a}^bf(t)e^{-ixt^2/2}\,d t$.
+    Montrer que $g(x) = \frac{I.f(0)}{\sqrt x} +  o\Bigl(\frac1{\sqrt x}\Bigr)$.
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Intégrer par parties.
+  \item Intégrer deux fois par parties.
+  \item Pour $0<u<v$~: $ \int_{t=u}^{v}e^{-it^2/2}\,d t =
+    \Bigl[\frac{e^{-it^2/2}}{-it}\Bigr]_{t=u}^v -
+     \int_{t=u}^v\frac{e^{-it^2/2}}{it^2}\,d t
+    \to \frac{e^{-iu^2/2}}{iu}- \int_{t=u}^{+\infty}\frac{e^{-it^2/2}}{it^2}\,d t$
+     lorsque $v\to+\infty$.
+
+    Ainsi $ \int_{t=u}^{+\infty}e^{-it^2/2}\,d t$ converge et de même pour
+    $ \int_{t=-\infty}^{-u}e^{-it^2/2}\,d t$.
+  \item On pose $f(t) = f(0) + t\varphi(t)$ avec $\varphi$ de
+    classe $\mathcal{C}^1$. Il vient~:
+    \begin{align*}g(x)\sqrt x &= f(0) \int_{u=a\sqrt x}^{b\sqrt x}e^{-iu^2/2}\,d u
+      -\frac1{i\sqrt x}\Bigl[e^{-iu^2/2}\varphi(u/\sqrt x)\Bigr]_{u=a\sqrt
+    x}^{b\sqrt x} + \frac1{ix} \int_{u=a\sqrt x}^{b\sqrt
+    x}e^{-iu^2/2}\varphi'(u/\sqrt x)\,d u\cr
+    &\to f(0).I\cr\end{align*}
+    lorsque $x\to+\infty$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

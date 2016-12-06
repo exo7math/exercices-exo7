@@ -1,0 +1,27 @@
+\exercice{4310, quercia, 2010/03/12}
+\enonce[Intégrales emboitées]
+
+\'Etablir la convergence et calculer la valeur de
+$ \int_{x=0}^{+\infty} \int_{t=x}^{+\infty}\frac{\sin t}t\,d t\,d x$.
+\finenonce
+
+\noindication
+
+\correction
+\begin{align*}
+ \int_{x=0}^{X} \int_{t=x}^{+\infty}\frac{\sin t}t\,d t\,d x
+%
+&=\Bigl[x \int_{t=x}^{+\infty}\frac{\sin t}t\,d t\Bigr]_{x=0}^{X}
++ \int_{x=0}^{X}\sin x\,d x\cr
+%
+&=X \int_{t=X}^{+\infty}\frac{\sin t}t\,d t + 1 - \cos X\cr
+%
+&=X\Bigl[\frac{-\cos t}t\Bigr]_{t=X}^{+\infty} - X \int_{t=X}^{+\infty}\frac{\cos t}{t^2}\,d t + 1 - \cos X\cr
+%
+&=-X\Bigl[\frac{\sin t}{t^2}\Bigr]_{t=X}^{+\infty} - X \int_{t=X}^{+\infty}\frac{2\sin t}{t^3}\,d t + 1\cr
+%
+&\to 1 \text{ lorsque } X\to+\infty\cr
+\end{align*}
+\fincorrection
+
+\finexercice

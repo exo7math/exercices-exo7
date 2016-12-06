@@ -1,0 +1,48 @@
+\exercice{4773, quercia, 2010/03/16}
+\enonce[Polytechnique MP$^*$ 2006]
+Soit $E$ un espace vectoriel r{\'e}el.
+On consid{\`e}re une application $N : E \to {\R^+}$ telle que~:
+    $$\begin{aligned}(i)
+  \qquad&\forall\ \lambda,x,\ \ N(\lambda x) = |\lambda|N(x)\ ;\cr
+               (ii)  \qquad&\forall\ x,\ N(x)=0 \Leftrightarrow x=0.\cr\end{aligned}$$
+
+\begin{enumerate}
+  \item Montrer que $N$ est une norme si et seulement $B = \{x$ tq. $N(x)\le 1\}$
+    est convexe.
+  \item Montrer que si $N$ v{\'e}rifie aussi
+    $$\begin{aligned} (iii)  \qquad&\forall\ x,y,\ N(x+y)^2 \le 2N(x)^2 + 2N(y)^2\cr\end{aligned}$$
+    alors c'est une norme.
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item 
+  \item On prouve la convexit{\'e} de~$B$. Soient $x,y\in B$, $t\in{[0,1]}$
+    et $z=(1-t)x + ty$. On a $N^2(z) \le 2t^2 + 2(1-t)^2$, d'o{\`u} $N(z)\le 1$
+    si $t=\frac12$. Ceci prouve d{\'e}j{\`a} que $B$ est stable par milieu, et on en
+    d{\'e}duit par r{\'e}currence sur~$n\in\N$ que $z\in B$ si $t$ est de la
+    forme $a/2^n$ avec $a\in{[[0,2^n]]}$.
+    
+    Si $t$ n'est pas de cette forme, on {\'e}crit $t$ comme barycentre
+    de deux nombres dyadiques~$t=u\frac{a}{2^n} + (1-u)\frac{b}{2^n}$ en
+    faisant en sorte que $u$ soit arbitrairement proche de $\frac12$.
+    Si c'est possible,
+    on obtient que $z$ est barycentre de deux {\'e}l{\'e}ments de~$B$ avec les
+    coefficients $u$ et $1-u$, d'o{\`u} $N^2(z)\le 2u^2+2(1-u)^2\xrightarrow[u\to1/2]{}$.
+    Reste donc {\`a} choisir $n$, $a$, $b$~: pour $n$ donn{\'e},
+    on choisit $a = {[2^n]}-n$ et $b={[2^n]}+n$. C'est possible car
+    $[2^nt]\sim 2^nt$ et on est dans le cas $0<t<1$
+    donc on a bien $a,b\in {[[0,2^n]]}$ si $n$ est suffisament grand.
+    Il vient $u=\frac{b-2^nt}{b-a}$, quantit{\'e} comprise entre $\frac{n-1}{2n}$
+    et $\frac12$ et donc qui tend bien vers~$\frac12$.
+    
+    Remarque~: la condition $(iii)$ est aussi n{\'e}cessaire, donc une norme
+    est une application v{\'e}rifiant $(i)$, $(ii)$ et $(iii)$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

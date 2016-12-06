@@ -1,0 +1,42 @@
+\exercice{5615, rouget, 2010/10/16}
+\enonce[***I]
+\label{ex:rou18bis}
+Soit $A$ une matrice carrée de format $n$. Etudier le rang de $\text{com}A$ en fonction du rang de $A$.
+\finenonce
+
+\noindication
+
+\correction
+\textbullet~Si $A$ est de rang $n$, c'est-à-dire inversible, l'égalité $(\text{com}A)\times\frac{1}{\text{det}A}{^t}A =I_n$ montre que $\text{com}A$ est inversible et donc de rang $n$.
+
+Dans ce qui suit, le lien entre le rang d'une matrice et la nullité des différents mineurs est hors programme. On suppose maintenant $\text{rg}(A)\leqslant n-1$.
+
+\textbullet~Si $\text{rg}A\leqslant n-2$. Montrons que tous les mineurs de format $n-1$ extraits de $A$ sont nuls.
+
+Soient $j_1$,\ldots, $j_{n-1}$, $n-1$ numéros de colonnes deux à deux distincts puis $A'\in\mathcal{M}_{n,n-1}(\Kk)$ dont les colonnes sont $C_{j_1}$,\ldots, $C_{j_{n-1}}$. Puisque $A$ est de rang au plus $n-2$, la famille des colonnes de $A'$ est liée et donc $A'$ est de rang au plus $n-2$. Il en est de même de la matrice ${^t}A'\in\mathcal{n-1,n}(\Kk)$ et donc toute matrice $A''$ obtenue en supprimant l'une des colonnes de $A'$ est carrée, de format $n-1$, non inversible. Son déterminant est donc nul.
+
+Ainsi, tout déterminant obtenu en supprimant une ligne et une colonne de $\text{det}(A)$ est nul ou encore tous les mineurs de format $n-1$ extraits de $A$ sont nuls. Finalement, si $\text{rg}A\leqslant n-2$, $\text{com}A= 0$.
+
+\textbullet~Il reste à étudier le cas où $\text{rg}A=n-1$ et donc $\text{dim}KerA = 1$.
+
+L'égalité $\text{det}A=0$ impose $A{^t}(\text{com}A) = 0$. Mais alors $\text{Im}({^t}(\text{com}A))\subset\text{Ker}A$ et en particulier $\text{rg}(\text{com}A)=\text{rg}({^t}(\text{com}A))\leqslant\text{dim}(\text{Ker}A)=1$. Ainsi, si $\text{rg}(A)=n-1$ alors $\text{rg}(\text{com}A)\in\{0,1\}$.
+
+Montrons que l'un au moins des mineurs de format $n-1$ extraits de $A$ est non nul ce qui montrera que $\text{rg}(\text{com}A)=1$.
+
+Puisque $\text{rg}A=n-1$, il existe $n-1$ colonnes $C_{j_1}$,\ldots, $C_{j_{n-1}}$ de $A$ constituant une famille libre. La matrice $A'\in\mathcal{M}_{n,n-1}(\Kk)$ constituée par ces colonnes est de rang $n-1$. Il en est de même de sa transposée. Mais alors, il existe $n-1$ colonnes de ${^t}A'$ linéairement indépendantes. La matrice $A''$ constituée de ces $n-1$ colonnes est carrée de format $n-1$ et de rang $n-1$. $A''$ est donc inversible et il en est de même de ${^t}A''$. Le déterminant de ${^t}A''$ est un mineur de format $n-1$ extrait de $A$ et non nul.
+
+En résumé,
+
+\begin{center}
+\shadowbox{
+$\forall A\in\mathcal{M}_n(\Rr)$, $\text{rg}(\text{com}A) =\left\{
+\begin{array}{l}
+n\;\text{si}\;\text{rg}(A) = n\\
+1\;\text{si}\;\text{rg}(A) = n-1\\
+0\;\text{si}\;\text{rg}(A)\leqslant n-2
+\end{array}
+\right.$.
+}
+\end{center}
+\fincorrection
+\finexercice

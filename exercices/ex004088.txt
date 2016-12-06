@@ -1,0 +1,18 @@
+\exercice{4088, quercia, 2010/03/11}
+\enonce[Lemme de Gronwall (X MP$^*$ 2003)]
+
+Soient~$f,g$ deux fonctions continues et $a\in\R$ vérifiant~:
+$\forall\ t\ge 0,\ g(t)\ge 0\quad\text{et}\quad f(t)\le a +  \int_{u=0}^t f(u)g(u)\,d u.$
+Montrer~: $\forall\ t\ge0,\ f(t)\le a\exp\Bigl( \int_{u=0}^t g(u)\,d u\Bigr)$.
+
+\finenonce
+
+\noindication
+
+\correction
+Considérer $h(t) = a +  \int_{u=0}^t f(u)g(u)\,d u$ et
+résoudre l'inéquation différentielle $h'(t) \le g(t)h(t)$ par la formule
+de Duhamel.
+\fincorrection
+
+\finexercice

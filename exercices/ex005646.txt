@@ -1,0 +1,63 @@
+\exercice{5646, rouget, 2010/10/16}
+\enonce[***]
+Soient $A$ et $B$ deux matrices carrées réelles de format $n$. Montrer que le déterminant de la matrice $\left(
+\begin{array}{cc}
+A&-B\\
+B&A
+\end{array}
+\right)$ de format $2n$  est un réel positif.
+\finenonce
+
+\noindication
+
+\correction
+On effectue sur la matrice $\left(
+\begin{array}{cc}
+A&-B\\
+B&A
+\end{array}
+\right)$ les transformations : $\forall j\in\llbracket1,n\rrbracket$, $C_j\leftarrow C_j+iC_{n+j}$ (où $i^2 = -1$) sans modifier la valeur du déterminant. On obtient $\text{det}\left(
+\begin{array}{cc}
+A&-B\\
+B&A
+\end{array}
+\right)=\text{det}\left(
+\begin{array}{cc}
+A-iB&-B\\
+B+iA&A
+\end{array}
+\right)$.
+
+Puis en effectuant les transformations : $\forall j\in\llbracket n+1,2n\rrbracket$, $L_j\leftarrow L_j - iL_{j-n}$, on obtient 
+
+\begin{center}
+$\text{det}\left(
+\begin{array}{cc}
+A&-B\\
+B&A
+\end{array}
+\right)=\text{det}\left(
+\begin{array}{cc}
+A-iB&-B\\
+B+iA&A
+\end{array}
+\right)=\text{det}\left(
+\begin{array}{cc}
+A-iB&-B\\
+0&A+iB
+\end{array}
+\right)=\text{det}(A+iB)\times\text{det}(A-iB)$.
+\end{center}
+
+Comme les matrices $A$ et $B$ sont réelles, $\text{det}(A-iB)=\overline{\text{det}(A+iB)}$ et donc
+
+\begin{center}
+$\text{det}\left(
+\begin{array}{cc}
+A&-B\\
+B&A
+\end{array}
+\right)=|\text{det}(A+iB)|^2\in\Rr^+$.
+\end{center}
+\fincorrection
+\finexercice

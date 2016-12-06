@@ -1,0 +1,28 @@
+\exercice{5360, rouget, 2010/07/04}
+\enonce[***I]
+\label{exo:suprou8ter}
+ $A_1$, $A_2$,...,$A_p$ sont $p$ matrices carrées d'ordre $n$, deux à deux distinctes et inversibles. On suppose que $\{A_1,...,A_p\}$ est stable pour $\times$. 
+Montrer que $\{A_1,...,A_p\}$ est un sous groupe de $(GL_n(\Rr),\times)$.
+\finenonce
+
+\noindication
+
+\correction
+$G=\{A_1,...,A_p\}$ est déjà une partie non vide de $GL_n(\Rr)$, stable pour $\times$. Il reste à vérifier que $G$ est stable pour le passage à l'inverse.
+
+Soient $i\in\{1,...,n\}$, puis $\begin{array}[t]{cccc}
+\varphi_i~:&G&\rightarrow&G\\
+ &A&\mapsto&A_iA
+\end{array}$. Puisque $G$ est stable pour le produit, $\varphi_i$ est une application de $G$ dans $G$.
+ 
+Montrons que $\varphi_i$ est injective. Soit $(A,B)\in G$.
+
+$$\varphi_(A)=\varphi_i(B)\Rightarrow A_iA=A_iB\Rightarrow A_i^{-1}A_iA=A_i^{-1}A_iB\Rightarrow A=B.$$
+
+Donc, $\varphi_i$ est une application injective de l'ensemble \textbf{fini} $G$ dans lui-même. On sait alors que $\varphi_i$ est une permutation de $G$.
+
+Par $\varphi_i$, $A_i$ a un antécédent $A$ dans $G$. $A_iA=A_i$ fournit $A_i^{-1}A_iA=A_i^{-1}A_i$ puis $A=I\in G$. Ainsi, $G$ contient la matrice $I$. Ensuite, $I$ a un antécédent par $\varphi_i$ dans $G$. Donc, il existe $B\in G$ telle que $A_iB=I$. Mais alors $A_i^{-1}=B\in G$.
+
+$G$ est bien stable pour le passage à l'inverse et est donc un sous-groupe de $(GL_n(\Rr),\times)$.
+\fincorrection
+\finexercice

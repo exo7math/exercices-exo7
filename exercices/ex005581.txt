@@ -1,0 +1,32 @@
+\exercice{5581, rouget, 2010/10/16}
+\enonce[**]
+Soient $E$, $F$ et $G$, trois $\Kk$-espaces vectoriels puis $f\in\mathcal{L}(E,F)$ et $g\in\mathcal{L}(F,G)$.
+
+Montrer que $\text{rg}f+\text{rg}g-\text{dim}F\leqslant\text{rg}(g\circ f)\leqslant\text{Min}\{\text{rg}f,\text{rg}g\}$.
+
+\finenonce
+
+\noindication
+
+\correction
+$\text{Im}(g\circ f)=g(f(E))\subset g(F)$ fournit $\text{rg}(gof)\leqslant\text{rg}g$.
+
+Soit $g'=g_{/f(E)}$. D'après le théorème du rang, on a 
+
+\begin{center}
+$\text{rg}f=\text{dim}(f(E))=\text{dim}\text{Ker}g'+\text{dim}\text{Im}g'\geqslant\text{dim}\text{Im}g')=\text{rg}(g\circ f)$
+\end{center}
+
+et donc $\text{rg}(g\circ f)\leqslant\text{Min}\{\text{rg}f,\text{rg}g\}$.
+
+A partir du théorème du rang, on voit que l'inégalité $\text{rg}f+\text{rg}g-\text{dim}F\leqslant\text{rg}(g\circ f)$ est équivalente à l'inégalité $\text{dim}(\text{Ker}(g\circ f))\leqslant\text{dim}\text{Ker}f+ \text{dim}\text{Ker}g$.
+
+Soit $f'=f_{/\text{Ker}(g\circ f)}$. D'après le théorème du rang, $\text{dim}(\text{Ker}(g\circ f))=\text{dim}\text{Ker}f'+\text{dim}\text{Im}f'$. Mais $\text{Ker}f'\subset\text{Ker}f$ puis $\text{Im}f'=\{f(x)/\;x\in E\;\text{et}\;g(f(x))= 0\}\subset\{y\in F/\;g(y) = 0\}=\text{Ker}g$ et finalement $\text{dim}\text{Ker}(g\circ f)\leqslant\text{dim}\text{Ker}f+\text{dim}\text{Ker}g$.
+
+\begin{center}
+\shadowbox{
+$\forall(f,g)\in\mathcal{L}(E,F)\times\mathcal{L}(F,G),\;\text{rg}f+\text{rg}g-\text{dim}F\leqslant\text{rg}(g\circ f)\leqslant\text{Min}\{\text{rg}f,\text{rg}g\}$.
+}
+\end{center}
+\fincorrection
+\finexercice

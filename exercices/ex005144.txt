@@ -1,0 +1,67 @@
+\exercice{5144, rouget, 2010/06/30}
+\enonce[I]
+Calculer les sommes suivantes~:
+\begin{enumerate}
+\item (**) $\sum_{1\leq i<j\leq n}^{}1$.
+\item (**) $\sum_{1\leq i,j\leq n}^{}j$ et $\sum_{1\leq i<j\leq n}^{}j$.
+\item (*) $\sum_{1\leq i,j\leq n}^{}ij$.
+\item (***) Pour $n\in\Nn^*$, on pose $u_n=\frac{1}{n^5}\sum_{k=1}^{n}\sum_{h=1}^{n}(5h^4-18h^2k^2+5k^4)$.
+Déterminer$\lim_{n\rightarrow +\infty}u_n$ (utiliser les résultats de l'exercice \ref{exo:suprou7}, 2)).
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  Soit $n$ un entier supérieur ou égal à $2$. Parmi les $n^2$ couples $(i,j)$ tels que $1\leq i,j\leq n$, il y
+en a $n$ tels que $i=j$ et donc $n^2-n=n(n-1)$ tels que $1\leq i,j\leq n$ et $i\neq j$. Comme il y a autant de couples
+$(i,j)$ tels que $i>j$ que de couples $(i,j)$ tels que $i<j$, il y a $\frac{n(n-1)}{2}$ couples $(i,j)$ tels que $1\leq
+i<j\leq n$. Finalement,
+$$\sum_{1\leq i<j\leq n}^{}1=\frac{n(n-1)}{2}.$$
+
+\item  Soit $n\in\Nn^*$.
+
+$$\sum_{1\leq i,j\leq n}^{}j=\sum_{j=1}^{n}\left(\sum_{i=1}^{n}j\right)=\sum_{j=1}^{n}nj=n\sum_{j=1}^{n}j=n.\frac{n(n+1)}{2}
+=\frac{n^2(n+1)}{2}.$$
+
+Soit $n$ un entier supérieur ou égal à $2$.
+
+\begin{align*}
+\sum_{1\leq i<j\leq
+n}^{}j&=\sum_{j=2}^{n}\left(\sum_{i=1}^{j-1}j\right)=\sum_{j=2}^{n}(j-1)j=\sum_{j=2}^{n}j^2-\sum_{j=2}^{n}j\\
+ &=(\frac{n(n+1)(2n+1)}{6}-1)-(\frac{n(n+1)}{2}-1)=\frac{n(n+1)}{2}(\frac{2n+1}{3}-1)\\
+ &=\frac{n(n+1)^2}{6}.
+\end{align*}
+
+\item  Soit $n\in\Nn^*$.
+
+$$\sum_{1\leq i,j\leq n}^{}ij=(\sum_{1\leq i\leq n}^{}i)(\sum_{1\leq j\leq n}^{}j)=\frac{n^2(n+1)^2}{4}.$$
+
+\item  Soit $n\in\Nn^*$.
+
+$$\sum_{1\leq h,k\leq
+n}^{}h^2k^2=\sum_{h=1}^{n}(h^2\sum_{k=1}^{n}k^2)=(\sum_{k=1}^{n}k^2)(\sum_{h=1}^{n}h^2)=\left(\frac{n(n+1)(2n+1)}{6}\right)^
+2.$$
+
+Comme d'autre part, $\sum_{h=1}^{n}h^4=\sum_{k=1}^{n}k^4=\frac{n(n+1)(6n^3+9n^2+n-1)}{30}$, on a
+
+$$\sum_{1\leq h,k\leq
+n}^{}h^4=\sum_{h=1}^{n}(\sum_{k=1}^{n}h^4)=\sum_{h=1}^{n}nh^4=n\sum_{h=1}^{n}h^4=\frac{n^2(n+1)(6n^3+9n^2+n-1)}{30},$$
+
+et bien sûr $\sum_{1\leq h,k\leq
+n}^{}k^4=\frac{n^2(n+1)(6n^3+9n^2+n-1)}{30}$. Par suite,
+
+\begin{align*}
+u_n&=\frac{1}{n^5}\left(2.5\frac{n^2(n+1)(6n^3+9n^2+n+14)}{30}-18\frac{n^2(n+1)^2(2n+1)^2}{36}\right)\\
+ &=\frac{1}{n^5}(2n^6-2n^6+n^5(\frac{15}{3}-\frac{12}{2})+\mbox{termes de degré au plus}\;4)\\
+ &=-1+\mbox{termes tendant vers}\;0
+\end{align*}
+
+Par suite,
+
+$$\lim_{n\rightarrow +\infty}u_n=-1.$$
+
+\end{enumerate}
+\fincorrection
+\finexercice

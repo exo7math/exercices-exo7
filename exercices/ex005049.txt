@@ -1,0 +1,39 @@
+\exercice{5049, quercia, 2010/03/17}
+\enonce[Le plan tangent coupe $Oz$ en un point fixe]
+
+On considère la surface ${\cal S}$ d'équations paramétriques :
+$\begin{cases} x = \rho\cos\theta\cr
+         y = \rho\sin\theta\cr
+         z = f(\rho,\theta)\cr \end{cases}$
+où $f$ est une fonction de classe $\mathcal{C}^1$.
+
+\begin{enumerate}
+  \item Donner l'équation du plan tangent à ${\cal S}$ en un point $M(\rho,\theta)$.
+    
+  \item Déterminer $f$ de sorte que, le long d'une ligne $\theta = \text{cste}$,
+    le plan tangent coupe $Oz$ en un point fixe.
+    
+
+  \item Exemple : $f(\rho,\theta) = \theta$. Dessiner la surface ${\cal S}$.
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $\left(\sin\theta\frac{\partial f}{\partial \theta} -\rho\cos\theta\frac{\partial f}{\partial \rho}\right)x
+             -\left(\cos\theta\frac{\partial f}{\partial \theta} +\rho\sin\theta\frac{\partial f}{\partial \rho}\right)y
+             + \rho z = \rho f - \rho^2\frac{\partial f}{\partial \rho}$.
+  \item $f-\rho\frac{\partial f}{\partial \rho} = a(\theta)
+              \Rightarrow  f(\rho,\theta) = a(\theta) + b(\theta)\rho$.
+  \item
+$$
+\centerline{\includegraphics[height=6cm]{../images/img005049-1}}
+$$
+  % \mapleplot{ x := r*cos(t); y := r*sin(t); z := t;    plot3d([x,y,z],r=0..2,t=0..4*Pi,style=hidden,color=black,orientation=[20,60]);   }
+\end{enumerate}
+ \fincorrection
+
+\finexercice

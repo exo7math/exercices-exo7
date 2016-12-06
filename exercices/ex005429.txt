@@ -1,0 +1,20 @@
+\exercice{5429, exo7, 2010/07/06}
+\enonce[**]
+Etude au voisinage de $+\infty$ de $\sqrt{x^2-3}-\sqrt[3]{8x^3+7x^2+1}$.
+\finenonce
+
+\noindication
+
+\correction
+Quand $x$ tend vers $+\infty$,
+
+$$\sqrt{x^2-3}=x\left(1-\frac{3}{x^2}\right)^{1/2}=x\left(1-\frac{3}{2x^2}+o(\frac{1}{x^2})\right)=x-\frac{3}{2x}+o\left(\frac{1}{x}\right),$$
+et,
+
+$$\sqrt[3]{8x^3+7x^2+1}=2x\left(1+\frac{7}{8x}+o\left(\frac{1}{x^2}\right)\right)^{1/3}=2x\left(1+\frac{7}{24x}-\frac{49}{576x^2}+o\left(\frac{1}{x^2}\right)\right)=2x+\frac{7}{12}-\frac{49}{288x}+o\left(\frac{1}{x}\right).$$
+Donc,
+
+$$f(x)\underset{x\rightarrow+\infty}{=}-x-\frac{7}{12}-\frac{383}{288x}+o\left(\frac{1}{x}\right).$$
+La courbe représentative de $f$ admet donc en $+\infty$ une droite asymptote d'équation $y=-x-\frac{7}{12}$. De plus, le signe de $f(x)-\left(-x-\frac{7}{12}\right)$ est, au voisinage de $+\infty$, le signe de $-\frac{383}{288x}$. Donc la courbe représentative de $f$ est au-dessous de la droite d'équation $y=-x-\frac{7}{12}$ au voisinage de $+\infty$.
+\fincorrection
+\finexercice

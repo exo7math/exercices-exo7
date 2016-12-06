@@ -1,0 +1,52 @@
+\exercice{3801, quercia, 2010/03/11}
+\enonce[Cachan MP$^*$ 2000]
+On note $P$ l'ensemble des fonctions~$f$ polynomiales par morceaux,
+continues sur $[0,1]$ et vérifiant ${f(0)=f(1)=0}$.
+Si $f$ et~$g$ sont des fonctions de~$P$, on note
+$(f\mid g) =  \int_{t=0}^1f'(t)g'(t)\,d t$.
+
+\begin{enumerate}
+  \item Que dire de~$P$ muni de cette application~?
+    
+  \item Montrer que si $x\in{[0,1]}$, il existe $g_x\in P$ telle que
+    $\forall\ f\in P,\ (g_x\mid f) = f(x)$.
+    
+  \item On considère $n$ réels vérifiant~:
+    $0<x_1<x_2<\dots<x_n<1$ et on donne $n$ réels $(\alpha_i)_{i\in{[[1,n]]}}$.
+    On pose $\varphi(f) = \|f\|^2 + \sum_{i=1}^n (f(x_i)-\alpha_i)^2$
+    et on demande de trouver le minimum de~$\varphi$ sur~$P$.
+    
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Que c'est un espace préhilbertien.
+  \item $g_x(t) = \min(t(1-x),x(1-t))$
+  \item On note $g_i = g_{x_i}$~: $(g_1,\dots,g_n)$ est libre par
+    considération des points anguleux, donc engendre un espace vectoriel $G$ de dimension~$n$.
+    Soit $f\in P$~: $f = f_0+f_1$ avec $f_0\in G$ et $f_1\in G^\bot$.
+    Alors $\varphi(f) = \varphi(f_0) + \|f_1\|^2$ donc $\varphi$ est minimale
+    en~$f$ ssi $\varphi_{|G}$ est minimale en~$f_0$ et $f_1=0$.
+    Désormais on suppose $f_1=0$ et~$f\in G$.
+    
+    L'application~: $$ u : G \to {\R^n}, f \mapsto {(f(x_1),\dots,f(x_n)) = ((f\mid g_1),\dots,(f\mid g_n))}$$
+    est un isomorphisme linéaire. Soit $v$ l'endormophisme autoadjoint défini
+    positif de $\R^n$ (pour le produit scalaire canonique) tel que~:
+    $\forall\ t\in\R^n, (t\mid v(t)) = \|u^{-1}(t)\|^2$.
+
+    On a donc en notant $\alpha = (\alpha_1,\dots,\alpha_n)$ et $\beta = (\mathrm{id}+v)^{-1}(\alpha)$~:
+    \begin{align*}\forall\ t\in\R^n,\ \varphi(u^{-1}(t))
+      &= (t\mid v(t)) + (t-\alpha\mid t-\alpha)\\
+      &= (t\mid(\mathrm{id}+v)(t)) - 2(t\mid \alpha) + (\alpha\mid\alpha)\\
+      &= (t-\beta\mid(\mathrm{id}+v)(t-\beta)) + (\alpha\mid\alpha-\beta).\\ \end{align*}
+    $\mathrm{id}+v$ est autoadjoint défini positif donc le minimum de~$\varphi$
+    est atteint pour $f=u^{-1}(\beta)$ (solution unique) et vaut
+    $(\alpha\mid\alpha-\beta)$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

@@ -1,0 +1,29 @@
+\exercice{6962, blanc-centi, 2014/04/01}
+\video{uMsrg-zPUko}
+\enonce
+\begin{enumerate}
+\item Soit $P=X^n+a_{n-1}X^{n-1}+\cdots+a_1X+a_0$ un polynôme de degré $n\ge 1$ 
+à coefficients dans $\Zz$. Démontrer que si $P$ admet une racine dans $\Zz$, 
+alors celle-ci divise $a_0$.
+
+\item Les polynômes $X^3-X^2-109X-11$ et $X^{10}+X^5+1$ ont-ils des racines dans $\Z$?
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item Si $k\in\Zz$ est racine de $P$, alors $k^n+a_{n-1}k^{n-1}+\cdots+a_1k=-a_0$ 
+ce qui donne $k(k^{n-1}+\cdots+a_1)=-a_0$, donc $k$ divise $a_0$.
+
+\item Si $X^3-X^2-109X-11$ a une racine $k\in\Zz$, nécessairement $k$ divise $11$, 
+donc $k$ vaut $-1$, $1$, $-11$ ou $11$. En testant ces quatre valeurs, on trouve 
+que seul $11$ est racine. 
+
+De même, si $X^{10}+X^5+1$ admettait une racine entière $k$, celle-ci diviserait $1$ donc vaut 
+$k = \pm 1$, or on vérifie que ni $+1$, ni $-1$ ne sont racines.
+Ainsi $X^{10}+X^5+1$ n'a pas de racine entière.
+\end{enumerate}
+\fincorrection
+\finexercice

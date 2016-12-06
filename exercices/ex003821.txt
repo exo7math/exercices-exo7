@@ -1,0 +1,81 @@
+\exercice{3821, quercia, 2010/03/11}
+\enonce[Centrale MP 2002]
+
+Soient $n \in \N^*$, $S_n(\R)$ l'espace des matrices $n\times n$ symétriques
+à coefficients réels,
+$S_n^{+}(\R)$ le sous-ensemble des matrices positives,
+$S_n^{++}(\R)$ le sous-ensemble des matrices définies positives
+et $\phi \in \mathcal{L}({S_n(\R)})$.
+On suppose que $\phi (S_n^{++}(\R))=S_n^{++}(\R)$.
+\smallskip
+\begin{enumerate}
+  \item Montrer que : $\forall\ M \in S_n(\R),\ \exists\ A \in \R^+ \text{ tq }
+    \forall\ \lambda > A,\ M + \lambda I_n \in S_n^{++}(\R)$.
+
+
+  \item Montrer que $\phi \in GL(S_n(\R))$ et que $\phi (S_n^+(\R))=S_n^+(\R)$.
+
+
+
+  \item On suppose $n = 2$ et $\phi (I_2) = I_2$. 
+    Montrer que : $\forall\ M \in S_2(\R),\ \chi_{\phi (M)}=\chi_M$.
+    Montrer que $\det(\varphi (M))=\det(M)$ (i.e. $\phi$ conserve le déterminant).
+
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Prendre $A$ supérieur ou égal à la plus petite des valeurs propres
+     de~$-M$.
+  \item Surjectivité de~$\phi$~: $\Im\Phi$ est un sous-espace vectoriel de~$S_n(\R)$ contenant
+    $S_n^{++}(\R)$ donc contenant $\mathrm{vect}(S_n^{++}(\R)) = S_n(\R)$
+    d'après la question précédente. On en déduit que $\phi$ est un isomorphisme
+    grâce au théorème du rang.
+    
+    Si $M\in S_n^+(\R)$ alors $M = \lim_{p\to\infty}(M+I_n/p)$ donc
+    $M\in\overline{S_n^{++}(\R)}$. Réciproquement, si $M\in\overline{S_n^{++}(\R)}$
+    alors $M = \lim_{p\to\infty}(M_p)$ avec $M_p$ définie positive, donc pour
+    tout $x\in\R^n$ on a ${}^txMx = \lim_{p\to\infty}({}^txM_px)\ge 0$, c'est-à-dire
+    $M\in S_n^+(\R)$.
+    Ainsi~: $\overline{S_n^{++}(\R)} = S_n^{+}(\R)$. Comme $\phi$ est continue
+    (car linéaire en dimension finie) on en déduit $\phi(S_n^{+}(\R))\subset S_n^{+}(\R)$.
+    De plus, $\phi(S_n^{++}(\R)) = S_n^{++}(\R) \Rightarrow S_n^{++}(\R) = \phi^{-1}(S_n^{++}(\R))$
+    donc par continuité de $\phi^{-1}$~: $\phi^{-1}(S_n^{+}(\R))\subset S_n^{+}(\R)$,
+    d'où $S_n^{+}(\R)\subset \phi(S_n^{+}(\R))$.\smallskip
+  \item Soit $M\in S_2(\R)$ de valeurs propres $a,b$ avec $a\le b$,
+    et soient $a'\le b'$ les valeurs propres de~$\phi(M)$.
+    Pour tout $\lambda>b$ on a $M+\lambda I_2\in S_2^{++}(\R)$ donc
+    $\phi(M)+\lambda I_2\in S_2^{++}(\R)$ c'est-à-dire $\lambda > b'$.
+    Ceci prouve que $b'\le b$ et on montre l'égalité en considérant~$\phi^{-1}$.
+    De même, en considérant $-M$ on montre que $a'=a$. Finalement
+    $\chi_M = (X-a)(X-b) = \chi_{\phi(M)}$. De plus, $\det(M) = ab = \det(\phi(M))$.
+    
+    Remarque~: soient $A = \left(\begin{smallmatrix}1&0\cr0&0\cr\end{smallmatrix}\right)$,
+                      $B = \left(\begin{smallmatrix}0&0\cr0&1\cr\end{smallmatrix}\right)$,
+                      $C = \left(\begin{smallmatrix}0&1\cr1&0\cr\end{smallmatrix}\right)$,
+    et $A'=\phi(A)$, $B'=\phi(B)$, $C'=\phi(C)$. On sait que $A'$ est
+    orthodiagonalisable avec pour valeurs propres $0$ et $1$, donc il existe
+    $P\in O(2)$ telle que $A' = {}^tPAP$. $A'+B'=\phi(I_2)=I_2$ d'où
+    $B' = I_2-A' = {}^tPBP$. Posons $C' = {}^tP\left(\begin{smallmatrix}u&v\cr v&w\cr\end{smallmatrix}\right)P$.
+    $0=\mathrm{tr}(C) = \mathrm{tr}(C') = u+w$ et $-1=\det(C) = \det(C') = uw-v^2$
+    donc $w=-u$ et $u^2+v^2=1$. De plus,
+    $-1=\det(A+C) = -u-u^2-v^2$ d'où $u=0$ et $v=\pm 1$.
+    
+    Si $v=1$ alors $C' = {}^tPCP$ et par linéarité, $\phi(M)={}^tPMP$
+    pour toute $M\in S_2(\R)$.
+    Si $v=-1$ on trouve de même $\phi(M) = {}^tQMQ$ avec $Q=P\left(\begin{smallmatrix}1&0\cr0&-1\cr\end{smallmatrix}\right)\in O(2)$.
+    Réciproquement, toute aplication de la forme $M  \mapsto{}^tPMP$ avec $P\in O(2)$
+    vérifie les hypothèses de la question. Les fonctions $\phi$
+    linéaires vérifiant la seule condition $\phi(S_2^{++}(\R)) = S_2^{++}(\R)$
+    sont les fonctions de la forme $M \mapsto{}^tPMP$ avec $P\in GL_2(\R)$
+    (écrire $\phi(I_2) = {}^tTT$ puis considérer $M \mapsto{}^tT^{-1}\phi(M)T^{-1}$).
+    
+    Généralisation en dimension quelconque~?
+\end{enumerate}
+ \fincorrection
+
+\finexercice

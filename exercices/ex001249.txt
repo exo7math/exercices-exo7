@@ -1,0 +1,59 @@
+\exercice{1249, legall, 1998/09/01}
+\video{LJLvAjm8KcY}
+\enonce
+\'Etudier la position du graphe de l'application $x\mapsto \ln(1+x+x^2)$ par rapport 
+à sa tangente en $0$ et $1$.
+\finenonce
+
+\indication
+Faire un dl en $x=0$ à l'ordre $2$ cela donne $f(0)$, $f'(0)$ et la position par rapport à la tangente
+donc tout ce qu'il faut pour répondre aux questions. Idem en $x=1$.
+\finindication
+
+\correction
+
+Commençons en $x=0$, le dl de $f(x)=\ln(1+x+x^2)$ à l'ordre $2$
+est 
+$$\ln(1+x+x^2)
+=(x+x^2)-\frac{(x+x^2)^2}{2} + o(x^2)
+= x + \frac12 x^2 + o(x^2)$$
+Par identification avec
+$f(x)= f(0)+f'(0)x+f''(0)\frac{x^2}{2!}+o(x^2)$
+cela entraîne donc $f(0)=0$, $f'(0)=1$ (et $f''(0)=1$).
+L'équation de la tangente est donc
+$y=f'(0)(x-0)+f(0)$ donc $y=x$.
+
+La position par rapport à la tangente correspond à l'étude du signe de 
+$f(x)-y(x)$ où $y(x)$ est l'équation de la tangente.
+$$f(x)-y(x)=x + \frac12 x^2 + o(x^2) \  - \  x = \frac12 x^2 + o(x^2).$$
+
+Ainsi pour $x$ suffisamment proche de $0$, $f(x)-y(x)$ est du signe de $\frac12 x^2$
+et est donc positif. Ainsi dans un voisinage de $0$ la courbe de $f$ est au-dessus de la tangente
+en $0$.
+
+\bigskip
+
+Même étude en $x=1$.
+
+Il s'agit donc de faire le dl de $f(x)$ en $x=1$.
+On pose $x=1+h$ (de sorte que $h=x-1$ est proche de $0$) :
+\begin{align*}
+f(x)=\ln(1+x+x^2) 
+  & = \ln \big(1+ (1+h)+(1+h)^2\big)  \\
+  & = \ln \big(3 + 3h + h^2 \big)  \\
+  & = \ln \left(3 \big(1 + h + \frac{h^2}{3} \big)\right) \\
+  & = \ln 3 + \ln \big(1 + h + \frac{h^2}{3} \big) \\
+  & = \ln 3 +  \big( h + \frac{h^2}{3} \big) - \frac{\big( h + \frac{h^2}{3} \big)^2}{2} + o\big((h + \frac{h^2}{3})^2 \big) \\ 
+  & = \ln 3 + h  + \frac{h^2}{3} -\frac{h^2}{2}  + o(h^2) \\
+  & = \ln 3 + h -\frac16 h^2 + o(h^2) \\
+  & = \ln 3 + (x-1) - \frac16 (x-1)^2 + o((x-1)^2) \\
+\end{align*}
+
+La tangente en $x=1$ est d'équation $y=f'(1)(x-1)+f(1)$ et est donc donnée par le dl à l'ordre $1$ : c'est  $y = (x-1) + \ln 3$.
+Et la différence 
+$f(x)-\big(\ln 3 + (x-1)\big) = - \frac16 (x-1)^2 + o((x-1)^2)$ est négative pour $x$ proche de $1$.
+Donc, dans un voisinage de $1$, le graphe de $f$ est en-dessous de la tangente en $x=1$.
+\fincorrection
+
+\finexercice
+

@@ -1,0 +1,24 @@
+\exercice{3392, quercia, 2010/03/09}
+\enonce[ENS MP 2002]
+Que dire des morphismes de groupe $\varphi : {GL_n(\R)} \to {\Z/p\Z}$~?
+\finenonce
+
+\noindication
+
+\correction
+Soit $\varphi$ un tel morphisme. Alors pour toute matrice $M\in GL_n(\R)$
+on a $\dot 0 = p\varphi(M) = \varphi(M^p)$, donc $\varphi$ s'annule
+sur toute matrice qui est une puissance $p$-ème.
+Notons $P(i,j,\alpha)$ la matrice de l'opération élémentaire $L_i \leftarrow L_i + \alpha L_j$,
+qui est aussi la matrice de l'opération élémentaire $C_j \leftarrow C_j + \alpha C_i$.
+Toute matrice $M\in GL_n(\R)$ peut être transformée, à l'aide de ces seules
+opérations élémentaires, en une matrice $M' = \mathrm{diag}(1,\dots,1,\det(M))$
+par une adaptation de l'algorithme de Gauss. Comme $P(i,j,\alpha) = P(i,j,\alpha/p)^p$
+et $\det(M) = \pm(|\det(M)|^{1/p})^p$, on obtient~:
+$\varphi(M) = \dot 0$ si $\det(M) > 0$ et $\varphi(M) = \varphi(\mathrm{diag}(1,\dots,1,-1)) = x$
+si $\det(M) < 0$. Réciproquement, la fonction $\varphi$ ainsi définie est
+effectivement un morphisme de groupe si et seulement si $2x = \dot 0$, soit
+$x=\dot 0$ pour $p$ impair, et $x\in\{\dot 0,\dot q\}$ pour $p=2q$.
+\fincorrection
+
+\finexercice

@@ -1,0 +1,31 @@
+\exercice{5388, rouget, 2010/07/06}
+\enonce[****]
+Etudier l'existence d'une limite et la continuité éventuelle en chacun de ses points de la fonction définie sur $]0,+\infty[$ par $f(x)=0$ si $x$ est irrationnel et $f(x)=\frac{1}{p+q}$ si $x$ est rationnel égal à $\frac{p}{q}$, la fraction $\frac{p}{q}$ étant irréductible.
+\finenonce
+
+\noindication
+
+\correction
+Soit $a$ un réel strcitement positif. On peut déjà noter que $\lim_{x\rightarrow a,\;x\in\Rr\setminus\Qq}f(x)=0$. Donc, si $f$ a une limite quand $x$ tend vers $a$, ce ne peut être que $0$ et $f$ est donc discontinue en tout rationnel strictement positif.
+
+$a$ désigne toujours un réel strictement positif fixé. Soit $\varepsilon>0$.
+
+Soit x un réel strictement positif tel que $f(x)\geq\varepsilon$.
+
+$x$ est nécessairement rationnel, de la forme $\frac{p}{q}$ où $p$ et $q$ sont des entiers naturels non nuls premiers entre eux vérifiant $\frac{1}{p+q}\geq\varepsilon$ et donc 
+
+$$2\leq p+q\leq\frac{1}{\varepsilon}.$$
+
+Mais il n'y a qu'un nombre fini de couples d'entiers naturels non nuls $(p,q)$ vérifiant ces inégalités et donc, il n'y a qu'un nombre fini de réels strictement positifs $x$ tels que $f(x)\geq\varepsilon$.
+
+Par suite, $\exists\alpha>0$ tel que aucun des réels $x$ de $]x_0-\alpha,x_0+\alpha[$ ne vérifie $f(x)\geq\varepsilon$. Donc, 
+
+$$\forall a>0,\;\forall\varepsilon> 0,\;\exists\alpha>0/\;\forall x>0,\;(0<|x-a|<\alpha\Rightarrow|f(x)|<\varepsilon),$$
+
+ou encore 
+
+$$\forall a>0,\;\lim_{x\rightarrow a,\;x\neq a}f(x)=0.$$
+
+Ainsi, $f$ est continue en tout irrationnel et discontinue en tout rationnel.
+\fincorrection
+\finexercice

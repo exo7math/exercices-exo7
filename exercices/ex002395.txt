@@ -1,0 +1,57 @@
+\exercice{2395, mayer, 2003/10/01}
+\enonce 
+L'espace $(\Rr , d)$ est-il complet si $d$ est l'une des
+m\'etriques suivantes? \begin{enumerate}
+\item $d(x,y) = |x^3-y^3|$.
+\item $d(x,y) = |\exp (x) -\exp (y)|$.
+\item $d(x,y) = \log (1+ |x-y|)$.
+\end{enumerate}
+\finenonce
+
+\indication
+\begin{enumerate}
+  \item C'est une suite de Cauchy. Essayer de se ramener à une suite de Cauchy de $(\Rr,|.|)$.
+
+  \item Regarder la suite définie par $u_n=-n$.
+
+  \item Comme la première question.
+\end{enumerate}
+\finindication
+
+\correction
+\begin{enumerate}
+  \item 
+Soit $(u_n)$ une suite de Cauchy pour $d$.
+Donc
+$$\forall \epsilon >0 \quad \exists N\in \Nn \quad \forall p,q \ge N \quad
+d(u_p,u_q) = |u_p^3-u_q^3| \le \epsilon.$$
+Donc la suite $(u_n^3)$ est une suite de Cauchy pour la distance usuelle $|.|$.
+Comme  $(\Rr,|.|)$ est complet alors $(u_n^3)$ converge pour la valeur absolue, notons $v$ la limite,
+ nous avons $|u_n^3-v|$ qui tend vers $0$. Donc pour $u=v^{\frac13}$
+nous avons $d(u_n,u)=|u_n^3-u^3|=|u_n^3-v|$ qui tend vers $0$, donc
+$u_n$ converge vers $u$ pour la distance $d$.
+Donc $\Rr$ est complet pour $d$.
+
+
+  \item Montrons que $d$ ne définit pas une distance complète.
+Soit $(u_n)$ la suite définie par $u_n=-n$, $n\in \Nn$.
+Alors $d(u_p,u_q) = |e^{-p}-e^{-q}|$.
+Donc pour $\epsilon>0$ fixé, soit $N$ tel que $e^{-N}<\frac\epsilon 2$,
+alors pour $p,q\ge N$ on a $d(u_p,u_q) = |e^{-p}-e^{-q}| \le e^{-p}+
+ e^{-q} \le 2e^{-N} \le \epsilon$. Donc $(u_n)$ est de Cauchy.
+Supposons que $(u_n)$ converge, notons $u\in \Rr$ sa limite.
+Alors $d(u_n,u)=|e^{-n}-e^u|$ tend vers $0$ d'une part
+et vers $e^u$ d'autre part. Donc $e^u=0$ ce qui est absurde pour
+$u\in \Rr$.
+
+  \item La fonction $\ln(1+u)$ est continue et ne s'annule qu'en $u=0$. 
+Donc pour $\ln(1+u)$ suffisamment petit nous avons $u$ suffisamment petit et donc
+(par la relation $\ln(1+u) = u +o(u)$) nous avons 
+$$\frac12 u \le \ln(1+u) \le 2u.$$
+Donc pour $(u_n)$ une suite de Cauchy pour $d$, la première inégalité prouve 
+que $(u_n)$ est une suite de Cauchy pour $|.|$. Donc elle converge pour $|.|$
+La deuxième inégalité montre que $(u_n)$ converge pour 
+$d$. Donc $d$ définit une distance complète.
+\end{enumerate}
+\fincorrection
+\finexercice

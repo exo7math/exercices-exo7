@@ -1,0 +1,69 @@
+\exercice{2593, delaunay, 2009/05/19}
+\enonce
+ Soit $f$ l'endomorphisme de $\R^4$ dont la matrice dans la base canonique  est 
+$$A=\begin{pmatrix}-8&-3&-3&1 \\  6&3&2&-1 \\ 26&7&10&-2 \\ 0&0&0&2\end{pmatrix}.$$ 
+\begin{enumerate}
+ \item  D\'emontrer que $1$ et $2$ sont des valeurs propres de $f$.
+ \item D\'eterminer les vecteurs propres de $f$.
+ \item  Soit $\vec u$ un vecteur propre de $f$ pour la valeur propre $2$. Trouver des vecteurs $\vec v$ et $\vec w$ tels que 
+$$f(\vec v)=2\vec v+\vec u\ {\hbox{et}}\ f(\vec w)=2\vec w+\vec v.$$ 
+ \item Soit $\vec e$ un vecteur propre de $f$ pour la valeur propre $1$. D\'emontrer que $(\vec e,\vec u,\vec v,\vec w)$ est une base de $\R^4$. Donner la matrice de $f$ dans cette base.
+ \item La matrice $A$ est-elle diagonalisable ?
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+ Soit $f$ l'endomorphisme de $\R^4$ dont la matrice dans la base canonique  est 
+$$A=\begin{pmatrix}-8&-3&-3&1 \\  6&3&2&-1 \\ 26&7&10&-2 \\ 0&0&0&2\end{pmatrix}.$$ 
+
+\begin{enumerate}
+ \item {\it D\'emontrons que $1$ et $2$ sont des valeurs propres de $f$}.
+
+Pour cela montrons que $\det(A-I)=0$ et $\det(A-2I)=0$. On a
+$$\det(A-I)=\begin{vmatrix}-9&-3&-3&1 \\  6&2&2&-1 \\ 26&7&9&-2 \\ 0&0&0&1\end{vmatrix}=
+-\begin{vmatrix}-9&-3&-3 \\  6&2&2 \\ 26&7&9\end{vmatrix}=-\begin{vmatrix}-9&-3&0 \\  6&2&0 \\ 26&7&2\end{vmatrix}=-2
+\begin{vmatrix}-9&-3 \\  6&2\end{vmatrix}=0.$$
+Et
+$$\det(A-2I)=\begin{vmatrix}-10&-3&-3&1 \\  6&1&2&-1 \\ 26&7&8&-2 \\ 0&0&0&0\end{vmatrix}=0.$$ Ainsi, les r\'eels $1$ et $2$ sont bien valeurs propres de la matrice $A$.
+ \item {\it D\'eterminons des vecteurs propres de $f$ associ\'es aux valeurs propres $1$ et $2$}.
+
+Soit $\vec e=(x,y,z,t)$ tel que $A\vec e=\vec e$, on r\'esout alors le syst\`eme 
+$$\left\{{\begin{align*}-9x-3y-3z+t&=0 \\ 6x+2y+2z-t&=0 \\ 26x+7y+9z-2t&=0 \\  t&=0\end{align*}}\right.\iff
+\left\{{\begin{align*}3x+y+z&=0 \\ 26x+7y+9z&=0 \\  t&=0\end{align*}}\right.\iff
+\left\{{\begin{align*}x&=-2y \\  z&=5y \\  t&=0\end{align*}}\right.,$$
+ce syst\`eme repr\'esente une droite vectorielle engendr\'ee, par exemple, par le vecteur 
+
+$\vec e=(-2,1,5,0)$.
+
+Soit $\vec u=(x,y,z,t)$ tel que $A\vec u=2\vec u$, on r\'esout 
+$$\left\{{\begin{align*}-10x-3y-3z+t&=0 \\ 6x+y+2z-t&=0 \\ 26x+7y+8z-2t&=0\end{align*}}\right.\iff
+\left\{{\begin{align*}10x+3y+3z&=0 \\ 6x+y+2z&=0 \\  t&=0\end{align*}}\right.\iff
+\left\{{\begin{align*}3y&=-2x \\  3z&=-8x \\  t&=0\end{align*}}\right.,$$
+ce syst\`eme repr\'esente une droite vectorielle engendr\'ee, par exemple, par le vecteur
+
+$\vec u=(3,-2,-8,0).$ 
+ \item {\it  On consid\`ere le vecteur $\vec u$ pr\'ec\'edent et on determine des vecteurs $\vec v$ et $\vec w$ tels que }
+$$f(\vec v)=2\vec v+\vec u\ {\hbox{et}}\ f(\vec w)=2\vec w+\vec v.$$
+Pour d\'eterminer le vecteur $\vec v=(x,y,z,t)$, on r\'esout le syst\`eme
+$$\left\{{\begin{align*}-10x-3y-3z+t&=3 \\ 6x+y+2z-t&=-2 \\ 26x+7y+8z-2t&=-8\end{align*}}\right.\iff
+\left\{{\begin{align*}10x+3y+3z&=-3 \\ 6x+y+2z&=-2 \\  t&=0\end{align*}}\right.,$$
+le vecteur $\vec v=(0,0,-1,0)$ convient.
+Pour d\'eterminer le vecteur $\vec w=(x,y,z,t)$, on r\'esout le syst\`eme
+$$\left\{{\begin{align*}-10x-3y-3z+t&=0 \\ 6x+y+2z-t&=0 \\ 26x+7y+8z-2t&=-1\end{align*}}\right.\iff
+\left\{{\begin{align*}10x+3y+3z&=-1 \\ 6x+y+2z&=-1 \\  t&=-1\end{align*}}\right.,$$
+le vecteur $\vec w=(1/2,0,-2,-1)$ convient.
+ \item {\it Les vecteurs $\vec e$, $\vec u$, $\vec v$ et $\vec w$ sont ceux d\'efinis pr\'ec\'edemment. On d\'emontre que $(\vec e,\vec u,\vec v,\vec w)$ est une base de $\R^4$ et on  donne la matrice de $f$ dans cette base.}
+
+La matrice $M$ des vecteurs $\vec e, \vec u, \vec v, \vec w$ dans la base cannonique est de rang $4$ car son d\'eterminant est non nul, en effet
+$$\det M=\begin{vmatrix}-2&3&0&1/2 \\  1&-2&0&0 \\ 5&-8&-1&-2 \\ 0&0&0&-1\end{vmatrix}=
+\begin{vmatrix}-2&3&0 \\  1&-2&0 \\ 5&-8&-1\end{vmatrix}=-\begin{vmatrix}-2&3 \\  1&-2\end{vmatrix}=-1 .$$
+Compte tenu des d\'efinitions des vecteurs $\vec e, \vec u, \vec v, \vec w$, la matrice $B$ de l'endomorphisme $f$ dans la base $(\vec e,\vec u,\vec v,\vec w)$ s'\'ecrit
+$$B=\begin{pmatrix}1&0&0&0 \\ 0&2&1&0 \\ 0&0&2&1 \\ 0&0&0&2\end{pmatrix}.$$
+  \item {\it La matrice $A$ est-elle diagonalisable ?}
+
+D'apr\`es la question pr\'ec\'edente, les valeurs propres de $f$ sont $1$, valeur propre simple, et $2$ de multiplicit\'e $3$. Nous avons vu dans le b) que le sous-espace propre associ\'e \`a la valeur propre $2$ est de dimension $1\neq 3$, ainsi, la matrice $A$ n'est pas diagonalisable.
+\end{enumerate}
+\fincorrection
+\finexercice

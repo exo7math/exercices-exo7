@@ -1,0 +1,23 @@
+\exercice{2848, burnol, 2009/12/15}
+\enonce
+Déterminer pour $A, B, C$ réels, avec $A^2 > B^2 + C^2$ la
+valeur de :
+\[ \frac1{2\pi}\int_0^{2\pi} \frac{d\theta}{A + B\sin\theta + C\cos\theta}\]
+On aura intérêt, comme première étape, à poser $B =
+R\cos\phi$, $C=R\sin\phi$, mais on peut aussi se frotter
+plus directement au résidu (utiliser bien sûr
+$z=e^{i\theta}$ ou dans ce genre).
+\finenonce
+\noindication
+\correction
+Si $A=R\cos (\Phi) $ et $B=R\sin (\Phi)$ on a
+$$ \int _0^{2\pi} \frac{d\theta}{A+B\sin(\theta )+C\cos(\theta )} = \int _0^{2\pi} \frac{d\theta}{A+R\sin(\theta +\Phi)} =\int _0^{2\pi} \frac{d\alpha}{A+R\sin(\alpha )}.$$
+Pour trouver la valeur de cette derni\`ere int\'egrale posons $z=e^{i\alpha }$. Alors $d\alpha = -i \frac{dz}{z}$ et
+$$ I=\int _0^{2\pi} \frac{d\alpha}{A+R\sin(\alpha )} = \int _{|z|=1} \frac{-i\, dz}{z( A+R\frac{z-\overline{z}}{2i})}=
+\int _{|z|=1} \frac{2 dz}{Rz^2 +2iAz -R}.$$
+Le d\'enominateur de cette derni\`ere expression s'annule en
+$$z^\pm =\frac{-2iA\pm \sqrt{-4A^2+4R^2}}{2R}= -i\left( \frac{A}{R} \mp \sqrt{\left(\frac{A}{R} \right)^2 -1}    \right)$$
+Un calcul \'el\'ementaire montre que seulement la racine $z^+= -i\left( \frac{A}{R} - \sqrt{\left(\frac{A}{R} \right)^2 -1} \right)$ est dans le disque unit\'e ouvert pourvu que $A>0$ (le cas $A<0$ est similaire). Il s'ensuit par le th\'eor\`eme du r\'esidu que
+$$\frac{1}{2\pi}I= i \frac{2}{R}\frac{1}{z^+-z^-}= \frac{1}{R\sqrt{\left(\frac{A}{R} \right)^2 -1}}=\frac{1}{\sqrt{A^2-R^2}}.$$
+\fincorrection
+\finexercice

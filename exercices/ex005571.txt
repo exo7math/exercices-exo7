@@ -1,0 +1,24 @@
+\exercice{5571, rouget, 2010/10/16}
+\enonce[**]
+Montrer que toute suite de polynômes non nuls de degrés deux à deux distincts est libre.
+
+Montrer que toute suite de polynômes non nuls de valuations deux à deux distinctes est libre.
+\finenonce
+
+\noindication
+
+\correction
+Soient $n$ un entier naturel non nul puis $P_1$,..., $P_n$ $n$ polynômes non nuls de degrés respectifs $d_1<...<d_n$.
+
+Soit $(\lambda_1,\ldots,\lambda_n)\in\Kk^n$ tel que $\lambda_1P_1 + ... +\lambda_nP_n=0$. Supposons par l'absurde que les $\lambda_i$ ne soient pas tous nuls et posons $k=\text{Max}\left\{i\in\llbracket1,n\rrbracket/\;\lambda_i\neq0\right\}$. On ne peut avoir $k=1$ car $P_1\neq0$ puis
+
+\begin{center}
+$\lambda_1P_1 + ... +\lambda_nP_n=0\Rightarrow\lambda_1P_1 + ... +\lambda_kP_k=0\Rightarrow\lambda_kP_k=-\sum_{i<k}^{}\lambda_iP_i$.
+\end{center}
+
+Cette dernière égalité est impossible car $\lambda_kP_k$ est un polynôme de degré $d_k$ (car $\lambda_k\neq0$) et $-\sum_{i<k}^{}\lambda_iP_i$ est un polynôme de degré au plus $d_{k-1}<d_k$. Donc tous les $\lambda_k$ sont nuls.
+
+La même démarche tient en remplaçant degré par valuation et en s'intéressant à la plus petite valuation au lieu du plus grand degré.
+
+\fincorrection
+\finexercice

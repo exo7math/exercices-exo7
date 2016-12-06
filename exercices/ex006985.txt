@@ -1,0 +1,80 @@
+\exercice{6985, blanc-centi, 2015/07/04}
+\video{DO8B1OcGOTE}
+\enonce
+Montrer que la courbe paramétrée 
+$$\left\{\begin{array}{l}x(t)=\frac{1}{t^2-t}\\ \ \\ y(t)=\frac{t}{t^2-1}\end{array}\right.$$
+possède un point double et que les tangentes en ce point sont perpendiculaires.
+\finenonce
+ 
+\noindication
+
+\correction
+Les expressions $x(t)=\frac{1}{t^2-t}$ et $y(t)=\frac{t}{t^2-1}$ 
+sont bien définies, et de classe $\mathcal{C}^1$ en dehors de $t=0$ et $t=\pm1$. Le domaine de définition est donc
+
+$$\mathcal{D}=\,]-\infty;-1[\ \cup\ ]-1;0[\ \cup\ ]0;1[\ \cup\ ]1;+\infty[$$
+La courbe possède un point double si elle se recoupe: on cherche donc deux paramètres $t_1,t_2\in\mathcal{D}$ tels que $t_1\not=t_2$ et $M=M(t_1)=M(t_2)$, \textsl{i.e.}
+\begin{eqnarray*}
+\left\{\begin{array}{l}
+\frac{1}{t_1^2-t_1}=\frac{1}{t_2^2-t_2}\\
+\ \\
+\frac{t_1}{t_1^2-1}=\frac{t_2}{t_2^2-1}
+\end{array}\right.
+&\Longleftrightarrow&\left\{\begin{array}{l}
+t_1^2-t_1=t_2^2-t_2\\
+t_1(t_2^2-1)-t_2(t_1^2-1)=0
+\end{array}\right.\\
+ &\Longleftrightarrow&\left\{\begin{array}{l}
+(t_1-t_2)(t_1+t_2-1)=0\\
+(t_2-t_1)(t_1t_2+1)=0
+\end{array}\right.
+\end{eqnarray*}
+Comme on cherche $t_1\not=t_2$, le système obtenu est équivalent à 
+$\displaystyle\left\{\begin{array}{l}t_1+t_2=1\\t_1t_2=-1\end{array}\right.$, 
+autrement dit à un système du type somme-produit: 
+cela signifie que $t_1$ et $t_2$ doivent \^etre les deux racines (distinctes) de $X^2-X-1$, 
+c'est-à-dire $\frac{1\pm\sqrt{5}}{2}$ (qui sont bien dans $\mathcal{D}$). 
+On a donc un seul point double, c'est
+$$M\left(\frac{1+\sqrt{5}}{2}\right)=M\left(\frac{1-\sqrt{5}}{2}\right)$$
+de coordonnées cartésiennes $(1,1)$. Pour déterminer les tangentes en ce point, on calcule le vecteur dérivé:
+$$\vec{V}(t)=\left\{\begin{array}{l}
+x'(t)=\frac{1-2t}{(t^2-t)^2}\\
+\ \\
+y'(t)=\frac{-1-t^2}{(t^2-1)^2}
+\end{array}\right.$$
+En remplaçant, on obtient 
+$$\vec{V}(t_1)=\begin{pmatrix}x'(t_1)\\y'(t_1)\end{pmatrix}
+=\begin{pmatrix}\sqrt{5}\\ \frac{-5-\sqrt{5}}{2}\end{pmatrix}\quad\text{ et }
+\quad \vec{V}(t_2)=\begin{pmatrix}x'(t_2)\\y'(t_2)\end{pmatrix}
+=\begin{pmatrix}-\sqrt{5}\\ \frac{-5+\sqrt{5}}{2}\end{pmatrix}$$
+Les deux tangentes à la courbe au point de coordonnées $(1,1)$ sont donc dirigées respectivement par les vecteurs $\vec{V}(t_1)$ et $\vec{V}(t_2)$, dont on vérifie en faisant le produit scalaire $\vec{V}_1\cdot\vec{V}_2=x'(t_1)x'(t_2)+y'(t_1)y'(t_2)=0$ qu'ils sont orthogonaux.
+
+\begin{center}
+\begin{tikzpicture}[scale=1]
+     \draw[->,>=latex,thick, gray] (-6.5,0)--(5,0) node[below,black] {$x$};
+     \draw[->,>=latex,thick, gray] (0,-3.5)--(0,5) node[right,black] {$y$};  
+
+
+  \draw[red, very thick,domain=0.2:0.8,samples=100] plot ({1/(\x*\x-\x)},{\x/(\x*\x-1)});
+  \draw[red, very thick,domain=-0.2:-0.9,samples=100] plot ({1/(\x*\x-\x)},{\x/(\x*\x-1)});
+  \draw[red, very thick,domain=1.2:10,samples=100] plot ({1/(\x*\x-\x)},{\x/(\x*\x-1)});
+  \draw[red, very thick,domain=-1.2:-10,samples=100] plot ({1/(\x*\x-\x)},{\x/(\x*\x-1)});
+
+  \fill[black] (0,0) circle (2pt) node[below left]{$0$}; 
+  \fill[black] (1,0) circle (2pt)  node[below]{$1$}; 
+  \fill[black] (0,1) circle (2pt)  node[left]{$1$}; 
+  \draw[black, dashed] (0,1)--(1,1)--(1,0); 
+
+
+ \coordinate (P) at (1,1);
+
+  \fill[blue] (P) circle (2.5pt)  node[above=5pt]{$M$}; 
+
+  \draw[very thick, blue] (P)--+(32:2)--+(32:-2);
+  \draw[very thick, blue] (P)--+(122:2)--+(122:-2);
+
+\end{tikzpicture}  
+\end{center}
+
+\fincorrection
+\finexercice

@@ -1,0 +1,82 @@
+\exercice{1949, gineste, 2001/11/01}
+ 
+\enonce
+Soit $0 < a < b$ et $(u_n)_{n\geq 0}$ d\'efini par $u_0=1$ et
+$\frac{u_{n+1}}{u_n}=\frac{n+a}{n+b}$ pour $n\geq 0.$ Montrer que
+la limite de la suite
+$W_n=\log (n^{b-a}u_n)$ existe et est finie. En d\'eduire les valeurs de
+$a$ et $b$ telles que la s\'erie $\sum_{j=0}^{\infty} u_j$ converge.
+Calculer alors sa somme: pour cela expliciter sa somme partielle $s_n,$
+en montrant d'abord que pour tout $n$ on a
+$$\sum_{j=0}^n[(j+1)+b-1]u_{j+1}=\sum_{j=0}^n[j +a]u_j.$$
+\finenonce
+ 
+\noindication
+ 
+\correction
+Convergence de $W_n = \ln (u_n n^{b-a})$.
+
+On remarque que $W_n$ est la somme partielle de la suite de terme général 
+\begin{eqnarray*}
+w_n &=& W_{n+1} - W_n = \ln \left[ \frac{ u_{n+1} }{ u_n } \left(\frac{n+1}{n}\right)^{b-a} \right]
+\\
+&=& \ln \left[ \frac{ n + a }{ n + b  } \left(\frac{n+1}{n}\right)^{b-a} \right] 
+= \ln \left[ \frac{ n( 1+\frac{a}{n}) }{ n( 1+\frac{b}{n}) } \left(1+\frac{1}{n}\right)^{b-a} \right] 
+\\
+&=& (b-a) \ln \left( 1 + \frac{1}{n} \right) 
++ \ln \left( 1 + \frac{a}{n} \right) - \ln \left( 1 + \frac{b}{n} \right)
+{}\end{eqnarray*}
+Il suffit donc de montrer que cette série converge pour montrer que $(W_n)$ converge. 
+On utilise le développement limité de $\ln{( 1 + x )} $ en 0 , ce qui donne 
+\[
+w_n = (b-a)\left( \frac{1}{n} + O\left(\frac{1}{n^2}\right) \right) + \left(\frac{a}{n} + O\left(\frac{1}{n^2}\right)\right)  - \left(\frac{b}{n} + O\left(\frac{1}{n^2}\right)\right)
+= O\left(\frac{1}{n^2}\right) .
+\]
+donc $\sum{w_n}$ est une série convergente et $(W_n)$ converge. Soit $\ell$ sa limite.
+
+Condition sur $a,b$ pour que $\sum u_n$ converge.
+
+On sait que $\lim \ln{u_n n^{b-a}} = \ell$ ; par composée des limites,  $\lim u_n n^{b-a}  = e^\ell$, 
+donc $u_n \sim \frac{e^\ell}{n^{b-a}}$. Or $\sum \frac{1}{n^{b-a}} $ est une série de Riemann, 
+qui converge si et seulement si $b-a  > 1$.
+Ainsi, par équivalence, $\sum^{\infty}u_n $ converge si et seulement si $b-a  > 1$.
+
+Calcul somme partielle de $s_n$.
+
+Par hypothèse $\frac{u_{n+1}}{u_n} = \frac{n+a}{n+b}$, d'où $[u_{n+1}( n+b )] = [u_n( n+a )]$ et
+\[
+\sum_{j=0}^n[u_{j+1}( ( j+1 )+( b-1 ) )] = \sum_{j=0}^n[u_j( j+a ) ] \, .
+\]
+En effectuant un changement d'indice on a :
+\[
+\sum_{j=1}^{n+1}[u_{j}( j+b-1 )] = \sum_{j=0}^n[u_j( j+a ) ]
+\] 
+\[
+\sum_{j=1}^{n}[u_{j}( j+b-1 )] + u_{n+1}( n+b ) = \sum_{j=1}^n[u_j( j+a ) ] + au_0
+\]
+\[
+u_{n+1}(n+b)-au_0=\sum_{j=1}^n[u_j(a-b+1)]
+\]
+Si $b-a \ne 1$, on obtient donc que $s_n = \frac{u_{n+1}(n+b)-a}{a-b+1}$.
+
+
+Valeur de la somme.
+
+ 
+On se place dans le cas où la série converge, i.e. $b-a>1$. Alors $\lim u_{n+1}(n+b) = 0$.
+On sait que $u_n\sim\frac{e^\ell}{n^{b-a}}$, de plus, $n+b\sim n$.
+Donc $u_{n+1}(n+b)\sim e^ln^{1+a-b}$. Or $1 + a - b < 0$, donc $\lim e^\ell n^{1+a-b} = 0$.
+Finalement
+\[
+s_n = \frac{u_{n+1}(n+b)-a}{a-b+1} \xrightarrow[n \to +\infty]{}
+\frac{-a}{a-b+1}
+\]
+et on conclut que $\sum_{k=0}^\infty{u_n} = \frac{a}{b-a-1}$.
+
+\medskip
+
+(\emph{Corrigé de Lévi Operman})
+
+
+\fincorrection
+\finexercice

@@ -1,0 +1,61 @@
+\exercice{5901, rouget, 2010/10/16}
+\enonce[**]
+$E =\Rr^n$ est muni de sa structure euclidienne usuelle.
+Montrer que $\begin{array}[t]{cccc}
+f~:&E&\rightarrow&\Rr\\
+ &x&\mapsto&\|x\|_2
+\end{array}$ est différentiable sur $E\setminus\{0\}$ et préciser $df$. Montrer que $f$ n'est pas différentiable en $0$.
+\finenonce
+
+\noindication
+
+\correction
+\textbf{1ère solution.} Pour $x=(x_1,\ldots,x_n)\in\Rr^n$, $f(x)=\sqrt{\sum_{i=1}^{n}x_i^2}$. $f$ est de classe $C^1$ sur $\Rr^n\setminus\{0\}$ en vertu de théorèmes généraux et pour tout $x=(x_1,\ldots,x_n)\in\Rr^n\setminus\{0\}$ et tout $i\in\llbracket1,n\rrbracket$
+
+\begin{center}
+$ \frac{\partial f}{\partial x_i}(x)= \frac{x_i}{\sqrt{\sum_{i=1}^{n}x_i^2}}= \frac{x_i}{\|x\|_2}$.
+\end{center}
+
+On en déduit que $f$ est différentiable sur $\Rr^n\setminus\{0\}$ et pour $x\in\Rr^n\setminus\{0\}$ et $h\in\Rr^n$
+
+\begin{center}
+$df_x(h)=\sum_{i=1}^{n} \frac{\partial f}{\partial x_i}(x)h_i= \frac{1}{\|x\|_2}\sum_{i=1}^{n}x_ih_i= \frac{x|h}{\|x\|_2}$.
+\end{center}
+
+\begin{center}
+\shadowbox{
+$\forall x\in\Rr^n\setminus\{0\}$, $\forall h\in\Rr^n$, $df_x(h)= \frac{x|h}{\|x\|_2}$.
+}
+\end{center}
+
+\textbf{2 ème solution.} Soit $x\in\Rr^n\setminus\{0\}$. Pour $h\in\Rr^n$,
+
+\begin{center}
+$\|x+h\|_2-\|x\|_2= \frac{\left(\|x+h\|_2-\|x\|_2\right)\left(\|x+h\|_2+\|x\|_2\right)}{\|x+h\|_2+\|x\|_2}= \frac{2(x|h)+\|h\|_2^2}{\|x+h\|_2+\|x\|_2}$,
+\end{center}
+
+puis
+
+\begin{center}
+$\|x+h\|_2-\|x\|_2- \frac{x|h}{\|x\|_2}= \frac{2(x|h)+\|h\|_2^2}{\|x+h\|_2+\|x\|_2}- \frac{x|h}{\|x\|_2}= \frac{-\left(\|x+h\|_2-\|x\|_2\right)(x|h)+\|x\|_2\|h\|_2^2}{\left(\|x+h\|_2+\|x\|_2\right)\|x\|_2}$.
+\end{center}
+
+Maintenant, on sait que l'application $x\mapsto\|x\|_2$ est continue sur $\Rr^n$. On en déduit que $ \frac{1}{\left(\|x+h\|_2+\|x\|_2\right)\|x\|_2}\underset{h\rightarrow0}{\sim} \frac{1}{2\|x\|_2^2}$ et aussi que $\|x+h\|_2-\|x\|_2$ tend vers $0$ quand $h$ tend vers $0$. Ensuite, puisque $\left|(x|h)\right|\leqslant\|x\|_2\|h\|_2$ (inégalité de \textsc{Cauchy}-\textsc{Schwarz}), on a $x|h\underset{h\rightarrow0}{=}O(\|h\|_2)$ puis $\left(\|x+h\|_2-\|x\|_2\right)\left(x|h\right)\underset{h\rightarrow0}{=}o(\|h\|_2)$.
+
+Finalement, $ \frac{-\left(\|x+h\|_2-\|x\|_2\right)(x|h)+\|x\|_2\|h\|_2^2}{\left(\|x+h\|_2+\|x\|_2\right)\|x\|_2}\underset{h\rightarrow0}{=}o(\|h\|_2)$ et donc
+
+\begin{center}
+$\|x+h\|_2\underset{h\rightarrow0}{=}\|x\|_2+ \frac{x|h}{\|x\|_2}+o(\|h\|_2)$.
+\end{center}
+
+Puisque l'application $h\mapsto \frac{x|h}{\|x\|_2}$ est linéaire, on a redémontré que $f$ est différentiable en tout $x$ de $\Rr^n\setminus\{0\}$ et que $\forall x\in\Rr^n\setminus\{0\}$, $\forall h\in\Rr^n$, $df_x(h)= \frac{x|h}{\|x\|_2}$.
+
+Soit $L$ une application linéaire de $\Rr^n$ dans $\Rr$ c'est-à-dire une forme linéaire.
+
+\begin{center}
+$ \frac{1}{\|h\|_2}\left(\|0+h\|_2-\|0\|_2-L(h)\right)=1-L\left( \frac{h}{\|h\|_2}\right)$.
+\end{center}
+
+Supposons que cette expression tende vers $0$ quand $h$ tend vers $0$. Pour $u$ vecteur non nul donné et $t$ réel non nul, l'expression $1-L\left( \frac{tu}{\|tu\|_2}\right)=1- \frac{t}{|t|}L\left( \frac{u}{\|u\|_2}\right)$ tend donc vers $0$ quand $t$ tend vers $0$. Mais si $t$ tend vers $0$ par valeurs supérieures, on obtient $L(u)=\|u\|_2$ et si $t$ tend vers $0$ par valeurs inférieures, on obtient $L(u)=-\|u\|_2$ ce qui est impossible car $u\neq0$. Donc $f$ n'est pas différentiable en $0$.
+\fincorrection
+\finexercice

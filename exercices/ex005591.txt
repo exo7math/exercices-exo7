@@ -1,0 +1,43 @@
+\exercice{5591, rouget, 2010/10/16}
+\enonce[****]
+\label{ex:rou29}
+Soient $p_1$,..., $p_n$ $n$ projecteurs d'un $\Cc$-espace de dimension finie. Montrer que $(p_1+...+p_n\;\text{projecteur})\Leftrightarrow\forall i\neq j,\;p_i\circ p_j=0$.
+\finenonce
+
+\noindication
+
+\correction
+$\Leftarrow$/ Si $\forall i\neq j$, $p_i\circ p_j= 0$ alors 
+
+\begin{center}
+$(p_1+...+p_n)^2=p_1^2+...+p_n^2+\sum_{i\neq j}^{}p_i\circ p_j = p_1+...+p_n$,
+\end{center}
+
+et $p_1+...+p_n$ est un projecteur.
+
+$\Rightarrow$/ Supposons que $p=p_1 + ... + p_n$ soit un projecteur. Posons $F_i=\text{Im}p_i$, $1\leqslant i\leqslant n$, puis $F=F_1 + ... + F_n$ et $G =\text{Im}p$.
+On sait que la trace d'un projecteur est son rang. Par linéarité de la trace, on obtient
+
+\begin{center}
+$\text{rg}p=\text{Tr}p=\text{Tr}(p_1) + ...+\text{Tr}(p_n)=\text{rg}(p_1)+... +\text{rg}(p_n)$,
+\end{center}
+
+et donc $\text{dim}G=\text{dim}F_1+...+\text{dim}F_n\geqslant\text{dim}F$. D'autre part, $G=\text{Im}(p_1 + ... + p_n)\subset\text{Im}p_1 + ... +\text{Im}p_n=F_1 + ... +F_n =F$.
+
+On obtient donc $G = F$ et aussi $\text{dim}(F_1+...+F_n)=\text{dim}F_1+...+\text{dim}F_n$. D'après l'exercice \ref{ex:rou15}, $F=F_1\oplus...\oplus F_n$ c'est-à-dire 
+
+\begin{center}
+$\text{Im}p =\text{Im}(p_1)\oplus ...\oplus\text{Im}(p_n)$.
+\end{center}
+
+Il reste à vérifier que pour $i\neq j$ et $x$ dans $E$, $p_i(p_j(x))=0$ ou ce qui revient au même que pour $i\neq j$ et $y$ dans $\text{Im}(p_j)$, $p_i(y)=0$.
+
+Soit $y$ dans $\text{Im}(p_j)$ (et donc dans $\text{Im}p$). Les égalités $y=p_j(y)=p(y)$ fournissent  $\sum_{i\neq j}^{}p_i(y) = 0$. La somme $\sum_{i}^{}\text{Im}(p_i)$ étant directe, on a donc $p_i(y) = 0$ pour chaque $i\neq j$ ce qu'il fallait démontrer.
+
+\begin{center}
+\shadowbox{
+$p_1+\ldots+p_n$ projecteur$\Leftrightarrow\forall i\neq j,\;p_i\circ p_j=0$.
+}
+\end{center}
+\fincorrection
+\finexercice

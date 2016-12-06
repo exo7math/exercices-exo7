@@ -1,0 +1,205 @@
+\exercice{6886, exo7, 2012/09/05}
+\video{ibKDAQnNURg}
+
+% D'après #1121 ridde, #2756 tumpach, #1130 barraud; #1124 liousse
+\enonce  
+
+Calculer les déterminants des matrices suivantes :
+
+$$
+\begin{pmatrix}
+a&b&c\\c&a&b\\b&c&a
+\end{pmatrix}
+\begin{pmatrix}
+1&0&0&1 \\ 0&1&0&0 \\ 1&0&1&1 \\ 2&3&1&1
+\end{pmatrix}
+\begin{pmatrix}
+-1 & 1 & 1 & 1\\ 1 & -1 & 1 & 1\\ 1 & 1 & -1& 1\\ 1 & 1& 1&-1
+\end{pmatrix}
+\begin{pmatrix}
+10 & 0 & -5 & 15 \\ -2 & 7 & 3 & 0 \\ 8 & 14 & 0 & 2 \\ 0 & -21 & 1 & -1
+\end{pmatrix}
+$$
+ 
+$$
+\begin{pmatrix}
+a&a&b&0 \\  a&a&0&b \\  c&0&a&a \\ 0&c&a&a
+\end{pmatrix}
+\begin{pmatrix}
+1&0&3&0&0 \\ 0&1&0&3&0 \\ a&0&a&0&3 \\ b&a&0&a&0 \\ 0&b&0&0&a  
+\end{pmatrix}
+\begin{pmatrix}
+1&0&0&1&0 \\ 0&-4&3&0&0 \\ -3&0&0&-3&-2 \\ 0&1&7&0&0 \\ 4&0&0&7&1  
+\end{pmatrix}
+$$
+\finenonce
+
+
+\indication
+\begin{enumerate}
+  \item Règle de Sarrus.
+  \item Développer par rapport à la deuxième ligne.
+  \item Faire apparaître des $0$ sur la première colonne.
+  \item Utiliser la linéarité par rapports à chaque ligne et chaque colonne
+pour simplifier les coefficients.
+  \item Faire apparaître des $0$...
+  \item Faire apparaître des $0$...
+  \item Permuter les lignes et les colonnes pour faire apparaître une matrice triangulaire
+par blocs.
+\end{enumerate}
+\finindication
+
+\correction
+\begin{enumerate}
+  \item Par la règle de Sarrus :
+$$\Delta_1 = \begin{vmatrix}
+a&b&c\\c&a&b\\b&c&a
+\end{vmatrix} 
+= a^3+b^3+c^3-3abc.$$
+
+  \item On développe par rapport à la seconde ligne qui ne contient qu'un coefficient non nul et on calcule le déterminant
+$3\times 3$ par la règle de Sarrus :
+$$\Delta_2 = \begin{vmatrix}
+1&0&0&1 \\ 0&1&0&0 \\ 1&0&1&1 \\ 2&3&1&1
+\end{vmatrix}
+= +1 \begin{vmatrix}
+1&0&1 \\ 1&1&1 \\ 2&1&1
+\end{vmatrix}
+= -1.$$
+
+  \item
+$$\Delta_3 = 
+\begin{array}{l|cccc|} 
+_{L_1} & -1 & 1 & 1 & 1 \\ _{L_2} & 1 & -1 & 1 & 1\\ _{L_3} & 1 & 1 & -1& 1\\ _{L_4} & 1 & 1& 1&-1
+\end{array}
+= \begin{array}{l|cccc|} 
+ & -1 & 1 & 1 & 1 \\ _{L_2\leftarrow L_2+L_1} & 0 & 0 & 2 & 2\\
+ _{L_3\leftarrow L_3+L_1} & 0 & 2 & 0 & 2 \\  _{L_4\leftarrow L_4+L_1} &0 & 2 & 2 & 0
+\end{array}
+$$
+On développe par rapport à la première colonne :
+$$\Delta_3 = (-1) \times \begin{array}{|ccc|} 
+  0 & 2 & 2\\  2 & 0 & 2 \\  2 & 2 & 0
+\end{array} = -16$$
+
+  \item Le déterminant est linéaire par rapport à chacune de ses lignes
+et aussi chacune de ses colonnes. 
+Par exemple les coefficients de la première ligne sont tous des multiples
+de $5$ donc 
+$$\Delta_4 = 
+\begin{vmatrix}
+10 & 0 & -5 & 15 \\ -2 & 7 & 3 & 0 \\ 8 & 14 & 0 & 2 \\ 0 & -21 & 1 & -1
+\end{vmatrix}
+= 5 \times \begin{vmatrix}
+2 & 0 & -1 & 3 \\ -2 & 7 & 3 & 0 \\ 8 & 14 & 0 & 2 \\ 0 & -21 & 1 & -1
+\end{vmatrix}
+$$
+On fait la même chose avec la troisième ligne :
+$$\Delta_4 = 5 \times 2 \times \begin{vmatrix}
+2 & 0 & -1 & 3 \\ -2 & 7 & 3 & 0 \\ 4 & 7 & 0 & 1 \\ 0 & -21 & 1 & -1
+\end{vmatrix}
+$$
+Et enfin les coefficients la première colonne sont des multiples de $2$ et 
+ceux de la troisième colonne sont des multiples de $7$ donc :
+$$\Delta_4 = 5 \times 2 \times 2 \times\begin{vmatrix}
+1 & 0 & -1 & 3 \\ -1 & 7 & 3 & 0 \\ 2 & 7 & 0 & 1 \\ 0 & -21 & 1 & -1
+\end{vmatrix}
+= 5 \times 2 \times 2 \times 7  \times
+\begin{vmatrix}
+1 & 0 & -1 & 3 \\ -1 & 1 & 3 & 0 \\ 2 & 1 & 0 & 1 \\ 0 & -3 & 1 & -1
+\end{vmatrix}
+$$
+
+Les coefficients sont plus raisonnables !
+On fait $L_2\leftarrow L_2+L_1$ et $L_3\leftarrow L_3-2L_1$
+pour obtenir :
+$$\Delta_4 = 140 \times 
+\begin{vmatrix}
+1 & 0 & -1 & 3 \\ 0 & 1 & 2 & 3 \\ 0 & 1 & 2 & -5 \\ 0 & -3 & 1 & -1
+\end{vmatrix}
+=140 \times \begin{vmatrix}
+ 1 & 2 & 3 \\  1 & 2 & -5 \\ -3 & 1 & -1
+\end{vmatrix}
+= 140 \times 56 = 7840$$
+
+
+  \item 
+$$\Delta_5 =\begin{array}{l|cccc|} 
+_{L_1} &a&a&b&0 \\ _{L_2} & a&a&0&b \\ _{L_3} & c&0&a&a \\ _{L_4} &0&c&a&a
+\end{array}
+= \begin{array}{l|cccc|} 
+ &a&a&b&0 \\ _{L_2\leftarrow L_2-L_1} & 0&0&-b&b \\  & c&0&a&a \\ _{L_4\leftarrow L_4-L_3} & -c&c&0&0
+\end{array}
+$$
+On fait ensuite les opérations suivantes sur les colonnes :
+$C_2 \leftarrow C_2+C_1$ et $C_3 \leftarrow C_3-C_4$ pour obtenir 
+une dernière ligne facile à développer :
+$$\Delta_5 
+= \begin{array}{|cccc|} 
+ a&2a&b&0 \\ 0&0&-2b&b \\  c&c&0&a \\ -c&0&0&0
+\end{array}
+= +c \times \begin{array}{|ccc|} 
+ 2a&b&0 \\ 0&-2b&b \\  c&0&a \\
+ \end{array} = bc(bc-4a^2)
+$$
+  \item
+On fait d'abord les opérations $C_1 \leftarrow C_1-C_3$ et $C_2 \leftarrow C_2-C_4$
+et on développe par rapport à la première ligne :
+$$\Delta_6 = \begin{vmatrix}
+1&0&3&0&0 \\ 0&1&0&3&0 \\ a&0&a&0&3 \\ b&a&0&a&0 \\ 0&b&0&0&a  
+\end{vmatrix}
+=
+\begin{vmatrix}
+-2&0&3&0&0 \\ 0&-2&0&3&0 \\ 0&0&a&0&3 \\ b&0&0&a&0 \\ 0&b&0&0&a  
+\end{vmatrix}
+= (-2) \times \begin{vmatrix}
+-2&0&3&0 \\ 0&a&0&3 \\ 0&0&a&0 \\ b&0&0&a  
+\end{vmatrix}
++ 3  \times \begin{vmatrix}
+0&-2&3&0 \\ 0&0&0&3 \\ b&0&a&0 \\ 0&b&0&a  
+\end{vmatrix}
+$$
+Le premier déterminant à calculer se développe par rapport à la deuxième colonne et le second déterminant
+par rapport à la première colonne :
+$$\Delta_6 = (-2)\times a \times 
+\begin{vmatrix}
+-2&3&0 \\  0&a&0 \\ b&0&a  
+\end{vmatrix}
++ 3  \times b \times 
+\begin{vmatrix}
+-2&3&0 \\ 0&0&3 \\ b&0&a  
+\end{vmatrix}=4a^3+27b^2$$
+
+  \item Nous allons permuter des lignes et des colonnes pour se ramener à une matrice diagonale par blocs.
+Souvenons-nous que lorsque l'on échange deux lignes (ou deux colonnes) alors le déterminant change de signe.
+Nous allons rassembler les zéros.
+On commence par échanger les colonnes $C_1$ et $C_3$ : $C_1\leftrightarrow C_3$ :
+$$\Delta_7=
+\begin{vmatrix}
+1&0&0&1&0 \\ 0&-4&3&0&0 \\ -3&0&0&-3&-2 \\ 0&1&7&0&0 \\ 4&0&0&7&1  
+\end{vmatrix}=
+- \begin{vmatrix}
+0&0&1&1&0 \\ 3&-4&0&0&0 \\ 0&0&-3&-3&-2 \\ 7&1&0&0&0 \\ 0&0&4&7&1  
+\end{vmatrix}$$
+Puis on échange les lignes $L_1$ et $L_4$ : $L_1\leftrightarrow L_4$ :
+$$\Delta_7=+\begin{array}{|ccccc|} 
+7&1&0&0&0 \\ 3&-4&0&0&0 \\  0&0&-3&-3&-2 \\ 0&0&1&1&0 \\ 0&0&4&7&1  
+\end{array}$$
+Notre matrice est sous la forme d'une matrice diagonale par blocs
+ et son déterminant est le produit des déterminants.
+$$\Delta_7=\begin{array}{|cc|ccc|} 
+7&1&0&0&0 \\ 3&-4&0&0&0 \\ \hline 0&0&-3&-3&-2 \\ 0&0&1&1&0 \\ 0&0&4&7&1  
+\end{array}
+= \begin{vmatrix}
+ 7&1 \\  3&-4 \\  
+  \end{vmatrix} \times
+\begin{vmatrix}
+ -3&-3&-2 \\  1&1&0 \\  4&7&1  
+  \end{vmatrix}
+= (-31)\times (-6) = 186
+$$
+
+\end{enumerate}
+\fincorrection
+
+\finexercice

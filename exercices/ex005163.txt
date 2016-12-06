@@ -1,0 +1,27 @@
+\exercice{5163, rouget, 2010/06/30}
+\enonce[**I]
+Montrer que $\forall n\in\Nn,\;\forall x\in\Rr,\;|\sin(nx)|\leq n|\sin x|$.
+\finenonce
+
+\noindication
+
+\correction
+Soit $x\in\Rr$. Montrons par récurrence que~:~$\forall n\in\Nn,\;|\sin(nx)|\leq
+n|\sin x|$.
+\begin{itemize}
+\item[-] C'est clair pour $n=0$.
+\item[-] Soit $n\geq0$. Supposons que $|\sin(nx)|\leq n|\sin x|$. Alors,
+
+\begin{align*}
+|\sin(n+1)x|&=|\sin nx\cos x+\cos nx\sin x|\leq|\sin nx|.|\cos x|+|\cos nx|.|\sin x|\\
+ &\leq|\sin nx|+|\sin x|\\
+ &\leq n|\sin x|+|\sin x|\quad(\mbox{par hypothèse de récurrence})\\
+ &=(n+1)|\sin x|
+\end{align*}
+
+\end{itemize}
+
+On a montré par récurrence que \shadowbox{$\forall n\in\Nn,\forall x\in\Rr,\;|\sin(nx)|\leq n|\sin x|$}.
+
+\fincorrection
+\finexercice

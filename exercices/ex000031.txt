@@ -1,0 +1,45 @@
+\exercice{31, bodin, 1998/09/01}
+\video{TC-3du7GQAQ}
+\enonce
+ R\'esoudre dans $\Cc$ les \'equations suivantes :
+$$ z^2+z+1 = 0 \quad ; \quad z^2-(1+2i)z+i-1 = 0 \quad ; \quad z^2-\sqrt{3}z-i = 0 \quad ;$$
+$$z^2-(5-14i)z-2(5i+12)=0 \  ; \  z^2-(3+4i)z-1+5i =0 \  ; \  4z^2-2z+1=0 \  ;$$
+$$z^4+10z^2 +169=0 \quad ; \quad z^4+2z^2 +4=0.$$
+
+\finenonce
+
+\indication
+Pour les équation du type $az^4+bz^2+c=0$, poser $Z=z^2$.
+\finindication
+
+\correction
+\textbf{\'Equations du second degr\'e.} La m\'ethode g\'enerale
+pour r\'esoudre les \'equations du second degr\'e $az^2+bz+c= 0$
+(avec $a,b,c \in \Cc$ et $a\not=0$) est la suivante : soit $\Delta
+= b^2-4ac$ le discriminant complexe et $\delta$ une racine
+carr\'ee de $\Delta$ ($\delta^2 = \Delta$) alors les solutions
+sont :
+$$z_1 = \frac{-b+\delta}{2a} \quad \text{ et } \quad z_2 = \frac{-b-\delta}{2a}.$$
+Dans le cas o\`u les coefficients sont r\'eels, on retrouve la
+m\'ethode bien connue. Le seul travail dans le cas complexe est de
+calculer une racine $\delta$ de $\Delta$.
+
+Exemple : pour $z^2-\sqrt{3}z-i =0$, $\Delta = 3+4i$, dont une
+racine carr\'ee est $\delta = 2+i$,  les solutions sont donc :
+$$z_1 = \frac{\sqrt{3}+2+i}{2}\quad  \text{ et }\quad  z_2 = \frac{\sqrt{3}-2-i}{2}.$$
+
+Les solutions des autres équations sont :
+\begin{itemize}
+ \item L'équation $z^2+z+1=0$ a pour solutions : $\frac12 (-1+i\sqrt{3})$, $\frac12 (-1-i\sqrt{3})$.
+ \item L'équation $z^2-(1+2i)z+i-1=0$ a pour solutions : $1+i$, $i$.
+ \item L'équation $z^2-\sqrt{3}z-i=0$ a pour solutions : $\frac12(2-\sqrt{3}+i)$,  $\frac12(-2-\sqrt{3}-i)$
+ \item L'équation $z^2-(5-14i)z-2(5i+12)=0$ a pour solutions : $5-12i$, $-2i$.
+ \item L'équation $z^2-(3+4i)z-1+5i =0$ a pour solutions : $2+3i$, $1+i$.
+ \item L'équation $4z^2-2z+1=0$ a pour solutions : $\frac 14(1+i\sqrt{3})$, $\frac 14(1-i\sqrt{3})$.
+ \item L'équation $z^4+10z^2 +169=0$ a pour solutions : $2+3i$, $-2-3i$, $2-3i$, $-2+3i$.
+ \item L'équation $z^4+2z^2 +4=0$ a pour solutions : $\frac{\sqrt{2}}{2}(1+i\sqrt{3})$, $\frac{\sqrt{2}}{2}(1-i\sqrt{3})$,  $\frac{\sqrt{2}}{2}(-1+i\sqrt{3})$, $\frac{\sqrt{2}}{2}(-1-i\sqrt{3})$.
+\end{itemize}
+
+\fincorrection
+
+\finexercice

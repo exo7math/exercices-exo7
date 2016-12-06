@@ -1,0 +1,157 @@
+\exercice{6866, bodin, 2012/04/13}
+\video{0bvIaJVZNwY}
+\enonce
+Calculer les primitives suivantes, en précisant si nécessaire les
+intervalles de validité des calculs :
+\begin{enumerate}
+  \item $\int \frac{x+2}{x^2-3x-4}\,dx$
+
+  \item $\int \frac{x-1}{x^2+x+1}\,dx$
+
+  \item $\int \sin ^8x\cos ^3x \, dx$
+
+  \item $\int \frac 1{\sin x} \, dx$
+
+  \item $\int \frac{3-\sin x}{2\cos x+3\tan x}\,dx$ 
+\end{enumerate}
+\finenonce 
+
+\indication
+\begin{enumerate}
+  \item $\int \frac{x+2}{x^2-3x-4}\,dx=-\frac 15\ln \left| x+1\right| +\frac 65\ln
+\left| x-4\right| +c$ (décomposition en éléments simples)
+
+  \item $\int \frac{x-1}{x^2+x+1}\,dx= \frac 12 \ln|x^2+x+1| - 
+\sqrt3 \arctan \left( \frac{2}{\sqrt3}\left(x+\frac 12\right) \right) + c$
+
+  \item $\int \sin ^8x\cos ^3x \, dx=\frac 19\sin ^9x-\frac 1{11}\sin ^{11}x+c$
+
+  \item $\int \frac 1{\sin x} \, dx=\frac 12\ln \left| \frac{1-\cos x}{1+\cos x}%
+\right| +c=\ln \left| \tan \frac x2\right| +c$ (changement de variable $u=\cos x$ ou $u=\tan \frac
+x2$)
+
+  \item $\int \frac{3-\sin x}{2\cos x+3\tan x}\,dx=-\frac 15\ln |2-\sin x| + \frac 75 \ln |1+2\sin x| + c$  
+(changement de variable $u=\sin x$)
+\end{enumerate}
+\finindication
+
+\correction
+\begin{enumerate}
+  \item $\int \frac{x+2}{x^2-3x-4}\,dx$
+
+Pour calculer cette intégrale on décompose la fraction $\frac{x+2}{x^2-3x-4}$ en éléments simples, 
+le dénominateur n'étant pas irréductible.
+On sait que cette fraction rationnelle se décompose avec des dénominateurs de degré $1$ et des constantes aux numérateurs :
+$$\frac{x+2}{x^2-3x-4} = \frac{x+2}{(x+1)(x-4)} = \frac{\alpha}{x+1} + \frac{\beta}{x-4}$$
+Il ne reste plus qu'à calculer $\alpha$ et $\beta$ à l'aide de votre méthode favorite :
+$$\frac{x+2}{x^2-3x-4}  = \frac{-\frac15}{x+1} + \frac{\frac65}{x-4}$$
+
+Chacune de ces fractions est du type $\frac 1u$ qui s'intègre en $\ln |u|$, d'où :
+$$\int \frac{x+2}{x^2-3x-4}\,dx = -\frac15\int \frac{1}{x+1}\,dx + \frac65\int \frac{1}{x-4}\,dx
+= -\frac15 \ln |x+1| + \frac65 \ln |x-4| + c$$
+
+Cette primitive est définie sur $\Rr\setminus\left\{-1,4\right\} $
+
+
+  \item $\int \frac{x-1}{x^2+x+1}\,dx$
+
+Le dénominateur $u=x^2+x+1$ est irréductible, la fraction est donc déjà décomposée en éléments simples.
+On fait apparaître artificiellement une fraction du type $\frac {u'}{u}$
+qui s'intégrera à l'aide du logarithme :
+
+$$\frac{x-1}{x^2+x+1} =  \frac 12 \frac{2x+1}{x^2+x+1} - \frac 32 \frac{1}{x^2+x+1}$$
+Chacune de ces fractions s’intègre, la première est du type $\frac {u'}{u}$ dont une primitive sera $\ln |u|$, la deuxième sera 
+du type $\frac{1}{1+v^2}$ dont une primitive est $\arctan v$.
+
+En détails cela donne :
+\begin{align*}
+\int \frac{x-1}{x^2+x+1}\,dx 
+  &= \int  \frac 12 \frac{2x+1}{x^2+x+1} \, dx  - \frac 32\int \frac{1}{x^2+x+1} \, dx \\
+  &= \frac 12 \big[ \ln |x^2+x+1| \big] -  \frac 32\int \frac{1}{\frac 34} \frac{1}{1+ \left( \frac{2}{\sqrt3}\left(x+\frac 12\right) \right)^2} \, dx \\
+  &= \frac 12 \big[ \ln|x^2+x+1| \big] - 2 \int \frac{1}{1+v^2} \, \frac{\sqrt3}{2} dv \quad \text{en posant } v=\frac{2}{\sqrt3}\left(x+\frac 12\right) \\
+  &= \frac 12 \big[ \ln|x^2+x+1| \big] - \sqrt3 \big[\arctan v\big] \\
+  &= \frac 12 \ln|x^2+x+1| - \sqrt3 \arctan \left( \frac{2}{\sqrt3}\left(x+\frac 12\right) \right) + c \\
+\end{align*}
+
+Cette primitive est définie sur $\Rr$.
+
+
+  \item $\int \sin ^8x\cos ^3x \, dx$
+
+Lorsque l'on a une fonction qui s'exprime comme un polynôme (ou une fraction rationnelle),
+on peut tester un des changements de variable $u=\cos x$, $u= \sin x$ ou $u= \tan x$.
+Soit vous essayez les trois, soit vous appliquez les règles de Bioche. Ici,
+si l'on change $x$ en $\pi-x$ alors $\sin ^8x\cos ^3x \, dx$
+devient $\sin ^8(\pi-x)\cos ^3 (\pi-x) \, d(\pi -x)= \sin^8 x (-\cos^3 x) (-dx) = \sin ^8x\cos ^3x \, dx$.
+Donc le changement de variable adéquat est $u=\sin x$.
+
+
+Posons $u=\sin x$, $du = \cos x \, dx$.
+\begin{align*}
+\int \sin ^8x\cos ^3 x \, dx  
+  &= \int \sin^8 x \cos^2 x (\cos x \, dx) = \int \sin^8 x (1-\sin^2 x) (\cos x \, dx) \\ 
+  &= \int u^8 (1-u^2) du  = \int u^8 \, du - \int u^{10} \, du \\
+  &= \big[\frac19 u^9 \big] - \big[ \frac1{11} u^{11}\big] = \frac19\sin^9 x-\frac1{11}\sin^{11} x + c \\
+\end{align*}
+
+
+Cette primitive est définie sur $\Rr$.
+
+
+  \item $\int \frac 1{\sin x} \, dx$
+
+Comme $\frac 1{\sin (-x)} \, (-dx) = \frac 1{\sin x} \, dx$ la règle de Bioche nous indique le changement de variable 
+$u=\cos x$. Donc $du = -\sin x \, dx$.
+
+Donc
+\begin{align*}
+\int \frac 1{\sin x} \, dx 
+  &= \int \frac{-1}{\sin^2 x} (  -\sin x \, dx) \\
+  &= \int \frac{-1}{1-\cos^2 x} (  -\sin x \, dx) \\
+  &= -\int \frac{1}{1-u^2} \, du \\
+\end{align*}
+
+On décompose cette fraction en éléments simples : $\frac{1}{1-u^2}= \frac 12 \frac{1}{1+u} + \frac 12 \frac{1}{1-u}$.
+Donc
+\begin{align*}
+\int \frac 1{\sin x} \, dx 
+  &= - \frac 12 \int \frac{1}{1+u}\, du - \frac 12 \int \frac{1}{1-u}\, du \\
+  &= - \frac 12 \big[ \ln |1+u| \big]- \frac 12 \big[ \ln |1-u| \big] \\
+  &= - \frac 12 \ln |1+\cos x| - \frac 12 \ln |1-\cos x| + c  \\
+\end{align*}
+
+Cette primitive est définie sur tout intervalle du type $\left] k\pi ,\left(
+k+1\right) \pi \right[ $, $k \in \Zz$.
+Elle peut se réécrire sous différentes formes :
+$$\int \frac 1{\sin x} \, dx = \frac 12 \ln \frac{1-\cos x}{1+\cos x} +c= \ln \left| \tan \frac x2\right| +c$$
+
+Un autre changement de variable possible aurait été $t=\tan \frac x2$.
+
+  \item $\int \frac{3-\sin x}{2\cos x+3\tan x}\,dx$
+
+La règle de Bioche nous indique le changement de variable $u =\sin x$, $du = \cos x \, dx$.
+
+\begin{align*}
+\int \frac{3-\sin x}{2\cos x+3\tan x}\,dx  
+  &= \int \frac{3-\sin x}{2\cos x+3\tan x}\frac{1}{\cos x}(\cos x \,dx) \\
+  &= \int \frac{3-\sin x}{2\cos^2 x+3\sin x}(\cos x \,dx) \\
+  &= \int \frac{3-\sin x}{2-2\sin^2 x+3\sin x}(\cos x \,dx) \\
+  &= \int \frac{3-u}{2-2u^2 +3u} du \\ 
+\end{align*}
+
+Occupons nous de la fraction que l'on réduit en éléments simples :
+$$\frac{3-u}{2-2u^2 +3u} = \frac{u-3}{(u-2)(2u+1)} = \frac{\alpha}{u-2}+\frac{\beta}{2u+1}$$
+On trouve $\alpha = -\frac 15$ et $\beta = \frac 75$.
+
+Ainsi 
+\begin{align*}
+\int \frac{3-\sin x}{2\cos x+3\tan x}\,dx  
+  &=  \int \frac{\alpha \, du}{u-2}+\int\frac{\beta\, du}{2u+1}  \\ 
+  &= \alpha \ln |u-2| + \beta \ln |2u+1| + c \\
+  &= -\frac 15\ln |2-\sin x| + \frac 75 \ln |1+2\sin x| + c \\
+\end{align*}
+
+Cette primitive est définie pour les $x$ vérifiant $1+2\sin x >0$ donc sur tout intervalle du type $\left] -\frac\pi6 + 2k\pi , \frac{7\pi}{6} + 2k\pi\right[ $, $k \in \Zz$.
+\end{enumerate}
+\fincorrection
+\finexercice

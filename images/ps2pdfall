@@ -1,0 +1,5 @@
+#!/bin/sh
+for psfile in `ls -1 *.eps`
+do
+  ps2pdf -dEPSCrop $psfile
+done

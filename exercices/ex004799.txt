@@ -1,0 +1,60 @@
+\exercice{4799, quercia, 2010/03/16}
+\enonce[Racines de polyn{\^o}mes X MP$^*$ 2004]
+Soit~$E=\C_d[X]$ norm{\'e} par $\|P\| = \sum|a_i|$,
+$P\in E$ de degr{\'e}~$d$ {\`a} racines simples et $P_n$ une suite de polyn{\^o}mes de~$E$ convergeant vers~$P$.
+
+Soit~$z\in\C$ tel que $P(z) = 0$ et $\delta>0$.
+
+\begin{enumerate}
+  \item Montrer que pour~$n$ assez grand, $P_n$ a au moins un z{\'e}ro dans $\overline{B(z,\delta)}$.
+  \item Montrer qu'il existe $\delta_0>0$ tel que pour tout $\delta\in{]0,\delta_0]}$
+    $P_n$ a exactement une racine dans $\overline{B(z,\delta)}$ si $n$ est assez grand.
+    
+  \item Que peut-on dire si les z{\'e}ros de~$P$ ne sont plus suppos{\'e}s simples~?
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Pour simplifier, on suppose $z=0$ (sinon, se placer dans la base $(1,X-z,\dots,(X-z)^d)$
+    et invoquer l'{\'e}quivalence des normes en dimension finie).
+
+    Soit $P_n(x) = a_{n,0} + a_{n,1}x + \dots + a_{n,d}x^d$. La suite $(P_n)$ {\'e}tant convergente
+    est born{\'e}e donc il existe $M\in\R$ tel que $|a_{n,k}|\le M$ pour
+    tous $n,k$. De plus, $a_{n,0}\xrightarrow[n\to\infty]{} a_0=0$ et
+    $a_{n,1}\xrightarrow[n\to\infty]{}a_1\ne 0$.
+
+    Posons alors $Q_n(x) = -\frac{\strut a_{n,0} + a_{n,2}x^2 + \dots + a_{n,d}x^d}{a_{n,1}}$
+    (bien d{\'e}fini si $n$ est assez grand).
+    On va montrer que $Q_n$ v{\'e}rifie les hypoth{\`e}ses du th{\'e}or{\`e}me du point fixe sur
+    $\overline{B(0,\delta)}$ pour tout~$n$ assez grand si $\delta$ est choisi assez petit,
+    ce qui implique l'existence et l'unicit{\'e} d'une racine pour $P_n$ dans $\overline{B(0,\delta)}$.
+    
+    $Q_n(\overline{B(0,\delta)})\subset\overline{B(0,\delta)}$~?
+    Soit $x\in\overline{B(0,\delta)}$~: on a $$|Q_n(x)| \le \frac{|a_{n,0}| + M(\delta^2+\dots+\delta^d)}{|a_{n,1}|}
+    \xrightarrow[n\to\infty]{}\frac{M(\delta^2+\dots+\delta^d)}{|a_1|}.$$
+    On choisit $\delta>0$ tel que $\frac{M(\delta+\dots+\delta^{d-1})}{|a_1}\le\frac12$.
+    Il existe alors $N_1\in\N$ tel que $\frac{|a_{n,0}| + M(\delta^2+\dots+\delta^d)}{|a_{n,1}|}\le\delta$
+    pour tout~$n\ge N_1$.
+    
+    $Q_n$ est contractante sur $\overline{B(0,\delta)}$~?
+    Soient $x,y\in\overline{B(0,\delta)}$. On a~:
+    $$\begin{aligned}|Q_n(x)-Q_n(y)|
+    &\le\frac{|a_{n,2}||x^2-y^2|+\dots+|a_{n,d}||x^d-y^d|}{|a_n,1|}\cr
+    &\le|x-y|\frac{|a_{n,2}||x+y|+\dots+|a_{n,d}||x^{d-1}+\dots+y^{d-1}|}{|a_{n,1}|}\cr
+    &\le|x-y|\frac{M(2\delta+\dots+d\delta^{d-1})}{|a_{n,1}|}.\cr\end{aligned}$$
+    Quitte {\`a} diminuer $\delta$ on peut imposer $\frac{M(2\delta+\dots+d\delta^{d-1})}{|a_1|}\le\frac12$
+    et donc $\frac{M(2\delta+\dots+d\delta^{d-1})}{|a_{n,1}|}\le \frac23$ pour tout~$n\ge N_2$
+    et $Q_n$ est $\frac23$-lipschitzienne.
+  \item Voir r{\'e}ponse pr{\'e}c{\'e}dente. Y a-t-il une r{\'e}ponse plus simple pour~{1)}~?
+  \item Si $z$ est z{\'e}ro d'ordre~$k$ de~$P$ alors il existe $\delta>0$ tel
+    que pour tout~$n$ assez grand, $P_n$ a exactement $k$ racines compt{\'e}es avec leur ordre de
+    multiplicit{\'e} dans~$\overline{B(0,\delta)}$. Ceci est une cons{\'e}quence du {\it th{\'e}or{\`e}me des
+    r{\'e}sidus\/} largement hors programme\dots
+\end{enumerate}
+ \fincorrection
+
+\finexercice

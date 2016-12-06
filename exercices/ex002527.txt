@@ -1,0 +1,57 @@
+\exercice{2527, queffelec, 2009/04/01}
+\enonce
+\begin{enumerate}
+\item Soit $f$ une application de ${\Rr}$ dans ${\Rr}$,
+d\'erivable en tout point de ${\Rr}$ et telle que, pour tout $x$
+de ${\Rr}$, $f'(x)\neq 0$. Montrer que $f$ est un hom\'eomorphisme
+de ${\Rr}$ sur $f({\Rr})$ et que $f^{-1}$ est diff\'erentiable en
+tout point de $f({\Rr})$.
+
+\item Soit $f$ d\'efinie par $f(x)=x+x^2\sin{\frac \pi x}$ si
+$x\not=0$ et $f(0)=0$.
+
+Montrer que $f'(0)$ existe et est $\not=0$, mais que $f$ n'est
+inversible sur aucun voisinage de $0$. Expliquer.
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item La fonction $f$ \'etant d\'erivable, elle est continue.
+Montrons qu'elle est injective. Soient $x,y \in \mathbb{R}$ tels
+que $f(x)=f(y)$. Si $x \neq y$, d'apr\`es le th\'eor\`eme de
+Rolle, il existe $c \in ]x,y[$ tel que $f'(c)=0$ ce qui contredit
+le fait que $f'$ ne s'annule jamais. Par cons\'equent $x=y$ et $f$
+est injective. Pour montrer que $f^{-1}$ est continue, il faut
+montrer que l'image r\'eciproque par $f^{-1}$ d'un voisinage d'un
+point est un voisinage de la r\'eciproque du point. Ou encore, que
+l'image directe par $f$ d'un voisinage d'un point $a$ est un
+voisinage de $f(a)$. Soit $V$ un voisinage de $a$, il contient un
+intervalle du type $[a-\epsilon, a+\epsilon]$, l'image de ce
+connexe par une fonction continue est encore connexe et est donc
+un intervalle $[c,d]$ (ferm\'e car $f$ est continue et
+l'intervalle de d\'epart est compact). Si $f(a) \in ]c,d[$, on la
+d\'emonstration est finie. Si $f(a)=c$ ou $f(a)=d$ alors $a$ est
+un extr\'emum local de $f$ et donc $f'(a)=0$ ce qui contredit
+l'\'enonc\'e. Ainsi $f$ est un hom\'eormorphisme. $f^{-1}$ est
+diff\'erentiable car la diff\'erentielle de $f$ ne s'annule pas
+(th\'eor\`eme de deug...). \item Le taux d'accroissement
+$$T_x(f)=\frac{f(x)-f(0)}{x-0}=1+x\sin{{\frac \pi x}}$$ tend vers $1$
+quand $x$ tend vers zero ($\sin{\frac\pi  x}$ est born\'ee) et
+donc $f$ est d\'erivable au point $0$ et $f'(0)=1 \neq0$. \item
+Par l'absurde, supposons que $f$ soit inversible au voisinage de
+$0$.Soit $\epsilon > 0$ tel que $]-\epsilon,\epsilon[$ soit inclus
+dans ce voisinage. $f$ \'etant continue (car d\'erivable), elle
+est strictement monotone. Or $f'(x)=1-\pi\cos{\frac\pi
+x}+2x\sin{\frac\pi x}$. Prenons $k \in \mathbb{N}$ tel que
+${\frac1{2k}} < \epsilon$ et ${\frac1{1+2k}} < \epsilon$ alors
+$f'({\frac1{2k}})=1-\pi <0$ et $f({\frac1{2k+1}})=1+\pi >0$ et
+donc $f$ n'est pas monotone sur $]-\epsilon,\epsilon[$ ce qui
+donne la contradiction recherch\'ee. Le th\'eor\`eme de l'inverse
+local nous montre de plus que $f$ n'est pas de classe $C^1$ dans
+aucun voisinage de $0$.
+\end{enumerate}
+\fincorrection
+\finexercice

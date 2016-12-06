@@ -1,0 +1,35 @@
+\exercice{3434, quercia, 2010/03/10}
+\enonce[Système linéaire homogène]
+
+On considère un système linéaire homogène : $(S) \iff AX = 0$, avec
+$A \in \mathcal{M}_{n,p}(K)$, $n < p$ et $\mathrm{rg} A = n$.
+
+\begin{enumerate}
+  \item  Montrer qu'on peut compléter $A$ en une matrice
+     $B = \begin{pmatrix} A \cr A' \cr \end{pmatrix}$ inversible.
+  \item  Montrer que les colonnes $n+1$ à $p$ de ${}^{t\!}\text{com}\, B$ constituent
+     une base des solutions de $(S)$.
+  \item  Consid\'erer l'exemple suivant : 
+  $$(S) \iff \left\{
+  \begin{array} {lllllllll}
+  x &+& 2y &+& 3z &+& 4t &=& 0  \cr
+ 2x &+& 3y &+& 4z &+& 5t &=& 0. \cr
+ \end{array}
+ \right.$$
+     
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+3. On complète par $\begin{pmatrix} 0 & 0 & 1 & 0 \cr 0 & 0 & 0 & 1 \cr \end{pmatrix}
+               \Rightarrow \text{base} =
+               \left\{\,
+               \left(\begin{smallmatrix} -1 \cr 2 \cr -1 \cr 0 \cr \end{smallmatrix}\right),
+               \left(\begin{smallmatrix} -2 \cr 3 \cr 0 \cr -1 \cr \end{smallmatrix}\right)
+               \,\right\}$.
+ \fincorrection
+
+\finexercice

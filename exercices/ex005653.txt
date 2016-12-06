@@ -1,0 +1,238 @@
+\exercice{5653, rouget, 2010/10/16}
+\enonce[**]
+Soit $A = \left(
+\begin{array}{ccc}
+3&1&0\\
+-4&-1&0\\
+4&8&-2
+\end{array}
+\right)$.
+
+\begin{enumerate}
+ \item  Vérifier que $A$ n'est pas diagonalisable.
+
+\item  Déterminer $\text{Ker}(A-I)^2$.
+
+\item  Montrer que $A$ est semblable à une matrice de la forme $\left(
+\begin{array}{ccc}
+a&0&0\\
+0&b&c\\
+0&0&b
+\end{array}
+\right)$
+
+\item  Calculer $A^n$ pour $n$ entier naturel donné.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  $\chi_A=-(2+X)((3-X)(-1-X)+4)=-(X+2)(X^2-2X+1)=-(X+2)(X-1)^2$. 
+
+$A$ diagonalisable $\Rightarrow\text{dim}(\text{Ker}(A-I))=2\Rightarrow\text{rg}(A-I) = 1$ ce qui n'est pas . Donc $A$ n'est pas diagonalisable. De plus, $E_{-2}=\text{Vect}(e_1)$ où $e_1=\left(
+\begin{array}{c}
+0\\
+0\\
+1
+\end{array}
+\right)$ et $E_1=\text{Vect}(e_2)$ où $e_2=\left(
+\begin{array}{c}
+1\\
+-2\\
+-4
+\end{array}
+\right)$.
+
+\item  $(A-I)^2=\left(
+\begin{array}{ccc}
+2&1&0\\
+-4&-2&0\\
+4&8&-3
+\end{array}
+\right)\left(
+\begin{array}{ccc}
+2&1&0\\
+-4&-2&0\\
+4&8&-3
+\end{array}
+\right)=\left(
+\begin{array}{ccc}
+0&0&0\\
+0&0&0\\
+-36&-36&9
+\end{array}
+\right)$ et donc $\text{Ker}(A-I)^2$ est le plan d'équation $4x+4y-z=0$.
+
+\item  On note $f$ l'endomorphisme de $\Rr^3$ dont la matrice dans la base canonique de $\Rr^3$ est $A$. Le théorème de \textsc{Cayley}-\textsc{Hamilton} et le théorème de décomposition des noyaux permettent d'affirmer
+
+\begin{center}
+$\mathcal{M}_3(\Rr)=\text{Ker}(A+2I)\oplus\text{Ker}(A-I)^2$.
+\end{center}
+
+De plus,  chacun des sous-espaces $\text{Ker}(A+2I)$ et $\text{Ker}(A-I)^2$ étant stables par $f$, la matrice de $f$ dans toute base adaptée à cette décomposition est diagonale par blocs. Enfin, $\text{Ker}(A-I)$ est une droite vectorielle contenue dans le plan $\text{Ker}(A-I)^2$ et en choisissant une base de $\text{Ker}(A-I)^2$ dont l'un des deux vecteurs est dans $\text{Ker}(A-I)$, la matrice de $f$ aura la forme voulue.
+
+On a déjà choisi $e_1=\left(
+\begin{array}{c}
+0\\
+0\\
+1
+\end{array}
+\right)$ et $e_2=\left(
+\begin{array}{c}
+1\\
+-2\\
+-4
+\end{array}
+\right)$ puis on prend $e_3=\left(
+\begin{array}{c}
+1\\
+-1\\
+0
+\end{array}
+\right)$. On note $P=\left(
+\begin{array}{ccc}
+0&1&1\\
+0&-2&-1\\
+1&-4&0
+\end{array}
+\right)$. $P$ est inversible d'inverse $P^{-1}=\left(
+\begin{array}{ccc}
+-4&-4&1\\
+-1&-1&0\\
+2&1&0
+\end{array}
+\right)$. On peut déjà affirmer que $P^{-1}AP$ est de la forme $\left(
+\begin{array}{ccc}
+-2&0&0\\
+0&1&\times\\
+0&0&1
+\end{array}
+\right)$.
+Plus précisément 
+
+\begin{center}
+$Ae_3-e_3=\left(
+\begin{array}{ccc}
+3&1&0\\
+-4&-1&0\\
+4&8&-2
+\end{array}
+\right)\left(
+\begin{array}{c}
+1\\
+-1\\
+0
+\end{array}
+\right)-\left(
+\begin{array}{c}
+1\\
+-1\\
+0
+\end{array}
+\right)=\left(
+\begin{array}{c}
+1\\
+-2\\
+-4
+\end{array}
+\right)=e_2$
+\end{center}
+
+ et donc $Ae_3=e_2+e_3$ puis
+ 
+ \begin{center}
+ \shadowbox{
+ $A=PTP^{-1}$ où $P=\left(
+\begin{array}{ccc}
+0&1&1\\
+0&-2&-1\\
+1&-4&0
+\end{array}
+\right)$, $P^{-1}=\left(
+\begin{array}{ccc}
+-4&-4&1\\
+-1&-1&0\\
+2&1&0
+\end{array}
+\right)$ et $T=\left(
+\begin{array}{ccc}
+-2&0&0\\
+0&1&1\\
+0&0&1
+\end{array}
+\right)$.
+}
+\end{center}
+
+\item  Soit $n\in\Nn$. Posons $T = D+N$ où $D=\text{diag}(-2,1,1)$ et $N =E_{2,3}$. On a $ND = DN$ et $N^2 = 0$. Puisque les matrices $D$ et $N$ commutent, la formule du binôme de \textsc{Newton} permet d'écrire
+
+\begin{align*}\ensuremath 
+T^n&= D^n+nD^{n-1}N=\text{diag}((-2)^n,1,1) + n\text{diag}((-2)^{n-1},1,1)E_{2,3}=\text{diag}((-2)^n,1,1) +nE_{2,3}\\
+ &=\left(
+ \begin{array}{ccc}
+ (-2)^n&0&0\\
+ 0&1&n\\
+ 0&0&1
+ \end{array}
+ \right).
+\end{align*}
+
+Puis
+
+\begin{align*}\ensuremath
+A^n&=PT^nP^{-1}=\left(
+\begin{array}{ccc}
+0&1&1\\
+0&-2&-1\\
+1&-4&0
+\end{array}
+\right)\left(
+ \begin{array}{ccc}
+ (-2)^n&0&0\\
+ 0&1&n\\
+ 0&0&1
+ \end{array}
+ \right)\left(
+\begin{array}{ccc}
+-4&-4&1\\
+-1&-1&0\\
+2&1&0
+\end{array}
+\right)\\
+ &= \left(
+\begin{array}{ccc}
+0&1&n+1\\
+0&-2&-2n-1\\
+(-2)^n&-4&-4n
+\end{array}
+\right)\left(
+\begin{array}{ccc}
+-4&-4&1\\
+-1&-1&0\\
+2&1&0
+\end{array}
+\right)=\left(
+\begin{array}{ccc}
+2n+1&n&0\\
+-4n&-2n+1&0\\
+-4(-2)^n-8n+4&-4(-2)^n-4n+4&(-2)^n
+\end{array}
+\right).
+\end{align*}
+
+\begin{center}
+\shadowbox{
+$\forall n\in\Nn$, $A^n=\left(
+\begin{array}{ccc}
+2n+1&n&0\\
+-4n&-2n+1&0\\
+-4(-2)^n-8n+4&-4(-2)^n-4n+4&(-2)^n
+\end{array}
+\right)$.
+}
+\end{center}
+\end{enumerate}
+\fincorrection
+\finexercice

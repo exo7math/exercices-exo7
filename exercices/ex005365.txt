@@ -1,0 +1,49 @@
+\exercice{5365, rouget, 2010/07/06}
+\enonce[**** Déterminant de \textsc{Cauchy} et déterminant de \textsc{Hilbert}]
+Soit $A=\left(\frac{1}{a_i+b_j}\right)_{1\leq i,j\leq n}$ où $a_1$,..., $a_n$, $b_1$,...,$b_n$ sont $2n$ réels tels que toutes les sommes $a_i+b_j$ soient non nulles. Calculer $\mbox{det}A$ (en généralisant l'idée du calcul d'un déterminant de \textsc{Vandermonde} par l'utilisation d'une fraction rationnelle) et en donner une écriture condensée dans le cas $a_i=b_i=i$.
+\finenonce
+
+\noindication
+
+\correction
+Si deux des $b_j$ sont égaux, $\mbox{det}(A)$ est nul car deux de ses colonnes sont égales. On suppose dorénavant que les $b_j$ sont deux à deux distincts.
+Soient $\lambda_1$,..., $\lambda_n$, $n$ nombres complexes tels que $\lambda_n\neq0$. On a
+
+$$\mbox{det}A=\frac{1}{\lambda_n}\mbox{det}(C_1,...,C_{n-1},\sum_{j=1}^{n}\lambda_jC_j)=\mbox{det}B,$$
+où la dernière colonne de $B$ est de la forme $(R(a_i))_{1\leq i\leq n}$ avec $R=\sum_{j=1}^{n}\frac{\lambda_j}{X+b_j}$.
+On prend $R=\frac{(X-a_1)...(X-a_{n-1})}{(X+b_1)...(X+b_n)}$. $R$ ainsi définie est irréductible (car $\forall(i,j)\in\llbracket1,n\rrbracket^2,\;a_i\neq-b_j$). Les pôles de $R$ sont simples et la partie entière de $R$ est nulle. La décomposition en éléments simples de $R$ a bien la forme espérée.
+Pour ce choix de $R$, puisque $R(a_1)=...=R(a_{n-1})=0$, on obtient en développant suivant la dernière colonne 
+
+$$\Delta_n=\frac{1}{\lambda_n}R(a_n)\Delta_{n-1},$$
+avec 
+
+$$\lambda_n=\lim_{z\rightarrow -b_n}(z+bn)R(z)=\frac{(-b_n-a_1)...(-b_n-a_{n-1})}{(-b_n+b_1)...(-b_n+b_{n-1})}
+=\frac{(a_1+b_n)...(a_{n-1}+b_n)}{(b_n-b_1)...(b_n-b_{n-1})}.$$
+Donc 
+
+$$\forall n\geq2,\;\Delta_n=\frac{(a_n-a_1)...(a_{n}-a_{n-1})(b_n-b_1)...(b_n-b_{n-1})}
+{(a_n+b_1)(a_n+b_2)...(a_n+b_n)..(a_2+b_n)(a_1+b_n)}\Delta_{n-1}.$$
+En réitérant et compte tenu de $\Delta_1=1$, on obtient
+
+\begin{center}
+\shadowbox{
+$\Delta_n=\frac{\prod_{1\leq i<j\leq n}^{}(a_j-a_i)\prod_{1\leq i<j\leq n}^{}(b_j-b_i)}{\prod_{1\leq i,j\leq n}^{}(a_i+b_j)}=\frac{\mbox{Van}(a_1,...,a_n)\mbox{Van}(b_1,...,b_n)}{\prod_{1\leq i,j\leq n}^{}(a_i+b_j)}.$
+}
+\end{center}
+Dans le cas particulier où $\forall i\in\llbracket1,n\rrbracket,\;a_i=b_i=i$, en notant $H_n$ le déterminant (de \textsc{Hilbert}) à calculer~: $H_n=\frac{\mbox{Van}(1,2,...,n)^2}{\prod_{1\leq i,j\leq n}^{}(i+j)}$. Mais, 
+
+$$\prod_{1\leq i,j\leq n}^{}(i+j)=\prod_{i=1}^{n}\left(\prod_{j=1}^{n}(i+j)\right)=\prod_{i=1}^{n}\frac{(n+i)!}{i!}
+=\frac{\prod_{k=1}^{2n}k!}{\left(\prod_{k=1}^{n}k!\right)^2},$$  
+et d'autre part,
+
+$$\mbox{Van}(1,2,...,n)=\prod_{1\leq i<j\leq n}^{}(j-i)=\prod_{i=1}^{n-1}\left(\prod_{j=i+1}^{n}(j-i)\right)=\prod_{i=1}^{n-1}(n-i)!=\frac{1}{n!}\prod_{k=1}^{n}k!.$$
+Donc,
+
+\begin{center}
+\shadowbox{
+$\forall n\geq 1,\;H_n=\frac{\left(\prod_{k=1}^{n}k!\right)^3}{n!^2\times\prod_{k=1}^{2n}k!}$.
+}
+\end{center}
+
+\fincorrection
+\finexercice

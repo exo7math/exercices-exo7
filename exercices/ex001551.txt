@@ -1,0 +1,90 @@
+\exercice{1551, barraud, 2003/09/01}
+
+\enonce
+\noindent\textbf{A --- } Soit $E$ un espace vectoriel et $u$ et $v$ deux
+endomorphismes de
+$E$ diagonalisables qui commutent (c'est à dire qui satisfont $u\circ
+v=v\circ u$). On note $\lambda_{1}...\lambda_{k}$les valeurs propres de
+$u$ et $E_{1}...E_{k}$ les espaces propres associés.
+  \begin{enumerate}
+  \item 
+    Montrer que $v(E_{i})\subset E_{i}$.
+  \item
+    On note $v_{i}=v_{|_{E_{i}}}$ la restriction de $v$ à $E_{i}$. Soit
+    $P\in\C[X]$, montrer que $P(v_{i})=P(v)_{|_{E_{i}}}$.
+  \item 
+    En déduire que $v_{i}$ est diagonalisable. Soit $B_{i}$ une base de
+    $E_{i}$ formée de vecteurs propres de $v_{i}$. 
+
+    Montrer que $B=\bigcup\limits_{i=1}^{k}B_{i}$ est une base de $E$
+    formée de vecteurs propres à la fois pour $u$ et pour $v$.
+ \item
+    En déduire que $u$ et $v$ sont diagonalisables dans une même base.
+    Montrer que $u-v$ est diagonalisable.
+  \end{enumerate}
+
+\medskip
+\noindent
+\textbf{B --- \it Application~:} On considère maintenant une matrice
+$A\in M_{n,n}(\R)$, et on lui associe l'endomorphisme
+$w_{A}\in\mathrm{End}(M_{n,n}(\R))$ suivant~:
+$$ w:
+\begin{array}{ccc}
+\mathcal{M}_{n,n}(\R) &  \rightarrow & \mathcal{M}_{n,n}(\R)\\
+M            &\mapsto  & AM-MA
+\end{array}
+$$
+Le but de l'exercice est de montrer que si $A$ est diagonalisable, $w_{A}$
+l'est aussi.
+
+On note 
+$$
+u_{A}:
+\begin{array}{ccc}
+\mathcal{M}_{n,n}(\R) &  \rightarrow & \mathcal{M}_{n,n}(\R)\\
+M            &\mapsto  & AM
+\end{array}
+\qquad\text{ et }\qquad
+v_{A}:
+\begin{array}{ccc}
+\mathcal{M}_{n,n}(\R) &  \rightarrow & \mathcal{M}_{n,n}(\R)\\
+M            &\mapsto  & MA
+\end{array}
+$$
+
+
+\begin{enumerate}
+\item 
+  Montrer que $\forall k\in\N, (u_{A})^{k}=u_{A^{k}}$. En déduire que
+  $\forall P\in\C[X], P(u_{A})=u_{P(A)}$, puis que tout polynôme
+  annulateur de $A$ est un polynôme annulateur de $u_{A}$.
+
+\item  
+  Montrer que
+  $$
+  A \text{ diagonalisable }\Rightarrow u_{A}\text{ diagonalisable}
+  $$
+  
+  On admet sans démonstration que le même résultat est vrai pour
+  $v_{A}$~:
+  $$
+  A \text{ diagonalisable }\Rightarrow v_{A}\text{ diagonalisable}
+  $$
+  
+\item
+  Montrer que $u_{A}\circ v_{A}=v_{A}\circ u_{A}$.
+  
+\item
+  En déduire que
+  $$
+  A \text{ diagonalisable }\Rightarrow w_{A}\text{ diagonalisable}
+  $$
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\nocorrection
+
+\finexercice
+

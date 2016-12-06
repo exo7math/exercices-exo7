@@ -1,0 +1,136 @@
+\exercice{5728, rouget, 2010/10/16}
+\enonce[*** I Polynômes de \textsc{Bernstein}. Théorème de \textsc{Weierstrass}]
+Soit $f$ une application continue sur $[0,1]$ à valeurs dans $\Rr$. Pour $n$ entier naturel non nul, on définit le $n$-ème polynôme de \textsc{Bernstein} associé à $f$ par 
+
+\begin{center}
+$B_n(f) =\sum_{k=0}^{n}\dbinom{n}{k}f\left(\frac{k}{n}\right)X^k(1-X)^{n-k}$.
+\end{center}
+
+\begin{enumerate}
+ \item
+  \begin{enumerate}
+   \item Calculer $B_n(f)$ quand $f$ est la fonction $x\mapsto 1$,  quand $f$ est la fonction $x\mapsto x$, quand $f$ est la fonction $x\mapsto x(x-1)$.
+   \item En déduire que $\sum_{k=0}^{n}\dbinom{n}{k}(k-nX)^2X^k(1-X)^{n-k}= nX(1-X)$.
+   \end{enumerate}
+
+\item  En séparant les entiers $k$ tels que $\left|x-\frac{k}{n}\right|>\alpha$ et les entiers $k$ tels que $\left|x-\frac{k}{n}\right|\leqslant\alpha$ ($\alpha>0$ donné), montrer que la suite de polynômes $(B_n(f))_{n\in\Nn^*}$ converge uniformément vers $f$ sur $[0,1]$.
+
+\item  Montrer le théorème de \textsc{Weierstrass} : soit $f$ une application continue sur $[a,b]$ à valeurs dans $\Rr$. Montrer que $f$ est limite uniforme sur $[a,b]$ d'une suite de polynômes.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item 
+ \begin{enumerate}
+ \item Soit $n\in\Nn^*$.
+
+\textbullet~Si $\forall x\in[0,1]$, $f(x)= 1$,
+
+\begin{center}
+$B_n(f)=\sum_{k=0}^{n}\dbinom{n}{k}X^k(1-X)^{n-k}= (X+(1-X))^n = 1$.
+\end{center}
+
+\textbullet~Si $\forall x\in[0,1]$, $f(x)=x$,
+
+\begin{align*}\ensuremath
+B_n(f)&=\sum_{k=0}^{n}\frac{k}{n}\dbinom{n}{k}X^k(1-X)^{n-k}=\sum_{k=1}^{n}\dbinom{n-1}{k-1}X^k(1-X)^{n-k}=X\sum_{k=1}^{n}\dbinom{n-1}{k-1}X^{k-1}(1-X)^{(n-1)-(k-1)}\\
+ &= X\sum_{k=0}^{n-1}\dbinom{n-1}{k}X^k(1-X)^{n-1-k}= X.
+\end{align*}
+	
+
+\textbullet~Si $\forall x\in[0,1]$, $f(x)=x(x-1)$, alors $B_n(f)=\sum_{k=0}^{n}\dbinom{n}{k}\frac{k}{n}\left(\frac{k}{n}-1\right)X^k(1-X)^{n-k}$ et donc $B_1(f)=0$. Pour $n\geqslant2$ et $k\in\llbracket1,n-1\rrbracket$
+
+\begin{center}
+$\frac{k}{n}\left(\frac{k}{n}-1\right)\dbinom{n}{k}=-\frac{1}{n^2}k(n-k)\frac{n!}{k!(n-k)!}=-\frac{n-1}{n}\frac{(n-2)!}{(k-1)(n-k-1)!}=-\frac{n-1}{n}\dbinom{n-2}{k-1}$.
+\end{center}
+
+Par suite,
+
+\begin{align*}\ensuremath
+B_n(f)&=-\frac{n-1}{n}\sum_{k=1}^{n-1}\dbinom{n-2}{k-1}X^k(1-X)^{n-k}  = -\frac{n-1}{n}X(1-X)   \sum_{k=1}^{n-1}X^{k-1}(1-X)^{(n-2)-(k-1)}\\
+ &=-\frac{n-1}{n}X(1-X)\sum_{k=0}^{n-2}\dbinom{n-2}{k}X^k(1-X)^{n-2-k}=-\frac{n-1}{n} X(1-X).
+\end{align*}
+
+ce qui reste vrai pour n = 1.
+
+ \item D'après la question précédente
+
+\begin{align*}\ensuremath
+\sum_{k=0}^{n}\dbinom{n}{k}(k-nX)^2X^k(1-X)^{n-k}&=\sum_{k=0}^{n}\dbinom{n}{k}k^2X^k(1-X)^{n-k}- 2nX\sum_{k=0}^{n}\dbinom{n}{k}kX^k(1-X)^{n-k}+n^2X^2\sum_{k=0}^{n}\dbinom{n}{k}X^k(1-X)^{n-k}\\
+ &=\sum_{k=0}^{n}\dbinom{n}{k}k(k-n)X^k(1-X)^{n-k}-n(2X-1)\sum_{k=0}^{n}\dbinom{n}{k}kX^k(1-X)^{n-k}\\
+  &+n^2X^2\sum_{k=0}^{n}\dbinom{n}{k}X^k(1-X)^{n-k}\\
+  &=n^2\sum_{k=0}^{n}\frac{k}{n}\left(\frac{k}{n}-1\right)\dbinom{n}{k}X^k(1-X)^{n-k}-n^2(2X-1)\sum_{k=0}^{n}\dbinom{n}{k}\frac{k}{n}X^k(1-X)^{n-k}+n^2X^2\\
+ &= -n(n-1)X(1-X) -n^2(2X-1)X + n^2X^2 = -nX^2 + nX = nX(1-X).
+\end{align*}
+  \end{enumerate}
+
+\item  Soit $\varepsilon> 0$. Soient $n$ un entier naturel non nul et $\alpha$ un réel strictement positif donné. Soit $x$ un réel de $[0,1]$.
+
+Notons $A$ (resp. $B$) l'ensemble des entiers $k\in\llbracket0,n\rrbracket$ tels que $\left|x-\frac{k}{n}\right|<\alpha$ (resp. $\left|x-\frac{k}{n}\right|\geqslant\alpha$). (Si $A$ ou $B$ sont vides, les sommes ci-dessous correspondantes sont nulles).
+
+\begin{align*}\ensuremath
+|f(x) - B_n(f)(x)|&=\left|\sum_{k=0}^{n}\dbinom{n}{k}\left(f(x)-f\left(\frac{k}{n}\right)\right)x^k(1-x)^{n-k}\right|\\
+ &\leqslant\sum_{k\in A}^{}\dbinom{n}{k}\left|f(x)-f\left(\frac{k}{n}\right)\right|x^k(1-x)^{n-k}+\sum_{k\in B}^{}\dbinom{n}{k}\left|f(x)-f\left(\frac{k}{n}\right)\right|x^k(1-x)^{n-k}
+\end{align*}
+
+$f$ est continue sur le segment $[0,1]$ et donc est uniformément continue sur ce segment d'après le théorème de \textsc{Heine}. Par suite, il existe $\alpha>0$ tel que si $x$ et $y$ sont deux réels de $[0,1]$ tels que $|x-y|<\alpha$ alors $|f(x)-f(y)| <\frac{\varepsilon}{2}$. $\alpha$ est ainsi dorénavant fixé. Pour ce choix de $\alpha$, 
+
+\begin{center}
+$\sum_{k\in A}^{}\dbinom{n}{k}\left|f(x)-f\left(\frac{k}{n}\right)\right|x^k(1-x)^{n-k}\leqslant \frac{\varepsilon}{2}\sum_{k\in A}^{}\dbinom{n}{k}x^k(1-x)^{n-k}\leqslant \frac{\varepsilon}{2}\sum_{k=0}^{n}\dbinom{n}{k}x^k(1-x)^{n-k} =\frac{\varepsilon}{2}.$
+\end{center}
+
+Ensuite, la fonction $f$ est continue sur le segment $[0,1]$ et donc est bornée sur ce segment. Soit $M$ un majorant de la fonction $|f|$ sur $[0,1]$.
+
+\begin{center}
+$\sum_{k\in B}^{}\dbinom{n}{k}\left|f(x)-f\left(\frac{k}{n}\right)\right|x^k(1-x)^{n-k}\leqslant2M\sum_{k\in B}^{}\dbinom{n}{k}x^k(1-x)^{n-k}$
+\end{center}
+
+Mais si $k\in B$, l'inégalité $\left|x-\frac{k}{n}\right|\geqslant\alpha$ fournit $1\leqslant\frac{1}{\alpha^2n^2}(k-nx)^2$ et donc
+
+\begin{align*}\ensuremath
+\sum_{k\in B}^{}\dbinom{n}{k}x^k(1-x)^{n-k}&\leqslant 1\leqslant\frac{1}{\alpha^2n^2}\sum_{k\in B}^{}\dbinom{n}{k}(k-nx)^2x^k(1-x)^{n-k}\leqslant\frac{1}{\alpha^2n^2}\sum_{k=0}^{n}\dbinom{n}{k}(k-nx)^2x^k(1-x)^{n-k}\\
+ &=\frac{1}{\alpha^2n^2}\times nx(1-x)=\frac{1}{\alpha^2n}\left(\frac{1}{4}-\left(x-\frac{1}{2}\right)^2\right)\leqslant\frac{1}{4\alpha^2n}.
+\end{align*}
+
+En résumé, pour tout réel $x\in[0,1]$
+
+\begin{center}
+$|f(x) - B_n(f)(x)|\leqslant\frac{\varepsilon}{2}+2M\times\frac{1}{4\alpha^2n}=\frac{\varepsilon}{2}+\frac{M}{2\alpha^2n}$.
+\end{center}
+
+Maintenant, puisque $\lim_{n \rightarrow +\infty}\frac{M}{2\alpha^2n}=0$, il existe un entier naturel non nul $N$ tel que pour $n\geqslant N$, $\frac{M}{2\alpha^2n}<\frac{\varepsilon}{2}$. Pour $n\geqslant N$, on a $|f(x) - B_n(f)(x)|<\frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon$. On a montré que
+
+\begin{center}
+$\forall\varepsilon>0$, $\exists N\in\Nn^*/\;\forall n\in\Nn^*,\;\forall x\in[0,1],\;(n\geqslant N\Rightarrow|f(x)-(B_n(f))(x)|<\varepsilon$,
+\end{center}
+
+et donc que
+
+\begin{center}
+\shadowbox{
+la suite de polynômes $(B_n(f))_{n\in\Nn^*}$ converge uniformément sur $[0,1]$ vers $f$.
+}
+\end{center}
+
+\item  La question 2) montre le théorème de \textsc{Weierstrass} dans le cas du segment $[0,1]$.
+
+Soient $[a,b]$ un segment quelconque et $f$ un application continue sur $[a,b]$.
+
+Pour $x\in[0,1]$, posons $g(x)= f(a+(b-a)x)$. La fonction $g$ est continue sur $[0,1]$ et donc il existe une suite de polynômes $(P_n)$ convergeant uniformément vers $g$ sur $[0,1]$.
+Pour $n\in\Nn$, posons $Q_n =P_n\left(\frac{X-a}{b-a}\right)$.
+
+Soit $\varepsilon>0$. $\exists N\geqslant1$ tel que $\forall n\geqslant N$, $\forall y\in[0,1]$, $|g(y)-P_n(y)| <\varepsilon$.
+
+Soient $x\in[a,b]$ et $n\geqslant N$. Le réel $y=\frac{x-a}{b-a}$ est dans $[0,1]$ et
+
+\begin{center}
+$|f(x)-Q_n(x)|=\left|f(a+(b-a)y)-Q_n(a+(b-a)y)\right|=|g(y)-P_n(y)|<\varepsilon$.
+\end{center}
+
+Ceci démontre que la suite de polynômes $(Q_n)_{n\in\Nn}$ converge uniformément vers la fonction $f$ sur $[a,b]$.
+\end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,32 @@
+\exercice{5357, rouget, 2010/07/04}
+\enonce[***I]
+Soit $(G,\times)$ un groupe. Montrer que $(G,\times)$ est isomorphe à un sous-groupe de $(S(G),\circ)$ et que, en particulier, tout groupe fini d'ordre $n$ est isomorphe à un sous-groupe de $S_n$ (théorème de \textsc{Cayley}). (Indication~:~montrer que pour chaque $x$ de $G$, l'application $y\mapsto xy$ est une permutation de $G$.)
+\finenonce
+
+\noindication
+
+\correction
+Soit $(G,\times)$ un groupe. Pour $x$ élément de $G$, on considère 
+$\begin{array}[t]{cccc}
+f_x~:&G&\rightarrow&G\\
+ &y&\mapsto&xy
+\end{array}$. $f_x$ est une application de $G$ vers $G$ et de plus, clairement $f_x\circ f_{x^{-1}}=f_{x^{-1}}\circ f_x=Id_G$. Donc, pour tout élément $x$ de $G$, $f_x$ est une permutation de $G$.
+
+Soit alors $\begin{array}[t]{cccc}
+\varphi~:&(G,\times)&\rightarrow&(S_G,\circ)\\
+ &x&\mapsto&f_x
+\end{array}$. D'après ce qui précède, $\varphi$ est une application. De plus, $\varphi$ est de plus un morphisme de groupes. En effet, pour $(x,x',y)\in G^3$, on a~:
+
+$$\varphi((xx'))(y)=f_{xx'}(y)=xx'y=f_x(f_x'(y)) = f_x\circ f_{x'}(y)=(\varphi(x)\circ\varphi(x'))(y),$$
+
+et donc $\forall(x,x')\in G^2,\;\varphi(xx')=\varphi(x)o\varphi(x')$.
+
+Enfin, $\varphi$ est injectif car, pour $x$ élément de $G$~:
+
+$$\varphi(x)= Id\Rightarrow\forall y\in G,\;xy=y\Rightarrow xe=e\Rightarrow x=e.$$
+
+Donc, $\mbox{Ker}\varphi=\{e\}$, et $\varphi$ est injectif.
+
+$\varphi$ est ainsi un isomorphisme de groupes de $(G,\times)$ sur $(f(G),\circ)$ qui est un sous groupe de $(S_G,\circ)$. $(G,\times)$ est bien isomorphe à un sous groupe de $(S_G,\circ)$.
+\fincorrection
+\finexercice

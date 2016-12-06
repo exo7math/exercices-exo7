@@ -1,0 +1,49 @@
+\exercice{5444, rouget, 2010/07/10}
+\enonce[****]
+Soient $f$ et $g$ deux fonctions continues et strictement positives sur $[a,b]$. Pour $n$ entier naturel non nul donné, on pose $u_n=\left(\int_{a}^{b}(f(x))^ng(x)\;dx\right)^{1/n}$.
+
+Montrer que la suite $(u_n)$ converge et déterminer sa limite (commencer par le cas $g=1$).
+\finenonce
+
+\noindication
+
+\correction
+$f$ est continue sur le segment $[a,b]$ et admet donc un maximum $M$ sur ce segment. Puisque $f$ est strictement positive sur $[a,b]$, ce maximum est strictement positif.
+
+Pour $n\in\Nn^*$, posons $u_n=\left(\int_{a}^{b}(f(x))^n\;dx\right)^{1/n}$. Par croissance de l'intégrale, on a déjà 
+
+$$u_n\leq\left(\int_{a}^{b}M^n\;dx\right)^{1/n}=M(b-a)^{1/n},$$
+ 
+(car $\forall x\in[a,b],\;0\leq f(x)\leq M\Rightarrow \forall x\in[a,b],\;(f(x))^n\leq M^n$ par croissance de la fonction $t\mapsto t^n$ sur $[0,+\infty[$).
+
+D'autre part, par continuité de $f$ en $x_0$ tel que $f(x_0)=M$, pour $\varepsilon\in]0,2M[$ donné, $\exists[\alpha,\beta]\subset[a,b]/\;\alpha<\beta\;\mbox{et}\;\forall x\in[\alpha,\beta],\;f(x)\geq M-\frac{\varepsilon}{2}$.
+
+Pour $n$ élément de $\Nn^*$, on a alors 
+
+$$u_n\geq\left(\int_{\alpha}^{\beta}(f(x))^n\;dx\right)^{1/n}\geq\left(\int_{\alpha}^{\beta}(M-\frac{\varepsilon}{2})^n\;dx\right)^{1/n}=(M-\frac{\varepsilon}{2})(\beta-\alpha)^{1/n}.$$
+
+En résumé,
+
+$$\forall\varepsilon\in]0,2M[,\;\exists(\alpha,\beta)\in[a,b]^2/\;\alpha<\beta\;\mbox{et}\;\forall n\in\Nn^*,\;
+(M-\frac{\varepsilon}{2})(\beta-\alpha)^{1/n}\leq u_n\leq M(b-a)^{1/n}.$$
+
+Mais, $\lim_{n\rightarrow +\infty}M(b-a)^{1/n}=M$ et $\lim_{n\rightarrow +\infty}(M-\frac{\varepsilon}{2})(\beta-\alpha)^{1/n}=(M-\frac{\varepsilon}{2})(\beta-\alpha)^{1/n}$.
+
+Par suite, $\exists n_1\in\Nn^*/\;\forall n\geq n_1,\;M(b-a)^{1/n}<M+\varepsilon$ et $\exists n_2\in\Nn^*/\;\forall n\geq n_2,\;(M-\frac{\varepsilon}{2})(\beta-\alpha)^{1/n}>M-\varepsilon$.
+
+Soit $n_0=\mbox{Max}\{n_1,n_2\}$. Pour $n\geq n_0$, on a $M-\varepsilon<u_n<M+\varepsilon$. On a montré que 
+
+$$\forall\varepsilon>0,\;\exists n_0\in\Nn^*/\;\forall n\in\Nn,\;(n\geq n_0\Rightarrow|u_n-M|<\varepsilon),$$
+
+et donc que $\lim_{n\rightarrow +\infty}u_n=M$.
+
+Plus généralement, si $g$ continue sur $[a,b]$, $g$ admet un minimum $m_1$ et un maximum $M_1$ sur cet intervalle, tous deux strictement positifs puisque $g$ est strictement positive. Pour $n$ dans $\Nn^*$, on a
+ 
+$$m_1^{1/n}\left(\int_{a}^{b}(f(x))^n\;dx\right)^{1/n}\leq\left(\int_{a}^{b}(f(x))^ng(x)\;dx\right)^{1/n}\leq M_1^{1/n}\left(\int_{a}^{b}(f(x))^n\;dx\right),$$
+
+et comme d'après l'étude du cas $g=1$, on a $\lim_{n\rightarrow +\infty}m_1^{1/n}\left(\int_{a}^{b}(f(x))^n\;dx\right)^{1/n}=\lim_{n\rightarrow +\infty}M_1^{1/n}\left(\int_{a}^{b}(f(x))^n\;dx\right)^{1/n}=M$, le théorème de la limite par encadrements permet d'affirmer que $\lim_{n\rightarrow +\infty}\left(\int_{a}^{b}(f(x))^ng(x)\;dx\right)^{1/n}=M$. On a montré que 
+
+$$\lim_{n\rightarrow +\infty}\left(\int_{a}^{b}(f(x))^ng(x)\;dx\right)^{1/n}=\mbox{Max}\{f(x),\;x\in[a,b]\}.$$
+
+\fincorrection
+\finexercice

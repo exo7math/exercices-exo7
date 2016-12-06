@@ -1,0 +1,49 @@
+\exercice{5865, rouget, 2010/10/16}
+\enonce[***]
+Soit $A\in\mathcal{M}_p(\Cc)$, $p\geqslant1$. Montrer que les trois propositions suivantes sont équivalentes :
+
+\textbf{(1)} $\text{Sp}(A)\subset B_o(0,1)$ (disque unité ouvert).
+
+\textbf{(2)} $\lim_{n \rightarrow +\infty}A^n=0$
+
+\textbf{(3)} La série de terme général $A^n$, $n\in\Nn$, converge.
+\finenonce
+
+\noindication
+
+\correction
+Soit $A\in\mathcal{M}_p(\Cc)$. 
+
+\textbf{(3) $\Rightarrow$ (2).} On sait que si la série de terme général $A^n$, $n\in\Nn$, converge, alors $\lim_{n \rightarrow +\infty}A^n=0$.
+
+\textbf{(2) $\Rightarrow$ (1).} Supposons $\lim_{n \rightarrow +\infty}A^n=0$. Soit $\lambda\in\Cc$ une valeur propre de $A$ et $X\in\mathcal{M}_{p,1}(\Cc)\setminus\{0\}$ un vecteur propre associé. Pour tout entier naturel $n$, $A^nX=\lambda^nX$. Puisque $\lim_{n \rightarrow +\infty}A^n=0$, on a encore $\lim_{n \rightarrow +\infty}A^nX=0$ puis $\lim_{n \rightarrow +\infty}\lambda^nX=0$ et donc $\lim_{n \rightarrow +\infty}\lambda^n=0$.
+
+Ainsi, si $\lim_{n \rightarrow +\infty}A^n=0$ alors $\text{Sp}(A)\subset B_o(0,1)$.
+
+\textbf{(1) $\Rightarrow$ (3)}. Soit $A\in\mathcal{M}_p(\Cc)$ telle que $\text{Sp}(A)\subset B_o(0,1)$. On sait (voir exercice \ref{ex:rou20} : décomposition de \textsc{Dunford}) qu'il existe deux matrices $D$ et $N$ telles que 
+
+1) $A=D+N$ 
+
+2) $D$ diagonalisable
+
+3) $N$ nilpotente
+
+4) $DN=ND$. 
+
+De plus, les valeurs propres de $D$ sont les valeurs propres de $A$.
+
+On note $k$ l'indice de nilpotence de $N$. Puisque les matrices $D$ et $N$ convergent, la formule du binôme de \textsc{Newton} permet d'écrire pour $n\geqslant k$
+
+\begin{center}
+$A^n=(D+N)^n=\sum_{j=0}^{n}\dbinom{n}{j}D^{n-j}N^j=\sum_{j=0}^{k}\dbinom{n}{j}D^{n-j}N^j$.
+\end{center}
+
+Il existe une matrice $P\in\mathcal{GL}_p(\Cc)$ et une matrice diagonale $\Delta$ tel que $D=P\Delta P^{-1}$. Mais alors, $\forall j\in\llbracket0,k\rrbracket$, $\forall n\geqslant j$, $\dbinom{n}{j}D^{n-j}N^j=P\times\dbinom{n}{j}\Delta^{n-j}\times PN^j$.
+
+Soit $j\in\llbracket0,k\rrbracket$. Vérifions tout d'abord que la série de terme général $\dbinom{n}{j}\Delta^{n-j}$, $n\geqslant j$ converge. Posons $\Delta=\text{diag}(\lambda_1,\ldots,\lambda_p)$. Alors $\forall n\geqslant j$, $\dbinom{n}{j}\Delta^{n-j}=\text{diag}\left(\dbinom{n}{j}\lambda_1^{n-j},\ldots,\dbinom{n}{j}\lambda_p^{n-j}\right)$. Maintenant, si $\lambda$ est une valeur propre de $\Delta$ (et donc de $A$), $\dbinom{n}{j}\lambda^{n-j}= \frac{n(n-1)\ldots(n-j+1)}{j!}\lambda^{n-j}\underset{n\rightarrow+\infty}{\sim}n^j\lambda^{n-j}=\underset{n\rightarrow+\infty}o\left( \frac{1}{n^2}\right)$ car $|\lambda|<1$ et donc la série de terme général $\dbinom{n}{j}\lambda^{n-j}$, $n\geqslant j$, converge.
+
+Ainsi, la série de terme général $\dbinom{n}{j}\Delta^{n-j}$ converge. D'autre part, l'application $M\mapsto P\times M\times PN^j$ est continue sur $\mathcal{M}_p(\Cc)$ en tant qu'endomorphisme d'un espace de dimension finie. On en déduit que la série de terme général $P\times\dbinom{n}{j}\Delta^{n-j}\times PN^j$ converge.
+
+Finalement, pour chaque $j\in\llbracket0,k\rrbracket$, la série de terme général $P\times\dbinom{n}{j}\Delta^{n-j}\times PN^j$ converge et donc la série de terme général $A^n$ converge car est somme de $j+1$ séries convergentes.
+\fincorrection
+\finexercice

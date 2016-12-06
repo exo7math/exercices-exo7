@@ -1,0 +1,57 @@
+\exercice{2278, barraud, 2008/04/24}
+\enonce
+\begin{enumerate}
+  \item Soit $P\in \Zz[x]$. Soit $\dfrac{a}{b}$
+ sa racine rationnelle : $P(\dfrac{a}{b})=0$, $\pgcd(a,b)=1$.
+Montrer que $\forall\,k\in \Zz$ $\ (a-bk)$ divise $P(k)$. 
+  \item Quelles racines rationnelles ont les polyn\^omes
+$f(x)=x^3-6x^2+15x-14$ et $g(x)=2x^3+3x^2+6x-4$ ?
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+  \begin{enumerate}
+  \item 
+    $(X-\frac{a}{b})|P$ donc $\exists Q\in\Qq[x], \,
+    P=(x-\frac{a}{b})Q=(bx-a)\frac{Q}{b}$. En réduisant tous les
+    coefficients de $Q$ au même dénominateur, on peut mettre $Q$ sous la
+    forme~: $Q=\frac{1}{m}Q_{1}$, avec $Q_{1}\in\Zz[X]$ primitif. Alors
+    $bdP=(bx-a)Q_{1}$. En considérant les contenus de ces polynômes, on a
+    $c(bx-a)=\pgcd(a,b)=1$, $c(Q_{1})=1$ donc $c(bdP)=bd\,c(P)=1$. Ainsi
+    $bd=\pm1$, et $(bx-a)|P$.
+
+  \item
+    On considère par exemple les cas $k=0,\dots,3$. (Pour $k=2$, on
+    constate que $P(2)=0$~: on peut diviser $P$ par $(X-2)$ et déterminer
+    les trois racines complexes de $P$...). On obtient que
+    \begin{align*}
+    (*)&&\qquad       a&|14       &\quad   (k=0),      \\
+    (**)&&\qquad   (a-b)&|4       &\quad   (k=1),      \\
+    (***)&&\qquad  (a-3b)&|2^{3}5 &\quad   (k=3).      \\
+    \end{align*}
+    Au passage On peut remarquer que si $\alpha\leq0$, $P(\alpha)<0$, donc on
+    peut supposer $a>0$ et $b>0$.
+    \begin{itemize}
+    \item 
+      Si $a=1$~: $(**)\Rightarrow b\in\{2,3,5\}$. Aucune de ces
+      possibilités n'est compatible avec $(***)$.
+
+    \item
+      Si $a=2$~: $(**)\Rightarrow b\in\{1,3,4,6\}$. Comme $\pgcd(a,b)=1$,
+      $4$et $6$ sont exclus. $3$ n'est pas compatible avec $(***)$. Pour
+      $2$, on vérifie que $P(2)=0$.
+
+    \item
+      Si $a=7$~: $(**)\Rightarrow b\in\{3,5,9,11\}$. Mais aucune de ces
+      solution ne convient.
+
+    \item
+      Si $a=14$~: $(**)\Rightarrow b\in\{10,12,16,18\}$ mais
+      $\pgcd(a,b)=1$ exclu toutes ces possibilités.
+    \end{itemize}
+    Finalement, $2$ est la seule racine rationnelle de $P$.
+  \end{enumerate}
+\fincorrection
+\finexercice

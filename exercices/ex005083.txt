@@ -1,0 +1,76 @@
+\exercice{5083, rouget, 2010/06/30}
+\enonce[***]
+\begin{enumerate}
+ \item  Résoudre dans $\Rr$ l'équation $\cos(3x)=\sin(2x)$.
+ \item  En déduire les valeurs de $\sin x$ et $\cos x$ pour $x$ élément de
+$\left\{\frac{\pi}{10},\frac{\pi}{5},\frac{3\pi}{10}\right\}$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item 
+
+\begin{align*}
+\cos(3x)=\sin(2x)&\Leftrightarrow\cos(3x)=\cos(\frac{\pi}{2}-2x)\Leftrightarrow(\exists k\in\Zz/\;3x=\frac{\pi}{2}-2x+2k\pi)\;\mbox{ou}\;
+(\exists k\in\Zz/\;3x=-\frac{\pi}{2}+2x+2k\pi)\\
+ &\Leftrightarrow(\exists k\in\Zz/\;x=\frac{\pi}{10}+\frac{2k\pi}{5})\;\mbox{ou}\;(\exists k\in\Zz/\;x=-\frac{\pi}{2}+2k\pi)
+\end{align*}
+
+\begin{center}
+\shadowbox{
+$\mathcal{S}_{[0,2\pi]}=\left\{\frac{\pi}{10},\frac{\pi}{2},\frac{9\pi}{10},\frac{13\pi}{10},\frac{3\pi}{2},
+\frac{17\pi}{10}\right\}.$
+}
+\end{center}
+
+ \item  $\cos(3x)=\Re(e^{3ix})=\Re((\cos x+i\sin x)^3)=\cos^3x-3\cos x\sin^2x=\cos^3x-3\cos
+x(1-\cos^2x)=4\cos^3x-3\cos x$.
+
+\begin{center}
+\shadowbox{
+$\forall x\in\Rr,\;\cos(3x)=4\cos^3x-3\cos x.$
+}
+\end{center}
+Par suite,
+
+\begin{align*}
+\cos(3x)=\sin(2x)&\Leftrightarrow4\cos^3x-3\cos x=2\sin x\cos x\Leftrightarrow\cos x(4\cos^2x-3-2\sin x)=0\\
+ &\Leftrightarrow\cos x(-4\sin^2x-2\sin x+1)=0\Leftrightarrow(\cos x=0)\;\mbox{ou}\;(4\sin^2x+2\sin x-1=0).
+\end{align*}
+D'après 1), l'équation $4\sin^2x+2\sin x-1=0$ admet entre autre pour solutions $\frac{\pi}{10}$ et $\frac{13\pi}{10}$
+(car, dans chacun des deux cas, $\cos x\neq0$), ou encore, l'équation $4X^2+2X-1=0$ admet pour solutions les deux
+nombres \textbf{distincts} $X_1=\sin\frac{\pi}{10}$ et $X_2=\sin\frac{13\pi}{10}$, qui sont donc les deux solutions de
+cette équation. Puisque $X_1>0$ et que $X_2<0$, on obtient
+
+$$X_1=\frac{-1+\sqrt{5}}{4}\;\mbox{et}\;X_2=\frac{-1-\sqrt{5}}{4}.$$
+Donc, (puisque $\sin\frac{13\pi}{10}=-\sin\frac{3\pi}{10}$),
+
+\begin{center}
+\shadowbox{
+$\sin\frac{\pi}{10}=\frac{-1+\sqrt{5}}{4}\;\mbox{et}\;\sin\frac{3\pi}{10}=\frac{1+\sqrt{5}}{4}.$
+}
+\end{center}
+Ensuite, $\sin\frac{3\pi}{10}=\cos\left(\frac{\pi}{2}-\frac{3\pi}{10}\right)=\cos\frac{\pi}{5}$, et donc
+
+\begin{center}
+\shadowbox{
+$\cos\frac{\pi}{5}=\frac{1+\sqrt{5}}{4}.$
+}
+\end{center}
+Puis
+
+\begin{center}
+\shadowbox{$\cos\frac{\pi}{10}=\sqrt{1-\sin^2\frac{\pi}{10}}=\frac{1}{4}\sqrt{10+2\sqrt{5}}$}
+\end{center}
+et de même 
+
+\begin{center}
+\shadowbox{$\sin\frac{\pi}{5}=\frac{1}{4}\sqrt{10-2\sqrt{5}}=\cos\frac{3\pi}{10}$}.
+\end{center}
+\end{enumerate}
+
+\fincorrection
+\finexercice

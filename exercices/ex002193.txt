@@ -1,0 +1,41 @@
+\exercice{2193, debes, 2008/02/12}
+\enonce 
+\label{ex:deb93}
+Soit $G$ un groupe d'ordre $2p$, o\`u $p$ est un nombre premier  
+sup\'erieur ou \'egal \`a $3$. Montrer que $G$ contient un unique sous-groupe $H$
+d'ordre $p$ et que ce sous-groupe est distingu\'e. V\'erifier que les seuls
+automorphismes d'ordre $2$ d'un groupe cyclique d'ordre $p$ sont l'identit\'e et le
+passage \`a l'inverse. En d\'eduire que le groupe $G$ est soit cyclique, soit
+non commutatif, auquel cas il poss\`ede deux g\'en\'erateurs $s$ et $t$
+v\'erifiant les relations $s^p=1$, $t^2=1$ et $tst^{-1} =s^{-1}$.
+\finenonce 
+
+\noindication
+\correction
+Comme $p$ divise $|G|$, il existe dans $G$ un \'el\'ement $s$ d'ordre $p$. Le
+sous-groupe $H=\hskip 2pt <s>$, d'indice $2$, est n\'ecessairement distingu\'e dans
+$G$. Il est de plus le seul sous-groupe d'ordre $p$ (cf l'exercice \ref{ex:le19}).
+
+\hskip 5mm De fa\c con g\'en\'erale, un automorphisme $\chi$ d'un groupe cyclique
+$<\zeta>$ d'ordre $p$ est d\'etermin\'e par $\chi(\zeta) = \zeta^{i_\chi}$ et cet
+automorphisme est d'ordre $2$ si et seulement si $i_\chi^2 \equiv 1\ [\hbox{\rm
+mod}\ p]$, c'est-\`a-dire si $\chi(\zeta) = \zeta$ ou $\chi(\zeta) = \zeta^{-1}$ ce
+qui correspond aux deux automorphismes ``identit\'e'' et ``passage \`a l'inverse''
+(que $p$ soit premier n'intervient pas ici; le r\'esultat est valable pour tout
+entier $p\geq 1$).
+
+\hskip 5mm Soit $t\in G$ d'ordre $2$ (qui existe car $2$ divise $|G|$). La
+conjugaison par $t$ induit un automorphisme du sous-groupe distingu\'e $H$.
+D'ap\`es ce qui pr\'ec\`ede, on a $tst^{-1}=s$ ou bien $tst^{-1}=s^{-1}$. Dans
+le premier cas, la correspondance $(s^i,t^\varepsilon) \rightarrow
+s^i \cdot t^\varepsilon$ ($i=0,1,2$ et $\varepsilon = \pm 1$) induit un morphisme
+entre le produit direct $<s> \times <t>$ et $G$, lequel est injectif (car $<s>
+\cap <t>=\{1\}$) et donc est bijectif (puisque les groupes de d\'epart et
+d'arriv\'ee ont m\^eme ordre $2p$). Dans ce cas on a donc $G\simeq \Z/p\Z
+\times \Z/2\Z \simeq \Z/2p\Z$ cyclique. Dans l'autre cas, $G$ est non
+commutatif (puisque $tst^{-1}=s^{-1}\not=s$); il est engendr\'e par
+$s$ et $t$ qui v\'erifient les relations $s^p=1$, $t^2=1$ et $tst^{-1} =s^{-1}$.
+Dans ce cas $G$ est isomorphe au groupe di\'edral $\Z/p\Z \times \hskip -6pt
+{\raise 1.4pt\hbox{${\scriptscriptstyle |}$}} \Z/2\Z$ d'ordre $2p$.
+\fincorrection
+\finexercice

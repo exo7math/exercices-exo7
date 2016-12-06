@@ -1,0 +1,51 @@
+\exercice{5885, rouget, 2010/10/16}
+\enonce[*** I]
+Trouver toutes les applications $f~:~\Rr\rightarrow\Rr$, continues sur $\Rr$ telles que $\forall(x,y)\in\Rr^2$, $f(x)f(y) =\int_{x-y}^{x+y}f(t)\;dt$.
+\finenonce
+
+\noindication
+
+\correction
+La fonction nulle est solution. Dorénavant, $f$ est une éventuelle solution non nulle.  Il existe donc $x_0\in\Rr$ tel que $f(x_0)\neq0$. 
+
+\textbullet~L'égalité $f(x_0)f(0)=\int_{x_0-0}^{x_0+0}f(t)\;dt=0$ fournit $f(0)=0$.
+
+\textbullet~Pour tout réel $y$, $\int_{-y}^{y}f(t)\;dt=f(0)f(y)=0$. Maintenant, la fonction $f$ est continue sur $\Rr$ et donc la fonction $y\mapsto \int_{-y}^{y}f(t)\;dt$ est de classe $C^1$ sur $\Rr$. En dérivant, on obtient pour tout réel $y$, $f(y)+f(-y)=0$ et donc $f$ est impaire.
+
+\textbullet~Pour tout réel $y$, on a alors $f(y)= \frac{1}{f(x_0)}\int_{x_0-y}^{x_0+y}f(t)\;dt$. Puisque $f$ est continue sur $\Rr$, la fonction $x\mapsto \frac{1}{f(x_0)}\int_{x_0-y}^{x_0+y}f(t)\;dt$ est de classe $C^1$ sur $\Rr$ et il en est de même de $f$. Mais alors la fonction $x\mapsto \frac{1}{f(x_0)}\int_{x_0-y}^{x_0+y}f(t)\;dt$ est de classe $C^2$ sur $\Rr$ et il en est de même de $f$.
+
+\begin{center}
+$f$ est de classe $C^2$ sur $\Rr$.
+\end{center}
+
+\textbullet~En dérivant à $y$ fixé ou $x$ fixé l'égalité $f(x)f(y) =\int_{x-y}^{x+y}f(t)\;dt$, on obtient pour tout $(x,y)\in\Rr^2$, $f'(x)f(y)=f(x+y)-f(x-y)$ et $f(x)f'(y)=f(x+y)+f(x-y)$. En dérivant la première égalité à $y$ fixé et la deuxième à $x$ fixé, on obtient pour tout $(x,y)\in\Rr^2$, $f''(x)f(y)=f'(x+y)-f'(x-y)=f(x)f''(y)$. En particulier, pour tout réel $x$, $f''(x)f(x_0)-f(x)f''(x_0)=0$ ou encore $f''(x)-kf(x)=0$ où $f= \frac{f''(x_0)}{f(x_0}$.
+
+\begin{center}
+$f$ est solution d'une équation différentielle du type $y''-ky=0$.
+\end{center}
+
+\textbullet~$f$ est donc de l'un des types suivants : $x\mapsto\lambda\cos(\omega x)+\mu\sin(\omega x)$, $(\lambda,\mu)\in\Rr^2$ et $\omega>0$ ou $x\mapsto ax+b$, $(a,b)\in\Rr^2$ ou $x\mapsto \lambda\ch(\omega x)+\mu\sh(\omega x)$, $(\lambda,\mu)\in\Rr^2$ et $\omega>0$ (suivant que $k>0$, $k=0$ ou $k<0$). De plus, $f$ étant impaire, $f$ est nécessairement de l'un des types suivants :
+
+\begin{center}
+$x\mapsto\lambda\sin(\omega x)$, $\lambda\in\Rr^*$ et $\omega>0$ ou $x\mapsto ax$, $a\in\Rr*$ ou $x\mapsto \lambda\sh(\omega x)$, $\lambda\in\Rr$ et $\omega>0$.
+\end{center}
+
+Réciproquement,
+
+- si $\forall x\in\Rr$, $f(x)=ax$, $a\in\Rr^*$ alors $f(x)f(y)=a^2xy$ et $\int_{x-y}^{x+y}f(t)\;dt= \frac{a}{2}((x+y)^2-(x-y)^2)=2axy$. Donc $f$ est solution si
+
+et seulement si $a=2$. On obtient la fonction solution $x\mapsto2x$.
+
+- si $\forall x\in\Rr$, $f(x)=\lambda\sin(\omega x)$, $\lambda\in\Rr^*$ et $\omega>0$, alors $f(x)f(y)=\lambda^2\sin(\omega x)\sin(\omega y)$ et 
+
+$\int_{x-y}^{x+y}f(t)\;dt= \frac{\lambda}{\omega}(\cos(\omega(x-y))-\cos(\omega(x+y)))= \frac{2\lambda}{\omega}\sin(\omega x)\sin(\omega y)$. Donc $f$ est solution si et seulement si $\lambda= \frac{2}{\omega}$.
+
+On obtient les fonctions solutions $x\mapsto \frac{2}{\omega}\sin(\omega x)$, $\omega>0$.
+
+- si $\forall x\in\Rr$, $f(x)=\lambda\sh(\omega x)$, $\lambda\in\Rr^*$ et $\omega>0$, alors $f(x)f(y)=\lambda^2\sh(\omega x)\sh(\omega y)$ et 
+
+$\int_{x-y}^{x+y}f(t)\;dt= \frac{\lambda}{\omega}(\ch(\omega(x+y))-\ch(\omega(x-y)))= \frac{2\lambda}{\omega}\sh(\omega x)\sh(\omega y)$. Donc $f$ est solution si et seulement si $\lambda= \frac{2}{\omega}$.
+
+On obtient les fonctions solutions $x\mapsto \frac{2}{\omega}\sh(\omega x)$, $\omega>0$.
+\fincorrection
+\finexercice

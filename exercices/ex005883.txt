@@ -1,0 +1,27 @@
+\exercice{5883, rouget, 2010/10/16}
+\enonce[**]
+ Trouver les fonctions $f$ dérivables sur $\Rr$ vérifiant $\forall x\in\Rr$, $f'(x) + f(-x) = e^x$.
+\finenonce
+
+\noindication
+
+\correction
+Soit $f$ une éventuelle solution. $f$ est dérivable sur $\Rr$ et pour tout réel $x$, $f'(x)=-f(-x)+e^{x}$. On en déduit que $f'$ est dérivable sur $\Rr$ ou encore que $f$ est deux fois dérivable sur $\Rr$. En dérivant l'égalité initiale, on obtient pour tout réel $x$
+
+\begin{center}
+$f''(x)=f'(-x)+e^{x}=-f(x)+e^{-x}+e^x$,
+\end{center}
+
+et donc $f$ est solution sur $\Rr$ de l'équation différentielle $y''+y=2\ch(x)$. Par suite, il existe $(\lambda,\mu)\in\Rr^2$ tel que $\forall x\in\Rr$, $f(x)=\ch(x)+\lambda\cos(x)+\mu\sin(x)$.
+
+Réciproquement, soit $f$ une telle fonction. $f$ est dérivable sur $\Rr$ et pour tout réel $x$,
+
+\begin{center}
+$f'(x)+f(-x)=(\sh(x)-\lambda\sin(x)+\mu\cos(x))+(\ch(x)+\lambda\cos(x)-\mu\sin(x))=e^x+(\lambda+\mu)(\cos(x)-\sin(x))$,
+\end{center}
+
+et $f$ est solution si et seulement si $\lambda+\mu=0$.
+
+Les fonctions solutions sont les fonctions de la forme $x\mapsto\ch(x)+\lambda(\cos(x)-\sin(x))$, $\lambda\in\Rr$.
+\fincorrection
+\finexercice

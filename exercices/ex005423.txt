@@ -1,0 +1,42 @@
+\exercice{5423, rouget, 2010/07/06}
+\enonce[***]
+Soit $f$ de classe $C^1$ sur $\Rr$ vérifiant pour tout $x$ réel, $f\circ f(x)=\frac{x}{2}+3$. En remarquant que $f(\frac{x}{2}+3)=\frac{f(x)}{2}+3$, montrer que $f'$ est constante puis déterminer $f$.
+\finenonce
+
+\noindication
+
+\correction
+$$\forall x\in\Rr f(\frac{x}{2}+3)=f(f\circ f(x))=f\circ f(f(x))=\frac{f(x)}{2}+3.$$
+
+Puisque $f$ est dérivable sur $\Rr$, on obtient en dérivant $\forall x\in\Rr,\;\frac{1}{2}f'(\frac{x}{2}+3)=\frac{1}{2}f'(x)$,
+
+et donc
+
+$$\forall x\in\Rr,\;f'(\frac{x}{2}+3)=f'(x).$$
+
+Soit alors $x$ un réel donné et $u$ la suite définie par $u_0=x$ et $\forall n\in\Nn,\;u_{n+1}=\frac{1}{2}u_n+3$.
+
+D'après ce qui précède, $\forall n\in\Nn,\;f'(x)=f'(u_n)$.
+Maintenant, $u$ est une suite arithmético-géométrique et on sait que 
+
+$$\forall n\in\Nn,\;u_n-6=\frac{1}{2^n}(u_0-6)$$ 
+
+ce qui montre que la suite $u$ converge vers $6$. La suite $(f'(u_n))_{n\geq0}$ est constante, de valeur $f'(x)$. $f'$ étant continue sur $\Rr$, on en déduit que
+
+$$\forall x\in\Rr,\;f'(x)=\lim_{n\rightarrow +\infty}f'(u_n)=f'(\lim_{n\rightarrow +\infty}u_n)=f'(6),$$
+
+ce qui montre que la fonction $f'$ est constante sur $\Rr$ et donc que $f$ est affine.
+
+Réciproquement, pour $x$ réel, posons $f(x)=ax+b$.
+ 
+\begin{align*}\ensuremath
+f\;\mbox{solution}&\Leftrightarrow\forall x\in\Rr,\;a(ax+b)+b=\frac{x}{2}+3\Leftrightarrow\forall x\in\Rr,\;(a^2-\frac{1}{2})x+ab+b-3=0\\
+ &\Leftrightarrow a^2=\frac{1}{2}\;\mbox{et}\;(a+1)b=3\Leftrightarrow(a=\frac{1}{\sqrt{2}}\;\mbox{et}\;b=3(2-\sqrt{2}))\;\mbox{ou}\;(a=-\frac{1}{\sqrt{2}}\;\mbox{et}\;b=3(2+\sqrt{2})).
+\end{align*}
+
+On trouve deux fonctions solutions, les fonctions $f_1$ et $f_2$ définies par~:
+
+$$\forall x\in\Rr,\;f_1(x)=\frac{1}{\sqrt{2}}x+3(2-\sqrt{2})\;\mbox{et}\;f_2(x)=-\frac{1}{\sqrt{2}}x+3(2+\sqrt{2}).$$
+
+\fincorrection
+\finexercice

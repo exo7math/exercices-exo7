@@ -1,0 +1,86 @@
+\exercice{5626, rouget, 2010/10/16}
+\enonce[**]
+Soient $M(a)=\left(
+\begin{array}{ccc}
+4-a&1&-1\\
+-6&-1-a&2\\
+2&1&1-a
+\end{array}
+\right)$  et $N(a)=\left(
+\begin{array}{ccc}
+1-a&1&0\\
+0&1-a&0\\
+0&0&2-a
+\end{array}
+\right)$.
+$M(a)$ et $N(a)$ sont-elles semblables ?
+\finenonce
+
+\noindication
+
+\correction
+Si $M(a)$ et $N(a)$ sont semblables alors nécessairement $\text{Tr}(M(a))=\text{Tr}(N(a))$. Or, pour tout scalaire $a$, $\text{Tr}(M(a))=4-3a =\text{Tr}(N(a))$. La trace ne fournit aucun renseignement.
+
+On doit aussi avoir $\text{det}(M(a))=\text{det}(N(a))$. Or, $\text{det}(N(a))=(1-a)^2(2-a)$ et 
+
+\begin{align*}\ensuremath
+\text{det}(M(a))&= (4-a)(a^2-1-2)+6(1-a+1)+2(2-1-a) = (4-a)(a^2-3)+14-8a=-a^3+4a^2-5a+2\\
+ &= (a-1)^2(2-a)=\text{det}(N(a)).
+\end{align*}
+
+Le déterminant ne fournit aucun renseignement.
+
+Soit $f$ l'endomorphisme de $\Kk^3$ de matrice $M(a)$ dans la base canonique $\mathcal{B}_0=(i,j,k)$ de $\Kk^3$.
+
+Le problème posé équivaut à l'existence d'une base $\mathcal{B}=(e_1,e_2,e_3)$ de $\Kk^3$ telle que 
+$f(e_1)=(1-a)e_1$, $f(e_2) =(1-a)e_2 +e_1$ et $f(e_3)= (2-a)e_3$. Soit $(x,y,z)$ un élément de $\Kk^3$.
+
+\textbullet~$f((x,y,z)) =(1-a)(x,y,z)\Leftrightarrow\left\{
+\begin{array}{l}
+3x+y-z=0\\
+-6x-2y+2z=0\\
+2x+y=0
+\end{array}
+\right.\Leftrightarrow\left\{
+\begin{array}{l}
+y=-2x\\
+z=x
+\end{array}
+\right.$. On peut prendre $e_1=(1,-2,1)$.
+
+\textbullet~$f((x,y,z)) =(1-a)(x,y,z)+(1,-2,1)\Leftrightarrow\left\{
+\begin{array}{l}
+3x+y-z=1\\
+-6x-2y+2z=-2\\
+2x+y=1
+\end{array}
+\right.\Leftrightarrow\left\{
+\begin{array}{l}
+y=-2x-1\\
+z=x-2
+\end{array}
+\right.$. On peut prendre $e_2=(0,-1,-2)$.
+
+\textbullet~$f((x,y,z)) =(2-a)(x,y,z)\Leftrightarrow\left\{
+\begin{array}{l}
+2x+y-z=0\\
+-6x-3y+2z=0\\
+2x+y-z=0
+\end{array}
+\right.\Leftrightarrow\left\{
+\begin{array}{l}
+y=-2x\\
+z=0
+\end{array}
+\right.$. On peut prendre $e_3=(1,-2,0)$.
+
+La matrice de la famille $\mathcal{B}=(e_1,e_2,e_3)$ dans la base $\mathcal{B}_0$ est $P=\left(
+\begin{array}{ccc}
+1&0&1\\
+-2&-1&-2\\
+1&-2&0
+\end{array}
+\right)$. $\text{det}P=-4+4+1 =1\neq 0$ et donc la famille $\mathcal{B}=(e_1,e_2,e_3)$ est une base de $\Kk^3$. Puisque $\text{Mat}_{\mathcal{B}_0}f=
+M(a)$ et $\text{Mat}_{\mathcal{B}}f=N(a)$, les matrices $M(a)$ et $N(a)$ sont semblables.
+\fincorrection
+\finexercice

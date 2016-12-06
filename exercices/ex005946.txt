@@ -1,0 +1,26 @@
+\exercice{5946, tumpach, 2010/11/11}
+\enonce
+ Soit $f\in
+\mathcal{L}^1(\mathbb{R})$. Que vaut la limite
+$$ \lim_{n\to\infty} \int_{\mathbb{R}} f(x)\cos^n(\pi x) d\lambda (x) \
+?$$
+\finenonce
+
+\noindication
+
+\correction
+ Soit $f\in
+\mathcal{L}^1(\mathbb{R}).$ Comme $\cos(\pi x)<1$ si $x\notin
+\mathbb{Z},$ $\cos^n(\pi x)\rightarrow 0$ lorsque
+$n\rightarrow\infty$ presque partout (pour tout $x\in
+\mathbb{R}\setminus\mathbb{Z}$). Notons $f_n(x)=f(x) \cos^n(\pi
+x).$ Alors, pour tout $n\in \mathbb{N}$ on a $|f_n(x)|\leq |f(x)|$
+et comme $|f|\in \mathcal{L}^1(\mathbb{R}),$ par le
+th\'{e}or\`{e}me de convergence domin\'{e}e de Lebesgue,
+$$\lim\limits_{n\rightarrow\infty}\int_\mathbb{R} f(x)\cos^n(\pi x)d\lambda(x)=
+\lim\limits_{n\rightarrow\infty}\int_\mathbb{R}
+f_n(x)d\lambda(x)=\int_\mathbb{R}
+\lim\limits_{n\rightarrow\infty}f_n(x)d\lambda(x)=0.$$
+\fincorrection
+
+\finexercice

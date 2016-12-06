@@ -1,0 +1,26 @@
+\exercice{2372, mayer, 2003/10/01}
+\enonce 
+Soient $K,F\subset \Rr^n$ des parties non vides, $K$ compact et $F$ ferm\'e.
+Montrer qu'il existe $a\in K$ et $b \in F$ tel que $\|a-b\| = \mathrm{dist}(K,F)$.
+\finenonce
+
+\indication
+Extraire des sous-suites...
+\finindication
+
+\correction
+\begin{enumerate}
+  \item Notons $\ell = \mathrm{dist}(K,F)$. Alors il existe $(x_n)$ suite d'éléments de $K$ et $(y_n)$ suite d'éléments de $F$ telles que 
+$\|x_n - y_n\| \rightarrow \ell$. Comme $K$ est compact alors on peut extraire de $(x_n)$ une sous-suite $(x_{\phi(n)})$ qui converge dans $K$. Notons $a\in K$ cette limite
+Alors la suite extraite $(y_{\phi(n)})$ est bornée car
+$$\| y_{\phi(n)} \| \le \| y_{\phi(n)} - x_{\phi(n)}\|  + \|x_{\phi(n)}\|.$$
+La suite $(x_{\phi(n)})$ qui converge est donc bornée, et
+la suite $(\| y_{\phi(n)} - x_{\phi(n)}\|)$ qui converge dans $\Rr$ (vers $\ell$) est bornée également. Donc la suite $(y_{\phi(n)})$ est bornée on peut donc en extraire une sous-suite convergente $(y_{\phi\circ \psi (n)})$.
+De plus comme $F$ est fermé alors cette suite converge vers $b\in F$.
+La suite $(x_{\phi\circ \psi (n)})$ extraite de $(x_{\phi(n)})$ converge vers $a\in K$. Et comme nous avons extrait deux suites $(x_n)$ et $(y_n)$ on a toujours $\|x_{\phi\circ \psi (n)} - y_{\phi\circ \psi (n)}\| \rightarrow \ell$.
+A la limite nous obtenons $\| a-b\| = \ell$  avec $a\in K$ et $b\in F$.
+
+  \item Remarque : si $K$ était supposé fermé mais pas compact alors le résultat précédent pourrait être faux. Par exemple pour $K = \{ (x,y) \in \Rr^2 \mid xy \ge 1 \text { et } y \ge 0\}$ et $F = \{ (x,y) \in \Rr^2 \mid y \le0\}$ nous avons $d(K,F) = 0$ mais $K\cap F = \varnothing$.
+\end{enumerate}
+\fincorrection
+\finexercice

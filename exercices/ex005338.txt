@@ -1,0 +1,20 @@
+\exercice{5338, rouget, 2010/07/04}
+\enonce
+Soit $F=\frac{P}{Q}$ où $P$ et $Q$ sont des polynômes tous deux non nuls et premiers entre eux. Montrer que $F$ est paire si et seulement si $P$ et $Q$ sont pairs. Etablir un résultat analogue pour $F$ impaire.
+\finenonce
+
+\noindication
+
+\correction
+Soient $P$ et $Q$ deux polynômes non nuls et premiers entre eux, puis soit $F=\frac{P}{Q}$. Si $F$ est paire, alors $\frac{P(-X)}{Q(-X)}=\frac{P(X)}{Q(X)}$, ou encore $P(-X)Q(X)=P(X)Q(-X)$ $(*)$.
+
+Par suite, $P(X)$ divise $P(X)Q(-X)=Q(X)P(-X)$ et $P(X)$ est premier à $Q(X)$. D'après le théorème de \textsc{Gauss}, $P(X)$ divise $P(-X)$. Donc, il existe $\lambda\in\Cc^*$ tel que $P(-X)=\lambda P(X)$ (car $\mbox{deg}(P(-X))=\mbox{deg}(P)$). L'analyse des coefficients dominants des deux membres fournit $\lambda=(-1)^n$ où $n=\mbox{deg}P$. Ceci s'écrit $P(-X)=(-1)^nP(X)$. En reportant dans $(*)$, on obtient encore $Q(-X)=(-1)^n=Q(X)$. Ainsi, si $F$ est paire, alors $P$ et $Q$ sont ou bien tous deux pairs, ou bien tous deux impairs. Ce dernier cas est exclu, car alors $P$ et $Q$ admettraient tous deux $0$ pour racine contredisant le fait qu'ils sont premiers entre eux. Finalement, si $F$ est paire, alors $P$ et $Q$ sont pairs. La réciproque est claire.
+
+$$F\;\mbox{paire}\Leftrightarrow(P\;\mbox{et}\;Q\;\mbox{sont pairs.})$$
+
+Je vous laisse établir que
+
+$$F\;\mbox{impaire}\Leftrightarrow(P\;\mbox{est impair et}\;Q\;\mbox{est pair})\;\mbox{ou}(P\;\mbox{est pair et}\;Q\;\mbox{est impair.})$$
+
+\fincorrection
+\finexercice

@@ -1,0 +1,17 @@
+\exercice{5317, rouget, 2010/07/04}
+\enonce[**IT]
+Déterminer le PGCD de $X^6-7X^4+8X^3-7X+7$ et $3X^5-7X^3+3X^2-7$.
+\finenonce
+
+\noindication
+
+\correction
+$X^6-7X^4+8X^3-7X+7=(X^6+8X^3+7)-(7X^4+7X)=(X^3+1)(X^3+7)-7X(X^3+1)=(X^3+1)(X^3-7X+7)$ et $3X^5-7X^3+3X^2-7=3X^2(X^3+1)-7(X^3+1)=(X^3+1)(3X^2-7)$. Donc,
+
+$$(X^6-7X^4+8X^3-7X+7)\wedge(3X^5-7X^3+3X^2-7)=(X^3+1)((X^3-7X+7)\wedge(3X^2-7)).$$
+
+Maintenant, pour $\varepsilon\in\{-1,1\}$, $(\varepsilon\sqrt{\frac{7}{3}})^3-7(\varepsilon\sqrt{\frac{7}{3}})+7=-(\varepsilon\frac{14}{3}\sqrt{\frac{7}{3}})+7\neq0$.
+
+Les polynômes $(X^3-7X+7)$ et $(3X^2-7)$ n'ont pas de racines communes dans $\Cc$ et sont donc premiers entre eux. Donc, $(X^6-7X^4+8X^3-7X+7)\wedge(3X^5-7X^3+3X^2-7)=X^3+1$.
+\fincorrection
+\finexercice

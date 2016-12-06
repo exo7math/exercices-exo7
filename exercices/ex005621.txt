@@ -1,0 +1,25 @@
+\exercice{5621, rouget, 2010/10/16}
+\enonce[**]
+Soient $A$ une matrice carrée de format $n$ et $f$ l'application de $\mathcal{M}_n(\Cc)$ dans lui-même qui à une matrice $M$ associe $MA$. Trouver la matrice de $f$ dans la base canonique de $\mathcal{M}_n(\Cc)$ (ordonnée par l'ordre lexicographique).
+\finenonce
+
+\noindication
+
+\correction
+Soient $i$ et $j$ deux indices pris dans $\llbracket1,n\rrbracket$.
+
+\begin{center}
+$f(E_{i,j})=E_{i,j}\sum_{1\leqslant k,l\leqslant n}^{}a_{k,l}E_{k,l}=\sum_{l=1}^{n}a_{j,l}E_{i,l}$,
+\end{center}
+
+et en remplissant coefficient à coefficient, on trouve la matrice 
+définie par blocs $\left(
+\begin{array}{cccc}
+{^t}A&0&\ldots&0\\
+0&\ddots&\ddots&\vdots\\
+\vdots&\ddots&\ddots&0\\
+0&\ldots&0&{^t}A
+\end{array}
+\right)$.
+\fincorrection
+\finexercice

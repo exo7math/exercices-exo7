@@ -1,0 +1,27 @@
+\exercice{4502, quercia, 2010/03/14}
+\enonce[Mines MP 2001]
+
+Déterminer l'ensemble de définition de $f(x) = \sum_{k=2}^\infty\frac{(-1)^k}{x+k}$.
+Montrer que $f$ est de classe $\mathcal{C}^\infty$ sur son domaine et la développer
+en série entière.
+
+
+\finenonce
+
+\noindication
+
+\correction
+La série converge pour tout $x\notin\{-2,-3,\dots\}$ car le critère
+des séries alternées s'applique à partir d'un certain rang (fonction de~$x$).
+Il en va de même pour toutes les séries obtenues par dérivations successives
+terme à terme, et ces séries convergent localement uniformément (le reste
+d'une série vérifant le CSA est majoré en valeur absolue par la valeur
+absolue du premier terme figurant dans le reste) donc $f$ est $\mathcal{C}^\infty$.
+
+Pour $|x|<2$ on a
+$$f(x) = \sum_{k=2}^\infty\sum_{n=0}^\infty\frac{(-1)^k}k\Bigl(\frac{-x}k\Bigr)^n
+      = \sum_{k=2}^\infty\sum_{n=0}^\infty\frac{(-1)^{k+n}}{k^{n+1}}x^n
+      = (1-\ln2) + \sum_{n=1}^\infty(-1)^n(1-(1-2^{-n})\zeta(n+1))x^n.$$
+\fincorrection
+
+\finexercice

@@ -1,0 +1,196 @@
+\exercice{5811, rouget, 2010/10/16}
+\enonce[**]
+Sur $E =\Rr^2$ ou $\Rr^3$ muni de sa structure euclidienne usuelle, réduire en base orthonormée les formes quadratiques suivantes :
+
+\begin{enumerate}
+ \item  $Q((x,y)) = x^2+10xy+y^2$.
+
+\item  $Q((x,y)) = 6x2+4xy+9y2$.
+
+\item  $Q((x,y,z)) = 4x^2+9y^2-z^2+2\sqrt{6}xy +10\sqrt{2}xz+2\sqrt{3}yz$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  (Quand $x^2$ et $y^2$ ont les mêmes coefficients, penser à faire une rotation d'angle $\frac{\pi}{4}$) En posant $x=\frac{1}{\sqrt{2}}(X+Y)$ et $y =\frac{1}{\sqrt{2}}(X-Y)$, on obtient
+
+\begin{center}
+$x^2+10xy+y^2=\frac{1}{2}(X+Y)^2+5(X+Y)(X-Y)+\frac{1}{2}(X-Y)^2=6X^2-4Y^2$.
+\end{center}
+
+Ainsi, si on note $(i,j)$ la base canonique de $\Rr^2$ puis $e_1=\frac{1}{\sqrt{2}}(i+j)$ et $e_2=\frac{1}{\sqrt{2}}(i-j)$, on a
+
+\begin{center}
+$x^2+10xy+y^2=Q(xi+yj)=Q(Xe_1+Ye_2)=6X^2-4Y^2$.
+\end{center}
+
+\item  La matrice de $Q$ dans la base canonique $(i,j)$ de $\Rr^2$ est $A=\left(
+\begin{array}{cc}
+6&2\\
+2&9
+\end{array}
+\right)$. Les deux nombres $5$ et $10$ ont une somme égale à $15 =\text{Tr}(A)$ et un produit égal à $50=\text{det}(A)$ et sont donc les valeurs propres de $A$. On sait alors que dans une base orthonormée $(e_1,e_2)$ de vecteurs propres de $A$ associée à la famille de valeurs propres $(5,10)$, on a $Q(Xe_1+Ye_2)=5X^2+10Y^2$. Déterminons une telle base.
+
+$(A-5I_2)\left(
+\begin{array}{c}
+x\\
+y
+\end{array}
+\right)=\left(
+\begin{array}{c}
+0\\
+0
+\end{array}
+\right)\Leftrightarrow x+2y = 0$ et donc $\text{Ker}(A-5I_2) =\text{Vect}(e_1)$ où $e_1=\frac{1}{\sqrt{5}}(2,-1)$  puis $\text{Ker}(A-10I_2) =(\text{Ker}(A-5I_2))^\bot=\text{Vect}(e_2)$ où $e_2=\frac{1}{\sqrt{5}}(1,2)$.
+
+Donc, si $e_1=\frac{1}{\sqrt{5}}(2,-1)$, $e_2=\frac{1}{\sqrt{5}}(1,2)$ et $u=xi+yj=Xe_1+Ye_2$, alors $q(u)=6x2+4xy+9y2= 5X^2 + 10Y^2$. De plus, $x=\frac{1}{\sqrt{5}}(2X+Y)$ et $y=\frac{1}{\sqrt{5}}(-X+2Y)$.
+
+\item  La matrice de $Q$ dans la base canonique est $A=\left(
+\begin{array}{ccc}
+4&\sqrt{6}&5\sqrt{2}\\
+\sqrt{6}&9&\sqrt{3}\\
+5\sqrt{2}&\sqrt{3}&-1
+\end{array}
+\right)$.
+
+\begin{align*}\ensuremath
+\chi_A&=\left|
+\begin{array}{ccc}
+4-X&\sqrt{6}&5\sqrt{2}\\
+\sqrt{6}&9-X&\sqrt{3}\\
+5\sqrt{2}&\sqrt{3}&-1-X
+\end{array}
+\right|= (4-X)(X^2-8X-12)-\sqrt{6}(-\sqrt{6}X-6\sqrt{6})+5\sqrt{2}(5\sqrt{2}X-42\sqrt{2})\\
+ &= -X^3+12X^2+36X-432 =-(X-6)(X+6)(X-12).
+\end{align*}
+
+Ensuite,
+
+\begin{align*}\ensuremath
+\left(
+\begin{array}{c}
+x\\
+y\\
+z
+\end{array}
+\right)\in\text{Ker}(A-6I_3)&\Leftrightarrow\left\{
+\begin{array}{l}
+-2x+\sqrt{6}y+5\sqrt{2}z=0\\
+\sqrt{6}x+3y+\sqrt{3}z=0\\
+5\sqrt{2}x+\sqrt{3}y-7z=0
+\end{array}
+\right.\Leftrightarrow\left\{
+\begin{array}{l}
+z=-\sqrt{2}x-\sqrt{3}y\\
+-2x+\sqrt{6}y+5\sqrt{2}(-\sqrt{2}x-\sqrt{3}y)=0\\
+5\sqrt{2}x+\sqrt{3}y-7(-\sqrt{2}x-\sqrt{3}y)=0
+\end{array}
+\right.\\
+ &\Leftrightarrow\left\{
+\begin{array}{l}
+z=-\sqrt{2}x-\sqrt{3}y\\
+-12x-4\sqrt{6}y=0\\
+12\sqrt{2}x+8\sqrt{3}y=0
+\end{array}
+\right.\Leftrightarrow\left\{
+\begin{array}{l}
+y=-\sqrt{\frac{3}{2}}x\\
+z=-\sqrt{2}x-\sqrt{3}(-\sqrt{\frac{3}{2}}x)
+\end{array}
+\right.\Leftrightarrow\left\{
+\begin{array}{l}
+y=-\sqrt{\frac{3}{2}}x\\
+z=\frac{\sqrt{2}}{2}x
+\end{array}
+\right.\Leftrightarrow\left\{
+\begin{array}{l}
+x=\sqrt{2}z\\
+y=-\sqrt{3}{z}
+\end{array}
+\right.
+\end{align*}
+
+et $\text{Ker}(A-6I_3) =\text{Vect}(e_1)$ où $e_1=\frac{1}{\sqrt{6}}(\sqrt{2},-\sqrt{3},1)$. De même,
+
+   
+\begin{align*}\ensuremath
+\left(
+\begin{array}{c}
+x\\
+y\\
+z
+\end{array}
+\right)\in\text{Ker}(A+6I_3)&\Leftrightarrow\left\{
+\begin{array}{l}
+10x+\sqrt{6}y+5\sqrt{2}z=0\\
+\sqrt{6}x+15y+\sqrt{3}z=0\\
+5\sqrt{2}x+\sqrt{3}y+5z=0
+\end{array}
+\right.\Leftrightarrow\left\{
+\begin{array}{l}
+z=-\sqrt{2}x-5\sqrt{3}y\\
+10x+\sqrt{6}y+5\sqrt{2}(-\sqrt{2}x-5\sqrt{3}y)=0\\
+5\sqrt{2}x+\sqrt{3}y+5(-\sqrt{2}x-5\sqrt{3}y)=0
+\end{array}
+\right.\\
+ &\Leftrightarrow\left\{
+\begin{array}{l}
+z=-\sqrt{2}x-\sqrt{3}y\\
+y=0
+\end{array}
+\right.\Leftrightarrow\left\{
+\begin{array}{l}
+y=0\\
+z=-\sqrt{2}x
+\end{array}
+\right.
+\end{align*}
+
+ 
+et $\text{Ker}(A+6I_3) =\text{Vect}(e_2)$ où $e_2=\frac{1}{\sqrt{3}}(1,0,-\sqrt{2})$.
+
+Enfin $\text{Ker}(A-12I_3) =\text{Vect}(e_3)$ où 
+
+\begin{center}
+$e_3 =e_1\wedge e_2=\frac{1}{3\sqrt{2}}\left(
+\begin{array}{c}
+\sqrt{2}\\
+-\sqrt{3}\\
+1
+\end{array}
+\right)\wedge\left(
+\begin{array}{c}
+1\\
+0\\
+-\sqrt{2}
+\end{array}
+\right)=\frac{1}{3\sqrt{2}}\left(
+\begin{array}{c}
+\sqrt{6}\\
+3\\
+\sqrt{3}
+\end{array}
+\right)$.
+\end{center}
+
+Ainsi, si on pose $P=\left(
+\begin{array}{ccc}
+\frac{1}{\sqrt{3}}&\frac{1}{\sqrt{3}}&\frac{1}{\sqrt{3}}\\
+-\frac{1}{\sqrt{2}}&0&\frac{1}{\sqrt{2}}\\
+\frac{1}{\sqrt{6}}&-\frac{2}{\sqrt{6}}&\frac{1}{\sqrt{6}}
+\end{array}\right)$ alors $PA{^t}P=\text{diag}(6,-6,12)$ ou encore
+
+\begin{center}
+$Q(Xe_1+Ye_2+Ze_3) =6X^2-6Y^2+12Z^2$ où $\text{Mat}_{(i,j,k)}(e_1,e_2,e_3)=\left(
+\begin{array}{ccc}
+\frac{1}{\sqrt{3}}&\frac{1}{\sqrt{3}}&\frac{1}{\sqrt{3}}\\
+-\frac{1}{\sqrt{2}}&0&\frac{1}{\sqrt{2}}\\
+\frac{1}{\sqrt{6}}&-\frac{2}{\sqrt{6}}&\frac{1}{\sqrt{6}}
+\end{array}\right)$.
+\end{center} 
+\end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,78 @@
+\exercice{190, ridde, 1999/11/01}
+\video{GVJXQpK7lpY}
+\enonce
+Les applications suivantes sont-elles injectives, surjectives, bijectives ?
+\begin{enumerate}
+\item $f : {\Nn} \to {\Nn}, {n} \mapsto {n + 1}$
+\item $g : {\Zz} \to {\Zz}, {n}\mapsto{n + 1}$
+\item $h : {\Rr^2} \to {\Rr^2}, {(x, y)}\mapsto{ (x + y, x-y)}$
+\item $k : {\Rr \setminus \left\{ 1\right\}} \to {\Rr}, {x}\mapsto{\frac{x + 1}{x - 1}}$
+\end{enumerate}
+\finenonce
+
+\indication
+\begin{enumerate}
+\item $f$ est injective mais pas surjective.
+\item $g$ est bijective. 
+\item $h$ aussi.
+\item $k$ est injective mais par surjective.
+\end{enumerate}
+\finindication
+
+\correction
+\begin{enumerate}
+\item $f$ n'est pas surjective car $0$ n'a pas d'antécédent : en effet il n'existe pas de $n\in\Nn$ tel que $f(n)=0$ (si ce $n$ existait ce serait $n=-1$
+qui n'est pas un élément de $\Nn$). Par contre $f$ est injective : soient $n,n' \in \Nn$ tels que $f(n)=f(n')$ alors
+$n+1=n'+1$ donc $n=n'$. Bilan $f$ est injective, non surjective et donc non bijective.
+
+\item Pour montrer que $g$ est bijective deux méthodes sont possibles. Première méthode : montrer que $g$ est à la fois injective et surjective.
+En effet soient $n,n'\in \Zz$ tels que $g(n)=g(n')$ alors $n+1=n'+1$ donc $n=n'$, alors $g$ est injective. Et $g$ est surjective car chaque $m\in \Zz$
+admet un antécédent par $g$ : en posant $n=m-1 \in \Zz$ on trouve bien $g(n)=m$.
+Deuxième méthode : expliciter directement la bijection réciproque. Soit la fonction $g' : \Zz \to \Zz$ définie par $g'(m)=m-1$
+alors $g' \circ g(n) = n$ (pour tout $n\in \Zz$) et $g \circ g'(m) = m$ (pour tout $m\in \Zz$). Alors $g'$ est la bijection réciproque de $g$
+et donc $g$ est bijective.
+
+\item Montrons que $h$ est injective. Soient $(x,y), (x',y') \in \Rr^2$ tels que $h(x,y)=h(x',y')$.
+Alors $(x + y, x-y)=(x' + y', x'-y')$ donc 
+$$\begin{cases}
+    x+y &= x'+y'\\
+    x-y &= x'-y'\\
+  \end{cases}$$
+En faisant la somme des lignes de ce système on trouve $2x=2x'$ donc $x=x'$ et avec la différence on obtient $y=y'$.
+Donc les couples $(x,y)$ et $(x',y')$ sont égaux. Donc $h$ est injective.
+
+Montrons que $h$ est surjective. Soit $(X,Y) \in \Rr^2$, cherchons lui un antécédent $(x,y)$ par $h$.
+Un tel antécédent vérifie $h(x,y)=(X,Y)$, donc $(x+y,x-y)=(X,Y)$ ou encore :
+$$\begin{cases}
+    x+y &= X\\
+    x-y &= Y\\
+  \end{cases}$$
+Encore une fois on faisant la somme des lignes on obtient $x=\frac{X+Y}{2}$ et avec la différence $y = \frac{X-Y}{2}$,
+donc $(x,y) = (\frac{X+Y}{2},\frac{X-Y}{2})$. La partie ``analyse'' de notre raisonnement en finie passons à la ``synthèse'' :
+il suffit de juste de vérifier que le couple $(x,y)$ que l'on a obtenu est bien solution (on a tout fait pour !).
+Bilan pour $(X,Y)$ donné, son antécédent par $h$ existe et est $(\frac{X+Y}{2},\frac{X-Y}{2})$. Donc $h$ est surjective.
+
+En fait on pourrait montrer directement que $h$ est bijective en exhibant sa bijection réciproque $(X,Y) \mapsto (\frac{X+Y}{2},\frac{X-Y}{2})$.
+Mais vous devriez vous convaincre qu'il s'agit là d'une différence de rédaction, mais pas vraiment d'un raisonnement différent.
+
+
+        
+\item Montrons d'abord que $k$ est injective : soient $x,x' \in \Rr\setminus \{1\}$ tels que $k(x)=k(x')$ alors
+$\frac{x + 1}{x - 1}=\frac{x' + 1}{x' - 1}$ donc $(x+1)(x'-1)=(x-1)(x'+1)$. En développant nous obtenons
+$xx'+x'-x=xx'-x'+x$, soit $2x=2x'$ donc $x=x'$.
+
+Au brouillon essayons de montrer que $k$ est surjective : soit $y\in \Rr$ et cherchons $x\in \Rr\setminus \{1\}$
+tel que $f(x)=y$. Si un tel $x$ existe alors il vérifie $\frac{x + 1}{x - 1}=y$ donc
+$x+1=y(x-1)$, autrement dit $x(y-1)=y+1$. Si l'on veut exprimer $x$ en fonction de $y$ cela se fait par la formule
+$x = \frac{y+1}{y-1}$. Mais attention, il y a un piège ! Pour $y=1$ on ne peut pas trouver d'antécédent $x$ 
+(cela revient à diviser par $0$ dans la fraction précédente).
+Donc $k$ n'est pas surjective car $y=1$ n'a pas d'antécédent.
+
+Par contre on vient de montrer que s'il l'on considérait la restriction $k_| :  {\Rr \setminus \left\{ 1\right\}} \to {\Rr \setminus \left\{ 1\right\}}$
+qui est définie aussi par $k_|(x) = {\frac{x + 1}{x - 1}}$ (seul l'espace d'arrivée change par rapport à $k$) alors
+cette fonction $k_|$ est injective et surjective, donc bijective (en fait sa bijection réciproque est elle même).
+
+\end{enumerate}
+\fincorrection
+
+\finexercice

@@ -1,0 +1,65 @@
+\exercice{2021, liousse, 2003/10/01}
+\video{6HAwYKkwS8Y}
+\enonce
+\begin{enumerate}
+\item Déterminer la distance du point $A$ au plan $(P)$
+
+\begin{enumerate}
+\item $A(1,0,2)$ et $(P): 2x+y+z+4=0$.
+\item $A(3,2,1)$ et $(P): -x+5y-4z=5$.
+\end{enumerate} 
+\item Calculer la distance du point $A(1,2,3)$ à la droite 
+$(D):  \left\{ \begin{array}{l}
+-2x+y-3z=1\\ x+z=1  \end{array} \right.$
+\end{enumerate} 
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item La distance d'un point $A=(x_0,y_0,z_0)$ à un plan $P$ d'équation 
+$ax+by+cz+d=0$ est donnée par la formule :
+$$d(A,P) = \frac{|ax_0+by_0+cz_0+d|}{\sqrt{a^2+b^2+c^2}}.$$
+On trouve donc
+  \begin{enumerate}
+    \item $d(A,P)=\frac{|2\cdot 1+1\cdot 0+1\cdot 2+4|}{\sqrt{2^2+1^2+1^2}}= \frac{8}{\sqrt6}=\frac{4\sqrt6}{3}$.
+    \item $d(A,P)=\frac{2}{\sqrt{42}}$.
+  \end{enumerate}
+
+
+  \item Trouvons d'abord une équation paramétrique de la droite $D$.
+On pose par exemple $z=t$ et on exprime $x$ et $y$ en fonction de $t$.
+Partant du système $\left\{ \begin{array}{l}
+-2x+y-3z=1\\ x+z=1  \end{array} \right.$
+on trouve $x=1-t$ et $y=3+t$.
+La droite $D$ est donc l'ensemble des point $M_t=(1-t,3+t,t)$ ($t$ parcourant $\Rr$).
+
+La distance $AM_t$ vérifie donc
+$$AM_t^2 = \|\vec AM_t \|^2 = \| (1-t-1,3+t-2,t-3)\|^2 = t^2 + (t+1)^2+(t-3)^2 = 3t^2-4t+10.$$
+Minimiser cette distance c'est trouver le minimum de la fonction $\delta(t)=3t^2-4t+10$.
+Il est donc atteint pour $t_0$ vérifiant $\delta'(t_0)=0$, donc pour $t_0=\frac23$.
+La distance entre $A$ et la droite $D$ est donc la longueur $AM_{t_0}=\sqrt{\delta(t_0)}=\sqrt{\frac{26}{3}}$.
+Au passage on a obtenu la perpendiculaire à $D$ passant par $A$ c'est la droite $(AM_{t_0})$.
+
+\bigskip
+
+
+\textbf{Autre méthode.}
+
+Il existe une formule pour calculer directement la distance.
+Si $\vec v$ est un vecteur directeur de $D$  et $M_0$ un point de $D$
+alors
+$$d(A,D)= \frac{\|\vec v \wedge \overrightarrow{AM_0}\|}{\|\vec v\|}.$$
+On a paramétré la droite $D$ par les points $M_t = (1,3,0)+t (-1,1,1)$.
+Donc $M_0=(1,3,0)\in D$ et $\vec v= (-1,1,1)$ est un vecteur directeur de $D$.
+On a alors $\overrightarrow{AM_0} = (0,1,-3)$ et
+$\vec v \wedge \overrightarrow{AM_0} = (-4,-3,-1)$ :
+on obtient : 
+$$d(A,D)= \frac{\|\vec v \wedge \overrightarrow{AM_0}\|}{\|\vec v\|} = \frac{\sqrt{26}}{\sqrt{3}}.$$
+
+\end{enumerate}
+
+\fincorrection
+
+\finexercice

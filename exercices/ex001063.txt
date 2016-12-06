@@ -1,0 +1,41 @@
+\exercice{1063, ridde, 1999/11/01}
+\video{-ew4tp-RHJY}
+\enonce
+Soient $A$ et $B \in \mathcal{M}_n(\Rr)$ telles que $\forall X \in \mathcal{M}_n (\Rr)$,
+$\text{tr} (AX) = \text{tr} (BX)$. Montrer que $A = B$.
+\finenonce
+
+\indication
+Essayer avec $X$ la matrice élémentaire $E_{ij}$ (des zéros partout sauf le coefficient $1$ à la
+ $i$-ème ligne et la $j$-ème colonne).
+\finindication
+
+\correction
+Notons $E_{ij}$ la matrice élémentaire (des zéros partout sauf le coefficient $1$ à la
+ $i$-ème ligne et la $j$-ème colonne).
+
+Soit $A = (a_{ij})  \in \mathcal{M}_n(\Rr)$.
+Alors 
+$$A \times E_{ij} = 
+\begin{pmatrix}  
+0 & 0 & \cdots & 0 & a_{1i} & 0 & \cdots \\
+0 & 0 & \cdots & 0 & a_{2i} & 0 & \cdots \\
+\vdots&  & \cdots & & \vdots &  & \cdots \\
+0 & 0 & \cdots & 0 & a_{ji} & 0 & \cdots \\
+\vdots&  & \cdots & & \vdots &  & \cdots \\
+0 & 0 & \cdots & 0 & a_{ni} & 0 & \cdots \\
+\end{pmatrix}$$
+La seule colonne non nulle est la $j$-ème colonne.
+
+La trace est la somme des éléments sur la diagonale. Ici le seul élément non nul de la diagonale est
+$a_{ji}$, on en déduit donc 
+$$\text{tr} (A \times E_{ij})=a_{ji}$$
+(attention à l'inversion des indices).
+
+Maintenant prenons deux matrices $A, B$ telles que $\text{tr} (AX) = \text{tr} (BX)$
+pour toute matrice $X$. Alors pour $X=E_{ij}$ on en déduit $a_{ji}=b_{ji}$.
+On fait ceci pour toutes les matrices élémentaires $E_{ij}$ avec $1 \le i,j \le n$
+ce qui implique $A=B$.
+\fincorrection
+
+\finexercice

@@ -1,0 +1,32 @@
+\exercice{5630, rouget, 2010/10/16}
+\enonce[**]
+Sur $E =\Rr_3[X]$, on pose pour tout $P\in E$, $\varphi_1(P)=P(0)$  et $\varphi_2(P) = P(1)$ puis $\psi_1(P) =P'(0)$ et $\psi_2(P) = P'(1)$. Montrer que $(\varphi_1,\varphi_2,\psi_1,\psi_2)$ est une base de $E^*$ et trouver la base dont elle est la duale.
+\finenonce
+
+\noindication
+
+\correction
+ Les quatre applications $\varphi_1$, $\varphi_2$, $\psi_1$ et $\psi_2$ sont effectivement des formes linéaires sur $E$.
+
+Cherchons tout d'abord la future  base préduale de la famille $(\varphi_1,\varphi_2,\psi_1,\psi_2)$. On note $(P_0,P_1,P_2,P_3)$ cette future base.
+
+\textbullet~On doit avoir $\varphi_1(P_2)=\varphi_2(P_2)=\psi_2(P_2)=0$ et $\psi_1(P_2)=1$. Ainsi, $P_2$ s'annule en $0$ et en $1$ et de plus $P_2'(1) = 0$. Donc $P_2$ admet $0$ pour racine d'ordre $1$ au moins et $1$ pour racine d'ordre 2 au moins. Puisque $P_2$ est de degré inférieur ou égal à $3$, il existe une constante $a$ telle que $P_2=aX(X-1)^2=aX^3-2aX^2+aX$ puis $P_2'(0) = 1$ fournit $a = 1$ puis $P_2 =X(X-1)^2$.
+
+\textbullet~De même, il existe une constante $a$ telle que $P_3 = aX^2(X-1)=aX^3-aX^2$ et $1 = P_3'(1) = 3a - 2a$ fournit $P_3 = X^2(X-1)$.
+
+\textbullet~$P_0$ admet $1$ pour racine double et donc il existe deux constantes $a$ et $b$ telles que $P_0 =(aX+b)(X-1)^2$ puis les égalités $P_0(0) =1$ et $P_0'(0) = 0$ fournissent 
+$b = 1$ et $a - 2b = 0$. Par suite, $P_0 =(2X+1)(X-1)^2$.
+
+\textbullet~$P_1$ admet $0$ pour racine double et il existe deux constantes $a$ et $b$ telles que 
+$P_1 = (aX+b)X^2$ puis les égalités $P_1(1) = 1$ et $P_1'(1) = 0$ fournissent $a+b = 1$ et $3a+2b = 0$ et donc $P_1 = (-2X + 3)X^2$.
+
+\begin{center}
+\shadowbox{
+$P_0=(2X+1)(X-1)^2$, $P_1=(-2X+3)X^2$, $P_2=X(X-1)^2$ et $P_3=X^2(X-1)$.
+}
+\end{center}
+
+Montrons alors que $(\varphi_0,\varphi_1,\varphi_2,\varphi_3)$ est une base de $E^*$.
+Cette famille est libre car si  $a\varphi_1+ b\varphi_2 + c\psi_1 + d\psi_2 = 0$, on obtient en appliquant successivement à $P_0$, $P_1$, $P_2$ et $P_3$, $a=b=c=d=0$. Mais alors, la famille   $(\varphi_1,\varphi_2,\psi_1,\psi_2)$ est une famille libre de $E^*$ de cardinal $4$et donc une base de $E^*$. Sa préduale est $(P_0,P_1,P_2,P_3)$.
+\fincorrection
+\finexercice

@@ -1,0 +1,28 @@
+\exercice{3359, quercia, 2010/03/09}
+\enonce[Matrices stochastiques]
+
+Soit\\ 
+${\cal D} = \left\{ A=(a_{ij}) \in \mathcal{M}_n(\R) \text{ tq } \forall\ i,j,\ a_{ij} \ge 0
+      \text{ et } \forall\ i,\ \sum_{j=1}^n a_{ij} = 1 \right\}$.
+
+\begin{enumerate}
+  \item Montrer que ${\cal D}$ est stable par multiplication.
+  \item Déterminer les matrices $A \in {\cal D}$ inversibles telles que
+    $A^{-1} \in {\cal D}$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+2. Si $A,B \in {\cal D}$ et $AB = I$, alors pour $i \ne j$,
+    $\forall\ k,\ a_{ik}b_{kj} = 0$.
+
+    Soit $a_{i1} \ne 0$ : alors $b_{1j} = 0$ pour tout $j \ne i$, donc
+    $a_{i1} = b_{1i} = 1$.
+
+    Donc chaque colonne de $A$ contient $n-1$ fois $0$ et une fois $1$.
+    $A$ est inversible $ \Rightarrow  A$ est une matrice de permutation.
+ \fincorrection
+
+\finexercice

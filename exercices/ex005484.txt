@@ -1,0 +1,23 @@
+\exercice{5484, rouget, 2010/07/10}
+\enonce[**IT]
+Dans $\Rr^4$ muni du produit scalaire usuel, on pose~:~$V_1=(1,2,-1,1)$ et $V_2=(0,3,1,-1)$.
+On pose $F=\mbox{Vect}(V_1,V_2)$. Déterminer une base orthonormale de $F$ et un système d'équations de $F^\bot$.
+\finenonce
+
+\noindication
+
+\correction
+La famille $(V_1,V_2)$ est clairement libre et donc une base de $F$. Son orthonormalisée $(e_1,e_2)$ est une base orthonormée de $F$.
+$||V_1||=\sqrt{1+4+1+1}=\sqrt{7}$ et $e_1=\frac{1}{\sqrt{7}}V_1=\frac{1}{\sqrt{7}}(1,2,-1,1)$.
+$(V_2|e_1)=\frac{1}{\sqrt{7}}(0+6-1-1)=\frac{4}{\sqrt{7}}$  puis $V_2-(V_2|e_1)e_1=(0,3,1,-1)-\frac{4}{7} (1,2,-1,1)=\frac{1}{7}(-4,13,11,-11)$ puis $e_2=\frac{1}{\sqrt{427}}(-4,13,11,-11)$.
+Une base orthonormée de $F$ est $(e_1,e_2)$ où $e_1=\frac{1}{\sqrt{7}}(1,2,-1,1)$ et $e_2=\frac{1}{\sqrt{427}}(-4,13,11,-11)$.
+Soit $(x,y,z,t)\in\Rr^4$.
+
+$$(x,y,z,t)\in F^\bot\Leftrightarrow(x,y,z,t)\in(V_1,V_2)^\bot\Leftrightarrow\left\{
+\begin{array}{l}
+x+2y-z+t=0\\
+3y+z-t=0
+\end{array}
+\right..$$
+\fincorrection
+\finexercice

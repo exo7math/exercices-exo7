@@ -1,0 +1,19 @@
+\exercice{4596, quercia, 2010/03/14}
+\enonce[Produit de Cauchy]
+
+Soit $(c_n)$ le produit de Cauchy de la suite $(a_n)$ par la suite
+$(b_n)$. On suppose que la série $A(z) = \sum_{n=0}^\infty a_nz^n$
+a un rayon $R > 0$ et que $b_n/b_{n+1} \to \lambda$ lorsque $n\to\infty$
+avec $|\lambda| < R$.
+Montrer que $c_n/b_n\to A(\lambda)$ lorsque $n\to\infty$.
+\finenonce
+
+\noindication
+
+\correction
+$\frac{c_n}{b_n} = a_0 + a_1\frac{b_{n-1}}{b_n} + \dots + a_n\frac{b_0}{b_n}
+                  = \sum_{k=0}^\infty a_ku_{n,k}$
+et le théorème de convergence dominée s'applique.
+\fincorrection
+
+\finexercice

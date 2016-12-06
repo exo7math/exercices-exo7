@@ -1,0 +1,27 @@
+\exercice{254, bodin, 1998/09/01}
+\video{I_npnj8Lb0M}
+\enonce
+ D\'emontrer que le nombre $7^n+1$ est divisible par
+$8$ si $n$ est impair ; dans le cas $n$ pair, donner le reste de
+sa division par $8$.
+
+\finenonce 
+
+\indication
+Utiliser les modulos (ici modulo $8$),
+un entier est divisible par $8$ si et seulement si
+il est \'equivalent \`a $0$ modulo $8$.
+Ici vous pouvez commencer par calculer $7^n \pmod{8}$.
+\finindication
+
+\correction
+Raisonnons modulo $8$ :
+$$7 \equiv -1 \pmod{8}.$$
+Donc
+$$7^n +1 \equiv (-1)^n + 1 \pmod{8}.$$
+
+Le reste de la division euclidienne de $7^n+1$ par $8$ est donc
+$(-1)^n+1$ donc Si $n$ est impair alors $7^n+1$ est divisible par
+$8$. Et si $n$ est pair $7^n+1$ n'est pas divisible par $8$.
+\fincorrection
+\finexercice

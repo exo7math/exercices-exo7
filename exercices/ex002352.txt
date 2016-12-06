@@ -1,0 +1,66 @@
+\exercice{2352, queffelec, 2003/10/01}
+\enonce
+Soit $\R^n$ considéré comme groupe additif muni de sa topologie usuelle.
+Soit $G$ un sous-groupe de $\R^n$.
+\begin{enumerate}
+\item On suppose que $0$ est isolé dans $G$. Montrer que tout point est isolé,
+que $G$ est discret et fermé dans $\R^n$.
+
+ On se restreint maintenant au cas $n=1$.
+
+\item Montrer qu'alors, $G$ est soit $\{0\}$, soit de la forme
+$a\Zz$, $a>0$.
+
+\item Montrer que si $0$ est point d'accumulation, $G$ est partout dense dans $\R$. 
+En déduire ainsi les sous-groupes fermés de $\R$.
+
+\item On considère $\alpha\notin \Qq$; montrer que ${\Zz}+\alpha{\Zz}$ est un
+sous-groupe dense de $\Rr$. En déduire les valeurs d'adhérence de la suite
+$(e^{2i\pi n\alpha})_{n\in \Zz}$.
+\end{enumerate}
+\finenonce
+
+\noindication
+\correction
+\begin{enumerate}
+  \item (Correction pour $n=1$, pour $n>1$ remplacer les intervalles par des boules.) Comme $0$ est isolé soit $I =  ]-\epsilon,+\epsilon[$ un voisinage de 
+$0$ tel que $I\cap G = \{0\}$. Soit $g\in G$ et considérons $I_g = g+I = ]g-\epsilon,g+\epsilon[$. Supposons, par l'absurde, que $I_g \cap G$ ne soit pas réduit à $g$. Alors
+il existe $g' \in I_g\cap G$, $g'\neq g$. Mais $g-\epsilon < g' < g+\epsilon$ et
+donc $g-g'\in I$ comme $G$ est un groupe on a $g-g'\in G$ et on a $g-g'\neq 0$. On a donc trouvé un élément $g-g' \in G\cap I$ qui n'est pas $0$. Ce qui est une contradiction.
+
+Pour montrer que $G$ est discret (c'est-à-dire $G$ est dénombrable et ses points sont isolés) on remarque que la distance entre deux éléments de $G$ est au moins $\epsilon$ donc pour $J_g = ]g-\frac\epsilon2, g+\frac\epsilon2[$ on a
+$g\neq g'$ implique $J_g \cap J_{g'} = \varnothing$. Pour chaque $g\in G$ on choisit $q(g) \in \Qq \cap J_g$, ce qui donne une application :
+$\Phi : G \longrightarrow \Qq$ définie par $\Phi(g) = q(g)$, et $\Phi$ est injective, donc $G$ est dénombrable.
+
+Montrons que $G$ est fermé : soit $(g_n)$ une suite de $G$ qui converge vers $g\in\Rr$. Pour $N$ assez grand et pour tout $n\ge N$ on a
+$|g_n-g| \le \frac\epsilon 4$. Pour $n\ge N$ on a
+$|g_n-g_{N}| \le |g_n-g|+|g-g_{N}| \le \frac \epsilon4+\frac\epsilon4 \le\frac\epsilon2$. Donc comme $g_N\in J_{g_N}$ alors $g_n \in J_{g_N}$ également, or $J_{g_N}$ ne contient qu'un seul élément de $G$ donc
+$g_n = g_N$ pour tout $n\ge N$. La suite est donc stationnaire (i.e. constante à partir d'un certain rang) donc la limite $g$ vaut $g_N$ et en particulier
+$g \in G$.
+  
+  \item  Supposons $G\neq \{0\}$. Soit $a = \inf G\cap \Rr_+^*$. Comme $0$ est isolé alors $a>0$.
+Comme $G$ est fermé alors $a\in G$. Soit $g\in G$. Soit $k = E(\frac g a)$ alors $k \le  \ \frac g a < k+1$. Donc $0 \le g-ka < a$. Or $g-ka$ est dans $G$ et dans $\Rr_+$, comme il est plus petit que $a = \inf G\cap \Rr_+^*$ alors nécessairement $g-ka=0$, soit $g=ka \in a\Zz$.
+
+
+  \item Soit $x\in \Rr$ et $\epsilon >0$, on cherche $g\in G \cap ]x-\epsilon,x+\epsilon[$. Comme $0$ est un point d'accumulation de $G$ il existe $h\in G$ tel que $0<h<\epsilon$ pour $k = E(\frac xh)$, on a $kh \le x < kh+h$,
+donc $g=kh \in G \cap ]x-\epsilon,x+\epsilon[$. Donc $G$ est dense dans $\Rr$.
+
+
+Pour un groupe $G$ quelconque soit $0$  est isolé, soit $0$ est un point d'accumulation. Si en plus $G$ est fermé alors soit $G=a\Zz$ ou $G= \{0\}$,
+soit $\bar G= \Rr$ donc $G = \Rr$. Les sous-groupes fermés de $(\Rr,+)$ sont
+donc $0$, $\Rr$ et les $a\Zz$ avec $a>0$.
+
+  \item Soit $G = \Zz+\alpha\Zz$, c'est un sous-groupe de $(\Rr,+)$. Si $G$ n'est pas dense dans $\Rr$ alors, par les questions précédentes, il existe $a>0$ tel que $G=a\Zz$. En particulier $1\in G$ donc il existe $k\in \Zz$ tel que
+$1 = ka$ de même $\alpha \in G$ donc il existe $k' \in \Zz$ tel que $\alpha = k'a$. Par division $\alpha  = \frac {k'}k$. Ce qui contredit $\alpha \notin \Qq$. Donc $G = \Zz+\alpha\Zz$ est dense dans $\Rr$.
+
+Définissons $\Phi : \Rr \longrightarrow S^1$ par $t\mapsto e^{2i\pi t}$
+($S^1$ est le cercle de $\Cc$ des nombre complexes de module $1$).
+Alors $\Phi$ est continue et surjective. Comme $\Phi$ est continue alors pour tout ensemble $A\subset \Rr$ on $\Phi(\bar A)\subset \overline{\Phi(A)}$.
+Appliqu\'e à l'ensemble $G = \Zz+\alpha\Zz$, on a $\bar G = \Rr$  donc
+$\Phi(\bar G)= S^1$ car $\Phi$ est surjective ; d'autre part 
+$\Phi(G) = \{ e^{2i\pi k \alpha} \mid k\in \Zz \}$. Donc $S^1=\Phi(\bar G)   \subset \overline {\Phi(G)} = \overline {\{ e^{2i\pi k \alpha} \}}$.
+L'adhérence de $\{ e^{2i\pi k \alpha} \mid k \in \Zz\}$ est donc le cercle 
+$S^1$ tout entier.
+\end{enumerate}
+\fincorrection
+\finexercice

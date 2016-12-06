@@ -1,0 +1,151 @@
+\exercice{5840, rouget, 2010/10/16}
+\enonce[*** I]
+\begin{enumerate}
+ \item  Inégalités de \textsc{Hölder} et de \textsc{Minkowski}. Soit $(p,q)\in]0,+\infty[^2$  tel que $ \frac{1}{p}+ \frac{1}{q}=1$. 
+   \begin{enumerate}
+   \item Montrer que pour $(x,y)\in[0,+\infty[^2$, $xy\leqslant \frac{x^p}{p}+ \frac{x^q}{q}$.  
+
+   \item En déduire que $\forall((a_1,...,a_n),(b_1,...,b_n))\in(\Rr^n)^2$, $\left|\sum_{k=1}^{n}a_kb_k\right|\leqslant\left(\sum_{k=1}^{n}|a_k|^p\right)^{1/p}\left(\sum_{k=1}^{n}|b_k|^q\right)^{1/q}$.
+
+   \item En déduire que $\forall((a_1,...,a_n),(b_1,...,b_n))\in(\Rr^n)^2$,  $\left(\sum_{k=1}^{n}\left|a_k+b_k\right|^p\right)^{1/p}\leqslant\left(\sum_{k=1}^{n}\left|a_k\right|^p\right)^{1/p}+\left(\sum_{k=1}^{n}\left|b_k\right|^p\right)^{1/p}$.
+   \end{enumerate}
+
+ 
+
+\item  Soit $\alpha$ un réel strictement positif. Pour $x =(x_1,...,x_n)\in\Rr^n$, on définit $N_\alpha(x)=\left(\sum_{k=1}^{n}|x_k|^\alpha\right)^{1/\alpha}$.
+   \begin{enumerate}
+   \item Montrer que $\forall\alpha\geqslant1$, $N_\alpha$ est une norme sur $\Rr^n$.
+
+   \item Dessiner les \og boules unités \fg~de $\Rr^2$ dans le cas où $\alpha\in\left\{ \frac{2}{3},1, \frac{3}{2},2,+\infty\right\}$.
+
+   \item Montrer que, pour $x=(x_k)_{1\leqslant k\leqslant n}$ fixé, $\lim_{\alpha \rightarrow +\infty}N_\alpha(x) =\text{Max}\{|x_k|,\;1\leqslant k\leqslant n\}= N_\infty(x)$.
+
+   \item Montrer que si $0 <\alpha< 1$, $N_\alpha$ n'est pas une norme sur $\Rr^n$ (si $n\geqslant2)$.
+   \end{enumerate}
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Puisque $p>0$ et $q>0$, $1= \frac{1}{p}+ \frac{1}{q}> \frac{1}{p}$ et donc $p>1$. De même, $q>1$. D'autre part, $q= \frac{p}{p-1}$.
+
+  \begin{enumerate}
+  \item L'inégalité est immédiate quand $y=0$. Soit $y > 0$ fixé.
+
+Pour $x\geqslant0$, on pose $f(x)= \frac{x^p}{p}+ \frac{y^q}{q} -xy$. Puisque $p > 1$, la fonction $f$ est dérivable sur $[0,+\infty[$ et $\forall x\geqslant0$, $f'(x)=x^{p-1}-y$. $f$ admet donc un minimum en $x_0=y^{1/(p-1)}$ égal à 
+
+\begin{center}
+$f\left(y^{1/(p-1)}\right)= \frac{y^{p(p-1)}}{p}+ \frac{y^{p/(p-1)}}{q}-y^{1/(p-1)}y=y^{p/(p-1}\left( \frac{1}{p}+ \frac{1}{q}-1\right)= 0$.
+\end{center}
+
+Finalement, $f$ est positive sur $[0,+\infty[$ et donc
+
+\begin{center}
+\shadowbox{
+$\forall x\geqslant0$, $\forall y\geqslant0$, $xy\leqslant \frac{x^p}{p}+ \frac{y^q}{q}$.
+}
+\end{center}
+
+  \item Posons $A=\sum_{k=1}^{n}|a_k|^p$ et $B =\sum_{k=1}^{n}|b_k|^q$.
+
+Si $A$ (ou $B$) est nul, tous les $a_k$ (ou tous les $b_k$) sont nuls et l'inégalité est vraie.
+
+On suppose dorénavant que $A > 0$ et $B > 0$. D'après la question a),
+
+\begin{center}
+$\sum_{k=1}^{n} \frac{|a_k|}{A^{1/p}}\times \frac{|b_k|}{B^{1/q}}\leqslant\sum_{k=1}^{n}\left( \frac{|a_k|^p}{pA}+ \frac{|b_k|^q}{qB}\right) = \frac{1}{pA}\sum_{k=1}^{n}|a_k|^p+ \frac{1}{qB}\sum_{k=1}^{n}|b_k|^q= \frac{1}{pA}\times A+ \frac{1}{qB}\times B= \frac{1}{p}+ \frac{1}{q}=1$,
+\end{center}
+
+et donc $\sum_{k=1}^{n}|a_k||b_k|\leqslant A^{1/p}B^{1/q}=\left(\sum_{k=1}^{n}|a_k|^p\right)^{1/p}\left(\sum_{k=1}^{n}|b_k|^q\right)^{1/q}$. Comme $\left|\sum_{k=1}^{n}a_kb_k\right|\leqslant\sum_{k=1}^{n}|a_k||b_k|$, on a montré que
+
+\begin{center}
+\shadowbox{
+$\forall((a_k)_{1\leqslant k\leqslant n},(b_k)_{1\leqslant k\leqslant n})\in(\Rr^n)^2$, $\sum_{k=1}^{n}|a_kb_k|\leqslant\left(\sum_{k=1}^{n}|a_k|^p\right)^{1/p}\left(\sum_{k=1}^{n}|b_k|^q\right)^{1/q}$  (Inégalité de \textsc{Hölder}).
+}
+\end{center}
+
+\textbf{Remarque.} Quand $p=q=2$, on a bien $ \frac{1}{p}+ \frac{1}{q}=1$ et l'inégalité de \textsc{Hölder} s'écrit 
+
+\begin{center}
+$\sum_{k=1}^{n}|a_kb_k|\leqslant\left(\sum_{k=1}^{n}|a_k|^2\right)^{1/2}\left(\sum_{k=1}^{n}|b_k|^2\right)^{1/2}$ (inégalité de \textsc{Cauchy}-\textsc{Schwarz}).
+\end{center}
+
+  \item Soit $((a_k)_{1\leqslant k\leqslant n},(b_k)_{1\leqslant k\leqslant n})\in(\Rr^n)^2$. D'après l'inégalité de \textsc{Hölder}, on a
+
+\begin{align*}
+\sum_{k=1}^{n}(|a_k|+|b_k|)^p&=\sum_{k=1}^{n}|a_k|(|a_k|+|b_k|)^{p-1}+\sum_{k=1}^{n}|b_k|(|a_k|+|b_k|)^{p-1}\\
+ &\Leftrightarrow\left(\sum_{k=1}^{n}|a_k|^p\right)^{1/p}\left(\sum_{k=1}^{n}(|a_k|+|b_k|)^{(p-1)q}\right)^{1/q}\left(\sum_{k=1}^{n}|b_k|^p\right)^{1/p}\left(\sum_{k=1}^{n}(|a_k|+|b_k|)^{(p-1)q}\right)^{1/q}\\
+ &=\left(\left(\sum_{k=1}^{n}|a_k|^p\right)^{1/p}+\left(\sum_{k=1}^{n}|b_k|^p\right)^{1/p}\right)\left(\sum_{k=1}^{n}(|a_k|+|b_k|)^{p}\right)^{1-\frac{1}{p}}.
+\end{align*}
+
+Si  $\sum_{k=1}^{n}(|a_k|+|b_k|)^p = 0$, tous les $a_k$ et les $b_k$ sont nuls et l'inégalité est claire.
+
+Sinon $\sum_{k=1}^{n}(|a_k|+|b_k|)^p > 0$ et après simplification des deux membres de l'inégalité précédente par le réel strictement positif $\sum{k=1}^{n}(|a_k|+|b_k|)^p$,  on obtient $\left(\sum_{k=1}^{n}|a_k+b_k|^p\right)^{1/p}\leqslant\left(\sum_{k=1}^{n}|a_k|^p\right)^{1/p}+\left(\sum_{k=1}^{n}|b_k|^p\right)^{1/p}$
+
+\begin{center}
+\shadowbox{
+$\forall((a_k)_{1\leqslant k\leqslant n},(b_k)_{1\leqslant k\leqslant n})\in(\Rr^n)^2$, $\left(\sum_{k=1}^{n}|a_k+b_k|^p\right)^{1/p}\leqslant\left(\sum_{k=1}^{n}|a_k|^p\right)^{1/p}+\left(\sum_{k=1}^{n}|b_k|^p\right)^{1/p}$  (Inégalité de \textsc{Minkowski}).
+}
+\end{center}
+  \end{enumerate}
+
+\item  
+  \begin{enumerate}
+  \item On sait déjà que $N_1$ est une norme sur $\Rr^n$. Soit $\alpha> 1$.
+
+(1) $N_\alpha$ est bien une application de $\Rr^n$ dans $\Rr^+$.
+
+(2) Soit $x=(x_k)_{1\leqslant k\leqslant n}\in\Rr^n$. $N_\alpha(x) = 0\Rightarrow \forall k\in\llbracket1,n\rrbracket,\;|x_k| = 0\Rightarrow x = 0$.
+
+(3) Soient $\lambda\in\Rr$ et $x=(x_k)_{1\leqslant k\leqslant n}\in\Rr^n$. $N_\alpha(\lambda x)= \left(\sum_{k=1}^{n}|\lambda x_k|^\alpha\right)^{1/\alpha}=\left(|\lambda|^\alpha\right)^{1/\alpha} N_\alpha(x)=|\lambda|N_\alpha(x)$.
+
+(4) L'inégalité triangulaire est l'inégalité de \textsc{Minkowski}.
+
+\begin{center}
+\shadowbox{
+$\forall \alpha\in\Rr^n$, $N_\alpha$ est une norme sur $\Rr^n$.
+}
+\end{center}
+
+  \item Quelques \og boules unités \fg~dans $\Rr^2$.
+
+$$\includegraphics{../images/img005840-1}$$
+
+
+
+\textbf{Remarque.} Toute boule unité est symétrique par rapport à $O$ puisque $\forall x\in E$, $N(x) = N(-x)$ et donc
+
+\begin{center}
+$\forall x\in E$, $N(x)\leqslant1\Leftrightarrow N(-x)\leqslant1$.
+\end{center}
+
+ \item Soient $\alpha> 0$ et $x\in E$. On a
+
+\begin{center}
+$N_\infty(x)\leqslant N_\alpha(x)\leqslant n^{1/\alpha}N_\infty(x)$,
+\end{center}
+
+et le théorème des gendarmes fournit $\lim_{\alpha \rightarrow +\infty} N_\alpha(x) = N_\infty(x)$.
+
+\begin{center}
+\shadowbox{
+$\forall x\in E$, $\lim_{\alpha \rightarrow +\infty} N_\alpha(x) = N_\infty(x)$.
+}
+\end{center}
+
+ \item Soient $\alpha\in]0,1[$ puis $B=\{x\in\Rr^n/\;N_\alpha(x)\leqslant1\}$.
+Les vecteurs $x=(1,0,0,\ldots,0)$ et $y=(0,1,0,\ldots,0)$ sont des éléments de $B$. Le milieu du segment $[xy]$ est $z= \frac{1}{2}(1,1,0,\ldots,0)$.
+
+\begin{center}
+$N_\alpha(z)= \frac{1}{2}(1^\alpha+1^\alpha)^{1/\alpha}=2^{\frac{1}{\alpha}-1}> 1$ car  $ \frac{1}{\alpha}-1 > 0$
+\end{center}
+
+et donc $z\notin B$. Ainsi, $B$ n'est pas convexe et donc $N_\alpha$ n'est pas une norme d'après l'exercice \ref{ex:rou1bis}.
+
+On peut remarquer que pour $n = 1$, les $N_\alpha$ coïncident toutes avec la valeur absolue.
+  \end{enumerate}
+\end{enumerate}
+\fincorrection
+\finexercice

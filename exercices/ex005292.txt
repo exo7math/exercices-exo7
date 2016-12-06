@@ -1,0 +1,53 @@
+\exercice{5292, rouget, 2010/07/04}
+\enonce[***T]
+\begin{enumerate}
+\item  Montrer que $\forall n\in\Zz,\;6|5n^3+n$.
+\item  Montrer que $\forall n\in\Nn,\;7|4^{2^n}+2^{2^n}+1$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  Soit $n$ un entier relatif.
+
+Si $n$ est pair, $n$ et $5n^3$ sont pairs de même que $5n^3+n$ et $2$ divise $5n^3+n$.
+
+Si $n$ est impair, $n$ et $5n^3$ sont impairs et de nouveau $5n^3+n$ est pair. Finalement~:~$\forall n\in\Zz,\;2|(5n^3+n)$.
+
+Si $n$ est multiple de $3$, $n$ et $5n^3$ sont multiples de $3$ de même que $5n^3+n$.
+
+Si $n$ est de la forme $3p+1$, alors 
+
+$$5n^2+1=5(3p+1)^2+1=45p^2+30p+6=3(9p^2+10p+2)$$
+
+et $5n^2+1$ est divisible par $3$. Il en est de même de $5n^3+n=n(5n^2+1)$.
+
+Si $n$ est de la forme $3p+2$, $5n^2+1=5(3p+2)^2+1=45p^2+60p+21=3(9p^2+20p+7)$ et $5n^2+1$ est divisible par $3$. Il en est de même de $5n^3+n=n(5n^2+1)$.
+
+Finalement, $\forall n\in\Zz,\;3|(5n^3+n)$.
+
+Enfin, $5n^3+n$ est divisible par $2$ et $3$ et donc par $2\times 3=6$. On a montré que~:~$\forall n\in\Zz,\;6|(5n^3+n)$. (Tout ceci s'exprime beaucoup mieux à l'aide de congruences. Par exemple~:~si $n\equiv1\;(3)$, $5n^2+1\equiv5.1^2+1=6\equiv0\;(3)$)
+
+\item  $4^{2^n}$ signifie $(...((4^2)^2)^2...)^2$. Etudions la suite de ces élévations au carré successives modulo $7$. $4^{2^0}=4$ est dans $4+7\Zz$. $4^{2^1}=16$ est dans $2+7\Zz$. $4^{2^2}=16^2=(7k+2)^2=4+7k'$ est dans $4+7\Zz$...
+Montrons par récurrence sur $p$ entier naturel que~:~$\forall p\in\Nn$, $4^{2^{2p}}$ est dans $4+7\Zz$ et $4^{2^{2p+1}}$ est dans $2+7\Zz$.
+
+C'est vrai pour $p=0$.
+
+Soit $p\geq0$. Si il existe deux entiers relatifs $k_{2p}$ et $k_{2p+1}$ tels que $4^{2^{2p}}=4+7k_{2p}$ et $4^{2^{2p+1}}=2+7k_{2p+1}$, alors~:
+
+$$4^{2^{2p+2}}=(4^{2^{2p+1}})^2=(2+7k_{2p+1})^2=4+7(4k_{2p+1}+7k_{2p+1}^2)\in4+7\Zz,$$
+
+puis 
+
+$$4^{2^{2p+3}}=(4^{2^{2p+2}})^2=(4+7k_{2p+2})^2=16+28k_{2p+2}+49k_{2p+2}^2=2+7(2+4k_{2p+2}+7k_{2p+2}^2)\in2+7\Zz.$$
+
+On a montré par récurrence que si $n$ est pair, $4^{2^n}$ est dans $4+7\Zz$ et si $n$ est impair, $4^{2^n}$ est dans $2+7\Zz$.
+
+Ensuite $2^{2^0}=2$ est dans $2+7\Zz$ puis, pour $n\geq1$, $2^{2^n}=2^{2.2^{n-1}}=4^{2^{n-1}}$ est dans $4+7\Zz$ si $n-1$ est pair ou encore si $n$ est impair et est dans $2+7\Zz$ si $n$ est pair. Ainsi, que $n$ soit pair ou impair, $4^{2^n}+2^{2^n}+1$ est dans $(4+2)+1+7\Zz=7+7\Zz=7\Zz$ et on a montré que~:
+
+$$\forall n\in\Nn,\;7|4^{2^n}+2^{2^n}+1.$$
+\end{enumerate}
+\fincorrection
+\finexercice

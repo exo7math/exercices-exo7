@@ -1,0 +1,68 @@
+\exercice{671, vignal, 2001/09/01}
+\video{xN3Z9gW5JEs}
+\enonce
+Soit $f$ la fonction r\'eelle \`a valeurs r\'eelles
+d\'efinie par
+$$f(x)=\left\{\begin{array}{ll}
+x & \hbox{ si } x< 1\\
+x^2  & \hbox{ si }1\leq x\leq 4\\
+8\,\sqrt{x}  & \hbox{ si } x>4
+\end{array}\right.$$
+\begin{enumerate}
+  \item Tracer le graphe de $f$.
+  \item  $f$ est elle continue ?
+  \item Donner la formule d\'efinissant $f^{-1}$.
+\end{enumerate}
+\finenonce
+
+\indication
+Distinguer trois intervalles pour la formule définissant $f^{-1}$.
+\finindication
+
+\correction
+\begin{enumerate}
+ \item Le graphe est composé d'une portion de droite au dessus des $x \in ]-\infty,1[$ ;
+d'une portion de parabole pour les $x \in [1,4]$, d'une portion d'une autre parabole pour les 
+$x \in ]4,+\infty$. (Cette dernière branche est bien une parabole, mais elle n'est pas dans le sens ``habituel'',
+en effet si $y=8\sqrt x$ alors $y^2 = 64 x$ et c'est bien l'équation d'une parabole.)
+
+On ``voit'' immédiatemment sur le graphe que la fonction est continue (les portions se recollent !).
+On ``voit'' aussi que la fonction est bijective.
+
+ \item La fonction est continue sur $]-\infty,1[$, $]1,4[$ et $]4,+\infty[$ car sur chacun des ces intervalles elle
+y est définie par une fonction continue. Il faut examiner ce qui se passe en $x=1$ et $x=4$.
+Pour $x<1$, $f(x)=x$, donc  la limite à gauche (c'est-à-dire $x\to 1$ avec $x<1$) est donc $+1$.
+Pour $x\ge 1$, $f(x) = x^2$ donc la limite à droite vaut aussi $+1$. 
+Comme on a $f(1) = +1$ alors les limites à gauche, à droite et la valeur en $1$ coïncident donc $f$
+est continue en $x=1$.
+
+Même travail en $x= 4$. Pour $x \in [1,4]$, $f(x) = x^2$ donc la limite à gauche en $x=4$ est $+16$.
+On a aussi $f(4)=+16$. Enfin pour $x>4$, $f(x) = 8 \sqrt x$, donc la limite à droite en $x=4$ est aussi $+16$.
+Ainsi $f$ est continue en $x=4$.
+
+Conclusion : $f$ est continue en tout point $x \in \Rr$ donc $f$ est continue sur $\Rr$.
+ 
+ \item Le graphe devrait vous aider : tout d'abord il vous aide à se convaincre que $f$ est bien bijective
+et que la formule pour la bijection réciproque dépend d'intervalles. Petit rappel : le graphe de la bijection réciproque $f^{-1}$ s'obtient
+comme symétrique du graphe de $f$ par rapport à la bissectrice d'équation $(y=x)$ (dans un repère orthonormal).
+
+
+
+Ici on se contente de donner directement la formule de $f^{-1}$. 
+Pour $x \in  ]-\infty,1[$, $f(x)=x$. Donc la bijection réciproque est définie par $f^{-1}(y)=y$ pour tout $y \in  ]-\infty,1[$.
+Pour $x \in [1,4]$, $f(x)=x^2$. L'image de l'intervalle $[1,4]$ est l'intervalle $[1,16]$. Donc pour chaque $y \in [1,16]$,
+la bijection réciproque est définie par $f^{-1}(y) = \sqrt y$. 
+Enfin pour $x\in]4,+\infty[$, $f(x) = 8\sqrt x$. L'image de l'intervalle $]4,+\infty[$ est donc $]16,+\infty[$
+et $f^{-1}$ est définie par $f^{-1}(y) = \frac{1}{64} y^2$ pour chaque $y \in ]16,+\infty[$.
+
+Nous avons définie $f^{-1} : \Rr \to \Rr$ de telle sorte que $f^{-1}$ soit la bijection réciproque de $f$.
+
+\bigskip
+
+C'est un bon exercice de montrer que $f$ est bijective sans calculer $f^{-1}$ :
+vous pouvez par exemple montrer que $f$ est injective et surjective.
+Un autre argument est d'utiliser un résultat du cours : $f$ est continue, strictement croissante avec une limite $-\infty$ en$-\infty$
+et $+\infty$ en $+\infty$ donc elle est bijective de $\Rr$ dans $\Rr$ (et on sait même que la bijection réciproque est continue).
+\end{enumerate}
+\fincorrection
+\finexercice

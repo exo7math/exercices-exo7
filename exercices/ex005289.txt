@@ -1,0 +1,34 @@
+\exercice{5289, rouget, 2010/07/04}
+\enonce[***]
+\begin{enumerate}
+\item  On donne $n$ droites du plan. On suppose qu'il n'en existe pas deux qui soient parallèles, ni trois qui soient concourantes. Déterminer le nombre $P(n)$ de régions délimitées par ces droites.
+\item  On donne $n$ plans de l'espace. On suppose qu'il n'en existe pas deux qui soient parallèles, ni trois qui soient concourants en une droite, ni quatre qui soient concourants en un point. Déterminer le nombre $Q(n)$ de régions délimitées par ces plans.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  On a bien sûr $P(1)=2$. Soit $n\geq1$. On trace $n$ droites vérifiant les conditions de l'énoncé. Elles partagent le plan en $P(n)$ régions. On trace ensuite $D_{n+1}$, une $(n+1)$ème droite. Par hypothèse, elle coupe chacune des $n$ premières droites en $n$ points deux à deux distincts. Ces $n$ points définissent $(n+1)$ intervalles sur la droite $D_{n+1}$. Chacun de ces $(n+1)$ intervalles partage une des $P(n)$ régions déjà existantes en deux régions et rajoute donc une nouvelle région. Ainsi, $P(n+1)=P(n)+(n+1)$.
+
+Soit $n\geq2$.
+
+\begin{align*}\ensuremath
+P(n)&=P(1)+\sum_{k=1}^{n-1}(P(k+1)-P(k))=2+\sum_{k=1}^{n-1}(k+1)=1+\sum_{k=1}^{n}k=1+\frac{n(n+1)}{2}\\
+ &=\frac{n^2+n+2}{2}
+\end{align*}
+
+ce qui reste vrai pour $n=1$.
+
+\item  On a bien sûr $Q(1)=2$.Soit $n\geq1$. On trace $n$ plans vérifiant les conditions de l'énoncé. Ils partagent l'espace en $Q(n)$ régions. On trace ensuite $P_{n+1}$, un $(n+1)$ème plan. Par hypothèse, il recoupe chacun des $n$ premiers plans en $n$ droites vérifiant les conditions du 1). Ces $n$ droites délimitent $P(n)=1+\frac{n(n+1)}{2}$ régions sur le plan $P_{n+1}$. Chacune de ces régions partage une des $Q(n)$ régions déjà existantes en deux régions et rajoute donc une nouvelle région. Ainsi, $Q(n+1)=Q(n)+P(n)=Q(n)+\frac{n^2+n+2}{2}$.
+
+Soit $n\geq2$.
+
+\begin{align*}\ensuremath
+Q(n)&=P(1)+\sum_{k=1}^{n-1}(Q(k+1)-Q(k))=2+\sum_{k=1}^{n-1}\frac{k^2+k+2}{2})=2+(n-1)+\frac{1}{2}\sum_{k=1}^{n-1}k^2+\frac{1}{2}\sum_{k=1}^{n-1}k\\
+ &=(n+1)+\frac{(n-1)n(2n-1)}{12}+\frac{n(n-1)}{4}=\frac{n^3+5n+6}{6}
+\end{align*}
+\end{enumerate}
+\fincorrection
+\finexercice

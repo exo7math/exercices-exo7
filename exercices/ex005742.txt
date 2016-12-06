@@ -1,0 +1,63 @@
+\exercice{5742, rouget, 2010/10/16}
+\enonce[**]
+Calculer $\int_{0}^{1}\frac{\ln x}{1+x^2}\;dx$ et $\int_{0}^{+\infty}\frac{\ln x}{1+x^2}\;dx$.
+\finenonce
+
+\noindication
+
+\correction
+Ici, le plus simple est peut-être de ne pas utiliser de théorème d'intégration terme à terme. La fonction $f~:~x\mapsto\frac{\ln x}{1+x^2}$ est continue sur $]0,1]$. De plus, quand $x$ tend vers $0$, $f(x)\underset{x\rightarrow0^+}{\sim}\ln x\underset{x\rightarrow0^+}{=}o\left(\frac{1}{\sqrt{x}}\right)$. On en déduit que $f$ est intégrable sur $]0,1]$.
+
+Soit $n\in\Nn$.
+
+\begin{center}
+$\frac{\ln x}{1+x^2}=\sum_{k=0}^{n}(-1)^kx^{2k}\ln x+\frac{(-1)^{n+1}x^{2n+2}\ln x}{1+x^2}$.
+\end{center}
+
+Maintenant, chacune des fonctions $f_k~:~x\mapsto(-1)^kx^{2k}\ln x$, $0\leqslant k\leqslant n$, est intégrable sur $]0,1]$ car continue sur $]0,1]$ et négligeable devant $\frac{1}{\sqrt{x}}$ quand $x$ tend vers $0$. On en déduit encore que la fonction $g_n~:~x\mapsto\frac{(-1)^{n+1}x^{2n+2}\ln x}{1+x^2}$ est intégrable sur $]0,1]$ car $g_n=f-\sum_{k=0}^{n}f_k$. On a donc
+
+\begin{center}
+$\forall n\in\Nn$, $\int_{0}^{1}\frac{\ln x}{1+x^2}\;dx=\sum_{k=0}^{n}(-1)^k\int_{0}^{1}x^{2k}\ln x\;dx+\int_{0}^{1}\frac{(-1)^{n+1}x^{2n+2}\ln x}{1+x^2}\;dx$.
+\end{center}
+
+La fonction $h~:~x\mapsto\frac{x\ln x}{1+x^2}\;dx$ est continue sur $]0,1]$ et prolongeable par continuité en $0$. On en déduit que la fonction $h$ est bornée sur $]0,1]$. Soit $M$ un majorant de la fonction $|h|$ sur $]0,1]$. Pour tout entier naturel $n$, on a alors
+
+\begin{center}
+$\left|\int_{0}^{1}\frac{(-1)^{n+1}x^{2n+2}\ln x}{1+x^2}\;dx\right|\leqslant \int_{0}^{1}x^{2n}\left|\frac{x\ln x}{1+x^2}\right|\;dx\leqslant M\int_{0}^{1}x^{2n}\;dx=\frac{M}{2n+1}$.
+\end{center}
+
+En particulier, $\lim_{n \rightarrow +\infty}\int_{0}^{1}\frac{(-1)^{n+1}x^{2n+2}\ln x}{1+x^2}\;dx=0$. Ceci montre que la série numérique de terme général $(-1)^k\int_{0}^{1}x^{2k}\ln x\;dx$, $k\in\Nn$, converge et que
+
+\begin{center}
+$\int_{0}^{1}\frac{\ln x}{1+x^2}\;dx=\sum_{k=0}^{+\infty}(-1)^k\int_{0}^{1}x^{2k}\ln x\;dx$.
+\end{center}
+
+Soient $n\in\Nn$ et $\varepsilon\in]0,1[$. Les deux fonctions $x\mapsto\frac{x^{2n+1}}{2n+1}$ et $x\mapsto\ln x$ sont de classe $C^1$ sur le segment $[\varepsilon,1]$. On peut donc effectuer une intégration par parties et on obtient
+
+\begin{center}
+$\int_{\varepsilon}^{1}x^{2n}\ln x\;dx=\left[\frac{x^{2n+1}}{2n+1}\ln x\right]_\varepsilon^1-\frac{1}{2n+1}\int_{\varepsilon}^{1}x^{2n}\;dx=-\frac{\varepsilon^{2n+1}}{2n+1}\ln \varepsilon-\frac{1}{(2n+1)^2}(1-\varepsilon^{2n+1})$.
+\end{center}
+
+Quand $\varepsilon$ tend vers $0$, on obtient $\int_{0}^{1}x^{2n}\ln x\;dx=-\frac{1}{(2n+1)^2}$. Par suite,
+
+\begin{center}
+$\int_{0}^{1}\frac{\ln x}{1+x^2}\;dx=-\sum_{n=0}^{+\infty}\frac{(-1)^n}{2n+1}=-\frac{\pi}{4}$.
+\end{center}
+
+Vérifions maintenant l'intégrabilité de la fonction $f$ sur $]0,+\infty[$. La fonction $f$ est continue sur $]0,+\infty[$ et on sait déjà que $f$ est intégrable sur $]0,1]$. De plus, $x^{3/2}f(x)\underset{x\rightarrow+\infty}{\sim}\frac{\ln x}{\sqrt{x}}\underset{x\rightarrow+\infty}{\rightarrow}0$ et donc $f(x)\underset{x\rightarrow+\infty}{=}o\left(\frac{1}{x^{3/2}}\right)$. Ceci montre que la fonction $f$ est intégrable sur $[1,+\infty[$ et finalement sur $]0,+\infty[$.
+
+Pour calculer $I=\int_{0}^{+\infty}\frac{\ln x}{1+x^2}\;dx$, la méthode précédente ne marche plus du tout  car pour $x>1$, $x^{n}$ tend vers $+\infty$ quand $n$ tend vers $+\infty$. C'est une toute autre idée qui permet d'aller au bout. On pose $u=\frac{1}{x}$ et on obtient
+
+\begin{center}
+$I=\int_{0}^{+\infty}\frac{\ln x}{1+x^2}\;dx=\int_{+\infty}^{0}\frac{\ln\left(\frac{1}{u}\right)}{1+\frac{1}{u^2}}\times\frac{-du}{u^2}=-\int_{0}^{+\infty}\frac{\ln u}{1+u^2}\;du=-I$,
+\end{center}
+
+et donc $I=0$.
+
+\begin{center}
+\shadowbox{
+$\int_{0}^{1}\frac{\ln x}{1+x^2}\;dx=-\frac{\pi}{4}$ et $\int_{0}^{+\infty}\frac{\ln x}{1+x^2}\;dx=0$.
+}
+\end{center}
+\fincorrection
+\finexercice

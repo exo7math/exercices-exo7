@@ -1,0 +1,49 @@
+\exercice{6958, blanc-centi, 2014/04/01}
+\video{FljXmG2ie3Q}
+\enonce
+
+\
+\begin{enumerate}
+\item Montrer que si $A$ et $B$ sont deux polynômes à coefficients 
+dans $\Q$, alors le quotient et le reste de la division 
+euclidienne de $A$ par $B$, ainsi que $\pgcd(A,B)$, sont 
+aussi à coefficients dans $\Qq$.
+
+\item Soit $a,b,c\in\Cc^*$ distincts, et $0<p<q<r$ des entiers. 
+Montrer que si $P(X)=(X-a)^p(X-b)^q(X-c)^r$ est à coefficients 
+dans $\Qq$, alors $a,b,c \in \Qq$.
+\end{enumerate}
+\finenonce 
+
+\indication
+Calculer $\pgcd(P,P')$.
+\finindication
+
+\correction
+\
+\begin{enumerate}
+\item Lorsqu'on effectue la division euclidienne $A=BQ+R$, 
+les coefficients de $Q$ sont obtenus par des opérations 
+élémentaires (multiplication, division, addition) à partir 
+des coefficients de $A$ et $B$ : ils restent donc dans $\Qq$. 
+De plus, $R=A-BQ$ est alors encore à coefficients rationnels. 
+
+Alors $\pgcd(A,B)=\pgcd(B,R)$ et pour l'obtenir, on fait 
+la division euclidienne de $B$ par $R$ (dont le quotient 
+et le reste sont encore à coefficients dans $\Qq$), puis on 
+recommence... Le pgcd est le dernier reste non nul, c'est 
+donc encore un polynôme à coefficients rationnels.
+
+\item Notons $P_1=\pgcd(P,P')$: comme $P$ est à coefficients 
+rationnels, $P'$ aussi et donc $P_1$ aussi. 
+Or $P_1(X)=(X-a)^{p-1}(X-b)^{q-1}(X-c)^{r-1}$. En itérant 
+le processus, on obtient que $P_{r-1}(X)=(X-c)$ est à 
+coefficients rationnels, donc $c\in\Qq$.
+
+On remonte alors les étapes: $P_{q-1}(X)=(X-b)(X-c)^{r-q+1}$ 
+est à coefficients rationnels, et $X-b$ aussi en tant que 
+quotient de $P_{q-1}$ par le polynôme à coefficients rationnels 
+$(X-c)^{r-q+1}$, donc $b\in\Qq$. De même, en considérant 
+$P_{p-1}$, on obtient $a\in\Qq$.
+\end{enumerate}
+\fincorrection

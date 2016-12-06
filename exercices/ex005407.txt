@@ -1,0 +1,13 @@
+\exercice{5407, rouget, 2010/07/06}
+\enonce[***]
+Soit $f\in C^1([a,b],\Rr)$ telle que $\frac{f(b)-f(a)}{b-a}=\mbox{sup}\{f'(x),\;x\in[a,b]\}$. Montrer que $f$ est affine.
+\finenonce
+
+\noindication
+
+\correction
+$f'$ est continue sur le segment $[a,b]$ et donc est bornée sur ce segment. Soit $M=\mbox{sup}\{f'(x),\;x\in[a,b]\}$, et soit $g$ la fonction affine qui prend les mêmes valeurs que $f$ en $a$ et $b$ (c'est-à-dire $\forall x\in[a,b],\;g(x)=\frac{f(b)-f(a)}{b-a}(x-a)+f(a)=$) puis $h=f-g$. On va montrer que $h=0$ sous l'hypothèse $M=\frac{f(b)-f(a)}{b-a}$.
+
+$h$ est dérivable sur $[a,b]$ et, pour $x\in[a,b]$, $h'(x)=f'(x)-\frac{f(b)-f(a)}{b-a}=f'(x)-M\leq0$. $h$ est donc décroissante sur $[a,b]$. Par suite, $\forall x\in[a,b],\;0=h(b)\leq h(x)\leq h(a)=0$. Ainsi, $\forall x\in[a,b],\;h(x)=0$, ou encore $f=g$. $f$ est donc affine sur $[a,b]$.
+\fincorrection
+\finexercice

@@ -1,0 +1,332 @@
+\exercice{5746, rouget, 2010/10/16}
+\enonce
+Calculer les sommes suivantes dans leur intervalle ouvert de convergence après avoir déterminé le rayon de convergence de la série proposée.
+
+\begin{center}
+\begin{tabular}{llll}
+\textbf{1) (**)} $\sum_{n=2}^{+\infty}\frac{1}{n(n-1)}x^n$&\textbf{2) (**)} $\sum_{n=0}^{+\infty}\frac{3n}{n+2}x^n$&\textbf{3) (** I)} $\sum_{n=0}^{+\infty}\frac{x^n}{2n+1}$&\textbf{4) (**)} $\sum_{n=0}^{+\infty}\frac{n}{(2n+1)!}x^n$\\
+\textbf{5) (*)} $\sum_{n=0}^{+\infty}\frac{x^{4n}}{(4n)!}$&\textbf{6) (**)} $\sum_{n=0}^{+\infty}(\ch n)x^n$&\textbf{7) (** I)} $\sum_{n=1}^{+\infty}\left(\sum_{k=1}^{n}\frac{1}{k}\right)x^n$&\textbf{7)} $\sum_{n=0}^{+\infty}\frac{n^2+4n-1}{n!(n+2)}x^n$\\
+\textbf{9) (** I)} $\sum_{n=1}^{+\infty}n^{(-1)^n}x^n$&\textbf{10) (*)} $\sum_{n=1}^{+\infty}(-1)^n\frac{x^{4n-1}}{4n}$&\textbf{11) (**)} $\sum_{n=0}^{+\infty}(n^2+1)2^{n+1}x^n$&\textbf{12) (**)} $\sum_{n=0}^{+\infty}(-1)^{n+1}nx^{2n+1}$
+\end{tabular}
+
+\textbf{13) (***)} $\sum_{n=0}^{+\infty}a_nx^n$ où $a_0 = a_1 = 1$ et 
+$\forall n\in\Nn$, $a_{n+2}= a_{n+1} + a_n$\rule{7.7cm}{0cm}
+
+\textbf{14) (**)} $\sum_{n=0}^{+\infty}a_nx^n$ où $a_n$ est le nombre de couples $(x,y)$ d'entiers naturels tels que $x+5y = n$.\rule{3.3cm}{0cm}
+\end{center}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  La règle de d'\textsc{Alembert} montre que la série proposée a un rayon de convergence égal à $1$.
+
+\textbf{1ère solution.} Pour $x\in]-1,1[$, on pose $f(x)=\sum_{n=2}^{+\infty}\frac{1}{n(n-1)}x^n$.
+$f$ est dérivable sur $]-1,1[$ et pour $x$ dans $]-1,1[$, 
+
+\begin{center}
+$f'(x) =\sum_{n=2}^{+\infty}\frac{1}{n-1}x^{n-1}=\sum_{n=1}^{+\infty}\frac{x^n}{n}= -\ln(1-x)$.
+\end{center}
+
+Puis, pour $x\in]-1,1[$, $f(x) = f(0) +\int_{0}^{x}f'(t) dt =(1-x)\ln(1-x) + x$.
+
+\textbf{2ème solution.} Pour $x\in]-1,1[$, 
+
+\begin{center}
+$f(x) =\sum_{n=2}^{+\infty}\left(\frac{1}{n-1}-\frac{1}{n}\right)x^n =x\sum_{n=2}^{+\infty}\frac{x^{n-1}}{n-1}-\sum_{n=2}^{+\infty}\frac{x^n}{n}=-x\ln(1-x) +\ln(1-x) + x$.
+\end{center}
+
+\begin{center}
+\shadowbox{
+$\forall x\in]-1,1[$, $\sum_{n=2}^{+\infty}\frac{x^n}{n(n-1)}=-x\ln(1-x) +\ln(1-x) + x$.
+}
+\end{center}
+
+\item  La règle de d'\textsc{Alembert} montre que la série proposée a un rayon égal à $1$.
+Pour $x\in]-1,1[\setminus\{0\}$
+
+\begin{center}
+$\sum_{n=0}^{+\infty}\frac{3n}{n+2}x^n =3\left(\sum_{n=0}^{+\infty}x^n - 2\sum_{n=0}^{+\infty}\frac{x^n}{n+2}\right) = 3\left(\frac{1}{1-x}- \frac{2}{x^2}\sum_{n=2}^{+\infty}\frac{x^n}{n}\right) = 3\left(\frac{1}{1-x}+\frac{2}{x^2}(x+\ln(1-x))\right)$
+\end{center}
+
+\begin{center}
+\shadowbox{
+$\forall x\in]-1,1[$, $\sum_{n=0}^{+\infty}\frac{3n}{n+2}x^n=\left\{
+\begin{array}{l}3\left(\frac{1}{1-x}+\frac{2}{x^2}(x+\ln(1-x))\right)\;\text{si}\;x\in]-1,1[\setminus\{0\}\\
+\rule{0mm}{4mm}0\;\text{si}\;x=0
+\end{array}
+\right.$.
+}
+\end{center}
+
+\item  La règle de d'\textsc{Alembert} montre que la série proposée a un rayon égal à $1$.
+
+\textbullet~Soit $x\in]0,1[$.
+
+\begin{align*}\ensuremath
+\sum_{n=0}^{+\infty}\frac{x^n}{2n+1}&=\sum_{n=0}^{+\infty}\frac{\left(\sqrt{x}\right)^{2n}}{2n+1}=\frac{1}{\sqrt{x}}\sum_{n=0}^{+\infty}\frac{\left(\sqrt{x}\right)^{2n+1}}{2n+1}=\frac{1}{\sqrt{x}}(\ln(1+\sqrt{x}) -\ln(1-\sqrt{x}))\\
+ &=\frac{\Argth(\sqrt{x})}{\sqrt{x}}.
+\end{align*}	
+
+\textbullet~Soit $x\in]-1,0[$.
+
+\begin{align*}\ensuremath
+\sum_{n=0}^{+\infty}\frac{x^n}{2n+1}&=\sum_{n=0}^{+\infty}(-1)^n\frac{(-x)^n}{2n+1}=\frac{1}{\sqrt{-x}}\sum_{n=0}^{+\infty}(-1)^n\frac{\left(\sqrt{-x}\right)^{2n+1}}{2n+1}=\frac{\Arctan(\sqrt{-x})}{\sqrt{-x}}
+\end{align*}
+
+\begin{center}
+\shadowbox{
+$\forall x\in]-1,1[$, $\sum_{n=0}^{+\infty}\frac{x^n}{2n+1}=\left\{
+\begin{array}{l}
+\frac{\Argth(\sqrt{x})}{\sqrt{x}}\;\text{si}\;x\in]0,1[\\
+\rule[-2mm]{0mm}{4mm}1\;\text{si}\;x=0\\
+\frac{\Arctan(\sqrt{-x})}{\sqrt{-x}}\;\text{si}\;x\in]-1,0[
+\end{array}
+\right.$.
+}
+\end{center}
+
+\item  La règle de d'\textsc{Alembert} montre que la série proposée a un rayon égal à $+\infty$. Pour $x$ réel, 
+
+\begin{center}
+$f(x) =\frac{1}{2}\sum_{n=0}^{+\infty}\frac{2n+1-1}{(2n+1)!}x^n=\frac{1}{2}\sum_{n=0}^{+\infty}\frac{1}{(2n)!}x^n-\frac{1}{2}\sum_{n=0}^{+\infty}\frac{1}{(2n+1)!}x^n$.
+\end{center}
+
+\textbullet~Si $x > 0$,  
+
+\begin{center}
+$f(x) =\frac{1}{2}\sum_{n=0}^{+\infty}\frac{1}{(2n)!}\left(\sqrt{x}\right)^{2n}-\frac{1}{2\sqrt{x}}\sum_{n=0}^{+\infty}\frac{1}{(2n+1)!}\left(\sqrt{x}\right)^{2n+1}=\frac{1}{2}\left(\ch(\sqrt{x})-\frac{1}{\sqrt{x}}\sh(\sqrt{x})\right)$.
+\end{center}
+
+\textbullet~Si $x<0$,  
+
+\begin{center}
+$f(x) =\frac{1}{2}\sum_{n=0}^{+\infty}(-1)^n\frac{1}{(2n)!}\left(\sqrt{-x}\right)^{2n}-\frac{1}{2\sqrt{-x}}\sum_{n=0}^{+\infty}(-1)^n\frac{1}{(2n+1)!}\left(\sqrt{-x}\right)^{2n+1}=\frac{1}{2}\left(\cos(\sqrt{-x})-\frac{1}{\sqrt{-x}}\sin(\sqrt{-x})\right)$.
+\end{center}
+
+\begin{center}
+\shadowbox{
+$\forall x\in\Rr$, $\sum_{n=0}^{+\infty}\frac{nx^n}{(2n+1)!}=\left\{
+\begin{array}{l}
+\frac{1}{2}\left(\ch(\sqrt{x})-\frac{1}{\sqrt{x}}\sh(\sqrt{x})\right)\;\text{si}\;x>0\\
+\rule[-2mm]{0mm}{4mm}0\;\text{si}\;x=0\\
+\frac{1}{2}\left(\cos(\sqrt{-x})-\frac{1}{\sqrt{-x}}\sin(\sqrt{-x})\right)\;\text{si}\;x<0
+\end{array}
+\right.$.
+}
+\end{center}
+
+\item  Immédiatement $R = +\infty$ et 
+
+\begin{center}
+\shadowbox{
+$\forall x\in\Rr$, $\sum_{n=0}^{+\infty}\frac{x^{4n}}{(4n)!}=\frac{1}{2}(\cos x +\ch x)$.
+}
+\end{center}
+
+\item  $\ch n\underset{n\rightarrow+\infty}{\sim}\frac{e^n}{2}$ et donc $R=\frac{1}{e}$.
+Pour $x$ dans $\left]-\frac{1}{e},\frac{1}{e}\right[$,
+
+\begin{align*}\ensuremath 
+\sum_{n=0}^{+\infty}\left(\ch n\right)x^n=\frac{1}{2}\left(\sum_{n=0}^{+\infty}(ex)^n+\sum_{n=0}^{+\infty}\left(\frac{x}{e}\right)^n\right)=\frac{1}{2}\left(\frac{1}{1-ex}+\frac{1}{1-\frac{x}{e}}\right)=\frac{1}{2}\frac{2-\left(e+\frac{1}{e}\right)x}{x^2-\left(e+\frac{1}{e}\right)x+1}\\
+ &=\frac{1-x\ch1}{x^2-2x\ch1+1}.
+\end{align*}
+
+\begin{center}
+\shadowbox{
+$\forall x\in\left]-\frac{1}{e},\frac{1}{e}\right[$, $\sum_{n=0}^{+\infty}\left(\ch n\right)x^n=\frac{1-x\ch1}{x^2-2x\ch1+1}$.
+}
+\end{center}
+
+\item  La série proposée est le produit de \textsc{Cauchy} des séries entières  $\sum_{n=0}^{+\infty}x^n$ et  $\sum_{n=1}^{+\infty}\frac{x^n}{n}$ qui sont toutes deux de rayon $1$. Donc $R\geqslant1$. Mais d'autre part, pour tout entier naturel non nul $n$, $a_n=\sum_{k=1}^{n}\frac{1}{k}\geqslant1$ et $R\leqslant1$. Finalement $R = 1$. De plus, pour $x$ dans $]-1,1[$, $f(x)=\frac{1}{1-x}\times-\ln(1-x)=\frac{\ln(1-x)}{x-1}$.
+
+\begin{center}
+\shadowbox{
+$\forall x\in\left]-1,1\right[$, $\sum_{n=1}^{+\infty}\left(\sum_{k=1}^{n}\frac{1}{k}\right)x^n=\frac{\ln(1-x)}{x-1}$.
+}
+\end{center}
+
+\item  La règle de d'\textsc{Alembert} montre que le rayon de convergence est égal à $+\infty$.
+
+Pour $n$ entier naturel donné, $\frac{n^2+4n-1}{n!(n+2)}=\frac{n^3+5n^2+3n-1}{(n+2)!}$ puis 
+
+\begin{align*}\ensuremath
+n^3+5n^2+3n-1&= (n+2)(n+1)n+2n^2+n-1 = (n+2)(n+1)n+2(n+2)(n+1) - 5n - 5\\
+ &= (n+2)(n+1)n + 2(n+2)(n+1) - 5(n+2) + 5
+\end{align*}
+
+Donc, pour tout réel $x$,
+
+\begin{center}
+$f(x) =\sum_{n=0}^{+\infty}\frac{(n+2)(n+1)n}{(n+2)!}x^n +2\sum_{n=0}^{+\infty}\frac{(n+2)(n+1)}{(n+2)!}x^n- 5\sum_{n=0}^{+\infty}\frac{n+2}{(n+2)!}x^n+ 5\sum_{n=0}^{+\infty}\frac{1}{(n+2)!}x^n.$
+\end{center}
+
+Ensuite $f(0) = -\frac{1}{2}$  et pour $x\neq 0$,
+
+\begin{align*}
+f(x)&=\sum_{n=1}^{+\infty}\frac{1}{(n-1)!}x^n +2\sum_{n=0}^{+\infty}\frac{1}{n!}x^n- 5\sum_{n=0}^{+\infty}\frac{1}{(n+1)!}x^n+ 5\sum_{n=0}^{+\infty}\frac{1}{(n+2)!}x^n\\
+ &= xe^x + 2e^x -5\frac{e^x-1}{x}+ 5\frac{e^x-1-x}{x^2}= \frac{e^x(x^3+2x^2-5x+5) -5x}{x^2}.
+\end{align*}
+
+\begin{center}
+\shadowbox{
+$\forall x\in\Rr$, $\sum_{n=0}^{+\infty}\frac{n^2+4n-1}{n!(n+2)}x^n=\left\{
+\begin{array}{l}
+\frac{e^x(x^3+2x^2-5x+5) -5x}{x^2}\;\text{si}\;x\in\Rr^*\\
+-\frac{1}{2}\;\text{si}\;x=0
+\end{array}
+\right.$.
+}
+\end{center}
+
+\item  Pour $n\in\Nn^*$,  $\frac{1}{n}\leqslant a_n=n^{(-1)^n}\leqslant n$ et donc $R = 1$. Pour $x$ dans $]-1,1[$, $f(x)=\sum_{k=0}^{+\infty}\frac{x^{2k+1}}{2k+1}+\sum_{k=1}^{+\infty}(2k)x^k$. Puis 
+
+\begin{center}
+$\sum_{k=1}^{+\infty}(2k)x^k= 2x\sum_{k=1}^{+\infty}kx^{k-1}= 2x\left(\sum_{k=0}^{+\infty}x^k\right)'= 2x\left(\frac{1}{1-x}\right)'=\frac{2x}{(1-x)^2}$.
+\end{center}
+
+\begin{center}
+\shadowbox{
+$\forall x\in]-1,1[$, $\sum_{n=1}^{+\infty}n^{(-1)^n}x^n=\Argth x+\frac{2x}{(1-x)^2}$.
+}
+\end{center}
+
+\item  $R = 1$. Pour $x$ réel non nul dans $]-1,1[$, $f(x)=-\frac{1}{x}\sum_{n=1}^{+\infty}(-1)^{n-1}\frac{(x^4)^n}{n}= -\frac{\ln(1+x^4)}{4x}$ et sinon $f(0) = 0$.
+
+\begin{center}
+\shadowbox{
+$\forall x\in]-1,1[$, $\sum_{n=1}^{+\infty}(-1)^n\frac{x^{4n-1}}{4n}=\left\{
+\begin{array}{l}
+-\frac{\ln(1+x^4)}{4x}\;\text{si}\;x\neq0\\
+\rule{0mm}{4mm}0\;\text{si}\;x=0
+\end{array}
+\right.$.
+}
+\end{center}
+
+\item  La règle de d'\textsc{Alembert} fournit $R=\frac{1}{2}$. Pour $x$ dans $\left]-\frac{1}{2},\frac{1}{2}\right[$,
+
+\begin{align*}\ensuremath
+\sum_{n=0}^{+\infty}(n^2+1)2^{n+1}x^n&=2\left(\sum_{n=0}^{+\infty}(n+2)(n+1)(2x)^n -3\sum_{n=0}^{+\infty}(n+1)(2x)^n +2\sum_{n=0}^{+\infty}(2x)^n\right)\\
+  &= 2\left(\left(\sum_{n=0}^{+\infty}(2x)^n\right)''- 3\left(\sum_{n=0}^{+\infty}(2x)^n\right)'+2\sum_{n=0}^{+\infty}(2x)^n\right)
+ = 2\left(2\frac{1}{1-2x}  - 3\frac{2}{(1-2x)^2}+\frac{4}{(1-2x)^3}\right)\\
+ &=2\frac{2(1-2x)^2-6(1-2x)+8}{(1-2x)^3}=2\frac{8x^2+4x}{(1-2x)^3}.
+\end{align*}
+
+\item  Pour $x = 1$, la suite $((-1)^{n+1}nx^{2n+1})$ n'est pas bornée et donc $R\geqslant 1$. Mais la série converge si $|x| < 1$ et $R\leqslant 1$. Finalement $R=1$.
+
+Pour $x$ dans $]-1,1[$,
+
+\begin{align*}\ensuremath
+\sum_{n=0}^{+\infty}(-1)^{n+1}nx^{2n+1}&=\frac{1}{2}\left(\sum_{n=0}^{+\infty}(-1)^{n+1}(2n+2)x^{2n+1}-2\sum_{n=0}^{+\infty}(-1)^{n+1}x^{2n+1}\right)\\ 
+ &=\frac{1}{2}\left(\left(\sum_{n=0}^{+\infty}(-1)^{n+1}x^{2n+2}\right)'+2x\sum_{n=0}^{+\infty}(-x^2)^n\right)=\frac{1}{2}\left(\left(\frac{-x^2}{1+x^2}\right)'+\frac{2x}{1+x^2}\right)\\
+ &= -\frac{x(1+x^2)-x^3}{1+x^2)^2}+\frac{x}{1+x^2}=\frac{x^3}{1+x^2)^2}.
+\end{align*}
+
+\begin{center}
+\shadowbox{
+$\forall x\in]-1,1[$, $\sum_{n=0}^{+\infty}(-1)^{n+1}nx^{2n+1}=\frac{x^3}{1+x^2)^2}$.
+}
+\end{center}
+
+\item  \textbf{1ère solution.} Les racines de l'équation caractéristique $z^2 - z - 1 = 0$ sont $\alpha=\frac{1+\sqrt{5}}{2}$ et $\beta=\frac{1-\sqrt{5}}{2}$. On sait qu'il existe deux nombres réels $\lambda$ et $\mu$ tels que pour tout entier naturel $n$,
+
+\begin{center}
+$a_n =\lambda\left(\frac{1+\sqrt{5}}{2}\right)^n+\mu\left(\frac{1-\sqrt{5}}{2}\right)^n$.
+\end{center}
+
+Les égalités $n=0$ et $n=1$ fournissent
+
+\begin{center}
+$\left\{
+\begin{array}{l}
+\rule[-2mm]{0mm}{0mm}\lambda+\mu=1\\
+\frac{1+\sqrt{5}}{2}\lambda+\frac{1-\sqrt{5}}{2}\mu=1
+\end{array}
+\right.\Leftrightarrow\left\{
+\begin{array}{l}
+\rule[-2mm]{0mm}{0mm}\lambda+\mu=1\\
+\lambda-\mu=\frac{1}{\sqrt{5}}
+\end{array}
+\right.\Leftrightarrow
+\left\{
+\begin{array}{l}
+\lambda=\frac{1}{2}\left(1+\frac{1}{\sqrt{5}}\right)\\
+\mu=\frac{1}{2}\left(1-\frac{1}{\sqrt{5}}\right)\end{array}
+\right.\Leftrightarrow\left\{
+\begin{array}{l}
+\lambda=\frac{1}{\sqrt{5}}\frac{1+\sqrt{5}}{2}\\
+\mu=-\frac{1}{\sqrt{5}}\frac{1-\sqrt{5}}{2}
+\end{array}
+\right.$.
+\end{center}
+
+Finalement, pour tout entier naturel $n$, $a_n =\frac{1}{\sqrt{5}}\left(\frac{1+\sqrt{5}}{2}\right)^{n+1}-\frac{1}{\sqrt{5}}\left(\frac{1-\sqrt{5}}{2}\right)^{n+1}$.
+
+Les séries entières respectivement associées aux suites $\left(\left(\frac{1+\sqrt{5}}{2}\right)^{n+1}\right)$ et $\left(\left(\frac{1-\sqrt{5}}{2}\right)^{n+1}\right)$ ont pour rayons respectifs $\left|\frac{1}{(1+\sqrt{5})/2}\right|=\frac{\sqrt{5}-1}{2}$ et $\left|\frac{1}{(1-\sqrt{5})/2}\right|=\frac{\sqrt{5}+1}{2}$. Ces rayons étant distincts, la série proposée a pour rayon
+
+\begin{center}
+$R=\text{Min}\left\{\frac{\sqrt{5}-1}{2},\frac{\sqrt{5}+1}{2}\right\}=\frac{\sqrt{5}-1}{2}$.
+\end{center}
+
+Pour $x$ dans $\left]-\frac{\sqrt{5}-1}{2},\frac{\sqrt{5}-1}{2}\right[$, on a
+
+\begin{align*}\ensuremath
+\sum_{n=0}^{+\infty}a_nx^n&=\frac{\alpha}{\sqrt{5}}\sum_{n=0}^{+\infty}(\alpha x)^n -\frac{\beta}{\sqrt{5}}\sum_{n=0}^{+\infty}(\beta x)^n
+=\frac{1}{\sqrt{5}}\left(\frac{\alpha}{1-\alpha x}-\frac{\beta}{1-\beta x}\right)
+=\frac{\alpha-\beta}{\sqrt{5}}\times\frac{1}{\alpha\beta x^2-(\alpha+\beta)x+1}\\
+ &=\frac{1}{1-x-x^2}.
+\end{align*}
+
+\textbf{2ème solution.} Supposons à priori le rayon $R$ de la série proposée strictement positif. Pour $x$ dans $]-R,R[$, on a
+
+\begin{align*}\ensuremath
+f(x)&= 1+ x +\sum_{n=2}^{+\infty}a_nx^n= 1 + x +\sum_{n=0}^{+\infty}a_{n+2}x^{n+2}=1+x+\sum_{n=0}^{+\infty}(a_{n+1}+a_n)x^{n+2}\\
+ &= 1 + x + x\sum_{n=0}^{+\infty}a_{n+1}x^{n+1}+ x^2\sum_{n=0}^{+\infty}a_nx^n\;(\text{les deux séries ont même rayon})\\ 
+ &=1+x+x(f(x)-1)+ x^2 f(x).
+\end{align*}
+
+Donc, nécessairement $\forall x\in]-R,R[$, $f(x) =\frac{1}{1-x-x^2}$.
+
+Réciproquement, la fraction rationnelle ci-dessus n'admet pas $0$ pour pôle et est donc développable en série entière. Le rayon de convergence de la série obtenue est le minimum des modules des pôles de $f$ à savoir $R=\frac{\sqrt{5}-1}{2}$. Notons $\sum_{n=0}^{+\infty}b_nx^n$ ce développement. Pour tout $x$ de $]-R,R[$, on a $\left(\sum_{n=0}^{+\infty}b_nx^n\right)(1-x-x^2)=1$ et donc $\sum_{n=0}^{+\infty}b_nx^n -\sum_{n=0}^{+\infty}b_nx^{n+1}-\sum_{n=0}^{+\infty}b_nx^{n+2}= 1$ ce qui s'écrit encore  $\sum_{n=0}^{+\infty}b_nx^n-\sum_{n=1}^{+\infty}b_{n-1}x_n -\sum_{n=2}^{+\infty}b_{n-2}x^n = 1$. Finalement 
+
+\begin{center}
+$\forall x\in]-R,R[$, $b_0 +(b_1-b_0)x+\sum_{n=2}^{+\infty}(bn-b_{n-1}-b_{n-2})x^n = 1$.
+\end{center}
+
+Par unicité des coefficients d'un développement en série entière, on a alors $b_0=b_1= 1$ et $\forall n\geqslant2$, $b_n = b_{n-1}+b{n-2}$. On en déduit alors par récurrence que $\forall n\in\Nn$, $b_n = a_n$.
+
+\begin{center}
+\shadowbox{
+$\forall x\in\left]-\frac{\sqrt{5}-1}{2},\frac{\sqrt{5}-1}{2}\right[$, $\sum_{n=0}^{+\infty}a_nx^n=\frac{1}{1-x-x^2}$.
+}
+\end{center}
+
+\textbf{Remarque.} En généralisant le travail précédent, on peut montrer que les suites associées aux développements en série entière des fractions rationnelles sont justement les suites vérifiant des relations de récurrence linéaire.
+
+\item  Pour tout entier naturel $n$, $1\leqslant a_n\leqslant n+1$. Donc $R = 1$.
+
+On remarque que pour tout entier naturel $n$, $a_n =\sum_{k+5l=n}^{}1$. La série entière proposée est donc le produit de \textsc{Cauchy} des séries $\sum_{k=0}^{+\infty}x^k$ et $\sum_{l=0}^{+\infty}x^{5l}$. Pour $x$ dans $]-1,1[$, on a donc
+
+\begin{center}
+$f(x) =\left(\sum_{k=0}^{+\infty}x^k\right)\left(\sum_{l=0}^{+\infty}x^{5l}\right)=\frac{1}{1-x}\times\frac{1}{(1-x)^5}$.
+\end{center}
+
+\textbf{Remarque.} De combien de façons peut -on payer $100$ euros avec des pièces de $1$, $2$, $5$, $10$, $20$ et $50$ centimes d'euros, des pièces de $1$ et $2$ euros et des billets de $10$ et $20$ euros ? Soit $N$ le nombre de solutions. $N$ est le nombre de solutions en nombres entiers a,b,... de l'équation
+
+\begin{center}
+$a +2b +5c +10d +20e +50f +100g +200h+500k+1000i+2000j=10000$
+\end{center}
+
+et est donc le coefficient de $x^{10000}$ du développement en série entière de 
+
+\begin{center}
+$\frac{1}{(1-x)(1-x^2)(1-x^5)(1-x^{10})(1-x^{20})(1-x^{50})(1-x^{100})(1-x^{200})(1-x^{500})(1-x^{1000})(1-x^{2000})}$,
+\end{center}
+
+La remarque est néanmoins anecdotique et il semble bien préférable de dénombrer à la main le nombre de solutions. Les 
+exercices \ref{ex:rou19x} et \ref{ex:rou20x} de cette planche font bien mieux comprendre à quel point les séries entières sont un outil intéressant pour les dénombrements.
+\end{enumerate}
+\fincorrection
+\finexercice

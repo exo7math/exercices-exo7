@@ -1,0 +1,38 @@
+\exercice{1202, ridde, 1999/11/01}
+
+\enonce
+ Soit $ (u_n)$ d\'efinie par $u_0$ et $u_1$
+strictement positifs et $u_{n + 1}
+ = u_n + u_{n-1}$ pour $n \geq 1$.
+\begin{enumerate}
+\item Montrer que $\lim (\dfrac{u_{n + 1}}{u_n})$ existe et la d\'eterminer. Que
+remarquez-vous ?
+\item Soit $a_n = \dfrac{u_{n + 1}}{u_n}$. Exprimer $a_{n + 1}$ en fonction de $a_n$.
+\item Montrer que $a_{2n}$ et $a_{2n + 1}$ sont adjacentes.
+\item D\'eterminer un rationnel $r$ tel que $\left|r-\frac{1 + \sqrt 5}2\right|< 10^{-3}$.
+\end{enumerate}
+
+\finenonce
+
+\noindication
+
+\correction
+L'équation caractéristique est :
+$$r^2-r-1=0$$
+dont les solution sont $\lambda = \frac{1-\sqrt5}{2}$ et $\mu =
+\frac{1+\sqrt5}{2}$. Donc $u_n$ est de la forme
+$$u_n = \alpha \lambda^n + \beta\mu^n$$
+pour $\alpha, \beta$ des réels que nous allons calculer gr\^ace à
+$u_0$ et $u_1$. En effet $u_0 = 1 = \alpha \lambda^0 + \beta\mu^0$
+donc $\alpha+\beta = 1$. Et comme $u_1 =1= \alpha \lambda^1 +
+\beta\mu^1$ nous obtenons $\alpha \frac{1-\sqrt5}{2} + \beta
+\frac{1+\sqrt5}{2}=1$. En résolvant ces deux équations nous
+obtenons $\alpha = \frac{1}{\sqrt5}\frac{\sqrt5-1}{2}=
+\frac{1}{\sqrt5}(-\lambda)$ et $\beta =
+\frac{1}{\sqrt5}\frac{1+\sqrt5}{2}= \frac{1}{\sqrt5}(\mu)$. Nous
+écrivons donc pour finir :
+$$u_n = \frac{1}{\sqrt5}\big( \mu^{n+1}-\lambda^{n+1}\big).$$
+\fincorrection
+
+\finexercice
+

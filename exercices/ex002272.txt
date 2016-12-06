@@ -1,0 +1,36 @@
+\exercice{2272, barraud, 2008/04/24}
+\enonce
+ Trouver le $\pgcd(f,g)$ dans $\Zz_2[x]$ 
+et sa repr\'esentation lin\'eaire 
+$fu+gv$ o\`u $d, u,v\in \Zz_2[x]$ :
+
+\begin{enumerate}
+  \item $$ f=x^5+x^4+1,\qquad g=x^4+x^2+1;
+$$
+  \item $$\quad f=x^5+x^3+x+1,\qquad g=x^4+1.
+$$
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+Utiliser l'algorithme d'Euclide. (on travaille dans $\Zz/2\Zz$).
+  \begin{align*}
+    x^{5}+x^{4}+1&=(x^{4}+x^{2}+1)(x+1)+x^{3}+x^{2}+x\\
+    x^{4}+x^{2}+1&=(x^{3}+x^{2}+x)(x+1)+x^{2}+x+1\\
+    x^{3}+x^{2}+x&=(x^{2}+x+1)x+0\\
+  \end{align*}
+  Donc $\pgcd(x^{5}+x^{4}+1,x^{4}+x^{2}+1)=x^{2}+x+1$, et
+  \begin{align*}
+    x^{2}+x+1&=(x^{4}+x^{2}+1)+(x^{3}+x^{2}+x)(x+1)\\
+    &=(x^{4}+x^{2}+1)+\big((x^{5}+x^{4}+1)+(x^{4}+x^{2}+1)(x+1)\big)(x+1)\\
+    &=(x^{4}+x^{2}+1)(1+(x+1)^{2})+(x^{5}+x^{4}+1)(x+1)\\
+    &=(x^{4}+x^{2}+1)(x^{2})+(x^{5}+x^{4}+1)(x+1)\\
+  \end{align*}
+
+  \smallskip
+  De même, $\pgcd(x^{5}+x^{3}+x+1,x^{4}+1)=x^{3}+1$ et
+  $x^{3}+1=(x^{5}+x^{3}+x+1)+(x^{4}+1)x$.
+\fincorrection
+\finexercice

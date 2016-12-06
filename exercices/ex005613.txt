@@ -1,0 +1,23 @@
+\exercice{5613, rouget, 2010/10/16}
+\enonce[***I]
+Soit $n$ un entier naturel supérieur ou égal à $2$ et $\omega=e^{2i\pi/n}$.
+
+Soit $A =(\omega^{(j-1)(k-1)})_{1\leqslant j,k\leqslant n}$. Montrer que $A$ est inversible et calculer $A^{-1}$.
+\finenonce
+
+\noindication
+
+\correction
+Calculons $A\overline{A}$. Soit $(j,k)\in\llbracket1,n\rrbracket^2$. Le coefficient ligne $j$, colonne $k$ de $A\overline{A}$ vaut
+
+\begin{center}
+$\sum_{u=1}^{n}\omega^{(j-1)(u-1)}\omega^{-(u-1)(k-1)}=\sum_{u=1}^{n}\left(\omega^{j-k}\right)^{u-1}$.
+\end{center}
+
+\textbullet~Si $j=k$, ce coefficient vaut $n$.
+
+\textbullet~Si $j\neq k$, puisque $j-k$ est strictement compris entre $-n$ et $n$ et que $j-k$ n'est pas nul, $\omega^{j-k}$ est différent de $1$. Le coefficient ligne $j$, colonne $k$, de $A\overline{A}$ est donc égal à $\frac{1-\left(\omega^{j-k}\right)^{n}}{1-\omega^{j-k}}=\frac{1-1}{1-\omega^{j-k}}= 0$.
+
+Finalement, $A\overline{A}=nI_n$. Ainsi, $A$ est inversible à gauche et donc inversible, d'inverse $A^{-1}=\frac{1}{n}\overline{A}$.
+\fincorrection
+\finexercice

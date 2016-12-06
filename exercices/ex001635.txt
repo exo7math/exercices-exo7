@@ -1,0 +1,81 @@
+\exercice{1635, barraud, 2003/09/01}
+
+\enonce
+La matrice suivante est-elle diagonalisable, triangularisable~? Effectuer
+explicitement la réduction.
+  $$
+  A=
+  \begin{pmatrix}
+     3& 2& 4\\ 
+    -1& 3&-1\\
+    -2&-1&-3
+  \end{pmatrix}
+  $$
+
+\finenonce
+
+\noindication
+
+\correction
+
+  $\chi_{A}=(-1-X)(2-X)^{2}$. Donc $A$ est diagonalisable ssi $\dim
+  \ker(A-2I)=2$. Or $\mathrm{rg}(A-2I)=2$, donc $\dim \ker(A-2I)=1$ donc $A$
+  n'est pas diagonalisable. Cependant, $\chi_{A}$ est scindé sur $\R$
+  donc $A$ est triangularisable sur $\R$.
+
+  $\Big(\begin{smallmatrix}x\\y\\z\end{smallmatrix}\Big)\in\ker(A+I)%
+  \Leftrightarrow\Big\{\begin{smallmatrix}%
+    4x+2y+4z=0\\-x+4y-z=0\\-2x-y-2z=0%
+  \end{smallmatrix}
+  \Leftrightarrow\big\{\begin{smallmatrix}%
+    x+z=0\\y=0%
+  \end{smallmatrix}$ donc $\ker(A+I)=\R\Big(\begin{smallmatrix}%
+    1\\0\\-1%
+  \end{smallmatrix}\Big)$
+
+De m\^eme,
+ 
+  $\Big(\begin{smallmatrix}x\\y\\z\end{smallmatrix}\Big)\in\ker(A-2I)%
+  \Leftrightarrow\Big\{\begin{smallmatrix}%
+    x+2y+4z=0\\-x+y-z=0\\-2x-y-5z=0%
+  \end{smallmatrix}
+  \Leftrightarrow\big\{\begin{smallmatrix}%
+    x=2y\\z=-y%
+  \end{smallmatrix}$ donc $\ker(A+I)=\R\Big(\begin{smallmatrix}%
+    2\\1\\-1%
+  \end{smallmatrix}\Big)$
+
+On sait que $\ker((A-2I)^{2})$ est de dimension 2, et que $\Big(\begin{smallmatrix}%
+    2\\1\\-1%
+  \end{smallmatrix}\Big)\in\ker(A-2I)\subset\ker((A-2I)^{2})$.
+ On cherche donc un deuxième vecteur dans $\ker((A-2I)^{2})$, linéairement
+ indépendant de $\Big(\begin{smallmatrix}%
+    2\\1\\-1%
+  \end{smallmatrix}\Big)$.
+
+$(A-2I)^{2}=\Big(\begin{smallmatrix}%
+    -9&0&-18\\0&0&0\\9&0&18%
+  \end{smallmatrix}\Big)$
+donc $\Big(\begin{smallmatrix}%
+    0\\1\\0%
+  \end{smallmatrix}\Big)$
+convient. De plus~: $A\Big(\begin{smallmatrix}%
+    0\\1\\0%
+  \end{smallmatrix}\Big)=\Big(\begin{smallmatrix}%
+    2\\3\\-1%
+  \end{smallmatrix}\Big)=\Big(\begin{smallmatrix}%
+    2\\1\\-1%
+  \end{smallmatrix}\Big)+2\Big(\begin{smallmatrix}%
+    0\\1\\0%
+  \end{smallmatrix}\Big)$.
+
+Donc en posant $P=\Big(\begin{smallmatrix}%
+    1&2&0\\0&1&1\\-1&-1&0%
+  \end{smallmatrix}\Big)$, on obtient
+$P^{-1}AP=\Big(\begin{smallmatrix}%
+    -1&0&0\\0&2&1\\0&0&2%
+  \end{smallmatrix}\Big)$.
+\fincorrection
+
+\finexercice
+

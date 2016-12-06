@@ -1,0 +1,44 @@
+\exercice{230, bodin, 1998/09/01}
+
+\enonce
+D\'emontrer les formules suivantes :
+\begin{enumerate}
+    \item $C_n^m=C_m^{n-m}$ (on pourra utiliser le fait que $\mathcal{P}(E)
+    \longrightarrow \mathcal{P}(E) A\mapsto A^c$ est une bijection.)
+    \item $C_n^m=C_{n-1}^m+C_{n-1}^{m-1},$
+    \item $C_{n}^{m}=C_{n-2}^{m} +2C_{n-2}^{m-1}+C_{n-2}^{m-2}.$
+\end{enumerate}
+
+\finenonce
+
+\noindication
+
+\correction
+L'application $\Phi$ est une bijection : son inverse est $\Phi$
+elle-m\^eme.
+
+Supposons que $E$ soit un ensemble fini. Notre bijection $\Phi$
+envoie un ensemble $\mathcal{Q} \subset \mathcal{P}(E)$ sur un
+ensemble de m\^eme cardinal.
+
+Choisissons $E$ un ensemble \`a $n$ \'el\'ements, et soit $p\le
+n$. Soit $\mathcal{Q} \subset \mathcal{P}(E)$ :
+$$\mathcal{Q} = \left\lbrace F \subset E,\ \ \mathrm{Card} F = p \right\rbrace.$$
+
+Nous savons que $\mathrm{Card} \mathcal{Q} =C_n^p$ (c'est la d\'efinition
+de $C^p_n$).
+ De plus
+\begin{align*}
+ \Phi(\mathcal{Q})
+  &= \left\lbrace \Phi(F),\ \ F \subset E,\ \ \mathrm{Card} F = p \right\rbrace \\
+  &= \left\lbrace \complement F,\ \ F \subset E,\ \ \mathrm{Card} F = p \right\rbrace \\
+  &= \left\lbrace G\subset E,\ \ \mathrm{Card} G = n-p \right\rbrace.
+\end{align*}
+
+Donc $\mathrm{Card} \Phi(\mathcal{Q}) = C_n^{n-p}$. Et comme $\Phi$ est
+une bijection, $\mathrm{Card} \Phi(\mathcal{Q}) = \mathrm{Card} (\mathcal{Q})$,
+donc $C_n^{n-p}=C_n^p$.
+\fincorrection
+
+\finexercice
+

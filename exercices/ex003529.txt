@@ -1,0 +1,19 @@
+\exercice{3529, quercia, 2010/03/10}
+\enonce[Ensi Physique 93]
+
+Soient $x_1,\dots,x_n,y_1,\dots,y_n \in \C$.
+Calculer $\Delta_n = \det(I+(x_iy_j))$.
+
+\finenonce
+
+\noindication
+
+\correction
+Soit $M = (x_iy_j)$ : $M$ est de rang inférieur ou égal à $1$, donc
+$0$ est valeur propre de $M$ d'ordre au moins $n-1$.
+Comme $\mathrm{tr}(M) = x_1y_1 + \dots + x_ny_n$, le polynôme caractéristique de
+$M$ est $\chi_M(x) = (-x)^{n-1}(x_1y_1 + \dots + x_ny_n - x)$, et le déterminant demandé
+est $\Delta_n = \chi_M(-1) = x_1y_1 + \dots + x_ny_n + 1$.
+\fincorrection
+
+\finexercice

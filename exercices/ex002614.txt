@@ -1,0 +1,285 @@
+\exercice{2614, delaunay, 2009/05/19}
+\enonce
+
+Soient ${a\in \R}$, ${b\in \R}$ et $A$ la matrice 
+$$\begin{pmatrix}
+1&a&0 \\ 
+0&1&b \\ 
+0&0&2 \\ 
+\end{pmatrix}$$
+
+\begin{enumerate}
+ \item  Donner les valeurs de $a$ et de $b$ pour lesquelles la décomposition de Dunford de $A$ est
+$$A=\begin{pmatrix}
+1 & 0 & 0  \\ 
+0 & 1 & 0  \\ 
+0 & 0 & 2  \\ 
+\end{pmatrix} + 
+\begin{pmatrix}
+ 0 & a & 0  \\ 
+0 & 0 & b  \\ 
+0 & 0 & 0  \\ 
+\end{pmatrix} 
+$$
+ \item On suppose dans la suite que $b=1$ et $a\ne 0$
+   \begin{enumerate}
+   \item Déterminer les sous espaces propres et les sous espaces caractéristiques de $A$.
+   \item  Trouver $D$ diagonalisable et $N$ nilpotente telles que $D$ commute avec $N$ et 
+$$A=D+N.$$
+  \end{enumerate}
+ \item Soit le système différentiel suivant:
+
+$${\cal E}: \ \ \left\{\begin{align*} x_1 '(t)&= x_1(t)+2x_2(t) \\ 
+x_2'(t)&= x_2(t)+x_3(t) \\ 
+x_3'(t)&= 2x_3(t) \\ 
+\end{align*}\right.$$
+
+Déterminer les solutions de ${\cal E}$.
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+Soient ${a\in \R}$, ${b\in \R}$ et $A$ la matrice 
+
+$$\begin{pmatrix} 1&a&0\cr
+0&1&b\cr
+0&0&2\cr
+\end{pmatrix} $$
+
+\begin{enumerate}
+ \item  {\it Donnons les valeurs de $a$ et de $b$ pour lesquelles la décomposition de Dunford de $A$ est}
+
+
+
+$$A=\begin{pmatrix}
+1 & 0 & 0 \cr
+0 & 1 & 0 \cr
+0 & 0 & 2 \cr
+\end{pmatrix} + 
+\begin{pmatrix}
+ 0 & a & 0 \cr
+0 & 0 & b \cr
+0 & 0 & 0 \cr
+\end{pmatrix} 
+$$
+Notons $D=\begin{pmatrix}
+1 & 0 & 0 \cr
+0 & 1 & 0 \cr
+0 & 0 & 2 \cr
+\end{pmatrix}$ et $N=\begin{pmatrix}
+ 0 & a & 0 \cr
+0 & 0 & b \cr
+0 & 0 & 0 \cr
+\end{pmatrix}$.
+Cette décomposition de $A=D+N$ est sa décomposition de Dunford si et seulement si $N$ est nilpotente (il est clair que $D$ est diagonale) et si $ND=DN$.
+
+Vérifions que $N$ est nilpotente :
+$$N^2=\begin{pmatrix}
+ 0 & a & 0 \cr
+0 & 0 & b \cr
+0 & 0 & 0 \cr
+\end{pmatrix}.\begin{pmatrix}
+ 0 & a & 0 \cr
+0 & 0 & b \cr
+0 & 0 & 0 \cr
+\end{pmatrix}=\begin{pmatrix}
+ 0 & 0 & ab \cr
+0 & 0 & 0 \cr
+0 & 0 & 0 \cr
+\end{pmatrix},\quad N^3=\begin{pmatrix}
+ 0 & 0 & 0 \cr
+0 & 0 & 0 \cr
+0 & 0 & 0 \cr
+\end{pmatrix}$$
+ainsi la matrice $N$ est bien nilpotente quelques soient les valeurs de $a$ et $b$. Déterminons pour quelles valeurs de $a$ et $b$ les matrices commutent.
+
+$$N.D=\begin{pmatrix}
+ 0 & a & 0 \cr
+0 & 0 & b \cr
+0 & 0 & 0 \cr
+\end{pmatrix}.\begin{pmatrix}
+1 & 0 & 0 \cr
+0 & 1 & 0 \cr
+0 & 0 & 2 \cr
+\end{pmatrix}=\begin{pmatrix}
+0 & a & 0 \cr
+0 & 0 & 2b \cr
+0 & 0 & 0 \cr
+\end{pmatrix}$$ et 
+$$D.N=\begin{pmatrix}
+1 & 0 & 0 \cr
+0 & 1 & 0 \cr
+0 & 0 & 2 \cr
+\end{pmatrix}.\begin{pmatrix}
+ 0 & a & 0 \cr
+0 & 0 & b \cr
+0 & 0 & 0 \cr
+\end{pmatrix}=\begin{pmatrix}
+ 0 & a & 0 \cr
+0 & 0 & b \cr
+0 & 0 & 0 \cr
+\end{pmatrix}.$$
+Ainsi, $ND=DN$ si et seulement si $b=2b$, c'est-à-dire si $b=0$. Le paramètre $a$ peut prendre n'importe quelle valeur.
+ 
+
+ \item  On suppose dans la suite que $b=1$ et $a\neq 0$.
+$$A=\begin{pmatrix} 1&a&0\cr
+0&1&1\cr
+0&0&2\cr
+\end{pmatrix}$$
+
+ \begin{enumerate}
+\item {\it Déterminons les sous espaces propres et les sous espaces caractéristiques de $A$}.
+ 
+Commençons par déterminer les valeurs propres de $A$, ce qui est immédiat car $A$ est sous forme triangulaire. Elle admet donc deux valeurs propres, $1$ valeur propre double et $2$ valeur propre simple.
+ 
+Notons $E_1$ et $E_2$ les sous-espaces propres de $A$.
+
+$$E_{1}=\{\vec u=(x,y,z)\in\R^3,\ A\vec u =\vec u\}.$$
+On a 
+$$\vec u\in E_{1}\iff \left\{\begin{align*} x+ay&=x\cr y+z&=y\cr 2z&=z\end{align*}\right.\iff\left\{\begin{align*}y&=0\cr z&=0\end{align*}\right.$$ 
+L'espace $E_1$ est donc la droite vectorielle engendrée par le vecteur $(1,0,0)$, ce sous-espace propre associé à la valeur propre double $1$ est de dimension $1$, la matrice n'est pas diagonalisable.
+ 
+$$E_{2}=\{\vec u=(x,y,z)\in\R^3,\ A\vec u =2\vec u\}.$$
+On a 
+$$\vec u\in E_{2}\iff \left\{\begin{align*}x+ay&=2x\cr y+z&=2y\cr 2z&=2z\end{align*}\right.\iff\left\{\begin{align*}x&=ay\cr y&=z\end{align*}\right.$$ 
+L'espace $E_2$ est donc la droite vectorielle engendrée par le vecteur $(a,1,1)$. La valeur propre $2$ étant simple, le sous-espace caractéristique $N_2$ associé est égal à l'espace $E_2$.
+ 
+Déterminons le sous-espace caractéristique $N_1$ associé à la valeur propre $1$. On a 
+
+$N_1=\ker(A-I)^2$. Calculons la matrice $(A-I)^2$.
+$$(A-I)^2=\begin{pmatrix} 0&a&0\cr
+0&0&1\cr
+0&0&1\cr
+\end{pmatrix}\begin{pmatrix} 0&a&0\cr
+0&0&1\cr
+0&0&1\cr
+\end{pmatrix}=\begin{pmatrix} 0&0&a\cr
+0&0&1\cr
+0&0&1\cr
+\end{pmatrix}.$$
+Ainsi, le noyau de $(A-I)^2$ est le plan engendré par les vecteurs $\vec e_1=(1,0,0)$ et $\vec e_2=(0,1,0)$. 
+ 
+
+\item {\it Déterminons $D$ diagonalisable et $N$ nilpotente telles que $D$ commute avec $N$ et} 
+$$A=D+N.$$
+Notons $\vec e_3=(a,1,1)$, dans la base $(\vec e_1,\vec e_2,\vec e_3)$, la matrice associée à l'endomorphisme représenté par $A$ s'écrit 
+$$B=\begin{pmatrix} 1&a&0\cr
+0&1&0\cr
+0&0&2\cr
+\end{pmatrix}=\underbrace{\begin{pmatrix} 1&0&0\cr
+0&1&0\cr
+0&0&2\cr
+\end{pmatrix}}_\Delta+\underbrace{\begin{pmatrix} 0&a&0\cr
+0&0&0\cr
+0&0&0\cr
+\end{pmatrix}}_M .$$
+Par construction, c'est la décomposition de Dunford de $B$ et on a $A=PBP^{-1}$ avec 
+$$P=\begin{pmatrix} 1&0&a\cr
+0&1&1\cr
+0&0&1\cr
+\end{pmatrix}\ {\hbox{et}}\ P^{-1}=\begin{pmatrix} 1&0&-a\cr
+0&1&-1\cr
+0&0&1\cr
+\end{pmatrix}.$$
+Les matrices $D=P\Delta P^{-1}$ et $N=PMP^{-1}$ vérifient, $N$ nilpotente, $D$ diagonalisable et $ND=DN$. Calculons les
+$$D=P\Delta P^{-1}=\begin{pmatrix} 1&0&a\cr
+0&1&1\cr
+0&0&1\cr
+\end{pmatrix}\begin{pmatrix} 1&0&0\cr
+0&1&0\cr
+0&0&2\cr
+\end{pmatrix}\begin{pmatrix} 1&0&-a\cr
+0&1&-1\cr
+0&0&1\cr
+\end{pmatrix}=\begin{pmatrix} 1&0&a\cr
+0&1&1\cr
+0&0&2\cr
+\end{pmatrix}$$
+$$N=PMP^{-1}=\begin{pmatrix} 1&0&a\cr
+0&1&1\cr
+0&0&1\cr
+\end{pmatrix}\begin{pmatrix} 0&a&0\cr
+0&0&0\cr
+0&0&0\cr
+\end{pmatrix}\begin{pmatrix} 1&0&-a\cr
+0&1&-1\cr
+0&0&1\cr
+\end{pmatrix}=\begin{pmatrix} 0&a&-a\cr
+0&0&0\cr
+0&0&0\cr
+\end{pmatrix}=A-D.$$
+Ainsi
+$$A=\begin{pmatrix} 1&a&0\cr
+0&1&1\cr
+0&0&2\cr
+\end{pmatrix}=N+D=\begin{pmatrix} 0&a&-a\cr
+0&0&0\cr
+0&0&0\cr
+\end{pmatrix}+\begin{pmatrix} 1&0&a\cr
+0&1&1\cr
+0&0&2\cr
+\end{pmatrix}.$$
+ \end{enumerate}
+ 
+\item Soit le système différentiel suivant:
+
+$${\cal E}: \ \ \left\{\begin{align*} x_1 '(t)&= x_1(t)+2x_2(t)\cr
+x_2'(t)&= x_2(t)+x_3(t)\cr
+x_3'(t)&= 2x_3(t)\cr
+\end{align*}\right.$$
+
+{\it Déterminons les solutions de ${\cal E}$}.
+ 
+Remarquons que, si l'on note $X=(x_1,x_2,x_3)$, le système $\cal E$ s'écrit $X'=AX$ avec
+$$A=\begin{pmatrix} 1&2&0\cr
+0&1&1\cr
+0&0&2\cr
+\end{pmatrix} $$
+qui correspond à la matrice $A$ précédente avec $a=2$ et $b=1$. La solution générale du système s'écrit 
+$$X(t)=\exp(tA)V$$ 
+où $V=(a,b,c)$ est un vecteur de $\R^3$.
+ 
+Par ailleurs $X=PY$ est solution de $X'=AX\iff Y$ est solution de $Y'=\underbrace{P^{-1}AP}_B Y$. La solution générale du système $Y'=BY$ s'écrit $Y=\exp(tB)V$ où $V\in\R^3$. Calculons donc l'exponentielle de la matrice $tB$ pour $t\in\R$. On a vu dans la question précédente que $B=\Delta + M$ avec $\Delta M=M\Delta$, ainsi
+$$\begin{align*}\exp(tB)&=\exp(t\Delta).\exp(tM)\cr
+&=\begin{pmatrix} e^t&0&0\cr
+0&e^t&0\cr
+0&0&e^{2t}\cr
+\end{pmatrix}.(I+tM)\quad {\hbox{car}}\ M^2=O\cr
+&=\begin{pmatrix} e^t&0&0\cr
+0&e^t&0\cr
+0&0&e^{2t}\cr
+\end{pmatrix}\begin{pmatrix} 1&2t&0\cr
+0&1&0\cr
+0&0&1\cr
+\end{pmatrix}=\begin{pmatrix} e^t&2te^t&0\cr
+0&e^t&0\cr
+0&0&e^{2t}\cr
+\end{pmatrix}.
+\end{align*}$$
+La solution générale du système $\cal E$ s'écrit donc $X=P\exp(tB).V$ où $V=(a,b,c)\in\R^3$. C'est-à-dire
+$$X(t)=\begin{pmatrix} 1&0&2\cr
+0&1&1\cr
+0&0&1\cr
+\end{pmatrix}\begin{pmatrix} e^t&2te^t&0\cr
+0&e^t&0\cr
+0&0&e^{2t}\cr
+\end{pmatrix}\begin{pmatrix} a\cr
+b\cr
+c\cr
+\end{pmatrix}=\begin{pmatrix} e^t&2te^t&2e^{2t}\cr
+0&e^t&e^{2t}\cr
+0&0&e^{2t}\cr
+\end{pmatrix}\begin{pmatrix} a\cr
+b\cr
+c\cr
+\end{pmatrix}$$ 
+où encore
+$$\left\{\begin{align*}x_1(t)&=(a+2bt)e^t+2ce^{2t}\cr
+x_2(t)&=be^t+ce^{2t}\cr
+x_3(t)&=ce^{2t}\end{align*}\right.$$
+\end{enumerate}
+\fincorrection
+\finexercice

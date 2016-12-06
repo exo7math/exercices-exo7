@@ -1,0 +1,148 @@
+\exercice{1163, barraud, 2003/09/01}
+\video{I_lQjh6jGgo}
+% d'après 1163 + 1164 : barraud
+\enonce
+  Résoudre les systèmes suivants
+  $$
+  \left\{
+    \begin{array}{rcrcrcl}
+         x &+&    y &-&    z &=&  0  \\
+         x &-&    y & &      &=&  0  \\
+         x &+&    4y &+&   z &=&  0  
+    \end{array}
+  \right.  
+ \qquad
+\left\{
+    \begin{array}{rcrcrcl}
+       x &+&  y &+& 2z &=& 5  \\
+       x &-&  y &-&  z &=& 1  \\
+       x & &    &+&  z &=& 3    
+    \end{array}
+  \right. 
+\qquad 
+  \left\{
+    \begin{array}{rcrcrcl}
+      3x &-& y  &+& 2z &=& a \\
+      -x &+& 2y &-& 3z &=& b \\
+       x &+& 2y &+&  z &=& c 
+    \end{array}
+  \right.
+  $$
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item  Remarquons que comme le système est homogène (c'est-à-dire les coefficients du second membre sont
+nuls) alors $(0,0,0)$ est une solution du système. Voyons s'il y en a d'autres. 
+Nous faisons semblant de ne pas voir que la seconde ligne implique $x=y$ et 
+que le système est en fait très simple à résoudre. 
+Nous allons appliquer le pivot de Gauss en faisant les opérations suivantes sur les lignes 
+$L_2 \leftarrow L_2-L_1$ et $L_3 \leftarrow L_3-L_1$ :
+$$  \left\{
+    \begin{array}{rcrcrcl}
+         x &+&    y &-&    z &=&  0  \\
+         x &-&    y & &      &=&  0  \\
+         x &+&    4y &+&    z &=&  0  
+    \end{array}
+  \right.
+\iff\left\{
+    \begin{array}{rcrcrcl}
+         x &+&    y &-&    z &=&  0  \\
+           &-&   2y &+&    z &=&  0  \\
+           & &   3y &+&    2z &=&  0  
+    \end{array}
+  \right.
+$$
+On fait maintenant $L_3 \leftarrow 2L_3+3L_2$ pour obtenir :
+$$\left\{
+    \begin{array}{rcrcrcl}
+         x &+&    y &-&    z &=&  0  \\
+           &-&   2y &+&    z &=&  0  \\
+           & &    &&       7z &=&  0  
+    \end{array}
+  \right.
+$$
+
+En partant de la dernière ligne on trouve $z=0$, puis en remontant $y=0$, puis $x=0$.
+Conclusion l'unique solution de ce système est $(0,0,0)$.
+
+  \item
+On applique le pivot de Gauss $L_2 \leftarrow L_2-L_1$ et $L_3 \leftarrow L_3-L_1$ :
+$$ \left\{
+    \begin{array}{rcrcrcl}
+       x &+&  y &+& 2z &=& 5  \\
+       x &-&  y &-&  z &=& 1  \\
+       x & &    &+&  z &=& 3    
+    \end{array}
+  \right. 
+\iff
+ \left\{
+    \begin{array}{rcrcrcl}
+       x &+&  y &+&  2z &=& 5  \\
+        &-&  2y &-&  3z &=& -4  \\
+        &-&  y  &-&  z  &=& -2    
+    \end{array}
+  \right. 
+$$
+Puis $L_3\leftarrow 2L_3-L_2$ pour obtenir un système équivalent qui est triangulaire donc facile à résoudre :
+$$ \left\{
+    \begin{array}{rcrcrcl}
+       x &+&  y &+&  2z &=& 5  \\
+        &-&  2y &-&  3z &=& -4  \\
+        &&    &&  z  &=& 0    
+    \end{array}
+  \right. 
+\iff \left\{
+    \begin{array}{rcl}
+        x &=& 3 \\
+        y &=& 2 \\
+        z &=& 0    
+    \end{array} \right.
+$$
+
+On n'oublie pas de vérifier que c'est une solution du système initial.
+
+  \item  
+On fait les opérations $L_2\leftarrow 3L_2+L_1$ et $L_3\leftarrow 3L_3-L_1$ pour obtenir :
+$$\left\{
+    \begin{array}{rcrcrcl}
+      3x &-& y  &+& 2z &=& a \\
+      -x &+& 2y &-& 3z &=& b \\
+       x &+& 2y &+&  z &=& c 
+    \end{array}
+  \right.
+\iff
+\left\{
+    \begin{array}{rcrcrcl}
+      3x &-& y  &+& 2z &=& a \\
+         & & 5y &-& 7z &=& 3b+a \\
+         & & 7y &+&  z &=& 3c-a 
+    \end{array}
+  \right.
+  $$
+Puis on fait $L_3\leftarrow 5L_3-7L_2$, ce qui donne un système triangulaire :
+$$\left\{
+    \begin{array}{rcrcrcl}
+      3x &-& y  &+& 2z &=& a \\
+         & & 5y &-& 7z &=& 3b+a \\
+         & &    & & 54z &=& 5(3c-a)-7(3b+a) 
+    \end{array}
+  \right.
+  $$
+En partant de la fin on en déduit : $z= \frac{1}{54}(-12a-21b+15c)$ puis en remontant cela donne
+$$\left\{
+    \begin{array}{rcl}
+         x &=& \frac{1}{18}(8a+5b-c) \\
+         y &=& \frac{1}{18}(-2a+b+7c) \\
+         z &=& \frac{1}{18}(-4a-7b+5c)
+    \end{array}
+  \right.
+  $$
+
+\end{enumerate}
+
+\fincorrection
+
+\finexercice

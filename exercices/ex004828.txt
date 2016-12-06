@@ -1,0 +1,28 @@
+\exercice{4828, quercia, 2010/03/16}
+\enonce[Application presque contractante]
+Soit $A$ une partie compacte d'un evn $E$ et $f : A \to  A$ telle que :
+$\forall\ x,y \in A,\ x\ne y  \Rightarrow  d(f(x),f(y)) < d(x,y)$.
+
+\begin{enumerate}
+  \item Montrer que $f$ admet un point fixe unique, $a$.
+  \item Soit $(x_n)$ une suite d'{\'e}l{\'e}ments de $A$ telle que $x_{n+1} = f(x_n)$.
+    Montrer qu'elle converge vers $a$.
+    
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item 
+  \item $d(x_n,a)$ d{\'e}croit, donc tend vers $d$.  Il existe une
+    sous-suite $(x_{n_k})$ convergeant vers $\ell$ et $d(\ell,a) = d$.
+    La suite $(f(x_{n_k}))$ converge vers $f(\ell)$ et on a
+    $d(f(\ell),a) = d$, donc $\ell = a$. Il y a une seule valeur
+    d'adh{\'e}rence, donc la suite converge.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

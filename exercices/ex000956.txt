@@ -1,0 +1,176 @@
+\exercice{956, legall, 1998/09/01}
+\video{DY3GrL-j6C4}
+\enonce
+Pour les applications lin\'eaires suivantes,  d\'eterminer $\ker f_i$ et 
+$\Im f_i$. En d\'eduire si $f_i$ est injective, surjective, bijective.
+$$\begin{array}{rl}
+f_1 : \Rr^2 \to \Rr^2 & f_1(x,y)=(2x+y,x-y)  \\
+f_2 : \Rr^3 \to \Rr^3 & f_2(x,y,z)=(2x+y+z,y-z,x+y) \\
+f_3 : \Rr^2 \to \Rr^4 & f_3(x,y)=(y,0,x-7y,x+y) \\
+f_4 : \Rr_3[X] \to \Rr^3 & f_4(P) = \big( P(-1), P(0), P(1) \big) \\
+\end{array}
+$$
+\finenonce 
+
+\noindication
+
+\correction
+Calculer le noyau revient à résoudre un système linéaire,
+et calculer l'image aussi. On peut donc tout faire ``à la main''.
+
+Mais on peut aussi appliquer un peu de théorie ! Noyau et image sont liés par la formule du rang : 
+$\dim \ker f + \dim \Im f = \dim E$
+pour $f : E \to F$. Donc si on a trouvé le noyau alors on connaît la dimension de l'image.
+Et il suffit alors de trouver autant de vecteur de l'image.
+
+
+\begin{enumerate}
+  \item $f_1$ est injective, surjective (et donc bijective).
+
+  \begin{enumerate}
+  \item Faisons tout à la main. Calculons le noyau :
+\begin{align*}
+(x,y) \in \ker f_1
+  & \iff f_1(x,y) = (0,0) 
+  \iff (2x+y,x-y) = (0,0) \\
+  &\iff \begin{cases}
+         2x+y=0 \\
+        x-y=0 \\   
+        \end{cases}
+  \iff (x,y)=(0,0) \\
+\end{align*}
+Ainsi $\ker f_1 = \{ (0,0) \}$ et donc $f_1$ est injective.
+
+   \item Calculons l'image. Quels éléments $(X,Y)$ peuvent s'écrire $f_1(x,y)$ ?
+\begin{align*}
+f_1(x,y) = (X,Y) 
+  & \iff (2x+y,x-y) = (X,Y) \\
+  &\iff \begin{cases}
+         2x+y=X \\
+         x-y=Y \\   
+        \end{cases} 
+  \iff \begin{cases}
+         x=\frac{X+Y}{3} \\
+         y=\frac{X-2Y}{3} \\   
+        \end{cases} \\
+  & \iff (x,y)=\left(\frac{X+Y}{3},\frac{X-2Y}{3}\right) \\
+\end{align*}
+Donc pour n'importe quel $(X,Y)\in\Rr^2$ on trouve un antécédent $(x,y)=(\frac{X+Y}{3},\frac{X-2Y}{3})$
+qui vérifie donc $f_1(x,y)=(X,Y)$. Donc $\Im f_1 = \Rr^2$. Ainsi $f_1$ est surjective.
+
+  \item Conclusion : $f_1$ est injective et surjective donc bijective.
+  \end{enumerate}
+
+
+  \item 
+\begin{enumerate}
+  \item Calculons d'abord le noyau :
+\begin{align*}
+(x,y,z) \in \ker f_2
+  & \iff f_2(x,y,z) = (0,0,0) \\
+  & \iff (2x+y+z,y-z,x+y) = (0,0,0) \\
+  &\iff \begin{cases}
+         2x+y+z = 0 \\
+         y-z = 0 \\   
+         x+y = 0 \\ 
+        \end{cases} \\
+  & \iff  \begin{cases}
+         x = -z \\
+         y = z \\   
+        \end{cases} \\
+  & \iff 
+  \begin{pmatrix}x\\y\\z\end{pmatrix} = \begin{pmatrix}-z\\z\\z\end{pmatrix}\\ 
+  &\iff 
+  \begin{pmatrix}x\\y\\z\end{pmatrix} \in 
+  \text{Vect} \begin{pmatrix}-1\\1\\1\end{pmatrix} 
+  = \left\lbrace \lambda\begin{pmatrix}-1\\1\\1\end{pmatrix} \mid \lambda \in \Rr \right\rbrace\\ 
+\end{align*}
+Ainsi $\ker f_2 =  \text{Vect}(-1,1,1) $ et donc $f_2$ n'est pas injective.
+
+  \item Maintenant nous allons utiliser que $\ker f_2 = \text{Vect}(-1,1,1)$ , autrement dit
+$\dim  \ker f_2 = 1$.
+La formule du rang, appliquée à $f_2 : \Rr^3 \to \Rr^3$ s'écrit 
+$\dim \ker f_2 + \dim \Im f_2 = \dim \Rr^3$. Donc $\dim \Im f_2 = 2$.
+Nous allons trouver une base de $\Im f_2$. Il suffit donc de trouver deux vecteurs linéairement indépendants.
+Prenons par exemple
+$v_1 = f_2(1,0,0) =  (2,0,1) \in\Im f_2$
+et $v_2 = f_2(0,1,0) = (1,1,1) \in \Im f_2$. Par construction ces vecteurs sont dans l'image de $f_2$ et 
+il est clair qu'ils sont linéairement indépendants. Donc $\{v_1,v_2\}$ est une base de $\Im f_2$.
+
+  \item $f_2$ n'est ni injective, ni surjective (donc pas bijective).
+  \end{enumerate}
+
+
+  \item Sans aucun calcul on sait $f_3: \Rr^2 \to \Rr^4$ ne peut être surjective 
+car l'espace d'arrivée est de dimension strictement
+supérieur à l'espace de départ. 
+  \begin{enumerate}
+  \item Calculons le noyau :
+\begin{align*}
+(x,y) \in \ker f_3
+  & \iff f_3(x,y) = (0,0,0,0) \\
+  & \iff  (y,0,x-7y,x+y) = (0,0,0,0) \\
+  & \iff \begin{cases}
+         y = 0 \\
+         0  = 0 \\   
+         x-7y = 0 \\ 
+         x+y = 0 \\ 
+        \end{cases} \\
+  & \iff \cdots \\ 
+  & \iff (x,y)=(0,0) \\
+\end{align*}
+Ainsi $\ker f_3 = \{ (0,0) \}$ et donc $f_3$ est injective.
+
+  \item La formule du rang, appliquée à $f_3 : \Rr^2 \to \Rr^4$ s'écrit 
+$\dim \ker f_3 + \dim \Im f_3 = \dim \Rr^2$. Donc $\dim \Im f_3 = 2$.
+Ainsi $\Im f_3$ est un espace vectoriel de dimension $2$ inclus dans $\Rr^3$,
+ $f_3$ n'est pas surjective.
+
+Par décrire $\Im f_3$ nous allons trouver deux vecteurs indépendants de $\Im f_3$.
+Il y a un nombre infini de choix : prenons par exemple 
+$v_1 = f(1,0) = (0,0,1,1)$. Pour $v_2$ on cherche (un peu à tâtons) un vecteur linéairement indépendant de $v_1$.
+Essayons $v_2 = f(0,1)=(1,0,-7,1)$. Par construction $v_1,v_2 \in \Im f$ ; ils sont clairement linéairement indépendants
+et comme $\dim \Im f_3=2$ alors $\{v_1,v_2\}$ est une base de $\Im f_3$.
+
+Ainsi $\Im f_3= \text{Vect}\{v_1,v_2\} =\big\{ \lambda(0,0,1,1) + \mu (1,0,-7,1) \mid \lambda,\mu \in \Rr \big\}$.
+  \end{enumerate}
+
+  
+  
+  \item $f_4 : \Rr_3[X] \to \Rr^3$ va d'un espace de dimension $4$ vers un espace de dimension strictement plus petit
+et donc $f_4$ ne peut être injective.
+
+\begin{enumerate}
+  \item Calculons le noyau. \'Ecrivons un polynôme $P$ de degré $\le 3$ sous la forme
+$P(X)= aX^3+bX^2+cX+d$. Alors $P(0) = d$, $P(1)=a+b+c+d$, $P(-1)=-a+b-c+d$.
+\begin{align*}
+P(X) \in \ker f_4 
+  & \iff \big( P(-1), P(0), P(1) \big)= (0,0,0)  \\
+  & \iff (-a+b-c+d,d,a+b+c+d) = (0,0,0) \\
+  &\iff \begin{cases}
+          -a+b-c+d = 0 \\
+          d = 0 \\   
+          a+b+c+d = 0 \\ 
+        \end{cases}\\
+ & \iff \cdots \\
+ & \iff \begin{cases}
+          a = -c \\
+          b = 0 \\  
+          d = 0 \\ 
+        \end{cases} \\
+  & \iff (a,b,c,d)=(t,0,-t,0) \quad t\in\Rr \\
+  \end{align*}
+
+Ainsi le noyau $\ker f_4 = \big\{ tX^3 - tX \mid t\in \Rr\big\} = \text{Vect}\{ X^3-X \}$.
+$f_4$ n'est pas injective son noyau étant de dimension $1$.
+
+  \item La formule du rang pour $f_4 : \Rr_3[X] \to \Rr^3$ s'écrit 
+$\dim \ker f_4 + \dim \Im f_4 = \dim \Rr_3[4]$. Autrement dit
+$1+ \dim \Im f_4 = 4$. Donc $\dim \Im f_4 = 3$. 
+Ainsi $\Im f_4$ est un espace de dimension $3$ dans $\Rr^3$ donc 
+$\Im f_4=\Rr^3$. Conclusion $f_4$ est surjective.
+  \end{enumerate}
+
+\end{enumerate}
+\fincorrection
+\finexercice

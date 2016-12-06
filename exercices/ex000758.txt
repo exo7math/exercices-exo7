@@ -1,0 +1,36 @@
+\exercice{758, gourio, 2001/09/01}
+\enonce
+\begin{enumerate}
+  \item Montrer qu'il n'existe pas de fonction $f:[1;+\infty [\rightarrow \Rr$
+v\'{e}rifiant:
+$$ \forall x\in \Rr, \quad f(\ch x)=e^{x}. $$
+  \item D\'{e}terminer toutes les fonctions $f:\Rr^{+*}\rightarrow \Rr$ telles que:
+$$ \forall x\in \Rr, \quad f(e^{x})=\ch x.$$
+Pr\'{e}ciser le nombre de solutions.
+  \item D\'{e}terminer toutes les fonctions $f:\Rr^{+}\rightarrow \Rr$ telles que:
+$$\forall x\in \Rr, \quad f(e^{x})=\ch x.$$
+Pr\'{e}ciser le nombre de solutions ; y a t-il des solutions continues sur $\Rr^{+}$ ?
+ \end{enumerate}
+\finenonce 
+
+\indication
+\begin{enumerate}
+  \item Regarder ce qui se passe en deux valeurs oppos\'ees $x$ et $-x$.
+  \item Poser $X = e^x$.
+ \end{enumerate}
+\finindication
+
+\correction
+\begin{enumerate}
+    \item Si $f$ existe alors pour $x=1$ on a $f(\ch 1)= e$
+et pour $x=-1$ on a $f(\ch -1)=f(\ch 1)=1/e$. Une fonction ne peut prendre deux valeurs diff\'erentes au m\^eme point (ici $t=\ch1$).
+  \item Notons $X = e^x$, l'\'equation devient 
+$$f(X)=\frac{e^x+e^{-x}}{2} = \frac12(X+\frac1X).$$
+Comme la fonction exponentielle est une bijection de $\Rr$ sur $]0,+\infty[$, alors l'unique fa\c{c}on de d\'efinir $f$ sur $]0,+\infty[$ est par la formule $f(t)=\frac12(t+\frac1t)$.
+  \item Comme $e^x$ est toujours non nul, alors $f$ peut prendre n'importe quelle valeur en $0$. $f(0)=c \in \Rr$ et
+$f(t)=\frac12(t+\frac1t)$ pour $t>0$. Il y a une infinit\'e de solutions.
+Mais aucune de ces solutions n'est continue car la limite de $f(t)$
+quand $t>0$ et $t\rightarrow 0$ est $+\infty$.
+\end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,25 @@
+\exercice{3191, quercia, 2010/03/08}
+
+\enonce[$\sum_{k=1}^{100}\frac k{x-k}\ge 1$ (Ens Ulm-Lyon-Cachan MP$^*$ 2003)]
+Montrer que l'ensemble des solutions de l'in{\'e}quation $\sum_{k=1}^{100}\frac k{x-k}\ge 1$
+est une r{\'e}union finie d'intervalles disjoints. Calculer la somme des
+longueurs de ces intervalles.
+\finenonce
+
+\noindication
+
+\correction
+Soit~$f(x) = \sum_{k=1}^{100}\frac k{x-k}$.
+$f$ est strictement d{\'e}croissante de~$0$ {\`a}~$-\infty$ sur~$]-\infty,0[$,
+de~$+\infty$ {\`a} $-\infty$ sur chaque
+intervalle~$]k,k+1[$,~$1\le k\le 100$ et de~$+\infty$ {\`a}~$0$ sur~$]100,+\infty[$.
+Donc il existe $1<\alpha_1<2<\alpha_2<\dots<\alpha_{99}<100<\alpha_{100}$
+tels que $E = \{x\in\R\text{ tq }f(x)\ge 1\} = \bigcup_{k=1}^{100}]k,\alpha_k]$.
+
+La somme des longueurs est $L = \sum_{k=1}^{100}\alpha_k-\sum_{k=1}^{100}k$
+et $\alpha_1,\dots,\alpha_{100}$ sont les racines du polyn{\^o}me :
+$$P(X) = \prod_{k=1}^{100}(X-k) - \sum_{k=1}^{100}k\prod_{i\ne k}(X-i)
+= X^{100}-2X^{99}\sum_{k=1}^{100}k + \dots$$
+D'o{\`u} $\sum_{k=1}^{100}\alpha_k = 2\sum_{k=1}^{100}k$ et $L=\sum_{k=1}^{100}k=5050$.
+\fincorrection
+\finexercice 

@@ -1,0 +1,75 @@
+\exercice{2641, debievre, 2009/05/19}
+\enonce
+Pour chacune des fonctions suivantes \'etudier la nature du point
+critique donn\'e :
+\begin{enumerate}
+\item $f(x,y)=x^2-xy+y^2$ au point critique $(0,0)$ ;
+\item $f(x,y)=x^2+2xy+y^2+6$ au point critique $(0,0)$ ;
+\item $f(x,y)=x^3+2xy^2-y^4+x^2+3xy+y^2+10$ au point critique
+$(0,0)$.
+\end{enumerate}
+\finenonce
+
+\indication 
+Rappel: Pour qu'un point critique non d\'eg\'en\'er\'e
+pr\'esente un maximum relatif (resp. minimum relatif) il faut et il suffit que
+la forme hessienne en ce point soit n\'egative (resp. positive) ;
+pour qu'un point critique non d\'eg\'en\'er\'e
+pr\'esente un point selle il faut et il suffit que
+la forme hessienne en ce point soit (non d\'eg\'en\'er\'ee et)
+ind\'efinie.
+\finindication
+
+\correction
+\begin{enumerate}  
+\item $df=(2x-y)\mathrm dx + (2y-x)\mathrm dy$ et
+$\mathrm{Hess}_f=\left[\begin{matrix} 2 & -1\\ -1 & 2 \end{matrix}\right]$ 
+d'o\`u
+\begin{align*}
+(u,v)\mathrm{Hess}_f(0,0)\left[\begin{matrix} u \\ v \end{matrix}\right]
+&=
+(u,v)
+\left[\begin{matrix} 2 & -1\\ -1 & 2 \end{matrix} \right]
+\left[\begin{matrix} u \\ v \end{matrix}\right]
+\\
+&=
+u(2u-v)+v(2v-u)=2(u^2-uv+v^2)
+\\
+&=
+2\left(\left(u-\tfrac v2\right)^2 + \tfrac 34 v^2\right) .
+\end{align*}
+Par cons\'equent la forme hessienne au point $(0,0)$
+est positive et ce point pr\'esente donc un minimum local.
+
+\item $f(x,y)=x^2+2xy+y^2+6= (x+y)^2+6$ d'o\`u 
+le point $(0,0)$
+pr\'esente un minimum local.
+
+\item 
+$df=(3x^2+2x+2y^2 +3y)\mathrm dx + (4xy-4y^3 +3x+2y)\mathrm dy$ et
+\[
+\mathrm{Hess}_f=\left[\begin{matrix} 
+6x +2 & 4y+3\\ 4y+3 &  -12y^2 +4x +2
+\end{matrix}\right]
+\] 
+d'o\`u
+\begin{align*}
+(u,v)\mathrm{Hess}_f(0,0)
+\left[\begin{matrix} u \\ v \end{matrix}\right]&=
+(u,v)\left[\begin{matrix} 
+2 & 3\\ 3 &  2
+\end{matrix}\right]
+\left[\begin{matrix} u \\ v \end{matrix}\right]
+\\
+&=
+(2u+3v)u+(3u+2v)v=2(u^2+3uv+v^2)
+\\
+&=
+2\left(\left(u+\tfrac {3v}2\right)^2 - \tfrac 54 v^2\right) .
+\end{align*}
+Par cons\'equent la forme hessienne au point $(0,0)$
+est non d\'eg\'en\'er\'ee et 
+ind\'efinie et ce point pr\'esente  un point selle.
+\end{enumerate}
+\fincorrection
+\finexercice

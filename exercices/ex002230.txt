@@ -1,0 +1,89 @@
+\exercice{2230, matos, 2008/04/23}
+\enonce[Algorithme de Gram--Schmidt et Gram--Schmidt modifi\'e]
+
+Etant donn\'es $n$ vecteurs lin\'eairement ind\'ependants de $\Rr^m$, $\{a_1, \cdots , a_n\}$, on veut calculer une base orthonormale pour span$\{a_1, \cdots , a_n\}$.
+
+ On pose $A=[ a_1, a_2, \cdots , a_n] \in \Rr^{m\times n}$ et on consid\`ere la factorisation QR de $A$,
+$$ A=QR,\ \ \ Q=[q_1, \cdots , q_n] ,\ \ r_i^T, i=1, \cdots , n \mbox{ les lignes de }R$$
+\begin{enumerate}
+\item Montrer que 
+$$\mbox{Im} A= \mbox{span} \{q_1, \cdots , q_n\} .$$
+\item Montrer que
+$$q_k=\frac{1}{r_{kk}} \left( a_k -\sum_{i=1}^{k-1}r_{ik}q_i\right) \ \ \ k=1, \cdots , n$$
+\item En d\'eduire un algorithme pour le calcul r\'ecursif des $q_i$ (algorithme de Gram--Schmidt).
+\item Algorithme de Gram--Schmidt modifi\'e
+
+L'algorithme pr\'ec\'edent est instable num\'eriquement d\^u \`a la perte d'orthogonalit\'e dans le calcul des $q_i$. On va reformuler l'algorithme pour le rendre stable.
+
+Pour $k=1, \cdots , n-1$, on d\'efinit $A^{(k)}\in\Rr^{m\times (n-k+1)}$ de la fa\c con suivante:
+$$[0 , A^{(k)}] =A-\sum_{i=1}^{k-1} q_ir_i^T = \sum_{i=k}^n q_ir_i^T$$
+et on va d\'ecrire l'\'etape $k$ de l'algorithme.
+\begin{enumerate}
+\item Montrer que si on pose
+$$ A^{(k)} =[z,B] ,\ \ \ z\in\Rr^m , \ \ \ B\in\Rr^{m\times (n-k)}$$
+alors
+$$r_{kk}=\|z\|_2, \ \ \ q_k=z/r_{kk}.$$
+\item Comment peut--on calculer la ligne $k$ de $R$  \`a partir de $A^{(k)}$?
+
+\item Calculer $A^{(k+1)}$.
+\item A partir des questions pr\'ec\'edentes, d\'ecrire l'algorithme qui permet le calcul de la factorisation $A=Q_1R_1$, $Q_1\in\Rr^{m \times n}$ orthonormale, $R_1\in\Rr^{n\times n}$ triangulaire sup\'erieure (Gram--Schmidt modifi\'e). Le calcul de $Q_1$ doit se faire sur place.
+\item Quelle est la complexit\'e de l'algorithme pr\'ec\'edent?
+\end{enumerate}
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item Pour $k=1,\cdots ,n\quad a_k=\sum_{i=1}^kr_{ik}q_i$ avec $r_{ik}=q_i^Ta_k$ par orthonormalit\'e des $q_i$.
+\item D\'ecoule imm\'ediatement de la question pr\'ec\'edente.
+\item Algorithme de Gram-Schmidt:
+
+Pour $k=1, \cdots , n$ faire
+
+\hspace{1cm} $r_{ik}=q_i^Ta_k\quad $ pour $i=1, \cdots , k-1$
+
+\hspace{1cm} $z_k=a_k-\sum_{i=1}^{k-1} r_{ik}q_i$
+
+\hspace{1cm} $r_{kk}=(z_k^Tz_k)^{1/2}$
+
+\hspace{1cm}$q_k=z_k/r_{kk}$
+\item \begin{enumerate}
+\item $$\sum_{i=k}^nq_ir_i^T =[q_k \cdots q_n]\left(\begin{array}{c}r_k^T\\ \vdots \\ r_n^T\end{array}\right) = q_k \cdots q_n]\left(\begin{array}{ccccccc} 
+0&\cdots &0 &r_{kk} & \cdots &\cdots & r_{kn}\\
+0&\cdots &0 & 0 & r_{k+1,k+1}&\cdots & r_{k+1,n}\\
+\vdots & \vdots &\vdots &\vdots &\vdots &\vdots &\vdots \\
+0&\cdots & \cdots&&&0&r_{nn}\end{array}\right)$$
+$$A^{(k)}e_k = z= [q_k \cdots q_n]\left(\begin{array}{c}r_{kk}\\ 0\\ \vdots \\ 0\end{array}\right)=r_{kk}q_k \Rightarrow r_{kk}=\|z\|_2, q_k=z/r_{kk}$$
+\item $$q_k^TA^{(k)} =[q_k^Tz, q_k^TB]=[1 , 0, \cdots , 0]\left(\begin{array}{c}r_k^T\\ \vdots \\r_n^T\end{array}\right)=r_k^T$$
+et donc
+$$[r_{k,k+1}, \cdots , r_{kn}]=q_k^TB$$
+\item $$[0,\cdots , 0, A^{(k+1)}] = \sum_{i=k+1}^n q_ir_i^T= [0,\cdots , 0, A^{(k)}] - q_kr_k^T= [0,\cdots , 0,A^{(k)} - q_k(r_{kk}, \cdots , r_{kn})]$$
+$$[ 0,\cdots , 0, z-q_kr_{kk}, B-q_k(r_{k,k+1}, \cdots , r_{kn})] \Rightarrow A^{(k+1)}=B-q_k (r_{k,k+1}, \cdots , r_{kn})$$
+\item Donn\'ees: $A\in\Rr^{m\times n}, $ rank$(A)=n$
+
+On calcule la factorisation $A=Q_1R_1$, $Q_1\in\Rr^{m\times n}$ orthonormale, $R_1\in\Rr^{n\times n}$ triangulaire sup\'erieure. Le calcul de $Q_1$ se fait sur place.
+
+Pour $k=1, \cdots , n$
+
+\hspace{1cm} $r_{kk}=\left(\sum_{i=1}^m a_{ik}^2\right)^{1/2} $
+
+\hspace{1cm}pour $i=1, \cdots  ,m$
+
+\hspace{1.5cm}$a_{ik}\leftarrow a_{ik}/r_{kk}$
+
+\hspace{1cm} pour $j=k+1, \cdots , n$
+
+\hspace{1.5cm}$r_{kj}\leftarrow\sum_{i=1}^m a_{ik}a_{ij}$
+
+\hspace{1.5cm} pour $i=1, \cdots , m$
+
+\hspace{2cm}  $a_{ij}\leftarrow a_{ij}-a_{ik}r_{kj}$
+
+\item complexit\'e: $mn^2$ flops.
+
+\end{enumerate}
+\end{enumerate}
+\fincorrection
+\finexercice

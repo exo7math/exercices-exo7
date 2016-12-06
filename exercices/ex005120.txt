@@ -1,0 +1,41 @@
+\exercice{5120, rouget, 2010/06/30}
+\enonce[**T]
+Résoudre dans $\Cc$ les équations suivantes~:
+\begin{enumerate}
+\item  $z^2+z+1=0$
+\item  $2z^2+2z+1=0$
+\item  $z^2-2z\cos\theta+1=0$, $\theta$ réel donné.
+\item  $z^2-(6+i)z+(11+13i)=0$
+\item  $2z^2-(7+3i)z+(2+4i)=0$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  $z^2+z+1=0\Leftrightarrow z=-\frac{1}{2}+i\frac{\sqrt{3}}{2}=j\;\mbox{ou}\;z=-\frac{1}{2}-i\frac{\sqrt{3}}{2}=j^2$.
+ \item  $\Delta'=1^2-2=-1=i^2$. L'équation a donc deux solutions non réelles et conjuguées, à savoir
+$z_1=\frac{1}{2}(-1+i)$ et $z_2=\frac{1}{2}(-1-i)$.\rule[-5mm]{0mm}{0mm}
+ \item  Soit $\theta\in\Rr$. Pour tout complexe $z$, on a
+\begin{align*}
+z^2-2z\cos\theta+1&=(z-\cos\theta)^2+1-\cos^2\theta=(z-\cos\theta)^2+\sin^2\theta=(z-\cos\theta)^2-(i\sin\theta)^2\\
+ &=(z-\cos\theta-i\sin\theta)(z-\cos\theta+i\sin\theta)=(z-e^{i\theta})(z-e^{-i\theta})
+\end{align*}
+L'équation proposée a donc deux solutions (pas nécessairement distinctes) $z_1=e^{i\theta}$ et $z_2=e^{-i\theta}$. De
+plus,
+$\Delta'=\cos^2\theta-1=-\sin^2\theta$ et ces solutions sont distinctes si et seulement si
+$\theta\notin\pi\Zz$.
+ \item  Soit $(E)$ l'équation $z^2-(6+i)z+(11+3i)=0$.
+Son discriminant est
+$\Delta=(6+i)^2-4(11+13i)=-9-40i$. Comme $40=2\times20=2\times(4\times5)$ et que $4^2-5^2=16-25=-9$, on est en droit de deviner que
+$\Delta=(4-5i)^2$. L'équation $(E)$ a deux solutions distinctes dans $\Cc$ à savoir $z_1=\frac{6+i+4-5i}{2}=5-2i$ et
+$z_2=\frac{6+i-4+5i}{2}=1+3i$.\rule[-5mm]{0mm}{0mm}
+ \item  Soit (E) l'équation $2z^2-(7+3i)z+(2+4i)=0$.
+Son discriminant est $\Delta=(7+3i)^2-8(2+4i)=24+10i$. Comme $10
+=2\times5=2\times(5\times1)$ et que $5^2-1^2=24$, on est en droit de deviner que $\Delta=(5+i)^2$. L'équation proposée a deux solutions
+distinctes dans $\Cc$ à savoir $z_1=\frac{7+3i+5+i}{4}=3+i$ et $z_2=\frac{7+3i-5-i}{4}=\frac{1}{2}(1+i)$.
+\end{enumerate}
+
+\fincorrection
+\finexercice

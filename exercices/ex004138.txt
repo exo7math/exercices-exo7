@@ -1,0 +1,29 @@
+\exercice{4138, quercia, 2010/03/11}
+\enonce[Simplification]
+
+Soit $f(x,y) = \arcsin\left(\frac{1+xy}{\sqrt{(1+x^2)(1+y^2)}}\right)$
+et $g(x,y) = \arctan x - \arctan y$.
+
+\begin{enumerate}
+  \item Vérifier que $f$ est définie sur $\R^2$.
+  \item Calculer les dérivées partielles premières de $f$ et de $g$.
+    
+  \item Simplifier $f$ à l'aide de $g$.
+    
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item 
+  \item $\frac{\partial f}{\partial x} = \frac{\pm 1}{1+x^2}$, $+$ si $y > x$, $-$ si $y < x$.\par
+             $\frac{\partial f}{\partial y} = \frac{\pm 1}{1+y^2}$, $-$ si $y > x$, $+$ si $y < x$.
+  \item Pour $y \ge x$, $f(x,y) = \frac\pi2 + g(x,y)$,\quad
+             pour $y \le x$, $f(x,y) = \frac\pi2 - g(x,y)$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

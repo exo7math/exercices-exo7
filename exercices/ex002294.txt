@@ -1,0 +1,43 @@
+\exercice{2294, barraud, 2008/04/24}
+\enonce
+Les polynômes suivants sont-ils irréductibles ?
+\begin{enumerate}
+  \item $X^5+121X^4+1221X^3+12221X^2+122221X+222222$ dans $\Qq [X]$.
+  \item  $f(X,Y)=X^2Y^3+X^2Y^2+Y^3-2XY^2+Y^2+X-1$ dans $\Cc [X,Y]$ et $\mathbb{F}_2[X,Y]$.
+  \item $f(X,Y)=Y^7+Y^6+7Y^4+XY^3+3X^2Y^2-5Y+X^2+X+1$ dans $\Qq[X,Y]$.
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+  \begin{enumerate}
+  \item 
+    Ce polynôme est unitaire donc primitif. $11$ est nombre premier qui
+    divise tous les coefficients sauf le dominant. $11^{2}=121$ ne divise
+    pas le coefficient de degré $0$, donc, d'après le critère
+    d'Eisenstein, c'est un polynôme irréductible de $\Qq[X]$.
+
+  \item
+    $f(X,Y)=(X^2+1)Y^3+(X-1)^{2}Y^2+(X-1)$. Regardons $f$ comme un
+    polynôme de $A[Y]$ avec $A=\Cc[X]$. Alors, $f$ est primitif sur $A$, et
+    $(X-1)$ est un irréductible de $A$ qui divise tous les
+    coefficients de $f$ sauf le dominant, et dont le carré ne divise pas
+    le terme constant. D'après le critère d'Eisenstein, on en déduit que
+    $f$ est irréductible dans $A[Y]=\Cc[X,Y]$.
+
+    Dans $\Zz_{2}[X,Y]$, on a $(X^{2}+1)=(X+1)^{2}$ et
+    $f=(X+1)((X+1)(Y^3+Y^2)+1)$, donc $f$ n'est pas irréductible..
+
+  \item
+    $f(X,Y)=Y^7+Y^6+7Y^4+XY^3+3X^2Y^2-5Y+X^2+X+1$. Considérons $f$ comme
+    un polynôme de $A[X]$ où $A=\Qq[Y]$. Alors $f$ est primitif sur $A$.
+    Soit $\pi=Y\in A$. $\pi$ est irréductible, $\pi$ ne divise pas le
+    coefficient dominant de $f$, et la réduction $\bar{f}$ modulo $\pi$
+    est $\bar{f}=X^{2}+X+1\in A/(\pi)[X]=\Qq[X,Y]/(Y)\simeq\Qq[X]$.
+    $\bar{f}$ est donc irréductible dans $A/(\pi)$, donc d'après
+    l'exercice précédent, $f$ est irréductible dans $\Qq[X,Y]$.
+  \end{enumerate}
+
+\fincorrection
+\finexercice

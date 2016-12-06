@@ -1,0 +1,20 @@
+\exercice{3161, quercia, 2010/03/08}
+
+\enonce[Suite r{\'e}currente (Mines MP 2003)]
+On consid{\`e}re la suite $(x_n)$ {\`a} valeurs dans~$\Z/11\Z$ telle que pour tout~$n$
+on ait $x_{n+3} = 4(x_{n+2}+x_{n+1}+x_n)$.
+D{\'e}terminer les diff{\'e}rents comportements possibles de $(x_n)$.
+\finenonce
+
+\noindication
+
+\correction
+L'{\'e}quation caract{\'e}ristique, $X^3=4(X^2+X+1)$ admet trois racines distinctes
+dans~$\Z/11Z$~: $1,6,8$. Donc $x_n$ est de la forme~: $x_n = a + 6^nb + 8^nc$ avec $a,b,c\in\Z/11\Z$.
+On a $6^{10} \equiv 8^{10} \equiv 1 (\mathrm{mod}\,{11})$, donc $(x_n)$ est p{\'e}riodique de p{\'e}riode divisant~$10$.
+La plus petite p{\'e}riode est $1$ si $b=c=0$, $10$ sinon car les suites $(6^n)$ et $(8^n)$
+ont $10$ comme plus petite p{\'e}riode modulo~$11$ et l'on a~:
+$8(x_{n+1}-x_n) - 5(x_{n+2}-x_{n+1}) = 7\cdotp8^nc$ et
+$7(x_{n+2}-x_{n+1}) - (x_{n+1}-x_n) = 7\cdotp6^nb$.
+\fincorrection
+\finexercice 

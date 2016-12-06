@@ -1,0 +1,31 @@
+\exercice{3618, quercia, 2010/03/10}
+\enonce[Polytechnique MP$^*$ 2000]
+Soit $E$ un espace vectoriel de dimension finie, $f$ un endomorphisme de~$E$
+tel que tout sous-espace de~$E$ admette un supplémentaire stable par~$f$.
+Que peut-on dire de~$f$~? Réciproque~?
+
+\finenonce
+
+\noindication
+
+\correction
+Soit~$F$ un hyperplan de~$E$,
+$<\!e\!>$ un supplémentaire stable et~$H$ un supplémentaire
+de~$<\!e\!>$ stable. Si $K$ est un sev de~$H$, alors $K$ admet un supplémentaire
+$K'$ dans~$E$ stable et $H\cap K'$ est un sev de~$H$ stable, en somme directe
+avec~$K$.
+$K'\not\subset H$ car $K\subset H$ et $K\oplus K' = E$ donc $K'+H = E$
+et $\dim(H\cap K') = \dim(H)+\dim(K')-\dim(E) = \dim(H)-\dim(K)$
+soit $K\oplus(H\cap K') = H$. $f_{|H}$ vérifie la même propriété que~$f$ et
+on obtient par récurrence que $f$ est diagonalisable.
+
+Réciproquement, soit $f$ diagonalisable, $F$ un sev de~$E$ et $(e_1,\dots,e_n)$
+une base propre pour~$f$. On montre que $F$ admet un supplémentaire stable
+par récurrence sur $\mathrm{codim}(F)$~: si $F=E$ alors $\{0\}$ convient
+et si $F\ne E$ alors il existe $i$ tel que $e_i\notin F$ d'où $F\oplus{<\!e_i\!>}$
+est un sur-espace strict de~$F$, admettant un supplémentaire~$G$ stable, d'où
+$G\oplus{<\!e_i\!>}$ est supplémentaire de~$F$ stable.
+
+\fincorrection
+
+\finexercice

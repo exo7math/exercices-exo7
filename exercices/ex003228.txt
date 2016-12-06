@@ -1,0 +1,20 @@
+\exercice{3228, quercia, 2010/03/08}
+
+\enonce[Racines de $\sum_{k = 0}^n C_n^k(\sin k\theta)X^k$]
+Soit $\theta \in \R$ tel que $\sin n\theta \ne 0$.
+D{\'e}montrer que le polyn{\^o}me $P = \sum_{k = 0}^n C_n^k(\sin k\theta)X^k$ a toutes ses
+racines r{\'e}elles.
+\finenonce
+
+\noindication
+
+\correction
+Pour $x \in \R$, on a $P(x) = \Im\bigl((1+xe^{i\theta})^n\bigr)$.
+\\
+Donc $P(x) = 0 \iff \exists\ k \in \{0,\dots,n-1\}$ et $\lambda \in \R$
+tels que : $1+xe^{i\theta} = \lambda e^{ik\pi/n}$.
+\\
+On obtient $x_k = \frac{\sin(k\pi/n)}{\sin(\theta-k\pi/n)}$,\quad
+$0\le k \le n-1$.
+\fincorrection
+\finexercice 

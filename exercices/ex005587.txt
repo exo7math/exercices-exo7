@@ -1,0 +1,50 @@
+\exercice{5587, rouget, 2010/10/16}
+\enonce[***I]
+\label{ex:rou25}
+Soit $E$ un espace vectoriel non nul. Soit $f$ un endomorphisme de $E$ tel que pour tout vecteur $x$ de $E$  la famille $(x,f(x))$ soit liée. Montrer que $f$ est une homothétie.
+\finenonce
+
+\noindication
+
+\correction
+On transforme légèrement l'énoncé.
+
+Si $x$ est un vecteur non nul tel que $(x,f(x))$ est liée alors il existe un scalaire $\lambda_x$ tel que $f(x) =\lambda_x x$. Si $x = 0$, $f(x)=0=0x$ et encore une fois il existe un scalaire $\lambda_x$ tel que $f(x)=\lambda_x x$.
+
+Inversement, si pour tout $x$ de $E$, il existe $\lambda_x\in\Kk$ tel que $f(x)=\lambda_xx$, alors  la famille $(x,f(x))$ est liée. Donc 
+
+\begin{center}
+$[(\forall x\in E,\;(x,f(x))\;\text{liée})\Leftrightarrow(\forall x\in E,\exists\lambda_x\in\Kk/\;f(x) =\lambda_xx)]$.
+\end{center}
+
+Notons de plus que dans le cas où $x\neq0$, la famille $(x)$ est une base de la droite vectorielle $\text{Vect}(x)$ et en particulier, le nombre $\lambda_x$ est uniquement défini.
+
+Montrons maintenant que $f$ est une homothétie c'est à dire montrons que : $\exists\lambda\in\Kk/\;\forall x\in E,\;f(x) =\lambda x$.
+
+Soient $x_0$ un vecteur non nul et fixé de $E$ puis $x$ un vecteur quelconque de $E$.
+
+\textbf{1er cas.} Supposons la famille $(x_0,x)$ libre. On a $f(x+x_0)=\lambda_{x+x_0}(x+x_0)$ mais aussi $f(x+x_0)=f(x)+f(x_0) =\lambda_xx +\lambda_{x_0}x_0$ et donc
+
+\begin{center}
+$(\lambda_{x+x_0}-\lambda_x)x+ (\lambda_{x+x_0}-\lambda_{x_0})x_0=0$.
+\end{center}
+
+Puisque la famille $(x_0,x)$ est libre, on obtient  $\lambda_{x+x_0}-\lambda_x=\lambda_{x+x_0}-\lambda_{x_0}= 0$ et donc $\lambda_x=\lambda_{x+x_0}=\lambda_{x_0}$. Ainsi, pour tout vecteur $x$ tel que $(x,x_0)$ libre, on a $f(x)=\lambda_{x_0}x$.
+
+ 
+\textbf{2ème cas.} Supposons la famille $(x_0,x)$ liée. Puisque $x_0$ est non nul, il existe un scalaire $\mu$ tel que $x =\mu x_0$. Mais alors 
+
+\begin{center}
+$f(x) =\mu f(x_0)=\mu \lambda_{x_0}x_0 =\lambda_{x_0}x$.
+\end{center}
+
+Finalement, il existe un scalaire $k=\lambda_{x_0}$ tel que pour tout vecteur $x$, $f(x) =kx$ et $f$ est une homothétie. La réciproque étant claire, on a montré que
+
+\begin{center}
+\shadowbox{
+$\forall f\in\mathcal{L}(E)$, $[(f\;\text{homothétie})\Leftrightarrow(\forall x\in E,\;(x,f(x))\;\text{liée})]$.
+}
+\end{center}
+
+\fincorrection
+\finexercice

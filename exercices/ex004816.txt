@@ -1,0 +1,30 @@
+\exercice{4816, quercia, 2010/03/16}
+\enonce[Mines MP 2002]
+On munit $E_k = \R_k[X]$ de la norme $\|P\|_k = \sum_{i=0}^k |P(i)|$.
+Calculer $\|\hskip-1pt|\varphi\|\hskip-1pt|$ avec
+$\varphi : {E_2} \to {E_3}, P \mapsto {X^2P'.}$
+\finenonce
+
+\noindication
+
+\correction
+Les formes lin{\'e}aires $P \mapsto P(0)$, $P \mapsto P(1)$ et $P \mapsto P(2)$
+constituent une base de $E_2^*$ donc engendrent les formes lin{\'e}aires
+$P \mapsto P'(1)$, $P \mapsto P'(2)$ et $P \mapsto P'(3)$. Apr{\`e}s calculs, on trouve~:
+$$\forall\ P\in E_2,\quad
+\left\{\begin{aligned}2P'(1) &= &P(2)  & &      &-&P(0)\cr
+      2P'(2) &= &3P(2) &-&4P(1) &+&P(0)\cr
+      2P'(3) &= &5P(2) &-&8P(1) &+&3P(0).\cr
+\end{aligned}\right.$$
+En notant $P(0) = a$, $P(1) = b$ et $P(2) = c$ on doit
+donc chercher~:
+$$\|\hskip-1pt|\varphi\|\hskip-1pt|
+=\frac12\sup\{|c-a| + 4|3c-4b+a| + 9|5c-8b+3a|,\text{ tq }|a|+|b|+|c|\le1\}.$$
+La fonction $f$~: $(a,b,c) \mapsto|c-a| + 4|3c-4b+a| + 9|5c-8b+3a|$ est convexe donc
+son maximum sur l'{\it icosa{\`e}dre\/} $I = \{(a,b,c)\text{ tq }|a|+|b|+|c|\le 1\}$
+est atteint en l'un des sommets $(\pm1,0,0)$, $(0,\pm1,0)$, $(0,0,\pm1)$.
+
+Finalement,~$\|\hskip-1pt|\varphi\|\hskip-1pt| = \frac12f(0,1,0) = 44$.
+\fincorrection
+
+\finexercice

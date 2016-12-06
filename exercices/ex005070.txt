@@ -1,0 +1,48 @@
+\exercice{5070, rouget, 2010/06/30}
+\enonce[***I]
+\begin{enumerate}
+ \item  Calculer $\prod_{k=1}^{n}\cos\left(\frac{a}{2^k}\right)$ pour $a$ élément donné de $]0,\pi[$ (penser à $\sin(2x)=2\sin x\cos x$).
+
+ \item  Déterminer $\lim_{n\rightarrow +\infty}\sum_{k=1}^{n}\ln\left(\cos(\frac{a}{2^k})\right)$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Soit $n\in\Nn^*$. Puisque $a$ est dans $]0,\pi[$ alors, pour tout entier naturel non nul $k$, $\frac{a}{2^k}$ est dans $]0,\pi[$ et donc
+$\sin\frac{a}{2^k}\neq0$. De plus, puisque $\sin\left(\frac{a}{2^{k-1}}\right)=\sin\left(2\times\frac{a}{2^k}\right)=2\sin\left(\frac{a}{2^k}\right)\cos\left(\frac{a}{2^k}\right)$, on a~:
+
+$$\prod_{k=1}^{n}\cos\left(\frac{a}{2^k}\right)=\prod_{k=1}^{n}\frac{\sin\left(\frac{a}{2^{k-1}}\right)}{2\sin\left(\frac{a}{2^k}\right)}=\frac{1}{2^{
+n}}
+\frac{\sin(a)\sin\left(\frac{a}{2}\right)\ldots\sin\left(\frac{a}{2^{n-1}}\right)}
+{\sin\left(\frac{a}{2}\right)\ldots\sin\left(\frac{a}{2^{n-1}}\right)\sin\left(\frac{a}{2^{n}}\right)}=\frac{\sin
+a}{2^{n}\sin\frac{a}{2^n}}.$$
+
+\begin{center}
+\shadowbox{
+$\forall a\in]0,\pi[$, $\forall n\in\Nn^*$, $\prod_{k=1}^{n}\cos\left(\frac{a}{2^k}\right)=\frac{\sin
+a}{2^{n}\sin\frac{a}{2^n}}$.
+}
+\end{center}
+
+ \item  $\forall k\in\Nn^*,\;\cos\left(\frac{a}{2^k}\right)>0$ car $\frac{a}{2^k}$ est dans $]0,\frac{\pi}{2}[$. Puis
+
+\begin{align*}
+\sum_{k=1}^{n}\ln\left(\cos(\frac{a}{2^k})\right)&=\ln\left(\prod_{k=1}^{n}\cos(\frac{a}{2^k})\right)=\ln\left(\frac{\sin
+a}{2^{n}\sin\frac{a}{2^n}}\right)=\ln\left(\frac{\sin a}{a}\right)-\ln\left(\frac{\sin\frac{a}{2^n}}{\frac{a}{2^n}}\right).
+\end{align*}
+Maintenant, $\lim_{n\rightarrow +\infty}\frac{\sin\frac{a}{2^n}}{\frac{a}{2^n}}=\lim_{x\rightarrow 0}\frac{\sin x}{x}=1$ et donc,
+
+$$\lim_{n\rightarrow +\infty}\sum_{k=1}^{n}\ln\left(\cos(\frac{a}{2^k})\right)=\lim_{n\rightarrow +\infty}\left(\ln(\frac{\sin
+a}{a})-\ln(\frac{\sin\frac{a}{2^n}}{\frac{a}{2^n}})\right)=\ln\left(\frac{\sin a}{a}\right).$$
+
+\begin{center}
+\shadowbox{
+$\forall a\in]0,\pi[$, $\lim_{n\rightarrow +\infty}\sum_{k=1}^{n}\ln\left(\cos(\frac{a}{2^k})\right)=\ln\left(\frac{\sin a}{a}\right)$.
+}
+\end{center}
+\end{enumerate}
+\fincorrection
+\finexercice

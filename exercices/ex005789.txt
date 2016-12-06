@@ -1,0 +1,44 @@
+\exercice{5789, rouget, 2010/10/16}
+\enonce[**I Inégalité de \textsc{Hadamard}]
+\label{exo:sperou4}
+Soit $E$ un espace euclidien de dimension $n\geqslant1$ et $\mathcal{B}$ une base orthonormée de $E$.
+
+Montrer que pour tout $n$-uplet de vecteurs $(x_1,...x_n)$, on a : $\left|\text{det}_{\mathcal{B}}(x_1,...,x_n)\right|\leqslant\|x_1\|...\|x_n\|$. Cas d'égalité ?
+\finenonce
+
+\noindication
+
+\correction
+Si la famille $(x_1,...,x_n)$ est liée, l'inégalité est vraie.
+
+Si la famille $(x_1,...,x_n)$ est libre, on peut considérer $B_0 =(e_1,...,e_n)$ l'orthonormalisée de \textsc{Schmidt} de la famille $(x_1,...,x_n)$. Les bases $B_0$ et $B$ sont des bases orthonormées de $E$ et donc
+
+\begin{align*}\ensuremath
+\left|\text{det}_B(x_1,...,x_n)\right|&=\left|\text{det}_{B_0}(x_1,...,x_n)\right|
+=\text{abs}\left(\left|\begin{array}{cccc}(x_1|e_1)&\times&\ldots&\times\\
+ 0&\ddots&\ddots&\vdots\\
+ \vdots&\ddots&\ddots&\times\\
+ 0&\ldots&0&(x_n|e_n)\end{array}\right|\right)\\
+ &=\prod_{k=1}^{n}|(x_k|e_k)|\leqslant\prod_{k=1}^{n}\|x_k\|\|e_k\|\;(\text{d'après l'inégalité de \textsc{Cauchy}-\textsc{Schwarz}})\\
+ &=\prod_{k=1}^{n}\|x_k\|.
+\end{align*}
+
+\begin{center}
+\shadowbox{
+$\forall(x_1,\ldots,x_n)\in E^n$, $\left|\text{det}_B(x_1,...,x_n)\right|\leqslant\prod_{k=1}^{n}\|x_k\|$ (inégalité de \textsc{Hadamard}).
+}
+\end{center}
+
+Ensuite, 
+
+- si la famille $(x_1,...,x_n)$ est liée, on a l'égalité si et seulement si l'un des vecteurs $x_k$ est nul 
+
+- si la famille $(x_1,...,x_n)$ est libre, on a l'égalité si et seulement si $\forall k\in\llbracket1,n\rrbracket$, $|(x_k|e_k)|=\|x_k\|\|e_k\|$. Les cas d'égalité
+
+de l'inégalité de \textsc{Cauchy}-\textsc{Schwarz} étant connus, on a l'égalité si et seulement si $\forall k\in\llbracket1,n\rrbracket$, $x_k$ est colinéaire à $e_k$ 
+
+ou encore si et seulement si la famille $(x_1,...,x_n)$ est orthogonale.
+
+En résumé, l'inégalité de \textsc{Hadamard} est une égalité si et seulement si la famille $(x_1,...,x_n)$ est orthogonale libre ou si l'un des vecteurs est nul.
+\fincorrection
+\finexercice

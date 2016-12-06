@@ -1,0 +1,31 @@
+\exercice{5575, rouget, 2010/10/16}
+\enonce[***I]
+Soient $F$ et $G$ deux sous-espaces vectoriels d'un espace vectoriel de dimension finie sur $\Kk$.
+
+Démontrer que $\text{dim}(F+G)=\text{dim}F+\text{dim}G-\text{dim}(F\cap G)$.
+\finenonce
+
+\noindication
+
+\correction
+Soit $f$ l'application de $F\times G$ dans $E$ qui à un élément $(x,y)$ de $F\times G$ associe $x+y$.
+
+$f$ est clairement linéaire et d'après le thèorème du rang 
+
+\begin{center}
+$\text{dim}(F\times G)=\text{dim}(\text{Ker}f)+\text{dim}(\text{Im}f)$ avec $\text{dim}(FxG)=\text{dim}F +\text{dim}G$ et $\text{dim}(\text{Im}f)=\text{dim}(F+G)$.
+\end{center}
+
+Il reste à analyser $\text{Ker}f$.
+
+Soit $(x,y)\in E^2$. $(x,y)$ est élément de $\text{Ker}f$ si et seulement si $x$ est dans $F$, $y$ est dans $G$ et $x+y=0$ ou encore si et seulement si $x$ et $y$ sont dans $F\cap G$ et $y=-x$. Donc $\text{Ker}f=\{(x,-x),\;x\in F\cap G\}$.
+
+Montrons enfin que $\text{Ker}f$ est isomorphe à $F\cap G$. Soit $\varphi$ l'application de $F\cap G$ dans $\text{Ker}f$ qui à l'élément $x$ de $F\cap G$ associe $(x,-x)$ dans $\text{Ker}f$. $\varphi$ est clairement une application linéaire, clairement injective et clairement surjective. Donc $\varphi$ est un isomorphisme de $F\cap G$ sur $\text{Ker}f$ et en particulier $\text{dim}(\text{Ker}f)=\text{dim}(F\cap G)$. Finalement
+
+\begin{center}
+\shadowbox{
+$\text{dim}(F+G)=\text{dim}F+\text{dim}G-\text{dim}(F\cap G)$.
+}
+\end{center}
+\fincorrection
+\finexercice

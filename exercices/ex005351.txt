@@ -1,0 +1,23 @@
+\exercice{5351, rouget, 2010/07/04}
+\enonce
+Soient $x_1$,..., $x_8$ les zéros de $X^8+X^7-X+3$. Calculer $\sum_{}^{}\frac{x_1}{x_2x_3}$ (168 termes).
+\finenonce
+
+\noindication
+
+\correction
+Pour chacun des $8$ numérateurs possibles, il y a $C_7^2=21$ dénominateurs et donc au total, $8\times21=168$ termes.
+
+$$\sum_{}^{}\frac{x_1}{x_2x_3}=\sum_{}^{}\frac{x_1^2x_4x_5x_6x_7x_8}{x_1x_2...x_8}=\frac{1}{\sigma_8}\sum_{}^{}x_1^2x_2x_3x_4x_5x_6=\frac{1}{3}\sum_{}^{}x_1^2x_2x_3x_4x_5x_6.$$
+
+Ensuite,
+
+$$\sigma_1\sigma_6=(\sum_{}^{}x_1)(\sum_{}^{}x_1x_2x_3x_4x_5x_6)=\sum_{}^{}x_1^2x_2x_3x_4x_5x_6+\sum_{}^{}x_1x_2x_3x_4x_5x_6x_7,$$
+ 
+et donc, 
+
+$$\sum_{}^{}x_1^2x_2x_3x_4x_5x_6=\sigma_1\sigma_6-\sigma_7=(-1)(0)-1=-1.$$
+
+Donc, $\sum_{}^{}\frac{x_1}{x_2x_3}=-\frac{1}{3}$.
+\fincorrection
+\finexercice

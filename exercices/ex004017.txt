@@ -1,0 +1,48 @@
+\exercice{4017, quercia, 2010/03/11}
+\enonce[Ens PC$^*$ 2001]
+
+Soient $P,Q$ deux polynômes à coefficients réels, non constants,
+de coefficients dominants positifs.
+
+On note $x_1 < x_2 < \dots < x_p$
+les racines de $P'$ de multiplicités $m_1,\dots,m_p$
+et $y_1 < y_2 < \dots < y_q$ celles de $Q'$ de multiplicités $n_1,\dots,n_q$.
+Montrer qu'il existe $f$, $\mathcal{C}^1$ difféomorphisme croissant de~$\R$ sur~$\R$,
+tel que $P\circ f = Q$ si et seulement si~:
+$$p=q,
+  \qquad\forall\ i,\ P(x_i) = Q(y_i),  \qquad\forall\ i,\ m_i = n_i.$$
+\finenonce
+
+\noindication
+
+\correction
+Si $Q = P\circ f$ alors $Q' = f'\times (P'\circ f)$ a autant de racines que $P'$
+d'où $p = q$, $f(y_i) = x_i$ et $Q(y_i) = P(x_i)$.
+De plus, au voisinage de~$y_i$~:
+$$\lambda_i(y-y_i)^{n_i} \sim Q'(y) = f'(y)\times P'(f(y))
+  \sim f'(y_i)\times \mu_i(f(y)-x_i)^{m_i} \sim \mu_if'(y_i)^{1+m_i}(y-y_i)^{m_i}$$
+d'où $m_i = n_i$.
+
+Réciproquement, si $p=q$, $P(x_i) = Q(y_i)$ et $m_i = n_i$ alors en posant
+$x_0 = y_0 = -\infty$ et $x_{p+1} = y_{p+1} = +\infty$, $P$ induit un
+$\mathcal{C}^1$-difféomorphisme de $]x_{i},x_{i+1}[$ sur $P(]x_{i},x_{i+1}[) = Q(]x_{i},x_{i+1}[)$
+(les limites de $P$ et $Q$ en $+\infty$ sont égales à $+\infty$ vu les coefficients
+dominants de $P$ et $Q$~; celles en $-\infty$ s'en déduisent en comptant les
+changements de signe pour $P'$ ou pour $Q'$ et on trouve le même compte puisque $m_i = n_i$).
+On note $f_i$ la fonction réciproque de $P_{|]x_{i},x_{i+1}[}$ et
+$f$ définie par $f(y) = f_i(Q(y))$ si $y_i < y < y_{i+1}$ et $f(y_i) = x_i$.
+$f$ ainsi définie est strictement croissante, de classe $\mathcal{C}^1$ à dérivée
+non nulle sauf peut-être aux $y_i$, et $P\circ f = Q$. Reste à étudier le
+caractère $\mathcal{C}^1$ en $y_i$ et à vérifier que $f'(y_i) \ne 0$.
+
+Au voisinage de~$y_i$, par intégration des DL de $P$ et $Q$ on a~:
+$$\frac{\lambda_i}{1+m_i}(y-y_i)^{1+m_i}\sim Q(y) - Q(y_i) = P(f(y)) - P(f(y_i)) \sim \frac{\mu_i}{1+m_i}(f(y) - f(y_i))^{1+m_i}$$
+d'où $\frac{f(y)-f(y_i)}{y-y_i} \to \Bigl(\frac{\lambda_i}{\mu_i}\Bigr)^{1/(1+m_i)}$ lorsque $y\to y_i$, car les taux
+d'accroissement de~$f$ sont positifs. Ceci prouve que $f$ est dérivable en~$y_i$
+et $f'(y_i) = \Bigl(\frac{\lambda_i}{\mu_i}\Bigr)^{1/(1+m_i)} \ne 0$. Enfin on a, lorsque $y\to y_i$ :
+$$f'(y) = \frac{Q'(y)}{P'(f(y))} \sim \frac{\lambda_i(y-y_i)^{m_i}}{\mu_i(f(y)-f(y_i))^{m_i}}\to  \frac{\lambda_i}{\mu_i}\Bigl(\frac{\lambda_i}{\mu_i}\Bigr)^{-m_i/(1+m_i)} = \Bigl(\frac{\lambda_i}{\mu_i}\Bigr)^{1/(1+m_i)}$$
+et donc $f$ est $\mathcal{C}^1$ en $y_i$.
+\fincorrection
+
+
+\finexercice

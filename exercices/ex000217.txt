@@ -1,0 +1,37 @@
+\exercice{217, ridde, 1999/11/01}
+\video{6f56RN5_li0}
+\enonce
+
+Soit $ (E, \leq)$ un ensemble ordonn\'e. On d\'efinit sur
+$\mathcal{P} (E)\setminus\left\{ \emptyset \right\}$ la relation
+$\prec$ par 
+$$X \prec Y \quad \text{ ssi } \quad (X = Y \ \text{ ou } \ 
+\forall x \in X \  \forall y \in Y \  x \leq y).$$ 
+V\'erifier que c'est une relation d'ordre.
+\finenonce 
+
+\noindication
+
+\correction
+ \begin{itemize}
+ \item Reflexivit\'e : pour tout $X\in\mathcal{P} (E)$ on a $X \prec X$ car $X=X$.
+ \item Anti-sym\'etrie : pour $X,Y\in\mathcal{P} (E)$ tels que $X \prec Y$ et $Y \prec X$, alors par d\'efinition de $\prec$ on a 
+$$\forall x \in X \quad \forall y \in Y \quad x\leqslant y \text{ et } y \leqslant x.$$
+Comme la relation $\le$ est une relation d'ordre alors $x\leqslant y$ et $y \leqslant x$ implique $x=y$.
+Donc 
+$$\forall x \in X \quad \forall y \in Y \quad x = y,$$
+ce qui implique que $X=Y$ (dans ce cas en fait $X$ est vide ou un singleton).
+
+ \item Transitivit\'e : soit $X,Y, Z \in\mathcal{P} (E)$ tels que  $X \prec Y$ et $Y \prec Z$.
+Si $X=Y$ ou $Y=Z$ alors il est clair que $X \prec Z$. Supposons que $X\neq Y$ et $Y\neq Z$
+alors 
+$$\forall x \in X \quad \forall y \in Y \quad x\leqslant y \qquad \text{ et } \qquad \forall y \in Y \quad \forall z \in Z \quad y\leqslant z.$$
+
+Donc on a 
+$$\forall x \in X \quad \forall y \in Y \quad \forall z \in Z \quad x \leqslant y \text{ et }  y \leqslant z,$$ 
+alors par transitivit\'e de  la relation $\le$ on obtient :
+$$\forall x \in X \quad \forall z \in Z \quad x \leqslant z.$$ 
+Donc $X \prec Z$.
+ \end{itemize}
+\fincorrection
+\finexercice

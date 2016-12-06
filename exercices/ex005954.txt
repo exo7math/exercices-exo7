@@ -1,0 +1,208 @@
+\exercice{5954, tumpach, 2010/11/11}
+\enonce
+\begin{enumerate}
+\item Soit $a, b \geq 0$ et soit $p,q \in (1, +\infty)$ tel que
+$\frac{1}{p} + \frac{1}{q} = 1$ \emph{(on dit que $p$ et $q$ sont
+conjugu\'es au sens de Young)}.  Montrer l'in\'egalit\'e de
+Young~:
+$$
+ab \leq \frac{1}{p} a^p + \frac{1}{q} b^q.
+$$
+On pourra consid\'erer la fonction
+$\theta~:\mathbb{R}^{+}\rightarrow \mathbb{R}$ d\'efinie par
+$\theta(a) = \frac{1}{p} a^{p} + \frac{1}{q} b^{q} - ab$.
+
+\item Soit de nouveau $p,q \in (1, +\infty)$ tel que $\frac{1}{p}
++ \frac{1}{q} = 1$ et $f\in L^{p}(\mu)$, $g\in L^{q}(\mu)$. En
+utilisant la question pr\'ec\'edente, montrer que pour tout
+$\lambda>0$
+$$
+\int_{\Omega} |fg|\,d\mu \leq \frac{\lambda^{p}}{p}\int_{\Omega}
+|f|^{p}\,d\mu + \frac{\lambda^{-q}}{q} \int_{\Omega}
+|g|^{q}\,d\mu.
+$$
+Optimiser cette in\'egalit\'e par rapport \`a $\lambda$ et montrer
+l'in\'egalit\'e de H\"older~:
+$$
+\| fg\|_{1} \leq \|f\|_{p} \,\|g\|_{q}.
+$$
+ Cette
+in\'egalit\'e est-elle vraie pour $p=1$ et $q=+\infty$ ?
+
+\item Soient $p$ et  $p'$ dans $[1, +\infty[$ (pas
+n\'ecessairement conjugu\'es). Montrer que si $f$ appartient \`a $
+L^{p}(\mu) \cap L^{p'}(\mu)$, alors $f$ appartient \`a $
+L^{r}(\mu)$ pour tout $r$ compris entre $p$ et $p'$.
+
+\item Montrer que si $\mu$ est une mesure finie alors
+$$L^{\infty}(\mu) \subset \bigcap_{p\geq 1} L^{p}(\mu),
+$$
+et, pour tout $f$,
+$$
+\lim_{p\rightarrow+\infty}\|f\|_{p} = \|f\|_{\infty}.
+$$
+
+ \item  Montrer que si  $f \in L^p(\mu)$ et
+$g\in L^q(\mu)$ avec $\frac 1p + \frac 1q = \frac 1r$, alors
+$f\cdot g\in L^r(\mu)$ et
+$$
+ \| fg\|_{r} \leq \|f\|_{p}\|g\|_{q}.
+$$
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item Soit $a, b \geq 0$ et soit $p, q \in(1, +\infty)$ tel que
+$\frac{1}{p} + \frac{1}{q} = 1$. La fonction
+$\theta~:\mathbb{R}^{+}\rightarrow \mathbb{R}$ d\'efinit par
+$\theta(a) = \frac{1}{p} a^{p} + \frac{1}{q} b^{q} - ab$ est
+d\'erivable et~:
+$$
+\theta'(a) =  a^{p-1} - b.
+$$
+Cette d\'eriv\'ee s'annule lorsque $a = b^{\frac{1}{p-1}}$, est
+n\'egative pour  $a < b^{\frac{1}{p-1}}$ et positive pour $a >
+b^{\frac{1}{p-1}}$. On a
+$$
+\theta(b^{\frac{1}{p-1}}) = \frac{1}{p} b^{\frac{p}{p-1}} +
+\frac{1}{q}b^q- b^{1+\frac{1}{p-1}} = 0.
+$$
+Ainsi $\theta(a)\geq 0$, i.e. $$ ab \leq \frac{1}{p} a^p +
+\frac{1}{q} b^q.
+$$
+%L'\'egalit\'e correspond \`a $\theta(a) = 0$, c'est-\`a-dire \`a
+%$a = b^{\frac{1}{p-1}}$.
+
+
+\item Soit $f\in L^{p}(\mu)$ et $g\in L^{q}(\mu)$. D'apr\`es la
+question pr\'ec\'edente,  pour tout $\lambda>0$ et pour
+$\mu$-presque tout $x$~:
+$$
+ |f\,g|(x) = |\lambda f(x) \cdot \frac{g(x)}{\lambda}| \leq \frac{\lambda^{p}}{p}
+|f(x)|^{p} + \frac{\lambda^{-q}}{q}  |g(x)|^{q}.
+$$
+Ainsi
+$$
+\int_{\Omega} |f\,g|\,d\mu \leq \frac{\lambda^{p}}{p}\int_{\Omega}
+|f|^{p}\,d\mu + \frac{\lambda^{-q}}{q} \int_{\Omega}
+|g|^{q}\,d\mu.
+$$
+Posons $$\Phi(\lambda) = \frac{\lambda^{p}}{p}\int_{\Omega}
+|f|^{p}\,d\mu + \frac{\lambda^{-q}}{q} \int_{\Omega}
+|g|^{q}\,d\mu.$$ La fonction $\Phi$ est d\'erivable et~:
+$$
+\Phi'(\lambda) = \lambda^{p-1} \|f\|_{p}^{p} -
+\lambda^{-q-1}\|g\|_{q}^{q}.
+$$
+Cette d\'eriv\'ee s'annule pour $\lambda_{1} :=
+\left(\frac{\|g\|_{q}^{q}}{\|f\|_{p}^{p}}
+\right)^{\frac{1}{p+q}}$, est n\'egative pour $\lambda\leq
+\lambda_{1} $ et positive pour $\lambda \geq \lambda_{1}$. Ainsi
+le minimum de $\Phi$ vaut~:
+\begin{equation*}
+\begin{array}{ll}
+\Phi(\lambda_{1}) &=
+\frac{1}{p}\left(\frac{\|g\|_{q}^{q}}{\|f\|_{p}^{p}}
+\right)^{\frac{p}{p+q}} \|f\|_{p}^{p} + \frac{1}{q}
+\left(\frac{\|g\|_{q}^{q}}{\|f\|_{p}^{p}}
+\right)^{-\frac{q}{p+q}} \|g\|_{q}^{q}\\
+& =
+\frac{1}{p}\|g\|_{q}^{\frac{qp}{p+q}}\,\|f\|_{p}^{\frac{qp}{p+q}}
++
+\frac{1}{q}\|g\|_{q}^{\frac{qp}{p+q}}\,\|f\|_{p}^{\frac{qp}{p+q}}
+= \| f\|_{p}\,\|g\|_{q}.
+\end{array}
+\end{equation*}
+On en d\'eduit l'in\'egalit\'e de H\"older~:
+$$
+\| f\,g\|_{1} \leq \|f\|_{p} \,\|g\|_{q}.
+$$
+Si $f\in L^{1}(\mu)$ et $g\in L^{\infty}(\mu)$, alors  $|g(x)|
+\leq \|g\|_{\infty}$ pour presque tout $x\in\Omega$ et
+$$
+\int_{\Omega} |f g|\,d\mu \leq \|g\|_{\infty}\int_{\Omega}
+|f|\,d\mu,
+$$
+i.e. $\|f g\|_{1}\leq \|g\|_{\infty} \|f\|_{1}$.
+
+
+\item Soient $p, p' \in [1, +\infty)$. On suppose $p< p'$. Soit
+$p<r<p'$. On a
+$$
+|f|^{r} = |f|^r \mathbf{1}_{|f|>1} + |f|^r \mathbf{1}_{|f|<1} ~\leq~ |f|^{p'}
+\mathbf{1}_{|f|>1} + |f|^{p}\mathbf{1}_{|f|<1}.
+$$
+On en d\'eduit que
+$$
+\int_{\Omega} |f|^{r}\,d\mu ~\leq~ \int_{\Omega}|f|^{p'}\,d\mu +
+\int_{\Omega} |f|^{p}\,d\mu ~<+\infty,
+$$
+donc $f$ appartient \`a $L^{r}(\mu)$.
+
+
+\item Supposons que  $\mu$ soit une mesure finie et soit $f\in
+L^{\infty}(\mu)$. Alors
+$$
+|f(x)| \leq \|f\|_{\infty}
+$$
+pour presque tout $x\in\Omega$. Ainsi pour tout $p$
+$$
+\int_{\Omega} |f|^{p}\,d\mu ~\leq~\|f\|_{\infty}^{p}\int_{\Omega}
+1\,d\mu ~=~ \|f\|_{\infty}^{p} \mu(\Omega)~< ~+\infty,
+$$
+ce qui implique que $f\in L^{p}(\mu)$. En particulier, $f$
+appartient \`a l'intersection $\bigcap_{p\geq 1} L^{p}(\mu)$. De
+plus, pour tout $p$, on a~:
+$$
+\|f\|_{p} ~\leq ~\|f\|_{\infty} ~\mu(\Omega)^{\frac{1}{p}},
+$$
+ce qui implique que
+$$
+\lim_{p\rightarrow+\infty}\|f\|_{p}~ \leq ~\|f\|_{\infty}.
+$$
+D'autre part, pour tout $0<\varepsilon< \| f \|_\infty$ , on a
+$$
+\int_{\Omega} |f|^{p}\,d\mu ~\geq~
+\int_{|f|>\left(\|f\|_{\infty}-\varepsilon\right)}|f|^{p}\,d\mu
+~\geq ~\left(\|f\|_{\infty}-\varepsilon\right)^{p} \mu\bigg(
+|f|>\left(\|f\|_{\infty}-\varepsilon\right)\bigg).
+$$
+Ainsi pour tout $p$, il vient
+$$
+\|f\|_{p} ~\geq~ \left(\|f\|_{\infty}-\varepsilon\right) \mu\bigg(
+|f|>\left(\|f\|_{\infty}-\varepsilon\right)\bigg)^{\frac{1}{p}}.
+$$
+Puisque $\lim_{p\rightarrow +\infty}\mu\left(
+|f|>\left(\|f\|_{\infty}-\varepsilon\right)\right)^{\frac{1}{p}} =
+1$, il en d\'ecoule que
+$$
+\lim_{p\rightarrow +\infty}\|f\|_{p} ~\geq~
+\|f\|_{\infty}-\varepsilon.
+$$
+Comme $\varepsilon$ peut \^etre choisi arbitrairement petit, on a
+$$
+\lim_{p\rightarrow +\infty}\|f\|_{p} ~\geq~ \|f\|_{\infty},
+$$
+donc finalement $\lim_{p\rightarrow +\infty}\|f\|_{p} =
+\|f\|_{\infty}$.
+
+\item   Posons $f_1:=f^r$ et $g_1:=g^r$. On a $f_1\in
+L^{\frac{p}{r}}(\mu)$ et $g_1\in L^{\frac{q}{r}}(\mu)$. Notons que
+l'identit\'{e} $\frac{1}{p}+\frac{1}{q}=\frac{1}{r}$ entra\^{i}ne
+que $\frac{p}{r}, \frac{q}{r}>1$ et que les nombres $\frac{p}{r}$
+et $ \frac{q}{r}$ sont conjugu\'{e}s au sens de Young. Par
+l'in\'{e}galit\'{e} de H\"{o}lder on a donc
+$$\int_{\Omega}(fg)^r d\mu = \int_{\Omega} f_1 g_1 \,d\mu \leq
+\left(\int_{\Omega} f_1^{\frac{p}{r}}d\mu\right)^{\frac{r}{p}}
+\left(\int_{\Omega} g_1^{\frac{q}{r}}d\mu\right)^{\frac{r}{q}}
+=\left(\int_{\Omega} f^p
+d\mu\right)^{\frac{r}{p}}\left(\int_{\Omega} g^q
+d\mu\right)^{\frac{r}{q}}.$$ D'o\`{u}, finalement,
+ $$\|fg\|_r\leq \|f\|_p\|g\|_q.$$
+ \end{enumerate}
+\fincorrection
+
+\finexercice

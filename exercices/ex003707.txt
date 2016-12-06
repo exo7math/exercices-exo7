@@ -1,0 +1,36 @@
+\exercice{3707, quercia, 2010/03/11}
+\enonce[Applications antisymétriques]
+Soit $E$ un espace vectoriel euclidien orienté de dimension 3, ${\cal B}$ une base orthonormée
+directe de $E$ et $f \in \mathcal{L}(E)$ de matrice dans $\cal B$ :
+$M = \begin{pmatrix} 0      &-\gamma &\beta   \cr
+               \gamma &0       &-\alpha \cr
+               -\beta &\alpha  &0       \cr\end{pmatrix}$.
+
+\begin{enumerate}
+  \item Reconaître $f$.
+    
+  \item Montrer que $\mathrm{id}_E + f$ est une bijection et calculer la bijection
+    réciproque.
+    
+  \item Montrer que $g = (\mathrm{id} - f) \circ (\mathrm{id} + f)^{-1}$ est une rotation et
+    préciser son axe et son angle.
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $f(\vec x) = \vec u\wedge\vec x$ avec
+    $\vec u = (\alpha,\beta,\gamma)$.
+  \item $\vec y = \frac{\vec x
+                     + (\vec u\mid\vec x)\vec u-\vec u\wedge\vec x}
+                     {1+\|\vec u\,\|^2}$.
+  \item axe dirigé par $\vec u$,
+             $\cos\theta = \frac{1-\|\vec u\,\|^2}{1+\|\vec u\,\|^2}$,
+             $\sin\theta = \frac{-2\|\vec u\,\|}{1+\|\vec u\,\|^2}$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

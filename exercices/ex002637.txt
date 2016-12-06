@@ -1,0 +1,71 @@
+\exercice{2637, debievre, 2009/05/19}
+\enonce
+Soit $g\colon\R_{>0}\times \R_{>0}\to \R$ une fonction
+de classe $C^1$
+telle que $g(1,1)=3$ et dont la diff\'erentielle vaille
+\begin{equation}\label{eq}
+\mathrm{d} g= (2xy+y^2)\mathrm{d} x + (x^2+2xy) \mathrm{d} y.
+\end{equation} 
+Soit 
+\[
+h\colon \R_{>0}\times\R_{>0} \longrightarrow \R_{>0}\times\R_{>0}
+\]
+l'application de classe $C^1$ d\'efinie par 
+\[
+h(x,y)= (u(x,y), v(x,y))=(x^2y, xy^2)\in \R_{>0}\times \R_{>0}. 
+\]
+\begin{enumerate}
+ \item  Calculer $\mathrm{d} u+\mathrm{d} v$. 
+ \item D\'eterminer $g$  \`a partir du calcul 
+pr\'ec\'edent et (\ref{eq}), et sans autre calcul.
+ \item  Montrer que $h$ est une bijection. (On pourra calculer explicitement $h^{-1}$.)
+ \item D\'eterminer explicitement $\mathrm{d} (g\circ h^{-1})$.
+ \item  Calculer les matrixes jacobiennes
+$J_h(x,y)$ et $J_{h^{-1}}(u,v)$ et v\'erifier par un calcul direct que
+\[
+J_h(x,y)J_{h^{-1}}(h(x,y))=I_2,
+\]
+ o\`u $I_2$ est la matrice identit\'e d'ordre 2. 
+\end{enumerate}
+\finenonce
+
+\indication 
+On va d\'eterminer une primitive d'une forme diff\'erentielle
+de degr\'e 1 par un changement de variables tel que,
+dans les nouvelles variables, la primitive soit presque \'evidente.
+\finindication
+
+\correction
+\begin{enumerate}  
+\item Un calcul imm\'ediat donne $\mathrm d u+\mathrm d v =\mathrm d g$.
+
+\item Par cons\'equent, $g=u+v+c$ o\`u la constante $c$ est d\'etermin\'ee par
+la condition
+\[
+3=g(1,1)= u(1,1)+v(1,1)+c=1+1+c
+\]
+d'o\`u $c=1$.
+
+\item  Un calcul direct montre que l'application r\'eciproque 
+\[
+k \colon \R_{>0}\times\R_{>0} \longrightarrow \R_{>0}\times\R_{>0}
+\]
+de $h$ 
+est donn\'ee par la formule
+\[
+k(u,v)= (x(u,v),y(u,v))= 
+\left(\left(\frac{u^2}{v}\right)^{1/3},\left(\frac{v^2}{u}\right)^{1/3}\right).
+\]
+\item $\mathrm d (g \circ k)=\mathrm d (u \circ k)+ \mathrm d (v \circ k)
+=\mathrm d u +\mathrm d v$ car $u(k(u,v))=u$ et $v(k(u,v))=v$.
+
+\item  Un calcul imm\'ediat donne 
+$$J_h=\left [\begin{matrix} 2xy & x^2\\ y^2 &2xy \end{matrix}\right ], \quad 
+J_k=\left [\begin{matrix} 
+\frac 23 (uv)^{-1/3} & -\frac {u^{2/3}}{3v^{4/3}}
+\\  -\frac {v^{2/3}}{3u^{4/3}} &\frac 23 (uv)^{-1/3} 
+\end{matrix}
+\right ]$$ d'o\`u $J_h(x,y)J_{k}(h(x,y))=I_2$.
+\end{enumerate}
+\fincorrection
+\finexercice

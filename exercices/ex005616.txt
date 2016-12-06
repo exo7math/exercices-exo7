@@ -1,0 +1,34 @@
+\exercice{5616, rouget, 2010/10/16}
+\enonce[***]
+Résoudre dans $\mathcal{M}_n(\Rr)$ l'équation $M=\text{com}M$ ($n\geqslant2$).
+\finenonce
+
+\noindication
+
+\correction
+Si $\text{rg} M\leqslant n-1$, l'égalité $M=\text{com}M$ entraîne $M{^t}M=M{^t}(\text{com}M)=(\text{det}M)I_n=0$ et donc $M = 0$. En effet, 
+
+\begin{align*}\ensuremath
+M{^t}M=0&\Rightarrow\forall X\in\mathcal{M}_{n,1}(\Rr),\;M{^t}MX=0\Rightarrow\forall X\in\mathcal{M}_{n,1}(\Rr),\;{^t}XM{^t}MX = 0\Rightarrow\forall X\in\mathcal{M}_{n,1}(\Rr),\;\left\|{^t}MX\right\|^2=0\\
+ &\Rightarrow\forall X\in\mathcal{M}_{n,1}(\Rr),\;{^t}MX = 0\Rightarrow{^t}M=0\Rightarrow M=0.
+\end{align*}
+
+En résumé, si $M$ est solution, $M=0$ ou $M$ est inversible.
+
+Dans le deuxième cas, d'après l'exercice \ref{ex:rou17}, on doit avoir $\text{det}M=(\text{det}M)^{n-1}$ et donc, puisque $\text{det}M\neq0$, $\text{det}M\in\{-1,1\}$ (et même $\text{det}M=1$ si $n$ est impair) car $\text{det}M$ est réel.
+
+\textbullet~Si $\text{det}M=-1$, on doit avoir $M{^t}M=-I_n$ mais ceci est impossible car le coefficient ligne $1$, colonne $1$, de la matrice $M{^t}M$ vaut $m_{1,1}^2+...+m_{1,n}^2\neq-1$.
+
+\textbullet~Il reste le cas où $\text{det}M=1$, l'égalité $M=\text{com}M$ entraîne $M{^t}M=I_n$ c'est-à-dire $M$ est orthogonale positive.
+
+Réciproquement, si $M$ est orthogonale positive, ${^t}M=M^{-1}=\frac{1}{\text{det}M}{^t}(\text{com}M)={^t}\text{com}M$ et donc $M=\text{com}M$.
+
+Finalement ,
+
+\begin{center}
+\shadowbox{
+$\mathcal{S}=\{0\}\cup O_n^+(\Rr)$.
+}
+\end{center}
+\fincorrection
+\finexercice

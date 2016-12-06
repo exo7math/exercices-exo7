@@ -1,0 +1,29 @@
+\exercice{3281, quercia, 2010/03/08}
+
+\enonce[Calcul de d{\'e}riv{\'e}es]
+Calculer les d{\'e}riv{\'e}es $p$-i{\`e}mes des fractions suivantes :
+\begin{enumerate}
+  \item $\frac 1{X(X+1)\dots(X+n)}$.
+  \item $\frac 1{X^2-2X\cos\alpha+1}$ ($\alpha\not\equiv0(\mathrm{mod}\,{\pi})$).
+  \item $\frac 1{X^2-2X\sh\alpha-1}$ ($\alpha\in\R$).
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $\sum_{k=0}^n \frac {(-1)^{k+p}p!}{k!\,(n-k)!\,(X+k)^{p+1}}$.
+  \item $\frac{(-1)^pp!}{2i\sin\alpha}\Bigl(\frac 1{(X-e^{i\alpha})^{p+1}}
+             - \frac 1{(X-e^{-i\alpha})^{p+1}}\Bigr)
+             = \frac{\sum_{k=0}^p C_{p+1}^kp!\,{(-1)^k}\frac{\sin(p+1-k)\alpha}{\sin\alpha} X^k}
+               {(X^2-2X\cos\alpha+1)^{p+1}}$.
+  \item $\frac{\sum_{k\text{ pair}} C_{p+1}^kp!\,(-1)^{p+1}
+             \frac {\sh k\alpha}{\ch\alpha} X^{p+1-k}
+             +\sum_{k\text{ impair}} C_{p+1}^kp!\,(-1)^p
+             \frac {\ch k\alpha}{\ch\alpha} X^{p+1-k}}
+             {(X^2-2X\sh\alpha-1)^{p+1}}.$
+\end{enumerate}
+\fincorrection
+
+\finexercice 

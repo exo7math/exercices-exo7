@@ -1,0 +1,71 @@
+\exercice{5477, rouget, 2010/07/10}
+\enonce[***I]
+Résoudre l'équation différentielle $(1-x^2)y'-2xy=x^2$ sur chacun des intervalles $I$
+suivants~:~$I=]1,+\infty[$, $I=]-1,1[$, $I=]-1,+\infty[$, $I=\Rr$.
+\finenonce
+
+\noindication
+
+\correction
+L'équation différentielle à résoudre dans cet exercice est linéaire du premier ordre. On note $(E)$ l'équation
+différentielle proposée et $(E_H)$ l'équation homogène associée.
+
+Soit $I$ l'un des deux intervalles $]-1,1[$ ou $]1,+\infty[$. Les fonctions $x\mapsto\frac{-2x}{1-x^2}$ et
+$x\mapsto\frac{x^2}{1-x^2}$ sont continues sur $I$ et on sait que les solutions de $(E)$ sur $I$ sont de la forme
+$f_0+\lambda f_1$ où $f_0$ est une solution particulière de $(E)$ et $f_1$ est une solution particulière non nulle de
+$(E_H)$.
+
+Résolution de $(E)$ sur $I$. Soit $f$ une fonction dérivable sur $I$.
+
+\begin{align*}\ensuremath
+f\;\mbox{solution de}\;(E)\;\mbox{sur}\;I&\Leftrightarrow\forall x\in I,\;(1-x^2)f'(x)-2xf(x)=x^2\\
+ &\Leftrightarrow\forall x\in I,\;((1-x^2)f)'(x)=x^2\Leftrightarrow\exists\lambda\in\Rr/\;\forall x\in
+I,\;(1-x^2)f(x)=\frac{x^3}{3}+\lambda\\ &\Leftrightarrow\exists \lambda\in\Rr/\;\forall x\in 
+I,\;f(x)=\frac{x^3+\lambda}{3(1-x^2)},\end{align*}
+
+(en renommant $\lambda$ la constante $3\lambda$).
+
+Si $I=]-1,+\infty[$.
+
+Soit $f$ une éventuelle solution de $(E)$ sur $I$. Les restrictions de $f$ à $]-1,1[$ et $]1,+\infty[$ sont
+encore solution de $(E)$ et donc de la forme précédente. Par suite, nécessairement, il existe deux constantes
+$\lambda_1$ et$\lambda_2$ telles que, pour $-1<x<1$, $f(x)=\frac{x^3+\lambda_1}{3(1-x^2)}$ et pour $x>1$,
+$f(x)=\frac{x^3+\lambda_2}{3(1-x^2)}$. Enfin, l'équation impose $f(1)=-\frac{1}{2}$.
+
+En résumé, une éventuelle solution de $(E)$ sur $I$ est nécessairement de la forme~:
+
+$$\forall x>-1,\;f(x)=\left\{
+\begin{array}{l}
+\frac{x^3+\lambda_1}{3(1-x^2)}\;\mbox{si}\;-1<x<1\\
+-\frac{1}{2}\;\mbox{si}\;x=1\\
+\frac{x^3+\lambda_2}{3(1-x^2)}\;\mbox{si}\;x>1
+\end{array}
+\right..$$
+
+Réciproquement, $f$ ainsi définie, est dérivable sur $]-1,1[$ et solution de $(E)$ sur $]-1,1[$, dérivable sur
+$]1,+\infty[$ et solution de $(E)$ sur $]1,+\infty[$ et, si $f$ est dérivable en $1$, $f$ vérifie encore $(E)$ pour
+$x=1$. Donc, $f$ est solution de $(E)$ sur $]-1,+\infty[$ si et seulement si $f$ est dérivable en $1$.
+
+Pour $-1<x<1$,
+
+$$\frac{f(x)-f(1)}{x-1}=\frac{\frac{x^3+\lambda_1}{3(1-x^2)}+\frac{1}{2}}{x-1}=\frac{2x^3+2\lambda_1+3(1-x^2)}
+{6(1-x^2)(x-1)}$$
+
+Quand $x$ tend vers $1$ par valeurs inférieures, le dénominateur de la fraction tend vers $0$ et le numérateur tend vers
+$2(1+\lambda_1)$. Donc, si $\lambda_1\neq-1$, $f$ n'est pas dérivable à gauche en $1$. De même, si $\lambda_2$ n'est pas
+$-1$, $f$ n'est pas dérivable à droite en $-1$. Ainsi, si $f$ est solution de $(E)$ sur $I$, nécessairement
+$\lambda_1=\lambda_2=-1$. Dans ce cas, pour $x\in]-1,+\infty[\setminus\{1\}$,
+
+$$f(x)=\frac{x^3-1}{3(1-x^2)}=\frac{(x-1)(x^2+x+1)}{3(1-x)(1+x)}=-\frac{x^2+x+1}{3(x+1)},$$
+
+ce qui reste vrai pour $x=1$. Ainsi, si $f$ est une solution de $(E)$ sur $]-1,+\infty[$, nécessairement
+pour $x>-1$, $f(x)=-\frac{x^2+x+1}{3(x+1)}$. Réciproquement, $f$ ainsi définie est dérivable sur $]-1,+\infty[$ et en
+particulier en $1$. $f$ est donc solution de $(E)$ sur $]-1,+\infty[$.
+
+Sur $]-1,+\infty[$, $(E)$ admet une et une seule solution à savoir la fonction $x\mapsto-\frac{x^2+x+1}{3(x+1)}$.
+
+Si $I=\Rr$, soit $f$ une éventuelle solution de $(E)$ sur $\Rr$. La restriction de $f$ à $]-1,+\infty[$ est
+nécessairement la fonction précédente. Mais cette fonction tend vers $-\infty$ quand $x$ tend vers $-1$ par valeurs
+supérieures. Donc $f$ ne peut être continue sur $\Rr$ et $(E)$ n'a pas de solution sur $\Rr$.
+\fincorrection
+\finexercice

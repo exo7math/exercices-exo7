@@ -1,0 +1,45 @@
+\exercice{923, ridde, 1999/11/01}
+\video{40VUaSvJ4DY}
+\enonce
+Soit $E = \Delta^1 (\Rr, \Rr)$ l'espace des fonctions dérivables
+et $F = \left\{ f \in E \mid f (0) = f' (0) = 0\right\}$. Montrer que $F$
+est un sous-espace vectoriel de $E$ et d\'eterminer un
+suppl\'ementaire de $F$ dans $E$.
+\finenonce 
+
+\indication
+  Soit
+  $$G= \left\lbrace x \mapsto ax+b \mid (a,b) \in \Rr^2 \right\rbrace.$$
+  Montrer que $G$ est un suppl\'ementaire de $F$ dans $E$.
+\finindication
+
+\correction
+  Analysons d'abord les fonctions de $E$ qui ne sont pas dans $F$ : ce sont 
+  les fonctions $h$ qui v\'erifient $h(0) \neq 0$ \textbf{ou} $h'(0) \neq 0$. Par exemple
+  les fonctions constantes $x \mapsto b$, ($b \in \Rr^*$) ou les
+  homoth\'eties $x \mapsto a x$, ($a \in \Rr^*$) n'appartiennent pas \`a
+  $F$.
+  
+  Cela nous donne l'idée de poser
+  $$G= \left\lbrace x \mapsto ax+b \mid (a,b) \in \Rr^2 \right\rbrace.$$
+  Montrons que $G$ est un suppl\'ementaire de $F$ dans $E$.
+  
+  Soit $f \in F \cap G$, alors $f(x) = ax+b$ (car $f\in G$) et $f(0) =
+  b$ et $f'(0)=a$ ; mais $f\in F$ donc $f(0) = 0$ donc $b=0$ et
+  $f'(0)=0$ donc $a=0$. Maintenant $f$ est la fonction nulle : $F\cap
+  G = \{ 0 \}$.
+  
+  Soit $h \in E$, alors remarquons que pour $f(x) = h(x) - h(0)
+  -h'(0)x$ la fonction $f$ v\'erifie $f(0) = 0$ et $f'(0)=0$ donc $f \in
+  F$. Si nous \'ecrivons l'\'egalit\'e diff\'eremment nous obtenons
+  $$
+  h(x) = f(x) +h(0)+h'(0)x.$$
+  Posons $g(x) = h(0)+h'(0)x$, alors la
+  fonction $g \in G$ et
+  $$h =f +g,$$
+  ce qui prouve que toute fonction de $E$ s'\'ecrit comme
+  somme d'une fonction de $F$ et d'une fonction de $G$ : $E = F + G$.
+  
+  En conclusion nous avons montré que $E = F \oplus G$.
+\fincorrection
+\finexercice

@@ -1,0 +1,60 @@
+\exercice{6880, gammella, 2012/05/29}
+
+\enonce
+On donne le champ vectoriel
+$$\vec{V}(x,y,z)=(y^2\cos x, 2y\sin x+e^{2z},2y e^{2z}).$$
+\begin{enumerate}
+\item Montrer que ce champ est un champ de gradient.
+\item Déterminer le potentiel $U(x,y,z)$ dont dérive ce champ sachant qu'il vaut $1$ à l'origine.
+\item Quelle est la circulation de ce champ
+de $A(0,1,0)$ à $B( \frac{\pi}{2},3 ,0)$ ?
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item On note $P(x,y,z)=y^2\cos x$, $Q(x,y,z)=2y\sin x+e^{2z}$ et
+$R(x,y,z)=2ye^{2z}$. La forme
+$\omega=Pdx+Qdy+Rdz$, naturellement associée au champ $\vec{V}(x,y,z)$,
+est exacte puisqu'elle est définie sur $\Rr^3$ et 
+\begin{enumerate}
+\item $ \frac{\partial P}{\partial y}=  \frac{\partial Q}{\partial x}=2y\cos x$
+\item $ \frac{\partial P}{\partial z}=  \frac{\partial R}{\partial x}= 0$
+\item $ \frac{\partial Q}{\partial z}=  \frac{\partial R}{\partial y}=2e^{2z}.$
+\end{enumerate}
+Le champ $\vec{V}(x,y,z)$ est donc un champ de gradient.
+\item  Cherchons $U$ tel que $\omega=dU$. Cela nous conduit à résoudre le système :
+ $$  \left\{ \begin{array}{lll}
+ \frac{\partial U} {\partial x}& = &y^2 \cos x \\
+ \frac{\partial U}{\partial y} &= &2y\sin x+e^{2z}\\
+\frac{\partial U}{\partial z} &=&2ye^{2z}\\
+\end{array} \right .$$
+
+En intégrant la première équation par rapport à $x$, on trouve :
+$$U(x,y,z)=y^2\sin x+\psi(y,z).$$
+Maintenant, en utilisant les deux dernières équations, on est amené à
+résoudre le système suivant :
+$$  \left\{ \begin{array}{lll}
+\frac{\partial \psi} {\partial y}& = &e^{2z} \\
+ \frac{\partial \psi}{\partial z} &= &2ye^{2z} \\
+\end{array} \right .$$
+Par suite, on vérifie que $\psi(y,z)=e^{2z}y+c(z)$ avec $c'(z)=0$. Donc $c(z)=c$ 
+avec $c$ constante
+réelle et finalement :
+$$U(x,y,z)=y^2\sin x+e^{2z}y+c$$
+avec $c\in \Rr$.
+Par ailleurs, on veut que $U(0,0,0)=1$ ce qui donne $c=1$.
+
+\item La circulation du champ de $A(0,1,0)$ à $B( \frac{\pi}{2},3,0)$
+est 
+$$ \int_{\overset{\frown}{AB}} \vec{V}.\vec{dl}=\int_{\overset{\frown}{AB}} \omega = U(B)-U(A)=
+U( \frac{\pi}{2},3,0)-U(0,1,0)=11.$$
+Remarquons que lorsque $\omega$ est exacte, pour calculer l'intégrale curviligne de
+$\omega$ sur un chemin, il suffit de conna\^{\i}tre l'origine et l'extrémité du chemin. Autrement
+dit, l'intégrale curviligne d'une forme exacte sur $\overset{\frown}{AB}$ ne dépend que de $A$
+et de $B$, et non du chemin choisi pour aller de $A$ à $B$.
+\end{enumerate}
+\fincorrection
+\finexercice

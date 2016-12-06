@@ -1,0 +1,18 @@
+\exercice{5666, rouget, 2010/10/16}
+\enonce[**]
+\label{ex:rou16}
+Soit $A$ une matrice antisymétrique réelle. Etudier la parité de son polynôme caractéristique.
+\finenonce
+
+\noindication
+
+\correction
+Soit $A\in\mathcal{M}_n(\Rr)$. $A$ est antisymétrique si et seulement si ${^t}A =-A$. Dans ce cas
+
+\begin{center}
+$\chi_A =\text{det}(A-XI) =\text{det}({^t}(A-XI))=\text{det}(-A-XI)=(-1)^n\text{det}(A+XI) =(-1)^n\chi_A(-X)$
+\end{center}
+
+Ainsi, $\chi_A$ a la parité de $n$.
+\fincorrection
+\finexercice

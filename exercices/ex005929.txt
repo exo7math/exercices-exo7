@@ -1,0 +1,42 @@
+\exercice{5929, tumpach, 2010/11/11}
+\enonce
+On d\'efinit la mesure ext\'erieure de Lebesgue sur $\mathbb{R}$,
+$~m_{*}: \mathcal{P}(\mathbb{R}) \rightarrow \mathbb{R},~$ par la
+formule
+$$
+m_{*}(A) = \inf \left\{\sum_{i-1}^{\infty} (b_{i} - a_{i}) ~|~ A
+\subset \bigcup_{i=1}^{\infty} ]a_{i}, b_{i}[ \right\}.
+$$
+Montrer qu'il s'agit bien d'une mesure ext\'erieure. 
+\finenonce
+
+\noindication
+
+\correction
+Il est clair que $m_{*}(\emptyset)=0$ et que si $A\subset B\subset
+\mathbb{R}$, alors $m_{*}(A)\leq m_{*}(B)$, il faut donc
+uniquement d\'emontrer que $m_{*}$ est $\sigma$-sous-additive.
+
+Soit $\{A_n\}_{n\in \mathbb{N}}\subset \mathcal{P}(\mathbb{R})$,
+fixons $\varepsilon>0$ et notons $A=\bigcup\limits_{n=1}^\infty
+A_n$. Par d\'efinition de l'infimum, pour tout $n\in \mathbb{N}$,
+on peut trouver une suite $\{(a_i^n,b_i^n)\}$ telle que
+$A_n\subset \bigcup\limits_{i=1}^\infty ]a_i^n,b_i^n[$ et
+$$
+\sum\limits_{i=1}^\infty (b_i^n-a_i^n)\leq
+m_{*}(A_n)+\frac{\varepsilon}{2^n}
+$$
+Comme  $A\subset
+\bigcup\limits_{i,n} ]a_i^n,b_i^n[$, on  a
+$$
+m_{*}(A)\leq\sum\limits_{n,i} (b_i^n-a_i^n)\leq \sum\limits_{n=1}^\infty\sum\limits_{i=1}^\infty (b_i^n-a_i^n)
+\leq
+\sum\limits_{n=1}^\infty(m_{*}(A_n)+\frac{\varepsilon}{2^n})=\varepsilon + \sum\limits_{n=1}^\infty
+m_{*}(A_n).
+$$
+On a donc la $\sigma$-sous-additivit\'e\;
+$m_{*}(A)\leq\sum\limits_{n=1}^\infty m_{*}(A_n)$ \;puisque
+$\varepsilon$ est arbitraire. 
+\fincorrection
+
+\finexercice

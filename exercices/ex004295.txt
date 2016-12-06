@@ -1,0 +1,29 @@
+\exercice{4295, quercia, 2010/03/12}
+\enonce[$(f(ax) - f(x))/x$]
+
+\begin{enumerate}
+  \item Soit $f : {]0,{+\infty}[} \to \R$ une fonction continue telle que
+$\begin{cases} f(x) \to \ell \cr f(x) \text{ si } x\to{0^+}\to L \text{ si } x\to{+\infty} .\cr\end{cases}$
+
+Pour $a > 0$, établir la convergence et calculer la valeur de
+$ \int_{t=0}^{+\infty} \frac {f(at) - f(t)}t \,d t$.
+
+  \item Application : Calculer $ \int_{t=0}^1 \frac{t-1}{\ln t}\,d t$.
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $ \int_{t=x}^y \frac {f(at)}t \,d t =  \int_{t=ax}^{ay} \frac {f(t)}t \,d t  \Rightarrow 
+  \int_{t=x}^y \frac {f(at)-f(t)}t \,d t =  \int_{t=ax}^x \frac {f(t)}t \,d t
+ + \int_{t=y}^{ay} \frac {f(t)}t \,d t$.
+
+On obtient $ \int_{t=0}^{+\infty} \frac {f(at) - f(t)}t \,d t = (L-\ell)\ln a$.
+  \item $I =  \int_{t=0}^{+\infty} \frac{e^{-t}-e^{-2t}}t\,d t = \ln 2$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

@@ -1,0 +1,18 @@
+\exercice{3193, quercia, 2010/03/08}
+
+\enonce[Diviseurs premiers de la suite $(P(n))$ (Ens ULM-Lyon-Cachan MP$^*$ 2003)]
+Soit $P\in\Z[X]$ non constant et $E$ l'ensemble des diviseurs premiers d'au moins un $P(n)$, $n\in\Z$.
+Montrer que~$E$ est infini.
+\finenonce
+
+\noindication
+
+\correction
+On suppose $E$ fini et on montre que~$P$ est constant~: il existe~$a\in\Z$
+tel que~$P(a)\ne 0$. Soit $N = \prod_{p\in E}p^{1+v_p(P(a))}$.
+Alors pour tout~$k\in\Z$, $P(a+kN)\equiv P(a) (\mathrm{mod}\, N)$ (formule de Taylor),
+donc $v_p(P(a+kN)) = v_p(P(a))$ pour tous~$k\in\Z$ et~$p\in E$.
+Comme $P(a+kN)$ est produit d'{\'e}l{\'e}ments de~$E$, on en d{\'e}duit que $P(a+kN) = \pm P(a)$
+pour tout~$k$, donc $P$ prend une infinit{\'e} de fois la m{\^e}me valeur.
+\fincorrection
+\finexercice 

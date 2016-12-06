@@ -1,0 +1,37 @@
+\exercice{4290, quercia, 2010/03/12}
+\enonce[Comparaison série-intégrale]
+
+Soit $f : {\R^+} \to \R$. On pose, sous réserve de convergence,
+$g(t) = \sum_{n=0}^\infty f(nt)$ pour $t>0$.
+
+\begin{enumerate}
+  \item Si $f$ est monotone et intégrable, montrer que $g(t)$ existe
+pour tout $t>0$ et que l'on a $\smash{tg(t)\to  \int_{u=0}^{+\infty} f(u)\,d u}$ lorsque $t\to0^+$.
+
+
+  \item Même question en supposant $f$ de classe $\mathcal{C}^1$ et $f$,$f'$ intégrables.
+
+
+  \item On suppose maintenant $f$ de classe $\mathcal{C}^2$ et $f$, $f'$, $f''$ intégrables.
+
+Montrer que $g(t) = \frac1t \int_{u=0}^{+\infty} f(u)\,d u + \frac{f(0)}2 + O_{t\to0^+}(t)$.
+
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item En supposant $f$ positive décroissante, $ \int_0^{+\infty}f \le tg(t) \le tf(0) +  \int_0^{+\infty}f$.
+  \item $ \int_{u=Pt}^{Qt}f(u)\,d u - \sum_{n=P}^{Q-1}tf(nt) =  \int_{u=Pt}^{Qt}(f(u)-f(t[u/t]))\,d u =  \int_{u=Pt}^{Qt}t(1-\{u/t\})f'(u)\,d u\to 0$ lorsque $P,Q\to\infty$.
+
+Donc la série de terme général $tf(nt)$ est de Cauchy~; elle converge.
+
+On a alors ${ \int_0^{+\infty}\!\!f} - tg(t) =  \int_{u=0}^{+\infty}t(1-\{u/t\})f'(u)\,d u\to 0$ lorsque $t\to0^+$.
+  \item ${ \int_0^{+\infty}\!\!2f} - 2tg(t) =  \int_{u=0}^{+\infty}tf'(u)\,d u +  \int_{u=0}^{+\infty}t(1-2\{u/t\})f'(u)\,d u = tf(0) -  \int_{u=0}^{+\infty}t^2\{u/t\}(1-\{u/t\})f''(u)\,d u$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

@@ -1,0 +1,20 @@
+\exercice{5250, rouget, 2010/07/04}
+\enonce[**I]
+Soit $(u_n)$ une suite réelle non majorée. Montrer qu'il existe une suite extraite de $(u_n)$ tendant vers $+\infty$.
+
+\finenonce
+
+\noindication
+
+\correction
+La suite $u$ n'est pas majorée. Donc, $\forall M\in\Rr,\;\exists n\in\Nn/\;u_n> M$. En particulier, $\exists n_0\in\Nn/\;u_{n_0}\geq0$.
+
+Soit $k=0$. Supposons avoir construit des entiers $n_0$, $n_1$,..., $n_k$ tels que $n_0<n_1<...<n_k$ et $\forall i\in\{0,...,k\},\;u_{n_i}\geq i$.
+
+On ne peut avoir~:~$\forall n>n_k,\;u_n<k+1$ car sinon la suite $u$ est majorée par le nombre 
+$\mbox{Max}\{u_0,u_1,...,u_{n_k},k+1\})$. Par suite, $\exists n_{k+1}>n_k/\;u_{n_{k+1}}\geq k+1$.
+
+On vient de construire par récurrence une suite $(u_{n_k})_{k\in\Nn}$ extraite de la suite $u$ telle que $\forall k\in\Nn,\;u_{n_k}\geq k$ et en particulier telle que $\lim_{k\rightarrow +\infty}u_{n_k}=+\infty$.
+
+\fincorrection
+\finexercice

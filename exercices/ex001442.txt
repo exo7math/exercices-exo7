@@ -1,0 +1,65 @@
+\exercice{1442, legall, 1998/09/01}
+
+\enonce
+ Soit $  G  $ un groupe ; on note $  D(G)  $ le
+groupe engendr\'e par les \'el\'ements de la forme
+$ghg^{-1}h^{-1}$  ; $g,h\in G.$
+\begin{enumerate}
+    \item Montrer que $  D(G)  $ est distingu\'e dans $  G  .$
+    \item Montrer que $  G/D(G)  $ est commutatif~; plus g\'en\'eralement montrer qu'un sous-groupe distingu\'e
+$  H  $ de $  G  $ contient $  D(G)  $ si et seulement si $  G/H  $ est commutatif.
+\end{enumerate}
+
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+    \item Il faut montrer que pour $x\in G$ et $y\in D(G)$, $xyx^{-1} \in D(G)$.
+Commen\c{c}ons par montrer ceci pour $y$ un g\'en\'erateur de
+$D(G)$. Si $y=ghg^{-1}h^{-1}$ avec $g,h\in G$. Nous remarquons que
+:
+$$xyx^{-1} = \left( x gh x^{-1}(gh)^{-1} \right) \left( gh g^{-1}h^{-1} \right)
+\left( hg x (hg)^{-1}x^{-1} \right) $$ qui est un produit
+d'\'el\'ements de $D(G)$. Donc $xyx^{-1}$ est un \'el\'ement de
+$D(G)$.
+
+Soit maintenant $y$ un \'el\'ement quelconque de $D(G)$, alors il
+s'\'ecrit comme produit de g\'en\'erateurs :
+$$y = y_1y_2\ldots y_n,\quad \text{ avec } y_i = g_ih_ig_i^{-1}h_i^{-1}.$$
+\'Ecrivons $xyx^{-1} =
+(xy_1x^{-1})(xy_2x^{-1})\ldots(xy_nx^{-1})$. Chaque $xy_ix^{-1}$
+appartient \`a $D(G)$. Et donc $xyx^{-1}$. Donc $D(G)$ est un
+sous-groupe distingu\'e de $G$.
+
+    \item Soit $\alpha,\beta \in G/D(G)$, alors il existe
+$a,b \in G$ tels que $\overline{a}=\alpha$ et
+$\overline{b}=\beta$. Nous savons que $aba^{-1}b^{-1}\in D(G)$ et
+donc $\overline{aba^{-1}b^{-1}} = \epsilon$
+ o\`u $\epsilon$ est l'\'el\'ement neutre de $G/D(G)$. Mais
+$$\overline{aba^{-1}b^{-1}} = \overline{a}\overline{b}\overline{a^{-1}}\overline{b^{-1}}
+= \overline{a}\overline{b}\overline{a}^{-1}\overline{b}^{-1} =
+\alpha\beta\alpha^{-1}\beta^{-1}.$$ Donc
+$\alpha\beta\alpha^{-1}\beta^{-1}=\epsilon$, autrement dit
+$\alpha\beta= \beta\alpha$. Et ceci quelque soit $\alpha$ et
+$\beta$, donc $G/D(G)$ est commutatif.
+\bigskip
+G\'en\'eralisation : si $H$ est un sous-groupe distingu\'e.
+\begin{itemize}
+    \item[$\bullet$] Si $D(G) \subset H$ alors $G/D(G)$ est un sous-groupe de $G/H$ donc
+$G/H$ est commutatif car $G/D(G)$ l'est.
+    \item[$\bullet$] Si $G/H$ est commutatif alors pour $g,h \in G$
+la classe de $ghg^{-1}h{-1}$ dans $G/H$ v\'erifie :
+$$\overline{ ghg^{-1}h{-1}} = \overline{g}\overline{h}\overline{g^{-1}}\overline{h^{-1}}
+= \overline{g}\overline{ g^{-1}}\overline{h}\overline{h^{-1}} =
+\epsilon.$$ Mais les \'el\'ements dont la classe dans $G/H$ est
+l'\'el\'ement neutre sont exactement les \'el\'ements de $H$. Donc
+$ghg^{-1}h^{-1}$ appartient \`a $H$. Ainsi  tous les
+g\'en\'erateurs de $D(G)$ sont dans $H$ et donc $D(G) \subset H$.
+\end{itemize}
+\end{enumerate}
+\fincorrection
+
+\finexercice
+

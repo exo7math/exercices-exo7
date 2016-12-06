@@ -1,0 +1,67 @@
+\exercice{5738, rouget, 2010/10/16}
+\enonce[** I]
+Pour $n\in\Nn^*$, on pose $f_n(x)=\left\{\begin{array}{l}
+\left(1-\frac{x^2}{n}\right)^n\;\text{si}\;x\in[0,\sqrt{n}]\\
+\rule{0mm}{5mm}0\;\text{si}\;x>\sqrt{n}
+\end{array}
+\right.$.
+
+\begin{enumerate}
+ \item  Montrer que la suite $(f_n)_{n\in\Nn^*}$ converge simplement sur $\Rr^+$ vers la fonction $f~:~x\mapsto e^{-x^2}$.
+
+\item  A l'aide de la suite $(f_n)_{n\in\Nn^*}$, calculer l'intégrale de \textsc{Gauss} $\int_{0}^{+\infty}e^{-x^2}\;dx$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Soit $x\in[0,+\infty[$. Pour $n> x^2$, $f_n(x)=\text{exp}\left(n\ln\left(1-\frac{x^2}{n}\right)\right)$ et donc $f_n(x)\underset{n\rightarrow+\infty}{=}\text{exp}(-x^2+o(1))$. Donc la suite $(f_n)_{n\in\Nn^*}$ converge simplement sur $\Rr^+$ vers la fonction $f~:~x\mapsto e^{-x^2}$.
+
+\item  Chaque fonction $f_n$, $n\in\Nn^*$, est continue par morceaux sur $[0,+\infty[$ et nulle au voisinage de $+\infty$. Donc chaque fonction $f_n$, $n\in\Nn^*$, est intégrable sur $[0,+\infty[$.
+
+La fonction $f$ est continue sur $[0,+\infty[$ et négligeable devant $\frac{1}{x^2}$ quand $x$ tend vers $+\infty$. Donc la fonction $f$ est intégrable sur $[0,+\infty[$.
+
+Soit $n\in\Nn^*$. Par convexité de la fonction exponentielle, $\forall u\in\Rr$, $1+u\leqslant e^u$. Par suite, $\forall x\in\left[0,\sqrt{n}\right]$, $0\leqslant1-\frac{x^2}{n}\leqslant e^{-x^2/n}$ puis par croissance de la fonction $t\mapsto t^n$ sur $\Rr^+$, $0\leqslant f_n(x)=\left(1-\frac{x^2}{n}\right)^n\leqslant e^{-x^2}=f(x)$. D'autre part, pour $x>\sqrt{n}$, $f_n(x)=0\leqslant f(x)$. Finalement 
+
+\begin{center}.
+$\forall n\in\Nn^*$, $\forall x\in[0,+\infty[$, $|f_n(x)|\leqslant f(x)$.
+\end{center}
+
+En résumé,
+
+\textbullet~chaque fonction $f_n$, $n\in\Nn^*$, est continue par morceaux et intégrable sur $[0,+\infty[$,
+
+\textbullet~la suite de fonctions $(f_n)$ converge simplement vers la fonction $f$ sur $[0,+\infty[$ et la fonction $f$ est continue sur $[0,+\infty[$.
+
+\textbullet~$\forall n\in\Nn^*$, $|f_n|\leqslant f$, la fonction $f$ étant intégrable sur $[0,+\infty[$.
+
+D'après le théorème de convergence dominée, la suite $\left(\int_{0}^{+\infty}f_n(x)\;dx\right)_{n\in\Nn^*}$ converge vers $\int_{0}^{+\infty}f(x)\;dx$. Ainsi,
+
+\begin{center}
+$\int_{0}^{+\infty}e^{-x^2}\;dx=\lim_{n \rightarrow +\infty}\int_{0}^{\sqrt{n}}\left(1-\frac{x^2}{n}\right)^n\;dx$.
+\end{center}
+
+Soit $n\in\Nn^*$. En posant $t=\Arccos\left(\frac{x}{\sqrt{n}}\right)$ et donc $\frac{x^2}{n}=\cos^2t$ et $dx=-\sqrt{n}\sin t\;dt$, on obtient
+
+\begin{center}
+$\int_{0}^{\sqrt{n}}\left(1-\frac{x^2}{n}\right)^n\;dx=\int_{\pi/2}^{0}(1-\cos^2t)^n\times(-\sqrt{n}\sin t)\;dt=\sqrt{n}\int_{0}^{\pi/2}\sin^{2n+1}t\;dt=\sqrt{n}W_{2n+1}$,
+\end{center}
+
+où $W_n$ est la $n$-ème intégrale de \textsc{Wallis}. Classiquement, $W_n\underset{n\rightarrow+\infty}{\sim}\sqrt{\frac{\pi}{2n}}$ (voir Exercices Maths Sup) et donc
+
+\begin{center}
+$\frac{W_{2n+1}}{\sqrt{n}}\underset{n\rightarrow+\infty}{\sim}\sqrt{n}\sqrt{\frac{\pi}{2(2n+1)}}\underset{n\rightarrow+\infty}{\sim}\frac{\sqrt{\pi}}{2}$.
+\end{center}
+
+On a montré que
+
+\begin{center}
+\shadowbox{
+$\int_{0}^{+\infty}e^{-x^2}\;dx=\frac{\sqrt{\pi}}{2}$.
+}
+\end{center}
+\end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,42 @@
+\exercice{7006, megy, 2016/04/26}
+
+
+\enonce[Théorème de Napoléon]
+
+Soit $ABC$ un triangle direct. Soient $P, Q, R$ tels que $CBP$, $ACQ$ et $BAR$ soient des triangles équilatéraux directs. On note $U, V, W$ les centres de gravité respectifs de ces trois triangles équilatéraux. Montrer que $UVW$ est équilatéral, de même centre de gravité que $ABC$, en utilisant la caractérisation des triangles équilatéraux.
+
+\finenonce
+
+
+\noindication
+
+\correction
+%Cet exercice est semblable à celui sur le théorème de Van Aubel. 
+
+Par construction, $A$ est l'image de $B$ par la rotation de centre $W$ et d'angle $2\pi/3$. En posant  $j=e^{2i\pi/3}$, on a donc 
+\[ a-w = j(b-w), \]
+autrement dit 
+
+\[ w = \frac{a-jb}{1-j}.\]
+On obtient de même $u=\frac{b-jc}{1-j}$ et $v=\frac{c-ja}{1-j}$.
+
+
+
+
+
+On en déduit tout d'abord que 
+
+\[ u+v+w = \frac{1}{1-j}\left(a-jb+b-jc+c-ja\right) = a+b+c. \]
+
+Donc $\frac{1}{3} \left(u+v+w\right) = \frac{1}{3} \left(a+b+c\right)$, c'est-à-dire que les triangles $ABC$ et $UVW$ ont même centre de gravité. Ensuite, par la caractérisation des triangles équilatéraux, $UVW$ est équilatéral direct ssi $u+jv+j^2w=0$. Or:
+
+\[ u+jv+j^2w = \frac{1}{1-j}\left(b-jc+j(c-ja)+j^2(c-ja)\right)=0.\]
+
+Donc $UVW$ est bien équilatéral direct.
+
+\fincorrection
+
+
+
+\finexercice
+

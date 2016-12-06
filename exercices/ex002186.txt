@@ -1,0 +1,74 @@
+\exercice{2186, debes, 2008/02/12}
+\enonce
+\label{ex:deb86}
+Soit $G$ un groupe fini et $X$ un $G$-ensemble. Si $k$ est
+un entier ($1\leq k$),
+on dit que $X$ est $k$-transitif, si pour tout couple de $k$-uplets 
+$(x_1, \dots ,x_k)$ et
+$(y_1, \dots , y_k)$ d'\'el\'ements de $X$ distincts deux \`a deux,
+il existe au moins un \'el\'ement $g$
+de
+$G$ tel que pour tout $i$, $1\leq i \leq k$, $g.x_i =y_i$. Un $G$-ensemble
+$1$-transitif est donc
+simplement un
+$G$-ensemble transitif.
+\smallskip
+
+(a) Montrer que si $X$ est $k$-transitif, il est aussi $l$-transitif pour
+tout $l$, $1\leq l \leq k$.
+\smallskip
+
+(b) Montrer que $X$ est $2$-transitif si et seulement si le fixateur d'un \'el\'ement $x$
+de $X$ agit transitivement sur $X\setminus\{x\}$.
+
+(c) Montrer que si $X$ est imprimitif, il n'est pas $2$-transitif.
+\smallskip
+
+(d) Montrer qu'un groupe cyclique $C$ d'ordre premier consid\'er\'e comme
+$C$-ensemble par l'action de
+translation de $C$ sur lui-m\^eme, est primitif mais n'est pas $2$-transitif.
+\smallskip
+
+(e) Montrer que l'ensemble $\{ 1, \dots ,n \} $ muni de l'action du groupe
+$S_n$ est $k$-transitif
+pour tout
+$k$,
+$1\leq k\leq n$. En d\'eduire que
+l'ensemble $\{ 1, \dots ,n \} $ muni de l'action du groupe $S_n$ est
+primitif.
+\smallskip
+
+(f) Montrer que le fixateur de $1$ dans $S_n$ est isomorphe \`a $S_{n-1}$.
+Dans la suite on
+identifie $S_{n-1}$ \`a ce fixateur. D\'eduire de l'exercice
+19 que $S_{n-1}$ est un
+sous-groupe propre maximal de $S_n$.
+\finenonce 
+
+\indication
+(a) est trivial.
+\smallskip
+
+(b): Noter d'abord que la condition sur le fixateur de $x$ est ind\'ependante de $x\in X$: en effet si $g$ est un \'el\'ement de $G$ envoyant $x$ sur un autre \'el\'ement $x^\prime\in X$ (qui existe par transitivit\'e de $G$), alors $G(x^\prime) = g G(x) g^{-1}$  et la correspondance $h\rightarrow g h g^{-1}$ permet d'identifier les actions de $G(x^\prime)$ sur $X\setminus \{x^\prime\}$ et celle de $G(x)$ sur $X\setminus \{x\}$. Supposons maintenant v\'erifi\'ee la condition sur le fixateur de $x$. Si $(x,y)$ et $(x^\prime,y^\prime)$ sont deux couples d'\'el\'ements distincts de $X$, il existe $\sigma\in G$ tel que $\sigma (x)=x^\prime$ (transitivit\'e de $G$) et il existe $\tau \in G$ tel que $\tau (x^\prime)=x^\prime$ et $\tau(\sigma(y)) = y^\prime$ (transitivit\'e de $G(x^\prime)$ sur $X\setminus \{x^\prime\}$ (noter que $\sigma
+(y) \not=x^\prime$ car $\sigma (x)=x^\prime$)). La permutation $\tau \sigma$ v\'erifie
+$\tau \sigma (x)=x^\prime$ et $\tau \sigma (y)=y^\prime$. Cela montre que $X$ est $2$-transitif. La r\'eciproque est triviale.
+
+\smallskip
+
+(c) Si l'action de $G$ sur $X$ est imprimitive et $X=\bigcup_{i=1}^r X_i$ est une partition de
+$X$ comme dans la d\'efinition, alors il n'existe pas d'\'el\'ement $g\in G$ envoyant un
+premier \'el\'ement $x_1\in X_1$ dans $X_1$ et un second \'el\'ement $x_1^\prime \in X_1$
+dans $X_2$.
+\smallskip
+
+(d) L'action par translation d'un groupe cyclique $C$ sur lui-m\^eme est transitive, elle est
+primitive si $|C|$ est premier (toute partition de $C$ en sous-ensembles de m\^eme cardinal
+est forc\'ement triviale) mais elle n'est pas $2$-transitive (le fixateur de
+tout \'el\'ement est trivial, ce qui contredit le (c) de l'exercice \ref{ex:deb84}).
+\smallskip
+
+(e) et (f) ne pr\'esentent aucune difficult\'e.
+\finindication
+
+\nocorrection
+\finexercice

@@ -1,0 +1,21 @@
+\exercice{3291, quercia, 2010/03/08}
+
+\enonce[In{\'e}galit{\'e}]
+Soit $P\in\R[X]$ unitaire de degr{\'e}~$n$ et $Q(X) = X(X-1)\dots(X-n)$.
+
+Calculer $\sum_{k=0}^n\frac{P(k)}{\prod_{i\ne k}(k-i)}$ et en d{\'e}duire
+l'existence de $k\in{[[0,n]]}$ tel que $|P(k)|\ge \frac{n!}{2^n}$.
+
+\finenonce
+
+\noindication
+
+\correction
+$\frac PQ = \sum_{k=0}^n\frac{P(k)}{(X-k)\prod_{i\ne k}(k-i)}$
+donc $\sum_{k=0}^n\frac{P(k)}{\prod_{i\ne k}(k-i)} = \lim_{x\to\infty}\frac{xP(x)}{Q(x)}=1$.
+
+Si l'on suppose $|P(k)|< \frac{n!}{2^n}$ pour tout $k\in{[[0,n]]}$ alors
+$\left|\sum_{k=0}^n\frac{P(k)}{\prod_{i\ne k}(k-i)}\right| <
+\frac{1}{2^n}\sum_{k=0}^n\frac{n!}{k!\,(n-k)\!} = 1$, contradiction.
+\fincorrection
+\finexercice 

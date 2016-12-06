@@ -1,0 +1,111 @@
+\exercice{2268, barraud, 2008/04/24}
+\enonce
+ Soient
+$$
+f(x)=(x-a_1)(x-a_2)\dots (x-a_n)-1,\quad
+g(x)=(x-a_1)^2(x-a_2)^2\dots (x-a_n)^2+1
+$$
+o\`u $a_1,\dots a_n\in \Zz$ soient deux \`a deux distincts.
+Montrer que  $f$ et $g$ sont irr\'eductibles dans $\Qq[x]$.
+\finenonce 
+
+\noindication
+
+\correction
+  Commençons par montrer que ces polynômes sont irréductibles sur $\Zz$.
+
+
+  \paragraph{-Le cas de $f=\prod_{i=1}^{n}(X-a_{i})-1$}
+  Soit $P,Q\in\Zz[X]$ tels que $f=PQ$. On peut supposer sans perte de
+  généralité que $P$ et $Q$ ont des coefficients dominants positifs (i.e.
+  sont unitaires).
+
+  On a~: $\forall i, f(a_{i})= P(a_{i})Q(a_{i})=-1$ donc
+  $$
+   P(a_{i})=\pm1
+  \qquad\text{ et }\qquad
+   Q(a_{i})=\mp1
+  $$
+  Soit $I=\{i, P(a_{i})=-1\}$ et $J=\{1,\dots,n\}\setminus I$. On notera
+  $|I|$ et $|J|$ le nombre d'éléments de $I$ et $J$.
+
+  \textit{Supposons $I\neq\emptyset$ et $J\neq\emptyset$}: Alors
+  $\prod_{i\in I}(X-a_{i})|(P+1)$ et $\prod_{i\in J}(X-a_{i})|(Q+1)$.
+  Ainsi $\deg(P+1)\geq |I|$ et $\deg(Q+1)\geq |J|=n-|I|$, et comme
+  $\deg(P)+\deg(Q)=n$, on en déduit que $\deg(P)=|I|$ et $\deg(Q)=|J|$,
+  puis que (puisque $P$ et $Q$ sont unitaires)~:
+  $$
+    P=\prod_{i\in I}(X-a_{i})-1
+    \qquad\text{ et }\qquad
+    Q=\prod_{i\in J}(X-a_{i})-1.
+  $$
+  
+  Ainsi $f=\prod_{k\in I\cup J}(X-a_{k})-1=(\prod_{i\in
+    I}(X-a_{i})-1)(\prod_{j\in J}(X-a_{j})-1)=f-\big(\prod_{i\in
+    I}(X-a_{i})+\prod_{j\in J}(X-a_{j})-2\big)$, donc $\prod_{i\in
+    I}(X-a_{i})+\prod_{j\in J}(X-a_{j})-2=0_{\Zz[X]}$, ce qui est faux.
+
+  Ainsi $I=\emptyset$ ou $J=\emptyset$. On peut supposer sans perte de
+  généralité que $I=\emptyset$. Alors $\forall i\in\{1,\dots,n\},
+  Q(a_{i})=-1$. Donc les $a_{i}$ sont tous racine de $Q+1$. Comme
+  $\deg(Q+1)\leq n$ et $Q+1\neq 0$, on en déduit que $Q=f$, et $P=1$. $f$
+  est donc bien irréductible dans $\Zz[X]$.
+
+  \medskip
+  \paragraph{-Le cas de $g=\prod_{i=1}^{n}(X-a_{i})^{2}+1$}. Supposons que $g=PQ$,
+  avec $P,Q\in\Zz[X]$.On a $g(a_{i})=1=P(a_{i})Q(a_{i})$, donc
+  $P(a_{i})=Q(a_{i})=\pm1$.
+
+  Comme $g$ n'a pas de racine réelle, il en va de même de $P$ et $Q$, qui
+  sont donc de signe constant (théorème des valeurs intermédiaires pour
+  les fonctions continues sur $\Rr$~!). On peut donc supposer sans perte
+  de généralité que $P$ et $Q$ sont positifs.
+
+  Alors $P(a_{i})=Q(a_{i})=1$. Ainsi, tous les $a_{i}$ sont racines de
+  $P-1$ et de $Q-1$. On a donc $\prod_{i=1}^{n}(X-a_{i})|P-1$ et
+  $\prod_{i=1}^{n}(X-a_{i})|Q-1$.
+
+  En particulier, si $P-1\neq0$ et $Q-1\neq0$, $\deg(P)\geq n$ et
+  $\deg(Q)=2n-\deg(P)\geq n$. Ainsi $\deg(P)=\deg(Q)=n$. Comme en plus
+  $P$ et $Q$ sont unitaires, on en déduit que 
+  $$
+    P-1=\prod_{i=1}^{n}(X-a_{i}) \qquad\text{ et }
+    Q-1=\prod_{i=1}^{n}(X-a_{i}).
+  $$
+  On devrait donc avoir
+  $(\prod_{i=1}^{n}(X-a_{i})+1)^{2}=\prod_{i=1}^{n}(X-a_{i})^{2}+1$, ce
+  qui est faux ($\prod_{i=1}^{n}(X-a_{i})\neq 0_{\Zz[X]}$)~!
+
+  Ainsi $P-1=0$ ou $Q-1=0$, et on en déduit bien que $g$ est irréductible
+  dans $\Zz[X]$.
+
+
+  
+  \bigskip
+  \paragraph{Irréductibilité dans $\Qq[X]$}
+ On a le lemme suivant~:
+
+  Si $P\in\Zz[X]$ est unitaire et irréductible dans $\Zz[X]$, alors il
+  l'est aussi dans $\Qq[X]$.
+
+  L'ingrédient de base de la démonstration est la notion de
+  \emph{contenu} d'un polynôme $P\in\Zz[X]$~: c'est le $\pgcd$ de ses
+  coefficients, souvent noté $c(P)$. Il satisfait la relation suivante :
+  $$
+    c(PQ)=c(P)c(Q).
+  $$
+
+  Supposons que $P=QR$, avec $Q,R\in\Qq[X]$, $Q$ et $R$ unitaires. En
+  réduisant tous leurs coefficients de au même dénominateur, on peut
+  mettre $Q$ et $R$ sous la forme~:
+  $$
+    Q=\frac{1}{a}Q_{1} 
+    \qquad\text{ et }\qquad
+    R=\frac{1}{b}R_{1} 
+  $$
+  avec $a,b\in\Zz$, $Q_{1},R_{1}\in\Zz[X]$ et $c(Q_{1})=1$, $c(R_{1})=1$.
+
+  Alors $abP=Q_{1}R_{1}$, donc $c(abP)=c(Q_{1})c(R_{1})=1$. Comme
+  $ab|c(abP)$, on a $ab=\pm1$, et en fait $P,Q\in\Zz[X]$. 
+\fincorrection
+\finexercice

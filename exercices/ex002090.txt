@@ -1,0 +1,49 @@
+\exercice{2090, bodin, 2008/02/04}
+\enonce
+Calculer les primitives suivantes, en pr\'ecisant si n\'ecessaire les
+intervalles de validit\'e des calculs:
+$$
+\begin{array}{llll}
+\textbf{a)~} \displaystyle \int \sin ^8x\cos ^3x d x \quad & \textbf{b)~} \displaystyle \int
+\cos^4x d x \quad  & \textbf{c)~} \displaystyle \int \cos ^{2003}x\sin x d x & \textbf{d)~}
+\displaystyle \int \frac {1}{2+\sin x+\cos x}d x \\
+\textbf{e)~}\displaystyle \int \frac 1{\sin x}d x & \textbf{f)~} \displaystyle \int \frac
+1{\cos x}d x & \textbf{g)~} \displaystyle \int \frac{3-\sin x}{2\cos x+3\tan x}d x
+\quad & \textbf{h)~} \displaystyle \int \frac 1{7+\tan x}d x
+\end{array}$$
+\finenonce 
+\noindication
+\correction
+a-$\int \sin ^8x\cos ^3xdx=\frac 19\sin ^9x-\frac 1{11}\sin ^{11}x+c$ sur $%
+\R$.
+
+b-$\int \cos ^4xdx=\frac 1{32}\sin 4x+\frac 14\sin 2x+\frac 38x+c$ sur $\R$.
+
+c-$\int \cos ^{2003}x\sin xdx=-\frac 1{2004}\cos ^{2004}x+c$ sur $\R$.
+
+d-$\int \frac 1{\sin x}dx=\frac 12\ln \left| \frac{1-\cos x}{1+\cos x}%
+\right| +c=\ln \left| \tan \frac x2\right| +c$ sur $\left] k\pi ,\left(
+k+1\right) \pi \right[ $ (changement de variable $u=\cos x$ ou $u=\tan \frac
+x2$).
+
+e-$\int \frac 1{\cos x}dx=\frac 12\ln \left| \frac{1+\sin x}{1-\sin x}%
+\right| +c=\ln \left| \tan \left( \frac x2+\frac \pi 4\right) \right| +c$
+sur $\left] -\frac \pi 2+k\pi ,\frac \pi 2+k\pi \right[ $ (changement de
+variable $u=\sin x$ ou $u=\tan \frac x2$).
+
+f-$\int \frac{3-\sin x}{2\cos x+3\tan x}dx=-\frac 15\ln \left( 2-\sin
+x\right) +\frac 7{10}\ln \left| 1+2\sin x\right| +c$ sur $\R\setminus
+\left\{ \frac{2\pi }3\left[ 2\pi \right] ,-\frac{2\pi }3\left[ 2\pi \right]
+\right\} $ (changement de variable $u=\sin x$).
+
+g-$\int \frac 1{7+\tan x}dx=\frac 7{50}x+\frac 1{50}\ln \left| \tan
+x+7\right| +\frac 1{50}\ln \left| \cos x\right| +c$ sur $\R\setminus\left\{ \arctan \left( -7\right) +k\pi\,,\,
+\frac{\pi}{2}+k\pi\,, \;k\in
+Z\right\} $ (changement de variable $u=\tan x$).
+
+h-$\int \frac {1}{2+\sin
+x+\cos x}dx=\sqrt{2}\Arctan\left(\frac{1+\tan(x/2)}{\sqrt{2}}\right)+c$ sur
+$\R\setminus\{k\pi\,,\;k\in\Z\}$ (changement de variable $u=\tan
+(x/2)$).
+\fincorrection
+\finexercice

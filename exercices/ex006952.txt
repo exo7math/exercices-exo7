@@ -1,0 +1,32 @@
+\exercice{6952, ruette, 2013/01/24}
+\enonce[Calcul d'espérance et de variance]
+\begin{enumerate}
+\item Soit $X$ une variable aléatoire de loi exponentielle $\mathcal{E}(\lambda)$, 
+$\lambda>0$. Calculer l'espérance de $X$.
+\item
+Soit $X$ une variable aléatoire de loi de Poisson $\mathcal{P}(\lambda)$, $\lambda>0$. Calculer
+la variance de $X$.
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+\item 
+$E(X)=\displaystyle \int_0^{+\infty}x\lambda e^{-\lambda x}dx=\frac{1}{\lambda}$ par intégration par parties.
+\item  
+$E(X)=\displaystyle\sum_{k\geq 0} e^{-\lambda}\frac{\lambda^k}{k!}k
+=\lambda e^{-\lambda}\sum_{k\geq 1}\frac{\lambda^{k-1}}{(k-1)!}=
+\lambda e^{-\lambda}e^{\lambda}=\lambda$.
+
+$E(X^2)=\displaystyle\sum_{k\geq 0} e^{-\lambda}\frac{\lambda^k}{k!}k^2
+=\lambda e^{-\lambda}\sum_{k\geq 1}\frac{\lambda^{k-1}}{(k-1)!}k$.
+On écrit $k=(k-1)+1$ :\\
+$\displaystyle E(X^2)=\lambda e^{-\lambda}\left(\lambda\sum_{k\geq 2}
+\frac{\lambda^{k-2}}{(k-2)!}+\sum_{k\geq 2}\frac{\lambda^{k-1}}{(k-1)!}+1
+\right)=\lambda e^{-\lambda}(\lambda e^{\lambda}+e^{\lambda})=\lambda^2
++\lambda.$
+
+$\text{Var}(X)=E(X^2)-E(X)^2$, donc $\text{Var}(X)=\lambda$.
+\end{enumerate}
+\fincorrection
+\finexercice

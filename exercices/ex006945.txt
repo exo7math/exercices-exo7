@@ -1,0 +1,31 @@
+\exercice{6945, ruette, 2013/01/24}
+\enonce[Fonctions génératrices]
+Soit $X$ une variable aléatoire de loi binomiale $\mathcal{B}(n,p)$.
+\begin{enumerate}
+\item
+Calculer la fonction génératrice de $X$.
+\item
+Soit $Y$ une variable aléatoire de loi $\mathcal{B}(m,p)$, indépendante de $X$.
+Quelle est la fonction génératrice de $X+Y$ ? En déduire que
+$\mathcal{B}(n,p)*\mathcal{B}(m,p)=\mathcal{B}(n+m,p)$.
+\end{enumerate}
+
+{\it C'est une des façons de démontrer la stabilité des lois binomiales
+par convolution. La méthode marche aussi pour les lois de Poisson.}
+\finenonce
+\noindication
+
+\correction
+\begin{enumerate}
+\item
+$\displaystyle G_X(z)=\sum_{k=0}^nC^k_np^k(1-p)^{n-k}z^k
+=\sum_{k=0}^nC^k_n(pz)^k(1-p)^{n-k}$ donc $G_X(z)=(pz+1-p)^n$.
+\item
+$G_Y(z)=(pz+1-p)^m$ par a). Par indépendance,
+$G_{X+Y}(z)=G_X(z)G_Y(z)=(pz+1-p)^{n+m}$. C'est la fonction génératrice
+de la loi binomiale $\mathcal{B}(n+m,p)$. Or la loi de $X+Y$ est  
+$\mathcal{B}(n,p)*\mathcal{B}(m,p)$, donc $\mathcal{B}(n,p)*\mathcal{B}(m,p)=
+\mathcal{B}(n+m,p)$.
+\end{enumerate}
+\fincorrection
+\finexercice

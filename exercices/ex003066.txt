@@ -1,0 +1,35 @@
+\exercice{3066, quercia, 2010/03/08}
+
+\enonce[Nombres irrationnels]
+Soit $a \in \Q^+$ tel que $\sqrt a \notin \Q$.
+
+Montrer qu'il existe $C>0$ tel que pour tout rationnel $r=\frac pq$, on a :
+$\bigl|r-\sqrt a\bigr| \ge \frac C{q^2}$.
+
+\finenonce
+
+\noindication
+
+\correction
+Supposons d'abord $\bigl|r-\sqrt a\bigr| \le \frac 1{q^2}$.
+Cela implique $|r| \le \sqrt a + 1$.
+
+Majorons $|r^2-a|$ :
+$$|r^2-a|=|r-\sqrt a| \times |r+\sqrt a| \le |r-\sqrt a| \times \big( |r|+\sqrt a \big) \le |r-\sqrt a| \times \big( 2\sqrt a+1 \big)$$
+
+Minorons $|r^2-a|$, en posant $r=\frac pq$, $a=\frac mn$.
+$$|r^2-a|=\left|\left(\frac pq\right)^2-\frac mn \right| =\left| \frac{np^2-mq^2}{nq^2}\right| \ge \frac{1}{nq^2}$$
+La dernière inégalité provient que le numérateur $np^2-mq^2$ n'est pas nul (sinon $\sqrt a$ serait rationnel).
+
+On déduit de ces deux majorations : 
+$$\frac{1}{nq^2} \le |r^2-a| \le |r-\sqrt a| \times \big( 2\sqrt a+1 \big)$$
+Et donc :
+$$ |r-\sqrt a| \ge  \frac{1}{n( 2\sqrt a+1)}\frac{1}{q^2}.$$
+
+
+Cette inégalité est aussi clairement vérifier si $\bigl|r-\sqrt a\bigr| > \frac 1{q^2}$.
+
+La constante $C=\frac{1}{n( 2\sqrt a+1)}$ convient.
+
+\fincorrection
+\finexercice 

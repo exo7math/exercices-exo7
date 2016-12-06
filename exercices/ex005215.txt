@@ -1,0 +1,24 @@
+\exercice{5215, rouget, 2010/06/30}
+\enonce[** Identité de \textsc{Catalan}]
+Montrer que pour tout entier naturel non nul $n$, $\sum_{k=0}^{2n-1}\frac{(-1)^k}{k+1}=\sum_{k=n+1}^{2n}\frac{1}{k}$.
+\finenonce
+
+\noindication
+
+\correction
+Pour $n=1$, $\sum_{k=0}^{2n-1}\frac{(-1)^k}{k+1}=1-\frac{1}{2}=\frac{1}{2}$ et $\sum_{k=n+1}^{2n}\frac{1}{k}=\frac{1}{2}$. L'identité proposée est donc vraie pour $n=1$.
+
+Soit $n\geq1$. Supposons que $\sum_{k=0}^{2n-1}\frac{(-1)^k}{k+1}=\sum_{k=n+1}^{2n}\frac{1}{k}$.
+
+On a alors
+  
+\begin{align*}
+\sum_{k=0}^{2(n+1)-1}\frac{(-1)^k}{k+1}&=\sum_{k=0}^{2n-1}\frac{(-1)^k}{k+1}+\frac{1}{2n+1}-\frac{1}{2n+2}
+=\sum_{k=n+1}^{2n}\frac{1}{k}+\frac{1}{2n+1}-\frac{1}{2(n+1)}\\
+ &=\frac{1}{n+1}+\sum_{k=n+2}^{2n+1}\frac{1}{k}+\frac{1}{2(n+1)}
+=\sum_{k=n+2}^{2n+1}\frac{1}{k}+\frac{1}{2n+2}=\sum_{k=n+2}^{2(n+1)}\frac{1}{k}
+\end{align*}
+On a montré par récurrence que $\forall n\geq1,\;\sum_{k=0}^{2n-1}\frac{(-1)^k}{k+1}=\sum_{k=n+1}^{2n}\frac{1}{k}$ (identité de \textsc{Catalan}).
+
+\fincorrection
+\finexercice

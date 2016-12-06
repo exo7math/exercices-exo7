@@ -1,0 +1,43 @@
+\exercice{2207, debes, 2008/02/12}
+\enonce
+ Soient $p$ et $q$ deux nombres premiers. Montrer qu'il n'existe pas de
+groupe simple d'ordre $p^2q$.
+\finenonce 
+
+\indication 
+Soit $G$ un groupe d'ordre $p^2q$ qu'on suppose simple. On distinguera deux cas:
+$p>q$ et $p<q$. Dans le premier, montrer que $G$ admet $q$ $p$-Sylow d'ordre $p^2$
+et que l'action par conjugaison de $G$ sur les $p$-Sylow d\'efinit un morphisme
+injectif $G \hookrightarrow S_q$ et aboutir \`a une contradiction. Dans le second,
+raisonner sur le nombre de $q$-Sylow pour aboutir \`a une contradiction (on sera
+notamment amen\'e \`a \'eliminer le cas $p=2$ et $q=3$).
+\finindication
+
+\correction
+Soit $G$ un groupe d'ordre $p^2q$ qu'on suppose simple. On distingue deux cas:
+\smallskip
+
+\underbar{1er cas}: $p>q$. Le nombre de $p$-Sylow de $G$ est $\equiv 1\ [\hbox{\rm
+mod}\ p]$ et divise $q$. Comme $G$ est simple, ce ne peut \^etre $1$ (car sinon
+l'unique $p$-Sylow serait distingu\'e). Il y a donc $q$ $p$-Sylow d'ordre $p^2$,
+lesquels sont conjugu\'es. L'action par conjugaison de $G$ sur ces $q$ $p$-Sylow
+d\'efinit un morphisme $G \rightarrow S_q$ non trivial (car l'action est
+transitive) et   donc injectif puisque le noyau, distingu\'e et $\not=G$, est
+forc\'ement trivial. On en d\'eduit que $p^2q$ divise $q!$ et donc $p$ divise un
+entier entre $1$ et
+$q-1$, ce qui contredit l'hypoth\`ese $p>q$.
+\smallskip
+
+\underbar{2\`eme cas}: $p<q$. Le nombre de $q$-Sylow de $G$ est $\equiv 1\
+[\hbox{\rm mod}\ q]$ et divise $p^2$. Comme ci-dessus, $G$ \'etant simple, ce ne
+peut \^etre $1$. Ce ne peut-\^etre ni $p$ ni $p^2$. En effet, dans le cas
+contraire, $p$ serait $\equiv \pm 1\ [\hbox{\rm mod}\ q]$ et donc $p\geq q-1$. Comme
+$p<q$, la seule possibilit\'e est $p=q-1$ et donc $p=2$ et $q=3$. Dans ce dernier
+cas, il y a $4$ $3$-Sylow d'ordre $3$ qui contiennent $8$ \'el\'ements d'ordre
+$3$. Ne reste de la place que pour un seul $2$-Sylow qui devrait \^etre distingu\'e. Ce dernier cas
+n'est donc lui non plus pas possible. 
+\smallskip
+
+Conclusion: il n'existe pas de groupe $G$ simple d'ordre $p^2q$.
+\fincorrection
+\finexercice

@@ -1,0 +1,129 @@
+\exercice{2011, liousse, 2003/10/01}
+\video{UmHg_4CL8x4}
+\enonce
+\begin{enumerate}
+\item   Trouver une équation du plan $(P)$ 
+défini par les éléments suivants.
+
+
+\begin{enumerate}
+\item  $A$, $B$ et $C$ sont des points de $(P)$
+
+\begin{enumerate}
+\item $A(0,0,1)$, $B(1,0,0)$ et $C(0,1,0)$.
+\item $A(1,1,1)$, $B(2,0,1)$ et $C(-1,2,4)$.
+\end{enumerate}
+
+\item $A$ est un point de $(P)$,  $\vec{u}$ et $\vec{v} $ sont des vecteurs directeurs de $(P)$
+\begin{enumerate}
+\item $A(1,2,1)$, $\vec{u} (4,0,3)$ et $\vec{v} (1,3,-1)$.
+\item $A(1,0,2)$, $\vec u(2,-1,3)$ et  $\vec v(-1,4,5)$.
+\end{enumerate}
+
+ \item  $A$ est un point de $(P)$,  $D$ est une droite contenue dans $(P)$
+
+\begin{enumerate}
+\item $A(0,0,0)$ et $ (D) : \left\{ \begin{array}{l}
+                                           x + y - z + 3 = 0 \\
+                                           4x - y + 2z = 0 
+                                         \end{array} \right.$
+\item $A(1,1,0)$ et $(D) : \left\{ \begin{array}{l}
+                                         x = t \\
+                                         y = -1 + 2t \\
+                                         z = 1 - 3t
+                     \end{array} \right.$
+\end{enumerate}             
+
+\item   $D$ et $D'$ sont des droites contenues dans $(P)$           
+             
+\begin{enumerate}
+\item  $(D) :\left\{ \begin{array}{l}
+                           x + y - z + 3 = 0\\
+                           x - y - 2 = 0 
+                     \end{array} \right.$
+ et $(D') : \left\{ \begin{array}{l}
+                       3x - y - z + 5 = 0 \\
+                        x + y - z + 1 =0 
+                     \end{array} \right.$
+             
+             
+
+\item $(D) :\left\{ \begin{array}{l}
+                           x + 2y - z + 1 = 0\\
+                           x + 3y + z - 4 = 0 
+                     \end{array} \right.$
+ et $(D') : \left\{ \begin{array}{l}
+                       2x + y - 3z + 7 = 0 \\
+                        3x + 2y + z - 1 =0 
+                     \end{array} \right.$
+\end{enumerate}              
+\end{enumerate}  
+ \item  Montrer que les représentations paramétriques suivantes 
+définissent le m\^eme plan :
+
+
+$$\left\{ \begin{array}{l}x=2+s+2t \\ y=2+2s+t \\ z=1-s-t \end{array} \right.
+\quad \text{ et } \quad  \left\{ \begin{array}{l} x=1+3s'-t'\\ y=3+3s'+t'\\ z=1-2s' \end{array} \right.$$
+\end{enumerate} 
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item   
+  \begin{enumerate}
+  \item Une équation d'un plan est $ax+by+cz+d=0$. 
+Si un point appartient à un plan cela donne une condition linéaire sur $a,b,c,d$. 
+Si l'on nous donne trois point cela donne un système linéaire de trois équations à trois inconnues
+(car l'équation est unique à un facteur multplicatif non nul près). On trouve : 
+    \begin{enumerate}
+       \item $x+y+z-1=0$
+       \item $3x+3y+z-7=0$
+    \end{enumerate}
+
+    \item $\vec n = \vec{u} \wedge \vec{v}$ est normal au plan. Si $\vec n=(a, b, c)$ alors une équation du plan est $ax+by+cz+d=0$.
+   On trouve : 
+      \begin{enumerate}
+         \item $-9x+7y+12z-17=0$
+         \item $17x+13y-7z-3=0$
+       \end{enumerate}
+
+ \item Trouver deux points $B, C$ de la droite $D$. Le vecteurs $\vec u = \overrightarrow{AB}$ et 
+$\vec v = \overrightarrow{AC}$ sont des vecteurs directeurs de $P$. Procédé ensuite comme la question précédente.
+On obtient : 
+\begin{enumerate}
+\item Par exemple $B=(0,-6,-3)$ et $C=(-1,0,2)$ appartiennent à $D$. On trouve l'équation
+$4x-y+2z=0$. 
+\item Par exemple $B=(0,-1,1)$ (pout $t=0$) et $C=(1,1,-2)$ (pour $t=1$) appartiennent à $D$. On trouve l'équation
+$2x-y-1=0$. 
+\end{enumerate}             
+
+\item  Trouver un point $A$ de $D$ et deux points $B, C$ de la droite $D'$. Le vecteurs $\vec u = \overrightarrow{AB}$ et 
+$\vec v = \overrightarrow{AC}$ sont des vecteurs directeurs de $P$. Puis procédé comme avant.
+\end{enumerate}  
+
+ \item  Les plans sont définis paramétriquement par
+$(P)$ : $(2,2,1)+s(1,2,-1)+t(2,1,-1)$ donc
+deux des vecteurs directeurs sont $\vec u =(1,2,-1)$ et $\vec v = (2,1,-1)$.
+Un vecteur normal à $(P)$ est alors $\vec n = \vec{u} \wedge \vec{v}=(-1,-1,-3)$.
+
+
+Pour le plan $(P')$ défini par $(1,3,1)+s'(3,3,-2)+t'(-1,1,0)$, il a 
+pour vecteurs directeurs $\vec {u'} =(3,3,-2)$ et $\vec {v'} = (-1,1,0)$.
+Un vecteur normal à $(P')$ est alors $\vec {n'} = \vec{u'} \wedge \vec{v'}=(2,2,6)$.
+
+Les vecteurs normaux $\vec n$ et $\vec {n'}$ sont colinéaires donc les plans $(P)$ et $(P')$ sont parallèles
+(ou confondus).
+
+Maintenant le point $A=(2,2,1)$ appartient à $(P)$ (on a fait $s=0$ et $t=0$).
+Il appartient aussi à $(P')$ (en prenant $s'=0$ et $t'=-1$).
+
+Bilan. $(P)$ et $(P')$ sont parallèles et ont un point commun : ils sont égaux !
+
+\end{enumerate} 
+
+\fincorrection
+
+\finexercice
+

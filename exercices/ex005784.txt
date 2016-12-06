@@ -1,0 +1,59 @@
+\exercice{5784, rouget, 2010/10/16}
+\enonce[*** I]
+(un développement en série de fonctions de $\frac{\pi}{\sin(\pi z)}$ et $\mathrm{cotan}(\pi z)$).
+
+Soit $\alpha\in\Cc\setminus\Zz$. Soit $f$ l'application de $\Rr$ dans $\Cc$, $2\pi$-périodique telles que $\forall x\in[-\pi,\pi]$, $f(x)=\cos(\alpha x)$.
+
+\begin{enumerate}
+ \item  Développer la fonction $f$ en série de \textsc{Fourier}.
+
+\item  En déduire que pour tout $z\in\Cc\setminus\Zz$,
+
+\begin{center}
+$\frac{\pi}{\sin(\pi z)}=\frac{1}{z}+\sum_{n=1}^{+\infty}(-1)^n\frac{2z}{z^2-n^2}$ et $\pi\mathrm{cotan}(\pi z)=\frac{1}{z}+\sum_{n=1}^{+\infty}\frac{2z}{z^2-n^2}$.
+\end{center}
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Soit $\alpha\in\Cc\setminus\Zz$. La fonction $f$ est $2\pi$-périodique, continue sur $\Rr$ et de classe $C^1$ par morceaux sur $\Rr$. Donc la série de \textsc{Fourier} de $f$ converge vers $f$ sur $\Rr$ d'après le théorème de \textsc{Dirichlet}.
+
+Puisque $f$ est paire, $\forall n\in\Nn^*$, $b_n(f)=0$ puis pour $n\in\Nn$,
+
+\begin{align*}\ensuremath
+a_n(f)&=\frac{2}{\pi}\int_{0}^{\pi}\cos(\alpha x)\cos(nx)\;dx=\frac{1}{\pi}\int_{0}^{\pi}\left(\cos((n+\alpha)x)+\cos((n-\alpha)x)\right)dx\\
+ &=\frac{1}{\pi}\left[\frac{\sin((\alpha+n)x)}{\alpha+n}+\frac{\sin((\alpha-n)x)}{\alpha-n}\right]_0^\pi\;(\text{car}\;\alpha\notin\Zz)\\
+ &=\frac{1}{\pi}\left(\frac{\sin((\alpha+n)\pi)}{\alpha+n}+\frac{\sin((\alpha-n)\pi)}{\alpha-n}\right)=(-1)^n\frac{2\alpha\sin(\alpha\pi)}{\pi(\alpha^2-n^2)}
+\end{align*}
+
+Finalement,
+
+\begin{center}
+\shadowbox{
+$\forall\alpha\in\Cc\setminus\Zz$, $\forall x\in[-\pi,\pi]$, $\cos(\alpha x)=\frac{\sin(\alpha\pi)}{\alpha\pi}+\frac{\sin(\alpha\pi)}{\pi}\sum_{n=1}^{+\infty}(-1)^n\frac{2\alpha}{\alpha^2-n^2}\cos(nx)$.
+}
+\end{center}
+
+\item  Soit $z\in\Cc\setminus\Zz$.
+
+On prend $\alpha=z$ et $x=0$ dans la formule précédente et on obtient $1=\frac{\sin(\pi z)}{\pi z}+\frac{\sin(\pi z)}{\pi}\sum_{n=1}^{+\infty}(-1)^n\frac{2z}{z^2-n^2}$ $(*)$. Maintenant,
+
+\begin{center}
+$\sin(\pi z)=0\Leftrightarrow\frac{1}{2i}(e^{i\pi z}-e^{-i\pi z})=0\Leftrightarrow e^{i\pi z}=e^{-i\pi z}\Leftrightarrow e^{2i\pi z}=1\Leftrightarrow 2i\pi z\in2i\pi\Zz\Leftrightarrow z\in\Zz$.
+\end{center}
+
+Puisque $z\in\Cc\setminus\Zz$, $\sin(\pi z)\neq 0$ et l'égalité $(*)$ peut s'écrire $\frac{\pi}{\sin(\pi z)}=\frac{1}{z}+\sum_{n=1}^{+\infty}(-1)^n\frac{2z}{z^2-n^2}$.
+
+De même, en prenant $\alpha=z$ et $x=\pi$, on obtient $\cos(\pi z)=\frac{\sin(\pi z)}{\pi z}+\frac{\sin(\pi z)}{\pi}\sum_{n=1}^{+\infty}\frac{2z}{z^2-n^2}$ et donc $\pi\mathrm{cotan}(\pi z)=\frac{1}{z}+\sum_{n=1}^{+\infty}\frac{2z}{z^2-n^2}$.
+
+\begin{center}
+\shadowbox{
+$\frac{\pi}{\sin(\pi z)}=\frac{1}{z}+\sum_{n=1}^{+\infty}(-1)^n\frac{2z}{z^2-n^2}$ et $\pi\mathrm{cotan}(\pi z)=\frac{1}{z}+\sum_{n=1}^{+\infty}\frac{2z}{z^2-n^2}$.
+}
+\end{center}
+\end{enumerate}
+\fincorrection
+\finexercice

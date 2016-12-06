@@ -1,0 +1,52 @@
+\exercice{5309, rouget, 2010/07/04}
+\enonce[**I]
+\label{exo:suprou19}
+\begin{enumerate}
+\item  Déterminer en fonction de $n$ entier non nul, le nombre de chiffres de $n$ en base $10$.
+\item  Soit $\sigma(n)$ la somme des chiffres de $n$ en base $10$.
+\begin{enumerate}
+\item Montrer que la suite $\left(\frac{\sigma(n+1)}{\sigma(n)}\right)_{n\geq 1}$ est bornée. Cette suite converge-t-elle~?
+\item Montrer que pour tout naturel non nul $n$, $1\leq\sigma(n)\leq9(1+\log n)$.
+\item Montrer que la suite $(\sqrt[n]{\sigma(n)})_{n\geq1}$ converge et préciser sa limite.
+\end{enumerate}
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  Soit $n\in\Nn^*$. Posons $n=\sum_{k=0}^{p}a_k10^k$, où $p\in\Nn$, et $\forall k\in\{0,...,p\},\;a_k\in\{0,...,9\}$, et $a_p\neq0$. Le nombre de chiffres de $n$ est alors $p+1$. L'entier $p$ vérifie $10^p\leq n<10^{p+1}$ ou encore $p\leq \log n<p+1$. Par suite, $p=E(\log n)$. Ainsi, le nombre de chiffres de $n$ en base $10$ est $E(\log n)+1$.
+
+\item  Pour $n\in\Nn^*$, posons $u_n=\frac{\sigma(n+1)}{\sigma(n)}$
+\begin{enumerate}
+\item Soit $n\in\Nn^*$. Posons $n=a_p10^p+...+10a_1+a_0=\overline{a_p...a_1a_0}_{10}$. Si au moins un des chiffres de $n$ n'est pas $9$, on note $k$ le plus petit indice tel que $a_k\neq9$. Alors, $0\leq k\leq p-1$ et $n=\overline{a_p...a_k9...9}_{10}$ et $n+1=\overline{a_p...a_{k+1}(a_k+1)0...0}_{10}$. Dans ce cas, si $k=0$,
+
+$$\frac{\sigma(n+1)}{\sigma(n)}=\frac{\sigma(n)+1}{\sigma(n)}=1+\frac{1}{\sigma(n)}\leq1+1=2.$$
+
+Si $1\leq k\leq p-1$,
+
+$$\frac{\sigma(n+1)}{\sigma(n)}=\frac{a_p+...+a_k+1}{a_p+...+a_k+9k}\leq\frac{a_p+...+a_k+1}{a_p+...+a_k+1}=1\leq2.$$
+
+Sinon, tous les chiffres de $n$ sont égaux à $9$, et dans ce cas,
+
+$$\frac{\sigma(n+1)}{\sigma(n)}=\frac{1}{9(p+1)}\leq2.$$
+
+Ainsi, pour tout entier naturel non nul $n$, on a $u_n\leq2$. La suite $u$ est donc bornée.
+
+ 
+
+Pour $p\in\Nn^*$, $u_{10^p-1}=\frac{\sigma(10^p)}{\sigma(10^p-1)}=\frac{1}{9p}$. La suite extraite $(u_{10^p-1})_{p\in\Nn}$ converge et a pour limite $0$.
+
+Pour $p\in\Nn^*$, $u_{10^p}=\frac{\sigma(10^p+1)}{\sigma(10^p)}=\frac{2}{1}=2$. La suite extraite $(u_{10^p})_{p\in\Nn}$ converge et a pour limite $2\neq0$.
+
+On en déduit que la suite $u$ diverge.
+
+\item Avec les notations du a), $1\leq\sigma(n)\leq9(p+1)=9(E(\log n)+1)\leq9(\log n+1)$.
+
+\item Soit $n\in\Nn^*$. $1\leq\sqrt[n]{\sigma(n)}\leq\sqrt[n]{9(\log n+1)}=\mbox{exp}
+(\frac{1}{n}(\ln9+\ln(1+\frac{\ln n}{\ln 10})$. Les deux membres de cet encadrement tendent vers $1$ et donc la suite $(\sqrt[n]{\sigma(n)})_{n\geq1}$ converge et $\lim_{n\rightarrow +\infty}\sqrt[n]{\sigma(n)}=1$.
+\end{enumerate}
+\end{enumerate}
+\fincorrection
+\finexercice

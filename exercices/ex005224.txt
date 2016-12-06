@@ -1,0 +1,55 @@
+\exercice{5224, rouget, 2010/06/30}
+\enonce[**]
+Calculer $\lim_{n\rightarrow +\infty}\sum_{k=1}^{n}\frac{1}{1^2+2^2+...+k^2}$.
+\finenonce
+
+\noindication
+
+\correction
+Soit $k$ un entier naturel non nul. On sait que $\sum_{i=1}^{k}i^2=\frac{k(k+1)(2k+1)}{6}$. Déterminons alors trois réels $a$, $b$ et $c$ tels que, pour entier naturel non nul $k$, 
+
+$$\frac{6}{k(k+1)(2k+1)}=\frac{a}{k}+\frac{b}{k+1}+\frac{c}{2k+1}\;(*).$$
+Pour $k$ entier naturel non nul donné,
+
+$$\frac{a}{k}+\frac{b}{k+1}+\frac{c}{2k+1}=\frac{a(k+1)(2k+1)+bk(2k+1)+ck(k+1)}{k(k+1)(2k+1)}=
+\frac{(2a+2b+c)k^2+(3a+b+c)k+a}{k(k+1)(2k+1)}.$$
+Par suite,
+
+$$(*)\Leftarrow\left\{
+\begin{array}{l}
+2a+2b+c=0\\
+3a+b+c=0\\
+a=6
+\end{array}
+\right.\Leftrightarrow\left\{
+\begin{array}{l}
+a=6\\
+b=6\\
+c=-24
+\end{array}
+\right.,$$
+et donc,
+
+$$\forall n\in\Nn^*,\;\sum_{k=1}^{n}\frac{6}{k(k+1)(2k+1)}=6\left(\sum_{k=1}^{n}\frac{1}{k}+\sum_{k=1}^{n}\frac{1}{k+1}-4\sum_{k=1}^{n}\frac{1}{2k+1}\right).$$
+Ensuite, d'après l'exercice \ref{exo:suprou3bis}, quand $n$ tend vers $+\infty$, $\sum_{k=1}^{n}\frac{1}{k}=\ln n+\gamma+o(1)$ puis 
+
+$$\sum_{k=1}^{n}\frac{1}{k+1}=\sum_{k=2}^{n+1}\frac{1}{k}=H_{n+1}-1=-1+\ln(n+1)+\gamma+o(1)=\ln n+\ln\left(1+\frac{1}{n}\right)+\gamma-1+o(1)=\ln n+\gamma-1+o(1).$$
+Enfin,
+  
+\begin{align*}
+\sum_{k=1}^{n}\frac{1}{2k+1}&=-1+\sum_{k=1}^{2n+1}\frac{1}{k}-\sum_{k=1}^{n}\frac{1}{2k}=-1+H_{2n+1}-\frac{1}{2}H_n\\
+ &=\ln(2n+1)+\gamma-\frac{1}{2}(\ln n+\gamma)-1+o(1)=\ln2+\ln n+\ln\left(1+\frac{1}{2n}\right)+\gamma-\frac{1}{2}\ln n-\frac{1}{2}\gamma-1+o(1)\\
+ &=\frac{1}{2}\ln n+\ln2+\frac{1}{2}\gamma-1+o(1)
+\end{align*}
+Finalement, quand $n$ tend vers $+\infty$, on a
+
+$$\sum_{k=1}^{n}\frac{1}{1^2+2^2+...+k^2}=6\left(\ln n+\gamma+\ln n+\gamma-1-4\left(\frac{1}{2}\ln n+\ln2+\frac{1}{2}\gamma-1\right)\right)=6(3-4\ln2)+o(1).$$
+Donc,
+
+\begin{center}
+\shadowbox{
+$\lim_{n\rightarrow +\infty}\sum_{k=1}^{n}\frac{1}{1^2+2^2+...+k^2}=6(3-4\ln2)$.
+}
+\end{center}
+\fincorrection
+\finexercice

@@ -1,0 +1,29 @@
+\exercice{4311, quercia, 2010/03/12}
+\enonce[Centrale MP 2001]
+
+Soit $f$ de classe $\mathcal{C}^2$ sur $\R^+$ à valeurs dans $\R$ telle que
+$f^2$ et $f''^2$ sont intégrables sur $\R^+$.
+Montrer que $ff''$ et $f'^2$ sont intégrables sur $\R^+$, que $f$ est
+uniformément continue et qu'elle tend vers zéro en $+\infty$.
+\finenonce
+
+\noindication
+
+\correction
+$2|ff''| \le f^2 + f''^2$ donc $ff''$ est intégrable.
+On en déduit que $f'^2$ admet une limite finie en $+\infty$, et cette limite
+est nulle sans quoi $f^2$ ne serait pas intégrable
+(si $f'(x)\to\ell$ lorsque $x\to+\infty$ alors $f(x)/x\to\ell$). Ainsi $f'$ est bornée sur~$\R^+$,
+$f$ est lipschitzienne et donc uniformément continue.
+De plus,
+$$ \int_{t=0}^X f'^2(t)\,d t = f(X)f'(X) - f(0)f'(0) -  \int_{t=0}^X f(t)f''(t)\,d t$$
+donc $f(X)f'(X)$ admet en $+\infty$ une limite finie ou $+\infty$, et le
+cas $f(X)f'(X) = \frac12(f^2)'(X) \to +\infty$ lorsque $X\to+\infty$ contredit l'intégrabilité
+de $f^2$ donc ce cas est impossible, ce qui prouve que $f'^2$ est intégrable
+sur $\R^+$.
+Enfin, $ff'$ est intégrable (produit de deux fonctions de carrés intégrables)
+donc $f^2$ admet une limite finie en $+\infty$ et cette
+limite vaut zéro par intégrabilité de~$f^2$.
+\fincorrection
+
+\finexercice

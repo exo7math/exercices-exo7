@@ -1,0 +1,99 @@
+\exercice{5894, rouget, 2010/10/16}
+\enonce[** I]
+Extremums des fonctions suivantes :
+
+\begin{enumerate}
+ \item  $f(x,y) = x^3+3x^2y -15x-12y$
+
+ \item  $f(x,y) = -2(x-y)^2+x^4+y^4$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  $f$ est de classe $C^1$ sur $\Rr^2$ qui est un ouvert de $\Rr^2$. Donc si $f$ admet un extremum local en un point $(x_0,y_0)$ de $\Rr^2$, $(x_0,y_0)$ est un point critique de $f$.
+
+\begin{center}
+$df_{(x,y)}=0\Leftrightarrow\left\{
+\begin{array}{l}
+3x^2+6xy-15=0\\
+3x^2-12=0
+\end{array}
+\right.\Leftrightarrow\left\{
+\begin{array}{l}
+x=2\\
+y= \frac{1}{4}
+\end{array}
+\right.\;\text{ou}\;\left\{
+\begin{array}{l}
+x=-2\\
+y=- \frac{1}{4}
+\end{array}
+\right.$.
+\end{center}
+
+Réciproquement, $r=6x+6y$, $t=0$ et $s=6x$ puis $rt-s^2=-36x^2$. Ainsi, $(rt-s^2)\left(2, \frac{1}{4}\right)=(rt-s^2)\left(-2,- \frac{1}{4}\right)=-144<0$ et $f$ n'admet pas d'extremum local en $\left(2, \frac{1}{4}\right)$ ou $\left(-2,- \frac{1}{4}\right)$.
+
+\begin{center}
+\shadowbox{
+$f$ n'admet pas d'extremum local sur $\Rr^2$.
+}
+\end{center}
+
+\item  La fonction $f$ est de classe $C^1$ sur $\Rr^2$ en tant que polynôme à plusieurs variables. Donc, si $f$ admet un extremum local en $(x_0,y_0)\in\Rr^2$, $(x_0,y_0)$ est un point critique de $f$. Soit $(x,y)\in\Rr^2$.
+
+\begin{align*}\ensuremath
+\left\{
+\begin{array}{l}
+ \frac{\partial f}{\partial x}(x,y)=0\\
+\rule{0mm}{7mm} \frac{\partial f}{\partial y}(x,y)=0
+\end{array}
+\right.&\Leftrightarrow\left\{
+\begin{array}{l}
+-4(x-y)+4x^3=0\\
+4(x-y)+4y^3=0
+\end{array}
+\right.\Leftrightarrow\left\{
+\begin{array}{l}
+x^3+y^3=0\\
+-4(x-y)+4x^3=0
+\end{array}
+\right.\Leftrightarrow\left\{
+\begin{array}{l}
+y=-x\\
+x^3-2x=0
+\end{array}
+\right.\\
+ &\Leftrightarrow(x,y)\in\left\{(0,0),\left(\sqrt{2},\sqrt{2}\right),\left(-\sqrt{2},-\sqrt{2}\right)\right\}.
+\end{align*}
+
+Réciproquement, $f$ est plus précisément de classe $C^2$ sur $\Rr^2$ et
+
+\begin{center}
+$r(x,y)t(x,y)-s^2(x,y)=(-4+12x^2)(-4+12y^2)-(4)^2=-48x^2-48y^2+144x^2y^2=48(3x^2y^2-x^2-y^2)$
+\end{center}
+
+\textbullet~$(rt-s^2)\left(\sqrt{2},\sqrt{2}\right)=48(12-2-2)>0$. Donc $f$ admet un extremum local en $\left(\sqrt{2},\sqrt{2}\right)$. Plus précisément, puisque $r\left(\sqrt{2},\sqrt{2}\right)=2\times12-4=20>0$, $f$ admet un minimum local en $\left(\sqrt{2},\sqrt{2}\right)$. De plus, pour $(x,y)\in\Rr^2$,
+
+\begin{align*}\ensuremath
+f(x,y)-f\left(\sqrt{2},\sqrt{2}\right)&=-2(x-y)^2+x^4+y^4-8=x^4+y^4-2x^2-2y^2+4xy+8\\
+ &\geqslant x^4+y^4-2x^2-2y^2-2(x^2+y^2)+8=(x^4-4x^2+4)+(y^4-4y^2+4)=(x^2-2)^2+(y^2-2)^2\\
+ &\geqslant0.
+\end{align*}
+
+et $f\left(\sqrt{2},\sqrt{2}\right)$ est un minimum global.
+
+\textbullet~Pour tout $(x,y)\in\Rr^2$, $f(-x,-y)=f(x,y)$ et donc $f$ admet aussi un minimum global en $\left(-\sqrt{2},-\sqrt{2}\right)$ égal à $8$.
+
+\textbullet~$f(0,0)=0$. Pour $x\neq0$, $f(x,x)=2x^4>0$ et donc $f$ prend des valeurs strictement supérieures à $f(0,0)$ dans tout voisinage de $(0,0)$. Pour $x\in\left]-\sqrt{2},\sqrt{2}\right[\setminus\{0\}$, $f(x,0)=x^4-2x^2=x^2(x^2-2)<0$ et $f$ prend des valeurs strictement inférieures à $f(0,0)$ dans tout voisinage de $(0,0)$. Finalement, $f$ n'admet pas d'extremum local en $(0,0)$.
+
+\begin{center}
+\shadowbox{
+$f$ admet un minimum global égal à $8$, atteint en $\left(\sqrt{2},\sqrt{2}\right)$ et $\left(-\sqrt{2},-\sqrt{2}\right)$.
+}
+\end{center}
+\end{enumerate}
+\fincorrection
+\finexercice

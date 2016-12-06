@@ -1,0 +1,23 @@
+\exercice{5395, rouget, 2010/07/06}
+\enonce[***]
+Soit $f$ croissante de $[a,b]$ dans lui-même. Montrer que $f$ a un point fixe.
+\finenonce
+
+\noindication
+
+\correction
+Soit $E=\{x\in[a,b]/\;f(x)\geq x\}$. $E$ est une partie non vide de $\Rr$ (car $a$ est dans $E$) et majorée (par $b$). Donc, $E$ admet une borne supèrieure $c$ vérifiant $a\leq c\leq b$.
+
+Montrons que $f(c)=c$.
+
+Si $c=b$, alors $\forall n\in\Nn^*,\;\exists x_n\in E/\;b-\frac{1}{n}<x_n\leq b$. Puisque $f$ est à valeurs dans $[a,b]$ et que les $x_n$ sont dans $E$, pour tout entier naturel non nul $n$, on a
+
+$$x_n\leq f(x_n)\leq b\;(*).$$
+
+Quand $n$ tend vers $+\infty$, la suite $(x_n)$ tend vers $b$ (théorème des gendarmes) et donc, $f$ étant croissante sur $[a,b]$, la suite $(f(x_n))$ tend vers $f(b^-)\leq f(b)$. Par passage à la limite quand $n$ tend vers $+\infty$ dans $(*)$, on obtient alors $b\leq f(b^-)\leq f(b)\leq b$ et donc $f(b)=b$. Finalement, dans ce cas, $b$ est un point fixe de $f$.
+
+Si $c\in[a,b[$, par définition de $c$, pour $x$ dans $]c,b]$, $f(x)<x$ (car $x$ n'est pas dans $E$) et par passage à la limite quand $x$ tend vers $c$ par valeurs supérieures et d'après les propriétés usuelles des fonctions croissantes, on obtient~:~$f(c)(\leq f(c+))\leq c$.
+ 
+D'autre part, $\forall n\in\Nn^*,\;\exists x_n\in E/\;c-\frac{1}{n}<x_n\leq c$. $x_n$ étant dans $E$, on a $f(x_n)\geq x_n$. Quand $n$ tend vers $+\infty$, on obtient~:~$f(c)\geq f(c^-)\geq c$. Finalement, $f(c)=c$ et dans tous les cas, $f$ admet au moins un point fixe.
+\fincorrection
+\finexercice

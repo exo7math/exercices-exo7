@@ -1,0 +1,34 @@
+\exercice{5154, rouget, 2010/06/30}
+\enonce[**I]
+Soient $x$ un réel. Déterminer $\lim_{n\rightarrow +\infty}\frac{E(x)+E(2x)+...+E(nx)}{n^2}$.
+\finenonce
+
+\noindication
+
+\correction
+Soient $x\in\Rr$ et $n\in\Nn^*$. Pour $1\leq k\leq n$, on a
+
+$$kx-1<E(kx)\leq kx.$$
+
+En sommant ces inégalités, on obtient
+
+$$\frac{E(x)+E(2x)+...+E(nx)}{n^2}\leq\frac{x+2x+...+nx}{n^2}=\frac{n(n+1)x}{2n^2}=\frac{(n+1)x}{2n},$$
+
+et aussi,
+
+$$\frac{E(x)+E(2x)+...+E(nx)}{n^2}>\frac{(x-1)+(2x-1)+...+(nx-1)}{n^2}=\frac{n(n+1)x/2-n}{n^2}
+=\frac{(n+1)x}{2n}-\frac{1}{n}.$$
+
+Finalement, pour tout naturel non nul,
+
+$$\frac{(n+1)x}{2n}-\frac{1}{n}<\frac{E(x)+E(2x)+...+E(nx)}{n^2}\leq\frac{(n+1)x}{2n}.$$
+
+Les deux membres extrêmes de cet encadrement tendent vers $\frac{x}{2}$ quand $n$ tend vers $+\infty$. D'après le
+théorème des gendarmes, on peut affirmer que
+\begin{center}
+\shadowbox{
+$\forall x\in\Rr,\;\lim_{n\rightarrow +\infty}\frac{E(x)+E(2x)+...+E(nx)}{n^2}=\frac{x}{2}.$
+}
+\end{center}
+\fincorrection
+\finexercice

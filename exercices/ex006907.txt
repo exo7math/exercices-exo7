@@ -1,0 +1,27 @@
+\exercice{6907, ruette, 2013/01/24}
+\enonce
+Un standard téléphonique reçoit en moyenne 2 appels par minute. Les appels sont répartis au hasard dans le temps.
+\begin{enumerate}
+\item
+Quelle est la loi de probabilité régissant le nombre d'appels reçus 
+en 3 minutes ? Quelle est la probabilité qu'il n'y ait aucun appel en 3 minutes ?
+\item
+Quelle est la probabilité que le nombre d'appels en 2 minutes
+soit supérieur ou égal à 5 ?
+\end{enumerate}
+\finenonce
+\noindication
+
+\correction
+\begin{enumerate}
+\item
+C'est une loi de Poisson de paramètre $6$ : $P(X=n)=e^{-6}\frac{6^n}{n!}$.
+La probabilité qu'il n'y ait aucun appel est $p(X=0)=e^{-6}\simeq 0,002$.
+\item
+Soit $Y$ la variable aléatoire ``Nombre d'appels reçus en 2 minutes''. 
+Alors $Y$ suit une loi de Poisson de paramètre 4. La probabilité qu'il 
+y ait entre 0 et 4 appels est $P(Y=0)+P(Y=1)+P(Y=2)+P(Y=3)+P(Y=4)\simeq
+0,629$. Donc $P(Y\ge 5)=1-P(Y\le 4)\simeq 0,371$.
+\end{enumerate}
+\fincorrection
+\finexercice

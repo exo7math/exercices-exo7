@@ -1,0 +1,33 @@
+\exercice{5417, rouget, 2010/07/06}
+\enonce[**** Toute fonction dérivée vérifie le théorème des valeurs intermédiaires]
+Soit $f$ une fonction dérivable sur un intervalle ouvert $I$  à valeurs dans $\Rr$. Soient $a$ et $b$ deux points distincts de $I$ vérifiant $f'(a)<f'(b)$ et soit enfin un réel $m$ tel que $f'(a)<m<f'(b)$.
+\begin{enumerate}
+\item  Montrer qu'il existe $h>0$ tel que $\frac{f(a+h)-f(a)}{h}<m<\frac{f(b+h)-f(b)}{h}$.
+\item  Montrer qu'il existe $y$ dans $[a,b]$ tel que $m=\frac{f(y+h)-f(y)}{h}$ puis qu'il exsite $x$ tel que $f'(x)=m$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  Soit $m$ un élément de $]f'(a),f'(b)[$. Puisque $\lim_{h\rightarrow 0}\frac{f(a+h)-f(a)}{h}=f'(a)$ et que 
+$\lim_{h\rightarrow 0}\frac{f(b+h)-f(b)}{h}=f'(b)$, on a (en prenant par exemple $\varepsilon=\mbox{Min}\{m-f'(a),f'(b)-m\}>0$) 
+
+$$\begin{array}{l}
+\exists h_1>0/\;\forall h\in]0,h_1[,\;(a+h\in I\Rightarrow\frac{f(a+h)-f(a)}{h}<m\;\mbox{et}\\
+\exists h_2>0/\;\forall h\in]0,h_2[\;(b+h\in I\Rightarrow\frac{f(b+h)-f(b)}{h}> m.
+\end{array}$$
+
+L'ensemble $E=\{h\in]0,\mbox{Min}\{h_1,h_2\}[/\;a+h\;\mbox{et}\;b+h\;\mbox{sont dans}\;I\}$ n'est pas vide (car $I$ est ouvert) et pour tous les $h$ de $E$, on a~:$\frac{f(a+h)-f(a)}{h}<m<\frac{f(b+h)-f(b)}{h}$.
+
+$h>0$ est ainsi dorénavant fixé.
+
+\item  La fonction $f$ est continue sur $I$ et donc, la fonction $g~:~x\mapsto\frac{f(x+h)-f(x)}{h}$ est continue sur $[a,b]$. D'après le théorème des valeurs intermédiaires, comme $g(a)<m<g(b)$, $\exists y\in[a,b]/\;g(y)=m$ ou encore $\exists y\in[a,b]/\;\frac{f(y+h)-f(y)}{h}=m$.
+
+Maintenant, d'après le théorème des accroissements finis, $\exists x\in]y,y+h[\subset I/\;m=\frac{f(y+h)-f(y)}{h}=f'(x)$.
+
+Donc une fonction dérivée n'est pas nécessairement continue mais vérifie tout de même le théorème des valeurs intermédiaires (Théorème de \textsc{Darboux}).
+\end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,143 @@
+\exercice{1611, barraud, 2003/09/01}
+
+\enonce
+  Soit $E$ un espace vectoriel de dimension $n$ et $u$ un endomorphisme
+  de $E$ ayant $n$ valeurs propres distinctes
+  $\{\lambda_{1},...,\lambda_{n}\}$. 
+
+\begin{enumerate}
+\item 
+Montrer que l'ensemble $\mathrm{Com}=\{v\in\mathcal{L}(E,E)/ uv=vu\}$ des
+endomorphismes de $E$ qui commutent avec $u$ est un espace vectoriel.
+
+\item
+  \begin{enumerate}
+  \item 
+    Soit $v$ un élément de $\mathrm{Com}$. Montrer que $v$ préserve les espaces
+    propres de $u$ (c'est à dire que si $E_{\lambda}$ est un espace
+    propre de $u$ associé à la valeur propre $\lambda$, on a $\forall
+    x\in E_{\lambda}, v(x)\in E_{\lambda}$). 
+  \item
+    Donner la dimension des espaces propres de $u$ et montrer que si
+    $x$ est un vecteur propre de $u$ alors c'est aussi un vecteur propre
+    de $v$. 
+  \item
+    A l'aide d'une base convenablement choisie, décrire tous les éléments
+    de $\mathrm{Com}$, et montrer que $\mathrm{Com}$ est de dimension $n$. 
+  \end{enumerate}
+
+\item
+Montrer que $\mathrm{Vect}(\mathrm{id},u,u^{2},...,u^{n-1})\subset \mathrm{Com}$.
+
+\item
+On veut maintenant étudier l'indépendance linéaire de la famille
+$\{\mathrm{id},u,u^{2},...,u^{n-1}\}$. Pour cela, on considère $n$ réels
+$\alpha_{0},...,\alpha_{n-1}$ tels que $\sum_{i=0}^{n}\alpha_{i}u^{i}=0$.
+  \begin{enumerate}
+  \item 
+    Montrer que les $(\alpha_{i})$ sont solution du système~:
+    $$
+    (*)\ \left\{
+      \begin{array}{ccccccccccc}
+         \alpha_{0}
+        &+&\alpha_{1}  \lambda_{1}
+        &+&\alpha_{2}  \lambda_{1}^{2}
+        &+&...
+        &+&\alpha_{n-1}\lambda_{1}^{n-1}
+        &=&0\\
+        \alpha_{0}
+        &+&\alpha_{1}  \lambda_{2}
+        &+&\alpha_{2}  \lambda_{2}^{2}
+        &+&...
+        &+&\alpha_{n-1}\lambda_{2}^{n-1}
+        &=&0\\
+        \vdots&&\vdots&&\vdots&&&&\vdots&&\vdots\\
+        \alpha_{0}
+        &+&\alpha_{1}  \lambda_{n}
+        &+&\alpha_{2}  \lambda_{n}^{2}
+        &+&...
+        &+&\alpha_{n-1}\lambda_{n}^{n-1}
+        &=&0
+      \end{array}
+    \right.
+    $$
+
+  \item
+    On rappel que~: $
+    \begin{vmatrix}
+      1&\lambda_{1}&\lambda_{1}^{2}&...&\lambda_{1}^{n-1}\\
+      1&\lambda_{2}&\lambda_{2}^{2}&...&\lambda_{2}^{n-1}\\
+      \vdots&\vdots&\vdots&&\vdots\\
+      1&\lambda_{n}&\lambda_{n}^{2}&...&\lambda_{n}^{n-1}
+    \end{vmatrix}=\prod\limits_{1\leq i<j\leq n}(\lambda_{j}-\lambda_{i})
+    $. En déduire l'ensemble des solutions du système $(*)$ et conclure.
+  \end{enumerate}
+
+\item  
+Montrer que $\mathrm{Com}=\mathrm{Vect}(\mathrm{id},u,u^{2},...,u^{n-1})$.
+\end{enumerate}
+
+\finenonce
+
+\noindication
+
+\correction
+  \begin{enumerate}
+  \item 
+    Soit $(v,w)\in\mathrm{Com}$, $(\lambda,\mu)\in\R^{2}$. $u(\lambda v+\mu
+    w)=\lambda uv+\mu uw=\lambda vu+\mu wu=(\lambda v+\mu w)u$. Donc
+    $\mathrm{Com}$ est un sous espace vectoriel de $\mathcal{L}(E,E)$.
+
+  \item
+    Soit $x\in E_{\lambda}$. $u(v(x))=uv(x)=vu(x)=v(\lambda x)=\lambda
+    v(x)$ donc $v(x)\in E_{\lambda}$.
+
+  \item
+    Chaque valeur propre est de multiplicité 1 donc chaque espace propre
+    est de dimension 1. Ainsi, si $x\in E_{\lambda}\setminus\{0\}$,
+    $E_{\lambda}=\R x$. Comme $v(x)\in E_{\lambda}$,
+    $\exists\alpha\in\R, v(x)=\alpha x$. Donc $x$ est un vecteur propre
+    de $v$.
+
+  \item
+    Soit $(e_{1},...,e_{n})$ une base de vecteurs propres de $u$. C'est
+    aussi une base de vecteurs propres pour tout élément de $\mathrm{Com}$. Tout
+    élément de $\mathrm{Com}$ est donc représenté par une matrice diagonale dans
+    $(e_{1},...,e_{n})$. Réciproquement, tout endomorphisme représenté
+    dans cette base par une matrice diagonale commute avec $u$. Donc
+    $$
+    \mathrm{Com}=\{v\in\mathcal{L}(E,E), \exists (\alpha_{1},...,\alpha_{n})\in\R^{n},
+    M_{v/(e_{1},...,e_{n})}=
+      \begin{pmatrix}
+        \alpha_{1}& & \\ &\ddots& \\ & & \alpha_{n}
+      \end{pmatrix}
+      \}$$
+    On en déduit que $\mathrm{Com}$ est de dimension $n$.
+
+  \item
+    $u\,u^{i}=u(u\cdots u)=(u\cdots u)u=u^{i}\, u$. Donc $\forall
+    i\in\{0,...,n-1\}, u^{i}\in\mathrm{Com}$. Ainsi
+    $\mathrm{Vect}(\mathrm{id},u,...,u^{n-1})\subset\mathrm{Com}$.
+
+  \item
+    Soit $x_{k}\in E_{\lambda_{k}}\setminus\{0\}$.
+    $u^{i}(x)=\lambda_{k}^{i}\,x$. Donc $(\sum \alpha_{i}u^{i})x
+    =\sum\alpha_{i}u^{i}(x) =(\sum\alpha_{i}\lambda_{k}^{i})x=0$. Donc
+    $\forall k\in\{1,...,n\}, \sum\alpha_{i}\lambda_{k}^{i}=0$.
+
+  \item
+    Le déterminent du système $(*)$ est non nul. Il s'agit donc d'un
+    système de Cramer~: il n'a qu'une solution,
+    $\alpha_{0}=...=\alpha_{n-1}=0$. La famille $(\mathrm{id}, u, ..., u^{n-1})$
+    est donc libre.
+
+  \item
+    On a $\dim\mathrm{Vect}(\mathrm{id}, u, ..., u^{n-1})=n=\dim\mathrm{Com}$ et $\mathrm{Vect}(\mathrm{id}, u,
+    ..., u^{n-1})\subset\mathrm{Com}$ donc $\mathrm{Vect}(\mathrm{id}, u, ..., u^{n-1})=\mathrm{Com}$
+
+  \end{enumerate}
+\fincorrection
+
+
+\finexercice
+

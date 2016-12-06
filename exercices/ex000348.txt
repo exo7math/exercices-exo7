@@ -1,0 +1,42 @@
+\exercice{348, ridde, 1999/11/01}
+\video{x73t94ZLjSU}
+\enonce
+Soit $X$ l'ensemble des nombres premiers de la forme $4k + 3$ avec $k \in \Nn$.
+\begin{enumerate}
+\item Montrer que $X$ est non vide.
+\item Montrer que le produit de nombres de la forme $4k + 1$ est encore de cette forme.
+\item On suppose que $X$ est fini et on l'\'ecrit alors $X = \left\{
+p_1, \ldots, p_n\right\}$.\\  Soit $a = 4p_1 p_2 \ldots p_n  - 1$. Montrer par l'absurde
+que $a$ admet un diviseur premier de la forme $4k + 3$.
+\item Montrer que ceci est impossible et donc que $X$ est infini.
+\end{enumerate}
+
+\finenonce 
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $X$ est non vide car, par exemple pour $k=2$, $4k+3=11$ est premier.
+  \item $(4k+1)(4\ell+1) = 16k\ell + 4(k+\ell)+1 = 4(4k\ell+k+\ell)+1$.
+Si l'on note l'entier $k' = 4k\ell+k+\ell$ alors $(4k+1)(4\ell+1) = 4k'+1$, 
+ce qui est bien de la forme voulue.
+  \item Remarquons que $2$ est le seul nombre premier pair, les autres sont de la forme
+$4k+1$ ou $4k+3$. Ici $a$ n'est pas divisible par $2$, supposons --par l'absurde-- 
+que $a$ n'a pas de diviseur de la forme $4k+3$, alors 
+tous les diviseurs de $a$ sont de la forme $4k+1$. C'est-\`a-dire que $a$ s'\'ecrit comme produit
+de nombre de la forme $4k+1$, et par la question pr\'ec\'edente $a$ peut s'\'ecrire $a=4k'+1$.
+Donc $a \equiv 1 \pmod{4}$. Mais comme $a = 4p_1p_2\ldots p_n -1$, $a \equiv -1 \equiv 3 \pmod{4}$.
+Nous obtenons une contradiction. Donc $a$ admet une diviseur premier $p$ de la forme $p=4\ell+3$. 
+  \item Dans l'ensemble $X = \{p_1,\ldots,p_n\}$ il y a tous les nombres premiers de la formes $4k+3$.
+Le nombre $p$ est premier et s'\'ecrit $p = 4\ell+3$ donc $p$ est un \'el\'ement de $X$, donc
+il existe $i\in \{1,\ldots,n\}$ tel que $p=p_i$.
+Raisonnons modulo $p=p_i$: $a \equiv 0 \pmod{p}$ car $p$ divise $a$.
+D'autre part $a=4p_1\ldots p_n - 1$ donc $a\equiv -1 \pmod{p}$. (car $p_i$ divise $p_1\ldots p_n$).
+Nous obtenons une contradiction, donc $X$ est infini: il existe une infinit\'e de nombre 
+premier de la forme $4k+3$.
+Petite remarque, tous les nombres de la forme $4k+3$ ne sont pas des nombres premiers, par
+exemple pour $k=3$, $4k+3 = 15$ n'est pas premier.
+\end{enumerate}
+\fincorrection
+\finexercice

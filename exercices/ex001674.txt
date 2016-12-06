@@ -1,0 +1,63 @@
+\exercice{1674, gineste, 2001/11/01}
+
+\enonce
+ Soit $\theta\in]0,\pi[$. On considère les deux
+matrices d'ordre $n$:
+
+$$ A=\left[ \begin{array}{llllll}0&1&0&\cdots&0&0\\
+1&0&1&\cdots&0&0\\
+0&1&0&\cdots&0&0\\
+\cdots&\cdots&\cdots&\cdots&\cdots&\cdots\\
+0&0&0&\cdots&0&1\\
+0&0&0&\cdots&1&0
+ \end{array} \right],
+B=\left[ \begin{array}{llllll}
+2\cos \theta&1&0&\cdots&0&0\\
+1&2\cos \theta&1&\cdots&0&0\\
+0&1&2\cos \theta&\cdots&0&0\\
+\cdots&\cdots&\cdots&\cdots&\cdots&\cdots\\
+0&0&0&\cdots&2\cos \theta&1\\
+0&0&0&\cdots&1&2\cos \theta
+ \end{array} \right]$$
+Montrer par récurrence que
+$\det B=\frac{\sin(n+1)\theta}{\sin \theta}$ (Méthode: développer
+par rapport à la dernière ligne). Montrer que $\det B$
+s'annule pour $n$ valeurs distinctes de $\theta$ de $]0,\pi[$,
+et les déterminer. Si $P_A$ est le polynôme caractéristique de $A$, calculer
+$P_A(-2\cos \theta)$ et déduire de ce qui précède les valeurs propres de $A.$
+Montrer que les valeurs propres des matrices $2I_n+A$ et $2I_n-A$ sont
+strictement positives.
+
+\finenonce
+
+\noindication
+
+\correction
+ Notons $D_n=\det B.$
+Alors $D_1=2\cos \theta=\frac{\sin 2\theta}{\sin \theta}$ et
+$D_2=4\cos^2\theta -1=\frac{\sin 3\theta}{\sin \theta}.$ Si $n>2$,
+d\'eveloppons $D_n$ par rapport \`a la derni\`ere ligne, en
+recommencant encore une fois avec un des d\'eterminants d'ordre
+$n-1$ obtenus. On obtient $D_n=2\cos \theta D_{n-1}-D_{n-2}.$
+Faisons l'hypoth\`ese de r\'ecurrence que $D_k=\frac{\sin
+(k+1)\theta}{\sin \theta}$ pour $k<n.$ On a vu que c'est vrai pour
+$k=1$ et 2. Alors par des identit\'es trigonom\'etriques
+classiques $D_n=\frac{2\cos\theta \sin n\theta}{\sin \theta}
+-\frac{\sin (n-1)\theta}{\sin \theta}= \frac{\sin
+(n+1)\theta}{\sin \theta},$ et la r\'ecurrence est \'etendue.
+Puisque $\sin x=0 \Leftrightarrow $ il existe un entier relatif
+$k$ tel que $x=k\pi$ alors $D_n=0$ si et seulement si il existe
+$k=1,2,\ldots,n$ tel que $\theta=\frac{k\pi}{n+1}$ les autres
+valeurs de $k$ \'etant exclues car $0<\theta<\pi.$ Par
+d\'efinition de $P_A$ on a $P_A(-2\cos \theta)=D_n=\frac{\sin
+(n+1)\theta}{\sin \theta}$ qui s'annule pour les $n$ nombres
+distincts $-2\cos \frac{k\pi}{n+1},$ $k=1,2,\ldots,n$ qui sont
+n\'ecessairement toutes les valeurs propres de $A.$ Les valeurs
+propres de $2I_n+ A$ sont donc $2-2\cos
+\frac{k\pi}{n+1}=4\sin^2\frac{k\pi}{2n+2}>0.$ Le spectre de $2I_n-
+A$ est le m\^eme.
+
+\fincorrection
+
+\finexercice
+

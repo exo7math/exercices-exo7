@@ -1,0 +1,150 @@
+\exercice{6258, queffelec, 2011/10/16}
+\enonce
+
+Soit $E$ et $F$ deux evn sur $\Cc$. Une application de $E$ dans
+$F$ $\Cc$-linéaire est $\Rr$-linéaire, mais la réciproque est fausse.
+\begin{enumerate}
+\item Soit $\varphi:E\to F$ une application $\Rr$-linéaire. Montrer que
+$\varphi$ est  $\Cc$-linéaire si et seulement si $\varphi(ix)=i\varphi(x)$
+pour tout $x\in E$. En déduire les applications de $\Rr^2$ dans $\Rr^2$ qui
+sont
+$\Cc$-linéaires.
+
+Soit $U$ un ouvert de $E$ et $f:U\to F$. On suppose $f$ 
+$\Rr$-différentiable en $a\in U$. Il est clair que $f$ est 
+$\Cc$-différentiable en $a$ si et seulement si $f'(a)$ est 
+$\Cc$-linéaire.
+
+\item Si $f:{\Cc}\to\Cc$ s'écrit $f(z)=u(z)+iv(z)=f(x+iy)$ avec $u$ et $v$
+réelles, qu'on identifie à $f(x,y)=(u(x,y),v(x,y))$, traduire à l'aide de a)
+``$f$ est
+$\Cc$-différentiable en $a=\alpha+i\beta$''.
+En quels points les applications de
+$\Cc$ dans
+$\Cc$ sont-elles
+$\Cc$-différentiables :
+$f_1(z)=e^x$;\  $f_2(z)=|z|^2$;\ $f_3(z)=e^{x-iy}$ ?
+
+\item (extrait de septembre 99)   
+ Soit $U$ un ouvert de ${\Cc}$ et soit $f:U\to\Cc$ 
+$\Cc$-différentiable en $a=\alpha+i\beta\in U$, telle que $f(a)\not=0$.
+Montrer que si $g=|f|$ est $\Cc$-différentiable en $a=\alpha+i\beta\in U$,
+alors $f'(a)=0$. 
+\end{enumerate}
+
+
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  Puisque $\Rr$ est un sous-corps de $\Cc$, il est clair que $\varphi$
+est $\Rr$-linéaire dès qu'elle est $\Cc$-linéaire et qu'elle vérifie en
+particulier $\varphi(ix)=i\varphi(x)$ pour tout $x\in
+E$. 
+
+Supposons maintenant
+$\varphi$ $\Rr$-linéaire, vérifiant $\varphi(ix)=i\varphi(x)$ pour tout $x\in
+E$. Par hypothèse, $\varphi$ est additive et $\varphi(t.x)=t\varphi(x)$ pour
+tout réel $t$ et $x\in E$. D'autre part, si $\lambda=\alpha+i\beta\in\Cc$,
+
+$\varphi((\alpha+i\beta)x)=\varphi(\alpha x)+\varphi(i\beta x)$ par
+additivité car $E$ est un $\Cc$-ev, 
+
+\quad $=\varphi(\alpha x)+ i\varphi(\beta x)$ par hypothèse sur $\varphi$,
+
+\quad $=\alpha\varphi(x)+i\beta\varphi(x)$ car $\alpha,\beta\in\Rr$.
+
+\medskip
+
+Si $\varphi\in{\cal L}(\Rr^2)$, elle se représente dans la base canonique
+de $\Rr^2$ par la matrice 
+
+$$\begin{pmatrix}a&b\\ c&d \end{pmatrix}$$
+
+De même, $\cal I$, la multiplication par $i$ comme application linéaire de 
+${\cal L}(\Cc)$ se représente dans l'identification de $\Cc$ avec $\Rr^2$
+par la matrice
+
+$$\begin{pmatrix}0&-1\cr 1&0 \cr \end{pmatrix}$$
+
+et la condition  $\varphi(ix)=i\varphi(x)$ signifie que $\varphi$ commute
+avec $\cal I$ ou que 
+
+$$\begin{pmatrix}a&b\cr c&d \cr\end{pmatrix}
+\begin{pmatrix}0&-1\cr 1&0 \cr \end{pmatrix}=
+\begin{pmatrix}0&-1\cr 1&0 \cr\end{pmatrix}
+\begin{pmatrix}a&b\cr c&d \cr \end{pmatrix}.$$
+
+Ceci est réalisé si et seulement si $a=d$, et $b=-c$.
+
+\smallskip
+
+b) $f$ $\Cc$-différentiable au point $z=x+iy\in \Cc$ signifie : 
+$$f(z+h)-f(z)-f'(z).h=h\varepsilon(h),$$ avec $h\in\Cc$ et $\lim_{h\to
+0}\varepsilon(h)=0$ (l'application 
+$\Cc$-linéaire tangente est ici la multiplication dans $\Cc$ par $f'(z)$);
+traduit en variables réelles cela signifie :
+
+$$\left \{
+\begin{array}{ccc} 
+u(x+h_1,y+h_2)-u(x,y)&=&ah_1-bh_2+ ||h||
+\varepsilon(h)\\
+v(x+h_1,y+h_2)-u(x,y)&=&bh_1+ah_2+ ||h||
+\varepsilon(h)
+\end{array}\right.$$
+avec $f'(z)=a+ib$ et $h=h_1+ih_2$; 
+$f$ est donc $\Rr$-différentiable au point $(x,y)$  et sa
+matrice jacobienne en ce point vaut 
+$$\begin{pmatrix}a&-b\cr b&a \cr \end{pmatrix}.$$
+
+Réciproquement supposons $f\  \Rr$-différentiable
+en $(x,y)$; ainsi
+$$f(x+h_1,y+h_2)-f(x,y)-f'(x,y).h=||h||
+\varepsilon(h),$$
+avec
+$h\in\Rr^2$ et $\lim_{h\to
+0}\varepsilon(h)=0$; la matrice de $f'(x,y)$ est la matrice jacobienne 
+
+$$\begin{pmatrix}\partial_1u(x,y)&\partial_2u(x,y)\cr \partial_1v(x,y)&
+\partial_2v(x,y) \cr \end{pmatrix}=\begin{pmatrix}a&b\cr c&d \cr \end{pmatrix},$$ et $f$ est  
+$\Cc$-différentiable en
+$(x,y)$ 
+si et seulement si $f'(x,y)$ est $\Cc$-linéaire ou  $a=d$ et $b=-c$, ce qui se
+traduit par les conditions de Cauchy : 
+$$\partial_1u(x,y)=\partial_2v(x,y),\ \partial_2u(x,y)=-\partial_1v(x,y).$$
+
+Il est facile de voir que les applications de $\Cc$ dans
+$\Cc$ : $f_1(z)=e^x,\ f_2(z)= x^2+y^2,\ f_3(z)=e^{x-iy}$ sont 
+$\Rr$-différentiables, et que les conditions de Cauchy ne sont jamais vérifiées
+pour $f_1$ et $f_3$, ne sont vérifiées qu'en $0$ pour $f_2$.
+
+\item La fonction $g :\Cc\to\Cc$ peut s'écrire $g_1+ig_2$ où
+$g_1=\sqrt{u^2+v^2}$ et $g_2=0$ si
+$f=u+iv$. Supposons que $g$ soit 
+$\Cc$-différentiable en $z=x+iy$: elle remplit donc les conditions de
+Cauchy en ce point et $\partial_1g_1(x,y)=\partial_2g_1(x,y)=0$, soit
+$$\left \{\begin{array}{ccc}
+u(x,y)\ \partial_1u(x,y)+v(x,y)\ \partial_1v(x,y)&=&0,\\
+u(x,y)\ \partial_2u(x,y)+v(x,y)\ \partial_2v(x,y)&=&0.
+\end{array}\right.
+$$
+
+Mais comme $f$ est  
+$\Cc$-différentiable en $z=x+iy$, $\partial_1u(x,y)=\partial_2v(x,y),$ 
+ 
+$\partial_2u(x,y)=-\partial_1v(x,y),$ et le système devient
+$$\left \{\begin{array}{ccc}
+u(x,y)\ \partial_1u(x,y)+v(x,y)\ \partial_1v(x,y)&=&0,\\
+-u(x,y)\ \partial_1v(x,y)+v(x,y)\ \partial_1u(x,y)&=&0.
+\end{array}\right.
+$$
+
+C'est un système de Cramer puisque le déterminant
+$u^2(x,y)+v^2(x,y)=|f(z)|^2\not=0$;
+ainsi $\partial_1u(x,y)=\partial_1v(x,y)=\partial_2u(x,y)=\partial_2v(x,y)=0$ et
+$f'(z)=0$.  
+\end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,38 @@
+\exercice{3195, quercia, 2010/03/08}
+
+\enonce[Polyn{\^o}mes {\`a} coefficients entiers, ULM-Lyon-Cachan MP$^*$ 2004]
+On donne un entier $n\ge 0$.
+
+Montrer qu'il existe des polyn{\^o}mes
+$P_0,\dots,P_n$ dans $\Z_n[X]$ tels que
+$\forall\ i,j\in{[[0,n]]},\  \int_{t=0}^1 t^iP_j(t)\,dt = \delta_{ij}$.
+\finenonce
+
+\noindication
+
+\correction
+Analyse~: on pose $P_j = a_0 + a_1X + \dots + a_nX^n$ et on consid{\`e}re la fraction rationnelle
+$$F(X) = \frac{a_0}{X} + \frac{a_1}{X+1} + \dots + \frac{a_n}{X+n}
+= \frac{P(X)}{X(X+1)\dots(X+n)}.$$
+Alors $ \int_{t=0}^1 t^iP_j(t)\,dt = F(i+1) = \frac{i!\,P(i+1)}{(i+n+1)!}$
+donc $P(j+1) = \frac{(j+n+1)!}{j!}$ et $P(k) = 0$ pour $k\in{[[1,n+1]]}\setminus\{j+1\}$,
+soit $$
+\begin{aligned}
+  P(X) &= \frac{(j+n+1)!}{j!}\prod_{k\ne j+1}\frac{X-k}{j+1-k} \\&=
+  (-1)^{n-j}\frac{(j+n+1)!}{(j!)^2(n-j)!}\prod_{k\ne j+1}(X-k) =
+  Q_j(X).
+\end{aligned}
+$$
+
+Synth{\`e}se : soit $Q_j$ le polyn{\^o}me ci-dessus et $a_0,\dots,a_n$ les
+coefficients de la d{\'e}composition en {\'e}l{\'e}ments simples de $\frac{Q_j(X)}{X(X+1)\dots(X+n)}$.
+On doit juste v{\'e}rifier que les $a_i$ sont entiers. Calcul~:
+$$
+\begin{aligned}
+  a_i &= \frac{Q_j(-i)}{(-1)^ii!\,(n-i)!}  =
+  (-1)^{i+j}\frac{(i+j)!\,(i+n+1)!\,(j+n+1)!}{(i+j+1)!\,(i!)^2\,(j!)^2\,(n-i)!\,(n-j)!}
+  \\ &= (-1)^{i+j}C_{i+j}^iC_{i+n+1}^{i+j+1}C_{j+n+1}^{j}C_n^i(n+1) \in\Z.
+\end{aligned}
+$$
+\fincorrection
+\finexercice 

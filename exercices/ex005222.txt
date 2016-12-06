@@ -1,0 +1,56 @@
+\exercice{5222, rouget, 2010/06/30}
+\enonce[**IT]
+\label{exo:suprou3bis}
+Pour $n$ entier naturel non nul, on pose $H_n=\sum_{k=1}^{n}\frac{1}{k}$ (série harmonique).
+
+\begin{enumerate}
+\item  Montrer que~:~$\forall n\in\Nn^*,\;\ln(n+1)<H_n<1+\ln(n)$ et en déduire $\lim_{n\rightarrow +\infty}H_n$.
+\item  Pour $n$ entier naturel non nul, on pose $u_n=H_n-\ln(n)$ et $v_n=H_n-\ln(n+1)$. Montrer que les suites $(u_n)$ et $(v_n)$ convergent vers un réel $\gamma\in\left[\frac{1}{2},1\right]$ ($\gamma$ est appelée la constante d'\textsc{Euler}). Donner une valeur approchée de $\gamma$ à $10^{-2}$ près.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  La fonction $x\mapsto\frac{1}{x}$ est continue et décroissante sur $]0,+\infty[$ et donc, pour $k\in\Nn^*$, on a~:
+ 
+$$\frac{1}{k+1}=(k+1-k)\frac{1}{k+1}\leq\int_{k}^{k+1}\frac{1}{x}\;dx\leq(k+1-k)\frac{1}{k}=\frac{1}{k}.$$
+Donc, pour $k\geq1$,  $\frac{1}{k}\geq\int_{k}^{k+1}\frac{1}{x}\;dx$ et, pour $k\geq2$, $\frac{1}{k}\leq\int_{k-1}^{k}\frac{1}{x}\;dx$.
+En sommant ces inégalités, on obtient pour $n\geq1$,
+
+$$H_n=\sum_{k=1}^{n}\frac{1}{k}\geq\sum_{k=1}^{n}\int_{k}^{k+1}\frac{1}{x}\;dx=\int_{1}^{n+1}\frac{1}{x}\;dx=\ln(n+1),$$ 
+et pour $n\geq2$,
+
+$$H_n=1+\sum_{k=2}^{n}\frac{1}{k}\leq1+\sum_{k=2}^{n}\int_{k-1}^{k}\frac{1}{x}\;dx=1+\int_{1}^{n}\frac{1}{x}\;dx=1+\ln n,$$
+cette dernière inégalité restant vraie quand $n=1$. Donc,
+
+\begin{center}
+\shadowbox{
+$\forall n\in\Nn^*,\;\ln(n+1)\leq H_n\leq1+\ln n.$
+}
+\end{center}
+ \item  Soit $n$ un entier naturel non nul.
+$$u_{n+1}-u_n=\frac{1}{n+1}-\ln(n+1)+\ln n=\frac{1}{n+1}-\int_{n}^{n+1}\frac{1}{x}\;dx=\int_{n}^{n+1}\left(\frac{1}{n+1}-\frac{1}{x}\right)\;dx\leq0$$
+car la fonction $x\mapsto\frac{1}{x}$ décroit sur $[n,n+1]$. De même,
+
+$$v_{n+1}-v_n=\frac{1}{n+1}-\ln(n+2)+\ln(n+1)=\frac{1}{n+1}-\int_{n+1}^{n+2}\frac{1}{x}\;dx=\int_{n+1}^{n+2}\left(\frac{1}{n+1}-\frac{1}{x}\right)\;dx\geq0$$
+car la fonction $x\mapsto\frac{1}{x}$ décroit sur $[n+1,n+2]$. Enfin,
+
+$$u_n-v_n=\ln(n+1)-\ln n=\ln\left(1+\frac{1}{n}\right)$$ 
+et donc la suite $u-v$ tend vers 0 quand $n$ tend vers $+\infty$.
+Finalement, la suite $u$ décroit, la suite $v$ croit et la suite $u-v$ tend vers $0$. On en déduit que les suites $u$ et $v$ sont adjacentes, et en particulier convergentes et de même limite. Notons $\gamma$ cette limite.
+Pour tout entier naturel non nul $n$, on a $v_n\leq\gamma\leq u_n$, et en particulier, $v_3\leq\gamma\leq u_1$ avec $v_3=0,5...$ et $u_1=1$. Donc, $\gamma\in\left[\frac{1}{2},1\right]$.
+Plus précisément, pour $n$ entier naturel non nul donné, on a
+
+$$0\leq u_n-v_n\leq\frac{10^{-2}}{2}\Leftrightarrow\ln\left(1+\frac{1}{n}\right)\leq0,005\Leftrightarrow\frac{1}{n}\leq e^{0,005}-1\Leftrightarrow n\geq\frac{1}{e^{0,005}-1}=199,5...\Leftrightarrow n\geq200.$$
+Donc $0\leq\gamma-v_{100}\leq\frac{10^{-2}}{2}$ et une valeur approchée de $v_{200}$ à $\frac{10^{-2}}{2}$ près (c'est-à-dire arrondie à la 3 ème décimale la plus proche) est une valeur approchée de $\gamma$ à $10^{-2}$ près. On trouve $\gamma=0,57$ à $10^{-2}$ près par défaut. Plus précisémént,
+
+\begin{center}
+\shadowbox{
+$\gamma=0,5772156649...$ ($\gamma$ est la constante d'\textsc{Euler}).
+}
+\end{center}
+\end{enumerate}
+\fincorrection
+\finexercice

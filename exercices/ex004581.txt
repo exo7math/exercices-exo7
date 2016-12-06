@@ -1,0 +1,56 @@
+\exercice{4581, quercia, 2010/03/14}
+\enonce[Sommation de séries entières]
+
+Calculer les sommes des séries suivantes : 
+\begin{enumerate}
+  \item $\sum_{n=0}^\infty \frac{x^n}{2n-1}$.
+  \item $\sum_{n=0}^\infty n^2x^n$.
+  \item $\sum_{n=0}^\infty n^3x^n$.
+  \item $\sum_{n=0}^\infty \frac{x^n}{(n+1)(n+3)}$.
+  \item $\sum_{n=0}^\infty \frac{(-1)^nx^{2n+1}}{4n^2-1}$.
+  \item $\sum_{n=0}^\infty \frac{x^n}{4n-1}$, $x\ge0$.
+  \item $\sum_{n=0}^\infty \frac{n+3}{2n+1}x^n$.
+  \item $\sum_{n=1}^\infty \frac{x^n}n\ch(na)$.
+  \item $\sum_{n=0}^\infty \frac{n\sin^2(n\theta)}{2^n}$.
+  \item $\sum_{n=0}^\infty \frac{n^2+1}{n+1}x^n$.
+  \item $\sum_{n=0}^\infty \frac{x^n}{(2n)!}$.
+  \item $\sum_{n=0}^\infty \frac{\sin^2(n\theta)}{n!}x^{2n}$.
+  \item $\sum_{n=0}^\infty \frac{n^5x^n}{n!}$.
+  \item $\sum_{n=0}^\infty \frac{x^{3n}}{(3n)!}$.
+  \item $\sum_{n=1}^\infty C_{2n}^{n+1} x^n$.
+  \item $\sum_{n=0}^\infty \frac1{n!} \int_{t=1}^x\ln^nt\,d t$.
+  \item $\sum_{n=1}^\infty \left(1+\frac12+\dots+\frac1n\right)x^n$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $-1+\sqrt x\Argth\sqrt x$ pour $0\le x < 1$
+             et $-1-\sqrt{-x}\Arctan\sqrt{-x}$ pour $-1\le x \le 0$.
+  \item $\frac{x+x^2}{(1-x)^3}$.
+  \item $\frac{x(1+4x+x^2)}{(1-x)^4}$.
+  \item $\frac{2(1-x^2)\ln(1-x) + x^2+2x}{4x^3}$
+             (décomposer en éléments simples).
+  \item $-\frac12(x+(x^2+1)\Arctan x)$ (décomposer en éléments simples).
+  \item $-1+\frac u4\Argth u -\frac u2\Arctan u$, $u=\sqrt[4]x$.
+  \item $\frac1{2(1-x)} + \frac5{2\sqrt x}\Argth\sqrt x$
+             pour $0\le x < 1$
+             et $\frac1{2(1-x)} + \frac5{2\sqrt{-x}}\Arctan\sqrt{-x}$
+             pour $-1 < x \le 0$.
+  \item $-\frac12\ln(1-2x\ch a+x^2)$.
+  \item $1-\frac{5\cos2\theta-4}{(5-4\cos2\theta)^2}$ (linéariser).
+  \item $\frac{2x-1}{(1-x)^2} - \frac{2\ln(1-x)}x$.
+  \item $\ch\sqrt x$ pour $x \ge 0$ et $\cos\sqrt{-x}$ pour $x \le 0$.
+  \item $\frac{e^{x^2}}2
+             - \frac{e^{x^2\cos2\theta}}2\cos(x^2\sin2\theta)$.
+  \item $(x+15x^2+25x^3+10x^4+x^5)e^x$.
+  \item $\frac{e^x+2e^{-x/2}\cos(x\sqrt3/2)}3$, ($f''' = f$).
+  \item $\frac{1-\sqrt{1-4x}-2x}{2x\sqrt{1-4x}}$.
+  \item $\frac{x^2-1}2$.
+  \item $-\frac{\ln(1-x)}{1-x}$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

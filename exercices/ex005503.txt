@@ -1,0 +1,64 @@
+\exercice{5503, rouget, 2010/07/10}
+\enonce[**T]
+Matrice dans la base canonique orthonormée directe de la rotation vectorielle de $\Rr^3$ autour de $(1,2,2)$ qui transforme $j$ en $k$.
+\finenonce
+
+\noindication
+
+\correction
+Soit $r$ la rotation cherchée. Notons $u$ le vecteur $\frac{1}{3}(1,2,2)$ ($u$ est unitaire) et $\theta$ l'angle de $r$. $r$ est la rotation d'angle $\theta$ autour du vecteur unitaire $u$.  On sait que pour tout vecteur $v$ de $\Rr^3$
+
+\begin{center}
+$r(v)=(\cos\theta)v+(1-\cos\theta)(v.u)u+(\sin\theta) u\wedge v\quad(*)$
+\end{center}
+et en particulier que $[v,r(v),u]=\sin\theta\|v\wedge u\|^2$. L'égalité $r(j)=k$ fournit
+
+\begin{center}
+$\sin\theta\|j\wedge u\|^2=\left[j,r(j),u\right]=\left[u,j,k\right]=\frac{1}{3}\left|\begin{array}{ccc}
+1&0&0\\
+2&1&0\\
+3&0&1
+\end{array}
+\right|=\frac{1}{3}$.
+\end{center}
+
+Comme $u\wedge j=\frac{1}{3}(i+2j+2k)\wedge j=-\frac{2}{3}j+\frac{1}{3}k$, on a $\|j\wedge u\|^2=\frac{5}{9}$ et donc $\sin\theta=\frac{3}{5}$. L'égalité $r(j)=k$ fournit ensuite
+
+\begin{center}
+$k=(\cos\theta)j+(1-\cos\theta)\times\frac{2}{3}\times\frac{1}{3}(i+2j+2k)+\frac{3}{5}\times\frac{1}{3}(i+2j+2k)\wedge j$
+\end{center}
+En analysant la composante en $i$, on en déduit que $\frac{2}{9}(1-\cos\theta)-\frac{2}{5}=0$ et donc $\cos\theta=-\frac{4}{5}$. Ainsi, pour tout vecteur $v=(x,y,z)$ de $\Rr^3$, l'égalité $(*)$ s'écrit
+
+\begin{align*}\ensuremath
+r(v)&=-\frac{4}{5}(x,y,z)+\frac{9}{5}\times\frac{1}{3}\times\frac{1}{3}(x+2y+2z)(1,2,2)+\frac{3}{5}\times\frac{1}{3}
+(2z-2y,2x-z,-2x+y)\\
+ &=\frac{1}{5}(-4x+(x+2y+2z)+(2z-2y),-4y+2(x+2y+2z)+(2x-z),-4z+2(x+2y+2z)+(-2x+y))\\
+ &=\frac{1}{5}(-3x+4z,4x+3z,5y)=\frac{1}{5}\left(
+ \begin{array}{ccc}
+ -3&0&4\\
+ 4&0&3\\
+ 0&5&0
+ \end{array}
+ \right)\left(
+ \begin{array}{c}
+ x\\
+ y\\
+ z
+ \end{array}
+ \right)
+\end{align*}
+La matrice cherchée est
+
+\begin{center}
+\shadowbox{
+$\left(
+ \begin{array}{ccc}
+ -\frac{3}{5}&0&\frac{4}{5}\\
+\rule[-4mm]{0mm}{10mm} \frac{4}{5}&0&\frac{3}{5}\\
+ 0&1&0
+ \end{array}
+ \right)$.
+ }
+ \end{center}
+\fincorrection
+\finexercice

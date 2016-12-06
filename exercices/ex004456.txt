@@ -1,0 +1,20 @@
+\exercice{4456, quercia, 2010/03/14}
+\enonce[Polytechnique MP$^*$ 2000]
+
+On donne une suite de réels strictement positifs $(a_n)$, décroissante
+et de limite nulle. Montrer que la série de terme général
+$\frac{a_n-a_{n+1}}{a_n}$ diverge.
+\finenonce
+
+\noindication
+
+\correction
+Méthode des rectangles~:
+$\sum_{k=0}^n\frac{a_k-a_{k+1}}{a_{k+1}}\ge
+ \int_{t=a_{n+1}}^{a_0}\frac{d t}t \to +\infty$ lorsque $k\to\infty$.
+
+Si $a_k\sim a_{k+1}$ la série donnée diverge donc. Sinon, elle diverge
+aussi car son terme général ne tend pas vers~$0$.
+\fincorrection
+
+\finexercice

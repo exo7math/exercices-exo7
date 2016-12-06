@@ -1,0 +1,46 @@
+\exercice{2478, matexo1, 2002/02/01}
+
+\enonce
+\catcode`\@=11
+\def\system#1{\left\{\null\,\vcenter{\openup1\jot\m@th
+\ialign{\strut\hfil$##$&$##$\hfil&&\enspace$##$\enspace&
+\hfil$##$&$##$\hfil\crcr#1\crcr}}\right.}
+\catcode`\@=12
+
+R{\'e}soudre
+$$S_1\system{
+        &x&+&\cosh a\ &y&+&\cosh 2a\ &z&=&&\cosh 3a\cr
+        \cosh a\ &x&+&\cosh 2a\ &y&+&\cosh 3a\ &z&=&&\cosh 4a\cr
+        \cosh 2a\ &x&+&\cosh 3a\ &y&+&\cosh 4a\ &z&=&&\cosh 5a\cr}$$
+et $$       
+S_2  \system{
+        &x_1&+&&x_2&+&\ldots&&+&&x_n&=&&1\cr
+        &x_1&+&2&x_2&+&\ldots&&+&n&x_n&=&&0\cr
+        &x_1&+&2^2&x_2&+&\ldots&&+&n^2&x_n&=&&0\cr
+        &   & &   &   & &\vdots&& &   &   & &&\cr
+        &x_1&+&2^{n-1}&x_2&+&\ldots&&+&n^{n-1}&x_n&=&&0\cr}   
+$$
+\finenonce
+
+\noindication
+\correction
+$S_1$: si $a\neq0$, le syst{\`e}me est {\'e}quivalent {\`a}
+$y=-1-2\cosh a\ x$ et $z=x+2\cosh a$
+
+si $a=0$, il est {\'e}quivalent {\`a} $x+y+z=1$
+
+\smallskip
+
+$S_2$: On peut soustraire {\`a} chaque ligne la ligne pr{\'e}c{\'e}dente, puis
+2 fois la pr{\'e}c{\'e}dente, etc\dots On obtient ainsi un syst{\`e}me triangulaire
+cram{\'e}rien et apr{\`e}s bien des calculs la solution $x_k=(-1)^{k+1}C_n^k$.
+
+Voici une solution plus astucieuse.
+Soit $P(X)=x_1X+x_2X^2+\dots+x_nX^n$ et $T$ l'op{\'e}rateur $Q(x)\mapsto XQ'(X)$.
+Le syst{\`e}me peut s'{\'e}crire $P(1)=1,\ (TP)(1)=0,\ (T^2P)(1)=0,\ldots,\ (T^{n-1}P)(1)=0$.
+On en d{\'e}duit que $P'(1)=P''(1)=\ldots=P^{(n-1)}(1)=0$, donc $P$ est de la forme
+$P(X)=1+\lambda(1-X)^n$, et $\lambda=-1$ car le terme constant de $P$ est nul.
+Donc $x_k=(-1)^{k+1}C_n^k$.
+
+\fincorrection
+\finexercice

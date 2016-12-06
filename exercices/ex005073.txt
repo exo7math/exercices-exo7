@@ -1,0 +1,55 @@
+\exercice{5073, rouget, 2010/06/30}
+\enonce[****]
+On veut calculer $S=\tan9^\circ-\tan27^\circ-\tan63^\circ+\tan81^\circ$.\\
+\begin{enumerate}
+ \item  Calculer $\tan(5x)$ en fonction de $\tan x$.
+ \item  En déduire un polynôme de degré $4$ dont les racines sont $\tan9^\circ$, $-\tan27^\circ$, $-\tan63^\circ$ et
+$\tan81^\circ$ puis la valeur de $S$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Pour $x\notin\frac{\pi}{10}+\frac{\pi}{5}\Zz$,
+
+$$\tan(5x)=\frac{\Im((e^{ix})^5)}{\Re((e^{ix})^5)}=\frac{5\cos^4x\sin
+x-10\cos^2x\sin^3x+\sin^5x}{\cos^5x-10\cos^3x\sin^2x+5\cos x\sin^4x}=\frac{5\tan
+x-10\tan^3x+\tan^5x}{1-10\tan^2x+5\tan^4x},$$
+après division du numérateur et du dénominateur par le réel non nul $\cos^5x$.
+
+\begin{center}
+\shadowbox{
+$\forall x\in\Rr\setminus\left(\frac{\pi}{10}+\frac{\pi}{5}\Zz\right),\;\tan(5x)=\frac{5\tan
+x-10\tan^3x+\tan^5x}{1-10\tan^2x+5\tan^4x}.$
+}
+\end{center}
+
+ \item  $9^\circ$, $-27^\circ$, $-63^\circ$ et $81^\circ$ vérifient
+$\tan(5\times9^\circ)=\tan(5\times(-27^\circ))=\tan(5\times(-63^\circ))=\tan(5\times81^\circ)=1$. On résoud donc l'équation~:
+
+$$\tan(5x)=1\Leftrightarrow5x\in\left(\frac{\pi}{4}+\pi\Zz\right)\Leftrightarrow x\in\left(\frac{\pi}{20}+\frac{\pi}{5}\Zz\right).$$
+Les solutions, exprimées en degrés et éléments de $]-90^\circ,90^\circ[$, sont $-63^\circ$, $-27^\circ$, $9^\circ$,
+$45^\circ$ et $81^\circ$. Ainsi, les cinq nombres $\tan(-63^\circ)$, $\tan(-27^\circ)$, $\tan(9^\circ)$,
+$\tan(45^\circ)$ et $\tan(81^\circ)$ sont deux à deux distincts et solutions de l'équation
+$\frac{5X-10X^3+X^5}{1-10X^2+5X^4}=1$ qui s'écrit encore~:
+
+$$X^5-5X^4-10X^3+10X^2+5X-1=0.$$
+
+Le polynôme $X^5-5x^4-10X^3+10X^2+5X-1$ admet déjà $\tan(45^\circ)=1$ pour racine et on a
+
+$$X^5-5X^4-10X^3+10X^2+5X-1=(X-1)(X^4-4X^3-14X^2-4X+1).$$
+Les quatre nombres $\tan(-63^\circ)$, $\tan(-27^\circ)$, $\tan(9^\circ)$ et $\tan(81^\circ)$ sont ainsi les racines du
+polynôme $X^4-4X^3-14X^2-4X+1$. Ce dernier peut donc encore s'écrire
+$(X-\tan(9^\circ))(X+\tan(27^\circ))(X+\tan(63^\circ))(X-\tan(81^\circ))$. L'opposé du coefficient de $X^3$ à savoir $4$
+vaut donc également $\tan(9^\circ)-\tan(27^\circ)-\tan(63^\circ)+\tan(81^\circ)$ et on a montré que~:
+
+\begin{center}
+\shadowbox{
+$\tan(9^\circ)-\tan(27^\circ)-\tan(63^\circ)+\tan(81^\circ)=4.$
+}
+\end{center}
+\end{enumerate}
+\fincorrection
+\finexercice

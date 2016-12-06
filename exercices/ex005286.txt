@@ -1,0 +1,81 @@
+\exercice{5286, rouget, 2010/07/04}
+\enonce[****]
+\begin{enumerate}
+\item  Soit $E$ un ensemble fini et non vide. Soient $n$ un entier naturel non nul et $A_1$,..., $A_n$, $n$ parties de $E$. Montrer la \og~formule du crible~\fg~:
+
+\begin{align*}\ensuremath
+\mbox{card}(A_1\cup...\cup A_n)&=\sum_{i=1}^{n}\mbox{card}(A_i)-\sum_{1\leq i_1< i_2\leq n}^{}\mbox{card}(A_{i_1}\cap A_{i_2})\\
+ &+...+(-1)^{k-1}\sum_{1\leq i_1<i_2<...<i_k\leq n}^{}\mbox{card}(A_{i_1}\cap A_{i_2}\cap...\cap A_{i_k})\\
+ &+...+(-1)^{n-1}\mbox{card}(A_1\cap...\cap A_n).
+\end{align*}
+
+\item  Combien y a-t-il de permutations $\sigma$ de $\{1,...,n\}$ vérifiant $\forall i\in\{1,...,n\},\;\sigma(i)\neq i$~?~(Ces permutations sont appelées dérangements (permutations sans point fixe)). Indication~:~noter $A_i$ l'ensemble des permutations qui fixent $i$ et utiliser 1).
+
+On peut alors résoudre un célèbre problème de probabilité, le problème des chapeaux. $n$ personnes laissent leur chapeau à un vestiaire. En repartant, chaque personne reprend un chapeau au hasard. Montrer que la probabilité qu'aucune de ces personnes n'ait repris son propre chapeau est environ $\frac{1}{e}$ quand $n$ est grand.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  
+\begin{align*}\ensuremath
+\chi_{A_1\cup...\cup A_n}&=1-\chi_{\overline{A_1\cup...\cup A_n}}
+=1-\chi_{\overline{A_1}\cap...\cap\overline{A_n}}=1-\chi_{\overline{A_1}}\times...\times\chi_{\overline{A_n}}\\
+ &=1-(1-\chi_{A_1})...(1-\chi_{A_n})=1-(\sum_{k=1}^{n}(-1)^{k-1}(\sum_{1\leq i_1<...<i_k\leq n}^{}\chi_{A_{i_1}}...\chi_{A_{i_k}}))
+\end{align*}
+
+et en sommant sur l'ensemble des $x$ de $E$, on obtient le résultat.
+
+\item  Pour $1\leq k\leq n$, posons $A_k=\{\sigma\in S_n/\;\sigma(k)=k\}$. L'ensemble des permutations ayant au moins un point fixe est $A_1\cup A_2\cup...\cup A_n$. L'ensemble des permutations sans points fixes est le complémentaire dans $S_n$ de $A_1\cup A_2\cup...\cup A_n$.
+
+D'après 1), leur nombre est donc~:
+
+\begin{align*}\ensuremath
+\mbox{card}(S_n)-\mbox{card}(A_1\cup A_2...\cup A_n)
+&=\mbox{card}(S_n)-\sum_{i=1}^{n}\mbox{card}(A_i)+\sum_{i<j}^{}\mbox{card}(A_i\cap A_j)\\
+ &-...+(-1)^{k}\sum_{i_1<i_2<...<i_k}^{}\mbox{card}(A_{i_1}\cap...A_{i_k})+...\\
+ &+(-1)^{n}\mbox{card}(A_1\cap...\cap A_n).
+\end{align*} 
+
+$A_i$ est l'ensemble des permutations qui fixent $i$. Il y en a $(n-1)!$ ( nombre de permutations de $\{1,...,n\}\setminus\{i\}$). $A_i\cap A_j$ est l'ensemble des permutations qui fixent $i$ et $j$. Il y en a $(n-2)!$. Plus généralement, $\mbox{card}(A_{i_1}\cap...\cap A_{i_k})=(n-k)!$.
+
+D'autre part, il y a $n=C_n^1$ entiers $i$ dans $\{1,n\}$ puis $C_n^2$ couples $(i,j)$ tels que $i<j$ et plus généralement, il y a $C_n^k$ $k$-uplets $(i_1,...,i_k)$ tels que $i_1<i_2< ...<i_k$. Le nombre de dérangements est  
+
+$$n!+\sum_{k=1}^{n}(-1)^k\frac{n!}{k!(n-k)!}(n-k)!=n!\sum_{k=0}^{n}\frac{(-1)^k}{k!}.$$
+ 
+Ainsi le \og~problème des chapeaux~\fg admet pour réponse
+
+$$p_n=\sum_{k=0}^{n}\frac{(-1)^k}{k!}.$$ 
+
+Montrons que cette suite tend très rapidement vers $\frac{1}{e}=0,36...$ quand $n$ tend vers l'infini.
+
+(On adapte un  calcul déjà mené pour le nombre $e$.)
+
+Montrons que $\forall n\in\Nn,\;e^{-1}=\sum_{k=0}^{n}\frac{(-1)^k}{k!}+(-1)^{n+1}\int_{0}^{1}\frac{(1-t)^n}{n!}e^{-t}\;dt$.
+
+Pour $n=0$, $(-1)^{n+1}\int_{O}^{1}\frac{(1-t)^n}{n!}e^{-t}\;dt=-\int_{0}^{1}e^{-t}\;dt=-1+e^{-1}$ et donc, on a bien $e^{-1}=1-\int_{0}^{1}e^{-t}\;dt$.
+
+Soit $n\geq0$. Supposons que $e^{-1}=\sum_{k=0}^{n}\frac{(-1)^k}{k!}+(-1)^{n+1}\int_{0}^{1}\frac{(1-t)^n}{n!}e^{-t}\;dt$.
+
+Une intégration par parties fournit
+
+$$\int_{0}^{1}\frac{(1-t)^n}{n!}e^{-t}\;dt=\left[-\frac{(1-t)^{n+1}}{(n+1)!}e^{-t}\right]_0^1-\int_{0}^{1}\frac{(1-t)^{n+1}}{(n+1)!}e^{-t}\;dt=\frac{1}{(n+1)!}-\int_{0}^{1}\frac{(1-t)^{n+1}}{(n+1)!}e^{-t}\;dt.$$
+
+Mais alors,
+
+$$e^{-1}=\sum_{k=0}^{n+1}\frac{(-1)^k}{k!}+(-1)^{n+2}\int_{0}^{1}\frac{(1-t)^{n+1}}{(n+1)!}e^{-t}\;dt.$$
+
+Le résultat est démontré par récurrence.
+
+On en déduit que
+
+$$|p_n-\frac{1}{e}|=\left|(-1)^{n+1}\int_{0}^{1}\frac{(1-t)^n}{n!}e^{-t}\;dt\right|
+=\int_{0}^{1}\frac{(1-t)^n}{n!}e^{-t}\;dt\leq\int_{0}^{1}\frac{(1-t)^n}{n!}\;dt=\frac{1}{(n+1)!}.$$
+
+Ceci montre que $p_n$ tend très rapidement vers $\frac{1}{e}$.
+
+\end{enumerate}
+\fincorrection
+\finexercice

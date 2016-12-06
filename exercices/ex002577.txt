@@ -1,0 +1,103 @@
+\exercice{2577, delaunay, 2009/05/19}
+\enonce
+ ({\it 7 points}) Soient $M$ et $A$ deux matrices de ${\cal{M}}_n(\R)$ telles que 
+$MA=AM$.
+On suppose que $M$ admet $n$ valeurs propres distinctes.
+ \begin {enumerate}
+  \item  Soit $x$ un vecteur propre de $M$ de valeur propre $\lambda$, montrer que 
+$MAx=\lambda Ax,$
+en d\'eduire que les vecteurs $x$ et $Ax$ sont colin\'eaires, puis que tout vecteur propre de $M$ est un vecteur propre de $A$.
+
+  \item On note maintenant $\lambda_1,\cdots,\lambda_n$ les valeurs propres de $M$ et 
+$\mu_1,\cdots,\mu_n$ celles de $A$.
+  \begin {enumerate}
+    \item Montrer par r\'ecurrence sur $n$ l'\'egalit\'e suivante :
+$$\begin{vmatrix}1 &\lambda_1 &\cdots &\lambda_1^{n-1} \\ 
+\vdots& & &\vdots \\  1 &\lambda_n &\cdots & \lambda_n^{n-1}\end{vmatrix}=
+\prod_{1\leq i<j\leq n}(\lambda_i-\lambda_j).$$
+En d\'eduire que le syst\`eme suivant
+$$\left\{\begin{align*}\mu_1&=\alpha_0+\alpha_1\lambda_1+\cdots+\alpha_{n-1}\lambda_1^{n-1} \\ 
+\vdots \\  \mu_n &=\alpha_0+\alpha_1\lambda_n+\cdots+\alpha_{n-1}\lambda_n^{n-1} \\ \end{align*}\right.$$
+admet une unique solution $(\alpha_0,\cdots,\alpha_{n-1})\in\R^n.$
+    \item Soient $M'$ et $A'$ les matrices diagonales suivantes :
+$$M'=\begin{pmatrix}\lambda_1 & 0 &\cdots & 0 \\  0 &\ddots  & & 0 \\ \vdots & &  & \vdots \\  0 & \cdots & 0 &\lambda_n \\  \end{pmatrix},\ \
+A'=\begin{pmatrix}\mu_1 & 0 &\cdots & 0 \\  0 &\ddots  & & 0 \\ \vdots & &  & \vdots \\  0 & \cdots & 0 &\mu_n \\ \end{pmatrix}.$$
+Montrer qu'il existe des r\'eels $\alpha_0,\cdots,\alpha_{n-1}$ tels que
+$$A'=\sum_{k=0}^{n-1}\alpha_k M'^k$$ et en d\'eduire qu'il existe des r\'eels $\alpha_0,\cdots,\alpha_{n-1}$ tels que
+$$A=\sum_{k=0}^{n-1}\alpha_k M^k.$$   
+  \end {enumerate}
+\end {enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+{\it Soient $M$ et $A$ deux matrices de ${\cal{M}}_n(\R)$ telles que 
+$MA=AM$.
+On suppose que $M$ admet $n$ valeurs propres distinctes.}
+  \begin {enumerate}
+  \item {\it Soit $x$ un vecteur propre de $M$ de valeur propre $\lambda$.} 
+
+Montrons que $MAx=\lambda Ax$.
+
+On a $Mx=\lambda x$, donc $AMx=A\lambda x=\lambda Ax$. Mais, $AM=MA$, donc
+$MAx=AMx=\lambda Ax$. Ce qui prouve que le vecteur $Ax$ est un vecteur propre de $M$ pour la valeur propre $\lambda$, et comme les valeurs propres de $M$ sont suppos\'ees distinctes, les sous-espaces propres sont de dimension $1$, donc $Ax$ est colin\'eaire \`a $x$. Ainsi, il existe un r\'eel $\mu$ tel que $Ax=\mu x$, donc $x$ est un vecteur propre de $A$.
+
+  \item On note maintenant $\lambda_1,\cdots,\lambda_n$ les valeurs propres de $M$ et 
+$\mu_1,\cdots,\mu_n$ celles de $A$.
+  \begin {enumerate}
+    \item  Montrons l'\'egalit\'e suivante :
+$$\begin{vmatrix} &\lambda_1 &\cdots &\lambda_1^{n-1} \\ 
+\vdots& & &\vdots \\  1 &\lambda_n &\cdots & \lambda_n^{n-1}\end{vmatrix}=
+\prod_{1\leq i<j\leq n}(\lambda_j-\lambda_i).$$
+Il s'agit du d\'eterminant de Vandermonde. Notons le $V(\lambda_1,\cdots,\lambda_n)$. La d\'emonstration se fait par r\'ecurrence sur $n$.
+Pour $n=2$, c'est \'evident. Supposons le r\'esultat vrai pour $n-1$. Dans $V(\lambda_1,\cdots,\lambda_n)$, retranchons \`a chaque colonne $\lambda_1$ fois la pr\'ec\'edente ( en commen\c cant par la derni\`ere colonne). On obtient 
+$$\begin{vmatrix}
+&0&0&\cdots&0 \\ 
+1& \lambda_2-\lambda_1&\lambda_2^2-\lambda_1\lambda_2&\cdots&\lambda_2^{n-1}-\lambda_1\lambda_2^{n-2} \\  \vdots&\vdots&\vdots& &\vdots \\  1&\lambda_n-\lambda_1&\lambda_n^2-\lambda_1\lambda_n&\cdots&\lambda_n^{n-1}-\lambda_1\lambda_n^{n-2}
+\end{vmatrix}
+=
+\begin{vmatrix}
+\lambda_2-\lambda_1&\lambda_2^2-\lambda_1\lambda_2&\cdots&\lambda_2^{n-1}-\lambda_1\lambda_2^{n-2} \\ 
+\vdots&\vdots& &\vdots \\ \lambda_n-\lambda_1&\lambda_n^2-\lambda_1\lambda_n&\cdots&\lambda_n^{n-1}-\lambda_1\lambda_n^{n-2}
+\end{vmatrix}.$$
+On factorise alors chaque ligne par $(\lambda_i-\lambda_1)$ et on obtient
+$$\begin{align*}
+V(\lambda_1,\cdots,\lambda_n)&=(\lambda_2-\lambda_1)\cdots(\lambda_n-\lambda_1)
+\begin{vmatrix}1 &\lambda_2 &\cdots &\lambda_2^{n-2} \\ 
+\vdots& & &\vdots \\  1 &\lambda_n &\cdots & \lambda_n^{n-2}\end{vmatrix} \\ 
+&= \prod_{i=2}^n(\lambda_i-\lambda_1)V(\lambda_2,\cdots,\lambda_n)=\prod_{1\leq i<j\leq n}(\lambda_i-\lambda_j)
+\end{align*}$$
+car $V(\lambda_2,\cdots,\lambda_n)=\prod_{2\leq i<j\leq n}(\lambda_j-\lambda_i)$ 
+par hypoth\`ese de r\'ecurrence.
+
+
+Ce d\'eterminant est le d\'eterminant du syst\`eme suivant, 
+$$\left\{\begin{align*}\mu_1&=\alpha_0+\alpha_1\lambda_1+\cdots+\alpha_{n-1}\lambda_1^{n-1} \\ 
+\vdots \\  \mu_n &=\alpha_0+\alpha_1\lambda_n+\cdots+\alpha_{n-1}\lambda_n^{n-1} \\ \end{align*} \right.$$
+or $V(\lambda_1,\cdots,\lambda_n)\neq0$ puisque les $\lambda_i$ sont suppos\'es distincts, c'est donc un syst\`eme de Cramer, il admet donc une unique solution $(\alpha_0,\cdots,\alpha_{n-1})\in\R^n.$
+    \item {\it Soient $M'$ et $A'$ les matrices diagonales suivantes} :
+$$M'=\begin{pmatrix}
+\lambda_1 & 0 &\cdots & 0 \\  
+0 &\ddots  & & 0 \\ \vdots & &  & \vdots \\  
+0 & \cdots & 0 &\lambda_n \\ 
+\end{pmatrix},\ \ 
+A'=\begin{pmatrix}
+\mu_1 & 0 &\cdots & 0 \\  
+0 &\ddots  & & 0 \\
+\vdots & &  & \vdots \\  
+0 & \cdots & 0 &\mu_n \\ 
+\end{pmatrix}$$
+Montrons qu'il existe des r\'eels $\alpha_0,\cdots,\alpha_{n-1}$ tels que
+$$A'=\sum_{k=0}^{n-1}\alpha_k M'^k.$$
+
+Compte tenu des matrices $A'$ et $M'$ l'existence de r\'eels tels que $$A'=\sum_{k=0}^{n-1}\alpha_k M'^k$$ est \'equivalente \`a l'existence d'une solution pour le syst\`eme pr\'ec\'edent, d'o\`u le r\'esultat.
+
+On en d\'eduit qu'il existe des r\'eels $\alpha_0,\cdots,\alpha_{n-1}$ tels que
+$$A=\sum_{k=0}^{n-1}\alpha_k M^k.$$ 
+La matrice $M$ admet $n$ vecteurs propres lin\'eairement ind\'ependants qui sont \'egalement vecteurs propres de la matrice $A$. Par cons\'equent il existe une m\^eme matrice de passage $P$ telle que $M=PM'P^{-1}$ et $A=PA'P^{-1}$, d'o\`u l'\'egalit\'e 
+$$A=\sum_{k=0}^{n-1}\alpha_k M^k.$$   
+  \end {enumerate}
+\end {enumerate}
+\fincorrection
+\finexercice

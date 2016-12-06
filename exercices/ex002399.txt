@@ -1,0 +1,88 @@
+\exercice{2399, mayer, 2003/10/01}
+\enonce 
+Soit $X$ l'espace des suites r\'eelles nulles \`a partir d'un certain rang, et soit
+$$\rho (x,y) =\sum _{k=1}^\infty 2^{-k}
+\frac{|x_k-y_k|}{1+|x_k-y_k|}\quad  \text{pour} \; x,y\in X\; .$$
+\begin{enumerate}
+\item Montrer que $X$ n'est pas complet pour la m\'etrique $\rho $.
+\item Trouver un espace de suites $Y$ tel que $(Y, \rho )$ soit complet et
+tel que $X$ soit dense dans $Y$.
+\item Que donne l'exercice si on remplace $\rho$ par la norme uniforme?
+\end{enumerate}
+\finenonce
+
+\indication
+\begin{enumerate}
+  \item Prendre la suite $(x^p)$ définie par $x^p= (1,1,\ldots,1,1,0,0,0,\ldots).$
+($(x^p)_{p\in\Nn}$ est donc une suite de suite).
+
+  \item Prendre $Y$ l'espace de toutes les suites.
+
+  \item Considérer $x^p= (1,\frac 12,\ldots,\frac1p,0,0,\ldots)$.
+\end{enumerate}
+\finindication
+
+\correction
+\begin{enumerate}
+  \item Notons $x^p$ la suite 
+$$x^p = (1,1,\ldots,1,1,0,0,0,\ldots).$$
+(des $0$ à partir de la $p+1$-ième place et de $1$ avant.
+Si $Y$ est l'espace de toute les suite, notons 
+$$x^\infty = (1,1,1,1,\ldots).$$
+La suite $x^\infty$ n'est pas dans $X$.
+Par contre $x^p \rightarrow x^\infty$ pour la distance $\rho$.
+En effet
+$$\rho(x^p,x) = \sum_{k=p+1}^{+\infty} \frac{1}{2^k} \frac12 = \frac 1 {2^{p+1}} \rightarrow 0.$$
+La suite $(x^p)$ est de Cauchy, mais ne converge pas dans $X$, donc $X$ n'est pas complet. 
+
+  \item 
+\begin{enumerate}
+    \item
+Soit $Y$ l'espace de toutes les suites. Alors $X$ est dense dans
+dans $Y$ (pour la topologie définie par $\rho$), car toute suite $y = (y_1,y_2,\ldots)$ de $Y$ 
+s'approche par une suite de suite $(x^p)$ obtenue en tronquant la suite $y$ : $x^1 = (y(1),0,0,\ldots)$, $x^2 = (y(1),y(2),0,0,\ldots)$,... 
+En effet 
+$$\rho(x^p,y)= \sum _{k=p+1}^\infty 2^{-k}
+\frac{|x_k-y_k|}{1+|x_k-y_k|} \le \sum _{k=p+1}^\infty 2^{-k} = \frac{1}{2^p}$$
+qui tend vers $0$ lorsque $p$ tend vers $+\infty$.
+
+    \item
+Soit $(x^n)_n$ une suite de Cauchy de $Y$.
+Montrons que pour $k$ fixé alors $(x^n_k)_n$ est une suite de Cauchy de $\Rr$.
+Prenons $\epsilon >0$, alors il existe $N$ tel que pour $p,q\ge N$ on ait
+$\rho(x^p,x^q) \le \epsilon$.
+$$\frac {1}{2^k}\frac{|x^p_k-x^q_k|}{1+|x^p_k-x^q_k|} \le \rho(x^p,x^q) \le \epsilon.$$
+Posons la fonction $f(\alpha)=\frac{\alpha}{1+\alpha}$, $f$ est inversible pour $\alpha\ge 0$,
+d'inverse $f^{-1}(\beta)= \frac{\beta}{1-\beta}$. Une étude de $f$ et de son inverse
+montre que si $f(\alpha)\le \epsilon'\le 1$ alors $\alpha \le 2\epsilon'$.
+Comme $k$ est fixé, posons $\epsilon = \frac{\epsilon'}{2^k}$ et $\alpha =|x^p_k-x^q_k|$  on a montrer :
+$f(\alpha) \le \epsilon'$. Donc $\alpha \le 2\epsilon'$.
+Récapitulons :
+$$\forall \epsilon' >0 \quad \exists N \in \Nn \quad \forall p,q \ge N \quad
+|x^p_k-x^q_k| < 2\epsilon',$$
+donc la suite $(x^n_k)_n$ est de Cauchy dans $\Rr$, donc converge, nous notons $x^\infty_k$ sa limite.
+
+    \item Nous avons construit une suite $x^\infty=(x^\infty_1,x^\infty_2,\ldots)$. Comme $(x^n)$ est de Cauchy alors
+$$\forall \epsilon >0 \quad \exists N \in \Nn \quad \forall p,q \ge N \quad
+\rho(x^p,x^q) < \epsilon,$$
+Lorsque l'on fixe $p$ et que l'on fait tendre $q$ vers $+\infty$ on a
+$$\forall \epsilon >0 \quad \exists N \in \Nn \quad \forall p \ge N \quad
+\rho(x^p,x^\infty) < \epsilon,$$
+donc $(x^n)$ converge vers $x^\infty$ pour la distance $\rho$.
+
+    \item Bien évidemment $x^\infty \in Y$ donc
+$(x^n)$ converge vers $x^\infty \in Y$ pour $\rho$. Donc
+$(Y,\rho)$ est un espace complet.
+  \end{enumerate}
+
+  \item $(X,\|.\|_\infty)$ n'est pas un espace complet. 
+Par exemple regardez la suite $x^p= (1,\frac 12,\ldots,\frac1p,0,0,\ldots)$
+alors $(x^p)$ est une suite de Cauchy, qui ne converge pas dans $X$,
+mais dans $Y$ sa limite est $x^\infty= (1,\frac 12,\frac13,\ldots)$.
+
+Notons $Z$ l'espace des suites qui tendent vers $0$.
+L'adhérence de $X$ pour la topologie définie par 
+$\|.\|_\infty$ est $Z$. Et $(Z,\|.\|_\infty)$ est complet.
+\end{enumerate}
+\fincorrection
+\finexercice

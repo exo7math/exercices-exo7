@@ -1,0 +1,32 @@
+\exercice{4779, quercia, 2010/03/16}
+\enonce[C{\^o}ne convexe engendr{\'e} par un ensemble fini, ENS ULM-Lyon-Cachan MP$^*$ 2005]
+
+$E$ est un $\R$-espace vectoriel norm{\'e} et $a_{1},\ldots,a_{n}\in E$. On pose $C=\Bigl\{\sum_{i=1}^{n}\lambda_{i}a_{i},\lambda_{i}\ge 0\Bigr\}$.
+
+\begin{enumerate}
+  \item Montrer que, pour tout $x\in E$, il existe $c\in C$ tel que $\|x-c\|=\inf \{\|x-a\|,a\in C\}$.
+
+
+  \item En d{\'e}duire que $C$ est ferm{\'e}.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item On proc{\`e}de par r{\'e}currence sur~$n$. Pour $n=1$, l'application ${[0,+\infty[}\ni\lambda_1 \mapsto \|x-\lambda_1a_1\|$
+est continue, constante si $a_1 = 0$ et tend vers $+\infty$ quand $\lambda_1\to+\infty$ si $a_1\ne0$.
+Dans les deux cas elle admet un minimum.
+
+Pour $n\ge 2$, soit $C'=\Bigl\{\sum_{i=1}^{n-1}\lambda_{i}a_{i},\lambda_{i}\ge 0\Bigr\}$.
+Soit pour $\lambda_n\in{[0,+\infty[}$~ : $\varphi(\lambda_n) = d(x-\lambda_na_n,C')$.
+La distance {\`a} $C'$ est 1-lipschitzienne donc
+$\varphi(\lambda_n) \ge d(-\lambda_na_n,C') - \|x\| = \lambda_nd(-a_n,C') - \|x\|\xrightarrow[\lambda_n\to+\infty]{}+\infty$.
+{\'E}tant continue, $\varphi$ admet un minimum sur $[0,+\infty[$ et on
+applique l'hypoth{\`e}se de r{\'e}currence {\`a} $x-\lambda_na_n$.
+  \item 
+\end{enumerate}
+ \fincorrection
+
+\finexercice

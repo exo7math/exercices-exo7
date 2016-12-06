@@ -1,0 +1,103 @@
+\exercice{5727, rouget, 2010/10/16}
+\enonce[*** I]
+ Pour $n\in\Nn^*$, on pose $f_n(x)=\left\{\begin{array}{l}
+\left(1-\frac{x}{n}\right)^n\;\text{si}\;x\in[0,n]\\
+\rule{0mm}{5mm}0\;\text{si}\;x\geqslant n
+\end{array}
+\right.$.
+
+\begin{enumerate}
+ \item  Montrer que la suite $(f_n)_{n\in\Nn^*}$ converge uniformément sur $\Rr^+$ vers la fonction $f~:~x\mapsto e^{-x}$.
+
+\item  A l'aide de la suite $(f_n)_{n\in\Nn^*}$, calculer l'intégrale de \textsc{Gauss} $\int_{0}^{+\infty}e^{-x^2}\;dx$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\textbf{Convergence simple sur $\Rr^+$.} Soit $x$ un réel positif fixé. Pour $n> x$, $f_n(x)=\left(1-\frac{x}{n}\right)^n$ et donc
+
+\begin{center}
+$f_n(x)\underset{n\rightarrow+\infty}{=}\left(1-\frac{x}{n}\right)^n\underset{n\rightarrow+\infty}{=}\text{exp}\left(n\ln\left(1-\frac{x}{n}\right)\right)\underset{n\rightarrow+\infty}{=}\text{exp}(-x+o(1)$.
+\end{center}
+
+Donc la suite de fonctions $(f_n)_{n\in\Nn^*}$ converge simplement sur $\Rr^+$ vers la fonction $f~:~x\mapsto e^{-x}$.
+
+\textbf{Convergence uniforme sur $\Rr^+$.}
+Pour $x$ réel positif et $n$ entier naturel non nul, posons $g_n(x) = f(x)-f_n(x) =\left\{
+\begin{array}{l}
+e^{-x}-\left(1-\frac{x}{n}\right)^n\;\text{si}\;x\in[0,n]\\
+e^{-x}\;\text{si}\;x>n
+\end{array}
+\right.$. Déterminons la borne supérieure de la fonction $|g_n|$ sur $[0,+\infty[$.
+
+La fonction $g_n$ est définie et continue sur $R^+$. Pour $x\geqslant n$, $0<g_n(x)\leqslant e^{-n} = g_n(n)$.
+
+Etudions la fonction $g_n$ sur $[0,n]$. Pour $x\in[0,n]$, $g_n'(x)=-e^{-x}+\left(1-\frac{x}{n}\right)^{n-1}$.($g_n'(n)$ est la dérivée à gauche de la fonction $g_n$ en $n$, mais on peut montrer qu'en fait la fonction $g_n$ est dérivable en $n$ pour $n > 1$).
+
+La fonction $g_n$ est continue sur le segment $[0,n]$ et admet donc sur $[0,n]$ un minimum et un maximum.
+
+\textbullet~La fonction $g_n$ a un minimum égal à $0$ atteint en $0$. En effet, on sait que pour tout réel $u$, $e^u\geqslant 1+u$ (inégalité de convexité) et donc pour tout réel $x$ de $[0,n]$,  $e^{-x/n}\geqslant 1-\frac{x}{n}\geqslant 0$. Après élévation des deux membres de cette inégalité, par croissance de $t\mapsto t^n$ sur $\Rr^+$, on obtient $e^{-x}\geqslant\left(1-\frac{x}{n}\right)^n$ ou encore $g_n(x)\geqslant 0 = g_n(0)$.
+
+\textbullet~Pour $0 < x\leqslant n$, les inégalités précédentes sont strictes et la fonction ${g_n}_{/[0,n]}$ admet son maximum dans $]0,n]$. De plus, $g_n'(n)=-e^{-n}< 0$ et puisque la fonction $g_n$ est de classe $C^1$ sur $[0,n]$, sa dérivée $g_n'$ est strictement négative sur un voisinage à gauche de $n$. La fonction $g_n$ est alors strictement décroissante sur ce voisinage et la fonction $g_n$ admet nécessairement son maximum sur $\Rr^+$ en un certain point $x_n$ de $]0,n[$. En un tel point, puisque l'intervalle $]0,n[$ est ouvert, on sait que la dérivée de la fonction $g_n$ s'annule. L'égalité $g_n'(x_n) = 0$ fournit $\left(1-\frac{x_n}{n}\right)^{n-1}=e^{-x_n}$ et donc 
+
+\begin{center}
+$g_n(x_n) =e^{-x_n}-\left(1-\frac{x_n}{n}\right)^n =\left(1-\left(1-\frac{x_n}{n}\right)\right)e^{-x_n}=  \frac{x_ne^{-x_n}}{n}$.
+\end{center}
+
+En résumé, pour tout réel positif $x$, $0\leqslant g_n(x)\leqslant\frac{x_ne^{-x_n}}{n}$ où $x_n$ est un certain réel de $]0,n[$.
+
+Pour $u$ réel positif, posons $h(u) = ue^{-u}$. La fonction $h$ est dérivable sur $/mbr^+$ et pour $u\geqslant0$, $h'(u) = (1-u)e^{-u}$. Par suite, la fonction $h$ admet un maximum en $1$ égal à $\frac{1}{e}$. On a montré que
+
+\begin{center}
+$\forall x\in[0,+\infty[$, $\forall n\in\Nn^*$, $0\leqslant g_n(x)\leqslant\frac{1}{ne}$
+\end{center}
+
+ou encore
+$\forall n\in\Nn^*$, $\text{sup}\{|g_n(x)|,\;x\geqslant 0\}\leqslant\frac{1}{ne}$. Ainsi, $\lim_{n \rightarrow +\infty}\text{sup}\{|g_n(x)|,\;x\geqslant 0\}=0$ et on a montré que
+ 
+ 
+\begin{center}
+\shadowbox{
+la suite de fonctions $(f_n)_{n\in\Nn^*}$ converge uniformément sur $\Rr^+$ vers la fonction $x\mapsto e^{-x}$.
+}
+\end{center}
+
+\item  \textbf{Existence de $I=\int_{0}^{+\infty}e^{-x^2}\;dx$.} La fonction $x\mapsto e^{-x^2}$ est continue sur $[0,+\infty[$ et négligeable devant $\frac{1}{x^2}$ en $+\infty$. Donc la fonction $x\mapsto e^{-x^2}$  est intégrable sur $[0,+\infty[$. Par suite, $I$ existe dans $\Rr$.
+
+On est alors en droit d'espérer que $I=\lim_{n \rightarrow +\infty}\int_{0}^{+\infty}f_n(x^2)\;dx$.
+
+La fonction $x\mapsto f_n(x^2)$ est continue sur $[0,+\infty[$ et nulle sur $[\sqrt{n},+\infty[$. Donc la fonction $x\mapsto f_n(x^2)$ est intégrable sur $[0,+\infty[$. Pour $n\in\Nn^*$, posons $I_n=\int_{0}^{+\infty}f_n(x^2)\;dx=\int_{0}^{\sqrt{n}}\left(1-\frac{x^2}{n}\right)^n\;dx$.
+
+Montrons que $I_n$ tend vers $I$ quand $n$ tend vers $+\infty$.
+
+\begin{center}
+$|I-I_n|\leqslant\int_{0}^{\sqrt{n}}|f(x^2)-f_n(x^2)|\;dx+\int_{\sqrt{n}}^{+\infty}e^{-x^2}\;dx\leqslant\sqrt{n}\times\frac{1}{ne}+\int_{\sqrt{n}}^{+\infty}e^{-x^2}\;dx=\frac{1}{e\sqrt{n}}+\int_{\sqrt{n}}^{+\infty}e^{-x^2}\;dx$.
+\end{center}
+
+Puisque la fonction $x\mapsto e^{-x^2}$ est intégrable sur $[0,+\infty[$, cette dernière expression tend vers $0$ quand $n$ tend vers $+\infty$ et donc $\lim_{n \rightarrow +\infty}I_n=I$.
+
+\textbf{Calcul de la limite de $I_n$.} Soit $n\in\Nn^*$. Les changements de variables $x = u\sqrt{n}$  puis $u =\cos v$ fournissent
+
+\begin{center}
+$I_n =\int_{0}^{\sqrt{n}}\left(1-\frac{x^2}{n}\right)^n\;dx=\sqrt{n}\int_{0}^{1}(1-u^2)^n\;du =\sqrt{n}\int_{0}^{\pi/2}\sin^{2n+1}v\;dv =\sqrt{n}W_{2n+1}$
+\end{center}
+
+où $W_n$ est la $n$-ème intégrale de \textsc{Wallis}. On a déjà vu (exercice classique, voir fiches de Maths Sup) que $W_n\underset{n\rightarrow+\infty}{\sim}\sqrt{\frac{\pi}{2n}}$ et donc 
+
+\begin{center}
+$I_n\underset{n\rightarrow+\infty}{\sim}\sqrt{n}\times\sqrt{\frac{\pi}{2(2n+1)}}\underset{n\rightarrow+\infty}{\sim}\frac{\sqrt{\pi}}{2}$.
+\end{center}
+
+Finalement, $I_n$ tend vers $\frac{\sqrt{\pi}}{2}$ quand $n$ tend vers $+\infty$ et donc 
+
+\begin{center}
+\shadowbox{
+$\int_{0}^{+\infty}e^{-x^2}\;dx=\frac{\sqrt{\pi}}{2}$.
+}
+\end{center}
+
+Vous pouvez voir différents calculs de l'intégrale de \textsc{Gauss} dans \og Grands classiques de concours : intégration \fg.
+\fincorrection
+\finexercice

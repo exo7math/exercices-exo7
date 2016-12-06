@@ -1,0 +1,45 @@
+\exercice{5380, rouget, 2010/07/06}
+\enonce
+Déteminer l'inverse de $A=(a_{i,j})$ telle que $a_{i,i+1}=a_{i,i-1}=1$ et $a_{i,j}=0$ sinon.
+\finenonce
+
+\noindication
+
+\correction
+Soit $A_n$ la matrice de l'énoncé.
+
+En développant $\mbox{det}A_n$ suivant sa première colonne puis en développant le déterminant de format $n-1$ obtenu suivant sa première ligne, on obtient $\mbox{det}A_n=-\mbox{det}A_{n-2}$ pour $n\geq3$.
+
+Par suite, pour $p\geq1$, $\mbox{det}A_{2p}=(-1)^{p-1}\mbox{det}A_2=(-1)^p\neq0$ et pour $p\geq1$, $A_{2p}$ est inversible.
+
+On a aussi, pour $p\geq1$, $\mbox{det}A_{2p+1}=(-1)^{p-1}\mbox{det}A_3=0$ et, pour $p\geq1$, $A_{2p+1}$ n'est pas inversible. Finalement, $A_n$ est inversible si et seulement si $n$ est pair.
+
+Dorénavant, on pose $n=2p$ ($p\geq1$).
+
+Pour $X=(x_i)_{1\leq i\leq n}$ et $Y=(y_i)_{1\leq i\leq n}$ vecteurs colonnes donnés, on a~:
+
+$$AX=Y\Leftrightarrow\left\{
+\begin{array}{l}
+x_2=y_1\\
+\forall i\in\{2,...,2p-1\},\;x_{i-1}+x_{i+1}=y_i\\
+x_{2p-1}=y_{2p}
+\end{array}
+\right..$$
+ 
+Ce système se résoud en $x_2=y_1$ puis, par récurrence, pour $k\leq p$, $x_{2k}=y_{2k-1}-y_{2k-3}+...+(-1)^{k-1}y_1$ et aussi $x_{2p-1}=y_{2p}$, puis, par récurrence, pour $k\leq p$, $x_{2k-1}=y_{2k}-y_{2k+2}+...+(-1)^{p-k}y_{2p}$. D'où l'inverse de $A$ quand $n=8$ par exemple~:
+
+$$A^{-1}=
+\left(
+\begin{array}{cccccccc}
+0&1&0&-1&0&1&0&-1\\
+1&0&0&0&0&0&0&0\\
+0&0&0&1&0&-1&0&1\\
+-1&0&1&0&0&0&0&0\\
+0&0&0&0&0&1&0&-1\\
+1&0&-1&0&1&0&0&0\\
+0&0&0&0&0&0&0&1\\
+-1&0&1&0&-1&0&1&0
+\end{array}
+\right).$$
+\fincorrection
+\finexercice

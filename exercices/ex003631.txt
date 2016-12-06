@@ -1,0 +1,25 @@
+\exercice{3631, quercia, 2010/03/10}
+\enonce[\'Evaluations et intégrale]
+
+Soit $E = \R_3[X]$ et $a,b,c \in \R$ distincts.
+On considère les formes linéaires sur E :
+$$f_a\ :\ P \mapsto P(a),\quad
+  f_b\ :\ P \mapsto P(b),\quad
+  f_c\ :\ P \mapsto P(c),\quad
+  \varphi\ :\ P  \mapsto  \int_{t=a}^b P(t)\,d t.$$
+\'Etudier la liberté de $(f_a,f_b,f_c,\varphi)$.
+
+\finenonce
+
+\noindication
+
+\correction
+$M = \begin{pmatrix} 1   &1   &1   &b-a         \cr
+                        a   &b   &c   &(b^2-a^2)/2 \cr
+                        a^2 &b^2 &c^2 &(b^3-a^3)/3 \cr
+                        a^3 &b^3 &c^3 &(b^4-a^4)/4 \cr \end{pmatrix}$ et
+         $\det(M) = (b-a)^4(c-a)(c-b)\frac{2c-a-b}{12}$,
+         donc la famille est libre si et seulement si $c \ne \frac {a+b}2$.
+\fincorrection
+
+\finexercice

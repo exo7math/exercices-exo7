@@ -1,0 +1,70 @@
+\exercice{747, bodin, 1998/09/01}
+\video{elLpf1K7wu4}
+\enonce
+\'Ecrire sous forme d'expression algébrique
+\begin{enumerate}
+\item $ \sin(\Arccos x),\quad \cos(\Arcsin x),\quad \cos(2 \Arcsin x)$.
+\item $ \sin(\Arctan x),\quad \cos(\Arctan x),\quad \sin(3 \Arctan x)$.
+\end{enumerate}
+\finenonce 
+
+\indication
+Il faut utiliser les identités trigonométriques classiques.
+\finindication
+
+\correction\
+\begin{enumerate}
+    \item $\sin^2 y = 1-\cos^2 y$, donc
+$\sin y = \pm\sqrt{1-\cos^2 y}$.
+Avec $y=\Arccos x$, il vient $\sin(\Arccos x)= \pm\sqrt{1-x^2}$. Or $\Arccos x \in [0,\pi]$, 
+donc $\sin(\Arccos x)$ est positif et finalement $\sin(\Arccos x)=  +\sqrt{1-x^2}$.
+De la m\^eme mani\`ere on trouve $\cos(\Arcsin x) = \pm\sqrt{1-x^2}$. 
+Or $\Arcsin x \in [-\frac{\pi}{2},\frac{\pi}{2}]$, donc $\cos(\Arcsin x)$ est positif 
+et finalement $\cos(\Arcsin x)=+\sqrt{1-x^2}$.
+
+Ces deux égalités sont à connaître ou à savoir retrouver très rapidement :
+$$\sin(\Arccos x)  = \sqrt{1-x^2} = \cos(\Arcsin x).$$
+
+
+Enfin, puisque $\cos(2y) = \cos^2 y - \sin^2 y$, on obtient avec $y=\Arcsin x$,
+$$\cos(2\Arcsin x)=(\sqrt{1-x^2})^2-x^2=1-2x^2.$$
+
+\item Commen\c{c}ons par calculer $\sin(\Arctan x)$, $\cos(\Arctan x)$.
+On utilise l'identité $1+\tan^2y=\frac 1{\cos^2 y}$ avec $y = \Arctan x$, ce qui donne 
+$\cos^2 y = \frac{1}{1+x^2}$ et
+ $\sin^2 y = 1-\cos^2 y=\frac{x^2}{1+x^2}$.
+ Il reste à déterminer les signes de $\cos(\Arctan x)= \pm\frac{1}{\sqrt{1+x^2}}$ et $\sin(\Arctan x) = \pm\frac{x}{\sqrt{1+x^2}}$
+Or $y=\Arctan x$ donc $y\in]-\frac{\pi}{2},\frac{\pi}{2}[$ et $y$ a le même signe que $x$ : 
+ainsi $\cos y>0$, et $\sin y$ a le même signe que $y$ et donc que $x$. Finalement, on a 
+$\cos(\Arctan x)= \frac{1}{\sqrt{1+x^2}}$ et $\sin(\Arctan x) = \frac{x}{\sqrt{1+x^2}}$.
+
+\medskip
+
+
+Il ne reste plus qu'à linéariser $\sin(3y)$ :
+\begin{eqnarray*}
+\sin(3y) &=& \sin(2y+y)=\cos(2y)\sin(y)+\cos(y)\sin(2y)\\
+ &=&(2\cos^2 y-1)\sin y +2\sin y\cos^2y\\
+ &=&4 \sin y \cos^2 y - \sin y
+\end{eqnarray*}
+
+
+
+Maintenant
+\begin{eqnarray*}
+\sin(3\Arctan x) &=& \sin(3y)= 4 \sin y \cos^2 y - \sin y\\
+ &=& 4{\frac {x}{\left (1+{x}^{2}\right )^{3/2}}}-{\frac {x}{\sqrt {1+{x}^{2}}}}={\frac {x(3-x^2)}{\left (1+{x}^{2}\right )^{3/2}}}
+\end{eqnarray*}
+
+\bigskip
+
+\emph{Remarque :} la méthode générale pour obtenir la formule de linéarisation de $\sin(3y)$ est 
+d'utiliser les nombres complexes
+et la formule de Moivre. On développe 
+$$\cos(3y) + i \sin(3y) = (\cos y + i \sin y)^3 = \cos^3 y + 3i\cos^2y \sin y + \cdots$$ 
+puis on identifie les parties imaginaires pour avoir $\sin(3y)$, 
+ou les parties réelles pour avoir $\cos(3y)$.
+
+\end{enumerate}
+\fincorrection
+\finexercice

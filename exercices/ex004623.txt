@@ -1,0 +1,25 @@
+\exercice{4623, quercia, 2010/03/14}
+\enonce[Chimie P' 1996]
+
+Établir la convergence puis calculer
+$ \int_{t=0}^{\pi/2} \frac{\sin(nt)}{\sin t}\,d t$.
+
+En déduire les coefficients de Fourier de $f$~: $f(t) = \ln|\tan(t/2)|$.
+
+
+\finenonce
+
+\noindication
+
+\correction
+$I_{n+1}-I_{n-1} =  \int_{t=0}^{\pi/2} 2\cos(nt)\,d t
+                          = \frac2n\sin(n\pi/2)$.
+
+Donc $I_{2p} = 2\Bigl(1 - \frac13 + \dots+\frac{(-1)^{p-1}}{2p-1}\Bigr)$,
+     $I_{2p+1} = \frac\pi2$.
+
+$b_n = 0$ (parité), $a_{2p} = 0$ (symétrie par rapport à $(\pi/2,0)$),
+$a_{2p+1} = -\frac{4}{(2p+1)\pi}I_{2p+1} = -\frac{2}{2p+1}$.
+\fincorrection
+
+\finexercice

@@ -1,0 +1,23 @@
+\exercice{3181, quercia, 2010/03/08}
+
+\enonce[$P(X) + P(X+1) = 2X^n$]
+\begin{enumerate}
+  \item  Montrer qu'il existe un uni\-que polyn{\^o}me
+     $P_n \in { K[X]}$ tel que $P_n(X) + P_n(X+1) = 2X^n$.
+  \item  Chercher une relation de r{\'e}currence entre $P_n'$ et $P_{n-1}$.
+  \item  D{\'e}composer $P_n(X+1)$ sur la base $(P_k)_{k \in \N}$.
+  \item  D{\'e}montrer que $P_n(1-X) = (-1)^nP_n(X)$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Isomorphisme $P \longmapsto P(X) + P(X+1)$.
+  \item $P_n' = nP_{n-1}$.
+  \item $P_n(X+1) = \sum_{k=0}^n C_n^k P_k$\quad (Taylor).
+  \item $Q_n(X) = P_n(1-X)  \Rightarrow  Q_n(X) + Q_n(X+1) = 2(-1)^nX^n$.
+\end{enumerate}
+\fincorrection
+\finexercice 

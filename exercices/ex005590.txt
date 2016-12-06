@@ -1,0 +1,29 @@
+\exercice{5590, rouget, 2010/10/16}
+\enonce[**I]
+\label{ex:rou28}
+Soit $E$ un espace de dimension finie. Montrer que la trace d'un projecteur est son rang.
+\finenonce
+
+\noindication
+
+\correction
+Soit $p$ un projecteur de $E$. Si $p=0$, $\text{Tr}(p)=\text{rg}(p)=0$ et si $p=Id_E$, $\text{Tr}(p)=\text{rg}(p)=n$.
+
+Dorénavant, $p$ est un projecteur de rang $r\in\llbracket1,n-1\rrbracket$. On choisit une base de $E$ $\mathcal{B}$ adaptée à la décomposition $E=\text{Im}(p)\oplus\text{Ker}(p)$. Dans cette base, la matrice de $p$ s'écrit $\left(
+\begin{array}{cccccc}
+1&0&\ldots& &\ldots&0\\
+0&\ddots&\ddots& & &\vdots\\
+\vdots&\ddots&1& & & \\
+ & & &$0$&\ddots&\vdots\\
+\vdots& & &\ddots&\ddots&0\\
+0&\ldots& &\ldots&0&0
+\end{array}
+\right)$ où le nombre de $1$ est $\text{dim}(\text{Im}(p))=r$. Mais alors $\text{Tr}(p)=r$.
+
+\begin{center}
+\shadowbox{
+En dimension finie, la trace d'un projecteur est son rang.
+}
+\end{center}
+\fincorrection
+\finexercice

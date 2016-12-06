@@ -1,0 +1,48 @@
+\exercice{5659, rouget, 2010/10/16}
+\enonce[*** I]
+\label{ex:rou9}
+Soient $f$ et $g$ deux endomorphismes d'un espace vectoriel de dimension finie vérifiant $fg - gf = f$. Montrer que $f$ est nilpotent.
+
+\finenonce
+
+\noindication
+
+\correction
+Soit $k\in\Nn^*$.
+
+\begin{align*}\ensuremath
+f^kg-fg^k&=f^kg-f^{k-1}gf+f^{k-1}gf-f^{k-2}gf^2+f^{k-2}gf^2-\ldots-fgf^{k-1}+fgf^{k-1}-gf^k\\
+ &=\sum_{i=0}^{k-1}(f^{k-i}gf^i-f^{k-i-1}gf^{i+1})=\sum_{i=0}^{k-1}f^{k-i-1}(fg-gf)f^i=\sum_{i=0}^{k-1}f^{k-i-1}ff^i\\
+ &=kf^k.
+\end{align*}
+
+Ainsi,
+
+\begin{center}
+\shadowbox{
+si $fg-gf=f$, alors $\forall k\in\Nn$, $f^kg-gf^k=kf^k$\quad$(*)$.
+}
+\end{center}
+
+\textbf{1ère solution.} Soit $\begin{array}[t]{cccc}
+\varphi~:&\mathcal{L}(E)&\rightarrow&\mathcal{L}(E)\\
+ &h&\mapsto&hg-gh
+\end{array}$. $\varphi$ est un endomorphisme de $\mathcal{L}(E)$ et $\forall k\in\Nn^*$, $\varphi(f^k)=kf^k$. Si, pour $k\in\Nn^*$ donné, $f^k$ n'est pas nul, $f^k$ est valeur propre de $\varphi$ associé à la valeur propre $k$. Par suite, si aucun des $f^k$ n'est nul, $\varphi$ admet une infinité de valeurs propres deux à deux distinctes. Ceci est impossible car $\text{dim}(\mathcal{L}(E))<+\infty$. Donc, $f$ est nilpotent.
+
+\textbf{2ème solution.} Les égalités $(*)$ peuvent s'écrire $P(f)g-gP(f)=fP'(f)$, $(**)$, quand $P$ est un polynôme de la forme $X^k$, $k\in\Nn$. Par linéarité, les égalités $(**)$ sont vraies pour tout polynôme $P$.
+
+En particulier, l'égalité $(**)$ est vraie quand $P$ est $Q_f$ le polynôme minimal de $f$ et donc
+
+\begin{center}
+$fQ_f'(f)=Q_f(f)g-gQ_f(f)=0$.
+\end{center}
+
+Le polynôme $XQ_f'$ est donc un polynôme annulateur de $f$ et on en déduit que le polynôme $Q_f$ divise le polynôme $XQ_f'$. Plus précisément, si $p\in\Nn^*$ est le degré de $Q_f$, les polynômes $pQ_f$ ayant mêmes degrés et mêmes coefficients dominants, on en déduit que $pQ_f=XQ_f'$ ou encore que
+
+\begin{center}
+$\frac{Q_f'}{Q_f}=\frac{p}{X}$.
+\end{center}
+
+Par identification à la décomposition en éléments simples usuelles de $\frac{Q_f'}{Q_f}$, on en déduit que $Q_f=X^p$. En particulier, $f^p=0$ et encore une fois $f$ est nilpotent.
+\fincorrection
+\finexercice

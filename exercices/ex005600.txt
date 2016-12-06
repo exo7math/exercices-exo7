@@ -1,0 +1,57 @@
+\exercice{5600, rouget, 2010/10/16}
+\enonce[***]
+ Soit $E$ un $\Cc$-espace vectoriel de dimension finie non nulle. Soient $f$ et $g$ deux projecteurs distincts et non nuls de $E$ tels qu'il existe deux complexes $a$ et $b$ tels que :
+
+\begin{center}
+$fg - gf = af + bg$.
+\end{center}
+
+\begin{enumerate}
+ \item  Montrer que si $a\neq0$ et $a\neq1$ on a : $\text{Im}(f)\subset\text{Im}(g)$. En déduire que $gf=f$ puis que $a+b =0$ puis que $a=-1$.
+
+\item  Montrer que si $a\neq0$ et $a\neq-1$, on a $\text{Ker}(g)\subset\text{Ker}(f)$. Que peut-on en déduire ?
+
+\item  Montrer que si $f$ et $g$ sont deux projecteurs qui ne commutent pas et vérifient de plus 
+$fg-gf=af+bg$ alors 
+
+$(a,b)$ est élément de $\{(-1,1),(1,-1)\}$. Caractériser alors chacun de ces cas.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  A partir de $fg-gf=af+bg$ $(1)$, on obtient après composition à droite par $g$, $fg-gfg = afg + bg$ ou encore $fg=g\circ\frac{1}{1-a}(fg + bId)$ (puisque $1 - a\neq0$). On en déduit
+
+\begin{center} 
+$\text{Im}(fg)\subset\text{Im}g$.
+\end{center}
+
+Mais alors en écrivant $(1)$ sous la forme $f=\frac{1}{a}(fg- gf -bg)$ (puisque $a$ n'est pas nul), on obtient
+
+\begin{center}
+$\text{Im}f\subset\text{Im}g$.
+\end{center}
+
+L'égalité $\text{Im}f\subset\text{Im}g$ montre que tout vecteur de $\text{Im}f$ est invariant par $g$ et  fournit donc l'égalité $gf = f$. On compose alors (1) à droite par $f$ et en tenant compte de $gf = f$ et de $f^2 = f$, on obtient $f - f = af + bf$ et donc $(a+b)f = 0$ puis $b=-a$ puisque $f$ n'est pas nul.
+
+(1) s'écrit alors $fg - f = a(f-g)$. En composant à droite par $g$, on obtient : $a(fg - g) = 0$ et donc $fg = f$ puisque $a$ n'est pas nul. (1) s'écrit maintenant $g-f = a(f-g)$ ou encore $(a+1)(g - f) = 0$ et donc, puisque $f$ et $g$ sont distincts, $a = -1$.
+
+\item  (D'après 1), si a est distinct de $0$ et de $1$, nécessairement $a = -1$ et (1) s'écrit $fg - gf =-f +bg$).
+
+Soit $x$ un élément de $\text{Ker}g$. $(1)$ fournit $-g(f(x)) = af(x)$ $(*)$ puis en prenant l'image par $g$, $(a+1)g(f(x)) = 0$. Puisque $a$ est distinct de $-1$, on obtient $g(f(x)) = 0$ et $(*)$ fournit $af(x) = 0$ puis $f(x) = 0$. Donc $x$ est élément de $\text{Ker}f$. On a montré que $\text{Ker}g\subset\text{Ker}f$.
+
+On en déduit $\text{Im}(g-Id)\subset\text{Ker}f$ et donc $f(g-Id) =0$ ou encore $fg = f$. $(1)$ s'écrit $f - gf = af + bg$ et en composant à gauche par $f$, on obtient $f - fgf = af + bfg$. En tenant compte de $fg = f$, on obtient  $(a+b)f = 0$ et donc $b = -a$.
+
+$(1)$ s'écrit alors $f - gf = a(f - g)$ et en composant à gauche par $g$, on obtient $0 = a(gf - g)$ et donc $gf = g$. (1) s'écrit enfin $f-g = a(f-g)$ et donc $a = 1$.
+
+\item  Si $a = 0$, $(1)$ s'écrit $fg - gf = bg$. En composant à gauche ou à droite par $g$, on obtient $gfg - gf = bg$ et $fg - gfg = bg$. En additionnant ces deux égalités, on obtient $fg - gf = 2bg$. D'où, en tenant compte de $(1)$, $bg = 2bg$ et puisque $g$ n'est pas nul, $b = 0$. Par suite $fg - gf = 0$ ce qui est exclu par l'énoncé. Donc, on ne peut avoir $a = 0$. D'après 1) et 2), $(a,b)\in\{(-1,1),(1,-1)\}$.
+
+\textbf{1er cas.} $(a,b) = (-1,1)$. C'est le 1) : $fg - gf = -f +g$. On a vu successivement que $gf = f$  puis que $fg = g$ fournissant $(g-Id)f = 0$ et $(f-Id)g = 0$ ou encore 
+$\text{Im}f \subset\text{Ker}(g-Id) =\text{Im}g$ et $\text{Im}g \subset\text{Im}f$ et donc $\text{Im}f =\text{Im}g$. Réciproquement, si $f$ et $g$ sont deux projecteurs de même image alors $gf = f$, $fg = g$ et donc $fg - gf = -f + g$. Le premier cas est donc le cas de deux projecteurs de même image .
+
+\textbf{2ème cas.} $(a,b) = (1,-1)$. C'est le cas de deux projecteurs de même noyau.
+\end{enumerate}
+\fincorrection
+\finexercice

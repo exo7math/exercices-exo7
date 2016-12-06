@@ -1,0 +1,30 @@
+\exercice{3632, quercia, 2010/03/10}
+\enonce[Base duale de $(1, X, X(X-1), \dots)$]
+
+Soit $E =  K_n[X]$. On note $P_0 = 1$, $P_i = X(X-1)\cdots(X-i+1)$ pour $i\ge1$,
+et $f_i : P  \mapsto P(i)$.
+
+\begin{enumerate}
+  \item Montrer que $(P_0,\dots,P_n)$ est une base de $E$ et ${\cal B} = (f_0,\dots,f_n)$
+    est une base de $E^*$.
+  \item Décomposer la forme linéaire $P_n^*$ dans la base $\cal B$.
+    (On pourra utiliser les polynômes :
+    $Q_i = \prod_{1\le j\le n; j\ne i}(X-j)$)
+    
+  \item Décomposer de même les autres formes linéaires $P_k^*$.
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+2. terme dominant $ \Rightarrow  P_n^*(Q_i) = 1$,
+             donc $P_n^* = \sum_{i=0}^n \frac{f_i}{Q_i(i)}
+                         = \sum_{i=0}^n \frac{(-1)^{n-i}f_i}{i!\,(n-i)!}$.
+
+3. $P_k^* = \sum_{i=0}^k \frac{(-1)^{k-i}f_i}{i!\,(k-i)!}$.
+
+ \fincorrection
+
+\finexercice

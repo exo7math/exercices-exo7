@@ -1,0 +1,26 @@
+\exercice{5321, rouget, 2010/07/04}
+\enonce[***]
+Soit $P$ un polynôme à coefficients entiers relatifs de degré supérieur ou égal à $1$. Soit $n$ un entier relatif 
+et $m=P(n)$.
+\begin{enumerate}
+\item  Montrer que $\forall k\in\Zz,\;P(n+km)$ est un entier divisible par $m$.
+\item  Montrer qu'il n'existe pas de polynômes non constants à coefficients entiers tels que $P(n)$ soit premier pour tout entier $n$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  Posons $P=\sum_{i=0}^{l}a_iX_i$ où $l\geq1$ et où les $a_i$ sont des entiers relatifs avec $a_l\neq0$.
+
+$$P(n+km)=\sum_{i=0}^{l}a_i(n+km)^i=\sum_{i=0}^{l}a_i(n^i+K_im)=\sum_{i=0}^{l}a_in^i+Km=m+Km=m(K+1),$$
+
+où $K$ est un entier relatif. $P(n+km)$ est donc un entier relatif multiple de $m=P(n)$.
+
+\item  Soit $P\in\Zz[X]$ tel que $\forall n\in\Nn,\;P(n)$ est premier.
+
+Soit $n$ un entier naturel donné et $m=P(n)$ (donc, $m\geq2$ et en particulier $m\neq0$). Pour tout entier relatif $k$, $P(n+km)$ est divisible par $m$ mais $P(n+km)$ est un nombre premier ce qui impose $P(n+km)=m$. Par suite, le polynôme $Q=P-m$ admet une infinité de racines deux à deux distinctes (puisque $m\neq0$) et est donc le polynôme nul ou encore $P$ est constant.
+\end{enumerate}
+\fincorrection
+\finexercice

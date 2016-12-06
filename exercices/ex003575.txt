@@ -1,0 +1,29 @@
+\exercice{3575, quercia, 2010/03/10}
+\enonce[$\frac12(p\circ u + u\circ p)$ (Mines MP 2003)]
+Soit~$E$ un espace vectoriel de dimension $n$ finie, $p$ un projecteur de rang~$r$
+et $\varphi : {\mathcal{L}(E)} \to {\mathcal{L}(E)}, u \mapsto {\frac12(p\circ u + u\circ p).}$
+\begin{enumerate}
+  \item Est-ce que~$\varphi$ est diagonalisable~?
+    
+  \item Déterminer les valeurs propres de~$\varphi$ et les dimensions des sous-espaces propres.
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Oui, les applications $u \mapsto p\circ u$ et $u \mapsto u\circ p$ le sont
+    (ce sont des projecteurs) et elles commutent.
+  \item Soit $\cal B$ une base de~$E$ obtenue par concaténation d'une
+    base de~$\mathrm{Ker} p$ et d'une base de~$\Im p$.
+
+    Si $\mathrm{mat}_{\cal B}(u) = \left(\begin{smallmatrix}A&B\cr C&D\cr\end{smallmatrix}\right)$
+    alors $\mathrm{mat}_{\cal B}(\varphi(u)) = \left(\begin{smallmatrix}A&B/2\cr C/2&D\cr\end{smallmatrix}\right)$,
+    d'où $\mathrm{Spec}(\varphi) \subset \{0,\frac12,1\}$ et $d_0 = (n-r)^2$,
+    $d_1=r^2$ et $d_{1/2} = 2r(n-r)$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

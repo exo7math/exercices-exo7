@@ -1,0 +1,21 @@
+\exercice{5404, rouget, 2010/07/06}
+\enonce[**]
+Soit $f$ de $[0,1]$ dans lui-même telle que $\forall(x,y)\in([0,1])^2,\;|f(y)-f(x)|\geq|x-y|$. Montrer que $f=Id$ ou $f=1-Id$.
+\finenonce
+
+\noindication
+
+\correction
+On a $0\leq f(0)\leq 1$ et $0\leq f(1)\leq 1$. Donc $|f(1)-f(0)|\leq1$. Mais, par hypothèse, $|f(1)-f(0)|\geq1$. Par suite, $|f(1)-f(0)|= 1$ et nécessairement, $(f(0),f(1))\in\{(0,1),(1,0)\}$.
+
+Supposons que $f(0)=0$ et $f(1)=1$ et montrons que $\forall x\in[0,1],\;f(x)=x$.
+
+Soit $x\in[0,1]$. On a $|f(x) -f(0)|\geq|x-0|$ ce qui fournit $f(x)\geq x$. On a aussi $|f(x)-f(1)|=|x-1|$ ce qui fournit $1-f(x)\geq 1-x$ et donc $f(x)\leq x$. Finalement, $\forall x\in[0,1],\;f(x)=x$ et $f=Id$.
+
+Si $f(0)=1$ et $f(1)=0$, posons pour $x\in[0,1]$, $g(x)=1-f(x)$. Alors, $g(0)=0$, $g(1)=1$ puis, pour $x\in[0,1]$, $g(x)\in[0,1]$. Enfin,
+ 
+$$\forall(x,y)\in[0,1]^2,\;|g(y)-g(x)|=|f(y)-f(x)|\geq|y-x|.$$
+ 
+D'après l'étude du premier cas, $g=Id$ et donc $f=1-Id$. Réciproquement, $Id$ et $1-Id$ sont bien bien solutions du problème.
+\fincorrection
+\finexercice

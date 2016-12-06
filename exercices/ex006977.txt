@@ -1,0 +1,87 @@
+\exercice{6977, blanc-centi, 2014/05/06}
+\video{GEaDEYtHv7U}
+\enonce 
+Soit $a$ et $b$ deux réels positifs tels que $a^2-b^2=1$. Résoudre le système
+$$\left\{\begin{array}{l}
+\ch(x)+\ch(y)=2a\\
+\sh(x)+\sh(y)=2b
+\end{array}\right.$$
+\finenonce 
+
+\indication
+Poser $X=e^x$ et $Y=e^y$ et se ramener à un système d'équations du type somme-produit.
+\finindication
+
+\correction
+\begin{eqnarray*}
+(S)\ \left\{\begin{array}{l}
+\ch(x)+\ch(y)=2a\\
+\sh(x)+\sh(y)=2b
+\end{array}\right.
+&\Longleftrightarrow&
+\left\{\begin{array}{l}
+e^x+e^{-x}+e^y+e^{-y}=4a\\
+e^x-e^{-x}+e^y-e^{-y}=4b
+\end{array}\right.\\
+ &\Longleftrightarrow&
+\left\{\begin{array}{l}
+e^x+e^y=2a+2b\\
+e^x-e^{-x}+e^y-e^{-y}=4b
+\end{array}\right.\\
+ &\Longleftrightarrow&
+\left\{\begin{array}{l}
+e^x+e^y=2a+2b\\
+-e^{-x}-e^{-y}=2b-2a
+\end{array}\right.\\
+ &\Longleftrightarrow&
+\left\{\begin{array}{l}
+e^x+e^y=2(a+b)\\
+\frac{1}{e^{x}}+\frac{1}{e^{y}}=2(a-b)
+\end{array}\right.
+\end{eqnarray*}
+ce qui donne, en posant  $X=e^x$ et $Y=e^y$:
+\begin{eqnarray*}
+(S)&\Longleftrightarrow&
+\left\{\begin{array}{l}
+X+Y=2(a+b)\\
+\frac{1}{X}+\frac{1}{Y}=2(a-b)
+\end{array}\right.\\
+&\Longleftrightarrow&
+\left\{\begin{array}{l}
+X+Y=2(a+b)\\
+\frac{X+Y}{XY}=2(a-b)
+\end{array}\right.\\
+&\Longleftrightarrow&
+\left\{\begin{array}{l}
+X+Y=2(a+b)\\
+\frac{2(a+b)}{XY}=2(a-b)
+\end{array}\right.
+\end{eqnarray*}
+Or $a\not=b$ puisque par hypothèse, $a^2-b^2=1$. Ainsi,
+\begin{eqnarray*}
+(S)&\Longleftrightarrow&
+\left\{\begin{array}{l}
+X+Y=2(a+b)\\
+XY=\frac{a+b}{a-b}
+\end{array}\right.\\
+&\Longleftrightarrow& X\ \text{et}\ Y\ \text{sont les solutions de}\ z^2-2(a+b)z+\frac{a+b}{a-b}=0
+\end{eqnarray*}
+
+\medskip
+
+\emph{Remarque :} On rappelle
+que si $X, Y$ vérifient le système 
+$\left\{\begin{array}{l}
+X+Y=S\\
+XY=P
+\end{array}\right.$, alors $X$ et $Y$ sont les solutions de l'équation $z^2-Sz+P=0$.
+\medskip
+
+Or le discriminant du trinôme $z^2-2(a+b)z+\frac{a+b}{a-b}=0$ vaut 
+$$\Delta=4(a+b)^2-4\frac{a+b}{a-b}=4(a+b)\left(a+b-\frac{1}{a-b}\right)=\frac{4(a+b)(a^2-b^2-1)}{a-b}=0$$ 
+Il y a donc une racine double qui vaut $\frac{2(a+b)}{2}$, ainsi $X=Y=a+b$ et donc :
+$$(S)\Longleftrightarrow e^x=e^y=a+b$$
+On vérifie que $a+b\ge 0$ (car $a\ge 0$ et $b\ge 0$) et $a+b\not=0$ (car $a^2-b^2=1$).
+Conclusion : le système $(S)$ admet une unique solution, donnée par $\big(x=\ln(a+b),y=\ln(a+b)\big)$. 
+\fincorrection
+\finexercice

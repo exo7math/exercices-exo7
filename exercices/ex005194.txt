@@ -1,0 +1,49 @@
+\exercice{5194, rouget, 2010/06/30}
+\enonce[***I]
+\label{exo:suprou12}
+Soient $\Kk$ un sous-corps de $\Cc$, $E$ un $\Kk$-espace vectoriel de dimension quelconque sur $\Kk$ et $f$ un endomorphisme de $E$ vérifiant
+$f^2-5f+6Id_E=0$. Montrer que $E=\mbox{Ker}(f-2Id)\oplus\mbox{Ker}(f-3Id)$.
+\finenonce
+
+\noindication
+
+\correction
+Soit $x\in E$.
+
+$$x\in\mbox{Ker }(f-2Id)\cap\mbox{Ker }(f-3Id)\Rightarrow f(x)=2x\;\mbox{et}\;f(x)=3x\Rightarrow 3x-2x=f(x)-f(x)= 0\Rightarrow x=0.$$
+
+Donc, $\mbox{Ker }(f-2Id)\cap\mbox{Ker }(f-3Id)=\{0\}$ (même si $f^2-5f+6Id\neq0$).
+
+Soit $x\in E$. On cherche $y$ et $z$ tels que $y\in\mbox{Ker }(f-2Id)$, $z\in\mbox{Ker }(f-3Id)$ et $x=y+z$.
+
+Si $y$ et $z$ existent, $y$ et $z$ sont solution du système $\left\{
+\begin{array}{l}
+y+z=x\\
+2y+3z=f(x)
+\end{array}
+\right.$ et donc $\left\{
+\begin{array}{l}
+y=3x-f(x)\\
+z=f(x)-2x
+\end{array}
+\right.$.
+
+Réciproquement . Soient $x\in E$ puis $y=3x-f(x)$ et $z=f(x)-2x$.
+
+On a bien $y+z=x$ puis
+
+\begin{align*}
+f(y)&=3f(x)-f^2(x)=3f(x)-(5f(x)-6x)\quad(\mbox{car}\;f^2=5f-6Id)\\
+ &= 6x-2f(x)=2(3x-f(x))=2y
+\end{align*}  
+  
+et $y\in\mbox{Ker }(f-2Id)$. De même,
+
+$$f(z)=f^2(x)-2f(x)=(5f(x)-6x)-2f(x)=3(f(x)-2x)=3z,$$
+ 
+et $z\in\mbox{Ker }(f-3Id)$. On a montré que $E=\mbox{Ker }(f-2Id)+\mbox{Ker }(f-3d)$, et finalement que 
+
+$$E=\mbox{Ker }(f-2Id)\oplus\mbox{Ker }(f-3d).$$
+
+\fincorrection
+\finexercice

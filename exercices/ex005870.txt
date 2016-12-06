@@ -1,0 +1,131 @@
+\exercice{5870, rouget, 2010/10/16}
+\enonce[**]
+Soit $A=\left(
+\begin{array}{ccc}
+0&1/2&-2\\
+1/2&0&0\\
+0&0&-1/2
+\end{array}
+\right)$. Calculer $\ln(I_3+tA)=\sum_{n=1}^{+\infty} \frac{(-1)^{n-1}t^n}{n}A^n$ en précisant les valeurs de $t$ pour lesquelles la série converge.
+
+\finenonce
+
+\noindication
+
+\correction
+$\;$
+
+$\chi_A=\left|
+\begin{array}{ccc}
+-X&1/2&-2\\
+1/2&-X&0\\
+0&0&-1/2-X
+\end{array}
+\right|=-X\left(X^2+ \frac{1}{2}X\right)- \frac{1}{2}\left(- \frac{1}{2}X- \frac{1}{4}\right)=-X^2\left(X+ \frac{1}{2}\right)+ \frac{1}{4}\left(X+ \frac{1}{2}\right)=-\left(X+ \frac{1}{2}\right)^2\left(X- \frac{1}{2}\right)$. 
+
+Soit $n\in\Nn$. La division euclidienne de $X^n$ par $\chi_A$ s'écrit $X^n=Q_n\chi_A+a_nX^2+b_nX+c_n$ où $Q_n\in\Rr[X]$ et $(a_n,b_n,c_n)\in\Rr^3$.
+
+On évalue les deux membres de cette égalité en $ \frac{1}{2}$ et $- \frac{1}{2}$ et on obtient $ \frac{a_n}{4}+ \frac{b_n}{2}+c_n=\left( \frac{1}{2}\right)^n$ et $ \frac{a_n}{4}- \frac{b_n}{2}+c_n=\left(- \frac{1}{2}\right)^n$.
+
+Puis en dérivant les deux membres de l'égalité et en évaluant en $- \frac{1}{2}$, on obtient $-a_n+b_n=n\left(- \frac{1}{2}\right)^{n-1}=-2n\left(- \frac{1}{2}\right)^{n}$. Maintenant,
+
+\begin{align*}\ensuremath
+\left\{
+\begin{array}{l}
+ \frac{a_n}{4}+ \frac{b_n}{2}+c_n=\left( \frac{1}{2}\right)^n\\
+ \frac{a_n}{4}- \frac{b_n}{2}+c_n=\left(- \frac{1}{2}\right)^n\\
+-a_n+b_n=-2n\left(- \frac{1}{2}\right)^{n}
+\end{array}
+\right.&\Leftrightarrow\left\{
+\begin{array}{l}
+b_n=\left( \frac{1}{2}\right)^n-\left(- \frac{1}{2}\right)^n\\
+ \frac{a_n}{2}+2c_n=\left( \frac{1}{2}\right)^n+\left(- \frac{1}{2}\right)^n\\
+-a_n+\left( \frac{1}{2}\right)^n-\left(- \frac{1}{2}\right)^n=-2n\left(- \frac{1}{2}\right)^{n}
+\end{array}
+\right.
+\\
+ &\Leftrightarrow\left\{
+\begin{array}{l}
+a_n=\left( \frac{1}{2}\right)^n+(2n-1)\left(- \frac{1}{2}\right)^n\\
+b_n=\left( \frac{1}{2}\right)^n-\left(- \frac{1}{2}\right)^n\\
+c_n= \frac{1}{4}\left( \frac{1}{2}\right)^n- \frac{2n-3}{4}\left(- \frac{1}{2}\right)^n
+\end{array}
+\right.
+\end{align*}
+
+Donc $\forall n\in\Nn$, $A^n=\left(\left( \frac{1}{2}\right)^n+(2n-1)\left(- \frac{1}{2}\right)^n\right)A^2+\left(\left( \frac{1}{2}\right)^n-\left(- \frac{1}{2}\right)^n\right)A+\left( \frac{1}{4}\left( \frac{1}{2}\right)^n- \frac{2n-3}{4}\left(- \frac{1}{2}\right)^n\right)I_3$ avec $A^2=\left(
+\begin{array}{ccc}
+0&1/2&-2\\
+1/2&0&0\\
+0&0&-1/2
+\end{array}
+\right)\left(
+\begin{array}{ccc}
+0&1/2&-2\\
+1/2&0&0\\
+0&0&-1/2
+\end{array}
+\right)=\left(
+\begin{array}{ccc}
+1/4&0&1\\
+0&1/4&-1\\
+0&0&1/4
+\end{array}
+\right)$. On en déduit que pour $|t|<2$,
+
+\begin{align*}\ensuremath
+\ln(I_3+tA)&=\sum_{n=1}^{+\infty} \frac{(-1)^{n-1}t^n}{n}A^n\\
+ &=\left(\sum_{n=1}^{+\infty} \frac{(-1)^{n-1}t^n}{n}\left(\left( \frac{1}{2}\right)^n+(2n-1)\left(- \frac{1}{2}\right)^n\right)\right)A^2+\left(\sum_{n=1}^{+\infty} \frac{(-1)^{n-1}t^n}{n}\left(\left( \frac{1}{2}\right)^n-\left(- \frac{1}{2}\right)^n\right)\right)A\\
+  &+\left(\sum_{n=1}^{+\infty} \frac{(-1)^{n-1}t^n}{n} \frac{1}{4}\left( \frac{1}{2}\right)^n- \frac{2n-3}{4}\left(- \frac{1}{2}\right)^n\right)I_3.
+\end{align*}
+
+et donc
+
+\begin{align*}\ensuremath
+\ln(I_3+tA)&=\left(\sum_{n=1}^{+\infty} \frac{(-1)^{n-1}(t/2)^n}{n}-2\sum_{n=1}^{+\infty}(t/2)^n-\sum_{n=1}^{+\infty} \frac{(-1)^{n-1}(-t/2)^n}{n}\right)A^2\\
+ &+\left(\sum_{n=1}^{+\infty} \frac{(-1)^{n-1}(t/2)^n}{n}-\sum_{n=1}^{+\infty} \frac{(-1)^{n-1}(-t/2)^n}{n}\right)A\\
+  &+ \frac{1}{4}\left(\sum_{n=1}^{+\infty} \frac{(-1)^{n-1}(t/2)^n}{n}+2\sum_{n=1}^{+\infty}(t/2)^n+3\sum_{n=1}^{+\infty} \frac{(-1)^{n-1}(-t/2)^n}{n}\right)I_3\\
+  &=\left(\ln\left(1+ \frac{t}{2}\right)-2\left( \frac{1}{1- \frac{t}{2}}-1\right)-\ln\left(1- \frac{t}{2}\right)\right)A^2+\left(\ln\left(1+ \frac{t}{2}\right)-\ln\left(1- \frac{t}{2}\right)\right)A\\
+  &+ \frac{1}{4}\left(\ln\left(1+ \frac{t}{2}\right)+2\left( \frac{1}{1- \frac{t}{2}}-1\right)+3\ln\left(1- \frac{t}{2}\right)\right)I_3\\
+  &=\left(\ln\left( \frac{2+t}{2-t}\right)- \frac{2t}{2-t}\right)\left(
+\begin{array}{ccc}
+1/4&0&1\\
+0&1/4&-1\\
+0&0&1/4
+\end{array}
+\right)+\ln\left( \frac{2+t}{2-t}\right)\left(
+\begin{array}{ccc}
+0&1/2&-2\\
+1/2&0&0\\
+0&0&-1/2
+\end{array}
+\right)\\
+  &+ \frac{1}{4}\left(\ln\left(1+ \frac{t}{2}\right)+ \frac{2t}{2-t}+3\ln\left(1- \frac{t}{2}\right)\right)\left(
+\begin{array}{ccc}
+1&0&0\\
+0&1&0\\
+0&0&1
+\end{array}
+\right)\\
+ &=\left(
+ \begin{array}{ccc}
+ \frac{1}{2}\ln\left(1- \frac{t^2}{4}\right)& \frac{1}{2}\ln\left( \frac{2+t}{2-t}\right)&-\ln\left( \frac{2+t}{2-t}\right)- \frac{2t}{2-t}\\
+ \frac{1}{2}\ln\left( \frac{2+t}{2-t}\right)& \frac{1}{2}\ln\left(1- \frac{t^2}{4}\right)&-\ln\left( \frac{2+t}{2-t}\right)+ \frac{2t}{2-t}\\
+ 0&0&\ln\left(1- \frac{t}{2}\right)
+ \end{array}
+ \right).
+\end{align*}
+
+\begin{center}
+\shadowbox{
+$\forall t\in]-2,2[$, $\ln(I_3+tA)=\left(
+ \begin{array}{ccc}
+ \frac{1}{2}\ln\left(1- \frac{t^2}{4}\right)& \frac{1}{2}\ln\left( \frac{2+t}{2-t}\right)&-\ln\left( \frac{2+t}{2-t}\right)- \frac{2t}{2-t}\\
+ \frac{1}{2}\ln\left( \frac{2+t}{2-t}\right)& \frac{1}{2}\ln\left(1- \frac{t^2}{4}\right)&-\ln\left( \frac{2+t}{2-t}\right)+ \frac{2t}{2-t}\\
+ 0&0&\ln\left(1- \frac{t}{2}\right)
+ \end{array}
+ \right)$.
+}
+\end{center}
+\fincorrection
+\finexercice

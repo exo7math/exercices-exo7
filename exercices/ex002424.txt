@@ -1,0 +1,175 @@
+\exercice{2424, lescure, 2007/10/01}
+
+\enonce 
+\begin{enumerate}
+\item  Soit $E$ un espace m\'etrique et $A \subset E$ une de ses parties. 
+On désigne par $\overline A$ l'adhérence de $A$ et par $\mathrm{Fr} (A)$ la frontière  de $A$ dans $E.$ 
+On a $\mathrm{Fr} (A) = \overline{A} \cap \overline{A^c}$.
+
+\begin{enumerate}
+\item Montrez que $x \in\mathrm{Fr} (A),$ si et seulement si il existe une 
+suite $(x_n)$ d'éléments de $A$ et une suite $(y_n)$ d'éléments du complémentaire
+$E \setminus A$ de $A$ dans $E,$ qui convergent l'une et l'autre vers $x.$
+
+\item Soit $E=]-\infty,-1]\cup [0,1[ \cup [2,+\infty[$ muni de la topologie induite
+par $\Rr.$ Avec $A=[0,\frac 12],$ qu'elle est la frontière de $A$ dans $E.$ Considérée
+ comme sous-partie de $\Rr,$ qu'elle serait la frontière de $A$ dans $\Rr$?
+\end{enumerate}
+
+\item 
+Soient $E$ et $F$ deux espaces métriques respectivement au moyen des distances $d$ et
+$d'$.
+\begin{enumerate}
+\item  Précisez ce que l'on entend par la distance $\sup(d,d')$ sur $E \times F.$ Dîtes
+rapidement pourquoi cette distance définit sur $E \times F$ le produit des topologies
+métriques sur $E$ et $F.$ 
+\item Soient $A\subset E$ et $B\subset F$. Montrez que l'intérieur $A\times B \setminus \mathrm{Fr} (A\times B)$ 
+de $A\times B$ dans $E \times F$ est le produit cartésien de l'intérieur 
+$A  \setminus \mathrm{Fr} (A)$ de $A$ dans $E$ avec l'intérieur $ B \setminus \mathrm{Fr} ( B)$ de $B$
+dans $F.$
+\end{enumerate}
+
+\item 
+ $E$ et $F$ sont toujours comme dans la deuxième question \c{c}i dessus.
+\begin{enumerate}
+\item Si $( \xi_n, \xi'_n)$ est une suite de points dans le complémentaire $E\times F \setminus A\times B$ de
+$A\times B$ dans $E \times F,$ montrez qu'au moins une des deux alternatives suivantes (i) ou (ii) est vérifiée:
+
+(i) il existe une suite extraite $\xi_{n_k}$ dont tous les termes sont dans $E \setminus A.$
+  
+(ii) il existe une suite extraite $\xi'_{n_k}$ dont tous les termes sont dans $F \setminus B.$
+
+\item Déduire, de tout ce qui précède, que la frontière $\mathrm{Fr} (A \times B)$ de $A \times B$ dans
+$E \times F$ est donnée par la formule:
+$$\mathrm{Fr} (A \times B)=\bigl( \mathrm{Fr} (A) \times \overline B \bigr) \cup 
+\bigl( \overline A \times\mathrm{Fr} ( B) \bigr)$$
+\end{enumerate}
+
+\item 
+ Supposons $E$ et $F$ comme \c{c}i dessus mais avec l'hypothèse supplémentaire d'être
+connexes, et avec des inclusions strictes $A \subset E$ et $B \subset F.$
+\begin{enumerate}
+\item  Soient, dans $E\times F,$ les points  $(x,x')\notin A \times B$ et $(y,y') \notin A \times B.$
+Supposons que $x \in A$ et $y \notin A;$  Montrez qu'il existe une partie connexe entièrement contenue
+dans le complémentaire de $A \times B$ qui contient $(x,x')$ et $(y,y')$. 
+\item En déduire, sous les présentes hypothèses de cette quatrième question, que le complémen\-taire
+de  $A \times B$ dans $E \times F$ est connexe.
+\end{enumerate}
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item
+ 
+\begin{enumerate}
+\item Si  $x \in\mathrm{Fr} (A) = \bar A \cap \overline{E \setminus A}$ , alors $\forall n \in \Nn^*$
+la boule $B(x,{\frac 1 n})$ rencontre nécessairement $A$  (respectivement $E \setminus A$). Soit donc (axiome du choix)
+$x_n $ (respectivement $y_n$) dans  $B(x,{\frac 1 n}) \cap A$ (respectivement $y_n$ dans $B(x,{\frac 1 n})\cap (E \setminus A).$
+Alors les suites $x_n$ et $y_n$ répondent clairement à la question : 
+On a une suite $(x_n)$ d'éléments de $A$ et une suite $(y_n)$ d'éléments du complémentaire
+$E \setminus A$ de $A$ dans $E,$ qui convergent l'une et l'autre vers $x.$
+
+\item On voit, qu'en posant pour $n \ge 1,$ d'une part $x_n=\frac 12-{\frac 1  {4n}}$ et d'autre part,
+$y_n=\frac 12+{\frac 1 {4n}},$ on obtient, respectivement comme plus haut, une suite de points dans $A$
+et une autre dans $E \setminus A$ qui convergent vers le même point $\frac 12 \in A$ qui, adhérent 
+à $A$ comme à son complémentaire dans $E$ est donc dans la frontière de $A$ dans $E.$ Par contre,
+si $x \in A$ est différent de $+\frac 12$, on voit que la boule (dans $E$) de centre $x$ et de rayon
+$\frac 12 - x>0$ ne rencontre pas le complémentaire de $A$ et qu'en conséquence $[0, \frac 12[$ est
+l'intérieur de $A$ {\it dans} E. 
+
+A contrario une boule de centre $0$ et de rayon strictement positif rencontre toujours le complémentaire
+de $A$ {\it dans} $\Rr$ ce qui permet aisément de voir que la frontière de $A$ {\it dans} $\Rr$ est
+$\{0,\frac 12\}$.
+\end{enumerate}
+   
+\item
+Soient $E$ et $F$ deux espaces métriques respectivement au moyen des distances $d$ et
+$d'$.
+
+\begin{enumerate}
+\item Pour abréger les notations posons: $\delta=\sup(d,d').$ C'est sur $E \times F,$ la distance donnée
+par la formule:
+$$\delta \bigl( (x,x'),(y,y')\bigr) = \sup\bigl(d(x,y),d'(x',y')\bigr)$$
+
+Une boule pour $\delta$ n'est donc rien d'autre que le produit cartésien d'une boule pour $d$ avec
+une boule pour $d'.$ Or ces produits cartésiens forment précisément une base d'ouverts qui définie
+la topologie produit qui est donc aussi la topologie associée à la métrique $\delta.$
+
+\item Soient $A\subset E$ et $B\subset F$. Soit  $(x,x')\in A\times B \setminus \mathrm{Fr} (A\times B)$ 
+dans l'intérieur de $A\times B$ dans $E \times F.$ Cet intérieur est un ouvert pour la topologie
+produit. La définition de cette topologie produit d'être engendrée par la base des produits cartésiens d'ouverts de $E$ avec des ouverts
+de $F$ a comme conséquence l'existence d'un ouvert $U_x$ de $E$ qui contient $x$ et d'un autre
+$U_{x'}$ de $F$ qui contient $x'$  tels que $U_{x}\times U_{x'}$  soient entièrement contenus dans
+cet intérieur de $A\times B$ et donc à fortiori dans $A\times B$ lui même. Mais celà n'est possible
+que si $U_{x}$ et $U_{x'}$ sont respectivement entièrement inclus dans $A$ et $B$ ce qui implique
+que $x$ et $x'$ sont respectivement intérieurs dans $A$ et $B.$ Réciproquement si $x$ est intérieur
+à $A$ et $x'$ intérieurs à $B$ et que $U_{x}$ et $U_{x'}$ soient alors des ouverts pour lesquels
+$x\in U_{x}\subset A$ et $x'\in  U_{x'}\subset B,$ on voit que $U_{x}\times U_{x'}\subset A \times B$
+est un ouvert pour la topologie qui contient $(x,x')$ qui est donc intérieur à $A\times B.$
+$A  \setminus \mathrm{Fr} (A)$ de $A$ dans $E$ avec l'intérieur $ B \setminus \mathrm{Fr} ( B)$ de $B$
+dans $F.$
+\end{enumerate}
+
+\item
+ $E$ et $F$ sont toujours comme dans la deuxième question \c{c}i dessus.
+
+\begin{enumerate}
+\item Si $( \xi_n, \xi'_n)$ est une suite de points dans le complémentaire $E\times F \setminus A\times B$ de
+$A\times B$ dans $E \times F,$ désignons par $N_1$ ( respectivement $N_2$ ) l'ensemble des $n \in \Nn$ pour lesquels
+$\xi_n \notin A$ ( respectivement $\xi'_n \notin B.$ ) L'hypothèse montre que: $\Nn=N_1 \cup N_2.$
+$\Nn$ étant un ensemble infini, il faut bien qu'au moins l'une des deux parties $N_1$ ou $N_2$
+le soit aussi. Si par exemple $N_1$ est infini, on peut ranger ses éléments en ordre croissant 
+$$n_0<n_1<n_2<.....<n_k<n_{k+1}<...$$
+mais alors, par définition, la suite extraite $\xi_{n_k}$ a tous ses termes  dans $E \setminus A.$
+Mutatis mutandis lorsque  $N_2$  est infini, ce qui est assuré dès lors que $N_1$ ne le serait pas.
+
+\item Commen\c{c}ons par montrer, par exemple, que: $\mathrm{Fr} (A) \times \overline B \subset 
+\mathrm{Fr} (A \times B) .$ En effet si $(x,x')\in \mathrm{Fr} (A) \times \overline B, $
+il existe une suite $b_n$ dans $B$ qui converge vers $x' \in \bar B.$ De la même manière,
+on trouve une suite $a_n$ d'éléments de $A$ qui converge vers $x \in \mathrm{Fr} (A) \subset \bar A.$
+Mais aussi, comme on l'a vu plus haut, une suite d'éléments $c_n$ dans le complémentaire $E \setminus A$
+de $A$ dans $E$ qui converge aussi vers $x.$ Mais alors $(a_n, b_n)$ est une suite de points de
+$A \times B$ qui converge vers $(x,x')$ et $(c_n,b_n)$ est une suite de points du complémentaire de
+$A \times  B$ qui converge aussi vers $(x,x')$ qui se trouve donc à la fois dans l'adhérence de 
+$A \times B$ et de son complémentaire cqfd. En renversant les rôles de $A$ et $B$, on voit comment montrer que:
+$\overline A \times\mathrm{Fr} ( B) \subset  \mathrm{Fr} (A \times B) .$ Ne reste donc plus qu'à montrer
+l'inclusion:
+$\mathrm{Fr} (A \times B) \subset \bigl( \mathrm{Fr} (A) \times \overline B \bigr) \cup 
+\bigl( \overline A \times\mathrm{Fr} ( B) \bigr).$ Or,  $(x,x')\in \mathrm{Fr} (A \times B),$
+est la limite d'une suite de points $( \xi_n, \xi'_n)$  dans le complémentaire $E\times F \setminus A\times B$ de
+$A\times B$ dans $E \times F,$ comme aussi la limite  d'une suite de points $( \eta_n, \eta'_n)$ 
+ de $A\times B,$ deuxième observation qui montre immédiatement que $x \in \bar A$ et $x' \in \bar B.$
+Enfin on a vu en a) immédiatement plus haut, qu'on pouvait   extraire $\xi_{n_k}$    
+dans $E \setminus A$ de la suite $x_n$  ou $\xi'_{n'_k}$   dans $E \setminus B$ de la suite 
+$x'_n$ qui assure que $x$ est dans l'adhérence de $E \setminus A$ ou que $x'$ est dans celle de
+$F \setminus  B$ ce qui assure que $x \in \mathrm{Fr} (A)$ ou $x' \in \mathrm{Fr} (B),$ et démontre
+la dernière inclusion recherchée.
+\end{enumerate}
+
+\item
+
+\begin{enumerate}
+\item L'hypothèse   $(x,x')\notin A \times B$ et $x \in A$ implique que $x'\notin B,$ si bien
+que $E\times \{ x'\}$ est entièrement contenu dans le complémentaire de $A \times B.$  
+ Evidemment  $y \notin A$ implique que $\{y\}\times F$ est aussi entièrement contenu dans
+ce même complémentaire de $A \times B.$ 
+
+Mais alors la partie  $E\times \{ x'\}\cup \{y\}\times F$ est connexe pour la raison que 
+$E\times \{ x'\}$ et $\{y\}\times F$ respectivement homéomorphes à $E$ et $F$ sont connexes
+et que leur intersection qui est le point $(y,x')$ est non vide. Cette partie répond donc à la question.
+
+
+\item Prenons $(x,x')\notin A \times B$ et $(y,y') \notin A \times B.$ exactement comme ci-dessus et qui sont
+dans la même composante connexe de 
+$(E \times F) \setminus (A \times B).$  Soit maintenant \linebreak
+$(z,z')\in (E \times F) \setminus (A \times B);$ si $z \notin A,$ le raisonnement du a) se répète
+pour voir que $(z,z')$ est raccordé à $(x,x')$ par une partie connexe. Mais si $z \in A,$ le
+a) montre que $(z,z')$ est raccordé à $(y,y')$ par une partie connexe, et donc aussi à  $(x,x')$ 
+qui a donc $(E \times F) \setminus (A \times B)$ tout entier comme composante connexe.
+\end{enumerate}
+\end{enumerate}
+\fincorrection
+\finexercice

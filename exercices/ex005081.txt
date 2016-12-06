@@ -1,0 +1,46 @@
+\exercice{5081, rouget, 2010/06/30}
+\enonce[***]
+Résoudre le système $\left\{
+\begin{array}{l}
+\cos a+\cos b+\cos c=0\\
+\sin a+\sin b+\sin c=0
+\end{array}\right.$ où $a$, $b$ et $c$ sont trois réels.
+\finenonce
+
+\noindication
+
+\correction
+\begin{align*}
+\left\{
+\begin{array}{l}
+\cos a+\cos b+\cos c=0\\
+\sin a+\sin b+\sin c=0
+\end{array}
+\right.&\Leftrightarrow(\cos a+\cos b+\cos c)+i(\sin a+\sin b+\sin c)=0\Leftrightarrow e^{ia}+e^{ib}+e^{ic}=0\\
+ &\Rightarrow|e^{ia}+e^{ib}|=|-e^{ic}|=1\Leftrightarrow|e^{ia/2}e^{ib/2}(e^{i(a-b)/2}+e^{-i(a-b)/2})|=1\\
+ &\Leftrightarrow|\cos\frac{a-b}{2}|=\frac{1}{2}\\
+ &\Leftrightarrow\frac{a-b}{2}\in\left(\frac{\pi}{3}+\pi\Zz\right)\cup\left(-\frac{\pi}{3}+\pi\Zz\right)\Leftrightarrow
+a-b\in\left(\frac{2\pi}{3}+2\pi\Zz\right)\cup\left(-\frac{2\pi}{3}+2\pi\Zz\right)\\
+ &\Leftrightarrow\exists k\in\Zz,\;\exists\varepsilon\in\{-1,1\}/\;b=a+\varepsilon\frac{2\pi}{3}+2k\pi.
+\end{align*}
+
+Par suite, nécessairement, $e^{ib}=je^{ia}$ ou $e^{ib}=j^2e^{ia}$. Réciproquement, si $e^{ib}=je^{ia}$ ou
+encore $b=a+\frac{2\pi}{3}+2k\pi$,
+
+$$e^{ia}+e^{ib}+e^{ic}=0\Leftrightarrow e^{ic}=-(e^{ia}+e^{ib})=-(1+j)e^{ia}=j^2e^{ia}\Leftrightarrow\exists
+k'\in\Zz/\;c=a-\frac{2\pi}{3}+2k'\pi,$$
+
+et si $e^{ib}=j^2e^{ia}$ ou encore
+$b=a-\frac{2\pi}{3}+2k\pi$,
+
+$$e^{ia}+e^{ib}+e^{ic}=0\Leftrightarrow e^{ic}=-(e^{ia}+e^{ib})=-(1+j^2)e^{ia}=je^{ia}\Leftrightarrow\exists
+k'\in\Zz/\;c=a+\frac{2\pi}{3}+2k'\pi.$$
+
+\begin{center}
+\shadowbox{
+$\mathcal{S}=\{(a,a+\varepsilon\frac{2\pi}{3}+2k\pi,a-\varepsilon\frac{2\pi}{3}+2k'\pi),\;a\in\Rr,\;
+\varepsilon\in\{-1,1\},\;(k,k')\in\Zz^2\}.$
+}
+\end{center}
+\fincorrection
+\finexercice

@@ -1,0 +1,20 @@
+\exercice{6926, ruette, 2013/01/24}
+\enonce[Fonction de répartition, indépendance]
+Soit $X_1,\ldots, X_n$ des variables aléatoires indépendantes de même loi 
+exponentielle
+$\mathcal{E}(1)$ et $Z=\min(X_1,\ldots,X_n)$. Déterminer la loi de $Z$.
+\finenonce
+\noindication
+
+\correction
+\def\I1{{ \rm 1\:\!\!\! l}}
+$P(Z>t)=P(X_1>t, X_2>T,\ldots, X_n>t)=P(X_1>t)P(X_2>t)\cdots P(X_n>t)$
+par indépendance. Comme $P(X>t)=1-P(X\leq t)$, on a
+$\displaystyle
+1-F_Z(t)=\prod_{1\leq i\leq n} (1-F_{X_i}(t)).$\\
+Comme $F_{X_i}(t)=1-e^{-t}$ si $t\geq 0$ et $F_{X_i}(t)=0$ sinon, on trouve
+que $F_Z(t)=1-e^{-nt}$ si $t\geq 0$ et $F_Z(t)=0$ sinon. 
+La densité de $Z$ est donc $\I1_{\Rr_+}ne^{-nt}$. Par conséquent, 
+$Z$ est de loi exponentielle de paramètre $n$.
+\fincorrection
+\finexercice

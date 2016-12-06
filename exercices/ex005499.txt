@@ -1,0 +1,24 @@
+\exercice{5499, rouget, 2010/07/10}
+\enonce[**]
+Soit $f$ continue strictement positive sur $[0,1]$. Pour $n\in\Nn$, on pose $I_n=\int_{0}^{1}f^n(t)\;dt$.
+Montrer que la suite $u_n=\frac{I_{n+1}}{I_n}$ est définie et croissante.
+\finenonce
+
+\noindication
+
+\correction
+L'application $(f,g)\mapsto\int_{0}^{1}f(t)g(t)\;dt$ est un produit scalaire sur $C^0([0,1],\Rr)$. D'après l'inégalité de \textsc{Cauchy}-\textsc{Schwarz},
+ 
+\begin{align*}\ensuremath
+I_nI_{n+2}&=\int_{0}^{1}f^n(t)\;dt\int_{0}^{1}f^{n+2}(t)\;dt=\int_{0}^{1}\left(\sqrt{(f(t))^n}\right)^2\;dt\int_{0}^{1}\left(\sqrt{(f(t))^{n+2}}\right)^2\;dt\\
+ &\geq\left(\int_{0}^{1}\sqrt{(f(t))^n}\sqrt{(f(t))^{n+2}}\;dt\right)^2=\left(\int_{0}^{1}f^{n+1}(t)\;dt\right)^2=I_{n+1}^2
+\end{align*}
+Maintenant, comme $f$ est continue et strictement positive sur $[0,1]$, $I_n$ est strictement positif pour tout naturel $n$. On en déduit que $\forall n\in\Nn,\;\frac{I_{n+1}}{I_n}\leq\frac{I_{n+2}}{I_{n+1}}$ et donc que
+
+\begin{center}
+\shadowbox{
+la suite $\left(\frac{I_{n+1}}{I_n}\right)_{n\in\Nn}$ est définie et croissante.
+}
+\end{center}
+\fincorrection
+\finexercice

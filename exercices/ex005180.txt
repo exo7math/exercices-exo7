@@ -1,0 +1,53 @@
+\exercice{5180, rouget, 2010/06/30}
+\enonce[***T]
+Dans $E=\Rr^\Rr$, étudier la liberté des familles suivantes $A$ de vecteurs de $E$~:
+\begin{enumerate}
+\item  $a$, $b$ et $c$ étant trois réels donnés, $A=(f_a,f_b,f_c)$ où, pour tout réel $x$, $f_u(x)=\sin(x+u)$.
+\item  $A=(f_n)_{n\in\Zz}$ où, pour tout réel $x$, $f_n(x)=nx+n^2+1$.
+\item  $A=(x\mapsto x^\alpha)_{\alpha\in\Rr}$ (ici $E=(]0;+\infty[)^2$).
+\item  $A=(x\mapsto|x-a|)_{a\in\Rr}$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  Notons respectivement $g$ et $h$, les fonctions sinus et cosinus.
+
+$f_a=\cos a.g+\sin a.h$, $f_b=\cos b.g+\sin b.h$ et $f_c=\cos c.g+\sin c.h$. Donc, $f_a$, $f_b$ et $f_c$ sont trois
+combinaisons linéaires des deux fonctions $g$ et $h$ et constituent donc une famille liée ($p+1$ combinaisons linéaires
+de $p$ vecteurs donnés constituent une famille liée).
+
+\item  $f_0$, $f_1$ et $f_2$ sont trois combinaisons linéaires des deux fonctions $x\mapsto1$ et $x\mapsto x$. Donc,
+la famille $(f_0,f_1,f_2)$ est une famille liée puis la famille $(f_n)_{n\in\Zz}$ est liée en tant que sur-famille
+d'une famille liée.
+
+\item  Pour $\alpha$ réel donné et $x>0$, posons $f_\alpha(x)=x^\alpha$.
+
+Soient $n$ un entier naturel supérieur ou égal à $2$, puis $(\alpha_1,...,\alpha_n)\in\Rr^n$ tel que
+$\alpha_1<...<\alpha_n$. Soit encore $(\lambda_1,...,\lambda_n)\in\Rr^n$.
+
+$$\sum_{k=1}^{n}\lambda_kf_{\alpha_k}=0\Rightarrow\forall
+x\in]0;+\infty[,\;\sum_{k=1}^{n}\lambda_kx^{\alpha_k}=0\Rightarrow\forall
+x\in]0;+\infty[,\;\sum_{k=1}^{n}\lambda_kx^{\alpha_k-\alpha_n}=0,$$
+
+(en divisant les deux membres par $x^{\alpha_n}$). Dans cette dernière égalité, on fait tendre $x$ vers
+$+\infty$ et on obtient $\lambda_n=0$. Puis, par récurrence descendante, $\lambda_{n-1}=...=\lambda_1=0$. On a montré
+que toute sous-famille finie de la famille $(f_\alpha)_{\alpha\in\Rr}$ est libre et donc, la famille
+$(f_\alpha)_{\alpha\in\Rr}$ est libre.
+
+\item  Pour $a$ réel donné et $x$ réel, posons $f_a(x)=|x-a|$. Soient $n$ un
+entier naturel supérieur ou égal à $2$, puis $a_1$,...,$a_n$, $n$ réels deux à deux distincts. Soit
+$(\lambda_1,...,\lambda_n)\in\Rr^n$ tel que $\sum_{k=1}^{n}\lambda_kf_{a_k}=0$.
+
+S'il existe $i\in\{1,...,n\}$ tel que $\lambda_i\neq 0$ alors,
+
+$$f_{a_i}=-\frac{1}{\lambda_i}\sum_{k\neq i}^{}\lambda_kf_{a_k}.$$
+
+Mais cette dernière égalité est impossible car $f_{a_i}$ n'est pas dérivable en $a_i$ alors que
+$-\frac{1}{\lambda_i}\sum_{k\neq i}^{}\lambda_kf_{a_k}$ l'est. Donc, tous les $\lambda_i$ sont nuls.
+
+\end{enumerate}
+\fincorrection
+\finexercice

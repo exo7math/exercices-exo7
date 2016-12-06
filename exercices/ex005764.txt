@@ -1,0 +1,73 @@
+\exercice{5764, rouget, 2010/10/16}
+\enonce[*** I Dénombrement de parenthésages]
+\label{ex:rou20x}
+\begin{enumerate}
+ \item  Soit $E$ un ensemble non vide muni d'une loi interne et $a_n$ le nombre de parenthésages possibles d'un produit de $n$ éléménts de $E$ (($a_1 = 1$ conventionnellement), $a_2 = 1$, $a_3 = 2$, $a_4 = 5$, ...). Montrer que pour tout $n\geqslant 2$, $a_n =\sum_{k=1}^{n-1}a_ka_{n-k}$.
+
+\item  Soit $f$ la série entière associée à la suite $(a_n)$. On suppose momentanément le rayon $R$ de cette série strictement positif.  Montrer que pour tout $x$ de $]-R,R[$, $(f(x))^2 -f(x)+ x = 0$.
+
+\item  Calculer $R$ et $f$.
+
+\item  En déduire $a_n$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Soient $n\geqslant2$ puis $k\in\llbracket1,n-1\rrbracket$. On met une parenthèse autour de $X_1...X_k$ et une autour de $X_{k+1}...X_n$. Ensuite, pour chacun des $a_k$ parenthésages de $X1...X_k$, il y a $a_{n-k}$ parenthésages possibles de $X_{k+1}...X_n$. Finalement, en faisant varier $k$ de $1$ à $n-1$, on a montré que 
+
+\begin{center}
+\shadowbox{
+$\forall n\geqslant2$, $a_n =\sum_{k=1}^{n-1}a_ka_{n-k}$.
+}
+\end{center}
+
+\item  On suppose momentanément le rayon $R$ de la série entière associé à la suite $(a_n)_{n\in\Nn^*}$ strictement positif. On pose conventionnellement $a_0=0$. Pour $x\in]-R,R[$,
+
+\begin{center}
+$f^2(x)=\left(\sum_{n=0}^{+\infty}a_nx^n\right)^2 =\sum_{n=0}^{+\infty}\left(\sum_{k=0}^{n}a_ka_{n-k}\right)x^n =\sum_{n=2}^{+\infty}\left(\sum_{k=1}^{n-1}a_ka_{n-k}\right)x^n=\sum_{n=2}^{+\infty}a_nx^n= f(x) - x$,
+\end{center}
+
+et donc
+
+\begin{center}
+\shadowbox{
+$\forall x\in]-R,R[$, $f^2(x) = f(x) - x$.
+}
+\end{center}
+
+\item  Nécessairement, pour tout $x$ de $]-R,R[$, $f(x)=\frac{1}{2}(1+\sqrt{1+4x})$ $(I)$ ou $f(x)=  \frac{1}{2}(1-\sqrt{1-4x})$ $(II)$. Ainsi, pour chaque $x\in]-R,R[$, on doit choisir l'une de ces deux expressions. Puisque $f(0)=0$, il faut choisir l'expression $(II)$ quand $x=0$. 
+
+Pour $x\in\left]-\frac{1}{4},\frac{1}{4}\right[$, posons $g(x)=\frac{1}{2}(1-\sqrt{1-4x})$. $g$ est développable en série entière sur $\left]-\frac{1}{4},\frac{1}{4}\right[$ en vertu de théorèmes généraux. Notons $(b_n)_{n\in\Nn}$ la suite des coefficients du développement. Puisque $g(0)=0$, on a $b_0=0=a_0$ et puisque $g'(0)=1$, on a $b_1=1=a_1$. Enfin, la fonction $g$ vérifie $\forall x\in\left]-\frac{1}{4},\frac{1}{4}\right[$, $g^2(x)=g(x)-x$ et donc $\forall n\geqslant2$, $b_n =\sum_{k=1}^{n-1}b_kb_{n-k}$. On en déduit par récurrence que pour tout entier naturel $n$, $b_n=a_n$ et donc $\forall x\in\left]-\frac{1}{4},\frac{1}{4}\right[$, $f(x)=g(x)$.
+
+\begin{center}
+\shadowbox{
+$\forall x\in\left]-\frac{1}{4},\frac{1}{4}\right[$, $f(x)=\frac{1}{2}(1-\sqrt{1-4x})$.
+}
+\end{center}
+
+\item  Pour connaitre les $a_n$, il reste à développer la fonction $g$ en série entière. Pour $x\in\left]-\frac{1}{4},\frac{1}{4}\right[$, 
+
+\begin{center}
+$g(x) =\frac{1}{2}(1-(1-4x)^{1/2})=\frac{1}{2}\left(1-\sum_{n=0}^{+\infty}C_{1/2}^n(-4x)^n\right)=\sum_{n=1}^{+\infty}(-1)^{n-1}C_{1/2}^n2^{2n-1}x^n$.
+\end{center}
+
+Enfin, pour $n\in\Nn^*$,
+
+\begin{align*}\ensuremath
+(-1)^{n-1}C_{1/2}^n2^{2n-1}&=(-1)^{n-1}\frac{\frac{1}{2}\times\left(\frac{1}{2}-1\right)\times\ldots\times\left(\frac{1}{2}-(n-1)\right)}{n!}2^{2n-1}=\frac{2^{n-1}}{n!}\times1\times3\times....\times(2n-3)\\
+ &=\frac{2^{n-1}}{n!}\times\frac{1\times2\times3\times....\times(2n-3)\times(2n-2)}{2\times4\times\ldots\times(2n-2)}=\frac{(2n-2)!}{n!(n-1)!}=\frac{C_{2n-2}^{n-1}}{n}.
+\end{align*}
+
+Donc
+
+\begin{center}
+\shadowbox{
+$\forall n\in\Nn^*$, $a_n =\frac{C_{2n-2}^{n-1}}{n}$.
+}
+\end{center}
+\end{enumerate}
+\fincorrection
+\finexercice

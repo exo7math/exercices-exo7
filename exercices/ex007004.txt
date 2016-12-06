@@ -1,0 +1,46 @@
+\exercice{7004, megy, 2016/04/26}
+
+\enonce[Théorèmes de Thébault et de Van Aubel]
+Soit $ABCD$ un quadrilatère convexe direct. On construit quatre carrés qui s'appuient extérieurement sur les côtés $[AB]$, $[BC]$, $[CD]$ et $[DA]$. Les centres respectifs de ces carrés sont notés $P$, $Q$, $R$ et $S$.
+\begin{enumerate}
+\item Montrer que dans le carré construit sur $[AB]$, on a $p=\frac{a-ib}{1-i}$. Démontrer des relations analogues pour les autres carrés.
+\item Montrer le théorème de Van Aubel : $PQRS$ est un \emph{pseudo-carré}, c'est-à-dire que ses diagonales sont de même longueur et se croisent à angle droit. Pour cela, calculer $\frac{s-q}{r-p}$.
+\item (Théorème de Thébault) Dans le cas particulier où $ABCD$ est un parallélogramme, montrer que $PQRS$ est un carré.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item L'égalité $p=\frac{a-ib}{1-i}$ est équivalente à deux autres assertions ayant un sens géométrique plus clair. D'une part :
+\[p=\frac{a-ib}{1-i} \Leftrightarrow p=\frac{a+b}{2}+i\frac{(a-b)}{2}\]
+(Attention, $a$ et $b$ sont complexes : ceci n'est pas une forme algébrique.)  D'autre part, 
+\[p=\frac{a-ib}{1-i} \Leftrightarrow (1-i)p=a-ib.\]
+Ceci fournit deux façons de prouver le résultat demandé.
+
+\begin{enumerate}
+\item Dans le premier cas, on reconnaît que $(a+b)/2$ est l'affixe du milieu $M$ de $A$ et $B$, que $(a-b)/2$ est l'affixe du vecteur $\frac12 \overrightarrow{BA}$, et que $i(a-b)/2$ correspond à la rotation de $\pi/2$ de ce vecteur. On voit donc que le point d'affixe $\frac{a+b}{2}+i\frac{(a-b)}{2}$ est le point obtenu en translatant $M$ du vecteur  $\frac12\overrightarrow{AA'}$ (avec la notation $A'$ introduite plus haut). Ce point est bien le milieu $P$ du carré.
+
+\item Dans le second cas, on réécrit l'égalité sous la forme 
+\[a-p=i(b-p).\]
+Ceci est vrai car cela signifie que $A$ est l'image de $B$ par la rotation de centre $P$ est d'angle $\pi/2$, ce qui est vrai dans un carré.
+\end{enumerate}
+
+
+\item Il s'agit de montrer que $\frac{s-q}{r-p}=i$. On calcule donc $\frac{s-q}{r-p}$ en utilisant la question  précédente:
+\[
+\frac{s-q}{r-p}
+= \frac{d-ia -(b-ic)}{(c-id)-(a-ib)} 
+=  \frac{d-b+i(c-a)}{c-a+i(b-d)}
+\]
+Là, on voit directement que le numérateur est égal à $i$ fois le dénominateur et c'est terminé (on le voit d'autant plus facilement que l'on sait que c'est ce  que l'on doit montrer : sinon, il faut une étape de simplification supplémentaire).
+
+\item Considérer par exemple des rotations de centres $P, Q, R$ ou $S$ et d'angle $\pi/2$.
+\end{enumerate}
+
+Remarque : il existe une version un peu plus générale du théorème pour un quadrilatère $ABCD$ quelconque.
+\fincorrection
+
+\finexercice
+

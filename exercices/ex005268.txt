@@ -1,0 +1,21 @@
+\exercice{5268, rouget, 2010/07/04}
+\enonce[***I]
+Déterminer le centre de $\mathcal{M}_n(\Kk)$, c'est à dire l'ensemble des éléments de $\mathcal{M}_n(\Kk)$ qui commutent avec tous les éléments de $\mathcal{M}_n(\Kk)$ (utiliser les matrices élémentaires).
+\finenonce
+
+\noindication
+
+\correction
+Soit $A=(a_{k,l})_{1\leq k,l\leq n}\in\mathcal{M}_n(\Kk)$.
+
+Si $A$ commute avec toute matrice, en particulier~:~$\forall(i,j)\in\{1,...,n\}^2,\;AE_{i,j}=E_{i,j}A$. Maintenant,
+
+$$AE_{i,j}=\sum_{k,l}^{}a_{k,l}E_{k,l}E_{i,j}=\sum_{k=1}^{n}a_{k,i}E_{k,j}\;\mbox{et}\;E_{i,j}A=\sum_{k,l}^{}a_{k,l}E_{i,j}E_{k,l}=\sum_{l=1}^{n}a_{j,l}E_{i,l}.$$
+
+On note que si $k\neq i$ ou $l\neq j$, $E_{k,j}\neq E_{i,l}$. Puisque la famille $(E_{i,j})$ est libre, on peut identifier les coefficients et on obtient~:~si $k\neq i$, $a_{k,i}=0$.
+D'autre part, le coefficient de $E_{i,j}$ est $a_{i,i}$ dans la première somme et $a_{j,j}$ dans la deuxième. Ces coefficients doivent être égaux.
+
+Finalement, si $A$ commute avec toute matrice, ses coefficients non diagonaux sont nuls et ses coefficients diagonaux sont égaux. Par suite, il existe un scalaire $\lambda\in\Kk$ tel que $A=\lambda I_n$. Réciproquement, si $A$ est une matrice scalaire, $A$ commute avec toute matrice.
+
+\fincorrection
+\finexercice

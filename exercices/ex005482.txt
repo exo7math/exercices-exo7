@@ -1,0 +1,42 @@
+\exercice{5482, rouget, 2010/07/10}
+\enonce[***]
+Pour $A=(a_{i,j})_{1\leq i,j\leq n}\in\mathcal{M}_n(\Rr)$, $N(A)=\mbox{Tr}(^tAA)$. Montrer que $N$ est une norme vérifiant de plus $N(AB)\leq N(A)N(B)$ pour toutes matrices carrées $A$ et $B$. $N$ est-elle associée à un produit scalaire~?
+\finenonce
+
+\noindication
+
+\correction
+Posons $\varphi~:~(A,B)\mapsto\mbox{Tr}({^t}AB)$. Montrons que $\varphi$ est un produit scalaire sur $\mathcal{M}_n(\Rr)$. 
+\textbf{1ère solution.} \textbullet~$\varphi$ est symétrique. En effet, pour $(A,B)\in(\mathcal{M}_n(\Rr))^2$,
+
+$$\varphi(A,B)=\mbox{Tr}(^{t}AB)=\mbox{Tr}({^t}({^t}AB))=\mbox{Tr}({^t}BA)=\varphi(B,A).$$
+
+\textbullet~$\varphi$ est bilinéaire par linéarité de la trace et de la transposition.
+\textbullet~Si $A=(a_{i,j})_{1\leq i,j\leq n}\in\mathcal{M}_n(\Rr)\setminus\{0\}$, alors
+
+$$\varphi(A,A)=\sum_{i=1}^{n}\left(\sum_{j=1}^{n}a_{i,j}a_{i,j}\right)=\sum_{i,j}^{}a_{i,j}^2>0$$
+car au moins un des réels de cette somme est strictement positif. $\varphi$ est donc définie, positive.
+
+\textbf{2ème solution.} Posons $A=(a_{i,j})$ et $B=(b_{i,j})$. On a
+
+\begin{center}
+$\text{Tr}({^t}AB)=\sum_{j=1}^{n}\left(\sum_{i=1}^{n}a_{i,j}b_{i,j}\right)=\sum_{1\leq i,j\leq n}^{}a_{i,j}b_{i,j}$.
+\end{center}
+Ainsi, $\varphi$ est le produit scalaire canonique sur $\mathcal{M}_n(\Rr)$ et en particulier, $\varphi$ est un produit scalaire sur $\mathcal{M}_n(\Rr)$.
+$N$ n'est autre que la norme associée au produit scalaire $\varphi$ (et en particulier, $N$ est une norme).
+Soit $(A,B)\in(\mathcal{M}_n(\Rr))^2$.
+
+\begin{align*}\ensuremath
+N(AB)^2&=\sum_{i,j}^{}\left(\sum_{k=1}^{n}a_{i,k}b_{k,j}\right)^2\\
+ &\leq\sum_{i,j}^{}\left(\sum_{k=1}^{n}a_{i,k}^2\right)\left(\sum_{l=1}^{n}b_{l,j}^2\right)\;(\mbox{d'après l'inégalité de \textsc{Cauchy}-\textsc{Schwarz}})\\
+ &=\sum_{i,j,k,l}^{}a_{i,k}^2b_{l,j}^2=\left(\sum_{i,k}^{}a_{i,k}^2\right)\left(\sum_{l,j}^{}b_{l,j}^2\right)=N(A)^2N(B)^2,
+\end{align*}
+et donc,
+
+\begin{center}
+\shadowbox{
+$\forall(A,B)\in(\mathcal{M}_n(\Rr))^2,\;N(AB)\leq N(A)N(B)$.
+}
+\end{center}
+\fincorrection
+\finexercice

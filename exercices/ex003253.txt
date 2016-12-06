@@ -1,0 +1,22 @@
+\exercice{3253, quercia, 2010/03/08}
+
+\enonce[Irr{\'e}ductibilit{\'e} de $X^p-a$]
+Soit $ K$ un sous-corps de~$\C$, $a\in K$ et $p\in\N$ premier.
+Montrer que le polyn{\^o}me $X^p-a$ est irr{\'e}ductible sur~$ K$ si et seulement
+s'il n'a pas de racine dans~$ K$.
+\finenonce
+
+\indication 
+Si $X^p-a = PQ$ avec $P,Q\in K[X]$ unitaires non
+constants, factoriser $P$ dans~$\C$ et consid{\'e}rer $P(0)$.
+\finindication
+
+\correction
+On suppose $a\ne 0$ et $X^p-a = PQ$ avec $P,Q\in K[X]$ unitaires
+non constants. Soit $n=\deg(P)\in{[[1,p-1]]}$ et $b=(-1)^nP(0)\in K$.
+$b$ est le produit de cetraines $p$-{\`e}mes de~$a$, donc $b^p = a^n$.
+De plus $n\wedge p = 1$~; soit $nu+pv=1$ une relation de B{\'e}zout.
+On a alors $b^{pu} = a^{nu} = a^{1-pv}$ d'o{\`u} $a = (b^u/a^v)^p$ 
+donc $b^u/a^v\in K$ est racine de $X^p-a$.
+\fincorrection
+\finexercice 

@@ -1,0 +1,146 @@
+\exercice{5170, rouget, 2010/06/30}
+\enonce[**T]
+\begin{enumerate}
+\item  Vérifier qu'il existe une unique application linéaire de $\Rr^3$ dans $\Rr^2$ vérifiant  $f((1,0,0))=(1,1)$
+puis $f((0,1,0))=(0,1)$ et $f((0,0,1))=(-1,1)$. Calculer $f((3,-1,4))$ et $f((x,y,z))$ en général.
+\item  Déterminer $\mbox{Ker}f$. En fournir une base. Donner un supplémentaire de $\mbox{Ker}f$ dans $\Rr^3$ et
+vérifier qu'il est isomorphe à $\mbox{Im}f$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  Si $f$ existe alors nécessairement, pour tout $(x,y,z)\in\Rr^3$~:
+
+$$f((x,y,z))=xf((1,0,0))+yf((0,1,0))+zf((0,0,1))=x(1,1)+y(0,1)+z(-1,1)=(x-z,x+y+z).$$
+
+On en déduit l'unicité de $f$.
+
+Réciproquement, $f$ ainsi définie vérifie bien les trois égalités de l'énoncé. Il reste donc à se convaincre que $f$ est
+linéaire.
+
+Soient $((x,y,z),(x',y',z'))\in(\Rr^3)^2$ et $(\lambda,\mu)\in\Rr^2$.
+
+\begin{align*}
+f(\lambda(x,y,z)+\mu(x',y',z'))&=f((\lambda x+\mu x',\lambda y+\mu y',\lambda z+\mu z'))\\
+ &=((\lambda x+\mu x')-(\lambda z+\mu z'),(\lambda x+\mu x')+(\lambda y+\mu y')+(\lambda z+\mu
+z'))\\
+ &=\lambda(x-z,x+y+z)+\mu(x'-z',x'+y'+z')\\
+ &=\lambda f((x,y,z))+\mu f((x',y',z')).
+\end{align*}
+
+$f$ est donc linéaire et convient. On en déduit l'existence de $f$. On a alors $f((3,-1,4))=(3-4,3-1+4)=(-1,6)$.
+
+\textbf{Remarque.} La démonstration de la linéarité de $f$ ci-dessus est en fait superflue car le cours donne
+l'expression générale d'une application linéaire de $\Rr^n$ dans $\Rr^p$.
+
+\item  Détermination de $\mbox{Ker}f$.
+
+Soit $(x,y,z)\in\Rr^3$.
+
+\begin{align*}
+(x,y,z)\in\Rr^3\Leftrightarrow f((x,y,z))=(0,0)\Leftrightarrow(x-z,x+y+z)=(0,0)\Leftrightarrow
+\left\{
+\begin{array}{l}
+x-z=0\\
+x+y+z=0
+\end{array}
+\right.\Leftrightarrow
+\left\{
+\begin{array}{l}
+z=x\\
+y=-2x
+\end{array}
+\right.
+\end{align*}
+
+Donc, $\mbox{Ker}f=\{(x,-2x,x),\;x\in\Rr\}=\{x(1,-2,1),\;x\in\Rr\}=\mbox{Vect}((1,-2,1))$.
+La famille $((1,-2,1))$ engendre $\mbox{Ker}f$ et est libre. Donc, la famille $((1,-2,1))$ est une base de
+$\mbox{Ker}f$.
+Détermination de $\mbox{Im}f$.
+
+Soit $(x',y')\in\Rr^2$.
+
+\begin{align*}
+(x',y')\in\mbox{Im}f&\Leftrightarrow\exists(x,y,z)\in\Rr^3/\;f((x,y,z))=(x',y')\\
+ &\Leftrightarrow\exists(x,y,z)\in\Rr^3/\;
+\left\{
+\begin{array}{l}
+x-z=x'\\
+x+y+z=y'
+\end{array}
+\right.
+\Leftrightarrow\exists(x,y,z)\in\Rr^3/\;
+\left\{
+\begin{array}{l}
+z=x-x'\\
+y=-2x+x'+y'
+\end{array}
+\right.\\
+ &\Leftrightarrow\mbox{le système d'inconnue}\;(x,y,z)~:~\left\{
+\begin{array}{l}
+z=x-x'\\
+y=-2x+x'+y'
+\end{array}
+\right.
+\;\mbox{a au moins une solution.}
+\end{align*}
+
+Or, le triplet $(0,x'+y',-x')$ est solution et le système proposé admet une solution. Par suite, tout $(x',y')$ de
+$\Rr^2$ est dans $\mbox{Im}f$ et finalement, $\mbox{Im}f=\Rr^2$.
+
+Détermination d'un supplémentaire de $\mbox{Ker}f$.
+
+Posons $e_1=(1,-2,1)$, $e_2=(1,0,0)$ et $e_3=(0,1,0)$ puis $F=\mbox{Vect}(e_2,e_3)$ et montrons que
+$\Rr^3=\mbox{Ker}f\oplus F$.
+
+Tout d'abord, $\mbox{Ker}f\cap F=\{0\}$. En effet~:
+
+\begin{align*}
+(x,y,z)\in\mbox{Ker}f\cap F&\Leftrightarrow\exists(a,b,c)\in\Rr^3/\;(x,y,z)=ae_1=be_2+ce_3\\
+ &\Leftrightarrow\exists(a,b,c)\in\Rr^3/\;
+\left\{
+\begin{array}{l}
+x=a=b\\
+y=-2a=c\\
+z=a=0
+\end{array}
+\right.
+\Leftrightarrow x=y=z=0
+\end{align*}
+
+Vérifions ensuite que $\mbox{Ker}f+F=\Rr^3$.
+
+\begin{align*}
+(x,y,z)\in\mbox{Ker}f+F&\Leftrightarrow\exists(a,b,c)\in\Rr^3/\;(x,y,z)=ae_1+be_2+ce_3\\
+ &\Leftrightarrow\exists(a,b,c)\in\Rr^3/\;
+\left\{
+\begin{array}{l}
+a+b=x\\
+-2a+c=y\\
+a=z
+\end{array}
+\right.
+\Leftrightarrow
+\exists(a,b,c)\in\Rr^3/\;\left\{
+\begin{array}{l}
+a=z\\
+b=x-z\\
+c=y+2z
+\end{array}
+\right.
+\end{align*}
+
+Le système précédent (d'inconnue $(a,b,c)$) admet donc toujours une solution et on a montré que $\Rr^3=\mbox{Ker}f+F$.
+Finalement, $\Rr^3=\mbox{Ker}f\oplus F$ et $F$ est un supplémentaire de $\mbox{Ker}f$ dans $\Rr^3$.
+
+Vérifions enfin que $F$ est isomorphe à $\mbox{Im}f$. Mais, $F=\{(x,y,0),\;(x,y)\in\Rr^2\}$ et
+$\begin{array}[t]{cccc}
+\varphi~:&F&\rightarrow&\Rr^2\\
+ &(x,y,0)&\mapsto&(x,y)
+\end{array}$ est clairement un isomorphisme de $F$ sur $\mbox{Im}f(=\Rr^2)$.
+\end{enumerate}
+\fincorrection
+\finexercice

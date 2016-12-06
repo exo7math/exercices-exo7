@@ -1,0 +1,27 @@
+\exercice{5648, rouget, 2010/10/16}
+\enonce[***]
+Soit $A$ une matrice carrée complexe de format $n$ ($n\geqslant 2$) telle que pour tout élément $M$ de $M_n(\Cc)$, on ait $\text{det}(A+M)=\text{det}A+\text{det}M$. Montrer que $A = 0$.
+\finenonce
+
+\noindication
+
+\correction
+$A = 0$ convient.
+
+Réciproquement, on a tout d'abord $\text{det}(A+A)=\text{det}A+\text{det}A$ ou encore $(2^n-2)\text{det}A=0$ et, puique $n\geqslant2$, $\text{det}A = 0$. Donc,
+
+\begin{center}
+$A\notin GL_n(\Kk)$ et $A$ vérifie : $\forall M\in M_n(\Kk)$, $\text{det}(A+M)=\text{det}M$.
+\end{center}
+
+Supposons $A\neq 0$. Il existe donc une colonne $C_j\neq0$.
+
+La colonne $-C_j$ n'est pas nulle et d'après le théorème de la base incomplète, on peut construire une matrice $M$ inversible dont la $j$-ème colonne est $-C_j$. Puisque $M$ est inversible, $\text{det}M\neq0$ et puisque la $j$-ème colonne de la matrice $A+M$ est nulle, $\text{det}(A+M)= 0$. Pour cette matrice $M$, on a $\text{det}(A+M)\neq\text{det}A +\text{det}M$ et $A$ n'est pas solution du problème. Finalement
+
+\begin{center}
+\shadowbox{
+$(\forall M\in M_n(\Kk)$, $\text{det}(A+M)=\text{det}A+\text{det}M)/lra A = 0$.
+}
+\end{center}
+\fincorrection
+\finexercice

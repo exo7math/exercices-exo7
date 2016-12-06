@@ -1,0 +1,119 @@
+\exercice{6968, exo7, 2014/04/08}
+\video{cMc2VRPKaKI}
+\enonce
+Décomposer les fractions suivantes en éléments simples sur $\Rr$, 
+en raisonnant par substitution pour obtenir les coefficients.
+\begin{enumerate}
+\item % De 444, cousquer
+$F=\frac{X^5+X^4+1}{X^3-X}$
+
+\item % De 444, cousquer
+$G=\frac{X^3+X+1}{(X-1)^3(X+1)}$
+
+\item % De 444, cousquer
+$H=\frac{X}{(X^2+1)(X^2+4)}$
+
+\item % De 445, cousquer
+$K=\frac{2X^4+X^3+3X^2-6X+1}{2X^3-X^2}$
+\end{enumerate}
+
+\finenonce 
+
+\indication
+Les fractions $F, K$ ont une partie polynomiale, elles s'écrivent
+
+$F=X^2+X+1+\frac{X^2+X+1}{X^3-X}$
+
+$K=X+1+\frac{4X^2-6X+1}{2X^3-X^2}$
+\finindication
+
+\correction\ 
+\begin{enumerate}
+
+\item $F=\frac{X^5+X^4+1}{X^3-X}$.
+
+Pour obtenir la partie polynomiale, on fait une division euclidienne : 
+$X^5+X^4+1=(X^3-X)(X^2+X+1)+ X^2+X+1$. Ce qui donne $F=X^2+X+1+F_1$, 
+où $F_1=\frac{X^2+X+1}{X^3-X}$. Puisque $X^3-X=X(X-1)(X+1)$, 
+la décomposition en éléments simples est de la forme 
+$$F_1 = \frac{X^2+X+1}{X(X-1)(X+1)}=\frac{a}{X}+\frac{b}{X-1}+\frac{c}{X+1}$$
+
+Pour obtenir $a$ :
+\begin{itemize}
+  \item on multiplie l'égalité par $X$ : $\frac{X(X^2+X+1)}{X(X-1)(X+1)}=X \left(\frac{a}{X}+\frac{b}{X-1}+\frac{c}{X+1}\right)$,
+  \item on simplifie $\frac{X^2+X+1}{(X-1)(X+1)}= a+\frac{bX}{X-1}+\frac{cX}{X+1}$,
+  \item on remplace $X$ par $0$ et on obtient $-1= a+0+0$, donc $a=-1$.
+\end{itemize}
+
+ De même, en multipliant par $X-1$ et en remplaçant $X$ par $1$, il vient $b=\frac{3}{2}$.
+ Puis en multipliant par $X+1$ et en remplaçant $X$ par $-1$, on trouve $c=\frac{1}{2}$.
+
+D'où
+$$\frac{X^5+X^4+1}{X^3-X} = X^2+X+1-\frac{1}{X}+\frac{\tfrac12}{X+1}+\frac{\tfrac32}{X-1}$$
+
+\item $G=\frac{X^3+X+1}{(X-1)^3(X+1)}$. 
+
+La partie polynomiale est nulle. La décomposition en éléments simples est de la forme
+$G=\frac{a}{(X-1)^3}+\frac{b}{(X-1)^2}+\frac{c}{X-1}+\frac{d}{X+1}$.
+
+\begin{itemize}
+  \item En multipliant les deux membres de l'égalité par $(X-1)^3$, 
+en simplifiant puis en remplaçant $X$ par $1$, 
+on obtient $a=\frac32$. 
+
+  \item De même, en multipliant par $X+1$, 
+en simplifiant puis en remplaçant $X$ par $-1$, 
+on obtient $d=\frac18$.
+
+  \item En multipliant par $X$ et en regardant la limite 
+  quand $X\to +\infty$, on obtient $1=c+d$. Donc $c=\frac78$.
+
+  \item En remplaçant $X$ par $0$, il vient $-1=-a+b-c+d$.
+  Donc $b = \frac54$.
+\end{itemize}
+
+Ainsi :
+$$G = \frac{X^3+X+1}{(X-1)^3(X+1)} = \frac{\tfrac32}{(X-1)^3} + \frac{\tfrac54}{(X-1)^2} 
++ \frac{\tfrac78}{X-1}  + \frac{\tfrac18}{X+1}$$
+
+\item $H=\frac{X}{(X^2+1)(X^2+4)}$.
+
+Puisque $X^2+1$ et $X^2+4$ sont irréductibles sur $\Rr$, la décomposition en éléments simples sera de la forme 
+$$\frac{X}{(X^2+1)(X^2+4)} = \frac{aX+b}{X^2+1} + \frac{cX+d}{X^2+4}$$
+
+  \begin{itemize}
+    \item En remplaçant $X$ par $0$, on obtient $0=b+\frac{1}{4}d$.
+    \item En multipliant les deux membres par $X$, on obtient 
+    $\frac{X^2}{(X^2+1)(X^2+4)} = \frac{aX^2+bX}{X^2+1} + \frac{cX^2+dX}{X^2+4}$.
+    En calculant la limite quand $X\to +\infty$, on a $0=a+c$.
+    \item Enfin, en évaluant les fractions en $X=1$ et $X=-1$, 
+    on obtient $\frac{1}{10}=\frac{a+b}{2}+\frac{c+d}{5}$ et 
+    $\frac{-1}{10}=\frac{-a+b}{2}+\frac{-c+d}{5}$.
+  \end{itemize}
+
+La résolution du système donne $b=d=0$, $a=\frac{1}{3}$, $c=-\frac{1}{3}$ et donc 
+$$\frac{X}{(X^2+1)(X^2+4)} = \frac{\frac{1}{3}X}{X^2+1} - \frac{\frac{1}{3}X}{X^2+4}$$
+
+\item $K=\frac{2X^4+X^3+3X^2-6X+1}{2X^3-X^2}$.
+
+Pour la partie polynomiale, on fait la division euclidienne:
+$$2X^4+X^3+3X^2-6X+1=(2X^3-X^2)(X+1)+(4X^2-6X+1)$$ 
+ce qui donne 
+$K=X+1+K_1$ où $K_1=\frac{4X^2-6X+1}{2X^3-X^2}$.
+Pour trouver la décomposition en éléments simples de $K_1$, on factorise son numérateur: 
+$2X^3-X^2=2X^2(X-\frac{1}{2})$, ce qui donne une décomposition de la forme
+$K_1=\frac{a}{X^2}+\frac{b}{X}+\frac{c}{X-\frac{1}{2}}$.
+
+On obtient alors $a$ en multipliant les deux membres de l'égalité par
+$X^2$ puis en remplaçant $X$ par 0: $a=-1$. On obtient de
+m\^eme $c$ en multipliant par $X-\frac{1}{2}$ et en remplaçant $X$
+par $\frac{1}{2}$: $c=-2$. Enfin on trouve $b$ en identifiant pour une
+valeur particuli\`ere non encore utilisée, par exemple $X=1$, ou mieux en
+multipliant les deux membres par $X$ et en passant \`a la limite pour
+$X\to+\infty$: $b=4$. Finalement:
+$$\frac{2X^4+X^3+3X^2-6X+1}{2X^3-X^2}=X+1-\frac{1}{X^2}+\frac{4}{X}-\frac{2}{X-\frac{1}{2}}$$
+\end{enumerate}
+
+\fincorrection
+\finexercice
+

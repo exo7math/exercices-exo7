@@ -1,0 +1,66 @@
+\exercice{56, bodin, 1998/09/01}
+\video{sVzO_9JjHTM}
+\enonce
+\begin{enumerate}
+        \item Soient $z_1$, $z_2$, $z_3$ trois nombres complexes distincts
+        ayant le m\^eme cube.
+
+        Exprimer $z_2$ et $z_3$ en fonction de $z_1$.
+
+        \item Donner, sous forme polaire, les solutions dans $\Cc$ de :
+        $$ z^6+(7-i)z^3 -8 -8i = 0.$$
+        (Indication : poser $Z=z^3$ ; calculer $(9+i)^2$)
+\end{enumerate}
+
+\finenonce 
+
+\noindication
+
+\correction
+Soient $z_{1},z_{2},z_{3}$ trois nombres complexes
+\emph{distincts} ayant le m\^eme cube.
+\begin{enumerate}
+\item
+$z_{1}\neq0$ car sinon on aurait $z_{1}=z_{2}=z_{3}=0$. Ainsi
+$(\frac{z_{2}}{z_{1}})^3=(\frac{z_{3}}{z_{1}})^3=1$. Comme les
+trois nombres $1,(\frac{z_{2}}{z_{1}})$ et $(\frac{z_{3}}{z_{1}})$
+sont distincts on en d\'eduit que ce sont les trois racines
+cubiques de 1. Ces racines sont $1, j=e^{\frac{2i\pi}{3}}$ et $
+j^2=e^{-\frac{2i\pi}{3}}$. A une permutation pr\`es des indices 2
+et 3 on a donc :
+$$
+  z_{2}=jz_{1} \qquad\text{ et }\qquad z_{3}=j^2z_{1}.
+$$
+\item Soit $z\in\C$. On a les \'equivalences suivantes :
+\begin{align*}
+z^6+(7-i)z^3-8-8i=0 &\Leftrightarrow z^3\text{ est solution de }Z^2+(7-i)Z-8-8i=0\\
+\intertext{ Etudions l'\'equation $Z^2+(7-i)Z-8-8i=0$.
+$\Delta=(7-i)^2+4(8+8i)=80+18i=(9+i)^2$. Les solutions sont donc
+$-8$ et $1+i$. Nous pouvons reprendre notre suite d'\'equivalences
+: }
+z^6+(7-i)z^3-8-8i=0 &\Leftrightarrow z^3\in\{-8,1+i\} \\
+  &\Leftrightarrow z^3=(-2)^3 \quad\text{ ou }\quad z^3=(\sqrt[6]{2}e^{i\frac{\pi}{12}})^3\\
+  &\Leftrightarrow z\in\{-2,
+              -2e^{\frac{2i\pi}{3}},
+              -2e^{-\frac{2i\pi}{3}}\}
+         \text{ ou }
+        z\in\{\sqrt[6]{2}e^{i\frac{\pi}{12}},
+              \sqrt[6]{2}e^{i\frac{9\pi}{12}},
+              \sqrt[6]{2}e^{i\frac{17\pi}{12}}\}\\
+  &\Leftrightarrow z\in\{-2,
+               2e^{\frac{i\pi}{3}},
+               2e^{-\frac{i\pi}{3}},
+              \sqrt[6]{2}e^{i\frac{\pi}{12}},
+              \sqrt[6]{2}e^{i\frac{3\pi}{4}},
+              \sqrt[6]{2}e^{i\frac{17\pi}{12}}\}.
+\end{align*}
+L'ensemble des solutions est donc :
+           $$\{-2,
+               2e^{\frac{i\pi}{3}},
+               2e^{-\frac{i\pi}{3}},
+              \sqrt[6]{2}e^{i\frac{\pi}{12}},
+              \sqrt[6]{2}e^{i\frac{3\pi}{4}},
+              \sqrt[6]{2}e^{i\frac{17\pi}{12}}\}.$$
+\end{enumerate}
+\fincorrection
+\finexercice

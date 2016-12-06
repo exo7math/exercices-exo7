@@ -1,0 +1,101 @@
+\exercice{5239, rouget, 2010/06/30}
+\enonce[**T]
+Déterminer $u_n$ en fonction de $n$ et de ses premiers termes dans chacun des cas suivants~:
+
+\begin{enumerate}
+\item  $\forall n\in\Nn,\;4u_{n+2}=4u_{n+1}+3u_n$.
+\item  $\forall n\in\Nn,\;4u_{n+2}=u_n$.
+\item  $\forall n\in\Nn,\;4u_{n+2}=4u_{n+1}+3u_n+12$.
+\item  $\forall n\in\Nn,\;\frac{2}{u_{n+2}}=\frac{1}{u_{n+1}}-\frac{1}{u_n}$.
+\item  $\forall n\geq2,\;u_n= 3u_{n-1}-2u_{n-2}+n^3$.
+\item  $\forall n\in\Nn,\;u_{n+3}-6u_{n+2}+11u_{n+1}-6u_n=0$.
+\item  $\forall n\in\Nn,\;u_{n+4}-2u_{n+3}+2u_{n+2}-2u_{n+1}+u_n=n^5$.
+\end{enumerate}
+
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  L'équation caractéristique est $4z^2-4z-3=0$. Ses solutions sont $-\frac{1}{2}$ et $\frac{3}{2}$. Les suites cherchées sont les suites de la forme $(u_n)=\left(\lambda\left(-\frac{1}{2}\right)^n+\mu\left(\frac{3}{2}\right)^n\right)$ où $\lambda$ et $\mu$ sont deux réels (ou deux complexes si on cherche toutes les suites complexes). Si $u_0$ et $u_1$ sont les deux premiers termes de la suite $u$, $\lambda$ et $\mu$ sont les solutions du système $\left\{
+\begin{array}{l}
+\lambda+\mu=u_0\\
+-\frac{\lambda}{2}+\frac{3\mu}{2}=u_1
+\end{array}
+\right.$ et donc $\lambda=\frac{1}{4}(3u_0-2u_1)$ et $\mu=\frac{1}{4}(u_0+2u_1)$.
+
+\begin{center}
+\shadowbox{
+$\forall n\in\Nn,\;u_n=\frac{1}{4}(3u_0-2u_1)\left(-\frac{1}{2}\right)^n+\frac{1}{4}(u_0+2u_1)\left(\frac{3}{2}\right)^n.$
+}
+\end{center}
+ \item  Clairement $u_{2n}=\frac{1}{4^n}u_0$ et $u_{2n+1}=\frac{1}{4^n}u_1$ et donc $u_n=\frac{1}{2}\left(\frac{1}{2^n}(1+(-1)^n)u_0+2\times\frac{1}{2^n}(1-(-1)^n)u_1\right)$.
+
+\begin{center}
+\shadowbox{
+$\forall n\in\Nn$, $u_n=\frac{1}{2^{n+1}}\left((1+(-1)^n)u_0+2(1-(-1)^n)u_1\right)$.
+}
+\end{center}
+ \item  Les solutions de l'équation homogène associée sont les suites de la forme $\lambda\left(-\frac{1}{2}\right)^n+\mu\left(\frac{3}{2}\right)^n$.
+Une solution particulière de l'équation proposée est une constante $a$ telle que $4a=4a+3a+12$ et donc $a=-4$.
+Les solutions de l'équation proposée sont donc les suites de la forme $\left(-4+\lambda\left(-\frac{1}{2}\right)^n+\mu\left(\frac{3}{2}\right)^n\right)$ où $\lambda$ et $\mu$ sont les solutions du système $\left\{
+\begin{array}{l}
+\lambda+\mu=4+u_0\\
+-\frac{\lambda}{2}+\frac{3\mu}{2}=4+u_1
+\end{array}
+\right.$ et donc $\lambda=\frac{1}{4}(4+3u_0-2u_1)$ et $\mu=\frac{1}{4}(12+u_0+2u_1)$.
+
+\begin{center}
+\shadowbox{
+$\forall n\in\Nn,\;u_n=-4+\frac{1}{4}(4+3u_0-2u_1)\left(-\frac{1}{2}\right)^n+\frac{1}{4}(12+u_0+2u_1)\left(\frac{3}{2}\right)^n.$
+}
+\end{center}
+
+ \item  La suite $v=\frac{1}{u}$ est solution de la récurrence $2v_{n+2}=v_{n+1}-v_n$ et donc,
+$(v_n)$ est de la forme $\left(\lambda\left(\frac{1+i\sqrt{7}}{4}\right)^n+\mu\left(\frac{1-i\sqrt{7}}{4}\right)^n\right)$ et donc $u_n=\frac{1}{\lambda\left(\frac{1+i\sqrt{7}}{4}\right)^n+\mu\left(\frac{1-i\sqrt{7}}{4}\right)^n}$.
+ \item  Les solutions de l'équation homogène associée sont les suites de la forme $(\lambda+\mu2^n)$.
+$1$ est racine simple de l'équation caractéristique et donc il existe une solution particulière de l'équation proposée de la forme $u_n=an^4+bn^3+cn^2+dn$. Pour $n\geq2$, on a
+
+\begin{align*}
+u_n-3u_{n-1}+2u_{n-2}&=(an^4+bn^3+cn^2+dn)-3(a(n-1)^4+b(n-1)^3+c(n-1)^2+d(n-1))\\
+ &\;+2(a(n-2)^4+b(n-2)^3+c(n-2)^2+d(n-2))\\
+ &= a(n^4-3(n-1)^4+2(n-2)^4)+b(n^3-3(n-1)^3+2(n-2)^3)\\
+ &\;+c(n^2-3(n-1)^2+2(n-2)^2)+d(n-3(n-1)+2(n-2))\\
+  &= a(-4n^3+30n^2-52n+29)+b(-3n^2+15n-13)+c(-2n+5)+d(-1)\\
+ &=n^3(-4a)+n^2(30a-3b)+n(-52a+15b-2c)+29a-13b+5c-d.
+\end{align*}
+
+\begin{align*}
+u\;\mbox{est solution}&\Leftrightarrow-4a=1\;\mbox{et}\;30a-3b=0\;\mbox{et}\;-52a+15b-2c=0\;\mbox{et}\;29a-13b+5c-d=0\\
+ &\Leftrightarrow a=-\frac{1}{4},\;b=-\frac{5}{2},\;c=-\frac{49}{4},\;d=-36.
+\end{align*}
+Les suites cherchées sont les suites de la forme $\left(-\frac{1}{4}(n^3+10n^2+49n+144)+\lambda+\mu2^n\right)$.
+ \item  Pour tout complexe $z$, $z^3-6z^2+11z-6=(z-1)(z-2)(z-3)$ et les suites solutions sont les suites de la forme 
+$(\alpha+\beta2^n+\gamma3^n)$.
+ \item  Pour tout complexe $z$, $z^4-2z^3+2z^2-2z+1=(z^2+1)^2-2z(z^2+1)=(z-1)^2(z^2+1)$.
+Les solutions de l'équation homogène associée sont les suites de la forme $\alpha+\beta n+\gamma i^n+\delta(-i)^n$.
+$1$ est racine double de l'équation caractéristique et donc l'équation proposée admet une solution particulière de la forme $u_n=an^7+bn^6+cn^5+dn^4+en^3+fn^2$. Pour tout entier naturel $n$, on a
+
+\begin{align*}
+u_{n+4}-2u_{n+3}&+2u_{n+2}-2u_{n+1}+u_n=a((n+4)^7-2(n+3)^7+2(n+2)^7-2(n+1)^7+n^7)\\
+ &+b((n+4)^6-2(n+3)^6+2(n+2)^6-2(n+1)^6+n^6)\\
+ &+c((n+4)^5-2(n+3)^5+2(n+2)^5-2(n+1)^5+n^5)\\
+ &+d((n+4)^4-2(n+3)^4+2(n+2)^4-2(n+1)^4+n^4)\\
+ &+e((n+4)^3-2(n+3)^3+2(n+2)^3-2(n+1)^3+n^3)\\
+ &+f((n+4)^2-2(n+3)^2+2(n+2)^2-2(n+1)^2+n^2)\\
+ &=a(84n^5+840n^4+4340n^3+12600n^2+19348n+12264)\\
+ &+b(60n^4+480n^3+1860n^2+3600n+2764)\\
+ &+c(40n^3+240n^2+620n+600)+d(24n^2+96n+124)+e(12n+24)+4f\\
+ &=n^5(84a)+n^4(840a+60b)+n^3(4340a+480b+40c)+n^2(12600a+1860b+240c+24d)\\
+ &+n(19348a+3600b+620c+96d+12e)+(12264a+2764b+600c+124d+24e+4f)
+\end{align*}
+$u$ est solution si et seulement si $84a=1$ et donc $a=\frac{1}{84}$, puis $840a+60b=0$ et donc $b=-\frac{1}{6}$,
+puis $4340a+480b+40c=0$ et donc $c=\frac{17}{24}$, puis $12600a+1860b+240c+24d=0$ et donc $d=-\frac{5}{12}$
+puis $19348a+3600b+620c+96d+12e=0$ et donc $e=-\frac{59}{24}$ puis $12264a+2764b+600c+124d+24e+4f=0$ et donc $f=\frac{1}{12}$.
+La solution générale de l'équation avec second membre est donc~:
+
+$$\forall n\in\Nn,\;u_n=\frac{1}{168}(2n^7-28n^6+119n^5-70n^4-413n^3+14n^2)+\alpha+\beta n+\gamma i^n+\delta(-i)^n,\; (\alpha,\beta,\gamma,\delta)\in\Cc^4.$$
+\end{enumerate}
+\fincorrection
+\finexercice

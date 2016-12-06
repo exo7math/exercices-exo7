@@ -1,0 +1,118 @@
+\exercice{5556, rouget, 2010/07/15}
+\enonce[***T]
+Soit $\begin{array}[t]{cccc}f~:&\Rr^2&\longrightarrow&\Rr\\
+ &(x,y)&\mapsto&\left\{
+\begin{array}{l}
+0\;\text{si}\;y=0\\
+y^2\sin\left(\frac{x}{y}\right)\;\text{si}\;y\neq0
+\end{array}
+\right.
+\end{array}
+$.
+\begin{enumerate}
+ \item  Etudier la continuité de $f$.
+
+ \item  Etudier l'existence et la valeur éventuelle de dérivées partielles d'ordre 1 et 2.
+On montrera en particulier que $\frac{\partial^2f}{\partial x\partial y}$ et $\frac{\partial^2f}{\partial y\partial x}$  sont définies en $(0,0)$ mais n'ont pas la même valeur.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Posons $\Delta=\{(x,y)/\;y\neq0\}$. $f$ est continue sur $\Rr^2\setminus\Delta$ en vertu de théorèmes généraux. Soit $x_0\in\Rr$.
+
+\begin{center}
+$|f(x,y)-f(x_0,0)|=\left\{
+\begin{array}{l}
+0\;\text{si}\;y=0\\
+y^2\left|\sin\left(\frac{x}{y}\right)\right|\;\text{si}\;y\neq0
+\end{array}
+\right.\leqslant y^2$.
+\end{center}
+Comme $\displaystyle\lim_{(x,y)\rightarrow(x_0,0)}y^2=0$, $\displaystyle\lim_{(x,y)\rightarrow(x_0,0)}|f(x,y)-f(x_0,0)|=0$ et donc $f$ est continue en $(x_0,0)$. Finalement,
+
+\begin{center}
+\shadowbox{
+$f$ est continue sur $\Rr^2$.
+}
+\end{center}
+ \item  \textbullet~$f$ est de classe $C^2$ sur $\Rr^2\setminus\Delta$. En particulier, d'après le théorème de \textsc{Schwarz}, $\frac{\partial^2f}{\partial x\partial y}=\frac{\partial^2f}{\partial y\partial x}$ sur $\Delta$. pour $(x,y)\in\Rr^2\setminus\Delta$,
+
+\begin{center}
+$\frac{\partial f}{\partial x}(x,y)=y\cos\left(\frac{x}{y}\right)$ et $\frac{\partial f}{\partial y}(x,y)=2y\sin\left(\frac{x}{y}\right)-x\cos\left(\frac{x}{y}\right)$,
+\end{center}
+puis
+
+\begin{center}
+$\frac{\partial^2f}{\partial x^2}(x,y)=-\sin\left(\frac{x}{y}\right)$, $\frac{\partial^2f}{\partial x\partial y}(x,y)=\cos\left(\frac{x}{y}\right)-\frac{x}{y}\sin\left(\frac{x}{y}\right)$,
+\end{center}
+et enfin
+
+\begin{center}
+$\frac{\partial^2f}{\partial y^2}(x,y)=2\sin\left(\frac{x}{y}\right)-2\frac{x}{y}\cos\left(\frac{x}{y}\right)-\frac{x^2}{y^2}\sin\left(\frac{x}{y}\right)$.
+\end{center}
+\textbullet~\textbf{Existence de $\frac{\partial f}{\partial x}(x_0,0)$.} Pour $x\neq x_0$,  $\frac{f(x,0)-f(x_0,0)}{x-x_0}=0$ et donc$\frac{f(x,0)-f(x_0,0)}{x-x_0}\underset{x\rightarrow x_0}{\rightarrow}0$. On en déduit que $\frac{\partial f}{\partial x}(x_0,0)$ existe et $\frac{\partial f}{\partial x}(x_0,0)=0$. En résumé, $f$ admet une dérivée partielle par rapport à sa première variable sur $\Rr^2$ définie par
+
+\begin{center}
+\shadowbox{
+$\forall(x,y)\in\Rr^2,\;\frac{\partial f}{\partial x}(x,y)=\left\{
+\begin{array}{l}
+0\;\text{si}\;y=0\\
+y\cos\left(\frac{x}{y}\right)\;\text{si}\;y\neq0
+\end{array}
+\right.$.
+}
+\end{center}
+\textbullet~\textbf{Existence de $\frac{\partial f}{\partial y}(x_0,0)$.} Soit $x_0\in\Rr$. Pour $y\neq0$,  
+
+\begin{center}
+$\left|\frac{f(x_0,y)-f(x_0,0)}{y-0}\right|=\left\{
+\begin{array}{l}
+0\;\text{si}\;y=0\\
+y\left|\sin\left(\frac{x_0}{y}\right)\right|\;\text{si}\;y\neq0
+\end{array}
+\right.\leqslant|y|.
+$
+\end{center} 
+
+et donc$\frac{f(x_0,y)-f(x_0,0)}{y-0}\underset{y\rightarrow0}{\rightarrow}0$. On en déduit que $\frac{\partial f}{\partial y}(x_0,0)$ existe et $\frac{\partial f}{\partial y}(x_0,0)=0$. En résumé, $f$ admet une dérivée partielle par rapport à sa deuxième variable sur $\Rr^2$ définie par
+
+\begin{center}
+\shadowbox{
+$\forall(x,y)\in\Rr^2,\;\frac{\partial f}{\partial y}(x,y)=\left\{
+\begin{array}{l}
+0\;\text{si}\;y=0\\
+2y\sin\left(\frac{x}{y}\right)-x\cos\left(\frac{x}{y}\right)\;\text{si}\;y\neq0
+\end{array}
+\right.$.
+}
+\end{center}
+\textbullet~\textbf{Existence de $\frac{\partial^2f}{\partial x\partial y}(0,0)$.} Pour $x\neq0$,
+
+\begin{center}
+$\frac{\frac{\partial f}{\partial y}(x,0)-\frac{\partial f}{\partial y}(0,0)}{x-0}=0$
+\end{center}
+et donc $\frac{\frac{\partial f}{\partial y}(x,0)-\frac{\partial f}{\partial y}(0,0)}{x-0}$ tend vers $0$ quand $x$ tend vers $0$. On en déduit que $\frac{\partial^2f}{\partial x\partial y}(0,0)$ existe et
+
+\begin{center}
+\shadowbox{
+$\frac{\partial^2f}{\partial x\partial y}(0,0)=0$.
+}
+\end{center}
+\textbullet~\textbf{Existence de $\frac{\partial^2f}{\partial y\partial x}(0,0)$.} Pour $y\neq0$,
+
+\begin{center}
+$\frac{\frac{\partial f}{\partial x}(0,y)-\frac{\partial f}{\partial x}(0,0)}{y-0}=\frac{y\cos\left(\frac{0}{y}\right)}{y}=1$
+\end{center}
+et donc $\frac{\frac{\partial f}{\partial x}(0,y)-\frac{\partial f}{\partial x}(0,0)}{y-0}$ tend vers $1$ quand $y$ tend vers $0$. On en déduit que $\frac{\partial^2f}{\partial y\partial x}(0,0)$ existe et
+
+\begin{center}
+\shadowbox{
+$\frac{\partial^2f}{\partial y\partial x}(0,0)=1$.
+}
+\end{center}
+\end{enumerate}
+\fincorrection
+\finexercice

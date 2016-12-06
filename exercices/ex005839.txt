@@ -1,0 +1,32 @@
+\exercice{5839, rouget, 2010/10/16}
+\enonce[**]
+\label{ex:rou1bis}
+Montrer que la boule unité d'un espace vectoriel normé est un convexe de cet espace.
+\finenonce
+
+\noindication
+
+\correction
+\textbf{Cas de la boule fermée.}  Soit $B=\{u\in E/\;\|u\|\leqslant 1\}$. Soient $(x,y)\in B^2$ et $\lambda\in[0,1]$.
+
+\begin{center}
+$\|\lambda x+(1-\lambda)y\|\leqslant \lambda\|x\| + (1-\lambda)\|y\|\leqslant\lambda+1-\lambda= 1$.
+\end{center}
+
+Ainsi, $\forall(x,y)\in B^2$, $\forall\lambda\in[0,1]$, $\lambda x+(1-\lambda)y\in B$ et donc $B$ est convexe.
+
+\textbf{Cas de la boule ouverte.} Soit $B=\{u\in E/\;\|u\|< 1\}$. Soient $(x,y)\in B^2$ et $\lambda\in[0,1]$.
+
+Puisque $0\leqslant \lambda\leqslant 1$ et $0\leqslant\|x\|<1$, on en déduit que $\lambda\|x\|<1$. Comme $(1-\lambda)\|y\|\leqslant1$ (et même $<1$) et donc
+
+\begin{center}
+$\|\lambda x+(1-\lambda)y\|\leqslant \lambda\|x\| + (1-\lambda)\|y\|<1$.
+\end{center} 
+
+\begin{center}
+\shadowbox{
+La boule unité fermée (ou ouverte) de l'espace vectoriel normé $(E,\|\;\|)$ est un convexe de l'espace vectoriel $E$.
+}
+\end{center}
+\fincorrection
+\finexercice

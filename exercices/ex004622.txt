@@ -1,0 +1,36 @@
+\exercice{4622, quercia, 2010/03/14}
+\enonce[Développements]
+
+Calculer le développement des fonctions $f$ $2\pi$-périodiques telles que :
+
+\begin{enumerate}
+  \item $f(x) = \pi-|x|$ sur $]-\pi,\pi[$.
+    
+  \item $f(x) = \pi-x$ sur $]0,2\pi[$.
+    
+  \item $f(x) = x^2$ sur $]0,2\pi[$.
+    
+  \item $f(x) = \max(0,\sin x)$.
+    
+  \item $f(x) = |\sin x|^3$.
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $a_0 = \pi$, $a_{2p} = 0$, $a_{2p+1} = \frac4{\pi(2p+1)^2}$,
+             $b_n = 0$.
+  \item $a_n = 0$, $b_n = \frac2n$.
+  \item $a_0 = \frac{8\pi^2}3$, $a_n = \frac4{n^2}$,
+             $b_n = -\frac{4\pi}n$.
+  \item $a_0 = \frac 2\pi$, $a_{2p} = \frac{-2}{\pi(4p^2-1)}$,
+             $a_{2p+1} = 0$, $b_1 = \frac 12$, $b_p = 0$.
+  \item $a_{2p} = \frac{24}{\pi(4p^2-1)(4p^2-9)}$, $a_{2p+1} = 0$,
+             $b_p = 0$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

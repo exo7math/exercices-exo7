@@ -1,0 +1,47 @@
+\exercice{4621, quercia, 2010/03/14}
+\enonce[Centrale MP 2002]
+
+\begin{enumerate}
+  \item Développer en série entière $f$ : $z \mapsto z(1-z)^{-2}$. Montrer que $f$
+    est injective sur $\mathring D(0,1)$.
+
+  \item Soit $f(z)=z+\sum_{n=2}^{+\infty} a_nz^n$ la somme d'une série entière de rayon de 
+    convergence au moins $1$ à coefficients réels.
+    On suppose $f$ injective sur $\mathring D(0,1)$
+    et on veut prouver~: $\forall\ n\ge 1, |a_n|\le n$.
+  \begin{enumerate}
+  \item Montrer pour $|z|<1$ que $f(z)\in\R\Leftrightarrow z\in\R$ et en déduire~:
+    $\Im(z)\ge 0 \Rightarrow  \Im(f(z))\ge 0$.
+
+  \item Pour $0<r<1$ calculer $ \int_{t=0}^{\pi }\Im(f(re^{it}))\sin nt\,d t$.
+    En déduire  $|a_n|r^n\le n|a_1|r$ et conclure.
+
+  \end{enumerate}
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $\frac z{(1-z)^2} = \sum_{n=1}^\infty nz^n$ ($R=1$).
+
+    Pour $z,t\in \mathring D(0,1)$ on a
+    $\frac{z}{(1-z)^2} - \frac{t}{(1-t)^2} = \frac{(z-t)(1-zt)}{(1-z)^2(1-t)^2}$,
+    quantité nulle si et seulement si $z=t$, d'où l'injectivité de $z \mapsto\frac z{(1-z)^2}$.
+  \item
+  \begin{enumerate}
+    \item $f(z)\in\R \Leftrightarrow f(z) = \overline{f(z)} = f(\overline z) \Leftrightarrow z=\overline z \Leftrightarrow z\in\R$.
+
+Par injectivité, on en déduit que $\Im(f(z))$ garde un signe constant sur chaque demi-disque
+limité par $]-1,1[$, et comme $f(z) = z + o_{z\to0}(z)$, ce signe est celui de~$\Im z$.
+    \item $ \int_{t=0}^{\pi }\Im(f(re^{it}))\sin nt\,d t = \frac{\pi a_nr^n}2$.
+
+On a $|\sin(nt)|\le n\sin(t)$ pour $0\le t\le\pi$ par récurrence,
+donc $\frac{\pi |a_n|r^n}2\le n \int_{t=0}^{\pi }\Im(f(re^{it}))\sin t\,d t = \frac{n\pi a_1r}2$.
+On en déduit $|a_n|r^n\le n|a_1|r$ et on conclut $|a_n|\le n$ en faisant tendre $r$ vers~$1$.
+  \end{enumerate}
+\end{enumerate}
+ \fincorrection
+
+\finexercice

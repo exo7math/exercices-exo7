@@ -1,0 +1,42 @@
+\exercice{5957, tumpach, 2010/11/11}
+\enonce
+ Soit $f(x,y)=
+\frac{x^2-y^2}{(x^2+y^2)^2}$. Montrer que
+$$
+\int_{-1}^{1} \left(\int_{-1}^{1}f(x,y)dx\right) dy \neq
+\int_{-1}^{1} \left(\int_{-1}^{1} f(x,y)dy\right) dx.
+$$
+Y a-t-il contradiction avec le th\'{e}or\`{e}me de Fubini ? (on
+pourra calculer l'int\'egrale de $|f|$ sur l'anneau
+$S_\varepsilon=\{(x,y)\in\mathbb{R}^2| \varepsilon\leq x^2+y^2\leq
+1\}$.)
+\finenonce
+
+\noindication
+
+\correction
+On a
+\begin{align*}\int_{-1}^1\left(\int_{-1}^1
+\frac{x^2-y^2}{(x^2+y^2)^2}dx\right) dy=&\int_{-1}^1\left(\left.-
+\frac{x}{(x^2+y^2)}\right|_{-1}^1\right) dy \\=&\left.-\int_{-1}^1
+\frac{2}{(1+y^2)} dy =-2 \arctan y \right|_{-1}^1=-\pi.
+\end{align*}
+\begin{align*}\int_{-1}^1\left(\int_{-1}^1 \frac{x^2-y^2}{(x^2+y^2)^2}dy\right) dx=&\int_{-1}^1\left(\left.
+\frac{y}{(x^2+y^2)}\right|_{-1}^1\right) dx \\=&\left.\int_{-1}^1
+\frac{2}{(x^2+1)} dx =2 \arctan x \right|_{-1}^1=\pi.
+\end{align*}
+Il n'y a pas de contradiction avec le th\'{e}or\`{e}me de Fubini
+car la fonction $f$ n'appartient pas \`a
+$\mathcal{L}^1([-1,1]\times[-1,1])$. En effet, soit
+$S_\varepsilon=\{(x,y)\in\mathbb{R}^2| \varepsilon\leq x^2+y^2\leq
+1\}$. On a
+$$\int_{[-1,1]\times[-1,1]}|f| d\mu 
+\geq \int_{S_\varepsilon} |f| d\mu =\int_{\theta=0}^{2\pi}\int_{r=\varepsilon}^1\frac{|\cos 2\theta|}{r}dr
+d\theta
+= 4\int_{\theta=0}^{\frac{\pi}{2}}\int_{r=\varepsilon}^1 \frac{|\cos 2\theta|}{r} dr
+d\theta = -4 \log \varepsilon\rightarrow \infty$$ lorsque
+$\varepsilon\rightarrow 0,$ et donc $f\notin
+\mathcal{L}^1([-1,1]\times[-1,1]).$
+\fincorrection
+
+\finexercice

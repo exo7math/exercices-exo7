@@ -1,0 +1,39 @@
+\exercice{5601, rouget, 2010/10/16}
+\enonce[***]
+Soient $E$ et $F$ deux $\Kk$-espaces vectoriels et $f$ une application linéaire de $E$ vers $F$.
+
+\begin{enumerate}
+ \item  Montrer que $\left[\left(\forall g\in\mathcal{L}(F,E),\;f\circ g\circ f=0\Rightarrow g = 0\right)\Rightarrow f\;\text{bijective}\right]$.
+
+\item  On pose $\text{dim}E=p$, $\text{dim}F=n$ et $\text{rg}f=r$. Calculer la dimension de $\{g\in\mathcal{L}(F,E)/\;f\circ g\circ f =0\}$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Si $N=\text{Ker}f\neq\{0\}$, considérons $g$ non nul tel que $\text{Im}g\neq\{0\}$ et $\text{Im}g\subset\text{Ker}f$.
+
+Pour un tel $g$, $f\circ g = 0$ puis $f\circ g\circ f = 0$ et donc $g = 0$ par hypothèse, contredisant $g$ non nulle. Donc $\text{Ker}f =\{0\}$.
+
+Si $\text{Im}f\neq F$, on choisit $g$ nulle sur $\text{Im}f$ et non nulle  sur un supplémentaire de $\text{Im}f$ (dont l'existence est admise en dimension infinie). Alors, $g\circ f = 0$ puis $f\circ g\circ f = 0$ et donc $g = 0$ contredisant $g$ non nulle. Donc $\text{Im}f = F$.
+
+Finalement, $f$ est bien un isomorphisme de $E$ sur $F$.
+
+\item  Soit $A=\{g\in\mathcal{L}(F,E)/\;f\circ g\circ f = 0\}$. Tout d'abord $A$ est bien un sous-espace vectoriel de $\mathcal{L}(F,E)$ car contient l'application nulle et est stable par combinaison linéaire (ou bien $A$ est le noyau de l'application linéaire de $\mathcal{L}(F,E)$ dans $\mathcal{L}(E,F)$ qui à $g$ associe $f\circ g\circ f$).
+
+Soit $J$ un supplémentaire de $I=\text{Im}f$ dans $F$. Un élément $g$ de $\mathcal{L}(F,E)$ est entièrement déterminé par ses restrictions à $I$ et $J$.
+
+\begin{center}
+$f\circ g\circ f = 0\Leftrightarrow(f\circ g)_{/I}= 0\;\text{et}\;g_{/J}\;\text{est quelconque}\Leftrightarrow g(I)\subset N$.
+\end{center}
+
+Pour être le plus méticuleux possible, on peut alors considérer l'application $G$ de $\mathcal{L}(I,N)\times\mathcal{L}(J,E)$ dans $\mathcal{L}(F,E)$ qui à un couple $(g_1,g_2)$ associe l'unique application linéaire $g$ de $F$ dans $E$ telle que $g_{/I}= g_1$ et $g_{/J}=g_2$. $G$ est linéaire et injective d'image $A$. Donc 
+
+\begin{center}
+$\text{dim}A =\text{dim}\mathcal{L}(I,N)\times\text{dim}\mathcal{L}(J,E)=\text{dim}\mathcal{L}(I,N) + \text{dim}\mathcal{L}(J,E) = r(p - r) + (n - r)p = pn - r^2$.
+\end{center}
+\end{enumerate}
+\fincorrection
+\finexercice

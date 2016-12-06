@@ -1,0 +1,28 @@
+\exercice{3574, quercia, 2010/03/10}
+\enonce[X MP$^*$ 2001]
+
+Soit $f$ un endomorphisme de $E$ (ev de dimension finie sur $ K$) tel que
+$\chi_f$ soit irréductible. Montrez que pour aucun endomorphisme $g$
+le crochet de Lie $[f,g] = f\circ g - g\circ f$ n'est de rang un.
+
+\finenonce
+
+\noindication
+
+\correction
+Supposons qu'il existe $g\in\mathcal{L}(E)$ tel que $\mathrm{rg}(f\circ g - g\circ f) = 1$.
+Alors il existe $\ell\in E^*$ et $a\in E$ tous deux non nuls tels que~:
+$$\forall\ x\in E,\ f(g(x)) - g(f(x)) = \ell(x)a.$$
+D'où par récurrence sur~$k$~:
+$$\forall\ x\in E,\ f^k(g(x)) - g(f^k(x)) = \ell(x)f^{k-1}(a) + \ell(f(x))f^{k-2}(a) + \dots + \ell(f^{k-1}(x))a.$$
+
+Comme $\chi_f$ est irréductible, le sous-espace $f$-monogène
+engendré par~$a$ est égal à~$E$, soit~: $(a,f(a),\dots,f^{n-1}(a))$ est
+une base de~$E$ avec $n=\dim E$ et $f^n(a) = \alpha_0a + \dots + \alpha_{n-1}f^{n-1}(a)$.
+Alors $\mu_f(f) = f^n-\alpha_{n-1}f^{n-1} - \dots - \alpha_0f^0 = 0$ et~:
+$$\forall\ x\in E,\ 0 = \mu_f(f)(g(x)) - g(\mu_f(f)(x)) = \ell(x)f^{n-1}(a) + \dots + \ell(f^{n-1}(x) - \dots - \alpha_1x)a.$$
+Ceci implique $\ell(x) = 0$ pour tout~$x$, en contradiction avec l'hypothèse
+$\mathrm{rg}(f\circ g - g\circ f) = 1$.
+\fincorrection
+
+\finexercice

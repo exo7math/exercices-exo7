@@ -1,0 +1,24 @@
+\exercice{5420, rouget, 2010/07/06}
+\enonce[**]
+Soit $P$ un polynôme réel de degré supèrieur ou égal à $2$.
+\begin{enumerate}
+\item  Montrer que si $P$ n'a que des racines simples et réelles, il en est de même de $P'$.
+\item  Montrer que si $P$ est scindé sur $\Rr$, il en est de même de $P'$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+Soit $n\geq2$ le degré de $P$.
+\begin{enumerate}
+\item  Si $P$ admet $n$ racines réelles simples, le théorème de \textsc{Rolle} fournit au moins $n-1$ racines réelles deux à deux distinctes pour $P'$. Mais, puisque $P'$ est de degré $n-1$, ce sont toutes les racines de $P'$, nécessairement toutes réelles et simples.
+
+(Le résultat tombe en défaut si les racines de $P$ ne sont pas toutes réelles. Par exemple, $P=X^3-1$ est à racines simples dans $\Cc$ mais $P'=3X^2$ admet une racine double)
+
+\item  Séparons les racines simples et les racines multiples de $P$. Posons $P=(X-a_1)...(X-a_k)(X-b_1)^{\alpha_1}...(X-b_l)^{\alpha_l}$ où les $a_i$ et les $b_j$ sont $k+l$ nombres réels deux à deux distincts et les $\alpha_j$ des entiers supérieurs ou égaux à $2$ (éventuellement $k=0$ ou $l=0$ et dans ce cas le produit vide vaut conventionnellement $1$).
+
+$P$ s'annule déjà en $k+l$ nombres réels deux à deux distincts et le théorème de \textsc{Rolle} fournit $k+l-1$ racines réelles deux à deux distinctes et distinctes des $a_i$ et des $b_j$. D'autre part, les $b_j$ sont racines d'ordre $\alpha_j$ de $P$ et donc d'ordre $\alpha_j-1$ de $P'$. On a donc trouvé un nombre de racines (comptées en nombre de fois égal à leur ordre de multiplicité) égal à $k+l-1+\sum_{j=1}^{l}(\alpha_j-1)=k+\sum_{j=1}^{l}\alpha_j-1=n-1$ racines réelles et c'est fini.
+\end{enumerate}
+\fincorrection
+\finexercice

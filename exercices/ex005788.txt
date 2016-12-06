@@ -1,0 +1,55 @@
+\exercice{5788, rouget, 2010/10/16}
+\enonce[**** I]
+Soit $E$ un espace euclidien de dimension $n$ non nulle. Soit $(x_1,...,x_p)$ une famille de $p$ vecteurs de $E$ ($p\geqslant 2$) . On dit que la famille $(x_1,...,x_p)$ est une famille obtusangle si et seulement si $\forall(i,j)\in\llbracket1,p\rrbracket^2$ $(i<j\Rightarrow x_i|x_j < 0)$. Montrer que si la famille $(x_1,...,x_p)$ est une famille obtusangle alors $p\leqslant n+1$.
+\finenonce
+
+\noindication
+
+\correction
+\textbf{1 ère solution.} Soit $p\geqslant2$. Montrons que si la famille $(x_1,...,x_{p})$ est obtusangle alors la famille $(x_1,...,x_{p-1})$ est libre. 
+
+Soit $(x_1,...,x_{p})$ une famille obtusangle. Supposons que la famille $(x_1,...,x_{p-1})$ soit liée.
+
+Il existe donc $(\lambda_1,...,\lambda_{p-1})\in\Rr^{p-1}\setminus\{(0,\ldots,0)\}$ tel que $\sum_{k=1}^{p-1}\lambda_kx_k = 0$.
+
+Quite à multiplier les deux membres de l'égalité par $-1$, on peut supposer que l'un des $\lambda_i$ au moins est strictement positif. On pose $I =\{k\in\llbracket1,p-1\rrbracket/\;\lambda_k > 0\}$ et $J =\{k\in\llbracket1,p-1\rrbracket/\;\lambda_k\leqslant 0\}$ (éventuellement $J$ est vide).
+
+Si $J$ est vide, il reste $\sum_{i\in I}^{}\lambda_ix_i = 0$ et si $J$ est non vide,
+
+\begin{center}
+$\left\|\sum_{i\in I}^{}\lambda_ix_i\right\|^2= -\left(\sum_{i\in I}^{}\lambda_ix_i\right)\left(\sum_{j\in J}^{}\lambda_jx_j\right)= -\sum_{(i,j)\in I\times J}^{}\lambda_i\lambda_j\left(x_i|x_j\right)\leqslant0$ (car  $\forall(i,j)\in I\times J$, $\left(x_i|x_j\right)< 0$ et $\lambda_i\lambda_j\leqslant0$).
+\end{center}
+
+Ainsi, dans tous les cas, $\sum_{i\in I}^{}\lambda_ix_i = 0$. Mais ceci est impossible car  $\left(\sum_{i\in I}^{}\lambda_ix_i\right)|x_{p}=\sum_{i\in I}^{}\lambda_i\left(x_i|x_{p}\right)< 0$.
+
+On a montré que la famille $(x_1,\ldots,x_{p-1})$ est libre et on en déduit que $p-1\leqslant n$ ou encore $p\leqslant n+1$.
+
+\textbf{2ème solution.} Montrons par récurrence sur $n =\text{dim}E_n\geqslant1$ que tout famille obtusangle de $E_n$ a un cardinal inférieur ou égal à $n+1$.
+
+\textbullet~Pour $n = 1$. Soient $x_1$, $x_2$ et $x_3$ trois vecteurs de $E_1$. On peut identifier ces vecteurs à des réels. Deux des trois réels $x_1$, $x_2$ ou $x_3$ ont même signe et on ne peut donc avoir $x_1x_2 < 0$ et $x_1x_3 < 0$ et $x_2x_3 < 0$.
+
+Une famille obtusangle de $E_1$ a donc un cardinal inférieur ou égal à $2$.
+
+\textbullet~Soit $n\geqslant1$. Supposons que toute famille obtusangle d'un espace euclidien de dimension $n$ a un cardinal inférieur ou égal à $n+1$. Soit $(x_1,...,x_p)$ une famille obtusangle de $E_{n+1}$.
+
+Si $p = 1$ alors $p\leqslant n+2$. Supposons dorénavant $p\geqslant2$.
+
+On va construire à partir de cette famille une famille obtusangle de cardinal $p-1$ d'un espace euclidien de dimension $n$.
+
+Soit $F=x_p^\bot$. Puisque la famille $(x_1,...,x_p)$ est obtusangle, le vecteur $x_p$ n'est pas nul et $F$ est un espace euclidien de dimension $n$.
+
+On note $y_1$, $y_2$,..., $y_{p-1}$ les projetés orthogonaux des vecteurs $x_1$, ... , $x_{p-1}$ sur $F$. On sait que
+
+\begin{center}
+$\forall i\in\llbracket1,p-1\rrbracket$, $y_i =x_i -\frac{\left(x_i|x_p\right)}{\|x_p\|^2}x_p$.
+\end{center}
+
+Soit $(i,j)\in\llbracket1,p-1\rrbracket$ tel que $i\neq j$.
+
+\begin{center}
+$\left(y_i|y_j\right)=\left(x_i|x_j\right)-2\frac{\left(x_i|x_p\right)\left(x_j|x_p\right)}{\|x_p\|^2}+\frac{\left(x_i|x_p\right)\left(x_j|x_p\right)\|x_p\|^2}{\|x_p\|^4}= \left(x_i|x_j\right)-\frac{\left(x_i|x_p\right)\left(x_j|x_p\right)}{\|x_p\|^2}< 0$.
+\end{center}
+
+Ainsi, la famille $(y_i)_{1\leqslant i\leqslant p-1}$ est une famille obtusangle d'un espace euclidien de dimension $n$ et par hypothèse de récurrence $p-1\leqslant n+1$ et donc $p\leqslant n+2$. Le résultat est démontré par récurrence.
+\fincorrection
+\finexercice

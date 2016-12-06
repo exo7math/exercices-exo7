@@ -1,0 +1,27 @@
+\exercice{5412, rouget, 2010/07/06}
+\enonce[***I Polynômes de \textsc{Legendre}]
+Pour $n$ entier naturel non nul donné, on pose $L_n=((X^2-1)^n)^{(n)}$.
+\begin{enumerate}
+\item  Déterminer le degré et le coefficient dominant de $L_n$.
+\item  En étudiant le polynôme $A_n=(X^2-1)^n$, montrer que $L_n$ admet $n$ racines réelles simples et toutes dans $]-1;1[$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  $(X^2-1)^n$ est de degré $2n$ et donc, $L_n$ est de degré $2n-n=n$. Puis, $\mbox{dom}(L_n)=\mbox{dom}((X^{2n})^{(n)})=\frac{(2n)!}{n!}$.
+
+\item  $1$ et $-1$ sont racines d'ordre $n$ de $A_n$ et donc racines d'ordre $n-k$ de $A_n^{(k)}$, pour tout $k$ élément de $\{0,...,n\}$.
+
+Montrons par récurrence sur $k$ que $\forall k\in\{0,...,n\}$, $A_n^{(k)}$ s'annule en au moins $k$ valeurs deux à deux distinctes de l'intervalle $]-1,1[$.
+
+Pour $k=1$, $A_n$ est continu sur $[-1,1]$ et dérivable sur $]-1,1[$. De plus, $A_n(0)=A_n(1)=0$ et d'après le théorème de \textsc{Rolle}, $A_n'$ s'annule au moins une fois dans l'intervalle $]-1,1[$.
+
+Soit $k$ élément de $\{1,...,n-1\}$. Supposons que $A_n^{(k)}$ s'annule en au moins $k$ valeurs de $]-1,1[$. $A_n^{(k)}$ s'annule de plus en $1$ et $-1$ car $k\leq n-1$ et donc s'annule en $k+2$ valeurs au moins de l'intervalle $[-1,1]$. D'après le théorème de \textsc{Rolle}, $A_n^{(k+1)}$ s'annule en au moins $k+1$ points de $]-1,1[$ (au moins une fois par intervalle ouvert).
+
+On a montré que $\forall k\in\{0,...,n\}$, $A_n^{(k)}$ s'annule en au moins $k$ valeurs de $]-1,1[$. En particulier, $A_n^{(n)}=L_n$ s'annule en au moins $n$ réels deux à deux distincts de $]-1,1[$. Puisque $L_n$ est de degré $n$, on a trouvé toutes les racines de $L_n$, toutes réelles, simples et dans $]-1,1[$.
+\end{enumerate}
+\fincorrection
+\finexercice

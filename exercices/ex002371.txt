@@ -1,0 +1,25 @@
+\exercice{2371, mayer, 2003/10/01}
+\enonce 
+Montrer qu'une suite convergente et sa limite forment un ensemble compact.
+\finenonce
+
+\indication
+Utiliser  qu'un ensemble $K$
+est compact si et seulement si de toute suite d'éléments de $K$ on peut extraire une sous-suite convergente vers un élément de $K$.
+\finindication
+
+\correction
+Nous allons utiliser le fait qu'un ensemble $K$
+est compact si et seulement si de toute suite d'éléments de $K$ on peut extraire une sous-suite convergente vers un élément de $K$.
+
+Soit $(u_n)_{n\in\Nn}$ une suite convergente et soit $\ell$ sa limite. Notons
+$$K = \{ u_n \mid n\in \Nn\} \cup \{ \ell\}.$$
+
+Soit $(v_n)$ une suite d'éléments de $K$.
+Si $(v_n)$ ne prend qu'un nombre fini de valeurs, on peut extraire une sous-suite constante, donc convergente.
+Sinon $(v_n)$ prend une infinité de valeurs. Nous allons construire une suite convergente$(w_n)$ extraite de $(v_n)$.
+Soit $w_0$ le premier des $(v_0,v_1,v_2,\ldots)$ qui appartient à $\{u_0,u_1,\ldots\}$. Soit $w_1$ le premier des $(v_1,v_2,\ldots)$ qui appartient à $\{u_1,u_2,\ldots\}$... Soit $w_n$ le premier des $(v_n,v_{n+1},\ldots)$ qui appartient à $\{u_n,u_{n+1},\ldots\}$.
+Alors $(w_n)$ est une suite-extraite de $(v_n)$ et par construction
+$(w_n)$ converge vers la limite de $(u_n)$, donc vers $\ell \in K$.
+\fincorrection
+\finexercice

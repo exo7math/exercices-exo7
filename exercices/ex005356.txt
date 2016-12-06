@@ -1,0 +1,36 @@
+\exercice{5356, rouget, 2010/07/04}
+\enonce[***I]
+Démontrer que $S_n$ est engendré par $\tau_{1,2}$ et le cycle $(2\;3\;...\;n\;1)$.
+\finenonce
+
+\noindication
+
+\correction
+D'après l'exercice \ref{exo:suprou2ter}, il suffit de montrer que pour $2\leq i\leq n$, $\tau_{1,i}$ peut s'écrire en utilisant uniquement $\tau=\tau_{1,2}$ et $c=(2\;3\;...\;n\;1)$. On note que $c^n=Id$.
+
+Tout d'abord, pour $1\leq i\leq n-1$, étudions $\sigma=c^{i-1}\circ\tau\circ c^{n-i+1}$.
+
+Soit $k\in\{1,...,n\}$. 
+
+\begin{align*}\ensuremath
+\tau\circ c^{n-i+1}(k)\neq c^{n-i+1}(k)&\leq c^{n-i+1}(k)\in\{1,2\}\Leftrightarrow k\in\{c^{-n+i-1}(1),c^{-n+i-1}(2)\}\Leftrightarrow k\in\{c^{i-1}(1),c^{i-1}(2)\}\\
+ &\Leftrightarrow k\in\{i,i+1\}.
+\end{align*}
+
+Donc, si $k\notin\{i,i+1\}$, 
+
+$$\sigma(k)=c^{i-1}(k)(\tau\circ c^{n-i+1}(k))=c^{i-1}(c^{n-i+1}(k))=c^n(k)=k,$$
+
+et la restriction de $\sigma$ à $\{1,...,n\}\setminus\{i,i+1\}$ est l'identité de cet ensemble. Comme $\sigma$ n'est pas l'identité puisque $\sigma(i)\neq i$, $\sigma$ est donc nécessairement la transposition $\tau_{i,i+1}$.
+
+On a montré que $\forall i\in\{1,...,n-1\},\;c^{i-1}\circ\tau \circ c^{n-i+1}=\tau_{i,i+1}$.
+
+Vérifions maintenant que les $\tau_{1,i}$ s'écrivent à l'aide des $\tau_{j,j+1}$. D'après l'exercice \ref{exo:suprou2ter}, $\tau_{i,j}=\tau_{1,i}\circ\tau_{1,j}\circ\tau_{1,i}$, et donc bien sûr, plus généralement, $\tau_{i,j}=\tau_{k,i}\circ\tau_{k,j}\circ\tau_{k,i}$.
+
+Par suite, $\tau_{1,i}=\tau_{1,2}\circ\tau_{2,i}\circ\tau_{1,2}$ puis, $\tau_{2,i}=\tau_{2,3}\circ\tau_{3,i}\circ\tau_{2,3}$, puis, $\tau_{3,i}=\tau_{3,4}\circ\tau_{4,i}\circ\tau_{3,4}$ ... et $\tau_{i-2,i}=\tau_{i-2,i-1}\circ\tau_{i-1,i}\circ\tau_{i-2,i-1}$. Finalement,
+
+$$\tau_{1,i}=\tau_{1,2}\circ\tau_{2,3}\circ...\circ\tau_{i-2,i-1}\tau_{i-1,i}\circ\tau_{i-2,i-1}\circ...\circ\tau_{2,3}\circ\tau_{1,2},$$
+
+ce qui achève la démonstration.
+\fincorrection
+\finexercice

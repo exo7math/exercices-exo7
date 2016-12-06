@@ -1,0 +1,63 @@
+\exercice{5193, rouget, 2010/06/30}
+\enonce[***I]
+Soient $\Kk$ un sous-corps de $\Cc$ et $E$ un $\Kk$-espace vectoriel de dimension finie notée $n$. Soit $u$ un endomorphisme de $E$.
+On dit que $u$ est nilpotent si et seulement si $\exists k\in\Nn^*/\;u^k=0$ et on appelle alors indice de
+nilpotence de $u$ le plus petit de ces entiers $k$ (par exemple, le seul endomorphisme $u$, nilpotent d'indice $1$ est
+$0$).
+\begin{enumerate}
+\item  Soit $u$ un endomorphisme nilpotent d'indice $p$. Montrer qu'il existe un vecteur $x$ de $E$ tel que la
+famille
+
+$(x,\;u(x),...,\;u^{p-1}(x))$ soit libre.
+\item  Soit $u$ un endomorphisme nilpotent. Montrer que $u^n=0$.
+\item  On suppose dans cette question que $u$ est nilpotent d'indice $n$. Déterminer $\mbox{rg}u$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  Soit $p(\in\Nn^*)$ l'indice de nilpotence de $u$.
+
+Par définition, $u^{p-1}\neq0$ et plus généralement, pour $1\leq k\leq p-1$, $u^k\neq0$ car si $u^k= 0$ alors $u^{p-1}=u^k\circ u^{p-1-k}=0$ ce qui n'est pas.
+
+Puisque $u^{p-1}\neq0$, il existe au moins un vecteur $x$ non nul tel que $u^{p-1}(x)\neq0$.
+
+Montrons que la famille $(u^k(x))_{0\leq k\leq p-1}$ est libre.
+
+Soit $(\lambda_k)_{0\leq k\leq p-1}\in\Kk^p$ tel que $\sum_{k=0}^{p-1}\lambda_ku^k(x)=0$. Supposons qu'au moins un des coefficients $\lambda_k$ ne soit pas nul. Soit $i=\mbox{Min }\{k\in\{0,...,p-1\}/\;\lambda_k\neq0\}$.
+
+\begin{align*}
+\sum_{k=0}^{p-1}\lambda_ku^k(x)=0&\Rightarrow\sum_{k=i}^{p-1}\lambda_ku^k(x)=0
+\Rightarrow u^{p-1-i}(\sum_{k=i}^{p-1}\lambda_ku^k(x))=0\Rightarrow\sum_{k=i}^{p-1}\lambda_ku^{p-1-i+k}(x)=0\\
+ &\Rightarrow\lambda_iu^{p-1}(x)=0\quad(\mbox{car pour}\;k\geq i+1,\;p-1-i+k\geq p\;\mbox{et donc}\;u^{p-1-i+k}=0)\\
+ &\Rightarrow\lambda_i=0\quad(\mbox{car}\;u^{p-1}(x)\neq0)
+\end{align*} 
+
+ce qui contredit la définition de $i$.
+
+Donc tous les coefficients $\lambda_k$ sont nuls et on a montré que la famille $(u^k(x))_{0\leq k\leq p-1}$ est libre.
+
+\item  Le cardinal d'une famille libre est inférieur ou égal à la dimension de l'espace et donc $p\leq n$. 
+Par suite, $u^n=u^p\circ u^{n-p}=0$.
+
+\item  On applique l'exerice \ref{exo:suprou10}.
+
+Puisque $u^{n-1}\neq0$, on a $N_{n-1}\underset{\neq}{\subset}N_n$.
+Par suite (d'après l'exercice \ref{exo:suprou12}, 2), c)), les inclusions $N_0\subset N_1\subset...\subset N_n=E$ sont toutes strictes et donc 
+
+$$0<\mbox{dim }N_1<\mbox{dim }N_2 ...<\mbox{dim }N_n=n.$$
+
+Pour $k\in\{0,...,n\}$, notons $d_k$ est la dimension de $N_k$. Pour $k\in\{0,...,n-1\}$, on a $d_{k+1}\geq d_k$ et une récurrence facile montre que, pour $k\in\{0,...,n\}$, on a $d_k\geq k$.
+
+Mais si de plus, pour un certain indice $i$ élément de $\{1,...,n-1\}$, on a $d_i=\mbox{dim }N_i>i$, alors, par une récurrence facile, pour $i\leq k\leq n$, on a $d_k>k$ et en particulier $d_n>n$ ce qui n'est pas. Donc,
+
+$$\forall k\in\{0,...,n\},\;\mbox{dim }(N_k)=k,$$
+
+ou encore, d'après le théorème du rang,
+
+$\forall k\in\{0,...,n\},\;\mbox{rg }(u^k)=n-k$, et en particulier $\mbox{rg }(u)=n-1$.
+\end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,29 @@
+\exercice{5643, rouget, 2010/10/16}
+\enonce[****]
+Soient $x_1$,..., $x_n$ $n$ entiers naturels tels que $x_1<...<x_n$. A l'aide du calcul de $\text{det}(C_{x_j}^{i-1})_{1\leqslant i,j\leqslant n}$, montrer
+que $\prod_{1\leqslant i,j\leqslant n}^{}\frac{x_j-x_i}{j-i}$ est un entier naturel.
+\finenonce
+
+\noindication
+
+\correction
+$\frac{x_j-x_i}{j-i}$ est déjà un rationnel strictement positif.
+
+Posons $P_i= 1$ si $i = 1$, et si $i\geqslant2$, $P_i=\frac{X(X-1)\ldots(X-(i-2))}{(i-1)!}$.
+
+Puisque, pour $i\in\llbracket1,n\rrbracket$, $\text{deg}(P_i)=i-1$, on sait que la famille $(P_i)_{1\leqslant i\leqslant n}$ est une base de $\Qq_{n-1}[X]$.
+De plus, pour $i\geqslant 2$, $P_i -\frac{X^{i-1}}{(i-1)!}$ est de degré $i-2$ et est donc combinaison linéaire de $P_1$, $P_2$,..., $P_{i-2}$ ou encore, pour $2\leqslant i\leqslant n$, la ligne numéro $i$ du déterminant $\text{det}\left(C_{x_j}^{i-1}\right)_{1\leqslant i,j\leqslant n}$ est somme de la ligne $\left(\frac{x_j^{i-1}}{(i-1)!}\right)_{1\leqslant j\leqslant n}$ et d'une combinaison linéaire des lignes qui la précède. En partant de la dernière ligne et en remontant jusqu'à la deuxième, on retranche la combinaison linéaire correspondante des lignes précedentes sans changer la valeur du déterminant. On obtient par linéarité par rapport à chaque ligne
+
+\begin{center}
+$\text{det}\left(C_{x_j}^{i-1}\right)_{1\leqslant i,j\leqslant n}=\frac{1}{\prod_{i=1}^{n}(i-1)!}\text{Van}(x_1,...,x_n)=\frac{\prod_{1\leqslant i<j\leqslant n}^{}(x_j-x_i)}{\prod_{1\leqslant i<j\leqslant n}^{}(j-i)}.$
+\end{center}
+
+Finalement,
+
+\begin{center}
+\shadowbox{
+$\prod_{1\leqslant i<j\leqslant n}^{}\frac{x_j-x_i}{j-i}=\text{det}\left(C_{x_j}^{i-1}\right)_{1\leqslant i,j\leqslant n}\in\Nn^*$.
+}
+\end{center}
+\fincorrection
+\finexercice

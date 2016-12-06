@@ -1,0 +1,102 @@
+\exercice{5636, rouget, 2010/10/16}
+\enonce[***I]
+On définit par blocs une matrice $A$ par $A=\left(
+\begin{array}{cc}
+B&D\\
+0&C
+\end{array}
+\right)$ où $A$, $B$ et $C$ sont des matrices carrées de formats respectifs $n$, $p$ et $q$ avec $p+q=n$. Montrer que $\text{det}(A)=\text{det}(B)\times\text{det}(C)$.
+\finenonce
+
+\noindication
+
+\correction
+Soient $C\in \mathcal{M}_q(\Kk)$ et $D\in\mathcal{M}_{p,q}(\Kk)$. Soit $\begin{array}[t]{cccc}
+\varphi~:&(\mathcal{M}_{p,1}(\Kk))^p&\rightarrow&\Kk\\
+ &(C_1,\ldots,C_p)&\mapsto&\text{det}\left(
+ \begin{array}{cc}
+ X&D\\
+ 0&C
+ \end{array}
+ \right)
+ \end{array}$ où $X=(C_1\ldots C_p)\in\mathcal{M}_p(\Kk)$.
+ 
+
+\textbullet~$\varphi$ est linéaire par rapport à chacune des colonnes $C_1$,\ldots, $C_p$.
+
+\textbullet~Si il existe $(i,j)\in\llbracket1,p\rrbracket^2$ tel que $i\neq j$ et $C_i=C_j$, alors $\varphi(C_1,\ldots,C_p)=0$.
+
+Ainsi, $\varphi$ est une forme $p$-linéaire alternée sur l'espace $\mathcal{M}_{p,1}(\Kk)$ qui est de dimension $p$. On sait alors qu'il existe $\lambda\in\Kk$ tel que $\varphi=\lambda\;\text{det}_{\mathcal{B}_0}$ (où $\text{det}_{\mathcal{B}_0}$ désigne la forme déterminant dans la base canonique de $\mathcal{M}_{p,1}(\Kk)$) ou encore il existe $\lambda\in\Kk$ indépendant de $(C_1,\ldots,C_p)$ tel que $\forall (C_1,\ldots,C_p)\in(\mathcal{M}_{p,1}(\Kk))^p$, $f(C_1,\ldots,C_p)=\lambda\;\text{det}_{\mathcal{B}_0}(C_1,\ldots,C_p)$ ou enfin il existe $\lambda\in\Kk$ indépendant de $X$ tel que $\forall X\in\mathcal{M}_{p}(\Kk)$, $\text{det}\left(
+ \begin{array}{cc}
+ X&D\\
+ 0&C
+ \end{array}
+ \right)=\lambda\;\text{det}(X)$. Pour $X=I_p$, on obtient $\lambda=\text{det}\left(
+ \begin{array}{cc}
+ I_p&D\\
+ 0&C
+ \end{array}
+ \right)$ et donc
+ 
+ \begin{center}
+ $\forall B\in\mathcal{M}_p(\Kk)$, $\text{det}\left(
+ \begin{array}{cc}
+ B&D\\
+ 0&C
+ \end{array}
+ \right)=\text{det}(B)\times\text{det}\left(
+ \begin{array}{cc}
+ I_p&D\\
+ 0&C
+ \end{array}
+ \right)$.
+ \end{center}
+ 
+
+De même, l'application $Y\mapsto\text{det}\left(
+ \begin{array}{cc}
+ I_p&D\\
+ 0&Y
+ \end{array}
+ \right)$ est une forme $q$-linéaire alternée des lignes de $Y$ et donc il existe $\mu\in\Kk$ tel que $\forall Y\in\mathcal{M}_q(\Kk)$, $\text{det}\left(
+ \begin{array}{cc}
+ I_p&D\\
+ 0&Y
+ \end{array}
+ \right)=\mu\;\text{det}(Y)$ puis $Y=I_q$ fournit $\mu=\text{det}\left(
+ \begin{array}{cc}
+ I_p&D\\
+ 0&I_q
+ \end{array}
+ \right)$ et donc 
+ 
+ \begin{center}
+ $\forall B\in\mathcal{M}_p(\Kk)$, $\forall C\in\mathcal{M}_q(\Kk)$, $\forall D\in\mathcal{M}_{p,q}(\Kk)$, $\text{det}\left(
+ \begin{array}{cc}
+ B&D\\
+ 0&C
+ \end{array}
+ \right)=\text{det}(B)\times\text{det}(C)\times\text{det}\left(
+ \begin{array}{cc}
+ I_p&D\\
+ 0&I_q
+ \end{array}
+ \right)=\text{det}(B)\times\text{det}(C)$,
+ \end{center}
+ 
+
+(en supposant acquise la valeur d'un déterminant triangulaire qui peut s'obtenir en revenant à la définition d'un déterminant et indépendamment de tout calcul par blocs).
+
+ \begin{center}
+ \shadowbox{
+ $\forall (B,C,D)\in\mathcal{M}_p(\Kk)\times\mathcal{M}_q(\Kk)\times\mathcal{M}_{p,q}(\Kk)$, $\text{det}\left(
+ \begin{array}{cc}
+ B&D\\
+ 0&C
+ \end{array}
+ \right)=\text{det}(B)\times\text{det}(C)$.
+ }
+ \end{center}
+
+\fincorrection
+\finexercice

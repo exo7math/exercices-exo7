@@ -1,0 +1,56 @@
+\exercice{1006, legall, 1998/09/01}
+\video{G-Xa2ZmQUwQ}
+\enonce
+\begin{enumerate}
+    \item Montrer que les vecteurs  $v_1 =(1,-1,i)$, $v_2=(-1,i,1)$, $v_3 =(i,1,-1)$ forment une base de $\Cc^3$.
+    \item Calculer les coordonnées de $v = (1+i,1-i,i)$ dans cette base.
+\end{enumerate}
+\finenonce 
+
+\indication
+Il n'y a aucune difficulté. C'est comme dans $\Rr^3$ sauf qu'ici les coefficients sont des nombres complexes.
+\finindication
+
+\correction
+\begin{enumerate}
+  \item C'est bien une base. Comme nous avons trois vecteurs et nous souhaitons 
+montrer qu'ils forment un base d'un espace vectoriel de dimension $3$, 
+il suffit de montrer que soit la famille est libre, soit elle est génératrice
+(ces conditions sont équivalentes pour $n$ vecteurs dans un espace vectoriel de dimension $n$).
+
+Il est plus simple de montrer que la famille est libre. Soit une combinaison linéaire nulle
+$a v_1+b v_2+c v_3=0$  il faut montrer que $a=b=c=0$. Mais attention ici le corps de base est $K=\Cc$
+donc $a,b,c$ sont des nombres complexes.
+
+\begin{align*}
+     &  a v_1+b v_2+c v_3=0 \\
+\iff & a (1,-1,i) + b (-1,i,1) + c (i,1,-1) = (0,0,0) \\
+\iff & (a-b+ic,-a+ib+c,ia+b-c)=(0,0,0) \\
+\iff & \begin{cases}
+        a-b+ic  = 0 \\
+        -a+ib+c = 0  \\
+        ia+b-c = 0 \\
+       \end{cases} \\
+\iff & \cdots \text{ on résout le système } \\
+\iff & a=0, b=0, c=0 \\
+\end{align*}
+
+La famille $(v_1,v_2,v_3)$ est libre, donc aussi génératrice ; c'est donc une base de $\Cc^3$.
+
+
+
+
+  \item On cherche $a,b,c \in \Cc$ tels que $a v_1+b v_2+c v_3=v$.
+Il s'agit donc de r\'esoudre le syst\`eme :
+$$ \begin{cases} 
+a  -b +ic = 1+i \\ 
+-a + ib  +c = 1-i \\ 
+ia+b-c = i \\
+\end{cases}$$
+On trouve $a=0$, $b=\frac12(1-i)$, $c=\frac12(1-3i)$.
+Nous avons donc $v = \frac12(1-i) v_2 + \frac12(1-3i) v_3$ et ainsi
+ les coordonn\'ees de $v$ dans la base $(v_1,v_2,v_3)$ sont
+$(0,\frac12(1-i),\frac12(1-3i))$.
+\end{enumerate}
+\fincorrection
+\finexercice

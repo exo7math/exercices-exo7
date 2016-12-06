@@ -1,0 +1,39 @@
+\exercice{1387, legall, 1998/09/01}
+
+\enonce
+ Soit $  G  $ un groupe d'ordre $  pn  $ avec $  p
+$ premier.
+\begin{enumerate}
+    \item On consid\`ere deux sous-groupes $  H  $ et $  H'  $ de $  G  $ d'ordre $  p  $ avec $  H\not = H'  .$ Montrer que $  H\cap H'=\{ e\}  .$
+    \item En d\'eduire que le nombre d'\'el\'ements d'ordre $  p   $ dans $  G  $ est un multiple de $  p-1  .$
+\end{enumerate}
+
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+    \item $H\cap H'$ est un sous-groupe  de $H$ donc
+$\mathrm{Card} H\cap H'$  divise $\mathrm{Card} H = p$. Or $p$ est premier donc
+$\mathrm{Card} H\cap H' = 1$ ou $p$. Mais $H\cap H'\not= H$ donc $\mathrm{Card}
+H\cap H' \not= p$ et donc $ H\cap H' = \{ e \}$.
+    \item Soit $E$ l'ensemble des \'el\'ements
+d'ordre $p$ que l'on suppose non vide. Notons que pour $x\in E$ le
+sous-groupe $H_x$ engendr\'e par $x$ est d'ordre $p$ et de plus
+tout $z\in H_x\setminus \{ e \}$ est d'ordre $p$ car $H_x$ est
+cyclique et $p$ est premier. Donc $H_x$ contient $p-1$ \'el\'ement
+d'ordre $p$.
+
+Si $E$ ne contient qu'un seule \'el\'ement $x$ alors $E = H_x
+\setminus\{ e \}$ et donc $E$ contienet $p-1$ \'el\'ements.
+
+Sinon, soit $x,y \in  E$ avec $x\not=y$. Alors d'apr\`es la
+premi\`ere question  $H_x \cap H_y = \{ e \}$. Donc $E$ se
+d\'ecompose en une union disjointe de $H_x \setminus \{ e \}$.
+Donc $\mathrm{Card} E$ est multiple de $p-1$.
+\end{enumerate}
+\fincorrection
+
+\finexercice
+

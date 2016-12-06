@@ -1,0 +1,56 @@
+\exercice{2553, tahani, 2009/04/01}
+\enonce 
+Calculez $D^2f(x)$ dans les
+cas suivants:
+\begin{enumerate}
+\item $f\in L(E,G)$ continue 
+\item $f: E \times F \rightarrow G$, bilinéaire continue. 
+\item $f:M_n(\mathbb{R}) \rightarrow M_n(\mathbb{R})$, $f(A)=A^2$
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item Calculons l'accroissement:
+$$f(x+h)-f(x)=f(x)+f(h)-f(x)=f(h)+0.$$
+Or, par d\'efinition $f(h)$ est lin\'eaire en $h$, continue et
+$0=o(||h||)$. Par cons\'equent $f$ est diff\'erentiable et
+$$Df(x)=f, \mbox{ ou encore } Df(x).h=f(h).$$
+On remarque que $Df$ est l'application constante que à $x\in E$
+associe l'application lin\'eaire $f$. Par cons\'equent, $Df$ est
+diff\'erentiable et sa diff\'erentielle est nulle: $$D^2f=0.$$
+\item Calculons $$f((x,y)+(h,k))-f(x,y)=f(x+h,y+k)-f(x,y)=
+f(x,y+k)+f(h,y+k)-f(x,y)=$$
+$$f(x,y)+f(x,k)+f(h,y)+f(h,k)-f(x,y)=f(x,k)+f(h,y)+f(h,k).$$
+L'application qui \`a $(x,y)$ associe l'application lin\'eaire
+$Df(x,y)(h,k)=f(x,k)+f(h,y)$ est donc candidate pour être la
+diff\'erentielle de $f$. V\'erifions qu'elle est bien continue et
+que $f(h,k)=o(||(h,k)||)$. Nous rappelons qu'une application
+bilin\'eaire $f(x,y)$ est continue s'il existe $M>0$ tel que
+$$\forall (x,y) \in E^2; ||f(x,y)||\leq M||x||||y||.$$
+On a $$||Df(x,y)(h,k)||=||f(x,k)+f(h,y)|| \leq
+||f(x,k)||+||f(h,y)||\leq$$ $$M||x||.||k||+M||h||.||y|| \leq M
+(||x||+||y||)\max(||k||,||h||)\leq M(||x||+||y||)||(h,k)||.$$ Par
+cons\'equent, $Df(x,y)$ est continue et a une norme inf\'erieure
+\`a $M(||x||+||y||)$. De plus
+$$||f(h,k)||\leq M||h||.||k|| \leq ||(h,k)||.\epsilon(h,k)$$ o\`u
+$\epsilon$ tend vers zero quand $(h,k)$ tend vers zero car
+$$\epsilon(h,k)=\frac{||h||.||k||}{\sup(||h||,||k||)}$$ ce qui
+fini de montrer que $f$ est diff\'erentiable et que sa
+diff\'erentielle est d\'efinie par
+$$Df(x,y).(h,k)=f(x,k)+f(h,y).$$
+En remarquant que $Df$ est lin\'eaire par rapport \`a $(x,y)$,
+d'apr\`es la premi\`ere question, on d\'eduit que sa
+diff\'erentielle est $$D^2f(x,y)[(h,k),(u,v)]=f(u,k)+f(h,v).$$
+\item $$f(A+h)-f(A)=(A+h)^2-A^2=Ah+hA+h^2$$ avec $Ah+hA$
+lin\'eaire en $h$ (et en $A$) et $||h^2|| \leq ||h||^2=o(||h||)$.
+Par cons\'equent $f$ est diff\'erentiable et sa diff\'erentielle
+est $Df(A).h=Ah+hA$. Comme $Df(A)$ est lin\'aire par rapport \`a
+$A$, sa diff\'erentielle en $A$ est l'application bilin\'eaire
+$$D^2f(A)[H,K]=KH+HK.$$
+\end{enumerate}
+
+\fincorrection
+\finexercice

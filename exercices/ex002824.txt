@@ -1,0 +1,65 @@
+\exercice{2824, burnol, 2009/12/15}
+\enonce
+\begin{enumerate}
+  \item 
+Soit $\Omega$ l'ouvert habituel sur lequel est défini $\mathrm{Log}\,
+z$. Justifier pour tout $z\in\Omega$
+\[ \mathrm{Log}(z) = \int_0^1 \frac{z-1}{1+t(z-1)}dt\;,\]
+et donner une formule intégrale explicite pour le reste
+$R_N(z)$ dans:
+\[ \mathrm{Log}(z) = (z-1) - \frac{(z-1)^2}2 + \frac{(z-1)^3}3 -
+\dots + (-1)^{N-1}\frac{(z-1)^{N}}N + R_N(z) \;.\]  
+  \item  On suppose $\Re(z)\geq\delta$ pour un certain
+$\delta\in]0,1[$. Prouver :
+\[|R_N(z)|\leq \frac1\delta\frac{|z-1|^{N+1}}{N+1}\]
+On minorera $|1+t(z-1)|$ par $\delta$. 
+  \item En déduire que la série de Taylor de $\mathrm{Log}$ au point $1$ est
+uniformément convergente sur le compact $\{|z-1|\leq1,
+\delta\leq\Re(z)\}$.
+  \item Pour $-\pi<\phi<+\pi$ on pose $z = 1 +
+e^{i\phi}$. Déterminer les coordonnées polaires $|z|$ et
+$\mathrm{Arg}(z)$ de $z$ en fonction de $\phi$. Déduire de ce qui
+précède les identités suivantes, pour tout
+$\phi\in]-\pi,+\pi[$:
+\begin{align*}
+\log(2\cos \frac\phi2) &= \sum_{k=1}^\infty (-1)^{k-1}
+\frac{\cos k\phi}k \\
+\frac\phi2 &= \sum_{k=1} (-1)^{k-1} \frac{\sin k\phi}k
+\end{align*}
+et le fait que ces séries sont uniformément convergentes sur
+tout intervalle $[-\pi+\epsilon,+\pi-\epsilon]$ ($0<\epsilon<\pi$).  
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+  \item 
+Soit $\phi (t,z) =\frac{z-1}{1+t(z-1)}$ et notons $D=\{ |z-1|<1\}$. Pour tout $t\in [0,1]$ et tout $z\in D$ on a
+$$\phi (t,z) = (z-1) \sum_{k\geq 0} (-1)^k t^k (z-1)^k .$$
+Or $|(-1)^k t^k (z-1)^k|\leq |z-1|^k$. Si $0<r<1$, alors la s\'erie pr\'ec\'edente converge normalement dans $D(1,r)$ ce qui permet d'avoir (cf. le polycopié 2005/2006 de J.-F.~Burnol, chapitre 15, théorème 29)
+$$\int_0^1 \phi (t,z) dt = \sum_{k\geq 0} (-1)^k (z-1)^{k+1} \int _0^1 t^k dt =\sum_{k\geq0} (-1)^k \frac{(z-1)^{k+1}}{k+1}.$$
+Cette s\'erie est la s\'erie de Taylor de $\mathrm{Log} (z)$ en $1$ qui coincide avec $\mathrm{Log} (z)$ dans le disque $D$. Par cons\'equent, $z\mapsto \int _0^1 \phi (t,z)dt$ et $z\mapsto \mathrm{Log}(z)$ coincident dans $D$. On conclut par prolongement analytique et en remarquant que $z\mapsto \int_0^1 \phi (t,z)dt$ est une fonction holomorphe dans $\Omega$ (cf. le polycopié 2005/2006 de J.-F.~Burnol, chapitre 14, théorème 26).
+En ce qui concerne le reste $R_N$ voici le calcul:
+\begin{eqnarray*}
+R_N (z) &=&\int_0^1 \sum_{k\geq N} (-1)^k (z-1)^{k+1} t^k dt\\
+&=& (-1)^N \int_0^1 (z-1)^{N+1} t^N \sum_{k\geq 0} (-1)^k (z-1)^k t^k dt \\
+&=& (-1)^N (z-1)^{N+1} \int _0^1 \frac{t^N}{1+t(z-1)}dt.
+\end{eqnarray*}
+  \item Si $\Re(z) \geq \delta$, alors
+$$|1+t(z-1)| \geq |\Re (1+t(z-1))| = |1+t\Re (z-1)|\geq \delta .$$
+Par cons\'equent,
+$$|R_N (z) | \leq |z-1|^{N+1} \int_0^1 \frac{t^N \, dt}{|1+t(z-1)|} \leq \frac{1}{\delta} \frac{|z-1|^{N+1}}{N+1}.$$
+D'o\`u la convergence uniforme.
+  \item Voir ci-dessus.
+  \item On a $z=1+e^{i\phi} = (e^{i\frac{\phi}{2}}+e^{-i\frac{\phi}{2}})e^{i\frac{\phi}{2}}=2\cos \frac{\phi}{2}e^{i\frac{\phi}{2}}$. D'o\`u $\mathrm{Arg} (z) = \frac{\phi}{2}$ et $r=|z|=2|\cos \frac{\phi}{2} | =2\cos \frac{\phi}{2}$.
+Comme :
+\begin{eqnarray*}
+\log(2\cos \frac{\phi}{2}) +i\frac{\phi}{2} &= & \mathrm{Log} (z) = \sum_{k\geq 1} (-)^{k-1} \frac{(z-1)^k}{k} =\\
+&=& \sum_{k\ge 1} \frac{(-1)^{k-1}}{k} \cos (k\phi) + i\sum_{k\geq 1} \frac{(-1)^{k-1}}{k}  \sin (k\phi)
+\end{eqnarray*}
+il suffit d'identifier les parties r\'eelles et imaginaires pour en d\'eduire les \'egalit\'es demand\'ees.
+La convergence uniforme r\'esulte de la question 3 puisque
+$$\Re (z) = \Re (1+e^{i\phi }) =1+\cos \, \phi \geq 1+ \cos (\pi -\epsilon ) = \delta > 0.$$
+\end{enumerate}
+\fincorrection
+\finexercice

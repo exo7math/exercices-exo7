@@ -1,0 +1,19 @@
+\exercice{3910, quercia, 2010/03/11}
+\enonce[Calcul de somme]
+
+Calculer $\tan p - \tan q$. En déduire la valeur de
+$S_n = \sum_{k=1}^n \frac 1{\cos(k\theta)\cos((k+1)\theta)}$, $\theta \in \R$.
+\finenonce
+
+\noindication
+
+\correction
+$\tan p - \tan q = \frac {\sin(p-q)}{\cos p\cos q}$.
+
+$S_n = \begin{cases}\frac {\tan((n+1)\theta) - \tan\theta}{\sin\theta}
+                     &\text{ si } \sin\theta \ne 0 \cr
+              n      &\text{ si } \theta \equiv 0 (\mathrm{mod}\, {2\pi}) \cr
+              -n     &\text{ si } \theta \equiv \pi (\mathrm{mod}\, {2\pi}).\end{cases}$
+\fincorrection
+
+\finexercice

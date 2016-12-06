@@ -1,0 +1,49 @@
+\exercice{4789, quercia, 2010/03/16}
+\enonce[Polyn{\^o}mes scind{\'e}s (Ens Ulm-Lyon-Cachan MP$^*$ 2003)]
+Soit~$n\in\N^*$ et~$\sigma\in\R^n$.
+On note~$P_\sigma = X^n - \sigma_1 X^{n-1} + \dots + (-1)^{n-1}\sigma_{n-1}X + (-1)^n\sigma_n$.
+
+Soit~$\Omega = \{\sigma\in\R^n$ tq $P_\sigma$ est {\`a} racines r{\'e}elles, distinctes$\}$.
+
+\begin{enumerate}
+  \item $\Omega$ est-il ouvert~? ferm{\'e}~?
+    
+
+  \item Notons~$f$ : $\sigma  \mapsto P_\sigma$. D{\'e}terminer $f(\overline\Omega)$.
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $\Omega$ est ouvert~: si~$P$ a $n$ racines distinctes $a_1<a_2<\dots< a_n$
+    on choisit $b_0 < a_1 < b_1 < a_2 <\dots < a_n < b_n$. La suite $(P(b_0),\dots,P(b_n))$
+    est constitu{\'e}e de termes non nuls de signes altern{\'e}s, il en est de m{\^e}me
+    pour la suite $(Q(b_0),\dots,Q(b_n))$ o{\`u}~$Q$ est un polyn{\^o}me unitaire arbitraire
+    suffisament proche de~$P$ (pour une norme quelconque).
+    
+    $\Omega$ n'est pas ferm{\'e} car $\varnothing\ne\Omega\ne\R^n$ et $\R^n$ est connexe.
+  \item D{\'e}j{\`a}, si l'on munit $\R^n$ et $\R_n[X]$ de normes convenables,
+    $f$ est une isom{\'e}trie bicontinue donc $f(\overline\Omega) = \overline{f(\Omega)}$.
+    Montrons que $\overline{f(\Omega)}$ est l'ensemble $\cal S$ des
+    polyn{\^o}mes de~$\R_n[X]$ unitaires et scind{\'e}s sur~$\R$.
+
+    Si $P = X^n + a_{n-1}X^{n-1} + \dots + a_0$, notons~$M(P)$ la matrice compagne de~$P$.
+    
+    Si $P\in\cal S$ alors $M(P)$ est $\R$-trigonalisable, donc limite de matrices
+    {\`a} valeurs propres r{\'e}elles distinctes. Les polyn{\^o}mes caract{\'e}ristiques de
+    ces matrices, au signe pr{\`e}s, appartienent {\`a}~$f(\Omega)$ et convergent vers~$P$
+    d'o{\`u} ${\cal S} \subset \overline{f(\Omega)}$.
+    
+    Si $(P_k)$ est une suite de polyn{\^o}mes de~$f(\Omega)$ convergeant vers~$P$
+    alors il existe une suite $(O_k)$ de matrices orthogonales telle que
+    ${}^tO_kM(P_k)O_k$ est triangulaire sup{\'e}rieure (m{\'e}thode de Schmidt). Quitte
+    {\`a} extraire une sous-suite, on peut supposer que $O_k$ converge vers une
+    matrice orthogonale~$O$ et donc ${}^tOM(P)O$ est aussi triangulaire
+    sup{\'e}rieure ce qui implique que~$P\in\cal S$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

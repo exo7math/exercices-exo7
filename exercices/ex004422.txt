@@ -1,0 +1,24 @@
+\exercice{4422, quercia, 2010/03/14}
+\enonce[Centrale P' 1996]
+
+Montrer que la série $\sum_{n=1}^\infty \frac{n^2}{(1+n^2)^2}$ converge.
+Calculer une valeur approchée à $10^{-4}$ près de sa somme.
+
+\finenonce
+
+\noindication
+
+\correction
+$\frac{n^2}{(n^2+1)^2}-\frac{1}{n^2-1}
+         = -\frac{3n^2+1}{(n^2+1)^2(n^2-1)} \ge -\frac{4}{n^4}$ pour
+         $n\ge 3$.
+
+Donc $S = \sum_{n=1}^N \frac{n^2}{(n^2+1)^2}
+        + \sum_{n=N+1}^\infty \frac{1}{n^2-1} + R_N$ avec
+     $-\frac{4}{3N^3}\le R_N\le 0$ et
+     $\sum_{n=N+1}^\infty \frac{1}{n^2-1} = \frac{N+\frac12}{N(N+1)}$.
+
+Pour $N=25$ on obtient~: $0.76981 < S < 0.76990$.
+\fincorrection
+
+\finexercice

@@ -1,0 +1,66 @@
+\exercice{5103, rouget, 2010/06/30}
+\enonce[**IT]
+Exprimer à l'aide de quantificateurs les phrases suivantes puis donner leur négation.
+
+\begin{enumerate}
+\item  ($f$ étant une application du plan dans lui-même)
+\begin{enumerate}
+\item $f$ est l'identité du plan.
+\item $f$ a au moins un point invariant (on dit aussi point fixe).
+\end{enumerate}
+\item  ($f$ étant une application de $\Rr$ dans $\Rr$)
+\begin{enumerate}
+\item $f$ est l'application nulle.
+\item L'équation $f(x)=0$ a une solution.
+\item L'équation $f(x)=0$ a exactement une solution.
+\end{enumerate}
+\item  ($(u_n)_{n\in\Nn}$ étant une suite réelle)
+\begin{enumerate}
+\item La suite $(u_n)_{n\in\Nn}$ est bornée.
+\item La suite $(u_n)_{n\in\Nn}$ est croissante.
+\item La suite $(u_n)_{n\in\Nn}$ est monotone.
+\end{enumerate}
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item 
+
+\begin{enumerate}
+ \item  $(f=Id_{\mathcal{P}}\Leftrightarrow\forall M\in\mathcal{P},\;f(M)=M)$ et $(f\neq Id_{\mathcal{P}}\Leftrightarrow\exists
+M\in\mathcal{P}/\;f(M)\neq M)$.
+  \item $(f\;\mbox{a au moins un point fixe}\Leftrightarrow \exists M\in\mathcal{P}/\;f(M)=M)$ et $(f\;\mbox{n'a pas de point
+fixe}\Leftrightarrow \forall M\in\mathcal{P},\;f(M)\neq M)$.
+
+\end{enumerate}
+Constatez que les phrases $f(M)=M$ ou $f(M)\neq M$ \textbf{n'ont aucun sens} si elles ne sont pas accompagnées de
+quantificateurs.
+ \item 
+  \begin{enumerate}
+  \item $(f=0\Leftrightarrow\forall x\in\Rr,\;f(x)=0)$ et $(f\neq0\Leftrightarrow\exists x\in\Rr/\;f(x)\neq0)$.
+  \item (L'équation $f(x)=0$ a (au moins) une solution si et seulement si $\exists x\in\Rr/\;f(x)=0)$ et (l'équation
+$f(x)=0$ n'a pas de solution si et seulement si $\forall x\in\Rr/\;f(x)\neq0)$.
+  \item (L'équation $f(x)=0$ a exactement une solution si et seulement si $\exists!x\in\Rr/\;f(x)=0)$ et (l'équation
+$f(x)=0$ n'a pas exactement une solution si et seulement si $\forall x\in\Rr/\;f(x)\neq0$ ou
+$\exists(x,x')\in\Rr^2/\;(x\neq x'\;\mbox{et}\;f(x)=f(x')=0)$.
+\end{enumerate}
+ \item  
+  \begin{enumerate}
+  \item  $((u_n)_{n\in\Nn}\;\mbox{bornée}\Leftrightarrow\exists M\in\Rr/\;\forall n\in\Nn,\;|u_n|\leq M)$ et
+$((u_n)_{n\in\Nn}\;\mbox{non bornée}\Leftrightarrow\forall M\in\Rr/\;\exists n\in\Nn,\;|u_n|>M)$.
+   \item $((u_n)_{n\in\Nn}\;\mbox{croissante}\Leftrightarrow\forall n\in\Nn/\;u_{n+1}\geq u_n)$ et
+$((u_n)_{n\in\Nn}\;\mbox{non croissante}\Leftrightarrow\exists n\in\Nn/\;u_{n+1}<u_n)$.
+
+  \item  $((u_n)_{n\in\Nn}\;\mbox{monotone}\Leftrightarrow(\forall n\in\Nn/\;u_{n+1}\geq u_n)\;\mbox{ou}\;(\forall
+n\in\Nn/\;u_{n+1}\leq u_n))$ et $((u_n)_{n\in\Nn}\;\mbox{non monotone}\Leftrightarrow((\exists
+n\in\Nn/\;u_{n+1}<u_n)\;\mbox{et}\;(\exists
+n\in\Nn/\;u_{n+1}>u_n))$.
+  \end{enumerate}
+
+\end{enumerate}
+
+\fincorrection
+\finexercice

@@ -1,0 +1,38 @@
+\exercice{4176, quercia, 2010/03/11}
+\enonce[Non injectivité locale de l'exponentielle]
+
+Soit $f : {\mathcal{M}_n(\C)} \to {\mathcal{M}_n(\C)}, M  \mapsto {\exp(M).}$
+
+\begin{enumerate}
+  \item Montrer que $f$ est de classe $\mathcal{C}^1$ sur $\mathcal{M}_n(\C)$ et exprimer,
+pour $M,H\in \mathcal{M}_n(\C)$, $d f_M(H)$ sous forme d'une série.
+
+
+  \item Montrer qu'il existe un voisinage $V$ de $0$ dans $\mathcal{M}_n(\C)$
+tel que pour toutes matrices $A,B\in V$ on a~:
+
+$\exp(A) = \exp(B)  \Rightarrow  A=B$.
+
+  \item Trouver une suite $(M_k)$ de matrices de $\mathcal{M}_2(\C)$ distinctes ayant même
+exponentielle et convergeant vers une matrice $A$ (donc il n'existe
+pas de voisinage de~$A$ sur lequel la restriction de~$f$ est injective).
+
+
+  \item Donner de même un point de non injectivité locale dans $\mathcal{M}_2(\R)$.
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $d f_M(H) = \sum_{k=0}^\infty \frac1{k!}(M^{k-1}H + \dots + HM^{k-1})$.
+  \item 
+  \item les matrices $M_k = \begin{pmatrix}0&1/k\cr0&2i\pi\cr\end{pmatrix}$ sont toutes
+semblables à~$M_\infty$ et ont même exponentielle $I$.
+  \item $M_k=\begin{pmatrix}0&2\pi+1/k\cr-4\pi^2/(2\pi+1/k)&0\cr\end{pmatrix}$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

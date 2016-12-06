@@ -1,0 +1,52 @@
+\exercice{919, liousse, 2003/10/01}
+\video{lE3VGElRQrs}
+\enonce
+Soient $v_1=(0,1,-2,1),
+v_2=(1,0,2,-1), v_3=(3,2,2,-1), v_4 = (0,0,1,0)$ et
+$v_5=(0,0,0,1)$ des vecteurs de $\Rr^4$.  Les propositions
+suivantes sont-elles vraies ou fausses ?  Justifier votre r\'eponse.
+ \begin{enumerate}
+ \item $\text{Vect}\{ v_1, v_2, v_3 \} =  \text{Vect}\{(1,1,0,0),(-1,1,-4,2)\}$.
+ \item $(1,1,0,0) \in \text{Vect}\{ v_1, v_2 \} \cap \text{Vect}\{ v_2, v_3, v_4 \}$.
+ \item $\dim(\text{Vect}\{ v_1, v_2 \} \cap \text{Vect}\{ v_2, v_3, v_4 \})=1$ (c'est-à-dire c'est une droite vectorielle).
+ \item $\text{Vect}\{ v_1, v_2 \} + \text{Vect}\{ v_2, v_3, v_4 \}= \Rr^4$.
+ \item $\text{Vect}\{ v_4, v_5 \}$ est un sous-espace vectoriel 
+   suppl\'ementaire de $\text{Vect}\{ v_1, v_2, v_3 \}$ dans $\Rr^4$.
+ \end{enumerate}
+
+\finenonce 
+
+\indication
+\begin{enumerate}
+\item Vrai.
+\item Vrai.
+\item Faux.
+\item Faux.
+\item Vrai.
+\end{enumerate}
+\finindication
+
+\correction
+Faisons d'abord une remarque qui va simplifier les calculs : 
+$$v_3 = 2v_1+3v_2.$$
+ Donc en fait nous avons 
+$\text{Vect} \{v_1,v_2,v_3\}= \text{Vect}\{v_1,v_2\}$ et c'est un espace de dimension $2$, c'est-à-dire un plan vectoriel.
+Par la m\^eme relation on trouve que $\text{Vect} \{v_1,v_2,v_3\}= \text{Vect}\{v_2,v_3\}$.
+
+\begin{enumerate}
+\item Vrai. $\text{Vect}\{(1,1,0,0),(-1,1,-4,2)\}$ est inclus dans $\text{Vect} \{v_1,v_2,v_3\}$, car
+$(1,1,0,0) = v_1+v_2$ et $(-1,1,-4,2)=v_1-v_2$. Comme ils sont de m\^eme dimension ils sont \'egaux 
+(autrement dit : comme un plan est inclus dans un autre alors ils sont égaux).
+\item Vrai. On a $(1,1,0,0) = v_1+v_2$ donc  $(1,1,0,0)\in \text{Vect}\{v_1,v_2\}$, or 
+$\text{Vect}\{v_1,v_2\}=\text{Vect}\{v_2,v_3\}\subset \text{Vect}\{v_2,v_3,v_4\}$. 
+Donc $(1,1,0,0) \in \text{Vect}\{v_1, v_2\} \cap    \text{Vect}\{v_2, v_3, v_4\}$.
+\item Faux. Toujours la m\^eme relation nous donne que 
+$\text{Vect} \{v_1, v_2\} \cap \text{Vect} \{v_2, v_3, v_4\} = \text{Vect}\{v_1, v_2\}$ donc est de dimension $2$.
+C'est donc un plan vectoriel et pas une droite.
+ \item Faux. Encore une fois la relation donne que 
+$\text{Vect}\{v_1, v_2\}+\text{Vect}\{v_2, v_3, v_4\} = \text{Vect}\{v_1, v_2, v_4\}$, or $3$ vecteurs ne
+   peuvent engendrer $\Rr^4$ qui est de dimension $4$.
+\item Vrai.  Faire le calcul : l'intersection est $\{0\}$ et la somme est $\Rr^4$.
+\end{enumerate}
+\fincorrection
+\finexercice

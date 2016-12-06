@@ -1,0 +1,45 @@
+\exercice{5406, rouget, 2010/07/06}
+\enonce[***I]
+Soit $f$ une application de $[0,1]$ dans $\Rr$, continue sur $[0,1]$ et vérifiant $f(0)=f(1)$.
+\begin{enumerate}
+\item  Soit $n$ un entier naturel non nul et soit $a=\frac{1}{n}$. Montrer que l'équation $f(x+a)=f(x)$ admet au moins une solution.
+\item  Montrer (en fournissant une fonction précise) que, si $a$ est un réel de $]0,1[$ qui n'est pas de la forme précédente, il est possible que l'équation $f(x+a)=f(x)$ n'ait pas de solution.
+\item  Application. Un cycliste parcourt 20 km en une heure.
+\begin{enumerate}
+\item Montrer qu'il existe au moins un intervalle de temps de durée une demi-heure pendant lequel il a parcouru 10 km.
+\item Montrer qu'il existe au moins un intervalle de temps de durée 3 min pendant lequel il a
+parcouru 1 km.
+\item Montrer qu'il n'existe pas nécessairement un intervalle de temps de durée 45 min pendant lequel il a parcouru 15 km.
+\end{enumerate}
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  Soit $n$ un entier naturel non nul donné. Pour $x$ élément de $[0,1-\frac{1}{n}]$, posons $g(x)=f(x+\frac{1}{n})-f(x)$.
+
+$g$ est définie et continue sur $[0,1-\frac{1}{n}]$. De plus,
+
+$$\sum_{k=0}^{n-1}g(\frac{k}{n})=\sum_{k=0}^{n-1}(f(\frac{k+1}{n})-f(\frac{k}{n}))=f(1)-f(0)=0.$$ 
+
+Maintenant, s'il existe un entier $k$ élément de $\{0,...,n-1\}$ tel que $g(\frac{k}{n})=0$, on a trouvé un réel $x$ de $[0,1]$ tel que $f(x+\frac{1}{n})=f(x)$ (à savoir $x=\frac{k}{n}$).
+
+Sinon, tous les $g(\frac{k}{n})$ sont non nuls et, étant de somme nulle, il existe deux valeurs de la variable en lesquels $g$ prend des valeurs de signes contraires. Puisque $g$ est continue sur $[0,1-\frac{1}{n}]$, le théorème des valeurs intermédiares permet d'affirmer que $g$ s'annule au moins une fois dans cet intervalle ce qui fournit de nouveau une solution à l'équation $f(x+\frac{1}{n})=f(x)$.
+
+\item  Soit $a\in]0,1[$ tel que $\frac{1}{a}\notin\Nn^*$. Soit, pour $x\in[0,1]$, 
+$f(x)=|\sin\frac{\pi x}{a}|-x|\sin\frac{\pi}{a}|$. $f$ est continue sur $[0,1]$, $f(0)=f(1)=0$ mais,
+ 
+$$\forall x\in\Rr,\;f(x+a)-f(x)=(|\sin\frac{\pi(x+a)}{a}|-|\sin\frac{\pi x}{a}|)-((x+a)-x)|\sin\frac{\pi}{a}|=-a|\sin\frac{\pi}{a}|\neq0.$$
+
+\item (a) et b)) Soit $g(t)$ la distance, exprimée en kilomètres, parcourue par le cycliste à l'instant $t$ exprimé en heures, $0\leq t\leq1$, puis, pour $t\in[0,1]$, $f(t)=g(t)-20t$. $f$ est continue sur $[0,1]$ (si le cycliste reste un tant soit peu cohérent) et vérife $f(0)=f(1)=0$.
+
+D'après 1), $\exists t_1\in[0,\frac{1}{2}]$, $\exists t_2\in[0,\frac{19}{20}]$ tels que $f(t_1+\frac{1}{2})=f(t_1)$ et $f(t_2+\frac{1}{20})=f(t_2)$ ce qui s'écrit encore
+$g(t_1+\frac{1}{2})-g(t_1)=10$ et $g(t_2+\frac{1}{20})-g(t_2)=1$.
+
+c) Posons pour $0\leq t\leq 1$, $f(t)=|\sin\frac{4\pi t}{3}|-\frac{t\sqrt{3}}{2}$ et donc, $g(t)=|\sin\frac{4\pi t}{3}|+(20-\frac{\sqrt{3}}{2})t$. $\forall t\in[0,\frac{1}{4}]$, $f(t+\frac{3}{4})-f(t)\neq 0$ ou encore $g(t+\frac{3}{4})-g(t)\neq 15$.
+\end{enumerate}
+
+\fincorrection
+\finexercice

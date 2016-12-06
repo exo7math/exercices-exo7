@@ -1,0 +1,28 @@
+\exercice{5729, rouget, 2010/10/16}
+\enonce[** I]
+ Soit $(P_n)_{n\in\Nn}$ une suite de polynômes convergeant uniformément sur $\Rr$ vers une fonction $f$. Montrer que $f$ est un polynôme.
+
+\finenonce
+
+\noindication
+
+\correction
+Posons $f=\lim_{n \rightarrow +\infty}P_n$.
+
+Le critère de \textsc{Cauchy} de convergence uniforme (appliqué à $\varepsilon=1$) permet d'écrire
+
+\begin{center}
+$\exists N\in\Nn/\;\forall n\geqslant N,\;\forall m\geqslant N,\;\forall x\in\Rr,\; |P_n(x) - P_m(x)|\leqslant1$.
+\end{center}
+
+Pour $n\geqslant N$, les polynômes $P_N-P_n$  sont bornés sur $\Rr$ et donc constants. Par suite, pour chaque $n\geqslant N$, il existe $a_n\in\Rr$ tel que $P_N-P_n = a_n$\quad$(*)$.
+Puisque la suite $(P_n)$ converge simplement sur $\Rr$, La suite $(a_n)=(P_N(0) - P_n(0))$ converge  vers un réel que l'on note $a$. On fait alors tendre $n$ tend vers $+\infty$ dans l'égalité $(*)$ et on obtient 
+
+\begin{center}
+$f = P_N - a$
+\end{center}
+
+On a montré que $f$ est un polynôme.
+
+\fincorrection
+\finexercice

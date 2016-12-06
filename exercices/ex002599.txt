@@ -1,0 +1,49 @@
+\exercice{2599, delaunay, 2009/05/19}
+\enonce
+Soit $m\in\R$, et $A$ la matrice
+$$A=\begin{pmatrix}1+m&1+m&1 \\  -m&-m&-1 \\  m&m-1&0\end{pmatrix}$$
+\begin{enumerate}
+ \item Factoriser le polyn\^ome caract\'eristique de $A$ et montrer que les valeurs propres de $A$ sont $-1$ et $1$.
+ \item Pour quelles valeurs de $m$ la matrice est-elle diagonalisable ? (justifier). D\'eterminer suivant les valeurs de $m$ le polyn\^ome minimal de $A$ (justifier).
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+Soit $m\in\R$, et $A$ la matrice
+$$A=\begin{pmatrix}1+m&1+m&1 \\  -m&-m&-1 \\  m&m-1&0\end{pmatrix}$$
+\begin{enumerate}
+ \item  {\it Factorisons le polyn\^ome caract\'eristique de $A$ et montrons que les valeurs propres de $A$ sont $-1$ et $1$.} (1,5 points)
+\begin{align*}
+P_A(X)&=\begin{vmatrix}1+m-X&1+m&1 \\  -m&-m-X&-1 \\  m&m-1&-X\end{vmatrix} \\ 
+&=\begin{vmatrix}1+m-X&1+m&1 \\  -m&-m-X&-1 \\  0&-X-1&-X-1\end{vmatrix} \\ 
+&=\begin{vmatrix}1+m-X&m&1 \\  -m&1-m-X&-1 \\  0&0&-X-1\end{vmatrix} \\ 
+&=(-X-1)\begin{vmatrix}1+m-X&m \\  -m&1-m-X\end{vmatrix} \\ 
+&=-(1+X)\left((1-X)^2-m^2+m^2\right) \\ 
+&=-(1+X)(1-X)^2
+\end{align*}
+Ainsi, les valeurs propres de la matrice $A$ sont $-1$, valeur propre simple, et $1$, valeur propre double.
+
+ \item {\it Pour quelles valeurs de $m$ la matrice est-elle diagonalisable ? } (1,5 points)
+
+La matrice $A$ est diagonalisable si et seulement si le sous-espace propre associ\'e \`a la valeur propre $1$ est de dimension $2$. D\'eterminons donc ce sous-espace propre $E_1=\{\vec u=(x,y,z)\in\R^3,\ A\vec u=\vec u\}$.
+$$\begin{align*}
+A\vec u=\vec u
+&\iff\left\{{\begin{align*}mx+(1+m)y+z&=0 \\  -mx-(1+m)y-z&=0 \\  mx+(m-1)y-z&=0\end{align*}} \right. \\ 
+&\iff\left\{{\begin{align*}mx+(1+m)y+z&=0 \\  mx+(m-1)y-z&=0\end{align*}}\right. \\ 
+&\iff\left\{{\begin{align*}2y+2z&=0 \\  2mx+2my&=0\end{align*}}\right. \\ 
+&\iff\left\{{\begin{align*}y+z&=0 \\  m(x+y)&=0\end{align*}}\right. \\ 
+\end{align*}$$
+Ainsi, l'espace $E_1$ est de dimension $2$ si et seulement si $m=0$, c'est alors le plan d'\'equation $y+z=0$, sinon c'est une droite, intersection des deux plans $y+z=0$ et $x+y=0$.
+
+{\it D\'eterminons suivant les valeurs de $m$ le polyn\^ome minimal de $A$.} (1 point)
+
+Si $m=0$, la matrice $A$ est diagonalisable, son polyn\^ome minimal n'a que des racines simples, il est \'egal \`a 
+$$Q(X)=(X-1)(X+1).$$
+Si $m\neq 0$, la matrice $A$ n'est pas diagonalisable, son polyn\^ome minimal ne peut pas avoir uniquement des racines simples, il est donc \'egal \`a
+$$Q(X)=(X-1)^2(X+1).$$
+
+\end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,77 @@
+\exercice{5841, rouget, 2010/10/16}
+\enonce[** I]
+Soit $E = C^2([0,1],\Rr)$. Pour $f$ élément de $E$, on pose $N(f) =\int_{0}^{1}|f(t)|\;dt$, $N'(f) = |f(0)| +\int_{0}^{1}|f'(t)|\;dt$ et
+
+$N''(f) =|f(0)|+|f'(0)|+\int_{0}^{1}|f''(t)|\;dt$. Montrer que $N$, $N'$ et $N''$ sont des normes et les comparer.
+\finenonce
+
+\noindication
+
+\correction
+\textbullet~Il est connu que $N$ est une norme sur $E$.
+
+\textbullet~Montrons que $N'$ est une norme sur $E$.
+
+(1) $N'$ est une application de $E$ dans $\Rr^+$ car pour $f$ dans $E$, $f'$ est continue sur le segment $[0,1]$ et donc $f'$ est intégrable
+
+sur le segment $[0,1]$.
+
+(2) Soit $f\in E$. Si $N'(f) = 0$ alors  $f(0)=0\;\text{et}\;f'= 0$ (fonction continue positive d'intégrale nulle). Par suite, $f$ est un
+
+polynôme de degré inférieur ou égal à $0$ tel que $f(0)=0$ et on en déduit que $f = 0$.
+
+(3) $\forall f\in E$, $\forall \lambda\in\Rr$, $N'(\lambda f) =|\lambda f(0)|+\int_{0}^{1}|\lambda f'(t)|\;dt=|\lambda|\left(|f(0)|+\int_{0}^{1}|f'(t)|\;dt\right)=|\lambda| N'(f)$.
+
+(4) Soit $(f,g)\in E^2$.
+
+\begin{center}
+$N'(f+g)\leqslant|f(0)|+|g(0)|+\int_{0}^{1}|f'(t)|\;dt +\int_{0}^{1}|g'(t)|dt= N'(f)+N'(g)$.
+\end{center}
+
+Donc $N'$ est une norme sur $E$.
+
+\textbullet~Montrons que $N''$ est une norme sur $E$. On note que $\forall f\in E$, $N''(f)=|f(0)|+N'(f')$ et tout est immédiat.
+
+\begin{center}
+\shadowbox{
+$N$, $N'$ et $N''$ sont des normes sur $E$.
+}
+\end{center}
+
+\textbullet~Soit $f\in E$ et $t\in[0,1]$. Puisque la fonction $f'$ est continue sur $[0,1]$
+
+\begin{center}
+$|f(t)| = |f(0) +\int_{0}^{t}f'(u)\;du|\leqslant|f(0)|+\int_{0}^{t}|f'(u)|du\leqslant |f(0)|+\int_{0}^{1}|f'(u)|\;du =N'(f)$,
+\end{center}
+
+et donc $N(f) =\int_{0}^{1}|f(t)|\;dt\leqslant\int_{0}^{1}N'(f)\;dt=N'(f)$.
+
+Ensuite en appliquant le résultat précédent à $f'$,  on obtient 
+
+\begin{center}
+$N'(f)=|f(0)|+N(f')\leqslant|f(0)|+N'(f')=N''(f)$.
+\end{center}
+
+Finalement 
+
+\begin{center}
+\shadowbox{
+$\forall f\in E$, $N(f)\leqslant N'(f)\leqslant N''(f)$.
+}
+\end{center}
+
+Pour $n\in\Nn$ et $t\in[0,1]$, on pose $f_n(t) = t^n$. 
+
+$N(f_n)=\int_{0}^{1}t^n\;dt= \frac{1}{n+1}$ et donc la suite $(f_n)_{n\in\Nn}$ tend vers $0$ dans l'espace vectoriel normé $(E,N)$.
+
+Par contre, pour $n\geqslant1$, $N'(f_n)=n\int_{0}^{1}t^{n-1}\;dt=1$ et la suite $(f_n)_{n\in\Nn}$  ne tend pas vers $0$ dans l'espace vectoriel normé $(E,N')$. On en déduit que
+
+\begin{center}
+\shadowbox{
+les normes $N$ et $N'$ ne sont pas des normes équivalentes.
+}
+\end{center}
+
+De même en utilisant $f_n(t)= \frac{t^n}{n}$, on montre que les normes $N'$ et $N''$ ne sont pas équivalentes.
+\fincorrection
+\finexercice

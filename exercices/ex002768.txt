@@ -1,0 +1,113 @@
+\exercice{2768, tumpach, 2009/10/25}
+\video{NxowOl4QnIA}
+\enonce
+\begin{enumerate}
+\item Résoudre de quatre manières différentes le système suivant 
+(par substitution, par la méthode du pivot de Gauss, 
+en inversant la matrice des coefficients, par la formule de Cramer)~:
+$$
+\left\{\begin{array}{ccccc}2x & + & y & = & 1\\ 3x & + & 7y & = & -2  \end{array}\right.
+$$
+\item Choisir la méthode qui vous para\^it la plus rapide pour résoudre, 
+selon les valeurs de $a$,  les systèmes suivants~:
+$$
+\left\{\begin{array}{ccccc} ax & + & y & = & 2\\ (a^2 + 1)x & + & 2ay & = & 1 \end{array} \right.
+\qquad 
+\left\{\begin{array}{ccccc} (a + 1)x & + & (a - 1)y & = & 1\\ (a - 1)x & + & (a + 1)y & = & 1 \end{array} \right.
+$$
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item 
+  \begin{enumerate}
+    \item \textbf{Par substitution.} La première équation s'écrit aussi $y=1-2x$.
+On remplace maintenant $y$ dans la deuxième équation 
+$$3x+7y=-2 \implies 3x+7(1-2x)=-2 \implies 11x=9 \implies  x=\frac{9}{11}.$$
+On en déduit $y$ : $y=1-2x=1-2\frac{9}{11}=-\frac{7}{11}$.
+La solution de ce système est donc le couple $(\frac{9}{11},-\frac{7}{11})$.
+
+N'oubliez pas de vérifier que votre solution fonctionne !
+
+    \item \textbf{Par le pivot de Gauss.} On garde la ligne $L_1$ et on remplace la ligne 
+$L_2$ par $2L_2-3L_1$ :
+$$
+\left\{\begin{array}{ccccc}2x & + & y & = & 1\\ 3x & + & 7y & = & -2  \end{array}\right.
+\iff 
+\left\{\begin{array}{ccccc}2x & + & y & = & 1\\  &  & 11y & = & -7  \end{array}\right.
+$$
+On obtient un système triangulaire : on en déduit $y=-\frac{7}{11}$ et alors la première ligne permet d'obtenir
+$x=\frac{9}{11}$.
+
+    \item \textbf{Par les matrices.} En terme matriciel le système s'écrit
+
+$$AX=Y \quad \text{  avec } A = \begin{pmatrix} 2 & 1 \\ 3 & 7 \\ \end{pmatrix}
+\quad X = \begin{pmatrix} x \\ y \end{pmatrix} \quad Y = \begin{pmatrix} 1 \\ -2 \end{pmatrix}$$
+
+On trouve la solution du système en inversant la matrice :
+$$X = A^{-1} Y.$$
+
+L'inverse d'une matrice $2\times 2$ se calcule ainsi
+$$\text{ si } A = \begin{pmatrix} a & b \\ c & d \\ \end{pmatrix} \quad \text{ alors } \quad
+A^{-1} = \frac{1}{ad-bc}\begin{pmatrix} d & -b \\ -c & a \\ \end{pmatrix}$$
+Il faut bien sûr que le déterminant $\det A = \begin{vmatrix}  a & b \\ c & d \\ \end{vmatrix}=ad-bc$ 
+soit différent de $0$.
+
+Ici on trouve 
+$$A^{-1} = \frac{1}{11}\begin{pmatrix} 7 & -1 \\ -3 & 2 \\ \end{pmatrix} \quad \text{ et } \quad
+X = A^{-1} \begin{pmatrix} 1 \\ -2 \end{pmatrix} =  \frac{1}{11}\begin{pmatrix} 9 \\ -7 \end{pmatrix}$$
+
+    \item \textbf{Par les formules de Cramer.}
+Les formules de Cramer pour un système de deux équations sont les suivantes si le déterminant vérifie $ad-bc\neq 0$ :
+$$
+\left\{\begin{array}{ccccc}ax & + & by & = & e\\ cx & + & dy & = & f  \end{array}\right.
+\implies x = \frac{\begin{vmatrix}  e & b \\ f & d\end{vmatrix}}{\begin{vmatrix}  a & b \\ c & d \end{vmatrix}}
+\quad \text{ et } \quad y = \frac{\begin{vmatrix}  a & e \\ c & f\end{vmatrix}}{\begin{vmatrix}  a & b \\ c & d \end{vmatrix}}$$
+
+Ce qui donne ici :
+$$x = \frac{\begin{vmatrix}  1 & 1 \\ -2 & 7\end{vmatrix}}{\begin{vmatrix}  2 & 1 \\ 3 & 7 \end{vmatrix}} = \frac{9}{11}
+ \quad \text{ et } \quad y = \frac{\begin{vmatrix}  2 & 1 \\ 3 & -2 \end{vmatrix}}{\begin{vmatrix}  2 & 1 \\ 3 & 7 \end{vmatrix}} = -\frac{7}{11}$$
+
+  \end{enumerate}
+
+
+  \item
+  \begin{enumerate}
+     \item Avant tout on regarde s'il existe une solution unique, c'est le cas si et seulement si le déterminant 
+est non nul. Pour le premier système le déterminant est 
+$\begin{vmatrix}  a & 1 \\ a^2+1 & 2a\end{vmatrix}=a^2-1$
+donc il y a une unique solution si et seulement si $a\neq \pm 1$.
+
+Bien sûr toutes les méthodes conduisent au même résultat !
+Par exemple par substitution, en écrivant la première ligne $y=2-ax$,
+la deuxième ligne devient $(a^2+1)x+2a(2-ax)=1$. On en déduit
+que si $a\neq\pm1$ alors $x=\frac{4a-1}{a^2-1}$ puis $y= \frac{-2a^2+a-2}{a^2-1}$.
+
+Traitons maintenant les cas particuliers.
+Si $a=1$ alors le système devient :
+$\left\{\begin{array}{ccccc} x & + & y & = & 2\\ 2x & + & 2y & = & 1 \end{array} \right.$
+Mais on ne peut avoir en même temps $x+y=2$ et $x+y=\frac12$.
+Donc il n'y a pas de solution.
+
+Si $a=-1$ alors le système devient :
+$\left\{\begin{array}{ccccc} -x & + & y & = & 2\\ 2x & - & 2y & = & 1 \end{array} \right.$
+et il n'y a pas de solution.
+
+     \item Ici le déterminant est $\begin{vmatrix}  a+1 & a-1 \\ a-1 & a+1 \end{vmatrix}=(a+1)^2-(a-1)^2=4a$.
+
+Si $a\neq 0$ alors on trouve la solution unique $(x,y)$.
+Par exemple avec la formule de Cramer
+$$x=\frac{\begin{vmatrix}  1 & a-1 \\ 1 & a+1\end{vmatrix}}{4a} = \frac{1}{2a}
+\text{ et } 
+y = \frac{\begin{vmatrix}  a+1 & 1 \\ a-1 & 1 \end{vmatrix}}{4a} = \frac{1}{2a}.$$
+
+Si $a=0$ il n'y a pas de solution.
+  \end{enumerate}
+  
+\end{enumerate}
+\fincorrection
+
+\finexercice

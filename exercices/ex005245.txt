@@ -1,0 +1,28 @@
+\exercice{5245, rouget, 2010/06/30}
+\enonce[***I]
+Soit $f$ une application injective de $\Nn$ dans $\Nn$. Montrer que $\lim_{n\rightarrow +\infty}f(n)=+\infty$.
+\finenonce
+
+\noindication
+
+\correction
+Soit $f$ une application de $\Nn$ dans lui-même, injective. Montrons que $\lim_{n\rightarrow +\infty}f(n)=+\infty$.
+
+Soient $A$ un réel puis $m=\mbox{Max}(0,1+E(A))$.
+
+Puisque $f$ est injective, on a $\mbox{card}(f^{-1}(\{0,1,...,m\})\geq m+1$. En particulier, $f^{-1}(\{0,1,...,m\})$ est fini (éventuellement vide).
+
+Posons $n_0=1+\left\{
+\begin{array}{l}
+0\;\mbox{si}\;f^{-1}(\{0,1,...,m\})=\emptyset\\
+\mbox{Max}f^{-1}(\{0,1,...,m\})\;\mbox{sinon}
+\end{array}
+\right.$.
+
+Par définition de $n_0$, si $n\geq n_0$, $n$ n'est pas élément de $f^{-1}(\{0,1,...,m\})$ et donc $f(n)>m>A$.
+
+On a montré que $\forall A\in\Rr,\;\exists n_0\in\Nn/\;(\forall n\in\Nn),\;(n\geq n_0\Rightarrow f(n)>A)$ ou encore 
+$\lim_{n\rightarrow +\infty}f(n)=+\infty$.
+
+\fincorrection
+\finexercice

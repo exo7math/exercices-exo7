@@ -1,0 +1,66 @@
+\exercice{638, gourio, 2001/09/01}
+\video{UAO0DkHX2EQ}
+\enonce
+Trouver pour $(a,b)\in (\Rr^{+*})^{2}$ :
+$$\lim\limits_{x\rightarrow 0^{+}}\left(\frac{a^{x}+b^{x}}{2}\right)^{\frac{1}{x}}.$$
+\finenonce 
+
+\indication
+R\'{e}ponse: $\sqrt{ab}$.
+\finindication
+
+\correction
+
+Soit 
+$$
+ f(x) = \left(\frac{a^{x}+b^{x}}{2}\right)^{\frac{1}{x}}
+     = \exp\left( \frac 1x \ln \left(\frac{a^{x}+b^{x}}{2}\right) \right) 
+$$
+
+$a^x \to 1$, $b^x \to 1$ donc $\frac{a^{x}+b^{x}}{2} \to 1$ lorsque $x \to 0$
+et nous sommes face à une forme indéterminée.
+Nous savons que $\lim_{t \to 0} \frac{\ln(1+t)}{t} = 1$.
+Autrement dit il existe un fonction $\mu$ telle que $\ln(1+t) = t \cdot \mu(t)$ avec
+$\mu(t) \to 1$ lorsque $t\to 0$.
+
+Appliquons cela à $g(x) = \ln \left(\frac{a^{x}+b^{x}}{2}\right)$.
+Alors 
+$$g(x) = \ln \left(1+ \left(\frac{a^{x}+b^{x}}{2}-1\right)\right) =  \left(\frac{a^{x}+b^{x}}{2}-1\right) \cdot \mu(x)$$
+o\` u $\mu(x) \to 1$ lorsque $x\to 0$. (Nous écrivons pour simplifier $\mu(x)$ au lieu
+de $\mu(\frac{a^{x}+b^{x}}{2}-1)$.)
+
+
+
+\bigskip
+
+Nous savons aussi que $\lim_{t \to 0} \frac{e^t - 1}{t} = 1$.
+Autrement dit il existe un fonction $\nu$ telle que $e^t - 1 = t \cdot \nu(t)$ avec
+$\nu(t) \to 1$ lorsque $t\to 0$.
+
+Appliquons ceci :
+
+\begin{align*}
+ \frac{a^{x}+b^{x}}{2}-1 
+     &= \frac 12 (e^{x \ln a} + e^{x\ln b})-1 \\
+     &= \frac12 (e^{x \ln a}-1 + e^{x\ln b}-1) \\
+     &= \frac12( x \ln a \cdot \nu(x \ln a) + x \ln b \cdot \nu(x \ln b)) \\
+     &= \frac12 x\left(\ln a \cdot \nu(x \ln a) +  \ln b \cdot \nu(x \ln b) \right) \\
+\end{align*}
+
+\bigskip
+
+Reste à rassembler tous les éléments du puzzle :
+\begin{align*}
+ f(x) &= \left(\frac{a^{x}+b^{x}}{2}\right)^{\frac{1}{x}} \\
+      &= \exp\left( \frac 1x \ln \left(\frac{a^{x}+b^{x}}{2}\right) \right) \\
+      &= \exp\left( \frac 1x g(x) \right) \\
+      &= \exp\left( \frac 1x  \left(\frac{a^{x}+b^{x}}{2}-1\right) \cdot \mu(x) \right) \\
+      &= \exp\left( \frac 1x  \cdot \frac12  \cdot x\left(\ln a \cdot \nu(x \ln a) +  \ln b \cdot \nu(x \ln b) \right) \cdot \mu(x) \right) \\
+      &= \exp\left( \frac12 \left(\ln a \cdot \nu(x \ln a) +  \ln b \cdot \nu(x \ln b) \right) \cdot \mu(x) \right) \\
+\end{align*}
+
+Or $\mu(x) \to 1$, $\nu(x \ln a) \to 1$, $\nu(x \ln b) \to 1$ lorsque $x \to 0$.
+Donc 
+$$\lim_{x\to 0} f(x) = \exp\left( \frac12 \left(\ln a + \ln b \right) \right) = \exp\left( \frac12 \ln (ab) \right) = \sqrt{ab}.$$
+\fincorrection
+\finexercice

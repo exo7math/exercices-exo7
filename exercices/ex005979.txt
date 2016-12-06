@@ -1,0 +1,122 @@
+\exercice{5979, tumpach, 2010/11/11}
+\enonce
+
+\textbf{D\'efinition.}
+Soit $h\in \mathbb{R}^{n}$. On d\'efinit l'op\'erateur de
+translation par $h$, not\'e $\tau_{h}$, agissant sur une fonction
+$f~:\mathbb{R}^n \rightarrow \mathbb{R}$ par
+$
+\tau_{h}f(x) := f(x-h), \quad \forall x\in\mathbb{R}^n.
+$
+
+\bigskip
+
+\textbf{Th\'eor\`eme.}
+%\label{th:t1}
+Si $f\in L^{p}(\mathbb{R}^n)$ avec $1\leq p < +\infty$, alors
+$
+\lim_{h\rightarrow 0}\|\tau_{h}f - f\|_{p} = 0,
+$
+i.e. $\tau_{h}f$ tend vers $f$ dans $L^{p}(\mathbb{R}^n)$ lorsque
+$h$ tend vers $0$.
+
+\bigskip
+
+Le but de cet exercice est de d\'emontrer ce th\'eor\`eme.
+Soit $1 \leq p < +\infty$.
+\begin{enumerate}
+\item Montrer que si $f$ est continue \`a support compact dans la
+boule $\mathcal{B}(0, M)$ centr\'ee en $0$ et de rayon $M$, et si
+$|h|\leq 1$, alors
+$$
+ |f(x - h) - f(x)|^p \leq \mathbf{1}_{B(0, M+1)}
+2^p \|f\|_{\infty}^p.
+$$
+o\`u $\mathcal{B}(0, M+1)$ est la boule centr\'ee en $0$ de rayon
+$M+1$.
+
+\item En d\'eduire que pour $f$ continue \`a support compact, on a
+$$
+\lim_{h\rightarrow 0}\|\tau_{h}f - f\|_{p} = 0.
+$$
+
+\item D\'emontrer le th\'eor\`eme pour une fonction quelconque
+dans $L^p(\mathbb{R}^n)$, $1\leq p <+\infty$.
+
+\item Que se passe-t-il pour $p = \infty$ ?
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+Soit $1 \leq p < +\infty$.
+\begin{enumerate}
+\item Si $f$ est continue \`a support compact dans la boule
+$\mathcal{B}(0, M)$ centr\'ee en $0$ et de rayon $M$, et si
+$|h|\leq 1$, alors
+$$
+\begin{array}{lcl}
+ |f(x - h) - f(x)|^p & \leq & \left(|f(x - h)| + |f(x)|\right)^p
+   \leq  \left(2\|f\|_{\infty}\mathbf{1}_{\mathcal{B}(0, M+1)}\right)^p =  \mathbf{1}_{B(0, M+1)}
+2^p \|f\|_{\infty}^p.
+\end{array}
+$$
+o\`u $\mathcal{B}(0, M+1)$ est la boule centr\'ee en $0$ de rayon
+$M+1$.
+
+\item Pour $f$ continue, on a $\lim_{h \rightarrow 0} |f(x- h) -
+f(x)| = 0.$ Puisque la fonction $g(x) = 2^p
+\|f\|_{\infty}^p\,\mathbf{1}_{B(0, M+1)}(x) $ appartient \`a
+$L^1(\mathbb{R}^{n})$, le th\'eor\`eme de convergence domin\'ee
+permet d'intervertir limite et int\'egrale, et il vient~:
+$$
+\lim_{h \rightarrow 0}\|\tau_{h}f - f\|_{p}^p = \lim_{h
+\rightarrow 0}\int_{\mathbb{R}^n} |f(x - h) - f(x)|^{p}\,dx =
+\int_{\mathbb{R}^n} \lim_{h \rightarrow 0} |f(x - h) -
+f(x)|^{p}\,dx = 0.
+$$
+
+\item Soit $f$ une fonction quelconque dans $L^p(\mathbb{R}^n)$,
+$1\leq p <+\infty$. Par densit\'e des fonctions continues \`a
+support compact dans $L^{p}(\mathbb{R}^n)$, pour tout $\varepsilon
+> 0$, il existe $f_{\varepsilon}$ continue \`a support compact
+telle que $\|f - f_{\varepsilon}\|_{p} \leq
+\frac{\varepsilon}{3}$. Ainsi~:
+$$
+\begin{array}{lcl}
+\|\tau_{h}f - f\|_{p} & = & \|\tau_{h}(f - f_{\varepsilon}) - (f -
+f_{\varepsilon}) + \tau_{h}f_{\varepsilon} - f_{\varepsilon}\|_p\\
+& \leq & \|\tau_{h}(f - f_{\varepsilon})\|_p + \|f -
+f_{\varepsilon}\|_p + \|\tau_{h}f_{\varepsilon} -
+f_{\varepsilon}\|_p\\
+& = & 2 \|f - f_{\varepsilon}\|_p + \|\tau_{h}f_{\varepsilon} -
+f_{\varepsilon}\|_p\\
+& = & \frac{2}{3}\varepsilon + \|\tau_{h}f_{\varepsilon} -
+f_{\varepsilon}\|_p.
+\end{array}
+$$
+Puisque $f_{\varepsilon}$ est continue \`a support compact,
+d'apr\`es la question pr\'ec\'edente, il existe $\delta>0$ tel que
+pour $|h|<\delta$,  $\|\tau_{h}f_{\varepsilon} -
+f_{\varepsilon}\|_p < \frac{\varepsilon}{3}$. Ainsi, pour $|h| <
+\delta$, on a $\|\tau_{h}f - f\|_{p}< \varepsilon$. En d'autre
+termes $\lim_{h \rightarrow 0}\|\tau_{h}f - f\|_{p}  = 0$.
+
+
+\item Pour $p = \infty$, les fonctions continues \`a support
+compact ne sont pas denses dans $L^{\infty}(\mathbb{R}^n)$ ce qui
+fait que la d\'emonstration pr\'ec\'edente ne peut pas s'appliquer
+dans ce cas. De plus, on v\'erifie que, pour $f = \mathbf{1}_{B(0, 1)}$ et
+$h \neq 0$, on a
+$$
+\|\tau_{h}f - f\|_{\infty} = 1.
+$$
+Alors que pour $h = 0$, on a $\|\tau_{h}f - f\|_{\infty} = 0. $ On
+peut \'egalement v\'erifier que $\lim_{h\rightarrow 0}\|\tau_{h}f
+- f \|_{\infty} = 0$ si et seulement si la fonction $f$ poss\`ede
+un repr\'esentant uniform\'ement continu.
+\end{enumerate}
+\fincorrection
+
+\finexercice

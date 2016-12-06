@@ -1,0 +1,28 @@
+\exercice{5637, rouget, 2010/10/16}
+\enonce[***I Déterminants de \textsc{Vandermonde}]
+Soient $x_0$,..., $x_{n-1}$ $n$ nombres complexes. Calculer $\text{Van}(x_0,...,x_{n-1})= \text{det}(x_{j-1}^{i-1})_{1\leqslant i,j\leqslant n}$.
+\finenonce
+
+\noindication
+
+\correction
+Soit $n$ un entier naturel non nul. On note $L_0$, $L_1$,\ldots, $L_n$ les lignes  du déterminant $\text{Van}(x_0,\ldots,x_n)$
+
+A la ligne numéro $n$ du déterminant $\text{Van}(x_0,\ldots,x_n)$,  on ajoute une combinaison linéaire des lignes précédentes du type $L_{n}\leftarrow L_{n}+\sum_{i=0}^{n-1}\lambda_iL_i$. La valeur du déterminant n'a pas changé mais sa dernière ligne s'écrit maintenant $(P(x_0),...,P(x_n))$ où $P$ est un polynôme unitaire de degré $n$. On choisit alors pour
+$P$ (le choix des $\lambda_i$ équivaut au choix de $P$) le polynôme $P=\prod_{i=0}^{n-1}(X-x_i)$ (qui est bien unitaire de degré $n$).
+La dernière ligne s'écrit alors $(0,...,0,P(x_{n+1}))$ et en développant ce déterminant suivant cette dernière ligne, on obtient la relation de récurrence :
+
+\begin{center}
+$\forall n\in\Nn^*,\;\text{Van}(x_0,\ldots,x_n)=P(x_n)\text{Van}(x_0,\ldots,x_{n-1})=\prod_{i=0}^{n-1}(x_n-x_i)\text{Van}(x_0,\ldots,x_{n-1})$.
+\end{center}
+
+En tenant compte de $\text{Van}(x_0)=1$, on obtient donc par récurrence
+
+\begin{center}
+\shadowbox{
+$\forall n\in\Nn^*,\;\forall(x_i)_{0\leqslant i\leqslant n}\in\Kk^n,\;\text{Van}(x_i)_{0\leqslant i\leqslant n-1}=\prod_{0\leqslant i<j\leqslant n-1}^{}(x_j-x_i)$.
+}
+\end{center}
+En particulier, $\text{Van}(x_i)_{0\leqslant i\leqslant n-1}\neq 0$ si et seulement si les $x_i$ sont deux à deux distincts.
+\fincorrection
+\finexercice

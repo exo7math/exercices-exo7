@@ -1,0 +1,41 @@
+\exercice{5895, rouget, 2010/10/16}
+\enonce[*** I]
+Soit $\begin{array}[t]{cccc}
+f~:&GL_n(\Rr)&\rightarrow&M_n(\Rr)\\
+ &A&\mapsto&A^{-1}
+\end{array}$. Montrer que $f$ est différentiable en tout point de $M_n(\Rr)\setminus\{0\}$ et déterminer sa différentielle.
+\finenonce
+
+\noindication
+
+\correction
+On munit $\mathcal{M}_n(\Rr)$ d'une norme sous-multiplicative $\|\;\|$. Soit $A\in GL_n(\Rr)$. On sait que $GL_n(\Rr)$ est un ouvert de $\mathcal{M}_n(\Rr)$ et donc pour $H\in\mathcal{M}_n(\Rr)$ de norme suffisamment petite, $A+H\in GL_n(\Rr)$. Pour un tel $H$
+
+\begin{center}
+$(A+H)^{-1}-A^{-1}=(A+H)^{-1}(I_n-(A+H)A^{-1})=-(A+H)^{-1}HA^{-1}$
+\end{center}
+
+puis
+
+\begin{align*}\ensuremath
+(A+H)^{-1}-A^{-1}+A^{-1}HA^{-1}&=-(A+H)^{-1}HA^{-1}+A^{-1}HA^{-1}=(A+H)^{-1}(-HA^{-1}+(A+H)A^{-1}HA^{-1})\\
+ &=(A+H)^{-1}HA^{-1}HA^{-1}.
+\end{align*}
+
+Par suite, $\left\|f(A+H)-f(A)+A^{-1}HA^{-1}\right\|=\left\|(A+H)^{-1}-A^{-1}+A^{-1}HA^{-1}\right\|\leqslant\left\|(A+H)^{-1}\right\|\left\|A^{-1}\right\|^2\left\|H\right\|^2$. 
+
+Maintenant, la formule $M^{-1}= \frac{1}{\text{det}(M)}{^t}(\text{com}(M))$, valable pour tout $M\in GL_n(\Rr)$, et la continuité du déterminant montre que l'application $M\mapsto M^{-1}$ est continue sur l'ouvert $GL_n(\Rr)$. On en déduit que $\left\|(A+H)^{-1}\right\|$ tend vers $\left\|A^{-1}\right\|$ quand $H$ tend vers $0$. Par suite,
+
+\begin{center}
+$\lim_{H \rightarrow 0}\left\|(A+H)^{-1}\right\|\left\|A^{-1}\right\|^2\left\|H\right\|=0$ et donc $\lim_{H \rightarrow 0} \frac{1}{\|H\|}\left\|(A+H)^{-1}-A^{-1}+A^{-1}HA^{-1}\right\|=0$.
+\end{center}
+
+Comme l'application $H\mapsto -A^{-1}HA^{-1}$ est linéaire, c'est la différentielle de $f$ en $A$.
+
+\begin{center}
+\shadowbox{
+$\forall A\in GL_n(\Rr)$, $\forall H\in\mathcal{M}_n(\Rr)$, $df_A(H)=-A^{-1}HA^{-1}$.
+}
+\end{center}
+\fincorrection
+\finexercice

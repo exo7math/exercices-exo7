@@ -1,0 +1,30 @@
+\exercice{2676, matexo1, 2002/02/01}
+
+\enonce
+R{\'e}soudre l'{\'e}quation $\cos z = a$, o{\`u} $a$ est un r{\'e}el $>1$. Donner le sinus des
+solutions. En d{\'e}duire la valeur de
+$$ I_a = \int_0^{+\infty } {dx\over (1+x^2) (a-\cos x)}.$$
+\finenonce
+\noindication
+\correction
+On utilise 
+$$ \cos(x+iy) = \cos x \cosh y -i \sin x \sinh y$$
+Ici on doit avoir $\cos x \cosh y = a$ et $\sin x \sinh y = 0$. La derni{\`e}re {\'e}quation
+implique $x= 0$ ou~$\pi $, ou ${y=0}$. La solution $y=0$ ne convient pas, car aucun r{\'e}el
+n'a pour cosinus $a>1$. Donc il faut $x=0$, et $\cosh y = a$ ou bien $x=\pi $ et $\cosh
+y=-a$. Cette derni{\`e}re {\'e}quation est sans solutions ($\cosh y\geq 1$ pour tout $y$). Les
+solutions sont donc $z=\pm i\arg\cosh a$. Leur sinus est $\sin x \cosh y+i\cos x \sinh y = i\sinh
+y$ ici, soit $\pm i\sqrt {a^2-1}$ (car $\sinh^2 y = \cosh^2 y -1$).
+
+On a donc, en posant $f(z) = 1/[(1+z^2)(2-\cos z)]$ (fonction paire):
+$$ I_a = i\pi  \mbox{\rm Res}(f, i) + i\pi  \mbox{\rm Res}(f, i\arg\cosh a) $$
+car $i$ et $i\arg\cosh a$ sont les deux seuls p{\^o}les de $f$ de partie imaginaire $>0$.
+Puis
+$$\begin{array}{ccc}
+ \mbox{\rm Res}(f,i) &= \left(1\over 2z(a-\cos z)\right)_{z=i} = {1\over 2i (a-\cosh 1)}\cr
+\mbox{\rm Res}(f, i\arg\cosh a) &= \left(1\over (1+z^2) \sin z\right)_{z=i\arg\cosh a} =
+ {1\over i(1 -\arg\cosh^2 a)\sqrt{a^2-1}}\cr\end{array}$$
+Donc
+$$ I_a = {\pi \over (1 -\arg\cosh^2 a)\sqrt{a^2-1}} + {\pi \over 2 (a-\cosh 1)}.$$
+\fincorrection
+\finexercice

@@ -1,0 +1,45 @@
+\exercice{2592, delaunay, 2009/05/19}
+\enonce
+Soit $A$ la matrice de $M_3(\R)$ suivante :
+$$A=\begin{pmatrix}0&1&0 \\  -4&4&0 \\ -2&1&2\end{pmatrix}.$$ 
+\begin{enumerate}
+ \item  La matrice $A$ est-elle diagonalisable ?
+ \item  Calculer $(A-2I_3)^2$, puis $(A-2I_3)^n$ pour tout $n\in\N$. En d\'eduire $A^n$.
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+ Soit $A$ la matrice de $M_3(\R)$ suivante :
+$$A=\begin{pmatrix}0&1&0 \\  -4&4&0 \\ -2&1&2\end{pmatrix}.$$ 
+\begin{enumerate}
+ \item {\it La matrice $A$ est-elle diagonalisable ?}
+
+Calculons son polyn\^ome caract\'eristique 
+$$P_A(X)=\begin{vmatrix}-X&1&0 \\  -4&4-X&0 \\ -2&1&2-X\end{vmatrix}=(2-X)(X^2-4X+4)=(2-X)^3.$$
+la matrice $A$ admet une unique valeur propre $2$, si elle \'etait diagonalisable, elle serait semblable \`a la matrice $2.I_3$, elle serait donc \'egale \`a $2I_3$ ce qui n'est pas le cas, elle n'est donc pas diagonalisable. 
+
+ \item  {\it Calculons $(A-2I_3)^2$, puis $(A-2I_3)^n$ pour tout $n\in\N$}.
+
+On a 
+$$(A-2I_3)^2=\begin{pmatrix}-2&1&0 \\  -4&2&0 \\ -2&1&0\end{pmatrix}\begin{pmatrix}-2&1&0 \\  -4&2&0 \\ -2&1&0\end{pmatrix}=\begin{pmatrix}0&0&0 \\  0&0&0 \\ 0&0&0\end{pmatrix},$$
+ainsi, $(A-2I_3)^0=I$, $(A-2I_3)^1=\begin{pmatrix}-2&1&0 \\  -4&2&0 \\ -2&1&0\end{pmatrix}$, et,  pour tout $n\geq2$, on a $(A-2I_3)^n=0$.
+
+{\it On en d\'eduit $A^n$}
+
+Notons $B=A-2I_3$, on a $A=A-2I_3+2I_3=B+2I_3$ avec $B^n=0$ pour $n\geq2$. Par ailleurs, les matrices $B$ et $2I_3$ commutent, ainsi
+$$A^n=(B+2I_3)^n=\sum^n_{k=0}C_n^kB^k(2I_3)^{n-k}$$
+o\`u les $C_n^k$ sont les coefficients du bin\^ome de Newton :
+$$C_n^k={\frac{n!}{k!(n-k)!}}.$$ 
+Or, pour $k\geq2$, on a $B^k=0$ d'o\`u pour $n\geq2$,
+\begin{align*}
+A^n&=C_n^0B^0(2I_3)^n+C_n^1B^1(2I_3)^{n-1} \\ 
+&=2^nI_3+2^{n-1}nB \\ 
+&=2^nI_3+2^{n-1}n(A-2I_3) \\ 
+&=2^n(1-n)I_3+2^{n-1}nA.
+\end{align*}
+
+\end{enumerate}
+\fincorrection
+\finexercice

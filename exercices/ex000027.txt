@@ -1,0 +1,104 @@
+\exercice{27, bodin, 1998/09/01}
+\video{BPzsFnvZypQ}
+\enonce
+ Calculer les racines carr\'ees de $1,\ i,\ 3+4i,\
+8-6i,$ et $7+24i$.
+
+\finenonce
+
+
+
+\indication
+Pour $z= a+ib$ on cherche $\omega = \alpha + i \beta$ tel que  $(\alpha +i \beta)^2 = a+ib$.
+Développez et indentifiez. Utilisez aussi que $|\omega|^2 = |z|$.
+\finindication
+
+\correction
+\textbf{Racines carr\'ees.} Soit $z= a+ib$ un nombre complexe avec
+$a,b \in \Rr$ ; nous cherchons les complexes $\omega \in \Cc$ tels
+que $\omega^2 = z$. \'Ecrivons $\omega = \alpha + i \beta$. Nous
+raisonnons par \'equivalence :
+\begin{align*}
+\omega^2 = z    & \Leftrightarrow (\alpha +i \beta)^2 = a+ib \\
+        & \Leftrightarrow \alpha^2-\beta^2+2i\alpha\beta = a +i b \\
+\intertext{Soit en identifiant les parties r\'eelles entre elles ainsi que les parties imaginaires :}\\
+        & \Leftrightarrow
+              \begin{cases}
+                 \alpha^2-\beta^2 = a \\
+                 2\alpha\beta = b
+              \end{cases} \\
+\intertext{Sans changer l'\'equivalence nous rajoutons la
+condition $|\omega|^2 = |z|$.} & \Leftrightarrow
+  \begin{cases}
+     \alpha^2 + \beta^2 = \sqrt{a^2+b^2} \\
+     \alpha^2-\beta^2 = a \\
+     2\alpha\beta = b
+  \end{cases} \\
+\intertext{Par somme et différence des deux premières lignes :}
+& \Leftrightarrow
+  \begin{cases}
+     \alpha^2  =\frac{a+ \sqrt{a^2+b^2}}{2} \\
+     \beta^2 =  \frac{-a+ \sqrt{a^2+b^2}}{2} \\
+     2\alpha\beta = b
+  \end{cases} \\
+& \Leftrightarrow
+  \begin{cases}
+     \alpha  =\pm \sqrt{\frac{a+ \sqrt{a^2+b^2}}{2}} \\
+     \beta = \pm \sqrt{ \frac{-a+ \sqrt{a^2+b^2}}{2}} \\
+     \alpha\beta \text{ est du m\^eme signe que } b
+  \end{cases} \\
+\end{align*}
+Cela donne deux couples $(\alpha,\beta)$ de solutions et donc deux
+racines carr\'ees (opposées) $\omega = \alpha + i\beta$ de $z$.
+
+En pratique on r\'ep\`ete facilement ce raisonnement, par exemple
+pour  $z = 8-6i$,
+\begin{align*}
+\omega^2 = z
+&\Leftrightarrow (\alpha +i \beta)^2 = 8-6i\\
+&\Leftrightarrow \alpha^2-\beta^2+2i\alpha\beta = 8-6i\\
+&\Leftrightarrow
+  \begin{cases}
+     \alpha^2-\beta^2 = 8\\
+     2\alpha\beta = -6
+  \end{cases} \\
+&\Leftrightarrow
+  \begin{cases}
+     \alpha^2 + \beta^2 = \sqrt{8^2+(-6)^2} = 10 \text{ le module de $z$} \\
+     \alpha^2-\beta^2 = 8 \\
+     2\alpha\beta = -6
+  \end{cases}\\
+&\Leftrightarrow
+  \begin{cases}
+     2\alpha^2  =18 \\
+     \beta^2 = 1 \\
+     2\alpha\beta = -6
+  \end{cases}\\
+&\Leftrightarrow
+  \begin{cases}
+     \alpha  =\pm \sqrt{9} = \pm 3 \\
+     \beta = \pm 1 \\
+     \alpha \text{ et } \beta \text{ de signes oppos\'es}
+  \end{cases} \\
+&\Leftrightarrow
+  \begin{cases}
+     \ \ & \alpha  = 3 \text{ et } \beta = - 1\\
+     \text{ou}&\\
+    \ \ &\alpha  = -3 \text{ et } \beta = +1 \\
+\end{cases} \\
+\end{align*}
+
+Les racines de $ z = 8-6i$ sont donc $\omega_1 = 3-i$ et $\omega_2 = -\omega_1 =
+-3+i$.
+
+Pour les autres : 
+\begin{itemize}
+ \item Les racines carrées de $1$ sont : $+1$ et $-1$.
+ \item  Les racines carrées de $i$ sont : $\frac{\sqrt 2}{2}(1+i)$ et $-\frac{\sqrt 2}{2}(1+i)$.
+ \item  Les racines carrées de $3+4i$ sont : $2+i$ et $-2-i$. 
+ \item  Les racines carrées de $7+24i$ sont : $4+3i$ et $-4-3i$. 
+\end{itemize}
+
+\fincorrection
+\finexercice
+

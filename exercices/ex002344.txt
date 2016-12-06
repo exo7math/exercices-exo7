@@ -1,0 +1,42 @@
+\exercice{2344, queffelec, 2003/10/01}
+\enonce
+ $(E,||.||)$ un espace vectoriel norm\'e.
+\begin{enumerate}
+\item Montrer que dans ce cas la boule ferm\'ee $B'(a,r)$  est l'adh\'erence
+de la boule ouverte $B(a,r)$.
+
+\item Montrer que $\overline B(a,r)\subset \overline B(b,R) \Longleftrightarrow$
+$r\leq R$ et
+$||a-b||\leq R-r$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item On note $B= B(a,r)$, $B'=B'(a,r)$, $\bar B = \overline{B(a,r)}$.
+Il faut montrer $B'=\bar B$. $B'$ est une boule ferm\'ee, donc un ferm\'e contenant $B$, alors que $\bar B$ est le plus petit ferm\'e contenant $B$, donc $\bar B \subset B'$.
+
+\'Etudions l'inclusion inverse: soit $x\in B'$, il faut montrer $x\in \bar B$.
+Si $x\in B$ alors $x\in \bar B$, supposons donc que $x\notin B$, alors 
+$\| x-a\| = r$. Soit $B(x,\epsilon)$ un boule centr\'ee en $x$. $x$ est adh\'erent \`a $B$ si $B(x,\epsilon) \cap B$ est non vide quelque soit $\epsilon >0$.
+Fixons $\epsilon > 0$ et soit le point 
+$$ y = x - \frac{\epsilon}{2} \frac{x-a}{\|x-a\|}.$$
+Faire un dessin et placer $y$ sur ce dessin.
+D'une part $y\in B(x,\epsilon)$ car $\|y-x\| = \epsilon/2 < \epsilon$.
+D'autre part $y\in B = B(a,r)$ car $\| y-a \| = \| x-a-\frac{\epsilon}{2}\frac{x-a}{\|x-a\|}\| = \|x-a\| (1-\frac{\epsilon}{2\|x-a\|}) = r -\frac{\epsilon}{2} <r$. Donc $y\in B\cap B(x,\epsilon)$, ce qui prouve que $B'\cap \bar B$. Donc $B' = \bar B$.
+
+ 
+  \item Pour le sens $\Leftarrow$. Soit $x \in \bar B(a,r)$ alors $\| x-b\|= 
+\|x-a+a-b\| \le \|x-a\|+\|a-b\| \le r+R-r\le R$, donc $x \in \bar B(b,R)$.
+
+Pour le sens $\Rightarrow$. Soit 
+$$x = a+ r\frac{a-b}{\|a-b\|},$$
+alors $\|x-a\| = r$ donc $x\in \bar B(a,r)$, donc $x \in \bar B(b,R)$, donc 
+$\|x-b\| \le R$
+or $\| x-b\| = \|a-b\|+ r$ (c'est le m\^eme calcul que pour la question pr\'ec\'edente). 
+Donc $\|a-b\|+r \le R$, soit $0\le \|a-b\| \le R-r$ et en particulier $r\le R$.
+\end{enumerate}
+\fincorrection
+\finexercice

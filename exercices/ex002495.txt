@@ -1,0 +1,51 @@
+\exercice{2495, sarkis, 2009/04/01}
+\enonce
+ D\'ecrire la boule de centre
+l'origine et de rayon $1$ dans les espaces suivants:
+\begin{enumerate}
+\item $\mathbb{R}$ muni de la distance $d(x,y)=|x-y|.$ 
+\item $\mathbb{R}^2$ muni de la distance
+$d_1((x_1,x_2),(y_1,y_2))=\sqrt{(x_1-y_1)^2+(x_2-y_2)^2}.$ 
+\item $\mathbb{R}^2$ muni de la distance $d_2((x_1,x_2),(y_1,y_2))=\sup
+(|x_1-y_1|,|x_2-y_2|).$ 
+\item $\mathbb{R}^2$ muni de la distance
+$d_3((x_1,x_2),(y_1,y_2))=|x_1-y_1|+|x_2-y_2|.$
+\end{enumerate}
+Montrez que les 3 dernières distances sont équivalentes.
+\finenonce 
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item On a par définition $B(0,1)=\{x \in \mathbb{R}; |x-0|=|x| <
+1\}=[-1,1].$ 
+\item C'est la norme euclidienne sur $\mathbb{R}^2$,
+$B_1(0,1)=\{(x,y)\in \mathbb{R}^2; \sqrt{x^2+y^2}=1\}$ c'est le
+disque de centre l'origine et de rayon $1$. 
+\item $B_2(0,1)=\{(x,y); |x|<1 et |y|<1 \}.$ C'est un carr\'e. 
+\item $B_3(0,1)=\{(x,y); |x|+|y|<1\}.$ Dans le quart de plan
+$P^{++}=\{(x,y); x\geq 0, y\geq $, on a $B_3(0,1) \cap
+P^{++}=\{(x,y) \in p^{++}; x+y<1 \}$ c'est le triangle
+d\'elimit\'e par les droites $x=0, y=0$ et $x+y=1$. En faisant de
+même pour les 3 autres secteurs du plan, on trouve que $B_3(0,1)$
+est un losange (ou carr\'e) dont les sommets sont les points
+$(0,1), (1,0), (-1,0), (0,-1).$
+\end{enumerate}
+
+Toutes ces distances \'etant invariantes par translation (ce sont
+des normes), il suffit de montrez que les normes associ\'es
+$||.||_i=d_i((x,y),0)$ sont \'equivalentes.\par
+
+On a $$\frac{\sqrt{2}}{2} ||.||_1 \leq ||.||_2 \leq ||.||_1.$$
+ En effet, $$||(x,y)||_1=\sqrt{(x^2+y^2)} \leq
+\sqrt{\sup(x^2,y^2)+\sup(x^2,y^2)}$$  $$\leq \sqrt 2 \sqrt
+{\sup(x^2,y^2)}$$ $$ \leq \sqrt 2 \sqrt { (\sup(|x|,|y|))^2} \leq
+\sqrt 2 ||(x,y)||_2$$. De plus, $$||(x,y)||_1=\sqrt{x^2+y^2} \geq
+\sqrt{\sup(x^2,y^2)}$$ $$\geq \sqrt{(\sup(|x|,|y|)^2} \geq
+\sup(|x|,|y|) \geq ||(x,y)||_2.$$ Les distances $d_1$ et $d_2$
+sont donc \'equivalentes. \par
+
+De m\^eme on montre que  $$||.||_2 \leq ||.||_3 \leq 2||.||_2.$$
+\fincorrection
+\finexercice

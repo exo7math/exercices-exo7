@@ -1,0 +1,72 @@
+\exercice{5953, tumpach, 2010/11/11}
+\enonce
+    Soit \ $f\in
+\mathcal{L}^{1}(\Rr )$. Sa \emph{transform\'{e}e de Fourier}
+est la fonction \ $\hat{f}:\Rr \rightarrow \Cc$ \ \ d\'{e}finie
+par
+\[
+\hat{f}(y):=\int_{\Rr }\text{e}^{-ixy}f(x)dx,
+\]
+montrer que
+\begin{enumerate}
+ \item $\hat{f}$ \ est continue,
+
+  \item $\hat{f}$ \ est born\'{e}e et \ $\sup |\hat{f}|\leq
+\left\| f\right\| _{L^{1}}$ \ (=$\int_{\Rr }\left| f(x)\right|
+dx$),
+
+  \item Si $x \to xf(x)$ est int\'{e}grable, alors $\hat{f}$ \
+est d\'{e}rivable et on a
+\[
+\frac{d}{dy}\ \hat{f}\ =\widehat{-ixf(x)}.
+\] 
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Notons $g(x,y)=e^{-ixy} f(x)$.
+Alors,
+\begin{enumerate}
+\item[{i.)}] pour tout $y\in \mathbb{R}$, la fonction $x\mapsto
+g(x,y)$ est mesurable; \item[{ii.)}] pour presque tout $x\in
+\mathbb{R}$ (pour tout les $x\in \mathbb{R}$ tels que $f(x)$ est
+finie) la fonction $y\mapsto g(x,y)$ est continue pour tout $y\in
+\mathbb{R}$; \item[{iii.)}] $|g(x,y)|=|e^{-ixy} f(x)|\leq |f(x)|$
+et $|f|\in \mathcal{L}^1(\mathbb{R},\mathbb{R}_+).$
+\end{enumerate}
+On doit montrer que pour tout suite $\{y_{n}\}_{n\in\mathbb{N}}$
+convergeant vers $y$, on a $\lim_{n\rightarrow +\infty}
+\hat{f}(y_{n}) = \hat{f}(y)$. Posons $g_{n}(x) = g(x, y_{n})$.
+D'apr\`es le th\'eor\`eme de convergence domin\'ee,
+$$
+\lim_{n\rightarrow +\infty} \hat{f}(y_{n}) ~:=~ \lim_{n\rightarrow
++\infty} \int_{\mathbb{R}} g_{n}(x)\,dx = \int_{\mathbb{R}}g(x,y)
+dx =: \hat{f}(y).$$
+Ainsi $\hat{f}$ est continue.
+
+\item Pour tout $y\in \mathbb{R}$, $\;|\hat{f}(y)|\leq
+\displaystyle\int_\mathbb{R}|e^{-ixy} f(x)|dx\leq
+\displaystyle\int_\mathbb{R}| f(x)|dx=\|f\|_{L_1}$ et donc
+$$\sup|\hat{f}|\leq\|f\|_{L_1}.$$
+
+\item Soit $g(x,y)=e^{-ixy} f(x)$. Alors, on  a
+\begin{enumerate}
+\item[{i.)}] pour tout $y\in \mathbb{R}$, la fonction $x\mapsto
+g(x,y)$ est int\'{e}grable;
+
+\item[{ii.)}] pour presque tout $x\in \mathbb{R}$ la fonction
+$y\mapsto g(x,y)$ est d\'{e}rivable pour tout $y\in \mathbb{R}$;
+
+\item[{iii.)}] $|\frac{\partial g(x,y)}{\partial y}|=|-ix e^{-ixy}
+f(x)|\leq |x f(x)|$ avec $x\mapsto xf(x)$ int\'{e}grable.
+\end{enumerate}
+Ainsi, d'apr\`{e}s l'exercice \ref{derivation} (le th\'eor\`eme
+de dérivation sous le signe $\int$), on a
+$$\frac{d}{dy}\hat{f}=\int_\mathbb{R}e^{-ixy}(-ix f(x))dx=\widehat{-iyf(y)}.$$
+\end{enumerate}
+\fincorrection
+
+\finexercice

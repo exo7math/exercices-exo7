@@ -1,0 +1,45 @@
+\exercice{4081, quercia, 2010/03/11}
+\enonce[Centrale MP 2001]
+
+Soit $f$ continue et intégrable sur~$\R$. On considère l'équation
+différentielle $(E)$ : $y' - y + f = 0$.
+
+\begin{enumerate}
+  \item Montrer que $(E)$ admet une unique solution $F$ bornée sur~$\R$.
+    
+    
+  \item Montrer que $F$ est intégrable sur $\R$ et comparer $ \int_{-\infty}^{+\infty} F$ et  $ \int_{-\infty}^{+\infty} f$.
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Formule de Duhamel : $y(t) = - \int_{x=0}^t e^{t-x}f(x)\,d x + \lambda e^t$.
+
+    Par convergence dominée, l'intégrale tend vers $0$ quand $t$ tend vers $-\infty$
+    donc toutes les solutions de~$(E)$ sont bornées au voisinage de $-\infty$.
+
+    Pour $t\ge 0$ on a $y(t) = e^t\Bigl(\lambda- \int_{x=0}^t e^{-x}f(x)\,d x\Bigr)$
+    donc il y a au plus une valeur de $\lambda$ telle que $y$ soit éventuellement
+    bornée au voisinage de $+\infty$, c'est $\lambda =  \int_{x=0}^{+\infty} e^{-x}f(x)\,d x$.
+
+    Pour ce choix on a~:
+    $|y(t)| = \Bigl| \int_{x=t}^{+\infty}e^{t-x}f(x)\,d x\Bigr|
+    \le \int_{x=t}^{+\infty}|f(x)|\,d x \to 0$ lorsque $t\to+\infty$.
+  \item \begin{align*} \int_{t=a}^b|F(t)|\,d t
+    &\le  \int_{t=a}^b \int_{x=t}^{+\infty}e^{t-x}|f(x)|\,d xd t\\
+    &\le  \int_{x=a}^b \int_{t=a}^xe^{t-x}|f(x)|\,d td x
+       +  \int_{x=b}^{+\infty} \int_{t=a}^be^{t-x}|f(x)|\,d td x\\
+    &\le  \int_{x=a}^b(1-e^{a-x})|f(x)|\,d x
+       +  \int_{x=b}^{+\infty}(e^{b-x}-e^{a-x})|f(x)|\,d td x\\
+    &\le  \int_{x=-\infty}^{+\infty}|f(x)|\,d x\\ \end{align*}
+    donc $F$ est intégrable. $F' = F-f$ est aussi intégrable et
+    $ \int_{t=-\infty}^{+\infty}F'(t)\,d t = \Bigl[F(t)\Bigr]_{t=-\infty}^{+\infty} = 0$
+    d'où $ \int_{-\infty}^{+\infty} F = \int_{-\infty}^{+\infty} f$.
+\end{enumerate}
+\fincorrection
+
+\finexercice

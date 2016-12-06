@@ -1,0 +1,31 @@
+\exercice{715, bodin, 1998/09/01}
+\video{J-dlr6vwO8A}
+\enonce
+Montrer que le polyn\^ome $P_n$ d\'efini par
+$$P_n(t)=\left[ \left( 1-t^2 \right)^n \right]^{(n)}$$
+est un polyn\^ome de degr\'e $n$ dont les racines sont
+ r\'eelles, simples, et appartiennent \`a $[-1,1]$.
+\finenonce 
+
+\indication
+Il faut appliquer le th\'eor\`eme de Rolle une fois au polyn\^ome $(1-t^2)^n$,
+puis deux fois \`a sa d\'eriv\'ee premi\`ere, puis trois fois \`a sa d\'eriv\'ee seconde,...
+\finindication
+
+\correction
+$Q_n(t) = (1-t^2)^n$ est un polyn\^ome de degr\'e $2n$, on le d\'erive $n$ fois, on obtient un polyn\^ome de degr\'e $n$.
+Les valeurs $-1$ et $+1$ sont des racines d'ordre $n$ de $Q_n$, donc
+$Q_n(1)=Q_n'(1)=\ldots = Q_n^{(n-1)}(1)=0$. M\^eme chose en $-1$.
+Enfin $Q(-1)=0=Q(+1)$ donc d'apr\`es le th\'eor\`eme de Rolle il existe $c \in ]-1,1[$ telle que $Q_n'(c)=0$. 
+
+Donc $Q_n'(-1)=0$, $Q_n'(c)=0$, $Q_n'(-1)=0$. En appliquant le th\'eor\`eme de Rolle deux fois 
+(sur $[-1,c]$ et sur $[c,+1]$), on obtient l'existence
+de racines $d_1,d_2$ pour $Q_n''$, qui s'ajoutent aux racines $-1$ et $+1$.
+
+
+On continue ainsi par r\'ecurrence. On obtient pour $Q_n^{(n-1)}$,
+$n+1$ racines: $-1, e_1,\ldots, e_{n-1}, +1$. Nous appliquons le th\'eor\`eme de Rolle $n$ fois. Nous obtenons $n$ racines pour 
+$P_n = Q_n^{(n)}$.  Comme un polyn\^ome de degr\'e $n$ a au plus
+$n$ racines, nous avons obtenu toutes les racines. Par constructions ces racines sont r\'eelles distinctes, donc simples.
+\fincorrection
+\finexercice

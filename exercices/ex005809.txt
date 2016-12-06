@@ -1,0 +1,37 @@
+\exercice{5809, rouget, 2010/10/16}
+\enonce[*** I]
+Soient $f_1$, $f_2$,..., $f_n$ $n$ fonctions continues sur $[a,b]$ à valeurs dans $\Rr$. Pour $(i,j)\in\llbracket1,n\rrbracket^2$, on pose $b_{i,j}=\int_{a}^{b}f_i(t)f_j(t)\;dt$ puis pour $(x_1,...x_n)\in\Rr^n$, $Q((x_1,...,x_n)) =\sum_{1\leqslant i,j\leqslant n}^{}b_{i,j}x_ix_j$.
+
+\begin{enumerate}
+ \item  Montrer que $Q$ est une forme quadratique positive.
+
+\item  Montrer que $Q$ est définie positive si et seulement si la famille $(f_1,...,f_n)$ est libre.
+
+\item  Ecrire la matrice de $Q$ dans la base canonique de $\Rr^n$ dans le cas particulier : $\forall i\in\llbracket1,n\rrbracket$, $\forall t\in[a,b]$, $f_i(t)=t^{i-1}$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Pour tout $(x_1,...,x_n)\in\Rr^n$,
+
+\begin{center}
+$Q(x_1,...,x_n)=\sum_{1\leqslant i,j\leqslant n}^{}\left(\int_{a}^{b}f_i(t)f_j(t)\;dt\right)x_ix_j=\int_{a}^{b}\left(\sum_{1\leqslant i,j\leqslant n}^{}x_ix_jf_i(t)f_j(t)\right)\;dt=\int_{a}^{b}\left(\sum_{i=1}^{n}x_if_i(t)\right)^2\;dt\geqslant0$.
+\end{center}
+
+Donc Q est une forme quadratique positive.
+
+\item  De plus, pour tout $(x_1,\ldots,x_n)\in\Rr^n$, $Q((x_1,...,x_n)) = 0\Leftrightarrow\sum_{i=1}^{n}x_if_i  =0$ (fonction continue positive d'intégrale nulle). Donc
+
+\begin{align*}\ensuremath
+Q\;\text{définie}&\Leftrightarrow\forall(x_1,...,x_n)\in\Rr^n,\;[Q((x_1,...,x_n)) = 0\Rightarrow(x_1,...,x_n) = 0]\\
+ &\Leftrightarrow\forall(x_1,...,x_n)\in\Rr^n,\;[\sum_{i=1}^{n}x_if_i=0\Rightarrow(x_1,...,x_n)= 0]\\
+ &(f_1,...,f_n)\;\text{libre}.
+\end{align*}
+
+\item  Dans le cas particulier envisagé, la matrice de $Q$ dans la base canonique de $\Rr^n$ est la matrice de \textsc{Hilbert} $H_n=\left(\frac{1}{i+j-1}\right)_{1\leqslant i,j\leqslant n}$.
+\end{enumerate}
+\fincorrection
+\finexercice

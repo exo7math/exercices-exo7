@@ -1,0 +1,219 @@
+\exercice{5917, tumpach, 2010/11/11}
+\enonce
+En utilisant la d\'efinition d'une fonction int\'egrable au sens
+de Riemann, montrer les propri\'et\'es suivantes~:
+\begin{enumerate}
+\item Si $f$ et $g$ sont Riemann-int\'egrables sur $[a,b]$, alors
+ $f + g$ est Riemann-int\'egrable sur $[a,b]$.
+\item Si $f$ est Riemann-int\'egrable sur $[a,b]$ et $\lambda \in
+\mathbb{R}$, alors $\lambda\,f$ est Riemann-int\'egrable sur
+$[a,b]$. 
+\item Si $f$ et $g$ sont deux fonctions
+Riemann-int\'egrables sur $[a,b]$ telles que, pour tout $t\in
+[a,b]$, $f(t)\leq g(t)$, alors
+$\int_{a}^{b}f(t)\,dt\leq\int_{a}^{b}g(t)\,dt$. 
+\item Une limite
+uniforme de fonctions Riemann-int\'egrables sur $[a,b]$ est
+Riemann-int\'egrable sur $[a,b]$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item Soit $\varepsilon>0$ donn\'e. Puisque $f$ est
+Riemann-int\'egrable sur $[a,b]$, il existe une subdivision
+$\sigma_{1}=\{a_{0}=a< a_{1}< \dots< a_{n}=b\}$ de $[a, b]$ telle
+que
+$\overline{S}_{f}^{\sigma_{1}}\leq\underline{S}_{f}^{\sigma_{1}} +
+\frac{\varepsilon}{2}$. Puisque $g$ est Riemann-int\'egrable sur
+$[a,b]$, il existe une subdivision $\sigma_{2}= \{b_{0}=a< b_{1}<
+\dots< b_{p}=b\}$ de $[a, b]$ telle que
+$\overline{S}_{g}^{\sigma_{2}}\leq\underline{S}_{g}^{\sigma_{2}} +
+\frac{\varepsilon}{2}$. On note $\sigma_{1}\cup\sigma_2=\{c_{0}=a<
+c_{1} < \dots < c_{q-1} < c_{q} = b\}$ la subdivision de $[a,b]$
+obtenue en ordonnant l'ensemble $\{a_{0}, \dots, a_{n}, b_{0},
+\dots, b_{n}\}$ par ordre croissant, puis en identifiant les
+points qui apparaissent plusieurs fois (on obtient une subdivision
+de $[a,b]$ en $q$ intervalles avec  $max\{n, p\}\leq q \leq n+p$).
+Puisque $\sigma_{1}\cup\sigma_{2}$ est une subdivision \emph{plus
+fine} que $\sigma_{1}$, on a~:
+\begin{equation}\label{1}
+\overline{S}_{f}^{\sigma_{1}\cup\sigma_{2}}\, \leq\,\,
+\overline{S}_{f}^{\sigma_{1}}\quad\quad\text{et}\quad\quad
+\underline{S}_{f}^{\sigma_{1}}\leq\,\,
+\underline{S}_{f}^{\sigma_{1}\cup\sigma_{2}}.
+\end{equation}
+De m\^eme,
+\begin{equation}\label{2}
+\overline{S}_{g}^{\sigma_{1}\cup\sigma_{2}}\, \leq\,\,
+\overline{S}_{g}^{\sigma_{2}}\quad\quad\text{et}\quad\quad
+\underline{S}_{g}^{\sigma_{2}}\leq\,\,
+\underline{S}_{g}^{\sigma_{1}\cup\sigma_{2}}.
+\end{equation}
+De plus, sur un intervalle $]c_{k-1}, c_{k}[$ donn\'e, on a~:
+\begin{eqnarray*}
+\sup\{f(x) + g(x), \,x \in \,]c_{k-1}, c_{k}[\} &\leq &
+\sup\{f(x), \,x \in \,]c_{k-1}, c_{k}[\} \\& &+ \sup\{g(x), \,x
+\in \,]c_{k-1}, c_{k}[\}.
+\end{eqnarray*}
+De m\^eme~:
+\begin{eqnarray*}
+\inf\{f(x) + g(x), \,x \in \,]c_{k-1}, c_{k}[\} & \geq &
+\inf\{f(x),\,x \in \,]c_{k-1}, c_{k}[\}\\ & & + \inf\{g(x), \,x
+\in \,]c_{k-1}, c_{k}[\}.
+\end{eqnarray*}
+On en d\'eduit que~:
+\begin{equation}\label{3}
+\overline{S}_{f+g}^{\sigma_{1}\cup\sigma_{2}} \,\leq\,
+\overline{S}_{f}^{\sigma_{1}\cup\sigma_{2}}\,+\,\overline{S}_{g}^{\sigma_{1}\cup\sigma_{2}},
+\end{equation}
+et
+\begin{equation}\label{4}
+\underline{S}_{f}^{\sigma_{1}\cup\sigma_{2}}\,+\,
+\underline{S}_{g}^{\sigma_{1}\cup\sigma_{2}} \,\leq\,
+\underline{S}_{f+g}^{\sigma_{1}\cup\sigma_{2}}.
+\end{equation}
+En utilisant les in\'egalit\'es \eqref{1}, \eqref{2}, \eqref{3} et
+\eqref{4}, il vient alors~:
+\begin{equation*}
+\overline{S}_{f+g}^{\sigma_{1}\cup\sigma_{2}}\,\leq\,
+\overline{S}_{f}^{\sigma_{1}}+
+\overline{S}_{g}^{\sigma_{2}}\,\leq\,
+\underline{S}_{f}^{\sigma_{1}} + \underline{S}_{g}^{\sigma_{2}} +
+\varepsilon \leq \underline{S}_{f+g}^{\sigma_{1}\cup\sigma_{2}} +
+\varepsilon.
+\end{equation*}
+D'apr\`es le th\'eor\`eme rappel\'e en introduction, on en d\'eduit que $f+g$ est
+Riemann-int\'egrable sur $[a, b]$. De plus, de l'in\'egalit\'e
+\begin{equation*}
+\underline{S}_{f}^{\sigma_{1}} + \underline{S}_{g}^{\sigma_{2}}
+\leq \underline{S}_{f+g}^{\sigma_{1}\cup\sigma_{2}},
+\end{equation*}
+on d\'eduit que
+\begin{equation*}
+\sup_{\sigma_1, \sigma_{2}}\left(\underline{S}_{f}^{\sigma_{1}} +
+\underline{S}_{g}^{\sigma_{2}} \right) \leq \sup_{\sigma_1,
+\sigma_{2}}\underline{S}_{f+g}^{\sigma_{1}\cup\sigma_{2}}.
+\end{equation*}
+Or $$\sup_{\sigma_1,
+\sigma_{2}}\left(\underline{S}_{f}^{\sigma_{1}} +
+\underline{S}_{g}^{\sigma_{2}} \right) =
+\sup_{\sigma_{1}}\underline{S}_{f}^{\sigma_{1}} +
+\sup_{\sigma_{2}}\underline{S}_{g}^{\sigma_{2}} = \int_{a}^{b}
+f(x)\,dx + \int_{a}^{b} g(x)\,dx $$ et
+$$\sup_{\sigma_1,
+\sigma_{2}}\underline{S}_{f+g}^{\sigma_{1}\cup\sigma_{2}} =
+\sup_{\sigma}\underline{S}_{f+g}^{\sigma} = \int_{a}^{b}\left(f(x)
++ g(x)\right)\,dx.$$ Ainsi
+\begin{equation*}
+ \int_{a}^{b}
+f(x)\,dx + \int_{a}^{b} g(x)\,dx \leq \int_{a}^{b}\left(f(x) +
+g(x)\right)\,dx.
+\end{equation*}
+De m\^eme, l'in\'egalit\'e
+\begin{equation*}
+\overline{S}_{f+g}^{\sigma_{1}\cup\sigma_{2}}\,\leq\,
+\overline{S}_{f}^{\sigma_{1}}+ \overline{S}_{g}^{\sigma_{2}}
+\end{equation*}
+implique $ \int_{a}^{b}\left(f(x) + g(x)\right)\,dx \leq
+\int_{a}^{b} f(x)\,dx + \int_{a}^{b} g(x)\,dx$. En conclusion,
+ $ \int_{a}^{b}\left(f(x) +
+g(x)\right)\,dx = \int_{a}^{b} f(x)\,dx + \int_{a}^{b} g(x)\,dx$.
+
+ \item $\cdot$ Pour $\lambda = 0$ il n'y a rien a d\'emontrer. \\
+ $\cdot$ Si $f$
+est Riemann-int\'egrable sur $[a,b]$ et $\lambda > 0$, alors pour
+tout subdivision $\sigma=\{a_{0}=a<\dots<a_{n}=b\}$ de $[a,b]$, on
+a:
+\begin{eqnarray*}
+\inf\{\lambda f(x),\,x \in\,]a_{k-1},a_{k}[\,\} = \lambda
+\inf\{f(x),\,x \in\,]a_{k-1},a_{k}[\,\}\\
+\sup\{\lambda f(x),\,x \in\,]a_{k-1},a_{k}[\,\} = \lambda
+\sup\{f(x),\,x \in\,]a_{k-1},a_{k}[\,\}.
+\end{eqnarray*}
+Par cons\'equent, $\underline{S}_{\lambda f}^{\sigma} = \lambda
+\underline{S}_{f}^{\sigma}$ et $\overline{S}_{\lambda f}^{\sigma}
+= \lambda \overline{S}_{f}^{\sigma}$. On en d\'eduit que
+\begin{equation*}
+\sup_{\sigma}\underline{S}_{\lambda f}^{\sigma} = \lambda
+\sup_{\sigma}\underline{S}_{f}^{\sigma} = \lambda \int_{a}^{b}
+f(x)\,dx = \lambda \inf_{\sigma}\overline{S}_{f}^{\sigma} =
+\inf_{\sigma}\overline{S}_{\lambda f}^{\sigma}.
+\end{equation*}
+En conclusion, $\lambda f$ est Riemann-int\'egrable et
+$\int_{a}^{b} \lambda f(x)\,dx = \lambda \int_{a}^{b} f(x)\,dx$.\\
+$\cdot$ Si $f$ est Riemann-int\'egrable sur $[a,b]$ et $\lambda
+<0$, alors pour tout subdivision
+$\sigma=\{a_{0}=a<\dots<a_{n}=b\}$ de $[a,b]$, on a:
+\begin{eqnarray*}
+\inf\{\lambda f(x),\,x \in\,]a_{k-1},a_{k}[\,\} = \lambda
+\sup\{f(x),\,x \in\,]a_{k-1},a_{k}[\,\}\\
+\sup\{\lambda f(x),\,x \in\,]a_{k-1},a_{k}[\,\} = \lambda
+\inf\{f(x),\,x \in\,]a_{k-1},a_{k}[\,\}.
+\end{eqnarray*}
+Par cons\'equent, $\underline{S}_{\lambda f}^{\sigma} = \lambda
+\overline{S}_{f}^{\sigma}$ et $\overline{S}_{\lambda f}^{\sigma} =
+\lambda \underline{S}_{f}^{\sigma}$. On en d\'eduit que
+\begin{equation*}
+\sup_{\sigma}\underline{S}_{\lambda f}^{\sigma} = \lambda
+\inf_{\sigma}\overline{S}_{f}^{\sigma} = \lambda \int_{a}^{b}
+f(x)\,dx = \lambda \sup_{\sigma}\underline{S}_{f}^{\sigma} =
+\inf_{\sigma}\overline{S}_{\lambda f}^{\sigma}.
+\end{equation*}
+En conclusion, $\lambda f$ est Riemann-int\'egrable et
+$\int_{a}^{b} \lambda f(x)\,dx = \lambda \int_{a}^{b} f(x)\,dx$.
+
+\item Soient $f$ et $g$  deux fonctions Riemann-int\'egrables sur
+$[a,b]$ telles que, pour tout $t\in [a,b]$, $f(t)\leq g(t)$. Soit
+$\sigma=\{a_{0}=a< \dots < a_{n}=b\}$ une subdivision de $[a,b]$.
+Alors
+\begin{equation*}
+\inf\{f(x), \, x \in\, ]a_{k-1}, a_{k}[\,\} \leq \inf\{g(x), \, x
+\in\, ]a_{k-1}, a_{k}[\,\}.
+\end{equation*}
+Il en d\'ecoule que
+\begin{equation*}
+\sup_{\sigma} \underline{S}_{f}^{\sigma} \leq \sup_{\sigma}
+\underline{S}_{f}^{\sigma},
+\end{equation*}
+c'est-\`a-dire $\int_{a}^{b} f(x)\,dx \leq \int_{a}^{b} g(x)\,dx$.
+
+\item Soit $\{f_{i}\}_{i\in\mathbb{N}}$ une suite de fonctions
+Riemann-int\'egrables, qui converge uniform\'ement vers $f$ sur
+$[a, b]$. Soit $\varepsilon>0$ donn\'e. Il existe $N>0$ tel que
+$\forall i> N$, $\sup_{[a, b]}|f_{i}(t) - f(t)| < \varepsilon$. En
+particulier, $f_{i}(t) - \varepsilon < f(t) < f_{i}(t) +
+\varepsilon$.  Pour un tel $i$, on en d\'eduit que pour toute
+subdivision $\sigma = \{a_{0}= a < \dots < a_{n} = b\}$, on a
+\begin{eqnarray*}
+\sup_{]a_{k-1}, a_{k}[}f \,\leq \,\sup_{]a_{k-1}, a_{k}[}f_{i} +
+\varepsilon\quad \text{et}\quad \inf_{]a_{k-1}, a_{k}[}f \geq
+\inf_{]a_{k-1}, a_{k}[}f_{i} - \varepsilon
+\end{eqnarray*}
+En particulier~:
+\begin{eqnarray*}
+\sup_{]a_{k-1}, a_{k}[}f - \inf_{]a_{k-1}, a_{k}[}f\,\leq\,
+\sup_{]a_{k-1}, a_{k}[}f_{i} - \inf_{]a_{k-1}, a_{k}[}f_{i} +
+2\varepsilon.
+\end{eqnarray*}
+Il en d\'ecoule que~:
+\begin{equation*}
+\overline{S}_{f}^{\sigma} - \underline{S}_{f}^{\sigma}\, \leq\,
+\overline{S}_{f_{i}}^{\sigma} - \underline{S}_{f_{i}}^{\sigma} +
+2\varepsilon (b- a).
+\end{equation*}
+Comme $f_{i}$ est Riemann-int\'egrable, d'apr\`es le th\'eor\`eme
+de l'introduction, il existe une subdivision $\sigma$ de $[a, b]$ telle que
+$\overline{S}_{f_{i}}^{\sigma} - \underline{S}_{f_{i}}^{\sigma}
+\leq \varepsilon$. On en d\'eduit que
+\begin{equation*}
+\overline{S}_{f}^{\sigma} - \underline{S}_{f}^{\sigma} \leq
+\varepsilon \left(1 + 2(b-a)\right),
+\end{equation*}
+ce qui implique que $f$ est Riemann-int\'egrable.
+\end{enumerate}
+\fincorrection
+
+\finexercice

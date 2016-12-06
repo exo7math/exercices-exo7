@@ -1,0 +1,41 @@
+\exercice{6003, quinio, 2011/05/20}
+
+\enonce
+Dans l'ancienne formule du Loto il fallait choisir 6 numéros parmi 49.
+\begin{enumerate}
+  \item Combien y-a-t-il de grilles possibles ? En déduire la probabilité de
+gagner en jouant une grille.
+
+  \item Quelle est la probabilité que la grille gagnante comporte 2
+nombres consécutifs?
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Combien de grilles ?
+Il y en a $\binom{49}{6}=13\,983\,816$
+
+  \item Combien de grilles avec 2 nombres consécutifs ?
+Ce problème peut être résolu par astuce: considérer les numéros gagnants 
+comme 6 places à <<choisir>> parmi 49.
+En considérant des cloisons matérialisant les numéros gagnants,
+c'est un problème de points et cloisons
+Par exemple:
+$$\mid \bullet \bullet \left\vert {}\right\vert \bullet
+\left\vert \bullet \bullet \bullet \mid \bullet \bullet \right\vert$$
+les gagnants sont: 1; 4; 5; 7; 11; 14.
+Dans notre cas on ne veut pas de cloisons consécutives.
+Les cinq cloisons séparent les numéros en 7 bo\^{\i}tes.
+Les 5 bo\^{\i}tes intérieures étant non vides, on y met 5 points,
+puis $38(=49-5-6)$ dans 7 bo\^{\i}tes.
+Il y a $\frac{(38-1+7)!}{38!6!}=7.\,059\,1\times
+10^{6}$ séquences ne comportant pas 2 nombres consécutifs.
+
+D'où la probabilité d'avoir une grille
+comportant 2 nombres consécutifs: $0.4952$.
+\end{enumerate}
+\fincorrection
+\finexercice

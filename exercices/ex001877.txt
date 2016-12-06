@@ -1,0 +1,41 @@
+\exercice{1877, maillot, 2001/09/01}
+
+\enonce
+Soit $E$ l'espace vectoriel des fonctions continues de $[-1,1]$ à
+valeurs dans $\R$. On définit une norme sur $E$ en posant
+$$\|f\|_1=\int_{-1}^1 |f(t)| \,dt.$$ On va montrer que $E$ muni de
+cette norme n'est pas complet. Pour cela, on définit une suite
+$(f_n)_{n\in\N^*}$ par
+\[f_n(t)=\begin{cases} -1 &\text{si\ } -1\le t \le -\frac1n\\
+               nt &\text{si\ } -\frac1n\le t \le \frac1n\\
+               1  &\text{si\ \ \ \ \ } \frac1n \le t\le 1.
+          \end{cases}\]
+
+\begin{enumerate}
+\item Vérifier que $f_n\in E$ pour tout $n\ge 1$.
+\item Montrer que $$\|f_n-f_p\|\le \sup(\frac2n,\frac2p)$$ et en
+déduire que $(f_n)$ est de Cauchy.
+\item Supposons qu'il existe une fonction $f\in E$ telle que $(f_n)$
+converge vers $f$ dans $(E,\|\cdot\|_1)$. Montrer qu'alors on a
+$$\lim_{n\rightarrow+\infty}\int_{-1}^{-\alpha} |f_n(t)-f(t)|\, dt=0
+\qquad \text{et} \qquad \lim_{n\rightarrow+\infty}\int_{\alpha}^1
+|f_n(t)-f(t)|\, dt=0$$ pour tout $0<\alpha<1$.
+\item Montrer qu'on a $$\lim_{n\rightarrow+\infty}\int_{-1}^{-\alpha}
+|f_n(t)+1|\, dt=0
+\qquad \text{et} \qquad \lim_{n\rightarrow+\infty}\int_{\alpha}^1
+|f_n(t)-1|\, dt=0$$ pour tout $0<\alpha<1$.
+En déduire que
+\begin{align*}
+&f(t)=-1\qquad &\forall t\in[-1,0[\\
+&f(t)=1\qquad &\forall t\in ]0,1].
+\end{align*}
+Conclure.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\nocorrection
+
+\finexercice
+

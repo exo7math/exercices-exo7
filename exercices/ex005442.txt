@@ -1,0 +1,36 @@
+\exercice{5442, rouget, 2010/07/10}
+\enonce[***]
+\begin{enumerate}
+\item  Développement limité à l'ordre $n$ en $0$ de $f(x)=\frac{1}{(1-x)^2(1+x)}$.
+\item  Soit $a_k$ le $k$-ème coefficient. Montrer que $a_k$ est le nombre de solutions dans $\Nn^2$ de l'équation $p+2q=k$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Quand $x$ tend vers $0$,
+  
+\begin{align*}\ensuremath
+\frac{1}{(1-x)^2(1+x)}&=\frac{1}{4}\frac{1}{1-x}+\frac{1}{2}\frac{1}{(1-x)^2}+\frac{1}{4}\frac{1}{1+x}
+\underset{x\rightarrow0}{=}\frac{1}{4}\left(\sum_{k=0}^{n}x^k+2\sum_{k=0}^{n}(k+1)x^k+\sum_{k=0}^{n}(-1)^kx^k\right)+o(x^n)\\
+ &=\sum_{k=0}^{n}\frac{2k+3+(-1)^k}{4}x^k+o(x^n).
+\end{align*}
+ \item  On a aussi,
+
+\begin{align*}\ensuremath
+\frac{1}{(1-x)^2(1+x)}&=\frac{1}{(1-x)(1-x^2)}\underset{x\rightarrow0}{=}\left(\sum_{k=0}^{n}x^p\right)\left(\sum_{k=0}^{n}x^{2q}\right)+o(x^n)\\
+ &=\sum_{k=0}^{n}\left(\sum_{p+2q=k}^{}1\right)x^k+o(x^n)=\sum_{k=0}^{n}a_kx^k+o(x^n).
+\end{align*}
+Par unicité des coefficients d'un développement limité, on a donc
+
+\begin{center}
+\shadowbox{
+$\forall k\in\Nn$, $a_k=\frac{2k+3+(-1)^k}{4}$.
+}
+\end{center}
+($a_k$ est le nombre de façons de payer $k$ euros en pièces de $1$ et $2$ euros).
+\end{enumerate}
+\fincorrection
+\finexercice

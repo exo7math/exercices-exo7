@@ -1,0 +1,58 @@
+\exercice{2612, delaunay, 2009/05/19}
+\enonce
+Soit $E$ un espace vectoriel de dimension $3$. On note ${\cal B}=(\vec e_1,\vec e_2,\vec e_3)$ une base de $E$, si $\vec u$ est un vecteur de $E$ on note $(x,y,z)$  ses coordonnées dans la base $\cal B$. Soit 
+$f$ une application linéaire de $E$ dans lui-même, définie par
+\begin{align*}
+f:E &\longrightarrow E \\  \begin{pmatrix}x \\  y \\  z\end{pmatrix}&\longmapsto \begin{pmatrix}x' \\  y' \\  z'\end{pmatrix}= \begin{pmatrix}-x+y-z \\  2x+2z \\  4x-2y+4z\end{pmatrix}
+\end{align*}
+\begin{enumerate}
+ \item  Donner la matrice $A$ de $f$ dans la base $\cal B$.
+ \item Déterminer les sous-espaces $\ker f$ et $\Im f$.
+ \item  Soient $\vec u_1=(1,0,-1)$, $\vec u_2=(1,2,0)$ et $\vec u_3=(0,1,1)$. Démontrer que $(\vec u_1,\vec u_2,\vec u_3)$ est une base de $E$.
+ \item Calculer $f(\vec u_1)$, $f(\vec u_2)$ et $f(\vec u_3)$ et déterminer la matrice $B$ de $f$ dans la base $(\vec u_1,\vec u_2,\vec u_3)$.
+ \item  Déterminer les valeurs propres de $f$ et, pour chacune, un vecteur propre.
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+Soit $E$ un espace vectoriel de dimension $3$. On note ${\cal B}=(\vec e_1,\vec e_2,\vec e_3)$ une base de $E$, si $\vec u$ est un vecteur de $E$ on note $(x,y,z)$  ses coordonnées dans la base $\cal B$. Soit 
+$f$ une application linéaire de $E$ dans lui-même, définie par
+\begin{align*}
+f:E &\longrightarrow E \\  \begin{pmatrix}x \\  y \\  z\end{pmatrix}&\longmapsto \begin{pmatrix}x' \\  y' \\  z'\end{pmatrix}=\begin{pmatrix}-x+y-z \\  2x+2z \\  4x-2y+4z\end{pmatrix}
+\end{align*}
+\begin{enumerate}
+ \item  {\it Ecrivons la matrice $A$ de $f$ dans la base $\cal B$}.
+
+On a $f(\vec e_1)=(-1,2,4)$, $f(\vec e_2)=(1,0,-2)$ et $f(\vec e_3)=(-1,2,4)$. D'où la matrice
+$$A=\begin{pmatrix}-1&1&-1 \\ 2&0&2 \\ 4&-2&4\end{pmatrix}.$$
+ \item  {\it Déterminons les sous-espaces $\ker f$ et $\Im f$.}
+
+Le sous-espace vectoriel $\Im f$ est engendré par les vecteurs $f(\vec e_1)$, $f(\vec e_2)$ et $f(\vec e_3)=f(\vec e_1)$, c'est donc le plan vectoriel engendré par les vecteurs $f(\vec e_1)=(-1,2,4)$ et $f(\vec e_2)=(1,0,-2)$ qui sont clairement linéairement indépendants.
+
+Pour le noyau, on a $\ker f=\{\vec u\in E,\ f(\vec u)=\vec 0\}$, ainsi,
+$$\vec u=(x,y,z)\in\ker f\iff \left\{\begin{align*}-x+y-z=0 \\  2(x+z)=0 \\  4x-2y+4z=0\end{align*}\right.
+\iff\left\{\begin{align*}x+z=0 \\  y=0\end{align*}\right.$$
+C'est donc la droite vectorielle engendrée par le vecteur $\vec v=(1,0,-1)$.
+ \item Soient $\vec u_1=(1,0,-1)$, $\vec u_2=(1,2,0)$ et $\vec u_3=(0,1,1)$. {\it Démontrons que $(\vec u_1,\vec u_2,\vec u_3)$ est une base de $E$.}
+
+Pour cela nous allons vérifier que le déterminant de leurs coordonnées est non nul,
+$$\begin{vmatrix}1&1&0 \\ 0&2&1 \\ -1&0&1\end{vmatrix}=\begin{vmatrix}2&1 \\ 0&1\end{vmatrix}-\begin{vmatrix}1&0 \\ 2&1\end{vmatrix}=2-1=1\neq0.$$
+Ainsi, les trois vecteurs $\vec u_1,\vec u_2,\vec u_3$ sont linéairement indépendants, ils forment donc une base de $E$, car $E$ est de dimension $3$.
+ \item  {\it Calculons $f(\vec u_1)$, $f(\vec u_2)$ et $f(\vec u_3)$ et déterminons la matrice $B$ de $f$ dans la base $(\vec u_1,\vec u_2,\vec u_3)$.}
+
+On a $f(\vec u_1)=\vec 0$,
+
+$f(\vec u_2)=\begin{pmatrix}-1+2 \\  2 \\  4-4 \\ \end{pmatrix}=\begin{pmatrix}1 \\ 2 \\ 0\end{pmatrix}=\vec u_2$.
+
+$f(\vec u_3)=\begin{pmatrix}1-1 \\  2 \\  -4+2 \\\end{pmatrix}=\begin{pmatrix}0 \\ 2 \\ 2\end{pmatrix}=2\vec u_3$.
+
+Ainsi la matrice $B$ de $f$ dans la base $(\vec u_1,\vec u_2,\vec u_3)$ s'écrit
+$$B=\begin{pmatrix}0&0&0 \\ 0&1&0 \\ 0&0&2\end{pmatrix}.$$
+ \item  {\it Déterminons les valeurs propres de $f$ et, pour chacune, un vecteur propre.}
+
+D'après la question précédente, les valeurs propres de $f$ sont $0,1$ et $2$, et les vecteurs propres sont $\vec u_1$ pour la valeur propre $0$, $\vec u_2$ pour la valeur propre $1$ et $\vec u_3$ pour la valeur propre $2$.
+\end{enumerate}
+\fincorrection
+\finexercice

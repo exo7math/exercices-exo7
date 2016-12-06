@@ -1,0 +1,33 @@
+\exercice{5978, tumpach, 2010/11/11}
+\enonce
+Soit $f~:\mathbb{R}^{3}\rightarrow \mathbb{R}$ une fonction
+radiale, i.e. telle que $f(x)= h({r})$ o\`u $x=(x_1,x_2,x_3)$ et $r = |x|$ et
+$h~:\mathbb{R}^{+}\rightarrow \mathbb{R}$. Montrer que la
+transform\'ee de Fourier $\hat{f}$ de $f$ s'\'ecrit~: $$
+\hat{f}(k) = \frac{2}{|k|}\int_{0}^{+\infty} h(r) r
+\sin(2\pi|k|r)\,dr.
+$$
+\finenonce
+
+\noindication
+
+\correction
+A l'aide des coordonnées sphériques, on a
+$$
+\begin{array}{lcl}
+\hat{f}(k) &= & \int_{\mathbb{R}^{3}} f(x) e^{-2\pi i(x, k)}\,dx\\
+& = & \\ & = & \int_{r =0}^{+\infty}\int_{\theta
+=0}^{\pi}\int_{\varphi = 0}^{2\pi} h(r) e^{-2\pi i r
+|k|\cos\theta} r^2 \sin\theta\,d\theta
+dr d\varphi\\& = & \\
+& = & 2\pi \int_{0}^{+\infty}\int_{0}^{\pi} h(r)
+\frac{d}{d\theta}\left(\frac{1}{2\pi i r |k|} e^{-2\pi i r |k|\cos
+\theta} \right) r^2 \,d\theta dr\\& = & \\
+& = &\frac{1}{|k|} \int_{0}^{\infty} h(r) r
+\frac{1}{i}\left[e^{+2\pi i r|k|} - e^{-2\pi i r|k|}\right]\, dr\\& = & \\
+ & = &\frac{2}{|k|}\int_{0}^{+\infty} h(r) r \sin(2\pi|k|r)\,dr.
+\end{array}
+$$
+\fincorrection
+
+\finexercice

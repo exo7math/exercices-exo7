@@ -1,0 +1,25 @@
+\exercice{2803, burnol, 2009/12/15}
+\enonce
+  Montrer $\sin(a+ib) =
+   \sin(a)\ch(b) + i\cos(a)\sh(b)$. Puis en prenant
+   dorénavant $a$ et $b$ réels, prouver:
+\[ a,b\in\Rr\implies\quad |\sin(a+ib)|^2 = \sin^2(a) + \sh^2(b)\]
+Déterminer alors les nombres complexes $z = a+ib$ tels que
+   $\sin(z) = 0$. Donner une autre preuve.
+\finenonce
+\noindication
+\correction
+$$\begin{aligned}
+\sin(a)ch(b)+i\, \cos(a)\sh(b)&=\frac{1}{4i} \big\{ (e^{ia}-e^{-ia})(e^{b}+e^{-b})-(e^{ia}+e^{-ia})(e^{b}-e^{-b})\big\}\\
+&=\frac{1}{2i}\big(e^{ia-b}-e^{-ia+b}\big)=\sin(a+ib).
+\end{aligned}$$
+Si $a,b\in \R$, alors :
+$$\begin{aligned}
+|\sin(a+ib)|^2&= (\sin(a)\ch(b))^2+(\cos(a)\sh(b))^2\\
+&= \sin^2(a)(1+\sh^2(b))+(1-\sin^2(a))\sh^2(b)\\
+&= \sin^2(a) + \sh^2 (b).
+\end{aligned}$$
+Cette somme de carrés de nombres réels ne peut être nulle que si $\sin(a)=0$
+et $\sh(b)=0$, c'est-à-dire $a\in\pi\Zz$ et $b=0$. Donc $\sin(z)=0\iff z\in\pi\Zz$.
+\fincorrection
+\finexercice

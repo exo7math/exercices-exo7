@@ -1,0 +1,38 @@
+\exercice{6934, ruette, 2013/01/24}
+\enonce Sur un lot de  700 boulons soumis à des 
+essais de rupture, 300  ont résisté. Sur un second lot de  225, 125  
+ont résisté. Peut-on admettre, au seuil de  5\%, que ces deux lots 
+appartiennent à la même population ?
+\finenonce
+\noindication
+
+\correction
+On choisit de comparer les fréquences observées sur les deux échantillons.
+
+On fait l'hypothèse $H_0$ : les deux échantillons sont des tirages de 
+variables de Bernoulli indépendantes ayant la même espérance $p_{pop}$. 
+
+Sous l'hypothèse $H_{0}$, l'effectif $n_{i}F_{i}$ suit une loi binomiale 
+$\mathcal{B}(p_{pop},n_{i})$. Les échantillons étant de grande taille 
+($n_1$, $n_2 \geq 30$), on peut supposer que $F_{i}$ suit une loi 
+normale $\mathcal{N}(p_{pop},\sqrt{p_{pop}(1-p_{pop})/n_{i}})$. De plus, 
+pour le calcul de la variance, on peut estimer $p_{pop}$ au moyen de 
+l'ensemble des données disponibles, i.e.
+\begin{eqnarray*}
+p_{pop}\sim \frac{300+125}{700+225}=0,46.
+\end{eqnarray*}
+La différence $D=F_{1}-F_{2}$ suit une loi normale d'espérance nulle et de variance
+$
+\text{Var}(D)=\text{Var}(F_{1})+\text{Var}(F_{2})=p_{pop}(1-p_{pop})
+(\frac{1}{n_{1}}+\frac{1}{n_{2}})\sim 0,2484(\frac{1}{700}+\frac{1}{225})=0,00146.
+$
+
+Par conséquent, on choisit comme fonction discriminante $T=D/\sqrt{0.00146}=D/0,0382$, 
+qui suit une loi normale standard.
+La table donne $p(|T|>1,96)=0,05$.
+Or, sur l'échantillon mesuré, la variable $T$ prend la valeur 
+$t=\frac{-0,127}{0,0382}=-3,324$. Comme $|t|>1,96$, on rejette 
+$H_{0}$. On conclut, avec au plus 5\% de chances de se tromper, 
+que les deux lots de boulons ne sont pas tirés de la même population.
+\fincorrection
+\finexercice

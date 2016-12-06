@@ -1,0 +1,270 @@
+\exercice{5259, rouget, 2010/07/04}
+\enonce[***T]
+Soit $u$ l'endomorphisme de $\Rr^3$ dont la matrice dans la base canonique $(i,j,k)$ de $\Rr^3$ est~:
+
+$$M=\left(
+\begin{array}{ccc}
+0&1&0\\
+0&0&1\\
+1&-3&3
+\end{array}
+\right)
+.$$
+
+\begin{enumerate}
+\item  Montrer que $u$ est un automorphisme de $\Rr^3$ et déterminer $u^{-1}$.
+\item  Déterminer une base $(e_1,e_2,e_3)$ de $\Rr^3$ telle que $u(e_1)=e_1$, $u(e_2)=e_1+e_2$ et $u(e_3)=e_2+e_3$.
+\item  Déterminer $P$ la matrice de passage de $(i,j,k)$ à $(e_1,e_2,e_3)$ ainsi que $P^{-1}$.
+\item  En déduire $u^n(i)$, $u^n(j)$ et $u^n(k)$ pour $n$ entier relatif.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  $\mbox{rg}u=\mbox{rg}(u(i),u(j),u(k))=rg(u(j),u(k),u(i))$. La matrice de cette dernière famille dans la base $(i,j,k)$ est $\left(
+\begin{array}{ccc}
+1&0&0\\
+0&1&0\\
+-3&3&1
+\end{array}
+\right)$. Cette dernière famille est de rang $3$. Donc, $\mbox{rg}u=3$ et $u$ est bien un automorphisme de $\Rr^3$. Posons $e_1=u(i)$, $e_2=u(j)$ et $e_3=u(k)$.
+
+$$\left\{
+\begin{array}{l}
+e_1=k\\
+e_2=i-3k\\
+e_3=j+3k
+\end{array}\right.
+\Leftrightarrow\left\{
+\begin{array}{l}
+k=e_1\\
+i=3e_1+e_2\\
+j=-3e_1+e_3
+\end{array}\right.
+\Leftrightarrow
+\left\{
+\begin{array}{l}
+u^{-1}(k)=i\\
+u^{-1}(i)=3i+j\\
+u^{-1}(j)=-3i+k
+\end{array}\right.
+$$
+
+et 
+
+$$A^{-1}=\mbox{Mat}_{\mathcal{B}}(u^{-1})=\left(
+\begin{array}{ccc}
+3&-3&1\\
+1&0&0\\
+0&1&0
+\end{array}
+\right).$$ 
+
+\item (Questions 2) et 3)). Posons $e_1=xi+yj+zk$ ($e_1$, $e_2$ et $e_3$ désignent d'autres vecteurs que ceux du 1)).
+
+$$u(e_1)=e_1\Leftrightarrow(u-Id)(e_1)=0\Leftrightarrow\left(
+\begin{array}{ccc}
+-1&1&0\\
+0&-1&1\\
+1&-3&2
+\end{array}
+\right)\left(
+\begin{array}{c}
+x\\
+y\\
+z
+\end{array}
+\right)=\left(
+\begin{array}{c}
+0\\
+0\\
+0
+\end{array}
+\right)\Leftrightarrow
+\left\{
+\begin{array}{l}
+-x+y=0\\
+-y+z=0\\
+x-3y+2z=0
+\end{array}
+\right.\Leftrightarrow x=y=z.$$
+
+On prend $e_1=i+j+k$.
+
+Posons $e_2=xi+yj+zk$.
+
+$$u(e_2)=e_1+e_2\Leftrightarrow(u-Id)(e_2)=e_1\Leftrightarrow
+\left\{
+\begin{array}{l}
+-x+y=1\\
+-y+z=1\\
+x-3y+2z=1
+\end{array}
+\right.\Leftrightarrow y=x+1\;\mbox{et}\;z=x+2.$$
+
+On prend $e_2=j+2k$.
+
+Posons $e_3=xi+yj+zk$.
+
+$$u(e_3)=e_2+e_3\Leftrightarrow(u-Id)(e_3)=e_2\Leftrightarrow
+\left\{
+\begin{array}{l}
+-x+y=0\\
+-y+z=1\\
+x-3y+2z=2
+\end{array}
+\right.\Leftrightarrow y=x\;\mbox{et}\;z=x+1.$$
+
+On prend $e_3=k$.
+
+La matrice de la famille $(e_1,e_2,e_3)$ dans la base $(i,j,k)$ est $P=
+\left(
+\begin{array}{ccc}
+1&0&0\\
+1&1&0\\
+1&2&1
+\end{array}
+\right)$. Cette matrice est de rang $3$ et est donc inversible. Par suite $(e_1,e_2,e_3)$ est une base de $\Rr^3$. Enfin,
+
+$$\left\{
+\begin{array}{l}
+e_1=i+j+k\\
+e_2=j+2k\\
+e_3=k
+\end{array}
+\right.
+\Leftrightarrow
+\left\{
+\begin{array}{l}
+k=e_3\\
+j=e_2-2e_3\\
+i=e_1-e_2+e_3
+\end{array}
+\right.
+,$$
+
+et 
+
+$$P^{-1}=\left(
+\begin{array}{ccc}
+1&0&0\\
+-1&1&0\\
+1&-2&1
+\end{array}
+\right).$$
+
+\item Voir question précédente.
+
+\item  Soit $T$ est la matrice de $u$ dans la base $(e_1,e_2,e_3)$. $T=
+\left(
+\begin{array}{ccc}
+1&1&0\\
+0&1&1\\
+0&0&1
+\end{array}
+\right)$. Les formules de changement de bases s'écrivent $T=P^{-1}AP$ ou encore $A=PTP^{-1}$. Par suite, pour tout relatif $n$, $A^n=PT^nP^{-1}$.
+
+Posons $N=\left(
+\begin{array}{ccc}
+0&1&0\\
+0&0&1\\
+0&0&0
+\end{array}
+\right)
+$. On a $N^2=\left(
+\begin{array}{ccc}
+0&0&1\\
+0&0&0\\
+0&0&0
+\end{array}
+\right)$  puis $N^3=0$.
+
+Donc, pour $n$  entier naturel supérieur ou égal à $2$ donné, puisque $I$ et $N$ commutent, la formule du binôme de \textsc{Newton} fournit 
+
+$$T^n=(I+N)^n=I+nN+\frac{n(n-1)}{2}N^2=\left(
+\begin{array}{ccc}
+1&n&n(n-1)/2\\
+0&1&n\\
+0&0&1
+\end{array}
+\right).$$
+
+Cette formule reste claire pour $n=0$ et $n=1$.
+Pour $n=-1$, $(I+N)(I-N+N^2)=I+N^3=I$ et donc
+
+$$T^{-1}=(I+N)^{-1}=I-N+N^2=\left(
+\begin{array}{ccc}
+1&-1&1\\
+0&1&-1\\
+0&0&1
+\end{array}
+\right)=\left(
+\begin{array}{ccc}
+1&-1&\frac{(-1)(-1-1)}{2}\\
+0&1&-1\\
+0&0&1
+\end{array}
+\right),$$
+
+et la formule reste vraie pour $n=-1$. Enfin, pour $n$ entier naturel non nul donné, $T^{-n}=(I+nN+\frac{n(n-1)}{2}N^2)^{-1}$ mais $(I+nN+\frac{n(n-1)}{2}N^2)(I-nN+\frac{-n(-n-1)}{2}N^2)=I$ et donc
+$T^{-n}=I-nN+\frac{-n(-n-1)}{2}N^2$. Finalement, 
+
+$$\forall n\in\Zz,\;T^n=I+nN+\frac{n(n-1)}{2}N^2=\left(
+\begin{array}{ccc}
+1&n&n(n-1)/2\\
+0&1&n\\
+0&0&1
+\end{array}
+\right).$$
+
+Puis 
+
+\begin{align*}\ensuremath
+A^n&=PT^nP^{-1}=\left(
+\begin{array}{ccc}
+1&0&0\\
+1&1&0\\
+1&2&1
+\end{array}
+\right)\left(
+\begin{array}{ccc}
+1&n&n(n-1)/2\\
+0&1&n\\
+0&0&1
+\end{array}
+\right)\left(
+\begin{array}{ccc}
+1&0&0\\
+-1&1&0\\
+1&-2&1
+\end{array}
+\right)\\
+ &=\left(
+\begin{array}{ccc}
+1&n&n(n-1)/2\\
+1&n+1&n(n+1)/2\\
+1&n+2&(n+1)(n+2)/2
+\end{array}
+\right)\left(
+\begin{array}{ccc}
+1&0&0\\
+-1&1&0\\
+1&-2&1
+\end{array}
+\right)
+\\
+ &=\left(
+\begin{array}{ccc}
+(n-1)(n-2)/2&-n(n-2)&n(n-1)/2\\
+n(n-1)/2&-(n-1)(n+1)&n(n+1)/2\\
+n(n+1)/2&-n(n+2)&(n+1)(n+2)/2
+\end{array}
+\right)
+\end{align*}
+
+ce qui fournit $u^n(i)$, $u^n(j)$ et $u^n(k)$.
+\end{enumerate}
+\fincorrection
+\finexercice

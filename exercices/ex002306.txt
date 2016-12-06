@@ -1,0 +1,181 @@
+\exercice{2306, barraud, 2008/04/24}
+\enonce
+\begin{enumerate}
+  \item D\'etermin\'er la structure des anneaux 
+quotients suivants:
+$$ \Zz_2[x]/(x^3+x^2+x+1),\quad\Zz[x]/(x^2-1),\quad  \Qq[x]/(x^8-1). $$
+  \item Consid\'erons l'anneau quotient $K[x]/(f^ng^m)$
+o\`u $f$ et  $g$ sont deux polyn\^omes  distincts irr\'eductibles sur
+le corps $K$. D\'ecrirer  les diviseurs  de z\'ero et 
+les \'el\'ements nilpotents de l'anneau  $K[x]/(f^ng^m)$.
+  \item Quels id\'eaux a-t-il cet anneau ?
+  \item Soit $K$ le corps fini \`a $p$ \'el\'ements.
+Trouver le nombre des \'el\'ements du groupe multiplicatif
+de l'anneau $K[x]/(f^mg^l)$.
+  \item Donner une g\'en\'eralisation de la question 4) dans le cas
+du produit de  $n$ polyn\^omes irr\'eductibles sur un corps fini $K$
+\`a $q$ \'el\'ements.
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item 
+En posant $y=x+1$, on a
+$\Zz_{2}[x]/(x^{3}+x^{2}+x+1)=\{0,1,x,y,x^{2},y^{2},xy,xy+1\}$.
+Les tables des opérations sont les suivantes (elles sont symétriques)~:
+$$
+\begin{array}{c|c|c|c|c|c|c|c|c|c|c|}
+\oplus    &   0 &   1 &   x &   y & x^2  & y^2  & xy   & xy+1\\\hline
+0         &   0 &   1 &   x &   y & x^2  & y^2  & xy   & xy+1\\\hline
+1         &     &   0 &   y &   x & y^2  & x^2  & xy+1 & xy  \\\hline
+x         &     &     &   0 &   1 & xy   & xy+1 & x^2  & y^2 \\\hline
+y         &     &     &     &   0 & xy+1 & xy   & y^2  & x^2 \\\hline
+x^2       &     &     &     &     & 0    & 1    & x    & y   \\\hline
+y^2       &     &     &     &     &      & 0    & y    & x   \\\hline
+xy        &     &     &     &     &      &      & 0    & 1   \\\hline
+xy+1      &     &     &     &     &      &      &      & 0   \\\hline
+\end{array}
+$$
+
+$$
+\begin{array}{c|c|c|c|c|c|c|c|c|c|c|}
+\otimes   &   0 &   1 &   x &   y & x^2  & y^2  & xy   & xy+1\\\hline
+0         &   0 &   0 &   0 &   0 & 0    & 0    & 0    & 0   \\\hline
+1         &     &   1 &   x &   y & x^2  & y^2  & xy   & xy+1\\\hline
+x         &     &     & x^2 &  xy & xy+1 & y^2  & y    & 1   \\\hline
+y         &     &     &     & y^2 &  y   & 0    & y^2  & xy  \\\hline
+x^2       &     &     &     &     &  1   & y^2  & xy   & x   \\\hline
+y^2       &     &     &     &     &      & 0    & 0    & y^2 \\\hline
+xy        &     &     &     &     &      &      & y^2  & y   \\\hline
+xy+1      &     &     &     &     &      &      &      & x^2 \\\hline
+\end{array}
+$$
+ 
+Pour $\Zz[x]/(x^{2}-1)$, $(x-1)$ et $(x+1)$ sont deux idéaux étrangers,
+et le lemme chinois nous donne $\Zz[x]/(x^{2}-1)\simeq
+\Zz[x]/(x-1)\times\Zz[x]/(x+1)$. Or $\Zz[x]/(x+1)\simeq\Zz$ et
+$\Zz[x]/(x-1)\simeq\Zz$ donc $\Zz[x]/(x^{2}-1)\simeq\Zz\times\Zz$.
+
+
+La factorisation de $(x^{8}-1)$ sur $\Qq$ est
+$(x^{8}-1)=(x-1)(x+1)(x^{2}+1)(x^{4}+1)$. En utilisant le lemme chinois,
+on obtient que $\Qq[x]/(x^{8}-1)\simeq \Qq[x]/(x+1)\times
+\Qq[x]/(x^{2}+1)\times \Qq[x]/(x^{4}+1)$ soit~:
+
+$$
+\Qq[x]/(x^{8}-1)\simeq
+\Qq\times\Qq\times\Qq[i]\times\Qq[e^{i\pi/4}].
+$$
+
+Montrons en effet que $\Qq[x]/(x^{2}+1)\simeq\Qq[i]$~: l'application
+$\phi:\Qq[x]/(x^{2}+1)\to \Qq[i]$ définie par $\bar P\mapsto P(i)$ est un
+morphisme d'anneau.
+\begin{itemize}
+\item injectivité~:
+  Soit $\bar{P}\in\ker\phi$. Alors $P(i)=0$. Comme $P$ est à coefficient
+  rationnels donc réels, $-i$ est aussi raine de $P$. Donc $x^{2}+1|P$.
+
+\item surjectivité~:
+  Soit $z=a+ib\in\Qq[i]$. Alors $z=\phi(ax+b)$.
+\end{itemize}
+
+\smallskip
+
+De même pour $\Qq[x]/(x^{4}+1)\simeq\Qq[e^{i\pi/4}]$. Considérons le
+morphisme $\phi~:\Qq[x]/(x^{4}+1)\to\Qq[e^{i\pi/4}]$ défini par
+$\phi(\bar P)=P(e^{i\pi/4})$. $\phi$ est bien définie, c'est un morphisme
+d'anneau.
+\begin{itemize}
+\item injectivité~:
+  Soit $\bar{P}\in\ker\phi$. Alors $P(e^{i\pi/4})=0$. Par ailleurs
+  $X^{4}+1$ est \emph{irréductible} dans $\Qq$~: sa factorisation sur
+  $\Rr$ est $(x^{2}+\sqrt{2}x+1)(x^{2}-\sqrt{2}x+1)$, et aucun de ces
+  deux polynômes, même à inversible réel près, n'est rationnel. On en
+  déduit que si $(x^{4}+1)$ ne divise pas $P$, alors $\pgcd(X^{4}+1,P)=1$.
+  Il existerait donc $U,V\in\Qq[x]$, $UP+V(X^{4}+1)=1$. En évaluant en
+  $x=e^{i\pi/4}$, on obtient une contradiction. Donc $X^{4}+1|P$. (cf.
+  exexercice \ref{ex:bar9}).
+
+\item surjectivité~:
+  Soit $z=a+be^{i\pi/4}\in\Qq[e^{i\pi/4}]$. Alors $z=\phi(ax+b)$.
+\end{itemize}
+
+
+\item
+  On a $K[x]/(f^{n}g^{m})\simeq K[x]/(f^{m})\times K[x]/(g^{m})$. On en
+  déduit que les diviseurs de $0$ sont les polynômes de la forme
+  $\bar{P}$ où $P$ satisfait l'une des conditions suivantes~:
+$$
+\left|
+\begin{array}{ll}
+  f^{n}|P \text{ et } g^{m}\!\!\!\not| P & \qquad(\{0\}\times K[x]/(g^{m})\setminus\{0\})\\
+  g^{m}|P \text{ et } f^{n}\!\!\!\not| P & \qquad(K[x]/(f^{n})\setminus\{0\}\times \{0\})\\
+  f|P \text{ et } f^{n}\!\!\!\not| P & \qquad (\mathcal{D}_{K[x]/(f^{n})}\times K[x]/(g^{m}))\\
+  g|P \text{ et } g^{m}\!\!\!\not| P & \qquad (K[x]/(f^{n})\times\mathcal{D}_{ K[x]/(g^{m})})
+\end{array}\right.
+$$
+Les nilpotents sont donnés par les conditions
+$$
+\left\{
+\begin{array}{ll}
+  fg|P\\
+  (f^{n}g^{m}\!\!\!\not| P \text{ si on veut exclure }0)
+\end{array}\right.
+$$
+
+\item
+   Les idéaux de $K[x]/(f^{n})$ sont les idéaux engendrés par les
+   diviseurs de $f^{n}$ soit les $f^{k}$ pour $0\leq k\leq n$.
+
+   \smallskip
+
+   La démonstration peut se faire en toute généralité exactement de la
+   même manière que dans $\Zz/n\Zz$~: Soit $\mathcal{D}$ l'ensemble des
+   diviseurs de $f^{n}$ (modulo $K^{*}$). Ici, $\mathcal{D}=\{f^{k},0\leq
+   k\leq n\}$. Soit $\mathcal{I}$ l'ensemble de idéaux de $K[x]/(f^{n})$.
+
+   On a une flèche de $\mathcal{D}\to\mathcal{I}$, donnée par
+   $d\mapsto(\bar{d})$.
+   \begin{itemize}
+   \item surjectivité
+     Soit $I\in\mathcal{I}$. $I$ est principal~: notons $I=(\bar{h})$.
+     Soit $d=\pgcd(f,h)$, et $h_{1}$ le polynôme déterminé par
+     $h=dh_{1}$. Alors $\pgcd(f,h_{1})=0$ et $h_{1}$ est inversible dans
+     le quotient. On en déduit que $(\bar{h})=(\bar{d})=I$ (or $d\in\mathcal{D}$).
+
+   \item injectivité
+     Soit $d,d'\in\mathcal{D}$ tels que $(\bar{d})=(\bar{d'})$. On a
+     alors $d=h_{1}d'+h_{2}f$ donc $d'|d$. De même, $d|d'$. On en déduit
+     que $d\sim d'$.
+   \end{itemize}
+
+   \smallskip
+   
+   Revenons à notre exercice~: les idéaux de $K[x]/(f^{n})\times
+   K[x]/g^{m}$ sont donc de la forme $(f^{\alpha})\times(g^{\beta})$. En
+   revenant à $K[x]/(f^{n}g^{m})$, on obtient que l'ensemble des idéaux
+   est $$\{(f^{\alpha}g^{\beta}), 0\leq\alpha,\beta\leq n\}$$
+
+\item
+   Les inversibles de $K[x]/(f^{n})$ sont les (classes des) polynômes
+   premiers avec $f$. Le complémentaire est donc formé des multiples de
+   $f$, il y en a donc autant que de polynômes de degré $(nd-1)-d$ où $d$
+   est le degré de $f$, soit $p^{(n-1)d}$. Il y a donc $p^{(n-1)d}(p-1)$
+   inversibles dans $K[x]/(f^{n})$.
+
+   On en déduit qu'il y en a $p^{(n-1)d_{f}+(m-1)d_{g}}(p-1)^{2}$ dans
+   $K[x]/(f^{n}g^{m})$, où $d_{f}$ et $d_{g}$ sont les degrés respectifs
+   de $f$ et $g$.
+
+\item
+   Plus généralement, si les $f_{i}$ sont des polynômes irréductibles
+   distincts, dans $K[x]/(f_{1}^{n_{1}}\cdots f_{k}^{n_{k}})$ il y a
+   $p^{\sum (n_{i}-1)d_{i}}(p-1)^{k}$ inversibles, où $d_{i}$ est le
+   degré de $f_{i}$.
+  
+\end{enumerate}
+\fincorrection
+\finexercice

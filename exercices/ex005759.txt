@@ -1,0 +1,74 @@
+\exercice{5759, rouget, 2010/10/16}
+\enonce[*** I]
+ Soient $(a_n)_{n\in\Nn}$ et $(b_n)_{n\in\Nn}$ deux suites de réels strictement positifs telles que la suite $\left(\frac{a_n}{b_n}\right)_{n\in\Nn}$ ait une limite réelle $k$. (En particulier $a_n\underset{n\rightarrow+\infty}{=}o(b_n)$ si $k = 0$ et $a_n\underset{n\rightarrow+\infty}{\sim}b_n$ si $k = 1$).On suppose de plus que la série entière associée à la suite $(a_n)_{n\in\Nn}$ a un  rayon de convergence égal à $1$ et que la série de terme général $a_n$ diverge.
+
+\begin{enumerate}
+ \item  Montrer que $\lim_{x \rightarrow 1}\frac{\sum_{n=0}^{+\infty}a_nx^n}{\sum_{n=0}^{+\infty}b_nx^n}= k$.
+
+\item \textbf{Applications.} 
+  \begin{enumerate}
+   \item Equivalent simple quand $x$ tend vers $1$ de $\sum_{n=1}^{+\infty}\ln nx^n$.
+   \item Déterminer $\lim_{x \rightarrow 1}(1-x)^p\sum_{n=0}^{+\infty}n^{p-1}x^n$ où $p$ est un entier naturel non nul donné.
+   \end{enumerate}
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Soient $A$ et $B$ les sommes des séries entières associées aux suites $a$ et $b$ sur $]-1,1[$. La fonction $B$ est strictement positive sur $]0,1[$ et en particulier ne s'annule pas sur $]0,1[$.
+
+\textbullet~La suite $a$ est positive donc la fonction $A$ est croissante sur $[0,1[$ et admet ainsi une limite réelle ou infinie quand $x$ tend vers $1$ par valeurs inférieures. De plus, pour $N$ entier naturel donné et $x\in[0,1[$, on a $\sum_{n=0}^{+\infty}a_nx^n\geqslant\sum_{n=0}^{N}a_nx^n$ et donc
+
+\begin{center}
+$\forall N\in\Nn$, $\displaystyle\lim_{\substack{x\rightarrow1,\;x<1}}A(x)\geqslant\displaystyle\lim_{\substack{x\rightarrow1,\;x<1}}\sum_{n=0}^{N}a_nx^n =\sum_{n=0}^{N}a_n$.
+\end{center}
+
+Puisque la série de terme général positif $a_n$ diverge, quand $N$ tend tend vers $+\infty$, on obtient $\displaystyle\lim_{\substack{x\rightarrow1,\;x<1}}A(x)\geqslant+\infty$ et donc $\displaystyle\lim_{\substack{x\rightarrow1,\;x<1}}A(x)=+\infty$. Il en est de même pour $B$ car la série de terme général $b_n$ diverge quelque soit la valeur de $k$.
+
+\textbullet~On veut alors montrer que $A-k B\underset{x\rightarrow1^-}{=}o(B)$.
+
+Soit $\varepsilon> 0$. Par hypothèse, $a_n-kb_n\underset{n\rightarrow+\infty}o(b_n)$ et donc il existe un entier naturel $N$ tel que pour $n\geqslant N$, $|a_n-kb_n|\leqslant\frac{\varepsilon}{2} b_n$.
+
+Soit $x\in[0,1[$.
+
+\begin{center}
+$|A(x)-kB(x)|\leqslant \sum_{n=0}^{+\infty}|a_n-kb_n|x^n\leqslant \sum_{n=0}^{N}|a_n-kb_n|x^n+   \frac{\varepsilon}{2}\sum_{n=N+1}^{+\infty}b_nx^n\leqslant\sum_{n=0}^{N}|a_n-kb_n|+\frac{\varepsilon}{2}B(x)$.
+\end{center}
+
+Maintenant, $B(x)$ tend vers $+\infty$ quand $x$ tend vers $1$ par valeurs inférieures. Donc il existe $\alpha\in]0,1[$ tel que pour $x\in]1-\alpha,1[$,  $B(x) >\frac{2}{\varepsilon}\sum_{n=0}^{N}|a_n-kb_n|$. Pour $x\in]1-\alpha,1[$, on a alors $|A(x)-kB(x)| <\frac{\varepsilon}{2}B(x)+\frac{\varepsilon}{2}B(x)=\varepsilon B(x)$.
+
+On a montré que $\forall\varepsilon>0$, $\exists\alpha\in]0,1[/$ $\forall x\in]1-\alpha,1[$, $|A(x)-kB(x)|<\varepsilon B(x)$ et donc $\lim_{x \rightarrow 1^-}\frac{A(x)}{B(x)}=k$.
+
+\item  
+  \begin{enumerate}
+  \item La série entière proposée \og vérifie \fg les hypothèses du 1) et de plus , $\ln n\underset{n\rightarrow+\infty}{\sim}1+\frac{1}{2}+...+\frac{1}{n}$. Donc 
+
+\begin{center}
+$f(x)\underset{x\rightarrow1^-}{\sim}\sum_{n=1}^{+\infty}\left(\sum_{k=1}^{n}\frac{1}{k}\right)x^n=\left(\sum_{n=0}^{+\infty}x^n\right)\left(\sum_{n=1}^{+\infty}\frac{x^n}{n}\right) =\frac{\ln(1-x)}{x-1}$.
+\end{center}
+
+\begin{center}
+\shadowbox{
+$\sum_{n=1}^{+\infty}(\ln n) x^n\underset{x\rightarrow1^-}{\sim}\frac{\ln(1-x)}{x-1}$.
+}
+\end{center}
+
+  \item Soit $p\geqslant2$. $n^{p-1}\underset{n\rightarrow+\infty}{\sim}(n+1)(n+2)...(n+p-1)$. Comme les deux suites $(n^{p-1})$ et $((n+1)(n+2)...(n+p-1))$ vérifient les hypothèses du 1)
+
+\begin{center}
+$\sum_{n=0}^{+\infty}n^{p-1}x^n\underset{x\rightarrow1^-}{\sim}\sum_{n=0}^{+\infty}(n+p-1)...(n+1)x^n =\left(\sum_{n=0}^{+\infty}x^n\right)^{(p-1)}=\left(\frac{1}{1-x}\right)^{(p-1)}=\frac{(p-1)!}{(1-x)^p}$.
+\end{center}
+
+Par suite,
+
+\begin{center}
+\shadowbox{
+$\lim_{x \rightarrow 1^-}(1-x)^p\sum_{n=1}^{+\infty}n^{p-1}x^n=(p-1)!$.
+}
+\end{center}
+  \end{enumerate}
+\end{enumerate}
+\fincorrection
+\finexercice

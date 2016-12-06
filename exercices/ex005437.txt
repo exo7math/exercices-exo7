@@ -1,0 +1,64 @@
+\exercice{5437, rouget, 2010/07/06}
+\enonce[***I]
+\begin{enumerate}
+\item  Montrer que l'équation $\tan x=x$ a une unique solution dans l'intervalle $[n\pi,(n+1)\pi]$ pour $n$ entier naturel donné. On note $x_n$ cette solution.
+\item  Trouver un développement asymptotique de $x_n$ à la précision $\frac{1}{n^2}$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+Pour $n$ entier naturel donné, posons $I_n=\left]-\frac{\pi}{2}+n\pi,\frac{\pi}{2}+n\pi\right[$.
+\textbullet~Soit $n\in\Nn$. Pour $x\in I_n$, posons $f(x)=\tan x-x$. $f$ est dérivable sur $I_n$ et pour $x$ dans $I_n$, $f'(x)=\tan^2x$. Ainsi, $f$ est dérivable sur $I_n$ et $f'$ est strictement positive sur $I_n\setminus\{n\pi\}$. Donc $f$ est strictement croissante sur $I_n$.
+
+\textbullet~Soit $n\in\Nn$. $f$ est continue et strictement croissante sur $I_n$ et réalise donc une bijection de $I_n$ sur $f(I_n)=\Rr$. En particulier, $\forall n\in\Nn,\;\exists!x_n\in I_n/\;f(x_n)=0$ (ou encore tel que $\tan x_n=x_n$.
+\textbullet~On a $x_0=0$ puis pour $n\in\Nn^*$, $f(n\pi)=-n\pi<0$ et donc, $\forall n\in\Nn^*,\;x_n\in]n\pi,\frac{\pi}{2}+n\pi[$. En particulier,
+
+\begin{center}
+\shadowbox{
+$x_n\underset{n\rightarrow+\infty}{=}n\pi+O(1)$.
+}
+\end{center}
+\textbullet~Posons alors $y_n=x_n-n\pi$. $\forall n\in\Nn^*,\;y_n\in\left]0,\frac{\pi}{2}\right[$. De plus, $\tan(y_n)=\tan(x_n)=n\pi+y_n$ et donc, puisque $y_n\in\left]0,\frac{\pi}{2}\right[$,
+
+$$\frac{\pi}{2}>y_n=\Arctan(y_n+n\pi)\geq\Arctan(n\pi).$$ 
+Puisque $\Arctan(n\pi)$ tend vers $\frac{\pi}{2}$, on a $y_n=\frac{\pi}{2}+o(1)$ ou encore
+
+\begin{center}
+\shadowbox{
+$x_n\underset{n\rightarrow+\infty}{=}n\pi+\frac{\pi}{2}+o(1)$.
+}
+\end{center}
+\textbullet~Posons maintenant $z_n=y_n-\frac{\pi}{2}=x_n-n\pi-\frac{\pi}{2}$.
+D'après ce qui précède, $\forall n\in\Nn^*,\;z_n\in\left]-\frac{\pi}{2},0\right[$ et d'autre part $z_n\underset{n\rightarrow+\infty}{=}o(1)$.
+Ensuite, $\tan\left(z_n+\frac{\pi}{2}\right)=n\pi+\frac{\pi}{2}+z_n$ et donc $-\cotan(z_n)=n\pi+\frac{\pi}{2}+z_n\underset{n\rightarrow+\infty}{\sim}n\pi$. Puisque $z_n$ tend vers $0$, on en déduit que
+
+\begin{center}
+$-\frac{1}{z_n}\underset{n\rightarrow+\infty}{\sim}-\cotan(z_n)\underset{n\rightarrow+\infty}{\sim}n\pi$,
+\end{center}
+ou encore $z_n\underset{n\rightarrow+\infty}{=}-\frac{1}{n\pi}+o\left(\frac{1}{n}\right)$. Ainsi,
+
+\begin{center}
+\shadowbox{$x_n\underset{n\rightarrow+\infty}{=}n\pi+\frac{\pi}{2}-\frac{1}{n\pi}+o\left(\frac{1}{n}\right).$}
+\end{center}
+\textbullet~Posons enfin $t_n=z_n+\frac{1}{n\pi}=x_n-n\pi-\frac{\pi}{2}+\frac{1}{n\pi}$. On sait que $t_n=o\left(\frac{1}{n}\right)$ et que 
+
+\begin{center}
+$-\cotan\left(t_n-\frac{1}{n\pi}\right)=-\cotan(z_n)=n\pi+\frac{\pi}{2}+z_n=n\pi+\frac{\pi}{2}-\frac{1}{n\pi}+o(\frac{1}{n})$.
+\end{center} Par suite,
+ 
+$$-\tan\left(t_n-\frac{1}{n\pi}\right)=\frac{1}{n\pi}\left(1+\frac{1}{2n}+o(\frac{1}{n})\right)^{-1}=\frac{1}{n\pi}-\frac{1}{2n^2\pi}+o\left(\frac{1}{n^2}\right),$$
+puis,
+
+$$\frac{1}{n\pi}-t_n=\Arctan\left(\frac{1}{n\pi}-\frac{1}{2n^2\pi}+o(\frac{1}{n^2})\right)=\frac{1}{n\pi}-\frac{1}{2n^2\pi}+o\left(\frac{1}{n^2}\right),$$ 
+et donc $t_n=\frac{1}{2n^2\pi}+o\left(\frac{1}{n^2}\right)$. Finalement, 
+
+\begin{center}
+\shadowbox{
+$x_n\underset{n\rightarrow+\infty}{=}n\pi+\frac{\pi}{2}-\frac{1}{n\pi}+\frac{1}{2n^2\pi}+o\left(\frac{1}{n^2}\right).$
+}
+\end{center}
+
+\fincorrection
+\finexercice

@@ -1,0 +1,28 @@
+\exercice{2228, matos, 2008/04/23}
+\enonce
+Soit $A\in\Rr^{n\times n}$ telle que $A^T$ soit \`a diagonale strictement dominante. Montrer que $A$ admet une d\'ecomposition LU avec $L^T$ \`a diagonale strictement dominante.
+\finenonce 
+
+\noindication
+
+\correction
+$$A=A_1=\left(\begin{array}{cc}
+\alpha & u^T\\v&B_1\end{array}\right),\quad B_1=(b_{ij})_{i,j=1}^{n-1}$$
+$A^T$ \'etant \`a diagonale strictement dominante on a:
+$$|\alpha|>\sum_{i=1}^{n-1}|v_i|,\quad |u_i| +\sum_{j\neq i}|b_{ji}|<|b_{ii}|$$
+Il suffit de montrer que
+\begin{itemize}
+\item la premi\`ere colonne de $L$ v\'erifie $|l_{11}|>\sum_{i\neq 1}|l_{i1}|$
+\item $B_2$ est telle que
+$$A_2=\left(\begin{array}{cc}\alpha & u^T\\0& B_2\end{array}\right), \quad C=B_2=B_1-\frac{1}{\alpha} vu^T$$
+v\'erifie $|c_{ii}|>\sum_{j\neq i}|c_{ji}|$ avec $C_{ij}=B_{ij}-\frac{1}{\alpha}v_iu_j$ et it\'erer.
+\end{itemize}
+\begin{itemize}
+\item premi\`ere colonne de $L$: $l_{i1}=v_i/\alpha \Rightarrow \sum_{i=2}^n |l_{i1}|=\sum_{i=1}^{n-1}\frac{|v_i|}{\alpha}<1$
+\item $\sum_{i\neq j}|c_{ij}| =\sum_{i\neq j}\left|b_{ij}-\frac{1}{\alpha}v_iw_j\right|\leq \sum_{i\neq j}|b_{ij}| +\frac{1}{|\alpha|}|w_j|\sum_{i\neq j}|v_i|$
+$$\leq |b_{jj}| - |u_j| + \frac{1}{|\alpha|}|u_j| (|\alpha|-|v_j|)
+\leq\left|b_{jj}-\frac{1}{\alpha} u_jv_j\right|=|c_{jj}|$$
+donc $B_2^T$ est de diagonale strictement dominante. La d\'emonstration se finit par r\'ecurrence.
+\end{itemize}
+\fincorrection
+\finexercice

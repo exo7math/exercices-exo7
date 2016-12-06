@@ -1,0 +1,49 @@
+\exercice{2370, mayer, 2003/10/01}
+\enonce 
+Soit $X$ un espace m\'etrique.
+\begin{enumerate}
+\item Soit $A$ et $B$ deux compacts disjoints dans $X$. Montrer qu'ils
+poss\`edent des voisinages ouverts disjoints (commencer par le cas
+o\`u $B$ est r\'eduit \`a un point).
+\item Soit $K$ un compact non vide de $X$ et $U$ un ouvert de $X$ contenant $K$.
+Montrer qu'il existe $r>0$ tel que pour tout $x\in X$, on ait
+l'implication: $$d(x,K)<r \Rightarrow x\in U\; .$$
+\end{enumerate}
+\finenonce
+
+\indication
+\begin{enumerate}
+  \item Remarquer si $U_a$ est un voisinage de $a$, alors $A \subset \bigcup_{a\in A} U_a$.
+  \item Raisonner par l'absurde et construire une suite $(x_n)$ dont aucun élément  n'est dans $U$ et
+une suite $(y_n)$ de $K$. Quitte à extraire une sous-suite se débrouiller pour 
+qu'elle converge vers la m\^eme limite.
+\end{enumerate}
+\finindication
+
+\correction
+\begin{enumerate}
+  \item 
+    \begin{enumerate}
+      \item Si $A$ est compact et $B=\{b\}$ avec $b\notin A$.
+Soit $a\in A$ alors $a \neq b$ donc il existe un voisinage ouvert de $a$, $U_a$
+et un voisinage ouvert de $b$, $V_a$ tels que $U_a \cap V_a = \varnothing$.
+Bien évidemment $A \subset \bigcup_{a\in A} U_a$. Comme $A$ est compact on peut extraire un ensemble fini $\mathcal{A} \subset A$ tel que $A \subset \bigcup_{a\in \mathcal{A}} U_a = : U^b$. Notons alors $V^b := \bigcap_{a\in \mathcal{A}} V_a$. $U^b$ est ouvert comme union d'ouverts et $V^b$ est ouvert comme intersection \emph{finie} d'ouverts. De plus $U^b\cap V^b= \varnothing$.
+
+      \item Maintenant $B$ est compact. Pour chaque $b\in B$ le point précédent nous fournit $U^b$ et $V^b$ disjoints qui sont des voisinages ouverts respectifs de $A$ et $b$. On a $B \subset \bigcup_{b\in B} V^b$. On extrait un ensemble fini $\mathcal{B}$ de telle sorte que $B \subset \bigcup_{b\in \mathcal{B}} V^b =: V'$. $V'$ est un voisinage ouvert de $B$. Et si $U':= \bigcap_{b\in \mathcal{B}} U^b$ alors $U'$ est un ouvert contenant $A$, et $U' \cap V' = \varnothing$.
+   \end{enumerate}
+
+  \item Supposons que ce ne soit pas vrai alors
+$$ \forall r>0 \quad \exists x \in X \qquad  (d(x,K)<r) \text{ et } x\notin U.$$
+En prenant $r = \frac 1n$, $n\in \Nn^*$ nous obtenons une suite $(x_n)$  tel que 
+$d(x_n,K)< \frac 1n$ et $x_n \notin U$.
+Comme $d(x_n,K) < \frac 1n$ alors il existe $y_n \in K$ tel que
+$d(x_n,y_n) < \frac 1 n$. Nous avons une suite $(y_n)$ dans $K$ compact donc on peut en extraire une sous-suite $y_{\phi(n)}$ qui converge ; notons $\ell$ sa limite, alors $\ell \in K$ car $K$ est compact. 
+
+Regardons la suite extraite $(x_{\phi(n)})$, montrons quelle converge également vers $\ell$ :
+$$d(x_{\phi(n)},\ell) \le d(x_{\phi(n)},y_{\phi(n)}) + d(y_{\phi(n)},\ell)$$
+Les deux termes à droite de l'inégalité tendent vers $0$, donc $(x_{\phi(n)})$
+tend vers $\ell$. Soit $F = X\setminus U$ alors $F$ est une fermé (car $U$ est ouvert) et $(x_{\phi(n)}) \in F$ donc la limite $\ell$ est dans $F$ également.
+Donc $\ell \notin U$ et comme $K\subset U$ alors $\ell \notin K$. Nous avons montrer deux choses contradictoires $\ell \in K$ et $\ell \notin K$ ce qui prouve le résultat demandé.
+\end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,253 @@
+\exercice{5427, exo7, 2010/07/06}
+\enonce[IT]
+Déterminer les développements limités à l'ordre demandé au voisinage des points indiqués~:
+\begin{enumerate}
+ \item $\frac{1}{1-x^2-x^3}\;(\mbox{ordre}\;7\;\mbox{en}\;0)$
+ \item $\frac{1}{\cos x}\;(\mbox{ordre}\;7\;\mbox{en}\;0)$
+ \item $\Arccos\sqrt{\frac{x}{\tan x}}\;(\mbox{ordre}\;3\;\mbox{en}\;0)$
+ \item $\tan x\;(\mbox{ordre}\;3\;\mbox{en}\;\frac{\pi}{4})$
+ \item $(\ch x)^{1/x^2}\;(\mbox{ordre}\;2\;\mbox{en}\;0)$
+ \item $\tan^3x(\cos(x^2)-1)\;(\mbox{ordre}\;8\;\mbox{en}\;0)$
+ \item $\frac{\ln(1+x)}{x^2}\;(\mbox{ordre}\;3\;\mbox{en}\;1)$ 
+ \item $\Arctan(\cos x)\;(\mbox{ordre}\;5\;\mbox{en}\;0)$
+ \item $\Arctan\sqrt{\frac{x+1}{x+2}}\;(\mbox{ordre}\;2\;\mbox{en}\;0)$
+ \item $\frac{1}{x^2}-\frac{1}{\Arcsin^2x}\;(\mbox{ordre}\;5\;\mbox{en}\;0)$
+ \item $\int_{x}^{x^2}\frac{1}{\sqrt{1+t^4}}\;dt\;(\mbox{ordre}\;10\;\mbox{en}\;0)$
+ \item $\ln\left(\sum_{k=0}^{99}\frac{x^k}{k!}\right)\;(\mbox{ordre}\;100\;\mbox{en}\;0)$
+ \item $\tan\sqrt[3]{4(\pi^3+x^3)}\;(\mbox{ordre}\;3\;\mbox{en}\;\pi)$
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item 
+\begin{align*}\ensuremath 
+\frac{1}{1-x^2-x^3}\underset{x\rightarrow0}{=}1+(x^2+x^3)+(x^2+x^3)^2+(x^2+x^3)^3+o(x^7)= 1+x^2+x^3+x^4+2x^5+2x^6+3x^7+o(x^7).
+\end{align*}
+
+\begin{center}
+\shadowbox{
+$\frac{1}{1-x^2-x^3}\underset{x\rightarrow0}{=}1+x^2+x^3+x^4+2x^5+2x^6+3x^7+o(x^7)$.
+}
+\end{center}
+ \item 
+
+\begin{align*}\ensuremath
+\frac{1}{\cos x}&\underset{x\rightarrow0}{=}\left(1-\frac{x^2}{2}+\frac{x^4}{24}-\frac{x^6}{720}+o(x^7)\right)^{-1}
+=1+\left(\frac{x^2}{2}-\frac{x^4}{24}+\frac{x^6}{720}\right)+\left(\frac{x^2}{2}-\frac{x^4}{24}\right)^2+\left(\frac{x^2}{2}\right)^3+o(x^7)\\
+ &=1+\frac{x^2}{2}+x^4\left(-\frac{1}{24}+\frac{1}{4}\right)+x^6\left(\frac{1}{720}-\frac{1}{24}+\frac{1}{8}\right)+o(x^7)
+=1+\frac{1}{2}x^2+\frac{5}{24}x^4+\frac{61}{720}x^6+o(x^7).
+\end{align*}
+
+\begin{center}
+\shadowbox{
+$\frac{1}{\cos x}\underset{x\rightarrow0}{=}1+\frac{1}{2}x^2+\frac{5}{24}x^4+\frac{61}{720}x^6+o(x^7)$.
+}
+\end{center}
+ \item  \textbf{Remarques.}
+
+  \begin{enumerate}
+  \item Pour $x\in\left]-\frac{\pi}{2},\frac{\pi}{2}\right[\setminus\{0\}$, on a $0<\frac{x}{\tan x}<1$ et donc la fonction $x\mapsto\Arccos\left(\frac{x}{\tan x}\right)$ est définie sur $\left]-\frac{\pi}{2},\frac{\pi}{2}\right[\setminus\{0\}$ (qui est un voisinage pointé de $0$).\rule[-2mm]{0mm}{6mm}
+  \item Quand $x$ tend vers $0$, $\frac{x}{\tan x}\rightarrow1$ et donc $\Arccos\left(\frac{x}{\tan x}\right)=o(1)$ (développement limité à l'ordre $0$).
+  \item La fonction $x\mapsto\Arccos x$ n'est pas dérivable en $1$ et n'admet donc pas en $1$ de développement limité d'ordre supérieur ou égal à $1$ (donc à priori, c'est mal parti).
+  \item La fonction proposée est paire et, si elle admet en $0$ un développement limité d'ordre $3$, sa partie régulière ne contient que des exposants pairs.
+
+  \end{enumerate}
+
+\textbullet~Recherche d'un équivalent simple de $\Arccos x$ en $1$ à gauche.
+Quand $x$ tend vers $1$ par valeurs inférieures, $\Arccos x\rightarrow 0$ et donc,
+
+$$\Arccos x\sim\sin(\Arccos x)=\sqrt{1-x^2}=\sqrt{(1+x)(1-x)}\sim\sqrt{2}\sqrt{1-x}.$$ 
+\textbullet~Déterminons un équivalent simple de $\Arccos\left(\sqrt{\frac{x}{\tan x}}\right)$ en $0$. D'après ce qui précède,
+
+$$\Arccos\left(\sqrt{\frac{x}{\tan x}}\right)\sim\sin\left(\Arccos\left(\sqrt{\frac{x}{\tan x}}\right)\right)=\sqrt{1-\left(\sqrt{\frac{x}{\tan x}}\right)^2}=\sqrt{\frac{\tan x-x}{\tan x}}\sim\sqrt{\frac{x^3/3}{x}}=\frac{|x|}{\sqrt{3}}.$$
+Ainsi, la fonction $x\mapsto\Arccos\left(\sqrt{\frac{x}{\tan x}}\right)$ n'est pas dérivable en $0$ (mais est dérivable à droite et à gauche) et n'admet donc pas de développement limité d'ordre supérieur ou égal à $1$ (mais admet éventuellement des développements limités à gauche et à droite pour lesquels la remarque initiale sur la parité des exposants ne tient plus).
+\textbullet~Déterminons un équivalent simple de $f(x)=\Arccos\left(\sqrt{\frac{x}{\tan x}}\right)-\frac{x}{\sqrt{3}}$ quand $x$ tend vers $0$ par valeurs supérieures.
+
+\begin{align*}\ensuremath
+\Arccos\left(\sqrt{\frac{x}{\tan x}}\right)-\frac{x}{\sqrt{3}}&\sim\sin\left(\Arccos\left(\sqrt{\frac{x}{\tan x}}\right)-\frac{x}{\sqrt{3}}\right)\\
+ &=\sin\left(\Arccos\left(\sqrt{\frac{x}{\tan x}}\right)\right)\cos\left(\frac{x}{\sqrt{3}}\right)-\sin\left(\frac{x}{\sqrt{3}}\right)\cos\left(\Arccos\left(\sqrt{\frac{x}{\tan x}}\right)\right)\\
+ &=\sqrt{\frac{\tan x-x}{\tan x}}\cos\left(\frac{x}{\sqrt{3}}\right)-\sqrt{\frac{x}{\tan x}}\sin\left(\frac{x}{\sqrt{3}}\right)=g(x)
+\end{align*}
+Maintenant,
+
+\begin{align*}\ensuremath
+\sqrt{\frac{\tan x-x}{\tan x}}&=\left(\left(\frac{x^3}{3}+\frac{2x^5}{15}+o(x^5)\right)\left(x+\frac{x^3}{3}+o(x^3)\right)^{-1}\right)^{1/2}=
+\frac{1}{\sqrt{x}}\left(\left(\frac{x^3}{3}+\frac{2x^5}{15}+o(x^5)\right)\left(1-\frac{x^2}{3}+o(x^2)\right)\right)^{1/2}\\
+ &=\frac{1}{\sqrt{x}}\left(\frac{x^3}{3}+\frac{x^5}{45}+o(x^5)\right)^{1/2}=\frac{x}{\sqrt{3}}\left(1+\frac{x^2}{15}+o(x^2)\right)^{1/2}\\
+ &=\frac{x}{\sqrt{3}}+\frac{x^3}{30\sqrt{3}}+o(x^3),
+\end{align*}
+et donc,
+
+$$
+\sqrt{\frac{\tan x-x}{\tan x}}\cos\left(\frac{x}{\sqrt{3}}\right)=\left(\frac{x}{\sqrt{3}}+\frac{x^3}{30\sqrt{3}}+o(x^3)\right)\left(1-\frac{x^2}{6}+o(x^2)\right)=\frac{x}{\sqrt{3}}-\frac{2x^3}{15\sqrt{3}}+o(x^3).
+$$
+Ensuite,
+
+\begin{align*}\ensuremath
+\sqrt{\frac{x}{\tan x}}\sin\left(\frac{x}{\sqrt{3}}\right)&=\left(1+\frac{x^2}{3}+o(x^2)\right)^{-1/2}\left(\frac{x}{\sqrt{3}}-\frac{x^3}{18\sqrt{3}}+o(x^3)\right)=\left(1-\frac{x^2}{6}+o(x^2)\right)\left(\frac{x}{\sqrt{3}}-\frac{x^3}{18\sqrt{3}}+o(x^3)\right)\\
+ &=\frac{x}{\sqrt{3}}-\frac{2x^3}{9\sqrt{3}}+o(x^3),
+\end{align*}
+et finalement,
+
+$$g(x)=\left(\frac{x}{\sqrt{3}}-\frac{2x^3}{15\sqrt{3}}+o(x^3)\right)-\left(\frac{x}{\sqrt{3}}-\frac{2x^3}{9\sqrt{3}}+o(x^3)\right)=\frac{4x^3}{45\sqrt{3}}+o(x^3)\sim\frac{4x^3}{45\sqrt{3}}.$$
+
+Ainsi, quand $x$ tend vers $0$ par valeurs supérieures,
+
+$$\Arccos\left(\sqrt{\frac{x}{\tan x}}\right)-\frac{x}{\sqrt{3}}=\frac{4x^3}{45\sqrt{3}}+o(x^3).$$
+$f$ étant paire, on en déduit que
+
+\begin{center}
+\shadowbox{$\Arccos\left(\sqrt{\frac{x}{\tan x}}\right)\underset{x\rightarrow0}{=}\frac{|x|}{\sqrt{3}}+\frac{4|x|^3}{45\sqrt{3}}+o(x^3).$}
+\end{center}
+(Ce n'est pas un développement limité).
+ \item  La fonction $x\mapsto\tan x$ est trois fois dérivable en $\frac{\pi}{4}$ et admet donc en $\frac{\pi}{4}$ un développement limité d'ordre $3$ à savoir son développement de \textsc{Taylor}-\textsc{Young}.
+$\tan\frac{\pi}{4}=1$ puis $(\tan)'\left(\frac{\pi}{4}\right)=1+\tan^2\frac{\pi}{4}=2$. Ensuite, $(\tan)''(x)=2\tan x(1+\tan^2x)$ et $(\tan)''(\frac{\pi}{4})=4$. Enfin,
+
+$$(\tan)^{(3)}(x)=2(1+\tan^2x)^2+4\tan^2x(1+\tan^2x),$$
+et $(\tan)^{(3)}(\frac{\pi}{4})=16$. Finalement,
+
+\begin{center}
+\shadowbox{$\tan x\underset{x\rightarrow\pi/4}=1+2\left(x-\frac{\pi}{4}\right)+2\left(x-\frac{\pi}{4}\right)^2+\frac{8}{3}\left(x-\frac{\pi}{4}\right)^3+o\left(\left(x-\frac{\pi}{4}\right)^3\right).$
+}
+\end{center}
+ \item 
+
+$$\frac{1}{x^2}\ln(\ch x)\underset{x\rightarrow0}{=}\frac{1}{x^2}\ln\left(1+\frac{x^2}{2}+\frac{x^4}{24}+o(x^4)\right)=\frac{1}{x^2}\left(\frac{x^2}{2}+\frac{x^4}{24}-\frac{1}{2}\left(\frac{x^2}{2}\right)^2+o(x^4)\right)=\frac{1}{2}-\frac{x^2}{12}+o(x^2),$$
+et donc 
+
+$$(\ch x)^{1/x^2}=e^{\frac{1}{2}-\frac{x^2}{12}+o(x^2)}=e^{1/2}e^{-\frac{x^2}{12}+o(x^2)}=\sqrt{e}-\frac{\sqrt{e}}{12}x^2+o(x^2).$$
+
+\begin{center}
+\shadowbox{$(\ch x)^{1/x^2}=\underset{x\rightarrow0}=\sqrt{e}-\frac{\sqrt{e}}{12}x^2+o(x^2).$
+}
+\end{center}
+ \item  $\tan^3x(\cos(x^2)-1)=\tan x\times\tan^2x(\cos(x^2)-1)$ et un équivalent de $\tan^2x(\cos(x^2)-1)$ en $0$ est $-\frac{x^6}{2}$. On écrit donc $\tan x$ à l'ordre $2$. De même, un équivalent de $\tan^3x$ est $x^3$ et on écrit donc $\cos(x^2)-1$ à l'ordre $5$.
+$$\tan^3x(\cos(x^2)-1)\underset{x\rightarrow0}{=}(x+o(x^2))^3\left(-\frac{x^4}{2}+o(x^5)\right)=(x^3+o(x^4))\left(-\frac{x^4}{2}
++o(x^5)\right)=-\frac{x^7}{2}+o(x^8).$$
+
+\begin{center}
+\shadowbox{$\tan^3x(\cos(x^2)-1)\underset{x\rightarrow0}{=}-\frac{x^7}{2}+o(x^8).$
+}
+\end{center}
+
+ \item  On pose $h=x-1$ ou encore $x=1+h$, de sorte que $x$ tend vers $1$ si et seulement si $h$ tend vers $0$.
+
+\begin{align*}\ensuremath
+\frac{\ln(1+x)}{x^2}&=\ln(2+h)(1+h)^{-2}\\
+ &\underset{h\rightarrow0}{=}\left(\ln2+\ln\left(1+\frac{h}{2}\right)\right)\left(1-2h+\frac{(-2)(-3)}{2}h^2+\frac{(-2)(-3)(-4)}{6}h^3
+ +o(h^3)\right)\\
+  &=\left(\ln2+\frac{h}{2}-\frac{h^2}{8}+\frac{h^3}{24}+o(h^3)\right)(1-2h+3h^2-4h^3+o(h^3))\\
+  &=\ln2+\left(\frac{1}{2}-2\ln2\right)h+\left(3\ln2-\frac{9}{8}\right)h^2+\left(-4\ln2+\frac{43}{24}\right)h^3 + o(h^3).
+\end{align*}
+Donc,
+
+\begin{center}
+\shadowbox{
+$\frac{\ln(1+x)}{x^2}\underset{x\rightarrow1}{=}\ln2+\left(\frac{1}{2}-2\ln2\right)(x-1)+\left(3\ln2-\frac{9}{8}\right)(x-1)^2+\left(-4\ln2+\frac{43}{24}\right)(x-1)^3+o((x-1)^3)$.
+}
+\end{center}
+ \item  Pour $x$ réel, posons $f(x)=\Arctan(\cos x)$.
+$f$ est dérivable sur $\Rr$, et pour $x$ réel, $f'(x)=-\frac{\sin x}{1+\cos^2x}$. Puis,
+
+\begin{align*}\ensuremath
+f'(x)&\underset{x\rightarrow0}{=}-\left(x-\frac{x^3}{6}+o(x^4)\right)\left(1+\left(1-\frac{x^2}{2}+o(x^3)\right)^2\right)^{-1}\\
+ &=-\left(x-\frac{x^3}{6}+o(x^4)\right)\left(2-x^2+o(x^3)\right)^{-1}=-\frac{1}{2}\left(x-\frac{x^3}{6}+o(x^4)\right)
+\left(1-\frac{x^2}{2}+o(x^3)\right)^{-1}\\
+ &=-\frac{1}{2}\left(x-\frac{x^3}{6}+o(x^4)\right)\left(1+\frac{x^2}{2}+o(x^3)\right)=-\frac{x}{2}-\frac{x^3}{6}+o(x^4).
+\end{align*}
+Donc, $f'$ admet un développement limité d'ordre $4$ en $0$ et on sait que $f$ admet en $0$ un développement limité d'ordre $5$ obtenu par intégration.
+
+$$\Arctan(\cos x)\underset{x\rightarrow0}{=}\Arctan(\cos0)-\frac{x^2}{4}-\frac{x^4}{24}+o(x^5)=\frac{\pi}{4}-\frac{x^2}{4}-\frac{x^4}{24}+o(x^5).$$
+
+\begin{center}
+\shadowbox{
+$\Arctan(\cos x)\underset{x\rightarrow0}{=}\frac{\pi}{4}-\frac{x^2}{4}-\frac{x^4}{24}+o(x^5).$
+}
+\end{center}
+ \item  Pour $x>-1$, posons $f(x)=\Arctan\sqrt{\frac{x+1}{x+2}}$. $f$ est dérivable sur $]-1,+\infty[$ et pour $x>-1$,
+ 
+\begin{align*}\ensuremath
+f'(x)&=\frac{1}{(x+2)^2}\frac{1}{2\sqrt{\frac{x+1}{x+2}}}\frac{1}{1+\frac{x+1}{x+2}}=\frac{1}{2}\times\frac{1}{(2x+3)\sqrt{(1+x)(2+x)}}\\
+ &=\frac{1}{2\times3\times\sqrt{2}}\left(1+\frac{2x}{3}\right)^{-1}(1+x)^{-1/2}\left(1+\frac{x}{2}\right)^{-1/2}=\frac{1}{6\sqrt{2}}\left(1-\frac{2x}{3}+o(x)\right)\left(1-\frac{x}{2}+o(x)\right)\left(1-\frac{x}{4}+o(x)\right)\\
+ &=\frac{1}{6\sqrt{2}}\left(1-\left(\frac{2}{3}+\frac{1}{2}+\frac{1}{4}\right)x+o(x)\right)=\frac{1}{6\sqrt{2}}\left(1-\frac{17x}{12}+o(x)\right).
+\end{align*}
+Ainsi, $f'$ admet donc en $0$ un développement limité d'ordre $1$ et on sait alors que $f$ admet en $0$ un développement limité d'ordre $2$ obtenu par intégration.
+
+\begin{center}
+\shadowbox{
+$\Arctan\sqrt{\frac{x+1}{x+2}}\underset{x\rightarrow0}{=}\Arctan\frac{1}{\sqrt{2}}+\frac{1}{6\sqrt{2}}x-\frac{17}{144\sqrt{2}}x^2+o(x^2).$
+}
+\end{center}
+ \item  
+
+\begin{align*}\ensuremath 
+\frac{1}{\sqrt{1-x^2}}&=(1-x^2)^{-1/2}\underset{x\rightarrow0}{=}1+\left(-\frac{1}{2}\right)(-x^2)+\frac{\left(-\frac{1}{2}\right)\left(-\frac{3}{2}\right)}{2}(-x^2)^2+\frac{\left(-\frac{1}{2}\right)\left(-\frac{3}{2}\right)\left(-\frac{5}{2}\right)}{6}(-x^2)^3+o(x^7)\\
+ &\underset{x\rightarrow0}{=}1+\frac{1}{2}x^2+\frac{3}{8}x^4+\frac{5}{16}x^6+o(x^7).
+\end{align*}
+
+Donc, $\Arcsin x\underset{x\rightarrow0}{=}x+\frac{x^3}{6}+\frac{3x^5}{40}+\frac{5x^7}{112}+o(x^8)$. Ensuite,
+
+\begin{align*}\ensuremath
+\frac{1}{\Arcsin^2x}&=(\Arcsin x)^{-2}\underset{x\rightarrow0}{=}\frac{1}{x^2}\left(1+\frac{x^2}{6}+\frac{3x^4}{40}+\frac{5x^6}{112}+o(x^7)\right)^{-2}\\
+ &=\frac{1}{x^2}\left(1-2\left(\frac{x^2}{6}+\frac{3x^4}{40}+\frac{5x^6}{112}\right)+3\left(\frac{x^2}{6}+\frac{3x^4}{40}\right)^2-4\left(\frac{x^2}{6}\right)^3+o(x^7)\right)\\
+ &=\frac{1}{x^2}-\frac{1}{3}+\left(-\frac{3}{20}+\frac{1}{12}\right)x^2+\left(-\frac{5}{56}+\frac{3}{40}-\frac{1}{54}\right)x^4+o(x^5)\\
+ &=\frac{1}{x^2}-\frac{1}{3}-\frac{x^2}{15}-\frac{31x^4}{945}+o(x^5).
+\end{align*}
+Finalement,
+
+\begin{center}
+\shadowbox{
+$\frac{1}{x^2}-\frac{1}{\Arcsin^2x}\underset{x\rightarrow0}{=}\frac{1}{3}+\frac{x^2}{15}+\frac{31x^4}{945}+o(x^5).$
+}
+\end{center}
+\item  Pour $x$ réel, posons $f(x)=\frac{1}{\sqrt{1+x^4}}$. $f$ est continue sur $\Rr$ et admet donc des primitives sur $\Rr$. Soit $F$ la primitive de $f$ sur $\Rr$ qui s'annule en $0$ puis, pour $x$ réel, soit $g(x)=\int_{x}^{x^2}\frac{1}{\sqrt{1+t^4}}\;dt$.
+$g$ est définie sur $\Rr$ et, pour $x$ réel $g(x)=F(x^2)-F(x)$. $g$ est dérivable sur $\Rr$ et, pour tout réel $x$,
+
+$$g'(x)=2xF'(x^2)-F'(x)=2xf(x^2)-f(x)=\frac{2x}{\sqrt{1+x^8}}-\frac{1}{\sqrt{1+x^4}}.$$
+Puis, 
+
+$$g'(x)\underset{x\rightarrow0}{=}2x\left(1-\frac{1}{2}x^8+o(x^8)\right)-\left(1-\frac{1}{2}x^4+\frac{3}{8}x^8+o(x^9)\right)=-1+2x+\frac{1}{2}x^4-\frac{3}{8}x^8-x^9+o(x^9).$$
+Ainsi $g'$ admet un développement limité d'ordre $9$ en $0$ et on sait que $g$ admet un développement limité d'ordre $10$ en $0$ obtenu par intégration. En tenant compte de $g(0)=0$, on obtient
+
+\begin{center}
+\shadowbox{
+$g(x)\underset{x\rightarrow0}{=}-x+x^2+\frac{x^5}{10}-\frac{x^9}{24}-\frac{x^{10}}{10}+o(x^{10}).$
+}\end{center}
+\item 
+\begin{align*}\ensuremath
+\ln\left(\sum_{k=0}^{99}\frac{x^k}{k!}\right)&\underset{x\rightarrow0}{=}\ln\left(e^x-\frac{x^{100}}{100!}+o(x^{100})\right)=\ln(e^x)+\ln\left(1-e^{-x}\left(\frac{x^{100}}{100!}+o(x^{100})\right)\right)\\
+ &=x+\ln\left(1-(1+o(1))\left(\frac{x^{100}}{(100)!}+o(x^{100})\right)\right)=x+\ln\left(1-\frac{x^{100}}{(100)!}+o(x^{100})\right)=x-\frac{x^{100}}{(100)!}+o(x^{100})
+\end{align*}
+
+\begin{center}
+\shadowbox{
+$\ln\left(\sum_{k=0}^{99}\frac{x^k}{k!}\right)\underset{x\rightarrow0}{=}x-\frac{x^{100}}{(100)!}+o(x^{100}).$
+}\end{center}
+\item Posons $h=x-\pi$ ou encore $x=\pi+h$ de sorte que $x$ tend vers $\pi$ si et seulement si $h$ tend vers $0$.
+
+\begin{align*}\ensuremath
+\sqrt[3]{4(\pi^3+x^3)}&=\sqrt[3]{4(\pi^3+(\pi+h)^3)}=\sqrt[3]{8\pi^3+12\pi^2h+12\pi h^2+4h^3}\\
+ &\underset{h\rightarrow0}{=}2\pi\left(1+\frac{3h}{2\pi}+\frac{3h^2}{2\pi^2}+\frac{h^3}{2\pi^3}\right)^{1/3}\\
+ &=2\pi\left(1+\frac{1}{3}\left(\frac{3h}{2\pi}+\frac{3h^2}{2\pi^2}+\frac{h^3}{2\pi^3}\right)-\frac{1}{9}\left(\frac{3h}{2\pi}+\frac{3h^2}{2\pi^2}\right)^2+\frac{5}{81}\left(\frac{3h}{2\pi}\right)^3+o(h^3)\right)\\
+ &=2\pi+h+h^2\left(\frac{1}{\pi}-\frac{1}{2\pi}\right   )+h^3\left(\frac{1}{3\pi^2}-\frac{1}{\pi^2}+\frac{5}{12\pi^2}\right)+o(h^3)\\
+ &=2\pi+h+\frac{h^2}{2\pi}-\frac{h^3}{4\pi^2}+o(h^3).
+\end{align*}
+Puis,
+
+\begin{align*}\ensuremath
+\tan(\sqrt[3]{4(\pi^3+x^3)})&=\tan\left(h+\frac{h^2}{2\pi}-\frac{h^3}{4\pi^2}+o(h^3)\right)\\
+ &=\left(h+\frac{h^2}{2\pi}-\frac{h^3}{4\pi^2}\right)+\frac{1}{3}h^3+o(h^3)=h+\frac{h^2}{2\pi}+\left(\frac{1}{3}-\frac{1}{4\pi^2}\right)h^3+o(h^3).
+\end{align*}
+Finalement,
+
+\begin{center}
+\shadowbox{
+$\tan(\sqrt[3]{4(\pi^3+x^3)})\underset{x\rightarrow\pi}{=}(x-1)+\frac{1}{2\pi}(x-1)^2+\left(\frac{1}{3}-\frac{1}{4\pi^2}\right)(x-1)^3+o((x-1)^3)$.
+}
+\end{center}
+\end{enumerate}
+\fincorrection
+\finexercice

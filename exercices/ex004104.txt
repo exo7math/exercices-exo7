@@ -1,0 +1,55 @@
+\exercice{4104, quercia, 2010/03/11}
+\enonce[Ulm MP$^*$ 2000]
+
+Soit $I=[a,b]\subset \R$. On suppose que la fonction $\Delta$ est strictement
+positive sur $I$.
+
+On pose $E=\{f\in \mathcal{C}^2(I) \, |\, f(a)=f(b)=0\}$. On
+considère enfin l'opérateur $K:f\mapsto \frac{f''}{\Delta}\cdotp$
+
+\begin{enumerate}
+  \item Montrer que Sp$(K)\subset {]-\infty,0[}$.
+    
+  \item Trouver un produit scalaire $(\ \mid\ )$ pour lequel deux vecteurs propres associés à des
+    valeurs propres distinctes sont orthogonaux. 
+    
+  \item On suppose que $I=\R^+$ et que $\Delta (x)\ge 1$ pour $x\ge 2$. Soit $\lambda <0$.
+  \begin{enumerate}
+     \item Montrer qu'il existe une unique $f_{\lambda}\in \mathcal{C}^1(\R^+,\R)$ telle 
+    $\begin{cases}f''_{\lambda}=\lambda \Delta f_\lambda\cr f_{\lambda}(0)=0\cr f'_{\lambda}(0)=1.\cr\end{cases}$
+     \item Montrer $f_{\lambda}$ a une infinité dénombrable de zéros $(x_0<x_1<\dots <x_n<\dots)$ et 
+    que la suite $(x_n)$ tend vers~$+\infty$.
+    
+  \end{enumerate}
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Soit $f$ non identiquement nulle vérifiant $f''=\lambda\Delta f$ avec $\lambda > 0$~:
+    sur tout intervalle où $f$ est strictement positive, $f$ est strictement convexe
+    donc ne peut pas s'annuler aux deux bords~; idem quand $f$ est strictement
+    négative, il y a contradiction. Le cas $\lambda=0$ est trivial.
+  \item $(f\mid g) =  \int_{t=a}^bf'(t)g'(t)\,d t = - \int_{t=a}^bf''(t)g(t)\,d t  = - \int_{t=a}^bf(t)g''(t)\,d t$.
+  \item
+  \begin{enumerate}
+     \item   
+     \item
+  Si $f_\lambda$ a un nombre fini de zéros, soit $x_n$ le
+    dernier et $A=\max(x_n,2)$. Sur $[A,+\infty[$, $f$ est de signe constant, $\varepsilon$,
+    et on a $f_\lambda''-\lambda f_\lambda = \lambda(\Delta-1)f_\lambda = \varphi$
+    d'où $f_\lambda(x) =  \int_{t=A}^x\sin((x-t)\sqrt{-\lambda}\,)\varphi(t)\,d t + \alpha\cos(x\sqrt{-\lambda}\,) + \beta\sin(x\sqrt{-\lambda}\,)$.
+    En particulier $f_\lambda(A)+f_\lambda\Bigl(A+\frac{\pi}{\sqrt{-\lambda}}\Bigr)
+    =  \int_{t=A}^{A+\pi/\sqrt{-\lambda}}\sin((x-t)\sqrt{-\lambda}\,)\varphi(t)\,d t$ est du
+    signe de $-\varepsilon$, absurde.
+    
+    Si l'ensemble des zéros de~$f$ admet un point d'accumulation~$x$ on
+    a $f_\lambda(x) = f_\lambda'(x) = 0$ d'où $f_\lambda=0$, absurde.
+  \end{enumerate}
+\end{enumerate}
+ \fincorrection
+
+\finexercice

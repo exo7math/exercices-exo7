@@ -1,0 +1,31 @@
+\exercice{4219, quercia, 2010/03/11}
+\enonce[$x^4 \frac{\partial^2 f}{\partial x^2} - \frac{\partial^2 f}{\partial y^2} = 0$]
+
+\begin{enumerate}
+  \item Trouver les fonctions $g : {\{(u,v)\in\R^2\text{ tq } u > v\}} \to \R$ de classe $\mathcal{C}^2$ vérifiant :
+    $\frac{\partial }{\partial u}\Bigl(g+v\frac{\partial g}{\partial v}\Bigr) = \frac{\partial}{\partial  v}\Bigl(g+u\frac{\partial g}{\partial u}\Bigr)$
+
+    (penser au théorème de Poincaré).
+    
+
+  \item Résoudre sur $\R^{+*}\times\R$ l'équation : $x^4 \frac{\partial^2 f}{\partial x^2} - \frac{\partial^2 f}{\partial y^2} = 0$ en posant
+    $u = y+\frac 1x$, $v = y-\frac 1x$.
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Il existe $G$ telle que $\frac{\partial G}{\partial u} = g+u\frac{\partial g}{\partial u} = \frac{\partial (ug)}{\partial u}$ et
+                                     $\frac{\partial G}{\partial v} = g+v\frac{\partial g}{\partial v} = \frac{\partial(vg)}{\partial v}$.\par
+             Donc $G = ug + \varphi(v) = vg + \psi(u)$, d'où
+             $g = \frac{\varphi(v) - \psi(u)}{v-u}$.
+             La réciproque est immédiate.
+  \item $f(x,y) = x\Bigl(\varphi\Bigl(y-\frac1x\Bigr)
+                     + \psi\Bigl(y+\frac1x\Bigr)\Bigr)$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

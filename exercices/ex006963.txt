@@ -1,0 +1,54 @@
+\exercice{6963, blanc-centi, 2014/04/01}
+\video{Ez8FgWWwzVE}
+\enonce
+
+Soient $a_0,\ldots,a_n$ des réels deux à deux distincts.
+ Pour tout $i=0,\ldots,n$, on pose
+$$L_i(X)=\prod_{\substack{1\le j\le n \\ j\not= i}}\frac{X-a_j}{a_i-a_j}$$
+(les $L_i$ sont appelés \emph{polynômes interpolateurs de Lagrange}).
+Calculer $L_i(a_j)$.
+
+Soient $b_0,\ldots,b_n$ des réels fixés. 
+Montrer que $P(X)=\sum_{i=0}^nb_iL_i(X)$ est l'unique polynôme de degré inférieur ou égal à $n$ qui vérifie:
+$$P(a_j)=b_j  \quad \text{ pour tout }j=0,\ldots,n.$$
+
+
+\emph{Application.} Trouver le polynôme $P$ de degré inférieur ou égal à $3$ tel que 
+$$P(0)=1\quad\text{et}\quad P(1)=0\quad\text{et}\quad P(-1)=-2\quad\text{et}\quad P(2)=4.$$
+\finenonce 
+
+\noindication
+
+\correction
+On a 
+$$L_i(a_i)=\prod_{\substack{1\le j\le n \\ j\not= i}}\frac{a_i-a_j}{a_i-a_j}=1
+\qquad \text{ et } \quad L_i(a_j)=0  \text{ si } j\not=i$$
+puisque le produit contient un facteur qui est nul: $(a_j-a_j)$. 
+Puisque les $L_i$ sont tous de degré $n$, le polynôme $P$ est de degré inférieur ou égal à $n$, et 
+$P(a_j)=\sum_{i=0}^nb_iL_i(a_j)=b_i$. 
+
+Il reste à montrer qu'un tel polynôme est unique. Supposons que $Q$ convienne aussi, 
+alors $P-Q$ est de degré inférieur ou égal à 
+$n$ et s'annule en $n+1$ points (les $a_i$), donc il est identiquement nul, i.e. $P=Q$.
+
+\bigskip
+
+Pour l'application on utilise utilise les polynômes interpolateurs de Lagrange avec
+$a_0=0$, $b_0=1$ ; $a_1=1$, $b_1=0$ ; $a_2=-1$, $b_2=-2$ ; $a_3=2$, $b_3=4$. 
+On sait qu'un tel polynôme $P(X)$ est unique et s'écrit 
+$$P(X)=1\cdot L_0(X)+0\cdot L_1(X)-2\cdot L_2(X)+4L_3(X)$$
+où
+
+$$L_0(X)=\frac{(X-1)(X+1)(X-2)}{(0-1)(0+1)(0-2)}=\frac{1}{2}(X^3-2X^2-X+2)$$
+
+$$L_1(X)=\frac{(X-0)(X+1)(X-2)}{(1-0)(1+1)(1-2)}=\frac{-1}{2}(X^3-X^2-2X)$$
+
+$$L_2(X)=\frac{(X-0)(X-1)(X-2)}{(-1-0)(-1-1)(-1-2)}=\frac{-1}{6}(X^3-3X^2+2X)$$
+
+$$L_3(X)=\frac{(X-0)(X-1)(X+1)}{(2-0)(2-1)(2+1)}=\frac{1}{6}(X^3-X)$$
+
+Ainsi :
+$$P(X)=\frac{3}{2}X^3-2X^2-\frac{1}{2}X+1.$$
+
+\fincorrection
+\finexercice

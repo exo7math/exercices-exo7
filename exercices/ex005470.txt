@@ -1,0 +1,115 @@
+\exercice{5470, rouget, 2010/07/10}
+\enonce
+Calculer les intégrales suivantes ($a$, $b$ réels donnés, $p$ et $q$ entiers naturels donnés)
+
+$$
+\begin{array}{ll}
+1)\;\int_{1/a}^{a}\frac{\ln x}{x^2+1}\;(0<a)&2)\;\int_{0}^{\pi}{2}\cos(px)\cos(qx)\;dx\;\mbox{et}\;\int_{0}^{\pi}{2}\cos(px)\sin(qx)\;dx\;\mbox{et}\;\int_{0}^{\pi}{2}\sin(px)\sin(qx)\;dx\\
+3)\;\int_{a}^{b}\sqrt{(x-a)(b-x)}\;dx&4)\;\int_{-2}^{2}(|x-1|+|x|+|x+1|+|x+2|)\;dx\\
+5)\;\int_{1/2}^{2}\left(1+\frac{1}{x^2}\right)\Arctan x\;dx&6)\;\int_{-1}^{1}\sqrt{1+|x(1-x)|}\;dx\\  
+7)\int_{0}^{\pi}\;\frac{x\sin x}{1+\cos^2x}&8)\;\int_{1}^{x}(\ln t)^n\;dt\;(n\in\Nn^*) 
+\end{array}
+$$
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  On pose $t=\frac{1}{x}$ et donc $x=\frac{1}{t}$ et $dx=-\frac{1}{t^2}\;dt$. On obtient
+
+$$I=\int_{1/a}^{a}\frac{\ln x}{x^2+1}\;dx=-\int_{a}^{1/a}\frac{\ln(1/t)}{\frac{1}{t^2}+1}\frac{1}{t^2}\;dt=-\int_{1/a}^{a}\frac{\ln t}{t^2+1}\;dt=-I,$$
+
+et donc, $I=0$.
+
+\item  ($p$ et $q$ sont des entiers naturels)
+
+$\cos(px)\cos(qx)=\frac{1}{2}(\cos(p+q)x+\cos(p-q)x)$ et donc,
+
+Premier cas. Si $p\neq q$,
+
+$$\int_{0}^{\pi}\cos(px)\cos(qx)\;dx=\frac{1}{2}\left[\frac{\sin(p+q)x}{p+q}+\frac{\sin(p-q)x}{p-q}\right]_{0}^{\pi}=0.$$
+
+Deuxième cas. Si $p=q\neq0$,
+
+$$\int_{0}^{\pi}\cos(px)\cos(qx)\;dx=\frac{1}{2}\int_{0}^{\pi}(1+\cos(2px))\;dx=\frac{1}{2}\int_{0}^{\pi}dx=\frac{\pi}{2}.$$
+
+Troisième cas. Si $p=q=0$. $\int_{0}^{\pi}\cos(px)\cos(qx)\;dx=\int_{0}^{\pi}\;dx=\pi$.
+
+La démarche est identique pour les deux autres et on trouve $\int_{0}^{\pi}\sin(px)\sin(qx)\;dx=0$ si $p\neq q$ et $\frac{\pi}{2}$ si $p=q\neq0$ puis $\int_{0}^{\pi}\sin(px)\cos(qx)\;dx=0$ pour tout choix de $p$ et $q$.
+
+\item  La courbe d'équation $y=\sqrt{(x-a)(b-x)}$ ou encore $\left\{
+\begin{array}{l}
+x^2+y^2-(a+b)x+ab=0\\
+y\geq0
+\end{array}
+\right.$ est le demi-cercle de diamètre $[\left(\begin{array}{c}
+a\\
+0
+\end{array}
+\right),\left(\begin{array}{c}
+b\\
+0
+\end{array}
+\right)]$. Par suite, si $a\leq b$, $I=\frac{\pi R^2}{2}=\frac{\pi(b-a)^2}{8}$ et si $a>b$, $I=-\frac{\pi(b-a)^2}{8}$.
+
+\item  L'intégrale proposée est somme de quatre intégrales. Chacune d'elles est la somme des aires de deux triangles. Ainsi, $I=\frac{1}{2}((1^2+3^2)+(2^2+2^2)+(3^2+1^2)+4^2)=22$.
+\item  On pose $u=\frac{1}{x}$. On obtient
+
+\begin{align*}\ensuremath
+I&=\int_{1/2}^{2}\left(1+\frac{1}{x^2}\right)\Arctan x\;dx=\int_{2}^{1/2}(1+u^2)\Arctan u\frac{-du}{u^2}=\int_{1/2}^{2}(1+\frac{1}{u^2})(\frac{\pi}{2}-\Arctan u)\;du\\
+ &=\frac{\pi}{2}((2-\frac{1}{2})-(\frac{1}{2}-2))-I).
+\end{align*}
+
+Par suite, $I=\frac{3\pi}{2}-I$ et donc $I=\frac{3\pi}{4}$.
+
+\item  $I=\int_{-1}^{1}\sqrt{1+|x(1-x)|}\;dx=\int_{-1}^{0}\sqrt{1+x(x-1)}\;dx+\int_{0}^{1}\sqrt{1+x(1-x)}\;dx=I_1+I_2$.
+
+Pour $I_1$, $1+x(x-1)=x^2-x+1=(x-\frac{1}{2})^2+(\frac{\sqrt{3}}{2})^2$ et on pose $x-\frac{1}{2}=\frac{\sqrt{3}}{2}\sh t$ et donc $dx=\frac{\sqrt{3}}{2}\ch t\;dt$.
+
+\begin{align*}\ensuremath
+I_1&=\int_{\ln(2-\sqrt{3})}^{-\ln(\sqrt{3})}\frac{\sqrt{3}}{2}\sqrt{\sh^2t+1}\;\frac{\sqrt{3}}{2}\ch t\;dt=
+\frac{3}{4}\int_{\ln(2-\sqrt{3})}^{-\ln(\sqrt{3})}\ch^2t\;dt=\frac{3}{16}\int_{\ln(2-\sqrt{3})}^{-\ln(\sqrt{3})}(e^{2t}+e^{-2t}+2)\;dt\\
+ &=\frac{3}{16}(\frac{1}{2}(e^{-2\ln(\sqrt{3})}-e^{2\ln(2-\sqrt{3})})-\frac{1}{2}(e^{2\ln(\sqrt{3})}-e^{-2\ln(2-\sqrt{3})})+2(-\ln(\sqrt{3})-\ln(2-\sqrt{3})))\\
+ &=\frac{3}{16}(\frac{1}{2}(\frac{1}{3}-(2-\sqrt{3})^2)-\frac{1}{2}(3-\frac{1}{(2-\sqrt{3})^2})-2\ln(2\sqrt{3}-3))\\
+ &=\frac{3}{16}(-\frac{4}{3}+\frac{1}{2}(-(2-\sqrt{3})^2+(2+\sqrt{3})^2))-2\ln(2\sqrt{3}-3))\\
+ &=-\frac{1}{4}+\frac{3\sqrt{3}}{4}-\frac{3}{8}\ln(2\sqrt{3}-3).
+\end{align*}
+
+Pour $I_2$, $1+x(1-x)=-x^2+x+1=-(x-\frac{1}{2})^2+(\frac{\sqrt{5}}{2})^2$ et on pose $x-\frac{1}{2}=\frac{\sqrt{3}}{2}\sin t$ et donc $dx=\frac{\sqrt{3}}{2}\cos t\;dt$.
+
+\begin{align*}\ensuremath
+I_2&=\int_{-\Arcsin\frac{1}{\sqrt{5}}}^{\Arcsin\frac{1}{\sqrt{5}}}\frac{\sqrt{3}}{2}\sqrt{1-\sin^2t}\;\frac{\sqrt{3}}{2}\cos t\;dt=
+\frac{3}{4}\int_{-\Arcsin\frac{1}{\sqrt{5}}}^{\Arcsin\frac{1}{\sqrt{5}}}\cos^2t\;dt
+=\frac{3}{8}\int_{-\Arcsin\frac{1}{\sqrt{5}}}^{\Arcsin\frac{1}{\sqrt{5}}}(1+\cos(2t))\;dt\\
+ &=\frac{3}{8}(2\Arcsin\frac{1}{\sqrt{5}}+2\left[\sin t\cos t\right]_{0}^{\Arcsin\frac{1}{\sqrt{5}}}
+ =\frac{3}{4}\Arcsin\frac{1}{\sqrt{5}}+\frac{3}{4}\frac{1}{\sqrt{5}}\sqrt{1-\frac{1}{5}}\\
+ &=\frac{3}{4}\Arcsin\frac{1}{\sqrt{5}}+\frac{3}{10}...
+\end{align*}
+
+\item 
+
+\begin{align*}\ensuremath
+I&=\int_{0}^{\pi}\frac{x\sin x}{1+\cos^2x}\;dx=\int_{\pi}^{0}\frac{(\pi-u)\sin(\pi-u)}{1+\cos^2(\pi-u)}\;-du
+=\pi\int_{0}^{\pi}\frac{\sin u}{1+\cos^2u}\;du-\int_{0}^{\pi}\frac{u\sin u}{1+\cos^2u}\;du\\
+ &=-\pi\left[\Arctan(\cos u)\right]_{0}^{\pi}-I=\frac{\pi^2}{2}-I,
+\end{align*}
+
+et donc, $I=\frac{\pi^2}{4}$.
+
+\item  Pour $n\in\Nn^*$, posons $I_n=\int_{1}^{x}\ln^nt\;dt$.
+
+$$I_{n+1}=\left[t\ln^{n+1}t\right]_{1}^{x}-(n+1)\int_{1}^{x}t\ln^nt\frac{1}{t}\;dt=x\ln^{n+1}x-(n+1)I_n.$$
+
+Donc, $\forall n\in\Nn^*,\;\frac{I_{n+1}}{(n+1)!}+\frac{I_n}{n!}=\frac{x(\ln x)^{n+1}}{(n+1)!}$, et de plus, $I_1=x\ln x-x+1$.
+
+Soit $n\geq2$.
+
+$$\sum_{k=1}^{n-1}(-1)^k(\frac{I_k}{k!}+\frac{I_{k+1}}{(k+1)!})=\sum_{k=1}^{n-1}(-1)^k\frac{I_k}{k!}+\sum_{k=2}^{n}(-1)^{k-1}\frac{I_k}{k!}=-I_1-(-1)^n\frac{I_n}{n!},$$
+
+Par suite,
+
+$$I_n=(-1)^nn!(\sum_{k=1}^{n-1}(-1)^k\frac{x(\ln x)^{k+1}}{(k+1)!}-x\ln x+x-1)=(-1)^nn!(1-\sum_{k=0}^{n}(-1)^{k}\frac{x(\ln x)^{k}}{k!}).$$
+\end{enumerate}
+\fincorrection
+\finexercice

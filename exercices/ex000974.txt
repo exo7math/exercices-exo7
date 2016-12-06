@@ -1,0 +1,44 @@
+\exercice{974, gourio, 2001/09/01}
+\video{6N7D6lPLPHc}
+\enonce
+Soit $E$ l'espace vectoriel des fonctions de $\Rr$ dans $\Rr$. Soient $P$ le
+sous-espace des fonctions paires et $I$ le sous-espace des fonctions
+impaires. Montrer que $E=P\bigoplus I$. Donner l'expression du projecteur sur
+$P$ de direction $I$.
+
+\finenonce 
+
+\indication
+Pour une fonction $f$ on peut \'ecrire 
+$$f(x)= \frac{f(x)+f(-x)}{2}+\frac{f(x)-f(-x)}{2}.$$
+
+Le projecteur sur $P$ de direction $I$ est l'application $\pi : E \longrightarrow E$
+qui vérifie $\pi(f)\in P$, $\pi \circ \pi = \pi$ et $\ker \pi = I$.
+\finindication
+
+\correction
+\begin{enumerate}
+  \item La seule fonction qui est \`a la fois paire et impaire est la fonction nulle : $P\cap I = \{0\}$. Montrons qu'une fonction $f:\Rr \longrightarrow \Rr$ se d\'ecompose en une fonction paire et une fonction impaire. 
+En effet : 
+ $$f(x)= \frac{f(x)+f(-x)}{2}+\frac{f(x)-f(-x)}{2}.$$
+La fonction $x \mapsto \frac{f(x)+f(-x)}{2}$ est paire (le v\'erifier !),
+la fonction $x \mapsto \frac{f(x)-f(-x)}{2}$ est impaire.
+Donc $P+I=E$.
+Bilan : $E=P\oplus I.$
+  \item Le projecteur sur $P$ de direction $I$ est l'application $\pi : E \longrightarrow E$
+    qui \`a $f$ associe la fonction $x \mapsto \frac{f(x)+f(-x)}{2}$, c'est-à-dire à $f$ on associe la partie paire
+ de $f$.
+Nous avons bien 
+\begin{itemize}
+  \item $\pi(f)\in P$. Par définition de $\pi$, $\pi(f)$ est bien une fonction paire.
+  \item $\pi \circ \pi = \pi$. Si $g$ est une fonction paire alors $\pi(g)=g$. 
+Appliquons ceci avec $g=\pi(f)$ (qui est bien est une fonction paire) donc $\pi(\pi(f))=\pi(f)$. 
+  \item $\ker \pi = I$. Si $\pi(f)=0$ alors cela signifie exactement que la fonction $x \mapsto \frac{f(x)+f(-x)}{2}$
+est la fonction nulle. Donc pour tout $x$ : $\frac{f(x)+f(-x)}{2}=0$ donc $f(x)=-f(-x)$ ; 
+cela implique que $f$ est une fonction impaire. Réciproquement si $f\in I$ est une fonction impaire, 
+sa partie paire est nulle donc $f\in \ker f$.
+\end{itemize}
+
+\end{enumerate}
+\fincorrection
+\finexercice

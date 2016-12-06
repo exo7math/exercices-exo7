@@ -1,0 +1,58 @@
+\exercice{1061, ridde, 1999/11/01}
+\video{O1CDw2RqXUw}
+\enonce
+Soit $A(\theta) = \begin{pmatrix} \cos \theta & -\sin \theta \\ \sin \theta
+& \cos \theta \end{pmatrix}$ pour $\theta \in \Rr$. Calculer $A(\theta) \times A(\theta')$ et $\big(A(\theta)\big)^n$ pour
+$n \ge 1$.
+\finenonce
+
+\indication
+Il faut connaître les formules de $\cos(\theta+\theta')$ et $\sin(\theta+\theta')$.
+\finindication
+
+\correction
+\begin{align*}
+A(\theta)\times A(\theta')  
+  & =  \begin{pmatrix} \cos \theta & -\sin \theta \\ \sin \theta
+& \cos \theta \end{pmatrix} \times \begin{pmatrix} \cos \theta' & -\sin \theta' \\ \sin \theta'
+& \cos \theta' \end{pmatrix} \\
+  & = \begin{pmatrix} 
+\cos \theta\cos \theta' -\sin \theta \sin\theta' & - \cos \theta \sin \theta' - \sin \theta \cos \theta' \\
+ \sin \theta \cos \theta'+\cos \theta \sin \theta'   & -\sin \theta \sin\theta'+\cos \theta\cos \theta'  \\
+ \end{pmatrix} \\
+  & =
+\begin{pmatrix} \cos (\theta+\theta') & -\sin (\theta+\theta')  \\ \sin  (\theta+\theta')
+& \cos  (\theta+\theta') \end{pmatrix} \\
+  & = A(\theta+\theta') \\
+\end{align*}
+
+Bilan : $A(\theta)\times A(\theta') = A(\theta+\theta')$.
+
+\bigskip
+
+Nous allons montrer par récurrence sur $n\ge 1$ que $\big(A(\theta)\big)^n = A(n\theta)$.
+
+\begin{itemize}
+  \item C'est bien sûr vrai pour $n=1$.
+  \item Fixons $n\ge 1$ et supposons que $\big(A(\theta)\big)^n = A(n\theta)$ alors
+$$\big(A(\theta)\big)^{n+1} = \big(A(\theta)\big)^n \times A(\theta) = A(n\theta) \times A(\theta) = A(n\theta+\theta) = A((n+1)\theta)$$
+  \item C'est donc vrai pour tout $n\ge 1$.
+\end{itemize}
+
+
+Remarques :
+\begin{itemize}
+  \item On aurait aussi la formule $A(\theta')\times A(\theta) = A(\theta+\theta') = A(\theta)\times A(\theta')$.
+Les matrices $A(\theta)$ et $A(\theta')$ commutent.
+
+  \item En fait il n'est pas plus difficile de montrer que $\big(A(\theta)\big)^{-1}=A(-\theta)$.
+On sait aussi que par définition $\big(A(\theta)\big)^{0}=I$. Et on en déduit que pour $n\in \Zz$ on a 
+$\big(A(\theta)\big)^n = A(n\theta)$.
+
+  \item En terme géométrique $A(\theta)$ est la matrice de la rotation d'angle $\theta$ (centrée à l'origine).
+On vient de montrer que si l'on compose un rotation d'angle $\theta$ avec un rotation d'angle $\theta'$
+alors on obtient une rotation d'angle $\theta+\theta'$.
+\end{itemize}
+
+\fincorrection
+\finexercice

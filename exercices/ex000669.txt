@@ -1,0 +1,60 @@
+\exercice{669, monthub, 2001/11/01}
+\enonce
+Soit $f : [a,b] \to \R$ une fonction continue. On veut d\'emontrer
+que
+$$ \sup_{a<x<b} f(x) =  \sup_{a\leq x \leq b} f(x).$$
+\begin{enumerate}
+\item Montrer que $$ \sup_{a<x<b} f(x) \leq  \sup_{a\leq x \leq b} f(x).$$
+
+\item Soit $x_0 \in [a,b]$ tel que $f(x_0)=\sup_{a\leq x \leq b} f(x)$.
+Montrer que $f(x_0)=\sup_{a< x< b} f(x)$ en distinguant les trois
+cas : $x_0=a, x_0=b, x_0\in ]a,b[$.
+
+\item Soit $g:[0,1] \to \R$ la fonction d\'efinie par $g(x)=0$ si $x\in [0,1[$
+  et $g(x)=1$ si $x=1$. Montrer que $$ \sup_{0<x<1} g(x) \neq  \sup_{0\leq x \leq 1} g(x).$$
+Quelle hypoth\`ese  est essentielle dans la propri\'et\'e d\'emontr\'ee
+auparavant ?
+\end{enumerate}
+\finenonce 
+
+\indication
+\begin{enumerate}
+ \item On pourra montrer que $\sup_{a\leq x \leq b} f(x)$ est
+un majorant de $f$ sur $]a,b[$.
+
+ \item Dans le cas $x_0=a$, par exemple, on pourra consid\'erer la suite de r\'eels
+$a_n=a+1/n$ et \'etudier la suite $(f(a_n))$.
+\end{enumerate}
+
+\finindication
+
+\correction
+\begin{enumerate}
+\item Pour tout $x \in ]a,b[$, on a $x \in [a,b]$ donc $f(x) \leq \sup_{a\leq
+    t \leq b} f(t)$. Par cons\'equent $\sup_{a\leq t \leq b} f(t)$ est un
+  majorant de $f$ sur l'intervalle $]a,b[$, donc il est plus grand que le plus
+  petit des majorants : $ \sup_{a<x<b} f(x) \leq  \sup_{a\leq t \leq b} f(t)$.
+\item $f$ est continue sur un intervalle ferm\'e et born\'e, donc elle est born\'ee
+  et elle atteint ses bornes. Soit $x_0$ le r\'eel o\`u le maximum est atteint : 
+$f(x_0)=\sup_{a\leq x \leq b} f(x)$.
+  \begin{itemize}
+  \item si $x_0=a$, consid\'erons la suite $a_n=a+1/n$. Pour $n\geq
+    \frac{1}{b-a}$ on a $a_n \in [a,b]$, donc on peut consid\'erer la suite
+    $(f(a_n))_{n\geq \frac{1}{b-a}}$. Or $a_n$ tend vers $a$ quand $n$ tend
+    vers $+\infty$, et comme $f$ est continue, ceci implique que $f(a_n)$ tend
+    vers $f(a)$ quand $n$ tend    vers $+\infty$. Donc $\forall \epsilon>0,
+    \exists n \in \N, f(x_0)-\epsilon \leq f(a_n) \leq f(x_0)$, ce qui
+    implique que $f(x_0)=\sup_{a< x< b}    f(x)$.
+  \item si $x_0=b$ on obtient le r\'esultat de mani\`ere identique en consid\'erant
+    la suite $b_n=b-1/n$.
+  \item si $a<x_0<b$ : $f(x_0)$ est major\'e par le sup de $f$ sur $]a,b[$, donc
+$$f(x_0) \leq \sup_{a<x<b} f(x) \leq  \sup_{a\leq x \leq b} f(x)=f(x_0)$$
+donc $f(x_0) = \sup_{a<x<b} f(x)$.
+  \end{itemize}
+\item Avec la fonction $g$, on a $\sup_{0<x<1} g(x)=0$ car pour chaque $x \in
+  ]0,1[$, $g(x)=0$, et $\sup_{0\leq x \leq 1} g(x)=1$ car $g(0)=0$ et
+  $g(1)=1$. La propri\'et\'e d\'emontr\'ee pr\'ec\'edemment n'est pas vraie dans notre
+  cas, car la fonction $g$ ne remplit pas la condition essentielle d'\^etre continue.
+\end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,31 @@
+\exercice{4042, quercia, 2010/03/11}
+\enonce[Mines MP 2001]
+
+Montrez que pour $n$ entier ($n>0$) l'équation $e^x=n-x$ admet une
+unique solution positive $x_n$. Déterminer les trois premiers termes du
+développement asymptotique de $x_n$ en fonction de~$n$.
+\finenonce
+
+\noindication
+
+\correction
+Existence et unicité de~$x_n$ par étude de la fonction
+$x \mapsto e^x+x$ sur $\R^+$.
+On a clairement $x_n\to +\infty$ (lorsque $n\to\infty$) et $n=e^{x_n}+x_n$
+d'où~: $$\ln n = \ln(e^{x_n}+x_n) = x_n + \ln(1+x_ne^{-x_n}) = 
+x_n + x_ne^{-x_n} - \frac{x_n^2}2e^{-2x_n} +  o(x_n^2e^{-2x_n}).$$
+On en déduit $x_n\sim \ln n$. \'Ecrivons $x_n = \ln n + y_n$~:
+$$0 = y_n + x_ne^{-x_n} - \frac{x_n^2}2e^{-2x_n} +  o(x_n^2e^{-2x_n})$$
+d'où $y_n \to 0$ (lorsque $n\to\infty$) et $y_n\sim -x_ne^{-x_n} \sim -\frac{\ln n}ne^{-y_n}
+\sim-\frac{\ln n}n$. \'Ecrivons maintenant $y_n=-\frac{\ln n}n+z_n$~:
+\begin{align*}0 
+&= -\frac{\ln n}n + z_n + (\ln n + y_n)\frac{e^{-y_n}}n - \frac{x_n^2}2e^{-2x_n} +  o(x_n^2e^{-2x_n})\\
+&=z_n + \frac{(\ln n)(-y_n+ o(y_n))}n + y_n\frac{e^{-y_n}}n - \frac{x_n^2}2e^{-2x_n} +  o(x_n^2e^{-2x_n})\\
+&=z_n + \frac{(\ln n)(-y_n+ o(y_n))}n + y_n\frac{e^{-y_n}}n - \frac{x_n^2}{2n^2}e^{-2y_n} +  o\Bigl(\frac{x_n^2e^{-2y_n}}{n^2}\Bigr)\\
+&=z_n + \frac{\ln^2n}{2n^2} +  o\Bigl(\frac{\ln^2n}{n^2}\Bigr)\cr
+\end{align*}
+d'où $z_n\sim-\frac{\ln^2n}{2n^2}$ et finalement,
+$x_n = \ln n - \frac{\ln n}n - \frac{\ln^2n}{2n^2}+o\Bigl(\frac{\ln^2n}{n^2}\Bigr).$
+\fincorrection
+
+\finexercice

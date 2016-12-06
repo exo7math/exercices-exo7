@@ -1,0 +1,98 @@
+\exercice{1936, gineste, 2001/11/01}
+
+\enonce
+Déterminer la nature des séries de terme général:
+\[
+\begin{array}{clclcl}
+1. & \displaystyle  \frac{n!}{n^n} &
+2. & (\ch \sqrt{\ln n})^{-2} &
+3. & n^{-(1+(1/n))}
+\\
+\\
+4. & \displaystyle \frac{1}{\sqrt{n}} \ln \left(1+\frac{1}{\sqrt{n}} \right) &
+5. &  \displaystyle \frac{\ln n}{\ln (e^n-1)} &
+6. & n^{\ln n}e^{-\sqrt{n}}
+\end{array}
+\]
+\finenonce
+
+\noindication
+
+\correction 
+
+\smallskip
+\begin{enumerate}
+
+\item Pour $n \ge 4$
+\[
+\frac{n!}{n^n} = \frac{2}{n} \times \frac{3}{n} \times 
+\underbrace{\frac{4}{n} \times \cdots\times\frac{n}{n}}_{\le 1} 
+\le \frac{6}{n^2} .
+\]
+Or $\sum \frac{6}{n^2}$ est convergente.	
+Donc $\sum \frac{n!}{n^n}$ est aussi convergente par comparaison.
+
+\item
+Montrons que $(\ch \sqrt{\ln n })^{-2} \ge \left(\sqrt n+\frac{1}{\sqrt{n}}\right)^{-2}$ 
+pour $n$ assez grand.	On a :
+\[ \begin{array}{rcl}
+4\ln n  & \le & \ln^{2}{n} \quad \text{pour $n$ assez grand}
+\\
+\ln n & \le & \left(\frac{1}{2}\ln n \right)^{2}
+\\
+\sqrt{\ln n} & \le & \frac{1}{2}\ln n = \ln{\sqrt{n}} 
+\\
+\mathrm{ch}(\sqrt{\ln n }) & \le & \mathrm{ch}(\ln{\sqrt{n}}) 
+= \frac{1}{2} \left( \sqrt{n} + \frac{1}{\sqrt{n}} \right)
+\quad \text{car $ x \mapsto \mathrm{ch} x$ est croissante}
+\\
+\mathrm{ch}(\sqrt{\ln n })^{-2} & \ge & 4 \left(\sqrt{n} + \frac{1}{\sqrt{n}} \right)^{-2}
+\end{array} \]
+Or $\sqrt{n} \sim \sqrt{n} + \frac{1}{\sqrt{n} }$, et
+$\left(\sqrt{n} + \frac{1}{\sqrt{n}} \right)^{-2} \sim \frac{1}{n}$, 
+donc $\sum \left(\sqrt{n} + \frac{1}{\sqrt{n}} \right)^{2}$ est divergente.
+Par comparaison, la série de terme  général $(\mathrm{ch}\sqrt{\ln n })^{2}$ est divergente.
+
+\item
+Montrons que $n^{-\left(1+\frac{1}{n}\right) } \sim n^{-1}$. On a : 
+$\displaystyle 
+\frac{ n^{-\left(1+\frac{1}{n}\right) } }{ n^{-1} } = n^{-\frac{1}{n}} = e^{-\frac{\ln n }{n}}$.
+Or $\lim_{n \to + \infty} \frac{\ln n }{n} = 0$, d'où $\lim_{n \to + \infty} e^{-\frac{\ln n }{n}} = 1$.
+Par équivalence, la série de terme  général $n^{-\left(1+\frac{1}{n}\right) } $ est donc divergente 
+car la série harmonique est divergente.
+
+\item
+Montrons que $\frac{1}{\sqrt{n}}\ln{\left(1+\frac{1}{\sqrt{n}}\right)} \sim \frac{1}{n}$.
+En utilisant le développement limité de $\ln (1 +x)$ en $0$, on a :
+$\ln \left(1+\frac{1}{\sqrt{n}}\right) = \frac{1}{\sqrt{n}} + o\left(\frac{1}{\sqrt{n}}\right)$.
+De là on tire que $\frac{1}{\sqrt{n}}\ln{\left(1+\frac{1}{\sqrt{n}}\right)} 
+\sim \frac{1}{\sqrt{n}} \times \frac{1}{\sqrt{n}} = \frac{1}{n}$.
+Par équivalence, la série de terme général $n^{-\left(1+\frac{1}{n}\right) }$ est donc divergente.
+
+\item 
+On sait que :
+$\ln{(e^n-1)} \le \ln{e^n} = n$. De plus, $ \ln n \ge 1$ pour $n$  assez grand, par conséquent
+$\frac{\ln n}{\ln (e^n-1)} \ge \frac{1}{n}$. On conclut par comparaison 
+que la série $\sum \frac{\ln n }{\ln{(e^n-1)}}$ est divergente.
+
+\item
+Montrons que $n^{\ln n }e^{-\sqrt{n}} \le n^{-2}$.
+On remarque que $ n^{\ln n }e^{-\sqrt{n}} = e^{(\ln n)^2}e^{-\sqrt{n}}$. 
+Or pour $u$ assez grand $4u^2 + 4u \le e^u $, soit $4u^2 - e^u \le - 4u$.
+En posant $u = \ln \sqrt{n} = \frac{1}{2} \ln n$, il vient $\ln^2{n} - \sqrt{n} \le -2\ln n$.
+D'où 
+\[
+\underbrace{e^{\ln^2{n}-\sqrt{n}}}_{n^{\ln n }e^{-\sqrt{n}}} \le \underbrace{e^{-2\ln n }}_{\frac{1}{n^2}}
+\]
+
+Par comparaison, la série de terme général $n^{\ln n }e^{-\sqrt{n} }$ est donc convergente 
+car la série de terme général $\frac{1}{n^2}$ est convergente.
+\end{enumerate}
+\medskip
+
+(\emph{Corrigé de Lévi Operman})
+
+\fincorrection
+
+\finexercice
+

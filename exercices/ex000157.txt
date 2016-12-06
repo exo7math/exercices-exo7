@@ -1,0 +1,41 @@
+\exercice{157, ridde, 1999/11/01}
+\video{okAsZpWWB0M}
+\enonce
+Soit $X$ un ensemble. Pour $f \in \mathcal{F} (X, X)$, on d\'efinit $f^0 = id$ et
+par r\'ecurrence pour $n \in \Nn$ $f^{n + 1} = f^n \circ f$.
+\begin{enumerate}
+\item Montrer que $\forall n \in \Nn$ $f^{n + 1} = f \circ f^n$.
+\item Montrer que si $f$ est bijective alors $\forall n \in \Nn$ $ (f^{-1})^n
+ = (f^n)^{-1}$.
+ \end{enumerate}
+
+\finenonce 
+
+\indication
+Pour les deux questions, travailler par r\'ecurrence.
+\finindication
+
+\correction
+\begin{enumerate}
+\item Montrons la proposition demand\'ee par r\'ecurrence:
+soit $\mathcal{A}_{n}$ l'assertion $f^{n + 1} = f \circ f^n$.
+Cette assertion est vraie pour $n=0$. Pour $n\in \Nn$ supposons
+$\mathcal{A}_{n}$ vraie. Alors
+$$f^{n + 2} = f^{n + 1} \circ f = (f \circ f^n) \circ f = f \circ (f^n \circ f) = f \circ f^{n + 1}.$$
+Nous avons utiliser la definition de $f^{n + 2}$, puis la proposition $\mathcal{A}_{n}$,
+puis l'associativit\'e de la composition, puis la d\'efinition de $f^{n + 1}$.
+Donc $\mathcal{A}_{n+1}$ est vraie. Par le principe de r\'ecurrence
+$$\forall \in \Nn \ \ f^n\circ f = f\circ f^n.$$
+
+\item On proc\`ede de m\^eme par r\'ecurrence:
+soit $\mathcal{A}_{n}$ l'assertion $ (f^{-1})^n  = (f^n)^{-1}$.
+Cette assertion est vraie pour $n=0$. Pour $n\in \Nn$ supposons
+$\mathcal{A}_{n}$ vraie. Alors
+$$(f^{-1})^{n+1} = (f^{-1})^{n} \circ f^{-1} = (f^n)^{-1} \circ f^{-1} = (f\circ f^n)^{-1} =
+ ( f^n \circ f)^{-1} = ( f^{n+1})^{-1} .$$
+Donc $\mathcal{A}_{n+1}$ est vraie. Par le principe de r\'ecurrence
+$$\forall \in \Nn \ \ (f^{-1})^n
+ = (f^n)^{-1}.$$
+\end{enumerate}
+\fincorrection
+\finexercice

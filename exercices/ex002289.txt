@@ -1,0 +1,52 @@
+\exercice{2289, barraud, 2008/04/24}
+ \addcommand{\usepackage[all]{xy}}
+\enonce
+Soit $I$ et $J$ deux id\'eaux de l'anneau $A$.
+Consid\'erons la projection canonique 
+\newline
+$\pi_I : A\to A/I$ 
+et l'image $\bar J=\pi_I(J)$ de l'id\'eal $J$.
+\begin{enumerate}
+  \item Montrer que  $\bar J$ est un id\'eal de l'anneau quotient $A/I$.
+  \item  D\'emontrer qu'on a l'isomorphisme suivant
+: $(A/I)/\bar J\cong A/(I+J)$.
+
+({\it Indication :.} Consid\'erer le morphisme $a+I\mapsto a+(I+J)$
+de l'anneau $A/I$ vers l'anneau $A/(I+J)$.)
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+ \begin{enumerate}
+  \item 
+     Soit $\alpha,\beta\in\bar{J}$ et $\lambda,\mu\in A/I$. Alors
+     $\exists a,b\in J$, $l,m\in A$,
+     $\alpha=\pi(a),\beta=\pi(b),\lambda=\pi(l),\mu=\pi(m)$. On a donc
+     $\lambda\alpha+\mu\beta=\pi(la+mb)$. Or $la+mb\in J$ (car $J$ est un
+     idéal), donc $\lambda\alpha+\mu\beta\in\bar{J}$. Donc $\bar{J}$ est
+     un idéal de $A/I$.
+
+   \item
+     Comme dans l'exercice \ref{ex:bar49}, on a le diagramme suivant~:
+     $$    
+     \xymatrix{%
+       A        \ar[r]^{\pi_{1}}\ar[d]^{\pi}\ar@(ur,ul)[rr]^{\pi_{2}\circ\pi_{1}} & 
+       A/I      \ar[r]^{\pi_{2}}&(A/I)/\bar{J} \\ 
+       A/(I+J) \ar[urr]_{\sim}
+      }%
+      $$
+      En effet, si $x\in\ker(\pi_{2}\circ\pi_{1})$, alors
+      $\pi_{1}(x)\in\ker\pi_{2}=\bar{J}$, donc $\exists y\in A,
+      \pi_{1}(x)=\pi_{1}(y)$. Alors $x-y\in\ker\pi_{1}=I$, donc $\exists
+      z\in I, x=y+z$~: on a donc $x\in I+J$. Réciproquement, si $x\in
+      I+J$, alors $\exists (x_{1},x_{2})\in I\times J, x=x_{1}+x_{2}$.
+      Alors $\pi_{1}(x)=\pi_{1}(x_{2})\in\bar{J}$, donc
+      $\pi_{2}\circ\pi_{1}(x)=0$.
+
+      Donc $\ker(\pi_{2}\circ\pi_{1})=I+J$. Donc
+      $A/(I+J)\sim(A/I)/\bar{J}$.
+  \end{enumerate}
+\fincorrection
+\finexercice

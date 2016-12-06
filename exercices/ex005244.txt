@@ -1,0 +1,20 @@
+\exercice{5244, rouget, 2010/06/30}
+\enonce[**]
+Donner un exemple de suite $(u_n)$ divergente, telle que $\forall k\in\Nn^*\setminus\{1\}$, la suite $(u_{kn})$ converge.
+\finenonce
+
+\noindication
+
+\correction
+On pose $u_0=0$, $u_1=0$, $u_2=1$, $u_3=1$, $u_4=0$, $u_5=1$,... c'est-à-dire 
+
+$$\forall n\in\Nn,\;u_n=\left\{
+\begin{array}{l}
+0\;\mbox{si}\;n\;\mbox{n'est pas premier}\\
+1\;\mbox{si}\;n\;\mbox{est premier}
+\end{array}
+\right..$$
+ 
+Soit $k$ un entier naturel supérieur ou égal à $2$. Pour $n\geq2$, l'entier $kn$ est composé et donc, pour $n\geq 2$, $u_{kn}=0$. En particulier, la suite $(u_{kn})_{n\in\Nn}$ converge et a pour limite $0$. Maintenant, l'ensemble des nombres premiers est infini et si $p_n$ est le $n$-ième nombre premier, la suite $(p_n)_{n\in\Nn}$ est strictement croissante. La suite $(u_{p_n})_{n\in\Nn}$ est extraite de $(u_n)_{n\in\Nn}$ et est constante égale à $1$. En particulier, la suite $(u_{p_n})_{n\in\Nn}$ tend vers $1$. Ainsi la suite $(u_n)_{n\in\Nn}$ admet au moins deux suites extraites convergentes de limites distinctes et donc la suite $(u_n)_{n\in\Nn}$ diverge bien que toutes les suites $(u_{kn})_{n\in\Nn}$ convergent vers $0$ pour $k\geq2$.
+\fincorrection
+\finexercice

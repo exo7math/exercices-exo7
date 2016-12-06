@@ -1,0 +1,22 @@
+\exercice{2568, delaunay, 2009/05/19}
+\enonce
+ Soit  $$A=\begin{pmatrix}a&c \\  c&d\end{pmatrix}\in M_2(\R)$$
+D\'emontrer que $A$ est diagonalisable dans $\R$.
+\finenonce 
+
+\noindication
+
+\correction
+ Soit  $$A=\begin{pmatrix}a&c \\  c&d\end{pmatrix}\in M_2(\R)$$
+
+{\it D\'emontrons que $A$ est diagonalisable dans $\R$}.
+
+Le polyn\^ome caract\'eristique $P_A(X)$ est \'egal \`a
+$$P_A(X)=\begin{vmatrix}a-X&c \\  c& d-x\end{vmatrix}=(a-X)(d-X)-c^2=X^2-(a+d)X+ad-c^2,$$
+d\'eterminons ses racines : calculons le discriminant :
+\begin{align*}\Delta&=(a+d)^2-4(ad-c^2) \\  &=a^2+d^2+2ad-4ad+4c^2 \\ &=a^2+d^2-2ad+4c^2 \\ &=(a-d)^2+4c^2\geq 0\end{align*}
+On a $\Delta=0\iff a-d=0\ {\hbox{et}}\ c=0$, mais, si $c=0$, la matrice $A$ est d\'ej\`a diagonale. Sinon $\Delta>0$ et le polyn\^ome caract\'eristique admet
+deux racines r\'eelles distinctes, ce qui prouve que la matrice est toujours diagonalisable dans $\R$.
+
+\fincorrection
+\finexercice

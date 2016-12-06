@@ -1,0 +1,38 @@
+\exercice{2092, bodin, 2008/02/04}
+\enonce
+\label{ex:compint}
+Soient $u$ et $v$ deux fonctions d\'erivables sur $\R$ et $f$ une fonction
+continue sur $\R$.
+\begin{enumerate}
+\item On pose $\displaystyle F(x)=\displaystyle \int_{u(x)}^{v(x)}f(t)d t$. Montrer que $F$ est
+d\'erivable sur $\R$ et calculer sa d\'eriv\'ee.
+\item Calculer la d\'eriv\'ee de $\displaystyle G(x)=\int_x^{2x}\frac{d t}{1+t^2+t^4}$. 
+ \end{enumerate}
+
+\finenonce 
+\indication
+Se ramener \`a une composition de fonctions ou revenir \`a la d\'efinition de la d\'eriv\'ee avec le taux d'accroissement.
+\finindication
+\correction
+ \begin{enumerate}
+  \item Commen\c{c}ons plus simplement avec la fonction 
+$$H(x) =  \int_{a}^{v(x)}f(t)dt.$$
+En fait $H$ est la composition de la fonction $x\mapsto v(x)$ avec la fonction
+$G : x \mapsto \int_{a}^{x}f(t)dt$ : 
+$$H = G \circ v.$$
+La fonction $v$ est d\'erivable et la fonction $G$ aussi (c'est une primitive) donc
+la compos\'ee $H=G\circ v$ est d\'erivable, de plus $H'(x) = v'(x)\cdot G'(v(x))$.
+En pratique comme $G'(x) = f(x)$ cela donne $H'(x) = v'(x) f(v(x))$.
+
+\emph{Remarque :} Il n'est pas n\'ecessaire de conna\^\i tre cette formule mais il est important de savoir refaire ce petit raisonnement.
+
+On montrerait de m\^eme que la fonction $x\to\int_{u(x)}^{a}f(t)dt$ est d\'erivable de d\'eriv\'ee $-u'(x)f(u(x))$.
+Revenons \`a notre fonction $F(x) = \int_{u(x)}^{v(x)}f(t)d t =  \int_{u(x)}^{a}f(t)dt+ \int_{a}^{v(x)}f(t)dt$, 
+c'est la somme de deux fonctions d\'erivables donc est d\'erivable de d\'eriv\'ee :
+$$F'(x) = v(x)f(v(x))-u'(x)f(u(x)).$$
+
+  \item On applique ceci \`a $u(x) = x$ et $v(x) = 2x$ nous obtenons :
+$$G'(x) = \frac{2}{1+(2x)^2+(2x)^4}-\frac{1}{1+x^2+x^4}.$$
+  \end{enumerate}
+\fincorrection
+\finexercice

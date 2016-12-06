@@ -1,0 +1,41 @@
+\exercice{5182, rouget, 2010/06/30}
+\enonce[***]
+Soit $E=\Rr[X]$ le $\Rr$-espace vectoriel des polynômes à coefficients réels.
+
+\begin{itemize}
+\item  Soit $\begin{array}[t]{cccc}f~:&E&\rightarrow&E\\ &P&\mapsto&P'\end{array}$. $f$ est-elle linéaire, injective,
+surjective~?~Fournir un supplémentaire de $\mbox{Ker}f$.
+\item  Mêmes questions avec $\begin{array}[t]{cccc}g~:&E&\rightarrow&E\\ &P&\mapsto&\int_{0}^{x}P(t)\;dt\end{array}$.
+\end{itemize}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  $\forall P\in E$, $f(P)=P'$ est un polynôme et donc $f$ est une application de $E$ vers $E$.
+
+$\forall(P,Q)\in E^2,\;\forall(\lambda,\mu)\in\Rr^2,\;f(\lambda P+\mu Q)=(\lambda P+\mu Q)'=\lambda P'+\mu
+Q'=\lambda f(P)+\mu f(Q)$ et $f$ est un endomorphisme de $E$.
+
+Soit $P\in E$. $P\in\mbox{Ker}f\Leftrightarrow P'=0\Leftrightarrow P$ est constant. $\mbox{Ker}f$ n'est pas nul et $f$ n'est pas injective.
+
+Soient $Q\in E$ puis $P$ le polynôme défini par~:~$\forall x\in\Rr,\;P(x)=\int_{0}^{x}Q(t)\;dt$. $P$ est bien un
+polynôme tel que $f(P)=Q$. $f$ est surjective.
+
+Soit $F=\{P\in E/\;P(0) = 0\}$. $F$ est un sous espace de $E$ en tant que noyau de la forme linéaire $P\mapsto
+P(0)$. $\mbox{Ker}f\cap F=\{0\}$ car si un polynôme est constant et s'annule en $0$, ce polynôme est nul. Enfin, si $P$
+est un polynôme quelconque, $P=P(0)+(P-P(0))$ et $P$ s'écrit bien comme la somme d'un polynôme constant et d'un
+polynôme s'annulant en $0$. Finalement $E=\mbox{Ker}f\oplus F$.
+
+\item  On montre facilement que $g$ est un endomorphisme de $E$.
+
+$P\in\mbox{Ker}g\Rightarrow\forall x\in\Rr,\;\int_{0}^{x}P(t)\;dt=0\Rightarrow\forall x\in\Rr,\;P(x)=0$
+(en dérivant). Donc, $\mbox{Ker}g=\{0\}$ et donc $g$ est injective.
+
+Si P est dans $\mbox{Im}g$ alors $P(0)=0$ ce qui montre que $g$ n'est pas surjective.
+De plus, si $P(0)=0$ alors $\int_{0}^{x}P'(t)\;dt=P(x)-P(0)=P(x)$ ce qui montre que $P=g(P')$ est dans $\mbox{Im}g$
+et donc que $\mbox{Im}g=\{P\in E/\;P(0)=0\}$.
+\end{enumerate}
+\fincorrection
+\finexercice

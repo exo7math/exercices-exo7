@@ -1,0 +1,42 @@
+\exercice{5433, exo7, 2010/07/06}
+\enonce[**IT]
+\begin{enumerate}
+\item  Développement asymptotique à la précision $x^2$ en $0$ de $\frac{1}{x(e^x-1)}-\frac{1}{x^2}$.
+\item  Développement asymptotique à la précision $\frac{1}{x^3}$ en $+\infty$ de $x\ln(x+1)-(x+1)\ln x$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item 
+\begin{align*}\ensuremath
+\frac{1}{x(e^x-1)}-\frac{1}{x^2}&\underset{x\rightarrow0}{=}\frac{1}{x\left(x+\frac{x^2}{2}+\frac{x^3}{6}+\frac{x^4}{24}+\frac{x^5}{120}+o(x^5)\right)}-\frac{1}{x^2}=\frac{1}{x^2}\left(\left(1+\frac{x}{2}+\frac{x^2}{6}+\frac{x^3}{24}+\frac{x^4}{120}+o(x^4)\right)^{-1}-1\right)\\
+ &=\frac{1}{x^2}\left(-\left(\frac{x}{2}+\frac{x^2}{6}+\frac{x^3}{24}+\frac{x^4}{120}\right)+\left(\frac{x}{2}+\frac{x^2}{6}+\frac{x^3}{24}\right)^2-\left(\frac{x}{2}+\frac{x^2}{6}\right)^3+\left(\frac{x}{2}\right)^4+o(x^4)\right)\\
+ &=\frac{1}{x^2}\left(-\frac{x}{2}+x^2\left(-\frac{1}{6}+\frac{1}{4}\right)+x^3\left(-\frac{1}{24}+\frac{1}{6}-\frac{1}{8}\right)
+ +x^4\left(-\frac{1}{120}+\left(\frac{1}{36}+\frac{1}{24}\right)-\frac{1}{8}+\frac{1}{16}\right)+o(x^4)\right)\\
+ &=-\frac{1}{2x}+\frac{1}{12}-\frac{x^2}{720}+o(x^2).
+\end{align*}
+
+\begin{center}
+\shadowbox{
+$\frac{1}{x(e^x-1)}-\frac{1}{x^2}\underset{x\rightarrow0}{=}-\frac{1}{2x}+\frac{1}{12}-\frac{x^2}{720}+o(x^2)$.
+}
+\end{center}
+ \item 
+ 
+\begin{align*}\ensuremath
+x\ln(x+1)-(x+1)\ln x&=x\left(\ln x+\ln\left(1+\frac{1}{x}\right)\right)-(x+1)\ln x\underset{x\rightarrow+\infty}{=}-\ln
+ x+x\left(\frac{1}{x}-\frac{1}{2x^2}+\frac{1}{3x^3}-\frac{1}{4x^4}+o\left(\frac{1}{x^4}\right)\right)\\
+ &=-\ln x+1-\frac{1}{2x}+\frac{1}{3x^2}-\frac{1}{4x^3}+o\left(\frac{1}{x^3}\right).
+\end{align*}
+
+\begin{center}
+\shadowbox{
+$x\ln(x+1)-(x+1)\ln x\underset{x\rightarrow+\infty}{=}-\ln x+1-\frac{1}{2x}+\frac{1}{3x^2}-\frac{1}{4x^3}+o\left(\frac{1}{x^3}\right)$.
+}
+\end{center}
+\end{enumerate}
+\fincorrection
+\finexercice

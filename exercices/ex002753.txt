@@ -1,0 +1,41 @@
+\exercice{2753, tumpach, 2009/10/25}
+\video{d4ZZDotSUcw}
+\enonce
+\begin{enumerate}
+\item Calculer l'aire du parall\'elogramme construit sur les vecteurs 
+$\vec{u} = \left(\begin{array}{c}2\\3\end{array}\right)$ et 
+$\vec{v} = \left(\begin{array}{c}1\\4\end{array}\right)$.
+\item Calculer le volume du  parall\'el\'epip\`ede construit sur les vecteurs \\
+$\vec{u} = \left(\begin{array}{c}1\\2\\0\end{array}\right)$, 
+$\vec{v} = \left(\begin{array}{c}0\\1\\3\end{array}\right)$ et 
+$\vec{w} = \left(\begin{array}{c}1\\1\\1\end{array}\right)$.
+\item Montrer que le volume d'un parall\'el\'epip\`ede dont les sommets sont des points de 
+$\Rr^3$ \`a coefficients entiers est un nombre entier.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item L'aire $\mathcal{A}$ du parallélogramme construit sur les vecteurs $\vec{u} = \left(\begin{array}{c}a\\c\end{array}\right)$ et 
+$\vec{v} = \left(\begin{array}{c}b\\d\end{array}\right)$ est la valeur absolue du déterminant $\begin{vmatrix} a & b \\ c & d \end{vmatrix}$
+donc $\mathcal{A} =  |ad-bc|$.
+Ici on trouve 
+$\mathcal{A} = \text{abs} \begin{vmatrix} 2 & 1 \\ 3 & 4 \end{vmatrix} = + 5 $
+où $\text{abs}$ désigne la fonction valeur absolue.
+
+  \item Le volume  du  parall\'el\'epip\`ede construit sur trois vecteurs de $\Rr^3$ est la valeur absolue du déterminant
+de la matrice formée des trois vecteurs.
+Ici $$\mathcal{V} = \text{abs} \begin{vmatrix} 1 & 0 & 1 \\ 2 & 1 & 1 \\ 0 & 3 & 1\end{vmatrix} 
+= \text{abs} \Big(+1 \begin{vmatrix} 1 & 1 \\ 3 & 1\end{vmatrix}  + 1  \begin{vmatrix} 2 & 1 \\ 0 & 3 \end{vmatrix}
+\Big)= 4$$
+où l'on a développé par rapport à la première ligne.
+
+  \item Si un parall\'el\'epip\`ede est construit sur trois vecteurs de $\Rr^3$
+dont les coefficients sont des entiers alors le volume correspond au déterminant d'une matrice à coefficients
+entiers. C'est donc un entier.
+
+\end{enumerate}
+\fincorrection
+\finexercice

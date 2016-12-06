@@ -1,0 +1,47 @@
+\exercice{2381, mayer, 2003/10/01}
+\enonce 
+Soient $(E,d)$ un espace m\'etrique compact et $f:E\rightarrow E$
+une application v\'erifiant
+$$ d(f(x),f(y)) \geq d(x,y) \quad \text{pour tout} \;\; x,y \in E \;
+.$$ On se propose de montrer que $f$ est une isom\'etrie
+surjective. Soient $a,b\in E$ et posons, pour $n\geq 1$, $a_n
+=f^n(a)=f\circ f^{n-1}(a)$ et $b_n = f^n(b)$.
+\begin{enumerate}
+  \item Montrer que pour tout $\epsilon >0$, il existe $k \geq 1$ tel
+  que $d(a,a_k)<\epsilon$ et $d(b,b_k)< \epsilon$ (Consid\'erer une valeur
+  d'adh\'erence de la suite $z_n=(a_n,b_n)$).
+  \item En d\'eduire que $f(E)$ est dense dans $E$ et que
+  $d(f(a),f(b)) =d(a,b)$ (Consid\'erer la suite $u_n
+  =d(a_n,b_n)$).
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Comme $E\times E$ est compact alors de la suite $(a_n,b_n)$ on peut
+extraire une sous-suite $(a_{\phi(n)},b_{\phi(n)})$ qui converge vers $(a_\infty,b_\infty)$.
+Soit $\epsilon > 0$ il existe $n\in \Nn$ tel que si $k\ge n$
+alors $d(a_{\phi(k)},a_\infty) < \frac\epsilon2$ et $d(b_{\phi(k)},b_\infty) < \frac\epsilon2$.
+Donc en particulier $d(a_{\phi(n+1)},a_{\phi(n)}) \le d(a_{\phi(n+1)},a_\infty)
++ d(a_\infty,a_{\phi(n)}) < \epsilon$.
+La propri\'eté pour $f$ s'écrit ici $d(a_k,b_{k'})\le d(a_{k+1},b_{k'+1}) \ge $.
+Donc $d(a_{\phi(n+1)-\phi(n)}, a_0) \le d(a_{\phi(n+1)-\phi(n)+1}, a_1) \le \ldots \le d(a_{\phi(n+1)-1}, a_{\phi(n)-1}) \le  d(a_{\phi(n+1)}, a_{\phi(n)}) < \epsilon$. Donc pour $k = \phi(n+1)-\phi(n)$, sachant que $a_0=a$ alors $d(a_{k}, a) < \epsilon$. Même chose avec $(b_n)$.
+
+  \item 
+    \begin{enumerate}
+     \item Soit $a \in E$ et $\epsilon >0$ alors il existe $k\ge 1$ tel que $a_k = f^k(a) \in f(E)$     avec $d(a,a_k) < \epsilon $. Donc $f(E)$ est dense dans $E$.
+
+     \item Soit $u_n = d(a_n,b_n)$. Alors par la propriété pour $f$, $(u_n)$ est une suite croissante de $\Rr$. Comme $E$ est compact alors son diamètre est borné, donc $(u_n)$ est majorée. La suite $(u_n)$ est croissante et majorée donc converge vers $u$.
+
+Maintenant $u_n - u_0 \ge0$ et 
+$$0 \le u_n -u_0=d(a_n,b_n) -d(a,b) \le d(a_n,a) + d(a,b)+d(b,b_n)-d(a,b) = d(a_n,a)+d(b_n,b).$$
+Donc $u_n$ tend vers $u_0$. Comme $(u_n)$ est croissante alors $u_n = u_0$ pour tout $n$.
+En particulier $u_1=u_0$ donc $d(a_1,b_1)=d(a_0,b_0)$ soit $d(f(a),f(b))=d(a,b)$. Donc $f$ est une isométrie.
+      \item $f$ est une isométrie donc continue (elle est $1$ lipschitzi\`enne !). $E$ est compact donc
+$f(E)$ est compact donc fermé or $f(E)$ est dense donc $f(E)=E$. Donc $f$ est surjective
+ \end{enumerate}
+\end{enumerate}
+\fincorrection
+\finexercice

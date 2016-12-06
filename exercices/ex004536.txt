@@ -1,0 +1,28 @@
+\exercice{4536, quercia, 2010/03/14}
+\enonce[Fonction définie par une série]
+
+Soit $u_n(x) = (-1)^n\ln\left(1+\frac x{n(1+x)}\right)$ et
+$f(x) = \sum_{n=1}^\infty u_n(x)$.
+
+\begin{enumerate}
+  \item Montrer que la série $f(x)$ converge simplement sur $\R^+$.
+  \item Majorer convenablement le reste de la série, et montrer qu'il y a
+    convergence uniforme sur $\R^+$.
+    
+  \item Y a-t-il convergence normale ?
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item 
+  \item CSA $ \Rightarrow  |R_n(x)| \le |u_{n+1}(x)| \le
+             \ln\left(1+\frac1{n+1}\right)$.
+  \item Non, $\|u_n\|_\infty = \ln\left(1+\frac1n\right)$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

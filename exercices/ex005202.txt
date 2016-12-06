@@ -1,0 +1,29 @@
+\exercice{5202, rouget, 2010/06/30}
+\enonce[***I]
+\label{exo:suprou8bis}
+Soient $n$ un entier supérieur ou égal à $2$, puis $A_1$, $A_2$,..., $A_n$ $n$ points du plan. Existe-t-il $n$ points $B_1$, $B_2$,..., $B_n$ tels que, pour $i\in\{1,...,n\}$, $A_i$ soit le milieu de $[B_i,B_{i+1}]$ (avec la convention $B_{n+1}=B_1$)~? (Utiliser l'exercice précédent.)
+\finenonce
+
+\noindication
+
+\correction
+ Pour $1\leq i\leq n$, notons $s_i$ la symétrie centrale de centre $A_i$. Le problème revient à trouver $n$ points $B_1$,..., $B_n$ tels que $B_2=s_1(B_1)$, $B_3=s_2(B_2)$,...,$B_n=s_{n-1}(B_{n-1})$, $B_1=s_n(B_n)$. Ceci équivaut à
+
+$$\forall i\in\{2,...,n\},\;B_i=s_{i-1}\circ s_{i-2}\circ...\circ s_1(B_1)\;\mbox{et}\;B_1=s_n\circ s_{n-1}\circ...\circ s_1(B_1)\;(*).$$
+
+Posons alors $f=s_n\circ s_{n-1}\circ...\circ s_1$. $f$ est une composée de symétries centrales. Il y a donc deux cas. Si $n$ est pair, on peut regrouper les symétries deux par deux. $f$ est alors (d'après l'exercice \ref{exo:suprou7bis}) une composée de translations et donc $f$ est une translation. Si $n$ est impair, $n-1$ est pair et donc la composée des $n-1$ premières symétries est une translation. Par suite, $f$ est la composée d'une translation et d'une symétrie centrale et est donc une symétrie centrale (d'après l'exercice \ref{exo:suprou7bis}).
+
+Maintenant, $(*)$ a une solution si et seulement si $f$ a un point invariant.
+
+\begin{itemize}
+\item[\textbf{1er cas.}] Si $n$ est impair, $f$ étant une symétrie centrale, $f$ a un et un seul point invariant~:~son centre. Il existe donc un et un seul point $B_1$ vérfiant $B_1=s_n\circ s_{n-1}\circ...\circ s_1(B_1)$ et finalement, un et un seul $n$-uplet $(B_1,...,B_n)$ solution du problème posé.
+\item[\textbf{2ème cas.}] Si $n$ est pair, $f$ est une translation. Si son vecteur est non nul, $f$ n'a pas de point invariant et le problème n'a pas de solution. Si son vecteur est nul, $f$ est l'identité et tout point est invariant par $f$.
+
+Déterminons le vecteur de $f$. On pose $n=2p$. On a alors
+
+$$f=s_{2p}\circ s_{2p-1}\circ...s_2\circ s_1=t_{2\overrightarrow{A_{2p-1}A_{2p}}}\circ...\circ t_{2\overrightarrow{A_{1}A_{2}}}=t_{2(\overrightarrow{A_1A_2}+...+\overrightarrow{A_{2p-1}A_{2p}})}.$$
+
+Quand $n=2p$ est pair, le problème posé a des solutions si et seulement si $\overrightarrow{A_1A_2}+...+\overrightarrow{A_{2p-1}A_{2p}}=\overrightarrow{0}$.
+\end{itemize}
+\fincorrection
+\finexercice

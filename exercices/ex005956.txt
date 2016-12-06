@@ -1,0 +1,59 @@
+\exercice{5956, tumpach, 2010/11/11}
+\enonce
+Soient $f$ et $g$ deux fonctions de $L^{p}(\mu)$ avec
+$1<p<+\infty$. Montrer que la fonction $N~:\mathbb{R} \rightarrow
+\mathbb{R}$ d\'efinie par
+$$
+N(t) = \int_{\Omega} |f(x) + t \cdot g(x)|^{p}\,d\mu
+$$
+est diff\'erentiable et que sa d\'eriv\'ee en $t=0$ est donn\'ee
+par~:
+$$
+\frac{dN}{dt}_{|t=0} = p \int_{\Omega} |f(x)|^{p-2}f(x)
+g(x)\,d\mu,
+$$
+o\`u par convention $|f(x)|^{p-2}f(x) = 0$ lorsque $f=0$.
+\finenonce
+
+\noindication
+
+\correction
+Soient $f$ et $g$ deux fonctions de $L^{p}(\mu)$ avec
+$1<p<+\infty$. La fonction $\varphi(t) = |f(x)+\tan (x)|^{p}$ est de
+classe $\mathcal{C}^1$ sur $\mathbb{R}$ et sa d\'eriv\'ee vaut
+$$
+\varphi'(t) = \lim_{h\rightarrow 0}\frac{|f(x) + \tan (x) + h
+g(x)|^{p}-|f(x)+ \tan (x)|^p}{h} = p |f(x)+\tan (x)|^{p-2} (f(x)+ \tan (x))
+g(x),
+$$
+lorsque $f(x)$ et $g(x)$ ont un sens, c'est-\`a-dire pour presque
+tout $x$. De plus, d'apr\`es le th\'eor\`eme des accroissements
+finis, on a
+$$
+\frac{|f(x) + \tan (x)|^{p}-|f(x)|^p}{t} = \varphi'(t_{0}) = p
+|f(x)+t_0 g(x)|^{p-2} (f(x)+ t_0 g(x)) g(x),
+$$
+pour un certain $t_0$ compris entre $0$ et $t$. Ainsi pour
+$|t|\leq 1$,
+\begin{equation*}
+\begin{array}{ll}
+\left|\frac{|f(x) + \tan (x)|^{p}-|f(x)|^p}{t}\right| &=  p |f(x)+t_0
+g(x)|^{p-1} |g(x)| \\& \leq p \left(|f(x)| + |g(x)|\right)^{p}\\ &
+\leq  2^{p-1}\,p \left(|f(x)|^p + |g(x)|^p \right),
+\end{array}
+\end{equation*}
+o\`u la premi\`ere in\'egalit\'e d\'ecoule de l'in\'egalit\'e
+triangulaire et de la majoration $|g(x)| \leq (|f(x)| + |g(x)|)$,
+et o\`u la deuxi\`eme in\'egalit\'e provient de la convexit\'e de
+la fonction $x\mapsto x^p$ pour $p>1$ impliquant en particulier~:
+$\left(\frac{u+v}{2} \right)^p \leq \frac{u^p}{2} +
+\frac{v^p}{2}$. Il en d\'ecoule que $t\mapsto \frac{|f(x) +
+\tan (x)|^{p}-|f(x)|^p}{t}$ est uniform\'ement born\'ee par une
+fonction int\'egrable. Le th\'eor\`eme de convergence domin\'ee
+permet alors de d\'eriver sous le signe somme et
+$$
+\frac{dN}{dt}_{t=0} = p\int_{\Omega} |f(x)|^{p-2} f(x) g(x)\,d\mu.
+$$
+\fincorrection
+
+\finexercice

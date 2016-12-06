@@ -1,0 +1,57 @@
+\exercice{5629, rouget, 2010/10/16}
+\enonce[**I]
+\begin{enumerate}
+ \item  Soient $n\in\Nn^*$ et $E=\Cc_n[X]$. Pour $a\in\Cc$, on définit l'application $\varphi_a$ par : $\forall P\in E,\;\varphi_a(P)=P(a)$. Montrer que pour tout $a\in E$, $\varphi_a\in E^*$.
+
+\item  Soient $a_0$, $a_1$,\ldots, $a_n$ $n+1$ nombres complexes deux à deux distincts. Montrer que la famille $\left(\varphi_{a_0},\ldots,\varphi_{a_n}\right)$ est une base de $E^*$ et déterminer sa préduale.
+
+\item  Montrer qu'il existe $(\lambda_0,\ldots,\lambda_n)\in\Cc^{n+1}$ tel que $\forall P\in\Cc_n[X],\;\int_{0}^{1}P(t)\;dt=\lambda_0P(a_0)+\ldots+\lambda_nP(a_n)$ puis donner la valeur des $\lambda_i$ sous la forme d'une intégrale.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Soit $a\in\Cc$. Soient $(\lambda,\mu)\in\Cc^2$ et $(P,Q)\in E^2$.
+
+\begin{center}
+$\varphi_a(\lambda P+\mu Q)=(\lambda P+\mu Q)(a)=\lambda P(a)+\mu Q(a)=\lambda\varphi_a(P)+\mu\varphi_a(Q)$.
+\end{center}
+
+Donc, $\varphi_a$ est une forme linéaire sur $E$.
+
+\item  On a déjà $\text{card}\left(\varphi_{a_j}\right)_{0\leqslant j\leqslant n}=n+1=\text{dim}(E)=\text{dim}(E^*)<+\infty$. Il suffit donc de vérifier que la famille $\left(\varphi_{a_j}\right)_{0\leqslant j\leqslant n}$ est libre.
+
+Pour $k\in\llbracket0,n\rrbracket$, on pose $P_k=\prod_{j\neq k}^{}\frac{X-a_j}{a_k-a_j}$. Chaque $P_k$ est un élément de $E$ et de plus 
+
+\begin{center}
+$\forall(j,k)\in\llbracket0,n\rrbracket^2$, $\varphi_{a_j}(P_k)=\delta_{j,k}=\left\{
+\begin{array}{l}
+1\;\text{si}\;j\neq k\\
+0\;\text{si}\;j=k
+\end{array}
+\right.$\quad$(*)$.
+\end{center}
+
+Soit alors $(\lambda_0,\ldots,\lambda_n)\in\Cc^{n+1}$.
+
+\begin{align*}\ensuremath
+\sum_{j=0}^{n}\lambda_j\varphi_j=0&\Rightarrow\forall P\in E,\;\sum_{j=0}^{n}\lambda_j\varphi_j(P)=0\Rightarrow\forall k\in \llbracket0,n\rrbracket,\;\sum_{j=0}^{n}\lambda_j\varphi_j(P_k)=0\Rightarrow\forall k\in \llbracket0,n\rrbracket,\;\sum_{j=0}^{n}\lambda_j\delta_{j,k}=0\\
+ &\Rightarrow\forall k\in \llbracket0,n\rrbracket,\;\lambda_k=0.
+\end{align*}
+
+Ceci montre que la famille $\left(\varphi_{a_j}\right)_{0\leqslant j\leqslant n}$ est libre et donc une base de $E^*$. Les égalités $(*)$ montrent alors que la préduale de la base $\left(\varphi_{a_j}\right)_{0\leqslant j\leqslant n}$ de $E^*$ est la famille $\left(P_k\right)_{0\leqslant k\leqslant n}$.
+
+\item  Pour $P\in E$, posons $\varphi(P)=\int_{0}^{1}P(t)\;dt$. $\varphi$ est une forme linéaire sur $E$ et donc, puisque la famille $\left(\varphi_{a_j}\right)_{0\leqslant j\leqslant n}$ est une base de $E^*$, il existe $(\lambda_0,\ldots,\lambda_n)\in\Cc^{n+1}$ tel que $\varphi=\sum_{j=0}^{n}\lambda_j\varphi_{a_j}$ ou encore il existe $(\lambda_0,\ldots,\lambda_n)\in\Cc^{n+1}$ tel que pour tout $P\in E$, $\int_{0}^{1}P(t)\;dt=\lambda_0P(a_0)+\ldots+\lambda_nP(a_n)$ (les $\lambda_j$ étant indépendants de $P$).
+
+En appliquant cette dernière égalité au polynôme $P_k$, $0\leqslant k\leqslant n$, on obtient $\lambda_k=\int_{0}^{1}P_k(t)\;dt=\int_{0}^{1}\prod_{j\neq k}^{}\frac{t-a_j}{a_k-a_j}\;dt$.
+
+\begin{center}
+\shadowbox{
+$\forall P\in\Cc_n[X],\;\int_{0}^{1}P(t)\;dt=\sum_{k=0}^{n}\lambda_kP(a_k)$ où $\forall k\in\llbracket0,n\rrbracket$, $\lambda_k=\int_{0}^{1}\prod_{j\neq k}^{}\frac{t-a_j}{a_k-a_j}\;dt$.
+}
+\end{center}
+\end{enumerate}
+\fincorrection
+\finexercice

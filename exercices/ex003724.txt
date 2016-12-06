@@ -1,0 +1,29 @@
+\exercice{3724, quercia, 2010/03/11}
+\enonce[Mineurs principaux\label{mineursppx}]
+
+Soit $n\ge 2$ et $A$ une matrice réelle symétrique $n\times n$
+représentant une forme quadratique~$q$.
+On appelle mineurs principaux de~$A$ les déterminants~:
+$$\Delta_k(A) = \det\bigl((a_{i,j})_{i,j\le k}\bigr).$$
+On suppose que tous les mineurs principaux de~$A$ sont non nuls,
+montrer que la signature de~$q$ est $(r,s)$ où $s$ est le nombre
+de changements de signe dans la suite $(1,\Delta_1,\dots,\Delta_n)$
+et $r=n-s$.
+
+
+\finenonce
+
+\noindication
+
+\correction
+Récurrence sur~$n$.
+
+Soit $(e_1,\dots,e_n)$ la base dans laquelle $A$ est la matrice de~$q$.
+$\Delta_{n-1}(A) \ne 0$ donc il existe des coefficients
+$\alpha_1,\dots,\alpha_{n-1}$ tels que $u_n = e_n-\sum_{i<n}\alpha_i e_i$
+soit $q$-orthogonal à~$e_1,\dots,e_{n-1}$. Alors $A$ a mêmes
+mineurs principaux que la matrice de $q$ dans la base
+$(e_1,\dots,e_{n-1},u_n)$.
+\fincorrection
+
+\finexercice

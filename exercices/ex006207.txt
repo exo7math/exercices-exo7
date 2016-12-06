@@ -1,0 +1,73 @@
+\exercice{6207, queffelec, 2011/10/16}
+\enonce
+Soit $K$ un compact convexe d'un evn $E$. Soit $u$ une application linéaire
+continue de $E$ dans $E$ telle que $u(K)\subset K$. On va montrer que $u$ a un
+point fixe dans $K$.
+\begin{enumerate}
+\item On peut supposer que $0\notin K$. Pour chaque $n\geq1$, on désigne par $S_n$
+l'application définie sur $E$ par 
+
+$S_n(x)={1\over n}(x+u(x)+\cdots+u^{n-1}(x))$.
+Montrer que $S_n(K)\subset K$.
+
+\item Montrer que pour tous entiers $n_1,n_2,\ldots,n_k$ en nombre fini,
+
+$S_{n_1}\circ\cdots\circ S_{n_k}(K)\subset S_{n_1}(K)\cap
+S_{n_2}(K)\cap\cdots\cap S_{n_k}(K)$.
+
+En déduire que $A=\cap_{n\geq1} S_{n}(K)$ est non vide.
+
+\item Montrer que tout $x\in A$ est  point fixe de $u$.
+\end{enumerate}
+
+
+
+
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item Remarquons tout d'abord que si $0\in K$, l'application $u$ (linéaire) admet
+$0$ comme point fixe dans $K$.  
+
+On suppose donc $0\notin K$.
+Si $x\in K$, $u^j(x)\in K$ pout tout $0\leq j\leq n-1$ et $S_n(x)\in K$ comme
+combinaison convexe de ces $n$ points de $K$.
+
+\item Soit $x\in K$. Par 1., $S_{n_1}\circ\cdots\circ S_{n_k}(x)\in K$ et s'écrit
+$S_{n_1}(S_{n_2}\circ\cdots\circ S_{n_k})(x)$ : il appartient donc à
+$S_{n_1}(K)$. Par ailleurs, comme les applications linéaires $S_{n_j}$ commutent
+entre elles (ce sont des polyn\^omes en $u$), il en va de même pour
+$S_{n_2},\cdots, S_{n_k}$ d'où l'inclusion. 
+
+Chaque $S_n$ étant continue et $K$ compact, les ensembles $S_{n}(K)$ sont eux
+aussi compacts et inclus dans $K$; si $A=\cap_{n\geq1} S_{n}(K)$ était
+vide, par la propriété de l'intersection finie, on pourrait trouver des
+entiers $n_1,n_2,\ldots,n_k$ en nombre fini tels que $S_{n_1}(K)\cap
+S_{n_2}(K)\cap\cdots\cap S_{n_k}(K)=\emptyset$. Or cette intersection contient
+l'image de $K$ par $S_{n_1}\circ\cdots\circ S_{n_k}$ et ne peut être vide.
+
+\item Soit $a\in A$; pour tout $n$ il existe $x_n\in K$ tel que $a=S_n(x_n)$.
+On va montrer que  $u(a)=a$ :
+
+$$\begin{array}{ccc}
+         u(a)-a&=& u(S_n(x_n))-S_n(x_n)\\
+&&\\
+
+        &=&\displaystyle{(n+1)S_{n+1}(x_n)\over n}-{x_n\over n}-S_n(x_n)
+\\
+&&\\
+
+&=&\displaystyle{(n+1)S_{n+1}(x_n)-nS_n(x_n)-x_n\over n}\\
+&&\\
+&=&\displaystyle{u^n(x_n)-x_n\over n}
+\end{array}$$
+
+Mais $||u^n(x_n)-x_n||\leq \hbox{diam} K=d<+\infty$ puisque $K$ compact est
+borné, et 
+$||u(a)-a||\leq {d\over n}$ pour tout $n$ est donc nul.
+\end{enumerate}
+\fincorrection
+\finexercice

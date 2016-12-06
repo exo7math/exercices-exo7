@@ -1,0 +1,24 @@
+\exercice{4013, quercia, 2010/03/11}
+\enonce[$f$ et $f''$ sont bornées]
+
+Soit $f : \R \to \R$ une fonction de classe $\mathcal{C}^2$.
+On suppose : $\forall\ x \in \R,\ |f(x)| \le \alpha$ et $|f''(x)| \le \beta$.
+
+\begin{enumerate}
+  \item Montrer que : $\forall\ h > 0,\ \forall\ x \in \R,\ |f'(x)| \le \frac {2\alpha}h + \frac {h\beta}2$.
+  \item Pour quelle valeur de $h$ obtient-on la meilleure inégalité ?
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item     $f(x+h) = f(x) + hf'(x) + \frac {h^2}2f''(x+\theta h)  \Rightarrow 
+     f'(x) = \frac {f(x+h) - f(x)}h -\frac h2f''(x+\theta h)$.
+  \item $h = 2\sqrt{\alpha/\beta}  \Rightarrow  |f'| \le 2\sqrt{\alpha\beta}$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

@@ -1,0 +1,55 @@
+\exercice{2630, debievre, 2009/05/19}
+\enonce
+Trouver les points sur 
+le parabolo\"\i de $z=4x^2 +y^2$ o\`u le plan tangent est parall\`ele au plan
+$x+2y+z=6$. M\^eme question avec le plan $3x+5y-2z=3$. 
+\finenonce
+
+\indication
+Le plan tangent \`a la surface d'\'equation 
+$z=f(x,y)$ au point $(x_0,y_0,z_0)$ 
+est donn\'e par l'\'equation
+\begin{equation}
+z-z_0=\frac{\partial f}{\partial x}(x_0,y_0) (x-x_0) 
++\frac{\partial f}{\partial y}(x_0,y_0)
+(y-y_0) .
+\label{tang3}
+\end{equation}
+
+\finindication
+
+\correction
+Suivant l'indication,
+le plan tangent \`a la surface d'\'equation 
+$z=4x^2 +y^2$ au point $(x_0,y_0,z_0)$ 
+est donn\'e par l'\'equation
+\begin{align*}
+z&=z_0 +8x_0 (x-x_0) + 2y_0 (y-y_0) 
+\\
+&= 8x_0x +2y_0 y +z_0 - 8x^2_0 -  2y^2_0= 
+8x_0x +2y_0 y  - z_0 
+\end{align*}
+d'o\`u par
+\begin{equation}
+z-8x_0x -2y_0 y  = z_0.
+\label{tang2}
+\end{equation}
+Pour que
+ce plan soit parall\`ele au plan d'\'equation $x+2y+z=6$ il faut et il 
+suffit que
+$(1,2)=(-8x_0, -2y_0)$ d'o\`u que $x_0=-1/8$ et $y_0=-1$.
+Par cons\'equent, 
+le point cherch\'e sur le parabolo\"\i de $z=4x^2 +y^2$
+est le point
+$(-1/8,-1,17/16)$.
+De m\^eme, 
+pour que
+le plan \eqref{tang2} 
+soit parall\`ele au plan d'\'equation $3x+5y-2z=3$ il faut et il 
+suffit que
+$(3/2,5/2)=(8x_0, 2y_0)$ d'o\`u que $x_0=3/16$ et $y_0=5/4$,
+et le point cherch\'e sur le parabolo\"\i de $z=4x^2 +y^2$
+est alors le point
+$(3/16,5/4,9/64+25/16)$ =$(3/16,5/4,109/64)$.
+\fincorrection
+\finexercice

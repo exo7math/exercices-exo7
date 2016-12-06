@@ -1,0 +1,32 @@
+\exercice{5117, rouget, 2010/06/30}
+\enonce[***I Théorème de \textsc{Cantor}]
+\begin{enumerate}
+\item   Montrer qu'il existe une injection de $E$ dans $\mathcal{P}(E)$.
+\item  En considérant la partie $A=\{x\in E/\;x\notin f(x)\}$, montrer qu'il n'existe pas de bijection $f$ de $E$
+sur $\mathcal{P}(E)$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Il y a l'injection triviale $\begin{array}[t]{cccc}
+f~:&E&\rightarrow&\mathcal{P}(E)\\
+ &x&\mapsto&\{x\}
+\end{array}$.
+ \item  Soit $f$ une application quelconque de $E$ dans $\mathcal{P}(E)$. Montrons que $f$ ne peut être
+surjective.
+Soit $A=\{x\in E/\;x\notin f(x)\}$. Montrons que $A$ n'a pas d'antécédent par $f$. Supposons par
+l'absurde que $A$ a un antécédent $a$. Dans ce cas, où est $a$~?~
+
+$$a\in A\Rightarrow a\notin f(a)=A,$$
+ce qui est absurde et
+
+$$a\notin A\Rightarrow a\in f(a)=A,$$
+ce qui est absurde. Finalement, $A$ n'a pas d'antécédent et $f$ n'est pas surjective. On a montré le théorème de
+\textsc{Cantor}~:~pour tout ensemble $E$ (vide, fini ou infini), il n'existe pas de bijection de $E$ sur
+$\mathcal{P}(E)$.
+\end{enumerate}
+\fincorrection
+\finexercice

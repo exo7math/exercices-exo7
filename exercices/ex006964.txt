@@ -1,0 +1,43 @@
+\exercice{6964, blanc-centi, 2014/04/08}
+\video{f93zdMxazWw}
+\enonce
+
+Existe-t-il une fraction rationnelle $F$ telle que 
+$$\big(F(X)\big)^2=(X^2+1)^3 \ \ ?$$
+
+\finenonce 
+
+\indication
+\'Ecrire $F=\frac{P}{Q}$ sous forme irréductible.
+\finindication
+
+\correction
+\'Ecrivons $F(X)=\frac{P(X)}{Q(X)}$ avec $P$ et $Q$ deux polynômes premiers entre eux, avec $Q$ unitaire.
+La condition $\big(F(X)\big)^2=(X^2+1)^3$ devient $P^2=(X^2+1)^3Q^2$. 
+Ainsi $Q^2$ divise $P^2$. D'où $Q^2=1$, puisque $P^2$ et $Q^2$ sont premiers entre eux. 
+Donc $Q=1$ (ou $-1$). Ainsi $F=P$ est un polynôme et $P^2=(X^2+1)^3$. 
+
+En particulier $P^2$ est de degré $6$, donc $P$ doit être de degré 3. 
+\'Ecrivons $P=aX^3+bX^2+cX+d$,
+on développe l'identité $P^2=(X^2+1)^3$ :
+
+{\small
+$$\begin{array}{c}
+X^6+3X^4+3X^2+1 = \\
+a^2X^6 + 2abX^5 + (2ac+b^2)X^4 + (2ad+2bc)X^3 + (2bd+c^2)X^2 + 2cdX+d^2
+ \end{array}
+$$
+}
+
+On identifie les coefficients :
+pour le coefficient de $X^6$, on a $a=\pm1$,
+puis pour le coefficient de $X^5$, on a $b =0$ ;
+pour le coefficient de $1$, on a $d=\pm 1$, 
+puis pour le coefficient de $X$, on a $c=0$.
+Mais alors le coefficient de $X^3$ doit vérifier $2ad+2bc=0$, ce qui est faux.
+
+Ainsi aucun polynôme ne vérifie l'équation $P^2=(X^2+1)^3$, et 
+par le raisonnement du début, aucune fraction non plus.
+\fincorrection
+
+\finexercice

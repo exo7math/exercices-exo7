@@ -1,0 +1,22 @@
+\exercice{5808, rouget, 2010/10/16}
+\enonce[**]
+Soit $Q$ une forme quadratique sur un $\Rr$-espace vectoriel $E$. On note $\varphi$ sa forme polaire.
+
+On suppose que $\varphi$ est non dégénérée mais non définie. Montrer que $Q$ n'est pas de signe constant.
+\finenonce
+
+\noindication
+
+\correction
+Dans le cas où $E$ est de dimension finie, la signature de $Q$ permet de conclure immédiatement. Supposons donc que $E$ n'est pas de dimension fine.
+
+Par hypothèse, il existe un vecteur non nul $x_0$ tel que $Q(x_0) = 0$. Supposons $Q$ de signe constant. Ouite à remplacer $Q$ par $-Q$, on supposera que $Q$ est positive.
+D?après l'inégalité de \textsc{Cauchy}-\textsc{Schwarz} (valable pour les formes quadratiques positives)
+
+\begin{center}
+$\forall y\in E,\;|\varphi(x_0,y)|\leqslant \sqrt{Q(x_0)}\sqrt{Q(y)}= 0$.
+\end{center}
+
+Donc $\forall y\in E,\;\varphi(x_0,y) = 0$ et $x_0$ est dans le noyau de $\varphi$. Puisque $x_0\neq0$, on en déduit que $\varphi$ est dégénérée. En résumé, si $Q$ est de signe constant, $\varphi$ est dégénérée ou encore si $\varphi$ est non dégénérée, $Q$ n'est pas de signe constant.
+\fincorrection
+\finexercice

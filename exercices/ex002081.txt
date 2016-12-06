@@ -1,0 +1,53 @@
+\exercice{2081, bodin, 2008/02/04}
+\video{UXp2ntGBZNE}
+\enonce
+Soit $f$ la fonction définie sur $[0,4]$ par 
+\begin{equation*}
+  f(x)=
+  \begin{cases}
+    -1 &\text{ si $x=0$}\\
+    1 &\text{ si $0<x<1$}\\
+    3 &\text{ si $x=1$}\\
+    -2 &\text{ si $1<x\leq 2$}\\
+    4 &\text{ si $2<x\leq 4$.}
+  \end{cases}
+\end{equation*}
+\begin{enumerate}
+\item Calculer $\int_0^4f(t) \, dt$.
+\item Soit $x\in [0,4]$, calculer $F(x)=\int_0^x  f(t) \, dt$.
+\item Montrer que $F$ est une fonction continue sur $[0,4]$. La fonction
+$F$ est-elle dérivable sur $[0,4]$ ?
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+  \begin{enumerate}
+  \item On trouve $\int_0^4 f(t) \, dt = +7$. Il faut tout d'abord tracer le graphe de cette fonction. 
+Ensuite la valeur d'une intégrale ne dépend pas de la valeur de la fonction en un point, 
+c'est-à-dire ici les valeurs en $x=0$, $x=1$, $x=2$ n'ont aucune influence sur l'intégrale. 
+Ensuite on revient à la définition de $\int_0^4f(t) \, dt$ : pour la subdivision de $[0,4]$
+ définie par $\{x_0=0,x_1=1,x_2=2,x_3=3, x_4=4\}$, on trouve la valeur de l'intégrale (ici le sup et l'inf 
+sont atteints et égaux pour cette subdivision et toute subdivision plus fine).
+Une autre façon de faire est considérer que $f$ est une fonction en escalier (en <<oubliant>> les accidents en
+$x=0$, $x=1$, $x=2$) dont on sait calculer l'intégrale.
+  \item C'est la même chose pour $\int_0^x  f(t) \, dt$, mais au lieu d'aller jusqu'à $4$ on s'arrête à $x$, on trouve
+\begin{equation*}
+  F(x)=
+  \begin{cases}
+   x &\text{ si $0\leqslant x \leqslant 1$}\\
+   3-2x &\text{ si $1<x\leqslant 2$}\\
+   4x-9 &\text{ si $2 < x \leqslant 4$.}\\
+  \end{cases}
+\end{equation*}
+
+  \item Les seuls points à discuter pour la continuité sont les points $x=1$ et $x=2$,
+mais les limites à droite et à gauche de $F$ sont égales en ces points donc $F$ est continue. 
+Par contre $F$ n'est pas dérivable en $x=1$ (les dérivées à droite et à gauche 
+sont distinctes), $F$ n'est pas non plus dérivable en $x=2$.
+
+  \end{enumerate}
+\fincorrection
+\finexercice
+

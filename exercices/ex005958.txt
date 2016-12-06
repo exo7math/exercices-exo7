@@ -1,0 +1,35 @@
+\exercice{5958, tumpach, 2010/11/11}
+\enonce
+Montrer que la fonction $(x, y) \mapsto  e^{-y} \sin 2xy$ est
+int\'egrable pour la mesure de Lebesgue sur $[0, 1]\times (0,
++\infty)$ ; en d\'eduire la valeur de
+$$
+\int_{0}^{+\infty} \frac{1}{y} (\sin y)^2 e^{-y}\,dy.
+$$
+\finenonce
+
+\noindication
+
+\correction
+Le th\'eor\`eme de Tonelli donne~:
+$$
+\int_{[0, 1]\times (0, +\infty)} |e^{-y} \sin 2xy|\,dx dy \leq
+\int_{0}^{+\infty} e^{-y}\,dy = 1 < +\infty,
+$$
+ce qui prouve que la fonction $(x, y)\mapsto e^{-y} \sin 2xy$ est
+int\'egrable pour la mesure de Lebesgue sur $[0,1]\times
+(0,+\infty)$.
+\\
+Le th\'eor\`eme de Fubini donne alors la valeur $I$ de
+l'int\'egrale de cette fonction~:
+\begin{eqnarray*}
+I  = \int_{0}^{1} \,dx \int_{0}^{+\infty} e^{-y} \sin 2xy\,dy
+\begin{array}{c} \text{(IPP)}\\= \end{array}
+\int_{0}^{1} (2x) (1+4x^{2})^{-1}\,dx = \frac{\log 5}{4}\\
+I  = \int_{0}^{+\infty} e^{-y} \,dy \int_{0}^{1} \sin 2xy \,dx =
+\int_{0}^{+\infty} e^{-y}~ \frac{\sin^2 y}{y}\,dy.
+\end{eqnarray*}
+
+\fincorrection
+
+\finexercice

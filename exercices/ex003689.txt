@@ -1,0 +1,23 @@
+\exercice{3689, quercia, 2010/03/11}
+\enonce[Norme uniforme sur les polynômes]
+
+Soit $P \in \R[X]$ de degré inférieur ou égal à 3 tel que
+$ \int_{t=-1}^1 P^2(t)\,d t = 1$.
+
+Montrer que $\sup\{ |P(x)|\text{ tq } -1\le x \le 1\} \le 2\sqrt2$.
+
+Indications : Pour $a\in\R$ montrer qu'il existe $P_a\in\R_3[X]$ tel que :
+$\forall\ P\in\R_3[X],\ P(a) =  \int_{t=-1}^1 P(t)P_a(t)\,d t$.
+Calculer explicitement $P_a$, et appliquer l'inégalité de Cauchy-Schwarz.
+
+\finenonce
+
+\noindication
+
+\correction
+$P_a(t) = \frac{3}{8}(3 -5t^2 -5a^2 +15a^2t^2)
+                   +\frac{5at}8(15-21t^2 -21a^2 +35a^2t^2)$,\par
+$8\|P_a\|^2 = 9 + 45a^2 - 165a^4 + 175a^6$ est maximal pour $a=\pm1  \Rightarrow  \|P_a\| = 2\sqrt2$.
+\fincorrection
+
+\finexercice

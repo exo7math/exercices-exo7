@@ -1,0 +1,26 @@
+\exercice{3607, quercia, 2010/03/10}
+\enonce[Nombre de noyaux et d'images]
+
+Soit $E$ un $ K$-ev de dimension finie et $u\in \mathcal{L}(E)$.
+Montrer que les ensembles ${\cal K} = \{\mathrm{Ker}(P(u)),\ P\in K[X]\}$ et
+${\cal I} = \{\Im(P(u)),\ P\in K[X]\}$ sont finis et ont même cardinal.
+\finenonce
+
+\noindication
+
+\correction
+Soit $\mu$ le polynôme minimal de~$u$ et ${\cal D}$ l'ensemble des
+diviseurs unitaires de~$\mu$. Pour $P\in K[X]$ et $d=P\wedge\mu$ on
+a facilement $\mathrm{Ker}(P(u)) = \mathrm{Ker}(d(u))$ et $\Im(P(u)) = \Im(d(u))$.
+Ceci montre déjà que $\cal K$ et $\cal I$ sont finis.
+
+De plus, si $d\in{\cal D}$ alors l'annulateur
+minimal de $u_{|\Im(d(u))}$ est $\mu/d$ donc l'application $d \mapsto\Im(d(u))$
+est injective sur $\cal D$ et $\mathrm{Card}\,({\cal I}) = \mathrm{Card}\,({\cal D})$.
+De même, l'annulateur minimal de $u_{|\mathrm{Ker}(d(u))}$ est $d$ car
+$\mathrm{Ker}(d(u))\supset \Im(\frac\mu d(u))$ et $d$ est l'annulateur minimal
+de $u_{|\Im(\frac\mu d(u))}$ donc l'application $d \mapsto\mathrm{Ker}(d(u))$
+est injective sur $\cal D$ et $\mathrm{Card}\,({\cal K}) = \mathrm{Card}\,({\cal D})$.
+\fincorrection
+
+\finexercice

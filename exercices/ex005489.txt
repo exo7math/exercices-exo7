@@ -1,0 +1,215 @@
+\exercice{5489, rouget, 2010/07/10}
+\enonce[**]
+$E=\Rr^3$ euclidien orienté rapporté à une base orthonormée directe $\mathcal{B}$.
+Etudier les endomorphismes de matrice $A$ dans $\mathcal{B}$ suivants~:
+
+$$\begin{array}{lll}
+1)\;A=-\frac{1}{3}
+\left(
+\begin{array}{ccc}
+-2&1&2\\
+2&2&1\\
+1&-2&2
+\end{array}
+\right)
+&2/\;A=\frac{1}{4}
+\left(
+\begin{array}{ccc}
+3&1&\sqrt{6}\\
+1&3&-\sqrt{6}\\
+-\sqrt{6}&\sqrt{6}&2
+\end{array}
+\right)&3/\;A=\frac{1}{9}
+\left(
+\begin{array}{ccc}
+8&1&4\\
+-4&4&7\\
+1&8&-4
+\end{array}
+\right).
+\end{array}
+$$
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  $\|C_1\|=\|C_2\|=\frac{1}{3}\sqrt{4+4+1}=1$ et $C_1|C_2=\frac{1}{9}(-2+4-2)=0$. Enfin, 
+
+$$C_1\wedge C_2=\frac{1}{9}\left(
+\begin{array}{c}
+-2\\
+2\\
+1
+\end{array}
+\right)\wedge\left(
+\begin{array}{c}
+1\\
+2\\
+-2
+\end{array}
+\right)
+=\frac{1}{9}\left(
+\begin{array}{c}
+-6\\
+-3\\
+-6
+\end{array}
+\right)=-\frac{1}{3}\left(
+\begin{array}{c}
+2\\
+1\\
+2
+\end{array}
+\right)=C_3.$$ 
+Donc, $A\in O_3^+(\Rr)$ et $f$ est une rotation (distincte de l'identité).
+\textbf{Axe de $f$.} Soit $X\in\mathcal{M}_{3,1}(\Rr)$.
+
+$$AX=X\Leftrightarrow\left\{
+\begin{array}{l}
+-x-y-2z=0\\
+-2x-5y-z=0\\
+-x+2y-5z=0
+\end{array}
+\right.\Leftrightarrow\left\{
+\begin{array}{l}
+z=-2x-5y\\
+3x+9y=0\\
+9x+27y=0
+\end{array}
+\right.\Leftrightarrow\left\{
+\begin{array}{l}
+x=-3y\\
+z=y
+\end{array}
+\right..$$ 
+L'axe $D$ de $f$ est $\mbox{Vect}(\overrightarrow{u})$ où $\overrightarrow{u}=(-3,1,1)$. $D$ est dorénavant orienté par $\overrightarrow{u}$.
+\textbf{Angle de $f$.} Le vecteur $\overrightarrow{v}=\frac{1}{\sqrt{2}}(0,1,-1)$ est un vecteur unitaire orthogonal à l'axe. Donc,
+
+$$\cos\theta=\overrightarrow{v}.f(\overrightarrow{v})=\frac{1}{\sqrt{2}}(0,1,-1).\frac{1}{\sqrt{2}}\frac{-1}{3}(-1,1,-4)=-\frac{1}{6}\times5
+=-\frac{5}{6},$$
+et donc, $\theta=\pm\Arccos(-\frac{5}{6})\;(2\pi)$. (Si on sait que $\text{Tr}(A)=2\cos\theta+1$, c'est plus court : $2\cos\theta+1=\frac{2}{3}-\frac{2}{3}-\frac{2}{3}$ fournit $\cos\theta=-\frac{5}{6}$).
+Le signe de $\sin\theta$ est le signe de $[\overrightarrow{i},f(\overrightarrow{i}),\overrightarrow{u}]=\left|
+\begin{array}{ccc}
+1&\frac{2}{3}&-3\\
+0&-\frac{2}{3}&1\\
+0&-\frac{1}{3}&1\\
+\end{array}
+\right|=-\frac{1}{3}<0$. Donc, 
+
+\begin{center}
+\shadowbox{
+$f$ est la rotation d'angle $-\Arccos(-\frac{5}{6})$ autour de $u=(-3,1,1)$.
+}
+\end{center}
+ \item  $||C_1||=||C_2||=\frac{1}{4}\sqrt{9+1+6}=1$ et $C_1|C_2=\frac{1}{16}(3+3-6)=0$. Enfin, 
+
+$$C_1\wedge C_2=\frac{1}{16}\left(
+\begin{array}{c}
+3\\
+1\\
+-\sqrt{6}
+\end{array}
+\right)\wedge\left(
+\begin{array}{c}
+1\\
+3\\
+\sqrt{6}
+\end{array}
+\right)
+=\frac{1}{16}\left(
+\begin{array}{c}
+4\sqrt{6}\\
+-4\sqrt{6}\\
+8
+\end{array}
+\right)=\frac{1}{4}\left(
+\begin{array}{c}
+\sqrt{6}\\
+-\sqrt{6}\\
+2
+\end{array}
+\right)
+=C_3.$$
+Donc, $A\in O_3^+(\Rr)$ et $f$ est une rotation.
+\textbf{Axe de $f$.} Soit $X\in\mathcal{M}_{3,1}(\Rr)$.
+
+$$AX=X\Leftrightarrow\left\{
+\begin{array}{l}
+-x+y+\sqrt{6}z=0\\
+x-y-\sqrt{6}z=0\\
+-\sqrt{6}x+\sqrt{6}y-2z=0
+\end{array}
+\right.\Leftrightarrow x-y=\sqrt{6}z=\frac{2}{\sqrt{6}}z\Leftrightarrow x=y\;\mbox{et}\;z=0.$$ 
+L'axe $D$ de $f$ est $\mbox{Vect}(\overrightarrow{u})$ où $\overrightarrow{u}=(1,1,0)$. $D$ est dorénavant orienté par $\overrightarrow{u}$.
+\textbf{Angle de $f$.} $\overrightarrow{k}=[0,0,1)$ est un vecteur unitaire orthogonal à $\overrightarrow{u}$. Par suite,
+
+$$\cos\theta=\overrightarrow{k}.f(\overrightarrow{k})=(0,0,1).\frac{1}{4}(\sqrt{6},-\sqrt{6},2)=\frac{1}{2},$$
+et donc $\cos\theta=\pm\frac{\pi}{3}\;(2\pi)$. Le signe de $\sin\theta$ est le signe de $\left[\overrightarrow{i},f(\overrightarrow{i}),\overrightarrow{u}\right]
+=\left|
+\begin{array}{ccc}
+1&3/4&1\\
+0&1/4&1\\
+0&-\sqrt{6}/4&0
+\end{array}
+\right|=\frac{1}{\sqrt{6}}>0$. Donc, 
+
+\begin{center}
+\shadowbox{
+$f$ est la rotation d'angle $\frac{\pi}{3}$ autour de $\overrightarrow{u}=(1,1,0)$.
+}
+\end{center}
+ \item  $||C_1||=||C_2||=\frac{1}{9}\sqrt{64+16+1}=1$ et $C_1|C_2=\frac{1}{81}(8-16+8)=0$. Enfin,
+
+$$C_1\wedge C_2=\frac{1}{81}\left(
+\begin{array}{c}
+8\\
+-4\\
+1
+\end{array}
+\right)\wedge\left(
+\begin{array}{c}
+1\\
+4\\
+8
+\end{array}
+\right)=\frac{1}{81}\left(
+\begin{array}{c}
+-36\\
+-63\\
+36
+\end{array}
+\right)=-\frac{1}{9}\left(
+\begin{array}{c}
+4\\
+7\\
+-4
+\end{array}
+\right)=-C_3.$$
+Donc, $A\in O_3^-(\Rr)$. $A$ n'est pas symétrique, et donc $f$ n'est pas une réflexion. $f$ est donc la composée commutative $s\circ r$ d'une rotation d'angle $\theta$ autour d'un certain vecteur unitaire $\overrightarrow{u}$ et de la réflexion de plan $\overrightarrow{u}^\bot$ où $\overrightarrow{u}$ et $\theta$ sont à déterminer.
+\textbf{Axe de $r$.} L'axe de $r$ est $Ker(f+Id_E)$ (car $f\neq-Id_E$).
+
+$$AX=-X\Leftrightarrow\left\{
+\begin{array}{l}
+17x+y+4z=0\\
+-4x+13y+7z=0\\
+x+8y+5z=0
+\end{array}
+\right.\Leftrightarrow\left\{
+\begin{array}{l}
+y=-17x-4z\\
+-225x-45z=0\\
+-135x-27z=0
+\end{array}
+\right.\Leftrightarrow\left\{
+\begin{array}{l}
+z=-5x\\
+y=3x
+\end{array}\right.$$
+$\mbox{Ker}(f+Id_E)=\mbox{Vect}(\overrightarrow{u})=D$ où $u=(1,3,-5)$. $D$ est dorénavant orienté par $\overrightarrow{u}$.
+$s$ est la réflexion par rapport au plan $P=u^\bot$ dont une équation est $x+3y-5z=0$.
+On écrit alors la matrice $S$ de $s$ dans la base de départ. On calcule $S^{-1}A=SA$ qui est la matrice de $r$ et on termine comme en 1) et 2).
+\end{enumerate}
+\fincorrection
+\finexercice

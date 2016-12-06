@@ -1,0 +1,42 @@
+\exercice{6762, queffelec, 2011/10/16}
+\enonce 
+On se propose de démontrer que pour tout $z$ de $\C$,
+$$\prod_{n\ge 1}\left( 1-{z^2\over n^2}\right)={\sin{(\pi z)}\over
+\pi z}$$
+\begin{enumerate}  
+\item On pose
+$$F(z) ={1\over z}+\sum_{n\in {\Zz}, n\ne 0}\left({1\over z-n}+{1\over
+n}\right)$$
+Montrer que $F$ est une fonction méromorphe sur $\C$.
+
+En utilisant 
+$$\sum_{n\in{\Zz}}{1\over (z-n)^2}=\left({\pi\over \sin{(\pi
+z)}}\right)^2$$
+ montrer que $\displaystyle F(z)-{\pi\over \tan{(\pi z)}}$ est constante
+sur $\C\setminus {\Zz}$, puis calculer cette constante par un argument
+de parité. En déduire que
+$${\pi\over \tan{(\pi z)}}={1\over z}+\sum_{n\ge 1}{2z\over z^2-n^2}$$
+
+\item Pour $n\ge 1$, soit $\displaystyle f_n(z)=1-{z^2\over n^2}$. Montrer que
+$\prod_{n\ge 1}f_n(z)$ définit une fonction entière $f$.
+
+Montrer que
+$$\sum_{n\ge 1}{f_n'(z)\over f_n(z)}={g'(z)\over g(z)}$$
+avec $\displaystyle g(z)={\sin{(\pi z)}\over \pi z}$. En déduire le résultat voulu.
+
+
+\item  Déduire de la décomposition de $\displaystyle {\sin{(\pi z)}\over
+\pi z}$ en produit que
+\begin{eqnarray*}
+{\sh z\over z}&=&\prod_{n\ge 1}\left( 1+{z^2\over n^2\pi^2}\right)\\
+\ch z&=&\prod_{n\ge 1}\left( 1+{4z^2\over (2n-1)^2\pi^2}\right)\\
+\cos z&=&\prod_{n\ge 1}\left( 1-{4z^2\over (2n-1)^2\pi^2}\right)\\
+\end{eqnarray*}
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\nocorrection
+
+\finexercice       

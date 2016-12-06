@@ -1,0 +1,100 @@
+\exercice{2590, delaunay, 2009/05/19}
+\enonce
+ La suite de Fibonacci $0,1,1,2,3,5,8,13,...$ est la suite $(F_n)_{n\geq 0}$ d\'efinie par la relation de r\'ecurrence $F_{n+1}=F_{n}+F_{n-1}$ pour $n\geq1$, avec $F_0=0$ et $F_1=1$.
+\begin{enumerate}
+ \item D\'eterminer une matrice $A\in M_2(\R)$ telle que, pour tout $n\geq1$,
+$$\begin{pmatrix}F_{n+1} \\  F_n\end{pmatrix}=A^n\begin{pmatrix}F_{1} \\  F_0\end{pmatrix}.$$
+
+ \item Montrer que $A$ admet deux valeurs propres r\'eelles distinctes que l'on note $\lambda_1$ et $\lambda_2$ avec $\lambda_1<\lambda_2$.
+ 
+ \item Trouver des vecteurs propres $\varepsilon_1$ et $\varepsilon_2$ associ\'es aux valeurs propres $\lambda_1$ et $\lambda_2$, sous la forme 
+$\displaystyle\begin{pmatrix}\alpha \\  1\end{pmatrix}$, avec $\alpha\in\R$.
+
+ \item D\'eterminer les coordonn\'ees du vecteur $\displaystyle\begin{pmatrix}F_1 \\  F_0\end{pmatrix}$ dans la base 
+$(\varepsilon_1,\varepsilon_2)$, on les note $x_1$ et $x_2$.
+
+ \item Montrer que $\displaystyle\begin{pmatrix}F_{n+1} \\  F_n\end{pmatrix}
+=\lambda_1^nx_1\varepsilon_1+\lambda_2^nx_2\varepsilon_2$. En d\'eduire que 
+$$F_n={\frac{\lambda_1^n}{\lambda_1-\lambda_2}}-{\frac{\lambda_2^n}{\lambda_1-\lambda_2}}\ .$$
+
+ \item Donner un \'equivalent de $F_n$ lorsque $n$ tend vers $+\infty$.
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+ {\it La suite de Fibonacci $0,1,1,2,3,5,8,13,...$ est la suite $(F_n)_{n\geq 0}$ d\'efinie par la relation de r\'ecurrence $F_{n+1}=F_{n}+F_{n-1}$ pour $n\geq1$, avec $F_0=0$ et $F_1=1$.}
+\begin{enumerate}
+ \item {\it D\'eterminons une matrice $A\in M_2(\R)$ telle que, pour tout $n\geq1$,
+$$\begin{pmatrix}F_{n+1} \\  F_n\end{pmatrix}=A^n\begin{pmatrix}F_{1} \\  F_0\end{pmatrix}.$$}
+
+On a $\displaystyle \begin{pmatrix}F_{n+1} \\  F_n\end{pmatrix}=\begin{pmatrix}F_{n}+F_{n-1} \\  F_n\end{pmatrix}= 
+\begin{pmatrix}1&1 \\  1&0\end{pmatrix}\begin{pmatrix}F_{n} \\  F_{n-1}\end{pmatrix}$.
+
+Notons, pour $n\geq1$, $X_n$ le vecteur $\displaystyle\begin{pmatrix}F_{n} \\  F_{n-1}\end{pmatrix}$ et $A$ la matrice $\displaystyle\begin{pmatrix}1&1 \\  1&0\end{pmatrix}$. Nous allons d\'emontrer, par r\'ecurrence sur $n$ que pour tout $n\geq1$, on a $X_n=A^nX_0$, c'est clairement vrai pour $n=1$, supposons que ce soit vrai pour un $n$ arbitrairement fix\'e, on a alors
+$$X_{n+1}=AX_n=AA^nX_0=A^{n+1}X_0,$$
+d'o\`u le r\'esultat.
+
+ \item {\it Montrons que $A$ admet deux valeurs propres r\'eelles distinctes que l'on note $\lambda_1$ et $\lambda_2$ avec $\lambda_1<\lambda_2$.}
+
+On a
+$$P_A(X)=\begin{vmatrix}1-X&1 \\ 1&-X\end{vmatrix}=X^2-X-1.$$
+Le discriminant $\Delta=5>0$, le polyn\^ome caract\'eristique admet deux racines distinctes
+$$\lambda_1={\frac{1-\sqrt{5}}{2}}<\lambda_2={\frac{1+\sqrt{5}}{2}}.$$
+
+ \item {\it Trouvons des vecteurs propres $\varepsilon_1$ et $\varepsilon_2$ associ\'es aux valeurs propres $\lambda_1$ et $\lambda_2$, sous la forme 
+$\displaystyle\begin{pmatrix}\alpha \\  1\end{pmatrix}$, avec $\alpha\in\R$.}
+
+Posons $\varepsilon_1=\begin{pmatrix}\alpha \\  1\end{pmatrix}$ et calculons $\alpha$ tel que
+$A\varepsilon_1=\lambda_1\varepsilon_1$, c'est-\`a-dire
+$$\begin{pmatrix}1&1 \\  1&0\end{pmatrix}\begin{pmatrix}\alpha \\  1\end{pmatrix}=\lambda_1\begin{pmatrix}\alpha \\  1\end{pmatrix}$$
+ce qui \'equivaut \`a
+$$\left\{\begin{align*}\alpha+1&=\lambda_1\alpha \\ \alpha&=\lambda_1\end{align*}\right.\iff\alpha=\lambda_1$$
+car $\lambda_1^2-\lambda_1-1=0$, on a donc 
+$\displaystyle \varepsilon_1=\begin{pmatrix}\lambda_1 \\ 1\end{pmatrix}$ et, de m\^eme,
+$\displaystyle \varepsilon_2=\begin{pmatrix}\lambda_2 \\ 1\end{pmatrix}$
+
+ \item{\it D\'eterminons les coordonn\'ees du vecteur $\displaystyle\begin{pmatrix}F_1 \\  F_0\end{pmatrix}$ dans la base 
+$(\varepsilon_1,\varepsilon_2)$, on les note $x_1$ et $x_2$.}
+
+On cherche $x_1$ et $x_2$ tels que 
+$$\begin{pmatrix}F_1 \\  F_0\end{pmatrix}=\begin{pmatrix}1 \\  0\end{pmatrix}
+=x_1\varepsilon_1+x_2\varepsilon_2=x_1\begin{pmatrix}\lambda_1 \\ 1\end{pmatrix}+
+x_2\begin{pmatrix}\lambda_2 \\ 1\end{pmatrix},$$
+$x_1$ et $x_2$ sont donc solutions du syst\`eme
+$$\left\{\begin{align*}x_1\lambda_1+x_2\lambda_2&=1 \\  x_1+x_2=0\end{align*}\right.\iff
+\left\{\begin{align*}x_1(\lambda_1-\lambda_2)&=1 \\  x_2=-x_1\end{align*}\right.\iff
+\left\{\begin{align*}x_1&={\frac{1}{\lambda_1-\lambda_2}}={\frac{-1}{\sqrt{5}}} \\  
+x_2&=-{\frac{1}{\lambda_1-\lambda_2}}={\frac{1}{\sqrt{5}}}\end{align*}\right.$$
+
+ \item {\it Montrons que $\displaystyle\begin{pmatrix}F_{n+1} \\  F_n\end{pmatrix}
+=\lambda_1^nx_1\varepsilon_1+\lambda_2^nx_2\varepsilon_2$.}
+
+Les vecteurs $\varepsilon_1$ et $\varepsilon_2$ \'etant vecteurs propres de $A$, on a 
+$A\varepsilon_1=\lambda_1\varepsilon_1$ et $A\varepsilon_2=\lambda_2\varepsilon_2$, ainsi par r\'ecurrence, on a, pour tout $n\geq1$, 
+$A^n\varepsilon_1=\lambda_1^n\varepsilon_1$ et $A^n\varepsilon_2=\lambda_2^n \varepsilon_2$. Ainsi, 
+$$\begin{pmatrix}F_{n+1} \\  F_n\end{pmatrix}
+=A^n\begin{pmatrix}F_{1} \\  F_0\end{pmatrix}=A^n(x_1\varepsilon_1+x_2\varepsilon_2)
+=x_1A^n\varepsilon_1+x_2A^n\varepsilon_2=\lambda_1^nx_1\varepsilon_1+\lambda_2^nx_2\varepsilon_2.$$
+
+{\it On en d\'eduit que 
+$$F_n={\frac{\lambda_1^n}{\lambda_1-\lambda_2}}-{\frac{\lambda_2^n}{\lambda_1-\lambda_2}}\ .$$}
+
+On a montr\'e que $\displaystyle \varepsilon_1=\begin{pmatrix}\lambda_1 \\ 1\end{pmatrix}$ et $\displaystyle \varepsilon_2=\begin{pmatrix}\lambda_2 \\ 1\end{pmatrix}$, on a donc, 
+$$\begin{pmatrix}F_{n+1} \\  F_n\end{pmatrix}
+=\lambda_1^n\left({\frac{1}{\lambda_1-\lambda_2}}\right)\begin{pmatrix}\lambda_1 \\ 1\end{pmatrix}+
+\lambda_2^n\left({\frac{-1}{\lambda_1-\lambda_2}}\right)\begin{pmatrix}\lambda_2 \\ 1\end{pmatrix},$$
+d'o\`u le r\'esultat
+$$F_n={\frac{\lambda_1^n}{\lambda_1-\lambda_2}}-{\frac{\lambda_2^n}{\lambda_1-\lambda_2}}\ .$$
+
+ \item {\it Donnons un \'equivalent de $F_n$ lorsque $n$ tend vers $+\infty$.}
+
+On remarque que $|\lambda_1|<1$ et $|\lambda_2|>1$ ainsi, lorsque $n$ tend vers l'infini, $\lambda_1^n$ tend vers $0$ et $\lambda_2^n$ tend vers $+\infty$. On a donc
+$$\lim_{n\rightarrow+\infty} (\lambda_2-\lambda_1){\frac{F_n}{\lambda_2^n}}=
+\lim_{n\rightarrow+\infty}-{\frac{\lambda_1^n}{\lambda_2^n}}+1=1.$$
+Ce qui prouve que $\displaystyle{\frac{\lambda_2^n}{\lambda_2-\lambda_1}}$ est un \'equivalent de $F_n$ lorsque $n$ tend vers $+\infty$.
+
+\end{enumerate}
+\fincorrection
+\finexercice

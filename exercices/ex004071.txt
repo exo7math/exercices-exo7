@@ -1,0 +1,34 @@
+\exercice{4071, quercia, 2010/03/11}
+\enonce[$x^2f''(x) + xf'(x) = \lambda f(x)$]
+
+Déterminer les éléments propres des endomorphismes suivants :
+\begin{enumerate}
+  \item $E = \R[X]$
+   $\Phi(P)(X) = X^2P''(X) + XP'(X)$.
+   
+
+  \item $E = \mathcal{C}^\infty(]0,+\infty[)$
+   $\Phi(f)(x) = x^2f''(x) + xf'(x)$.
+   
+
+  \item $E = \mathcal{C}^\infty(]0,1[)$
+  $\Phi(f)(x) = \sqrt{\frac {1-x}x}f'(x)$.
+  
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $\lambda = n^2$ : $P(X) = aX^n$.
+  \item $\lambda > 0$ : $f(x) = \alpha x^{\sqrt\lambda} + \beta x^{-\sqrt\lambda}$.\par
+            $\lambda = 0$ : $f(x) = \alpha + \beta\ln x$.\par
+            $\lambda < 0$ : $f(x) = \alpha\cos\bigl(\sqrt{-\lambda}\ln x\bigr)
+                                  + \beta \sin\bigl(\sqrt{-\lambda}\ln x\bigr)$.
+  \item $\lambda \in \R$ : $f(x) = \alpha\exp\lambda\bigl( \arcsin\sqrt x  - \sqrt{x(1-x)} \bigr)$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

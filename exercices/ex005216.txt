@@ -1,0 +1,40 @@
+\exercice{5216, rouget, 2010/06/30}
+\enonce[**I Inégalités de \textsc{Cauchy}-\textsc{Schwarz} et de \textsc{Minkowski}]
+Soient $a_1$,..., $a_n$, $b_1$,..., $b_n$ des nombres réels.
+\begin{enumerate}
+\item  En considérant la fonction $f~:~x\mapsto\sum_{k=1}^{n}(a_k+xb_k)^2$, montrer que
+$|\sum_{k=1}^{n}a_kb_k|\leq\sqrt{\sum_{k=1}^{n}a_k^2}\sqrt{\sum_{k=1}^{n}b_k^2}$ (inégalité de \textsc{Cauchy}-\textsc{Schwarz}).
+\item  En déduire l'inégalité de \textsc{Minkowski}~:~$\sqrt{\sum_{k=1}^{n}(a_k+b_k)^2}\leq\sqrt{\sum_{k=1}^{n}a_k^2}+\sqrt{\sum_{k=1}^{n}b_k^2}$.
+
+(l'inégalité de \textsc{Cauchy}-\textsc{Schwarz} affirme que le produit scalaire de deux vecteurs est inférieur ou égal au produit de leurs normes et l'inégalité de \textsc{Minkowski} est l'inégalité triangulaire).
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Si les $b_k$ sont tous nuls, l'inégalité est claire.
+Sinon, pour $x$ réel, posons
+
+\begin{center}
+$f(x)=\sum_{k=1}^{n}(a_k+xb_k)^2=\left(\sum_{k=1}^{n}b_k^2\right)x^2+2\left(\sum_{k=1}^{n}a_kb_k\right)x+\sum_{k=1}^{n}a_k^2$.
+\end{center}
+$f$ est un trinôme du second degré de signe constant sur $\Rr$. Son discriminant réduit est donc négatif ou nul ce qui fournit~:
+
+$$0\geq\Delta'=\left(\sum_{k=1}^{n}a_kb_k\right)^2-\left(\sum_{k=1}^{n}a_k^2\right)\left(\sum_{k=1}^{n}b_k^2\right),$$ 
+ou encore $\left|\sum_{k=1}^{n}a_kb_k\right|\leq\sqrt{\sum_{k=1}^{n}a_k^2}\sqrt{\sum_{k=1}^{n}b_k^2}$, qui est l'inégalité de \textsc{Cauchy}-\textsc{Schwarz}.
+ \item 
+
+\begin{align*}
+\sum_{k=1}^{n}(a_k+b_k)^2&=\sum_{k=1}^{n}a_k^2+2\sum_{k=1}^{n}a_kb_k+\sum_{k=1}^{n}b_k^2
+\leq\sum_{k=1}^{n}a_k^2+2\left|\sum_{k=1}^{n}a_kb_k\right|+\sum_{k=1}^{n}b_k^2\\
+ &\leq\sum_{k=1}^{n}a_k^2+2\sqrt{\sum_{k=1}^{n}a_k^2}\sqrt{\sum_{k=1}^{n}b_k^2}+\sum_{k=1}^{n}b_k^2
+ \quad(\mbox{\textsc{Cauchy}-\textsc{Schwarz}})\\
+ &=\left(\sqrt{\sum_{k=1}^{n}a_k^2}+\sqrt{\sum_{k=1}^{n}b_k^2}\right)^2
+\end{align*}
+et donc, $\sqrt{\sum_{k=1}^{n}(a_k+b_k)^2}\leq\sqrt{\sum_{k=1}^{n}a_k^2}+\sqrt{\sum_{k=1}^{n}b_k^2}$, qui est l'inégalité de \textsc{Minkowski}.
+
+\end{enumerate}
+\fincorrection
+\finexercice

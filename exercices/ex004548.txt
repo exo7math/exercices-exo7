@@ -1,0 +1,18 @@
+\exercice{4548, quercia, 2010/03/14}
+\enonce[Série lacunaire]
+Soit $(p_n)$ une suite d'entiers naturels, strictement croissante
+et telle que $p_n/n\to\infty$  lorsque $n\to\infty$. On pose pour $x\in{]-1,1[}$~:
+$f(x)=\sum_{n=0}^\infty x^{p_n}$. Montrer que $(1-x)f(x)\to 0$ lorsque $x\to1^-$.
+
+\finenonce
+
+\noindication
+
+\correction
+Pour $k$ fixé et $x\in{[0,1[}$ on a
+$0\le f(x) \le\text{polynôme}(x) + \sum_{n=0}^\infty x^k = \text{polynôme}(x) + \frac1{1-x^k}$
+et $\frac1{1-x^k}\sim\frac1{k(1-x)}$ au voisinage de~$1$ donc
+$0\le f(x) \le \frac2{k(1-x)}$ pour $x$ suffisament proche de~$1$.
+\fincorrection
+
+\finexercice

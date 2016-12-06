@@ -1,0 +1,56 @@
+\exercice{5624, rouget, 2010/10/16}
+\enonce[***]
+Soit $M\in\mathcal{M}_3(\Rr)$. Montrer que les deux propriétés suivantes sont équivalentes :
+
+\begin{center}
+(1) $M^2 = 0$ et (2) $\text{rg}M\leqslant 1$ et $\text{tr}M = 0$.
+\end{center}
+\finenonce
+
+\noindication
+
+\correction
+(1) $\Rightarrow$ (2).
+
+$M^2 = 0\Rightarrow\text{Im}M\subset\text{Ker}M\Rightarrow\text{rg}M\leqslant\text{dim}(\text{Ker}M)=3 -\text{rg}M$ et donc $\text{rg}M\leqslant1$.
+
+Si $\text{rg}M=0$ alors $\text{Tr}M = 0$. On suppose maintenant que $\text{rg}M=1$ et donc $\text{dim}(\text{Ker}M)= 2$.
+
+Soit $e_1$ un vecteur non nul de $\text{Im}M$ alors il existe un vecteur $e_3$ (non nul) tel que $Me_3 = e_1$.
+
+On complète la famille libre $(e_1)$ de $\text{Im}M\subset\text{Ker}M$ en $(e_1,e_2)$ base de $\text{Ker}M$. La famille $(e_1,e_2,e_3)$ est une base de $\mathcal{M}_{3,1}(\Rr)$ car
+
+\begin{center}
+$ae_1+be_2+ce_3 = 0\Rightarrow M(ae_1+be_2+ce_3) = 0\Rightarrow ce_1 = 0\Rightarrow c = 0$,
+\end{center}
+
+puis $a = b = 0$ car la famille $(e_1,e_2)$ est libre.
+
+$M$ est donc semblable à la matrice $\left(
+\begin{array}{ccc}
+0&0&1\\
+0&0&0\\
+0&0&0
+\end{array}
+\right)$ et en particulier $\text{Tr}M = 0$.
+
+(2) $\Rightarrow$ (1).
+
+ 
+Si $\text{rg}M = 0$, $M^2 = 0$.
+
+Si $\text{rg}M = 1$, on peut se rappeler de l'écriture générale d'une matrice de rang 1 : il existe trois réels $u_1$, $u_2$ et $u_3$ non tous nuls et trois réels $v_1$, $v_2$ et $v_3$ non tous nuls tels que $M=\left(
+\begin{array}{ccc}
+u_1v_1&u_1v_2&u_1v_3\\
+u_2v_1&u_2v_2&u_2v_3\\
+u_3v_1&u_3v_2&u_3v_3
+\end{array}
+\right)$ ou encore il existe deux vecteurs colonnes, tous deux non nuls $U$ et $V$ tels que $M=U{^t}V$. L'égalité $\text{Tr}M =0$ fournit $u_1v_1+u_2v_2+u_3v_3= 0$ ou encore ${^t}UV=0$. Mais alors
+
+\begin{center}
+$M^2=U{^t}VU{^t}V=U{^t}({^t}UV){^t}V=0$
+\end{center}
+
+Cet exercice admet des solutions bien plus brèves avec des connaissances sur la réduction .
+\fincorrection
+\finexercice

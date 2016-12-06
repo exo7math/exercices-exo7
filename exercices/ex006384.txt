@@ -1,0 +1,55 @@
+\exercice{6384, potyag, 2011/10/16}
+\enonce
+ Soient $G$ un groupe et $S$ un système de
+générateurs de $G$ contenant avec chaque élément $s$ son
+ inverse $s^{-1}$. Rappelons la construction du graphe de
+Cayley $C(G,S)$. L'ensemble $V$ des sommets de $C(G,S)$
+est en bijection  avec l'ensemble des éléments de $G$.
+Deux sommets $g_1$ et $g_2$ sont joints par une arête si
+$g^{-1}_1\cdot g_2 = s\in S$.
+%
+%(je ne crois pas  que ce soit un bonne idée de "noter" $s$,
+%car cela donne plusieurs arêtes  avec le même nom)
+%
+%
+La longueur de cette arête est déclarée par définition égale à $1$. Un
+chemin $l\subset C(G,S)$ entre deux sommets $g$ et $h$ est une
+succession finie d'arêtes $\{e_1,...,e_n\}$ joignant $g$ et $h$.
+La longueur $|l|$ de $l$ vaut par définition $n$  : le nombre des
+arêtes qui le constituent.
+
+\begin{enumerate}
+  \item  Montrer que la fonction $d:G \times G\mapsto \N$
+  donnée par $$\displaystyle d(g,h)={\rm inf}\{{\rm longueurs\
+  des\ chemins\ joignant\ } g {\rm\ et\ } h\}$$
+  est une distance et qu'il existe un chemin $l\subset C(G,S)$ qui la
+  réalise  c.-à.-d. $|l|=d(g,h)$.
+
+  \item Pour chaque $g\in G$ posons $|g|=d(0,g)$. Montrer que
+  $\displaystyle  |g|={\rm inf}\{k\ |\  g=s_{i_1}\cdot ... \cdot
+  s_{i_k},\ s_{i_j}\in S\}$.
+
+  \item Montrer que $G$ agit isométriquement sur les sommets de $C(G,S)$,
+  c.-à.-d. $\ \forall g\in G\ d(g\gamma_1, g\gamma_2)=d(\gamma_1,\gamma_2)\
+  {\rm o\grave u}\ \gamma_i\in V\ (i=1,2).$ En déduire que
+  $d(f,h)=|f^{-1}\cdot h|\ (f,h\in V)$.
+
+
+
+  \item   Soit $F_2=<a,b>$ un groupe libre sur les générateurs
+  $a$ et $b$ (voir l'exercice \ref{pot:exo9}). Donner un fragment
+  (initial) de son graphe de Cayley $C(F_2, \{a,b\})$.
+
+
+  \item Démontrer que
+  le graphe de Cayley d'un groupe libre est toujours un arbre (un
+  graphe sans lacet s'appelle arbre).
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\nocorrection
+
+\finexercice

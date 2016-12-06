@@ -1,0 +1,25 @@
+\exercice{5390, rouget, 2010/07/06}
+\enonce[**]
+Trouver $f$  bijective de $[0,1]$ sur lui-même et discontinue en chacun de ses points.
+\finenonce
+
+\noindication
+
+\correction
+Soit $f(x)=\left\{
+\begin{array}{l}
+x\;\mbox{si}\;x\in(\Qq\cap[0,1])\setminus\{0,\frac{1}{2}\}\\
+1-x\;\mbox{si}\;x\in(\Rr\setminus\Qq)\cap[0,1]\\
+0\;\mbox{si}\;x=\frac{1}{2}\;\mbox{et}\;\frac{1}{2}\;\mbox{si}\;x=0
+\end{array}
+\right.$. $f$ est bien une application définie sur $[0,1]$ à valeurs dans $[0,1]$. De plus, si $x\in(\Qq\cap[0,1])\setminus\{0,\frac{1}{2}\}$, alors $f(f(x))=f(x)=x$.
+
+Si $x\in(\Rr\setminus\Qq)\cap[0,1]$, alors $1-x\in(\Rr\setminus\Qq)\cap[0,1]$ et donc $f(f(x))=f(1-x)=1-(1-x)=x$.
+
+Enfin, $f(f(0))=f(\frac{1}{2})=0$ et $f(f(\frac{1}{2}))=f(0)=\frac{1}{2}$.
+
+Finalement, $f\circ f=Id_{[0,1]}$ et $f$, étant une involution de $[0,1]$, est une permutation de $[0,1]$.
+
+Soit $a$ un réel de $[0,1]$. On note que $\lim_{x\rightarrow a,\;x\in(\Rr\setminus\Qq)}f(x)=1-a$ et $\lim_{x\rightarrow a,\;x\in\Qq}f(x)=a$. Donc, si $f$ a une limite en $a$, nécessairement $1-a=a$ et donc $a=\frac{1}{2}$. Mais, si $a=\frac{1}{2}$, $\lim_{x\rightarrow a,\;x\in\Qq,\;x\neq a}f(x)=a=\frac{1}{2}\neq0=f(\frac{1}{2})$ et donc $f$ est discontinue en tout point de $[0,1]$.
+\fincorrection
+\finexercice

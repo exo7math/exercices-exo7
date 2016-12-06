@@ -1,0 +1,75 @@
+\exercice{96, bodin, 1998/09/01}
+\video{JdTvqdw6lRE}
+\enonce
+Soit $\Zz[i] = \{ a+ib \  ; \ a,b \in \Zz \}$.
+\begin{enumerate}
+        \item Montrer que si $\alpha$ et $\beta$ sont dans $\Zz[i]$ alors
+        $\alpha + \beta$ et $\alpha\beta$ le sont aussi.
+
+        \item Trouver les \'elements inversibles de $\Zz[i]$, c'est-\`a-dire les
+        \'el\'ements $\alpha \in \Zz[i]$ tels qu'il existe $\beta \in \Zz[i]$ avec
+        $\alpha\beta = 1$.
+
+        \item V\'erifier que quel que soit $\omega \in \Cc$ il existe $\alpha \in \Zz[i]$
+        tel que $|\omega - \alpha| < 1$.
+
+        \item Montrer qu'il existe sur $\Zz[i]$ une division euclidienne,
+ c'est-\`a-dire que,
+        quels que soient $\alpha$ et $\beta$ dans $\Zz[i]$ il existe $q$ et $r$ dans
+        $\Zz[i]$ v\'erifiant :
+        $$ \alpha = \beta q + r \qquad \text{avec} \qquad |r| < |\beta|.$$
+        (Indication : on pourra consid\'erer le complexe $\frac{\alpha}{\beta}$)
+
+\end{enumerate}
+
+\finenonce 
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item Soit $\alpha,\beta\in\Z[i]$. Notons $\alpha=a+ib$ et $\beta=c+id$ avec $a,b,c,d\in\Z$. Alors
+$\alpha+\beta=(a+c)+i(b+d)$ et $a+c\in\Z$, $b+d\in\Z$ donc
+$\alpha+\beta\in\Z[i]$. De m\^eme, $\alpha\beta=(ac-bd)+i(ad+bc)$ et
+$ac-bd\in\Z$, $ad+bc\in\Z$ donc $\alpha\beta\in\Z[i]$.
+
+\item
+Soit $\alpha\in\Z[i]$ inversible. Il existe donc $\beta\in\Z[i]$
+tel que $\alpha\beta=1$. Ainsi, $\alpha\neq0$ et
+$\frac{1}{\alpha}\in\Z[i]$. Remarquons que tout \'el\'ement non
+nul de $\Z[i]$ est de module sup\'erieur ou \'egal \`a 1: en effet
+$\forall z\in\C, |z|\geq \sup(|\mathop{\mathrm{Re}}\nolimits(z)|,|\mathop{\mathrm{Im}}\nolimits(z)|)$ et si
+$z\in\Z[i]\setminus\{0\}$, $\sup(|\mathop{\mathrm{Re}}\nolimits(z)|,|\mathop{\mathrm{Im}}\nolimits(z)|)\geq 1$. Si
+$|\alpha|\neq 1$ alors $|\alpha|>1$ et $|1/\alpha|<1$. On en
+d\'eduit $1/\alpha=0$ ce qui est impossible. Ainsi $|\alpha|=1$,
+ce qui implique $\alpha\in\{1,-1,i,-i\}$.
+
+R\'eciproquement,
+$1^{-1}=1\in\Z[i],(-1)^{-1}=-1\in\Z[i],i^{-1}=-i\in\Z[i],(-i)^{-1}=i\in\Z[i]$.
+Les \'el\'ements inversibles de $\Z[i]$ sont donc $1,-1,i$ et
+$-i$.
+
+\item
+Soit $\omega\in\C$. Notons $\omega=x+iy$ avec $x,y\in\R$. soit
+$E(x)$ la partie enti\`ere de $x$, i.e. le plus grand entier
+inf\'erieur ou \'egal \`a $x$: $E(x)\leq x<E(x)+1$. Si $x\leq E(x)+1/2$, 
+notons $n_{x}=E(x)$, et si $x> E(x)+1/2$, notons
+$n_{x}=E(x)+1$. $n_{x}$ est le, ou l'un des s'il y en a deux,
+nombre entier le plus proche de $x$: $|x-n_{x}|\leq1/2$. Notons
+$n_{y}$ l'entier associ\'e de la m\^eme mani\`ere \`a $y$. Soit
+alors $\alpha=n_{x}+i \cdot n_{y}$. $z\in\Z[i]$ et
+$|\omega-\alpha|^2=(x-n_{x})^2+(y-n_{y})^2\leq 1/4+1/4=1/2$. Donc
+$|\omega-\alpha|<1$.
+
+% $$
+% \includegraphics[64mm,44mm]{gauss.wmf}
+% $$
+\item
+Soit $\alpha,\beta\in\Z[i]$, avec $\beta\neq0$. Soit alors
+$q\in\Z[i]$ tel que $|\frac{\alpha}{\beta}-q|<1$. Soit
+$r=\alpha-\beta q$. Comme $\alpha\in\Z[i]$ et $\beta q\in\Z[i]$,
+$r\in\Z[i]$. De plus
+$|\frac{r}{\beta}|=|\frac{\alpha}{\beta}-q|<1$ donc $|r|<|\beta|$.
+\end{enumerate}
+\fincorrection
+\finexercice

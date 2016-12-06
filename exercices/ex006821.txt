@@ -1,0 +1,47 @@
+\exercice{6821, gijs, 2011/10/16}
+\enonce
+Soit $f:O \subset \Rr^3 \to \Rr$ une fonction de classe
+$C^1$ sur l'ouvert $O$ et $(x_o,y_o,z_o) \in O$ tel que
+$f(x_o,y_o,z_o) = 0$. 
+\begin{enumerate}
+\item 
+Donner une condition suffisante pour
+qu'on puisse résoudre~: et $x$ en fonction de $(y,z)$,
+et $y$ en fonction de $(x,z)$, et $z$ en fonction de
+$(x,y)$. Plus précisément, donner une condition
+suffisante pour qu'il existe $U$ un voisinage de $x_o$,
+$V$ un voisinage de $y_o$, $W$ un voisinage de $z_o$, $U
+\times V \times W \subset O$, et $\phi: V \times W \to
+U$, $\chi : U \times W \to V$ et $\psi : U \times V \to W$
+des fonctions de classe $C^1$ telles que $\forall (x,y,z)
+\in U \times V \times W$~:
+$$
+f(x,y,z) = 0 \Longleftrightarrow x=\phi(y,z) 
+\Longleftrightarrow y = \chi(x,z)
+\Longleftrightarrow z = \psi(x,y)
+\ .
+$$
+Justifier votre réponse.
+
+\item
+Si la condition donnée en 1. est satisfaite,
+démontrer que $\forall (x,y,z) \in U \times V \times W$
+tels que $f(x,y,z) = 0$ on a
+$$
+(\partial_1\phi)(y,z) \cdot (\partial_2\chi)(x,z) \cdot
+(\partial_1\psi)(x,y) = -1
+\ .
+$$
+(Remarque, cette relation est beaucoup utilisée en
+thermodynamique, où elle est écrite comme $(\frac
+xy)_z \cdot (\frac yz)_x \cdot (\frac zx)_y = -1$, avec
+l'interprétation que $(\frac xy)_z$ est la dérivée
+de $x$ par rapport à $y$ en gardant $z$ constant.)
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\nocorrection
+
+\finexercice

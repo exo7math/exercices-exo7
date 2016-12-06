@@ -1,0 +1,40 @@
+\exercice{4133, quercia, 2010/03/11}
+\enonce[ENS MP 2002]
+Soient $f : {\R^2} \to \R, {(t,x)} \mapsto {f(t,x)}$ de classe $\mathcal{C}^1$,
+et $a,b$ des réels tels que $a<b$. On suppose que $f$ 
+est $T$-périodique par rapport à $t$ et que l'on a~:
+$\forall\ t\in\R^+,\ f(t,a)>0\text{ et }f(t,b)<0$.
+
+\begin{enumerate}
+  \item Que peut-on dire des solutions du problème de Cauchy $E_y$ : $( x'(t)=f(t,x(t)),\ x(0)=y\in [a,b])$~?
+
+  \item Montrer que toute solution maximale est définie sur $\R^+$ et à valeurs dans $[a,b]$.
+
+  \item Montrer qu'il existe une solution de $E_y$ qui est $T$-périodique.
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Qu'il en existe et qu'il y en a une unique maximale, son intervalle de définition est ouvert.
+  \item Soit $(]\alpha,\beta[,x)$ une solution maximale. Si $t_0\in{]\alpha,\beta[}$ est tel que $x(t_0)=a$
+    alors $x'(t_0)>0$ donc $x(t)-a$ est du signe de $t-t_0$ au voisinage de~$t_0$.
+    Ceci montre que $t_0$ (éventuel) est unique, et en particulier $t_0 < 0$.
+    De même, il existe au plus un réel $t_1$ tel que $x(t_1) = b$ et $t_1 < 0$.
+    Par ailleurs l'existence de l'un des deux réels $t_0$ ou $t_1$ exclut l'autre.
+    Enfin, $a\le x(t)\le b$ pour tout $t\in{[0,\beta[}$ donc d'après le théorème
+    des bouts on a $\beta=+\infty$.
+  \item Soit $\varphi : {[a,b]} \to {[a,b]},y \mapsto {x(T).}$ Comme deux courbes intégrales
+    maximales distinctes n'ont aucun point commun, $\varphi$ est injective et
+    par disjonction de cas on montre que $\varphi$ est strictement croissante et
+    satisfait à la propriété des valeurs intermédiaires. En particulier $\varphi$
+    est continue et $\varphi(y)-y$ prend une valeur positive en~$a$, négative en~$b$
+    donc s'annule pour un certain $y\in{[a,b]}$. Pour cet~$y$, la solution
+    correspondante est $T$-périodique.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

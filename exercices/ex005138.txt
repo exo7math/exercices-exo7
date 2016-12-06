@@ -1,0 +1,21 @@
+\exercice{5138, rouget, 2010/06/30}
+\enonce[**]
+Quel est le coefficient de $a^4b^2c^3$ dans le développement de $(a-b+2c)^9$.
+\finenonce
+
+\noindication
+
+\correction
+La formule du binôme de \textsc{Newton} fournit
+
+$$(a-b+2c)^9=\sum_{k=0}^{9}\binom{9}{k}(a-b)^k(2c)^{9-k}=(a-b)^9+...+\binom{9}{6}(a-b)^6(2c)^3+...+(2c)^9.$$
+
+Ensuite,
+
+$$(a-b)^6=\sum_{k=0}^{6}\binom{6}{k}a^k(-b)^{6-k}=a^6-...+\binom{6}{4}a^4b^2-..+b^6.$$
+
+Le coefficient cherché est donc
+
+$$\binom{9}{6}\binom{6}{4}2^3=\frac{9.8.7}{3.2}\frac{6.5}{2}.2^3=3.4.7.3.5.8=10080.$$
+\fincorrection
+\finexercice

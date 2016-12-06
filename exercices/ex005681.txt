@@ -1,0 +1,45 @@
+\exercice{5681, rouget, 2010/10/16}
+\enonce[****]
+Trouver $A$ dans $\mathcal{M}_n(\Rr)$ telle que la comatrice de $A$ soit $\left(
+\begin{array}{cccc}
+1&0&\ldots&0\\
+2&\vdots& &\vdots\\
+\vdots&\vdots& &\vdots\\
+n&0&\ldots&0
+\end{array}
+\right)$.
+\finenonce
+
+\noindication
+
+\correction
+Soit $B$ la matrice de l'énoncé. $\text{rg}B = 1$ et si $A$ existe, nécessairement $\text{rg}A = n-1$ (exercice \ref{ex:rou18bis}).
+
+Une matrice de rang $1$ admet l'écriture générale $U{^t}V$ où $U$ et $V$ sont des vecteurs colonnes non nuls. Ici $U=\left(
+\begin{array}{c}
+1\\
+2\\
+\vdots\\
+n
+\end{array}
+\right)$  et $V =\left(
+\begin{array}{c}
+1\\
+0\\
+\vdots\\
+0
+\end{array}
+\right)$.
+
+Si $A$ existe, $A$ doit déjà vérifier $A{^t}tB={^t}BA = 0$ ou encore $AV{^t}U= 0$ (1) et $V{^t}UA = 0$ (2). En multipliant les deux membres de l'égalité (1) par $U$ à droite puis en simplifiant par le réel non nul ${^t}UU=\|U\|_2^2$, on obtient $AV = 0$. Ceci montre que la première colonne de $A$ est nulle (les $n-1$ dernières devant alors former une famille libre).
+
+De même, en multipliant les deux membres de l'égalité (2) par ${^t}V$ à gauche, on obtient ${^t}UA = 0$ et donc les colonnes de la matrice $A$ sont orthogonales à $U$ (pour le produit scalaire usuel) ce qui invite franchement à considérer la matrice $A=\left(
+\begin{array}{ccccc}
+0&-2&\ldots&\ldots&-n\\
+0&1&0&\ldots&0\\
+\vdots&\ddots&\ddots&\ddots&\vdots\\
+\vdots& &\ddots&\ddots&0\\
+0&\ldots&\ldots&0&1
+ \end{array}\right)$ qui convient.
+\fincorrection
+\finexercice

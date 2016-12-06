@@ -1,0 +1,45 @@
+\exercice{2374, mayer, 2003/10/01}
+\label{exo 2}
+\enonce 
+Soit $X$ un espace m\'etrique.
+\begin{enumerate}
+\item Soit $(F_n)_n$ une suite d\'ecroissante de ferm\'es de $X$
+et soit $(x_n)_n$ une suite convergente telle que $x_n\in F_n$
+pour tout $n\geq 0$. Montrer que
+$$\lim _{n\rightarrow \infty} x_n
+\in \bigcap _{n\geq 0} F_n\;\; .$$
+ Donner un exemple pour lequel
+$\bigcap _{n\geq 0} F_n =\emptyset$.
+\item Soit maintenant $(K_n)_n$ une suite d\'ecroissante de
+{\it compacts}  non vides de $X$. V\'erifier que $K=\bigcap_{n\geq 0} K_n $
+est non vide et que tout ouvert $\Omega$ qui contient $K$ contient
+tous les $K_n$ \`a partir d'un certain rang.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Soit $x = \lim x_n$. Soit $N\in \Nn$ ; montrons que $x$ est dans $F_N$. On a $x_N \in F_N$, $x_{N+1} \in F_{N+1} \subset F_N$, $x_{N+2} \in F_{N+2} \subset F_{N+1} \subset F_N$, etc. Donc pour tout $n\ge N$ alors $x_n \in F_N$. Comme $F_N$ est fermé, alors la limite $x$ est aussi dans $F_N$.
+Ceci étant vrai quelque soit $N$, alors $x\in \bigcap_N F_N$.
+
+Pour construire un exemple comme demandé il est nécessaire que de toute suite on ne puisse pas extraire de sous-suite convergente. Prenons par exemple dans $\Rr$, $F_n = [n,+\infty[$, alors $\bigcap_n F_n = \varnothing$.
+
+  \item 
+    \begin{enumerate}
+     \item Pour chaque $n$ on prend $x_n \in K_n$, alors pour tout
+$n$, $x_n \in K_0$ qui est compact donc on peut extraire une sous-suite convergente. Si $x$ est la limite de cette sous-suite alors $x \in K$.
+Donc $K$ est non vide.
+
+     \item Par l'absurde supposons que c'est faux, alors
+$$\forall N\in\Nn \quad \exists n \ge N \quad \exists x_n \in K_n \text{ tel que } x_n\notin \Omega.$$
+De la suite $(x_n)$, on peut extraire une sous-suite $x_{\phi(n)}$
+qui converge vers $x\in K$. Or $x_n \in X\setminus \Omega$ qui est fermé
+donc $x\in X\setminus \Omega$. Comme $K\subset \Omega$ alors $x\notin K$
+ce qui est contradictoire.
+    \end{enumerate}
+
+\end{enumerate}
+\fincorrection
+\finexercice

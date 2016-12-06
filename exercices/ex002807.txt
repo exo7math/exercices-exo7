@@ -1,0 +1,64 @@
+\exercice{2807, burnol, 2009/12/15}
+\enonce
+\label{exo:CRpolaires}
+  On veut exprimer les équations de Cauchy-Riemann avec les coordonnées
+  polaires $r$ et $\theta$. Les équations de Cauchy-Riemann
+ peuvent s'écrire sous la forme:
+\[  \left(\frac\partial{\partial x} +
+ i\frac\partial{\partial y}\right) F = 0\]
+donc il s'agit d'exprimer $\frac\partial{\partial x}$ et
+$\frac\partial{\partial y}$ en fonction de
+$\frac\partial{\partial r}$ et de $\frac\partial{\partial
+\theta}$. Lorsque l'on travaille sur un ouvert (ne
+ contenant pas l'origine) sur lequel une détermination
+ continue de l'argument $\theta$ est possible (par exemple
+ sur $\Omega = \Cc\setminus]-\infty,0]$). Montrer:
+\begin{align*}
+ \frac\partial{\partial r} &=
+ \cos(\theta)\frac\partial{\partial x} +
+ \sin(\theta)\frac\partial{\partial y}\\
+ \frac\partial{\partial\theta} &= -r\sin(\theta)\frac\partial{\partial x} +
+ r\cos(\theta)\frac\partial{\partial y}
+\end{align*}
+En déduire $\frac\partial{\partial x} =
+ \cos(\theta)\frac\partial{\partial r} - \sin(\theta)\frac1r
+ \frac\partial{\partial\theta}$ et $\frac\partial{\partial y} =
+ \sin(\theta)\frac\partial{\partial r} + \cos(\theta)\frac1r
+ \frac\partial{\partial\theta}$. Montrer alors:
+\[ \frac\partial{\partial x} +
+ i\frac\partial{\partial y} = e^{i\theta}\left(\frac\partial{\partial r} +
+ i\frac1 r\frac\partial{\partial \theta}\right) =
+ e^{i\theta}\frac1 r\left(r\frac\partial{\partial r} + 
+ i\frac\partial{\partial \theta}\right)\]
+En déduire qu'en coordonnées polaires les équations de
+ Cauchy-Riemann peuvent s'écrire (en particulier) sous la forme:
+\[ \frac{\partial F}{\partial\theta} = i\, r\frac{\partial
+ F}{\partial r}\]
+\finenonce
+\noindication
+\correction
+Cet exercice et les suivants concernent des changements de variables. Rappelons que, si
+$\Phi:U\to V$ est un diff\'eomorphisme entre ouverts $U,V$ de $\R ^n$ et si on note $y=\Phi (x)$,
+$x=(x_1,...,x_n)\in U$ et $y=(y_1,...,y_n)\in V$, alors
+$$\frac{\partial }{\partial x_i}=\sum_{j=1}^n \frac{\partial \Phi _j}{\partial x_i}\frac{\partial }{\partial y_j}$$
+pour tout $i,j\in \{1,...,n\}$.
+\bigskip
+On a $x=r\, \cos \theta$ et $y=r\, \sin \theta$. Donc
+$$\frac{\partial }{\partial r}= \frac{\partial (r\, \cos \theta)}{\partial r}\frac{\partial }{\partial x}+\frac{\partial (r\, \sin \theta)}{\partial r}\frac{\partial }{\partial y}=
+\cos  \theta \frac{\partial }{\partial x} + \sin \theta \frac{\partial }{\partial y}$$
+et
+$$\frac{\partial }{\partial \theta}= \frac{\partial (r\, \cos \theta)}{\partial \theta}\frac{\partial }{\partial x}+
+\frac{\partial (r\, \sin \theta)}{\partial \theta}\frac{\partial }{\partial y}=
+-r\sin  \theta \frac{\partial }{\partial x} + r \cos \theta \frac{\partial }{\partial y}.$$
+On peut r\'e\'ecrire ceci en:
+$$\binom{\frac{\partial }{\partial r}}{\frac{\partial }{\partial \theta}}=M \binom{\frac{\partial }{\partial x}}{\frac{\partial }{\partial y}}
+\quad \text{avec} \quad M= (Jac(f))^t = \left(
+                                   \begin{array}{cc}
+                                     \frac{\partial (r\, \cos \theta)}{\partial r} & \frac{\partial (r\, \sin \theta)}{\partial r} \\
+                                     \frac{\partial (r\, \cos \theta)}{\partial \theta} & \frac{\partial (r\, \sin \theta)}{\partial \theta} \\
+                                   \end{array}
+                                 \right) .$$
+Pour retrouver les $\frac{\partial }{\partial x}$, $\frac{\partial }{\partial y}$ en fonction de $\frac{\partial }{\partial r}$, $\frac{\partial }{\partial \theta}$
+il suffit d'inverser cette matrice $M$. Le reste est clair.
+\fincorrection
+\finexercice

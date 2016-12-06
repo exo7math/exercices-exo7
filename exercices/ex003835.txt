@@ -1,0 +1,24 @@
+\exercice{3835, quercia, 2010/03/11}
+\enonce[Famille duale de $1,X,X^2,\dots$]
+
+\begin{enumerate}
+  \item Montrer qu'il existe des polynômes $P_0,\dots,P_n \in \R_n[X]$ tels que :
+$\forall\ i,j\le n,\  \int_{t=0}^{+\infty} e^{-t}t^iP_j(t)\,d t = \delta_{ij}$.
+  \item Montrer qu'il n'existe pas de suite de polynômes $(P_0,\dots,P_n,\dots)$ telle que :
+$\forall\ i,j\in\N,\  \int_{t=0}^{+\infty} e^{-t}t^iP_j(t)\,d t = \delta_{ij}$.
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item 
+  \item Soit $P_0 = Q_0'$. Par IPP on obtient $Q_0$ est orthogonal à la
+famille $(jX^{j-1}-X^j)_{j\ge 1}$ qui est une base de $\R[X]$ donc $Q_0 = 0 = P_0$
+et $ \int_{t=0}^{+\infty} e^{-t}t^0P_0(t)\,d t \ne \delta_{0,0}$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

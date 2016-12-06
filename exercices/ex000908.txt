@@ -1,0 +1,47 @@
+\exercice{908, legall, 1998/09/01}
+\video{SmI00EAW31k}
+\enonce
+Soit $E$ le 
+sous-espace vectoriel de ${\Rr}^3$ engendr\'e par
+les vecteurs $v_1=(2, 3, -1)$ et $v_2=(1, -1, -2)$  et $F$ celui engendré par
+ $w_1=(3, 7, 0)$ et $w_2=(5, 0, -7)$. Montrer que  $E$  et  $F$  sont
+ \'egaux.
+\finenonce 
+
+\indication
+Montrer la double inclusion. 
+Utiliser le fait que de mani\`ere g\'en\'erale pour  $E=\mathrm{Vect}(v_1,\ldots,v_n)$
+alors : 
+$$E\subset F \iff \forall i=1,\ldots,n \quad v_i\in F.$$
+\finindication
+
+\correction
+
+Montrons d'abord que $E \subset F$.
+On va d'abord montrer que $v_1 \in F$ et $v_2 \in F$.
+
+Tout d'abord 
+$v_1\in F \iff v_1 \in \text{Vect}\{w_1,w_2\} \iff \exists \lambda, \mu \quad v_1 = \lambda w_1+\mu w_2 $.
+
+Il s'agit donc de trouver ces $\lambda,\mu$. Cela se fait en résolvant un système
+(ici on peut même le faire de tête) on trouve la relation 
+$7 (2, 3, -1) = 3(3, 7, 0)-(5, 0, -7)$
+ce qui donne la relation $v_1 = \frac37 w_1 -\frac 17 w_2$ et donc $v_1\in F$.
+
+De même $7v_2=-w_1+2w_2$ donc $v_2\in F$.
+
+Maintenant $v_1$ et $v_2$ sont dans l'espace vectoriel $F$, donc toute combinaison linéaire
+de $v_1$ et $v_2$ aussi, c'est-à-dire : pour tout $\lambda,\mu$, on a $\lambda v_1+\mu v_2 \in F$.
+Ce qui implique $E \subset F$.
+
+
+\bigskip
+
+Il reste à montrer $F\subset E$. Il s'agit donc d'écrire $w_1$ (puis $w_2$) en fonction de $v_1$ et $v_2$.
+On trouve $w_1= 2v_1-v_2$ et $w_2=v_1+3v_2$. Encore une fois cela entraîne $w_1 \in E$ et $w_2 \in E$ donc
+$\text{Vect}\{w_1,w_2\} \subset E$ d'où $F\subset E$.
+
+Par double inclusion on a montré $E=F$. 
+
+\fincorrection
+\finexercice

@@ -1,0 +1,71 @@
+\exercice{901, liousse, 2003/10/01}
+\video{A-ieYnIs2KA}
+\enonce
+ Dans $\Rr^4$ on consid\`ere
+l'ensemble $E$ des vecteurs $(x_1,x_2,x_3,x_4)$ v\'erifiant
+$x_1+x_2+x_3+x_4=0$. L'ensemble $E$ est-il un sous-espace vectoriel de
+$\Rr^4$ ? Si oui, en donner une base.
+\finenonce 
+
+\indication
+$E$ est un sous-espace vectoriel de $\Rr^4$. Une base comporte trois vecteurs.
+\finindication
+
+\correction
+\begin{enumerate}
+\item On v\'erifie les propri\'et\'es qui font de $E$ un sous-espace
+  vectoriel de $\Rr^4$ : 
+  \begin{enumerate}
+    \item l'origine $(0,0,0,0)$ est dans $E$,
+    \item si $v=(x_1,x_2,x_3,x_4) \in E$ et $v'=(x_1',x_2',x_3',x_4')\in E$ alors $v+v'=(x_1+x_1',x_2+x_2',x_3+x_3',x_4+x_4')$
+a des coordonnées qui vérifient l'équation et donc $v+v' \in E$.
+    \item si $v=(x_1,x_2,x_3,x_4) \in E$ et $\lambda \in \Rr$ alors les coordonnées de 
+$\lambda\cdot v = (\lambda x_1,\lambda x_2,\lambda x_3,\lambda x_4)$ vérifient 
+l'équation et donc $\lambda \cdot v \in E$.
+  \end{enumerate}
+
+\item Il faut trouver une famille libre de vecteurs qui engendrent
+  $E$. Comme $E$ est dans $\Rr^4$, il y aura moins de $4$ vecteurs
+  dans cette famille. On prend un vecteur de $E$ (au hasard), par
+  exemple $v_1 = (1,-1,0,0)$. Il est bien clair que $v_1$ n'engendre
+  pas tout $E$, on cherche donc un vecteur $v_2$ lin\'eairement
+  ind\'ependant de $v_1$, prenons $v_2 = (1,0,-1,0)$. Alors $\{v_1,v_2\}$
+  n'engendrent pas tout $E$ ; par exemple $v_3 = (1,0,0,-1)$ est dans $E$
+  mais n'est pas engendr\'e par $v_1$ et $v_2$. Montrons que
+  $(v_1,v_2,v_3)$ est une base de $E$.
+  \begin{enumerate}
+  \item $(v_1,v_2,v_3)$ est une famille libre. En effet soient
+    $\alpha,\beta,\gamma \in \Rr$ tels que $\alpha v_1+\beta
+    v_2+\gamma v_3=0$. Nous obtenons donc :
+\begin{align*}
+& \alpha v_1+\beta v_2+\gamma v_3=0 \\
+&\Rightarrow \alpha \begin{pmatrix}1 \cr -1 \cr 0 \cr 0 \cr
+\end{pmatrix} + \beta
+ \begin{pmatrix}1 \cr 0 \cr -1 \cr 0 \cr \end{pmatrix} + \gamma 
+\begin{pmatrix}1 \cr 0 \cr 0 \cr -1 \cr \end{pmatrix}= 
+\begin{pmatrix}0 \cr 0 \cr 0 \cr 0 \cr \end{pmatrix} \\
+ &\Rightarrow \begin{cases}
+  \alpha+\beta +\gamma &= 0 \\
+  -\alpha &= 0 \\
+  -\beta &=  0 \\
+  -\gamma &=  0 \\
+\end{cases}\\
+ &\Rightarrow \alpha=0, \beta=0, \gamma = 0 \\
+\end{align*}
+Donc la famille est libre.
+
+\item Montrons que la famille est g\'en\'eratrice : soit $v =
+  (x_1,x_2,x_3,x_4) \in E$. Il faut \'ecrire $v$ comme combinaison
+  lin\'eaire de $v_1,v_2,v_3$.  On peut r\'esoudre un syst\`eme comme
+  ci-dessus (mais avec second membre) en cherchant
+  $\alpha,\beta,\gamma$ tels que $\alpha v_1+\beta v_2+\gamma v_3=v$.
+  On obtient que $v = -x_2v_1-x_3v_2-x_4v_4$ (on utilise
+  $x_1+x_2+x_3+x_4=0$).
+  \end{enumerate}
+  
+  Bien s\^ur vous pouvez choisir d'autres vecteurs de base (la seule
+  chose qui reste ind\'ependante des choix est le nombre de vecteurs
+  dans une base : ici $3$).
+\end{enumerate}
+\fincorrection
+\finexercice

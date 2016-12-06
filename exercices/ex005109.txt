@@ -1,0 +1,147 @@
+\exercice{5109, rouget, 2010/06/30}
+\enonce[***I]
+\begin{enumerate}
+\item  Montrer par récurrence que, pour tout naturel non nul $n$, $\sum_{k=1}^{n}k=\frac{n(n+1)}{2}$. En calculant 
+la différence $(k+1)^2-k^2$, trouver une démonstration directe de ce résultat.\rule[-1mm]{0mm}{0mm}
+\item  Calculer de même les sommes $\sum_{k=1}^{n}k^2$, $\sum_{k=1}^{n}k^3$ et $\sum_{k=1}^{n}k^4$ (et 
+mémoriser les résultats).
+\item  On pose $S_p=\sum_{k=1}^{n}k^p$. Déterminer une relation de récurrence permettant de calculer les $S_p$ 
+de proche en proche.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Montrons par récurrence que~:~$\forall n\geq1,\;\sum_{k=1}^{n}k=\frac{n(n+1)}{2}$.
+Pour $n=1$, $\sum_{k=1}^{1}k=1=\frac{1\times(1+1)}{2}$.
+Soit $n\geq1$. Supposons que $\sum_{k=1}^{n}k=\frac{n(n+1)}{2}$ et montrons que
+$\sum_{k=1}^{n+1}k=\frac{(n+1)(n+2)}{2}$.
+
+\begin{align*}
+\sum_{k=1}^{n+1}k&=\sum_{k=1}^{n}k+(n+1)
+=\frac{n(n+1)}{2}+(n+1)\;(\mbox{par hypothèse de récurrence})\\
+ &=(n+1)(\frac{n}{2}+1)=\frac{(n+1)(n+2)}{2}
+\end{align*}
+On a montré par récurrence que~:
+\begin{center}
+\shadowbox{
+$\forall n\geq1,\;\sum_{k=1}^{n}k=\frac{n(n+1)}{2}$.
+}
+\end{center}
+On peut donner plusieurs démonstrations directes.
+
+\begin{itemize}
+\item[\textbf{1ère demonstration.}] Pour $k\geq1$, $(k+1)^2-k^2=2k+1$ et donc
+$\sum_{k=1}^{n}((k+1)^2-k^2)=2\sum_{k=1}^{n}k+\sum_{k=1}^{n}1$ ce qui s'écrit $(n+1)^2-1=2\sum_{k=1}^{n}k+n$ ou encore
+$2\sum_{k=1}^{n}k=n^2+n$ ou enfin $\sum_{k=1}^{n}k=\frac{n(n+1)}{2}$.
+
+\item[\textbf{2ème demonstration.}]   On écrit
+
+$$\begin{array}{ccccccccccccc}
+1&+&2&+&3&+&\ldots&+&(n-1)&+&n&=&S\\
+n&+&(n-1)&+&(n-2)&+&\ldots&+&2&+&1&=&S
+\end{array}
+$$
+et en additionnant (verticalement), on obtient $2S=(n+1)+(n+1)+\ldots+(n+1)=n(n+1)$ d'où le résultat. La même
+démonstration s'écrit avec le symbole
+sigma~:~
+
+$$2S=\sum_{k=1}^{n}k+\sum_{k=1}^{n}(n+1-k)=\sum_{k=1}^{n}(k+n+1-k)=\sum_{k=1}^{n}(n+1)=n(n+1).$$
+
+\item[\textbf{3ème demonstration.}] On compte le nombre de points d'un rectangle ayant $n$ points de large et $n+1$
+points de long. Il y en a $n(n+1)$. Ce rectangle se décompose en deux triangles isocèles contenant chacun $1+2+...+n$ 
+points. D'où le résultat.
+
+$$\begin{array}{ccccccccc}
+{*}& &{*}&{*}&\ldots& & &\ldots&{*}\\
+{*}&{*}& &\ddots& & & & &\vdots\\
+{*}&{*}&{*}& & & & & & \\
+\vdots& & &\ddots& &\ddots& & &\vdots\\
+ & & & & & &{*}&{*}&{*}\\
+\vdots& & & & &\ddots& &{*}&{*}\\
+*&\ldots& & &\ldots&{*}&{*}& &{*}
+\end{array}
+$$
+
+\item[\textbf{4ème démonstration.}] Dans le triangle de \textsc{Pascal}, on sait que pour $n$ et
+$p$ entiers naturels donnés,
+
+\begin{center}
+$C_n^p+C_n^{p+1}=C_{n+1}^{p+1}$.
+\end{center}
+Donc, pour $n\geq2$ (le résultat est clair pour $n=1$),
+
+$$1+2+...+n=1+\sum_{k=2}^{n}C_k^1=1+\sum_{k=2}^{n}\left(C_{k+1}^2-C_k^2\right)=1+(C_{n+1}^2-1)=\frac{n(n+1)}{2}.$$
+
+\end{itemize}
+
+ \item  Pour $k\geq1$, $(k+1)^3-k^3=3k^2+3k+1$. Donc, pour $n\geq1$~:
+
+$$3\sum_{k=1}^{n}k^2+3\sum_{k=1}^{n}k+\sum_{k=1}^{n}1=\sum_{k=1}^{n}((k+1)^3-k^3)=(n+1)^3-1.$$
+D'où,
+
+$$\sum_{k=1}^{n}k^2=\frac{1}{3}\left((n+1)^3-1-3\frac{n(n+1)}{2}-n\right)=\frac{1}{6}(2(n+1)^3-3n(n+1)-2(n+1))=
+\frac{1}{6}(n+1)(2n^2+n),$$
+et donc
+\begin{center}
+\shadowbox{
+$\forall n\geq1,\;\sum_{k=1}^{n}k^2=\frac{n(n+1)(2n+1)}{6}.$
+}
+\end{center}
+Pour $k\geq1$, $(k+1)^4-k^4=4k^3+6k^2+4k+1$. Donc, pour $n\geq1$, on a
+
+$$4\sum_{k=1}^{n}k^3+6\sum_{k=1}^{n}k^2+4\sum_{k=1}^{n}k+\sum_{k=1}^{n}1=\sum_{k=1}^{n}((k+1)^4-k^4)=(n+1)^4-1.$$
+D'où~:
+
+\begin{align*}
+\sum_{k=1}^{n}k^3&=\frac{1}{4}((n+1)^4-1-n(n+1)(2n+1)-2n(n+1)-n)=\frac{1}{4}((n+1)^4-(n+1)(n(2n+1)+2n+1)\\
+ &=\frac{1}{4}((n+1)^4-(n+1)^2(2n+1))=\frac{(n+1)^2((n+1)^2-(2n+1))}{4}=\frac{n^2(n+1)^2}{4}
+\end{align*}
+\begin{center}
+\shadowbox{
+$\forall n\geq1,\;\sum_{k=1}^{n}k^3=\frac{n^2(n+1)^2}{4}=\left(
+\sum_{k=1}^{n}k\right)^2.$
+}
+\end{center}
+Pour $k\geq1$, $(k+1)^5-k^5=5k^4+10k^3+10k^2+5k+1$. Donc, pour $n\geq1$,
+
+$$5\sum_{k=1}^{n}k^4+10\sum_{k=1}^{n}k^3+10\sum_{k=1}^{n}k^2+5\sum_{k=1}^{n}k+\sum_{k=1}^{n}1=\sum_{k=1}^{n}((k+1)^5-k^5)
+=(n+1)^5-1.$$
+D'où~:
+
+\begin{align*}
+\sum_{k=1}^{n}k^4&=\frac{1}{5}((n+1)^5-1-\frac{5}{2}n^2(n+1)^2-\frac{5}{3}n(n+1)(2n+1)-\frac{5}{2}n(n+1)-n)\\
+ &=\frac{1}{30}(6(n+1)^5-15n^2(n+1)^2-10n(n+1)(2n+1)-15n(n+1)-6(n+1))\\
+ &=\frac{1}{30}(n+1)(6n^4+9n^3+n^2-n)=\frac{n(n+1)(6n^3+9n^2+n-1)}{30}
+\end{align*}
+
+Finalement,
+\begin{center}
+\shadowbox{
+$
+\begin{array}{c}
+\forall n\in\Nn^*,\;\sum_{k=1}^{n}k=\frac{n(n+1)}{2}\\
+\forall n\in\Nn^*,\;\sum_{k=1}^{n}k^2=\frac{n(n+1)(2n+1)}{6}\\
+\forall n\in\Nn^*,\;\sum_{k=1}^{n}k^3=\frac{n^2(n+1)^2}{4}=\left(\sum_{k=1}^{n}k\right)^2\\
+\forall n\in\Nn^*,\;\sum_{k=1}^{n}k^4=\frac{n(n+1)(6n^3+9n^2+n-1)}{30}.
+\end{array}
+$
+}
+\end{center}
+ \item  Soit $p$ un entier naturel. Pour $k\geq1$,
+
+$$(k+1)^{p+1}-k^{p+1}=\sum_{j=0}^{p}C_{p+1}^jk^j.$$
+Donc, pour $n\geq1$~:
+
+$$\sum_{j=0}^{p}C_{p+1}^j(\sum_{k=1}^{n}k^j)=\sum_{k=1}^{n}(\sum_{j=0}^{p}C_{p+1}^jk^j)=\sum_{k=1}^{n}((k+1)^{p+1}-k^{p+1})=(
+n+1)^{p+1}-1.$$
+D'où la formule de récurrence~:
+
+\begin{center}
+\shadowbox{$\forall p\in\Nn,\;\forall n\in\Nn^*,\sum_{j=0}^{p}C_{p+1}^{j}S_j=(n+1)^{p+1}-1.$}
+\end{center}
+\end{enumerate}
+\fincorrection
+\finexercice

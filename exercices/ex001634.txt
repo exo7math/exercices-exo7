@@ -1,0 +1,61 @@
+\exercice{1634, barraud, 2003/09/01}
+
+\enonce
+On considère un endomorphisme $f$ d'un $\C$ espace vectoriel $E$ de
+dimension finie $n$, tel que $f^2$ est diagonalisable. Le but de cet
+exercice est de démontrer que :
+$$
+  f\text{ est diagonalisable }\Leftrightarrow \mathrm{Ker} f=\mathrm{Ker} f^2
+$$ 
+
+\begin{enumerate}
+\item
+  On suppose que $f$ est diagonalisable. On note
+  $\alpha_{1},...,\alpha_{r}$ les valeurs propres (distinctes) de
+  $A$, et $E_{1},...,E_{r}$ les espaces propres associés.
+  \begin{enumerate}
+  \item
+    Montrer que si $\mathrm{Ker} f=\{0\}$ alors $\mathrm{Ker} f^{2}=\{0\}$.
+  \item
+    On suppose maintenant que $\mathrm{Ker} f\neq\{0\}$. On note
+    $\alpha_{\alpha_{1}},...,\alpha_{\alpha_{r}}$ les autres valeurs
+    propres de $f$, et $E_{0},...,E_{r}$ ses espaces propres. En
+    utilisant que $E=E_{0}\oplus E_{1}\oplus ...\oplus E_{r}$, montrer
+    que si $f^{2}(x)=0$ alors $f(x)=0$. En déduire que $\mathrm{Ker} f=\mathrm{Ker} f^2$.
+  \end{enumerate}
+\item
+  On suppose que $\mathrm{Ker} f=\mathrm{Ker} f^2$.
+  \begin{enumerate}
+  \item 
+    Montrer que si $\mu$ est une valeur propre de $f$, alors $\mu^2$
+    est une valeur propre de $f^2$.
+    \begin{enumerate}
+    \item 
+      Soit $\lambda$ une valeur propre non nulle de $f^2$, et $\mu$ et
+      $-\mu$ ses deux racines complexes. Montrer que
+      $$
+        \mathrm{Ker}(f-\mu\mathrm{id})\subset\mathrm{Ker}(f^2-\lambda\mathrm{id})
+        \quad\text{ et que }\quad
+        \mathrm{Ker}(f+\mu\mathrm{id})\subset\mathrm{Ker}(f^2-\lambda\mathrm{id}).
+      $$ 
+    \item
+      Montrer que
+      $$
+        \mathrm{Ker}(f^2-\lambda\mathrm{id})=\mathrm{Ker}(f-\mu\mathrm{id})\oplus\mathrm{Ker}(f+\mu\mathrm{id})
+      $$
+      (remarquer que 
+      $\forall y\in \mathrm{Ker} f^{2}\;\;
+        y=\frac{1}{2\mu}((f+\mu\mathrm{id})(y)-(f-\mu\mathrm{id})(y))$).
+   \end{enumerate}
+   \item
+     Montrer (avec soin) que $f$ est diagonalisable.
+  \end{enumerate}
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\nocorrection
+
+\finexercice
+

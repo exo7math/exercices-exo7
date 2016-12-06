@@ -1,0 +1,23 @@
+\exercice{6878, gammella, 2012/05/29}
+
+\enonce
+Calculer la circulation du champ vectoriel
+$\vec{V}(x,y)=(3x,x+y)$ le long du cercle $C$ de centre $O$ et de rayon $1$, 
+parcouru dans le sens direct.
+\finenonce
+
+\noindication
+
+\correction
+Soit $\omega=3x dx + (x+y) dy$ la forme différentielle naturellement associée à $\vec{V}(x,y)$ et considérons $x=\cos t$ et $y=\sin t$ 
+comme paramétrage du cercle de centre $O$ et de rayon $1$ (avec $t\in [0;2\pi]$). Il s'ensuit que la circulation $ \int_{C} \vec{V}.\vec{dl}$
+n'est autre que :
+$$ \int_{C} \vec{V}.\vec{dl}= \int_{C} w
+=\int_0^{2\pi} (3\cos t (-\sin t) + (\cos t +\sin t) \cos t)dt.$$
+Comme $\cos^2t= \frac{\cos(2t)+1}{2}$, on obtient :
+$$ \int_{C} \vec{V}.\vec{dl}= \int_{0}^{2\pi} (-2\sin t\cos t + \frac{\cos (2t)+1}{2}) dt
+= [\cos^2(t)+ \frac{1}{4}\sin(2t) +\frac{t}{2}]_0^{2\pi}=\pi.$$
+Remarquons que si la forme $\omega$ avait été exacte, on aurait obtenu $ \int_{C} \vec{V}.\vec{dl}=0$ comme réponse, puisque l'intégrale curviligne d'une forme exacte sur une courbe fermée
+est nulle.
+\fincorrection
+\finexercice

@@ -1,0 +1,35 @@
+\exercice{7007, megy, 2016/04/26}
+% source possible : http://culturemath.ens.fr/maths/pdf/geometrie/cercles.pdf
+
+\enonce[Théorème de Ptolémée]
+On admet le résultat suivant:\\
+\emph{Quatre points distincts d'affixes $a, b, c, d$ sont cocycliques ou alignés (resp. cocycliques ou alignés dans cet ordre) si et seulement si leur birapport  \[
+[a,b,c,d]:= \frac{(a-c)(b-d)}{(b-c)(a-d)}
+\]
+est un réel (resp. réel positif).}\\
+Le but de l'exercice est de démontrer le théorème de Ptolémée dans sa version suivante: \\
+{\bf Théorème} (Ptolémée) \emph{Soient $A$, $B$, $C$, $D$ quatre points du plan non alignés. Alors on a 
+\[AC\cdot BD \leq AB\cdot CD + AD\cdot BC,\]
+avec égalité si et seulement si $A, B, C, D$ sont cocycliques dans cet ordre.}
+
+\begin{enumerate}
+\item (\'Echauffement) Montrer que pour tous $x, y, z \in \C$, 
+\[ |x|\cdot |y-z| \leq |y| \cdot |z-x| + |z|\cdot|x-y|.\]
+\item Prouver le théorème si deux des points sont égaux.
+\item Dans la suite on suppose les points distincts deux à deux. En utilisant les affixes $a, b, c, d$ des points, prouver l'inégalité.
+\item \'Etudier le cas d'égalité  et conclure.
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+\item Développons puis refactorisons $y(z-x)+z(x-y) = x(z-y)$. On en déduit le résultat, par inégalité triangulaire.
+
+\item Si deux des points sont égaux, alors le membre de droite n'a qu'un seul terme et l'inégalité est une égalité, et trois points non alignés sont toujours cocycliques.
+
+\item On a $(b-a)(d-c) + (d-a)(c-b) =ad-cd-ab+cb=(a-c)(d-b)$. Par inégalité triangulaire, on a donc $|(a-c)(d-b)| \leq |(b-a)(d-c)| + |(d-a)(c-b)|$  c'est-à-dire $AC\cdot BD \leq AB\cdot CD + AD\cdot BC$.
+\item Rappelons le cas d'égalité de l'inégalité triangulaire : si $z$ et $z'$ sont des complexes non nuls, alors $|z+z'| \leq |z|+|z'|$, avec égalité ssi $\exists \lambda \in \R_+,\: z' = \lambda z$. Ici,  on a donc égalité ssi $\exists \lambda \in \R_+$ tel que $(b-a)(d-c)=\lambda (d-a)(c-b)$, autrement dit ssi $[a,b,c,d] \in \R_+$, ce qu'il fallait démontrer.
+\end{enumerate}
+
+\fincorrection
+\finexercice

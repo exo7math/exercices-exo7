@@ -1,0 +1,27 @@
+\exercice{3629, quercia, 2010/03/10}
+\enonce[Base duale des polynômes]
+
+Soit $E =  \R_{2n-1}[X]$, et $x_1,\dots,x_n \in \R$ distincts.
+On note :
+$${\phi_i} : E\to \R, P \mapsto {P(x_i)} ;
+ \qquad
+ {\psi_i} : E \to \R, P \mapsto {P'(x_i)}$$
+\begin{enumerate}
+  \item Montrer que $(\phi_1,\dots,\phi_n,\psi_1,\dots,\psi_n)$ est une base de
+    $E^*$.
+  \item Chercher la base duale.
+    On notera $P_i = \prod_{j\ne i}\frac{X-x_j}{x_i-x_j}$ et
+    $d_i = P_i'(x_i)$.
+
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+2. $\phi_i^* = (1-2d_i(X-x_i))P_i^2$,
+             $\psi_i^* = (X-x_i)P_i^2$.
+\fincorrection
+
+\finexercice

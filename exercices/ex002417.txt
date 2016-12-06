@@ -1,0 +1,44 @@
+\exercice{2417, mayer, 2003/10/01}
+\enonce 
+Soit $K: {\cal C} ([a,b]) \to {\cal C} ([a,b])$ donn\'e par $(Kf)(s)=\int _a^b k(s,t) f(t) \, dt$,
+$k \in {\cal C} ([a,b]\times [a,b])$, et soit $(f_n)$ une suite born\'ee de $X= ({\cal C} ([a,b]), \|.\|_\infty )$.
+\begin{enumerate}
+\item Rappeler pourquoi $k$ est uniform\'ement continue.
+\item En d\'eduire l'\'equicontinuit\'e de $(Kf_n)$.
+\item Montrer que $(Kf_n)$ contient une sous-suite convergente dans $X$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $k$ est continue sur le compact $[a,b]\times [a,b]$ donc est uniformément continue. \'Ecrivons cette continuité uniforme dans le cas particulier o\`u les secondes coordonnées sont égales :
+$$\forall \epsilon' >0 \quad \exists \eta >0 
+\quad  \forall x,y,t \in [a,b] \qquad |x-y|< \eta  \Rightarrow |k(x,t)-k(y,t)| < \epsilon'.$$
+
+  \item Comme $(f_n)$ est bornée il existe $M>0$ tel que
+pour tout $n\in \Nn$, $\|f_n\|_\infty \le M$.
+Fixons $x\in [a,b]$. Soit $\epsilon >0$, posons $\epsilon'=\frac{\epsilon}{M(b-a)}$, par l'uniforme continuité de $k$, on obtient un $\eta>0$ avec pour $|x-y|<\eta$, 
+$|k(x,t)-k(y,t)| < \epsilon'= \frac{\epsilon}{M(b-a)}$.
+
+Donc pour $|x-y|<\eta$,
+\begin{align*}
+|Kf_n(x)-Kf_n(y)| 
+  &\le \int_a^b |k(x,t)-k(y,t)|\|f_n\|_\infty dt \\
+  &\le M \int_a^b |k(x,t)-k(y,t)| dt \\
+  &\le M \int_a^b \frac{\epsilon}{M(b-a)} dt \\
+  &\le \epsilon \\
+\end{align*}
+Ce qui est l'équicontinuité de $(Kf_n)$ en $x$. Comme ceci est valable quelque soit $x\in[a,b]$ alors $(Kf_n)$ est équicontinue.
+
+  \item Notons $\mathcal{H} = (Kf_n)_n$. Alors pour $x$ donné 
+$\mathcal{H}(x)$ est borné car 
+$|\int_a^b k(x,t)f_n(t) dt| \le M\int_a^b|k(x,t)|dt$ est bornée indépendamment de $n\in \Nn$. Donc $\overline{\mathcal{H}(x)}$ est un fermé borné de $\Rr$ donc un compact. 
+
+Nous avons toutes les hypothèses pour appliquer le théorème d'Ascoli, donc
+$\mathcal{H} = (Kf_n)_n$ est relativement compact. Donc de la suite $(Kf_n)$
+on peut extraire une sous-suite convergente. (Attention la limite de cette sous-suite est dans $\overline{\mathcal{H}} \subset X$ et pas nécessairement dans $\mathcal{H}$.)
+\end{enumerate}
+\fincorrection
+\finexercice

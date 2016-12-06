@@ -1,0 +1,48 @@
+\exercice{6863, bodin, 2012/04/13}
+\video{U6GrjVSfshM}
+\enonce
+Calculer l'aire intérieure d'une ellipse d'équation :
+$$\frac{x^2}{a^2}+ \frac{y^2}{b^2} = 1.$$
+
+\emph{Indications.}  On pourra calculer seulement la partie de l'ellipse correspondant
+à $x\ge 0$, $y\ge 0$. Puis exprimer $y$ en fonction de $x$. Enfin calculer une intégrale.
+
+\finenonce
+
+\indication
+Il faut se ramener au calcul de $\displaystyle \int_0^a b\sqrt{1-\frac{x^2}{a^2}} dx$.
+\finindication
+
+\correction
+ Calculons seulement un quart de l'aire : la partie du quadrant $x\ge 0, y\ge 0$.
+Pour ce quadrant les points de l'ellipse ont une abscisse $x$ qui vérifie $0 \le x \le a$.
+Et la relation $\frac{x^2}{a^2}+ \frac{y^2}{b^2} = 1$ donne $y = b\sqrt{1-\frac{x^2}{a^2}}$.
+
+\medskip
+
+Nous devons donc calculer l'aire sous la courbe d'équation $y = b\sqrt{1-\frac{x^2}{a^2}}$,
+au-dessus de l'axe des abscisses et entre les droites d'équations $(x=0)$ et $(x=a)$ (faites un dessin !).
+
+Cette aire vaut donc : $\displaystyle \int_0^a b\sqrt{1-\frac{x^2}{a^2}} dx$.
+Nous allons calculer cette intégrale à l'aide du changement de variable 
+$x=a \cos u$ qui donne $dx = -a\sin u \, du$. La variable $x$ variant de 
+$x=0$ à $x=a$ alors la nouvelle variable $u$ varie du $u=\frac \pi 2$ (pour lequel on a bien
+$a\cos \frac\pi 2 = 0$) à $u=\frac \pi 2$ (pour lequel on a bien
+$a\cos 0 = a$). Autrement dit la fonction $u \mapsto a\cos u$ est une bijection
+de $[\frac\pi2,0]$ vers $[0,a]$.
+
+\begin{align*}
+\int_0^a b\sqrt{1-\frac{x^2}{a^2}} dx
+  & = \int_{\frac \pi 2}^0 b \sqrt{1-\cos^2 u} (-a \sin u \, du) \quad \text{ en posant } x=a \cos u \\
+  & = \int_{\frac \pi 2}^0 b\sin u (-a \sin u \, du) \\
+  & = ab \int_0^{\frac \pi 2} \sin^2 u \, du \\
+  & = ab \int_0^{\frac \pi 2} \frac{1-\cos(2u)}{2} \, du \\ 
+  &= ab \left[ \frac u2 - \frac{\sin(2u)}{4} \right]_0^{\frac \pi 2} \\
+  &= \frac{\pi a b}{4} \\
+\end{align*}
+L'aire d'un quart d'ellipse est donc $\frac{\pi a b}{4}$. 
+
+Conclusion : l'aire d'une ellipse est $\pi a b$, où $a$ et $b$ sont les longueurs des demi-axes.
+Si $a=b=r$ on retrouve que l'aire d'un disque de rayon $r$ est $\pi r^2$.
+\fincorrection
+\finexercice

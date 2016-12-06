@@ -1,0 +1,53 @@
+\exercice{2554, tahani, 2009/04/01}
+\enonce
+Etudier les extrémas locaux
+et globaux des fonctions suivantes:
+\begin{enumerate}
+\item $f(x,y)=x^2+xy+y^2+\frac{1}{4}x^3$ 
+\item $f(x,y)=x^2y-x^2/2-y^2$ 
+\item $f(x,y)=x^4+y^4-2(x-y)^2$ 
+\item $f(x,y)=\sin^2x-\sh^2y$ 
+\item $f(x,y)=x^3+y^3$ 
+\item $f(x,y)=y^2-3x^2y+2x^4$
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+Soit $f(x,y)=x^2+xy+y^2+\frac{1}{4}x^3$, calculons la jacobienne
+de $f$: $$Df(x,y)=(2x+y+\frac{3}{4}x^2, x+2y).$$ Les points
+critiques de $f$ v\'erifient $Df(x,y)=0$ et par cons\'equent
+v\'erifient les \'equations $2x+y+\frac{3}{4}x^2=0$ et $x+2y=0$.
+Par cons\'equent $f$ admet deux points critiques $(0,0)$ et
+$(-2,1)$. Pour savoir si ces points critiques sont des extr\'emums
+de $f$, il faut \'etudier la hessienne de $f$:
+$$Hess_f(x,y)= \left(
+\begin{array}{cc}
+2+\frac{3}{2}x & 1 \\
+1 & 2
+\end{array}\right)$$ et ses valeurs propres.
+Au point $(0,0)$, $$Hess_f(0,0)= \left(
+\begin{array}{cc}
+2 & 1 \\
+1 & 2
+\end{array}\right)$$ a pour polynôme caractéristique
+$P(\lambda)=(1-\lambda)(3-\lambda)$ et ses deux valeurs propres
+sont strictement positive. La fonction $f$ admet donc un minimum
+local au point $(0,0)$. Ce minimum n'est pas globale car
+$f(0,0)=0$ et $f$ prend des valeurs n\'egatives pour $y=0$ et $x$
+qui tend vers $-\infty$.\par
+Au point $(-2,1)$, $$Hess_f(0,0)=
+\left(
+\begin{array}{cc}
+-1 & 1 \\
+1 & 2
+\end{array}\right)$$ a pour polynôme caractéristique
+$P(\lambda)=\lambda^2-\lambda-3$. On peut alors soit calculer les
+valeurs propres soit remarquer que le determinant de la hessienne
+est \'egal au produit des deux valeurs propres (ici $-3$) et
+celles-ci sont donc non nulles et de signe contraire. Par
+cons\'equent le point $(-2,1)$ est point selle de $f$. ce n'est
+pas un extremum.
+\fincorrection
+\finexercice

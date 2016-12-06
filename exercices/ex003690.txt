@@ -1,0 +1,29 @@
+\exercice{3690, quercia, 2010/03/11}
+\enonce[Centrale MP 2000]
+Soit $E=\mathcal{C}^1([0,1],\R)$ et $\varphi (f,g)= \int_{[0,1]} fg+f'g'$.
+
+\begin{enumerate}
+  \item Montrer que $\varphi$ est un produit scalaire.
+  \item Soit $V=\{f\in E\, |\, f(0)=f(1)=0\}$ et $W=\{f\in E \, |\, f''=f\}$. Montrer que $V$ et $W$
+    sont supplémentaires orthogonaux et exprimer la projection orthogonale sur $W$.
+    
+  \item Soit $E_{\alpha \beta}=\{f\in E\, |\, f(0)=\alpha \text{ et } f(1)=\beta\}$. Déterminer
+    $\inf\limits_{f\in E_{\alpha \beta}}  \int_{[0,1]} f^2+f'^2$.
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item 
+  \item $\pi(f)(t) = f(0)\frac{\sh(1-t)}{\sh(1)} + f(1)\frac{\sh(t)}{\sh(1)}.$
+  \item L'inf est atteint pour la fonction~$f\in W$ telle
+    que $f(0) = \alpha$ et $f(1) = \beta$, soit
+    $f(t) = \alpha\frac{\sh(1-t)}{\sh(1)} + \beta\frac{\sh(t)}{\sh(1)}$
+    et $inf=\frac{(\alpha^2+\beta^2)\ch(1) - 2\alpha\beta}{\sh(1)}$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

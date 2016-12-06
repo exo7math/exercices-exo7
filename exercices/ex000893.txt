@@ -1,0 +1,54 @@
+\exercice{893, legall, 1998/09/01}
+\video{GNQ77W5XwGs}
+\enonce
+Soit $E$ un espace vectoriel.
+\begin{enumerate}
+\item Soient $F$ et $G$ deux sous-espaces de $E$. Montrer que
+  $$F\cup G \hbox{ est un sous-espace vectoriel de } E
+ \quad \Longleftrightarrow \quad F\subset G \hbox{ ou } G \subset F.$$
+\item Soit $H$ un troisi\`eme sous-espace vectoriel de $E$. Prouver
+  que
+  $$G \subset F \Longrightarrow F\cap(G+H) = G + (F\cap H) .$$
+ \end{enumerate}
+\finenonce 
+
+\indication
+\begin{enumerate}
+\item Pour le sens $\Rightarrow$ : raisonner par l'absurde et prendre
+  un vecteur de $F\setminus G$ et un de $G\setminus F$. Regarder la
+  somme de ces deux vecteurs.
+\item Raisonner par double inclusion, revenir aux vecteurs.
+\end{enumerate}
+\finindication
+
+\correction
+\begin{enumerate}
+\item Sens $\Leftarrow$. Si $F\subset G$ alors $F\cup G=G$ donc $F\cup
+  G$ est un sous-espace vectoriel.  De m\^eme si $G\subset F$.
+  
+  Sens $\Rightarrow$. On suppose que $F\cup G$ est un sous-espace
+  vectoriel.  Par l'absurde supposons que $F$ n'est pas inclus dans
+  $G$ et que $G$ n'est pas inclus dans $F$. Alors il existe $x\in
+  F\setminus G$ et $y\in G\setminus F$. Mais alors $x\in F\cup G$,
+  $y\in F\cup G$ donc $x+y\in F\cup G$ (car $F\cup G$ est un
+  sous-espace vectoriel). Comme $x+y\in F\cup G$ alors
+$x+y\in F$ ou $x+y\in G$.
+\begin{itemize}
+ \item Si $x+y\in F$ alors, comme $x\in F$, $(x+y)+(-x) \in F$ donc $y\in F$, ce qui est absurde.
+ \item  Si $x+y\in G$ alors, comme $y\in G$, $(x+y)+(-y) \in G$ donc $x\in G$, ce qui est absurde.
+\end{itemize}  
+Dans les deux cas nous obtenons une contradiction. Donc $F$ est inclus
+dans $G$ ou $G$ est inclus dans $F$.
+
+\item Supposons $G\subset F$.
+\begin{itemize}
+ \item Inclusion $\supset$. Soit $x\in G+(F\cap H)$. Alors il existe $a\in G$, $b\in F\cap H$ tels que $x=a+b$. Comme $G\subset F$ alors $a\in F$, de plus $b\in F$ donc $x=a+b\in F$.
+D'autre part $a\in G$, $b\in H$, donc $x=a+b\in G+H$. Donc $x\in F\cap(G+H)$.
+ \item Inclusion $\subset$. Soit $x\in F\cap(G+H)$. $x\in G+H$ alors il existe $a\in G$,
+$b\in H$ tel que $x=a+b$. Maintenant $b=x-a$ avec $x\in F$ et $a\in G\subset F$, donc $b\in F$,
+donc $b\in F\cap H$. Donc $x=a+b\in G+(F\cap H)$.
+\end{itemize}  
+  
+\end{enumerate}
+\fincorrection
+\finexercice

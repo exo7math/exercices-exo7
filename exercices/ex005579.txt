@@ -1,0 +1,22 @@
+\exercice{5579, rouget, 2010/10/16}
+\enonce[**]
+Soient $(x_1,..,x_n)$ une famille de $n$ vecteurs de rang $r$ et $(x_1,...,x_m)$ une sous famille de rang $s$ ($m\leqslant n$ et $s\leqslant r$). Montrer que $s\geqslant r+m-n$. Cas d'égalité ?
+\finenonce
+
+\noindication
+
+\correction
+Si $m=n$, c'est immédiat.
+
+Supposons $m<n$.
+
+\begin{align*}\ensuremath
+r&=\text{dim}(\text{Vect}(x_1,...,x_n))=\text{dim}\left(\text{Vect}(x_1,...,x_m)+\text{Vect}(x_{m+1},...x_n)\right)\\
+ &\leqslant\text{dim}(\text{Vect}(x_1,...,x_m))+\text{dim}(\text{Vect}(x_{m+1},...,x_n))\\
+&\leqslant s + (n-m)
+\end{align*}
+
+et donc $s\geqslant r+m-n$. On a l'égalité si et seulement si chaque inégalité est une égalité, c'est à dire si et seulement si
+$\text{Vect}(x_1,...,x_m)\cap\text{Vect}(x_{m+1},...x_n)=\{0\}$ (pour la première) et la famille $(x_{m+1},...,x_n)$ est libre (pour la deuxième).
+\fincorrection
+\finexercice

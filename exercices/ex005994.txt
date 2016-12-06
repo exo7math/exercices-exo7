@@ -1,0 +1,51 @@
+\exercice{5994, quinio, 2011/05/20}
+
+\enonce
+Un fumeur, après avoir lu une série de statistiques
+effrayantes sur les risques de cancer, problèmes cardio-vasculaires 
+liés au tabac, décide d'arrêter de fumer; toujours d'après des
+statistiques, on estime les probabilités suivantes : si cette personne
+n'a pas fumé un jour $J_{n}$, alors la probabilité
+pour qu'elle ne fume pas le jour suivant $J_{n+1}$ est $0.3$; 
+mais si elle a fumé un jour $J_{n}$, alors la probabilité 
+pour qu'elle ne fume pas le jour suivant $J_{n+1}$ est $0.9$; 
+quelle est la probabilité $P_{n+1}$ pour qu'elle
+fume le jour $J_{n+1}$ en fonction de la probabilité 
+$P_{n}$ pour qu'elle fume le jour $J_{n}$ ? Quelle est la
+limite de $P_{n}$ ? Va-t-il finir par s'arrêter?
+\finenonce
+
+\noindication
+
+\correction
+Fumeurs
+
+Définissons les événements: $F_{n}$ <<Fumer le $n$\up{ème} jour>>, et $\overline{F_{n}}$ 
+l'événement complémentaire.
+Alors $\{\overline{F_{n}},F_{n}\}$ constitue un système complet d'événements, 
+$P_{n}=$ $P(F_{n})$; on peut donc écrire :
+$P(\overline{F_{n+1}})=P(\overline{F_{n+1}}/F_{n})P(F_{n})
++P(\overline{F_{n+1}}/\overline{F_{n}})P(\overline{F_{n}})$.
+
+Comme $P(\overline{F_{n+1}}/F_{n})=0.9$ et $P(\overline{F_{n+1}}/\overline{F_{n}})=0.3$
+$1-P_{n+1}=0.9P_{n}+0.3(1-P_{n})$, soit $P_{n+1}=-0.6P_{n}+0.7$. Notons (R)
+cette relation.
+
+Pour connaître le comportement à long terme, il faut étudier cette
+suite récurrente; il y a des techniques mathématiques pour ça,
+c'est le moment de s'en servir.
+
+Cherchons la solution de l'équation <<$\ell=-0.6\ell+0.7$>>, 
+la limite éventuelle satisfait nécessairement cette équation : faire un passage à la limite dans la
+relation (R), ou utiliser le théorème du point fixe.
+
+On trouve $\ell=\frac{7}{16};$ alors, la suite $Q_{n}=(P_{n}- \ell)$ vérifie : 
+$Q_{n+1}= - 0.6Q_{n}$, ce qui permet de 
+conclure : $Q_{n+1}=(-0.6)^{n}Q_{1}$
+et comme $((-0.6)^{n})$ est une suite qui tend vers $0$, on peut dire que la
+suite $(Q_{n})$ tend vers $0$ et donc que la suite $(P_n)$ tend vers $\ell=\frac{7}{16}.$
+
+Conclusion : la probabilité $P_{n}$ pour qu'elle fume le jour $J_{n}$
+tend vers $\frac{7}{16} \simeq 0.4375$.
+\fincorrection
+\finexercice

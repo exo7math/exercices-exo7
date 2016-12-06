@@ -1,0 +1,23 @@
+\exercice{5386, rouget, 2010/07/06}
+\enonce[**T]
+Montrer en revenant à la définition que $f(x)=\frac{3x-1}{x-5}$ est continue en tout point de $\Rr\setminus\{5\}$.
+\finenonce
+
+\noindication
+
+\correction
+Soit $x_0\in\Rr\setminus\{5\}$. Pour $x\neq5$, 
+
+$$|f(x)-f(x_0)|=\left|\frac{3x-1}{x-5}-\frac{3x_0-1}{x_0-5}\right|=\frac{14|x-x_0|}{|x-5|.|x_0-5|}.$$
+
+Puis, pour $x\in]x_0-\frac{|x_0-5|}{2},x_0+\frac{|x_0-5|}{2}[$, on a $|x-5|>\frac{|x_0-5|}{2}[(>0)$, et donc,
+
+$$\forall x\in]x_0-\frac{|x_0-5|}{2},x_0+\frac{|x_0-5|}{2}[,\;|f(x)-f(x_0)|=\frac{28}{(x_0-5)^2}|x-x_0|.$$
+
+Soient $\varepsilon>0$ puis $\alpha=\mbox{Min}\{\frac{|x_0-5|}{2},\frac{(x_0-5)^2\varepsilon}{28}\}(>0)$.
+
+$$|x-x_0|<\alpha\Rightarrow|f(x)-f(x_0)|\leq\frac{28}{(x_0-5)^2}|x-x_0|<\frac{28}{(x_0-5)^2}\frac{(x_0-5)^2\varepsilon}{28}=\varepsilon.$$
+
+On a monté que $\forall\varepsilon>0,\;\exists\alpha>0/\;(\forall x\in\Rr\setminus\{5\},\;|x-x_0|<\alpha\Rightarrow|f(x)-f(x_0)|<\varepsilon)$. $f$ est donc continue sur $\Rr\setminus\{5\}$.
+\fincorrection
+\finexercice

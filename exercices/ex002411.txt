@@ -1,0 +1,32 @@
+\exercice{2411, bodin, 2003/10/01}
+\enonce 
+Soient $X$ et $Y$ deux espaces métriques compacts. Soit $\mathcal{A}$ l'ensembles des combinaisons linéaires finies
+$f \in \mathcal{C}(X\times Y,\Rr)$ de la forme :
+$$f (x,y) = \sum_{i\in I} \lambda_i u_i(x) \cdot v_i(y), \quad \text {avec } u_i \in \mathcal{C}(X,\Rr), v_i \in \mathcal{C}(Y,\Rr), \lambda_i \in \Rr,  I \text{ fini}.$$
+
+Montrer que toute fonction de $\mathcal{C}(X\times Y,\Rr)$ est limite uniforme de suites d'éléments de $\mathcal{A}$.
+\finenonce
+
+\indication
+Appliquer le théorème de Stone-Weierstrass.
+\finindication
+
+\correction
+On cherche à vérifier les hypothèses du théorème de Stone-Weierstrass.
+\begin{itemize}
+\item Tout d'abord $X\times Y$ est compact, car c'est un produit d'espaces compacts.
+\item Ensuite $\mathcal{A}$ est une sous-algèbre de $\mathcal{C}(X\times Y,\Rr)$ :
+en effet pour $f,g \in \mathcal{A}$ et $\lambda \in \Rr$ on a :
+$$ f+g \in \mathcal{A}, \quad \lambda\cdot f \in \mathcal{A}\quad \text{ et }  f\times g \in \mathcal{A}.$$
+\item  $\mathcal{A}$ sépare les points : soient $(x_1,y_1)\neq (x_2,y_2) \in X\times Y$.
+Supposons que $x_1\neq x_2$, soit $u \in \mathcal{C}(X,\Rr)$ tel que $u(x_1)\neq u(x_2)$ (clairement une telle fonction existe !), soit $v$ la fonction sur $Y$ constante égale à $1$.
+Alors $f$ définie par $f(x,y) = u(x)\cdot v(y)$ est dans $\mathcal{A}$ et 
+$f(x_1,y_1) = u(x_1)\neq u(x_2)=f(x_2,y_2)$. Si $x_1=x_2$ alors nécessairement $y_1\neq y_2$ et on fait un raisonnement similaire.
+\item Pour tout $(x,y)\in X\times Y$
+il existe une fonction $f\in \mathcal{A}$ telle que $f(x)\neq 0$ : prendre la fonction $f$ constante égale à $1$ qui est bien dans $\mathcal{A}$.
+\end{itemize}
+
+Par le théorème de Stone-Weierstrass $\mathcal{A}$ est dense dans  $\mathcal{C}(X\times Y,\Rr)$
+pour la norme uniforme.
+\fincorrection
+\finexercice

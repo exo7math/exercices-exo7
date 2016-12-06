@@ -1,0 +1,68 @@
+\exercice{5744, rouget, 2010/10/16}
+\enonce[*** I]
+Montrer que pour tout réel $x$, $\int_{0}^{+\infty}\frac{\cos(xt)}{\ch t}\;dt = 2\sum_{n=0}^{+\infty}(-1)^n\frac{2n+1}{(2n+1)^2+x^2}$
+
+\finenonce
+
+\noindication
+
+\correction
+\textbf{Existence de l'intégrale.} Soit $x\in\Rr$. La fonction $f~:~t\mapsto\frac{\cos(xt)}{\ch t}$ est continue sur $[0,+\infty[$. De plus, pour tout réel positif $t$, $|f(t)|\leqslant\frac{1}{\ch t}$ et donc $|f(t)|\underset{t\rightarrow+\infty}{\sim}\frac{2}{e^t}\underset{t\rightarrow+\infty}{=}o\left(\frac{1}{t^2}\right)$. On en déduit que la fonction $f$ est intégrable sur  $[0,+\infty[$.
+
+\begin{center}
+Pour tout réel $x$, $\int_{0}^{+\infty}\frac{\cos(xt)}{\ch t}\;dt$ existe.
+\end{center}
+
+\textbf{Convergence de la série.} Soit $x\in\Rr$. Pour $n\in\Nn$, posons $u_n(x)=\frac{2n+1}{(2n+1)^2+x^2}$. Pour $n\in\Nn$,
+
+\begin{align*}\ensuremath
+u_n(x)-u_{n+1}(x)&=\frac{2n+1}{(2n+1)^2+x^2}-\frac{2n+3}{(2n+3)^2+x^2}=\frac{(2n+1)((2n+3)^2+x^2)-(2n+3)((2n+1)^2+x^2)}{((2n+1)^2+x^2)((2n+3)^2+x^2)}\\
+ &=\frac{2(2n+1)(2n+3)-2x^2}{((2n+1)^2+x^2)((2n+3)^2+x^2)}.
+\end{align*}
+
+Puisque le numérateur de cette dernière expression tend vers $+\infty$ quand $n$ tend vers $+\infty$, cette expression est positive pour $n$ grand. On en déduit que la suite $(u_n(x))$ décroît à partir d'un certain rang. D'autre part, $\lim_{n \rightarrow +\infty}u_n(x)=0$.
+
+On en déduit que la série de terme général $(-1)^nu_n(x)$ converge en vertu du critère spécial aux séries alternées.
+
+\begin{center}
+Pour tout réel $x$, la série de terme général $(-1)^n\frac{2n+1}{(2n+1)^2+x^2}$ converge.
+\end{center}
+
+\textbf{Egalité de l'intégrale et de la somme de la série.} Soit $n\in\Nn$. Pour $t\in]0,+\infty[$, on a $e^{-t}\in]0,1[$ et donc
+
+\begin{align*}\ensuremath
+\frac{\cos(xt)}{\ch t}&=\frac{2\cos(xt)e^{-t}}{1+e^{-2t}}=2\cos(xt)e^{-t}\sum_{k=0}^{n}(-1)^ke^{-2kt}+(-1)^{n+1}\frac{\cos(xt)e^{-(2n+3)t}}{1+e^{-2t}}\\
+ &=2\sum_{k=0}^{n}(-1)^k\cos(xt)e^{-(2k+1)t}+(-1)^{n+1}\frac{\cos(xt)e^{-(2n+3)t}}{1+e^{-2t}}.
+\end{align*}
+
+Maintenant, pour chaque $k\in\Nn$, la fonction $t\mapsto\cos(xt)e^{-(2k+1)t}$ est intégrable sur $[0,+\infty[$ car continue sur $[0,+\infty[$ et négligeable devant $\frac{1}{t^2}$ quand $t$ tend vers $+\infty$. On en déduit encore que la fonction $t\mapsto (-1)^{n+1}\frac{\cos(xt)e^{-(2n+3)t}}{1+e^{-2t}}$ est intégrable sur $[0,+\infty[$ puis que 
+
+\begin{center}
+$\forall n\in\Nn$, $\int_{0}^{+\infty}\frac{\cos(xt)}{\ch t}\;dt=2\sum_{k=0}^{n}(-1)^k\int_{0}^{+\infty}\cos(xt)e^{-(2k+1)t}\;dt+(-1)^{n+1}\int_{0}^{+\infty}\frac{\cos(xt)e^{-(2n+3)t}}{1+e^{-2t}}\;dt$.
+\end{center}
+
+Ensuite, $\left|\int_{0}^{+\infty}(-1)^{n+1}\frac{\cos(xt)e^{-(2n+3)t}}{1+e^{-2t}}\;dt\right|\leqslant\int_{0}^{+\infty}e^{-(2n+3)t}\;dt=\frac{1}{2n+3}$, et donc $\lim_{n \rightarrow +\infty}(-1)^{n+1}\frac{\cos(xt)e^{-(2n+3)t}}{1+e^{-2t}}\;dt=0$ puis
+
+\begin{center}
+$\int_{0}^{+\infty}\frac{\cos(xt)}{\ch t}\;dt=2\sum_{n=0}^{+\infty}(-1)^n\int_{0}^{+\infty}\cos(xt)e^{-(2n+1)t}\;dt$.
+\end{center}
+
+Soit $n\in\Nn$.
+
+\begin{align*}\ensuremath
+\int_{0}^{+\infty}\cos(xt)e^{-(2n+1)t}\;dt&=\text{Re}\left(\int_{0}^{+\infty}e^{ixt}e^{-(2n+1)t}\;dt\right)=\text{Re}\left(\int_{0}^{+\infty}e^{(-(2n+1)+ix)t}\;dt\right)\\
+ &=\text{Re}\left(\left[\frac{e^{(-(2n+1)+ix)t}}{-(2n+1)+ix}\right]_0^{+\infty}\right)=\text{Re}\left(\frac{1}{(2n+1)-ix}\left(1-\lim_{t \rightarrow +\infty}e^{(-(2n+1)+ix)t}\right)\right)\\
+ &=\text{Re}\left(\frac{1}{(2n+1)-ix}\right)\;(\text{car}\;\left|e^{(-(2n+1)+ix)t}\right|=e^{-(2n+1)t}\underset{n\rightarrow+\infty}{\rightarrow}0)\\
+ &=\text{Re}\left(\frac{2n+1+ix}{(2n+1)^2+x^2}\right)=\frac{2n+1}{(2n+1)^2+x^2}.
+\end{align*}
+
+On a enfin montré que
+
+\begin{center}
+\shadowbox{
+$\int_{0}^{+\infty}\frac{\cos(xt)}{\ch t}\;dt = 2\sum_{n=0}^{+\infty}(-1)^n\frac{2n+1}{(2n+1)^2+x^2}$.
+}
+\end{center}
+
+\fincorrection
+\finexercice

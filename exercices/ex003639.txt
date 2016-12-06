@@ -1,0 +1,39 @@
+\exercice{3639, quercia, 2010/03/10}
+\enonce[Polynômes à deux variables]
+
+Soit $f : {\R^2} \to \R$. On dit que $f$ est polynomiale si elle est de la
+forme : $f(x,y) = \sum_{i,j} a_{ij}x^iy^j$, la somme portant sur un nombre
+fini de termes. Le degré de $f$ est alors $\max(i+j \text{ tq } a_{ij} \ne 0)$.
+
+On note $E_k$ l'ensemble des fonctions $\R^2 \to \R$ polynomiales de degré
+inférieur ou égal à $k$.
+
+\begin{enumerate}
+  \item Montrer que $E_k$ est un $\R$-ev de dimension finie et donner sa dimension.
+    
+  \item Soient $A=(0,0)$, $B=(1,0)$, $C=(0,1)$.
+    Montrer que les formes linéaires $f  \mapsto f(A)$, $f  \mapsto f(B)$, $f  \mapsto f(C)$
+    constituent une base de $E_1^*$.
+  \item Chercher de même une base de $E_2^*$.
+    
+  \item Soit $T$ le triangle plein $ABC$ et $f \in E_1$.
+    Montrer que $ \int_{}^{}\!\! \int_T^{} f(x,y)\,d xd y =
+    \frac{f(A)+f(B)+f(C)}6$.
+  \item Chercher une formule analogue pour $f \in E_2$.
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+1. $\frac{(k+1)(k+2)}2$.
+
+3. $(\delta_A,\delta_B,\delta_C,\delta_{A'},\delta_{B'},\delta_{C'})$
+             où $A',B',C'$ sont les milieux du triangle $ABC$.
+             
+5. $ \int_{}^{}\!\! \int_T^{} f(x,y)\,d xd y =
+              \frac{f(A')+f(B')+f(C')}6$.
+ \fincorrection
+
+\finexercice

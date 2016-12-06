@@ -1,0 +1,39 @@
+\exercice{3269, quercia, 2010/03/08}
+
+\enonce[Centrale MP 2001]
+Soit $f(x) = x^4 + ax^3 + bx^2 + cx + d$ avec $a,b,c,d$ r{\'e}els.
+Donner une condition n{\'e}cessaire et suffisante portant sur~$a,b,c,d$
+pour qu'il existe une droite coupant la courbe repr{\'e}sentative
+de~$f$ en quatre points distincts $M_1,M_2,M_3,M_4$ tels que
+$M_1M_2 = M_2M_3 = M_3M_4$.
+\finenonce
+
+\noindication
+
+\correction
+Soit $y = \gamma x + \delta$ l'{\'e}quation de la droite en question.
+On veut que l'{\'e}quation $x^4 + ax^3 + bx^2 + (c-\gamma)x + (d-\delta) = 0$
+ait quatre racines distinctes en progression arithm{\'e}tique. Si $r$ est la raison
+de cette progression alors les racines sont
+$-\frac a4 -\frac32r$, $-\frac a4 -\frac12r$, $-\frac a4 +\frac12r$ et $-\frac a4 +\frac32r$.
+On doit donc chercher {\`a} quelle condition sur $a,b,c,d$ il existe $\gamma,\delta,r$ r{\'e}els
+tels que ~:
+$$\begin{aligned}
+&\Bigl(-\frac a4 -\frac32r\Bigr)\Bigl(-\frac a4 -\frac12r\Bigr) +
+\dots + \Bigl(-\frac a4 +\frac12r\Bigr)\Bigl(-\frac a4 +\frac32r\Bigr)
+= -b\\ 
+&
+\Bigl(-\frac a4 -\frac32r\Bigr)\Bigl(-\frac a4
+-\frac12r\Bigr)\Bigl(-\frac a4 + \frac12r\Bigr) + \dots \\
+&\qquad\qquad\qquad+ \bigl(-\frac
+a4 - \frac12r\Bigr)\Bigl(-\frac a4 +\frac12r\Bigr)\Bigl(-\frac a4
++\frac32r\Bigr) = c-\gamma\\ 
+&\Bigl(-\frac a4 -\frac32r\Bigr)\Bigl(-\frac a4
+-\frac12r\Bigr)\Bigl(-\frac a4 + \frac12r\Bigr)\Bigl(-\frac a4 +
+\frac32r\Bigr) = \delta - d 
+\end{aligned}$$
+Les deux derni{\`e}res {\'e}quations sont satisfaites {\`a} $r$ donn{\'e} en choisissant convenablement $\gamma$ et $\delta$.
+La premi{\`e}re s'{\'e}crit apr{\`e}s simplifications~: $\frac52r^2 = \frac38a^2 + b$ et la condition
+demand{\'e}e est $3a^2 + 8b> 0$.
+\fincorrection
+\finexercice 

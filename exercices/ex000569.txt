@@ -1,0 +1,91 @@
+\exercice{569, bodin, 2001/11/01}
+\video{sHmOnEw9rxQ}
+\enonce
+ Soit $a>0$. On d\'efinit la suite $(u_n)_{n\geq 0}$ par
+$u_0$ un r\'eel v\'erifiant $u_0>0$ et par la relation
+$$u_{n+1}= \frac12 \left( u_n+\frac{a}{u_n}\right).$$
+On se propose de montrer que $(u_n)$ tend vers $\sqrt a$.
+\begin{enumerate}
+  \item Montrer que
+$${u_{n+1}}^2-a= \frac{({u_n}^2-a)^2}{4{u_n}^2}.$$
+\item Montrer que si $n\geq 1$ alors $u_n \geq \sqrt a$ puis que
+la suite $(u_n)_{n\geq 1}$ est d\'ecroissante.
+\item En d\'eduire que la suite $(u_n)$ converge vers $\sqrt a$.
+\item En utilisant la relation
+${u_{n+1}}^2-a= ({u_{n+1}}-\sqrt{a})({u_{n+1}}+\sqrt{a})$ donner
+une majoration de ${u_{n+1}}-\sqrt{a}$ en fonction de
+${u_{n}}-\sqrt{a}$.
+\item Si $u_1-\sqrt a \leq k$ et pour $n\geq 1$ montrer que
+$$u_n - \sqrt a \leq 2\sqrt a \left( \frac k {2\sqrt a}\right)^{2^{n-1}}.$$
+\item Application : Calculer $\sqrt{10}$ avec une pr\'ecision de 8 chiffres apr\`es la virgule,
+en prenant $u_0 = 3$.
+\end{enumerate}
+\finenonce 
+
+\indication
+\begin{enumerate}
+\item C'est un calcul de r\'eduction au m\^eme d\'enominateur.
+\item Pour montrer la d\'ecroisance, montrer $\frac{u_{n+1}}{ u_n} \leqslant 1$.
+\item Montrer d'abord que la suite converge, montrer ensuite que la limite est $\sqrt a$.
+\item Penser \`a \'ecrire $u_{n+1}^2-a = (u_{n+1}-\sqrt a)(u_{n+1}+\sqrt a)$.
+\item Raisonner par r\'ecurrence.
+\item Pour $u_0= 3$ on a $u_1=3,166\ldots$, donc $3\leqslant \sqrt{10} \leqslant u_1$
+et on peut prendre $k=0.17$ par exemple et $n=4$ suffit pour la pr\'ecision demand\'ee.
+\end{enumerate}
+\finindication
+
+\correction
+\begin{enumerate}
+\item \begin{align*}
+       u_{n+1}^2-a &= \frac14\left(\frac{u_n^2+a}{u_n}\right)^2-a\\
+                   &= \frac1{4u_n^2}(u_n^4-2au_n^2+a^2)\\
+                   &= \frac14 \frac{(u_n^2-a)^2}{u_n^2}\\
+  \end{align*}
+\item Il est clair que pour $n\geqslant 0$ on a $u_n > 0$.
+D'apr\`es l'\'egalit\'e pr\'ec\'edente pour $n\geqslant 0$, $u_{n+1}^2-a \geqslant 0$ et
+comme $ u_{n+1}$ est positif alors $u_{n+1}\geqslant \sqrt a$.
+
+Soit $n\geqslant 1$. Calculons le quotient de $u_{n+1}$ par $u_n$ :
+$\frac{ u_{n+1}}{ u_n} = \frac12\left(1+\frac{a}{u_n^2}\right)$ or
+$\frac{a}{u_n^2}\leqslant 1$ car $u_n \geqslant \sqrt a$. Donc $\frac{
+u_{n+1}}{ u_n} \leqslant 1$ et donc $u_{n+1} \leqslant  u_n $. La suite
+$(u_n)_{n\geqslant 1}$ est donc d\'ecroissante.
+\item La suite $(u_n)_{n\geqslant 1}$ est d\'ecroissante et minor\'ee par $\sqrt a$ donc elle converge vers une limite $\ell>0$.
+D'apr\`es la relation
+$$u_{n+1} = \frac12\left(u_n+\frac{a}{u_n}\right)$$
+quand $n\rightarrow + \infty$ alors $u_n \rightarrow \ell$ et
+$u_{n+1} \rightarrow \ell$. \`A la limite nous obtenons la
+relation
+$$\ell = \frac12\left(\ell+\frac{a}{\ell}\right).$$
+La seule solution positive est $\ell = \sqrt a$. Conclusion
+$(u_n)$ converge vers $\sqrt a$.
+\item La relation
+$$ u_{n+1}^2-a =  \frac{(u_n^2-a)^2}{4u_n^2}$$
+s'\'ecrit aussi
+$$ (u_{n+1}-\sqrt a)(u_{n+1}+\sqrt a) = \frac{(u_n-\sqrt a)^2(u_n+\sqrt a)^2}{4u_n^2}.$$
+Donc
+\begin{align*}
+       u_{n+1}-\sqrt a &= (u_n-\sqrt a)^2 \frac{1}{4(u_{n+1}+\sqrt a)}\left(\frac{u_n+\sqrt a}{u_n}\right)^2\\
+                   &\leqslant (u_n-\sqrt a)^2 \frac{1}{4(2\sqrt a)}\left(1+\frac{\sqrt a}{u_n}\right)^2\\
+                   &\leqslant (u_n-\sqrt a)^2  \frac{1}{2\sqrt a}\\
+  \end{align*}
+\item Par r\'ecurrence pour $n=1$, $u_1-\sqrt a \leqslant k$.
+Si la proposition est vraie rang $n$, alors
+\begin{align*}
+       u_{n+1}-\sqrt a &\leqslant \frac{1}{2\sqrt a} (u_n-\sqrt a)^2  \\
+       &\leqslant \frac{1}{2\sqrt a} (2\sqrt a)^2\left(\left( \frac{k}{2\sqrt a} \right)^{2^{n-1}} \right)^2\\
+       &\leqslant 2\sqrt a \left( \frac{k}{2\sqrt a} \right)^{2^n}\\
+\end{align*}
+\item Soit $u_0=3$, alors $u_1 = \frac12(3+\frac{10}{3}) = 3,166\ldots$.
+Comme $3\leqslant \sqrt{10} \leqslant u_1$ donc $u_1-\sqrt{10} \le
+0.166\ldots$. Nous pouvons choisir $k=0,17$. Pour que l'erreur
+$u_n-\sqrt a$ soit inf\'erieure \`a $10^{-8}$ il suffit de calculer le
+terme $u_4$ car alors l'erreur (calcul\'ee par la formule de la
+question pr\'ec\'edente) est inf\'erieure \`a $1,53\times 10^{-10}$. Nous
+obtenons $u_4 = 3,16227766\ldots$
+Bilan $\sqrt{10} =  3,16227766\ldots$ avec une précision de $8$ chiffres après la virgule. 
+Le nombre de chiffres exacts double à chaque itération, avec $u_5$ nous aurions (au moins) $16$ chiffres exacts,
+et avec $u_6$ au moins $32$\ldots
+\end{enumerate}
+\fincorrection
+\finexercice

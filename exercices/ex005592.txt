@@ -1,0 +1,28 @@
+\exercice{5592, rouget, 2010/10/16}
+\enonce[***]
+Soit $E$ un $\Cc$-espace de dimension finie $n$. Soient $p_1$,..., $p_n$ $n$ projecteurs non nuls de $E$ tels que $\forall i\neq j$, $p_i\circ p_j=0$.
+
+\begin{enumerate}
+ \item  Montrer que tous les $p_i$ sont de rang $1$.
+
+\item  Soient $q_1$,..., $q_n$ $n$ projecteurs vérifiant les mêmes égalités. Montrer qu'il existe un automorphisme $f$ de $E$ tel que $\forall i\in\llbracket1,n\rrbracket$, $q_i=f\circ p_i\circ f^{-1}$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  D'après le \ref{ex:rou29}, $\text{Im}(p_1 + ... + p_n) =\text{Im}(p_1)+ ... +\text{Im}(p_n)=\text{Im}(p_1)\oplus ... \oplus\text{Im}(p_n)$.
+
+Chaque $p_i$ est de rang au moins $1$, mais si l'un des $p_i$ est de rang supérieur ou égal à $2$ alors $n =\text{dim}E\geqslant\text{rg}(p_1+...+p_n) =\text{rg}(p_1)+ ... +\text{rg}(p_n)> n$ ce qui est impossible. Donc chaque $p_i$ est de rang $1$.
+
+\item  Les images des $p_i$ (resp. $q_i$) sont des droites vectorielles. Pour chaque $i$, notons $e_i$ (resp. $e_i'$) un vecteur non nul de $\text{Im}(p_i)$ (resp. $\text{Im}(q_i)$). D'après 1), $E=
+\text{Vect}(e_1)\oplus  ... \oplus\text{Vect}(e_n)$ ou encore $(e_i)_{1\leqslant i\leqslant n}$ (resp. $(e_i')_{1\leqslant i\leqslant n}$) est une base de $E$.
+
+Soit $f$ l'automorphisme de $E$ défini par $f(e_i) =e_i'$ ($f$ est un automorphisme car l'image par $f$ d'une base de $E$ est une base de $E$).
+
+Soit $(i,j)\in\llbracket1,n\rrbracket^2$. $f\circ p_i\circ f^{-1}(e_j') = f(p_i(e_j)) =f(\delta_{i,j}e_i)=\delta_{i,j}e_i'=q_i(e_j)$. Ainsi, les endomorphismes $q_i$ et $f\circ p_i\circ f^{-1}$ coïncident sur une base de $E$ et sont donc égaux.
+\end{enumerate}
+\fincorrection
+\finexercice

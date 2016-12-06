@@ -1,0 +1,49 @@
+\exercice{4109, quercia, 2010/03/11}
+\enonce[X MP$^*$ 2003]
+\begin{enumerate}
+  \item Soient ${f,g}: \R \to \R$ continues et $k>0$, $t_0\in\R$
+    tels que~: $\forall\ t\ge t_0,\ f(t)\le g(t) + k \int_{u=t_0}^t f(u)\,d u$.
+
+    Montrer que~: $\forall\ t\ge t_0,\ f(t) \le g(t) + k \int_{u=t_0}^t e^{k(t-u)}g(u)\,d u$.
+    
+
+  \item Soient ${A,B} : \R\to {\mathcal{M}_n(\R)}$ continues, $T>t_0$, $K>0$ et $\eta>0$
+    tels que~: $\forall\ t\in[t_0,T],\ \|\kern-1.2pt|A(t)\|\kern-1.2pt|\le K$
+    et $\|\kern-1.2pt|A(t)-B(t)\|\kern-1.2pt|\le\eta$.
+    On note~$M_0$ (resp. $N_0$) la solution du problème de Cauchy~:
+    $M(t_0)=I,\ M'(t) = A(t)M(t)$ (resp. $N(t_0)=I,\ N'(t) = B(t)N(t)$).
+    Montrer que~: $\forall\ t\in[t_0,T],\ \|\kern-1.2pt|M_0(t)-N_0(t)\|\kern-1.2pt|
+    \le e^{K(t-t_0)}(e^{\eta(t-t_0)}-1)$.
+    
+
+  \item On note $X_0$ (resp. $Y_0$) la solution du problème de Cauchy dans~$\R^n$~:
+    $X(t_0) = \alpha,\ X'(t) = A(t)X(t)$ (resp. $Y(t_0) = \alpha,\ Y'(t) = B(t)Y(t)$)
+    où $\alpha\in\R^n$. Quelle majoration a-t-on sur $\|X_0(t)-Y_0(t)\|$~?
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Poser $F(t) =  \int_{u=t_0}^t f(u)\,d u$ et résoudre l'inéquation
+    différentielle $F'(t) \le g(t) + kF(t)$ par la formule de Duhamel.
+  \item \begin{align*}
+    M' = AM
+    & \Rightarrow  \|\kern-1.2pt|M'(t)\|\kern-1.2pt| \le K\|\kern-1.2pt|M(t)\|\kern-1.2pt|\\
+    & \Rightarrow  \|\kern-1.2pt|M(t)-I\|\kern-1.2pt| \le K \int_{u=t0}^t\|\kern-1.2pt|M(u)\|\kern-1.2pt|\,d u\\
+    & \Rightarrow  \|\kern-1.2pt|M(t)\|\kern-1.2pt| \le 1 + K \int_{u=t0}^t\|\kern-1.2pt|M(u)\|\kern-1.2pt|\,d u\\
+    & \Rightarrow  \|\kern-1.2pt|M(t)\|\kern-1.2pt| \le 1 + K \int_{u=t0}^te^{K(t-u)}\,d u = e^{K(t-t_0)}.\\
+    \noalign{}
+    (M-N)' &= (A-B)M + B(M-N)\\
+    & \Rightarrow  \|\kern-1.2pt|(M-N)'(t)\|\kern-1.2pt| \le \eta e^{K(t-t_0)} + (K+\eta)\|\kern-1.2pt|(M-N)(t)\|\kern-1.2pt|\\
+    & \Rightarrow  \|\kern-1.2pt|(M-N)(t)\|\kern-1.2pt| \le \frac\eta K (e^{K(t-t_0)}-1) + (K+\eta) \int_{u=t_0}^t\|\kern-1.2pt|(M-N)(u)\|\kern-1.2pt|\,d u\\
+    & \Rightarrow  \|\kern-1.2pt|(M-N)(t)\|\kern-1.2pt| \le \underbrace{\frac\eta K (e^{K(t-t_0)}-1) + \frac{(K+\eta)\eta}K \int_{u=t_0}^te^{(K+\eta)(t-u)}(e^{K(u-t_0)}-1)\,d u}_{\textstyle=e^{K(t-t_0)}(e^{\eta(t-t_0)}-1)}\\
+    \end{align*}
+  \item $X_0(t) = M_0(t)\alpha$ et $Y_0(t) = N_0(t)\alpha$, d'où
+    $\|X_0(t)-Y_0(t)\| \le e^{K(t-t_0)}(e^{\eta(t-t_0)}-1)\|\alpha\|$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

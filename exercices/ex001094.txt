@@ -1,0 +1,91 @@
+\exercice{1094, legall, 1998/09/01}
+\video{10aMCsQRMG4}
+\enonce
+Soit $f$ l'application de $\Rr_n[X]$  dans  $\Rr[X]$
+définie en posant pour tout  $P(X)\in \Rr_n[X]$ : $f(P(X))=P(X+1)+P(X-1)-2P(X).$
+\begin{enumerate}
+    \item Montrer que  $f$  est linéaire et que son image est
+incluse dans  $\Rr_n[X]$.
+    \item Dans le cas o\`u  $n=3$, donner la matrice de  $f$  dans
+la base  $1,X, X^2, X^3$. Déterminer ensuite, pour une valeur de  $n$
+quelconque, la matrice de  $f$  dans la base  $1,X,\ldots,X^n$.
+    \item Déterminer le noyau et l'image de  $f$. Calculer
+leur dimension respective.
+    \item Soit  $Q$  un élément de l'image de  $f$.
+Montrer qu'il existe un unique  $P\in \Rr_n[X]$
+tel que : $f(P)=Q$  et  $P(0)=P'(0)=0$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Il est facile de voir que $f(\lambda P + \mu Q) = \lambda f(P)+\mu f(Q)$ donc $f$ est linéaire,
+de plus, $P$ étant un polynôme de degré $\le n$ alors $f(P)$ aussi.
+
+  \item Pour $n=3$ on calcule l'image de chacun des éléments de la base :
+$$f(1)=1+1-2=0,\quad f(X)=(X+1)+(X-1)-2X=0,$$
+$$f(X^2)=(X+1)^2+(X-1)^2-2X^2=2,
+\quad f(X^3)=(X+1)^3+(X-1)^3-2X^3=6X.$$
+Donc la matrice de $f$ dans la base $(1, X, X^2, X^3)$ est
+$$\begin{pmatrix}
+0 & 0 & 2 & 0 \\
+0 & 0 & 0 & 6 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\     
+  \end{pmatrix}$$
+
+Pour le cas général on calcule 
+\begin{align*}
+f(X^p)
+ &=(X+1)^p+(X-1)^p-2X^p \\
+ &= \sum_{k=1}^p \binom{p}{k}X^k + \sum_{k=1}^p \binom{p}{k}X^k(-1)^{p-k} -2X^p\\
+ &= \sum_{p-k \text{ pair et } k<p} 2\binom{p}{k}X^k  
+\end{align*}
+
+Donc la matrice est 
+$$\begin{pmatrix} 
+0 & 0 & 2\binom{2}{0} & 0             & \cdots & 2\binom{p}{0} & 0               &        \\
+  & 0 & 0             & 2\binom{3}{1} &        & 0             & 2\binom{p+1}{1} &        \\
+  &   & 0             & 0             & \cdots & 2\binom{p}{2} & 0               &        \\
+  &   &               & 0             &        & 0             & 2\binom{p+1}{3} & \vdots \\  
+  &   &               &               & \ddots & \vdots        & 0               &        \\
+  &   &               &               &        & 0             & \vdots          &        \\
+  &   &               &               &        &               & 0               &        \\
+  &   &               &               &        &               &                 & 0      \\
+  \end{pmatrix}$$
+Dans cet exemple de matrice, $p$ est pair.
+Chaque colonne commence en alternant une valeur nulle/une valeur non-nulle 
+jusqu'à l'élément diagonal (qui est nul).
+
+
+  \item Nous savons que $f(1)=0$ et $f(X)=0$ donc $1$ et $X$ sont dans le noyau $\Ker f$.
+Il est aussi clair que les colonnes de la matrices $f(X^2),\cdots, f(X^n)$ sont linéairement indépendantes
+(car la matrice est échelonnée). Donc $\Im f = \textrm{Vect}\{f(X^2),f(X^3),\ldots,f(X^n)\}$ 
+et $\dim \Im f = n-1$.
+
+Par la formule du rang $\dim \Ker f + \dim \Im f = \dim \Rr_n[X]$ donc
+$\dim \Ker f = 2$. Comme nous avons déjà deux vecteurs du noyau alors 
+$\Ker f =  \textrm{Vect}\{1,X\}$.
+
+   \item 
+   \begin{enumerate}
+      \item Soit $Q \in \Im f$. Il existe donc $R\in\Rr_n[X]$ tel que $f(R)=Q$.
+On pose ensuite $P(X)=R(X)-R(0)-R'(0)X$.
+On a tout fait pour que $P(0)=0$ et $P'(0)=0$.
+De plus par la linéarité de $f$ et son noyau alors
+$$f(P)= f\big( R(X)-R(0)-R'(0)X\big) = f\big( R(X)\big)-R(0)f(1) -R'(0)f(X)=f(R)=Q.$$
+Donc notre polynôme $P$ convient.
+
+      \item Montrons l'unicité. Soient $P$ et $\tilde P$ tels que $f(P)=f(\tilde P)=Q$
+avec $P(0)=P'(0)=0 = \tilde P(0)=\tilde P'(0)$.
+Alors  $f(P-\tilde P) = Q-Q=0$ donc $P-\tilde P \in \Ker f = \textrm{Vect}\{1,X\}$.
+Ainsi $P-\tilde P$ s'écrit $P-\tilde P = aX+b$. Mais comme $(P-\tilde P)(0)=0$ alors 
+$b=0$, et comme  $(P-\tilde P)'(0)=0$ alors $a=0$. Ce qui prouve $P = \tilde P$.
+
+    \end{enumerate}
+\end{enumerate}
+\fincorrection
+
+\finexercice

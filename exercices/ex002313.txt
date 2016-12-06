@@ -1,0 +1,39 @@
+\exercice{2313, barraud, 2008/04/24}
+\enonce
+Soit $p$ un nombre premier impair. Montrer que la congruence
+  \newline\noindent $x^2\equiv-1 \mod p\ $ a une solution si et
+  seulement si $p\equiv 1 \mod 4$.
+\finenonce 
+
+\noindication
+
+\correction
+Soit $p$ un nombre premier impair. Notons $p=2m+1$. On a
+$$
+ (m!)^{2}\equiv(-1)^{m+1} [p]
+$$
+en effet, (modulo $p$)~:
+\begin{align*}
+(p-1)!
+&=\prod_{k=1}^{2m}k=m!\prod_{k=1}^{m}(m+k)\\
+&=m!\prod_{k=1}^{m}(m+k-p)=m!\prod_{k=1}^{m}(-k)\\
+&=(-1)^{m}(m!)^{2}
+\end{align*}
+Or, dans $\Zz_{p}[x]$, $1^{-1}=1$ et $(p-1)^{-1}=p-1$,  donc $\forall
+k\in\{2,...,p-2\}$, $k^{-1}\in\{2,...,p-2\}$. Ainsi,
+$\prod_{k=2}^{p-1}k\equiv1 [p]$, et donc $(p-1)!\equiv -1 [p]$. D'où le
+résultat.
+
+\begin{itemize}
+\item 
+  Si $p\equiv 1[4]$, $(-1)^{m+1}=-1$, et donc $m!$ est une solution de
+  $x^{2}\equiv-1[p]$.
+  
+\item
+  Si cette équation a une solution, alors $x^{2m}\equiv 1[p]$, et comme
+  $x^{p-1}\equiv 1[p]$, $1\equiv (-1)^{m}[p]$. On en déduit que $m$ est
+  pair, donc $p\equiv1[4]$.
+\end{itemize}
+
+\fincorrection
+\finexercice

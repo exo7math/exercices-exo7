@@ -1,0 +1,34 @@
+\exercice{3448, quercia, 2010/03/10}
+\enonce[Polytechnique MP 2002]
+
+Soit $p$ un nombre premier et $a_0,\dots ,a_{p-1}\in\Z$.
+Montrer que le déterminant de la matrice 
+$A=(a_{j-i\text{ mod }p})\in\mathcal{M}_p(\Z)$ vérifie~:
+$\det (A)\equiv a_0+\dots +a_{p-1}$ mod $p$. 
+
+{\it Indication: écrire $A=\sum_{k=0}^{p-1} a_kJ^k$ et calculer $A^p$.}
+
+\finenonce
+
+\noindication
+
+\correction
+On se place dans $\Z/p\Z$ et on considère $J = (\delta_{i,i+1\bmod p})$.
+On a $J^p = I$ et $A = a_0J^0 + \dots a_{p-1}J^{p-1}$ donc
+$A^p = (a_0^p+\dots + a_{p-1}^p)I$ (car on est en caractéristique $p$).
+
+On en déduit $\det(A) = \det(A)^p = (a_0^p+\dots + a_{p-1}^p)^p = a_0+\dots + a_{p-1}$.
+
+Autre méthode en restant dans~$\Z$~:
+$\det(A) = \sum_{\sigma\in S_p} \varepsilon(\sigma)a_{1,\sigma(1)}\dots a_{p,\sigma(p)}
+         = \sum_{\sigma\in S_p} \varepsilon(\sigma)a_{\sigma(1)-1\bmod p}\dots a_{\sigma(p)-p\bmod p}$.
+Notons $x(\sigma) = \varepsilon(\sigma)a_{\sigma(1)-1\bmod p}\dots a_{\sigma(p)-p\bmod p}$ et
+$c$ le cycle $(1,2,\dots,p)$. Alors $x(\sigma) = x(c^{-k}\circ\sigma\circ c^k)$
+pour tout $k\in\Z$. Le nombre de permutations distinctes que l'on obtient
+à $\sigma$ fixé en faisant varier $k$ est égal à $1$ si $\sigma$ et $c$ commutent,
+et à $p$ sinon, d'après la relation~: $\mathrm{Card}\,(\text{orbite})\times\mathrm{Card}\,(\text{stabilisateur}) = \mathrm{Card}\,({<c>}) =p$.
+De plus, $c$ et $\sigma$ commutent si et seulement si $\sigma\in{<c>}$ (facile),
+d'où $\det(A)\equiv \sum_{k=0}^{p-1}\varepsilon(c^k)a_{k}^p \equiv a_0+\dots+a_{p-1}\bmod p$.
+\fincorrection
+
+\finexercice

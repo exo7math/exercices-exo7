@@ -1,0 +1,26 @@
+\exercice{4318, quercia, 2010/03/12}
+\enonce[$\sin(t)/(t+x)$]
+
+\begin{enumerate}
+  \item Prouver l'existence pour $x > 0$ de
+    $I(x) =  \int_{t=0}^{+\infty} \frac{\sin t}{t+x}\,d t$.
+
+  \item Déterminer $\lim_{x\to+\infty} I(x)$.
+    
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item 
+  \item $I(x) =  \int_{t=x}^{+\infty} \frac{\sin(t-x)}t\,d t
+                   = \cos x  \int_{t=x}^{+\infty} \frac{\sin t}t\,d t
+                   - \sin x  \int_{t=x}^{+\infty} \frac{\cos t}t\,d t
+                   \to 0$ lorsque $x\to+\infty$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

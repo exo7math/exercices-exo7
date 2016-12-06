@@ -1,0 +1,60 @@
+\exercice{5807, rouget, 2010/10/16}
+\enonce[**]
+Soit $E =\mathcal{L}(\Rr^2)$. Soit $(\lambda,\mu)\in\Rr^2$. On pose
+
+\begin{center}
+$\forall f\in\mathcal{L}(\Rr^2)$, $Q(f) =\lambda\text{Tr}(f^2) +\mu\text{det}(f)$.
+\end{center}
+
+\begin{enumerate}
+ \item  Vérifier que $Q$ est une forme quadratique sur $E$.
+
+\item  Déterminer en fonction de $\lambda$ et $\mu$ le rang et la signature de $Q$.
+Analyser en particulier les cas $(\lambda,\mu) = (1,0)$ et $(\lambda,\mu) = (0,1)$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Si la matrice de $f$ dans la base canonique de $\Rr^2$ est $A=\left(
+\begin{array}{cc}
+a&c\\
+b&d
+\end{array}
+\right)$, 
+
+\begin{center}
+$Q(f) =\lambda(a^2+2bc+d^2)+\mu(ad-bc)$.
+\end{center}
+
+$Q$ est un polynôme homogène de degré $2$ en les coordonnées de $f$ dans la base canonique de $\mathcal{L}(\Rr^2)$ et donc $Q$ est une forme quadratique sur $\mathcal{L}(\Rr^2)$.
+
+\item  \textbullet~Si $\lambda=\mu= 0$, $r = 0$ et $s = (0,0)$. Si $\lambda=0$ et $\mu\neq0$, 
+
+\begin{center}
+$Q(f)=\frac{\mu}{4}(a+d)^2-\frac{\mu}{4}(a-d)^2-\frac{mu}{4}(b+c)^2+\frac{\mu}{4}(b-c)^2$,
+\end{center}
+
+et donc $r=4$ et $s=(2,2)$.
+
+\textbullet~Si $\lambda\neq0$,
+
+\begin{align*}\ensuremath
+Q(f)&=\lambda a^2+\mu ad + (2\lambda-\mu)bc +\lambda d^2=\lambda\left(a+\frac{\mu}{2\lambda}d\right)^2 +(2\lambda-\mu)bc +\left(\lambda-\frac{\mu^2}{4\lambda}\right)d^2\\
+ &=\lambda\left(a+\frac{\mu}{2\lambda}d\right)^2+\left(\lambda-\frac{\mu^2}{4\lambda}\right)d^2+  \frac{2\lambda-\mu}{4}(b+c)^2-\frac{2\lambda-\mu}{4}(b-c)^2.
+\end{align*}
+
+Maintenant, les quatre formes linéaires $(a,b,c,d)\mapsto a+\frac{\mu}{2\lambda}d$, $(a,b,c,d)\mapsto d$, $(a,b,c,d)\mapsto b+c$ et $(a,b,c,d)\mapsto b-c$ sont linéairement indépendantes. Donc 
+
+- si $\mu=2\lambda\;(\neq0)$, $r=1$,
+
+- si $\mu=-2\lambda\;(\neq2\lambda)$, $r=3$,
+
+- si $|\mu|\neq2|\lambda|\;(\neq0)$, $r=4$.
+
+En particulier, si $\lambda=1$ et $\mu=0$, alors $r=4$ et $s=(3,1)$ et si $\lambda= 0$ et $\mu= 1$,  $r=4$ et $s = (2,2)$.
+\end{enumerate}
+\fincorrection
+\finexercice

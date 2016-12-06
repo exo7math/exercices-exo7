@@ -1,0 +1,107 @@
+\exercice{5767, rouget, 2010/10/16}
+\enonce[** I Un calcul de l'intégrale de \textsc{Gauss} $I=\int_{0}^{+\infty}e^{-t^2}\;dt$]
+
+Pour $x\in\Rr$, on pose $F(x)=\int_{0}^{1}\frac{e^{-x^2(1+t^2)}}{1+t^2}\;dt$ et $G(x)=\left(\int_{0}^{x}e^{-t^2}\;dt\right)^2$.
+
+\begin{enumerate}
+ \item  Montrer que $F$ est de classe $C^1$ sur $\Rr$ et préciser $F'$.
+
+\item  Montrer que $G$ est de classe $C^1$ sur $\Rr$ et préciser $G'$.
+
+\item  Montrer que la fonction $F+G$  est constante sur $\Rr$.
+
+\item  Déterminer $\lim_{x \rightarrow +\infty}F(x)$.
+
+\item  En déduire $I$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Soit $A>0$. Soit $\begin{array}[t]{cccc}
+\Phi~:&[-A,A]\times[0,1]&\rightarrow&\Rr\\
+ &(x,t)&\mapsto&\frac{e^{-x^2(1+t^2)}}{1+t^2}
+\end{array}$.
+
+\textbullet~Pour chaque $x$ de $[-A,A]$, la fonction $t\mapsto F(x,t)$ est continue sur le segment $[0,1]$ et donc intégrable sur ce segment.
+
+\textbullet~La fonction $\Phi$ admet sur $[-A,A]\times[0,1]$ une dérivée partielle par rapport à sa première variable $x$ définie par :
+
+\begin{center}
+$\forall(x,t)\in[-A,A]\times[0,1]$, $\frac{\partial \Phi}{\partial x}(x,t)=-2xe^{-x^2(1+t^2)}$.
+\end{center}
+
+De plus,
+
+- pour chaque $x\in[-A,A]$, la fonction $t\mapsto \frac{\partial \Phi}{\partial x}(x,t)$ est continue par morceaux sur le segment $[0,1]$,
+
+- pour chaque $t\in[0,1]$, la fonction $x\mapsto \frac{\partial \Phi}{\partial x}(x,t)$ est continue par morceaux sur $\Rr$,
+
+- pour chaque $(x,t)\in[-A,A]\times[0,1]$, $\left|\frac{\partial \Phi}{\partial x}(x,t)\right|\leqslant 2A=\varphi(t)$, la fonction $\varphi$ étant continue et donc intégrable sur le
+
+segment $[0,1]$.
+
+D'après le théorème de dérivation des intégrales à paramètres (théorème de \textsc{Leibniz}), la fonction $F$ est de classe $C^1$ sur $[-A,A]$ et sa dérivée s'obtient en dérivant sous le signe somme. Ceci étant vrai pour tout $A>0$, $F$ est de classe $C^1$ sur $\Rr$ et
+
+\begin{center}
+\shadowbox{
+$\forall x\in\Rr$, $F'(x)=-2x\int_{0}^{1}e^{-x^2(1+t^2)}\;dt$.
+}
+\end{center}
+
+\item  La fonction $x\mapsto e^{-x^2}$ est continue sur $\Rr$. On en déduit que la fonction $x\mapsto\int_{0}^{x}e^{-t^2}\;dt$ est de classe $C^1$ sur $\Rr$. Il en est de même de la fonction $G$ et pour tout réel $x$,
+
+\begin{center}
+\shadowbox{
+$G'(x)=2e^{-x^2}\int_{0}^{x}e^{-t^2}\;dt$.
+}
+\end{center}
+
+\item  Soit $x\in\Rr^*$. En posant $u=xt$, on obtient
+
+\begin{center}
+$F'(x)=-2x\int_{0}^{1}e^{-x^2(1+t^2)}\;dt=-2e^{-x^2}\int_{0}^{1}e^{-(xt)^2}\;xdt=-e^{-x^2}\int_{0}^{x}e^{-u^2}\;du=-G'(x)$,
+\end{center}
+
+cette égalité restant vraie quand $x=0$ par continuité des fonctions $F'$ et $G'$ sur $\Rr$.
+
+Ainsi, $F'+G'=0$ et donc $\forall x\in\Rr$, $F(x)+G(x)=F(0)+G(0)=\int_{0}^{1}\frac{1}{1+t^2}\;dt=\frac{\pi}{4}$.
+
+\begin{center}
+\shadowbox{
+$\forall x\in\Rr$, $F(x)+G(x)=\frac{\pi}{4}$.
+}
+\end{center}
+
+\item  Pour $x\in\Rr$,
+
+\begin{center}
+$|F(x)|=\int_{0}^{1}\frac{e^{-x^2(1+t^2)}}{1+t^2}\;dt\leqslant e^{-x^2}\int_{0}^{1}\frac{1}{1+t^2}\;dt=\frac{\pi}{4e^{x^2}}$,
+\end{center}
+
+et puisque $\lim_{x \rightarrow +\infty}\frac{\pi}{4e^{x^2}}=0$, on a montré que
+
+\begin{center}
+\shadowbox{
+$\lim_{x \rightarrow +\infty}F(x)=0$.
+}
+\end{center}
+
+\item  Pour $x>0$, on a $\int_{0}^{x}e^{-t^2}\;dt\geqslant0$ et donc d'après la question 3),
+
+\begin{center}
+$\int_{0}^{x}e^{-t^2}\;dt=\sqrt{G(x)}=\sqrt{\frac{\pi}{2}-F(x)}$.
+\end{center}
+
+La question 4) permet alors d'affirmer que $\lim_{x \rightarrow +\infty}G(x)=\frac{\sqrt{\pi}}{2}$ et donc que
+
+\begin{center}
+\shadowbox{
+$\int_{0}^{+\infty}e^{-t^2}\;dt=\frac{\sqrt{\pi}}{2}$.
+}
+\end{center}
+\end{enumerate}
+\fincorrection
+\finexercice

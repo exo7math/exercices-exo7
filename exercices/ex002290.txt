@@ -1,0 +1,66 @@
+\exercice{2290, barraud, 2008/04/24}
+\enonce
+Soit $f$ un morphisme de l'anneau $A$ vers l'anneau $B$.
+\begin{enumerate}
+  \item  Montrer que l'image r\'eciproque d'un id\'eal premier  est
+aussi  un id\'eal premier.  Cette proposition est-elle vraie
+pour id\'eaux maximaux ?
+  \item  Montrer par un exemple, que l'image $f(I)$ d'un id\'eal $I$ de $A$
+n'est pas forc\'ement un id\'eal de $B$. D\'emontrer cependant
+que si $f$ est surjectif, alors $f(I)$ est un id\'eal pour tout
+id\'eal $I$ de $A$. (Voir le cours.)
+  \item Toujours sous l'hypoth\`ese que $f$ est surjective, montrer que
+l'image d'un id\'eal maximal par $f$ est soit $B$ tout entier, 
+soit un id\'eal maximal de $B$.
+  \item Consid\'erons la reduction de polyn\^omes sur $\Zz$ modulo $m$ :
+$r_m\,:\,\Zz[x]\to \Zz_m[x]$ et deux id\'eaux premiers principaux
+$(x)$ et $(x^2+1)$. Les id\'eaux $r_6((x))$ et $r_2((x^2+1))$
+sont-ils premiers ?
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+  \begin{enumerate}
+  \item 
+    Soit $J\subset B$ un idéal premier de $B$. Soient $a,b\in A$ tels que
+    $ab\in f^{-1}(J)$. Alors $f(a)f(b)=f(ab)\in J$ donc $f(a)\in J$ ou
+    $f(b)\in J$. Ainsi, $a\in f^{-1}(J)$ ou $b\in f^{-1}(J)$. On en
+    déduit que $f^{-1}(J)$ est premier.
+
+    Cette proposition n'est pas vraie pour les idéaux maximaux. Par
+    exemple, $A=\Zz$, $B=\Qq[X]$, $f(k)=k$, et $J=(X)$. Alors
+    $f^{-1}(J)=\{0\}$ n'est pas maximal.
+
+  \item
+    Prenons $A=\Zz$, $B=\Qq$, $f(k)=k$. $f(\Zz)=\Zz$ n'est pas un idéal
+    de $\Qq$ ($1\in\Zz$, $\frac{1}{2}\in\Qq$ et pourtant
+    $1\times\frac{1}{2}\notin\Zz$)
+
+    Supposons $f$ surjectif. Soit $x,y\in f(I)$, $a,b\in B$. Il existe
+    $x_{0},y_{0}\in I$ tels que $x=f(x_{0})$ et $y=f(y_{0})$. De plus,
+    comme $f$ est surjectif, $\exists a_{0},b_{0}\in A$ tels que
+    $a=f(a_{0})$ et $b=f(b_{0})$. Alors $ax+by = f(a_{0})f(x_{0})
+    +f(b_{0})f(y_{0}) = f(a_{0}x_{0}+b_{0}y_{0})$ et comme $I$ est un
+    idéal, $(a_{0}x_{0}+b_{0}y_{0})\in I$, donc $(ax+by)\in f(I)$.
+
+    $f(I)$ est donc bien un idéal de $B$.
+
+  \item
+    Soit $I$ un idéal maximal de $A$ et $J=f(I)$. Supposons $J\neq B$.
+    Soit $K$ un idéal de $B$ tel que $J\subset K$. Alors $I\subset
+    f^{-1}(K)$, donc $f^{-1}(K)=I$ ou $f^{-1}(K)=A$. Dans le premier cas,
+    on $K=f(f^{-1}(K))=J$, dans le second cas, on a
+    $K=f(f^{-1}(K))=f(A)=B$. L'idéal $J$ est donc maximal.
+
+  \item
+    $(X+2)(X+3)=X^{2}+5X$ dans $\Zz_{6}[X]$, donc $(X+\bar{2})(X+\bar{3})\in
+    (X)$, mais $(X+\bar{2})\notin(X)$ et $(X+\bar{3})\notin(X)$, donc
+    $r_{6}((X))$ n'est pas premier dans $\Zz_{36}[X]$.
+
+    $(X+1)^{2}=(X^{2}+1)$ dans $\Zz_{2}[X]$, or $(X+1)\notin(X^{2}+1)$,
+    donc $r_{2}((X^{2}+1))$ n'est pas premier dans $\Zz_{2}[X]$.
+  \end{enumerate}
+\fincorrection
+\finexercice

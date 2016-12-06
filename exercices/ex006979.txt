@@ -1,0 +1,61 @@
+\exercice{6979, blanc-centi, 2014/05/06}
+\video{bRKLAqnlbBM}
+\enonce 
+\'Etudier le domaine de définition de la fonction $f$ définie par 
+$$f(x)=\Argch\left[\frac{1}{2}\left(x+\frac{1}{x}\right)\right]$$
+et simplifier son expression lorsqu'elle a un sens.
+\finenonce 
+
+\indication
+On trouve $f(x)=|\ln x|$ pour tout $x>0$.
+\finindication
+
+\correction
+La fonction $\Argch$ est définie sur $[1,+\infty[$. Or
+\begin{eqnarray*}
+\frac{1}{2}\left(x+\frac{1}{x}\right)\ge 1
+ &\Longleftrightarrow&\frac{x^2+1}{x}\ge 2\\
+ &\Longleftrightarrow&\frac{x^2+1-2x}{x}\ge 0\\
+ &\Longleftrightarrow&\frac{(x-1)^2}{x}\ge 0\\
+ &\Longleftrightarrow& x > 0 
+\end{eqnarray*}
+donc $f$ est définie sur $]0,+\infty[$. 
+
+\medskip
+
+Soit $x>0$, alors $y=\frac{1}{2}\left(x+\frac{1}{x}\right)\ge 1$
+et on sait que $\Argch y=\ln(y+\sqrt{y^2-1})$. Ainsi
+$\sqrt{y^2-1}=\sqrt{\frac{1}{4}\left(x+\frac{1}{x}\right)^2-1}
+=\sqrt{\frac{(x^2+1)^2}{4x^2}-1}=\sqrt{\frac{(x^2-1)^2}{4x^2}}
+=\left|\frac{x^2-1}{2x}\right|$,
+on obtient
+$$f(x)=\Argch y=\ln(y+\sqrt{y^2-1})=\ln\left(\frac{x^2+1}{2x}+\left|\frac{x^2-1}{2x}\right|\right)$$
+
+
+On a supposé $x>0$, il suffit donc de distinguer les cas $x\ge 1$ et $0<x\le 1$.
+\begin{itemize}
+  \item Si $x\ge 1$, $\displaystyle f(x)=\ln\left(\frac{x^2+1}{2x}+\frac{x^2-1}{2x}\right)=\ln x$.
+  \item Si $0<x\le 1$, $\displaystyle f(x)=\ln\left(\frac{x^2+1}{2x}+\frac{1-x^2}{2x}\right)=\ln \frac{1}{x}=-\ln x$.
+\end{itemize}
+
+Puisque $\ln x$ est positif si $x\ge 1$ et négatif si $x\le 1$, 
+on obtient dans les deux cas $f(x)=|\ln x|$.
+
+\begin{center}
+\begin{tikzpicture}[scale=1.5]
+      \draw[->,>=latex, gray] (-1,0)--(5,0) node[below,black] {$x$};
+      \draw[->,>=latex, gray] (0,-1)--(0,2.7) node[right,black] {$y$};  
+ 
+     \draw[ultra thick, color=red,domain=0.1:5,samples=100,smooth] plot (\x,{abs(ln(\x))}) node[above left] {$f(x)$}; 
+     
+     \fill (0,0) circle (1.5pt);     
+     \fill (1,0) circle (1.5pt);
+     \fill (0,1) circle (1.5pt);     
+     \node at (0,1)[above left] {$1$};
+     \node at (1,0)[below] {$1$};
+     \node at (0,0)[below right] {$0$};
+\end{tikzpicture}  
+\end{center}
+
+\fincorrection
+\finexercice

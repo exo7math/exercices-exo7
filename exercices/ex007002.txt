@@ -1,0 +1,44 @@
+\exercice{7002, blanc-centi, 2015/07/04}
+\video{xrbDXpFKgfE}
+\enonce
+\ 
+\begin{enumerate}
+\item Montrer que toute solution sur $\R$ de $y'+e^{x^2}y=0$ tend vers 0 en $+\infty$.
+\item Montrer que toute solution sur $\R$ de $y''+e^{x^2}y=0$ est bornée.
+(\emph{Indication :} étudier la fonction auxiliaire $u(x)=y(x)^2+e^{-x^2}y'(x)^2$.)
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\ \begin{enumerate}
+\item 
+Notons $A(x) = \int_0^xe^{t^2}\,\dd t$, une primitive de $e^{x^2}$.
+On ne sait pas expliciter cette primitive.
+Les solutions de $y'+e^{x^2}y=0$ s'écrivent 
+$f(x)=\lambda e^{-A(x)}$. 
+
+Si $x\ge 1$, on a par positivité de l'intégrale $A(x) = \int_0^xe^{t^2}\,\dd t\ge 0$ et 
+comme $e^{t^2} \ge 1$ alors 
+$$A(x) = \int_0^xe^{t^2}\,\dd t \ge \int_0^x 1 \,\dd t = x$$
+En conséquence :
+$$0 \le e^{-A(x)} \le e^{-x}$$
+Ainsi, 
+$$0\le |f(x)|\le |\lambda|e^{-x}$$ et $f(x)\xrightarrow[x\to +\infty]{}0$.
+
+\item Supposons que $y$ vérifie sur $\R$ l'équation, et 
+posons $u(x)=y(x)^2+e^{-x^2}y'(x)^2$. La fonction $u$ est à valeurs positives, 
+dérivable, et 
+$$u'(x) = 2y'(x)y(x)+e^{-x^2}2y''(x)y'(x)-2xe^{-x^2}y'(x)^2$$
+en utilisant que $e^{-x^2}y''(x) = -y(x)$ 
+(car $y$ est solution de l'équation différentielle) on obtient :
+$$u'(x)=-2xe^{-x^2}y'^2.$$ 
+
+Ainsi la fonction $u$ est croissante sur $]-\infty;0[$ 
+et décroissante sur $]0;+\infty[$, donc pour tout $x\in\R$, $0 \le u(x)\le u(0)$. 
+Or $y^2(x)\le u(x)$ par construction, donc
+$$\forall x\in\R,\qquad |y(x)|\le \sqrt{u(0)}=\sqrt{y(0)^2+y'(0)^2}$$
+\end{enumerate}
+\fincorrection
+\finexercice

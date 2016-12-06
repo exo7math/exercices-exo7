@@ -1,0 +1,31 @@
+\exercice{2823, burnol, 2009/12/15}
+\enonce 
+\label{ex:burnol1.4}
+Soit $f$ une fonction holomorphe sur un ouvert
+\textbf{convexe} $U$. Soit $z_1\in U$, on suppose que le
+rayon de convergence de la série de Taylor de $f$ en $z_1$
+est $R_1$. De même, en $z_2\in U$, on suppose que le rayon de
+convergence de la série de Taylor de $f$ est $R_2$. Soit
+$g_1$ sur le disque ouvert $D(z_1,R_1)$ la somme de la série
+de Taylor de $f$ en $z_1$ et de même $g_2$ sur
+$D(z_2,R_2)$. Soit  $V = D(z_1,R_1)\cap D(z_2,R_2)$. Montrer
+que si $V$ est non vide alors $g_1 = g_2$ sur $V$. On
+commencera par montrer que $V\cap U$ est non vide
+aussi. 
+\emph{Attention}: en général, sans hypothèse
+spéciale comme la convexité de $U$ cela est complètement
+faux; donner un exemple, avec $U$ connexe, mais
+pas convexe, tel que  $g_1\neq g_2$ sur $V$ (et on peut même
+faire avec $V\cap U\neq\emptyset$). Il suffira d'utiliser
+l'exercice \ref{ex:burnol1.1}.
+\finenonce
+\noindication
+\correction
+ Commen\c{c}ons donc par le contre-exemple en prenant $U=\Omega$, c'est \`a dire $U=\C \setminus ]-\infty, 0]$, et $f=\mathrm{Log}$. Il suffit alors de choisir $z_1=-1+i$ et $z_2=-1-i$ et d'appliquer l'exercice \ref{ex:burnol1.1}.
+Supposons maintenant $U$ convexe, notons $D_i=D (z_i,R_i)$, $i=1,2$, et supposons que $V=D_1\cap D_2 \neq \emptyset$. Les cons\'equences imm\'ediates de la convexit\'e de $U$ sont:
+(a) $U\cap D_1$ et $U\cap D_2$ sont connexes (et m\^eme convexes).
+(b) $[z_1,z_2]\subset U$ et donc $V\cap U$ est un ouvert non vide.
+Consid\'erons $g_1$. Si $r>0$ est suffisamment petit pour que $D(z_1,r)\subset U$, alors $f=g_1$ dans $D(z_1,r)$. Par le principe du prolongement analytique (ou celui des z\'eros isol\'es) on a $f=g_1$ dans le connexe $U\cap D_1$. C'est donc aussi vrai dans $V\cap U\subset D_1\cap U$.
+Le m\^eme raisonnement s'applique \`a $g_2$ et donc $g_1=g_2$ dans $V\cap U$. Encore une fois le principe du prolongement analytique assure donc que $g_1=g_2$ dans $V$ (qui est  connexe).
+\fincorrection
+\finexercice

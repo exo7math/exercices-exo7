@@ -1,0 +1,151 @@
+\exercice{6969, exo7, 2014/04/08}
+\video{S53f12bRBhE}
+\enonce
+Décomposer les fractions suivantes en éléments simples sur $\Rr$.
+\begin{enumerate}
+\item \`A l'aide de divisions euclidiennes successives :
+% De 447, cousquer
+$$F=\frac{4X^6-2X^5+11X^4-X^3+11X^2+2X+3}{X(X^2+1)^3}$$
+
+\item \`A l'aide d'une division selon les puissances croissantes :
+% De 446, cousquer
+$$G=\frac{4X^4-10X^3+8X^2-4X+1}{X^3(X-1)^2}$$
+
+\item Idem pour :
+% De 444, cousquer
+$$H=\frac{X^4+2X^2+1}{X^5-X^3}$$
+
+\item A l'aide du changement d'indéterminée $X=Y+1$ :
+% De 444, cousquer
+$$K=\frac{X^5+X^4+1}{X(X-1)^4}$$
+
+\end{enumerate}
+\finenonce 
+
+\indication
+Pour $F$, commencer par écrire $F=\frac{a}{X}+F_1$ où $F_1=\frac{N}{(X^2+1)^3}$ puis diviser $N$ par $X^2+1$.
+Pour $K$, commencer par obtenir $K=1+\frac{1}{X}+K_1$, puis faire le changement d'indéterminée dans $K_1$.
+\finindication
+
+\correction\ 
+\begin{enumerate}
+\item $F=\frac{4X^6-2X^5+11X^4-X^3+11X^2+2X+3}{X(X^2+1)^3}$.
+
+  \begin{enumerate}
+  \item 
+La décomposition en éléments simples de $F$ est de la forme
+$F=\frac{a}{X}+\frac{bX+c}{(X^2+1)^3}+\frac{dX+e}{(X^2+1)^2}+\frac{fX+g}{X^2+1}$.
+Il est difficile d'obtenir les coefficients par substitution.
+% $a,b,c$, (pour ces derniers : multiplication des deux membres par $X^2+1$, simplification, puis remplacement de $X$ par $i$ ou $-i$, avec séparation des parties
+% réelle et imaginaire), mais c'est insuffisant pour conclure: il faut
+% encore soustraire $\frac{bX+c}{(X^2+1)^3}$, simplifier par $X^2+1$, calculer $d$
+% et $e$,\ldots
+
+  \item
+On va ici se contenter de trouver $a$ :
+on multiplie $F$ par $X$, puis on remplace $X$ par $0$, on obtient $a=3$.
+
+  \item On fait la soustraction $F_1=F-\frac{a}{X}$. 
+  On sait que la fraction $F_1$ \emph{doit} se simplifier par $X$. 
+  On trouve $F_1=\frac{X^5-2X^4+2X^3-X^2+2X+2}{(X^2+1)^3}$.
+  
+  \item La fin de la décomposition se fait par divisions euclidiennes successives.
+  Tout d'abord la division du numérateur $X^5-2X^4+2X^3-X^2+2X+2$
+par $X^2+1$:
+$$X^5-2X^4+2X^3-X^2+2X+2=(X^2+1)(X^3-2X^2+X+1)+X+1$$
+puis on recommence en divisant le quotient obtenu par $X^2+1$, pour obtenir 
+$$X^5-2X^4+2X^3-X^2+2X+2=(X^2+1)\big((X^2+1)(X-2)+3\big)+X+1$$
+On divise cette identité par $(X^2+1)^3$ :
+
+$F_1 = \frac{(X^2+1)\big((X^2+1)(X-2)+3\big)+X+1}{(X^2+1)^3} 
+= \frac{X+1}{(X^2+1)^3}+\frac{3}{(X^2+1)^2}+\frac{X-2}{X^2+1}$
+
+Ainsi 
+$$F=
+\frac{3}{X}+\frac{X+1}{(X^2+1)^3}+\frac{3}{(X^2+1)^2}+\frac{X-2}{X^2+1}$$
+  \end{enumerate}
+  
+\smallskip
+Remarque~: cette méthode des divisions successives est tr\`es pratique quand
+la fraction \`a décomposer a un dénominateur \emph{simple}, c'est \`a dire
+comportant un dénominateur du type $Q^n$ o\`u $Q$ est du premier degré, ou
+du second degré sans racine réelle. 
+
+\item $G=\frac{4X^4-10X^3+8X^2-4X+1}{X^3(X-1)^2}$.
+
+La décomposition en éléments simples de $G$ est de la forme
+$\frac{a}{X^3}+\frac{b}{X^2}+\frac{c}{X}+\frac{d}{(X-1)^2}+\frac{e}{X-1}$.
+% On pourrait obtenir facilement $a$ et $d$ par multiplication par $X^3$ et par $(X-1)^2$,
+% mais qu'il resterait encore trois coefficients à déterminer. Il y a ici une
+La méthode la plus efficace pour déterminer les coefficients est d'effectuer une division suivant les puissances
+croissantes, ici à l'ordre $2$ (de sorte que le reste soit divisible par $X^3$ comme le dénominateur).
+On calcule la division suivant les puissances
+croissantes, à l'ordre $2$ du numérateur $1-4X+8X ^2-10X^3+4X^4$ par $(X-1)^2$, ou plutôt par $1-2X+X^2$ :
+$$1-4X+8X^2-10X^3+4X^4=(1-2X+X^2)(1-2X+3X^2)+(-2X^3+X^4)$$
+Remarquer que le reste $-2X^3+X^4$ est divisible par $X^3$.
+
+En divisant les deux membres de cette identité par $X^3(X-1)^2$, 
+on obtient $a$, $b$ et $c$ d'un seul coup:
+$$
+\begin{array}{rcl}
+G & = & \frac{4X^4-10X^3+8X^2-4X+1}{X^3(X-1)^2}   \\
+  & = & \frac{(X-1)^2(1-2X+3X^2)+(-2X^3+X^4)}{X^3(X-1)^2} \\
+  & = & \frac{1}{X^3}-\frac{2}{X^2}+\frac{3}{X}+\frac{X-2}{(X-1)^2}
+\end{array}
+$$
+
+Il reste à trouver $d$ et $e$: par exemple en faisant la division euclidienne de $X-2$ par $X-1$: $X-2=(X-1)-1$.
+$$G=\frac{1}{X^3}-\frac{2}{X^2}+\frac{3}{X}-\frac{1}{(X-1)^2}+\frac{1}{X-1}$$
+
+\item $H=\frac{X^4+2X^2+1}{X^5-X^3} = \frac{X^4+2X^2+1}{X^3(X-1)(X+1)}$.
+
+La décomposition sera de la forme 
+$H=\frac{a}{X^3}+\frac{b}{X^2}+\frac{c}{X}+\frac{d}{X-1}+\frac{e}{X+1}$. 
+Pour obtenir $a, b, c$, on fait la division du numérateur par $(X-1)(X+1) = X^2-1$ 
+selon les puissances croissantes, à l'ordre $2$ (de sorte que le reste soit divisible par $X^3$ qui est la puissance de $X$ au dénominateur de $H$,
+en fait on l'obtient à l'ordre $3$) :
+$$1+2X^2+X^4=(-1+X^2)(-1-3X^2)+4X^4$$
+ce qui donne directement
+$$
+\begin{array}{rcl}
+H 
+&=& \frac{X^4+2X^2+1}{X^3(X-1)(X+1)} \\
+&=& \frac{(X^2-1)(-1-3X^2)+4X^4}{X^3(X^2-1)} \\
+&=& -\frac{1}{X^3}-\frac{3}{X}+\frac{4X}{X^2-1}  
+\end{array}
+$$
+Il reste à décomposer $\frac{4X}{X^2-1}=\frac{d}{X-1}+\frac{e}{X+1}$. On trouve $d=e=2$, d'où
+$$H = \frac{X^4+2X^2+1}{X^5-X^3} =-\frac{1}{X^3}-\frac{3}{X}+\frac{2}{X-1}+\frac{2}{X+1}$$ 
+
+\medskip
+Remarque : la méthode de division selon les puissances croissantes est 
+efficace pour un exposant assez grand (en gros
+à partir de $3$) dans une fraction du type $\frac{P(X)}{X^n Q(X)}$. 
+Elle peut être utilisée pour une fraction du type 
+$\frac{P(X)}{(X-a)^nQ(X)}$, mais il faut commencer par le changement de variable
+$Y=X-a$ avant de faire la division, puis bien entendu revenir à la
+variable $X$.
+
+
+\item $K=\frac{X^5+X^4+1}{X(X-1)^4}$.
+
+Puisque le degré du numérateur $N$ est supérieur ou égal à celui du dénominateur $D$, 
+il y a une partie polynomiale.
+$N$ et $D$ étant de même degré, avec le même coefficient dominant, 
+la partie polynomiale vaut $1$ et $K$ se décompose sous la forme 
+$K = 1+\frac{a}{X} + \frac{b}{(X-1)^4} + \frac{c}{(X-1)^3} + \frac{d}{(X-1)^2} + \frac{e}{X-1}$. 
+Le coefficient $a$ s'obtient facilement en multipliant $K$ par $X$ puis en remplaçant $X$ par $0$ : $a=1$. 
+
+Soit $K_1=K-1-\frac{1}{X}=\frac{4X^3-2X^2-2X+3}{(X-1)^4}$. Le changement d'indéterminée $X=Y+1$ donne 
+$K_1=\frac{4(Y+1)^3-2(Y+1)^2-2(Y+1)+3}{Y^4} $. En développant, on obtient directement
+$$K_1=\frac{4Y^3+10Y^2+6Y+3}{Y^4}= \frac{3}{Y^4} + \frac{6}{Y^3} + 
+\frac{10}{Y^2} + \frac{4}{Y}$$
+et donc (avec $Y=X-1$) :
+$K_1=\frac{4X^3-2X^2-2X+3}{(X-1)^4}=\frac{3}{(X-1)^4} + \frac{6}{(X-1)^3} + 
+\frac{10}{(X-1)^2} + \frac{4}{X-1}$ .
+Finalement,
+$$K = \frac{X^5+X^4+1}{X(X-1)^4} = 1 + \frac{1}{X} + \frac{3}{(X-1)^4} + \frac{6}{(X-1)^3} + 
+\frac{10}{(X-1)^2} + \frac{4}{X-1}$$
+\end{enumerate}
+\fincorrection
+\finexercice

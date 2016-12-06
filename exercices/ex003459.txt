@@ -1,0 +1,25 @@
+\exercice{3459, quercia, 2010/03/10}
+\enonce[$(x_i+y_j)^k$]
+
+Soit $k \le n-1$ et $M = \Bigl( (x_i+y_j)^k \Bigr)$.
+\'Ecrire $M$ comme produit de deux matrices et calculer $\det M$.
+
+
+\finenonce
+
+\noindication
+
+\correction
+$M = ( x_i^{j-1} ) \times ( C_k^{i-1} y_j^{k-i+1} )
+  \Rightarrow  \\
+  \det M = 
+  \begin{cases}0 & \text{ si } k < n-1 \cr
+                   
+                     \varepsilon_n C_{n-1}^0 C_{n-1}^1 \dots C_{n-1}^{n-1}
+		    V(x_1, \dots, x_n ) V(y_1, \dots, y_n )& \text{ si } k = n-1. \end{cases}$
+		    
+Avec la notation : $\varepsilon_n = \begin{cases}1 &\text{si}n \equiv 0 \text{ ou  }1 (\mathrm{mod}\, 4) \cr
+                                   -1 &\text{sinon.}\end{cases}$		    
+\fincorrection
+
+\finexercice

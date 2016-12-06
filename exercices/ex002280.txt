@@ -1,0 +1,76 @@
+\exercice{2280, barraud, 2008/04/24}
+\enonce
+Dans le cours nous avons d\'ej\`a montr\'e que le produit de polyn\^omes
+primitifs est  aussi primitif et   que 
+$$
+c(f\cdot g)=c(f)\cdot c(g)\qquad \forall\ f,g\in \Zz[x].
+$$
+\begin{enumerate}
+  \item Etant donn\'e $f\in \Qq[x]$, alors $f=\alpha \cdot f_0$ o\`u
+$f_0\in \Zz[x]$ est un polyn\^ome primitif et $\alpha\in \Qq$.
+  \item Soit $g\in \Zz[x]$ un polyn\^ome primitif, $\alpha\in \Qq$
+tel que $\alpha \cdot g\in \Zz[x]$. Alors $\alpha\in \Zz$.
+  \item Consid\`erons deux polyn\^omes  $d$,   $f$ sur $\Zz$.
+Si $d$ est primitif et $d$ divise
+$f$ dans $\Qq[x]$ alors $d$ divise $f$ dans $\Zz[x]$.
+  \item Supposons que $d=\pgcd_{\Qq[x]}(f,g)$  soit le p.g.c.d.  dans l'anneau
+$\Qq[x]$ de deux polyn\^omes primitifs $f$ et $g$ de $\Zz[x]$.
+Soit  $d=\alpha\cdot d_0$  sa repr\'esentation de type  1).
+Montrer que : $d_0=\pgcd_{\Zz[x]}(f,g)$ dans l'anneau $\Zz[x]$.
+  \item Soient $f$, $g\in \Zz[x]$, $f=c(f)f_0$, $g=c(g)g_0$. Alors
+$$
+\pgcd_{\Zz[x]}(f,g)=\pgcd_{\Zz}(c(f),c(g))\cdot\pgcd_{\Zz[x]}(f_0,g_0).
+$$
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+ \begin{enumerate}
+  \item
+    Soit $f=\sum_{i=0}^{n}a_{i}x^{i}\in\Qq[x]$. Soit
+    $a_{i}=\frac{p_{i}}{q_{i}}$ le représentant irréductible de $a_{i}$.
+    Soit $m=\mathrm{ppcm}(q_{0},\dots,q_{n})$. Notons $m=q_{i}m_{i}$. Alors
+    $f=\frac{1}{m}\sum a_{i}m_{i}x^{i}$. En mettant en facteur
+    $d=\pgcd(a_{0}m_{0},\dots,a_{n}m_{n})$, on obtient
+    $f=\frac{d}{m}f_{0}$, où $f_{0}\in\Zz[x]$ est primitif.
+
+  \item
+    Notons $\alpha=\frac{p}{q}$, avec $\pgcd(p,q)=1$ et $q>0$. Soit
+    $g_{1}=\alpha g$. On a $qg=pg_{1}$, donc $qc(g)=pc(g_{1})$. On en
+    déduit que $q|p$, et donc que $q=1$~:$\alpha\in\Zz$.
+
+  \item
+    Soit $g\in\Qq[x]$ tel que $f=dg$. Soit $g=\frac{p}{q}g_{0}$ la
+    décomposition de $g$ donnée par la question $1$. Alors $qf=pdg_{0}$
+    donc $qc(f)=pc(d)c(g_{0})=p$. Donc $q|p$ et finalement $q=1$. On en
+    déduit que $g=pg_{1}\in\Zz[x]$.
+
+  \item
+    $d=\pgcd_{\Qq}(f,g)=\frac{p}{q}d_{0}$. Alors $d_{0}$ est primitif et
+    divise $f$ et $g$ sur $\Qq$. Donc $d_{0}$ divise $f$ et $g$ sur $\Zz$.
+
+    Soit $h$ un diviseur commun de $f$ et $g$ dans $\Zz[x]$. On a
+    $c(h)|c(f)=1$ donc $h$ est primitif. Par ailleurs, $h$ est un
+    diviseur commun à $f$ et $g$ dans $\Qq[x]$, donc $h|d_{0}$ dans
+    $\Qq[x]$. On en déduit que $h|d_{0}$ dans $\Zz[x]$.
+
+    Ainsi, $d_{0}$ est bien un $\pgcd$ de $f$ et $g$ dans $\Zz[x]$.
+
+  \item
+    Soit $d=\pgcd(c(f),c(g))$, $h=\pgcd(f,g)=c(h)h_{0}$,
+    $h'=\pgcd(f_{0},g_{0})$.
+    
+    On a $d|c(f)$, $d|c(g)$, $h'|f_{0}$ et $h'|g_{0}$ donc $dh'|f$ et
+    $h'|g$, et donc $dh'|h$.
+
+    $c(h)|c(f)$ et $c(h)|c(g)$ donc $c(h)|d$. $h|f$, donc il existe
+    $f_{1}\in\Zz[x]$ tel que  $f=h_{0}c(h)f_{1}$. On a alors
+    $c(h)c(f_{1})=c(f)$, et après simplification, on en déduit que
+    $f_{0}=h_{0}f'_{1}$, avec $f'_{1}\in\Zz[x]$~: $h_{0}|f_{0}$. De même
+    pour $g$~: $h_{0}|g_{0}$. On en déduit que $h_{0}|h'$, et donc que
+    $h|dh'$.
+  \end{enumerate}
+\fincorrection
+\finexercice

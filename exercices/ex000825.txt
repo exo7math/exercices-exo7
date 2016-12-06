@@ -1,0 +1,146 @@
+\exercice{825, cousquer, 2003/10/01}
+
+\enonce
+Calculer les intégrales de fractions rationnelles suivantes.
+\begin{enumerate}
+
+
+\item  $\displaystyle \int_0^1 \frac{dx}{x^2+2}$.
+
+\item  $\displaystyle \int_{-1/2}^{1/2} \frac{dx}{1-x^2}$.
+
+\item  $\displaystyle \int_2^3 \frac{2x+1}{x^2+x-3}\,dx$.
+
+\item  $\displaystyle \int_0^2 \frac{x\,dx}{x^4+16}$.
+
+\item  $\displaystyle \int_0^3 \frac{x^4+6x^3-5x^2+3x-7}{(x-4)^3}\,dx$.
+
+\item  $\displaystyle \int_{-2}^0 \frac{dx}{x^3-7x+6}$.
+
+\item  $\displaystyle \int_{-1}^1 \frac{2x^4+3x^3+5x^2+17x+30}{x^3+8}\,dx$.
+
+\item  $\displaystyle \int_2^3 \frac{4x^2}{x^4-1}\,dx$.
+
+\item  $\displaystyle \int_{-1}^0 \frac{x^3+2x+1}{x^3-3x+2}\,dx$.
+
+\item  $\displaystyle \int_1^2 \frac{2x^8+5x^6-12x^5+30x^4+36x^2+24}
+    {x^4(x^2+2)^3}\,dx$.
+
+\item  $\displaystyle \int_0^a \frac{-2x^2+6x+7}
+    {x^4+5x^2+4}\,dx$ pour $a\in \mathbb{R}$. Y a-t-il une 
+    limite quand $a\to+\infty$~?
+
+\item  $\displaystyle \int_0^2 \frac{dx}{x^4+1}$.
+
+\end{enumerate}
+
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  $\frac{1}{x^2+2}$ est un élément simple.
+$\int_0^1\frac{dx}{x^2+2} = \frac{1}{\sqrt{2}} \arctan \frac{1}{\sqrt{2}}$.
+
+\item  Décomposition~: $\frac{1}{1-x^2} = \frac{1/2}{x+1} - \frac{1/2}{x-1}$. 
+Intégrale~: $\int_{-1/2}^{1/2} \frac{dx}{1-x^2} = \ln 3$.
+
+\item  Pas besoin de décomposer la fraction rationnelle, car $2x+1$ est 
+la dérivée de $x^2+x-3$~! $\int_2^3 \frac{2x+1}{x^2+x-3}\,dx = \ln 3$.
+
+\item  On peut évidemment décomposer la fraction rationnelle en 
+éléments simples~: 
+$\frac{x}{x^4+16} = \frac{\sqrt{2}/8}{x^2-2x\sqrt{2}+4} - 
+\frac{\sqrt{2}/8}{x^2+2x\sqrt{2}+4}$, 
+mais il est bien plus simple de 
+faire le changement de variables $x^2=u$. 
+Alors 
+$\int_0^2 \frac{x\,dx}{x^4+16} = 
+\frac{1}{2}\int_0^4 \frac{du}{u^2+16} = \frac{\pi}{32}$.
+
+\item  La décomposition de $\frac{x^4+6x^3-5x^2+3x-7}{(x-4)^3}$ est
+$x+18+\frac{163}{x-4}+\frac{507}{(x-4)^2}+\frac{565}{(x-4)^3}$~; les 
+primitives sont 
+$\frac{x^2}{2}+18x-\frac{1014x-3491}{2(x-4)^2}+163\ln\vert x-4\vert+C$.
+Enfin,
+$\int_0^3 \frac{x^4+6x^3-5x^2+3x-7}{(x-4)^3}\,dx =
+\frac{5565}{32}-326\ln 2$.
+
+\item  Décomposition~: 
+$\frac{1}{x^3-7x+6} = \frac{1}{20(x+3)} -\frac{1}{4(x-1)} 
++\frac{1}{5(x-2)}$. Primitives~:
+$\frac{1}{20}\ln\Bigl\vert\frac{(x-2)^4(x+3)}{(x-1)^5}\Bigr\vert+C$, d'où
+ $\int_{-2}^0 \frac{dx}{x^3-7x+6} = 
+\frac{1}{10}\ln(27/4)$.
+
+
+\item  Décomposition~: 
+$\frac{2x^4+3x^3+5x^2+17x+30}{x^3+8} = 
+2x+3+\frac{2}{x+2}+\frac{3x-1}{x^2-2x+4}$. 
+Les primitives sont~:
+$x^2+3x+\ln(x+2)^2 + \frac{3}{2}\ln(x^2-2x+4) + 
+\frac{2}{\sqrt{3}}\arctan\frac{x-1}{\sqrt{3}}+C$.
+Intégrale~: 
+$\int_{-1}^1 \frac{2x^4+3x^3+5x^2+17x+30}{x^3+8}\,dx = 
+6+\frac{7\ln 3-3\ln 7}{2} + 
+\frac{2}{\sqrt{3}}\arctan\frac{2}{\sqrt{3}}$.
+
+
+\item  Décomposition~: 
+$\frac{4x^2}{x^4-1} = 
+\frac{2}{x^2+1} - \frac{1}{x+1} +\frac{1}{x-1}$.
+Primitives~:
+$\ln\Bigl\vert \frac{x-1}{x+1}\Bigr\vert +2\arctan x +C$, d'où 
+$\int_2^3 \frac{4x^2}{x^4-1}\,dx =
+\ln\frac{3}{2}+2\arctan \frac{1}{7}$.
+
+
+\item  La décomposition est $\frac{x^3+2x+1}{x^3-3x+2} = 
+1+\frac{4/3}{(x-1)^2} + \frac{11/9}{x-1} - \frac{11/9}{x+2}$. On 
+trouve alors\linebreak %%%%
+$\int_{-1}^0 \frac{x^3+2x+1}{x^3-3x+2}\,dx = 
+\frac{5}{3}-\frac{22}{9}\ln 2$.
+
+\item  La décomposition de 
+$\frac{2x^8+5x^6-12x^5+30x^4+36x^2+24}{x^4(x^2+2)^3}$ est 
+$\frac{3}{x^4} + \frac{2}{x^2+2} - \frac{6}{(x^2+2)^2} - 
+\frac{12x-16}{(x^2+2)^3}$~; les primitives sont 
+$-\frac{1}{x^3} + \frac{2x+3}{(x^2+2)^2} + \sqrt{2} 
+\arctan\frac{x}{\sqrt{2}}+C$. 
+Enfin 
+$\int_{1}^2 \frac{2x^8+5x^6-12x^5+30x^4+36x^2+24}
+    {x^4(x^2+2)^3}\,dx =
+    \frac{37}{72} + 2\sqrt{2}\arctan\sqrt{2}-\frac{\pi}{\sqrt{2}}$.
+
+
+\item  Décomposition de la fraction rationnelle~: 
+$\frac{-2x^2+6x+7}{x^4+5x^2+4} = 
+\frac{2x+3}{x^2+1}-\frac{2x+5}{x^2+4}$. Primitives~:
+$\ln\Bigl\vert \frac{x^2+1}{x^2+4}\Bigr\vert+3\arctan 
+x-\frac{5}{2}\arctan\frac{x}{2}+C$. 
+Alors
+$\int_0^a \frac{-2x^2+6x+7}{x^4+5x^2+4}\,dx = 
+\ln\Bigl\vert \frac{a^2+1}{a^2+4}\Bigr\vert+3\arctan 
+a-\frac{5}{2}\arctan\frac{a}{2} + 2\ln 2$. Enfin
+$\lim_{a\to +\infty} \int_0^a \frac{-2x^2+6x+7}{x^4+5x^2+4}\,dx =
+\frac{\pi}{4}+2\ln 2$.
+
+
+
+\item  Pour factoriser le dénominateur, penser à 
+faire $x^4+1=x^4+2x^2+1-2x^2$~; on trouve alors
+$\frac{1}{x^4+1} = 
+\frac{(x\sqrt{2}+2)/4}{x^2+x\sqrt {2}+1} - 
+\frac{(x\sqrt{2}-2)/4}{x^2-x\sqrt{2}+1}$. Les primitives s'écrivent 
+$$\textstyle \frac{1}{4\sqrt{2}} \ln \frac{x^2+x\sqrt{2}+1}{x^2-x\sqrt{2}+1} +
+\frac{1}{2\sqrt{2}}\Bigl(\arctan(x\sqrt{2}+1)+\arctan(x\sqrt{2}-1)\Bigr)+C$$
+ce qui donne 
+$\int_0^2 \frac{dx}{x^4+1} = 
+\frac{1}{4\sqrt{2}}\ln\frac{33+20\sqrt{2}}{17}
++\frac{1}{2\sqrt{2}}\Bigl(\pi-\arctan \frac{2\sqrt{2}}{3}\Bigr)$.
+\end{enumerate}
+\fincorrection
+
+\finexercice
+

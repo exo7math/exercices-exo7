@@ -1,0 +1,64 @@
+
+\exercice{1093, legall, 1998/09/01}
+\video{A2_9r3WOfTM}
+\enonce
+\label{exo1093}
+Soit  $E$  un espace vectoriel et  $f$  une application linéaire de
+$E$  dans  lui-m\^eme telle que  $f^2=f$.
+\begin{enumerate}
+    \item Montrer que  $E= \Ker f \oplus \Im f$.
+
+    \item Supposons que  $E$ soit de dimension finie  $n$. 
+Posons  $r= \dim \Im f$. 
+Montrer qu'il existe une base 
+$\mathcal{B}= ( e_1, \ldots ,e_n)$ de  $E$  telle que : 
+ $f(e_i)=e_i$ si $i\le r$ et $f(e_i)=0$ si $i>r$. 
+Déterminer la matrice de  $f$ dans cette base $\mathcal{B}$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Nous devons montrer $\Ker f \cap \Im f = \{0\}$ et 
+$\Ker f + \Im f = E$.
+  \begin{enumerate}
+     \item Si $x \in \Ker f \cap \Im f$ alors d'une part $f(x)=0$ et d'autre part il existe $x'\in E$ tel que 
+$x=f(x')$. Donc $0=f(x)=f\big(f(x')\big)= f(x')=x$ donc $x=0$ (on a utilisé $f\circ f=f$). 
+Donc $\Ker f \cap \Im f = \{0\}$.
+
+     \item Pour $x\in E$ on le réécrit $x=x-f(x) + f(x)$. Alors $x-f(x) \in \Ker f$ 
+(car $f\big(x-f(x) \big)=f(x)-f\circ f (x)=0$)
+et $f(x)\in \Im f$. Donc $x \in \Ker f + \Im f$. Donc $\Ker f + \Im f = E$.
+
+     \item Conclusion  : $E= \Ker f \oplus \Im f$.
+  \end{enumerate}
+
+  \item Notons $r$ le rang de $f$ : $r=\dim \Im f$.
+Soit $\{e_1,\ldots,e_r\}$ une base de $\Im f$ et 
+soit $\{e_{r+1},\ldots, e_n\}$ une base de $\Ker f$.
+Comme 
+$E= \Ker f \oplus \Im f$ alors
+$(e_1,\ldots ,e_n)$ est une base de $E$.
+Pour $i > r$ alors $e_i \in \Ker f$ donc $f(e_i)=0$.
+
+Comme $f\circ f=f$ alors pour n'importe quel $x\in \Im f$ on a $f(x)=x$ :
+en effet comme $x\in \Im f$, il existe $x'\in E$ tel que $x=f(x')$ 
+ainsi $f(x)=f\big(f(x')\big)=f(x')=x$. En particulier si $i\le r$ alors
+$f(e_i)=e_i$.
+
+  \item La matrice de $f$ dans la base $(e_1,\ldots,e_n)$ est donc :
+$$\begin{pmatrix}
+  I & (0) \\
+  (0) & (0) \\  
+  \end{pmatrix}$$
+où $I$ désigne la matrice identité de taille $r\times r$
+et les $(0)$ désignent des matrices nulles.
+
+\end{enumerate}
+
+\fincorrection
+
+\finexercice
+

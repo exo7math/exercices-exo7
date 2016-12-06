@@ -1,0 +1,24 @@
+\exercice{4999, quercia, 2010/03/17}
+\enonce[Ensi Physique P 94]
+
+    Trouver les arcs biréguliers du plan dont le cercle osculateur est en
+    tout point tangent à une droite fixe.
+    
+\finenonce
+
+\noindication
+
+\correction
+             On suppose que la droite est $Ox$ et on paramètre la courbe
+             cherchée, $\mathcal{C}$, par une abscisse curviligne $s$.
+	     Soient $M=(x,y) \in \mathcal{C}$,         $I=(x-R\frac{dy}{ds}, y+R\frac{dx}{ds})$
+	     le centre de courbure en $M$ où $R$ est le rayon de courbure.
+             On veut $|R| = \Bigl|y+R\frac{dx}{ds}\Bigr| = |y+R\cos\varphi|$ d'où~:
+             $$\pm \frac{d R }{ds} = \frac{dy}{ds} -R\sin\varphi \frac{d \varphi}{ds} +  \frac{d R }{ds}\cos\varphi = \frac{d R }{ds}\cos\varphi.$$
+             Ceci implique $\frac{d R }{ds} = 0$ donc $R$ est constant (cercle) ou
+             $\varphi\equiv 0 \bmod \pi$ (droite horizontale). Le deuxième cas est
+             exclu (courbe birégulière) donc il reste le cas d'un cercle qui
+             convient s'il est tangent à $Ox$.
+\fincorrection
+
+\finexercice

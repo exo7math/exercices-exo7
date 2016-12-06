@@ -1,0 +1,42 @@
+\exercice{3872, quercia, 2010/03/11}
+\enonce[Plus grande fonction lipschitzienne minorant~$f$ (Ens Lyon MP$^*$ 2003)]
+\ 
+\begin{enumerate}
+  \item Existe-t-il toujours~$\varphi$ lipschitzienne telle que $\varphi\le f$
+    où $f : {\R^n} \to \R$ est une application continue donnée~?
+    
+  \item Soit~$k>0$. Trouver une CNS sur~$f$ pour qu'il existe $\varphi : {\R^n}\to \R$
+    $k$-lipschitzienne minorant~$f$.
+    
+  \item On suppose cette CNS vérifiée pour~$k_0>0$. Montrer que si $k\ge k_0$
+    alors il existe $\varphi_k$, $k$-lipschitzienne minorant~$f$ et maximale
+    pour l'ordre usuel des fonctions.
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Non. Si $\varphi$ est lipschitzienne alors $\varphi(x) = O(\|x\|)$
+    lorsque $\|x\|$ tend vers l'infini, donc toute fonction $f$ à décroissance
+    suffisament rapide vers $-\infty$ n'est pas minorable par une fonction
+    lipschitzienne. Contre-exemple explicite~: $f(x) = -\|x\|^2$.
+  \item CNS~: $x \mapsto f(x)+k\|x\|$ est minorée.
+  \item On pose $\varphi(x) = \sup\{g(x),\ g\ k$-lipschitzienne minorant $f\}$.
+    Il suffit de vérifier que~$\varphi$ est $k$-lipschitzienne, ce sera alors
+    la plus grande fonction $k$-lipschitzienne minorant~$f$. Soient~$x,y\in\R^n$,
+    $\varepsilon>0$ et~$g_x,g_y$ des fonctions $k$-lipschitziennes minorant~$f$ telles
+    que $g_y(x)\le\varphi(x)\le g_x(x)+\varepsilon$ et $g_x(y)\le\varphi(y)\le g_y(y)+\varepsilon$.
+    On a~: 
+\begin{align*}
+    \varphi(y)&\le g_y(y)+\varepsilon\le g_y(x)+k\|x-y\|+\varepsilon\le\varphi(x)+k\|x-y\|+\varepsilon,\\
+    \varphi(y)&\ge g_x(y)\ge g_x(x)-k\|x-y\|\ge\varphi(x)-k\|x-y\|-\varepsilon.\\
+\end{align*}
+    Donc $|\varphi(x)-\varphi(y)|\le k\|x-y\|+\varepsilon$ et on fait tendre $\varepsilon$
+    vers~$0^+$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

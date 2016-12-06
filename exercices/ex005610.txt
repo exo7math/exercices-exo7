@@ -1,0 +1,50 @@
+\exercice{5610, rouget, 2010/10/16}
+\enonce[***]
+Soient $a_1$,..., $a_n$ $n$ réels tous non nuls et $A=\left(
+\begin{array}{ccccc}
+1+a_1&1&\ldots&\ldots&1\\
+1&\ddots&\ddots& &\vdots\\
+\vdots&\ddots& &\ddots&\vdots\\
+\vdots& &\ddots&\ddots&1\\
+1&\ldots&\ldots&1&1+a_n
+\end{array}
+\right)$.
+
+Inverse de $A$ en cas d'existence ?
+\finenonce
+
+\noindication
+
+\correction
+On inverse $A$ en l'interprétant comme une matrice de passage.
+
+Soit $\mathcal{B}=(e_1,...,e_n)$ la base canonique de $\Rr^n$ et $(e_1',...,e_n)$ la famille de vecteurs de $\Rr^n$ de matrice $A$ dans la base $\mathcal{B}$.
+
+\begin{center}
+$A\;\text{inversible}\Leftrightarrow(e_1',...,e_n')\;\text{base de}\;E\Leftrightarrow\text{Vect}(e_1,...,e_n)\subset\text{Vect}(e_1',...,e_n')\Leftrightarrow\forall i\in\llbracket1,n\rrbracket,\;e_i\in\text{Vect}(e_1',...,e_n')$.
+\end{center}
+
+Dans ce cas, $A^{-1}$ est la matrice de passage de $\mathcal{B}'$ à $\mathcal{B}$.
+
+Soit $u = e_1 + ... + e_n$. Pour tout $i\in\llbracket1,n\rrbracket$, $e_i'=a_ie_i + u$ ce qui fournit $e_i =\frac{1}{a_i}(e_i'-u)$.
+
+En additionnant membre à membre ces $n$ égalités, on obtient $u=\sum_{i=1}^{n}\frac{1}{a_i}e_i'-\left(\sum_{i=1}^{n}\frac{1}{a_i}\right)u$ et donc $\lambda u=\sum_{i=1}^{n}\frac{1}{a_i}e_i'$ où
+$\lambda=1+\sum_{i=1}^{n}\frac{1}{a_i}$.
+
+\textbf{1er cas.} Si $\lambda\neq0$, on peut exprimer $u$ en fonction des $e_i'$, $1\leqslant i\leqslant n$, et donc les $e_i$ fonction des $e_i'$. Dans ce cas $A$ est inversible. Plus précisément, $ u=\frac{1}{\lambda}\sum_{i=1}^{n}\frac{1}{a_i}e_i'$ puis, $\forall i\in\llbracket1,n\rrbracket$, $e_i =\frac{1}{a_i}\left(e_i'-\frac{1}{\lambda}\sum_{j=1}^{n}\frac{1}{a_j}e_j'\right)$ et enfin
+
+\begin{center}
+$A^{-1}=\left(
+\begin{array}{ccccc}
+\frac{1}{a_1}-\frac{1}{\lambda a_1^2}&-\frac{1}{\lambda a_2a_1}&\ldots&\ldots&-\frac{1}{\lambda a_na_1}\\
+-\frac{1}{\lambda a_1a_2}&\frac{1}{a_2}-\frac{1}{\lambda a_2^2}& & &\vdots\\
+\vdots&-\frac{1}{\lambda a_2a_3}&\ddots& &\vdots\\
+\vdots&\vdots& &\frac{1}{a_{n-1}}-\frac{1}{\lambda a_{n-1}^2}&-\frac{1}{\lambda a_na_{n-1}}\\
+-\frac{1}{\lambda a_1a_n}&-\frac{1}{\lambda a_2a_n}&\ldots&-\frac{1}{\lambda a_na_{n-1}}&\frac{1}{a_n}-\frac{1}{\lambda a_n^2}
+\end{array}
+\right)$  où $\lambda=1+\sum_{i=1}^{n}\frac{1}{a_i}$.
+\end{center}
+
+\textbf{2ème cas.} Si $\lambda=0$, on a $\sum_{i=1}^{n}\frac{1}{a_i}e_i'=0$ ce qui montre que la famille $(e_i')_{1\leqslant i\leqslant n}$ est liée et donc que $A$ n'est pas inversible.
+\fincorrection
+\finexercice

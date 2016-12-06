@@ -1,0 +1,56 @@
+\exercice{5863, rouget, 2010/10/16}
+\enonce[**I]
+Pour $X=(x_i)_{1\leqslant i\leqslant n}\in\mathcal{M}_{n,1}(\Rr)$, on pose $\|X\|_2=\sqrt{\sum_{i=1}^{n}x_i^2}$. Pour $A\in\mathcal{S}_n(\Rr)$, on note $\rho(A)$ le rayon spectral de $A$ c'est-à-dire $\rho(A)=\text{Max}\{|\lambda|,\;\lambda\in\text{Sp}(A)\}$.
+
+Montrer que $\forall A\in\mathcal{S}_n(\Rr)$, $|||A|||_2=\rho(A)$ où $|||A|||_2=\text{Sup}\left\{ \frac{\|AX\|_2}{\|X\|_2},\;X\in\mathcal{M}_{n,1}(\Rr)\setminus\{0\}\right\}$.
+
+\finenonce
+
+\noindication
+
+\correction
+Soit $D=\text{diag}(\lambda_i)_{1\leqslant i\leqslant n}\in\mathcal{D}_n(\Rr)$. Pour $X=(x_i)_{1\leqslant i\leqslant n}\in\mathcal{M}_{n,1}(\Rr)$,
+
+\begin{center}
+$\|DX\|_2=\sqrt{\sum_{i=1}^{n}\lambda_i^2x_i^2}\leqslant\sqrt{(\rho(D))^2\sum_{i=1}^{n}x_i^2}=\rho(D)\|X\|_2$,
+\end{center}
+
+De plus, si $\lambda$ est une valeur propre de $D$ telle que $|\lambda|=\rho(D)$ et $X_0$ est un vecteur propre associé, alors 
+
+\begin{center}
+$\|DX_0\|_2=\|\lambda X_0\|_2=|\lambda|\|X_0\|_2=\rho(D)\|X_0\|_2$.
+\end{center}
+
+En résumé
+
+\textbf{(1)} $\forall X\in\mathcal{M}_{n,1}(\Rr)\setminus\{0\}$, $ \frac{\|DX\|_2}{\|X\|_2}\leqslant\rho(D)$,
+
+\textbf{(2)} $\exists X_0\in\mathcal{M}_{n,1}(\Rr)\setminus\{0\}$, $ \frac{\|DX_0\|_2}{\|X_0\|_2}=\rho(D)$.
+
+On en déduit que $\forall D\in\mathcal{D}_n(\Rr)$, $|||D|||_2=\rho(D)$.
+
+Soit alors $A\in\mathcal{S}_n(\Rr)$. D'après le théorème spectral, il existe $P\in O_n(\Rr)$ et $D=\text{diag}(\lambda_i)_{1\leqslant i\leqslant n}\in\mathcal{D}_n(\Rr)$ tel que $A=PD{^t}P$. De plus $\rho(A)=\rho(D)$. Pour $X\in\mathcal{M}_{n,1}(\Rr)$,
+
+\begin{align*}\ensuremath
+\|AX\|_2&=\|PD{^t}PX\|_2\\
+ &=\|D({^t}PX)\|_2\;(\text{car}\;P\in O_n(\Rr)\Rightarrow\forall Y\in\mathcal{M}_{n,1}(\Rr),\;\|PY\|_2=\|Y\|_2)\\
+ &=\|DX'\|_2\;\text{où on a posé}\;X'={^t}PX.
+\end{align*}
+
+Maintenant l'application $X\mapsto{^t}PX=X'$ est une permutation de $\mathcal{M}_{n,1}(\Rr)$ car la matrice ${^t}P$ est inversible et donc $X$ décrit $\mathcal{M}_{n,1}(\Rr)$ si et seulement si $X'$ décrit $\mathcal{M}_{n,1}(\Rr)$. De plus, pour tout vecteur colonne $X$, $\|X'\|_2=\|{^t}PX\|_2=\|X\|_2$. On en déduit que $\left\{
+ \frac{\|AX\|_2}{\|X\|_2},\;X\in\mathcal{M}_{n,1}(\Rr)\setminus\{0\}\right\}=\left\{
+ \frac{\|DX'\|_2}{\|X'\|_2},\;X'\in\mathcal{M}_{n,1}(\Rr)\setminus\{0\}\right\}$ et en particulier,
+
+\begin{center}
+$|||A|||_2=|||D|||_2=\rho(D)=\rho(A)$.
+\end{center}
+
+\begin{center}
+\shadowbox{
+$\forall A\in\mathcal{S}_n(\Rr)$, $|||A|||_2=\text{Sup}\left\{ \frac{\|AX\|_2}{\|X\|_2},\;X\in\mathcal{M}_{n,1}(\Rr)\setminus\{0\}\right\}=\rho(A)$.
+}
+\end{center}
+
+\textbf{Remarque.} L'application $A\mapsto\rho(A)$ est donc une norme sur $\mathcal{S}_n(\Rr)$ et de plus cette norme est sous-multiplicative.
+\fincorrection
+\finexercice

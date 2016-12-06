@@ -1,0 +1,42 @@
+\exercice{5090, rouget, 2010/06/30}
+\enonce[***I]
+Calculer $u_n=\Arctan\frac{2}{1^2}+\Arctan\frac{2}{2^2}+...+\Arctan\frac{2}{n^2}$ pour $n$ entier naturel non nul
+donné puis déterminer $\lim_{n\rightarrow +\infty}u_n$. (Utiliser l'exercice \ref{exo:suprou2} 4))
+\finenonce
+
+\noindication
+
+\correction
+ (On va retrouver le résultat de l'exercice \ref{exo:suprou2} dans un cas particulier)
+ 
+ 
+ Soient $a$ et $b$ deux réels positifs. Alors, $\Arctan a\in\left[0,\frac{\pi}{2}\right[$, $\Arctan b\in\left[0,\frac{\pi}{2}\right[$ et donc, $\Arctan a-\Arctan b\in\left]-\frac{\pi}{2},\frac{\pi}{2}\right[$. De plus, 
+
+$$\tan(\Arctan a-\Arctan b)=\frac{\tan(\Arctan a)-\tan(\Arctan b)}{1+\tan(\Arctan a)\tan(\Arctan b)}=\frac{a-b}{1+ab},$$
+et donc, puisque $\Arctan a-\Arctan b\in]-\frac{\pi}{2},\frac{\pi}{2}[$,
+
+\begin{center}
+\shadowbox{
+$\forall a\geq0,\;\forall b\geq0,\;\Arctan a-\Arctan b
+=\Arctan\left(\frac{a-b}{1+ab}\right).$
+}
+\end{center}
+Soit alors $k$ un entier naturel non nul.
+$\Arctan\frac{2}{k^2}=\Arctan\frac{(k+1)-(k-1)}{1+(k-1)(k+1)}=\Arctan(k+1)-\Arctan(k-1)$ (puisque $k-1$ et $k+1$ sont
+positifs). Par suite, si $n$ est un entier naturel non nul donné,
+
+\begin{align*}
+u_n&=\sum_{k=1}^{n}\Arctan\frac{2}{k^2}=\sum_{k=1}^{n}(\Arctan(k+1)-\Arctan(k-1))=\sum_{k=2}^{n+1}\Arctan
+k-\sum_{k=0}^{n-1}\Arctan k\\
+ &=\Arctan(n+1)+\Arctan n-\frac{\pi}{4}.
+\end{align*}
+La limite de $u_n$ vaut donc
+$\frac{\pi}{2}+\frac{\pi}{2}-\frac{\pi}{4}=\frac{3\pi}{4}$.
+
+\begin{center}
+\shadowbox{
+$\lim_{n\rightarrow +\infty}u_n=\frac{3\pi}{4}$.
+}
+\end{center}
+\fincorrection
+\finexercice

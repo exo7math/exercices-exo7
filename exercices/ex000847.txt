@@ -1,0 +1,64 @@
+\exercice{847, bodin, 1998/09/01}
+\enonce
+On se propose d'int\'egrer sur l'intervalle le plus grand possible contenu dans $]0,
+\infty[$ l'\'equation diff\'erentielle :
+
+$$
+(E) \ \ \ \ \ \ \ y'(x)- \frac{y(x)}{x}-y(x)^2=-9x^2.
+$$
+\begin{enumerate}
+    \item D\'eterminer $ a \in ]0, \infty[ $ tel que $y(x)=ax$ soit une solution
+particuli\`ere
+$y_0$ de $(E)$.
+    \item  Montrer que le changement de fonction inconnue : $y(x) = y_0(x)-\frac{1}{z(x)}$
+transforme l'\'equation (E) en l'\'equation diff\'erentielle
+$$
+(E_1) \ \ \ \ \ \ \ z'(x) + (6x+ \frac{1}{x})z(x) =1.
+$$
+    \item Int\'egrer $(E_1)$ sur $]0,\infty[$.
+    \item Donner toutes les solutions de $(E)$ d\'efinies sur $]0,\infty[$.
+\end{enumerate}
+\finenonce 
+\noindication
+\correction
+
+% Correction : Nicolas Bonnotte
+
+Le but de l'exercice est de résoudre l'équation
+\begin{equation}\tag{E}\label{eq}
+y'(x)- \frac{y(x)}{x}-y(x)^2=-9x^2.
+\end{equation}
+
+\begin{enumerate}
+    \item Trouvons $a \in ]0, \infty[ $ tel que $y_0(x)=ax$ soit une solution
+particuli\`ere. Puisque
+\[ y_0'(x) - \frac{y_0(x)}{x}-y_0(x)^2 = - a^2 x^2,\]
+$y_0$ est solution si et seulement si $a = \pm 3$. On choisit $a=3$.
+
+    \item Si $z$ est une fonction $\mathcal{C}^1$ ne s'annulant pas, on pose $y(x) = 3x-1/{z(x)}$. Alors $y$ est solution si et seulement si
+\[ \frac{z'(x)}{z(x)^2} + \frac{1}{xz(x)} - \frac{1}{z(x)^2} + \frac{6x}{z(x)} = 0.\]
+En multipliant par $z(x)^2$, on obtient que $y$ est solution de \eqref{eq} ssi $z$ vérifie
+\begin{equation}\tag{E$_1$}\label{eq1}
+z'(x) + \left(6x+ \frac{1}{x}\right)z(x) =1.
+\end{equation}
+
+
+    \item On résout \eqref{eq1} sur $]0,\infty[$. Une primitive de $x \mapsto 6x + 1/x$ est $x \mapsto 3x^2 + \ln(x)$, donc les solutions de l'équation homogène sont les $x \mapsto A \exp(-3x^2 - \ln(x))$. On cherche une solution particulière de \eqref{eq1} sous la forme $z_p(x) = \alpha(x) \exp(-3x^2-\ln(x))$ ; alors $z_p$ est solution si
+ $\alpha'(x) \exp(-3x^2 - \ln(x)) = 1$, c'est-à-dire si $\alpha'(x) = x\exp(3x^2)$, par exemple si $\alpha(x) = \exp(3x^2)/6$. Les solutions de \eqref{eq1} sont donc les 
+ \[ z(x) = \frac{1+A\exp(-3x^2)}{6x}, \qquad \text{ avec } A \in \R.\]
+
+
+   \item  On va maintenant en déduire les solutions de \eqref{eq} d\'efinies sur $]0,\infty[$. 
+    
+    Soit $y$ une solution $\mathcal{C}^1$ définie sur $]0,\infty[$. On suppose dans un premier temps que $y(x) > 3x$ sur l'intervalle ouvert $I \subset ]0,\infty[$, pris aussi grand que possible.  Alors $y(x) = 3x - 1/{z_I(x)}$ pour une certaine fonction $z_I < 0$ qui est $\mathcal{C}^1$ sur $I$. D'après la question précédente, on a nécessairement $z_I(x) = [1+A_I\exp(-3x^2)]/6x$ pour une certaine constante $A_I \in \R$. Puisque $z_I < 0$, cela impose $A_I<0$, mais du coup $I \neq ]0,+\infty[$ car $1 > A_I\exp(-3x^2)$ si $x$ est assez grand.
+  
+  Dans tous les cas, il existe donc un intervalle ouvert $J$ tel que $y(x) < 3x$ sur $J$. On suppose encore que $J$ est aussi grand que possible. Sur $J$, $y(x) = 3x - 1/{z_J(x)}$ pour une certaine fonction $z_J > 0$ qui est $\mathcal{C}^1$ sur $J$. Encore d'après la question précédente, $z_J(x) = [1+A_J\exp(-3x^2)]/6x$ pour une certaine constante $A_J$.
+ Puisque l'intervalle ouvert $J = ]a,b[$ a été supposé maximal, et puisque $y$ est supposée définie sur $]0,+\infty[$, si $a > 0$ on a $y(a) = 3a$ et de même si $b < \infty$, $y(b) = 3b$, car sinon par continuité de $y$ on aurait encore $y(x) < 3x$ sur $]a-\epsilon,b+\epsilon[$ pour un petit $\epsilon > 0$. Cela n'est possible respectivement que si $z_J(x) \rightarrow +\infty$ lorsque $x \rightarrow a$ ou $z_J(x) \rightarrow +\infty$ lorsque $x \rightarrow b$. Or on a dit que $z_J = [1+A_J\exp(-3x^2)]/6x$, cela n'est donc pas possible du tout (sauf précisément si respectivement $a =0$ et $b=0$).
+  
+  Donc soit $y(x) = 3x$ sur $]0,+\infty[$, soit $y(x) < 3x$ sur $]0,+\infty[$. Dans ce dernier cas, $z(x) = 1/(3x-y(x))$ est définie sur $]0,+\infty[$ et s'écrit $z(x) = [1+A\exp(-3x^2)]/6x$. Puisque $z > 0$, nécessairement $A \geq -1$. Donc si $y$ est solution, alors     
+    \[ y(x) = 3x \qquad \text{ou} \qquad y(x) =  3x - \frac{6x}{1+A\exp(-3x^2)} \quad \text{avec } A \geq -1.\]
+    
+ Réciproquement, si $y$ est ainsi définie, alors $y$ est définie et $\mathcal{C}^1$ sur $]0,\infty[$, et on peut vérifier que c'est bien une solution.
+\end{enumerate}
+\fincorrection
+\finexercice

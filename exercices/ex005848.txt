@@ -1,0 +1,51 @@
+\exercice{5848, rouget, 2010/10/16}
+\enonce[**]
+\begin{enumerate}
+ \item  Soient $(E,N_E)$ et $(F,N_F)$ deux espaces vectoriels normés. Soient $f$ et $g$ deux applications continues sur $E$ à valeurs dans $F$. Soit $D$ une partie de $E$ dense dans $E$. Montrer que si $f_{/D}= g_{/D}$ alors $f = g$.
+
+\item   Déterminer tous les morphismes continus de $(\Rr,+)$ dans lui-même.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Soit $x\in E$. Puisque $D$ est dense dans $E$, il existe une suite $(d_n)_{n\in\Nn}$ d'éléments de $D$ convergeant vers $x$ et puisque $f$ et $g$ sont continues et coincident sur $D$ et donc en $x$
+
+\begin{center}
+$f(x) = f\left(\lim_{n \rightarrow +\infty}d_n\right)=\lim_{n \rightarrow +\infty} f(d_n) =\lim_{n \rightarrow +\infty}g(d_n) = g\left(\lim_{n \rightarrow +\infty}d_n\right) = g(x)$.
+\end{center}
+
+On a montré que $f = g$.
+
+\item  Soit $f\in\Rr^\Rr$. On suppose que $\forall(x,y)\in\Rr^2$ $f(x+y) = f(x)+f(y)$. Soit $a = f(1)$.
+
+\textbullet~$x=y=0$ fournit $f(0) = 0 = a\times0$.
+
+\textbullet~Soit $n\in \Nn^*$ et $x\in\Rr$. $f(nx) = f(x+...+x) = f(x)+...+f(x)  = nf(x)$. Ceci reste vrai pour $n=0$.
+ 
+\textbullet~En particulier $x = 1$ fournit pour tout entier naturel non nul $n$, $f(n) = nf(1) = an$ puis $x = \frac{1}{n}$   fournit 
+
+$nf\left( \frac{1}{n}\right) = f(1) = a$ et donc $f\left( \frac{1}{n}\right) = \frac{a}{n}$.
+
+\textbullet~Ensuite, $\forall(p,q)\in(\Nn\times\Nn^*)^2$, $f\left( \frac{p}{q}\right) = pf\left( \frac{1}{q}\right)=a \frac{p}{q}$.
+
+\textbullet~Soit $x\in\Rr$. L'égalité $f(x)+f(-x)=f(0)=0$ fournit $f(-x)=-f(x)$.
+
+\textbullet~En particulier, $\forall(p,q)\in(\Nn^*)^2$, $f\left(- \frac{p}{q}\right) = -f\left( \frac{p}{q}\right)= - a \frac{p}{q}$.
+
+En résumé, si $f$ est morphisme du groupe $(\Rr,+)$ dans lui-même, $\forall r\in\Qq$, $f(r) = ar$ où $a = f(1)$.
+
+Si de plus $f$ est continue sur $\Rr$, les deux applications $f~:~x\mapsto f(x)$ et $g~:~x\mapsto ax$ sont continues sur $\Rr$ et coïncident sur $\Qq$ qui est dense dans $\Rr$. D'après le 1), $f = g$ ou encore $\forall x\in\Rr$, $f(x)=ax$ où $a=f(1)$.
+
+Réciproquement, toute application linéaire $x\mapsto ax$ est en particulier un morphisme du groupe $(\Rr,+)$ dans lui-même, continu sur $\Rr$. 
+
+\begin{center}
+\shadowbox{
+Les morphismes continus du groupe $(\Rr,+)$ dans lui-même sont les applications linéaires $x\mapsto ax$, $a\in\Rr$.
+}
+\end{center}
+\end{enumerate}
+\fincorrection
+\finexercice

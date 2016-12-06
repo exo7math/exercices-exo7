@@ -1,0 +1,49 @@
+\exercice{2575, delaunay, 2009/05/19}
+\enonce
+ ({\it 4 points}) On suppose qu'une population $x$ de lapins et une population $y$ de loups sont gouvern\'ees par le syst\`eme suivant d'\'equations diff\'erentielles :
+$$(S)\ \ \left\{ \begin{align*}x'&= 4x-2y \\  y'&= x+y\end{align*}\right.$$
+\begin {enumerate}
+  \item  Diagonaliser la matrice 
+$$A=\begin{pmatrix}4&-2 \\ 1&1 \\ \end{pmatrix}.$$
+  \item Exprimer le syst\`eme $(S)$ et ses solutions dans une base de vecteurs propres de $A$.
+  \item  Repr\'esenter graphiquement les trajectoires de $(S)$ dans le rep\`ere $(Oxy)$.
+  \item Discuter graphiquement l'\'evolution de la population des lapins en fonction des conditions initiales.
+\end {enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+{\it On suppose qu'une population $x$ de lapins et une population $y$ de loups sont gouvern\'ees par le syst\`eme suivant d'\'equations diff\'erentielles} :
+$$(S)\ \ \left\{\begin{align*}x'&= 4x-2y \\  y'&= x+y\end{align*}\right.$$
+\begin {enumerate}
+  \item On diagonalise la matrice 
+$$A=\begin{pmatrix}4&-2 \\ 1&1 \\ \end{pmatrix}.$$
+Pour cela on d\'etermine ses valeurs propres :
+$$\det(A-\lambda I)=\begin{vmatrix}4-\lambda &-2 \\ 1&1-\lambda \\ \end{vmatrix}=(4-\lambda)(1-\lambda)+2=\lambda^2-5\lambda+6=(\lambda-2)(\lambda-3).$$
+Ainsi, la matrice $A$ admet deux valeurs propres distinctes, qui sont $\lambda_1=2$ et $\lambda_2=3$. Elle est diagonalisable. D\'eterminons une base de vecteurs propres :
+$$\begin{pmatrix}4&-2 \\ 1&1 \\ \end{pmatrix}\begin{pmatrix}x \\  y\end{pmatrix}=
+\begin{pmatrix}2x \\  2y\end{pmatrix}\iff x=y,$$
+d'o\`u le vecteur propre $u_1=(1,1)$ associ\'e \`a la valeur propre $\lambda_1=2$ . 
+$$\begin{pmatrix}4&-2 \\ 1&1 \\ \end{pmatrix}\begin{pmatrix}x \\  y\end{pmatrix}=
+\begin{pmatrix}3x \\  3y\end{pmatrix}\iff x=2y,$$
+d'o\`u le vecteur propre $u_2=(2,1)$ associ\'e \`a la valeur propre $\lambda_2=3$ .
+Dans la base $(u_1, u_2)$, la matrice s'\'ecrit
+$$A'=\begin{pmatrix}2&0 \\ 0&3 \\ \end{pmatrix}.$$
+On a $A=PA'P^{-1}$ o\`u
+$$P=\begin{pmatrix}1&2 \\ 1&1 \\  \end{pmatrix}\ {\hbox{et}}\ P^{-1}=\begin{pmatrix}-1&2 \\ 1&-1 \\ \end{pmatrix}.$$
+  \item Exprimons le syst\`eme $(S)$ et ses solutions dans une base de vecteurs propres de $A$.
+
+Dans la base $(u_1, u_2)$, le syst\`eme $(S)$ devient
+$$(S')\ \ \left\{\begin{align*}X'&= 2X \\  Y'&= 3Y\end{align*}\right.$$
+Ses solutions sont les fonctions
+$$\left\{\begin{align*}X(t)&= X(0)e^{2t} \\  Y(t)&=Y(0)e^{3t}\end{align*}\right.$$
+
+  \item  Pour repr\'esenter graphiquement les trajectoires de $(S)$ dans le rep\`ere $(Oxy)$, on trace d'abord le rep\`ere $(O, u_1,u_2)$ dans le rep\`ere $(0xy)$, puis, on trace les courbes $$Y={\frac{Y(0)}{X(0)}}X^{3/2}$$
+dans le rep\`ere $(O, u_1,u_2)$ (ou $OXY$).
+
+  \item On voit sur le dessin que si $Y(0)$ est strictement positif, alors la population des lapins, $x(t)$ tend vers $+\infty$ quand $t$ tend vers $+\infty$. Si $Y(0)$ est strictement n\'egatif alors la populations des lapins s'\'eteint dans la mesure ou $x(t)$ dans ce cas tendrait vers $-\infty$.
+\end {enumerate}
+
+\fincorrection
+\finexercice

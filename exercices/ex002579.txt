@@ -1,0 +1,25 @@
+\exercice{2579, delaunay, 2009/05/19}
+\enonce
+Soit $E$ un espace vectoriel sur un corps $K$ ($K=\R$ ou $\C$), et $u$ un endomorphisme de $E$. On suppose $u$ nilpotent, c'est-\`a-dire qu'il existe un entier strictement positif $n$ tel que $u^n=0$.
+
+\begin{enumerate}  
+  \item Montrer que $u$ n'est pas inversible. 
+  \item D\'eterminer les valeurs propres de $u$ et les sous-espaces propres associ\'es.
+ \end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+{\it Soit $E$ un espace vectoriel sur un corps $K$ ($K=\R$ ou $\C$), et $u$ un endomorphisme de $E$. On suppose $u$ nilpotent, c'est-\`a-dire qu'il existe un entier strictement positif $n$ tel que $u^n=0$.}
+
+\begin{enumerate}  \item Montrons que $u$ n'est pas inversible. 
+
+On a : $0=\det u^n=(\det u)^n$, d'o\`u $\det u=0$, ce qui prouve que $u$ n'est pas inversible.
+
+  \item D\'eterminons les valeurs propres de $u$ et les sous-espaces propres associ\'es.
+
+Soit $\lambda$ une valeur propre de $u$, il existe alors un vecteur $x\in E$ non nul tel que $u(x)=\lambda x$. Or, $u(x)=\lambda x\Rightarrow u^n(x)=\lambda^n x$. Mais, $u^n(x)=0$ et $x\neq 0$, d'o\`u $\lambda^n=0$ et donc $\lambda=0$. La seule valeur propre possible de $u$ est donc $0$ et c'est une valeur propre car, comme $u$ n'est pas inversible, le noyau de $u$ n'est pas r\'eduit \`a $\{0\}$. L'endomorphisme $u$ admet donc $0$ comme unique valeur propre, le sous-espace propre associ\'e est $\ker u$.
+ \end{enumerate}
+\fincorrection
+\finexercice

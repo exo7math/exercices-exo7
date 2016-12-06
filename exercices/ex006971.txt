@@ -1,0 +1,21 @@
+\exercice{6971, blanc-centi, 2014/04/08}
+\video{FPyfOQL32Hg}
+\enonce
+On pose $Q_0=(X-1)(X-2)^2$, $Q_1=X(X-2)^2$ et $Q_2=X(X-1)$. 
+\`A l'aide de la décomposition en éléments simples de $\frac{1}{X(X-1)(X-2)^2}$, 
+trouver des polynômes $A_0,\ A_1,\ A_2$ tels que $A_0Q_0+A_1Q_1+A_2Q_2=1$. 
+Que peut-on en déduire sur $Q_1$, $Q_2$ et $Q_3$?
+\finenonce 
+
+\noindication
+
+\correction
+La décomposition en élément simple s'écrit :
+$$\frac{1}{X(X-1)(X-2)^2}=\frac{-\frac14}{X}+\frac{1}{X-1}+\frac{\frac12}{(X-2)^2}+\frac{-\frac34}{X-2}.$$ 
+En multipliant cette identité par le dénominateur $X(X-1)(X-2)^2$, il vient :
+$$1 =-\tfrac{1}{4}Q_0+Q_1+\left(\tfrac{1}{2}-\tfrac{3}{4}(X-2)\right)Q_2.$$
+Ainsi $A_0=-\frac{1}{4}$, $A_1=1$ et $A_1=(2-\frac{3}{4}X)$ conviennent. 
+On a obtenu une relation de Bézout entre $Q_1$, $Q_2$ et $Q_3$ qui prouve que 
+ces trois polynômes sont premiers dans leur ensemble : $\pgcd(Q_1,Q_2,Q_3)=1$.
+\fincorrection
+\finexercice

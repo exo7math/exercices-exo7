@@ -1,0 +1,44 @@
+\exercice{2692, matexo1, 2002/02/01}
+\enonce
+Soit $k\in\N$ et $\alpha\in\left]0,1\right]$.
+On rappelle qu'on note $C^{k,\alpha}(\R)$ l'ensemble des
+fonctions $g$ de classe $C^k$ sur~$\R$, dont la
+$k$-i{\`e}me d{\'e}riv{\'e}e est h{\"o}ld{\'e}rienne, c'est-{\`a}-dire v{\'e}rifie
+$$\exists C>0,\ \forall x,y\in \R,\qquad
+|g^{(k)}(x)-g^{(k)}(y)|\leq  C |x-y|^\alpha.$$
+(En particulier, si $\alpha =1$, ce sont les fonctions
+de $k$-i{\`e}me d{\'e}riv{\'e}e lipschitzienne.)
+\begin{itemize}
+\item Soit $f\in L^1(\R)$ {\`a} support compact, et $g
+\in C^{0,\alpha}(\R)$. Montrer que $f*g \in
+C^{0,\alpha}(\R)$.
+ En d{\'e}duire que si $g\in C^{k,\alpha}(\R)$,
+alors $f*g \in C^{k,\alpha}(\R)$.
+\item Soit $f\in L^1(\R)$ {\`a} support quelconque, et $g
+\in C^{0,\alpha}(\R)$ {\it born{\'e}e}. Montrer que $f*g \in
+C^{0,\alpha}(\R)$ et est born{\'e}e.
+ En d{\'e}duire que si $g\in C^{k,\alpha}(\R)$, born{\'e}e ainsi
+que toutes ses  d{\'e}riv{\'e}es, alors $f*g$ aussi.
+\end{itemize}
+\finenonce
+
+\noindication
+
+\correction
+\begin{itemize}
+\item Si $K$ est le support de $f$,
+$f*g(x) =\int_K f(t) g(x-t)\,dt$ est bien d{\'e}fini. De
+plus, $|f*g(x)-f*g(y)|\leq\int_K
+|f(t)||g(x-t)-g(y-t)|\,dt \leq C \|f\|_{L^1}
+|x-y|^\alpha$, d'o{\`u} le r{\'e}sultat. Si $g$ est
+d{\'e}rivable, alors $f*g$ aussi et $(f*g)' = f*(g')$. Donc
+si $g\in C^{k,\alpha}$, $f*g\in C^k$ et sa d{\'e}riv{\'e}e
+$k$-i{\`e}me {\'e}tant $f*(g^{(k)})$, elle est h{\"o}ld{\'e}rienne par
+le m{\^e}me argument.
+\item M{\^e}me argument; les produits de convolution
+sont bien d{\'e}finis et born{\'e}s car $f\in L^1$ et les
+d{\'e}riv{\'e}es de~$g$ sont dans $L^\infty$.
+\end{itemize}
+\fincorrection
+
+\finexercice

@@ -1,0 +1,41 @@
+\exercice{5854, rouget, 2010/10/16}
+\enonce[*]
+On munit $E=\Rr[X]$ de la norme $\|\;\|_\infty$ définie par : $\forall P\in E$, $\|P\|_\infty=\text{Sup}\left\{\left| \frac{P^{(n)}(0)}{n!}\right|,\;n\in\Nn\right\}$.
+
+\begin{enumerate}
+ \item  Vérifier brièvement que $\|\;\|_\infty$ est une norme sur $E$.
+
+\item  Soit $f$ l'endomorphisme de $E$ défini par $\forall P\in E$, $f(P)=XP$. Démontrer que l'application $f$ est continue sur $(E,\|\;\|_\infty)$ et déterminer $|||f|||$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  \textbullet~Soit $P\in E$. Si on pose $P=\sum_{k=0}^{+\infty}a_kX^k$, il existe $n\in\Nn$ tel que $\forall k>n$, $a_k=0$. Donc $\|P\|_\infty=\text{Sup}\left\{\left| \frac{P^{(k)}(0)}{k!}\right|,\;k\in\Nn\right\}=\text{Max}\{|a_k|,\;0\leqslant k\leqslant n\}$ existe dans $\Rr$.
+
+\textbullet~$\forall P\in E$, $\|P\|_\infty\geqslant0$.
+
+\textbullet~Soit $P\in E$. $\|P\|_\infty=0\Rightarrow\forall k\in\Nn,\;|a_k|\leqslant0\Rightarrow\forall k\in\Nn,\;a_k=0\Rightarrow P=0$.
+
+\textbullet~Soient $P\in E$ et $\lambda\in\Rr$. $\|\lambda P\|_\infty=\text{Max}\{|\lambda a_k|,\;0\leqslant k\leqslant n\}=|\lambda|\text{Max}\{|a_k|,\;0\leqslant k\leqslant n\}=|\lambda|\|P\|_\infty$.
+
+\textbullet~Soient $P=\sum_{k\geqslant0}^{}a_kX^k$ et $Q=\sum_{k\geqslant0}^{}b_kX^k$ deux polynômes. Pour $k\in\Nn$, $|a_k+b_k|\leqslant|a_k|+|b_k|\leqslant\|P\|_\infty+\|Q\|_\infty$ et donc $\|P+Q\|_\infty\leqslant\|P\|_\infty+\|Q\|_\infty$.
+
+\begin{center}
+\shadowbox{
+$\|\;\|_\infty$ est une norme sur $E$.
+}
+\end{center}
+
+\item  $\forall P\in E$, $\|f(P)\|_\infty=\|P\|_\infty$ et donc $\forall P\in E\setminus\{0\}$, $ \frac{\|f(P)\|_\infty}{\|P\|_\infty}=1$. On en déduit que $\text{Sup}\left\{ \frac{\|f(P)\|_\infty}{\|P\|_\infty},\;P\in E\setminus\{0\}\right\}=1$. Ceci montre tout à la fois que $f$ est continue sur $(E,\|\;\|_\infty)$ et $|||f|||=1$.
+
+\begin{center}
+\shadowbox{
+$f$ est continue sur $(E,\|\;\|_\infty)$ et $|||f|||=1$.
+}
+\end{center}
+\end{enumerate}
+\fincorrection
+\finexercice

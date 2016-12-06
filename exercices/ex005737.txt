@@ -1,0 +1,39 @@
+\exercice{5737, rouget, 2010/10/16}
+\enonce[***]
+Pour $x\in]-1,1[$, on pose $f(x)=\sum_{n=1}^{+\infty}x^{n^2}$. Trouver un équivalent simple de $f$ en $1$.
+\finenonce
+
+\noindication
+
+\correction
+Soit $x\in]-1,1[$. Pour $n\in\Nn^*$, $\left|x^{n^2}\right|=|x|^{n^2}\leqslant|x|^n$. Puisque la série numérique de terme général $|x|^n$ converge, on en déduit que la série de terme général $x^{n^2}$ est absolument convergente et en particulier convergente. Donc, $f$ est bien définie sur $]-1,1[$.
+
+Soit $x\in]0,1[$. La fonction $t\mapsto x^{t^2}=e^{t^2\ln x}$ est décroissante sur $[0,+\infty[$. Donc, $\forall k\in\Nn^*$, $\int_{k}^{k+1}x^{t^2}\;dt\leqslant x^{k^2}\leqslant\int_{k-1}^{k}x^{t^2}\;dt$. En sommant ces inégalités, on obtient
+
+\begin{center}
+$\forall x\in]0,1[$, $\int_{1}^{+\infty}x^{t^2}\;dt\leqslant f(x)\leqslant\int_{0}^{+\infty}x^{t^2}\;dt$\quad$(*)$.
+\end{center}
+
+Soit $x\in]0,1[$. En posant $u=t\sqrt{-\ln x}$, on obtient
+
+\begin{center}
+$\int_{0}^{+\infty}x^{t^2}\;dt=\int_{0}^{+\infty}e^{t^2\ln x}\;dt=\int_{0}^{+\infty}e^{-(t\sqrt{-\ln x})^2}\;dt=\frac{1}{\sqrt{-\ln x}}\int_{0}^{+\infty}e^{-u^2}\;du=\frac{\sqrt{\pi}}{2\sqrt{-\ln x}}$.
+\end{center}
+
+L'encadrement $(*)$ s'écrit alors
+
+\begin{center}
+$\forall x\in]0,1[$, $\frac{\sqrt{\pi}}{2\sqrt{-\ln x}}-\int_{0}^{1}x^{t^2}\;dt\leqslant f(x)\leqslant\frac{\sqrt{\pi}}{2\sqrt{-\ln x}}$.
+\end{center}
+
+Comme $\displaystyle\lim_{\substack{x\rightarrow1\\
+x<1}}\frac{\sqrt{\pi}}{2\sqrt{-\ln x}}=+\infty$, on a montré que
+
+\begin{center}
+\shadowbox{
+$\sum_{n=1}^{+\infty}x^{n^2}\underset{x\rightarrow1,\;x<1}{\sim}\frac{\sqrt{\pi}}{2\sqrt{-\ln x}}$.
+}
+\end{center}
+
+\fincorrection
+\finexercice

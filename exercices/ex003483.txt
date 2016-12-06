@@ -1,0 +1,52 @@
+\exercice{3483, quercia, 2010/03/10}
+\enonce[$\mathrm{rg}(BC)$, Centrale MP 2006]
+\begin{enumerate}
+  \item Soient deux matrices $B \in \mathcal{M}_{n,r}(\R)$ et $C \in \mathcal{M}_{r,n}(\R)$ de même rang $r$.
+    Montrer que $A = BC$ est de rang $r$.
+    
+
+  \item Réciproquement, soit $A \in \mathcal{M}_n(\R)$ de rang $r \ge 1$.
+    Montrer qu'il existe des matrices $B$ et $C$ comme
+    précédemment telles que $A = BC$.
+    
+
+  \item Déterminer explicitement une telle décomposition pour
+    $A = \begin{pmatrix}1 & 2 & 3 & 4 \cr 2 & 3 & 4 & 5 \cr
+    3 & 4 & 5 & 6 \cr 4 & 5 & 6 & a\cr\end{pmatrix}$, $a \in \R$.
+
+  \item Supposons de plus $A$ symétrique. Montrer que $CB$ est aussi de rang $r$.
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item 
+  \item $B$ admet $r$ lignes indépendantes d'indices $i_1,\dots,i_r$
+    et $C$ admet $r$ colonnes indépendantes d'indices $j_1,\dots,j_r$.
+    Soient $B'$ et $C'$ les sous matrices carrées associées dans $B$ et $C$.
+    Alors la sous-matrice de~$A$ d'indices $i_1,\dots,i_r$ pour les lignes
+    et $j_1,\dots,j_r$ pour les colonnes est $B'C'$, de rang~$r$.
+    Donc $\mathrm{rg}(A)\ge r$ et l'inégalité inverse est bien connue.
+  \item Soient $i_1,\dots,i_r$ $r$ indices tels que les
+    lignes associées dans~$A$ sont linéairement indépendantes,
+    et $B\in\mathcal{M}_{r,n}(\R)$ la sous-matrice correpondante. Par construction, $\mathrm{rg}(B)=r$.
+    Chaque ligne de~$A$
+    étant combinaison linéaire des lignes de~$B$, il existe $C\in\mathcal{M}_{r,n}(\R)$
+    telle que $A=BC$. Et on a $r=\mathrm{nb.lignes}(C)\ge\mathrm{rg}(C)\ge \mathrm{rg}(A)=r$.
+  \item 
+  \item Comprendre dans cette question que $B,C$ ne sont pas
+    forcément les matrices construites en {\bf 2}.
+    Notons $\mathrm{vect}(X)$ l'espace vectoriel engendré par les colonnes
+    d'une matrice~$X$. De $A=BC={}^tC{}^tB$ on tire
+    $\mathrm{vect}(A)\subset\mathrm{vect}(B)$ et $\mathrm{vect}(A)\subset\mathrm{vect}({}^tC)$,
+    et tous ces espaces sont de dimension~$r$, donc ils sont égaux.
+    On en déduit qu'il existe une matrice~$P\in GL_r(\R)$ telle
+    que $B={}^tCP$ d'où $CB=C{}^tCP$. $\mathrm{rg}(C{}^tC)=\mathrm{rg}(C)=r$ et $P$
+    est inversible donc $\mathrm{rg}(CB)=r$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

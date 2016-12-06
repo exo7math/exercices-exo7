@@ -1,0 +1,38 @@
+\exercice{5725, rouget, 2010/10/16}
+\enonce[***]
+Soit $f$ de classe $C^2$ sur $\Rr$ à valeurs dans $\Rr$ telle que $f^2$ et $(f'')^2$ soient intégrables sur $\Rr$. Montrer que $f'^2$ est intégrable sur $\Rr$ et que $\left(\int_{-\infty}^{+\infty}f'^2(x)\;dx\right)^2\leqslant\left(\int_{-\infty}^{+\infty}f^2(x)\;dx\right)\left(\int_{-\infty}^{+\infty}f''^2(x)\;dx\right)$. Cas d'égalité ?
+\finenonce
+
+\noindication
+
+\correction
+L'inégalité $|ff''|\leqslant\frac{1}{2}(f^2+f''^2)$ montre que la fonction $ff''$ est intégrable sur $\Rr$ puis, pour $X$ et $Y$ tels que $X\leqslant Y$, une intégration par parties fournit
+
+\begin{center}
+$\int_{X}^{Y}f'^2(x)\;dx=\left[f(x)f'(x)\right]_X^Y-\int_{X}^{Y}f(x)f''(x)\;dx$.
+\end{center}
+
+Puisque la fonction $f'^2$ est positive, l'intégrabilité de $f'^2$ sur $\Rr$ équivaut à l'existence d'une limite réelle quand $X$ tend vers $+\infty$ et $Y$ tend vers $-\infty$  de $\int_{X}^{Y}f'^2(x)\;dx$ et puisque la fonction $ff''$ est intégrable sur $\Rr$, l'existence de cette limite équivaut, d'après l'égalité précédente, à l'existence d'une limite réelle en $+\infty$ et $-\infty$ pour  la fonction $ff'$.
+
+Si $f'^2$ n'est pas intégrable sur $\Rr^+$ alors $\int_{0}^{+\infty}f'^2(x)dx= +\infty$ et donc $\lim_{x \rightarrow +\infty}f(x)f'(x) = +\infty$. En particulier, pour $x$ suffisament grand, $f(x)f'(x)\geqslant1$ puis par intégration $\frac{1}{2}(f^2(x)-f^2(0))\geqslant x$ contredisant l'intégrabilité de la fonction $f^2$ sur $\Rr$. Donc la fonction $f'^2$ est intégrable sur $\Rr^+$ et la fonction $ff'$ a une limite réelle quand $x$ tend vers $+\infty$.
+
+De même la fonction $f'^2$ est intégrable sur $\Rr^-$ et la fonction $ff'$ a une limite réelle quand $x$ tend vers $-\infty$.
+
+Si cette limite est un réel non nul $\ell$, supposons par exemple $\ell> 0$. Pour $x$ suffisament grand, on a $f(x)f'(x)\geqslant\ell$ puis par intégration $\frac{1}{2}(f^2(x)-f^2(0))\geqslant\ell x$ contredisant de nouveau l'intégrabilité de la fonction $f^2$. Donc la fonction $ff'$ tend vers $0$ en $+\infty$ et de même en $-\infty$.
+
+Finalement, la fonction $f'^2$ est intégrable sur $\Rr$ et $\int_{-\infty}^{+\infty}f'^2(x)\;dx =-\int_{-\infty}^{+\infty}f(x)f''(x)\;dx$.
+
+D'après l'inégalité de \textsc{Cauchy}-\textsc{Schwarz}, on a
+
+\begin{center}
+$\left(\int_{-\infty}^{+\infty}f'^2(x)\;dx\right)^2=\left(-\int_{-\infty}^{+\infty}f(x)f''(x)\;dx\right)^2\leqslant\left(\int_{-\infty}^{+\infty}f^2(x)\;dx\right)^2\left(\int_{-\infty}^{+\infty}f''^2(x)\;dx\right)^2$.
+\end{center}
+
+Puisque les fonctions $f$ et $f''$ sont continues sur $\Rr$, on a l'égalité si et seulement si la famille $(f,f'')$ est liée.
+
+Donc nécessairement, ou bien $f$ est du type $x\mapsto A\ch(\omega x)+ B\sh(\omega x)$, $\omega$ réel non nul, qui est intégrable sur $\Rr$ si et seulement si $A = B = 0$, ou bien $f$ est affine et nulle encore une fois, ou bien $f$ est du type $x\mapsto A\cos(\omega x)+ B\sin(\omega x)$ et nulle encore une fois.
+
+Donc, on a l'égalité si et seulement si $f$ est nulle.
+
+\fincorrection
+\finexercice

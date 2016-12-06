@@ -1,0 +1,30 @@
+\exercice{5822, rouget, 2010/10/16}
+\enonce[**]
+Soit $P$ un polynôme de degré $3$ à coefficients réels. Montrer que la courbe d'équation $P(x) = P(y)$ dans un certain repère orthonormé, est en général la réunion d'une droite et d'une ellipse d'excentricité fixe.
+\finenonce
+
+\noindication
+
+\correction
+Posons $P = X^3+\alpha X^2+\beta X+\gamma$.
+
+\begin{align*}\ensuremath
+P(x)=P(y)&\Leftrightarrow(y^3-x^3) +\alpha(y^2-x^2)+\beta(y-x) = 0\Leftrightarrow(y-x)(x^2+xy+y^2+\alpha(x+y)+\beta) = 0\\
+ &\Leftrightarrow y-x = 0\;\text{ou}\;x^2+xy+y^2+\alpha(x+y)+\beta= 0.
+\end{align*}
+
+L'ensemble cherché est la réunion de la droite $(D)$ d'équation $y=x$ et de la courbe $(\Gamma)$ d'équation $x^2+xy+y^2+\alpha(x+y)+\beta=0$. Pour étudier la courbe $(\Gamma)$ qui est du genre ellipse,
+posons $x =\frac{1}{\sqrt{2}}(X+Y)$ et $y =\frac{1}{\sqrt{2}}(X-Y)$ puis notons $\mathcal{R}'$ le repère $(OXY)$.
+
+\begin{align*}\ensuremath 
+x^2+xy+y^2+\alpha(x+y)+\beta=0&\Leftrightarrow\frac{1}{2}((X+Y)^2+(X+Y)(X-Y)+(X-Y)^2)+\frac{\alpha}{\sqrt{2}}(X+Y+X-Y)+\beta=0\\
+ &\Leftrightarrow\frac{1}{2}(3X^2+Y^2)+\alpha\sqrt{2}X+\beta=0\Leftrightarrow3\left(X+\frac{\alpha\sqrt{2}}{3}\right)^2+Y^2=\frac{2}{3}(\alpha^2-3\beta).
+\end{align*}
+
+$(\Gamma)$ est une ellipse si et seulement si $\alpha^2-3\beta> 0$ (sinon $(\Gamma)$ est un point ou est vide). Dans ce cas, $3\left(X+\frac{\alpha\sqrt{2}}{3}\right)^2+Y^2=\frac{2}{3}(\alpha^2-3\beta)\Leftrightarrow\frac{x^2}{a^2}+\frac{y^2}{b^2}= 1$ où $a^2=\frac{2}{9}(\alpha^2-3\beta) <  \frac{2}{3}(\alpha^2-3\beta) = b^2$. Par suite,
+
+\begin{center}
+$e=\frac{c}{b}=\frac{\sqrt{b^2-a^2}}{b}=\sqrt{1-\frac{a^2}{b^2}}=\sqrt{1-\frac{1}{3}}=\sqrt{\frac{2}{3}}$.
+\end{center}
+\fincorrection
+\finexercice

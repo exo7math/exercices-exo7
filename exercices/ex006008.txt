@@ -1,0 +1,53 @@
+\exercice{6008, quinio, 2011/05/20}
+
+\enonce
+L'oral d'un concours comporte au total 100 sujets; les candidats
+tirent au sort trois sujets et choisissent alors le sujet traité parmi
+ces trois sujets. Un candidat se présente en ayant révisé 60
+sujets sur les 100.
+\begin{enumerate}
+\item Quelle est la probabilité pour que le candidat ait révisé:
+\begin{enumerate}
+\item les trois sujets tirés;
+\item exactement deux sujets sur les trois sujets;
+\item aucun des trois sujets.
+\end{enumerate}
+\item Définir une variable aléatoire associée à ce problème 
+et donner sa loi de probabilité, son espérance.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+La variable aléatoire associée à ce problème est $X$ 
+<<nombre de sujets révisés parmi les $3$>> ; son support est l'ensemble
+$\{0,1,2,3\}$. La loi de $X$ est une loi hypergéométrique puisque
+l'événement $[X=k]$, pour $k$ compris entre $0$ et $3$, se produit si
+le candidat tire $k$ sujet(s) parmi les $60$ révisés, et $3-k$ sujets
+parmi les $40$ non révisés.
+
+Alors:
+\begin{enumerate}
+\item Les trois sujets tirés ont été révisés : $P[X=3]=\frac{\binom{60}{3}}{\binom{100}{3}}$.
+\item Deux des trois sujets tirés ont été révisés: $P[X=2]=\frac{\binom{60}{2}.\binom{40}{1}}{\binom{100}{3}}$.
+\item Aucun des trois sujets: $P[X=0]=\frac{\binom{40}{3}}{\binom{100}{3}}$.
+\end{enumerate}
+La loi de probabilité de $X$ est donnée sur le support $\{0,1,2,3\}$ par:
+\begin{equation*}
+P[X=k]=\frac{\binom{60}{k}.\binom{40}{3-k}}{\binom{100}{3}}
+\end{equation*}
+
+Résultats numériques:
+
+$k=0:P[X=0]$ $\simeq 6.\,110\times 10^{-2}$
+
+$k=1:P[X=1] \simeq 0.289\,$
+
+$k=2:P[X=2]\simeq 0.438$
+
+$k=3:P[X=3] \simeq 0.212$
+
+L'espérance est $E(X)=1.8$ (selon la formule $E(X)=np$).
+\fincorrection
+\finexercice

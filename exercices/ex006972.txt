@@ -1,0 +1,132 @@
+\exercice{6972, blanc-centi, 2014/04/08}
+\enonce
+Soit $T_n(x)=\cos\big(n \arccos(x)\big)$ pour $x\in [-1,1]$.
+\begin{enumerate}
+  \item 
+  \begin{enumerate}
+    \item Montrer que pour tout $\theta\in[0,\pi]$, $T_n(\cos\theta)=\cos(n\theta)$.
+    \item Calculer $T_0$ et $T_1$.
+    \item Montrer la relation de récurrence $T_{n+2}(x) = 2xT_{n+1}(x)-T_n(x)$, pour tout $n \ge0$.
+    \item En déduire que $T_n$ une fonction polynomiale de degré $n$.
+  \end{enumerate}
+
+  \item Soit $P(X)=\lambda(X-a_1)\cdots(X-a_n)$ un polynôme, où les $a_k$ sont deux à deux distincts 
+et $\lambda\not=0$. Montrer que 
+$$\frac{1}{P(X)}=\sum_{k=1}^n\frac{\frac{1}{P'(a_k)}}{X-a_k}$$
+
+\item Décomposer $\frac{1}{T_n}$ en éléments simples.
+\end{enumerate}
+\finenonce 
+
+\indication
+Pour 1. exprimer $\cos\big((n+2)\theta\big)$ et $\cos(n\theta)$ 
+en fonction de $\cos\big((n+1)\theta\big)$.
+Pour 3. chercher les racines de $T_n$ : 
+$\omega_k=\cos\left(\frac{(2k+1)\pi}{2n}\right)$ pour $k=0,\ldots,n-1$.
+\finindication
+
+\correction
+
+\begin{enumerate}
+  \item 
+  \begin{enumerate}
+    \item Si on pose $x=\cos \theta$ alors l'égalité $T_n(x)=\cos\big(n \arccos(x)\big)$
+    devient $T_n(\cos\theta)=\cos(n\theta)$, car $\arccos (\cos \theta) = \theta$ pour $\theta \in [0,\pi]$.
+    
+    \item $T_0(x) = 1$, $T_1(x)=x$.
+    
+    \item En écrivant $(n+2)\theta = (n+1)\theta + \theta$ et $n\theta = (n+1)\theta - \theta$ on obtient :
+    $$\begin{array}{c}
+    \cos\big( (n+2)\theta \big) = \cos\big((n+1)\theta\big)\cos \theta - \sin\big((n+1)\theta\big)\sin \theta     \\
+    \cos\big( n\theta \big) = \cos\big((n+1)\theta\big)\cos \theta + \sin\big((n+1)\theta\big)\sin \theta     \\    
+      \end{array}$$
+    Lorsque l'on fait la somme de ces deux égalités on obtient :
+    $$\cos\big( (n+2)\theta \big) + \cos\big( n\theta \big) = \cos\big((n+1)\theta\big)\cos \theta$$
+    
+    Avec $x = \cos \theta$ cela donne :
+    $$T_{n+2}(x) + T_n(x) = 2x T_{n+1}(x)$$
+    
+    \item $T_0$ et $T_1$ étant des polynômes alors, par récurrence,  $T_n(x)$ est un polynôme.
+    De plus, toujours par la formule de récurrence, il est facile de voir que le degré de $T_n$ est $n$.
+  \end{enumerate}
+
+% Puisque $\arccos (\cos\theta)=\theta$, on a bien $T_n(\cos\theta)=\cos(n\theta)$. D'après la formule de Moivre,
+% $$\cos(n\theta)=\mathrm{Re}(e^{in\theta)})=\mathrm{Re}((\cos\theta+i\sin\theta)^n)$$
+% $$=\mathrm{Re}\left(\sum_{k=0}^nC_n^ki^k(\sin\theta)^k(\cos\theta)^{n-k}\right)$$
+% Or $i^k$ est réel si et seulement si $k$ est pair (et dans ce cas, $i^k=(-1)^{k/2}$), donc en faisant le changement d'indice $k=2p$:
+% \begin{eqnarray*}
+%  \cos(n\theta)&=&\sum_{k\ pair,\ 1\le k\le n}C_n^ki^k(\sin\theta)^k(\cos\theta)^{n-k}\\
+%  &=&\sum_{p=0}^{E(n/2)}C_n^{2p}(-1)^p(\sin\theta)^{2p}(\cos\theta)^{n-2p}\\
+%  &=&\sum_{p=0}^{E(n/2)}C_n^{2p}(-1)^p(1-(\cos\theta)^2)^{p}(\cos\theta)^{n-2p}
+% \end{eqnarray*}
+% qui est polynomiale en $\cos\theta$.
+% Comme tout $x\in[-1;1]$ peut s'écrire sous la forme $x=\cos\theta$, on a 
+% $$T_n(x)=\sum_{p=0}^{E(n/2)}C_n^{2p}(-1)^p(1-x^2)^{p}x^{n-2p}$$
+% Cette fonction polynomiale (sur $[-1;1]$) est de degré au plus $n$, et le coefficient du terme de degré $n$ vaut
+% $a_n=\sum_{p=0}^{E(n/2)}C_n^{2p}$ qui est non nul (somme de termes strictement positifs).
+
+\item Puisque les racines de $P=\lambda(X-a_1)\cdots(X-a_n)$ sont deux à deux distinctes, 
+la décomposition en éléments simples de $\frac{1}{P}$ est de la forme 
+$\frac{c_1}{X-a_1}+\cdots+\frac{c_n}{X-a_n}$. 
+
+Expliquons comment calculer le coefficient $c_1$. On multiplie la fraction 
+$\frac{1}{P}$ par $(X-a_1)$ ce qui donne  
+
+$
+\frac{X-a_1}{P} = c_1 + c_2 \frac{X-a_1}{X-a_2}+\cdots+ c_n \frac{X-a_1}{X-a_n}
+\text{ et }
+\frac{X-a_1}{P} = \frac{1}{\lambda(X-a_2)\cdots (X-a_n)}
+$
+
+On évalue ces égalités en $X=a_1$ ce qui donne
+$$c_1 = \frac{1}{\lambda(a_1-a_2)\cdots (a_1-a_n)} = \frac{1}{\lambda\prod_{j\not= 1}(a_1-a_j)}$$
+
+On obtiendrait de même le coefficient $c_k$ en multipliant $\frac{1}{P}$ par $(X-a_k)$,
+puis en remplaçant $X$ par $a_k$, ce qui donne: $c_k=\frac{1}{\lambda\prod_{j\not= k}(a_k-a_j)}$.
+
+Or la dérivée de $P$ est 
+\begin{eqnarray*}
+P'(X)=&\lambda(X-a_2)\cdots(X-a_n)+\lambda(X-a_1)(X-a_3)\cdots(X-a_n)\\
+ &+\cdots+\lambda(X-a_1)\cdots(X-a_{k-1})(X-a_{k+1})\cdots(X-a_n)\\
+ &\ \ \ \ \ +\cdots+\lambda(X-a_1)\cdots(X-a_{n-1})
+\end{eqnarray*}
+et donc $P'(a_1)=\lambda\prod_{j\not= 1}(a_1-a_j)$
+et plus généralement $P'(a_k)=\lambda\prod_{j\not= k}(a_k-a_j)$. 
+On a bien prouvé $c_k = \frac{1}{P'(a_k)}$ et ainsi la décomposition en éléments simple 
+de $1/P$ est :
+$$\frac{1}{P(X)}=\sum_{k=1}^n\frac{\frac{1}{P'(a_k)}}{X-a_k}$$
+
+\item 
+  \begin{enumerate}
+    \item Cherchons d'abord les racines de $T_n(x)$.
+Soit $x\in[-1,1]$ :
+\begin{eqnarray*}
+T_n(x)=0
+  &\Longleftrightarrow& \cos\big(n \arccos(x)\big) = 0 \\
+  &\Longleftrightarrow& n\arccos(x) \equiv \frac{\pi}{2} \pmod{\pi}\\
+  &\Longleftrightarrow& \exists k\in\Zz\ \ \arccos(x)= \frac{\pi}{2n}+\frac{k\pi}{n}
+\end{eqnarray*}
+Comme par définition $\arccos(x) \in[0,\pi]$, les entiers $k$ possibles sont $k=0,\ldots,n-1$. Ainsi
+$$\arccos x=\frac{\pi}{2n}+\frac{k\pi}{n} \quad \Longleftrightarrow \quad x=\cos\left(\frac{\pi}{2n}+\frac{k\pi}{n}\right)$$ 
+Posons donc $\omega_k=\cos\left(\frac{(2k+1)\pi}{2n}\right)$ pour $k=0,\ldots,n-1$. 
+Les $\omega_k$ sont les racines de $T_n$. Finalement $T_n(x)= \lambda \prod_{k=0}^{n-1}(x-\omega_k)$.
+
+  \item Ainsi $T_n(x)= \lambda \prod_{k=0}^{n-1}(x-\omega_k)$ et les $\omega_k$ sont deux à deux distincts.
+  On sait par la question précédente que la décomposition en éléments simple de $1/T_n$ s'écrit 
+$$\frac{1}{T_n(X)}=\sum_{k=0}^{n-1} \frac{1/T_n'(\omega_k)}{X-\omega_k}$$
+Repartant de $T_n(x)=\cos\big(n \arccos(x)\big)$, on calcule 
+$T_n'(x)=\frac{n}{\sqrt{1-x^2}}\sin\big(n\arccos(x)\big)$.
+En utilisant que 
+$$\sin\big(n \arccos(\omega_k)\big) = \sin \left( n\left(\frac{(2k+1)\pi}{2n}\right)\right) 
+= \sin\left(\frac{\pi}{2}+k\pi \right) = (-1)^k$$
+et 
+$$\sqrt{1-\cos^2 \theta} = \sqrt{\sin^2 \theta} = \sin \theta \qquad \text{ pour } \theta \in [0,\pi]$$
+on trouve que 
+$T_n'(\omega_k)=\frac{n(-1)^k}{\sin\left(\frac{(2k+1)\pi}{2n}\right)}$.
+
+Ainsi 
+$$\frac{1}{T_n(X)}=\sum_{k=0}^{n-1}\frac{\frac{(-1)^k}{n}\sin\left(\frac{(2k+1)\pi}{2n}\right)}{X-\cos\left(\frac{(2k+1)\pi}{2n}\right)}$$
+  \end{enumerate}
+\end{enumerate}
+\fincorrection
+\finexercice

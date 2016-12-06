@@ -1,0 +1,29 @@
+\exercice{2859, burnol, 2009/12/15}
+\enonce[Lemme de Jordan]
+\label{ex:burnol2.2}
+ Soit $f$ une fonction définie
+et continue sur le domaine $\{\Im(z)>0, |z|>R\}$, ou
+seulement sur une suite de demi-cercles $\{\Im(z)>0,
+|z|=R_n\}$ de rayons tendant vers l'infini. On
+suppose $\lim_{\substack{|z|\to\infty \\ \Im(z)>0}} |f(z)| = 0$
+(ou $\displaystyle\lim_{n\to\infty}
+\sup_{\Im(z)>0,\,|z|=R_n} |f(z)| = 0$.)  Montrer (on
+utilisera  $\sin(\theta)\geq \frac2\pi \theta$ pour
+$0\leq\theta\leq\frac\pi2$):
+\[ \lim_{R\to\infty} \int_{z = R e^{i\theta},\,
+0<\theta<\pi} f(z)e^{iz}\,dz = 0\qquad (\text{ou l'analogue avec
+les\ }R_n)\]
+\finenonce
+\noindication
+\correction
+Pour $\epsilon >0$ il existe $R> 0$ tel que $|f(z)|\leq \epsilon $ pour tout $|z|\geq R$, $\Im z \geq 0$. Si $C_R$ est le
+demi-cercle sup\'erieur orient\'e alors
+\begin{eqnarray*}
+& &|\int _{C_R} f(z) e^{i z} \, dz | =|\int _0^\pi f(Re^{i\theta} ) e^{i(R e^{i\theta})} iR e^{i\theta } \, d\theta |
+\leq \epsilon \int _0^\pi e^{-R \sin \theta } R \, d\theta\\
+&& \qquad = 2\epsilon \int _0^{\frac{\pi}{2}} Re^{-R \sin \theta } \, d\theta
+\leq 2\epsilon \int _0^{\frac{\pi}{2}} Re^{-R \frac{\theta}{2} }\, d\theta
+= 4\epsilon (1-e^{-R \frac{\pi}{4}}) \leq 8 \epsilon .
+\end{eqnarray*}
+\fincorrection
+\finexercice

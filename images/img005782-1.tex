@@ -1,0 +1,76 @@
+%%%%%%%%%%%%%%%%%% PREAMBULE %%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt,a4paper]{article}
+
+\usepackage{amsfonts,amsmath,amssymb,amsthm}
+\usepackage[francais]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+%----- Ensemles : entiers, reels, complexes -----
+\newcommand{\Nn}{\mathbb{N}} \newcommand{\N}{\mathbb{N}}
+\newcommand{\Zz}{\mathbb{Z}} \newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Qq}{\mathbb{Q}} \newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Rr}{\mathbb{R}} \newcommand{\R}{\mathbb{R}}
+\newcommand{\Cc}{\mathbb{C}} \newcommand{\C}{\mathbb{C}}
+
+%----- Modifications de symboles -----
+\renewcommand {\epsilon}{\varepsilon}
+\renewcommand {\Re}{\mathop{\mathrm{Re}}\nolimits}
+\renewcommand {\Im}{\mathop{\mathrm{Im}}\nolimits}
+
+%----- Fonctions usuelles -----
+\newcommand{\ch}{\mathop{\mathrm{ch}}\nolimits}
+\newcommand{\sh}{\mathop{\mathrm{sh}}\nolimits}
+\renewcommand{\tanh}{\mathop{\mathrm{th}}\nolimits}
+\newcommand{\Arcsin}{\mathop{\mathrm{Arcsin}}\nolimits}
+\newcommand{\Arccos}{\mathop{\mathrm{Arccos}}\nolimits}
+\newcommand{\Arctan}{\mathop{\mathrm{Arctan}}\nolimits}
+\newcommand{\Argsh}{\mathop{\mathrm{Argsh}}\nolimits}
+\newcommand{\Argch}{\mathop{\mathrm{Argch}}\nolimits}
+\newcommand{\Argth}{\mathop{\mathrm{Argth}}\nolimits}
+\newcommand{\pgcd}{\mathop{\mathrm{pgcd}}\nolimits} 
+
+%----- Commandes special dessin a ajouter localement ------
+\usepackage{geometry}
+\usepackage{pstricks}
+\usepackage{pst-plot}
+\usepackage{pst-node}
+\usepackage{graphics,epsfig}
+
+\newcmykcolor{DarkGreen}{0.4 0 0.76 0.3}
+\newcmykcolor{Goldenrod}{0 0.1 0.84 0}
+\newcmykcolor{Fuchsia}{0.47 0.91 0 0.08}
+
+\pagestyle{empty}
+
+% Que faire avec ce fichier monimage.tex ?
+%   1/ latex monimage.tex
+%   2/ dvips monimage.dvi
+%   3/ ps2eps monimage.ps
+%   4/ ps2pdf -dEPSCrop monimage.eps
+%   5/ Dans votre fichier d'exos \includegraphics{monimage}
+
+\begin{document}
+
+\begin{center}
+\begin{pspicture}(-8.5,-1.5)(8.5,1.5)
+\psaxes{->}(0,0)(-8.5,-1.5)(8.5,1.5)
+\psplot[linecolor=blue]{0}{3.14}{1 2 x mul 3.14 div sub}
+\psplot[linecolor=blue]{-3.14}{0}{1 2 x neg mul 3.14 div sub}
+\psplot[linecolor=blue]{3.14}{6.28}{2 x mul 3.14 div 3 sub}
+\psplot[linecolor=blue]{-8.5}{-6.28}{2 x mul 3.14 div 5 add}
+\psplot[linecolor=blue]{6.28}{8.5}{5 2 x mul 3.14 div sub}
+\psplot[linecolor=blue]{-6.28}{-3.14}{3 neg 2 x mul 3.14 div sub}
+\uput[u](3.14,0){$\pi$}
+\uput[u](-3.14,0){$-\pi$}
+\uput[u](6.28,0){$2\pi$}
+\uput[u](-6.28,0){$-2\pi$}
+\psline(3.14,-0.1)(3.14,0.1)
+\psline(6.28,-0.1)(6.28,0.1)
+\psline(-3.14,-0.1)(-3.14,0.1)
+\psline(-6.28,-0.1)(-6.28,0.1)
+\end{pspicture}
+\end{center}
+
+\end{document}

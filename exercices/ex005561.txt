@@ -1,0 +1,39 @@
+\exercice{5561, rouget, 2010/07/15}
+\enonce[**]
+Trouver toutes les applications $\varphi$ de $\Rr$ dans $\Rr$ de classe $C^2$ telle que l'application $f$ de $U=\{(x,y)\in\Rr^2/\;x\neq0\}$ dans $\Rr$ qui à $(x,y)$ associe $\varphi\left(\frac{y}{x}\right)$ vérifie :
+
+\begin{center}
+$\frac{\partial^2f}{\partial x^2}-\frac{\partial^2f}{\partial y^2}=\frac{y}{x^3}$.
+\end{center}
+\finenonce
+
+\noindication
+
+\correction
+ Soit $\varphi$ une application de classe $C^2$ sur $\Rr$ puis $f$ l'application définie sur $U$ par $\forall(x,y)\in U$, $f(x,y)=\varphi\left(\frac{y}{x}\right)$ vérifie :
+
+\begin{center}
+$\frac{\partial^2f}{\partial x^2}-\frac{\partial^2f}{\partial y^2}=\frac{y}{x^3}$.
+\end{center}
+
+\begin{align*}\ensuremath
+\frac{\partial^2f}{\partial x^2}-\frac{\partial^2f}{\partial y^2}&=\frac{\partial^2}{\partial x^2}\left(\varphi\left(\frac{y}{x}\right)\right)-\frac{\partial^2}{\partial y^2}\left(\varphi\left(\frac{y}{x}\right)\right)\\
+ &=\frac{\partial}{\partial x}\left(-\frac{y}{x^2}\varphi'\left(\frac{y}{x}\right)\right)-\frac{\partial}{\partial y}\left(\frac{1}{x}\varphi'\left(\frac{y}{x}\right)\right)=\frac{2y}{x^3}\varphi'\left(\frac{y}{x}\right)+\frac{y^2}{x^4}\varphi''\left(\frac{y}{x}\right)-\frac{1}{x^2}\varphi''\left(\frac{y}{x}\right)\\
+ &=\frac{1}{x^2}\left(\frac{2y}{x}\varphi'\left(\frac{y}{x}\right)+\left(\frac{y^2}{x^2}-1\right)\varphi''\left(\frac{y}{x}\right)\right).
+\end{align*}
+Puis, quand $(x,y)$ décrit $U$, $\frac{y}{x}$ décrit $\Rr$ (car $\frac{y}{1}$ décrit déjà $\Rr$)
+
+\begin{align*}\ensuremath
+\forall(x,y)\in U,\;\frac{\partial^2f}{\partial x^2}(x,y)-\frac{\partial^2f}{\partial y^2}(x,y)=\frac{y}{x^3}&\Leftrightarrow\forall(x,y)\in U,\;\frac{2y}{x}\varphi'\left(\frac{y}{x}\right)+\left(\frac{y^2}{x^2}-1\right)\varphi''\left(\frac{y}{x}\right)=\frac{y}{x}\\
+ &\Leftrightarrow\forall t\in\Rr,\;2t\varphi'(t)+(t^2-1)\varphi''(t)=t\\
+ &\Leftrightarrow\exists\lambda\in\Rr/\;\forall t\in\Rr,\;(t^2-1)\varphi'(t)=\frac{t^2}{2}+\lambda\quad(*)
+\end{align*}
+Maintenant, $\frac{t^2}{2}+\lambda$ ne s'annule pas en $\pm1$, l'égalité $(*)$ fournit une fonction $\varphi$ telle que $\varphi'$ n'a pas une limite réelle en $\pm1$. Une telle solution n'est pas de classe $C^2$ sur $\Rr$. Donc nécessairement $\lambda=-\frac{1}{2}$ puis
+
+\begin{align*}\ensuremath
+\forall(x,y)\in U,\;\frac{\partial^2f}{\partial x^2}(x,y)-\frac{\partial^2f}{\partial y^2}(x,y)=\frac{y}{x^3}&\Leftrightarrow\forall t\in\Rr,\;(t^2-1)\varphi'(t)=\frac{t^2-1}{2}\Leftrightarrow\forall t\in\Rr\setminus\{-1,1\},\;\varphi'(t)=\frac{1}{2}\\
+ &\Leftrightarrow\forall t\in\Rr,\;\varphi'(t)=\frac{1}{2}\;(\text{par continuité de}\;\varphi'\;\text{en}\;\pm1)\\
+ &\Leftrightarrow\exists\lambda\in\Rr/\;\forall t\in\Rr,\;\varphi(t)=\frac{t}{2}+\lambda.
+\end{align*}
+\fincorrection
+\finexercice

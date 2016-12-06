@@ -1,0 +1,197 @@
+\exercice{5467, rouget, 2010/07/10}
+\enonce
+Calculer les primitives des fonctions suivantes en précisant le ou les intervalles considérés~:
+$$
+\begin{array}{lllll}
+1)\;\frac{1}{\cos x}\;\mbox{et}\;\frac{1}{\ch x}&2)\;\frac{1}{\sin x}\;\mbox{et}\;\frac{1}{\sh x}&3)\;\frac{1}{\tan x}\;\mbox{et}\;\frac{1}{\tanh x}&4)\;\frac{\sin^2(x/2)}{x-\sin x}&5)\;\frac{1}{2+\sin^2x}\\
+6)\;\frac{\cos x}{\cos x+\sin x}&7)\;\frac{\cos(3x)}{\sin x+\sin(3x)}&8)\;\frac{1}{\cos^4x+\sin^4x}&9)\;\frac{\sin x\sin(2x)}{\sin^4x+\cos^4x+1}&10)\;\frac{\tan x}{1+\sin(3x)}\\
+11)\;\frac{\cos x+2\sin x}{\sin x-\cos x}&12)\;\frac{\sin x}{\cos(3x)}&13)\;\frac{1}{\alpha\cos^2x+\beta\sin^2x}&14)\;\frac{\ch^3 x}{1+\sh x}&15)\;\sqrt{\ch x-1}\\
+16)\;\frac{\tanh x}{1+\ch x}&17)\;\frac{1}{\sh^5x}&18)\frac{1}{1-\ch x}
+\end{array}
+$$  
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+
+\item  On pose $t=\tan\frac{x}{2}$ et donc $dx=\frac{2dt}{1+t^2}$.
+
+\begin{align*}\ensuremath
+\int_{}^{}\frac{1}{\cos x}\;dx&=\int_{}^{}\frac{1+t^2}{1-t^2}\;\frac{2dt}{1+t^2}=\int_{}^{}2\frac{1}{1-t^2}\;dt
+=\ln\left|\frac{1+t}{1-t}\right|+C=\ln\left|\frac{\tan\frac{\pi}{4}+\tan\frac{x}{2}}{1-\tan\frac{\pi}{4}\tan\frac{x}{2}}\right|+C\\
+ &=\ln|\tan(\frac{x}{2}+\frac{\pi}{4})|+C.
+\end{align*}
+
+ou bien
+
+$$\int_{}^{}\frac{1}{\cos x}\;dx=\int_{}^{}\frac{\cos x}{1-\sin^2x}\;dx=\ln\left|\frac{1+\sin x}{1-\sin x}\right|+C...$$
+
+ou bien, en posant $u=x+\frac{\pi}{2}$, (voir 2))
+
+$$\int_{}^{}\frac{1}{\cos x}\;dx=\int_{}^{}\frac{1}{\cos(u-\frac{\pi}{2})}\;du=\int_{}^{}\frac{1}{\sin u}\;du=
+\ln|\tan\frac{u}{2}|+C=\ln|\tan(\frac{x}{2}+\frac{\pi}{4})|+C.$$
+
+Ensuite, en posant $t=e^x$ et donc $dx=\frac{dt}{t}$,
+
+$$\int_{}^{}\frac{1}{\ch x}\;dx
+=\int_{}^{}\frac{2}{t+\frac{1}{t}}\frac{dt}{t}=2\int_{}^{}\frac{1}{1+t^2}\;dt=2\Arctan(e^x)+C,$$
+
+ou bien
+
+$$\int_{}^{}\frac{1}{\ch x}\;dx
+=\int_{}^{}\frac{\ch x}{\sh^2x+1}\;dx=\Arctan(\sh x)+C.$$
+\item  En posant $t=\tan\frac{x}{2}$,
+
+$$\int_{}^{}\frac{1}{\sin x}\;dx=\int_{}^{}\frac{1+t^2}{2t}\frac{2dt}{1+t^2}=\int_{}^{}\frac{1}{t}\;dt=\ln|t|+C=\ln|\tan\frac{x}{2}|+C.$$
+
+\item  $\int_{}^{}\frac{dx}{\tan x}=\int_{}^{}\frac{\cos x}{\sin x}\;dx=\ln|\sin x|+C$ et $\int_{}^{}\frac{1}{\tanh x}=\ln|\sh x|+C$.
+
+\item  $\int_{}^{}\frac{\sin^2(x/2)}{x-\sin x}\;dx=\frac{1}{2}\int_{}^{}\frac{1-\cos x}{x-\sin x}\;dx=\frac{1}{2}\ln|x-\sin x|+C$.
+
+\item  $\frac{1}{2+\sin^2x}\;dx=\frac{1}{\frac{2}{\cos^2x}+\tan^2x}\frac{dx}{\cos^2x}=\frac{1}{2+3\tan^2x}d(\tan x)$, et en posant $u=\tan x$,
+
+$$\int_{}^{}\frac{1}{2+\sin^2x}\;dx=\int_{}^{}\frac{1}{2+3u^2}\;du=\frac{1}{3}\sqrt{\frac{3}{2}}\Arctan(\sqrt{\frac{3}{2}}u)+C=\frac{1}{\sqrt{6}}\Arctan(\sqrt{\frac{3}{2}}\tan x)+C.$$
+
+\item  Posons $I=\int_{}^{}\frac{\cos x}{\cos x+\sin x}\;dx$ et $J=\int_{}^{}\frac{\sin x}{\cos x+\sin x}\;dx$. Alors, $I+J=\int_{}^{}dx=x+C$ et $I-J=\int_{}^{}\frac{-\sin x+\cos x}{\cos x+\sin x}\;dx=\ln|\cos x+\sin x|+C$. En additionnant ces deux égalités, on obtient~:
+
+$$I=\int_{}^{}\frac{\cos x}{\cos x+\sin x}\;dx=\frac{1}{2}(x+\ln|\cos x+\sin x|)+C.$$
+
+ou bien, en posant $u=x-\frac{\pi}{4}$,
+
+\begin{align*}\ensuremath
+I&=\int_{}^{}\frac{\cos x}{\cos x+\sin x}\;dx=\int_{}^{}\frac{\cos x}{\sqrt{2}\cos(x-\frac{\pi}{4})}\;dx
+=\int_{}^{}\frac{\cos(u+\frac{\pi}{4})}{\sqrt{2}\cos u}\;du=\frac{1}{2}\int_{}^{}(1-\frac{\sin u}{\cos u})\;du
+=\frac{1}{2}(u+\ln|\cos u|)+C\\
+ &=\frac{1}{2}(x-\frac{\pi}{4}+\ln|\frac{1}{\sqrt{2}}(\cos x+\sin x)|)+C=\frac{1}{2}(x+\ln|\cos x+\sin x|)+C.
+\end{align*}
+
+\item  
+
+$$\frac{\cos(3x)}{\sin x+\sin(3x)}\;dx=\frac{4\cos^3x-3\cos x}{4\sin x-4\sin^3x}=\frac{1}{4}\frac{4\cos^3x-3\cos x}{\sin x(1-\sin^2x)}=\frac{1}{4}(\frac{4\cos x}{\sin x}-\frac{3}{\sin x\cos x})=\frac{\cos x}{\sin x}-\frac{3}{2}\frac{1}{\sin(2x)}.
+$$
+
+Par suite,
+
+$$\int_{}^{}\frac{\cos(3x)}{\sin x+\sin(3x)}\;dx=\ln|\sin x|-\frac{3}{4}\ln|\tan x|+C.$$
+
+\item  $\cos^4x+\sin^4x=(\cos^2x+\sin^2x)^2-2\sin^2x\cos^2x=1-\frac{1}{2}\sin^2(2x)$, et donc
+
+\begin{align*}\ensuremath
+\int_{}^{}\frac{1}{\cos^4x+\sin^4x}\;dx&=\int_{}^{}\frac{1}{1-\frac{1}{2}\sin^2(2x)}\;dx
+=\int_{}^{}\frac{1}{2-\sin^2u}\;du\;(\mbox{en posant}\;u=2x)\\
+ &=\int_{}^{}\frac{1}{1+\cos^2u}\;du=\int_{}^{}\frac{1}{1+\frac{1}{1+v^2}}\;\frac{dv}{1+v^2}\;(\mbox{en posant}\;v=\tan u)\\
+ &=\int_{}^{}\frac{dv}{v^2+2}=\frac{1}{\sqrt{2}}\Arctan\frac{v}{\sqrt{2}}+C
+=\frac{1}{\sqrt{2}}\Arctan\frac{\tan(2x)}{\sqrt{2}}+C.
+\end{align*}
+
+\item \begin{align*}\ensuremath
+\frac{\sin x\sin(2x)}{\sin^4x+\cos^4x+1}\;dx&=\frac{2\sin^2x}{1-2\sin^2x\cos^2x+1}\cos x\;dx=\frac{2\sin^2x}{2-2\sin^2x(1-\sin^2x)}\cos x\;dx\\
+ &=\frac{u^2}{u^4-u^2+1}\;du\;(\mbox{en posant}\;u=\sin x).
+\end{align*}
+
+Maintenant, $u^4-u^2+1=\frac{u^6+1}{u^2+1}=(u-e^{i\pi/6})(u-e^{-i\pi/6})(u+e^{i\pi/6})(u+e^{-i\pi/6})$, et donc,
+
+$$\frac{u^2}{u^4-u^2+1}=\frac{a}{u-e^{i\pi/6}}+\frac{\overline{a}}{u-e^{-i\pi/6}}-\frac{a}{u+e^{i\pi/6}}-\frac{\overline{a}}{u+e^{-i\pi/6}},$$
+
+ou $a=\frac{(e^{i\pi/6})^2}{(e^{i\pi/6}-e^{-i\pi/6})(e^{i\pi/6}+e^{i\pi/6})(e^{i\pi/6}+e^{-i\pi/6})}=
+\frac{(e^{i\pi/6})^2}{i.2e^{i\pi/6}.\sqrt{3}}=\frac{-ie^{i\pi/6}}{2\sqrt{3}}$, et donc
+
+\begin{align*}\ensuremath
+\frac{u^2}{u^4-u^2+1}&=\frac{1}{2\sqrt{3}}(\frac{-ie^{i\pi/6}}{u-e^{i\pi/6}}+\frac{ie^{-i\pi/6}}{u-e^{-i\pi/6}}+\frac{ie^{i\pi/6}}{u+e^{i\pi/6}}-\frac{ie^{-i\pi/6}}{u+e^{-i\pi/6}})\\
+ &=\frac{1}{2\sqrt{3}}(\frac{u}{u^2-\sqrt{3}u+1}-\frac{u}{u^2+\sqrt{3}u+1})\\
+ &=\frac{1}{2\sqrt{3}}(\frac{1}{2}\frac{2u-\sqrt{3}}{u^2-\sqrt{3}u+1}+\frac{\sqrt{3}}{2}\frac{1}
+ {u^2-\sqrt{3}u+1}-\frac{1}{2}\frac{2u+\sqrt{3}}{u^2+\sqrt{3}u+1}+\frac{\sqrt{3}}{2}\frac{1}{u^2+\sqrt{3}u+1})\\
+ &=\frac{1}{4\sqrt{3}}(\frac{2u-\sqrt{3}}{u^2-\sqrt{3}u+1}-\frac{2u+\sqrt{3}}{u^2+\sqrt{3}u+1})
+ +\frac{1}{4}(\frac{1}{(u+\frac{\sqrt{3}}{2})^2+(\frac{1}{2})^2}+
+ \frac{1}{(u-\frac{\sqrt{3}}{2})^2+(\frac{1}{2})^2})
+\end{align*}
+
+et donc,
+
+$$\int_{}^{}\frac{\sin x\sin(2x)}{\sin^4x+\cos^4x+1}\;dx=\frac{1}{4\sqrt{3}}\ln\left|
+\frac{\sin^2x-\sqrt{3}\sin x+1}{\sin^2x+\sqrt{3}\sin x+1}\right|+\frac{1}{2}(\Arctan(2\sin x-\sqrt{3})+\Arctan(2\sin x+\sqrt{3})+C.$$
+
+\item  En posant $u=\sin x$, on obtient 
+
+$$\frac{\tan x}{1+\sin(3x)}\;dx=\frac{\sin x}{1+3\sin x-4\sin^3x}\frac{1}{\cos^2x}\cos x\;dx=\frac{u}{(1+3u-4u^3)(1-u^2)}\;du$$
+
+Or, $1+3u-4u^3=(u+1)(-4u^2-4u-1)=-(u-1)(2u+1)^2$ et donc, $(1+3u-4u^3)(1-u^2)=(u+1)(u-1)^2(2u+1)^2$ et donc,
+
+$$\frac{u}{(1+3u-4u^3)(1-u^2)}=\frac{a}{u+1}+\frac{b_1}{u-1}+\frac{b_2}{(u-1)^2}+\frac{c_1}{2u+1}+\frac{c_2}{(2u+1)^2}.$$
+
+$a=\lim_{u\rightarrow -1}(u+1)f(u)=\frac{-1}{(-1-1)^2(-2+1)^2}=-\frac{1}{4}$, $b_2=\frac{1}{(1+1)(2+1)^2}=\frac{1}{18}$
+
+et $c_2=\frac{-1/2}{(-\frac{1}{2}+1)(-\frac{1}{2}-1)^2}=-\frac{4}{9}$.
+
+Ensuite, $u=0$ fournit $0=a-b_1+b_2+c_1+c_2$ ou encore $c_1-b_1=\frac{1}{4}-\frac{1}{18}+\frac{4}{9}=\frac{23}{36}$. D'autre part, en multipliant par $u$, puis en faisant tendre $u$ vers $+\infty$, on obtient $0=a+b_1+c_1$ et donc $b_1+c_1=\frac{1}{4}$ et donc, $c_1=\frac{4}{9}$ et $b_1=-\frac{7}{36}$. Finalement,
+
+$$\frac{u}{(u+1)(u-1)^2(2u+1)^2}=-\frac{1}{4(u+1)}-\frac{7}{36(u-1)}+\frac{1}{18(u-1)^2}+\frac{4}{9(2u+1)}-\frac{4}{9(2u+1)^2}.$$
+
+Finalement,
+
+$$\int_{}^{}\frac{\tan x}{1+\sin(3x)}\;dx=-\frac{1}{4}\ln(\sin x+1)-\frac{7}{36}\ln(1-\sin x)-\frac{1}{18(\sin x-1)}+\frac{2}{9}\ln|2\sin x+1|+\frac{2}{9}\frac{1}{2\sin x+1}+C$$
+
+\item  (voir 6)) 
+
+\begin{align*}\ensuremath
+\int_{}^{}\frac{\cos x+2\sin x}{\sin x-\cos x}\;dx&=\int_{}^{}\frac{\frac{1}{2}((\sin x+\cos x)-(\sin x-\cos x))+((\sin x+\cos x)+(\sin x-\cos x)}{\sin x-\cos x}\;dx\\
+ &=\frac{3}{2}\int_{}^{}\frac{\sin x+\cos x}{\sin x-\cos x}\;+\frac{1}{2}\int_{}^{}dx\\
+ &=\frac{3}{2}\ln|\sin x-\cos x|+\frac{x}{2}+C.
+\end{align*}
+
+\item 
+
+\begin{align*}\ensuremath
+\int_{}^{}\frac{\sin x}{\cos(3x)}\;dx&=\int_{}^{}\frac{\sin x}{4\cos^3x-3\cos x}\;dx
+=\int_{}^{}\frac{1}{3u-4u^3}\;du\;(\mbox{en posant}\;u=\cos x)\\
+ &=\int_{}^{}(\frac{1}{3u}-\frac{1}{3(2u-\sqrt{3})}-\frac{1}{3(2u+\sqrt{3})})\;du\\
+ &=\frac{1}{3}(\ln|\cos x|-\frac{1}{2}\ln|2\cos x-\sqrt{3}|-\frac{1}{2}\ln|2\cos x+\sqrt{3}|)+C.
+\end{align*}
+\item  Dans tous les cas, on pose $t=\tan x$ et donc $dx=\frac{dt}{1+t^2}$.
+
+$$\int_{}^{}\frac{1}{\alpha\cos^2x+\beta\sin^2 x}\;dx=\int_{}^{}\frac{1}{\alpha+\beta\tan^2x}\frac{dx}{\cos^2x}=\int_{}^{}\frac{dt}{\alpha+\beta t^2}.$$
+
+Si $\beta=0$ et $\alpha\neq0$, $\int_{}^{}\frac{1}{\alpha\cos^2x+\beta\sin^2x}\;dx=\frac{1}{\alpha}\tan x+C$.
+
+Si $\beta\neq0$ et $\alpha\beta>0$, 
+
+$$\int_{}^{}\frac{1}{\alpha\cos^2x+\beta\sin^2 x}\;dx=\frac{1}{\beta}\int_{}^{}\frac{1}{t^2+(\sqrt{\frac{\alpha}{\beta}})^2}\;dt=\frac{1}{\sqrt{\alpha\beta}}\Arctan(\sqrt{\frac{\beta}{\alpha}}\tan x)+C.$$
+
+Si $\beta\neq0$ et $\alpha\beta<0$, 
+
+$$\int_{}^{}\frac{1}{\alpha\cos^2x+\beta\sin^2 x}\;dx=\frac{1}{\beta}\int_{}^{}\frac{1}{t^2-(\sqrt{-\frac{\alpha}{\beta}})^2}\;dt=\frac{\mbox{sgn}(\beta)}
+{2\sqrt{-\alpha\beta}}\ln\left|\frac{\tan x-\sqrt{-\frac{\alpha}{\beta}}}{\tan x+\sqrt{-\frac{\alpha}{\beta}}}\right|+C.$$
+
+\item  \begin{align*}\ensuremath
+\int_{}^{}\frac{\ch^3x}{1+\sh x}\;dx&=\int_{}^{}\frac{1+\sh^2x}{1+\sh x}\ch x\;dx\\
+ &=\int_{}^{}\frac{u^2+1}{u+1}\;du\;(\mbox{en posant}\;u=\sh x)\\
+ &=\int_{}^{}(u-1+\frac{2}{u+1})\;du=\frac{\sh^2x}{2}-\sh x+2\ln|1+\sh x|+C.
+\end{align*}
+\item  On peut poser $u=e^x$ mais il y a mieux.
+
+\begin{align*}\ensuremath
+\int_{}^{}\sqrt{\ch x-1}\;dx&=\int_{}^{}\frac{\sqrt{(\ch x-1)(\ch x+1)}}{\sqrt{\ch x+1}}\;dx=\mbox{sgn}(x)\int_{}^{}\frac{\sh x}{\sqrt{\ch x+1}}\;dx\\
+ &=2\mbox{sgn}(x)\sqrt{\ch x+1}+C.
+\end{align*}
+
+\item
+\begin{align*}\ensuremath
+\int_{}^{}\frac{\tanh x}{\ch x+1}\;dx&=\int_{}^{}\frac{1}{\ch x(\ch x+1)}\sh x\;dx\\
+ &=\int_{}^{}\frac{1}{u(u+1)}\;du\;(\mbox{en posant}\;u=\ch x)\\
+ &=\int_{}^{}(\frac{1}{u}-\frac{1}{u+1})\;du=\ln\frac{\ch x}{\ch x+1}+C.
+\end{align*}
+
+\item $\int_{}^{}\frac{1}{\sh^5x}\;dx=\int_{}^{}\frac{\sh x}{\sh^6x}\;dx
+=\int_{}^{}\frac{\sh x}{\sh^6x}\;dx=\int_{}^{}\frac{\sh x}{(\ch^2x-1)^3}\;dx=\int_{}^{}\frac{1}{(u^2-1)^3}\;du$ (en posant $u=\ch x$).
+
+\item
+
+\begin{align*}\ensuremath
+\int_{}^{}\frac{1}{1-\ch x}\;dx&=\int_{}^{}\frac{1+\ch x}{1-\ch^2x}\;dx=-\int_{}^{}\frac{1}{\sh^2x}\;dx-\int_{}^{}\frac{\ch x}{\sh^2x}\;dx\\
+ &=\mbox{coth}x+\frac{1}{\sh x}+C.
+\end{align*}
+\end{enumerate}
+\fincorrection
+\finexercice

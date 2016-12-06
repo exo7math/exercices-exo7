@@ -1,0 +1,111 @@
+\exercice{4018, quercia, 2010/03/11}
+\enonce[Calculs de DL]
+
+\ \\
+\textbf{Fonctions trigonométriques}
+%
+                    %+------------------------------+
+                    %|  Fonctions trigonométriques  |
+                    %+------------------------------+
+\begin{align*}
+x/\sin x              &= 1 + x^2/6 + 7x^4/360 + o(x^4)              \cr
+1/\cos x              &= 1 + x^2/2 + 5x^4/24 + o(x^4)               \cr
+\ln(\sin x/x)         &= -x^2/6 -x^4/180 -x^6/2835  + o(x^6)        \cr
+\exp(\sin x/x)        &= e(1 - x^2/6 + x^4/45) + o(x^4)             \cr
+\sqrt{\tan x}         &= 1 + h + h^2/2   + o(h^2), h = x-\pi/4                   \cr
+\sin(x+x^2+x^3-x^4)   &= x + x^2 + 5x^3/6 -3x^4/2  + o(x^4)           \cr
+\ln(x\tan(1/x))       &= x^{-2}/3 + 7x^{-4}/90  + o(1/x^4)              \cr
+(1-\cos x)/(e^x-1)^2  &= 1/2 - x/2 + x^2/6   + o(x^2)                 \cr
+\sin((\pi\cos x)/2)   &=1 -\pi^2x^4/32 + \pi^2x^6/192  + o(x^6)     \cr
+\cos x\ln(1+x)        &= x - x^2/2 - x^3/6    + o(x^4)                \cr
+(\sin x-1)/(\cos x+1) &= -1/2 + x/2 - x^2/8 + o(x^2)                 \cr
+\ln(2\cos x+\tan x)   &= \ln2+x/2-5x^2/8+11x^3/24-59x^4/192  + o(x^4) \cr
+e^{\cos x}            &= e(1 - x^2/2 + x^4/6)   + o(x^5)              \cr
+\end{align*}
+
+
+\textbf{Fonctions circulaires inverses}
+%
+                  %+----------------------------------+
+                  %|  Fonctions circulaires inverses  |
+                  %+----------------------------------+
+\begin{align*}
+\arcsin^2 x               &= x^2 + x^4/3 + 8x^6/45  + o(x^6)            \cr
+1/\arcsin^2 x             &= x^{-2} - 1/3 - x^2/15 + o(x^2)               \cr
+\arctan\sqrt{(x+1)/(x+2)} &= \pi/4 - x^{-1}/4 + 3x^{-2}/8      \cr
+\arccos(\sin x/x)         &= |x|/\sqrt3(1 - x^2/90)  + o(1/x^3)            \cr
+1/\arctan x               &= x^{-1} + x/3 -4x^3/45 +44x^5/945  + o(x^5) \cr
+\arcsin\sqrt x            &= \pi/6+1/\sqrt3(2h-4h^2/3+32h^3/9) + o(h^3), h = x-1/4  \cr
+\arcsin(\sin^2 x)         &= x^2 -x^4/3 +19x^6/90 -107x^8/630  + o(x^8)   \cr
+\arctan(1+x)              &= \pi/4 + x/2 - x^2/4 + x^3/12  + o(x^4)     \cr
+\arcsin x/(x-x^2)         &= 1 + x + 7x^2/6   + o(x^2)                  \cr
+e^{\arcsin x}             &= e^{\pi/6}(1 + 2h/\sqrt3 + 2(1+\sqrt3)h^2/(3\sqrt3)) + o(h^2), h = x-1/2  \cr
+e^{1/x}\arctan x          &= \frac\pi2+ (\frac\pi2-1)x^{-1} + (\frac\pi4-1)x^{-2} + (\frac\pi{12}-\frac16)x^{-3}  + o(1/x^3)  \cr
+\end{align*}
+
+\textbf{Exponentielle et logarithme}
+%
+                   %+-------------------------------+
+                   %|  Exponentielle et logarithme  |
+                   %+-------------------------------+
+\begin{align*}
+x/(e^x-1)          &= 1 - x/2 + x^2/12  + o(x^2)                       \cr
+\ln x/\sqrt x      &= h - h^2 + 23h^3/24   + o(h^3), h = x-1           \cr
+\ln((2-x)/(3-x^2)) &= \ln(2/3) - x/2 + 5x^2/24  + o(x^2)               \cr
+\ln(1+x)/(1-x+x^2) &= x + x^2/2 - x^3/6   + o(x^3)                     \cr
+\ch x/\ln(1+x)     &= x^{-1} + 1/2 + 5x/12    + o(x)                 \cr
+\ln(\ln(1+x)/x)    &= -x/2 + 5x^2/24 - x^3/8 + o(x^3)                  \cr
+\ln(a^x+b^x)       &= \ln2 + x\ln\sqrt{ab} + x^2\ln^2(a/b)/8 + o(x^2)  \cr
+\exp(1/x)/x^2      &= e(1 - 3h + 13h^2/2 - 73h^3/6)  + o(h^3), h = x-1         \cr
+\end{align*}
+
+\textbf{Fonctions hyperboliques inverses}
+%
+                 %+------------------------------------+
+                 %|  Fonctions hyperboliques inverses  |
+                 %+------------------------------------+
+
+\begin{align*}
+\Argth(\sin x)   &= x + x^3/6 + x^5/24  + o(x^5)                  \cr
+\Argsh(e^x)      &= \ln(1+\sqrt2) + 1/\sqrt2(x + x^2/4)  + o(x^2) \cr
+\end{align*}
+
+
+\textbf{Formes exponentielles}
+%
+                      %+-------------------------+
+                      %|  Formes exponentielles  |
+                      %+-------------------------+
+
+\begin{align*}
+(1-x+x^2)^{1/x}       &= e^{-1}(1 + x/2 + 19x^2/24) + o(x^2)           \cr
+((1+x)/(1-x))^\alpha  &= 1 + 2\alpha x + 2\alpha^2x^2 + 2\alpha(2\alpha^2+1)x^3/3 + o(x^3) \cr
+(\sin x/x)^{2/x^2}    &= e^{-1/3}(1 - x^2/90) + o(x^3)                \cr
+(\sin x/x)^{3/x^2}    &= e^{-1/2}(1 - x^2/60 - 139x^4/151200)+ o(x^4) \cr
+(1+\sin x)^{1/x}      &= e(1 - x/2 + 7x^2/24)  + o(x^2)                \cr
+(1+\sin x + \cos x)^x &= 1 + x\ln2 + x^2(\ln^22+1)/2  + o(x^2)         \cr
+(\sin x)^{\sin x}     &= 1 - h^2/2 + 7h^4/24  + o(h^4), h = x-\pi/2                 \cr
+(\tan x)^{\tan2x}     &= e^{-1}(1 + 2h^2/3 + 4h^4/5)   + o(h^4), h = x-\pi/4     \cr
+                      &   \text{Développer d'abord $\ln((1+x)/(1-x))$}   \cr
+\end{align*}
+
+\textbf{Radicaux}
+%
+                             %+------------+
+                             %|  Radicaux  |
+                             %+------------+
+\begin{align*}
+x\sqrt{(x-1)/(x+1)}   &= 1/\sqrt3(2 + 5h/3 + h^3/54)  + o(h^3), h = x-2              \cr
+\sqrt{1+\sqrt{1-x}}   &= \sqrt2(1 - x/8 - 5x^2/128 - 21x^3/1024) + o(x^3)  \cr
+\sqrt{1-\sqrt{1-x^2}} &= |x|/\sqrt2(1 + x^2/8 + 7x^4/128) + o(x^5)        \cr
+e^x-\sqrt{1+2x}       &= x^2 - x^3/3 + 2x^4/3 - 13x^5/15  + o(x^5)        \cr
+(\sqrt[3]{x^3+x^2}+\sqrt[3]{x^3-x^2})/x &= 2 - 2x^{-2}/9  + o(1/x^3)          \cr
+\end{align*}
+
+\finenonce
+
+\noindication
+
+\nocorrection
+
+\finexercice

@@ -1,0 +1,68 @@
+\exercice{5862, rouget, 2010/10/16}
+\enonce[***]
+On pose $\forall X=(x_i)_{1\leqslant i\leqslant n}\mathcal{M}_{n,1}(\Rr)$, $\|X\|_1=\sum_{i=1}^{n}|x_i|$ et $\|X\|_\infty=\underset{1\leqslant i\leqslant n}{\text{Max}}|x_i|$.
+
+Déterminer les normes sur $\mathcal{M}_n(\Rr)$ respectivement associées aux normes $\|\;\|_1$ et $\|\;\|_\infty$ de $\mathcal{M}_{n,1}(\Rr)$. On notera $|||\;|||_1$ et $|||\;|||_\infty$ ces normes.
+\finenonce
+
+\noindication
+
+\correction
+\textbullet~Pour $\|\;\|_1$. Soient $A=(a_{i,j})_{1\leqslant i,j\leqslant n}\in\mathcal{M}_n(\Rr)$ puis $X=(x_i)_{1\leqslant i\leqslant n}\mathcal{M}_{n,1}(\Rr)$.
+
+\begin{align*}\ensuremath
+\|AX\|_1&=\sum_{i=1}^{n}\left|\sum_{j=1}^{n}a_{i,j}x_j\right|\\
+ &\leqslant\sum_{i=1}^{n}\left(\sum_{j=1}^{n}|a_{i,j}||x_j|\right)=\sum_{j=1}^{n}|x_j|\left(\sum_{i=1}^{n}|a_{i,j}|\right)\\
+ &\leqslant\left(\sum_{j=1}^{n}|x_j|\right)\text{Max}\left\{\sum_{i=1}^{n}|a_{i,j}|,\;1\leqslant j\leqslant n\right\}=\text{Max}\{\|C_j\|_1,\;1\leqslant j\leqslant n\}\times\|X\|_1,
+\end{align*}
+
+en notant $C_1$,\ldots, $C_n$ les colonnes de la matrice $A$. Donc, $\forall A\in\mathcal{M}_n(\Rr)$, $|||A|||_1\leqslant\text{Max}\{\|C_j\|_1,\;1\leqslant j\leqslant n\}$.
+
+Soit alors $j_0\in\llbracket1,n\rrbracket$ tel que $\|C_{j_0}\|_1=\text{Max}\{\|C_j\|_1,\;1\leqslant j\leqslant n\}$. On note $X_0$ le vecteur colonne dont toutes les composantes sont nulles sauf la $j_0$-ème qui est égale à $1$. $X_0$ est un vecteur non nul tel que
+
+\begin{center}
+$\|AX_0\|_1=\sum_{i=1}^{n}|a_{i,j_0}|=\text{Max}\left\{\|C_j\|_1,\;1\leqslant j\leqslant n\right\}\times\|X_0\|_1$.
+\end{center}
+
+En résumé,
+
+\textbf{(1)} $\forall X\in\mathcal{M}_{n,1}(\Rr)\setminus\{0\}$, $ \frac{\|AX\|_1}{\|X\|_1}\leqslant\text{Max}\left\{\|C_j\|_1,\;1\leqslant j\leqslant n\right\}$,
+
+\textbf{(2)} $\exists X_0\in\mathcal{M}_{n,1}(\Rr)\setminus\{0\}$, $ \frac{\|AX_0\|_1}{\|X_0\|_1}=\text{Max}\left\{\|C_j\|_1,\;1\leqslant j\leqslant n\right\}$.
+
+On en déduit que $\forall A\in\mathcal{M}_n(\Rr)$, $|||A|||_1=\text{Max}\left\{\|C_j\|_1,\;1\leqslant j\leqslant n\right\}$.
+
+\textbullet~Pour $\|\;\|_\infty$. Soient $A=(a_{i,j})_{1\leqslant i,j\leqslant n}\in\mathcal{M}_n(\Rr)$ puis $X=(x_i)_{1\leqslant i\leqslant n}\mathcal{M}_{n,1}(\Rr)$. Pour $i\in\llbracket1,n\rrbracket$,
+
+\begin{align*}\ensuremath
+|(AX)_i|&=\left|\sum_{j=1}^{n}a_{i,j}x_j\right|\leqslant\sum_{j=1}^{n}|a_{i,j}||x_j|\leqslant\left(\sum_{j=1}^{n}|a_{i,j}|\right)\|X\|_\infty\\
+ &\leqslant\text{Max}\left\{\sum_{j=1}^{n}|a_{i,j}|,\;1\leqslant i\leqslant n\right\}\|X\|_\infty=\text{Max}\{\|L_k\|_1,\;1\leqslant k\leqslant n\}\times\|X\|_\infty,
+\end{align*}
+
+en notant $L_1$,\ldots, $L_n$ les lignes de la matrice $A$. Donc, $\forall A\in\mathcal{M}_n(\Rr)$, $|||A|||_\infty\leqslant\text{Max}\{\|L_i\|_1,\;1\leqslant i\leqslant n\}$.
+
+Soit alors $i_0\in\llbracket1,n\rrbracket$ tel que $\|L_{i_0}\|_1=\text{Max}\{\|L_i\|_1,\;1\leqslant i\leqslant n\}$. On pose $X_{0}=\left(\varepsilon_i\right)_{1\leqslant i\leqslant n}$ où $\forall j\in\llbracket 1,n\rrbracket$, $\varepsilon_j$ est un élément de $\{-1,1\}$ tel que $a_{i_0,j}=\varepsilon_j|a_{i_0,j}|$ (par exemple, $\varepsilon_j= \frac{a_{i_0,j}}{|a_{i_0,j}|}$ si $a_{i_0,j}\neq0$ et $\varepsilon_j=1$ si $a_{i_0,j}=1$).
+
+\begin{align*}\ensuremath
+\|AX_0\|_\infty&=\text{Max}\left\{\left|\sum_{j=1}^{n}a_{i,j}\varepsilon_j\right|,\;1\leqslant i\leqslant n\right\}\\
+ &\geqslant\left|\sum_{j=1}^{n}a_{i_0,j}\varepsilon_j\right|=\sum_{j=1}^{n}|a_{i_0,j}|=\|L_{i_0}\|_1
+=\text{Max}\{\|L_i\|_1,\;1\leqslant i\leqslant n\}\times\|X_0\|_\infty.
+\end{align*}
+
+En résumé,
+
+\textbf{(1)} $\forall X\in\mathcal{M}_{n,1}(\Rr)\setminus\{0\}$, $ \frac{\|AX\|_\infty}{\|X\|_\infty}\leqslant\text{Max}\left\{\|L_i\|_1,\;1\leqslant i\leqslant n\right\}$,
+
+\textbf{(2)} $\exists X_0\in\mathcal{M}_{n,1}(\Rr)\setminus\{0\}$, $ \frac{\|AX_0\|_\infty}{\|X_0\|_\infty}\geqslant\text{Max}\left\{\|L_i\|_1,\;1\leqslant i\leqslant n\right\}$.
+
+On en déduit que $\forall A\in\mathcal{M}_n(\Rr)$, $|||A|||_\infty=\text{Max}\left\{\|L_i\|_1,\;1\leqslant j\leqslant n\right\}$.
+
+Ainsi, en notant $C_1$,\ldots, $C_n$ et $L_1$,\ldots, $L_n$ respectivement les colonnes et les lignes d'une matrice $A$,
+
+\begin{center}
+\shadowbox{
+$\forall A\in\mathcal{M}_n(\Rr)$, $|||A|||_1=\text{Max}\{\|C_j\|_1,\;1\leqslant j\leqslant n\}$ et $|||A|||_\infty=\text{Max}\{\|L_i\|_1,\;1\leqslant i\leqslant n\}$.
+}
+\end{center}
+\fincorrection
+\finexercice

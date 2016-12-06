@@ -1,0 +1,56 @@
+\exercice{5267, rouget, 2010/07/04}
+\enonce[***]
+Soit $A=(a_{i,j})_{1\leq i,j\leq n}$ $(n\geq2)$ définie par 
+
+$$\forall i\in\{1,...,n\},\;a_{i,j}=
+\left\{
+\begin{array}{l}
+i\;\mbox{si}\;i=j\\
+1\;\mbox{si}\;i>j\\
+0\;\mbox{si}\;i<j
+\end{array}
+\right..$$
+
+Montrer que $A$ est inversible et calculer son inverse.
+\finenonce
+
+\noindication
+
+\correction
+Soit $\mathcal{B}=(e_i)_{1\leq i\leq n}$ la base canonique de $\Cc^n$ et $(e_i')_{1\leq i\leq n}$ la famille d'éléments de $\Cc^n$ de matrice $A$ dans la base $\mathcal{B}$.
+
+Par définition, on a
+
+$$\forall i\in\{1,...,n-1\},\;e_i'=ie_i+\sum_{j=i+1}^{n}e_j\;\mbox{et}\;e_n'=ne_n.$$
+
+En retranchant membre à membre ces égalités, on obtient
+
+$$\forall i\in\{1,...,n-1\},\;e_i'-e_{i+1}'=i(e_i-e_{i+1})\;\mbox{et}\;e_n'=ne_n,$$
+
+ou encore
+
+$$\forall i\in\{1,...,n-1\},\;e_i-e_{i+1}=\frac{1}{i}(e_i'-e_{i+1}')\;\mbox{et}\;e_n=\frac{1}{n}e_n'.$$
+
+Mais alors, pour $i\in\{1,...,n-1\}$, on a
+
+\begin{align*}\ensuremath
+e_i&=\sum_{j=i}^{n-1}(e_j-e_{j+1})+e_n=\sum_{j=i}^{n-1}\frac{1}{j}(e_j'-e_{j+1}')+\frac{1}{n}e_n'
+=\sum_{j=i}^{n-1}\frac{1}{j}e_j'-\sum_{j=i+1}^{n}\frac{1}{j-1}e_j'+\frac{1}{n}e_n'\\
+ &=\frac{1}{i}e_i'+\sum_{j=i+1}^{n}\frac{1}{j}e_j'-\sum_{j=i+1}^{n}\frac{1}{j-1}e_j'\\
+ &=\frac{1}{i}e_i'-\sum_{j=i+1}^{n}\frac{1}{j(j-1)}e_j'
+\end{align*}
+
+Mais alors, $\Cc^n=\mbox{Vect}(e_1,...,e_n)\subset\mbox{Vect}(e_1',...,e_n')$, ce qui montre que la famille $\mathcal{B}'=(e_1',...,e_n')$ est génératrice de $\Cc^n$ et donc une base de $\Cc^n$. Par suite, $A$ est inversible et 
+
+$$A^{-1}=\mbox{Mat}_{\mathcal{B}'}\mathcal{B}=(a_{i,j}')_{1\leq i,j\leq n}\;\mbox{où}\;
+a_{i,j}'=
+\left\{
+\begin{array}{l}
+\frac{1}{i}\;\mbox{si}\;i=j\\
+-\frac{1}{i(i-1)}\;\mbox{si}\;i>j\\
+0\;\mbox{si}\;i<j
+\end{array}
+\right..
+$$
+\fincorrection
+\finexercice

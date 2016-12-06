@@ -1,0 +1,22 @@
+\exercice{4848, quercia, 2010/03/16}
+\enonce[Intersection de boules]
+Soit $E$ un evn complet et $(B_n(a_n,r_n))$ une suite d{\'e}croissante de boules
+ferm{\'e}es dont le rayon ne tend pas vers 0.
+Montrer que $\bigcap_n B_n$ est une boule ferm{\'e}e.
+
+\finenonce
+
+\noindication
+
+\correction
+Soit $r = \lim r_n$ :
+$\|a_n - a_{n+k}\| \le r_n - r_{n+k}$ donc la suite $(a_n)$ est de Cauchy,
+et converge vers $a$.
+
+On a $\|a_n - a\| \le r_n - r$ donc $B(a,r) \subset B_n$.
+
+R{\'e}ciproquement, si $x \in \bigcap_n B_n$, alors $\|x-a_n\| \le r_n$ donc
+$\|x-a\| \le r$.
+\fincorrection
+
+\finexercice

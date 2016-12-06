@@ -1,0 +1,26 @@
+\exercice{6013, quinio, 2011/05/20}
+
+\enonce
+Une population comporte en moyenne une personne mesurant plus de 1m90 sur
+80 personnes.
+Sur 100 personnes, calculer la probabilité qu'il y ait au moins une
+personne mesurant plus de 1.90m (utiliser une loi de Poisson).
+Sur 300 personnes, calculer la probabilité qu'il y ait au moins une
+personne mesurant plus de 1.90m.
+\finenonce
+
+\noindication
+
+\correction
+Le nombre $X$ de personnes mesurant plus de 1.90m parmi 100 obéit à
+une loi de Poisson de paramètre $\frac{100}{80}$.
+
+La probabilité qu'il y ait au moins une personne mesurant plus de 1.90m
+est donc $1-P[X=0]=1-e^{-\frac{100}{80}}=1-e^{-\frac{5}{4}}=0.713\,50$.
+
+Sur 300 personnes:
+la probabilité qu'il y ait au moins une personne mesurant plus de 1.90m
+est donc $1-P[Y=0]=1-e^{-\frac{300}{80}}=0.976\,48$.
+
+\fincorrection
+\finexercice

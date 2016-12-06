@@ -1,0 +1,29 @@
+\exercice{2385, mayer, 2003/10/01}
+\enonce 
+Soit $A$ et $B$ des parties de $X$. On suppose $B$ connexe et que
+$B\cap A$ et $B \cap \complement A$ sont non vides. Montrer que $B$
+coupe la fronti\`ere de $A$.
+\finenonce
+
+\indication
+Utiliser la partition $X = \mathring A \cup \mathrm{Fr}\, A  \cup (X \setminus \bar A)$
+o\`u  $\mathrm{Fr}\, A = \bar A \setminus \mathring A$ est la frontière de $A$.
+\finindication
+
+\correction
+Notons la frontière $\mathrm{Fr}\, A = \bar A \setminus \mathring A$.
+Nous avons la partition $X = \mathring A \cup \mathrm{Fr}\, A  \cup (X \setminus \bar A)$.
+Si $B \cap \mathrm{Fr}\, A  = \varnothing$ alors $B\subset \mathring A \cup (X \setminus \bar A)$. 
+
+De plus, par hypothèses, $B \cap A \neq \varnothing$ et $B \cap \mathrm{Fr}\, A = \varnothing$ 
+or $\mathring A= A \setminus \mathrm{Fr}\, A$ donc $B \cap \mathring A \neq \varnothing$.
+Comme $\mathrm{Fr}\, A = \mathrm{Fr}\, (X\setminus A)$ on a $B\cap \mathrm{Fr}\, (X\setminus A) = \varnothing$.
+Par hypothèse $B\cap (X\setminus  A) \neq \varnothing$ donc $B\cap  (X\setminus \bar A) = 
+(B\cap  (X\setminus A)) \setminus (B\cap \mathrm{Fr}\, (X\setminus A)) \neq \varnothing$.
+
+ Nous avons montrer que $B$ est inclus dans l'union de deux ouverts disjoints 
+$\mathring A$ et $X\setminus \bar A$, d'intersection non vide avec $B$, donc $B$ n'est pas connexe.
+Par contraposition, si $B$ est connexe alors $B$ ne rencontre pas la frontière 
+de $A$.
+\fincorrection
+\finexercice

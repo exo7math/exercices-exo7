@@ -1,0 +1,45 @@
+\exercice{3710, quercia, 2010/03/11}
+% modification le 2016-05-01 par D.M. : 
+% ajout de la condition c), et des questions 2) et 3)
+
+\enonce[Matrice circulante]
+
+Pour tout triplet $(a,b,c)$  de réels on pose 
+\[M(a,b,c) = \begin{pmatrix}a &b &c \cr c &a &b \cr b &c &a \cr\end{pmatrix}.\]
+\begin{enumerate}
+\item Montrer que les assertions suivantes sont équivalentes:
+\begin{enumerate}
+\item
+$M(a,b,c)$ est une matrice de rotation;
+\item $(a,b,c)$ appartient au cercle $\mathcal C \subset \R^3$ défini par l'intersection de la sphère unité de $\R^3$ et du plan $x+y+z-1=0$;
+\item $a$, $b$ et $c$ sont les racines d'un polynôme de la forme $P = X^3-X^2+\lambda$ avec
+$\lambda \in \left[0,\frac4{27}\right]$.
+\end{enumerate}
+\item Si $M(a,b,c)$ est une rotation, calculer son axe et son angle au signe près.
+\item Montrer que l'ensemble des matrices de rotation de la forme $M(a,b,c)$ est un sous-groupe de $SO(3)$. À quel groupe connu est-il isomorphe ?
+\end{enumerate}
+
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item
+On a
+\[{}^tMM = I \Leftrightarrow (a^2+b^2+c^2=1 \text{ et } ab+bc+ca=0),\]
+ et 
+\[\det(M) = 1 \Leftrightarrow a^3+b^3+c^3-3abc=1.\]
+En remarquant que 
+\[ (a^3+b^3+b^3-3abc)  = (a+b+c)(a^2+b^2+c^2-ab-bc-ca), \] 
+on en déduit (a)$\Leftrightarrow$ (b)$\Leftrightarrow$
+($a+b+c = 1$ et $ab+ac+bc = 0$), d'où le polynôme $P$.
+
+Or, $P$ a trois racines réelles si et seulement si
+ $0 \le \lambda \le \frac 4{27}$(étude de la fonction associée), d'où l'équivalence avec la condition (c).
+\item On voit sur la matrice que $(1,1,1)$ est propre pour la valeur propre $a+b+c$. Si $M \in SO(3)$, c'est donc (l'identité ou) une matrice de rotation suivant l'axe $\R (1,1,1)$. L'angle $\theta$ de la rotation vérifie alors $\mathrm{Tr}(M) = 2\cos(\theta)+1$ d'où $|\theta| = \Arccos\frac{3a-1}{2}$.
+\item L'ensemble est celui de toutes les rotations d'axe $(1,1,1)$. C'est un groupe isomorphe à $\R/2\pi\Z$.
+\end{enumerate}
+\fincorrection
+
+\finexercice

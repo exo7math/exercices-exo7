@@ -1,0 +1,67 @@
+\exercice{929, legall, 1998/09/01}
+\video{4CS7MiS5AQA}
+\enonce
+D\'eterminer si les applications $f_{i}$ suivantes sont lin\'eaires :
+$$\begin{array}{rl}
+f_1 : \Rr^2 \to \Rr^2 & f_1(x,y)=(2x+y,x-y)  \\
+f_2 : \Rr^3 \to \Rr^3 & f_2(x,y,z)=(xy,x,y) \\
+f_3 : \Rr^3 \to \Rr^3 & f_3(x,y,z)=(2x+y+z,y-z,x+y) \\
+f_4 : \Rr^2 \to \Rr^4 & f_4(x,y)=(y,0,x-7y,x+y) \\
+f_5 : \Rr_3[X] \to \Rr^3 & f_5(P) = \big( P(-1), P(0), P(1) \big) \\
+\end{array}
+$$
+\finenonce 
+
+\indication
+Une seule application n'est pas lin\'eaire.
+\finindication
+
+\correction
+\begin{enumerate}
+  \item $f_1$ est linéaire. Pour $(x,y) \in \Rr^2$ et $(x',y')\in \Rr^2$ :
+\begin{align*}
+f_1\big( (x,y)+(x',y') \big) 
+  & = f_1\big( x+x',y+y' \big) \\
+  & = \big(2(x+x')+ (y+y'), (x+x')-(y+y') \big) \\
+  & = \big(2x+y +2x'+y', x-y+x'-y' \big) \\
+  & = \big(2x+y,x-y \big) + \big(2x'+y',x'-y' \big) \\
+  & = f_1(x,y)+f_1(x',y')
+\end{align*}
+
+Pour $(x,y)\in \Rr^2$ et $\lambda\in \Rr$ :
+$$f_1\big( \lambda \cdot (x,y)\big) = f_1\big(\lambda x,\lambda y\big)
+ = \big( 2\lambda x+\lambda y,\lambda x - \lambda y \big) = \lambda \cdot\big(2x+y,x-y \big) 
+= \lambda \cdot f_1(x,y).$$
+
+  \item $f_2$ n'est pas lin\'eaire, en effet par exemple $f_2(1,1,0)+f_2(1,1,0)$ n'est pas \'egal \`a $f_2(2,2,0)$.
+
+  \item $f_3$ est linéaire : il faut vérifier d'abord que pour tout $(x,y,z)$ et $(x',y',z')$ alors
+$f_3\big( (x,y,z) + (x',y',z') \big) = f_3(x,y,z)+f_3(x',y',z')$. Et ensuite que pour tout $(x,y,z)$ et $\lambda$
+on a $f_3\big(\lambda\cdot(x,y,z) \big) = \lambda \cdot f_3(x,y,z)$.
+
+
+  \item $f_4$ est linéaire : il faut vérifier d'abord que pour tout $(x,y)$ et $(x',y')$ alors
+$f_4\big( (x,y) + (x',y') \big) = f_4(x,y)+f_4(x',y')$. Et ensuite que pour tout $(x,y)$ et $\lambda$
+on a $f_4\big(\lambda\cdot(x,y) \big) = \lambda \cdot f_4(x,y)$.
+
+  \item $f_5$ est lin\'eaire : soient $P,P' \in \Rr_3[X]$ alors 
+
+\begin{align*}
+f_5\big(P+P'\big) 
+  & = \big( (P+P')(-1), (P+P')(0), (P+P')(1) \big) \\
+  & = \big( P(-1)+P'(-1), P(0)+P'(0), P(1)+P'(1) \big) \\
+  & = \big( P(-1), P(0), P(1) \big)  + \big( P'(-1), P'(0), P'(1) \big) \\
+  & = f_5(P)+f_5(P')  \\
+\end{align*}
+
+Et si $P\in \Rr_3[X]$ et $\lambda \in \Rr$ :
+\begin{align*}
+f_5\big( \lambda \cdot P\big) 
+  & =  \big( (\lambda P)(-1), (\lambda P)(0), (\lambda P)(1) \big) \\
+  & = \big( \lambda \times P(-1), \lambda \times P(0), \lambda \times P(1) \big) \\
+  & = \lambda \cdot \big( P(-1), P(0), P(1) \big) \\
+  & = \lambda \cdot f_5(P) \\
+\end{align*}
+\end{enumerate}
+\fincorrection
+\finexercice

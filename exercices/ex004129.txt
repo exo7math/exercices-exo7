@@ -1,0 +1,25 @@
+\exercice{4129, quercia, 2010/03/11}
+\enonce[Résolution approchée de $y' = f(y,t),\ y(a) = y_0$  par la méthode d'Euler]
+
+On suppose que $f$ est bornée par $M$ et $|f(y,s)-f(z,t)| \le K(|y-z|+|s-t|)$.
+On divise $[a,b]$ en $n$ intervalles $[a_k, a_{k+1}]$,
+$a_k = a + k\frac {b-a}n$ et on approche
+la solution $y$ par la fonction $z$, continue affine par morceaux définie
+par :
+$$\begin{cases}
+z(a_0) = y_0 \cr
+\text{sur } ]a_k, a_{k+1}[,\ z' = f(z(a_k),a_k). \cr\end{cases}$$
+
+\begin{enumerate}
+  \item  Soit $\varepsilon_k = |z(a_k) - y(a_k)|$.
+     Montrer que : $\forall\ t \in {[a_k, a_{k+1}]},\quad |y(t)-z(t)| \le kh^2(M+1) + (1+Kh)\varepsilon_k$
+     $\Bigl(h = \frac {b-a}n \Bigr)$.
+  \item  En déduire que $\sup|y-z| \le (M+1)(e^{K(b-a)}-1) \frac {b-a}n$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\nocorrection
+
+\finexercice

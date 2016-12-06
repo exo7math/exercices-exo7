@@ -1,0 +1,47 @@
+\exercice{5066, rouget, 2010/06/30}
+\enonce[**IT]
+Résoudre dans $I$ les inéquations suivantes~:
+\begin{enumerate}
+ \item $\cos x\leq\frac{1}{2},\;I=[-\pi,\pi]$,
+ \item $\sin x\geq-\frac{1}{\sqrt{2}},\;I=\Rr$,
+ \item $\cos x>\cos\frac{x}{2},\;I=[0,2\pi]$,
+ \item $\cos^2x\geq\cos(2x),\;I=[-\pi,\pi]$,
+ \item $\cos^2x\leq\frac{1}{2},\;I=[0,2\pi]$,
+ \item $\cos\frac{x}{3}\leq\sin\frac{x}{3},\;I=[0,2\pi]$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+
+\begin{enumerate}
+ \item   Pour $x\in[-\pi,\pi]$, $\cos x\leq\frac{1}{2}\Leftrightarrow x\in\left[-\pi,-\frac{\pi}{3}\right]\cup\left[\frac{\pi}{3},\pi\right]$.
+ \item   Pour $x\in\Rr$, $\sin
+x\geq-\frac{1}{\sqrt{2}}\Leftrightarrow x\in\displaystyle\bigcup_{k\in\Zz}\left[-\frac{\pi}{4}+2k\pi,\frac{5\pi}{4}+2k\pi\right]$.
+ \item   Pour $x\in[0,2\pi]$,
+
+\begin{align*}
+\cos x>\cos\frac{x}{2}&\Leftrightarrow2\cos^2\frac{x}{2}-\cos\frac{x}{2}-1>0\Leftrightarrow(2\cos\frac{x}{2}+1)(\cos\frac{x}{2}-1)>0\Leftrightarrow
+2\cos\frac{x}{2}+1<0\;\mbox{et}\;\cos\frac{x}{2}\neq1\\
+ &\Leftrightarrow\cos\frac{x}{2}<-\frac{1}{2}\;\mbox{et}\;\frac{x}{2}\notin2\pi\Zz
+\Leftrightarrow\frac{x}{2}\in\displaystyle\bigcup_{k\in\Zz}\left]\frac{2\pi}{3}+2k\pi,\frac{4\pi}{3}+2k\pi\right[\;\mbox{et}\;
+ x\notin4\pi\Zz\\
+ &\Leftrightarrow x\in\displaystyle\bigcup_{k\in\Zz}\left]\frac{4\pi}{3}+4k\pi,\frac{8\pi}{3}+4k\pi\right[\;\mbox{et}\;
+ x\notin4\pi\Zz
+\Leftrightarrow x\in]\frac{4\pi}{3},2\pi]
+\end{align*}
+ \item   Pour $x\in[-\pi,\pi]$, $\cos^2x\geq\cos(2x)\Leftrightarrow\frac{1}{2}(1+\cos(2x))\geq\cos(2x)\Leftrightarrow\cos(2x)\leq1\Leftrightarrow
+x\in[-\pi,\pi]$.
+ \item   Pour $x\in[0,2\pi]$, $\cos^2x\leq\frac{1}{2}\Leftrightarrow-\frac{1}{\sqrt{2}}\leq\cos x\leq\frac{1}{\sqrt{2}}\Leftrightarrow
+x\in\left[\frac{\pi}{4},\frac{3\pi}{4}\right]\cup\left[\frac{5\pi}{4},\frac{7\pi}{4}\right]$.
+ \item   Pour $x\in[0,2\pi]$,
+
+\begin{align*}
+\cos\frac{x}{3}\leq\sin\frac{x}{3}&\Leftrightarrow\frac{1}{\sqrt{2}}\sin\frac{x}{3}-\frac{1}{\sqrt{2}}\cos\frac{x}{3}\geq0
+\Leftrightarrow\sin\left(\frac{x}{3}-\frac{\pi}{4}\right)\geq0\Leftrightarrow\exists k\in\Zz/\;2k\pi\leq\frac{x}{3}-\frac{\pi}{4}\leq\pi+2k\pi\\
+ &\Leftrightarrow\exists k\in\Zz/\;\frac{3\pi}{4}+6k\pi\leq x\leq3\pi+\frac{3\pi}{4}+6k\pi\Leftrightarrow\frac{3\pi}{4}\leq x\leq2\pi
+\end{align*}
+\end{enumerate}
+\fincorrection
+\finexercice

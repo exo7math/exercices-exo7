@@ -1,0 +1,36 @@
+\exercice{4092, quercia, 2010/03/11}
+\enonce[$y'+ay = b$, $y(-\infty) = 0$]
+
+Soit ${a,b} : \R \to \R$ continues telles que : $\forall\ x\in\R,\ a(x)\ge 1$
+et $b(x)\to 0$ lorsque $x\to+\infty$.
+
+\begin{enumerate}
+  \item Montrer que toute solution de l'équation : $y' + ay = b$ tend vers $0$ en $+\infty$.
+    
+
+  \item On suppose $b(x)\to 0$ lorsque $x\to-\infty$. Montrer qu'il y a une unique solution $y$
+    qui tend vers $0$ en $-\infty$.
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $y =  \int_{t=\alpha}^x b(t)e^{A(t)-A(x)}\,d t + y(\alpha)e^{-A(x)}$
+             avec $A' = a$ et $A(\alpha) = 0$.\par
+             Comme $a \ge 1$, on a $A(x) \ge x-\alpha$ et $A(t)-A(x) \le t-x$ pour $t \le x$.\par
+             Donc $|y| \le  \int_{t=\alpha}^z |b(t)|e^{t-x}\,d t +
+                            \int_{t=z}^x |b(t)|e^{t-x}\,d t + |y(\alpha)|e^{\alpha-x}
+                       \le \|b\|_{\infty} e^{z-x} +
+                           \sup\limits_{[z,+\infty[}|b| + |y(\alpha)|e^{\alpha-x}$.\par
+             On choisit $z$ tel que $z\to+\infty$ et $x-z\to+\infty  \Rightarrow $ cqfd.
+  \item Comme $A(t)-A(x) \le t-x$ pour $t \le x$, l'intégrale
+             $ \int_{t=-\infty}^x b(t)e^{A(t)-A(x)}\,d t$ converge et fournit
+             une solution nulle en $-\infty$.
+             Comme $e^{-A(x)}\to +\infty$ lorsque $x\to-\infty$, c'est la seule.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

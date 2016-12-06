@@ -1,0 +1,73 @@
+\exercice{2285, barraud, 2008/04/24}
+\enonce
+ Soit $A$ un anneau. Trouver les anneaux quotients
+$$
+A[x]/(x),\quad A[x,y]/(x),\quad A[x,y]/(x,y),\quad
+A[x_1,x_2,\dots,x_n]/(x_1,x_2,\dots,x_n)
+$$
+o\`u $(x)$, $(x,y)$, $(x_1,x_2,\dots,x_n)$ sont les id\'eaux engendr\'es
+r\'espectivement par $x$, $x$ et $y$, $x_1$, $x_2$, ... ,$x_n$.
+Sous quelle condition sur l'anneau $A$ ces id\'eaux sont-ils premiers
+(maximaux) ?
+\finenonce 
+
+\noindication
+
+\correction
+ \begin{itemize}
+  \item   $A[X]/(X)$~: 
+    $X$ est unitaire donc on dispose de la division euclidienne par $X$.
+    On vérifie (comme dans le cours) que chaque classe a un et un seul
+    représentant de degré $0$. On en déduit que $A[X]/(X)$ est en
+    bijection avec $A$. Il reste alors à remarquer que cette bijection
+    est un morphisme d'anneaux. 
+
+    Une autre façon de dire la même chose est de remarquer que
+    l'application $\phi:A[X]\to A$, $P\mapsto P(0)$ est un morphisme
+    d'anneaux. $\ker\phi=(X)$ et $\mathrm{Im}\,\phi=A$. Comme $A/\ker\phi\sim
+    \mathrm{Im}\,\phi$, on a bien $A[X]/(X)\sim A$.
+
+  \item
+    On peut considérer $\phi:A[X,Y]\to A[Y]$, $P\mapsto P(0,Y)$. C'est un
+    morphisme d'anneaux. En séparant les termes ne dépendant que de $Y$
+    des autres, on peut mettre tout polynôme $P$ de $A[X,Y]$ sous la
+    forme $P=P_{1}(Y)+XP_{2}(X,Y)$ où $P_{1}\in A[Y]$ et $P_{2}\in
+    A[X,Y]$. Alors $\phi(P)=0$ ssi $P_{1}=0$, ssi $P=XP_{2}$, c'est à
+    dire $P\in(X)$. Ainsi $\ker\phi=(X)$. Par ailleurs, tout polynôme $P$
+    de $A[Y]$ peut être vu comme un polynôme $\tilde{P}$ de $A[X,Y]$.
+    Alors $P=\phi(\tilde{P})$, donc $\mathrm{Im}\,\phi=A[Y]$. Finalement~:
+     $A[X,Y]/(X)\sim A[Y]$.
+    
+   \item $A[X,Y]/(X,Y)$~:
+     Soit $\phi:A[X,Y]\to A$, $P\mapsto P(0,0)$. $\phi$ est un morphisme
+     d'anneaux, et avec les notations précédentes, pour
+     $P=P_{1}(Y)+XP_{2}(X,Y)$, avec $\phi(P)=0$, on a $P_{1}(0)=0$, donc
+     $Y|P_{1}(Y)$. Ainsi, $P$ est la somme de deux polynômes, l'un
+     multiple de $X$, l'autre multiple de $Y$ donc $P\in(X,Y)$.
+     Réciproquement, si $P\in(X,Y)$, alors $P(0,0)=0$. Donc
+     $\ker\phi=(X,Y)$. $\forall a\in A \phi(a)=a$ donc $\phi$ est
+     surjective. Finalement $A[X,Y]/(X,Y)\sim A$.
+     
+   \item $A[X_{1},\dots,X_{n}]/(X_{1},\dots,X_{n})$~:
+     Soit $\phi~:A[X_{1},\dots,X_{n}]\to A$, $P\mapsto P(0)$. $\phi$ est
+     un morphisme d'anneaux. En regroupant tous les termes dépendant de
+     $X_{n}$, puis tous les termes restant dépendant de $X_{n-1}$, et
+     ainsi de suite jusqu'aux termes dépendant seulement de $X_{1}$, et
+     enfin le terme constant, tout polynôme $P\in A[X_{1},\dots,X_{n}]$
+     peut se mettre sous la forme
+     $P=X_{n}P_{n}+X_{n-1}P_{n-1}+\dots+X_{1}P_{1}+p_{0}$, avec $P_{i}\in
+     A[X_{1},\dots,X_{i}]$ (et $p_{0}\in A$). On en déduit que
+     $\ker\phi=(X_{1},\dots,X_{n})$. Par ailleurs $\forall a\in A,
+     \phi(a)=a$, donc $A[X_{1},\dots,X_{n}]/(X_{1},\dots,X_{n})\sim A$.
+  \end{itemize}
+  
+  Comme un idéal est premier (resp. maximal) ssi le quotient est intègre
+  (resp. un corps), on en déduit que
+  \begin{itemize}
+  \item dans $A[X]$, $(X)$ est premier ssi $A$ est intègre, maximal ssi $A$ est un corps,
+  \item dans $A[X,Y]$, $(X)$ est premier ssi $A$ est intègre, et n'est jamais maximal,
+  \item dans $A[X_{1},\dots,X_{n}]$, $(X_{1},\dots,X_{n})$ est premier
+    ssi $A$ est intègre, maximal ssi $A$ est un corps.
+  \end{itemize}
+\fincorrection
+\finexercice

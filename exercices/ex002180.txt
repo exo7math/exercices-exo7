@@ -1,0 +1,39 @@
+\exercice{2180, debes, 2008/02/12}
+\enonce
+a) Montrer qu'un groupe $G$ v\'erifiant
+$$\forall a,b \in G \quad a^2b^2=(ab)^2$$
+est commutatif.
+\smallskip
+
+(b) Le but de cette question est de donner un exemple de groupe $G$ 
+v\'erifiant la propri\'et\'e 
+$$\forall a,b\in G \quad a^3b^3=(ab)^3$$
+et qui n'est pas commutatif.
+
+\hskip 5mm (i) montrer qu'il existe un automorphisme $\sigma$ de
+$\mathbb{F}_3^2$ d'ordre $3$.
+
+\hskip 5mm (ii) montrer que le groupe $G$ d\'efini comme le produit semi-direct
+de $\mathbb{F}_3^2$ par $\Z_3$, $\Z_3$ agissant sur $\mathbb{F}_3^2$ via
+$\sigma$ r\'epond \`a la question. 
+\finenonce
+
+\noindication
+
+\correction
+(a) L'identit\'e $a^2b^2=(ab)^2$, par simplification \`a gauche par $a$ et \`a
+droite par $b$, se r\'e\'ecrit $ab=ba$.
+\smallskip
+
+(b) La correspondance $(x,y) \rightarrow (x+y,y)$ d\'efinit un automorphisme
+$\sigma$ de $\mathbb{F}_3^2$ d'ordre $3$. Identifions le groupe $<\sigma>$ au
+groupe $\Z/3\Z$ et consid\'erons le produit semi-direct  $\mathbb{F}_3^2 \times \hskip -6pt
+{\raise 1.4pt\hbox{${\scriptscriptstyle |}$}} \Z/3\Z$. Pour tout \'el\'ement
+$((x,y),i)$, on a $((x,y),i)^2 = ((x,y)+\sigma^i(x,y), 2i)$ et $((x,y),i)^3 =
+((x,y)+\sigma^i(x,y)+\sigma^{2i}(x,y), 3i) = ((0,0),0)$ puisque $({\rm Id}+\sigma^i
++\sigma^{2i})(x,y) = (3x+iy+2iy,3y)=(0,0)$. La formule $a^3b^3=(ab)^3$ est donc
+satisfaite pour tous $a,b$ dans $\mathbb{F}_3^2 \times \hskip -5pt
+{\raise 1.4pt\hbox{${\scriptscriptstyle |}$}} \Z/3\Z$. Mais ce produit semi-direct
+n'est pas commutatif car l'action de $\Z/3\Z$ n'est pas l'action triviale.
+\fincorrection
+\finexercice

@@ -1,0 +1,54 @@
+\exercice{5315, rouget, 2010/07/04}
+\enonce[***]
+Montrer que $\sum_{k=0}^{n-1}\cotan^2(\frac{\pi}{2n}+\frac{k\pi}{n})= n(n-1)$. (Indication. Poser $x_k=\cotan^2(\frac{\pi}{2n}+\frac{k\pi}{n})$ puis trouver un polynôme dont les $x_k$ sont les racines.)
+\finenonce
+
+\noindication
+
+\correction
+Il faut prendre garde au fait que les nombres $x_k=\cotan^2(\frac{\pi}{2n}+\frac{k\pi}{n})$ ne sont pas nécessairement deux à deux distincts.
+
+\begin{itemize}
+\item[1er cas.] Si $n$ est pair, posons $n=2p$, $p\in\Nn^*$.
+
+\begin{align*}\ensuremath
+S_n&=\sum_{k=0}^{p-1}\cotan^2(\frac{\pi}{4p}+\frac{k\pi}{2p})+\sum_{k=p}^{2p-1}\cotan^2(\frac{\pi}{4p}+\frac{k\pi}{2p})\\
+ &=\sum_{k=0}^{p-1}\cotan^2(\frac{\pi}{4p}+\frac{k\pi}{2p})+\sum_{k=0}^{p-1}\cotan^2(\frac{\pi}{4p}+\frac{(2p-1-k)\pi}{2p})
+\end{align*}
+ 
+Or, $\cotan^2(\frac{\pi}{4p}+\frac{(2p-1-k)\pi}{2p})=\cotan^2(\pi-\frac{\pi}{4p}-\frac{k\pi}{2p})=\cotan^2(\frac{\pi}{4p}+\frac{k\pi}{2p})$ et donc $S_n=2\sum_{k=0}^{p-1}\cotan^2(\frac{\pi}{4p}+\frac{k\pi}{2p})$.
+
+Mais cette fois ci, 
+
+$$0\leq k\leq p-1\Rightarrow 0<\frac{\pi}{4p}+\frac{k\pi}{2p}\leq\frac{\pi}{4p}+\frac{(p-1)\pi}{2p}=\frac{(2p-1)\pi}{4p}<\frac{2p\pi}{4p}=\frac{\pi}{2}.$$
+
+et comme, la fonction $x\mapsto\cotan^2x$ est strictement décroissante sur $]0,\frac{\pi}{2}[$, les $x_k$, $0\leq k\leq p-1$, sont deux à deux distincts.
+
+Pour $0\leq k\leq p-1$, posons $y_k=\cotan(\frac{\pi}{4p}+\frac{k\pi}{2p})$.
+
+\begin{align*}\ensuremath
+y_k&=i\frac{e^{(2k+1)i\pi/4p}+1}{e^{(2k+1)i\pi/4p}-1}\Rightarrow e^{(2k+1)i\pi/4p}(y-k-i)=y_k+i\\
+ &\Rightarrow(y_k+i)^{2p}=e^{(2k+1)i\pi}(y_k-i)^{2p}=(-1)^{2k+1}(y_k-i)^{2p}=-(y_k-i)^{2p}\\
+ &\Rightarrow(y_k+i)^{2p}+(y_k-i)^{2p}=0\Rightarrow2(y_k^{2p}-C_{2p}^2y_k^{2p-2}+...+(-1)^p)=0\\
+ &\Rightarrow x_k^p-C_{2p}^2x_k^{p-1}+...+(-1)^p=0.
+\end{align*}
+
+Les $p$ nombres deux à deux distincts $x_k$ sont racines de l'équation de degré $p$~:~$z^p-C_{2p}^{2}z^{p-1}+...+(-1)^p=0$ qui est de degré $p$. On en déduit que 
+
+$$S_n=2\sum_{k=0}^{p-1}x_k=2C_{2p}^{2}=n(n-1).$$
+
+\item[2ème cas.] Si $n$ est impair, posons $n=2p+1$, $p\in\Nn$.
+
+\begin{align*}\ensuremath
+S_n&=\sum_{k=0}^{p-1}\cotan^2(\frac{\pi}{2(2p+1)}+\frac{k\pi}{2p+1})+\cotan^2\frac{\pi}{2}+\sum_{k=p+1}^{2p}\cotan^2(\frac{\pi}{2(2p+1)}+\frac{k\pi}{2p+1})\\
+ &=2\sum_{k=0}^{p-1}\cotan^2(\frac{\pi}{2(2p+1)}+\frac{k\pi}{2p+1})
+\end{align*}
+
+La même démarche amène alors à $S_n=2C_{2p+1}^{2}=n(n-1)$.
+\end{itemize}
+
+Dans tous les cas, 
+
+$$\sum_{k=0}^{n-1}\cotan^2(\frac{\pi}{2n}+\frac{k\pi}{n})=n(n-1).$$
+\fincorrection
+\finexercice

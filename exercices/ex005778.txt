@@ -1,0 +1,45 @@
+\exercice{5778, rouget, 2010/10/16}
+\enonce[**]
+Soit $E$ un espace préhilbertien réel et $(e_1,...,e_n)$ une famille de $n$ vecteurs unitaires de $E$ ($n\in\Nn^*$) telle que pour tout vecteur $x$ de $E$, on ait  $\|x\|^2 =\sum_{k=1}^{n}\left(x|e_k\right)^2$. Montrer que la famille $(e_1,...,e_n)$ est une base orthonormée de $E$. 
+
+\finenonce
+
+\noindication
+
+\correction
+Soit $i\in\llbracket1,n\rrbracket$.
+
+\begin{center}
+$1=\|e_i\|^2=\sum_{j\ge1}(e_i|e_j)^2 =1 +\sum_{j\neq i}^{}(e_i|e_j)^2$
+\end{center}
+
+et donc $\sum_{j\neq i}^{}(e_i|e_j)^2= 0$.On en déduit que $\forall j\neq i$, $(e_i|e_j)=0$. Ainsi, pour tout couple d'indices $(i,j)$ tel que $i\neq j$, on a  $e_i|e_j = 0$. Par suite
+
+\begin{center}
+la famille $(e_i)_{1\leqslant i\leqslant n}$ est une famille orthonormale.
+\end{center}
+
+Il reste à vérifier que si $F =\text{Vect}(e_1,...,e_n)$ alors $F = E$.
+
+Soit $x$ un vecteur de $E$. $F$ est un sous-espace vectoriel de $E$ de dimension finie. On peut donc définir le projeté orthogonal $p_F(x)$ de $x$ sur $F$. On sait que
+
+\begin{center}
+$p_F(x) =\sum_{i=1}^{n}(x|e_i)e_i$.
+\end{center}
+
+On en déduit que $\|p_F(x)\|^2 =\sum_{i=1}^{n}(x|e_i)^2 =\|x\|^2$. D'après le théorème de \textsc{Pythagore},
+
+\begin{center}
+$\|x-p_F(x)\|^2 =\|x\|2 -\|p_F(x)\|^2 = 0$,
+\end{center}
+
+et donc $x = p_F(x)$ ce qui montre que $x\in F$. Donc $F = E$ et finalement
+
+\begin{center}
+\shadowbox{
+la famille $(e_i)_{1\leqslant i\leqslant n}$ est une base orthonormée de $E$.
+}
+\end{center}
+
+\fincorrection
+\finexercice

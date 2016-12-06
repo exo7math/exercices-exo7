@@ -1,0 +1,40 @@
+\exercice{6679, queffelec, 2011/10/16}
+\enonce Pour $n\ge 1$ et $0\le k\le n$, on désigne par $C_n^k$ le
+coefficient binomial. Pour $r>0$, soit $c_r\colon t\mapsto re^{it}$, $t\in
+[0,2\pi]$.
+
+\begin{enumerate}  
+\item Montrer que 
+$$C_n^k={1\over 2i\pi}\int_{c_r}(1+z)^n{dz\over z^{k+1}}.$$
+En déduire que $C_{2n}^n\le 4^n$.
+
+\item Montrer que 
+$$C_{2n}^n={1\over 2i\pi}\int_{c_r}\left( {1\over z}
++2+z\right) ^n{dz\over z}$$
+(on pourra utiliser 1.). En déduire que 
+$$\sum_{n=0}^{+\infty}C_{2n}^n{1\over 5^n}={1\over
+2i\pi}\int_{c_r}{dz\over 3z-1-z^2)}=\sqrt 5 ,$$
+à condition que $r_1<r<r_2$, où $r_1<r_2$ sont les deux racines de
+$3z-1-z^2=0$.
+
+\item Montrer que
+$${1\over 2i\pi}\int_{c_r}(1+z)^n\left( 1+{1\over z}\right)^n{dz\over
+z}=\sum_{k=0}^n\left( C_n^k\right) ^2.$$
+En déduire que 
+$$\sum_{k=0}^n\left( C_n^k\right) ^2=C_{2n}^n.$$
+
+\item Montrer que
+$${1\over 2i\pi}\int_{c_1}{(z-1)^{2n}(z+1)^n\over z^{2n+1}}dz=
+\sum_{k=0}^n(-1)^kC_n^kC_{2n}^k.$$
+Montrer que si $z\in c_1^*$, $\vert z-1\vert ^2\vert z+1\vert \le
+{16\over 9}\sqrt 3$. En déduire que
+$$\sum_{k=0}^n(-1)^kC_n^kC_{2n}^k\le \left( {16\over 9}\sqrt 3\right)
+^n.$$
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\nocorrection
+
+\finexercice       

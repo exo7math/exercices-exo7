@@ -1,0 +1,29 @@
+\exercice{2806, burnol, 2009/12/15}
+\enonce
+Le Laplacien $\Delta = \frac{\partial^2}{\partial x^2}
++\frac{\partial^2}{\partial y^2}$ est un opérateur
+différentiel qui joue un rôle important en analyse
+complexe. Soit $f(z) = u(x,y) + i\, v(x,y)$ une fonction holomorphe sur
+un ouvert du plan complexe. On sait que $f$, donc $u$ et
+$v$, admettent des dérivées partielles de tous les
+ordres. En
+utilisant les équations de 
+Cauchy-Riemann, montrer que $u$ et $v$ vérifient l'équation de Laplace:
+\[ \frac{\partial^2 u}{\partial x^2}
++\frac{\partial^2 u}{\partial y^2} =0 \qquad
+\frac{\partial^2 v}{\partial x^2} +\frac{\partial^2
+v}{\partial y^2} =0\] On dit d'une fonction vérifiant
+l'équation de Laplace qu'elle est harmonique. La fonction
+holomorphe $f = u + i v$ est aussi une fonction harmonique
+puisque $\Delta(f) = \Delta(u) + i \Delta(v) = 0$.
+\finenonce
+\noindication
+\correction
+On a les \'equations de Cauchy-Riemann $\frac{\partial u}{\partial x} = \frac{\partial v}{\partial y}$
+et $\frac{\partial u}{\partial y} = -\frac{\partial v}{\partial x}$. D'o\`u :
+$$\Delta u = \frac{\partial }{\partial x}\frac{\partial u}{\partial x}+ \frac{\partial }{\partial y}\frac{\partial u}{\partial y}=
+\frac{\partial }{\partial x}\frac{\partial v}{\partial y}- \frac{\partial }{\partial y}\frac{\partial v}{\partial x}=0$$
+par le th\'eor\`eme de Schwarz. On proc\`ede de la m\^eme fa\c{c}on pour $v$ pour en d\'eduire
+qu'une fonction holomorphe est harmonique.
+\fincorrection
+\finexercice

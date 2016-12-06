@@ -1,0 +1,43 @@
+\exercice{570, bodin, 1998/09/01}
+\video{k8gZEvm5MQs}
+\enonce
+ On consid\`ere les deux suites :
+$$u_n =1+\frac{1}{2!}+\frac{1}{3!}+\cdots+\frac{1}{n!}\ ;\ n\in\N,$$
+$$v_n = u_n+\frac{1}{n!}\ ;\ n\in\N.$$
+\noindent Montrer que $(u_n)_n$ et $(v_n)_n$ convergent vers une m\^{e}me
+limite. Et montrer que cette limite est un \'el\'ement de $\R\backslash\Q$.
+\finenonce 
+
+\indication
+\begin{enumerate}
+  \item Montrer que $(u_n)$ est croissante et $(v_n)$ d\'ecroissante.
+  \item Montrer que $(u_n)$ est major\'ee et $(v_n)$ minor\'ee. Montrer que ces suites ont la m\^eme limite.
+  \item Raisonner par l'absurde : si la limite $\ell = \frac pq$
+alors multiplier l'in\'egalit\'e $u_q \leq \frac pq \leq v_q$  par $q!$ et raisonner avec des entiers.
+\end{enumerate}
+\finindication
+
+\correction
+\begin{enumerate}
+  \item La suite $(u_n)$ est strictement croissante, en effet $u_{n+1}-u_n = \frac{1}{(n+1)!} > 0$. La suite $(v_n)$ est strictement d\'ecroissante :
+$$v_{n+1}-v_n = u_{n+1}-u_n + \frac{1}{(n+1)!}-\frac{1}{n!}= \frac{1}{(n+1)!}+ \frac{1}{(n+1)!}-\frac{1}{n!}= \frac{1}{n!}(\frac 2n-1).$$
+Donc \`a partir de $n\geq 2$, la suite $(v_n)$ est strictement d\'ecroissante.
+  \item Comme $u_n \leq v_n \leq v_2$, alors $(u_n)$ est une suite croissante et major\'ee. Donc elle converge vers $\ell \in \Rr$.
+De m\^eme $v_n \geq u_n \geq u_0$, donc  $(v_n)$ est une suite d\'ecroissante et minor\'ee. Donc elle converge vers $\ell' \in \Rr$.
+De plus $v_n -u_n = \frac1{n!}$. Et donc $(v_n-u_n)$ tend vers $0$
+ce qui prouve que $\ell=\ell'$.
+  \item Supposons que $\ell \in \Qq$, nous \'ecrivons alors $\ell = \frac pq$ avec $p,q \in \Nn$. Nous obtenons pour $n\geq 2$:
+$$u_n \leq \frac pq \leq v_n.$$
+Ecrivons cette \'egalit\'e pour $n=q$: 
+$u_q \leq \frac pq \leq v_q$ et multiplions par $q!$:
+$q! u_q \leq q!\frac pq \leq q! v_q$. Dans cette double in\'egalit\'e toutes les termes sont des entiers ! De plus $v_q = u_q +\frac 1{q!}$ donc:
+$$q! u_q \leq q! \frac pq \leq q! u_q + 1.$$
+Donc l'entier $q! \frac pq$ est \'egal \`a l'entier $q! u_q$
+ou \`a $q! u_q + 1 = q! v_q$. Nous obtenons que $\ell = \frac pq$
+est \'egal \`a $u_q$ ou \`a $v_q$. Supposons par exemple que $\ell = u_q$,
+comme la suite $(u_n)$ est strictement croissante alors $u_q  < u_{q+1} < \cdots < \ell$, ce qui aboutit \`a une contradiction. Le m\^eme raisonnement s'applique en supposant $\ell = v_q$ car la suite $(v_n)$ est strictement d\'ecroissante. Pour conclure nous avons montré que $\ell$ n'est pas un nombre rationnel.
+\end{enumerate}
+
+En fait $\ell$ est le nombre $e = \exp(1)$.
+\fincorrection
+\finexercice

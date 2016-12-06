@@ -1,0 +1,26 @@
+\exercice{3192, quercia, 2010/03/08}
+
+\enonce[Polyn{\^o}me positif (Ens Ulm MP$^*$ 2003)]
+Soit~$P\in\R[X]$. Montrer~:
+
+($\forall\ x\ge 0,\ P(x) > 0$) $\Leftrightarrow$ ($\exists\ \ell \in\N$  tq $(X+1)^\ell P(X)$ est {\`a} coefficients strictement positifs).
+\finenonce
+
+\noindication
+
+\correction
+Le sens $\Leftarrow$ est trivial. Pour le sens $ \Rightarrow $, il suffit de v{\'e}rifier
+la propri{\'e}t{\'e} lorsque $P$ est irr{\'e}ductible, strictement positif sur~$\R^+$, et
+le seul cas non trivial est celui o{\`u} $P$ est de la forme~:
+$P = (X-a)^2 + b^2$ avec $a>0$, $b>0$. Dans ce cas, le coefficient de~$X^k$
+dans $(X+1)^\ell P(X)$ est~:
+$C_\ell^k(a^2+b^2) - 2aC_\ell^{k-1} + C_\ell^{k-2}$, en convenant que $C_x^y$
+vaut~$0$ si l'on n'a pas $0\le y\le x$. En mettant ce qui peut l'{\^e}tre en facteur
+et en ordonnant le reste suivant les puissances de~$k$, on
+est rammen{\'e} {\`a} montrer que la quantit{\'e}~:
+$$k^2(a^2+b^2+2a+1) - k((a^2+b^2)(2\ell+3) + 2a(\ell+2) + 1) + \ell^2(a^2+b^2)$$
+est strictement positive pour tout $k\in[[0,\ell+2]]$ si~$\ell$ est choisi convenablement.
+Or le discriminant par rapport {\`a}~$k$ est {\'e}quivalent {\`a} $-4\ell^2(2a+1)$ lorsque
+$\ell$ tend vers $+\infty$ donc un tel choix de~$\ell$ est possible.
+\fincorrection
+\finexercice 

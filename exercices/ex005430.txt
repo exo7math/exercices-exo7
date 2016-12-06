@@ -1,0 +1,24 @@
+\exercice{5430, exo7, 2010/07/06}
+\enonce[**]
+Soit $f(x)=\frac{x}{1-x^2}$. Calculer $f^{(n)}(0)$ en moins de $10$ secondes puis $f^{(n)}(x)$ pour $|x|\neq1$ en à peine plus de temps).
+\finenonce
+
+\noindication
+
+\correction
+$f$ est de classe $C^\infty$ sur son domaine $\Rr\setminus\{-1,1\}$ en tant que fraction rationelle et en particulier admet un développement limité à tout ordre en $0$. Pour tout entier naturel $n$, on a
+
+$$f(x)\underset{x\rightarrow0}{=}x+x^3+...+x^{2n+1}+o(x^{2n+1}),$$
+Par unicité des coefficients d'un développement limité et d'après la formule de \textsc{Taylor}-\textsc{Young}, on obtient
+
+\begin{center}
+\shadowbox{
+$\forall n\in\Nn,\;f^{(2n)}(0)=0\;\mbox{et}\;f^{(2n+1)}(0)=(2n+1)!.$
+}
+\end{center}
+Ensuite, pour $x\notin\{-1,1\}$, et $n$ entier naturel donné, 
+
+$$f^{(n)}(x)=\frac{1}{2}\left(\frac{1}{1-x}-\frac{1}{1+x}\right)^{(n)}(x)=\frac{n!}{2}\left(\frac{1}{(1-x)^{n+1}}-
+\frac{(-1)^{n}}{(1+x)^{n+1}}\right).$$
+\fincorrection
+\finexercice

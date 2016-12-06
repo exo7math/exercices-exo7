@@ -1,0 +1,44 @@
+\exercice{5719, rouget, 2010/10/16}
+\enonce[*** I]
+\label{ex:rou7bis}
+Calculer $\int_{0}^{1}\frac{t-1}{\ln t}\;dt$ (en écrivant $\int_{0}^{x}\frac{t-1}{\ln t}\;dt=\int_{0}^{x}\frac{t}{\ln t}\;dt-\int_{0}^{x}\frac{1}{\ln t}\;dt$).
+\finenonce
+
+\noindication
+
+\correction
+La fonction $f~:~t\mapsto\frac{t-1}{\ln t}$ est continue sur $]0,1[$, prolongeable par continuité en $0$ et $1$ et donc est intégrable sur $]0,1[$.
+
+Soit $x\in]0,1[$. Chacune des deux fonctions $t\mapsto\frac{t}{\ln t}$  et $t\mapsto\frac{1}{\ln t}$  se prolonge par continuité en $0$ et est ainsi intégrable sur $]0,x]$. On peut donc écrire 
+
+\begin{center}
+$\int_{0}^{x}\frac{t-1}{\ln t}\;dt=\int_{0}^{x}\frac{t}{\ln t}\;dt -\int_{0}^{x}\frac{1}{\ln t}\;dt$.
+\end{center}
+
+Dans la première intégrale, on pose $u = t^2$ et on obtient $\int_{0}^{x}\frac{t}{\ln t}\;dt =\int_{0}^{x}\frac{2t}{\ln(t^2)}\;dt=\int_{0}^{x^2}\frac{1}{\ln u}\;du$ et donc
+
+\begin{center}
+$\int_{0}^{x}\frac{t-1}{\ln t}\;dt=\int_{0}^{x^2}\frac{1}{\ln t}\;dt -\int_{0}^{x}\frac{1}{\ln t}\;dt=\int_{x}^{x^2}\frac{1}{\ln t}\;dt$.
+\end{center}
+
+On note alors que, puisque $x\in]0,1[$, $x^2 < x$. Pour $t\in[x^2,x]$, on a $t\ln t < 0$ et donc $\frac{x}{t\ln t}\leqslant\frac{t}{t\ln t}=\frac{1}{\ln t}\leqslant\frac{x^2}\ln t$ puis par croissance de l'intégrale, $\int_{x^2}^{x}\frac{x}{t\ln t}\;dt\leqslant\int_{x^2}^{x}\frac{1}{\ln t}\;dt\leqslant\int_{x^2}^{x}\frac{x^2}{t\ln t}\;dt$ et donc
+
+\begin{center}
+$x^2\int_{x}^{x^2}\frac{1}{t\ln t}\;dt\leqslant\int_{x}^{x^2}\frac{1}{\ln t}\;dtx\leqslant x\int_{x}^{x^2}\frac{1}{t\ln t}\;dt$
+\end{center}
+
+Maintenant, $\int_{x}^{x^2}\frac{1}{t\ln t}\;dt =\ln|\ln(x^2)|-\ln|\ln x|=\ln2$ et on a montré que, pour tout réel $x$ de $]0,1[$, 
+
+\begin{center}
+$x^2\ln2\leqslant\int_{0}^{x}\frac{t-1}{\ln t}\;dt\leqslant x\ln2$
+\end{center}
+
+Quand $x$ tend vers $1$, on obtient
+ 
+ \begin{center}
+ \shadowbox{
+$\int_{0}^{1}\frac{t-1}{\ln t}\;dt =\ln2$.
+}
+\end{center}
+\fincorrection
+\finexercice

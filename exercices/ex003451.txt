@@ -1,0 +1,114 @@
+\exercice{3451, quercia, 2010/03/10}
+ \enonce[Calcul de déterminants]
+ 
+ Calculer les déterminants suivants :
+ 
+  \begin{enumerate}
+   \item $\begin{vmatrix}  x &a &b &x \cr                                      %+---------+
+                 b &x &x &a \cr                                      %|  x,a,b  |
+                 x &b &a &x \end{vmatrix}$.                                      %+---------+
+ 
+ 
+   \item $\begin{vmatrix} a-b-c &2a    &2a    \cr                      %+-----------------+
+                2b    &b-c-a &2b    \cr                      %|  a-b-c, 2a, 2a  |
+                2c    &2c    &c-a-b \cr \end{vmatrix}$.                  %+-----------------+
+     
+ 
+   \item $\begin{vmatrix} a+b     &b+c     &c+a     \cr                  %+---------------+
+                a^2+b^2 &b^2+c^2 &c^2+a^2 \cr                  %|  a+b b+c c+a  |
+                a^3+b^3 &b^3+c^3 &c^3+a^3 \cr \end{vmatrix}$.              %+---------------+
+   
+ 
+   \item $\begin{vmatrix} a+b &ab &a^2+b^2 \cr                         %+-----------------+
+                b+c &bc &b^2+c^2 \cr                         %|  a+b ab a¿+b¿   |
+                c+a &ca &c^2+a^2 \cr \end{vmatrix}
+                $.                     %+-----------------+
+ 
+ 
+   \item $\begin{vmatrix} a^2 &b^2 &ab  \cr                                %+-------------+
+                b^2 &ab  &a^2 \cr                                %|  a¿ b¿ ab   |
+                ab  &a^2 &b^2 \cr \end{vmatrix}$.                            %+-------------+
+ 
+   \item $\begin{vmatrix}   a & b      &        &(0)  \cr     %+-------------------------+
+                   c & \ddots & \ddots       \cr     %|  Matrice tridiagonale   |
+                     & \ddots & \ddots & b   \cr     %+-------------------------+
+                  (0)&        & c      & a   \cr \end{vmatrix}$.
+     \label{tridiag}
+ 
+   \item $\begin{vmatrix}a      &b       &\dots   &b       \cr               %+-----------+
+               b      &\ddots  &(0)     &\vdots  \cr               %|  anneau   |
+               \vdots &(0)     &\ddots  &b       \cr               %+-----------+
+               b      &\dots   &b       &a       \cr\end{vmatrix}$.
+     
+                                                   %+---------------------------+
+                                                   %|  Déterminants de Pascal   |
+                                                   %+---------------------------+
+   \item $\begin{vmatrix} C_n^0\hfill  & C_n^1\hfill  & \dots & C_n^p\hfill  \cr
+                C_{n+1}^0    & C_{n+1}^1    & \dots & C_{n+1}^p    \cr
+                \vdots       & \vdots       &       & \vdots       \cr
+                C_{n+p}^0    & C_{n+p}^1    & \dots & C_{n+p}^p    \cr \end{vmatrix}$.
+ 
+ 
+                                                                %+--------------+
+                                                                %|  ai+bi, bi   |
+                                                                %+--------------+
+   \item $\begin{vmatrix}
+               a_1 + b_1 & b_1       & \dots  & \dots  & b_1       \cr
+               b_2       & a_2 + b_2 & b_2    & \dots  & b_2       \cr
+               \vdots    &           & \ddots &        & \vdots    \cr
+               \vdots    &           &        & \ddots & b_{n-1}   \cr
+               b_n       & \dots     & \dots  & b_n    & a_n + b_n \cr \end{vmatrix}$.
+     
+      
+   \item $\begin{vmatrix} a_1-b_1 &\dots &a_1-b_n \cr                        %+-----------+
+                \vdots  &\dots &\vdots  \cr                        %|   ai-bj   |
+                a_n-b_1 &\dots &a_n-b_n \cr \end{vmatrix}$, $(n \ge 3)$.       %+-----------+
+     
+ 
+   \item $\begin{vmatrix} 1     & 2     & \dots & n     \cr   %+--------------------------+
+                2     & 3     & \dots & 1     \cr   %|  Déterminant circulant   |
+                \vdots& \vdots&       & \vdots\cr   %+--------------------------+
+                n     & 1     & \dots & n-1   \cr\end{vmatrix}$.
+ 
+   \item $\begin{vmatrix} 0      &1     &2      &\dots  &n-1     \cr         %+-----------+
+                1      &0     &1      &       &\vdots  \cr         %|   |i-j|   |
+                2      &1     &0      &\ddots &2       \cr         %+-----------+
+                \vdots &      &\ddots &\ddots &1       \cr
+                n-1    &\dots &2      &1      &0       \cr\end{vmatrix}$.
+   
+ 
+ 
+ Pour \ref{tridiag} : Chercher une relation de récurrence linéaire d'ordre 2.
+ On notera $\alpha$ et $\beta$ les racines dans $\C$ de l'équation
+ caractéristique, et on exprimera le déterminant en fonction de $\alpha$ et
+ $\beta$.
+ \end{enumerate}
+ \finenonce
+ 
+ \noindication
+ 
+ \correction
+ Notation : $\varepsilon_n = \begin{cases}1 &\text{si}n \equiv 0 \text{ ou  }1 (\mathrm{mod}\, 4) \cr
+                                   -1 &\text{sinon.}\end{cases}$
+ 
+ \begin{enumerate}
+   \item $(b-a)^2(a+b+2x)(a+b-2x)$.
+   \item $(a+b+c)^3$
+   \item $2abc(a-b)(b-c)(c-a)$
+   \item $(a-b)(b-c)(c-a)(ab+ac+bc)$.
+   \item $-(a^3-b^3)^2$.
+   \item  $\frac {\alpha^{n+1} - \beta^{n+1}}{\alpha - \beta}$
+              où $\alpha \ne \beta$ sont les racines de $X^2 - aX + bc = 0$.
+              \par
+              $(n+1)\left(\frac a2\right)^n$ si $\alpha = \beta$.
+   \item $a^{n-3}(a-b)\bigl(a^2 + ab -2(n-2)b^2\bigr)$.
+   \item 1.
+   \item $a_1 a_2 \dots a_n\left(1+\frac{b_1}{a_1}+ \dots
+              + \frac{b_n}{a_n}\right)$.
+   \item 0
+   \item $\varepsilon_n \frac {n^{n-1}(n+1)}2$.
+   \item $(-1)^{n-1}(n-1)2^{n-2}$.
+ \end{enumerate}
+  \fincorrection
+ 
+ \finexercice

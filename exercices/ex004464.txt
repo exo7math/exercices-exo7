@@ -1,0 +1,35 @@
+\exercice{4464, quercia, 2010/03/14}
+\enonce[$u_{n+1}/u_n = (n+a)/(n+b)$]
+
+Soit $(u_n)$ une suite définie par la donnée de $u_0 \in \R^*$ et la
+relation : $\forall\ n\in\N,\ \frac{u_{n+1}}{u_n} = \frac{n+a}{n+b}$
+où $a$, $b$ sont deux constantes réelles ($-a,-b\notin\N$).
+
+\begin{enumerate}
+  \item Montrer que $u_n$ est de signe constant à partir d'un certain rang.
+  \item On pose $v_n = (n+b-1)u_n$. \'Etudier la convergence de la suite $(v_n)$
+    (on introduira la série de terme général $\ln(v_{n+1})-\ln(v_n)$).
+    
+  \item En déduire que la série $\sum u_n$ converge si et seulement si $a-b+1 < 0$
+    et calculer sa somme en fonction de $a,b,u_0$.
+    
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item 
+  \item $\ln(v_{n+1})-\ln(v_n) = \ln\left(1+\frac{a-b+1}{n+b-1}\right)  \Rightarrow 
+             \begin{cases} \text{si } a-b+1 > 0, v_n\to+\infty \cr
+                     \text{si } a-b+1 = 0, v_n = \text{cste}\cr
+                     \text{si } a-b+1 < 0, v_n\to0.\cr \end{cases}$
+  \item $(n+b)u_{n+1} - (n+a)u_n = 0  \Rightarrow 
+              (n+b)u_{n+1} + (b-a-1)\sum_{k=1}^n u_k - au_0 = 0  \Rightarrow 
+              \sum_{k=0}^\infty u_k = \frac{(b-1)u_0}{b-a-1}$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

@@ -1,0 +1,27 @@
+\exercice{5227, rouget, 2010/06/30}
+\enonce[**]
+Etudier la suite $(u_n)$ définie par $\sqrt{n+1}-\sqrt{n}=\frac{1}{2\sqrt{n+u_n}}$.
+\finenonce
+
+\noindication
+
+\correction
+Soit $n\in\Nn$.
+
+\begin{align*}
+\frac{1}{2\sqrt{n+u_n}}=\sqrt{n+1}-\sqrt{n}&\Leftrightarrow 2\sqrt{n+u_n}=\frac{1}{\sqrt{n+1}-\sqrt{n}}\Leftrightarrow2\sqrt{n+u_n}=\sqrt{n+1}+\sqrt{n}\\
+ &4(n+u_n)=(\sqrt{n+1}+\sqrt{n})^2\Leftrightarrow u_n=-n+\frac{1}{4}(2n+1+2\sqrt{n(n+1)})\\
+ &\Leftrightarrow u_n=\frac{1}{4}(-2n+1+2\sqrt{n(n+1)})
+\end{align*}
+Par suite, quand $n$ tend vers $+\infty$,
+
+\begin{align*}
+u_n&=-\frac{n}{2}+\frac{1}{4}+\frac{1}{2}\sqrt{n^2+n}=
+\frac{1}{4}+\frac{n}{2}\left(\sqrt{1+\frac{1}{n}}-1\right)=\frac{1}{4}+\frac{n}{2}\frac{1/n}{\sqrt{1+\frac{1}{n}}+1}\\
+ &=
+\frac{1}{4}+\frac{1}{2}\frac{1}{\sqrt{1+\frac{1}{n}}+1}=\frac{1}{4}+\frac{1}{4}+o(1)=\frac{1}{2}+o(1).
+\end{align*}
+La suite $(u_n)$ converge et a pour limite $\frac{1}{2}$.
+
+\fincorrection
+\finexercice

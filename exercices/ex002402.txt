@@ -1,0 +1,43 @@
+\exercice{2402, mayer, 2003/10/01}
+\enonce[Cours] 
+Soit $E$ un espace norm\'e et $F$ un espace de Banach. Alors
+${\cal L}(E,F)$ est aussi un espace de Banach.
+\finenonce
+
+\noindication
+
+\correction
+C'est du cours, mais il est important de savoir rédiger ceci correctement.
+Soit $(f_n)_n$ une suite de Cauchy de ${\cal L}(E,F)$.
+\begin{enumerate}
+  \item Trouvons d'abord le candidat à la limite.
+Par définition d'une suite de Cauchy, nous avons :
+$$\forall \epsilon >0 \quad \exists N \in \Nn \quad \forall p,q \ge N \quad \| f_p-f_q\| <\epsilon.$$
+Fixons $x\in E$, alors 
+$$\forall \epsilon >0 \quad \exists N \in \Nn \quad \forall p,q \ge N \quad \| f_p(x)-f_q(x)\|_F <\epsilon \|x\|_E.$$
+Quitte à poser $\epsilon = \frac{\epsilon'}{\|x\|}$ ($x$ est fixé !, si $x=0$ c'est trivial) alors on a montrer :
+$$\forall \epsilon' >0 \quad \exists N \in \Nn \quad \forall p,q \ge N  \quad \| f_p(x)-f_q(x)\|_F <\epsilon'.$$
+Donc la suite $(f_n(x))_n$ est une suite de Cauchy de $F$.
+Comme $F$ est complet alors cette suite converge, notons $f(x)$ sa limite.
+
+  \item Nous avons construit une fonction $f :E\longrightarrow F$. 
+Montrons que $f$ est dans l'espace ${\cal L}(E,F)$, c'est-à-dire que
+$f$ est linéaire. Comme pour tout $n$, $f_n$ est linéaire alors, pour tout
+$x,y\in E$, $\lambda,\mu\in \Rr$ on a
+$$f_n(\lambda x +\mu y) = \lambda f_n(x) + \mu f_n (y).$$
+\`A la limite ($n\rightarrow +\infty$) nous avons 
+$$f(\lambda x +\mu y) = \lambda f(x) + \mu f (y),$$
+donc $f$ est dans ${\cal L}(E,F)$.
+
+  \item Il reste à montrer que $(f_n)$ converge bien vers $f$ (ce qui à priori n'est pas évident). Revenons à la définition d'une suite de Cauchy (écrit d'une fa\c{c}on un peu différente) :
+$$\forall \epsilon >0 \quad \exists N \in \Nn \quad \forall p \ge N \quad \forall k \ge0\quad \| f_p-f_{p+k}\| <\epsilon.$$
+Lorsque l'on fixe $p$ et que l'on fait tendre $k$ vers $+\infty$ alors
+ $f_p-f_{p+k}$ tend vers $f_p-f$.
+Donc en passant à la limite nous avons :
+$$\forall \epsilon >0 \quad \exists N \in \Nn \quad \forall p \ge N \quad  \| f_p-f\| <\epsilon.$$
+Donc $(f_n)$ converge vers $f$ pour la norme $\| . \|$ sur ${\cal L}(E,F)$.
+
+\end{enumerate}
+\emph{Remarque :} dans certains exercices il peut être utile de d'abord montrer le troisième point avant le deuxième.
+\fincorrection
+\finexercice

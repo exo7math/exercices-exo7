@@ -1,0 +1,66 @@
+\exercice{5890, rouget, 2010/10/16}
+\enonce[**]
+Montrer que $\begin{array}[t]{cccc}
+\varphi~:&\Rr^2&\rightarrow&\Rr^2\\
+ &(x,y)&\mapsto&(e^x-e^y , x+y)
+ \end{array}$ est un $C^1$-difféomorphisme de $\Rr^2$ sur lui-même.
+\finenonce
+
+\noindication
+
+\correction
+Soit $(x,y,z,t)\in\Rr^4$.
+
+\begin{align*}\ensuremath
+\varphi(x,y)=(z,t)&\Leftrightarrow\left\{
+\begin{array}{l}
+e^x-e^y=z\\
+x+y=t
+\end{array}
+\right.\Leftrightarrow\left\{
+\begin{array}{l}
+y=t-x\\
+e^x-e^{t-x}=z
+\end{array}
+\right.\Leftrightarrow\left\{
+\begin{array}{l}
+y=t-x\\
+(e^x)^2-ze^x-e^t=0
+\end{array}
+\right.\\
+ &\Leftrightarrow\left\{
+\begin{array}{l}
+y=t-x\\
+e^x=z-\sqrt{z^2+4e^t}\;\text{ou}\;e^x=z+\sqrt{z^2+4e^t}
+\end{array}
+\right.\\
+&\Leftrightarrow\left\{
+\begin{array}{l}
+e^x=z+\sqrt{z^2+4e^t}\\
+y=t-x
+\end{array}
+\right.\;(\text{car}\;z-\sqrt{z^2+4e^t}<z-\sqrt{z^2}=z-|z|\leqslant0)\\
+&\Leftrightarrow\left\{
+\begin{array}{l}
+x=\ln(z+\sqrt{z^2+4e^t})\\
+y=t-\ln(z+\sqrt{z^2+4e^t})
+\end{array}
+\right.\;(\text{car}\;z+\sqrt{z^2+4e^t}>z+\sqrt{z^2}=z+|z|\geqslant0).
+\end{align*}
+
+Ainsi, tout élément $(z,t)\in\Rr^2$ a un antécédent et un seul dans $\Rr^2$ par $\varphi$ et donc $\varphi$ est une bijection de $\Rr^2$ sur lui-même.
+
+La fonction $\varphi$ est de classe $C^1$ sur $\Rr^2$ de jacobien $J_\varphi(x,y)=\left|
+\begin{array}{cc}
+e^x&-e^y\\
+1&1
+\end{array}
+\right|=e^x+e^y$. Le jacobien de $\varphi$ ne s'annule pas sur $\Rr^2$. En résumé, $\varphi$ est une bijection de $\Rr^2$ sur lui-même, de classe $C^1$ sur $\Rr^2$ et le jacobien de $\varphi$ ne s'annule pas sur $\Rr^2$. On sait alors que
+
+\begin{center}
+\shadowbox{
+$\varphi$ est un $C^1$-difféomorphisme de $\Rr^2$ sur lui-même.
+}
+\end{center}
+\fincorrection
+\finexercice

@@ -1,0 +1,57 @@
+\exercice{2391, mayer, 2003/10/01}
+\enonce
+Dans $\Rr^2$ on consid\`ere l'ensemble $A= \{ (x, \sin(
+\frac{1}{x}))\; ; \; x >0 \}$.
+\begin{enumerate}
+\item Montrer que $A$ est une partie connexe et connexe par arcs
+de $\Rr^2$.
+\item D\'eterminer $\overline{A}$ et justifier que
+$\overline{A}$ est connexe.
+\item Montrer que $\overline{A} $ n'est pas connexe par arcs.
+\end{enumerate}
+\finenonce
+
+\indication
+\begin{enumerate}
+  \item Faire un dessin !!
+
+  \item Voir l'exercice \ref{exocon}.
+
+  \item Raisonner par l'absurde. Prendre un chemin qui relie le point $(0,0)$ 
+au point $(\frac{1}{2\pi},0)$ (par exemple). Ce chemin va quitter à un instant $t_0$ le segment 
+$\{0\}\times [-1,1]$. Chercher une contradiction à ce moment l\`a.
+
+\end{enumerate}
+\finindication
+
+
+\correction
+\begin{enumerate}
+  \item Si $(x_1, \sin \frac{1}{x_1})$ et $(x_2, \sin \frac{1}{x_2})$
+sont deux points  de $A$ alors le graphe au dessus de $[x_1,x_2]$ définie un chemin reliant ces deux points. Plus précisément le chemin est l'application
+$\gamma : [x_1,x_2] \longrightarrow \Rr^2$ définie par $\gamma(t) = (t,\sin \frac 1t)$. Donc $A$ est connexe par arcs donc connexe.
+  \item $\bar A = A \cup (\{0\}\times [-1,1])$. On peut utiliser l'exercice \ref{exocon} pour montrer que $\bar A$ est connexe. Ici nous allons le montrer directement.
+Supposons, par l'absurde, que $\bar A \subset U\cup V$ avec $U$ et $V$ des ouverts de $\Rr^2$ disjoints, d'intersection non vide avec $A$.
+Comme $\{0\}\times [-1,1]$ est connexe il est entièrement inclus dans un des ouverts, supposons qu'il soit inclus dans $U$. Comme $A$ est connexe alors il est inclus dans un des ouverts, donc il est inclus dans $V$ (car s'il était inclus dans $U$, tout $\bar A$ serait contenu dans $U$). 
+Trouvons une contradiction en prouvant qu'en fait $U\cap A \neq \varnothing$.
+En effet $U$ est un ouvert et $(0,0) \in U$, soit $B((0,0),\epsilon)$ une boule contenue dans $U$. Pour $n$ suffisamment grand on a $x_n = \frac{1}{2\pi n} < \epsilon$ avec $\sin \frac 1 {x_n} = \sin {2\pi n} =0$ donc
+$(x_n,\sin \frac 1{x_n})= (x_n,0)$ est un élément de $A$ et de $U$.
+Comme $V$ contient $A$ alors $U\cap V \neq \varnothing$. Ce qui fournit la contradiction.
+
+  \item Montrons que $\bar A$ n'est pas connexe par arcs. Soit $O = (0,0)$ et $P = (\frac{1}{2\pi},0)$ deux points de $\bar A$, par l'absurde supposons qu'il existe un chemin $\gamma : [0,1]  \longrightarrow \bar A$ tel que $\gamma(0)=O$ et $\gamma(1)=P$. On décompose en coordonnées $\gamma(t) = (\gamma_1(t),\gamma_2(t)) \in \Rr^2$. $\gamma_1^{-1}(\{0\})$ est un fermé car $\gamma_1$ est continue et de plus il est non vide car $\gamma_1(0)=0$.
+Soit $t_0 = \sup \gamma_1^{-1}(\{0\})$, comme l'ensemble est fermé alors $\gamma_1(t_0)=0$ et de plus $t_0 < 1$ car $\gamma_1(1) = \frac 1 {2\pi}$.
+
+On regarde ce qui se passe au temps $t_0$, c'est l'instant ou notre chemin ``quitte'' l'ensemble $\{0\}\times [-1,1]$. Notons $y_0 = \gamma_2(t_0)$.
+Comme $\gamma_2$ est continue en $y_0$ et pour $\epsilon = \frac 12$ il existe $\eta>0$ tel que $(|t-t_0|<\eta \Rightarrow |\gamma_2(t)-y_0|<\frac12)$.
+Choisissons $t_1\in ]t_0,t_0+\eta[$. Alors $t_1>t_0$ donc
+$\gamma_1(t_1) > 0$. Donc le point $\gamma(t_1)=(\gamma_1(t_1),\gamma_2(t_1))$ est dans $A$ (et plus seulement dans $\bar A$).
+
+Supposons par exemple $y_0 \le 0$, alors 
+quand $x$ parcourt $]\gamma_1(t_0),\gamma_1(t_1)[$, $\sin \frac 1x$ atteint
+la valeur $1$ une infinité de fois. Donc il existe $t_2 \in ]t_0,t_1[$ tel que
+$\gamma_2(t_2)=1$. Donc $\gamma(t_2) = (\gamma_1(t_2),1)$.
+Mais comme $|t_2-t_0|< \eta$ alors $|\gamma_2(t_2)-y_0|=|1-y_0| > \frac 12$.
+Ce qui contredit la continuité de $\gamma_2$. Nous avons obtenu une contradiction donc $\bar A$ n'est pas connexe par arcs.
+\end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,75 @@
+\exercice{539, bodin, 2001/11/01}
+\video{WJahdgKkrdc}
+\enonce
+ On consid\`ere la fonction $ f : \R \longrightarrow \R$ d\'efinie
+par
+$$f (x) = \frac{x^{3}}{9} + \frac{2 x}{3} + \frac{1}{9}$$
+et on d\'efinit la suite $(x_{n})_{n \geq 0}$ en posant $x_{0} =
+0$ et $x_{n + 1} = f (x_{n})$ pour $n \in \N.$
+\begin{enumerate}
+  \item Montrer que l'\'equation $x^{3} - 3 x + 1 = 0$ poss\`ede une
+solution unique $\alpha \in ]0, 1\slash 2[.$
+  \item Montrer que l'\'equation $f (x) = x$ est \'equivalente \`a
+l'\'equation $x^{3} - 3 x + 1 = 0$ et en d\'eduire que $\alpha $
+est l'unique solution de l'\'equation $f (x) = x$ dans
+l'intervalle $[0 , 1\slash 2].$
+  \item Montrer que  la fonction $f$ est croissante sur $\R^{+}$ et que $f (\R^{+}) \subset
+\R^{+}$. En
+d\'eduire que la suite $(x_{n})$ est croissante.
+   \item Montrer que
+$f (1\slash 2) < 1 \slash 2$ et en d\'eduire que $ 0 \leq  x_{n} <
+1 \slash 2$ pour tout $ n \geq 0.$
+  \item  Montrer que la suite
+$(x_{n})_{n \geq 0}$ converge vers $\alpha.$
+ \end{enumerate}
+\finenonce 
+
+\indication
+Pour la premi\`ere question : attention on ne demande pas de calculer $\alpha$ !
+L'existence vient du th\'eor\`eme des valeurs interm\'ediaires. L'unicit\'e vient du fait que la fonction est strictement croissante.
+  
+
+Pour la derni\`ere question : il faut d'une part montrer que $(x_n)$ converge et on note $\ell$ sa limite
+et d'autre part il faut montrer que $\ell = \alpha$.
+\finindication
+
+\correction
+\begin{enumerate}
+\item
+ La fonction polynomiale $P (x) := x^{3} - 3 x + 1$ est continue et
+d\'erivable sur $\R$ et sa d\'eriv\'ee est $P' (x) = 3 x^{2} - 3,$
+qui est strictement n\'egative sur $]- 1 , + 1[.$ Par cons\'equent
+$P$ est strictement d\'ecroissante sur $]- 1 , + 1[.$ Comme $P (0)
+= 1 > 0$ et $P (1\slash 2) = - 3 \slash 8 < 0$ il en r\'esulte
+gr\^ace au th\'eor\`eme des valeurs interm\'ediaires qu'il existe
+un r\'eel unique $\alpha \in ]0,1\slash 2[$ tel que $P (\alpha) =
+0.$
+\item Comme $ f (x) - x = (x^{3} - 3 x + 1) \slash 9$ il en
+r\'esulte que $\alpha$ est l'unique solution de l'\'equation $f
+(x) = x$ dans $]0,1\slash 2[.$
+\item
+Comme $f' (x) = (x^{2} +2)\slash 3 > 0$ pour tout $x \in \R,$ on
+en d\'eduit que $f$ est strictement croissante sur $\R.$ Comme $f
+(0) = 1 \slash 9$ et $\lim_{x \to + \infty} f (x) = + \infty,$ on
+en d\'eduit que $ f (\R^{+}) = [1\slash 9 , + \infty[.$ Comme
+$x_{1} = f (x_{0}) = 1 \slash 9  >  0$ alors $x_1 > x_0=0$ ;   $f$ étant
+strictement croissante sur $\R^{+},$ on en d\'eduit par
+r\'ecurrence que $x_{n + 1} > x_{n}$ pour tout $n \in \N$ ce qui
+prouve que la suite $(x_{n})$ est croissante.
+\item  Un calcul simple montre que  $f (1 \slash 2) < 1
+\slash 2.$ Comme $0 = x_{0} < 1 \slash 2$ et que $f$ est
+croissante on en d\'eduit par r\'ecurrence que $ x_{n} < 1 \slash
+2$ pour tout $n \in \N$ (en effet si $x_n < 1/2$ alors 
+$x_{n+1} = f(x_n) < f(1/2) < 1/2$).
+\item D'apr\`es les questions
+pr\'ec\'edentes, la suite $(x_{n})$  est croissante et major\'ee,
+elle converge donc vers un nombre r\'eel $\ell \in ]0, 1 \slash 2].$
+De plus comme $x_{n + 1} = f (x_{n})$ pour tout $n \in \N,$ on en
+d\'eduit par continuit\'e de $f$ que $\ell  = f (\ell).$ Comme $f
+(1 \slash 2) < 1\slash 2,$ On en d\'eduit que $\ell \in ]0, 1
+\slash 2[$ et v\'erifie l'\'equation $f (\ell) = \ell.$ D'apr\`es
+la question 2, on en d\'eduit que $\ell = \alpha$ et donc $(x_{n})
+$ converge vers $\alpha.$
+\end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,52 @@
+\exercice{818, ridde, 1999/11/01}
+
+\enonce[Int\'egrales de Wallis]
+  Soit $I_{n} = \int_0^{\frac{\pi}2} \sin ^n tdt$.
+\begin{enumerate}
+\item \'Etablir une relation de r\'ecurrence entre $I_{n}$ et $I_{n + 2}$.
+\item En d\'eduire $I_{2p}$ et $I_{2p + 1}$.
+\item Montrer que $ (I_{n})_{n \in \Nn}$ est d\'ecroissante et strictement positive.
+\item En d\'eduire que $I_{n} \sim I_{n + 1}$.
+\item Calculer $nI_{n}I_{n + 1}$.
+\item Donner alors un \'equivalent simple de $I_{n}$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+
+\item Par IPP, $I_{n+2} = \frac{n+1}{n+2} I_n$.
+
+\item $I_0 = \pi/2$ et $I_1 = 1$ et
+\[ 
+I_{2p} = \frac{ (2p-1) \times (2p-3) \times \cdots \times 1}{2p \times (2p-2) \times \cdots \times 2} I_0
+= \frac{(2p)!}{2^{2p} (p!)^2} \frac{\pi}{2} ,\quad
+I_{2p+1} = \frac{2p \times (2p-2) \times \cdots \times 2}{ (2p+1) \times (2p-1) \times \cdots \times 1} I_1
+= \frac{2^{2p} (p!)^2}{(2p+1)!}
+\]
+
+\item En regardant l'intégrand.
+
+\item D'après la question précédente, $0 < I_{n+2} \leq I_{n+1} \leq I_n$ donc
+\[
+\frac{n+1}{n+2} = \frac{I_{n+2}}{I_n} \leq \frac{I_{n+1}}{I_n} \leq 1
+\]
+par conséquent $\frac{I_{n+1}}{I_n} \xrightarrow[n\to \infty]{} 1$.
+
+\item 
+\[
+(2p-1) I_{2p-1} I_{2p} = \frac{2p-1}{2 p} \frac{\pi}{2}
+, \quad
+2p I_{2p} I_{2p+1} = \frac{2p}{2p+1} \frac{\pi}{2}
+\]
+soit $n I_n I_{n+1} = \frac{n}{n+1} \frac{\pi}{2}$, ce qui peut aussi se démontrer par récurrence.
+
+\item Comme $\frac{\pi}{2(n+1)} I_n I_{n+1} \sim I_n^2$ on en déduit que $I_n \sim \sqrt{\frac{\pi}{2n}}$.
+
+\end{enumerate}
+\fincorrection
+
+\finexercice
+

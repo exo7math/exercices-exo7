@@ -1,0 +1,57 @@
+\exercice{6929, ruette, 2013/01/24}
+\enonce  
+On mesure une certaine grandeur physique $G$ avec un appareil dont la
+précision est caractérisée par l'écart-type $\sigma$. On fait l'hypothèse que 
+les mesures suivent une loi normale.
+\begin{enumerate}
+\item
+On effectue une seule mesure, on trouve $g_{1} = 1,364$.
+On suppose connue la précision de l'appareil de mesure : 
+$\sigma=4,3.10^{-3}$ (unité arbitraire).
+%Donner la meilleure estimation possible de $G$.
+Déterminer un intervalle de confiance contenant, avec une probabilité de 
+90\%, la valeur $G$.
+\item
+On ignore la précision de l'appareil de mesure.
+On effectue 5 mesures. On trouve : 
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+1,365&1,371&1,368&1,359&1,362\\\hline
+%1.366	&1.365&1.367&1.363&1.364\\\hline
+\end{tabular}
+\end{center}
+ 
+Donner des estimations  de $G$ et de $\sigma$.
+Déterminer un intervalle de confiance contenant, avec une probabilité de 
+90\%, la valeur $G$.
+\end{enumerate}
+\finenonce
+\noindication
+
+\correction
+\begin{enumerate}
+\item
+La meilleure estimation de $G$ est la valeur moyenne mesurée, $g_1 =1,364$. 
+Pour donner un intervalle de confiance, on fait l'hypothèse que les mesures 
+suivent une loi normale d'espérance $G$ et d'écart-type $\sigma$. 
+La probabilité que l'intervalle $[g_1 -1,645\sigma_{pop},g_1 +1,645\sigma_{pop}]$ 
+ne contienne pas $G_v$ est inférieure à $0,1$. On conclut que $[1,357;1,371]$ 
+est un intervalle de confiance relatif à $G$ au seuil de 90\%.
+\item
+La meilleure estimation de $G$ est la valeur moyenne mesurée, $\bar{g}=\frac{1}{10}(g_1 +\cdots+g_{5})=1,365$. Soit 
+$\bar\sigma^2=\frac{1}{4}\sum_{i=1}^5(g_i-\bar g)^2\simeq 2,25 .10^{-5}$.
+La meilleure estimation de $\sigma$ est
+$\bar\sigma\simeq 4,7 .10^{-3}$.
+
+Comme $\frac{1}{5}(X_1 +\cdots+X_{5})$ suit une loi normale d'espérance $G$ 
+et de variance $\frac{1}{25}(\text{Var}(X_1 )+\cdots+\text{Var}(X_{5}))=\frac{1}{5}\sigma^{2}$, 
+la probabilité que l'intervalle 
+$[\bar{g} -1,645\frac{\sigma}{\sqrt{5}},\bar{g} +1,645\frac{\sigma}{\sqrt{5}}]$ 
+ne contienne par $G$ est inférieure à $0,1$. 
+Si on estime $\sigma$ par $\bar\sigma$, on trouve que $[1,363;1,367]$ est un 
+intervalle de confiance relatif à $G$ au seuil de 90\%.
+\end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,33 @@
+\exercice{5835, rouget, 2010/10/16}
+\enonce[** I]
+Equation cartésienne du cylindre de révolution $(\mathcal{C})$ de rayon $R$ et d'axe $(\mathcal{D})$ d'équations $\left\{
+\begin{array}{l}
+x=z+2\\
+y=z+1
+\end{array}
+\right.$. Déterminer $R$ pour que la droite $(Oz)$ soit tangente au cylindre.
+\finenonce
+
+\noindication
+
+\correction
+Un repère de $(\mathcal{D})$ est $\left(A,\overrightarrow{u}\right)$ où $A(2,1,0)$ et $\overrightarrow{u}(1,1,1)$.
+
+\begin{align*}\ensuremath
+M\in(\mathcal{C})&\Leftrightarrow d(M,(\mathcal{D})) =R\Leftrightarrow\|\overrightarrow{AM}\wedge\overrightarrow{u}\|^2 = R^2\|\overrightarrow{u}\|^2\Leftrightarrow\|(x-2,y-1,z)\wedge(1,1,1)\|^2 = R^2\|(1,1,1)\|^2\\
+ &\Leftrightarrow (y-z-1)^2 + (x-z-2)^2 + (x-y-1)^2 = 3R^2 \\
+ &\Leftrightarrow3x^2+3y^2+3z^2-2xy-2xz-2yz-6x+6z+6-3R^2 = 0.
+\end{align*}
+
+La droite $(Oz)$ est tangente à $(\mathcal{C})$ si et seulement si $d((Oz),(\mathcal{D})) = R$.
+
+\begin{center}
+$(Oz)$ est tangente à $(\mathcal{C})\Leftrightarrow \frac{\left[\overrightarrow{OA},\overrightarrow{k},\overrightarrow{u}\right]^2}{\left\|\overrightarrow{k}\wedge\overrightarrow{u}\right\|^2}= R^2\Leftrightarrow\left|\begin{array}{ccc}
+2&0&1\\
+1&0&1\\
+0&1&1
+\end{array}
+\right|^2=\|(-1,1,0\|^2\Leftrightarrow 1 = 2R^2\Leftrightarrow R = \frac{1}{\sqrt{2}}$.
+\end{center}
+\fincorrection
+\finexercice

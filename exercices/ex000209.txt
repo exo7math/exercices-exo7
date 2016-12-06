@@ -1,0 +1,39 @@
+\exercice{209, bodin, 1998/09/01}
+\video{vf0_R5F6cfc}
+\enonce
+
+ Dans $\Cc$ on d\'efinit la relation $\mathcal{R}$
+par :
+$$z\mathcal{R}z'\Leftrightarrow |z|=|z'|.$$
+\begin{enumerate}
+    \item Montrer que $\mathcal{R}$ est une relation d'\'equivalence.
+    \item D\'eterminer la classe d'\'equivalence de chaque $z \in \Cc$.
+\end{enumerate}
+\finenonce 
+
+\indication
+Un dessin permettra d'avoir une bonne id\'ee de ce qui se passe...
+\finindication
+
+\correction
+\begin{enumerate}
+    \item Soient $z,z',z''$ des complexes quelconques.
+\begin{itemize}
+    \item[$\bullet$] Reflexivit\'e : $ z\mathcal{R}z$ car $|z|=|z|$.
+    \item[$\bullet$] Sym\'etrie : $z\mathcal{R}z' \Rightarrow z'\mathcal{R}z$ car
+$|z|=|z'|$ et donc $|z'|=|z|$.
+    \item[$\bullet$] Transitivit\'e : $z\mathcal{R}z'$ et $z'\mathcal{R}z''$ alors
+$|z|=|z'|=|z''|$ donc $z\mathcal{R}z''$.
+\end{itemize}
+En fait, nous avons juste retranscrit que l'\'egalit\'e ``$=$'' est
+une relation d'\'equivalence.
+
+    \item La classe d'\'equivalence d'un point $z\in\Cc$
+est l'ensemble des complexes qui sont en relation avec $z$,
+\emph{i.e.} l'ensemble des complexes dont le module est \'egal \`a
+$|z|$. G\'eom\'etriquement la classe d'\'equivalence de $z$ est le
+cerlce $\mathcal{C}$ de centre $0$ et de rayon $|z|$ :
+$$\mathcal{C} = \left\{ |z|e^{i\theta} \ / \ \theta \in \Rr \right\}.$$
+\end{enumerate}
+\fincorrection
+\finexercice

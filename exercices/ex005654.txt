@@ -1,0 +1,37 @@
+\exercice{5654, rouget, 2010/10/16}
+\enonce[***]
+Soit $f$ qui à $P$ élément de $\Rr_{2n}[X]$ associe $f(P)=(X^2-1)P'- 2nXP$.
+
+Vérifier que $f$ est un endomorphisme de $\Rr_{2n}[X]$ puis déterminer les valeurs et vecteurs propres de $f$. $f$ est-il diagonalisable ?
+\finenonce
+
+\noindication
+
+\correction
+Soit $P$ un élément de $\Rr_{2n}[X]$. $f(P)$ est un polynôme de degré inférieur ou égal à $2n+1$ et de plus, si $a$ est le coefficient de $X^{2n}$ dans $P$, le coefficient de $X^{2n+1}$ dans $f(P)$ est $2na-2na = 0$. Donc $f(P)$ est un élément de $\Rr_{2n}[X]$. La linéarité de $f$ étant claire, $f$ est bien un endomorphisme de $\Rr_{2n}[X]$.
+
+Cherchons maintenant $P$ polynôme non nul et $\lambda$ réel tels que $f(P) =\lambda P$ ce qui équivaut à
+
+\begin{center}
+$\frac{P'}{P}=\frac{2nX+\lambda}{X^2-1}=\frac{1}{2}\left(\frac{2n+\lambda}{X-1}-\frac{-2n+\lambda}{X+1}\right)$.
+\end{center}
+
+En identifiant à la décomposition en éléments simples classique
+de $\frac{P'}{P}$ (à savoir si $P=K(X-z_1)^{\alpha_1}\ldots(X-z_k)^{\alpha_k}$ avec $K\neq0$ et les $z_i$ deux à deux distincts, alors $\frac{P'}{P}=\sum_{i=1}^{k}\frac{\alpha_i}{X-z_i}$), on voit que nécessairement $P$ ne peut admettre pour racines dans $\Cc$ que $-1$ et $1$ et d'autre part que $P$ est de degré $\frac{1}{2}(2n+\lambda+2n-\lambda)=2n$. $P$ est donc nécessairement  de la forme
+
+\begin{center}
+$P=aP_k$ avec $a\in\Rr^*$ et $P_k =(X-1)^k(X+1)^{2n-k}$ avec $k\in\llbracket0,2n\rrbracket$.
+\end{center}
+
+Réciproquement, chaque $P_k$ est non nul et  vérifie 
+
+\begin{center}
+$\frac{P_k'}{P_k}=\frac{k}{X-1}+\frac{2n-k}{X+1}=\frac{1}{2}\left(\frac{2n+(2k-2n)}{X-1}+\frac{2n-(2k-2n)}{X+1}\right)$.
+\end{center}
+
+  
+Donc, pour chaque $k\in\llbracket0,2n\rrbracket$, $P_k$ est vecteur propre de $f$ associé à la valeur propre $\lambda_k = 2(k-n)$.
+
+Ainsi, $f$ admet $2n+1$ valeurs propres, nécessairement simples car $\text{dim}(\Rr_{2n}[X]=2n+1$). $f$ est donc diagonalisable et les sous espaces propres de $f$ sont les droites $\text{Vect}(P_k)$, $0\leqslant k\leqslant 2n$.
+\fincorrection
+\finexercice

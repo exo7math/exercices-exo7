@@ -1,0 +1,26 @@
+\exercice{4297, quercia, 2010/03/12}
+\enonce[Valeur moyenne]
+
+Soit $f:\R \to \R$ continue par morceaux telle que $ \int_{t=-\infty}^{+\infty}|f(t)|\,d t$ converge.
+On pose $F(x) = \frac12 \int_{t=x-1}^{x+1}f(t)\,d t$.
+
+Montrer que $ \int_{t=-\infty}^{+\infty}F(t)\,d t =  \int_{t=-\infty}^{+\infty}f(t)\,d t$.
+
+Démontrer le même résultat en supposant seulement la convergence de
+$ \int_{t=-\infty}^{+\infty}f(t)\,d t$.
+\finenonce
+
+\noindication
+
+\correction
+$ \int_{t=a}^b F(t)\,d t =  \int_{u=a-1}^{a+1} \frac{u-(a-1)}2f(u)\,d u
+                        +  \int_{u=a+1}^{b-1} f(u)\,d u
+                        +  \int_{u=b-1}^{b+1} \frac{b+1-u}2f(u)\,d u$.\par
+$\phantom{ \int_{t=a}^b F(t)\,d t} =
+\varphi(a+1) - \frac12 \int_{u=a-1}^{a+1}\varphi(u)\,d u
++  \int_{u=a+1}^{b-1} f(u)\,d u
++ \frac12 \int_{u=b-1}^{b+1}\varphi(u)\,d u - \varphi(b-1)$
+où $\varphi$ est une primitive de $f$.
+\fincorrection
+
+\finexercice

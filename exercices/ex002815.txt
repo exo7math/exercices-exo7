@@ -1,0 +1,35 @@
+\exercice{2815, burnol, 2009/12/15}
+\enonce
+Soit $C$ le cercle unité parcouru dans le sens
+direct. Calculer 
+\[ \int_C \left( z + \frac1z \right)^{n}\frac{dz}z\quad(
+n\in\Nn)\] en développant par la formule du binôme et en
+utilisant les valeurs connues de $\int_C z^k dz$,
+$k\in\Zz$. En déduire $\int_{-\pi}^{+\pi} \cos^{n}
+t\,dt$. En déduire la valeur de $\int_{0}^{\pi/2} \cos^{n}
+t\,dt$ pour $n$ pair:
+\[ I_m = \int_0^{\frac\pi2} \cos^{2m} t\,dt =
+\frac{1.3.\cdots.(2m-1)}{2.4.\cdots.(2m)}\frac\pi2\] 
+\finenonce
+\noindication
+\correction
+Comme
+$$\left( z+\frac{1}{z} \right)^n = \sum_{k=0}^n \binom{n}{k}z^k z^{k-n}$$
+on a
+$$\left( z+\frac{1}{z} \right)^n \frac{1}{z}= \sum_{k=0}^n \binom{n}{k} z^{2k-n-1}.$$
+Or $\int_C z^j \, dz \neq 0$ si et seulement si $j=-1$. Le seul terme de la somme pr\'ec\'edente qui donne une
+contribution non nulle \`a l'int\'egrale est lorsque $k$ v\'erifie $2k-n-1=-1$.
+Notons que ceci est possible seulement si $n$ est un nombre pair! D'o\`u :
+$$\int_C \left( z+\frac{1}{z} \right)^n \frac{dz}{z}=0 \quad \text{si $n$ est impair}.$$
+Sinon, si $n=2k$ est pair, on a :
+$$\int_C \left( z+\frac{1}{z} \right)^{2k} \frac{dz}{z}=2i\pi \binom{2k}{k}.$$
+Comme $\cos \, t=\frac{1}{2}(e^{it}+e^{-it})$,
+$$\int_{-\pi} ^\pi \cos ^n t \, dt =\frac{1}{2^n} \int_{-\pi} ^\pi(e^{it}+e^{-it})^n \, \frac{ie^{it}dt}{ie^{it}}=
+\frac{-i}{2^n}\int_C \left( z+\frac{1}{z} \right)^{n} \frac{dz}{z}.$$
+D'o\`u $\int_{-\pi}^\pi \cos\, n t dt=0$ si $n$ est impair et
+$$\int_{-\pi}^\pi \cos ^{2k}t\, dt =\frac{\pi}{2^{2k-1}}\binom{2k}{k}.$$
+Par p\'eriodicit\'e du cosinus ceci donne :
+$$I_k =\int_0^{\pi /2} \cos ^{2k}t\, dt =\frac{1}{4} \frac{\pi}{2^{2k-1}}\binom{2k}{k}=\frac{\pi}{2}
+\frac{1\cdot 3\cdot ...\cdot (2k-1)}{2\cdot 4\cdot ...\cdot 2k}.$$
+\fincorrection
+\finexercice

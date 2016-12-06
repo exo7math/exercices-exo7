@@ -1,0 +1,42 @@
+\exercice{5190, rouget, 2010/06/30}
+\enonce[**I]
+Soient $\Kk$ un sous-corps de $\Cc$ et $E$ et $F$ deux $\Kk$-espaces vectoriels de dimensions finies sur $\Kk$ et $u$ et $v$
+deux applications linéaires de $E$ dans $F$. Montrer que ~:~
+$|\mbox{rg}u-\mbox{rg}v|\leq\mbox{rg}(u+v)\leq\mbox{rg}u+\mbox{rg}v$.
+\finenonce
+
+\noindication
+
+\correction
+Par définition, $\mbox{rg }(u+v)=\mbox{dim }\left(\mbox{Im }(u+v)\right)$.
+
+\begin{center}
+$\mbox{Im }(u+v)=\{u(x)+v(x),\;x\in E\}\subset\{u(x)+v(y),\;(x,y)\in E^2\}=\mbox{Im }u+\mbox{Im }v$.
+\end{center}
+Donc,
+
+\begin{align*}
+rg(u+v)&=\mbox{dim }\left(\mbox{Im }(u+v)\right)\\
+ &\leq\mbox{dim }(\mbox{Im }u+\mbox{Im }v)=\mbox{dim }(\mbox{Im }u)+\mbox{dim }(\mbox{Im }v)-\mbox{dim }(\mbox{Im }u\cap\mbox{
+Im}v)\\
+ &\leq\mbox{dim }(\mbox{Im }u)+\mbox{dim }(\mbox{Im }v)=\mbox{rg }u+\mbox{rg }v.
+\end{align*}
+On a montré que~:
+
+\begin{center}
+\shadowbox{
+$\forall(u,v)\in(\mathcal{L}(E,F))^2,\;\mbox{rg }(u+v)\leq\mbox{rg }u+\mbox{rg }v.$
+}
+\end{center}
+Ensuite, $$\mbox{rg }u=\mbox{rg }(u+v-v)\leq\mbox{rg }(u+v)+\mbox{rg }(-v)=\mbox{rg }(u+v)+\mbox{rg }v,$$
+(il est clair que $\mbox{Im }(-v)=\mbox{Im }v)$ et donc $\mbox{rg }u-\mbox{rg }v\leq\mbox{rg }(u+v)$. En échangeant les rôles de
+$u$ et $v$, on a aussi $\mbox{rg }v-\mbox{rg }u=\mbox{rg }(u+v)$ et finalement
+
+\begin{center}
+\shadowbox{
+$\forall(u,v)\in(\mathcal{L}(E,F))^2,\;|\mbox{rg }u-\mbox{rg }v|\leq\mbox{rg }(u+v).$
+}
+\end{center}
+
+\fincorrection
+\finexercice

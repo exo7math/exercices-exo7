@@ -1,0 +1,154 @@
+\exercice{5143, rouget, 2010/06/30}
+\enonce[Sommes télescopiques]
+\label{exo:suprou7}
+Calculer les sommes suivantes~:
+\begin{enumerate}
+\item (**) $\sum_{k=1}^{n}\frac{1}{k(k+1)}$ et $\sum_{k=1}^{n}\frac{1}{k(k+1)(k+2)}$
+\item (***) Calculer $S_p=\sum_{k=1}^{n}k^p$ pour $n\in\Nn^*$ et $p\in\{1,2,3,4\}$ (dans chaque cas, chercher un
+polynôme $P_p$ de degré $p+1$ tel que $P_p(x+1)-P_p(x)=x^p$).
+\item (**) Calculer $\sum_{k=1}^{n}\Arctan\frac{1}{k^2+k+1}$ (aller relire certaines formules établies dans une planche précédente).
+\item (**) Calculer $\sum_{k=1}^{n}\Arctan\frac{2}{k^2}$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  Pour tout naturel non nul $k$, on a $\frac{1}{k(k+1)}=\frac{(k+1)-k}{k(k+1)}=\frac{1}{k}-\frac{1}{k+1}$,
+et donc
+
+$$\sum_{k=1}^{n}\frac{1}{k(k+1)}=\sum_{k=1}^{n}(\frac{1}{k}-\frac{1}{k+1})=1-\frac{1}{n+1}=\frac{n}{n+1}.$$
+
+Pour tout naturel non nul $k$, on a
+$\frac{1}{k(k+1)(k+2)}=\frac{1}{2}\frac{(k+2)-k}{k(k+1)(k+2)}=\frac{1}{2}(\frac{1}{k(k+1)}-\frac{1}{(k+1)(k+2)})$,
+et donc
+
+$$\sum_{k=1}^{n}\frac{1}{k(k+1)(k+2)}=\frac{1}{2}\sum_{k=1}^{n}(\frac{1}{k(k+1)}-\frac{1}{(k+1)(k+2)})=\frac{1}{2}(
+\frac{1}{2}-\frac{1}{(n+1)(n+2)})=
+\frac{n(n+3)}{4(n+1)(n+2)}.$$
+
+\item  Soit $n\in\Nn^*$.
+\begin{itemize}
+\item[\textbf{- Calcul de} $\bf{S_1}$.] Posons $P_1=aX^2+bX+c$. On a
+
+$$P_1(X+1)-P_1(X)=a((X+1)^2-X^2)+b((X+1)-X)=2aX+(a+b).$$
+
+Par suite,
+
+\begin{align*}
+P_1(X+1)-P_1(X)=X&\Leftrightarrow 2a=1\;\mbox{et}\;a+b=0\Leftrightarrow a=\frac{1}{2}\;\mbox{et}\;b=-\frac{1}{2}\\
+ &\Leftarrow
+P_1=\frac{X^2}{2}-\frac{X}{2}=\frac{X(X-1)}{2}.
+\end{align*}
+
+Mais alors,
+
+$$\sum_{k=1}^{n}k=\sum_{k=1}^{n}(P_1(k+1)-P_1(k))=P_1(n+1)-P_1(1)=\frac{n(n+1)}{2}.$$
+
+\item[\textbf{- Calcul de} $\bf{S_2}$.] Posons $P_2=aX^3+bX^2+cX+d$. On a
+
+$$P_2(X+1)-P_2(X)=a((X+1)^3-X^3)+b((X+1)^2-X^2)+c((X+1)-X)=3aX^2+(3a+2b)X+a+b+c.$$
+
+Par suite,
+
+\begin{align*}
+P_2(X+1)-P_2(X)=X^2&\Leftrightarrow 3a=1\;\mbox{et}\;3a+2b=0\;\mbox{et}\;a+b+c=0\Leftrightarrow
+a=\frac{1}{3}\;\mbox{et}\;b=-\frac{1}{2}\;\mbox{et}\;c=\frac{1}{6}\\
+ &\Leftarrow P_2=\frac{X^3}{3}-\frac{X^2}{2}+\frac{X}{6}=\frac{X(X-1)(2X-1)}{6}.
+\end{align*}
+
+Mais alors,
+
+$$\sum_{k=1}^{n}k^2=\sum_{k=1}^{n}(P_2(k+1)-P_2(k))=P_2(n+1)-P_2(1)=\frac{n(n+1)(2n+1)}{6}.$$
+
+\item[\textbf{- Calcul de} $\bf{S_3}$.] Posons $P_3=aX^4+bX^3+cX^2+dX+e$. On a
+
+\begin{align*}
+P_3(X+1)-P_3(X)&=a((X+1)^4-X^4)+b((X+1)^3-X^3)+c((X+1)^2-X^2)+d((X+1)-X)\\
+ &=4aX^3+(6a+3b)X^2+(4a+3b+2c)X+a+b+c+d.
+\end{align*}
+
+Par suite,
+
+\begin{align*}
+P_3(X+1)-P_3(X)=X^3&\Leftrightarrow4a=1,\;6a+3b=0,\;4a+3b+2c=0\;\mbox{et}\;a+b+c+d=0\\
+ &\Leftrightarrow
+a=\frac{1}{4},\;b=-\frac{1}{2},\;c=\frac{1}{4}\;\mbox{et}\;d=0\\
+ &\Leftarrow P_3=\frac{X^4}{4}-\frac{X^3}{2}+\frac{X^2}{4}=\frac{X^2(X-1)^2}{4}.
+\end{align*}
+
+Mais alors,
+
+$$\sum_{k=1}^{n}k^3=\sum_{k=1}^{n}(P_3(k+1)-P_3(k))=P_3(n+1)-P_3(1)=\frac{n^2(n+1)^2}{4}.$$
+
+\item[\textbf{- Calcul de} $\bf{S_4}$.] Posons $P_4=aX^5+bX^4+cX^3+dX^2+eX+f$. On a
+
+\begin{align*}
+P_4(X+1)-P_4(X)&=a((X+1)^5-X^5)+b((X+1)^4-X^4)+c((X+1)^3-X^3)+d((X+1)^2-X^2)\\
+ &\;+e((X+1)-X)\\
+ &=5aX^4+(10a+4b)X^3+(10a+6b+3c)X^2+(5a+4b+3c+2d)X+a+b+c+d+e.
+\end{align*}
+
+Par suite,
+
+\begin{align*}
+P_4(X+1)-P_4(X)=X^4&\Leftrightarrow5a=1,\;10a+4b=0,\;10a+6b+3c=0,\;5a+4b+3c+2d=0\\
+ &\;\;\mbox{et}\;a+b+c+d+e=0\\
+ &\Leftrightarrow
+a=\frac{1}{5},\;b=-\frac{1}{2},\;c=\frac{1}{3},\;d=0\;\mbox{et}\;e=-\frac{1}{30}\\
+ &\Leftarrow P_4=\frac{X^5}{5}-\frac{X^4}{2}+\frac{X^3}{3}-\frac{X}{30}=\frac{X(X-1)(6X^3-9X^2+X+1)}{30}.
+\end{align*}
+
+Mais alors,
+
+$$\sum_{k=1}^{n}k^4=\sum_{k=1}^{n}(P_4(k+1)-P_4(k))=P_4(n+1)-P_4(1)=\frac{n(n+1)(6n^3+9n^2+n-1)}{30}.$$
+\end{itemize}
+\begin{center}
+\shadowbox{
+\begin{tabular}{c}
+$\forall n\in\Nn^*$,\\
+$\sum_{k=1}^{n}k=\frac{n(n+1)}{2},\;\sum_{k=1}^{n}k^2=\frac{n(n+1)(2n+1)}{6},\;
+\sum_{k=1}^{n}k^3=\frac{n^2(n+1)^2}{4}=\left(\sum_{k=1}^{n}k\right)^2$\\
+$\text{et}\;\sum_{k=1}^{n}k^4=\frac{n(n+1)(6n^3+9n^2+n-1)}{30}$.
+\end{tabular}
+}
+\end{center}
+
+\item  Soit $n\in\Nn^*$.
+
+On rappelle que 
+\begin{center}
+\shadowbox{
+$\forall(a,b)\in]0,+\infty[^2,\;\Arctan a-\Arctan b=\Arctan\frac{a-b}{1+ab}.$
+}
+\end{center}
+
+Soit alors $k$ un entier naturel non nul. On a
+
+$$\Arctan\frac{1}{k^2+k+1}=\Arctan\frac{(k+1)-k}{1+k(k+1)}=\Arctan(k+1)-\Arctan k.$$
+
+Par suite,
+
+$$\sum_{k=1}^{n}\Arctan\frac{1}{k^2+k+1}=\sum_{k=1}^{n}(\Arctan(k+1)-\Arctan
+k)=\Arctan(n+1)-\Arctan1=\Arctan(n+1)-\frac{\pi}{4}.$$
+
+\item  Soit $n\in\Nn^*$.
+
+Pour $k$ entier naturel non nul donné, on a
+
+$$\Arctan\frac{2}{k^2}=\Arctan\frac{(k+1)-(k-1)}{1+(k-1)(k+1)}=\Arctan(k+1)-\Arctan(k-1).$$
+
+Par suite,
+
+\begin{align*}
+\sum_{k=1}^{n}\Arctan\frac{2}{k^2}&=\sum_{k=1}^{n}(\Arctan(k+1)-\Arctan
+(k-1))=\sum_{k=1}^{n}\Arctan(k+1)-\sum_{k=1}^{n}\Arctan(k-1)\\
+ &=\sum_{k=2}^{n+1}\Arctan k-\sum_{k=0}^{n-1}\Arctan k=\Arctan(n+1)+\Arctan n-\Arctan1-\Arctan0\\
+ &=\Arctan(n+1)+\Arctan n-\frac{\pi}{4}.
+\end{align*}
+
+\end{enumerate}
+
+\fincorrection
+\finexercice

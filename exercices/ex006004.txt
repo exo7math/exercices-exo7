@@ -1,0 +1,47 @@
+\exercice{6004, quinio, 2011/05/20}
+
+\enonce
+Un débutant à un jeu effectue plusieurs parties successives. Pour la
+première partie, les probabilités de gagner ou perdre sont les mêmes; puis, on suppose que:
+\begin{itemize}
+  \item Si une partie est gagnée, la probabilité de gagner la suivante est $0.6$.
+
+  \item Si une partie est perdue, la probabilité de perdre la suivante est $0.7$.
+\end{itemize}
+Soit $G_n$ l'événement <<Gagner la partie $n$>>, et $u_n=P(G_n)$.
+On note $v_n = P(\overline{G_n})$.
+\begin{enumerate}
+  \item Ecrire 2 relations entre $u_n$, $u_{n+1}$, $v_n$, $v_{n+1}$.
+
+  \item A l'aide de la matrice mise en évidence en déduire $u_n$ et $v_n$.
+Faire un calcul direct à l'aide de $u_n+v_n$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item $u_{n+1}=P(G_{n+1})=P(G_{n+1}/Gn)P(Gn)+P(G_{n+1}/\overline{G_n})P(\overline{G_n})
+=0.6u_{n}+0.3v_{n}$.  
+
+$v_{n+1}=0.4u_{n}+0.7v_{n}$.
+
+Donc $\left( 
+\begin{array}{c}
+u_{n+1} \\ 
+v_{n+1}\end{array}\right) =\left( 
+\begin{array}{cc}
+0.6 & 0.3 \\ 
+0.4 & 0.7\end{array}\right) \left( 
+\begin{array}{c}
+u_{n} \\ 
+v_{n}\end{array}\right)$
+
+Comme $u_{n}+v_{n}=1$, $u_{n+1}=0.6u_{n}+0.3(1-u_{n})=0.3+0.3u_{n}$.
+La suite $(u_{n}-\ell)$ est géométrique, où $\ell$ est solution
+de $0.3+0.3\ell=\ell$, donc $\ell=\frac{3}{7}$.
+Donc $u_{n}=\frac{3}{7}+u_{1}(0.3)^{n-1}=\frac{3}{7}+0.5 (0.3)^{n-1}$.
+\end{enumerate}
+\fincorrection
+\finexercice

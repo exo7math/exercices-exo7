@@ -1,0 +1,19 @@
+\exercice{2569, delaunay, 2009/05/19}
+\enonce
+Soit $A$ la matrice suivante
+$$A=\begin{pmatrix}0&1&1 \\  1&0&1 \\  1&1&0\end{pmatrix}$$
+Calculer $A^2$ et v\'erifier que $A^2=A+2I_3$. En d\'eduire que $A$ est inversible et donner son inverse en fonction de $A$.
+\finenonce 
+
+\noindication
+
+\correction
+ Soit $A$ la matrice suivante
+$$A=\begin{pmatrix}0&1&1 \\  1&0&1 \\  1&1&0\end{pmatrix}$$
+{\it Calculons $A^2$ et v\'erifions que $A^2=A+2I_3$}. 
+On a 
+$$A^2=\begin{pmatrix}0&1&1 \\  1&0&1 \\  1&1&0\end{pmatrix}\begin{pmatrix}0&1&1 \\  1&0&1 \\  1&1&0\end{pmatrix}=\begin{pmatrix}2&1&1 \\  1&2&1 \\  1&1&2\end{pmatrix}=A+2I_3.$$
+On a donc $A^2-A=2I_3$, c'est-\`a-dire $A(A-I_3)=2I_3$, ou encore $A.{\frac{1}{2}}(A-I_3)=I_3$. Ce qui prouve que $A$ est in versible et que son inverse 
+est $A^{-1}={\frac{1}{2}}(A-I_3)$
+\fincorrection
+\finexercice
