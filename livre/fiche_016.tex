@@ -1,0 +1,449 @@
+
+%%%%%%%%%%%%%%%%%% PREAMBULE %%%%%%%%%%%%%%%%%%
+
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{amsfonts,amsmath,amssymb,amsthm}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage{mathptmx}
+\usepackage{fancybox}
+\usepackage{graphicx}
+\usepackage{ifthen}
+
+\usepackage{tikz}   
+
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=blue,
+pdftitle={Exo7 - Exercices de mathématiques}, pdfauthor={Exo7}}
+
+\usepackage{geometry}
+\geometry{top=2cm, bottom=2cm, left=2cm, right=2cm}
+
+%----- Ensembles : entiers, reels, complexes -----
+\newcommand{\Nn}{\mathbb{N}} \newcommand{\N}{\mathbb{N}}
+\newcommand{\Zz}{\mathbb{Z}} \newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Qq}{\mathbb{Q}} \newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Rr}{\mathbb{R}} \newcommand{\R}{\mathbb{R}}
+\newcommand{\Cc}{\mathbb{C}} \newcommand{\C}{\mathbb{C}}
+\newcommand{\Kk}{\mathbb{K}} \newcommand{\K}{\mathbb{K}}
+
+%----- Modifications de symboles -----
+\renewcommand{\epsilon}{\varepsilon}
+\renewcommand{\Re}{\mathop{\mathrm{Re}}\nolimits}
+\renewcommand{\Im}{\mathop{\mathrm{Im}}\nolimits}
+\newcommand{\llbracket}{\left[\kern-0.15em\left[}
+\newcommand{\rrbracket}{\right]\kern-0.15em\right]}
+\renewcommand{\ge}{\geqslant} \renewcommand{\geq}{\geqslant}
+\renewcommand{\le}{\leqslant} \renewcommand{\leq}{\leqslant}
+
+%----- Fonctions usuelles -----
+\newcommand{\ch}{\mathop{\mathrm{ch}}\nolimits}
+\newcommand{\sh}{\mathop{\mathrm{sh}}\nolimits}
+\renewcommand{\tanh}{\mathop{\mathrm{th}}\nolimits}
+\newcommand{\cotan}{\mathop{\mathrm{cotan}}\nolimits}
+\newcommand{\Arcsin}{\mathop{\mathrm{arcsin}}\nolimits}
+\newcommand{\Arccos}{\mathop{\mathrm{arccos}}\nolimits}
+\newcommand{\Arctan}{\mathop{\mathrm{arctan}}\nolimits}
+\newcommand{\Argsh}{\mathop{\mathrm{argsh}}\nolimits}
+\newcommand{\Argch}{\mathop{\mathrm{argch}}\nolimits}
+\newcommand{\Argth}{\mathop{\mathrm{argth}}\nolimits}
+\newcommand{\pgcd}{\mathop{\mathrm{pgcd}}\nolimits} 
+
+%----- Structure des exercices ------
+
+\newcommand{\exercice}[1]{\video{0}}
+\newcommand{\finexercice}{}
+\newcommand{\noindication}{}
+\newcommand{\nocorrection}{}
+
+\newcounter{exo}
+\newcommand{\enonce}[2]{\refstepcounter{exo}\hypertarget{exo7:#1}{}\label{exo7:#1}{\bf Exercice \arabic{exo}}\ \  #2\vspace{1mm}\hrule\vspace{1mm}}
+
+\newcommand{\finenonce}[1]{
+\ifthenelse{\equal{\ref{ind7:#1}}{\ref{bidon}}\and\equal{\ref{cor7:#1}}{\ref{bidon}}}{}{\par{\footnotesize
+\ifthenelse{\equal{\ref{ind7:#1}}{\ref{bidon}}}{}{\hyperlink{ind7:#1}{\texttt{Indication} $\blacktriangledown$}\qquad}
+\ifthenelse{\equal{\ref{cor7:#1}}{\ref{bidon}}}{}{\hyperlink{cor7:#1}{\texttt{Correction} $\blacktriangledown$}}}}
+\ifthenelse{\equal{\myvideo}{0}}{}{{\footnotesize\qquad\texttt{\href{http://www.youtube.com/watch?v=\myvideo}{Vidéo $\blacksquare$}}}}
+\hfill{\scriptsize\texttt{[#1]}}\vspace{1mm}\hrule\vspace*{7mm}}
+
+\newcommand{\indication}[1]{\hypertarget{ind7:#1}{}\label{ind7:#1}{\bf Indication pour \hyperlink{exo7:#1}{l'exercice \ref{exo7:#1} $\blacktriangle$}}\vspace{1mm}\hrule\vspace{1mm}}
+\newcommand{\finindication}{\vspace{1mm}\hrule\vspace*{7mm}}
+\newcommand{\correction}[1]{\hypertarget{cor7:#1}{}\label{cor7:#1}{\bf Correction de \hyperlink{exo7:#1}{l'exercice \ref{exo7:#1} $\blacktriangle$}}\vspace{1mm}\hrule\vspace{1mm}}
+\newcommand{\fincorrection}{\vspace{1mm}\hrule\vspace*{7mm}}
+
+\newcommand{\finenonces}{\newpage}
+\newcommand{\finindications}{\newpage}
+
+
+\newcommand{\fiche}[1]{} \newcommand{\finfiche}{}
+%\newcommand{\titre}[1]{\centerline{\large \bf #1}}
+\newcommand{\addcommand}[1]{}
+
+% variable myvideo : 0 no video, otherwise youtube reference
+\newcommand{\video}[1]{\def\myvideo{#1}}
+
+%----- Presentation ------
+
+\setlength{\parindent}{0cm}
+
+\definecolor{myred}{rgb}{0.93,0.26,0}
+\definecolor{myorange}{rgb}{0.97,0.58,0}
+\definecolor{myyellow}{rgb}{1,0.86,0}
+
+\newcommand{\LogoExoSept}[1]{  % input : echelle       %% NEW
+{\usefont{U}{cmss}{bx}{n}
+\begin{tikzpicture}[scale=0.1*#1,transform shape]
+  \fill[color=myorange] (0,0)--(4,0)--(4,-4)--(0,-4)--cycle;
+  \fill[color=myred] (0,0)--(0,3)--(-3,3)--(-3,0)--cycle;
+  \fill[color=myyellow] (4,0)--(7,4)--(3,7)--(0,3)--cycle;
+  \node[scale=5] at (3.5,3.5) {Exo7};
+\end{tikzpicture}}
+}
+
+
+% titre
+\newcommand{\titre}[1]{%
+\vspace*{-8ex} \hfill \hspace*{1.5cm} \hypersetup{linkcolor=black, urlcolor=black} 
+\href{http://exo7.emath.fr}{\LogoExoSept{3}} \newline 
+\hypersetup{linkcolor=blue, urlcolor=blue}  {\Large \bf #1} \newline 
+ \rule{12cm}{1mm} \vspace*{3ex}}
+
+%----- Commandes supplementaires ------
+
+
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%% EXERCICES %%%%%%%%%%%%%%%%%%
+\fiche{f00016, bodin, 2007/09/01} 
+
+\titre{Equations différentielles}
+
+\exercice{847, bodin, 1998/09/01}
+\enonce{000847}{}
+On se propose d'int\'egrer sur l'intervalle le plus grand possible contenu dans $]0,
+\infty[$ l'\'equation diff\'erentielle :
+
+$$
+(E) \ \ \ \ \ \ \ y'(x)- \frac{y(x)}{x}-y(x)^2=-9x^2.
+$$
+\begin{enumerate}
+    \item D\'eterminer $ a \in ]0, \infty[ $ tel que $y(x)=ax$ soit une solution
+particuli\`ere
+$y_0$ de $(E)$.
+    \item  Montrer que le changement de fonction inconnue : $y(x) = y_0(x)-\frac{1}{z(x)}$
+transforme l'\'equation (E) en l'\'equation diff\'erentielle
+$$
+(E_1) \ \ \ \ \ \ \ z'(x) + (6x+ \frac{1}{x})z(x) =1.
+$$
+    \item Int\'egrer $(E_1)$ sur $]0,\infty[$.
+    \item Donner toutes les solutions de $(E)$ d\'efinies sur $]0,\infty[$.
+\end{enumerate}
+\finenonce{000847} 
+\finexercice
+\exercice{863, bodin, 1998/09/01}
+\enonce{000863}{}
+R\'esoudre l'\'equation suivante :
+$$ y^{\prime\prime}- 3y^\prime + 2 y = e^x. $$
+\finenonce{000863} 
+\finexercice
+\exercice{864, bodin, 1998/09/01}
+\enonce{000864}{}
+R\'esoudre l'\'equation suivante :
+ $$ y^{\prime\prime}- y =-6\cos x + 2x\sin x. $$
+\finenonce{000864} 
+\finexercice
+\exercice{865, bodin, 1998/09/01}
+\enonce{000865}{}
+R\'esoudre l'\'equation suivante :
+$$4y^{\prime\prime}+4y^\prime + 5y = \sin x e^{-x/2} .$$
+\finenonce{000865} 
+\finexercice
+\exercice{866, bodin, 1998/09/01}
+\enonce{000866}{}
+ On consid\`ere l'\'equation  :
+$$ y^{\prime\prime} + 2y^\prime + 4y = xe^x \qquad (E) $$
+\begin{enumerate}
+    \item  R\'esoudre l'\'equation diff\'erentielle homog\`ene associ\'ee \`a $(E)$.
+    \item  Trouver une solution particuli\`ere de $(E)$ (expliquer votre
+d\'emarche), puis donner l'ensemble de toutes les solutions de
+$(E)$.
+    \item  D\'eterminer l'unique solution $h$ de $(E)$ v\'erifiant
+$h(0)=1$ et $h(1)=0$.
+    \item  Soit $f : ]0,\infty [ \longrightarrow \R$
+une fonction deux fois d\'erivable sur $]0,\infty [ $ et qui v\'erifie :
+$$ t^2f^{\prime \prime}(t) +3tf^\prime (t) + 4f(t) = t\log{t}. $$
+    \begin{enumerate}
+        \item  On pose $g(x)=f(e^x)$, v\'erifier que $g$ est solution de $(E)$.
+        \item  En d\'eduire une expression de $f$.
+    \end{enumerate}
+\end{enumerate}
+
+\finenonce{000866} 
+
+
+\finexercice
+\exercice{872, bodin, 1998/09/01}
+\enonce{000872}{}
+On consid\`ere l'\'equation diff\'erentielle suivante :
+$$
+(E.D.) \quad y''-4y'+4y = d(x),
+$$
+o\`u $d$ est une fonction qui sera pr\'ecis\'ee plus loin.
+\begin{enumerate}
+    \item R\'esoudre l'\'equation diff\'erentielle homog\`ene (ou sans second membre)
+associ\'ee \`a $(E.D.)$.
+    \item Trouver une solution particuli\`ere de $(E.D.)$ lorsque $d(x)=e^{-2x}$
+et lorsque $d(x)=e^{2x}$ respectivement.
+    \item Donner la forme g\'en\'erale des solutions de $(E.D)$ lorsque
+$$d(x) = \frac{e^{-2x}+e^{2x}}{4}.$$
+\end{enumerate}
+\finenonce{000872} 
+\finexercice
+\exercice{880, gourio, 2001/09/01}
+\enonce{000880}{}
+ R\'{e}soudre : $y''(x)+2y^{\prime }(x)+y(x)=2x\cos
+x\cosh x$.
+
+\finenonce{000880} 
+\finexercice
+\exercice{881, gourio, 2001/09/01}
+\enonce{000881}{}
+ D\'{e}terminer les $f\in C^{2}({\Rr},{\Rr}) $
+telles que :
+$$\forall x\in \Rr,f''(x)+f(-x)=x\cos x. $$
+\finenonce{000881} 
+\finexercice
+\exercice{884, gourio, 2001/09/01}
+\enonce{000884}{}
+ En posant $t=\arctan x,$ r\'{e}soudre :
+$$y''(x)+\frac{2x}{1+x^{2}}y^{\prime }(x)+\frac{y(x)}{(1+x^{2})^{2}}=0. $$
+\finenonce{000884} 
+\finexercice
+\exercice{885, gourio, 2001/09/01}
+\enonce{000885}{}
+ R\'{e}soudre par le changement de fonction
+$z=\frac{y}{x} $ l'\'{e}quation diff\'{e}rentielle :
+$${x}^{2}y''(x)-2xy^{\prime }(x)+(2-x^{2})y(x)=0. $$
+\finenonce{000885} 
+\finexercice
+
+\finfiche
+
+ \finenonces 
+
+
+
+ \finindications 
+
+\noindication
+\noindication
+\noindication
+\noindication
+\noindication
+\noindication
+\noindication
+\noindication
+\noindication
+\noindication
+
+
+\newpage
+
+\correction{000847}
+
+% Correction : Nicolas Bonnotte
+
+Le but de l'exercice est de résoudre l'équation
+\begin{equation}\tag{E}\label{eq}
+y'(x)- \frac{y(x)}{x}-y(x)^2=-9x^2.
+\end{equation}
+
+\begin{enumerate}
+    \item Trouvons $a \in ]0, \infty[ $ tel que $y_0(x)=ax$ soit une solution
+particuli\`ere. Puisque
+\[ y_0'(x) - \frac{y_0(x)}{x}-y_0(x)^2 = - a^2 x^2,\]
+$y_0$ est solution si et seulement si $a = \pm 3$. On choisit $a=3$.
+
+    \item Si $z$ est une fonction $\mathcal{C}^1$ ne s'annulant pas, on pose $y(x) = 3x-1/{z(x)}$. Alors $y$ est solution si et seulement si
+\[ \frac{z'(x)}{z(x)^2} + \frac{1}{xz(x)} - \frac{1}{z(x)^2} + \frac{6x}{z(x)} = 0.\]
+En multipliant par $z(x)^2$, on obtient que $y$ est solution de \eqref{eq} ssi $z$ vérifie
+\begin{equation}\tag{E$_1$}\label{eq1}
+z'(x) + \left(6x+ \frac{1}{x}\right)z(x) =1.
+\end{equation}
+
+
+    \item On résout \eqref{eq1} sur $]0,\infty[$. Une primitive de $x \mapsto 6x + 1/x$ est $x \mapsto 3x^2 + \ln(x)$, donc les solutions de l'équation homogène sont les $x \mapsto A \exp(-3x^2 - \ln(x))$. On cherche une solution particulière de \eqref{eq1} sous la forme $z_p(x) = \alpha(x) \exp(-3x^2-\ln(x))$ ; alors $z_p$ est solution si
+ $\alpha'(x) \exp(-3x^2 - \ln(x)) = 1$, c'est-à-dire si $\alpha'(x) = x\exp(3x^2)$, par exemple si $\alpha(x) = \exp(3x^2)/6$. Les solutions de \eqref{eq1} sont donc les 
+ \[ z(x) = \frac{1+A\exp(-3x^2)}{6x}, \qquad \text{ avec } A \in \R.\]
+
+
+   \item  On va maintenant en déduire les solutions de \eqref{eq} d\'efinies sur $]0,\infty[$. 
+    
+    Soit $y$ une solution $\mathcal{C}^1$ définie sur $]0,\infty[$. On suppose dans un premier temps que $y(x) > 3x$ sur l'intervalle ouvert $I \subset ]0,\infty[$, pris aussi grand que possible.  Alors $y(x) = 3x - 1/{z_I(x)}$ pour une certaine fonction $z_I < 0$ qui est $\mathcal{C}^1$ sur $I$. D'après la question précédente, on a nécessairement $z_I(x) = [1+A_I\exp(-3x^2)]/6x$ pour une certaine constante $A_I \in \R$. Puisque $z_I < 0$, cela impose $A_I<0$, mais du coup $I \neq ]0,+\infty[$ car $1 > A_I\exp(-3x^2)$ si $x$ est assez grand.
+  
+  Dans tous les cas, il existe donc un intervalle ouvert $J$ tel que $y(x) < 3x$ sur $J$. On suppose encore que $J$ est aussi grand que possible. Sur $J$, $y(x) = 3x - 1/{z_J(x)}$ pour une certaine fonction $z_J > 0$ qui est $\mathcal{C}^1$ sur $J$. Encore d'après la question précédente, $z_J(x) = [1+A_J\exp(-3x^2)]/6x$ pour une certaine constante $A_J$.
+ Puisque l'intervalle ouvert $J = ]a,b[$ a été supposé maximal, et puisque $y$ est supposée définie sur $]0,+\infty[$, si $a > 0$ on a $y(a) = 3a$ et de même si $b < \infty$, $y(b) = 3b$, car sinon par continuité de $y$ on aurait encore $y(x) < 3x$ sur $]a-\epsilon,b+\epsilon[$ pour un petit $\epsilon > 0$. Cela n'est possible respectivement que si $z_J(x) \rightarrow +\infty$ lorsque $x \rightarrow a$ ou $z_J(x) \rightarrow +\infty$ lorsque $x \rightarrow b$. Or on a dit que $z_J = [1+A_J\exp(-3x^2)]/6x$, cela n'est donc pas possible du tout (sauf précisément si respectivement $a =0$ et $b=0$).
+  
+  Donc soit $y(x) = 3x$ sur $]0,+\infty[$, soit $y(x) < 3x$ sur $]0,+\infty[$. Dans ce dernier cas, $z(x) = 1/(3x-y(x))$ est définie sur $]0,+\infty[$ et s'écrit $z(x) = [1+A\exp(-3x^2)]/6x$. Puisque $z > 0$, nécessairement $A \geq -1$. Donc si $y$ est solution, alors     
+    \[ y(x) = 3x \qquad \text{ou} \qquad y(x) =  3x - \frac{6x}{1+A\exp(-3x^2)} \quad \text{avec } A \geq -1.\]
+    
+ Réciproquement, si $y$ est ainsi définie, alors $y$ est définie et $\mathcal{C}^1$ sur $]0,\infty[$, et on peut vérifier que c'est bien une solution.
+\end{enumerate}
+\fincorrection
+\correction{000863}
+ $ y^{\prime\prime}- 3y^\prime + 2 y = e^x $. Le polyn\^ome caract\'eristique est
+$f(r)= (r-1)(r-2)$ et les solutions de l'\'equation homog\`ene
+sont donc toutes les fonctions :
+$$ y(x) = c_1 e^x +c_2e^{2x}  \hbox{ avec } c_1, c_2 \in \R. $$
+On cherche une solution particuli\`ere de la forme $y_p(x)=
+P(x)e^x$, on est dans la situation $(\imath\imath)$ la condition
+$(*)$ sur $P$ est : $P^{\prime\prime} -P^\prime = 1$, et $P(x)=-x$
+convient. Les solutions de l'\'equation sont donc les fonctions :
+$$ y(x) = (c_1-x)e^x +c_2e^{2x} \hbox{ avec } c_1, c_2 \in \R. $$
+\fincorrection
+\correction{000864}
+ $ y^{\prime\prime}- y =-6\cos x + 2x\sin x $. Ici $f(r) =(r-1)(r+1)$ et l'\'equation
+homog\`ene a pour solutions :
+$$ y(x) = c_1 e^x +c_2e^{-x}  \hbox{ avec } c_1, c_2 \in \R .$$
+On remarque que la fonction $3\cos x$ v\'erifie l'\'equation :
+$y^{\prime\prime}- y =-6\cos x $, il nous reste donc \`a chercher
+une solution $y_1$ de l'\'equation $y^{\prime\prime}-y=2x\sin x$,
+car $y_p(x)=3\cos x+y_1(x)$ sera une solution de l'\'equation
+consid\'r\'ee. Pour cela, on remarque que $2x\sin x = \mathop{\mathrm{Im}}\nolimits
+(2xe^{ix})$ et on utilise la m\'ethode d\'ecrite plus haut pour
+trouver une solution $z_1$ de l'\'equation : $y^{\prime\prime}- y
+=2xe^{ix}$. On cherche $z_1$ sous la forme $P(x)e^{ix}$ o\`u $P$
+est un polyn\^ome de degr\'e 1 car $f(i)=-2\not =0$. On a
+$f^\prime(i)= 2i$, la condition $(*)$ sur $P$ est donc : $
+2iP^\prime(x)-2P(x) = 2x $ ce qui donne apr\`es identification
+$P(x) = -x-i$. Alors $y_1(x)=\mathop{\mathrm{Im}}\nolimits((-x+i)e^{ix})=-x\sin x-\cos x$.
+Les solutions  sont par cons\'equent les fonctions :
+$$y(x) = c_1 e^x +c_2e^{-x}+2\cos x -x\sin x  \hbox{ avec } c_1, c_2 \in \R. $$
+Autre m\'ethode pour trouver une solution de $ y^{\prime\prime}- y
+= 2x\sin x $  : On la cherche de la forme $y_1(x) = A(x)\sin x +
+B(x)\cos x $ o\`u $A,B$ sont des polyn\^omes de degr\'e 1 car $i$
+n'est pas racine de l'\'equation caract\'eristique ({\sl danger} :
+pour un second membre du type $Q(x)\sin (\beta x)e^{\alpha x}$ la
+discussion porte sur $\alpha+i\beta$ et non sur $\alpha$ ou
+$\beta$...). On calcule $y_1^\prime$, $y_1^{\prime\prime}$ et on
+applique l'\'equation \'etudi\'ee \`a $y_1$ \ldots on obtient la
+condition :
+$$ (A^{\prime\prime}-A-2B^\prime)\sin x +(B^{\prime\prime}-B-2A^\prime)= 2x\sin x$$
+qui sera r\'ealis\'ee si : $ \left\lbrace \begin{array}{c}
+                    A^{\prime\prime}-A-2B^\prime = 2x \\
+                    B^{\prime\prime}-B-2A^\prime = 0
+                \end{array} \right. . $ \\
+On \'ecrit : $A(x)= ax+b$ et $B(x)=cx+d$, apr\`es identification
+on obtient : $a=d=-1$, $b=c=0$, ce qui d\'etermine $y_1$.
+\fincorrection
+\correction{000865}
+ $4y^{\prime\prime}+4y^\prime + 5y = \sin x e^{-x/2} $. L'\'equation
+caract\'eristique a 2 racines complexes $r_1 = -1/2+i$ et
+$r_2=\overline{r_1}$ et les solutions de l'\'equation homog\`ene
+sont :
+$$ y(x) = e^{-x/2}(c_1\cos x +c_2\sin x) \hbox{ avec } c_1,c_2\in \R $$
+On a $\sin x e^{-x/2} =\mathop{\mathrm{Im}}\nolimits(e^{(-1/2+i)x})$, on commence donc par
+chercher une solution $z_p$ de l'\'equation  avec le nouveau
+second membre $e^{(-1/2+i)x}$.Comme $-1/2+i$ est racine de
+l'\'equation caract\'eristique, on cherchera $
+z_p(x)=P(x)e^{(-1/2+i)x}$ avec $P$ de degr\'e 1. Par cons\'equent
+la condition $(*)$ sur $P$ :
+$$ 4P^{\prime\prime}+f^\prime(-1/2+i)P^\prime+f(-1/2+i)P = 1$$
+s'\'ecrit ici : $8iP^\prime =1$ ( $P^{\prime\prime} = 0$,
+$f(-1/2+i)=0$ et $f^\prime(-1/2+i)=8i$), on peut donc prendre
+$P(x)=-i/8x$ et $z_p(x)=-i/8xe^{(-1/2+i)x}$, par cons\'equent sa
+partie imaginaire $y_p(x)=\mathop{\mathrm{Im}}\nolimits(-i/8xe^{(-1/2+i)x})= 1/8 x\sin
+xe^{-x/2}$ est une solution de notre \'equation. Les solutions
+sont donc toutes les fonctions de la forme :
+$$y(x) = e^{-x/2}(c_1\cos x +(c_2+1/8x)\sin x) \hbox{ avec } c_1,c_2\in \R.$$
+
+\fincorrection
+\correction{000866}
+\begin{enumerate}
+    \item Le polyn\^ome caract\'eristique associ\'e \`a $E$ est : $p(x) = x^2+2x+4$ ; son discriminant
+est $\Delta = -12$ et il a pour racines les 2 nombres complexes $
+-1+i\sqrt{3}$ et $-1-i\sqrt3$. Les solutions de l'\'equation
+homog\`ene sont donc toutes fonctions :
+$$ y(x) = e^{-x}(a\cos{\sqrt3 x} + b\sin{\sqrt3 x})$$ obtenues lorsque $a,b$ d\'ecrivent $\R$.
+    \item Le second membre est de la forme $ e^{\lambda x}Q(x) $ avec $\lambda = 1$ et $Q(x)=x$. On
+cherchera une solution de l'\'equation sous la forme : $ y_p(x)=
+R(x)e^x$ avec $R$ polyn\^ome de degr\'e \'egal \`a celui de $Q$
+puisque $p(1) \not =0$. On pose donc $R(x) = ax+b$. On a
+ $$ y_p^{\prime\prime}(x) + 2y_p^{\prime}(x) +4y_p(x) = (7ax+7b+4a)e^x.$$
+  Donc $y_p$ est solution
+si et seulement si $ 7ax + 7a+4b = x$. On trouve apr\`es
+identification des coefficients :
+ $$ a=\frac{1}{7} \qquad \hbox{et}\qquad b=\frac{-4}{49}.$$
+La fonction $y_p(x)=\frac{1}{7}(x-\frac{4}{7})e^x$ est donc
+solution de $E$ et la forme g\'en\'erale des solutions de $E$ est
+:
+$$ y(x)= e^{-x}(a\cos{\sqrt3 x} + b\sin{\sqrt3 x}) +\frac{1}{7}(x-\frac{4}{7})e^x \; ;\; a,b \in \R.$$
+
+    \item  Soit $h$ une solution de $E$. Les conditions $h(0)=1$, $h(1)=0$ sont r\'ealis\'ees ssi
+$$a=\frac{53}{49}\qquad \hbox{et} \qquad b=-\frac{53\cos\sqrt3+3e^2}{49\sin\sqrt3}.$$
+    \item
+    \begin{enumerate}
+        \item  On a : $g^\prime(x) =e^xf^\prime(e^x)$ et
+$g^{\prime\prime}(x)=e^xf^\prime(e^x)+e^{2x}f^{\prime\prime}(e^x)$
+d'o\`u pour tout $x\in\R$ :
+$$g^{\prime\prime}(x)+2g^\prime(x)+4g(x)=e^{2x}f^{\prime\prime}(e^x)+2e^xf^\prime(e^x)+4f(e^x)= e^x\log{e^x}=xe^x$$
+donc $g$ est solution de $E$.
+        \item  R\'eciproquement pour $f(t)= g(\log t)$ o\`u $g$ est une
+solution de $E$ on montre que $f$ est 2 fois d\'erivable et
+v\'erifie l'\'equation donn\'ee en 4. Donc les fonctions $f$
+recherch\'ees sont de la forme :
+$$\frac{1}{t}(a\cos{(\sqrt3\log t)} + b\sin{(\sqrt3\log t)}) +\frac{t}{7}(\log t-\frac{4}{7}) \; ;\; a,b \in \R.$$
+    \end{enumerate}
+\end{enumerate}
+\fincorrection
+\correction{000872}
+\begin{enumerate}
+    \item  L'\'equation caract\'eristique $r^2-4r+4=0$ a une racine (double) $r=2$
+donc les solutions de l'\'equation homog\`ene sont les fonctions :
+             $$ y(x) = (c_1x+c_2)e^{2x} \hbox{ o\`u } c_1,c_2 \in\R. $$
+    \item Pour $d(x) = e^{-2x}$ on peut chercher une solution particuli\`ere de la forme : $ y_1(x)
+= ae^{-2x} $ car $-2$ n'est pas racine de l'\'equation
+caract\'eristique. On a $y_1'(x)= -2e^{-2x}$ et
+$y_1''(x)=4ae^{-2x}$. Par cons\'equent $y_1$ est solution si et
+seulement si :
+             $$\forall x\in\R\quad  (4a -4(-2a)+4a)e^{-2x} = e^{-2x} $$
+donc si et seulement si $ a =\frac{1}{16}$. \\ Pour $d(x) =e^{2x}$
+on cherche une solution de la forme $y_2(x)=ax^2e^{2x}$, car $2$
+est racine double de l'\'equation caract\'eristique. On a $y_2'(x)
+= (2ax+2ax^2)e^{2x}$ et
+$y_2''(x)=(2a+4ax+4ax+4ax^2)e^{2x}=(4ax^2+8ax+2a)e^{2x}$. Alors
+$y_2$ est solution si et seulement si
+$$\forall x\in\R\quad (4ax^2+8ax+2a-4(2ax+2ax^2)+4ax^2)e^{2x} =e^{2x} $$
+donc si et seulement si $a=\frac{1}{2}$.
+    \item  On d\'eduit du principe de superposition que la
+fonction $$
+y_p(x)=\frac{1}{4}(y_1(x)+y_2(x))=\frac{1}{64}e^{-2x}+\frac{1}{8}x^2e^{2x}$$
+est solution de l'\'equation pour le second membre donn\'e dans
+cette question, et la forme g\'en\'erale des solutions est alors :
+$$ y(x)=(c_1x+c_2)e^{2x}+\frac{1}{64}e^{-2x}+\frac{1}{8}x^2e^{2x} \hbox{ o\`u }c_1,c_2\in\R.$$
+\end{enumerate}
+\fincorrection
+\correction{000880}
+R\'{e}ponse : $\left( \lambda x+\mu \right)
+e^{-x}+\frac{e^{x}}{25}\left[ \left( 3x-4\right) \cos x-\left(
+4x-2\right) \sin x\right] +\left( \sin x-x\cos x\right) e^{-x}$.
+\fincorrection
+\correction{000881}
+R\'{e}ponse : $\frac{1}{2}\left( -x\cos x+\sin x\right) +\lambda
+\cos x+\mu \sinh x.$
+\fincorrection
+\correction{000884}
+R\'{e}ponse : $x\rightarrow \frac{\lambda x+\mu
+}{\sqrt{1+x^{2}}},\left( \lambda ,\mu \right) \in {\Rr}^{2}.$
+\fincorrection
+\correction{000885}
+R\'{e}ponse : $x\rightarrow \lambda x\sinh x+\mu x\cosh x,\left(
+\lambda ,\mu \right) \in {\Rr}^{2}.$
+\fincorrection
+
+
+\end{document}
+

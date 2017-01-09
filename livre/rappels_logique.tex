@@ -1,0 +1,254 @@
+\documentclass[11pt,class=report,crop=false]{standalone}
+\usepackage[screen]{exo7book}
+
+\begin{document}
+
+%====================================================================
+\chapitre[Logique et raisonnements]{Logique et\\ raisonnements}
+%====================================================================
+
+\insertvideo{aWSe1fjJHEM}{partie 1. Logique}
+
+\insertvideo{B-I5yZd0Wbk}{partie 2. Raisonnements}
+
+\insertfiche{fic00002.pdf}{Logique, ensembles, raisonnements}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Logique}
+\index{logique}
+
+%---------------------------------------------------------------
+\subsection{Assertions}
+
+Une \defi{assertion}\index{assertion} est une phrase soit vraie, soit fausse, pas les deux en même temps. 
+Exemples : \assertion{$2\times 3 = 7$} est une assertion fausse ;  \assertion{Pour tout $x \in \Rr$, on a $x^2 \ge 0$} est une assertion vraie.
+
+
+%--------------
+\subsubsection*{Les opérateur logiques}
+
+\begin{itemize}
+  \item L'assertion \assertion{$P$ \defi{et} $Q$}\index{et logique@\og et \fg{} logique} est vraie si $P$ est vraie et $Q$ est vraie. L'assertion \assertion{$P$ et $Q$} est fausse sinon.
+
+  \item L'assertion \assertion{$P$ \defi{ou} $Q$}\index{ou logique@\og ou \fg{} logique} est vraie si l'une (au moins) des deux assertions $P$ ou $Q$ est vraie.
+L'assertion \assertion{$P$ ou $Q$} est fausse si les deux assertions $P$ et $Q$ sont fausses.
+
+  \item L'assertion \assertion{\defi{non} $P$}\index{négation} est vraie si $P$ est fausse, et fausse si $P$ est vraie.
+\end{itemize}
+
+On résume ceci dans les \defi{tables de vérité}\index{table de verite@table de vérité} :
+
+
+\begin{center}
+\begin{tabular}{ccc}
+\begin{tabular}{c|c|c}
+\textcolor{olive}{$P$} $\backslash$ \textcolor{blue}{$Q$} & \textcolor{blue}{V} & \textcolor{blue}{F} \\ \hline
+\textcolor{olive}{V} & \textcolor{red}{V} & \textcolor{red}{F} \\ \hline
+\textcolor{olive}{F} & \textcolor{red}{F} & \textcolor{red}{F} \\
+\end{tabular}
+&
+\begin{tabular}{c|c|c}
+\textcolor{olive}{$P$} $\backslash$ \textcolor{blue}{$Q$}  & \textcolor{blue}{V} & \textcolor{blue}{F} \\ \hline
+\textcolor{olive}{V} & \textcolor{red}{V} & \textcolor{red}{V} \\ \hline
+\textcolor{olive}{F} & \textcolor{red}{V} & \textcolor{red}{F} \\
+\end{tabular}
+&
+\begin{tabular}{c|c|c}
+ \textcolor{blue}{$P$}  &  \textcolor{blue}{V} &  \textcolor{blue}{F} \\ \hline
+ \textcolor{red}{non $P$}    & \textcolor{red}{F} & \textcolor{red}{V} \\
+\end{tabular}
+\\
+{Table de vérité de \assertion{$P$ et $Q$}}
+&{Table de vérité de \assertion{$P$ ou $Q$}}
+&{Table de vérité de \assertion{non $P$}}
+\end{tabular}
+\end{center}
+
+
+%--------------
+\subsubsection*{L'implication}
+
+\mybox{
+L'assertion \assertion{(non $P$) ou $Q$} est notée \assertion{$P \implies Q$}\index{implication}\index{$\implies$}.
+}
+L'assertion \assertion{$P \implies Q$} se lit en français \assertion{$P$ implique $Q$}.
+Sa table de vérité est donc :
+\begin{center}
+\begin{tabular}{c|c|c}
+\textcolor{olive}{$P$} $\backslash$ \textcolor{blue}{$Q$}  & \textcolor{blue}{V} & \textcolor{blue}{F} \\ \hline
+\textcolor{olive}{V} & \textcolor{red}{V} & \textcolor{red}{F} \\ \hline
+\textcolor{olive}{F} & \textcolor{red}{V} & \textcolor{red}{V} \\
+\end{tabular}
+\end{center}
+
+
+Exemple :
+\begin{itemize}
+  \item \assertion{$0 \le x \le 25 \implies \sqrt x \le 5$}  est vraie (prendre la racine carrée).
+  \item \assertion{$2+2=5 \implies \sqrt 2 = 2$}  est vraie ! Eh oui, si
+$P$ est fausse alors l'assertion \assertion{$P \implies Q$} est toujours vraie.
+\end{itemize}
+
+
+
+%--------------
+\subsubsection*{L'équivalence}
+
+
+L'\defi{équivalence} est définie par :
+\mybox{
+\assertion{$P \iff Q$}\index{equivalence@équivalence}\index{$\iff$}  est l'assertion \assertion{($P \implies Q$) \  et \  ($Q \implies P$)}.
+}
+
+\begin{proposition}
+\sauteligne
+\begin{itemize}
+  \item \emph{$\text{non}(P \text{ et } Q)  \iff  (\text{non } P)  \text{ ou } (\text{non }Q)$}
+  \item \emph{$\text{non}(P \text{ ou } Q)  \iff  (\text{non } P)  \text{ et } (\text{non }Q)$}
+  \item \emph{$\big(P \text{ et } (Q \text{ ou } R)  \big)   \iff
+(P \text{ et } Q) \text{ ou } (P \text{ et }  R)$}
+  \item \emph{$\big(P \text{ ou } (Q \text{ et } R)  \big)   \iff
+(P \text{ ou } Q) \text{ et } (P \text{ ou }  R)$}
+\end{itemize}
+\end{proposition}
+
+
+
+%---------------------------------------------------------------
+\subsection{Quantificateurs}
+\index{quantificateur}
+
+%--------------
+\subsubsection*{Le quantificateur $\forall$ : \assertion{pour tout}}
+\index{$\forall$}
+
+
+L'assertion \assertion{$\forall x \in E \quad P(x)$}
+est une assertion vraie lorsque les assertions $P(x)$ sont vraies pour tous les éléments $x$
+de l'ensemble $E$.
+
+
+Par exemple : \assertion{$\forall x \in \Rr \quad (x^2\ge 1)$}  est une assertion fausse.
+
+
+
+%--------------
+\subsubsection*{Le quantificateur $\exists$ : \assertion{il existe}}
+\index{$\exists$}
+
+L'assertion \assertion{$\exists x \in E \quad P(x)$}
+est une assertion vraie lorsque l'on peut trouver au moins un $x$ de $E$ pour lequel $P(x)$ est vraie.
+
+Exemple : \assertion{$\exists n \in \Nn \quad n^2-n > n$}  est vraie (il y a plein de choix, par exemple $n=3$ convient, mais aussi $n=10$ ou même $n=100$, un seul suffit pour dire que l'assertion est vraie).
+ 
+
+
+%--------------
+\subsubsection*{La négation des quantificateurs}
+
+\mybox{
+La négation de \assertion{$\forall x \in E \quad P(x)$} \ \ est \ \
+\assertion{$\exists x \in E \quad \text{non } P(x)$} .
+}
+
+Par exemple la négation de \assertion{$\forall x \in [1,+\infty[ \quad (x^2\ge 1)$}
+est l'assertion \assertion{$\exists x \in [1,+\infty[ \quad (x^2 < 1)$}.
+En effet la négation de $x^2\ge 1$ est $\text{non}(x^2 \ge 1)$ mais s'écrit plus simplement $x^2 < 1$.
+
+
+\mybox{
+La négation de \assertion{$\exists x \in E \quad P(x)$} \ \ est \ \ \assertion{$\forall x \in E \quad \text{non } P(x)$}.
+}
+
+Exemple : pour la phrase 
+\assertion{$\forall x \in \Rr \quad \exists y >0 \quad (x+y > 10)$}
+sa négation est
+\assertion{$\exists x \in \Rr \quad \forall y > 0 \quad (x+y \le 10).$}
+
+%--------------
+\subsubsection*{Ordre des quantificateurs}
+
+L'ordre des quantificateurs est très important.
+Exemple : les deux phrases logiques suivantes sont différentes (la première est vraie, la seconde est fausse) :
+ $$\forall x \in \Rr \quad  \exists y \in \Rr \quad (x+y>0) \qquad \text{et}\qquad
+\exists y \in \Rr \quad \forall x \in \Rr \quad (x+y>0).$$
+ 
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Raisonnements}
+\index{raisonnement}
+
+%---------------------------------------------------------------
+\subsection{Raisonnement direct}
+On veut montrer que l'assertion \assertion{$P \implies Q$} est vraie.
+On suppose que $P$ est vraie et on montre qu'alors $Q$ est vraie.
+C'est la méthode à laquelle vous êtes le plus habitué.
+
+
+
+%---------------------------------------------------------------
+\subsection{Cas par cas}
+
+Si l'on souhaite vérifier une assertion $P(x)$ pour tous les $x$ dans un ensemble $E$, on
+montre l'assertion pour les $x$ dans une partie $A$ de $E$, puis pour les $x$
+n'appartenant pas à $A$. C'est la méthode de \defi{disjonction}\index{disjonction} ou du \defi{cas par cas}.
+
+
+
+%---------------------------------------------------------------
+\subsection{Contraposée}
+
+Le raisonnement par \defi{contraposition}\index{contraposition} est basé sur l'équivalence suivante :
+\mybox{
+L'assertion \assertion{$P \implies Q$}  \  est équivalente à \  \assertion{$\text{non}(Q) \implies \text{non}(P)$}.
+}
+
+Donc si l'on souhaite montrer l'assertion \assertion{$P \implies Q$}, on montre en fait
+que si $\text{non}(Q)$ est vraie alors $\text{non}(P)$ est vraie.
+
+
+
+
+%---------------------------------------------------------------
+\subsection{Absurde}
+
+Le \defi{raisonnement par l'absurde}\index{absurde} pour montrer \assertion{$P \implies Q$}  repose sur le principe suivant :
+on suppose à la fois que $P$ est vraie et que $Q$ est fausse et on cherche une contradiction.
+Ainsi si $P$ est vraie alors $Q$ doit être vraie et donc \assertion{$P \implies Q$} est vraie.
+
+
+
+%---------------------------------------------------------------
+\subsection{Contre-exemple}
+
+Si l'on veut montrer qu'une assertion du type \assertion{$\forall x \in E \quad P(x)$} est vraie
+alors pour chaque $x$ de $E$ il faut montrer que $P(x)$ est vraie. Par contre
+pour montrer que cette assertion est fausse alors il suffit de trouver $x \in E$ tel que $P(x)$
+ soit fausse. (Rappelez-vous la négation de \assertion{$\forall x \in E \quad P(x)$}
+est \assertion{$\exists x \in E \quad \text{non}\ P(x)$}.)
+Trouver un tel $x$ c'est trouver un \defi{contre-exemple}\index{contre-exemple} à l'assertion \assertion{$\forall x \in E \quad P(x)$}.
+
+
+
+%---------------------------------------------------------------
+\subsection{Récurrence}
+
+Le \defi{principe de récurrence}\index{recurrence@récurrence} permet de montrer qu'une assertion $P(n)$, dépendant de $n$,
+est vraie pour tout $n \in \Nn$.
+La démonstration par récurrence se déroule en trois étapes : lors de l'\evidence{initialisation} on prouve $P(0)$.
+Pour l'étape d'\evidence{hérédité}\index{heredite@hérédité}, on suppose $n\ge 0$ donné avec $P(n)$ vraie,
+et on démontre alors que l'assertion  $P(n+1)$ au rang suivant est vraie.
+Enfin dans la \evidence{conclusion}, on rappelle que par le principe de récurrence $P(n)$ est vraie pour tout $n\in\Nn$.
+
+
+\finchapitre
+\end{document}
+
+

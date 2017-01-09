@@ -1,0 +1,971 @@
+
+%%%%%%%%%%%%%%%%%% PREAMBULE %%%%%%%%%%%%%%%%%%
+
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{amsfonts,amsmath,amssymb,amsthm}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage{mathptmx}
+\usepackage{fancybox}
+\usepackage{graphicx}
+\usepackage{ifthen}
+
+\usepackage{tikz}   
+
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=blue,
+pdftitle={Exo7 - Exercices de mathématiques}, pdfauthor={Exo7}}
+
+\usepackage{geometry}
+\geometry{top=2cm, bottom=2cm, left=2cm, right=2cm}
+
+%----- Ensembles : entiers, reels, complexes -----
+\newcommand{\Nn}{\mathbb{N}} \newcommand{\N}{\mathbb{N}}
+\newcommand{\Zz}{\mathbb{Z}} \newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Qq}{\mathbb{Q}} \newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Rr}{\mathbb{R}} \newcommand{\R}{\mathbb{R}}
+\newcommand{\Cc}{\mathbb{C}} \newcommand{\C}{\mathbb{C}}
+\newcommand{\Kk}{\mathbb{K}} \newcommand{\K}{\mathbb{K}}
+
+%----- Modifications de symboles -----
+\renewcommand{\epsilon}{\varepsilon}
+\renewcommand{\Re}{\mathop{\mathrm{Re}}\nolimits}
+\renewcommand{\Im}{\mathop{\mathrm{Im}}\nolimits}
+\newcommand{\llbracket}{\left[\kern-0.15em\left[}
+\newcommand{\rrbracket}{\right]\kern-0.15em\right]}
+\renewcommand{\ge}{\geqslant} \renewcommand{\geq}{\geqslant}
+\renewcommand{\le}{\leqslant} \renewcommand{\leq}{\leqslant}
+
+%----- Fonctions usuelles -----
+\newcommand{\ch}{\mathop{\mathrm{ch}}\nolimits}
+\newcommand{\sh}{\mathop{\mathrm{sh}}\nolimits}
+\renewcommand{\tanh}{\mathop{\mathrm{th}}\nolimits}
+\newcommand{\cotan}{\mathop{\mathrm{cotan}}\nolimits}
+\newcommand{\Arcsin}{\mathop{\mathrm{arcsin}}\nolimits}
+\newcommand{\Arccos}{\mathop{\mathrm{arccos}}\nolimits}
+\newcommand{\Arctan}{\mathop{\mathrm{arctan}}\nolimits}
+\newcommand{\Argsh}{\mathop{\mathrm{argsh}}\nolimits}
+\newcommand{\Argch}{\mathop{\mathrm{argch}}\nolimits}
+\newcommand{\Argth}{\mathop{\mathrm{argth}}\nolimits}
+\newcommand{\pgcd}{\mathop{\mathrm{pgcd}}\nolimits} 
+
+%----- Structure des exercices ------
+
+\newcommand{\exercice}[1]{\video{0}}
+\newcommand{\finexercice}{}
+\newcommand{\noindication}{}
+\newcommand{\nocorrection}{}
+
+\newcounter{exo}
+\newcommand{\enonce}[2]{\refstepcounter{exo}\hypertarget{exo7:#1}{}\label{exo7:#1}{\bf Exercice \arabic{exo}}\ \  #2\vspace{1mm}\hrule\vspace{1mm}}
+
+\newcommand{\finenonce}[1]{
+\ifthenelse{\equal{\ref{ind7:#1}}{\ref{bidon}}\and\equal{\ref{cor7:#1}}{\ref{bidon}}}{}{\par{\footnotesize
+\ifthenelse{\equal{\ref{ind7:#1}}{\ref{bidon}}}{}{\hyperlink{ind7:#1}{\texttt{Indication} $\blacktriangledown$}\qquad}
+\ifthenelse{\equal{\ref{cor7:#1}}{\ref{bidon}}}{}{\hyperlink{cor7:#1}{\texttt{Correction} $\blacktriangledown$}}}}
+\ifthenelse{\equal{\myvideo}{0}}{}{{\footnotesize\qquad\texttt{\href{http://www.youtube.com/watch?v=\myvideo}{Vidéo $\blacksquare$}}}}
+\hfill{\scriptsize\texttt{[#1]}}\vspace{1mm}\hrule\vspace*{7mm}}
+
+\newcommand{\indication}[1]{\hypertarget{ind7:#1}{}\label{ind7:#1}{\bf Indication pour \hyperlink{exo7:#1}{l'exercice \ref{exo7:#1} $\blacktriangle$}}\vspace{1mm}\hrule\vspace{1mm}}
+\newcommand{\finindication}{\vspace{1mm}\hrule\vspace*{7mm}}
+\newcommand{\correction}[1]{\hypertarget{cor7:#1}{}\label{cor7:#1}{\bf Correction de \hyperlink{exo7:#1}{l'exercice \ref{exo7:#1} $\blacktriangle$}}\vspace{1mm}\hrule\vspace{1mm}}
+\newcommand{\fincorrection}{\vspace{1mm}\hrule\vspace*{7mm}}
+
+\newcommand{\finenonces}{\newpage}
+\newcommand{\finindications}{\newpage}
+
+
+\newcommand{\fiche}[1]{} \newcommand{\finfiche}{}
+%\newcommand{\titre}[1]{\centerline{\large \bf #1}}
+\newcommand{\addcommand}[1]{}
+
+% variable myvideo : 0 no video, otherwise youtube reference
+\newcommand{\video}[1]{\def\myvideo{#1}}
+
+%----- Presentation ------
+
+\setlength{\parindent}{0cm}
+
+\definecolor{myred}{rgb}{0.93,0.26,0}
+\definecolor{myorange}{rgb}{0.97,0.58,0}
+\definecolor{myyellow}{rgb}{1,0.86,0}
+
+\newcommand{\LogoExoSept}[1]{  % input : echelle       %% NEW
+{\usefont{U}{cmss}{bx}{n}
+\begin{tikzpicture}[scale=0.1*#1,transform shape]
+  \fill[color=myorange] (0,0)--(4,0)--(4,-4)--(0,-4)--cycle;
+  \fill[color=myred] (0,0)--(0,3)--(-3,3)--(-3,0)--cycle;
+  \fill[color=myyellow] (4,0)--(7,4)--(3,7)--(0,3)--cycle;
+  \node[scale=5] at (3.5,3.5) {Exo7};
+\end{tikzpicture}}
+}
+
+
+% titre
+\newcommand{\titre}[1]{%
+\vspace*{-8ex} \hfill \hspace*{1.5cm} \hypersetup{linkcolor=black, urlcolor=black} 
+\href{http://exo7.emath.fr}{\LogoExoSept{3}} \newline 
+\hypersetup{linkcolor=blue, urlcolor=blue}  {\Large \bf #1} \newline 
+ \rule{12cm}{1mm} \vspace*{3ex}}
+
+%----- Commandes supplementaires ------
+
+
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%% EXERCICES %%%%%%%%%%%%%%%%%%
+\fiche{f00001, bodin, 2007/09/01} 
+
+\titre{Nombres complexes} 
+
+\section{Forme cartésienne, forme polaire}
+\exercice{1, bodin, 1998/09/01}
+\video{g5vcj-DIa2M}
+\enonce{000001}{}
+
+ Mettre sous la forme $a+ib$ ($a,b \in \Rr$) les nombres :
+$$ \frac{3+6i}{3-4i}  \quad ; \quad \left(\frac{1+i}{2-i}\right)^2 + \frac{3+6i}{3-4i} \quad;  \quad
+\frac{2+5i}{1-i} + \frac{2-5i}{1+i}. $$
+
+\finenonce{000001}
+
+
+
+\finexercice
+
+\exercice{3, cousquer, 2003/10/01}
+\video{2kur52c78pA}
+\enonce{000003}{}
+ Écrire sous la forme $a+ib$ les nombres complexes suivants :
+\begin{enumerate}
+\item Nombre de module $2$ et d'argument $\pi /3$.
+\item Nombre de module $3$ et d'argument $-\pi /8$.
+\end{enumerate}
+
+\finenonce{000003}
+
+
+
+
+\finexercice
+
+\exercice{11, bodin, 1998/09/01}
+\video{XzALEyZLQYc}
+\enonce{000011}{}
+Calculer le module et l'argument de $u =
+\frac{\sqrt{6}-i\sqrt{2}}{2}$ et $v = 1 - i$. En d\'eduire le
+module et l'argument de $w = \frac{u}{v}$.
+
+\finenonce{000011}
+
+
+
+\finexercice
+\exercice{13, bodin, 1998/09/01}
+\video{-Kjd4SKjwEo}
+\enonce{000013}{}
+ D\'eterminer le module et l'argument des nombres
+complexes :
+$$e^{e^{i\alpha}} \quad \text{ et } \quad e^{i\theta}+e^{2i\theta}.$$
+
+\finenonce{000013}
+
+
+
+
+\finexercice
+
+
+\section{Racines carrées, équation du second degré}
+\exercice{27, bodin, 1998/09/01}
+\video{BPzsFnvZypQ}
+\enonce{000027}{}
+ Calculer les racines carr\'ees de $1,\ i,\ 3+4i,\
+8-6i,$ et $7+24i$.
+
+\finenonce{000027}
+
+
+
+
+\finexercice
+
+\exercice{29, bodin, 1998/09/01}
+\video{Q5kK2BZBffI}
+\enonce{000029}{}
+\begin{enumerate}
+    \item Calculer les racines carr\'ees de $\frac{1+i}{\sqrt{2}}$. En d\'eduire
+les valeurs de $\cos(\pi/8)$ et $\sin(\pi/8)$.
+    \item Calculer les valeurs de $\cos(\pi/12)$ et $\sin(\pi/12)$.
+\end{enumerate}
+
+\finenonce{000029}
+
+
+
+\finexercice\exercice{31, bodin, 1998/09/01}
+\video{TC-3du7GQAQ}
+\enonce{000031}{}
+ R\'esoudre dans $\Cc$ les \'equations suivantes :
+$$ z^2+z+1 = 0 \quad ; \quad z^2-(1+2i)z+i-1 = 0 \quad ; \quad z^2-\sqrt{3}z-i = 0 \quad ;$$
+$$z^2-(5-14i)z-2(5i+12)=0 \  ; \  z^2-(3+4i)z-1+5i =0 \  ; \  4z^2-2z+1=0 \  ;$$
+$$z^4+10z^2 +169=0 \quad ; \quad z^4+2z^2 +4=0.$$
+
+\finenonce{000031}
+
+
+
+\finexercice
+\section{Racine $n$-ième}
+\exercice{47, bodin, 1998/09/01}
+\video{MJT-lI-lt-M}
+\enonce{000047}{}
+
+ Calculer la somme $S_n = 1+z+z^2+\cdots+z^n$.
+\finenonce{000047} 
+
+
+\finexercice
+\exercice{48, bodin, 1998/09/01}
+\video{b63m6T3TlsY}
+\enonce{000048}{}
+
+\begin{enumerate}
+    \item R\'esoudre $z^3 = 1$ et montrer que les racines s'\'ecrivent $1$, $j$, $j^2$.
+Calculer $1+j+j^2$ et en d\'eduire les racines de $1+z+z^2 =0$.
+    \item R\'esoudre $z^n = 1$ et montrer que les racines s'\'ecrivent
+ $1,\epsilon,\ldots,\epsilon^{n-1}$. En d\'eduire les racines de $1+z+z^2+\cdots+z^{n-1} =0$.
+Calculer, pour $p \in \Nn$, $1+\epsilon^p+\epsilon^{2p}+\cdots+\epsilon^{(n-1)p}$.
+\end{enumerate}
+\finenonce{000048} 
+
+
+\finexercice
+\exercice{43, cousquer, 2003/10/01}
+\video{6B7bztuiRh8}
+\enonce{000043}{}
+ Trouver les racines cubiques de 
+$2-2i$ et de $11+2i$.
+
+\finenonce{000043} 
+
+
+\finexercice
+\exercice{56, bodin, 1998/09/01}
+\video{sVzO_9JjHTM}
+\enonce{000056}{}
+\begin{enumerate}
+        \item Soient $z_1$, $z_2$, $z_3$ trois nombres complexes distincts
+        ayant le m\^eme cube.
+
+        Exprimer $z_2$ et $z_3$ en fonction de $z_1$.
+
+        \item Donner, sous forme polaire, les solutions dans $\Cc$ de :
+        $$ z^6+(7-i)z^3 -8 -8i = 0.$$
+        (Indication : poser $Z=z^3$ ; calculer $(9+i)^2$)
+\end{enumerate}
+
+\finenonce{000056} 
+
+
+\finexercice
+
+\section{Géométrie}
+\exercice{60, bodin, 1998/09/01}
+\video{iiReM2y_jKk}
+\enonce{000060}{}
+D\'eterminer l'ensemble des nombres complexes $z$
+tels que :
+\begin{enumerate}
+    \item $\displaystyle{\left|\frac{z-3}{z-5}\right|=1},$
+    \item $\displaystyle{\left|\frac{z-3}{z-5}\right|= \frac{\sqrt{2}}{2}}.$
+\end{enumerate}
+
+\finenonce{000060} 
+
+
+\finexercice
+\exercice{69, bodin, 1998/09/01}
+\video{MNGaSR9bknI}
+\enonce{000069}{}
+
+Montrer que pour $u,v \in \Cc$, on a $|u+v|^2+|u-v|^2=2(|u|^2+|v|^2).$
+Donner une interprétation géométrique.
+\finenonce{000069} 
+
+
+\finexercice
+\exercice{77, bodin, 1998/09/01}
+\video{wHlb0IsMB7Q}
+\enonce{000077}{}
+
+Soit $(A_{0},A_{1},A_{2},A_{3},A_{4})$ un pentagone r\'egulier. On note $O$ son centre et on
+choisit un rep\`ere orthonorm\'e $(O,\overrightarrow{u},\overrightarrow{v})$ avec
+$\overrightarrow{u}=\overrightarrow{OA_{0}}$, qui nous permet d'identifier le plan avec
+l'ensemble des nombres complexes $\Cc$.
+%dessin
+$$
+\includegraphics{../images/img000077-1}
+$$
+
+\begin{enumerate}
+\item
+Donner les affixes $\omega_{0},\ldots,\omega_{4}$ des points $A_{0},\ldots,A_{4}$. Montrer
+que  $\omega_{k}={\omega_{1}}^k$ pour $ k\in\{0,1,2,3,4\}$. Montrer que
+$1+\omega_{1}+\omega_{1}^2+\omega_{1}^3+\omega_{1}^4=0$.
+
+\item
+En d\'eduire que $\cos(\frac{2\pi}{5})$ est l'une des solutions de l'\'equation $4z^2+2z-1=0$.
+En d\'eduire la valeur de $\cos(\frac{2\pi}{5})$.
+
+\item
+On consid\`ere le point $B$ d'affixe $-1$. Calculer la longueur $BA_{2}$ en fonction de
+$\sin\frac{\pi}{10}$ puis de $\sqrt{5}$ (on remarquera que
+$\sin\frac{\pi}{10}=\cos\frac{2\pi}{5}$).
+
+\item
+On consid\`ere le point $I$ d'affixe $\frac{i}{2}$, le cercle $\mathcal{C}$ de centre $I$ de
+rayon $\frac{1}{2}$ et enfin le point $J$ d'intersection de $\mathcal{C}$ avec la demi-droite
+$[BI)$. Calculer la longueur $BI$ puis  la longueur $BJ$.
+
+\item
+\textbf{Application:} Dessiner un pentagone r\'egulier \`a la r\`egle et au compas. Expliquer.
+\end{enumerate}
+
+
+
+\finenonce{000077} 
+
+
+\finexercice
+
+\section{Trigonométrie}
+\exercice{20, bodin, 1998/09/01}
+\video{8nXKgqMsucU}
+\enonce{000020}{}
+ Soit $z$ un nombre complexe de module $\rho$,
+d'argument $\theta$, et soit $\overline{z}$ son conjugu\'e.
+Calculer
+$(z+\overline{z})(z^2+\overline{z}^2)\ldots(z^n+\overline{z}^n)$
+en fonction de $\rho$ et $\theta$.
+
+\finenonce{000020}
+
+
+\finexercice\exercice{80, cousquer, 2003/10/01}
+\video{yE-CGGcOrYA}
+\enonce{000080}{}
+
+ En utilisant les nombres complexes, calculer $\cos 5\theta$ et
+$\sin5\theta$ en fonction de $\cos\theta$ et $\sin\theta$.
+\finenonce{000080} 
+
+
+\finexercice
+
+\section{Divers}
+\exercice{96, bodin, 1998/09/01}
+\video{JdTvqdw6lRE}
+\enonce{000096}{}
+Soit $\Zz[i] = \{ a+ib \  ; \ a,b \in \Zz \}$.
+\begin{enumerate}
+        \item Montrer que si $\alpha$ et $\beta$ sont dans $\Zz[i]$ alors
+        $\alpha + \beta$ et $\alpha\beta$ le sont aussi.
+
+        \item Trouver les \'elements inversibles de $\Zz[i]$, c'est-\`a-dire les
+        \'el\'ements $\alpha \in \Zz[i]$ tels qu'il existe $\beta \in \Zz[i]$ avec
+        $\alpha\beta = 1$.
+
+        \item V\'erifier que quel que soit $\omega \in \Cc$ il existe $\alpha \in \Zz[i]$
+        tel que $|\omega - \alpha| < 1$.
+
+        \item Montrer qu'il existe sur $\Zz[i]$ une division euclidienne,
+ c'est-\`a-dire que,
+        quels que soient $\alpha$ et $\beta$ dans $\Zz[i]$ il existe $q$ et $r$ dans
+        $\Zz[i]$ v\'erifiant :
+        $$ \alpha = \beta q + r \qquad \text{avec} \qquad |r| < |\beta|.$$
+        (Indication : on pourra consid\'erer le complexe $\frac{\alpha}{\beta}$)
+
+\end{enumerate}
+
+\finenonce{000096} 
+
+
+\finexercice
+
+\finfiche
+
+ \finenonces 
+
+
+
+ \finindications 
+
+\indication{000001}
+Pour se ``débarrasser'' d'un dénominateur écrivez $\frac{z_1}{z_2} = \frac{z_1}{z_2}\cdot \frac{\bar z_2}{\bar z_2} =  \frac{z_1 \bar z_2}{ |z_2|^2}$.
+\finindication
+\indication{000003}
+Il faut bien connaître ses formules trigonométriques.
+En particulier si l'on connait $\cos(2\theta)$ ou $\sin(2\theta)$ on sait
+calculer $\cos \theta$ et $\sin \theta$.
+\finindication
+\indication{000011}
+Passez à la forme trigonométrique.
+Souvenez-vous des formules sur les produits de puissances :
+$$e^{ia}e^{ib} = e^{i(a+b)}\text{ et  } e^{ia} / e^{ib} = e^{i(a-b)}.$$
+\finindication
+\indication{000013}
+Pour calculer un somme du type
+$e^{iu}+e^{iv}$ il est souvent utile de factoriser par
+$e^{i\frac{u+v}{2}}$.
+\finindication
+\indication{000027}
+Pour $z= a+ib$ on cherche $\omega = \alpha + i \beta$ tel que  $(\alpha +i \beta)^2 = a+ib$.
+Développez et indentifiez. Utilisez aussi que $|\omega|^2 = |z|$.
+\finindication
+\indication{000029}
+Il s'agit de calculer les racines carrées de $\frac{1+i}{\sqrt{2}} =  e^{i\frac{\pi}{4}}$ de deux
+fa\c{c}ons différentes.
+\finindication
+\indication{000031}
+Pour les équation du type $az^4+bz^2+c=0$, poser $Z=z^2$.
+\finindication
+\indication{000047}
+Calculer $(1-z)S_n$.
+\finindication
+\noindication
+\noindication
+\noindication
+\indication{000060}
+Le premier ensemble est une droite le second est un cercle.
+\finindication
+\indication{000069}
+Pour l'interprétation géométrique cherchez le parallélogramme.
+\finindication
+\noindication
+\indication{000020}
+Utiliser la formule d'Euler pour faire appara\^{\i}tre des cosinus.
+\finindication
+\indication{000080}
+Appliquer deux fois la formule de Moivre en remarquant
+$e^{i5\theta}=(e^{i\theta})^5$.
+\finindication
+\noindication
+
+
+\newpage
+
+\correction{000001}
+Remarquons d'abord que pour $z \in \Cc$, $z \overline{z} = |z|^2$
+est un nombre r\'eel, ce qui fait qu'en multipliant le dénominateur par son conjugué nous obtenons un nombre réel.
+ 
+$$ \frac{3+6i}{3-4i}
+= \frac{(3+6i)(3+4i)}{(3-4i)(3+4i)} = \frac{9-24+12i+18i}{9+16} =
+\frac{-15+30i}{25} = -\frac{3}{5}+\frac{6}{5}i.$$
+
+\bigskip
+
+Calculons
+$$\frac{1+i}{2-i}
+= \frac{(1+i)(2+i)}{5} = \frac{1+3i}{5},
+$$
+et
+$$ \left( \frac{1+i}{2-i}  \right)^2
+= \left( \frac{1+3i}{5}  \right)^2 = \frac{-8+6i}{25}=
+-\frac{8}{25}+\frac{6}{25}i.
+$$
+
+Donc
+$$ \left( \frac{1+i}{2-i}  \right)^2 + \frac{3+6i}{3-4i}
+= -\frac{8}{25}+\frac{6}{25}i  -\frac{3}{5}+\frac{6}{5}i
+=-\frac{23}{25}+\frac{36}{25}i.$$
+
+
+\bigskip
+Soit $z = \frac{2+5i}{1-i}$. Calculons $z + \overline{z}$, nous
+savons d\'ej\`a que c'est un nombre r\'eel, plus pr\'ecis\'ement :
+$z = -\frac{3}{2}+\frac{7}{2}i$ et donc $ z + \overline{z} = -3$.
+\fincorrection
+\correction{000003}
+\begin{enumerate}
+\item $z_1 = 2 e^{i\frac \pi 3} = 2(\cos \frac \pi 3 + i \sin \frac \pi 3) = 2 (\frac 12+ i\frac{\sqrt3}{2}) = 1+i\sqrt 3$.
+\item $z_2 = 3e^{-i\frac \pi 8} = 3\cos {\pi \over 8}-3i\sin{\pi \over8}={3\sqrt{2+\sqrt2}\over 2}-{3i\sqrt{2-\sqrt2}\over 2}$.
+
+
+Il nous reste à expliquer comment nous avons calculé $\cos \frac \pi 8$ et $\sin \frac\pi 8$: 
+posons $\theta=\frac{\pi}{8}$,
+alors $2\theta = \frac \pi 4$ et donc $\cos(2\theta)= \frac {\sqrt 2}{2} = \sin(2\theta)$.
+Mais $\cos(2\theta) = 2\cos^2 \theta - 1$. Donc $\cos^2\theta = \frac{\cos(2\theta) + 1}{2} = \frac 14 (2 + \sqrt 2)$.
+Et ensuite  $\sin^2 \theta = 1- \cos^2 \theta = \frac 14 (2 - \sqrt 2)$.
+Comme $0 \le \theta = \frac \pi 8 \le \frac \pi 2$, $\cos \theta$ et $\sin \theta$ sont des nombres positifs. Donc
+$$\cos \frac \pi 8 = \frac 12 \sqrt{2 + \sqrt 2} \quad, \quad \sin \frac \pi 8 = \frac 12 \sqrt{2 - \sqrt 2}.$$ 
+
+\end{enumerate}
+\fincorrection
+\correction{000011}
+Nous avons
+$$ u = \frac{\sqrt{6}-\sqrt{2}i}{2}
+= \sqrt{2}\left( \frac{\sqrt{3}}{2}-\frac{i}{2} \right) =
+\sqrt{2}\left( \cos\frac{\pi}{6} -i\sin\frac{\pi}{6} \right)
+=\sqrt{2} e^{-i\frac{\pi}{6}}.$$ puis
+$$v = 1-i = \sqrt{2}e^{-i\frac{\pi}{4}}.$$
+Il ne reste plus qu'\`a calculer le quotient :
+$$ \frac{u}{v} = \frac{\sqrt{2}e^{-i\frac{\pi}{6}}}{\sqrt{2}e^{-i\frac{\pi}{4}}}
+= e^{-i\frac{\pi}{6}+i\frac{\pi}{4}} = e^{i\frac{\pi}{12}}.$$
+\fincorrection
+\correction{000013}
+D'apr\`es la formule de Moivre pour $e^{i\alpha}$ nous avons :
+$$e^{e^{i\alpha}} = e^{\cos \alpha + i\sin \alpha}
+= e^{\cos \alpha}e^{i\sin \alpha}.$$ Or $e^{\cos \alpha} > 0$ donc
+l'\'ecriture pr\'ec\'edente est bien de la forme
+``module-argument''.
+
+\bigskip
+
+De fa\c{c}on g\'en\'erale pour calculer un somme du type
+$e^{iu}+e^{iv}$ il est souvent utile de factoriser par
+$e^{i\frac{u+v}{2}}$. En effet
+\begin{align*}
+e^{iu}+e^{iv} &= e^{i\frac{u+v}{2}}\left( e^{i
+\frac{u-v}{2}}+ e^{-i \frac{u-v}{2}}\right) \\
+&= e^{i\frac{u+v}{2}} 2 \cos  \frac{u-v}{2} \\
+&=  2 \cos  \frac{u-v}{2} e^{i\frac{u+v}{2}}.\\
+\end{align*}
+Ce qui est proche de l'\'ecriture en coordon\'ees polaires.
+
+Pour le cas qui nous concerne :
+$$z = e^{i\theta} + e^{2i\theta}
+= e^{\frac{3i\theta}{2}} \left[ e^{-\frac{i\theta}{2}} +
+e^{\frac{i\theta}{2}} \right] = 2\cos \frac{\theta}{2}
+e^{\frac{3i\theta}{2}}.$$ Attention le module dans une
+d\'ecomposion en forme polaire doit \^etre positif ! Donc si $\cos
+\frac{\theta}{2}  \geq 0$  alors $2\cos\frac{\theta}{2}$ est le module de $z$
+et $3\theta/2$ est son argument ; par contre si $\cos \frac{\theta}{2}  <
+0$ le module est $2|\cos\frac{\theta}{2}|$ et l'argument $3\theta/2+\pi$ (le
+$+\pi$ compense le changement de signe car $e^{i\pi} = -1$).
+\fincorrection
+\correction{000027}
+\textbf{Racines carr\'ees.} Soit $z= a+ib$ un nombre complexe avec
+$a,b \in \Rr$ ; nous cherchons les complexes $\omega \in \Cc$ tels
+que $\omega^2 = z$. \'Ecrivons $\omega = \alpha + i \beta$. Nous
+raisonnons par \'equivalence :
+\begin{align*}
+\omega^2 = z    & \Leftrightarrow (\alpha +i \beta)^2 = a+ib \\
+        & \Leftrightarrow \alpha^2-\beta^2+2i\alpha\beta = a +i b \\
+\intertext{Soit en identifiant les parties r\'eelles entre elles ainsi que les parties imaginaires :}\\
+        & \Leftrightarrow
+              \begin{cases}
+                 \alpha^2-\beta^2 = a \\
+                 2\alpha\beta = b
+              \end{cases} \\
+\intertext{Sans changer l'\'equivalence nous rajoutons la
+condition $|\omega|^2 = |z|$.} & \Leftrightarrow
+  \begin{cases}
+     \alpha^2 + \beta^2 = \sqrt{a^2+b^2} \\
+     \alpha^2-\beta^2 = a \\
+     2\alpha\beta = b
+  \end{cases} \\
+\intertext{Par somme et différence des deux premières lignes :}
+& \Leftrightarrow
+  \begin{cases}
+     \alpha^2  =\frac{a+ \sqrt{a^2+b^2}}{2} \\
+     \beta^2 =  \frac{-a+ \sqrt{a^2+b^2}}{2} \\
+     2\alpha\beta = b
+  \end{cases} \\
+& \Leftrightarrow
+  \begin{cases}
+     \alpha  =\pm \sqrt{\frac{a+ \sqrt{a^2+b^2}}{2}} \\
+     \beta = \pm \sqrt{ \frac{-a+ \sqrt{a^2+b^2}}{2}} \\
+     \alpha\beta \text{ est du m\^eme signe que } b
+  \end{cases} \\
+\end{align*}
+Cela donne deux couples $(\alpha,\beta)$ de solutions et donc deux
+racines carr\'ees (opposées) $\omega = \alpha + i\beta$ de $z$.
+
+En pratique on r\'ep\`ete facilement ce raisonnement, par exemple
+pour  $z = 8-6i$,
+\begin{align*}
+\omega^2 = z
+&\Leftrightarrow (\alpha +i \beta)^2 = 8-6i\\
+&\Leftrightarrow \alpha^2-\beta^2+2i\alpha\beta = 8-6i\\
+&\Leftrightarrow
+  \begin{cases}
+     \alpha^2-\beta^2 = 8\\
+     2\alpha\beta = -6
+  \end{cases} \\
+&\Leftrightarrow
+  \begin{cases}
+     \alpha^2 + \beta^2 = \sqrt{8^2+(-6)^2} = 10 \text{ le module de $z$} \\
+     \alpha^2-\beta^2 = 8 \\
+     2\alpha\beta = -6
+  \end{cases}\\
+&\Leftrightarrow
+  \begin{cases}
+     2\alpha^2  =18 \\
+     \beta^2 = 1 \\
+     2\alpha\beta = -6
+  \end{cases}\\
+&\Leftrightarrow
+  \begin{cases}
+     \alpha  =\pm \sqrt{9} = \pm 3 \\
+     \beta = \pm 1 \\
+     \alpha \text{ et } \beta \text{ de signes oppos\'es}
+  \end{cases} \\
+&\Leftrightarrow
+  \begin{cases}
+     \ \ & \alpha  = 3 \text{ et } \beta = - 1\\
+     \text{ou}&\\
+    \ \ &\alpha  = -3 \text{ et } \beta = +1 \\
+\end{cases} \\
+\end{align*}
+
+Les racines de $ z = 8-6i$ sont donc $\omega_1 = 3-i$ et $\omega_2 = -\omega_1 =
+-3+i$.
+
+Pour les autres : 
+\begin{itemize}
+ \item Les racines carrées de $1$ sont : $+1$ et $-1$.
+ \item  Les racines carrées de $i$ sont : $\frac{\sqrt 2}{2}(1+i)$ et $-\frac{\sqrt 2}{2}(1+i)$.
+ \item  Les racines carrées de $3+4i$ sont : $2+i$ et $-2-i$. 
+ \item  Les racines carrées de $7+24i$ sont : $4+3i$ et $-4-3i$. 
+\end{itemize}
+
+\fincorrection
+\correction{000029}
+Par la m\'ethode usuelle nous calculons les racines carr\'ees
+$\omega, -\omega$ de $z = \frac{1+i}{\sqrt{2}}$, nous obtenons
+$$\omega = \sqrt{\frac{\sqrt{2}+1}{2\sqrt{2}}}+i\sqrt{\frac{\sqrt{2}-1}{2\sqrt{2}}},$$
+qui peut aussi s'écrire :
+$$\omega = \frac 12 \sqrt{2+\sqrt 2} +i \frac 12 \sqrt{2-\sqrt 2}.$$
+
+Mais nous remarquons que $z$ s'\'ecrit \'egalement
+$$z = e^{i\frac{\pi}{4}}$$
+et  $e^{i\frac{\pi}{8}}$ v\'erifie
+$$\left (e^{i\frac{\pi}{8}}\right)^2 = e^{\frac{2i\pi}{8}}
+= e^{i\frac{\pi}{4}}.$$
+ Cela signifie que $e^{i\frac{\pi}{8}}$ est
+une racine carr\'ee de $z$, donc $ e^{i\frac{\pi}{8}} = \cos
+\frac{\pi}{8}+i\sin\frac{\pi}{8}$
+  est \'egal \`a  $\omega$ ou $-\omega$. Comme $ \cos \frac{\pi}{8} > 0$
+alors $ e^{i\frac{\pi}{8}} =  \omega$ et donc par identification
+des parties r\'eelles et imaginaires :
+$$\cos \frac{\pi}{8} = \frac 12 \sqrt{2+\sqrt 2}
+\quad \text{ et }\quad \sin \frac{\pi}{8} =
+\frac 12 \sqrt{2-\sqrt 2}.$$
+\fincorrection
+\correction{000031}
+\textbf{\'Equations du second degr\'e.} La m\'ethode g\'enerale
+pour r\'esoudre les \'equations du second degr\'e $az^2+bz+c= 0$
+(avec $a,b,c \in \Cc$ et $a\not=0$) est la suivante : soit $\Delta
+= b^2-4ac$ le discriminant complexe et $\delta$ une racine
+carr\'ee de $\Delta$ ($\delta^2 = \Delta$) alors les solutions
+sont :
+$$z_1 = \frac{-b+\delta}{2a} \quad \text{ et } \quad z_2 = \frac{-b-\delta}{2a}.$$
+Dans le cas o\`u les coefficients sont r\'eels, on retrouve la
+m\'ethode bien connue. Le seul travail dans le cas complexe est de
+calculer une racine $\delta$ de $\Delta$.
+
+Exemple : pour $z^2-\sqrt{3}z-i =0$, $\Delta = 3+4i$, dont une
+racine carr\'ee est $\delta = 2+i$,  les solutions sont donc :
+$$z_1 = \frac{\sqrt{3}+2+i}{2}\quad  \text{ et }\quad  z_2 = \frac{\sqrt{3}-2-i}{2}.$$
+
+Les solutions des autres équations sont :
+\begin{itemize}
+ \item L'équation $z^2+z+1=0$ a pour solutions : $\frac12 (-1+i\sqrt{3})$, $\frac12 (-1-i\sqrt{3})$.
+ \item L'équation $z^2-(1+2i)z+i-1=0$ a pour solutions : $1+i$, $i$.
+ \item L'équation $z^2-\sqrt{3}z-i=0$ a pour solutions : $\frac12(2-\sqrt{3}+i)$,  $\frac12(-2-\sqrt{3}-i)$
+ \item L'équation $z^2-(5-14i)z-2(5i+12)=0$ a pour solutions : $5-12i$, $-2i$.
+ \item L'équation $z^2-(3+4i)z-1+5i =0$ a pour solutions : $2+3i$, $1+i$.
+ \item L'équation $4z^2-2z+1=0$ a pour solutions : $\frac 14(1+i\sqrt{3})$, $\frac 14(1-i\sqrt{3})$.
+ \item L'équation $z^4+10z^2 +169=0$ a pour solutions : $2+3i$, $-2-3i$, $2-3i$, $-2+3i$.
+ \item L'équation $z^4+2z^2 +4=0$ a pour solutions : $\frac{\sqrt{2}}{2}(1+i\sqrt{3})$, $\frac{\sqrt{2}}{2}(1-i\sqrt{3})$,  $\frac{\sqrt{2}}{2}(-1+i\sqrt{3})$, $\frac{\sqrt{2}}{2}(-1-i\sqrt{3})$.
+\end{itemize}
+
+\fincorrection
+\correction{000047}
+$$S_n = 1+z+z^2+\cdots+z^n = \sum_{k=0}^{n}z^k.$$
+Nous devons retrouver le r\'esultat sur la somme $S_n =
+\frac{1-z^{n+1}}{1-z}$d'une suite g\'eom\'etrique dans le cas o\`u
+$z\not=1$ est un r\'eel. Soit maintenant $z \not= 1$ un nombre
+complexe. Calculons $S_n(1-z)$.
+\begin{align*}
+S_n(1-z) & =(1+z+z^2+\cdots+z^n)(1-z) \text{ d\'eveloppons }\\
+         &= 1+z+z^2+\cdots+z^n - z-z^2-\cdots-z^{n+1} \text{ les termes interm\'ediaires s'annulent }\\
+         &= 1-z^{n+1}.
+\end{align*}
+Donc $$S_n = \frac{1-z^{n+1}}{1-z}, \text{ pour } z\not= 1.$$
+\fincorrection
+\correction{000048}
+\textbf{Calcul de racine $n$-i\`eme.} Soit $z\in\Cc$ tel que
+$z^n=1$, d\'ej\`a $|z|^n=1$ et donc $|z|=1$. \'Ecrivons $z =
+e^{i\theta}$. L'\'equation devient
+$$e^{in\theta} = e^{0} =1
+\Leftrightarrow n\theta = 0 + 2k\pi, \ k\in \Zz \Leftrightarrow \theta =
+\frac{2k\pi}{n}, \ k\in \Zz.$$ Les solution sont donc
+$$\mathcal{S} = \left\lbrace e^{\frac{2ik\pi}{n}}, \ k\in \Zz\right\rbrace.$$
+Comme le polyn\^ome $z^n-1$ est de degr\'e $n$ il a au plus $n$
+racines. Nous choisissons pour repr\'esentants :
+$$\mathcal{S} = \left\lbrace e^{\frac{2ik\pi}{n}}, \ k= 0,\ldots,n-1\right\rbrace.$$
+De plus si $\epsilon = e^{\frac{2i\pi}{n}}$ alors $\mathcal{S} =
+\left\lbrace \epsilon^k, \ k= 0,\ldots,n-1\right\rbrace.$ Ces
+racines sont les sommets d'un polygone r\'egulier \`a $n$
+c\^ot\'es inscrit dans le cercle unit\'e.
+
+
+
+Soit $P(z) = \sum_{k=0}^{n-1}z^k=\frac{1-z^{n}}{1-z}$ pour
+$z\not=1$. Donc quelque soit $z\in\mathcal{S}\setminus\{ 1 \}$
+$P(z) = 0$, nous avons ainsi trouver $n-1$ racines pour $P$ de
+degr\'e $n-1$, donc l'ensemble des racines de $P$ est exactement
+$\mathcal{S}\setminus\{ 1 \}$.
+
+
+
+
+Pour conclure soit  $Q_p(z) = \sum_{k=0}^{n-1}\epsilon^{kp}$.\\
+Si $p = 0 +\ell n$, $\ell \in \Zz$ alors $\epsilon^{kp}=\epsilon^{k\ell n}=(\epsilon^n)^{k \ell}
+=1^{k \ell}=1$. Donc $Q_p(z)  = \sum_{k=0}^{n-1} 1 = n$. \\
+Sinon $Q_p(z)$ est la somme d'une suite g\'eom\'etrique de raison
+$\epsilon^p$ :
+$$ Q_p(z) = \frac{1-\left( \epsilon^p \right)^n}{1-\epsilon^p}
+= \frac{1-\left( \epsilon^n \right)^p}{1-\epsilon^p} =
+\frac{1-1}{1-\epsilon^p}=0.$$
+\fincorrection
+\correction{000043}
+\begin{enumerate}
+\item Les trois racines cubiques ont m\^eme module $\sqrt2$, et leurs arguments
+sont $-\pi /12$, $7\pi /12$ et $5\pi/4$. Des valeurs approch\'ees sont
+$1{,}36603-0{,}36603 i$, $-0{,}36603+1{,}36603 i$ et $-1-i$.
+\item $-1-2i$, $(-1-2i)j$ et $(-1-2i)j^2$ o\`u $j={-1+i\sqrt3\over2}$ (racine
+cubique de 1).
+\end{enumerate}
+\fincorrection
+\correction{000056}
+Soient $z_{1},z_{2},z_{3}$ trois nombres complexes
+\emph{distincts} ayant le m\^eme cube.
+\begin{enumerate}
+\item
+$z_{1}\neq0$ car sinon on aurait $z_{1}=z_{2}=z_{3}=0$. Ainsi
+$(\frac{z_{2}}{z_{1}})^3=(\frac{z_{3}}{z_{1}})^3=1$. Comme les
+trois nombres $1,(\frac{z_{2}}{z_{1}})$ et $(\frac{z_{3}}{z_{1}})$
+sont distincts on en d\'eduit que ce sont les trois racines
+cubiques de 1. Ces racines sont $1, j=e^{\frac{2i\pi}{3}}$ et $
+j^2=e^{-\frac{2i\pi}{3}}$. A une permutation pr\`es des indices 2
+et 3 on a donc :
+$$
+  z_{2}=jz_{1} \qquad\text{ et }\qquad z_{3}=j^2z_{1}.
+$$
+\item Soit $z\in\C$. On a les \'equivalences suivantes :
+\begin{align*}
+z^6+(7-i)z^3-8-8i=0 &\Leftrightarrow z^3\text{ est solution de }Z^2+(7-i)Z-8-8i=0\\
+\intertext{ Etudions l'\'equation $Z^2+(7-i)Z-8-8i=0$.
+$\Delta=(7-i)^2+4(8+8i)=80+18i=(9+i)^2$. Les solutions sont donc
+$-8$ et $1+i$. Nous pouvons reprendre notre suite d'\'equivalences
+: }
+z^6+(7-i)z^3-8-8i=0 &\Leftrightarrow z^3\in\{-8,1+i\} \\
+  &\Leftrightarrow z^3=(-2)^3 \quad\text{ ou }\quad z^3=(\sqrt[6]{2}e^{i\frac{\pi}{12}})^3\\
+  &\Leftrightarrow z\in\{-2,
+              -2e^{\frac{2i\pi}{3}},
+              -2e^{-\frac{2i\pi}{3}}\}
+         \text{ ou }
+        z\in\{\sqrt[6]{2}e^{i\frac{\pi}{12}},
+              \sqrt[6]{2}e^{i\frac{9\pi}{12}},
+              \sqrt[6]{2}e^{i\frac{17\pi}{12}}\}\\
+  &\Leftrightarrow z\in\{-2,
+               2e^{\frac{i\pi}{3}},
+               2e^{-\frac{i\pi}{3}},
+              \sqrt[6]{2}e^{i\frac{\pi}{12}},
+              \sqrt[6]{2}e^{i\frac{3\pi}{4}},
+              \sqrt[6]{2}e^{i\frac{17\pi}{12}}\}.
+\end{align*}
+L'ensemble des solutions est donc :
+           $$\{-2,
+               2e^{\frac{i\pi}{3}},
+               2e^{-\frac{i\pi}{3}},
+              \sqrt[6]{2}e^{i\frac{\pi}{12}},
+              \sqrt[6]{2}e^{i\frac{3\pi}{4}},
+              \sqrt[6]{2}e^{i\frac{17\pi}{12}}\}.$$
+\end{enumerate}
+\fincorrection
+\correction{000060}
+Nous identifions $\Cc$ au plan affine et $z=x+iy$ \`a  $(x,y) \in
+\Rr\times \Rr$.
+
+Remarquons que pour les deux ensembles $z=5$ n'est pas solution,
+donc
+$$\left| \frac{z-3}{z-5} \right| = 1
+\Leftrightarrow |z-3| = |z-5|.$$ Ce qui signifie pr\'eci\'sement que les
+points d'affixe $z$ sont situ\'es \`a \'egale distance des points
+$A,B$ d'affixes respectives $3 = (3,0)$ et $5=(5,0)$. L'ensemble
+solution est la m\'ediatrice du segment $[A,B]$.
+
+\bigskip
+
+Ensuite pour
+\begin{align*}
+\left| \frac{z-3}{z-5} \right| = \frac{\sqrt{2}}{2}
+&\Leftrightarrow |z-3|^2 = \frac{1}{2}|z-5|^2 \\
+&\Leftrightarrow (z-3)\overline{(z-3)} = \frac{1}{2}(z-5)\overline{(z-5)}\\
+&\Leftrightarrow z\overline{z}-(z+\overline{z})=7\\
+&\Leftrightarrow |z-1|^2=8\\
+&\Leftrightarrow |z-1|=2\sqrt{2}\\
+\end{align*}
+L'ensemble solution est donc le cercle de centre le point d'affixe
+$1 = (1,0)$ et de rayon $2\sqrt{2}$.
+\fincorrection
+\correction{000069}
+$$|u+v|^2+|u-v|^2=(u+v)(\bar u +\bar v) + (u-v)(\bar u -\bar v)
+= 2u\bar u+2v\bar v = 2|u|^2+2|v|^2.$$
+G\'eom\'etriquement il s'agit de l'identit\'e du parall\'elogramme.
+Les points d'affixes $0,u,v,u+v$ forment un parall\'elogramme.
+$|u|$ et $|v|$ sont les longueurs des cot\'es, et
+$|u+v|, |u-v|$ sont les longueurs des diagonales.
+Il n'est pas \'evident de montrer ceci sans les nombres complexes !!
+\fincorrection
+\correction{000077}
+\begin{enumerate}
+\item
+Comme $(A_{0},\ldots,A_{4})$ est un pentagone r\'egulier, on a
+$OA_{0}=OA_{1}=OA_{2}=OA_{3}=OA_{4}=1$ et $
+  (\overrightarrow{OA_{0}},\overrightarrow{OA_{1}})=\frac{2\pi}{5}[2\pi],
+  (\overrightarrow{OA_{0}},\overrightarrow{OA_{2}})=\frac{4\pi}{5}[2\pi],
+  (\overrightarrow{OA_{0}},\overrightarrow{OA_{3}})=-\frac{4\pi}{5}[2\pi],
+  (\overrightarrow{OA_{0}},\overrightarrow{OA_{4}})=-\frac{2\pi}{5}[2\pi],
+ $.
+On en d\'eduit:
+ $
+  \omega_{0}=1,
+  \omega_{1}=e^{\frac{2i\pi}{5}},
+  \omega_{2}=e^{\frac{4i\pi}{5}},
+  \omega_{3}=e^{-\frac{4i\pi}{5}}=e^{\frac{6i\pi}{5}},
+  \omega_{4}=e^{-\frac{2i\pi}{5}}=e^{\frac{8i\pi}{5}},
+ $.
+On a bien $\omega_{i}=\omega_{1}^i$. Enfin, comme
+$\omega_{1}\neq0$, $1+\omega_{1}+\ldots+\omega_{1}^4=
+\frac{1-\omega_{1}^5}{1-\omega_{1}}=\frac{1-1}{1-\omega_{1}}=0$.
+
+\item $\mathop{\mathrm{Re}}\nolimits(1+\omega_{1}+\ldots+\omega_{1}^4)=
+1+2\cos(\frac{2\pi}{5})+2\cos(\frac{4\pi}{5})$. Comme
+$\cos(\frac{4\pi}{5})=2\cos^2(\frac{2\pi}{5})-1$ on en d\'eduit:
+$4\cos^2(\frac{2\pi}{5})+2\cos(\frac{2\pi}{5})-1=0$.
+$\cos(\frac{2\pi}{5})$ est donc bien une solution de l'\'equation
+$4z^2+2z-1=0$. Etudions cette \'equation: $\Delta=20=2^2.5$. Les
+solutions sont donc $\frac{-1-\sqrt{5}}{4}$ et
+$\frac{-1+\sqrt{5}}{4}$. Comme $\cos(\frac{2\pi}{5})>0$, on en
+d\'eduit que $\cos(\frac{2\pi}{5})=\frac{\sqrt{5}-1}{4}$.
+
+\item
+ $
+  BA_{2}^2=|\omega_{2}+1|^2
+          =|\cos(\frac{4\pi}{5})+i\sin(\frac{4\pi}{5})+1|^2
+          =1+2\cos(\frac{4\pi}{5})+\cos^2(\frac{4\pi}{5})+\sin^2(\frac{4\pi}{5})
+          =4\cos^2(\frac{2\pi}{5})
+  $. Donc $BA_{2}=\frac{\sqrt{5}-1}{2}$.
+
+\item
+$BI=|i/2+1|=\frac{\sqrt{5}}{2}$. $BJ=BI-1/2=\frac{\sqrt{5}-1}{2}$.
+
+\item
+Pour tracer un pentagone r\'egulier, on commence par tracer un
+cercle $C_{1}$ et deux diam\`etres orthogonaux, qui jouent le r\^ole
+du cercle passant par les sommets et des axes de coordonn\'ees. On
+trace ensuite le milieu d'un des rayons: on obtient le point I de
+la question 4. On trace le  cercle de centre $I$ passant par le
+centre de $C_{1}$: c'est le cercle $\mathcal{C}$. On trace le
+segment $BI$ pour obtenir son point $J$ d'intersection avec
+$\mathcal{C}$. On trace enfin le cercle de centre $B$ passant par
+$J$: il coupe $C_{1}$ en $A_{2}$ et $A_{3}$, deux sommets du
+pentagone. Il suffit pour obtenir tous les sommets de reporter la
+distance $A_{2}A_{3}$ sur $C_{1}$, une fois depuis $A_{2}$, une
+fois depuis $A_{3}$. (en fait le cercle de centre $B$ et passant
+par $J'$, le point de $\mathcal{C}$ diam\'etralement oppos\'e \`a
+$J$, coupe $C_{1}$ en $A_{1}$ et $A_{4}$, mais nous ne l'avons pas
+justifi\'e par le calcul : c'est un exercice !)
+\end{enumerate}
+% $$
+% \includegraphics[65mm,50mm]{penta.eps}
+% $$
+\fincorrection
+\correction{000020}
+\'Ecrivons $z = \rho e^{i\theta}$, alors $\overline{z} = \rho
+e^{-i\theta}$. Donc
+\begin{align*}
+P &= \prod_{k=1}^n \left(z^k+{\overline{z}}^k \right)\\
+&= \prod_{k=1}^n \rho^k \left(  (e^{i\theta})^k + (e^{-i\theta})^k \right)\\
+&= \prod_{k=1}^n \rho^k \left(  e^{ik\theta} + e^{-ik\theta}) \right)\\
+&= \prod_{k=1}^n 2 \rho^k \cos {k\theta}\\
+&= 2^n.\rho.\rho^2.\ldots.\rho^n \prod_{k=1}^n \cos {k\theta}\\
+&= 2^n\rho^{\frac{n(n+1)}{2}} \prod_{k=1}^n \cos {k\theta}.\\
+\end{align*}
+\fincorrection
+\correction{000080}
+Nous avons par la formule de Moivre
+$$\cos5\theta+i\sin5\theta=e^{i5\theta}=(e^{i\theta})^5=
+(\cos\theta+i\sin\theta)^5.$$
+On d\'eveloppe ce dernier produit, puis on identifie parties r\'eelles
+et parties imaginaires. On obtient :
+\begin{eqnarray*}
+\cos 5\theta & = & \cos^5\theta -10\cos^3\theta \sin^2\theta
+                    +5\cos\theta \sin^4\theta\\
+\sin 5\theta & = & 5\cos^4\theta \sin \theta -10\cos^2\theta \sin^3\theta
+                   +\sin^5\theta 
+\end{eqnarray*}
+
+Remarque : Gr\^ace \`a la formule $\cos^2\theta +\sin^2\theta =1$, on pourrait
+ continuer les
+calculs et exprimer $\cos 5\theta $ en fonction de $\cos\theta $, et
+$\sin 5\theta $ en fonction de $\sin\theta $.
+\fincorrection
+\correction{000096}
+\begin{enumerate}
+\item Soit $\alpha,\beta\in\Z[i]$. Notons $\alpha=a+ib$ et $\beta=c+id$ avec $a,b,c,d\in\Z$. Alors
+$\alpha+\beta=(a+c)+i(b+d)$ et $a+c\in\Z$, $b+d\in\Z$ donc
+$\alpha+\beta\in\Z[i]$. De m\^eme, $\alpha\beta=(ac-bd)+i(ad+bc)$ et
+$ac-bd\in\Z$, $ad+bc\in\Z$ donc $\alpha\beta\in\Z[i]$.
+
+\item
+Soit $\alpha\in\Z[i]$ inversible. Il existe donc $\beta\in\Z[i]$
+tel que $\alpha\beta=1$. Ainsi, $\alpha\neq0$ et
+$\frac{1}{\alpha}\in\Z[i]$. Remarquons que tout \'el\'ement non
+nul de $\Z[i]$ est de module sup\'erieur ou \'egal \`a 1: en effet
+$\forall z\in\C, |z|\geq \sup(|\mathop{\mathrm{Re}}\nolimits(z)|,|\mathop{\mathrm{Im}}\nolimits(z)|)$ et si
+$z\in\Z[i]\setminus\{0\}$, $\sup(|\mathop{\mathrm{Re}}\nolimits(z)|,|\mathop{\mathrm{Im}}\nolimits(z)|)\geq 1$. Si
+$|\alpha|\neq 1$ alors $|\alpha|>1$ et $|1/\alpha|<1$. On en
+d\'eduit $1/\alpha=0$ ce qui est impossible. Ainsi $|\alpha|=1$,
+ce qui implique $\alpha\in\{1,-1,i,-i\}$.
+
+R\'eciproquement,
+$1^{-1}=1\in\Z[i],(-1)^{-1}=-1\in\Z[i],i^{-1}=-i\in\Z[i],(-i)^{-1}=i\in\Z[i]$.
+Les \'el\'ements inversibles de $\Z[i]$ sont donc $1,-1,i$ et
+$-i$.
+
+\item
+Soit $\omega\in\C$. Notons $\omega=x+iy$ avec $x,y\in\R$. soit
+$E(x)$ la partie enti\`ere de $x$, i.e. le plus grand entier
+inf\'erieur ou \'egal \`a $x$: $E(x)\leq x<E(x)+1$. Si $x\leq E(x)+1/2$, 
+notons $n_{x}=E(x)$, et si $x> E(x)+1/2$, notons
+$n_{x}=E(x)+1$. $n_{x}$ est le, ou l'un des s'il y en a deux,
+nombre entier le plus proche de $x$: $|x-n_{x}|\leq1/2$. Notons
+$n_{y}$ l'entier associ\'e de la m\^eme mani\`ere \`a $y$. Soit
+alors $\alpha=n_{x}+i \cdot n_{y}$. $z\in\Z[i]$ et
+$|\omega-\alpha|^2=(x-n_{x})^2+(y-n_{y})^2\leq 1/4+1/4=1/2$. Donc
+$|\omega-\alpha|<1$.
+
+% $$
+% \includegraphics[64mm,44mm]{gauss.wmf}
+% $$
+\item
+Soit $\alpha,\beta\in\Z[i]$, avec $\beta\neq0$. Soit alors
+$q\in\Z[i]$ tel que $|\frac{\alpha}{\beta}-q|<1$. Soit
+$r=\alpha-\beta q$. Comme $\alpha\in\Z[i]$ et $\beta q\in\Z[i]$,
+$r\in\Z[i]$. De plus
+$|\frac{r}{\beta}|=|\frac{\alpha}{\beta}-q|<1$ donc $|r|<|\beta|$.
+\end{enumerate}
+\fincorrection
+
+
+\end{document}
+

@@ -1,0 +1,835 @@
+
+%%%%%%%%%%%%%%%%%% PREAMBULE %%%%%%%%%%%%%%%%%%
+
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{amsfonts,amsmath,amssymb,amsthm}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage{mathptmx}
+\usepackage{fancybox}
+\usepackage{graphicx}
+\usepackage{ifthen}
+
+\usepackage{tikz}   
+
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=blue,
+pdftitle={Exo7 - Exercices de mathématiques}, pdfauthor={Exo7}}
+
+\usepackage{geometry}
+\geometry{top=2cm, bottom=2cm, left=2cm, right=2cm}
+
+%----- Ensembles : entiers, reels, complexes -----
+\newcommand{\Nn}{\mathbb{N}} \newcommand{\N}{\mathbb{N}}
+\newcommand{\Zz}{\mathbb{Z}} \newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Qq}{\mathbb{Q}} \newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Rr}{\mathbb{R}} \newcommand{\R}{\mathbb{R}}
+\newcommand{\Cc}{\mathbb{C}} \newcommand{\C}{\mathbb{C}}
+\newcommand{\Kk}{\mathbb{K}} \newcommand{\K}{\mathbb{K}}
+
+%----- Modifications de symboles -----
+\renewcommand{\epsilon}{\varepsilon}
+\renewcommand{\Re}{\mathop{\mathrm{Re}}\nolimits}
+\renewcommand{\Im}{\mathop{\mathrm{Im}}\nolimits}
+\newcommand{\llbracket}{\left[\kern-0.15em\left[}
+\newcommand{\rrbracket}{\right]\kern-0.15em\right]}
+\renewcommand{\ge}{\geqslant} \renewcommand{\geq}{\geqslant}
+\renewcommand{\le}{\leqslant} \renewcommand{\leq}{\leqslant}
+
+%----- Fonctions usuelles -----
+\newcommand{\ch}{\mathop{\mathrm{ch}}\nolimits}
+\newcommand{\sh}{\mathop{\mathrm{sh}}\nolimits}
+\renewcommand{\tanh}{\mathop{\mathrm{th}}\nolimits}
+\newcommand{\cotan}{\mathop{\mathrm{cotan}}\nolimits}
+\newcommand{\Arcsin}{\mathop{\mathrm{arcsin}}\nolimits}
+\newcommand{\Arccos}{\mathop{\mathrm{arccos}}\nolimits}
+\newcommand{\Arctan}{\mathop{\mathrm{arctan}}\nolimits}
+\newcommand{\Argsh}{\mathop{\mathrm{argsh}}\nolimits}
+\newcommand{\Argch}{\mathop{\mathrm{argch}}\nolimits}
+\newcommand{\Argth}{\mathop{\mathrm{argth}}\nolimits}
+\newcommand{\pgcd}{\mathop{\mathrm{pgcd}}\nolimits} 
+
+%----- Structure des exercices ------
+
+\newcommand{\exercice}[1]{\video{0}}
+\newcommand{\finexercice}{}
+\newcommand{\noindication}{}
+\newcommand{\nocorrection}{}
+
+\newcounter{exo}
+\newcommand{\enonce}[2]{\refstepcounter{exo}\hypertarget{exo7:#1}{}\label{exo7:#1}{\bf Exercice \arabic{exo}}\ \  #2\vspace{1mm}\hrule\vspace{1mm}}
+
+\newcommand{\finenonce}[1]{
+\ifthenelse{\equal{\ref{ind7:#1}}{\ref{bidon}}\and\equal{\ref{cor7:#1}}{\ref{bidon}}}{}{\par{\footnotesize
+\ifthenelse{\equal{\ref{ind7:#1}}{\ref{bidon}}}{}{\hyperlink{ind7:#1}{\texttt{Indication} $\blacktriangledown$}\qquad}
+\ifthenelse{\equal{\ref{cor7:#1}}{\ref{bidon}}}{}{\hyperlink{cor7:#1}{\texttt{Correction} $\blacktriangledown$}}}}
+\ifthenelse{\equal{\myvideo}{0}}{}{{\footnotesize\qquad\texttt{\href{http://www.youtube.com/watch?v=\myvideo}{Vidéo $\blacksquare$}}}}
+\hfill{\scriptsize\texttt{[#1]}}\vspace{1mm}\hrule\vspace*{7mm}}
+
+\newcommand{\indication}[1]{\hypertarget{ind7:#1}{}\label{ind7:#1}{\bf Indication pour \hyperlink{exo7:#1}{l'exercice \ref{exo7:#1} $\blacktriangle$}}\vspace{1mm}\hrule\vspace{1mm}}
+\newcommand{\finindication}{\vspace{1mm}\hrule\vspace*{7mm}}
+\newcommand{\correction}[1]{\hypertarget{cor7:#1}{}\label{cor7:#1}{\bf Correction de \hyperlink{exo7:#1}{l'exercice \ref{exo7:#1} $\blacktriangle$}}\vspace{1mm}\hrule\vspace{1mm}}
+\newcommand{\fincorrection}{\vspace{1mm}\hrule\vspace*{7mm}}
+
+\newcommand{\finenonces}{\newpage}
+\newcommand{\finindications}{\newpage}
+
+
+\newcommand{\fiche}[1]{} \newcommand{\finfiche}{}
+%\newcommand{\titre}[1]{\centerline{\large \bf #1}}
+\newcommand{\addcommand}[1]{}
+
+% variable myvideo : 0 no video, otherwise youtube reference
+\newcommand{\video}[1]{\def\myvideo{#1}}
+
+%----- Presentation ------
+
+\setlength{\parindent}{0cm}
+
+\definecolor{myred}{rgb}{0.93,0.26,0}
+\definecolor{myorange}{rgb}{0.97,0.58,0}
+\definecolor{myyellow}{rgb}{1,0.86,0}
+
+\newcommand{\LogoExoSept}[1]{  % input : echelle       %% NEW
+{\usefont{U}{cmss}{bx}{n}
+\begin{tikzpicture}[scale=0.1*#1,transform shape]
+  \fill[color=myorange] (0,0)--(4,0)--(4,-4)--(0,-4)--cycle;
+  \fill[color=myred] (0,0)--(0,3)--(-3,3)--(-3,0)--cycle;
+  \fill[color=myyellow] (4,0)--(7,4)--(3,7)--(0,3)--cycle;
+  \node[scale=5] at (3.5,3.5) {Exo7};
+\end{tikzpicture}}
+}
+
+
+% titre
+\newcommand{\titre}[1]{%
+\vspace*{-8ex} \hfill \hspace*{1.5cm} \hypersetup{linkcolor=black, urlcolor=black} 
+\href{http://exo7.emath.fr}{\LogoExoSept{3}} \newline 
+\hypersetup{linkcolor=blue, urlcolor=blue}  {\Large \bf #1} \newline 
+ \rule{12cm}{1mm} \vspace*{3ex}}
+
+%----- Commandes supplementaires ------
+
+
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%% EXERCICES %%%%%%%%%%%%%%%%%%
+\fiche{f00002, bodin, 2007/09/01} 
+
+\titre{Logique, ensembles, raisonnements} 
+
+\section{Logique}
+\exercice{108, bodin, 1998/09/01}
+\video{2tmyTz5_2Rw}
+\enonce{000108}{}
+
+Compl\'eter les pointill\'es par le connecteur logique qui s'impose : $\Leftrightarrow ,\ \Leftarrow,\ \Rightarrow.$
+\begin{enumerate}
+    \item $  x\in \Rr\ \ x^2=4 \ \ldots\ldots \ x=2$ ;
+    \item $  z\in \Cc\ \ z=\overline{z} \ \ldots\ldots \ z\in\Rr$ ;
+    \item $ x\in \Rr\ \ x=\pi \ \ldots\ldots \ e^{2ix}=1$.
+\end{enumerate}
+\finenonce{000108} 
+
+
+\finexercice
+\exercice{106, bodin, 1998/09/01}
+\video{nfJizOU7DbA}
+\enonce{000106}{}
+
+Soient les quatre assertions suivantes :
+$$ (a) \ \exists x\in \Rr \quad \forall y\in \Rr \quad x+y > 0 \quad ; \quad
+ (b) \ \forall x\in \Rr \quad \exists y\in \Rr \quad x+y > 0  \ ;$$
+$$ (c) \ \forall x\in \Rr \quad \forall y\in \Rr \quad x+y > 0  \quad ; \quad
+(d) \ \exists x\in \Rr \quad \forall y\in \Rr \quad y^2 > x .$$
+\begin{enumerate}
+    \item Les assertions $a$, $b$, $c$, $d$ sont-elles vraies ou fausses ?
+    \item Donner leur n\'egation.
+\end{enumerate}
+\finenonce{000106} 
+
+
+\finexercice
+\exercice{109, bodin, 1998/09/01}
+\video{q07OjCbDg3o}
+\enonce{000109}{}
+
+Dans $\R^2$, on d\'efinit les ensembles $F_{1}=\{(x,y)\in\R^2,\ y\leq0\}$ et
+$F_{2}=\{(x,y)\in\R^2,\ xy\geq1,\ x\geq0\}$. On note $M_1M_2$ la distance usuelle entre deux points $M_1$ et $M_2$ de $\R^2$.
+\'Evaluer les propositions suivantes :
+\begin{enumerate}
+\item $
+ \forall\epsilon\in]0,+\infty[\quad
+ \exists M_{1}\in F_{1}\quad
+ \exists M_{2}\in F_{2}
+ \qquad M_{1}M_{2}<\epsilon$
+\item $
+ \exists M_{1}\in F_{1}\quad
+ \exists M_{2}\in F_{2}\quad
+ \forall\epsilon\in]0,+\infty[
+ \qquad M_{1}M_{2}<\epsilon$
+\item $
+ \exists\epsilon\in]0,+\infty[\quad 
+ \forall M_{1}\in F_{1}\quad
+ \forall M_{2}\in F_{2}
+ \qquad M_{1}M_{2}<\epsilon$
+\item $
+ \forall M_{1}\in F_{1}\quad
+ \forall M_{2}\in F_{2}\quad
+ \exists\epsilon\in]0,+\infty[
+ \qquad M_{1}M_{2}<\epsilon$
+\end{enumerate}
+Quand elles sont fausses, donner leur n\'egation.
+\finenonce{000109} 
+
+
+\finexercice
+\exercice{110, gourio, 2001/09/01}
+\video{QSbHxGnf-9M}
+\enonce{000110}{}
+Nier la proposition: ``tous les habitants de la rue du Havre qui ont les
+yeux bleus gagneront au loto et prendront leur retraite avant 50 ans''.
+
+\finenonce{000110} 
+
+
+\finexercice
+\exercice{112, bodin, 1998/09/01}
+\video{FH3vTlYT23M}
+\enonce{000112}{}
+ Nier les assertions suivantes :
+\begin{enumerate}
+    \item tout triangle rectangle poss\`ede un angle droit ;
+    \item dans toutes les \'ecuries, tous les chevaux sont noirs ;
+    \item pour tout entier $x$, il existe un entier $y$ tel que, pour tout entier $z$, 
+la relation $z<x$ implique le relation $z<x+1$ ;
+    \item $\forall \epsilon >0 \quad \exists \alpha >0 \qquad (|x-7/5|<\alpha \Rightarrow |5x-7|<\epsilon)$.
+\end{enumerate}
+
+
+\finenonce{000112} 
+
+
+\finexercice
+\exercice{120, bodin, 1998/09/01}
+\video{-Kid1jaNv5A}
+\enonce{000120}{}
+
+Soient $f,g$ deux fonctions de $\Rr$ dans $\Rr$. Traduire
+en termes de quantificateurs les expressions suivantes :
+\begin{enumerate}
+  \item $f$ est major\'ee;
+  \item $f$ est born\'ee;
+  \item $f$ est paire;
+  \item $f$ est impaire;
+  \item $f$ ne s'annule jamais;
+  \item $f$ est p\'eriodique;
+  \item $f$ est croissante;
+  \item $f$ est strictement d\'ecroissante;
+  \item $f$ n'est pas la fonction nulle;
+  \item $f$ n'a jamais les m\^{e}mes valeurs en deux points distincts;
+  \item $f$ atteint toutes les valeurs de $\Nn$;
+  \item $f$ est inf\'erieure \`a $g$;
+  \item $f$ n'est pas inf\'erieure \`a $g$.
+\end{enumerate}
+\finenonce{000120} 
+
+
+\finexercice
+\exercice{107, bodin, 1998/09/01}
+\video{ZCLCoGR3hcc}
+\enonce{000107}{}
+ Soit  $f$  une application de  ${\Rr}$  dans
+${\Rr}$. Nier, de la mani\`ere la plus pr\' ecise possible, les \'
+enonc\' es qui suivent :
+\begin{enumerate}
+    \item Pour tout  $x\in {\Rr}\ f(x)\leq 1$.
+    \item L'application  $f$  est croissante.
+    \item L'application  $f$  est croissante et positive.
+    \item Il existe  $x\in {\Rr}^+$  tel que  $f(x)\leq 0$.
+    \item  Il existe $x\in \Rr$ tel que quel que soit $y\in \Rr$, si $x<y$ alors $f(x)>f(y)$.
+\end{enumerate}
+\noindent On ne demande pas de d\' emontrer quoi que ce soit, juste d'\' ecrire le contraire
+d'un \' enonc\' e.
+
+\finenonce{000107} 
+
+
+\finexercice
+\exercice{119, ridde, 1999/11/01}
+\video{UK22qba7LV0}
+\enonce{000119}{}
+
+Montrer que 
+$$\forall \epsilon >0 \quad \exists N \in \Nn \text{ tel que }
+ (n \geq N \Rightarrow 2-\epsilon < \frac{2n + 1}{n + 2} < 2 + \epsilon).$$
+\finenonce{000119} 
+
+
+\finexercice
+
+\section{Ensembles}
+\exercice{123, bodin, 1998/09/01}
+\video{I6E-O_PNk1Y}
+\enonce{000123}{}
+ Soit $A,B$ deux ensembles, montrer
+$\complement(A\cup B) =\complement A\cap \complement B$ et
+$\complement (A\cap B) =\complement A\cup \complement B$.
+
+\finenonce{000123} 
+
+
+\finexercice
+\exercice{122, bodin, 1998/09/01}
+\video{MxucdpW0WDI}
+\enonce{000122}{}
+
+ Montrer par contraposition les assertions suivantes, $E$ \'etant
+un ensemble :
+\begin{enumerate}
+\item $\forall A,B \in \mathcal{P}(E) \quad (A\cap B=A\cup B)\Rightarrow A=B$,
+\item $\forall A,B,C \in \mathcal{P}(E) \quad
+(A\cap B=A\cap C \text{ et } A\cup B=A\cup C)\Rightarrow B=C$.
+\end{enumerate}
+\finenonce{000122} 
+
+
+\finexercice
+\exercice{124, bodin, 1998/09/01}
+\video{64sBWnSD4nM}
+\enonce{000124}{}
+
+Soient $E$ et $F$ deux ensembles, $f:E\rightarrow F$. D\'emontrer que :\\
+$\forall A,B \in \mathcal{P}(E) \quad (A\subset B)\Rightarrow (f(A)\subset f(B))$,\\
+$\forall A,B \in \mathcal{P}(E) \quad f(A\cap B)\subset f(A)\cap f(B)$,\\
+$\forall A,B \in \mathcal{P}(E) \quad f(A\cup B) = f(A)\cup f(B)$,\\
+$\forall A,B \in \mathcal{P}(F) \quad f^{-1}(A\cup B) = f^{-1}(A)\cup f^{-1}(B)$,\\
+$\forall A \in \mathcal{P}(F) \quad f^{-1}(F\setminus A)=E\setminus f^{-1}(A)$.
+
+\finenonce{000124} 
+
+
+\finexercice
+\exercice{137, cousquer, 2003/10/01}
+\video{a7iULB800tg}
+\enonce{000137}{}
+
+ Montrez que chacun des ensembles suivants est un intervalle que vous calculerez.
+$$I=\bigcap_{n=1}^{+\infty}\left[-\frac{1}{n},2+\frac{1}{n}\right[\ \quad \mbox{
+et }\quad \ J=\bigcup_{n=2}^{+\infty}\left[1+\frac{1}{n},n\right]$$
+
+\finenonce{000137} 
+
+
+\finexercice
+
+\section{Absurde et contraposée}
+\exercice{150, bodin, 1998/09/01}
+\video{RDbMQTxMIuA}
+\enonce{000150}{}
+ Soit $(f_n)_{n\in\Nn}$ une suite d'applications de
+l'ensemble $\Nn$ dans lui-m\^eme. On d\'efinit une application $f$
+de $\Nn$ dans $\Nn$ en posant $f(n)=f_n(n)+1$. D\'emontrer qu'il
+n'existe aucun $p\in \Nn$ tel que $f=f_p$.
+
+\finenonce{000150} 
+
+
+\finexercice
+\exercice{151, bodin, 1998/09/01}
+\video{RHiN60xhmoo}
+\enonce{000151}{}
+\begin{enumerate}
+\item
+Soit $p_{1},p_{2},\ldots ,p_{r}$, $r$ nombres premiers. Montrer que l'entier
+$N=p_{1}p_{2}\ldots p_{r}+1$ n'est divisible par aucun des entiers $p_{i}$.
+\item
+Utiliser la question pr\'ec\'edente pour montrer par l'absurde qu'il existe une infinit\'e de
+nombres premiers.
+\end{enumerate}
+
+\finenonce{000151} 
+
+
+\finexercice
+
+\section{Récurrence}
+\exercice{153, bodin, 1998/09/01}
+\video{SUMAdDoMPto}
+\enonce{000153}{}
+\label{ex104}
+Montrer :
+\begin{enumerate}
+    \item $\displaystyle{\sum_{k=1}^{n}k=\frac{n(n+1)}{2} \quad \forall n \in \Nn^{*} \,.}$
+    \item $\displaystyle{\sum_{k=1}^{n}k^2=\frac{n(n+1)(2n+1)}{6} \quad \forall n \in \Nn^{*} \,.}$
+\end{enumerate}
+
+\finenonce{000153} 
+
+
+\finexercice
+\exercice{157, ridde, 1999/11/01}
+\video{okAsZpWWB0M}
+\enonce{000157}{}
+Soit $X$ un ensemble. Pour $f \in \mathcal{F} (X, X)$, on d\'efinit $f^0 = id$ et
+par r\'ecurrence pour $n \in \Nn$ $f^{n + 1} = f^n \circ f$.
+\begin{enumerate}
+\item Montrer que $\forall n \in \Nn$ $f^{n + 1} = f \circ f^n$.
+\item Montrer que si $f$ est bijective alors $\forall n \in \Nn$ $ (f^{-1})^n
+ = (f^n)^{-1}$.
+ \end{enumerate}
+
+\finenonce{000157} 
+
+
+\finexercice
+\exercice{155, bodin, 1998/09/01}
+\video{6iVRvfkMLTw}
+\enonce{000155}{}
+Soit la suite $(x_n)_{n\in \Nn}$ d\'efinie par
+$x_0=4$ et $\displaystyle{x_{n+1}=\frac{2x_n^2-3}{x_n+2}}$.
+\begin{enumerate}
+    \item Montrer que : $\forall n\in\Nn\quad x_n>3$.
+    \item Montrer que : $\forall n\in\Nn \quad x_{n+1}-3>\frac{3}{2}(x_n-3)$.
+    \item Montrer que : $\forall n\in\Nn \quad x_n \geqslant \left(\frac{3}{2}\right)^n+3$.
+    \item La suite $(x_n)_{n\in\Nn}$ est-elle convergente ?
+
+\end{enumerate}
+
+\finenonce{000155} 
+
+
+\finexercice
+
+\finfiche
+
+ \finenonces 
+
+
+
+ \finindications 
+
+\noindication
+\indication{000106}
+Attention : la n\'egation d'une in\'egalit\'e stricte est une in\'egalit\'e large
+(et r\'eci\-pro\-quement).
+\finindication
+\indication{000109}
+Faire un dessin de $F_1$ et de $F_2$.
+Essayer de voir si la difficult\'e pour r\'ealiser les assertions vient de
+$\epsilon$ ``petit'' (c'est-\`a-dire proche de $0$) ou de $\epsilon$ ``grand''
+(quand il tend vers $+\infty$).
+\finindication
+\noindication
+\noindication
+\noindication
+\noindication
+\indication{000119}
+En fait, on a toujours : $\frac{2n+1}{n+2} \leq 2$.
+Puis chercher une condition sur $n$ pour que
+l'in\'egalit\'e 
+$$2-\epsilon < \frac{2n + 1}{n + 2}$$
+soit vraie.
+\finindication
+\indication{000123}
+Il est plus facile de raisonner en prenant un \'el\'ement $x\in E$.
+Par exemple, soit $F, G$ des sous-ensembles de $E$. Montrer que $F\subset G$
+revient à montrer que pour tout $x\in F$ alors $x\in G$.
+Et montrer $F=G$ est \'equivalent \`a $x\in F$ si et seulement si $x\in G$,
+et ce pour tout $x$ de $E$.
+Remarque : pour montrer $F=G$ on peut aussi montrer $F\subset G$ puis $G\subset F$.
+
+Enfin, se rappeler que $x\in \complement F$ si et seulement si $x\notin F$.
+\finindication
+\noindication
+\noindication
+\noindication
+\indication{000150}
+Par l'absurde, supposer qu'il existe $p\in \Nn$ tel que $f=f_p$.
+Puis pour un tel $p$, \'evaluer $f$ et $f_p$ en une valeur bien choisie.
+\finindication
+\indication{000151}
+Pour la premi\`ere question vous pouvez raisonner par contraposition ou par l'absurde.
+\finindication
+\noindication
+\indication{000157}
+Pour les deux questions, travailler par r\'ecurrence.
+\finindication
+\indication{000155}
+\begin{enumerate}
+    \item R\'ecurrence : calculer $x_{n+1}-3$.
+    \item Calculer  $x_{n+1}-3 - \frac{3}{2}(x_n-3)$.
+    \item R\'ecurrence.
+\end{enumerate}
+\finindication
+
+
+\newpage
+
+\correction{000108}
+\begin{enumerate}
+  \item $\Leftarrow$
+  \item $\Leftrightarrow$
+  \item $\Rightarrow$
+\end{enumerate}
+\fincorrection
+\correction{000106}
+\begin{enumerate}
+\item (a) est fausse. Car sa n\'egation qui est 
+ $\forall x\in \Rr \ \exists y\in \Rr \quad x+y \leq 0$
+est vraie. \'Etant donn\'e $x\in \Rr$ il existe toujours un $y\in\Rr$ tel que
+$x+y \leq 0$, par exemple on peut prendre $y=-(x+1)$ et alors $x+y=x-x-1=-1 \leq 0$.
+
+\item (b) est vraie, pour un $x$ donn\'e, on peut prendre (par exemple) $y=-x+1$
+et alors $x+y=1>0$.
+La n\'egation de (b) est 
+ $\exists x\in \Rr \ \forall y\in \Rr \quad x+y \leq 0$.
+
+\item (c) : $\forall x\in \Rr \ \forall y\in \Rr \quad x+y > 0$
+est fausse, par exemple $x=-1$, $y=0$. La n\'egation est 
+$\exists x\in \Rr\ \exists y\in \Rr\ x+y \leq 0$.
+
+\item (d) est vraie, on peut prendre $x=-1$. La n\'egation est:
+$\forall x\in \Rr \ \exists y\in \Rr \quad y^2 \leq x$. 
+\end{enumerate}
+\fincorrection
+\correction{000109}
+\begin{enumerate}
+\item
+ Cette proposition est vraie. En effet soit $\epsilon > 0$,  d\'efinissons $M_1 = (\frac{2}{\epsilon},0)  \in F_1$ et
+ $M_2 = (\frac{2}{\epsilon},\frac{\epsilon}{2}) \in F_2$, alors $M_1M_2=\frac{\epsilon}{2} < \epsilon$. Ceci \'etant vrai quelque soit
+$\epsilon >0$ la proposition est donc d\'emontr\'ee.
+
+
+\item
+Soit deux points fix\'es $M_1$, $M_2$ v\'erifiant cette
+proposition, la distance $d= M_1M_2$ est
+ aussi petite que l'on veut donc elle est nulle, donc $M_1 = M_2$ ; or les ensembles $F_1$ et $F_2$
+sont disjoints. Donc la proposition est fausse. La n\'egation de
+cette proposition est :
+$$ \forall M_1 \in F_1 \ \  \forall M_2 \in F_2 \quad \exists \epsilon \in ]0,+\infty[ \quad  \quad M_1M_2 \geqslant \epsilon $$ et cela exprime le fait que les ensembles $F_1$ et $F_2$ sont disjoints.
+
+\item
+Celle ci est \'egalement fausse, en effet supposons qu'elle soit
+vraie, soit alors $\epsilon$ correspondant \`a cette proposition.
+Soit $M_1=(\epsilon +2,0)$ et $M_2 = (1,1)$, on a $M_1M_2 >
+\epsilon+1$ ce qui est absurde. La n\'egation est :
+$$\forall \epsilon \in ]0,+\infty[ \quad  \exists M_1 \in F_1 \ \  \exists M_2 \in F_2 \quad   \quad M_1M_2 \geqslant \epsilon $$
+C'est-\`a-dire que l'on peut trouver deux points aussi
+\'eloign\'es l'un de l'autre  que l'on veut.
+
+\item
+Cette proposition est vraie, il suffit de choisir
+$\epsilon=M_1M_2+1$. Elle signifie que la distance entre deux
+points donn\'es est un nombre fini !
+
+\end{enumerate}
+\fincorrection
+\correction{000110}
+``Il existe un habitant de la rue du Havre qui a les yeux bleus, qui
+ne gagnera pas au loto ou qui prendra sa retraite apr\`es 50 ans.''
+\fincorrection
+\correction{000112}
+\begin{enumerate}
+    \item ``Il existe un triangle rectangle qui n'a pas d'angle droit." Bien sûr cette dernière phrase est fausse !
+    \item ``Il existe une \'ecurie dans laquelle il y a (au moins) un cheval
+dont la couleur n'est pas noire."
+    \item Sachant que la proposition en langage math\'ematique s'\'ecrit
+$$\forall x\in\Zz \ \  \exists y\in\Zz\ \  \forall z\in\Zz \quad (z<x \Rightarrow z<x+1),$$
+la n\'egation est
+$$\exists x\in\Zz\ \  \forall y\in\Zz\ \  \exists z\in\Zz \quad (z<x \text{ et } z\geq x+1).$$
+    \item $\exists \epsilon>0\ \  \forall \alpha>0 \quad (|x-7/5|<\alpha \text{ et } |5x-7|\geq\epsilon).$
+\end{enumerate}
+\fincorrection
+\correction{000120}
+\begin{enumerate}
+  \item $\exists M \in \Rr \quad \forall x \in \Rr \qquad f(x) \leq M$;
+  \item $\exists M \in \Rr\quad \exists m \in \Rr \quad \forall x \in \Rr \qquad m \leq f(x) \leq M$;
+  \item $\forall x \in \Rr \qquad f(x) = f(-x)$;
+  \item $\forall x \in \Rr \qquad f(x) = -f(-x)$;
+  \item $\forall x \in \Rr \qquad f(x) \not= 0$;
+  \item $\exists a \in \Rr^* \quad \forall x \in \Rr \qquad f(x+a) = f(x)$;
+  \item $\forall (x,y) \in \Rr^2 \qquad (x\leq y \Rightarrow f(x) \leq f(y))$;
+  \item $\forall (x,y) \in \Rr^2 \qquad (x < y \Rightarrow f(x) > f(y))$;
+  \item $\exists x \in \Rr \qquad  f(x) \not= 0$;
+  \item $\forall (x,y) \in \Rr^2 \qquad (x\not= y \Rightarrow f(x) \not= f(y))$;
+  \item $\forall n\in \Nn \quad \exists x \in \Rr \qquad f(x)=n$;
+  \item $\forall x \in \Rr \qquad f(x) \leq g(x)$;
+  \item $\exists x \in \Rr \qquad f(x) > g(x)$.
+\end{enumerate}
+\fincorrection
+\correction{000107}
+Dans ce corrig\'e, nous donnons une justification, ce qui n'\'etait
+pas demand\'e.
+\begin{enumerate}
+\item Cette assertion se d\'ecompose de la mani\`ere suivante : ( Pour tout $x\in
+  {\Rr}$) ($f(x)\leq 1$). La n\'egation de ``( Pour tout $x\in
+  {\Rr}$)" est ``Il existe $x\in {\Rr}$" et la n\'egation de ``($f(x)\leq 1$)" est
+$ f(x)>1$. Donc la n\'egation de l'assertion compl\`ete est : ``Il
+existe $x\in {\Rr},  f(x)>1$".
+
+\item Rappelons comment se traduit l'assertion ``L'application $f$ est
+  croissante" : ``pour tout couple de r\'eels $(x_1,x_2)$, si $x_1\leq x_2$
+  alors $f(x_1) \leq f(x_2)$". Cela se d\'ecompose en : ``(pour tout couple de
+  r\'eels $x_1$ et $x_2$) ($x_1\leq x_2$ implique $f(x_1) \leq f(x_2)$)".
+La n\'egation de la premi\`ere partie est : ``(il existe un couple de
+r\'eels $(x_1,x_2)$)" et la n\'egation de la deuxi\`eme partie est :
+``($x_1\leq x_2$ et $f(x_1) > f(x_2)$)". Donc la n\'egation de
+l'assertion compl\`ete est : ``Il existe $x_1\in \Rr$ et $x_2\in
+\Rr$ tels que $x_1 \leq x_2$ et $f(x_1) > f(x_2)$".
+
+\item La n\'egation est : ``l'application $f$ n'est pas croissante ou n'est pas
+  positive". On a d\'ej\`a traduit ``l'application $f$ n'est pas croissante",
+  traduisons ``l'application $f$ n'est pas positive" : ``il existe $x \in \Rr,
+  f(x)<0$". Donc la n\'egation de l'assertion compl\`ete est : ``
+Il existe $x_1\in \Rr$ et $x_2\in \Rr$ tels que $x_1<x_2$ et
+$f(x_1) \geq f(x_2)$, ou il existe $x \in \Rr,
+  f(x)<0$".
+
+\item Cette assertion se d\'ecompose de la mani\`ere suivante : ``(Il existe $x\in
+  {\Rr}^+$) ($f(x)\leq 0$)". La n\'egation de la premi\`ere partie est : ``(pour
+  tout $x\in  {\Rr}^+$)", et celle de la seconde est :``($f(x)> 0$)".
+  Donc la n\'egation de l'assertion compl\`ete est : ``Pour tout $x\in {\Rr}^+$,  $f(x)> 0$".
+
+\item Cette assertion se d\'ecompose de la mani\`ere suivante : 
+``($\exists x \in {\Rr}$)($\forall y \in {\Rr}$)($ x<y \Rightarrow f(x)>f(y)$)".  
+La n\'egation de la premi\`ere partie est ``($\forall x \in  {\Rr}$)", celle de la
+seconde est ``($\exists y \in {\Rr}$)", et celle de la troisi\`eme est
+``($ x<y \mathrm{\ et\ } f(x)\leq f(y)$)". Donc la n\'egation de
+l'assertion compl\`ete est : `` $\forall x \in {\Rr}, \exists y \in
+{\Rr} \mathrm{ tels que } x<y \mathrm{\ et\ } f(x)\leq f(y)$".
+\end{enumerate}
+\fincorrection
+\correction{000119}
+Remarquons d'abord que pour $n \in \Nn$, $\frac{2n+1}{n+2} \leq 2$
+car $2n+1 \leq 2(n+2)$.
+\'Etant donn\'e $\epsilon > 0$, nous avons donc 
+$$\forall n \in \Nn \quad \frac{2n+1}{n+2} < 2 + \epsilon$$
+Maintenant nous cherchons une condition sur $n$ pour que
+l'in\'egalit\'e 
+$$2-\epsilon < \frac{2n + 1}{n + 2}$$
+soit vraie.
+\begin{align*}
+2-\epsilon < \frac{2n + 1}{n + 2} 
+    &\Leftrightarrow (2-\epsilon)(n+2) < 2n+1 \\
+    &\Leftrightarrow 3  < \epsilon (n+2) \\
+   &\Leftrightarrow n >  \frac{3}{\epsilon}-2 \\
+\end{align*}
+
+Ici $\epsilon$ nous est donn\'e, nous prenons un $N\in \Nn$ tel
+que $N > \frac{3}{\epsilon}-2$, alors pour tout $n \geq N$ nous avons
+$n \geq N >  \frac{3}{\epsilon}-2$ et par
+cons\'equent: $2-\epsilon < \frac{2n + 1}{n + 2}$.
+Conclusion: \'etant donn\'e $\epsilon > 0$, nous avons trouv\'e un 
+$N\in \Nn$ tel que pour tout $n \geq N$ on ait
+$2-\epsilon < \frac{2n + 1}{n + 2}$ et $\frac{2n+1}{n+2} < 2 + \epsilon$.
+
+En fait nous venons de prouver que la limite de la suite 
+de terme $(2n+1)/(n+2)$ tend vers $2$ quand $n$ tend vers $+\infty$.
+\fincorrection
+\correction{000123}
+\begin{align*}
+x\in\complement (A\cup B) & \Leftrightarrow x\notin A\cup B \\
+&\Leftrightarrow x\notin A \text{ et } x\notin B\\
+&\Leftrightarrow x\in\complement A \text{ et } x\in\complement B\\
+&\Leftrightarrow x\in \complement A \cap \complement B.\\
+\end{align*}
+\begin{align*}
+x\in\complement (A\cap B) & \Leftrightarrow x\notin A\cap B\\
+&\Leftrightarrow x\notin A \text{ ou } x\notin B\\
+&\Leftrightarrow x\in\complement A \text{ ou } x\in\complement\\
+&\Leftrightarrow x\in \complement A \cup \complement B.\\
+\end{align*}
+\fincorrection
+\correction{000122}
+Nous allons d\'emontrer l'assertion $1.$ de deux mani\`eres diff\'erentes.
+\begin{enumerate}
+  \item Tout d'abord de fa\c{c}on ``directe". Nous supposons
+que $A$ et $B$ sont tels que $A\cap B = A \cup B$. Nous devons montrer 
+que $A=B$. 
+
+Pour cela \'etant donn\'e $x \in A$ montrons qu'il est aussi dans $B$.
+Comme $x\in A$ alors $x \in A\cup B$ donc $x \in A \cap  B$ (car $A\cup B= A \cap B$). Ainsi $x \in B$. 
+
+Maintenant nous prenons $x\in B$ et le m\^eme raisonnement implique $x \in A$.
+Donc tout \'el\'ement de $A$ est dans $B$ et tout \'el\'ement de $B$ est dans $A$.
+Cela veut dire $A=B$.
+
+  \item Ensuite, comme demand\'e, nous le montrons par contraposition.
+Nous supposons que $A\not= B$ et non devons montrer que 
+$A\cap B \not= A\cup B$.
+
+Si $A\not= B$ cela veut dire qu'il existe un \'el\'ement $x \in A\setminus B$
+ou alors un \'el\'ement $x\in B \setminus A$. Quitte \`a \'echanger $A$ et $B$, nous supposons qu'il existe $x\in A \setminus B$. Alors $x \in A \cup B$ mais
+$x \notin A\cap B$. Donc $A\cap B \not= A\cup B$.
+\end{enumerate}
+\fincorrection
+\correction{000124}
+Montrons quelques assertions.
+
+$f(A\cap B) \subset f(A)\cap f(B)$.\\
+Si $y\in f(A\cap B)$, il existe $x\in A\cap B$ tel que $y=f(x)$,
+or $x\in A$ donc $y=f(x) \in f(A)$ et de m\^eme $x\in B$ donc
+$y\in f(B)$. D'o\`u $y\in f(A)\cap f(B)$. Tout \'el\'ement de
+$f(A\cap B)$ est un \'el\'ement de $f(A)\cap f(B)$ donc $f(A\cap
+B) \subset f(A)\cap f(B)$.
+
+Remarque : l'inclusion r\'eciproque est fausse. Exercice : trouver
+un contre-exemple.
+
+\bigskip
+
+$f^{-1}(F\setminus A) = E\setminus f^{-1}(A)$.\\
+\begin{align*}
+x\in f^{-1}(F\setminus A) &\Leftrightarrow f(x) \in F\setminus A\\
+&\Leftrightarrow f(x) \notin A\\
+&\Leftrightarrow x \notin f^{-1}(A) \quad \text{ car } f^{-1}(A) = \{ x\in E \ / \ f(x) \in A \}\\
+&\Leftrightarrow x\in E\setminus f^{-1}(A)\\
+\end{align*}
+\fincorrection
+\correction{000137}
+$I=\left[0,2\right]\;\mbox{
+et }\;J=\left]1,+\infty\right[.$
+\fincorrection
+\correction{000150}
+Par l'absurde, supposons qu'il existe $p\in \Nn$ tel que $f=f_p$.
+Deux applications sont \'egales si et seulement si elles prennent
+les m\^emes valeurs.
+$$\forall n\in \Nn\ \ f(n) = f_p(n).$$
+En particulier pour $n=p$, $f(p)=f_p(p)$. D'autre part la
+d\'efinition de $f$ nous donne $f(p) = f_p(p)+1$. Nous obtenons
+une contradiction car $f(p)$ ne peut prendre deux valeurs
+distinctes. En conclusion, quelque soit $p\in \Nn$, $f\not= f_p$.
+\fincorrection
+\correction{000151}
+\begin{enumerate}
+\item
+Montrons en fait la contrapos\'ee.
+
+S'il existe $i$ tel que $p_i$ divise $N=p_1p_2 \ldots p_r +1$ ($i$
+est fix\'e) alors il existe $k \in \Zz$ tel que $N = kp_i$ donc
+$$p_i(k-p_1p_2\ldots p_{i-1}p_{i+1}\ldots p_r) = 1$$
+ soit $p_iq = 1$ (avec
+$q = k-p_1p_2\ldots p_{i-1}p_{i+1}\ldots p_r $ un nombre entier).
+Donc $p_i \in \Zz$ et $1/p_i = q \in \Zz$,  alors $p_i$ vaut $1$
+ou $-1$. Et donc $p_i$ n'est pas un nombre premier.
+
+Conclusion : par contraposition il est vrai que $N$ n'est
+divisible par aucun des $p_i$
+
+\item Raisonnons par l'absurde : s'il n'existe qu'un nombre fini $r$ de nombres premiers $p_1,\ldots,p_r$
+alors $N=p_1p_2 \ldots p_r +1$ est un nombre premier car divisible
+par aucun nombre premier autre que lui m\^eme (c'est le 1.).
+
+ Mais $N$ est strictement sup\'erieur \`a tous les $p_i$. Conclusion on a construit un
+nombre premier $N$ diff\'erent des $p_i$, il y a donc au moins
+$r+1$ nombres premiers, ce qui est absurde.
+\end{enumerate}
+\fincorrection
+\correction{000153}
+R\'edigeons la deuxi\`eme \'egalit\'e.
+Soit $\mathcal{A}_n$, $n\in \Nn^*$ l'assertion suivante:
+$$(\mathcal{A}_n) \ \ \ \sum_{k=1}^n k^2= \frac{n(n+1)(2n+1)}{6}.$$
+\begin{itemize}
+  \item $\mathcal{A}_0$ est vraie ($1=1$).
+  \item \'Etant donn\'e $n\in\Nn^*$ supposons que $\mathcal{A}_n$
+soit vraie. Alors
+\begin{align*}
+\sum_{k=1}^{n+1} k^2
+  &= \sum_{k=1}^n k^2 \ \ + (n+1)^2 \\
+  &= \frac{n(n+1)(2n+1)}{6} + (n+1)^2\\
+  &= \frac{n(n+1)(2n+1)+6(n+1)^2}{6} \\
+  &= \frac{(n+1)(n(2n+1)+6(n+1))}{6} \\
+  &= \frac{(n+1)(n+2)(2(n+1)+1)}{6} \\
+\end{align*}
+Ce qui prouve $\mathcal{A}_{n+1}$.
+  \item Par le principe de r\'ecurrence nous venons de montrer 
+que $\mathcal{A}_n$ est vraie pour tout $n\in\Nn^*$.
+\end{itemize}
+\fincorrection
+\correction{000157}
+\begin{enumerate}
+\item Montrons la proposition demand\'ee par r\'ecurrence:
+soit $\mathcal{A}_{n}$ l'assertion $f^{n + 1} = f \circ f^n$.
+Cette assertion est vraie pour $n=0$. Pour $n\in \Nn$ supposons
+$\mathcal{A}_{n}$ vraie. Alors
+$$f^{n + 2} = f^{n + 1} \circ f = (f \circ f^n) \circ f = f \circ (f^n \circ f) = f \circ f^{n + 1}.$$
+Nous avons utiliser la definition de $f^{n + 2}$, puis la proposition $\mathcal{A}_{n}$,
+puis l'associativit\'e de la composition, puis la d\'efinition de $f^{n + 1}$.
+Donc $\mathcal{A}_{n+1}$ est vraie. Par le principe de r\'ecurrence
+$$\forall \in \Nn \ \ f^n\circ f = f\circ f^n.$$
+
+\item On proc\`ede de m\^eme par r\'ecurrence:
+soit $\mathcal{A}_{n}$ l'assertion $ (f^{-1})^n  = (f^n)^{-1}$.
+Cette assertion est vraie pour $n=0$. Pour $n\in \Nn$ supposons
+$\mathcal{A}_{n}$ vraie. Alors
+$$(f^{-1})^{n+1} = (f^{-1})^{n} \circ f^{-1} = (f^n)^{-1} \circ f^{-1} = (f\circ f^n)^{-1} =
+ ( f^n \circ f)^{-1} = ( f^{n+1})^{-1} .$$
+Donc $\mathcal{A}_{n+1}$ est vraie. Par le principe de r\'ecurrence
+$$\forall \in \Nn \ \ (f^{-1})^n
+ = (f^n)^{-1}.$$
+\end{enumerate}
+\fincorrection
+\correction{000155}
+\begin{enumerate}
+    \item Montrons par r\'ecurrence $\forall n \in \Nn\  x_n > 3$.
+Soit l'hypoth\`ese de r\'ecurrence :
+$$(\mathcal{H}_n) : \quad x_n >3.$$
+
+\begin{itemize}
+    \item[$\bullet$] La proposition $\mathcal{H}_0$ est vraie car $x_0 = 4 > 3$.
+
+    \item[$\bullet$] Soit $n\geq 0$, supposons $\mathcal{H}_n$ vraie et montrons
+que $\mathcal{H}_{n+1}$ est alors vraie.
+
+$$x_{n+1}-3 = \frac{2{x_n}^2-3}{x_n+2}-3 = \frac{2{x_n}^2-3x_n-9}{x_n+2}.$$
+Par hypoth\`ese de r\'ecurrence $x_n > 3$, donc $x_n+2 > 0$ et
+$2{x_n}^2-3x_n-9>0$ (ceci par \'etude de la fonction $x \mapsto
+2{x}^2-3x-9$ pour $x>3$). Donc $x_{n+1}-3 $ et $\mathcal{H}_{n+1}$
+est vraie.
+
+    \item[$\bullet$] Nous avons montré
+$$\forall n \in \Nn \quad \mathcal{H}_{n} \Rightarrow \mathcal{H}_{n+1}$$
+et comme $\mathcal{H}_{0}$ est vraie alors $\mathcal{H}_{n}$ est
+vraie quelque soit $n$. Ce qui termine la d\'emonstration.
+\end{itemize}
+
+    \item Montrons que  $x_{n+1}-3 - \frac{3}{2}(x_n-3)$ est positif.
+$$x_{n+1}-3 - \frac{3}{2}(x_n-3) =
+\frac{2{x_n}^2-3}{x_n+2}-\frac{3}{2}(x_n-3) =
+\frac{1}{2}\frac{{x_n}^2-3x_n}{x_n+2}$$ Ce dernier terme est
+positif car $x_n >3$.
+
+    \item
+ Montrons par r\'ecurrence $\forall n \in \Nn\  x_n > \left(\frac{3}{2}\right)^n+3$.
+Soit notre nouvelle l'hypoth\`ese de r\'ecurrence :
+$$(\mathcal{H}_n) \quad x_n >\left( \frac{3}{2}\right)^n+3.$$
+
+\begin{itemize}
+    \item[$\bullet$] La proposition $\mathcal{H}_0$ est vraie.
+
+    \item[$\bullet$] Soit $n\geq 0$, supposons que $\mathcal{H}_n$ vraie et montrons
+que $\mathcal{H}_{n+1}$ est v\'erifi\'ee.
+
+D'apr\`es la question pr\'ec\'edente $ x_{n+1}-3 >
+\frac{3}{2}(x_n-3)$ et par hypoth\`ese de r\'ecurrence $x_n
+>\left( \frac{3}{2}\right)^n+3$ ; en r\'eunissant ces deux
+in\'egalit\'es nous avons $ x_{n+1}-3 >
+\frac{3}{2}(\left(\frac{3}{2}\right)^n) =
+\left(\frac{3}{2}\right)^{n+1}$.
+
+    \item[$\bullet$] Nous concluons en r\'esumant la situation :\\
+$\mathcal{H}_{0}$ est vraie, et $\mathcal{H}_{n} \Rightarrow
+\mathcal{H}_{n+1}$ quelque soit $n$. Donc $\mathcal{H}_{n}$ est
+toujours vraie.
+\end{itemize}
+    \item La suite $(x_n)$ tend vers $+\infty$ et n'est donc pas convergente.
+\end{enumerate}
+\fincorrection
+
+
+\end{document}
+

@@ -1,0 +1,114 @@
+
+%%%%%%%%%%%%%%%%%% PREAMBULE %%%%%%%%%%%%%%%%%%
+
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{amsfonts,amsmath,amssymb,amsthm}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage{mathptmx}
+\usepackage{fancybox}
+\usepackage{graphicx}
+\usepackage{ifthen}
+
+\usepackage{tikz}   
+
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=blue,
+pdftitle={Exo7 - Exercices de mathématiques}, pdfauthor={Exo7}}
+
+\usepackage{geometry}
+\geometry{top=2cm, bottom=2cm, left=2cm, right=2cm}
+
+%----- Ensembles : entiers, reels, complexes -----
+\newcommand{\Nn}{\mathbb{N}} \newcommand{\N}{\mathbb{N}}
+\newcommand{\Zz}{\mathbb{Z}} \newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Qq}{\mathbb{Q}} \newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Rr}{\mathbb{R}} \newcommand{\R}{\mathbb{R}}
+\newcommand{\Cc}{\mathbb{C}} \newcommand{\C}{\mathbb{C}}
+\newcommand{\Kk}{\mathbb{K}} \newcommand{\K}{\mathbb{K}}
+
+%----- Modifications de symboles -----
+\renewcommand{\epsilon}{\varepsilon}
+\renewcommand{\Re}{\mathop{\mathrm{Re}}\nolimits}
+\renewcommand{\Im}{\mathop{\mathrm{Im}}\nolimits}
+\newcommand{\llbracket}{\left[\kern-0.15em\left[}
+\newcommand{\rrbracket}{\right]\kern-0.15em\right]}
+\renewcommand{\ge}{\geqslant} \renewcommand{\geq}{\geqslant}
+\renewcommand{\le}{\leqslant} \renewcommand{\leq}{\leqslant}
+
+%----- Fonctions usuelles -----
+\newcommand{\ch}{\mathop{\mathrm{ch}}\nolimits}
+\newcommand{\sh}{\mathop{\mathrm{sh}}\nolimits}
+\renewcommand{\tanh}{\mathop{\mathrm{th}}\nolimits}
+\newcommand{\cotan}{\mathop{\mathrm{cotan}}\nolimits}
+\newcommand{\Arcsin}{\mathop{\mathrm{arcsin}}\nolimits}
+\newcommand{\Arccos}{\mathop{\mathrm{arccos}}\nolimits}
+\newcommand{\Arctan}{\mathop{\mathrm{arctan}}\nolimits}
+\newcommand{\Argsh}{\mathop{\mathrm{argsh}}\nolimits}
+\newcommand{\Argch}{\mathop{\mathrm{argch}}\nolimits}
+\newcommand{\Argth}{\mathop{\mathrm{argth}}\nolimits}
+\newcommand{\pgcd}{\mathop{\mathrm{pgcd}}\nolimits} 
+
+%----- Structure des exercices ------
+
+\newcommand{\exercice}[1]{\video{0}}
+\newcommand{\finexercice}{}
+\newcommand{\noindication}{}
+\newcommand{\nocorrection}{}
+
+\newcounter{exo}
+\newcommand{\enonce}[2]{\refstepcounter{exo}\hypertarget{exo7:#1}{}\label{exo7:#1}{\bf Exercice \arabic{exo}}\ \  #2\vspace{1mm}\hrule\vspace{1mm}}
+
+\newcommand{\finenonce}[1]{
+\ifthenelse{\equal{\ref{ind7:#1}}{\ref{bidon}}\and\equal{\ref{cor7:#1}}{\ref{bidon}}}{}{\par{\footnotesize
+\ifthenelse{\equal{\ref{ind7:#1}}{\ref{bidon}}}{}{\hyperlink{ind7:#1}{\texttt{Indication} $\blacktriangledown$}\qquad}
+\ifthenelse{\equal{\ref{cor7:#1}}{\ref{bidon}}}{}{\hyperlink{cor7:#1}{\texttt{Correction} $\blacktriangledown$}}}}
+\ifthenelse{\equal{\myvideo}{0}}{}{{\footnotesize\qquad\texttt{\href{http://www.youtube.com/watch?v=\myvideo}{Vidéo $\blacksquare$}}}}
+\hfill{\scriptsize\texttt{[#1]}}\vspace{1mm}\hrule\vspace*{7mm}}
+
+\newcommand{\indication}[1]{\hypertarget{ind7:#1}{}\label{ind7:#1}{\bf Indication pour \hyperlink{exo7:#1}{l'exercice \ref{exo7:#1} $\blacktriangle$}}\vspace{1mm}\hrule\vspace{1mm}}
+\newcommand{\finindication}{\vspace{1mm}\hrule\vspace*{7mm}}
+\newcommand{\correction}[1]{\hypertarget{cor7:#1}{}\label{cor7:#1}{\bf Correction de \hyperlink{exo7:#1}{l'exercice \ref{exo7:#1} $\blacktriangle$}}\vspace{1mm}\hrule\vspace{1mm}}
+\newcommand{\fincorrection}{\vspace{1mm}\hrule\vspace*{7mm}}
+
+\newcommand{\finenonces}{\newpage}
+\newcommand{\finindications}{\newpage}
+
+
+\newcommand{\fiche}[1]{} \newcommand{\finfiche}{}
+%\newcommand{\titre}[1]{\centerline{\large \bf #1}}
+\newcommand{\addcommand}[1]{}
+
+% variable myvideo : 0 no video, otherwise youtube reference
+\newcommand{\video}[1]{\def\myvideo{#1}}
+
+%----- Presentation ------
+
+\setlength{\parindent}{0cm}
+
+\definecolor{myred}{rgb}{0.93,0.26,0}
+\definecolor{myorange}{rgb}{0.97,0.58,0}
+\definecolor{myyellow}{rgb}{1,0.86,0}
+
+\newcommand{\LogoExoSept}[1]{  % input : echelle       %% NEW
+{\usefont{U}{cmss}{bx}{n}
+\begin{tikzpicture}[scale=0.1*#1,transform shape]
+  \fill[color=myorange] (0,0)--(4,0)--(4,-4)--(0,-4)--cycle;
+  \fill[color=myred] (0,0)--(0,3)--(-3,3)--(-3,0)--cycle;
+  \fill[color=myyellow] (4,0)--(7,4)--(3,7)--(0,3)--cycle;
+  \node[scale=5] at (3.5,3.5) {Exo7};
+\end{tikzpicture}}
+}
+
+
+% titre
+\newcommand{\titre}[1]{%
+\vspace*{-8ex} \hfill \hspace*{1.5cm} \hypersetup{linkcolor=black, urlcolor=black} 
+\href{http://exo7.emath.fr}{\LogoExoSept{3}} \newline 
+\hypersetup{linkcolor=blue, urlcolor=blue}  {\Large \bf #1} \newline 
+ \rule{12cm}{1mm} \vspace*{3ex}}
+
+%----- Commandes supplementaires ------
+
