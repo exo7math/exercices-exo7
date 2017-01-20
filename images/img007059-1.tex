@@ -1,0 +1,94 @@
+%%%%%%%%%%%%%%%%%% PREAMBULE %%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt,a4paper]{article}
+
+\usepackage{amsfonts,amsmath,amssymb,amsthm}
+\usepackage[francais]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+%----- Ensemles : entiers, reels, complexes -----
+\newcommand{\Nn}{\mathbb{N}} \newcommand{\N}{\mathbb{N}}
+\newcommand{\Zz}{\mathbb{Z}} \newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Qq}{\mathbb{Q}} \newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Rr}{\mathbb{R}} \newcommand{\R}{\mathbb{R}}
+\newcommand{\Cc}{\mathbb{C}} \newcommand{\C}{\mathbb{C}}
+
+%----- Modifications de symboles -----
+\renewcommand {\epsilon}{\varepsilon}
+\renewcommand {\Re}{\mathop{\mathrm{Re}}\nolimits}
+\renewcommand {\Im}{\mathop{\mathrm{Im}}\nolimits}
+
+%----- Fonctions usuelles -----
+\newcommand{\ch}{\mathop{\mathrm{ch}}\nolimits}
+\newcommand{\sh}{\mathop{\mathrm{sh}}\nolimits}
+\renewcommand{\tanh}{\mathop{\mathrm{th}}\nolimits}
+\newcommand{\Arcsin}{\mathop{\mathrm{Arcsin}}\nolimits}
+\newcommand{\Arccos}{\mathop{\mathrm{Arccos}}\nolimits}
+\newcommand{\Arctan}{\mathop{\mathrm{Arctan}}\nolimits}
+\newcommand{\Argsh}{\mathop{\mathrm{Argsh}}\nolimits}
+\newcommand{\Argch}{\mathop{\mathrm{Argch}}\nolimits}
+\newcommand{\Argth}{\mathop{\mathrm{Argth}}\nolimits}
+\newcommand{\pgcd}{\mathop{\mathrm{pgcd}}\nolimits} 
+
+%----- Commandes special dessin a ajouter localement ------
+\usepackage{geometry}
+\usepackage{pstricks}
+\usepackage{pst-plot}
+\usepackage{pst-node}
+\usepackage{graphics,epsfig}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+%\usetikzlibrary[patterns]
+
+\tikzset{every picture/.style={execute at begin picture={
+   \shorthandoff{:;!?};}
+}}
+
+
+\pagestyle{empty}
+
+% Que faire avec ce fichier monimage.tex ?
+%   1/ latex monimage.tex
+%   2/ dvips monimage.dvi
+%   3/ ps2eps monimage.ps
+%   4/ ps2pdf -dEPSCrop monimage.eps
+%   5/ Dans votre fichier d'exos \includegraphics{monimage}
+\begin{document}
+\pagestyle{empty}
+
+\definecolor{ffqqqq}{rgb}{1.,0.,0.}
+\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+\definecolor{zzttqq}{rgb}{0.6,0.2,0.}
+\definecolor{qqqqff}{rgb}{0.,0.,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-4.916914188346526,-5.321185183694469) rectangle (7.901075677667679,5.950735778424576);
+\fill[color=zzttqq,fill=zzttqq,fill opacity=0.1] (-2.8353611735168887,0.7347482858786674) -- (2.723542604158435,4.081071057435133) -- (4.143544869854495,-2.215098598432942) -- cycle;
+\draw [color=zzttqq] (-2.8353611735168887,0.7347482858786674)-- (2.723542604158435,4.081071057435133);
+\draw [color=zzttqq] (2.723542604158435,4.081071057435133)-- (4.143544869854495,-2.215098598432942);
+\draw [color=zzttqq] (4.143544869854495,-2.215098598432942)-- (-2.8353611735168887,0.7347482858786674);
+\draw(1.142943956803397,0.4163773934193428) circle (3.991023895580939cm);
+\draw [domain=-4.916914188346526:7.901075677667679] plot(\x,{(--22.943016448790758-6.296169655868075*\x)/1.4200022656960605});
+\draw [dash pattern=on 2pt off 2pt,domain=-4.916914188346526:7.901075677667679] plot(\x,{(--8.65231915271097--1.4200022656960605*\x)/6.296169655868075});
+\draw [color=ffqqqq,domain=-4.916914188346526:7.901075677667679] plot(\x,{(--11.899404026827066-2.313549978458291*\x)/0.5217848931611888});
+\draw [dash pattern=on 2pt off 2pt] (-2.8353611735168887,0.7347482858786674)-- (5.121249087123683,0.09800650096002028);
+\begin{scriptsize}
+\draw [fill=qqqqff] (-2.8353611735168887,0.7347482858786674) circle (2.5pt);
+\draw[color=qqqqff] (-2.70567610486862,1.0608434312214177) node {$A$};
+\draw [fill=qqqqff] (2.723542604158435,4.081071057435133) circle (2.5pt);
+\draw[color=qqqqff] (2.84938542191734,4.404666874529459) node {$B$};
+\draw [fill=qqqqff] (4.143544869854495,-2.215098598432942) circle (2.5pt);
+\draw[color=qqqqff] (4.269611508053557,-1.8874740134157806) node {$C$};
+\draw [fill=uuuuuu] (1.1429439568033974,0.4163773934193438) circle (1.5pt);
+\draw[color=uuuuuu] (1.2673614272339602,0.665337432550574) node {$O$};
+\draw [fill=qqqqff] (5.121249087123683,0.09800650096002028) circle (2.5pt);
+\draw[color=qqqqff] (5.294331595518927,0.41365179703276433) node {$A'$};
+\draw [fill=uuuuuu] (3.17265129042587,2.0897612187302417) circle (1.5pt);
+\draw[color=uuuuuu] (3.2988240567705733,2.3372491542045952) node {$H$};
+\draw [fill=uuuuuu] (4.599464193962494,2.4115564794183113) circle (1.5pt);
+\draw[color=uuuuuu] (4.71905014290679,2.6608449712989217) node {$D$};
+\end{scriptsize}
+\end{tikzpicture}
+
+\end{document}
