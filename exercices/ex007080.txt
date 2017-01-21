@@ -1,0 +1,19 @@
+\exercice{7080, megy, 2017/01/21}
+
+\enonce[Polygone des milieux]
+% Source : Dehornoy
+% tags : symétries centrales
+On donne un nombre impair de points du plan $M_1$, ...$M_n$. Existe-t-il un polygone $P_1$, $P_2$, ... $P_n$ tel que les $M_i$ soient les milieux des côtés du polygone ? Commencer par $n=3$. Et si $n$ est pair  ? En particulier, si $n=4$, trouver une condition nécessaire et suffisante pour que le problème admette une solution et  déterminer l'ensemble des solutions.
+\finenonce
+\indication   
+Considérer les symétries centrales $\sigma_i$ en les points $P_i$, puis la composée $\sigma_1\circ \sigma_2\circ ... \circ \sigma_n$. Pour la deuxième partie, penser au théorème de Varignon.
+%on doit avoir un parallélogramme, et alors tout point de départ est solution.
+\finindication      
+\correction 
+
+Si $n$ est impair, la composée définie dans l'indication est une symétrie centrale, et son centre (que l'on peut construire en considérant les images de plusieurs points) est un sommet du polygone. On récupère ensuite les autres sommets en appliquant les autres symétries centrales les unes après les autres.
+
+
+Remarque : cet exercice peut également se résoudre à l'aide de nombres complexes, en écrivant que le milieu de deux points a pour affixe $(a+b)/2$. On obtient un système linéaire, dont on discute l'existence de solutions. 
+\fincorrection  
+\finexercice  
