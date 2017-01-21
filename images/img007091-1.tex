@@ -1,0 +1,36 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{pgf,tikz}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+\definecolor{qqqqff}{rgb}{0.,0.,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-6.758354000000007,-5.139842) rectangle (5.15942,8.06634);
+\draw(1.1,1.5) circle (3.1283222340417547cm);
+\draw [domain=-6.758354000000007:5.15942] plot(\x,{(--27.609180168441533--2.776984176321343*\x)/6.225621164547428});
+\draw [domain=-6.758354000000007:5.15942] plot(\x,{(-8.877911903852963-2.9091504720672487*\x)/6.164969061631283});
+\draw (-0.23503093836871725,-1.3291504720672485)-- (-0.17437883545257224,4.356984176321343);
+\draw [domain=-6.758354000000007:5.15942] plot(\x,{(--11.338-0.08*\x)/7.5});
+\draw [dash pattern=on 7pt off 7pt] (-2.028144282450832,1.5333668723461422) circle (1.8235431260308832cm);
+\draw [dash pattern=on 7pt off 7pt] (4.228144282450832,1.4666331276538578) circle (4.433101342052625cm);
+\begin{scriptsize}
+\draw [fill=qqqqff] (1.1,1.5) circle (2.5pt);
+\draw[color=qqqqff] (1.2941960000000028,2.0488890000000044) node {$O$};
+\draw [fill=qqqqff] (-6.4,1.58) circle (2.5pt);
+\draw[color=qqqqff] (-6.2019960000000065,2.107453000000004) node {$M$};
+\draw [fill=uuuuuu] (-0.17437883545257224,4.356984176321343) circle (1.5pt);
+\draw[color=uuuuuu] (0.03507,4.772115000000006) node {$A$};
+\draw [fill=uuuuuu] (-0.23503093836871725,-1.3291504720672485) circle (1.5pt);
+\draw[color=uuuuuu] (-0.023493999999998752,-0.9085929999999975) node {$B$};
+\draw [fill=uuuuuu] (-2.028144282450832,1.5333668723461422) circle (1.5pt);
+\draw[color=uuuuuu] (-1.809696000000001,1.961043000000004) node {$P$};
+\draw [fill=uuuuuu] (4.228144282450832,1.4666331276538578) circle (1.5pt);
+\draw[color=uuuuuu] (4.42737,1.902479000000004) node {$Q$};
+\draw [fill=uuuuuu] (-0.20470488691064476,1.513916852127047) circle (1.5pt);
+\draw[color=uuuuuu] (0.005788000000001292,1.931761000000004) node {$H$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{document}

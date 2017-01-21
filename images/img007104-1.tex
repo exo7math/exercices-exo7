@@ -1,0 +1,29 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{pgf,tikz}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+\definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
+\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+\definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-2.7,-0.02) rectangle (4.8,7.12);
+\draw[color=qqwuqq,fill=qqwuqq,fill opacity=0.1] (1.6248227946565115,4.185863657822065) -- (2.0405714950846563,4.101288140724569) -- (2.125147012182152,4.517036841152714) -- (1.7093983117540068,4.601612358250209) -- cycle; 
+\draw [domain=-2.7:4.8] plot(\x,{(--3.7985803040317263-4.912200925313945*\x)/-0.999286186384666});
+\draw [domain=-2.7:4.8] plot(\x,{(--24.312222604097812-0.999286186384666*\x)/4.912200925313945});
+\begin{scriptsize}
+\draw [fill=xdxdff] (1.0009689358889626,1.1191791143423662) circle (2.5pt);
+\draw[color=xdxdff] (1.28,1.49) node {$E$};
+\draw [fill=xdxdff] (3.3856959682749506,4.260604097818902) circle (2.5pt);
+\draw[color=xdxdff] (3.52,4.63) node {$F$};
+\draw [fill=xdxdff] (2.0002551222736287,6.0313800396563115) circle (2.5pt);
+\draw[color=xdxdff] (2.32,6.41) node {$G$};
+\draw [fill=xdxdff] (-1.5487772637144743,2.52039656311963) circle (2.5pt);
+\draw[color=xdxdff] (-1.18,2.93) node {$H$};
+\draw [fill=uuuuuu] (-1.5265049570389948,5.259890284203569) circle (1.5pt);
+\draw[color=uuuuuu] (-1.16,4.91) node {$G''$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,43 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{pgf,tikz}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+
+
+\definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
+\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+\definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1.}
+\definecolor{qqqqff}{rgb}{0.,0.,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-3.44,0.42) rectangle (3.62,5.9);
+\draw[color=qqwuqq,fill=qqwuqq,fill opacity=0.1] (1.039053762008829,4.3320130794577105) -- (1.4596173454968133,4.2761000018841635) -- (1.5155304230703603,4.696663585372148) -- (1.094966839582376,4.752576662945695) -- cycle; 
+\draw[color=qqwuqq,fill=qqwuqq,fill opacity=0.1] (1.8346577205831516,4.226239142768639) -- (2.255221304071136,4.170326065195092) -- (2.311134381644683,4.590889648683077) -- (1.8905707981566986,4.646802726256624) -- cycle; 
+\draw (-2.12,5.18)-- (0.62,1.18);
+\draw (2.6861747567310212,4.541028789567552)-- (0.62,1.18);
+\draw (2.6861747567310212,4.541028789567552)-- (-2.12,5.18);
+\draw (1.653087378365511,2.8605143947837766)-- (1.8905707981566986,4.646802726256624);
+\draw (-2.12,5.18)-- (1.7718290882611047,3.7536585605202);
+\draw (1.8905707981566986,4.646802726256624)-- (0.62,1.18);
+\draw (1.653087378365511,2.8605143947837766)-- (-2.12,5.18);
+\draw (0.62,1.18)-- (1.094966839582376,4.752576662945695);
+\begin{scriptsize}
+\draw [fill=qqqqff] (-2.12,5.18) circle (2.5pt);
+\draw[color=qqqqff] (-2.6,5.18) node {$A$};
+\draw [fill=qqqqff] (0.62,1.18) circle (2.5pt);
+\draw[color=qqqqff] (0.22,1.22) node {$B$};
+\draw [fill=xdxdff] (2.6861747567310212,4.541028789567552) circle (2.5pt);
+\draw[color=xdxdff] (2.82,4.9) node {$C$};
+\draw [fill=uuuuuu] (1.653087378365511,2.8605143947837766) circle (1.5pt);
+\draw[color=uuuuuu] (1.78,2.56) node {$A'$};
+\draw [fill=uuuuuu] (1.094966839582376,4.752576662945695) circle (1.5pt);
+\draw[color=uuuuuu] (1.3,5.04) node {$B'$};
+\draw [fill=uuuuuu] (1.8905707981566986,4.646802726256624) circle (1.5pt);
+\draw[color=uuuuuu] (2.04,4.98) node {$I$};
+\draw [fill=uuuuuu] (1.7718290882611047,3.7536585605202) circle (1.5pt);
+\draw[color=uuuuuu] (2.02,3.92) node {$J$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{document}

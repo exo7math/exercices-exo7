@@ -1,0 +1,38 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{pgf,tikz}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+\definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
+\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+\definecolor{qqqqff}{rgb}{0.,0.,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-3.72,-2.28) rectangle (6.96,6.56);
+\draw[color=qqwuqq,fill=qqwuqq,fill opacity=0.1] (-0.503984356339779,-1.1145289582773472) -- (-0.4838950747109654,-0.6907407791552316) -- (-0.907683253833081,-0.670651497526418) -- (-0.9277725354618945,-1.0944396766485336) -- cycle; 
+\draw (-0.6,5.82)-- (-2.92,-1.);
+\draw (-2.92,-1.)-- (5.94,-1.42);
+\draw (5.94,-1.42)-- (-0.6,5.82);
+\draw (-0.6,5.82)-- (-0.9277725354618945,-1.0944396766485336);
+\draw (-1.76,2.41)-- (-0.9277725354618945,-1.0944396766485336);
+\draw (1.51,-1.21)-- (2.67,2.2);
+\draw (2.67,2.2)-- (-1.76,2.41);
+\begin{scriptsize}
+\draw [fill=qqqqff] (-0.6,5.82) circle (2.5pt);
+\draw[color=qqqqff] (-0.46,6.19) node {$A$};
+\draw [fill=qqqqff] (-2.92,-1.) circle (2.5pt);
+\draw[color=qqqqff] (-3.22,-0.65) node {$B$};
+\draw [fill=qqqqff] (5.94,-1.42) circle (2.5pt);
+\draw[color=qqqqff] (6.08,-1.05) node {$C$};
+\draw [fill=uuuuuu] (-0.9277725354618945,-1.0944396766485336) circle (1.5pt);
+\draw[color=uuuuuu] (-1.08,-1.43) node {$P$};
+\draw [fill=uuuuuu] (-1.76,2.41) circle (1.5pt);
+\draw[color=uuuuuu] (-1.88,2.73) node {$I$};
+\draw [fill=uuuuuu] (2.67,2.2) circle (1.5pt);
+\draw[color=uuuuuu] (2.8,2.49) node {$K$};
+\draw [fill=uuuuuu] (1.51,-1.21) circle (1.5pt);
+\draw[color=uuuuuu] (1.66,-1.45) node {$J$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{document}
