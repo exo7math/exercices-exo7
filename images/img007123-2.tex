@@ -1,0 +1,45 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{pgf,tikz}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\usetikzlibrary{patterns}
+\pagestyle{empty}
+\begin{document}
+\definecolor{qqwuqq}{rgb}{0,0.39,0}
+\definecolor{uuuuuu}{rgb}{0.27,0.27,0.27}
+\definecolor{xdxdff}{rgb}{0.49,0.49,1}
+\definecolor{qqqqff}{rgb}{0,0,1}
+\definecolor{ffqqqq}{rgb}{1.,0.,0.}
+\definecolor{qqqqff}{rgb}{0.,0.,1.}
+
+
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-6.82,-1.14) rectangle (3.36,5.7);
+\draw [shift={(-3.11,4.35)},color=qqwuqq,fill=qqwuqq,fill opacity=0.1] (0,0) -- (-111.67:0.6) arc (-111.67:-15.58:0.6) -- cycle;
+\draw [shift={(-0.76,1.49)},color=qqwuqq,fill=qqwuqq,pattern=north east lines,pattern color=qqwuqq] (0,0) -- (96.63:0.5) arc (96.63:180.54:0.5) -- cycle;
+\draw [shift={(-0.76,1.49)},color=qqwuqq,fill=qqwuqq,fill opacity=0.1] (0,0) -- (0.54:0.6) arc (0.54:96.63:0.6) -- cycle;
+\draw [shift={(1.53,3.06)},color=qqwuqq,fill=qqwuqq,pattern=north east lines,pattern color=qqwuqq] (0,0) -- (164.42:0.6) arc (164.42:248.33:0.6) -- cycle;
+\draw(-2.52,2.44) circle (2cm);
+\draw(0.06,2.74) circle (1.5cm);
+\draw [domain=-6.82:3.36] plot(\x,{(--15.16-1.21*\x)/4.35});
+\draw [domain=-6.82:3.36] plot(\x,{(--5.5--0.03*\x)/3.68});
+\draw [color=ffqqqq,domain=-6.82:3.36] plot(\x,{(-14.02-2.9*\x)/-1.15});
+\draw [color=ffqqqq,domain=-6.82:3.36] plot(\x,{(-0.48--1.56*\x)/0.62});
+\draw [dash pattern=on 2pt off 2pt] (-0.76,1.49)-- (-1.03,3.77);
+\begin{scriptsize}
+\draw [fill=uuuuuu] (-1.03,3.77) circle (1.5pt);
+\draw[color=uuuuuu] (-0.88,4.16) node {$A$};
+\draw [fill=uuuuuu] (-0.76,1.49) circle (1.5pt);
+\draw[color=uuuuuu] (-0.74,1.2) node {$B$};
+\draw [fill=uuuuuu] (-3.11,4.35) circle (1.5pt);
+\draw[color=uuuuuu] (-3.38,4.7) node {$C$};
+\draw [fill=uuuuuu] (-4.26,1.45) circle (1.5pt);
+\draw[color=uuuuuu] (-4.56,1.28) node {$D$};
+\draw [fill=uuuuuu] (1.53,3.06) circle (1.5pt);
+\draw[color=uuuuuu] (1.56,3.52) node {$E$};
+\draw [fill=uuuuuu] (0.91,1.5) circle (1.5pt);
+\draw[color=uuuuuu] (1,1.24) node {$F$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{document}

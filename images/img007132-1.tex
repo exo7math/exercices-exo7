@@ -1,0 +1,59 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{pgf,tikz}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\usetikzlibrary{patterns}
+\pagestyle{empty}
+\newcommand{\degre}{\ensuremath{^\circ}}
+\begin{document}
+\definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
+\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+\definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1.}
+\definecolor{qqqqff}{rgb}{0.,0.,1.}
+\definecolor{qqwuqq}{rgb}{0,0.39,0}
+\definecolor{uuuuuu}{rgb}{0.27,0.27,0.27}
+\definecolor{xdxdff}{rgb}{0.49,0.49,1}
+\definecolor{qqqqff}{rgb}{0,0,1}
+\definecolor{ffqqqq}{rgb}{1.,0.,0.}
+
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\definecolor{zzttqq}{rgb}{0.6,0.2,0}
+\clip(0,0) rectangle (13,6.3);
+\fill[color=zzttqq,fill=zzttqq,fill opacity=0.1] (2.11,2.1) -- (3.65,3.41) -- (1.84,4.51) -- cycle;
+\fill[color=zzttqq,fill=zzttqq,fill opacity=0.1] (2.11,2.1) -- (3.88,5.45) -- (5.27,2.44) -- cycle;
+\draw(3.56,3.48) circle (2cm);
+\draw (1.84,4.51)-- (2.11,2.1);
+\draw (5.27,2.44)-- (3.88,5.45);
+\draw (3.88,5.45)-- (1.84,4.51);
+\draw (2.11,2.1)-- (3.88,5.45);
+\draw (1.84,4.51)-- (5.27,2.44);
+\draw (3.65,3.41)-- (2.11,2.1);
+\draw (2.11,2.1)-- (5.27,2.44);
+\begin{scriptsize}
+\draw[color=xdxdff] (2.24,2.36) node [left] {$B$};
+\draw[color=xdxdff] (5.42,2.7) node [right]{$C$};
+\draw[color=xdxdff] (4.04,5.72) node {$D$};
+\draw[color=xdxdff] (2,4.76) node [left] {$A$};
+\draw[color=xdxdff] (3.82,3.68) node {$K$};
+\end{scriptsize}
+
+\fill[color=zzttqq,fill=zzttqq,fill opacity=0.1] (7.84,4.51) -- (8.11,2.1) -- (9.88,5.45) -- cycle;
+\fill[color=zzttqq,fill=zzttqq,fill opacity=0.1] (9.65,3.41) -- (8.11,2.1) -- (11.27,2.44) -- cycle;
+\draw(9.56,3.48) circle (2cm);
+\draw (7.84,4.51)-- (8.11,2.1);
+\draw (11.27,2.44)-- (9.88,5.45);
+\draw (9.88,5.45)-- (7.84,4.51);
+\draw (8.11,2.1)-- (9.88,5.45);
+\draw (7.84,4.51)-- (11.27,2.44);
+\draw (9.65,3.41)-- (8.11,2.1);
+\draw (8.11,2.1)-- (11.27,2.44);
+\begin{scriptsize}
+\draw[color=xdxdff] (8.24,2.36) node [left] {$B$};
+\draw[color=xdxdff] (11.42,2.7) node [right]{$C$};
+\draw[color=xdxdff] (10.04,5.72) node {$D$};
+\draw[color=xdxdff] (8,4.76) node [left] {$A$};
+\draw[color=xdxdff] (9.82,3.68) node {$K$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{document}

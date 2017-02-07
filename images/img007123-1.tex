@@ -1,0 +1,43 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{pgf,tikz}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\usetikzlibrary{patterns}
+\pagestyle{empty}
+\begin{document}
+\definecolor{qqwuqq}{rgb}{0,0.39,0}
+\definecolor{uuuuuu}{rgb}{0.27,0.27,0.27}
+\definecolor{xdxdff}{rgb}{0.49,0.49,1}
+\definecolor{qqqqff}{rgb}{0,0,1}
+\definecolor{ffqqqq}{rgb}{1.,0.,0.}
+\definecolor{qqqqff}{rgb}{0.,0.,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-6.84,-1.3) rectangle (3.34,5.62);
+\draw [shift={(-4.54135770173771,2.073391502619976)},color=qqwuqq,fill=qqwuqq,fill opacity=0.1] (0,0) -- (-57.19135026317228:0.6) arc (-57.19135026317228:19.883254180671244:0.6) -- cycle;
+\draw [shift={(-0.9357905924919852,-0.14942814068146326)},color=qqwuqq,fill=qqwuqq,pattern=north east lines,pattern color=qqwuqq] (0,0) -- (76.27770286686645:0.5) arc (76.27770286686645:179.20309842302296:0.5) -- cycle;
+\draw [shift={(-1.7679241049654213,3.0764437353898777)},color=qqwuqq,fill=qqwuqq,fill opacity=0.1] (0,0) -- (-57.191350263172325:0.6) arc (-57.191350263172325:19.88325418067124:0.6) -- cycle;
+\draw [shift={(-0.9357905924919852,-0.14942814068146326)},color=qqwuqq,fill=qqwuqq,fill opacity=0.1] (0,0) -- (-0.7969015769770713:0.6) arc (-0.7969015769770713:76.27770286686646:0.6) -- cycle;
+\draw(-2.,2.16) circle (2.5428330656966063cm);
+\draw(-0.28,1.74) circle (2.cm);
+\draw [domain=-6.84:3.34] plot(\x,{(--9.256772261245349--0.9009661428453959*\x)/2.4911661511599217});
+\draw [domain=-6.84:3.34] plot(\x,{(-0.5906140983383479-0.05057185931853675*\x)/3.6357905924919853});
+\draw [color=ffqqqq,domain=-6.84:3.34] plot(\x,{(-7.025760591657469-2.192326777340297*\x)/1.4133266677517589});
+\draw [color=ffqqqq,domain=-6.84:3.34] plot(\x,{(-0.6985138943712147--3.2433807595236943*\x)/-2.090909333629991});
+\draw [dash pattern=on 3pt off 3pt] (-0.9357905924919852,-0.14942814068146326)-- (0.008833848840078207,3.719033857154604);
+\begin{scriptsize}
+\draw [fill=uuuuuu] (0.008833848840078207,3.719033857154604) circle (1.5pt);
+\draw[color=uuuuuu] (0.12,4.12) node {$A$};
+\draw [fill=uuuuuu] (-0.9357905924919852,-0.14942814068146326) circle (1.5pt);
+\draw[color=uuuuuu] (-0.92,-0.4) node {$B$};
+\draw [fill=uuuuuu] (-4.54135770173771,2.073391502619976) circle (1.5pt);
+\draw[color=uuuuuu] (-4.96,2.32) node {$C$};
+\draw [fill=uuuuuu] (-3.1280310339859514,-0.11893527472032112) circle (1.5pt);
+\draw[color=uuuuuu] (-3.24,-0.3) node {$D$};
+\draw [fill=uuuuuu] (-1.7679241049654213,3.0764437353898777) circle (1.5pt);
+\draw[color=uuuuuu] (-1.72,3.56) node {$E$};
+\draw [fill=uuuuuu] (0.32298522866456997,-0.1669370241338166) circle (1.5pt);
+\draw[color=uuuuuu] (0.28,-0.4) node {$F$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{document}

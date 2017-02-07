@@ -1,0 +1,50 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{pgf,tikz}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\usetikzlibrary{patterns}
+\pagestyle{empty}
+\newcommand{\degre}{\ensuremath{^\circ}}
+\begin{document}
+\definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
+\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+\definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1.}
+\definecolor{qqqqff}{rgb}{0.,0.,1.}
+\definecolor{qqwuqq}{rgb}{0,0.39,0}
+\definecolor{uuuuuu}{rgb}{0.27,0.27,0.27}
+\definecolor{xdxdff}{rgb}{0.49,0.49,1}
+\definecolor{qqqqff}{rgb}{0,0,1}
+\definecolor{ffqqqq}{rgb}{1.,0.,0.}
+
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-5,-2.53) rectangle (10,8.14);
+\draw [shift={(9.02,1.97)},color=ffqqqq,fill=ffqqqq,fill opacity=0.1] (0,0) -- (-179.31:1.4) arc (-179.31:-166.83:1.4) -- cycle;
+\draw [shift={(1.97,5.91)},color=ffqqqq,fill=ffqqqq,fill opacity=0.1] (0,0) -- (-105.64:1.4) arc (-105.64:-93.16:1.4) -- cycle;
+\draw [shift={(1.97,5.91)},color=qqwuqq,fill=qqwuqq,fill opacity=0.1] (0,0) -- (-146.73:0.84) arc (-146.73:-93.16:0.84) -- cycle;
+\draw [shift={(2.85,1.9)},color=qqwuqq,fill=qqwuqq,fill opacity=0.1] (0,0) -- (-179.31:0.84) arc (-179.31:-125.74:0.84) -- cycle;
+\draw(-0.73,3.22) circle (3.81cm);
+\draw(4.92,2.91) circle (4.21cm);
+\draw [domain=-5.79:11.17] plot(\x,{(--9.53--0.06*\x)/5.12});
+\draw (-4.27,1.81)-- (1.97,5.91);
+\draw (1.97,5.91)-- (0.84,1.87);
+\draw (2.85,1.9)-- (1.66,0.25);
+\draw (9.02,1.97)-- (1.66,0.25);
+\draw [dash pattern=on 4pt off 4pt] (1.97,5.91)-- (1.66,0.25);
+\begin{scriptsize}
+\draw [fill=qqqqff] (1.97,5.91) circle (1.5pt);
+\draw[color=qqqqff] (1.98,6.44) node {$P$};
+\draw [fill=qqqqff] (1.66,0.25) circle (1.5pt);
+\draw[color=qqqqff] (1.7,-0.16) node {$Q$};
+\draw [fill=qqqqff] (-4.27,1.81) circle (1.5pt);
+\draw[color=qqqqff] (-4.78,2.19) node {$A$};
+\draw [fill=qqqqff] (0.84,1.87) circle (1.5pt);
+\draw[color=qqqqff] (0.44,1.52) node {$C$};
+\draw [fill=uuuuuu] (2.85,1.9) circle (1.5pt);
+\draw[color=uuuuuu] (3.29,1.63) node {$B$};
+\draw [fill=uuuuuu] (9.02,1.97) circle (1.5pt);
+\draw[color=uuuuuu] (9.24,2.33) node {$D$};
+\end{scriptsize}
+\end{tikzpicture}
+
+\end{document}

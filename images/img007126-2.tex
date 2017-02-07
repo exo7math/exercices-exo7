@@ -1,0 +1,36 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{pgf,tikz}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+\definecolor{ffqqtt}{rgb}{1.,0.,0.2}
+\definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1.}
+\definecolor{qqqqff}{rgb}{0.,0.,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-2.42,-2.7) rectangle (7.38,5.72);
+\draw (-1.72,0.7)-- (2.18,4.96);
+\draw (2.18,4.96)-- (4.64,-2.02);
+\draw (4.64,-2.02)-- (-1.72,0.7);
+\draw(4.926448532688267,-0.2881571073906677) circle (1.7553724865568334cm);
+\draw(3.474505060793178,3.1236221274428675) circle (2.246781485422338cm);
+\draw(1.6599605321790059,0.8696135973009098) circle (3.384213641524002cm);
+\begin{scriptsize}
+\draw [fill=qqqqff] (-1.72,0.7) circle (2.5pt);
+\draw[color=qqqqff] (-2.02,1.01) node {$A$};
+\draw [fill=qqqqff] (4.64,-2.02) circle (2.5pt);
+\draw[color=qqqqff] (4.78,-1.65) node {$B$};
+\draw [fill=qqqqff] (2.18,4.96) circle (2.5pt);
+\draw[color=qqqqff] (2.32,5.33) node {$C$};
+\draw [fill=xdxdff] (3.61744628642372,0.8813922442123713) circle (2.5pt);
+\draw[color=xdxdff] (3.94,1.39) node {$P$};
+\draw [fill=xdxdff] (1.5312626807684013,4.251379235916253) circle (2.5pt);
+\draw[color=xdxdff] (0.98,4.47) node {$Q$};
+\draw [fill=xdxdff] (3.872036114362147,-1.6915626149473333) circle (2.5pt);
+\draw[color=xdxdff] (3.76,-2.21) node {$R$};
+\draw [fill=ffqqtt] (4.991206668592048,1.4660204635510499) circle (1.5pt);
+\draw[color=ffqqtt] (5.02,2.15) node {$T$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{document}
