@@ -1,0 +1,33 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{pgf,tikz}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+\definecolor{qqqqff}{rgb}{0.,0.,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-2.32,2.34) rectangle (3.5,6.32);
+\draw(-0.28,4.35) circle (1.5277761616153067cm);
+\draw(2.,3.79) circle (1.153646392964499cm);
+\draw (2.78,2.94)-- (-1.78,4.06);
+\draw (-1.78,4.06)-- (1.22,4.64);
+\draw [domain=-2.32:3.5] plot(\x,{(-13.2124-0.58*\x)/-3.});
+\draw [domain=-2.32:3.5] plot(\x,{(-9.3124--1.7*\x)/-1.56});
+\begin{scriptsize}
+\draw [fill=qqqqff] (-1.78,4.06) circle (2.5pt);
+\draw[color=qqqqff] (-2.04,3.77) node {$A$};
+\draw [fill=qqqqff] (2.78,2.94) circle (2.5pt);
+\draw[color=qqqqff] (3.1,2.99) node {$B$};
+\draw [fill=qqqqff] (1.22,4.64) circle (2.5pt);
+\draw[color=qqqqff] (1.3,5.17) node {$C$};
+\draw [fill=uuuuuu] (2.406967139368493,4.869480313611242) circle (1.5pt);
+\draw[color=uuuuuu] (2.54,5.15) node {$P$};
+\draw [fill=uuuuuu] (0.9149666182873732,3.3980783744557312) circle (1.5pt);
+\draw[color=uuuuuu] (0.8,2.97) node {$R$};
+\draw [fill=uuuuuu] (0.13752949132166759,5.819615297918695) circle (1.5pt);
+\draw[color=uuuuuu] (-0.2,5.59) node {$Q$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{document}
