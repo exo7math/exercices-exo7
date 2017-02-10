@@ -1,0 +1,28 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{pgf,tikz}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+\definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1.}
+\definecolor{qqqqff}{rgb}{0.,0.,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-2.82,-1.08) rectangle (4.38,3.08);
+\draw (-1.86,-0.5)-- (1.1051013380774837,2.462545153277378);
+\draw (1.1051013380774837,2.462545153277378)-- (3.4,0.98);
+\draw (3.4,0.98)-- (-1.86,-0.5);
+\draw [dash pattern=on 5pt off 5pt] (3.4,0.98)-- (0.11673422538498901,1.4750301021849184);
+\begin{scriptsize}
+\draw [fill=qqqqff] (-1.86,-0.5) circle (2.5pt);
+\draw[color=qqqqff] (-2.2,-0.03) node {$A$};
+\draw [fill=qqqqff] (3.4,0.98) circle (2.5pt);
+\draw[color=qqqqff] (3.4,1.53) node {$B$};
+\draw [fill=xdxdff] (1.1051013380774837,2.462545153277378) circle (2.5pt);
+\draw[color=xdxdff] (1.24,2.83) node {$C$};
+\draw [fill=uuuuuu] (0.11673422538498901,1.4750301021849184) circle (1.5pt);
+\draw[color=uuuuuu] (-0.42,1.85) node {$M$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{document}

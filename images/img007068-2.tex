@@ -1,0 +1,36 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{pgf,tikz}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+\definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
+\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+\definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1.}
+\definecolor{qqqqff}{rgb}{0.,0.,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-2.96,-0.38) rectangle (3.94,4.82);
+\draw [shift={(3.4,0.98)},color=qqwuqq,fill=qqwuqq,fill opacity=0.10000000149011612] (0,0) -- (168.51282898378776:0.6) arc (168.51282898378776:188.35435083537968:0.6) -- cycle;
+\draw [shift={(3.4,0.98)},color=qqwuqq,fill=qqwuqq,fill opacity=0.10000000149011612] (0,0) -- (148.67130713219584:0.6) arc (148.67130713219584:168.51282898378776:0.6) -- cycle;
+\draw (-2.32,0.14)-- (0.930789879194228,2.482997464838297);
+\draw (0.930789879194228,2.482997464838297)-- (3.4,0.98);
+\draw (3.4,0.98)-- (-2.32,0.14);
+\draw [dash pattern=on 5pt off 5pt] (-1.5384202416115438,3.9859949296765937)-- (0.930789879194228,2.482997464838297);
+\draw [dash pattern=on 5pt off 5pt] (-2.32,0.14)-- (-1.5384202416115438,3.9859949296765937);
+\draw [dash pattern=on 5pt off 5pt] (3.4,0.98)-- (-1.929210120805772,2.062997464838297);
+\draw [dash pattern=on 5pt off 5pt] (-1.5384202416115438,3.9859949296765937)-- (0.54,0.56);
+\begin{scriptsize}
+\draw [fill=qqqqff] (-2.32,0.14) circle (2.5pt);
+\draw[color=qqqqff] (-2.66,0.61) node {$A$};
+\draw [fill=qqqqff] (3.4,0.98) circle (2.5pt);
+\draw[color=qqqqff] (3.4,1.53) node {$B$};
+\draw [fill=xdxdff] (0.930789879194228,2.482997464838297) circle (2.5pt);
+\draw[color=xdxdff] (1.08,2.85) node {$C$};
+\draw [fill=uuuuuu] (-1.5384202416115438,3.9859949296765937) circle (1.5pt);
+\draw[color=uuuuuu] (-1.4,4.27) node {$D$};
+\draw [fill=uuuuuu] (-0.15280674720384782,1.7019983098921978) circle (1.5pt);
+\draw[color=uuuuuu] (-0.7,2.07) node {$M$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{document}
