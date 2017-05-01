@@ -1,0 +1,69 @@
+\exercice{7151, megy, 2017/05/01}
+\enonce
+
+%[d'après bac France, juin 2008]
+Le plan est muni d'un repère orthonormé direct $(O,\vec u, \vec v)$. On note $A$ et $B$ les points d'affixes $z_A=1-i$ et $z_B = 7+\frac72 i$.
+
+\begin{enumerate}
+
+\item Soit $s$ l'application du plan dans lui-même qui envoie un point d'affixe $z$ sur celui d'affixe 
+\[  \frac23 iz +\frac13-\frac53 i.\]
+Déterminer la nature et les éléments caractéristiques de $s$. % centre $A$...
+\item On note $B_0=B$ et pour tout $n\in \N$, 
+on note $B_{n+1} = s(B_n)$.
+\begin{enumerate}
+\item Calculer la distance $AB_{n+1}$ en fonction de $AB_n$.
+\item Déterminer le plus petit entier $N$ vérifiant la propriété suivante :  pour tout $n\geq N$, le point $B_n$ appartient au disque de centre $A$ et de rayon $10^{-2}$. On demande une formule exacte pour cet entier mais pas son écriture explicite en base $10$. 
+\item Déterminer l'ensemble des entiers $n$ tels que les points $A$, $B$ et $B_n$ soient alignés.
+\end{enumerate}
+\end{enumerate} 
+
+\finenonce
+
+\noindication   
+     
+\correction 
+\begin{enumerate}
+\item L'application $s$ est une similitude directe, de rapport $2/3$, d'angle $arg(i)=\pi/2$, et de centre d'affixe $\frac{\frac{1-5i}{3}}{1-\frac{2}{3i}} = \frac{13-13i}{13}=1-i=z_A$.
+\item 
+\begin{enumerate}
+\item On a $AB_{n+1}=s(A)s(B_n) = \frac{2}{3}AB_n$.
+\item D'après la question précédente, la suite réelle $AB_n$ est géométrique de raison $2/3$ et de terme initial $AB$, donc :
+\[ \forall n \in \N, AB_{n} = \left(\frac{2}{3}\right)^n AB.\]
+
+Soit maintenant $n\in \N$. Le point $B_n$ appartient au disque de centre $A$ et de rayon $10^{-2}$ ssi $AB_n \leq 10^{-2}$.
+Or, on a 
+\begin{align*}
+AB_n \leq 10^{-2} & \Leftrightarrow \left(\frac{2}{3}\right)^n AB \leq 10^{-2} \\
+& \Leftrightarrow n \ln\left(\frac{2}{3}\right)+\ln(AB) \leq -\ln(100)\\
+& \Leftrightarrow n\ln\left(\frac{2}{3}\right) \leq -\ln(AB)-\ln(100)\\
+& \Leftrightarrow n \geq \frac{\ln(AB)+\ln(100)}{\ln(3)-\ln(2)}
+\end{align*}
+
+On en déduit que le plus petit entier $N$ tel que $\forall n\geq n, AB_n \leq 10^{-2}$ est $\left \lceil \frac{\ln(AB)+\ln(100)}{\ln(3)-\ln(2)} \right \rceil$ (partie entière supérieure du réel).
+
+Comme $AB = 15/2$, on peut calculer explicitement $n$ à l'aide d'une calculatrice et on trouve $N= 17$, mais ce n'était pas demandé.
+\item Pour tout $n$, les points $A$, $B$ et $B_n$ sont distincts. Ils sont alignés ssi
+\[ 2\cdot arg\left(\frac{b_n-a}{b-a}\right)=0 \:(\in \R/2\pi\Z).\]
+Or on a :
+\begin{align*}
+b_{n+1}-a
+&= s(b_n)-s(a)\\
+&= \frac23i b_{n}+\frac13 - \frac53i - \left( \frac23i a+\frac13 - \frac53i\right)\\
+&= \frac23 i (b_n-a).
+\end{align*}
+La suite complexe $(b_n-a)_{n\in\N}$ est donc une suite géométrique de raison $\frac23i$, et donc pour tout $n\in \N$ on a 
+
+\[ b_n-a = \left(\frac23i\right)^n \cdot (b-a).\]
+
+On en déduit que  dans $\R/2\pi\Z$, on a :
+\[ 2\cdot arg\left[\frac{b_n-a}{b-a}\right]
+= 2\cdot arg \left[\left(\frac23i\right)^n \right]
+= 2n\cdot arg \left(\frac23i\right)
+= 2n\cdot \frac{\pi}{2} 
+= n\pi,
+\] et donc que $A$, $B$ et $B_n$ sont alignés ssi $n\pi\equiv 0 [2\pi] \Leftrightarrow n\equiv 0 [2]$, autrement dit ssi $n$ est pair.
+\end{enumerate}
+\end{enumerate} 
+\fincorrection  
+\finexercice  

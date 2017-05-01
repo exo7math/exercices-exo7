@@ -1,0 +1,39 @@
+\exercice{7150, megy, 2017/05/01}
+\enonce
+
+Fixons un repère orthonormé direct du plan.
+À quelle condition sur les réels $a$, $b$, $c$, $d$, $e$ et $f$ la transformation
+$\begin{pmatrix}x\\y\end{pmatrix} \mapsto  \begin{pmatrix}ax+cy+e\\ bx+dy+f\end{pmatrix}$ est-elle une similitude directe ? Indirecte ?
+
+Application : écrire en coordonnée complexe les applications
+
+\[
+\phi : \begin{pmatrix}x\\y\end{pmatrix} \mapsto  \begin{pmatrix}-2x-y-1\\ x-2y+1\end{pmatrix}
+\text{ et }
+\psi : \begin{pmatrix}x\\y\end{pmatrix} \mapsto  \begin{pmatrix}-x+y\sqrt 3\\ x\sqrt 3+y\end{pmatrix}
+\]
+
+\finenonce
+
+\noindication   
+     
+\correction 
+Soit $z\mapsto \alpha z + \beta$ la représentation complexe d'une similitude directe. En coordonnées cartésiennes, elle s'écrit $\begin{pmatrix}x\\y\end{pmatrix} \mapsto  
+\begin{pmatrix}
+\Re(\alpha) &-\Im(\alpha) \\ \Im(\alpha) & \Re(\alpha)\end{pmatrix} \cdot \begin{pmatrix}x\\ y\end{pmatrix} + \begin{pmatrix}\Re(\beta)\\ \Im(\beta)\end{pmatrix}$.
+
+On en déduit que $\begin{pmatrix}x\\y\end{pmatrix} \mapsto  \begin{pmatrix}ax+cy+e\\ bx+dy+f\end{pmatrix}$ représente une similitude directe ssi :
+\[ c=-b \text{ et } a=d\]
+Réciproquement, toute transformation
+$\begin{pmatrix}x\\y\end{pmatrix} \mapsto  \begin{pmatrix}ax-by+e\\ bx+ay+f\end{pmatrix}$ peut s'écrire $z\mapsto (a+ib)z+e+if$ et correspond donc à une similitude directe.
+
+
+Pour les similitudes indirectes, on trouve la condition \[ c=b \text{ et } a=-d.\]
+
+L'application de $\C$ dans $\C$ qui représente $\phi$ est
+$z=x+iy \mapsto (-2x-y-1)+i(x-2y+1) = -2x-y + i(x-2y)-1+i = (-2+i)z-1+i$.  C'est une similitude directe de rapport $\sqrt 5$, d'angle $arg(-2+i)$ et de centre d'affixe $\frac{-1+i}{3-i}$.
+
+La deuxième est la composée d'une réflexion suivant une droite vectorielle et d'une homothétie de rapport $2$ et de centre $O$.
+
+\fincorrection  
+\finexercice  
