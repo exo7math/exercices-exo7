@@ -1,0 +1,44 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{pgf,tikz}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+\definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
+\definecolor{qqqqff}{rgb}{0.,0.,1.}
+\definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1.}
+\definecolor{cqcqcq}{rgb}{0.7529411764705882,0.7529411764705882,0.7529411764705882}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=2.0cm,y=2.0cm]
+\draw [color=cqcqcq,, xstep=2.0cm,ystep=2.0cm] (-0.6875275646731877,-1.3776322350740355) grid (3.6589216967408955,3.5107119991916695);
+\draw[->,color=black] (-0.6875275646731877,0.) -- (3.6589216967408955,0.);
+\foreach \x in {,1.,2.,3.}
+\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+\draw[->,color=black] (0.,-1.3776322350740355) -- (0.,3.5107119991916695);
+\foreach \y in {-1.,1.,2.,3.}
+\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+\clip(-0.6875275646731877,-1.3776322350740355) rectangle (3.6589216967408955,3.5107119991916695);
+\draw[color=qqwuqq,fill=qqwuqq,fill opacity=0.10000000149011612] (1.3915888049971423,-0.45630839625214326) -- (1.2478972012492857,-0.26471959125500083) -- (1.0563083962521431,-0.4084111950028576) -- (1.2,-0.6) -- cycle; 
+\draw[color=qqwuqq,fill=qqwuqq,fill opacity=0.10000000149011612] (1.427196374242807,-0.5242678752523976) -- (1.351464249495205,-0.29707150100959034) -- (1.1242678752523976,-0.3728036257571927) -- (1.2,-0.6) -- cycle; 
+\draw [dash pattern=on 5pt off 5pt] (1.2,-0.6)-- (2.,0.);
+\draw [dash pattern=on 5pt off 5pt] (1.2,-0.6)-- (3.,0.);
+\draw [dash pattern=on 5pt off 5pt] (1.2,-0.6)-- (0.,3.);
+\draw [dash pattern=on 5pt off 5pt] (1.2,-0.6)-- (0.,1.);
+\draw [line width=2.pt] (0.6,0.2)-- (0.6,1.2);
+\draw [line width=2.pt] (2.,0.)-- (3.,0.);
+\draw [line width=2.pt] (0.,1.)-- (0.,3.);
+\draw [shift={(1.2,-0.6)},dash pattern=on 5pt off 5pt]  plot[domain=0.6435011087932843:2.214297435588181,variable=\t]({1.*1.*cos(\t r)+0.*1.*sin(\t r)},{0.*1.*cos(\t r)+1.*1.*sin(\t r)});
+\draw [shift={(1.2,-0.6)},dash pattern=on 5pt off 5pt]  plot[domain=0.3217505543966422:1.892546881191539,variable=\t]({1.*1.8973665961010278*cos(\t r)+0.*1.8973665961010278*sin(\t r)},{0.*1.8973665961010278*cos(\t r)+1.*1.8973665961010278*sin(\t r)});
+\begin{scriptsize}
+\draw [fill=xdxdff] (2.,0.) circle (2.5pt);
+\draw [fill=xdxdff] (3.,0.) circle (2.5pt);
+\draw [fill=xdxdff] (0.,1.) circle (2.5pt);
+\draw [fill=xdxdff] (0.,3.) circle (2.5pt);
+\draw [fill=qqqqff] (1.2,-0.6) circle (2.5pt);
+\draw[color=qqqqff] (1.3219996263182585,-0.931697830331552) node {$\Omega$};
+\draw [fill=xdxdff] (0.6,0.2) circle (2.5pt);
+\draw [fill=xdxdff] (0.6,1.2) circle (2.5pt);
+\end{scriptsize}
+\end{tikzpicture}
+\end{document}

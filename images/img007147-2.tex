@@ -1,0 +1,46 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{pgf,tikz}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+\definecolor{qqqqff}{rgb}{0.,0.,1.}
+\definecolor{ffqqqq}{rgb}{1.,0.,0.}
+\definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1.}
+\definecolor{cqcqcq}{rgb}{0.7529411764705882,0.7529411764705882,0.7529411764705882}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=2.0cm,y=2.0cm]
+\draw [color=cqcqcq,, xstep=2.0cm,ystep=2.0cm] (-0.6875275646731877,-1.3776322350740355) grid (3.6589216967408955,3.5107119991916695);
+\draw[->,color=black] (-0.6875275646731877,0.) -- (3.6589216967408955,0.);
+\foreach \x in {,1.,2.,3.}
+\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+\draw[->,color=black] (0.,-1.3776322350740355) -- (0.,3.5107119991916695);
+\foreach \y in {-1.,1.,2.,3.}
+\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+\clip(-0.6875275646731877,-1.3776322350740355) rectangle (3.6589216967408955,3.5107119991916695);
+\draw [line width=2.pt] (2.,0.)-- (3.,0.);
+\draw [line width=2.pt] (0.,1.)-- (0.,3.);
+\draw [line width=2.pt,color=ffqqqq,domain=-0.6875275646731877:3.6589216967408955] plot(\x,{(-1.--1.*\x)/1.});
+\draw (1.,1.)-- (1.,2.);
+\draw [dash pattern=on 5pt off 5pt] (1.,1.)-- (2.,0.);
+\draw [dash pattern=on 5pt off 5pt] (3.,0.)-- (1.,2.);
+\begin{scriptsize}
+\draw [fill=xdxdff] (2.,0.) circle (2.5pt);
+\draw[color=xdxdff] (2.0783946925903196,0.20853950837707674) node {$A$};
+\draw [fill=xdxdff] (3.,0.) circle (2.5pt);
+\draw[color=xdxdff] (3.0831582880860426,0.20853950837707674) node {$B$};
+\draw [fill=xdxdff] (0.,1.) circle (2.5pt);
+\draw[color=xdxdff] (0.14789385180640247,1.213303103872799) node {$A''$};
+\draw [fill=xdxdff] (0.,3.) circle (2.5pt);
+\draw[color=xdxdff] (0.14789385180640247,3.2115408162631685) node {$B''$};
+\draw [fill=qqqqff] (1.,1.) circle (2.5pt);
+\draw[color=qqqqff] (1.1074995328978232,1.213303103872799) node {$A'$};
+\draw [fill=qqqqff] (1.,2.) circle (2.5pt);
+\draw[color=qqqqff] (1.1074995328978232,2.206777220767446) node {$B'$};
+\draw [fill=uuuuuu] (2.,1.) circle (1.5pt);
+\draw[color=uuuuuu] (2.067105213989244,1.3261978898835542) node {$O$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{document}
