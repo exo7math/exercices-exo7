@@ -1,14 +1,27 @@
 \exercice{2934, quercia, 2010/03/08}
 
-\enonce[Sym{\'e}trique par rapport {\`a} une droite]
-Les points $A,B,M$ ayant pour affixes $a,b,z$, calculer l'affixe du sym{\'e}trique
-de $M$ par rapport {\`a} la droite $(AB)$.
+\enonce[Symétrique par rapport à une droite]
+Les points $A,B,M$ ayant pour affixes $a,b,z$, calculer l'affixe du symétrique $M'$ 
+de $M$ par rapport à la droite $(AB)$.
 \finenonce
 
 \noindication
 
 \correction
-$z' = \frac {(b-a)\bar z + a\bar b - \bar ab}{\bar b - \bar a}$.
+On peut exprimer que $(AB)$ est la médiatrice du segment $[MM']$, mais on choisit ici d'utiliser le cours sur les similitudes. Cherchons donc à écrire la réflexion d'axe $(AB)$ en coordonnée complexe.
+Cette réflexion s'écrit $z\mapsto \alpha \bar z + \beta$, avec $|\alpha|=1$ et $arg(\alpha)=2 arg(b-a)$. On obtient donc $\alpha= \frac{b-a}{\bar b - \bar a}$. 
+
+Pour déterminer $\beta$, on peut exprimer le fait que $a$ est fixe:
+\[
+a = \frac{b-a}{\bar b - \bar a} \bar a + \beta 
+\Leftrightarrow 
+\beta = \frac{a\bar b - b\bar a }{\bar b - \bar a}
+\]
+Finalement, la réflexion s'écrit:
+\[
+z\mapsto \frac{b-a}{\bar b - \bar a} \cdot z + \frac{a\bar b - b\bar a }{\bar b - \bar a}.
+\]
+
 \fincorrection
 
 \finexercice 
