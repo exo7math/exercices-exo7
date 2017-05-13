@@ -1,0 +1,16 @@
+\exercice{7162, megy, 2017/05/13}
+\enonce[Isométries d'un rectangle]
+Soit $\mathcal C=ABCD$ un rectangle plein, non carré. Déterminer son groupe d'isométries, et préciser un isomorphisme entre ce groupe et un groupe usuel abstrait.
+\finenonce
+
+\noindication
+\correction 
+Dans le rectangle, les points maximalement éloignés sont les sommets des diagonales. Comme une isométrie conserve les distances, on en déduit qu'une isométrie du rectangle doit envoyer une diagonale sur une autre, et donc soit permuter les sommets. Elle fixe donc le centre, qui est l'isobarycentre des sommets, et donc est une rotation ou une réflexion, car les translations et les réflexions glissées n'ont pas de points fixes.
+
+Soit $P$ un sommet et $Q$ son image par une isométrie du rectangle. Si c'est une réflexion, son axe est donc la médiatrice de $[PQ]$, donc l'axe peut être une des deux médiatrices des côtés du rectangle (et pas une médiatrice d'une diagonale, car le rectangle n'est pas carré). Réciproquement, ces deux réflexions, notons-les $\sigma$ et $\sigma'$, sont des isométries du rectangle.
+
+Si c'est une rotation, son angle est $0$ ou bien $\pi$, car le rectangle n'est pas carré. Réciproquement, ces deux rotations ($\operatorname{Id}$ et $-\operatorname{Id}$) conviennent.
+
+Le groupe d'isométries du rectangle est isomorphe à $(\Z/2\Z)^2$, un isomorphisme possible étant celui qui envoie $(1,0)$ sur $\sigma$ et $(0,1)$ sur $\sigma'$ (et donc $(1,1) = (0,1)+(1,0)$ sur $\sigma\circ \sigma' = -\operatorname{Id}$.
+\fincorrection  
+\finexercice  
