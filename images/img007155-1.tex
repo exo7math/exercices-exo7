@@ -1,0 +1,36 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{pgf,tikz}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+\definecolor{qqqqff}{rgb}{0.,0.,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-2.38,-2.1) rectangle (6.64,6.02);
+\draw (-1.88,0.22)-- (2.74,5.34);
+\draw (2.74,5.34)-- (5.54,-1.26);
+\draw (5.54,-1.26)-- (-1.88,0.22);
+\draw [dash pattern=on 2pt off 2pt] (0.84,0.64)-- (2.74,5.34);
+\draw [dash pattern=on 2pt off 2pt] (0.84,0.64)-- (5.54,-1.26);
+\draw [dash pattern=on 2pt off 2pt] (-1.88,0.22)-- (2.99,0.47);
+\draw [dash pattern=on 2pt off 2pt] (2.99,0.47)-- (2.74,5.34);
+\draw [dash pattern=on 2pt off 2pt] (-1.88,0.22)-- (2.57,3.19);
+\draw [dash pattern=on 2pt off 2pt] (2.57,3.19)-- (5.54,-1.26);
+\begin{scriptsize}
+\draw [fill=qqqqff] (-1.88,0.22) circle (2.5pt);
+\draw[color=qqqqff] (-2.06,0.7) node {$A$};
+\draw [fill=qqqqff] (5.54,-1.26) circle (2.5pt);
+\draw[color=qqqqff] (5.68,-0.9) node {$B$};
+\draw [fill=qqqqff] (2.74,5.34) circle (2.5pt);
+\draw[color=qqqqff] (2.88,5.7) node {$C$};
+\draw [fill=uuuuuu] (2.57,3.19) circle (1.5pt);
+\draw[color=uuuuuu] (2.28,3.56) node {$R$};
+\draw [fill=uuuuuu] (0.84,0.64) circle (1.5pt);
+\draw[color=uuuuuu] (0.58,1.) node {$P$};
+\draw [fill=uuuuuu] (2.99,0.47) circle (1.5pt);
+\draw[color=uuuuuu] (3.14,0.74) node {$Q$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{document}

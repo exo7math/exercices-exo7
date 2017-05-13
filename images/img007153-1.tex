@@ -1,0 +1,44 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{pgf,tikz}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+\definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
+\definecolor{ccqqqq}{rgb}{0.8,0.,0.}
+\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+\definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1.}
+\definecolor{qqqqff}{rgb}{0.,0.,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-4.48,-0.08) rectangle (3.6,5.76);
+\draw[color=qqwuqq,fill=qqwuqq,fill opacity=0.10000000149011612] (-1.5776357607865545,4.68233777844101) -- (-1.2930479876155054,4.3676795521675755) -- (-0.9783897613420716,4.652267325338625) -- (-1.2629775345131207,4.966925551612059) -- cycle; 
+\draw [shift={(-0.66,1.67)},dash pattern=on 2pt off 2pt]  plot[domain=-0.28116850359364776:2.860424149996146,variable=\t]({1.*3.3516115526713413*cos(\t r)+0.*3.3516115526713413*sin(\t r)},{0.*3.3516115526713413*cos(\t r)+1.*3.3516115526713413*sin(\t r)});
+\draw [line width=1.6pt] (-3.88,2.6)-- (-1.2629775345131207,4.966925551612059);
+\draw [line width=1.6pt] (-1.2629775345131207,4.966925551612059)-- (2.56,0.74);
+\draw [line width=1.6pt] (2.56,0.74)-- (-3.88,2.6);
+\draw [color=ccqqqq] (-2.853408168772672,3.5284851270682993)-- (0.27,4.89);
+\draw [color=ccqqqq] (0.27,4.89)-- (1.6315148729317015,1.7665918312273283);
+\draw [color=ccqqqq] (1.6315148729317015,1.7665918312273283)-- (-2.853408168772672,3.5284851270682993);
+\draw (-3.88,2.6)-- (-2.853408168772672,3.5284851270682993);
+\draw (-3.4530322469765866,3.107514359704303) -- (-3.33229188042537,2.9740161803718568);
+\draw (-3.4011162883473025,3.1544689466964426) -- (-3.280375921796086,3.020970767363997);
+\draw (1.6315148729317015,1.7665918312273283)-- (2.56,0.74);
+\draw (2.139029232636005,1.3396240782039148) -- (2.0055310533035593,1.2188837116526985);
+\draw (2.185983819628145,1.28770811957463) -- (2.052485640295699,1.1669677530234137);
+\begin{scriptsize}
+\draw [fill=qqqqff] (-3.88,2.6) circle (2.5pt);
+\draw[color=qqqqff] (-4.26,2.69) node {$B$};
+\draw [fill=qqqqff] (2.56,0.74) circle (2.5pt);
+\draw[color=qqqqff] (2.88,0.85) node {$C$};
+\draw [fill=xdxdff] (-1.2629775345131207,4.966925551612059) circle (2.5pt);
+\draw[color=xdxdff] (-1.12,5.33) node {$A$};
+\draw [fill=uuuuuu] (0.27,4.89) circle (1.5pt);
+\draw[color=uuuuuu] (0.64,5.15) node {$I$};
+\draw [fill=xdxdff] (-2.853408168772672,3.5284851270682993) circle (2.5pt);
+\draw[color=xdxdff] (-2.72,3.19) node {$D$};
+\draw [fill=uuuuuu] (1.6315148729317015,1.7665918312273283) circle (1.5pt);
+\draw[color=uuuuuu] (1.78,2.05) node {$E$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{document}
