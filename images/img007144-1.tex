@@ -1,0 +1,26 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{pgf,tikz}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+\definecolor{qqqqff}{rgb}{0.,0.,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-3.96,-2.34) rectangle (4.94,5.16);
+\draw(0.94,1.36) circle (3.186094788294912cm);
+\draw [domain=-3.96:4.94] plot(\x,{(--2.58--1.76*\x)/-0.68});
+\draw (-2.2,1.9)-- (4.08,0.82);
+\draw (-2.88,3.66)-- (4.08,0.82);
+\begin{scriptsize}
+\draw [fill=qqqqff] (0.94,1.36) circle (2.5pt);
+\draw [fill=qqqqff] (-2.2,1.9) circle (2.5pt);
+\draw[color=qqqqff] (-1.76,2.17) node {$E$};
+\draw [fill=qqqqff] (-2.88,3.66) circle (2.5pt);
+\draw[color=qqqqff] (-2.74,4.03) node {$P$};
+\draw [fill=uuuuuu] (4.08,0.82) circle (1.5pt);
+\draw[color=uuuuuu] (4.4,1.13) node {$F$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{document}

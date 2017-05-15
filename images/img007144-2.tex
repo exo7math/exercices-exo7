@@ -1,0 +1,31 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{pgf,tikz}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+\definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
+\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+\definecolor{qqqqff}{rgb}{0.,0.,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-3.96,-2.34) rectangle (4.94,5.16);
+\draw[color=qqwuqq,fill=qqwuqq,fill opacity=0.10000000149011612] (-0.6254787288843435,-0.9980258725234951) -- (-0.7783831934394994,-0.6022731407336801) -- (-1.1741359252293142,-0.7551776052888357) -- (-1.0212314606741586,-1.1509303370786508) -- cycle; 
+\draw(0.94,1.36) circle (3.186094788294912cm);
+\draw [domain=-3.96:4.94] plot(\x,{(--2.58--1.76*\x)/-0.68});
+\draw (-2.2,1.9)-- (4.08,0.82);
+\draw (-2.88,3.66)-- (4.08,0.82);
+\draw [dash pattern=on 2pt off 2pt] (4.08,0.82)-- (-1.0212314606741586,-1.1509303370786508);
+\begin{scriptsize}
+\draw [fill=qqqqff] (0.94,1.36) circle (2.5pt);
+\draw [fill=qqqqff] (-2.2,1.9) circle (2.5pt);
+\draw[color=qqqqff] (-1.76,2.17) node {$E$};
+\draw [fill=qqqqff] (-2.88,3.66) circle (2.5pt);
+\draw[color=qqqqff] (-2.74,4.03) node {$P$};
+\draw [fill=uuuuuu] (4.08,0.82) circle (1.5pt);
+\draw[color=uuuuuu] (4.4,1.13) node {$F$};
+\draw [fill=uuuuuu] (-1.0212314606741586,-1.1509303370786508) circle (1.5pt);
+\draw[color=uuuuuu] (-1.58,-1.21) node {$G$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{document}
