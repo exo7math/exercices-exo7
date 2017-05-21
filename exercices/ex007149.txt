@@ -16,11 +16,11 @@ Soit $s$ une similitude envoyant $A$ sur $B$ et $B$ sur $C$.
 \item Il y a exactement deux similitudes envoyant le couple $(A,B)$ sur le couple $(B,C)$ : une directe et une indirecte, et l'une se déduit de l'autre en composant (à gauche) par la réflexion d'axe $(BC)$.
 
 D'après l'énoncé, le triangle $ABC$ est rectangle isocèle en $A$. On a donc $BC = \sqrt 2 AB$ et donc $s$ est de rapport $\sqrt 2$.
-De plus, une similitude conservant les angles non orientés, on a $(AB)\bot (AC) \Rightarrow (s(A)s(B)) \bot (s(A)s(C))$, c'est-à-dire que $s(C)$ appartient à la perpendiculaire à $(s(A)s(B)) = (BC)$ passant par $s(B)=C$. Comme d'autre part on sait que $Cs(C)=\sqrt 2 BC$, cela donne deux possibilités, suivant que la similitude est directe ou indirecte.
-\item Si la similitude est directe, son angle est $3\pi/2$ puisque $(\overrightarrow{AB},\overrightarrow{BC}) = 3\pi/2$.\\
+De plus, une similitude conservant les angles non orientés, on a $(AB)\bot (AC) \Rightarrow (s(A)s(B)) \bot (s(A)s(C))$, c'est-à-dire que $s(C)$ appartient à la perpendiculaire à $(s(A)s(B)) = (BC)$ passant par $s(A)=B$. Comme d'autre part on sait que $Cs(C)=\sqrt 2 BC$, cela donne deux possibilités, suivant que la similitude est directe ou indirecte.
+\item Si la similitude est directe, son angle est $3\pi/4$ puisque $(\overrightarrow{AB},\overrightarrow{BC}) = 3\pi/4$.\\
 
 On fixe maintenant un repère orthonormé direct du plan dont l'origine est $A$. On note $a$, $b$ et $c$ les affixes des trois points et on a donc $a=0$ et $c=ib$ d'après l'énoncé.\\
-Soit $(\alpha,\beta) \in \C^*\times \C$ tel que $s$ s'écrive $z\mapsto \alpha z+\beta$ en coordonnée complexe. Par ce qui précède, on a $\alpha = \sqrt 2 e^{3i\pi/2} = -1+i$. D'autre part, comme $A$ est envoyé sur $B$, on a $b = \beta$.\\
+Soit $(\alpha,\beta) \in \C^*\times \C$ tel que $s$ s'écrive $z\mapsto \alpha z+\beta$ en coordonnée complexe. Par ce qui précède, on a $\alpha = \sqrt 2 e^{3i\pi/4} = -1+i$. D'autre part, comme $A$ est envoyé sur $B$, on a $b = \beta$.\\
 La similitude s'écrit donc $z\mapsto (i-1)z + b$. Son unique point fixe $\Omega$ a pour affixe 
 \[
 \omega = \frac{b}{1-(i-1)} 
@@ -28,7 +28,7 @@ La similitude s'écrit donc $z\mapsto (i-1)z + b$. Son unique point fixe $\Omega
 = \frac{2b+ib}{5} 
 = \frac{2b+c}{5}. 
 \]
-On peut reformuler ceci sous la forme $\omega = \frac{2a+2b+c}{5}$, ce qui montre que $\Omega$ est le barycentre  de $(A,2/5)$, $(B,2/5)$ et $(C,1/5)$.
+On peut reformuler ceci sous la forme $\omega = \frac{2}{5} a + \frac{2}{5} b + \frac{1}{5} c $, ce qui montre que $\Omega$ est le barycentre  de $(A,2/5)$, $(B,2/5)$ et $(C,1/5)$.
 
 \item On fixe maintenant un repère orthonormé direct du plan dont l'origine est $A$, et tel que $B$ soit sur l'axe des abscisses (donc son affixe est réel). Soit $(\alpha,\beta) \in \C^*\times \C$ tel que $s$ s'écrive $z\mapsto \alpha \bar z+\beta$ en coordonnée complexe. On a $s(0)=b$ donc $\beta=b$, et $s(b)=c=ib$ donc $\alpha\bar b + b = ib$ ce qui donne $\alpha = i-1$. La transformation s'écrit donc dans ce repère 
 \[ z\mapsto (i-1)\bar z + b,\]
