@@ -1,0 +1,39 @@
+\documentclass[10pt]{standalone}
+\usepackage[utf8]{inputenc}
+\usepackage{pgf,tikz}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+\definecolor{qqqqff}{rgb}{0.,0.,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-5.82,-2.88) rectangle (4.12,6.4);
+\draw [domain=-5.82:4.12] plot(\x,{(-13.6608-3.88*\x)/-1.1});
+\draw [domain=-5.82:4.12] plot(\x,{(--6.844602816622067--2.8926279441628835*\x)/-2.8101785666836223});
+\draw [domain=-5.82:4.12] plot(\x,{(--6.816197183377932--0.9873720558371164*\x)/3.9101785666836224});
+\draw [domain=-5.82:4.12] plot(\x,{(-9.428-3.88*\x)/-1.1});
+\draw [domain=-5.82:4.12] plot(\x,{(--4.878443782477956-2.8926279441628835*\x)/2.8101785666836223});
+\draw [domain=-5.82:4.12] plot(\x,{(--0.2210602051663293--0.9873720558371164*\x)/3.9101785666836224});
+\draw(-3.0612733176437583,2.608068236886871) circle (1.6997254680290774cm);
+\draw(-0.8211542731880097,1.9729829407782828) circle (2.65645281395307cm);
+\draw [dash pattern=on 2pt off 2pt] (-0.9299404777721256,1.0224573519457056) circle (2.328404317696277cm);
+\draw [dash pattern=on 2pt off 2pt,domain=-5.82:4.12] plot(\x,{(--9.085460065224852--4.583666321111827*\x)/-0.4002845425228332});
+\begin{scriptsize}
+\draw [fill=qqqqff] (-1.5,3.28) circle (2.5pt);
+\draw[color=qqqqff] (-1.04,3.83) node {$A$};
+\draw [fill=qqqqff] (-2.6,-0.6) circle (2.5pt);
+\draw[color=qqqqff] (-2.58,-1.07) node {$B$};
+\draw [fill=uuuuuu] (1.3101785666836223,0.3873720558371164) circle (2.5pt);
+\draw[color=uuuuuu] (1.32,-0.13) node {$C$};
+\draw [fill=qqqqff] (-3.26,0.92) circle (2.5pt);
+\draw[color=qqqqff] (-3.72,0.51) node {$P$};
+\draw [fill=uuuuuu] (-2.0849518555022977,1.2167152733191686) circle (1.5pt);
+\draw[color=uuuuuu] (-2.42,1.51) node {$U$};
+\draw [fill=uuuuuu] (-1.9442024941112612,-0.43440241396663326) circle (1.5pt);
+\draw[color=uuuuuu] (-1.7,-0.03) node {$V$};
+\draw [fill=uuuuuu] (-2.3444870366340944,4.149263907145194) circle (1.5pt);
+\draw[color=uuuuuu] (-3.,4.05) node {$W$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{document}
