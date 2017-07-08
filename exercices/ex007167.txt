@@ -1,0 +1,29 @@
+\exercice{7167, megy, 2017/07/08}
+\enonce
+% rotations
+Soient $AOB$ et $COD$ deux triangles directs, isocèles rectangles en $O$. Soient $I$, $J$, $K$ et $L$ les milieux des segments $[AB]$, $[BC]$, $[CD]$ et $[DA]$.
+
+\begin{center}
+\includegraphics{../images/img007167-1}
+\end{center}
+
+\begin{enumerate}
+\item Montrer que $(AC)\bot (BD)$ et que $AC=BD$.
+\item Montrer que $IJKL$ est un carré. 
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+\item Soit $\rho$ la rotation de centre $O$ et d'angle $\pi/2$. D'après l'énoncé, on a $\rho(B)=A$ et $\rho(D)=C$. Donc $[AC]$ est l'image de $[AD]$ par $\rho$, d'où on déduit que $(AC)\bot (BD)$ et que $AC=BD$.
+
+\item Le quadrilatère $IJKL$ est toujours un parallélogramme, même sans hypothèses sur $ABCD$ (c'est le théorème de Varignon). En effet, par le théorème de Thalès (ou simplement le théorème des milieux) : 
+\[ \overrightarrow{IL} = \frac12 \overrightarrow{BD} = \overrightarrow{JK}.\]
+Ceci signifie que les côtés $[IL]$ et $[JK]$ ont même longueur et sont parallèles, donc $IJKL$ est un parallélogramme.
+
+Pour voir que c'est un carré, remarquons qu'on montre de même que  
+\[ \overrightarrow{IJ} = \frac12 \overrightarrow{AC} = \overrightarrow{LK},\]
+et d'après la première question, $(AC)\bot (BD)$ et que $AC=BD$, donc $IJKL$ est un parallélogramme ayant un angle droit et des cotés consécutifs de même longueur. C'est donc un carré.
+\end{enumerate}
+\fincorrection
+\finexercice
