@@ -1,0 +1,47 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{pgf,tikz}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+\definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
+\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+\definecolor{qqqqff}{rgb}{0.,0.,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-2.42,-3.74) rectangle (6.02,4.48);
+\draw [shift={(0.2,3.52)},color=qqwuqq,fill=qqwuqq,fill opacity=0.10000000149011612] (0,0) -- (-118.72373705794006:0.6) arc (-118.72373705794006:-77.38280234753888:0.6) -- cycle;
+\draw [shift={(0.2,3.52)},color=qqwuqq,fill=qqwuqq,fill opacity=0.10000000149011612] (0,0) -- (-77.38280234753888:0.6) arc (-77.38280234753888:-36.04186763713772:0.6) -- cycle;
+\draw [shift={(-1.74,-0.02)},color=qqwuqq,fill=qqwuqq,fill opacity=0.10000000149011612] (0,0) -- (1.0353531865449448:0.6) arc (1.0353531865449448:61.276262942059965:0.6) -- cycle;
+\draw [shift={(1.6327872869455928,-2.8808965443227663)},color=qqwuqq,fill=qqwuqq,fill opacity=0.10000000149011612] (0,0) -- (42.37628789694612:0.6) arc (42.37628789694612:102.61719765246113:0.6) -- cycle;
+\draw [shift={(3.4640495715478576,1.144883077724751)},color=qqwuqq,fill=qqwuqq,fill opacity=0.10000000149011612] (0,0) -- (143.95813236286227:0.6) arc (143.95813236286227:204.1990421183773:0.6) -- cycle;
+\draw (0.2,3.52)-- (-1.74,-0.02);
+\draw (-1.74,-0.02)-- (4.9,0.1);
+\draw (4.9,0.1)-- (0.2,3.52);
+\draw(1.5722945240796125,0.4663696675947886) circle (3.3478127886433633cm);
+\draw [domain=-2.42:6.02] plot(\x,{(--0.9640655261453055-0.9758512410495006*\x)/0.21843615850437653});
+\draw [dash pattern=on 2pt off 2pt] (2.960940703422821,-1.0556564690470422) circle (2.2573198333627125cm);
+\draw [shift={(-1.74,-0.02)},color=qqwuqq] (1.0353531865449448:0.6) arc (1.0353531865449448:61.276262942059965:0.6);
+\draw [shift={(-1.74,-0.02)},color=qqwuqq] (1.0353531865449448:0.5) arc (1.0353531865449448:61.276262942059965:0.5);
+\draw [shift={(1.6327872869455928,-2.8808965443227663)},color=qqwuqq] (42.37628789694612:0.6) arc (42.37628789694612:102.61719765246113:0.6);
+\draw [shift={(1.6327872869455928,-2.8808965443227663)},color=qqwuqq] (42.37628789694612:0.5) arc (42.37628789694612:102.61719765246113:0.5);
+\draw [dash pattern=on 2pt off 2pt] (1.6327872869455928,-2.8808965443227663)-- (4.9,0.1);
+\draw [dash pattern=on 2pt off 2pt] (0.9813905388669557,0.02918175672651125)-- (3.4640495715478576,1.144883077724751);
+\draw [shift={(3.4640495715478576,1.144883077724751)},color=qqwuqq] (143.95813236286227:0.6) arc (143.95813236286227:204.1990421183773:0.6);
+\draw [shift={(3.4640495715478576,1.144883077724751)},color=qqwuqq] (143.95813236286227:0.5) arc (143.95813236286227:204.1990421183773:0.5);
+\begin{scriptsize}
+\draw [fill=qqqqff] (0.2,3.52) circle (2.5pt);
+\draw[color=qqqqff] (0.26,4.11) node {$A$};
+\draw [fill=qqqqff] (-1.74,-0.02) circle (2.5pt);
+\draw[color=qqqqff] (-2.12,-0.27) node {$B$};
+\draw [fill=qqqqff] (4.9,0.1) circle (2.5pt);
+\draw[color=qqqqff] (5.18,0.31) node {$C$};
+\draw [fill=qqqqff] (3.4640495715478576,1.144883077724751) circle (2.5pt);
+\draw[color=qqqqff] (3.6,1.51) node {$D$};
+\draw [fill=uuuuuu] (0.9813905388669557,0.02918175672651125) circle (1.5pt);
+\draw[color=uuuuuu] (0.41,-0.18) node {$A_1$};
+\draw [fill=uuuuuu] (1.6327872869455928,-2.8808965443227663) circle (1.5pt);
+\draw[color=uuuuuu] (1.21,-2.94) node {$A_2$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{document}
