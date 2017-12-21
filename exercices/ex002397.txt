@@ -49,7 +49,9 @@ Conclusion : $(X,d_\omega)$ est complet.
  \end{enumerate} 
 
   \item On définit $f_n$ sur $[0,1]$ par $f_n(t) = 1$ pour $t\in[0,\frac 12]$, $f_n(t)=(1-n(t-\frac12))$ pour $t\in[\frac 12,\frac 12+\frac 1n]$
-et $f(t)=0$ si $t\ge \frac 12+\frac 1n$. Alors $(f_n)$ est une suite de Cauchy pour la norme $\| . \|_1$. Par contre $(f_n)$ ne converge pas dans $X$. Donc $X$ n'est pas complet. En effet $(f_n)$ converge vers la fonction $f$ o\`u $f$ est définie par $f(t)=1$ sur $[0,\frac 12]$ et $f(t)=0$ sur $]\frac12,1]$. Mais cette fonction n'est pas dans l'espace $X$ car $f$ n'est pas continue.
+et $f(t)=0$ si $t\ge \frac 12+\frac 1n$. En effet $(f_n)$ converge (au sens de la convergence simple) vers la fonction $f$, o\`u $f$ est définie par $f(t)=1$ sur $[0,\frac 12]$ et $f(t)=0$ sur $]\frac12,1]$.
+
+On montre facilement que $(f_n)$ est une suite de Cauchy pour la norme $\| . \|_1$ en prouvant que pour $p,q\ge n$ on a $\|f_p - f_q\|_1 \le \frac1n$. Par contre $(f_n)$ ne converge pas dans $X$ car $f$ n'est pas continue, donc n'appartient pas à l'espace $X$. Donc $X$ n'est pas complet.  
 \end{enumerate}
 \fincorrection
 \finexercice
