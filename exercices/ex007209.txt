@@ -1,0 +1,21 @@
+\exercice{7209, megy, 2019/12/27}
+
+\enonce
+Résoudre sur $\C$ l'équation $z^2+\overline{z}-1=0$.
+\finenonce
+
+\indication
+Remarquer que la conjugaison est involutive. On peut aussi utiliser la forme algébrique.
+\finindication
+
+\correction
+Soit $z\in\C$. Si $\overline{z}=1-z^2$, alors en conjuguant une deuxième fois on obtient : 
+\[ z=1-\overline{z}^2=1-(1-z^2)^2=2z^2-z^4.\]
+Donc $z$ est une racine du polynôme $X^4-2X^2+X$. Ce polynôme a deux racines évidentes : $0$ et $1$, et deux autres racines $\frac{-1\pm\sqrt 5}{2}$. Les deux dernières sont les seules à vérifier l'équation d'origine.
+
+Autre approche : on écrit l'inconnue $z\in\C$ sous forme cartésienne $z=a+ib$ avec $a$ et $b$ réels. On obtient le système $\begin{cases}a^2-b^2+a&=1\\2ab-b&=0\end{cases}$.
+
+La seconde équation équivaut à $b=0$ ou $a=\frac{1}{2}$. Si $b=0$, la première équation devient $a^2+a-1=0$, dont les solutions (réelles) sont $\frac{-1\pm\sqrt 5}{2}$. Si $a=1/2$, la première équation devient $b^2=-\frac{1}{4}$, qui n'a pas de solutions réelles.
+\fincorrection
+
+\finexercice
