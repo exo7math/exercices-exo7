@@ -1,0 +1,25 @@
+\exercice{7187, megy, 2019/07/17}
+\enonce
+Dans l'ensemble $\R$, il existe une notion de \emph{partie bornée} : c'est une partie qui est incluse dans un segment du type $[-M,M]$, pour un certain $M$. Cet exercice montre comment généraliser cette notion de \emph{partie bornée} à un ensemble quelconque.
+
+Soit $E$ un ensemble et  $\mathcal B$ une partie de $\mathcal P(E)$. On dit que $\mathcal B$ est une \emph{bornologie sur $E$} si les conditions suivantes sont vérifiées
+\begin{itemize}
+\item Si $A\in \mathcal B$ et $B\subseteq A$, alors $B\in \mathcal B$.
+\item Si $A\in \mathcal B$ et $B \in \mathcal B$, alors $A\cup B\in \mathcal B$.
+\item Pour tout $x\in E$, on a  $\{x\} \in \mathcal B$.
+\end{itemize}
+Les éléments de $\mathcal B$ sont dits \emph{$\mathcal B$-bornés}, ou simplement \emph{bornés} s'il n'y a pas d'ambiguïté sur la bornologie utilisée.
+
+Dans la suite, on fixe un ensemble $E$.
+\begin{enumerate}
+\item Montrer que $\mathcal B_1=\{\emptyset, E\}$ est une bornologie de $E$. On l'appelle la \emph{bornologie triviale (ou : grossière)}.
+\item Montrer que l'ensemble $\mathcal B_2$ des parties finies de $E$ est une bornologie de $E$. On l'appelle la \emph{bornologie discrète}.
+\item Combien de bornologies différentes y a-t-il si $E$ est vide ? S'il contient (exactement) un élément ? Deux ? Trois ?
+\item On suppose maintenant que $E=\R$. Soit $\mathcal B_3$ l'ensemble des parties $A\subseteq \R$ bornées au sens classique, autrement dit 
+\[ A\in \mathcal B_3 \iff \exists M\in \R, \forall a\in A, |a|\leq M\]
+Montrer que $\mathcal B_3$ est une bornologie. On l'appelle la \emph{bornologie usuelle sur $\R$}, et lorsqu'on parle de bornés de $\R$, il est implicite qu'on se réfère à cette bornologie (et non aux deux premières par exemple).
+\end{enumerate}
+\finenonce
+\noindication
+\nocorrection
+\finexercice
