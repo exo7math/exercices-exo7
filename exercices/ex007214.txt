@@ -1,0 +1,35 @@
+\exercice{7214, megy, 2021/02/22}
+
+\enonce
+On considère la fonction $f : \C\to \C, z\mapsto \sqrt{|xy|}$, où l'on a noté $z=x+iy$ la forme algébrique de $z$. Montrer qu'elle vérifie les conditions de Cauchy-Riemann en l'origine, mais qu'elle n'est pas $\C$-dérivable en l'origine.
+\finenonce
+
+\noindication
+
+\correction
+Ici on a \(f(x+iy)=u(x,y)+iv(x,y)\) où \(u(x,y)=\sqrt{|xy|}\) et \(v(x,y)=0\) pour tout \((x,y)\in \R^2\).
+\begin{enumerate}
+\item On a \(\frac{\partial v}{\partial x}\equiv 0\) et \(\frac{\partial v}{\partial y}\equiv 0\) sur \(\R^2\).
+Au point \((0,0)\in \R^2\) on a 
+\[ \lim_{x\to 0}\frac{u(x,0)-u(0,0)}{x}\lim_{x\to 0}\frac{0-0}{x}=0 \]
+et
+\[ \lim_{y\to 0}\frac{u(0,y)-u(0,0)}{x}\lim_{x\to 0}\frac{0-0}{x}=0. \]
+Donc \(u\) est dérivable par rapport à la première et à la seconde variable en \((0,0)\) et de plus \(\frac{\partial u}{\partial x}(0,0)=0\) et \(\frac{\partial u}{\partial y}(0,0)=0\).
+En particulier \(f\) vérifie les équations de Cauchy-Riemann.
+\item La fonction \(f\) n'est pas \(\C\)-dérivable en \(0\) car pour \(h\in \R_+^*\) on a 
+\[ \frac{f(h)-f(0)}{h}=\frac{0-0}{h}=0 \]
+et
+\[ \frac{f(h+ih)-f(0)}{h+ih}=\frac{\sqrt{|h^2|}}{h+ih}=\frac{h}{h+ih}=\frac{1}{1+i}.\]
+Les deux quantités n'ont pas la même limite lorsque $h\to 0$.
+\item Ce n'est pas une contradiction avec le théorème de Cauchy-Riemann car la fonction \(u\) (et donc la fonction \(f\)) n'est pas différentiable en \((0,0)\). En effet si \(u\) était différentiable en \((0,0)\) on aurait 
+\begin{align*}
+u(s,t)
+& = u(0,0)+du_{(0,0)}(s,t)+o(\|(s,t)\|)\\
+& = \frac{\partial u}{\partial x}(0,0)+t\frac{\partial u}{\partial x}(0,0)+o(\|(s,t)\|) \\
+& = o(\|(s,t)\|).
+\end{align*}
+Or \(u(s,s)=|s|\) qui n'est pas un \(o(\|(s,s)\|)\) d'où une contradiction.
+\end{enumerate}
+\fincorrection
+
+\finexercice
