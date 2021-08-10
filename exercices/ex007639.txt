@@ -1,0 +1,31 @@
+\exercice{7639, mourougane, 2021/08/10}
+\enonce[Laplacien]
+On rappelle que le Laplacien $\Delta\varphi$ d'une fonction $\varphi~: U\to\Rr$ définie sur un ouvert $U$ de $\Rr^2$ est la fonction sur $U$ donnée par $\Delta\varphi (x,y)=\frac{\partial^2}{\partial x^2}\varphi (x,y)+\frac{\partial^2}{\partial y^2}\varphi(x,y)$.
+ \begin{enumerate}
+ \item Soit $D$ un ouvert connexe de $\Cc$ et $f : D\to\Cc$ une application holomorphe.
+ Exprimer $\Delta |f|^2$ à l'aide de $f'$.
+ 
+
+ \item Soit $D$ un ouvert connexe et $(f_i : D\to\Cc)_{i=1}^N$ une famille finie d'applications holomorphes. On suppose que 
+ $$\forall z\in D, \ \ \sum_{i=1}^N |f_i(z)|^2=1.$$
+ Montrer que toutes les $f_i$ sont constantes sur $D$.
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+  \item On note $f=u+iv$.
+\begin{eqnarray*}
+ \Delta |f|^2&=&\left(\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2}\right)(u^2(x,y)+v^2(x,y))\\
+ &=&2(\left |\frac{\partial (u+iv)}{\partial x}\right |^2 +\left |\frac{\partial (u+iv)}{\partial y}\right |^2)\\&&+2u\left(\frac{\partial}{\partial x}\frac{\partial u}{\partial x}+\frac{\partial}{\partial y}\frac{\partial u}{\partial y}\right)+2v\left(\frac{\partial}{\partial x}\frac{\partial v}{\partial x}+\frac{\partial}{\partial y}\frac{\partial v}{\partial y}\right)
+\end{eqnarray*}
+Par les identités de Cauchy-Riemann pour la fonction holomorphe $f=u+iv$, et par symétrie de Schwarz, les deux dernières quantités entre parenthèses sont nulles. On trouve donc 
+$$\Delta |f|^2=4|f'|^2.$$
+  \item On applique la formule précédente à chaque $f_i$ pour obtenir
+$$\Delta \sum_{i=1}^N |f_i(z)|^2=4\sum_{i=1}^N|f'_i(z)|^2=0.$$
+On en déduit que chaque application holomorphe $f_i$ est de dérivée identiquement nulle et donc constante sur $D$ connexe.
+\end{enumerate}
+
+
+\fincorrection
+\finexercice

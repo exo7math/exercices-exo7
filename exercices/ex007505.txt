@@ -1,0 +1,35 @@
+\exercice{7505, mourougane, 2021/08/10}
+\enonce
+On munit le plan affine euclidien $(P,<,>)$ d'un repère orthonormé
+$(O,\vec{\imath},\vec{\jmath})$.
+On considère les points $A$ de coordonnées $(-2,1)$ et $B$ de coordonnées $(4,4)$.
+
+\begin{enumerate}
+    \item Déterminer les coordonnées du barycentre $G$ des points massiques $A(2)$ et $B(1)$.
+    \item Calculer $2GA^ 2+GB^2$.
+    \item Démontrer que pour tout point $M$ du plan, on a $$2MA^2+MB^2=3MG^2 +2GA^ 2+GB^2.$$
+    \item Déterminer l'ensemble $\mathcal L$ des points $M$ du plan tels que $2MA^2+MB^2=42$.
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+    \item Comme la somme des masses $2+1$ est non nulle, le barycentre est bien défini.
+    L'abscisse de $G$ est $\frac{2\times (-2)+1\times 4}{2+1}=0$
+    et l'ordonnée $\frac{2\times 1+1\times 4}{2+1}=2$.
+    \item $2GA^ 2+GB^2=2((-2)^2+(1-2)^2)+(4^2+(4-2)^2)=30$.
+    \item Soit $M$ un point du plan $P$.
+    \begin{eqnarray*}
+        2MA^2+MB^2&=&2\vec{MA}^2+\vec{MB}^2=2(\vec{MG}+\vec{GA})^2+(\vec{MG}+\vec{GB})^2\\
+        &=&3\vec{MG}^2+<\vec{MG},2\vec{GA}+\vec{GB}>+2\vec{GA}^ 2+\vec{GB}^2\\
+        &=&3MG^2+2GA^ 2+GB^2.
+    \end{eqnarray*}
+    \item Soit $M$ un point du plan $P$.
+    \begin{eqnarray*}
+        M\in\mathcal{L}&\iff & 2MA^2+MB^2=42\iff 3MG^2+2GA^ 2+GB^2=42\\
+        &\iff& 3MG^2+30=42\iff MG^2=4.
+    \end{eqnarray*}
+    L'ensemble $\mathcal L$ est donc le cercle de centre $G$ et de rayon $2$.
+\end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,26 @@
+\exercice{7523, mourougane, 2021/08/10}
+\enonce[Connexité]
+Le but de cet exercice est de montrer qu'une partie $P$ ouverte de $\Cc$ est connexe
+si et seulement si pour tout couple $(a,b)$ de points de $P$ il existe une ligne polygonale incluse dans $P$
+qui joint $a$ et $b$.
+\begin{enumerate}
+ \item On suppose d'abord que pour tout couple $(a,b)$ de points de $P$ il existe une ligne polygonale incluse dans $P$
+qui joint $a$ et $b$. Supposons que $P$ n'est pas connexe. Montrer qu'il existe deux ouverts disjoints $A$ et $B$,
+un point $a$ de $A$, un point $b$ de $B$ tel que le segment $[ab]$ soit inclus dans~$P$. 
+ \item Noter \begin{eqnarray*}
+       \alpha&:=&\{t\in[0,1]\ \ /\ \ ta+(1-t)b\in A\}\\
+       \beta&:=&\{t\in[0,1]\ \ /\ \ ta+(1-t)b\in B\}\\
+       \end{eqnarray*}
+Montrer que $\alpha$ et $\beta$ sont non vides ouverts et disjoints
+et utiliser la connexité de $[0,1]$ pour obtenir une contradiction.
+ \item On suppose réciproquement que $P$ est connexe et on fixe un point $o$ de $P$.
+ On considère $$A:=\{b\in P \text{ il y a une ligne polygonale incluse dans } P \text{ qui joint } o \text{ et } b.\}.$$
+ Montrer que $A$ est ouvert dans $P$, en montrant que pour tout point $b$ de $A$, il existe une boule $B(b,\epsilon)$ incluse dans $A$.
+ \item Avec les notations précédentes, montrer que $P-A$ est ouvert dans $P$, en montrant que pour tout point $z$ de $P-A$
+ et toute boule $B(z,\epsilon)$ incluse dans $P$, $B(z,\epsilon)$ est incluse dans $P-A$.
+ \item Conclure.
+\end{enumerate}
+\finenonce
+\noindication
+\nocorrection
+\finexercice

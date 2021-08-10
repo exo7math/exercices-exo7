@@ -1,0 +1,35 @@
+\exercice{7607, mourougane, 2021/08/10}
+\enonce[Calcul d'intégrales]
+On paramètre le cercle $C_r$ privé du point ${-r}$ de centre $0$ et de rayon $r>0$ orienté dans le sens trigonométrique 
+du plan complexe en définissant pour $t\in\Rr$, $\xi(t)$ 
+comme le point d'intersection de la droite d'équation $y=t(x+r)$ avec le cercle $C_r$ différent de $-r$.
+\begin{enumerate}
+\item Montrer que $\xi(t)=r\frac{1+it}{1-it}$.
+
+
+\item Vérifier que $\xi$ est dérivable sur $\Rr$ et calculer $\frac{\xi'(t)}{\xi(t)}$.
+
+\item En déduire que 
+$$\int_{C_r} \frac{dz}{z}=2i\int_{-\infty}^{+\infty}\frac{dt}{1+t^2}.$$
+
+\item En déduire la valeur de $\int_{-\infty}^{+\infty}\frac{dt}{1+t^2}$.
+
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+  \item Le point d'affixe $r\frac{1+it}{1-it}$ est de module $r$ et ses coordonnées $x=re(\xi(t))=r\frac{1-t^2}{1+t^2}$ et $y=Im(\xi(t))=r\frac{2t}{1+t^2}$ vérifient l'équation $y=t(x+r)$.
+Il est donc à l'intersection de la droite d'équation $y=t(x+r)$ avec le cercle $C_r$. Comme l'équation $r\frac{1+it}{1-it}=-r$ est équivalente à $1=-1$, l'affixe $r\frac{1+it}{1-it}$
+n'est pour aucune valeur de $t$ égale à $-r$.
+
+  \item Comme $t$ est réel, $t\mapsto r\frac{1+it}{1-it}$ est quotient de deux polynômes dont le dénominateur ne s'annule jamais. Elle est donc dérivable et 
+$$\frac{\xi'(t)}{\xi(t)}=\frac{i}{1+it}-\frac{-i}{1-it}=\frac{2i}{1+t^2}.$$
+
+  \item $$\int_{C_r} \frac{dz}{z}=\int_{C_r-\{-r\}} \frac{dz}{z}=\int_{-\infty}^{+\infty}\frac{\xi'(t)}{\xi(t)}dt=\int_{-\infty}^{+\infty}\frac{2i}{1+t^2}.$$
+
+  \item Par ailleurs, $\int_{C_r} \frac{dz}{z}=2i\pi Res_0(\frac{1}{z})=2i\pi.$
+Donc, $\int_{-\infty}^{+\infty}\frac{dt}{1+t^2}=\pi$.
+\end{enumerate}
+\fincorrection
+\finexercice

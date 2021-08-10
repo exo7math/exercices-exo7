@@ -1,0 +1,26 @@
+\exercice{7559, mourougane, 2021/08/10}
+\enonce[Lemme de Goursat]
+Soit $D$ un ouvert de $\Cc$ et $f : D\to\Cc$ une application holomorphe.
+Soit $T$ un triangle (plein) inclus dans le domaine $D$. On notera $p$ son périmètre.
+Le but de l'exercice est de montrer que 
+$$\int_{\partial T}f(z)dz=0.$$
+\begin{enumerate}
+\item En considérant les quatre triangles obtenus en traçant les segments entre deux milieux de côtés de $T$,
+montrer que pour l'un de ces triangles noté $T_1$,
+$$|\int_{\partial T}f(z)dz|\leq 4|\int_{\partial T_1}f(z)dz|.$$
+\item En itérant cette construction, montrer que pour tout $n$, il existe un triangle $T_n\subset T_{n-1}$ de périmètre $\frac{p}{2^n}$
+tel que $$|\int_{\partial T}f(z)dz|\leq 4^n|\int_{\partial T_1}f(z)dz|.$$
+\item Montrer que l'intersection des $T_n$ est un point $c$ de $D$.
+\item Montrer qu'un existe une fonction continue $h$ sur $D$ nulle en $c$ telle que pour tout $z\in D$,
+$$f(z)=f(c)+(z-c)f'(c)+(z-c)h(z).$$
+\item Calculer $\int_{\partial T_n}f(c)dz$ et $\int_{\partial T_n}(z-c)f'(c)dz$.
+\item Montrer que pour tout $\epsilon >0$ il existe $N$ tel que pour $n\geq N$,$$|\int_{\partial T_n}(z-c)h(z)dz|\leq (\frac{p}{2^n})^2\varepsilon.$$
+\item Conclure.
+\item Montrer en choisissant un découpage de $T$ avec un petit triangle autour de $a$ que 
+ si $f : D\to\Cc$ est une application continue et holomorphe sur $D-\{a\}$, alors pour tout triangle de sommet $a$ dans $D$,
+ $\int_{\partial T}f(z)dz=0$.
+\end{enumerate}
+\finenonce
+\noindication
+\nocorrection
+\finexercice

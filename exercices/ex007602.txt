@@ -1,0 +1,47 @@
+\exercice{7602, mourougane, 2021/08/10}
+\enonce[Application entière dans $\mathbb{H}$]
+\begin{enumerate}
+\item Soit $f :\Cc\to\Cc$ une application holomorphe non constante. Montrer que l'image du plan complexe par $f$ 
+rencontre tous les disques ouverts non vides $\Delta_r(a)$ de $\mathbb{C}$.
+
+\item En déduire que toute application holomorphe de $\Cc$ dans $\mathbb{H}$ est constante.
+
+\item On considère $$\begin{array}{cccc}
+ h :& \Cc-\{-i\}&\longrightarrow&\Cc \\&z&\longmapsto& \frac{z-i}{z+i}.
+\end{array}$$
+Montrer que 
+$
+ \forall z\in\Cc-\{-i\}, \ \ \ 1-|h(z)|^2=\frac{4 Im(z)}{|z+i|^2}.
+$
+
+\item En déduire que l'image du demi-plan de Poincaré $\mathbb{H}$ par $h$ est une partie bornée de $\Cc$.
+
+\item En déduire par une nouvelle démonstration que toute application holomorphe de $\Cc$ dans $\mathbb{H}$ est constante.
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+  \item Soit $\Delta_r(a)$ le disque de centre $a\in\Cc$ et de rayon $r>0$. Supposons que $Im(f)$ ne rencontre pas $\Delta_r(a)$.
+Alors,
+$$\forall z\in\Cc,\ \ \ |f(z)-a|\geq r.$$
+L'application $\Cc\to\Cc, z\mapsto\frac{1}{f(z)-a}$ est alors bien définie, 
+holomorphe sur $\Cc$ et majorée en module par $\frac{1}{r}$.
+Par le théorème de Liouville, elle est donc constante.
+Puisque $w\mapsto \frac{1}{w-a}$ est injective sur $\Cc-\{a\}$, en déduit que $f$ est constante.
+  \item Une telle application entière ne rencontre par le disque $\Delta_1(-2i)$ : elle est donc constante,
+d'après la question précédente.
+  \item Soit $z\in\Cc-\{-i\}$,
+\begin{eqnarray*}
+ 1-|h(z)|^2&=& 1-\frac{z-i}{z+i}\frac{\overline{z}+i}{\overline{z+i}}
+ = 1-\frac{|z|^2+i(z-\overline{z})+1}{|z+i|^2}\\&=&1-\frac{|z|^2-i(z-\overline{z})+1+2i(z-\overline{z})}{|z+i|^2}
+= \frac{4 Im(z)}{|z+i|^2}.
+\end{eqnarray*}
+  \item Sur $\mathbb{H}$, $Im(z)>0$ et donc $|h(z)|<1$. L'image du demi-plan $\mathbb{H}$ par l'application $h$ est donc
+incluse dans le disque unité $\Delta$ ; c'est donc une partie bornée de~$\Cc$.
+  \item Soit $f :\Cc\to\mathbb{H}$ une application holomorphe.
+Par composition, $h\circ f :\Cc\to \Cc$ est une application holomorphe dont l'image est bornée.
+Par le théorème de Liouville, elle est donc constante. Comme $h$ est injective, on en déduit que $f$ est constante.
+\end{enumerate}
+\fincorrection
+\finexercice

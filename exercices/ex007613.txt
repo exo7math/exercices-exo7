@@ -1,0 +1,29 @@
+\exercice{7613, mourougane, 2021/08/10}
+\enonce[Biholomorphisme de $\mathbb{H}$]
+\textit{On rappelle qu'à toute matrice $A=\begin{pmatrix} a&b\\c&d\end{pmatrix}$ de $SL(2,\Rr)$,
+on associe l'application linéaire fractionnaire
+$$\begin{array}{cccc}
+ h_A :& \Cc-\{-\frac{d}{c}\}&\longrightarrow&\Cc-\{\frac{a}{c}\}\\&z&\longmapsto& \frac{az+b}{cz+d}
+\end{array}$$}
+\begin{enumerate}
+\item Montrer que $h_A$ envoie $\mathbb{H}$ sur $\mathbb{H}$.
+
+\item Montrer que pour tout élément $z$ de $\mathbb{H}$, il existe $A\in SL(2,\Rr)$ 
+tel que $h_A(i)=z$.
+
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+  \item \begin{eqnarray*}
+ Im\left(\frac{az+b}{cz+d}\right)&=&\frac{1}{2i}(\frac{az+b}{cz+d}-\overline{\frac{az+b}{cz+d}})\\
+ &=&\frac{1}{2i}(\frac{az+b}{cz+d}-\frac{a\overline{z}+b}{c\overline{z}+d})=\frac{1}{2i}\frac{(ad-bc)(z-\overline{z})}{|cz+d|^2}\\
+ &=&\frac{Im(z)}{|cz+d|^2}
+\end{eqnarray*}
+Par conséquent, si $Im(z)>0$, alors $Im\left(h_A(z)\right)>0$ et $h_A$ envoie $\mathbb{H}$ sur $\mathbb{H}$.
+  \item Soit $z=x+iy$. On a $\frac{xi-y}{1\times i+0}=z$. La matrice $\begin{pmatrix} x&-y\\1&0\end{pmatrix}$
+convient ainsi donc que la matrice $\frac{1}{y}\begin{pmatrix} x&-y\\1&0\end{pmatrix}$ de déterminant $1$.
+\end{enumerate}
+\fincorrection
+\finexercice

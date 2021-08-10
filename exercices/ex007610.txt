@@ -1,0 +1,30 @@
+\exercice{7610, mourougane, 2021/08/10}
+\enonce[Croissance à l'infini]
+On rappelle la formule de Gutzmer : soit $f$ la somme de la série entière $\sum_{n\geq 0} a_n z^n$ de rayon de convergence $R$.
+Alors, pour tout $r<R$,
+$$\sum_{n\geq 0} |a_n|^2r^{2n}=\frac{1}{2\pi}\int_0^{2\pi}|f(re^{i\theta})|^2d\theta.$$
+\begin{enumerate}
+\item Démontrer à l'aide de la formule de Gutzmer que toute application holomorphe $f:\Cc\to\Cc$ bornée est constante..
+
+\item Soit $f:\Cc\to\Cc$ application holomorphe. On suppose que 
+$$\forall r\in ]0,+\infty[, M(r):=\sup_{|z|<r} |f(z)|\leq r.$$
+Montrer que $f$ est une application affine.
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+  \item Soit $f:\Cc\to\Cc$ une application holomorphe bornée en module par $M$.
+On sait qu'elle est développable en séries entières sur $\Cc$ avec une série $\sum_{n\geq 0} a_n z^n$ de rayon de convergence infini.
+On peut donc appliquer la formule de Gutzmer : pour tout $r\in\Rr^+$,
+$$\sum_{n\geq 0} |a_n|^2r^{2n}=\frac{1}{2\pi}\int_0^{2\pi}|f(re^{i\theta})|^2d\theta\leq M^2 \frac{1}{2\pi}\int_0^{2\pi}d\theta=M^2$$
+Donc, pour tout $n$ in $\Nn$ et tout $r\in\Rr^+$,
+$$|a_n|^2r^{2n}\leq M^2.$$
+En particulier, tous les $a_n$ avec $n\not =0$ sont nuls et $f$ est constante
+  \item Soit $f:\Cc\to\Cc$ une application holomorphe telle que $ M(r)\leq r$.
+$$\sum_{n\geq 0} |a_n|^2r^{2n}=\frac{1}{2\pi}\int_0^{2\pi}|f(re^{i\theta})|^2d\theta\leq M(r)^2 \frac{1}{2\pi}\int_0^{2\pi}d\theta=M(r)^2\leq r^2$$
+Donc, pour tout $n$ in $\Nn$ et tout $r\in\Rr^+$, $|a_n|^2r^{2n}\leq r^2$.
+En particulier, tous les $a_n$ avec $n\not =0,1$ sont nuls et $f$ est affine.
+\end{enumerate}
+\fincorrection
+\finexercice

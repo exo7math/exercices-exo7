@@ -1,0 +1,29 @@
+\exercice{7508, mourougane, 2021/08/10}
+\enonce
+Soit $\R^2$ le plan affine euclidien muni du produit scalaire standard et de la base canonique.
+\begin{enumerate}
+    \item Ecrire la matrice $A$ de la forme bilinéaire symétrique donnée en coordonnées par
+    $$f(\begin{pmatrix}x\\y\end{pmatrix},\begin{pmatrix}x'\\y'\end{pmatrix})
+    =xx'+19yy'+12xy'+12x'y.$$
+    \item Diagonaliser $A$ dans une base orthonormée.
+    \item Déterminer la nature de la conique d'équation
+    $$x^2+19y^2+24xy+5y=0.$$
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+    \item La matrice $A$ de la forme bilinéaire symétrique donnée en coordonnées par
+    $$f(\begin{pmatrix}x\\y\end{pmatrix},\begin{pmatrix}x'\\y'\end{pmatrix})
+    =xx'+19yy'+12xy'+12x'y$$
+    est $$\begin{pmatrix}
+    1&12\\12&19
+    \end{pmatrix}$$
+    
+    \item On trouve que $e_1+2e_2$ est vecteur propre de $A$ de valeur propre $25$ et $2e_1-e_2$ est vecteur propre de $A$ de valeur propre $-5$.
+    \item Comme la matrice $A$ est inversible, la conique d'équation
+    $$x^2+19y^2+24xy+5y=0$$
+    est une conique à centre. Comme les valeurs propres de $A$ sont de signe opposé, il s'agit d'une hyperbole.
+\end{enumerate}
+\fincorrection
+\finexercice

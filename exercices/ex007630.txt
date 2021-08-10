@@ -1,0 +1,28 @@
+\exercice{7630, mourougane, 2021/08/10}
+\enonce[Singularités]
+ Soit $D=\Cc^\star$ et $f : D\to \Cc$ l'application définie par $f(z)=\exp(\frac{1}{z})-\frac{1}{z}$.
+\begin{enumerate}
+  \item Déterminer la nature de la singularité de $f$ en $0$ (apparente, polaire ou essentielle)
+
+  \item L'application admet-elle une primitive sur $D$ ?
+
+  \item Calculer $\int_{\partial\Delta}\exp(\frac{1}{z})dz$.
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+  \item Si $f$ avait une singularité apparente ou polaire en $0$, comme $z\mapsto 1/z$ a une singularité polaire en $0$,
+$f+1/z$ aurait une singularité apparente ou polaire. 
+Or pour tout entier naturel $n$, et pour tout réel $x$ strictement positif, $x^n\exp(\frac{1}{x})\geq x^n\frac{1}{(n+1)!x^{n+1}}$. 
+Donc, $\lim_{x\to 0\atop x>0} x^n \exp (\frac{1}{x}) =+\infty$. Par conséquent  $z\mapsto\exp(\frac{1}{z}) $ a une singularité essentielle en~$0$, 
+ainsi que $f$.
+  \item En écrivant le développement en séries entières de l'exponentielle, on obtient
+                 $$\forall z\in\Cc^\star,\ \ f(z)=1+\sum_{n=2}^{+\infty} \frac{z^{-n}}{n!}.$$
+Or la série, $z+ \sum_{n=2}^{+\infty} \frac{z^{-n+1}}{(-n+1)n!}$ est, comme l'application exponentielle, normalement convergente sur $\Cc^\star$ et y définit donc une application holomorphe $F$ telle que $F'$ qui se calcule comme somme des dérivées, par convergence normale, vérifie $F'=f$ : c'est une primitive de $f$.
+  \item Puisque l'application $f$ est exacte sur $D$ et que $\partial\Delta$ est un chemin orienté fermé dans $D$,
+ $\int_{\partial\Delta}fdz=0$. On en déduit 
+ $$\int_{\partial\Delta}\exp(\frac{1}{z})dz=\int_{\partial\Delta}\frac{1}{z}dz=2i\pi.$$
+\end{enumerate}
+\fincorrection
+\finexercice

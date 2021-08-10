@@ -1,0 +1,32 @@
+\exercice{7506, mourougane, 2021/08/10}
+\enonce
+\begin{enumerate}
+    \item On identifie le plan affine $\R^2$ muni du produit scalaire standard à l'espace vectoriel $\C$ muni du produit scalaire $(z,z')=re(z\overline{z'})$ par l'application linéaire
+    $(1,0)\mapsto 1$, $(0,1)\mapsto i$.
+    Parmi les transformations suivantes, lesquelles sont des isométries du plan euclidien 
+    \begin{enumerate}
+        \item[a.] $\ z\mapsto 3z+4$
+        \item[b.] $\ z\mapsto 3\overline{z}+4$
+        \item[c.] $\ z\mapsto \overline{z}+4$
+        \item[d.] $\ z\mapsto i\overline{z}+4$
+    \end{enumerate}
+    
+    \item Pour chacune des isométries, dire s'il s'agit d'une translation, d'une rotation ... (sans préciser les éléments caractéristiques).
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+    \item[a.] $\ z\mapsto 3z+4$ ne représente pas une isométrie à cause du facteur $3$.
+    \item[b.] $\ z\mapsto 3\overline{z}+4$ ne représente pas une isométrie à cause du facteur $3$.
+    \item[c.] $\ z\mapsto \overline{z}+4$ représente une isométrie, indirecte (présence de la conjugaison). Il s'agit de la réflexion par rapport à l'axe des abscisses $\ z\mapsto \overline{z}$ composée par la translation de vecteur $4\vec{\imath}$ dans la direction de l'axe des abscisses. C'est donc une symétrie glissée. 
+    \item[d.] $\ z\mapsto i\overline{z}+4$ représente une isométrie, indirecte (présence de la conjugaison). Il s'agit de la réflexion $s$ par rapport à l'axe des abscisses $\ z\mapsto \overline{z}$ composée par $z\mapsto iz$, la rotation $r$ de centre $O$ et d'angle $+\frac{\pi}{2}$
+    puis par la translation $t$ de vecteur $4\vec{\imath}$.
+    On peut écrire $r\circ s=(s'\circ s)\circ s=s'$ où $s'$ est la réflexion par rapport à la droite $d'$ d'équation $y=x$. On décompose ensuite $4\vec{\imath}=2(\vec{\imath}+\vec{\jmath})+2(\vec{\imath}-\vec{\jmath})$
+    comme somme d'un vecteur $\vec{v}_2:=2(\vec{\imath}+\vec{\jmath})$ directeur de $d'$ et d'un vecteur $\vec{v}_1:=2(\vec{\imath}-\vec{\jmath})$ normal à $d'$.
+    On en déduit
+    $t\circ s'=t_{\vec{v}_2}\circ t_{\vec{v}_1}\circ s'= t_{\vec{v}_2}\circ s''$
+    où $s''$ est la réflexion par rapport à la droite $d''=d'+\frac{\vec{v}_1}{2}$ parallèle à $d'$. Maintenant, $t\circ r\circ s=t\circ s'=t_{\vec{v}_2}\circ s''$. Comme $\vec{v}_2$ est parallèle à $d''$, il s'agit d'une symétrie glissée.
+\end{enumerate}
+\fincorrection
+\finexercice

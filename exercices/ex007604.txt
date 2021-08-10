@@ -1,0 +1,44 @@
+\exercice{7604, mourougane, 2021/08/10}
+\enonce[Résidus et représentation]
+\begin{enumerate}
+\item \'Enoncer le théorème des résidus.
+
+\item \`A l'aide du théorème des résidus, retrouver la formule de représentation de Cauchy pour les disques :
+Soit $D$ un ouvert de $\Cc$ et $f : D\to \Cc$ une application holomorphe.
+Alors, pour tout disque $\Delta_r(a)$ dont l'adhérence est incluse dans $D$,
+$$\forall b\in\Delta_r(a), \ \ \ \frac{1}{2i\pi}\int_{\partial\Delta_r(a)}\frac{f(z)dz}{z-b}=f(b).$$
+
+\item Montrer plus généralement : Soit $D$ un ouvert de $\Cc$ et $f : D\to \Cc$ une application holomorphe.
+Alors, pour tout disque $\Delta_r(a)$ dont l'adhérence est incluse dans $D$,
+$$\forall k\in\Nn,\ \ \ \forall b\in\Delta_r(a), \ \ \ \
+\frac{1}{2i\pi}\int_{\partial\Delta_r(a)}\frac{f(z)dz}{(z-b)^{k+1}}=\frac{f^{(k)}(b)}{k!}.$$
+
+
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+  \item Soit $D$ un ouvert étoilé de $\Cc$. Soit $\Gamma$ un chemin fermé dans $D$. Soit $C$ un ensemble fini de points de $D-\Gamma$.
+Soit $f : D-C\to\Cc$ holomorphe.
+Alors,
+$$\sum_{c\in C\cap Int(\Gamma)} Ind_\Gamma(c) Res_c(f)=\frac{1}{2i\pi}\int_\Gamma f(z)dz.$$
+  \item Soit $D$ un ouvert de $\Cc$ et $f : D\to \Cc$ une application holomorphe.
+Soit $\Delta_r(a)$ un disque dont l'adhérence est incluse dans $D$.
+Soit $b\in\Delta_r(a)$. 
+Soit $R>0$ tel que $\overline{\Delta_r(a)}\subset \Delta_R(a)\subset D$.
+L'ouvert $\Delta_R(a)$ est étoilé, le chemin $\partial\Delta_r(a)$ est inclus dans $\Delta_R(a)$
+et ne contient pas $b$ ; l'application $f : \Delta_R(a)-\{b\}\to\Cc,\ \ z\mapsto \frac{f(z)}{z-b}$
+est holomorphe : par le théorème des résidus, on en déduit
+$$Ind_{\partial\Delta_r(c)}(b) Res_b(\frac{f(z)}{z-b})= Res_b(\frac{f(z)}{z-b})
+=\frac{1}{2i\pi}\int_\Gamma \frac{f(z)}{z-b}dz.$$
+Reste à noter que, en développant $f$ en série entière au voisinage de $b$, $Res_b(\frac{f(z)}{z-b})=f(b).$
+  \item On réitère le raisonnement précédent avec l'application 
+$f_k : \Delta_R(a)-\{b\}\to\Cc, z\mapsto \frac{f(z)}{(z-b)^{k+1}}$.
+Le résidu de $\frac{f(z)}{(z-b)^{k+1}}$ en $b$ est le coefficient de $(z-b)^k$ dans 
+le développement en série entière de $f$ centré en $b$.
+Comme ce développement est donné par le développement de Taylor,
+le coefficient de $(z-b)^k$ est $\frac{f^{(k)}(b)}{k!}$.
+\end{enumerate}
+\fincorrection
+\finexercice

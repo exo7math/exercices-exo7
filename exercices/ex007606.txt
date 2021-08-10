@@ -1,0 +1,29 @@
+\exercice{7606, mourougane, 2021/08/10}
+\enonce[Questions de cours]
+\begin{enumerate}
+\item Donner l'exemple d'une fonction $f :\Cc\to\Cc$ indéfiniment dérivable au sens réel, mais non holomorphe. On justifiera ces deux propriétés.
+
+ \item L'application $\Cc-\{3\}\to\Cc$, $z\mapsto \frac{1}{z-3}$ admet-elle une primitive sur $\Cc-\{3\}$ ? Justifier. 
+
+ \item Donner l'exemple d'un ouvert étoilé de $\Cc$. On précisera le point par rapport auquel l'ouvert est étoilé.
+
+ \item Donner l'exemple d'un ouvert non étoilé de $\Cc$. On justifiera que l'exemple proposé n'est pas étoilé.
+ 
+ 
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+  \item L'application $f~:~\Cc\to\Cc, z\mapsto\overline{z}$ est associée à l'application $f_\Rr~:~(x,y)\mapsto (x,-y)$.
+Comme $f_\Rr$ est polynomiale, elle est de classe $C^{\infty}$. Par contre $\frac{\partial re(f)}{\partial x}=1=-\frac{\partial Im(f)}{\partial y}$.
+L'application $f$ qui ne vérifie les équation de Cauchy-Riemann en aucun point n'est pas holomorphe.
+  \item On paramètre le cercle de centre $3$ et de rayon $1$ par $z=3+e^{i\theta}$.
+ $$\int_{|z-3|=1}\frac{dz}{z-3}=\int_0^{2\pi}\frac{ie^{i\theta}d\theta}{e^{i\theta}}=i\int_0^{2\pi}d\theta=2i\pi\not=0.$$
+ Comme l'intégrale de $z\mapsto\frac{1}{z-3}$ sur le chemin fermé cercle de centre $3$ et de rayon $1$ inclus dans le domaine $\Cc-\{3\}$ n'est pas nulle,
+ cette application n'admet pas de primitive sur $\Cc-\{3\}$.
+  \item Le disque unité est convexe : il est donc étoilé par rapport à chacun de ses points.
+  \item L'ouvert $\Cc-\{3\}$ n'est pas étoilé, car l'application holomorphe $z\mapsto\frac{1}{z-3}$ n'y admet pas de primitive.
+\end{enumerate}
+\fincorrection
+\finexercice

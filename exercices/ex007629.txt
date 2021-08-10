@@ -1,0 +1,20 @@
+\exercice{7629, mourougane, 2021/08/10}
+\enonce[Applications entières]
+Soit $f :\Cc\to\Cc$ une application holomorphe non constante.
+\begin{enumerate}
+ \item Montrer que le point $0$ est dans l'adhérence de l'image de $f$.
+
+ \item Déterminer l'adhérence de l'image de $f$.
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+  \item Supposons que $0$ n'est pas dans l'adhérence de l'image de $f$. Il existe alors $r>0$ tel que $f(\Cc)\cap \Delta_r =\emptyset$. Autrement dit,
+$$\forall z\in\Delta, \ |f(z)|\geq r.$$
+L'application $f$ ne s'annule donc pas dans $\Cc$ et la fonction holomorphe $1/f$ est majorée par $1/r$ sur $\Cc$. Par le théorème de Liouville, elle est donc constante, ainsi que $f$.
+  \item Soit $c\in \Cc$. En appliquant le résultat précédent à $f-c$ on obtient que $c$ est dans l'adhérence de l'image de $f$.
+         Par conséquent, l'adhérence de l'image de $f$ est $\Cc$.
+\end{enumerate}
+\fincorrection
+\finexercice 
