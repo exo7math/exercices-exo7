@@ -1,0 +1,55 @@
+\exercice{7399, mourougane, 2021/08/10}
+\enonce
+\begin{enumerate}
+ \item On considère le code binaire, linéaire engendré par la matrice
+$$\left(\begin{array}{ccccccccccccccc}
+1&0&0&1&1&0&0&0&0&0&0&0&0&0&0\\
+0&1&0&0&1&1&0&0&0&0&0&0&0&0&0\\
+0&0&1&0&0&1&1&0&0&0&0&0&0&0&0\\
+0&0&0&1&0&0&1&1&0&0&0&0&0&0&0\\
+0&0&0&0&1&0&0&1&1&0&0&0&0&0&0\\
+0&0&0&0&0&1&0&0&1&1&0&0&0&0&0\\
+0&0&0&0&0&0&1&0&0&1&1&0&0&0&0\\
+0&0&0&0&0&0&0&1&0&0&1&1&0&0&0\\
+0&0&0&0&0&0&0&0&1&0&0&1&1&0&0\\
+0&0&0&0&0&0&0&0&0&1&0&0&1&1&0\\
+0&0&0&0&0&0&0&0&0&0&1&0&0&1&1\\
+\end{array}\right)$$
+Quel est son alphabet ? sa longueur ? sa dimension ? un polynôme générateur ? son nombre de mots ?
+ \item Le code est-il cyclique ?
+ \item Ecrire une matrice de contrôle. Montrer que la distance du code est au moins $3$. Combien d'erreurs peut-on alors détecter ? combien d'erreurs peut-on alors corriger ?
+ \item Le mot $(0,0,0,1,0,1,1,1,1,1,1,0,0,1,1)$
+est-il un mot de code ? Si non, en supposant qu'il n'a qu'une erreur, écrire le mot de code dont il provient.
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+ \item Soit $C$ le code donné. L'alphabet de $C$ est l'ensemble $\{0,1\}$. La longueur des mots est 15, alors la longueur de C est 15. 
+La matrice génératrice donnée est exactement la matrice du code engendré par le polynôme $g=1+X^3+X^4.$ Puisque $g$ est un diviseur unitaire de $X^{15}-1$ de degré $4$, 
+$$X^{15}-1=(X^4+X^3+1)(X^{11}+X^{10}+X^9+X^8+X^6+X^4+X^3+1)$$
+le code engendré par $g$ est cyclique, de dimension $11=15-4$. Alors $C$ est cyclique de dimension 11 engendré par $g$. Il contient $2^{11}$ mots. 
+ \item Oui, voir au-dessus.
+ \item On trouve le polynôme de contrôle: 
+$$h=\frac{X^{15}-1}{g}=X^{11}+X^{10}+X^9+X^8+X^6+X^4+X^3+1$$
+Alors la matrice de contrôle est
+$$H=\left(\begin{array}{ccccccccccccccc}
+1&1&1&1&0&1&0&1&1&0&0&1&0&0&0\\
+0&1&1&1&1&0&1&0&1&1&0&0&1&0&0\\
+0&0&1&1&1&1&0&1&0&1&1&0&0&1&0\\
+0&0&0&1&1&1&1&0&1&0&1&1&0&0&1\\
+\end{array}\right)$$
+Deux colonnes quelconques de $H$ sont toujours linéairement indépendantes, donc la distance du code est au moins~ $3$. Puisque le code contient un mot de poids 3, alors la distance est en fait $3$. Alors $C$ peut corriger une erreur et en détecter deux.
+ \item Un mot $m$ appartient à $C$ ssi $H\cdot \mathrm{tr} m=\vec{0}$. \\
+Le produit de $H$ et $m=(0,0,0,1,0,1,1,1,1,1,1,0,0,1,1)$ est la colonne obtenue comme somme des colonnes étoilées
+$$\left(\begin{array}{ccccccccccccccc}
+0&0&0&*&0&*&*&*&*&*&*&0&0&*&*\\ \hline
+1&1&1&1&0&1&0&1&1&0&0&1&0&0&0\\
+0&1&1&1&1&0&1&0&1&1&0&0&1&0&0\\
+0&0&1&1&1&1&0&1&0&1&1&0&0&1&0\\
+0&0&0&1&1&1&1&0&1&0&1&1&0&0&1\\
+\end{array}\right)$$
+soit $(0,0,0,0)$. Alors $m$ est un mot de code.
+\end{enumerate} 
+\fincorrection
+\finexercice

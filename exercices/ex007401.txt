@@ -1,0 +1,29 @@
+\exercice{7401, mourougane, 2021/08/10}
+\enonce
+\begin{enumerate}
+  \item Enoncer le théorème de la division euclidienne dans $k[X]$.
+  \item Enoncer le théorème de la division euclidienne dans $\Z[i]$.
+  \item Soit $G$ un groupe et $a$ un élément de $G$ d'ordre $n$. Soit $k$ un entier naturel. Quel est l'ordre de $a^k$ ?
+  \item Démontrer que tout groupe d'ordre $13$ est commutatif.
+  \item Donner l'exemple d'un nombre premier qui ne peut pas s'écrire comme somme de deux carrés.
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+ \item Pour tout $P\in k[X]$ et $D\in k[X]^*$, il existe un unique
+couple $(Q,\,R)$ dans $k[X]$ tel que $P=QD+R$ et $\deg(R)<\deg(D)$.
+ \item Pour tout $a\in \Z[i]$ et $d\in \Z[i]^*$, il existe un
+couple $(q,\,r)$ dans $k[X]$ tel que $a=qd+r$ et $|r|<|d|$.
+ \item L'ordre de $a^k$ est $\frac{n}{n\wedge k}$. En effet, soient
+$d=n\wedge k$, $n'=n/d$ et $k'=k/d$, de sorte que $n'\wedge k'=1$.
+Pour tout $m$, on a $a^{km}=1\iff n|km \iff n'| k'm\iff n'|m$. Donc
+l'ordre de $a^k$ est $n'$.
+ \item Soit $G$ d'ordre 13 et $x$ un élément non trivial de $G$. Par
+le théorème de Lagrange, $x$ ne peut qu'être d'ordre 13. Mais
+$\langle x\rangle$ contient déjà 13 éléments, donc $G=\langle
+x\rangle$. Ainsi $G$ est abélien car monogène.
+ \item Par exemple 7, puisque 7 est congru à 3 modulo 4 ou bien pusique ni 7-$1^2$=6, ni $7-2^2=3$, ni avec $n\in\N, n\geq 3$, $7-n^2<0$ ne sont des carrés.
+\end{enumerate} 
+\fincorrection
+\finexercice

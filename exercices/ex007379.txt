@@ -1,0 +1,39 @@
+\exercice{7379, mourougane, 2021/08/10}
+\enonce
+
+\begin{enumerate}
+ \item Calculer, avec l'algorithme de Hörner appliqué au polynôme $P(x)=x^2-7$, une valeur approchée à $10^{-1}$ près de $\sqrt{7}$.
+
+ \item Calculer avec l'algorithme de Hörner une valeur approchée à $10^{-2}$ près de $\sqrt{7}$.
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+ \item 
+$2^3<7<3^2$. Donc, $2<\sqrt{7}<3$.
+Soit $P(x)=x^2-7$.
+$$\begin{array}{c|ccc}
+ &1&0&-7\\ \hline \textrm{facteur }2&1&2&-3\\
+ &1&4&\\ &1&&
+\end{array}$$
+Donc
+$P(2+y)=y^2+4y-3$. Par conséquent,
+$Q(z):=100P(2+z/10)=z^2+40z-300$.
+Avec $300/40\sim 7$
+On trouve $Q(6)<0$ et $Q(7)>0$.
+Donc $$2,6<\sqrt{7}<2.7.$$
+
+ \item $Q(z)=z^2+40z-300$.
+$$\begin{array}{c|ccc}
+ &1&40&-300\\ \hline \textrm{facteur }6&1&46&-24\\
+ &1&52&\\ &1&&
+\end{array}$$
+Donc, $Q(6+u)=u^2+52u-24$. Par conséquent,
+$R(v):=100Q(6+v/10)=v^2+520u-2400$.
+Comme $2400/520\sim 5$, on trouve $R(5)>0$ et $R(4)<0$.
+Donc $$2,64<\sqrt{7}<2.65.$$
+
+\end{enumerate}
+\fincorrection
+\finexercice

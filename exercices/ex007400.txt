@@ -1,0 +1,26 @@
+\exercice{7400, mourougane, 2021/08/10}
+\enonce
+\begin{enumerate}
+ \item Le nombre $613$ est-il premier ?
+ \item Peut-il s'écrire comme somme de deux carrés ?
+ \item Calculer $35^2$ modulo $613$.
+ \item Effectuer la division euclidienne de $613$ par $35+i$ dans l'anneau $\Z[i]$ des entiers de Gauss.
+ \item Ecrire $613$ comme somme de deux carrés.
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+ \item On vérifie que les premiers entre $2$ et $\sqrt{613}$, c'est-à-dire, $2, 3, 5, 7, 11, 13, 17, 19, 23$  ne divisent pas $613$. Alors le nombre $613$ est premier. 
+ \item Puisque $613=1 \text{ mod }4$, d'après le Théorème de deux carrés, $613$ peut s'écrire comme somme de deux carrés.
+
+ \item $35^2=1225=-1 \text{ mod } 613$.
+ \item $$\frac{613}{35+i}=\frac{613\times(35-i)}{(35+i)\times(35-i)}=\frac{613\times(35-i)}{1225+1}=\frac{35}{2}-\frac{i}{2}.$$
+Un entier de Gauss le plus proche à $\frac{35}{2}-\frac{i}{2}$ est $17$. Alors 
+$$613=17\times(35+i)+(18-17i)$$
+ \item On a trouvé que $35$ est une racine de $-1$ modulo $p=613$. Trouvons $\text{pgcd(613,35+i)}$.
+Puisque $613=17\times(35+i)+(18-17i)$, $\text{pgcd}(613,35+i)=\text{pgcd}(35+i,18-17i)=18-17i$. Donc 
+$$613=N(18-17i)=18^2+17^2$$
+\end{enumerate} 
+\fincorrection
+\finexercice

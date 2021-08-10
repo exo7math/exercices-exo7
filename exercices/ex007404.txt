@@ -1,0 +1,38 @@
+\exercice{7404, mourougane, 2021/08/10}
+\enonce
+Alice et Bernard décident d'utiliser l'algorithme d'El Gamal. Il utilise le corps $\mathbb{F}_{13}$ avec l'élément $G=2$.
+\begin{enumerate}
+	\item Quels sont les ordres possibles des éléments de $\mathbb{F}_{19}^\times$. Déterminer l'ordre de $2$ dans $\mathbb{F}_{19}^\times$.
+	\item Bernard choisit sa clé privée $c=3$. Déterminer sa clé publique $C=G^c$.
+	\item Alice choisit une clé temporaire privée
+	$d=7$. Quelle est sa clé publique $D$ ? Elle souhaite envoyer le
+	message $m=11$. Elle le chiffre en utilisant la clé publique $C$ de
+	Bernard par $(M_1,M_2)=(D,mC^d)$. Expliciter ce message chiffré.
+	\item Comment Bernard retrouve-t-il le message $m$ ?
+	\item Dans un second envoi, Bernard reçoit $(8,3)$. Quel est le message
+	$m$ envoyé cette fois par Alice ? Quelle clé privée a-t-elle utilisé
+	cette fois ?
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+ \item Le groupe $\mathbb{F}_{19}^\times$ est d'ordre 18, donc les ordres
+possibles des éléments sont les diviseurs de 18 (et ce sont
+exactement ceux-là car $\mathbb{F}_{19}^\times$ est cyclique), c'est-à-dire
+1,2,3,6,9,18. Or $2^1=2$, $2^2=4$, $2^3=8$, $2^6=7$, $2^9=-1$, donc
+2 est bien un générateur de $\mathbb{F}_{19}^\times$.
+ \item $C=2^3=8$.
+ \item $D=2^7=14$. $C^d=8^7=2^{21}=2^3=8$. $mC^d=11\times8=12$.
+Finalement, $(M_1,M_2)=(14,12)$.
+ \item Il utilise la formule : $m=M_2(M_1^c)^{-1}$. On vérifie en effet
+que $12\times 14^{-3}=12\times(-5)^{-3}=12\times (-7)=-8=11$.
+ \item Le message envoyé est $3\times8^{-3}=3\times 2^{-9}=-3=16$.
+Pour crypter $m=16$, Alice a choisi une clé privée $k$ et a envoyé le
+message $(2^k,\,16\times 8^k)$. Or on sait que $2^3=8$ et que le
+logarithme discret est un isomorphisme, donc Alice a choisi cette
+fois la clé privée 3. Et effectivement, on retrouve bien
+$(2^3,\,16\times 8^3)=(8,3)$.
+\end{enumerate} 
+\fincorrection
+\finexercice

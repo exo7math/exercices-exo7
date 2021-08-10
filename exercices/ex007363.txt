@@ -1,0 +1,49 @@
+\exercice{7363, mourougane, 2021/08/10}
+\enonce
+\begin{enumerate}
+\item Quels sont les ordres possibles des éléments d'un groupe d'ordre $6$ ?
+\item Quels sont les éléments inversibles de $(\Z/7\Z,\times)$ ?
+\item Ecrire la table de multiplication de $((\Z/7\Z)^\star,\times)$.
+\item Déterminer s'il en existe un générateur de $((\Z/7\Z)^\star,\times)$.
+\item Combien $((\Z/7\Z)^\star,\times)$ a-t-il de générateurs ?
+\item Le groupe $\Z/2\Z\times \Z/4\Z$ est-il cyclique ?
+\item Le groupe des inversibles de $\Z/20\Z$ est-il cyclique ?
+\end{enumerate}
+\finenonce
+\noindication
+
+\correction
+\begin{enumerate}
+\item Les ordres possibles des éléments d'un groupe d'ordre $6$ sont, par le théorème de Lagrange les diviseurs de $6$ c'est à dire $1,2,3$ et $6$.
+\item Les éléments inversibles de $(\Z/7\Z,\times)$ sont les classes des entiers premiers à $7$ c'est à dire toutes les classes non nulles.
+\item la table de multiplication de $((\Z/7\Z)^\star,\times)$ est
+
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|} 
+\hline
+$\times$ &1&2&3&4&5&6\\
+\hline
+1&1&2&3&4&5&6\\
+2&2&4&6&1&3&5\\
+3&3&6&2&5&1&4\\
+4&4&1&5&2&6&3\\
+5&5&3&1&6&4&2\\
+6&6&5&4&3&2&1\\
+\hline
+\end{tabular}
+\end{center}
+
+
+\item On calcule l'ordre multiplicatif de $2$. Comme $2^3=1$ l'ordre de $2$ est $3$. Comme $3^2=2$ et $3^3=6$, $3$ est d'ordre 6. C'est donc un générateur
+ de $((\Z/7\Z)^\star,\times)$.
+\item On déduit de la question précédente que $((\Z/7\Z)^\star,\times)$ est un groupe cyclique d'ordre $6$. Il a donc $\phi(6)=\phi(2)\phi(3)=2$ générateurs.
+\item Dans le groupe $\Z/2\Z\times \Z/4\Z$ tous les éléments $g$ vérifient $4g=0$. Il n'y a donc aucun élément d'ordre $8$. Ce groupe n'est donc pas cyclique.
+\item Par le théorème chinois, puisque $4$ et $5$ sont premiers entre eux, 
+$\Z/20\Z$ est isomorphe à $\Z/4\Z\times \Z/5\Z$.
+Le groupe  $(\Z/20\Z)^\star$ est donc isomorphe au produit 
+$(\Z/4\Z)^\star\times (\Z/5\Z)^\star$. Comme $(\Z/4\Z)^\star$ est un groupe d'ordre $2$, il est isomorphe à $\Z/2\Z$. Comme $5$ est premier, $(\Z/5\Z)^\star$ est un groupe cyclique d'ordre $4$ donc isomorphe à $\Z/4\Z$.
+Par conséquent, le groupe  $(\Z/20\Z)^\star$ n'est pas cyclique.
+\end{enumerate}
+\fincorrection
+\finexercice

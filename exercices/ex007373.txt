@@ -1,0 +1,53 @@
+\exercice{7373, mourougane, 2021/08/10}
+\enonce
+Voici la table d'un groupe $G$.
+Quel est l'ordre de $G$ ? Le groupe $G$ est-il nécessairement commutatif ?
+ Compléter la table en énonçant précisément les propriétés utilisées.
+$$\begin{array}{|c|c|c|c|c|c|}\hline
+ * & a & b 	& c &	d & e\\ \hline
+ a & 	 & 	& d &	 & c \\ \hline
+ b & e &	&a  &	 & d \\ \hline
+ c &	 &a 	 &  &  &	 \\ \hline
+ d &	 &	 &  &d &e \\ \hline
+ e &	 &	 &b &	 & a \\ \hline
+\end{array}
+$$
+
+\finenonce
+\noindication
+\correction
+ Comme il s'agit d'un groupe d'ordre $5$, il est cyclique donc commutatif.
+La table se complète donc en 
+$$\begin{array}{|c|c|c|c|c|c|}\hline
+ * & a & b 	& c &	d & e\\ \hline
+ a & 	 & e	& d &	 & c \\ \hline
+ b & e &	&a  &	 & d \\ \hline
+ c &	d &a 	 &  &  &b \\ \hline
+ d &	 &	 &  &d &e \\ \hline
+ e & c & d	 &b &	 e & a \\ \hline
+\end{array}
+$$
+Comme $de=e$, $d$ est l'élément neutre.
+La table se complète donc en 
+$$\begin{array}{|c|c|c|c|c|c|}\hline
+ * & a & b 	& c &	d & e\\ \hline
+ a & 	 & e	& d &	 a & c \\ \hline
+ b & e &	&a  &	b & d \\ \hline
+ c &	d &a 	 &  & c &b \\ \hline
+ d &	a &b	 & c &d &e \\ \hline
+ e & c & d	 &b &	 e & a \\ \hline
+\end{array}
+$$
+Par la propriété de carré latin, 
+on peut terminer le tableau
+$$\begin{array}{|c|c|c|c|c|c|}\hline
+ * & a & b 	& c &	d & e\\ \hline
+ a & 	b & e	& d &	 a & c \\ \hline
+ b & e &	c&a  &	b & d \\ \hline
+ c &	d &a 	 & e & c &b \\ \hline
+ d &	a &b	 & c &d &e \\ \hline
+ e & c & d	 &b &	 e & a \\ \hline
+\end{array}
+$$
+\fincorrection
+\finexercice

@@ -1,0 +1,21 @@
+\exercice{7371, mourougane, 2021/08/10}
+\enonce
+\begin{enumerate}
+ \item Ecrire une relation de Bezout entre $X^2+X+1$ et $X^3+X+1$ dans $\R[X]$.
+ \item La classe du polynôme $X^2+X+1$ est-elle inversible dans l'anneau quotient\\
+$\R[X]/(X^3+X+1)$ ? Si oui, donner son inverse.
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+  \item $ X^3+X+1=(X^2+X+1)(X-1)+(X+2)$ et $X^2+X+1=(X+2)(X-1)+3$.
+Une relation de Bezout entre $X^2+X+1$ et $X^3+X+1$ dans $\R[X]$ est 
+$$3=(X^2+X+1)-(X+2)(X-1)=(X^2+X+1)-(X-1)[(X^3+X+1)-(X^2+X+1)(X-1)]$$
+soit 
+$$3=(-X+1)(X^3+X+1)+(X^2-2X+2)(X^2+X+1).$$
+ \item Puisque $X^3+X+1$ et $X^2+X+1$ sont premiers entre eux, la classe du polynôme $X^2+X+1$ inversible dans l'anneau quotient $\R[X]/(X^3+X+1)$.
+Son inverse est la classe de $(X^2-2X+2)/3$, comme le donne la relation de Bezout.
+\end{enumerate}
+\fincorrection
+\finexercice

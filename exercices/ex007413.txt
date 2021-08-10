@@ -1,0 +1,83 @@
+\exercice{7413, mourougane, 2021/08/10}
+\enonce
+Pour un entier $n\geq 2$ et $x$ dans $\Rr$, considérons la matrice d'ordre $n$:
+\[
+D_n =
+\left ( {\begin{array}{cccc}
+ x & 1 & \ldots & 1 \\
+ 1 & x & \ddots & \vdots \\
+ \vdots & \ddots & \ddots & 1 \\
+ 1 & \ldots & 1 & x
+ \end{array} } \right ).
+\]
+\begin{enumerate}
+	\item Calculer $det(D_2)$ et $det(D_3)$.
+
+	\item Montrer d'abord que
+ \[
+ det(D_n)= \left | {\begin{array}{ccccc}
+ x+n-1 & x+n-1 & \ldots & \ldots & x+n-1 \\
+ 1 & x & 1& \ldots & 1 \\
+ \vdots & \ddots & \ddots &\ddots& \vdots \\
+ \vdots &\ldots & \ddots & \ddots & 1 \\
+ 1 & \ldots & \ldots & 1 & x
+ \end{array} } \right |,
+\]
+ 
+ et ensuite
+ 
+ \[
+ det(D_n)= (x+n-1)\left | {\begin{array}{cccc}
+ 1 & 1 & \ldots & 1 \\
+ 1 & x & \ddots & \vdots \\
+ \vdots & \ddots & \ddots & 1 \\
+ 1 & \ldots & 1 & x
+ \end{array} } \right |.
+\]
+
+	\item En utilisant la méthode du pivot de Gauss, calculer $det(D_n)$ pour tout $n$.
+
+	\item Pour chaque $n$, pour quelles valeurs de $x$ la matrice $D_n$ est-elle inversible?
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+	\item $det(D_2)=x^2-1=(x+1)(x-1)$, $det(D_3)=x^3-3x+2=(x+2)(x-1)^2$
+
+	\item Sommer toutes les lignes à la première ligne, on a :
+
+\[
+ det(D_n)= \left | {\begin{array}{ccccc}
+ x+n-1 & x+n-1 & \ldots & \ldots & x+n-1 \\
+ 1 & x & 1& \ldots & 1 \\
+ \vdots & \ddots & \ddots &\ddots& \vdots \\
+ \vdots &\ldots & \ddots & \ddots & 1 \\
+ 1 & \ldots & \ldots & 1 & x
+ \end{array} } \right |,
+\]
+et comme tous les éléments sur la première ligne sont $x+n-1$, donc 
+\[
+ det(D_n)= (x+n-1)\left | {\begin{array}{cccc}
+ 1 & 1 & \ldots & 1 \\
+ 1 & x & \ddots & \vdots \\
+ \vdots & \ddots & \ddots & 1 \\
+ 1 & \ldots & 1 & x
+ \end{array} } \right |
+\]
+
+	\item Par la méthode du pivot de Gauss, $L_2-L_1,L_3-L_1 \ldots, L_n-L_1,$, on obtient un détermiant de la forme triangulaire 
+\[
+ det(D_n)= (x+n-1)\left | {\begin{array}{cccc}
+ 1 & 1 & \ldots & 1 \\
+ 0 & x-1 & \ddots & \vdots \\
+ \vdots & \ddots & \ddots & 0 \\
+ 0 & \ldots & 0 & x-1
+ \end{array} } \right |.
+\]
+Donc $det(D_n)= (x+n-1)(x-1)^{n-1}$.
+
+  \item $D_n$ est inversible si et seulement si $det(D_n) \neq 0$, donc $x \neq 1-n$ et $x \neq 1$.
+\end{enumerate}
+\fincorrection
+\finexercice
