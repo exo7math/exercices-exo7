@@ -1,0 +1,36 @@
+\exercice{7711, mourougane, 2021/08/11}
+\enonce
+\begin{enumerate}
+ \item Déterminer une équation cartésienne du plan tangent 
+à la surface $\mathcal{S}$ de $\Rr^3$ paramétrée par $F : (u,v)\mapsto (u+v^2,u^2-v^2,v)$
+au point $M(u_0,v_0)$ de paramètres $(u_0,v_0)$.
+
+ \item Déterminer une équation cartésienne du plan tangent 
+à la surface $\Sigma$ de $\Rr^3$ d'équation $x^5+y^5+z^5=1$
+au point $M(x_0,y_0,z_0)$ de coordonnées $(x_0,y_0,z_0)$.
+
+ \item Soit $U$ un ouvert de $\Rr^2$ et $f~:U\to \Rr$ une application de classe $\mathcal{C}^\infty$.
+Déterminer une équation cartésienne du plan tangent au graphe de $f$ en chacun de ses points.
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+ \item Le plan $T_M\mathcal{S}$ tangent à $\mathcal{S}$ au point $M$ est engendré par les deux vecteurs
+ $$\frac{\partial F}{\partial u}=\begin{pmatrix}1\\2u_0\\0\end{pmatrix} \quad \text{ et } \quad \frac{\partial F}{\partial v}=\begin{pmatrix}2v_0\\-2v_0\\1\end{pmatrix}.$$
+ Une équation cartésienne du plan $T_M\mathcal{S}$ est obtenue par
+ $$\begin{pmatrix}X\\Y\\Z\end{pmatrix}\in T_M\mathcal{S}\iff \begin{vmatrix}
+                                1&2v_0&X\\2u_0&-2v_0&Y\\0&1&Z
+                               \end{vmatrix}=0
+ \iff -2u_0X+Y+2(1+2u_0)v_0Z=0.$$
+ \item Il suffit de dire que le plan tangent $T_M\Sigma$ est le noyau de la différentielle de la fonction 
+ $\psi : (x,y,z)\mapsto x^5+y^5+z^5-1$ en $(x_0,y_0,z_0)$.
+ On trouve $$\begin{pmatrix}X\\Y\\Z\end{pmatrix}\in T_M\Sigma\iff
+ 5(x_0^4X+y_0^4Y+z_0^4Z)=0\iff x_0^4X+y_0^4Y+z_0^4Z=0.$$
+ \item Une équation du graphe $\mathcal{G}$ de $f$ est $z=f(x,y)$.
+ Une équation du plan tangent en $M$ de coordonnées $(x,y,f(x,y))$ est donc
+ $$\begin{pmatrix}X\\Y\\Z\end{pmatrix}\in T_M\Sigma\iff
+ Z=\frac{\partial f}{\partial x}(x,y)X+\frac{\partial f}{\partial y}(x,y)Y.$$
+\end{enumerate}
+\fincorrection
+\finexercice

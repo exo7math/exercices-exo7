@@ -1,0 +1,47 @@
+\exercice{7727, mourougane, 2021/08/11}
+\enonce[Formes $\sigma$-sesquilinéaires sur $\mathbb{F}_{25}$]
+\begin{enumerate}
+ \item On considère l'application $\sigma~:~\mathbb{F}_{25}\to \mathbb{F}_{25}, \lambda\mapsto\lambda^5$. Montrer que c'est un automorphisme involutif du corps $\mathbb{F}_{25}$.
+
+ \item Les formes suivantes sur $E:=\mathbb{F}_{25}^3$ sont-elles $\sigma$-sesquilinéaires ?
+\begin{eqnarray*}
+ f_1( 
+\left(\begin{array}{c}x\\ y\\ z\end{array}\right),
+\left(\begin{array}{c}x'\\ y'\\ z'\end{array}\right)
+)
+&=&x(x')^5+3z(y')^5+3y(z')^5.\\
+f_2( 
+\left(\begin{array}{c}x\\ y\\ z\end{array}\right),
+\left(\begin{array}{c}x'\\ y'\\ z'\end{array}\right)
+)
+&=&x^5(x')^5+x^5(y')^5+y^5(x')^5.\\
+f_3(
+\left(\begin{array}{c}x\\ y\\ z\end{array}\right),
+\left(\begin{array}{c}x'\\ y'\\ z'\end{array}\right)
+)
+&=&3x(x')^5+z(y')^5+y(z')^5.
+\end{eqnarray*}
+
+ \item Parmi les formes $\sigma$-sesquilinéaires précédentes, lesquelles sont équivalentes ?
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+ \item Il faut montrer que $\sigma$ est un morphisme de corps,
+ puis que c'est une bijection. La bijection inverse est alors automatiquement un morphisme de corps.
+ Pour le premier point, $\sigma$ est facilement multiplicative et $\sigma (1)=1$. Pour montrer que $\sigma (a+b)=\sigma (a)+\sigma(b)$, on utilise la formule du binôme puis le fait que le corps $\mathbb{F}_5$ est de caractéristique $5$.
+ Pour le second point, il suffit de montrer que $\sigma$ est injective puisque son ensemble de départ a le même cardinal fini que son ensemble d'arrivée. Pour cela, il suffit de dire que $\sigma$ est un morphisme de corps.
+ \item Les formes $f_1$ et $f_3$ sont linéaires par rapport à la première variable, et en utilisant l'expression 
+ $$f_1 \left(\begin{array}{c}x\\ y\\ z\end{array}\right),
+ \left(\begin{array}{c}x'\\ y'\\ z'\end{array}\right)
+ )
+ =x\sigma(x')+3z\sigma(y')+3y\sigma(z')$$
+ on montre aussi qu'elles sont $\sigma$-semi linéaire par rapport à la seconde variable. Elles sont donc sesquilinéaires.
+ Par contre, comme il n'y a au plus que cinq élément de $\mathbb{F}_{25}$ qui vérifient $\lambda^5=\lambda$, il existe un $\lambda\in\mathbb{F}_{25}$ tel que $f_2(\lambda\cdot(1,1,1),(1,1,1))=3\lambda^5
+ \not=\lambda\cdot f_2((1,1,1),(1,1,1))$.
+ La forme $f_2$ n'est donc pas sesquilinéaires.
+ \item Par un théorème du cours, c'est le rang qui classifie les formes sesquilinéaires sur les corps finis. Comme $f_1$ et $f_3$ ont même rang $3$, elles sont équivalentes.  
+\end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,43 @@
+\exercice{7649, mourougane, 2021/08/11}
+\enonce[Approximation par lignes polygonales]
+\begin{enumerate}
+ \item On rappelle qu'une ligne polygonale $P$ de $\Rr^n$ est la donnée d'un uplet $P=(a_0,a_1,\cdots,a_k)$
+de points de $\Rr^n$. On supposera aussi que deux points consécutifs sont distincts.
+Rappeler la formule pour la longueur d'une ligne polygonale $P$.
+ \item On cherche à montrer le théorème suivant.
+ 
+\textbf{Théorème.}
+\emph{
+Soit $c~:~[a,b]\to \Rr^n$ une courbe paramétrée.
+Alors, pour tout $\epsilon>0$, il existe $\delta>$ tel que 
+pour toute partition $(t_0=a<t_1<t_2<\cdots<t_m=b)$ de $[a,b]$ de pas inférieur à $\delta$,
+$$L[P]\leq L[c]\leq L[P]+\epsilon$$
+où $P=(c(t_0),c(t_1),\cdots,c(t_m))$ est la ligne polygonale simplement inscrite dans la courbe $c$
+associée à la partition $(t_0=a<t_1<t_2<\cdots<t_m=b)$ de $[a,b]$.
+}
+
+\begin{enumerate}
+\item Écrire en termes de quantificateurs, en partant d'un $\epsilon_1>0$,
+le théorème des sommes de Riemann pour la fonction $[a,b]\to\Rr$, 
+$t\mapsto \| \dot{c} (t)\|$.
+\item \'Ecrire en termes de quantificateurs en partant d'un $\epsilon_2>0$
+la propriété de continuité uniforme des fonctions composantes $[a,b]\to\Rr$, 
+$t\mapsto \dot{c}_j (t)$.
+\item Soit une partition $(t_0=a<t_1<t_2<\cdots<t_m=b)$ de $[a,b]$.
+\'Ecrire en termes de quantificateurs le théorème des accroissements finis
+pour la fonction $[t_i,t_{i+1}]\to\Rr$, $t\mapsto {c}_j (t)$.
+\end{enumerate}
+
+ \item Majorer la quantité 
+$\left| \| c(t_{i+1})-c(t_i)\| -\|\dot{c} (t_{i+1})\| (t_{i+1}-t_i)\right|$
+par $\sqrt{n}\epsilon_2(t_{i+1}-t_i)$.
+ \item Majorer la quantité $\left|L[c]-L[P]\right|$ par $\epsilon_1+\sqrt{n}\epsilon_2(b-a)$.
+ \item Montrer que pour tout $\epsilon>0$, il existe $\delta>$ tel que 
+pour toute partition $(t_0=a<t_1<t_2<\cdots<t_m=b)$ de $[a,b]$ de pas inférieur à $\delta$,
+$$L[P]-\epsilon\leq L[c]\leq L[P]+\epsilon.$$
+ \item Conclure à l'aide de l'inégalité triangulaire sur les polygones.
+\end{enumerate}
+\finenonce
+\noindication
+\nocorrection
+\finexercice

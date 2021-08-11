@@ -1,0 +1,33 @@
+\exercice{7652, mourougane, 2021/08/11}
+\enonce[Construction d'une courbe plane à courbure prescrite]
+Le but de l'exercice est de montrer le théorème suivant.
+
+\textbf{Théorème.} 
+\emph{
+Soit $I$ un intervalle et $\kappa~:~I\to\Rr$ une fonction de classe $\mathcal{C}^\infty$.
+Alors, il existe une courbe plane $c~:~I\to\Rr^2$ paramétrée par la longueur d'arc
+et de fonction courbure $\kappa$. 
+Cette courbe est unique à composition au but par un déplacement près.
+}
+
+\begin{enumerate}
+ \item On considère le système d'équations différentielles linéaire du premier ordre
+$$\frac{d}{dt}\left(\begin{array}{c}c\\v\\n\end{array}\right)
+=\left(\begin{array}{ccc}0&1&0\\0&0&\kappa\\0&-\kappa&0\end{array}\right)
+\left(\begin{array}{c}c\\v\\n\end{array}\right).$$
+où les fonctions $c,v,n~:~I\to\Rr^2$ sont les inconnues.
+ Montrer que ce système admet une unique solution $(c(t),v(t),n(t))$ 
+avec pour valeur initiale un vecteur fixé $(c_0,v_0,n_0)$ 
+avec $(v_0,n_0)$ base orthonormée directe.
+ \item \'Ecrire un système d'équations différentielles linéaire du premier ordre
+satisfait par le vecteur $(<v,v>,<n,n>,<v,n>)$.
+ \item Montrer que pour les solutions obtenues précédemment, $(v(t),n(t))$
+reste un repère orthonormé direct.
+ \item En déduire que la courbe $c$ obtenue est paramétrée par la longueur d'arc
+et que sa fonction courbure est $\kappa$.
+ \item Conclure.
+\end{enumerate}
+\finenonce
+\noindication
+\nocorrection
+\finexercice

@@ -1,0 +1,42 @@
+\exercice{7701, mourougane, 2021/08/11}
+\enonce
+On considère la courbe paramétrée
+$$\begin{array}{cccc}
+        c~:~&]0,1[&\to&\Rr ^3\\
+&t&\mapsto&\left(\begin{array}{c}3\cos t\\3\sin t\\4t\end{array}\right)
+        \end{array}
+$$
+\begin{enumerate}
+ \item La courbe $c$ est-elle régulière ?
+ \item Paramétrer l'image de $c$ par la longueur d'arc.
+ \item Déterminer en tout point de $c$ le repère de Frenet.
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+ \item Comme les composantes de $c$ sont de classe $\mathcal{C}^\infty$, elle est de classe $\mathcal{C}^\infty$.
+  La dérivée de la dernière coordonnée ne s'annule jamais.
+ La courbe $c$ est donc régulière.
+ \item Le vecteur vitesse
+  $$\dot{c}(t)=\begin{pmatrix}-3\sin t\\3\cos t\\4\end{pmatrix}$$
+ est de norme $5$. Comme la courbe $c$ est régulière, on peut trouver un paramétrage par longueur d'arc.
+ Le paramétrage
+ $$\begin{array}{cccc}
+         e~:~&]0,5[&\to&\Rr ^3\\
+ &s&\mapsto&\left(\begin{array}{c}3\cos (s/5)\\3\sin (s/5)\\4s/5\end{array}\right)
+         \end{array}
+ $$
+ de la forme $e(s)=c(\phi(s))$ est un reparamétrage par longueur d'arc, car $de/ds$ est partout de norme $1$.
+ \item On utilise le paramétrage par longueur d'arc.
+  Le premier vecteur est le vecteur vitesse $\dot{e}(s)=v(s)=\begin{pmatrix}-3/5\sin (s/5)\\3/5\cos (s/5)\\4/5\end{pmatrix}$.
+ Le deuxième est le vecteur normal. Le vecteur accélération est $\ddot{e}(s)=\begin{pmatrix}-3/25\cos (s/5)\\-3/25\sin (s/5)\\0\end{pmatrix}$.
+ On trouve que la courbure est $3/25$ et le vecteur normal 
+ $n(s)=\begin{pmatrix}-\cos (s/5)\\-\sin (s/5)\\0\end{pmatrix}$.
+ Le troisième vecteur est le vecteur binormal
+ $b(s)=v(s)\wedge n(s)=\begin{pmatrix}-3/5\sin (s/5)\\3/5\cos (s/5)\\4/5\end{pmatrix}
+ \wedge\begin{pmatrix}-\cos (s/5)\\-\sin (s/5)\\0\end{pmatrix}
+ =\begin{pmatrix} 4/5\sin (s/5)\\-4/5 \cos (s/5)\\ 3/5\end{pmatrix}$.  
+\end{enumerate} 
+\fincorrection
+\finexercice

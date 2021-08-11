@@ -1,0 +1,36 @@
+\exercice{7738, mourougane, 2021/08/11}
+\enonce[Questions de cours]
+\begin{enumerate}
+ \item L'ensemble des permutations de profil $(\cdot, \cdot)(\cdot, \cdot)$ avec l'identité est-il un sous-groupe distingué de $\mathcal{A}_6$.
+
+ \item Décrire les différentes possibilités pour la dimension de l'intersection de deux plans projectifs de $\mathbb{P}^3$.
+ Décrire les différentes possibilités pour la dimension de l'intersection de deux plans projectifs de $\mathbb{P}^4$.
+ 
+ \item Donner l'exemple de deux quintuplets de points deux à deux distincts d'une droite projective qui ne peuvent pas être l'image l'un de l'autre par une homographie.
+
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+ \item Le groupe $\mathcal{A}_6$ est simple et n'a donc pas de sous-groupes distingués. De façon plus élémentaire,
+ $$(1,2)(3,4)\circ (3,4)(1,5)=(1,2)(1,5)=(1,5,2)$$
+ et l'ensemble proposé n'est donc pas un sous-groupe.
+ \item L'intersection de deux espaces vectoriels $F$ et $G$ de dimension $3$ dans un espace vectoriel $E$ de dimension $4$ est un sous-espace vectoriel de dimension $\dim F+\dim G-\dim(F+G)=6-\dim(F+G)$ avec $3\leq \dim F+G\leq \min(\dim E, \dim F+\dim G)=4$ donc soit $3$, soit $2$. 
+ L'intersection de deux plans projectifs de $\mathbb{P}^3$ est donc soit un plan projectif soit une droite projective.
+ 
+ 
+ L'intersection de deux espaces vectoriels $F$ et $G$ de dimension $3$ dans un espace vectoriel $E$ de dimension $5$ est un sous-espace vectoriel de dimension $\dim F+\dim G-\dim(F+G)=6-\dim(F+G)$ avec $3\leq dim F+G
+ \leq \min(\dim E, \dim F+\dim G)=5$ donc soit $3$, soit $2$, soit $1$. 
+ L'intersection de deux plans projectifs de $\mathbb{P}^3$ est donc soit un plan projectif, soit une droite projective, soit un point.
+ \item Comme une homographie est caractérisée par l'image d'un repère projectif, il suffit de prendre cinq points $A$, $B$, $C$, $D$ $E$ deux à deux distincts : il n'existe aucune homographie qui fixe $A$, $B$ et $C$ et qui échange $D$ et $E$ par exemple.
+ 
+ Sinon,
+ On choisit un repère projectif et des coordonnées homogènes.
+ Les points de coordonnées $A[1:0], B[0,1], C[1,1]$ et $D[2,1]$ ont pour birapport $2$ alors que ceux de coordonnées $A[1:0], B[0,1], C[1,1]$ et $E[3,1]$ ont pour birapport $3$.
+ Par conséquent, pour tout point $M$ les quintuplets 
+ $$(A,B,C,D,M) \textrm{ et } (A,B,C,E,M)$$
+ ne sont images l'un de l'autre dans aucune homographie.  
+\end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,38 @@
+\exercice{7698, mourougane, 2021/08/11}
+\enonce
+La courbure moyenne de la surface paramétrée suivante est-elle partout nulle ? 
+$$\begin{array}{ccc}
+ F: \Rr \times ]-\pi,\pi[&\to&\Rr ^3\\ 
+\left(\begin{array}{c}u \\ v\end{array}\right)
+&\mapsto& 
+\left(\begin{array}{c}\cosh(u)\cos(v)\\ \cosh(u)\sin(v)\\ u\end{array}\right).
+\end{array}$$
+\finenonce
+\noindication
+\correction
+L'application $F$ est injective et différentiable car ses composantes le sont.
+ On calcule
+$$X=_u=\frac{\partial F}{\partial u}=\begin{pmatrix}\sinh(u)\cos(v)\\ \sinh(u)\sin(v)\\ 1\end{pmatrix}
+\quad \text{ et } \quad X_v=\frac{\partial F}{\partial v}=\begin{pmatrix}-\cosh(u)\sin(v)\\ \cosh(u)\cos(v)\\0\end{pmatrix}$$
+pour déterminer 
+le rang de $dF$, qui est donc $2$. Par conséquent, l'image $S$ de $F$ est une surface régulière.
+On peut aussi déterminer
+ $$G=\cosh^2 u\begin{pmatrix} 1&0\\0&1\end{pmatrix}.$$
+On s'en sert aussi pour trouver un champs de vecteurs normaux unitaires différentiable
+              $N=\frac{1}{\cosh u}\begin{pmatrix}-\cos v\\-\sin v\\\sinh u \end{pmatrix}$.
+On peut ensuite, soit calculer 
+$$W(X_u)=-dN\cdot X_u=-\frac{\partial N}{\partial u}=-(\cosh^{-2}u) X_u$$
+$$\text{ et } \quad W(X_v)=-dN\cdot X_v=-\frac{\partial N}{\partial u}=(\cosh^{-2}u)
+X_v$$
+et en déduire que les valeurs propres de l'endomorphisme de Weingarten $W$ sont $-\cosh^{-2}u$ et $\cosh^{-2}u$.
+Donc, $W$ est de demi-trace nulle, et la courbure moyenne de $Im F$ est partout nulle.
+
+On peut aussi calculer
+$\frac{\partial^2 F}{\partial u^2}$,
+$\frac{\partial^2 F}{\partial u\partial v}$ et 
+$\frac{\partial^2 F}{\partial u^2}$ pour obtenir $H=\begin{pmatrix}-1&0\\0&1\end{pmatrix}$.
+On calcule $G^{-1}=\cosh^{-2} u\begin{pmatrix} 1&0\\0&1\end{pmatrix}$
+Donc $W=G^{-1}H=\begin{pmatrix}-\cosh^{-2} u&0\\0&\cosh^{-2} u\end{pmatrix}$.
+Comme la demi-trace de $W$ est nulle, la surface $S$ est partout de courbure moyenne nulle.
+\fincorrection
+\finexercice

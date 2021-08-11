@@ -1,0 +1,29 @@
+\exercice{7690, mourougane, 2021/08/11}
+\enonce
+Soit $S$ la surface de $\Rr^3$ d'équation $2(2z^2+y^2)+x=0$.
+\begin{enumerate}
+ \item La surface $S$ est-elle régulière ?
+ \item Paramétrer la surface $S$ (de manière polynomiale) en prenant les paramètres $u$ et $v$
+ parmi les variables $x$, $y$ et $z$.
+ \item Déterminer une base de l'espace tangent à la surface $S$ en $A(-6,1,-1)$.
+ \item Calculer un vecteur normal à la surface $S$ en $A(-6,1,-1)$.
+ \item Le vecteur $V = (27,-29,-1)$ appartient-il au plan tangent à $S$ en $A (-6,1,1)$ ?
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+ \item La surface $S$ est le graphe de la fonction $\mathcal{C}^\infty$ $f~:~(y,z)\mapsto -2(2z^2+y^2)$.
+ Elle est donc régulière.
+ \item La surface $S$ est paramétrée par $F(u,v)=(-2(u^2+2v^2),u,v)$.
+ \item Le point $A$ est obtenu au point de paramètre $(1,-1)$
+ On calcule $\frac{\partial F}{\partial u}=(-4u,1,0)=(-4,1,0)$ 
+ et $\frac{\partial F}{\partial v}=(-8v,0,1)=(8,0,1)$.
+ Ces deux vecteurs forment une base de l'espace tangent à $S$ au point de paramètre $(u,v)$.
+ \item Comme $S$ est la ligne de niveau $0$ de la fonction $\varphi (x,y,z)=2(2z^2+y^2)+x$ sur $\Rr^3$,
+ on calcule $(grad \varphi)_{A}=(1,4y,8z)=(1,4,-8)=:n$.
+ Ce vecteur est bien orthogonal au plan tangent obtenu à la question 3.
+ \item Comme $<V,n>=<(27,-29,-1),(1,4,-8)>=-81\not=0$, le vecteur $V$ n'est pas dans le plan tangent à $S$ en $A$.
+\end{enumerate}
+\fincorrection
+\finexercice

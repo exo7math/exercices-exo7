@@ -1,0 +1,32 @@
+\exercice{7703, mourougane, 2021/08/11}
+\enonce
+ On considère l'application 
+$$\begin{array}{ccc}
+ F:]-\pi,\pi[\times ]-\pi,\pi[ &\to&\Rr ^3\\ 
+\left(\begin{array}{c}\varphi\\ \theta\end{array}\right)
+&\mapsto& 
+\begin{pmatrix}(2+\cos(\varphi))\cos(\theta)\\ (2+\cos(\varphi))\sin(\theta)\\ r\sin (\varphi)\end{pmatrix}.
+\end{array}$$
+\begin{enumerate}
+ \item Montrer qu'on définit une métrique riemannienne sur $Im(F)=T$
+en posant $g(\frac{\partial F}{\partial \varphi})=g(\frac{\partial F}{\partial \theta})=1$
+et $g(\frac{\partial F}{\partial \varphi},\frac{\partial F}{\partial \theta})=0$.
+ \item Déterminer la courbure de Gauss $K$ de $T$ avec la métrique $g$.
+ \item Calculer $\int_T K(m)d\sigma(m)$.
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+ \item Comme $F $ est un paramétrage de la surface régulière $T$, les vecteurs 
+ $X_\varphi=\frac{\partial F}{\partial \varphi}$ et $X_\theta=\frac{\partial F}{\partial \theta}$
+ sont indépendants et forment une base de l'espace tangent à $T$ en $F(\varphi,\theta)$.
+ La matrice imposée est bien celle d'un produit scalaire. Comme elle est constante,
+ elle dépend de fa\c con $\mathcal{C}^\infty$ de $(\varphi,\theta)$.
+ \item Comme la matrice de la métrique riemannienne est constante, les symboles de Christoffel
+ sont nuls en tous points et le tenseur de courbure est identiquement nul.
+ On en déduit que la courbure de Gauss est identiquement nulle.
+ \item D'après la question précédente $\int_T K(m)d\sigma(m)=0$  
+\end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,21 @@
+\exercice{7688, mourougane, 2021/08/11}
+\enonce
+Calculer la torsion de la courbe de $\Rr^3$ paramétrée par $c~:~t\mapsto (4\cos t,5-5\sin t, -3\cos t)$.
+La courbe  est-elle plane ?
+\finenonce
+\noindication
+\correction
+Le vecteur vitesse est $\dot{c}(t)=(-4\sin t,-5\cos t,3\sin t)$.
+Sa norme est $5$. Par conséquent, le paramétrage par 
+$C~:~t\mapsto (4\cos t/5,5-5\sin t/5, -3\cos t/5)$ est un paramétrage par la longueur d'arc.
+Le nouveau vecteur vitesse est $\dot{C}(t)=(-4/5\sin t/5,-\cos t/5,3/5\sin t/5)$.
+Le vecteur accélération est $\ddot{C}(t)=(-4/25\cos t/5,1/5\sin t/5,3/25\cos t/5)$.
+Sa norme $1/5$ est la courbure $\kappa$. Le vecteur normal unitaire est donc
+$n(t)=(-4/5\cos t/5,\sin t/5,3/5\cos t/5)$.
+Le vecteur binormal est $\dot{C}(t)\times n(t)=(-3/5,0,-4/5)$. Comme il est constant,
+la torsion est nulle par les formules de Frenet.
+
+Oui la courbe est plane, puisque la torsion est nulle. On peut aussi remarquer que la courbe est dans le plan d'équation
+$3X+4Z=0$.
+\fincorrection
+\finexercice

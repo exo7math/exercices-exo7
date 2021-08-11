@@ -1,0 +1,42 @@
+\exercice{7699, mourougane, 2021/08/11}
+\enonce
+On considère l'application
+$$\begin{array}{ccc}
+ F: \Rr ^2&\to&\Rr ^3\\ 
+\left(\begin{array}{c}t \\ s\end{array}\right)
+&\mapsto& 
+\left(\begin{array}{c}1-t^2\\t(1-t^2)\\s\end{array}\right).
+\end{array}$$
+\begin{enumerate}
+ \item Déterminer des déplacements de l'espace $\Rr ^3$ qui conservent l'image de $F$.
+ \item Montrer que l'image de $F$ est l'ensemble d'équation $y^2=x^2(1-x)$.
+ \item L'image de $F$ est-elle une surface régulière de $\Rr ^3$ ?
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+ \item Comme pour tout $t\in \Rr $, et tout $a_in\Rr $, $c(t+a)=t_{(0,0,a)}(c(t))$,
+ l'image de $F$ est invariante par toutes les translations de vecteur parallèle à $\vec{k}$,
+ le troisième vecteur de la base canonique.
+ 
+ On remarque aussi que $F(-t,-s)$ s'obtient à partir de $F(t,s)$ par le demi-tour d'axe des abscisses. 
+ Ce demi-tour conserve donc l'image de $F$.
+ \item Soit $(u,v)\in \Rr ^2$,
+ $$(1-t^2)^2(1-(1-t^2))=(1-t^2)^2t^2=[t(1-t^2)]^2.$$
+ Donc, l'image de $F$ est incluse dans l'ensemble d'équation $y^2=x^2(1-x)$.
+ 
+ Soit $(x,y,z)$ inclus dans l'ensemble d'équation $y^2=x^2(1-x)$.
+ Si $x=0$, $y=0$ et $(x,y,z)=F(1,z)$. Si $x\not=0$, soit $s=z$ et $t=y/x$.
+ On vérifie que $F(t,s)=(x,y,z)$.
+ 
+ Donc, l'image de $F$ est l'ensemble d'équation $y^2=x^2(1-x)$.
+ \item Au voisinage du point $(0,0,0)$ de l'image de $S$,
+ la projection sur le plan $x=0$ donne a chaque point deux antécédents,
+ la projection sur la plan $y=0$ aussi,
+ et la projection sur la plan $z=0$ donne à chaque point soit une infinité, soit aucun antécédent.
+ Par conséquent, au voisinage de $(0,0,0)$ l'image de $S$ n'est pas un graphe.
+ L'image de $F$ n'est donc pas une surface régulière de $\Rr ^3$.
+\end{enumerate} 
+\fincorrection 
+\finexercice

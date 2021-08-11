@@ -1,0 +1,36 @@
+\exercice{7689, mourougane, 2021/08/11}
+\enonce
+Soit $C$ la courbe tracée sur la surface d'équation $3z=xy+x^3$
+et dont la projection orthogonale sur le plan d'équation $z=0$ 
+est la courbe paramétrée $C'$ définie par $x=t$, $y=t^2$ pour $t$ parcourant $[0,1]$.
+\begin{enumerate}
+ \item Donner une expression intégrale pour la longueur de $C'$ 
+puis celle de $C$, puis les comparer.
+
+ \item Calculer la longueur de $C'$ puis celle de $C$.
+\end{enumerate}
+
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+ \item Le vecteur vitesse de la courbe $C'$ est $(1,2t,0)$ de norme $\sqrt{1+4t^2}$.
+ La longueur de la courbe $C'$ est donc $l[C']=\int_0^1\sqrt{1+4t^2}dt$.
+ La courbe $C$ est paramétrée par $x=t$, $y=t^2$ $z=2/3t^3$ pour $t$ parcourant $[0,1]$.
+ Le vecteur vitesse de la courbe $C$ est $(1,2t,2t^2)$ de norme $\sqrt{1+4t^2+4t^4}=1+2t^2$.
+ La longueur de la courbe $C$ est donc $l[C]=\int_0^1 1+2t^2dt$.
+ Comme pour tout $t\in [0,1], 0\leq 1+4t^2\leq (1+2t^2)^2$, pour tout $t\in [0,1], \sqrt{1+4t^2}\leq (1+2t^2)$
+ et par intégration $l[C']\leq l[C]$.
+ \item En utilisant le changement de variables $2t=\sinh (u)$, on obtient le calcul de primitive
+ \begin{eqnarray*}
+  4\int \sqrt{1 + 4t^2} dt &=& 2\int \cosh^2 udu =\int(\cosh (2u) + 1) du \\
+  &=& \sinh (2u)/2+ u  \\
+  &=& \sinh u \cosh u + u\\
+  &=&2t\sqrt{1 + 4t^2}+\ln(2t+\sqrt{1 + 4t^2}).
+ \end{eqnarray*}
+ Par conséquent, la longueur de $C'$ est $1/4[2t\sqrt{1 + 4t^2}+\ln(2t+\sqrt{1 + 4t^2})]_0^1
+ =1/4(2\sqrt{5}+\ln(2+\sqrt{5}))$.
+ La longueur de $C$ est $1+2/3$.
+ \end{enumerate}
+\fincorrection
+\finexercice

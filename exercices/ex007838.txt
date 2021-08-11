@@ -1,0 +1,20 @@
+\exercice{7838, mourougane, 2021/08/11}
+\enonce
+Soit $n$ un entier supérieur à $3$.
+Le groupe $D_{2n}$ des isométries d'un polygone régulier à $n$ côtés d'un plan euclidien réel
+est-il résoluble ?
+\finenonce
+\noindication
+\correction
+Soit $n$ un entier supérieur à $3$.
+Soit $D_{2n}$ le groupe des isométries d'un polygone régulier $P$ à $n$ côtés d'un plan euclidien réel.
+Comme toutes les isométries sont affines, l'isobarycentre $G$ des sommets de $P$ est conservé.
+Les éléments de $D_{2n}$ de déterminant positif sont donc des rotations de centre $G$, et ceux de déterminant négatif des symétries orthogonales par rapport à des droites passant par $G$. 
+Comme une rotation qui a deux points fixes est l'identité, les rotations sont d'ordre inférieur à $n$.
+Il n'y a donc que les $n$ rotations d'angle multiple de $2\pi/n$. Comme la composée de deux symétries d'axe passant par $G$ est une rotation, il y a aussi exactement $n$ symétries, obtenues comme produit des $n$ rotations par une symétrie fixée.
+
+L'application $\det~:~D_{2n}\to \{-1,1\}$ est un morphisme de groupes qui a pour image le groupe commutatif $\{-1,1\}$ et pour noyau le groupe commutatif $R_n$ des rotations de centre $G$ d'angle multiple de $2\pi/n$. 
+Le groupe dérivé $D^{(1)}(D_{2n})$ de $D_{2n}$ est donc inclus dans le sous-groupe commutatif des rotations.
+Par conséquent, le deuxième groupe dérivé $D^{(2)}(D_{2n})=\{Id\}$ et $D_{2n}$ est résoluble. 
+\fincorrection
+\finexercice

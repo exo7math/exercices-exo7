@@ -1,0 +1,46 @@
+\exercice{7772, mourougane, 2021/08/11}
+\enonce[Sous-groupes finis de $GL_n(\Zz)$]
+Si $p$ et $q$ sont deux entiers naturels, on note $p\wedge q$ le plus grand commun diviseur de $p$ et $q$, on note également $p|q$ si $p$ divise $q$. Si $m$ est un entier supérieur ou égal à 1, on note $\Phi_m(X)$ le polynôme cyclotomique d’ordre $m$, $$\Phi_m(X) =\Pi_{\{k\in\{1,..,m\}/k\wedge m=1\}}(X-e^{2ik\pi/m}).$$
+On rappelle que $\Phi_m(X)$ est un polynôme unitaire à coefficients entiers, irréductible dans $\Qq[X]$. Le degré de $\Phi_m(X)$ est $\varphi(m)$ où $\varphi$ est la fonction indicatrice d’Euler.
+On rappelle enfin que $X^m-1 =\Pi_{d|m}\Phi_d(X$).
+\begin{enumerate}
+ \item Soit $M\in GL_2(\Zz)$, d’ordre fini $m$.
+\begin{itemize}
+ \item Montrer que si $z$ est une racine complexe du polynôme caractéristique $\chi_M(X)$ alors $z$ est racine du polynôme 
+$X^m-1$.
+\item Montrer, en résolvant l’équation $\phi(k)=1$, qu’il y a exactement deux polynômes cyclotomiques de degré un.
+\item Montrer de même qu’il y a exactement trois polynômes cyclotomiques de degré deux dont on donnera les expressions développées.
+\item En déduire que le polynôme $\chi_M(X)$ appartient à l’ensemble
+$\{X^2 + X + 1,X^2 + 1,X^2-X + 1,X^2-1, (X-1)^2, (X + 1)^2\}$.
+\item En déduire que $m\in \{1, 2, 3, 4, 6\}$.
+\item Donner une matrice compagnon de $GL_2(\Zz)$ d’ordre $6$.
+\end{itemize}
+
+ \item Soit $p$ un nombre premier, $p\geq 3$. On note $\mathbb{F}_p$ un corps de cardinal $p$. On rappelle que la surjection naturelle $\Zz\to \mathbb{F}_p$ induit un morphisme de groupes
+$R_p~:~GL_n(Z)\to GL_n(\mathbb{F}_p)$.
+
+
+Soit $M\in GL_n(\Zz)$ d’ordre $m\geq 2$ et dans le noyau de $R_p$. On suppose que $M$ n'est pas l'identité.
+La matrice $M$ peut donc s'écrire $M = I_n +p^rN$
+avec $r\in\Nn^\star$ et $N\in M_n(\Zz)-pM_n(\Zz)$.
+\begin{itemize} 
+ \item Montrer que $mp^rN\in p^{2r}M_n(\Zz)$. En déduire que $p$ divise $m$.
+On pose alors $m = pm'$ et $M'= M^p$.
+\item Montrer que $p$ divise $m'$.
+\item En déduire une contradiction.
+\end{itemize}
+
+ \item Soit $G$ un sous-groupe fini de $GL_n(\Zz)$.
+Montrer que $G$ est isomorphe à un sous-groupe de $GL_n(\mathbb{F}_p)$.
+
+ \item Soit $G$ un sous-groupe fini de $GL_2(\Zz)$.
+\begin{itemize}
+ \item Montrer que le cardinal de $G$ est un diviseur de $48$.
+\item Montrer que le cardinal de $G$ ne peut pas être égal à $48$.
+(On pourra, éventuellement, étudier $\Phi_8(X)$ considéré comme un polynôme à coefficients dans $\mathbb{F}_3$.)
+\end{itemize}
+\end{enumerate}
+\finenonce
+\noindication
+\nocorrection
+\finexercice
