@@ -1,4 +1,4 @@
-# exo7math/Exercices-exo7
+# exo7math/exercices-exo7
 
 ## Présentation
 
@@ -8,9 +8,11 @@ Il contient également les sources des fiches ( des listes d'exercices, qui peuv
 
 ## Outils web
 
-Nouveauté : le repo contient maintenant des outils web, accessibles via [exo7math.github/io/exercices/exo7](https://exo7math.github.io/exercices-exo7/). En particulier :
+Nouveauté : le repo contient maintenant des outils web, accessibles via [exo7math.github/io/exercices-exo7](https://exo7math.github.io/exercices-exo7/). En particulier :
 
-- [planche.html](https://exo7math.github.io/exercices-exo7/planche.html) : une page html qui permet d'éditer une planche d'exercices, puis de l'exporter au format pdf, ou de récupérer le code LaTeX de la planche entière
+- [planche.html](https://exo7math.github.io/exercices-exo7/outils_web/planche.html) : une page html qui permet d'éditer une planche d'exercices, puis de l'exporter au format pdf, de récupérer le code LaTeX de la planche entière ou de l'envoyer par mail.
 - à venir : page d'affichage d'un exercice donné
 - à venir : page de prévisualisation de tous les exercices
+
+Tout ceci est juste en train d'être développé et ajouté.
 
