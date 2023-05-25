@@ -28,6 +28,19 @@
     content="Choisissez vos exercices et sauvegardez votre feuille au format LaTeX, PDF, ou ouvrez votre feuille dans Overleaf">
   <meta name="twitter:image" content="export.png">
   <style>
+    .btn {
+      margin-top: .3rem;
+    }
+
+    form {
+      display: inline;
+    }
+
+    h6 {
+      font-weight: bold;
+      padding-top: .5rem;
+    }
+
     hr.hrule {
       border: 1px solid black;
     }
@@ -35,47 +48,61 @@
     label {
       margin-right: 20px;
     }
+
+    .btn-share-text {
+      position: relative;
+      top: -4px;
+      margin-left: 5px;
+    }
+
+    kbd {
+      border: 2px solid #666;
+      box-shadow: 2px 2px #666;
+      font-size: .85em;
+      line-height: .85em;
+      display: inline-block;
+      font-weight: 600;
+      letter-spacing: .05em;
+      padding: 3px 5px;
+      white-space: nowrap;
+    }
   </style>
 
 </head>
 
 <body class="grey darken-1" onload="demarrage()">
-
   <div class="container">
-
     <div class="card white z-depth-3">
       <div class="card-content" style="padding:10%">
 
         <form target="_blank" name="formulaire" action="http://exo7.emath.fr/bin/extract5.php" method="post">
 
           <div style="display:flex;justify-content: space-between;">
-            <input type=text id="txt-annee" name="txt-annee"
+            <input type=text id="txt-annee" name="txt-annee" maxlength="40"
               style="width:30%;border:1px dashed grey; padding:3px; height:1.2rem" class="textinput" onkeyup="maj()">
-            <div id="txt-anneeError"></div>
-            <input type=text id="txt-num" name="txt-num"
+            <input type=text id="txt-num" name="txt-num" maxlength="40"
               style="width:30%;text-align:right;border:1px dashed grey; padding:3px; height:1.2rem" class="textinput"
               onkeyup="maj()">
-            <div id="txt-numError"></div>
           </div>
           <div style="display:flex;justify-content: space-between;">
-            <input type=text id="txt-univ" name="txt-univ"
+            <input type=text id="txt-univ" name="txt-univ" maxlength="40"
               style="width:30%;border:1px dashed grey; padding:3px; height:1.2rem" class="textinput" onkeyup="maj()">
-            <div id="txt-univError"></div>
-            <input type=text id="txt-module" name="txt-module"
+            <input type=text id="txt-module" name="txt-module" maxlength="40"
               style="width:30%;text-align:right;border:1px dashed grey; padding:3px; height:1.2rem" class="textinput"
               onkeyup="maj()">
-            <div id="txt-moduleError"></div>
           </div>
           <hr class="hrule">
           <div style="text-align:center">
-            <input type=text id="txt-titre" name="txt-titre" size="30" align="center"
+            <input type=text id="txt-titre" name="txt-titre" size="30" align="center" maxlength="80"
               style="width:60%;font-size:200%;text-align:center;border:1px dashed grey; padding:3px; height:2rem"
-              class="textinput" onkeyup="maj()">
+              class="textinput" onkeyup="maj()" value="[Titre de la planche]">
             <div id="txt-titreError"></div>
           </div>
           <hr class="hrule">
-          <br /><br />
+
+
           <h6>Exercices à inclure dans la feuille :</h6>
+
           <textarea name="MesExos" id="maListe" rows="5" cols="100" style="width=100%;height:3em;resize:none;"
             onkeyup="maj()"></textarea>
           <div id="txt-maListeError"></div>
@@ -85,91 +112,102 @@
           <i> Vous pouvez saisir directement les numéros des exercices.
             Exemple : 7 11 14-18 : pour les exercices 7, 11 et de 14 à 18.</i>
 
-          <div style="padding-top:20px">
 
-            <h6>Parties des exercices à inclure (si disponible) :</h6>
+          <h6>
+            <!--<i class="material-icons left">visibility</i>-->
+            Parties des exercices à inclure (si disponible) :
+          </h6>
 
-            <label>
-              <input type="checkbox" name="Pos[]" value="e1" checked="checked">
-              <span>Énoncés</span>
-            </label>
-            <br />
-            <label>
-              <input type="checkbox" name="Pos[]" value="i1" checked="checked">
-              <span>Indications</span>
-            </label>
-            <label>
-              <input type="checkbox" name="Pos[]" value="i2" checked="checked">
-              <span>sur une page à part</span>
-            </label>
-            <br />
-            <label>
-              <input type="checkbox" name="Pos[]" value="c1" checked="checked">
-              <span>Corrections</span>
-            </label>
-            <label>
-              <input type="checkbox" name="Pos[]" value="c2" checked="checked">
-              <span>sur une page à part</span>
-            </label>
-          </div>
+          <label>
+            <input type="checkbox" name="Pos[]" value="e1" checked="checked">
+            <span>Énoncés</span>
+          </label>
+          <br />
+          <label>
+            <input type="checkbox" name="Pos[]" value="i1" checked="checked">
+            <span>Indications</span>
+          </label>
+          <label>
+            <input type="checkbox" name="Pos[]" value="i2" checked="checked">
+            <span>sur une page à part</span>
+          </label>
+          <br />
+          <label>
+            <input type="checkbox" name="Pos[]" value="c1" checked="checked">
+            <span>Corrections</span>
+          </label>
+          <label>
+            <input type="checkbox" name="Pos[]" value="c2" checked="checked">
+            <span>sur une page à part</span>
+          </label>
 
-          <div style="text-align:center;padding:20px">
 
-            <input class="btn" type="submit" name="pdf" value="Exporter en PDF">
-            <input class="btn" type="submit" name="tex" value="Exporter en LaTeX">
-            <br>
-            <br>
-            <input class="btn" type="button" value="Ouvrir code LaTeX" onclick="ouvrirExosSource()">
-            <input class="btn" type="button" value="Sauvegarder code LaTeX " onclick="sauvegarderExos()">
-            <br>
-            <br>
-            <input class="btn" type="button" value="Ouvrir code LaTeX (avec préambule)" onclick="fetchLaTeXGithub()">
-            <input class="btn" type="button" value="Sauvegarder code LaTeX (avec préambule)"
-              onclick="sauvegarderEnLaTeX()">
-          </div>
-          <h6>Lien pour accéder à cette page avec cette même liste pré-chargée:</h6>
+          <h6>Export / Sauvegarde de la planche</h6>
 
-          <input id="permalien" value="@getLien()" type="text" style="width:100%">
+          <!--<input class="btn" type="submit" name="pdf" value="PDF (nouvel onglet)">-->
 
+          <button class="btn waves-effect waves-light" type="submit" name="action">
+            <i class="material-icons left">open_in_new</i>
+            PDF
+          </button>
+          <!-- ce bouton utilisait export5.php : inutile, maintenant -->
+          <!--<input class="btn" type="submit" name="tex" value="LaTeX (nouvel onglet)">-->
         </form>
 
+        <!-- OUVRIR DANS OVERLEAF -->
+        <form action="https://www.overleaf.com/docs" method="post" target="_blank">
+          <textarea rows="8" cols="60" name="snip" style="display: none;"></textarea>
+          <button class="btn waves-effect waves-light" type="submit" name="action">
+            <i class="material-icons left">open_in_new</i>
+            Overleaf
+          </button>
+        </form>
 
-        <section>
-          <div class="valign-wrapper">
-            <a id="clipboard-btn" class="waves-effect waves-light btn" data-clipboard-target="#permalien"
-              onclick="copier()">
-              <i class="material-icons left">content_copy</i>
-              Copier le lien
-            </a>
+        <!-- on ne garde que les boutons avec préambule-->
+        <!--<a class="waves-effect waves-light btn" onclick="ouvrirExosSource()">
+            <i class="material-icons">open_in_new</i>
+            <span class="btn-share-text">Ouvrir LaTeX</span>
+          </a>
+          <a class="waves-effect waves-light btn" onclick="sauvegarderExos()">
+            <i class="material-icons">save</i>
+            <span class="btn-share-text">Enregistrer LaTeX</span>
+          </a>-->
+        <!-- Dans les deux boutons suivants, c'est sous-entendu "avec préambule"-->
+        <a class="waves-effect waves-light btn" onclick="fetchLaTeXGithub()">
+          <i class="material-icons">open_in_new</i>
+          <span class="btn-share-text">LaTeX</span>
+        </a>
+        <a class="waves-effect waves-light btn" onclick="sauvegarderEnLaTeX()">
+          <i class="material-icons">download</i>
+          <i class="material-icons">save</i>
+          <span class="btn-share-text">LaTeX</span>
+        </a>
 
-            &nbsp;&nbsp;&nbsp;&nbsp;
 
-            <a class="waves-effect waves-light btn" onclick="partagerPlanche()">
-              <i class="material-icons">share</i>
-              <span class="btn-share-text">Partager la planche</span>
-            </a>
 
-            &nbsp;&nbsp;&nbsp;&nbsp;
+        <h6>
+          <!--<i class="material-icons left">share</i>-->
+          Partage du lien vers cette page (avec la liste pré-enregistrée)
+        </h6>
 
-            <form action="https://www.overleaf.com/docs" method="post" target="_blank">
-              <textarea rows="8" cols="60" name="snip" style="display: none;"></textarea>
-              <input class="btn" type="submit" value="Ouvrir dans Overleaf">
-            </form>
+        <input id="permalien" value="@getLien()" type="text" style="display:none">
+        <a id="clipboard-btn" class="waves-effect waves-light btn" data-clipboard-target="#permalien"
+          onclick="copier()">
+          <i class="material-icons left">content_copy</i>
+          Copier le lien
+        </a>
+        <a class="waves-effect waves-light btn" onclick="partagerPlanche()">
+          <i class="material-icons left">email</i>
+          Envoi du lien par email
+        </a>
 
-            <style>
-              .btn-share-text {
-                position: relative;
-                top: -4px;
-                margin-left: 5px;
-              }
-            </style>
-          </div>
-        </section>
+        <p>Vous pouvez également mettre cette page (avec la liste pré-enregistrée) en favori en appuyant sur
+          <kbd>Cmd</kbd> + <kbd>D</kbd> ou <kbd>Ctrl</kbd> + <kbd>D</kbd> .
+        </p>
 
-        <span>Vous pouvez mettre cette page en favori en appuyant sur cmd+D ou ctrl+D</span>
-      </div>
-    </div>
-  </div>
+      </div><!-- /card-content-->
+    </div><!-- /card-->
+  </div><!-- /container-->
 
 </body>
 
@@ -195,11 +233,7 @@
   let maListePlus = "";
   const racine = window.location.origin + window.location.pathname;
   let permalien = racine;
-  const nbMaxCharHautGauche = 20;
-  const nbMaxCharHautDroite = 20;
-  const nbMaxCharBasGauche = 20;
-  const nbMaxCharBasDroite = 20;
-  const nbMaxCharTitre = 20;
+  const nbMaxCharTitre = 80;
   const nbExosMax = 7904;
 
   function isValidList(liste) {
@@ -222,6 +256,11 @@
         document.getElementById("maListe").style.borderColor = "red";
         document.getElementById("txt-maListeError").innerHTML = "Les nombres doivent être inférieurs à " + nbExosMax + ".";
         return false;
+        // sinon si l'élément n'est pas un nombre
+      } else if (isNaN(parseInt(exercices[i])) && exercices[i] != "") {
+        document.getElementById("maListe").style.borderColor = "red";
+        document.getElementById("txt-maListeError").innerHTML = "Les nombres doivent être dans un format valide (ex: 1-10) et inférieurs à " + nbExosMax + ".";
+        return false;
       } else {
         document.getElementById("maListe").style.borderColor = "black";
         document.getElementById("txt-maListeError").innerHTML = "";
@@ -233,50 +272,6 @@
     return true;
   }
 
-  function limits() {
-    let isValid = true;
-    if (hautGauche.length > nbMaxCharHautGauche) {
-      document.getElementById("txt-annee").style.borderColor = "red";
-      document.getElementById("txt-anneeError").innerHTML = "Le champ Haut Gauche ne doit pas dépasser " + nbMaxCharHautGauche + " caractères.";
-      isValid = false;
-    } else {
-      document.getElementById("txt-annee").style.borderColor = "black";
-      document.getElementById("txt-anneeError").innerHTML = "";
-    }
-    if (hautDroite.length > nbMaxCharHautDroite) {
-      document.getElementById("txt-num").style.borderColor = "red";
-      document.getElementById("txt-numError").innerHTML = "Le champ Haut Droite ne doit pas dépasser " + nbMaxCharHautDroite + " caractères.";
-      isValid = false;
-    } else {
-      document.getElementById("txt-num").style.borderColor = "black";
-      document.getElementById("txt-numError").innerHTML = "";
-    }
-    if (basGauche.length > nbMaxCharBasGauche) {
-      document.getElementById("txt-univ").style.borderColor = "red";
-      document.getElementById("txt-univError").innerHTML = "Le champ Bas Gauche ne doit pas dépasser " + nbMaxCharBasGauche + " caractères.";
-      isValid = false;
-    } else {
-      document.getElementById("txt-univ").style.borderColor = "black";
-      document.getElementById("txt-univError").innerHTML = "";
-    }
-    if (basDroit.length > nbMaxCharBasDroite) {
-      document.getElementById("txt-module").style.borderColor = "red";
-      document.getElementById("txt-moduleError").innerHTML = "Le champ Bas Droite ne doit pas dépasser " + nbMaxCharBasDroite + " caractères.";
-      isValid = false;
-    } else {
-      document.getElementById("txt-module").style.borderColor = "black";
-      document.getElementById("txt-moduleError").innerHTML = "";
-    }
-    if (titre.length > nbMaxCharTitre) {
-      document.getElementById("txt-titre").style.borderColor = "red";
-      document.getElementById("txt-titreError").innerHTML = "Le champ Titre ne doit pas dépasser " + nbMaxCharTitre + " caractères.";
-      isValid = false;
-    } else {
-      document.getElementById("txt-titre").style.borderColor = "black";
-      document.getElementById("txt-titreError").innerHTML = "";
-    }
-    return isValid;
-  }
 
   /*
     Rempli les champs du formulaire avec les variables de l'URL
@@ -365,7 +360,6 @@
     ouvrirAvecOverleaf();
 
     isValidList(maListe);
-    limits();
 
     document.getElementById("permalien").value = permalien;
     // fin update permalien 
