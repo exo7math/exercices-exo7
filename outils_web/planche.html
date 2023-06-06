@@ -243,32 +243,33 @@
 
     // Vérifie que chaque nombre est inférieur ou égal à la valeur maximale
     for (let i = 0; i < exercices.length; i++) {
-      if (exercices[i].includes("-")) { // Si l'élément contient un tiret
+      if (exercices[i].includes("-")) {
         const range = exercices[i].split("-");
         const debut = parseInt(range[0]);
         const fin = parseInt(range[1]);
-        if (debut >= fin || debut > nbExosMax || fin > nbExosMax) { // Vérifie que le début est inférieur à la fin et que les nombres sont inférieurs ou égaux à la valeur maximale
+        if (debut >= fin || debut > nbExosMax || fin > nbExosMax || isNaN(debut) || isNaN(fin)) {
           document.getElementById("maListe").style.borderColor = "red";
           document.getElementById("txt-maListeError").innerHTML = "Les nombres doivent être dans un format valide (ex: 1-10) et inférieurs à " + nbExosMax + ".";
           return false;
         }
-      } else if (parseInt(exercices[i]) > nbExosMax) { // Si l'élément est un nombre simple
+      }
+      else if (parseInt(exercices[i]) > nbExosMax) {
         document.getElementById("maListe").style.borderColor = "red";
         document.getElementById("txt-maListeError").innerHTML = "Les nombres doivent être inférieurs à " + nbExosMax + ".";
         return false;
-        // sinon si l'élément n'est pas un nombre
-      } else if (isNaN(parseInt(exercices[i])) && exercices[i] != "") {
+        // sinon si l'élément n'est pas un nombre sauf si c'est vide
+      } else if (isNaN(exercices[i]) && exercices[i] != "") {
         document.getElementById("maListe").style.borderColor = "red";
         document.getElementById("txt-maListeError").innerHTML = "Les nombres doivent être dans un format valide (ex: 1-10) et inférieurs à " + nbExosMax + ".";
         return false;
       } else {
         document.getElementById("maListe").style.borderColor = "black";
-        document.getElementById("txt-maListeError").innerHTML = "";
       }
     }
 
     // Si toutes les vérifications ont réussi, retourne true
     document.getElementById("maListe").style.borderColor = "black";
+    document.getElementById("txt-maListeError").innerHTML = "";
     return true;
   }
 
