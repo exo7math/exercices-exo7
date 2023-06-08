@@ -220,17 +220,7 @@
                 </button>
             </form>
 
-            <!-- on ne garde que les boutons avec préambule-->
-            <!--<a class="waves-effect waves-light btn" onclick="ouvrirExosSource()">
-                            <i class="material-icons">open_in_new</i>
-                            <span class="btn-share-text">Ouvrir LaTeX</span>
-                          </a>
-                          <a class="waves-effect waves-light btn" onclick="sauvegarderExos()">
-                            <i class="material-icons">save</i>
-                            <span class="btn-share-text">Enregistrer LaTeX</span>
-                          </a>-->
-            <!-- Dans les deux boutons suivants, c'est sous-entendu "avec préambule"-->
-            <a class="waves-effect waves-light btn" onclick="fetchLaTeXGithub()">
+            <a class="waves-effect waves-light btn" onclick="ouvrirCodeLatex()">
                 <i class="material-icons">open_in_new</i>
                 <span class="btn-share-text">LaTeX</span>
             </a>
@@ -312,16 +302,17 @@
 </html>
 
 <script type="text/javascript">
-
     /*
-        resumer du script :
-        - au démarrage il recupere les variables de l'URL (recupListeURL()) et les affiche dans le formulaire (maj())
-        - quand on clique sur le bouton ouvrir code LaTeX, il ouvre une nouvelle fenetre avec le code LaTeX récupérer d'un lien github(ouvrirExosSource())
-        - quand on clique sur le bouton sauvegarder code LaTeX, il télécharge un fichier .tex avec le code LaTeX récupérer d'un lien github(sauvegarderExos())
-        - quand on clique sur le bouton ouvrir code LaTeX (avec préambule), il ouvre une nouvelle fenetre avec le code LaTeX récupérer d'un lien github et le préambule (fetchLaTeXGithub())
-        - quand on clique sur le bouton sauvegarder code LaTeX (avec préambule), il télécharge un fichier .tex avec le code LaTeX récupérer d'un lien github et le préambule (sauvegarderEnLaTeX())
-        - quand on clique sur le bouton ouvrir avec Overleaf, il ouvre une nouvelle fenetre avec le code LaTeX récupérer d'un lien github et le préambule (ouvrirOverleaf())
+    Sommaire : 
+        - Variables globales
+        - Fonctions de démarrage et de mise à jour de la page
+        - Fonctions qui code les fonctionnalités de la page
+        - Fonctions utilitaires
+        - getteurs
     */
+
+    //-------------------------------------------Variables globales-------------------------------------------//
+
     let maListe = "";
     let titre = "";
     let hautGauche = "";
@@ -333,37 +324,18 @@
     let permalien = racine;
     const nbExosMax = 7904;
     let pdf = "";
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 
-    function isValidList(liste) {
+    //-------------------------------------------Fonctions de démarrage, mise à jour-------------------------------------------//
 
-        // Divise la chaîne en un tableau à chaque espace
-        const exercices = liste.trim().split(" ");
-
-        // Vérifie que chaque nombre est inférieur ou égal à la valeur maximale
-        for (let i = 0; i < exercices.length; i++) {
-            if (exercices[i].includes("-")) { // Si l'élément contient un tiret
-                const range = exercices[i].split("-");
-                const debut = parseInt(range[0]);
-                const fin = parseInt(range[1]);
-                if (debut >= fin || debut > nbExosMax || fin > nbExosMax) { // Vérifie que le début est inférieur à la fin et que les nombres sont inférieurs ou égaux à la valeur maximale
-                    document.getElementById("maListe").style.borderColor = "red";
-                    return false;
-                }
-            } else if (parseInt(exercices[i]) > nbExosMax) { // Si l'élément est un nombre simple
-                document.getElementById("maListe").style.borderColor = "red";
-                return false;
-                // sinon si l'élément n'est pas un nombre sauf si c'est vide
-            } else if (isNaN(exercices[i]) && exercices[i] != "") {
-                document.getElementById("maListe").style.borderColor = "red";
-                return false;
-            } else {
-                document.getElementById("maListe").style.borderColor = "black";
-            }
-        }
-
-        // Si toutes les vérifications ont réussi, retourne true
-        document.getElementById("maListe").style.borderColor = "black";
-        return true;
+    /*
+    Appeler au chargement de la page
+    */
+    function demarrage() {
+        recupListeURL();
+        maj();
+        document.getElementById("maListe").value = maListe;
+        document.getElementById("permalien").value = permalien;
     }
 
     /*
@@ -404,17 +376,8 @@
         }
     }
 
-    function copier() {
-        let copyText = document.getElementById("permalien");
-        copyText.select();
-        copyText.setSelectionRange(0, 99999);
-        document.execCommand("copy");
-        Materialize.toast('Copied !', 1500);
-        // Copy the text inside the text field
-        navigator.clipboard.writeText(copyText.value);
-    }
     /* 
-      mise à jour des champs, du titre de la page etc
+      mise à jour des paramètres de l'url en fonction des champs
     */
     function maj() {
         maListe = document.getElementById("maListe").value.trim().replace(/\s+/g, ' ');
@@ -462,246 +425,19 @@
 
     }
 
-    function demarrage() {
-        recupListeURL();
-        maj();
-        document.getElementById("maListe").value = maListe;
-        document.getElementById("permalien").value = permalien;
-    }
+    //-------------------------------------------Fonctions qui code les fonctionnalitées-------------------------------------------//
 
-    function getLien() {
-        let lien = document.getElementById("permalien").value;
-    }
-
-    /**
-     * Formatte une chaîne de caractères représentant une liste avec des virgules et des "et" de manière appropriée.
-     * Les éléments représentant des intervalles de valeurs seront également gérés.
-     * @param {string} liste La chaîne de caractères représentant la liste à formater.
-     * @returns {string} La chaîne de caractères formatée.
-     */
-    function formaterNumerosDesExosDansMails(liste) {
-        // Divise la chaîne de caractères `liste` en un tableau de chaînes de caractères à l'aide de la méthode `split()`
-        let listeArray = liste.split(" ");
-
-        // Initialise une chaîne de caractères vide pour stocker la liste formatée
-        let formattedListe = "";
-
-        // Initialise des variables pour stocker les valeurs de début et de fin des intervalles
-        let start, end;
-
-        // Parcourt chaque élément du tableau `listeArray`
-        for (let i = 0; i < listeArray.length; i++) {
-            // Si l'élément contient le caractère "-", il s'agit d'un intervalle de valeurs
-            if (listeArray[i].indexOf("-") != -1) {
-                // Divise l'élément en deux parties `start` et `end`
-                let range = listeArray[i].split("-");
-                start = range[0];
-                end = range[1];
-                // Ajoute la chaîne `"start à end"` à la variable `formattedListe`
-                formattedListe += start + " à " + end;
-            } else {
-                // Sinon, ajoute simplement l'élément à la variable `formattedListe`
-                formattedListe += listeArray[i];
-            }
-
-            // Si l'élément n'est pas le dernier élément de la liste, ajoute une virgule et un espace
-            if (i < listeArray.length - 1) {
-                formattedListe += ", ";
-            }
-        }
-
-        // Remplace la dernière virgule et l'espace qui se trouvent dans la chaîne formatée par "et"
-        formattedListe = formattedListe.replace(/,\s([^,]+)$/, " et $1");
-
-        // Retourne la chaîne de caractères formatée
-        return formattedListe;
-    }
-
-
-    /**
-     * Ouvre le client mail de l'utilisateur avec un nouvel email pré-rempli.
-     * Le corps de l'email contient une liste d'exercices, des liens vers le site exo7 et le lien vers la planche.
-     */
-    function partagerPlanche() {
-        let subject = "Feuille d'exercices" + document.title; // Sujet de l'email
-        let body = "Voici une feuille d'exercices compilée à partir du site exo7 " + "(https://exo7.emath.fr, https://github.com/exo7math/exercices-exo7, https://exo7math.github.io/exercices-exo7).\n\nCette feuille contient les exercices " + formaterNumerosDesExosDansMails(document.getElementById("maListe").value.trim().replace(/\s+/g, ' ')) + ".\n\nLe lien pour accéder à cette fiche directement est: " + window.location.href; // Corps de l'email
-        let mailtoLink = "mailto:?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body); // URL mailto
-
-        window.location.href = mailtoLink; // Ouvre le client mail de l'utilisateur avec le nouvel email pré-rempli
-    }
-
-    // function partagerCodeLatex() {
-    //     let subject = "Code LaTeX de la planche " + document.title; // Sujet de l'email
-    //     let body = "Voici le code LaTeX de la planche : \n" + getCodeLatex();
-    //     let mailtoLink = "mailto:?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body); // URL mailto
-
-    //     window.location.href = mailtoLink; // Ouvre le client mail de l'utilisateur avec le nouvel email pré-rempli
-    // }
-
-    /**
-    *Récupère les numéros d'exercices depuis un élément HTML et les retourne sous forme de tableau.
-    @returns {Array} - Tableau contenant les numéros d'exercices.
+    /*
+    Copie le lien de la planche dans le presse-papier
     */
-    function getExos() {
-        let liste = document.getElementById("maListe").value.trim().replace(/\s+/g, ' ');
-        let exos = [];
-
-        // Divise la chaîne en un tableau de chaînes
-        let elements = liste.split(" ");
-
-        // Parcourt chaque élément du tableau
-        for (let i = 0; i < elements.length; i++) {
-            let element = elements[i];
-
-            // Si l'élément contient une plage de numéros (par exemple, "6-9")
-            if (element.includes("-")) {
-                // Divise la plage en deux numéros séparés
-                let range = element.split("-");
-                let start = parseInt(range[0]);
-                let end = parseInt(range[1]);
-
-                // Ajoute chaque numéro dans la plage au tableau des numéros d'exercice
-                for (let j = start; j <= end; j++) {
-                    exos.push(j);
-                }
-            } else {
-                // Si l'élément ne contient pas de plage, ajoute simplement le numéro d'exercice au tableau
-                exos.push(parseInt(element));
-            }
-        }
-
-        return exos;
-    }
-
-    /**
-    *Fonction asynchrone pour récupérer les données à partir d'une URL.
-    @param {string} url - L'URL à partir de laquelle les données doivent être récupérées.
-    @returns {Promise<string>} Les données récupérées sous forme de chaîne de caractères.
-    */
-    const fetchData = async (url) => {
-        const response = await fetch(url);
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        const data = await response.text();
-        return data;
-    };
-
-    /**
-    *Récupère le contenu de plusieurs fichiers texte d'exercices en ligne et les concatène.
-    @async
-    @param {number[]} exos - Un tableau de numéros d'exercices.
-    @returns {Promise<string>} - Une promesse contenant le texte concaténé des fichiers texte des exercices.
-    */
-    async function fetchExosViaGithub(exos) {
-        // Les URLs des fichiers texte des exercices
-        const urls = exos.map(exo => `https://raw.githubusercontent.com/exo7math/exercices-exo7/master/exercices/ex${exo.toString().padStart(6, "0")}.txt`);
-
-        // Récupérer le contenu de tous les fichiers texte des exercices
-        const texts = await Promise.all(urls.map(url => fetchData(url)));
-
-        // Concaténer les textes des fichiers texte des exercices
-        let concatenatedText = texts.join("\n");
-
-        const checkboxes = document.getElementsByName("Pos[]");
-
-        const enoncesChecked = checkboxes[0].checked;
-        const indicationsChecked = checkboxes[1].checked;
-        const surPageIndicationsChecked = checkboxes[2].checked;
-        const correctionsChecked = checkboxes[3].checked;
-        const surPageCorrectionsChecked = checkboxes[4].checked;
-
-        if (!enoncesChecked) {
-            // Supprimer le texte entre les balises "\enonce" et "\finenonce"
-            concatenatedText = concatenatedText.replace(/\\enonce[\s\S]*?\\finenonce/g, "");
-        }
-
-        if (!indicationsChecked) {
-            // Supprimer le texte entre les balises "\indication" et "\finindication"
-            concatenatedText = concatenatedText.replace(/\\indication[\s\S]*?\\finindication/g, "");
-        }
-
-        if (!correctionsChecked) {
-            // Supprimer le texte entre les balises "\correction" et "\fincorrection"
-            concatenatedText = concatenatedText.replace(/\\correction[\s\S]*?\\fincorrection/g, "");
-        }
-
-        if (surPageIndicationsChecked) {
-            // Regrouper les indications en fin du document et dans une nouvelle page
-            concatenatedText = moveIndicationsToEnd(concatenatedText);
-        }
-
-        if (surPageCorrectionsChecked) {
-            // Regrouper les corrections en fin du document et dans une nouvelle page
-            concatenatedText = moveCorrectionsToEnd(concatenatedText);
-        }
-
-        return concatenatedText;
-    }
-
-    function moveCorrectionsToEnd(concatenatedText) {
-        // Récupérer tous les blocs "correction"
-        const correctionsRegex = /\\correction([\s\S]*?)\\fincorrection/g;
-        const corrections = concatenatedText.match(correctionsRegex);
-        if (corrections) {
-            // Retirer les blocs "correction" du document
-            concatenatedText = concatenatedText.replace(correctionsRegex, "");
-
-            // Ajouter tous les blocs "correction" à la fin du document
-            concatenatedText += "\n\\section*{Corrections}";
-            for (const correction of corrections) {
-                concatenatedText += `\n${correction}`;
-            }
-
-            // Ajouter une nouvelle page à la fin du document
-            concatenatedText += "\n\\newpage";
-        }
-
-        return concatenatedText;
-    }
-
-    function moveIndicationsToEnd(concatenatedText) {
-        // Récupérer tous les blocs "indication"
-        const indicationsRegex = /\\indication([\s\S]*?)\\finindication/g;
-        const indications = concatenatedText.match(indicationsRegex);
-
-        if (indications) {
-            // Retirer les blocs "indication" du document
-            concatenatedText = concatenatedText.replace(indicationsRegex, "");
-
-            // Ajouter une nouvelle page à la fin du document
-            concatenatedText += "\n\\newpage";
-
-            // Ajouter tous les blocs "indication" à la fin du document
-            concatenatedText += "\n\\section*{Indications}";
-            for (const indication of indications) {
-                concatenatedText += `\n${indication}`;
-            }
-        }
-        concatenatedText += "\n\\newpage";
-        return concatenatedText;
-    }
-    /**
-    *Ouvre un onglet avec les exercices récupérés à partir de la liste des numéros d'exercices fournie.    
-    */
-    async function ouvrirExosSource() {
-        const exos = getExos(); // Récupérer la liste des numéros d'exercices
-        try {
-            const concatenatedText = await fetchExosViaGithub(exos);
-
-            // Créer un nouveau fichier texte avec le contenu concaténé
-            const file = new File([concatenatedText], "exercices.txt", {
-                type: "text/plain",
-            });
-
-            // Créer une URL de l'objet file pour l'ouvrir dans un nouvel onglet
-            const fileUrl = URL.createObjectURL(file);
-
-            // Ouvrir le fichier dans un nouvel onglet
-            window.open(fileUrl, "_blank");
-        } catch (error) {
-            console.error(error);
-        }
+    function copier() {
+        let copyText = document.getElementById("permalien");
+        copyText.select();
+        copyText.setSelectionRange(0, 99999);
+        document.execCommand("copy");
+        Materialize.toast('Copied !', 1500);
+        // Copy the text inside the text field
+        navigator.clipboard.writeText(copyText.value);
     }
 
     /**
@@ -739,11 +475,11 @@
     * Récupère les exercices depuis un dépôt Github et les concatène avec le contenu d'un fichier texte.
     * Crée un nouveau fichier .tex avec le contenu concaténé et ouvre le fichier dans un nouvel onglet.
     * @async
-    * @function fetchLaTeXGithub
+    * @function ouvrirCodeLatex
     * @returns {Promise<void>}
     * @throws {Error} Si une erreur se produit lors de la récupération ou de la concaténation du contenu.
     */
-    async function fetchLaTeXGithub() {
+    async function ouvrirCodeLatex() {
         const exos = getExos(); // Récupérer la liste des numéros d'exercices
         try {
             // Récupérer le contenu du fichier texte
@@ -855,58 +591,6 @@
         }
     }
 
-
-    //get the value of maListe
-    function getMaliste() {
-        const maListe = formaterNumerosDesExosDansMails(document.getElementById("maListe").value.trim().replace(/\s+/g, ' '));
-        return maListe;
-    }
-    // get the value of hautGauche
-    function getHautGauche() {
-        const hautGauche = document.getElementById("txt-annee").value;
-        return hautGauche;
-    }
-
-    // get the value of hautDroit
-    function getHautDroit() {
-        const hautDroit = document.getElementById("txt-num").value;
-        return hautDroit;
-    }
-
-    // get the value of basGauche
-    function getBasGauche() {
-        const basGauche = document.getElementById("txt-univ").value;
-        return basGauche;
-    }
-
-    // get the value of basDroit
-    function getBasDroit() {
-        const basDroit = document.getElementById("txt-module").value;
-        return basDroit;
-    }
-
-    // get the title
-    function getTitre() {
-        const title = document.getElementById("txt-titre").value;
-        return title;
-    }
-
-    // Récupérer toutes les cases à cocher
-    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-
-    // Boucler sur toutes les cases à cocher et ajouter un gestionnaire d'événements "onclick"
-    checkboxes.forEach((checkbox) => {
-        checkbox.onclick = () => {
-            // Appeler la fonction "majChoix"
-            maj();
-        };
-    });
-
-    function getCodeLatex() {
-        const codeLatex = document.getElementById("codeLatex").value;
-        return codeLatex;
-    }
-
     function preview() {
         let textPresentation = document.getElementById("textPresentation");
         let consoleOutput = document.getElementById("consoleOutput");
@@ -956,32 +640,292 @@
     }
 
 
+    /**
+     * Ouvre le client mail de l'utilisateur avec un nouvel email pré-rempli.
+     * Le corps de l'email contient une liste d'exercices, des liens vers le site exo7 et le lien vers la planche.
+     */
+    function partagerPlanche() {
+        let subject = "Feuille d'exercices" + document.title; // Sujet de l'email
+        let body = "Voici une feuille d'exercices compilée à partir du site exo7 " + "(https://exo7.emath.fr, https://github.com/exo7math/exercices-exo7, https://exo7math.github.io/exercices-exo7).\n\nCette feuille contient les exercices " + formaterNumerosDesExosDansMails(document.getElementById("maListe").value.trim().replace(/\s+/g, ' ')) + ".\n\nLe lien pour accéder à cette fiche directement est: " + window.location.href; // Corps de l'email
+        let mailtoLink = "mailto:?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body); // URL mailto
 
-
-    // Déclaration des variables
-    var startTime, elapsedTime, timer;
-
-    // Fonction pour démarrer le chronomètre
-    function startTimer() {
-        startTime = new Date().getTime(); // Enregistre le temps de départ
-        timer = setTimeout(updateTimer, 1000); // Lance la fonction updateTimer toutes les secondes (1000 millisecondes)
+        window.location.href = mailtoLink; // Ouvre le client mail de l'utilisateur avec le nouvel email pré-rempli
     }
 
-    // Fonction pour mettre à jour le chronomètre
-    function updateTimer() {
-        var currentTime = new Date().getTime(); // Temps actuel
-        elapsedTime = Math.floor((currentTime - startTime) / 1000); // Temps écoulé en secondes
+    //-------------------------------------------Fonctions utilitaires-------------------------------------------//
 
-        // Afficher le temps écoulé
-        console.log(elapsedTime);
+    /*
+      Vérifie que la liste d'exercices est valide
+      */
+    function isValidList(liste) {
+        // Divise la chaîne en un tableau à chaque espace
+        const exercices = liste.trim().split(" ");
 
-        // Relancer la fonction updateTimer toutes les secondes
-        timer = setTimeout(updateTimer, 1000);
+        // Vérifie que chaque nombre est inférieur ou égal à la valeur maximale
+        for (let i = 0; i < exercices.length; i++) {
+            if (exercices[i].includes("-")) { // Si l'élément contient un tiret
+                const range = exercices[i].split("-");
+                const debut = parseInt(range[0]);
+                const fin = parseInt(range[1]);
+                if (debut >= fin || debut > nbExosMax || fin > nbExosMax) { // Vérifie que le début est inférieur à la fin et que les nombres sont inférieurs ou égaux à la valeur maximale
+                    document.getElementById("maListe").style.borderColor = "red";
+                    return false;
+                }
+            } else if (parseInt(exercices[i]) > nbExosMax) { // Si l'élément est un nombre simple
+                document.getElementById("maListe").style.borderColor = "red";
+                return false;
+                // sinon si l'élément n'est pas un nombre sauf si c'est vide
+            } else if (isNaN(exercices[i]) && exercices[i] != "") {
+                document.getElementById("maListe").style.borderColor = "red";
+                return false;
+            } else {
+                document.getElementById("maListe").style.borderColor = "black";
+            }
+        }
+
+        // Si toutes les vérifications ont réussi, retourne true
+        document.getElementById("maListe").style.borderColor = "black";
+        return true;
     }
 
-    // Fonction pour arrêter le chronomètre
-    function stopTimer() {
-        clearTimeout(timer); // Arrête le chronomètre
+    /**
+    *Récupère les données à partir d'une URL.
+    *@param {string} url - L'URL à partir de laquelle les données doivent être récupérées.
+    *@returns {Promise<string>} Les données récupérées sous forme de chaîne de caractères.
+    */
+    const fetchData = async (url) => {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        const data = await response.text();
+        return data;
+    };
+
+    /**
+        *Récupère le contenu de plusieurs fichiers texte d'exercices en ligne et les concatène. Prend aussi en compte les choix de l'utilisateur.
+        @async
+        @param {number[]} exos - Un tableau de numéros d'exercices.
+        @returns {Promise<string>} - Une promesse contenant le texte concaténé des fichiers texte des exercices.
+        */
+    async function fetchExosViaGithub(exos) {
+        // Les URLs des fichiers texte des exercices
+        const urls = exos.map(exo => `https://raw.githubusercontent.com/exo7math/exercices-exo7/master/exercices/ex${exo.toString().padStart(6, "0")}.txt`);
+
+        // Récupérer le contenu de tous les fichiers texte des exercices
+        const texts = await Promise.all(urls.map(url => fetchData(url)));
+
+        // Concaténer les textes des fichiers texte des exercices
+        let concatenatedText = texts.join("\n");
+
+        const checkboxes = document.getElementsByName("Pos[]");
+
+        const enoncesChecked = checkboxes[0].checked;
+        const indicationsChecked = checkboxes[1].checked;
+        const surPageIndicationsChecked = checkboxes[2].checked;
+        const correctionsChecked = checkboxes[3].checked;
+        const surPageCorrectionsChecked = checkboxes[4].checked;
+
+        if (!enoncesChecked) {
+            // Supprimer le texte entre les balises "\enonce" et "\finenonce"
+            concatenatedText = concatenatedText.replace(/\\enonce[\s\S]*?\\finenonce/g, "");
+        }
+
+        if (!indicationsChecked) {
+            // Supprimer le texte entre les balises "\indication" et "\finindication"
+            concatenatedText = concatenatedText.replace(/\\indication[\s\S]*?\\finindication/g, "");
+        }
+
+        if (!correctionsChecked) {
+            // Supprimer le texte entre les balises "\correction" et "\fincorrection"
+            concatenatedText = concatenatedText.replace(/\\correction[\s\S]*?\\fincorrection/g, "");
+        }
+
+        if (surPageIndicationsChecked) {
+            // Regrouper les indications en fin du document et dans une nouvelle page
+            concatenatedText = moveIndicationsToEnd(concatenatedText);
+        }
+
+        if (surPageCorrectionsChecked) {
+            // Regrouper les corrections en fin du document et dans une nouvelle page
+            concatenatedText = moveCorrectionsToEnd(concatenatedText);
+        }
+
+        return concatenatedText;
     }
+
+    /**
+     * Formatte une chaîne de caractères représentant une liste avec des virgules et des "et" de manière appropriée.
+     * Les éléments représentant des intervalles de valeurs seront également gérés.
+     * @param {string} liste La chaîne de caractères représentant la liste à formater.
+     * @returns {string} La chaîne de caractères formatée.
+     */
+    function formaterNumerosDesExosDansMails(liste) {
+        // Divise la chaîne de caractères `liste` en un tableau de chaînes de caractères à l'aide de la méthode `split()`
+        let listeArray = liste.split(" ");
+
+        // Initialise une chaîne de caractères vide pour stocker la liste formatée
+        let formattedListe = "";
+
+        // Initialise des variables pour stocker les valeurs de début et de fin des intervalles
+        let start, end;
+
+        // Parcourt chaque élément du tableau `listeArray`
+        for (let i = 0; i < listeArray.length; i++) {
+            // Si l'élément contient le caractère "-", il s'agit d'un intervalle de valeurs
+            if (listeArray[i].indexOf("-") != -1) {
+                // Divise l'élément en deux parties `start` et `end`
+                let range = listeArray[i].split("-");
+                start = range[0];
+                end = range[1];
+                // Ajoute la chaîne `"start à end"` à la variable `formattedListe`
+                formattedListe += start + " à " + end;
+            } else {
+                // Sinon, ajoute simplement l'élément à la variable `formattedListe`
+                formattedListe += listeArray[i];
+            }
+
+            // Si l'élément n'est pas le dernier élément de la liste, ajoute une virgule et un espace
+            if (i < listeArray.length - 1) {
+                formattedListe += ", ";
+            }
+        }
+
+        // Remplace la dernière virgule et l'espace qui se trouvent dans la chaîne formatée par "et"
+        formattedListe = formattedListe.replace(/,\s([^,]+)$/, " et $1");
+
+        // Retourne la chaîne de caractères formatée
+        return formattedListe;
+    }
+
+
+    function moveCorrectionsToEnd(concatenatedText) {
+        // Récupérer tous les blocs "correction"
+        const correctionsRegex = /\\correction([\s\S]*?)\\fincorrection/g;
+        const corrections = concatenatedText.match(correctionsRegex);
+        if (corrections) {
+            // Retirer les blocs "correction" du document
+            concatenatedText = concatenatedText.replace(correctionsRegex, "");
+
+            // Ajouter tous les blocs "correction" à la fin du document
+            concatenatedText += "\n\\section*{Corrections}";
+            for (const correction of corrections) {
+                concatenatedText += `\n${correction}`;
+            }
+
+            // Ajouter une nouvelle page à la fin du document
+            concatenatedText += "\n\\newpage";
+        }
+
+        return concatenatedText;
+    }
+
+    function moveIndicationsToEnd(concatenatedText) {
+        // Récupérer tous les blocs "indication"
+        const indicationsRegex = /\\indication([\s\S]*?)\\finindication/g;
+        const indications = concatenatedText.match(indicationsRegex);
+
+        if (indications) {
+            // Retirer les blocs "indication" du document
+            concatenatedText = concatenatedText.replace(indicationsRegex, "");
+
+            // Ajouter une nouvelle page à la fin du document
+            concatenatedText += "\n\\newpage";
+
+            // Ajouter tous les blocs "indication" à la fin du document
+            concatenatedText += "\n\\section*{Indications}";
+            for (const indication of indications) {
+                concatenatedText += `\n${indication}`;
+            }
+        }
+        concatenatedText += "\n\\newpage";
+        return concatenatedText;
+    }
+
+
+    // Boucler sur toutes les cases à cocher et ajouter un gestionnaire d'événements "onclick"
+    checkboxes.forEach((checkbox) => {
+        checkbox.onclick = () => {
+            // Appeler la fonction "majChoix"
+            maj();
+        };
+    });
+
+    //-------------------------------------------getteurs-------------------------------------------//
+
+    /**
+    *Récupère les numéros d'exercices depuis un élément HTML et les retourne sous forme de tableau.
+    @returns {Array} - Tableau contenant les numéros d'exercices.
+    */
+    function getExos() {
+        let liste = document.getElementById("maListe").value.trim().replace(/\s+/g, ' ');
+        let exos = [];
+
+        // Divise la chaîne en un tableau de chaînes
+        let elements = liste.split(" ");
+
+        // Parcourt chaque élément du tableau
+        for (let i = 0; i < elements.length; i++) {
+            let element = elements[i];
+
+            // Si l'élément contient une plage de numéros (par exemple, "6-9")
+            if (element.includes("-")) {
+                // Divise la plage en deux numéros séparés
+                let range = element.split("-");
+                let start = parseInt(range[0]);
+                let end = parseInt(range[1]);
+
+                // Ajoute chaque numéro dans la plage au tableau des numéros d'exercice
+                for (let j = start; j <= end; j++) {
+                    exos.push(j);
+                }
+            } else {
+                // Si l'élément ne contient pas de plage, ajoute simplement le numéro d'exercice au tableau
+                exos.push(parseInt(element));
+            }
+        }
+
+        return exos;
+    }
+
+    function getLien() {
+        let lien = document.getElementById("permalien").value;
+    }
+
+
+    function getCodeLatex() {
+        const codeLatex = document.getElementById("codeLatex").value;
+        return codeLatex;
+    }
+
+    function getTitre() {
+        const titre = document.getElementById("txt-titre").value;
+        return titre;
+    }
+
+    function getMaliste() {
+        const maListe = formaterNumerosDesExosDansMails(document.getElementById("maListe").value.trim().replace(/\s+/g, ' '));
+        return maListe;
+    }
+    function getHautGauche() {
+        const hautGauche = document.getElementById("txt-annee").value;
+        return hautGauche;
+    }
+
+    function getHautDroit() {
+        const hautDroit = document.getElementById("txt-num").value;
+        return hautDroit;
+    }
+
+    function getBasGauche() {
+        const basGauche = document.getElementById("txt-univ").value;
+        return basGauche;
+    }
+
+    function getBasDroit() {
+        const basDroit = document.getElementById("txt-module").value;
+        return basDroit;
+    }
+
 
 </script>
