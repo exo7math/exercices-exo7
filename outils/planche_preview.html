@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Textlive.js -->
+    <script src="librairies/texlive.js/promisejs/promise.js"></script>
+    <script src="librairies/texlive.js/pdftex.js"></script>
+
+    <!-- Pour le clipboard -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <!-- Pour le Toast -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+
+    <!-- jsPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+
+
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@exo7math">
+    <meta name="twitter:creator" content="@exo7math">
+    <meta name="twitter:title" content="Exportez vos feuilles d'exercices">
+    <meta name="twitter:description"
+        content="Choisissez vos exercices et sauvegardez votre feuille au format LaTeX, PDF, ou ouvrez votre feuille dans Overleaf">
+    <meta name="twitter:image" content="export.png">
+    <style>
+        .btn {
+            margin-top: .3rem;
+        }
+
+        form {
+            display: inline;
+        }
+
+        h6 {
+            font-weight: bold;
+            padding-top: .5rem;
+        }
+
+        hr.hrule {
+            border: 1px solid black;
+        }
+
+        label {
+            margin-right: 20px;
+        }
+
+        .btn-share-text {
+            position: relative;
+            top: -4px;
+            margin-left: 5px;
+        }
+
+        kbd {
+            border: 2px solid #666;
+            box-shadow: 2px 2px #666;
+            font-size: .85em;
+            line-height: .85em;
+            display: inline-block;
+            font-weight: 600;
+            letter-spacing: .05em;
+            padding: 3px 5px;
+            white-space: nowrap;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+
+        .loader {
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid #3498db;
+            width: 120px;
+            height: 120px;
+            -webkit-animation: spin 2s linear infinite;
+            /* Safari */
+            animation: spin 2s linear infinite;
+
+            position: absolute;
+            top: 40%;
+            left: 40%;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Safari */
+        @-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+
+</head>
+
+<body class="grey darken-1" onload="demarrage()">
+
+    <div class="row">
+        <div class="col s12 m4 l3 black white-text" style="padding: 20px;">
+            <div style="display:flex;justify-content: space-between;">
+
+                <input type="text" id="txt-annee" name="txt-annee" maxlength="40"
+                    style="width:30%;border:1px dashed grey; padding:3px; height:1.2rem" class="textinput white-text"
+                    onkeyup=" maj()">
+
+                <input type="text" id="txt-num" name="txt-num" maxlength="40"
+                    style="width:30%;text-align:right;border:1px dashed grey; padding:3px; height:1.2rem"
+                    class="textinput white-text" onkeyup=" maj()">
+
+            </div>
+            <div style="display:flex;justify-content: space-between;">
+                <input type="text" id="txt-univ" name="txt-univ" maxlength="40"
+                    style="width:30%;border:1px dashed grey; padding:3px; height:1.2rem" class="textinput white-text"
+                    onkeyup=" maj()">
+
+                <input type="text" id="txt-module" name="txt-module" maxlength="40"
+                    style="width:30%;text-align:right;border:1px dashed grey; padding:3px; height:1.2rem"
+                    class="textinput white-text" onkeyup=" maj()">
+
+            </div>
+            <hr class="hrule">
+            <div style="text-align:center">
+                <input type="text" id="txt-titre" name="txt-titre" size="30" align="center" maxlength="80"
+                    style="width:60%;font-size:200%;text-align:center;border:1px dashed grey; padding:3px; height:2rem"
+                    class="textinput white-text" onkeyup="maj()" value="">
+
+            </div>
+            <hr class="hrule">
+
+            <h6>Exercices à inclure dans la feuille :</h6>
+
+            <textarea name="MesExos" id="maListe" rows="5" cols="100"
+                style="width=100%;height:3em;resize:none; color: #fefefe;" onkeyup="maj()"></textarea>
+            <div id="txt-maListeError"></div>
+
+            <!-- $theliste est la liste qui peux provenir d'une selection en ligne -->
+            <br>
+            <i> Vous pouvez saisir directement les numéros des exercices.
+                Exemple : 7 11 14-18 : pour les exercices 7, 11 et de 14 à 18.</i>
+
+            <h6>
+                <!--<i class="material-icons left">visibility</i>-->
+                Parties des exercices à inclure (si disponible) :
+            </h6>
+
+            <label>
+                <input type="checkbox" name="Pos[]" value="e1" checked="checked">
+                <span>Énoncés</span>
+            </label>
+            <br />
+            <label>
+                <input type="checkbox" name="Pos[]" value="i1" checked="checked">
+                <span>Indications</span>
+            </label>
+            <label>
+                <input type="checkbox" name="Pos[]" value="i2" checked="checked">
+                <span>sur une page à part</span>
+            </label>
+            <br />
+            <label>
+                <input type="checkbox" name="Pos[]" value="c1" checked="checked">
+                <span>Corrections</span>
+            </label>
+            <label>
+                <input type="checkbox" name="Pos[]" value="c2" checked="checked">
+                <span>sur une page à part</span>
+            </label>
+
+
+            <h6>Export / Sauvegarde de la planche</h6>
+
+            <!--<input class="btn" type="submit" name="pdf" value="PDF (nouvel onglet)">-->
+
+            <button class="btn waves-effect waves-light" type="submit" name="action" onclick="preview()">Prévisualiser
+                <i class="material-icons left">visibility</i>
+            </button>
+
+
+            <!-- ce bouton utilisait export5.php : inutile, maintenant -->
+            <!--<input class="btn" type="submit" name="tex" value="LaTeX (nouvel onglet)">-->
+            </form>
+
+            <!-- OUVRIR DANS OVERLEAF -->
+            <form action="https://www.overleaf.com/docs" method="post" target="_blank" name="formulaire2">
+                <textarea id="codeLatex" rows="8" cols="60" name="snip" style="display: none;"></textarea>
+                <button class="btn waves-effect waves-light" type="submit" name="action">
+                    <i class="material-icons left">open_in_new</i>
+                    Overleaf
+                </button>
+            </form>
+
+            <a class="waves-effect waves-light btn" onclick="ouvrirCodeLatex()">
+                <i class="material-icons">open_in_new</i>
+                <span class="btn-share-text">LaTeX</span>
+            </a>
+            <a class="waves-effect waves-light btn" onclick="sauvegarderEnLaTeX()">
+                <i class="material-icons">download</i>
+                <i class="material-icons">save</i>
+                <span class="btn-share-text">LaTeX</span>
+            </a>
+
+            <h6>
+                <!--<i class="material-icons left">share</i>-->
+                Partage du lien vers cette page (avec la liste pré-enregistrée)
+            </h6>
+
+            <input id="permalien" value="@getLien()" type="text" style="display:none">
+            <a id="clipboard-btn" class="waves-effect waves-light btn" data-clipboard-target="#permalien"
+                onclick="copier()">
+                <i class="material-icons left">content_copy</i>
+                Copier le lien
+            </a>
+            <a class="waves-effect waves-light btn" onclick="partagerPlanche()">
+                <i class="material-icons left">email</i>
+                Envoi du lien par email
+            </a>
+            <!-- <a class="waves-effect waves-light btn" onclick="partagerCodeLatex()">
+                <i class="material-icons">email</i>
+                <span class="btn-share-text">LaTeX</span>
+            </a> -->
+
+            <p>Vous pouvez également mettre cette page (avec la liste pré-enregistrée) en favori en appuyant sur
+                <kbd>Cmd</kbd> + <kbd>D</kbd> ou <kbd>Ctrl</kbd> + <kbd>D</kbd> .
+            </p>
+
+        </div>
+
+        <div class="col s12 l9 ">
+            <div class="container">
+                <div class="card white z-depth-3">
+                    <div class="card-content" style="height: calc(100dvh - 30px); padding: 0%;">
+                        <div id="textPresentation" style="padding: 2%;">
+                            Bienvenue sur planche_preview.html ! <br />
+                            Cette page possède les fonctionnalités suivantes :
+                            <ul>
+                                <li>Prévisualisation de la feuille d'exercices</li>
+                                <li>Sauvegarde de la planche en PDF sur le disque</li>
+                                <li>Sauvegarde du code LaTeX sur le disque</li>
+                                <li>Export de la planche en LaTeX</li>
+                                <li>Partage de la planche par mail</li>
+                                <li>Copier le lien de la planche</li>
+                            </ul>
+                            <br />
+                            Pour sauvegarder la planche en PDF, il faut prévisualiser la planche, puis cliquer sur le
+                            bouton "PDF". <br />
+                        </div>
+                        <div id="consoleOutput" style="display: none; padding: 2%;">
+                            <h3>Console Output</h3>
+                            <pre id="output" style="overflow: scroll;max-height: 70dvh;">
+                            </pre>
+                        </div>
+                        <iframe id="myIframe" name="myIframe" title="myIframe" width="100%" height="100%" src=""
+                            style="display: none; border: 0px;">
+                        </iframe>
+                        <div id="btnSavePDF"
+                            style=" bottom: 0; right: 0; position: absolute; margin: 1rem; display: none;">
+                            <a class="waves-effect waves-light btn" onclick="sauvegarderPDF()">
+                                <i class=" material-icons">download</i>
+                                <i class="material-icons">save</i>
+                                <span class="btn-share-text">Enregirstrer le PDF</span>
+                            </a>
+                        </div>
+                    </div><!-- /card-content-->
+                </div><!-- /card-->
+            </div><!-- /container-->
+        </div>
+
+    </div>
+</body>
+
+</html>
+
+<script type="text/javascript">
+    /*
+    Sommaire : 
+        - Variables globales
+        - Fonctions de démarrage et de mise à jour de la page
+        - Fonctions qui code les fonctionnalités de la page
+        - Fonctions utilitaires
+        - getteurs
+    */
+
+    //-------------------------------------------Variables globales-------------------------------------------//
+
+    let maListe = "";
+    let titre = "";
+    let hautGauche = "";
+    let hautDroite = "";
+    let basGauche = "";
+    let basDroit = "";
+    let maListePlus = "";
+    const racine = window.location.origin + window.location.pathname;
+    let permalien = racine;
+    const nbExosMax = 7904;
+    let pdf = "";
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+    //-------------------------------------------Fonctions de démarrage, mise à jour-------------------------------------------//
+
+    /*
+    Appeler au chargement de la page
+    */
+    function demarrage() {
+        recupListeURL();
+        maj();
+        document.getElementById("maListe").value = maListe;
+        document.getElementById("permalien").value = permalien;
+    }
+
+    /*
+      Rempli les champs du formulaire avec les variables de l'URL
+    */
+    function recupListeURL() {
+        // récupération des variables dans l'URL
+        let urlParams = new URLSearchParams(window.location.search);
+        let url_liste = urlParams.get("liste");
+        let url_titre = urlParams.get("titre");
+        let url_hg = urlParams.get("hautgauche");
+        let url_hd = urlParams.get("hautdroite");
+        let url_bg = urlParams.get("basgauche");
+        let url_bd = urlParams.get("basdroite");
+
+        // Remplissage des champs du formulaire
+        if (url_liste != null) {
+            maListe = url_liste.split('+').join(' ');
+            document.getElementById("maListe").value = maListe;
+        }
+        if (url_titre != null) {
+            titre = url_titre; // Store the title in the titre variable
+            document.getElementById("txt-titre").value = titre;
+        }
+        if (url_hg != null) {
+            document.getElementById("txt-annee").value = url_hg;
+            hautGauche = url_hg;
+        }
+        if (url_hd != null) {
+            document.getElementById("txt-num").value = url_hd;
+            hautDroite = url_hd;
+        }
+        if (url_bg != null) {
+            document.getElementById("txt-univ").value = url_bg;
+        }
+        if (url_bd != null) {
+            document.getElementById("txt-module").value = url_bd;
+        }
+    }
+
+    /* 
+      mise à jour des paramètres de l'url en fonction des champs
+    */
+    function maj() {
+        maListe = document.getElementById("maListe").value.trim().replace(/\s+/g, ' ');
+        hautGauche = document.getElementById("txt-annee").value;
+        hautDroite = document.getElementById("txt-num").value;
+        basGauche = document.getElementById("txt-univ").value;
+        basDroit = document.getElementById("txt-module").value;
+        titre = document.getElementById("txt-titre").value;
+
+        // update titre de la page avec le titre la liste d'exercices 
+        document.title = "Exo7 : planche " + document.getElementById("txt-titre").value + " | exos " + document.getElementById("maListe").value.trim().replace(/\s+/g, ' ');
+
+        // planche.html?liste=10+13-15&titre=mon%20titre&hautgauche=blabla&hautdroite=paf&basgauche=hello&basdroite=blabla
+
+
+        // update du permalien en bas
+        permalien = racine;
+        if (maListe != "") {
+            permalien += "?liste=" + document.getElementById("maListe").value.trim().replace(/\s+/g, ' ').split(' ').join('+');
+        }
+        if (document.getElementById("txt-titre").value != "") {
+            permalien += "&titre=" + encodeURIComponent(document.getElementById("txt-titre").value);
+        }
+        if (hautGauche != "") {
+            permalien += "&hautgauche=" + encodeURIComponent(hautGauche);
+        }
+        if (hautDroite != "") {
+            permalien += "&hautdroite=" + encodeURIComponent(hautDroite);
+        }
+        if (basGauche != "") {
+            permalien += "&basgauche=" + encodeURIComponent(basGauche);
+        }
+        if (basDroit != "") {
+            permalien += "&basdroite=" + encodeURIComponent(basDroit);
+        }
+
+        // prepare l'ouverture de la fiche d'exos dans overleaf
+        ouvrirAvecOverleaf();
+
+        isValidList(maListe);
+
+        document.getElementById("permalien").value = permalien;
+        // fin update permalien 
+        history.replaceState(null, null, permalien);
+
+    }
+
+    //-------------------------------------------Fonctions qui code les fonctionnalitées-------------------------------------------//
+
+    /*
+    Copie le lien de la planche dans le presse-papier
+    */
+    function copier() {
+        let copyText = document.getElementById("permalien");
+        copyText.select();
+        copyText.setSelectionRange(0, 99999);
+        document.execCommand("copy");
+        Materialize.toast('Copied !', 1500);
+        // Copy the text inside the text field
+        navigator.clipboard.writeText(copyText.value);
+    }
+
+    /**
+    *Télécharge les exercices récupérés à partir de la liste des numéros d'exercices fournie.
+    */
+    async function sauvegarderExos() {
+        try {
+            const exos = getExos(); // Récupérer la liste des numéros d'exercices
+            const concatenatedText = await fetchExosViaGithub(exos);
+
+            // Créer un nouveau fichier texte avec le contenu concaténé
+            const file = new Blob([concatenatedText], {
+                type: "text/plain",
+            });
+
+            // Créer une URL de l'objet file pour télécharger le fichier
+            const fileUrl = URL.createObjectURL(file);
+
+            // Créer un élément <a> avec l'attribut `download` pour télécharger le fichier
+            const link = document.createElement("a");
+            link.href = fileUrl;
+            link.download = "exo7_exercices_" + document.getElementById("maListe").value.trim().replace(/\s+/g, '_').substring(0, 10);
+            + ".txt";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        } catch (error) {
+            console.error(`Fetch error: ${error}`);
+            throw error;
+        }
+    }
+
+
+    /**
+    * Récupère les exercices depuis un dépôt Github et les concatène avec le contenu d'un fichier texte.
+    * Crée un nouveau fichier .tex avec le contenu concaténé et ouvre le fichier dans un nouvel onglet.
+    * @async
+    * @function ouvrirCodeLatex
+    * @returns {Promise<void>}
+    * @throws {Error} Si une erreur se produit lors de la récupération ou de la concaténation du contenu.
+    */
+    async function ouvrirCodeLatex() {
+        const exos = getExos(); // Récupérer la liste des numéros d'exercices
+        try {
+            // Récupérer le contenu du fichier texte
+            const fileResponse = await fetch("https://raw.githubusercontent.com/dmegy/exercices-exo7-stage2023/main/exercices/_preambule.txt");
+            let fileContent = await fileResponse.text() + `
+\\begin{document}
+
+\\textsf{\\textbf{ `+ getHautGauche() + ` } } \\hfill\\textsf{\\textbf{ ` + getHautDroit() + ` } }
+
+\\textsf{\\textbf{ `+ getBasGauche() + ` } } \\hfill\\textsf{ \\textbf{ ` + getBasDroit() + ` } }
+
+\\vspace * { 0.5ex }\\hrule\\vspace * { 1.5ex }
+\\hfil\\textsf{ \\textbf{ \\Large `+ getTitre() + ` } }
+\\vspace * { 1ex }\\hrule\\vspace * { 5ex }` + "\n" + "% Cette fiche contient les exercices:" + getMaliste() + "\n" + "\n";
+
+            // Concaténer le contenu du fichier avec le résultat de la fonction fetchExos()
+            let concatenatedText = fileContent + await fetchExosViaGithub(exos);
+            concatenatedText += "\n" + "\\end{document}";
+
+            // Créer un nouveau fichier texte avec l'extension .tex et le contenu concaténé
+            const file = new File([concatenatedText], "exercices.tex", {
+                type: "text/plain",
+            });
+
+            // Créer une URL de l'objet file pour l'ouvrir dans un nouvel onglet
+            const fileUrl = URL.createObjectURL(file);
+
+            // Ouvrir le fichier dans un nouvel onglet
+            window.open(fileUrl, "_blank");
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    /**
+    * Cette fonction récupère le contenu du fichier _preambule.txt à partir du dépôt Github, concatène le résultat avec le contenu des exercices
+    et crée un nouveau fichier texte au format LaTeX à télécharger dans le navigateur de l'utilisateur.
+    * @async
+    * @function
+    * @returns {Promise} - une promesse qui se résout lorsque le fichier est téléchargé ou est rejetée en cas d'erreur.
+    * @throws {Error} - en cas d'erreur lors de la récupération du contenu du fichier _preambule.txt ou lors du téléchargement du fichier .tex.
+    */
+    async function sauvegarderEnLaTeX() {
+        const exos = getExos(); // Récupérer la liste des numéros d'exercices
+        try {
+            // Récupérer le contenu du fichier texte
+            const fileResponse = await fetch("https://raw.githubusercontent.com/dmegy/exercices-exo7-stage2023/main/exercices/_preambule.txt");
+            let fileContent = await fileResponse.text() + `
+        \\begin{document}
+
+        \\textsf{\\textbf{ `+ getHautGauche() + ` } } \\hfill\\textsf{\\textbf{ ` + getHautDroit() + ` } }
+
+        \\textsf{\\textbf{ `+ getBasGauche() + ` } } \\hfill\\textsf{ \\textbf{ ` + getBasDroit() + ` } }
+
+        \\vspace * { 0.5ex }\\hrule\\vspace * { 1.5ex }
+        \\hfil\\textsf{ \\textbf{ \\Large `+ getTitre() + ` } }
+        \\vspace * { 1ex }\\hrule\\vspace * { 5ex }` + "\n" + "% Cette fiche contient les exercices:" + getMaliste() + "\n" + "\n";
+
+            // Concaténer le contenu du fichier avec le résultat de la fonction fetchExos()
+            let concatenatedText = fileContent + await fetchExosViaGithub(exos);
+            concatenatedText += "\n" + "\\end{document}";
+
+            // Créer un nouveau fichier texte avec le contenu concaténé
+            const file = new Blob([concatenatedText], {
+                type: "text/plain;charset=utf-8",
+            });
+
+            // Télécharger le fichier .tex dans le navigateur de l'utilisateur
+            saveAs(file, "exo7_exercices_" + document.getElementById("maListe").value.trim().replace(/\s+/g, '_').substring(0, 10) + ".tex");
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    /**
+     * Récupère le contenu des fichiers texte des exercices à partir de la liste des numéros d'exercices fournie.
+     * Concatène le préambule LaTeX avec le contenu des fichiers texte des exercices.
+     * Met à jour le contenu de textarea avec le résultat.
+     * Le formulaire peut ensuite être envoyé.
+     */
+    async function ouvrirAvecOverleaf() {
+        const exos = getExos(); // Récupérer la liste des numéros d'exercices
+        try {
+            // Récupérer le contenu du fichier texte
+            const fileResponse = await fetch("https://raw.githubusercontent.com/dmegy/exercices-exo7-stage2023/main/exercices/_preambule.txt");
+            let fileContent = await fileResponse.text() + `
+        \\begin{document}
+
+        \\textsf{\\textbf{ `+ getHautGauche() + ` } } \\hfill\\textsf{\\textbf{ ` + getHautDroit() + ` } }
+
+        \\textsf{\\textbf{ `+ getBasGauche() + ` } } \\hfill\\textsf{ \\textbf{ ` + getBasDroit() + ` } }
+
+        \\vspace * { 0.5ex }\\hrule\\vspace * { 1.5ex }
+        \\hfil\\textsf{ \\textbf{ \\Large `+ getTitre() + ` } }
+        \\vspace * { 1ex }\\hrule\\vspace * { 5ex }` + "\n" + "% Cette fiche contient les exercices:" + getMaliste() + "\n" + "\n";
+
+            // Concaténer le contenu du fichier avec le résultat de la fonction fetchExos()
+            let concatenatedText = fileContent + await fetchExosViaGithub(exos);
+            concatenatedText += "\n" + "\\end{document}";
+
+            // Mettre le contenu dans le textarea du formulaire
+            let textarea = document.querySelector('textarea[name="snip"]');
+            if (textarea) {
+                textarea.value = concatenatedText;
+            }
+
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    function preview() {
+        let textPresentation = document.getElementById("textPresentation");
+        let consoleOutput = document.getElementById("consoleOutput");
+        let btnSavePDF = document.getElementById("btnSavePDF");
+        let myIframe = document.getElementById("myIframe");
+        var output = document.getElementById("output");
+
+        output.innerHTML = "";
+
+        btnSavePDF.style.display = "none";
+        myIframe.style.display = "none";
+        textPresentation.style.display = "none";
+        consoleOutput.style.display = "";
+
+        let pdftex = new PDFTeX();
+        let latex_code = getCodeLatex().replace(/\\usepackage\[french\]\{babel\}/g, '')
+            .replace(/\\usepackage\{fancybox\}/g, '')
+            .replace(/\\usepackage\{tikz\}/g, '')
+            .replace(/\\usepackage\[T1\]\{fontenc\}/g, '');
+
+        pdftex.on_stdout = appendOutput;
+        pdftex.on_stderr = appendOutput;
+
+        pdftex.compile(latex_code)
+            .then(function (pdf) {
+                this.pdf = pdf;
+                myIframe.src = pdf;
+                consoleOutput.style.display = "none";
+                btnSavePDF.style.display = "";
+                myIframe.style.display = "";
+            });
+    }
+
+    var appendOutput = function (msg) {
+        var output = document.getElementById("output");
+
+        var content = output.textContent;
+
+        output.textContent = content + "\r\n" + msg;
+
+        output.scrollTop = 999999;
+    }
+
+    function sauvegarderPDF() {
+        // Télécharger le fichier .tex dans le navigateur de l'utilisateur
+        saveAs(this.pdf, "exo7_exercices_" + document.getElementById("maListe").value.trim().replace(/\s+/g, '_').substring(0, 10) + ".pdf");
+    }
+
+
+    /**
+     * Ouvre le client mail de l'utilisateur avec un nouvel email pré-rempli.
+     * Le corps de l'email contient une liste d'exercices, des liens vers le site exo7 et le lien vers la planche.
+     */
+    function partagerPlanche() {
+        let subject = "Feuille d'exercices" + document.title; // Sujet de l'email
+        let body = "Voici une feuille d'exercices compilée à partir du site exo7 " + "(https://exo7.emath.fr, https://github.com/exo7math/exercices-exo7, https://exo7math.github.io/exercices-exo7).\n\nCette feuille contient les exercices " + formaterNumerosDesExosDansMails(document.getElementById("maListe").value.trim().replace(/\s+/g, ' ')) + ".\n\nLe lien pour accéder à cette fiche directement est: " + window.location.href; // Corps de l'email
+        let mailtoLink = "mailto:?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body); // URL mailto
+
+        window.location.href = mailtoLink; // Ouvre le client mail de l'utilisateur avec le nouvel email pré-rempli
+    }
+
+    //-------------------------------------------Fonctions utilitaires-------------------------------------------//
+
+    /*
+      Vérifie que la liste d'exercices est valide
+      */
+    function isValidList(liste) {
+        // Divise la chaîne en un tableau à chaque espace
+        const exercices = liste.trim().split(" ");
+
+        // Vérifie que chaque nombre est inférieur ou égal à la valeur maximale
+        for (let i = 0; i < exercices.length; i++) {
+            if (exercices[i].includes("-")) { // Si l'élément contient un tiret
+                const range = exercices[i].split("-");
+                const debut = parseInt(range[0]);
+                const fin = parseInt(range[1]);
+                if (debut >= fin || debut > nbExosMax || fin > nbExosMax) { // Vérifie que le début est inférieur à la fin et que les nombres sont inférieurs ou égaux à la valeur maximale
+                    document.getElementById("maListe").style.borderColor = "red";
+                    return false;
+                }
+            } else if (parseInt(exercices[i]) > nbExosMax) { // Si l'élément est un nombre simple
+                document.getElementById("maListe").style.borderColor = "red";
+                return false;
+                // sinon si l'élément n'est pas un nombre sauf si c'est vide
+            } else if (isNaN(exercices[i]) && exercices[i] != "") {
+                document.getElementById("maListe").style.borderColor = "red";
+                return false;
+            } else {
+                document.getElementById("maListe").style.borderColor = "black";
+            }
+        }
+
+        // Si toutes les vérifications ont réussi, retourne true
+        document.getElementById("maListe").style.borderColor = "black";
+        return true;
+    }
+
+    /**
+    *Récupère les données à partir d'une URL.
+    *@param {string} url - L'URL à partir de laquelle les données doivent être récupérées.
+    *@returns {Promise<string>} Les données récupérées sous forme de chaîne de caractères.
+    */
+    const fetchData = async (url) => {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        const data = await response.text();
+        return data;
+    };
+
+    /**
+        *Récupère le contenu de plusieurs fichiers texte d'exercices en ligne et les concatène. Prend aussi en compte les choix de l'utilisateur.
+        @async
+        @param {number[]} exos - Un tableau de numéros d'exercices.
+        @returns {Promise<string>} - Une promesse contenant le texte concaténé des fichiers texte des exercices.
+        */
+    async function fetchExosViaGithub(exos) {
+        // Les URLs des fichiers texte des exercices
+        const urls = exos.map(exo => `https://raw.githubusercontent.com/exo7math/exercices-exo7/master/exercices/ex${exo.toString().padStart(6, "0")}.txt`);
+
+        // Récupérer le contenu de tous les fichiers texte des exercices
+        const texts = await Promise.all(urls.map(url => fetchData(url)));
+
+        // Concaténer les textes des fichiers texte des exercices
+        let concatenatedText = texts.join("\n");
+
+        const checkboxes = document.getElementsByName("Pos[]");
+
+        const enoncesChecked = checkboxes[0].checked;
+        const indicationsChecked = checkboxes[1].checked;
+        const surPageIndicationsChecked = checkboxes[2].checked;
+        const correctionsChecked = checkboxes[3].checked;
+        const surPageCorrectionsChecked = checkboxes[4].checked;
+
+        if (!enoncesChecked) {
+            // Supprimer le texte entre les balises "\enonce" et "\finenonce"
+            concatenatedText = concatenatedText.replace(/\\enonce[\s\S]*?\\finenonce/g, "");
+        }
+
+        if (!indicationsChecked) {
+            // Supprimer le texte entre les balises "\indication" et "\finindication"
+            concatenatedText = concatenatedText.replace(/\\indication[\s\S]*?\\finindication/g, "");
+        }
+
+        if (!correctionsChecked) {
+            // Supprimer le texte entre les balises "\correction" et "\fincorrection"
+            concatenatedText = concatenatedText.replace(/\\correction[\s\S]*?\\fincorrection/g, "");
+        }
+
+        if (surPageIndicationsChecked) {
+            // Regrouper les indications en fin du document et dans une nouvelle page
+            concatenatedText = moveIndicationsToEnd(concatenatedText);
+        }
+
+        if (surPageCorrectionsChecked) {
+            // Regrouper les corrections en fin du document et dans une nouvelle page
+            concatenatedText = moveCorrectionsToEnd(concatenatedText);
+        }
+
+        return concatenatedText;
+    }
+
+    /**
+     * Formatte une chaîne de caractères représentant une liste avec des virgules et des "et" de manière appropriée.
+     * Les éléments représentant des intervalles de valeurs seront également gérés.
+     * @param {string} liste La chaîne de caractères représentant la liste à formater.
+     * @returns {string} La chaîne de caractères formatée.
+     */
+    function formaterNumerosDesExosDansMails(liste) {
+        // Divise la chaîne de caractères `liste` en un tableau de chaînes de caractères à l'aide de la méthode `split()`
+        let listeArray = liste.split(" ");
+
+        // Initialise une chaîne de caractères vide pour stocker la liste formatée
+        let formattedListe = "";
+
+        // Initialise des variables pour stocker les valeurs de début et de fin des intervalles
+        let start, end;
+
+        // Parcourt chaque élément du tableau `listeArray`
+        for (let i = 0; i < listeArray.length; i++) {
+            // Si l'élément contient le caractère "-", il s'agit d'un intervalle de valeurs
+            if (listeArray[i].indexOf("-") != -1) {
+                // Divise l'élément en deux parties `start` et `end`
+                let range = listeArray[i].split("-");
+                start = range[0];
+                end = range[1];
+                // Ajoute la chaîne `"start à end"` à la variable `formattedListe`
+                formattedListe += start + " à " + end;
+            } else {
+                // Sinon, ajoute simplement l'élément à la variable `formattedListe`
+                formattedListe += listeArray[i];
+            }
+
+            // Si l'élément n'est pas le dernier élément de la liste, ajoute une virgule et un espace
+            if (i < listeArray.length - 1) {
+                formattedListe += ", ";
+            }
+        }
+
+        // Remplace la dernière virgule et l'espace qui se trouvent dans la chaîne formatée par "et"
+        formattedListe = formattedListe.replace(/,\s([^,]+)$/, " et $1");
+
+        // Retourne la chaîne de caractères formatée
+        return formattedListe;
+    }
+
+
+    function moveCorrectionsToEnd(concatenatedText) {
+        // Récupérer tous les blocs "correction"
+        const correctionsRegex = /\\correction([\s\S]*?)\\fincorrection/g;
+        const corrections = concatenatedText.match(correctionsRegex);
+        if (corrections) {
+            // Retirer les blocs "correction" du document
+            concatenatedText = concatenatedText.replace(correctionsRegex, "");
+
+            // Ajouter tous les blocs "correction" à la fin du document
+            concatenatedText += "\n\\section*{Corrections}";
+            for (const correction of corrections) {
+                concatenatedText += `\n${correction}`;
+            }
+
+            // Ajouter une nouvelle page à la fin du document
+            concatenatedText += "\n\\newpage";
+        }
+
+        return concatenatedText;
+    }
+
+    function moveIndicationsToEnd(concatenatedText) {
+        // Récupérer tous les blocs "indication"
+        const indicationsRegex = /\\indication([\s\S]*?)\\finindication/g;
+        const indications = concatenatedText.match(indicationsRegex);
+
+        if (indications) {
+            // Retirer les blocs "indication" du document
+            concatenatedText = concatenatedText.replace(indicationsRegex, "");
+
+            // Ajouter une nouvelle page à la fin du document
+            concatenatedText += "\n\\newpage";
+
+            // Ajouter tous les blocs "indication" à la fin du document
+            concatenatedText += "\n\\section*{Indications}";
+            for (const indication of indications) {
+                concatenatedText += `\n${indication}`;
+            }
+        }
+        concatenatedText += "\n\\newpage";
+        return concatenatedText;
+    }
+
+
+    // Boucler sur toutes les cases à cocher et ajouter un gestionnaire d'événements "onclick"
+    checkboxes.forEach((checkbox) => {
+        checkbox.onclick = () => {
+            // Appeler la fonction "majChoix"
+            maj();
+        };
+    });
+
+    //-------------------------------------------getteurs-------------------------------------------//
+
+    /**
+    *Récupère les numéros d'exercices depuis un élément HTML et les retourne sous forme de tableau.
+    @returns {Array} - Tableau contenant les numéros d'exercices.
+    */
+    function getExos() {
+        let liste = document.getElementById("maListe").value.trim().replace(/\s+/g, ' ');
+        let exos = [];
+
+        // Divise la chaîne en un tableau de chaînes
+        let elements = liste.split(" ");
+
+        // Parcourt chaque élément du tableau
+        for (let i = 0; i < elements.length; i++) {
+            let element = elements[i];
+
+            // Si l'élément contient une plage de numéros (par exemple, "6-9")
+            if (element.includes("-")) {
+                // Divise la plage en deux numéros séparés
+                let range = element.split("-");
+                let start = parseInt(range[0]);
+                let end = parseInt(range[1]);
+
+                // Ajoute chaque numéro dans la plage au tableau des numéros d'exercice
+                for (let j = start; j <= end; j++) {
+                    exos.push(j);
+                }
+            } else {
+                // Si l'élément ne contient pas de plage, ajoute simplement le numéro d'exercice au tableau
+                exos.push(parseInt(element));
+            }
+        }
+
+        return exos;
+    }
+
+    function getLien() {
+        let lien = document.getElementById("permalien").value;
+    }
+
+
+    function getCodeLatex() {
+        const codeLatex = document.getElementById("codeLatex").value;
+        return codeLatex;
+    }
+
+    function getTitre() {
+        const titre = document.getElementById("txt-titre").value;
+        return titre;
+    }
+
+    function getMaliste() {
+        const maListe = formaterNumerosDesExosDansMails(document.getElementById("maListe").value.trim().replace(/\s+/g, ' '));
+        return maListe;
+    }
+    function getHautGauche() {
+        const hautGauche = document.getElementById("txt-annee").value;
+        return hautGauche;
+    }
+
+    function getHautDroit() {
+        const hautDroit = document.getElementById("txt-num").value;
+        return hautDroit;
+    }
+
+    function getBasGauche() {
+        const basGauche = document.getElementById("txt-univ").value;
+        return basGauche;
+    }
+
+    function getBasDroit() {
+        const basDroit = document.getElementById("txt-module").value;
+        return basDroit;
+    }
+
+
+</script>
