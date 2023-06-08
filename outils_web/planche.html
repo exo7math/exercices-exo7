@@ -10,7 +10,8 @@
   <!-- jsPDF -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
 
-
+  <!-- Pour le clipboard -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
 
   <!--Import Google Icon Font-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -331,7 +332,9 @@
     copyText.select();
     copyText.setSelectionRange(0, 99999);
     document.execCommand("copy");
-    Materialize.toast('Copied !', 5000);
+    Materialize.toast('Copied !', 1500);
+    // Copy the text inside the text field
+    navigator.clipboard.writeText(copyText.value);
   }
 
   /**
