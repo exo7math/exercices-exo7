@@ -1,0 +1,65 @@
+\exercice{1609, barraud, 2003/09/01}
+
+\enonce
+  Soit $f$ un endomorphisme de $E=\C^{n}$. Soit $\pi_{1},...,\pi_{N}$ des
+  endomorphismes tous non nuls de $E$ et $\lambda_{1},...,\lambda_{N}$
+  $N$ nombres complexes distincts. On suppose que~:
+  $$
+  \forall m\in\N \quad f^{m}=\sum_{k=1}^{N}\lambda_{k}^{m}\pi_{k}.
+  $$
+
+  \begin{enumerate}
+\item
+    Montrer que $\forall P\in\C[X],\quad
+    P(f)=\sum_{k=1}^{N}P(\lambda_{k})\pi_{k}$
+
+\medskip
+
+  On considère le polynôme $Q=\prod_{1\leq k\leq N}(X-\lambda_{k})$ et
+  pour chaque $p\in\{1,...,N\}$ les polynômes suivants~:  
+  $$
+  Q_{p}=\prod_{\substack{ 1\leq k\leq N \\k\neq p}}
+             (X-\lambda_{k})\qquad\text{et}\qquad
+  \tilde Q_{p}=\frac{1}{Q_{p}(\lambda_{p})}\ Q_{p}
+  $$
+\item
+ 
+    Calculer $Q(f)$. Qu'en déduit-on pour $f$~?
+\item
+
+    Montrer que $Sp(f)\subset\{\lambda_{1},...,\lambda_{N}\}$
+\item
+
+    Montrer que $\tilde Q_{p}(f)=\pi_{p}$. Vérifier alors que
+    $\pi_{p}\circ\pi_{q}= \left\{
+    \begin{array}{l}
+      0       \text{ si } p\neq q\\
+      \pi_{p} \text{ si } p=q
+    \end{array}
+    \right. $
+\item
+
+    Calculer $f\circ\pi_{p}$. En déduire que
+    $Sp(f)=\{\lambda_{1},...,\lambda_{N}\}$.
+
+
+\medskip
+  On note $E_{p}$ l'espace propre associé à la valeur propre
+  $\lambda_{p}$. 
+\item
+    Montrer que $\mathrm{Im}\pi_{p}\subset E_{p}$. Réciproquement, pour $x\in
+    E_{p}$, montrer que $x\in\mathrm{Ker}\pi_{q}$ pour $q\neq p$ (on calculera
+    par exemple $\pi_{q}\circ f(x)$ de deux façons différentes) puis que
+    $x=\pi_{p}(x)$. En déduire que $E_{p}\subset\mathrm{Im}\pi_{p}$.
+\item    En déduire que $\mathrm{Im}\pi_{p}=E_{p}$ et que
+    $\mathrm{Ker}\pi_{p}=\bigoplus_{q\neq p}E_{q}$. Décrire géométriquement
+    $\pi_{p}$.
+  \end{enumerate}
+\finenonce
+
+\noindication
+
+\nocorrection
+
+\finexercice
+

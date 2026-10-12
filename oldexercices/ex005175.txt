@@ -1,0 +1,33 @@
+\exercice{5175, rouget, 2010/06/30}
+\enonce[**]
+Soit $C$ l'ensemble des applications de $\Rr$ dans $\Rr$, croissantes sur $\Rr$.
+\begin{enumerate}
+\item  $C$ est-il un espace vectoriel (pour les opérations usuelles)~?
+\item  Montrer que $V=\{f\in\Rr^\Rr/\;\exists(g,h)\in C^2\;\mbox{tel que}\;f= g-h\}$ est un $\Rr$-espace
+vectoriel.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  $C$ contient l'identité de $\Rr$, mais ne contient pas son opposé. Donc, $C$ n'est pas un espace vectoriel.
+
+\item  Montrons que $V$ est un sous-espace vectoriel de l'espace vectoriel des applications de $\Rr$ dans $\Rr$.
+$V$ est déjà non vide car contient la fonction nulle $(0=0-0)$.
+
+Soit $(f_1,f_2)\in V^2$. Il existe $(g_1,g_2,h_1,h_2)\in C^4$ tel que $f_1=g_1-h_1$ et $f_2=g_2-h_2$. Mais alors,
+$f_1+f_2=(g_1+g_2)-(h_1+h_2)$. Or, une somme de fonctions croissantes sur $\Rr$ est croissante sur $\Rr$, et 
+donc, $g_1+g_2$ et $h_1+h_2$ sont des éléments de $C$ ou encore $f_1+f_2$ est dans $V$.
+
+Soit $f\in V$ et $\lambda\in\Rr$. Il existe $(g,h)\in V^2$ tel que $f=g-h$ et donc $\lambda f=\lambda g-\lambda h$.
+
+Si $\lambda\geq 0$, $\lambda g$ et $\lambda h$ sont croissantes sur $\Rr$ et $\lambda f$ est dans $V$.
+
+Si $\lambda<0$, on écrit $\lambda f=(-\lambda h)-(-\lambda g)$, et puisque $-\lambda g$ et $-\lambda h$ sont 
+croissantes sur $\Rr$, $\lambda f$ est encore dans $V$. $V$ est donc un sous-espace vectoriel de l'espace vectoriel
+des applications de $\Rr$ dans $\Rr$.
+\end{enumerate}
+\fincorrection
+\finexercice

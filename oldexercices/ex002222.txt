@@ -1,0 +1,58 @@
+\exercice{2222, matos, 2008/04/23}
+\enonce[Taille des \'el\'ements dans l'\'elimination de Gauss]
+
+ Notons $\tilde{A}_k$ la matrice carr\'ee d'ordre $(n-k+1)$ form\'ee des \'el\'ements $a_{ij}^k , k\leq i,j \leq n$ de la matrice $A_k=(a_{ij}^k)$ obtenue come r\'esultat de la $(k-1)$--\`eme \'etape de l'\'elimination de Gauss. On suppose $A=A_1$ sym\'etrique d\'efinie positive. 
+\begin{enumerate} 
+\item Notant $(. , .)$ le produit scalaire euclidien et $v'\in\Rr^{n-k}$ le vecteur form\'e par les $(n-k)$ derni\`eres composantes d'un vecteur $v=(v_i)_{i=k}^n \in \Rr^{n-k+1}$ quelconque, \'etablir l'identit\'e 
+$$ (\tilde{A}_k v,v)=(\tilde{A}_{k+1} v', v') + \frac{1}{a_{kk}^k} \left|a_{kk}^k v_k +\sum_{i=k+1}^n a_{ik}^k v_i\right|^2 .$$ 
+\item Montrer que chaque matrice $\tilde{A_k}$ est sym\'etrique d\'efinie positive. 
+\item Etablir les in\'egalit\'es suivantes: 
+$$ 0< a_{ii}^{k+1} \leq a_{ii}^k ,\ \ \ k+1\leq i \leq n$$ 
+$$\max_{k+1\leq i \leq n} a_{ii}^{k+1} = \max_{k+1\leq i,j \leq n}\left|a_{ij}^{k+1}\right| \leq \max_{k \leq i,j \leq n}\left|a_{ij}^k\right| =\max_{k\leq i\leq n}a_{ii}^k$$ 
+\end{enumerate} 
+\finenonce 
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item A la k-\`eme \'etape de l'\'elimination de Gauss, l'\'el\'ement $a_{ij}^{k+1}$ est donn\'e par
+$$a_{ij}^{k+1}=a_{ij}^k-\frac{a_{kj}^ka_{ik}^k}{a_{kk}^k} \quad k+1\leq i,j\leq n$$
+et on remarque imm\'ediatement par r\'ecurrence que toutes les matrices $\tilde{A_k}$ sont sym\'etriques. On a 
+
+$(\tilde{A}_{k+1} v',v')=\sum_{i=k+1}^n v_i (\sum_{j=k+1}^n a_{ij}^{(k)}v_j) - \frac{1}{a_{kk}^k}(\sum_{i=k+1}^n a_{ik}^k v_i)^2$
+
+$(\tilde{A}_k v,v)= \sum_{i=k+1}^nv_i(\sum_{j=k+1}^n a_{ij}^kv_j) +\sum_{i=k+1}^n (a_{ik}^k +a_{ki}^k )v_iv_k +a_{kk}^kv_k^2$
+
+Par sym\'etrie $a_{ik}^k=a_{ki}^k$ et donc
+
+$(\tilde{A}_kv,v)=(\tilde{A}_{k+1}v',v') +\frac{1}{a_{kk}^k} [(\sum_{i=k+1}^n a_{ik}^k v_i)^2 + 2v_k\sum_{i=k+1}^n a_{ik}^kv_i a_{kk}^k +(a_{kk}^k)^2v_k^2]=$
+
+$$(\tilde{A}_{k+1}v',v') +\frac{1}{a_{kk}^k} [a_kk^kv_k +\sum_{i=k+1}^na_{ik}^kv_i]^2$$
+\item Faisons un raisonnement par r\'ecurrence
+\begin{itemize}
+\item $\tilde{A}_1$ est sym\'etrique d\'efinie positive;
+\item Par hypoth\`ese supposons que $\tilde{A}_k$ est d\'efinie positive;
+\item Supposons par absurde que $\tilde{A}_{k+1}$ ne soit pas d\'efinie positive: alors $\exists v'\neq 0:\quad (\tilde{A}_{k+1}v',v')\leq 0$. On d\'efinit le vecteur $v\in\Rr^{n-k+1}$ par:
+\begin{itemize}
+\item $v_i=v'_i,\quad k+1\leq i\leq n$
+\item $v_k$ est solution de $a_{kk}^k +\sum_{i=k+1}^n a_{ik}^k v_i=0$
+\end{itemize}
+Alors $(\tilde{A}_kv,v)=0$ et $v\neq 0$; donc $\tilde{A}_k$ n'est pas d\'efinie positive, ce qui contredit l'hypoth\`ese de r\'ecurrence.
+\end{itemize}
+\item Premi\`ere in\'egalit\'e: en utilisant la relation d'\'elimination on obtient: $a_{ii}^{k+1}=a_{ii}^k -\frac{\left|a_{ki}^k\right|^2}{a_{kk}^2}$
+\begin{itemize}
+\item une matrice d\'efinie positive a tous ses \'el\'ements diagonaux strictement positifs, donc $a_{ii}^{k+1}>0$
+\item $\left|a_{ki}^k\right|^2/\left|a_{kk}^k\right|^2 \geq 0, \quad k+1\leq i\leq n$
+\end{itemize}
+donc $a_{ii}^{k+1}\leq a_{ii}^k, k+1\geq i$
+
+Deuxi\`eme in\'egalit\'e: supposons qu'il existe un \'el\'ement $a_{ij}^k, i<J$ tel que $\left|a_{ij}^k\right| \geq \max_{k\leq l \leq n} a_{ll}^k$. On consid\`ere le vecteur $v\neq 0$ d\'efini par
+$$v_i=1, v_j=-\mbox{sign} (a_{ij}^k), v_l=0\quad l\neq i,j$$
+Alors
+$$(\tilde{A}_k v,v) =( a_{ii}^k -\left|a_{ij}^k\right|)-(\left|a_{ij}^k\right| -a_{jj}^k) \leq 0$$
+ce qui est impossible. Donc
+$$\max_{1\leq i,j\leq n}\left|a_{ij}^{k}\right|=\max_{1\leq i \leq n}\left|a_{ii}^k\right|$$
+\end{enumerate}
+\fincorrection
+\finexercice

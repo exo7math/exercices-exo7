@@ -1,0 +1,41 @@
+\exercice{5255, rouget, 2010/07/04}
+\enonce[****]
+Soit $(u_n)$ une suite réelle de limite nulle. Montrer que si $u_n+u_{2n}\sim\frac{3}{2n}$, alors $u_n\sim\frac{1}{n}$. A-t-on~:~si $u_n+u_{n+1}\sim\frac{2}{n}$, alors $u_n\sim\frac{1}{n}$~?
+\finenonce
+
+\noindication
+
+\correction
+Pour $n\geq1$, posons $u_n=\frac{(-1)^n}{\ln n}+\frac{1}{n}$. On a alors 
+
+\begin{align*}
+n(u_n+u_{n+1}-\frac{2}{n})&=1+\frac{n}{n+1}-2+n(-1)^n(\frac{1}{\ln n}-\frac{1}{\ln(n+1)})=\frac{(-1)^nn(\ln(n+1)-\ln n)}{\ln n\ln(n+1)}+o(1)\\
+ &=\frac{(-1)^nn\ln(1+1/n)}{\ln n\ln(n+1)}+o(1)=\frac{(-1)^n(1+o(1))}{\ln n\ln(n+1)}+o(1)=o(1).
+\end{align*}
+
+Donc, $n(u_n+u_{n+1}-\frac{2}{n})=o(1)$, ou encore $u_n+u_{n+1}=\frac{2}{n}+o(\frac{1}{n})$, ou enfin, $u_n+u_{n+1}\sim\frac{2}{n}$. Pourtant, $u_n$ est équivalent à $\frac{(-1)^n}{\ln n}$ et pas du tout à $\frac{1}{n}$ ($|nu_n|=\frac{n}{\ln n}\rightarrow+\infty$).
+
+Supposons maintenant que $u_n+u_{2n}\sim\frac{3}{2n}$ et montrons que $u_n\sim\frac{1}{n}$.
+
+On pose $v_n=u_n-\frac{1}{n}$. Il s'agit maintenant de montrer que $v_n=o(\frac{1}{n})$ sous l'hypothèse $v_n+v_{2n}=o(\frac{1}{n})$.
+
+Soit $\varepsilon>0$. Il existe $n_0\in\Nn$ tel  que, pour $n\geq n_0$, $n|v_n+v_{2n}|<\frac{\varepsilon}{4}$.
+
+Soient $n\geq n_0$ et $p\in\Nn$.
+
+\begin{align*}\ensuremath
+|v_n|&=|v_n+v_{2n}-v_{2n}-v_{4n}+...+(-1)^p(v_{2^pn}+v_{2^{p+1}n})+(-1)^{p+1}v_{2^{p+1}n}|
+\leq\sum_{k=0}^{p}|v_{2^kn}+v_{2^{k+1}n}|+|v_{2^{p+1}n}|\\
+ &\frac{\varepsilon}{4}\sum_{k=0}^{p}\frac{1}{2^kn}+|v_{2^{p+1}n}|=\frac{\varepsilon}{4n}\frac{1-\frac{1}{2^{p+1}}}{1-\frac{1}{2}}+|v_{2^{p+1}n}|\\
+ &\leq\frac{\varepsilon}{2n}+|v_{2^{p+1}n}|
+\end{align*}
+
+Maintenant, la suite $u$ tend vers $0$, et il en est de même de la suite $v$. Par suite, pour chaque $n\geq n_0$, il est possible de choisir $p$ tel que $|v_{2^{p+1}n}|<\frac{\varepsilon}{2n}$.
+
+En résumé, si $n$ est un entier donné supérieur ou égal à $n_0$, $n|v_n|<\frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon$. On a montré que
+
+$$\forall\varepsilon>0,\;\exists n_0\in\Nn/\;\forall n\in\Nn,\;(n\geq n_0\Rightarrow|nv_n|<\varepsilon.$$
+
+Par suite, $v_n=o(\frac{1}{n})$ et donc $u_n=\frac{1}{n}+o(\frac{1}{n})$, ou encore $u_n\sim\frac{1}{n}$.
+\fincorrection
+\finexercice

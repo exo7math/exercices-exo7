@@ -1,0 +1,74 @@
+\exercice{5769, rouget, 2010/10/16}
+\enonce[***]
+Existence et calcul de $\int_{0}^{1}\frac{t-1}{\ln t}t^x\;dt$.
+\finenonce
+
+\noindication
+
+\correction
+Soit $x\in\Rr$. La fonction $t\mapsto \frac{t-1}{\ln t}t^x$ est continue sur $]0,1[$. 
+
+\textbf{Etude en $1$.} $\frac{t-1}{\ln t}t^x\underset{t\rightarrow1}{\sim}1\times1=1$ et donc la fonction $t\mapsto \frac{t-1}{\ln t}t^x$ se prolonge par continuité en $1$. On en déduit que la fonction $t\mapsto \frac{t-1}{\ln t}t^x$ est intégrable sur un voisinage de $1$ à gauche.
+
+\textbf{Etude en $0$.} $\frac{t-1}{\ln t}t^x\underset{t\rightarrow0}{\sim}-\frac{t^x}{\ln t}>0$.
+
+-si $x>-1$, $-\frac{t^x}{\ln t}\underset{t\rightarrow0}{=}o(t^x)$ et puisque $x>-1$, la fonction $t\mapsto \frac{t-1}{\ln t}t^x$ est intégrable sur un voisinage de $0$ à droite.
+
+- si $x\leqslant-1$, la fonction $t\mapsto-\frac{t^x}{\ln t}$ domine la fonction $t\mapsto-\frac{1}{t\ln t}$ quand $t$ tend vers $0$ par valeurs supérieures. Puisque la fonction $-\frac{1}{t\ln t}$ est positive et que $\int_{x}^{1/2}-\frac{1}{t\ln t}\;dt=\ln|\ln(x)|-\ln|\ln(1/2)|\underset{x\rightarrow0}{\rightarrow}+\infty$, la fonction $t\mapsto-\frac{1}{t\ln t}$ n'est pas intégrable sur un voisinage de $0$. Il en est de même de la fonction $t\mapsto\frac{t-1}{\ln t}t^x$.
+
+Finalement, la fonction $t\mapsto\frac{t-1}{\ln t}t^x$ est intégrable sur $]0,1[$ si et seulement si $x>-1$. Pour $x>-1$, on peut poser $f(x)=\int_{0}^{1}\frac{t-1}{\ln t}t^x\;dt$.
+
+\textbf{Calcul de $f(x)$.} Soit $a>-1$. On pose $\begin{array}[t]{cccc}
+\Phi~:&[a,+\infty[\times]0,1[&\rightarrow&\Rr\\
+ &(x,t)&\mapsto&\frac{t-1}{\ln t}t^x
+\end{array}$.
+
+\textbullet~Pour chaque $x\in[a,+\infty[$, la fonction $t\mapsto \frac{t-1}{\ln t}t^x$ est continue par morceaux et intégrable sur $]0,1[$.
+
+\textbullet~La fonction $\Phi$ admet sur $[a,+\infty[\times]0,1[$ une dérivée partielle par rapport à sa première variable définie par :
+
+\begin{center}
+$\forall(x,t)\in[a,+\infty[\times]0,1[$, $\frac{\partial \Phi}{\partial x}(x,t)=(t-1)t^x=t^{x+1}-t^x$.
+\end{center}
+
+De plus,
+
+- pour chaque $x\in[a,+\infty[$, la fonction $t\mapsto\frac{\partial \Phi}{\partial x}(x,t)$ est continue par morceaux sur $]0,1[$,
+
+-pour chaque $t\in]0,1[$, la fonction $x\mapsto\frac{\partial \Phi}{\partial x}(x,t)$ est continue sur $[a,+\infty[$,
+
+- pour chaque $(x,t)\in[a,+\infty[\times]0,1[$,
+
+\begin{center}
+$\left|\frac{\partial \Phi}{\partial x}(x,t)\right|=(1-t)t^a=\varphi(t)$.
+\end{center}
+
+La fonction $\varphi$ est continue par morceaux sur $]0,1[$ et intégrable sur $]0,1[$ car $a>-1$.
+
+D'après le théorème de dérivation des intégrales à paramètres (théorème de \textsc{Leibniz}), la fonction $f$ est de classe $C^1$ sur $[a,+\infty[$ et sa dérivée s'obtient par dérivation sous le signe somme. Ceci étant vrai pour tout réel $a>-1$, la fonction $f$ est de classe $C^1$ sur $]-1,+\infty[$ et
+
+\begin{center}
+$\forall x>-1$, $f'(x)=\int_{0}^{1}(t-1)t^x\;dt=\left[\frac{t^{x+2}}{x+2}-\frac{t^{x+1}}{x+1}\right]_0^1=\frac{1}{x+2}-\frac{1}{x+1}$.
+\end{center}
+
+Par suite, il existe $C\in\Rr$ tel que $\forall x>-1$, $f(x)=\ln\left(\frac{x+2}{x+1}\right)+C$\quad$(*)$. Pour déterminer la constante $C$, on peut utiliser le résultat de l'exercice \ref{ex:rou7bis} : $\int_{0}^{1}\frac{t-1}{\ln t}\;dt=\ln2$. On peut aussi obtenir directement la constante $C$ sans aucun calcul d'intégrale. Pour cela, déterminons $\lim_{x \rightarrow +\infty}f(x)$.
+
+La fonction $g~:~t\mapsto\frac{t-1}{\ln t}$ est continue sur le segment $]0,1[$, prolongeable par continuité en $0$ et en $1$ en posant $g(0)=0$ et $g(1)=1$. On en déduit que cette fonction est bornée sur l'intervalle $]0,1[$ (car son prolongement est une fonction continue sur un segment).
+
+Soit $M$ un majorant de la fonction $|g|$ sur $]0,1[$. Pour $x>-1$, on a
+
+\begin{center}
+$|g(x)|\leqslant M\int_{0}^{1}t^x\;dt=\frac{M}{x+1}$.
+\end{center}
+
+Ceci montre que $\lim_{x \rightarrow +\infty}f(x)=0$ et en passant à la limite quand $x$ tend vers $+\infty$ dans l'égalité $(*)$, on obtient $C=0$. On a donc montré que
+
+\begin{center}
+\shadowbox{
+$\forall x>-1$, $\int_{0}^{1}\frac{t-1}{\ln t}t^x\;dt=\ln\left(\frac{x+2}{x+1}\right)$.
+}
+\end{center}
+
+On retrouve en particulier $\int_{0}^{1}\frac{t-1}{\ln t}\;dt=\ln2$.
+\fincorrection
+\finexercice

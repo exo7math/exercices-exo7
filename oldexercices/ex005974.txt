@@ -1,0 +1,77 @@
+\exercice{5974, tumpach, 2010/11/11}
+\enonce[Th\'eor\`eme de Newton]
+Soit $g$ une fonction sur $\mathbb{R}^+$ et
+$f~:\mathbb{R}^3\rightarrow \mathbb{R}$ telle que $f(x) = g(|x|)$,
+o\`u $|x|$ d\'esigne la norme de $x$ dans $\mathbb{R}^3$.
+\begin{enumerate}
+\item Montrer que pour $r = |x|$, on a
+$$
+\int_{\mathbb{R}^3} \frac{f(y)}{|x - y|}\,dy = 4\pi
+\frac{1}{r}\int_{0}^{r} g(s) s^2\,ds + 4\pi\int_{r}^{+\infty} g(s)
+s\,ds.
+$$
+\item Que peut-on en d\'eduire pour une distribution de masse
+$f(x) = g(|x|)$ lorsque $g$ est \`a support dans $[0, R]$ ?
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+Soit $g$ une fonction sur $\mathbb{R}^+$ et
+$f~:\mathbb{R}^3\rightarrow \mathbb{R}$ telle que $f(x) = g(|x|)$.
+\begin{enumerate}
+\item Posons
+$$
+I = \int_{\mathbb{R}^3} \frac{g(|y|)}{|x - y|}\,dy,
+$$
+et $r = |x|$, $s = |y|$. Alors $|x - y| = \sqrt{r^2 + s^2 -2 rs
+\cos\theta}$ o\`u $\theta$ est l'angle entre l'axe $(Ox)$ et l'axe
+$(Oy)$. On consid\'ere les coordonn\'ees sph\'eriques de centre
+$O$ et d'axe $(Ox)$ suivantes~:
+$$
+\begin{array}{lcl}
+y_1 &=& s \cos\theta\\
+y_2 & = & s \sin\theta \cos\varphi\\
+y_3 & = & s\sin\theta \sin\varphi
+\end{array}
+$$
+On a~
+$$
+I =
+\int_{s=0}^{+\infty}\int_{\theta=0}^{\pi}\int_{\varphi=0}^{2\pi}
+\frac{g(s)}{\sqrt{r^2 + s^2 - 2rs\cos\theta}} s^2 \sin\theta\,ds
+d\theta d\varphi.
+$$
+On note que
+$$
+\frac{\sin\theta}{\sqrt{r^2 + s^2 - 2rs\cos\theta}} =
+\frac{d}{d\theta}\frac{1}{rs} \sqrt{r^2 + s^2 - 2rs\cos\theta}.
+$$
+Ainsi~:
+$$
+\begin{array}{lcl}
+I &=& 2\pi \int_{s=0}^{+\infty}\left[\frac{1}{rs} \sqrt{r^2 + s^2
+-
+2rs\cos\theta} \right]_{\theta = 0}^{\pi} g(s)s^2 \,ds\\
+& = & 2\pi \int_{s=0}^{+\infty} \frac{1}{rs} \left(\sqrt{(r+s)^2}
+- \sqrt{(r-s)^2} \right) g(s) s^2 \,ds.
+\end{array}
+$$
+Lorsque $s\leq r$, on a $$\sqrt{(r+s)^2} - \sqrt{(r-s)^2} =
+(r+s)-(r-s) = 2s,$$ et lorsque $s>r$, il vient $$\sqrt{(r+s)^2} -
+\sqrt{(r-s)^2} = (r+s)-(s-r) = 2r.$$ On en d\'eduit alors~:
+$$
+I = \frac{4\pi}{r}\int_{0}^{r} g(s) s^2\,ds +
+4\pi\int_{r}^{+\infty} g(s) s\,ds.
+$$
+
+ \item Lorsque $g$ est \`a
+support dans $[0, R]$, le potentiel newtonien cr\'e\'e  par la
+distribution de masse $f(y) = g(|y|)$ en un point
+$x\in\mathbb{R}^3$ tel que $|x|>R$, est identique au potentiel
+cr\'e\'e par une masse totale \'egale concentr\'ee \`a l'origine.
+\end{enumerate}
+\fincorrection
+
+\finexercice

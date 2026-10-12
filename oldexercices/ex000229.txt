@@ -1,0 +1,27 @@
+\exercice{229, cousquer, 2003/10/01}
+\enonce
+
+Calculer le module et l'argument de $(1+i)^n$.
+En d\'eduire les valeurs de
+\begin{eqnarray*}
+S_1 & = & 1-C_n^2+C_n^4-C_n^6+\cdots\\
+S_2 & = & C_n^1-C_n^3+C_n^5-\cdots
+\end{eqnarray*}
+
+\finenonce 
+
+\indication
+$1+i= \frac{\sqrt2}2e^{\frac{2i\pi}{4}}$
+\finindication
+
+\correction
+ $A=(1+i)^n$ a pour module $2^{n/2}$ et pour argument $n{\pi \over 4}$
+(et $B$ est son conjugu\'e).
+On en tire gr\^ace \`a la formule du bin\^ome, et en s\'eparant partie r\'eelle 
+et partie imaginaire :
+$S_1 = 2^{n/2}\cos n{\pi \over4}$ et 
+et $S_2 = 2^{n/2}\sin n{\pi \over4}$. 
+On a aussi 
+$S_1={A+B\over 2}$ et $S_2={B-A\over 2}i$.
+\fincorrection
+\finexercice

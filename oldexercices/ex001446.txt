@@ -1,0 +1,51 @@
+\exercice{1446, legall, 1998/09/01}
+
+\enonce
+ Soit $  G  $ le sous-groupe de $  Gl(2, \R )  $
+engendr\'e par les matrices $  \displaystyle{  A= \frac{1 }{\sqrt
+2}
+\begin{pmatrix}-1 & 1\cr 1 & 1 \cr \end{pmatrix} }  $ et $  B= \begin{pmatrix}-1 & 0\cr 0 & 1 \cr \end{pmatrix}  .$
+\begin{enumerate}
+    \item Soit $  H  $ le sous-groupe de $  G  $ engendr\'e par $  AB  .$ Calculer $  \vert H\vert  $
+    \item Montrer que $  H  $ est distingu\'e dans $  G  .$ Calculer le quotient $  G/H  ;$ en d\'eduire $  \vert G\vert   .$
+\end{enumerate}
+
+\finenonce
+
+\noindication
+
+\correction
+Notons $C = AB = \frac{1}{\sqrt{2}}
+\begin{pmatrix}
+1 & 1 \\
+-1 & 1
+\end{pmatrix}$.
+\begin{enumerate}
+    \item Un calcul donne $C^8 = I$ et pour $1\le k \le 7$, $C^k\not= I$.
+Donc le groupe $H$ engendr\'e par $C$ est d'ordre $8$. Attention !
+m\^eme si $A^2=I$ et $B^2=I$ on a $(AB)^2 \not= I$ car $AB \not=
+BA$.
+    \item Pour montrer que $H$ est distingu\'e il suffit de montrer que
+$ACA^{-1}$ et $BCB^{-1}$ sont dans $H$. Mais $ACA^{-1} = ACA =
+AABA = BA = (AB)^{-1} \in H$. De m\^eme $BCB^{-1} = (AB)^{-1}$.
+Donc $H$ est distingu\'e dans $H$.
+
+\bigskip
+Un \'el\'ement $M$ de $G$ s'\'ecrit
+$$M= A^{a_1}B^{b_1}A^{a_2}\ldots A^{a_n}B^{b_n} \quad a_i,b_i \in \Zz.$$
+Mais dans $G/H$ tout terme $\overline{AB}$ ou $\overline{BA}$ vaut
+$\overline{I}$ Donc $G/H = \{ \overline{I},
+\overline{A},\overline{A}^2, \overline{A}^3,\ldots,
+\overline{B},\overline{B}^2,\overline{B}^3,\ldots \}$ mais comme
+$A^2=B^2=I$ et $AB \in H$ alors $G/H$ s'\'ecrit simplement :
+$$G/H = \left\lbrace \overline{I},\overline{A} \right\rbrace.$$
+
+\bigskip
+Enfin, par la formule $|G| = |H| \times |G/H|$ nous obtenons $|G|
+= 8 \times 2 = 16$.
+
+\end{enumerate}
+\fincorrection
+
+\finexercice
+

@@ -1,0 +1,90 @@
+\exercice{5513, rouget, 2010/07/15}
+\enonce[**T]
+Dans $\Rr^3$ euclidien rapporté à un repère orthonormé, on donne $A(2,-2,0)$, $B(4,2,6)$ et 
+$C(-1,-3,0)$. Déterminer l'orthocentre, le centre de gravité, les centres des cercles circonscrits et inscrits au triangle $(A,B,C)$.
+\finenonce
+
+\noindication
+
+\correction
+\textbullet~Déterminons le centre de gravité $G$.
+
+\begin{center}
+$G=\frac{1}{3}A+\frac{1}{3}B+\frac{1}{3}C=\frac{1}{3}(2,-2,0)+\frac{1}{3}(4,2,6)+\frac{1}{3}(-1,-3,0)=\left(\frac{5}{3},-1,2\right)$.
+\end{center}
+\textbullet~Déterminons le centre du cercle circonscrit $O$. Une équation du plan $(ABC)$ est $\left|
+\begin{array}{ccc}
+x-2&2&-3\\
+y+2&4&-1\\
+z&6&0
+\end{array}
+\right|=0$ ou encore $6(x-2)-18(y+2)+10z=0$ ou enfin $3x-9y+5z=24$. Posons alors $O(a,b,c)$.
+Ensuite, $OA=OB\Leftrightarrow(a-2)^2+(b+2)^2+c^2=(a-4)^2+(b-2)^2+(c-6)^2\Leftrightarrow4a+8b+12c=48\Leftrightarrow a+2b+3c=16$ et 
+$OA=OC\Leftrightarrow(a-2)^2+(b+2)^2+c^2=(a+1)^2+(b+3)^2+c^2\Leftrightarrow-6a-2b=2\Leftrightarrow3a+b=-1$.
+D'où le système
+
+\begin{align*}\ensuremath
+\left\{
+\begin{array}{l}
+3a-9b+5c=24\\
+a+2b+3c=16\\
+3a+b=-1
+\end{array}
+\right.&\Leftrightarrow\left\{
+\begin{array}{l}
+b=-3a-1\\
+3a-9(-3a-1)+5c=24\\
+a+2(-3a-1)+3c=16
+\end{array}
+\right.\Leftrightarrow\left\{
+\begin{array}{l}
+b=-3a-1\\
+6a+c=3\\
+-5a+3c=18
+\end{array}
+\right.\\
+ &\Leftrightarrow\left\{
+\begin{array}{l}
+b=-3a-1\\
+c=3-6a\\
+-5a+3(3-6a)=18
+\end{array}
+\right.
+\Leftrightarrow\left\{
+\begin{array}{l}
+a=-\frac{9}{23}\\
+b=\frac{4}{23}\rule{0mm}{7mm}\\
+c=\frac{123}{23}\rule{0mm}{7mm}
+\end{array}
+\right.
+\end{align*}
+Donc $O\left(-\frac{9}{23},\frac{4}{23},\frac{123}{23}\right)$.
+\textbullet~Déterminons l'orthocentre $H$. D'après la relation d'\textsc{Euler},
+
+\begin{center}
+$H=O+3\overrightarrow{OG}=\left(-\frac{9}{23},\frac{4}{23},\frac{123}{23}\right)+3\left(-\frac{9}{23}-\frac{5}{3},\frac{4}{23}+1,\frac{123}{23}-2\right)=\left(\frac{-151}{23},\frac{85}{23},\frac{354}{23}\right)$.
+\end{center}
+\textbullet~Déterminons le centre du cercle inscrit $I$. On sait que $I=\text{bar}\left\{A(a),B(b),C(c)\right\}$ où $a=BC=\sqrt{5^2+5^2+6^2}=\sqrt{86}$, $b=AC=\sqrt{3^2+1^2+0^2}=\sqrt{10}$ et $c=AB=\sqrt{2^2+4^2+6^2}=\sqrt{54}$. Donc
+
+\begin{align*}\ensuremath
+I&=\frac{\sqrt{86}}{\sqrt{86}+\sqrt{10}+\sqrt{54}}A
++\frac{\sqrt{10}}{\sqrt{86}+\sqrt{10}+\sqrt{54}}B+\frac{\sqrt{54}}{\sqrt{86}+\sqrt{10}+\sqrt{54}}C\\
+ &=\left(
+ \frac{2\sqrt{86}+4\sqrt{10}-\sqrt{54}}{\sqrt{86}+\sqrt{10}+\sqrt{54}},
+ \frac{-2\sqrt{86}+2\sqrt{10}-3\sqrt{54}}{\sqrt{86}+\sqrt{10}+\sqrt{54}},
+ \frac{6\sqrt{10}}{\sqrt{86}+\sqrt{10}+\sqrt{54}}
+ \right).
+\end{align*}
+
+Dans $\Rr^3$ euclidien rapporté à un repère orthonormé, on donne $A(2,-2,0)$, $B(4,2,6)$ et 
+$C(-1,-3,0)$. Déterminer l'orthocentre, le centre de gravité, les centres des cercles circonscrits et inscrits au triangle $(A,B,C)$.
+\begin{center}
+\shadowbox{
+\begin{tabular}{c}
+$G\left(\frac{5}{3},-1,2\right)$, $O\left(-\frac{9}{23},\frac{4}{23},\frac{123}{23}\right)$ et $H\left(\frac{-151}{23},\frac{85}{23},\frac{354}{23}\right)$ puis\\
+$I\left(\frac{2\sqrt{86}+4\sqrt{10}-\sqrt{54}}{\sqrt{86}+\sqrt{10}+\sqrt{54}},\frac{-2\sqrt{86}+2\sqrt{10}-3\sqrt{54}}{\sqrt{86}+\sqrt{10}+\sqrt{54}},\frac{6\sqrt{10}}{\sqrt{86}+\sqrt{10}+\sqrt{54}}\right)$.\rule{0mm}{10mm}
+\end{tabular}
+}
+\end{center}
+\fincorrection
+\finexercice

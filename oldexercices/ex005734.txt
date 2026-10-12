@@ -1,0 +1,64 @@
+\exercice{5734, rouget, 2010/10/16}
+\enonce[**]
+Pour $n\in\Nn^*$, soit $f_n(t) = (-1)^n\ln\left(1+\frac{t^2}{n(1+t^2)}\right)$.
+
+\begin{enumerate}
+ \item  Etudier la convergence simple et uniforme de la série de terme général $f_n$ puis la continuité de la somme $f$.
+
+\item  Montrer que $\lim_{t \rightarrow +\infty}f(t) =\ln\left(\frac{2}{\pi}\right)$ à l'aide de la formule de \textsc{Stirling}.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  \textbf{Convergence simple.} Soit $t\in\Rr$. Pour tout entier naturel non nul $n$, $1+\frac{t^2}{n(1+t^2)}\geqslant1>0$ et donc $f_n(t)$ existe. Ensuite, $\ln\left(1+\frac{t^2}{n(1+t^2)}\right)>0$ et donc la suite numérique $(f_n(t))_{n\in\Nn^*}$ est alternée en signe. De plus, $|f_n(t)|=\ln\left(1+\frac{t^2}{n(1+t^2)}\right)$ et la suite $(|f_n(t)|)_{n\in\Nn^*}$ tend vers $0$ en décroissant.
+
+On en déduit que la série de terme général $f_n(t)$, $n\geqslant1$, converge en vertu du critère spécial aux séries alternées.
+
+\begin{center}
+\shadowbox{
+La série de fonctions de terme général $f_n$, $n\geqslant1$, converge simplement sur $\Rr$.
+}
+\end{center}
+
+On pose alors $f=\sum_{n=1}^{+\infty}f_n$.
+
+\textbf{Convergence uniforme.} Soit $n\in\Nn^*$. D'après une majoration classique du reste à l'ordre $n$ d'une série alternée, pour tout réel $t$ on a
+
+\begin{align*}\ensuremath
+|R_n(t)|&=\left|\sum_{k=n+1}^{+\infty}f_k(t)\right|\leqslant|f_{n+1}(t)|=\ln\left(1+\frac{t^2}{(n+1)(1+t^2)}\right)=\ln\left(1+\frac{t^2+1-1}{(n+1)(1+t^2)}\right)=\ln\left(1+\frac{1}{n+1}-\frac{1}{(n+1)(1+t^2)}\right)\\
+ &\leqslant\ln\left(1+\frac{1}{n+1}\right),
+\end{align*}
+
+et donc, $\forall n\in\Nn^*$, $\underset{t\in\Rr}{\text{sup}}|R_n(t)|\leqslant\ln\left(1+\frac{1}{n+1}\right)$. Comme $\lim_{n \rightarrow +\infty}\ln\left(1+\frac{1}{n+1}\right)=0$, on a encore $\lim_{n \rightarrow +\infty}\underset{t\in\Rr}{\text{sup}}|R_n(t)|=0$ et on a montré que
+
+\begin{center}
+\shadowbox{
+La série de fonctions de terme général $f_n$, $n\geqslant1$, converge uniformément vers $f$ sur $\Rr$.
+}
+\end{center}
+
+\textbf{Continuité.} Puisque chaque fonction $f_n$, $n\geqslant1$, est continue sur $\Rr$, la fonction $f$ est continue sur $\Rr$ en tant que limite uniforme sur $\Rr$ d'une suite de fonctions continues sur $\Rr$.
+
+\begin{center}
+\shadowbox{
+$f$ est continue sur $\Rr$.
+}
+\end{center}
+
+\item  D'après le théorème d'interversion des limites, $f$ a une limite réelle en $+\infty$ et
+
+\begin{center}
+$\lim_{t \rightarrow +\infty}f(t)=\sum_{n=1}^{+\infty}\lim_{t \rightarrow +\infty}f_n(t)=\sum_{n=1}^{+\infty}(-1)^n\ln\left(1+\frac{1}{n}\right)=\ln\left(\frac{2}{\pi}\right)$ (voir l'exercice \ref{ex:rou4}, 5)).
+\end{center}
+
+\begin{center}
+\shadowbox{
+$\lim_{t \rightarrow +\infty}f_n(t)=\ln\left(\frac{2}{\pi}\right)$.
+}
+\end{center}
+\end{enumerate}
+\fincorrection
+\finexercice

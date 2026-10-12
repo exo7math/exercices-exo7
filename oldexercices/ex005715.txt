@@ -1,0 +1,228 @@
+\exercice{5715, rouget, 2010/10/16}
+\enonce
+
+\label{ex:rou3}
+
+(Hors programme) Etudier la convergence des intégrales impropres suivantes :
+\begin{enumerate}
+\item \textbf{(**)} $\displaystyle \int_{0}^{+\infty}\frac{\sin x}{x}\;dx$
+
+\item \textbf{(**)} $\displaystyle \int_{0}^{+\infty}\frac{\sin x}{x^a}\;dx$
+
+\item \textbf{(**)} $\displaystyle \int_{0}^{+\infty}e^{ix^2}\;dx$
+
+\item \textbf{(**)} $\displaystyle \int_{0}^{+\infty}x^3\sin(x^8)\;dx$
+
+\item \textbf{(**)} $\displaystyle \int_{0}^{+\infty}\cos(e^x)\;dx$
+
+\item \textbf{(****)} $\displaystyle \int_{0}^{+\infty}\frac{1}{1+x^3\sin^2x}\;dx$
+\end{enumerate}
+
+\end{center}
+
+\finenonce
+
+
+
+\noindication
+
+
+
+\correction
+
+\begin{enumerate}
+
+ \item  Soient $\varepsilon$ et $X$ deux réels tels que $0<\varepsilon<X$. Les deux fonction $x\mapsto1-\cos x$ et $x\mapsto\frac{1}{x}$ sont de classe $C^1$ sur le segment $[\varepsilon,X]$. On peut donc effectuer une intégration par parties et on obtient
+
+
+
+\begin{center}
+
+$\int_{\varepsilon}^{X}\frac{\sin x}{x}\;dx=\left[\frac{1-\cos x}{x}\right]_1^X+\int_{\varepsilon}^{X}\frac{1-\cos x}{x^2}\;dx=\frac{1-\cos X}{X}-\frac{1-\cos \varepsilon}{\varepsilon}+\int_{\varepsilon}^{X}\frac{1-\cos x}{x^2}\;dx$.
+
+\end{center}
+
+
+
+\textbullet~La fonction $x\mapsto\frac{1-\cos x}{x^2}$ est continue sur $]0,+\infty[$, est prolongeable par continuité en $0$ car $\lim_{x \rightarrow 0}\frac{1-\cos x}{x^2}=\frac{1}{2}$ et donc intégrable sur un voisinage de $0$, est dominée par $\frac{1}{x^2}$ en $+\infty$ et donc intégrable sur un voisinage de $+\infty$. La fonction $x\mapsto\frac{1-\cos x}{x^2}$ est donc intégrable sur $]0,+\infty[$ et $\int_{\varepsilon}^{X}\frac{1-\cos x}{x^2}\;dx$ a une limite réelle quand $\varepsilon$ tend vers $0$ et $X$ tend vers $+\infty$.
+
+
+
+\textbullet~$\left|\frac{1-\cos X}{X}\right|\leqslant\frac{1}{X}$ et donc $\lim_{X \rightarrow +\infty}\frac{1-\cos X}{X}=0$.
+
+
+
+\textbullet~$\frac{1-\cos\varepsilon}{\varepsilon}\underset{\varepsilon\rightarrow0}{\sim}\frac{\varepsilon}{2}$ et donc $\lim_{\varepsilon \rightarrow \varepsilon}\frac{1-\cos \varepsilon}{\varepsilon}=0$.
+
+
+
+On en déduit que $\int_{0}^{+\infty}\frac{\sin x}{x}\;dx$ est une intégrale convergente et de plus
+
+
+
+\begin{center}
+
+$\int_{0}^{+\infty}\frac{\sin x}{x}\;dx=\int_{0}^{+\infty}\frac{1-\cos x}{x^2}\;dx=\int_{0}^{+\infty}\frac{2\sin^2(x/2)}{x^2}\;dx=\int_{0}^{+\infty}\frac{2\sin^2(u)}{4u^2}\;2du=\int_{0}^{+\infty}\frac{\sin^2(u)}{u^2}\;du$.
+
+\end{center}
+
+  
+
+\begin{center}
+
+\shadowbox{
+
+L'intégrale $\int_{0}^{+\infty}\frac{\sin x}{x}\;dx$ converge et de plus $\int_{0}^{+\infty}\frac{\sin x}{x}\;dx=\int_{0}^{+\infty}\frac{1-\cos x}{x^2}\;dx=\int_{0}^{+\infty}\frac{\sin^2x}{x^2}\;dx$.
+
+}
+
+\end{center}
+
+
+
+\item  La fonction $f~:~ x\mapsto\frac{\sin x}{x^a}$ est continue sur $]0,+\infty[$.
+
+
+
+\textbullet~Sur $]0,1[$, la fonction $f$ est de signe constant et l'existence de $\lim_{\varepsilon \rightarrow 0}\int_{\varepsilon}^{1}f(x)\;dx$ équivaut à l'intégrabilité de la fonction $f$ sur $]0,1]$. Puisque $f$ est équivalente en $0$ à $\frac{1}{x^{a-1}}$, l'intégrale impropre $\int_{0}^{1}f(x)\;dx$ converge en $0$ si et seulement si $a > 0$. On suppose dorénavant $a>0$.
+
+
+
+\textbullet~Soit $X>1$. Les deux fonction $x\mapsto -\cos x$ et $x\mapsto\frac{1}{x^a}$ sont de classe $C^1$ sur le segment $[1,X]$. On peut donc effectuer une intégration par parties et on obtient
+
+
+
+\begin{center}
+
+$\int_{1}^{X}\frac{\sin x}{x^a}\;dx=\left[\frac{-\cos x}{x^a}\right]_1^X-a\int_{1}^{X}\frac{\cos x}{x^{a+1}}\;dx=-\frac{\cos X}{X^a}+\cos1-a\int_{1}^{X}\frac{\cos x}{x^{a+1}}\;dx$.
+
+\end{center}
+
+
+
+Maintenant, $\left|\frac{\cos x}{x^{a+1}}\right|\leqslant\frac{1}{x^{a+1}}$ et puisque $a+1>1$, la fonction $x\mapsto\frac{\cos x}{x^{a+1}}$ est intégrable sur un voisinage de $+\infty$. On en déduit que la fonction $X\mapsto\int_{1}^{X}\frac{\cos x}{x^{a+1}}\;dx$ a une limite réelle quand $X$ tend vers $+\infty$. Comme d'autre part, la fonction $X\mapsto-\frac{\cos X}{X^a}+\cos1$ a une limite réelle quand $X$ tend vers $+\infty$, on a montré que l'intégrale impropre $\int_{1}^{+\infty}f(x)\;dx$ converge en $+\infty$.
+
+
+
+Finalement
+
+  
+
+\begin{center}
+
+\shadowbox{
+
+l'intégrale $\int_{0}^{+\infty}\frac{\sin x}{x^a}\;dx$ converge si et seulement si $a > 0$.
+
+}
+
+\end{center}
+
+
+
+\item  Soit $X$ un réel strictement positif. Le changement de variables $t = x^2$ suivi d'une intégration par parties fournit :
+
+
+
+\begin{center}
+
+$\int_{1}^{X}e^{ix^2}\;dx=\int_{1}^{X^2}\frac{e^{it}}{2\sqrt{t}}\;dt =\frac{i}{2}\left(-\frac{e^{iX}}{\sqrt{X}}+e^i-\frac{1}{2}\int_{1}^{X}\frac{e^{it}}{t^{3/2}}\;dt\right)$
+
+\end{center}
+
+
+
+Maintenant, $\lim_{X \rightarrow +\infty}\frac{e^{iX}}{\sqrt{X}}=0$ car $\left|\frac{e^{iX}}{\sqrt{X}}\right|=\frac{1}{\sqrt{X}}$. D'autre part, la fonction $t\mapsto\frac{e^{it}}{t^{3/2}}$ est intégrable sur $[1,+\infty[$ car $\left|\frac{e^{it}}{t^{3/2}}\right|=\frac{1}{t^{3/2}}$.  Ainsi, $\int_{1}^{+\infty}e^{ix^2}\;dx$ est une intégrale convergente et puisque d'autre part la fonction $x\mapsto e^{ix^2}$ est continue sur $[0,+\infty[$, on a montré que
+
+
+
+\begin{center}
+
+\shadowbox{
+
+l'intégrale $\int_{0}^{+\infty}e^{ix^2}\;dx$ converge.
+
+}
+
+\end{center}
+
+
+
+On en déduit encore que les intégrales $\int_{0}^{+\infty}\cos(x^2)\;dx$ et $\int_{0}^{+\infty}\sin(x^2)\;dx$ sont des intégrales convergentes (intégrales de \textsc{Fresnel}).
+
+
+
+\item  La fonction $f~:~x\mapsto x^3\sin(x^8)$ est continue sur $[0,+\infty[$.
+
+Soit $X>0$. Le changement de variables $t = x^4$ fournit
+
+
+
+\begin{center}
+
+$\int_{0}^{X}x^3\sin(x^8)dx =\frac{1}{4}\int_{0}^{X^4}\sin(t^2)\;dt=\frac{1}{4}\text{Im}\left(\int_{0}^{X^4}e^{it^2}\;dt\right)$.
+
+\end{center}
+
+
+
+D'après 3), $\int_{0}^{+\infty}e^{it^2}\;dt$ est une intégrale convergente et donc $\int_{0}^{+\infty}x^3\sin(x^8)\;dx$ converge.
+
+
+
+\item  La fonction $f~:~x\mapsto\cos(e^x)$ est continue sur $[0,+\infty[$.
+
+Soit $X>0$. Le changement de variables $t = e^x$ fournit
+
+
+
+\begin{center}
+
+$\int_{0}^{X}\cos(e^x)\;dx=\int_{1}^{e^X}\frac{\cos t}{t}\;dt$.
+
+ \end{center}
+
+ 
+
+
+
+On montre la convergence en $+\infty$ de cette intégrale par une intégration par parties analogue à celle de la question 1). L'intégrale impropre  $\int_{0}^{+\infty}\cos(e^x)\;dx$ converge .
+
+
+
+\item  Pour tout réel $x\geqslant0$, $1+x^3\sin^2x\geqslant 1>0$ et donc la fonction $f~:~x\mapsto\frac{1}{1+x^3\sin^2x}$ est continue sur $[0,+\infty[$.\rule[-6mm]{0mm}{0mm}
+
+
+
+La fonction $f$ étant positive, la convergence de l'intégrale proposée équivaut à l'intégrabilité de la fonction $f$ sur $[0,+\infty[$, intégrabilité elle-même équivalente à la convergence de la série numérique de terme général $u_n =\int_{n\pi}^{(n+1)\pi}\frac{1}{1+x^3\sin^2x}\;dx$.
+
+
+
+Soit $n\in\Nn^*$. On a $u_n\geqslant0$ et d'autre part
+
+
+
+\begin{align*}\ensuremath
+
+u_n&=\int_{n\pi}^{(n+1)\pi}\frac{1}{1+x^3\sin^2x}\;dx=\int_{0}^{\pi}\frac{1}{1+(u+n\pi)^3\sin^2u}\;du\\
+
+ &\leqslant\int_{0}^{\pi}\frac{1}{1+n^3\pi^3\sin^2}\;du = 2\int_{0}^{\pi/2}\frac{1}{1+n^3\pi^3\sin^2u}\;du\\
+
+ &\leqslant2\int_{0}^{\pi/2}\frac{1}{1+n^3\pi^3\left(\frac{2u}{\pi}\right)^2}\;du\;(\text{par concavité de la fonction sinus sur}\;[0,\pi])\\
+
+ &= 2\times\frac{1}{2\sqrt{\pi}n^{3/2}}\int_{0}^{(n\pi)^{3/2}}\frac{1}{1+v^2}\;dv\leqslant\frac{1}{\sqrt{\pi}n^{3/2}}\int_{0}^{+\infty}\frac{1}{1+v^2}\;dv =\frac{\sqrt{\pi}}{2n^{3/2}}.
+
+\end{align*}
+
+
+
+	
+
+Donc, pour $n\in\Nn^*$, $0\leqslant u_n\leqslant\frac{\sqrt{\pi}}{2n^{3/2}}$ et la série de terme général $u_n$ converge. On en déduit que la fonction $f~:~x\mapsto\frac{1}{1+x^3\sin^2x}$ est intégrable sur $[0,+\infty[$.
+
+\end{enumerate}
+
+\fincorrection
+
+\finexercice
+

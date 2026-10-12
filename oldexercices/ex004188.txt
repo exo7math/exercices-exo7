@@ -1,0 +1,27 @@
+\exercice{4188, quercia, 2010/03/11}
+\enonce[ENS MP 2002]
+
+Soit $f:{\R^2}\to\R$ de classe $\mathcal{C}^2$ telle que 
+$|f(x)|/\|x\| \to +\infty$ lorsque $\|x\|\to\infty$.
+Prouver que $\nabla f$ est surjective sur $\R^2$.
+
+\finenonce
+
+\noindication
+
+\correction
+Sinon il existe $a\in\R^2$ telle que $g$~: $x \mapsto f(x)-(a\mid x)$
+n'a pas de point critique, donc pas de minimum ni de maximum.
+On a aussi $|g(x)|/\|x\|\to +\infty$ lorsque $\|x\|\to\infty$ d'où $\sup(g) = +\infty$
+et $\inf(g) = -\infty$.
+Considérons pour $r> 0$ $E_r = \{x\in\R^2\text{ tq }\|x\|\ge r\}$~: $g(E_r)$ est une partie connexe
+de~$\R$ donc un intervalle, et $\sup(g(E_r)) = \sup(g) = +\infty$,
+$\inf(g(E_r)) = \inf(g) = -\infty$, d'où $g(E_r) = \R$. Ainsi il existe des $x$ de normes arbitrairement
+grandes tels que $g(x) = 0$ en contradiction avec la
+propriété $|g(x)|/\|x\| \to +\infty$ lorsque $\|x\|\to\infty$.
+
+Remarque~: l'hypothèse $f$ de classe $\mathcal{C}^2$ est surabondante, la classe $\mathcal{C}^1$
+suffit à conclure.
+\fincorrection
+
+\finexercice

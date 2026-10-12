@@ -1,0 +1,96 @@
+\exercice{5446, rouget, 2010/07/10}
+\enonce[***IT]
+Limites de 
+$$\begin{array}{llll}
+1)\;\frac{1}{n^3}\sum_{k=1}^{n}k^2\sin\frac{k\pi}{n}&2)\;(\frac{1}{n!}\prod_{k=1}^{n}(a+k))^{1/n}\;(a>0\;\mbox{donné})&3)\;\sum_{k=1}^{n}\frac{n+k}{n^2+k}&4)\;\sum_{k=1}^{n}\frac{1}{\sqrt{n^2-k^2}}\\  
+5)\;\frac{1}{n\sqrt{n}}\sum_{k=1}^{n}E(\sqrt{k})&6)\;\sum_{k=1}^{n}\frac{k^2}{8k^3+n^3}&7)\;\sum_{k=n}^{2n-1}\frac{1}{2k+1}&8)\;n\sum_{k=1}^{n}\frac{e^{-n/k}}{k^2}
+\end{array}  
+$$
+\finenonce
+
+\noindication
+
+\correction
+
+\begin{enumerate}
+\item  Pour $n\geq1$, 
+
+$$u_n=\frac{1}{n^3}\sum_{k=1}^{n}k^2\sin\frac{k\pi}{n}=\frac{1}{n}\sum_{k=1}^{n}(\frac{k}{n})^2\sin\frac{k\pi}{n}
+=\frac{1}{n}\sum_{k=1}^{n}f(\frac{k}{n}),$$
+
+où $f(x)=x^2\sin(\pi x)$. $u_n$ est donc une somme de \textsc{Riemann} à pas constant associée à la fonction continue $f$ sur $[0,1]$. Quand $n$ tend vers $+\infty$, le pas $\frac{1}{n}$ tend vers $0$ et on sait que $u_n$ tend vers
+ 
+\begin{align*}\ensuremath
+\int_{0}^{1}x^2\sin(\pi x)\;dx&=\left[-\frac{1}{\pi}x^2\cos(\pi x)\right]_{0}^{1}+\frac{2}{\pi}\int_{0}^{1}x\cos(\pi x)\;dx
+=\frac{1}{\pi}+\frac{2}{\pi}(\left[\frac{1}{\pi}x\sin(\pi x)\right]_{0}^{1}-\frac{1}{\pi}\int_{0}^{1}\sin(\pi x)\;dx)\\
+  &=\frac{1}{\pi}-\frac{2}{\pi^2}\left[-\frac{1}{\pi}\cos(\pi x)\right]_{0}^{1}=\frac{1}{\pi}-\frac{2}{\pi^2}(\frac{1}{\pi}+\frac{1}{\pi})\\
+  &=\frac{1}{\pi}-\frac{4}{\pi^3}.
+\end{align*}
+
+\item  On peut avoir envie d'écrire~:~
+
+$$\ln(u_n)=\frac{1}{n}(\sum_{k=1}^{n}(\ln(a+k)-\ln k))=\frac{1}{n}\sum_{k=1}^{n}\ln(1+\frac{a}{k}).$$
+
+La suite de nombres $a$, $\frac{a}{2}$,..., $\frac{a}{n}$ \og est une subdivision (à pas non constant) de $[0,a]$~\fg~mais malheureusement son pas $a-\frac{a}{2}=\frac{a}{2}$ ne tend pas vers $0$ quand $n$ tend vers $+\infty$. On n'est pas dans le même type de problèmes.
+
+Rappel. (exo classique) Soit $v$ une suite strictement positive telle que la suite $(\frac{v_{n+1}}{v_n})$ tend vers un réel positif $\ell$, alors la suite $(\sqrt[n]{v_n})$ tend encore vers $\ell$.
+
+Posons $v_n=\frac{1}{n!}\prod_{k=1}^{n}(a+k)$ puis $u_n=\sqrt[n]{v_n}$.
+
+$$\frac{v_{n+1}}{v_n}=\frac{a+n+1}{n+1}\rightarrow1,$$
+
+et donc $\lim_{n\rightarrow +\infty}u_n=1$.
+
+\item  Encore une fois, ce n'est pas une somme de \textsc{Riemann}. On tente un encadrement assez large~:~pour $1\leq k\leq n$, 
+
+$$\frac{n+k}{n^2+n}\leq\frac{n+k}{n^2+k}\leq\frac{n+k}{n^2}.$$
+
+En sommant ces inégalités, il vient 
+
+$$\frac{1}{n^2+n}\sum_{k=1}^{n}(n+k)\leq\sum_{k=1}^{n}\frac{n+k}{n^2+k}\leq\frac{1}{n^2}\sum_{k=1}^{n}(n+k),$$
+
+et donc ((premier terme + dernier terme)$\times$nombre de termes/2),
+
+$$\frac{1}{n^2+n}\frac{((n+1)+2n)n}{2}\leq u_n\leq\frac{1}{n^2}\frac{((n+1)+2n)n}{2},$$
+
+et finalement, $\frac{3n+1}{2(n+1)}\leq u_n\leq\frac{3n+1}{2n}$. Or, $\frac{3n+1}{2(n+1)}$ et $\frac{3n+1}{2n}$ tendent tous deux vers $\frac{3}{2}$. Donc, $u_n$ tend vers $\frac{3}{2}$.
+
+\item  Tout d'abord
+
+$$u_n=\sum_{k=1}^{n}\frac{1}{\sqrt{n^2-k^2}}=\frac{1}{n}\sum_{k=1}^{n}\frac{1}{\sqrt{1-(\frac{k}{n})^2}}=
+\frac{1}{n}\sum_{k=1}^{n}f(\frac{k}{n}),$$ 
+
+où $f(x)=\frac{1}{\sqrt{1-x^2}}$ pour $x\in[0,1[$. $u_n$ est donc effectivement une somme de \textsc{Riemann} à pas constant associée à la fonction $f$ mais malheureusement, cette fonction n'est pas continue sur $[0,1]$, ou même prolongeable par continuité en $1$. On s'en sort néanmoins en profitant du fait que $f$ est croissante sur $[0,1[$.
+
+Puisque $f$ est croissante sur $[0,1[$, pour $1\leq k\leq n-2$, on a $\frac{1}{n}\frac{1}{\sqrt{1-(\frac{k}{n})^2}}\leq\int_{k/n}^{(k+1)/n}\frac{1}{\sqrt{1-x^2}}\;dx$, et pour $1\leq k\leq n-1$, $\frac{1}{n}\frac{1}{\sqrt{1-(\frac{k}{n})^2}}\geq\int_{(k-1)/n}^{k/n}\frac{1}{\sqrt{1-x^2}}\;dx$. En sommant ces inégalités, on obtient
+
+$$u_n=\frac{1}{n}\sum_{k=1}^{n-1}\frac{1}{\sqrt{1-(\frac{k}{n})^2}}\geq\sum_{k=1}^{n-1}\int_{(k-1)/n}^{k/n}\frac{1}{\sqrt{1-x^2}}\;dx=\int_{0}^{1-\frac{1}{n}}\frac{1}{\sqrt{1-x^2}}\;dx=\Arcsin(1-\frac{1}{n}),$$
+
+et 
+
+\begin{align*}\ensuremath
+u_n&=\frac{1}{n}\sum_{k=1}^{n-2}\frac{1}{\sqrt{1-(\frac{k}{n})^2}}+\frac{1}{\sqrt{n^2-(n-1)^2}}\leq\int_{\frac{1}{n}}^{1-\frac{1}{n}}\frac{1}{\sqrt{1-x^2}}\;dx+\frac{1}{\sqrt{2n-1}}\\
+ &=\Arcsin(1-\frac{1}{n})-\Arcsin\frac{1}{n}+\frac{1}{\sqrt{2n-1}}.
+\end{align*}
+
+Quand $n$ tend vers $+\infty$, les deux membres de cet encadrement tendent vers $\Arcsin1=\frac{\pi}{2}$, et donc $u_n$ tend vers $\frac{\pi}{2}$.
+
+\item  Pour $1\leq k\leq n$, $\sqrt{k}-1\leq E(\sqrt{k})\leq \sqrt{k}$, et en sommant,
+
+$$\frac{1}{n\sqrt{n}}\sum_{k=1}^{n}\sqrt{k}-\frac{1}{\sqrt{n}}\leq u_n\leq \frac{1}{n\sqrt{n}}\sum_{k=1}^{n}\sqrt{k}.$$
+
+Quand $n$ tend vers $+\infty$, $\frac{1}{\sqrt{n}}$ tend vers $0$ et la somme de \textsc{Riemann} $\frac{1}{n\sqrt{n}}\sum_{k=1}^{n}\sqrt{k}=\frac{1}{n}\sum_{k=1}^{n}\sqrt{\frac{k}{n}}$ tend vers $\int_{0}^{1}\sqrt{x}\;dx=\frac{3}{2}$. Donc, $u_n$ tend vers $\frac{3}{2}$.
+
+\item  $u_n=\frac{1}{n}\sum_{k=1}^{n}\frac{(k/n)^2}{1+8(k/n)^3}$ tend vers $\int_{0}^{1}\frac{x^2}{8x^3+1}\;dx=\left[\frac{1}{24}\ln|8x^3+1|\right]_{0}^{1}=\frac{\ln3}{12}$.
+
+\item  $u_n=\sum_{k=0}^{n-1}\frac{1}{2(k+n)+1}=\frac{1}{2}\frac{2}{n}\sum_{k=0}^{n-1}\frac{1}{2+\frac{2k+1}{n}}$ tend vers $\frac{1}{2}\int_{0}^{2}\frac{1}{2+x}\;dx=\frac{1}{2}(\ln4-\ln2)=\ln2$.
+
+\item  Soit $f(x)=\frac{1}{x^2}e^{-1/x}$ si $x>0$ et $0$ si $x=0$. $f$ est continue sur $[0,1]$ (théorèmes de croissances comparées). Donc, $u_n=\frac{1}{n}\sum_{k=1}^{n}f(\frac{k}{n})$ tend vers $\int_{0}^{1}f(x)\;dx$. Pour $x\in[0,1]$, posons $F(x)=\int_{x}^{1}f(t)\;dt$. Puisque $f$ est continue sur $[0,1]$, $F$ l'est et
+
+$$\int_{0}^{1}f(x)\;dx=F(0)=\lim_{x\rightarrow 0,\;x>0}F(x)=\lim_{x\rightarrow 0,\;x>0}\left[e^{-1/t}\right]_{x}^{1}=\lim_{x\rightarrow 0,\;x>0}(e^{-1}-e^{-1/x})=\frac{1}{e}.$$
+
+Donc, $u_n$ tend vers $\frac{1}{e}$ quand $n$ tend vers $+\infty$.
+
+\end{enumerate}
+\fincorrection
+\finexercice

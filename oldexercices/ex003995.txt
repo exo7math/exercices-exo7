@@ -1,0 +1,27 @@
+\exercice{3995, quercia, 2010/03/11}
+\enonce[Fonction positive concave]
+
+Soit $f : {[0,+\infty[} \to {[0,+\infty[}$ concave.
+
+\begin{enumerate}
+  \item Montrer que la fonction $x \longmapsto \frac {f(x)}x$
+    est décroissante sur $]0,+\infty[$.
+  \item  Montrer que : $\forall\ x,y \ge 0,\ f(x+y) \le f(x) + f(y)$.
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Soient $x < y$ : $\frac {f(x)-f(0)}{x-0} \ge \frac {f(y)-f(0)}{y-0}
+     \Rightarrow  \frac {f(x)}x \ge \frac {f(y)}y + f(0)\left(\frac 1x - \frac 1y\right)$.
+  \item    Pour $x < y$ : $f(x+y) \le tf(x) + (1-t)f(y)$ avec $t = \frac x{x-y} < 0$,
+
+     donc $f(x+y) - f(x) - f(y) \le \frac {xy}{x-y}\left( \frac {f(x)}x -
+     \frac {f(y)}y \right) \le 0$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

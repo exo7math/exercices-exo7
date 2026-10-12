@@ -1,0 +1,65 @@
+\exercice{2507, queffelec, 2009/04/01}
+\enonce 
+Soit $f$ une application
+diff\'erentiable de $\Rr^2$ dans lui-m\^eme, propre (i.e.
+$||f(x)||$ tend vers $\infty$ quand $||x||\to\infty$), telle que
+pour tout $x\in\Rr^2$ $Df(x)$ soit injective. On va montrer que
+$f$ est surjective. Soit $a\in\Rr^2$ et $g(x)=||f(x)-a||^2$;
+\begin{enumerate}
+\item Calculer $Dg(x)$.
+
+\item Montrer que $g$ atteint sa borne inf\'erieure en un point
+$x_0$ de $\Rr^2$, et que $Dg(x_0)=0$; en d\'eduire le r\'esultat.
+
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item On a $g(x,y)=<f(x,y)-a,f(x,y)-a>$ o\`u $<.,.>$ est le
+produit scalaire Euclidien sur $\mathbb{R}^2$. L'application $g$
+est diff\'erentiable en tant que compos\'ee et produit de
+fonctions diff\'erentiables. La diff\'erentielle $Df$ est donn\'e
+par la matrice Jacobienne
+$$(\frac{\partial f(x,y)}{\partial x}, \frac{\partial
+f(x,y)}{\partial y})$$ et $Dg$ par la matrice
+$$(\frac{\partial g(x,y)}{\partial x}, \frac{\partial
+g(x,y)}{\partial y})$$On a alors
+$$\frac{\partial g(x,y)}{\partial
+x}=\frac{\partial}{\partial x} <f(x,y)-a,f(x,y)-a>=$$
+$$<\frac{\partial}{\partial
+x}(f(x,y)-a),f(x,y)-a>+<f(x,y)-a,\frac{\partial}{\partial
+x}(f(x,y)-a)>=$$
+$$2<\frac{\partial f(x,y)}{\partial x},f(x)-a>.$$
+De m\^eme, $$\frac{\partial g(x,y)}{\partial y}=2<\frac{\partial
+f(x,y)}{\partial y},f(x)-a>.$$ \item L'application $f$ est
+continue (car diff\'erentiable) et tend vers l'infini quand
+$(x,y)$ tend vers l'infini. Ainsi
+$$\forall A >0, \exists B >0, ||(x,y)|| \geq B \Rightarrow
+||f(x,y)||\geq A.$$ Soit $m=\inf_{(x,y)\in \mathbb{R}^2} g(x,y)$,
+pour $A=m+1$, il existe $B >0$ tel que $$||(x,y)|| \geq B
+\Rightarrow g(x,y)=||f(x,y)||^2 \geq A^2\geq (m+1)^2 \geq m+1.$$
+On a donc $$m=\inf_{(x,y)\in \mathbb{R}^2} g(x,y)=\inf_{||(x,y)||
+\leq B} g(x,y).$$ Or la boule $\overline B(0,B)$ \'etant compacte
+et $g$ continue, l'inf y est ateint en un point $X_0=(x_0,y_0) \in
+B(0,B) \subset \mathbb{R}^2$. Comme $X_0$ est un minimum global de
+$g$, c'est aussi un minimum de la restriction de $g$ sur toute
+droite passant par $X_0$. Comme la d\'eriv\'e d'une fonction
+r\'eelle en un minimum est nulle, toute les d\'eriv\'ees
+partielles de $g$ sont nulles et donc $Dg(X_0)=0$ et par
+cons\'equent la matrice jacobienne de $g$ est nulle. On a donc
+$$\frac{\partial g}{\partial x}(x_0,y_0)=2<\frac{\partial
+f}{\partial x}(x_0,y_0),f(x)-a>=0 \mbox{ et } \frac{\partial
+g}{\partial y}(x_0,y_0)=2<\frac{\partial f}{\partial
+y}(x_0,y_0),f(x)-a>=0.$$ Comme $Df$ est injective, ses colonnes
+forment une base de $\mathbb{R}^2$. Par cons\'equent les
+projections de $f(x)-a$ sur la base $(\frac{\partial f}{\partial
+x}(x_0,y_0);\frac{\partial f}{\partial x}(x_0,y_0))$ sont nulles
+et donc $$f(x_0,y_0)-a=0 \Leftrightarrow f(x_0,y_0)=a$$ et donc
+$a$ admet bien un ant\'ec\'edent. Ceci \'etant valable pour tout
+$a\in \mathbb{R}^2$, on a montr\'e que $f$ est surjective.
+\end{enumerate}
+\fincorrection
+\finexercice

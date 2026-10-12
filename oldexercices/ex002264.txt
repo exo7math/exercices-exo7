@@ -1,0 +1,17 @@
+\exercice{2264, barraud, 2008/04/24}
+\enonce
+Pour $n,m\ge 2$, d\'eterminer le reste de la division
+euclidienne du polynôme \mbox{$(x-2)^m+(x-1)^n-1$} par $(x-1)(x-2)$ 
+dans $\Zz[x]$.
+\finenonce 
+
+\noindication
+
+\correction
+Notons $(Q,R)$ le quotient et le reste de cette division euclidienne:
+  $(x-2)^{m}+(x-1)^{n}-1=Q(x-2)(x-1)+R$ avec $\deg(R)\leq 1$. Notons
+  $R=ax+b$. En évaluant en $1$, on obtient $(-1)^{m}-1=a+b$, et en
+  évaluant en $2$, $2a+b=0$. On en déduit $b=-2a$ et $a=1-(-1)^{m}$, soit
+  $R=(1-(-1)^{m})(x-2)$.
+\fincorrection
+\finexercice

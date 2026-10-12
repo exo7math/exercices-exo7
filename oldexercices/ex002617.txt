@@ -1,0 +1,50 @@
+\exercice{2617, debievre, 2009/05/19}
+\enonce
+
+D\'eterminer si chacune des parties suivantes du plan
+sont ouvertes ou
+ferm\'ees, ou ni l'un ni l'autre. D\'eterminer chaque fois l'int\'erieur 
+et l'adh\'erence. 
+\begin{enumerate}
+  \item $ A_1=\{ (x, y)\in\R^2 | x^2y^2 > 1\}$,
+  \item $ A_2=\{ (x,y)\in\R^2 | x^2+y^2=1, y>0\}$.
+\end{enumerate}
+\finenonce
+
+\indication
+Exploiter les propri\'et\'es g\'eom\'etriques
+des parties du plan qui d\'efinissent $A_1$ et $A_2$. Par exemple,
+une courbe qui est d\'efinie comme \'etant l'image r\'eciproque d'un point
+relativement \`a une fonction continue est une partie ferm\'ee du plan.
+\finindication
+
+\correction
+\begin{enumerate}
+\item La partie $A_1$ est ouverte.
+Car la courbe $x^2y^2 = 1$ a quatre branches,
+les deux branches de $xy = 1$ et les deux branches de
+$xy = -1$; ces quatre branches coupent le plan en cinq parties dont une
+contient l'origine.
+La courbe $x^2y^2 = 1$ \'etant une partie ferm\'ee,
+le compl\'ementaire est un ouvert qui est r\'eunion de cinq ouverts.
+La partie $A_1$ est la r\'eunion des quatre parties
+qui ne contiennent pas l'origine.
+Puisque $A_1$ est ouvert, $A_1$ co\"\i ncide avec son int\'erieur.
+L'adh\'erence de $A_1$ est la r\'eunion de $A_1$ avec les quatre branches
+de la courbe $x^2y^2 = 1$.
+
+\item La partie $A_2$ est le demi-cercle de rayon 1 ayant l'origine pour
+centre constitu\'e des angles $0<\varphi<\pi$ en radians
+et ce n'est ni ouvert ni ferm\'e.
+La partie $A_2$ n'est pas ouverte car aucun disque de rayon positif n'est 
+dans $A_2$; elle n'est pas ferm\'ee car les points $(\pm 1,0)$ sont
+des points d'adh\'erence qui n'appartiennent pas \`a $A_2$.
+L'adh\'erence de $A_2$ est la partie
+\[
+\{ (x,y)\in\R^2 | x^2+y^2=1, y\geq 0\}
+\] 
+du plan.
+\end{enumerate}
+
+\fincorrection
+\finexercice

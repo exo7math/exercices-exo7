@@ -1,0 +1,49 @@
+\exercice{5504, rouget, 2010/07/15}
+\enonce[**T]
+Dans $\Rr^3$, espace vectoriel euclidien orienté rapporté à la base orthonormée directe $(i,j,k)$, déterminer l'image du plan d'équation $x+y=0$ par \begin{enumerate}
+ \item  la symétrie orthogonale par rapport au plan d'équation $x-y+z=0$,  
+ \item  la symétrie orthogonale par rapport au vecteur $(1,1,1)$,  
+ \item  par la rotation d'angle $\frac{\pi}{4}$ autour du vecteur $(1,1,1)$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+Notons $P$ le plan d'équation $x+y=0$ dans la base $\mathcal{B}=(i,j,k)$. $P$ est le plan de vecteur normal $n=i+j$.
+
+\begin{enumerate}
+ \item  Soit $s$ la symétrie orthogonale par rapport au plan $P'$ d'équation $x-y+z=0$. $s(P)$ est le plan de vecteur normal $s(n)$. 
+Or, le vecteur $n$ est dans $P'$  et donc $s(n)=n$ puis $s(P)=P$.
+
+\begin{center}
+\shadowbox{
+$s(P)$ est le plan $P$.
+}
+\end{center}
+ \item  Notons $\sigma$ la symétrie orthogonale par rapport au vecteur $u=(1,1,1)$. $\sigma(P)$ est le plan de vecteur normal 
+
+\begin{center}
+$\sigma(n)=2\frac{n.u}{\|u\|^2}u-n=2\frac{2}{3}(1,1,1)-(1,1,0)=\frac{1}{3}(1,1,4)$.
+\end{center}
+
+\begin{center}
+\shadowbox{
+$\sigma(P)$ est le plan d'équation $x+y+4z=0$.
+}
+\end{center}
+ \item  Notons $r$ la rotation d'angle $\frac{\pi}{4}$ autour du vecteur unitaire $u=\frac{1}{\sqrt{3}}(1,1,1)$. $r(P)$ est le plan de vecteur normal 
+\begin{align*}\ensuremath
+r(n)&=\left(\cos\frac{\pi}{4}\right)n+\left(1-\cos\frac{\pi}{4}\right)(n.u)u+\left(\sin\frac{\pi}{4}\right)u\wedge n\\
+ &=\frac{1}{\sqrt{2}}(1,1,0)+\left(1-\frac{1}{\sqrt{2}}\right)\times\frac{2}{3}(1,1,1)+\frac{1}{\sqrt{2}}\times\frac{1}{\sqrt{3}}(-1,1,0)\\
+ &=\frac{1}{3\sqrt{2}}(3+2(\sqrt{2}-1)-\sqrt{3},3+2(\sqrt{2}-1)+\sqrt{3},2(\sqrt{2}-1))=\frac{1}{3\sqrt{2}}(1+2\sqrt{2}-\sqrt{3},1+2\sqrt{2}+\sqrt{3},2(\sqrt{2}-1)).
+\end{align*}
+
+\begin{center}
+\shadowbox{
+$r(P)$ est le plan d'équation $(1+2\sqrt{2}-\sqrt{3})x+(1+2\sqrt{2}+\sqrt{3})y+2(\sqrt{2}-1)z=0$.
+}
+\end{center}
+\end{enumerate}
+\fincorrection
+\finexercice

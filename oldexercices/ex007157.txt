@@ -1,0 +1,31 @@
+\exercice{7157, megy, 2017/05/13}
+\enonce
+% groupes de frises
+\begin{enumerate}
+\item Soit $\mathcal S \subset \R^2$ le graphe de la fonction sinus. Décrire les isométries de $\mathcal S$. 
+\item Même question pour le graphe de la fonction tangente.
+\end{enumerate}
+\finenonce
+\indication 
+Pour les translations ou symétries glissées, commencer par montrer que le vecteur doit être horizontal.
+\finindication
+\correction
+\begin{enumerate}
+\item
+Soit $\phi$ un déplacement préservant $\mathcal S$. C'est une translation ou une rotation.
+% pas le groupe car il est un peu compliqué : c'est Z semi-direct Z/2Z.
+\begin{enumerate}
+\item Si $\phi$ est une translation de vecteur $\vec v$, alors $\vec v$ est horizontal (s'il avait une composante verticale, alors pour $n$ grand et $s\in \mathcal S$, le point $\phi^n(s)$ aurait une ordonnée qui n'appartiendrait pas à $[-1;1]$ ce qui est impossible. Si $\vec v $ est horizontal, on en déduit que $||\vec v||$ soit être une période de sinus, donc un multiple de $2\pi$. Réciproquement, toute translation horizontale d'un multiple de $2\pi$ est une isométries de $\mathcal S$.
+\item Si $\phi$ est une rotation, alors son centre est un point de la forme $(n\pi,0)$ pour un certain $n\in \Z$, et l'angle est $\pi$, autrement dit $\phi$ est une symétrie centrale.
+
+Réciproquement, les symétries centrales de centres les points $(n\pi,0)$ pour $n\in \Z$ sont dans $G$. La composée de deux telles symétries est une des translations trouvées plus haut.
+\end{enumerate}
+Déterminons maintenant les antidéplacements préservant $\mathcal A$. Un antidéplacement est soit une réflexion soit une réflexion glissée.
+\begin{enumerate}
+\item Si $\phi$ est une réflexion, son axe est forcément vertical par un argument similaire à celui plus haut. On en déduit ensuite que l'axe doit être une droite d'équation $x=\pi/2+n\pi$ avec $n$ un certain entier relatif.
+\item Si $\phi$ est une réflexion glissée, la direction de glissement doit être horizontale (idem), et on en déduit ensuite que la longueur de translation doit être un multiple de $\pi$.
+\end{enumerate}
+ \item On trouve les translations horizontales de vecteur de norme multiple de $\pi$ et les symétries centrales dont le centre est de la forme $(k\pi,0)$ pour $k\in\Z$. 
+ \end{enumerate}
+\fincorrection  
+\finexercice  

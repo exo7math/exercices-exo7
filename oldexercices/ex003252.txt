@@ -1,0 +1,26 @@
+\exercice{3252, quercia, 2010/03/08}
+
+\enonce[Crit{\`e}re d'irr{\'e}ductibilit{\'e} d'Eisenstein]
+Soit $P\in\Z[X]$, $P=X^n+a_{n-1}X^{n-1}+\dots+a_0X^0$ et $p$ un
+nombre premier tel que~:
+$$a_0\equiv 0 (\mathrm{mod}\, p),\quad\dots,\quad a_{n-1}\equiv 0 (\mathrm{mod}\, p),\quad
+a_0\not\equiv 0 (\mathrm{mod}\, {p^2}).$$
+Montrer que $P$ est irr{\'e}ductible dans $\Z[X]$.
+
+\finenonce
+
+\noindication
+
+\correction
+Soit $P = QR$ avec
+$Q=X^{n_1}+b_{n_1-1}X^{n_1-1}+\dots+b_0X^0$ et
+$R=X^{n_2}+c_{n_2-1}X^{n_2-1}+\dots+c_0X^0$.
+
+Par hypoth{\`e}se sur $a_0 = b_0c_0$, $p$ divise un et un seul des entiers
+$b_0$, $c_0$.
+Supposons que $p$ divise $b_0,b_1,\dots,b_{k-1}$~:
+alors $a_k \equiv b_kc_0 (\mathrm{mod}\, p)$ donc $p$ divise $b_k$.
+On aboutit {\`a} \og$p$ divise le coefficient dominant
+de $Q$\fg, ce qui est absurde.
+\fincorrection
+\finexercice 

@@ -1,0 +1,169 @@
+\exercice{5137, rouget, 2010/06/30}
+\enonce[IT Identités combinatoires]
+ \emph{La difficulté va en augmentant graduellement de facile à assez difficile sans être
+insurmontable.}
+
+\begin{enumerate}
+\item  Calculer $\binom{n}{0}+\binom{n}{1}+...+\binom{n}{n}$.
+\item  Montrer que $\binom{n}{0}+\binom{n}{2}+\binom{n}{4}+...=\binom{n}{1}+\binom{n}{3}+\binom{n}{5}+...$ et trouver la valeur commune des
+deux sommes.
+\item  Calculer les sommes $\binom{n}{0}+\binom{n}{3}+\binom{n}{6}+...$ et $\binom{n}{0}+\binom{n}{4}+\binom{n}{8}+...$.
+
+\item  Montrer que $\forall n\in\Nn^*,\;\forall k\in\llbracket1,n\rrbracket,\;k\binom{n}{k}=n\binom{n-1}{k-1}$.
+\item  Montrer que $\binom{n}{0}^2 +\binom{n}{1}^2 + ... +\binom{n}{n}^2 =\binom{2n}{n}$ (utiliser le polynôme $(1+x)^{2n}$).
+\item  Calculer les sommes $0.\binom{n}{0}+1.\binom{n}{1}+ ...+n.\binom{n}{n}$ et $\frac{\binom{n}{0}}{1}+\frac{\binom{n}{1}}{2}+...
++\frac{\binom{n}{n}}{n+1}$ (considérer dans chaque cas un certain polynôme astucieusement choisi).
+\item  Montrer que $\binom{p}{p}+\binom{p+1}{p}... +\binom{n}{p}=\binom{n+1}{p+1}$ où $0\leq p\leq n$. Interprétation dans le triangle de \textsc{Pascal}~?
+\item 
+\begin{enumerate}
+\item Soit $I_n=\int_{0}^{1}(1-x^2)^n\;dx$. Trouver une relation de récurrence liant $I_n$ et $I_{n+1}$ et en déduire
+$I_n$ en fonction de $n$ (faire une intégration par parties dans $I_n-I_{n+1}$).
+\item Démontrer l'identité valable pour
+$n\geq1$~:~$1-\frac{\binom{n}{1}}{3}+\frac{\binom{n}{2}}{5}+...+(-1)^n\frac{\binom{n}{n}}{2n+1}
+=\frac{2.4.....(2n)}{1.3...(2n+1)}$.
+\end{enumerate}
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  D'après la formule du binôme de \textsc{Newton},
+\begin{center}
+\shadowbox{
+$\forall n\in\Nn,\;\sum_{k=0}^{n}\binom{n}{k}=(1+1)^n=2^n.$
+}
+\end{center}
+
+\item  Soit $n$ un entier naturel non nul. Posons $S_1=\sum_{k=0}^{E(n/2)}\binom{n}{2k}$ et
+$S_2=\sum_{k=0}^{E((n-1)/2)}\binom{n}{2k+1}$. Alors
+
+$$S_1-S_2=\sum_{k=0}^{n}(-1)^k\binom{n}{k}=(1-1)^n=0\;(\mbox{car}\;n\geq1),$$
+et donc $S_1=S_2$. Puis $S_1+S_2=\sum_{k=0}^{n}\binom{n}{k}=2^n$, et donc $S_1=S_2=2^{n-1}$.
+\begin{center}
+\shadowbox{
+$\forall n\in\Nn^*,\;\binom{n}{0}+\binom{n}{2}+\binom{n}{4}+\ldots=\binom{n}{1}+\binom{n}{3}+\binom{n}{5}+\ldots=2^{n-1}.$
+}
+\end{center}
+
+\item  En posant $j=e^{2i\pi/3}$, on a~:
+
+$$\sum_{k=0}^{n}\binom{n}{k}=(1+1)^n=2^n,\;\sum_{k=0}^{n}\binom{n}{k}j^k=(1+j)^n\;\mbox{et}\;\sum_{k=0}^{n}\binom{n}{k}j^{2k}
+=(1+j^2)^n.$$
+
+En additionnant ces trois égalités, on obtient
+
+$$\sum_{k=0}^{n}\binom{n}{k}(1+j^k+j^{2k})=2^n+(1+j)^n+(1+j^2)^n.$$
+
+Maintenant,
+\begin{itemize}
+\item[-] si $k\in3\Nn$, il existe $p\in\Nn$ tel que $k=3p$ et $1+j^k+j^{2k}=1+(j^3)^p+(j^3)^{2p}=3$ car $j^3=1$.
+\item[-] si $k\in3\Nn+1$, il existe $p\in\Nn$ tel que $k=3p+1$ et $1+j^k+j^{2k}=1+j(j^3)^p+j^2(j^3)^{2p}=1+j+j^2=0$
+\item[-] si $k\in3\Nn+2$, il existe $p\in\Nn$ tel que $k=3p+2$ et
+$1+j^k+j^{2k}=1+j^2(j^3)^p+j^4(j^3)^{2p}=1+j^2+j=0$.
+\end{itemize}
+
+Finalement, $\sum_{k=0}^{n}\binom{n}{k}(1+j^k+j^{2k})=3\sum_{k=0}^{E(n/3)}\binom{n}{3k}$. Par suite,
+
+\begin{align*}
+\sum_{k=0}^{E(n/3)}\binom{n}{3k}&=\frac{1}{3}(2^n+(1+j)^n+(1+j^2)^n)=\frac{1}{3}(2^n+2\Re((1+j)^n))\\
+ &=\frac{1}{3}(2^n+2\Re((-j^2)^n))=\frac{1}{3}(2^n+2\cos\frac{n\pi}{3})
+\end{align*}
+
+\item  Pour $1\leq k\leq n$, on a
+
+$$k\binom{n}{k}=k\frac{n!}{k!(n-k)!}=n\frac{(n-1)!}{(k-1)!((n-1)-(k-1))!}=k\binom{n-1}{k-1}.$$
+
+\item  $\binom{2n}{n}$ est le coefficient de $x^n$ dans le développement de $(1+x)^{2n}$. Mais d'autre part ,
+
+$$(1+x)^{2n}=(1+x)^n(1+x)^n=(\sum_{k=0}^{n}\binom{n}{k}x^k)(\sum_{k=0}^{n}\binom{n}{k}x^k).$$
+
+Dans le développement de cette dernière expression, le coefficient de $x^n$ vaut $\sum_{k=0}^{n}\binom{n}{k}\binom{n}{n-k}$ ou
+encore $\sum_{k=0}^{n}\binom{n}{k}^2$. Deux polynômes sont égaux si et seulement si ils ont mêmes
+coefficients et donc
+
+$$\binom{2n}{n}=\sum_{k=0}^{n}\binom{n}{k}^2.$$
+
+\item 
+\begin{itemize}
+\item[\textbf{1ère solution.}] Pour $x$ réel, posons $P(x)=\sum_{k=1}^{n}k\binom{n}{k}x^{k-1}$.
+
+Pour $x$ réel, $$P(x)=(\sum_{k=0}^{n}\binom{n}{k}x^{k})'=((1+x)^n)'=n(1+x)^{n-1}.$$
+
+En particulier, pour $x=1$, on obtient~:
+
+$$\sum_{k=1}^{n}k\binom{n}{k}=n(1+1)^{n-1}=n2^{n-1}.$$
+
+\item[\textbf{2ème solution.}] D'après 4),
+
+$$\sum_{k=1}^{n}k\binom{n}{k}=\sum_{k=1}^{n}n\binom{n-1}{k-1}=n\sum_{k=0}^{n-1}\binom{n-1}{k}=n(1+1)^{n-1}=n2^{n-1}.$$
+\end{itemize}
+
+\begin{itemize}
+\item[\textbf{1ère solution.}] Pour $x$ réel, posons $P(x)=\sum_{k=0}^{n}\binom{n}{k}\frac{x^{k+1}}{k+1}$. On a
+
+$$P'(x)=\sum_{k=0}^{n}\binom{n}{k}x^k=(1+x)^n,$$
+
+et donc, pour $x$ réel,
+
+$$P(x)=P(0)+\int_{0}^{x}P'(t)\;dt=\int_{0}^{1}(1+t)^n\;dt=\frac{1}{n+1}((1+x)^{n+1}-1).$$
+
+En particulier, pour $x=1$, on obtient
+
+$$\sum_{k=0}^{n}\frac{\binom{n}{k}}{k+1}=\frac{2^{n+1}-1}{n+1}.$$
+
+\item[\textbf{2ème solution.}] D'après 4), $(n+1)\binom{n}{k}=(k+1)\binom{n+1}{k+1}$ et donc
+
+$$\sum_{k=0}^{n}\frac{\binom{n}{k}}{k+1}=\sum_{k=0}^{n}\frac{\binom{n+1}{k+1}}{n+1}=\frac{1}{n+1}\sum_{k=1}^{n+1}\binom{n+1}{k}
+=\frac{1}{n+1}((1+1)^{n+1}-1)=\frac{2^{n+1}-1}{n+1}.$$
+\end{itemize}
+
+\item  Pour $1\leq k\leq n-p$, $\binom{p+k}{p}=\binom{p+k+1}{p+1}-\binom{p+k}{p+1}$ (ce qui reste vrai pour $k=p$ en tenant
+compte de $\binom{p}{p+1}=0$). Par suite,
+
+\begin{align*}
+\sum_{k=0}^{n-p}\binom{p+k}{p}&=1+\sum_{k=1}^{n-p}\binom{p+k+1}{p+1}-\binom{p+k}{p+1}=1+\sum_{k=2}^{n-p+1}\binom{p+k}{p+1}
+-\sum_{k=1}^{n-p}\binom{p+k}{p+1}\\
+ &=1+\binom{n+1}{p+1}-1=\binom{n+1}{p+1}.
+\end{align*}
+
+Interprétation dans le triangle de \textsc{Pascal}. Quand on descend dans le triangle de \textsc{Pascal}, le long de la
+colonne $p$, du coefficient $\binom{p}{p}$ (ligne $p$) au coefficient $\binom{p}{n}$ (ligne $n$), et que l'on additionne ces
+coefficients, on trouve$\binom{n+1}{p+1}$ qui se trouve une ligne plus bas et une colonne plus loin.
+
+\item 
+\begin{enumerate}
+\item Pour $n$ naturel donné, posons $I_n=\int_{0}^{1}(1-x^2)^n\;dx$. Une intégration par parties fournit:
+
+\begin{align*}
+I_n-I_{n+1}&=\int_{0}^{1}((1-x^2)^n-(1-x^2)^{n+1})\;dx=\int_{0}^{1}x^2(1-x^2)^n\;dx=\int_{0}^{1}x.x(1-x^2)^{n+1}\;dx\\
+ &=\left[-x\frac{(1-x^2)^{n+1}}{2(n+1)}\right]_{0}^{1}+\frac{1}{2(n+1)}\int_{0}^{1}(1-x^2)^{n+1}\;dx
+=\frac{1}{2(n+1)}I_{n+1}
+\end{align*}
+
+et donc $2(n+1)(I_n-I_{n+1})=I_{n+1}$ ou encore~:
+
+$$\forall n\in\Nn,\;(2n+3)I_{n+1}=2(n+1)I_n.$$
+
+On a déjà $I_0=1$. Puis, pour $n\geq1$,
+
+\begin{align*}
+I_n=\frac{2n}{2n+1}I_{n-1}=\frac{2n}{2n+1}\frac{2n-2}{2n-1}...\frac{2}{3}I_0=\frac{(2n)(2n-2)...2}{(2n+1)(2n-1)...3
+.1}.
+\end{align*}
+
+\item Pour $n$
+naturel non nul donné~:
+
+\begin{align*}
+1-\frac{\binom{n}{1}}{3}+\frac{\binom{n}{2}}{5}+...+(-1)^n\frac{\binom{n}{n}}{2n+1}&=\int_{0}^{1}(1-\binom{n}{1}x^2+\binom{n}{2}x^4+...
++(-1)^n\binom{n}{n}x^{2n})\;dx\\
+ &=\int_{0}^{1}(1-x^2)^n\;dx=I_n
+=\frac{(2n)(2n-2)...2}{(2n+1)(2n-1)...3.1}.
+\end{align*}
+
+\end{enumerate}
+\end{enumerate}
+\fincorrection
+\finexercice

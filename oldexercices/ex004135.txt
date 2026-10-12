@@ -1,0 +1,47 @@
+\exercice{4135, quercia, 2010/03/11}
+\enonce[Système autonome, ENS Ulm-Lyon-Cachan MP$^*$ 2006]
+On considère le système différentiel : $$(V) \Leftrightarrow\left\{\begin{array}{l} x' = x(1-y) \\ y' = y(x-1).\\ \end{array}\right.$$
+dont on cherche les solutions $(x, y)$ définies sur $\R$ à valeurs dans $(\R^{+*})^{2}$.
+
+\begin{enumerate}
+  \item Trouver une fonction $f \in \mathcal{C}^{2}((\R^{+*})^{2}, \R)$ telle que pour toute solution
+$(x, y)$ de $V$, $f(x, y)$ soit constante.
+
+  \item Montrer que les solutions de $(V)$ sont périodiques.
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $\frac{d}{d t}f(x,y) = x'\frac{\partial f}{\partial x} + y'\frac{\partial f}{\partial y}$ donc $f$ convient
+si $\frac{\partial f}{\partial x} = y(x-1)$ et $\frac{\partial f}{\partial y} = x(y-1)$ (condition suffisante).
+Il n'existe pas de telle fonction (thm. de Schwarz), mais on peut accepter
+$f$ telle que $\frac{\partial f}{\partial x} = \lambda(x,y)y(x-1)$ et $\frac{\partial f}{\partial y} = \lambda(x,y)x(y-1)$
+où $\lambda$ est une fonction bien choisie (appelée {\it facteur intégrant}).
+On voit immédiatement que $\lambda(x,y)=\frac1{xy}$ convient,
+d'où $f(x,y) = x+y-\ln(xy)$.
+  \item D'après le théorème d'unicité de Cauchy-Lipschitz,
+s'il existe $t_0$ tel que $x(t_0)=0$ alors $x(t)=0$ pour
+tout~$t$, et de même pour~$y$. Ainsi, si on fixe une
+condition initiale $x(0)>0$, $y(0)>0$ alors $x(t)>0$ et
+${y(t)>0}$ pour tout~$t$. 
+De plus, par le même raisonnement,
+si $(x(0),y(0))\ne(1,1)$ alors $(x(t),y(t))\ne(1,1)$ pour
+tout~$t$. Désormais on suppose ces conditions satisfaites.
+Soit $k=f(x(0),y(0))=x(0)+y(0)-\ln(x(0)y(0))$.
+Par étude de fonction, on voit que $k\ne 2$ et
+la courbe $C_k$ d'équation $f(x,y)=k$ est une courbe fermée de classe
+$\mathcal{C}^1$ entourant le point $(1,1)$. Le point $M_t=(x(t),y(t))$
+se déplace sur $C_k$ avec une vitesse numérique
+${d s/d t = \sqrt{x^2(1-y)^2 + y^2(x-1)^2}\ge\alpha_k>0}$
+où $\alpha_k$ ne dépend que de~$k$. On en déduit qu'une
+abscisse curviligne de~$M_t$ décrit~$\R$ quand $t$ décrit~$\R$.
+En particulier il existe $t_0>0$ tel que $s(t_0)-s(0)=\mathrm{longueur}(C_k)$
+ce qui implique $M_{t_0}=M_0$ et le mouvement est $t_0$-périodique.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

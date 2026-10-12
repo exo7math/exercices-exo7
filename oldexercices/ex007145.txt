@@ -1,0 +1,42 @@
+\exercice{7145, megy, 2017/05/01}
+\enonce
+Déterminer les éléments caractéristiques des transformations représentées par:
+\begin{enumerate} 
+\item $z\mapsto (1-i )z + i$;
+\item $z\mapsto i \bar z + 1-i$;
+\item $z\mapsto 2i\bar z +3$;
+\item $ z\mapsto \bar z + 1$.
+\end{enumerate}
+\finenonce
+
+\noindication 
+    
+\correction 
+\begin{enumerate}
+\item C'est une similitude directe de rapport $|1+i|=\sqrt 2$, d'angle $-\pi/4$. Son centre $\Omega$ est son (unique) point fixe, son affixe $\omega$ vérifie donc $\omega = (1-i)\omega + i $ c'est-à-dire $\omega=\frac{i}{i}=1$.
+\item C'est une similitude indirecte de rapport $|i|=1$, donc un antidéplacement. C'est donc une réflexion ou une réflexion glissée. Cherchons d'éventuels points fixes.
+
+Un point $z=x+iy$ est fixe ssi $x+iy = i(x-iy)+1-i = y+1+i(x-1)$ autrement dit ssi $x-y=1$.
+
+
+
+(Rédaction alternative de la recherche de points fixes, sans prendre la partie réelle et imaginaire : un point d'affixe $z$ est fixe ssi:
+\begin{align*}
+z=i\bar z +1-i
+&\Leftrightarrow z - i\bar z -1+i=0\\
+&\Leftrightarrow \overline{(1-i)}z +(1-i)\overline z -2=0
+\end{align*}
+On reconnaît l'équation complexe de la même droite.)
+
+L'antidéplacement est donc la réflexion d'axe d'équation $x-y-1=0$.
+\item C'est une similitude indirecte (notons-la $s$) de rapport $2$. Elle admet donc un point fixe d'affixe $\omega$ vérifiant $ \omega = 2i\bar \omega +3$, ce qui donne après calcul $\omega=-1-2i$.
+
+Soit $h$ l'homothétie de centre $\Omega$ et de rapport $2$. Alors la similitude $s$ s'écrit $h\circ \sigma$, avec $\sigma$ une réflexion que l'on peut obtenir comme $h^{-1}\circ s$. En coordonnée complexe, $h^{-1}$ s'écrit $z\mapsto \frac12 (z+1+2i)-1-2i = \frac12 z -\frac{1+2i}{2}$. En composant, on trouve que $\sigma$ est représentée par 
+\[z\mapsto \frac12 (2i\bar z+3) -\frac{1+2i}{2}
+=i\bar z +1-i.
+\]
+D'après la question précédente, c'est la réflexion d'axe $y=x-1$.
+\item C'est la réflexion glissée composée de la translation d'affixe $1$ et de la réflexion suivant l'axe des abscisses.
+\end{enumerate}
+\fincorrection  
+\finexercice  

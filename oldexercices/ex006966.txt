@@ -1,0 +1,83 @@
+\exercice{6966, blanc-centi, 2014/04/08}
+\video{BDJWi5Od7uA}
+\enonce
+Soit $n\in\Nn^*$ et $P(X)=c(X-a_1)\cdots(X-a_n)$ 
+(où les $a_i$ sont des nombres complexes et où $c\not=0$).
+\begin{enumerate}
+\item Exprimer à l'aide de $P$ et de ses dérivées les sommes suivantes:
+$$\sum_{k=1}^n\frac{1}{X-a_k}\quad\quad
+\sum_{k=1}^n\frac{1}{(X-a_k)^2}\quad\quad
+\sum_{\substack{1\le k,\ell\le n \\ k\not= \ell}}\frac{1}{(X-a_k)(X-a_\ell)}$$
+\item Montrer que si $z$ est racine de $P'$ mais pas de $P$, alors il existe 
+$\lambda_1,\hdots,\lambda_n$ des réels positifs ou nuls tels que 
+$\sum_{k=1}^n\lambda_k=1$ et $z=\sum_{k=1}^n\lambda_ka_k$. 
+Si toutes les racines de $P$ sont réelles, que peut-on en déduire sur les racines de $P'$ ?
+\end{enumerate}
+\finenonce 
+
+\indication
+Considérer $P'/P$ et sa dérivée, et enfin $P''/P$.
+\finindication
+
+\correction
+\begin{enumerate}
+\item 
+  \begin{enumerate}
+    \item Puisque $P(X)=c(X-a_1)\cdots(X-a_n)$ : 
+\begin{eqnarray*}
+P'(X)=&c(X-a_2)\cdots(X-a_n)+c(X-a_1)(X-a_3)\cdots(X-a_n)\\
+ &+\cdots+c(X-a_1)\cdots(X-a_{k-1})(X-a_{k+1})\cdots(X-a_n)\\
+ &\ \ \ \ \ \ +\cdots+c(X-a_1)\cdots(X-a_{n-1})
+\end{eqnarray*}
+La dérivée est donc la somme des termes de la forme : $\frac{c(X-a_1)\cdots(X-a_n)}{X-a_k} = \frac{P(X)}{X-a_k}$.
+
+Ainsi 
+$$P'(X) = \frac{P(X)}{X-a_1}+ \cdots + \frac{P(X)}{X-a_k}+ \cdots + \frac{P(X)}{X-a_n}.$$
+Donc :
+$$\frac{P'}{P}=\sum_{k=1}^n\frac{1}{X-a_k}$$
+
+  \item Puisque $\sum_{k=1}^n\frac{1}{(X-a_k)^2}$ est la dérivée de $-\sum_{k=1}^n\frac{1}{X-a_k}$, on obtient
+  par dérivation de $-\frac{P'}{P}$ :
+$$\frac{P'^2-PP''}{P^2}=\sum_{k=1}^n\frac{1}{(X-a_k)^2}$$
+
+  \item On a remarqué que la dérivée de $P'$ est la somme de facteurs $c(X-a_1)\cdots(X-a_n)$
+avec un des facteurs en moins, donc de la forme $\frac{c(X-a_1)\cdots(X-a_n)}{X-a_k} = \frac{P}{X-a_k}$. 
+De même $P''$ est la somme de facteurs $c(X-a_1)\cdots(X-a_n)$
+avec deux facteurs en moins, c'est-à-dire de la forme $\frac{c(X-a_1)\cdots(X-a_n)}{(X-a_k)(X-a_\ell)} = \frac{P}{(X-a_k)(X-a_\ell)}$ :
+$$P'' = \sum_{\substack{1\le k,\ell\le n \\ k\not= \ell}}\frac{P}{(X-a_k)(X-a_\ell)} \quad \text{ donc } \quad
+\frac{P''}{P} = \sum_{\substack{1\le k,\ell\le n \\ k\not= \ell}}\frac{1}{(X-a_k)(X-a_\ell)}$$
+
+% \begin{eqnarray*}
+% \sum_{k\not=l}\frac{1}{(X-a_k)(X-a_l)}&=&\sum_{k=1}^n\frac{1}{X-a_k}\left(\sum_{l\not= k}\frac{1}{X-a_l}\right)\\
+%  &=&\sum_{k=1}^n\frac{1}{X-a_k}\left(\sum_{l=1}^n\frac{1}{X-a_l}-\frac{1}{X-a_k}\right)\\
+%  &=&\sum_{k=1}^n\frac{1}{X-a_k}\frac{P'}{P}-\sum_{k=1}^n\frac{1}{(X-a_k)^2}\\
+%  &=&\frac{P'^2}{P^2}-\frac{P'^2-PP''}{P^2}=\frac{P''}{P}
+% \end{eqnarray*}
+  \end{enumerate}
+
+\item On applique l'identité  $\frac{P'(X)}{P(X)}=\sum_{k=1}^n\frac{1}{X-a_k}$ en $z$ avec les hypothèses 
+$P(z)\not=0$ et $P'(z)=0$.
+On en déduit $\displaystyle \sum_{k=1}^n\frac{1}{z-a_k} = 0$.
+L'expression conjuguée est aussi nulle :
+$$\sum_{k=1}^n\frac{1}{\overline{z-a_k}}=\sum_{k=1}^n\frac{z-a_k}{|z-a_k|^2} = 0$$
+Posons $\mu_k = \frac{1}{|z-a_k|^2}$.
+Alors 
+$$\sum_{k=1}^n \mu_k(z-a_k) = 0 \quad \text{ donc } \left(\sum_{k=1}^n \mu_k \right) z = \sum_{k=1}^n \mu_k a_k$$
+Posons $\lambda_k = \mu_k / \left(\sum_{k=1}^n \mu_k \right)$,
+alors : 
+  \begin{itemize}
+    \item Les $\lambda_k$ sont des réels positifs.
+    \item $\sum_{k=1}^n\lambda_k=1$
+    \item Et $z=\sum_{k=1}^n\lambda_ka_k$.
+  \end{itemize}
+
+En particulier si les $a_k$ sont tous des nombres réels, alors $z$ est aussi un nombre réel.
+On vient de prouver que si un polynôme $P$ a toutes ses racines réelles, 
+alors $P'$ a aussi toutes ses racines réelles. On a même plus : si on ordonne les racines réelles 
+de $P$ en $a_1 \le a_2 \le \cdots \le a_n$ alors une racine $z$ de $P'$ est réelle et vérifie $a_1 \le z \le a_n$.
+
+Plus généralement, l'interprétation géométrique de ce que l'on vient de prouver s'appelle le théorème de Gauss-Lucas :
+<<Les racines de $P'$ sont dans l'enveloppe convexe des racines (réelles ou complexes) de $P$.>>
+\end{enumerate}
+\fincorrection
+\finexercice

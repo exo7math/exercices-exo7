@@ -1,0 +1,52 @@
+\exercice{917, ridde, 1999/11/01}
+\video{x8fXA1UP7LU}
+\enonce
+Soit $\alpha \in \Rr$ et $f_\alpha : \Rr \to \Rr$, $x\mapsto e^{\alpha x}$.
+Montrer que la famille $(f_\alpha)_{\alpha \in \Rr}$  est libre.
+\finenonce
+
+
+\indication
+Supposer qu'il existe des r\'eels $\lambda_1,\ldots, \lambda_n$
+et des indices  $\alpha_1 > \alpha_2 > \cdots > \alpha_n$ (tout cela en nombre fini !)
+tels que 
+$$\lambda_1f_{\alpha_1}+\cdots+\lambda_nf_{\alpha_n} = 0.$$
+Ici le $0$ est la fonction constante \'egale \`a $0$. 
+Regarder quel terme est dominant et factoriser.
+\finindication
+
+
+\correction
+  \`A partir de la famille $(f_\alpha)_{\alpha\in \Rr}$ nous
+  consid\'erons une combinaison lin\'eaire (qui ne correspond qu'\`a un
+  nombre \emph{fini} de termes).
+
+  
+  Soient $\alpha_1 > \alpha_2 > \ldots > \alpha_n$ des r\'eels distincts que nous avons ordonnés, consid\'erons la
+  famille (finie) : $(f_{\alpha_i})_{i=1,\ldots,n}$. Supposons qu'il
+  existe des r\'eels $\lambda_1,\ldots, \lambda_n$ tels que
+  $\sum_{i=1}^n \lambda_i f_{\alpha_i}=0$. Cela signifie que, quelque
+  soit $x \in \Rr$, alors $\sum_{i=1}^n \lambda_i f_{\alpha_i}(x) = 0$,
+autrement dit pour tout $x\in \Rr$ :
+$$\lambda_1 e^{\alpha_1 x} + \lambda_2 e^{\alpha_2 x} + \cdots + \lambda_n e^{\alpha_n x}=0.$$
+Le terme qui domine est $e^{\alpha_1 x}$ (car $\alpha_1>\alpha_2>\cdots$).
+Factorisons par $e^{\alpha_1 x}$ :
+$$e^{\alpha_1 x} \Big( \lambda_1  + \lambda_2 e^{(\alpha_2-\alpha_1) x} + \cdots 
++ \lambda_n e^{(\alpha_n-\alpha_1) x} \Big) =0.$$
+
+Mais $e^{\alpha_1 x}\neq 0$ donc :
+$$\lambda_1  + \lambda_2 e^{(\alpha_2-\alpha_1) x} + \cdots 
++ \lambda_n e^{(\alpha_n-\alpha_1) x} =0.$$
+Lorsque $x\to +\infty$ alors $e^{(\alpha_i-\alpha_1) x} \to 0$ 
+(pour tout $i\ge 2$, car $\alpha_i-\alpha_1<0$).
+Donc pour $i\ge 2$, $\lambda_i e^{(\alpha_i-\alpha_1) x} \to 0$ et
+en passant à la limite dans l'égalité ci-dessus on trouve :
+$$\lambda_1=0.$$
+
+Le premier coefficients est donc nul. On repart de la combinaison linéaire qui est maintenant
+$\lambda_2 f_2+\cdots + \lambda_n f_n=0$ et en appliquant le raisonnement ci-dessus 
+on prouve par récurrence $\lambda_1=\lambda_2=\cdots=\lambda_n=0$.
+ Donc la famille $(f_\alpha)_{\alpha\in\Rr}$ est une famille libre.
+\fincorrection
+
+\finexercice

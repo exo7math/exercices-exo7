@@ -1,0 +1,48 @@
+\exercice{239, cousquer, 2003/10/01}
+\video{eXJ80BfW16o}
+\enonce
+On considère les mains de $5$~cartes que l'on peut extraire d'un jeu de
+$52$~cartes.
+\begin{enumerate}
+\item Combien y a-t-il de mains différentes~?
+\item Combien y a-t-il de mains comprenant exactement un as~?
+\item Combien y a-t-il de mains comprenant au moins un valet~?
+\item Combien y a-t-il de mains comprenant (à la fois) au moins un roi et au
+moins une dame~?
+\end{enumerate}
+\finenonce
+
+\indication
+Petits rappels : dans un jeu de $52$ cartes il y a $4$ ``couleurs'' (pique, c{\oe}ur, carreau, trèfle)
+et $13$ ``valeurs'' ($1 =$ As, $2,3,\ldots,10$, Valet, Dame, Roi).
+Une ``main'' c'est juste choisir $5$ cartes parmi les $52$, l'ordre du choix n'important pas.
+\finindication
+
+
+\correction
+\begin{enumerate}
+  \item  Il s'agit donc de choisir $5$ cartes parmi $52$ : il y a donc $C_{52}^5$ mains différentes.
+Ceci peut être calculé : $C_{52}^5 = \frac{52\cdot51\cdot50\cdot49\cdot48}{5!} = 2598960$.
+
+  \item Il y a $4$ choix pour l'as (l'as de pique ou l'as de c{\oe}ur ou ...), puis il faut choisir les $4$ cartes restantes
+parmi $48$ cartes (on ne peut pas rechoisir un as). Bilan $4 \times C_{48}^4$ mains comprenant exactement un as.
+
+  \item Il est beaucoup plus facile de compter d'abord les mains qui ne contiennent aucun valet :
+il faut choisir $5$ cartes parmi $48$ (on exclut les valets) ; il y a donc $C_{48}^5$ mains ne contenant aucun valet.
+Les autres mains sont les mains qui contiennent au moins un valet : il y en a donc $C_{52}^5 - C_{48}^5$.
+
+  \item Nous allons d'abord compter le nombre de mains que ne contiennent pas de roi ou pas de dame.
+Le nombre de mains qui ne contiennent pas de roi est $C_{48}^5$ (comme la question 3.). Le nombre de mains qui ne contiennent
+pas de dame est aussi $C_{48}^5$. 
+Le nombre de mains ne contenant pas de roi ou pas de dame \emph{n'est pas} $C_{48}^5 + C_{48}^5$,
+car on aurait compté deux fois les mains ne contenant ni roi, ni dame (il y a $C_{44}^5$ telles mains).
+Le nombre de mains ne contenant pas de roi ou pas de dame est donc : $2C_{48}^5-C_{44}^5$ (on retire une fois les mains comptées deux fois !).
+Ce que nous cherchons ce sont toutes les autres mains : celles qui contiennent au moins un roi et au moins une dame.
+Leur nombre est donc : $C_{52}^5 - 2C_{48}^5 + C_{44}^5$.
+
+\end{enumerate}
+
+\fincorrection
+
+\finexercice
+

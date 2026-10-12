@@ -1,0 +1,41 @@
+\exercice{5418, rouget, 2010/07/06}
+\enonce[****]
+Soit $f$ une fonction de classe $C^3$ sur $\Rr$ vérifiant~:~$\forall(x,y)\in\Rr^2,\;f(x+y)f(x-y)\leq(f(x))^2$.
+Montrer que $\forall x\in\Rr,\;f(x)f''(x)\leq(f'(x))^2$ (Indication. Appliquer la formule de \textsc{Taylor}-\textsc{Laplace} entre $x$ et $x+y$ puis entre $x$ et $x-y$).
+\finenonce
+
+\noindication
+
+\correction
+Soit $(x,y)\in\Rr\times\Rr$. Puisque $f$ est de classe $C^3$ sur $\Rr$, la formule de \textsc{Taylor}-\textsc{Laplace} à l'ordre $2$ permet d'écrire
+
+$$
+\begin{array}{l}
+f(x+y)=f(x)+yf'(x)+\frac{y^2}{2}f''(x)+\int_{x}^{x+y}\frac{(x+y-t)^2}{2}f^{(3)}(t)\;dt\;\mbox{et}\\
+f(x-y)=f(x)-yf'(x)+\frac{y^2}{2}f''(x)\int_{x}^{x-y}\frac{(x-y-t)^2}{2}f^{(3)}(t)\;dt.
+\end{array}$$
+
+Donc,
+
+\begin{align*}\ensuremath
+(f(x)^2)&\geq f(x+y)f(x-y)\\
+ &=(f(x)+yf'(x)+\frac{y^2}{2}f''(x)+\int_{x}^{x+y}\frac{(x+y-t)^2}{2}f^{(3)}(t)\;dt)\times\\
+ &\quad(f(x)-yf'(x)+\frac{y^2}{2}f''(x)+\int_{x}^{x-y}\frac{(x-y-t)^2}{2}f^{(3)}(t)\;dt)\\
+ &=(f(x))^2+y^2(f(x)f''(x)-(f'(x))^2)\\
+ &\quad+(f(x)-yf'(x)+\frac{y^2}{2}f''(x))\int_{x}^{x+y}\frac{(x+y-t)^2}{2}f^{(3)}(t)\;dt\\
+ &\quad+(f(x)+yf'(x)+\frac{y^2}{2}f''(x))\int_{x}^{x-y}\frac{(x-y-t)^2}{2}f^{(3)}(t)\;dt\;(*)
+\end{align*}
+
+Maintenant, pour $y\in[-1,1]$, ($f^{(3)}$ étant continue sur $\Rr$ et donc continue sur le segment $[-1,1]$),
+
+$$\left|\int_{x}^{x+y}\frac{(x+y-t)^2}{2}f^{(3)}(t)\;dt\right|\leq|y|.\frac{y^2}{2}\mbox{Max}\{|f^{(3)}(t)|,\;t\in[x-1,x+1]\},$$
+
+et donc,
+
+$$\frac{1}{y^2}\left|\int_{x}^{x+y}\frac{(x+y-t)^2}{2}f^{(3)}(t)\;dt\right|\leq|y|\mbox{Max}\{|f^{(3)}(t)|,\;t\in[x-1,x+1]\}.$$
+
+Cette dernière expression tend vers $0$ quand $y$ tend vers $0$. On en déduit que $\frac{1}{y^2}\left|\int_{x}^{x+y}\frac{(x+y-t)^2}{2}f^{(3)}(t)\;dt\right|$ tend vers $0$ quand $y$ tend vers $0$. De même, $\frac{1}{y^2}\left|\int_{x}^{x-y}\frac{(x-y-t)^2}{2}f^{(3)}(t)\;dt\right|$ tend vers $0$ quand $y$ tend vers $0$.
+
+On simplifie alors $(f(x)^2$ dans les deux membres de $(*)$. On divise les deux nouveaux membres par $y^2$ pour $y\neq 0$ puis on fait tendre $y$ vers $0$ à $x$ fixé. On obtient $0\geq f(x)f''(x)-(f'(x))^2$, qui est l'inégalité demandée.
+\fincorrection
+\finexercice

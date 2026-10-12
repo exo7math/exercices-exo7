@@ -1,0 +1,132 @@
+\exercice{5897, rouget, 2010/10/16}
+\enonce[**]
+Les formes différentielles suivantes sont elles exactes ? Si oui, intégrer et si non chercher un facteur intégrant.
+
+\begin{enumerate}
+ \item  $\omega= (2x+2y+e^{x+y})(dx+dy)$ sur $\Rr^2$.
+
+\item  $\omega= \frac{xdy-ydx}{(x-y)^2}$ sur $\Omega=\{(x,y)\in\Rr^2/\;y > x\}$
+
+\item  $\omega= \frac{xdx+ydy}{x^2+y^2}- ydy$
+
+\item  $\omega= \frac{1}{x^2y}dx - \frac{1}{xy^2}dy$ sur $(]0,+\infty[)^2$ (trouver un facteur intégrant non nul ne dépendant que de $x^2+y^2$).
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Pour $(x,y)\in\Rr^2$, on pose $P(x,y)=2x+2y+e^{x+y}=Q(x,y)$. Les fonctions $P$ et $Q$ sont de classe $C^1$ sur $\Rr^2$ qui est un ouvert étoilé de $\Rr^2$. Donc, d'après le théorème de \textsc{Schwarz}, $\omega$ est exacte sur $\Rr^2$ si et seulement si $ \frac{\partial P}{\partial y}= \frac{\partial Q}{\partial x}$ et comme $ \frac{\partial P}{\partial y}=2+e^{x+y}= \frac{\partial Q}{\partial x}$, la forme différentielle $\omega$ est une forme différentielle exacte sur $\Rr^2$.
+
+Soit $f$ une fonction $f$ de classe $C^1$ sur $\Rr^2$.
+
+\begin{align*}\ensuremath
+df=\omega&\Leftrightarrow\forall(x,y)\in\Rr^2,\;\left\{
+\begin{array}{l}
+ \frac{\partial f}{\partial x}(x,y)=2x+2y+e^{x+y}\\
+\rule{0mm}{7mm} \frac{\partial f}{\partial y}(x,y)=2x+2y+e^{x+y}
+\end{array}
+\right.\\
+ &\Leftrightarrow\exists g\in C^1(\Rr,\Rr)/\;\forall(x,y)\in\Rr^2,\;
+\left\{
+\begin{array}{l}
+f(x,y)=x^2+2xy+e^{x+y}+g(y)\\
+2x+e^{x+y}+g'(y)=2x+2y+e^{x+y}
+\end{array}
+\right.\\
+ &\Leftrightarrow\exists\lambda\in\Rr/\;\forall(x,y)\in\Rr^2,\;
+\left\{
+\begin{array}{l}
+f(x,y)=x^2+2xy+e^{x+y}+g(y)\\
+g(y)=y^2+\lambda
+\end{array}
+\right.\\
+ &\Leftrightarrow\exists\lambda\in\Rr/\;\forall(x,y)\in\Rr^2/\;f(x,y)=(x+y)^2+e^{x+y}+\lambda.
+\end{align*}
+
+Les primitives de $\omega$ sur $\Rr^2$ sont les fonctions de la forme $(x,y)\mapsto(x+y)^2+e^{x+y}+\lambda$, $\lambda\in\Rr$.
+
+\textbf{Remarque.} On pouvait aussi remarquer immédiatement que si $f(x,y)=(x+y)^2+e^{x+y}$ alors $df=\omega$.
+
+\item  La forme différentielle $\omega$ est de classe $C^1$ sur $\Omega=\{(x,y)\in\Rr^2/\;y > x\}$ qui est un ouvert étoilé de $\Rr^2$ car convexe. Donc, d'après le théorème de \textsc{Schwarz}, $\omega$ est exacte sur $\Omega$ si et seulement si $\omega$ est fermée sur $\Omega$.
+
+$ \frac{\partial}{\partial x}\left( \frac{x}{(x-y)^2}\right)= \frac{\partial}{\partial x}\left( \frac{1}{x-y}+y \frac{1}{(x-y)^2}\right)=- \frac{1}{(x-y)^2}- \frac{2y}{(x-y)^3}=- \frac{x+y}{(x-y)^3}= \frac{x+y}{(y-x)^3}$.
+
+$ \frac{\partial}{\partial y}\left(- \frac{y}{(x-y)^2}\right)= \frac{\partial}{\partial y}\left(- \frac{1}{y-x}-x \frac{1}{(y-x)^2}\right)= \frac{1}{(y-x)^2}+ \frac{2x}{(y-x)^3}= \frac{x+y}{(y-x)^3}= \frac{\partial}{\partial x}\left( \frac{x}{(x-y)^2}\right)$.
+
+Donc $\omega$ est exacte sur l'ouvert $\Omega$. Soit $f$ une fonction $f$ de classe $C^1$ sur $\Rr^2$.
+
+\begin{align*}\ensuremath
+df=\omega&\Leftrightarrow\forall(x,y)\in\Omega,\;\left\{
+\begin{array}{l}
+ \frac{\partial f}{\partial x}(x,y)=- \frac{y}{(x-y)^2}\\
+\rule{0mm}{6mm} \frac{\partial f}{\partial y}(x,y)= \frac{x}{(x-y)^2}
+\end{array}
+\right.\\
+ &\Leftrightarrow\exists g\in C^1(\Rr,\Rr)/\;\forall(x,y)\in\Omega,\;
+\left\{
+\begin{array}{l}
+f(x,y)= \frac{y}{x-y}+g(y)\\
+ \frac{x}{(x-y)^2}+g'(y)= \frac{x}{(x-y)^2}
+\end{array}
+\right.\\
+ &\Leftrightarrow\exists\lambda\in\Rr/\;\forall(x,y)\in\Omega,\;f(x,y)= \frac{y}{x-y}+\lambda.
+\end{align*}
+
+Les primitives de $\omega$ sur $\Omega$ sont les fonctions de la forme $(x,y)\mapsto \frac{y}{x-y}+\lambda$, $\lambda\in\Rr$.
+
+ 
+
+\item  $\omega$ est de classe $C^1$ sur $\Rr^2\setminus\{(0,0)\}$ qui est un ouvert de $\Rr^2$ mais n'est pas étoilé. On se place dorénavant sur $\Omega=\Rr^2\setminus\{(x,0),\;x\in]-\infty,0]\}$ qui est un ouvert étoilé de $\Rr^2$. Sur $\Omega$, $\omega$ est exacte si et seulement si $\omega$ est fermée d'après le théorème de \textsc{Schwarz}.
+
+$ \frac{\partial}{\partial x}\left( \frac{y}{x^2+y^2}-y\right)=- \frac{2xy}{(x^2+y^2)^2}= \frac{\partial}{\partial y}\left( \frac{x}{x^2+y^2}\right)$. Donc $\omega$ est exacte sur $\Omega$. Soit $f$ une application de classe $C^1$ sur $\Omega$.
+
+\begin{align*}\ensuremath
+df=\omega&\Leftrightarrow\forall(x,y)\in\Omega,\;\left\{
+\begin{array}{l}
+ \frac{\partial f}{\partial x}(x,y)= \frac{x}{x^2+y^2}\\
+\rule{0mm}{6mm} \frac{\partial f}{\partial y}(x,y)= \frac{y}{x^2+y^2}-y
+\end{array}
+\right.\\
+ &\Leftrightarrow\exists g\in C^1(\Rr,\Rr)/\;\forall(x,y)\in\Omega,\;\left\{
+\begin{array}{l}
+ \frac{\partial f}{\partial x}(x,y)= \frac{1}{2}\ln(x^2+y^2)+g(y)\\
+ \frac{y}{x^2+y^2}+g'(y)= \frac{y}{x^2+y^2}-y
+\end{array}
+\right.\\
+ &\Leftrightarrow\exists\lambda\in\Rr/\;\forall(x,y)\in\Omega,\;f(x,y)= \frac{1}{2}(\ln(x^2+y^2)-y^2)+\lambda.
+\end{align*}
+
+Les primitives de $\omega$ sur $\Omega$ sont les fonctions de la forme $(x,y)\mapsto \frac{1}{2}(\ln(x^2+y^2)-y^2)+\lambda$, $\lambda\in\Rr$.
+
+Les fonctions précédentes sont encore des primitives de $\omega$ sur $\Rr^2\setminus\{(0,0)\}$ et donc $\omega$ est exacte sur $\Rr^2\setminus\{(0,0)\}$.
+
+\item   $\omega$ est de classe $C^1$ sur $]0,+\infty[^2$ qui est un ouvert étoilé de $\Rr^2$. Donc $\omega$ est exacte sur $]0,+\infty[^2$ si et seulement si $\omega$ est fermée sur $]0,+\infty[^2$ d'après le théorème de \textsc{Schwarz}.
+
+$ \frac{\partial}{\partial x}\left(
+- \frac{1}{xy^2}\right)= \frac{1}{x^2y^2}$ et $ \frac{\partial}{\partial y}\left(
+ \frac{1}{x^2y}\right)=- \frac{1}{x^2y^2}$. Donc $ \frac{\partial}{\partial x}\left(
+- \frac{1}{xy^2}\right)\neq \frac{\partial}{\partial y}\left(
+ \frac{1}{x^2y}\right)$ et $\omega$ n'est pas exacte sur $]0,+\infty[^2$.
+
+On cherche un facteur intégrant de la forme $h~:~(x,y)\mapsto g(x^2+y^2)$ où $g$ est une fonction non nulle de classe $C^1$ sur $]0,+\infty[$.
+
+$ \frac{\partial}{\partial x}\left(
+- \frac{1}{xy^2}g(x^2+y^2)\right)= \frac{1}{x^2y^2}g(x^2+y^2)- \frac{2}{y^2}g'(x^2+y^2)$ et $ \frac{\partial}{\partial y}\left(
+ \frac{1}{x^2y}g(x^2+y^2)\right)=- \frac{1}{x^2y^2}g(x^2+y^2)+ \frac{2}{x^2}g'(x^2+y^2)$.
+
+\begin{align*}\ensuremath
+h\omega\;\text{est exacte sur}\;]0,+\infty[^2&\Leftrightarrow\forall(x,y)\in]0,+\infty[^2,\; \frac{1}{x^2y^2}g(x^2+y^2)- \frac{2}{y^2}g'(x^2+y^2)=- \frac{1}{x^2y^2}g(x^2+y^2)+ \frac{2}{x^2}g'(x^2+y^2)\\
+ &\Leftrightarrow\forall(x,y)\in]0,+\infty[^2,\; \frac{1}{x^2y^2}g(x^2+y^2)- \frac{x^2+y^2}{x^2y^2}g'(x^2+y^2)=0\\
+ &\Leftrightarrow\forall t>0,\;-tg'(t)+g(t)=0\Leftrightarrow\exists \lambda\in\Rr/\;\forall t>0,\;g(t)=\lambda t.
+\end{align*}
+
+La forme différentielle $(x^2+y^2)\omega$ est exacte sur $]0,+\infty[^2$. De plus, 
+
+\begin{center}
+$d\left( \frac{x}{y}- \frac{y}{x}\right)=\left( \frac{1}{y}+ \frac{y}{x^2}\right)dx-\left( \frac{x}{y^2}+ \frac{1}{x}\right)dy=(x^2+y^2)\omega$.
+\end{center}
+\end{enumerate}
+\fincorrection
+\finexercice

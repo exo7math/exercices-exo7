@@ -1,0 +1,70 @@
+\exercice{6870, chataur, 2012/05/13}
+\video{5yA5SIqdVAQ}
+\enonce
+\begin{enumerate}
+  \item Soient $v_1=(2,1,4)$, $v_2=(1,-1,2)$ et $v_3=(3,3,6)$ des vecteurs de $\Rr^3$, 
+trouver trois r\'eels non tous nuls $\alpha,\beta,\gamma$ tels que $\alpha v_1+ \beta v_2 + \gamma v_3=0$.
+
+  \item On considère deux plans vectoriels
+$$P_1=\{(x,y,z) \in \Rr^3 \mid x-y+z=0\}$$
+$$P_2=\{(x,y,z) \in \Rr^3 \mid x-y=0\}$$
+trouver un vecteur directeur de la droite $D=P_1\cap P_2$ ainsi qu'une \'equation param\'etr\'ee.
+\end{enumerate}
+\finenonce
+
+\indication
+\begin{enumerate}
+  \item On pensera \`a poser un syst\`eme.
+  \item Trouver un vecteur non-nul commun aux deux plans.
+\end{enumerate}
+\finindication
+
+
+\correction
+\begin{enumerate}
+  \item 
+\begin{align*}
+     & \alpha v_1 + \beta v_2 + \gamma v_3 = 0 \\ 
+\iff & \alpha (2,1,4) + \beta (1,-1,2) + \gamma (3,3,6) = (0,0,0) \\
+\iff &  \Big(2\alpha+\beta+3\gamma,\alpha-\beta+3\gamma,4\alpha+2\beta+6\gamma\Big) = (0,0,0) \\
+\iff &
+\begin{cases}
+  2\alpha+\beta+3\gamma &= 0 \\
+  \alpha-\beta+3\gamma  &= 0 \\
+  4\alpha+2\beta+6\gamma &= 0 \\
+ \end{cases} \\
+\iff & \cdots  \qquad  \text{(on résout le système)} \\
+\iff & \alpha=-2t, \beta = t, \gamma = t \quad t \in \Rr \\
+\end{align*}  
+
+Si l'on prend $t=1$ par exemple alors $\alpha=-2$, $\beta = 1$, $\gamma = 1$
+donne bien $-2v_1+v_2+v_3=0$.
+
+Cette solution n'est pas unique, les autres coefficients qui conviennent sont les 
+$(\alpha=-2t, \beta = t, \gamma = t)$ pour tout $t \in \Rr$.
+
+  \item 
+
+Il s'agit donc de trouver un vecteur $v=(x,y,z)$ dans $P_1$ et $P_2$ et donc qui doit vérifier 
+$x-y+z=0$ et $x-y=0$ :
+
+\begin{align*}
+     & v=(x,y,z) \in P_1 \cap P_2 \\ 
+\iff & x-y+z=0 \text{ et } x-y=0 \\
+\iff &
+\begin{cases}
+  x-y-z = 0 \\
+  x-y = 0 \\
+ \end{cases} \\
+\iff & \cdots \qquad  \text{(on résout le système)} \\
+\iff & (x=t, y = t, z = 0) \quad t \in \Rr \\
+\end{align*}  
+
+Donc, si l'on fixe par exemple $t=1$, alors $v=(1,1,0)$ 
+est un vecteur directeur de la droite vectorielle $D$,
+une équation paramétrique étant $D=\{(t,t,0) \mid t\in \Rr \}$.
+\end{enumerate}
+\fincorrection
+
+
+\finexercice

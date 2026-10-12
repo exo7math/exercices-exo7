@@ -1,0 +1,57 @@
+\exercice{6978, blanc-centi, 2014/05/06}
+\video{UkRPGUQfPP8}
+\enonce 
+Simplifier les expressions suivantes:
+\begin{enumerate}
+\item $\ch(\Argsh x),\quad \tanh(\Argsh x),\quad \sh(2\Argsh x)$.
+\item $ \sh(\Argch x),\quad \tanh(\Argch x),\quad \ch(3\Argch x)$.
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction\
+\begin{enumerate}
+  \item 
+  \begin{enumerate}
+    \item On sait que $\ch^2 u=1+\sh^2u$. Comme de plus la fonction $\ch$ est à valeurs positives, 
+$\ch u=\sqrt{1+\sh^2u}$ et donc $\ch(\Argsh x)=\sqrt{1+\sh^2(\Argsh x)} = \sqrt{1+x^2}$. 
+
+    \item Alors
+$$\tanh(\Argsh x)=\frac{\sh(\Argsh x)}{\ch(\Argsh x)}=\frac{x}{\sqrt{1+x^2}}.$$
+
+    \item Et $\sh(2\Argsh x)=2\ch(\Argsh x)\sh(\Argsh x)=2x\sqrt{1+x^2}$.
+  \end{enumerate}
+  
+\item On pourrait, comme pour la question précédente, appliquer les formules 
+trigonométriques hyperboliques. Pour changer, on va plutôt utiliser les expressions explicites 
+des fonctions hyperboliques réciproques. Supposons $x\ge 1$, pour que $\Argch x$ 
+soit bien défini, alors on a la formule (à connaître) :
+$$\Argch x=\ln\big(x+\sqrt{x^2-1}\big).$$ 
+
+Ainsi :
+\begin{eqnarray*}
+\sh(\Argch x)&=&\frac{e^{\Argch x}-e^{-\Argch x}}{2}\\
+ &=& \frac{x+\sqrt{x^2-1}-\frac{1}{x+\sqrt{x^2-1}}}{2}\\
+ &=& \frac{x+\sqrt{x^2-1}}{2}-\frac{x-\sqrt{x^2-1}}{2\big(x+\sqrt{x^2-1}\big)\big(x-\sqrt{x^2-1}\big)}\\
+ &=& \frac{x+\sqrt{x^2-1}}{2}-\frac{x-\sqrt{x^2-1}}{2\big(x^2-(x^2-1)\big)}\\
+ &=& \sqrt{x^2-1}
+\end{eqnarray*}
+
+\medskip
+
+Donc $\displaystyle\tanh(\Argch x)=\frac{\sh(\Argch x)}{\ch(\Argch x)}=\frac{\sqrt{x^2-1}}{x}$. 
+
+\medskip
+
+Enfin, si $u=\Argch x$:
+$\ch(3u)=\ch(2u+u)=\ch(2u)\ch u+\sh(2u)\sh u$, où 
+$$\left\{\begin{array}{l}
+\ch(2u)=\ch^2u+\sh^2u=x^2+(x^2-1)=2x^2-1\\
+\sh(2u)=2\sh u\ch u=2x\sqrt{x^2-1}
+\end{array}\right.$$ 
+Donc 
+$\ch(3\Argch x)=(2x^2-1)x+2x\sqrt{x^2-1}\sqrt{x^2-1}=x(4x^2-3)$. 
+\end{enumerate}
+\fincorrection
+\finexercice

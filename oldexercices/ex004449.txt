@@ -1,0 +1,64 @@
+\exercice{4449, quercia, 2010/03/14}
+\enonce[$(x-1)\zeta(x) \to 1$]
+ 
+Pour $x > 1$ on note $\zeta(x) = \sum_{k=1}^\infty \frac 1{k^x}$.
+En comparant $\zeta(x)$ à une intégrale,
+trouver $\lim_{x\to1^+} (x-1)\zeta(x)$.
+ 
+\finenonce
+ 
+\noindication
+ 
+\correction
+
+La fonction $t \mapsto \frac{1}{t^x}$ étant décroissante sur l'intervalle $[n, n+1]$,
+$\displaystyle 0 < \frac{1}{t^x} \leq \frac{1}{n^x}$. Donc,
+\begin{eqnarray*}
+\int_{n}^{n+1} \frac{dt}{t^x}  & \leq & \int_{n}^{n+1} \frac{dt}{n^x} = \frac{1}{n^x} \quad \text{par positivité de l'intégrale}
+\end{eqnarray*}
+puis
+\[
+\int_{1}^{N+1} \frac{dt}{t^x} = \sum_{n=1}^{N} \int_{n}^{n+1} \frac{dt}{t^x}
+\le \sum_{n=1}^{N} \frac{1}{n^x} \quad \text{ par la relation de Chasles.}
+\]
+De même sur $[n-1,n]$, $\displaystyle \frac{1}{t^x} \geq \frac{1}{n^x} > 0$ et
+\[
+\int_{n-1}^{n} \frac{dt}{t^x} \ge \int_{n-1}^{n} \frac{dt}{n^x} = \frac{1}{n^x}
+\]
+\[
+\int_{1}^{N} \frac{dt}{t^x} = \sum_{n=2}^{N} \int_{n-1}^{n} \frac{dt}{t^x}
+\ge \sum_{n=2}^{N} \frac{1}{n^x} \quad \text{par la relation de Chasles.}
+\]
+Finalement
+\[
+1 + \int_{1}^{N} \frac{dt}{t^x} \ge \sum_{n=1}^{N} \frac{1}{n^x} \, \cdotp
+\]
+\begin{equation}
+\text{Donc, on a:} \qquad \int_{1}^{N+1} \frac{dt}{t^x} \leq \sum_{n=1}^{N} \frac{1}{n^x} \leq 1 + \int_{1}^{N} \frac{dt}{t^x} \, \cdotp \label{I}
+\end{equation}
+Calculons dans un premier temps, $ \int_{1}^{N} \frac{dt}{t^x}$:
+\[ 
+\int_{1}^{N} \frac{dt}{t^x} = \left[\frac{t^{1-x}}{1-x}\right]_{1}^{N} = \frac {N^{1-x}-1}{1-x} 
+\xrightarrow[N \to +\infty]{} \frac{1}{x-1} 
+\]
+avec la même limite pour $\int_{1}^{N+1} \frac{dt}{t^x}$.
+Ainsi on a montré que $\sum_{n \geq 0} \frac{1}{n^x}$, série de Riemann avec $x > 1$, est convergente.
+On déduit alors de \eqref{I}, en faisant tendre $N$ vers $+\infty$:
+\[ \begin{array}{lrcccl}
+& \frac{1}{x - 1} & \leq & \sum_{n = 1}^{+\infty} \dfrac{1}{n^x} & \leq & 1 + \frac{1}{x - 1}
+\\
+\text{donc} \quad & \frac{x- 1}{x - 1} & \leq & (x - 1) \zeta (x) & \leq & (x - 1)\left(1 + \frac{1}{x - 1}\right) \\
+\text{puis} \qquad & 1 & \leq & (x - 1) \zeta (x) & \leq & x \, .
+\end{array} \]
+D'où, par le théorème des gendarmes:
+\[ 
+\lim_{x \rightarrow 1^{+}} (x - 1) \zeta (x) = 1 \, . 
+\]
+
+\medskip
+
+(\emph{Corrigé d'Antoine Poulain})
+
+\fincorrection
+ 
+\finexercice

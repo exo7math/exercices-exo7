@@ -1,0 +1,46 @@
+
+\exercice{1101, ridde, 1999/11/01}
+\video{WqbDAp8ZsBE}
+\enonce
+
+% anti diagonal dots
+\def\Ddots{\mathinner{\mkern2mu\raise1pt\hbox{.}\mkern2mu
+\newline \raise4pt\hbox{.}\mkern2mu\raise7pt\hbox{.}\mkern1mu}}
+
+Soit $A = \begin{pmatrix} 
+0&&\dots&0&1 \\ 
+\vdots&&&1&0 \\
+ & & \Ddots && \\
+0&1& & &\vdots \\ 
+1&0&&\dots&0
+\end{pmatrix}$. 
+En utilisant l'application linéaire associée de 
+$\mathcal{L} (\Rr^n,\Rr^n)$, calculer $A^p$ pour $p \in \Zz$.
+\finenonce
+
+\noindication
+
+\correction
+Nous associons à la matrice $A$ son application linéaire naturelle $f$.
+Si $\mathcal{B}=(e_1,e_2,\ldots,e_n)$ est la base canonique de $\Rr^n$
+alors $f(e_1)$ est donné par le premier vecteur colonne, $f(e_2)$ par le deuxième, etc.
+Donc ici 
+$$f(e_1)=\begin{pmatrix}0\\ \vdots \\ 0 \\ 0 \\ 1 \end{pmatrix}=e_n, \
+f(e_2)= \begin{pmatrix}0\\ \vdots \\ 0 \\ 1 \\0 \end{pmatrix}=e_{n-1},...  \quad \text{ et en général }
+f(e_i) = e_{n+1-i}$$ 
+Calculons ce que vaut la composition $f\circ f$.
+Comme une application linéaire est déterminée par
+ les images des éléments d'une base alors
+on calcule $f\circ f(e_i)$, $i=1,\ldots,n$ en appliquant deux fois la formule précédente :
+$$f\circ f(e_i) = f\big( f(e_i) \big) =  f(e_{n+1-i})=e_{n+1-(n+1-i)}=e_i$$
+Comme $f\circ f$ laisse invariant tous les vecteurs de la base alors
+$f\circ f (x)=x$ pour tout $x\in \Rr^n$. Donc $f\circ f=\mathrm{id}$.
+
+On en déduit $f^{-1}=f$ et que la composition itérée vérifie $f^{p}=\mathrm{id}$ si $p$ est pair
+et $f^{p}=f$ si $p$ est impair.
+Conclusion : $A^p=I$ si $p$ est pair et $A^p=A$ si $p$ est impair.
+
+
+\fincorrection
+
+\finexercice

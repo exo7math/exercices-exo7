@@ -1,0 +1,161 @@
+\exercice{5931, tumpach, 2010/11/11}
+\enonce
+\begin{enumerate}
+\item Calculer $\int_{-\infty}^{+\infty} e^{-x^2}\,dx$.\\
+\emph{Indication~:} On pourra d'abord calculer
+$\int_{\mathbb{R}^{2}} e^{-(x^2 + y^2)}\, dx dy$ en passant en
+coordonn\'ees polaires. 
+
+\item  \emph{Calcul de l'aire de la
+sph\`ere unit\'e de $\mathbb{R}^{n}$.} Soit $ \mathcal{S}_{n-1} =
+\{(x_1, \dots, x_n) \in \mathbb{R}^n ,\, \sum_{i=1}^{n} x_{i}^2 =
+1 \} $ la sph\`ere unit\'e de $\mathbb{R}^{n}$. On note
+$\mathcal{A}_{n-1}$ son aire. Calculer
+$$
+\int_{\mathbb{R}^n} e^{-\sum_{i=1}^{n} x_{i}^2} \,dx_{1}\dots
+dx_{n}
+$$
+en fonction de $\mathcal{A}_{n-1}$. En d\'eduire l'expression de
+$\mathcal{A}_{n-1}$ en fonction de la fonction $\Gamma$~:
+$$
+\Gamma(s) := \int_{0}^{+\infty} x^{s-1} e^{-x}\,dx.
+$$
+
+\item \emph{Calcul du volume de la boule unit\'e de
+$\mathbb{R}^{n}$.} Soit $ \mathcal{B}_{n} = \{(x_1, \dots, x_n)
+\in \mathbb{R}^n ,\, \sum_{i=1}^{n} x_{i}^2 \leq 1 \} $ la boule
+ferm\'ee de rayon 1 dans $\mathbb{R}^n$. On note $\mathcal{V}_{n}$
+son volume. Montrer que $\mathcal{V}_{n} =
+\frac{\mathcal{A}_{n-1}}{n}$. En d\'eduire que~:
+$$
+\mathcal{V}_{n} =
+\frac{{\pi}^{\frac{n}{2}}}{\Gamma\left(\frac{n}{2} + 1 \right)}.
+$$
+
+\item \emph{Application~:} Que vaut l'aire de la sph\`ere de rayon
+$R$ dans $\mathbb{R}^2$? $\mathbb{R}^3$? Que vaut le volume de la
+boule de rayon $R$ dans $\mathbb{R}$? $\mathbb{R}^{2}$?
+$\mathbb{R}^{3}$?
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item Soit $I = \int_{-\infty}^{+\infty} e^{-x^2}\,dx$. On a~:
+$$
+I^{2} = \int_{\mathbb{R}^{2}} e^{-(x^2 + y^2)}\, dx dy.
+$$
+L'application $\Phi~: \mathbb{R}_{+}^{*} \times ]0, 2\pi[
+\rightarrow \mathbb{R}^{2} \setminus \{ (x, 0), x \geq 0\}$
+d\'efinie par~:
+$$
+\Phi(r, \theta) = \left(r\cos \theta, r\sin \theta \right)
+$$
+est un $\mathcal{C}^{1}$-diff\'eomorphisme. De plus
+$$
+\int_{\mathbb{R}^{2}} e^{-(x^2 + y^2)}\, dx dy =
+\int_{\mathbb{R}^{2}\setminus\{ (x, 0), x \geq 0\}} e^{-(x^2 + y^2)}\, dx dy
+$$
+car l'ensemble $\{ (x, 0), x \geq 0\}$ est n\'egligeable. On en
+d\'eduit que~:
+$$
+I^2 = \int_{r=0}^{+\infty}\int_{\theta=0}^{2\pi} e^{-r^2} r \,dr
+d\theta = 2\pi \left[\frac{-e^{-r^2}}{2} \right]_{0}^{+\infty} =
+\pi.
+$$
+Ainsi $I = \int_{-\infty}^{+\infty} e^{-x^2}\,dx  = \sqrt{\pi}$.
+
+ \item
+\emph{Calcul de l'aire de la sph\`ere unit\'e de
+$\mathbb{R}^{n}$.} Soit $ \mathcal{S}_{n-1} = \{(x_1, \dots, x_n)
+\in \mathbb{R}^n ,\, \sum_{i=1}^{n} x_{i}^2 = 1 \} $ la sph\`ere
+unit\'e de $\mathbb{R}^{n}$. On note $\mathcal{A}_{n-1}$ son aire.
+D'apr\`es la question pr\'ec\'edente, on a~:
+$$
+\int_{\mathbb{R}^n} e^{-\sum_{i=1}^{n} x_{i}^2} \,dx_{1}\dots
+dx_{n} = {\pi}^{\frac{n}{2}}.
+$$
+D'autre part, puisque l'aire de la sph\`ere de rayon $r$ dans
+$\mathbb{R}^n$ vaut $r^{n-1}\mathcal{A}_{n-1}$, il vient~:
+$$
+\int_{\mathbb{R}^n} e^{-\sum_{i=1}^{n} x_{i}^2} \,dx_{1}\dots
+dx_{n} = \mathcal{A}_{n-1} \int_{0}^{+\infty} e^{-r^2}
+r^{n-1}\,dr.$$ En posant le changement de variable $x = r^{2}$, on
+obtient~:
+$$
+\int_{\mathbb{R}^n} e^{-\sum_{i=1}^{n} x_{i}^2} \,dx_{1}\dots
+dx_{n} = \frac{1}{2}\mathcal{A}_{n-1}\int_{0}^{+\infty} e^{-x}
+x^{\frac{n}{2}-1} \,dx,
+$$
+d'o\`u~:
+$$
+\mathcal{A}_{n-1} = \frac{2{\pi}^{\frac{n}{2}}}{\Gamma\left(
+\frac{n}{2}\right)}.
+$$
+
+\item \emph{Calcul du volume de la boule unit\'e de
+$\mathbb{R}^{n}$.} Soit $ \mathcal{B}_{n} = \{(x_1, \dots, x_n)
+\in \mathbb{R}^n ,\, \sum_{i=1}^{n} x_{i}^2 \leq 1 \} $ la boule
+ferm\'ee de rayon 1 dans $\mathbb{R}^n$. On note $\mathcal{V}_{n}$
+son volume. On a~:
+$$\mathcal{V}_{n} = \int_{0}^{1} r^{n-1}
+\mathcal{A}_{n-1} \,dr =  \mathcal{A}_{n-1} \left[\frac{r^{n}}{n}
+\right]_{0}^{1} = \frac{\mathcal{A}_{n-1}}{n}.
+$$
+On en d\'eduit que~:
+$$
+\mathcal{V}_{n} = \frac{2{\pi}^{\frac{n}{2}}}{n\Gamma\left(
+\frac{n}{2}\right)}.
+$$
+Ce qui se r\'eduit \`a~:
+$$
+\mathcal{V}_{n} =
+\frac{{\pi}^{\frac{n}{2}}}{\Gamma\left(\frac{n}{2} + 1 \right)}
+$$
+en utilisant l'identit\'e~: $\Gamma(s + 1) = s\Gamma(s)$.
+
+ \item
+\emph{Application~:} L'aire de la sph\`ere de rayon $R$ dans
+$\mathbb{R}^2$ vaut $$\mathcal{A}_1 R = \frac{2\pi}{\Gamma(1)} R =
+2\pi R, $$ qui est bien le p\'erim\`etre du cercle de rayon $R$
+dans le plan.
+
+Sachant $\Gamma(\frac 12) = \sqrt \pi$, l'aire de la sph\`ere de rayon $R$ dans $\mathbb{R}^3$ vaut
+ $$
+ \mathcal{A}_{2} R^2 = \frac{2 {\pi}^{\frac{3}{2}}}{\Gamma\left(\frac{3}{2}
+ \right)}
+ R^2
+ = \frac{2\pi \sqrt{\pi}}{\frac{1}{2}\Gamma\left(\frac{1}{2}\right)} R^2 = 4\pi R^2
+$$
+qui est bien l'aire de la sph\`ere $S^2$.
+
+
+  Le volume de la boule de rayon
+$R$ dans $\mathbb{R}$ vaut
+$$
+\mathcal{V}_{1} R = \frac{2{\pi}^{\frac{1}{2}}}{\Gamma\left(
+\frac{1}{2}\right)} R = \frac{2 \sqrt{\pi}}{\sqrt{\pi}} R = 2R,
+$$
+qui est bien la longueur du segment $[-R, R]$.
+
+
+
+Le volume de la boule de rayon $R$ dans  $\mathbb{R}^{2}$ vaut
+$$
+\mathcal{V}_{2} R^{2} = \frac{2\pi}{2\Gamma(1)} R^2 = \pi R^2,
+$$
+qui est bien l'aire du disque de rayon $R$.
+
+
+
+Le volume de la boule de rayon $R$ dans $\mathbb{R}^{3}$ vaut
+$$
+\mathcal{V}_{3} R^3 = \frac{\mathcal{A}_{2}}{3} R^3 = \frac{4}{3}
+\pi R^3.
+$$
+\end{enumerate}
+\fincorrection
+
+\finexercice

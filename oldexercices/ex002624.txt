@@ -1,0 +1,78 @@
+\exercice{2624, debievre, 2009/05/19}
+\enonce
+Soit $f:\R^2\rightarrow \R$ la fonction
+d\'efinie par $f(x,y)=(x^2+y^2)^x$ pour $(x,y)\not=(0,0)$ et
+$f(0,0)= 1$.
+\begin{enumerate}
+ \item La fonction $f$ est-elle continue en $(0,0)$?
+ \item D\'eterminer les d\'eriv\'ees partielles de $f$ en un point
+quelconque distinct de l'origine.
+ \item  La fonction $f$ admet-elle des d\'eriv\'ees partielles par
+rapport \`a $x$, \`a $y$ en $(0,0)$?
+\end{enumerate}
+\finenonce
+
+\indication 
+\begin{enumerate} 
+\item Utiliser les coordonn\'ees polaires $(r,\varphi)$ dans le plan
+et le fait que $\lim_{\begin{smallmatrix} r \to 0\\ r >0
+\end{smallmatrix}} r \log r =0$.
+\end{enumerate}
+\finindication
+
+\correction
+\begin{enumerate}  
+\item  $f(x,y)=(x^2+y^2)^x= \mathrm e^{x \log (x^2+y^2)}=
+\mathrm e^{2r\cos \varphi\log r}$. Puisque $\cos \varphi$
+est born\'e,
+ $\lim_{\begin{smallmatrix} r \to 0\\ r >0
+\end{smallmatrix}} 2r\cos \varphi\log r =0
+$
+d'o\`u
+\[
+\mathrm{lim}_{\begin{smallmatrix} (x,y) \to (0,0)\\ (x,y) \ne (0,0)
+\end{smallmatrix}} f(x,y)=
+\mathrm e^{\mathrm{lim}_{\begin{smallmatrix} r \to 0\\ r >0
+\end{smallmatrix}} 2r\cos \varphi\log r}=\mathrm e^0=1,
+\]
+car la fonction exponentielle est continue.
+
+\item  Dans $\R^2 \setminus \{(0,0)\}$ les d\'eriv\'ees partielles
+par rapport aux variables $x$ et $y$ se calculent ainsi:
+\begin{align*}\frac{\partial f}{\partial x}&
+= \left(\ln (x^2+y^2)+\frac {2x^2}{x^2+y^2}\right)(x^2+y^2)^x
+\\
+\frac{\partial f}{\partial y}&
+= \left(\frac {2xy}{x^2+y^2}\right)(x^2+y^2)^x
+\end{align*}
+
+\item Pour que la d\'eriv\'ee partielle
+$\frac{\partial f}{\partial x}(0,0)$ existe, il faut et il suffit que
+\[
+\mathrm{lim}_{\begin{smallmatrix} x \to 0\\ x \ne 0
+\end{smallmatrix}}\frac {f(x,0) -1}x =
+\mathrm{lim}_{\begin{smallmatrix} x \to 0\\ x \ne 0
+\end{smallmatrix}}\frac {(x^2)^x-1}x = 
+\mathrm{lim}_{\begin{smallmatrix} x \to 0\\ x > 0
+\end{smallmatrix}}\frac {\mathrm e^{2x \log x} -1}x
+\]
+existe. Si $x>0$,
+\[
+\frac {\mathrm e^{2x \log x} -1}x = 2 \log x + \varepsilon(x)
+\]
+o\`u $\mathrm{lim}_{\begin{smallmatrix} x \to 0\\ x > 0
+\end{smallmatrix}}\varepsilon(x)=0$. Par cons\'equent,
+ la d\'eriv\'ee partielle
+$\frac{\partial f}{\partial x}(0,0)$ n'existe pas.
+D'autre part,
+\[
+\frac{\partial f}{\partial y}(0,0)=
+\mathrm{lim}_{\begin{smallmatrix} y \to 0\\ y \ne 0
+\end{smallmatrix}}\frac {f(0,y) -1}y =
+\mathrm{lim}_{\begin{smallmatrix} y \to 0\\ y \ne 0
+\end{smallmatrix}}\frac {(y^2)^0-1}y = 0
+\]
+existe.
+\end{enumerate}
+\fincorrection
+\finexercice

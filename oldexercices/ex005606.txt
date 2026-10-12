@@ -1,0 +1,45 @@
+\exercice{5606, rouget, 2010/10/16}
+\enonce[**]
+Soient $a$ un réel non nul et $A$ et $B$ deux éléments de $\mathcal{M}_n(\Rr)$.
+
+Résoudre dans $\mathcal{M}_n(\Rr)$ l'équation d'inconnue $M$ : $aM+ \text{Tr}(M)A=B$.
+\finenonce
+
+\noindication
+
+\correction
+Si $M$ est solution, nécessairement $a\text{Tr}M +(\text{Tr}M)(\text{Tr}A)=\text{Tr}B$ ou encore $(\text{Tr}M)(a+\text{Tr}A) =\text{Tr}B$.
+
+\textbf{1er cas.} Si $\text{Tr}A\neq-a$ alors nécessairement $\text{Tr}M=\frac{\text{Tr}B}{a+\text{Tr}A}$ puis $M=\frac{1}{a}\left(B-\frac{\text{Tr}B}{a+\text{Tr}A}A\right)$.
+
+Réciproquement, si $M=\frac{1}{a}\left(B-\frac{\text{Tr}B}{a+\text{Tr}A}A\right)$ alors
+
+\begin{center}
+$aM +(TrM)A=B-\frac{\text{Tr}B}{a+\text{Tr}A}A +\frac{1}{a}\left(\text{Tr}B-\frac{\text{Tr}B}{a+\text{Tr}A}\text{Tr}A\right)A = B$.
+\end{center}
+
+\begin{center}
+\shadowbox{
+Si $\text{Tr}A\neq-a$, $\mathcal{S}=\left\{\frac{1}{a}\left(B-\frac{\text{Tr}B}{a+\text{Tr}A}A\right)\right\}$.
+}
+\end{center}
+
+\textbf{2ème cas.} Si $\text{Tr}A=-a$ et $\text{Tr}B\neq 0$, il n'y a pas de solution .
+
+\textbf{3ème cas.} Si $\text{Tr}A=-a$ et $\text{Tr}B=0$, $M$ est nécessairement de la forme $\frac{1}{a}B +\lambda A$ où $\lambda$ est un réel quelconque.
+
+Réciproquement, soient $\lambda\in\Rr$ puis $M=\frac{1}{a}B+\lambda A$. Alors 
+
+\begin{center}
+$aM+(\text{Tr}M)A=B+a\lambda A+\left(\frac{1}{a}\text{Tr}B+\lambda\text{Tr}A\right)A=B+a\lambda A-a\lambda A= B$,
+\end{center}
+
+et toute matrice de la forme $B +\lambda A$, $\lambda\in\Rr$, est solution.
+
+\begin{center}
+\shadowbox{
+Si $\text{Tr}A=-a$, $\mathcal{S}=\varnothing$ si $\text{Tr}B\neq0$ et $\mathcal{S}=\left\{B+\lambda A,\;\lambda\in\Rr\right\}$ si $\text{Tr}B=0$.
+}
+\end{center}
+\fincorrection
+\finexercice

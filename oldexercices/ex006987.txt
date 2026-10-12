@@ -1,0 +1,122 @@
+\exercice{6987, blanc-centi, 2015/07/04}
+\video{xJr2AjXWZto}
+\enonce
+On considère la courbe paramétrée définie par 
+$$\left\{\begin{array}{l}x(t)=t+\frac{4}{t}\\ \ \\ y(t)=\frac{t}{3}+2+\frac{3}{t+1}\end{array}\right.$$
+\begin{enumerate}
+\item Dresser le tableau de variations conjointes de $x$ et $y$.
+\item Calculer les tangentes horizontales, verticales et les asymptotes.
+\item Trouver le point singulier de la courbe, étudier son type et 
+écrire l'équation de la tangente à la courbe en ces points.
+\item Tracer la courbe.
+\end{enumerate}
+\finenonce
+ 
+\noindication
+
+\correction Les expressions $x(t)=t+\frac{4}{t}$ et $y(t)=\frac{t}{3}+2+\frac{3}{t+1}$ sont bien définies pour $t\in\mathcal{D}=\R\setminus\{-1;0\}$.
+\begin{enumerate}
+\item Les fonctions $x$ et $y$ sont de classe $\mathcal{C}^1$ sur $\mathcal{D}$. Soit $t\in\mathcal{D}$:
+$$\begin{array}{lcl}
+x(t)=t+\frac{4}{t}&\ &y(t)=\frac{t}{3}+2+\frac{3}{t+1}\\
+x'(t)=1-\frac{4}{t^2}&\ &y'(t)=\frac{1}{3}-\frac{3}{(t+1)^2}\\
+x'(t)>0\Longleftrightarrow |t|>2&\ &y'(t)>0\Longleftrightarrow |t+1|>3\Longleftrightarrow \left\{\begin{array}{l}t>2\\ \text{ou}\\ t<-4\end{array}\right.
+\\
+x'(t)=0\Longleftrightarrow t\in\{-2;2\} &\ &y'(t)=0\Longleftrightarrow t\in\{-4;2\}
+\end{array}$$
+$$\begin{array}{c|lcccccccccccr}
+t&-\infty&\ &-4& &-2& &-1& &0& &2& &+\infty\\\hline
+x'(t)& &+& &+&0&-&&-&&-&0&+&\\\hline
+\ &  &\ &&&-4&&&&+\infty&&&&+\infty\\
+\ &  &\ &&\nearrow&&\searrow&&&&&&&\\
+x&\ & &-5&&&&-5&&&\searrow&&\nearrow&\ \\
+\ &  &\nearrow &&&&&&\searrow&&&&&\\
+\ &-\infty &\ & &&&&&&-\infty&&4&&\\\hline
+\ & &\ & -\frac{1}{3}&&&&+\infty&&&&&&+\infty\\
+\ & &\ & &\searrow&&&&\searrow&&&&&\\
+y&\ &\nearrow & &&-\frac{5}{3}&&&&5&&&\nearrow&\\
+\ & &\ & &&&\searrow&&&&\searrow&&&\\
+\ &-\infty & & &&&&-\infty&&&&\frac{11}{3}&&\\\hline
+y'(t)&& + &0 &-&&-&&-&&-&0&+&\\
+\end{array}$$
+
+\item Le tableau de variations conjointes indique:
+\begin{itemize}
+\item $t=-4$: tangente horizontale, au point de coordonnées $(-5,-\frac{1}{3})$;
+\item $t=-2$: tangente verticale, au point de coordonnées $(-4,-\frac{5}{3})$;
+\item $t=-1$: une asymptote verticale, d'équation $x=-5$;
+\item $t=0$: une asymptote horizontale, d'équation $y=5$;
+\item $t=2$: il y a un point singulier en $(4,\frac{11}{3})$ (voir après).
+\end{itemize}
+Il reste à étudier le comportement quand $t\to\pm\infty$:
+$$\frac{y(t)}{x(t)}=\frac{t^3+16t^2+6t}{3(t^3+t^2+4t+4)}\xrightarrow[t\to\pm\infty]{}\frac{1}{3}$$
+puis $y(t)-\frac{1}{3}x(t)\xrightarrow[t\to\pm\infty]{}2$. La courbe a donc pour asymptote, quand $t\to-\infty$ et quand $t\to+\infty$, la m\^eme droite d'équation $y=\frac{1}{3}x+2$.
+
+
+\item On constate sur le tableau de variation qu'il n'y a qu'un seul point singulier, correspondant au paramètre $t=2$. Pour conna\^itre l'allure de la courbe au voisinage du point $M(2)$, on fait un développement limité de $x$ et $y$ au voisinage de $t=2$. Comme ici $x$ et $y$ sont de classe $\mathcal{C}^\infty$ et d'expressions assez simples, on peut directement appliquer la formule de Taylor-Young:
+$$\left\{\begin{array}{l}
+x(t)=x(2)+x'(2)\cdot(t-2)+\frac{1}{2}x''(2)\cdot(t-2)^2+\frac{1}{6}x'''(2)\cdot(t-2)^3+o((t-2)^3)\\
+y(t)=y(2)+y'(2)\cdot(t-2)+\frac{1}{2}y''(2)\cdot(t-2)^2+\frac{1}{6}y'''(2)\cdot(t-2)^3+o((t-2)^3)
+\end{array}\right.$$ 
+On sait déjà que $x(2)=4$, $y(2)=\frac{11}{3}$ et $x'(2)=y'(2)=0$. De plus
+$x''(t)=\frac{8}{t^3}$, $x'''(t)=\frac{-24}{t^4}$ et $y''(t)=\frac{6}{(t+1)^3}$, $y'''(t)=\frac{-18}{(t+1)^4}$, ce qui donne
+$$M(t)=\begin{pmatrix}4 \\ \frac{11}{3}\end{pmatrix}+
+\begin{pmatrix}\frac{1}{2}\\\frac{1}{9}\end{pmatrix}\cdot (t-2)^2+
+\begin{pmatrix}-\frac{1}{4}\\ \frac{-1}{27}\end{pmatrix}\cdot (t-2)^3+o((t-2)^3)$$
+C'est un point de rebroussement de première espèce. L'équation (sous forme paramétrée) de la tangente $T_{M(2)}$ s'obtient en tronquant le développement limité:
+$$\begin{pmatrix}x\\ y\end{pmatrix}\in T_{M(2)}
+\Longleftrightarrow\exists\lambda\in\R,\ \begin{pmatrix}x \\ y\end{pmatrix}
+=\begin{pmatrix}4\\  \frac{11}{3}\end{pmatrix}+
+\begin{pmatrix}\frac{1}{2}\\\frac{1}{9}\end{pmatrix}\cdot \lambda$$
+En éliminant le paramètre $\lambda$, on récupère une équation cartésienne 
+$$T_{M(2)}:\ y=\frac{11}{3}+\frac{1}{9}\cdot 2(x-4)=\frac{2}{9}x+\frac{25}{9}$$
+
+
+\end{enumerate}
+
+
+\begin{center}
+\begin{tikzpicture}[scale=0.35]
+     \draw[->,>=latex,thick, gray] (-20,0)--(21,0) node[below,black] {$x$};
+     \draw[->,>=latex,thick, gray] (0,-14)--(0,18) node[right,black] {$y$};  
+
+
+  \coordinate (P) at (4,11/3);
+  \fill[blue] (P) circle (5pt)  node[above=5pt]{$M(2)$}; 
+  \draw[very thick, blue] (P)--+(12.5:5)--+(12.5:-4);
+
+
+
+  \fill[black] (0,0) circle (4pt) node[below left]{$0$}; 
+  \fill[black] (1,0) circle (4pt)  node[below]{$1$}; 
+  \fill[black] (0,1) circle (4pt)  node[left]{$1$}; 
+
+  \draw[thick, green!80!black] (0,2)--+(18.4:21)--+(18.4:-21);
+ \node[green!80!black]  at (18,7) {$y=\frac13x+2$};
+
+  \draw[thick, green!80!black] (0,5)--+(20.5,0)--+(-20.5,0);
+ \node[green!80!black]  at (-18,4) {$y=5$};
+
+  \draw[thick, green!80!black] (-5,0)--+(0,17)--+(0,-14.5);
+ \node[green!80!black]  at (-4,14) {$x=-5$};
+
+
+
+  \coordinate (M2) at (-4,-5/3);
+  \fill[blue] (M2) circle (5pt)  node[right=5pt]{$M(-2)$}; 
+  \draw[very thick, blue] (M2)--+(0,3)--+(0,-3);
+
+  \coordinate (M4) at (-5,-1/3);
+  \fill[blue] (M4) circle (5pt)  node[below left=5pt]{$M(-4)$}; 
+  \draw[very thick, blue] (M4)--+(3,0)--+(-3,0);
+
+  \draw[red, very thick,domain=0.2:20,samples=100] plot ({\x+4/\x},{\x/3+2+3/(\x+1)});
+  \draw[red, very thick,domain=-0.8:-0.2,samples=100] plot ({\x+4/\x},{\x/3+2+3/(\x+1)});
+  \draw[red, very thick,domain=-1.2:-20,samples=100] plot ({\x+4/\x},{\x/3+2+3/(\x+1)});
+
+\end{tikzpicture}  
+\end{center}
+
+
+\fincorrection
+\finexercice

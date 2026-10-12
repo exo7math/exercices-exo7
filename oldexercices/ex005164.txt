@@ -1,0 +1,49 @@
+\exercice{5164, rouget, 2010/06/30}
+\enonce[*T]
+Soit $E$ le $\Rr$-espace vectoriel des applications de $[0,1]$ dans $\Rr$ (muni de $f+g$ et $\lambda.f$ usuels)
+(ne pas hésiter à redémontrer que $E$ est un $\Rr$ espace vectoriel). Soit $F$ l'ensemble des applications de $[0,1]$
+dans $\Rr$ vérifiant l'une des conditions suivantes~:
+
+$$\begin{array}{llll}
+1)\;f(0)+f(1)=0&2)\;f(0)=0&3)\;f(\frac{1}{2})=\frac{1}{4}&4)\;\forall x\in[0,1],\;f(x)+f(1-x)=0\\
+5)\;\forall x\in[0,1],\;f(x)\geq0&6)\;2f(0)=f(1)+3
+\end{array}$$
+
+Dans quel cas $F$ est-il un sous-espace vectoriel de $E$~?
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  La fonction nulle est dans $F$ et en particulier, $F\neq\varnothing$.
+Soient alors $(f,g)\in F^2$ et $(\lambda,\mu)\in\Rr^2$.
+
+$$(\lambda f+\mu g)(0)+(\lambda f+\mu g)(1)=\lambda(f(0)+f(1))+\mu(g(0)+g(1))=0.$$
+
+Par suite, $\lambda f+\mu g$ est dans $F$. On a montré que~:
+
+$$F\neq\varnothing\;\mbox{et}\;\forall(f,g)\in F^2,\;\forall(\lambda,\mu)\in\Rr^2,\;\lambda f+\mu g\in F.$$
+
+$F$ est donc un sous-espace vectoriel de $E$.
+
+\item  Même démarche et même conclusion .
+
+\item  $F$ ne contient pas la fonction nulle et n'est donc pas un sous-espace vectoriel de $E$.
+
+\item  La fonction nulle est dans $F$ et en particulier, $F\neq\varnothing$.
+Soient alors $(f,g)\in F^2$ et $(\lambda,\mu)\in\Rr^2$.
+
+Pour $x$ élément de $[0,1]$,
+$$(\lambda f+\mu g)(x)+(\lambda f+\mu g)(1-x)= \lambda(f(x)+f(1-x))+\mu(g(x)+g(1-x))=0$$ et $\lambda f+\mu g$ est dans
+$F$. $F$ est un sous-espace vectoriel de $E$.
+
+\textbf{Remarque.} Les graphes des fonctions considérés sont symétriques par rapport au point $(\frac{1}{2},0)$.
+
+\item  $F$ contient la fonction constante $1$ mais pas son opposé la fonction constante $-1$ et n'est donc pas un
+sous-espace vectoriel de $E$.
+
+\item  $F$ ne contient pas la fonction nulle et n'est donc pas un sous-espace vectoriel de $E$.
+\end{enumerate}
+\fincorrection
+\finexercice

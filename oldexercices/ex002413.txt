@@ -1,0 +1,45 @@
+\exercice{2413, mayer, 2003/10/01}
+\enonce 
+Soient $E,F$ des espaces norm\'es et $(f_n)$ une suite d'applications  de $E$ dans $F$
+\'equicontinue en $a\in E$. Montrer que, si la suite $(f_n(a))$ converge vers $b$,
+alors $(f_n(x_n))$ converge \'egalement vers $b$, si $(x_n)$ est une suite de $E$
+telle que $\lim_{n\to \infty} x_n =a$.
+
+L'\'equicontinuit\'e est-elle n\'ecessaire ici?
+\finenonce
+
+\indication
+Démarrer avec l'inégalité : 
+$$|f_n(x_n)-b| \le |f_n(x_n)-f_n(a)|+|f_n(a)-b|.$$
+
+Si $(f_n)$ n'est pas équicontinue le résultat peut \^etre faux. Prendre $f_n(x) =  (1+x)^n$
+et $x_n= \frac 1 n$.
+\finindication
+
+\correction
+\begin{enumerate}
+  \item 
+  \begin{enumerate}
+    \item 
+  Soit $(x_n)$ une suite convergeant vers $a$, alors
+$$|f_n(x_n)-b| \le |f_n(x_n)-f_n(a)|+|f_n(a)-b|.$$
+
+    \item Soit $\epsilon >0$, il existe $N_1$ tel que pour $n\ge N_1$ on ait
+$|f_n(a)-b| < \frac \epsilon 2$.
+
+    \item $(f_n)$ est équicontinue en $a$, donc il existe $\eta >0$ tel que
+pour tout $n\in \Nn$ et tout $x\in E$, $(|x-a| < \eta \Rightarrow |f_n(x)-f_n(a)| < \frac \epsilon 2)$.
+    
+    \item Comme $x_n\rightarrow a$ alors il existe $N_2$ tel que pour $n\ge N_2$  on ait $|x_n-a| < \eta$.
+
+    \item Donc pour $n \ge \max(N_1,N_2)$ on a $|f_n(x_n)-b| \le |f_n(x_n)-f_n(a)|+|f_n(a)-b| < \frac \epsilon 2 + \frac \epsilon 2 = \epsilon$. Donc
+$(f_n(x_n))$ converge vers $b$.
+  \end{enumerate}
+
+  \item  Soit des fonctions réelles définies par $f_n(x) = (1+x)^n$.
+Prenons $x_n= \frac 1 n$, alors $x_n \rightarrow a=0$.
+Par contre $f_n(a) = f_n(0)=1$ pour tout $n$. Mais $f_n(x_n) = f_n(\frac 1n) =
+(1+\frac 1n)^n$ converge vers $e$. L'équicontinuité est donc bien nécessaire.
+\end{enumerate}
+\fincorrection
+\finexercice

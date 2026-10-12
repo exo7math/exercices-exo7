@@ -1,0 +1,31 @@
+\exercice{1326, ortiz, 1999/04/01}
+
+\enonce
+ Soit $G$ un groupe engendr\'e par $a$ et $b.$
+Montrer que $<a>\cap<b>\subseteq Z(G)$ o\`u $Z(G)$ d\'esigne le
+centre de $G.$
+
+\finenonce
+
+\noindication
+
+\correction
+Soit $G = \langle a,b \rangle$, tout élément $g$ de $G$ S'écrit $g
+= a^{\alpha_1}b^{\beta_1}  a^{\alpha_2}b^{\beta_2}\ldots
+a^{\alpha_n}b^{\beta_n}$ avec $\alpha_i,\beta_i \in \Zz$. Si $h
+\in \langle a \rangle \cap \langle b \rangle$, alors en
+particulier $h \in \langle a \rangle$ et $h = a^\mu$ avec $\mu \in
+\Zz$, donc $h$ commute avec $a^{\alpha_i}$ pour tout $\alpha_i$
+dans $\Zz$ (en effet $a^{\alpha_i}a^{\mu} = a^{\alpha_i+\mu}=
+a^\mu a^{\alpha_i}$. De même $h \in \langle b \rangle$ donc $h$
+s'écrit également $h=b^\nu$ ($\nu \in \Zz$) et $h$ commute avec
+$b^{\beta_i}$. Donc $hg = (h a^{\alpha_1})b^{\beta_1}\ldots =
+(a^{\alpha_1}h)b^{\beta_1}\ldots = a^{\alpha_1}(h
+b^{\beta_1})\ldots =  a^{\alpha_1}(b^{\beta_1}h)\ldots =\cdots$
+Finalement $hg = a^{\alpha_1}b^{\beta_1}\ldots
+a^{\alpha_n}b^{\beta_n}h = gh$. Ainsi $h$ commute  avec tout
+élément de $G$ et appartient ainsi au centre de $G$.
+\fincorrection
+
+\finexercice
+

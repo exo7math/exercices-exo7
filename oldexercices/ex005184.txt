@@ -1,0 +1,30 @@
+\exercice{5184, rouget, 2010/06/30}
+\enonce[**IT]
+Soit $\Kk$ un sous-corps de $\Cc$, $E$ un $\Kk$-espace vectoriel de dimension finie $n\geq2$. Soient $H_1$ et $H_2$ deux hyperplans de $E$.
+Déterminer $\mbox{dim}_\Kk(H_1\cap H_2)$. Interprétez le résultat quand $n=2$ ou $n=3$.
+\finenonce
+
+\noindication
+
+\correction
+On a $H_1\subset H_1+H_2$ et donc $\mbox{dim }(H_1+H_2)\geq n-1$ ou encore $\mbox{dim }(H_1+H_2)\in\{n-1,n\}$. Donc
+
+$$\mbox{dim }(H_1\cap H_2)=\mbox{dim }H_1+\mbox{dim }H_2-\mbox{dim }(H_1+H_2)=
+\left\{
+\begin{array}{l}
+(n-1)+(n-1)-(n-1)=n-1\\
+\quad\mbox{ou}\\
+(n-1)+(n-1)-n=n-2
+\end{array}
+\right..$$
+Maintenant, si $\mbox{dim }(H_1+H_2)=n-1=\mbox{dim }H_1=\mbox{dim }H_2$, alors $H_1=H_1+H_2=H_2$ et donc en particulier,
+$H_1=H_2$. Réciproquement, si $H_1=H_2$ alors $H_1+H_2=H_1$ et $\mbox{dim }(H_1+H_2)=n-1$.
+En résumé, si $H_1$ et $H_2$ sont deux hyperplans distincts, $\mbox{dim }(H_1\cap H_2)=n-2$ et bien sûr, si 
+$H_1=H_2$, alors $\mbox{dim }(H_1\cap H_2)=n-1$.
+Si $n=2$, les hyperplans sont des droites vectorielles et l'intersection de deux droites vectorielles distinctes du
+plan vectoriel est de dimension $0$, c'est-à-dire réduite au vecteur nul.
+Si $n=3$, les hyperplans sont des plans vectoriels et l'intersection de deux plans vectoriels distincts de l'espace de
+dimension $3$ est une droite vectorielle.
+
+\fincorrection
+\finexercice

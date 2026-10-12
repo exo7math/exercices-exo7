@@ -1,0 +1,26 @@
+\exercice{2835, burnol, 2009/12/15}
+\enonce
+  Déterminer les séries de Laurent de $f(z) = \frac1{(z-1)(z-2)}$ dans chacune
+des trois couronnes ouvertes  $0<|z|<1$, $1<|z|<2$,
+$2<|z|<\infty$, ainsi que les séries de Laurent de $f$ aux
+points $0$, $1$, $2$, et $3$. Quels sont les résidus en $z=0$, $z=1$,
+$z=2$ et $z=3$?
+\finenonce
+\noindication
+\correction
+Observons tout d'abord que :
+$$ f(z) =\frac{1}{(z-1)(z-2)}= \frac{1}{z-2} +\frac{1}{1-z}.$$
+On a
+$$\begin{aligned} \frac{1}{1-z}=\sum_{n\geq 0}z^n \quad &\text{pour} \;\;  |z|<1 \\
+\frac{1}{1-z}=-\frac{1}{z}\frac{1}{1-\frac{1}{z}} =-\frac{1}{z}\sum_{n\geq 0}z^{-n} = -\sum_{n=-\infty}^{-1} z^n &\quad \text{pour} \;\; |z|> 1.\end{aligned}$$
+De la m\^eme mani\`ere
+$$\frac{1}{z-2}=-\sum_{n\geq 0}\frac{1}{2^{n+1}}z^n \quad \text{si} \;\; |z|< 2 \;\; \text{et} \;\;
+\frac{1}{z-2}=\sum_{n=-\infty} ^{-1}\frac{1}{2^{n+1}}z^n \quad \text{si} \;\; |z|>2.$$
+On en d\'eduit les expressions des s\'eries de Laurent en $0$ dans les trois couronnes centr\'ees \`a l'origine.
+En $z=1$ et $z=2$, $f$ a des p\^oles simples. D'o\`u
+$$\mathrm{Res} (f,1) =\lim_{z\to 1} (z-1) f(z) = -1 \quad  \text{et} \quad \mathrm{Res} (f,2) =\lim_{z\to 2} (z-2) f(z) = 1.$$
+D\'eterminons encore la s\'erie de Laurent  $f$ en $1$:
+$$f(z) = \frac{1}{z-1}\frac{1}{(z-1)-1} =\frac{1}{z-1} (-1) \sum _{n\geq 0} (z-1)^n = -\sum_{n=-1}^\infty (z-1)^n$$
+pour $|z-1|<1$.
+\fincorrection
+\finexercice

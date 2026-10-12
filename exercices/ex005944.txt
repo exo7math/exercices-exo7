@@ -1,37 +1,41 @@
 \exercice{5944, tumpach, 2010/11/11}
+
 \enonce
-Soit $f\in\mathcal{M}^{+}(\Omega, \Sigma)$ tel que $\int_{\Omega}
-f\,d\mu ~<~+\infty$. Montrer que $$\mu\{ x\in\Omega, ~f(x) =
-+\infty\} = 0. $$ 
-On pourra consid\'erer les fonctions $f_{n} = n\mathbf{1}_{\{f\geq n\}}$.
+Soit \( f\in\mathcal{M}^{+}(\Omega, \Sigma) \) tel que \( \int_{\Omega}
+f\,d\mu  < +\infty \). Montrer que
+\[
+  \mu\{ x\in\Omega,  f(x) = +\infty\} = 0.
+\]
+On pourra considérer les fonctions \( f_n = n\mathbf{1}_{\{f\ge n\}} \).
 \finenonce
 
 \noindication
 
 \correction
 On a
-$$\mu\left(f =
-+\infty\right) = \mu\left(\cap_{n\in\mathbb{N}}\{f \geq
-n\}\right).
-$$
-Puisque les ensembles $A_{n} := \{f \geq n\}$ v\'erifient $A_1
-\supset A_{2} \supset A_{3}\dots$ et $\mu(A_i) < +\infty$ ($i=1,2,\ldots$), par continuit\'e de la mesure,
-on a~:
-$$\mu\left(f =
-+\infty\right) = \lim_{n\rightarrow+\infty} \mu\left(f\geq n
-\right).
-$$
-Or, comme $f$ est \`a valeurs positives, les fonctions $f_{n}$
-d\'efinies par $f_{n} = n\mathbf{1}_{\{f\geq n\}}$ v\'erifient $f_{n}\leq
-f$. Ainsi
-$$
-\int_{\Omega} f_{n}\,d\mu  = \int_{\Omega} n \mathbf{1}_{\{f\geq
-n\}}\,d\mu = n \mu\left(f\geq n \right) ~\leq ~\int_{\Omega}
-f\,d\mu <+\infty.
-$$
-On en d\'eduit que $$\mu\left(f\geq n \right) ~\leq~
-\frac{1}{n}\int_{\Omega} f\,d\mu \rightarrow 0,$$ donc
-$$\mu\left(f = +\infty\right) = 0.$$
+\[
+  \mu\left(f = +\infty\right) = \mu\left(\cap_{n\in\Nn}\{f \ge n\}\right).
+\]
+Puisque les ensembles \( A_n := \{f \ge n\} \) vérifient \( A_1
+\supset A_2 \supset A_3\dots \) et \( \mu(A_i) < +\infty \) (\( i = 1,2,\ldots \)), par continuité de la mesure, on a :
+\[
+  \mu\left(f = +\infty\right) = \lim_{n\rightarrow+\infty} \mu\left(f\ge n
+  \right).
+\]
+Or, comme \( f \) est à valeurs positives, les fonctions \( f_n \) définies par \( f_n = n\mathbf{1}_{\{f\ge n\}} \) vérifient \( f_n\le f \). Ainsi
+\[
+  \int_{\Omega} f_n\,d\mu = \int_{\Omega} n \mathbf{1}_{\{f\ge n\}}\,d\mu = n \mu\left(f\ge n \right)  \le  \int_{\Omega}
+  f\,d\mu <+\infty.
+\]
+On en déduit que
+\[
+  \mu\left(f\ge n \right)  \le 
+  \frac{1}{n}\int_{\Omega} f\,d\mu \rightarrow 0,
+\]
+donc
+\[
+  \mu\left(f = +\infty\right) = 0.
+\]
 \fincorrection
 
 \finexercice

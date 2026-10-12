@@ -1,0 +1,71 @@
+\exercice{336, bodin, 1998/09/01}
+\video{xFq39ocyF_c}
+\enonce
+ Soient $a,b$ des entiers sup\'erieurs ou \'egaux
+\`a $1$. Montrer :
+\begin{enumerate}
+    \item $(2^a-1) | (2^{ab}-1)$ ;
+    \item $2^p-1 \text{ premier}\ \   \Rightarrow \ \  p \text { premier }$ ;
+    \item $\pgcd(2^a-1,2^b-1) =  2^{\pgcd(a,b)}-1$.
+\end{enumerate}
+\finenonce 
+
+\indication
+Pour 1. utiliser l'\'egalit\'e 
+$$x^b-1 = (x-1)(x^{b-1}+\cdots+x+1).$$
+
+Pour 2. raisonner par contraposition et utiliser la question 1.
+
+La question 3. est difficile ! Supposer $a\ge b$.
+Commencer par 
+montrer que $\pgcd(2^a-1,2^b-1) = \pgcd(2^a-2^b,2^b-1) = \pgcd(2^{a-b}-1,2^b - 1)$.
+Cela vour permettra de comparer l'agorithme d'Euclide pour le calcul de $\pgcd(a,b)$ avec
+l'algorithme d'Euclide pour le calcul de  $\pgcd(2^a-1,2^b-1)$.
+\finindication
+
+\correction
+
+\begin{enumerate}
+ \item Nous savons que
+$$x^b-1 = (x-1)(x^{b-1}+\cdots+x+1),$$
+pour $x=2^a$ nous obtenons :
+$$2^{ab}-1 = {(2^{a})}^b -1
+     = (2^a-1)\left( 2^{a(b-1)}+\cdots+2^{a}+1 \right).$$
+Donc $(2^a-1) | (2^{ab}-1)$.
+
+ \item Montrons la contraposée.
+Supposons que $p$ ne soit pas premier. Donc $p=ab$ avec $1<p,q<a$.
+Par la question précédente $2^a-1$ divise $2^p-1$
+(et $1 < 2^a-1 < 2^p-1)$. Donc $2^p - 1$ n'est pas un nombre premier.
+
+ 
+ \item  Nous supposons $a \ge b$.
+Nous allons montrer que faire l'algorithme d'Euclide pour le couple $(2^a-1,2^b-1)$
+revient à faire l'algorithme d'Euclide pour $(a,b)$.
+Tout d'abord rappellons la formule qui est à la base de l'algorithme d'Euclide :
+$\pgcd(a,b) = \pgcd(a-b,b)$. 
+Appliqué à $2^a-1$ et $2^b-1$ cela donne directement $\pgcd(2^a-1,2^b-1) = \pgcd(2^a-2^b,2^b-1)$.
+Mais $2^a-2^b = 2^b(2^{a-b}-1)$ d'où
+ $\pgcd(2^a-1,2^b-1) = \pgcd(2^b(2^{a-b}-1),2^b-1) = \pgcd(2^{a-b}-1,2^b-1)$.
+La dernière égalité vient du fait $2^b$ et $2^b-1$ sont premiers entre eux (deux entiers consécutifs
+sont toujours premiers entre eux).
+
+Nous avons montrer : $\pgcd(2^a-1,2^b-1) =\pgcd(2^{a-b}-1,2^b-1)$.
+Cette formule est à mettre en parallèle de $\pgcd(a,b) = \pgcd(a-b,b)$.
+En itérant cette formule nous obtenons que si $a=bq+r$ alors :
+ $\pgcd(2^a-1,2^b-1) = \pgcd(2^{a-bq}-1,2^b-1) = \pgcd(2^r-1,2^b-1)$
+à comparer avec 
+$\pgcd(a,b)=\pgcd(a-bq,b)=\pgcd(r,b)$.
+Nous avons notre première étape de l'algorithme d'Euclide.
+En itérant l'algorithme d'Euclide pour $(a,b)$,
+nous nous arêtons au dernier reste non nul:
+$\pgcd(a,b) = \pgcd(b,r) = \cdots = \pgcd(r_n,0)=r_n$.
+Ce qui va donner pour nous
+$\pgcd(2^a-1,2^b-1) = \pgcd(2^b-1,2^r-1) = \cdots = \pgcd(2^{r_n}-1,2^0-1) = 2^{r_n}-1$.
+
+Bilan : $\pgcd(2^a-1,2^b-1) =  2^{\pgcd(a,b)}-1$.
+
+\end{enumerate}
+
+\fincorrection
+\finexercice

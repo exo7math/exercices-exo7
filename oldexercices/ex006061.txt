@@ -1,0 +1,64 @@
+\exercice{6061, queffelec, 2011/10/16}
+\enonce[Exemple de topologie non séparée]
+Dans $\Cc$, on note $[z_0\rightarrow[$ la demi-droite $\{\rho e^{i\theta_0}\
+;\ \rho\geq\rho_0\}$, si $z_0=\rho_0 e^{i\theta_0}$. On déclare ouvert toute
+réunion (éventuellement vide) de telles demi-droites. 
+\begin{enumerate}
+\item Montrer qu'on a ainsi défini sur $\Cc$ une topologie $\cal T$ non séparée.
+
+\item Montrer que l'adhérence du point $\{z_0\}$ pour cette topologie est
+$[0,z_0]$.
+
+\item En déduire que les fermés de $\cal T$ sont les ensembles étoilés par rapport
+à $0$ ($A$ est dit ``étoilé par rapport à $0$" si, pour tout $z\in A$, le
+segment $[0,z]$ est encore dans $A$).
+\end{enumerate}
+
+
+
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item L'ensemble $\emptyset$ est réunion vide de demi-droites. Il est clair
+que $\C$ est dans $\cal T$ si, lorsque $z_0=0$, toute demi-droite
+$[0,\rightarrow[$ est admissible (ce qui aurait dû être précisé dans
+l'énoncé...Excuses!); par ailleurs cette famille d'ensembles est bien
+stable par réunion quelconque. Remarquons que si $U\in\cal T$, $z\in
+U\Longleftrightarrow [z,\rightarrow[\subset U$ (c'est-à-dire les
+demi-droites forment une base d'ouverts). En effet si $z\in U$ il existe
+$z'$ tel que $z\in [z',\rightarrow[\subset U$ et a fortiori
+$[z,\rightarrow[\subset U$. Ainsi la famille est stable par intersection
+finie : si $z\in U\cap U'$, $[z,\rightarrow[\subset U\cap U'$ et $U\cap
+U'\in\cal T$. On a bien une topologie.
+
+Cette topologie n'est pas séparée puisque, si $z\in [z',\rightarrow[$,
+tout voisinage de $z'$ contient $z$.
+
+\item La topologie n'étant pas même quasi-séparée, un singleton peut ne pas
+être fermé. Soit $z_0$; $z\in \overline{\{z_0\}}$ si et seulement si tout
+voisinage de
+$z$ rencontre $z_0$; puisque tout voisinage de $z$ contient $[z,\rightarrow[$,
+c'est équivalent à 
+$z_0\in [z,\rightarrow[$ ou encore $z\in [0,z_0]$.
+
+$\{0\}$ est le seul singleton fermé.
+
+\item On déduit de ce qui précède que si $A\subset X$, $\overline
+A=\cup_{z\in A}[0,z]$. En effet si $z\in A$,  $\overline A$ contient
+$\overline {\{z\}}$ et donc le segment
+$[0,z]$; réciproquement, si $z'\in[0,z]$ avec $z\in A$, $[z',\rightarrow[$,
+et donc tout voisinage de $z'$, rencontre $A$; ainsi $z'\in\overline A$.
+
+
+Supposons $A$ étoilé
+par rapport à $0$; $A$ contient $\cup_{z\in A}[0,z]=\overline A$ et $A$ est
+fermé.
+
+Réciproquement supposons $A$ fermé; $A=\cup_{z\in A}[0,z]$ et en particulier
+$A$ est étoilé par rapport à $0$. 
+\end{enumerate}
+\fincorrection
+\finexercice

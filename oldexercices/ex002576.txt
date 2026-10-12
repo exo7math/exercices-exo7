@@ -1,0 +1,90 @@
+\exercice{2576, delaunay, 2009/05/19}
+\enonce
+({\it 9 points}) Soit $u$ l'endomorphisme de $\R^3$, dont la matrice dans la base canonique est
+$$A=\begin{pmatrix}3&2&-2 \\  -1&0&1 \\ 1&1&0 \\ \end{pmatrix}$$ 
+\begin {enumerate}
+  \item  Calculer les valeurs propres de $A$. L'endomorphisme $u$ est-il diagonalisable ?
+  \item Calculer $(A-I)^2$. Montrer que $A^n=nA+(1-n)I$ en utilisant la formule du bin\^ome de Newton.
+  \item  Soient $P(X)=(X-1)^2$ et $Q\in\R[X]$. Exprimer le reste de la division euclidienne de $Q$ par $P$ en fonction de $Q(1)$ et $Q'(1)$, o\`u $Q'$ est le polyn\^ome d\'eriv\'e de $Q$. En remarquant que $P(A)=0$ et en utilisant le r\'esultat pr\'ec\'edent avec un choix judicieux du polyn\^ome 
+$Q$, retrouver $A^n$.
+  \item
+  \begin {enumerate}
+    \item  Montrer que l'image de $\R^3$ par l'endomorphisme $u-\mathrm{Id}$ est un sous-espace vectoriel de dimension $1$, on notera $\varepsilon_2$ une base. 
+    \item D\'eterminer un vecteur $\varepsilon_3$ tel que 
+$u(\varepsilon_3)=\varepsilon_2+\varepsilon_3$. D\'eterminer un vecteur propre $\varepsilon_1$  de $u$ non colin\'eaire \`a $\varepsilon_2$. 
+
+    \item Montrer que $(\varepsilon_1,\varepsilon_2,\varepsilon_3)$ est une base de $\R^3$.Ecrire la matrice de $u$ dans cette base, ainsi que les matrices de passage. 
+    \item Retrouver $A^n$.
+  \end {enumerate}
+\end {enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+ {\it Soit $u$ l'endomorphisme de $\R^3$, dont la matrice dans la base canonique est}
+$$A=\begin{pmatrix}3&2&-2 \\  -1&0&1 \\ 1&1&0 \\ \end{pmatrix}$$ 
+\begin {enumerate}
+  \item Calculons les valeurs propres de $A$. 
+$$\det(A-\lambda I)=\begin{vmatrix}3-\lambda&2&-2 \\  -1&-\lambda&1 \\ 1&1&-\lambda \\ \end{vmatrix}=(\lambda-1)^3.$$ 
+La matrice $A$ admet une valeur propre triple qui est $\lambda=1$, elle ne peut pas \^etre diagonalisable sinon son sous-espace propre serait de dimension $3$ or, $A\neq I$.
+  \item Calculons $(A-I)^2$.
+$$(A-I)^2=\begin{pmatrix}2&2&-2 \\  -1&-1&1 \\ 1&1&-1 \\ \end{pmatrix}^2=\begin{pmatrix}0&0&0 \\  0&0&0 \\ 0&0&0 \\ \end{pmatrix}$$
+
+ Montrons que $A^n=nA+(1-n)I$ en utilisant la formule du bin\^ome de Newton.
+$$A^n=(A-I+I)^n=\sum_{k=0}^{n}C_n^k(A-I)^kI^{n-k}=C_n^0I^n+C_n^1(A-I)=I+n(A-I)=nA+(1-n)I.$$
+Car, pour $k\geq2$, on a $(A-I)^k=0$.
+  \item  {\it Soient $P(X)=(X-1)^2$ et $Q\in\R[X]$}. 
+
+Exprimons le reste de la division euclidienne de $Q$ par $P$ en fonction de $Q(1)$ et $Q'(1)$, o\`u $Q'$ est le polyn\^ome d\'eriv\'e de $Q$. 
+
+Il existe des polyn\^omes $S$ et $R$, avec $d^{\circ}R<d^{\circ}P$ ou $R=0$, tels que 
+$$Q(X)=S(X)(X-1)^2+R(X).$$
+Notons $R(X)=aX+b$ ($R(X)$ est de degr\'e $1$ car $P$ est de degr\'e 2) et d\'erivons, on obtient
+$$Q'(X)=S'(X)(X-1)^2+2(X-1)S(X)+a,$$
+on a donc $Q(1)=R(1)=a+b$ et $Q'(1)=a$, c'est-\`a-dire $a=Q'(1)$ et $b=Q(1)-Q'(1)$ d'o\`u
+$$R(X)=Q'(1)X+(Q(1)-Q'(1)).$$
+D'apr\`es la question $2)$, on remarque que $P(A)=0$, en choisissant le polyn\^ome $Q(X)=X^n$ on a
+$Q(1)=1$ et $Q'(1)=n$, donc 
+$$Q(A)=A^n=R(A)=Q'(1)A+(Q(1)-Q'(1))I=nA+(1-n)I.$$ 
+  \item
+  \begin {enumerate}
+    \item  Montrons que l'image de $\R^3$ par l'endomorphisme $(A-I)$ est un sous-espace vectoriel de dimension $1$.
+$$\forall(X,Y,Z)\in Im (A-I), \exists (x,y,z)\in\R^3,\ (A-I)\begin{pmatrix}x \\  y \\  z\end{pmatrix}
+=\begin{pmatrix}X \\  Y \\  Z\end{pmatrix},$$
+c'est-\`a-dire
+$$\begin{pmatrix}X \\  Y \\  Z\end{pmatrix}=(x+y-z)\begin{pmatrix}2 \\  -1 \\  1\end{pmatrix}.$$
+Ce qui prouve que $Im(A-I)$ est la droite vectorielle engendr\'ee par le vecteur 
+$\varepsilon_2=(2,-1,1)$.
+
+    \item D\'eterminons un vecteur $\varepsilon_3$ tel que $u(\varepsilon_3)=\varepsilon_2+\varepsilon_3$.
+On pose $\varepsilon_3=(x,y,z)$,
+$$u(\varepsilon_3)=\varepsilon_2+\varepsilon_3\iff A\begin{pmatrix}x \\  y \\  z\end{pmatrix}
+=\begin{pmatrix}2 \\  -1 \\  1\end{pmatrix}+\begin{pmatrix}x \\  y \\  z\end{pmatrix},$$
+c'est-\`a-dire
+$$\left\{\begin{align*}3x+2y-2z &= x+2 \\  -x+z &=y-1 \\  x+y &=z+1\end{align*}\right.\iff
+\left\{\begin{align*}2(x+y-z) &= 2 \\ -1(x+y-z) &=-1 \\  (x+y-z) &=+1\end{align*}\right.\iff x+y-z=1.$$
+On prends, par exemple $\varepsilon_3=(1,0,0)$.
+
+D\'eterminons un vecteur propre $\varepsilon_1$ de $u$ non colin\'eaire \`a $\varepsilon_2$.
+$$A\begin{pmatrix}x \\  y \\  z\end{pmatrix}
+=\begin{pmatrix}x \\  y \\  z\end{pmatrix}\iff\left\{\begin{align*}3x+2y-2z &= x \\  -x+z &=y \\  x+y &=z\end{align*}\right.\iff x+y-z=0.$$
+On peut prendre le vecteur $\varepsilon_1=(0,1,1)$ qui n'est pas colin\'eaire \`a $\varepsilon_2$.
+
+    \item   Ecrivons la matrice de $u$ dans la base $(\varepsilon_1,\varepsilon_2,\varepsilon_3)$, ainsi que les matrices de passage.
+
+On a $u(\varepsilon_1)=\varepsilon_1,u(\varepsilon_2)=\varepsilon_2$ et $u(\varepsilon_3)=\varepsilon_2+\varepsilon_3$ d'o\`u la matrice de $u$ dans la base $(\varepsilon_1,\varepsilon_2,\varepsilon_3)$
+
+$$A'=\begin{pmatrix}1&0&0 \\  0&1&1 \\ 0&0&1 \\ \end{pmatrix}.$$
+La matrice de passage $P$ est \'egale \`a 
+$$P=\begin{pmatrix}0&2&1 \\  1&-1&0 \\ 1&1&0 \\ \end{pmatrix}$$ et son inverse
+$$P^{-1}=\begin{pmatrix}0&1/2&1/2 \\  0&-1/2&1/2 \\ 1&1&-1 \\ \end{pmatrix}.$$
+    \item Pour retrouver $A^n$, on \'ecrit $A'=I+N$, o\`u
+$$N=\begin{pmatrix}0&0&0 \\  0&0&1 \\ 0&0&0 \\ \end{pmatrix},$$
+et $N^2=0$. Par ailleurs, on a $A=PA'P^{-1}$, d'o\`u 
+$$A^n=PA'^nP^{-1}=P(I+N)^nP^{-1}=P(I+nN)P^{-1}=P\begin{pmatrix}1&0&0 \\  0&1&n \\ 0&0&1 \\ \end{pmatrix}P^{-1}$$
+$$=\begin{pmatrix}2n+1&2n&-2n \\  -n&1-n&n \\  n&n&1-n \\ \end{pmatrix}=n\begin{pmatrix}3&2&-2 \\  -1&0&1 \\ 1&1&0 \\ \end{pmatrix}+(1-n)\begin{pmatrix}1&0&0 \\  0&1&0 \\ 0&0&1 \\ \end{pmatrix}=nA+(1-n)I.$$    
+  \end {enumerate}
+\end {enumerate}
+\fincorrection
+\finexercice

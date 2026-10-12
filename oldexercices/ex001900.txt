@@ -1,0 +1,380 @@
+\exercice{1900, legall, 2003/10/01}
+
+\enonce
+\ \par
+\begin{center}{\large \bf I Pr\'eliminaires}
+\end{center}
+
+
+\begin{enumerate}
+\item Soit $\mathcal{P} $ l'espace vectoriel des fonctions polynomiales de 
+$[0,1]$ \`a valeurs dans $\Rr .$ Montrer que $\mathcal{P} $ est de dimension 
+infinie.
+\item Soit $X$ une partie born\'ee de $\Rr .$ Montrer que $\sup 
+(X)=\sup \bar{X}.$
+\end{enumerate}
+
+
+\vskip5mm
+\begin{center}{\large \bf II}
+\end{center}
+\vskip5mm
+
+On note $\mathcal{L}$ l'ensemble des fonctions {\em lipschitziennes} de 
+$[0,1]$ \`a valeurs dans $\Rr$, c'est \`a dire telles qu'il existe
+$k\in \R _+$ tel que, pour tout $x,y\in [0,1], $ $ \vert 
+f(x)-f(y)\vert \leq k\vert x-y\vert $. On note $\C ^1$ l'ensemble des 
+fonctions de $[0,1]$ \`a valeurs dans $\Rr$
+de classe $C ^1,$ c'est \`a dire d\'erivables \`a d\'eriv\'ee continue.
+\begin{enumerate}
+\item Montrer que $\mathcal{L} $ est un sous espace vectoriel de l'espace 
+vectoriel des fonctions de $[0,1]$ \`a valeurs dans $\Rr$, que $\mathcal{L} $ 
+contient $\C ^1$ et est de dimension infinie.
+
+
+
+
+
+\item On pose, pour tout $f\in \mathcal{L} :$
+$$\displaystyle{ N_1(f)=\vert f(0)\vert +\sup _{(x,y)\in [0,1]^2, 
+x\not = y}\dfrac {\vert f(x)-f(y)\vert }{\vert x-y\vert }}$$
+$$\displaystyle{ N_2(f)=\vert f(0)\vert +\sup _{x\in ]0,1]}\dfrac 
+{\vert f(x)-f(0)\vert }{\vert x\vert }}$$
+$$ \Vert f \Vert _{\infty} =\sup _{x\in [0,1]}\vert f(x)\vert $$
+$$\displaystyle{ \lambda (f)=\Vert f\Vert _{\infty} +\sup _{(x,y)\in 
+[0,1]^2,  x\not = y}\dfrac {\vert f(x)-f(y)\vert }{\vert x-y\vert 
+}}.$$
+
+\begin{enumerate}
+\item Montrer que $N_1$, $N_2$,  $
+\Vert \ \Vert _{\infty}$ et $\lambda $ sont des normes sur $\mathcal{L} .$
+\item En consid\'erant la suite $f_n(x)=\sin (2\pi n x),$ montrer que 
+$N_2$ n'est pas \'equivalente \`a $
+\Vert \ \Vert _{\infty}.$
+\item Montrer que $N_1$ n'est \'equivalente ni \`a  $
+\Vert \ \Vert _{\infty}$, ni \`a $N_2.$
+\item Construire une suite $(g_n)_{n\in \Nn }$ d'\'el\'ements de $\mathcal{L} 
+$ qui converge vers $0$ pour $
+\Vert \ \Vert _{\infty}$ mais pas pour $N_2$. En d\'eduire (de 
+nouveau) que $N_2$ n'est pas \'equivalente \`a $
+\Vert \ \Vert _{\infty}.$
+\item Montrer que $\lambda $ et $N_1$ sont \'equivalentes.
+\end{enumerate}
+
+\item On pose, pour tout $f\in \C ^1 :$
+$\displaystyle{ \nu _1(f)=\vert f(0)\vert +\Vert f'\Vert _{\infty}}$
+et $\displaystyle{ \nu (f)=\Vert f\Vert _{\infty} +\Vert f'\Vert _{\infty}}.$
+\begin{enumerate}
+\item Montrer que $\nu _1$ et $\nu $ sont des normes sur $\C ^1$.
+\item Montrer que $\nu _1(f)= N_1(f) ,$ pour tout $f\in \C ^1.$
+\item Les normes $\nu $ et $\nu _1$ sont-elles \'equivalentes~?
+\end{enumerate}
+
+
+\item  Soit $(E, \Vert \ \Vert )$ un espace vectoriel norm\'e.
+Une suite $(x_n)_{n\in \Nn }$ d'\'el\'ements de $E$ est dite de {\em 
+Cauchy} si, pour tout $\epsilon >0, $ il existe $N $ tel que, si 
+$m, n\geq N$
+alors $\Vert x_n-x_m\Vert \leq \epsilon .$ On dit que $(E, \Vert \ 
+\Vert )$ est {\em complet} si toute suite de Cauchy y est 
+convergente. On rappelle
+que $\Rr $ muni de la norme $x\mapsto \vert x \vert $ est complet.
+\begin{enumerate}
+\item Soit $C^0$ l'espace vectoriel des fonctions continues de 
+$[0,1]$ \`a valeurs dans $\Rr$. Montrer que $(C^0, \Vert \ \Vert 
+_{\infty})$ est complet.
+\item L'espace vectoriel norm\'e $(\C^1, \nu )$ est-il complet~? 
+Qu'en est-il de $(\C^1, \nu _1)$~?
+\item Soit $(f_n)_{n\in \Nn }$ une suite de Cauchy dans $(\mathcal{L} , 
+\lambda ).$ Montrer que $(f_n)_{n\in \Nn }$ converge uniform\'ement 
+vers une fonction continue $f.$
+\item D\'emontrer que pour $n $ assez grand $f-f_n$ est lipschitzienne.
+\item En d\'eduire que $(\mathcal{L} , \lambda )$ est complet.
+\end{enumerate}
+\end{enumerate}
+
+\vskip5mm
+\begin{center}{\large \bf III}
+\end{center}
+\vskip5mm
+
+
+On munit $\C ^1$ d'une norme $N$ et
+   et $C^0$ de la norme $\Vert \ \Vert _{\infty }$. On note $d$ 
+l'application $f\mapsto f'$ de $\C ^1$ \`a valeurs dans $\C ^0.$
+\begin{enumerate}
+\item Soit $\varphi : \C ^1\rightarrow C^0 $
+une application lin\'eaire. On pose $N(\varphi ) =\displaystyle{ \sup 
+_{f ; N( f )\leq 1}\Vert \varphi (f)\Vert _{\infty}} .$
+D\'emontrer que $\varphi $ est continue si et seulement si $N(\varphi 
+) $ est fini. V\'erifier que $N$ est une norme sur l'espace vectoriel 
+des applications lin\'eaires
+continues de $\C ^1$ \`a valeurs dans $\C^0.$
+\item Montrer que l'application $d $ n'est pas continue si $N= \Vert 
+\ \Vert _{\infty}$.
+\item On munit $\C ^1$ de la norme $\nu .$ Montrer que $d$ est 
+continue et calculer $N(d).$
+\end{enumerate}
+
+
+
+
+\finenonce
+
+\noindication
+
+\correction
+\ \par
+\begin{center}{\large \bf I}
+\end{center}
+\vskip5mm
+
+
+\begin{enumerate}
+\item Soit $\mathcal{P}$ l'espace vectoriel des fonctions polynomiales. 
+Supposons $\mathcal{P}$ de dimension finie $n$. Notons $f_k$ la fonction 
+$x\mapsto x^k$. Alors la famille $\{ f_0, \cdots ,
+f_n \}$ qui compte $n+1$ \'el\'ements est li\'ee, donc il existe 
+$a_0, \cdots , a_n$ des scalaires non tous nuls tels que, pour tout
+$x\in \Rr $ on ait $a_0+a_1x+\cdots a_n x^n=0.$ Il en r\'esulte que 
+le polyn\^ome non nul \`a coefficients r\'eels $a_0+a_1X+\cdots 
+a_nX^n$ a une infinit\'e de racines, ce qui est
+absurde.
+
+\item Posons $M=\sup (\bar{X}).$ On doit v\'erifier que, {\em i)} 
+pour tout $x\in X , x\leq M$ et {\em ii)} pour tout $\epsilon >0$ 
+il existe $x\in X$ tel que
+$M-\epsilon \leq x.$
+Comme $X\subset \bar{X}$ et, pour tout $x\in \bar{X} , x\leq M$ la 
+propri\'et\'e {\em i)} est v\'erifi\'ee par $M.$ Soit maintenant 
+$\epsilon >0$. Il existe
+$x\in \bar{X}$ tel que $M-\dfrac{\epsilon }{2}<x$. Comme 
+$x\in\bar{X},$ il existe aussi $y\in X$ tel que $\vert x-y\vert 
+<\dfrac{\epsilon }{2}$. Donc $ M-\epsilon< y$
+et $M$ satisfait \`a {\em ii)}.
+\vskip1mm
+{\em Remarque : } on note \'egalement que $\sup (X)\in \bar{X}$. En 
+effet, pour tout $n\in \Nn ,$ choisissons un \'el\'ement $x_n\in X$ 
+tel que $x_n\geq \sup (x)-\dfrac{1}{n}.$
+Alors la suite $(x_n)_{n\in \Nn}$ constitu\'ee d'\'el\'ements de $X$ 
+converge dans $\Rr$ vers $\sup (X)$ qui appartient donc \`a $ 
+\bar{X}.$ On peut bien s\^ur en d\'eduire la
+propri\'et\'e {\em ii)} de $M$.
+
+\end{enumerate}
+
+\vskip5mm
+\begin{center}{\large \bf II}
+\end{center}
+\vskip5mm
+
+\begin{enumerate}
+\item Il est clair $\mathcal{L} $ est un sous espace vectoriel de l'espace 
+vectoriel des fonctions de $[0,1]$ \`a valeurs dans $\Rr$.
+  Soit $f\in \C ^1$ et $x,y \in
+[0,1],$ avec $x< y$.
+Par le th\'eor\'eme des accroissements finis, il existe $c_x\in ]x,y[ 
+$ tel que $f(y)-f(x)=f'(c_x)(y-x)$. Or $f'$ est continue, donc 
+born\'ee sur $[0,1]$.
+Soit $\displaystyle{M=\sup _{t\in [0,1]}\vert f'(t)\vert .}$ On a 
+l'in\'egalit\'e $\vert f(y)-f(x)\vert \leq M\vert y-x\vert $ qui 
+montre que $f\in \mathcal{L} .$
+Il en r\'esulte que $\mathcal{L} $ contient $\mathcal{P} $ donc est de dimension infinie.
+
+
+
+\item
+\begin{enumerate}
+\item Il suffit de v\'erifier que si $N_1(f)=0$ et $N_2(g)=0$, alors 
+$f=g=0$, les autres propri\'et\'es \'etant claires.
+Or si $N_1(f)=0,$ alors $f$ est constante et $f(0)=0,$ donc $f=0.$ Il 
+en va de m\^eme pour $N_2$.
+
+\item Pour tout $n \in \Nn $, $\Vert f_n \Vert _{\infty}=1$. Posons 
+$\displaystyle{X_n =\{ \dfrac {\vert f_n(x)-f_n(0)\vert }{\vert x\vert
+}} , x\not =0 \}  .$ Comme $f_n(0)=0, $ on voit que $N_1(f_n)=\sup (X_n).$ Or
+  $\displaystyle{ \vert f'_n(0)\vert =\lim _{x\rightarrow 0}
+\dfrac {\vert f_n(x)-f_n(0)\vert }{\vert x\vert
+}}, $ appartient \`a $\bar{X_n}$ donc, en appliquant I 2) on constate 
+que $\vert f'_n(0)\vert \leq \sup (\bar {X_n})= \sup (X_n)$. Enfin 
+$f'_n(0)=2\pi n$ donc
+$N_2(f_n)\geq 2\pi n .$ Il n'exite donc pas $K>0$ tel que, pour tout 
+$n\in \Nn ,$ $N_2(f_n)<K\Vert f_n \Vert _{\infty}$ soit $N_2$ et 
+$\Vert \  \Vert _{\infty}$ ne sont pas
+\'equivalentes.
+\vskip1mm {\em Remarques :} a) on peut obtenir ce r\'esultat (et le 
+pr\'eciser) en remarquant que la fonction $f_n :x\mapsto \dfrac{\sin 
+(2\pi n x)}{x}$ d\'efinie sur $]0, 1]$ se
+prolonge en une fonction continue en $0$ en posant $f_n(0)=2\pi n.$ 
+Puis noter (en fait c'est un cas particulier de I 2)) que 
+$\displaystyle{ \sup _{]0,1]}\vert f_n\vert =  \sup
+_{[0,1]}\vert f_n\vert }$ et montrer (par une \'etude classique de 
+fonction) que cette derni\`ere quantit\'e est $2\pi n .$
+\vskip1mm
+b) Ce qui fait l'int\'er\^et pour ce probl\`eme des fonctions 
+$(f_n)_{n\in \Nn }$, c'est qu'elles sont born\'ees par $1$ mais que 
+leur pente en l'origine peut-\^etre rendue
+arbitrairement grande avec $n.$ On peut donc obtenir le m\^eme 
+r\'esultat avec la suite $(k_n)_{n\in \Nn }$ d\'efinie par $k_n(x)=nx 
+$ si $x\leq \dfrac{1}{n}$ et $1$ sinon,
+pour laquelle un calcul direct donne $N_1(k_n)=n$ et $\Vert k_n\Vert 
+_{\infty}=1.$
+
+\item Comme, pour tout $f\in \mathcal{L} $, $N_1(f)\geq N_2(f)$, on d\'eduit 
+de ce qui pr\'ec\'ede que $N_1$ n'est pas \'equivalente ni \`a  $
+\Vert \ \Vert _{\infty}$. Posons $g_n(x)=x^n,$ pour $n\geq 1.$ Pour 
+tout $n\geq 1,$ $N_2(g_n)=1$. De plus $g'_n(1)=n,$ donc, par un 
+raisonnement identique \`a celui qui pr\'ec\'ede,
+$N_1(g_n)\geq n $ ce qui montre que $N_1$ n'est pas \'equivalente \`a $N_2$.
+
+\vskip1mm {\em Remarque :} ce qui fait l'int\'er\^et pour ce 
+probl\`eme des fonctions $(g_n)_{n\in \Nn }$, c'est qu'elles sont 
+born\'ees par $1$ mais que leur pente en $1$
+peut-\^etre rendue arbitrairement grande avec $n.$ On peut donc 
+obtenir le m\^eme r\'esultat avec la suite $(l_n)_{n\in \Nn }$ 
+d\'efinie par $l_n(x)=0 $ si $x\leq 1-\dfrac{1}{n}$ et
+  $nx- (n-1)$
+sinon.
+
+\item On pose $g_n(x)=x$ si $x\leq \dfrac{1}{n}$ et $\dfrac{1}{n}$ 
+sinon. Il est clair que $g_n\in \mathcal{L} ,$ $ \Vert g_n \Vert 
+_{\infty}=\dfrac{1}{n}$ et
+$N_2(g_n)=1.$ Il n'existe donc pas de constante $K'\in \R _+^*$ telle 
+que, pour tout $n\in \Nn$, $ \Vert g_n \Vert _{\infty}\geq 
+K'N_2(g_n)$
+donc $ N_2$ n'est pas \'equivalente \`a $
+\Vert \ \Vert _{\infty}.$ Enfin $N_2(g_n)=N_1(g_n)$, ce qui \'etablit 
+le m\^eme r\'esultat pour $N_1$.
+
+
+
+
+\item Il est clair que pour tout $f\in \mathcal{L}, $ que $\lambda (f)\geq 
+N_1(f).$ Soit $x\in ]0,1]$. De l'identit\'e
+$f(x)=f(0)+x\dfrac{f(x)-f(0)}{x}$ on d\'eduit que $\vert f(x)\vert 
+\leq \vert f(0)\vert +\vert \dfrac{f(x)-f(0)}{x}\vert $
+(car $\vert x\vert \leq 1$) soit $\vert f(x)\Vert \leq  N_1(f).$
+L'application $x\mapsto f(x)$ \'etant continue sur $[0,1]$ (ou en 
+appliquant I 2)) on en d\'eduit que, pour tout $x\in [0,1]$ on a 
+\'egalement $\vert f(x)\Vert \leq  N_1(f).$
+En d'autre termes $\Vert f \vert _{\infty}\leq  N_1(f)$ et $\lambda 
+(f)\leq 2N_1(f).$ Les normes $\lambda $ et $N_1$ sont donc 
+\'equivalentes.
+\end{enumerate}
+
+\item On pose, pour tout $f\in \C ^1 :$
+$\displaystyle{ \nu _1(f)=\vert f(0)\vert +\Vert f'\Vert _{\infty}}$
+et $\displaystyle{ \nu (f)=\Vert f\Vert _{\infty} +\Vert f'\Vert _{\infty}}.$
+\begin{enumerate}
+\item On constate ais\'ement que si $\nu _1(f)=0,$ alors $f$ est 
+constante et, comme de plus $f(0)=0$, elle est nulle. Les autre 
+propri\'et\'es sont imm\'ediates, donc $\nu $ et $\nu
+_1$ sont des normes sur
+$\C ^1$.
+\item  Soit $f\in \C ^1,$ notons $X=\{ \dfrac {\vert f(x)-f(y)\vert 
+}{\vert x-y\vert } ;
+(x,y)\in
+[0,1]^2,  x\not = y \} .$  Pour montrer que $\nu _1
+(f)= N_1(f) ,$ il suffit de v\'erifier que $\sup(X)=\Vert f'\Vert 
+_{\infty}.$ Soient $x, y\in [0,1], x\not = y. $ Par le th\'eor\`eme 
+des accroissements finis,
+il existe $c$ compris entre $x$ et $y$ tel que $\dfrac {\vert 
+f(x)-f(y)\vert }{\vert x-y\vert } =f'(c)\leq \Vert f'\Vert 
+_{\infty},$ donc $
+\sup (X)\leq \Vert f'\Vert _{\infty}.$ Comme $f'$ est continue, il 
+existe $x_0\in [0, 1]$ tel que $f'(x_0)=\Vert f'\Vert
+_{\infty}.$  Alors $\displaystyle{f'(x_0) =\lim _{x\rightarrow 
+x_0}\dfrac{f(x)-f(x_0)}{x-x_0}}$ appartient \`a $\bar{X},$ donc, en 
+appliquant I 2), $\Vert f'\Vert _{\infty}\leq \sup
+(\bar{X}) =\sup (X).$
+  \vskip1mm
+{\em Remarque :} on peut formuler ce raisonnement de la mani\`ere 
+suivante~: soit $Y=\{ f'(x) ; x\in [0,1] \} .$ Par le th\'eor\`eme 
+des accroissements finis,
+$X\subset Y.$ On a ensuite, par d\'efinition de la d\'eriv\'ee, 
+$Y\subset \bar{X}.$ Donc $\sup (X) \leq \sup (Y)\leq \sup (\bar{X}), 
+$ puis on applique I 2).
+\item Les normes $\nu $ et $\nu _1$ sont \'equivalentes. En effet, il 
+est clair que $\nu _1(f)\leq \nu (f)$ pour tout $f\in \C ^1.$
+Soit $t_0\in [0,1]$ tel que $\Vert f\Vert _{\infty}=\vert f(t_0)\vert 
+.$ Si $t_0=0$ alors $\nu _1(f)\leq \nu (f)$. Sinon, par le 
+th\'eor\`eme des accroissements finis, il existe $c\in
+]0, t_0[$ tel que
+$f(t_0)= f(0)+ f'(c)t_0$ ce dont on d\'eduit que $\Vert f\Vert 
+_{\infty}\leq \nu _1(f)$, puis que $\nu ( f)\leq 2\nu _1(f).$
+\end{enumerate}
+\item \begin{enumerate}
+\item Soit $x\in [0,1]$. La suite de nombres r\'eel $(f_n(x))_{n\in 
+\Nn}$ \'etant de Cauchy, elle est convergente. On pose 
+$\displaystyle{f(x)=\lim _{n\rightarrow \infty}f_n(x)}$.
+Soit $\epsilon >0$. La suite $(f_n)$ \'etant de Cauchy, il existe 
+$N$ tel que, si $m,n\geq N$ alors $\Vert f_n-f_m \Vert _{\infty}\leq 
+\epsilon $.
+Soient $x\in [0,1]
+$ et $m,n\geq N.$ On a $\vert f_n(x)-f_m(x)\vert \leq \epsilon$ 
+et, ceci \'etant vrai pour tout $m \in \Nn ,$ on en d\'eduit, par 
+passage \`a la limite suivant $m$, que $\vert
+f_n(x)-f(x)\vert
+\leq \epsilon ,$ soit $\Vert f_n-f\Vert _{\infty}\leq \epsilon 
+$. Ainsi $f$ est la limite, pour la convergence uniforme, d'une suite 
+de fonctions continues donc est continue.
+
+
+
+\item Par d\'efinition de $\nu ,$ une suite $(f_n)_{n\in \Nn}$ de 
+Cauchy pour $\nu$ est de Cauchy pour $\Vert \ \Vert _{\infty}$, donc 
+(uniform\'ement) convergente par la question
+qui pr\'ec\'ede. De m\^eme $(f'_n)_{n\in \Nn}$ est de Cauchy pour 
+$\Vert \ \Vert _{\infty}$, donc converge uniform\`ement vers une 
+fonction continue $g$. Il en r\'esulte que $f$ est
+d\'erivable et a pour d\'eriv\'ee la fonction continue $g$. Enfin 
+$(f_n)_{n\in \Nn}$ converge vers $f$ pour $\nu$ donc
+$(\C^1,
+\nu )$ est complet.
+
+Soit maintenant $(g_n)_{n\in \Nn}$ une suite de Cauchy dans $(\C^1, 
+\nu _1)$. Comme $\nu _1$ est \'equivalente \`a $\nu ,$ elle est de 
+Cauchy pour $\nu $ donc
+convergente. Il existe donc $h\in \C ^1 $ telle que 
+$\displaystyle{\lim _{n\rightarrow \infty}\nu (h-g_n )=0}$. Mais 
+puisque $\nu _1$ est \'equivalente \`a $\nu ,$
+on a aussi $\displaystyle{\lim _{n\rightarrow \infty}\nu _1(h-g_n 
+)=0}$ donc $(\C^1, \nu _1)$ est complet.
+
+\item Soit $(f_n)_{n\in \Nn }$ une suite de Cauchy dans $(\mathcal{L} , 
+\lambda ).$ Comme $\lambda (f_n)\geq \Vert f_n \Vert _{\infty}$, la 
+suite $(f_n)_{n\in \Nn }$ est \'egalement
+de Cauchy dans $(\C ^0, \Vert \ \Vert _{\infty}).$ Comme $(\C ^0, 
+\Vert \ \Vert _{\infty})$
+est complet, $(f_n)_{n\in \Nn }$
+converge uniform\'ement vers une fonction continue qu'on notera $f.$
+
+\item Soit $\epsilon >0 . $ Comme $(f_n)_{n\in \Nn }$ est une 
+suite de Cauchy, il existe $N$ tel que, pour $m,n\geq N$ on ait, pour 
+tout $x,y$ et $z\in [0,1]$, avec $x\not =y$~:
+$$\vert f_n(z)-f_m(z)\vert +\left \vert \dfrac{ 
+(f_n(x)-f_m(x))-(f_n(y)-f_m(y))}{x-y}\right \vert <\epsilon .$$
+En faisant tendre $m$ vers l'infini, on en d\'eduit~:
+$$\vert f_n(z)-f(z)\vert +\left \vert \dfrac{ 
+(f_n(x)-f(x))-(f_n(y)-f(y))}{x-y}\right \vert <\epsilon ,$$
+donc
+$$\sup _{z\in [0,1]}\vert f_n(z)-f(z)\vert +\sup _{x,y\in [0,1], 
+x\not =y}\left \vert \dfrac{ (f_n(x)-f(x))-(f_n(y)-f(y))}{x-y}\right 
+\vert \leq \epsilon .$$
+Ainsi la suite $(f_n)_{n\in \Nn }$ converge vers $f$ pour la norme 
+$\lambda .$ Par ailleurs, on d\'eduit de la seconde in\'egalit\'e 
+que, pour tout
+$x,y \in [0,1]$, avec $x\not =y$~:
+  $\vert  (f_n-f)(x)-(f_n-f)(y)\vert <\epsilon \vert x-y\vert ,$ 
+donc que pour $n$ assez grand $f-f_n$ appartient \`a $\mathcal{L} .$ Or $\mathcal{L} $ 
+est un espace vectoriel et $f_n\in \mathcal{L} $
+donc $f$ appartient \`a $\mathcal{L} $.
+
+
+\item Toute suite de Cauchy de $\mathcal{L} $ admet une limite dans $\mathcal{L}$ qui 
+est donc complet.
+\end{enumerate}
+\end{enumerate}
+\fincorrection
+\finexercice
+

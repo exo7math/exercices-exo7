@@ -1,0 +1,53 @@
+\exercice{5753, rouget, 2010/10/16}
+\enonce[*** I]
+Calculer $\sum_{n=0}^{+\infty}\frac{x^n}{4n^2-1}$ pour $x$ dans $]-1,1[$ et en déduire les sommes  $\sum_{n=0}^{+\infty}\frac{1}{4n^2-1}$ et $\sum_{n=0}^{+\infty}\frac{(-1)^n}{4n^2-1}$.
+\finenonce
+
+\noindication
+
+\correction
+Le rayon de la série considérée est égal $1$. Soit $x\in]-1,1[$.
+
+\begin{center}
+$f(x) =\frac{1}{2}\sum_{n=0}^{+\infty}\left(\frac{1}{2n-1}-\frac{1}{2n+1}\right)x^n =\frac{1}{2}\left(-1 +\sum_{n=1}^{+\infty}\frac{x^n}{2n-1}-\sum_{n=0}^{+\infty}\frac{x^n}{2n+1}\right)$.
+\end{center}
+
+\textbullet~Si $x$ est dans $]0,1[$,
+
+\begin{align*}\ensuremath
+f(x)&=\frac{1}{2}\left(-1 +\sum_{n=0}^{+\infty}\frac{x^{n+1}}{2n+1}-\sum_{n=0}^{+\infty}\frac{x^n}{2n+1}\right)=\frac{1}{2}\left(-1+\left(\sqrt{x}-\frac{1}{\sqrt{x}}\right)\sum_{n=0}^{+\infty}\frac{\left(\sqrt{x}\right)^{2n+1}}{2n+1}\right)\\
+ &=\frac{1}{2}\left(-1+\left(\sqrt{x}-\frac{1}{\sqrt{x}}\right)\ln\left(\frac{1+\sqrt{x}}{1-\sqrt{x}}\right)\right).
+\end{align*}
+
+\textbullet~Si $x$ est dans $]-1,0[$,
+
+\begin{align*}\ensuremath
+f(x)&=\frac{1}{2}\left(-1 +\sum_{n=0}^{+\infty}\frac{x^{n+1}}{2n+1}-\sum_{n=0}^{+\infty}\frac{x^n}{2n+1}\right)=\frac{1}{2}\left(-1-\left(\sqrt{-x}+\frac{1}{\sqrt{-x}}\right)\sum_{n=0}^{+\infty}(-1)^n\frac{\left(\sqrt{-x}\right)^{2n+1}}{2n+1}\right)\\
+ &=\frac{1}{2}\left(-1-\left(\sqrt{-x}+\frac{1}{\sqrt{-x}}\right)\Arctan(\sqrt{-x})\right).
+\end{align*}
+
+\textbullet~$f(0)=-1$.
+
+Maintenant, la somme est en fait définie sur $[-1,1]$ car les séries numériques de termes généraux $\frac{1}{4n^2-1}$ et $\frac{(-1)^n}{4n^2-1}$ convergent. Vérifions que la somme est continue sur $[-1,1]$.
+
+Pour $x$ dans $[-1,1]$ et $n\in\Nn^*$, $\left|\frac{x^n}{4n^2-1}\right|\leqslant\frac{1}{4n^2-1}$ qui est le  terme général d'une série numérique convergente. La série entière considérée converge donc normalement sur $[-1,1]$. On en déduit que cette somme est continue sur $[-1,1]$. Donc 
+
+\begin{align*}\ensuremath
+ \sum_{n=0}^{+\infty}\frac{1}{4n^2-1}&=f(1)=\displaystyle\lim_{\substack{x\rightarrow1\\ x<1}}f(x)
+=\displaystyle\lim_{\substack{x\rightarrow1\\ x<1}}\frac{1}{2}\left(-1+\left(\sqrt{x}-\frac{1}{\sqrt{-x}} \right)\ln\left(1+\sqrt{x}\right) +\frac{1}{\sqrt{x}}(1+\sqrt{x})(1-\sqrt{x})\ln(1-\sqrt{x})\right)\\
+ &=-\frac{1}{2}
+\end{align*} 
+			
+
+\textbf{Remarque.} $\sum_{n=0}^{+\infty}\frac{1}{4n^2-1}=\lim_{n \rightarrow +\infty}\left(\frac{1}{2}\sum_{k=0}^{n}\left(\frac{1}{2k-1}-\frac{1}{2k+1}\right)\right)=\lim_{n \rightarrow +\infty}\left(\frac{1}{2}\left(-1-\frac{1}{2n+1}\right)\right)=-\frac{1}{2}$ (série télescopique).
+
+On a aussi
+
+\begin{align*}\ensuremath
+ \sum_{n=0}^{+\infty}\frac{(-1)^n}{4n^2-1}&=f(-1)=\displaystyle\lim_{\substack{x\rightarrow-1\\ x>-1}}f(x)
+=\displaystyle\lim_{\substack{x\rightarrow-1\\ x>-1}}\frac{1}{2}\left(-1-\left(\sqrt{-x}+\frac{1}{\sqrt{-x}} \right)\Arctan(\sqrt{-x})\right)\\
+ &=\frac{1}{2}\left(-1-2\Arctan1\right)=-\frac{\pi+2}{4}.
+\end{align*} 
+
+\fincorrection
+\finexercice

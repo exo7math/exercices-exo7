@@ -1,0 +1,34 @@
+\exercice{4617, quercia, 2010/03/14}
+\enonce[Centrale MP 2000]
+
+Soit $(a_n)$ une suite réelle avec $a_0=0$ et $a_1=1$. On note 
+$f(z)=\sum_{n=0}^{\infty}a_nz^n$. On suppose que $f$ est injective et que le rayon de convergence
+de la série entière vaut 1. On considère $\Omega ^+=\{z\in \C\,|\, \Im z >0\}$ et
+$D=\{z\in \C\,|\, |z|<1\}$.
+
+\begin{enumerate}
+  \item Montrer que, pour tout $z\in D$, $f(z)\in \R$ si et seulement si $z\in \R$.
+    
+  \item Montrer que $f(D\cap \Omega ^+)\subset \Omega ^+$.
+    
+  \item Montrer que, pour tout $|r|<1$, 
+    $a_n=\frac{2}{\strut\pi r^n} \int_{\theta=0}^{\pi}\Im (f(re^{i\theta})) \sin (n\theta)\, d \theta$.
+    
+  \item Montrer que $|\sin (n\theta)|\le n|\sin \theta |$. En déduire que $|a_n|\le n$.
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $f(\overline z) = \overline{f(z)}$.
+  \item $\Im(f)$ est de signe constant sur le connexe $D\cap \Omega ^+$
+    et $f(z)\sim z$ au voisinage de~$0$.
+  \item Intégrer terme à terme.
+  \item $\Im (f(re^{i\theta})) \sin\theta \ge 0$ par la question {2.}.
+\end{enumerate}
+\fincorrection
+
+\finexercice

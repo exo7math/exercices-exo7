@@ -1,0 +1,74 @@
+\exercice{5100, rouget, 2010/06/30}
+\enonce
+Résoudre dans $\Rr$ les équations ou inéquations suivantes~:
+\begin{enumerate}
+ \item $(**)\;\ln|x+1|-\ln|2x+1|\leq\ln2$,
+ \item $(*)\;x^{\sqrt{x}}=\sqrt{x}^x$,
+ \item $(**)\;2\Argsh x=\Argch3-\Argth\frac{7}{9}$,
+ \item $(**)\;\mbox{ln}_x(10)+2\mbox{ln}_{10x}(10)+3\mbox{ln}_{100x}(10)=0$,
+ \item $(**)\;2^{2x}-3^{x-\frac{1}{2}}=3^{x+\frac{1}{2}}-2^{2x-1}$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Soit $x\in\Rr$,
+
+\begin{align*}
+\ln|x+1|-\ln|2x+1|\leq\ln2&\Leftrightarrow\ln\left|\frac{x+1}{2x+1}\right|\leq\ln2\Leftrightarrow\left|\frac{x+1}{2x+1}\right|\leq2\;
+\mbox{et}\;x+1\neq0\\
+ &\Leftrightarrow-2\leq\frac{x+1}{2x+1}\leq2\;\mbox{et}\;x\neq-1\Leftrightarrow\frac{x+1}{2x+1}+2\geq0\;\mbox{et}\;\frac{x+1}{2x+1}-2
+ \leq0\;\mbox{et}\;x\neq-1\\
+ &\Leftrightarrow\frac{5x+3}{2x+1}\geq0\;\mbox{et}\;\frac{-3x-1}{2x+1}\leq0\;\mbox{et}\;x\neq-1\\
+ &\Leftrightarrow\left(x\in\left]-\infty,-\frac{3}{5}\right]\cup\left]-\frac{1}{2},+\infty\right[\right)\;\mbox{et}\;\left(\left]-\infty,-\frac{1}{2}\right[\cup\left[-
+\frac{1}{3},+\infty\right[\right)\;\mbox{et}\;x\neq-1\\
+ &\Leftrightarrow x\in]-\infty,-1[\cup\left]-1,-\frac{3}{5}\right]\cup\left[-\frac{1}{3},+\infty\right[
+\end{align*}
+
+ \item  Pour $x>0$
+
+\begin{align*}
+x^{\sqrt{x}}=\sqrt{x}^x&\Leftrightarrow\sqrt{x}\ln x=x\ln\sqrt{x}\Leftrightarrow\ln x(\sqrt{x}-\frac{x}{2})=0\\
+ &\Leftrightarrow\ln x\times\sqrt{x}(2-\sqrt{x})=0\Leftrightarrow x=1\;\mbox{ou}\;x=4.
+\end{align*}
+
+ \item  $\Argch3=\ln(3+\sqrt{3^2-1})=\ln(3+\sqrt{8})$ et
+$\Argth\frac{7}{9}=\frac{1}{2}\ln\left(\frac{1+\frac{7}{9}}{1-\frac{7}{9}}\right)=\ln\sqrt{8}$. Donc,
+$\Argch3-\Argth\frac{7}{9}=\ln\left(1+\frac{3}{\sqrt{8}}\right)$.
+Par suite,
+
+\begin{align*}
+2\Argsh x=\Argch3-\Argth\frac{7}{9}&\Leftrightarrow x=\sh\left(\frac{1}{2}\ln\left(1+\frac{3}{\sqrt{8}}\right)\right)\\
+ &\Leftrightarrow
+x=\frac{1}{2}\left(\sqrt{1+\frac{3}{\sqrt{8}}}-\frac{1}{\sqrt{1+\frac{3}{\sqrt{8}}}}\right)=\frac{3}{2\sqrt{8}}
+\frac{1}{\sqrt{1+\frac{3}{\sqrt{8}}}}=\frac{3}{2\sqrt[4]{8}}
+\frac{1}{\sqrt{3+2\sqrt{2}}}\\
+ &\Leftrightarrow x=\frac{3\sqrt[4]{2}}{4}\frac{1}{\sqrt{(1+\sqrt{2})^2}}=\frac{3\sqrt[4]{2}(\sqrt{2}-1)}{4}.
+\end{align*}
+
+ \item  Pour $x\in]0,+\infty[\setminus\left\{\frac{1}{100},\frac{1}{10},1\right\}$,
+
+\begin{align*}
+\mbox{ln}_x(10)+2\mbox{ln}_{10x}(10)&+3\mbox{ln}_{100x}(10)=0\Leftrightarrow\frac{\ln(10)}{\ln
+x}+2\frac{\ln(10)}{\ln(10x)}+3\frac{\ln(10)}{\ln(100x)}=0\\
+ &\Leftrightarrow\frac{(\ln x+\ln(10))(\ln x+2\ln(10))+2\ln x(\ln x+2\ln(10))+3\ln x(\ln x+\ln(10))}{\ln x(\ln x+\ln(10))(\ln
+x+2\ln(10))}=0\\
+ &\Leftrightarrow6\ln^2x+10\ln(10)\times\ln x+2\ln^2(10)=0\\
+ &\Leftrightarrow\ln x\in\left\{\frac{-5\ln(10)+\sqrt{13\ln^2(10)}}{6},\frac{-5\ln(10)-\sqrt{13\ln^2(10)}}{6}\right\}\\
+ &\Leftrightarrow x\in\left\{10^{(-5-\sqrt{13})/6},10^{(-5+\sqrt{13})/6}\right\}.
+\end{align*}
+Comme aucun de ces deux nombres n'est dans $\left\{\frac{1}{100},\frac{1}{10},1\right\}$, $\mathcal{S}=\left\{10^{(-5-\sqrt{13})/6},10^{(-5+\sqrt{13})/6}\right\}$.
+
+ \item  Soit $x\in\Rr$.
+
+\begin{align*}
+2^{2x}-3^{x-\frac{1}{2}}=3^{x+\frac{1}{2}}-2^{2x-1}&\Leftrightarrow2^{2x}+2^{2x-1}=3^{x+\frac{1}{2}}+3^{x-\frac{1}{2}}\\
+ &\Leftrightarrow2^{2x-1}(2+1)=3^{x-\frac{1}{2}}(3+1)\Leftrightarrow3\times2^{2x-1}=4\times3^{x-\frac{1}{2}}\\
+ &\Leftrightarrow2^{2x-3}=3^{x-\frac{3}{2}}\Leftrightarrow(2x-3)\ln2=\left(x-\frac{3}{2}\right)\ln3\\
+ &\Leftrightarrow x=\frac{3\ln2-\frac{3}{2}\ln3}{2\ln2-\ln3}\Leftrightarrow x=\frac{3}{2}.
+\end{align*}
+\end{enumerate}
+\fincorrection
+\finexercice

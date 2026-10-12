@@ -1,0 +1,25 @@
+\exercice{6891, ruette, 2013/01/24}
+\enonce
+Une urne contient une boule rouge, trois boules vertes et seize boules blanches. 
+La boule rouge permet de gagner 10 euros, chaque boule verte permet de gagner 5 euros 
+et les boules blanches ne rapportent rien. Un joueur tire simultanément cinq boules. 
+Quelle est la probabilité pour que ce joueur gagne exactement 10 euros ?
+\finenonce
+
+\noindication
+\correction
+Pour gagner 10 euros, il faut avoir tiré exactement une boule rouge et 4 boules blanches, 
+ou 2 boules vertes et 3 boules blanches. Ces deux événements, notés $A$ et $B$, sont 
+incompatibles. Ici l'univers $\Omega$ est l'ensemble des combinaisons de 5 boules, 
+c'est-à-dire l'ensemble des parties à 5 éléments d'un ensemble de 20 boules. 
+Les ${20\choose{5}}=\frac{20.19.18.17.16}{5!}=15504$ combinaisons sont équiprobables. 
+Les éléments de l'événement $A$ sont les combinaisons formées de la boule rouge et 
+d'une combinaison de 4 boules blanches. Il y en a ${16\choose4}=\frac{16.15.14.13}{4!}=1820$. 
+Par conséquent, $p(A)=\frac{1820}{15504}$. Les éléments de l'événement $B$ sont les 
+combinaisons formées d'une combinaison de deux boules vertes et d'une combinaison de 3 
+boules blanches. Il y en a ${3\choose{2}}{16\choose{3}}=3.\frac{16.15.14}{6!}=1680$. 
+Par conséquent, $p(B)=\frac{1680}{15504}$.  La probabilité de gagner 10 euros est donc 
+égale à $p(A)+p(B)= \frac{3500}{
+15504}\simeq 0.225...$.
+\fincorrection
+\finexercice

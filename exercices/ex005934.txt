@@ -1,45 +1,37 @@
 \exercice{5934, tumpach, 2010/11/11}
+
 \enonce
-Soit $(\Omega, \Sigma, \mu)$ un espace mesur\'e et $f~:\Omega
-\rightarrow \mathbb{R}$ une fonction
-($\Sigma$-$\mathcal{B}(\mathbb{R})$)-mesurable. Montrer que la
-troncature $f_A$ de $f$ d\'efinie par~:
-$$
-f_A(x) = \left\{\begin{array}{ll}-A & \text{si}\quad f(x) < -A\\
-                                  f(x) & \text{si}\quad |f(x)| \leq A\\
-                                  A & \text{si}\quad f(x)> A
-\end{array} \right.
-$$
-est ($\Sigma$-$\mathcal{B}(\mathbb{R})$)-mesurable. 
+Soit \( (\Omega, \Sigma, \mu) \) un espace mesuré et \( f :\Omega
+\rightarrow \Rr \) une fonction (\( \Sigma \)-\( \mathcal{B}(\Rr) \))-mesurable. Montrer que la troncature \( f_A \) de \( f \) définie par :
+\[
+  f_A(x) = \left\{\begin{array}{ll}-A & \text{si}\quad f(x) < -A    \\
+             f(x)   & \text{si}\quad |f(x)| \le A \\
+             A      & \text{si}\quad f(x)> A
+  \end{array} \right.
+\]
+est (\( \Sigma \)-\( \mathcal{B}(\Rr) \))-mesurable.
 \finenonce
 
 \noindication
 
 \correction
-Soit $(\Omega, \Sigma, \mu)$ un espace mesur\'e et $f~:\Omega
-\rightarrow \mathbb{R}$ une fonction
-($\Sigma$-$\mathcal{B}(\mathbb{R})$)-mesurable. Montrons que la
-troncature $f_A$ de $f$ d\'efinie par~:
-$$
-f_A(x) = \left\{\begin{array}{ll}-A & \text{si}\quad f(x) < -A\\
-                                  f(x) & \text{si}\quad |f(x)| \leq A\\
-                                  A & \text{si}\quad f(x)> A
-\end{array} \right.
-$$
+Soit \( (\Omega, \Sigma, \mu) \) un espace mesuré et \( f :\Omega
+\rightarrow \Rr \) une fonction (\( \Sigma \)-\( \mathcal{B}(\Rr) \))-mesurable. Montrons que la troncature \( f_A \) de \( f \) définie par :
+\[
+  f_A(x) = \left\{\begin{array}{ll}-A & \text{si}\quad f(x) < -A    \\
+             f(x)   & \text{si}\quad |f(x)| \le A \\
+             A      & \text{si}\quad f(x)> A
+  \end{array} \right.
+\]
 est mesurable. Notons
-$$
-\begin{array}{l}
-E_{1} := \{x\in\Omega~|~f(x)< -A\}= f^{-1}\left(]-\infty,-A[\right),\\
-E_{2}:= \{x\in\Omega~|~|f(x)| \leq A\} = f^{-1}\left([-A, A]\right),\\
-E_{3}:=\{x\in\Omega~|~f(x)>A\} = f^{-1}\left(]A, +\infty[\right).
-\end{array}
-$$
-Comme $]-\infty, -A[$, $[-A, A]$, $]A, +\infty[$ appartiennent \`a
-la tribu bor\'elienne et $f$ est
-($\Sigma$-$\mathcal{B}(\mathbb{R})$)-mesurable, les ensembles
-$E_{1}$, $E_2$, et $E_3$ appartiennent \`a $\Sigma$. Alors $f_{A}
-= f\cdot \mathbf{1}_{E_2} -A \cdot \mathbf{1}_{E_1} + A \cdot\mathbf{1}_{E_{3}}$ est
-mesurable comme somme de produits de fonctions mesurables.
+\[
+  \begin{array}{l}
+    E_1 := \{x\in\Omega | f(x)< -A\} = f^{-1}\left(]-\infty,-A[\right), \\
+    E_2:= \{x\in\Omega | |f(x)| \le A\} = f^{-1}\left([-A, A]\right),   \\
+    E_3:=\{x\in\Omega | f(x)>A\} = f^{-1}\left(]A, +\infty[\right).
+  \end{array}
+\]
+Comme \( ]-\infty, -A[ \), \( [-A, A] \), \( ]A, +\infty[ \) appartiennent à la tribu borélienne et \( f \) est (\( \Sigma \)-\( \mathcal{B}(\Rr) \))-mesurable, les ensembles \( E_1 \), \( E_2 \), et \( E_3 \) appartiennent à \( \Sigma \). Alors \( f_A = f\cdot \mathbf{1}_{E_2} -A \cdot \mathbf{1}_{E_1} + A \cdot\mathbf{1}_{E_3} \) est mesurable comme somme de produits de fonctions mesurables.
 \fincorrection
 
 \finexercice

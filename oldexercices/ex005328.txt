@@ -1,0 +1,21 @@
+\exercice{5328, rouget, 2010/07/04}
+\enonce[**T]
+Déterminer $a\in\Cc$ tel que $P=X^5-209X+a$ admette deux zéros dont le produit vaut $1$.
+\finenonce
+
+\noindication
+
+\correction
+$a$ est solution du problème si et seulement si $X^5-209X+a$ est divisible par un polynôme de la forme $X^2+\alpha X+1$. Mais 
+
+$$X^5-209X+a=(X^2+\alpha X+1)(X^3-\alpha X^2+(\alpha^2-1)X-(\alpha^3-2\alpha))+(\alpha^4-3\alpha^2-208)X+a+(\alpha^3-2\alpha).$$
+
+Donc a est solution $\Leftrightarrow\exists\alpha\in\Cc/\;\left\{
+\begin{array}{l}
+\alpha^4-3\alpha^2-208=0\\
+a=-\alpha^3+2\alpha
+\end{array}
+\right.$. Mais, $\alpha^4-3\alpha^2-208=0\Leftrightarrow\alpha^2\in\{-13,16\}\Leftrightarrow\alpha\in\{-4,4,i\sqrt{13},-i\sqrt{13}\}$ et la deuxième équation fournit $a\in\{56,-56,15i\sqrt{13},-15i\sqrt{13}\}$.
+
+\fincorrection
+\finexercice

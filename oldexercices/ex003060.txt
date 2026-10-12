@@ -1,0 +1,27 @@
+\exercice{3060, quercia, 2010/03/08}
+
+\enonce[$f(f(n)) < f(n+1)$]
+Soit $f : {\N} \to {\N}$ telle que :
+$\forall\ n \in \N,\ f(f(n)) < f(n+1)$.
+On veut montrer que $f = \text{id}_{\N}$.
+\par {\it (Olympiades 1977)}
+\begin{enumerate}
+  \item Montrer que $\forall\ n\in \N,\ \forall\ x \ge n,\ f(x) \ge n$.
+  \item Soit $n \in \N$ et $a \ge n$ tel que $f(a) = \min\{f(x)$ tq $x\ge n\}$.
+    Montrer que $a=n$.
+  \item En d{\'e}duire que $f$ est strictement croissante, puis conclure.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item R{\'e}currence sur $n$.
+ \item Si $a > n$, alors $a = b+1$ avec $b \ge n$, donc $f(b) \ge n$,
+    donc $f(f(b)) \ge f(a)$. Contradiction.
+ \item  
+\end{enumerate}
+\fincorrection
+
+\finexercice 

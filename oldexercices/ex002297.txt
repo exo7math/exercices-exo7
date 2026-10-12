@@ -1,0 +1,32 @@
+\exercice{2297, barraud, 2008/04/24}
+\enonce
+Soit $A$ un anneau factoriel.
+\begin{enumerate}
+  \item Pour $a,b\ne 0$ on a $(a)\cdot (b)= (a)\cap(b)\ \ $ ssi $\ \ \pgcd(a,b)\thicksim 1$.
+  \item  Si $(a,b)$ est principal, alors $(a,b)=(\pgcd(a,b))$.
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+  Rappelons que $(a)\cdot(b)=\{\sum_{i=1}^{n}a_{i}b_{i}, n\in\Nn,
+  a_{i}\in(a), b_{i}\in(b)\}=(ab)$. De plus $(ab)\subset(a)\cap(b)$ donc 
+  \begin{align*}
+    (ab)=(a)\cap(b)
+    &\Leftrightarrow (a)\cap(b)\subset(ab)\\
+    &\Leftrightarrow \forall m\in A,\ (a|m\text{ et }b|m\Rightarrow ab|m)\\
+    &\Leftrightarrow \mathrm{ppcm}(a,b)\sim ab\\
+    &\Leftrightarrow \mathrm{ppcm}(a,b)\sim \pgcd(a,b)\mathrm{ppcm}(a,b)\\
+    &\Leftrightarrow \pgcd(a,b)\sim 1
+  \end{align*}
+
+  Si $A$ est principal, alors $\exists d\in A,\ (a,b)=(d)$. Alors
+  $a\in(d)$ et $b\in(d)$ donc $d$ est un diviseur commun à $a$ et $b$. Si
+  de plus $d'$ est un autre diviseur commun à $a$ et $b$, alors
+  $a\in(d')$ et $b\in(d')$ et comme $(a,b)$ est le plus petit idéal
+  contenant $a$ et $b$, on en déduit que $(a,b)=(d)\subset(d')$, et donc
+  que $d'|d$~: finalement, $\pgcd(a,b)=d$.
+
+\fincorrection
+\finexercice

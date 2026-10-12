@@ -1,0 +1,27 @@
+\exercice{2934, quercia, 2010/03/08}
+
+\enonce[Symétrique par rapport à une droite]
+Les points $A,B,M$ ayant pour affixes $a,b,z$, calculer l'affixe du symétrique $M'$ 
+de $M$ par rapport à la droite $(AB)$.
+\finenonce
+
+\noindication
+
+\correction
+On peut exprimer que $(AB)$ est la médiatrice du segment $[MM']$, mais on choisit ici d'utiliser le cours sur les similitudes. Cherchons donc à écrire la réflexion d'axe $(AB)$ en coordonnée complexe.
+Cette réflexion s'écrit $z\mapsto \alpha \bar z + \beta$, avec $|\alpha|=1$ et $arg(\alpha)=2 arg(b-a)$. On obtient donc $\alpha= \frac{b-a}{\overline b - \overline a}$. 
+
+Pour déterminer $\beta$, on peut exprimer le fait que $a$ est fixe:
+\[
+a = \frac{b-a}{\overline b - \overline a} \bar a + \beta 
+\Leftrightarrow 
+\beta = \frac{a\overline b - b\overline a }{\overline b - \overline a}
+\]
+Finalement, la réflexion s'écrit:
+\[
+z\mapsto \frac{b-a}{\overline b - \overline a} \cdot z + \frac{a\overline b - b\overline a }{\overline b - \overline a}.
+\]
+
+\fincorrection
+
+\finexercice 

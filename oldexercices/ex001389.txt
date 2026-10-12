@@ -1,0 +1,35 @@
+\exercice{1389, legall, 1998/09/01}
+
+\enonce
+\begin{enumerate}
+    \item Soit $  G  $ un groupe dans lequel tout \'el\'ement (distinct de
+l'\'el\'ement neutre) est d'ordre $  2  .$ Montrer que $  G  $ est commutatif.
+    \item Soit $  G  $ un groupe d'ordre pair. Montrer que $  G  $ contient au moins un \'el\'ement d'ordre $  2  .$
+\end{enumerate}
+
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+    \item Notons d'abord que pour $x\in G$ $x^2=e$ et donc
+$x^{-1}=x$. Soit maintenant $x,y \in G$. Alors $xy\in G$ et
+$(xy)^2=e$ donc $xy=(xy)^{-1}$ et par suite $xy=y^{-1}x^{-1}=yx$
+car $x$ et $y$ sont d'ordre $2$. Le produit de deux \'el\'ements
+quelconques de $G$ commute donc $G$ est commutatif.
+    \item Notons $E$ l'ensemble des \'el\'ements d'ordre $2$.
+$$E = \{ x\in G\ / \ x^2=e \text{ et } x \not=e \} =
+\{ x\in G\ / \ x=x^{-1} \text{ et } x \not=e \}.$$ Par l'absurde
+supposons que $H$ est l'ensemble vide. Alors quelque soit
+$x\not=e$ dans $G$ $x\not= x^{-1}$. Donc nous pouvons d\'ecomposer
+$G\setminus \{ e \}$ en deux ensembles disjoints $F = \{
+x_1,\ldots,x_n\}$ et $F' =\{{x_1}^{-1}, \ldots,{x_n}^{-1} \}$ qui
+sont de m\^eme cardinal $n$. Donc le cardinal de $G$ est $2n+1$
+(le $+1$ provient de l'\'el\'ement neutre). Ce qui contredit
+l'hypoth\`ese << $G$ d'orde pair >>.
+\end{enumerate}
+\fincorrection
+
+\finexercice
+

@@ -1,0 +1,60 @@
+\exercice{4064, quercia, 2010/03/11}
+\enonce[Systèmes différentiels à coefficients constants]
+
+\def\qpar{}%
+$x,y,z$ sont des fonctions de $t$. Résoudre les systèmes :
+
+\begin{enumerate}
+  \item $\begin{cases} x' = 2y + 2z\cr y' = -x + 2y + 2z\cr z' = -x + y  + 3z.\cr\end{cases}$
+    
+%
+  \item $\begin{cases} y'+y = z \cr z'+2z = y-1. \cr\end{cases}$
+    
+%
+  \item $\begin{cases} y' = y+z+ \sin t\cr z'=-y+3z.\cr\end{cases}$
+    
+%
+  \item $\begin{cases} x' = x+y-z \cr y'=2x+y-2z\cr z'=-2x+2y+z.\cr\end{cases}$
+    
+
+
+  \item $\begin{cases} x' = 2x + y + z   \cr
+             y' = x - y - z    \cr
+             z' = -x + 2y + 2z.\cr\end{cases}$
+    
+%
+  \item $\begin{cases} x' = 2x + z + \sh t\cr
+             y' = x - y - z + \ch t\cr
+             z' = -x + 2y + 2z - \ch t.\cr\end{cases}$
+    
+
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $x = 2\alpha e^t + (2\gamma t + 2\beta-\gamma) e^{2t}$, \quad
+             $y = (\gamma t + \beta) e^{2t}$, \quad
+             $z = \alpha e^t + (\gamma t + \beta) e^{2t}$.
+  \item $y = -1 + \lambda e^{\alpha t} + \mu e^{\beta t}$,\quad
+             $z = -1 + \lambda(1+\alpha) e^{\alpha t} + \mu(1+\beta) e^{\beta t}$,\quad
+             $\alpha = \frac{-3+\sqrt5}2$,
+             $\beta  = \frac{-3-\sqrt5}2$.
+  \item $y = \frac{-3\cos t-13\sin t}{25} + (at+b)e^{2t}$,\quad
+             $z = \frac{-4\cos t- 3\sin t}{25} + (at+a+b)e^{2t}$.
+  \item $x = (a+bt+ct^2)e^t$,\quad
+             $y = \left({a+\frac{b-c}2 + (b+c)t+ct^2}\right)e^t$,\quad
+             $z = \left({a-\frac{b+c}2 + (b-c)t+ct^2}\right)e^t$.
+  \item $x = -(b+c)e^t + (a+b+c)e^{2t}$,\par
+             $y = \frac12(-a+5b+3c) - 2(b+c)e^t + \frac12(a+b+c)e^{2t}$,\par
+             $z = \frac12(a-5b-3c)  + 3(b+c)e^t - \frac12(a+b+c)e^{2t}$.
+  \item $x = (at^2 + (a+b+\frac12)t + a+b+c)e^t$,\par
+             $y = (at^2 + (b-a+\frac12)t + a+c)e^t - \frac12e^{-t}$,\par
+             $z = (-at^2 + (a-b-\frac12)t -c)e^t + \frac12e^{-t}$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

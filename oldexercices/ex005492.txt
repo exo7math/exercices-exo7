@@ -1,0 +1,20 @@
+\exercice{5492, rouget, 2010/07/10}
+\enonce[***I Inégalité de \textsc{Hadamard}]
+Soit $\mathcal{B}$ une base orthonormée de $E$, espace euclidien de dimension $n$.
+Montrer que~:~$\forall(x_1,...,x_n)\in E^n,\;|\mbox{det}_{\mathcal{B}}(x_1,...,x_n)|\leq||x_1||...||x_n||$ en précisant les cas d'égalité.
+\finenonce
+
+\noindication
+
+\correction
+Si la famille $(x_i)_{1\leq i\leq n}$ est une famille liée, l'inégalité est claire et de plus, on a l'égalité si et seulement si l'un des vecteurs est nuls.
+Si la famille $(x_i)_{1\leq i\leq n}$ est une famille libre et donc une base de E, considérons $\mathcal{B}'=(e_1,...,e_n)$ son orthonormalisée de \textsc{Schmidt}. On a 
+
+$$\left|\mbox{det}_{\mathcal{B}}(x_i)_{1\leq i\leq n}\right|=\left|\mbox{det}_{\mathcal{B}'}(x_i)_{1\leq i\leq n}\times\mbox{det}_{\mathcal{B}}(\mathcal{B}')\right|=|\mbox{det}_{\mathcal{B}'}(x_i)_{1\leq i\leq n}|,$$
+car $\mbox{det}_{\mathcal{B}}\mathcal{B}'$ est le déterminant d'une d'une base orthonormée dans une autre et vaut donc $1$ ou $-1$.
+Maintenant, la matrice de la famille $(x_i)_{1\leq i\leq n}$ dans $\mathcal{B}'$ est triangulaire supérieure et son déterminant est le produit des coefficients diagonaux à savoir les nombres $x_i|e_i$ (puisque $\mathcal{B}'$ est orthonormée). Donc
+
+$$|\mbox{det}_{\mathcal{B}}(x_i)_{1\leq i\leq n}|=|\mbox{det}_{\mathcal{B}'}(x_i)_{1\leq i\leq n}|=\left|\prod_{i=1}^{n}(x_i|e_i)\right|\leq\prod_{i=1}^{n}\|x_i\|\times\|e_i\|=\prod_{i=1}^{n}||x_i||,$$
+d'après l'inégalité de \textsc{Cauchy}-\textsc{Schwarz}. De plus, on a l'égalité si et seulement si, pour tout $i$,  $|x_i|e_i|=\|x_i\|\times\|e_i\|$ ou encore si et seulement si, pour tout $i$, $x_i$ est colinéaire à $e_i$ ou enfin si et seulement si la famille $(x_i)_{1\leq i\leq n}$ est orthogonale.
+\fincorrection
+\finexercice

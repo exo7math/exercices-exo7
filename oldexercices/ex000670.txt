@@ -1,0 +1,62 @@
+\exercice{670, vignal, 2001/09/01}
+\video{AqwFsD85iiU}
+\enonce
+ Soit $f : \R\setminus\{1/3\}\rightarrow \R$ 
+telle que $f(x)= \frac{2x+3}{3x-1}$.
+
+Pour tout $\epsilon>0$ d\'eterminer $\delta$ tel que,
+($x\not=1/3$ et $|x|\leq\delta)\Rightarrow |f(x)+3|\leq \epsilon$.
+
+Que peut-on en conclure ?
+\finenonce
+
+\indication
+Le ``$\epsilon$'' vous est donné, il ne faut pas y toucher.
+Par contre c'est à vous de trouver le ``$\delta$''.
+\finindication
+
+\correction
+Commençons par la fin, trouver un tel $\delta$ montrera que 
+$$\forall \epsilon > 0 \quad \exists \delta > 0 \quad |x-x_0| < \delta \Rightarrow |f(x)-(-3)| < \epsilon$$
+autrement dit la limite de $f$ en $x_0=0$ est $-3$.
+Comme $f(0)=-3$ alors cela montre aussi que $f$ est continue en $x_0=0$.
+
+\bigskip
+
+On nous donne un $\epsilon>0$, à nous de trouver ce fameux $\delta$.
+Tout d'abord 
+$$\left| f(x)+3 \right| = \left| \frac{2x+3}{3x-1} + 3 \right| = \frac{11|x|}{|3x-1|}.$$
+Donc notre condition devient :
+$$ \left| f(x)+3 \right| < \epsilon \quad
+ \Leftrightarrow \quad \frac{11|x|}{|3x-1|} < \epsilon 
+\quad  \Leftrightarrow \quad |x| < \epsilon\frac{|3x-1|}{11}.$$
+
+Comme nous voulons éviter les problèmes en $x = \frac 13$ pour lequel la fonction $f$ n'est pas définie, nous
+allons nous placer ``loin'' de $\frac 13$.
+Considérons seulement les $x \in \Rr$ tel que $|x| < \frac 16$.
+Nous avons :
+$$|x| < \frac 16 \Rightarrow -\frac 16 < x < + \frac 16 \quad  \Rightarrow \quad  -\frac 32 < 3x-1 < -\frac 12 \quad \Rightarrow \quad \frac 12 < |3x-1|.$$
+Et maintenant explicitons $\delta$ :
+prenons $\delta < \epsilon \cdot \frac{1}{2}\cdot \frac{1}{11}$.
+Alors pour $|x| < \delta$ nous avons 
+$$|x| < \delta = \epsilon \cdot  \frac{1}{2} \cdot \frac{1}{11} < \epsilon \cdot|3x-1|\cdot \frac{1}{11}$$
+ce qui implique par les équivalences précédentes que 
+$\left| f(x)+3 \right| < \epsilon$.
+
+Il y a juste une petite correction à apporter à notre $\delta$ : au cours de nos calculs
+nous avons supposé que $|x| < \frac 16$, mais rien ne garantie que $\delta \le \frac 16$
+(car $\delta$ dépend de $\epsilon$ qui pourrait bien être très grand, même
+si habituellement ce sont les $\epsilon$ petits qui nous intéressent).
+Au final le $\delta$ qui convient est donc :
+$$\delta = \min (\frac 16, \frac{\epsilon}{22}).$$
+
+\bigskip
+
+Remarque finale :
+bien sûr on savait dès le début que $f$ est continue en $x_0=0$. En effet
+$f$ est le quotient de deux fonctions continues, le dénominateur ne s'annulant
+pas en $x_0$. Donc nous savons dès le départ qu'un tel $\delta$ existe,
+mais ici nous avons fait plus, nous avons trouvé une formule explicite pour ce $\delta$.
+
+\fincorrection
+\finexercice

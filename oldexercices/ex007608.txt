@@ -1,0 +1,35 @@
+\exercice{7608, mourougane, 2021/08/10}
+\enonce[Biholomorphisme de $\mathbb{H}$]
+On rappelle qu'à toute matrice $A=\begin{pmatrix} a&b\\c&d\end{pmatrix}$ de $SL(2,\Rr)$,
+on associe l'application linéaire fractionnaire
+$$\begin{array}{cccc}
+ h_A :& \Cc-\{-\frac{d}{c}\}&\longrightarrow&\Cc-\{\frac{a}{c}\}\\&z&\longmapsto& \frac{az+b}{cz+d}
+\end{array}$$
+\begin{enumerate}
+
+\item Montrer que $h_A$ envoie $\mathbb{H}$ sur $\mathbb{H}$.
+
+\item Montrer que pour tout élément $z$ de $\mathbb{H}$, il existe $A\in SL(2,\Rr)$ 
+tel que $h_A(i)=z$.
+                                            
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+  \item Soit $z\in\mathbb{H}$.
+\begin{eqnarray*}Im(h_A(z)&=&\frac{1}{2i}\left(\frac{az+b}{cz+d}-\overline{\frac{az+b}{cz+d}}\right)=\frac{1}{2i}\left(\frac{az+b}{cz+d}-\frac{a\overline{z}+b}{c\overline{z}+d}\right)\\
+&=&\frac{1}{2i}\frac{(ad-bc)(z-\overline{z})}{|cz+d|^2}
+=\frac{\det A}{|cz+d|^2}Im(z)>0.
+\end{eqnarray*}
+Donc, $h_A(z)\in\mathbb{H}$ et $h_A$ envoie le demi-plan $\mathbb{H}$ sur lui-même.
+  \item Soit $z=x+iy\in\mathbb{H}$. Soit $A\in SL(2,\Rr)$.
+$$h_A(i)=z\iff ai+b=z(ci+d)\iff ai+b=(dx-cy)+i(cx+dy)$$
+$$ \iff \left\{\begin{array}{ccc} b&=&dx-cy\\ a&=&cx+dy\end{array}\right..$$
+    On peut par exemple choisir, puisque $y$ est strictement positif, $A=\frac{1}{\sqrt{y}}\begin{pmatrix}
+    y&x\\
+                    0&1
+                   \end{pmatrix}$
+\end{enumerate}
+\fincorrection
+\finexercice

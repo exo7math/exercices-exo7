@@ -1,0 +1,117 @@
+\exercice{2621, debievre, 2009/05/19}
+\enonce
+Pour chacune des suites $(u_n)_n$ dans le plan $\R^2$ ci-dessous, 
+placer quelques-uns des points $u_n$ dans le plan 
+et d\'ecrire qualitativement le comportement de la suite lorsque $n$ tend 
+vers l'infini. \'Etudier ensuite 
+la convergence de chacune des suites et d\'eterminer 
+la limite le cas \'ech\'eant.
+
+\begin{enumerate}
+  \item $u_n=(\frac{4n^2}{n^2+4n+3}, \cos\frac1n)$
+  \item $u_n=(\frac{n^2\arctan n}{n^2+1}, \sin(\frac{\pi}{4}\exp(-{\frac1n})))$
+  \item $u_n=(\sinh n, \frac{\ln n}{n})$
+  \item $u_n=(a^n\cos (n\alpha), a^n\sin (n\alpha))$, en fonction de 
+$a\in \R$, $a>0$ et $\alpha\in\R$.
+\end{enumerate}\finenonce
+
+\indication 
+Pour \'etablir ou r\'efuter
+l'existences d'une limite  particuli\`ere dans le plan et pour ensuite
+d\'eterminer une limite pourvu qu'elle existe, utiliser le fait que
+pour que $\lim_{n \to \infty}(x_n,y_n)$ existe dans le plan $\R^2$ 
+il faut et il suffit que
+chacune des limites $\lim_{n \to \infty}x_n$ et $\lim_{n \to \infty}y_n$ existe
+en tant que limite finie.
+\finindication
+
+\correction 
+Des calculs \'el\'ementaires donnent
+
+\begin{enumerate}
+  \item $u_1=(\frac{1}{2}, \cos 1),\ u_2=(\frac{16}{15}, \cos \frac 12),\ 
+\ldots \ ,
+ u_{10}=(\frac{400}{143}, \cos \frac 1{10}),\ 
+\ldots$
+  \item 
+  $u_1=(\frac{1}{2}\arctan 1,   \sin(\frac{\pi}{4\mathrm e     })),\ 
+   u_2=(\frac{4}{5}\arctan 2,  \sin(\frac{\pi}{4\mathrm e^{1/2}})),\ \\
+   u_3=(\frac{9}{10}\arctan 3, \sin(\frac{\pi}{4\mathrm e^{1/3}})),\ \ldots \ ,
+u_{10}=(\frac{100}{101}\arctan (10), \sin(\frac{\pi}{4\mathrm e^{1/10}})),\ \ldots \ 
+$
+  \item 
+  $u_1=(\sinh 1, 0), \ 
+   u_2=(\sinh 2, \frac{\ln 2}{2}), \ 
+   u_3=(\sinh 3, \frac{\ln 3}{3}), \ \ldots \ ,\\ 
+u_{10}=(\sinh 10, \frac{\ln 10}{10}),\ 
+\ldots $
+  \item 
+  $u_1=a^n   (\cos   (\alpha), \sin  (\alpha) ),\ 
+   u_2=a^2   (\cos  (2\alpha), \sin  (2\alpha)),  \\
+   u_3=a^3   (\cos  (3\alpha), \sin  (3\alpha)),\   \ldots \ , 
+u_{10}=a^{10}(\cos (10\alpha), \sin (10\alpha)),\ \ldots
+$
+\end{enumerate}
+
+Les limites pouvu qu'elles existent se calculent ainsi :
+
+\begin{enumerate}
+\item 
+$
+\lim_{n \to \infty}\frac{4n^2}{n^2+4n+3}
+=\lim_{n \to \infty}\frac{4}{1+\frac 4n+ \frac 3{n^2}}=4,
+\
+\lim_{n \to \infty}\cos(1/n) = \cos (0)=1
+$
+d'o\`u
+\[
+\lim_{n \to \infty}u_n=\lim_{n \to \infty}
+\left(\frac{4n^2}{n^2+4n+3}, \cos\frac1n\right)= (4,0) .
+\]
+\item 
+$
+\lim_{n \to \infty}\frac{n^2}{n^2+1}
+=\lim_{n \to \infty}\frac{1}{1+1/n^2}=1,
+\
+\lim_{n \to \infty}\arctan n = \pi/2,
+\\
+\lim_{n \to \infty}
+\frac{n^2\arctan n}{n^2+1}= \pi/2
+$
+mais
+$
+\lim_{n \to \infty}\sin(\frac{\pi}{4}\exp(-{\frac 1n}))
+$
+n'existe pas d'o\`u 
+\[
+\lim_{n \to \infty}u_n
+\]
+n'existe pas.
+
+
+  \item $
+\lim_{n \to \infty}\frac{\ln n}{n} = 0$ tandis que
+$\lim_{n \to \infty}\sinh n$ n'existe pas en tant que limite finie
+car 
+\[
+\lim_{x \to +\infty}\sinh x = +\infty
+\]
+d'o\`u
+\[
+\lim u_n=\lim\left(\sinh n, \frac{\ln n}{n}\right)
+\]
+n'existe pas.
+\item $\lim_{n \to \infty} (\cos  (n\alpha), \sin  (n\alpha))$
+n'existe pas tandis que
+pour que $\lim_{n \to \infty}a^n$ existe il faut et il suffit que $a\leq 1$ et,
+s'il en est ainsi, $\lim_{n \to \infty}a^n =0$ si $a< 1$
+et $\lim_{n \to \infty}a^n =1$ si $a= 1$.
+Par cons\'equent: 
+Pour que 
+\[
+\lim_{n \to \infty}u_n=\lim_{n \to \infty}a^n(\cos  (n\alpha), \sin  (n\alpha))
+\]
+existe il faut et il suffit que $a<1$, et la limite vaut alors z\'ero.
+\end{enumerate}
+\fincorrection
+\finexercice

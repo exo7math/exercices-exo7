@@ -1,0 +1,72 @@
+\exercice{5179, rouget, 2010/06/30}
+\enonce[****]
+\begin{enumerate}
+\item  Soit $n$ un entier naturel. Montrer que si $n$ n'est pas un carré parfait alors $\sqrt{n}\notin\Qq$.
+\item  Soit $E=\{a+b\sqrt{2}+c\sqrt{3}+d\sqrt{6},\;(a,b,c,d)\in\Qq^4\}$. Vérifier que $E$ est un $\Qq$-espace
+vectoriel puis déterminer une base de $E$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  Soit $n$ un entier naturel supèrieur ou égal à $2$.
+
+Si $\sqrt{n}\in\Qq$, il existe $(a,b)\in(\Nn^*)^2$ tel que $\sqrt{n}=\frac{a}{b}$ ou encore tel que $n.b^2=a^2$. Mais
+alors, par unicité de la décomposition d'un entier naturel supèrieur ou égal à 2 en facteurs premiers, tous les
+facteurs premiers de $n$ ont un exposant pair ce qui signifie exactement que $n$ est un carré parfait.
+
+Si $n=0$ ou $n=1$, $\sqrt{n}\in\Qq$ et $n$ est d'autre part un carré parfait. On a montré que~:
+
+$$\forall n\in\Nn,\;(\sqrt{n}\in\Qq\Rightarrow n\;\mbox{est un carré parfait})$$
+
+ou encore par contraposition
+
+$$\forall n\in\Nn,\;(n\;\mbox{n'est pas un carré parfait}\Rightarrow\sqrt{n}\notin\Qq).$$
+
+\item  D'après 1), $\sqrt{2}$, $\sqrt{3}$ et $\sqrt{6}$ sont irrationnels.
+
+$E=\mbox{Vect}_\Qq(1,\sqrt{2},\sqrt{3},\sqrt{6})$ et donc, $E$ est un $\Qq$-espace
+vectoriel et $(1,\sqrt{2},\sqrt{3},\sqrt{6})$ en est une famille génératrice.
+
+Montrons que cette famille est $\Qq$-libre.
+
+Soit $(a,b,c,d)\in\Qq^4$.
+
+\begin{align*}
+a+b\sqrt{2}+c\sqrt{3}+d\sqrt{6}=0&\Rightarrow(a+d\sqrt{6})^2=(-b\sqrt{2}-c\sqrt{3})^2
+\Rightarrow a^2+2ad\sqrt{6}+6d^2=2b^2+2bc\sqrt{6}+3c^2\\
+ &\Rightarrow a^2-2b^2-3c^2+6d^2=2(-ad+bc)\sqrt{6}
+\end{align*}
+
+Puisque $\sqrt{6}\notin\Qq$, on obtient $a^2-2b^2-3c^2+6d^2=2(-ad+bc)=0$ (car si $bc-ad\neq0$,
+$\sqrt{6}=\frac{a^2-2b^2-3c^2+6d^2}{2(-ad+bc)}\in\Qq$) ou encore,
+
+$$\left\{
+\begin{array}{l}
+a^2-3c^2=2b^2-6d^2\quad(1)\\
+ad=bc\quad(2)
+\end{array}
+\right..$$
+
+De même,
+
+\begin{align*}
+a+b\sqrt{2}+c\sqrt{3}+d\sqrt{6}=0&\Rightarrow(a+c\sqrt{3})^2=(-b\sqrt{2}-d\sqrt{6})^2
+\Rightarrow(a^2+2ac\sqrt{3}+3c^2=2b^2+4bd\sqrt{3}+6d^2\\
+ &\Rightarrow\left\{
+\begin{array}{l}
+a^2+3c^2=2b^2+6d^2\quad(3)\\
+ac=2bd\quad(4)
+\end{array}
+\right..
+\end{align*}
+
+(puisque $\sqrt{3}$ est irrationnel). En additionnant et en retranchant (1) et (3), on obtient $a^2=2b^2$ et
+$c^2=2d^2$.Puisque $\sqrt{2}$ est irrationnel, on ne peut avoir $b\neq0$ (car alors $\sqrt{2}=\pm\frac{a}{b}\in\Qq$) 
+ou $d\neq0$. Donc, $b=d=0$ puis  $a=c=0$. Finalement, la famille $(1,\sqrt{2},\sqrt{3},\sqrt{6})$ est $\Qq$-libre et
+est donc une base de E.
+\end{enumerate}
+\fincorrection
+\finexercice

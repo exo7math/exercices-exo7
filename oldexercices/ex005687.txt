@@ -1,0 +1,20 @@
+\exercice{5687, rouget, 2010/10/16}
+\enonce[**I]
+Soit $A$ une matrice carrée réelle de format $n\geqslant 2$ vérifiant $A^3+A^2+A=0$. Montrer que le rang de $A$ est un entier pair.
+
+\finenonce
+
+\noindication
+
+\correction
+Soit $P=X^3+X^2+X=X(X-j)(X-j^2)$. $P$ est à racines simples dans $\Cc$ et annulateur de $A$. Donc $A$ est diagonalisable dans $\Cc$ et ses valeurs propres sont à choisir dans $\{0,j,j^2\}$. Le polynôme caractéristique de $A$ est de la forme $(-1)^nX^\alpha(X-j)^\beta(X-j^2)^\gamma$ avec $\alpha+\beta+\gamma=n$. De plus, $A$ est réelle et on sait que $j$ et $j^2=\overline{j}$ ont même ordre de multiplicité ou encore $\gamma=\beta$.
+
+Puisque $A$ est diagonalisable, l'ordre de multiplicité de chaque valeur propre est égale à la dimension du sous-espace propre correspondant et donc
+
+\begin{center}
+$\text{rg}(A)=n-\text{dim}(\text{Ker}A)=n-\alpha=2\beta$.
+\end{center}
+
+On a montré que $\text{rg}A$ est un entier pair.
+\fincorrection
+\finexercice

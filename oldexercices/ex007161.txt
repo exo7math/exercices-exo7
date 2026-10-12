@@ -1,0 +1,47 @@
+\exercice{7161, megy, 2017/05/13}
+\enonce[Isométries d'un carré]
+Soit $\mathcal C=ABCD$ un carré plein du plan (c'est-à-dire l'enveloppe convexe de ses sommets) et $O$ son centre.
+\begin{enumerate}
+\item Soit $g\in \operatorname{Isom}(\mathcal C)$ une isométrie du carré, c'est-à-dire une isométrie du plan préservant le carré. Montrer qu'elle permute les sommets, puis que c'est une rotation de centre $O$ ou bien une réflexion d'axe contenant $O$.
+\item Déterminer entièrement  le groupe $G=\operatorname{Isom}(\mathcal C)$.
+\item  Décrire le groupe $H=\operatorname{Isom}^+(\mathcal C)$ des isométries directes du carré et écrire un isomorphisme entre ce groupe et $\Z/4\Z$.
+\end{enumerate}
+\finenonce
+
+\noindication 
+\correction 
+\begin{enumerate}
+\item Montrons d'abord qu'une isométrie du carré permute les sommets.
+\begin{enumerate}
+\item Première preuve : 
+considérons une diagonale, par exemple $[AC]$. Comme $g$ est une isométrie, la distance entre $A$ et $C$ est la même qu'entre leurs images. Or, deux points du carré à distance $AC$ sont forcément deux sommets d'une diagonale du carré. L'isométrie $g$ permute donc les sommets.
+\item Deuxième preuve :  
+une isométrie est affine, donc préserve les barycentres, donc envoie les points extrémaux (ceux qui ne sont pas des barycentres d'autres points du carré) sur d'autres points extrémaux, et donc permute les sommets.
+\end{enumerate}
+
+Le centre $O$ étant l'isobarycentre des sommets, et une isométrie conservant les barycentres, on en déduit que $g(O)=O$. Ce n'est pas une translation ou une réflexion glissée, puisque ces dernières n'ont pas de points fixes. C'est donc une rotation (dont le centre est forcément $O$ car $O$ est fixe), ou bien une réflexion (dont l'axe contient $O$).
+
+\item Soit $f$ une isométrie du carré. Elle envoie un sommet $P$ sur un des autres sommets.
+
+\begin{enumerate}
+\item Si c'est une réflexion, son axe est la médiatrice du segment $[Pf(P)]$, donc l'axe est forcément une diagonale, ou bien une médiatrice d'un côté du carré.
+
+Réciproquement, on vérifie que les réflexions dont les axes sont les deux diagonales ou bien les deux médiatrices des côtés sont bien des isométries du carré.
+
+\item Si c'est une rotation, son centre est $O$, et comme $P$ est envoyé sur un autre sommet, les angles possibles sont les multiples de $\pi/2$. Réciproquement, on vérifie que les rotations de centre $O$ et d'angles $0$, $\pi/2$, $\pi$ et $3\pi/2$ sont des isométries du carré.
+\end{enumerate}
+Le groupe des isométries du carré a donc huit éléments : quatre réflexions et quatre rotations (dont l'identité).
+
+\item Le groupe $H$ est composé des quatre rotations décrites plus haut. L'application  qui à un entier $n$ associe la rotation de centre $O$ et d'angle $n\pi/2$ est un morphisme de groupes, noté $\phi : (\Z,+) \to (H,\circ)$. Il est surjectif.  Déterminons son noyau. Soit $n\in \Z$. On a :
+\begin{align*}
+n\in \ker(\phi)
+&\Leftrightarrow \phi(n) = \operatorname{Id}\\
+&\Leftrightarrow n\pi/2 \equiv 0[2\pi]\\
+&\Leftrightarrow n \equiv 0[4]\\
+&\Leftrightarrow n \in 4\Z.\\
+\end{align*}
+On en déduit $\ker(\phi) = 4\Z$. Ce morphisme de groupes passe donc au quotient par $4\Z$ et induit un morphisme injectif $\overline{\phi} = \Z/4\Z \to H$ qui est donc un isomorphisme de groupes.
+\end{enumerate}
+
+\fincorrection  
+\finexercice  

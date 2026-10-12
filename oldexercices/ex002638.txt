@@ -1,0 +1,51 @@
+\exercice{2638, debievre, 2009/05/19}
+\enonce
+Calculer les matrices hessiennes des fonctions $f$ d\'efinies par les
+ expressions suivantes sur leur domaine de d\'efinition naturel:
+\[
+\sin(xyz), \quad \sin^2(y/x).
+\]
+\finenonce
+
+\indication 
+Rappeler que la matrice hessienne est la matrice
+constitu\'ee des d\'eriv\'ees partielles secondes.
+\finindication
+
+\correction
+\[
+\mathrm d\sin(xyz)= yz\cos(xyz)\mathrm dx
++zx\cos(xyz)\mathrm dy +xy\cos(xyz)\mathrm dz
+\]
+d'o\`u la matrice hessienne
+\[
+\left[ \begin{smallmatrix}
+-y^2z^2\sin(xyz)          &z\cos(xyz) -xyz^2\sin(xyz)&y\cos(xyz)-xy^2z\sin(xyz)
+\\
+z\cos(xyz)-xyz^2\sin(xyz)&-x^2z^2\sin(xyz)           &x\cos(xyz)-x^2yz\sin(xyz)
+\\
+y\cos(xyz)-xy^2z\sin(xyz)&y\cos(xyz) -x^2yz\sin(xyz)&-x^2y^2\sin(xyz)
+\end{smallmatrix}
+\right] .
+\]
+De m\^eme
+\begin{align*}
+\mathrm d(\sin^2(y/x))&= -{2y}{x^{-2}}\sin(y/x)\cos(y/x)\mathrm dx 
++ 2x^{-1} \sin(y/x)\cos(y/x) \mathrm dy
+\\
+&= \sin(2y/x)\left( -\frac y {x^2} dx + \frac 1x dy\right)
+\end{align*}
+d'o\`u la matrice hessienne
+\[
+\left[ \begin{matrix}
+{2y}{x^{-3}}\sin(2y/x)+ {2y^2}{x^{-4}}\cos(2y/x) 
+&
+-{x^{-2}}\sin(2y/x)  -{2y}{x^{-3}}\cos(2y/x)
+\\
+-x^{-2} \sin(2y/x)  -2yx^{-3} \cos(2y/x)&
+2x^{-2} \cos(2y/x)
+\end{matrix}
+\right] .
+\]
+\fincorrection
+\finexercice

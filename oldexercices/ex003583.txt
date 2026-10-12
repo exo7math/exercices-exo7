@@ -1,0 +1,18 @@
+\exercice{3583, quercia, 2010/03/10}
+\enonce[Réduction de Jordan (Mines MP 2003)]
+Soit $f\in\mathcal{L}(\R^3)$ telle que $\mathrm{Spec}(f) = \{\lambda\}$ et $\dim(\mathrm{Ker}(f-\lambda\mathrm{id}))=2$.
+
+Montrer qu'il existe une base~$\cal B$ dans laquelle $\mathrm{Mat}(f) = \begin{pmatrix}\lambda&0&0\cr0&\lambda&1\cr0&0&\lambda\cr\end{pmatrix}$.
+
+\finenonce
+
+\noindication
+
+\correction
+On se ramène à $\lambda=0$ en rempla\c cant $f$ par~$f-\lambda\mathrm{id}$.
+$\Im f$ est de dimension~$1$ stable par~$f$ donc $f_{|\Im f}$ est une homothétie, c'est l'application nulle vu $\mathrm{Spec}(f)$. On en déduit~$\Im f\subset\mathrm{Ker} f$.
+Soit~$e_2\in\Im f\setminus\{0\}$, $e_3$ un antécédent de~$e_2$ par~$f$ et $e_1\in\mathrm{Ker} f$ indépendant de~$e_2$.
+Alors~${\cal B} = (e_1,e_2,e_3)$ convient.
+\fincorrection
+
+\finexercice

@@ -1,0 +1,40 @@
+\exercice{2270, barraud, 2008/04/24}
+\enonce
+Pour quel $n$, $m$ dans $\Zz$ la fraction
+$$
+\frac{11n+2m}{18n+5m}
+$$
+est r\'eductible ?
+\finenonce 
+
+\noindication
+
+\correction
+Supposons que la fraction soit réductible. Alors, il existe
+  $p,q,d\in\Zz$ tels que
+  $$
+  \begin{cases}
+    11n+2m&=pd\\
+    18n+5m&=qd\\
+  \end{cases}
+  $$
+  On en déduit que 
+  $$
+  \begin{cases}
+    19n&=5pd-2qd\\
+    19m&=-18pd+1qd\\
+  \end{cases}
+  $$
+  En particulier, $d|19n$ et $d|19m$. Si $d\neq19$, on a $\pgcd(n,m)\neq
+  1$. Si $d=19$, alors 
+  \begin{equation}\label{eq:n=5p-2q...}
+  \begin{cases}
+    n&=5p-2q\\
+    m&=-18p+1q\\
+  \end{cases}
+  \end{equation}
+  Réciproquement, si $\pgcd(n,m)\neq1$ ou si $n,m$ sont de la forme
+  donnée par \eqref{eq:n=5p-2q...}, alors la fraction est réductible.
+
+\fincorrection
+\finexercice

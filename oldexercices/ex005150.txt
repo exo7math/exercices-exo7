@@ -1,0 +1,45 @@
+\exercice{5150, rouget, 2010/06/30}
+\enonce[***I Inégalité de \textsc{Cauchy}-\textsc{Schwarz}]
+Soient $n\in\Nn^*$ et $a_1$, $a_2$,..., $a_n$, $b_1$, $b_2$,..., $b_n$, $2n$ réels. Montrer que
+
+$$|\sum_{k=1}^{n}a_kb_k|\leq\sum_{k=1}^{n}|a_k|.|b_k|\leq\sqrt{\sum_{k=1}^{n}a_k^2}\sqrt{\sum_{k=1}^{n}b_k^2}.$$
+
+(Indication. Considérer le polynôme $f(x)=\sum_{k=1}^{n}(a_k+b_kx)^2$, développer puis ordonner suivant les puissances
+décroissantes puis utiliser, dans le cas général, les connaissances sur le second degré). Retrouver alors le résultat de l'exercice \ref{exo:suprou4bis}.
+\finenonce
+
+\noindication
+
+\correction
+Pour $x$ réel, posons $f(x)=\sum_{k=1}^{n}(a_k+b_kx)^2$. On remarque que pour tout réel $x$,
+$f(x)\geq0$. En développant les $n$ carrés, on obtient,
+$$f(x)=\sum_{k=1}^{n}(b_k^2x^2+2a_kb_kx+a_k^2)=(\sum_{k=1}^{n}b_k^2)x^2+2(\sum_{k=1}^{n}a_kb_k)x+(\sum_{k=1}^{n}a_k^2).$$
+
+\begin{itemize}
+\item[\textbf{1er cas.}] Si $\sum_{k=1}^{n}b_k^2\neq0$, $f$ est un trinôme du second degré de signe constant sur $\Rr$.
+Son discriminant réduit est alors négatif ou nul. Ceci fournit
+
+$$0\geq\Delta'=(\sum_{k=1}^{n}a_kb_k)^2-(\sum_{k=1}^{n}b_k^2)(\sum_{k=1}^{n}a_k^2),$$
+
+et donc
+
+$$\left|\sum_{k=1}^{n}a_kb_k\right|\leq\sqrt{\sum_{k=1}^{n}a_k^2}\sqrt{\sum_{k=1}^{n}b_k^2}.$$
+
+\item[\textbf{2ème cas.}] Si $\sum_{k=1}^{n}b_k^2=0$, alors tous les $b_k$ sont nuls et l'inégalité est immédiate.\\
+Finalement, dans tous les cas,
+\begin{center}
+\shadowbox{
+$\left|\sum_{k=1}^{n}a_kb_k\right|\leq\sqrt{\sum_{k=1}^{n}a_k^2}\sqrt{\sum_{k=1}^{n}b_k^2}.$
+}
+\end{center}
+\end{itemize}
+
+Cette inégalité est encore valable en remplaçant les $a_k$ et les $b_k$ par leurs valeurs absolues, ce qui fournit
+les inégalités intermédiaires.
+
+Retrouvons alors l'inégalité de l'exercice \ref{exo:suprou4bis}. Puisque les $a_k$ sont strictement positifs, on peut écrire~:
+
+$$\left(\sum_{i=1}^{n}a_i\right)\left(\sum_{i=1}^{n}\frac{1}{a_i}\right)=\left(\sum_{i=1}^{n}\sqrt{a_i}^2\right)\left(
+\sum_{i=1}^{n}\sqrt{\frac{1}{a_i}}^2\right)\geq\left(\sum_{i=1}^{n}\sqrt{a_i}\sqrt{\frac{1}{a_i}}\right)^2=n^2.$$
+\fincorrection
+\finexercice

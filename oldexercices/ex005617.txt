@@ -1,0 +1,26 @@
+\exercice{5617, rouget, 2010/10/16}
+\enonce[***I Théorème de \textsc{Hadamard}]
+Soit $A=(a_{i,j})_{1\leqslant i,j\leqslant n}\in\mathcal{M}_n(\Cc)$ telle que $\forall i\in\llbracket1,n\rrbracket$, $|a_{i,i}| >\sum_{j\neq i}^{}|a_{i,j}|$. Montrer que $A\in\mathcal{GL}_n(\Cc)$. (Une matrice à diagonale strictement dominante est inversible.)
+\finenonce
+
+\noindication
+
+\correction
+Montrons que $\text{Ker}A$ est réduit à $\{0\}$. Dans le cas contraire, on dispose d'un vecteur colonne non nul $X_0$ tel que $AX_0 = 0$. Posons $X_0=(x_i)_{1\leqslant i\leqslant n}$. Pour tout $i\in\llbracket1,n\rrbracket$,
+
+\begin{center}
+$\sum_{j=1}^{n}a_{i,j}x_j= 0\Rightarrow a_{i,i}x_i =-\sum_{j\neq i}^{}a_{i,j}x_j\Rightarrow |a_{i,i}||x_i|\leqslant\sum_{j\neq i}^{}|a_{i,j}||x_j|$.
+\end{center}
+
+On prend alors pour $i$ un indice $i_0$ tel que $|x_{i_0}| =\text{Max}\{|x_1|,...,|x_n|\}$. Puisque $X\neq0$, on a $|x_{i_0}|>0$. De plus,
+
+\begin{center}
+$|a_{i_0,i_0}||x_{i_0}|\leqslant\sum_{j\neq i_0}^{}|a_{i_0,j}||x_j|\leqslant\left(\sum_{j\neq i_0}^{}|a_{i_0,j}|\right)|x_{i_0}|$,
+\end{center}
+
+et puisque $|x_{i_0}|>0$, on obtient après simplification $|a_{i_0,i_0}|\leqslant\sum_{j\neq i_0}^{}|a_{i_0,j}|$ ce qui contredit les hypothèses.
+
+Donc $\text{Ker}A=\{0\}$ et $A$ est inversible.
+
+\fincorrection
+\finexercice

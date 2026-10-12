@@ -1,0 +1,80 @@
+\exercice{5970, tumpach, 2010/11/11}
+\enonce
+
+\textbf{Th\'eor\`eme.}
+L'espace $L^{\infty}(\mathbb{R}^{n})$ n'est pas s\'eparable.
+
+\bigskip
+
+Le but de cet exercice  est de d\'emontrer ce th\'eor\`eme.
+\begin{enumerate}
+\item Soit $E$ un espace de Banach. On suppose qu'il existe une
+famille $(O_{i})_{i\in I}$ telle que
+\begin{itemize}
+\item Pour tout $i\in I$, $O_i$ est un ouvert non vide de
+$E$. 
+\item $O_i \cap O_j = \emptyset $ si $i\neq j$.
+\item $I$ n'est pas d\'enombrable.
+\end{itemize}
+Montrer que $E$ n'est pas s\'eparable. (On pourra raisonner par
+l'absurde).
+
+\item Pour tout $a\in \mathbb{R}^{n}$,  on pose $f_{a} =
+\mathbf{1}_{\mathcal{B}(a, 1)}$ o\`u $\mathcal{B}(a, 1)$ est la boule de
+$\mathbb{R}^n$ de rayon $1$ centr\'ee en $a$. Montrer que la
+famille
+$$
+O_a = \{ f\in L^{\infty}(\mathbb{R}^n), ~ \|f - f_a \|_{\infty} <
+\frac{1}{2}\},
+$$
+o\`u $a$ parcourt les points de $\mathbb{R}^n$, satisfait (a), (b)
+et (c). Conclure.
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item Soit $E$ un espace de Banach. On suppose qu'il existe une
+famille $(O_{i})_{i\in I}$ telle que
+\begin{itemize}
+\item Pour tout $i\in I$, $O_i$ est un ouvert non vide de
+$E$. 
+\item $O_i \cap O_j = \emptyset $ si $i\neq j$.
+\item $I$ n'est pas d\'enombrable.
+\end{itemize}
+Supposons que $E$ est s\'eparable. Soit $(u_{n})_{n\in\mathbb{N}}$
+une suite dense dans $E$. Gr\^ace \`a (a), pour chaque $i\in I$,
+$O_{i} \cap \{u_{n}, n\in\mathbb{N}\} \neq \emptyset$. On choisit
+$n(i)$ tel que $u_{n(i)}\in O_i$. On a $n(i) = n(j) \Rightarrow
+u_{n(i)} = u_{n(j)} \in O_{i}\cap O_j$ donc $i = j$ par (b). Ainsi
+l'application $i \mapsto n(i)$ est injective. Par suite $I$ est
+d\'enombrable ce qui contredit (c).
+
+\item Pour tout $a\in \mathbb{R}^{n}$,  on pose $f_{a} =
+\mathbf{1}_{\mathcal{B}(a, 1)}$ o\`u $\mathcal{B}(a, 1)$ est la boule de
+$\mathbb{R}^n$ de rayon $1$ centr\'ee en $a$. Soit la famille
+$$
+O_a = \{ f\in L^{\infty}(\mathbb{R}^n), ~ \|f - f_a \|_{\infty} <
+\frac{1}{2}\},
+$$
+o\`u $a$ parcourt les points de $\mathbb{R}^n$. L'ensemble des
+points de $\mathbb{R}^n$ n'est pas d\'enombrable, donc (c) est
+v\'erifi\'e.  L'ensemble $O_a$ est la boule ouverte de
+$L^{\infty}(\mathbb{R}^n)$ de rayon $\frac{1}{2}$ centr\'ee en
+$f_{a}$. En particulier (a) est v\'erifi\'e. Remarquons que
+lorsque $a\neq b$, on a $\|f_{a} - f_{b}\|_{\infty} = 1$.
+Supposons qu'il existe $f \in O_{a}\cap O_b$ avec $a\neq b$. Alors
+$$
+\|f_{a} - f_{b}\|_{\infty} \leq \|f_a - f\|_{\infty} + \|f -
+f_{b}\|_{\infty} < \frac{1}{2} + \frac{1}{2} = 1.
+$$
+ce qui n'est pas possible. Donc (b) est v\'erifi\'e. On en conclut
+que $L^{\infty}(\mathbb{R}^n)$ n'est pas s\'eparable.
+
+\end{enumerate}
+\fincorrection
+
+\finexercice

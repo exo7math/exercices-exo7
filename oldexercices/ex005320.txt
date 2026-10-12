@@ -1,0 +1,20 @@
+\exercice{5320, rouget, 2010/07/04}
+\enonce[**]
+Soit $P$ un polynôme différent de $X$. Montrer que $P(X)-X$ divise $P(P(X))-X$.
+\finenonce
+
+\noindication
+
+\correction
+Si $P$ est de degré inférieur ou égal à $0$, c'est clair.
+
+Sinon, posons $P=\sum_{k=0}^{n}a_kX^k$ avec $n\in\Nn^*$.
+
+\begin{align*}\ensuremath
+P(P(X))-X&=P(P(X))-P(X)+P(X)-X=\sum_{k=0}^{n}a_k((P(X))^k-X^k)+(P(X)-X)\\
+ &=\sum_{k=1}^{n}a_k((P(X))^k-X^k)+(P(X)-X).
+\end{align*}
+
+Mais, pour $1\leq k\leq n$, $(P(X))^k-X^k)=(P(X)-X)((P(X))^{k-1}+X(P(X))^{k-2}+...+X^{k-1})$ est divisible par $P(X)-X$ et il en est donc de même de $P(P(X))-X$.
+\fincorrection
+\finexercice

@@ -1,0 +1,93 @@
+\exercice{5263, rouget, 2010/07/04}
+\enonce[**]
+Montrer que $\{\frac{1}{\sqrt{1-x^2}}\left(
+\begin{array}{cc}
+1&x\\
+x&1
+\end{array}
+\right),\;x\in]-1,1[\}$ est un groupe pour la multiplication des matrices.
+\finenonce
+
+\noindication
+
+\correction
+Pour $x\in]-1,1[$, posons $M(x)=\frac{1}{\sqrt{1-x^2}}\left(
+\begin{array}{cc}
+1&x\\
+x&1
+\end{array}
+\right)$. Posons ensuite $G=\{M(x),\;x\in]-1,1[\}$.
+
+Soit alors $x\in]-1,1[$. Posons $a=\Argth x$ de sorte que $x=\mbox{th}a$. On a 
+
+$$M(x)=\frac{1}{\sqrt{1-x^2}}\left(
+\begin{array}{cc}
+1&x\\
+x&1
+\end{array}
+\right)=\ch a\left(
+\begin{array}{cc}
+1&\tanh a\\
+\tanh a&1
+\end{array}
+\right)=\left(
+\begin{array}{cc}
+\ch a&\sh a\\
+\sh a&\ch a
+\end{array}
+\right).$$
+
+Posons, pour $a\in\Rr$, $N(a)=\left(
+\begin{array}{cc}
+\ch a&\sh a\\
+\sh a&\ch a
+\end{array}
+\right)$. On a ainsi $\forall x\in]-1,1[,\;M(x)=N(\Argth x)$ ou aussi, $\forall a\in\Rr,\;N(a)=M(\mbox{th}a)$. Par suite, $G=\{N(a),\;a\in\Rr\}$.
+
+Soit alors $(a,b)\in\Rr^2$.
+
+\begin{align*}\ensuremath
+N(a)N(b)&=\left(
+\begin{array}{cc}
+\ch a&\sh a\\
+\sh a&\ch a
+\end{array}
+\right)\left(
+\begin{array}{cc}
+\ch b&\sh b\\
+\sh b&\ch b
+\end{array}
+\right)=\left(
+\begin{array}{cc}
+\ch a\ch b+\sh a\sh b&\sh a\ch b+\sh b\ch a\\
+\sh a\ch b+\sh b\ch a&\ch a\ch b+\sh a\sh b
+\end{array}
+\right)
+\\
+ &=\left(
+\begin{array}{cc}
+\ch(a+b)&\sh(a+b)\\
+\sh(a+b)&\ch(a+b)
+\end{array}
+\right)
+=N(a+b).
+\end{align*}
+
+Montrons alors que $G$ est un sous-groupe de $(\mathcal{GL}_2(\Rr),\times)$.
+
+$N(0)=I_2\in G$ et donc $G$ est non vide.
+
+$\forall a\in\Rr,\;\mbox{det}(N(a))=\ch^2a-\sh^2a=1\neq0$ et donc $G\subset\mathcal{GL}_2(\Rr)$.
+
+$\forall(a,b)\in\Rr^2,\;N(a)N(b)=N(a+b)\in G$.
+
+$\forall a\in\Rr,\;(N(a))^{-1}=\left(
+\begin{array}{cc}
+\ch a&-\sh a\\
+-\sh a&\ch a
+\end{array}
+\right)=N(-a)\in G$.
+
+On a montré que $G$ est un sous-groupe de $(\mathcal{GL}_2(\Rr),\times)$.
+\fincorrection
+\finexercice

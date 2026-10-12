@@ -1,0 +1,23 @@
+\exercice{4755, quercia, 2010/03/16}
+\enonce 
+On note $E$ l'espace vectoriel des suites r{\'e}elles $(x_n)$ telles que la s{\'e}rie $\sum x_n^2$
+converge. On le munit du produit scalaire $(x\mid y)=\sum_{n=0}^\infty x_ny_n$.
+Soit $(y^s)$ une suite born{\'e}e d'{\'e}l{\'e}ments de $E$. Montrer qu'on peut en
+extraire une sous-suite convergent faiblement, c'est-{\`a}-dire qu'il existe $z$
+telle que pour tout $x$ de $E$ on ait $(x\mid y^{s_k})\xrightarrow[k\to\infty]{}(x\mid z)$.
+
+\finenonce
+
+\noindication
+
+\correction
+On construit $(s_k)$ de proche en proche de sorte que pour tout~$n$ fix{\'e}
+la suite $(y_n^{s_k})$ soit convergente vers $z_n$.
+Comme $\sum_{n\le N}(y_n^{s_k})^2$ est born{\'e}e ind{\'e}pendamment de~$N$ et~$k$ la s{\'e}rie
+$\sum_nz_n^2$ a ses sommes partielles born{\'e}es donc converge.
+On a alors $(x\mid y^{s_k})\xrightarrow[k\to\infty]{}(x\mid z)$ pour toute suite~$x$
+{\`a} support fini, puis pour toute suite de carr{\'e} sommable par interversion de
+limites.
+\fincorrection
+
+\finexercice

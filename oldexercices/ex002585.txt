@@ -1,0 +1,23 @@
+\exercice{2585, delaunay, 2009/05/19}
+\enonce
+Soient $A$ et $B$ des matrices non nulles de $M_n(\R)$. On suppose que $A.B=0$.
+\begin{enumerate}
+ \item D\'emontrer que $\Im B\subset \ker A$.
+ \item On suppose que le rang de $A$ est \'egal \`a $n-1$, d\'eterminer le rang de $B$.
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+Soient $A$ et $B$ des matrices non nulles de $M_n(\R)$. On suppose que $A.B=0$.
+\begin{enumerate}
+ \item D\'emontrons que $\Im B\subset \ker A$.
+
+Soit $y\in \Im B$, il existe $x\in\R^n$ tel que $y=Bx$, d'o\`u $Ay=ABx=0$, ainsi $y\in\ker A$ ce qui prouve l'inclusion.
+ \item On suppose que le rang de $A$ est \'egal \`a $n-1$, d\'eterminons le rang de $B$.
+
+On a $\mathrm{rg} B=\dim \Im B$ et on sait que $\dim\Im A+\dim\ker A=n$ par cons\'equent, si $\mathrm{rg} A=n-1$ on a $\dim\ker A=1$ et l'inclusion $\Im B\subset \ker A$ implique $\dim\Im B\leq 1$ or, $B$ est suppos\'ee non nulle d'o\`u $\dim\Im B=1=\mathrm{rg} B$.
+\end{enumerate}
+\fincorrection
+\finexercice

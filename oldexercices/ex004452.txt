@@ -1,0 +1,21 @@
+\exercice{4452, quercia, 2010/03/14}
+\enonce[X MP$^*$ 2001]
+
+Soit $(u_n)$ une suite réelle positive, $U_n=\sum_{i=0}^n u_i$ et
+$\alpha>0$ un réel donné. On suppose $\frac{U_n}{nu_n}\to \alpha$ lorsque $n\to\infty$. 
+Étudier la suite de terme général $\frac1{n^2u_n}\sum_{k=0}^n ku_k$.
+\finenonce
+
+\noindication
+
+\correction
+On remarque déjà que $\sum u_i$ diverge car $u_n\sim\frac{U_n}{n\alpha}\ge \frac{U_1}{n\alpha}$.
+On calcule $\sum_{k=0}^n ku_k$ par parties~:
+$$\sum_{k=0}^n ku_k = \sum_{k=1}^n k(U_k - U_{k-1}) = nU_n -\sum_{k=0}^n U_k$$
+Comme $U_n\sim\alpha nu_n$, terme général strictement positif d'une série divergente,
+on a $\sum_{k=0}^n U_k \sim \alpha\sum_{k=0}^n ku_k$ d'où~:
+$(1+\alpha)\sum_{k=0}^n ku_k\sim nU_n$ et lorsque $n\to\infty$ :
+$$\frac1{n^2u_n}\sum_{k=0}^n ku_k\sim \frac{nU_n}{(1+\alpha)n^2u_n} \to \frac\alpha{1+\alpha}.$$
+\fincorrection
+
+\finexercice

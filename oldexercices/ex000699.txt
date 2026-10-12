@@ -1,0 +1,44 @@
+\exercice{699, bodin, 1998/09/01}
+\video{XPnRztcUKK4}
+\enonce
+D\'eterminer $a,b \in \Rr$ de mani\`ere \`a ce que la fonction $f$ d\'efinie sur $\Rr_+$ par :
+$$ f(x)=\sqrt{x} \quad \text{ si } 0\leqslant x \leqslant 1 \quad \text{\ \  et\ \  } \quad f(x) = ax^2+bx+1 \quad \text{ si } x>1$$
+soit d\'erivable sur $\Rr_+^*$.
+\finenonce 
+
+\indication
+Vous avez deux conditions : il faut que la fonction soit continue (car on veut qu'elle soit d\'erivable donc elle doit \^etre continue) et ensuite la condition de d\'erivabilit\'e proprement dite.
+\finindication
+
+\correction
+La fonction $f$ est continue et dérivable sur $]0,1[$ et sur
+$]1,+\infty[$. Le seul problème est en $x=1$.
+
+Il faut d'abord que la fonction soit continue en $x=1$.
+La limite \`a gauche est
+$\lim_{x\rightarrow 1^-} \sqrt x = +1$
+et \`a droite 
+$\lim_{x\rightarrow 1^+} ax^2+bx+1 = a+b+1$.
+Donc  $a+b+1=1$. Autrement dit $b = -a$.
+
+Il faut maintenant que les d\'eriv\'ees \`a droite et \`a gauche soient
+\'egales.
+Comme la fonction $f$ restreinte à $]0,1]$ est définie par $x \mapsto \sqrt{x}$ alors elle est dérivable
+à gauche et la dérivée à gauche s'obtient en évaluant la fonction dérivée $x \mapsto \frac{1}{2\sqrt x}$
+en $x=1$. Donc $f'_g(1)=\frac 12$.
+
+Pour la dérivée à droite il s'agit de calculer la limite du taux d'accroissement
+$\frac{f(x)-f(1)}{x-1}$, lorsque $x \to 1$ avec $x>1$.
+Or 
+$$
+\frac{f(x)-f(1)}{x-1} = \frac{ax^2+bx+1 - 1}{x-1} = \frac{ax^2-ax}{x-1} = \frac{ax(x-1)}{x-1} = ax.
+$$
+Donc $f$ est dérivable à droite et $f'_d(1) = a$.
+Afin que $f$ soit dérivable, il faut et il suffit que les dérivées à droite et à gauche
+existent et soient égales, donc ici la condition est $a=\frac 12$.
+
+
+Le seul couple $(a,b)$ que rend $f$ dérivable sur $]0,+\infty[$ 
+est $(a=\frac 12, b= -\frac 12)$.
+\fincorrection
+\finexercice

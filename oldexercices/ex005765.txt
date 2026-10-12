@@ -1,0 +1,64 @@
+\exercice{5765, rouget, 2010/10/16}
+\enonce[**]
+Pour $n\in\Nn^*$ et $x\in]0,+\infty[$, on pose $I_n(x)=\int_{0}^{+\infty}\frac{1}{(t^2+x^2)^n}$.
+
+\begin{enumerate}
+ \item  Calculer la dérivée de la fonction $I_n$ sur $]0,+\infty[$.
+
+\item  En déduire la valeur de $\int_{0}^{+\infty}\frac{1}{(t^2+1)^3}\;dt$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Soit $n\in\Nn^*$. Soient $a$ et $A$ deux réels tels que $0<a<A$. On considère $\begin{array}[t]{cccc}
+F_n~:&[a,A]\times\Rr&\rightarrow&\Rr\\
+ &(x,t)&\mapsto&\frac{1}{(t^2+x^2)^n}
+\end{array}$.
+
+\textbullet~Pour chaque $x$ de $[a,A]$, la fonction $t\mapsto F_n(x,t)$ est continue par morceaux et intégrable sur $[0,+\infty[$ car $F_n(x,t)\underset{t\rightarrow+\infty}{\sim}\frac{1}{t^{2n}}>0$ avec $2n>1$.
+
+\textbullet~La fonction $F_n$ est admet sur $[a,A]\times[0,+\infty[$ une dérivée partielle par rapport à sa première variable $x$ définie par :
+
+\begin{center}
+$\forall(x,t)\in[a,A]\times[0,+\infty[$, $\frac{\partial F_n}{\partial x}(x,t)=\frac{-2nx}{(t^2+x^2)^{n+1}}$.
+\end{center}
+
+De plus,
+
+- pour chaque $x\in[a,A]$, la fonction $t\mapsto\frac{\partial F_n}{\partial x}(x,t)$ est continue par morceaux sur $[0,+\infty[$,\rule[-4mm]{0mm}{0mm}
+
+-pour chaque $t\in[0,+\infty[$, la fonction $x\mapsto\frac{\partial F_n}{\partial x}(x,t)$ est continue sur $[a,A]$,
+
+-pour chaque $(x,t)\in[a,A]\times[0,+\infty[$,
+
+\begin{center}
+$\left|\frac{\partial F_n}{\partial x}(x,t)\right|=\frac{2nx}{(t^2+x^2)^{n+1}}\leqslant\frac{2nA}{(t^2+a^2)^{n+1}}=\varphi(t)$,
+\end{center}
+
+où la fonction $\varphi$ est continue par morceaux et intégrable sur $[0,+\infty[$ car négligeable devant $\frac{1}{t^2}$ quand $t$ tend vers $+\infty$.
+
+D'après le théorème de dérivation des intégrales à paramètres (théorème de \textsc{Leibniz}), la fonction $I_n$ est de classe $C^1$ sur $[a,A]$ et sa dérivée s'obtient par dérivation sous le signe somme. Ceci étant vrai pour tous réels $a$ et $A$ tels que $0<a<A$, on a montré que la fonction $I_n$ est de classe $C^1$ sur $]0,+\infty[$ et que
+
+\begin{center}
+$\forall x>0$, $I_n'(x)=-2nx\int_{0}^{+\infty}\frac{1}{(t^2+x^2)^{n+1}}\;dt=-2nxI_{n+1}(x)$.
+\end{center}
+
+\begin{center}
+\shadowbox{
+$\forall n\in\Nn^*$, $I_n'(x)=-2nxI_{n+1}(x)$.
+}
+\end{center}
+
+\item  Pour $x>0$, on a $I_1(x)=\left[\frac{1}{x}\Arctan\left(\frac{t}{x}\right)\right]_0^{+\infty}=\frac{\pi}{2x}$. Ensuite, $I_2(x)=-\frac{1}{2x}I_1'(x)=\frac{\pi}{4x^3}$ puis $I_3(x)=-\frac{1}{4x}I_2'(x)=\frac{3\pi}{16x^5}$ et donc $I_3(1)=\frac{3\pi}{16}$.
+
+\begin{center}
+\shadowbox{
+$\int_{0}^{+\infty}\frac{1}{(t^2+1)^3}\;dt=\frac{3\pi}{16}$.
+}
+\end{center}
+\end{enumerate}
+\fincorrection
+\finexercice

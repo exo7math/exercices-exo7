@@ -1,0 +1,74 @@
+\exercice{2501, sarkis, 2009/04/01}
+\enonce
+Calculez la norme des op\'erateurs suivants:
+\begin{enumerate}
+\item Le shift sur $l^\infty$ d\'efini par $S(x)_{n+1}=x_n,
+S(x)_0=0$ (sur $l^\infty$ on d\'efinit $||(x_n)||_\infty=\sup_{n
+\in \mathbb{N}}|x_n|)$. 
+\item $X={\mathcal C}([0,1])$ avec la
+norme sup et l'op\'erateur $Tf(x)=f(x)g(x)$ o\`u $g \in X$. 
+\item $X={\mathcal C}([0,1])$ muni de la norme sup et
+$u(f)=\int_0^1f(x)g(x)dx$ o\`u $g \in X$ est une fonction qui
+s'annule qu'en $x=1/2$. 
+\item $X=l^2$ et $u(x)=\sum a_nx_n$ o\`u $(a_n)$ est dans $X$. 
+\item $X$ l'espace des suites convergentes
+muni de la norme sup et $u: X \rightarrow \mathbb{R}$
+l'application $u(x)=\lim_{j \rightarrow \infty} x_j$.
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item Soit $x$ une suite, on a
+$$||S(x)||_\infty=Max(\sup_{n \in \mathbb{N}}|x_{n-1}|,0)=\sup_{n \in
+\mathbb{N}}|x_{n}|=1.||x||_\infty.$$ Donc $||S||=1.$ \item Soit $f
+\in {\mathcal C}([0,1])$
+$$||Tf||_\infty=\sup_{x \in [0,1]}f(x)g(x)\leq
+||f||_\infty||g||_\infty.$$ Donc $$||T||\leq ||g||_\infty.$$ Or
+$$||T1||_\infty=||g||_\infty=||1||_\infty||g||_\infty.$$
+Donc $$||T|| \geq ||g||_\infty$$ et finalement on a bien
+$$||T||=||g||_\infty.$$
+\item Soit $f \in {\mathcal C}([0,1])$, on a
+$$||u(f)||=|\int_0^1f(x)g(x)dx| \leq \int_0^1|f(x)||g(x)|dx \leq
+\sup_{x \in [0,1]}|g(x)| \int_0^1 |f(x)|dx \leq
+||g||_\infty.||f||.$$ On a donc $$||u|| \leq ||g||_\infty.$$ Comme
+$g$ ne s'annule qu'au point $x=1/2$, elle ne change de signe
+qu'une seule fois. Soit
+$$f_0=g/|g|,$$ cette fonction n'est pas continue (ni d\'efinie) en
+$x=1/2$ mais v\'erifie $f_0g=|g|$. Prenons $f_n=g/|g|$ si
+$|x-1/2|> 1/n$, pour $|x-1/2|\leq 1/n$, on relie les deux segments
+du graphe par une ligne. Alors $1-1/(2n)\leq ||f_n|| \leq 1$ et
+$$||u(f_n)||=|\int_{|x-1/2|>1/n}f_n(x)g(x)dx+\int_{|x-1/2| \leq
+1/n}f_n(x)g(x)dx| \geq$$
+$$|(|\int_{|x-1/2|>1/n}f_n(x)g(x)dx|-|\int_{|x-1/2| \geq
+1/n}f_n(x)g(x)dx|)|$$
+$$\geq ||g||_\infty \int_{|x-1/2|>1/n}|f_n(x)|dx-2/n ||g||_\infty\geq ||g||_\infty(||f_n|| -2/n).$$
+ Ainsi $$\lim_{n\rightarrow
+\infty}||u(\frac{f_n}{||f_n||})||\geq ||g||_\infty
+(1-\frac{1}{2n||f_n||} \geq ||g||_\infty (1-\frac{1}{2n(1-1/2n))}
+\geq ||g||_\infty (1-\frac{1}{2n-1})
+$$ et donc pour tout $n \in \mathbb{N}^*$:
+$$||u|| \geq ||g||_\infty (1-\frac{1}{2n-1}),$$ en faisant tend $n$
+vers l'infini $$||u|| \geq ||g||_\infty$$ ce qui montre la
+deuxi\`eme in\'egalit\'e et on obtient $||u||=||g||_\infty$.
+
+\item si on prend $(x_n)=(a_n)$ on obtient $$u((a_n))=\sum a_n^2=
+||(a_n)||_2^2=||(a_n)||_2.||(a_n)||_2$$ et donc $$||u|| \geq
+||(a_n)||_2.$$
+
+Or D'apr\`es Cauchy-Schwartz, on a $$||u(a_n)||=|u(a_n)|=|\sum a_n
+x_n| \leq ||(a_n)||_2||(x_n)||_2$$ et donc $||u|| \leq
+||(a_n)||_2$ d'o\`u l'\'egalit\'e $$||u||=||(a_n)||_2.$$
+\item
+
+Pour tout $j \in \mathbb{N}$ on a $|x_j| \leq ||(x_n)||_\infty$ et
+par cons\'equent $$|u((x_n))|=|\lim_{j \rightarrow \infty} x_j|
+\leq ||(x_n)||_\infty$$ et donc $$||u|| \leq 1.$$ Prenons la suite
+$(x^0)$ d\'efinie par $x_n^0=1$ pour tout $n \in \mathbb{N}$ alors
+$$|u(x^0)|=|\lim_{j \rightarrow \infty} 1|=1=||x^0||_\infty$$ et
+donc $$||u|| \geq 1$$ d'o\`u l'\'egalit\'e $||u||=1$.
+\end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,44 @@
+\exercice{3596, quercia, 2010/03/10}
+\enonce[Ulm MP$^*$ 2001]
+
+En se déplaçant uniquement sur les arêtes d'un cube de côté 1, combien y a-t-il
+de chemins de longueur~$n$ pour aller d'un point à un autre~?
+
+\finenonce
+
+\noindication
+
+\correction
+Soit $d_n(i,j)$ le nombre de chemins de longueur~$n$ allant du sommet
+$i$ au sommet $j$. $j$ admet trois voisins $k_1,k_2,k_3$ et l'on a~:
+$d_n(i,j) = d_{n-1}(i,k_1) + d_{n-1}(i,k_2) + d_{n-1}(i,k_3)$.
+On numérote les sommets de $0$ à $7$ de sorte que les voisins du sommet~$i$
+sont les sommets $i+1 \bmod 8$, $i+2 \bmod 8$ et $i+4 \bmod 8$.
+Le vecteur $d_n = (d_n(0,0),\dots,d_n(0,7))$ vérifie la relation de récurrence
+$d_n = A d_{n-1}$ où $A$ est la matrice suivante ($.$ désigne $0$)~:
+$$A = \begin{pmatrix}. &1 &1 &. &1 &. &. &.\cr
+               1 &. &. &1 &. &1 &. &.\cr
+               1 &. &. &1 &. &. &1 &.\cr
+               . &1 &1 &. &. &. &. &1\cr
+               1 &. &. &. &. &1 &1 &.\cr
+               . &1 &. &. &1 &. &. &1\cr
+               . &. &1 &. &1 &. &. &1\cr
+               . &. &. &1 &. &1 &1 &.\cr\end{pmatrix}
+ = \begin{pmatrix}B &I_4\\ I_4&B\\\end{pmatrix}
+ =  P\begin{pmatrix}B+I_4 &0\\ 0&B-I_4\end{pmatrix}P^{-1}$$
+avec $$B = \begin{pmatrix}. &1 &1 &.\cr
+                   1 &. &. &1\cr
+                   1 &. &. &1\cr
+                   . &1 &1 &.\cr\end{pmatrix}
+\text{ et } P = \begin{pmatrix}I_4 &I_4\\ I_4&-I_4\\ \end{pmatrix}.$$
+De même,
+$$B\pm I_4 = \begin{pmatrix}C\pm I_2&I_2\\ I_2&C\pm I_2\\\end{pmatrix}
+= Q\begin{pmatrix}C\pm I_2+I_2 &0\cr 0&C\pm I_2 - I_2\end{pmatrix}Q^{-1}$$
+et enfin,
+$$C\pm I_2\pm I_2 = \begin{pmatrix}\pm I_1\pm I_1&I_1\cr I_1&\pm I_1\pm I_1\cr\end{pmatrix}
+= R\begin{pmatrix}\pm I_1\pm I_1+I_1 &0\cr 0&\pm I_1\pm I_1 - I_1\end{pmatrix}R^{-1}.$$
+Donc $A$ est diagonalisable de valeurs propres $-3,-1,1,3$ et on
+peut certainement terminer les calculs pour obtenir $d_n = A^nd_0$.
+\fincorrection
+
+\finexercice

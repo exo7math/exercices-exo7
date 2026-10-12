@@ -1,0 +1,60 @@
+\exercice{5461, rouget, 2010/07/10}
+\enonce[***]
+Trouver toutes les applications continues sur $\Rr$ vérifiant~:~$\forall(x,y)\in\Rr^2,\;f(x)f(y)=\int_{x-y}^{x+y}f(t)\;dt$.  
+\finenonce
+
+\noindication
+
+\correction
+$f$ est continue sur $\Rr$ et admet donc des primitives sur $\Rr$. Soit $F$ une primitive donnée de $f$ sur $\Rr$. Notons $(*)$ la relation~:
+
+$$\forall(x,y)\in\Rr^2,\;f(x)f(y)=F(x+y)-F(x-y).$$
+
+Pour $x=y=0$, on obtient $forall x\in\Rr$, $f(0)=0$. Puis $x=0$ fournit $\forall y\in\Rr,\;F(y)-F(-y)=0$. $F$ est donc nécessairement paire et sa dérivée $f$ est nécessairement impaire.
+
+La fonction nulle est solution du problème. Soit $f$ une éventuelle solution non nulle. Il existe alors un réel $y_0$ tel que $f(y_0)\neq0$. Pour tout réel $x$, on a alors 
+
+$$f(x)=\frac{1}{f(y_0)}\int_{x-y_0}^{x+y_0}f(t)\;dt=\frac{1}{f(y_0)}(F(x+y_0)-F(x-y_0)).$$
+
+$f$ est continue sur $\Rr$ et donc $F$ est de classe $C^1$ sur $\Rr$. Il en est de même de la fonction $x\mapsto\frac{1}{f(y_0)}(F(x+y_0)-F(x-y_0))$ et donc de $f$. Mais alors, $F$ est de classe $C^2$ sur $\Rr$ et donc $f$ l'est aussi ($f$ est en fait de classe $C^\infty$ par récurrence).
+
+En dérivant $(*)$ à $y$ fixé, on obtient $f'(x)f(y)=f(x+y)-f(x-y)$ $(**)$, mais en dérivant à $x$ fixé, on obtient aussi $f(x)f'(y)=f(x+y)+f(x-y)$ $(***)$. En redérivant $(**)$ à $y$ fixé, on obtient $f''(x)f(y)=f'(x+y)-f'(x-y)$ et en dérivant $(***)$ à $x$ fixé, on obtient $f(x)f''(y)=f'(x+y)-f'(x-y)$. Mais alors,
+
+$$\forall(x,y)\in\Rr^2,\;f''(x)f(y)=f(x)f''(y),$$
+
+et en particulier,
+
+$$\forall x\in\Rr,\;f''(x)-\frac{f''(y_0)}{f(y_0)}f(x)=0.$$
+
+On a montré que si $f$ est solution du problème, il existe un réel $\lambda$ tel que $f$ est solution de l'équation différentielle $y''-\lambda y=0$ $(E)$.
+
+\begin{itemize}
+\item[- si $\lambda>0$], en posant $k=\sqrt{\lambda}$, $(E)$ s'écrit $y''-k^2y=0$. Les solutions de $(E)$ sont les fonctions de la forme $x\mapsto A\sh(kx)+B\ch(kx)$, $(A,B)\in\Rr^2$ et les solutions impaires de $(E)$ sont les fonctions de la forme $x\mapsto A\sh(kx)$, $A\in\Rr$.
+
+Réciproquement, soit $k$ un réel strictement positif. Pour $A\in\Rr^*$ (on sait que la fonction nulle est solution) et $x\in\Rr$, posons $f(x)=A\sh(kx)$. Alors
+
+$$\int_{x-y}^{x+y}f(t)\;dt=\frac{A}{k}(\ch(k(x+y))-\ch(k(x-y)))\frac{2A}{k}\sh(kx)\sh(ky)=\frac{2}{kA}f(x)f(y).$$
+
+$f$ est solution si et seulement si $\frac{2}{kA}=1$ ou encore $A=\frac{2}{k}$.
+
+\item[- si $\lambda<0$], en posant $k=\sqrt{-\lambda}$, $(E)$ s'écrit $y''+k^2y=0$. Les solutions de $(E)$ sont les fonctions de la forme $x\mapsto A\sin(kx)+B\cos(kx)$, $(A,B)\in\Rr^2$ et les solutions impaires de $(E)$ sont les fonctions de la forme $x\mapsto A\sin(kx)$, $A\in\Rr$.
+
+Réciproquement, soit $k$ un réel strictement positif. Pour $A\in\Rr^*$ et $x\in\Rr$, posons $f(x)=A\sin(kx)$. Alors
+
+$$\int_{x-y}^{x+y}f(t)\;dt=\frac{A}{k}(\cos(k(x-y))-\cos(k(x+y)))=\frac{2A}{k}\sin(kx)\sin(ky)=\frac{2}{kA}f(x)f(y).$$
+
+$f$ est solution si et seulement si $\frac{2}{kA}=1$ ou encore $A=\frac{2}{k}$.
+
+\item[- si $\lambda=0$], $(E)$ s'écrit $y''=0$. Les solutions de $(E)$ sont les fonctions affines et les solutions impaires de $(E)$ sont les fonctions de la forme $x\mapsto Ax$, $A\in\Rr$.
+
+Réciproquement, si $f(x)=Ax$
+
+$$\int_{x-y}^{x+y}f(t)\;dt=\frac{A}{2}((x+y)^2-(x-y)^2)=2Axy=\frac{2}{A}f(x)f(y),$$
+
+et $f$ est solution si et seulement si $A=2$.
+
+\end{itemize}
+
+Les solutions sont la fonction nulle, la fonction $x\mapsto2x$, les fonctions $x\mapsto\frac{2}{k}\sin(kx)$, $k>0$ et les fonctions $x\mapsto\frac{2}{k}\sh(kx)$, $k>0$.
+\fincorrection
+\finexercice

@@ -1,0 +1,25 @@
+\exercice{5667, exo7, 2010/10/16}
+\enonce[**]
+
+\newcommand{\adots}{\mathinner{\mkern2mu\raise 1pt\hbox{.}\mkern 3mu\raise
+4pt\hbox{.}\mkern1mu\raise 7pt\hbox{{.}}}}
+
+
+Soit $A=\left(
+\begin{array}{cccc}
+0&\ldots&0&1\\
+\vdots&\adots&\adots&0\\
+0& \adots & \adots &\vdots\\
+1&0&\ldots&0
+\end{array}
+\right)$
+
+ Montrer que $A$ est diagonalisable.
+\finenonce
+
+\noindication
+
+\correction
+Soit $f$ l'endomorphisme de $\Rr^n$ de matrice $A$ dans la base canonique $(e_1,\ldots,e_n)$ de $\Rr^n$. $\forall i\in\llbracket1,n\rrbracket$, $f(e_{i})=e_{n+1-i}$ et donc $\forall i\in\llbracket1,n\rrbracket$, $f^2(e_{i})=e_i$. Donc $f$ est une symétrie distincte de l'identité et en particulier $\text{Sp}A=\{-1,1\}$ et $f$ est diagonalisable. On en déduit que $A$ est diagonalisable dans $\Rr$.
+\fincorrection
+\finexercice

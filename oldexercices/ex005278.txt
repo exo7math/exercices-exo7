@@ -1,0 +1,52 @@
+\exercice{5278, rouget, 2010/07/04}
+\enonce[IT]
+\begin{enumerate}
+\item (***) Trouver une démonstration combinatoire de l'identité $\sum_{}^{}C_n^{2k}=\sum_{}^{}C_n^{2k+1}$ ou encore démontrer directement qu'un ensemble à $n$ éléments contient autant de parties de cardinal pair que de parties de cardinal impair.
+\item (****) Trouver une démonstration combinatoire de l'identité $kC_n^k=nC_{n-1}^{k-1}$.
+\item (****) Trouver une démonstration combinatoire de l'identité $C_{2n}^n=\sum_{k=0}^{n}(C_{n}^k)^2$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  Soit $E$ un ensemble à $n$ éléments, $n\geq 1$, et $a$ un élément fixé de $E$. Soit $\begin{array}[t]{cccc}
+f~:&\mathcal{P}(E)&\rightarrow&\mathcal{P}(E)\\
+ &A&\mapsto&\left\{
+ \begin{array}{l}
+ A\setminus\{a\}\;\mbox{si}\;a\in A\\
+ A\cup\{a\}\;\mbox{si}\;a\notin A
+ \end{array}
+ \right.
+\end{array}$.
+
+Montrons que $f$ est involutive (et donc bijective). Soit $A$ un élément de $\mathcal{P}(E)$.
+
+Si $a\notin A$, $f(A)=A\cup\{a\}$ et donc, puisque $a\in A\cup\{a\}$, $f(f(A))=(A\cup\{a\})\setminus\{a\}=A$.
+
+Si $a\in A$, $f(A)=A\setminus\{a\}$ et $f(f(A))=(A\setminus\{a\})\cup\{a\}=A$.
+
+Ainsi, $\forall A\in\mathcal{P}(E),\;f\circ f(A)=A$ ou encore, $f\circ f=Id_{\mathcal{P}(E)}$.
+
+Maintenant clairement, en notant $\mathcal{P}_p(E)$ (resp. $\mathcal{P}_i(E)$) l'ensemble des parties de $E$ de cardinal pair (resp. impair), $f(\mathcal{P}_p(E))\subset\mathcal{P}_i(E)$ et $f(\mathcal{P}_i(E))\subset\mathcal{P}_p(E)$. Donc, puisque $f$ est bijective 
+$$\mbox{card}(\mathcal{P}_p(E))=\mbox{card}(f(P_p(E))\leq\mbox{card}\mathcal{P}_i(E)$$
+
+et de même $\mbox{card}(\mathcal{P}_i(E))\leq\mbox{card}\mathcal{P}_p(E)$. Finalement, $\mbox{card}(\mathcal{P}_i(E))=\mbox{card}\mathcal{P}_p(E)$.
+
+\item  
+Soient $E=\{a_1,...,a_n\}$ un ensemble à $n$ éléments et $a$ un élément fixé de $E$. Soit $k\in\{1,...,n-1\}$.
+
+Il y a  $C_{n-1}^{k-1}$ parties à $k$ éléments qui contiennent $a$. Donc, $nC_{n-1}^{k-1}(=C_{n-1}^{k-1}+...+C_{n-1}^{k-1})$ est donc la somme du nombre de parties à $k$ éléments qui contiennent $a_1$ et du nombre de parties à $k$ éléments qui contiennent $a_2$ ... et du nombre de parties à $k$ éléments qui contiennent $a_n$.
+
+Dans cette dernière somme, chaque partie à $k$ éléments de $E$ a été comptée plusieurs fois et toutes les parties à $k$ éléments (en nombre égal à $C_n^k$) ont été comptés un même nombre de fois. Combien de fois a été comptée $\{a_1,a_2...a_k\}$~?~Cette partie a été comptée une fois en tant que partie contenant $a_1$, une fois en tant que partie contenant $a_2$... et une fois comme partie contenant $a_k$ et donc a été comptée $k$ fois.
+
+Conclusion~:~$kC_n^k=nC_{n-1}^{k-1}$. 
+
+\item  Soit $E=\{a_1,...,a_n,b_1,...,b_n\}$ un ensemble à $2n$ éléments. Il y a $C_{2n}^n$ parties à $n$ éléments de $E$. Une telle partie a $k$ éléments dans $\{a_1,...,a_n\}$ et $n-k$ dans $\{b_1,...,b_n\}$ pour un certain $k$ de $\{0,...,n\}$. Il y a $C_n^k$ choix possibles de $k$ éléments dans $\{a_1,...,a_n\}$ et $C_n^{n-k}$ choix possibles de $n-k$ éléments dans $\{b_1,...,b_n\}$ pour $k$ donné dans $\{0,...,n\}$ et quand $k$ varie de $0$ à $n$, on obtient~:
+
+$$C_{2n}^n=\sum_{k=0}^{n}C_n^kC_n^{n-k}=\sum_{k=0}^{n}(C_n^k)^2.$$
+
+\end{enumerate}
+\fincorrection
+\finexercice

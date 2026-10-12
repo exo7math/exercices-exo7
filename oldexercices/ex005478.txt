@@ -1,0 +1,77 @@
+\exercice{5478, rouget, 2010/07/10}
+\enonce[***]
+Résoudre sur $\}-\infty,0[$ et $]0,+\infty[$ l'équation différentielle~:~$|x|y'+(x-1)y=x^3$.
+\finenonce
+
+\noindication
+
+\correction
+\textbf{Résolution} de $(E)$ sur $]0,+\infty[$.
+
+Soit $f$ une fonction dérivable sur $]0,+\infty[$.
+
+\begin{align*}\ensuremath
+f\;\mbox{solution de}\;(E)\;&\mbox{sur}\;]0,+\infty[\Leftrightarrow\forall x\in]0,+\infty[,\;|x|f'(x)+(x-1)f(x)=x^3\\
+ &\Leftrightarrow\forall x\in]0,+\infty[,\;xf'(x)+(x-1)f(x)=x^3\Leftrightarrow\forall x\in]0,+\infty[,\;f'(x)+(1-\frac{1}{x})f(x)=x^2\\
+ &\Leftrightarrow\forall x\in]0,+\infty[,\;e^{x-\ln
+x}f'(x)+(1-\frac{1}{x})e^{x-\ln x}f(x)=e^{x-\ln x}x^2\\
+ &\Leftrightarrow\forall x\in]0,+\infty[,\;(\frac{e^x}{x}f)'(x)=xe^x=((x-1)e^x)'\\
+ &\Leftrightarrow\exists\lambda\in\Rr/\;\forall
+x\in]0,+\infty[,\;f(x)=xe^{-x}((x-1)e^x+\lambda)=x^2-x+\lambda xe^{-x}
+\end{align*}
+
+Les solutions de $(E)$ sur $]0,+\infty[$ sont les fonctions de la forme $x\mapsto x^2-x+\lambda xe^{-x}$,
+$\lambda\in\Rr$.
+
+\textbf{Résolution} de $(E)$ sur $]-\infty,0[$.
+
+Soit $f$ une fonction dérivable sur $]-\infty,0[$.
+
+\begin{align*}\ensuremath
+f\;\mbox{solution de}\;(E)\;\mbox{sur}\;]-\infty,0[&\Leftrightarrow\forall x\in]0,+\infty[,\;
+-xf'(x)+(x-1)f(x)=x^3\\
+ &\Leftrightarrow\forall x\in]-\infty,0[,\;f'(x)+(-1+\frac{1}{x})f(x)=-x^2\\
+ &\Leftrightarrow\forall x\in]-\infty,0[,\;e^{-x+\ln|x|}f'(x)+
+(-1+\frac{1}{x})e^{-x+\ln|x|}f(x)=-e^{-x+\ln|x|}x^2\\
+ &\Leftrightarrow\forall x\in]-\infty,0[,\;(-xe^{-x}y)'=x^3e^{-x}\;(*)
+\end{align*}
+
+Déterminons une primitive de la fonction $x\mapsto-x^3e^{-x}$ de la forme $(ax^3+bx^2+cx+d)e^{-x}$.
+
+$$((ax^3+bx^2+cx+d)e^{-x})'=(-(ax^3+bx^2+cx+d)+(3ax^2+2bx+c))e^{-x}=(-ax^3+(3a-b)x^2+(2b-c)x+c-d)e^{-x},$$
+
+et
+
+$$((ax^3+bx^2+cx+d)e^{-x})'=x^3e^{-x}\Leftrightarrow
+\left\{
+\begin{array}{l}
+-a=-1\\
+3a-b=0\\
+2b-c=0\\
+c-d=0
+\end{array}
+\right.
+\Leftrightarrow
+\left\{
+\begin{array}{l}
+a=1\\
+b=3\\
+c=6=d
+\end{array}
+\right..$$
+
+Par suite,
+
+\begin{align*}\ensuremath
+(*)&\Leftrightarrow\exists\lambda\in\Rr/\;\forall x\in]-\infty,0[,\;xe^{-x}f(x)=(x^3+3x^2+6x+6)e^{-x}+\lambda\\
+ &\Leftrightarrow\exists\lambda\in\Rr/\;\forall x\in]-\infty,0[,\;
+f(x)=x^2+3x+6+\frac{\lambda e^x+6}{x}.
+\end{align*}
+
+Les solutions de $(E)$ sur $]-\infty,0[$ sont les fonctions de la forme $x\mapsto x^2+3x+6+\frac{\lambda e^x+6}{x}$,
+$\lambda\in\Rr$.
+
+On peut montrer que l'équation admet une et une seule solution sur $\Rr$ en \og~recollant~\fg~les expressions
+précédentes, mais en ce début d'année, on manque encore d'outils.
+\fincorrection
+\finexercice

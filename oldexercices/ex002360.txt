@@ -1,0 +1,39 @@
+\exercice{2360, queffelec, 2003/10/01}
+\enonce
+Soit
+$f$ une fonction uniform\'ement continue sur
+$\Rr$ telle que
+$\int_0^\infty f(t) dt$ con\-verge.
+Montrer que $f$ tend vers $0$ quand $x\to+\infty$. Retrouver ainsi le fait que
+la fonction $\sin(x^2)$ n'est pas uniform\'ement continue.
+\finenonce
+
+\indication
+\begin{enumerate}
+  \item Par l'absurde, considérer $I(x) = \int_0^x f$. Trouver une suite $(p_n)$
+telle que $(I(p_n))$ ne soit pas une suite de Cauchy.
+  \item Pour montrer que cette intégrale converge utiliser le changement de variable $u=t^2$ puis faire une intégration par partie.
+   \end{enumerate}
+\finindication
+
+\correction
+\begin{enumerate}
+  \item Supposons que $f$ ne tende pas vers $0$. Soit $\epsilon >0$ fixé.
+Pour tout $n\geq 0$, il existe $x_n \geq n$ tel que $|f(x_n)|>\epsilon$.
+Sans perte de généralité nous supposons $f(x_n)>\epsilon$.
+Appliquons l'uniforme continuité : soit $\epsilon' = \frac \epsilon 2$,
+Il existe $\eta$ tel que pour  $|x_n-y|\le \eta$ on ait $|f(x_ n)-f(y)| < \epsilon'$. Donc pour un tel $y$, $f(y) > \frac \epsilon 2 >0$.
+Donc $f$ est strictement positive sur $[x_n-\eta,x_n+\eta]$.
+Notons alors $(p_n)$ définie par 
+$p_{2n} = x_{n}-\eta$, $p_{2n+1} = x_{n}+\eta$.
+Soit $I(x) = \int_0^x f$.
+Alors $I(p_{2n+1})- I(p_{2n}) = \int_{x_n-\eta}^{x_n+\eta} f(t) dt \geq \frac \epsilon 2 \cdot 2\eta = \epsilon \eta$.
+Donc la suite $(I(p_n))$ n'est pas de une suite de Cauchy, donc ne converge pas, donc la fonction $x\mapsto I(x)$ ne converge pas non plus, et donc 
+$\int_0^\infty f(t) dt$ diverge.
+
+
+  \item Par le changement de variable $u=t^2$ puis une intégration par partie, on montre que l'intégrale $\int_0^\infty \sin(t^2) dt$ converge, mais comme $f(x)= \sin(x^2)$ ne tend pas vers $0$ alors
+$f$ n'est pas uniformément continue sur $\Rr$.
+   \end{enumerate}
+\fincorrection
+\finexercice

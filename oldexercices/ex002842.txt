@@ -1,0 +1,30 @@
+\exercice{2842, burnol, 2009/12/15}
+\enonce
+\label{ex:burnol6.4}
+  Soit $0<a<b<c$ et soit $C$ le cercle de rayon $r$ centré en
+l'origine, parcouru dans le sens direct. Calculer $\int_C
+\frac1{(z-a)(z-b)(z-c)}dz$ selon la valeur de $r$. On
+donnera deux preuves, soit en utilisant le théorème des
+résidus, soit en décomposant 
+en éléments simples.
+\finenonce
+\noindication
+\correction
+La fonction $f(z) = 1/(z-a)(z-b)(z-c)$ est holomorphe dans le disque $D(0,a)$. Par cons\'equent
+l'int\'egrale est nulle si $r<a$.
+Par le th\'eor\`eme des r\'esidus,
+\begin{eqnarray*}
+\frac{1}{2i\pi}\int_C \frac{1}{(z-a)(z-b)(z-c)} dz &= &\mathrm{Res} (f,a) \quad , \quad \mathrm{Res} (f,a)+\mathrm{Res} (f,b)
+\quad ou \\ && \mathrm{Res} (f,a)+\mathrm{Res} (f,b)+\mathrm{Res} (f,c)
+\end{eqnarray*}
+si $a<r<b$, $b<r<c$ ou $c<r$. Le calcul de ces r\'esidus se fait par la formule de l'exercice \ref{ex:burnol6.1} puisque tous
+les p\^oles sont simples:
+\begin{eqnarray*}\mathrm{Res} (f,a) =\frac{1}{(a-b)(a-c)} \quad , \quad \mathrm{Res} (f,b)=\frac{1}{(b-a)(b-c)} \\
+et \quad \mathrm{Res} (f,c)=\frac{1}{(c-a)(c-b)}.
+\end{eqnarray*}
+On en d\'eduit fa\c{c}ilement la valeur de l'int\'egrale dans les trois cas.
+En ce qui concerne le calcul de cette int\'egrale via la d\'ecomposition en \'el\'ements simples remarquons juste que
+$$\int _C \frac{1}{z-d} \, dz$$
+vaut $2i\pi$ si $d$ est \`a l'int\'erieur de $C$ et $0$ si $d$ est \`a l'ext\'erieur.
+\fincorrection
+\finexercice

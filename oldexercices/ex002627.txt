@@ -1,0 +1,193 @@
+\exercice{2627, debievre, 2009/05/19}
+\enonce
+On consid\`ere les fonctions $f\colon \R^2\longrightarrow \R^3$ et
+$g\colon \R^3\longrightarrow \R$ d\'efinies par
+\[
+f(x,y)=(\sin (xy), y\cos x, xy\sin(xy)\exp(y^2)),\quad 
+g(u,v,w)= uvw .
+\]
+\begin{enumerate}
+ \item  Calculer explicitement $g\circ f$.
+ \item En utilisant l'expression trouv\'ee en (1), calculer les d\'eriv\'ees partielles de $g\circ f$.
+ \item  D\'eterminer les matrices jacobiennes $J_f(x,y)$ et $J_g(u,v,w)$ de $f$ et de $g$. 
+ \item Retrouver le r\'esultat sous (2.) en utilisant un produit appropri\'e de matrices jacobiennes. 
+\end{enumerate}
+\finenonce
+
+\indication 
+\'Ecrire
+$f(x,y)=(\sin (xy), y\cos x, xy\sin(xy)\exp(y^2))=(u,v,w)$.
+\finindication
+
+\correction
+\begin{enumerate} 
+\item $g(f(x,y))= xy^2 \sin^2 (xy) \cos x \exp(y^2)$
+
+\item \begin{align*}
+\frac{\partial (g \circ f)}{\partial x}
+&= 
+y^2 \sin (xy) \exp(y^2)
+(
+2xy \cos x  \cos (xy) 
+-
+x \sin x\sin (xy)
++
+\cos x \sin (xy)
+)
+\\
+\frac{\partial (g\circ f)}{\partial y}
+&=
+2xy \cos x   \sin (xy)\exp(y^2)
+(xy  \cos (xy) +(1+y^2)  \sin (xy) )
+\end{align*}
+\item Calculons d'abord
+\begin{align*}
+\frac{\partial w}{\partial x}
+&=y\sin(xy)\exp(y^2) +xy^2\cos(xy)\exp(y^2)
+\\
+&=y\exp(y^2)(\sin(xy) +xy\cos(xy))
+\\
+\frac{\partial w}{\partial y}
+&=x\sin(xy)\exp(y^2) +x^2y\cos(xy)\exp(y^2) +2xy^2\sin(xy)\exp(y^2)
+\\
+&=
+x\exp(y^2)(\sin(xy) +xy\cos(xy) +2y^2\sin(xy))
+\\
+&=
+x\exp(y^2)((1+2y^2)\sin(xy) +xy\cos(xy)) .
+\end{align*}
+Ainsi la matrice jacobienne  $\mathrm J_f$ de $f$ s'\'ecrit
+\begin{align*}
+\mathrm{J_f}&=
+\left[
+\begin{matrix} 
+\frac{\partial u}{\partial x}
+&
+\frac{\partial u}{\partial y}
+\\
+\frac{\partial v}{\partial x}
+&
+\frac{\partial v}{\partial y}
+\\
+\frac{\partial w}{\partial x}
+&
+\frac{\partial w}{\partial y}
+\end{matrix}
+\right]
+\\
+&=
+\left[
+\begin{matrix} 
+y \cos (xy)
+&
+x \cos (xy)
+\\
+-y\sin x
+&
+\cos x
+\\
+y\exp(y^2)(\sin(xy) +xy\cos(xy))
+&
+x\exp(y^2)((1+2y^2)\sin(xy) +xy\cos(xy))
+\end{matrix}
+\right] .
+\end{align*}
+De m\^eme, la matrice jacobienne $\mathrm J_g$ de $g$ est :
+\begin{align*}
+\mathrm J_g
+&=
+\left[
+\frac{\partial g}{\partial u}, \frac{\partial g}{\partial v},\frac{\partial g}{\partial w}
+\right]=[vw,uw,uv]
+\\
+&=\left [
+xy^2 \sin (xy) \cos x \exp(y^2),xy \sin^2 (xy) \exp(y^2),y \sin (xy) \cos x 
+\right]
+\end{align*}
+\item La matrice jacobienne $\mathrm J_{g\circ f}$ de la fonction
+compos\'ee  $g\circ f$ s'\'ecrit comme produit matricielle
+\begin{align*}
+\mathrm J_{g\circ f}&=\mathrm J_g \circ \mathrm J_f =\left[
+\frac{\partial g}{\partial u}, \frac{\partial g}{\partial v},\frac{\partial g}{\partial w}
+\right]
+\left[
+\begin{matrix} 
+\frac{\partial u}{\partial x}
+&
+\frac{\partial u}{\partial y}
+\\
+\frac{\partial v}{\partial x}
+&
+\frac{\partial v}{\partial y}
+\\
+\frac{\partial w}{\partial x}
+&
+\frac{\partial w}{\partial y}
+\end{matrix}
+\right]
+\end{align*}
+d'o\`u
+\begin{align*}
+\frac{\partial (g \circ f)}{\partial x}
+&= 
+(xy^2 \sin (xy) \cos x \exp(y^2)) y \cos (xy)
+\\
+&\quad
+-(xy \sin^2 (xy) \exp(y^2)) y\sin x
+\\
+&\quad
++(y \sin (xy) \cos x)
+y\exp(y^2)(\sin(xy) +xy\cos(xy))
+\\
+&=
+xy^3 \cos x \sin (xy) \cos (xy)  \exp(y^2))
+-
+xy^2 \sin x\sin^2 (xy) \exp(y^2)
+\\
+&\quad
++y^2 \cos x \sin^2 (xy) \exp(y^2)
++xy^3 \cos x \sin (xy) \cos(xy)\exp(y^2)
+\\&=
+y^2 \sin (xy) \exp(y^2)
+(
+2xy \cos x  \cos (xy) 
+-
+x \sin x\sin (xy)
++
+\cos x \sin (xy)
+)
+\\
+\frac{\partial (g\circ f)}{\partial y}
+&=
+(xy^2 \sin (xy) \cos x \exp(y^2))
+x\cos (xy)
+\\
+&\quad
++
+(xy \sin^2 (xy) \exp(y^2))
+\cos x
+\\
+&\quad
++(y \sin (xy) \cos x)
+x\exp(y^2)((1+2y^2)\sin(xy) +xy\cos(xy))
+\\
+&=
+x^2y^2  \cos x\sin (xy) 
+\cos (xy)\exp(y^2) +xy \cos x\sin^2 (xy) \exp(y^2)
+\\
+&\quad
++xy(1+2y^2)  \cos x \sin^2 (xy)
+\exp(y^2)
++x^2y^2 \cos x\sin (xy)\cos(xy)\exp(y^2)
+\\
+&=
+2 x^2y^2  \cos x\sin (xy) 
+\cos (xy)\exp(y^2) +2xy(1+y^2) \cos x\sin^2 (xy) \exp(y^2)
+\\
+&=
+2xy \cos x   \sin (xy)\exp(y^2)
+(xy  \cos (xy) +(1+y^2)  \sin (xy) ) .
+\end{align*}
+\end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,439 @@
+\exercice{5523, rouget, 2010/07/15}
+\enonce[Quelques grands classiques]
+\label{exo:routhe1}
+\begin{enumerate}
+\item (**) \textbf{L'astroïde.}
+\begin{enumerate}
+\item $a$ est un réel strictement positif donné. Etudier et construire la courbe de paramétrisation~:
+$\left\{
+\begin{array}{l}
+x=a\cos^3t\\
+y=a\sin^3t
+\end{array}
+\right.$.
+\item Pour $t\in]0,\frac{\pi}{2}[$, on note $A(t)$ et $B(t)$ les points d'intersection de la tangente au point
+courant $M(t)$ avec respectivement $(Ox)$ et $(Oy)$. Calculer la longueur $A(t)B(t)$.
+\end{enumerate}
+
+\item (**) \textbf{La cycloïde.}
+
+\begin{enumerate}
+\item Un cercle $(\mathcal{C})$, de rayon $R>0$, roule sans glisser sur l'axe $(Ox)$. On note $I$ le point de
+contact entre $(\mathcal{C})$ et $(Ox)$ et on note $\Omega$ le centre de $(\mathcal{C})$ ($\Omega$ et $I$ sont mobiles).
+$M$ est un point donné de $(\mathcal{C})$ ($M$ est mobile, mais solidaire de $(\mathcal{C})$). On pose
+$t=(\widehat{(\overrightarrow{\Omega M},\overrightarrow{\Omega I})}$.
+
+$$\includegraphics{../images/img005523-3}$$
+
+
+Déterminer une paramétrisation de la courbe décrite par le point $M$ (on prendra $t$ pour paramètre).
+
+\item Etudier et construire l'arc paramétré~:~$\left\{
+\begin{array}{l}
+x=R(t-\sin t)\\
+y=R(1-\cos t)
+\end{array}
+\right.$ où $R$ est un réel strictement positif donné.
+\end{enumerate}
+\item (**) \textbf{Une courbe de} \textsc{Lissajous}. Etudier et construire l'arc
+paramétré~:~$\left\{\begin{array}{l}x=\sin(2t)\\
+y=\sin(3t)
+\end{array}\right.$
+\item (**) \textbf{La lemniscate de} \textsc{Bernoulli}. Etudier et construire l'arc
+paramétré~:~$\left\{\begin{array}{l}x=\frac{t}{1+t^4}\\
+y=\frac{t^3}{1+t^4}
+\end{array}\right.$
+\item (***) \textbf{Les tractrices.}
+\begin{enumerate} 
+\item Trouver les trajectoires orthogonales à la famille des cercles de rayon $R$ ($R>0$ donné) et centrés sur $(Ox)$.
+\item Etudier et construire l'arc paramétré~:~$\left\{
+\begin{array}{l}
+x=R(\ln|\tan\frac{t}{2}|+\cos t)\\
+y=R\sin t
+\end{array}
+\right.$ où $R$ est un réel strictement positif donné.
+\end{enumerate}
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\textbf{(les grands classiques)}
+\begin{enumerate}
+ \item  \textbf{L'astroïde.}
+  \begin{enumerate}
+  \item 
+ 
+\textbf{Domaine d'étude.}
+
+\textbullet~Pour tout réel $t$, $M(t)$ existe.
+
+\textbullet~Pour tout réel $t$, $M(t+2\pi)=M(t)$. Par suite, la courbe complète est obtenue quand $t$ décrit un segment de
+longueur
+
+$2\pi$ comme par exemple $[-\pi,\pi]$.
+
+\textbullet~Pour tout réel $t$,
+
+$$M(-t)=\left(\begin{array}{c}
+\cos^3(-t)\\
+\sin^3(-t)
+\end{array}\right)=\left(\begin{array}{c}
+\cos^3t\\
+-\sin^3t
+\end{array}\right)
+=s_{(Ox)}(M(t)).$$
+
+On étudie et on construit la courbe pour $t\in[0,\pi]$, puis on obtient la courbe complète par réflexion d'axe $(Ox)$.
+
+\textbullet~Pour tout réel $t$,
+
+$$M(t+\pi)=\left(\begin{array}{c}
+\cos^3(t+\pi)\\
+\sin^3(t+\pi)
+\end{array}\right)=\left(\begin{array}{c}
+-\cos^3t\\
+-\sin^3t
+\end{array}\right)
+=s_O(M(t)).$$
+
+La portion de courbe obtenue quand $t$ décrit $[-\pi,0]$ est donc aussi la symétrique par rapport à $O$ de la portion de
+
+courbe obtenue quand $t$ décrit $[0,\pi]$. Néanmoins, cette constatation ne permet pas de réduire davantage le domaine
+
+d'éude.
+
+\textbullet~Pour tout réel $t$,
+
+$$M(\pi-t)=\left(\begin{array}{c}
+\cos^3(\pi-t)\\
+\sin^3(\pi-t)
+\end{array}\right)=\left(\begin{array}{c}
+-\cos^3t\\
+\sin^3t
+\end{array}\right)
+=s_{(Oy)}(M(t)).$$
+
+On étudie et on construit la courbe pour $t\in\left[0,\frac{\pi}{2}\right]$, puis on obtient la courbe complète par réflexion
+d'axe $(Oy)$, puis
+
+par réflexion d'axe $(Ox)$.
+
+\textbullet~Pour tout réel $t$,
+
+$$M\left(\frac{\pi}{2}-t\right)=\left(\begin{array}{c}
+\cos^3\left(\frac{\pi}{2}-t\right)\\
+\rule{0mm}{6mm}\sin^3\left(\frac{\pi}{2}-t\right)
+\end{array}\right)=\left(\begin{array}{c}
+\sin^3t\\
+\cos^3t
+\end{array}\right)
+=s_{y=x}(M(t)).$$
+
+On étudie et on construit la courbe pour $t\in\left[0,\frac{\pi}{4}\right]$, puis on obtient la courbe complète par réflexion
+d'axe la droite
+
+d'équation $y=x$, puis d'axe $(Oy)$ et enfin d'axe $(Ox)$.\rule{0mm}{5mm}
+
+\textbf{Variations conjointes de} $\bf{x}$ \textbf{et} $\bf{y.}$ La fonction $t\mapsto x(t)$ est strictement
+décroissante sur $\left[0,\frac{\pi}{4}\right]$ et la fonction $t\mapsto y(t)$ est strictement croissante sur
+$\left[0,\frac{\pi}{4}\right]$.
+\textbf{Etude des points singuliers.} Pour $t\in\Rr$,
+
+$$\overrightarrow{\frac{dM}{dt}}(t)=\left(\begin{array}{c}
+-3a\cos^2t\sin t\\
+3a\sin^2t\cos t
+\end{array}\right)=3a\cos t\sin t\left(\begin{array}{c}
+-\cos t\\
+\sin t
+\end{array}\right).$$
+Pour tout réel $t$, le vecteur $\left(\begin{array}{c}
+-\cos t\\
+\sin t
+\end{array}\right)$ est unitaire et n'est donc pas nul. Par suite,
+
+$$\overrightarrow{\frac{dM}{dt}}(t)=\overrightarrow{0}\Leftrightarrow 3a\cos t\sin t=0\Leftrightarrow\cos t=0\;\mbox{ou}\;\sin t=0\Leftrightarrow
+t\in\frac{\pi}{2}\Zz.$$
+Les points singuliers sont donc les $M\left(\frac{k\pi}{2}\right)$, $k\in\Zz$. Pour $t\notin\frac{\pi}{2}\Zz$, $M(t)$ est un
+point régulier et la tangente en $M(t)$ est dirigée par le vecteur $\left(\begin{array}{c}
+-\cos t\\
+\sin t
+\end{array}\right)$.
+Etudions alors le point singulier $M(0)$. Pour $t\in\left[-\frac{\pi}{2},\frac{\pi}{2}\right]\setminus\{0\}$,
+
+\begin{align*}\ensuremath
+\frac{y(t)-y(0)}{x(t)-x(0)}&=\frac{a\sin^3t}{a\cos^3t-a}=\frac{\sin^3t}{(\cos t-1)(\cos^2t+\cos t+1)}\\
+ &=\frac{8\sin^3\frac{t}{2}\cos^3\frac{t}{2}}{-2\sin^2\frac{t}{2}(\cos^2t+\cos t+1)}
+=\frac{-4\sin\frac{t}{2}\cos^3\frac{t}{2}}{\cos^2t+\cos t+1},
+\end{align*}
+et donc, $\lim_{t\rightarrow 0}\frac{y(t)-y(0)}{x(t)-x(0)}=0$.
+(Si on connaît déjà les équivalents, c'est plus court :  $\frac{\sin^3t}{(\cos t-1)(\cos^2t+\cos t+1)}\underset{x\rightarrow0}{\sim}\frac{t^3}{-\frac{t^2}{2}\times3}=-\frac{2t}{3}\rightarrow0$). La courbe admet en $M(0)$ une tangente dirigée par le vecteur
+$(1,0)$. Par symétrie, la courbe admet également une tangente en $M\left(-\frac{\pi}{2}\right)$, $M\left(\frac{\pi}{2}\right)$ et $M(\pi)$,
+dirigée respectivement par $(0,1)$, $(0,1)$ et $(1,0)$. Toujours par symétrie, ces quatre points sont des points de
+rebroussement de première espèce. Il en résulte aussi que
+
+$$\text{pour tout réel}\;t,\;\mbox{la tangente en}\;M(t)\;\mbox{est dirigée par le vecteur}\;(-\cos t,\sin t).$$
+On en déduit la courbe.
+
+$$\includegraphics{../images/img005523-4}$$
+
+     \item  Soit $t\in\left]0,\frac{\pi}{2}\right[$. On a vu que la tangente $(T_t)$ en $M(t)$ est dirigée par le vecteur $(-\cos
+t,\sin t)$. Une équation cartésienne de $T_t$ est donc : $-\sin t(x-a\cos^3t)-\cos t(y-a\sin^3t)=0$, ou encore
+
+$$x\sin t+y\cos t=a\sin t\cos t\;(T_t).$$
+On en déduit immédiatement que $A(t)$ a pour coordonnées $(a\cos t,0)$ et que $B(t)$ a pour coordonnées$(0,b\sin t)$
+puis que
+
+\begin{center}
+\shadowbox{
+$\forall t\in]0,\frac{\pi}{2}[,\;A(t)B(t)=a.$
+}
+\end{center}
+  \end{enumerate}
+ \item  \textbf{La cycloïde.}
+  \begin{enumerate}
+   \item La condition de roulement sans glissement se traduit par $\overline{OI}=MI$
+
+$$\includegraphics{../images/img005523-6}$$
+
+
+ou encore $x_{\Omega}=Rt$. On en déduit que 
+
+\begin{center}
+$x_M=x_{\Omega}+x_{\overrightarrow{\Omega M}}=Rt+R\cos\left(2\pi-\frac{\pi}{2}-t\right)=Rt-R\sin t=R(t-\sin t)$
+\end{center} et
+
+\begin{center}
+$y_M=y_{\Omega}+y_{\overrightarrow{\Omega M}}=R+R\sin\left(2\pi-\frac{\pi}{2}-t\right)=R-R\cos t=R(1-\cos t)$.
+\end{center}
+   \item
+\textbf{Domaine d'étude.}
+
+\textbullet~Pour tout réel $t$, $M(t)$ existe.
+
+\textbullet~Pour tout réel $t$, $M(t+2\pi)=M(t)+\overrightarrow{u}$ où $\overrightarrow{u}(
+2\pi R,0)$. Par suite, on trace la courbe quand $t$ décrit $[0,2\pi]$ et la
+
+courbe complète est obtenue par translations de vecteurs $k\overrightarrow{u}$, $k\in\Zz$.
+
+\textbullet~Pour tout réel $t$, $M(-t)=(-x(t),y(t))=s_{(Oy)}(M(t))$. On trace la courbe quand $t$ décrit $[0,\pi]$, puis on complète
+
+par réflexion d'axe $(Oy)$ puis par translations.
+
+\textbf{Etude des points singuliers.}
+Pour $t\in[0,\pi]$, $x'(t)=R(1-\cos t)=2R\sin^2\left(\frac{t}{2}\right)$ et $y'(t)=R\sin t=2R\sin\left(\frac{t}{2}\right)\cos\left(\frac{t}{2}\right)$. Le point $M(t)$ est régulier si et seulement si $t\in]0,\pi]$. Dans ce cas, la tangente en $M(t)$ est dirigée par $\left(
+\begin{array}{c}
+2R\sin^2(t/2)\\
+2R\sin(t/2)\cos(t/2)
+\end{array}
+\right)$ ou encore par $\left(
+\begin{array}{c}
+\sin(t/2)\\
+\cos(t/2)
+\end{array}
+\right)$. Etudions également le point singulier $M(0)$. Pour $t\in]0,\pi]$,
+
+$$\frac{y(t)-y(0)}{x(t)-x(0)}=\frac{R(1-\cos t)}{R(t-\sin t)}\underset{t\rightarrow0}{\sim}\frac{t^2/2}{t^3/6}=\frac{3}{t}.$$
+Ainsi, $\displaystyle\lim_{\substack{t\rightarrow0\\ t>0}}\frac{y(t)-y(0)}{x(t)-x(0)}=+\infty$ et la tangente en $M(0)$ est dirigée par $(0,1)$. Ainsi, dans tous les cas, la tangente en $M(t)$ est dirigée par le vecteur $\left(
+\begin{array}{c}
+\sin(t/2)\\
+\cos(t/2)
+\end{array}
+\right)$. Par symétrie, $M(0)$ est un point de rebroussement de première espèce.
+Sinon, $x$ et $y$ sont des fonctions croissantes sur $[0,\pi]$.
+
+$$\includegraphics{../images/img005523-5}$$
+
+  \end{enumerate}
+ \item  \textbf{une courbe de }\textsc{Lissajous}
+\textbf{Domaine d'étude.}
+
+\textbullet~Pour tout réel $t$, $M(t)$ existe.
+
+\textbullet~Pour tout réel $t$, $M(t+2\pi)=M(t)$ et la courbe complète est obtenue quand $t$ décrit $[-\pi,\pi]$.
+
+\textbullet~Pour tout réel $t$,
+
+$$M(-t)=\left(\begin{array}{c}
+\sin(-2t)\\
+\sin(-3t)
+\end{array}\right)=\left(\begin{array}{c}
+-\sin(2t)\\
+-\sin(3t)
+\end{array}\right)
+=s_{O}(M(t)).$$
+
+On étudie et on construit la courbe pour $t\in[0,\pi]$, puis on obtient la courbe complète par symétrie centrale de
+
+centre $O$.
+
+\textbullet~Pour tout réel $t$,
+
+$$M(\pi-t)=\left(\begin{array}{c}
+\sin(2\pi-2t)\\
+\sin(3\pi-3t)
+\end{array}\right)=\left(\begin{array}{c}
+-\sin(2t)\\
+\sin(3t)
+\end{array}\right)
+=s_{(Oy)}(M(t)).$$
+
+On étudie et on construit la courbe pour $t\in\left[0,\frac{\pi}{2}\right]$, puis on obtient la courbe complète par réflexion d'axe $(Oy)$ puis 
+
+par symétrie centrale de centre $O$.
+
+\textbullet~On note aussi que $M(t+\pi)=s_{(Ox)}(M(t))$, mais cette constatation ne permet pas de réduire davantage le domaine
+
+d'étude.
+
+\textbf{Variations conjointes de $x$ et $y$.}
+Pour $t\in\left[0,\frac{\pi}{2}\right]$, $x'(t)=2\cos(2t)$ et $y'(t)=3\cos(3t)$. On en déduit immédiatement le tableau suivant~:
+
+$$\includegraphics{../images/img005523-1}$$
+
+puis on en déduit la courbe.
+
+$$\includegraphics{../images/img005523-10}$$
+
+\textbf{Points multiples.} D'abord, tout point de l'arc est multiple, puisque la courbe est parcourue une infinité de fois. Il y a essentiellement deux \og vrais points \fg~multiples à déterminer, les autres s'en déduisent par symétrie. L'un des deux est le point de $(Ox)$ d'abscisse strictement positive obtenu pour un certain réel $t$ de $\left]0,\frac{\pi}{2}\right[$.
+Soit $t\in\left]0,\frac{\pi}{2}\right[$.
+
+$$y(t)=0\Leftrightarrow\sin(3t)=0\Leftrightarrow
+3t\in\pi\Zz\Leftrightarrow
+t\in\frac{\pi}{3}\Zz\Leftrightarrow t=\frac{\pi}{3}.$$
+Le point de la courbe qui est sur $(Ox)$ et qui a une abscisse strictement positive est le point $M\left(\frac{\pi}{3}\right)=\left(\frac{\sqrt{3}}{2},0\right)$.
+Sinon, on cherche $t_1\in\left]0,\frac{\pi}{3}\right[$ et $t_2\in\left]-\frac{2\pi}{3},-\frac{\pi}{2}\right[$ tels que $M(t_1)=M(t_2)$. 
+
+\begin{align*}\ensuremath
+M(t_1)=M(t_2)&\Rightarrow x(t_1)=x(t_2)\Leftrightarrow t_2\in t_1+\pi\Zz\;\mbox{ou}\;t_2\in\frac{\pi}{2}-t_1+\pi\Zz
+\Rightarrow t_2\in\frac{\pi}{2}-t_1+\pi\Zz\\
+ &\Rightarrow t_2=\frac{\pi}{2}-t_1-\pi\Rightarrow t_2=-\frac{\pi}{2}-t_1.
+\end{align*}
+Réciproquement, si $t_2=-\frac{\pi}{2}-t_1$, alors $x(t_1)=x(t_2)$ et donc,
+ 
+\begin{align*}\ensuremath
+M(t_1)=M(t_2)&\Leftrightarrow y\left(-\frac{\pi}{2}-t_1\right)=y(t_1)\Leftrightarrow\sin\left(3\left(-\frac{\pi}{2}-t_1\right)\right)=\sin(3t_1)\\
+ &\Leftrightarrow3t_1\in-\frac{3\pi}{2}-3t_1+2\pi\Zz\;\mbox{ou}\;3t_1\in\pi+\frac{3\pi}{2}+3t_1+2\pi\Zz\Leftrightarrow
+ 6t_1\in-\frac{3\pi}{2}+2\pi\Zz\\
+ &\Leftrightarrow t_1\in-\frac{\pi}{4}+\frac{\pi}{3}\Zz\Leftrightarrow t_1=\frac{\pi}{12}
+\end{align*}
+Le point $M\left(\frac{\pi}{12}\right)=\left(\frac{1}{2},\frac{\sqrt{2}}{2}\right)$ est le point multiple d'abscisse et d'ordonnée strictement positives.
+ \item  \textbf{La lemniscate de } \textsc{Bernoulli}
+\textbf{Domaine d'étude.}
+
+\textbullet~Pour tout réel $t$, $M(t)$ existe.
+
+\textbullet~Pour tout réel $t$, $M(-t)=s_O(M(t))$. On étudie et construit la courbe quand $t$ décrit $\Rr^+$ et on obtient la courbe
+
+complète par symétrie centrale de centre $O$.
+
+\textbullet~Pour $t>0$,
+
+$$M\left(\frac{1}{t}\right)=\left(
+\frac{\frac{1}{t}}{1+\frac{1}{t^4}},
+\frac{\frac{1}{t^3}}{1+\frac{1}{t^4}}
+\right)=\left(
+\frac{t^3}{1+t^4},
+\frac{t}{1+t^4}
+\right)=s_{y=x}(M(t)).$$
+On étudie et construit la courbe quand $t$ décrit $[0,1]$ et on obtient la courbe complète par réflexion d'axe la droite
+
+d'équation $y=x$ puis par symétrie centrale de centre $O$.
+\textbf{Variations conjointes de $x$ et $y$.} Les fonctions $x$ et $y$ sont dérivables sur $[0,1]$ et pour $t\in[0,1]$,
+
+$$x'(t)=\frac{(1+t^4)-t(4t^3)}{(1+t^4)^2}=\frac{1-3t^4}{(1+t^4)^2}\;\mbox{et}\;y'(t)=\frac{3t^2(1+t^4)-t^3(4t^3)}{(1+t^4)^2}=\frac{t^2(3-t^4)}{(1+t^4)^2}.$$
+On en déduit immédiatement le tableau~:
+
+$$\includegraphics{../images/img005523-2}$$
+
+La tangente en $M(0)$ est dirigée par le vecteur $(1,0)$. Par symétrie, la tangente en \og $M(+\infty)$ \fg~est dirigée par le vecteur $(0,1)$.
+
+$$\includegraphics{../images/img005523-7}$$
+
+
+ \item  \textbf{Les tractrices}
+
+  \begin{enumerate}
+   \item Cherchons les arcs solutions sous la forme $\left\{
+\begin{array}{l}
+x=f(t)+R\cos t\\
+y=R\sin t
+\end{array}
+\right.$ où $f$ est une foncton dérivable sur un certain intervalle $I$ (de sorte que le point $M(t)$ est sur le cercle $\mathcal{C}(t)$ de centre $\left(
+\begin{array}{c}
+f(t)\\
+0
+\end{array}
+\right)$ et de rayon $R$). La trajectoire cherchée est orthogonale à chaque cercle $\mathcal{C}(t)$ si et seulement si la tangente à cette trajectoire en $M(t)$ est orthogonale à la tangente au cercle $\mathcal{C}(t)$ en $M(t)$ ou encore \og si et seulement si \fg~les vecteurs $(f'(t)-R\sin t,R\cos t)$ et $(-\sin t,\cos t)$ sont orthogonaux. Cette dernière condition s'écrit $-f'(t)\sin t+R(\sin^2t+\cos^2t)=0$ ou encore $f'(t)=\frac{R}{\sin t}$ ou enfin, $f(t)=R\ln\left|\tan\frac{t}{2}\right|+C$. Les arcs solutions sont les arcs de la forme $t\mapsto\left(
+\begin{array}{l}
+R\left(\ln\left|\tan\frac{t}{2}\right|+\cos t\right)+C\\
+R\sin t
+\end{array}
+\right)$, où $C\in\Rr$.
+
+$$\includegraphics{../images/img005523-8}$$
+
+Les courbes solutions se déduisent de la courbe $t\mapsto
+\left(
+\begin{array}{l}
+R\left(\ln\left|\tan\frac{t}{2}\right|+\cos t\right)\\
+R\sin t
+\end{array}
+\right)$ par translations de vecteurs colinéaires à $\overrightarrow{i}$. On peut montrer que la courbe obtenue est la trajectoire de la roue arrière d'une voiture quand celle-ci se gare en marche avant, la roue avant étant quant à elle collée au trottoir.
+   \item \textbf{Domaine d'étude.} La fonction $t\mapsto M(t)$ est $2\pi$-périodique et on l'étudie donc sur $[-\pi,\pi]$. Pour $t\in[-\pi,\pi]$, $M(t)$ existe si et seulement si $t\in]-\pi,\pi[\setminus\{0\}$.
+Pour $t\in]-\pi,\pi[\setminus\{0\}$, $M(-t)=s_{(Ox)}(M(t))$ puis 
+
+$$M(\pi-t)=\left(
+\begin{array}{l}
+R\left(\ln\left|\tan\left(\frac{\pi}{2}-\frac{t}{2}\right)\right|+\cos(\pi-t)\right)\\
+\rule{0mm}{5mm}R\sin(\pi-t)
+\end{array}
+\right)=\left(
+\begin{array}{l}
+R\left(-\ln\left|\tan\frac{t}{2}\right|-\cos t\right)\\
+\rule{0mm}{5mm}R\sin(t)
+\end{array}
+\right)=s_{Oy}(M(t).$$
+On étudie et on construit la courbe quand $t$ décrit $\left]0,\frac{\pi}{2}\right]$, et on obtient la courbe complète par réflexion d'axe $(Oy)$ puis par réflexion d'axe $(Ox)$.
+\textbf{Dérivée. Etude des points singuliers.} Pour $t\in\left]0,\frac{\pi}{2}\right]$,
+
+$$\overrightarrow{\frac{dM}{dt}}(t)=\left(
+\begin{array}{l}
+R\left(\frac{1}{\sin t}-\sin t\right)\\
+\rule{0mm}{5mm}R\cos t
+\end{array}
+\right)
+=\left(
+\begin{array}{l}
+R\frac{\cos^2t}{\sin t}\\
+\rule{0mm}{5mm}R\cos t
+\end{array}
+\right)=R\frac{\cos t}{\sin t}\left(
+\begin{array}{l}
+\cos t\\
+\sin t
+\end{array}
+\right).$$
+Par suite, $\overrightarrow{\frac{dM}{dt}}(t)=\overrightarrow{0}\Leftrightarrow\frac{\cos^2t}{\sin t}=0\Leftrightarrow t=\frac{\pi}{2}$. Le point $M\left(\frac{\pi}{2}\right)$ est un point singulier.
+Quand $t$ tend vers $\frac{\pi}{2}$, $y(t)-y\left(\frac{\pi}{2}\right)=R(\sin t-1)=-R\left(1-\cos\left(\frac{\pi}{2}-t\right)\right)\sim-\frac{R}{2}\left(\frac{\pi}{2}-t\right)^2$. D'autre part, posons $h=\frac{\pi}{2}-t$ ou encore $t=\frac{\pi}{2}-h$. Quand $t$ tend vers $\frac{\pi}{2}$,
+
+$$x'(t)=R\frac{\cos^2t}{\sin t}=R\frac{\sin^2h}{\cos h}\sim Rh^2=R\left(t-\frac{\pi}{2}\right)^2+o\left(\left(t-\frac{\pi}{2}\right)^2\right),$$
+et donc par intégration,
+
+$$x(t)-x(\frac{\pi}{2})=\frac{R}{3}\left(t-\frac{\pi}{2}\right)^3+o\left(\left(t-\frac{\pi}{2}\right)^3\right)\sim\frac{R}{3}\left(t-\frac{\pi}{2}\right)^3.$$
+Comme d'autre part, $y(t)-y\left(\frac{\pi}{2}\right)=-R(1-\sin t)=-R(1-\cos h)\sim-\frac{R}{2}h^2=-\frac{R}{2}\left(t-\frac{\pi}{2}\right)^2$, on en déduit que
+
+$$\frac{y(t)-y\left(\frac{\pi}{2}\right)}{x(t)-x\left(\frac{\pi}{2}\right)}\sim\frac{-\frac{R}{2}\left(t-\frac{\pi}{2}\right)^2}{\frac{R}{3}\left(t-\frac{\pi}{2}\right)^3}=-\frac{3}{2\left(t-\frac{\pi}{2}\right)},$$
+et donc $\displaystyle\lim_{\substack{t\rightarrow\frac{\pi}{2}\\
+t<\frac{\pi}{2}}}\frac{y(t)-y(\frac{\pi}{2})}{x(t)-x(\frac{\pi}{2})}=+\infty$. Par symétrie d'axe $(Oy)$, la tangente en $M\left(\frac{\pi}{2}\right)$ est dirigée par $\overrightarrow{j}$ et $M\left(\frac{\pi}{2}\right)$ est un point de rebroussement de première espèce.
+Sinon, $x'$ et $y'$ sont strictement positives sur $\left]0,\frac{\pi}{2}\right[$. On en déduit que $x$ et $y$ sont strictement croissantes sur cet intervalle. Quand $t$ tend vers $0$ par valeurs supérieures, $x(t)$ tend vers $-\infty$ et $y(t)$ tend vers $0$. On en déduit que la droite d'équation $x=0$ est asymptote à la courbe. D'autre part, $x$ croit de $-\infty$ à $0$ pendant que $y$ croit de $0$ à $1$.
+\textbf{Courbe.}
+
+$$\includegraphics{../images/img005523-9}$$
+
+
+  \end{enumerate}
+\end{enumerate}
+\fincorrection
+\finexercice

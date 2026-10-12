@@ -1,0 +1,27 @@
+\exercice{7159, megy, 2017/05/13}
+\enonce[Isométries d'un triangle équilatéral]
+Soit $\mathcal T=ABC$ un triangle équilatéral et $G=Isom(\mathcal T)$ son groupe d'isométries.
+\begin{enumerate}
+\item Trouver six isométries laissant $\mathcal T$ invariant.
+\item Montrer qu'une isométrie de $\mathcal T$ doit envoyer un sommet sur un sommet.
+\item \'Ecrire un morphisme injectif $\phi$ entre $G$ et $\mathfrak S_3$.
+\item Montrer qu'il est bijectif.
+\item Décrire le groupe $H=Isom^+(\mathcal T)$ et écrire un isomorphisme  entre ce groupe et $\Z/3\Z$. À quel sous-groupe de $\mathfrak S_3$ correspond $H$ ?
+\end{enumerate}
+\finenonce
+
+\noindication
+\correction 
+\begin{enumerate}
+\item Les trois réflexions suivant les médiatrices du triangle conviennent, de même que l'identité, et les rotations d'angles $\pm 2\pi/3$ de centre $O$. Ceci donne six isométries, trois directes et trois indirectes. On remarque en les composant entre elles que l'on n'obtient pas d'autres isométries. Cet ensemble de six isométries est donc stable par composition, et il est également stable par inverse, c'est donc un sous-groupe de $G$. Dans la suite, on va prouver que c'est $G$ tout entier.
+\item Comme une isométrie est affine, elle conserve les barycentres. Soit $P$ un sommet du triangle. Comme ce n'est pas un barycentre d'autres points du triangle, son image par une isométrie fixant le triangle non plus, c'est-à-dire que son image est un sommet. On en déduit que les sommets sont envoyés sur les sommets.
+
+\item D'après ce qui précède, une isométrie de $\mathcal T$ permute les sommets. Donc à toute isométrie $f\in G$ on peut associer la bijection dans ${\rm Bij}(\{A,B,C\})$ qui lui correspond. Ce groupe de bijections est isomorphe à $\mathfrak S_3$, en numérotant les sommets de $1$ à $3$ ($A$ est le premier sommet, $B$ le second  etc). On obtient donc une application
+\[ G \to \mathfrak S_3.\]
+Elle est injective car une application affine est complètement déterminée par l'image de trois points non alignés : donc préciser la permutation sur les sommets du triangle détermine complètement l'isométrie du plan. C'est un morphisme de groupes par construction : composer les isométries va composer les permutations des sommets.
+\item Pour montrer que le morphisme de la question précédente est surjectif, on va utiliser la première question. À part l'identité qui est envoyée sur l'identité, les deux rotations sont envoyées sur les $3$-cycles $(123)$ et $(132)$. Les trois réflexions sont envoyées sur les trois transpositions, par exemple la réflexion suivant la médiatrice de $[BC]$ est envoyée sur la transposition $(23)$. On remarque qu'une isométrie est directe ssi la permutation associée est paire.
+\item D'après la question précédente, $H$ est composé de l'identité et des deux rotations décrites plus haut. Ce sous-groupe est envoyé sur le groupe des permutations paires $\mathfrak A_3$. Il est isomorphe à $\Z/3\Z$ par l'application qui envoie $[0]$ sur l'identité, $[1]$ sur $(123)$ et $[2]$ sur $(132)$, et qui est un morphisme de groupe bijectif.
+\end{enumerate}
+ 
+\fincorrection  
+\finexercice  

@@ -1,0 +1,38 @@
+\exercice{727, ridde, 1999/11/01}
+\enonce
+Montrer que pour tout $x \in \Rr$, $\left|e^x-1-x\right| \leq \frac{x^2}2 e^{\left|x\right|}$.
+\finenonce 
+
+\indication
+Le th\'eor\`eme des accroissements finis donne un r\'esultat proche de celui souhait\'e \`a un facteur pr\`es.
+Pour obtenir la majoration demand\'ee on peut utiliser le th\'eor\`eme de Rolle avec une fonction bien choisie.
+\finindication
+
+\correction
+Pour simplifier nous supposons $x>0$.
+\begin{enumerate}
+  \item Appliquer le th\'eor\`eme des accroissements finis  ne va pas \^etre suffisant. En effet, soit $f(x) = e^x-1-x$. Alors
+il existe $c \in ]0,x[$ tel que $f(x)-f(0)=f'(c)(x-0)$.
+Soit $f(x)=(e^c-1)x$.
+Soit maintenant $g(x) = e^x-1$ alors, par le th\'eor\`eme des accroissements finis sur $[0,c]$ il existe $d \in ]0,c[$
+tel que $g(c)-g(0)=g'(d)(c-0)$, soit $e^c-1=e^dc$.
+Donc $e^x-1-x = f(x) = (e^c-1)x = e^dcx$. 
+Comme $d \leq c \leq x$, alors
+$e^x-1-x \leq  e^xx^2$. 
+
+Cela donne une in\'egalit\'e, mais il manque un facteur $1/2$.
+
+  \item Nous allons obtenir l'in\'egalit\'e par application du th\'eor\`eme de Rolle. Soit maintenant $f(t) = e^t-1-t-k\frac{t^2}{2}$. Nous avons $f(0)=0$,
+$x>0$ \'etant fix\'e, nous choisisons $k$ tel que $f(x)=0$,
+(un tel $k$ existe car $e^x-1-x >0$ et $x^2>0$).
+Comme $f(0)=0=f(x)$ alors par Rolle il existe $c \in ]0,x[$
+tel que $f'(c)=0$.
+Mais $f'(t) = e^t-t-kt$, donc $f'(0)=0$.
+Maintenant $f'(0)=0=f'(c)$ donc il existe (par Rolle toujours !)
+$d \in ]0,c[$ tel que $f''(d)=0$.
+Or $f''(t) = e^t-k$, donc $f''(d)=0$ donne $k = e^d$.
+Ainsi $f(x)=0$ devient $e^x-1-x = e^d \frac{x^2}{2}$.
+Comme $d\leq x$ alors $e^x-1-x \leq e^x \frac{x^2}{2}$.
+\end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,36 @@
+\exercice{4771, quercia, 2010/03/16}
+\enonce[Comparaison de normes (ENS MP 2002)]
+
+\begin{enumerate}
+  \item Soit $E$ un espace pr{\'e}hilbertien r{\'e}el et $u_1,\dots,u_n$ des {\'e}l{\'e}ments de~$E$.
+    Calculer $\sum_\sigma\bigl\|\sum_{i=1}^n\sigma(i)u_i\bigr\|^2$ o{\`u} $\sigma$
+    parcourt l'ensemble des fonctions de~$[[1,n]]$ dans $\{-1,1\}$.
+
+  \item On se place dans l'ensemble des fonctions continues de~$[0,1]$ dans~$\R$.
+    Montrer que la norme infinie n'est {\'e}quivalente {\`a} aucune norme euclidienne.
+
+  \item M{\^e}me question avec la norme $\|\ \|_p$, $p\in{[1,+\infty[}\setminus\{2\}$.
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $2^n\sum_{i=1}^n\|u_i\|^2$.
+  \item Supposons qu'il existe une norme euclidienne $\|\ \|$ et deux r{\'e}els
+    $\alpha,\beta>0$ tels que $\alpha\|u\|_\infty\le\|u\|\le\beta\|u\|_\infty$
+    pour tout $u\in\mathcal{C}([0,1],\R)$.
+    On pose $u(x) = 1-2|x|$ pour $x\in[\frac{-1}2,\frac12]$ et $u(x) = 0$
+    sinon. Soit $n\in\N$ et pour $1\le i\le n$~: $u_i(x) = u((n+1)x-i)$.
+    Alors $\sum_\sigma\bigl\|\sum_{i=1}^n\sigma(i)u_i\bigr\|^2 \le 2^n\beta^2$
+    et $2^n\sum_{i=1}^n\|u_i\|^2 \ge 2^nn\alpha^2$ donc ces deux sommes ne peuvent
+    rester {\'e}gales quand $n\to\infty$.
+  \item M{\^e}me construction. On trouve
+    $$\sum_\sigma\bigl\|\sum_{i=1}^n\sigma(i)u_i\bigr\|^2 \le 2^n\beta^2\|u\|_p^2\Bigl(\frac{n}{n+1}\Bigr)^{2/p}$$
+    et $2^n\sum_{i=1}^n\|u_i\|^2 \ge 2^n\alpha^2\|u\|_p^2\frac{n}{(n+1)^{2/p}}$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

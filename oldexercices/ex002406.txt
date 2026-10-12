@@ -1,0 +1,35 @@
+\exercice{2406, mayer, 2003/10/01}
+\enonce 
+Soit $X = ({\cal C}^1([0,1]),N)$ avec $N(f) = \|f\|_\infty+\|f'\|_\infty$.
+Montrer qu'il existe une fonction $f\in X$ qui est
+point fixe de l'op\'erateur $T$ donn\'e par
+$$ Tf(x)= 1 + \int _0^x f(t-t^2)\, dt \; .$$
+On pourra commencer par \'etablir que $T\circ T$ est une
+contraction. Utiliser ceci pour \'etablir l'existence d'une
+fonction unique $f\in X$ qui v\'erifie $f(0)=1 $
+et $f'(x) = f(x-x^2) $.
+\finenonce
+
+\indication
+Faire soigneusement le calcul : $(T\circ T f)(x)=1+x+\int_0^x\int_0^{t-t^2}f(u-u^2)dudt$.
+Se souvenir que $X$ est complet et utiliser l'exercice \ref{exoiter}.
+\finindication
+
+\correction
+\begin{enumerate}
+  \item $(T\circ T f)(x)= 1+\int _0^x Tf(t-t^2) dt = 1+\int _0^x(1+\int_0^{t-t^2}f(u-u^2)du)dt
+=1+x+\int_0^x\int_0^{t-t^2}f(u-u^2)dudt$.
+De plus $(T\circ T f)'(x) = 1+\int_0^{x-x^2}f(u-u^2)du$.
+En remarquant que pour $t\in[0,1]$, $t-t^2\le \frac 14$, on montre que
+$|T\circ Tf(x)-T\circ Tg(x)| \le \frac 14 \|f-g\|_\infty$
+et que $|(T\circ Tf)'(x)-(T\circ Tg)'(x)| \le \frac 14 \|f-g\|_\infty$
+Donc $N(T\circ Tf-T\circ T g)\le \frac 12 \|f-g\|_\infty \le \frac 12 N(f-g)$.
+Donc $T\circ T$ est une contraction et $X$ est complet donc $T\circ T$ admet 
+un unique point fixe, par l'exercice \ref{exoiter}, $T$ admet un unique point fixe.
+
+  \item Remarquons que $Tf=f$ est équivalent à $f(0)=1$ et $f'(x)=f(x-x^2)$.
+Donc l'existence et l'unicité du point fixe pour $T$ donne l'existence et l'unicité de la solution
+au problème posé.
+\end{enumerate}
+\fincorrection
+\finexercice

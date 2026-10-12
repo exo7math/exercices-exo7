@@ -1,0 +1,54 @@
+\exercice{5435, rouget, 2010/07/06}
+\enonce[***I]
+Soit $u_0\in]0,\frac{\pi}{2}]$. Pour $n\in\Nn$, on pose $u_{n+1}=\sin(u_n)$.
+\begin{enumerate}
+\item  Montrer brièvement que la suite $u$ est strictement positive et converge vers $0$.
+\item 
+\begin{enumerate}
+\item Déterminer un réel $\alpha$ tel que la suite $u_{n+1}^\alpha-u_n^\alpha$ ait une limite finie non nulle.
+\item En utilisant le lemme de \textsc{Cesaro}, déterminer un équivalent simple de $u_n$.
+\end{enumerate}
+\end{enumerate}
+
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  
+Pour $x\in\left[0,\frac{\pi}{2}\right]$, posons $f(x)=\sin x$. On a $f\left(\left]0,\frac{\pi}{2}\right]\right)=]0,1]\subset\left]0,\frac{\pi}{2}\right]$. Donc, puisque $u_0\in\left]0,\frac{\pi}{2}\right]$, on en déduit que $\forall n\in\Nn,\;u_n\in\left]0,\frac{\pi}{2}\right]$.\rule[-5mm]{0mm}{10mm}
+Il est connu que $\forall x\in\left]0,\frac{\pi}{2}\right]$, $\sin x<x$ et de plus, pour $x\in\left[0,\frac{\pi}{2}\right]$, $\sin x=x\Leftrightarrow x=0$.
+La suite $u$ est à valeurs dans $\left]0,\frac{\pi}{2}\right]$ et donc $\forall n\in\Nn,\;u_{n+1}=\sin(u_n)<u_n$. La suite $u$ est donc strictement décroissante et, étant minorée par $0$, converge vers un réel $\ell$ de $\left[0,\frac{\pi}{2}\right]$ qui vérifie ($f$ étant continue sur le segment $\left[0,\frac{\pi}{2}\right]$) $f(\ell)=\ell$ ou encore $\ell=0$.
+En résumé,
+
+\begin{center}
+\shadowbox{
+la suite $u$ est strictement positive, strictement décroissante et converge vers $0$.
+}
+\end{center}
+ \item  Soit $\alpha$ un réel quelconque. Puisque la suite $u$ tend vers 0 , on a
+
+\begin{align*}\ensuremath
+u_{n+1}^{\alpha}-u_n^{\alpha}=(\sin u_n)^{\alpha}-u_n^{\alpha}&\underset{n\rightarrow+\infty}{=}\left(u_n-\frac{u_n^3}{6}+o(u_n^3)\right)^{\alpha}-u_n^{\alpha}\\
+ &=u_n^{\alpha}\left(\left(1-\frac{u_n^2}{6}+o(u_n^2)\right)^{\alpha}-1\right)=u_n^{\alpha}\left(-\alpha\frac{u_n^2}{6}+o(u_n^2)\right)\\
+ &=-\alpha\frac{u_n^{\alpha+2}}{6}+o(u_n^{\alpha+2})
+\end{align*}
+Pour $\alpha=-2$ on a donc 
+
+$$\frac{1}{u_{n+1}^2}-\frac{1}{u_n^2}=\frac{1}{3}+o(1).$$
+D'après le lemme de \textsc{Cesaro}, $\frac{1}{n}\sum_{k=0}^{n-1}\left(\frac{1}{u_{k+1}^2}-\frac{1}{u_k^2}\right)=\frac{1}{3}+o(1)$ ou encore $\frac{1}{n}\left(\frac{1}{u_n^2}-\frac{1}{u_0^2}\right)=\frac{1}{3}+o(1)$ ou enfin, 
+
+\begin{center}
+$\frac{1}{u_n^2}\underset{n\rightarrow+\infty}{=}\frac{n}{3}+\frac{1}{u_0^2}+o(n)\underset{n\rightarrow+\infty}{=}\frac{n}{3}+o(n)\underset{n\rightarrow+\infty}{\sim}\frac{n}{3}$.
+\end{center}
+Par suite, puisque la suite $u$ est strictement positive, 
+
+\begin{center}
+\shadowbox{
+$u_n\underset{n\rightarrow+\infty}{\sim}\sqrt{\frac{3}{n}}.$
+}
+\end{center}
+\end{enumerate}
+\fincorrection
+\finexercice

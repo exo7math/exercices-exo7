@@ -1,0 +1,26 @@
+\exercice{199, bodin, 1998/09/01}
+\video{7avL2IaR9fg}
+\enonce
+Soit $f: [0,1] \rightarrow [0,1]$ telle que
+$$f(x) =    \begin{cases}
+            x     & \text{si}\ x\in[0,1]\cap\Qq,\\
+            1-x  & \text{sinon.}
+        \end{cases}  $$
+D\'emontrer que $f \circ f= id$.
+
+\finenonce
+
+\indication
+$id$ est l'application identité définie par $id(x)=x$ pour tout $x\in[0,1]$.
+Donc $f \circ f= id$ signifie $f\circ f(c) = x$ pour tout $x\in[0,1]$.
+\finindication
+
+\correction
+Soit $x\in [0,1]\cap\Qq$ alors $f(x) = x$ donc $f \circ f (x) = f(x) = x$.
+Soit $x\notin [0,1]\cap\Qq$ alors $f(x) = 1-x$ donc $f \circ f (x) = f(1-x)$,
+mais $1-x \notin [0,1]\cap\Qq$ (vérifiez-le !) donc  $f \circ f (x) = f(1-x) = 1 - (1-x) = x$.
+Donc pour tout $x \in [0,1]$ on a  $f \circ f (x) = x$. Et donc $f \circ f= id$.
+\fincorrection
+
+\finexercice
+

@@ -1,0 +1,62 @@
+\exercice{2805, burnol, 2009/12/15}
+\enonce
+Les fonctions de Bessel sont très importantes en
+     Analyse. Elles apparaissent très souvent dans des
+     problèmes de physique mathématique. L'analyse complexe
+     permet d'étudier de manière approfondie ces
+     fonctions. Ici nous nous contentons des tout débuts de
+     la théorie. Nous ne considérons que les
+     fonctions\footnote{dites ``fonctions de Bessel
+     de
+     première espèce (et d'indices entiers)''.} $J_0$, $J_1$,
+     $J_2$, \dots, qui sont définies par les formules:
+\footnote{Autrement dit:
+\[ J_\nu(z) = \frac{z^{\nu}}{2.4.\dots.(2\nu)}\left(1 -
+     \frac{z^2}{2.(2\nu+2)} 
+     + \frac{z^4}{2.4.(2\nu+2).(2\nu+4)}
+     - \frac{z^6}{2.4.6.(2\nu+2).(2\nu+4).(2\nu+6)} +\dots\right)\]
+Remarquez que seule la constante
+     $2.4.\dots.(2\nu) = 2^\nu \nu!$ nous restreint (pour le
+     moment) à des valeurs entières de $\nu$. Si on en fait
+     abstraction on obtient
+     avec $\nu = -\frac12$ la fonction ``multiforme''
+     $z^{-1/2}\cos(z)$ ; tandis qu'avec
+     $\nu=+\frac12$ on obtient $z^{-1/2}\sin(z)$. Les
+     définitions exactes sont $J_{-1/2}(z) =
+     \sqrt{\frac2{\pi z}}\cos(z)$ et $J_{1/2}(z) =
+     \sqrt{\frac2{\pi z}}\sin(z)$.}
+\[ \nu\in\Nn,z\in\Cc\qquad J_\nu(z) = \sum_{n=0}^\infty 
+     (-1)^n\frac{(\frac z2)^{2n+\nu}}{n!(n+\nu)!}\]
+\medskip
+\begin{enumerate}
+\item   Montrer que le rayon de convergence de la série
+     définissant $J_\nu$ est $+\infty$.
+ \item
+  En dérivant terme à terme prouver les formules:
+\begin{align*}
+ (z^\nu J_\nu)' &= z^\nu J_{\nu-1}\qquad\quad\ (\nu\geq1)\\
+ (z^{-\nu} J_\nu)' &= - z^{-\nu} J_{\nu+1}\qquad(\nu\geq0)
+\end{align*}
+En particulier on a $(zJ_1)' = zJ_0$ et $J_0^{\,'} = - J_1$.
+\item  Réécrire les équations précédentes sous la forme 
+$(z\frac d{dz} + \nu) J_\nu = z J_{\nu-1}$
+($\nu\geq1$) et $(z\frac d{dz} - \nu) J_\nu = - z
+     J_{\nu+1}$ ($\nu\geq0$)
+et en déduire $-(\frac d{dz} + \frac{\nu + 1}z)(\frac d{dz}
+     - \frac\nu z)J_\nu = J_\nu$, puis, après simplification,
+     l'équation différentielle de Bessel:
+\[ z^2 J_\nu'' + zJ_\nu' + (z^2 - \nu^2)J_\nu = 0\]
+  \item Montrer, pour tout $\nu\in\Nn$, que la série
+     entière définissant $J_\nu$ est la seule (à une
+     constante multiplicative près) qui donne une solution
+     de l'équation différentielle de Bessel.\footnote{les
+     autres solutions de l'équation différentielle sont
+     singulières en $z=0$, avec une composante logarithmique
+     ($\nu\in\Zz$). Pour $\nu\notin\Zz$ il y a une solution
+     en $z^\nu(\sum_{k\geq0} c_k z^k)$ et une autre en
+     $z^{-\nu}(\sum_{k\geq0} d_k z^k)$.}
+\end{enumerate}
+\finenonce
+\noindication
+\nocorrection
+\finexercice

@@ -1,0 +1,50 @@
+\exercice{5589, rouget, 2010/10/16}
+\enonce[**I]
+Soient $p$ et $q$ deux projecteurs d'un $\Cc$-espace vectoriel $E$.
+
+Montrer que $(p+q\;\text{projecteur})\Leftrightarrow(p\circ q=q\circ p=0)\Leftrightarrow(\text{Im}(p)\subset\text{Ker}(q)\;\text{et}\;\text{Im}(q)\subset\text{Ker}(p))$.
+
+Dans le cas où $p+q$ est un projecteur, déterminer $\text{Ker}(p+q)$ et $\text{Im}(p+q)$.
+\finenonce
+
+\noindication
+
+\correction
+$\Rightarrow$/ Si $p+q$ est un projecteur alors l'égalité $(p+q)^2=p+q$ founit $pq+qp=0$. En composant par $p$ à droite ou à gauche , on obtient  $pqp+qp=0=pq+pqp$ et donc  $pq = qp$.
+
+ 
+Cette égalité jointe à l'égalité $pq + qp = 0$ fournit $pq = qp = 0$.
+
+$\Leftarrow$/ Si $ pq = qp = 0$, alors $(p+q)^2=p^2 + pq + qp + q^2 = p + q$ et $p + q$ est un projecteur.
+
+\begin{center}
+\shadowbox{
+Pour tous projecteurs $p$ et $q$, ($p+q$ projecteur$\Leftrightarrow p\circ q=q\circ p=0\Leftrightarrow\text{Im}q\subset\text{Ker}p\;\text{et}\;\text{Im}p\subset\text{Ker}q$).
+}
+\end{center}
+
+Dorénavant, $p+q$ est un projecteur ou ce qui revient au même $pq=qp=0$.
+
+On a $\text{Ker}p\cap\text{Ker}q\subset\text{Ker}(p+q)$. Inversement, pour $x\in E$,
+
+\begin{center}
+$x\in\text{Ker}(p+q)\Rightarrow(p+q)(x)=0\Rightarrow p(p(x)+q(x))=0\Rightarrow p(x)=0$,
+\end{center}
+
+et de même $q(x)=0$. Ainsi, $\text{Ker}(p+q)\subset\text{Ker}p\cap\text{Ker}q$ et donc $\text{Ker}(p+q)=\text{Ker}p\cap\text{Ker}q$.
+
+On a $\text{Im}(p+q)\subset\text{Im}p+\text{Im}q$. Inversement, pour $x\in E$,
+
+\begin{center}
+$x\in\text{Im}p+\text{Im}q\Rightarrow\exists(x_1,x_2)\in E^2/\;x=p(x_1)+q(x_2)$.
+\end{center}
+
+Mais alors, $(p+q)(x)=p^2(x_1)+pq(x_1)+qp(x_2)+q^2(x_2)=p(x_1)+q(x_2)=x$ et donc $x\in\text{Im}(p+q)$. Ainsi, $\text{Im}p+\text{Im}q\subset\text{Im}(p+q)$ et donc $\text{Im}(p+q)=\text{Im}p+\text{Im}q$. En résumé, si $p$ et $q$ sont deux projecteurs tels que $p+q$ soit un projecteur, alors
+
+\begin{center}
+\shadowbox{
+$\text{Ker}(p+q)=\text{Ker}p\cap\text{Ker}q$ et $\text{Im}(p+q)=\text{Im}p+\text{Im}q$.
+}
+\end{center}
+\fincorrection
+\finexercice

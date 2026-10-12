@@ -1,0 +1,41 @@
+\exercice{3454, quercia, 2010/03/10}
+\enonce[$\det( A + (\alpha) )$]
+
+Soit $A \in \mathcal{M}_n(K)$ et
+$U = \begin{pmatrix} 1       &\dots  &1       \cr
+                \vdots  &       &\vdots  \cr
+                1       &\dots  &1       \cr \end{pmatrix}$.
+
+
+\begin{enumerate}
+  \item Démontrer que :
+    $\det(A + \alpha U) = \det A + \alpha \sum \text{cofacteurs de } A$.
+    
+  \item  En déduire la valeur de
+     $D(a,b,c) = \begin{vmatrix}a       & b      & \dots  & b      \cr
+                           c       & \ddots & \ddots & \vdots \cr
+                           \vdots  & \ddots & \ddots & b      \cr
+                           c       & \dots  & c      & a      \end{vmatrix}$,
+  \begin{enumerate}
+     \item pour $b \ne c$.
+     \item pour $b = c$.
+  \end{enumerate}
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Développer.
+  \item 
+  \begin{enumerate}
+    \item $\begin{cases} D(a-b,0,c-b) = (a-b)^n \cr
+                       D(a-c,b-c,0) = (a-c)^n \cr\end{cases}  \Rightarrow 
+               D(a,b,c) = \frac { c(a-b)^n - b(a-c)^n } {c-b}$.
+    \item $\det( (a-b)I + bU ) = (a-b)^n + nb(a-b)^{n-1}$.
+  \end{enumerate}
+\end{enumerate}
+ \fincorrection
+
+\finexercice

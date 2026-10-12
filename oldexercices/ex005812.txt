@@ -1,0 +1,55 @@
+\exercice{5812, rouget, 2010/10/16}
+\enonce[***]
+Soit $E =\Rr_n[X]$. Pour $P\in E$, on pose $Q(P) =\sum_{k=0}^{+\infty}P(k)P(-k)e^{-k}$.
+
+\begin{enumerate}
+ \item  Montrer que $Q$ est une forme quadratique sur $E$.
+
+\item  Déterminer sa signature.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Soit $P$ un élément de $E$. D'après un théorème de croissances comparées, $P(k)P(-k)e^{-k}\underset{k\rightarrow+\infty}{=}o\left(\frac{1}{k^2}\right)$ et donc $Q(P)$ existe.
+
+Pour tout élément $P$ de $E$, $Q(P) = B(P,P)$ où $B$ est la forme bilinéaire symétrique définie sur $E$ par
+
+\begin{center}
+$\forall(P_1,P_2)\in E^2$, $B(P_1,P_2)=\frac{1}{2}\left(\sum_{k=0}^{+\infty}(P_1(k)P_2(-k)+ P_1(-k)P_2(k))e^{-k}\right)$
+\end{center}
+
+et donc $Q$ est une forme quadratique sur $E$.
+
+\item  Soit $F$ le sous-espace vectoriel de $E$ dont les éléments sont les polynômes pairs et $G$ le sous-espace vectoriel de $E$ dont les éléments sont les polynômes impairs. $F$ et $G$ sont supplémentaires dans $E$.
+
+Soit $P$ est un polynôme pair et non nul. Tout d'abord , $Q(P)\sum_{k=0}^{+\infty}(P(k))^2e^{-k}\geqslant0$. De plus, comme $P$ ne peut admettre tout entier naturel pour racine, on a plus précisément $Q(P)> 0$. De même, si $P$ est impair et non nul, $Q(P) < 0$.
+
+Ainsi, la restriction de $Q$ à $F$ (resp. $G$) est définie positive (resp.négative). Enfin, si $P_1$ est pair et $P_2$ est impair, on a
+
+\begin{center}
+$B(P_1,P_2)=\sum_{k=0}^{+\infty}P_1(k)P_2(-k)e^{-k}=-\sum_{k=0}^{+\infty}P_1(k)P_2(k)e^{-k}=-\sum_{k=0}^{+\infty}P_1(-k)P_2(k)e^{-k}=-B(P_2,P_1)=-B(P_1,P_2)$,
+\end{center}
+
+et donc $B(P_1,P_2) = 0$ ($F$ et $G$ sont orthogonaux pour $B$).
+
+Il existe un base de $F$ dans laquelle $Q_{/F}$ est combinaison linéaire à coefficients strictement positifs de carrés de formes linéaires linéairement indépendantes en nombre égal à $\text{dim}(F)$ et de même il existe un base de $G$ dans laquelle $Q_{/G}$ est combinaison linéaire à coefficients strictement négatifs de carrés de formes linéaires linéairement indépendantes en nombre égal à $\text{dim}(G)$. Maintenant, si $P$ est un polynôme quelconque de parties paire et impaire $P_1$ et $P_2$ respectivement,
+
+\begin{center}
+$Q(P)=Q(P_1+P_2) =Q(P_1)+2B(P_1,P_2)+Q(P_2) = Q_{/F}(P_1)+Q_{/G}(P_2)$.
+\end{center}
+
+Donc la réunion des deux bases ci-dessus est une base de $E$ dans laquelle $Q$ est combinaison linéaire de carrés de formes linéaires linéairement indépendantes dans laquelle $\text{dim}(F)=E\left(\frac{n}{2}\right)+1$ coefficients sont strictement positifs et 
+$\text{dim}(G)=E\left(\frac{n+1}{2}\right)$ sont strictement négatifs. Finalement,
+
+\begin{center}
+\shadowbox{
+$Q$ est donc non dégénérée de signature $s=\left(E\left(\frac{n}{2}\right)+1,E\left(\frac{n+1}{2}\right)\right)$.
+}
+
+\end{center}
+\end{enumerate}
+\fincorrection
+\finexercice

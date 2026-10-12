@@ -1,0 +1,29 @@
+\exercice{2343, queffelec, 2003/10/01}
+\enonce
+ Montrer que dans tout espace m\'etrique $(E,d)$ une boule ferm\'ee est un ferm\'e,
+mais que l'adh\'erence d'une boule ouverte $B(a,r)$ ne coincide pas
+n\'ecessai\-rement avec la boule ferm\'ee $B'(a,r)$ (on pourra consid\'erer dans 
+$(\Rr^2,||.||_\infty)$, $E=[0,1]\times\{0\}\cup\{0\}\times[0,1]$ et la boule
+centr\'ee en
+$({1\over2},0)$ de rayon $1/2$).
+\finenonce
+
+\indication
+Revenir à la définition de ce qu'est un ``ensemble fermé'' et de ce
+qu'est une ``boule fermée''.
+\finindication
+
+\correction
+\begin{enumerate}
+  \item Cette exercice justifie la terminologie ``boule fermée''. Il s'agit de montrer que le complémentaire d'une boule fermée est un ensemble ouvert. Il est vivement conseillé de faire un dessin. Soit $C = E \setminus B'(a,r)$. Soit $x \in C$, on cherche une boule ouverte $B(x,\epsilon)$ contenue dans $C$. Comme $x\in C$, $x \notin B'(a,r)$ donc
+$d(a,x) > r$. Soit $\epsilon$ tel que  $0 < \epsilon < d(a,x)-r$. Montrons que
+$B(x,\epsilon) \subset C$ : pour $y \in B(x,\epsilon)$, l'inégalité triangulaire $d(a,x) \le d(a,y)+d(y,x)$ donc $d(a,y) \ge d(a,x)-d(y,x) \ge d(a,x)-\epsilon >r$. Comme $d(a,y) >r$ alors $y \notin B'(a,r)$ donc $y \in C$. Comme la preuve est valable quelque soit $y \in B(x,\epsilon)$, donc $B(x,\epsilon) \subset C$.
+Et donc $C$ est un ouvert.
+  
+  \item Pour $a=(\frac 12,0)$ et $r=\frac 12$ on a 
+$B'(a,r) = [0,1]\times\{0\}\cup\{0\}\times[0,\frac 12]$,
+$B(a,r) = ]0,1[ \times \{0\}$ et $\overline{B(a,r)} = [0,1]\times\{0\}$.
+
+\end{enumerate}
+\fincorrection
+\finexercice

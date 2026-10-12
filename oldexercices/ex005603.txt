@@ -1,0 +1,45 @@
+\exercice{5603, rouget, 2010/10/16}
+\enonce[***]
+Rang de la matrice $\left(
+\begin{array}{cccc}
+1&\cos(a)&\cos(2a)&\cos(3a)\\
+\cos(a)&\cos(2a)&\cos(3a)&\cos(4a)\\
+\cos(2a)&\cos(3a)&\cos(4a)&\cos(5a)\\
+\cos(3a)&\cos(4a)&\cos(5a)&\cos(6a)
+\end{array}
+\right)$.
+\finenonce
+
+\noindication
+
+\correction
+(C'est en fait un exercice sur les polynômes de \textsc{Tchebychev} de 1ère espèce et vous pouvez généraliser cet exercice en passant au format $n$ au lieu du format $4$.)
+
+Si on note $C_j$, $j\in\{1,2,3,4\}$, la $j$-ème colonne de $A$ alors $C_j= (\cos(i+j-2)a)_{1\leqslant i\leqslant4}$ puis pour $j$ élément de $\{1,2\}$, 
+
+\begin{center}
+$C_{j+2}+ C_j =(2\cos(i+j-1)a\cos a)_{1\leqslant i\leqslant4}= 2\cos aC_{j+1}$
+\end{center}
+
+et donc $C_3 =2\cos aC_2 - C_1\in\text{Vect}(C_1,C_2)$ et $C_4= 2\cos a C_3 -C_2\in\text{Vect}(C_2,C_3)\subset\text{Vect}(C_1,C_2)$.
+
+Donc $\text{Vect}(C_1,C_2,C_3,C_4)=\text{Vect}(C_1,C_2)$ et $\text{rg}A=\text{rg}(C_1,C_2)\leqslant 2$.
+
+Enfin $\left|
+\begin{array}{cc}
+1&\cos(a)\\
+\cos(a)&\cos(2a)
+\end{array}
+\right|=\cos(2a) -\cos^2a=\cos^2a - 1= -\sin^2a$.
+
+\textbullet~Si $a$ n'est pas dans $\pi\Zz$, ce déterminant n'est pas nul et donc les deux premières colonnes ne sont pas colinéaires. Dans ce cas, $\text{rg}A = 2$. 
+
+\textbullet~Si $a$ est dans $\pi\Zz$, la première colonne n'est pas nulle et les autres colonnes lui sont colinéaires. Dans ce cas, $\text{rg}A = 1$.
+
+\begin{center}
+\shadowbox{
+$\text{rg}(A)=2$ si $a\notin\pi\Zz$ et $\text{rg}(A)=1$ si $a\in\pi\Zz$.
+}
+\end{center}
+\fincorrection
+\finexercice

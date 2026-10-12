@@ -1,0 +1,43 @@
+\exercice{191, bodin, 1998/09/01}
+\video{n2-T6hM33AM}
+\enonce
+
+Soit $f  : \Rr \rightarrow \Rr$ d\'efinie par $f(x) = 2x/(1+x^2)$.
+\begin{enumerate}
+    \item $f$ est-elle injective ? surjective ?
+    \item Montrer que $f(\Rr)=[-1,1]$.
+    \item Montrer que la restriction $g  : [-1,1] \rightarrow [-1,1]$  $g(x) = f(x)$
+est une bijection.
+    \item Retrouver ce r\'esultat en \'etudiant les variations de $f$.
+\end{enumerate}
+
+\finenonce 
+
+\indication
+\begin{enumerate}
+    \item $f$ n'est ni injective, ni surjective.
+    \item Pour $y\in \Rr$, r\'esoudre l'\'equation $f(x)=y$.
+    \item On pourra exhiber l'inverse.
+\end{enumerate}
+\finindication
+
+\correction
+\begin{enumerate}
+  \item $f$ n'est pas injective car $f(2) = \frac 45 = f(\frac12)$.
+  $f$ n'est pas surjective car $y=2$ n'a pas d'ant\'ec\'edent: en effet 
+  l'\'equation $f(x)=2$ devient $2x=2(1+x^2)$ soit $x^2-x+1=0$ qui n'a pas de solutions r\'eelles.
+  \item $f(x)=y$ est \'equivalent \`a l'\'equation 
+  $yx^2-2x+y=0$. Cette \'equation a des solutions $x$ si et seulement si
+  $\Delta = 4-4y^2 \geq 0$ donc il y a des solutions si et seulement si $y\in[-1,1]$. Nous venons de montrer que $f(\Rr)$ est exactement $[-1,1]$.
+  \item Soit $y\in[-1,1]\setminus\{0\}$ alors les solutions $x$ possibles de l'\'equation $g(x)=y$ sont $x=\frac{1-\sqrt{1-y^2}}{y}$ ou
+  $x=\frac{1+\sqrt{1-y^2}}{y}$. La seule solution $x\in[-1,1]$ est
+  $x=\frac{1-\sqrt{1-y^2}}{y}$ en effet
+  $x=\frac{1-\sqrt{1-y^2}}{y}=\frac{y}{1+\sqrt{1-y^2}} \in[-1,1]$.
+  Pour $y=0$, la seule solution de l'\'equation $g(x)=0$ est $x=0$.
+  Donc pour $g : [-1,1] \longrightarrow [-1,1]$ nous avons trouv\'e un inverse $h : [-1,1] \longrightarrow [-1,1]$ d\'efini par
+  $h(y) = \frac{1-\sqrt{1-y^2}}{y}$ si $y\neq0$ et $h(0)=0$. Donc $g$ est une bijection.
+  \item $f'(x) = \frac{2-2x^2}{1+x^2}$, donc $f'$ est strictement positive sur $]-1,1[$ donc $f$ est strictement croissante sur $[-1,1]$ avec $f(-1)=-1$ et $f(1)=1$. Donc la restriction
+  de $f$, appelée $g : [-1,1] \longrightarrow [-1,1]$, est une bijection.
+\end{enumerate}
+\fincorrection
+\finexercice

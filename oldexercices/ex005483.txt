@@ -1,0 +1,53 @@
+\exercice{5483, rouget, 2010/07/10}
+\enonce[***]
+Soit $E$ un $\Rr$ espace vectoriel de dimension finie. Soit $||\;||$ une norme sur $E$ vérifiant l'identité du parallèlogramme, c'est-à-dire~:~$\forall(x,y)\in E^2,\;||x+y||^2+||x-y||^2=2(||x||^2+||y||^2)$. On se propose de démontrer que $||\;||$ est associée à un produit scalaire.
+On définit sur $E^2$ une application $f$ par~:~$\forall(x,y)\in E^2,\;f(x,y)=\frac{1}{4}(||x+y||^2-||x-y||^2)$.
+\begin{enumerate}
+\item  Montrer que pour tout $(x,y,z)$ de $E^3$, on a~:~$f(x+z,y)+f(x-z,y)=2f(x,y)$.
+\item  Montrer que pour tout $(x,y)$ de $E^2$, on a~:~$f(2x,y)=2f(x,y)$.
+\item  Montrer que pour tout $(x,y)$ de $E^2$ et tout rationnel $r$, on a~:~$f(rx,y)=rf(x,y)$.
+
+On admettra que pour tout réel $\lambda$ et tout $(x,y)$ de $E^2$ on a~:~$f(\lambda x,y)=\lambda f(x,y)$ ( ce résultat provient de la continuité de $f$).
+\item  Montrer que pour tout $(u,v,w)$ de $E^3$, $f(u,w)+f(v,w)=f(u+v,w)$.
+\item  Montrer que $f$ est bilinéaire.
+\item  Montrer que $||\;||$ est une norme euclidienne.
+\end{enumerate}
+
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Soit $(x,y,z)\in\Rr^3$.
+
+\begin{align*}\ensuremath f(x+z,y)+f(x-z,y)&=\frac{1}{4}(||x+z+y||^2+||x-z+y||^2-||x+z-y||^2-||x-z-y||^2)\\
+ &=\frac{1}{4}\left(2(||x+y||^2+||z||^2)-2(||x-y||^2+||z||^2)\right)=2f(x,y).
+\end{align*}
+ \item  $2f(x,y)= f(x+x,y)+f(x-x,y)=f(2x,y)+f(0,y)$ mais $f(0,y)=(||y||^2-||-y||^2)=0$ (définition d'une norme).
+ \item  \textbullet~Montrons par récurrence que $\forall n\in\Nn,\;f(nx,y)=nf(x,y)$.
+C'est clair pour $n=0$ et $n=1$.
+Soit $n\geq0$. Si l'égalité est vraie pour $n$ et $n+1$ alors d'après 1), 
+
+$$f((n+2)x,y)+f(nx,y)=f((n+1)x+x,y)+f((n+1)x-x,y)=2f((n+1)x,y),$$
+et donc, par hypothèse de récurrence,
+
+$$f((n+2)x,y)=2f((n+1)x,y)-f(nx,y)=2(n+1)f(x,y)-nf(x,y)=(n+2)f(x,y).$$
+Le résultat est démontré par récurrence.
+\textbullet~Soit $n\in\Nn^*$, $f(x,y)=f\left(n\times\frac{1}{n}.x,y\right)=nf\left(\frac{1}{n}x,y\right)$ et donc $f\left(\frac{1}{n}x,y\right)=\frac{1}{n}f(x,y)$.
+\textbullet~Soit alors $r=\frac{p}{q}$, $p\in\Nn$, $q\in\Nn^*$, $f(rx,y)=\frac{1}{q}f(px,y)=p\frac{1}{q}f(x,y)=rf(x,y)$ et donc, pour tout rationnel positif $r$, $f(rx,y)=rf(x,y)$.
+Enfin, si $r\leq0$, $f(rx,y)+f(-rx,y)=2f(0,y)=0$ (d'après 1)) et donc= $f(-rx,y)=-f(-rx,y)=rf(x,y)$.
+
+\begin{center}
+$\forall(x,y)\in E^2,\;\forall r\in\Qq,\;f(rx,y)=rf(x,y)$.
+\end{center}
+ \item  On pose $x=\frac{1}{2}(u+v)$ et $y=\frac{1}{2}(u-v)$.
+
+$$f(u,w)+f(v,w)=f(x+y,w)+f(x-y,w)=2f(x,w)=2f\left(\frac{1}{2}(u+v),w\right)=f(u+v,w).$$
+ \item  f est symétrique (définition d'une norme) et linéaire par rapport à sa première variable (d'après 3) et 4)).
+Donc f est bilinéaire.
+ \item  f est une forme bilinéaire symétrique.
+Pour $x\in E$, $f(x,x)=\frac{1}{4}(||x+x||^2+||x-x||^2)=\frac{1}{4}||2x||^2=||x||^2$ (définition d'une norme) ce qui montre tout à la fois que $f$ est définie positive et donc un produit scalaire, et que $||\;||$ est la norme associée. $||\;||$ est donc une norme euclidienne.
+\end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,31 @@
+\exercice{709, ridde, 1999/11/01}
+
+\enonce
+Soit $f (x) = \exp (-\frac 1{x^2})$ si $x \neq 0$ et $f (0) = 0$.
+Montrer que $f$ est $C^{\infty}$ et que $\forall n \in \Nn \, \, f^{ (n)} (0) = 0$.
+
+\finenonce
+
+\noindication
+
+\correction
+La limite de $f$ en $0$ est $0$, donc $f$ est continue en $0$.
+De même le taux d'accroissement de $f$ en $0$ est
+$f(x)/x$ qui tend vers $0$. Donc $f$ est dérivable en $0$ et 
+$f'(0)=0$. En dehors de $0$, on a $f'(x) = 2{e^{-{x}^{-2}}}{x}^{-3}$
+donc $f'$ est continue en $0$.
+
+On continue de la même fa\c{c}on en remarquant que si
+$f^{(n)}(x) = P(1/x) \exp(-1/x^2)$  
+où $P$ est un polynôme et $f^{(n)}(0) = 0$.
+Donc $f^{(n)}(x)$ tend vers $0$ si $x$ tend vers $0$. Donc $f^{(n)}$
+est continue. De plus $f^{(n)}$ est dérivable en $0$ car son taux
+d'accroissement vaut $1/x P(1/x) \exp(-1/x^2)$ qui tend vers $0$, donc 
+$f^{(n+1)}(0) = 0$.
+En dehors de $0$ on $f^{(n+1)}(x) = Q(1/x) \exp(-1/x^2)$ où $Q$ est un polynôme. 
+Et on recommence...
+\fincorrection
+
+
+\finexercice
+

@@ -1,0 +1,70 @@
+\exercice{1244, roussel, 2001/09/01}
+\video{KCxPBmuttZE}
+\enonce
+Donner un développement limité à l'ordre $2$ de $f(x)=
+\displaystyle{\frac{\sqrt{1+x^2}}{1+x+\sqrt{1+x^2}}}$ en $0$.
+En déduire un développement à l'ordre $2$ en $+\infty$.
+Calculer un développement à l'ordre $1$ en $-\infty$.
+\finenonce
+
+\indication
+En $x=0$ c'est le quotient de deux dl.
+En $x=+\infty$, on pose $h=\frac1x$ et on calcule un dl en $h=0$.
+\finindication 
+
+\correction
+\begin{enumerate}
+  \item Dl de $f(x)$ à l'ordre $2$ en $0$.
+\begin{align*}
+f(x) 
+  & =   \frac{\sqrt{1+x^2}}{1+x+\sqrt{1+x^2}} \\
+  & = \frac{1+\frac{x^2}{2} + o(x^2)}{1 + x + 1+\frac{x^2}{2} + o(x^2)} 
+\quad \text{ car } \sqrt{1+x^2} = 1 + \frac12 x^2+o(x^2) \\  
+  & = \big(1+\frac{x^2}{2} + o(x^2) \big) \times \frac 12 \frac{1}{1+\frac{x}{2}+\frac{x^2}{4} + o(x^4)} 
+\quad \text{ on pose } u=\frac{x}{2}+\frac{x^2}{4} + o(x^4)  \\
+  & = \frac 12 \big(1+\frac{x^2}{2} + o(x^2) \big) \times \frac{1}{1+u} \\
+  & = \frac 12 \big(1+\frac{x^2}{2} + o(x^2) \big) \times \big(1-u+u^2+o(u^2)\big)  \\
+  & = \frac 12 \big(1+\frac{x^2}{2} + o(x^2) \big) \times \big(1- \big(\frac{x}{2}+\frac{x^2}{4}\big) + \big(\frac{x}{2}+\frac{x^2}{4}\big)^2+o(x^2)\big)  \\
+  & = \frac 12 \big(1+\frac{x^2}{2} + o(x^2) \big) \times \big(1- \frac{x}{2}+o(x^2)\big)  \\
+  & = \frac 12 \big(1- \frac{x}{2}+\frac{x^2}{2} + o(x^2) \big)  \\
+  & = \frac 12 - \frac{x}{4}+\frac{x^2}{4} + o(x^2)   \\ 
+\end{align*}
+
+  \item En $+\infty$ on va poser $h=\frac1x$ et se ramener à un dl en $h=0$.
+
+$$f(x)= \frac{\sqrt{1+x^2}}{1+x+\sqrt{1+x^2}} =  \frac{x\sqrt{\frac{1}{x^2}+1}}{x\big(\frac1x+1+\sqrt{\frac{1}{x^2}+1}\big)}
+=  \frac{\sqrt{1+h^2}}{1+h+\sqrt{1+h^2}} = f(h).$$
+
+Ici -miraculeusement- on retrouve exactement l'expression de $f$ dont on a déjà calculé le dl en $h=0$ :
+$f(h) =  \frac 12 - \frac{h}{4}+\frac{h^2}{4} + o(h^2)$. Ainsi 
+$$f(x) = f(h) = \frac 12 - \frac{1}{4x}+\frac{1}{4x^2} + o(\frac1{x^2})$$
+
+  \item Attention cela ne fonctionne plus du tout en $-\infty$.
+Dans le calcul de la deuxième question on était on voisinage de $+\infty$ et nous avons considéré que $x$ était positif.
+En $-\infty$ il faut faire attention au signe, par exemple $\sqrt{1+x^2}= |x|\sqrt{\frac{1}{x^2}+1} = -x \sqrt{\frac{1}{x^2}+1}$.
+
+Ainsi toujours en posant $h=\frac1x$.
+\begin{align*}
+f(x) 
+  & = \frac{\sqrt{1+x^2}}{x+1+\sqrt{1+x^2}} \\
+  & = \frac{-x\sqrt{\frac{1}{x^2}+1}}{x\big(1+\frac1x-\sqrt{\frac{1}{x^2}+1}\big)} \\
+  & = -\frac{\sqrt{1+h^2}}{1+h-\sqrt{1+h^2}} \\
+  & = -\frac{1+\frac12 h^2 + o(h^2)}{1+h - \big(1+\frac12 h^2 + o(h^2) \big)} \\
+  & = - \frac{1+\frac12 h^2 + o(h^2)}{h  - \frac12 h^2 + o(h^2)} \\
+  & = -\frac1h \frac{1+\frac12 h^2 + o(h^2)}{1 - \frac12 h + o(h)} \\
+  & = -\frac1h \big(1+\frac12 h^2 + o(h^2)\big)\times\big(1+\frac12h +\frac14 h^2 + o(h^2) \big) \\
+  & = -\frac1h\big(1 +\frac12h +\frac34 h^2 + o(h^2) \big) \\
+  & =  -\frac1h -\frac12 -\frac34 h + o(h) \\
+  & = -x -\frac12 -\frac34 \frac1x + o(\frac1x) \\
+\end{align*}  
+
+Ainsi un développement (asymptotique) de $f$ en $-\infty$ est 
+$$f(x) = -x -\frac12 -\frac34 \frac1x + o(\frac1x)$$
+On en déduit par exemple que $f(x)$ se comporte essentiellement comme la fonction $-x$
+en $-\infty$ et en particulier $\lim_{x\to -\infty} f = +\infty$.
+\end{enumerate}
+
+\fincorrection
+
+\finexercice
+

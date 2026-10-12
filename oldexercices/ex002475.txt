@@ -1,0 +1,88 @@
+\exercice{2475, matexo1, 2002/02/01}
+\video{zf0ETNslBnc}
+\enonce
+\label{exo2475}
+Trouver toutes les matrices de $\mathcal{M}_3(\Rr)$ qui vérifient
+\begin{enumerate}
+\item $M^2 = 0$ ;
+\item $M^2 = M$ ; 
+\item $M^2 = I$. 
+\end{enumerate}
+\finenonce
+
+\indication
+Il faut trouver les propriétés de l'application linéaire $f$ associée à chacune de ces matrices.
+Les résultats s'expriment en explicitant une (ou plusieurs) matrice $M'$ qui est la matrice de $f$ dans une base bien choisie
+et ensuite en montrant que toutes les autres matrices sont de la forme
+$M=P^{-1}M'P$.
+
+Plus en détails pour chacun des cas :
+\begin{enumerate}
+  \item $\Im f \subset \Ker f$ et discuter suivant la dimension du noyau.
+  \item Utiliser l'exercice \ref{exo1093} : $\Ker f \oplus \Im f$ et il existe une base telle que 
+$f(e_i)=0$ ou $f(e_i)=e_i$.
+  \item Poser $N= \frac{I+M}{2}$ (et donc $M=\cdots$) chercher à quelle condition $M^2=I$.
+\end{enumerate}
+\finindication
+
+\correction
+\begin{enumerate}
+  \item Soit $M$ une matrice telle que $M^2=0$ et soit $f$ l'application linéaire associée à $M$.
+Comme $M^2=0$ alors $f\circ f = 0$. Cela entraîne $\Im f \subset \Ker f$. Discutons suivant la dimension
+du noyau :
+   \begin{enumerate}
+      \item Si $\dim \Ker f=3$ alors $f=0$ donc $M=0$ (la matrice nulle).
+
+      \item Si $\dim \Ker f=2$ alors prenons une base de $\Rr^3$ formée de deux vecteurs du noyau et d'un troisième vecteur.
+Dans cette base la matrice de $f$ est
+$M'=\begin{pmatrix}0&0&a\\0& 0 & b\\0&0&c\end{pmatrix}$ mais comme $f\circ f=0$ alors $M'^2=0$ ;
+un petit calcul implique $c=0$. Donc $M$ et $M'$ sont les matrices de la même application linéaire $f$ mais exprimées dans des bases différentes,
+donc $M$ et $M'$ sont semblables.
+
+      \item Si $\dim \Ker f=1$ alors comme $\Im f \subset \Ker f$ on a $\dim \Im f \le 1$ mais alors cela contredit le théorème
+du rang : $\dim \Ker f + \dim \Im f = \dim \Rr^3$. Ce cas n'est pas possible.
+
+      \item Conclusion : $M$ est une matrice qui vérifie $M^2=0$ si et seulement si 
+il existe une matrice inversible $P$ et des réels $a,b$ tels que 
+$$M=P^{-1} \begin{pmatrix}0&0&a\\0& 0 & b\\0&0&0\end{pmatrix}P$$
+
+   \end{enumerate}
+
+  \item On va s'aider de l'exercice \ref{exo1093}. Si $M^2=M$ et $f$ est l'application linéaire associée 
+alors $f\circ f= f$. On a vu dans l'exercice \ref{exo1093} qu'alors $\Ker f \oplus \Im f$
+et que l'on peut choisir une base $(e_1,e_2,e_3)$ telle que $f(e_i)=e_i$ 
+puis $f(e_i)=0$. Suivant la dimension du noyau cela donne que la matrice $M'$ de $f$ dans cette base est
+$$A_0=\begin{pmatrix}0&0&0\\0&0&0\\0&0&0\end{pmatrix}\quad
+A_1=\begin{pmatrix}1&0&0\\0&0&0\\0&0&0\end{pmatrix} \quad 
+A_2=\begin{pmatrix}1&0&0\\0&1&0\\0&0&0\end{pmatrix} \quad 
+A_3=\begin{pmatrix}1&0&0\\0&1&0\\0&0&1\end{pmatrix}.$$
+Maintenant $M$ est semblable à l'une de ces matrices : il existe $P$ inversible telle que $M=P^{-1}M'P$
+où $M'$ est l'une des quatre matrices $A_i$ ci-dessus.
+
+Géométriquement notre application est une projection (projection sur une droite pour la seconde matrice 
+et sur un plan pour la troisième).
+
+  \item Posons $N= \frac{I+M}{2}$ et donc $M=2N-I$.
+  Alors $M^2=I \iff (2N-I)^2=I \iff 4N^2-4N-I=I \iff N^2=N$.
+  Donc par la deuxième question $N$ est semblable à l'une des matrice $A_i$ :
+  $N= P^{-1}A_iP$.
+  Donc $M=2P^{-1}A_iP-I = P^{-1}(2A_i-I)P$.
+  Ainsi $M$ est semblable à l'une des matrices $2A_i-I$ suivantes :
+$$\begin{pmatrix}-1&0&0\\0&-1&0\\0&0&-1\end{pmatrix}\quad
+\begin{pmatrix}1&0&0\\0&-1&0\\0&0&-1\end{pmatrix} \quad 
+\begin{pmatrix}1&0&0\\0&1&0\\0&0&-1\end{pmatrix} \quad 
+\begin{pmatrix}1&0&0\\0&1&0\\0&0&1\end{pmatrix}.$$  
+Ce sont des matrices de symétrie (par rapport à l'origine pour la première matrice, par rapport à une droite pour la seconde matrice 
+et par rapport à un plan pour la troisième).
+
+L'idée de poser $N= \frac{I+M}{2}$ est la suivante : si $M^2=I$ alors géométriquement l'application
+linéaire $s$ associée à $M$ est une \emph{symétrie}, alors que si $N^2=N$ alors l'application
+linéaire $p$ associée est une \emph{projection}. Et projection et symétrie sont liées par $p(x) =\frac{x+s(x)}{2}$ 
+(faites un dessin !) c'est-à-dire $p =\frac{\text{id}+s}{2}$ ou encore $N= \frac{I+M}{2}$.
+
+
+\end{enumerate}
+
+\fincorrection
+
+\finexercice

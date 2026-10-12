@@ -1,0 +1,67 @@
+\exercice{2636, debievre, 2009/05/19}
+\enonce
+\begin{enumerate}
+ \item Y a-t-il une fonction $g\colon \R^2\to\R$ telle que
+\[
+ \mathrm{d} g = x^2y^2 \mathrm{d} x + x^3 y\mathrm{d} y?
+\]
+ \item Trouver les fonctions $b\colon\R^2\to\R$ telles qu'il existe 
+$g\colon \R^2\to\R$ satisfaisant \`a la condition
+\[
+\mathrm{d} g = x^2y^2 \mathrm{d} x + b(x,y)\mathrm{d} y.
+\]
+\'Etant donn\'ee alors la fonction $b$, d\'eterminer toutes les fonctions $g$
+correspondantes.
+\end{enumerate}
+\finenonce
+
+\indication 
+Soient $h$, $u$, $v$ des fonctions des deux 
+variables $x$ et $y$. Rappeler
+que
+\begin{align*}
+\mathrm dh&=\frac{\partial h}{\partial x}\mathrm dx +
+\frac{\partial h}{\partial y} \mathrm dy ,
+\\
+\mathrm d(u\mathrm dx + v \mathrm dy) 
+&=
+\left(\frac{\partial v}{\partial x} -\frac{\partial u}{\partial y}\right)
+\mathrm dx \mathrm dy ,
+\\
+\mathrm dx \mathrm dy &=-\mathrm dy\mathrm dx .
+\end{align*}
+\finindication
+
+\correction
+\begin{enumerate} 
+\item La forme diff\'erentielle
+$x^2y^2 \mathrm{d} x + x^3 y\mathrm{d} y$  de degr\'e 1 n'est pas ferm\'ee
+car la forme diff\'erentielle de degr\'e 2
+\[
+d(x^2y^2 \mathrm{d} x + x^3 y\mathrm{d} y) 
+= 2x^2y \mathrm{d} y\mathrm{d} x + 3x^2 y\mathrm{d} x\mathrm{d} y
+= x^2 y \mathrm{d} x\mathrm{d} y 
+\]
+est non nulle. Par cons\'equent, une fonction $g\colon \R^2\to\R$ du 
+type cherch\'e
+ne peut pas exister.
+
+\item Une fonction $b$ du 
+type cherch\'e doit satisfaire \`a l'\'equation diff\'erentielle
+partielle
+\[
+2x^2y -\frac{\partial b}{\partial x} =0
+\]
+d'o\`u $b(x,y)= \frac 23 x^3 y +k(y)$ o\`u $k$ est une fonction
+de la variable $y$. Une fonction $g$ correspondante doit alors satisfaire
+aux \'equations diff\'erentielles partielles
+\[
+\frac{\partial g}{\partial x}=x^2 y^2,
+\
+\frac{\partial g}{\partial y}=\frac 23 x^3 y +k(y).
+\]
+Il s'ensuit que $g$ est de la forme
+$g(x,y)=\frac 13 x^3 y^2 +K(y)$ o\`u $K$ est une fonction de la varriable $y$.
+\end{enumerate}
+\fincorrection
+\finexercice

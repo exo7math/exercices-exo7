@@ -1,0 +1,24 @@
+\exercice{5285, rouget, 2010/07/04}
+\enonce[***I]
+De combien de façons peut-on payer $100$ euros avec des pièces de $10$, $20$ et $50$ centimes~?
+\finenonce
+
+\noindication
+
+\correction
+On note respectivement $x$, $y$ et $z$ le nombre de pièces de $10$, $20$ et $50$ centimes. Il s'agit de résoudre dans $\Nn^3$ l'équation $10x+20y+50z=10000$ ou encore $x+2y+5z=1000$.
+
+Soit $k\in\Nn$. $x+2y=k\Leftrightarrow x=k-2y$ et le nombre de solutions de cette équation est~:
+
+$$\sum_{k=0}^{E(k/2)}1=E(\frac{k}{2})+1.$$
+
+Pour $0\leq z\leq 200$ donné, le nombre de solutions de l'équation $x+2y=1000-5z$ est donc $E(\frac{1000-5z}{2})+1$. Le nombre de solutions en nombres entiers de l'équation $x+2y+5z=1000$ est donc 
+
+$$\sum_{z=0}^{200}(E(\frac{1000-5z}{2})+1)=\sum_{z=0}^{200}(E(\frac{-5z}{2})+ 501)=201.501+\sum_{z=0}^{200}E(\frac{-5z}{2})=100701+\sum_{z=0}^{200}E(\frac{-5z}{2}).$$
+Maintenant  
+
+$$\sum_{z=0}^{200}E(\frac{-5z}{2})=\sum_{k=1}^{100}(E(\frac{-5(2k-1)}{2})+E(\frac{-5(2k)}{2}))=\sum_{k=1}^{100}(E(-5k+\frac{5}{2})-5k)=\sum_{k=1}^{100}(-10k+2)=200-10\frac{100.101}{2}.$$
+
+Le nombre de solutions cherchés est donc $100701-50300=50401$. Il y a $50401$ façons de payer $100$ euros avec des pièces de $10$, $20$ et $50$ centimes.
+\fincorrection
+\finexercice

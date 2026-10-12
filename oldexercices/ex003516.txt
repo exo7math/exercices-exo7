@@ -1,0 +1,23 @@
+\exercice{3516, quercia, 2010/03/10}
+\enonce[Eivp 91]
+
+    Soit $f \in \mathcal{L}({\R_n[X]})$ qui à $P$ associe $(X-a)P'+P-P(a)$.
+    Donner la matrice de $f$ dans la base $(X^k)_{0\le k\le n}$.
+    Chercher $\Im f$, $\mathrm{Ker} f$ et les éléments propres de $f$.
+\finenonce
+
+\noindication
+
+\correction
+$M = \begin{pmatrix}0 &-2a &-a^2 &\dots	&-a^n \cr
+			     &2   &-2a	&	&(0)  \cr
+			     &	  &3	&\ddots       \cr
+			     &	  &	&\ddots &-na  \cr
+			  (0)&	  &	&	&n+1  \cr\end{pmatrix}$.\par
+	     $\mathrm{Ker} f = \{\text{polynômes constants}\}$,
+	     $\Im f = \{\text{polynômes divisibles par } X-a \}$.\par
+	     Valeurs propres : $0,2,3,\dots,n+1$.
+	Pour $2\le k\le n+1$, $E_k = \text{vect}\bigl((X-a)^{k-1}\bigr)$.     
+\fincorrection
+
+\finexercice

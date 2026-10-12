@@ -1,0 +1,50 @@
+\exercice{4496, quercia, 2010/03/14}
+\enonce[Centrale MP 2000]
+Soit $S(t) = \sum_{n=1}^\infty \frac{t^n}{1+t^n}$.
+
+\begin{enumerate}
+  \item Pour quelles valeurs de~$t$ $S(t)$ a-t-elle un sens~?
+    
+  \item Montrer que $S(t) = \sum_{k=1}^\infty (-1)^{k-1}\frac{t^k}{1-t^k}$.
+    
+  \item Soit $F_m(t) = \sum_{k=1}^m (-1)^{k-1}\frac{t^k(1-t)}{1-t^k}$.
+    Montrer que $(F_m(t))$ converge uniformément vers $(1-t)S(t)$ sur $[0,1]$.
+    En déduire la limite en~$1$ de $(1-t)S(t)$.
+    On rappelle que $\ln2 = \sum_{m=1}^\infty \frac{(-1)^{m-1}}m$.
+    
+  \item Calculer le développement en série entière de~$S(t)$.
+    Donner une interprétation arithmétique des coefficients de ce développement
+    et préciser leur signe en fonction de~$n$.
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $|t|<1$.
+  \item $S(t) = \sum_{n=1}^\infty \frac{t^n}{1+t^n}
+                   = \sum_{n=1}^\infty \sum_{k=1}^\infty (-1)^{k-1}t^{kn}$
+    et on peut échanger les deux sommes car il y a convergence absolue.
+  \item On suppose $t\in{]0,1[}$.
+    $\frac{d}{d x}\Bigl(\frac{t^x}{1-t^x}\Bigr) = \frac{t^x\ln t}{(1-t^x)^2} < 0$
+    donc le critère des séries alternées s'applique,
+    le reste est majoré en valeur absolue par le premier terme du reste.
+    $0\le\frac{t^k(1-t)}{1-t^k} = \frac t{1+\frac1t+\dots+\frac1{t^{k-1}}}\le\frac1k$
+    donc le terme général converge uniformément vers~$0$.
+    
+    Par interversion de limite (puisqu'il y a convergence uniforme) on
+    obtient $\lim_{t\to1^-}(1-t)S(t) = \sum_{k=1}^\infty\frac{(-1)^{k-1}}k=\ln 2$.
+  \item $S(t) = \sum_{n=1}^\infty \sum_{k=1}^\infty (-1)^{k-1}t^{kn}
+                   = \sum_{p=1}^\infty \sum_{kn=p} (-1)^{k-1}t^p
+                   = \sum_{p=1}^\infty \sigma(p)t^p$
+
+    avec $\sigma(p) = (\text{nombre de diviseurs impairs de }p)
+                    -(\text{nombre de diviseurs pairs de }p) = \sigma_i(p)-\sigma_p(p)$.
+   Si $p=2^\alpha q$ avec $q$ impair alors $\sigma_p(p) = \alpha\sigma_i(p)= \alpha\sigma_i(q)$
+   donc $\sigma(p) > 0$ ssi $p$ est impair {\it (très joli exercice)}.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

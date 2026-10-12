@@ -1,0 +1,42 @@
+\exercice{2093, bodin, 2008/02/04}
+\enonce
+Soit $F(x)=\displaystyle \int_x^{x^2}\frac{1}{\ln t}d t$
+\begin{enumerate}
+\item Quel est l'ensemble de d\'efinition de $F$. $F$ est-elle continue,
+d\'erivable sur son ensemble de d\'efinition ?
+\item D\'eterminer $\lim_{x\to 1^+} F(x)$ en comparant $F$ \`a $H(x)=\displaystyle \int_x^{x^2}\frac{1}{t\ln t}d t$.
+\end{enumerate}
+
+\finenonce 
+\indication
+  \begin{enumerate}
+  \item Soit faire comme l'exercice \ref{ex:compint}, soit s\'eparer l'int\'egrale en deux, et pour l'une faire un changement de variable $u=x^2$.
+  \item $H(x)$ se calcule explicitement et montrer qu'en fait $H$ est une fonction constante, ensuite il faut comparer $H(x)$ et $F(x)$.
+  \end{enumerate}
+\finindication
+\correction
+  \begin{enumerate}
+  \item $F$ est d\'efinie sur $]0,1[\cup ]1,+\infty[$. $F$ est continue et d\'erivable sur $]0,1[$
+et sur $]1,+\infty[$. Pour vois cela il suffit d'\'ecrire $F(x)= \int_x^a \frac{dt}{\ln t}+\int_a^{x^2} \frac{dt}{\ln t}$. La premi\`ere de ces fonctions est continue et d\'erivable (c'est une primitive), la seconde est la compos\'ee de $x\mapsto x^2$ avec $x\mapsto \int_a^{x} \frac{dt}{\ln t}$ et est donc aussi continue et d\'erivable.
+On pourrait m\^eme calculer la d\'eriv\'ee.
+  \item Notons $f(t) = \frac 1{\ln t}$ et $g(t) = \frac 1{t\ln t}$. On se place sur $]1,+\infty[$.
+Bien \'evidemment $g(t) \leqslant f(t)$, mais nous avons aussi que pour $\epsilon >0$ fix\'e il existe $x>1$ tel que
+pour tout $t\in [1,x^2]$ on ait $\frac 1t \leqslant 1+\epsilon$ donc sur $]1,x^2]$ nous avons $f(t) \leqslant (1+\epsilon)g(t)$.
+Par int\'egration de l'in\'egalit\'e $g(t) \leqslant f(t) \leqslant (1+\epsilon)g(t)$ sur $[x,x^2]$ nous obtenons pour $x$ assez proche de $1$ :
+$$H(x) \leqslant F(x)  \leqslant (1+\epsilon)H(x).$$
+
+Il ne reste plus qu'a calculer $H(x)$. En fait $g(t) = \frac 1{t\ln t}$ est la d\'eriv\'ee de la fonction $h(t) = \ln (\ln t)$. Donc 
+\begin{align*}
+H(x) = \int_x^{x^2}\frac{dt}{t\ln t} 
+ &= [ \ln (\ln t) ]_x^{x^2}  = \ln (\ln (x^2))-\ln (\ln x) \\
+ &= \ln (2 \ln x)-\ln (\ln x) = \ln \frac {2 \ln x}{\ln x} \\
+ &= \ln 2. \\
+\end{align*}
+
+Nous obtenons alors, pour $\epsilon >0$ fix\'e et $x>1$ assez proche de $1$, l'encadrement 
+$$\ln 2 \leqslant F(x) \leqslant (1+\epsilon) \ln 2.$$
+
+Donc la limite de $F(x)$ quand $x\to 1^+$ est $\ln 2$.
+  \end{enumerate}
+\fincorrection
+\finexercice

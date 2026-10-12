@@ -1,0 +1,27 @@
+\exercice{6947, ruette, 2013/01/24}
+\enonce[Fonction génératrice]
+Soit $X$ une variable aléatoire de loi de Poisson $\mathcal{P}(\lambda)$.
+\begin{enumerate}
+\item
+Calculer la fonction génératrice de $X$.
+\item
+Calculer $E(X)$ et $\text{Var}(X)$.
+\item
+Soit $Y$ une variable aléatoire de loi de Poisson $\mathcal{P}(\lambda')$, indépendante
+de $X$. Quelle est la loi de $X+Y$ ? En déduire que
+$\mathcal{P}(\lambda) *\mathcal{P}(\lambda')=\mathcal{P}(\lambda+\lambda')$.
+\end{enumerate}
+\finenonce
+\noindication
+
+\correction
+\begin{enumerate}
+\item
+$G_X(z)=e^{\lambda(z-1)}$.
+\item $E(X)=\text{Var}(X)=\lambda$
+\item $G_{X+Y}(z)=G_X(z)G_Y(z)=e^{(\lambda+\lambda')(z-1)}$.
+D'où $X+Y\sim \mathcal{P}(\lambda+\lambda')$, et donc
+$\mathcal{P}(\lambda) *\mathcal{P}(\lambda')=\mathcal{P}(\lambda+\lambda')$.
+\end{enumerate}
+\fincorrection
+\finexercice

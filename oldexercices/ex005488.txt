@@ -1,0 +1,42 @@
+\exercice{5488, rouget, 2010/07/10}
+\enonce[**I]
+Matrice de la projection orthogonale sur la droite d'équations $3x=6y=2z$ dans la base canonique orthonormée de $\Rr^3$ ainsi que de la symétrie orthogonale par rapport à cette même droite.
+De manière générale, matrice de la projection orthogonale sur le vecteur unitaire $u=(a,b,c)$ et de la projection orthogonale sur le plan d'équation $ax+by+cz=0$ dans la base canonique orthonormée de $\Rr^3$.
+\finenonce
+
+\noindication
+
+\correction
+Un vecteur engendrant $D$ est $\overrightarrow{u}=(2,1,3)$. Pour $(x,y,z)\in\Rr^3$,
+
+$$p((x,y,z))=\frac{(x,y,z)|(2,1,3)}{||(2,1,3)||^2}(2,1,3)=\frac{2x+y+3z}{14}(2,1,3).$$ 
+On en déduit que $\mbox{Mat}_{\mathcal{B}}p=P=\frac{1}{14}\left(
+\begin{array}{ccc}
+4&2&6\\
+2&1&3\\
+6&3&9
+\end{array}
+\right)$, puis $\mbox{Mat}_{\mathcal{B}}s=2P-I=\frac{1}{7}\left(
+\begin{array}{ccc}
+-3&2&6\\
+2&-6&3\\
+6&3&2
+\end{array}
+\right)$.
+Plus généralement, la matrice de la projection orthogonale sur le vecteur unitaire $(a,b,c)$ dans la base canonique orthonormée est $P=\left(
+\begin{array}{ccc}
+a^2&ab&ac\\
+ab&b^2&bc\\
+ac&bc&c^2
+\end{array}
+\right)$ et la matrice de la projection orthogonale sur le plan $ax+by+cz=0$ dans la base canonique orthonormée est $I-P=
+\left(
+\begin{array}{ccc}
+1-a^2&-ab&-ac\\
+-ab&1-b^2&-bc\\
+-ac&-bc&1-c^2
+\end{array}
+\right)$.
+
+\fincorrection
+\finexercice

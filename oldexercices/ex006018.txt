@@ -1,0 +1,41 @@
+\exercice{6018, quinio, 2011/05/20}
+
+\enonce
+Sur un grand nombre de personnes on a constaté que la
+répartition du taux de cholestérol suit une loi normale 
+avec les résultats suivants:
+
+- $56$\% ont un taux inférieur à $165$ cg;
+
+- $34$\% ont un taux compris entre $165$ cg et $180$ cg;
+
+- $10$\% ont un taux supérieur à $180$ cg.
+
+Quelle est le nombre de personnes qu'il faut prévoir de soigner dans une
+population de $10\,000$ personnes, si le taux maximum toléré sans
+traitement est de $182$ cg?
+\finenonce
+
+\noindication
+
+\correction
+Si $X$ est de moyenne $m$ et d'écart-type $\sigma$ alors 
+$Y=\frac{X-m}{\sigma}$ suit une loi centrée réduite.
+Donc si $P[X\leq 165]$ alors $P[\frac{X-m}{\sigma }\leq \frac{165-m}{\sigma }]=0,56$.
+Or on peut lire dans la table de Gauss $F(0.15)=0.5596$.
+
+De même, si $P[X\geq 180]$ alors $P[\frac{X-m}{\sigma }\geq \frac{180-m}{\sigma }]=0.1$.
+Donc $P[\frac{X-m}{\sigma }\leq \frac{180-m}{\sigma }]=0.9$
+et l'on peut lire de même $F(1.28)=0.8997.$
+
+Pour trouver $m$ et $\sigma$ il suffit de résoudre le système d'équations:
+$\frac{165-m}{\sigma}=0.15$ et $\frac{180-m}{\sigma}=1.28$ d'où
+$\sigma \simeq 13.27$, $m\simeq 163$ cg.
+Alors,
+$P[X\geq 182]=P[\frac{X-m}{\sigma }\geq \frac{182-m}{\sigma }]=1-F(1.\,43)=0.0764$.
+
+Sur $10\,000$ personnes on estime le nombre de personnes à soigner de
+l'ordre de $764$ personnes ; en fait la théorie de l'estimation donnera
+une fourchette.
+\fincorrection
+\finexercice

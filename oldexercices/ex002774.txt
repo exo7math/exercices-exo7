@@ -1,0 +1,83 @@
+
+\exercice{2774, tumpach, 2009/10/25}
+\video{JhulB3S-Wf4}
+\enonce 
+Soit $a $ et $b$ deux réels et $A$ la matrice
+$$
+A = \left(
+\begin{array}{cccc}
+a & 2 & -1 & b\\
+3 & 0 & 1 & -4\\ 
+5 & 4 & -1 & 2
+\end{array}
+\right)
+$$
+Montrer que $\textrm{rg}(A) \geq 2$. 
+Pour quelles valeurs de $a$ et $b$ a-t-on $\textrm{rg}(A) = 2$~?
+\finenonce
+
+\noindication
+
+\correction
+Avant toute, un coup d'\oe il sur la matrice nous informe de deux choses :
+(a) $A$  n'est pas la matrice nulle donc $\textrm{rg}(A)\ge 1$ ;
+(b) il y a $3$ lignes donc $\textrm{rg}(A)\le 3$ (le rang est plus petit que le nombre 
+de colonnes et que le nombre de lignes).
+
+\begin{enumerate}
+  \item Montrons de différentes façons que $\textrm{rg}(A)\ge 2$.
+  \begin{itemize}
+     \item \textbf{Première méthode : sous-déterminant non nul.}
+On trouve une sous-matrice $2\times 2$ dont le déterminant est non nul.
+Par exemple la sous-matrice extraite du coin en bas à gauche vérifie
+$\begin{vmatrix}3 & 0\\ 5 & 4\end{vmatrix}= 12 \neq 0$ donc $\textrm{rg}(A)\ge 2$.
+
+     \item \textbf{Deuxième méthode : espace vectoriel engendré par les colonnes.}
+On sait que l'image de l'application linéaire associée à la matrice $A$
+est engendrée par les vecteurs colonnes. Et le rang est la dimension de cette image.
+On trouve facilement deux colonnes linéairement indépendantes : 
+la deuxième $\begin{pmatrix}2\\0\\4\end{pmatrix}$
+et la troisième $\begin{pmatrix}-1\\1\\-1\end{pmatrix}$ colonne.
+Donc $\textrm{rg}(A)\ge 2$.
+
+     \item \textbf{Troisième méthode : espaces vectoriel engendré par les lignes.}
+Il se trouve que la dimension de l'espace vectoriel engendré par les lignes
+égal la dimension de l'espace vectoriel engendré par les colonnes (car $\textrm{rg}(A)=\textrm{rg}({}^tA)$).
+Comme les deuxième et troisième lignes sont linéairement indépendantes alors
+$\textrm{rg}(A)\ge 2$. 
+
+Attention : les dimensions des espaces vectoriels engendrés sont égales mais les espaces sont différents !
+  \end{itemize}
+
+  \item En utilisant la dernière méthode : le rang est exactement $2$ si la première ligne est dans le sous-espace engendré
+par les deux autres.
+Donc 
+\begin{align*}
+\textrm{rg}(A) = 2
+ & \iff (a,2,-1,b) \in \textrm{Vect} \big\{ (3,0,1,-4), (5,4,-1,2) \big\} \\
+ & \iff \exists \lambda,\mu \in \Rr \quad (a,2,-1,b) = \lambda (3,0,1,-4) + \mu(5,4,-1,2) \\
+ & \iff \exists \lambda,\mu \in \Rr \quad 
+\left\{
+\begin{array}{rcl}
+3\lambda+5\mu &=& a \\
+4\mu &=& 2 \\
+\lambda-\mu &=& -1 \\
+-4\lambda+2\mu &=& b \\
+\end{array}
+\right. 
+ \iff  \left\{
+\begin{array}{rcl}
+\lambda &=& -\frac12 \\
+\mu &=& \frac12 \\
+a &=& 1 \\
+b &=& 3 \\
+\end{array} 
+\right.\\  
+\end{align*}
+Conclusion la rang de $A$ est $2$ si $(a,b)=(1,3)$. Sinon le rang de $A$ est $3$.
+\end{enumerate}
+
+\fincorrection
+
+\finexercice
+

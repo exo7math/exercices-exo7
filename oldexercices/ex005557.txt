@@ -1,0 +1,58 @@
+\exercice{5557, rouget, 2010/07/15}
+\enonce[***]
+ Le laplacien d'une application $g$ de $\Rr^2$ dans $\Rr$, de classe $C^2$ sur $\Rr^2$  est $\Delta g =\frac{\partial^2g}{\partial x^2}+\frac{\partial^2g}{\partial y^2}$.
+
+ 
+Déterminer une fontion de classe $C^2$ sur un intervalle $I$ de $\Rr$ à préciser à valeurs dans $\Rr$ telle que la fonction
+
+\begin{center}
+$g(x,y) =f\left(\frac{\cos2x}{\ch2y}\right)$
+\end{center}
+soit non constante et ait un laplacien nul sur un sous-ensemble de $\Rr^2$ le plus grand possible (une fonction de Laplacien nul est dite harmonique).
+
+\finenonce
+
+\noindication
+
+\correction
+Pour $(x,y)\in\Rr^2$, $\frac{\cos(2x)}{\ch(2y)}\in[-1,1]$. Plus précisément, quand $x$ décrit $\Rr$, $\frac{\cos(2x)}{\ch(2\times0)}$ décrit $[-1,1]$ et donc quand $(x,y)$ décrit $\Rr^2$, $\frac{\cos(2x)}{\ch(2y)}$ décrit $[-1,1]$. 
+On suppose déjà que $f$ est de classe $C^2$ sur $[-1,1]$. L'application $g$ est alors de classe $C^2$ sur $\Rr^2$ et pour $(x,y)\in\Rr^2$,
+
+\begin{center}
+$\frac{\partial g}{\partial x}(x,y)=-\frac{2\sin(2x)}{\ch(2y)}f'\left(\frac{\cos2x}{\ch2y}\right)$ puis $\frac{\partial^2g}{\partial x^2}(x,y)=-\frac{4\cos(2x)}{\ch(2y)}f'\left(\frac{\cos2x}{\ch2y}\right)+\frac{4\sin^2(2x)}{\ch^2(2y)}f''\left(\frac{\cos2x}{\ch2y}\right)$.
+\end{center}
+Ensuite,
+
+\begin{center}
+$\frac{\partial g}{\partial y}(x,y)=-\frac{2\cos(2x)\sh(2y)}{\ch^2(2y)}f'\left(\frac{\cos2x}{\ch2y}\right)$
+\end{center}
+puis 
+\begin{center}
+$\frac{\partial^2g}{\partial y^2}(x,y)=-\frac{4\cos(2x)}{\ch(2y)}f'\left(\frac{\cos2x}{\ch2y}\right)
+-2\cos(2x)\sh(2y)\frac{-4\sh(2y)}{\ch^3(2y)}f'\left(\frac{\cos2x}{\ch2y}\right)
++\frac{4\cos^2(2x)\sh^2(2y)}{\ch^4(2y)}f''\left(\frac{\cos2x}{\ch2y}\right)$.
+\end{center}
+Mais alors
+
+\begin{align*}\ensuremath
+\Delta g(x,y)&=\frac{-8\cos(2x)\ch^2(2y)+8\cos(2x)\sh^2(2y)}{\ch^3(2y)}f'\left(\frac{\cos2x}{\ch2y}\right)+\frac{4\sin^2(2x)\ch^2(2y)+4\cos^2(2x)\sh^2(2y)}{\ch^4(2y)}f''\left(\frac{\cos2x}{\ch2y}\right)\\
+ &=\frac{-8\cos(2x)}{\ch^3(2y)}f'\left(\frac{\cos2x}{\ch2y}\right)+\frac{4(1-\cos^2(2x))\ch^2(2y)+4\cos^2(2x)(\ch^2(2y)-1)}{\ch^4(2y)}f''\left(\frac{\cos2x}{\ch2y}\right)\\
+ &=\frac{-8\cos(2x)}{\ch^3(2y)}f'\left(\frac{\cos2x}{\ch2y}\right)+\frac{4\ch^2(2y)-4\cos^2(2x)}{\ch^4(2y)}f''\left(\frac{\cos2x}{\ch2y}\right)\\
+ &=\frac{4}{\ch^2(2y)}\left(-2\frac{\cos(2x)}{\ch(2y)}f'\left(\frac{\cos2x}{\ch2y}\right)+\left(1-\frac{\cos^2(2x)}{\ch^2(2y)}\right)f''\left(\frac{\cos2x}{\ch2y}\right)\right).
+\end{align*}
+Par suite,
+
+\begin{align*}\ensuremath
+\Delta g=0&\Leftrightarrow\forall(x,y)\in\Rr^2,\;-2\frac{\cos(2x)}{\ch(2y)}f'\left(\frac{\cos2x}{\ch2y}\right)+\left(1-\frac{\cos^2(2x)}{\ch^2(2y)}\right)f''\left(\frac{\cos2x}{\ch2y}\right)=0\\
+ &\Leftrightarrow\forall t\in[-1,1],\;-2tf'(t)+(1-t^2)f''(t)=0\Leftrightarrow\forall t\in[-1,1],((1-t^2)f')'(t)=0\\
+ &\Leftrightarrow\exists \lambda\in\Rr,\;\forall t\in[-1,1],\;(1-t^2)f'(t)=\lambda.
+\end{align*}
+Le choix $\lambda\neq0$ ne fournit pas de solution sur $[-1,1]$. Donc $\lambda=0$ puis $f'=0$ puis $f$ constante ce qui est exclu. Donc, on ne peut pas poursuivre sur $[-1,1]$.
+On cherche dorénavant $f$ de classe $C^2$ sur $]-1,1[$ de sorte que $g$ est de classe $C^2$ sur $\Rr^2\setminus\left\{\left(\frac{k\pi}{2},0\right),\;k\in\Zz\right\}$.
+
+\begin{align*}\ensuremath
+f\;\text{solution}&\Leftrightarrow\exists \lambda\in\Rr^*,\;\forall t\in]-1,1[,\;(1-t^2)f'(t)=\lambda\Leftrightarrow\exists \lambda\in\Rr^*/\;\forall t\in]-1,1[,\;f'(t)=\frac{\lambda}{1-t^2}\\
+ &\Leftrightarrow\exists(\lambda,\mu)\in\Rr^*\times\Rr/\;\forall t\in]-1,1[,\;f(t)=\lambda\Argth t+\mu.
+\end{align*}
+\fincorrection
+\finexercice

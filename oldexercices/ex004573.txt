@@ -1,0 +1,31 @@
+\exercice{4573, quercia, 2010/03/14}
+\enonce[Développer peut être dangereux]
+
+Pour $n\in\N$ et $x\in\R$ on pose $u_n(x) = \Bigl(\frac{x(1-x)}2\Bigr)^{4^n}$.
+
+\begin{enumerate}
+  \item Déterminer le domaine de convergence de la série $\sum_{n=0}^\infty u_n(x)$.
+
+  \item On développe $u_n(x)$ par la formule du binôme~:
+    $u_n(x) = \sum_{4^n\le k \le 2.4^n}a_kx^k$. Montrer que le
+    rayon de convergence de la série entière $\sum_{k\ge 1} a_kx^k$
+    est égal à~$1$ (en convenant que les $a_k$ non définis valent zéro).
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $]-1,2[$.
+  \item Pour $0\le k\le 4^n$, on a $|a_k| \le C_{4^n}^{4^n/2}\Bigm/2^{4^n}$
+(atteint pour $k=4^n/2$).
+
+Donc $a_n\to0$ lorsque $n\to\infty$ et si $x>1$ alors
+$a_{3*4^n/2}x^{3*4^n/2}$
+\hbox to 0pt{\hskip5mm $\not{}$\hss}
+$\to 0$ lorsque $n\to\infty$.
+\end{enumerate}
+ \fincorrection
+\finexercice

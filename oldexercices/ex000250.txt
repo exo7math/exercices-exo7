@@ -1,0 +1,23 @@
+\exercice{250, bodin, 1998/09/01}
+\video{6MywGfpcPic}
+\enonce
+
+Trouver le reste de la division par $13$ du nombre $100^{1000}$.
+\finenonce 
+
+\indication
+Il faut travailler modulo $13$, tout d'abord r\'eduire $100$ modulo $13$.
+Se souvenir que si $a\equiv b \pmod{13}$ alors $a^k\equiv b^k \pmod{13}$.
+Enfin calculer ce que cela donne pour les exposants $k=1,2,3,\ldots$
+en essayant de trouver une r\`egle g\'en\'erale.
+\finindication
+
+\correction
+Il sagit de calculer $100^{1000}$ modulo $13$.
+Tout d'abord  $100 \equiv 9 \pmod{13}$ donc  $100^{1000} \equiv 9^{1000} \pmod{13}$.
+Or  $9^{2} \equiv 81 \equiv 3 \pmod{13}$, $9^{3} \equiv 9^2.9 \equiv 3.9 \equiv 1 \pmod{13}$, Or 
+ $9^{4} \equiv 9^3.9 \equiv 9 \pmod{13}$, $9^{5} \equiv 9^4.9 \equiv 9.9 \equiv 3 \pmod{13}$. 
+Donc 
+$100^{1000} \equiv 9^{1000} \equiv 9^{3.333+1} \equiv (9^3)^{333}.9  \equiv 1^{333}.9 \equiv 9 \pmod{13}$.
+\fincorrection
+\finexercice

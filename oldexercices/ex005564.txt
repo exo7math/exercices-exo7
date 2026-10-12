@@ -1,0 +1,34 @@
+\exercice{5564, rouget, 2010/10/16}
+\enonce[****]
+Généralisation de l'exercice \ref{ex:rou1}. Soient $n$ un entier supérieur ou égal à $2$ puis $F_1$, ... , $F_n$ $n$ sous-espaces de $E$ où $E$ est un espace vectoriel sur un sous-corps $\Kk$ de $\Cc$.
+Montrer que $\left[(F_1\cup ... \cup F_n\;\text{sous-espace de}\; E)\Leftrightarrow(\text{il existe}\;i\in\llbracket1,n\rrbracket/\;\displaystyle\bigcup_{j\neq i}F_j\subset F_i)\right]$.
+\finenonce
+
+\noindication
+
+\correction
+$\Leftarrow)$ Immédiat .
+
+$\Rightarrow)$ On raisonne par récurrence sur $n$.
+
+Pour $n=2$, c'est l'exercice \ref{ex:rou1}.
+
+Soit $n\geqslant 2$. Supposons que toute réunion de $n$ sous-espaces de $E$ est un sous-espace de $E$ si et seulement si l'un de ces sous-espaces contient tous les autres.
+
+Soient $F_1$,..., $F_n$, $F_{n+1}$ $n+1$ sous-espaces vectoriels de $E$ tels que $F_1\cup...\cup F_{n+1}$ soit un sous-espace vectoriel de $E$. Posons $F=F_1\cup...\cup F_n$.
+
+\textbullet~Si $F_{n+1}$ contient $F$, c'est fini.
+
+\textbullet~Si $F_{n+1}\subset F$, alors $=F_1\cup...\cup F_n=F_1\cup...\cup F_n\cup F_{n+1}$ est un sous-espace vectoriel de $E$. Par hypothèse de récurrence, $F$ est l'un des $F_i$ pour un certain $i$ élément de $\llbracket1,n\rrbracket$. $F_i=F$ contient également $F_{n+1}$ et contient donc tous les $F_j$ pour $j$ élément de $\llbracket1,n+1\rrbracket$.
+
+\textbullet~Supposons dorénavant que $F\not\subset F_{n+1}$ et que $F_{n+1}\not\subset F$ et montrons que cette situation est impossible.
+
+Il existe un vecteur $x$ qui est dans $F_{n+1}$ et pas dans $F$ et un vecteur $y$ qui est dans $F$ et pas dans $F_{n+1}$.
+
+Soit $\lambda$ un élément de $\Kk$. $y-\lambda x$ est un élément de $F\cup F_{n+1}$ (puisque $F\cup F_{n+1}$ est un sous-espace) mais $y-\lambda x$ n'est pas dans $F_{n+1}$ car alors $y=(y -\lambda x)+\lambda x$ y serait ce qui n'est pas.
+
+Donc $\forall\lambda\in\Kk$, $y-\lambda x\in F$. On en déduit que pour tout scalaire $\lambda$, il existe un indice $i(\lambda)$ élément de $\llbracket1,n\rrbracket$ tel que $y-\lambda x\in F_{i(\lambda)}$. Remarquons enfin que si $\lambda\neq\mu$ alors $i(\lambda)\neq i(\mu)$. En effet, si pour $\lambda$ et $\mu$ deux scalaires distincts donnés, il existe un indice $i$ élément de $\llbracket1,n\rrbracket$ tel que $y-\lambda x$ et $y-\mu x$ soient dans $F_i$, alors $x=\frac{(y-\mu x)-(y-\lambda x)}{\mu-\lambda}$  est encore dans $F_i$ et donc dans $F$, ce qui n'est pas. 
+
+Comme l'ensemble des scalaires est infini et que l'ensemble des indices ne l'est pas, on vient de montrer que cette dernière situation n'est pas possible, ce qui achève la démonstration.
+\fincorrection
+\finexercice

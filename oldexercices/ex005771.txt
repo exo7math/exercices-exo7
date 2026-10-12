@@ -1,0 +1,51 @@
+\exercice{5771, rouget, 2010/10/16}
+\enonce[** I (Produit de convolution)]
+\begin{enumerate}
+ \item  Soient $f$ et $g$ deux fonctions définies sur $\Rr$, continues et $T$-périodiques ($T$ réel strictement positif). Pour $x\in\Rr$, on pose
+
+\begin{center}
+$f*g(x)=\int_{0}^{T}f(x-t)g(t)\;dt$.
+\end{center}
+
+Montrer que la fonction $f*g$ est définie sur $\Rr$, continue et $T$-périodique.
+
+\item  $*$ est donc une loi interne sur $E$, l'espace vectoriel des fonctions définies et continues sur $\Rr$ et $T$-périodiques. Montrer que cette loi est commutative.
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item
+\textbullet~Soit $x\in\Rr$. La fonction $t\mapsto f(x-t)g(t)$ est continue sur le segment $[0,T]$ et donc intégrable sur ce segment. Par suite, $f*g(x)$ existe.
+
+\textbullet~Soit $x\in\Rr$. $f*g(x+T)=\int_{0}^{T}f(x+T-t)g(t)\;dt=\int_{0}^{T}f(x-t)g(t)\;dt=f*g(x)$. Donc la fonction $f*g$ est $T$-périodique.
+
+\textbullet~Les fonction $f$ et $g$ sont continues sur $\Rr$ et $T$-périodiques. Ces fonctions sont en particulier bornées sur $\Rr$. On note $M_1$ et $M_2$ des majorants sur $\Rr$ des fonctions $|f|$ et $|g|$ respectivement.
+
+Soit $\begin{array}[t]{cccc}
+\Phi~:&\Rr\times[0,T]&\rightarrow&\Rr\\
+ &(x,t)&\mapsto&f(x-t)g(t)
+\end{array}$.
+
+- Pour chaque $x\in\Rr$, la fonction $t\mapsto\Phi(x,t)$ est continue par morceaux sur $[0,T]$.
+
+- Pour chaque $t\in[0,T]$, la fonction $x\mapsto\Phi(x,t)$ est continue sur $\Rr$.
+ 
+
+- Pour chaque $(x,t)\in\Rr\times[0,T]$, $|\Phi(x,t)|\leqslant M_1M_2=\varphi(t)$. De plus, la fonction $\varphi$ est continue et donc intégrable sur le segment $[0,T]$.
+
+D'après le théorème de continuité des intégrales à paramètres, la fonction $f*g$ est continue sur $\Rr$.
+
+\item  Soient $f$ et $g$ deux éléments de $E$. Soit $x\in\Rr$. En posant $u=x-t$, on obtient
+
+\begin{align*}\ensuremath
+f*g(x)&=\int_{0}^{T}f(x-t)g(t)\;dt=\int_{x}^{x-T}f(u)g(u-t)\;(-du)=\int_{x-T}^{x}g(u-t)f(u)\;du\\
+ &=\int_{0}^{T}g(u-t)f(u)\;du\;(\text{car la fonction}\;u\mapsto g(u-t)f(u)\;\text{est}\;T\text{-périodique})\\
+ &=g*f(x).
+\end{align*}
+\end{enumerate}
+\fincorrection
+\finexercice

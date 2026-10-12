@@ -1,0 +1,61 @@
+\exercice{7614, mourougane, 2021/08/10}
+\enonce[Logarithmes]
+\begin{enumerate}
+\item Déterminer et représenter l'ensemble $D:=\{z\in\Cc, z^3\in \Cc^-\}$.
+
+\item Soit $f : D\to \Cc$, $z\mapsto \log (z^3)$. 
+En quels points de $\Cc-D$ peut-on prolonger $f$ par continuité ?
+
+\item Comparer les fonctions $f$ et $3\log$ sur l'intersection $D\cap \Cc^-$ de leur domaine de définition.
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+  \item Soit $z=re^{i\theta}\in\Cc$ avec $r\geq 0$ et $\theta\in ]-\pi,\pi]$.
+\begin{eqnarray*}
+ z^3\not\in\Cc^-&\iff& z^3\in\Rr^-\iff r^3e^{i3\theta}\in\Rr^-\iff 3\theta\simeq \pi \mod 2\pi\\
+ &\iff& \theta \simeq \frac{\pi}{3} \mod \frac{2\pi}{3}\iff \theta=\frac{-\pi}{3}\quad\text{ou}\quad \theta=\frac{\pi}{3}\quad\text{ou}\quad \theta=\pi.
+\end{eqnarray*}
+
+\begin{tikzpicture}
+%\draw[help lines, step=0.5, very thin] (-6,-4) grid (6,4);
+\draw [thick] (-5,0) -- (0,0) ;\draw [densely dotted] (5,0) -- (0,0) ;
+\draw (0.5,0) arc (0:60:0.5) ; \draw (0.5,0.5) node[right]{$\pi/3$} ;
+\draw [thick](0,0) -- (2.5,4.33) ;
+\draw (1,0) arc (0:-60:1) ;\draw (1,-1) node[right]{$-\pi/3$} ;
+\draw [thick](0,0) -- (2.5,-4.33) ;
+\end{tikzpicture}
+
+
+Le domaine $D$ est composé de $\Cc$ moins les demi-droites noires. 
+% \begin{tikzpicture}
+%  \draw [double distance=3pt, thick] (0.5,0) arc (0:60:0.5);
+%  \draw (-1.5,0) arc (0:30:0.5);
+%  \draw [color=gray](0,0) circle (2cm);
+%  \draw[thick] (0,0)-- (1,1.73);
+%  \draw [thick] (0,0) -- (2,0);
+%  \draw [densely dotted] (-2,0)-- (1,1.73);
+%  \draw [densely dotted](-2,0)-- (2,0);
+%  \draw (1.26,-1.29) arc (60:90:0.5);
+%  \draw [densely dotted] (1,-1.73) -- (2,0);
+%  \draw [densely dotted] (1,-1.73) -- (1,1.73);
+% \end{tikzpicture}
+  \item Soit $z=re^{i\theta}\in\Cc$ avec $r\geq 0$ et $\theta\in ]-\pi,\pi]$.
+\begin{itemize}
+ \item Si $\theta\in]-\frac{\pi}{3},\frac{\pi}{3}[$, $ 3\theta\in]-\pi,\pi[$
+ et donc, $f(z)=\log(z^3)=\log_\Rr(r^3)+i3\theta=3\log_\Rr(r)+3i\theta=3\log(z)$.
+ \item Si $\theta\in]\frac{\pi}{3},\pi[$, $ 3\theta\in]\pi,3\pi[$ et $ 3\theta-2\pi\in]-\pi,\pi[$
+ et donc, $f(z)=\log(z^3)=\log_\Rr(r^3)+i(3\theta-2\pi)=3\log_\Rr(r)+3i\theta-2i\pi=3\log(z)-2i\pi$.
+ \item Si $\theta\in]-\pi,-\frac{\pi}{3},[$, $ 3\theta\in]-3\pi,-\pi[$ et $ 3\theta+2\pi\in]-\pi,\pi[$
+ et donc, $f(z)=\log(z^3)=\log_\Rr(r^3)+i(3\theta+2\pi)=3\log_\Rr(r)+3i\theta+2i\pi=3\log(z)+2i\pi$.
+\end{itemize}
+La fonction $f$ n'est donc pas continu aux points de la demi-droite d'angle $\frac{\pi}{3}$ 
+ni aux points de la demi-droite d'angle $-\frac{\pi}{3}$ où la fonction $_log$ est continue.
+On sait que le saut de la branche principale $\log$ du logarithme entre $(-\pi^+$ et $\pi^-$
+est de $2i\pi$. Le saut de $f$ est donc de $6i\pi$. Elle n'est donc pas continue
+aux points de la demi-droite d'angle $\pi$.
+  \item La réponse a été donnée dans la question précédente.
+\end{enumerate}
+\fincorrection
+\finexercice

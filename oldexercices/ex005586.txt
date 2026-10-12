@@ -1,0 +1,140 @@
+\exercice{5586, rouget, 2010/10/16}
+\enonce[**I Noyaux itérés]
+Soient $E$ un espace vectoriel et $f$ un endomorphisme de $E$. Pour $k\in\Nn$, on pose $N_k= \text{Ker}(f^k)$ et $I_k=\text{Im}(f^k)$ puis $N=\displaystyle\bigcup_{k\in\Nn}N_k$ et $I=\displaystyle\bigcap_{k\in\Nn}I_k$. ($N$ est le nilespace de $f$ et $I$ le c\oe ur de $f$)
+
+\begin{enumerate}
+ \item  
+
+ \begin{enumerate}
+   \item Montrer que les suites $(N_k)_{k\in\Nn}$ et $(I_k)_{k\in\Nn}$ sont respectivement croissante et décroissante pour l'inclusion.
+   \item Montrer que $N$ et $I$ sont stables par $f$.
+   \item Montrer que $\forall k\in\Nn$, $(N_k =N_{k+1})\Rightarrow(N_{k+1}=N_{k+2})$.
+  \end{enumerate}
+
+\item  On suppose de plus que $\text{dim}E=n$ entier naturel non nul.
+ \begin{enumerate}
+   \item Soit $A=\{k\in\Nn/\;N_k=N_{k+1}\}$ et $B=\{k\in\Nn/\;I_k =I_{k+1}\}$. Montrer qu'il existe un entier $p\leqslant n$ tel que $A=B=\{k\in\Nn/\;k\geqslant p\}$.
+   \item Montrer que $E=N_p\oplus I_p$.
+   \item Montrer que $f_{/N}$ est nilpotent et que $f_{/I}\in GL(I)$.
+  \end{enumerate}
+
+\item  Trouver des exemples où 
+ \begin{enumerate}
+   \item $A$ est vide et $B$ est non vide,
+   \item  $A$ est non vide et $B$ est vide,
+   \item (****) $A$ et $B$ sont vides.
+  \end{enumerate}
+
+\item  Pour $k\in\Nn$, on pose $d_k=\text{dim}(I_k)$. Montrer que la suite $(d_k-d_{k+1})_{k\in\Nn}$ est décroissante.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item 
+  \begin{enumerate}
+  \item Soient $k\in\Nn$ et $x\in E$. $x\in N_k\Rightarrow f^k(x)=0\Rightarrow f(f^k(x)) = 0\Rightarrow x\in N_{k+1}$. 
+
+\begin{center}
+\shadowbox{
+$\forall k\in\Nn$, $N_k\subset N_{k+1}$.
+}
+\end{center}
+
+Soient $k\in\Nn$ et $y\in I_{k+1}\Rightarrow\exists x\in E/\;y = f^{k+1}(x)\Rightarrow\exists x\in E/\;y = f^k(f(x))\Rightarrow y\in I_k$.
+
+\begin{center}
+\shadowbox{
+$\forall k\in\Nn$, $I_{k+1}\subset I_{k}$.
+}
+\end{center}
+
+  \item Soit $x\in N$. Il existe un entier $k$ tel que $x$ est dans $N_k$ ou encore tel que $f^k(x)=0$. Mais alors $f^k(f(x)) = f(f^k(x))=0$ et $f(x)$ est dans $N_k$ et donc dans $N$. Ainsi, $N$ est stable par $f$.
+
+Soit $y\in I$. Alors, pour tout naturel $k$, il existe $x_k\in E$ tel que $y=f^k(x_k)$. Mais alors, pour tout entier $k$, $f(y)=f(f^k(x_k))=f^k(f(x))$ est dans $I_k$, et donc $f(y)$ est dans $I$. $I$ est stable par $f$.
+
+  \item Si $N_k=N_{k+1}$, on a déjà $N_{k+1}\subset N_{k+2}$. Montrons que $N_{k+2}\subset N_{k+1}$.
+
+Soit $x\in N_{k+2}$. Alors $f^{k+1}(f(x))=0$ et donc $f(x)\in N_{k+1}= N_k$. Donc, $f^k(f(x))=0$ ou encore $x$ est dans $N_{k+1}$. On a montré que
+
+\begin{center}
+\shadowbox{
+$\forall k\in\Nn$, $[(N_k = N_{k+1})\Rightarrow (N_{k+1}= N_{k+2})]$.
+}
+\end{center}
+  \end{enumerate}
+
+\item   
+  \begin{enumerate}
+  \item  Notons tout d'abord que, pour tout entier naturel $k$, $N_k\subset N_{k+1}$ et $I_{k+1}\subset I_k$. Si de plus, on est en dimension finie, alors d'après le théorème du rang,
+
+\begin{center}
+$N_k =N_{k+1}\Leftrightarrow I_{k+1}=I_k\Leftrightarrow\text{dim}N_k=\text{dim}N_{k+1}$.
+\end{center}
+
+Donc $A=B$ (éventuellement $=\varnothing$).
+
+La suite des noyaux itérés ne peut être strictement croissante pour l'inclusion car alors la suite des dimensions de ces noyaux serait une suite strictement croissante d'entiers naturels, vérifiant par une récurrence facile $\text{dim}N_k\geqslant k$ pour tout naturel $k$, et en particulier $\text{dim}N_{n+1} >\text{dim}E$ ce qui est exclu.
+
+Donc il existe un entier $k$ tel que $N_k=N_{k+1}$. Soit $p$ le plus petit de ces entiers $k$.
+
+Par définition de $p$, $N_k$ est strictement inclus dans $N_{k+1}$ pour $k<p$, puis $N_p=N_{p+1}$ et d'après 1)c) pour tout entier naturel $k$ supérieur ou égal à $p$ on a $N_k=N_p$ (par récurrence sur $k\geqslant p$). Donc $A=\{p,p+1,p+2,...\}$.
+
+Enfin, $\text{dim}(N_0)<\text{dim}(N_1)<...<\text{dim}(N_p)$ et donc $\text{dim}(N_p)\geqslant p$ ce qui impose $p\leqslant n$.
+
+  \item On a déjà $\text{dim}N_p +\text{dim}I_p=\text{dim}E$. Il reste à vérifier que $I_p\cap N_p= \{0\}$.
+
+Soit $x$ un élément de $I_p\cap N_p$. Donc $f^p(x) = 0$ et il existe $y\in E$ tel que $x = f^p(y)$.
+Mais alors $f^{2p}(y) = 0$ et $y$ est dans $N_{2p}= N_p$ (car $2p\geqslant p$) ou encore $x = f^p(y) = 0$.
+
+\begin{center}
+\shadowbox{
+$E=I_p\oplus N_p$.
+}
+\end{center}
+
+  \item Ici $N=N_p=\text{Ker}f^p$ et $I = I_p =\text{Im}f^p$.
+
+Soit $f'=f_{/N}$. D'après 1)b), $f'$ est un endomorphisme de $N$ puis immédiatement $f'^p = 0$. Donc $f_{/N}$ est nilpotent.
+
+Soit $f''=f_{/I}$ . $f''$ est d'après 1)b) un endomorphisme de $I$. Pour montrer que $f''$ est un automorphisme de $I$, il suffit de vérifier que $\text{Ker}f''=\{0\}$. Mais $\text{Ker}f''\subset\text{Ker}f\subset N$ et aussi $\text{Ker}f''\subset I$. Donc $\text{Ker}f''\subset N\cap I =\{0\}$. Donc $f_{/I}\in\mathcal{GL}(I)$.
+  \end{enumerate}
+
+\item  Il faut bien sûr chercher les exemples en dimension infinie.
+
+  \begin{enumerate}
+  \item Soit $f$ de $\Rr[X]$ dans lui-même qui à un polynôme $P$ associe sa dérivée $P'$.
+On vérifie aisément que $\forall k \in\Nn$, $N_k =\Rr_k[X]$ et donc la suite des noyaux itérés est strictement croissante. La suite des $I_k$ est par contre constante : $\forall k\in\Nn$, $I_k=\Rr[X]$. Dans ce cas, $A$ est vide et $B=\Nn$.
+
+  \item A un polynôme $P$, on associe le polynôme $XP$. Les $N_k$ sont tous nuls et pour $k\in\Nn$ donné, $I_k$ est constitué des polynômes de valuation supérieure ou égale à $k$ ou encore $I_k=X^k\Rr[X]$. Dans ce cas, $A=\Nn$ et $B=\varnothing$.
+
+  \item Soit $f$ l'endomorphisme de $\Rr[X]$ qui à Xn associe Xn+1 si $n$ n'est pas une puissance de $2$ et $0$ si $n$ est une puissance de $2$ ($f(1) = X$, $f(X) = 0$, $f(X^2) = 0$, $f(X^3) = X^4$, $f(X^4) = 0$, ...)
+
+Soit $k$ un entier naturel.
+
+\begin{center}
+$f^{2^k-1}(X^{2^k+1})=X^{2^k+1+2^k-1}=X^{2^{k+1}}\neq0$ et $f^{2^k}(X^{2^k+1})=f(X^{2^{k+1}})=0$.
+\end{center}
+
+Donc, pour tout entier naturel $k$, $N_{2^k-1}$ est strictement inclus dans $N_k$. $A$ est vide.
+
+Ensuite, $X^{2^{k+1}}\in I_{2^k-1}$ mais $X^{2^{k+1}}\notin I_{2^k}$. En effet, si $l\geqslant 2^{k+1} +1$, $f^{2^k}(X^l)$ est ou bien nul ou bien de degré supérieur ou égal à $2^k+2^{k+1}+1>2^{k+1}$ et si $l\leqslant 2^{k+1}$, $f^{2^k}(X^l)=0$ car entre $l$ et $2^{k}+l-1$, il y a une puissance de $2$ (il y a $2^k$ nombres entre $l$ et $2^k+l-1$, ensuite $2^k+l-1 < 2^k+2^{k+1}= 3\times2^k <2^{k+2}$ et enfin l'écart entre deux puissances de $2$ inférieures à $2^{k+1}$ vaut au maximum $2^{k+1}-2^k = 2^k$) . Donc, $I_{2^k}$ contient le polynôme nul ou des polynômes de degré strictement supérieur à $2^{k+1}$ et ne contient donc pas $X^{2^{k+1}}$. Finalement, pour tout entier naturel $k$, $I_{2^k}$ est strictement inclus dans $I_{2^k-1}$ et $B$ est vide.
+
+  \end{enumerate}
+
+\item  Pour $k$ entier naturel donné, on note $f_k$ la restriction de $f$ à $I_k$. D'après le théorème du rang, on a
+
+\begin{center}
+$\text{dim}I_k=\text{dim}\text{Ker}f_k+\text{dim}\text{Im}f_k$ avec $\text{Im}f_k=f(I_k)=I_{k+1}$.
+\end{center}
+
+Donc, pour tout entier naturel $k$, $d_k -d_{k+1}=\text{dim}\text{Ker}f_k$.
+
+Or, pour tout entier naturel $k$, $\text{Ker}f_{k+1}=\text{Ker}f\cap I_{k+1}\subset\text{Ker}f\cap I_{k}=\text{Ker}f_k$ et donc $d_{k+1}-d_{k+2}=\text{dim}\text{Ker}f_{k+1}\leqslant\text{dim}\text{Ker}f_k=d_k-d_{k+1}$.
+
+Finalement, pour tout entier naturel $k$, $d_{k+1}-d_{k+2}\leqslant d_k-d_{k+1}$ et la suite des images itérées décroît de moins en moins vite.
+\end{enumerate}
+\fincorrection
+\finexercice

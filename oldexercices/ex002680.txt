@@ -1,0 +1,32 @@
+\exercice{2680, matexo1, 2002/02/01}
+
+\enonce
+{\`A} l'aide de la formule
+$$ f^{(n)}(a) = {n!\over 2i\pi } \int_\Gamma {f(z)\over (z-a)^{n+1}} \,dz$$
+o{\`u} $f$ est m{\'e}romorphe dans un domaine contenant le contour simple 
+$\Gamma$, et $a$ est
+un point int{\'e}rieur {\`a} $\Gamma$, montrer que l'on a
+$$ \left(x^n\over n!\right)^2 = {1\over 2i\pi } 
+\int_C {x^n e^{xz}\over n! z^{n+1}} \,dz$$
+o{\`u} $C$ est le cercle unit{\'e} de $\C$. En d{\'e}duire que l'on a
+$$ \sum_{n=0}^{+\infty } {x^{2n}\over \left(n!\right)^2} = {1\over 2\pi }
+ \int_0^{2\pi } e^{2x\cos \theta}\,d\theta. $$
+\finenonce
+\noindication
+\correction
+On pose $f(z) = e^{xz}$. Alors $f^{(n)} (0)= x^n$, donc
+$$ x^n = {n!\over 2i\pi } \int_C {e^{xz}\over z^{n+1}}\,dz $$
+d'o{\`u} la formule demand{\'e}e par multiplication par $x^n/(n!)^2$.
+
+Sur $C$, on a $|z|=1$, et donc la s{\'e}rie $\sum x^n /(n! z^{n})$ est
+uniform{\'e}ment convergente par rapport {\`a} $z$ (et sa limite est bien s{\^u}r {\'e}gale {\`a}
+$e^{x/z}$). Donc on peut inverser les signes $\sum$ et $\int$:
+$$\begin{array}{cccccc}\sum_{n=0}^{+\infty } \left(x^n\over n!\right)^2
+&= {1\over 2i\pi }\sum_{n=0}^{+\infty } \int_C {e^{xz}\over z}\,\left({x^n\over n! z^n}\right)\,dz \cr
+&= {1\over 2i\pi } \int_C {1\over z}\,e^{xz}\,e^{x\over z}\ dz \cr
+&= {1\over 2i\pi } \int_0^{2\pi } e^{-i\theta} e^{x(e^{i\theta}+e^{-i\theta})} \,{i e^{i\theta}\,d\theta}
+ &(z = e^{i\theta})\cr
+&= {1\over 2\pi } \int_0^{2\pi } e^{2x\cos\theta}\,d\theta.
+\end{array}$$
+\fincorrection
+\finexercice

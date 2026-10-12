@@ -1,29 +1,30 @@
 \exercice{5453, rouget, 2010/07/10}
+
 \enonce[****]
-Soit $f$ une fonction continue sur $[a,b]$. Pour $x$ réel, on pose $F(x)=\int_{a}^{b}|t-x|f(t)\;dt$. Etudier la dérivabilité de $F$ sur $\Rr$.
+Soit \( f \) une fonction continue sur \( [a,b] \). Pour \( x \) réel, on pose \( F(x) = \int_a^b|t-x|f(t)\;dt \). Étudier la dérivabilité de \( F \) sur \( \Rr \).
 \finenonce
 
 \noindication
 
 \correction
-Pour $x$ réel donné, la fonction $t\mapsto|t-x|f(t)$ est continue sur $[a,b]$ et donc $F(x)$ existe. Pour $x\leq a$,
-$F(x)=\int_{a}^{b}(t-x)f(t)\;dt=-x\int_{a}^{b}f(t)\;dt+\int_{a}^{b}tf(t)\;dt$. $F$ est donc de classe $C^1$ sur $]-\infty,a]$ en tant que fonction affine et, pour $x<a$, $F'(x)=-\int_{a}^{b}f(t)\;dt$ (en particulier $F'_g(a)=-\int_{a}^{b}f(t)\;dt$)..
+Pour \( x \) réel donné, la fonction \( t\mapsto|t-x|f(t) \) est continue sur \( [a,b] \) et donc \( F(x) \) existe. Pour \( x\le a \), \( F(x) = \int_a^b(t-x)f(t)\;dt = -x\int_a^bf(t)\;dt+\int_a^btf(t)\;dt \). \( F \) est donc de classe \( C^1 \) sur \( ]-\infty,a] \) en tant que fonction affine et, pour \( x<a \), \( F'(x) = -\int_a^bf(t)\;dt \) (en particulier \( F'_g(a) = -\int_a^bf(t)\;dt \))..
 
-De même, pour $x\geq b$, $F(x)=x\int_{a}^{b}f(t)dt-\int_{a}^{b}tf(t)\;dt$. $F$ est donc de classe $C^1$ sur $[b,+\infty[$ en tant que fonction affine et, pour $x\geq b$, $F'(x)=\int_{a}^{b}f(t)\;dt$ (en particulier $F'_d(b)=\int_{a}^{b}f(t)\;dt$).
+De même, pour \( x\ge b \), \( F(x) = x\int_a^bf(t)dt-\int_a^btf(t)\;dt \). \( F \) est donc de classe \( C^1 \) sur \( [b,+\infty[ \) en tant que fonction affine et, pour \( x\ge b \), \( F'(x) = \int_a^bf(t)\;dt \) (en particulier \( F'_d(b) = \int_a^bf(t)\;dt \)).
 
-Enfin, si $a\leq x\leq b$, 
+      Enfin, si \( a\le x\le b \),
 
-$$F(x)=\int_{a}^{x}(x-t)f(t)\;dt+\int_{x}^{b}(t-x)f(t)\;dt=x(\int_{a}^{x}f(t)\;dt-\int_{x}^{b}f(t)\;dt)-\int_{a}^{x}tf(t)\;dt+\int_{x}^{b}tf(t)\;dt.$$
+      \[
+        F(x) = \int_a^x(x-t)f(t)\;dt+\int_x^b(t-x)f(t)\;dt = x(\int_a^xf(t)\;dt-\int_x^bf(t)\;dt)-\int_a^xtf(t)\;dt+\int_x^btf(t)\;dt.
+      \]
+      \( F \) est donc de classe \( C^1 \) sur \( [a,b] \) et, pour \( a\le x\le b \),
 
-$F$ est donc de classe $C^1$ sur $[a,b]$ et, pour $a\leq x\leq b$, 
+      \begin{align*}\ensuremath F'(x) & =\int_a^xf(t)\;dt-\int_x^bf(t)\;dt+x(f(x)-(-f(x)))-xf(x)-xf(x) \\
+                                & =\int_a^xf(t)dt-\int_x^bf(t)\;dt.
+      \end{align*}
 
-\begin{align*}\ensuremath
-F'(x)&=\int_{a}^{x}f(t)\;dt-\int_{x}^{b}f(t)\;dt+x(f(x)-(-f(x)))-xf(x)-xf(x)\\
- &=\int_{a}^{x}f(t)dt-\int_{x}^{b}f(t)\;dt.
-\end{align*}
+      (et en particulier, \( F'_d(a) = -\int_a^bf(t)\;dt = F'_g(a) \) et \( F'_g(b) = \int_a^bf(t)\;dt = F'_d(b) \)).
 
-(et en particulier, $F'_d(a)=-\int_{a}^{b}f(t)\;dt=F'_g(a)$ et $F'_g(b)=\int_{a}^{b}f(t)\;dt=F'_d(b)$).
-
-$F$ est continue $]-\infty,a]$, $[a,b]$ et $[b,+\infty[$ et donc sur $\Rr$. $F$ est de classe $C^1$ sur $]-\infty,a]$, $[a,b]$ et $[b,+\infty[$. De plus, $F'_g(a)=F'_d(a)$ et $F'_g(b)=F'_d(b)$. $F$ est donc de classe $C^1$ sur $\Rr$.
+      \( F \) est continue \( ]-\infty,a] \), \( [a,b] \) et \( [b,+\infty[ \) et donc sur \( \Rr \). \( F \) est de classe \( C^1 \) sur \( ]-\infty,a] \), \( [a,b] \) et \( [b,+\infty[ \). De plus, \( F'_g(a) = F'_d(a) \) et \( F'_g(b) = F'_d(b) \). \( F \) est donc de classe \( C^1 \) sur \( \Rr \).
 \fincorrection
+
 \finexercice

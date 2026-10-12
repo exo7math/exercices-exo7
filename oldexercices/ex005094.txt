@@ -1,0 +1,33 @@
+\exercice{5094, rouget, 2010/06/30}
+\enonce[**I]
+\begin{enumerate}
+ \item  Montrer que pour tout réel $x$ non nul, on a~:~$\tanh x=\frac{2}{\tanh(2x)}-\frac{1}{\tanh x}$.
+
+ \item  En déduire la valeur de $u_n=2^0\tanh(2^0x)+2^1\tanh(2^1x)+ \cdots +2^{n}\tanh(2^{n}x)$ pour $n$ entier naturel non nul et $x$ réel
+non nul donnés puis calculer la limite de $(u_n)$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+On a vu au \ref{exo:suprou3} que pour tout réel $x$, $\tanh(2x)=\frac{2\tanh x}{1+\tanh^2x}$ ce qui s'écrit pour
+$x$ non nul~:~$\frac{1+\tanh^2x}{\tanh x}=\frac{2}{\tanh(2x)}$ ou encore $\tanh x+\frac{1}{\tanh x}=\frac{2}{\tanh(2x)}$
+ou finalement
+
+\begin{center}
+\shadowbox{
+$\forall x\in\Rr^*,\;\tanh x=\frac{2}{\tanh(2x)}-\frac{1}{\tanh x}.$
+}
+\end{center}
+Soient $n$ un entier naturel non
+nul et $x$ un réel non nul. D'après ce qui précède,
+
+$$u_n
+=\sum_{k=0}^{n}2^k\tanh(2^kx)=\sum_{k=0}^{n}\left(\frac{2^{k+1}}{\tanh(2^{k+1}x)}-\frac{2^{k}}{\tanh(2^{k}x)}\right)
+=\sum_{k=1}^{n+1}\frac{2^{k}}{\tanh(2^{k}x)}-\sum_{k=0}^{n}\frac{2^{k}}{\tanh(2^{k}x)}=\frac{2^{n+1}}{\tanh(2^{n+1}x)}
+-\frac{1}{\tanh x}.$$
+Ensuite, pour $x>0$, $\tanh(2^{n+1}x)$ tend vers $1$ quand $n$ tend vers l'infini. Donc $u_n$ tend vers $+\infty$ quand
+$n$ tend vers $+\infty$ si $x>0$ et vers $-\infty$ quand $n$ tend vers $+\infty$ si $x<0$.
+\fincorrection
+\finexercice

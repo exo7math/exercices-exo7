@@ -1,0 +1,63 @@
+\exercice{5718, rouget, 2010/10/16}
+\enonce[** I]
+En utilisant un développement de $\frac{1}{1-t}$, calculer $\int_{0}^{1}\frac{\ln t}{t-1}\;dt$.
+\finenonce
+
+\noindication
+
+\correction
+La fonction $f~:~t\mapsto\frac{\ln t}{t-1}$   est continue et positive sur $]0,1[$, négligeable devant $\frac{1}{\sqrt{t}}$ quand $t$ tend vers  $0$ et prolongeable par continuité en $1$. La fonction $f$ est donc intégrable sur $]0;1[$.
+
+\textbf{1ère solution.} (à la main, sans utilisation d'un théorème d'intégration terme à terme) Pour $t\in]0,1[$ et $n\in\Nn$, 
+
+\begin{center}
+$\frac{\ln t}{t-1}=\frac{-\ln t}{1-t}=-\sum_{k=0}^{n}t^k\ln t+\frac{t^{n+1}\ln t}{t-1}$
+\end{center}
+
+Pour $t\in]0,1]$ et $n\in\Nn$, posons $f_n(t)=-t^n\ln t$. 
+
+Soit $n\in\Nn$. Chaque fonction $f_k$, $0\leqslant k\leqslant n$, est continue sur $]0,1]$ et négligeable en $0$ devant $\frac{1}{\sqrt{t}}$. Donc chaque fonction $f_k$ est intégrable sur $]0,1]$ et donc sur $]0,1[$. Mais alors, il en est de même de la fonction $t\mapsto\frac{t^{n+1}\ln t}{1-t}=\frac{\ln t}{t-1}+\sum_{k=0}^{n}t^k\ln t$ et
+
+\begin{center}
+$\int_{0}^{1}\frac{\ln t}{t-1}\;dt=-\sum_{k=0}^{n}\int_{0}^{1}t^k\ln t\;dt+\int_{0}^{1}\frac{t^{n+1}\ln t}{t-1}\;dt$
+\end{center}
+
+\textbullet~La fonction $g~:~t\mapsto\frac{t\ln t}{t-1}$ est continue sur $]0,1[$ et prolongeable par continuité en $0$ et en $1$. Cette fonction est en particulier bornée sur $]0,1[$. Soit $M$ un majorant de la fonction $|g|$ sur $]0,1[$. Pour $n\in\Nn$,
+
+\begin{center}
+$\left|\int_{0}^{1}\frac{t^{n+1}\ln t}{t-1}\;dt\right|\leqslant\int_{0}^{1}t^n|g(t)|\;dt\leqslant M\int_{0}^{1}t^n\;dt=\frac{M}{n+1}$.
+\end{center}
+
+Par suite, $\lim_{n \rightarrow +\infty}\int_{0}^{1}\frac{t^{n+1}\ln t}{t-1}\;dt=0$. On en déduit que la série de terme général $-\int_{0}^{1}t^k\ln t\;dt$ converge et que
+
+\begin{center}
+$\int_{0}^{1}\frac{\ln t}{t-1}\;dt=\sum_{k=0}^{+\infty}\int_{0}^{1}(-t^k\ln t)\;dt$.
+\end{center}
+
+\textbullet~Soit $\varepsilon\in]0,1[$. Pour $k\in\Nn$, une intégration par parties fournit
+
+\begin{center}
+$\int_{\varepsilon}^{1}(-t^k\ln t)\;dt=\left[-\frac{t^{k+1}\ln t}{k+1}\right]_\varepsilon^{1}+\frac{1}{k+1}\int_{\varepsilon}^{1}t^k\;dt=\frac{\varepsilon^{k+1}\ln \varepsilon}{k+1}+\frac{1-\varepsilon^{k+1}}{(k+1)^2}$.
+\end{center}
+
+Quand $\varepsilon$ tend vers $0$, on obtient $\int_{\varepsilon}^{1}(-t^k\ln t)\;dt=\frac{1}{(k+1)^2}$. Finalement,
+
+\begin{center}
+$\int_{0}^{1}\frac{\ln t}{t-1}\;dt=\sum_{k=0}^{+\infty}\frac{1}{(k+1)^2}=\sum_{n=1}^{+\infty}\frac{1}{n^2}=\frac{\pi^2}{6}$.
+\end{center}
+
+\begin{center}
+\shadowbox{
+$\int_{0}^{1}\frac{\ln t}{t-1}\;dt=\sum_{n=1}^{+\infty}\frac{1}{n^2}=\frac{\pi^2}{6}$.
+}
+\end{center}
+
+\textbf{2ème solution.} (utilisation d'un théorème d'intégration terme à terme) Chaque fonction $f_n$ est continue et intégrable sur $]0,1[$ et la série de fonctions de terme général $f_n$ converge simplement vers la fonction $f$ sur $]0,1[$ et de plus, la fonction $f$ est continue sur $]0,1[$. Enfin
+
+\begin{center}
+$\sum_{n=0}^{+\infty}\int_{0}^{1}|f_n(t)|\;dt=\sum_{n=0}^{+\infty}\frac{1}{(n+1)^2}<+\infty$.
+\end{center}
+
+D'après un théorème d'intégration terme à terme, $\int_{0}^{1}f(t)\;dt=\sum_{n=0}^{+\infty}\int_{0}^{1}f_n(t)\;dt=\frac{\pi^2}{6}$.
+\fincorrection
+\finexercice

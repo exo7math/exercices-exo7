@@ -1,51 +1,37 @@
 \exercice{5937, tumpach, 2010/11/11}
+
 \enonce
-Soit $(\Omega, \Sigma, \mu)$ un espace mesur\'e et
-$f\in\mathcal{M}^+(\Omega, \Sigma)$ (i.e $f$ est une fonction
-r\'eelle mesurable positive). Pour tout $E\in\Sigma$, on pose~:
-$$
-\lambda(E) = \int_{E} f\,d\mu = \int_{\Omega} \mathbf{1}_{A}\cdot f
-\,d\mu.
-$$
-Monter que $\lambda$ d\'efinit une mesure sur $(\Omega, \Sigma)$.
+Soit \( (\Omega, \Sigma, \mu) \) un espace mesuré et \( f\in\mathcal{M}^+(\Omega, \Sigma) \) (i.e \( f \) est une fonction réelle mesurable positive). Pour tout \( E\in\Sigma \), on pose :
+\[
+  \lambda(E) = \int_E f\,d\mu = \int_{\Omega} \mathbf{1}_E\cdot f
+  \,d\mu.
+\]
+Montrer que \( \lambda \) définit une mesure sur \( (\Omega, \Sigma) \).
 \finenonce
 
 \noindication
 
 \correction
-Soit $(\Omega, \Sigma, \mu)$ un espace mesur\'e et
-$f\in\mathcal{M}^+(\Omega, \Sigma)$. Pour tout $E\in\Sigma$, on
-pose~:
-$$
-\lambda(E) = \int_{E} f\,d\mu = \int_{\Omega} \mathbf{1}_{A}\cdot f
-\,d\mu.
-$$
-Montrons que $\lambda$ d\'efinit une mesure sur $(\Omega,
-\Sigma)$.\\
+Soit \( (\Omega, \Sigma, \mu) \) un espace mesuré et \( f\in\mathcal{M}^+(\Omega, \Sigma) \). Pour tout \( E\in\Sigma \), on pose :
+\[
+  \lambda(E) = \int_E f\,d\mu = \int_{\Omega} \mathbf{1}_A\cdot f
+  \,d\mu.
+\]
+Montrons que \( \lambda \) définit une mesure sur \( (\Omega,
+\Sigma) \).\\
 
-\emph{$1^{\text{\`ere}}$ m\'ethode~:} On montre d'abord que
-l'affirmation est vraie pour les fonctions simples.  D'apr\`es
-l'exercice~\ref{ex:barb20}, toute fonction $f\in\mathcal{M}^{+}(\Omega, \Sigma)$
-s'\'ecrit $f = \sup_{n\in\mathbb{N}} \varphi_{n}$, o\`u les
-$\varphi_{n}$ sont des fonctions simples. Puisque le supremum
-d'une famille quelconque de mesure est une mesure, on conclut que $\lambda$ est une mesure. \\
+\emph{\( 1^{\text{ère}} \) méthode :} On montre d'abord que l'affirmation est vraie pour les fonctions simples. D'après l'exercice \ref{ex:barb20}, toute fonction \( f\in\mathcal{M}^{+}(\Omega, \Sigma) \) s'écrit \( f = \sup_{n\in\Nn} \varphi_n \), où les \( \varphi_n \) sont des fonctions simples. Puisque le supremum d'une famille quelconque de mesure est une mesure, on conclut que \( \lambda \) est une mesure. \\
 
-\emph{$2^{\text{de}}$ m\'ethode~:} On a clairement
-$\lambda(\emptyset) = 0$. Il suffit donc de v\'erifier la
-$\sigma$-additivit\'e de $\lambda$. Soit
-$\{E_{i}\}_{i\in\mathbb{N}}\subset\Sigma$ une suite d'\'el\'ements
-deux \`a deux disjoints. On a
+\emph{\( 2^{\text{de}} \) méthode :} On a clairement \( \lambda(\emptyset) = 0 \). Il suffit donc de vérifier la \( \sigma \)-additivité de \( \lambda \). Soit \( \{E_i\}_{i\in\Nn}\subset\Sigma \) une suite d'éléments deux à deux disjoints. On a
 \begin{eqnarray*}
-\lambda\left(\bigcup_{i=1}^{\infty} E_{i}\right) & = &
-\int_{\bigcup_{i=1}^{\infty} E_{i}} f\,d\mu = \int_{\Omega}
-\mathbf{1}_{\bigcup_{i=1}^{\infty} E_{i}} f\,d\mu\\
-& = &\int_{\Omega} \left(\sum_{i=1}^{\infty}\mathbf{1}_{E_{i}} \right)
-f\,d\mu = \int_{\Omega} \sum_{i=1}^{\infty} \left( \mathbf{1}_{E_{i}}
-f\right)
-\,d\mu\\
-& = & \sum_{i=1}^{\infty} \int_{\Omega} \left( \mathbf{1}_{E_{i}} f\right)
-d\mu = \sum_{i=1}^{\infty} \int_{E_{i}} f\,d\mu \\ & = &
-\sum_{i=1}^{\infty} \lambda(E_{i}).
+  \lambda\left(\bigcup_{i=1}^{\infty} E_i\right) & = &
+  \int_{\bigcup_{i=1}^{\infty} E_i} f\,d\mu = \int_{\Omega}
+  \mathbf{1}_{\bigcup_{i=1}^{\infty} E_i} f\,d\mu\\
+  & = &\int_{\Omega} \left(\sum_{i=1}^{\infty}\mathbf{1}_{E_i} \right) f\,d\mu = \int_{\Omega} \sum_{i=1}^{\infty} \left( \mathbf{1}_{E_i}
+  f\right)
+  \,d\mu\\
+  & = & \sum_{i=1}^{\infty} \int_{\Omega} \left( \mathbf{1}_{E_i} f\right) d\mu = \sum_{i=1}^{\infty} \int_{E_i} f\,d\mu \\ & = &
+  \sum_{i=1}^{\infty} \lambda(E_i).
 \end{eqnarray*}
 \fincorrection
 

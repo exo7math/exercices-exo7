@@ -1,0 +1,51 @@
+\exercice{2380, mayer, 2003/10/01}
+\enonce 
+Soit $(X,d)$ un espace m\'etrique compact et $f:X\to X$ une application
+v\'erifiant
+$$d(f(x),f(y))<d(x,y) \quad \text{pour tout } x,y \in X \; , x\neq y\; .$$
+Le but ici est de montrer que $f$ a un unique point fixe $p\in X$.
+\begin{enumerate}
+\item Justifier que $f$ peut avoir au plus un point fixe.
+\item Montrer que les ensembles $X_n=f^n(X)$, $n\in \Nn$, forment une suite
+d\'ecroissante de compacts et que $Y=\bigcap _{n\geq 0} X_n$ n'est pas vide.
+\item Montrer que $Y$ est un ensemble invariant, i.e. $f(Y)=Y$, et
+en d\'eduire que le diam\`etre de cet ensemble est zero.
+\item Conclure que $f$ a un unique point fixe $p\in X$ et que pour
+tout $x_0\in X$ la suite $x_n=f^n(x_0)\to p$, lorsque $n\to \infty$.
+\end{enumerate}
+\finenonce
+
+\indication
+\begin{enumerate}
+  \item ...
+  \item Utiliser l'exercice \ref{exo 2}.
+  \item Montrer $f(Y) \subset Y$ puis $Y \subset f(Y)$.
+  \item Diamètre zéro implique ensemble réduit à un singleton.
+\end{enumerate}
+\finindication
+
+\correction
+\begin{enumerate}
+  \item Si $f$ a deux points fixes $x\neq y$, alors $d(x,y) = d(f(x),f(y)) < d(x,y)$. Ce qui est absurde. Donc $f$ a au plus un point fixe.
+
+  \item $f$ est continue et $X$ compact donc $X_1 = f(X)$ est compact,
+par récurrence si $X_{n-1}$ est compact alors $X_n = f(X_{n-1})$ est compact.
+De plus $f : X\rightarrow X$, donc $f(X) \subset X$ soit $X_1 \subset X$, puis
+$f(X_1) \subset f(X)$ soit $X_2 \subset X_1$, etc. Par récurrence $X_n \subset X_{n-1} \subset \cdots \subset X_1 \subset X$. Comme chaque $X_n$ est non vide alors $Y$ n'est pas vide (voir l'exercice \ref{exo 2}).
+
+  \item Montrons d'abord que $f(Y) \subset Y$. Si $y\in Y$, alors pour tout $n\ge 0$ on a $y \in X_n$ donc $f(y) \in f(X_n)=X_{n+1}$ pour tout $n\ge 0$.
+Donc pour tout $n>0$, $f(y) \in X_n$, or $f(y) \in X_0=X$. Donc $f(y) \in Y$.
+
+Réciproquement montrons $Y \subset f(Y)$. Soit $y\in Y$, pour chaque $n \ge 0$, 
+$y\in X_{n+1}=f(X_{n})$. Donc il existe $x_{n} \in X_{n}$ tel que $y = f(x_n)$.
+Nous avons construit $(x_n)$ une suite d'élément de $X$ compact, on peut donc en extraire une sous-suite convergente $(x_{\phi(n)})$. Notons $x$ la limite, par l'exercice \ref{exo 2}, $x\in Y$.
+Alors $y = f(x_{\phi(n)})$ pour tout $n$ et $f$ est continue donc à la limite
+$y=f(x)$. Donc $y\in f(Y)$.
+
+Soit $y \neq y'\in Y$ tel que $d(y,y')= \mathrm{diam}\,Y > 0$. Comme $Y=f(Y)$ alors il existe $x,x' \in Y$ tel que $y=f(x)$ et $y'=f(x')$. Or $d(y,y')=d(f(x),f(x')) < d(x,x')$. On a trouvé deux élements de $Y$ tel $d(x,x')$ est strictement plus grand que le diamètre de $Y$ ce qui est absurde. Donc $y=y'$ et le diamètre est zéro.
+
+  \item Comme le diamètre est zéro alors $Y$ est composé d'un seul point $\{ p \}$ et comme $f(Y)=Y$ alors $f(p)=p$. Donc $p$ a un point fixe et nous savons que c'est le seul. Par la construction de $Y$ pour tout point $x_0 \in X$ la suite $x_n = f^n(x_0)$ converge vers $p$. 
+\end{enumerate}
+\fincorrection
+
+\finexercice

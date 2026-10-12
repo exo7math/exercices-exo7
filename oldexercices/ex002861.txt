@@ -1,0 +1,33 @@
+\exercice{2861, burnol, 2009/12/15}
+\enonce
+Déterminer les intégrales (semi-convergentes) de Fresnel
+$\int_0^\infty \cos(x^2)dx$ et $\int_0^\infty \sin(x^2)dx$
+en considérant l'intégrale de $\exp(-z^2)$ sur le contour
+$z=x$, $0\leq x\leq R$, $z = R\exp(i\theta)$, $0\leq
+\theta\leq\frac\pi4$, $z = xe^{i\frac\pi4}$, $R\geq
+x\geq0$. On rappelle l'identité $\int_\Rr \exp(-\pi u^2)du
+=1$.  
+\finenonce
+\noindication
+\correction
+Par holomorphie de $z\mapsto e^{-z^2}$,
+$$\int_0^R e^{-x^2} dx + \int_{C_R} e^{-z^2} dz + \int _{Re^{i\pi /4}}^0 e^{-z^2} dz =0.$$
+Notons $I_{1,R}$ la premi\`ere int\'egrale ci-dessus, $I_{2,R}$ la deuxi\`eme et $I_{3,R}$ la troisi\`eme.
+Alors,
+$$\lim_{R\to \infty} I_{1,R} = \frac{1}{2} \int _\R e^{-x^2} dx = \frac{1}{2} \int _\R e^{-\pi u^2} \sqrt{\pi} \,du
+=\frac{\sqrt{\pi}}{2} .$$
+Comme $e^{-z^2}= e^{-\left( e^{i\pi /4}t\right)^2}= e^{-it^2}= \cos (t^2) -i\sin (t^2)$ pour $z=e^{i\pi /4}t$ on a
+$$\begin{aligned}I_{3,R} &=-\int_0^R \left( \cos (t^2) -i\sin (t^2)\right)e^{i\pi /4} dt\\
+&=-\frac{\sqrt{2}}{2}\left( \int_0^R \cos (t^2) +\sin (t^2) dt +i \int_0^R \cos (t^2) -\sin (t^2) dt \right).
+\end{aligned}$$
+Il suffit alors de d\'eterminer $\lim_{R\to\infty} I_{2,R}$ pour en d\'eduire les int\'egrales de Fresnel.
+Si on pose $z=Re^{i\theta}$, alors
+$$\int _{C_R} e^{-z^2} dz = \int_0^\frac{\pi}{4} e^{-R^2 e^{2i\theta}} iR e^{i\theta} d\theta$$
+ce qui implique
+$$|I_{2,R}| \leq R \int _0^\frac{\pi}{4}e^{-R^2 \cos (2\theta)} d\theta = \frac{R}{2}\int _0^\frac{\pi}{2}e^{-R^2 \cos (\alpha)} d\alpha.$$
+ Du changement de variables $\beta = \frac{\pi}{2} -\alpha$ et du fait que $\sin \beta \geq \frac{\beta}{2}$ pour $\beta \in [0, \frac{\pi}{2} ]$ on d\'eduit que :
+$$|I_{2,R}| \leq -\frac{R}{2}\int ^0_\frac{\pi}{2}e^{-R^2 \sin (\beta )}d\beta \leq \frac{R}{2}\int _0^\frac{\pi}{2}e^{-R^2 \frac{\beta}{2}}d\beta = \left. -\frac{R}{2}e^{-R^2 \frac{\beta}{2}}\right|_0^\frac{\pi}{2} \leq \frac{2}{R} \to 0$$
+lorsque $R\to \infty$.
+Conclusion $\int_0^\infty \cos(x^2)dx =  \int_0^\infty \sin(x^2)dx = \frac{\sqrt{2\pi}}{4}$.
+\fincorrection
+\finexercice

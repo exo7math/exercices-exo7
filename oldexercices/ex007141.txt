@@ -1,0 +1,45 @@
+\exercice{7141, megy, 2017/04/05}
+
+\enonce[Puissance d'un point par rapport à un cercle]
+Soit $\mathcal C$ un cercle et $P$ un point du plan.
+
+\begin{enumerate}
+\item Soit $\mathcal D$  une droite passant par $P$ et intersectant le cercle en deux points $A$ et $B$. Montrer que la quantité $\overline{PA}\cdot\overline{PB}:= \overrightarrow{PA} \cdot \overrightarrow{PB}$ ne dépend pas de la droite choisie. On l'appelle la \emph{puissance du point $P$ par rapport au cercle $\mathcal C$}, et on la note $p_{\mathcal C}(P)$.
+%Elle est positive si $P$ est à l'extérieur du cercle, négative s'il est à l'intérieur, et nulle si $P$ appartient au cercle. 
+\item Avec les mêmes notations, si $P$ est à l'extérieur du cercle et $\mathcal D$ est tangente au cercle en $T$, montrer que $p_{\mathcal C}(P) = PT^2$.
+\item Montrer que $p_{\mathcal C}(P)$ vaut $OP^2 - r^2$, où $r$ est le rayon du cercle.
+\item Soit $\lambda \in \R$. Déterminer l'ensemble des points dont la puissance par rapport au cercle vaut $\lambda$.
+\item Réciproquement, soient $(AB)$ et $(CD)$ deux droites se coupant en $P$. On suppose que $\overline{PA}\cdot \overline{PB} = \overline{PC}\cdot \overline{PD}$. Montrer que $ABCD$ est inscriptible.
+
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+\item 
+Soit $\mathcal D'$  une autre droite passant par $P$ et intersectant le cercle en deux points $A'$ et $B'$. 
+
+Les quantités $\overline{PA}\cdot\overline{PB}$ et $\overline{PA'}\cdot\overline{PB'}$ ont forcément même signe, donc il suffit de montrer que $PA\cdot PB = PA'\cdot PB'$.
+
+Comme $ABA'B'$ est inscriptible, le théorème de l'angle inscrit donne
+\[ (BA,BA')=(B'A,B'A').\]
+On en déduit que les triangles  $PAB'$ et $PA'B$ ont donc deux de leurs angles égaux, donc tous leurs angles égaux, donc sont semblables. On en déduit que:
+\[\frac{PA}{PB'} = \frac{PA'}{PB},
+\]
+donc
+\[
+PA\cdot PB = PA'\cdot PB'.
+\]
+\item On procède de la même manière, en utilisant la version tangentielle du théorème de l'angle inscrit.
+\item Avec les notations de la question précédente, on a par le théorème de Pythagore $PT^2+r^2=PO^2$, d'où le résultat.
+\item L'ensemble est donc $\{P\in \mathcal P,\: ||\overrightarrow{OP}||=\lambda + r^2\}$ Si $\lambda < -r^2$, l'ensemble est vide. Si $\lambda=-r^2$, c'est le centre du cercle, et si $\lambda > -r^2$, c'est un cercle de centre $O$ et de rayon $\sqrt{\lambda + r^2}$.
+\item Si les deux produits sont nuls, alors $P$ coïncide avec l'un des deux points $A$ et $B$, ainsi qu'avec l'un des deux points $C$ et $D$. On en déduit que $ABCD$ est en fait un triangle et qu'il est donc inscriptible.
+
+Si les deux produits ne sont pas nuls, on obtient 
+\[\frac{PA}{PD} = \frac{PC}{PB},
+\]
+donc les triangles $PAD$ et $PBC$ sont semblables, donc ont mêmes angles. On conclut en utilisant la réciproque du théorème de l'angle inscrit.
+
+\end{enumerate}
+\fincorrection
+\finexercice

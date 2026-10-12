@@ -1,0 +1,128 @@
+\exercice{920, cousquer, 2003/10/01}
+\video{ByyFihncOvA}
+\enonce
+ On consid\`ere les vecteurs
+$v_1=(1,0,0,1)$, $v_2=(0,0,1,0)$, $v_3=(0,1,0,0)$, $v_4=(0,0,0,1)$,
+$v_5=(0,1,0,1)$ dans $\mathbb{R}^4$.
+\begin{enumerate}
+\item $\mbox{Vect}\{v_1,v_2\}$ et $\mbox{Vect}\{v_3\}$ sont-ils
+  suppl\'ementaires dans $\mathbb{R}^4$ ?
+\item $\mbox{Vect}\{v_1,v_2\}$ et $\mbox{Vect}\{v_4, v_5\}$ sont-ils
+  suppl\'ementaires dans $\mathbb{R}^4$ ?
+\item $\mbox{Vect}\{v_1,v_3,v_4\}$ et  $\mbox{Vect}\{v_2,v_5\}$ sont-ils
+  suppl\'ementaires dans $\mathbb{R}^4$ ?
+\item $\mbox{Vect}\{v_1,v_4\}$ et $\mbox{Vect}\{v_3, v_5\}$ sont-ils
+  suppl\'ementaires dans $\mathbb{R}^4$ ?
+\end{enumerate}
+\finenonce 
+
+\indication
+\begin{enumerate}
+\item Non.
+\item Oui.
+\item Non.
+\item Non. 
+\end{enumerate}
+\finindication
+
+\correction
+\begin{enumerate}
+\item Non. 
+Tout d'abord par définition
+$\text{Vect}\{v_1,v_2\}+\text{Vect}\{v_3\} = \text{Vect}\{v_1,v_2,v_3\}$,
+Nous allons trouver un vecteur de $\Rr^4$ qui n'est pas dans 
+$\text{Vect}\{v_1,v_2\}+\text{Vect}\{v_3\}$.
+Il faut tâtonner un peu pour le choix, par exemple faisons le calcul avec $u=(0,0,0,1)$.
+
+$u \in \text{Vect}\{v_1,v_2,v_3\}$ si et seulement si 
+il existe des réels $\alpha,\beta,\gamma$ tels que $u=\alpha v_1 + \beta v_2 + \gamma v_3$.
+Si l'on écrit les vecteurs verticalement, on cherche donc $\alpha,\beta,\gamma$ tels que :
+$$\begin{pmatrix} 0 \\ 0 \\ 0 \\1\end{pmatrix}= \alpha \begin{pmatrix} 1 \\ 0 \\ 0 \\1\end{pmatrix}
++ \beta \begin{pmatrix} 0 \\ 0 \\ 1 \\ 0 \end{pmatrix}+\gamma\begin{pmatrix} 0 \\ 1 \\ 0 \\0\end{pmatrix}$$
+Ce qui est équivalent à trouver $\alpha,\beta,\gamma$ vérifiant le système linéaire :
+$$\begin{cases}
+0 = \alpha \cdot 1 + \beta \cdot 0 + \gamma \cdot 0   \\
+0 = \alpha \cdot 0 + \beta \cdot 0 + \gamma \cdot 1   \\
+0 = \alpha \cdot 0 + \beta \cdot 1 + \gamma \cdot 0   \\
+1 = \alpha \cdot 1 + \beta \cdot 0 + \gamma \cdot 0   \\
+\end{cases}
+\text{ qui équivaut à } 
+\begin{cases}
+0 = \alpha \\
+0 = \gamma \\
+0 = \beta  \\
+1 = \alpha \\
+\end{cases}
+$$
+Il n'y a clairement aucune solution à ce système (les trois premières lignes impliquent $\alpha=\beta=\gamma=0$
+et cela rentre alors en contradiction avec la quatrième).
+
+\bigskip
+
+
+Un autre type de raisonnement, beaucoup plus rapide, 
+est de dire que ces deux espaces ne peuvent engendr\'es tout $\Rr^4$ 
+car il n'y pas assez de vecteurs en effet $3$ vecteurs ne peuvent engendrer 
+l'espace $\Rr^4$ de dimension $4$.
+
+\item Oui. Notons $F=\mbox{Vect}\{v_1,v_2\}$ et $G=\mbox{Vect}\{v_4, v_5\}$.
+Pour montrer $F \oplus G = \Rr^4$ il faut montrer $F\cap G =\{ (0,0,0,0) \}$ et
+$F+G=\Rr^4$.
+
+  \begin{enumerate}
+     \item Montrons $F\cap G =\{ (0,0,0,0 \}$. Soit $u \in F\cap G$,
+d'une part $u \in F = \mbox{Vect}\{v_1,v_2\}$ donc il existe $\alpha,\beta \in \Rr$ tels que
+$u = \alpha v_1+\beta v_2$. D'autre part $u \in G = \mbox{Vect}\{v_4, v_5\}$ donc il existe
+$\gamma,\delta \in \Rr$ tels que $u=\gamma v_4 + \delta v_5$. On a écrit $u$ de deux façons donc on a l'égalité
+$\alpha v_1+\beta v_2 = \gamma v_4 + \delta v_5$. En écrivant les vecteurs comme des vecteurs colonnes cela donne
+$$\alpha \begin{pmatrix} 1 \\ 0 \\ 0 \\1\end{pmatrix}
++ \beta \begin{pmatrix} 0 \\ 0 \\ 1 \\ 0 \end{pmatrix} 
+= \gamma \begin{pmatrix} 0 \\ 0 \\ 0 \\1\end{pmatrix} + \delta \begin{pmatrix} 0 \\ 1 \\ 0 \\1\end{pmatrix}$$
+Donc $(\alpha,\beta,\gamma,\delta)$ est solution du système linéaire suivant :
+$$\begin{cases}
+\alpha = 0   \\
+0 = \delta \\
+\beta = 0 \\
+\alpha =  \gamma + \delta \\
+\end{cases}
+$$
+Cela implique $\alpha=\beta=\gamma=\delta=0$ et donc $u = (0,0,0,0)$.
+Ainsi le seul vecteur de $F\cap G$ est le vecteur nul.
+
+
+     \item Montrons $F+G=\Rr^4$.
+$F+G = \mbox{Vect}\{v_1,v_2\}+\mbox{Vect}\{v_4, v_5\}= \mbox{Vect}\{v_1,v_2,v_4, v_5\}$.
+Il faut donc montrer que n'importe quel vecteur $u = (x_0,y_0,z_0,t_0)$ de $\Rr^4$ s'écrit comme une combinaison linéaire
+de $v_1,v_2,v_4,v_5$. Fixons $u$ et cherchons $\alpha,\beta,\gamma,\delta \in \Rr$ tels que 
+$\alpha v_1+\beta v_2 + \gamma v_4 + \delta v_5=u$.
+Après avoir considéré les vecteurs comme des vecteurs colonnes cela revient à résoudre le système linéaire :
+$$\begin{cases}
+\alpha = x_0 \\
+\delta = y_0 \\
+\beta = z_0 \\
+\alpha + \gamma + \delta = t_0 \\    
+  \end{cases}$$
+Nous étant donné un vecteur $u = (x_0,y_0,z_0,t_0)$ on a calculé qu'en choisissant 
+$\alpha = x_0$, $\beta=z_0$, $\gamma= t_0 -x_0-y_0$, $\delta=y_0$ on obtient bien
+$\alpha v_1+\beta v_2 + \gamma v_4 + \delta v_5=u$.
+Ainsi tout vecteur est engendré par $F+G$.
+  \end{enumerate}
+Ainsi $F\cap G =\{ (0,0,0,0) \}$ et $F+G=\Rr^4$ donc $F \oplus G = \Rr^4$.
+
+
+\item Non. Ces deux espaces ne sont pas suppl\'ementaires car il y a trop de vecteurs !
+Il engendrent tout, mais l'intersection n'est pas triviale. En effet on remarque assez vite que 
+$v_5=v_3+v_4$ est dans l'intersection. On peut aussi obtenir ce r\'esultat en résolvant un syst\`eme.
+
+\item Non. Il y a bien quatre vecteurs mais il existe des relations entre eux.
+
+On peut montrer $\mbox{Vect}\{v_1,v_4\}$ et $\mbox{Vect}\{v_3, v_5\}$ ne sont pas supplémentaires
+de deux façons. Première méthode : leur intersection est non nulle, par exemple
+$v_4=v_5-v_3$ est dans l'intersection. Deuxième méthode : les deux espaces n'engendrent pas tout,
+en effet il est facile de voir que $(0,0,1,0) \notin \mbox{Vect}\{v_1,v_4\} + \mbox{Vect}\{v_3, v_5\} 
+= \mbox{Vect}\{v_1,v_4,v_3, v_5\}$.
+
+
+\end{enumerate}
+\fincorrection
+\finexercice

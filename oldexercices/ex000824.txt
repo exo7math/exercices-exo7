@@ -1,0 +1,118 @@
+\exercice{824, cousquer, 2003/10/01}
+
+\enonce
+Décomposer les fractions rationnelles suivantes~; en
+calculer les primitives.
+\begin{enumerate}
+
+\item  $\displaystyle{1 \over a^2+x^2}$.
+
+\item  ${1 \over{(1+x^2)}^2}$.
+
+\item  $\displaystyle{x^3 \over x^2-4}$.
+
+\item  $\displaystyle{4x \over{(x-2)}^2}$.
+
+\item  $\displaystyle{1 \over x^2+x+1}$.
+
+\item  $\displaystyle{1 \over{(t^2+2t-1)}^2}$.
+
+\item  $\displaystyle{3t+1 \over{(t^2-2t+10)}^2}$.
+
+\item  $\displaystyle{3t+1 \over{t^2-2t+10}}$.
+
+\item  $\displaystyle{ 1 \over{t^3+1}}$.
+
+\item  $\displaystyle{x^3+2 \over{(x+1)}^2}$.
+
+\item  $\displaystyle{x+1 \over{x{(x-2)}^2}}$.
+
+\item  $\displaystyle{(x^2-1)(x^3+3) \over2x+2x^2}$.
+
+\item  $\displaystyle{x^2 \over{{(x^2+3)}^3 (x+1)}}$.
+
+\item  $\displaystyle{x^7+x^3-4x-1 \over x{(x^2+1)}^2}$.
+
+\item  $\displaystyle{3x^4-9x^3+12x^2-11x+7\over(x-1)^3(x^2+1)}$.
+\end{enumerate}
+
+
+
+\finenonce
+
+\noindication
+
+\correction
+ Résultats valables sur chaque intervalle 
+du domaine de définition.
+\begin{enumerate}
+
+
+\item  ${1 \over x^2+a^2}$ est un élément simple.
+Primitives~: ${1 \over a} \arctan({x \over a})+k$.
+
+\item  ${1 \over{(1+x^2)}^2}$ est un élément simple.
+Primitives~: ${1 \over2} \arctan x + {x \over2(1+x^2)}+k$.
+
+\item  ${x^3 \over x^2-4}=x+{2 \over x-2}+{2 \over x+2}$.
+Primitives~: ${x^2 \over2}+ \ln(x^2-4)^2 +k$.
+
+\item  ${4x \over{(x-2)}^2}={4 \over x-2}+{8 \over{(x-2)}^2}$.
+Primitives~: $4 \ln\vert x-2\vert-{8 \over x-2}+k$.
+
+\item  ${1 \over x^2+x+1}$ est un élément simple.
+Primitives~: ${2 \over\sqrt3} \arctan{(2x+1) \over\sqrt3}+k$.
+
+\item  $ {1 \over{(t^2+2t-1)}^2} = {1 \over8{(t+1+ \sqrt2)}^2 }+
+{ \sqrt2 \over16(t+1+\sqrt2)} + {1 \over8{(t+1- \sqrt2)}^2}+
+{ - \sqrt2 \over16(t+1- \sqrt2)}$.\newline
+Primitives~: $-{t+1 \over4(t^2+2t-1)} +{\sqrt2 \over16} \ln
+\left\vert{t+1+ \sqrt2 \over t+1- \sqrt2 } \right\vert+ k$.
+
+\item  $ {3t+1 \over{(t^2-2t+10)}^2}$ est un élément simple.\newline
+Primitives~: $-{3 \over2(t^2-2t+10)} +{2(t-1) \over9(t^2-2t+10)}
++{2 \over27} \arctan({t-1 \over3}) +k $.
+
+\item  $ {3t+1 \over t^2-2t+10}$ est un élément simple.
+Primitives~: ${3 \over2} \ln(t^2-2t+10) +{4 \over3} \arctan({t-1
+\over3})+k$.
+
+\item  ${1 \over t^3+1}={1 \over3(t+1)}-{t-2 \over3(t^2-t+1)}$.
+Primitives~: $ {1 \over3}\ln\vert t+1 \vert-{1 \over6} \ln(
+t^2-t+1) + {1 \over\sqrt3} \arctan({2t-1 \over\sqrt3}) +k$.
+
+\item  $ {x^3+2 \over{(x+1)}^2}= x-2+{3 \over x+1}+{1 \over{(x+1)}^2}$.
+Primitives~: ${x^2 \over2}-2x+3 \ln\vert x+1 \vert-{1 \over x+1} +k$.
+
+\item  ${x+1 \over x{(x-2)}^2}= {1 \over4x}- {1 \over4(x-2)}
+ +{3 \over2{(x-2)}^2}$.
+Primitives~: $ {1 \over4} \ln\vert x \vert-{1 \over4} \ln\vert x-2 \vert
+-{3 \over2(x-2)} +k$.
+
+\item  ${(x^2-1)(x^3+3) \over2x+2x^2}= {1 \over2} (x^3-x^2+3) -{3 \over2x}
+$.
+Primitives~: ${x^4 \over8}-{x^3 \over6}+{3x \over2}-{3 \over2}\ln\vert x
+\vert+k$.
+
+\item  ${x^2 \over{(x^2+3)}^3(x+1)}={1 \over4^3(x+1)}+
+{1-x \over4^3 (x^2+3)} +
+{1-x \over4^2 {(x^2+3)}^2}
+-{3(1-x) \over4{(x^2+3)}^3}$.\newline
+Primitives~: $-{x+3 \over4^2{(x^2+3)}^2}-{2x-3 \over3.2^5(x^2+3)}
+-{1 \over2^7}\ln(x^2+3) - {1 \over3 \sqrt3  \, 2^6} \arctan({x \over\sqrt3})
++{1 \over4^3}\ln\vert x+1 \vert+k$.
+
+\item  ${x^7+x^3-4x-1 \over x{(x^2+1)}^2}= x^2-2-{1 \over x} +{x+4 \over x^2+1}+
+{x-6 \over{(x^2+1)}^2}$.\newline
+Primitives~: ${x^3 \over3}-2x -\ln\vert x \vert+{1 \over2}\ln
+(1+x^2) +\arctan x -{6x+1 \over2(x^2+1)} +k$.
+
+\item  ${3x^4-9x^3+12x^2-11x+7\over(x-1)^3(x^2+1)}={1\over
+(x-1)^3}-{2\over(x-1)^2}+{3\over x-1}-{1\over x^2+1}$.\newline
+Primitives~: $-{1/2\over(x-1)^2}+{2\over x-1}+3\ln\vert
+x-1\vert-\arctan x +k$.
+\end{enumerate}
+\fincorrection
+
+\finexercice
+

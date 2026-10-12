@@ -1,0 +1,51 @@
+\exercice{2518, queffelec, 2009/04/01}
+\enonce
+\begin{enumerate}
+\item Soit $f$ une application r\'eelle continue et d\'erivable
+sur $]a,b[$ telle que $f'(x)$ ait une limite quand
+$x\buildrel{<}\over{\to}b$; alors $f$ se prolonge en une fonction
+continue et d\'erivable \`a gauche au point $b$.
+
+\item Soit $f$ une application continue et d\'erivable sur un
+intervalle $I\subset\Rr$, et de d\'eriv\'ee croissante; montrer
+que $f$ est convexe sur $I$ i.e. $f((1-t)x+ty)\leq
+(1-t)f(x)+tf(y)$ pour tous $x<y$ de $I$ et $t\in[0,1]$. (Poser
+$z=(1-t)x+ty$ et appliquer les AF \`a $[x,z]$ puis $[z,y]$.)
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+Montrons que $f$ se prolonge par continuit\'e au point $b$, on
+montrera alors que $f$ est d\'erivable \`a gauche au point $b$ est
+que cette d\'eriv\'ee est $\lim_{x \rightarrow b^-}f'(x)$. Pour
+cel\`a montrons qu'il existe un r\'eel $k$ tel que toute suite
+$\{x_n\}$ tendant vers $b$ v\'erifie $\lim_{n\rightarrow \infty}
+f(x_n)=k$. Remarquons que la d\'eriv\'ee $f'(x)$ admettant une
+limite au point $b$, elle est born\'ee sur un petit voisinage (\`a
+gauche) de $b$ (notons $M$ ce majorant).
+ Soit $y_n$ une suite
+convergent vers $b$. Alors la suite $f(y_n)$ est de Cauchy. En
+effet, pour tout $\epsilon >0$, posons
+$\epsilon'=\frac{\epsilon}{2M}$. La suite $\{y_n\}$ \'etant de
+cauchy, $$\exists N \in \mathbb{N}, p,q \geq N \Rightarrow
+|y_p-y_q| \leq  \epsilon' \leq \frac{\epsilon}{2M}.$$ Or d'apr\`es
+les accroissements finis:
+$$f(y_p)-f(y_q)=(y_p-y_q)f'(c_{p,q}) \mbox { o\`u } c_{p,q} \in
+]y_p,y_q[.$$ Par cons\'equent, $$|f(y_p)-f(y_q)|\leq
+|y_p-y_q|.|f'(c_{p,q})| \leq \frac{\epsilon}{2M}M \leq
+\frac{epsilon}{2} < \epsilon$$ et donc la suite $\{f(y_n)\}$ est
+de cauchy et converge vers un r\'eel que nous noterons $l$.
+Montrons que c'est le cas pour toute autre suite $\{x_n\}$ qui
+tend vers $b$. On a $$f(x_n)=f(x_n)-f(y_n)+f(y_n).$$ D'apr\`es les
+accroissements finis,  $|f(x_n)-f(y_n)| \leq M.|x_n-y_n|$ et donc
+tend vers zero car les suites $x_n$ et $y_n$ tendent vers $b$. De
+plus, comme on l'a vu, $f(y_n)$ tend vers $k$ et donc $f(x_n)$
+aussi. Prolongeons $f$ par continuit\'e au point $b$ en posant
+$f(b)=k$. On a alors le taux d'accroissement
+$$T_xf=\frac{f(b)-f(x)}{b-x}=\frac{(b-x)f'(c_x)}{b-x}=f'(c_x)
+\mbox{ o\`u } c_x \in ]x,b[.$$ Quand $x$ tend vers $b$, $c_x$
+aussi et donc $T_xf$ tend vers $l$.
+\fincorrection
+\finexercice

@@ -1,0 +1,41 @@
+\exercice{5779, rouget, 2010/10/16}
+\enonce[***]
+Soit $f$ une fonction continue sur $[0,1]$, non nulle à valeurs réelles positives. Pour $P$ et $Q$ polynômes donnés, on pose $\Phi(P,Q) = \int_{0}^{1}f(t)P(t)Q(t)\;dt$.
+
+\begin{enumerate}
+ \item  Montrer que $\Phi$ est un produit scalaire sur $\Rr[X]$.
+
+\item  Montrer qu'il existe une base orthonormale $(P_n)_{n\in\Nn}$ pour $\Phi$ telle que, pour tout entier naturel $n$, $\text{deg}(P_n)= n$.
+
+\item  Soit $(P_n)_{n\in\Nn}$ une telle base. Montrer que chaque polynôme $P_n$, $n\in\Nn^*$, a $n$ racines réelles simples.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  L'existence, la bilinéarité, la symétrie et la positivité sont immédiates. Soit $P\in\Rr[X]$. 
+
+\begin{align*}\ensuremath
+\Phi(P,P) = 0&\Rightarrow\int_{0}^{1}f(t)P^2(t)\;dt = 0\\
+ &\Rightarrow \forall t\in[0,1],\;f(t)P^2(t)= 0\; (\text{fonction continue positive d'intégrale nulle}).
+\end{align*}
+
+Maintenant, la fonction $f$ est continue, positive sur $[0,1]$ et n'est pas nulle. Donc la fonction $f$ est strictement positive sur un intervalle ouvert non vide inclus dans le segment $[0,1]$. Par suite, le polynôme $P$ a une infinité de racines et finalement $P = 0$.
+
+\begin{center}
+\shadowbox{
+L'application $\Phi$ est un produit scalaire sur $\Rr[X]$.
+}
+\end{center}
+
+\item  L'orthonormalisée de la base canonique de $\Rr[X]$ répond à la question.
+
+\item  Soit $n$ un entier naturel non nul. Le polynôme $P_n\in(P_0,...,P_{n-1})^\bot=(\Rr_{n-1}[X])^\bot$.
+Soit $p$ le nombre de racines réelles d'ordre impair du polynôme $P_n$. Soient $a_1$,..., $a_p$ ces racines (deux à deux distinctes, réelles et d'ordre impair) dans le cas où $p\geqslant1$. Si $p\geqslant1$, on pose $Q= (X-a_1)...(X-a_p)$ et si $p=0$, on pose $Q = 1$.
+
+Si $p < n$, le polynôme $Q$ est orthogonal à $P_n$ car de degré strictement plus petit que le de gré de $P_n$. D'autre part , au vu de la définition de $Q$, la fonction $t\mapsto f(t)P_n(t)Q(t)$ est continue sur $[0,1]$, de signe constant sur $[0,1]$, d(intégrale nulle sur $[0,1]$. La fonction $t\mapsto f(t)P_n(t)Q(t)$ est donc nulle. On en déduit que le polynôme $P_n$ est le polynôme nul ce qui n'est pas. Donc $p = n$ ce qui signifie que le polynôme $P_n$ a $n$ racines réelles simples.
+\end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,28 @@
+\exercice{3671, quercia, 2010/03/11}
+\enonce[Projecteurs commutant]
+
+Soit $E$ un espace vectoriel euclidien et $p$, $q$ deux projections
+orthogonales. Montrer que $p$ et $q$ commutent si et seulement si
+$(\Im p\cap\Im q)^\bot \cap \Im p$ et
+$(\Im p\cap\Im q)^\bot \cap \Im q$ sont orthogonaux.
+\finenonce
+
+\noindication
+
+\correction
+{\def\IIII{(\Im p\cap\Im q)}%
+\def \orthooo{\buildrel\bot\over\oplus}%
+Si $p\circ q = q\circ p$ :
+Soient $x\in \IIII^\bot \cap \Im p$ et $y\in \IIII^\bot \cap \Im q$.
+
+Alors $p\circ q(x) = q(x) \in \Im p\cap \Im q$,
+donc $(q(x)\mid y)=(x\mid y) = 0$.
+Si
+$A = \IIII^\bot \cap \Im p$ et $B = \IIII^\bot \cap \Im q$ sont orthogonaux :
+Alors $\Im p = \IIII\orthooo A$, $\Im q = \IIII \orthooo B$, et
+$E = \IIII \orthooo A \orthooo B \orthooo (\Im p^\bot \cap \Im q^\bot)$.
+Par décomposition, on obtient $p\circ q = q \circ p ={} $
+la projection orthogonale sur $\Im p \cap \Im q$.}
+\fincorrection
+
+\finexercice

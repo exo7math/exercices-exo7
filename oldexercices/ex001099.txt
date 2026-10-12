@@ -1,0 +1,124 @@
+\exercice{1099, legall, 1998/09/01}
+\video{96dAjfnOIhI}
+\enonce
+Soient  
+$A=\begin{pmatrix} 
+1 & 2 & 1 \cr
+3 & 4 & 1 \cr
+5 & 6 & 1 \cr
+7 & 8 & 1 \cr
+\end{pmatrix},\ 
+B=\begin{pmatrix} 
+2 & 2 & -1 & 7  \cr
+4 & 3 & -1 & 11 \cr
+0 & -1 & 2 & -4 \cr
+3 & 3 & -2 & 11 \cr 
+\end{pmatrix} $.
+Calculer $\textrm{rg}(A)$ et $\textrm{rg}(B)$. Déterminer une base du
+noyau et une base de l'image pour chacune des applications linéaires associées $f_A$ et $f_B$.
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item 
+  \begin{enumerate}
+     \item Commençons par des remarques élémentaires : la matrice est non nulle donc $\textrm{rg}(A) \ge 1$
+et comme il y a $p=4$ lignes et $n=3$ colonnes alors $\textrm{rg}(A) \le \min(n,p)=3$.
+
+     \item Ensuite on va montrer $\textrm{rg}(A) \ge 2$ en effet le sous-déterminant $2\times 2$ 
+(extrait du coin en haut à gauche) :
+$\begin{vmatrix} 
+1 & 2 \cr
+3 & 4 \cr
+\end{vmatrix}= -2$ est non nul.
+
+     \item Montrons que $\textrm{rg}(A)=2$. Avec les déterminants il faudrait vérifier que pour toutes
+les sous-matrices $3\times 3$ les déterminants sont nuls. Pour éviter de nombreux calculs on remarque ici
+que les colonnes sont liées par la relation $v_2=v_1+v_3$. Donc $\textrm{rg}(A)=2$.
+
+     \item L'application linéaire associée à la matrice $A$ est l'application 
+$f_A : \Rr^3 \to \Rr^4$. Et le théorème du rang 
+$\dim \Ker f_A+ \dim \Im f_A = \dim \Rr^3$ donne ici
+$\dim \Ker f_A = 3 - \textrm{rg}(A)=1$.
+
+Mais la relation $v_2=v_1+v_3$ donne immédiatement un élément du noyau :
+en écrivant $v_1-v_2+v_3=0$ alors $A\begin{pmatrix}1\\-1\\1\end{pmatrix}=\begin{pmatrix}0\\0\\0\end{pmatrix}$
+Donc $\begin{pmatrix}1\\-1\\1\end{pmatrix} \in \Ker f_A$. Et comme le noyau est de dimension $1$ alors
+$$\Ker f_A = \textrm{Vect} \begin{pmatrix}1\\-1\\1\end{pmatrix}$$
+
+     \item Pour un base de l'image, qui est de dimension $2$, 
+     il suffit par exemple de prendre les deux premiers vecteurs colonnes de la matrice $A$ (ils sont clairement non colinéaires) :
+$$\Im f_A = \textrm{Vect} \left\{ v_1, v_2 \right\} = 
+\textrm{Vect} \left\{  \begin{pmatrix}1\\3\\5\\7\end{pmatrix},  \begin{pmatrix}1\\1\\1\\1\end{pmatrix} \right\}
+$$
+
+  \end{enumerate}
+
+
+  \item On fait le même travail avec $B$ et $f_B$.
+  \begin{enumerate}
+     \item Matrice non nulle avec $4$ lignes et $4$ colonnes donc $1 \le \textrm{rg}(B) \le 4$.
+
+     \item Comme le sous-déterminant (du coin supérieur gauche)
+$\begin{vmatrix} 
+2 & 2 \cr
+4 & 3 \cr
+\end{vmatrix}= -2$ est non nul alors $\textrm{rg}(B) \ge 2$.
+
+     \item Et pareil avec le sous-déterminant $3\times 3$ :
+$$\begin{vmatrix} 
+2 & 2 & -1 \cr
+4 & 3 & -1 \cr
+0 & -1 & 2 \cr
+\end{vmatrix} = -2$$
+qui est non nul donc $\textrm{rg}(B) \ge 3$.
+
+     \item Maintenant on calcule le déterminant de la matrice $B$ et 
+on trouve $\det B = 0$, donc $\textrm{rg}(B) < 4$. Conclusion $\textrm{rg}(B) = 3$.
+Par le théorème du rang alors $\dim \Ker f_B=1$.
+
+
+
+     \item Cela signifie que les colonnes (et aussi les lignes) sont liées, comme il n'est pas clair
+de trouver la relation à la main on résout le système $B X = 0$ pour trouver cette relation ; autrement dit :
+$$\begin{pmatrix} 
+2 & 2 & -1 & 7  \cr
+4 & 3 & -1 & 11 \cr
+0 & -1 & 2 & -4 \cr
+3 & 3 & -2 & 11 \cr 
+\end{pmatrix}
+\cdot 
+\begin{pmatrix} x\\y\\z\\t \end{pmatrix} = 
+\begin{pmatrix} 0\\0\\0\\0 \end{pmatrix}
+\text{ ou encore }
+\left\{ 
+\begin{array}{rcl}
+2x + 2y -z + 7t  &=& 0  \cr
+4x + 3y -z + 11t &=& 0 \cr
+     -y +2z -4t  &=& 0  \cr
+3x + 3y -2z+ 11t &=& 0  \cr   
+\end{array}
+\right.$$
+Après résolution de ce système on trouve que 
+les solutions s'écrivent $(x,y,z,t)= (-\lambda,-2\lambda,\lambda,\lambda)$.
+Et ainsi 
+$$\Ker f_B = \textrm{Vect} \begin{pmatrix}-1\\-2\\1\\1\end{pmatrix}$$
+Et pour une base de l'image il suffit, par exemple, de prendre les $3$ premiers vecteurs colonnes $v_1,v_2,v_3$ 
+de la matrice $B$, car ils sont linéairement indépendants :
+$$\Im f_B = \textrm{Vect} \left\{ v_1, v_2, v_3 \right\} = 
+\textrm{Vect} \left\{  
+\begin{pmatrix}2\\4\\0\\3\end{pmatrix},  
+\begin{pmatrix}2\\3\\-1\\3\end{pmatrix},
+\begin{pmatrix}-1\\-1\\2\\-2\end{pmatrix} 
+\right\}
+$$
+
+  \end{enumerate}
+\end{enumerate}
+
+
+\fincorrection
+
+\finexercice

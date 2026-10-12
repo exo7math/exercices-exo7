@@ -1,0 +1,177 @@
+\exercice{2310, barraud, 2008/04/24}
+\enonce
+\begin{enumerate}
+  \item Montrer que $z \in \mathbb{Z}[\sqrt{d}]$ est inversible ssi $N_d(z)
+   = \pm 1$.  D\'eterminer les \'el\'ements inversibles de $\mathbb{Z}[\sqrt{-5}]$.
+  \item  Montrer que si $N_d(z) = \pm p$, o\`u $p$ est un premier, alors
+   $z$ est irr\'eductible dans $\mathbb Z[\sqrt{d}]$.  Donner quelques
+   exemples d'\'el\'ements irreductibles dans $\mathbb{Z}[\sqrt{d}]$ pour
+   $d=-1$, $2$, $-6$, $p$, o\`u $p$ un premier.
+  \item On note $A=\mathbb{Z}[\sqrt{-5}]$.  Montrer que $3$ et $2+\sqrt{-5}$
+   sont irr\'eductibles dans $A$.
+  \item Trouver tous les irr\'eductibles de $A$ de norme $9$.
+  \item Trouver tous les diviseurs de $9$ et de $3(2+\sqrt{-5})$ dans
+  l'anneau $A$ \`a association pr\`es.
+  \item Trouver un $pgcd\,(3, 2+\sqrt{-5})$, et montrer que $3$ et
+   $2+\sqrt{-5}$ n'ont pas de $ppcm$ dans l'anneau $A$.
+  \item Montrer que l'id\'eal $I = (3, 2+\sqrt{-5}) \subset A$ n'est pas
+  principal.  Donc l'anneau $A$ n'est pas principal. Est-il factoriel
+  ?
+  \item Montrer que $9$ et $3(2+\sqrt{-5})$ n'ont pas de $pgcd$ dans $A$.
+  Poss\`edent-ils un $ppcm$ ?
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item
+  \begin{itemize}
+  \item {Si $z\in\Z[\sqrt{d}]$ est inversible~:} 
+
+    Alors $zz^{-1}=1$, donc $N(z)N(z^{-1})=1$. Comme $N(z)\in\Z$ et
+    $N(z^{-1})\in\Z$, on a donc $N(z)\in\{1,-1\}$.
+    
+  \item Si $N(z=\pm1)$~:
+
+    Alors $z\bar{z}=\pm1$, donc $z(\pm\bar{z})=1$. Comme
+    $\pm\bar{z}\in\Z[\sqrt{d}]$, $z$ est inversible.
+  \end{itemize}
+\item Soient $z_{1},z_{2}\in\Z[\sqrt{d}]$ tels que $z=z_{1}z_{2}$. Alors
+$N(z_{1})N(z_{2})=\pm p$. Comme $\pm p$ est irréductible sur $\Z$, on en
+déduit que $N(z_{1})=\pm1$ ou $N(z_{2})=\pm1$. D'après la question
+précédente, on a $z_{1}\in\Z[\sqrt{d}]^{\times}$ ou
+$z_{2}\in\Z[\sqrt{d}]^{\times}$~: on en déduit que $z$ est irréductible
+dans $\Z[\sqrt{d}]$.
+
+(Attention~: $p$ est premier donc irréductible dans $\Z$, mais peut être
+réductible dans $\Z[\sqrt{d}]$~! cf. $2$ dans $\Z[i]$.)
+\item On a $N(3)=N(2+\sqrt{-5})=9$. On peut montrer en fait que tout élément
+$z$ de norme $9$ est irréductible~: si $z=z_{1}z_{2}$, alors
+$N(z_{1})N(z_{2})=9$. Donc $\{N(z_{1}),N(z_{2})\}=\{1,9\}$ ou $\{3,3\}$
+(dans $\Z[\sqrt{-5}]$, la norme est toujours positive). Or pour tout
+$(n,m)\in\Z^{2}, n^{2}+5m^{2}\neq 3$. En effet, si $|m|\geq 1,
+n^{2}+5m^{2}\geq 5$ et pour $m=0$, l'équation revient à $n^{2}=3$, qui
+n'a pas de solution entière. Ainsi, $N(z_{1})=1$ ou $N(z_{2})=1$, donc
+$z_{1}$ ou $z_{2}$ est inversible. $z$ n'a donc pas de factorisation non
+triviale~: $z$ est irréductible dans $\Z[\sqrt{-5}]$. En particulier, $3$
+et $2+\sqrt{-5}$ le sont.
+\item Tout élément de $A$ de norme $9$ est irréductible. Il suffit donc de
+trouver tous les éléments de norme $9$. Soit $z=n+m\sqrt{-5}\in A$. Si
+$|m|\geq 2$ ou $|n|\geq 4$, alors $N(z)>9$. On cherche donc les éléments
+de norme $9$ parmi les éléments $z=n+m\sqrt{-5}$ avec $|n|\leq3$ et
+$|m|\leq 1$. Pour $m=0$, les seules solutions sont $n=\pm 3$, pour
+$|m|=1$, les solutions sont obtenues pour $|n|=2$. Ainsi~:
+$$
+\forall z\in A:\ \ N(z)=9\Leftrightarrow z\in\{\pm3,\pm(2\pm\sqrt{5})\}
+$$
+\item On a $N(9)=81$. Donc si $9=z_{1}z_{2}$ est une factorisation de $9$ dans
+$A$, $N(z_{1})N(z_{2})$ est une factorisation de $81$ (dans $\Z$), et
+plus précisément on a
+$\{N(z_{1}),N(z_{2})\}\in\Big\{\{1,81\},\{3,27\},\{9,9\}\Big\}$.
+
+Si $N(z_{1})=1$ ou $N(z_{2})=1$, la factorisation est triviale.
+
+$A$ n'a pas d'élément de norme $3$ donc la paire $\{3,27\}$ n'est pas
+réalisable.
+
+Si enfin $N(z_{1})=N(z_{2})=9$, alors
+$z_{1},z_{2}\in\{\pm3,\pm(2\pm\sqrt{5})\}$. Comme
+$9=3\cdot3=(2+\sqrt{-5})(2-\sqrt{-5})$, tous ces éléments sont diviseurs
+de $9$.
+
+Les diviseurs de $9$ sont donc $\{\pm1,\pm3,\pm(2\pm\sqrt{-5}),\pm9\}$. 
+
+\medskip
+
+Comme $N(3(2+\sqrt{-5}))=81$, le même raisonnement montre que si $d\in A$
+divise $3(2+\sqrt{-5})$, alors
+$d\in\{\pm1,\pm3,\pm(2\pm\sqrt{-5}),\pm3(2\pm\sqrt{-5})\}$.
+
+Si $(2-\sqrt{-5})a=3(2+\sqrt{-5})$, alors $N(a)=9$, donc $a=\pm3$ ou
+$\pm(2\pm\sqrt{-5})$. Comme $A$ est intègre, si $a=\pm3$, on obtient
+$2-\sqrt{-5}=\pm(2+\sqrt{-5})$, ce qui est faux. Si $a=\pm(2+\sqrt{-5})$,
+on obtient $2-\sqrt{-5}=\pm3$, ce qui est faux. Si enfin
+$a=\pm(2-\sqrt{-5})$, on obtient $\pm(-1-4\sqrt{-5})=6+3\sqrt{-5})$, ce
+qui est encore faux. Donc $2-\sqrt{-5}$ ne divise pas $3(2+\sqrt{-5})$
+dans $A$. Tous les autres éléments de norme $9$ divisent
+$3(2+\sqrt{-5})$, donc, finalement~:
+
+Les diviseurs de $3(2+\sqrt{-5})$ sont
+$\{\pm1,\pm3,\pm(2+\sqrt{-5}),\pm3(2+\sqrt{-5})\}$.
+
+(Attention~: Le seul fait que $3$ et $2+\sqrt{-5}$ soient irréductibles
+ne permet pas de conclure~! Si l'anneau n'est pas factoriel, un produit
+d'irréductibles $p_{1}p_{2}$ peut avoir d'autres diviseurs (à association
+près) que $p_{1}$ et $p_{2}$... cf $3\cdot3=(2+\sqrt{-5})(2-\sqrt{-5})$~!)
+
+\item On connaît la liste des diviseurs de $3$ et de $2+\sqrt{-5}$. Les seuls
+qui soient communs sont $1$ et $-1$. On en déduit que $1$ est un $\pgcd$
+de $3$ et $2+\sqrt{-5}$. 
+
+\medskip
+
+$9$ et $3(2+\sqrt{-5})$ sont des multiples communs de $3$ et
+$2+\sqrt{-5}$, donc si ces deux éléments admettent un $\mathrm{ppcm}$ $m$, on a
+$m|9$ et $m|3(2+\sqrt{-5})$. On connaît la liste des diviseurs de $9$ et
+$3(2+\sqrt{-5})$~: à association près, on en déduit que
+$m\in\{1,3,2+\sqrt{-5}\}$. Comme $3|m$, la seule possibilité est $m=3$,
+et comme $(2+\sqrt{-5})|m$, la seule possibilité est $m=2+\sqrt{-5}$. Il
+y a donc contradiction~:
+
+$3$ et $2+\sqrt{-5}$ n'ont pas de $\mathrm{ppcm}$ dans $A$.
+
+\item 
+Supposons $I$ principal~: soit $a\in A$ un générateur~: $I=(a)$. Alors
+$a$ est un diviseur commun à $3$ et $2+\sqrt{-5}$, donc $a=\pm1$. (En
+particulier, $I=A$). Soient $u=u_{1}+u_{2}\sqrt{-5}$ et
+$v=v_{1}+v_{2}\sqrt{-5}$ deux éléments de $A$. On a~:
+\begin{align*}
+3u+(2+\sqrt{-5})v=1
+&\Leftrightarrow (3u_{1}+2v_{1}-5v_{2})+(3u_{2}+v_{1}+2v_{2})\sqrt{-5}=1\\
+&\Leftrightarrow \left\{
+\begin{array}{rl}
+3u_{1}+2v_{1}-5v_{2}&=1\\
+3u_{2}+v_{1}+2v_{2}&=0
+\end{array}\right.\\
+&\Rightarrow \left\{
+\begin{array}{rl}
+-v_{1}+v_{2}&\equiv1 [3]\\
+v_{1}-v_{2}&\equiv0 [3]
+\end{array}\right.
+\end{align*}
+Donc $\forall u,v\in A,\ 3u+(2+\sqrt{-5})v\neq 1$. Donc $1\notin I$, ce
+qui est une contradiction~: $I$ n'est pas principal.
+
+L'anneau $A$ n'est pas principal puisqu'il a au moins un idéal non
+principal. Il n'est pas non plus factoriel, puisque
+$9=3\,3=(2+\sqrt{-5})(2-\sqrt{-5})$ admet deux factorisation en
+irréductibles non équivalentes à association près.
+
+\item
+  \begin{itemize}
+  \item 
+Les diviseurs communs de $9$ et $3(2+\sqrt{-5})$ sont $\{\pm1,\pm 3,
+\pm(2+\sqrt{-5})\}$. Si $9$ et $3(2+\sqrt{-5})$ admettent un $\pgcd$ $d$,
+alors $d$ est dans cette liste, et divisible par tous les membre de cette
+liste. Mais $3$ n'est pas divisible par $2+\sqrt{-5}$ et $2+\sqrt{-5}$ ne
+divise pas $3$~: $9$ et $2+\sqrt{-5}$ n'ont pas de $\pgcd$.
+
+
+  \item
+Supposons que $9$ et $3(2+\sqrt{-5})$ admettent un $\mathrm{ppcm}$ $M$. Alors il
+existe des éléments $a,b\in A$ tels que $M=9a=3(2+\sqrt{-5})b$. Notons
+$m=3a=(2+\sqrt{-5})b$ ($A$ est intègre).
+
+$m$ est un multiple commun de $3$ et $2+\sqrt{-5}$.
+
+Soit $k$ un multiple commun de $3$ et $2+\sqrt{-5}$. Alors $3k$ est un
+multiple commun de $9$ et $3(2+\sqrt{-5})$, donc $M|3k$~: $\exists c\in
+A, 3k=Mc=3mc$. On en déduit que $k=mc$ ($A$ est intègre), donc $m|k$. On
+en déduit que $m$ est un $\mathrm{ppcm}$ de $3$ et $2+\sqrt{-5}$, ce qui est
+impossible.
+  \end{itemize}
+\end{enumerate}
+\fincorrection
+\finexercice

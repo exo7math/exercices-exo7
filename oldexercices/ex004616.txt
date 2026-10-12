@@ -1,0 +1,31 @@
+\exercice{4616, quercia, 2010/03/14}
+\enonce[Croissance de $f$ en fonction des coefficients]
+
+Soit $f(z) = \sum_{n=0}^\infty a_nz^n$ une série entière de rayon de
+convergence infini. Montrer l'équivalence entre les propriétés :
+
+\indent 1: Pour tout $a > 0$, la fonction $z \mapsto f(z)e^{-a|z|}$ est bornée sur
+           $\C$.\par
+\indent 2: $\sqrt[n]{n!\,|a_n|} \to 0$ lorsque $n\to\infty$.\par
+
+On utilisera les formules de Cauchy (cf. exercice~\ref{Cauchy}).
+
+\finenonce
+
+\noindication
+
+\correction
+$2 \Rightarrow 1$ : évident.\par
+         {$1 \Rightarrow 2$ : }Soit $a > 0$ et $M = \sup(|f(z)|e^{-a|z|})$.
+
+         $a_n = \frac1{2\pi} \int_{\theta=0}^{2\pi}
+                \frac{f(Re^{i\theta})}{R^ne^{in\theta}}\,d\theta
+           \Rightarrow  |a_n| \le M\frac{e^{aR}}{R^n} \le M\inf\limits_{R>0}
+                \frac{e^{aR}}{R^n}
+          = M\left(\frac{ea}n\right)^n$.
+
+          Donc $\sqrt[n]{n!\,\|a_n\|} \le \sqrt[n]{n!}\frac{ea}n
+               \to a$ lorsque $n\to\infty$. CQFD
+\fincorrection
+
+\finexercice

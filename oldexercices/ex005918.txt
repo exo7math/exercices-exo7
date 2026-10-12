@@ -1,0 +1,36 @@
+\exercice{5918, tumpach, 2010/11/11}
+\enonce
+Montrer qu'une fonction \emph{monotone} sur $[a,b]$ est
+Riemann-int\'egrable sur $[a,b]$.
+\finenonce
+
+\noindication
+
+\correction
+Soit $f$ une fonction croissante $[a,b]$. Pour montrer que $f$ est
+Riemann-int\'egrable, il suffit de trouver, pour tout
+$\varepsilon>0$ donn\'e, une subdivision de $[a, b]$ telle que
+$\overline{S}_{f}^{\sigma} - \underline{S}_{f}^{\sigma} <
+\varepsilon$. Soit $\sigma=\{a_{0}=a < \dots < a_{n} = b\}$ la
+subdivision r\'eguli\`ere de $[a,b]$, de pas
+$\left(\frac{b-a}{n}\right)$. On a
+\begin{equation*}
+\inf_{]a_{k-1}, a_{k}[} f = f(a_{k-1}) \quad \text{et} \quad
+\sup_{]a_{k-1}, a_{k}[} f = f(a_{k}).
+\end{equation*}
+Ainsi~:
+\begin{eqnarray*}
+\overline{S}_{f}^{\sigma} - \underline{S}_{f}^{\sigma} &=&
+\sum_{k=1}^{n} (a_{k} - a_{k-1})\left( f(a_{k}) - f(a_{k-1})
+\right) \\ &= &\left(\frac{b-a}{n}\right) \sum_{k=1}^{n}\left(
+f(a_{k}) - f(a_{k-1}) \right)\\& =&
+\left(\frac{b-a}{n}\right)\left(f(b)- f(a)\right).
+\end{eqnarray*}
+Pour $n$ assez grand, la subdivision r\'eguli\`ere de $[a,b]$
+satisfait $\overline{S}_{f}^{\sigma} - \underline{S}_{f}^{\sigma}
+< \varepsilon$. D'autre part, si $g$ est d\'ecroissante, $f = -g$
+est croissante, donc $g$ est Riemann-int\'egrable par l'exercice
+pr\'ec\'edent (question 2.) avec $\lambda = -1$.
+\fincorrection
+
+\finexercice

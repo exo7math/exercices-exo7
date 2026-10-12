@@ -1,0 +1,34 @@
+\exercice{2566, delaunay, 2009/05/19}
+\enonce
+Soit $$A=\begin{pmatrix}1&0&0 \\ 0&1&0 \\ 1&-1&2\end{pmatrix}$$
+D\'emontrer que $A$ est diagonalisable et trouver une matrice $P$ telle que $P^{-1}AP$ soit diagonale.
+\finenonce 
+
+\noindication
+
+\correction
+ Soit $$A=\begin{pmatrix}1&0&0 \\ 0&1&0 \\ 1&-1&2\end{pmatrix}$$
+{\it D\'emontrons que $A$ est diagonalisable et trouvons une matrice $P$ telle que $P^{-1}AP$ soit diagonale.}
+
+Commen\c cons par calculer le polyn\^ome caract\'eristique de $A$ :
+$$P_A(X)=\begin{vmatrix}1-X&0&0 \\  0&1-X&0 \\ 1&-1&2-X\end{vmatrix}=(1-X)^2(2-X)$$
+Les racines du polyn\^ome caract\'eristique sont les r\'eels $1$ avec la multiplicit\'e $2$, et $2$ avec la multiplicit\'e $1$.
+
+D\'eterminons les sous-espaces propres associ\'es : Soit $E_1$ le sous-espace propre associ\'e \`a la valeur propre double $1$.
+
+$E_1=\{V(x,y,z)\in\R^3/\ A.V=V\}$, 
+$$V\in E_1\iff \left\{ \begin{align*}x&=x \\  y&=y \\  x-y+z&=0\end{align*}\right.\iff x-y+z=0$$
+$E_1$ est donc un plan vectoriel, dont les vecteurs $e_1=(1,1,0)$ et $e_2=(0,1,1)$ forment une base.
+
+Soit $E_2$ le sous-espace propre associ\'e \`a la valeur propre simple $2$.
+
+$E_2=\{V(x,y,z)\in\R^3/\ A.V=2V\}$, 
+$$V\in E_2\iff \left\{ \begin{align*}x&=2x \\  y&=2y \\  x-y+2z&=2z\end{align*}\right.\iff x=0, y=0$$
+$E_2$ est donc une droite vectorielle, dont le vecteur $e_3=(0,0,1)$ est une base.
+
+Les dimensions des sous-espaces propres sont \'egales \`a la multiplicit\'e des valeurs propres correspondantes, la matrice $A$ est donc diagonalisable.
+Dans la base $(e_1, e_2, e_3)$ l'endomorphisme repr\'esent\'e par $A$ (dans la base canonique) a pour matrice.
+$$D=\begin{pmatrix}1&0&0 \\  0&1&0 \\  0&0&2\end{pmatrix}$$
+la matrice de passage $$P=\begin{pmatrix}1&0&0 \\  1&1&0 \\  0&1&1\end{pmatrix}$$ v\'erifie $P^{-1}AP=D$.
+\fincorrection
+\finexercice

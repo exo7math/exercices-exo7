@@ -1,0 +1,41 @@
+\exercice{3732, quercia, 2010/03/11}
+\enonce[Déterminant de Gram, X MP$^*$ 2005]
+
+Soit $E$ un espace vectoriel réel de dimension quelconque, $(x_{1},\ldots,x_{n})$ et $(y_{1},\ldots,y_{n})$ deux familles
+de vecteurs de $E$ et $\phi$ une forme bilinéaire symétrique positive.
+
+Montrer que $(\det [\phi(x_{i}, y_{j})])^{2}\le \det [\phi(x_{i}, x_{j})]\times \det [\phi(y_{i}, y_{j})]$.
+
+\finenonce
+
+\noindication
+
+\correction
+Quitte à remplacer $E$ par $\mathrm{vect}(x_1,\dots,y_n)$, on peut supposer $E$
+de dimension finie $p$. Soit $\cal B$ une base de $E$, et $X,Y$ et $F$
+les matrices de $(x_1,\dots,x_n)$, $(y_1,\dots,y_n)$ et $\phi$ dans $\cal B$.
+On doit prouver $\det({}^tXFY)^2 \le \det({}^tXFX)\det({}^tYFY)$.
+Comme $F$ est symétrique positive, elle est de la forme $F={}^tMM$ pour une
+certaine matrice carrée $M$, donc en rempla\c cant $X$ et $Y$ par
+$MX$ et $MY$, il suffit de prouver $\det({}^tXY)^2 \le \det({}^tXX)\det({}^tYY)$
+pour toutes matrices $X,Y$ réelles rectangulaires de même taille.
+
+En projetant chaque colonne de $Y$ sur le sous-espace vectoriel engendré par les colonnes de $X$,
+on peut décomposer $Y = XA + B$ où $A$ est une matrice carrée et $B$ une matrice
+rectangulaire de même taille que $X$ telle que ${}^tXB = 0$. Il reste à prouver:
+$\det({}^tXXA)^2 \le \det({}^tXX)\det({}^tA{}^tXXA+{}^tBB)$, soit:
+$\det({}^tA{}^tXXA) \le \det({}^tA{}^tXXA+{}^tBB)$.
+
+On pose $U={}^tA{}^tXXA$ et $V = {}^tBB$: $U$ et $V$ sont des matrices réelles
+symétriques positives de même taille, à priori quelquonques.
+Si $U$ est inversible, on écrit $U={}^tPP$ avec $P$ inversible
+et on est rammené à prouver que $1\le\det(I+{}^tP^{-1}VP^{-1}) = \det(I+W)$,
+avec $W$ symétrique positive, ce qui résulte du fait que toutes les valeurs
+propres de $I+W$ sont supérieures ou égales à $1$.
+Si $U$ n'est pas inversible, on remplace $U$ par $U+\varepsilon I$ avec
+$\varepsilon >0$, puis on fait tendre $\varepsilon$ vers $0^+$.
+
+Remarque: il y a peut-être plus simple?
+\fincorrection
+
+\finexercice

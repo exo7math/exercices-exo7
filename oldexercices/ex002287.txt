@@ -1,0 +1,57 @@
+\exercice{2287, barraud, 2008/04/24}
+\enonce
+Soit $A$ un anneau int\`egre. On appelle
+{\it \'el\'ement premier} de $A$ un \'el\'ement qui engendre un id\'eal
+principal premier. 
+\begin{enumerate}
+  \item Montrer que  un \'el\'ement premier est irr\'eductible.
+  \item D'apr\`es le cours  tout  \'el\'ement irr\'eductible dans un anneau  
+factoriel  est  premier. 
+Montrer que dans un anneau factoriel, tout id\'eal premier
+non nul contient un \'el\'ement irr\'eductible.
+
+  \item Nous avons vu que l'\'el\'ement $3\in \Zz[\sqrt{-5}]$ 
+est irr\'eductible. Montrer que $3$ n'est pas premier 
+dans $\Zz[\sqrt{-5}]$.
+  \item L'\'el\'ement  $2$ est-il irr\'eductible dans l'anneau 
+$\Zz[\sqrt{-5}]$ ?
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+  \begin{itemize}
+  \item 
+    Si $x\in A$ est premier~: soit $a,b\in A$ tels que $ab=x$. Alors
+    $ab\in(x)$ donc $a\in(x)$ ou $b\in(x)$. On en déduit que $a\sim x$ ou
+    $b\sim x$. Donc $x$ est irréductible.
+
+  \item
+    $A$ est supposé factoriel. Soit $I$ un idéal premier. Soit $x\in I$
+    et $x=p_{1}\dots p_{k}$ ``la'' factorisation de $x$ en produit
+    d'irréductibles. Alors $(p_{1}\cdots p_{n-1})p_{n}\in I$ donc
+    $(p_{1}\cdots p_{n-1})\in I$ ou $p_{n}\in I$. si $p_{n}$ in $I$, $I$
+    contient un irréductible. Sinon, $(p_{1}\cdots p_{n-2})p_{n-1}\in I$.
+    Par une récurrence finie, l'un au moins des $p_{i}\in I$, donc $I$
+    contient un irréductible.
+
+  \item
+    Dans $\Zz[\sqrt{-5}]$, $9\in(3)$. Pourtant
+    $9=(2+\sqrt{-5})(2-\sqrt{-5})$ et $(2\pm\sqrt{-5})\notin(3)$. Donc
+    $(3)$ n'est pas premier.
+
+  \item
+    $2$ est irréductible~: $2=z_{1}z_{2}$ avec $z_{i}\in\Zz[\sqrt{-5}]$,
+    alors $|z_{1}|^{2}|z_{2}|^{2}=4$, donc
+    $\{|z_{1}|^{2},|z_{2}|^{2}\}=\{1,4\}$ ou $\{2,2\}$. Dans le premier
+    cas, on a affaire à une factorisation triviale. Le second est
+    impossible, puisque l'équation $a^{2}+5b^{2}=2$ n'a pas de solution
+    entière $(a,b)$.
+
+    Par ailleurs, $(1+\sqrt{-5})(1+\sqrt{-5})=6\in(2)$, mais
+    $(1\pm\sqrt{-5})\notin(2)$ donc $2$ n'est pas premier dans
+    $\Zz[\sqrt{-5}]$.
+  \end{itemize}
+\fincorrection
+\finexercice

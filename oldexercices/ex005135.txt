@@ -1,0 +1,42 @@
+\exercice{5135, rouget, 2010/06/30}
+\enonce[**I]
+On considère l'équation $(E)~:~(z-1)^n-(z+1)^n=0$ où $n$ est un entier naturel supérieur ou
+égal à $2$ donné.
+
+\begin{enumerate}
+\item  Montrer que les solutions de $(E)$ sont imaginaires pures.
+\item  Montrer que les solutions de $(E)$ sont deux à deux opposées.
+\item  Résoudre $(E)$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Soit $z\in\Cc$. Soient $M$, $A$ et $B$ les points d'affixes resectives $z$, $1$ et $-1$.
+
+\begin{align*}
+z\;\mbox{solution
+de}\;(E)&\Rightarrow(z-1)^n=(z+1)^n\Rightarrow|(z-1)^n|=|(z+1)^n|\Rightarrow|z-1|^n=|z+1|^n
+\Rightarrow|z-1|=|z+1|\\
+ &\Rightarrow AM=BM\Rightarrow M\in\mbox{med}[AB]\Rightarrow M\in(Oy)\Rightarrow z\in i\Rr.
+\end{align*}
+ \item  Soit $z\in\Cc$.
+
+$$(-z-1)^n-(-z+1)^n=(-1)^n((z+1)^n-(z-1)^n)=-(-1)^n((z-1)^n-(z+1)^n).$$
+Par suite,
+
+$$z\;\mbox{solution de}\;(E)\Leftrightarrow(z-1)^n-(z+1)^n=0\Leftrightarrow(-z-1)^n-(-z+1)^n=0\Leftrightarrow-z\;\mbox{solution de}\;(E).$$
+
+\item  Soit $z\in\Cc$.
+\begin{align*}
+z\;\mbox{solution de}\;(E)&\Leftrightarrow(z-1)^n=(z+1)^n\Leftrightarrow\exists k\in\llbracket0,n-1\rrbracket/\;z-1=e^{2ik\pi/n}(z+1)\\
+&\Leftrightarrow\exists k\in\llbracket1,n-1\rrbracket/\;z=-\frac{e^{2ik\pi/n}+1}{e^{2ik\pi/n}-1}
+\Leftrightarrow\exists k\in\llbracket1,n-1\rrbracket/\;z=-\frac{e^{ik\pi/n}+e^{-ik\pi/n}}{e^{ik\pi/n}-e^{-ik\pi/n}}\\
+&\Leftrightarrow\exists k\in\llbracket1,n-1\rrbracket/\;z=-\frac{2\cos\frac{k\pi}{n}}{2i\sin\frac{k\pi}{n}}
+\Leftrightarrow\exists k\in\llbracket1,n-1\rrbracket/\;z=i\cotan\frac{k\pi}{n}
+\end{align*}
+\end{enumerate}
+\fincorrection
+\finexercice

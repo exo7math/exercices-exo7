@@ -1,0 +1,109 @@
+\exercice{3417, quercia, 2010/03/10}
+\video{V12UnKijqcg}
+\enonce
+
+\'Etudier l'existence de solutions du système :
+ $$\left\{\begin{array}{ccccccc} ax &+&  by &+&  z &=& 1 \cr
+             x &+& aby &+&  z &=& b \cr
+             x &+&  by &+& az &=& 1.\cr\end{array}\right.$$
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Pour éviter d'avoir à diviser par $a$ on réordonne nos lignes puis on applique la méthode du pivot :
+{\small
+$$\left\{\begin{array}{ccccccll}
+x &+&  by &+& az &=& 1 & _{L_1} \cr
+x &+& aby &+&  z &=& b & _{L_2} \cr
+ax &+&  by &+&  z &=& 1 & _{L_3} \cr
+\end{array}\right.
+\iff
+\left\{\begin{array}{ccccccll}
+x &+&  by &+& az &=& 1 &_{L_1} \cr
+  & & b(a-1)y &+&  (1-a)z &=& b-1 & _{L_2 \leftarrow L_2-L_1} \cr
+  &&  b(1-a)y &+&  (1-a^2)z &=& 1-a & _{L_3 \leftarrow L_3-aL_1} \cr
+\end{array}\right.
+$$
+}
+On fait ensuite $L_3 \leftarrow L_3+L_2$ pour obtenir un système triangulaire équivalent au système initial :
+$$\left\{\begin{array}{ccccccl}
+x &+&  by &+& az &=& 1  \cr
+  & & b(a-1)y &+&  (1-a)z &=& b-1  \cr
+  &&   &&  (2-a-a^2)z &=& b-a  \cr
+\end{array}\right.
+$$
+
+  \item Nous allons maintenant discuter de l'existence des solutions.
+Remarquons d'abord que $2-a-a^2= -(a-1)(a+2)$.
+Donc si $a\neq 1$ et $a\neq -2$ alors $2-a-a^2\neq 0$
+donc $z=\frac{a-b}{(a-1)(a+2)}$. On a donc trouvé la valeur de $z$.
+La deuxième ligne du système triangulaire est 
+$b(a-1)y +  (1-a)z = b-1$ on sait déjà $a-1\neq 0$.
+Si $b\neq 0$ alors, en reportant la valeur de $z$ obtenue, on trouve la valeur 
+$y= \frac{b-1 - (1-a)z}{b(a-1)}$.
+Puis avec la première ligne on en déduit aussi $x=1-by-az$.
+
+Donc si $a\neq 1$ et $a \neq -2$ et $b\neq 0$ alors il existe une unique solution $(x,y,z)$.
+
+  \item Il faut maintenant s'occuper des cas particuliers.
+  \begin{enumerate}
+
+     \item Si $a=1$ alors notre système triangulaire devient :
+$$\left\{\begin{array}{ccccccc}
+x &+&  by &+&z&=& 1 \cr
+  & & & &  0 &=& b-1 \cr
+  &&   &&  0 &=& b-1 \cr
+\end{array}\right.
+$$ 
+Si $b\neq 1$ il n'y a pas de solution.
+Si $a=1$ et $b=1$
+alors il ne reste plus que l'équation $x+y+z=1$.
+On choisit par exemple $y,z$ comme paramètres, l'ensemble des solutions 
+est $$\big\{(1-y-z,y,z) \mid y,z \in \Rr \big\}.$$
+
+  \item Si $a=-2$ alors le système triangulaire devient :
+$$\left\{\begin{array}{ccccccc}
+x &+&  by &-& 2z &=& 1 \cr
+  & & -3by &+&  3z &=& b-1 \cr
+  &&   &&  0 &=& b+2 \cr
+\end{array}\right.
+$$
+Donc si $b\neq -2$ il n'y a pas de solution. 
+Si $a=-2$ et $b=-2$ alors le système est
+$$\left\{\begin{array}{ccccccc}
+x &-&  2y &-& 2z &=& 1 \cr
+  & & 2y &+&  z &=& -1 \cr
+\end{array}\right.
+$$
+Si l'on choisit $y$ comme paramètre alors il y a une infinité de solutions
+$$\big\{(-1-2y,y,-1-2y) \mid y \in \Rr \big\}.$$
+
+    \item Enfin si $b=0$
+alors la deuxième et troisième ligne du système triangulaire sont :
+$(1-a)z =-1 $ et $(2-a-a^2)z =-a$. Donc $z=\frac{-1}{1-a}=\frac{-a}{2-a-a^2}$
+(le sous-cas $b=0$ et $a=1$ n'a pas de solution).
+Dans tous les cas il n'y a pas de solution.
+
+    \item Conclusion :
+\begin{itemize}
+  \item Si $a\neq 1$ et $a\neq -2$ et $b\neq 0$, c'est un système de Cramer : il admet une unique solution.
+  \item Si $a=1$ et $b\neq 1$ il n'y a pas de solution (le système n'est pas compatible).
+  \item Si $a=1$ et $b=1$ il y a une infinité de solutions (qui forment un plan dans $\Rr^3$).
+  \item Si $a=-2$ et $b\neq -2$ il n'y a pas de solution. 
+  \item Si $a=-2$ et $b=-2$ il y a une infinité de solutions (qui forment une droite dans $\Rr^3$).
+  \item Si $b=0$ il n'y a pas de solution.
+\end{itemize}
+
+  \end{enumerate}
+
+\end{enumerate}
+% $a\ne 1,-2$ et $b\ne0 \iff$ Cramer. \par
+%          \leavevmode\vbox{\halign{$#$\hfil$\,  \Rightarrow \,$&#\hfil\cr
+%          b=0  &incompatible.            \cr
+%          a=1  &des solutions ssi $b=1$. \cr
+% 	 a=-2 &des solutions ssi $b=-2$.\cr}}
+\fincorrection
+
+\finexercice

@@ -1,0 +1,63 @@
+\exercice{2622, debievre, 2009/05/19}
+\enonce
+D\'eterminer, pour chacune des fonctions suivantes, le domaine 
+de d\'efinition $D_f$. 
+Pour chacune des fonctions,
+calculer ensuite 
+les d\'eriv\'ees partielles en chaque point du
+domaine de d\'efinition  lorsqu'elles existent:
+\begin{enumerate}
+ \item $f(x,y)=x^2\exp(xy)$,
+ \item $f(x,y)=\ln(x+\sqrt{x^2+y^2})$,
+ \item $f(x,y)=\sin^2 x+ \cos^2y$,
+ \item $f(x,y,z)=x^2y^2\sqrt{z}$.
+\end{enumerate}
+\finenonce
+
+\indication 
+Pour calculer les  d\'eriv\'ees partielles par rapport 
+\`a une variable, interp\'eter les autres variables comme param\`etres
+et utiliser les r\`egles de calcul de la d\'eriv\'ee ordinaires.
+\finindication
+
+\correction
+
+\noindent
+\begin{enumerate}  
+
+\item $D_f=\R^2$. 
+\begin{align*}
+\frac{\partial f}{\partial x}&= 2x\exp(xy)+x^2y\exp(xy)
+\\
+\frac{\partial f}{\partial y}&= x^3\exp(xy)
+\end{align*}
+\noindent
+\item $D_f=\{(x,y); x > 0 \ \text{ou} \ y \ne 0\}\subseteq \R^2$.
+\begin{align*}
+\frac{\partial f}{\partial x}&= 
+\frac{1+\frac{x}{\sqrt{x^2+y^2}}}{x+\sqrt{x^2+y^2}}= 
+\frac 1{\sqrt{x^2+y^2}}
+\\
+\frac{\partial f}{\partial y}&=  
+\frac{\frac{y}{\sqrt{x^2+y^2}}}{x+\sqrt{x^2+y^2}}
+=\frac{y}{x\sqrt{x^2+y^2}+x^2+y^2}
+\end{align*}
+
+\item $D_f=\R^2$. 
+\begin{align*}
+\frac{\partial f}{\partial x}&= 2\sin x \cos x
+\\
+\frac{\partial f}{\partial y}&= -2\sin y \cos y 
+\end{align*}
+
+\item $D_f=\{(x,y,z); z \ne 0\}\subseteq \R^3$.
+\begin{align*}
+\frac{\partial f}{\partial x}&= 2xy^2\sqrt{z}
+\\
+\frac{\partial f}{\partial y}&= 2x^2y\sqrt{z} 
+\\
+\frac{\partial f}{\partial z}&= \frac {x^2y^2}{2\sqrt{z}}  
+\end{align*}
+\end{enumerate}
+\fincorrection
+\finexercice

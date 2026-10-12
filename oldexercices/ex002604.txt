@@ -1,0 +1,42 @@
+\exercice{2604, delaunay, 2009/05/19}
+\enonce
+ Soit $\theta\in \R$, on consid\`ere l'endomorphisme $f$ de $\R^3$ dont la matrice dans la base canonique est la suivante
+$$A=\begin{pmatrix}\cos\theta&-\sin\theta&0 \\  \sin\theta&\cos\theta&0 \\ 0&0&1 \\ \end{pmatrix}.$$
+\begin{enumerate}
+ \item  Quelle est la nature géométrique de cet endomorphisme ?
+ \item  Démontrer que, pour tout $\theta\in\R\setminus\pi\Z$, la matrice $A$ admet une unique valeur propre réelle. Quel est le sous-espace propre associé ? Que se passe-t-il si $\theta\in\pi\Z$ ?
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+{\it Soit $\theta\in \R$, on consid\`ere l'endomorphisme $f$ de $\R^3$ dont la matrice dans la base canonique est la suivante}
+$$A=\begin{pmatrix}\cos\theta&-\sin\theta&0 \\  \sin\theta&\cos\theta&0 \\ 0&0&1 \\ \end{pmatrix}.$$
+\begin{enumerate}
+ \item  {\it Déterminons la nature géométrique de cet endomorphisme.}
+
+Notons $(\vec i,\vec j,\vec k)$ la base canonique de $\R^3$, la matrice $A$ est la matrice de la rotation d'axe $\R\vec k$ d'angle $\theta$. 
+
+On peut ajouter que les vecteurs colinéaires à $\vec k$ sont fixes. Un vecteur de coordonnées $(x,y,z)$ est envoyé sur le vecteur $(x\cos\theta-y\sin\theta,x\sin\theta+y\cos\theta,z)$, sa composante dans le plan engendré par $\vec i$ et $\vec j$ subit la rotation plane d'angle $\theta$.
+ \item {\it Démontrons que, pour tout $\theta\in\R\setminus\pi\Z$, la matrice $A$ admet une unique valeur propre réelle et déterminons son sous-espace propre associé}. 
+
+Calculons le polyn\^ome caractéristique de la matrice $A$.
+\begin{align*}
+ P_A(X)=\begin{vmatrix}\cos\theta-X&-\sin\theta&0 \\  \sin\theta&\cos\theta-X&0 \\ 0&0&1-X \\ \end{vmatrix} &=[(\cos\theta-X)^2+\sin^2\theta](1-X) \\  &=(1-X)(X^2-2X\cos\theta+1
+\end{align*}
+Cherchons les racines du polynôme $X^2-2X\cos\theta+1$, pour cela on calcule son discrimminant réduit
+$$\Delta'=\cos^2\theta-1=-\sin^2\theta<0,$$
+en effet, si $\theta\in\R\setminus\pi\Z$, alors $\sin\theta\neq 0$, donc le polyn\^ome $P_A$ n'admet qu'une racine réelle $\lambda=1$. Son sous-espace propre associé est de dimension $1$, c'est l'axe $\R\vec k$ de la rotation. 
+
+{\it Cas où $\theta\in\pi\Z$ }
+
+On distingue les cas $\theta=n\pi$ avec $n$ pair ou impair :
+
+- Si $\theta=2n\pi,\ n\in\Z$, alors $\displaystyle A=\begin{pmatrix}1&0&0 \\  0&1&0 \\ 0&0&1 \\ \end{pmatrix}$, c'est la matrice de l'identité.
+
+- Si $\theta=(2n+1)\pi,\ n\in\Z$, alors $\displaystyle A=\begin{pmatrix}-1&0&0 \\  0&-1&0 \\ 0&0&1 \\ \end{pmatrix}$, c'est la matrice de la symétrie orthogonale par rapport à l'axe $\R\vec k$. Elle admet deux valeurs propres, la valeur propre $1$ dont le sous-espace propre est l'axe $\R\vec k$ et la valeur propre $-1$ dont le sous-espace propre est le plan $\R\vec i+\R\vec j$.
+
+\end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,55 @@
+\exercice{6712, queffelec, 2011/10/16}
+\enonce 
+Soit $f$ une fonction holomorphe sur $\{z\in\C\vert\
+\vert z\vert <R\}$. Si $f(z)=\sum_{n=0}^\infty a_nz^n$ pour $\vert
+z\vert<R$, on pose pour $0\le r< R$ :
+\begin{eqnarray*}\lefteqn{M(r,f)=\max_{\vert z\vert =r}\vert f(z)\vert
+,\  M_1(r,f)=\sum_{n=0}^\infty \vert a_n\vert r^n,}\\ 
+M_2(r,f)&=&\left({1\over 2\pi}\int_0^{2\pi}\vert f(re^{i\theta })\vert
+^2d\theta \right)^{1/2}.\end{eqnarray*}
+
+\begin{enumerate}  
+\item 
+\begin{enumerate}  
+\item Montrer que pour $0\le r<R$,
+$$M_2(r,f)=\left( \sum_{n=0}^\infty\vert
+a_n\vert^2r^{2n}\right)^{1/2}.$$
+
+ \item Déduire de (a) que $r\mapsto M_2(r,f)$ est une fonction continue
+croissante.
+
+  \item Déduire de (a) une autre démonstration des inégalités de Cauchy.
+\end{enumerate}
+\item
+\begin{enumerate}  
+\item Montrer que pour $0\le r<r\alpha <R$, on a
+$$M(r,f)\le M_1(r,f)\le {\alpha \over \alpha -1}M(\alpha r,f)$$
+(pour démontrer la seconde inégalité, on pourra utiliser les inégalités
+de Cauchy).
+
+\item Montrer que la fonction $r\mapsto M(r,f)$ est continue et
+croissante, et même strictement croissante si $f$ n'est pas constante.
+\end{enumerate}
+\item On rappelle que si les deux séries $\sum_{n\ge 0}\vert
+\alpha _n\vert^2$ et $\sum_{n\ge 0}\vert \beta
+_n\vert^2$ convergent (où $\alpha _n\in\C$ et $\beta _n\in\C$), la série
+$\sum_{n\ge 0}\alpha _n\overline{\beta _n}$ converge et on a
+l'inégalité de Cauchy-Schwarz :
+$$\left\vert \sum_{n\ge 0}\alpha _n\overline{\beta _n}\right\vert^2\le
+\left(\sum_{n\ge 0}\vert \alpha _n\vert^2\right)
+\left(\sum_{n\ge 0}\vert \beta _n\vert^2\right) .$$
+Montrer que pour $\alpha \in \mathopen]0,1\mathclose[$, on a
+$$\sqrt{1-\alpha ^2}M_1(r\alpha ,f)\le M_2(r,f)\le M(r,f).$$
+
+\item En utilisant les questions 2. et 3., montrer que si $0\le
+r<R$, $$\lim_{n\to \infty}M_1(r,f^n)^{1/n}=\lim_{n\to
+\infty}M_2(r,f^n)^{1/n}= M(r,f)$$
+(on pourra remarquer que $M(r,f^n)=M(r,f)^n$).
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\nocorrection
+
+\finexercice       

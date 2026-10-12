@@ -1,0 +1,27 @@
+\exercice{5402, rouget, 2010/07/06}
+\enonce[*** Théorème d'homéomorphie]
+Soit $f$ une application continue sur un intervalle $I$ de $\Rr$ à valeurs dans $\Rr$. Montrer que $f$ est injective si et seulement si $f$ est strictement monotone et que dans ce cas $f(I)$ est un intervalle de même nature que $I$ (ouvert, semi-ouvert, fermé).
+\finenonce
+
+\noindication
+
+\correction
+Si $f$ est strictement monotone sur $I$, on sait que $f$ est injective.
+
+Réciproquement, supposons $f$ injective et continue sur $I$ et montrons que $f$ est strictement monotone.
+
+Supposons par l'absurde que $f$ n'est pas strictement monotone. On peut alors trouver trois réels $a$, $b$ et $c$ dans l'intervalle $I$ tels que
+ 
+$$a<b<c\;\mbox{et}\;((f(b)\geq f(a)\;\mbox{et}\;f(b)\geq f(c))\;\mbox{ou}\;(f(b)\leq f(a)\;\mbox{et}\;f(b)\leq f(c))).$$
+
+Quitte à remplacer $f$ par $-f$, on supposera que $a<b<c$ et $f(b)\geq f(a)$ et $f(b)\geq f(c)$.
+
+Puisque $f$ est injective, on a même $a<b<c$ et $f(b)>f(a)$ et $f(b)>f(c)$. Soit $M=\mbox{Max}\{f(a),f(c)\}$. On a $M<f(b)$. $M$ est élément de $[f(a),f(b)]$ et, puisque $f$ est continue sur $[a,b]$, le théorème des valeurs intermédiaires permet d'affirmer qu'il existe $\alpha\in[a,b]$ tel que $f(\alpha)=M$. De plus, on ne peut avoir $\alpha=b$ car $f(\alpha)=M\neq f(b)$ (et $f$ injective). Donc, 
+
+$$\exists\alpha\in[a,b[/\;f(\alpha)=M.$$
+
+De même, puisque $M$ est élément de $[f(c),f(b)]$, $\exists\beta\in]b,c]/\;f(\beta)=M$. Ainsi, on a trouvé dans $I$ deux réels $\alpha$ et $\beta$ vérifiant $\alpha\neq\beta$ et $f(\alpha)=f(\beta)$ ce qui contredit l'injectivité de $f$.
+
+Donc, $f$ est strictement monotone sur $I$.
+\fincorrection
+\finexercice

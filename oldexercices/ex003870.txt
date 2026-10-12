@@ -1,0 +1,28 @@
+\exercice{3870, quercia, 2010/03/11}
+\enonce[Polytechnique MP$^*$ 2000]
+Soit $f$ continue sur~$[a,b]$, à valeurs dans~$\R$, et $\delta$ un
+réel positif. On note $\omega(\delta) = \sup\{|f(x)-f(y)|\text{ tq } |x-y|\le\delta\}$.
+Montrer que $\omega(\delta)$ tend vers~$0$ quand $\delta$ tend vers~$0$,
+puis que $\omega$ est continue.
+\finenonce
+
+\noindication
+
+\correction
+$\omega(\delta) \to 0 \Leftrightarrow f$ (lorsque $\delta\to0^+$) est uniformément continue.
+
+Continuité en $\delta>0$~: on remarque que $\omega$ est croissante
+donc $\omega(\delta^-)$ et $\omega(\delta^+)$ existent et
+encadrent $\omega(\delta)$.
+Si $\delta_n \to \delta^+$ (lorsque $n\to\infty$), soient $x_n,y_n$ tels que
+$\omega(\delta_n) = |f(x_n)-f(y_n)|$ et $|x_n-y_n|\le\delta_n$.
+On extrait de $(x_n,y_n)$ une suite convergente vers~$(x,y)$ avec
+$|x-y|\le\delta$ et $|f(x)-f(y)| = \omega(\delta^+)$ d'où
+$\omega(\delta^+) \le \omega(\delta)$ puis
+$\omega(\delta^+) = \omega(\delta)$.
+
+On a aussi $\omega(\delta)= \sup\{|f(x)-f(y)|\text{ tq } |x-y|<\delta\}
+\le \omega(\delta^-)$ d'où $\omega(\delta^-) = \omega(\delta)$.
+\fincorrection
+
+\finexercice

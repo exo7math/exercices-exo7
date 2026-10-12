@@ -1,0 +1,88 @@
+\exercice{5507, rouget, 2010/07/15}
+\enonce[**]
+Dans $\Rr^3$ affine, déterminer le réel $a$ pour que les droites $\left\{
+\begin{array}{l}
+x+2=-2z\\
+y=3x+z
+\end{array}
+\right.$ et $\left\{
+\begin{array}{l}
+x+y+z=1\\
+2x+y-z=a
+\end{array}
+\right.$ soient coplanaires, puis déterminer une équation du plan les contenant.
+\finenonce
+
+\noindication
+
+\correction
+\textbullet~\textbf{Repère de $(D)$.}
+
+\begin{center}
+$\left\{
+\begin{array}{l}
+x+2=-2z\\
+y=3x+z
+\end{array}
+\right.\Leftrightarrow\left\{
+\begin{array}{l}
+x=-2-2z\\
+y=3(-2-2z)+z
+\end{array}
+\right.\Leftrightarrow\left\{
+\begin{array}{l}
+x=-2-2z\\
+y=-6-5z
+\end{array}
+\right.$
+\end{center}
+
+$(D)$ est la droite passant par $A(0,-1,-1)$ et dirigée par $u(2,5,-1)$.
+ \textbullet~\textbf{Repère de $(D')$.}
+
+\begin{center}$\left\{
+\begin{array}{l}
+x+y+z=1\\
+2x+y-z=a
+\end{array}
+\right.\Leftrightarrow\left\{
+\begin{array}{l}
+-x-y=z-1\\
+2x+y=z+a
+\end{array}
+\right.\Leftrightarrow\left\{
+\begin{array}{l}
+x=2z+a-1\\
+y=2-a-3z
+\end{array}
+\right.$
+\end{center}
+$(D')$ est la droite passant par $A'(a-1,2-a,0)$ et dirigée par $u'(2,-3,1)$.
+\textbullet~Déjà $u$ et $u'$ ne sont pas colinéaires et donc $(D)$ et $(D')$ sont ou bien sécantes en un point et dans ce cas coplanaires ou bien non coplanaires.
+\textbullet~Le plan $(P)$ contenant $(D)$ et parallèle à $(D')$ est le plan de repère $(A,u,u')$. Déterminons une équation de ce plan.
+
+\begin{center}
+$M(x,y,z)\in(P)\Leftrightarrow
+\left|
+\begin{array}{ccc}
+x&2&2\\
+y+1&5&-3\\
+z+1&-1&1
+\end{array}\right|=0\Leftrightarrow 2x-4(y+1)-16(z+1)=0\Leftrightarrow-x+2y+8z=-10$.
+\end{center}
+\textbullet~Enfin, $(D)$ et $(D')$ sont coplanaires si et seulement si $(D')$ est contenue dans $(P)$. Comme $(D')$ est déjà parallèle à $(P)$, on a
+
+\begin{center}
+$(D)$ et $(D')$ coplanaires $\Leftrightarrow A'\in(P)\Leftrightarrow-(a-1)+2(2-a)=-10\Leftrightarrow a=\frac{5}{3}$.
+\end{center}
+
+\begin{center}
+\shadowbox{
+\begin{tabular}{c}
+$(D)$ et $(D')$ sont coplanaires si et seulement si $a=\frac{5}{3}$ et dans ce cas, une équation du plan contenant $(D)$\\
+ et $(D')$ est $-x+2y+8z=-10$.
+ \end{tabular}
+}
+\end{center}
+\fincorrection
+\finexercice

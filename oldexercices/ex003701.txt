@@ -1,0 +1,32 @@
+\exercice{3701, quercia, 2010/03/11}
+\enonce[Expression d'une rotation]
+
+Soit $E$ un espace vectoriel euclidien orienté de dimension 3, $\vec u \in E$ unitaire,
+$\alpha \in \R$ et $f$ la rotation autour de $\vec u$ d'angle de mesure $\alpha$.
+\begin{enumerate}
+  \item Exprimer $f(\vec x)$ en fonction de $\vec u$, $\vec x$ et $\alpha$.
+    
+  \item On donne les coordonnées de $\vec u$ dans une base orthonormée : $a,b,c$.
+    Calculer la matrice de $f$ dans cette base.
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $f(\vec x) = (\vec x|\vec u)\vec u
+                        + \cos\alpha(\vec u\wedge\vec x)\wedge\vec u
+                        + \sin\alpha(\vec u\wedge\vec x)$.
+  \item $M = (\cos\alpha)I
+                + (1-\cos\alpha)\begin{pmatrix}a^2 &ab &ac \cr
+                                         ab &b^2 &bc \cr
+                                         ac &bc &c^2 \cr \end{pmatrix}
+                + \sin\alpha\begin{pmatrix}0  &-c &b \cr
+                                     c  &0  &-a \cr
+                                     -b &a  &0 \cr\end{pmatrix}$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

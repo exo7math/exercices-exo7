@@ -1,0 +1,100 @@
+\exercice{5106, rouget, 2010/06/30}
+\enonce[**IT]
+Dans chacun des cas suivants, déterminer $f(I)$ puis vérifier que $f$ réalise une bijection
+de $I$ sur $J=f(I)$ puis préciser $f^{-1}$~:
+
+\begin{enumerate}
+\item  $f(x)=x^2-4x+3$, $I=]-\infty,2]$.
+\item  $f(x)=\frac{2x-1}{x+2}$, $I=]-2,+\infty[$.
+\item  $f(x)=\sqrt{2x+3}-1$, $I=\left[-\frac{3}{2},+\infty\right[$.
+\item  $f(x)=\frac{x}{1+|x|}$, $I=\Rr$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  $f$ est dérivable sur $I=]-\infty,2]$, et pour $x\in]-\infty,2[$, $f'(x)=2x-4<0$. $f$ est donc continue
+et strictement décroissante sur $]-\infty,2]$.
+Par suite, $f$ réalise une bijection de $]-\infty,2]$ sur
+$f(]-\infty,2])=[f(2),\underset{-\infty}{\mbox{lim}}\;f[=[-1,+\infty[=J$. On note $g$ l'application de $I$ dans $J$ qui, à
+$x$ associe $x^2-4x+3(=f(x))$. $g$ est bijective et admet donc une réciproque. Déterminons $g^{-1}$.
+Soit 
+$y\in[-1,+\infty[$ et $x\in]-\infty,2]$.
+
+$$y=g(x)\Leftrightarrow y=x^2-4x+3\Leftrightarrow x^2-4x+3-y=0.$$
+Or, $\Delta'=4-(3-y)=y+1\geq0$. Donc, $x=2+\sqrt{y+1}$ ou $x=2-\sqrt{y+1}$. Enfin, $x\in]-\infty,2]$ et donc,
+$x=2-\sqrt{y+1}$. En résumé,
+
+$$\forall x\in]-\infty,2],\;\forall y\in[-1,+\infty[,\;y=g(x)\Leftrightarrow x=2-\sqrt{y+1}.$$
+On vient de trouver $g^{-1}$~:
+
+\begin{center}
+\shadowbox{$\forall x\in[-1,+\infty[,\;g^{-1}(x)=2-\sqrt{x+1}$.}
+\end{center}
+ \item  On vérifie facilement que $f$ réalise une bijection de $]-2,+\infty[$ sur $]-\infty,2[$, notée $g$.
+Soient
+alors $x\in]-2,+\infty[$ et $y\in]-\infty,2[$.
+
+$$y=g(x)\Leftrightarrow y=\frac{2x-1}{x+2}\Leftrightarrow x(-y+2)=2y+1\Leftrightarrow x=\frac{2y+1}{-y+2}.$$
+(on a ainsi trouvé au plus une valeur pour $x$ à savoir $x=\frac{2y+1}{-y+2}$, mais il n'est pas nécessaire 
+de vérifier que cette expression est bien définie et élément de $]-2,+\infty[$ car on sait à l'avance que $y$ admet au
+moins un antécédent dans $]-2,+\infty[$, et c'est donc nécessairement le bon). En résumé,
+
+$$\forall x\in]-2,+\infty[,\;\forall y\in]-\infty,2[,\;y=g(x)\Leftrightarrow x=\frac{2y+1}{-y+2}.$$
+On vient de trouver $g^{-1}$~:~
+
+\begin{center}
+\shadowbox{$\forall x\in]-\infty,2[,\;g^{-1}(x)=\frac{2x+1}{-x+2}$}.
+\end{center}
+ \item  $f$ est continue et strictement croissante sur $\left[-\frac{3}{2},+\infty\right[$.
+$f$ est donc bijective de
+$\left[-\frac{3}{2},+\infty\right[$ sur
+$f\left(\left[-\frac{3}{2},+\infty\right[\right)=\left[f\left(-\frac{3}{2}\right),\underset{+\infty}{\mbox{lim}}f\right[=[-1,+\infty[$. Notons encore $f$
+l'application de $\left[-\frac{3}{2},+\infty\right[$ dans $[-1,+\infty[$ qui à $x$ associe $\sqrt{2x+3}-1$. Soient alors
+$x\in[-\frac{3}{2},+\infty[$ et $y\in[-1,+\infty[$.
+
+$$f(x)=y\Leftrightarrow\sqrt{2x+3}-1=y\Leftrightarrow x=\frac{1}{2}(-3+(y+1)^2)\Leftrightarrow x=\frac{y^2}{2}+y-1.$$
+En résumé, $\forall x\in\left[-\frac{3}{2},+\infty\right[,\;\forall y\in[-1,+\infty[,\;y=g(x)\Leftrightarrow x=\frac{y^2}{2}+y-1$. On vient
+de trouver $g^{-1}$~:~
+
+\begin{center}
+\shadowbox{
+$\forall x\in[-1,+\infty[,\;g^{-1}(x)=\frac{x^2}{2}+x-1$.
+}
+\end{center}
+ \item  $f$ est définie sur $\Rr$, impaire.
+Pour $x\in[0,+\infty[$, $0\leq f(x)=\frac{x}{1+x}<\frac{1+x}{1+x}=1$. Donc, $f([0,+\infty[)\subset[0,1[$.
+Par parité, $f(]-\infty,0])\subset]-1,0]$ et même $f(]-\infty,0[)\subset]-1,0[$ car l'image par $f$ d'un réel
+strictement négatif est un réel strictement négatif.
+Finalement, $f(\Rr)\subset]-1,1[$.
+Vérifions alors que $f$ réalise une bijection de $\Rr$ sur $]-1,1[$.
+Soit $y\in[0,1[$ et $x\in\Rr$. L'égalité $f(x)=y$ impose à $x$ d'être dans $[0,+\infty[$. Mais alors
+
+$$f(x)=y\Leftrightarrow\frac{x}{1+x}=y\Leftrightarrow x=\frac{y}{1-y}.$$
+Le réel $x$ obtenu est bien défini, car $y\neq1$, et positif, car $y\in[0,1[$. On a montré que~:
+
+$$\forall y\in[0,1[,\;\exists!x\in\Rr/\;y=f(x)\;(\mbox{à savoir}\;x=\frac{y}{1-y}).$$
+Soit $y\in]-1,0[$ et $x\in\Rr$. L'égalité $f(x)=y$ impose à $x$ d'être dans $]-\infty,0[$. Mais alors
+
+$$f(x)=y\Leftrightarrow\frac{x}{1-x}=y\Leftrightarrow x=\frac{y}{1+y}.$$
+Le réel $x$ obtenu est bien défini, car $y\neq-1$, et strictement négatif, car $y\in]-1,0[$. On a montré que~:
+
+$$\forall y\in]-1,0[,\;\exists!x\in\Rr/\;y=f(x)\;(\mbox{à savoir}\;x=\frac{y}{1+y}).$$
+Finalement,
+
+$$\forall y\in]-1,1[,\;\exists!x\in\Rr/\;y=f(x),$$
+ce qui montre que $f$ réalise une bijection de $\Rr$ sur $]-1,1[$. De plus, pour $y\in]-1,1[$ donné,
+$f^{-1}(y)=\frac{y}{1-y}$ si $y\geq0$ et $f^{-1}(y)=\frac{y}{1+y}$ si $y<0$. Dans tous les cas, on a
+$f^{-1}(y)=\frac{y}{1-|y|}$.
+
+En notant encore $f$ l'application de $\Rr$ dans $]-1,1[$ qui à $x$ associe $\frac{x}{1+|x|}$, on a donc
+\begin{center}
+\shadowbox{
+$\forall x\in]-1,1[,\;f^{-1}(x)=\frac{x}{1-|x|}.$
+}
+\end{center}
+\end{enumerate}
+\fincorrection
+\finexercice

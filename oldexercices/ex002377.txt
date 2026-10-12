@@ -1,0 +1,50 @@
+\exercice{2377, mayer, 2003/10/01}
+\enonce 
+Soit $f:\Rr^n \to \Rr^n$ une application continue. Elle est dite {\it propre}  si pour tout compact
+$K\subset \Rr^n$, l'image r\'eciproque $f^{-1}(K)$ est compact.
+\begin{enumerate}
+\item Montrer que, si $f$ est propre, alors
+l'image par $f$ de tout ferm\'e de $\Rr^n$ est un ferm\'e.
+\item \'Etablir l'\'equivalence suivante: l'application $f$ est propre si et seulement si elle a
+la propri\'et\'e:
+$$ \|f(x)\|\to \infty  \quad \text{quand} \quad \|x\|\to \infty \; .$$
+\end{enumerate}
+\finenonce
+
+\indication
+\begin{enumerate}
+  \item Utiliser la caractérisation de la fermeture par des suites.
+  \item Remarquer que  ``$ \|f(x)\|\to \infty$ quand $\|x\|\to \infty$'' est équivalent à
+$$ `` \forall M >0\quad \exists m >0 \forall x \in \Rr^n \quad \quad (x \notin B(0,m) \Rightarrow  f(x)\notin B(0,M)). ''$$
+\end{enumerate}
+\finindication
+
+\correction
+\begin{enumerate}
+  \item Supposons $f$ propre et soit $F$ un fermé. Montrons que $f(F)$ est un fermé. Soit $(y_n)$ une suite de $f(F)$ qui converge vers $y\in \Rr^n$. 
+Notons $K$ l'union de $\{y_n\}_{n\in\Nn}$ et de $\{ y\}$. Alors $K$ est compact.
+Comme $y_n \in f(F)$, il existe $x_n\in F$ tel que $f(x_n) = y_n$.
+En fait $x_n \in f^{-1}(K)$ qui est compact car $f$ est propre. Donc
+de $(x_n)$ on peut extraire une sous-suite convergente $(x_{\phi(n)})$, on note $x$ la limite de cette sous-suite. Comme $x_{\phi(n)} \in F$ et que $F$ est fermé alors $x\in F$. Comme $f$ est continue alors $y_{\phi(n)} = f(x_{\phi(n)})$ tend vers $f(x)$, or $y_{\phi(n)}$ tend aussi vers $y$.
+Par unicité de la limite $y=f(x)$. Donc $y \in f(F)$ et $f(F)$ est fermé.
+
+  \item 
+Dire $ \|f(x)\|\to \infty$ quand $\|x\|\to \infty$ est équivalent à
+$$ \forall M >0\quad \exists m >0\quad \forall x \in \Rr^n \quad (x \notin B(0,m) \Rightarrow  f(x)\notin B(0,M)).$$
+  \begin{enumerate}
+    \item Supposons $f$ propre, soit $M>0$. Alors $B(0,M)$ est un compact
+(nous sommes dans $\Rr^n$) donc $f^{-1}(B(0,M))$ est compact donc borné, c'est-à-dire qu'il existe $m>0$ tel que $f^{-1}(B(0,M)) \subset B(0,m)$.
+Donc si $x\notin B(0,m)$ alors $f(x) \notin B(0,M)$.
+
+    \item Réciproquement, soit $K$ un compact de $\Rr^n$. Comme $f$ est continue
+et que $K$ est fermé alors $f^{-1}(K)$ est un fermé. Reste à montrer que $f^{-1}(K)$ est borné. Comme $K$ est compact alors il existe $M>0$ tel que 
+$K \subset B(0,M)$, par hypothèse il existe $m>0$ tel que si 
+$ x\notin B(0,m)$ alors $f(x) \notin B(0,M)$, ce qui s'écrit aussi 
+par contraposition : ``si $f(x) \in B(0,M)$ alors $x\in B(0,m)$'', donc
+$f^{-1}(B(0,M)) \subset B(0,m)$. Or $K \subset B(0,M)$ donc
+$f^{-1}(K) \subset f^{-1}(B(0,M)) \subset B(0,m)$. Donc
+$f^{-1}(K)$ est borné donc compact.
+  \end{enumerate}
+\end{enumerate}
+\fincorrection
+\finexercice

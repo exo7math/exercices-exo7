@@ -1,0 +1,98 @@
+\exercice{2096, bodin, 2008/02/04}
+\video{Rp5pIHte82w}
+\enonce[Intégrales de Wallis]
+Soit $\displaystyle I_n=\int_0^{\frac \pi 2}(\sin x)^n \, d x$ \ \ pour $n\in \N$.
+\begin{enumerate}
+\item Montrer que $I_{n+2}=\frac{n+1}{n+2}I_n$. Expliciter $I_n$. En déduire $\int_{-1}^1\left( 1-x^2\right) ^n d x$.
+\item Montrer que $\left( I_n\right) _n$ est positive décroissante. Montrer que $I_n\sim I_{n+1}$
+\item Simplifier $I_n \cdot I_{n+1}$. Montrer que $I_n\sim \sqrt{%
+\frac \pi {2n}}$. En déduire 
+$\frac{1 \cdot 3 \cdots \left( 2n+1\right) }{2 \cdot 4 \cdots \left( 2n\right) }\sim 2\sqrt{\frac n \pi }$.
+\end{enumerate}
+\finenonce 
+
+\indication
+  \begin{enumerate}
+  \item Faire une intégration par parties afin d'exprimer $I_{n+2}$ en fonction de $I_n$. 
+Pour le calcul explicite on distinguera le cas des $n$ pairs et impairs.
+  \item Rappel : $u_n\sim v_n$ est équivalent à $\frac{u_n}{v_n} \to 1$. 
+Utiliser la décroissance de $I_n$ pour encadrer $\frac{I_{n+1}}{I_n}$.
+  \end{enumerate}
+\finindication
+
+\correction
+  \begin{enumerate}
+
+  \item 
+  \begin{enumerate}
+     \item $$ I_{n+2}  = \int_0^{\frac \pi 2} \sin^{n+1} x \cdot \sin x \,  dx.$$
+En posant $u(x) = \sin^{n+1} x$ et $v'(x) = \sin x$ et en intégrant par parties nous obtenons
+\begin{align*}
+I_{n+2} &= \bigg[ -\cos x \sin^{n+1}x \bigg]_0^{\frac \pi 2} \ \  + \ \ (n+1)\int_0^{\frac \pi 2} \cos^2x \sin^nx \, dx \\
+ &= 0 \ \  + \ \ (n+1)\int_0^{\frac \pi 2} (1-\sin^2x)\sin^nx \, dx \\
+ &= (n+1)I_n-(n+1)I_{n+2}.  \\
+\end{align*}
+
+Donc $(n+2)I_{n+2}=(n+1)I_n$.
+Conclusion 
+$$I_{n+2} = \frac{n+1}{n+2} I_n.$$
+
+     \item Nous avons donc une formule de récurrence pour $I_n$ qui s'exprime en fonction de $I_{n-2}$
+qui a son tour s'exprime en fonction de $I_{n-4}$, etc. On se ramène ainsi à l'intégrale de $I_0$ (si $n$ est pair) 
+ou bien de $I_1$ (si $n$ est impair). Un petit calcul donne $I_0=\frac \pi 2$ et $I_1=1$.
+Par récurrence nous avons donc pour $n$ pair :
+$$I_n = \frac{1\cdot3 \cdots (n-1) }{2 \cdot 4 \cdots n} \frac \pi 2,$$
+et pour $n$ impair :
+$$I_n = \frac{2 \cdot 4 \cdots (n-1)}{1 \cdot 3 \cdots n}.$$
+
+     \item Pour calculer $\int_{-1}^1\left( 1-x^2\right) ^n d x$ nous allons nous ramener à une intégrale de Wallis.
+Avec le changement de variable $x=\cos u$, on montre assez facilement que :
+\begin{align*}
+ \int_{-1}^1\left( 1-x^2\right) ^n d x 
+   &=  2\int_0^1\left( 1-x^2\right) ^n d x\\
+   &=  2\int_{\frac \pi 2}^{0}  \left( 1-\cos ^2 u\right) ^n (- \sin u \, du)  \quad \text{ avec } x=\cos u \\
+   &=  2\int_0^{\frac \pi 2}  \sin^{2n+1} u \, du  \\
+   &= 2I_{2n+1}\\
+\end{align*}
+
+  \end{enumerate}
+
+  \item
+  \begin{enumerate}
+     \item Sur $[0,\frac \pi 2]$ la fonction sinus est positive donc $I_n$ est positive.
+De plus, sur ce même intervalle $\sin x \leqslant 1$ donc  $(\sin x)^{n+1}  \le (\sin x)^n$.
+Cela implique 
+$$I_{n+1}=\int_0^{\frac \pi 2}(\sin x)^{n+1} d x \le \int_0^{\frac \pi 2}(\sin x)^n d x = I_n.$$
+
+     \item Comme $(I_n)$ est décroissante alors $I_{n+2} \leqslant I_{n+1} \leqslant I_n$, en 
+divisant le tout par $I_n>0$ nous obtenons $\frac{I_{n+2}}{I_n} \leqslant \frac{I_{n+1}}{I_n} \leqslant 1$.
+Mais nous avons déjà calculé $\frac{I_{n+2}}{I_n} = \frac{n+1}{n+2}$ 
+qui tend vers $1$ quand $n$ tend vers l'infini. Donc $ \frac{I_{n+1}}{I_n}$ tend vers $+1$ donc $I_{n} \sim I_{n+1}$.
+
+  \end{enumerate}
+
+  \item 
+  \begin{enumerate}
+     \item Nous allons calculer $I_n\cdot I_{n+1}$.
+Supposons par exemple que $n$ est pair, alors par les formules obtenues précédemment :
+$$I_n \times I_{n+1} = 
+\frac{1\cdot3 \cdots (n-1) }{2 \cdot 4 \cdots n} \frac \pi 2 \times 
+\frac{2 \cdot 4 \cdots n}{1 \cdot 3 \cdots (n+1)} = \frac \pi 2 \times \frac{1}{n+1}.$$
+
+Si $n$ est impair nous obtenons la même fraction. 
+On en déduit que pour tout $n$ : $I_n \cdot I_{n+1} = \frac{\pi}{2(n+1)}$.
+
+     \item Maintenant 
+$$I_n^2 = I_n \cdot I_n \sim I_n \cdot I_{n+1} = \frac \pi {2(n+1)} \sim  \frac \pi {2n},$$
+donc $$I_n \sim \sqrt{\frac \pi {2n}}.$$
+
+     \item $$\frac{1\cdot3 \cdots (2n+1) }{2\cdot 4 \cdots (2n) } 
+= I_{2n} \cdot (2n+1) \cdot \frac 2 \pi  \sim \sqrt{\frac \pi {4n}} \cdot (2n+1) \cdot \frac 2 \pi 
+ \sim 2\sqrt {\frac n \pi}.$$
+
+  \end{enumerate}
+
+\end{enumerate}
+\fincorrection
+\finexercice
+

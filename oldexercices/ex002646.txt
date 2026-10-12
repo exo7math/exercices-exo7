@@ -1,0 +1,124 @@
+\exercice{2646, debievre, 2009/05/19}
+\enonce
+\begin{enumerate}
+ \item  D\'eterminer les points stationnaires de 
+la fonction $f$ de deux variables d\'efinie par
+$f(x,y)= x\hskip 2pt (x+1)^2 - y^2$ et pr\'eciser
+la nature de chacun d'eux.
+ \item Tracer la courbe  
+constitu\'ee des points tels que $f(x,y)=0$ et $x \geq 0$.
+(\emph{Indication}: \'Etudier  la fonction 
+$x\mapsto \sqrt{x} \hskip 2pt (x+1)$ pour $x\geq 0$). 
+ \item  Montrer que 
+le point $(-1,0)$ est un point isol\'e de la partie
+\[ {\cal C}=\{(x,y); f(x,y)=0\}
+\]
+du plan, c'est-\`a-dire, le point $(-1,0)$ appartient \`a cette partie
+et il existe un nombre r\'eel 
+$\varepsilon >0$ tel que 
+$D_{\varepsilon} \cap {\cal C} =\{(-1,0)\}$ o\`u
+$D_{\varepsilon}$ est le disque ouvert centr\'e en $(-1,0)$ et de rayon $\varepsilon$.
+ \item \'Enoncer le th\'eor\`eme des fonctions implicites.
+ \item  Montrer que, quel que soit le point 
+$(x_0,y_0)$ de ${\cal C}$ distinct de $(-1,0)$,
+au moins une des deux alternatives (i) ou (ii) ci-dessous est v\'erifi\'ee:
+\begin{enumerate}
+\item[(i)]
+Il existe une fonction  $h$ de classe $C^1$ de la variable $x$ 
+ d\'efinie dans un intervalle ouvert 
+appropri\'e telle que $h(x_0)=y_0$ et telle que,
+pour qu'au voisinage de $(x_0,y_0)$
+les coordonn\'ees $x$ et $y$ du point $(x,y)$
+satisfassent \`a l'\'equation
+$f(x,y)=0$ il faut et il suffit que
+$y=h(x)$.
+\item[(ii)]
+Il existe une fonction  $k$ de classe $C^1$ de la variable $y$ 
+ d\'efinie dans un intervalle ouvert 
+appropri\'e telle que $h(y_0)=x_0$ et telle que,
+pour qu'au voisinage de $(x_0,y_0)$
+les coordonn\'ees $x$ et $y$ du point $(x,y)$
+satisfassent \`a l'\'equation
+$f(x,y)=0$ il faut et il suffit que
+$x=k(y)$.
+\end{enumerate}
+
+\end{enumerate}
+\finenonce
+
+\indication Voir l'exercice pr\'ec\'edent.
+\finindication
+
+\correction
+\begin{enumerate}
+  \item  Puisque $\frac{\partial f}{\partial y} = -2y$ et
+\[
+\frac{\partial f}{\partial x} =  (x+1)^2 + 2x(x+1)=(x+1)(3x+1)=3x^2+4x+1, 
+\] 
+les points stationnaires de $f$ sont les points
+$(-1,0)$ et $(-1/3,0)$.
+En plus,
+\[
+\mathrm{Hess}_f(x,y)=\left[\begin{matrix} 
+6x+4 & 0\\  0 & -2
+\end{matrix}\right]
+\] 
+d'o\`u
+$\mathrm{Hess}_f(-1,0)= \left[\begin{matrix} 
+-2 &  0\\  0 & -2
+\end{matrix}\right]$
+et
+$\mathrm{Hess}_f(-1/3,0)= \left[\begin{matrix} 
+2 &  0\\  0 & -2
+\end{matrix}\right]$.
+Par cons\'equent la forme hessienne au point $(-1,0)$
+est d\'efinie n\'egative et ce point pr\'esente  un maximum local;
+de m\^eme, la forme hessienne au point $(-1/3,0)$
+est non d\'eg\'en\'er\'ee  et ind\'efinie 
+et ce point pr\'esente  un point selle.
+
+\item  La courbe $y= \sqrt{x} \hskip 2pt (x+1)$ pour $x\geq 0$
+passe par les points $(0,0)$, $(\tfrac 13,\tfrac 43 \sqrt 3)$, 
+$(1,2)$, et $(2,3 \sqrt 2)$;
+elle a une tangente verticale \`a l'origine,
+le point $(\tfrac 13,\tfrac 43 \sqrt 3)$
+est un point d'inflexion, la pente en ce point vaut $\sqrt 3$,
+et c'est la pente minimale de la courbe.
+Ces faits se d\'eduisent
+des expressions
+$y'= \tfrac 32 \sqrt x + \tfrac 12 (\sqrt x)^{-1}$ et
+$y''= \tfrac 34 x^{-\tfrac 12} - \tfrac 14 x^{-\tfrac 32}$.
+La courbe constitu\'ee des points tels que $f(x,y)=0$ et $x \geq 0$
+s'obtient par r\'eflexion de la courbe
+$y= \sqrt{x} \hskip 2pt (x+1)$ pour $x\geq 0$
+par rapport \`a l'axe des $x$.
+
+\item Dans la boule ouverte 
+\[
+\{(x,y,z);(x+1)^2+y^2+x^2 <1\} \subseteq \R^3, 
+\]
+le graphe
+$z=f(x,y)$ de la fonction $f$ ne rencontre le plan des $x$ et $y$ qu'au point
+$(-1,0)$. Par cons\'equent, l'intersection 
+$D \cap \cal C$ du disque
+\[
+D=\{(x,y); (x+1)^2+y^2<1\}
+\]
+avec $\cal C$ ne consiste qu'au point $(-1,0)$.
+
+
+\item Voir l'indication de l'exercice pr\'ec\'edent.
+
+\item Quel que soit le point 
+$(x_0,y_0)$ de ${\cal C}$
+distinct de  $(-1,0)$,
+d'apr\`es (1.),
+\[
+\left(\frac{\partial f}{\partial x}(x_0,y_0),\frac{\partial f}{\partial y}(x_0,y_0) \right) 
+\ne (0,0).
+\] 
+L'assertion est donc une cons\'equence imm\'ediate du th\'eor\`eme des 
+fonctions implicites. 
+\end{enumerate}
+\fincorrection
+\finexercice

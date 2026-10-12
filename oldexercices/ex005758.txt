@@ -1,0 +1,73 @@
+\exercice{5758, rouget, 2010/10/16}
+\enonce[*** I]
+Rayon de convergence et somme de $\sum_{n=1}^{+\infty}\frac{1}{nC_{2n}^n}x^n$.
+\finenonce
+
+\noindication
+
+\correction
+Pour $n\geqslant1$, posons $a_n =\frac{1}{nC_{2n}^n}$. Pour $n\in\Nn^*$,
+
+\begin{center}
+$\left|\frac{a_{n+1}}{a_n}\right|=\frac{n}{n+1}\times\frac{(2n)!}{(2n+2)!}\times\frac{(n+1)!^2}{n!^2}=\frac{n}{2(2n+1)}$\quad$(*)$.
+\end{center}
+
+Par suite, $\left|\frac{a_{n+1}}{a_n}\right|\underset{n\rightarrow+\infty}{\rightarrow}\frac{1}{4}$ et d'après la règle de d'\textsc{Alembert}, le rayon de la série entière considérée est $R = 4$.
+
+Pour $x\in\left]-4,4\right[$, posons $f(x)=\sum_{n=1}^{+\infty}a_nx^n$.
+
+Les relations $(*)$ s'écrivent encore $\forall n\in\Nn^*$, $4(n+1)a_{n+1}-2a_{n+1}=na_n$.
+
+Soit $x\in]-4,4[$. On multiplie les deux membres de l'égalité précédente par $x^{n+1}$ et on somme sur $n$. On obtient
+
+\begin{center}
+$4x\sum_{n=1}^{+\infty}(n+1)a_{n+1}x^n-2\sum_{n=1}^{+\infty}a_{n+1}x^{n+1}=x^2\sum_{n=1}^{+\infty}na_nx^{n-1}$,
+\end{center}
+
+ou encore $x^2f'(x) =4x(f'(x)-a_1)-2(f(x)-a_1x)$ ou encore $x(x-4)f'(x)+2f(x)=-x$\quad$(E)$. Soit $I$ l'un des deux intervalles $]-4,0[$ ou $]0,4[$.Sur $I$, l'équation $(E)$ s'écrit :
+
+\begin{center}
+$f'(x)+\frac{1}{2}\left(\frac{1}{x}-\frac{1}{x-4}\right)f(x)=-\frac{1}{x-4}$.
+\end{center}
+
+Une primitive sur $I$ de la fonction $a~:~x\mapsto\frac{1}{2}\left(\frac{1}{x}-\frac{1}{x-4}\right)$ est la fonction $A~:~x\mapsto\frac{1}{2}(\ln|x-4|-\ln|x|)=\ln\sqrt{\frac{|x-4|}{|x|}}$. 
+
+\begin{align*}\ensuremath
+f\;\text{solution de}\;(E)\;\text{sur}\;I&\Leftrightarrow\forall x\in I,\;f'(x)+\frac{1}{2}\left(\frac{1}{x}-\frac{1}{x-4}\right)f(x)=-\frac{1}{x-4}\\
+ &\Leftrightarrow\forall x\in I,\;e^{A(x)}f'(x)+a(x)e^{A(x)}f(x)=\frac{1}{4-x}\sqrt{\frac{|x-4|}{|x|}}\\
+ &\Leftrightarrow\forall x\in I,\;(e^Af)'(x)=\frac{1}{\sqrt{|x(x-4)|}}\quad(*).
+\end{align*}
+
+Déterminons une primitive de la fonction $x\mapsto\frac{1}{\sqrt{|x(x-4)|}}$ sur $I$.
+
+\textbullet~Si $I=]0,4[$, $\frac{1}{\sqrt{|x(x-4)|}}=\frac{1}{\sqrt{x(4-x)}}=\frac{1}{\sqrt{4-(x-2)^2}}$ et une primitive de la fonction $x\mapsto\frac{1}{\sqrt{|x(x-4)|}}$ sur $I$ est la fonction $x\mapsto\Arcsin\left(\frac{x-2}{2}\right)$. Puis
+
+\begin{align*}\ensuremath
+f\;\text{solution de}\;(E)\;\text{sur}\;I&\Leftrightarrow\exists C\in\Rr/\;\forall x\in I,\;e^{A(x)}f(x)=\Arcsin\left(\frac{x-2}{2}\right)+C\\
+ &\Leftrightarrow\exists C\in\Rr/\;\forall x\in I,\;f(x)=\sqrt{\frac{x}{4-x}}\left(\Arcsin\left(\frac{x-2}{2}\right)+C\right).
+\end{align*}
+
+\textbullet~Si $I=]-4,0[$, $\frac{1}{\sqrt{|x(x-4)|}}=\frac{1}{\sqrt{x(x-4)}}=\frac{1}{\sqrt{(2-x)^2-4}}$ et une primitive de la fonction $x\mapsto\frac{1}{\sqrt{|x(x-4)|}}$ sur $I$ est la fonction $x\mapsto-\Argch\left(\frac{2-x}{2}\right)$. Puis
+
+\begin{align*}\ensuremath
+f\;\text{solution de}\;(E)\;\text{sur}\;I&\Leftrightarrow\exists C'\in\Rr/\;\forall x\in I,\;e^{A(x)}f(x)=\Argch\left(\frac{2-x}{2}\right)+C'\\
+ &\Leftrightarrow\exists C'\in\Rr/\;\forall x\in I,\;f(x)=\sqrt{\frac{x}{x-4}}\left(-\Argch\left(\frac{2-x}{2}\right)+C'\right).
+\end{align*}
+
+$f$ doit être définie, continue et dérivable sur $]-4,4[$ et en particulier dérivable en $0$. Ceci impose $\lim_{x \rightarrow 0^+}\Arcsin\left(\frac{x-2}{2}\right)+C=0$ (car sinon $f(x)\underset{0^+}{\sim}C\sqrt{x}$) et donc $C=\frac{\pi}{2}$. Pour $x\in]0,4[$, on a alors $f(x)=\sqrt{\frac{x}{4-x}}\left(\frac{\pi}{2}-\Arcsin\left(\frac{2-x}{2}\right)\right)=\sqrt{\frac{x}{4-x}}\Arccos\left(\frac{2-x}{2}\right)$ ce qui reste vrai pour $x=0$ par continuité..
+
+De même, $\lim_{x \rightarrow 0^-}-\Argch\left(\frac{2-x}{2}\right)+C'=0$ et donc $C'=0$. On a montré que
+
+\begin{center}
+\shadowbox{
+$\forall x\in]-4,4[,\;\sum_{n=1}^{+\infty}\frac{1}{nC_{2n}^n}x^n=\left\{
+\begin{array}{l}
+\sqrt{\frac{x}{4-x}}\Arccos\left(\frac{2-x}{2}\right)\;\text{si}\;x\in[0,4[\\
+-\sqrt{\frac{x}{x-4}}\Argch\left(\frac{2-x}{2}\right)\;\text{si}\;x\in]-4,0]
+\end{array}
+\right.
+$.
+}
+\end{center}
+\fincorrection
+\finexercice

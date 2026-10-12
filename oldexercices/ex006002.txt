@@ -1,0 +1,44 @@
+\exercice{6002, quinio, 2011/05/20}
+
+\enonce
+Six couples sont réunis dans une soirée de réveillon. Une
+fois les bises de bonne année échangées, on danse, de façon
+conventionnelle: un homme avec une femme, mais pas forcément la sienne.
+
+\begin{enumerate}
+\item Quelle est la probabilité $P(A)$ pour que chacun des 6 hommes danse
+avec son épouse légitime ?
+\item Quelle est la probabilité $P(B)$ pour que André danse avec son 
+épouse ?
+\item Quelle est la probabilité $P(C)$ pour que André et René
+dansent avec leur épouse ?
+\item Quelle est la probabilité $P(D)$ pour que André ou René
+danse(nt) avec leur épouse ?
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item L'univers des possibles est l'ensemble des couples possibles:
+il y en a $6!=720$ (imaginez les dames assises et les hommes choisissant
+leur partenaire). La probabilité $P(A)$ pour que chacun des $6$ hommes
+danse avec son épouse légitime est, si chacun choisit au hasard, $\frac{1}{6!}$.
+
+\item André danse avec son épouse, les autres choisissent au hasard: il y
+a $5!$ permutations pour ces derniers:
+$P(B)=\frac{5!}{6!}=\frac{1}{6}$.
+
+\item André et René dansent avec leur épouse, les $4$ autres
+choisissent au hasard: il y a $4!$ permutations pour ces derniers:
+$P(C)=\frac{4!}{6!}=\frac{1}{30}$.
+
+\item André ou René dansent avec leur épouse, les $4$ autres font ce
+qu'ils veulent. Considérons les événements $D_{1}:$ <<André
+danse avec son épouse>> ; $D_{2}$ : <<René danse avec son épouse>>. 
+Alors $D=D_{1}\cup D_{2}$ et
+ $P(D_{1}\cup D_{2})=P(D_{1})+P(D_{2})-P(D_{1}\cap D_{2})=\frac{3}{10}$.
+\end{enumerate}
+\fincorrection
+\finexercice

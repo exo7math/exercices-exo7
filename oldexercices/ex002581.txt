@@ -1,0 +1,60 @@
+\exercice{2581, delaunay, 2009/05/19}
+\enonce
+ Soit $u$ l'endomorphisme de $\R^3$ dont la matrice dans la base canonique est  
+$$A=\begin{pmatrix}-3&-2&-2 \\  2&1&2 \\  3&3&2\end{pmatrix}$$ 
+\begin{enumerate}
+ \item D\'eterminer et factoriser le polyn\^ome caract\'eristique de $A$.
+ \item D\'emontrer que les valeurs propres de $A$ sont $-1$ et $2$. D\'eterminer les sous-espaces propres associ\'es. 
+ \item D\'emontrer que $A$ est diagonalisable et donner une base de $\R^3$ dans laquelle la matrice de $u$ est diagonale.
+ \item Trouver une matrice $P$ telle que $P^{-1}AP$ soit diagonale.
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+Soit $u$ l'endomorphisme de $\R^3$ dont la matrice dans la base canonique est  
+$$A=\begin{pmatrix}-3&-2&-2 \\  2&1&2 \\  3&3&2\end{pmatrix}$$ 
+\begin{enumerate}
+ \item D\'eterminons le polyn\^ome caract\'eristique de $A$.
+
+On a 
+$$\begin{align*}P_A(X)&=\begin{vmatrix}-3-X&-2&-2 \\ 2&1-X&2 \\ 3&3&2-X\end{vmatrix}
+=\begin{vmatrix}-3-X&0&-2 \\ 2&-1-X&2 \\ 3&1+X&2-X\end{vmatrix} \\ 
+&=\begin{vmatrix}-3-X&0&-2 \\ 5&0&4-X \\ 3&1+X&2-X\end{vmatrix}
+=-(1+X)\begin{vmatrix}-3-X&-2 \\ 5&4-X\end{vmatrix} \\ 
+&=-(1+X)[(X-4)(X+3)+10]=-(1+X)(X^2-X-2)=-(1+X)^2(X-2)\end{align*}$$
+ \item D\'emontrons que les valeurs propres de $A$ sont $-1$ et $2$ et d\'eterminons les sous-espaces propres associ\'es. 
+
+Les valeurs propres de $A$ sont les racines du polyn\^ome caract\'eristique, ce sont donc bien les r\'eels $-1$ et $2$.
+
+Les sous-espaces propres associ\'es sont les ensembles 
+$$E_{-1}=\left\{(x,y,z)\in\R^3,\ A\begin{pmatrix}x \\  y \\  z\end{pmatrix}=-\begin{pmatrix}x \\  y \\  z\end{pmatrix}\right\}=\ker(A+I_3)$$
+et
+$$E_{2}=\left\{(x,y,z)\in\R^3,\ A\begin{pmatrix}x \\  y \\  z\end{pmatrix}=2\begin{pmatrix}x \\  y \\  z\end{pmatrix}\right\}=\ker(A-2I_3)$$
+On a 
+$$(x,y,z)\in E_{-1}\iff\left\{\begin{align*}-3x-2y-2z&=-x \\  2x+y+2z&=-y \\  3x+3y+2z&=-z\end{align*}\right.
+\iff\left\{\begin{align*}-2x-2y-2z&=0 \\  2x+2y+2z&=0 \\  3x+3y+3z&=0\end{align*}\right.$$
+Le sous-espace caract\'eristique $E_{-1}$ associ\'e \`a la valeur propre $-1$ est donc le plan vectoriel d'\'equation $x+y+z=0$, il est de dimension $2$, \'egale \`a la multiplicit\'e de la racine $-1$.
+
+On a 
+$$(x,y,z)\in E_{2}\iff\left\{\begin{align*}-3x-2y-2z&=2x \\  2x+y+2z&=2y \\  3x+3y+2z&=2z\end{align*}\right.
+\iff\left\{\begin{align*}-5x-2y-2z&=0 \\  2x-y+2z&=0 \\  3x+3y&=0\end{align*}\right.$$
+ce qui \'equivaut \`a $y=-x$ et $2z=-3x$.
+
+Le sous-espace caract\'eristique $E_{2}$ associ\'e \`a la valeur propre $2$ est donc la droite vectorielle engendr\'ee par le vecteur $(2,-2,-3)$ , il est de dimension $1$, \'egale \`a la multiplicit\'e de la racine $2$.
+ \item D\'emontrons que $A$ est diagonalisable et donnons une base de $\R^3$ dans laquelle la matrice de $u$ est diagonale.
+
+La question pr\'ec\'edente et les r\'esultats obtenus sur les dimensions des sous-espaces propres permettent d'affirmer que la matrice $A$ est diagonalisable. Une base de $\R^3$ obtenue \`a partir de bases des sous-espaces propres est une base de vecteurs propres dans laquelle la matrice de $u$ est diagonale. Par exemple dans la base form\'ee des vecteurs  $u_1=(1,-1,0)$, $u_2=(1,0,-1)$ et 
+$u_3=(2,-2,-3)$, la matrice de $u$ est la matrice $D$ qui s'\'ecrit
+$$D=\begin{pmatrix}-1&0&0 \\  0&-1&0 \\  0&0&2\end{pmatrix}$$
+ \item  Trouvons une matrice $P$ telle que $P^{-1}AP$ soit diagonale.
+
+La matrice cherch\'ee $P$ est la matrice de passage exprimant la base de vecteurs propres $(u_1,u_2,u_3)$ dans la base canonique.
+ C'est donc la matrice
+$$P=\begin{pmatrix}1&1&2 \\  -1&0&-2 \\  0&-1&-3\end{pmatrix}.$$
+On a $P^{-1}AP=D$.
+\end{enumerate}
+
+\fincorrection
+\finexercice

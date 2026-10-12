@@ -1,0 +1,12 @@
+\exercice{5868, rouget, 2010/10/16}
+\enonce[** I]
+Soit $A\in\mathcal{M}_n(\Cc)$. Montrer qu'il existe $p_0\in\Nn$ tel que $\forall p\geqslant p_0$, $\sum_{k=0}^{p} \frac{A^k}{k!}\in GL_n(\Rr)$.
+\finenonce
+
+\noindication
+
+\correction
+Soit $A\in\mathcal{M}_n(\Cc)$. On sait que d'une part $\text{det}(\text{exp}(A))\neq0$ et d'autre part $\text{exp}(A)=\lim_{p \rightarrow +\infty}\left(\sum_{k=0}^{p} \frac{A^k}{k!}\right)$. Par continuité du déterminant, on a donc $\lim_{p \rightarrow +\infty}\text{det}\left(\sum_{k=0}^{p} \frac{A^k}{k!}\right)=\text{det}(\text{exp}(A))\neq0$. Par suite, il existe $p_0\in\Nn$ tel que $\forall p\geqslant p_0$, $\text{det}\left(\sum_{k=0}^{p} \frac{A^k}{k!}\right)\neq0$ et donc tel que $\sum_{k=0}^{p} \frac{A^k}{k!}\in GL_n(\Rr)$.
+
+\fincorrection
+\finexercice

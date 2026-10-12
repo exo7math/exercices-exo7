@@ -1,0 +1,60 @@
+\exercice{764, bodin, 1998/09/01}
+\video{eW51oHrCmVU}
+\enonce 
+Soit $x\in\R$. On pose $t=\Arctan(\sh x)$.
+\begin{enumerate}
+\item \'Etablir les relations  
+$$\tan t=\sh x \qquad\qquad \frac{1}{\cos t}=\ch x \qquad\qquad \sin t=\tanh x$$
+\item Montrer que $x = \ln \big(\tan\big(\frac{t}{2}+\frac{\pi}{4}\big)\big)$.
+\end{enumerate}
+\finenonce 
+
+\indication
+Pour la première question calculer $\frac{1}{\cos^2t}$.
+Pour la seconde question, vérifier que 
+$y=\ln \left(\tan\left(\frac{t}{2}+\frac{\pi}{4}\right)\right)$ 
+est bien défini et calculer $\sh y$.
+\finindication
+
+\correction\
+\begin{enumerate}
+  \item 
+  \begin{enumerate}
+    \item Remarquons d'abord que, par construction, $t\in]-\frac{\pi}{2},\frac{\pi}{2}[$,
+    $t$ est donc dans le domaine de définition de la fonction $\tan$.
+    En prenant la tangente de l'égalité $t=\Arctan(\sh x)$ on obtient directement $\tan t=
+    \tan\big(\Arctan(\sh x)\big) =\sh x$. 
+
+    \item Ensuite, $\frac{1}{\cos^2t}=1+\tan^2 t= 1 + \tan^2\big(\Arctan(\sh x)\big) 
+    = 1+\sh^2x=\ch^2x$. Or la fonction $\ch$ ne prend que des valeurs positives, 
+    et $t\in]-\frac{\pi}{2},\frac{\pi}{2}[$ donc $\cos t>0$. Ainsi $\frac{1}{\cos t}=\ch x$. 
+
+    \item Enfin, $\sin t=\tan t \cdot \cos t= \sh x \cdot \frac{1}{\ch x}=\tanh x$.
+  \end{enumerate}
+
+\item Puisque $t\in]-\frac{\pi}{2},\frac{\pi}{2}[$, on a 
+$0<\frac{t}{2}+\frac{\pi}{4}<\frac{\pi}{2}$, donc 
+$\tan\left(\frac{t}{2}+\frac{\pi}{4}\right)$ est bien défini et 
+strictement positif. Ainsi $y=\ln \left(\tan\left(\frac{t}{2}+\frac{\pi}{4}\right)\right)$ 
+est bien défini.
+
+Ensuite : 
+\begin{eqnarray*}
+\sh y
+  &=& \frac{e^y-e^{-y}}{2}\\
+  &=& \tfrac{1}{2}\tan\left(\tfrac{t}{2}+\tfrac{\pi}{4}\right)-
+  \tfrac{1}{2}\frac{1}{\tan\left(\frac{t}{2}+\frac{\pi}{4}\right)}\\
+  &=&\frac{\sin^2\left(\frac{t}{2}+\frac{\pi}{4}\right)-
+ \cos^2\left(\frac{t}{2}+\frac{\pi}{4}\right)}{2\cos\left(\frac{t}{2}+\frac{\pi}{4}\right)\sin\left(\frac{t}{2}+\frac{\pi}{4}\right)}\\
+ &=&\frac{-\cos\left(t+\frac{\pi}{2}\right)}{\sin\left(t+\frac{\pi}{2}\right)}
+\end{eqnarray*}
+car $\sin(2u)=2\cos u\sin u$ et $\cos(2u)=\cos^2u-\sin^2u$. 
+
+
+Enfin, puisque $\cos\left(t+\frac{\pi}{2}\right)=-\sin t$ et 
+$\sin\left(t+\frac{\pi}{2}\right)=\cos t$, on a $\sh y= \frac{\sin t}{\cos t} = \tan t=\sh x$. 
+Puisque la fonction $\sh$ est bijective de $\R$ dans $\R$, on en déduit $y=x$.
+Conclusion : $x = y = \ln \big(\tan\big(\frac{t}{2}+\frac{\pi}{4}\big)\big)$.
+\end{enumerate}
+\fincorrection
+\finexercice

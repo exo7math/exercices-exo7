@@ -1,0 +1,56 @@
+\exercice{5114, rouget, 2010/06/30}
+\enonce[***IT]
+Montrer que les assertions suivantes sont équivalentes ($f$ est une application d'un ensemble $E$ dans lui-même)~:
+
+\begin{enumerate}
+\item  $f$ est injective.
+\item  $\forall X\in\mathcal{P}(E),\;f^{-1}(f(X))=X$.
+\item  $\forall(X,Y)\in\mathcal{P}(E)^2,\;f(X\cap Y)=f(X)\cap f(Y)$.
+\item  $\forall(X,Y)\in\mathcal{P}(E)^2,\;X\cap Y=\varnothing\Rightarrow f(X)\cap f(Y)=\varnothing$.
+\item  $\forall(X,Y)\in\mathcal{P}(E)^2,\;Y\subset X\Rightarrow f(X\setminus Y)=f(X)\setminus f(Y)$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\textbf{1) $\Rightarrow$ 2)} Soit $X\in\mathcal{P}(E)$. On a toujours $X\subset f^{-1}(f(X))$. (En effet, pou $x\in E$, $x\in
+X\Rightarrow f(x)\in f(X)\Rightarrow x\in f^{-1}(f(X))$).
+Réciproquement, soit $x\in E$.
+
+\begin{align*}
+x\in f^{-1}(f(X))&\Rightarrow f(x)\in f(X)\Rightarrow\exists x'\in X/\;f(x)=f(x')\Rightarrow\exists x'\in
+X/\;x=x'\;(\mbox{puisque}\;f\;\mbox{est injective})\\
+ &\Rightarrow x\in X.
+\end{align*}
+Finalement, $f^{-1}(f(X))\subset X$ et donc $f^{-1}(f(X))=X$.
+\textbf{2) $\Rightarrow$ 1)} Soit $x\in X$. Par hypothése, $f^{-1}\{f(x)\}=f^{-1}(f(\{x\}))=\{x\}$ ce qui signifie que
+$f(x)$ a un et un seul antécédent à savoir $x$. Par suite, tout élément de l'ensemble d'arrivée a au plus un antécédent
+par $f$ et $f$ est injective.
+
+\textbf{1) $\Rightarrow$ 3)} Soit $(X,Y)\in(\mathcal{P}(E))^2$. On a toujours $f(X\cap Y)\subset f(X)\cap
+f(Y)$ ($X\cap Y\subset X\Rightarrow f(X\cap Y)\subset f(X)$ et de même, $f(X\cap Y)\subset 
+f(Y)$ et finalement, $f(X\cap Y)\subset f(X)\cap f(Y)$).
+Réciproquement, soit $y\in F$. $y\in f(X)\cap f(Y)\Rightarrow\exists(x,x')\in X\times Y/\;y=f(x)=f(x')$. Mais alors,
+puisque $f$ est injective, $x=x'\in X\cap Y$ puis $y=f(x)\in f(X\cap Y)$. Finalement, $f(X\cap Y)=f(X)\cap f(Y)$.
+
+\textbf{3) $\Rightarrow$ 4)} Soit $(X,Y)\in(\mathcal{P}(E))^2$. $X\cap Y=\varnothing\Rightarrow f(X)\cap f(Y)=f(X\cap
+Y)=f(\varnothing)=\varnothing$.
+
+\textbf{4) $\Rightarrow$ 5)} Soit $(X,Y)\in(\mathcal{P}(E))^2$ tel que $Y\subset X$.
+Puisque $X\setminus Y\subset X$, on a $f(X\setminus Y)\subset f(X)$. Mais, puisque $Y\cap(X\setminus Y)=\varnothing$, par
+hypothèse $f(X\setminus Y)\cap f(Y)=\varnothing$. Finalement,$f(X\setminus Y)\subset f(X)\setminus f(Y)$.
+Inversement, si $f(X)\setminus f(Y)=\varnothing$, l'inclusion contraire est immédiate et si $f(X)\setminus
+f(Y)\neq\varnothing$, un élémént de $f(X)\setminus f(Y)$ est l'image d'un certain élément de $X$ qui ne peut être dans $Y$
+et donc est l'image d'un élément de $X\setminus Y$ ce qui montre que $f(X)\setminus f(Y)\subset f(X\setminus Y)$ et
+finalement que $f(X)\setminus f(Y)=f(X\setminus Y)$.
+
+\textbf{5) $\Rightarrow$ 1)} Soit $(x_1,x_2)\in E^2$ tel que $x_1\neq x_2$. Posons $X=\{x_1,x_2\}$ et $Y=\{x_2\}$.
+On a
+donc $Y\subset X$. Par hypothèse $f(X\setminus Y)=f(X)\setminus f(Y)$ ce qui fournit
+$f(\{x_1\})=f(\{x_1,x_2\})\setminus f(\{x_2\})$ ou encore, $\{f(x_1)\}=\{f(x_1),f(x_2)\}\setminus\{f(x_2)\}$.
+Maintenant, si $f(x_1)=f(x_2)$ alors $\{f(x_1),f(x_2)\}\setminus\{f(x_2)\}=\varnothing$ (et pas $\{f(x_1)\}$). Donc
+$f(x_1)\neq f(x_2)$.
+On a montré que $f$ est injective.
+\fincorrection
+\finexercice

@@ -1,0 +1,57 @@
+\exercice{5562, rouget, 2010/07/15}
+\enonce[**]
+Trouver toutes les applications $f$ de $\Rr^2$ dans $\Rr$ vérifiant
+
+\begin{enumerate}
+ \item   $2\frac{\partial f}{\partial x}-\frac{\partial f}{\partial y}=0$   (en utilisant le changement de variables $u=x+y$ et $v=x+2y$)
+
+ \item  $x\frac{\partial f}{\partial x}+ y\frac{\partial f}{\partial y}=\sqrt{x^2+y^2}$ sur $D=\{(x,y)\in\Rr^2/\;x>0\}$ (en passant en polaires).
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  $\left\{
+\begin{array}{l}
+u=x+y\\
+v=x+2y
+\end{array}
+\right.\Leftrightarrow\left\{
+\begin{array}{l}
+x=2u-v\\
+y=-u+v
+\end{array}
+\right.$. L'application $(x,y)\mapsto(u,v)$ est un $C^1$-difféomorphisme de $\Rr^2$ sur lui-même.
+Pour $(u,v)\in\Rr^2$, posons alors $g(u,v)=f(2u-v,u+v)=f(x,y)$ de sorte que $\forall(x,y)\in\Rr^2$, $f(x,y)=g(x+y,x+2y)=g(u,v)$. $f$ est de classe $C^1$ sur $\Rr^2$ si et seulement si $g$ est de classe $C^1$ sur $\Rr^2$ et
+
+\begin{align*}\ensuremath
+ 2\frac{\partial f}{\partial x}(x,y)-\frac{\partial f}{\partial y}(x,y)&=2\frac{\partial}{\partial x}\left(g(x+y,x+2y)\right)-\frac{\partial}{\partial y}\left(g(x+y,x+2y)\right)\\
+  &=2\left(\frac{\partial u}{\partial x}\times\frac{\partial g}{\partial u}(u,v)+\frac{\partial v}{\partial x}\times\frac{\partial g}{\partial v}(u,v)\right)-\left(\frac{\partial u}{\partial y}\times\frac{\partial g}{\partial u}(u,v)+\frac{\partial v}{\partial y}\times\frac{\partial g}{\partial v}(u,v)\right)\\
+  &=2\left(\frac{\partial g}{\partial u}(u,v)+\frac{\partial g}{\partial v}(u,v)\right)-\left(\frac{\partial g}{\partial u}(u,v)+2\frac{\partial g}{\partial v}(u,v)\right)=\frac{\partial g}{\partial u}(u,v).
+ \end{align*}
+ 
+ 
+ Par suite,
+ 
+ \begin{align*}\ensuremath
+ \forall(x,y)\in\Rr^2,\;2\frac{\partial f}{\partial x}(x,y)-\frac{\partial f}{\partial y}(x,y)=0&\Leftrightarrow\forall(u,v)\in\Rr^2,\;\frac{\partial g}{\partial u}(u,v)=0\\
+  &\Leftrightarrow\exists F~:~\Rr\rightarrow\Rr\;\text{de classe}\;C^1\;\text{telle que}\;\forall (u,v)\in\Rr^2,\;g(u,v)=F(v)\\
+  &\Leftrightarrow\exists F~:~\Rr\rightarrow\Rr\;\text{de classe}\;C^1\;\text{telle que}\;\forall (x,y)\in\Rr^2,\;f(x,y)=F(x+2y).
+ \end{align*}
+ \item  On pose $r=\sqrt{x^2+y^2}$ et $\theta=\Arctan\left(\frac{y}{x}\right)$ de sorte que $x=r\cos\theta$ et $y=r\sin\theta$. On pose $f(x,y)=f(r\cos\theta,r\sin\theta)=g(r,\theta)$. On sait que $\frac{\partial r}{\partial x}=\cos\theta$, $\frac{\partial r}{\partial y}=\sin\theta$, $\frac{\partial \theta}{\partial x}=-\frac{\sin\theta}{r}$, $\frac{\partial \theta}{\partial y}=\frac{\cos\theta}{r}$
+\begin{align*}\ensuremath
+x\frac{\partial f}{\partial x}+ y\frac{\partial f}{\partial y}=r\cos\theta\left(\cos\theta\frac{\partial g}{\partial r}-\frac{\sin\theta}{r}\frac{\partial g}{\partial \theta}\right)+r\sin\theta\left(\sin\theta\frac{\partial g}{\partial r}+\frac{\cos\theta}{r}\frac{\partial g}{\partial \theta}\right)=r\frac{\partial g}{\partial r},
+\end{align*}
+puis
+
+\begin{align*}\ensuremath
+\forall(x,y)\in D,\;x\frac{\partial f}{\partial x}(x,y)&+ y\frac{\partial f}{\partial y}(x,y)=\sqrt{x^2+y^2}\Leftrightarrow\forall r>0,\;r\frac{\partial g}{\partial r}(r,\theta)=r\Leftrightarrow\forall r>0,\;\frac{\partial g}{\partial r}(r,\theta)=1\\
+ &\Leftrightarrow\exists \varphi\;\text{de classe}\;C^1\;\text{sur}\;\left]-\frac{\pi}{2},\frac{\pi}{2}\right[/\;\forall(r,\theta)\in]0,+\infty[\times\left]-\frac{\pi}{2},\frac{\pi}{2}\right[,\;g(r,\theta)=r+\varphi(\theta)\\
+ &\Leftrightarrow\exists \varphi\;\text{de classe}\;C^1\;\text{sur}\;\left]-\frac{\pi}{2},\frac{\pi}{2}\right[/\;\forall(x,y)\in D,\;f(x,y)=\sqrt{x^2+y^2}+\varphi\left(\Arctan\frac{y}{x}\right)\\
+  &\Leftrightarrow\exists \psi\;\text{de classe}\;C^1\;\text{sur}\;\Rr/\;\forall(x,y)\in D,\;f(x,y)=\sqrt{x^2+y^2}+\psi\left(\frac{y}{x}\right).
+\end{align*}
+\end{enumerate}
+\fincorrection
+\finexercice

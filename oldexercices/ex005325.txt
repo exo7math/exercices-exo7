@@ -1,0 +1,23 @@
+\exercice{5325, rouget, 2010/07/04}
+\enonce[***]
+Trouver tous les polynômes divisibles par leur dérivée.
+\finenonce
+
+\noindication
+
+\correction
+On suppose que $n=\mbox{deg}P\geq1$.
+
+On pose $P=\lambda(X-z_1)(X-z_2)...(X-z_n)$ où $\lambda$ est un complexe non nul et les $z_k$ sont des complexes pas nécessairement deux à deux distincts.
+
+D'après l'exercice précédent, $\frac{P'}{P}=\sum_{k=1}^{n}\frac{1}{X-z_k}$.
+
+Si $P$ est divisible par $P'$, $\exists(a,b)\in\Cc^2\setminus\{(0,0)\}/\;P=(aX+b)P'$ et donc $\exists(a,b)\in\Cc^2\setminus\{(0,0)\}/\;\frac{P'}{P}=\frac{1}{aX+b}$ ce qui montre que la fraction rationelle $\frac{P'}{P}$ a exactement un et un seul pôle complexe et donc que les $z_k$ sont confondus.
+
+En résumé, si $P'$ divise $P$, $\exists(a,\lambda)\in\Cc^2/\;P=\lambda(X-a)^n$ et $\lambda\neq0$.
+
+Réciproquement, si $P=\lambda(X-a)^n$ avec $\lambda\neq0$, alors $P'=n\lambda(X-a)^{n-1}$ divise $P$.
+
+Les polynômes divisibles par leur dérivée sont les polynômes de la forme $\lambda(X-a)^n$, $\lambda\in\Cc\setminus\{0\}$, $n\in\Nn^*$, $a\in\Cc$.
+\fincorrection
+\finexercice

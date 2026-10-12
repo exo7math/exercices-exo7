@@ -1,0 +1,43 @@
+\exercice{2361, mayer, 2003/10/01}
+\enonce 
+Soient $E_1, E_2$ et $F$ des espaces norm\'es sur $\Rr$
+et soit $B: E_1 \times E_2 \to F$ une application bilin\'eaire.
+Montrer que $B$ est continue si et seulement s'il existe
+$M>0$ tel que
+$$ \|B(x) \|\leq M \| x_1\| \| x_2\|\quad  \text{pour tout } x=(x_1,x_2) \in E_1\times E_2 \; .$$
+\finenonce
+
+\indication
+Si la relation est vérifiée montrer que $B$ est continue en $x$ en calculant $B(x+y)-B(x)$.
+Si $B$ est continue alors en particulier $B$ est continue en $(0,0)$, fixer 
+le $\epsilon$ de cette continuité,...
+\finindication
+
+\correction
+Pour $x=(x_1,x_2)\in E_1\times E_2$ on définit $\|x\|=\max(\|x_1\|,\|x_2\|)$.
+\begin{enumerate}
+  \item Sens $\Leftarrow$.  Soit $M>0$ tel que $ \|B(x) \|\leq M \| x_1\| \| x_2\|$.
+Montrons que $B$ en continue au point $x=(x_1,x_2)$ fixé. Soit $y=(y_1,y_2)$ alors
+$$B(x+y)-B(x)=B(x_1+y_1,x_2+y_2)-B(x_1,x_2)= B(x_1,y_2)+B(x_2,y_1)+B(y_1,y_2).$$
+Donc $$\|B(x+y)-B(x)\| \le  M\| x_1\| \| y_2\|+M\| x_2\| \| y_1\|+M\| y_1\| \| y_2\|.$$
+Pour $\|y_1\| \le \frac{\epsilon}{M\| x_1\|}$ on a  $M\| x_1\| \| y_2\| \le \epsilon$
+(si $x_1=0$ il n'y a rien à choisir ici). 
+Pour $\|y_2\| \le \frac{\epsilon}{M\| x_2\|}$ on a  $M\| x_2\| \| y_1\| \le \epsilon$
+(si $x_2=0$ il n'y a rien à choisir ici).
+Enfin pour $\|y_1\|\le \sqrt {\frac \epsilon M}$ et $\|y_2\|\le \sqrt {\frac \epsilon M}$
+on a $M\| y_1\| \| y_2\|\le \epsilon$.
+Donc en prenant $\eta = \min (\frac{\epsilon}{M\| x_1\|},\frac{\epsilon}{M\| x_2\|},\sqrt {\frac \epsilon M})$, on obtient que pour $\|y\| = \max (\|y_1\|,\|y_2\|) \le \eta$ on a $\|B(x+y)-B(x)\| \le 3\epsilon$.
+Ce qui prouve la continuité.
+Donc $B$ est continue sur $E_1\times E_2$.
+
+  \item Sens $\Rightarrow$. Si $B$ est continue partout, en particulier 
+elle est continue en $0$. Je choisis $\epsilon =1$, il existe $\eta >0$
+tel que $\|x\| \le \eta$ alors $\|B(x)\|\le 1$. Donc pour $\|x_1\|\le \eta$
+et $\|x_2\|\le \eta$ on a $\|B(x_1,x_2)\|\le 1$.
+Soit maintenant $y = (y_1,y_2) \in E_1\times E_2$, ($y_1\neq 0, y_2\neq 0$) on a $(\eta \frac{y_1}{\| y_1 \|},\eta \frac{y_2}{\| y_2 \|})$ de norme $\le \eta$ donc
+$B(\eta \frac{y_1}{\| y_1 \|},\eta \frac{y_2}{\| y_2 \|}) \le 1$ et par bilinéarité cela fournit :
+$B(y_1,y_2)\le \frac{1}{\eta^2}{\| y_1 \|}{\| y_2 \|}$, et ce pour tout $(y_1,y_2)$. La constante cherchée étant $\frac 1{\eta^2}$.
+
+\end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,28 @@
+\exercice{2365, mayer, 2003/10/01}
+\enonce 
+\label{exopol}
+Soit $X = \Rr[x]$ l'ensemble des polyn\^omes. Pour $P(x) = \sum _{k=0}^p a_k x^k$
+on pose $\|P\|= \sup_k |a_k|$, $U(P)(x) = \sum _{k=1}^n \frac{1}{k} a_k x^k$ et
+$V(P)(x) = \sum _{k=1}^n k a_k x^k$.
+\begin{enumerate}
+\item Montrer que $\|.\|$ d\'efinit une norme et que $U$ et $V$ d\'efinissent des applications
+lin\'eaires de $X$ dans $X$.
+\item Examiner si $U$ et $V$ sont continues?
+\end{enumerate}
+\finenonce
+
+\indication
+$U$ est continue et $\| U \|=1$, $V$ n'est pas continue.
+\finindication
+
+\correction
+\begin{enumerate}
+  \item Il suffit de l'écrire...
+  
+  \item Calculons la norme de $U$ : $\| U(P) \| = \sup_k  |\frac 1k a_k\| \le \sup_k |a_k| \le \| P \|$. Donc pour tout $P$, $\frac{\| U(P) \|}{\| P \|} \le 1$.
+Et pour $P(x) = x$ on a égalité donc $\| U \|=1$.
+
+  \item Pour $V$, prenons $P_k(x) = x^k$, alors $\| P_k \|=1$, mais $\|V(P_k)\| = k$. Donc $V$ n'est pas bornée sur la boule unité donc $V$ n'est pas continue.
+\end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,118 @@
+\exercice{2183, debes, 2008/02/12}
+\enonce
+\label{ex:deb83}
+(a) Soit $G$ un groupe et $H$ un sous-groupe. Montrer que la
+formule
+$$g. g'H=gg'H$$
+d\'efinit une action de $G$ sur l'ensemble quotient $G/H$. D\'eterminer le
+fixateur d'une classe $gH$.
+\medskip
+
+(b) Soit $G$ un groupe et $X$ et $Y$ deux ensembles sur lesquels $G$ agit
+(on parlera de
+$G$-ensembles). Soit
+$f$ une application de $X$ dans $Y$. On dira que $f$ est compatible \`a
+l'action de $G$ (ou que $f$
+est un morphisme de $G$-ensembles) si pour tout \'el\'ement
+$x$ de $X$ et tout $g$ dans $G$, $f(g.x)=g.f(x)$. Montrer que si $f$ est
+bijective et compatible \`a
+l'action de $G$ il en est de m\^eme de $f^{-1}$. On dira dans ce cas que
+$f$ est un isomorphisme de
+$G$-ensembles.
+\medskip
+
+(c) Soit $G$ un groupe agissant transitivement sur un ensemble $X$ (i.e.
+pour tout couple d'\'el\'ements
+$x$ et $y$ de $X$ il existe au moins un \'el\'ement $g$ du groupe tel que
+$g.x=y$). Montrer qu'il
+existe un sous-groupe $H$ de $G$ tel que $X$ soit isomorphe en tant que
+$G$-ensemble \`a $G/H$ (on
+prendra pour $H$ le fixateur d'un point quelconque de $X$).
+\medskip
+
+(d) i) Soit $H$ et $K$ deux sous-groupes de $G$. Montrer qu'il existe une
+application $f$ de $G/H$
+vers
+$G/K$ compatible avec l'action de
+$G$ si et seulement si $H$ est contenu dans un conjugu\'e de $K$. Montrer
+que dans ce cas $f$ est
+surjective.  Montrer que
+$G/H$ et
+$G/K$ sont isomorphes en tant que $G$-ensembles si et seulement si $H$ et
+$K$ sont conjugu\'es dans
+$G$.
+\smallskip
+
+ii) Soit $X$ et $Y$ deux $G$-ensembles transitifs. Montrer qu'il existe une
+application de $X$ vers
+$Y$ compatible avec l'action de $G$ si et seulement si il existe deux
+\'el\'ements $x$ et $y$ de $X$ et
+$Y$ tels que le fixateur de $x$ soit contenu dans un conjugu\'e du
+fixateur de $y$. Montrer que $X$ et
+$Y$ sont isomorphes si et seulement si les fixateurs de $x$ et de $y$ sont
+conjugu\'es dans $G$.
+\finenonce 
+
+\noindication
+\correction
+(a) Si $g_1^\prime, g_2^\prime$ sont dans la m\^eme classe \`a gauche de $G$ modulo $H$,
+c'est-\`a-dire, si $g_1^\prime H= g_2^\prime H$ ou encore si $(g_2^\prime)^{-1}g_1^\prime
+\in H$ alors $(gg_2^\prime)^{-1}(gg_1^\prime)=(g_2^\prime)^{-1}g_1^\prime
+\in H$: les classes $gg_1^\prime H$ et $gg_2^\prime H$ sont \'egales. Pour tous $g,g^\prime
+\in H$, la classe $gg^\prime H$ ne d\'epend donc pas du repr\'esentant choisi $g^\prime$ de la
+classe $g^\prime H$; on peut la noter $g\cdot g^\prime H$. On v\'erifie sans difficult\'e
+que la correspondance $(g,g^\prime H)\rightarrow g\cdot g^\prime H$ satisfait les autres
+conditions de la d\'efinition d'une action de $G$ sur l'ensemble quotient $G/\cdot H$.
+\smallskip
+
+\hskip 5mm Pour $g,\gamma\in G$, on a $\gamma\cdot gH = gH$ si et seulement si $g^{-1} \gamma g \in H$ ce qui \'equivaut \`a $\gamma \in gHg^{-1}$. Le fixateur de la classe $gH$ est le
+sous-groupe conjugu\'e $gHg^{-1}$ de $H$ par $g$.
+\medskip
+
+(b) Pour tout $y\in Y$ et tout $g\in G$, on a $f(g\cdot f^{-1}(y)) = g\cdot f(f^{-1}(y)) =
+g\cdot y$. En appliquant $f^{-1}$, on obtient $g\cdot f^{-1}(y)=f^{-1}(g\cdot y)$, ce qui
+montre que $f^{-1}$ est compatible \`a l'action de $G$. 
+\medskip
+
+(c) Soit $x\in X$ fix\'e. Pour $g\in G$, l'\'el\'ement $g\cdot x$ ne d\'epend que de la classe
+\`a gauche de $g$ modulo le fixateur $G(x)$ de $x$. Cela permet de d\'efinir une application
+$G/\cdot G(x) \rightarrow X$: \`a chaque classe $gG(x)$ on associe $g\cdot x$. On montre
+sans difficult\'e que cette application est compatible avec l'action de $G$ (v\'erification
+formelle), injective (par construction) et surjective (par l'hypoth\`ese de transitivit\'e);
+c'est donc un isomorphisme de $G$-ensembles.
+\medskip
+
+(d) i) Supposons donn\'ee une application $f:G/\cdot H\rightarrow G/\cdot K$
+compatible avec l'action de $G$. Pour tout $h\in H$, on a $f(hH)=f(H)=h\cdot f(H)$. Ce qui,
+d'apr\`es la question (a), donne $h\in gKg^{-1}$, o\`u $g$ est un repr\'esentant de la classe
+$f(H)$ dans $G/\cdot K$.
+\smallskip
+
+\hskip 5mm R\'eciproquement, supposons $H\subset gKg^{-1}$ avec $g\in G$. Consid\'erons l'application
+$\varphi: G/\cdot H \rightarrow G/\cdot K$ qui \`a toute classe $\gamma H$ associe la classe
+$\gamma g K$. Cette application est bien d\'efinie: en effet, si $\gamma_2^{-1}\gamma_1\in H$,
+alors $(\gamma_2g)^{-1} \gamma_1g = g^{-1}(\gamma_2^{-1}\gamma_1)g \in g^{-1}Hg\subset K$;
+la classe $\gamma g K$ ne d\'epend donc pas du repr\'esentant $\gamma$ de la classe $\gamma
+H$. De plus $\varphi$ est compatible \`a l'action de $G$: pour tous $\gamma, \gamma^\prime \in
+G$, on a $\varphi (\gamma^{\prime}\cdot\gamma H) = \varphi (\gamma^{\prime}\gamma H) =
+\gamma^{\prime}\gamma gK = \gamma^{\prime}\cdot \varphi (\gamma H)$.
+\smallskip
+
+\hskip 5mm Si $f:G/\cdot H\rightarrow G/\cdot K$ est compatible avec l'action de $G$, alors son image
+contient toute orbite d\`es qu'elle en contient un \'el\'ement. Comme l'action de $G$ sur sur
+$G/\cdot K$ ne poss\`ede qu'une orbite, l'image de $f$ contient tout $G/\cdot K$: $f$ est
+surjective.
+\smallskip
+
+\hskip 5mm D'apr\`es ce qui pr\'ec\`ede, les ensembles $G/\cdot H$ et $G/\cdot K$ sont isomorphes
+comme $G$-ensembles si et seulement si $H\subset gKg^{-1}$ avec $g\in G$ et $\hbox{\rm
+card}(G/\cdot H) = \hbox{\rm card}(G/\cdot K)$ ce qui \'equivaut \`a $H\subset gKg^{-1}$ et
+$|H|=|K|$ ou encore \`a $H=gKg^{-1}$.
+\smallskip
+
+ii) Il suffit de r\'e\'ecrire les r\'esultats de la question pr\'ec\'edente en rempla\c cant
+$G/\cdot H$ et $G/\cdot K$ par $G/\cdot G(x)$ et $G/\cdot G(y)$ qui, d'apr\`es la question (c)
+sont $G$-isomorphes \`a $X$ et $Y$ respectivement (o\`u $x$ et $y$ sont des points fix\'es de
+$X$ et $Y$ respectivement).
+\fincorrection
+\finexercice

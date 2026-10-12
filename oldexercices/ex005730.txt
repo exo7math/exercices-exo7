@@ -1,0 +1,90 @@
+\exercice{5730, rouget, 2010/10/16}
+\enonce[**]
+Soit $f(x) =\sum_{n=1}^{+\infty}\frac{x^n\sin(nx)}{n}$.
+
+\begin{enumerate}
+ \item  Montrer que $f$ est de classe $C^1$ sur $]-1,1[$.
+
+\item  Calculer $f'(x)$ et en déduire que $f(x) =\Arctan\left(\frac{x\sin x}{1-x\cos x}\right)$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Pour $x\in]-1,1[$ et $n$ entier naturel non nul, posons $f_n(x)=\frac{x^n\sin(nx)}{n}$. 
+
+Soit $x\in]-1,1[$. Pour $n$ entier naturel non nul, $|f_n(x)|\leqslant|x|^n$. Or, la série géométrique de terme général $|x|^n$, $n\geqslant1$, est convergente et donc la série numérique de terme général $f_n(x)$ est absolument convergente et en particulier convergente. On en déduit que $f(x)$ existe.
+
+\begin{center}
+\shadowbox{
+$f$ est définie sur $]-1,1[$.
+}
+\end{center}
+
+Soit $a\in]0,1[$. Chaque $f_n$, $n\geqslant1$, est de classe $C^1$ sur $[-a,a]$ et pour $x\in[-a,a]$,
+
+\begin{center}
+$f_n'(x) =x^{n-1}\sin(nx)+x^n\cos(nx)$.
+\end{center}
+
+Pour $x\in[-a,a]$ et $n\in\Nn^*$, 
+
+\begin{center}
+$|f_n'(x)|\leqslant a^{n-1}+a^n\leqslant2a^{n-1}$.
+\end{center} 
+
+Puisque la série numérique de terme général $2a^{n-1}$, $n\geqslant1$, converge, la série de fonctions de terme général $f_n'$, $n\geqslant1$, est normalement et donc uniformément sur $[-a,a]$.
+
+En résumé,
+
+\textbullet~la série de fonctions de terme général $f_n$, $n\geqslant1$, converge simplement vers $f$ sur $[-a,a]$,
+
+\textbullet~chaque fonction $f_n$, $n\geqslant1$, est de classe $C^1$ sur $[-a,a]$,
+
+\textbullet~la série de fonctions de terme général $f_n'$ converge uniformément sur $[-a,a]$.
+
+D'après un corollaire du théorème de dérivation terme à terme, $f$ est de classe $C^1$ sur $[-a,a]$ pour tout réel $a$ de $]0,1[$  et donc sur $]-1,1[$ et sa dérivée s'obtient par dérivation terme à terme. 
+
+\begin{center}
+\shadowbox{
+$f$ est de classe $C^1$ sur $]-1,1[$ et $\forall x\in]-1,1[$, $f'(x)=\sum_{n=1}^{+\infty}(x^{n-1}\sin(nx)+x^n\cos(nx))$.
+}
+\end{center}
+
+\item  Ainsi, pour $x\in]-1,1[$
+
+\begin{align*}\ensuremath
+f'(x)&=\sum_{n=1}^{+\infty}(x^{n-1}\sin(nx)+x^n\cos(nx))=\text{Im}\left(\sum_{n=1}^{+\infty}x^{n-1}e^{inx}\right)+\text{Re}\left(\sum_{n=1}^{+\infty}x^{n}e^{inx}\right)\\
+ &=\text{Im}\left(\frac{e^{ix}}{1-xe^{ix}}\right)+\text{Re}\left(\frac{xe^{ix}}{1-xe^{ix}}\right)=\text{Im}\left(\frac{e^{ix}(1-xe^{-ix})}{x^2-2x\cos x+1}\right) +\text{Re}\left(\frac{xe^{ix}(1-xe^{-ix})}{x^2-2x\cos x+1}\right)\\
+  &=\frac{\sin x+x\cos x-x^2}{x^2-2x\cos x+1}  .
+\end{align*}
+
+Mais, pour $x\in]-1,1[$,
+
+\begin{center}
+$\left(\frac{x\sin x}{1-x\cos x}\right)'=\frac{(\sin x+x\cos x)(1-x\cos x)-x\sin x(-\cos x+x\sin x)}{(1-x\cos x)^2}=\frac{\sin x+x\cos x-x^2}{(1-x\cos x)^2}$.
+\end{center}
+
+et donc
+
+\begin{align*}\ensuremath
+\left(\Arctan\left(\frac{x\sin x}{1-x\cos x}\right)\right)'&=\frac{\sin x+x\cos x-x^2}{(1-x\cos x)^2}\times\frac{1}{1+\left(\frac{x\sin x}{1-x\cos x}\right)^2}=\frac{\sin x+x\cos x-x^2}{(1-x\cos x)^2+x^2\sin^2x}\\
+ &=\frac{\sin x+x\cos x-x^2}{x^2-2x\cos x+1}= f'(x).
+\end{align*}
+
+Finalement, pour $x\in]-1,1[$,
+
+\begin{center}
+$f(x)=f(0)+\int_{0}^{x}f'(t)\;dt=0+\Arctan\left(\frac{x\sin x}{1-x\cos x}\right)-\Arctan(0)=\Arctan\left(\frac{x\sin x}{1-x\cos x}\right)$.
+\end{center}
+
+\begin{center}
+\shadowbox{
+$\forall x\in]-1,1[$, $\sum_{n=1}^{+\infty}\frac{x^n\sin(nx)}{n}=\Arctan\left(\frac{x\sin x}{1-x\cos x}\right)$.
+}
+\end{center}
+\end{enumerate}
+\fincorrection
+\finexercice

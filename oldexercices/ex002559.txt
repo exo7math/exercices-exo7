@@ -1,0 +1,59 @@
+\exercice{2559, tahani, 2009/04/01}
+\enonce
+On considère l'\'equation diff\'erentielle $x'=|x|+|t|$. 
+\begin {enumerate} 
+\item Montrez
+que pour tout r\'eel $x_0$, il existe une solution maximale
+$(\varphi,J)$ telle que $\varphi(0)=x_0$. 
+\item D\'etermner la
+solution maximale correspondant à $x_0=1$, en distinguant les cas
+$t \geq 0$ et $t<0$, et v\'erifiez qu'elle est d\'efinie sur
+$\mathbb{R}$ tout entier. Combien de fois est-elle d\'erivable?
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item Soit $f:\mathbb{R}\times \mathbb{R} \rightarrow \mathbb{R}$
+telle que $f(t,x)=|x|+|t|$. $f$ est continue et Lipschitzienne par
+rapport \`a la seconde variable. En effet,
+$$|f(t,x)-f(t,y)|=||x|-|y||\leq |x-y|.$$
+Remarquons que $x' \geq 0$ pour tout $t$ et que pour tout point
+$(0,x_0$ passe une solution maximale unique $(\varphi,J)$. 
+\item Prenons $x_0=1$, lorque $t\geq 0$; l'\'equation devient
+$$x't()=x(t)+t$$ car $|t|=t$ et $x(t) \geq x(0) > 0, x(0)=1$.
+Elle admet comme solution sur $[0,+\infty[$ avec $\varphi(0)=1$
+$$\varphi(t)=2e^t-t-1.$$
+Lorsque $t<0$, on distingue deux cas: premier cas $x(t)\geq0$;
+$x'=-t+x(t)$ et alors $x(t)=ce^t+t+1$ avec $x(0)=1$ d'o\`u $c=0$
+et $\varphi(t)=t+1$. Cela n'est valable que lorsque $\varphi(t)
+\geq 0$, c'est \`a dire $t \geq 1$. Donc $\varphi(t)=t+1$ sur
+$[-1,1]$. Deuxi\`eme cas: $x(t) \leq 0$, ceci a lieu lorsque $t
+\leq -1$ car $\varphi$ croissante et $\varphi(-1)=0$. Nous avons
+alors $\varphi'(t)=-t-\varphi(t)$. D'o\`u $\varphi(t)=ce^{-t}-t+1$
+or $\varphi(-1)=ce+2=0$ d'o\`u $c=-2e^{-1}$ et
+$\varphi(t)=-2e^{-t+1}-t+1$ sur $]-\infty,-1]$. La solution
+maximale v\'erifiant $\varphi(0)=1$ est la suivante:
+$$\varphi(t)=
+\left( \begin{array}{c} 2e^t-t-1 \mbox{ sur } [0,+\infty[ \\
+t+1 \mbox{ sur } [-1,0] \\
+-2e^{-(t+1)}-t+1 \mbox{ sur } ]-\infty,-1]
+\end{array} \right)$$
+$$\varphi'(t)=
+\left( \begin{array}{c} 2e^t-1 \mbox{ sur } ]0,+\infty[ \\
+1 \mbox{ sur } ]-1,0[ \\
+2e^{-(t+1)}-1 \mbox{ sur } ]-\infty,-1[
+\end{array} \right)$$
+En \'etudiant les limites de $\varphi'$ aux point $0$ et $-1$, on
+voit que $\varphi'$ est continue sur $\mathbb{R}$.
+$$\varphi''(t)=
+\left( \begin{array}{c} 2e^t \mbox{ sur } ]0,+\infty[ \\
+0 \mbox{ sur } ]-1,0[ \\
+-2e^{-(t+1)} \mbox{ sur } ]-\infty,-1[
+\end{array} \right)$$ $\varphi$ n'est donc pas deux fois
+d\'erivable en $0$ et $-1$.
+\end{enumerate}
+\fincorrection
+\finexercice

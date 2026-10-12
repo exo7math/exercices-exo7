@@ -1,0 +1,42 @@
+\exercice{2386, mayer, 2003/10/01}
+\enonce 
+Notons $T=\{0\}\times [-1,1]\cup [-1,1]\times \{0\}$ muni de la
+topologie induite par celle de $\Rr^2$.
+\begin{enumerate}
+\item Montrer que $T$ est compact et connexe et que $f(T)$ est un
+segment si $f:T\to \Rr$ est une fonction continue.
+\item D\'eterminer les points $x\in T$ pour lesquels $T\setminus \{x\}$ est connexe.
+\item Montrer que $T$ n'est hom\'eomorphe \`a aucune partie de
+$\Rr$.
+\end{enumerate}
+\finenonce
+
+\indication
+Faites un dessin de $T$.
+Pour la dernière question, raisonner par l'absurde. O\`u peuvent
+s'envoyer les points de la deuxième question ?
+\finindication
+
+\correction
+\begin{enumerate}
+  \item $T$ est compact car c'est un fermé borné de $\Rr^2$.
+
+Soit $g : T \longrightarrow \{0,1\}$ une application continue.
+Par connexité du segment  $[-1,1]$, $g$ est constante sur $\{0\}\times [-1,1]$
+(et vaut $v$) ; $g$ est aussi constante sur $[-1,1]\times \{0\}$ et vaut $v'$.
+ Mais alors $v=g(0,0)=v'$ donc $g$ est constante sur $T$. Donc $T$ est connexe.
+
+Pour $f:T\to \Rr$ une fonction continue. $T$ est compact donc $f(T)$ est compact.
+$T$ est connexe donc $f(T)$ est connexe. Donc $f(T)$ est un compact connexe de $\Rr$ c'est donc un segment compact.
+
+  \item Ce sont les quatre points cardinaux $N=(0,1)$, $S=(0,-1)$, $E=(1,0)$, $W=(-1,0)$.
+
+  \item Par l'absurde, supposons que $T$ soit homéomorphe à une partie $I$ de $\Rr$, alors
+il existe un homéomorphisme $f : T \longrightarrow I$. Par le premier point
+$I$ est un segment compact $I = [a,b]$. $T\setminus \{ N\}$ est connexe donc sont image par $f$, $f(T\setminus \{ N\})$ est connexe, mais c'est aussi le segment $I$ privé d'un point. $I$ privé d'un point étant connexe, le point retiré est nécessairement une extrémité. Donc $f(N)=a$ ou $f(N)=b$. Supposons par exemple $f(N)=a$. On refait le même raisonnement avec $S$, qui s'envoie aussi sur une extrémité, comme $f$ est bijective cela ne peut être $a$, donc
+$f(S)=b$. Maintenant $f(E)$ est aussi une extrémité donc $f(E) \in \{a,b\}$.
+Mais alors $f$ n'est plus injective car on a $f(E)=f(N)$ ou $f(E)=f(S)$.
+Contradiction.
+\end{enumerate}
+\fincorrection
+\finexercice

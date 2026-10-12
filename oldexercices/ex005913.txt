@@ -1,0 +1,69 @@
+\exercice{5913, rouget, 2010/10/16}
+\enonce[**** Inégalité isopérimétrique]
+Une courbe fermée $(C)$ est le support d'un arc paramétré $\gamma$ de classe $C^1$ régulier et simple. On note $\mathcal{L}$ sa longueur et $\mathcal{A}$ l'aire délimitée par la courbe fermée $(C)$. Montrer que
+
+\begin{center}
+$\mathcal{A}\leqslant \frac{\mathcal{L}^2}{4\pi}$.
+\end{center}
+
+Pour cela, on supposera tout d'abord $\mathcal{L}=2\pi$ et on choisira une paramétrisation normale de l'arc. On appliquera ensuite la formule de \textsc{Parseval} aux intégrales permettant de calculer $\mathcal{L}$ et $\mathcal{A}$ et on comparera les sommes des séries obtenues.
+\finenonce
+
+\noindication
+
+\correction
+Supposons tout d'abord que le support de l'arc $\gamma$ est de longueur $L=2\pi$. Puisque $\gamma$ est un arc de classe $C^1$ régulier, on peut choisir pour $\gamma$ une paramétrisation normale c'est-à-dire une paramétrisation de classe $C^1$ $t\mapsto(x(t),y(t))$, $t\in[0,2\pi]$, telle que $\forall t\in[0,2\pi]$, $x'^2(t)+y'^2(t)=1$. L'arc étant fermé, on a de plus $\gamma(0)=\gamma(2\pi)$. Cette dernière condition permet de prolonger les fonctions $x$ et $y$ en des fonctions continues sur $\Rr$ de classe $C^1$ par morceaux et $2\pi$-périodiques.
+
+Puisque les fonctions $x'$ et $y'$ sont continues par morceaux sur $\Rr$, la formule de \textsc{Parseval} permet d'écrire
+
+\begin{align*}\ensuremath
+L=2\pi&=\int_{0}^{2\pi}1\;dt=\int_{0}^{2\pi}(x'^2(t)+y'^2(t))\;dt=\int_{0}^{2\pi}x'^2(t)\;dt+\int_{0}^{2\pi}y'^2(t)\;dt\\
+ &=\pi\left( \frac{a_0^2(x')}{2}\sum_{n=1}^{+\infty}(a_n^2(x')+b_n^2(x'))+ \frac{a_0^2(y')}{2}+\sum_{n=1}^{+\infty}(a_n^2(y')+b_n^2(y'))\right)\\
+ &=\pi\left(\sum_{n=1}^{+\infty}(a_n^2(x')+b_n^2(x')+a_n^2(y')+b_n^2(y'))\right) (a_0(x')= \frac{1}{\pi}\int_{0}^{2\pi}x'(t)\;dt= \frac{1}{\pi}(x(2\pi)-x(0))=0=a_0(y'))\\
+ &\pi\left(\sum_{n=1}^{+\infty}n^2(a_n^2(x)+b_n^2(x)+a_n^2(y)+b_n^2(y))\right).
+\end{align*}
+
+D'autre part, d'après la formule de \textsc{Green}-\textsc{Riemann}
+
+\begin{align*}\ensuremath
+\mathcal{A}&=\int_{\gamma}^{}xdy=\int_{0}^{2\pi}x(t)y'(t)\;dt= \frac{1}{4}\int_{0}^{2\pi}((x(t)+y'(t))^2-(x(t)-y'(t))^2)\;dt\\
+ &= \frac{\pi}{4}\left( \frac{a_0^2(x+y')}{2}- \frac{a_0^2(x-y')}{2}+\sum_{n=1}^{+\infty}(a_n^2(x+y')-a_n^2(x-y')+b_n^2(x+y')-b_n^2(x-y'))\right)\\
+ &=\pi\left( \frac{a_0(x)a_0(y')}{2}+\sum_{n=1}^{+\infty}(a_n(x)a_n(y')+b_n(x)b_n(y'))\right)\;(\text{par linéarité des coefficients de \textsc{Fourier}})\\
+ &= \frac{L}{2}\sum_{n=1}^{+\infty}n(a_n(x)b_n(y)-b_n(x)a_n(y))\\
+ &\leqslant \frac{L}{2}\sum_{n=1}^{+\infty} \frac{n^2}{2}(a_n^2(x)+b_n^2(y)+b_n^2(x)+a_n^2(y))= \frac{\mathcal{L}}{2}\times \frac{\mathcal{L}}{\pi}= \frac{\mathcal{L}^2}{4\pi}.
+\end{align*}
+
+Si on a l'égalité, alors les inégalités valables pour $n\geqslant1$, 
+
+\begin{center}
+$n(a_n(x)b_n(y)-b_n(x)a_n(y))\leqslant n\times \frac{1}{2}(a_n^2(x)+b_n^2(y)+b_n^2(x)+a_n^2(y))\leqslant  \frac{n^2}{2}(a_n^2(x)+b_n^2(y)+b_n^2(x)+a_n^2(y))$,
+\end{center}
+
+sont des égalités. En particulier, pour $n\geqslant2$, on a $a_n(x)=a_n(y)=b_n(x)=b_n(y)=0$. D'autre part, quand $n=1$, $a_1(x)b_1(y)-b_1(x)a_1(y)= \frac{1}{2}(a_1^2(x)+b_1^2(y)+b_1^2(x)+a_1^2(y))$ impose $(a_1(x)-b_1(y))^2+(b_1(x)+a_1(y))^2=0$ et donc $a_1(y)=-b_1(x)$ et $b_1(y)=a_1(x)$.
+
+D'après le théorème de \textsc{Dirichlet}, en posant $\alpha= \frac{a_0(x)}{2}$, $\beta= \frac{a_0(y)}{2}$, $a=a_1(x)$ et $b=b_1(x)$,
+
+\begin{center}
+$\forall t\in[0,2\pi]$, $\left\{
+\begin{array}{l}
+x(t)=\alpha+a\cos t+b\sin t=\alpha+\sqrt{a^2+b^2}\cos(t-t_0)\\
+y(t)=\beta-b\cos t+a\sin t=\beta+\sqrt{a^2+b^2}\sin(t-t_0)
+\end{array}
+\right.$
+\end{center}
+
+où $\cos(t_0)= \frac{a}{\sqrt{a^2+b^2}}$ et $\sin(t_0)= \frac{b}{\sqrt{a^2+b^2}}$. Le support de l'arc $\gamma$ est donc un cercle. La réciproque est claire.
+
+L'inégalité isopérimétrique est donc démontrée dans le cas où $L=2\pi$ et on a l'égalité si et seulement si le support de l'arc $\gamma$ est un cercle. Dans le cas où la longueur de la courbe $C$ est un réel strictement positif $\mathcal{L}$ quelconque, l'homothétique $(C')$ de $(C)$ dans l'homothétie de centre $O$ et de rapport $ \frac{2\pi}{\mathcal{L}}$ a une longueur $\mathcal{L}'$ égale à $2\pi$ et délimite une aire $\mathcal{A}'=\left( \frac{2\pi}{\mathcal{L}}\right)\times\mathcal{A}$.
+
+L'inégalité $\mathcal{A}'\leqslant \frac{\mathcal{L}'^2}{2\pi}=2\pi$ s'écrit encore $\mathcal{A}\leqslant2\pi\times \frac{\mathcal{L}^2}{4\pi^2}= \frac{\mathcal{L}^2}{4\pi}$. De plus on a l'égalité si et seulement si la courbe $(C)$ est un cercle (dans ce cas, $ \frac{\mathcal{L}^2}{4\pi}= \frac{4\pi^2R^2}{4\pi}=\pi R^2=\mathcal{A}$).
+
+\begin{center}
+\shadowbox{
+$\mathcal{A}\leqslant \frac{\mathcal{L}^2}{4\pi}$ avec égalité si et seulement si la courbe $(C)$ est un cercle.
+}
+\end{center}
+
+(A périmètre donné, le cercle est la courbe fermée délimitant la plus grande aire)
+\fincorrection
+\finexercice

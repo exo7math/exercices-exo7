@@ -1,0 +1,21 @@
+\exercice{6928, ruette, 2013/01/24}
+\enonce
+Pour étudier les particules émises par une substance radioactive, 
+on dispose d'un détecteur. On note $X$ la variable aléatoire 
+représentant le nombre de particules qui atteignent le détecteur pendant 
+un intervalle de temps $\Delta t$. Le nombre maximal de particules que le 
+détecteur peut compter pendant un intervalle de temps $\Delta t$ est de 
+$10^3$. 
+On suppose que  $X$ suit une loi de Poisson de paramètre 
+$\lambda=10^2$. Donner  une majoration de la probabilité que $X$ 
+dépasse~$10^3$.\\ \textit{(On rappelle que l'espérance et la variance d'une loi
+de Poisson $\mathcal{P}(\lambda)$ sont égales à $\lambda$.)}
+\finenonce
+\noindication
+
+\correction
+Inégalité de Bienaymé-Tchebychev : 
+$P(|X-10^2|\ge 10^3-10^2)\le \frac{\text{Var}(X)}{(10^3-10^2)^2}\le 
+\frac{\text{Var}(X)}{(10^3)^2}=10^{-4}$. Donc $P(X\ge 10^3)\le 10^{-4}$.
+\fincorrection
+\finexercice

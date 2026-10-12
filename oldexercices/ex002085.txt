@@ -1,0 +1,54 @@
+
+\exercice{2085, bodin, 2008/02/04}
+\video{OjBbmNvQoSY}
+\enonce
+Soit $f:[a,b]\rightarrow \R$ une fonction continue sur $[a,b]$ ($a<b$).
+\begin{enumerate}
+\item On suppose que $f(x) \ge 0$ pour tout $x\in [a,b]$, et que $f(x_0)>0$ en un point $x_0\in [a,b]$. 
+Montrer que $\int_a^b f(x) d x>0$. En déduire que : <<si $f$ est une fonction continue
+positive sur $[a,b]$ telle que $\int_a^b f(x) d x=0$ alors $f$ est
+identiquement nulle>>.
+\item On suppose que $\int_a^b f(x) d x=0$. Montrer qu'il existe $c\in [a,b]$ tel que $f(c)=0$. 
+\item Application: on suppose
+que $f$ est une fonction continue sur $[0,1]$ telle que $\int_0^1 f(x) dx=\frac 12$. 
+Montrer qu'il existe $d\in [0,1]$ tel que $f(d)=d$.
+\end{enumerate}
+\finenonce 
+
+\indication
+  \begin{enumerate}
+  \item Revenir à la définition de la continuité en $x_0$ en prenant $\epsilon = \frac {f(x_0)}{2}$ par exemple.
+  \item Soit $f$ est tout le temps de même signe (et alors utiliser la première question), soit ce n'est pas le cas (et alors utiliser un théorème classique...).
+  \item On remarquera que $\int_0^1 f(x) \, dx - \frac 12 = \int_0^1 (f(x) - x) dx$.
+  \end{enumerate}
+\finindication
+
+\correction
+ \begin{enumerate}
+  \item \'Ecrivons la continuité de $f$ en $x_0$ avec $\epsilon = \frac {f(x_0)}{2} > 0$ :
+il existe $\delta >0$ tel que pour tout $x\in [x_0-\delta, x_0+\delta]$ on ait $|f(x)-f(x_0)| \leqslant \epsilon$.
+Avec notre choix de $\epsilon$ cela donne pour $x\in [x_0-\delta, x_0+\delta]$ que $f(x) \geqslant \frac {f(x_0)}{2}$.
+Pour évaluer $\int_a^b f(x) \, dx$ nous la coupons en trois morceaux par linéarité de l'intégrale :
+$$\int_a^b f(x) \, dx = \int_a^{x_0-\delta} f(x) dx +  \int_{x_0-\delta}^{x_0+\delta} f(x) dx +  \int_{x_0+\delta}^b f(x) dx.$$
+Comme $f$ est positive alors par positivité de l'intégrale $\int_a^{x_0-\delta} f(x) dx \geqslant 0$ et
+$\int_{x_0+\delta}^b f(x) dx \geqslant 0$. Pour le terme du milieu on a $f(x) \geqslant \frac {f(x_0)}{2}$ donc
+$\int_{x_0-\delta}^{x_0+\delta} f(x) dx \geqslant \int_{x_0-\delta}^{x_0+\delta} \frac {f(x_0)}{2} dx =
+2\delta\frac {f(x_0)}{2}$ (pour la dernière équation on calcule juste l'intégrale d'une fonction constante !).
+Le bilan de tout cela est que $\int_a^b f(x) \, dx \geqslant 2\delta\frac {f(x_0)}{2} >0$.
+
+Donc pour une fonction continue et positive $f$, si elle est strictement positive en un point alors  $\int_a^b f(x) \, dx >0$.
+Par contraposition pour une fonction continue et positive si $\int_a^b f(x) \, dx =0$ alors
+$f$ est identiquement nulle.
+
+
+  \item Soit $f$ est tout le temps positive, soit elle tout le temps négative, soit elle change 
+(au moins un fois) de signe. Dans le premier cas $f$ est identiquement nulle par la première question, 
+dans le second cas c'est pareil (en appliquant la première question à $-f$). Pour le troisième cas 
+le théorème des valeurs intermédiaires affirme qu'il existe $c$ tel que $f(c)=0$.
+
+  \item Posons $g(x) = f(x)-x$. Alors $\int_0^1 g(x) dx = \int_0^1 \big( f(x) - x \big)  dx= \int_0^1 f(x) dx - \frac 12 = 0$.
+Donc par la question précédente, $g$ étant continue, il existe $d \in [0,1]$ tel que $g(d)=0$, ce qui est équivalent à $f(d)=d$.
+  \end{enumerate}
+\fincorrection
+\finexercice
+

@@ -1,0 +1,30 @@
+\exercice{4745, quercia, 2010/03/16}
+\enonce[$x/\max(1,\|x\|)$, Centrale MP 2005]
+
+Soit $f$ d{\'e}finie par $f(x)=\frac{x}{\max(1,\|x\|)}$. Montrer que $f$ est $2$-lipschitzienne.
+
+\finenonce
+
+\noindication
+
+\correction
+Pour $\|x\| \le 1$ et $\|y\| \le 1$ on a $\|f(x)-f(y)\| = \|x-y\|$.
+
+Pour $\|x\| \le 1< \|y\|$ on a
+$\|f(x)-f(y)\| \le \|x-y\| + \Bigr\|y - \frac y{\|y\|}\Bigr\|
+= \|x-y\| + \|y\| - 1 \le \|x-y\| + \|y\| - \|x\| \le 2\|x-y\|$.
+
+Pour $1 < \|x\| \le \|y\|$ on a $\|f(x) - f(y)\| \le
+\Bigl\|\frac x{\|x\|} - \frac y{\|x\|}\Bigr\| + 
+\Bigl\|\frac y{\|x\|} - \frac y{\|y\|}\Bigr\| \le
+\frac{\|x-y\| + \|y\| - \|x\|}{\|x\|} \le \frac{2\|x-y\|}{\|x\|}$.
+
+
+Remarque~: dans le cas o{\`u} la norme est euclidienne, $f(x)$ est le projet{\'e}
+de $x$ sur la boule unit{\'e}, c'est-{\`a}-dire le point de la boule unit{\'e} le plus
+proche de~$x$. Dans ce cas, $f$ est $1$-lipschitzienne. Dans le cas d'une norme
+non euclidienne on peut avoir $\|f(x)-f(y)\| > \|x-y\|$, par exemple
+avec $x=(1,1)$ et $y=(\frac12,\frac32)$ dans $\R^2$ pour $\|\ \|_\infty$.
+\fincorrection
+
+\finexercice

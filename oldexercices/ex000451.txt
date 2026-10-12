@@ -1,0 +1,59 @@
+\exercice{451, bodin, 1998/09/01}
+\video{1d2LZ6zGdjg}
+\enonce
+\begin{enumerate}
+    \item D\'emontrer que si $r \in \Q$ et $ x \notin \Q $ alors $ r+x
+\notin \Q $ et si $r\not= 0$ alors $ r.x \notin \Q $.
+    \item Montrer que $\sqrt 2 \not\in\Q$,
+    \item En d\'eduire : entre deux nombres rationnels il y a toujours un nombre irrationnel.
+\end{enumerate}
+\finenonce 
+
+\indication
+\begin{enumerate}
+  \item Raisonner par l'absurde.
+  \item Raisonner par l'absurde en \'ecrivant $\sqrt2=\frac pq$ avec $p$ et $q$ premiers entre eux. Ensuite plusieurs méthodes sont possibles par exemple essayer de montrer que $p$ et $q$ sont tous les deux pairs.
+  \item Considérer $r + \frac{\sqrt 2}{2}(r'-r)$ (faites un dessin !) pour deux rationnels $r,r'$. Puis utiliser les deux questions pr\'ec\'edentes.
+
+\end{enumerate}
+\finindication
+
+\correction
+\begin{enumerate}
+\item Soit $r=\frac pq\in \Qq$ et $x\notin\Qq$.
+Par l'absurde supposons que $r+x\in \Qq$ alors il existe deux
+entiers $p', q'$ tels que $r+x =\frac {p'}{q'}$. Donc $x = \frac
+{p'}{q'}-\frac pq = \frac{qp'-pq'}{qq'}\in\Qq$ ce qui est absurde
+car $x\notin \Qq$.
+
+De la m\^eme fa\c{c}on  si $r \cdot x \in \Qq$ alors $r \cdot x = \frac{p'}{q'}$
+Et donc $x = \frac {p'}{q'}\frac {q}{p}$. Ce qui est absurde.
+
+\item \emph{Méthode ``classique''.} Supposons, par l'absurde, que $\sqrt2 \in \Qq$ alors il existe deux entiers $p,q$ tels que $\sqrt2=\frac pq$. De plus nous pouvons supposer que la fraction est irr\'eductible ($p$ et $q$ sont premiers entre eux). En \'elevant l'\'egalit\'e au carr\'e nous obtenons $q^2\times 2=p^2$. Donc $p^2$ est un nombre pair, cela implique que $p$ est un nombre pair (si vous n'\^etes pas convaincu \'ecrivez la contrapos\'ee ``$p$ impair $\Rightarrow$ $p^2$ impair''). Donc $p = 2\times p'$ avec $p'\in \Nn$, d'o\`u $p^2= 4\times {p'}^2$. Nous obtenons $q^2=2\times {p'}^2$. Nous en d\'eduisons maintenant que $q^2$ est pair et comme ci-dessus que $q$ est pair.
+Nous obtenons ainsi une contradiction car  $p$ et $q$ \'etant tous
+les deux pairs la fraction $\frac pq$ n'est pas irr\'eductible et
+aurait pu \^etre simplifiée. Donc $\sqrt 2\notin\Qq$.
+
+\emph{Autre méthode.} Supposons par l'absurde que $\sqrt 2 \in \Qq$. Alors $\sqrt 2 = \frac pq$ pour deux entiers $p,q \in \Nn^*$.
+Alors nous avons $q \cdot \sqrt 2 \in \Nn$. Considérons l'ensemble suivant :
+$$\mathcal{N} = \left\lbrace n \in \Nn^* \mid n\cdot \sqrt 2 \in \Nn \right\rbrace.$$
+Cet ensemble $\mathcal{N}$ est une partie de $\Nn^*$ qui est non vide car $q\in\mathcal{N}$.
+On peut alors prendre le plus petit élément de $\mathcal{N}$ : $n_0 = \min \mathcal{N}$.
+En particulier $n_0 \cdot \sqrt 2 \in \Nn$.
+Définissons maintenant $n_1$ de la façon suivante : $n_1 = n_0 \cdot \sqrt 2 - n_0$.
+Il se trouve que $n_1$ appartient aussi à $\mathcal{N}$ car d'une part
+ $n_1 \in \Nn$ (car $n_0$ et $n_0 \cdot \sqrt{2}$ sont des entiers) et d'autre part
+$n_1 \cdot \sqrt 2 = n_0 \cdot 2 - n_0 \cdot \sqrt 2 \in \Nn$.
+Montrons maintenant que $n_1$ est plus petit que $n_0$.
+Comme $0 < \sqrt 2 -1 < 1$ alors $n_1 = n_0 (\sqrt 2 -1) < n_0$ et est non nul.
+
+Bilan : nous avons trouvé $n_1 \in \mathcal{N}$ strictement plus petit que $n_0 = \min \mathcal{N}$.
+Ceci fournit une contradiction. Conclusion : $\sqrt{2}$ n'est pas un nombre rationnel.
+
+\item Soient $r,r'$ deux rationnels avec $r<r'$. Notons $x=r + \frac{\sqrt2}{2}(r'-r)$.
+D'une part $x\in]r,r'[$ (car $0 < \frac{\sqrt2}{2} < 1$) et d'apr\`es les deux premi\`eres questions
+$\sqrt2\left(\frac{r'-r}{2}\right) \notin \Qq$ donc $x\notin \Qq$. Et donc $x$ est un
+nombre irrationnel compris entre $r$ et $r'$.
+\end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,21 @@
+\exercice{2127, debes, 2008/02/12}
+\enonce
+ Soient $G$ un groupe fini et commutatif et $\{ G_i\} _{i\in I }$ la famille des sous-groupes
+propres maximaux de $G$. On pose $F=\bigcap _{i\in I} G_i$. Montrer que $F$ est
+l'ensemble des \'el\'ements $a$ de $G$ qui sont tels que, pour toute partie $S$ de
+$G$ contenant $a$ et engendrant $G$, $S-\{ a \}$ engendre encore $G$.
+\finenonce 
+
+\noindication
+\correction 
+Etant donn\'e $a\in F$, soit $S$ une partie de $G$ contenant $a$
+et engendrant $G$. Si $<S-\{ a \}> \not= G$, alors il existe un sous-groupe propre
+maximal $G_i$ tel que $<S-\{ a \}> \subset G_i$. Mais alors $<S> \hskip 3pt \subset
+\hskip 3pt <S-\{ a \}> <a> \hskip 3pt \subset \hskip 3pt G_i$. Contradiction, donc
+$<S-\{ a \}> \not= G$.
+
+Inversement, supposons que $a\notin F$, c'est-\`a-dire, il existe $i\in I$ tel que
+$a\notin G_i$. Alors pour $S=G_i\cup \{a\}$, on a $<S>=G$ (par maximalit\'e de
+$G_i$) mais $<S-\{ a \}> = G_i \not= G$.
+\fincorrection
+\finexercice

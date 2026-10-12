@@ -1,0 +1,32 @@
+\exercice{5363, rouget, 2010/07/06}
+\enonce[**]
+Pour $a$, $b$ et $c$ deux à deux distincts donnés, factoriser $\left|
+\begin{array}{cccc}
+X&a&b&c\\
+a&X&c&b\\
+b&c&X&a\\
+c&b&a&X
+\end{array}\right|$.
+\finenonce
+
+\noindication
+
+\correction
+Soit $P=\left|
+\begin{array}{cccc}
+X&a&b&c\\
+a&X&c&b\\
+b&c&X&a\\
+c&b&a&X
+\end{array}\right|$. $P$ est un polynôme unitaire de degré $4$.
+En remplaçant $C_1$ par $C_1+C_2+C_3+C_4$ et par linéarité par rapport à la première colonne, on voit que $P$ est divisible par $(X+a+b+c)$. Mais aussi, en remplaçant $C_1$ par $C_1-C_2-C_3+C_4$ ou $C_1-C_2+C_3-C_4$ ou $C_1+C_2-C_3-C_4$, on voit que $P$ est divisible par $(X-a-b+c)$ ou $(X-a+b-c)$ ou $(X+a-b-c)$.
+\textbf{1er cas.} Si les quatre nombres $-a-b-c$, $-a+b+c$, $a-b+c$ et $a+b-c$ sont deux à deux distincts, $P$ est unitaire de degré $4$ et divisible par les quatre facteurs de degré $1$ précédents, ceux-ci étant deux à deux premiers entre eux. Dans ce cas, $P=(X+a+b+c)(X+a+b-c)(X+a-b+c)(X-a+b+c)$.
+\textbf{2ème cas.} Deux au moins des quatre nombres $-a-b-c$, $-a+b+c$, $a-b+c$ et $a+b-c$ sont égaux. Notons alors que $-a-b-c=a+b-c\Leftrightarrow b=-a$ et que $-a+b+c=a-b+c\Leftrightarrow a=b$. Par symétrie des roles, deux des quatre nombres $-a-b-c$, $-a+b+c$, $a-b+c$ et $a+b-c$ sont égaux si et seulement si deux des trois nombres $|a|$, $|b|$ ou $|c|$ sont égaux. On conclut dans ce cas que l'expression de $P$ précédemment trouvée reste valable par continuité par rapport à $a$, $b$ ou $c$.
+
+\begin{center}
+\shadowbox{
+$P=(X+a+b+c)(X+a+b-c)(X+a-b+c)(X-a+b+c)$.
+}
+\end{center}
+\fincorrection
+\finexercice

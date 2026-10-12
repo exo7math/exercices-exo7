@@ -1,0 +1,27 @@
+\exercice{3239, quercia, 2010/03/08}
+
+\enonce[Racines r{\'e}elles simples]
+Soit $P = \sum_{k=0}^n a_kX^k \in {\R[X]}$ dont les racines sont r{\'e}elles simples.
+
+\begin{enumerate}
+  \item   D{\'e}montrer que : $\forall\ x \in \R$, on a $P(x)P''(x) \le P'^2(x)$.
+  \item   D{\'e}montrer que : $\forall\ k \in \{1,\dots, n-1\},\ a_{k-1}a_{k+1} \le a_k^2$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Soit $P(x) = a_n\prod_{k=1}^n(x-x_k)$.
+      On a : $\sum_{k=0}^n \frac 1{(x-x_k)^2}
+               = -\frac d{dx}\Bigl(\frac {P'}P\Bigr)(x) = \frac {P'^2 - PP''}{P^2}(x)$.
+  \item Pour $k=1,x=0$, on a : $a_0a_2 \le \frac 12a_1^2$.\\
+      Pour $k$ quelconque : on applique le cas pr{\'e}c{\'e}dent {\`a} $P^{(k-1)}$ dont les
+      racines sont encore r{\'e}elles simples : \\
+      $(k-1)!a_{k-1} \times \frac {(k+1)!}2a_{k+1} \le \frac 12(k!a_k)^2
+        \Rightarrow 
+       a_{k-1}a_{k+1} \le \frac {k}{k+1}a_k^2$.
+\end{enumerate}
+\fincorrection
+\finexercice 

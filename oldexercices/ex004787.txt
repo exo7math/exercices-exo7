@@ -1,0 +1,51 @@
+\exercice{4787, quercia, 2010/03/16}
+\enonce[X MP$^*$ 2001]
+
+On consid{\`e}re l'espace $\mathcal{M}_n(\C)$ muni d'une norme quelconque.
+
+\begin{enumerate}
+  \item Montrer que $GL_n(\C)$ est ouvert dense de $\mathcal{M}_n(\C)$.
+    
+
+  \item Soit $D_n(\C)$ l'ensemble des matrices diagonalisables de $\mathcal{M}_n(\C)$.
+    Montrer que $D_n(\C)$ est dense dans $\mathcal{M}_n(\C)$.
+    
+
+  \item Quel est l'int{\'e}rieur de $D_n(\C)$~?
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $GL_n(\C) = \det^{-1}(\C\setminus\{0\})$ est ouvert.
+    Il est dense car $A\in\mathcal{M}_n(\C)$ quelconque est limite des matrices
+    $A - \frac1p I$ inversibles pour presque tout entier $p$ ($A$ a un
+    nombre fini de valeurs propres).
+  \item Toute matrice triangulaire est limite de matrices triangulaires
+    {\`a} coefficients diagonaux distincts.
+  \item $\begin{pmatrix}\lambda &0\cr 0&\lambda\cr\end{pmatrix}
+             = \lim_{p\to\infty}\begin{pmatrix}\lambda &1/p\cr 0&\lambda\cr\end{pmatrix}$
+    donc une matrice triangulaire {\`a} valeurs propres non distinctes est
+    limite de matrices non diagonalisables.
+    Par conjugaison, la fronti{\`e}re de $D_n(\C)$ contient
+    l'ensemble des matrices ayant au moins une valeur propre multiple.
+    
+    R{\'e}ciproquement, soit $(A_k)$ une suite de matrices non diagonalisables
+    convergeant vers une matrice~$A$. Les matrices $A_k$ ont toutes au moins une valeur
+    propre multiple, et ces valeurs propres sont born{\'e}es
+    (car si $\lambda$ est une valeur propre de~$M$ alors $|\lambda| \le \| M\|$ en prenant une norme
+    sur $\mathcal{M}_n(\C)$ subordonn{\'e}e {\`a} une norme sur $\C^n$) donc on peut trouver
+    une suite $(z_k)$ de complexes convergeant vers un complexe $z$ telle
+    que $\chi'_{A_k}(z_k) = 0$. A la limite on a $\chi_A(z) = 0$ ce qui prouve
+    que $A$ a au moins une valeur propre multiple.
+    
+    Conclusion~: la fronti{\`e}re de~$D_n(\C)$ est exactement l'ensemble des
+    matrices diagonalisables ayant au moins une valeur propre multiple et l'int{\'e}rieur
+    de~$D_n(\C)$ est l'ensemble des matrices {\`a} valeurs propres distinctes.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

@@ -1,0 +1,22 @@
+\exercice{7183, megy, 2017/07/26}
+\enonce
+%[séparation de termes]
+Soient $a$, $b$ et $c$ trois réels. Montrer que
+\[ a^4+b^4+c^4 \geq abc(a+b+c).\]
+\finenonce
+
+\indication 
+Utiliser l'inégalité arithmético-géométrique.
+\finindication
+\correction 
+Partir du membre de gauche et appliquer l'inégalité arithmético-géométrique à trois variables ne donne pas immédiatement le résultat. Si on développe le membre de droite, on obtient
+\[ a^2bc+b^2ca+c^2ab,\]
+que l'on peut essayer de minorer par trois utilisations indépendantes de l'inégalité arithmético-géométrique à quatre variables:
+\[ a^2bc = \sqrt[4]{a^4a^4b^4c^4} \leq \frac14\left(a^4+a^4+b^4+c^4\right) = \frac14\left(2a^4+b^4+c^4\right). \]
+De même, 
+\[ b^2ac\leq \frac14\left(a^4+2b^4+c^4\right)
+\text{ et }
+c^2ab \leq \frac14\left(a^4+b^4+2c^4\right).\]
+En sommant ces trois inégalités, on obtient le résultat.
+\fincorrection  
+\finexercice  

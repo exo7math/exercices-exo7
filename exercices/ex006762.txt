@@ -1,37 +1,40 @@
 \exercice{6762, queffelec, 2011/10/16}
-\enonce 
-On se propose de démontrer que pour tout $z$ de $\C$,
-$$\prod_{n\ge 1}\left( 1-{z^2\over n^2}\right)={\sin{(\pi z)}\over
-\pi z}$$
-\begin{enumerate}  
-\item On pose
-$$F(z) ={1\over z}+\sum_{n\in {\Zz}, n\ne 0}\left({1\over z-n}+{1\over
-n}\right)$$
-Montrer que $F$ est une fonction méromorphe sur $\C$.
 
-En utilisant 
-$$\sum_{n\in{\Zz}}{1\over (z-n)^2}=\left({\pi\over \sin{(\pi
-z)}}\right)^2$$
- montrer que $\displaystyle F(z)-{\pi\over \tan{(\pi z)}}$ est constante
-sur $\C\setminus {\Zz}$, puis calculer cette constante par un argument
-de parité. En déduire que
-$${\pi\over \tan{(\pi z)}}={1\over z}+\sum_{n\ge 1}{2z\over z^2-n^2}$$
+\enonce
+On se propose de démontrer que pour tout \( z \) de \( \Cc \),
+\[
+  \prod_{n\ge 1}\left( 1-\frac{z^2}{n^2}\right) = \frac{\sin{(\pi z)}}{\pi z}
+\]
+\begin{enumerate}
+  \item On pose
+        \[
+          F(z) = \frac{1}{z}+\sum_{n\in \Zz, n\ne 0}\left(\frac{1}{z-n}+\frac{1}{n}\right)
+        \]
+        Montrer que \( F \) est une fonction méromorphe sur \( \Cc \).
 
-\item Pour $n\ge 1$, soit $\displaystyle f_n(z)=1-{z^2\over n^2}$. Montrer que
-$\prod_{n\ge 1}f_n(z)$ définit une fonction entière $f$.
+        En utilisant
+        \[
+          \sum_{n\in\Zz}\frac{1}{(z-n)^2} = \left(\frac{\pi}{\sin{(\pi z)}}\right)^2
+        \]
+        montrer que \( \displaystyle F(z)-\frac{\pi}{\tan{(\pi z)}} \) est constante sur \( \Cc\setminus \Zz \), puis calculer cette constante par un argument de parité. En déduire que
+        \[
+          \frac{\pi}{\tan{(\pi z)}} = \frac{1}{z}+\sum_{n\ge 1}\frac{2z}{z^2-n^2}
+        \]
 
-Montrer que
-$$\sum_{n\ge 1}{f_n'(z)\over f_n(z)}={g'(z)\over g(z)}$$
-avec $\displaystyle g(z)={\sin{(\pi z)}\over \pi z}$. En déduire le résultat voulu.
+  \item Pour \( n\ge 1 \), soit \( \displaystyle f_n(z) = 1-\frac{z^2}{n^2} \). Montrer que \( \prod_{n\ge 1}f_n(z) \) définit une fonction entière \( f \).
 
+        Montrer que
+        \[
+          \sum_{n\ge 1}\frac{f_n'(z)}{f_n(z)} = \frac{g'(z)}{g(z)}
+        \]
+        avec \( \displaystyle g(z) = \frac{\sin{(\pi z)}}{\pi z} \). En déduire le résultat voulu.
 
-\item  Déduire de la décomposition de $\displaystyle {\sin{(\pi z)}\over
-\pi z}$ en produit que
-\begin{eqnarray*}
-{\sh z\over z}&=&\prod_{n\ge 1}\left( 1+{z^2\over n^2\pi^2}\right)\\
-\ch z&=&\prod_{n\ge 1}\left( 1+{4z^2\over (2n-1)^2\pi^2}\right)\\
-\cos z&=&\prod_{n\ge 1}\left( 1-{4z^2\over (2n-1)^2\pi^2}\right)\\
-\end{eqnarray*}
+  \item Déduire de la décomposition de \( \displaystyle \frac{\sin{(\pi z)}}{\pi z} \) en produit que
+        \begin{eqnarray*}
+          \frac{\sh z}{z}&=&\prod_{n\ge 1}\left( 1+\frac{z^2}{n^2\pi^2}\right)\\
+          \ch z&=&\prod_{n\ge 1}\left( 1+\frac{4z^2}{(2n-1)^2\pi^2}\right)\\
+          \cos z&=&\prod_{n\ge 1}\left( 1-\frac{4z^2}{(2n-1)^2\pi^2}\right)\\
+        \end{eqnarray*}
 \end{enumerate}
 \finenonce
 
@@ -39,4 +42,4 @@ avec $\displaystyle g(z)={\sin{(\pi z)}\over \pi z}$. En déduire le résultat v
 
 \nocorrection
 
-\finexercice       
+\finexercice

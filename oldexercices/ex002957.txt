@@ -1,0 +1,27 @@
+\exercice{2957, quercia, 2010/03/08}
+
+\enonce[$\sum 2^{-k}/\cos\theta\dots\cos(2^k\theta)$]
+Simplifier $$\sum_{k=1}^n\, \frac 1
+{2^k \cos\theta \cos2\theta \cos4\theta \dots \cos2^{k-1}\theta}.$$
+\finenonce
+
+\noindication
+
+\correction
+$S = \frac {u-u^{-1}}{u^2-u^{-2}} +
+     \frac {u-u^{-1}}{u^4-u^{-4}} + \dots +
+     \frac {u-u^{-1}}{u^{2^n}-u^{-2^n}}$.
+\par
+$\frac {u-u^{-1}}{u^2-u^{-2}} +
+ \frac {u-u^{-1}}{u^4-u^{-4}} =
+ \frac {u^3-u^{-3}}{u^4-u^{-4}}$.
+\par
+$\frac {u^3-u^{-3}}{u^4-u^{-4}} +
+ \frac {u-u^{-1}}{u^8-u^{-8}} =
+ \frac {u^7-u^{-7}}{u^8-u^{-8}}$
+$\ldots$
+\par
+$ \Rightarrow  S = \frac {u^{2^n-1}-u^{-2^n+1}}{u^{2^n}-u^{-2^n}}
+       = \frac {\sin\bigl((2^n-1)\theta\bigr)}{\sin(2^n\theta)}$.
+\fincorrection
+\finexercice 

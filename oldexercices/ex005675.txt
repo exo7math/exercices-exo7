@@ -1,0 +1,28 @@
+\exercice{5675, rouget, 2010/10/16}
+\enonce[***I]
+Sur $E$ un $\Rr$-espace vectoriel. On donne trois endomorphismes $f$, $u$ et $v$ tels qu'il existe deux réels $\lambda$ et $\mu$ tels que pour $k\in\{1,2,3\}$, $f^k =\lambda^ku +\mu^kv$. Montrer que $f$ est diagonalisable.
+\finenonce
+
+\noindication
+
+\correction
+Trouvons un polynôme scindé à racines simples annulant $f$.
+
+Le polynôme $P =X(X-\lambda)(X-\mu) = X^3 - (\lambda+\mu)X^2 +\lambda\mu X$ est annulateur de $f$. En effet,
+
+\begin{align*}\ensuremath
+P(f)&=f^3 -(\lambda+\mu)f^2 +\lambda\mu f = (\lambda^3 - (\lambda+\mu)\lambda^2 +(\lambda\mu)\lambda)u + (\mu^3 - (\lambda+\mu)\mu^2 +(\lambda\mu)\mu)v\\
+ &= P(\lambda)u + P(\mu)v=0 .
+\end{align*}
+
+\textbullet~Si $\lambda$ et $\mu$ sont distincts et non nuls, $P$ est un polynôme scindé à racines simples annulateur de $f$ et donc $f$ est diagonalisable.
+
+\textbullet~Si $\lambda=\mu=0$, alors $f=0$ et donc $f$ est diagonalisable.
+
+\textbullet~Si par exemple $\lambda\neq0$ et $\mu=0$, $f^2 =\lambda^2u =\lambda f$ et et le polynôme $P=X(X-\lambda)$ est scindé à racines simples et annulateur de $f$. Dans ce cas aussi $f$ est diagonalisable.
+
+\textbullet~Enfin si $\lambda=\mu\neq0$, $f^2 =\lambda^2(u+v) =\lambda f$ et de nouveau $P=X(X-\lambda)$ est scindé à racines simples et annulateur de $f$.
+
+Dans tous les cas, $f$ est diagonalisable.
+\fincorrection
+\finexercice

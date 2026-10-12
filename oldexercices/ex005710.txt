@@ -1,0 +1,45 @@
+\exercice{5710, rouget, 2010/10/16}
+\enonce[**]
+ Calculer $\sum_{n=0}^{+\infty}\frac{(-1)^n}{3n+1}$.
+\finenonce
+
+\noindication
+
+\correction
+La suite $\left((-1)^n\frac{1}{3n+1}\right)_{n\in\Nn}$ est alternée en signe et sa valeur absolue tend vers $0$ en décroissant. Donc la série de terme général $(-1)^n\frac{1}{3n+1}$, $n\geqslant 1$, converge en vertu du critère spécial aux séries alternées.
+
+Soit $n\in\Nn$.
+
+\begin{center}
+$\sum_{k=0}^{n}\frac{(-1)^k}{3k+1}=\sum_{k=0}^{n}(-1)^k\int_{0}^{1}t^{3k}\;dt=\int_{0}^{1}\frac{1-(-t^3)^{n+1}}{1-(-t^3)}\;dt=\int_{0}^{1}\frac{1}{1+t^3}\;dt+(-1)^n\int_{0}^{1}\frac{t^{3n+3}}{1+t^3}\;dt$.
+\end{center}
+
+Mais $\left|(-1)^n\int_{0}^{1}\frac{t^{3n+3}}{1+t^3}\;dt\right|=\int_{0}^{1}\frac{t^{3n+3}}{1+t^3}\;dt\leqslant\int_{0}^{1}t^{3n+3}\;dt=\frac{1}{3n+4}$. On en déduit que $(-1)^n\int_{0}^{1}\frac{t^{3n+3}}{1+t^3}\;dt$ tend vers $0$ quand $n$ tend vers $+\infty$ et donc que
+
+\begin{center}
+$\sum_{n=0}^{+\infty}\frac{(-1)^n}{3n+1}=\int_{0}^{1}\frac{1}{1+t^3}\;dt$.
+\end{center}
+
+Calculons cette dernière intégrale.
+
+\begin{align*}\ensuremath
+\frac{1}{X^3+1}&=\frac{1}{(X+1)(X+j)(X+j^2)}=\frac{1}{3}\left(\frac{1}{X+1}+\frac{j}{X+j}+\frac{j^2}{X+j^2}\right)=\frac{1}{3}\left(\frac{1}{X+1}+\frac{-X+2}{X^2-X+1}\right)\\
+ &\frac{1}{3}\left(\frac{1}{X+1}-\frac{1}{2}\frac{2X-1}{X^2-X+1}+
+ \frac{3}{2}\frac{1}{\left(X-\frac{1}{2}\right)^2+\left(\frac{\sqrt{3}}{2}\right)^2}
+ \right).
+\end{align*}
+
+ 
+Donc, 
+
+\begin{center}
+$\sum_{n=0}^{+\infty}\frac{(-1)^n}{3n+1}=\frac{1}{3}\left[\ln(t+1)-\frac{1}{2}\ln(t^2-t+1)+\sqrt{3}\Arctan\left(\frac{2t-1}{\sqrt{3}}\right)\right]_0^1=\frac{1}{3}\left(\ln2+\sqrt{3}\left(\frac{\pi}{6}-\left(-\frac{\pi}{6}\right)\right)\right)=\frac{3\ln2+\pi\sqrt{3}}{9}$.
+\end{center}
+
+\begin{center}
+\shadowbox{
+$\sum_{n=0}^{+\infty}\frac{(-1)^n}{3n+1}=\frac{3\ln2+\pi\sqrt{3}}{9}$.
+}
+\end{center}
+\fincorrection
+\finexercice

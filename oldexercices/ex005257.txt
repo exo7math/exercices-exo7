@@ -1,0 +1,164 @@
+\exercice{5257, rouget, 2010/07/04}
+\enonce[**T]
+Soit $u$ l'endomorphisme de $\Rr^3$ dont la matrice dans la base canonique $(i,j,k)$ de $\Rr^3$ est~:
+
+$$M=\left(
+\begin{array}{ccc}
+2&1&0\\
+-3&-1&1\\
+1&0&-1
+\end{array}
+\right)
+.$$
+
+\begin{enumerate}
+\item  Déterminer $u(2i-3j+5k)$.
+\item  Déterminer $\mbox{Ker}u$ et $\mbox{Im}u$.
+\item  Calculer $M^2$ et $M^3$.
+\item  Déterminer $\mbox{Ker}u^2$ et $\mbox{Im}u^2$.
+\item  Calculer $(I-M)(I+M+M^2)$ et en déduire que $I-M$ est inversible. Préciser $(I-M)^{-1}$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  Soit $X=\left(
+\begin{array}{c}
+2\\
+-3\\
+5
+\end{array}
+\right)$. $MX=\left(
+\begin{array}{ccc}
+2&1&0\\
+-3&-1&1\\
+1&0&-1
+\end{array}
+\right)\left(
+\begin{array}{c}
+2\\
+-3\\
+5
+\end{array}
+\right)=\left(
+\begin{array}{c}
+1\\
+2\\
+-3
+\end{array}
+\right)$  et $u(2i-3j+5k)=i+2j-3k$.
+\item  Soit $X=\left(
+\begin{array}{c}
+x\\
+y\\
+z
+\end{array}
+\right)\in\mathcal{M}_{3,1}(\Rr)$ . 
+
+$$MX=0\Leftrightarrow\left(
+\begin{array}{ccc}
+2&1&0\\
+-3&-1&1\\
+1&0&-1
+\end{array}
+\right)\left(
+\begin{array}{c}
+x\\
+y\\
+z
+\end{array}
+\right)=\left(
+\begin{array}{c}
+0\\
+0\\
+0
+\end{array}
+\right)\Leftrightarrow
+\left\{
+\begin{array}{l}
+2x+y=0\\
+-3x-y+z=0\\
+x-z=0
+\end{array}
+\right.\Leftrightarrow\left\{
+\begin{array}{l}
+y=-2x\\
+z=x
+\end{array}
+\right..$$
+
+Donc, $\mbox{Ker}u=\mbox{Vect}(i-2j+k)$. En particulier, $\mbox{dim}(\mbox{Ker}u)=1$ et, d'après le théorème du rang, $\mbox{rg}u=2$. Or, $u(j)=i-j$ et $u(k)=j+k$ sont deux vecteurs non colinéaires de $\mbox{Im}u$ qui est un plan vectoriel et donc $\mbox{Im}u=\mbox{Vect}(i-j,j-k)$.
+
+\item  $$M^2=\left(
+\begin{array}{ccc}
+2&1&0\\
+-3&-1&1\\
+1&0&-1
+\end{array}
+\right)\left(
+\begin{array}{ccc}
+2&1&0\\
+-3&-1&1\\
+1&0&-1
+\end{array}
+\right)=\left(
+\begin{array}{ccc}
+1&1&1\\
+-2&-2&-2\\
+1&1&1
+\end{array}
+\right)$$
+
+et 
+
+$$M^3=M^2.M=\left(
+\begin{array}{ccc}
+1&1&1\\
+-2&-2&-2\\
+1&1&1
+\end{array}
+\right)\left(
+\begin{array}{ccc}
+2&1&0\\
+-3&-1&1\\
+1&0&-1
+\end{array}
+\right)=0.$$
+
+\item  $\mbox{Ker}u^2$ est à l'évidence le plan d'équation $x+y+z=0$. Une base de $\mbox{Ker}u^2$ est $(i-j,j-k)$ et donc $\mbox{Ker}u^2=\mbox{Im}u=\mbox{Vect}(i-j,j-k)$.
+
+D'après le théorème du rang, $\mbox{Im}u^2$ est une droite vectorielle. Mais $u^3=0$ s'écrit encore $u\circ u^2=0$, et donc $\mbox{Im}u^2$ est contenue dans $\mbox{Ker}u$ qui est une droite vectorielle. Donc, $\mbox{Im}u^2=\mbox{Ker}u=\mbox{Vect}(i-2j+k)$.
+
+\item  $(I-M)(I+M+M^2)=I-M^3=I$. Par suite, $I-M$ est inversible à droite et donc inversible et 
+
+$$(I-M)^{-1}=I+M+M^2=\left(
+\begin{array}{ccc}
+1&0&0\\
+0&1&0\\
+0&0&1
+\end{array}
+\right)+\left(
+\begin{array}{ccc}
+2&1&0\\
+-3&-1&1\\
+1&0&-1
+\end{array}
+\right)+\left(
+\begin{array}{ccc}
+1&1&1\\
+-2&-2&-2\\
+1&1&1
+\end{array}
+\right)=\left(
+\begin{array}{ccc}
+4&2&1\\
+-5&-2&-1\\
+2&1&1
+\end{array}
+\right).$$
+
+\end{enumerate}
+\fincorrection
+\finexercice

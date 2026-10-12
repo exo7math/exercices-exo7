@@ -1,0 +1,32 @@
+\exercice{7712, mourougane, 2021/08/11}
+\enonce
+\begin{enumerate}
+ \item Déterminer les plans tangents et un champs de vecteurs normaux unitaires
+au paraboloïde hyperbolique $\mathcal{P}$ d'équation $z=y^2-x^2$ au voisinage du point $A(0,0,0)$
+de coordonnées $(0,0,0)$.
+ \item Déterminer l'application de Weingarten au point $A$ du paraboloïde hyperbolique $\mathcal{P}$.
+ \item En déduire la courbure de Gauss et les directions principales du paraboloïde hyperbolique $\mathcal{P}$ au point $A$.
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+ \item Par l'exercice précédent, $\mathcal{P}$ a pour plan tangent au point $M(x,y,z)$
+le plan d'équation $Z=2yY-2xX$. 
+En particulier, le plan tangent en $A$ est le plan d'équation $Z=0$
+engendré par les deux vecteurs de base $\begin{pmatrix} 1\\0\\0\end{pmatrix}$ et $\begin{pmatrix} 0\\1\\0\end{pmatrix}$.
+Un champs de vecteurs normaux unitaires est donc
+$$N(x,y,y)=\frac{1}{\sqrt{4x^2+4y^2+1}}\begin{pmatrix} 2x\\-2y\\1 \end{pmatrix}.$$
+
+ \item L'endomorphisme de Weingarten est donné au point $A(0,0,0)$
+par $W_A=-dN(A) : T_A\mathcal{P}\to T_A\mathcal{P}$ 
+$$\begin{array}{c}   \begin{pmatrix} 1\\0\\0\end{pmatrix} 
+\mapsto -\begin{pmatrix} 2\\0\\0 \end{pmatrix}\\
+\begin{pmatrix} 0\\1\\0\end{pmatrix}\mapsto\begin{pmatrix}0\\2\\0\end{pmatrix}
+ \end{array}$$
+
+ \item Ses valeurs propres sont donc $-2$ et $2$. La courbure de Gauss de $\mathcal{P}$ en $A$ est donc $-4$.
+Les directions propres sont donc les axes de coordonnées $x$ et $y$.
+\end{enumerate}
+\fincorrection
+\finexercice

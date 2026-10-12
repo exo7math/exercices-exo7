@@ -1,0 +1,82 @@
+\exercice{2340, queffelec, 2003/10/01}
+\enonce
+\begin{enumerate}
+\item  Rappeler les d\'efinitions d'une borne sup\'erieure (inf\'erieure) d'un ensemble de
+nombres r\'eels. Si $A$ et $B$ sont deux ensembles born\'es non vides de $\Rr$, comparer 
+avec $\sup A$, $\inf A$, $\sup B$ et $\inf B$ les nombres suivants : 
+
+\quad (i) $\sup(A+B)$, \quad (ii) $\sup(A\cup B)$, \quad (iii) $\sup(A\cap
+B)$, \quad (iv) $\inf(A\cup B)$, \quad (v) $\inf(A\cap B)$.
+
+\item Pour $x\in\Rr^n$ et $A\subset \Rr^n$ on d\'efinit $d(x,A)=\inf_{a\in A}
+||x-a||$. Trouver $d(0,\Rr-\Qq)$, $d(\sqrt2,\Qq)$, $d(M,{\cal D})$ o\`u
+$M=(x,y,z)\in\Rr^3$ et $\cal D$ est la droite de vecteur unitaire $(a,b,c)$.
+
+\item Pour  $A, B\subset \Rr^n$ on d\'efinit $d(A,B)=\inf_{a\in A,b\in B}
+||a-b||$. Trouver $d(A,B)$ lorsque $A$ est une branche de l'hyperbole
+$\{(x,y)\in{\Rr^2}\ ;\  xy=1\}$ et $B$ une asymptote.
+
+\item On d\'efinit $\hbox {diam} A=\sup_{a,b\in A}||a-b||$. Quel est $\hbox
+{diam} (]0,1[\cap\Qq)$ ? $\hbox{diam} ([0,1]\cap\Rr-\Qq)$ ?
+\end{enumerate}
+
+
+\finenonce
+
+\indication
+Vérifier que :
+  \begin{enumerate}
+  \item $\sup(A+B)=\sup A+\sup B$ ;
+  \item $\sup(A \cup B)=\max(\sup A,\sup B)$ ;
+  \item $\max(\inf A, \inf B) \leq \sup(A\cap B) \leq \min(\sup A, \sup B)$ si $A\cap B\neq \varnothing$ ;
+  \item $\inf(A \cup B)=\min(\inf A, \inf B)$ ;
+  \item $\max(\inf A, \inf B) \leq \inf(A\cap B) \leq \min(\sup A, \sup B)$ si $A\cap B\neq \varnothing$ ;
+  \end{enumerate}
+\finindication
+
+\correction
+\begin{enumerate}
+  \item $A$ une partie non vide de $\Rr$, un \emph{majorant} de $A$ est un 
+réel $M\in \Rr$ tel que
+$$ \forall x \in A \qquad x \leq M.$$
+Si $A$ est un partie non vide et majorée, alors par définition $\sup A$ est le plus petit des majorants.
+On a les propriétés suivantes :
+  \begin{enumerate}
+  \item $\sup(A+B)=\sup A+\sup B$ ;
+  \item $\sup(A \cup B)=\max(\sup A,\sup B)$ ;
+  \item $\max(\inf A, \inf B) \leq \sup(A\cap B) \leq \min(\sup A, \sup B)$ si $A\cap B\neq \varnothing$ ;
+  \item $\inf(A \cup B)=\min(\inf A, \inf B)$ ;
+  \item $\max(\inf A, \inf B) \leq \inf(A\cap B) \leq \min(\sup A, \sup B)$ si $A\cap B\neq \varnothing$ ;
+  \end{enumerate}
+
+Prouvons les deux premières égalités,  
+\begin{enumerate}
+  \item $\sup(A+B)=\sup A+\sup B$ : pour tout $a\in A$ et $b\in B$ on a $a\leq \sup A$ et $b \leq \sup B$ donc
+$a+b \leq \sup A+\sup B$, donc $\sup A+\sup B$ est un majorant de $A+B$ et comme $\sup(A+B)$ est le plus petit des majorants de $A+B$ alors $\sup(A+B) \leq \sup A+\sup B$. Réciproquement, il existe une suite $(a_n)$ d'éléments de $A$ tel que cette suite converge vers $\sup A$, de même il existe une suite $(b_n)$ d'éléments de $B$ qui converge vers $\sup B$, la suite $(a_n+b_n)$ est une suite d'éléments de $A+B$
+qui converge vers $\sup A+\sup B$, donc la borne supérieure de $A+B$ est plus grande que $\sup A+\sup B$,
+soit $\sup(A+B) \geq \sup A+\sup B$. D'o\`u l'égalité.
+
+  \item $\sup(A \cup B)=\max(\sup A,\sup B)$ :  
+Remarquons d'abord que si $P\subset Q$ alors $\sup P \leq \sup Q$ : en effet $\sup Q$ est un majorant de $Q$ donc de $P$ (par l'inclusion $P\subset Q$), donc le plus petit des majorants, $\sup P$, pour $P$ est plus petit
+que le majorant particulier $\sup Q$.
+Appliquons ceci à $A \subset A\cup B$ donc $\sup A \leq \sup(A \cup B)$ et pour $B \subset A\cup B$ 
+on obtient $ \sup B \leq \sup(A \cup B)$. On vient de prouver $\sup(A \cup B) \geq \max(\sup A,\sup B)$.
+Pour l'autre inégalité : soit $M = \max(\sup A,\sup B)$. Pour  $x\in A\cup B$ alors soit $x\in A$ et alors 
+$x \leq \sup A \leq M$, ou soit $x\in B$ et alors $x \leq \sup B \leq M$ ; donc quelque soit $x \in A\cup B$,
+$x\leq M$ donc $M$ est un majorant de $A\cup B$, donc $\sup(A\cup B) \leq M=\max(\sup A,\sup B$).
+\end{enumerate}
+ 
+  \item 
+\begin{enumerate}
+  \item $d(0,\Rr\setminus \Qq) = 0$, regarder des éléments du type $\frac{\sqrt 2}{n}$, pour $n\in \Nn^*$.
+  \item $d(\sqrt 2,\Qq)=0$, c'est la densité de $\Qq$ dans $\Rr$ ou alors regarder la suite définie par 
+$u_0=1, u_{n+1} = \frac12 (u_n+\frac2{u_n}), n \in \Nn$, qui est une suite de rationnels convergeant vers $\sqrt 2$.
+  \item On suppose que $\mathcal{D}$ passe par l'origine, alors $d(M, \mathcal{D}) = x^2+y^2+z^2-(ax+by+cz)^2$.
+  \end{enumerate}
+
+
+  \item $d(A,B)=0$.
+  \item $\mathrm{diam} (]0,1[ \cap \Qq) = 1 = \\mathrm{diam} ([0,1] \cap (\Rr\setminus \Qq))$.
+\end{enumerate}
+\fincorrection
+\finexercice

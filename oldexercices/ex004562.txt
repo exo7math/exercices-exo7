@@ -1,0 +1,60 @@
+\exercice{4562, quercia, 2010/03/14}
+\enonce[Dérivation multiple, ULM-Lyon-Cachan MP$^*$ 2005]
+\begin{enumerate}
+  \item Soit $(f_n)$ une suite de fonctions de classe~$\mathcal{C}^1$ sur $[a,b]$ telle que $(f_n')$ converge
+    uniformément vers $g$ et il existe $x_1$ tel que $(f_n(x_1))$ converge.
+    Montrer que $(f_n)$ converge uniformément sur~$[a,b]$ vers $f$ telle que $f'=g$.
+
+  \item Soit $(f_n)$ une suite de fonctions de classe~$\mathcal{C}^p$ sur $[a,b]$ telle que $(f_n^{(p)})$ converge
+    uniformément vers $g$ et il existe $x_1,\dots,x_p$ distincts tels que $(f_n(x_i))$ converge.
+    Montrer que $(f_n)$ converge uniformément sur~$[a,b]$ vers $f$ telle que $f^{(p)}=g$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item 
+  \item Soit $P_n$ le polynôme de Lagrange défini par $P_n(x_i) = f_n(x_i)$
+    et $\deg P_n < p$.
+    Les coordonnées de $P_n$ dans la base de Lagrange
+    forment des suites convergentes donc la suite $(P_n)$ est uniformément
+    convergente sur $[a,b]$. Quant à la suite $(P_n^{(p)})$, c'est la suite nulle.
+    Donc on peut remplacer $f_n$ par $f_n - P_n$ dans l'énoncé, ce qui revient
+    à supposer que $f_n(x_i) = 0$ pour tous $n$ et $i$. Soit $f$ la fonction
+    définie par $f(x_i) = 0$ et $f^{(p)} = g$~: $f$ existe (prendre une primitive
+    $p$-ème arbitraire de~$g$ et lui soustraire un polynôme de Lagrange approprié)
+    et est unique (la différence entre deux solutions est polynomiale de degré $<p$
+    et s'annule en $p$ points distincts). On remplace maintenant $f_n$ par $f_n-f$,
+    et on est rammené à montrer que~: si $f_n(x_i) = 0$ pour tous $n$ et $i$
+    et si $(f_n^{(p)})$ converge uniformément vers la fonction nulle, alors
+    $(f_n)$ converge uniformément vers la fonction nulle. Ceci résulte du lemme
+    suivant~:
+    
+    {\it Il existe une fonction $\varphi_p$ bornée sur $[a,b]^2$,
+    indépendante de~$n$, telle que $f_n(x) =  \int_{t=a}^b \varphi_p(x,t)f_n^{(p)}(t)\,d t$.}
+    
+    Démonstration. On écrit la formule de Taylor-intégrale pour $f_n$ entre
+    $x$ et $y$~:
+    $$f_n(y) = f_n(x) + (y-x)f_n'(x) + \dots + \frac{(y-x)^{p-1}}{(p-1)!}f_n^{(p-1)}(x)
+             +  \int_{t=x}^y \frac{(y-t)^{p-1}}{(p-1)!}f_n^{(p)}(t)\,d t.$$
+    L'intégrale peut être étendue à l'intervalle $[a,b]$ sous la forme
+    $ \int_{t=a}^b u_p(x,y,t)f_n^{(p)}(t)\,d t$ en posant
+    $$u_p(x,y,t) = \begin{cases}(y-t)^{p-1}/(p-1)!  & \text{ si } x < t < y~;\cr
+                          -(y-t)^{p-1}/(p-1)! & \text{ si } y < t < x~;\cr
+                          0                   & \text{ sinon}.\cr\end{cases}$$
+    En prenant successivement $y=x_1$, \ldots, $y=x_n$, on obtient un
+    système linéaire en $f_n(x)$, \dots, $f_n^{(p-1)}(x)$ de la forme~:
+    $$\left\{\begin{array}{lll} f_n(x) + (x_1-x)f_n'(x) + \dots + \frac{(x_1-x)^{p-1}}{(p-1)!}f_n^{(p-1)}(x) &= &- \int_{t=a}^b u_p(x,x_1,t)f_n^{(p)}(t)\,d t\cr
+             \noalign{\smallskip}\vdots\cr
+             f_n(x) + (x_p-x)f_n'(x) + \dots + \frac{(x_p-x)^{p-1}}{(p-1)!}f_n^{(p-1)}(x) &= &- \int_{t=a}^b u_p(x,x_p,t)f_n^{(p)}(t)\,d t\cr\end{array}\right.$$
+    La matrice $M$ de ce système est la matrice de Vandermonde de $x_1-x,\dots,x_p-x$,
+    inversible. On en déduit, avec les
+    formules de Cramer, une expression de $f_n(x)$ à l'aide des intégrales du second membre,
+    de la forme voulue. Le facteur $\varphi_p$ est borné car le dénominateur
+    est $\det(M) = \prod_{i<j}(x_j-x_i)$, indépendant de~$x$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

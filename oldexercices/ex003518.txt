@@ -1,0 +1,35 @@
+\exercice{3518, quercia, 2010/03/10}
+\enonce[\'Etude d'une matrice]
+
+Soit $A=\begin{pmatrix}a_1 &1  &       &(0)\cr
+                 a_2 &   &\ddots &   \cr
+              \vdots &   &       &1  \cr
+                 a_n &(0)&       &0  \cr\end{pmatrix}$
+où les $a_i$ sont des réels positifs ou nuls, avec $a_1a_n > 0$.
+\begin{enumerate}
+  \item Quel est le polynôme caractérique de~$A$~?
+
+  \item Montrer que $A$ admet une unique valeur propre $r>0$ et que l'on
+    a~$r < 1 + \max(a_1,\dots,a_n)$.
+
+  \item Soit $\lambda$ une valeur propre complexe de~$A$.
+    Montrer que $|\lambda| \le r$ et $|\lambda|=r  \Rightarrow  \lambda=r$.
+
+  \item Montrer qu'il existe un entier $k$ tel que $A^k$ a tous ses
+    coefficients strictement positifs.
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $(-1)^n(X^n-a_nX^{n-1}-\dots-a_1)$.
+  \item \'Etude de $x \mapsto (x^n-a_nx^{n-1}-\dots-a_1)/x^n$.
+  \item Inégalité triangulaire.
+  \item Expression générale de $A^k$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

@@ -1,0 +1,18 @@
+\exercice{7197, megy, 2019/07/23}
+
+\enonce
+Soit $f : \R\to \mathbb U, t\mapsto e^{it}$, et soit $\mathcal R$ la relation d'équivalence sur $\R$ définie par $x\mathcal R y \iff x\equiv y \pmod{2\pi}$. On note $\R/2\pi\Z$ l'ensemble quotient $\R/\mathcal R$. Montrer que l'application $f$ descend au quotient en une application $[f] :\R/2\pi\Z \to \mathbb U$ qui est une bijection.
+
+\finenonce
+
+\noindication
+
+\correction
+
+L'application $f$ est constante sur les classes d'équivalence de $\mathcal R$, donc par définition, elle descend au quotient en une application $[f] : \R/2\pi\Z \to \mathbb U$, qui vérifie  $f= [f]\circ p$. Comme $f$ est surjective, $[f]$ aussi. Montrons l'injectivité.
+
+Soient $\alpha$ et $\beta$ dans $\R/2\pi\Z$ tels que $[f](\alpha) = [f](\beta)$. Si $x$ et $y$ sont des représentants de $\alpha$ et $\beta$, on a donc $f(x)=f(y)$, c'est-à-dire $e^{ix}=e^{iy}$, d'où par le cours sur l'exponentielle complexe, $x\equiv y \pmod{2\pi}$, d'où $[x]=[y]$, ou encore $\alpha=\beta$.
+
+\fincorrection
+
+\finexercice

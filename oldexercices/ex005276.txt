@@ -1,0 +1,17 @@
+\exercice{5276, rouget, 2010/07/04}
+\enonce[***I]
+Soit $A=(a_{i,j})_{1\leq i,j\leq n+1}$ définie par $a_{i,j}=0$ si $i>j$ et $a_{i,j}=C_{j-1}^{i-1}$ si $i\leq j$.
+
+Montrer que $A$ est inversible et déterminer son inverse. (Indication~:~considérer l'endomorphisme de $\Rr_n[X]$ qui à un polynôme $P$ associe le polynôme $P(X+1)$).
+\finenonce
+
+\noindication
+
+\correction
+Soit $f$ l'endomorphisme de $\Rr_n[X]$ qui, à un polynôme $P$ de degré inférieur ou égal à $n$, associe le polynôme $P(X+1)$.
+
+Par la formule du binôme de \textsc{Newton}, on voit que $A$ est la matrice de $f$ dans la base canonique $(1,X,...,X^n)$ de $\Rr_n[X]$. $f$ est clairement un automorphisme de $\Rr_n[X]$, sa réciproque étant l'application qui, à un polynôme $P$ associe le polynôme $P(X-1)$.
+
+$A$ est donc inversible et $A^{-1}=(b_{i,j})_{0\leq i,j\leq n}$ où $b_{i,j}=0$ si $i>j$ et $b_{i,j}=(-1)^{i+j}C_{j}^{i}$ si $i\leq j$.
+\fincorrection
+\finexercice

@@ -1,0 +1,39 @@
+\exercice{5145, rouget, 2010/06/30}
+\enonce[I]
+\begin{enumerate}
+\item (*) Calculer $\prod_{k=1}^{n}(1+\frac{1}{k})$, $n\in\Nn^*$.
+\item (***) Calculer $\prod_{k=1}^{n}\cos\frac{a}{2^k}$, $a\in]0,\pi[$, $n\in\Nn^*$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  Soit $n\in\Nn^*$.
+
+\begin{align*}
+\prod_{k=1}^{n}(1+\frac{1}{k})&=\prod_{k=1}^{n}\frac{k+1}{k}=\frac{\prod_{k=1}^{n}(k+1)}{\prod_{k=1}^{n}k}=\frac{(n+1)!}
+{n!}=n+1
+\end{align*}
+
+\item  Soit $a\in]0,\pi[$ et $n\in\Nn^*$. Alors, pour tout naturel non nul $k$, on a
+$0<\frac{a}{2^k}\leq\frac{a}{2}<\frac{\pi}{2}$ et donc $\sin\frac{a}{2^k}\neq0$.
+
+On sait alors que pour tout réel $x$, $\sin(2x)=2\sin x\cos x$. Par suite, pour tout naturel $k$,
+
+$$\sin(2.\frac{a}{2^k})=2\sin\frac{2^k}\cos\frac{a}{2^k}\quad\mbox{et donc}\quad
+\cos\frac{a}{2^k}=\frac{\sin(a/2^{k-1})}{2\sin(a/2^k)}.$$
+
+Mais alors,
+
+\begin{align*}
+\prod_{k=1}^{n}\cos\frac{a}{2^k}&=\prod_{k=1}^{n}\frac{\sin(a/2^{k-1})}{2\sin(a/2^k)}=\frac{1}{2^n}\frac{\prod_{k=1}^{n
+}\sin(a/2^{k-1})}{\prod_{k=1}^{n}\sin(a/2^{k})}
+ =\frac{1}{2^n}\frac{\prod_{k=0}^{n-1}
+\sin(a/2^{k})}{\prod_{k=1}^{n}\sin(a/2^{k})}
+=\frac{\sin a}{2^n\sin(a/2^n)}.
+\end{align*}
+\end{enumerate}
+\fincorrection
+\finexercice

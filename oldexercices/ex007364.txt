@@ -1,0 +1,56 @@
+\exercice{7364, mourougane, 2021/08/10}
+\enonce
+Dans le groupe $\mathcal{S}_7$ des permutations de l'ensemble fini $\{1,2,\cdots,7\}$ on considère les deux permutations 
+$$\alpha=(157)(43) \quad \text{ et } \quad \beta=(26).$$
+\begin{enumerate}
+ \item Montrer que $\alpha\beta=\beta\alpha$.
+ \item Déterminer l'ordre de $\alpha$ et de $\beta$.
+ \item Calculer $\alpha^{-1}$ et $\beta^{-1}$.
+  \item Montrer que $S=\{\alpha^i\beta^j, 0\leq i \leq 5, 0\leq j\leq 1\}$ est un sous-groupe de $\mathcal{S}_7$.
+ \item Calculer l'ordre de $S$.
+ \item Montrer que tout sous-groupe de $\mathcal{S}_7$ qui contient $\alpha$ et $\beta$ contient $S$.
+ \item Que peut-on déduire des questions 4. et 6. précédentes ?
+ \item Déterminer l'ordre de $\alpha\beta$.
+ \item Le sous-groupe $S$ est-il cyclique ?
+\end{enumerate} 
+\finenonce
+\noindication
+
+\correction
+\begin{enumerate}
+ \item Comme $\alpha$ et $\beta$ sont à support disjoint, ils commutent $\alpha\beta=\beta\alpha$
+ \item L'ordre de $\alpha$ donner comme produit de cycles à support disjoint est le $ppcm$ des ordres des cycles qui le composent, donc $ppcm(3,2)=6$. Celui de la transposition $\beta$ est $2$.
+ \item $\alpha^{-1}=(175)(43)$ et $\beta^{-1}=(26)$.
+ \item Montrons que $S=\{\alpha^i\circ\beta^j, 0\leq i \leq 5, 0\leq j\leq 1\}$ est un sous-groupe de $\mathcal{S}_7$.
+
+
+*stabilité par produit : Soit $\alpha^i\circ\beta^j$ et $\alpha^k\circ\beta^l$ deux éléments de $S$ où $0\leq i \leq 5, 0\leq j\leq 1$ et $0\leq k \leq 5, 0\leq l\leq 1$.
+\begin{eqnarray*}
+ (\alpha^i\circ\beta^j)\circ (\alpha^k\circ\beta^l)&=&\alpha^i\circ\beta^j\circ \alpha^k\circ\beta^l\\
+&=&\alpha^i\alpha^k\beta^j\beta^l=\alpha^{i+k}\beta^{j+l}
+\end{eqnarray*}
+Comme $\alpha^6=Id$, en considérant le reste $0\leq r\leq 5$ de la division euclidienne de $i+k$ par $6$ et celui $0\leq s\leq 1$ de la division euclidienne de $j+l$ par $2$
+on obtient $(\alpha^i\circ\beta^j)\circ (\alpha^k\circ\beta^l)=\alpha^r\beta^s$ qui appartient donc à $S$.
+
+
+*stabilité par inversion :
+Soit $\alpha^i\circ\beta^j$ dans $S$ où $0\leq i \leq 5, 0\leq j\leq 1$.
+Comme $\alpha^6=Id$, $(\alpha^i)^{-1}=\alpha^{6-i}$. Comme $\beta^2=Id$, $\beta^{-1}=\beta$.
+$$(\alpha^i\circ\beta^j)^{-1}=(\beta^j)^{-1}(\alpha^i)^{-1}=\beta^j\alpha^{6-i}=
+\alpha^{6-i}\beta^j$$ qui appartient donc à $S$.
+
+ \item Soit $\alpha^i\circ\beta^j$ et $\alpha^k\circ\beta^l$ deux éléments de $S$ où $0\leq i \leq 5, 0\leq j\leq 1$ et $0\leq k \leq 5, 0\leq l\leq 1$.
+Si $\alpha^i\circ\beta^j=\alpha^k\circ\beta^l$, alors $\alpha^i\alpha^{6-k}=\beta^l\beta^j$. Comme $\alpha$ et $\beta$ sont à support disjoint, ceci implique que $\alpha^i\alpha^{6-k}=Id$ et $\beta^l\beta^j=Id$,
+soit en particulier $l=j$. On en déduit que $i=k$.
+Donc tous les éléments de la liste $\{\alpha^i\circ\beta^j, 0\leq i \leq 5, 0\leq j\leq 1\}$ sont distincts.
+L'ordre de $S$ est donc $6\times 2=12$.
+ \item Soit $H$ un sous-groupe de $\mathcal{S}_7$ qui contient $\alpha$ et $\beta$.
+Par stabilité par produit, il contient $\alpha^i$, $\beta^j$ et $\alpha^i\circ\beta^j$ pour tout $0\leq i \leq 5, 0\leq j\leq 1$. Il 
+ contient donc $S$.
+ \item On peut déduire des questions 4. et 6. précédentes que le sous-groupe de $\mathcal{S}_7$ engendré par $\alpha$ et $\beta$ est $S$.
+ \item Comme $\alpha$ et $\beta$ sont à support disjoint, $\alpha\circ\beta=(157)(43)(26)$ est une écriture en produit de cycles à support disjoint. L'ordre de $\alpha\circ\beta$ est donc $ppcm(3,2,2)=6$.
+ \item Une écriture en produit de cycles à support disjoint de $\alpha^i\circ\beta^j$ montre que son ordre est inférieur à $ppcm(3,2)=6$.
+Par conséquent, le sous-groupe $S$ qui n'a pas d'éléments d'ordre 12 n'est pas cyclique.
+\end{enumerate}
+\fincorrection
+\finexercice

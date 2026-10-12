@@ -1,0 +1,85 @@
+\exercice{5247, rouget, 2010/07/04}
+\enonce[****I]
+Etude des suites $(u_n)=(\cos na)$ et $(v_n)=(\sin na)$ où $a$ est un réel donné.
+
+\begin{enumerate}
+\item  Montrer que si $\frac{a}{2\pi}$ est rationnel, les suites $u$ et $v$ sont périodiques et montrer dans ce cas que $(u_n)$ et $(v_n)$ convergent si et seulement si $a\in2\pi\Zz$.
+\item  On suppose dans cette question que $\frac{a}{2\pi}$ est irrationnel .
+\begin{enumerate}
+\item Montrer que $(u_n)$ converge si et seulement si $(v_n)$ converge .
+\item En utilisant différentes formules de trigonométrie fournissant des relations entre $u_n$ et $v_n$, montrer par l'absurde que $(u_n)$ et $(v_n)$ divergent.
+\end{enumerate}
+\item  On suppose toujours que $\frac{a}{2\pi}$ est irrationnel. On veut montrer que l'ensemble des valeurs de la suite $(u_n)$ (ou $(v_n)$) est dense dans $[-1,1]$, c'est-à-dire que $\forall x\in[-1,1],\;\forall\varepsilon>0,\;\exists n\in\Nn/\;|u_n-x|<\varepsilon$ (et de même pour $v$).
+\begin{enumerate}
+\item Montrer que le problème se ramène à démontrer que $\{na+2k\pi,\;n\in\Nn\;\mbox{et}\;k\in\Zz\}$ est dense dans $\Rr$.
+\item Montrer que $E=\{na+2k\pi,\;n\in\Nn\;\mbox{et}\;k\in\Zz\}$ est dense dans $\Rr$ (par l'absurde en supposant que $\mbox{inf}(E\cap\Rr_+^*)>0$ pour en déduire que $\frac{a}{2\pi}\in\Qq$).
+\item Conclure.
+\end{enumerate}
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  Posons $a=\frac{2p\pi}{q}$ où $p\in\Zz$, $q\in\Nn^*$ et $\mbox{PGCD}(p,q)=1$. Pour tout entier naturel $n$, on a
+
+$$u_{n+q}=\cos\left((n+q)\frac{2p\pi}{q}\right)=\cos\left(n\frac{2p\pi}{q}+2p\pi\right)=\cos(na)=u_n.$$
+
+La suite $u$ est donc $q$-périodique et de même la suite $v$ est $q$-périodique. Maintenant, une suite périodique converge si et seulement si elle est constante (en effet, soient $T$ une période strictement positive de $u$ et $\ell$ la limite de $u$. Soit $k\in\{0,...,T-1\}$. $|u_k-u_0|=|u_{k+nT}-u_{nT}|\rightarrow|\ell-\ell|=0$ quand $n$ tend vers l'infini).
+
+Or, si $a=\frac{2p\pi}{q}$ où $p\in\Zz$, $q\in\Nn^*$, $\mbox{PGCD}(p,q)=1$ et $\frac{p}{q}\in\Zz$, alors $u_1\neq u_0$ et la suite $u$ n'est pas constante et donc diverge, et si $a\in2\pi\Zz$, la suite $u$ est constante et donc converge.
+
+\item  (a) et b)) Pour tout entier naturel $n$, 
+
+$$v_{n+1}=\sin((n+1)a)=\sin(na)\cos a+\cos(na)\sin a=u_n\sin a+v_n\cos a.$$
+
+Puisque $\frac{a}{2\pi}\notin\Zz$, $\sin a\neq0$ et donc $u_n=\frac{v_{n+1}-v_n\cos a}{\sin a}$. Par suite, si $v$ converge alors $u$ converge. De même, à partir de $\cos((n+1)a)=\cos(na)\cos a-\sin(na)\sin a$, on voit que si $u$ converge alors $v$ converge. Les suites $u$ et $v$ sont donc simultanément convergentes ou divergentes.
+
+Supposons que la suite $u$ converge, alors la suite $v$ converge. Soient $\ell$ et $\ell'$ les limites respectives de $u$ et $v$. D'après ce qui précède, $\ell$ et $\ell'$ sont solutions du système~:
+ 
+$$\left\{
+\begin{array}{l}
+\ell\sin a+\ell'\cos a=\ell'\\
+\ell\cos a-\ell'\sin a=\ell.
+\end{array}
+\right.\Leftrightarrow\left\{
+\begin{array}{l}
+\ell\sin a+\ell'(\cos a-1)=0\\
+\ell(\cos a-1)-\ell'\sin a=0.
+\end{array}
+\right..$$
+
+Le déterminant de ce système vaut $-\sin^2a-(\cos a-1)^2<0$ car $a\notin2\pi\Zz$. Ce système admet donc l'unique solution $\ell=\ell'=0$ ce qui contredit l'égalité $\ell^2+{\ell'}^2=1$. Donc, les suites $u$ et $v$ divergent.
+
+\item 
+\begin{enumerate}
+\item Soit $E'=\{na+2k\pi,\;n\in\Nn,\;k\in\Zz\}$. Supposons que $E'$ est dense dans $\Rr$ et montrons que $\{u_n,\;n\in\Nn\}$ et $\{v_n,\;n\in\Nn\}$ sont dense dans $[-1,1]$.
+
+Soient $x$ un réel de $[-1,1]$ et $b=\Arccos x$, de sorte que $b\in[0,\pi]$ et que $x=\cos b$.
+
+Soit $\varepsilon>0$. Pour $n$ entier naturel et $k$ entier relatif donnés, on a~:
+
+\begin{align*}\ensuremath
+|u_n-x|&=|\cos(na)-\cos b|=|\cos(na+2k\pi)-\cos b|=2|\sin(\frac{na+2k\pi-b}{2})\sin(\frac{na+2k\pi+b}{2})|\\
+ &\leq2\left|\frac{na+2k\pi-b}{2}\right|\;(\mbox{l'inégalité}\;|\sin x|\leq|x|\;\mbox{valable pour tout réel}\;x\;\mbox{est classique})\\
+ &=|na+2k\pi-b|
+\end{align*}
+
+En résumé, $\forall k\in\Zz,\;\forall n\in\Nn,\;|u_n-x|\leq|na+2k\pi-b|$. Maintenant, si $E'$ est dense dans $\Rr$, on peut trouver $n\in\Nn$ et $k\in\Zz|$ tels que $|na+2k\pi-b|<\varepsilon$ et donc $|u_n-x|<\varepsilon$.
+
+Finalement, $\{u_n,\;n\in\Nn\}$ est dense dans $[-1,1]$. De même, on montre que $\{v_n,\;n\in\Nn\}$ est dense dans $[-1,1]$.
+
+Il reste donc à démontrer que $E'$ est dense dans $\Rr$.
+
+\item Soit $E=\{na+2k\pi,\;n\in\Zz,\;k\in\Zz\}$. $E$ est un sous groupe non nul de $(\Rr,+)$ et donc est soit de la forme $\alpha\Zz$ avec $\alpha=\mbox{inf}(E\cap]0,+\infty[)>0$, soit dense dans $\Rr$ si $\mbox{inf}(E\cap]0,+\infty[)=0$.
+
+Supposons par l'absurde que $\mbox{inf}(E\cap]0,+\infty[)>0$. Puisque $E=\alpha\Zz$ et que $2\pi$ est dans $E$, il existe un entier naturel non nul $q$ tel que $2\pi=q\alpha$, et donc tel que $\alpha=\frac{2\pi}{q}$.
+
+Mais alors, $a$ étant aussi dans $E$, il existe un entier relatif $p$ tel que $a=p\alpha=\frac{2p\pi}{q}\in2\pi\Qq$. Ceci est exclu et donc, $E$ est dense dans $\Rr$.
+
+\item Soit $x$ dans $[-1,1]$. D'après ce qui précède, pour $\varepsilon>0$ donné, il existe $n\in\Zz$ tel que $|\cos(na)-x|<\varepsilon$ et donc $|u_{|n|}-x|<\varepsilon$, ce qui montre que $\{u_n,\;n\in\Nn\}$ est dense dans $[-1,1]$. De même, $\{v_n,\;n\in\Nn\}$ est dense dans $[-1,1]$.
+\end{enumerate}
+\end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,84 @@
+\exercice{5652, rouget, 2010/10/16}
+\enonce[**]
+Résoudre dans $\mathcal{M}_3(\Rr)$ l'équation $X^2 = A$ où $A =\left(
+\begin{array}{ccc}
+3&0&0\\
+8&4&0\\
+5&0&1
+\end{array}
+\right)$.   
+\finenonce
+
+\noindication
+
+\correction
+Soit $X\in\mathcal{M}_3(\Rr)$. Si $X^2 = A$ alors $AX= X^3 = XA$ et donc $X$ et $A$ commutent.
+
+$A$ admet trois valeurs propres réelles et simples à savoir $1$, $3$ et $4$. Donc $A$ est diagonalisable dans $\Rr$ et les sous espaces propres de $A$ sont des droites. $X$ commute avec $A$ et donc laisse stable les trois droites propres de $A$.
+
+Ainsi une base de $\mathcal{M}_{3,1}(\Rr)$ formée de vecteurs propres de $A$ est également une base de vecteurs propres de $X$ ou encore, si $P$ est une matrice réelle inversible telle que $P^{-1}AP$ soit une matrice diagonale $D_0$ alors pour la même matrice $P$, 
+$P^{-1}XP$ est une matrice diagonale $D$. De plus
+
+\begin{center}
+$X^2 =A\Leftrightarrow PD^2P^{-1}= PD_0P^{-1}\Leftrightarrow D^2 = D_0\Leftrightarrow D =\text{diag}(\pm\sqrt{3},\pm2, \pm1)$
+\end{center}
+
+ce qui fournit huit solutions deux à opposées. On peut prendre $P=\left(
+\begin{array}{ccc}
+2&0&0\\
+-16&1&0\\
+5&0&1
+\end{array}
+\right)$ puis $P^{-1}=\left(
+\begin{array}{ccc}
+1/2&0&0\\
+8&1&0\\
+-5/2&0&1
+\end{array}
+\right)$. 
+D'où les solutions 
+
+\begin{align*}\ensuremath
+\left(
+\begin{array}{ccc}
+2&0&0\\
+-16&1&0\\
+5&0&1
+\end{array}
+\right)\left(
+\begin{array}{ccc}
+\sqrt{3}\varepsilon_1&0&0\\
+0&2\varepsilon&0\\
+0&0&\varepsilon_3
+\end{array}
+\right)\left(
+\begin{array}{ccc}
+1/2&0&0\\
+8&1&0\\
+-5/2&0&1
+\end{array}
+\right)&=\left(
+\begin{array}{ccc}
+2\sqrt{3}\varepsilon_1&0&0\\
+-16\sqrt{3}\varepsilon_1&2\varepsilon_2&0\\
+5\sqrt{3}\varepsilon_1&0&\varepsilon_3
+\end{array}
+\right)\left(
+\begin{array}{ccc}
+1/2&0&0\\
+8&1&0\\
+-5/2&0&1
+\end{array}
+\right)\\
+ &=\left(
+\begin{array}{ccc}
+\sqrt{3}\varepsilon_1&0&0\\
+-8\sqrt{3}\varepsilon_1+16\varepsilon_2&2\varepsilon_2&0\\
+5(\sqrt{3}\varepsilon_1-\varepsilon_3)/2&0&\varepsilon_3
+\end{array}
+\right).
+\end{align*}
+
+où $(\varepsilon_1, \varepsilon_2,\varepsilon_3)\in\{-1,1\}^3$.
+\fincorrection
+\finexercice

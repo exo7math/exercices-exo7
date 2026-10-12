@@ -1,0 +1,67 @@
+\exercice{749, bodin, 1998/09/01}
+\video{s66EQAvtk84}
+\enonce
+Résoudre les équations suivantes:
+\begin{enumerate}
+\item $\Arccos x = 2\Arccos \frac{3}{4}$.
+\item $\Arcsin x = \Arcsin \frac{2}{5} + \Arcsin \frac{3}{5}$.
+\item $\Arctan {2x}+\Arctan x=\frac{\pi}{4}$.
+\end{enumerate}
+\finenonce 
+
+\indication
+On compose les équations par la bonne fonction (sur le bon domaine de définition), 
+par exemple cosinus pour la premi\`ere. Pour la dernière, commencer par 
+étudier la fonction pour montrer qu'il existe une unique solution.
+\finindication
+
+\correction\
+\begin{enumerate}
+\item On vérifie d'abord que $2\Arccos \frac{3}{4}\in[0,\pi]$ (sinon, l'équation 
+n'aurait aucune solution). En effet, par définition, la fonction $\Arccos$ est décroissante 
+sur $[-1,1]$ à valeurs dans $[0,\pi]$, donc puisque $\frac{1}{2}\le\frac{3}{4}\le 1$ 
+on a $\frac{\pi}{3}\ge\cos\left(\frac{3}{4}\right)\ge 0$.
+Puisque par définition $\Arccos x\in[0,\pi]$, on obtient en prenant le cosinus:
+$$\Arccos x = 2\Arccos\left(\frac{3}{4}\right)\Longleftrightarrow x 
+= \cos\left(2\Arccos \frac{3}{4}\right)$$
+En appliquant la formule $\cos 2u = 2\cos^2u-1$, on arrive  donc \`a une unique solution
+$x = 2(\frac{3}{4})^2-1 = \frac{1}{8}$.
+\item Vérifions d'abord que $-\frac{\pi}{2}\le\Arcsin \frac{2}{5} + \Arcsin \frac{3}{5}\le\frac{\pi}{2}$. 
+En effet, la fonction $\Arcsin$ est strictement croissante et 
+$0<\frac{2}{5}<\frac{1}{2}<\frac{3}{5}<\frac{\sqrt{2}}{2}$, ce qui donne
+$0<\Arcsin\left(\frac{2}{5}\right)<\frac{\pi}{6}<\Arcsin\left(\frac{3}{5}\right)<\frac{\pi}{4}$, 
+d'où l'encadrement
+$0+\frac{\pi}{6}<\Arcsin \frac{2}{5} + \Arcsin \frac{3}{5}\le\frac{\pi}{6}+\frac{\pi}{4}$.
+
+Puisque par définition on aussi $\Arcsin x\in [-\frac{\pi}{2},\frac{\pi}{2}]$, 
+il vient en prenant le sinus:
+\begin{eqnarray*}
+\lefteqn{\Arcsin x=\Arcsin \frac{2}{5} + \Arcsin \frac{3}{5}}\\
+ &\Longleftrightarrow& x=\sin\left(\Arcsin \frac{2}{5} + \Arcsin \frac{3}{5}\right)\\
+ &\Longleftrightarrow& x = \frac{3}{5}\cos\left(\Arcsin \frac{2}{5}\right)+\frac{2}{5} \cos\left(\Arcsin \frac{3}{5}\right)
+\end{eqnarray*}
+La dernière équivalence vient de la formule de $\sin(a+b)= \cos a \sin b + \cos b \sin a$
+et de l'identité $\sin\big( \Arcsin u\big) = u$.
+
+En utilisant la formule $\cos\left(\Arcsin x\right) = \sqrt{1-x^2}$, 
+on obtient une unique solution: $x = \frac35\sqrt{\frac{21}{25}}+\frac25\frac 45 
+=\frac{3\sqrt{21}+8}{25}$.
+
+\item Supposons d'abord que $x$ est solution. Remarquons d'abord que $x$ est 
+nécessairement positif, puisque $\Arctan x$ a le même signe que $x$. 
+Alors, en prenant la tangente des deux membres, on obtient $\tan\big(\Arctan(2x)+\Arctan(x)\big)=1$.
+
+En utilisant la formule donnant la tangente d'une somme :
+$\tan(a+b)=\frac{\tan a +\tan b}{1-\tan a \tan b}$, on obtient $\frac{2x+x}{1-2x\cdot x}=1$, 
+et finalement $2x^2+3x-1=0$ qui admet une unique solution positive $x_0=\frac{-3+\sqrt{17}}{4}$. 
+Ainsi, {\it si} l'équation de départ admet une solution, c'est nécessairement $x_0$. 
+
+Or, en posant $f(x)=\Arctan(2x)+\Arctan(x)$, la fonction $f$ est continue sur $\Rr$. 
+Comme $f(x)\xrightarrow[x\to -\infty]{}-\pi$ et $f(x)\xrightarrow[x\to +\infty]{}+\pi$, 
+on sait d'après le théorème des valeurs intermédiaires que $f$ prend la valeur 
+$\frac{\pi}{4}$ au moins une fois (et en fait une seule fois, puisque $f$ est 
+strictement croissante comme somme de deux fonctions strictement croissantes). 
+Ainsi l'équation de départ admet bien une solution, qui est $x_0$.
+\end{enumerate}
+\fincorrection
+\finexercice

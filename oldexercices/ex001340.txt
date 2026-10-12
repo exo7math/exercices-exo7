@@ -1,0 +1,28 @@
+\exercice{1340, ortiz, 1999/04/01}
+
+\enonce
+ Soient  $G$ un groupe et $x\in G$ un \'el\'ement
+d'ordre $n.$ Quel est l'ordre de $x^2$ ?
+
+\finenonce
+
+\noindication
+
+\correction
+Rappelons d'abord que pour $x$ un élément d'ordre $n$, alors
+$$x^q=e \Longrightarrow n | q.$$
+\begin{itemize}
+  \item Si $n$ est pair alors $ord(x^2)=n/2$ : en effet
+$(x^2)^\frac{n}{2} = x^n=e$ et pour $p \geq 1$ tel que $(x^2)^p =
+e$ alors $x^{2p}= e$ et $n|2p$ donc $p \geq \frac n2$. Donc $n/2$
+est le plus petit des entiers $q$ (non nul) tel que $x^q=e$ et par
+conséquent $n/2$ est l'ordre de $x$.
+  \item Si $n$ est impair alors $ord(x)=n$. Tout d'abord
+$(x^2)^n=(x^n)^2=e$ et pour $p$ tel que $(x^2)^p=e$ alors $n|2p$
+mais $2$ et $n$ sont premiers entre eux donc d'après le théorème
+de Gauss, $n|p$ et en particulier $p \geq n$.
+\end{itemize}
+\fincorrection
+
+\finexercice
+

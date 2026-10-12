@@ -1,0 +1,47 @@
+\exercice{804, cousquer, 2003/10/01}
+
+\enonce[Méthode des trapèzes]
+\begin{enumerate}
+\item
+ Soit $f$ deux fois dérivable sur $[a,b]$, vérifiant
+$\vert f''\vert\leq M$ sur $[a,b]$. Soit
+$$\varphi(t)=f(t)-f(a)-(t-a)\frac{f(b)-f(a)}{b-a}-A(b-t)(t-a)$$
+Soit $x\in\mathopen]a,b\mathclose[$~; on choisit $A=A(x)$ pour que 
+$\varphi(x)=\nolinebreak 0$
+(dessiner~!).
+Montrer qu'il existe $c_1,c_2\in[a,b]$ tels que $c_1<c_2$ et
+$\varphi'(c_1)=\varphi'(c_2)=0$, puis qu'il existe $c\in[a,b]$ tel que
+$\varphi''(c)=0$. En déduire une majoration de $\vert A\vert$ pour 
+$x\in[a,b]$. On convient de poser $A(a)=A(b)=0$.
+
+\item
+ On note $E$ l'erreur commise en remplaçant $\int_a^bf(x)\,dx$ par
+l'aire du trapèze défini par l'axe des $x$, les droites $x=a$ et
+$x=b$ et la corde du graphe joignant les points $(a,f(a))$ et $(b,f(b))$
+(dessiner~!).
+Montrer que $E=\int_a^bA(x)(b-x)(x-a)\,dx$, et vérifier que
+l'intégrale a un sens. En déduire que
+$\vert E\vert\leq\frac{M(b-a)^3}{12}$ (utiliser 1)).
+
+\item
+ Pour $n\geq1$ on pose $I_n=\frac{b-a}{n}\Bigl[\frac{f(a)}{2}+f(x_1)+
+f(x_2)+\cdots+f(x_{n-1})+\frac{f(b)}{2}\Bigr]$ où $x_p=a+p\frac{b-a}{n}$ pour
+$p=1,2,\ldots,n-1$. Montrer que $I_n$ est la somme des aires des trapèzes
+construits sur les points d'abscisses $a,x_1,x_2,\ldots,x_{n-1},b$ et
+les cordes correspondantes du graphe de $f$ (dessiner~!). Montrer que
+$$\biggl\vert\int_a^b f(x)\,dx-In\biggr\vert\leq\frac{M(b-a)^3}{12n^2}$$
+
+\item On prend $[a,b]=[0,1]$ et $f(x)=e^{-x^2}$. Calculer
+$M=\sup_{[0,1]}\vert f''\vert$.
+Déterminer $n$ pour que la méthode des trapèzes avec $n$ intervalles
+donne un nombre qui approche $\int_0^1e^{-x^2}\,dx$ à moins de $10^{-2}$
+près. En déduire un encadrement de cette intégrale.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\nocorrection
+
+\finexercice
+

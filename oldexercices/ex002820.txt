@@ -1,0 +1,25 @@
+\exercice{2820, burnol, 2009/12/15}
+\enonce 
+\label{ex:burnol1.1}
+Soit $\Omega =
+\Cc\setminus\{]-\infty,0]\}$. Déterminer en tout
+$z_0\in\Omega$ la série de Taylor de la fonction holomorphe
+$z\mapsto\mathrm{Log}\, z$ ainsi que son rayon de convergence. Soit
+$z_0$ avec $\Re(z_0)<0$. Soit $R_0$ le rayon de
+convergence pour $z_0$ et soit $f(z)$ la somme de la série
+dans $D(z_0,R_0)$. A-t-on $f(z) = \mathrm{Log}\, z$ dans $D(z_0,R_0)$?
+\finenonce
+\noindication
+\correction
+Soit $f(z) = \mathrm{Log} (z)$. Alors
+\begin{eqnarray*}
+ f'(z) &=& \frac{1}{z} = \frac{1}{z_0 - (z_0-z)} = \frac{1}{z_0}\frac{1}{1 - \frac{z_0-z}{z_0}} \\
+&=& \frac{1}{z_0}\sum_{k\geq 0} \frac{1}{z_0^k} (z_0-z)^k \quad \text{ pour } \quad |z-z_0|<|z_0|.
+\end{eqnarray*}
+Notons que $\{ z\in \C \, ; \; |z-z_0|<|z_0|\} = D (z_0 , |z_0| )$ est optimal car on ne
+peut prolonger $\mathrm{Log} (z)$ en $0$. Le d\'eveloppement  est :
+$$f(z) = \mathrm{Log}(z_0)- \sum_{k\geq 1} \frac{(-1)^k}{kz_0^k} (z-z_0)^k.$$
+En ce qui concerne la deuxi\`eme question, la r\'eponse est NON. D'apr\`es le cours $f$ coincide avec sa s\'erie de Taylor \it si \rm $D(z_0, R) \subset \Omega$. Or, si $\Re (z_0)<0$, ce n'est pas le cas et $D(z_0 , |z_0|)\cap ]-\infty , 0[ \neq \emptyset$. Le $\mathrm{Log}$ et la s\'erie de Taylor ne coincident pas dans $D(z_0,|z_0|)\cap \Omega$ puisque le $\mathrm{Log}$ ne peut \^etre prolong\'e de mani\`ere continu dans aucun point de $]-\infty, 0[$.
+Remarquons qu'ici $D(z_0,|z_0|)\cap \Omega$ n'est pas connexe ce qui est cruciale dans l'exercice \ref{ex:burnol1.4}.
+\fincorrection
+\finexercice

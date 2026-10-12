@@ -1,0 +1,32 @@
+\exercice{5588, rouget, 2010/10/16}
+\enonce[***I]
+Soit $E$ un espace de dimension finie. Trouver les endomorphismes (resp. automorphismes) de $E$ qui commutent avec tous les endomorphismes (resp. automorphismes) de $E$.
+\finenonce
+
+\noindication
+
+\correction
+Remarques. 1) Soit $(G,*)$ un groupe. Le centre de $G$ est l'ensemble des éléments de $G$ qui commutent avec tous les éléments de $G$. Ce centre, souvent noté $Z$, est un sous-groupe de $(G,*)$.
+
+2) $(\mathcal{L}(E),\circ)$ est un magma associatif et unitaire mais non commutatif (pour $\text{dim}E> 1)$ mais $(\mathcal{L}(E),\circ)$ n'est pas un groupe. Par contre $(\mathcal{GL}(E),\circ)$ est un groupe (groupe des inversibles de $(\mathcal{L}(E),\circ)$).
+
+Soit $f$ un endomorphisme (resp. automorphisme) de E commutant avec tous les endomorphismes (resp. les automorphismes) de $E$. $f$ commute en particulier avec toutes les symétries.
+
+Soit $x$ un vecteur non nul de $E$ et $s$ la symétrie par rapport à $\text{Vect}(x)$ parallèlement à un supplémentaire donné de $\text{Vect}(x))$.
+
+\begin{center}
+$s(f(x)) =f(s(x))=f(x)$.
+\end{center}
+
+Par suite, $f(x)$ est invariant par $s$ et appartient donc à $Vect(x)$. Ainsi, si $f$ commute avec tout endomorphisme (resp. automorphisme) de $E$, $f$ vérifie nécessairement $\forall x\in E$, $(x,f(x))$ liée et d'après le \ref{ex:rou25}, $f$ est nécessairement une homothétie.
+Réciproquement , les homothéties de $E$ commutent effectivement avec tout endomorphisme de $E$. 
+
+\begin{center}
+\shadowbox{
+Les endomorphismes de $E$ qui commutent avec tout endomorphismes de $E$ sont les homothéties.
+}
+\end{center}
+
+Pour le centre de $\mathcal{GL}(E)$, il faut enlever l'application nulle qui est une homothétie mais qui n'est pas inversible.
+\fincorrection
+\finexercice

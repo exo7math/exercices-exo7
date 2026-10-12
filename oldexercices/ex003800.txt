@@ -1,0 +1,43 @@
+\exercice{3800, quercia, 2010/03/11}
+\enonce[Polytechnique MP$^*$ 2000]
+Soit $E$ un espace euclidien et $s$ une symétrie de~$E$.
+
+\begin{enumerate}
+  \item Que dire de $s^*\circ s$~?
+    
+  \item Un polynôme $P$ est dit réciproque si $P(X) = X^nP\Bigl(\frac1X\Bigr)$,
+    pour $P$ de degré~$n$.\par
+    Montrer que~:
+    $P(X) = \det(X\mathrm{id}+s^*\circ s)$ est un polynôme réciproque.
+    
+  \item Montrer que $P(1)\ge 2^n$. A quelle condition y a-til égalité~? Y a-t-il des
+    conditions sur~$s$~?
+    
+  \item Soit la matrice $A = \begin{pmatrix}A_1&A_2\cr A_3&A_4\cr\end{pmatrix}$, carrée, d'ordre~$n$,
+    symétrique définie positive, où $A_1$ et $A_4$ sont carrées d'ordres respectifs
+    $p$ et~$q$. Montrer que $\det(A)\le \det(A_1)\det(A_4)$.
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item c'est un endomorphisme autoadjoint positif de déterminant~$1$.
+  \item $X^n\det\Bigl(\frac{\mathrm{id}}X+s^*\circ s\Bigr) = \det(\mathrm{id}+Xs^*\circ s)
+             =\det(s^*\circ(\mathrm{id}+Xs^*\circ s)\circ s) = \det(s^*\circ s + X\mathrm{id})$.
+  \item $s^*\circ s$ est diagonalisable avec des valeurs propres $(\lambda_i)$
+    réelles positives deux à deux inverses pour la même multiplicité.
+    $P^2(1) = \prod_{1\le i\le n}(1+\lambda_i)\Bigl(1+\frac1{\lambda_i}\Bigr)$
+    et $(1+x)\Bigl(1+\frac1x\Bigr)\ge 4$ pour tout $x>0$ avec égalité ssi
+    $x=1$.
+    
+    Si $P(1) = 2^n$ alors toutes les valeurs propres de~$s^*\circ s$ valent~$1$
+    et $s^*\circ s$ est diagonalisable donc $s^*\circ s = \mathrm{id}$ et $s$ est une
+    symétrie orthogonale. La réciproque est immédiate.
+  \item Se ramener au cas $A_4=I$ puis calculer $\det A$ par pivotage.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

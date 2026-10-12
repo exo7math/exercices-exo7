@@ -1,0 +1,26 @@
+\exercice{6927, ruette, 2013/01/24}
+\enonce
+On suppose que le nombre de pièces sortant d'une
+usine donnée en une journée est une variable aléatoire
+d'espérance $50$.
+\begin{enumerate}
+\item
+Peut-on estimer la probabilité que la production de demain
+dépasse 75 pièces~?
+\item
+Que peut-on dire de plus sur cette probabilité si on sait que l'écart-type de la production quotidienne est
+de $5$ pièces~?
+\end{enumerate} 
+\finenonce
+\noindication
+
+\correction
+\begin{enumerate}
+\item
+Inégalité de Markov : $P(X\ge 75)\le \frac{E(X)}{75}=\frac 23$.
+\item
+Inégalité de Bienaymé-Tchebychev : $P(|X-50|\ge 25)\le \frac{\text{Var}(X)}{25^2}=
+\frac{5^2}{25^2}=0,04$. Donc $P(X\ge 75)\le 0,04$.
+\end{enumerate} 
+\fincorrection
+\finexercice

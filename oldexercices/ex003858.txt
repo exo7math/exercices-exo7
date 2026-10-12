@@ -1,0 +1,20 @@
+\exercice{3858, quercia, 2010/03/11}
+\enonce[Mines MP 2002]
+
+Soit $f : \R \to \R$ continue telle qu'existe $a$ vérifiant
+$f\circ f(a)=a$. $f$ a-t-elle des points fixes~? Généraliser.
+
+\finenonce
+
+\noindication
+
+\correction
+En posant $b=f(a)$ on a $(f(a)-a) + (f(b)-b) = 0$
+donc $x \mapsto f(x)-x$ s'annule entre $a$ et $b$.
+De même, s'il existe $k\in\N^*$ et $a\in\R$ tels que $f^k(a)=a$
+alors $(f(a)-a) + (f^2(a)-f(a)) + \dots + (f^{k}(a)-f^{k-1}(a)) = 0$
+donc $f(x)-x$ s'annule entre $\min(a,f(a),\dots,f^{k-1}(a))$ et
+$\max(a,f(a),\dots,f^{k-1}(a))$.
+\fincorrection
+
+\finexercice

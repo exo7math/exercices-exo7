@@ -1,0 +1,30 @@
+\exercice{2279, barraud, 2008/04/24}
+\enonce
+\begin{enumerate}
+  \item Soient $P\in \Zz[x]$, $n\in \Nn$, 
+$m=P(n)$. Montrer que $\forall\, k\in \Zz\ $ $\ m\,|\, P(n+km)$.
+  \item En d\'eduire qu'il n'existe aucun polyn\^ome $P\in \Zz[x]$,
+non constant, tel que, pour tout $n\in \Zz$,
+$P(n)$ soit un nombre premier.
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+  \begin{enumerate}
+  \item
+    Notons $P=\sum_{i=0}^{d}a_{i}X^{i}$. Dans le calcul de $P(n+km)$, en
+    développant tous les termes $(n+km)^{i}$ à l'aide du binôme, on
+    obtient que $P(n+km)=\sum_{0\leq j\leq i\leq
+      d}a_{i}C_{i}^{j}n^{j}(km)^{i-j} =P(n)+mN$ où $N=\sum_{0\leq j<i\leq
+      d}a_{i}C_{i}^{j}n^{j}(km)^{i-j}-1\in\Zz$. Donc $m|P(n+km)$.
+
+  \item
+    Supposons qu'un tel polynôme existe~: soit $m=P(0)$. $\forall
+    k\in\Zz, m|P(km)$. Comme $P(km)$ est premier, on en déduit que
+    $P(km)=\pm m$. Ceci est en contradiction avec 
+    $\lim_{k\to+\infty}P(km)=\pm\infty$.
+  \end{enumerate}
+\fincorrection
+\finexercice

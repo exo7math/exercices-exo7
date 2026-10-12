@@ -1,0 +1,132 @@
+\exercice{1233, legall, 1998/09/01}
+
+\enonce
+\begin{enumerate}
+    \item Soit $  f   $ une application continue d'un intervalle $  ]a,b[   $ \`a valeurs dans $  { \Rr}  ,$ d\' erivable en $  c \in ]a,b[   .$ Montrer qu'il existe une (unique) application continue
+$  \epsilon   $ de $  ]a,b[   $ dans $  { \Rr}  $ telle que $  f(c)=0  $ et,
+pour tout $  x \in ]a,b[   $ distinct de $  c  ,$ on ait~:
+$$  f (x)=f (c) +(x-c)f'(c)+ (x-c)\epsilon (x)  $$
+    \item Montrer que la suite  $  (S_n)_{n\geq 1}  $ de
+terme g\'en\'eral~:
+$$S_n = \displaystyle\frac{ 1}{ n}+\displaystyle{\frac{ 1}{ n+1}}+\cdots + \displaystyle{\frac{ 1}{2n}}
+=\displaystyle{\sum _{\scriptstyle k=0}^{\scriptstyle n}\frac{1}{ n+k}}$$
+est d\' ecroissante et qu'elle converge vers une limite que l'on nommera $  S  .$
+    \item Pourquoi peut on dire, {\it a priori}, que  $
+\displaystyle{\frac{1}{ 2}}\leq S \leq 1  ?$
+    \item Soit $f  :  \rbrack -1, 1\lbrack \rightarrow   { \Rr}  $ une application continue, d\'erivable en $
+ 0  $ et telle que $  f(0)=0  .$ Montrer que la suite $  (\sigma _n(f))_{n\geq 1}  $ de
+terme g\'en\'eral~:
+$$\sigma _n(f) = \displaystyle f\left( \frac{ 1}{ n}\right) +\displaystyle f\left(\frac{ 1}{ n+1}\right) +\cdots +
+\displaystyle f\left(\frac{ 1}{ 2n} \right)
+$$
+converge vers $  f'(0)S  $ (utiliser 1.).
+    \item Montrer que $  \sigma _n(f)=\hbox{log }(2)  $ lorsque $  f  $ est l'application
+$  x\mapsto \hbox{log
+}(1+x)  $ et en  d\' eduire la valeur de $  S  .$
+    \item Calculer la limite de la suite  $  (\sigma _n)_{n\geq 1}  $ de
+terme g\'en\'eral~:
+$$\sigma _n = \displaystyle \hbox{sin }\frac{ 1}{ n}+\displaystyle \hbox{sin }\frac{ 1}{ n+1}+\cdots +
+ \displaystyle \hbox{sin }\frac{ 1}{ 2n}  .
+$$
+    \item Plus g\' en\' eralement, quelle est la valeur pour $  p\in { \Nn}^*  $ donn\' e, de la
+limite $  S_p  $ de la suite $  (\sigma _n(p))_{n\geq 1}  $ de
+terme g\'en\'eral~:
+$$\sigma _n(p) =\displaystyle{\sum _{\scriptstyle k=0}^{\scriptstyle  pn}\frac{1}{ n+k}}  ?$$
+\end{enumerate}
+
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+    \item $\epsilon(x)=\displaystyle{\frac{ f (x)-f (c)}{ x-c}-f '(c)}.$
+Comme $  f   $ est continue, $  \epsilon   $ est continue sur $
+]a,b[-\{ c\}   $ et la continuit\'e en $  c  $ de $  \epsilon
+$ \'equivaut \`a la d\'erivabilit\'e de $  f  $ en $  c  .$
+L'unicit\'e est \'evidente.
+    \item Pour tout $  n \geq 1  ,   S_{n+1}-S_n=\displaystyle{\frac{1}{ 2n+2}}+
+\displaystyle{\frac{1}{ 2n+1}}-\displaystyle{\frac{1}{ n}}<0  $
+(par exemple parce que $  \displaystyle{\frac{1}{
+2n+2}}<\displaystyle{\frac{1}{ 2n}}  $ et $
+\displaystyle{\frac{1}{ 2n+1}}<\displaystyle{\frac{1}{ 2n}}  $
+donc $  \displaystyle{\frac{1}{ 2n+2}}+ \displaystyle{\frac{1}{
+2n+1}}<2\times \displaystyle{\frac{1}{2n}}  $) donc la suite $
+(S_n)_{n\geq 1}  $ est d\' ecroissante. Elle est minor\' ee (par $
+0  $) donc elle converge.
+    \item Pour tout $  0\leq k\leq n  ,  \displaystyle{\frac{1}{ 2n}}\leq \displaystyle{\frac{1}{ n+k}}\leq
+\displaystyle{\frac{1}{ n}}    $  donc $  (n+1)\times
+\displaystyle{\frac{1}{ 2n}} \leq S_n \leq (n+1)\times
+\displaystyle{\frac{1}{ n}}  $ d'o\`u, en passant \`a la limite,
+l'in\'egalit\' e $
+ \displaystyle{\frac{1}{ 2}}\leq S \leq 1  .$
+    \item Soit $  \epsilon   $ l'application de $  \rbrack -1, 1
+\lbrack    $ \`a valeurs dans $  {\R}  $ telle que $
+f(x)=f'(0)x+\epsilon (x)  .$ Pour tous $  n, k \in {\N}  , n>0
+,$ on a l'\' egalit\' e :
+$$\displaystyle{ f\Bigl(\frac {1}{ n+k} \Bigr) =\frac{1}{ n+k}f'(0)+\frac{1}{ n+k}\epsilon \Bigl(
+\frac{1}{ n+k} \Bigr)}
+$$
+donc $  \sigma _n(f)-f'(0)S_n= \displaystyle{\sum _{\scriptstyle
+k=0}^{\scriptstyle  n}\frac{1}{ n+k}\epsilon \Bigl( \frac{1}{
+n+k} \Bigr) }
+  .  $ Comme, pour tout $  k\geq 0  ,$ on a $  \displaystyle{
+\frac{1}{ n+k} \leq \frac{1}{ n}}  ,$ on en d\' eduit les in\'
+egalit\' es~:
+
+$$ \vert \sigma _n(f)-f'(0)S_n \vert \leq \displaystyle { \frac{1}{ n}
+\sum _{\scriptstyle k=0}^{\scriptstyle  n}\Bigl \vert \epsilon
+\Bigl( \frac{1}{ n+k} \Bigr) \Bigr \vert \leq  \displaystyle {
+\frac{n+1}{ n}}\max  _{\scriptstyle 0\leq k \leq n }\Bigl \vert
+\epsilon \Bigl( \frac{1}{ n+k}  \Bigr)\Bigr \vert }.$$ Comme $
+\displaystyle{ \max  _{\scriptstyle 0\leq k \leq n }\Bigl \vert
+\epsilon \Bigl( \frac{1}{ n+k}  \Bigr)\Bigr \vert \leq \sup
+_{\scriptstyle x\in [ 0, \frac{1}{ n}] }\vert \epsilon ( x  )
+\vert }  ,$ cette quantit\' e converge vers $  0   $ lorsque $  n
+$ tend vers l'infini (puisque $  \epsilon   $ est continue et
+s'annulle en $  0  $).
+    \item Des \' egalit\' es $  \displaystyle { \hbox{log }\Bigl( 1+\frac{1}{n+k}
+\Bigr) =\hbox{log }\Bigl( \frac{n+k+1}{ n+k} \Bigr) =\hbox{log
+}(n+k+1)-\hbox{log }(n+k)}   $ on d\'eduit que~: $$ \displaystyle{
+\sigma _n(f)= \hbox{log }(2n+1)-\hbox{log }(n)=\hbox{log
+}\Bigl(\frac {2n+1}{ n} \Bigr) =\hbox{log }\Bigl( {2+\frac{1}{ n}}
+\Bigr)}  . $$ Comme la fonction logarithme est continue, $ (
+\sigma _n(f))_{n\geq 1}  $ converge vers $ \hbox{log }(2)  $
+lorsque $  n  $ tend vers l'infini. Ainsi $  S  =\hbox{log }(2)
+.$
+    \item Par les deux questions qui pr\' ec\' edent il est imm\' ediat que $  \displaystyle{ \lim_{n\rightarrow \infty }\sigma _n =\hbox{log }(2)}  .$
+    \item Soit $f  :  \rbrack -1, 1\lbrack \rightarrow   {\R}  $ une application continue, d\'erivable en $
+ 0  $ et telle que $  f(0)=0  .$ Soit $  \epsilon   $ l'application de $  \rbrack -1, 1
+\lbrack    $ \`a valeurs dans $  {\R}  $ telle que $
+f(x)=f'(0)x+\epsilon (x)  .$
+
+ On pose, pour tous $  n, k\in {\N}  ,   n>0  $~:
+$$\sigma _n(p,f) =\displaystyle{\sum _{\scriptstyle k=0}^{\scriptstyle  pn}f\bigl( \frac{1}{ n+k}
+\bigr) }  \hbox{ et }S_{n,p} =\displaystyle{\sum _{\scriptstyle
+k=0}^{\scriptstyle  pn} \frac{1}{ n+k}  }  .$$
+
+Pour tous $  n, k \in {\N}  ,   n>0  $ on a l'\' egalit\' e : $
+\displaystyle{ f\Bigl( \frac{1}{ n+k} \Bigr) =\frac{1}{
+n+k}f'(0)+\frac{1}{ n+k}\epsilon \Bigl( \frac{1}{ n+k} \Bigr)}
+  $
+d'o\`u $$  \vert \sigma _{n}(p,f)-f'(0)S_{n,p}\vert \leq
+\displaystyle { \frac{1}{ n} \sum _{\scriptstyle
+k=0}^{\scriptstyle  pn}\Bigl\vert \epsilon \Bigl( \frac{1}{
+n+k} \Bigr) \Bigr\vert \leq  \displaystyle { \frac{pn+1}{ n}}\sup
+_{\scriptstyle x\in [ 0, \frac{1}{ n}] } \Bigl \vert \epsilon
+\Bigl( \frac{1}{ n+k}  \Bigr)\Bigr \vert }$$ donc cette
+diff\'erence converge vers $  0   $ lorsque $  n   $ tend vers
+l'infini.
+
+
+Lorsque $  f  $ est la fonction $  x\mapsto \hbox{log} (1+x)  $,
+on obtient (comme pr\'ec\'edemment) que~:  $$ \displaystyle{
+\sigma _n(p,f)= \hbox{log }( (p+1)n+1)-\hbox{log }(n)=\hbox{log
+}\Bigl( {1+p +\frac{1}{ n}} \Bigr)}  $$ puis que $  \displaystyle{
+\lim _{n\rightarrow \infty }\sigma _n(p,f)=\hbox{log }(p+1)}  $
+c'est \`a dire $  S_p=\hbox{log }(p+1)  .$
+\end{enumerate}
+\fincorrection
+
+\finexercice
+

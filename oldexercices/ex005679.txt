@@ -1,0 +1,13 @@
+\exercice{5679, rouget, 2010/10/16}
+\enonce[**]
+Soit $f$ un endomorphisme d'un $\Kk$-espace vectoriel de dimension finie et $P$ un polynôme. Montrer que $P(f)$ est inversible si et seulement si $P$ et $\chi_f$ sont premiers entre eux.
+\finenonce
+
+\noindication
+
+\correction
+Si $P$ et $\chi_f$ sont premiers entre eux, d'après le théorème de \textsc{Bézout}, il existe deux polynômes $U$ et $V$ tels que $UP+V\chi_f = 1$. En prenant la valeur en $f$ et puisque que $\chi_f(f) = 0$, on obtient $P(f)\circ U(f) =U(f)\circ P(f) = Id$. $P(f)$ est donc un automorphisme de $E$.
+
+Réciproquement, si $P$ et $\chi_f$ ne sont pas premiers entre eux, $P$ et $\chi_f$ ont une racine commune $\lambda$ dans $\Cc$. Soit $A$ est la matrice de $f$ dans une base donnée (si $\Kk$ n'est pas $\Cc$ l'utilisation de la matrice est indispensable). On a $P(A)=(A-\lambda I)Q(A)$ pour un certain polynôme $Q$. La matrice $A-\lambda I$ n'est pas inversible car $\lambda$ est valeur propre de $A$ et donc $P(A)$ n'est pas inversible ($\text{det}(P(A))=\text{det}(A-\lambda I)\text{det}Q(A) = 0$).
+\fincorrection
+\finexercice

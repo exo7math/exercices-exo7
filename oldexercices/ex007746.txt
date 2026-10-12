@@ -1,0 +1,41 @@
+\exercice{7746, mourougane, 2021/08/11}
+\enonce[Géométrie projective]
+Soit $\Delta = P(E)$ une droite projective. Soient $F = P(f)$ et $F' = P(f')$ deux homographies de $\Delta$ dans elle-même telles que $F^2\neq Id_\Delta$, $F'^2\neq Id_\Delta$ et qui possèdent chacune exactement deux points fixes distincts.\newline On se propose de montrer que $F$ et $F'$ commutent si et seulement elles ont les mêmes points fixes. On note $A$ et $B$ les points fixes de $F$ et on note $A'$ et $B'$ les points fixes de $F'$. 
+\begin{enumerate}
+ \item On suppose que $F$ et $F'$ ont les mêmes points fixes.
+Comment traduire cette hypothèse à l'aide des applications linéaires associées $f$ et $f'$ ?
+ Montrer que $F$ et $F'$ commutent (on pourra considérer un repère projectif de $\Delta$).
+
+Dans la suite de l'exercice, on montre l'implication réciproque : on suppose donc que $F$ et $F'$ commutent.
+
+ \item Rappeler la démonstration du fait qu'une homographie d'une droite projective dans elle-même possédant trois points fixes deux à deux distincts est l'identité.
+
+ \item En considérant l'image par $F \circ F'$ des points $A,B,A',B'$ montrer que $\{F'(A),F'(B)\} = \{ A,B\}$ et que $\{F(A'),F(B')\} = \{A',B'\}$.
+
+ \item Supposons que $F(A') = A'$ et $F(B') = B'$, montrer que $\{A',B'\} = \{A,B\}$.
+
+ \item  Supposons que $F(A') = B'$ et $F(B') = A'$, montrer que $\{A',B'\} = \{A,B\}$, et en déduire que ce second cas ne peut pas se produire.
+
+ \item Conclure.
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+ \item Dire que $F$ et $F'$ ont les mêmes points fixes revient dire que $f$ et $f'$ ont les mêmes directions propres $d_1=vect(v_1)$ et $d_2=vect(v_2)$. les matrices de $f$ et $f'$ dans la base $(v_1,v_2)$ sont diagonales et donc commutent, ce qui implique que $F$ et $F'$ commutent.
+ 
+ \item Comme $dim(E)=2$, un élément de $Gl(E)$ qui a trois directions propres distinctes est une homothétie et donc induit l'identité sur $P(E)$.
+ 
+ \item On utilise la commutativité :
+ $F(F'(A))=F \circ F'(A)=F' \circ F(A)=F'(A)$ donc $F'(A)$ est un point fixe de $F$. De même $F'(B)$ est un point fixe de $F$, $F(A')$ est un point fixe de $F'$ et $F(B')$ est un point fixe de $F'$. On en déduit $\{F'(A),F'(B)\} = \{ A,B\}$ et $\{F(A'),F(B')\} = \{A',B'\}$ puisque $F$ et $F'$ n'ont chacune que deux points fixes.
+ 
+ \item $F$ n'a que deux points fixes (car $F\neq Id_\Delta$ puisque  $F^2\neq Id_\Delta$), comme $A'$ et $B'$ sont distincts (par hypothèse sur $F'$) et sont fixés par $F$ on a le résultat souhaité.
+ 
+ \item $F^2$ ne possède que deux points fixes, puisque $F^2\neq Id_\Delta$.
+ Sous l'hypothèse, $A'$ et $B'$ sont des points fixes de $F^2$, distincts par hypothèse sur $F'$, donc l'ensemble des points fixes de $F^2$ est $\{A',B'\}$. D'autre part $A$ et $B$ sont aussi fixés par $F^2$ puisque fixés par $F$ et $A \neq B$ par hypothèse sur $F$, donc l'ensemble des points fixes de $F^2$ est $\{A,B\}$. Enfin, par transitivité de l'égalité, $\{A',B'\}=\{A,B\}$. 
+ On a ainsi obtenu une absurdité, puisqu'on a supposé que $F$ échangeait $A'$ et $B'$ et qu'on a obtenu qu'elle les fixait.
+ 
+ \item On a donc toujours la situation envisagée en 4., et $F$ et $F'$ ont les mêmes points fixes.
+\end{enumerate}
+\fincorrection
+\finexercice

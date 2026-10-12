@@ -1,0 +1,40 @@
+\exercice{3362, quercia, 2010/03/09}
+\enonce[Algèbre de matrices]
+
+On note
+$U = \begin{pmatrix} 1   &\dots &1   \cr
+               \vdots &&\vdots \cr
+               1   &\dots &1   \cr \end{pmatrix} \in \mathcal{M}_n(\R)$
+     et ${\cal A} = \{ aU + bI,\ a,b \in \R \}\quad (n \ge 2)$.
+
+\begin{enumerate}
+  \item Montrer que ${\cal A}$ est une sous algèbre commutative de $\mathcal{M}_n(\R)$.
+  \item Soit $M = aU+bI \in {\cal A}$. Montrer que $M$ possède un inverse dans
+    ${\cal A}$ si et seulement si
+    $b(b+na) \ne 0$, et le cas échéant, donner $M^{-1}$.
+    
+  \item Montrer que si $b(b+na) = 0$, alors $M$ n'est pas inversible dans $\mathcal{M}_n(\R)$.
+  \item Trouver les matrices $M \in {\cal A}$ vérifiant : $M^n = I$.
+    
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item 
+  \item $M^{-1} = \frac {-a}{b(na+b)}U + \frac 1b I$.
+  \item 
+  \item $$M^n = \frac {(na+b)^n-b^n}nU + b^nI  \Rightarrow 
+             \left\{
+             \begin{array} {ll}
+             n \text{ pair }  &: a = 0, \text{ ou }
+                                       -\frac{\smash{2b}}n,\ b = \pm1 \cr
+                    n \text{ impair} &: a = 0,\ b = 1. \cr
+                    \end{array}\right.$$
+\end{enumerate}
+ \fincorrection
+
+\finexercice

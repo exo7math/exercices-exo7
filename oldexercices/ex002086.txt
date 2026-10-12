@@ -1,0 +1,33 @@
+\exercice{2086, bodin, 2008/02/04}
+\enonce
+Soit $f:[a,b]\rightarrow \R$ continue, positive; on pose $%
+m=\sup \{f(x),x\in [a,b]\}$. Montrer que 
+\[
+\lim_{n\rightarrow \infty }\left( \int_a^b(f(x))^n d x\right) _{}^{\frac
+1n}=m. 
+\]
+\finenonce 
+\indication
+Essayez d'encadrer $\int_a^b \frac{f(t)^n}{m^n}dt.$
+\finindication
+\correction
+Notons $I = \int_a^b \frac{f(t)^n}{m^n}dt.$ Comme $f(t) \leqslant m$ pour tout $t\in [a,b]$ alors 
+$I \leqslant 1$. Ceci implique que $\lim_{n\to+\infty} I^{\frac1n} \leqslant 1$.
+Fixons $\alpha >0$ (aussi petit que l'on veut). Comme $f$ est continue et $m$ est sa borne sup\'erieure sur $[a,b]$ alors il existe
+un intervalle $[x,y]$, ($x<y$), sur le quel $f(t) \geqslant m - \alpha$.
+Comme $f$ est positive alors 
+$$I \geqslant \int_x^y  \frac{f(t)^n}{m^n}dt \geqslant \int_x^y \frac{(m-\alpha)^n}{m^n} = (y-x)\left(\frac{m-\alpha}{m}\right)^n$$.
+
+Donc $I^{\frac1n} \geqslant (y-x)^{\frac1n} \frac{m-\alpha}{m}$.
+Quand $n\to+\infty$ on a $(y-x)^{\frac1n} \to 1$, donc \`a la limite
+nous obtenons $\lim_{n\to+\infty} I^{\frac1n} \geqslant \frac{m-\alpha}{m}$.
+
+Comme $\alpha$ est quelconque, nous pouvons le choisir aussi proche de $0$ de sorte que 
+$\frac{m-\alpha}{m}$ est aussi proche de $1$ que d\'esir\'e.
+Donc $\lim_{n\to+\infty} I^{\frac1n} \geqslant 1$.
+
+
+En conclusion nous trouvons que $\lim_{n\to+\infty} I^{\frac1n} = 1$ ce qui \'etait l'\'egalit\'e recherch\'ee.
+
+\fincorrection
+\finexercice

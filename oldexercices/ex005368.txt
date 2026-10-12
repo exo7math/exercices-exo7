@@ -1,0 +1,34 @@
+\exercice{5368, rouget, 2010/07/06}
+\enonce[***I]
+Soit $(A,B)\in(M_n(\Rr))^2$ et $C=\left(
+\begin{array}{cc}
+A&B\\
+-B&A
+\end{array}
+\right)\in M_{2n}(\Rr)$. Montrer que $\mbox{det}C\geq0$.
+
+\finenonce
+
+\noindication
+
+\correction
+En remplaçant les colonnes $C_1$,..., $C_n$ par respectivement $C_1+iC_{n+1}$,..., $C_n+iC_{2n}$, on obtient~:
+
+$$\mbox{det}C=\mbox{det}
+\left(
+\begin{array}{cc}
+A+iB&B\\
+-B+iA&A
+\end{array}
+\right),$$ 
+puis en remplaçant les lignes $L_{n+1}$,..., $L_{2n}$ de la nouvelle matrice par respectivement $L_{n+1}-iL_1$,..., $L_{2n}-iL_n$, on obtient~:
+
+$$\mbox{det}C=\mbox{det}
+\left(
+\begin{array}{cc}
+A+iB&B\\
+0&A-iB
+\end{array}
+\right)=\mbox{det}(A+iB)\mbox{det}(A-iB)=|\mbox{det}(A+iB)|^2\in\Rr^+.$$
+\fincorrection
+\finexercice

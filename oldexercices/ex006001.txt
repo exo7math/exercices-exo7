@@ -1,0 +1,37 @@
+\exercice{6001, quinio, 2011/05/20}
+
+\enonce
+Dans mon trousseau de clés il y a $8$ clés; elles sont toutes
+semblables. Pour rentrer chez moi je mets une clé au hasard; je
+fais ainsi des essais jusqu'à ce que je trouve la bonne; j'écarte au
+fur et à mesure les mauvaises clés. Quelle est la probabilité
+pour que j'ouvre la porte : 
+\begin{enumerate}
+\item du premier coup ? 
+\item au troisième essai ? 
+\item au cinquième essai ? 
+\item au huitième essai?
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+Une manière de résoudre le problème est la suivante:
+puisqu'il y a $8$ clés et que j'écarte une après l'autre les mauvaises clés, 
+je considère comme ensemble de toutes les possibilités, toutes les permutations de ces huit clés : 
+il y en a $8$!. Alors la solution de chaque question est basée sur le même principe:
+\begin{enumerate}
+\item Les permutations (fictives) qui traduisent le cas (1) sont celles qui
+peuvent être représentées par une suite : 
+$BMMMMMMM$, la lettre $B$ désigne la bonne, $M$ désigne une
+mauvaise. Il y a $7!$ permutations de ce type.
+Donc $P(A)=\frac{7!}{8!}=\frac{1}{8},$ on s'en doutait!
+\item De même, les permutations (fictives) sont
+celles qui peuvent être représentées par une suite:
+$MBMMMMMM$: il y en a encore $7$!, et la probabilité est la même.
+\item Le raisonnement permet en fait de conclure que la probabilité, avant
+de commencer, d'ouvrir la porte est la même pour le premier, deuxième,..., huitième essai.
+\end{enumerate}
+\fincorrection
+\finexercice

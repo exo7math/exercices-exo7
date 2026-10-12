@@ -1,0 +1,54 @@
+\exercice{6785, gijs, 2011/10/16}
+\enonce 
+Dans tout ce qui suit, on note
+$(x,y)$ les coordonnées sur $\Rr^2 = \Cc$, $z=x+
+iy$, et on sépare systématiquement les parties
+réelle et imaginaire de tous les objets. 
+Soit  $z_o \in \Cc$, et soit  $C_r$, $r\in \Rr^+$  la
+courbe  donnée par l'équation $|z-z_o|=r$.
+
+
+\begin{enumerate}
+\item
+Soit $f:\Cc\setminus\{z_o\} \to \Cc$ l'application
+$f(z) = (z-z_o)^n$. Calculer pour tout $n\in \Zz$
+l'intégrale $\int_{C_r} f(z)\,dz$ (indication~:
+utiliser une variante des coordonnées polaires).
+
+
+\medskip
+Soit $g,h : \Cc\setminus\{z_o\} \to \Rr$
+deux applications de classe $C^1$ verifiant les
+équations~:
+$$
+\frac{\partial g}{\partial x} = 
+\frac{\partial h}{\partial y}\qquad\&\qquad
+\frac{\partial g}{\partial y} = 
+-\frac{\partial h}{\partial x}\ ,
+$$
+et soit $f:\Cc\setminus\{z_o\} \to \Cc$
+l'application $f(x,y) = g(x,y) + i h(x,y)$.
+
+\item
+ Montrer que la 1-forme
+$ \frac{f(z)}{z-z_o}\,dz$ sur $\Rr^2\setminus\{z_o\}$ est fermée (ne pas oublier de
+séparer la partie réelle et imaginaire). En déduire
+(Stokes!) que $ \int_{C_r}  \frac{f(z)}{z-z_o}\,dz$
+est indépendant de $r\in \Rr^+$.
+
+\item En faisant un développement limité de $g$
+et de $h$ d'ordre 1 autour $z_o = (x_o,y_o)$, montrer que 
+$$
+\int_{C_r} \frac{f(z)}{z-z_o}\,dz = 2\pi i\,\, f(z_o)\ .
+$$
+Indication : utiliser le résultat de 1.; vous avez le
+droit d'être un petit  peu vague en ce qui concerne les
+$\varepsilon$ dans le développement limité.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\nocorrection
+
+\finexercice

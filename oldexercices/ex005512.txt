@@ -1,0 +1,79 @@
+\exercice{5512, rouget, 2010/07/15}
+\enonce[***]
+Trouver toutes les droites sécantes aux quatre droites $(D_1)$~$x-1=y=0$, $(D_2)$~:~$y-1=z=0$, $(D_3)$~:~$z-1=x=0$ et $(D_4)$~:~$x=y=-6z$.
+
+\finenonce
+
+\noindication
+
+\correction
+Notons $(\Delta)$ une éventuelle droite solution.
+\textbullet~$(\Delta)$ est sécante à $(D_1)$ et $(D_2)$ si et seulement si $(\Delta)$ passe par un point de la forme $(1,0,a)$ et par un point de la forme $(b,1,0)$ ou encore si et seulement si $(\Delta)$ passe par un point de la forme $(1,0,a)$ et est dirigée par un vecteur de la forme $(b-1,1,-a)$.
+Ainsi, $(\Delta)$ est sécante à $(D_1)$ et $(D_2)$ si et seulement si $(\Delta)$ admet un système d'équations paramétriques de la forme $\left\{
+\begin{array}{l}
+x=1+\lambda(b-1)\\
+y=\lambda\\
+z=a-\lambda a
+\end{array}
+\right.$ ou encore un système d'équations cartésiennes de la forme $\left\{
+\begin{array}{l}
+x-(b-1)y=1\\
+ay+z=a
+\end{array}
+\right.$.
+
+\textbullet~Ensuite, $(\Delta)$ et $(D_3)$ sécantes $\Leftrightarrow\exists y\in\Rr/\;\left\{
+\begin{array}{l}
+-(b-1)y=1\\
+ay+1=a
+\end{array}
+\right.\Leftrightarrow b\neq 1\;\text{et}\;-\frac{a}{b-1}+1=a\Leftrightarrow b\neq0\;\text{et}\;b\neq1\;\text{et}\;a=1-\frac{1}{b}$.
+En résumé, les droites sécantes à $(D_1)$, $(D_2)$ et $(D_3)$ sont les droites dont un système d'équations cartésiennes est 
+
+\begin{center}
+$\left\{
+\begin{array}{l}
+x-(b-1)y=1\\
+\left(1-\frac{1}{b}\right)y+z=1-\frac{1}{b}
+\end{array}
+\right.$, $b\notin\{0,1\}$.
+\end{center}
+Enfin,
+
+\begin{align*}\ensuremath
+(\Delta)\;\text{et}\;(D)\;\text{sécantes}&\Leftrightarrow\exists(x,y,z)\in\Rr^3/\;\left\{
+\begin{array}{l}
+x-(b-1)y=1\\
+\left(1-\frac{1}{b}\right)y+z=1-\frac{1}{b}\\
+x=y=-6z
+\end{array}
+\right.\\
+&\Leftrightarrow\exists(x,y,z)\in\Rr^3/\;\left\{
+\begin{array}{l}
+-6z+6(b-1)z=1\\
+-6\left(1-\frac{1}{b}\right)z+z=1-\frac{1}{b}\\
+x=y=-6z
+\end{array}
+\right.\\
+ &\Leftrightarrow b\notin\{0,1,2\}\;\text{et}\;-6\left(1-\frac{1}{b}\right)\frac{1}{6(b-2)}+\frac{1}{6(b-2)}=1-\frac{1}{b}\\
+ &\Leftrightarrow b\notin\{0,1,2\}\;\text{et}\;-6(b-1)+b=6(b-1)(b-2)\Leftrightarrow b\notin\{0,1,2\}\;\text{et}\;6b^2-13b+6=0\\
+ &\Leftrightarrow b\in\left\{\frac{2}{3},\frac{3}{2}\right\}.
+\end{align*}
+
+\begin{center}
+\shadowbox{
+Les droites solutions sont $(\Delta_1)$ : $\left\{
+\begin{array}{l}
+3x+y=3\\
+y-2z=1
+\end{array}
+\right.$ et $(\Delta_2)$ : $\left\{
+\begin{array}{l}
+2x-y=2\\
+y+3z=1
+\end{array}
+\right.$.
+}
+\end{center}
+\fincorrection
+\finexercice

@@ -1,0 +1,50 @@
+\exercice{13, bodin, 1998/09/01}
+\video{-Kjd4SKjwEo}
+\enonce
+ D\'eterminer le module et l'argument des nombres
+complexes :
+$$e^{e^{i\alpha}} \quad \text{ et } \quad e^{i\theta}+e^{2i\theta}.$$
+
+\finenonce
+
+\indication
+Pour calculer un somme du type
+$e^{iu}+e^{iv}$ il est souvent utile de factoriser par
+$e^{i\frac{u+v}{2}}$.
+\finindication
+
+\correction
+D'apr\`es la formule de Moivre pour $e^{i\alpha}$ nous avons :
+$$e^{e^{i\alpha}} = e^{\cos \alpha + i\sin \alpha}
+= e^{\cos \alpha}e^{i\sin \alpha}.$$ Or $e^{\cos \alpha} > 0$ donc
+l'\'ecriture pr\'ec\'edente est bien de la forme
+``module-argument''.
+
+\bigskip
+
+De fa\c{c}on g\'en\'erale pour calculer une somme du type
+$e^{iu}+e^{iv}$ il est souvent utile de factoriser par
+$e^{i\frac{u+v}{2}}$. En effet
+\begin{align*}
+e^{iu}+e^{iv} &= e^{i\frac{u+v}{2}}\left( e^{i
+\frac{u-v}{2}}+ e^{-i \frac{u-v}{2}}\right) \\
+&= e^{i\frac{u+v}{2}} 2 \cos  \frac{u-v}{2} \\
+&=  2 \cos  \frac{u-v}{2} e^{i\frac{u+v}{2}}.\\
+\end{align*}
+Ce qui est proche de l'\'ecriture en coordon\'ees polaires.
+
+Pour le cas qui nous concerne :
+$$z = e^{i\theta} + e^{2i\theta}
+= e^{\frac{3i\theta}{2}} \left[ e^{-\frac{i\theta}{2}} +
+e^{\frac{i\theta}{2}} \right] = 2\cos \frac{\theta}{2}
+e^{\frac{3i\theta}{2}}.$$ Attention le module dans une
+d\'ecomposion en forme polaire doit \^etre positif ! Donc si $\cos
+\frac{\theta}{2}  \geq 0$  alors $2\cos\frac{\theta}{2}$ est le module de $z$
+et $3\theta/2$ est son argument ; par contre si $\cos \frac{\theta}{2}  <
+0$ le module est $2|\cos\frac{\theta}{2}|$ et l'argument $3\theta/2+\pi$ (le
+$+\pi$ compense le changement de signe car $e^{i\pi} = -1$).
+\fincorrection
+
+
+\finexercice
+

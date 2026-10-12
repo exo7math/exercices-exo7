@@ -1,0 +1,83 @@
+\exercice{5072, rouget, 2010/06/30}
+\enonce[***]
+ Soit $a$ un réel distinct de $\frac{1}{\sqrt{3}}$ et $-\frac{1}{\sqrt{3}}$.
+\begin{enumerate}
+ \item  Calculer $\tan(3\theta)$ en fonction de $\tan\theta$.
+ \item  Résoudre dans $\Rr$ l'équation~:
+
+$$\frac{3x-x^3}{1-3x^2}=\frac{3a-a^3}{1-3a^2}.$$
+On trouvera deux méthodes, l'une algébrique et l'autre utilisant la formule de trigonométrie établie en 1).
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Tout d'abord, d'après la formule de \textsc{Moivre},
+
+$$\cos(3\theta)+i\sin(3\theta)=(\cos\theta+i\sin\theta)^3=(\cos^3\theta-3\cos\theta\sin^2\theta)
++i(3\cos^2\theta\sin\theta-\sin^3\theta),$$
+
+et par identification des parties réelles et imaginaires,
+
+\begin{center}
+\shadowbox{
+$\forall\theta\in\Rr,\;\cos(3\theta)=\cos^3\theta-3\cos\theta\sin^2\theta\;\mbox{et}\;\sin(3\theta)
+=3\cos^2\theta\sin\theta-\sin^3\theta.$
+}
+\end{center}
+Ensuite, $\tan(3\theta)$ et $\tan\theta$ existent $\Leftrightarrow3\theta\notin\frac{\pi}{2}+\pi\Zz$ et
+$\theta\notin\frac{\pi}{2}+\pi\Zz\Leftrightarrow3\theta\notin\frac{\pi}{2}+\pi\Zz\Leftrightarrow\theta\notin\frac{\pi}{6}+
+\frac{\pi}{3}\Zz$.
+Soit donc $\theta\notin\frac{\pi}{6}+\frac{\pi}{3}\Zz$.
+
+$$\tan(3\theta)=\frac{\sin(3\theta)}{\cos(3\theta)}
+=\frac{3\cos^2\theta\sin\theta-\sin^3\theta}{\cos^3\theta-3\cos\theta\sin^2\theta}
+=\frac{3\tan\theta-\tan^3\theta}{1-3\tan^2\theta},$$
+après division du numérateur et du dénominateur par le réel non nul $\cos^3\theta$.
+
+\begin{center}
+\shadowbox{
+$\forall\theta\in\Rr\setminus\left(\frac{\pi}{6}+\frac{\pi}{3}\Zz\right),\;\tan(3\theta)
+=\frac{3\tan\theta-\tan^3\theta}{1-3\tan^2\theta}.$
+}\end{center}
+ \item  Soit $a\neq\pm\frac{1}{\sqrt{3}}$.
+\textbf{1ère méthode.} $a$ est bien sûr racine de l'équation proposée, ce qui permet d'écrire~:
+
+\begin{align*}
+\frac{3x-x^3}{1-3x^2}=\frac{3a-a^3}{1-3a^2}&\Leftrightarrow(3x-x^3)(1-3a^2)=(1-3x^2)(3a-a^3)\;(\mbox{car}\;\pm\frac{1}{\sqrt{3}}
+\;\mbox{ne sont pas solution de l'équation})\\
+ &\Leftrightarrow(x-a)((3a^2-1)x^2+8ax-a^2+3)=0.
+\end{align*}
+Le discriminant réduit du trinôme $(3a^2-1)x^2+8ax-a^2+3$ vaut~:
+
+$$\Delta'=16a^2-(3a^2-1)(-a^2+3)=3a^4+6a^2+3=(\sqrt{3}(a^2+1))^2>0.$$
+L'équation proposée a donc trois racines réelles~:
+
+\begin{center}
+\shadowbox{
+$\mathcal{S}=\left\{a,\frac{4a-\sqrt{3}(a^2+1)}{1-3a^2},\frac{4a+\sqrt{3}(a^2+1)}{1-3a^2}\right\}.$
+}
+\end{center}
+\textbf{2ème méthode.} Il existe un unique réel
+$\alpha\in\left]-\frac{\pi}{2},\frac{\pi}{2}\right[\setminus\left\{-\frac{\pi}{6},\frac{\pi}{6}\right\}$ tel que $a=\tan\alpha$. De même,
+si $x$ est un réel distinct de $\pm\frac{1}{\sqrt{3}}$, il existe un unique réel
+$\theta\in\left]-\frac{\pi}{2},\frac{\pi}{2}\right[\setminus\left\{-\frac{\pi}{6},\frac{\pi}{6}\right\}$ tel que $x=\tan\theta$ (à savoir
+$\alpha=\Arctan a$ et $\theta=\arctan x$). Comme $\pm\frac{1}{\sqrt{3}}$ ne sont pas solution de l'équation proposée,
+on a~:
+
+\begin{align*}
+\frac{3x-x^3}{1-3x^2}=\frac{3a-a^3}{1-3a^2}&\Leftrightarrow\frac{3\tan\theta-\tan^3\theta}{1-3\tan^2\theta}
+=\frac{3\tan\alpha-\tan^3\alpha}{1-3\tan^2\alpha}\Leftrightarrow\tan(3\theta)=\tan(3\alpha)\\
+ &\Leftrightarrow3\theta\in3\alpha+\pi\Zz\Leftrightarrow\theta\in\alpha+\frac{\pi}{3}\Zz.
+\end{align*}
+Ceci refournit les solutions $x=\tan\alpha=a$, puis
+
+$$x=\tan\left(\alpha+\frac{\pi}{3}\right)=\frac{\tan\alpha+\tan\frac{\pi}{3}}{1-\tan\alpha\tan\frac{\pi}{3}}=\frac{a+\sqrt{3}}{1
+-\sqrt{3}a}=\frac{(a+\sqrt{3})(1+\sqrt{3}a)}{1-3a^2}=\frac{4a+\sqrt{3}(a^2+1)}{1-3a^2},$$
+et $x=\tan\left(\alpha-\frac{\pi}{3}\right)=\frac{4a-\sqrt{3}(a^2+1)}{1-3a^2}$.
+
+\end{enumerate}
+\fincorrection
+\finexercice

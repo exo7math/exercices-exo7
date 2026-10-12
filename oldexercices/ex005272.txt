@@ -1,0 +1,28 @@
+\exercice{5272, rouget, 2010/07/04}
+\enonce[***I Théorème de \textsc{Hadamard}]
+Soit $A\in\mathcal{M}_n(\Cc)$ telle que~:~$\forall i\in\{1,...,n\},\;|a_{i,i}|>\sum_{j\neq i}^{}|a_{i,j}|$. Montrer que $A$ est inversible.
+\finenonce
+
+\noindication
+
+\correction
+Soit $X=\left(
+\begin{array}{c}
+x_1\\
+\vdots\\
+x_n
+\end{array}
+\right)$  un vecteur du noyau de $A$. Supposons $X\neq0$. Alors, si $i_0$ est un indice tel que $|x_{i_0}|=\mbox{Max}\{|x_i|,\;i\in\{1,...,n\}\}$, on a  $|x_{i_0}|>0$.
+
+Mais alors,
+
+\begin{align*}\ensuremath
+AX=0&\Rightarrow\forall i\in\{1,...,n\},\;\sum_{j=1}^{n}a_{i,j}x_j=0
+\\
+ &\Rightarrow|a_{i_0,i_0}x_{i_0}|=|-\sum_{j\neq i_0}^{}a_{i_0,j}x_j|\leq\sum_{j\neq i_0}^{}|a_{i_0,j}|.|x_j|
+ \leq|x_{i_0}|\sum_{j\neq i_0}^{}|a_{i_0,j}|
+\end{align*}
+
+et, puisque $|x_{i_0}|> 0$, on obtient $|a_{i_0,i_0}\leq\sum_{j\neq i_0}^{}|a_{i_0,j}|$ contredisant les hypothèses de l'énoncé. Donc, il est absurde de supposer que $\mbox{Ker}A$ contient un vecteur non nul et $A$ est bien inversible.
+\fincorrection
+\finexercice

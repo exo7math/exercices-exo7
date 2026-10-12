@@ -1,0 +1,30 @@
+\exercice{985, cousquer, 2003/10/01}
+\enonce
+ Vrai ou faux ?
+On d\'esigne par $E$ un $\mathbb{R}$-espace vectoriel de dimension finie.
+\begin{enumerate}
+\item  Si les vecteurs $x,y,z$ sont deux \`a deux non colin\'eaires, alors la
+famille $x,y,z$ est libre.
+\item  Soit $x_1,x_2, \dots,x_p$ une famille de vecteurs. Si aucun n'est une
+combinaison lin\'eaire des autres, la famille est libre.
+\end{enumerate}
+\finenonce 
+
+\indication
+\begin{enumerate}
+  \item Faux.
+  \item Vrai.
+\end{enumerate}
+\finindication
+
+\correction
+\begin{enumerate}
+  \item Faux. Par exemple dans $\Rr^3$, $x=(1,0,0)$, $y=(0,1,0)$, $z=(1,1,0)$.
+  \item Vrai. Soit une combinaison lin\'eaire  nulle   
+$\lambda_1x_1+\cdots \lambda_p x_p =0.$
+Supposons qu'un des coefficient est non nul: par exemple $\lambda_1 \neq 0$.
+Alors on \'ecrit $x_1 = -\frac{\lambda_2}{\lambda_1} x_2-\cdots - \frac{\lambda_p}{\lambda_1}x_p.$
+Donc $x_1$ est une combinaison lin\'eaire de $\{x_2,\ldots,x_p\}$. Ce qui contredit l'hypoth\`ese de l'\'enonc\'e, donc  tous les coefficients sont nuls. Donc $\{x_1,\ldots,x_p\}$ est une famille libre. 
+\end{enumerate}
+\fincorrection
+\finexercice

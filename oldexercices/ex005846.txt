@@ -1,0 +1,19 @@
+\exercice{5846, rouget, 2010/10/16}
+\enonce[**]
+Soit $E$ le $\Rr$-espace vectoriel des fonctions continues sur $[0,1]$ à valeurs dans $\Rr$. On munit $E$ de $\|\;\|_\infty$.
+
+$D$ est la partie de $E$ constituée des applications dérivables et $P$ est la partie de $E$ constituée des fonctions polynomiales. Déterminer l'intérieur de $D$ et l'intérieur de $P$.
+\finenonce
+
+\noindication
+
+\correction
+Soit $f\in E$. Pour $n\in\Nn^*$, soit $g_n$ l'application définie par $\forall x\in[0,1]$, $g_n(x) = f(x)+ \frac{1}{n}\left|x- \frac{1}{2}\right|$.
+
+Chaque fonction $g_n$ est continue sur $[0,1]$ mais non dérivable en $ \frac{1}{2}$ ou encore $\forall n\in\Nn^*$, $g_n\in E\setminus D$. De plus, $\forall n\in\Nn^*$ $\|f-g_n\|_\infty= \frac{1}{2n}$. On en déduit que la suite $(g_n)_{n\geqslant1}$ tend vers $f$ dans l'espace vectoriel normé $(E,\|\;\|_\infty)$.
+
+$f$ est donc limite d'une suite d'éléments de ${^c}D$ et donc est dans l'adhérence de ${^c}D$. Ceci montre que $\overline{{^c}D}=E$ ou encore ${^c}(\overset{\circ}{D})=E$ ou enfin $\overset{\circ}{D}=\varnothing$.
+
+Enfin, puisque $P\subset D$, on a aussi $\overset{\circ}{P}=\varnothing$.
+\fincorrection
+\finexercice

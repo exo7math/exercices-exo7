@@ -1,0 +1,27 @@
+\exercice{4667, quercia, 2010/03/14}
+\enonce[Quatre racines, ENS Cachan MP$^*$ 2005]
+
+Soit $f$ à valeurs réelles, de classe $\mathcal{C}^{2}$, $2\pi$-p{\'e}riodique, de moyenne nulle. Montrer que $g=f+f''$ s'annule au moins quatre fois sur $[0,2\pi[$.
+
+\finenonce
+
+\noindication
+
+\correction
+On a $c_0(g) = c_1(g) = c_{-1}(g) = 0$, donc $g$ est orthogonale à tout polynôme trigonométrique de degré
+inférieur ou égal à~$1$. Si $g$ est de signe constant sur $]0,2\pi[$, on contredit $c_0(g) = 0$. Donc
+$g$ a au moins une racine $a\in{]0,2\pi[}$. Si $g$ n'a pas d'autre racine
+dans $]0,2\pi[$ alors $g$ est de signes constants opposés sur $]0,a[$ et $]a,2\pi[$.
+Mais alors $g(t)(\cos(t-a/2)-\cos(a/2))$ est de signe constant sur la réunion de
+ces intervalles, c'est absurde. Donc $g$ a une deuxième racine dans $]0,2\pi[$,
+par exemple $b\in{]a,2\pi[}$. Si $g$ n'a pas d'autre racine sur $]0,2\pi[$
+alors $g$ est de signes constants sur $]0,a[$, $]a,b[$ et $]b,2\pi[$ et les
+signes alternent. On obtient une nouvelle contradiction car alors
+$g(t)(\cos(t-(a+b)/2)-\cos((b-a)/2))$ est de signe constant sur la réunion de
+ces intervalles. Ainsi $g$ admet une troisième racine, par exemple $c\in{]b,2\pi[}$.
+Enfin, si l'on suppose que $g$ n'a pas d'autre racine sur $]0,2\pi[$ alors on
+a $g(t) > 0$ sur $]0,a[$ et $]b,c[$ et $g(t) < 0$ sur $]a,b[$ et $]c,2\pi[$ ou
+l'inverse. Dans les deux cas, on en déduit que $g(0) = g(2\pi) = 0$.
+\fincorrection
+
+\finexercice

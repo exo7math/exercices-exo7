@@ -1,0 +1,31 @@
+\exercice{464, bodin, 1998/09/01}
+\video{RCu1h2v86Ig}
+\enonce
+ Le maximum de deux nombres $x,y$ (c'est-\`a-dire le plus grand des
+deux) est not\'e $\max(x,y)$. De m\^eme on notera $\min(x,y)$ le plus petit des deux nombres
+$x,y$. D\'emontrer que :
+$$ \max(x,y)= \frac{x+y+ \vert x-y\vert}{ 2} \quad \hbox{et}\quad  \min(x,y)= \frac{x+y- \vert
+x-y\vert}{ 2}. $$
+Trouver une formule pour $\max(x,y,z)$.
+\finenonce 
+
+\indication
+Distinguer des cas.
+\finindication
+
+\correction
+Explicitons la formule pour $\max(x,y)$. Si $x\geqslant y$, alors $|x-y|
+= x-y$ donc $\frac12(x+y+|x-y|) = \frac12(x+y+x-y) = x$. De m\^eme
+si $x \leqslant y$, alors $|x-y| = -x + y$ donc $\frac12(x+y+|x-y|) =
+\frac12(x+y-x+y) = y$.
+
+Pour trois \'el\'ements, nous avons $\max(x,y,z) = \max
+\big(\max(x,y),z\big)$, donc d'apr\`es les formules pour deux
+\'el\'ements :
+\begin{align*}
+\max(x,y,z) &= \frac{\max(x,y)+z+| \max(x,y)-z |}{2} \\
+&= \frac{\frac12(x+y+|x-y|)+z+\left|\frac12(x+y+|x-y|) -z
+\right|}{2}.
+\end{align*}
+\fincorrection
+\finexercice

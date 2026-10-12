@@ -1,0 +1,26 @@
+\exercice{4555, quercia, 2010/03/14}
+\enonce[ENS Lyon-Cachan MP 2002]
+
+Soin $(a_n)_{n\ge 1}$ une suite complexe telle que la série $\sum a_n$ converge. On pose~:
+$f(h) = \sum_{n=1}^\infty a_n\frac{\sin^2(nh)}{(nh)^2}$ si $h\ne 0$ et
+$f(0) = \sum_{n=1}^\infty a_n$. Étudier le domaine de définition et la
+continuité de~$f$.
+
+\finenonce
+
+\noindication
+
+\correction
+On suppose $h$ réel.
+La série converge localement normalement sur $\R^*$ donc $f$ est définie sur~$\R$
+et continue sur $\R^*$. Continuité en~$0$~: on pose $A_n = \sum_{k=n}^\infty a_k$
+et $\varphi(t) = \frac{\sin^2(t)}{t^2}$ si $t\ne 0$, $\varphi(0) = 1$ ($\varphi$ est $\mathcal{C}^\infty$
+sur~$\R$ comme somme d'une série entière de rayon infini). Pour $h\ne 0$ on a~:
+$$f(h) = \sum_{n=1}^\infty(A_n-A_{n+1})\varphi(nh)
+       = A_1\varphi(h) + \sum_{n=2}^\infty A_n(\varphi(nh)-\varphi((n-1)h))
+       = A_1\varphi(h) + \sum_{n=2}^\infty A_n \int_{t=(n-1)h}^{nh}\varphi'(t)\,d t.$$
+Cette dernière série est uniformément convergente sur~$\R$ car $A_n \to 0$ (lorsque $n\to\infty$) et
+$ \int_{t=0}^{+\infty}|\varphi'(t)|\,d t$ est convergente.
+\fincorrection
+
+\finexercice

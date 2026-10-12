@@ -1,0 +1,69 @@
+\exercice{1322, legall, 1998/09/01}
+
+\enonce
+\begin{enumerate}
+    \item L'ensemble des matrices  $\begin{pmatrix}
+a & c \cr
+b & d \cr  \end{pmatrix} $  avec  $a,b,c,d\in {\Rr}$   tels que  $ad-bc\not = 0
+$  et  $a^2-b^2-c^2-d^2 \leq 1$  est
+il un sous-groupe de  $Gl_2({\Rr})$ ?
+    \item L'ensemble des matrices  $\begin{pmatrix}
+a & b \cr
+0 & a^{-1} \cr \end{pmatrix}$  avec  $a\in {\Rr}^*$  et  $b\in {\Rr}$  est-il un sous groupe
+de  $Gl_2({\Rr})$ ?
+    \item Existe-t-il une valeur  $M\in {\Rr}$  telle que l'ensemble des matrices  $\begin{pmatrix}
+a & c \cr
+b & d \cr \end{pmatrix}$  avec  $a,b,c,d\in {\Rr}$  tels que   $ad-bc\not = 0 $  et  $
+a\leq M$  forme un sous-groupe de   $Gl_2({\Rr})$ ?
+\end{enumerate}
+
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+    \item L'ensemble  $G$  des matrices  $\begin{pmatrix}
+a & c \cr b & d \cr \end{pmatrix}$  avec  $a,b,c,d\in {\R}$   tels
+que  $ad-bc\not = 0 $  et  $a^2-b^2-c^2-d^2 \leq 1$  n'est pas un
+sous-groupe de  $Gl_2({\R})$. En effet les deux matrices
+$\begin{pmatrix} 1 & 1\cr 0 & 1/2 \cr \end{pmatrix}$  et
+$\begin{pmatrix} 1 & 0 \cr 1 & 1/2\cr \end{pmatrix}$
+appartiennent \`a  $G$  et leur produit  $\begin{pmatrix} 2 & 1/2
+\cr 1/2 & 1/4\cr \end{pmatrix}$ n'appartient pas \`a  $G$.
+    \item L'ensemble  $H$  des matrices  $\begin{pmatrix}
+a & b \cr 0 & a^{-1} \cr \end{pmatrix}$  avec  $a\in {\R}^*$  et
+$b\in {\R}$  est un sous groupe de  $Gl_2({\R})$. En effet,
+
+- $I_2$  \' el\' ement neutre de  $Gl_2({\R})$  appartient \`a
+$H$.
+
+- Soient  $M=\begin{pmatrix} a & b \cr 0 & a^{-1} \cr
+\end{pmatrix}$  et  $M'=\begin{pmatrix} c & d \cr 0 & c^{-1} \cr
+\end{pmatrix}$ deux \' el\' ements de  $H$  alors
+$MM'=\begin{pmatrix} ac & ad+bc^{-1} \cr 0 & (ac)^{-1} \cr
+\end{pmatrix}$  donc le produit de deux \' el\' ements de  $H$
+appartient \`a  $H$.
+
+- Soit  $M=\begin{pmatrix} a & b \cr 0 & a^{-1} \cr
+\end{pmatrix}$. Alors  $M^{-1} =\begin{pmatrix} a^{-1} &- b \cr 0
+& a \cr \end{pmatrix}$  appartient \`a  $H$.
+    \item Soit  $K_M$  l'ensemble des matrices  $\begin{pmatrix}
+a & c \cr b & d \cr \end{pmatrix}$  avec  $a,b,c,d\in {\R}$  tels
+que   $ad-bc\not = 0 $  et  $ a\leq M$. Nous allons montrer, en
+raisonnant par l'absurde, qu'il n'existe pas de valeur  $M\in
+{\R}$  telle que  $K_M$  forme un sous-groupe de  $Gl_2({\R})$.
+
+Soit  $M\in {\R}$  tel que  $K_M$  forme un sous-groupe de
+$Gl_2({\R})$. Alors  $I_2$  appartient \`a  $K_M$  donc  $M\geq
+1$. Ainsi, les matrices  $A=\begin{pmatrix} 1 & 1 \cr 0 & 1 \cr
+\end{pmatrix}$  et, pour tout  $n\in {\N}$,  $A_n=\begin{pmatrix}
+1 & 1 \cr n & 1 \cr \end{pmatrix}$  appartiennent \`a  $K_n$  donc
+le produit  $AA_n=\begin{pmatrix} 1+n & 0 \cr 0 & 1 \cr
+\end{pmatrix}$  appartient \`a  $K_n$. En cons\' equence, pour
+tout  $n\in {\N}$, on a : $ 1+n\leq M$, ce qui est absurde.
+\end{enumerate}
+\fincorrection
+
+\finexercice
+

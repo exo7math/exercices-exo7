@@ -1,38 +1,30 @@
 \exercice{2658, matexo1, 2002/02/01}
+
 \enonce
 Le but de cet exercice est de montrer que
-$$\forall n\geq3 \quad \pi(2n+1)\geq \ln2\times{2n+1 \over \ln(2n+1)}$$
-o{\`u} $\pi(x)$ d{\'e}signe le nombre d'entiers premiers inf{\'e}rieurs ou {\'e}gaux {\`a} $x$.
+\[
+  \forall n\ge3 \quad \pi(2n+1)\ge \ln2\times\frac{2n+1}{\ln(2n+1)}
+\]
+où \( \pi(x) \) désigne le nombre d'entiers premiers inférieurs ou égaux à \( x \).
 
-a) Calculer $I_{p,q}=\int_0^1 x^p(1-x)^qdx$ pour $p$ et $q$ entiers naturels.
+a) Calculer \( I_{p,q} = \int_0^1 x^p(1-x)^qdx \) pour \( p \) et \( q \) entiers naturels.
 
-b) Soit $D_n$ le ppmc de $n+1,\ n+2,\dots,\ 2n+1$. A l'aide de $I_{n,n}$, {\'e}tablir l'in{\'e}galit{\'e}
-$D_n\geq{(2n+1)!\over(n!)^2}$
+b) Soit \( D_n \) le ppcm de \( n+1,\ n+2,\dots,\ 2n+1 \). À l'aide de \( I_{n,n} \), établir l'inégalité
+\( D_n\ge\frac{(2n+1)!}{(n!)^2} \)
 
-c) Montrer que $D_n\leq (2n+1)^{\pi(2n+1)}$ et en d{\'e}duire la minoration de $\pi(2n+1)$
-annonc{\'e}e au d{\'e}but de l'exercice.
+c) Montrer que \( D_n\le (2n+1)^{\pi(2n+1)} \) et en déduire la minoration de \( \pi(2n+1) \) annoncée au début de l'exercice.
 \finenonce
 
 \noindication
+
 \correction
-a) Par r{\'e}currence et int{\'e}gration par parties, on montre que
-$I_{p,q}={p!q!\over(p+q+1)!}$
+a) Par récurrence et intégration par parties, on montre que \( I_{p,q} = \frac{p!q!}{(p+q+1)!} \)
 
-b) En d{\'e}veloppant $(1-x)^n$ {\`a} l'aide de la formule du bin{\^o}me, on obtient apr{\`e}s
-int{\'e}gration
-$I_{n,n}=\sum_{k=0}^n {(-1)^kC_n^k\over n+k+1}$.
+b) En développant \( (1-x)^n \) à l'aide de la formule du binôme, on obtient après intégration \( I_{n,n} = \sum_{k = 0}^n \frac{(-1)^kC_n^k}{n+k+1} \).
 
-$D_n$ {\'e}tant le ppmc des d{\'e}nominateurs dans l'expression pr{\'e}c{\'e}dente, nous en d{\'e}duisons que
-$I_{n,n}={a\over D_n}$ o{\`u} $a$ est un entier. Comme $I_{n,n}>0$, $a\geq1$ et donc
-$I_{n,n}\geq{1\over D_n}$. En utilisant le r{\'e}sultat de la question a), nous en d{\'e}duisons
-l'in{\'e}galit{\'e} demand{\'e}e.
+\( D_n \) étant le ppmc des dénominateurs dans l'expression précédente, nous en déduisons que \( I_{n,n} = \frac{a}{D_n} \) où \( a \) est un entier. Comme \( I_{n,n}>0 \), \( a\ge1 \) et donc \( I_{n,n}\ge\frac{1}{D_n} \). En utilisant le résultat de la question a), nous en déduisons l'inégalité demandée.
 
-c) Soit $D_n=\prod_{i=1}^k p_i^{\alpha_i}$ la d{\'e}composition en
-facteurs premiers de $D_n$. Pour tout $i$ compris entre 1 et $k$,
-$p_i^{\alpha_i}$ divise un des nombres $n+1,\ n+2,\dots,\ 2n+1$.
-Par cons{\'e}quent, $p_i^{\alpha_i}\leq2n+1$. De plus, les $p_i$ {\'e}tant deux {\`a} deux
-distincts et inf{\'e}rieurs ou {\'e}gaux {\`a} $2n+1$, $k\leq\pi(2n+1)$. D'o{\`u} la majoration 
-demand{\'e}e.
-
+c) Soit \( D_n = \prod_{i = 1}^k p_i^{\alpha_i} \) la décomposition en facteurs premiers de \( D_n \). Pour tout \( i \) compris entre 1 et \( k \), \( p_i^{\alpha_i} \) divise un des nombres \( n+1,\ n+2,\dots,\ 2n+1 \). Par conséquent, \( p_i^{\alpha_i}\le2n+1 \). De plus, les \( p_i \) étant deux à deux distincts et inférieurs ou égaux à \( 2n+1 \), \( k\le\pi(2n+1) \). D'où la majoration demandée.
 \fincorrection
+
 \finexercice

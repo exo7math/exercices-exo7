@@ -1,0 +1,33 @@
+\exercice{5284, rouget, 2010/07/04}
+\video{4EJcG9wA3cI}
+\enonce[**I]
+
+On part du point de coordonnées $(0,0)$ pour rejoindre le point de coordonnées $(p,q)$ ($p$ et $q$ entiers naturels donnés) en se déplaçant à chaque étape d'une unité vers la droite ou vers le haut. Combien y a-t-il de chemins possibles~?
+\finenonce
+
+\indication
+Coder un chemin par un mot : $D$ pour droite, $H$ pour haut.
+\finindication
+
+
+
+\correction
+
+On pose $H=$ "vers le haut"  et $D=$ "vers la droite". 
+Un exemple de chemin de $(0,0)$ à $(p,q)$ est le mot $DD...DHH...H$ 
+où $D$ est écrit $p$ fois et $H$ est écrit $q$ fois. 
+Le nombre de chemins cherché est clairement le nombre d'anagrammes 
+du mot précédent. 
+
+
+Le nombre de choix de l'emplacement du $H$ est $C_{p+q}^q$. Une fois que les lettres $H$
+sont placées il n'y a plus de choix pour les lettres $D$.
+Il y a donc $C_{p+q}^q$ chemins possibles.
+
+Remarque : si on place d'abord les lettres $D$ alors on a $C_{p+q}^p$ choix possibles.
+Mais on trouve bien sûr le même nombre de chemins car $C_{p+q}^p = C_{p+q}^{(p+q) - p} = C_{p+q}^q$.
+
+\fincorrection
+
+\finexercice
+

@@ -1,0 +1,40 @@
+\exercice{5756, rouget, 2010/10/16}
+\enonce[***]
+Pour $x$ réel, on pose $F(x) =e^{-x^2}\int_{0}^{x}e^{t^2}\;dt$. En développant $F$ en série entière par deux méthodes différentes, montrer que pour tout entier naturel $n$, 
+
+\begin{center}
+$\sum_{k=0}^{n}(-1)^{n-k}\frac{1}{(2k+1)k!(n-k)!}=(-1)^n\frac{2^{2n}n!}{(2n+1)!}$.
+\end{center}
+\finenonce
+
+\noindication
+
+\correction
+Pour $x$ réel, on sait que $F(x)=e^{-x^2}\int_{0}^{x}e^{t^2}\;dt=\left(\sum_{n=0}^{+\infty}\sum_{n=0}^{+\infty}(-1)^n\frac{x^{2n}}{n!}\right)\left(\sum_{n=0}^{+\infty}\frac{x^{2n+1}}{n!(2n+1)}\right)$.
+
+La fonction $F$ est impaire donc les coefficients d'indices pairs sont nuls. D'autre part, pour $n\in\Nn$, le coefficient de $x^{2n+1}$ du produit de \text{Cauchy} des deux séries précédentes vaut
+
+\begin{center}
+$\sum_{k=0}^{n}\frac{1}{k!(2k+1)}\times\frac{(-1)^{n-k}}{(n-k)!}$.
+\end{center}
+
+La méthode choisie fournit classiquement une expression compliquée des coefficients.
+
+On peut aussi obtenir $F$ comme solution d'une équation différentielle linéaire du premier ordre. $F$ est dérivable sur $\Rr$ et pour tout réel $x$, $F'(x) =-2xe^{-x^2}\int_{0}^{x}e^{t^2}\;dt+1=-2xF(x)+1$.
+
+$F$ est uniquement déterminée par les conditions $F'+ 2xF= 1$ et $F(0) = 0$\quad(*). $F$ est développable en série entière sur $\Rr$ d'après le début de l'exercice et impaire. Pour $x$ réel, posons donc $F(x)=\sum_{n=0}^{+\infty}a_nx^{2n+1}$.
+
+\begin{align*}\ensuremath
+(*)&\Leftrightarrow\forall x\in\Rr,\;\sum_{n=0}^{+\infty}(2n+1)a_nx^{2n}+ 2\sum_{n=0}^{+\infty}a_nx^{2n+2}=1\Leftrightarrow\forall x\in\Rr,\;a_0+\sum_{n=1}^{+\infty}((2n+1)a_n+ 2a_{n-1})x^{2n}= 1\\
+ &\Leftrightarrow a_0 = 1\;\text{et}\;\forall n\geqslant1,\;(2n+1)a_n+ 2a_{n-1}=0\Leftrightarrow a_0 = 1\;\text{et}\;\forall n\geqslant1,\;a_n =-\frac{2}{2n+1}a_{n-1}\\
+ &a_0 = 1\;\text{et}\;\forall n\geqslant1,\;a_n =\frac{(-1)^n2^n}{(2n+1)(2n-1)\ldots1}a_0\\
+ &\Leftrightarrow\forall n\in\Nn,\;\frac{(-1)^n2^{2n}n!}{(2n+1)!}.
+\end{align*}
+
+On a montré que pour tout réel $x$, $F(x)=\sum_{n=0}^{+\infty}\frac{(-1)^n2^{2n}n!}{(2n+1)!}x^{2n+1}$. Par unicité des coefficients d'une série entière, $\forall n\in\Nn$, on obtient en particulier,
+
+\begin{center}
+$\forall n\in\Nn$, $\sum_{k=0}^{n}\frac{1}{k!(2k+1)}\times\frac{(-1)^{n-k}}{(n-k)!}=\frac{(-1)^n2^{2n}n!}{(2n+1)!}$.
+\end{center}
+\fincorrection
+\finexercice

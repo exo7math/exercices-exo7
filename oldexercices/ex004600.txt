@@ -1,0 +1,31 @@
+\exercice{4600, quercia, 2010/03/14}
+\enonce[$\sum_{n=0}^\infty \frac 1{\strut C_{2n}^n}$]
+
+On pose $f(x) = \sum_{n=0}^\infty \frac{x^n}{\strut C_{2n}^n}$.
+
+\begin{enumerate}
+  \item Déterminer le rayon de convergence et montrer que $f$ vérifie l'équation :
+    $x(4-x)y' - (x+2)y = -2$.
+    
+  \item Résoudre l'équation précédente pour $x > 0$
+    (utiliser le DL de $f$ en 0 à l'ordre 1 pour fixer la constante)
+    et en déduire la somme de la série
+    $\sum_{n=0}^\infty \frac 1{\strut C_{2n}^n}$.
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $R=4$.
+  \item $y = 4\sqrt{\frac x{(4-x)^3}}\left(\sqrt{\frac{4-x}x}
+                  - \Arctan\sqrt{\frac{4-x}x} + c\right)$.
+             $f(x) = 1 + \frac x2 + \text{o}(x)  \Rightarrow  c = \frac\pi2$.
+             $ \Rightarrow \sum_{n=0}^\infty \frac 1{\strut C_{2n}^n}
+              = \frac 43 + \frac{2\pi}{9\sqrt 3}$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

@@ -1,0 +1,105 @@
+\exercice{3905, quercia, 2010/03/11}
+\enonce[\'Equations trigonométriques]
+Résoudre les équations suivantes : 
+
+% ---------------------------------------------- (6+2)cos + (6-2)sin = 2
+\begin{enumerate}
+  \item $(\sqrt6 + \sqrt2)\cos\theta + (\sqrt6 - \sqrt2)\sin\theta = 2$.
+
+% ------------------------------------------- sin + sin2 + sin3 + sin4 = 0
+  \item $\sin\theta + \sin2\theta + \sin3\theta + \sin4\theta = 0$.
+
+% ---------------------------------------------------- cos + cos2 + cos3 = 0
+  \item $\cos\theta + \cos2\theta + \cos3\theta = 0$.
+
+% -------------------------------------------------------- cos - cos2 = sin3
+  \item $\cos\theta - \cos2\theta = \sin3\theta$.
+
+% -------------------------------------------------------- cos + cos7 = cos4
+  \item $\cos\theta + \cos7\theta = \cos4\theta$.
+
+% ----------------------------------------------------- cos2 + cos12 = 3cos5
+  \item $\cos2\theta + \cos12\theta = \sqrt3\cos5\theta$.
+
+% -------------------------------------------------------- sin7 - sin = sin3
+  \item $\sin7\theta - \sin\theta = \sin3\theta$.
+
+% ----------------------------------------------- cos sin3 + cos3sin  = 3/4
+  \item $\cos^3\theta\sin3\theta + \cos3\theta\sin^3\theta = \frac 34$.
+
+% ------------------------------------------------------ sinsin3 = sin5sin7
+  \item $\sin\theta\sin3\theta = \sin5\theta\sin7\theta$.
+
+% --------------------------------------------------------------- 3tan = 2cos
+  \item $3\tan\theta = 2\cos\theta$.
+
+% --------------------------------------------------------------- tan4 = 4tan
+  \item $\tan4\theta = 4\tan\theta$.
+
+% ------------------------------------------------- cotan - tan = cos + sin
+  \item $\mathrm{cotan}\theta - \tan\theta = \cos\theta + \sin\theta$.
+
+% ----------------------------------------- tan(x) + tan(y) = 1, tan(x+y) = 4/3
+  \item $\begin{cases}\tan x + \tan y = 1\cr \tan(x+y) = 4/3.\end{cases}$
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $4\cos\left(\theta-\frac\pi{12}\right) = 2 \iff
+               \theta \equiv \pm\frac\pi3 + \frac\pi{12} (\mathrm{mod}\, {2\pi})$.
+  \item     $\sin\theta + \dots + \sin4\theta
+                  = 2\sin\theta\cos\theta(4\cos^2\theta + 2\cos\theta - 1)
+                  = 4\sin( 5\theta/2 )\cos\theta\cos( \theta/2 )$
+
+               $4\cos^2\theta + 2\cos\theta - 1 = 0 \iff
+                  \cos\theta = \frac {\sqrt5 -1}4 = \cos( 2\pi/5 )
+                  \text{ ou }
+                  \cos\theta = -\frac {\sqrt5 +1}4 = \sin( 2\pi/5 )$
+
+               $ \Rightarrow $ modulo $2\pi$,
+               $\theta \in \{ 0, \pi, \pi/2, 3\pi/2, 2\pi/5, 4\pi/5,
+                                   6\pi/5, 8\pi/5 \}$. 
+  \item  $\cos\theta \in \left\{ -\frac 12, \pm\frac 1{\sqrt2} \right\} \iff
+               \theta \equiv \pm\frac {2\pi}3 (\mathrm{mod}\, {2\pi})
+               \text{ ou } \theta \equiv \frac \pi4 (\mathrm{mod}\, {\frac\pi2})$. 
+  \item $2\sin(3\theta/2)\sin(\theta/2) = 2\sin(3\theta/2)\cos(3\theta/2)
+             \iff
+             \theta \equiv 0 (\mathrm{mod}\, {\frac {2\pi}3}) \text{ ou }
+             \theta \equiv \frac \pi4 (\mathrm{mod}\, \pi) \text{ ou }
+             \theta \equiv \frac {3\pi}2 (\mathrm{mod}\, {2\pi})$. 
+  \item $2\cos4\theta\cos3\theta = \cos4\theta \iff
+             \theta \equiv \frac \pi8 (\mathrm{mod}\, {\frac \pi4}) \text{ ou }
+             \theta \equiv \pm\frac \pi9 (\mathrm{mod}\, {\frac{2\pi}3})$. 
+  \item $2\cos7\theta\cos5\theta = \sqrt3\cos5\theta \iff
+             \theta \equiv \frac \pi{10} (\mathrm{mod}\, {\frac \pi5}) \text{ ou }
+             \theta \equiv \pm\frac \pi{42} (\mathrm{mod}\, {\frac{2\pi}7})$. 
+  \item $\theta\equiv 0\mathrm{mod}\, {\frac\pi3} \text{ ou } \theta\equiv\pm\frac \pi{12} (\mathrm{mod}\, {\frac \pi2})$.
+  \item     $\cos^3\theta\sin3\theta + \cos3\theta\sin^3\theta
+                = \frac 34\sin4\theta
+                 \Rightarrow  \theta \equiv \frac \pi8 (\mathrm{mod}\, {\frac \pi2})$. 
+  \item $\theta\equiv 0 (\mathrm{mod}\, {\frac \pi8})$.
+  \item $\sin\theta = \frac 12 \Leftrightarrow
+           \theta\equiv \frac\pi6 (\mathrm{mod}\, {2\pi})$ ou
+          $\theta\equiv \frac{5\pi}6 (\mathrm{mod}\, {2\pi})$.
+  \item  $\theta \equiv 0,\pm\arctan\sqrt5 (\mathrm{mod}\,\pi)$. 
+  \item  $\cos^2\theta - \sin^2\theta
+           = \cos\theta\sin\theta(\cos\theta+\sin\theta)$.
+
+          $\cos\theta + \sin\theta = 0 \iff
+           \theta\equiv -\frac\pi4 (\mathrm{mod}\, \pi)$.
+
+          $\cos\theta-\sin\theta = \cos\theta\sin\theta  \Rightarrow 
+           (\cos\theta\sin\theta)^2 + 2\cos\theta\sin\theta = 1  \Rightarrow 
+           \begin{cases}\cos\theta = \frac {\sqrt{2\sqrt2-1} + \sqrt2 - 1}2 \cr
+        
+                  \sin\theta = \frac {\sqrt{2\sqrt2-1} - \sqrt2 + 1}2.\end{cases}$
+
+          Les valeurs trouvées conviennent.
+  \item $\tan x = \tan y = \frac 12$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

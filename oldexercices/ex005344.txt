@@ -1,0 +1,41 @@
+\exercice{5344, rouget, 2010/07/04}
+\enonce[Equations réciproques]
+Résoudre dans $\Cc$ les équations suivantes~:
+\begin{enumerate}
+\item  $z^4+2z^3+3z^2+2z+1=0$ en posant $Z=z+\frac{1}{z}$ (ou autrement).
+\item  $z^6-5z^5+5z^4-5z^2+5z-1=0$.
+\item  $z^7-z^6-7z^5+7z^4+7z^3-7z^2-z+1=0$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  
+\begin{align*}\ensuremath
+P&=X^4+2X^3+3X^2+2X+1=X^2(X^2+\frac{1}{X^2}+2(X+\frac{1}{X})+3)=X^2((X+\frac{1}{X})^2+2(X+\frac{1}{X})+1)\\
+ &=X^2(X+\frac{1}{X}+1)^2=(X^2+X+1)^2=(X-j)^2(X-j^2)^2.
+\end{align*}
+
+\item  $1$ et $-1$ sont racines de $P$. On écrit donc $P=(X^2-1)(X^4-5X^3+6X^2-5X+1)$ puis
+
+\begin{align*}\ensuremath
+X^4-5X^3+6X^2-5X+1&=X^2((X^2+\frac{1}{X^2})-5(X+\frac{1}{X})+6)=X^2((X+\frac{1}{X})^2-5(X+\frac{1}{X})+4)\\
+ &=X^2(X+\frac{1}{X}-1)(X+\frac{1}{X}-4)=(X^2-X+1)(X^2-4X+1)
+\end{align*}
+
+et donc, $P=(X-1)(X+1)(X+j)(X+j^2)(X-2+\sqrt{3})(X-2-\sqrt{3})$.
+
+\item  
+
+\begin{align*}\ensuremath
+P&=X^7-X^6-7X^5+7X^4+7X^3-7X^2-X+1=(X^2-1)(X^5-X^4-6X^3+6X^2+X-1)\\
+ &=(X-1)^2(X+1)(X^4-6X^2+1)\\
+ &=(X-1)^2(X+1)(X^2(3+2\sqrt{2}))(X^2-(3-2\sqrt{2}))
+\end{align*}
+
+Les racines de $P$ dans $\Cc$ sont $1$, $-1$, $\sqrt{3+2\sqrt{2}}$,$-\sqrt{3+2\sqrt{2}}$, $\sqrt{3-2\sqrt{2}}$ et $-\sqrt{3-2\sqrt{2}}$.
+\end{enumerate}
+\fincorrection
+\finexercice

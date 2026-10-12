@@ -1,0 +1,45 @@
+\exercice{872, bodin, 1998/09/01}
+\enonce
+On consid\`ere l'\'equation diff\'erentielle suivante :
+$$
+(E.D.) \quad y''-4y'+4y = d(x),
+$$
+o\`u $d$ est une fonction qui sera pr\'ecis\'ee plus loin.
+\begin{enumerate}
+    \item R\'esoudre l'\'equation diff\'erentielle homog\`ene (ou sans second membre)
+associ\'ee \`a $(E.D.)$.
+    \item Trouver une solution particuli\`ere de $(E.D.)$ lorsque $d(x)=e^{-2x}$
+et lorsque $d(x)=e^{2x}$ respectivement.
+    \item Donner la forme g\'en\'erale des solutions de $(E.D)$ lorsque
+$$d(x) = \frac{e^{-2x}+e^{2x}}{4}.$$
+\end{enumerate}
+\finenonce 
+\noindication
+\correction
+\begin{enumerate}
+    \item  L'\'equation caract\'eristique $r^2-4r+4=0$ a une racine (double) $r=2$
+donc les solutions de l'\'equation homog\`ene sont les fonctions :
+             $$ y(x) = (c_1x+c_2)e^{2x} \hbox{ o\`u } c_1,c_2 \in\R. $$
+    \item Pour $d(x) = e^{-2x}$ on peut chercher une solution particuli\`ere de la forme : $ y_1(x)
+= ae^{-2x} $ car $-2$ n'est pas racine de l'\'equation
+caract\'eristique. On a $y_1'(x)= -2e^{-2x}$ et
+$y_1''(x)=4ae^{-2x}$. Par cons\'equent $y_1$ est solution si et
+seulement si :
+             $$\forall x\in\R\quad  (4a -4(-2a)+4a)e^{-2x} = e^{-2x} $$
+donc si et seulement si $ a =\frac{1}{16}$. \\ Pour $d(x) =e^{2x}$
+on cherche une solution de la forme $y_2(x)=ax^2e^{2x}$, car $2$
+est racine double de l'\'equation caract\'eristique. On a $y_2'(x)
+= (2ax+2ax^2)e^{2x}$ et
+$y_2''(x)=(2a+4ax+4ax+4ax^2)e^{2x}=(4ax^2+8ax+2a)e^{2x}$. Alors
+$y_2$ est solution si et seulement si
+$$\forall x\in\R\quad (4ax^2+8ax+2a-4(2ax+2ax^2)+4ax^2)e^{2x} =e^{2x} $$
+donc si et seulement si $a=\frac{1}{2}$.
+    \item  On d\'eduit du principe de superposition que la
+fonction $$
+y_p(x)=\frac{1}{4}(y_1(x)+y_2(x))=\frac{1}{64}e^{-2x}+\frac{1}{8}x^2e^{2x}$$
+est solution de l'\'equation pour le second membre donn\'e dans
+cette question, et la forme g\'en\'erale des solutions est alors :
+$$ y(x)=(c_1x+c_2)e^{2x}+\frac{1}{64}e^{-2x}+\frac{1}{8}x^2e^{2x} \hbox{ o\`u }c_1,c_2\in\R.$$
+\end{enumerate}
+\fincorrection
+\finexercice

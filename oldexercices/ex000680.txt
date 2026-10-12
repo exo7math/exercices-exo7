@@ -1,0 +1,22 @@
+\exercice{680, ridde, 1999/11/01}
+\video{bdGeuvwKDQA}
+\enonce
+Soit $f : \Rr \rightarrow \Rr$ continue en $0$ telle que pour chaque $x \in \Rr$,
+$f(x) = f(2x)$. Montrer que $f$ est constante.
+\finenonce 
+
+\indication
+Pour $x$ fix\'e, \'etudier la suite $f(\frac 1{2^n} x)$.
+\finindication
+
+\correction
+Fixons $x\in \Rr$ et soit $y = x/2$, comme $f(y) = f(2y)$ nous obtenons $f(\frac 12 x) = f(x)$. Puis en prenant $y = \frac 14 x$, nous obtenons
+$f(\frac 14 x) = f(\frac 12 x)= f(x)$. Par une r\'ecurrence facile nous avons
+$$\forall n \in \Nn \ \ \ \ f(\frac 1{2^n} x) = f(x).$$
+Notons $(u_n)$ la suite d\'efinie par $u_n = \frac 1{2^n} x$ alors
+$u_n \rightarrow 0$ quand $n \rightarrow +\infty$.
+Par la continuit\'e de $f$ en $0$ nous savons alors que:
+$ f(u_n) \rightarrow f(0)$ quand $n \rightarrow +\infty$.
+Mais $f(u_n) = f(\frac 1{2^n} x) = f(x)$, donc $(f(u_n))_n$ est une suite constante \'egale \`a $f(x)$, et donc la limite de cette suite est $f(x)$ ! Donc $f(x) = f(0)$. Comme ce raisonnement est valable pour tout $x \in \Rr$ nous venons de montrer que $f$ est une fonction constante.
+\fincorrection
+\finexercice

@@ -1,0 +1,46 @@
+\exercice{2095, bodin, 2008/02/04}
+\video{1uLeRF-liOk}
+\enonce
+Calculer les intégrales suivantes :
+$$\int_0^{\frac \pi 2}\frac 1{1+\sin x}d x \quad \mbox{ et } \quad \int_0^{\frac \pi 2}\frac{\sin
+x}{1+\sin x}d x.$$
+\finenonce 
+
+\indication
+$\int_0^{\frac \pi 2}\frac 1{1+\sin x}dx=1$ (changement de variables $t=\tan \frac x2$).
+
+$\int_0^{\frac \pi 2}\frac{\sin x}{1+\sin x}dx=\frac \pi 2-1$ (utiliser la précédente).
+\finindication
+
+\correction
+\begin{enumerate}
+  \item Notons $I = \int_0^{\frac \pi 2}\frac 1{1+\sin x} dx$.
+Le changement de variable $t = \tan \frac x2$ transforme toute fraction rationnelle 
+de sinus et cosinus en une fraction rationnelle en $t$ (que l'on sait résoudre !).
+
+En posant $t=\tan \frac{x}{2}$ on a $x=\arctan \frac t2$ ainsi que les formules suivantes : 
+$$\cos x = \frac {1-t^2}{1+t^2}, \quad \sin x = \frac{2t}{1+t^2}, 
+\quad \tan x = \frac{2t}{1-t^2}, \quad dx=\dfrac{2dt}{1+t^2}.$$
+
+Ici, on a seulement à remplacer $\sin x$.
+Comme $x$ varie de $x=0$ à $x=\frac\pi 2$ alors $t=\tan \frac{x}{2}$ varie de $t=0$ à $t=1$.
+
+\begin{align*}  
+  I &= \int_0^{\frac \pi 2}\frac 1{1+\sin x} dx 
+     = \int_0^1  \frac 1 {1+ \frac{2t}{1+t^2}}  \dfrac{2dt}{1+t^2} \\ 
+    &= \int_0^1 \frac{2}{1+t^2 + 2t} dt 
+    = \int_0^1 \frac{2}{(1+t)^2} dt \\
+    &= \left[ \frac{-2}{1+t} \right]_0^1 
+    = 1
+\end{align*}
+
+  \item Notons $J = \int_0^{\frac \pi 2}\frac{\sin x}{1+\sin x} dx$.
+Alors 
+$$I+J =  \int_0^{\frac \pi 2}\frac 1{1+\sin x} dx + \int_0^{\frac \pi 2}\frac{\sin x}{1+\sin x} dx
+= \int_0^{\frac \pi 2} \frac{1+\sin x}{1+\sin x} dx = \int_0^{\frac \pi 2} 1 \, dx = \big[ x \big]_0^{\frac \pi 2} = \frac \pi 2.$$
+Donc $J = \frac \pi 2 - I= \frac \pi 2 - 1$.
+\end{enumerate}
+
+\fincorrection
+\finexercice
+

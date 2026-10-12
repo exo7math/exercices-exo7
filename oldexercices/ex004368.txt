@@ -1,0 +1,27 @@
+\exercice{4368, quercia, 2010/03/12}
+\enonce[Ensea MP 2004]
+Soit $\alpha>0$.
+
+\begin{enumerate}
+  \item Montrer que $f : x \mapsto e^{-\alpha x} \int_{\theta=0}^\pi \cos(x\sin\theta)\, d\theta$ est intégrable
+    sur $\R^+$.
+  \item Calculer $I =  \int_{x=0}^{+\infty}f(x)\,d x$.
+    Indication~: écrire $I = \lim_{a\to+\infty} \int_{x=0}^a f(x)\,d x$.
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item 
+  \item Théorème de Fubini~:
+   $ \int_{x=0}^{+\infty} f(x)\,d x =  \int_{\theta=0}^\pi \int_{x=0}^{+\infty}\Re(e^{(-\alpha+i\sin\theta)x})\,d x\, d\theta
+   =  \int_{\theta=0}^\pi\frac{\alpha\, d\theta}{\alpha^2+\sin^2\theta}=\frac\pi{\sqrt{1+\alpha^2}}$
+
+   (couper en $\theta=\pi/2$ et poser $u=\tan\theta$).
+\end{enumerate}
+ \fincorrection
+
+\finexercice

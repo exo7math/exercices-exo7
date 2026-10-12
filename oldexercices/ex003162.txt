@@ -1,0 +1,37 @@
+\exercice{3162, quercia, 2010/03/08}
+
+\enonce[$-3$ est-il un carr{\'e} ?]
+Soit $p$ un nombre premier impair.
+\begin{enumerate}
+  \item Montrer qu'une {\'e}quation du second degr{\'e}~: $x^2 + ax + b = \dot 0$ admet
+    une solution dans $\Z/p\Z$ si et seulement si son discriminant~: $a^2 - 4b$
+    est un carr{\'e} dans $\Z/p\Z$.
+  \item On suppose que $p\equiv 1 (\mathrm{mod}\, 3)$~: $p=3q+1$.
+  \begin{enumerate}
+    \item Montrer qu'il existe $a\in(\Z/p\Z)^*$ tel que $a^q\ne \dot 1$.
+    \item En d{\'e}duire que $-\dot 3$ est un carr{\'e}.
+  \end{enumerate}
+  \item R{\'e}ciproquement, on suppose que $-\dot 3$ est un carr{\'e} dans
+    $\Z/p\Z$. Montrer que $p\equiv 1 (\mathrm{mod}\, 3)$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item 
+  \item 
+  \begin{enumerate}
+    \item Le nombre de solutions de l'{\'e}quation $x^q = \dot 1$ est inf{\'e}rieur
+    ou {\'e}gal {\`a}~$q < p-1$.
+    \item $\dot 0 = a^{3q}-\dot 1 = (a^q - \dot 1)(a^{2q} + a^q + \dot 1)$
+    donc $a^{2q}$ est racine de $x^2 + x + \dot 1 = \dot 0$, de discriminant
+    $-\dot 3$.
+  \end{enumerate}
+  \item Il existe $x\in\Z/p\Z$ solution de $x^2 + x + \dot 1 = \dot 0$,
+    et un tel $x$ est d'ordre multiplicatif $3$. Par le th{\'e}or{\`e}me de Lagrange, on en d{\'e}duit
+    $3\mid p-1$.
+\end{enumerate}
+\fincorrection
+\finexercice 

@@ -1,0 +1,29 @@
+\exercice{4640, quercia, 2010/03/14}
+\enonce[DSF de $f'$]
+
+Soit $f : {[0,2\pi]} \to \R$ de classe $\mathcal{C}^1$. On considère la fonction $g$,
+$2\pi$-périodique coïncidant avec $f$ sur $[0,2\pi[$.
+Soient $a_n,b_n$ les coefficients de Fourier de $g$.
+
+\begin{enumerate}
+  \item Montrer que $a_n =  o\left(\frac1n\right)$ et
+    $b_n = \frac{f(0)-f(2\pi)}{\pi n} +  o\left(\frac1n\right)$.
+
+  \item Donner le développement en série de Fourier
+    de $g'$.
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item 
+  \item $S_g'(x) = \frac{f(2\pi)-f(0)}{2\pi}
+                    + \sum_{n=1}^\infty \bigl(nb_n - \frac{f(0) - f(2\pi)}{\pi}\bigr)
+                    \cos nx - na_n\sin nx$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

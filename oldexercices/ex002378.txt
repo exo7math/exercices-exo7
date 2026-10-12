@@ -1,0 +1,29 @@
+\exercice{2378, mayer, 2003/10/01}
+\enonce 
+Soit $E =\{ f:[0,1] \rightarrow \Rr \;\; \text{continue} \}$. On munit
+$E$ de la m\'etrique  $d_\infty (f,g) = \sup_{t\in [0,1]}
+|f(t)-g(t)|$. Montrer que la boule unit\'e ferm\'ee de $E$ n'est
+pas compact (on pourra construire une suite dont aucune sous suite
+n'est de Cauchy).
+
+Que peut-on dire de la boule unit\'e ferm\'ee de $l^\infty$ (l'espace des
+suites born\'ees muni de la norme sup)?
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Soit $f_n$ la fonction affine suivante $f_n(t) = 0$ pour
+$t\in [0,\frac{1}{n+1}]$ et pour $t\in [\frac 1n,1]$. Sur $[\frac{1}{n+1},
+\frac{1}{n}]$ on définit une ``dent'' qui vaut $0$ aux extrémités et $1$ au milieu du segment. Alors si $B$ dénote la boule unité fermée (centrée en la fonction nulle), nous avons $d_\infty(f_n,0) = \sup |f_n(t)| = 1$ donc
+$f_n \in B$. Par contre si $p\neq q$ alors $d(f_p,f_q)= 1$ donc la suite
+$(f_n)$ et toute sous-suite ne sont pas de Cauchy. Si $B$ était compact alors 
+on pourrait extraire une sous-suite convergente donc de Cauchy. Contradiction.
+
+  \item Notons $x^n = (0,0,\ldots,0,1,0,0,\ldots)$ la suite de $l^\infty$
+(le $1$ est à la $n$-ième place). Alors $x^n$ est dans la boule unité fermée $B$ centrée en $0$. De plus si $p\neq q$, alors $d_\infty(x^p,x^q) = 1$. Donc toute sous-suite extraite de $(x_n)$ n'est pas de Cauchy donc ne peut pas converger. 
+Donc $B$ n'est pas compact.
+\end{enumerate}
+\fincorrection
+\finexercice

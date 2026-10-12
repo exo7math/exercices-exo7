@@ -1,0 +1,17 @@
+\exercice{5410, rouget, 2010/07/06}
+\enonce[**]
+Soit $f$ une fonction convexe sur un intervalle ouvert $I$ de $\Rr$. Montrer que $f$ est continue sur $I$ et même dérivable à droite et à gauche en tout point de $I$.
+\finenonce
+
+\noindication
+
+\correction
+Supposons que $f$ est convexe sur un intervalle ouvert $I=]a,b[$ ($a$ et $b$ réels ou infinis).
+
+Soit $x_0\in I$. On sait que la fonction pente en $x_0$ est croissante.
+
+Pour $x\neq x_0$, posons $g(x)=\frac{f(x)-f(x_0)}{x-x_0}$. Soit $x'$ un élément de $]x_0,b[$. $\forall x\in]a,x_0[$, on a $g(x)<g(x')$, ce qui montre que $g$ est majorée au voisinage de $x_0$ à gauche. Etant croissante, $g$ admet une limite réelle quand $x$ tend vers $x_0$ par valeurs inférieures ou encore, $\lim_{x\rightarrow x_0,\;x<x_0}\frac{f(x)-f(x_0)}{x-x_0}$ existe dans $\Rr$. $f$ est donc dérivable à gauche en $x_0$. On montre de même que $f$ est dérivable à droite en $x_0$.
+
+Finalement, $f$ est dérivable à droite et à gauche en tout point de $]a,b[$. En particulier, $f$ est continue à droite et à gauche en tout point de $]a,b[$ et donc continue sur $]a,b[$.
+\fincorrection
+\finexercice

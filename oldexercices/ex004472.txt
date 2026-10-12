@@ -1,0 +1,24 @@
+\exercice{4472, quercia, 2010/03/14}
+\enonce[$\sum x_{kn} = 0$]
+
+Soit $\sum_{n\ge1} x_n$ une série absolument convergente telle que
+pour tout entier $k \ge 1$ on a $\sum_{n=1}^\infty x_{kn} = 0$.
+
+Montrer que : $\forall\ n\in\N^*,\ x_n = 0$.
+
+\finenonce
+
+\noindication
+
+\correction
+Démonstration pour $x_1$ :
+$\sum x_n = 0$, $\sum x_{2n} = 0  \Rightarrow  \sum_{n\text{ impair}} x_n = 0$.
+On retire les multiples impairs de 3 ($\sum x_{3n} - \sum x_{6n} = 0$)
+$ \Rightarrow  \sum_{n\not\equiv 0[2] ; n\not\equiv 0[3]} x_n = 0$.
+On retire les multiples restants de $5,7,\dots$
+On obtient ainsi une suite $(s_p)_{p \text{ premier}}$ nulle qui converge vers
+$x_1$, donc $x_1 = 0$.\par
+Peut-on se passer de la convergence absolue ?
+\fincorrection
+
+\finexercice

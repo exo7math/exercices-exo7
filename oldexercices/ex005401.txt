@@ -1,0 +1,33 @@
+\exercice{5401, rouget, 2010/07/06}
+\enonce[***]
+Soit $f$ périodique et continue sur $\Rr$. Montrer que $f$ est bornée et uniformément continue sur $\Rr$.
+\finenonce
+
+\noindication
+
+\correction
+Soit $T$ une pèriode strictement positive de $f$. $f$ est continue sur le segment $[0,T]$ et donc est bornée sur ce segment. $f$ est par suite bornée sur $\Rr$ par $T$-périodicité.
+
+Soit $\varepsilon>0$.
+
+$f$ est continue sur le segment $[0,T]$ et donc, d'après le théorème de \textsc{Heine}, $f$ est uniformément continue sur ce segment. Donc,
+
+$$\exists\alpha\in]0,T[/\;\forall(x,y)\in[0,T],\;(|x-y|<\alpha\Rightarrow|f(x)-f(y)|<\frac{\varepsilon}{2}.$$
+
+Soient $x$ et $y$ deux réels tels que $|x-y|<\alpha$. Si il existe un entier naturel $k$ tel que $(x,y)\in[kT,(k+1)T]$, alors $x-kT\in[0,T]$, $y-kT\in[0,T]$, puis $|(x-kT)-(y-kT)|=|y-x|<\alpha$ et donc $|f(x)-f(y)|<\frac{\varepsilon}{2}<\varepsilon$.
+
+Sinon, en supposant par exemple que $x\leq y$, puisque l'on a choisi $\alpha<T$, 
+
+$$\exists k\in\Zz/\;(k-1)T\leq x\leq kT\leq y\leq(k+1)T.$$
+
+Mais alors, $|x-kT|=|y-x|<\alpha$ et $|y-kT|\leq|y-x|<\alpha$. Par suite,
+
+$$|f(x)-f(y)|\leq|f(x)-f(kT)|+|f(y)-f(kT)|<\frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon.$$
+
+Dans tous les cas, si $|x-y|<\alpha$, alors $|f(x)-f(y)|<\varepsilon$. On a montré que 
+
+$$\forall\varepsilon>0,\;\exists\alpha>0/\;\forall(x,y)\in\Rr^2,\;(|x-y|<\alpha\Rightarrow|f(x)-f(y)|<\varepsilon).$$
+
+$f$ est donc uniformément continue sur $\Rr$.
+\fincorrection
+\finexercice

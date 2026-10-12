@@ -1,0 +1,27 @@
+\exercice{3122, quercia, 2010/03/08}
+
+\enonce[pgcd$( a^n - 1, a^m - 1 )$]
+Soient $a,m,n\ \in \N^{*}$, $a\ge 2$, et $d = (a^n - 1) \wedge (a^m - 1)$.
+\begin{enumerate}
+  \item   Soit $n = qm + r$ la division euclidienne de $n$ par $m$.
+      D{\'e}montrer que $a^n \equiv a^r (\mathrm{mod}\, {a^m - 1})$.
+
+  \item   En d{\'e}duire que $d = (a^r - 1) \wedge (a^m - 1)$,
+      puis $d = a^{(n \wedge m)} - 1$.
+
+  \item   A quelle condition $a^m - 1$ divise-t-il $a^n-1$ ?
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $a^m - 1\mid (a^{qm} - 1)a^r = a^n - a^r$.
+  \item $A\wedge(AQ+R) = A\wedge R$.
+      Algorithme d'Euclide sur les exposants de $a$.
+  \item ssi $m\mid n$.
+\end{enumerate}
+\fincorrection
+
+\finexercice 

@@ -1,0 +1,47 @@
+\exercice{4802, quercia, 2010/03/16}
+\enonce[Fonction presque additive, Centrale MP 2001]
+
+Soient $E,F$ deux $\R$-espaces vectoriels norm{\'e}s, $F$ {\'e}tant complet.
+Soit $f$ une application continue de $E$ dans $F$ telle qu'il existe $M\in\R^+$
+v{\'e}rifiant~:
+$$\forall\ x,y\in E,\ \|f(x+y)-f(x)-f(y)\| \le M.$$
+
+\begin{enumerate}
+  \item Dans le cas $M=0$ montrer que $f$ est lin{\'e}aire. Ce r{\'e}sultat subsiste-t-il
+    si $E$ et $F$ sont des $\C$-ev~?
+    
+
+  \item On suppose $M>0$. Soit pour $x\in E$ et $n\in\N$~: $f_n(x) = 2^{-n}f(2^nx)$.
+    Montrer que la suite $(f_n)$ converge simplement sur~$E$.
+    
+
+  \item On note $g = \lim_{n\to\infty}f_n$. Montrer que $g$ est une application
+    lin{\'e}aire continue et que c'est l'unique application lin{\'e}aire telle que
+    $f-g$ soit born{\'e}e.
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $f(rx) = rf(x)$ pour tout $r\in\N$ par r{\'e}currence, puis pour
+    tout $r\in\Z$ par diff{\'e}rence, pour tout $r\in\Q$ par quotient et enfin
+    pour tout $r\in\R$ par densit{\'e}. Dans le cas de $\C$-ev $f$ est $\R$-lin{\'e}aire
+    mais pas forc{\'e}ment $\C$-lin{\'e}aire, ctrex~: $z \mapsto\overline z$ de $\C$
+    dans $\C$.
+  \item $\|f_{n+1}(x) - f_n(x)\|\le M2^{-n-1}$ donc la s{\'e}rie t{\'e}lescopique
+    $\sum(f_{n+1}(x) - f_n(x))$ est uniform{\'e}ment convergente.
+  \item $\|f_n(x+y) - f_n(x) - f_n(y)\|\le M2^{-n}$ donc
+     $\|g(x+y) - g(x) - g(y)\|\le 0$ et $g$ est continue (limite uniforme des $f_n$)
+     d'o{\`u} $g$ est lin{\'e}aire continue.
+     $\|f(x) - g(x)\| = \|\sum_{k=0}^\infty(f_{k}(x) - f_{k+1}(x))\|
+                        \le 2M$
+     donc $f-g$ est born{\'e}e.
+     Si $h$ est une application lin{\'e}aire telle que $f-h$ est born{\'e}e alors $g-h$ est aussi
+     born{\'e}e ce qui entra{\^\i}ne $g=h$ par lin{\'e}arit{\'e}.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

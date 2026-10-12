@@ -1,0 +1,40 @@
+\exercice{46, cousquer, 2003/10/01}
+
+\enonce
+\begin{enumerate}
+\item  Montrer que, pour tout $n\in\mathbb{N}^*$ et tout nombre $z\in\mathbb{C}$, on a:
+$$\left(z-1\right)\left(1+z+z^2+...+z^{n-1}\right)=z^n-1,$$
+et en déduire que, si $z\neq 1$, on a:
+$$1+z+z^2+...+z^{n-1}=\frac{z^n-1}{z-1}.$$
+\item  \label{Q2} Vérifier que pour tout $x\in\mathbb{R}$ , on a
+$  
+\exp(ix)-1=2i\exp\left(\frac{ix}{2}\right)\sin\left(\frac{x}{2}\right).$
+\item  \label{Q3} Soit $n\in\mathbb{N}^*$. Calculer pour tout $x\in\mathbb{R}$ la somme:
+$$Z_n=1+\exp(ix)+\exp(2ix)+...+\exp((n-1)ix),$$ 
+et en déduire les valeurs de
+\begin{eqnarray*}
+X_n&=&1+\cos(x)+\cos(2x)+...+\cos((n-1)x)\\
+Y_n&=&\sin(x)+\sin(2x)+...+\sin((n-1)x).
+\end{eqnarray*} 
+\end{enumerate}
+
+\finenonce
+
+\noindication
+
+\correction
+Pour 2. Utiliser la formule d'Euler pour $\sin\left(x/2\right)$.
+
+Pour 3.
+Pour $x\neq
+2k\pi$, $k\in\mathbb{Z}$,
+$$Z_n=\frac{\sin\left(\frac{nx}{2}\right)}{\sin\left(\frac{x}{2}\right)}\exp\left(i\left(n-1\right)\frac{x}{2}\right),$$
+et pour $x=2k\pi$, $k\in\mathbb{Z}$, $Z_n=n$.
+
+Remarquer que $Z_n=X_n+iY_n$ pour en déduire que
+$$X_n=\frac{\cos\left(\frac{(n-1)x}{2}\right)\sin\left(\frac{nx}{2}\right)}{\sin\left(\frac{x}{2}\right)}\;\mbox{
+et }\;Y_n=\frac{\sin\left(\frac{(n-1)x}{2}\right)\sin\left(\frac{nx}{2}\right)}{\sin\left(\frac{x}{2}\right)}.$$
+\fincorrection
+
+\finexercice
+

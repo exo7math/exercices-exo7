@@ -1,0 +1,89 @@
+\exercice{5713, rouget, 2010/10/16}
+\enonce
+Etudier l'existence des intégrales suivantes
+
+\begin{center}
+\begin{tabular}{lll}
+\textbf{1) (**)} $\int_{0}^{+\infty}\left(x+2 -\sqrt{x^2+4x+1}\right)\;dx$&\textbf{2) (**)} $\int_{1}^{+\infty}\left(e -\left(1+\frac{1}{x}\right)^x\right)\;dx$&\textbf{3) (**)} $\int_{0}^{+\infty}\frac{\ln x}{x+e^x}\;dx$\\
+\rule[-6mm]{0mm}{14mm}\textbf{4) (***)} 
+$\int_{0}^{+\infty}\left(\sqrt[3]{x+1}-\sqrt[3]{x}\right)^{\sqrt{x}}\;dx$&
+\textbf{5) (**)} $\int_{1}^{+\infty}e^{-\sqrt{x^2-x}}\;dx$&\textbf{6) (**)} $\int_{0}^{+\infty}x^{-\ln x}\;dx$\\
+\rule[-6mm]{0mm}{0mm}\textbf{7) (**)} $\int_{0}^{+\infty}\frac{\sin(5x)-\sin(3x)}{x^{5/3}}\;dx$&\textbf{8) (**)} $\int_{0}^{+\infty}\frac{\ln x}{x^2-1}\;dx$&\textbf{9) (**)} $\int_{-\infty}^{+\infty}\frac{e^{-x^2}}{\sqrt{|x|}}\;dx$\\
+\textbf{10) (**)} $\int_{-1}^{1}\frac{1}{(1+x^2)\sqrt{1-x^2}}\;dx$&\textbf{11) (**)} $\int_{0}^{1}\frac{1}{\sqrt[3]{x^2-x^3}}\;dx$&\textbf{12) (***)} $\int_{0}^{1}\frac{1}{\Arccos(1-x)}\;dx$.
+\end{tabular}
+\end{center}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Pour $x\geqslant0$, $x^2 +4x +1\geqslant0$ et donc la fonction $f~:~x\mapsto x+2 -\sqrt{x^2+4x+1}$ est continue sur $[0,+\infty[$.
+Quand $x$ tend vers  $+\infty$, $x+2--\sqrt{x^2+4x+1}=\frac{3}{x+2+\sqrt{x^2+4x+1}}\sim{3}{2x}$. Comme la fonction $x\mapsto\frac{3}{2x}$ est positive et non intégrable au voisinage de $+\infty$, $f$ n?est pas intégrable sur $[0;+\infty[$.
+
+\item  Pour $x\geqslant1$, $1+\frac{1}{x}$ est défini et strictement positif. Donc la fonction $f~:~x\mapsto e-\left(1+\frac{1}{x}\right)^x$ est définie et continue sur $[1,+\infty[$.
+
+Quand $x$ tend vers $+\infty$, $\left(1+\frac{1}{x}\right)^x=e^{x\ln(1+\frac{1}{x})}=e^{1-\frac{1}{2x}+o(\frac{1}{x})}=e-\frac{e}{2x}+ o\left(\frac{1}{x}\right)$ puis $f(x)\underset{x\rightarrow+\infty}{\sim}\frac{e}{2x}$. Puisque la fonction $x\mapsto\frac{e}{2x}$ est positive et non intégrable au voisinage de $+\infty$, $f$ n'est pas intégrable sur $[1,+\infty[$.
+
+\item  La fonction $f~:~x\mapsto\frac{\ln x}{x+e^x}$ est continue et positive sur $]0,+\infty[$.
+
+\textbullet~En $0$, $\frac{\ln x}{x+e^x}\sim\ln x$ et donc $f(x)\underset{x\rightarrow0}{=}o\left(\frac{1}{\sqrt{x}}\right)$. Comme $\frac{1}{2}<1$, la fonction $x\mapsto\frac{1}{\sqrt{x}}$ est intégrable sur un voisinage de $0$ et il en est de même de la fonction $f$.
+
+\textbullet~En $+\infty$,  $f(x)\sim\frac{\ln x}{e^x}=o\left(\frac{1}{x^2}\right)$. Comme $2>1$, la fonction $x\mapsto\frac{1}{x^2}$ est intégrable sur un voisinage de $+\infty$ et il en est de même de la fonction $f$. 
+
+Finalement, $f$ est intégrable sur $]0,+\infty[$.
+
+\item  La fonction $x\mapsto\sqrt[3]{x+1}-\sqrt[3]{x}$ est continue et strictement positive sur $[0,+\infty[$. Donc la fonction $f~:~x\mapsto\left(\sqrt[3]{x+1}-\sqrt[3]{x}\right)$ est continue sur $[0,+\infty[$.
+
+En $+\infty$, $\ln\left(\sqrt[3]{x+1}-\sqrt[3]{x}\right)=\frac{1}{3}\ln x+\ln\left(\left(1+\frac{1}{x}\right)^{1/3}-1\right)=\frac{1}{3}\ln x+\ln\left(\frac{1}{3x}+O\left(\frac{1}{x^2}\right)\right)= -\frac{2}{3}\ln x -\ln3 + O\left(\frac{1}{x}\right)$. Par suite, $\sqrt{x}\ln\left(\sqrt[3]{x+1}-\sqrt[3]{x}\right)=-\frac{2}{3}\sqrt{x}\ln x -\ln3\sqrt{x}+o(1)$.
+
+Mais alors $x^2f(x)\underset{x\rightarrow+\infty}{=}\text{exp}\left(-\frac{2}{3}\sqrt{x}\ln x -\ln3\sqrt{x}+2\ln x+o(1)\right)$ et donc $\lim_{x \rightarrow +\infty}x^2f(x)=0$. Finalement $f(x)$ est négligeable devant $\frac{1}{x^2}$ en $+\infty$ et $f$ est intégrable sur $[0,+\infty[$.
+
+\item  La fonction $f~:~x\mapsto e^{-\sqrt{x^2-x}}$ est continue sur $[1,+\infty[$.
+
+Quand $x$ tend vers $+\infty$, $x^2f(x)=\text{exp}\left(-\sqrt{x^2-x}+2\ln x\right)=\text{exp}(-x+o(x))$ et donc $x^2f(x)\underset{x\rightarrow+\infty}{\rightarrow}0$. $f(x)$ est ainsi négligeable devant $\frac{1}{x^2}$ au voisinage de $+\infty$ et donc $f$ est intégrable sur $[1,+\infty[$.
+
+\item  La fonction $f~:~x\mapsto x^{-\ln x}$ est continue sur $]0,+\infty[$.
+
+\textbullet~Quand $x$ tend vers $0$, $x^{-\ln x}=e^{-\ln^2x}\rightarrow0$. La fonction $f$ se prolonge par continuité en $0$ et est en particulier intégrable sur un voisinage de $0$.
+
+\textbullet~Quand $x$ tend vers $+\infty$, $x^2f(x)=\text{exp}\left(-\ln^2x+2\ln x\right)\rightarrow0$. Donc $f$ est négligeable devant  $\frac{1}{x^2}$ quand $x$ tend vers $+\infty$ et $f$ est intégrable sur un voisinage de $+\infty$.
+
+Finalement, $f$ est intégrable sur $]0,+\infty[$.
+
+\item  La fonction $f~:~x\mapsto\frac{\sin(5x)-\sin(3x)}{x^{5/3}}$  est continue sur $]0,+\infty[$.
+
+\textbullet~Quand $x$ tend vers $0$,  $f(x)\sim\frac{5x-3x}{x^5/3}=\frac{2}{x^{2/3}}>0$. Puisque $\frac{2}{3}<1$, la fonction $x\mapsto\frac{2}{x^{2/3}}$ est positive et intégrable sur un voisinage de $0$ et il en est de même de la fonction $f$.
+
+\textbullet~En $+\infty$, $|f(x)|\leqslant\frac{2}{x^{5/3}}$ et puisque $\frac{5}{3}>1$, la fonction $f$ est intégrable sur  un voisinage de $+\infty$.
+
+Finalement, $f$ est intégrable sur $]0,+\infty[$.
+
+\item  La fonction $f~:~x\mapsto\frac{\ln x}{x^2-1}$ est continue sur $]0,1[\cup]1,+\infty[$.
+
+\textbullet~En $0$,  $f(x)\sim-\ln x=o\left(\frac{1}{\sqrt{x}}\right)$. Donc $f$ est intégrable sur un voisinage de $0$ à droite.
+
+\textbullet~En $1$, $f(x)\sim\frac{\ln x}{2(x-1)}\sim\frac{1}{2}$. La fonction $f$ se prolonge par continuité en $1$ et est en particulier intégrable sur un voisinage de $1$ à gauche ou à droite.
+
+\textbullet~En $+\infty$,  $x^{3/2}f(x)\sim\frac{\ln x}{\sqrt{x}}=o(1)$. Donc $f(x)$ est négligeable devant $\frac{1}{x^{3/2}}$ quand $x$ tend vers $+\infty$ et donc intégrable sur un voisinage de $+\infty$.
+
+Finalement, $f$ est intégrable sur $]0,1[\cup]1,+\infty[$.
+
+\item  La fonction$f~:~x\mapsto\frac{e^x}{\sqrt{|x|}}$ est continue sur $]-\infty,0[\cup]0,+\infty[$ et paire. Il suffit donc d'étudier l'intégrabilité de $f$ sur $]0,+\infty[$.
+
+$f$ est positive et équivalente en $0$ à droite à $\frac{1}{\sqrt{x}}$ et négligeable devant $\frac{1}{x^2}$  en $+\infty$ d'après un théorème de croissances comparées.
+
+$f$ est donc intégrable sur $]0,+\infty[$ puis par parité sur $]-\infty,0[\cup]0,+\infty[$. On en déduit que $\int_{-\infty}^{+\infty}\frac{e^x}{\sqrt{|x|}}\;dx$ existe dans $\Rr$ et vaut par parité $2\int_{0}^{+\infty}\frac{e^x}{\sqrt{|x|}}\;dx$.
+
+\item   La fonction$f~:~x\mapsto\frac{1}{(1+x^2)\sqrt{1-x^2}}$ est continue et positive sur $]-1,1[$, paire et équivalente au voisinage de $1$ à droite à $\frac{1}{2\sqrt{2}\sqrt{1-x}}$. $f$ est donc intégrable sur $]-1,1[$.
+
+\item  La fonction$f~:~x\mapsto\frac{1}{\sqrt[3]{x^2-x^3}}$ est continue et positive sur $]0,1[$, équivalente au voisinage de $0$ à droite à $\frac{1}{x^{2/3}}$ et au voisinage de 1 à gauche à $\frac{1}{(1-x)^{1/3}}$. $f$ est donc intégrable sur $]0,1[$.
+
+\item  La fonction$f~:~x\mapsto\frac{1}{\Arccos(1-x)}$ est continue et positive sur $]0,1]$.
+
+En $0$, $\Arccos(1-x) = o(1)$. Donc $\Arccos(1-x)\sim\sin\left(\Arccos(1-x)\right)=\sqrt{1-(1-x)^2}=\sqrt{2x-x^2}\sim\sqrt{2}\sqrt{x}$.
+
+Donc $f(x)\underset{x\rightarrow0}{\sim}\frac{1}{\sqrt{2}\sqrt{x}}$ et $f$ est intégrable sur $]0,1[$.
+\end{enumerate}
+\fincorrection
+\finexercice

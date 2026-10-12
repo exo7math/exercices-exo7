@@ -1,38 +1,54 @@
 \exercice{2498, sarkis, 2009/04/01}
+
 \enonce
-Soient $E$ et $F$ deux espaces
-norm\'es r\'eels et $f:E \rightarrow F$ une application born\'ee
-sur la boule unit\'e de $E$ et v\'erifiant
-$$f(x+y)=f(x)+f(y) \mbox{ pour tout } x,y \in E.$$
-Montrez que $f$ est lin\'eaire continue.
-\finenonce 
+Soient \( E \) et \( F \) deux espaces normés réels et \( f:E \rightarrow F \) une application bornée sur la boule unité de \( E \) et vérifiant
+\[
+  f(x+y) = f(x)+f(y) \mbox{ pour tout } x,y \in E.
+\]
+Montrez que \( f \) est linéaire continue.
+\finenonce
 
 \noindication
 
 \correction
-On montre par r\'ecurrence que $f(nx)=nx$ si $n\in \mathbb{N}$.
-Montrer $f(-x)=-f(x)$ pour arriver à $f(nx)=nf(x)$ si $n \in
-\mathbb{Z}$ puis $f(\frac{p}{q}x)=\frac{p}{q}f(x)$ $p,q \in
-\mathbb{Z}$. Ainsi $f$ est lin\'eaire sur $\mathbb{Q}$. Il reste
-\`a montrer qu'elle l'est sur $\mathbb{R}$. Soit $x \in E$ et
-$\lambda \in \mathbb{R}$, il reste \`a montrer que $f(\lambda
-x)=\lambda f(x)$. Prenons $\{\lambda_n\}_{n \in \mathbb{N}}$ tel
-que $\lim_{n\rightarrow \infty}\lambda_n=\lambda$. On a alors
-$$f(\lambda_x)=f(\lambda_n x +
-(\lambda-\lambda_n)x)=\lambda_n f(x)+f((\lambda-\lambda_n)x).$$
-Soit $c_n \in \mathbb{\mathbb{Q}}$ tel que
-$$||(\lambda-\lambda_n)x||_E \leq c_n \leq 2
-||(\lambda-\lambda_n)x||_E.$$ Alors
-$$f((\lambda-\lambda_n)x)=f(c_n\frac{\lambda-\lambda_n}{c_n}x)=c_nf(\frac{\lambda-\lambda_n}{c_n}x)$$
+On montre par récurrence que \( f(nx) = nx \) si \( n\in \Nn \). Montrer \( f(-x) = -f(x) \) pour arriver à \( f(nx) = nf(x) \) si \( n \in
+\Zz \) puis \( f(\frac{p}{q}x) = \frac{p}{q}f(x) \) \( p,q \in
+\Zz \). Ainsi \( f \) est linéaire sur \( \Qq \). Il reste à montrer qu'elle l'est sur \( \Rr \). Soit \( x \in E \) et \( \lambda \in \Rr \), il reste à montrer que \( f(\lambda x) = \lambda f(x) \). Prenons \( \{\lambda_n\}_{n \in \Nn} \) tel que \( \lim_{n\rightarrow \infty}\lambda_n = \lambda \). On a alors
+\[
+  f(\lambda_x) = f(\lambda_n x + (\lambda-\lambda_n)x) = \lambda_n f(x)+f((\lambda-\lambda_n)x).
+\]
+Soit \( c_n \in \mathbb\Qq \) tel que
+\[
+  ||(\lambda-\lambda_n)x||_E \le c_n \le 2 ||(\lambda-\lambda_n)x||_E.
+\]
+Alors
+\[
+  f((\lambda-\lambda_n)x) = f(c_n\frac{\lambda-\lambda_n}{c_n}x) = c_nf(\frac{\lambda-\lambda_n}{c_n}x)
+\]
 et
-$$||\frac{\lambda-\lambda_n}{c_n}x|| \leq 1.$$
-L'application $f$ \'etant born\'e sur la boulle unit\'e par une
-constante $M > 0$, on a $$||f((\lambda-\lambda_n)x)||\leq c_nM$$
-et donc $$||f((\lambda-\lambda_n)x)||\leq c_n M\leq
-2M||(\lambda-\lambda_n)x||_E$$ et donc $$\lim_{n\rightarrow
-\infty}f((\lambda-\lambda_n)x)=0$$, en remarquant qu'on a aussi
-$$\lim_{n\rightarrow \infty}\lambda_nf(x)=\lambda f(x)$$ on obtient
-$$f(\lambda x)=\lim_{n \rightarrow \infty}[\lambda_n
-f(x)+f((\lambda-\lambda_n)x)]=\lambda f(x).$$
+\[
+  ||\frac{\lambda-\lambda_n}{c_n}x|| \le 1.
+\]
+L'application \( f \) étant borné sur la boulle unité par une constante \( M > 0 \), on a
+\[
+  ||f((\lambda-\lambda_n)x)||\le c_nM
+\]
+et donc
+\[
+  ||f((\lambda-\lambda_n)x)||\le c_n M\le 2M||(\lambda-\lambda_n)x||_E
+\]
+et donc
+\[
+  \lim_{n\rightarrow
+    \infty}f((\lambda-\lambda_n)x) = 0
+\], en remarquant qu'on a aussi
+\[
+  \lim_{n\rightarrow \infty}\lambda_nf(x) = \lambda f(x)
+\]
+on obtient
+\[
+  f(\lambda x) = \lim_{n \rightarrow \infty}[\lambda_n f(x)+f((\lambda-\lambda_n)x)] = \lambda f(x).
+\]
 \fincorrection
+
 \finexercice

@@ -1,0 +1,21 @@
+\exercice{5288, rouget, 2010/07/04}
+\enonce[***]
+Soit $(P)$ un polygone convexe à $n$ sommets. Combien ce polygone a-t-il de diagonales~?~En combien de points distincts des sommets se coupent-elles au maximum~?
+\finenonce
+
+\noindication
+
+\correction
+Soit $n\geq5$. De chaque sommet part $n-1$ droites (vers les $n-1$ autres sommets) dont $2$ sont des cotés et $n-3$ des diagonales. Comme chaque diagonale passe par 2 sommets , il y a $\frac{n(n-3)}{2}$ diagonales.
+
+Ces diagonales se recoupent en $C_{n(n-3)/2}^2$ points distincts ou confondus. Dans ce décompte, chaque sommet a été compté autant de fois que l'on a choisi une paire de deux diagonales passant par ce sommet à savoir $C_{n-3}^2$. Maintenant, il y a $n$ sommets.
+
+Réponse : 
+\begin{align*}\ensuremath 
+C_{n(n-3)/2}^2-nC_{n-3}^2&=\frac{1}{2}\frac{n(n-3)}{2}(\frac{n(n-3)}{2}-1)-n\frac{(n-3)(n-4)}{2}=\frac{n(n-3)}{8}(n(n-3)-2-4(n-4))\\
+ &=\frac{n(n-3)}{8}(n^2-7n+14)
+\end{align*}
+
+Les diagonales se recoupent en $\frac{n(n-3)(n^2-7n+14)}{8}$ points distincts ou confondus et distincts des sommets (ou encore en $\frac{n(n-3)(n^2-7n+14)}{8}$ points au maximum).
+\fincorrection
+\finexercice

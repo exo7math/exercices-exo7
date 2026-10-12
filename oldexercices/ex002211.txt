@@ -1,0 +1,74 @@
+\exercice{2211, matos, 2008/04/23}
+\enonce[Quelques identit\'es pour le calcul d'inverses]
+D\'emontrer l'identit\'e
+$$ (A + UBV)^{-1} = A^{-1} -A^{-1} U( I+BVA^{-1}U)^{-1} BVA^{-1}$$
+en pr\'ecisant:
+\begin{itemize}
+\item son domaine de validit\'e;
+\item les types des matrices $A, U, B, V$.
+\end{itemize}
+Quelques cas particuliers:
+\begin{enumerate}
+\item Supposons $B=\beta$ scalaire, $U=u\in\Rr^n$, $V=v^T \in\Rr^n$. Retrouver la formule de Shermann--Morrison qui permet le calcul de l'inverse d'une matrice qui apparait comme perturbation de rang 1 d'une matrice dont on connait l'inverse.
+\item Soient $A\in\Rr^{n\times n} $ r\'eguli\`ere et $u,v\in\Rr^n$ tels que $1+v^TA^{-1}u=0$. Montrer que
+$$B=\left(\begin{array}{cc}
+A+uv^T&u\\
+v^T& 0\end{array}\right) \mbox{ est r\'eguli\`ere.}$$
+Calculer $B^{-1}$ en remarquant que
+$$B=\left[\begin{array}{cc}
+A&0\\
+0&-1\end{array}\right]
+ +\left[\begin{array}{c}
+u\\
+1\end{array}\right] \left[\begin{array}{cc}
+v^T&1
+\end{array}\right]$$
+\item Soit 
+$$D=\left[\begin{array}{cc}
+P&Q\\
+R&S\end{array}\right] \mbox{ matrice inversible  avec } P\in\Rr^{p\times p}, Q\in\Rr^{p\times q}, S\in\Rr^{q\times q}$$
+Calculer $D^{-1}$ en remarquant que
+$$D=\left[\begin{array}{cc}
+P&0\\
+R&I\end{array}\right] +\left[\begin{array}{c}
+Q\\S-I\end{array}\right]\left[\begin{array}{cc}
+0&I\end{array}\right]$$
+\item {\it Calcul r\'ecursif de l'inverse}: on pose
+$$A_n=\left[\begin{array}{cc}A_{n-1}&v\\
+u^T&s\end{array}\right] \mbox{ avec } A_{n-1}\in\Rr^{(n-1)\times (n-1)} u,v\in\Rr^{n-1}, s\in\Rr$$
+Utiliser la formule pr\'ec\'edente pour calculer $A_n^{-1}$ en fonction de $A_{n-1}^{-1}$. En d\'eduire un algorithme r\'ecursif pour le calcul de l'inverse d'une matrice carr\'ee de taille $n$.
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+Pour d\'emontrer l'\'egalit\'e il suffit de multiplier le membre de droite par $5A+UBV)$ et montrer que l'on obtient l'identit\'e.
+
+Domaine de validit\'e:$ A\in{\cal M}_{n\times n}$ inversible, $U\in {\cal M}_{n\times p}$, $B\in {\cal M}_{p\times q}$, $V\in {\cal M}_{q\times n }$, $I+BVA^{-1}U$ inversible.
+\begin{enumerate}
+\item  On obtient la formule de Shermann-Morrisson:
+$$(A+\beta uv^T)^{-1} = A^{-1} - \frac{\beta}{1+\beta v^TA^{-1}u} A^{-1} uv^T A^{-1}$$
+qui permet le calcul de l'inverse d'une matrice qui apparait comme perturbation de rang 1 d'une matrice dont on connait l'inverse.
+\item 
+$$B\left(\begin{array}{c} X\\y\end{array}\right)=0\Leftrightarrow \left\{ \begin{array}{l} (A+uv^T)x +yu =0\\ v^Tx=0\end{array}\right. \Leftrightarrow \left\{ \begin{array}{l} x=-yA^{-1}u\\v^Tx=-yv^TA^{-1}u=0\end{array}\right.$$
+ce qui donne $x=0, y=0$ et donc $B$ est inversible.
+\item En appliquant la formule g\'en\'erale on obtient
+$$B^{-1}=\left(\begin{array} {cc}
+A^{-1} -A^{-1}uv^TA^{-1} & A^{-1}u\\ v^TA^{-1} & 0\end{array}\right)$$
+\item En appliquant la m\^eme formule on obtient
+$$D^{-1}=\left(\begin{array}{cc}P^{-1} +P^{-1}Q\Delta^{-1} RP^{-1} & -P^{-1}Q\Delta^{-1}\\ -\Delta^{-1} RP^{-1} & \Delta^{-1}\end{array}\right)$$
+avec $\Delta = S-RP^{-1}Q$.
+\item Calcul r\'ecursif de l'inverse : on dispose de $A_{n-1}^{-1}$ de taille $(n-1)\times (n-1)$ et on veut calculer l'inverse de
+$$A_n=\left(\begin{array}{cc} A_{n-1}& v\\
+u^T & s\end{array}\right)\mbox{ avec } u,v\in\Rr^{n-1}, s\in\Rr $$
+en utilisant la formule pr\'ec\'edente on obtient
+$$A_n^{-1}=\left(\begin{array}{cc}
+A_{n-1}^{-1} +\frac{1}{\delta} A_{n-1}^{-1} v u^T A_{n-1}^{-1} & - A_{n-1}^{-1}\frac{v}{\delta}\\
+-u^TA_{n-1}^{-1}/\delta & \frac{1}{\delta}\end{array}\right)$$
+avec $\delta=s-u^TA_{n-1}^{-1}v$.
+
+et on en d\'eduit facilement l'algorithme.
+\end{enumerate}
+\fincorrection
+\finexercice

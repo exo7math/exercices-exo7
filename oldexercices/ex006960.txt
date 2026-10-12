@@ -1,0 +1,57 @@
+\exercice{6960, blanc-centi, 2014/04/01}
+\video{nC2gu_mKDR4}
+\enonce
+Trouver tous les polynômes $P$ qui vérifient la relation 
+$$P(X^2)=P(X)P(X+1)$$
+\finenonce 
+
+\indication
+Montrer que si $P$ est un polynôme non constant vérifiant la relation, 
+alors ses seules racines possibles sont $0$ et $1$.
+\finindication
+
+\correction
+Si $P$ est constant égal à $c$, il convient si et seulement si $c=c^2$,
+et alors $c\in\{0;1\}$. 
+
+Dans la suite on suppose $P$ non constant.
+Notons $Z$ l'ensemble des racines de $P$. On sait que $Z$ est un ensemble non vide, fini.
+
+
+\emph{Analyse}
+
+Si $z\in Z$, alors $P(z)=0$ et la relation $P(X^2)=P(X)P(X+1)$ implique $P(z^2)=0$, donc $z^2\in Z$.
+En itérant, on obtient $z^{2k}\in Z$ (pour tout $k\in\N^*$). 
+Si $|z|>1$, la suite $(|z^{2k}|)_k$ est strictement croissante 
+donc $Z$ contient une infinité d'éléments, ce qui est impossible. 
+De même si $0<|z|<1$, la suite $(|z^{2k}|)_k$ est strictement décroissante, 
+ce qui est impossible pour la même raison. 
+Donc les éléments de $Z$ sont soit $0$, soit des nombres complexes de module $1$.
+
+De plus, si $P(z)=0$, alors toujours par la relation $P(X^2)=P(X)P(X+1)$,
+on a que $P((z-1)^2)=0$ donc $(z-1)^2\in Z$. Par le même raisonnement que précédemment,
+alors ou bien $z-1=0$ ou bien $|z-1|=1$. 
+
+En écrivant $z=a+ib$, on vérifie que $|z|=|z-1|=1$ équivaut à 
+$z=e^{\pm i\pi/3}$. Finalement, $Z\subset\big\{0,1,e^{i\pi/3},e^{-i\pi/3}\big\}$. 
+Or si $e^{\pm i\pi/3}$ était racine de $P$, alors $(e^{\pm i\pi/3})^2$ devrait aussi être dans $Z$, 
+mais ce n'est aucun des quatre nombres complexes listés ci-dessus. 
+Donc ni $e^{i\pi/3}$, ni $e^{-i\pi/3}$ ne sont dans $Z$. 
+Les deux seules racines (complexes) possibles sont donc $0$ et $1$. 
+Conclusion : le polynôme $P$ est nécessairement de la forme $\lambda X^k(X-1)^\ell$. 
+
+\bigskip
+
+\emph{Synthèse}
+
+La condition $P(X^2)=P(X)P(X+1)$ devient
+$$\lambda X^{2k}(X^2-1)^\ell=\lambda^2X^k(X-1)^\ell(X+1)^kX^\ell$$
+qui équivaut à $\left\{\begin{array}{l}\lambda^2=\lambda\\2k=k+\ell\\k=\ell\end{array}\right.$.
+
+Autrement dit $k=\ell$ et $\lambda=1$ (puisqu'on a supposé $P$ non constant). 
+
+{\it Conclusion}
+Finalement, les solutions sont le polynôme nul et les polynômes $(X^2-X)^k$, 
+$k\in\Nn$ ($k=0$ donne le polynôme $1$).
+\fincorrection
+\finexercice

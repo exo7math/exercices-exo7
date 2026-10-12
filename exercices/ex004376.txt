@@ -1,21 +1,21 @@
 \exercice{4376, quercia, 2010/03/12}
+
 \enonce[Suite d'intégrales, Centrale MP 2004]
-Soit $(f_n)_{n\in\N^*}$ une suite de fonctions définie par~:
-$\forall\ n\in\N^*,\ \forall\ x\in{[0,1]},\ f_n(x) = \Bigl(\frac{x+x^n}2\Bigr)^n$.
+Soit \( (f_n)_{n\in\Nn^*} \) une suite de fonctions définie par : \( \forall\ n\in\Nn^*,\ \forall\ x\in{[0,1]},\ f_n(x) = \Bigl(\frac{x+x^n}2\Bigr)^n \).
 
 \begin{enumerate}
-  \item Montrer que~$(f_n)$ converge simplement vers une fonction~$\varphi$.
-    
+  \item Montrer que \( (f_n) \) converge simplement vers une fonction \( \varphi \).
+
   \item
-  \begin{enumerate}  
-    \item La convergence est-elle uniforme~?
-   
-   \item La convergence est-elle monotone~?
-   
-  \end{enumerate} 
-  \item Soit, pour~$n\in\N^*$, $J_n =  \int_{x=0}^1f_n(x)\,d x$.
-    Montrer que~$J_n\sim \frac2{n^2}$.
-     
+        \begin{enumerate}
+          \item La convergence est-elle uniforme ?
+
+          \item La convergence est-elle monotone ?
+
+        \end{enumerate}
+
+  \item Soit, pour \( n\in\Nn^* \), \( J_n = \int_{x = 0}^1f_n(x)\,d x \). Montrer que \( J_n\sim \frac2{n^2} \).
+
 \end{enumerate}
 \finenonce
 
@@ -23,16 +23,18 @@ $\forall\ n\in\N^*,\ \forall\ x\in{[0,1]},\ f_n(x) = \Bigl(\frac{x+x^n}2\Bigr)^n
 
 \correction
 \begin{enumerate}
-  \item $0\le f_n(x)\le x^n$ et $f_n(1) = 1$ donc  lorsque $n\to\infty$ $f_n(x)\to \begin{cases}0 & \text{ si }  x<1 \cr 1 & \text{ si }x=1.\cr\end{cases}$
+  \item \( 0\le f_n(x)\le x^n \) et \( f_n(1) = 1 \) donc lorsque \( n\to\infty \) \( f_n(x)\to \begin{cases}0 & \text{ si } x<1 \\ 1 & \text{ si }x = 1.
+        \end{cases} \)
+
   \item
-  \begin{enumerate}  
-    \item   Non, la continuité n'est pas conservée.
-    \item  Oui, il y a décroissance évidente.
-  \end{enumerate}
-  \item Changement de variable $u=\Bigl(\frac{1+x^{n-1}}2\Bigr)^n$~:
-    $J_n=\frac2{n(n-1)} \int_{u=1/2^n}^1 (2u^{1/n}-1)^{2/(n-1)}u^{1/n}\,d u$
-    et l'intégrale tend vers~$1$ quand $n\to\infty$ par convergence dominée.
+        \begin{enumerate}
+          \item Non, la continuité n'est pas conservée.
+
+          \item Oui, il y a décroissance évidente.
+        \end{enumerate}
+
+  \item Changement de variable \( u = \Bigl(\frac{1+x^{n-1}}2\Bigr)^n \): \( J_n = \frac2{n(n-1)} \int_{u = 1/2^n}^1 (2u^{1/n}-1)^{2/(n-1)}u^{1/n}\,d u \) et l'intégrale tend vers \( 1 \) quand \( n\to\infty \) par convergence dominée.
 \end{enumerate}
- \fincorrection
+\fincorrection
 
 \finexercice

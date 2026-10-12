@@ -1,0 +1,46 @@
+\exercice{5559, rouget, 2010/07/15}
+\enonce[***]
+Maximum du produit des distances aux cotés d'un triangle $ABC$ du plan d'un point $M$ intérieur à ce triangle (on admettra que ce maximum existe).
+\finenonce
+
+\noindication
+
+\correction
+Soit $M$ un point intérieur au triangle $ABC$. On pose $a=BC$, $b=CA$ et $c=AB$. On note $x$, $y$, $z$ et $\mathcal{A}$ les aires respectives des triangles $MBC$, $MCA$, $MAB$ et $ABC$.
+On a
+
+\begin{center}
+$d(M,(BC))d(M,(CA))d(M(AB))=\frac{2\text{aire}(MBC)}{a}\frac{2\text{aire}(MCA)}{b}\frac{2\text{aire}(MAB)}{c}=\frac{8xyz}{abc}=\frac{8}{abc}xy(\mathcal{A}-x-y)$.
+\end{center}
+On doit donc déterminer le maximum de la fonction $f(x,y)=xy(\mathcal{A}-x-y)$ quand $(x,y)$ décrit le triangle ouvert $T=\{(x,y)\in\Rr^2,\;x>0,\;y>0,\;x+y<\mathcal{A}\}$. On admet que $f$ admet un maximum global sur le triangle fermé $T'=\{(x,y)\in\Rr^2,\;x\geqslant0,\;y\geqslant0,\;x+y\leqslant\mathcal{A}\}$ (cela résulte d'un théorème de math Spé : \og une fonction numérique continue sur un compact admet un minimum et un maximum \fg). Ce maximum est atteint dans l'intérieur $T$ de $T'$ car $f$ est nulle au bord de $T'$ et strictement positive à l'intérieur de $T'$.
+
+Puisque $f$ est de classe $C^1$ sur $T$ qui est un ouvert de $\Rr^2$, $f$ atteint son maximum sur $T$ en un point critique de $f$. Or, pour $(x,y)\in T^2$,
+
+\begin{align*}\ensuremath
+\left\{
+\begin{array}{l}
+\frac{\partial f}{\partial x}(x,y)=0\\
+\rule{0mm}{6mm}\frac{\partial f}{\partial y}(x,y)=0
+\end{array}
+\right.&\Leftrightarrow\left\{
+\begin{array}{l}
+y(\mathcal{A}-x-y)-xy=0\\
+y(\mathcal{A}-x-y)-xy=0
+\end{array}
+\right.\Leftrightarrow\left\{
+\begin{array}{l}
+y(\mathcal{A}-2x-y)=0\\
+x(\mathcal{A}-x-2y)=0
+\end{array}
+\right.\\
+ &\Leftrightarrow\left\{
+\begin{array}{l}
+2x+y=\mathcal{A}\\
+x+2y=\mathcal{A}
+\end{array}
+\right.\Leftrightarrow x=y=\frac{\mathcal{A}}{3}.
+\end{align*}
+Le maximum cherché est donc égal à $\frac{8}{abc}\times\frac{\mathcal{A}}{3}\times\frac{\mathcal{A}}{3}\times\left(\mathcal{A}-\frac{\mathcal{A}}{3}-\frac{\mathcal{A}}{3}\right)=\frac{8\mathcal{A}^3}{27abc}$.
+(On peut montrer que ce maximum est obtenu quand $M$ est le centre de gravité du triangle $ABC$).
+\fincorrection
+\finexercice

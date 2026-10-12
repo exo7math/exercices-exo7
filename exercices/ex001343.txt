@@ -1,34 +1,33 @@
 \exercice{1343, legall, 1998/09/01}
 
 \enonce
- D\' ecrire tous les homomorphismes de groupes de
-${\Zz}$ dans  ${\Zz}$. D\' eterminer ceux qui sont injectifs et
-ceux qui sont surjectifs.
-
+Décrire tous les homomorphismes de groupes de \( \Zz \) dans \( \Zz \). Déterminer ceux qui sont injectifs et ceux qui sont surjectifs.
 \finenonce
 
 \noindication
 
 \correction
-Soit $f:(\Zz,+) \longrightarrow (\Zz,+)$ un morphisme de groupe.
-Comme tout morphisme $f$ v\'erifie $f(0)=0$. Notons $a = f(1)$.
-Alors
-$$f(2) = f(1+1) = f(1)+f(1) = a+a = 2.a.$$
-De m\^eme, pour $n \ge 0$ :
-$$f(n) = f(1+\cdots+1)= f(1)+\cdots+f(1) = n.f(1) = n.a.$$
+Soit \( f:(\Zz,+) \longrightarrow (\Zz,+) \) un morphisme de groupe. Comme tout morphisme \( f \) vérifie \( f(0) = 0 \). Notons \( a = f(1) \). Alors
+\[
+  f(2) = f(1+1) = f(1)+f(1) = a+a = 2a
+\]
+De même, pour \( n \ge 0 \) :
+\[
+  f(n) = f(1+\cdots+1) = f(1)+\cdots+f(1) = n f(1) = n a
+\]
 Enfin comme
-$$0= f(0) = f(1+(-1)) = f(1) + f(-1) = a + f(-1),$$
-alors $f(-1) = -a$ et pour tout $n \in \Zz$ :
-$$f(n) = n.a.$$
-Donc tous les morphisme sont de la forme $n \mapsto n.a$, avec
-$a\in\Zz$.
+\[
+  0 = f(0) = f(1+(-1)) = f(1) + f(-1) = a + f(-1),
+\]
+alors \( f(-1) = -a \) et pour tout \( n \in \Zz \) :
+\[
+  f(n) = n a.
+\]
+Donc tous les morphismes sont de la forme \( n \mapsto n a \), avec \( a\in\Zz \).
 
 \bigskip
 
-Un morphisme $n \mapsto n.a$ est injectif si et seulement si $a
-\not= 0$, et surjectif si et seulement si $n = \pm 1$.
+Un morphisme \( n \mapsto n a \) est injectif si et seulement si \( a \neq 0 \), et surjectif si et seulement si \( a = \pm 1 \).
 \fincorrection
 
-
 \finexercice
-

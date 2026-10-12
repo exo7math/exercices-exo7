@@ -1,0 +1,30 @@
+\exercice{4122, quercia, 2010/03/11}
+\enonce[\'Etude qualitative : $x'=x^{2}-t$, ENS Cachan MP$^*$ 2005]
+
+On consid{\`e}re l'{\'e}quationn diff{\'e}rentielle $(E) : x'=x^{2}-t$ et l'ensemble $D_{0}=\{(t,x)\,|\, x^{2}-t<0\}$.
+
+Montrer que si $x$ est une solution de $(E)$ v{\'e}rifiant $(t_{0},x(t_{0}))\in D_{0}$, alors $x$ est d{\'e}finie sur
+$[t_{0},+\infty[$ et la courbe int{\'e}grale reste dans $D_{0}$. En d{\'e}duire que $x(t)\mathop{\sim}\limits_{t\to +\infty} -\sqrt t$. 
+
+\finenonce
+
+\noindication
+
+\correction
+Supposons $t>t_{0}$ tel que $x^{2}(t)-t\ge0$. On peut alors poser $t_{1}=\min \{ t>t_{0}\,|\,x^{2}(t)-t>0\}$. On a alors 
+$x^{2}(t_{1})-t_{1}=0$. Si $x(t_{1})=\sqrt{t_{1}}$, on {\'e}tudie la fonction $y(t)=x(t)-\sqrt t$. On a $y'(t_{1})=-\frac{1}{2\sqrt {t_{1}}}<0$. Cela
+contredit le fait que, pour tout $t\in [t_{0},t_{1}[$, $y(t)<0$. De m{\^e}me si $x(t_{1})=-\sqrt{t_{1}}$, on {\'e}tudie la fonction $z(t)=x(t)+\sqrt t$ et on aboutit
+{\`a} une contradiction. Par cons{\'e}quent la courbe int{\'e}grale reste dans $D_{0}$. Si la solution maximale ({\`a} droite) est d{\'e}finie sur $[t_{0},\beta[$, avec 
+$\beta \in \R$, alors pour tout $t\in [t_{0},\beta[$, $-\beta\le x'(t)\le 0$. On en d{\'e}duit que $x'$ est int{\'e}grable sur $[t_{0},\beta[$ et donc que $x(t)$ admet
+une limite finie quand $t$ tend vers $\beta$. On prolonge la fonction en $\beta$ et la fonction prolong{\'e}e v{\'e}rifie $(E)$ sur $[t_{0},\beta]$ ce qui est impossible.
+On en d{\'e}duit que $\beta =+\infty$. On a, pour tout $t\ge t_{0}$, $x'(t)<0$, donc $x$ est d{\'e}croissante. Si $x(t)$ a une limite $\ell \in \R$ en $+\infty$
+alors $x'(t)\mathop{\sim}\limits_{t\to +\infty}-t$, ce qui est impossible. Par cons{\'e}quent $x(t)\to -\infty$ (lorsque $t\to +\infty$). En particulier, pour $t$ assez
+grand, $x(t)\le 0$. En d{\'e}rivant $(E)$ on a $x''(t)=2x(t)(x^{2}(t)-t)-1$. Si, {\`a} partir d'un certain rang, pour tout $t$, $x''(t)\ge 0$ alors $x'$ est croissante et 
+major{\'e}e. Elle ne peut tendre que vers 
+$0$ car sinon $x'(t) \sim \ell$, puis $x(t)\sim \ell t$ et $x'(t)\sim \ell ^{2} t^{2}$. Sinon il existe $t_{1}$ tel que $x''(t_{1})<0$. S'il existe $t_{2}>t_{1}$ tel
+que $x''(t_{2})=0$ (avec $t_{2}$ minimal) alors $x'''(t_{2})=2x+\frac{1}{2x^{2}}$ qui est n{\'e}gatif pour $t$ assez grand. Ceci est impossible et donc
+dans ce cas $x''(t)$ reste n{\'e}gatif lorsque $t$ tend vers $+\infty$, on a alors $0<t-x^{2}(t)\le \frac{-1}{2x(t)}\cdotp$ Par cons{\'e}quent 
+$x^{2}(t)-t\to 0$ lorsque $t\to +\infty$, on en d{\'e}duit que $x(t)\mathop{\sim}\limits_{t\to +\infty}-\sqrt t$.
+\fincorrection
+
+\finexercice

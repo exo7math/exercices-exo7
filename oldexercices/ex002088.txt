@@ -1,0 +1,60 @@
+\exercice{2088, bodin, 2008/02/04}
+\enonce
+Calculer les primitives suivantes, en pr\'ecisant si n\'ecessaire les
+intervalles de validit\'e des calculs:
+$$
+\begin{array}{llll}
+\textbf{a)~}\displaystyle\int \arctan x d x & \textbf{b)~}\displaystyle\int \tan ^2x d x &
+\textbf{c)~}\displaystyle \int \frac 1{x\ln x} d x & \textbf{d)~}\displaystyle \int \frac
+x{\sqrt{x+1}}d x \\
+\textbf{e)~} \displaystyle\int \arcsin x d x & \textbf{f)~}\displaystyle \int \frac 1{3+\exp
+  \left( -x\right)}d x \quad & \textbf{g)~} \displaystyle \int \frac{-1}{\sqrt{4x-x^2}}d
+x & \textbf{h)~} \displaystyle \int \frac 1{x\sqrt{1-\ln ^2x}}d x\\
+\textbf{i)~} \displaystyle \int \frac 1{\sqrt{1+\exp x}}d x \quad & \textbf{j)~} \displaystyle \int
+\frac{x-1}{x^2+x+1} d x & \textbf{k)~} \displaystyle \int \frac{x+2}{x^2-3x-4}d x
+\quad &
+\textbf{l)~} \displaystyle\int \cos x\exp xd x 
+\end{array}$$
+\finenonce 
+\noindication
+\correction
+a-$\int \arctan xdx=x\arctan x-\frac 12\ln \left( 1+x^2\right) +c$ sur $\Bbb{%
+R}$ (int\'egration par parties)
+
+b-$\int \tan ^2xdx=\tan x-x+c$ sur $\left] -\frac \pi 2+k\pi ,\frac \pi
+2+k\pi \right[ $
+
+c-$\int \frac 1{x\ln x}dx=\ln \left| \ln x\right| +c$ sur $\left] 0,1\right[
+\cup \left] 1,+\infty \right[ $ (changement de variable : $u=\ln x$)
+
+d-$\int \frac x{\sqrt{x+1}}dx=\frac 23\left( x-2\right) \left( x+1\right)
+^{\frac 12}+c$ sur $\left] -1,+\infty \right[ $ (changement de variable : $u=\sqrt{x+1}$ ou 
+int\'egration par parties)
+
+e-$\int \arcsin xdx=x\arcsin x+\sqrt{1-x^2}+c$ sur $\left] -1,1\right[ $
+(int\'egration par parties)
+
+f-$\int \frac 1{3+\exp \left( -x\right) }dx=\frac 13\ln \left( 3\exp
+x+1\right) +c$ sur $\Bbb{R}$ (changement de variable : $u=\exp x$)
+
+g-$\int \frac{-1}{\sqrt{4x-x^2}}dx=\arccos \left( \frac 12x-1\right) +c$ sur 
+$\left] 0,4\right[ $ (changement de variable : $u=\frac 12x-1$)
+
+h-$\int \frac 1{x\sqrt{1-\ln ^2x}}dx=\arcsin \left( \ln x\right) +c$ sur $%
+\left] \frac 1e,e\right[ $ (changement de variable : $u=lnx$)
+
+i-$\int \frac 1{\sqrt{1+\exp x}}dx=x-2\ln \left( 1+\sqrt{\exp x+1}\right) +c$
+sur $\Bbb{R}$ (changement de variable : $u=\sqrt{\exp x+1}$)
+
+j-$\int \frac{x-1}{x^2+x+1}dx=\frac 12\ln \left( x^2+x+1\right) -\sqrt{3}%
+\arctan \left( \frac 2{\sqrt{3}}\left( x+\frac 12\right) \right) +c$ sur $%
+\Bbb{R}$
+
+k-$\int \frac{x+2}{x^2-3x-4}dx=-\frac 15\ln \left| x+1\right| +\frac 65\ln
+\left| x-4\right| +c$ sur $\R\setminus\left\{
+-1,4\right\} $ (d\'ecomposition en \'el\'ements simples)
+
+l-$\int \cos x\exp xdx=\frac 12\left( \cos x+\sin x\right) \exp x+c$ sur $%
+\R$ (deux int\'egrations par parties)
+\fincorrection
+\finexercice

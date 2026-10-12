@@ -1,0 +1,56 @@
+\exercice{4620, quercia, 2010/03/14}
+\enonce[X MP$^*$ 2001]
+
+Soit $D$ le disque ouvert de~$\C$ de centre~$0$ et rayon~$1$.
+
+\begin{enumerate}
+  \item Soit $\varphi(z) = \sum_{n\in\N}a_nz^n$ une série entière de rayon $R\ge 1$
+    et $r\in{]0,1[}$.
+    Montrer que $$a_n = \frac1{2\pi r^n} \int_{\theta=0}^{2\pi}\varphi(re^{i\theta})e^{-in\theta}\, d\theta.$$
+
+  \item Soit $E$ l'ensemble des fonctions de~$\overline D$ dans~$\C$ continues
+    et dont la restriction à~$D$ est somme d'une série entière. Montrer que
+    $f \mapsto\|f\| = \sup\{|f(z)|,\ z\in\overline D\}$ définit une norme sur~$E$ et
+    que pour cette norme $E$ est complet.
+  \item Montrer que l'ensemble des polynômes à coefficients complexes est dense dans~$E$.
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item 
+  \item Complétude~: soit $(f_k)$ une suite d'éléments de~$E$ de Cauchy,
+    $f_k(z) = \sum_{n\in\N}a_{n,k}z^n$. On a, à $k$ et $n$ fixés, par convergence dominée~:
+    $$\frac1{2\pi} \int_{\theta=0}^{2\pi}f_k(e^{i\theta})e^{-in\theta}\, d\theta
+      = \lim_{r\to 1^-}\frac1{2\pi r^n} \int_{\theta=0}^{2\pi}f_k(re^{i\theta})e^{-in\theta}\, d\theta
+      = a_{n,k}.$$
+    La suite $(f_k)$
+    converge uniformément sur~$\overline D$ vers une fonction $\varphi : {\overline D} \to \C$
+    continue. On note~:
+    $$a_n = \frac1{2\pi} \int_{\theta=0}^{2\pi}\varphi(e^{i\theta})e^{-in\theta}\, d\theta
+          = \lim_{k\to\infty} a_{n,k}.$$
+    La suite $(a_n)$ est bornée, donc le rayon de convergence de $\sum_{n\in\N}a_nz^n$
+    est supérieur ou égal à~$1$. Pour $z\in D$ fixé on a alors lorsque $k\to\infty$ :
+    \begin{align*} f_k(z)
+        &= \sum_{n\in\N}a_{n,k}z^n
+         = \frac1{2\pi} \int_{\theta=0}^{2\pi}\Bigl(\sum_{n\in\N}f_k(e^{i\theta})e^{-in\theta}z^n\Bigr)\, d\theta
+         = \frac1{2\pi} \int_{\theta=0}^{2\pi}\frac{f_k(e^{i\theta})}{1-ze^{-i\theta}}\, d\theta\cr
+        &\to \frac1{2\pi} \int_{\theta=0}^{2\pi}\frac{\varphi(e^{i\theta})}{1-ze^{-i\theta}}\, d\theta
+         = \frac1{2\pi} \int_{\theta=0}^{2\pi}\Bigl(\sum_{n\in\N}\varphi(e^{i\theta})e^{-in\theta}z^n\Bigr)\, d\theta
+         = \sum_{n\in\N}a_nz^n\cr
+    \end{align*}
+    ce qui prouve que $\varphi\in E$. Enfin on a $\|f_k-\varphi\| \to 0$ lorsque $k\to\infty$
+    par convergence uniforme, d'où $\varphi = \lim_{k\to\infty}f_k$ dans~$E$.
+  \item Soit $f\in E$ et $f_n(z) = f\Bigl(\frac{nz}{n+1}\Bigr)$.
+    Comme $f$ est uniformément continue, $f_n$ converge uniformément vers~$f$
+    sur $\overline D$. Soit $\varepsilon>0$ et $n$ tel que $\|f-f_n\|_\infty \le \varepsilon$.
+    Comme $f_n$ est développable en série entière avec un rayon au moins égal à $1+\frac1n$,
+    son développement converge uniformément vers~$f_n$ sur $\overline D$ donc
+    il existe $P\in\C[X]$ tel que $\|f_n-P\|_\infty \le \varepsilon$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

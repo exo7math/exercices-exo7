@@ -1,0 +1,42 @@
+\exercice{5781, rouget, 2010/10/16}
+\enonce[**]
+\begin{enumerate}
+ \item  Soit $f$ la fonction définie sur $\Rr$, $2\pi$-périodique et impaire telle que $\forall x\in\left]0,\frac{\pi}{2}\right[$, $f(x)=\sin\left(\frac{x}{2}\right)$. Déterminer $f(x)$ pour tout réel $x$.
+
+\item  Soit $f$ la fonction définie sur $\Rr$, $2\pi$-périodique et paire telle que $\forall x\in\left[0,\frac{\pi}{2}\right]$, $f(x)=\sin\left(\frac{x}{2}\right)$. Déterminer $f(x)$ pour tout réel $x$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  \textbullet~Puisque $f$ est impaire, $f(0)=0$. Puisque $f$ est impaire et $2\pi$-périodique, $-f(\pi)=f(-\pi)=f(\pi)$ et donc $f(\pi)=0$. Puisque $f$ est $2\pi$-périodique, pour $k\in\Zz$, $f(2k\pi)=f(0)=0$ et $f((2k+1)\pi)=f(\pi)=0$. Finalement, $\forall k\in\Zz$, $f(k\pi)=0$.
+
+Soit $x\in]-\pi,0[$. Puisque $f$ est impaire, $f(x)=-f(-x)=-\sin\left(-\frac{x}{2}\right)=\sin\left(\frac{x}{2}\right)$ et donc $\forall x\in]-\pi,\pi[$, $f(x)=\sin\left(\frac{x}{2}\right)$.
+
+Soit $x\in\Rr\setminus\pi\Zz$. Il existe $k\in\Zz$ tel que $-\pi<x-2k\pi<\pi$ et puisque $f$ est $2\pi$-périodique, $f(x)=f(x-2k\pi)=\sin\left(\frac{x-2k\pi}{2}\right)=(-1)^k\sin\left(\frac{x}{2}\right)$. De plus, $-\pi<x-2k\pi<\pi\Rightarrow k<\frac{x+\pi}{2\pi}<k+1$ et $k=E\left(\frac{x+\pi}{2\pi}\right)$.
+
+\begin{center}
+\shadowbox{
+$\forall x\in\Rr,\;f(x)=\left\{
+\begin{array}{l}
+0\;\text{si}\;x\in\pi\Zz\\
+(-1)^k\sin\left(\frac{x}{2}\right)\;\text{où}\;k=E\left(\frac{x+\pi}{2\pi}\right)\;\text{si}\;x\notin\pi\Zz
+\end{array}
+\right.$.
+}
+\end{center}
+
+\item  \textbullet~Soit $x\in[-\pi,0]$. Puisque $f$ est paire, $f(x)=f(-x)=\sin\left(-\frac{x}{2}\right)=\sin\left(\left|\frac{x}{2}\right|\right)$ et donc $\forall x\in[-\pi,\pi]$, $f(x)=\sin\left(\left|\frac{x}{2}\right|\right)$.
+
+Soit $x\in\Rr$. Il existe $k\in\Zz$ tel que $-\pi<x-2k\pi\leqslant\pi$ et puisque $f$ est $2\pi$-périodique, $f(x)=f(x-2k\pi)=\sin\left(\left|\frac{x-2k\pi}{2}\right|\right)$. 
+
+\begin{center}
+\shadowbox{
+$\forall x\in\Rr,\;f(x)=\sin\left(\left|\frac{x}{2}-k\pi\right|\right)\;\text{où}\;k=E\left(\frac{x+\pi}{2\pi}\right)$.
+}
+\end{center}
+\end{enumerate}
+\fincorrection
+\finexercice

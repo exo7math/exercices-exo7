@@ -1,0 +1,79 @@
+\exercice{2631, debievre, 2009/05/19}
+\enonce
+Soit $C$ le c\^one d'\'equation $z^2= x^2+y^2$
+et $C^+$ le demi-c\^one o\`u $z \geq 0$. Pour un 
+point quelconque $M_0$ de  $C\setminus \{(0,0,0)\}$, de
+coordonn\'ees $(x_0,y_0,\pm \sqrt{x_0^2+y_0^2})$, 
+on note ${\cal P}_{M_0}$ le plan tangent au c\^one $C$ en $M_0$.
+\begin{enumerate}
+ \item  D\'eterminer un vecteur normal et l'\'equation du plan ${\cal P}_{M_0}$.
+ \item Montrer que l'intersection du c\^one $C$ avec 
+le plan vertical d'\'equation ${y=ax}$ o\`u $a\in \R$ est constitu\'ee
+de deux droites ${\cal D}_1$ et ${\cal D}_2$
+et que 
+ l'intersection du demi-c\^one $C^+$ avec 
+ce plan vertical  est constitu\'ee
+de deux demi-droites ${\cal D}^+_1$ et ${\cal D}^+_2$. 
+ \item Montrer que le plan tangent au c\^one $C$ 
+est le m\^eme en tout point de ${\cal D}_1\setminus \{(0,0,0)\}$ (respectivement  en tout point de
+${\cal D}_2\setminus \{(0,0,0)\}$).
+\end{enumerate}
+\finenonce
+
+\indication   Le vecteur normal de la surface d'\'equation 
+$f(x,y,z)=0$ au point $(x_0,y_0,z_0)$ 
+est le vecteur
+\begin{equation}
+\left (\frac{\partial f}{\partial x}(x_0,y_0,z_0), 
+\frac{\partial f}{\partial y}(x_0,y_0,z_0),
+\frac{\partial f}{\partial z}(x_0,y_0,z_0)
+\right) .
+\label{normal}
+\end{equation}
+%Utiliser plut\^ot l'\'equation $f(x,y,z)=x^2+y^2-z^2=0$ du c\^one $C$.
+\finindication
+
+\correction
+\begin{enumerate} 
+\item 
+Le vecteur normal du c\^one $C$
+au point $(x_0,y_0,z_0)$ de $C$
+est le vecteur
+$(x_0,y_0,-z_0)$ et le plan tangent au c\^one $C$
+en ce point est donn\'e par l'\'equation
+\[
+x_0x + y_0y -z_0z =0
+\]
+car l'origine appartient \`a ce plan.
+
+\item L'intersection du c\^one $C$ avec 
+le plan vertical d'\'equation $y=ax$ o\`u $a\in \R$ 
+est constitu\'ee des points
+$x(1,a, \pm \sqrt {1+a^2})$ o\`u $x \in \R$, c.a.d. des deux droites
+\[
+{\cal D}_1=\{x(1,a, \sqrt {1+a^2}); x \in \R\},
+\quad 
+{\cal D}_2=\{x(1,a, - \sqrt {1+a^2}); x \in \R\}.
+\]
+L'intersection du demi-c\^one $C^+$ avec 
+ce plan vertical est donc constitu\'ee des 
+deux demi-droites
+\begin{align*}
+{}&{\cal D}^+_1=\{x(1,a, \sqrt {1+a^2}); x \in \R, x \geq 0\}
+\\
+{}&{\cal D}^+_2=\{x(-1,-a, \sqrt {1+a^2}); x \in \R, x \geq 0\}.
+\end{align*} 
+\item  Le vecteur normal en un point quelconque 
+$x(1,a, \sqrt {1+a^2})$ de ${\cal D}_1$ 
+respectivement $x(1,a, -\sqrt {1+a^2})$ de ${\cal D}_2$ 
+est le vecteur
+$x(1,a, -\sqrt {1+a^2})$ 
+respectivement $x(1,a, \sqrt {1+a^2})$ 
+d'o\`u 
+la direction et donc
+le plan tangent au c\^one $C$ 
+sont le m\^eme en tout point de ${\cal D}_1\setminus \{(0,0,0)\}$ 
+respectivement  ${\cal D}_2\setminus \{(0,0,0)\}$.
+\end{enumerate}
+\fincorrection
+\finexercice

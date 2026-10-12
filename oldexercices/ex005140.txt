@@ -1,0 +1,35 @@
+\exercice{5140, rouget, 2010/06/30}
+\enonce[***]
+Soit $(n,a,b)\in\Nn^*\times]0,+\infty[\times]0,+\infty[$. Quel est le plus grand terme du développement de $(a+b)^n$~?
+\finenonce
+
+\noindication
+
+\correction
+Soit $n$ un entier naturel non nul. Le terme général du développement de $(a+b)^n$ est $u_k=\binom{n}{k}a^kb^{n-k}$, $0\leq
+k\leq n$. Pour $0\leq k\leq n-1$, on a~:
+
+$$\frac{u_{k+1}}{u_k}=\frac{\binom{n}{k+1}a^{k+1}b^{n-k-1}}{\binom{n}{k}a^kb^{n-k}}=\frac{n-k}{k+1}\frac{a}{b}.$$
+
+Par suite,
+
+$$\frac{u_{k+1}}{u_k}>1\Leftrightarrow\frac{n-k}{k+1}\frac{a}{b}>1\Leftrightarrow(n-k)a>(k+1)b\Leftrightarrow k<\frac{na-b}{a+b}.$$
+
+\begin{itemize}
+\item[1er cas.] Si $\frac{na-b}{a+b}>n-1$ (ce qui équivaut à $n<\frac{a}{b}$), alors la suite $(u_k)_{0\leq k\leq n}$
+est strictement croissante et le plus grand terme est le dernier~:~$a^n$.
+
+\item[2ème cas.] Si $\frac{na-b}{a+b}\leq0$ (ce qui équivaut à $n\leq\frac{b}{a}$), alors la suite $(u_k)_{0\leq k\leq
+n}$ est strictement décroissante et le plus grand terme est le premier~:~$b^n$.
+
+\item[3ème cas.] Si $0<\frac{na-b}{a+b}\leq n-1$. Dans ce cas, la suite est strictement croissante puis éventuellement
+momentanément constante, suivant que $\frac{na-b}{a+b}$ soit un entier ou non, puis strictement décroissante (on dit
+que la suite u est unimodale).
+
+Si $\frac{na-b}{a+b}\notin\Nn$, on pose $k=E(\frac{na-b}{a+b})+1$, la suite $u$ croit strictement jusqu'à ce rang
+puis redécroit strictement. Le plus grand des termes est celui d'indice $k$, atteint une et une seule fois.
+
+Si $\frac{na-b}{a+b}\in\Nn$, le plus grand des termes est atteint deux fois à l'indice $k$ et à l'indice $k+1$.
+\end{itemize}
+\fincorrection
+\finexercice

@@ -1,0 +1,370 @@
+\exercice{5881, rouget, 2010/10/16}
+\enonce[**]
+Résoudre les systèmes :
+
+\begin{enumerate}
+ \item  $\left\{
+\begin{array}{l}
+x'=- \frac{1}{2t}x+ \frac{1}{2t^2}y+2t\\
+y'= \frac{1}{2}x+ \frac{1}{2t}y+t^2
+\end{array}
+\right.$ sur $]0,+\infty[$\quad\item  $\left\{
+\begin{array}{l}
+(t^2+1)x'=tx-y+2t^2-1\\
+(t^2+1)y'=x+ty+3t
+\end{array}
+\right.$
+
+\item  $\left\{
+\begin{array}{l}
+\sh(2t)x'=\ch(2t)x-y\\
+\sh(2t)y'=-x+\ch(2t)y
+\end{array}
+\right.$ sur $]0,+\infty[$ sachant qu'il existe une solution vérifiant $xy = 1$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Puisque les fonctions $t\mapsto\left(
+\begin{array}{cc}
+- \frac{1}{2t}& \frac{1}{2t^2}\\
+\rule{0mm}{6mm} \frac{1}{2}& \frac{1}{2t}
+\end{array}
+\right)$ et $t\mapsto\left(
+\begin{array}{c}
+2t\\
+t^2
+\end{array}
+\right)$ sont continues sur $]0,+\infty[$, l'ensemble des solutions sur $]0,+\infty[$ du système proposé est un $\Rr$-espace affine de dimension $2$.
+
+\textbf{Résolution du système homogène associé.} Le couple de fonctions $(x,y)=(1,t)$ est solution du système homogène associé sur $]0,+\infty[$. Pour chaque réel strictement positif $t$, les deux vecteurs $\left(
+\begin{array}{c}
+1\\
+t
+\end{array}
+\right)$ et $\left(
+\begin{array}{c}
+0\\
+1
+\end{array}
+\right)$ constituent une base de $\mathcal{M}_2(\Rr)$ car $\left|
+\begin{array}{cc}
+1&0\\
+t&1
+\end{array}
+\right|=1\neq0$. Cherchons alors les solutions du système homogène sous la forme $t\mapsto\alpha(t)\left(
+\begin{array}{c}
+1\\
+t
+\end{array}
+\right)+\beta(t)\left(
+\begin{array}{c}
+0\\
+1
+\end{array}
+\right)=\left(
+\begin{array}{c}
+\alpha(t)\\
+t\alpha(t)+\beta(t)
+\end{array}
+\right)$.
+
+\begin{align*}\ensuremath
+\left\{
+\begin{array}{l}
+x'=- \frac{1}{2t}x+ \frac{1}{2t^2}y\\
+y'= \frac{1}{2}x+ \frac{1}{2t}y
+\end{array}
+\right.&\Leftrightarrow\left\{
+\begin{array}{l}
+\alpha'=- \frac{1}{2t}\alpha+ \frac{1}{2t^2}(t\alpha+\beta)\\
+\rule{0mm}{6mm}t\alpha'+\alpha+\beta'= \frac{1}{2}\alpha+ \frac{1}{2t}(t\alpha+\beta)
+\end{array}
+\right.\Leftrightarrow\left\{
+\begin{array}{l}
+\alpha'= \frac{\beta}{2t^2}\\
+t\alpha'+\beta'= \frac{\beta}{2t}
+\end{array}
+\right.\\
+ &\Leftrightarrow\left\{
+\begin{array}{l}
+\alpha'= \frac{\beta}{2t^2}\\
+ \frac{\beta}{2t}+\beta'= \frac{\beta}{2t}
+\end{array}
+\right.\Leftrightarrow\left\{
+\begin{array}{l}
+\beta'=0\\
+\alpha'= \frac{\beta}{2t^2}
+\end{array}
+\right.\\
+ &\Leftrightarrow\exists(\lambda,\mu)\in\Rr^2/\;\forall t\in]0,+\infty[,\;\left\{
+\begin{array}{l}
+\beta(t)=\lambda\\
+\alpha'(t)= \frac{\lambda}{2t^2}
+\end{array}
+\right.\\
+ &\Leftrightarrow\exists(\lambda,\mu)\in\Rr^2/\;\forall t\in]0,+\infty[,\;\left\{
+\begin{array}{l}
+\beta(t)=\lambda\\
+\alpha(t)=- \frac{\lambda}{2t}+\mu
+\end{array}
+\right.\\
+ &\Leftrightarrow\exists(\lambda,\mu)\in\Rr^2/\;\forall t\in]0,+\infty[,\;\left\{
+\begin{array}{l}
+x(t)=- \frac{\lambda}{2t}+\mu\\
+\rule{0mm}{6mm}y(t)= \frac{\lambda}{2}+\mu t
+\end{array}
+\right.
+\end{align*}
+
+Maintenant, pour tout réel strictement positif $t$, $w(t)=\left|
+\begin{array}{cc}
+- \frac{1}{2t}&1\\
+\rule{0mm}{6mm} \frac{1}{2}&t
+\end{array}
+\right|=-1\neq0$ et donc les deux fonctions $t\mapsto\left(
+\begin{array}{c}
+- \frac{1}{2t}\\
+\rule{0mm}{6mm} \frac{1}{2}
+\end{array}
+\right)$ et $t\mapsto\left(
+\begin{array}{c}
+1\\
+t
+\end{array}
+\right)$ sont deux solutions indépendantes du système homogène sur $]0,+\infty[$. Les solutions sur $]0,+\infty[$ du système homogène sont les fonctions de la forme $t\mapsto\lambda\left(
+\begin{array}{c}
+- \frac{1}{2t}\\
+\rule{0mm}{6mm} \frac{1}{2}
+\end{array}
+\right)
++\mu\left(
+\begin{array}{c}
+1\\
+t
+\end{array}
+\right)$.
+
+\textbf{Recherche d'une solution particulière du système par la méthode de variations des constantes.}
+
+Il existe une solution particulière du système de la forme $t\mapsto\lambda(t)\left(
+\begin{array}{c}
+- \frac{1}{2t}\\
+\rule{0mm}{6mm} \frac{1}{2}
+\end{array}
+\right)
++\mu(t)\left(
+\begin{array}{c}
+1\\
+t
+\end{array}
+\right)$ où $\lambda$ et $\mu$ sont deux fonctions dérivables sur $]0,+\infty[$ telles que pour tout réel strictement positif $t$, $\lambda'(t)\left(
+\begin{array}{c}
+- \frac{1}{2t}\\
+\rule{0mm}{6mm} \frac{1}{2}
+\end{array}
+\right)
++\mu'(t)\left(
+\begin{array}{c}
+1\\
+t
+\end{array}
+\right)=\left(
+\begin{array}{c}
+2t\\
+t^2
+\end{array}
+\right)$. Les formules de \textsc{Cramer} fournissent $\lambda'(t)= \frac{1}{-1}\left|
+\begin{array}{cc}
+2t&1\\
+t^2&t
+\end{array}
+\right|=-t^2$ et $\mu'(t)= \frac{1}{-1}\left|
+\begin{array}{cc}
+- \frac{1}{2t}&2t\\
+\rule{0mm}{6mm} \frac{1}{2}&t^2
+\end{array}
+\right|= \frac{3t}{2}$. On peut prendre $\lambda(t)=- \frac{t^3}{3}$ et $\mu(t)= \frac{3t^2}{4}$ et on obtient la solution particulière $X(t)=- \frac{t^3}{3}\left(
+\begin{array}{c}
+- \frac{1}{2t}\\
+\rule{0mm}{6mm} \frac{1}{2}
+\end{array}
+\right)
++ \frac{3t^2}{4}\left(
+\begin{array}{c}
+1\\
+t
+\end{array}
+\right)=\left(
+\begin{array}{c}
+11t^2/12\\
+7t^3/12
+\end{array}
+\right)$
+
+\begin{center}
+\shadowbox{
+$\mathcal{S}_{]0,+\infty[}=\left\{
+t\mapsto\left(
+\begin{array}{l}
+ \frac{11t^2}{12}- \frac{\lambda}{2t}+\mu\\
+\rule{0mm}{7mm} \frac{7t^3}{12}+ \frac{\lambda}{2}+\mu t
+\end{array}
+\right),\;(\lambda,\mu)\in\Rr^2\right\}$.
+}
+\end{center}
+
+\item  Puisque les fonctions $t\mapsto \frac{1}{t^2+1}\left(
+\begin{array}{cc}
+t&-1\\
+\rule{0mm}{6mm}1&t
+\end{array}
+\right)$ et $t\mapsto \frac{1}{t^2+1}\left(
+\begin{array}{c}
+2t^2-1\\
+3t
+\end{array}
+\right)$ sont continues sur $\Rr$, l'ensemble des solutions sur $\Rr$ du système proposé est un $\Rr$-espace affine de dimension $2$.
+
+\textbf{Résolution du système homogène associé.} Les couples de fonctions $X_1=(x,y)=(t,-1)$ et $(x,y)=(1,t)$ sont solutions du système homogène associé sur $\Rr$. De plus, pour chaque réel $t$, $w(t)=\left|
+\begin{array}{cc}
+t&1\\
+-1&t
+\end{array}
+\right|=t^2+1\neq0$. Le couple de fonctions $(X_1,X_2)$ est donc un système fondamental de solutions sur $\Rr$ du système homogène $X'=AX$. Les fonctions solutions du système homogène $X'=AX$ sont les fonctions de la forme $t\mapsto\lambda\left(
+\begin{array}{c}
+t\\
+-1
+\end{array}
+\right)+\mu
+\left(
+\begin{array}{c}
+1\\
+t
+\end{array}
+\right)$, $(\lambda,\mu)\in\Rr^2$.
+
+\textbf{Recherche d'une solution particulière du système par la méthode de variation de la constante.}
+
+Il existe une solution particulière du système de la forme $t\mapsto\lambda(t)\left(
+\begin{array}{c}
+t\\
+-1
+\end{array}
+\right)
++\mu(t)\left(
+\begin{array}{c}
+1\\
+t
+\end{array}
+\right)$ où $\lambda$ et $\mu$ sont deux fonctions dérivables sur $\Rr$ telles que pour tout réel $t$, $\lambda'(t)\left(
+\begin{array}{c}
+t\\
+-1
+\end{array}
+\right)
++\mu'(t)\left(
+\begin{array}{c}
+1\\
+t
+\end{array}
+\right)= \frac{1}{t^2+1}\left(
+\begin{array}{c}
+2t^2-1\\
+3t
+\end{array}
+\right)$. Les formules de \textsc{Cramer} fournissent $\lambda'(t)= \frac{1}{t^2+1}\left|
+\begin{array}{cc}
+(2t^2-1)/(t^2+1)&1\\
+3t/(t^2+1)&t
+\end{array}
+\right|= \frac{2t^3+2t}{(t^2+1)^2}= \frac{2t}{t^2+1}$ et $\mu'(t)= \frac{1}{t^2+1}\left|
+\begin{array}{cc}
+t&(2t^2-1)/(t^2+1)\\
+-1&3t/(t^2+1)
+\end{array}
+\right|= \frac{5t^2-1}{(t^2+1)^2}$. On peut déjà prendre $\lambda(t)= \frac{1}{2}\ln(t^2+1)$. Ensuite, 
+$\int_{}^{} \frac{5t^2-1}{(t^2+1)^2}\;dt=5\int_{}^{} \frac{1}{t^2+1}\;dt-6\int_{}^{} \frac{1}{(t^2+1)^2}\;dt$ puis
+
+\begin{center}
+$\int_{}^{} \frac{1}{t^2+1}\;dt= \frac{t}{t^2+1}-\int_{}^{}t\times \frac{-2t}{(t^2+1)^2}\;dt= \frac{t}{t^2+1}+2\int_{}^{} \frac{t^2+1-1}{(t^2+1)^2}\;dt= \frac{t}{t^2+1}+2\int_{}^{} \frac{1}{t^2+1}\;dt-2\int_{}^{} \frac{1}{(t^2+1)^2}\;dt$,
+\end{center}
+
+et donc $\int_{}^{} \frac{1}{(t^2+1)^2}\;dt= \frac{1}{2}\left( \frac{t}{t^2+1}+\Arctan t\right)+C$. On peut prendre $\mu(t)= \frac{2t}{t^2+1}-3\Arctan t$.
+
+\begin{center}
+\shadowbox{
+$\mathcal{S}_{\Rr}=\left\{
+t\mapsto\left(
+\begin{array}{l}
+ \frac{t}{2}\ln(1+t^2)+ \frac{2t}{t^2+1}-3\Arctan t+\lambda t+\mu\\
+- \frac{t}{2}\ln(1+t^2)+ \frac{2t^2}{t^2+1}-3t\Arctan t-\lambda+\mu t
+\end{array}
+\right),\;(\lambda,\mu)\in\Rr^2\right\}$.
+}
+\end{center}
+
+\item  Si de plus $y= \frac{1}{x}$, le système s'écrit $\left\{
+\begin{array}{l}
+\sh(2t)x'=\ch(2t)x- \frac{1}{x}\\
+-\sh(2t) \frac{x'}{x^2}=-x+\ch(2t) \frac{1}{x}
+\end{array}
+\right.$ ou encore $\left\{
+\begin{array}{l}
+\sh(2t)x'=\ch(2t)x- \frac{1}{x}\\
+\sh(2t)x'=x^3-\ch(2t)x
+\end{array}
+\right.$. On obtient $x^3-\ch(2t)x=\ch(2t)x- \frac{1}{x}$ ou encore $x^4-2\ch(2t)x^2+1=0$. Ensuite,
+
+\begin{center}
+$x^4-2\ch(2t)x^2+1=(x^2-\ch(2t))^2-\sh^2(2t)=(x^2-e^{2t})(x^2-e^{-2t})=(x-e^{t})(x+e^{t})(x-e^{-t})(x+e^{-t})$.
+\end{center}
+
+Ainsi, nécessairement $(x,y)\in\left\{(e^{t},e^{-t}),(e^{-t},e^t),(-e^t,-e^{-t}),(-e^{-t},e^t)\right\}$. Réciproquement, si $(x,y)=(e^t,e^{-t})$, 
+
+\begin{center}
+$\ch(2t)x-y= \frac{1}{2}(e^{3t}+e^{-t})-e^{-t}= \frac{1}{2}(e^{3t}-e^{-t})= \frac{1}{2}(e^{2t}-e^{-2t})e^t=\sh(2t)e^t=\sh(2t)x'$
+\end{center}
+
+et
+
+\begin{center}
+$-x+\ch(2t)y=-e^t+ \frac{1}{2}(e^{t}+e^{-3t})= \frac{1}{2}(-e^{t}+e^{-3t})=- \frac{1}{2}(e^{2t}-e^{-2t})e^{-t}=-\sh(2t)e^{-t}=\sh(2t)y'$.
+\end{center}
+
+Donc le couple $X_1=(x,y)=(e^t,e^{-t})$ est une solution non nulle du système. De même, si $(x,y)=(e^{-t},e^t)$,
+
+\begin{center}
+$\ch(2t)x-y= \frac{1}{2}(e^{t}+e^{-3t})-e^{t}= \frac{1}{2}(-e^{t}-e^{-3t})=- \frac{1}{2}(e^{2t}-e^{-2t})e^{-t}=-\sh(2t)e^{-t}=\sh(2t)x'$
+\end{center}
+
+et
+
+\begin{center}
+$-x+\ch(2t)y=-e^{-t}+ \frac{1}{2}(e^{3t}+e^{-t})= \frac{1}{2}(e^{3t}-e^{-t})= \frac{1}{2}(e^{2t}-e^{-2t})e^{t}=\sh(2t)e^{t}=\sh(2t)y'$.
+\end{center}
+
+Donc le couple $X_2=(x,y)=(e^{-t},e^{t})$ est une solution non nulle du système. Enfin, $w(t)=\left|
+\begin{array}{cc}
+e^t&e^{-t}\\
+e^{-t}&e^t
+\end{array}
+\right|=e^{2t}-e^{-2t}=2\sh(2t)\neq0$ et le couple $(X_1,X_2)$ est un système fondamental de solutions sur $]0,+\infty[$.
+
+\begin{center}
+\shadowbox{
+$\mathcal{S}_{]0,+\infty[}=\left\{
+t\mapsto\left(
+\begin{array}{c}
+\lambda e^t+\mu e^{-t}\\
+\lambda e^{-t}+\mu e^t
+\end{array}
+\right),\;(\lambda,\mu)\in\Rr^2\right\}$.
+}
+\end{center}
+\end{enumerate}
+\fincorrection
+\finexercice

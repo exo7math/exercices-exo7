@@ -1,0 +1,33 @@
+\exercice{5326, rouget, 2010/07/04}
+\enonce[***T]
+Trouver un polynôme de degré $5$ tel que $P(X)+10$ soit divisible par $(X+2)^3$ et $P(X)-10$ soit divisible par 
+$(X-2)^3$.
+\finenonce
+
+\noindication
+
+\correction
+Soit $P$ un tel polynôme. $-2$ est racine de $P+10$ d'ordre au moins trois et donc racine de $(P+10)'= P'$ d'ordre au moins deux.
+
+De même, $2$ est racine de $P'$ d'ordre au moins deux et puisque $P'$ est de degré $4$, il existe un complexe $\lambda$ tel que $P'=\lambda(X-2)^2(X+2)^2=\lambda(X^2-4)^2=\lambda(X^4-8X^2+16)$ et enfin, nécessairement,
+
+$$\exists(\lambda,\mu)\in\Cc^2/\;P=\lambda(\frac{1}{5}X^5-\frac{8}{3}X^3+16X)+\mu\;\mbox{avec}\;\lambda\neq0.$$
+
+Réciproquement, soit $P=\lambda(\frac{1}{5}X^5-\frac{8}{3}X^3+16X)+\mu$ avec $\lambda\neq0$.
+
+\begin{align*}\ensuremath
+P\;\mbox{solution}&\Leftrightarrow P+10\;\mbox{divisible par}\;(X+2)^3\;\mbox{et}\;P-10\;\mbox{est divisible par}\;(X-2)^3\\
+ &\Leftrightarrow P(-2)+10=0=P'(-2)=P''(-2)\;\mbox{et}\;P(2)+10=0=P'(2)=P''(2)\Leftrightarrow P(-2)=-10\;\mbox{et}\;P(2)=10\\
+ &\left\{
+ \begin{array}{l}
+ \lambda(-\frac{32}{5}+\frac{64}{3}-32)+\mu=-10\\
+  \lambda(\frac{32}{5}-\frac{64}{3}+32)+\mu=10
+  \end{array}
+  \right.
+  \Leftrightarrow\mu=0\;\mbox{et}\;\lambda(\frac{32}{5}-\frac{64}{3}+32)+\mu=10\\
+  &\Leftrightarrow\mu=0\;\mbox{et}\;\lambda=\frac{75}{128}
+\end{align*}
+
+On trouve un et un seul polynôme solution à savoir $P=\frac{75}{128}(\frac{1}{5}X^5-\frac{8}{3}X^3+16X)=\frac{15}{128}X^5-\frac{25}{16}X^3+\frac{75}{8}X$.
+\fincorrection
+\finexercice

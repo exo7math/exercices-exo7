@@ -1,0 +1,74 @@
+\exercice{5792, rouget, 2010/10/16}
+\enonce[**]
+On munit $E =\mathcal{M}_3(\Rr)$ muni du produit scalaire usuel.
+
+\begin{enumerate}
+ \item  Déterminer l'orthogonal de $\mathcal{A}_3(\Rr)$.
+
+\item  Calculer la distance de la matrice $M =\left(
+\begin{array}{ccc}
+0&1&0\\
+0&0&1\\
+0&0&0
+\end{array}
+\right)$  au sous-espace vectoriel des matrices antisymétriques.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+Le produit scalaire usuel de $\mathcal{M}_3(\Rr)$ est défini par
+
+\begin{center}
+$\forall(A,B)\in(\mathcal{M}_3(\Rr))^2$, $\left(A|B\right)=\text{Tr}({^t}AB) =\sum_{1\leqslant i,j\leqslant n}^{}a_{i,j}b_{i,j}$.
+\end{center}
+
+\begin{enumerate}
+ \item  Déterminons l'orthogonal de $\mathcal{A}_3(\Rr)$ dans $\mathcal{M}_3(\Rr)$. Soit $(A,B)\in\mathcal{S}_(\Rr)\times\mathcal{A}_3(\Rr)$.
+
+\begin{center}
+$\left(A|B\right)=\text{Tr}({^t}AB) =\text{Tr}(AB) =\text{Tr}(BA) = -\text{Tr}({^t}BA) = -\left(B|A\right)$.
+\end{center}
+
+et donc $\left(A|B\right)= 0$. Donc $\mathcal{S}_3(\Rr)\subset\left(\mathcal{A}_3(\Rr)\right)^\bot$ et comme de plus, $\text{dim}\left(\mathcal{S}_3(\Rr)\right)=\text{dim}\left((\left(\mathcal{A}_3(\Rr)\right)^\bot\right)$, on a montré que
+
+\begin{center}
+\shadowbox{
+$\left(\mathcal{A}_3(\Rr)\right)^\bot=\mathcal{S}_3(\Rr)$.
+}
+\end{center}
+
+\item  Ainsi, la projection orthogonale de $M$ sur $\mathcal{A}_3(\Rr)$ est exactement la partie antisymétrique $p_a(M)$ de $M$ et la distance cherchée est la norme de $M-p_a(M)=p_s(M)$ avec 
+
+\begin{center}
+$p_s(M)=\frac{1}{2}\left(\left(
+\begin{array}{ccc}
+0&1&0\\
+0&0&1\\
+0&0&0
+\end{array}
+\right)+
+\left(
+\begin{array}{ccc}
+0&0&0\\
+1&0&0\\
+0&1&0
+\end{array}
+\right)\right)=\frac{1}{2}\left(
+\begin{array}{ccc}
+0&1&0\\
+1&0&1\\
+0&1&0
+\end{array}
+\right)$.
+\end{center}
+
+Par suite,
+
+\begin{center}
+$d\left(M,\mathcal{A}_3(R)\right)=\|p_s(M)\|=\frac{1}{2}\sqrt{1^2+1^2+1^2+1^2}=1$.
+\end{center}
+\end{enumerate}
+\fincorrection
+\finexercice

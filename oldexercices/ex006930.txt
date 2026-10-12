@@ -1,0 +1,26 @@
+\exercice{6930, ruette, 2013/01/24}
+\enonce
+On interroge 1000 électeurs, 521 d'entre eux ont déclaré avoir l'intention 
+de voter pour le candidat A.
+Indiquer avec une probabilité de  0,95  entre quelles limites se situe la 
+proportion du corps électoral favorable à A au moment du sondage.
+\finenonce
+\noindication
+
+\correction
+On note $p$ la proportion inconnue. Soit $X_i$ la variable qui vaut 1 si le 
+$i$-ème électeur interrogé déclare avoir l'intention de voter pour A, 
+0 sinon. Les $X_i$ sont indépendantes et suivent une loi de Bernoulli 
+$\mathcal{B}(p)$, donc le nombre $Z=\sum_{i=1}^{1000}$ d'électeurs 
+favorables à A dans un échantillon de 1000 électeurs suit une loi 
+binomiale $\mathcal{B}(p,1000)$. Comme $p$ semble de l'ordre de 0,5, 
+on peut approcher $\mathcal{B}(p,1000)$ par $\mathcal{N}(1000p,\sqrt{1000p(1-p)})$. 
+De nouveau, comme $n=1000$ est grand, on peut estimer $p$ par la fréquence $f=0,521$
+ observée dans l'échantillon, et supposer que l'écart-type de la variable 
+fréquence d'échantillon $F=Z/1000$ vaut $\sqrt{p(1-p)}/\sqrt{1000}\simeq 0,0158$. 
+Comme la variable $\displaystyle \frac{F-p}{\sigma(F)}$ est normale standard, 
+la probabilité que l'intervalle $[f-1,96\times 0,0158,f+1,96\times 0,0158]$ 
+ne contienne pas $p$ est inférieure à 0,05. On conclut que 
+$[0,49, 0,55]$ (autrement dit $52\pm 3$\%) est intervalle de confiance relatif à $p$ au seuil de 95\%.
+\fincorrection
+\finexercice

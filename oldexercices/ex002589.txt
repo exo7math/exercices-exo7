@@ -1,0 +1,74 @@
+\exercice{2589, delaunay, 2009/05/19}
+\enonce
+On consid\`ere la matrice suivante
+$$A=\begin{pmatrix}1&-1&0 \\  1&0&-1 \\  -1&0&2\end{pmatrix}$$
+et $f$ l'endomorphisme de $\R^3$ associ\'e.
+\begin{enumerate}
+ \item Factoriser le polyn\^ome caract\'eristique de $A$.
+ \item D\'eterminer les sous-espaces propres et caract\'eristiques de $A$.
+ \item D\'emontrer qu'il existe une base de $\R^3$ dans laquelle la matrice de $f$ s'\'ecrit
+$$B=\begin{pmatrix}1&1&0 \\  0&1&1 \\  0&0&1\end{pmatrix}.$$
+ \item  Ecrire la d\'ecomposition de Dunford de $B$ (justifier).
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+{\it On consid\`ere la matrice suivante
+$$A=\begin{pmatrix}1&-1&0 \\  1&0&-1 \\  -1&0&2\end{pmatrix}$$
+et $f$ l'endomorphisme de $\R^3$ associ\'e.}
+\begin{enumerate}
+ \item {\it Factorisons le polyn\^ome caract\'eristique de $A$.}
+
+On a 
+\begin{align*}P_A(X)&=\begin{vmatrix}1-X&-1&0 \\  1&-X&-1 \\  -1&0&2-X\end{vmatrix} \\ 
+&=(1-X)\begin{vmatrix}-X&-1 \\  0&2-X\end{vmatrix}+\begin{vmatrix}1&-1 \\  -1&2-X\end{vmatrix} \\ 
+&=(1-X)(X^2-2X)+(1-X) \\ 
+&=(1-X)(X^2-2X+1)=(1-X)^3.
+\end{align*}
+Le polyn\^ome caract\'eristique de $A$ admet une valeur propre triple $\lambda=1$.
+ \item {\it D\'eterminons les sous-espaces propres et caract\'eristiques de $A$.}
+
+La matrice $A$ admet une unique valeur propre $\lambda=1$ de multiplicit\'e $3$, le sous-espace propre associ\'e est l'espace $E_{1}=\ker(A-I)$, et on a
+$$(x,y,z)\in E_{1}\iff\left\{\begin{align*}x-y&=x \\  x-z&=y \\  -x+2z&=z\end{align*}\right.
+\iff\left\{\begin{align*}y&=0 \\  x&=z\end{align*}\right.$$
+Le sous-espace $E_{1}$ est la droite vectorielle engendr\'ee par le vecteur $(1,0,1)$.
+
+Le sous-espace caract\'eristique de $A$, associ\'e \`a l'unique valeur propre $\lambda=1$, est le sous-espace $N_{1}=\ker(A-I)^3$, or, compte tenu du th\'eor\`eme de Hamilton-Cayley, on sait que $P_A(A)=0$, ainsi, la matrice $(A-I)^3$ est la matrice nulle, ce qui implique $N_{1}=\R^3$, c'est donc l'espace tout entier.
+
+ \item {\it D\'emontrons qu'il existe une base de $\R^3$ dans laquelle la matrice de $f$ s'\'ecrit}
+$$B=\begin{pmatrix}1&1&0 \\  0&1&1 \\  0&0&1\end{pmatrix}.$$
+
+Nous cherchons des vecteurs $e_1,e_2,e_3$ tels que $Ae_1=e_1$, $Ae_2=e_1+e_2$ et $Ae_3=e_2+e_3$.
+Le vecteur $e_1$ appartient \`a $E_1=\ker(A-I)$, et $\ker(A-I)$ est la droite d'\'equations :
+
+$\{y=0,x=z\}$. On d\'etermine $e_2=(x,y,z)$ tel que
+$Ae_2=e_1+e_2$, on obtient le syst\`eme 
+$$\begin{pmatrix}1 & -1 & 0 \\  1&0&-1 \\ -1&0&2\end{pmatrix}\begin{pmatrix}x \\  y \\  z\end{pmatrix}=\begin{pmatrix}1+x \\  1+y \\  z\end{pmatrix}\iff
+\left\{\begin{align*}x-y&=1+x \\  x-z&=y \\  -x+2z&=1+z\end{align*}\right.
+\iff\left\{\begin{align*}y&=-1 \\  x-z&=-1\end{align*}\right.$$
+Ainsi, les vecteurs $e_1=(1,0,1)$ et $e_2=(-1,-1,0)$ conviennent. Il nous reste \`a chercher un vecteur $e_3$ tel que $Ae_3=e_2+e_3$, c'est-\`a-dire
+$$\begin{pmatrix}1 & -1 & 0 \\  1&0&-1 \\ -1&0&2\end{pmatrix}\begin{pmatrix}x \\  y \\  z\end{pmatrix}=\begin{pmatrix}-1+x \\  -1+y \\  z\end{pmatrix}\iff
+\left\{\begin{align*}x-y&=x-1 \\  x-z&=y-1 \\  -x+2z&=z\end{align*}\right.
+\iff\left\{\begin{align*}y&=1 \\  x&=z\end{align*}\right.$$
+Le vecteur $e_3=(0,1,0)$ convient. On obtient alors la matrice $P$ suivante qui est inversible et v\'erifie $A=PBP^{-1}$,
+$$P=\begin{pmatrix}1 & -1 & 0 \\  0&-1&1 \\ 1&0&0\end{pmatrix}$$  
+
+ \item  {\it D\'ecomposition de Dunford de $B$}
+
+On a 
+$$B=\begin{pmatrix}1 & 1 & 0 \\  0&1&1 \\ 0&0&1\end{pmatrix}=
+\begin{pmatrix}1 & 0& 0 \\  0&1&0 \\ 0&0&1\end{pmatrix}+
+\begin{pmatrix}0& 1 & 0 \\  0&0&1 \\ 0&0&0\end{pmatrix}$$
+et il est clair que les deux matrices commutent car l'une est \'egale \`a $I$. 
+Or, il existe un unique couple de matrices $D$ et $N$, $D$ diagonalisable
+et $N$ nilpotente, telles que $B=D+N$ et $DN=ND$. Or si
+$$D=\begin{pmatrix}1 & 0& 0 \\  0&1&0 \\ 0&0&1\end{pmatrix}\ \ {\hbox{et}}\ \ 
+N=\begin{pmatrix}0& 1 & 0 \\  0&0&1 \\ 0&0&0\end{pmatrix},$$
+On a 
+$$N^2=\begin{pmatrix}0& 1 & 0 \\  0&0&1 \\ 0&0&0\end{pmatrix}\begin{pmatrix}0& 1 & 0 \\  0&0&1 \\ 0&0&0\end{pmatrix}=\begin{pmatrix}0& 0 & 1 \\  0&0&0 \\ 0&0&0\end{pmatrix}$$
+et $N^3=0$. La d\'ecomposition $B=D+N$ est donc bien la d\'ecomposition de Dunford de la matrice $B$.
+\end{enumerate}
+\fincorrection
+\finexercice

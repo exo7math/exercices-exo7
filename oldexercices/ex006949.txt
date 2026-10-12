@@ -1,0 +1,30 @@
+\exercice{6949, ruette, 2013/01/24}
+\enonce[Fonctions caractéristiques]
+\begin{enumerate}
+\item
+Soit $X$ une variable aléatoire de loi de Poisson $\mathcal{P}(\lambda)$. Calculer sa
+fonction caractéristique.
+\item
+Soit $Y$ une variable aléatoire indépendante de $X$ telle que $P_Y=\mathcal{P}(\lambda')$.
+Quelle est la fonction caractéristique de $X+Y$ ? En déduire
+que $\mathcal{P}(\lambda)*\mathcal{P}(\lambda')=\mathcal{P}(\lambda+\lambda')$.
+\end{enumerate}
+\finenonce
+\noindication
+
+\correction
+\begin{enumerate}
+\item
+$\displaystyle\varphi_X(t)=\sum_{k=0}^{+\infty}e^{itk}e^{-\lambda}
+\frac{\lambda^k}{k!}=e^{-\lambda}\sum_{k=0}^{+\infty}
+\frac{(\lambda e^{it})^k}{k!}=e^{-\lambda}\exp(\lambda e^{it})$, donc
+$\varphi_X(t)=\exp(\lambda(e^{it}-1))$.
+\item
+$\varphi_Y(t)=\exp(\lambda'(e^{it}-1))$ par 1. Par indépendance,
+$\varphi_{X+Y}(t)=\varphi_X(t)\varphi_Y(t)=
+\exp((\lambda+\lambda')(e^{it}-1))$. C'est la fonction caractéristique
+de la loi de Poisson $\mathcal{P}(\lambda+\lambda')$. Donc
+$\mathcal{P}(\lambda)*\mathcal{P}(\lambda')=\mathcal{P}(\lambda+\lambda')$.
+\end{enumerate}
+\fincorrection
+\finexercice

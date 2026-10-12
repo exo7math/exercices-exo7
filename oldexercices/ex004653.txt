@@ -1,0 +1,34 @@
+\exercice{4653, quercia, 2010/03/14}
+\enonce[Fonction continue dont la série de Fourier diverge en 0]
+
+\begin{enumerate}
+  \item Soit $f : \R \to \C$ paire, $2\pi$-périodique, telle que, pour tout 
+$x\in [0,\pi]$, $f(x)=\sum_{p=1}^{\infty}\frac{1}{p^2}\sin \Bigl((2^{p^3}+1)\frac{x}{2}\Bigr)$. 
+Vérifier que $f$ est définie et continue sur $\R$.
+
+  \item Soit $A_0 = \frac{1}{\pi} \int_0^{\pi} f(t)\,d t$, pour $n\in \N^*$, $A_n=\frac{2}{\pi} \int_0^{\pi} f(t) \cos (nt)\,d t$.
+
+Pour $\nu \in \N$, on pose
+$a_{0,\nu}=\frac12 \int_0^{\pi} \sin \Bigl((2\nu +1)\frac{t}{2}\Bigr)\,d t $ et
+$a_{n,\nu}= \int_0^{\pi} \cos (nt)\sin \Bigl((2\nu +1)\frac{t}{2}\Bigr)\,d t $.
+
+Pour $q\in \N$, on note 
+$s_{q,\nu}=\sum_{i=0}^q a_{i,\nu}$. Montrer que si $\nu$ est fixé, $s_{n,\nu}\to0$ lorsque $n\to\infty$. Calculer 
+explicitement les $a_{n,\nu}$. En déduire que, pour tout $q$, pour tout $\nu$, $s_{q,\nu}>0$, et prouver que
+$\mathop{\max}\limits_{q\in \N} (s_{q,\nu})=s_{\nu,\nu}$.
+
+  \item Montrer qu'il existe $B>0$ tel que, pour tout $\nu \ge 1$, $s_{\nu,\nu}\ge B \ln \nu$.
+
+  \item Montrer que, pour tout $n\in \N$, $A_n=\frac{2}{\pi}\sum_{p=1}^{\infty} \frac{1}{p^2}a_{n,2^{p^3-1}}$.
+
+  \item Pour $n\in \N ^*$, on pose $T_n=\frac{\pi}{2} \sum_{k=0}^{n} A_k$. Vérifier que 
+$T_n=\sum_{p=1}^{\infty} \frac{1}{p^2} s_{n,2^{p^3-1}}$. Montrer qu'il existe $D>0$ tel que, pour 
+tout $p\ge 1$, $T_{2^{p^3-1}}\ge Dp$, et constater que la série de Fourier de $f$ diverge au point $0$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\nocorrection
+
+\finexercice

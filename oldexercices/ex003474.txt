@@ -1,0 +1,20 @@
+\exercice{3474, quercia, 2010/03/10}
+\enonce[Calcul de rang]
+
+Soit $M = \Bigl(\cos (i+j-1)\theta \Bigr) \in \mathcal{M}_n(\R)$.
+Déterminer $\mathrm{rg} M$ en fonction de $\theta$.
+\finenonce
+
+\noindication
+
+\correction
+$M = \Re\left[\begin{pmatrix} e^{i\theta} \cr \vdots \cr e^{ni\theta} \cr \end{pmatrix}
+              \Bigl(\begin{matrix} 1 & \dots & e^{(n-1)i\theta} \cr \end{matrix}\Bigr)\right]
+  \Rightarrow  \mathrm{rg} M \le 2$.
+
+Le premier mineur $2\times2$ vaut $-\sin^2\theta
+ \Rightarrow  \mathrm{rg} M = 2$ si $\theta \not \equiv 0 (\mathrm{mod}\, \pi)$.
+Sinon, $\mathrm{rg} M = 1$.
+\fincorrection
+
+\finexercice

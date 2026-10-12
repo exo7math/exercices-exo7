@@ -1,0 +1,33 @@
+\exercice{2603, delaunay, 2009/05/19}
+\enonce
+ Soit $a\in\R$ et $A$ la matrice suivante
+$$A=\begin{pmatrix}1&a&0 \\  a&0&1 \\  0&1&a\end{pmatrix}.$$
+\begin{enumerate}
+ \item Calculer le d\'eterminant de $A$ et d\'eterminer 
+pour quelles valeurs de $a$ la matrice est inversible.
+ \item  Calculer $A^{-1}$ lorsque $A$ est inversible.
+\end{enumerate}
+
+\finenonce 
+
+\noindication
+
+\correction
+{\it Soit $a\in\R$ et $A$ la matrice suivante}
+$$A=\begin{pmatrix}1&a&0 \\  a&0&1 \\  0&1&a\end{pmatrix}.$$
+\begin{enumerate}
+ \item {\it Calculons le d\'eterminant de $A$ et d\'eterminons 
+pour quelles valeurs de $a$ la matrice est inversible.}
+
+On développe le déterminant par rapport à la première colonne, on obtient
+$$\det A=\begin{vmatrix}1&a&0 \\  a&0&1 \\  0&1&a\end{vmatrix}=\begin{vmatrix}0&1 \\  1&a\end{vmatrix}-a\begin{vmatrix}a&0 \\  1&a\end{vmatrix}=-1-a^3.$$
+La matrice $A$ est inversible si et seulement si son déterminant est non nul.
+$$\det A\neq 0\iff 1+a^3\neq 0\iff a\neq -1.$$
+ \item {\it Calculons $A^{-1}$ lorsque $A$ est inversible.}
+
+On suppose $a\neq-1$, on a $\displaystyle A^{-1}={\frac{1}{\det A}}\,^t\!\!\tilde A$, où $\tilde A$ est la comatrice de $A$ et $^t\!\!\tilde A$ la transposée de $\tilde A$. On a 
+$$\tilde A=\begin{pmatrix}-1&-a^2&a \\  -a^2&a&-1 \\  a&-1&-a^2\end{pmatrix}=^t\!\!\tilde A.$$
+D'où $\displaystyle A^{-1}={\frac{1}{1+a^3}}\begin{pmatrix}1&a^2&-a \\  a^2&-a&1 \\  -a&1&a^2\end{pmatrix}.$
+\end{enumerate}
+\fincorrection
+\finexercice

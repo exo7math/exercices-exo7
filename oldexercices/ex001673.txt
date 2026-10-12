@@ -1,0 +1,47 @@
+\exercice{1673, gineste, 2001/11/01}
+
+\enonce[Endomorphisme d'un espace de matrices]
+Soit
+$K$ un corps commutatif quelconque, et soit $F=\mathcal{M}_n(K)$
+l'espace vectoriel sur $K$ des matrices carrées d'ordre $n$ à
+coefficients dans $K.$ Si $i$ et $j$ sont des entiers compris
+entre 1 et $n$, on note par $F_{ij}$ l'élément de $F$ dont le
+coefficient $(i,j)$ est 1 et dont les autres coefficients sont
+nuls. Montrer que les $F_{ij}$ forment une base de $F$. Dimension
+de $F$? Soit $D$ dans $F$ et diagonale. Soient $\alpha$ et $\beta$
+dans $K$ et soit l'endomorphisme $\Phi$ de $F$ qui à la matrice
+$X$ fait correspondre la matrice $\Phi(X)=\alpha XD+ \beta DX.$
+Calculer $\Phi(F_{ij}).$ $\Phi$ est il un endomorphisme
+diagonalisable? Donner son polynôme caractéristique en fonction
+des coefficients de $D$ et de $\alpha$ et $\beta$.
+
+\finenonce
+
+\noindication
+
+\correction
+ Si
+$X=(x_{ij})_{1\leq i,j\leq n}\in F,$ il est clair que
+$X=\sum_{1\leq i,j\leq n}x_{ij}F_{ij}.$ C'est donc une famille
+g\'en\'eratrice. Elle est ind\'ependante, car si $\sum_{1\leq
+i,j\leq n}x_{ij}F_{ij}$ est la matrice nulle, cela implique que
+$x_{ij} =0$ pour tous $i$ et $j.$ C'est donc une base de $F$. Elle
+est de taille $n^2$, donc $F$ est de dimension $n^2.$ Ensuite, si
+$D=\mathrm{diag}(d_1,\ldots,d_n)$ et si $X=(x_{ij})_{1\leq i,j\leq
+n}$ alors le coefficient $(i,j)$ de la matrice $\Phi(X)=\alpha
+XD+\beta DX$ est $(\alpha d_j+\beta d_i)x_{ij}.$ Donc $\Phi
+(F_{ij})=(\alpha d_j+\beta d_i)F_{ij},$ ce qui est dire que
+$F_{ij}$ est un vecteur propre de $\Phi$ pour la valeur propre
+$\alpha d_j+\beta d_i.$ L'espace $F$ admet donc une base de
+vecteurs propres de $\Phi.$ D'apr\`es le cours, cela entra\^ine
+que $\Phi$ est diagonalisable. Si on le repr\'esente dans la base
+de vecteurs propres, le d\'eterminant de $\Phi$ est donc le
+produit des \'el\'ements diagonaux, c'est \`a dire $\det
+\Phi=\prod_{i=1}^n\prod_{j=1}^n(\alpha d_j+\beta d_i).$ Plus
+g\'en\'eralement
+ $\det (\Phi-\lambda \mathrm{id}_F)=
+\prod_{i=1}^n\prod_{j=1}^n(\alpha d_j+\beta d_i-\lambda).$
+\fincorrection
+
+\finexercice
+

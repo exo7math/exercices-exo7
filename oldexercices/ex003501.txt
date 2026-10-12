@@ -1,0 +1,27 @@
+\exercice{3501, quercia, 2010/03/10}
+\enonce[Polynômes de Chebychev]
+
+Soit $A = \begin{pmatrix} 0 &1      &       &(0)     \cr
+                    1 &\ddots &\ddots          \cr
+                      &\ddots &\ddots &1       \cr
+                    (0)&      &1      &0       \cr \end{pmatrix} \in \mathcal{M}_n(\R)$.
+
+\begin{enumerate}
+  \item Calculer $D_n(\theta) = \det(A+(2\cos\theta) I)$ par récurrence.
+    
+
+  \item En déduire les valeurs propres de $A$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $D_n = 2\cos\theta D_{n-1} - D_{n-2}  \Rightarrow 
+              D_n = \frac{\sin(n+1)\theta}{\sin\theta}$.
+  \item $-2\cos\left(\frac{k\pi}{n+1}\right)$, $1 \le k \le n$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

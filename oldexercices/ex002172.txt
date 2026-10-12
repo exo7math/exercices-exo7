@@ -1,0 +1,38 @@
+\exercice{2172, debes, 2008/02/12}
+\enonce
+Dans le groupe sym\'etrique $S_4$ on consid\`ere les
+sous-ensembles suivants :
+$$H = \{ \sigma \in S_4 \hskip 2pt |\hskip 2pt  \sigma ( \{ 1,2\} ) = \{ 1,2\} \} $$
+$$K= \{ \sigma \in S_4 \hskip 2pt |\hskip 2pt  \forall a,b \quad a\equiv b\ [\hbox{\rm mod}\
+2] \Rightarrow
+\sigma (a) \equiv \sigma (b)\ [\hbox{\rm mod}\ 2] \} $$
+Montrer que $H$ et $K$ sont des sous-groupes de $S_4$. Les d\'ecrire.
+\finenonce 
+
+\noindication
+\correction
+L'ensemble $H$ est le sous-groupe de $S_4$ fixant la paire $\{1,2\}$. Tout \'el\'ement de $H$
+fixe aussi la paire $\{3,4\}$. Cela fournit un morphisme $H\rightarrow S_2 \times S_2$ qui est
+clairement bijectif. D'o\`u $H\simeq S_2 \times S_2 \simeq \Z/2\Z \times \Z/2\Z$.
+\medskip
+
+\hskip 5mm On a $\sigma\in K$ si et seulement si $\sigma(1) \equiv \sigma(3)\ [\hbox{\rm mod}\ 2]$ et
+$\sigma(2) \equiv \sigma(4)\ [\hbox{\rm mod}\ 2]$, c'est-\`a-dire si et seulement si
+$\sigma(\{1,3\})$ est soit la paire $\{1,3\}$ soit la paire $\{2,4\}$ (auquel cas
+$\sigma(\{2,4\})$ est la paire $\{2,4\}$ ou la paire $\{1,3\}$ respectivement).
+Gr\^ace \`a l'identit\'e $\sigma \hskip 2pt(1\hskip 2pt 3)\hskip 2pt(2\hskip 2pt 4)\hskip
+2pt \sigma^{-1} = (\sigma(1)\hskip 2pt \sigma(3))\hskip 2pt(\sigma(2)\hskip 2pt
+\sigma(4))$, on voit que la condition est \'egalement \'equivalente au fait que la
+conjugaison par $\sigma$ stabilise la permutation $(1\hskip 2pt 3)\hskip 2pt(2\hskip 2pt 4)$.
+Autrement dit $K$ est le sous-groupe des \'el\'ements de $S_4$ commutant avec $(1\hskip 2pt
+3)\hskip 2pt(2\hskip 2pt 4)$. La classe de conjugaison 2-2 ayant $3$ \'el\'ements, le
+groupe $H$ est d'ordre $4!/3=8$. On peut dresser la liste de ses \'el\'ements: si $\omega =
+(1\hskip 2pt 2\hskip 2pt 3\hskip 2pt 4)$ et $\tau = (1\hskip 2pt 2)\hskip 2pt (3\hskip 2pt
+4)$, alors
+$K=\{1,\omega,\omega^2,\omega^3,\tau,\omega \tau, \omega^2 \tau, \omega^3\tau\}$. On
+v\'erifie les relations $\sigma^4=1$, $\tau^2=1$ et $\tau \sigma \tau^{-1}= \sigma^{-1}$. Le
+groupe $K$ est \'egal au produit semi-direct de son sous-groupe distingu\'e
+$<\omega>$ par son sous-groupe $<\tau>$ et est donc isomorphe au groupe di\'edral 
+d'ordre $8$.
+\fincorrection
+\finexercice

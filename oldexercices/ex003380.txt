@@ -1,0 +1,91 @@
+\exercice{3380, quercia, 2010/03/09}
+\video{dad4PGxRe4U}
+\enonce[$M$ antisymétrique $ \Rightarrow  I+M$ est inversible]
+
+Soit $M \in \mathcal{M}_n(\R)$ antisymétrique.
+
+\begin{enumerate}
+  \item Montrer que $I+M$ est inversible (si $(I+M)X = 0$, calculer ${}^t\!(MX)(MX)$).
+  \item Soit $A = (I-M)(I+M)^{-1}$. Montrer que ${}^t\!A = A^{-1}$.
+\end{enumerate}
+\finenonce
+
+\indication
+$M$ antisymétrique signifie ${}^{t}\!{M}=-M$.
+\begin{enumerate}
+  \item Si $Y$ est un vecteur alors ${}^t\!Y Y = \| Y\|^2$ est un réel positif ou nul.
+  \item $I-M$ et $(I+M)^{-1}$ commutent.
+\end{enumerate}
+\finindication
+
+\correction
+
+Avant de commencer la résolution nous allons faire une remarque importante :
+pour $X = \begin{pmatrix}x_1 \\ x_2 \\ \vdots \\ x_n \end{pmatrix}$ un vecteur 
+(considéré comme une matrice à une seule colonne)
+alors nous allons calculer ${}^t\!X X$ : 
+$${}^t\!X X = (x_1,x_2,\cdots,x_n) \begin{pmatrix}x_1 \\ x_2 \\ \vdots \\ x_n \end{pmatrix} = x_1^2+x_2^2+\cdots+x_n^2.$$
+On note $ \| X \|^2 = {}^t\!X X$ : $\| X \|$ est la \emph{norme} ou la \emph{longueur} du vecteur $X$.
+De ce calcul on déduit d'une part que ${}^t\!X X \ge 0$. Et aussi que  ${}^t\!X X \ge 0$ si et seulement si
+$X$ est le vecteur nul.
+
+
+\begin{enumerate}
+  \item Nous allons montrer que $I+M$ est inversible en montrant que si un vecteur $X$ vérifie
+$(I+M)X = 0$ alors $X=0$.
+
+Nous allons estimer ${}^t\!(MX)(MX)$ de deux façons.
+D'une part c'est un produit de la forme ${}^t\!Y Y = \| Y\|^2$ et donc ${}^t\!(MX)(MX) \ge 0$.
+
+D'autre part :
+\begin{align*}
+{}^t\!(MX)(MX) 
+ & = {}^t\!(MX) (-X) \quad \text{ car } (I+M)X = 0 \text{ donc } MX = -X \\
+ & = {}^t\!X {}^t\!M (-X)    \quad \text{ car } {}^t\!(AB)={}^t\! B {}^t\!A \\
+ & = {}^t\!X (-M) (-X)    \quad \text{ car } {}^t\!M=-M \\
+ & = {}^t\!X MX \\
+ & = {}^t\!X (-X) \\
+ & = -{}^t\!XX \\
+ & = - \|X\|^2 \\
+\end{align*}
+Qui est donc négatif.
+
+Seule possibilité $\|X\|^2=0$ donc $X=0$ (= le vecteur nul) et donc $I+M$ inversible.
+
+\item 
+  \begin{enumerate}
+    \item Calculons $A^{-1}$.
+$$A^{-1} =\big( (I-M)\times(I+M)^{-1} \big)^{-1} = \big( (I+M)^{-1} \big)^{-1} \times(I-M)^{-1} = (I+M)\times(I-M)^{-1}$$
+(n'oubliez pas que $(AB)^{-1}=B^{-1}A^{-1}$).
+
+
+     \item Calculons ${}^t\!A$.
+\begin{align*}
+{}^t\!A 
+  & = {}^t\!\big( (I-M) \times (I+M)^{-1} \big) \\
+  & = {}^t\!\big( (I+M)^{-1} \big) \times {}^t\!(I-M) \qquad \text{ car } {}^t\!(AB)={}^t\!B{}^t\!A \\
+  & = \big( {}^t\!(I+M) \big)^{-1}\times{}^t\!(I-M) \qquad \text{ car } {}^t\!(A^{-1})=\big({}^tA\big)^{-1} \\
+  & = \big( I+{}^t\!M) \big)^{-1}\times(I-{}^t\!M) \qquad \text{ car } {}^t\!(A+B)={}^t\!A+{}^t\!B \\
+  & = (I-M) ^{-1}\times (I+M) \qquad \text{ car ici } {}^{t}\!{M} = -M \\  
+\end{align*}
+
+      \item Montrons que $I+M$ et $(I-M) ^{-1}$ commutent.
+
+Tout d'abord $I+M$ et $I-M$ commutent car $(I+M)(I-M) = I-M^2 = (I-M)(I+M)$.
+Maintenant nous avons le petit résultat suivant :
+
+\textbf{Lemme.} Si $AB=BA$ alors $AB^{-1}=B^{-1}A$.
+
+Pour la preuve on écrit :
+$$AB=BA \Rightarrow B^{-1}(AB)B^{-1}=B^{-1}(BA)B^{-1} \Rightarrow B^{-1}A=AB^{-1}.$$
+
+En appliquant ceci à $I+M$ et $I-M$ on trouve $(I+M)\times (I-M) ^{-1}= (I-M) ^{-1}\times(I+M)$
+et donc $A^{-1}={}^t\!A$.
+
+    \end{enumerate}
+\end{enumerate}
+
+\fincorrection
+
+\finexercice
+

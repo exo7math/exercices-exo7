@@ -1,0 +1,26 @@
+\exercice{2271, barraud, 2008/04/24}
+\enonce
+Trouver le $\pgcd(x^n-1,\ x^m-1)$ dans
+$\Zz[x]$.
+\finenonce 
+
+\noindication
+
+\correction
+Soit $d=\pgcd(m,n)$. Notons $n=dn'$ et $m=dm'$. Alors
+  $X^{n}-1=(X^{d})^{n'}-1$. Or $(Y-1)|Y^{n'}-1$ donc
+  $(X^{d}-1)|(X^{n}-1)$. De même, $(X^{d}-1)|(X^{m}-1)$, et donc
+  $(X^{d}-1)|\pgcd(X^{n}-1,X^{m}-1)$.
+
+  Par ailleurs, soit $D=\pgcd(X^{n}-1,X^{m}-1)$. Les racines de $D$ dans
+  $\Cc$ sont des racines à la fois n-iéme et m-ième de $1$, qui sont
+  touts simples~: elles sont donc de la forme $\omega=e^{i2\pi\alpha}$ où
+  $\alpha=\frac{k}{n}=\frac{k'}{m}$. Ainsi $km'=k'n'$. On a
+  $\pgcd(m',n')=1$, donc par le théorème de Gauss, on en déduit que $k'$
+  est un multiple de $m'$, soit $\frac{k'}{m}=\frac{k''}{d}$, et $\omega$
+  est donc une racine $d$-ième de 1. On en déduit que $D|X^{d}-1$, et
+  finalement~:
+  $$\pgcd(X^{n}-1,X^{m}-1)=X^{\pgcd(m,n)}-1.$$
+
+\fincorrection
+\finexercice

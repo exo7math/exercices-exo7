@@ -1,0 +1,43 @@
+\exercice{2309, barraud, 2008/04/24}
+\enonce
+Soit $\sqrt{d}$ non rationel. Dans l'anneau 
+$$
+{\mathbb{Z}}[\sqrt{d}]=\{n+m\sqrt{d}\,|\,n,m\in \mathbb{Z}\}
+$$
+on definit la ``conjugaison" $\bar{z}$ :
+\medskip
+
+\centerline{si $z=n+m\sqrt{d}$, alors $\bar{z}=n-m\sqrt{d}$.}
+\medskip
+
+On peut aussi d\'efinir la norme  
+$N_d:{\mathbb Z}[\sqrt{d}] \rightarrow{\mathbb Z}$ 
+par $N_d(z) = z\bar{z}=(n+m\sqrt{d})(n-m\sqrt{d})$.
+\medskip
+
+0.  Montrer que les aplications $\bar{z}$ et $N(z)$ sont multiplicatives :
+$$
+\overline{z_1\cdot z_2}=\bar{z_1}\cdot \bar{z_2},
+\qquad N_d(z_1\cdot z_2)=N_d(z_1)\cdot N_d(z_2).
+$$
+\finenonce 
+
+\noindication
+
+\correction
+Soit $z=n+m\sqrt{d},z'=n'+m'\sqrt{d}\in \Z[\sqrt{d}]$. Alors
+\begin{align*}
+\overline{zz'}
+&=\overline{(n+m\sqrt{d})(n'+m'\sqrt{d})} \\
+&=\overline{(nn'+mm'd)+(nm'+n'm)\sqrt{d}} \\
+&=          (nn'+mm'd)-(nm'+n'm)\sqrt{d}  \\
+&=(n-m\sqrt{d})(n'-m'\sqrt{d}) \\
+&=\bar{z}\, \bar{z}'
+\end{align*}
+
+Donc $\forall z,z'\in\Z[\sqrt{d}], \overline{zz'}=\bar{z}\,\bar{z}'$.
+
+On a alors $\forall z,z'\in\Z[\sqrt{d}],\
+ N(zz')=zz'\,\overline{zz'}=z\bar{z}\,z'\bar{z}'=N(z)\,N(z')$.
+\fincorrection
+\finexercice

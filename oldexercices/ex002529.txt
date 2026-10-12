@@ -1,0 +1,109 @@
+\exercice{2529, tahani, 2009/04/01}
+\enonce
+Soit $\varphi$
+l'application de $\mathbb{R}^2$ dans $\mathbb{R}^2$ d\'efinie pas
+$$\varphi(x,y)=(\sin(y/2)-x,\sin(x/2)-y).$$
+\begin{enumerate}
+\item Justifier que $\varphi$ est de classe $C^1$, calculer sa
+diff\'erentielle et voir que $D\varphi(x,y)$ est inversible pour
+tout $(x,y) \in \mathbb{R}^2$. \item Montrer que $\varphi$ est un
+$C^1$-diff\'eomorphisme de $\mathbb{R}^2$ sur
+$\varphi(\mathbb{R}^2)$ et justifier que $\varphi(\mathbb{R}^2)$
+est un ouvert. 
+\item Montrer que $\varphi^{-1}$ est lipschitzienne
+(on prendra comme norme sur $\mathbb{R}^2$: $\|(x,y)\|=|x|+|y|$).
+\item En d\'eduire que $\varphi$ est un diff\'eomorphisme de
+$\mathbb{R}^2$ sur $\mathbb{R}^2$ 
+\item Calculer
+$D\varphi^{-1}(p)$ o\`u $p=(1-\pi/2, \sqrt{2}/2-\pi)$.
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  $\varphi$ a des coordonn\'ees de classe $C^1$, elle l'est
+donc aussi. On a
+$$Jac(\varphi)(x,y)=\left (\begin{array}{cc}
+-1 & 1/2 \cos(y/2) \\
+1/2 \cos(x/2) & -1
+\end{array}\right )$$
+On a  $det(Jac(\varphi)(x,y))=1-1/4\cos(x/2)\cos(y/2) \geq 3/4 >
+0$. Par cons\'equent la jacobienne est inversible et
+$D\varphi(x,y) \in Isom(\mathbb{R}^2,
+\mathbb{R}^2)=GL(\mathbb{R}^2$. \item D'apr\`es le th\'eor\`eme de
+l'inverse local, Il suffit de montrer que $\varphi$ est injective.
+Supposons $\varphi(x_1,y_1)=\varphi(x_2,y_2)$, alors
+$\sin(y_1/2)-x_1=\sin(y_2/2)-x_2$ et
+$\sin(x_1/2)-y_1=\sin(x_2/2)-y_2$. D'o\`u
+$\sin(y_1/2)-\sin(y_2/2)=x_1-x_2$ et
+$\sin(x_1/2)-\sin(x_2/2)=y_1-y_2$. Or, $\forall a,b \in
+\mathbb{R}, |\sin a -\sin b| \leq |a-b|$ (cons\'equence des
+accroissements finis appliqu\'e \`a $\sin x$). Donc $|x_1-x_2|\leq
+|y_1/2-y_2/2|$ et $|y_1-y_2| \leq |x_1/2-x_2/2|$ d'o\`u
+$|x_1-x_2|\leq 1/4 |x_1-x_2| \Rightarrow x_1=x_2$  et $y_1=y_2$.
+$\varphi: U \rightarrow F$ est injective. L'ensemble $f(U)$ est
+ouvert car il est r\'eunion d'ouverts (d'apr\`es thm inverse
+local). C'est un diff\'eomorphisme en $U$ et $\varphi(U)$. \item
+Soient $(X_1,y_1), (X_2,Y_2) \in \varphi(\mathbb{R}^2)$ avec
+$\varphi(x_1,y_1)=(X_1,Y_1)$ et $\varphi(x_2,y_2)=(X_2,Y_2)$ ou
+encore $\varphi^{-1}(X_1,Y_1)=(x_1,y_1)$ et
+$\varphi^{-1}(X_2,Y_2)=(x_2,y_2)$. On a
+$$||\varphi^{-1}(X_1,Y_1)-\varphi^{-1}(X_2,Y_2)||=||(x_1,y_1)-(x_2,y_2)||=||(x_1-x_2,y_1,y_2)||=|x_1-x_2|+|y_1-y_2|$$
+Or $\sin(y_1/2)-x_1=X_1$, $\sin(y_2/2)-x_2=X_2$,
+$\sin(x_1/2)-y_1=Y_1$ et $\sin(x_2/2)-y_2=Y_2$. Par cons\'equent
+$$x_1-x_2=\sin(y_1/2)-X_1-\sin(y_2/2)+X_2$$
+$$y_1-y_2=\sin(x_1/2)-Y_1-\sin(x_2/2)+Y_2.$$
+D'o\`u
+$$|x_1-x_2|+|y_1-y_2| \leq |X_2-X_1|+|\sin(y_1/2)-\sin(y_2/2)|+
+|Y_2-Y_1|+ |\sin(x_1/2)-\sin(x_2/2)|$$ $$ \leq
+|X_2-X_1|+1/2|y_1-y_2|+|Y_2-Y_1|+1/2|x_1-x_2|$$ d'où
+$$|x_1-x_2|+|y_1-y_2| \leq 2(|X_2-X_1|+|Y_2-Y_1|) \leq 2
+||(X_1,Y_1)-(X_2,Y_2)||.$$ Donc $\varphi^{-1}$ est lipschitzienne.
+\item Soit $(X_n,Y_n)$ une suite de cauchy dans
+$\varphi(\mathbb{R}^2)$,  ($(X_n,Y_n)=\varphi(x_n,y_n)$;
+$(x_n,y_n)=\varphi^{-1}(X_n,Y_n)$). Pour tout $\epsilon > 0,
+\exists n \in \mathbb{N}, p,q \geq n \Rightarrow
+||(X_p,Y_p)-(X_q,Y_q)|| < \epsilon.$ Par cons\'equent, $\forall
+\epsilon > 0$, $\exists n \in \mathbb{N}; p,q \geq n \Rightarrow
+||(x_p,y_p)-(x_q,y_q)||< 2 \epsilon$. La suite $(x_n,y_n)$ est
+alors de cauchy dans $\mathbb{R}^2$, qui est complet. Par
+cons\'equent elle converge. Soit $(x,y)$ sa limite. Comme
+$\varphi$ est continue et que $\lim_{n}(x_n,y_n)=(x,y)$ alors
+$\lim_{n} \varphi(x_n,y_n)=\varphi(x,y)$. La suite $(X_n,Y_n)$ est
+une suite de Cauchy de $\mathbb{R}^2$. Elle converge. Soit $(X,Y)$
+sa limite, alors $(X,Y)=\varphi(x,y)$ car $(X_n,Y_n) \rightarrow
+(X,Y)$ et $\varphi(x_n,y_n) \rightarrow \varphi(x,y)$. Donc $(X,Y)
+\in \varphi(\mathbb{R}^2)$. $\varphi(\mathbb{R}^2)$ est alors
+complet et donc ferm\'e. Comme $\varphi(\mathbb{R}^2$ est un
+ouvert ferm\'e et non vide (il contient $(0,0)=\varphi(0,0)$) dans
+le connexe $\mathbb{R}^2$, on a
+$\varphi(\mathbb{R}^2)=\mathbb{R}^2$. \item $p=(1-\pi/2,
+\sqrt{2}/2 - \pi)=\varphi(\pi/2,\pi)=\varphi(q)$ o\`u
+$q=(\pi/2,\pi)$. $\varphi: E \rightarrow F$ est un
+$C^1$-diff\'eormorphisme donc $\varphi^{-1} \circ \varphi=Id$ et
+donc $$Id=D(\varphi^{-1} \circ
+\varphi)(q)=D\varphi^{-1}(\varphi(q))\circ D\varphi(q).$$ Or
+$D\varphi^{-1}(\varphi(q))=(D\varphi(q))^{-1}$ et donc $Jac
+\varphi^{-1}(p)= (Jac \varphi (\pi/2,\pi))^{-1}$. Or
+$$Jac \varphi(x,y)= \left (
+\begin{array}{cc}
+-1 & 1/2 \cos(y/2) \\
+1/2 \cos(x/2) & -1
+\end{array} \right ).$$
+D`o\`u $$Jac \varphi(\pi/2,\pi)= \left (
+\begin{array}{cc}
+-1 &0\\
+\sqrt{2}/4 & -1
+\end{array} \right )$$ et donc
+$$Jac \varphi^{-1}(p)=
+ \left (
+\begin{array}{cc}
+-1 &0\\
+-\sqrt{2}/4 & -1
+\end{array} \right ).$$
+\end{enumerate}
+
+\fincorrection
+\finexercice

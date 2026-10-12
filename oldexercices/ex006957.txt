@@ -1,0 +1,121 @@
+\exercice{6957, exo7, 2014/04/01}
+\video{DYun3S4_zgw}
+% Mélange de 379 (bodin), 380 (bodin), 387 (cousquer)
+\enonce
+\begin{enumerate}
+\item Déterminer les pgcd des polynômes suivants:
+\begin{enumerate}
+\item $X^3-X^2-X-2$ et $X^5-2X^4+X^2-X-2$
+\item $X^4+X^3-2X+1$ et $X^3+X+1$
+\item $X^5+3X^4+X^3+X^2+3X+1$ et $X^4+2X^3+X+2$
+\item $nX^{n+1}-(n+1)X^n+1$ et $X^n-nX+n-1$ ($n\in\N^*)$
+\end{enumerate}
+\item Calculer le pgcd $D$ des polynômes $A$ et $B$ ci-dessous. 
+Trouver des polynômes $U$ et $V$ tels que $AU+BV=D$.
+\begin{enumerate}
+\item $A=X^5+3X^4+2X^3-X^2-3X-2$\\ et $B=X^4+2X^3+2X^2+7X+6$
+\item $A=X^6-2X^5+2X^4-3X^3+3X^2-2X$\\ et $B=X^4-2X^3+X^2-X+1$
+\end{enumerate}
+\end{enumerate}
+\finenonce 
+
+\indication
+Le calcul du pgcd se fait par l'algorithme d'Euclide, et la "remontée" 
+de l'algorithme permet d'obtenir $U$ et $V$.
+\finindication
+
+\correction
+\
+\begin{enumerate}
+\item L'algorithme d'Euclide permet de calculer le pgcd par 
+une suite de divisions euclidiennes.
+
+\begin{enumerate}
+\item $X^5-2X^4+X^2-X-2=(X^3-X^2-X-2)(X^2-X)+2X^2-3X-2$ 
+
+puis $X^3-X^2-X-2=(2X^2-3X-2)(\frac{1}{2}X+\frac{1}{4})+\frac{3}{4}X-\frac{3}{2}$ 
+
+puis $2X^2-3X-2=(\frac{3}{4}X-\frac{3}{2})(\frac{8}{3}X+\frac{4}{3})$
+
+
+Le pgcd est le dernier reste non nul, 
+divisé par son coefficient dominant: 
+$$\pgcd(X^3-X^2-X-2,X^5-2X^4+X^2-X-2)=X-2$$
+
+
+\item $X^4+X^3-2X+1=(X^3+X+1)(X+1)-X^2-4X$
+
+puis $X^3+X+1=(-X^2-4X)(-X+4)+17X+1$
+
+$$\begin{array}{rl}\text{donc}\ \pgcd&(X^4+X^3-2X+1,X^3+X+1)\\
+&=\pgcd(-X^2-4X,17X+1)=1\end{array}$$
+
+car $-X^2-4X$ et $17X+1$ n'ont pas de racine (même complexe) commune.
+
+
+\item $X^5+3X^4+X^3+X^2+3X+1=(X^4+2X^3+X+2)(X+1)-X^3-1$
+
+puis $X^4+2X^3+X+2=(-X^3-1)(-X-2)+2X^3+2$
+
+$$\pgcd(X^5+3X^4+X^3+X^2+3X+1,X^4+2X^3+X+2)=X^3+1$$
+
+
+\item $nX^{n+1}-(n+1)X^n+1$
+
+\ \ \ \ \ \ \ \ \ \ \ $=(X^n-nX+n-1)(nX-(n+1))+n^2(X-1)^2$ 
+
+Si $n=1$ alors $X^n-nX+n-1=0$ et le $\pgcd$ vaut $(X-1)^2$.
+On constate que $1$ est racine de $X^n-nX+n-1$, 
+et on trouve $X^n-nX+n-1=(X-1)(X^{n-1}+X^{n-2}+\cdots+X^2+X-(n-1))$.
+
+Si $n\ge 2$: $1$ est racine de $X^{n-1}+X^{n-2}+\cdots+X^2+X-(n-1)$ et on trouve 
+
+$X^{n-1}+X^{n-2}+\cdots+X^2+X-(n-1)$
+
+\ \ \ \ \ \ \ $=(X-1)(X^{n-2}+2X^{n-3}+\cdots+(n-1)X^2+nX+(n+1))$, donc finalement 
+$(X-1)^2$ divise $X^n-nX+n-1$ (on pourrait aussi remarquer 
+que $1$ est racine de multiplicité au moins deux de 
+$X^n-nX+n-1$, puisqu'il est racine de ce polynôme et de sa dérivée). 
+Ainsi 
+$$\text{si}\ n\ge 2,\ \pgcd(nX^{n+1}-(n+1)X^n+1,X^n-nX+n-1)=(X-1)^2$$
+
+
+\end{enumerate}
+
+
+\item \begin{enumerate}
+\item $A=X^5+3X^4+2X^3-X^2-3X-2$ et $B=X^4+2X^3+2X^2+7X+6$
+
+donc $A=BQ_1+R_1$ avec $Q_1=X+1$, $R_1=-2X^3-10X^2-16X-8$
+
+puis $B=R_1Q_2+R_2$ avec $Q_2=-\frac{1}{2}X+\frac{3}{2}$ et $R_2=9X^2+27X+18$
+
+et enfin $R_1=R_2Q_3$ avec $Q_3=-\frac{2}{9}X-\frac{4}{9}$
+
+Donc $D=X^2+3X+2$, et on obtient
+$$9D=B-R_1Q_2=B-(A-BQ_1)Q_2=-AQ_2+B(1+Q_1Q_2)$$
+soit 
+$$\left\{\begin{array}{l}U=\frac{1}{9}(-Q_2)=\frac{1}{18}X-\frac{1}{6}\\
+V=\frac{1}{9}(1+Q_1Q2)=-\frac{1}{18}X^2+\frac{1}{9}X+\frac{5}{18}
+\end{array}\right.$$
+
+\item On a $A=BQ_1+R_1$ avec $Q_1=X^2+1$, $R_1=X^2-X-1$
+
+puis $B=R_1Q_2+R_2$ avec $Q_2=X^2-X+1$ et $R_2=-X+2$
+
+et enfin $R_1=R_2Q_3+R_3$ avec $Q_3=-X-1$ et $R_3=1$
+
+Donc $D=1$, et on obtient
+\begin{eqnarray*}
+1&=&R_1-R_2Q_3=R_1-(B-R_1Q_2)Q_3=R_1(1+Q_2Q_3)-BQ_3\\
+ &=&(A-BQ_1)(1+Q_2Q_3)-BQ_3\\
+ &=&A(1+Q_2Q_3)-B(Q_1(1+Q_2Q_3)+Q_3)
+\end{eqnarray*}
+soit 
+$$\left\{\begin{array}{l}
+U=1+Q_2Q_3=-X^3\\
+V=-Q_1(1+Q_2Q_3)-Q_3=1+X+X^3+X^5\end{array}\right.$$
+\end{enumerate}
+\end{enumerate}
+\fincorrection
+\finexercice

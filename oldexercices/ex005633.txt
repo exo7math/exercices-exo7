@@ -1,0 +1,19 @@
+\exercice{5633, rouget, 2010/10/16}
+\enonce[***]
+Soient $n\in\Nn^*$ puis $\varphi_1$,..., $\varphi_n$ $n$ formes linéaires sur un $\Kk$-espace $E$ de dimension $n$.
+
+Montrer que la famille $(\varphi_1,...,\varphi_n)$ est liée si et seulement si il existe un vecteur $x$ non nul tel que $\forall i\in\llbracket1,n\rrbracket,\;\varphi_i(x) = 0$.
+\finenonce
+
+\noindication
+
+\correction
+Soit $\begin{array}[t]{cccc}f~:&E&\rightarrow&\Kk^n\\
+ &x&\mapsto&(\varphi_1(x),...,\varphi_n(x))
+\end{array}$. Il s'agit de démontrer que la famille $(\varphi_1,\ldots,\varphi_n)$ est liée si et seulement si $\text{Ker}(f)\neq\{0\}$.
+
+\textbullet~Si la famille $(\varphi_1,\ldots,\varphi_n)$ est libre, c'est une base de $E^*$ (car $\text{dim}(E^*)=n$). Notons $(u_1,\ldots,u_n)$ sa préduale et notons $(e_1,\ldots,e_n)$ la base canonique de $\Kk^n$. Pour $1\leqslant i\leqslant n$, on a $f(u_i)=e_i$. Ainsi, l'image par $f$ d'une base de $E$ est une base de $\Kk^n$ et on sait alors que $f$ est un isomorphisme. En particulier, $\text{Ker}(f)=\{0\}$.
+
+\textbullet~Si les $\varphi_i$ sont tous nuls, tout vecteur non nul $x$ annule chaque $\varphi_i$. Supposons alors que la famille $(\varphi_1,\ldots,\varphi_n)$ est liée et que les $\varphi_i$ ne sont pas tous nuls. On extrait de la famille $(\varphi_1,\ldots,\varphi_n)$ une base $\left(\varphi_{i_1},\ldots,\varphi_{i_m}\right)$ (avec $1\leqslant m<n$) de $\text{Vect}(\varphi_1,\ldots,\varphi_n)$. On complète la famille libre $\left(\varphi_{i_1},\ldots,\varphi_{i_m}\right)$ en une base $\left(\varphi_{i_1},\ldots,\varphi_{i_m},\psi_1,\ldots,\psi_{n-m}\right)$ de $E^*$. On note $(e_1,\ldots,e_m,e_{m+1},\ldots,e_n)$ sa préduale. Les formes linéaires $\varphi_{i_1}$,\ldots, $\varphi_{i_m}$ s'annulent toutes en $e_n$ et donc chaque $\varphi_i$ s'annule en $e_n$ puisque chaque $\varphi_i$ est combinaison linéaire des $\varphi_{i_k}$, $1\leqslant i\leqslant m$. Le vecteur $e_n$ est donc un vecteur non nul $x$ tel que $\forall i\in\llbracket1,n\rrbracket$, $\varphi_i(x)=0$.
+\fincorrection
+\finexercice

@@ -1,0 +1,36 @@
+\exercice{2401, mayer, 2003/10/01}
+\enonce 
+Soient $E,F$ des espaces norm\'es et $A_n,A \in {\cal L}(E,F)$.
+Montrer l'\'equivalence entre:
+\begin{enumerate}
+\item $A_n \to A$ dans ${\cal L}(E,F)$.
+\item Pour toute partie born\'ee $M\subset E$, la suite $A_n x$
+converge uniform\'ement vers $Ax$, $x\in M$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item (1) $\Rightarrow$ (2). Supposons que $A_n$ converge vers $A$ dans 
+${\cal L}(E,F)$. Soit $M\subset E$ une partie bornée, notons $M$ sa borne
+(c'est-à-dire pour tout $x\in M$, $\|x\|\le B$).
+Alors 
+\begin{align*}
+ & \forall \epsilon >0\quad \exists N\in \Nn \quad \forall n\ge N \quad \|A_n-A\| \le \frac \epsilon B \\
+ \Rightarrow \qquad & \forall \epsilon >0\quad \exists N\in \Nn \quad \forall n\ge N \quad \forall x \in M \quad \|A_n(x)-A(x)\| \le \frac {\epsilon\|x\|} B \\
+\Rightarrow \qquad & \forall \epsilon >0\quad \exists N\in \Nn \quad \forall n\ge N \quad \forall x \in M \quad \|A_n(x)-A(x)\| \le \epsilon \\
+\end{align*}
+Ce qui exactement la confergence uniforme de $A_n$ vers $A$ sur $M$.
+  \item (2) $\Rightarrow$ (1). Par définition de la norme d'un opérateur nous avons $\| A_n - A\| = \sup_{\|x\|=1} \|A_n(x)-A(x)\|$.
+Prenons comme partie bornée la sphère unité : $M = S(0,1) =\{x\in E \mid \|x\|=1\}$.
+Alors :
+\begin{align*}
+ &\forall \epsilon >0\quad \exists N\in \Nn \quad \forall n\ge N \quad \forall x \in S(0,1) \in \|A_n(x)-A(x)\| \le \epsilon \\
+ \Rightarrow \qquad & \forall \epsilon >0\quad \exists N\in \Nn \quad \forall n\ge N \quad \|A_n-A\| \le \epsilon \\
+\end{align*}
+Donc $\|A_n-A\|$ tend vers $0$.
+\end{enumerate}
+\fincorrection
+\finexercice

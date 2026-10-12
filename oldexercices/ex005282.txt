@@ -1,0 +1,36 @@
+\exercice{5282, rouget, 2010/07/04}
+\enonce[***I]
+Quelle est la probabilité $p_n$ pour que dans un groupe de $n$ personnes choisies au hasard, deux personnes au moins aient le même anniversaire (on considèrera que l'année a toujours $365$ jours, tous équiprobables). Montrer que pour $n\geq23$, on a $p_n\geq\frac{1}{2}$.
+\finenonce
+
+\noindication
+
+\correction
+Si $n\geq366$, on a clairement $p_n=1$ (Principe des tiroirs~:~si $366$ personnes sont à associer à $365$ dates d'anniversaire, alors $2$ personnes au moins sont à associer à la même date d'anniversaire).
+
+Si $2\leq n\leq 365$, on a $p_n=1-q_n$ où $q_n$ est la probabilité que les dates d'anniversaire soient deux à deux distinctes. Il y a $(365)^n$ répartitions possibles des dates d'anniversaires (cas possibles) et parmi ces répartitions, il y en a $365.364.363....(365-n+1)$ telles que les dates d'anniversaire soient deux à deux distinctes. Finalement 
+
+$$p_n=1-\frac{1}{(365)^n}365.364.363....(365-n+1)=1-\prod_{k=1}^{n-1}\frac{365-k}{365}=1-\prod_{k=1}^{n-1}(1-\frac{k}{365}).$$
+
+Ensuite,
+
+$$p_n\geq\frac{1}{2}\Leftrightarrow\prod_{k=1}^{n-1}(1-\frac{k}{365})\leq\frac{1}{2}\Leftrightarrow\sum_{k=1}^{n-1}\ln(1-\frac{k}{365}) \leq\ln\frac{1}{2}\Leftrightarrow\sum_{k=1}^{n-1}-\ln(1-\frac{k}{365})\geq\ln2.$$
+
+Maintenant, soit $x\in[0,1[$. On a
+
+$$-\ln(1-x)=\int_{0}^{x}\frac{1}{1-t}dt\geq\int_{0}^{x}\frac{1}{1-0}dt=x.$$
+
+Pour $k$ élément de $\{1,...,n-1\}(\subset\{1,...,364\})$, $\frac{k}{365}$ est un réel élément de $[0,1[$.
+
+En appliquant l'inégalité précédente, on obtient 
+
+$$\sum_{k=1}^{n-1}-\ln(1-\frac{k}{365})\geq\sum_{k=1}^{n-1}\frac{k}{365}=\frac{n(n-1)}{730}.$$
+
+Ainsi,
+
+$$p_n\geq\frac{1}{2}\Leftarrow\frac{n(n-1)}{730}\geq\ln 2\Leftrightarrow n^2-n-730\ln2\geq0\Leftrightarrow n\geq\frac{1+\sqrt{1+2920\ln2}}{2}=22,99...\Leftrightarrow n\geq23.$$
+
+Finalement, dans un groupe d'au moins $23$ personnes, il y a plus d'une chance sur deux que deux personnes au moins aient la même date d'anniversaire.
+
+\fincorrection
+\finexercice

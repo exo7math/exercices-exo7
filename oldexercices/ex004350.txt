@@ -1,0 +1,27 @@
+\exercice{4350, quercia, 2010/03/12}
+\enonce[Fonction définie par une intégrale]
+
+Soit $f:\R \to \R$ continue. On définit pour $x \in \R^*$ et $y \in \R$ :
+$g(x,y) = \frac 1x  \int_{t=x}^{xy} f(t)\,d t$.
+
+\begin{enumerate}
+  \item Montrer que $g$ peut être prolongée en une fonction continue sur $\R^2$.
+    
+  \item On suppose de plus $f$ dérivable en 0. Montrer que $g$ est de classe $\mathcal{C}^1$.
+    
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $g(x,y) =  \int_{u=1}^y f(ux)\,d u$.
+  \item $\frac{\partial g}{\partial x} =
+             \frac1x \Bigl( yf(xy)-f(x) -  \int_{u=1}^y f(ux)\,d u\Bigr)
+             \to \frac{y^2-1}2f'(0)$ lorsque $x\to0$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

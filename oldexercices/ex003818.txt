@@ -1,0 +1,47 @@
+\exercice{3818, quercia, 2010/03/11}
+\enonce[Centrale MP 2001]
+
+\begin{enumerate}
+  \item Pour $M\in GL_n(\R)$ montrer l'existence de deux matrices orthogonales
+    $U$ et $V$ telles que $^tUMV$ soit diagonale.
+    
+  \item Même question pour $M\in\mathcal{M}_n(\R)$.
+    
+  \item Déterminer $U$ et $V$ pour $M=\begin{pmatrix}0 &1 &\phantom-1\cr -1 &0 &1\cr -1 &-1 &0\cr\end{pmatrix}$.
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Si $^tUMV = D$ est diagonale alors $^tMM = VD^2{}^tV$. Inversement,
+    comme $^tMM$ est symétrique définie positive, il existe $D$ diagonale inversible
+    et $V$ orthogonale telles que $^tMM = VD^2{}^tV$. On pose $M = UD^tV$ ce
+    qui définit $U$ puisque $D^tV$ est inversible et on a
+    $VD^2{}^tV = {}^tMM = VD^tUUD^tV$ d'où $^tUU = I$.
+  \item $M$ est limite de matrices $M_k$ inversibles que l'on peut décomposer
+    sous la forme $M_k = U_kD_k{}^tV_k$ avec $U_k$ et $V_k$ orthogonales et $D_k$ diagonale.
+    Comme $O(n)$ est compact on peut supposer, quitte à extraire des sous-suites,
+    que les suites $(U_k)$ et $(V_k)$ convergent vers $U,V$ orthogonales
+    d'où $^tUMV = \lim_{k\to\infty} {}^tU_kM_kV_k = \lim_{k\to\infty}D_k = D$ diagonale.
+  \item En diagonalisant $^tMM$ on trouve
+    $V = \begin{pmatrix}\frac1{\sqrt2} & \phantom-\frac1{\sqrt6} & \frac1{\sqrt3} \cr
+                   0              & \frac2{\sqrt6} &-\frac1{\sqrt3} \cr
+                  -\frac1{\sqrt2} & \frac1{\sqrt6} & \frac1{\sqrt3} \cr\end{pmatrix}$,
+    $D=\begin{pmatrix}\sqrt3 &0 &0\cr 0&\sqrt3 &0\cr 0&0&\phantom00\cr\end{pmatrix}$.
+    Comme $D$ n'est pas inversible il faut ruser pour trouver $U$. On donne
+    des coefficients indéterminés à $U$ et on écrit que $^tUMV = D$
+    ce qui donne $U=\begin{pmatrix}a &b+\scriptstyle\sqrt2 &c\cr
+                             -a-\frac3{\sqrt6} &-b-\frac1{\sqrt2} &\phantom0-c\cr
+                              a &b &c\cr\end{pmatrix}$
+    avec $a,b,c\in\R$. On choisit alors $a,b,c$ de sorte que $U\in O(3)$
+    d'où, par exemple, $c=\frac1{\sqrt3}$, $a=-\frac1{\sqrt6}$, $b=-\frac1{\sqrt2}$
+    et $U=\begin{pmatrix}-\frac1{\sqrt6} &\frac1{\sqrt2}  &  \frac1{\sqrt3} \cr
+                    \frac2{\sqrt6} & 0              & -\frac1{\sqrt3} \cr
+                   -\frac1{\sqrt6} &-\frac1{\sqrt2} &  \frac1{\sqrt3} \cr\end{pmatrix}$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

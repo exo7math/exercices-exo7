@@ -1,0 +1,141 @@
+\exercice{2625, debievre, 2009/05/19}
+\enonce
+Soit $f\colon \R^2\rightarrow \R$ la fonction
+d\'efinie par 
+\begin{eqnarray*}
+f(x,y)&=&\frac{x^2y +3y^3}{x^2+y^2} \ \mathrm{ pour }\ (x,y)\not=(0,0),\\
+f(0,0)&=& 0.
+\end{eqnarray*}
+\begin{enumerate}
+ \item La fonction $f$ est-elle continue en $(0,0)$? Justifier la
+r\'eponse.
+ \item La fonction $f$ admet-elle des d\'eriv\'ees partielles par
+rapport \`a $x$, \`a $y$ en $(0,0)$? Donner la ou les valeurs le cas
+\'ech\'eant et justifier la r\'eponse.
+ \item La fonction $f$ est-elle diff\'erentiable en $(0,0)$? Justifier
+la r\'eponse. 
+ \item D\'eterminer les d\'eriv\'ees partielles de $f$ en un point
+$(x_0,y_0)\not=(0,0)$.
+ \item D\'eterminer l'\'equation du plan tangent au graphe de $f$ au 
+point $(1,1,2)$.
+ \item Soit $F:\R^2\rightarrow \R^2$ la fonction d\'efinie par
+$F(x,y)=(f(x,y),f(y,x))$. D\'eterminer la matrice jacobienne de $F$ au
+point $(1,1)$. La fonction $F$ admet-elle une r\'eciproque locale au
+voisinage du point $(2,2)$?
+\end{enumerate}
+\finenonce
+
+\indication
+ \begin{enumerate}
+\item Pour r\'efuter la diff\'erentiabilit\'e de $f$ en $(0,0)$, il suffit de 
+trouver
+une d\'eriv\'ee directionnelle qui n'est pas combinaison lin\'eaire
+des d\'eriv\'ees partielles (par rapport aux deux variables).
+
+\item Le plan tangent au point $(x_0,y_0,f(x_0,y_0))$
+du graphe $z=f(x,y)$ de $F$ est donn\'ee par l'\'equation
+\begin{equation}
+z-f(x_0,y_0) =\frac{\partial f}{\partial x}(x_0,y_0)(x-x_0)+
+\frac{\partial f}{\partial y}(x_0,y_0)(y-y_0) .
+\label{eqt}
+\end{equation}
+\end{enumerate}
+\finindication
+
+\correction
+\begin{enumerate}  
+\item Puisque $f(x,y)=\frac{x^2y +3y^3}{x^2+y^2}
+=r(\cos^2 \varphi \sin \varphi + 3 \sin^3 \varphi)$, il s'ensuit que
+\[
+\mathrm{lim}_{\begin{smallmatrix} (x,y) \to (0,0)\\ (x,y) \ne (0,0)
+\end{smallmatrix}} f(x,y) = 0
+\]
+car $\cos^2 \varphi \sin \varphi + 3 \sin^3 \varphi$ reste born\'e.
+Par cons\'equent la fonction $f$ est continue en $(0,0)$.
+
+\item Les d\'eriv\'ees partielles
+\begin{align*}
+\frac{\partial f}{\partial x}(0,0)&=
+\mathrm{lim}_{\begin{smallmatrix} x \to 0\\ x \ne 0
+\end{smallmatrix}}\frac {f(x,0)}x =
+\mathrm{lim}_{\begin{smallmatrix} x \to 0\\ x \ne 0
+\end{smallmatrix}}\frac{0}{x^2} = 0
+\\
+\frac{\partial f}{\partial y}(0,0)&=
+\mathrm{lim}_{\begin{smallmatrix} y \to 0\\ y \ne 0
+\end{smallmatrix}}\frac {f(0,y)}y =
+\mathrm{lim}_{\begin{smallmatrix} y \to 0\\ y \ne 0
+\end{smallmatrix}}\frac{3y^3}{y^2} = 3
+\end{align*}
+existent.
+
+\item Puisque $f(x,x)=\frac{4x^3}{2x^2}= 2x$, la d\'eriv\'ee
+directionnelle $D_vf(0,0)$ suivant le vecteur $v=(1,1)$ est non nulle.
+Par cons\'equent, la fonction $f$ n'est pas diff\'erentiable en $(0,0)$.
+
+\item 
+\begin{align*}
+\frac{\partial f}{\partial x}&=
+\frac{\partial }{\partial x}\frac{x^2y +3y^3}{x^2+y^2}
+=\frac{2xy(x^2+y^2)-2x(x^2y +3y^3)}{(x^2+y^2)^2}=
+-4\frac{xy^3}{(x^2+y^2)^2}
+\\
+\frac{\partial f}{\partial y}&=
+\frac{\partial }{\partial y}\frac{x^2y +3y^3}{x^2+y^2}
+=\frac{(x^2+3y^2)(x^2+y^2)-2y(x^2y +3y^3)}{(x^2+y^2)^2}=
+\frac{x^4 +8x^2y^2 +3y^4}{(x^2+y^2)^2}
+\end{align*}
+
+\item D'apr\`es \eqref{eqt}, cette \'equation s'\'ecrit
+\[
+z-2 =\frac{\partial f}{\partial x}(1,1)(x-1)+
+\frac{\partial f}{\partial y}(1,1)(y-1)
+=1-x+3(y-1)
+\]
+d'où $z=3y-x$.
+\item La fonction $F\colon \R^2 \to \R^2$ s'\'ecrit 
+$F(x,y)=\left(\frac{x^2y +3y^3}{x^2+y^2}, \frac{y^2x +3x^3}{x^2+y^2}\right)$
+et sa matrice jacobienne
+\[
+\mathrm{J}_F(1,1)=
+\left[
+\begin{matrix} 
+\frac{\partial f}{\partial x}(1,1)
+&
+\frac{\partial f}{\partial y}(1,1)
+\\
+\frac{\partial f}{\partial y}(1,1)
+&
+\frac{\partial f}{\partial x}(1,1)
+\end{matrix}
+\right]
+= \left[
+\begin{matrix} -1 & 3\\ 3 & -1 \end{matrix}
+\right]
+\]
+au point $(1,1)$ est inversible.
+Par cons\'equent, la fonction $F$ admet une r\'eciproque locale au
+voisinage du point $(1,1)$.
+Au point $(2,2)$,
+\[
+\mathrm{J}_F(2,2)=
+\left[
+\begin{matrix} 
+\frac{\partial f}{\partial x}(2,2)
+&
+\frac{\partial f}{\partial y}(2,2)
+\\
+\frac{\partial f}{\partial y}(2,2)
+&
+\frac{\partial f}{\partial x}(2,2)
+\end{matrix}
+\right]
+= \left[
+\begin{matrix} -1 & 3\\ 3 & -1 \end{matrix}
+\right]
+\]
+d'o\`u la fonction $F$ admet \'egalement une r\'eciproque locale au
+voisinage du point $(2,2)$.
+\end{enumerate}
+\fincorrection
+\finexercice

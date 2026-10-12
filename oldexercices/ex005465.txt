@@ -1,0 +1,69 @@
+\exercice{5465, rouget, 2010/07/10}
+\enonce[****]
+Soit $f(t)=\frac{t^2}{e^t-1}$ si $t\neq0$ et $0$ si $t=0$.
+\begin{enumerate}
+\item  Vérifier que $f$ est continue sur $\Rr$.
+\item  Soit $F(x)=\int_{0}^{x}f(t)\;dt$. Montrer que $F$ a une limite réelle $\ell$ quand $x$ tend vers $+\infty$ puis que $\ell=2\lim_{n\rightarrow +\infty}\sum_{k=1}^{n}\frac{1}{k^3}$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  $f$ est continue sur $\Rr^*$ en tant que quotient de fonctions continues sur $\Rr^*$ dont le dénominateur ne s'annule pas sur $\Rr^*$. D'autre part, quand $t$ tend vers $0$, $f(t)\sim\frac{t^2}{t}=t$ et $\lim_{t\rightarrow 0,\;t\neq0}f(t)=0=f(0)$. Ainsi, $f$ est continue en $0$ et donc sur $\Rr$.
+
+\item  $f$ est continue sur $\Rr$ et donc $F$ est définie et de classe $C^1$ sur $\Rr$. De plus, $F'=f$ est positive sur $[0,+\infty[$, de sorte que $F$ est croissante sur $[0,+\infty[$. On en déduit que $F$ admet en $+\infty$ une limite dans $]-\infty,+\infty]$.
+
+Vérifions alors que $F$ est majorée sur $\Rr$. On contate que $t^2.\frac{t^2}{e^t-1}$ tend vers $0$ quand $t$ tend vers $+\infty$, d'après un théorème de croissances comparées. Par suite, il existe un réel $A$ tel que pour $t\geq A$, 
+$0\leq t^2.\frac{t^2}{e^t-1}\leq1$ ou encore $0\leq f(t)\leq\frac{1}{t^2}$. Pour $x\geq A$, on a alors
+
+\begin{align*}\ensuremath
+F(x)&=\int_{0}^{A}f(t)\;dt+\int_{A}^{x}\frac{t^2}{e^t-1}\;dt\leq\int_{0}^{A}f(t)\;dt+\int_{A}^{x}\frac{1}{t^2}\;dt\\
+ &=\int_{0}^{A}f(t)\;dt+\frac{1}{A}-\frac{1}{x}\leq\int_{0}^{A}f(t)\;dt+\frac{1}{A}.
+\end{align*}
+
+$F$ est croissante et majorée et donc a une limite réelle $\ell$ quand $n$ tend vers $+\infty$.
+
+Soit $n\in\Nn^*$. Pour $t\in]0,+\infty[$,
+
+\begin{align*}
+f(t)&=t^2e^{-t}\frac{1}{1-e^{-t}}=t^2e^{-t}(\sum_{k=0}^{n-1}(e^{-t})^k+\frac{(e^{-t})^{n}}{1-e^{-t}})\\
+ &=\sum_{k=0}^{n-1}t^2e^{-(k+1)t}+\frac{t^2e^{-t}}{1-e^{-t}}e^{-nt}=\sum_{k=1}^{n}t^2e^{-kt}+f_n(t)\;(*),
+\end{align*}
+
+où $f_n(t)=\frac{t^2e^{-t}}{1-e^{-t}}e^{-nt}$ pour $t>0$. En posant de plus $f_n(0)=0$, d'une part, $f_n$ est continue sur $[0,+\infty[$ et d'autre part, l'égalité $(*)$ reste vraie quand $t=0$. En intégrant, on obtient
+
+$$\forall x\in[0,+\infty[,\;\forall n\in\Nn^*,\;F(x)=\sum_{k=1}^{n}\int_{0}^{x}t^2e^{-kt}\;dt+\int_{0}^{x}f_n(t)\;dt\;(**).$$
+
+Soient alors $k\in\Nn^*$ et $x\in[0,+\infty[$. Deux intégrations par parties fournissent~:
+
+\begin{align*}\ensuremath
+\int_{0}^{x}t^2e^{-kt}\;dt&=\left[-\frac{1}{k}t^2e^{-kt}\right]_{0}^{x}+\frac{2}{k}\int_{0}^{x}te^{-kt}\;dt
+=-\frac{1}{k}x^2e^{-kx}+\frac{2}{k}(\left[-\frac{1}{k}te^{-kt}\right]_{0}^{x}+\frac{1}{k}\int_{0}^{x}e^{-kt}\;dt)\\
+ &=-\frac{1}{k}x^2e^{-kx}-\frac{2}{k^2}xe^{-kx}-\frac{2}{k^3}e^{-kx}+\frac{2}{k^3}.
+\end{align*}
+
+Puisque $k>0$, quand $x$ tend vers $+\infty$, on obtient $\lim_{x\rightarrow +\infty}\int_{0}^{x}t^2e^{-kt}\;dt=\frac{2}{k^3}$. On fait alors tendre $x$ vers $+\infty$ dans $(**)$ et on obtient
+
+$$\forall n\in\Nn^*,\;\ell-2\sum_{k=1}^{n}\frac{1}{k^3}=\lim_{x\rightarrow +\infty}\int_{0}^{x}f_n(t)\;dt\;(***).$$
+
+Vérifions enfin que $\lim_{n\rightarrow +\infty}\left(\lim_{x\rightarrow +\infty}\int_{0}^{x}f_n(t)\;dt\right)=0$. La fonction $t\mapsto\frac{t^2e^{-t}}{1-e^{-t}}$ est continue sur $]0,+\infty[$, se prolonge par continuité en $0$ et a une limite réelle en $+\infty$. On en déduit que cette fonction est bornée sur $]0,+\infty[$. Soit $M$ un majorant de cette fonction sur $]0,+\infty[$. Pour $x\in[0,+\infty[$ et $n\in\Nn^*$, on a alors
+
+$$0\leq\int_{0}^{x}f_n(t)\;dt\leq M\int_{0}^{x}e^{-nt}\;dt=\frac{M}{n}(1-e^{-nx}).$$
+
+A $n\in\Nn^*$ fixé, on passe à la limite quand $n$ tend vers $+\infty$ et on obtient
+
+$$0\leq\lim_{x\rightarrow +\infty}\int_{0}^{x}f_n(t)\;dt\leq\frac{M}{n},$$
+
+puis on passe à la limite quand $n$ tend vers $+\infty$ et on obtient
+
+$$\lim_{n\rightarrow +\infty}\left(\lim_{x\rightarrow +\infty}\int_{0}^{x}f_n(t)\;dt\right)=0.$$
+
+Par passage à la limite quand $x$ tend vers $+\infty$ puis quand $n$ tend vers $+\infty$ dans $(***)$, on obtient enfin
+
+$$\lim_{x\rightarrow +\infty}\int_{0}^{x}\frac{t^2}{e^t-1}\;dt=2\lim_{n\rightarrow +\infty}\sum_{k=1}^{n}\frac{1}{k^3}.$$
+ 
+\end{enumerate}
+\fincorrection
+\finexercice

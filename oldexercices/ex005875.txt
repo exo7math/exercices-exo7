@@ -1,0 +1,82 @@
+\exercice{5875, rouget, 2010/10/16}
+\enonce[*** I]
+\begin{enumerate}
+ \item  Soit $\alpha\in\Cc$ tel que $\text{Re}(\alpha) > 0$. Soit $f~:~\Rr\rightarrow\Rr$ de classe $C^1$ sur $\Rr$.
+
+On suppose que quand $x$ tend vers $+\infty$, $f'+\alpha f$ tend vers $\ell\in\Cc$. Montrer que $f(x)$ tend vers $ \frac{\ell}{\alpha}$ quand $x$ tend vers $+\infty$.
+
+\item  Soit $f~:~\Rr\rightarrow\Cc$ de classe $C^2$ sur $\Rr$ telle que $\lim_{x \rightarrow +\infty}(f+f'+f'')(x) = 0$. Montrer que $\lim_{x \rightarrow +\infty}f(x) = 0$.
+
+\item  Soient $n\in\Nn^*$ et $f~:~\Rr\rightarrow\Cc$ de classe $C^n$ sur $\Rr$.
+
+On note $D$ l'opérateur de dérivation. Soit $P$ un polynôme de degré $n$ unitaire dont tous les zéros ont des parties réelles strictement négatives. Montrer que $\lim_{x \rightarrow +\infty}(P(D))(f)(x)= 0\Rightarrow\lim_{x \rightarrow +\infty}f(x) = 0$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item   Posons $g=f'+\alpha f$. La fonction $g$ est continue sur $\Rr$ et la fonction $f$ est solution sur $\Rr$ de l'équation différentielle $y'+\alpha y=g$. De plus, $\lim_{x \rightarrow +\infty}g(x)=\ell$. Ensuite,
+
+\begin{align*}\ensuremath
+f'+\alpha f=g&\Rightarrow \forall x\in\Rr,\;e^{\alpha x}f'(x)+\alpha e^{\alpha x}f(x)=e^{\alpha x}g(x)\Rightarrow\forall x\in\Rr,\;(e^{\alpha x}f)'(x)=e^{\alpha x}g(x)\\
+ &\Rightarrow\forall x\in\Rr,\;e^{\alpha x}f(x)=f(0)+\int_{0}^{x}e^{\alpha t}g(t)\;dt\Rightarrow\forall x\in\Rr,\;f(x)=f(0)e^{-\alpha x}+e^{-\alpha x}\int_{0}^{x}e^{\alpha t}g(t)\;dt.
+\end{align*}
+
+Puisque $\text{Re}(\alpha)>0$ et que $\left|e^{-\alpha x}\right|=e^{-\text{Re}(\alpha)x}$, $\lim_{x \rightarrow +\infty}f(0)e^{-\alpha x}=0$. Vérifions alors que $\lim_{x \rightarrow +\infty}e^{-\alpha x}\int_{0}^{x}e^{\alpha t}g(t)\;dt= \frac{\ell}{\alpha}$ sachant que $\lim_{x \rightarrow +\infty}g(x)=\ell$.
+
+On suppose tout d'abord $\ell=0$. Soit $\varepsilon>0$. Il existe $A_1>0$ tel que $\forall t\geqslant A_1$, $|g(t)|\leqslant \frac{\varepsilon}{2}$. Pour $x\geqslant A_1$,
+
+\begin{align*}\ensuremath
+\left|e^{-\alpha x}\int_{0}^{x}e^{\alpha t}g(t)\;dt\right|&\leqslant e^{-\text{Re}(\alpha)x}\left|\int_{0}^{A_1}e^{\alpha t}g(t)\;dt\right|+e^{-\text{Re}(\alpha)x}\int_{A_1}^{x}e^{\text{Re}(\alpha)t}|g(t)|\;dt\\
+ &\leqslant e^{-\text{Re}(\alpha)x}\left|\int_{0}^{A_1}e^{\alpha t}g(t)\;dt\right|+e^{-\text{Re}(\alpha)x}\int_{A_1}^{x}e^{\text{Re}(\alpha)t}\times \frac{\varepsilon}{2}\;dt\\
+  &=e^{-\text{Re}(\alpha)x}\left|\int_{0}^{A_1}e^{\alpha t}g(t)\;dt\right|+ \frac{\varepsilon}{2}\left(1-e^{-\text{Re}(\alpha)(x-A_1)}\right)\\
+  &\leqslant e^{-\text{Re}(\alpha)x}\left|\int_{0}^{A_1}e^{\alpha t}g(t)\;dt\right|+ \frac{\varepsilon}{2}.
+\end{align*}
+
+Maintenant $\lim_{x \rightarrow +\infty}e^{-\text{Re}(\alpha)x}\left|\int_{0}^{A_1}e^{\alpha t}g(t)\;dt\right|=0$ et donc il existe $A\geqslant A_1$ tel que $\forall x> A$, $e^{-\text{Re}(\alpha)x}\left|\int_{0}^{A_1}e^{\alpha t}g(t)\;dt\right|< \frac{\varepsilon}{2}$. Pour $x>A$, on a $\left|e^{-\alpha x}\int_{0}^{x}e^{\alpha t}g(t)\;dt\right|< \frac{\varepsilon}{2}+ \frac{\varepsilon}{2}=\varepsilon$. On a ainsi montré que $\lim_{x \rightarrow +\infty}f(x)=0= \frac{\ell}{\alpha}$.
+
+On revient maintenant au cas général $\ell$ quelconque.
+
+\begin{align*}\ensuremath
+f'+\alpha f\underset{x\rightarrow+\infty}{\rightarrow}\ell&\Rightarrow f'+\alpha f-\ell
+\underset{x\rightarrow+\infty}{\rightarrow}0\Rightarrow\left(f- \frac{\ell}{\alpha}\right)'+
+\alpha\left(f- \frac{\ell}{\alpha}\right)\underset{x\rightarrow+\infty}{\rightarrow}0\\
+ &\Rightarrow f- \frac{\ell}{\alpha}\underset{x\rightarrow+\infty}{\rightarrow}0\Rightarrow f\underset{x\rightarrow+\infty}{\rightarrow} \frac{\ell}{\alpha}.
+ \end{align*}
+
+\begin{center}
+\shadowbox{
+$\forall f\in C^1(\Rr,\Rr)$, $\forall \alpha\in\Cc$ tel que $\text{Re}(\alpha)>0$, $\lim_{x \rightarrow +\infty}(f'(x)+\alpha f(x))=\ell\Rightarrow\lim_{x \rightarrow +\infty}f(x)= \frac{\ell}{\alpha}$.
+}
+\end{center}
+
+\item  $f''+f'+f=\left(f'-jf\right)'-j^2\left(f'-jf\right)$. D'après 1), comme $\text{Re}(-j^2)=\text{Re}(-j)= \frac{1}{2}>0$,
+
+\begin{center}
+$f''+f'+f\underset{x\rightarrow+\infty}{\rightarrow}0\Rightarrow\left(f'-jf\right)'-j^2\left(f'-jf\right)\underset{x\rightarrow+\infty}{\rightarrow}0\Rightarrow f'-jf\underset{x\rightarrow+\infty}{\rightarrow}0\Rightarrow f\underset{x\rightarrow+\infty}{\rightarrow}0$.
+\end{center}
+
+\begin{center}
+\shadowbox{
+$\forall f\in C^2(\Rr,\Rr)$, $\lim_{x \rightarrow +\infty}(f''(x)+f'(x)+f(x))=0\Rightarrow\lim_{x \rightarrow +\infty}f(x)=0$.
+}
+\end{center}
+
+\item  Montrons le résultat par récurrence sur $n$.
+
+\textbullet~Pour $n=1$, c'est le 1) dans le cas particulier $\ell=0$ (si $P=X-\alpha$, $P(D)(f)=f'-\alpha f$ avec $\text{Re}(-\alpha)>0$).
+
+\textbullet~Soit $n\in\Nn^*$. Supposons le résultat acquis pour $n$. Soit $P$ un polynôme de degré $n+1$ dont les racines ont des parties réelles strictement négatives et tel que $\lim_{x \rightarrow +\infty}(P(D))(f)(x)=0$. Soit $\alpha$ une racine de $P$. $P$ s'écrit $P=(X-\alpha)Q$ où $Q$ est un polynôme dont les racines ont toutes une partie réelle strictement négative. Puisque
+
+\begin{center}
+$P(D)(f)=((D-\alpha Id)\circ(Q(D))(f)=(Q(D)(f))'-\alpha(Q(D)(f))\underset{+\infty}{\rightarrow}0$,
+\end{center}
+
+on en déduit que $Q(D)(f)\underset{+\infty}{\rightarrow}0$ d'après le cas $n=1$ puis que $f\underset{+\infty}{\rightarrow}0$ par hypothèse de récurrence.
+
+Le résultat est démontré par récurrence.
+\end{enumerate}
+\fincorrection
+\finexercice

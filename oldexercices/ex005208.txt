@@ -1,0 +1,63 @@
+\exercice{5208, rouget, 2010/06/30}
+\enonce[** Faisceaux de droites]
+\begin{enumerate}
+\item  Soient $(D)$ et $(D')$ deux droites sécantes d'équation respectives $ax+by+c=0$ et $a'x+b'y+c'=0$, $(a,b)\neq(0,0)$, $(a',b')\neq(0,0)$. Soit $(\Delta)$ une droite. Montrer que $(D)$, $(D')$ et $(\Delta)$ sont concourantes si et seulement si il existe $(\Delta)$ a une équation cartésienne de la forme $\lambda(ax+by+c)+\mu(a'x+b'y+c')=0$, $(\lambda,\mu)\neq(0,0)$.
+\item  Equation cartésienne de la droite passant par le point $(1,0)$ et par le point d'intersection des droites d'équations respectives $5x+7y+1=0$ et $-3x+2y+1=0$
+\item  Pour $m\in\Rr$, on considère $(D_m)$ la droite d'équation $(2m-1)x+(m+1)y-4m-1=0$. Montrer que les droites $(D_m)$ sont concourantes en un point $A$ que l'on précisera. Toute droite passant par $A$ est-elle une droite $(D_m)$~?
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  Le fait que $(D)$ et $(D')$ soient sécantes équivaut à $ab'-a'b\neq0$.
+
+Soit $A(x_A,y_A)$ le point d'intersection de $(D)$ et $(D')$.
+
+Si $(\Delta)$ est une droite ayant une équation de la forme $\lambda(ax+by+c)+\mu(a'x+b'y+c')=0$, $(\lambda,\mu)\neq(0,0)$ alors, puisque
+
+$$\lambda(ax_A+by_A+c)+\mu(a'x_A+b'y_A+c')=\lambda.0+\mu.0=0,$$
+
+le point $A$ appartient à $(\Delta)$.
+
+Réciproquement, soit $(\Delta)$ une droite d'équation $\alpha x+\beta y+\gamma=0$, $(\alpha,\beta)\neq(0,0)$. Soit $\overrightarrow{v}$ le vecteur de coordonnées $(\alpha,\beta)$.
+Puisque $ab'-a'b\neq0$, les deux vecteurs $\overrightarrow{u}(a,b)$ et $\overrightarrow{u}'(a',b')$ ne sont pas colinéaires. Mais alors, la famille $(\overrightarrow{u},\overrightarrow{u}')$ est une base du plan (vectoriel). Par suite, il existe $(\lambda,\mu)\neq(0,0)$ (car $\overrightarrow{v}\neq\overrightarrow{0}$) tel que $\overrightarrow{v}=\lambda\overrightarrow{u}+\mu\overrightarrow{u}'$, ou encore tel que $\alpha=\lambda a+\mu a'$ et $\beta=\lambda b+\mu b'$. Toute droite $(\Delta)$ admet donc une équation cartésienne de la forme 
+$\lambda(ax+by)+\mu(a'x+b'y)+\gamma=0$, $(\lambda,\mu)\neq(0,0)$.
+
+Maintenant, si $A\in(\Delta)$, alors
+
+$$\gamma=-\lambda(ax_A+by_A)+\mu(a'x_A+b'y_A)=-\lambda(-c)-\mu(-c')=\lambda c+\mu c'.$$
+
+Finalement, si $A\in(\Delta)$, $(\Delta)$ admet une équation de la forme $\lambda(ax+by+c)+\mu(a'x+b'y+c')=0$, $(\lambda,\mu)\neq(0,0)$.
+
+\item  Les deux droites $(D)$ et $(D')$ considérées sont bien sécantes car $5.2-7(-3)=31\neq0$. Notons $A$ leur point d'intersection et $B$ le point de coordonnées $(1,0)$. $B$ n'est sur aucune des deux droites considérées de sorte qu'il existe une et seule droite, notée $(\Delta)$, solution du problème posé.
+
+Puisque $(\Delta)$ passe par $A$, $(\Delta)$ a une équation de la forme $\lambda(5x+7y+1)+\mu(-3x+2y+1)=0$. Il est clair que l'on ne peut avoir $\lambda=0$ (car $(\Delta)$ n'est pas $(D')$) et après division par $\lambda$, l'équation s'écrit sous la forme $(5x+7y+1)+k(-3x+2y+1)=0$ où $k$ est un réel. 
+Maintenant, $(\Delta)$ passe par $B$ si et seulement si $6-2k=0$ ou encore $k=3$.
+
+Une équation cartésienne de $(\Delta)$ est donc $(5x+7y+1)+3(-3x+2y+1)=0$ ou encore $-4x+13y+4=0$.
+
+\item  Soit $M(x,y)$ un point du plan.
+
+\begin{align*}
+\forall m\in\Rr,\;M\in(D_m)&\Leftrightarrow\forall m\in\Rr,\;(2m-1)x+(m+1)y-4m-1=0
+\Leftrightarrow\forall m\in\Rr,\;m(2x+y-4)-x+y-1=0\\
+ &\Leftrightarrow
+\left\{
+\begin{array}{l}
+2x+y-4=0\\
+-x+y-1=0
+\end{array}
+\right.\Leftrightarrow x=1\;\mbox{et}\;y=2
+\end{align*}
+
+Toutes les droites $(D_m)$ passent par le point $A(1,2)$.
+
+La droite $(D_{-1})$ passe par $A$ et est parallèle à $(Oy)$. Ensuite, pour $m\neq-1$, $(D_m)$ est la droite passant par $A$ et de coefficient directeur $f(m)=\frac{-2m+1}{m+1}=-2+\frac{3}{m+1}$. Quand $m$ décrit $\Rr\setminus\{-1\}$, $f(m)$ prend toutes les valeurs réelles sauf $-2$.
+
+La droite passant par $A$ de coefficient directeur $-2$ (et donc d'équation $y=-2x+4$) n'est pas une droite $(D_m)$. Toute autre droite passant par $A$ est une droite $(D_m)$.
+
+\end{enumerate}
+\fincorrection
+\finexercice

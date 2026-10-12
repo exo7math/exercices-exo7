@@ -1,0 +1,25 @@
+\exercice{2784, burnol, 2009/12/15}
+\enonce
+\label{ex:burnol1.1.2}
+Si $f$ et $g$ sont deux fonctions dérivables au sens
+complexe au point $z_0$ ; montrer que $f+g$, $f-g$ et $fg$ le
+sont et donner la valeur de leurs dérivées au point
+$z_0$. 
+\finenonce
+\noindication
+\correction
+Consid\'erons le produit $fg$. En utilisant la d\'efinition m\^eme de la d\'eriv\'ee,
+on a :
+$$
+\begin{aligned}
+\frac{1}{h} \left( f(z+h)g(z+h) -f(z)g(z)\right) &= f(z+h)\frac{g(z+h)-g(z)}{h} + g(z) \frac{f(z+h)-f(z)}{h}\\
+& \longrightarrow f(z) g'(z) +g(z)f'(z) \quad \text{lorsque} \;\; h\to 0 \, .
+\end{aligned}$$
+Autre mani\`ere:
+$$\begin{aligned}
+f(z+h)g(z+h)&= (f(z)+f'(z)h +h\epsilon (h))(g(z)+g'(z)h +h\epsilon (h))\\
+&= f(z)g(z) + (f(z)g'(z)+f'(z)g(z))h +h \epsilon (h)\, .
+\end{aligned}$$
+D'o\`u $(fg)'(z)=f(z)g'(z)+f'(z)g(z)$.
+\fincorrection
+\finexercice

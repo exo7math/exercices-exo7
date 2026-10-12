@@ -1,0 +1,83 @@
+\exercice{6873, gammella, 2012/05/29}
+
+\enonce
+Déterminer si les formes différentielles suivantes sont exactes et dans ce cas, les intégrer :
+\begin{enumerate}
+\item $\omega_1=2xy dx +x^2dy $
+\item $\omega_2=xy dx - z dy +xz dz$
+\item $\omega_3=2xe^{x^2-y} dx -2e^{x^2-y}dy$
+\item $\omega_4=yz^2 dx + (xz^2+z) dy + (2xyz+2z+y) dz.$
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item Pour $\omega_1$, on pose $P(x,y)=2xy$ et $Q(x,y)=x^2$. Comme $\omega_1$ est définie
+sur l'ouvert étoilé $\Rr^2$
+et que $ \frac{\partial P}{\partial y}=\frac{\partial Q}{\partial x}=2x$, le théorème de Poincaré
+permet de dire que $\omega_1$ est exacte. On cherche $f$ tel que $df=\omega_1$. Ceci équivaut à résoudre le système 
+$$  \left\{ \begin{array}{lll}
+\frac{\partial f} {\partial x}& = &2xy \\
+\frac{\partial f}{\partial y} &= & x^2\\
+\end{array} \right .$$
+En intégrant la première ligne par rapport à $x$, on trouve
+$f(x,y)= x^2y+c(y)$. En dérivant l'expression que l'on vient d'obtenir par
+rapport à $y$ et en identifiant avec la deuxième ligne
+du système, on trouve $$ \frac{\partial f}{\partial y}= x^2+c'(y)=x^2.$$ Il s'ensuit que $c'(y)=0$ et 
+donc que $c(y)=c \in \Rr$. Par suite, la fonction 
+$f$ cherchée est :
+$$f(x,y)=x^2y+c$$
+o\`u $c$ est une constante réelle.
+
+\item Pour $\omega_2$, on pose $P(x,y,z)=xy$, $Q(x,y,z)=-z$ et $R(x,y,z)=xz.$ 
+On constate que 
+$ \frac{\partial P}{\partial y}=x$ alors que $ \frac{\partial Q}{\partial x}=0$. La forme
+$\omega_2$ n'est donc pas exacte.
+
+\item Pour $\omega_3$, on pose $P(x,y)=2xe^{x^2-y}$ et $Q(x,y)=-2e^{x^2-y}$.
+Là aussi, $ \frac{\partial P}{\partial y}\not= \frac{\partial Q}{\partial x} $
+puisque $ \frac{\partial P}{\partial y}=-2xe^{x^2-y}$ alors
+que $ \frac{\partial Q}{\partial x}=-4xe^{x^2-y}$ ; $\omega_3$ n'est donc pas exacte.
+
+\item Pour $\omega_4$, posons
+$P(x,y,z)=yz^2$, $Q(x,y,z)=xz^2+z$, $R(x,y,z)=2xyz+2z+y$. On constate
+que 
+\begin{enumerate}
+\item $ \frac{\partial P}{\partial y}= \frac{\partial Q}{\partial x}= z^2$
+\item $ \frac{\partial P}{\partial z}= \frac{\partial R}{\partial x}=2zy$
+\item $ \frac{\partial Q}{\partial z}= \frac{\partial R}{\partial y}= 2xz+1$.
+\end{enumerate}
+La forme $\omega_4$ est de plus définie sur l'ouvert étoilé $\Rr^3$, elle est donc exacte
+d'après le théorème de Poincaré.
+Cherchons maintenant $f$ telle que $df=\omega_4$, ceci revient à résoudre le système :
+$$  \left\{ \begin{array}{lll}
+\frac{\partial f} {\partial x}& = &yz^2 \\
+\frac{\partial f}{\partial y} &= &xz^2+z\\
+\frac{\partial f}{\partial z} & = & 2xyz+2z+y \\
+\end{array} \right .$$
+En intégrant la première équation par rapport à $x$, on trouve
+$$f(x,y,z)=xyz^2+\psi(y,z).$$
+Maintenant, en dérivant l'expression obtenue successivement par $y$ et $z$
+et en égalisant avec les deux dernières équations du système, on obtient 
+un nouveau système 
+$$  \left\{ \begin{array}{lll}
+ xz^2+\frac{\partial \psi} {\partial y}& = &xz^2+z \\
+ 2xyz+\frac{\partial \psi}{\partial z} &= &2xyz+2z+y\\
+\end{array} \right . $$
+qui  équivaut à :
+$$  \left\{ \begin{array}{lll}
+ \frac{\partial \psi} {\partial y}& = & z \quad (1) \\
+ \frac{\partial \psi}{\partial z} &= & 2z+y \quad (2)\\
+\end{array} \right .$$
+Finalement, en intégrant (1) par rapport à $y$, il vient 
+$\psi(y,z)=zy+c(z)$. En dérivant cette expression de $\psi$ par rapport à $z$
+et en égalisant avec (2), on trouve
+$y+c'(z)=2z+y$, c'est-à-dire $c'(z)=2z$ donc $c(z)=z^2+c$ o\`u $c\in \Rr$.
+Ainsi, la fonction $f$ telle que $\omega_4=df$ est de la forme
+$$f(x,y,z)= xyz^2+zy  +z^2+c$$
+o\`u $c\in \Rr$.
+\end{enumerate}
+\fincorrection
+\finexercice

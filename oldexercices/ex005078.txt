@@ -1,0 +1,45 @@
+\exercice{5078, rouget, 2010/06/30}
+\enonce[**]
+Démontrer les identités suivantes, en précisant à chaque fois leur domaine de validité~:
+\begin{enumerate}
+ \item $\frac{1-\cos x}{\sin x}=\tan\frac{x}{2}$,
+ \item $\sin\left(x-\frac{2\pi}{3}\right)+\sin x+\sin\left(x+\frac{2\pi}{3}\right)=0$,
+ \item $\tan\left(\frac{\pi}{4}+x\right)+\tan\left(\frac{\pi}{4}-x\right)=\frac{2}{\cos(2x)}$,
+ \item $\frac{1}{\tan x}-\tan x=\frac{2}{\tan(2x)}$.
+\end{enumerate}
+
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item   $\tan\frac{x}{2}$ existe si et seulement si $x\notin\pi+2\pi\Zz$ et $\frac{1-\cos x}{\sin x}$ existe si et
+seulement si $x\notin\pi\Zz$. Pour $x\notin\pi\Zz$,
+
+$$\frac{1-\cos x}{\sin x}=\frac{2\sin^2\frac{x}{2}}{2\sin\frac{x}{2}\cos\frac{x}{2}}=\tan\frac{x}{2}.$$
+ \item  \textbf{1 ère solution.} Pour tout réel $x$,
+
+$$\sin(x-\frac{2\pi}{3})+\sin x+\sin(x+\frac{2\pi}{3})=-\frac{1}{2}\sin x-\frac{\sqrt{3}}{2}\cos x+\sin
+x-\frac{1}{2}\sin x+\frac{\sqrt{3}}{2}\cos x=0,$$
+\textbf{2 ème solution.}
+
+$$\sin\left(x-\frac{2\pi}{3}\right)+\sin x+\sin(x+\frac{2\pi}{3})=\Im(e^{i(x-\frac{2\pi}{3})}+e^{ix}+e^{i(x+\frac{2\pi}{3})})
+=\Im(e^{ix}(j^2+1+j))=0.$$
+ \item  $\tan\left(\frac{\pi}{4}-x\right)$, $\tan\left(\frac{\pi}{4}+x\right)$ et $\frac{2}{\cos(2x)}$ existent si et seulement si
+$\frac{\pi}{4}-x$, $\frac{\pi}{4}+x$ et $2x$ ne sont pas dans $\frac{\pi}{2}+\pi\Zz$, ce qui équivaut à
+$x\notin\frac{\pi}{4}+\frac{\pi}{2}\Zz$. Donc, pour $x\notin\frac{\pi}{4}+\frac{\pi}{2}\Zz$,
+
+\begin{align*}
+\tan\left(\frac{\pi}{4}-x\right)+\tan\left(\frac{\pi}{4}+x\right)&=\frac{1-\tan x}{1+\tan x}+\frac{1+\tan x}{1-\tan x}\;(\text{pour}\;x\;\text{vérifiant de plus}\;x\notin\frac{\pi}{2}+\pi\Zz)\\
+ &=\frac{\cos x-\sin x}{\cos x+\sin x}+\frac{\cos x+\sin x}{\cos x-\sin x}=\frac{(\cos x-\sin x)^2+(\cos x+\sin x)^2}{\cos^2
+x-\sin^2x}=\frac{2(\cos^2x+\sin^2x)}{\cos(2x)}\\
+ &=\frac{2}{\cos(2x)}\;(\text{ce qui reste vrai pour}\;x\in\frac{\pi}{2}+\pi\Zz).
+\end{align*}
+ \item  Pour $x\notin\frac{\pi}{4}\Zz$,
+
+$$\frac{1}{\tan x}-\tan x=\frac{\cos x}{\sin x}-\frac{\sin x}{\cos x}=\frac{\cos^2 x-\sin^2x}{\sin x\cos
+x}=\frac{2\cos(2x)}{\sin(2x)}=\frac{2}{\tan(2x)}.$$
+\end{enumerate}
+\fincorrection
+\finexercice

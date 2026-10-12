@@ -1,0 +1,90 @@
+\exercice{6951, ruette, 2013/01/24}
+\enonce[Convergence en probabilité **]
+\begin{enumerate}
+\item
+Montrer que pour tout $x>0$,
+$$
+e^{-x^2/2}\left(\frac{1}{x}-\frac{1}{x^3}\right)\leq
+\int_x^{+\infty}e^{-t^2/2}dt\leq e^{-x^2/2}\frac{1}{x}.
+$$
+{\it Indication : on pourra intégrer par parties $t^{-1}te^{-t^2/2}$.}
+\item
+Soit $(X_n)_{n\geq 1}$ une suite de variables aléatoires indépendantes de même loi
+$\mathcal{N}(0,1)$. Montrer que $\displaystyle\frac{\max_{1\leq i\leq n} X_i}{\sqrt{2\ln n}}$
+tend vers~$1$ en probabilité.
+\end{enumerate}
+\finenonce
+\noindication
+
+\correction
+\begin{enumerate}
+\item
+Intégration par parties : $u=1/t, v'=te^{-t^2/2}, u'=-1/t^2, v=-e^{-t^2/2}$ :\\
+$\displaystyle\int_x^{+\infty}e^{-t^2/2}dt=\frac{1}{x}e^{-x^2/2}-
+\int_x^{+\infty}\frac{1}{t^2}e^{-t^2/2}dt\leq \frac{1}{x}e^{-x^2/2}
+\mbox{ car l'intégrale de droite est positive}.$\\
+On fait une nouvelle intégration par parties :
+$\displaystyle
+\int_x^{+\infty}\frac{1}{t^2}e^{-t^2/2}dt=\frac{1}{x^3}e^{-x^2/2}-
+\int_x^{+\infty}\frac{3}{t^4}e^{-t^2/2}\,dt\leq \frac{1}{x^3}e^{-x^2/2},
+$
+donc $\displaystyle \int_x^{+\infty}e^{-t^2/2}dt\geq \frac{1}{x}e^{-x^2/2}-
+\frac{1}{x^3}e^{-x^2/2}$.
+
+\item
+Soit $\displaystyle Y_n=\max_{1\leq i\leq n} X_i$. On a
+$\displaystyle P(Y_n\leq t)=\prod_{i=1}^n P(X_i\leq t)=P(X_1\leq t)^n$ et de même $\displaystyle P(Y_n\geq t)=P(X_1\geq t)^n$.
+
+On veut montrer que 
+$$\forall\epsilon>0,\  P(|\frac{Y_n}{\sqrt{2\ln n}}-1|\geq
+\epsilon)\to 0\quad \mbox{quand}\quad n\to +\infty\quad 
+\mbox{(convergence en probabilité)}.$$
+On peut écrire
+$$\{|\frac{Y_n}{\sqrt{2\ln n}}-1|\geq\epsilon\}=\{|Y_n-\sqrt{2\ln n}|\geq \epsilon
+\sqrt{2\ln n}\}=\{Y_n\geq (1+\epsilon)\sqrt{2\ln n}\}\cup
+\{Y_n\leq (1-\epsilon)\sqrt{2\ln n}\}$$ 
+et cette union est disjointe donc
+$$P(|\frac{Y_n}{\sqrt{2\ln n}}-1|\geq\epsilon)=P(Y_n\geq (1+\epsilon)\sqrt{2\ln n})
++P(Y_n\leq (1-\epsilon)\sqrt{2\ln n}). $$
+On va montrer que ces 2 probabilités tendent vers $0$.
+
+\begin{eqnarray*}
+P(Y_n\leq (1-\epsilon)\sqrt{2\ln n})&=&P(X_1\leq (1-\epsilon)\sqrt{2\ln n})^n
+=\left(1-P(X_1>(1-\epsilon)\sqrt{2\ln n}\right)^n\\
+&=&\left(1-\frac{1}{\sqrt{2\pi}}\int_{(1-\epsilon)\sqrt{2\ln n}}^{+\infty}
+e^{-t^2/2}\,dt\right)^n\\
+&\leq & \left(1-\frac{1}{\sqrt{2\pi}}e^{-(\ln n)(1-\epsilon)^2}
+\left(\frac{1}{(1-\epsilon)\sqrt{2\ln n}}-\frac{1}{((1-\epsilon)\sqrt{2\ln n})^3}
+\right)\right)^n\mbox{ par 1.}
+\end{eqnarray*}
+
+Comme $e^{-(\ln n)(1-\epsilon)^2}=n^{-(1-\epsilon)^2}$, la quantité
+$$
+n\ln\left(1-\frac{1}{\sqrt{2\pi}}e^{-(\ln n)(1-\epsilon)^2}
+\left(\frac{1}{(1-\epsilon)\sqrt{2\ln n}}-\frac{1}{((1-\epsilon)\sqrt{2\ln n})^3}
+\right)\right)$$ est équivalent à
+$$-\frac{1}{\sqrt{2\pi}} n^{2\epsilon-\epsilon^2}
+\left(\frac{1}{(1-\epsilon)\sqrt{2\ln n}}-\frac{1}{((1-\epsilon)\sqrt{2\ln n})^3}
+\right),\quad \mbox{donc à}\quad \displaystyle -\frac{n^{2\epsilon-\epsilon^2}}{\sqrt{2\pi}(1-\epsilon)
+\sqrt{2\ln n}} .$$
+
+Si $\epsilon>0$ est assez petit, $\alpha=2\epsilon-\epsilon^2>0$, donc
+$\displaystyle \frac{n^{2\epsilon-\epsilon^2}}{\sqrt{\ln n}}\to +\infty$. \\
+En reprenant l'exponentielle, on obtient que
+$P(Y_n\leq (1-\epsilon)\sqrt{2\ln n})$ tend vers $0$ quand $n\to +\infty$.
+$$
+P(Y_n\geq (1+\epsilon)\sqrt{2\ln n})=(P(X_1\geq (1+\epsilon)\sqrt{2\ln n}))^n
+=\left(\frac{1}{\sqrt{2\pi}}\int_{(1+\epsilon)\sqrt{2\ln n}}^{+\infty}
+e^{-t^2/2}\,dt\right)^n.$$ 
+Donc par 1., 
+$\displaystyle\ln (P(Y_n\geq (1+\epsilon)\sqrt{2\ln n}))$ est inférieur ou égal à
+$$
+n\ln\left(\frac{1}{\sqrt{2\pi}}e^{-(\ln n)(1+\epsilon)^2}\frac{1}{(1+\epsilon)
+\sqrt{2\ln n}}\right)=-n (\ln n)(1+\epsilon)^2-n\ln(\sqrt{2\pi}(1+\epsilon)\sqrt{2\ln n})
+\to -\infty$$
+donc $\displaystyle P(Y_n\geq (1+\epsilon)\sqrt{2\ln n})$
+tend vers $0$ quand $n\to +\infty$. Conclusion :
+$\displaystyle\frac{Y_n}{\sqrt{2\ln n}}\stackrel{P}{\longrightarrow}1$.
+\end{enumerate}
+\fincorrection
+\finexercice

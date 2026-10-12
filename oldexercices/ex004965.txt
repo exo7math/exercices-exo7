@@ -1,0 +1,38 @@
+\exercice{4965, quercia, 2010/03/17}
+\enonce[Tétraèdre dont les faces ont même aire]
+
+Soit $ABCD$ un tétraèdre dont les quatre faces ont même aire.
+Montrer que les côtés non coplanaires ont deux à deux mêmes longueurs.
+
+\finenonce
+
+\noindication
+
+\correction
+\begin{itemize}
+  \item Soient $B'$, $C'$ les projetés orthogonaux de $C$, $D$ sur $(AB)$. 
+Le triangle $ABC$ a pour aire $\frac12 AB \cdot CC'$.
+Le triangle $ABD$ a pour aire $\frac12 AB \cdot DD'$.
+Comme ces triangles ont la même aire alors $CC'=DD'$.
+
+  \item Notons $I$ le milieu de $[C,D]$ et $I'$ son projeté orthogonal sur $(AB)$.
+Par définition la droite $(II')$ est perpendiculaire à $(AB)$.
+Montrons qu'elle est aussi perpendiculaire à $(CD)$.
+Par Pythagore dans $I'CC'$ : $I'C^2 = I'C'^2 + CC'^2$.
+Par Pythagore dans $IDD'$ : $I'D^2 = I'D'^2 + DD'^2$.
+Comme $I$ est le milieu de $[C,D]$, alors par projection orthogonale, $I'$ est le milieu de $[C',D']$, donc $I'C'=I'D'$. D'autre part $CC'=DD'$ et ainsi $I'C=I'D$. Le triangle $I'CD$ étant isocèle en $I'$, alors $(II')$ est perpendiculaire à $(CD)$.
+
+Bilan : on a montré que la perpendiculaire commune à $(AB)$ et $(CD)$ est $(II')$ et passe donc par le milieu de $[C,D]$.
+
+\item On refait le même raisonnement en projetant cette fois sur $(CD)$, pour trouver que la perpendiculaire commune à $(AB)$ et $(CD)$ passe par le milieu $J$ de $[A,B]$. Comme la perpendiculaire commune est unique et coupe $(AB)$ et $I'$ et en $J$ alors $I'=J$. 
+Bilan : la perpendiculaire commune à $(AB)$ et $(CD)$ est la droite $(IJ)$ où
+$I$ est le milieu de $[C,D]$ et $J$ le milieu de $[A,B]$.
+
+\item On considère le retournement d'axe $(IJ)$ (rotation d'angle $\pi$). Alors $A$ s'envoie sur $B$, $C$ s'envoie sur $D$. Le segment $[A,C]$ s'envoie sur $[B,D]$. Un retournement préserve les longueurs, donc $AC = BD$.
+
+Conclusion : les deux côtés opposés $AC$ et $BD$ ont même longueur.
+\end{itemize}
+
+\fincorrection
+
+\finexercice

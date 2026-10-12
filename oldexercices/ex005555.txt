@@ -1,0 +1,69 @@
+\exercice{5555, rouget, 2010/07/15}
+\enonce[***T]
+Déterminer la classe de $f$ sur $\Rr^2$ où $f(x,y)=\left\{\begin{array}{l}
+0\;\text{si}\;(x,y)=(0,0)\\
+\frac{xy(x^2-y^2)}{x^2+y^2}\;\text{si}\;(x,y)\neq(0,0)
+\end{array}
+\right.$.
+\finenonce
+
+\noindication
+
+\correction
+\textbullet~Pour $(x,y)\in\Rr^2$, $x^2+y^2=0\Leftrightarrow x=y=0$ et donc $f$ est définie sur $\Rr^2$.
+\textbullet~$f$ est de classe $C^\infty$ sur $\Rr^2\setminus\{(0,0)\}$ en tant que quotient de fonctions de classe $C^\infty$ sur $\Rr^2\setminus\{(0,0)\}$ dont le dénominateur ne s'annule pas sur $\Rr^2\setminus\{(0,0)\}$.
+ 
+
+\textbullet~Pour $(x,y)\neq(0,0)$, $|f(x,y)|\leqslant\frac{|xy|(x^2+y^2)}{x^2+y^2}=|xy|$. Comme $\lim_{(x,y)\rightarrow (0,0)}|xy|=0$, on en déduit que $\displaystyle\lim_{\substack{(x,y)\rightarrow(0,0)\\(x,y)\neq(0,0)}}f(x,y)=0=f(0,0)$. Ainsi, $f$ est continue en $(0,0)$ et donc sur $\Rr^2$.
+\textbullet~\textbf{Existence de $\frac{\partial f}{\partial x}(0,0)$.} Pour $x\neq0$,
+
+\begin{center}
+$\frac{f(x,0)-f(0,0)}{x-0}=\frac{x\times0\times(x^2-0^2)}{x\times(x^2+0^2)}=0$,
+\end{center}
+et donc $\lim_{x\rightarrow 0}\frac{f(x,0)-f(0,0)}{x-0}=0$. Ainsi, $f$ admet une dérivée partielle par rapport à sa première variable en $(0,0)$ et $\frac{\partial f}{\partial x}(0,0)=0$.
+\textbullet~Pour $(x,y)\neq(0,0)$, $\frac{\partial f}{\partial x}(x,y)=y\frac{(3x^2-y^2)(x^2+y^2)-(x^3-y^2x)(2x)}{(x^2+y^2)^2}=\frac{y(x^4+4x^2y^2-y^4)}{(x^2+y^2)^2}$.
+
+Finalement, $f$ admet sur $\Rr^2$ une dérivée partielle par rapport à sa première variable définie par 
+
+\begin{center}
+$\forall(x,y)\in\Rr^2$, $\frac{\partial f}{\partial x}(x,y)=\left\{
+\begin{array}{l}
+\rule[-4mm]{0mm}{0mm}0\;\text{si}\;(x,y)=(0,0)\\
+\frac{y(x^4+4x^2y^2-y^4)}{(x^2+y^2)^2}\;\text{si}\;(x,y)\neq(0,0)
+\end{array}
+\right.$.
+\end{center}
+\textbullet~Pour $(x,y)\in\Rr^2$, $f(y,x)=-f(x,y)$. Par suite, $\forall(x,y)\in\Rr^2$, $\frac{\partial f}{\partial y}(x,y)=-\frac{\partial f}{\partial x}(y,x)$.
+En effet, pour $(x_0,y_0)$ donné dans $\Rr^2$
+
+\begin{center}
+$\frac{f(x_0,y)-f(x_0,y_0)}{y-y_0}=\frac{-f(y,x_0)+f(y_0,x_0)}{y-y_0}=-\frac{f(y,x_0)-f(y_0,x_0)}{y-y_0}\underset{y\rightarrow y_0}{\rightarrow}-\frac{\partial f}{\partial x}(y_0,x_0)$.
+\end{center}
+Donc, $f$ admet sur $\Rr^2$ une dérivée partielle par rapport à sa deuxième variable définie par 
+
+\begin{center}
+$\forall(x,y)\in\Rr^2$, $\frac{\partial f}{\partial y}(x,y)=-\frac{\partial f}{\partial x}(y,x)=\left\{
+\begin{array}{l}
+\rule[-4mm]{0mm}{0mm}0\;\text{si}\;(x,y)=(0,0)\\
+\frac{x(x^4-4x^2y^2-y^4)}{(x^2+y^2)^2}\;\text{si}\;(x,y)\neq(0,0)
+\end{array}
+\right.$.
+\end{center}
+\textbullet~\textbf{Continuité de $\frac{\partial f}{\partial x}$ et $\frac{\partial f}{\partial y}$ en $(0,0)$.} Pour $(x,y)\neq(0,0)$,
+
+\begin{center}
+$\left|\frac{\partial f}{\partial x}(x,y)-\frac{\partial f}{\partial x}(0,0)\right|=\frac{|y(x^4+4x^2y^2-y^4)|}{(x^2+y^2)^2}\leqslant\frac{|y|(x^4+4x^2y^2+y^4)}{(x^2+y^2)^2}\leqslant\frac{|y|(2x^4+4x^2y^2+2y^4)}{(x^2+y^2)^2}=2|y|$.
+\end{center}
+Comme $2|y|$ tend vers $0$ quand $(x,y)$ tend vers $(0,0)$, $\left|\frac{\partial f}{\partial x}(x,y)-\frac{\partial f}{\partial x}(0,0)\right|$ tend vers $0$ quand $(x,y)$ tend vers $(0,0)$. On en déduit que l'application $\frac{\partial f}{\partial x}$ est continue en $(0,0)$ et donc sur $\Rr^2$.
+Enfin, puisque $\forall(x,y)\in\Rr^2$, $\frac{\partial f}{\partial y}(x,y)=-\frac{\partial f}{\partial x}(y,x)$, $\frac{\partial f}{\partial y}$ est continue sur $\Rr^2$. $f$ est donc au moins de classe $C^1$ sur $\Rr^2$.
+\textbullet~Pour $x\neq0$, $\frac{\frac{\partial f}{\partial y}(x,0)-\frac{\partial f}{\partial y}(0,0)}{x-0}=\frac{x^4}{x^4}=1$ et donc $\lim_{x\rightarrow 0}\frac{\frac{\partial f}{\partial y}(x,0)-\frac{\partial f}{\partial y}(0,0)}{x-0}=1$. Donc $\frac{\partial^2f}{\partial y\partial x}(0,0)$ existe et $\frac{\partial^2f}{\partial y\partial x}(0,0)=1$.
+Pour $y\neq0$, $\frac{\frac{\partial f}{\partial x}(y,0)-\frac{\partial f}{\partial x}(0,0)}{y-0}=-\frac{y^4}{y^4}=-1$ et donc $\lim_{y\rightarrow 0}\frac{\frac{\partial f}{\partial x}(y,0)-\frac{\partial f}{\partial x}(0,0)}{y-0}=-1$. Donc $\frac{\partial^2f}{\partial x\partial y}(0,0)$ existe et $\frac{\partial^2f}{\partial x\partial y}(0,0)=-1$.
+$\frac{\partial^2f}{\partial y\partial x}(0,0)\neq\frac{\partial^2f}{\partial x\partial y}(0,0)$ et donc $f$ n'est pas de classe $C^2$ sur $\Rr^2$ d'après le théorème de \textsc{Schwarz}.
+
+\begin{center}
+\shadowbox{
+$f$ est de classe $C^1$ exactement sur $\Rr^2$.
+}
+\end{center}
+\fincorrection
+\finexercice

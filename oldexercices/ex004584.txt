@@ -1,0 +1,34 @@
+\exercice{4584, quercia, 2010/03/14}
+\enonce[Série des traces (Centrale MP 2003)]
+\smallskip
+Soit~$A=\left(\begin{smallmatrix}1&1&1\cr1&1&0\cr1&0&0\cr\end{smallmatrix}\right)\in\mathcal{M}_{3}(\R)$.
+\begin{enumerate}
+  \item Montrer que~$A$ est diagonalisable et admet trois valeurs propres réelles
+    dont on précisera les parties entières.
+    
+  \item On pose $t_n = \mathrm{tr}(A^n)$. Exprimer $t_n$ en fonction de $t_{n-1},t_{n-2},t_{n-3}$.
+    
+  \item Déterminer le rayon de convergence de la série entière $\sum_{n=0}^\infty t_nz^n$ et calculer sa somme.
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $\chi_A(\lambda) = -\lambda^3 + 2\lambda^2 + \lambda - 1$.
+    $\chi_A(-1)>0$, $\chi_A(0) < 0$, $\chi_A(1)>0$, $\chi_A(2)>0$, $\chi_A(3)<0$
+    donc $\chi_A$ admet une racine dans chacun des intervalles
+    $]-1,0[$, $]0,1[$ et $]2,3[$.
+  \item Cayley-Hamilton~: $t_n = 2t_{n-1}+t_{n-2}-t_{n-3}$.
+  \item Soient $-1<\alpha<0<\beta<1<2<\gamma<3$ les valeurs propres de~$A$.
+    On a $t_nz^n = (\alpha z)^n + (\beta z)^n + (\gamma z)^n$ donc la série $\sum_{n=0}^\infty t_nz^n$
+    converge si et seulement si $|\gamma z|<1$ et vaut~:
+    $$\frac1{1-\alpha z} + \frac1{1-\beta z} + \frac 1{1-\gamma z}
+      = \frac1z\frac{\chi'}{\chi}\Bigl(\frac1z\Bigr)
+      = \frac{-z^2-4z+3}{z^3-z^2-2z+1}.$$
+\end{enumerate}
+ \fincorrection
+
+\finexercice

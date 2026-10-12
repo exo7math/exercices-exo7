@@ -1,0 +1,34 @@
+\exercice{5093, rouget, 2010/06/30}
+\enonce[**]
+Résoudre dans $\Rr$ l'équation $\sh(2+x)+\sh(2+2x)+...+\sh(2+100x)=0$.
+\finenonce
+
+\noindication
+
+\correction
+Soit $x$ un réel.
+
+$$S=\sum_{k=1}^{100}\sh(2+kx)=\frac{1}{2}\left(e^2\sum_{k=1}^{100}e^{kx}-e^{-2}\sum_{k=1}^{100}e^{-kx}\right).$$
+Si $x=0$
+alors directement $S=100\sh2\neq0$. Si $x\neq0$ alors $e^x\neq1$ et $e^{-x}\neq1$. Dans ce
+cas,
+
+$$S=\frac{1}{2}\left(e^2e^x\frac{1-e^{100x}}{1-e^x}-e^{-2}e^{-x}\frac{1-e^{-100x}}{1-e^{-x}}\right)=\frac{1}{2}\left(e^2e^x
+\frac{1-e^{100x}}{1-e^x}+e^{-2}\frac{1-e^{-100x}}{1-e^{x}}\right).$$
+après multiplication du numérateur et du dénominateur
+de la deuxième fraction par $e^x$. Pour $x\neq0$, on a donc~:
+\begin{align*}
+S=0&\Leftrightarrow e^{x+2}(1-e^{100x})+ e^{-2}(1-e^{-100x})=0\Leftrightarrow
+e^{x+2}(1-e^{100x})+e^{-2-100x}(e^{100x}-1)=0\\
+ &\Leftrightarrow(1-e^{100x})(e^{x+2}-e^{-100x-2})=0\Leftrightarrow e^{x+2}=e^{-100x-2}\;(\mbox{car}\;
+x\neq0)\\
+ &\Leftrightarrow x+2=-100x-2\Leftrightarrow x=-\frac{4}{101}.
+\end{align*}
+
+\begin{center}
+\shadowbox{
+$\mathcal{S}=\left\{-\frac{4}{101}\right\}.$
+}
+\end{center}
+\fincorrection
+\finexercice

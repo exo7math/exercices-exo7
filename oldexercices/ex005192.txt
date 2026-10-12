@@ -1,0 +1,84 @@
+\exercice{5192, rouget, 2010/06/30}
+\enonce[***I Le théorème des noyaux itérés]
+\label{exo:suprou10}
+Soient $\Kk$ un sous-corps de $\Cc$, $E$ un $\Kk$-espace vectoriel de dimension finie $n$ et $f$ un endomorphisme de $E$ non injectif. Pour $k$
+entier naturel donné, on pose $N_k=\mbox{Ker}f^k$ et $I_k=\mbox{Im}f^k$ (avec la convention $f^0=Id_E$).
+\begin{enumerate}
+\item  Montrer que~:~$\forall k\in\Nn,\;(N_k\subset N_{k+1}\;\mbox{et}\;I_{k+1}\subset I_k)$.
+\item 
+\begin{enumerate}
+\item Montrer que~:~$(\forall k\in\Nn,\;(N_k=N_{k+1}\Rightarrow N_{k+1}=N_{k+2})$.
+\item Montrer que~:~$\exists p\in\Nn/\;\forall k\in\Nn,\;(k<p\Rightarrow N_k\neq N_{k+1}\;\mbox{et}\;k\geq
+p\Rightarrow N_k=N_{k+1})$.
+\item Montrer que $p\leq n$.
+\end{enumerate}
+\item  Montrer que si $k<p$, $I_k=I_{k+1}$ et si $k\geq p$, $I_k=I_{k+1}$.
+\item  Montrer que $E=I_p\oplus N_p$ et que $f$ induit un automorphisme de $I_p$.
+\item  Soit $d_k=\mbox{dim}I_k$. Montrer que la suite $(d_k-d_{k+1})_{k\in\Nn}$ est décroissante (en d'autres
+termes la suite des images itérées $I_k$ décroît de moins en moins vite).
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Soient $k$ un entier naturel et $x$ un élément de $E$.
+
+$$x\in N_k\Rightarrow f^k(x)=0\Rightarrow f(f^k(x))=f(0)=0\Rightarrow f^{k+1}(x)=0\Rightarrow x\in N_{k+1}.$$
+On a montré que~:~$\forall k\in\Nn,\;N_k\subset N_{k+1}$. Ensuite,
+
+$$x\in I_{k+1}\Rightarrow\exists y\in E/\;x=f^{k+1}(y)\Rightarrow\exists z(=f(y))\in E/\;x=f^k(z)\Rightarrow x\in I_k.$$
+On a montré que~:~$\forall k\in\Nn,\;I_{k+1}\subset I_k$.
+ \item  
+  \begin{enumerate}
+  \item Soit $k$ un entier naturel. Supposons que $N_k=N_{k+1}$.
+
+On a déjà $N_{k+1}\subset N_{k+2}$. Montrons que $N_{k+2}\subset N_{k+1}$.
+
+Soit $x$ un élément de $E$.
+
+\begin{align*}
+x\in N_{k+2}&\Rightarrow f^{k+2}(x)=0\Rightarrow f^{k+1}(f(x))=0\Rightarrow f(x)\in N_{k+1}=N_k
+\Rightarrow f^k(f(x))=0\\
+ &\Rightarrow f^{k+1}(x)=0\Rightarrow x\in N_{k+1}.
+\end{align*}
+  \item  On a $\{0\}=N_0\subset N_1\subset N_2...$ Supposons que chacune de ces inclusions soient strictes. Alors,
+$0=\mbox{dim }N_0<\mbox{dim }N_1<\mbox{dim }N_2$... Donc $\mbox{dim }N_1\geq1$, $\mbox{dim }N_2\geq2$ et par une récurrence
+facile, $\forall k\in\Nn,\;\mbox{dim }N_k\geq k$. En particulier, $\mbox{dim }N_{n+1}\geq n+1>n=\mbox{dim }E$, ce qui est
+impossible. Donc, il existe $k$ entier naturel tel que $N_k=N_{k+1}$.
+
+Soit $p$ le plus petit de ces entiers $k$ (l'existence de $p$ est démontrée proprement de la façon suivante~:~si
+$K=\in\{k\in\Nn/\;N_k=N_{k+1}\}$, $K$ est une partie non vide de $\Nn$ et admet donc un plus petit élément). On note
+que puisque $f$ est non injectif, $\{0\}=N_0\underset{\neq}{\subset}N_1$ et donc $p\in\Nn^*$. Par définition de $p$,
+pour $k<p$, $N_k\underset{\neq}{\subset}N_{k+1}$ et, d'après le a) et puisque $N_p=N_{p+1}$, on montre par récurrence
+que pour $k=p$, on a $N_k=N_p$.
+  \item  $0<\mbox{dim }N_1<...<\mbox{dim }N_p$ montre que pour $k\leq p$, on a $\mbox{dim }N_k=k$ et en particulier $p
+\leq\mbox{dim }N_p=n$.
+  \end{enumerate}
+ \item  Puisque $N_k\subset N_{k+1}$, $I_{k+1}\subset I_k$ et que $\mbox{dim }E<+\infty$, on a~:
+
+$$N_k=N_{k+1}\Leftrightarrow\mbox{dim }N_k=\mbox{dim }N_{k+1}\Leftrightarrow
+n-\mbox{rg }(f^k)=n-\mbox{rg }(f^{k+1})\Leftrightarrow\mbox{dim }(I_k)=\mbox{dim }(I_{k+1})\Leftrightarrow I_k=I_{k+1}.$$
+
+Donc, pour $k<p$, $I_k\underset{neq}{\subset}I_{k+1}$ et pour $k=p$, $I_k=I_{k+1}$.
+ \item  Soit $x\in I_p\cap N_p$. Alors, $f^p(x)=0$ et $\exists y\in E/\;x=f^p(y)$. D'où, $f^{2p}(y)=0$ et $y\in
+N_{2p}=N_p$ (puisque $2p\geq p$) et donc $x=f^p(y)=0$. On a montré que $I_p\cap N_p=\{0\}$. Maintenant, le théorème du
+rang montre que $E=\mbox{dim }(I_p)+\mbox{dim }(N_p)$ et donc $E=I_p\oplus N_p$.
+
+Posons $f_{/I_p}=f'$. $f'$ est déjà un endomorphisme de $I_p$ car $f'(I_p)=f(I_p)=I_{p+1}=I_p$.
+
+Soit alors $x\in I_p$. $\exists y\in E/\;x=f^p(y)$.
+
+$$x\in\mbox{Ker }f'\Rightarrow f'(x)=0\Rightarrow f(f^p(y))=0\Rightarrow y\in N_{p+1}=N_p x=f_p(y)=0.$$
+
+Donc $\mbox{Ker }f'=\{0\}$ et donc, puisque $\mbox{dim }I_p<+\infty$, $f'\in\mathcal{GL}(I_p)$.
+ \item  Soient $k$ un entier naturel et $g_k$ la restriction de $f$ à $I_k$.
+
+D'après le théorème du rang, $d_k=\mbox{dim }(I_k)=\mbox{dim }(\mbox{Ker }g_k)+\mbox{dim }(\mbox{Im }g_k)$.
+Maintenant, $\mbox{Im }g_k=g_k(I_k)=f(I_k)=I_{k+1}$ et donc $\mbox{dim }(\mbox{Im }g_k)=d_{k+1}$. D'autre part, $\mbox{Ker }g_k=\mbox{Ker }f_{/I_k}=\mbox{Ker }f\cap I_k$.
+ 
+Ainsi, pour tout entier naturel $k$, $d_k-d_{k+1}=\mbox{dim }(\mbox{Ker }f\cap I_k)$. Puisque la suite $(I_k)_{k\in\Nn}$ est décroissante pour l'inclusion, la suite d'entiers naturels $(\mbox{dim }(\mbox{Ker }f\cap I_k))_{k\in\Nn}=(d_k-d_{k+1})_{k\in\Nn}$ est décroissante.
+\end{enumerate}
+\fincorrection
+\finexercice

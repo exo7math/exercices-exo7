@@ -1,0 +1,43 @@
+\exercice{5607, rouget, 2010/10/16}
+\enonce[**]
+Rang de la matrice $(i+j+ij)_{1\leqslant i,j\leqslant n}$.
+\finenonce
+
+\noindication
+
+\correction
+Pour $j\in\llbracket1,n\rrbracket$, notons $C_j$ la $j$-ème colonne de la matrice $A$. Posons encore $U=\left(
+\begin{array}{c}
+1\\
+2\\
+\vdots\\
+n
+\end{array}
+\right)$  et $V=\left(
+\begin{array}{c}
+2\\
+3\\
+\vdots\\
+n+1
+\end{array}
+\right)$. Pour $j\in\llbracket1,n\rrbracket$, on a
+
+\begin{center} 
+$Cj = (i+j(i+1))_{1\leqslant i\leqslant n}= (i)_{1\leqslant i\leqslant n}+j(i+1)_{1\leqslant i\leqslant n}=U+jV$.
+\end{center}
+
+Donc $\text{Vect}(C_1,...,C_n)\subset\text{Vect}(U,V)$ et en particulier, $\text{rg}A\leqslant 2$.
+Maintenant, si $n\geqslant 2$, les deux premières colonnes de $A$ ne sont pas colinéaires car $\left|
+\begin{array}{cc}
+3&5\\
+5&8
+\end{array}
+\right|=-1\neq0$. Donc, si $n\geqslant2$, $\text{rg}A=2$ et si $n=1$, $\text{rg}A =1$.
+
+\begin{center}
+\shadowbox{
+Si $n\geqslant 2$, $\text{rg}(i+j+ij)_{1\leqslant i,j\leqslant n}=2$ et si $n=1$, $\text{rg}(i+j+ij)_{1\leqslant i,j\leqslant n}=1$.
+}
+\end{center}
+\fincorrection
+\finexercice

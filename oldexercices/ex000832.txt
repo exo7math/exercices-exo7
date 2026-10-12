@@ -1,0 +1,100 @@
+\exercice{832, cousquer, 2003/10/01}
+
+\enonce
+Calculer les primitives suivantes.
+\begin{enumerate}
+
+\item  $\displaystyle\int e^{\sin^2x} \sin2x\,dx$.
+
+\item  $\displaystyle\int\cos^5t\,dt$ ; $\displaystyle\int\cosh^3t\,dt$; 
+$\displaystyle\int\cos^4t\,dt$ ; $\displaystyle\int\sinh^4t\,dt$.
+
+\item  $\displaystyle\int x^3 e^x\,dx$.
+
+\item  $\displaystyle\int\ln x \,dx$ ; $\displaystyle\int x\ln x\,dx$; 
+$\displaystyle\int\arcsin x \,dx$.
+
+\item  $\displaystyle\int\cosh t \sin t \, dt$.
+
+\item  $\displaystyle\int{dx \over\sin x}$.
+
+\item  $\displaystyle\int\sqrt{a^2-x^2}\,dx$.
+
+\item  $\displaystyle\int{e^{2x}\over\sqrt{e^x+1}}\,dx$.
+
+\item  $\displaystyle\int e^{ax}\cos bx \,dx$~; 
+$\displaystyle\int e^{ax}\sin bx \,dx$.
+
+\item  $\displaystyle\int\sqrt{x \over(1-x)^3}\,dx$\quad pour\quad$0<x<1$.
+
+\item  $\displaystyle\int{x^2 \over\sqrt{1-x^2}}\,dx$.
+
+\item  $\displaystyle\int{dx \over\cos x+2\sin x +3}$.
+
+\item  $\displaystyle\int{\sqrt x\,dx \over\sqrt{a^3-x^3}}$ \quad avec 
+\quad $0<x<a$.
+
+\item  $\displaystyle\int{\cosh x\over\cosh x+\sinh x}\,dx$.
+\end{enumerate}
+
+
+
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+
+
+\item   Changement de variable $u= \sin^2x$ (ou d'abord $u=\sin x$)~;
+$e^{\sin^2x}+C$.
+
+\item   Deux méthodes~: changement de variable $u=\sin t$ (ou $u=\sinh t$),
+ou linéarisation.\newline
+$ {1\over15}(15\sin t -10\sin^3 t+3\sin^5 t)+C$ ou
+$ {1\over80}\sin5t+{5\over48}\sin3t+{5\over8}\sin t +C$~;\newline
+$ \sinh t + {1\over3}\sinh^3 t +C$ ou ${1\over12}\sinh3t +{3\over4}\sinh t+C$~;\newline
+${1\over32}(\sin4t+8\sin2t+12t) +C$~;
+${1 \over32}(\sinh4t-8\sinh2t+12t)+C$.
+
+\item   Intégrations par parties~: $(x^3-3x^2+6x-6)e^x+C$.
+
+\item   Intégration par parties~: $x\ln x-x+C$~;
+${x^2\over2}\ln x -{x^2\over4}+C$~; $x\arcsin x+\sqrt{1-x^2}+C$.
+
+\item   Intégrations par parties~: ${1\over2}(\sinh t\sin t -\cosh t\cos t)+C$.
+
+\item   Changement de variable $t=\tan{x\over2}$~;
+$\ln\bigl\vert\tan{x\over2}\bigr\vert+C$ sur chaque intervalle\dots
+
+\item   Changement de variable $x=a\sin u$~;
+${a^2\over2}\arcsin{x\over a} + {x\over2}\sqrt{a^2-x^2} + C$.
+
+\item   Changement de variable $u=e^x$~; ${2\over3}\sqrt{e^x+1}(e^x-2)+C$.
+
+\item   Intégrations par parties~:
+${1\over a^2+b^2}e^{ax}(a\cos bx + b\sin bx)+C$~;\newline
+${1\over a^2+b^2}e^{ax}(-b\cos bx + a\sin bx)+C$.
+
+\item   Changement de variable $t=\sqrt{x\over1-x}$~;
+$2\sqrt{x\over1-x}-2\arctan\sqrt{x\over1-x}+C$.
+
+\item   Changement de variable $t=\arcsin x$~;
+${1\over2}(\arcsin x - x\sqrt{1-x^2}) + C$.
+
+\item   Changements de variable $u=\tan{x\over2}$, $t=1+u$~;
+$\arctan(\tan{x\over2}+1)+C$ sur chaque intervalle\dots{} Mais, au fait, ne
+cherchait-on pas une primitive {\it sur} $\bf R$~?
+
+\item   Changement de variable $x^3=u^2$~;
+${2\over3}\arcsin\sqrt{x^3\over a^3}+C$.
+
+\item  Multiplier et diviser par $\cosh x-\sinh x$, ou passer en $e^x$~;
+${x\over2} +{\sinh2x\over4}-{\cosh2x\over4}+C$ ou
+${x\over2}-{e^{-2x}\over4}+C$.
+\end{enumerate}
+\fincorrection
+
+\finexercice
+

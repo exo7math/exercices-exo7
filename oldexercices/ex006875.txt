@@ -1,0 +1,42 @@
+\exercice{6875, gammella, 2012/05/29}
+
+\enonce
+On considère la forme différentielle
+$\omega=(x^2+y^2+2x) dx+2y dy$.
+\begin{enumerate}
+\item
+Montrer que $\omega$ n'est pas exacte.
+\item
+Trouver une fonction $\psi(x)$ telle que $\psi(x) \omega=df$. Préciser
+alors $f$. (On dit que $\psi$ est un facteur intégrant.)
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item Posons $P(x,y)=x^2+y^2+2x$ et $Q(x,y)=2y$. On voit facilement
+que $ \frac{\partial P}{\partial y}\not=\frac{\partial Q}{\partial x}$. La forme
+$\omega$ n'est donc pas exacte.
+
+\item Comme $\omega$ est définie sur $\Rr^2$, il suffit que $\psi\omega$ soit exacte pour que $f$ existe.
+Maintenant, $\psi\omega$ est exacte si et seulement si
+$$ \frac{\partial (\psi(x)(x^2+y^2+2x))}{\partial y } =  \frac{\partial(\psi(x) 2y)} {\partial x}.$$
+Ceci équivaut à $2y \psi(x)=2y\psi'(x)$. Ainsi, $\psi(x)=\psi'(x)$ pour tout $x$. Donc
+$\psi(x)=k e^x$ avec $k$ constante. On peut choisir $k=1$.
+Ainsi  $$\psi\omega=e^x(x^2+y^2+2x) dx+e^x(2y)dy.$$ On cherche ensuite $f$ telle que :
+$$  \left\{ \begin{array}{lll}
+\frac{\partial f} {\partial x}& = &e^x(x^2+y^2+2x) \\
+\frac{\partial f}{\partial y} &= &e^x(2y) \\
+\end{array} \right .$$
+En intégrant la deuxième équation par rapport à $y$, on trouve 
+$$f(x,y)=e^xy^2+c(x).$$
+En dérivant cette expression par rapport à $x$ et en égalisant avec la première équation du système, on obtient
+$$ e^xy^2+c'(x)=e^x(x^2+y^2+2x)$$ c'est-à-dire
+$$c'(x)=e^x(x^2+2x).$$
+Il en résulte que $c(x)=x^2 e^x+c$ et donc que
+$$f(x,y)=e^x (x^2+y^2)+c$$ avec $c$ dans $\Rr$.
+\end{enumerate}
+\fincorrection
+\finexercice

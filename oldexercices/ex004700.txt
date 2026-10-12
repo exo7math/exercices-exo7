@@ -1,0 +1,18 @@
+\exercice{4700, quercia, 2010/03/16}
+\enonce[$u_n^2+u_n-u_{n+1} \to 0$ (X MP$^*$ 2000)]
+
+Soit $u_n$ une suite r{\'e}elle born{\'e}e. On suppose que
+$u_n^2+u_n-u_{n+1}\xrightarrow[n\to\infty]{} 0$. Montrer que $u_n\rightarrow 0$. 
+\finenonce
+
+\noindication
+
+\correction
+Soit $E$ l'ensemble des valeurs d'adh{\'e}rence de~$(u_n)$. Si $u_{n_k}\xrightarrow[k\to\infty]{}\lambda$
+alors $u_{n_k+1}\xrightarrow[k\to\infty]{}\lambda+\lambda^2$ donc $E$ est stable
+par l'application $f$ : $x \mapsto x+x^2$. En fait $E$ est invariant par cette application
+car la suite $(u_{n_k-1})$ admet une valeur d'adh{\'e}rence $\mu \in E$ et on a
+$\mu^2+\mu = \lambda$. En particulier l'intervalle $[\inf(E),\sup(E)]$ est invariant par~$f$ ce qui implique $\sup(E) = \inf(E) = 0$.
+\fincorrection
+
+\finexercice

@@ -1,0 +1,20 @@
+\exercice{5611, rouget, 2010/10/16}
+\enonce[**]
+Soient $A=(a_{i,j})_{1\leqslant i,j\leqslant n}$ et $B=(b_{i,j})_{1\leqslant i,j\leqslant n}$ deux matrices carrées de format $n$ telles que 
+$a_{i,j}=0$ si $j\leqslant i+r -1$ et $b_{i,j}= 0$ si $j\leqslant i+s-1$ où $r$ et $s$ sont deux entiers donnés entre $1$ et $n$.
+Montrer que si $AB=(c_{i,j})_{1\leqslant i,j\leqslant n}$ alors $c_{i,j}=0$ si $j\leqslant i+r+s-1$.
+\finenonce
+
+\noindication
+
+\correction
+Par hypothèse, $a_{i,j}= 0$ pour $j\leqslant i + r - 1$ et $bi,j = 0$ pour $j\leqslant i + s - 1$.
+
+Soient $i$ et $j$ deux indices tels que $j\leqslant i + r + s - 1$. Le coefficient ligne $i$, colonne $j$, de $AB$ vaut $\sum_{k=1}^{n}a_{i,k}b_{k,j}$.
+
+ 
+Dans cette somme, si $k\leqslant i + r -1$, $a_{i,k}= 0$. Sinon $k\geqslant i + r$ et donc $j\leqslant i + r + s - 1\leqslant k + s - 1$ et dans ce cas $b_{k,j}= 0$.
+
+Finalement, le coefficient ligne $i$, colonne $j$, de $AB$ est bien nul si $j\leqslant i + r+s-1$.
+\fincorrection
+\finexercice

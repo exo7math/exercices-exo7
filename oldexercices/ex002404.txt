@@ -1,0 +1,64 @@
+\exercice{2404, mayer, 2003/10/01}
+\enonce 
+\label{exn13}
+Soit $\alpha _n >0$ tel que la s\'erie $\sum_{n=1}^\infty \alpha _n $
+converge. Soit $(X,d)$ un espace m\'etrique complet et $f:X\to X$
+une application pour laquelle
+$$ d(f^n(x),f^n(y))\leq \alpha_n d(x,y) \quad \text{pour tout } x,y\in X \;
+\text {et }\; n\in \Nn\; .$$ Montrer que, sous ces conditions, $f$
+poss\`ede un unique point fixe $p\in X$, que pour tout point
+initial $x_0 \in X$, la suite  des it\'er\'ees $(x_n=f^n
+(x_0))_{n\geq 0}$ converge vers $p$ et que la vitesse de
+convergence d'une telle suite est contr\^ol\'ee par
+$$ d(p,x_n) \leq \left ( \sum_{\nu =n}^\infty \alpha _\nu \right ) d(x_1,x_0) \; .$$
+\finenonce
+
+\indication
+C'est à peu prés la même démonstration que pour le théorème du point fixe d'une fonction contractante.
+\finindication
+
+\correction
+\begin{enumerate}
+  \item Commen\c{c}ons par l'unicité, si $x,y$ sont deux points fixes alors $f(x)=x$ et $f(y)=y$ donc la relation pour $f$ s'écrit
+$$d(x,y) \le \alpha_n d(x,y) \quad \forall n \in \Nn.$$
+Comme $\sum_{n\ge1}\alpha_n$ converge alors $(\alpha_n)$ tend vers $0$, donc il existe $n_0$ assez grand avec $\alpha_{n_0} < 1$, la relation devient 
+$$ d(x,y) \le \alpha_{n_0} d(x,y) < d(x,y),$$
+ce qui est contradictoire.
+
+  \item  Soit $x_0 \in X$, notons $x_n = f^n(x_0)$. Alors
+$$d(x_{n+1},x_n) \le \alpha_n d(x_1,x_0) \quad \forall n \in \Nn.$$
+On va montrer que $(x_n)$ est une suite de Cauchy, c'est-à-dire
+$$\forall \epsilon >0 \quad \exists N\in\Nn \quad
+\forall n \ge N \quad \forall p \ge0\qquad d(x_{n+p},x_n) \le \epsilon.$$
+Pour $n,p$ fixés, évaluons $d(x_{n+p},x_n)$.
+\begin{align*}
+d(x_{n+p},x_n) 
+   &\le \sum_{k=n}^{n+p-1} d(x_{k+1},x_k) \\
+   &\le \sum_{k=n}^{n+p-1} \alpha_k d(x_{1},x_{0}) \\
+   &= d(x_{1},x_{0})\sum_{k=n}^{n+p-1} \alpha_k \\ 
+\end{align*}
+
+De plus la série $\sum_{n\ge1}\alpha_n$ converge donc la suite $(S_n)$ définie par
+$S_n = \sum_{k=1}^n \alpha_k$ est de Cauchy et donc il existe $ N$ tel que
+pour tout $n\ge N$ et tout $p\ge 0$ on a
+$$\sum_{k=n}^{n+p-1} \alpha_k = S_{n+p-1}-S_{n-1} \le \epsilon.$$
+Donc pour tout $n\ge N$ et tout $p\ge 0$ on $ d(x_{n+p},x_n) \le d(x_1,x_0)\epsilon$.
+Quitte à poser $\epsilon'= d(x_1,x_0)\epsilon$, ceci prouve que $(x_n)$ est une suite de Cauchy.  
+ Comme l'espace est complet alors cette suite converge, notons $x$ sa limite.
+
+Pour tout $n\in \Nn$ nous avons
+$$x_{n+1}=f(x_n).$$
+\`A la limite, la suite $(x_{n+1})$ tend vers $x$, et comme $f$ est continue
+(elle est $\alpha_1$-lipschitziènne : $d(f(x),f(y)) \le \alpha_1 d(x,y)$) alors
+$(f(x_n))$  converge vers $f(x)$. Par unicité de la limite nous obtenons
+$$x=f(x).$$
+Donc $f$ possède un point fixe, qui est unique et est obtenu en partant d'un point quelconque $x_0\in X$ comme limite de $(f^n(x_0))_n$.
+
+  \item Il reste à estimer la vitesse de convergence, nous avons vu
+$$ d(x_{n+p},x_n) \le d(x_{1},x_{0})\sum_{k=n}^{n+p-1} \alpha_k,$$
+On fait tendre $p$ vers $+\infty$ dans cette inégalité alors
+$$ d(x,x_n) \le d(x_{1},x_{0})\sum_{k=n}^{+\infty} \alpha_k.$$
+Ce qui était l'estimation recherchée.
+\end{enumerate}
+\fincorrection
+\finexercice

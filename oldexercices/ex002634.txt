@@ -1,0 +1,77 @@
+\exercice{2634, debievre, 2009/05/19}
+\enonce
+Utiliser une approximation affine bien choisie pour calculer une valeur approch\'ee des nombres suivants:
+\[
+\exp[\sin(3.16)\cos(0.02))], \quad \arctan[\sqrt{4.03}-2\exp(0.01)].
+\]
+\finenonce
+
+\indication Prendre
+\begin{align*}
+f(x,y)&=\exp[\sin(\pi+x)\cos y]=\exp[-\sin x \cos y ],
+\\
+h(x,y)&=\arctan[\sqrt{4+x}-2\exp(y)] .
+\end{align*}
+\finindication
+
+\correction 
+\begin{align*}
+\frac{\partial f}{\partial x}&= -\cos x \cos y\exp[-\sin x \cos y ]
+\\
+\frac{\partial f}{\partial y}&= \sin x \sin y\exp[-\sin x \cos y ]
+\end{align*}
+etc. d'o\`u, avec $\frac{\partial f}{\partial x}(0,0)=-1$ et
+$\frac{\partial f}{\partial y}(0,0)=0$,
+\[
+f(x,y)
+=
+f(0,0)+\frac{\partial f}{\partial x}(0,0)x+\frac{\partial f}{\partial y}(0,0)y
++\ldots
+=1-x +\ldots
+\]
+Avec $x=0,0184$ on trouve, pour
+$\exp[\sin(3.16)\cos(0.02))]$,
+la valeur approch\'ee $1-0,0184 =0,9816$. 
+
+N.B. On peut faire mieux si n\'ecessaire : Avec
+\begin{align*}
+\frac{\partial^2 f}{\partial x^2}&= (\sin x \cos y
++\cos^2 x \cos^2 y)\exp[-\sin x \cos y ]
+\\
+\frac{\partial^2 f}{\partial x \partial y}&
+= (\cos x \sin y+\cos x \cos y \sin x \sin y)\exp[-\sin x \cos y ]
+\\
+\frac{\partial^2 f}{\partial y^2}&=(\sin x \cos y
++\sin^2 x \sin^2 y)\exp[-\sin x \cos y ]
+\end{align*}
+on trouve
+\[
+f(x,y)
+=
+f(0,0)+\frac{\partial f}{\partial x}(0,0)x+\frac{\partial f}{\partial y}(0,0)y
++\ldots
+=1-x++\tfrac 12 x^2 +\ldots
+\]
+etc.
+
+De m\^eme,
+\begin{align*}
+\frac{\partial h}{\partial x}&= \frac 1 {2(1+(\sqrt{4+x}-2\exp(y))^2)\sqrt{4+x}}
+\\
+\frac{\partial h}{\partial y}&= -\frac {2\exp(y)} {1+(\sqrt{4+x}-2\exp(y))^2}
+\end{align*}
+etc. d'o\`u,  avec $\frac{\partial h}{\partial x}(0,0)=\tfrac 14$ et
+$\frac{\partial h}{\partial y}(0,0)=-2$,
+\[
+h(x,y)
+=
+h(0,0)+\frac{\partial h}{\partial x}(0,0)x+\frac{\partial h}{\partial y}(0,0)y
++\ldots
+=\tfrac 14 x-2y +\ldots .
+\]
+Avec $x=0,03$ et $y=0,01$ on trouve, pour
+$ \arctan[\sqrt{4.03}-2\exp(0.01)]$,
+la valeur approch\'ee $0,0075-0,02 =-0,00125$. 
+
+\fincorrection
+\finexercice

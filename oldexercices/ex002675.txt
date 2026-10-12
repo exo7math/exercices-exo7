@@ -1,0 +1,38 @@
+\exercice{2675, matexo1, 2002/02/01}
+
+\enonce
+D{\'e}velopper la fonction
+$$f(x) = {1\over 2-\cos x} $$ 
+en s{\'e}rie de Fourier, en calculant les coefficients par
+la m{\'e}thode des r{\'e}sidus.
+\finenonce
+\noindication
+\correction
+% correction ajoutée le 18/11/2018
+La fonction est paire, donc ses coefficients $b_n$ sont nuls et on calcule ici ses coefficients $a_n$.
+
+Pour $n\geq 1$, on a : 
+\[ a_n 
+= \frac{1}{\pi} \int_0^{2\pi}f(t)\cos(nt)dt
+= \frac{1}{\pi} \int_0^{2\pi}\frac{\cos(nt)}{2-\cos(t)}dt
+\]
+
+On peut écrire 
+\begin{align*}
+a_n &= \Re \frac{1}{\pi} \int_0^{2\pi}f(t)e^{int}dt\\
+&= \Re \frac{1}{\pi} \int_{\mathcal C}\frac{z^n}{2-\frac12 \left(z+z^{-1}\right)}\frac{dz}{iz}\\
+&= \Re \frac{1}{i\pi} \int_{\mathcal C}\frac{2z^n}{4z-z^2-1}dz\\
+&= 4\Re \sum_\alpha Res\left(\frac{z^n}{4z-z^2-1},\alpha\right)
+\end{align*}
+Comme $n\geq 1$, il n'y a qu'un seul pôle dans le disque : le pôle simple $2-\sqrt 3$. Le résidu en ce pôle vaut $\frac{(2-\sqrt 3)^n}{2\sqrt 3}$ qui est  déjà un nombre réel.\\
+
+On en déduit que 
+\[ a_n = \frac{2}{\sqrt 3}(2-\sqrt 3)^n.\]
+
+Le coefficient $a_0$ est obtenu de la même façon, mais il faut diviser par deux, vu la définition particulière lorsque $a=0$. On obtient donc $a_0 = \frac{1}{\sqrt 3}$.
+
+Finalement, on a donc :
+$$ f(x) = {1\over\sqrt 3}\left[1+ 2\sum_{n=0}^{+\infty } 
+(2-\sqrt 3)^n \cos nx\right].$$
+\fincorrection
+\finexercice

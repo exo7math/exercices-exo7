@@ -1,0 +1,51 @@
+\exercice{2203, debes, 2008/02/12}
+\enonce 
+Soit $G$ un groupe simple d'ordre $60$. \smallskip
+
+(a) Montrer que $G$ admet $6$ $5$-Sylow, et que l'action de conjugaison sur ses
+$5$-Sylow d\'efinit un morphisme injectif $\alpha : G \rightarrow S_6$, une fois
+une num\'erotation des $5$-Sylow de $G$ choisie. Montrer que l'image $\alpha (G)=H$
+est contenue dans $A_6$.
+\smallskip
+
+(b) On consid\`ere l'action de $A_6$ par translation \`a gauche sur l'ensemble
+$A_6/.H$ des classes \`a gauche. Montrer qu'elle d\'efinit un isomorphisme
+$\varphi : A_6 \rightarrow A_6$, une fois une num\'erotation des \'el\'ements de
+$A_6/.H$ choisie. 
+\smallskip
+
+(c) Montrer que $\varphi (H) $ est le fixateur de la classe de l'\'el\'ement
+neutre $H$, et en conclure que $G \simeq A_5$.
+\finenonce 
+
+\noindication
+\correction
+(a) Le nombre de $5$-Sylow dans un groupe $G$ d'ordre $60=2^2.3.5$ est $\equiv 1\
+[\hbox{\rm mod}\ 5]$ et divise $12$. Comme $G$ est suppos\'e simple, ce ne peut
+\^etre $1$; il y a donc $6$ $5$-Sylow. Le morphisme $\alpha: G\rightarrow S_6$
+correspondant \`a l'action de $G$ par conjugaison sur les $5$-Sylow (une fois une
+num\'erotation des $5$-Sylow de $G$ choisie) est forc\'ement injectif puisque son
+noyau, \'etant un sous-groupe distingu\'e diff\'erent de $G$ (d'apr\`es
+les th\'eor\`emes de Sylow, $G$ agit transitivement sur les $5$-Sylow), est
+n\'ecessairement trivial. Consid\'erons ensuite le groupe $\alpha^{-1}(A_6)$. C'est
+un sous-groupe distingu\'e de $G$ (comme image r\'eciproque par un morphisme du
+sous-groupe distingu\'e $A_6$ de $S_6$). Si $\alpha^{-1}(A_6)=\{1\}$ alors, pour
+tout $g\in G$, comme $\alpha(g^2)=\alpha(g)^2\in A_6$, on aurait $g^2=1$ et donc
+$G$ ab\'elien, ce qui est absurde. On a donc $\alpha^{-1}(A_6)=G$, c'est-\`a-dire,
+$\alpha (G)=H\subset A_6$. 
+\smallskip
+
+(b) Notons $\varphi:A_6 \rightarrow S_6$ le morphisme
+correspondant \`a l'action de $A_6$ par translation \`a gauche sur $A_6/.H$ (une
+fois une num\'erotation des \'el\'ements de $A_6/.H$ choisie). En utilisant la
+simplicit\'e de $A_6$, on montre comme ci-dessus que $\varphi$ est injectif et que
+$\varphi(A_6)\subset A_6$. Il en d\'ecoule que $\varphi$ est un isomorphisme
+entre $A_6$ et $\varphi(A_6)= A_6$.
+\smallskip
+
+(c) Un \'el\'ement $x\in A_6$ fixe la classe neutre $H$ si et seulement si $x\in H$.
+On obtient que $H$ est isomorphe, {\it via} $\varphi$, au fixateur d'un entier,
+disons $6$, dans l'action de $A_6$ sur $\{1,\ldots,6\}$, c'est-\`a-dire, \`a $A_6
+\cap S_5 = A_5$.
+\fincorrection
+\finexercice

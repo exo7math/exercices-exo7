@@ -1,0 +1,20 @@
+\exercice{5693, rouget, 2010/10/16}
+\enonce[***]
+Soit $\sigma$ une injection de $\Nn^*$ dans lui-même. Montrer que la série de terme général $\frac{\sigma(n)}{n^2}$ diverge.
+
+\finenonce
+
+\noindication
+
+\correction
+Soit $\sigma$ une permutation de $\llbracket1,n\rrbracket$. Montrons que la suite $S_n=\sum_{k=1}^{n}\frac{\sigma(k)}{k^2}$, $n\geqslant1$, ne vérifie pas le critère de \textsc{Cauchy}. Soit $n\in\Nn^*$.
+
+\begin{align*}\ensuremath
+S_{2n}-S_n&=\sum_{k=n+1}^{2n}\frac{\sigma(k)}{k^2}\geqslant\frac{1}{(2n)^2}\sum_{k=n+1}^{2n}\sigma(k)\\
+ &\geqslant\frac{1}{4n^2}(1+2+...+n)\;(\text{car les}\;n\;\text{entiers}\;\sigma(k),\;1\leqslant k\leqslant n,\;\text{sont strictement positifs et deux à deux distincts})\\
+ &=\frac{n(n+1)}{8n^2}\geqslant\frac{n^2}{8n^2}=\frac{1}{8}.
+\end{align*}
+
+Si la suite $(S_n)$ converge, on doit avoir $\lim_{n \rightarrow +\infty}(S_{2n}-S_n)=0$ ce qui contredit l'inégalité précédente. Donc la série de terme général $\frac{\sigma(n)}{n^2}$, $n\geqslant1$, diverge.
+\fincorrection
+\finexercice

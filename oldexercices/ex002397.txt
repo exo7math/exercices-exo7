@@ -1,0 +1,57 @@
+\exercice{2397, mayer, 2003/10/01}
+\enonce 
+\label{exocomp}
+On consid\`ere l'espace des fonctions continues $X={\cal
+C}([a,b])$. \begin{enumerate}
+\item Soit $\omega \in X$ une fonction qui ne s'annule pas sur
+$[a,b]$. Posons $$d_\omega (f,g) = \sup_{t\in[a,b]} |\omega (t)
+(f(t)-g(t))| \; .$$
+ L'espace $(X,d_\omega)$ est-il complet?
+ \item Montrer que l'espace $(X, \|.\|_1)$ n'est pas complet (o\`u
+ $\|f\|_1 = \int _0^1 |f(t)| \, dt$).
+ \end{enumerate}
+\finenonce
+
+\indication
+\begin{enumerate}
+  \item $(X,d_\omega)$ est complet. La démonstration est presque la m\^eme que pour montrer que
+$({\cal C}([a,b]), \|.\|_\infty)$ est complet.
+
+  \item Prendre par exemple, la fonction $f_n$ définie sur $[0,1]$ par $f_n(t) = 1$ pour $t\in[0,\frac 12]$, $f_n(t)=(1-n(t-\frac12))$ pour $t\in[\frac 12,\frac 12+\frac 1n]$
+et $f(t)=0$ si $t\ge \frac 12+\frac 1n$.
+\end{enumerate}
+\finindication
+
+\correction
+\begin{enumerate}
+  \item 
+
+  \begin{enumerate}
+    \item Montrons que $(X,d_\omega)$ est complet. Soit $(f_n)_n$ une suite de Cauchy pour cet distance. Alors pour chaque $t\in[a,b]$, $(f_n(t))_n$ est une suite de Cauchy pour $(\Rr,|.|)$. Comme $\Rr$ est complet alors cette suite converge, notons $f(t)$ sa limite.
+
+Il faut montrer deux choses : premièrement que $(f_n)$ converge vers $f$ pour la distance considérée, deuxièmement que $f$ est bien dans l'espace $X$.
+
+    \item Comme $(f_n)$ est une suite de Cauchy. Pour $\epsilon > 0$. Il existe $n\ge0$ tel que pour tout $p\ge 0$ : $d_\omega(f_n,f_{n+p})  < \epsilon.$
+Donc 
+$$ \sup_{t\in[a,b]} |\omega (t)
+(f_n(t)-f_{n+p}(t))| < \epsilon.$$
+On fait tendre $p$ vers $+\infty$ et on obtient :
+$\sup_{t\in[a,b]} |\omega (t) (f_n(t)-f(t))| < \epsilon.$
+Donc $(f_n)$ converge vers $f$ pour la distance $d_\omega$.
+
+   \item  $\omega$ est une fonction non nulle sur le compact $[a,b]$, donc 
+il existe $\alpha >0$ tel que $\omega(t)>\alpha$ pour tout $t\in[a,b]$.
+On en déduit que 
+$$\|f_n-f\|_\infty \le \frac 1 \alpha d_\omega(f_n,f).$$
+Comme $ d_\omega(f_n,f)$ tend vers $0$ alors $f_n$ converge vers $f$ pour la norme infini. Donc $f$ est continue.
+
+Conclusion : $(X,d_\omega)$ est complet.
+ \end{enumerate} 
+
+  \item On définit $f_n$ sur $[0,1]$ par $f_n(t) = 1$ pour $t\in[0,\frac 12]$, $f_n(t)=(1-n(t-\frac12))$ pour $t\in[\frac 12,\frac 12+\frac 1n]$
+et $f(t)=0$ si $t\ge \frac 12+\frac 1n$. En effet $(f_n)$ converge (au sens de la convergence simple) vers la fonction $f$, o\`u $f$ est définie par $f(t)=1$ sur $[0,\frac 12]$ et $f(t)=0$ sur $]\frac12,1]$.
+
+On montre facilement que $(f_n)$ est une suite de Cauchy pour la norme $\| . \|_1$ en prouvant que pour $p,q\ge n$ on a $\|f_p - f_q\|_1 \le \frac1n$. Par contre $(f_n)$ ne converge pas dans $X$ car $f$ n'est pas continue, donc n'appartient pas à l'espace $X$. Donc $X$ n'est pas complet.  
+\end{enumerate}
+\fincorrection
+\finexercice

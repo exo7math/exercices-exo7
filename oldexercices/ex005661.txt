@@ -1,0 +1,51 @@
+\exercice{5661, rouget, 2010/10/16}
+\enonce[***]
+Soit $E =SL_2(\Zz) =\{\text{matrices carrées de format}\;2\;\text{à coefficients dans}\;\Zz\;\text{et de déterminant}\;1\}$.
+
+\begin{enumerate}
+ \item  Montrer que $(E,\times)$ est un groupe
+
+\item  Soit $A$ un élément de $E$ tel que $\exists p\in\Nn^*/\;A^p = I_2$. Montrer que $A^{12} = I_2$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  \textbullet~$E$ contient $I_2$ et est inclus dans $GL_2(\Rr)$.
+
+\textbullet~Si $A$ et $B$ sont dans $E$ alors $AB$ est à coefficients entiers et $\text{det}(AB) =  \text{det}A\text{det}B  = 1$. Donc $AB$ est dans $E$. 
+
+\textbullet~Si $A$ est dans $E$, $\text{det}(A^{-1})= 1$ et en particulier $A^{-1}=\frac{1}{\text{det}A}{^t}\text{com}(A)$ est à coefficients entiers. On en déduit que $A^{-1}$ est dans $E$.
+
+Finalement
+
+\begin{center}
+\shadowbox{
+$E$ est un sous-groupe de $GL_2(\Rr)$.
+}
+\end{center}
+
+\item  Soit $A$ un élément de $E$ tel qu'il existe un entier naturel non nul $p$ tel que $A^p =I_2$.
+
+$A$ est diagonalisable dans $\Cc$ car annule le polynôme à racines simples $X^p-1$.
+
+$A$ admet deux valeurs propres distinctes ou confondues qui sont des racines $p$-èmes de $1$ dans $\Cc$ et puisque $A$ est réelle, on obtient les cas suivants :
+
+\textbf{1er cas.} Si $\text{Sp}A =(1,1)$, puisque $A$ est diagonalisable, $A$ est semblable à $I_2$ et par suite $A = I_2$. Dans ce cas, $A^{12}= I_2$.
+
+\textbf{2ème cas.} Si $\text{Sp}A = (-1,-1)$, $A = -I_2$ et $A^{12}=I_2$.
+
+\textbf{3ème cas.} Si $\text{Sp}A = (1,-1)$ alors $A$ est semblable à $\text{diag}(1,-1)$ et donc $A^2 = I_2$ puis encore une fois $A^{12}= I_2$.
+
+\textbf{4ème cas.} Si $\text{Sp}A =(e^{i\theta},e^{-i\theta})$. Dans ce cas $\text{Tr}A = 2cos\theta$ est un entier ce qui impose $2\cos\theta\in\{-2,-1,0,1,2\}$. Les cas $\cos\theta= 1$ et $\cos\theta=-1$ ont déjà été étudié.
+
+\textbullet~Si $\cos\theta= 0$, $\text{Sp}A=(i,-i)$ et $A$ est semblable à $\text{diag}(i,-i)$. Donc $A^4 =I_2$ puis $A^{12}= I_2$.
+
+\textbullet~Si $\cos\theta=\pm\frac{1}{2}$, $\text{Sp}A=(j,j^2)$ ou $\text{Sp}A=(-j,-j^2)$. Dans le premier cas, $A^3 = I_2$ et dans le deuxième $A^6 = I_2$.
+
+Dans tous les cas $A^{12}= I_2$.
+\end{enumerate}
+\fincorrection
+\finexercice

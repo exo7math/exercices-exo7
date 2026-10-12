@@ -1,0 +1,134 @@
+\exercice{5889, rouget, 2010/10/16}
+\enonce[*** I]
+Soit $f(x,y) =\left\{
+\begin{array}{l}
+y^2\sin\left( \frac{x}{y}\right)\;\text{si}\;y\neq0\\
+\rule{0mm}{5mm}0\;\text{si}\;y=0
+\end{array}
+\right.$.
+
+Déterminer le plus grand sous-ensemble de $\Rr^2$ sur lequel $f$ est de classe $C^1$. Vérifier que $ \frac{\partial^2f}{\partial x\partial y}(0,0)$ et $ \frac{\partial^2f}{\partial y\partial x}(0,0)$ existent et sont différents.
+\finenonce
+
+\noindication
+
+\correction
+On pose $D=\{(x,0),\;x\in\Rr\}$ puis $\Omega=\Rr^2\setminus D$.
+
+\textbullet~$f$ est définie sur $\Rr^2$.
+
+\textbullet~$f$ est de classe $C^1$ sur $\Omega$ en vertu de théorèmes généraux et pour $(x,y)\in\Omega$,
+
+\begin{center}
+$ \frac{\partial f}{\partial x}(x,y)=y\cos\left( \frac{x}{y}\right)$ et $ \frac{\partial f}{\partial y}(x,y)=2y\sin\left( \frac{x}{y}\right)-x\cos\left( \frac{x}{y}\right)$.
+\end{center}
+
+\textbullet~Etudions la continuité de $f$ en $(0,0)$. Pour $(x,y)\neq(0,0)$,
+
+\begin{center}
+$|f(x,y)-f(0,0)|=\left\{
+\begin{array}{l}
+y^2\left|\sin\left( \frac{x}{y}\right)\right|\;\text{si}\;y\neq0\\
+\rule{0mm}{5mm}0\;\text{si}\;y=0
+\end{array}
+\right.\leqslant\left\{
+\begin{array}{l}
+y^2\;\text{si}\;y\neq0\\
+\rule{0mm}{5mm}0\;\text{si}\;y=0
+\end{array}
+\right.\leqslant y^2$.
+\end{center}
+
+Comme $y^2$ tend vers $0$ quand $(x,y)$ tend vers $0$, $\displaystyle\lim_{\substack{(x,y)\rightarrow(0,0)\\(x,y)\neq(0,0)}}f(x,y)=f(0,0)$ et donc $f$ est continue en $(0,0)$ puis
+
+\begin{center}
+$f$ est continue sur $\Rr^2$.
+\end{center}
+
+\textbullet~Etudions l'existence et la valeur éventuelle de $ \frac{\partial f}{\partial x}(x_0,0)$, $x_0$ réel donné. Pour $x\neq x_0$,
+
+\begin{center}
+$ \frac{f(x,0)-f(x_0,0)}{x-x_0}= \frac{0-0}{x-x_0}=0$.
+\end{center}
+
+Donc $ \frac{f(x,x_0)-f(x_0,0)}{x-x_0}$ tend vers $0$ quand $x$ tend vers $x_0$. On en déduit que $ \frac{\partial f}{\partial x}(x_0,0)$ existe et $ \frac{\partial f}{\partial x}(x_0,0)=0$. Finalement, la fonction $ \frac{\partial f}{\partial x}$ est définie sur $\Rr^2$ par
+
+\begin{center}
+$\forall (x,y)\in\Rr^2$, $ \frac{\partial f}{\partial x}(x,y)=\left\{
+\begin{array}{l}
+y\cos\left( \frac{x}{y}\right)\;\text{si}\;y\neq0\\
+\rule{0mm}{5mm}0\;\text{si}\;y=0
+\end{array}
+\right.$.
+\end{center}
+
+\textbullet~Etudions l'existence et la valeur éventuelle de $ \frac{\partial f}{\partial y}(x_0,0)$, $x_0$ réel donné. Pour $y\neq 0$,
+
+\begin{center}
+$ \frac{f(x_0,y)-f(x_0,0)}{y-0}= \frac{y^2\sin\left( \frac{x_0}{y}\right)}{y}=y\sin\left( \frac{x_0}{y}\right)$.
+\end{center}
+
+On en déduit que $\left| \frac{f(x_0,y)-f(x_0,0)}{y-0}\right|\leqslant|y|$ puis que $ \frac{f(x_0,y)-f(x_0,0)}{y-0}$ tend vers $0$ quand $y$ tend vers $0$. Par suite, $ \frac{\partial f}{\partial y}(x_0,0)$ existe et $ \frac{\partial f}{\partial y}(x_0,0)=0$. Finalement, la fonction $ \frac{\partial f}{\partial y}$ est définie sur $\Rr^2$ par
+
+\begin{center}
+$\forall (x,y)\in\Rr^2$, $ \frac{\partial f}{\partial y}(x,y)=\left\{
+\begin{array}{l}
+2y\sin\left( \frac{x}{y}\right)-x\cos\left( \frac{x}{y}\right)\;\text{si}\;y\neq0\\
+\rule{0mm}{5mm}0\;\text{si}\;y=0
+\end{array}
+\right.$.
+\end{center}
+
+\textbullet~Etudions la continuité de $ \frac{\partial f}{\partial x}$ en $(x_0,0)$, $x_0$ réel donné. Pour $(x,y)\in\Rr^2$,
+
+\begin{center}
+$\left| \frac{\partial f}{\partial x}(x,y)- \frac{\partial f}{\partial x}(x_0,0)\right|=\left\{
+\begin{array}{l}
+|y|\left|\cos\left( \frac{x}{y}\right)\right|\;\text{si}\;y\neq0\\
+\rule{0mm}{5mm}0\;\text{si}\;y=0
+\end{array}
+\right.\leqslant|y|$.
+\end{center}
+
+Quand $(x,y)$ tend vers $(0,0)$, $|y|$ tend vers $0$ et donc $ \frac{\partial f}{\partial x}(x,y)$ tend vers $ \frac{\partial f}{\partial x}(x_0,0)$ quand $(x,y)$ tend vers $(x_0,0)$. La fonction $ \frac{\partial f}{\partial x}$ est donc continue en $(x_0,0)$ et finalement
+
+\begin{center}
+la fonction $ \frac{\partial f}{\partial x}$ est continue sur $\Rr^2$.
+\end{center}
+
+\textbullet~Etudions la continuité de $ \frac{\partial f}{\partial y}$ en $(x_0,0)$, $x_0$ réel donné. Supposons tout d'abord $x_0=0$. Pour $(x,y)\in\Rr^2$,
+
+\begin{center}
+$\left| \frac{\partial f}{\partial y}(x,y)- \frac{\partial f}{\partial y}(0,0)\right|=\left\{
+\begin{array}{l}
+\left|2y\sin\left( \frac{x}{y}\right)-x\cos\left( \frac{x}{y}\right)\right|\;\text{si}\;y\neq0\\
+\rule{0mm}{5mm}0\;\text{si}\;y=0
+\end{array}
+\right.\leqslant2|y|+|x|$.
+\end{center}
+
+Quand $(x,y)$ tend vers $(0,0)$, $|x|+2|y|$ tend vers $0$ et donc $ \frac{\partial f}{\partial y}(x,y)$ tend vers $ \frac{\partial f}{\partial y}(0,0)$ quand $(x,y)$ tend vers $(0,0)$. 
+
+Supposons maintenant $x_0\neq0$. Pour $y\neq0$, $ \frac{\partial f}{\partial y}(x_0,y)=2y\sin\left( \frac{x_0}{y}\right)-x_0\cos\left( \frac{x_0}{y}\right)$. Quand $y$ tend vers $0$, $2y\sin\left( \frac{x_0}{y}\right)$ tend vers $0$ car $\left|2y\sin\left( \frac{x_0}{y}\right)\right|$ et $x_0\cos\left( \frac{x_0}{y}\right)$ n'a pas de limite réelle car $x_0\neq0$. Donc $ \frac{\partial f}{\partial y}(x_0,y)$ n'a pas de limite quand $y$ tend vers $0$ et la fonction $ \frac{\partial f}{\partial y}$ n'est pas continue en $(x_0,0)$ si $x_0\neq0$. On a montré que
+
+\begin{center}
+$f$ est de classe $C^1$ sur $\Omega\cup\{(0,0)\}$.
+\end{center}
+
+\textbullet~Etudions l'existence et la valeur éventuelle de $ \frac{\partial^2f}{\partial x\partial y}(0,0)$. Pour $x\neq0$,
+
+\begin{center} 
+$ \frac{ \frac{\partial f}{\partial y}(x,0)- \frac{\partial f}{\partial y}(0,0)}{x-0}= \frac{0-0}{x}=0$.
+\end{center}
+
+Donc $ \frac{ \frac{\partial f}{\partial y}(x,0)- \frac{\partial f}{\partial y}(0,0)}{x-0}$ tend vers $0$ quand $x$ tend vers $0$. On en déduit que $ \frac{\partial^2}{\partial x\partial y}(0,0)$ existe et $ \frac{\partial^2}{\partial x\partial y}(0,0)=0$. 
+
+\textbullet~Etudions l'existence et la valeur éventuelle de $ \frac{\partial^2f}{\partial y\partial x}(0,0)$. Pour $y\neq0$,
+
+\begin{center} 
+$ \frac{ \frac{\partial f}{\partial x}(0,y)- \frac{\partial f}{\partial x}(0,0)}{y-0}= \frac{y\cos\left( \frac{0}{y}\right)}{y}=1$.
+\end{center}
+
+Donc $ \frac{ \frac{\partial f}{\partial x}(0,y)- \frac{\partial f}{\partial x}(0,0)}{y-0}$ tend vers $1$ quand $y$ tend vers $0$. On en déduit que $ \frac{\partial^2}{\partial y\partial x}(0,0)$ existe et $ \frac{\partial^2}{\partial y\partial x}(0,0)=1$. On a montré que $ \frac{\partial^2}{\partial x\partial y}(0,0)$ et $ \frac{\partial^2}{\partial y\partial x}(0,0)$ existent et sont différents. D'après le théorème de \textsc{Schwarz}, $f$ n'est pas de classe $C^2$ sur $\Omega\cup\{(0,0)\}$.
+\fincorrection
+\finexercice

@@ -1,0 +1,143 @@
+\exercice{2265, barraud, 2008/04/24}
+\enonce
+\label{exoprec}
+\begin{enumerate}
+  \item Si $K$ est un corps, montrer qu'un polyn\^ome $P$ de degr\'e 2 ou 3 
+dans $K [x]$ est irr\'eductible si et seulement si il n'a pas 
+de z\'ero dans $K$. 
+  \item Trouver tous les polyn\^omes irr\'eductibles
+de degr\'e $2$, $3$ \`a coefficients dans  $\Zz/2\Zz$.
+  \item En utilisant la partie pr\'ec\'edente, montrer que 
+les polyn\^omes $5x^3+8x^2+ 3x+ 15$ et  $x^5+2x^3+3x^2-6x-5$ sont
+irr\'eductibles dans $\Zz[x]$.
+  \item D\'ecrire tous les polyn\^omes irr\'eductibles de degr\'e $4$
+et $5$ sur $\Zz/2\Zz$.
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+ \begin{enumerate}
+  \item 
+    Soit $P$ un polynôme de degré $d=2$ ou $3$ de $K[X]$.
+
+    Si $P$ a une racine $a\in K$, alors $(X-a)|P$, et $P$ n'est pas
+    irréductible.
+
+    Réciproquement, si $P=AB$ avec $A,B\in K[X]$ et $A,B\notin
+    K[X]^{\times}=K\setminus\{0\}$, alors $\deg(A)\geq1$, $\deg(B)\geq1$,
+    et $\deg(A)+\deg(B)=d=2$ ou $3$, donc l'un au moins des deux
+    polynômes $A$ et $B$ est de degré $1$. On peut supposer que c'est
+    $A$. Notons $A=aX+b$. Alors $(X+a^{-1}b)|P$, et $-a^{-1}b$ est racine
+    de $P$.
+
+    Finalement $P$ a une racine ssi $P$ n'est pas irréductible.
+
+    \item
+      Irréductibles de degré $2$ de $\Zz/2\Zz$: Soit $P=aX^{2}+bX+c$ un
+      polynôme de degré $2$. $a\neq0$ donc $a=1$.
+      \begin{align*}
+        P\text{ irréductible} &\Leftrightarrow P\text{ n'a pas de racine}\\
+        &\Leftrightarrow
+          \begin{cases}
+            P(0)&\neq 0\\
+            P(1)&\neq 0
+          \end{cases}\\
+        &\Leftrightarrow
+          \begin{cases}
+            P(0)&=1\\
+            P(1)&=1
+          \end{cases}\\
+        &\Leftrightarrow
+          \begin{cases}
+            c&=1\\
+            1+b+1&=1
+          \end{cases}\\
+        &\Leftrightarrow
+          P=X^{2}+X+1
+      \end{align*}
+      Ainsi, il y a un seul irréductible de degré $2$, c'est $I_{2}=X^{2}+X+1$.
+
+      Irréductibles de degré $3$ de $\Zz/2\Zz$: Soit $P=aX^{3}+bX^{2}+cX+d$ un
+      polynôme de degré $2$. $a\neq0$ donc $a=1$.
+      \begin{align*}
+        P\text{ irréductible} &\Leftrightarrow P\text{ n'a pas de racine}\\
+        &\Leftrightarrow
+          \begin{cases}
+            d&=1\\
+            1+b+c+1&=1
+          \end{cases}\\
+        &\Leftrightarrow
+          \begin{cases}
+            d&=1\\
+            (b,c)&=(1,0)\text{ ou }(b,c)=(0,1)
+          \end{cases}\\
+        &\Leftrightarrow
+          P=X^{3}+X+1 \text{ ou } P=X^{3}+X^{2}+1
+      \end{align*}
+      Ainsi, il y a deux irréductibles de degré $3$ dans $\Zz/3\Zz[X]$:
+      $I_{3}=X^{3}+X+1$ et $I'_{3}=X^{3}+X^{2}+1$.
+
+    \item
+      Soit $P=5X^{3}+8X^{2}+3X+15\in\Zz[X]$. Soient $A$ et $B$ deux
+      polynômes tels que $P=AB$. L'application $\Zz\to\Zz/2\Zz,
+      n\mapsto\bar n$ induit une application $\Zz[X]\to\Zz/2\Zz[X],
+      P=\sum a_{i}X^{i}\mapsto \bar P=\sum \bar{a_{i}}X^{i}$. Cette
+      application est compatible avec les opérations: en particulier
+      $\overline{AB}=\bar{A}\,\bar{B}$ (pourquoi?). Ainsi on a:
+      $\bar{P}=\bar{A}\bar{B}$. Or $\bar{P}=X^{3}+X+1$ est irréductible,
+      donc (quitte à échanger les rôles de $A$ et $B$ on peut supposer
+      que) $\bar{A}=1$ et $\bar{B}=X^{3}+X+1$. On en déduit que $B$ est
+      au moins de degré $3$, d'où $\deg(A)=0$. $A\in\Zz$ et $A|P$, donc
+      $A|5$, $A|8$, $A|3$, et $A|15$. On en déduit que $A=\pm1$.
+      Finalement, $A=\pm1$ et $B\sim P$. $P$ est donc irréductible dans
+      $\Zz[X]$.
+
+      \bigskip
+      Soit $P=X^{5}+2X^{3}+3X^{2}-6x-5\in\Zz[X]$. Soient $A$ et $B$ deux
+      polynômes tels que $P=AB$. On a comme précédemment:
+      $\bar{P}=\bar{A}\bar{B}$ où $\bar{P}=X^{5}+X^{2}+1$. $\bar{P}$ n'a
+      pas de racine dans $\Zz/2\Zz$, donc si $\bar{P}$ est réductible, il
+      doit être le produit d'un irréductible de degré $2$ et d'un
+      irréductible de degré $3$. Or $\bar{P}\neq I_{2}I_{3}$ et
+      $\bar{P}\neq I_{2}I'_{3}$ (faire le calcul!), donc $\bar{P}$ est
+      irréductible. Le même raisonnement montre alors que $P$ est
+      irréductible dans $\Zz[X]$.
+
+    \item
+      Un polynôme de degré $4$ est réductible ssi il a une racine ou est
+      le produit de deux irréductibles de degré $2$. Soit
+      $P=\sum_{i=0}^{4}a_{i}X^{i}\in\Zz/2\Zz[X]$, avec $a_{4}=1$.
+      \begin{align*}
+        P\text{ irréductible}&\Leftrightarrow 
+          \begin{cases}
+            P(0)\neq 0\\
+            P(1)\neq 0\\
+            P\neq I_{2}^{2}\\
+          \end{cases}\\
+        &\Leftrightarrow 
+          \begin{cases}
+            a_{0}= 1\\
+            1+a_{3}+a_{2}+a_{1}+1=1\\
+            P\neq I_{2}^{2}\\
+          \end{cases}\\
+        &\Leftrightarrow 
+          P\in\{X^{4}+X^{3}+1,X^{4}+X+1,X^{4}+X^{3}+X^{2}+X+1\}
+      \end{align*}
+
+      \bigskip
+      Un polynôme de degré $5$ est irréductible ssi il n'a pas de racine
+      et l'est pas le produit d'un irréductible de degré $2$ et d'un
+      irréductible de degré $3$. Tous calculs fait, on obtient la liste
+      suivante: $\{%
+      X^{5}            +X^{2}  +1,%
+      X^{5}      +X^{3}        +1,%
+      X^{5}+X^{4}+X^{3}+X^{2}  +1,%
+      X^{5}+X^{4}+X^{3}      +X+1,%
+      X^{5}+X^{4}      +X^{2}+X+1,%
+      X^{5}      +X^{3}+X^{2}+X+1,%
+      \}$.
+  \end{enumerate}
+\fincorrection
+\finexercice

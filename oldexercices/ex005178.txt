@@ -1,0 +1,34 @@
+\exercice{5178, rouget, 2010/06/30}
+\enonce[**IT]
+Soient $u=(1,1,...,1)$ et $F=\mbox{Vect}(u)$ puis $G=\{(x_1,...,x_n)\in\Rr^n/\;x_1+...+x_n=0\}$. Montrer que $G$ est
+un sous-espace vectoriel de $\Rr^n$ et que $\Rr^n=F\oplus G$.
+\finenonce
+
+\noindication
+
+\correction
+$F=\mbox{Vect}(u)$ est un sous espace vectoriel de $\Rr^n$ et $G$ est un sous espace vectoriel de $\Rr^n$, car est le
+noyau de la forme linéaire $(x_1,...,x_n)\mapsto x_1+...+x_n$.
+
+Soit $x=(x_1,...,x_n)\in\Rr^n$ et soit $\lambda\in\Rr$.
+
+$$x-\lambda u\in G\Leftrightarrow(x_1-\lambda,...,x_n-\lambda)\in
+G\Leftrightarrow\sum_{k=1}^{n}(x_k-\lambda)=0\Leftrightarrow\lambda=\frac{1}{n}\sum_{k=1}^{n}x_k.$$
+
+Donc,
+
+$$\forall x\in\Rr^n,\;\exists!\lambda\in\Rr/\;x-\lambda u\in G,$$
+
+et donc,
+
+$$\Rr^n=F\oplus G.$$
+
+Le projeté sur $F$ parallèlement à $G$ d'un vecteur $x=(x_1,...,x_n)$ est
+
+$$\frac{1}{n}\sum_{k=1}^{n}x_k.u=(\frac{1}{n}\sum_{k=1}^{n}x_k,...,\frac{1}{n}\sum_{k=1}^{n}x_k)$$
+
+et le projeté du même vecteur sur $G$ parallèlement à $F$ est
+
+$$x-(\frac{1}{n}\sum_{k=1}^{n}x_k).u =(x_1-\frac{1}{n}\sum_{k=1}^{n}x_k,...,x_n-\frac{1}{n}\sum_{k=1}^{n}x_k).$$
+\fincorrection
+\finexercice

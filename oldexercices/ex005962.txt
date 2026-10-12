@@ -1,0 +1,58 @@
+\exercice{5962, tumpach, 2010/11/11}
+\enonce
+Soient $f, g\in L^1(\mu)$ o\`u $\mu$ est la mesure de Lebesgue sur
+$\mathbb{R}^n$. On note $\hat{f}$ la transform\'ee de Fourier
+d\'efinie par
+$$
+\hat{f}(y) = \int_{\mathbb{R}^n} f(x)\,e^{-2\pi i (y, x)} \,dx,
+$$
+o\`u $(\cdot, \cdot)$ d\'esigne le produit scalaire de
+$\mathbb{R}^n.$ Montrer que
+\begin{enumerate}
+\item $\quad \int_{\mathbb{R}^n} f(x)\hat{g}(x)\,dx =
+\int_{\mathbb{R}^n} \hat{f}(x) g(x)\,dx.$ 
+\item $\quad
+\widehat{f*g} = \hat{f}\,\hat{g}.$
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+Soient $f, g\in L^1(\mathbb{R}^n)$. On note $\hat{f}$ la
+transform\'ee de Fourier d\'efinie par
+$$
+\hat{f}(y) = \int_{\mathbb{R}^n} f(x)\,e^{-2\pi i (y, x)} \,dx,
+$$
+o\`u $(\cdot, \cdot)$ d\'esigne le produit scalaire de
+$\mathbb{R}^n.$
+\begin{enumerate}
+\item On a $\|\hat{g}\|_{\infty} \leq \|g\|_1$, ce qui
+implique que $f\, \hat{g}$ est int\'egrable. De m\^eme
+$\hat{f}\,g$ est int\'egrable. De plus $F(x, y) = f(x) g(y)
+e^{-2\pi i (x, y)}$ appartient \`a
+$L^1(\mathbb{R}^n\times\mathbb{R}^n)$. D'apr\`es le th\'eor\`eme
+de Fubini, \begin{eqnarray*} \int_{\mathbb{R}^n}
+f(x)\hat{g}(x)\,dx &=& \int_{\mathbb{R}^n}\,dx\, f(x)
+\int_{\mathbb{R}^n} g(y) e^{-2\pi i (x, y)} \,dy \\ &=&
+\int_{\mathbb{R}^n}\,dy \,g(y) \int_{\mathbb{R}^n} f(x)e^{-2\pi i
+(x, y)} \,dx = \int_{\mathbb{R}^n} \hat{f}(y) g(y)\,dx.
+\end{eqnarray*}
+
+
+\item On a
+\begin{eqnarray*}
+\widehat{f*g}(x) &=& \int_{\mathbb{R}^n} f*g(y)\,e^{-2\pi i (x,
+y)}\,dy = \int_{\mathbb{R}^n}\,dy \,e^{-2\pi i (x,
+y)}\int_{\mathbb{R}^n}f(y-z)\,g(z) \,dz\\
+&=& \int_{\mathbb{R}^n} \,dy \int_{\mathbb{R}^n}\,e^{-2\pi i
+(x, y-z)}e^{-2\pi i (x,
+z)}f(y-z)\,g(z)\,dz \\
+& = & \int_{\mathbb{R}^n} \,e^{-2\pi i (x, u)} f(u)\,du
+\int_{\mathbb{R}^n}e^{-2\pi i (x, z)}\,g(z) \,dz\\
+& = & \hat{f}(x) \,\hat{g}(x).
+\end{eqnarray*}
+\end{enumerate}
+\fincorrection
+
+\finexercice

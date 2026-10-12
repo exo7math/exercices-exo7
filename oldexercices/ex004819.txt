@@ -1,0 +1,69 @@
+\exercice{4819, quercia, 2010/03/16}
+\enonce[Th{\'e}or{\`e}me de Hahn-Banach (Polytechnique MP$^*$ 2003)]
+Soit~$E$ un espace vectoriel norm{\'e} de dimension finie et~$F$ un hyperplan de~$E$.
+Soit~$\varepsilon\in E$ tel que~$\R\varepsilon$ soit suppl{\'e}mentaire de~$F$.
+Soit~$f$ une forme lin{\'e}aire sur~$F$.
+
+\begin{enumerate}
+  \item Montrer que~: 
+    $\forall\ x_1,x_2\in F,\ f(x_1)-\|\kern-1.2pt|f\|\kern-1.2pt|\;\|x_1-\varepsilon\|
+    \le \|\kern-1.2pt|f\|\kern-1.2pt|\;\|x_2+\varepsilon\| - f(x_2)$.
+    
+  \item Montrer qu'il existe~$\alpha\in\R$ tel que~:
+    $\forall\ x_1,x_2\in F,\ f(x_1)-\|\kern-1.2pt|f\|\kern-1.2pt|\;\|x_1-\varepsilon\|
+    \le \alpha \le \|\kern-1.2pt|f\|\kern-1.2pt|\;\|x_2+\varepsilon\| - f(x_2)$.
+
+  \item On d{\'e}finit $\varphi : E \to \R$ par~$\varphi_{|F} = f$ et $\varphi(\varepsilon) = \alpha$.
+    Montrer que~$\|\kern-1.2pt|\varphi\|\kern-1.2pt| = \|\kern-1.2pt|f\|\kern-1.2pt|$.
+    
+
+  \item On consid{\`e}re~$E = \{u = (u_n)_{n\in\N}\in\R^\N\text{ tq }\sum_{n\in\N}|u_n|<+\infty\}$
+    avec la norme d{\'e}finie par~: $\|u\| = \sum_{n\in\N}|u_n|$.
+    Montrer que~$E$ est complet pour cette norme.
+    
+
+  \item Donner une famille d{\'e}nombrable de sev de~$E$ de dimensions finies dont la r{\'e}union
+    est dense dans~$E$.
+    
+
+  \item Soit~$F$ un sev de~$E$ de dimension finie et~$f$ une forme lin{\'e}aire sur~$F$.
+    Montrer qu'il existe une forme lin{\'e}aire~$\varphi$ sur~$E$ telle que
+    $\varphi_{|F} = f$ et $\|\kern-1.2pt|\varphi\|\kern-1.2pt| = \|\kern-1.2pt|f\|\kern-1.2pt|$.
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $f(x_1)+f(x_2) \le \|\kern-1.2pt|f\|\kern-1.2pt|\;\|x_1+x_2\|
+                            \le \|\kern-1.2pt|f\|\kern-1.2pt|\;(\|x_1-\varepsilon\| + \|x_2+\varepsilon\|)$.
+  \item Prendre $\alpha$ compris entre le sup du premier membre et l'inf du troisi{\`e}me.
+    Le sup et l'inf sont dans cet ordre d'apr{\`e}s la question pr{\'e}c{\'e}dente.
+  \item   
+  Rmq~: $\varphi$ est mal d{\'e}finie, il faut ajouter "$\varphi$ est lin{\'e}aire".
+    On a {\'e}videmment $\|\kern-1.2pt|\varphi\|\kern-1.2pt| \ge \|\kern-1.2pt|f\|\kern-1.2pt|$
+    puisque $\varphi$ prolonge~$f$, et il reste {\`a} montrer~:
+    $$\forall x\in F,\ \forall\ t\in\R,\ |f(x)+t\alpha| \le \|\kern-1.2pt|f\|\kern-1.2pt|\;\|x+t\varepsilon\|.$$
+    Pour~$t=0$ c'est un fait connu. Pour $t>0$, cela r{\'e}sulte de l'encadrement de~$\alpha$
+    en prenant $x_1=-x/t$ et $x_2=x/t$. Pour~$t<0$, prendre $x_1=x/t$ et $x_2=-x/t$.
+  \item Si $u^k = (u^k_n)_{n\in\N}\in E$ et $(u^k)_{k\in\N}$ est une suite de Cauchy,
+    alors pour tout~$n\in\N$ la suite r{\'e}elle $(u^k_n)_{k\in\N}$ est de Cauchy dans~$\R$
+    donc converge vers un r{\'e}el~$\ell_n$. De plus la suite $(u^k)_{k\in\N}$ est born{\'e}e dans~$E$ donc
+    la suite~$\ell$ ainsi mise en {\'e}vidence est sommable (les sommes partielles de~$\sum|\ell_n|$
+    sont major{\'e}es), et on montre que $\|u^k-\ell\|\xrightarrow[k\to\infty]{}0$ par interversion
+    de limites.
+  \item Prendre~$F_n = \{u\in E\text{ tq }u_k=0\text{ si }k\ge n\}$.
+  \item D'apr{\`e}s la question~{\bf 3)} on peut construire $f_n$, forme
+    lin{\'e}aire sur~$F+F_n$ telle que $f_{n+1}$ prolonge $f_n$ et a m{\^e}me norme que~$f_n$
+    (donc $\|\kern-1.2pt|f_n\|\kern-1.2pt| = \|\kern-1.2pt|f\|\kern-1.2pt|$).
+    Soit~$G = \cup_{n\in\N}(F+F_n)$ et $g$ la forme lin{\'e}aire sur~$G$ co{\"\i} ncidant avec
+    chaque $f_n$ sur~$F+F_n$. $G$ est dense dans~$E$
+    donc on peut prolonger~$g$ en $\varphi : E \to \R$ par uniforme continuit{\'e}. Il est alors
+    clair que~$\varphi$ est une forme lin{\'e}aire prolongeant~$f$ et a m{\^e}me norme
+    que~$f$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

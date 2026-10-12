@@ -1,0 +1,74 @@
+\exercice{616, vignal, 2001/09/01}
+\video{OYJj7QRtecs}
+\enonce
+ Calculer lorsqu'elles existent les limites suivantes
+$$\begin{array}{lll}
+  a)\ \lim_{x\rightarrow 0}\frac{x^2+2\,|x|}{x} &\quad  b)\
+\lim_{x\rightarrow -\infty}\frac{x^2+2\,|x|}{x}&
+\quad c) \ \lim_{x\rightarrow 2}\frac{x^2-4}{x^2-3\,x+2}\\
+\\
+d) \ \lim_{x\rightarrow\pi}\frac{\sin^2x}{1+\cos x}&
+\quad  e)\ \lim_{x\rightarrow 0}\frac{\sqrt{1+x}-\sqrt{1+x^2}}{x}&
+\quad  f)\ \lim_{x\rightarrow +\infty}\sqrt{x+5}-\sqrt{x-3}\\
+\\
+  g)\ \lim_{x\rightarrow 0}\frac{\sqrt[3]{1+x^2}-1}{x^2}&
+\quad  h)\ \lim_{x\rightarrow 1}\frac{x-1}{x^n-1}
+\end{array}$$
+\finenonce 
+
+\indication
+Réponses :
+\begin{enumerate}
+  \item La limite \`a droite vaut $+2$, la limite \`a gauche $-2$ donc il n'y a pas de limite.
+  \item $-\infty$
+  \item $4$
+  \item $2$
+  \item $\frac 12$
+  \item $0$
+  \item $\frac 13$ en utilisant par exemple que $a^3-1 = (a-1)(1+a+a^2)$ pour $a = \sqrt[3]{1+x^2}$.
+  \item $\frac 1n$
+\end{enumerate}
+\finindication
+
+\correction
+\begin{enumerate}
+  \item $\frac{x^2+2|x|}{x} = x + 2 \frac{|x|}{x}$.
+Si $x > 0$ cette expression vaut $x+2$ donc la limite à droite en $x=0$ est $+2$.
+Si $x<0$ l'expression vaut $-2$ donc la limite à gauche en $x=0$ est $-2$.
+Les limites \`a droite et à gauche sont différentes donc il n'y a pas de limite en $x=0$.
+
+  \item $\frac{x^2+2|x|}{x} = x + 2 \frac{|x|}{x} = x -2$ pour $x<0$.
+Donc la limite quand $x \to -\infty$ est $-\infty$.
+
+  \item $\frac{x^2-4}{x^2-3\,x+2}=\frac{(x-2)(x+2)}{(x-2)(x-1)} = \frac{x+2}{x-1}$,
+lorsque $x\to 2$ cette expression tend vers $4$.
+
+  \item $\frac{\sin^2 x}{1+\cos x} = \frac{1-\cos^2 x}{1+\cos x} = \frac{(1-\cos x)(1+\cos x)}{1+\cos x} = 1-\cos x$.
+Lorsque $x\to \pi$ la limite est donc $2$.
+
+  \item $\frac{\sqrt{1+x}-\sqrt{1+x^2}}{x} = \frac{\sqrt{1+x}-\sqrt{1+x^2}}{x}\times\frac{\sqrt{1+x}+\sqrt{1+x^2}}{\sqrt{1+x}+\sqrt{1+x^2}}
+= \frac{1+x - (1+x^2)}{x(\sqrt{1+x}+\sqrt{1+x^2})} = \frac{x - x^2}{x(\sqrt{1+x}+\sqrt{1+x^2})} = \frac{1-x}{\sqrt{1+x}+\sqrt{1+x^2}}$.
+Lorsque $x\to 0$ la limite vaut $\frac 12$.
+
+  \item $\sqrt{x+5}-\sqrt{x-3} = \left( \sqrt{x+5}-\sqrt{x-3}\right) \times \frac{\sqrt{x+5}+\sqrt{x-3}}{\sqrt{x+5}+\sqrt{x-3}}
+= \frac{x+5-(x-3)}{\sqrt{x+5}+\sqrt{x-3}} = \frac{8}{\sqrt{x+5}+\sqrt{x-3}}$. Lorsque $x \to +\infty$, la limite vaut $0$.
+
+  \item Nous avons l'égalité $a^3-1 = (a-1)(1+a+a^2)$. Pour $a = \sqrt[3]{1+x^2}$
+cela donne :
+$$\frac{a-1}{x^2} = \frac{a^3-1}{x^2(1+a+a^2)} = \frac{1+x^2-1}{x^2(1+a+a^2)} = \frac{1}{1+a+a^2}.$$
+Lors que $x\to 0$, alors $a \to 1$ et la limite cherchée est $\frac 13$.
+
+Autre méthode : si l'on sait que la limite d'un taux d'accroissement correspond à la dérivée nous avons une méthode moins
+astucieuse. Rappel (ou anticipation sur un prochain chapitre) : pour une fonction $f$ dérivable en $a$ alors
+$$\lim_{x\to a} \frac{f(x)-f(a)}{x-a} = f'(a).$$
+Pour la fonction $f(x) = \sqrt[3]{1+x} =(1+x)^{\frac 13}$ ayant $f'(x) = \frac 13 (1+x)^{-\frac 23}$ cela donne en $a=0$ :
+$$\lim_{x\to 0} \frac{\sqrt[3]{1+x^2} -1}{x^2} = \lim_{x\to 0} \frac{\sqrt[3]{1+x} -1}{x} = \lim_{x\to 0} \frac{f(x)-f(0)}{x-0} = f'(0) = \frac 13.$$
+
+  \item $\frac{x^n-1}{x-1} = 1+x+x^2+\cdots + x^n$. Donc si $x\to 1$ la limite de  $\frac{x^n-1}{x-1}$ est  $n$.
+Donc la limite de $\frac{x-1}{x^n-1}$ en $1$ est $\frac 1n$.
+
+La méthode avec le taux d'accroissement fonctionne aussi très bien ici. Soit $f(x) = x^n$, $f'(x)=nx^{n-1}$ et $a=1$.
+Alors $\frac{x^n-1}{x-1} = \frac{f(x)-f(1)}{x-1}$ tend vers $f'(1)=n$.
+\end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,86 @@
+\exercice{1507, barraud, 2003/09/01}
+
+\enonce
+
+Soit $(E,<,>)$ un espace euclidien, $x_{0}$ un point de $E$ et $F$ un
+sous espace vectoriel de $E$. On note $\pi$ la projection orthogonale de
+$E$ sur $F$. On rappelle que pour $x\in E$, $\pi(x)$ est caractérisé par
+les relations~: 
+$$
+\pi(x)\in F\qquad\text{ et }\qquad x-\pi(x)\in F^{\bot}
+$$
+
+Le but de cette partie est de montrer que la projection orthogonale de
+$x_{0}$ sur $F$ est le point de $F$ le plus proche de $x_{0}$.
+
+\begin{enumerate}
+\item
+
+  En utilisant que $x_{0}-y=(x_{0}-\pi(x_{0}))+(\pi(x_{0})-y)$, montrer
+  que 
+  $$
+  \Vert x_{0}-y\Vert^{2}=\Vert x_{0}-\pi(x_{0})\Vert^{2}+\Vert
+  y-\pi(x_{0})\Vert^{2}.
+  $$
+
+\item
+
+  En déduire que $\inf\limits_{y\in F}\Vert x_{0}-y\Vert^{2}=\Vert
+  x_{0}-\pi(x_{0})\Vert^{2} $, c'est à dire que~:
+  $$
+  \forall y\in F,\ \Vert
+  x_{0}-y\Vert^{2}\geq\Vert x_{0}-\pi(x_{0})\Vert^{2}
+  $$
+  A quelle condition a-t-on égalité dans la relation ci-dessus~?
+\item
+
+  Soit $(e_{1},\dots,e_{k})$ une base orthonormée de $F$. Montrer que
+  $\pi(x_{0})=\sum_{i=1}^{k}<e_{i},x_{0}>e_{i}$
+\item
+
+  Déduire des deux questions précédentes que 
+  $$
+  \inf\limits_{y\in F}\Vert
+  x_{0}-y\Vert^{2}=\Vert x_{0}-\sum_{i=1}^{k}<e_{i},x_{0}>e_{i}\Vert^{2}
+  =\Vert x_{0}\Vert^{2}-\sum_{i=1}^{k}<e_{i},x_{0}>^{2}
+  $$
+
+\bigskip
+
+
+{Application}~: Le but est maintenant de déterminer
+$$
+\alpha=\inf\limits_{a,b\in \R^{2}}\int_{-1}^{1} (e^{t}-at-b)^{2}dt.
+$$ 
+
+On considère à cet effet l'espace $F=\R_{1}[X]$, comme sous espace de
+$E=F\oplus\R f_{0}$ où $f_{0}$ est la fonction définie par $f_{0}(t)=e^{t}$.
+On admettra sans démonstration que $<f,g>=\int_{-1}^{1}f(t)g(t)dt$ est un
+produit scalaire sur $E$.  
+\item
+Donner une base orthonormée $(P_{1},P_{2})$ de $\R_{1}[X]$ pour ce produit
+scalaire.
+
+\item
+
+Calculer $<f_{0},P_{1}>$, $<f_{0},P_{2}>$, et $\Vert f_{0}\Vert^{2}$. En
+déduire que 
+$$
+ \alpha=\frac{e^{2}-e^{-2}}{2}-(2e^{-1})^{2}-\Big(\frac{e-e^{-1}}{2}\Big)^{2}.
+$$
+\item
+
+  Même question avec le calcul de $\alpha'=\inf\limits_{a,b\in
+    \R^{2}}\int_{-1}^{1} (e^{t}-at^{2}-bt-c)^{2}dt. $~: commencer par
+  chercher une base orthonormée de $\R_{2}[X]$ pour le même produit
+  scalaire, et en déduire $\alpha'$.
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\nocorrection
+
+\finexercice
+

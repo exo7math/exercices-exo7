@@ -1,0 +1,32 @@
+\exercice{5122, rouget, 2010/06/30}
+\enonce[***]
+ Soit $\alpha\in\left]-\frac{\pi}{2},\frac{\pi}{2}\right[$ donné. Résoudre dans $\Cc$ l'équation
+$\left(\frac{1+iz}{1-iz}\right)^3=\frac{1+i\tan\alpha}{1-i\tan\alpha}$.
+\finenonce
+
+\noindication
+
+\correction
+Soit $\alpha\in\left]\frac{\pi}{2},\frac{\pi}{2}\right[$.
+$\frac{1+i\tan\alpha}{1-i\tan\alpha}=\frac{\cos\alpha+i\sin\alpha}{\cos\alpha-i\sin\alpha}=e^{2i\alpha}$. Donc,
+
+$$\left(\frac{1+iz}{1-iz}\right)^3=\frac{1+i\tan\alpha}{1-i\tan\alpha}\Leftrightarrow\exists
+k\in\{-1,0,1\}/\;\frac{1+iz}{1-iz}=e^{i(\frac{2\alpha}{3}+\frac{2k\pi}{3})}=\omega_k\Leftrightarrow\exists
+k\in\{-1,0,1\}/\;i(\omega_k+1)z=\omega_k-1.$$
+Maintenant, pour $k\in\{-1,0,1\}$,
+
+$$\omega_k=-1\Leftrightarrow\frac{2\alpha}{3}+\frac{2k\pi}{3}\in\pi+2\pi\Zz\Leftrightarrow\alpha\in-k\pi+\frac{3\pi}{2}+3\pi\Zz,$$
+ce qui est exclu pour $\alpha\in]-\frac{\pi}{2},\frac{\pi}{2}[$. Donc,
+
+\begin{align*}
+\left(\frac{1+iz}{1-iz}\right)^3=\frac{1+i\tan\alpha}{1-i\tan\alpha}&\Leftrightarrow\exists
+k\in\{-1,0,1\}/\;z=\frac{\omega_k-1}{i(\omega_k+1)}\Leftrightarrow\exists
+k\in\{-1,0,1\}/\;z=\frac{e^{i(\frac{\alpha}{3}+\frac{k\pi}{3})}}{e^{i(\frac{\alpha}{3}+\frac{k\pi}{3})}}
+\frac{e^{i(\frac{\alpha}{3}+\frac{k\pi}{3})}-e^{-i(\frac{\alpha}{3}+\frac{k\pi}{3})}}{i(e^{i(\frac{\alpha}{3}
++\frac{k\pi}{3})}+e^{-i(\frac{\alpha}{3}+\frac{k\pi}{3})})}\\
+ &\Leftrightarrow\exists
+k\in\{-1,0,1\}/\;z=\frac{2i\sin(\frac{\alpha}{3}+\frac{k\pi}{3})}{i(2\cos(\frac{\alpha}{3}+\frac{k\pi}{3}))}\Leftrightarrow
+\exists k\in\{-1,0,1\}/\;z=\tan(\frac{\alpha}{3}+\frac{k\pi}{3})
+\end{align*}
+\fincorrection
+\finexercice

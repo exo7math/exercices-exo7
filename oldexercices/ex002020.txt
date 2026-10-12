@@ -1,0 +1,82 @@
+\exercice{2020, liousse, 2003/10/01}
+\video{0i30Mt7oXdU}
+\enonce
+On considère la famille de  plans $(P_m)_{m\in \Rr}$ définis par les équations cartésiennes :
+$$ m^2x+(2m-1)y+mz=3$$
+\begin{enumerate}
+  \item Déterminer les plans $P_m$ dans chacun des cas suivants :
+  \begin{enumerate}
+    \item $A(1,1,1)\in P_m$ 
+    \item $\vec{n}(2,-\frac 52,-1)$ est normal à $P_m$.
+    \item  $\vec{v}(1,1,1)$ est un vecteur directeur de $P_m$ 
+  \end{enumerate} 
+  \item Montrer qu'il existe un unique point $Q$ appartenant à tous les plans $P_m$.
+\end{enumerate} 
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item  
+  \begin{enumerate}
+    \item Un point $A$ appartient à un plan d'équation $ax+by+cz+d=0$ si et seulement si 
+$ax_A+by_A+cz_A+d=0$.
+Donc $A(1,1,1)\in P_m$ si et seulement si $ m^2+(2m-1)+m=3$.
+Ce qui équivaut à $m^2+3m-4=0$. Les deux solutions sont $m=1$ et $m=-4$.
+Donc $A$ appartient aux plans $P_1$ et $P_{-4}$ et pas aux autres.
+
+    \item Un plan d'équation $ax+by+cz+d=0$ a pour vecteur normal $\vec n = (a,b,c)$.
+Donc si $\vec{n}=(2,-\frac 52,-1)$ est un vecteur normal à $P_m$
+une équation cartésienne est de la forme $2 x-\frac52 y-z +d=0$.
+Or une équation de $P_m$ est $m^2x+(2m-1)y+mz-3=0$.
+Ces deux équations sont égales à un facteur multiplicatif près $\lambda\in \Rr^*$ :
+ $2 x-\frac52 y-z +d = \lambda \big(m^2x+(2m-1)y+mz-3\big)$.
+On en déduit 
+$2=\lambda m^2$, $-\frac52=\lambda(2m-1)$ et $-1=\lambda m$.
+En divisant la première égalité par la troisième on trouve : $m=-2$.
+D'où $\lambda=\frac12$. La seconde égalité est alors vérifiée.
+
+Le seul plan ayant $\vec n$ pour vecteur normal est $P_{-2}$.
+
+
+    \item Un vecteur est directeur du plan $P$ si et seulement si le produit scalaire
+$\vec v\cdot \vec n=0$. Ici $\vec n = (m^2,2m-1,m)$.
+Donc $\vec{v}=(1,1,1)$ est vecteur directeur si et seulement si 
+$m^2+2m-1+m=0$. Ce qui équivaut à $m^2+3m-1=0$.
+Les deux plans qui ont pour vecteur directeur $\vec v$ sont les plans ayant le paramètre
+$m = \frac{-3\pm\sqrt{13}}{2}$.
+  \end{enumerate}
+
+  \item Nous allons prendre $3$ plans de la famille $(P_m)$, calculer leur point d'intersection
+et finalement montrer que ce point appartient aux autres plans.
+
+Prenons trois paramètre ``au hasard'' $m=0$, $m=1$, $m=-1$.
+Un point qui appartient à ces trois plans doit vérifier les trois équations :
+$$\left\{ \begin{array}{l}
+y=-3 \\ 
+x+y+z=3 \\ 
+x-3y-z=3 \\ 
+\end{array} \right.$$
+On résout ce système pour trouver que l'intersection des trois plan $P_0$, $P_1$ et $P_{-1}$ est le point 
+$Q=(0,-3,6)$.
+
+Il ne reste plus qu'à vérifier que ce point appartient à tous les plans $P_m$: 
+c'est le cas car $m^2\cdot 0 +(2m-1)\cdot (-3) +m \cdot 6 -3=0$.
+
+
+\textbf{Autre méthode.}
+On cherche un point $Q=(x_0,y_0,z_0)$ qui vérifie
+l'égalité $m^2 x_0 +(2m-1)y_0 +m z_0 -3=0$
+pour tout $m$.
+En considérant que c'est une égalité polynomiale en $m$ ($x_0,y_0,z_0$ sont fixés)
+on en déduit que $m^2 x_0 +(2m-1)y_0 +m z_0 -3$ est le polynôme nul : $x_0 m^2 + (2y_0+z_0)m -y_0-3=0$.
+Ces coefficients sont nuls : $x_0=0$ (le coefficient de $m^2$),
+$2y_0+z_0=0$ (le coefficient de $m$), $-y_0-3=0$ (le terme constant).
+On trouve bien sûr le même point d'intersection de tous les plans : $Q=(0,-3,6)$.
+
+\end{enumerate}
+
+\fincorrection
+
+\finexercice

@@ -1,0 +1,17 @@
+\exercice{4025, quercia, 2010/03/11}
+\enonce[$\left({\frac1n \sum_{k=0}^{n-1} \Bigl(1+\frac kn\Bigr)^{1/p}}\right)^p$]
+
+On pose $u_{n,p} = \left({\frac1n \sum_{k=0}^{n-1} \Bigl(1+\frac kn\Bigr)^{1/p}}\right)^p$.
+Trouver : $v_p = \lim_{n\to\infty} u_{n,p}$, $v = \lim_{p\to\infty} v_p$,
+          $w_n = \lim_{p\to\infty} u_{n,p}$ et $w = \lim_{n\to\infty} w_n$.
+\finenonce
+
+\noindication
+
+\correction
+$v_p = \left(\frac{2^{1+1/p}-1}{1+1/p}\right)^p$,
+         $w_n = \exp\left({\frac1n\sum_{k=0}^{n-1}\ln\Bigl(1+\frac kn\Bigr)}\right)$,
+	   $v=w = \frac 4e$.
+\fincorrection
+
+\finexercice

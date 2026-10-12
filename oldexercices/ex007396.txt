@@ -1,0 +1,24 @@
+\exercice{7396, mourougane, 2021/08/10}
+\enonce
+\begin{enumerate}
+ \item Enoncer le théorème de Lagrange.
+ \item Soit $G$ un groupe et $a$ un élément d'ordre $k$ dans $G$. Soit $p$ un entier naturel. Quel est l'ordre de $a^p$ ? 
+ \item Le groupe $\mathcal{S}_3$ des permutations de $\{1,2,3\}$ est-il cyclique ? (justifier) 
+ \item Enoncer le théorème de la division euclidienne dans $k[X]$.
+ \item Enoncer le théorème de la division euclidienne dans $\Z[i]$.
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+ \item Si $G$ est un groupe fini et $H$ un sous-groupe de $G$, alors $\text{card}(G)=\text{card}(G/H)\text{card}(H)$. En particulier, l'ordre d'un élément d'un groupe fini divise l'ordre du groupe.
+ \item L'ordre de $a^p$ est $\frac{k}{k\wedge p}$. 
+ \item On note que l'ordre de $\mathcal{S}_3$ est $6$. Un groupe fini d'ordre $6$ est cyclique si est seulement s'il possède un élément d'ordre $6$. Il y a trois éléments d'ordre 2, deux éléments d'ordre 3, et un élément d'ordre 1 dans $\mathcal{S}_3$. Alors le groupe n'est pas cyclique.
+Noter aussi qu'il n'est pas commutatif.
+ \item Soit $D\in k[X]$ un polynôme non nul. Pour tout polynôme $A$ de $k[X]$ il existe un unique couple $(Q,R)\in (k[X])^2$
+tel que $A=DQ+R$ et $\text{deg} (R)< \text{deg} (D)$.
+ \item Soit $A$ et $B$ deux entiers de Gauss avec $B\neq 0$. Alors il existe deux entiers de Gauss $Q$ et $R$ tels que 
+$A=BQ+R$ et $N(R)<N(B)$.
+\end{enumerate} 
+\fincorrection
+\finexercice

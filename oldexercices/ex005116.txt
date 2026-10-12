@@ -1,0 +1,49 @@
+\exercice{5116, rouget, 2010/06/30}
+\enonce[****]
+Pour $n\geq1$, on pose $H_n=\sum_{k=1}^{n}\frac{1}{k}$. Montrer que, pour $n\geq2$, $H_n$ n'est jamais un entier
+(indication~:~montrer par récurrence que $H_n$ est le quotient d'un entier impair par un entier pair en distingant
+les cas où $n$ est pair et $n$ est impair).
+\finenonce
+
+\noindication
+
+\correction
+Montrons par récurrence que, pour $n\geq2$, $H_n$ peut s'écrire sous la forme $\frac{p_n}{q_n}$ où $q_n$ est un
+entier pair et $p_n$ est un entier impair (la fraction précédente n'étant pas nécessairement irréductible mais à coup
+sûr pas un entier).
+Pour $n=2$, $H_2=\frac{3}{2}$ et $H_2$ est bien du type annoncé.
+Soit $n\geq2$. Supposons que pour tout entier $k$ tel que $2\leq k\leq n$, on ait $H_k=\frac{p_k}{q_k}$ où $p_k$ est un
+entier impair et $q_k$ est un entier pair et montrons que $H_{n+1}=\frac{p_{n+1}}{q_{n+1}}$ où $p_{n+1}$ est un 
+entier impair et $q_{n+1}$ est un entier pair.
+(Recherche. L'idée
+$H_{n+1}=\frac{p_n}{q_n}+\frac{1}{n+1}=\frac{(n+1)p_n+q_n}{(n+1)q_n}$ ne marche à coup sur que si $(n+1)p_n+q_n$ est
+impair ce qui est assuré si $n+1$ est impair et donc $n$ pair)
+\begin{itemize}
+\item[\textbf{1er cas.}] Si $n$ est pair, on peut poser $n=2k$ où $k\in\Nn^*$. Dans ce cas,
+$H_{n+1}=\frac{(2k+1)p_n+q_n}{(2k+1)q_n}$ et $H_{n+1}$ est bien le quotient d'un entier impair par un
+entier pair.
+
+\item[\textbf{2ème cas.}] Si $n$ est impair, on pose $n=2k-1$ où $k\geq2$ (de sorte que $2k-1\geq3$).
+
+\begin{align*}
+H_{n+1}&=\sum_{i=1}^{2k}\frac{1}{i}=\sum_{i=1}^{k}\frac{1}{2i}+\sum_{i=0}^{k-1}\frac{1}{2i+1}\;\\
+ &(\mbox{en séparant les
+fractions de dénominateurs pairs des fractions de dénominateurs impairs})\\
+ &=\frac{1}{2}\sum_{i=1}^{k}\frac{1}{i}+\sum_{i=0}^{k-1}\frac{1}{2i+1}=\frac{1}{2}H_k+\sum_{i=0}^{k-1}\frac{1}{2i+1}.
+\end{align*}
+
+Maintenant, en réduisant au même dénominateur et puisque un produit de nombres impairs est impair, on voit 
+que $\sum_{i=0}^{k-1}\frac{1}{2i+1}$ est du type $\frac{K}{2K'+1}$ où $K$ et $K'$ sont des entiers. Ensuite, puisque
+$2\leq k\leq2k-1=n$, par hypothèse de récurrence, $H_k=\frac{p_k}{q_k}$ où $p_k$ est un entier impair et $q_k$ un
+entier pair. Après réduction au même dénominateur, on obtient
+
+$$H_{n+1}=\frac{p_k}{2q_k}+\frac{K}{2K'+1}=\frac{(2K'+1)p_k+2Kq_k}{2q_k(2K'+1)}.$$
+
+$2Kq_k$ est un entier pair et $(2K'+1)p_k$ est un entier impair en tant que produit de deux nombres impairs. Donc le
+numérateur est bien un entier impair et puisque $2qk(2K'+1)$ est un entier pair, $H_{n+1}$ est bien dans tous les cas de
+la forme désirée.
+\end{itemize}
+On a montré par récurrence que pour tout entier naturel $n\geq2$, $H_n$ est le quotient d'un entier impair par un entier pair
+et donc n'est pas un entier.
+\fincorrection
+\finexercice

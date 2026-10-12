@@ -1,0 +1,26 @@
+\exercice{5657, rouget, 2010/10/16}
+\enonce[*** I]
+\label{ex:rou7}
+Soient $u$ et $v$ deux endomorphismes d'un espace vectoriel de dimension finie. On suppose que $u$ et $v$ commutent et que $v$ est nilpotent. Montrer que $\text{det}(u+v)=\text{det}u$.
+\finenonce
+
+\noindication
+
+\correction
+Si $u$ est inversible,
+
+\begin{center}
+$\text{det}(u+v)=\text{det}u\Leftrightarrow\text{det}u\times\text{det}(Id+u^{-1}v) =\text{det}u\Leftrightarrow\text{det}(Id+u^{-1}v)=1$.
+\end{center}
+
+$u$ et $v$ commutent et donc $u^{-1}$ et $v$ également car $uv=vu\Rightarrow u^{-1}uvu^{-1}= u^{-1}vuu^{-1}\Rightarrow vu^{-1}=u^{-1}v$. Mais alors, puisque $v$ est nilpotent, l'endomorphisme $w = u^{-1}v$ l'est également car $(u^{-1}v)^p =u^{-p}v^p)$.
+
+Il reste donc à calculer $\text{det}(Id+w)$ où $w$ est un endomorphisme nilpotent. On remarque que $\text{det}(Id+w)=\chi_w(-1)$. Il est connu que $0$ est l'unique valeur propre d'un endomorphisme nilpotent et donc $\chi_w=(-X)^n$ puis
+
+\begin{center}
+$\text{det}(Id+w)=\chi_w(-1)=(-(-1))^n = 1$.
+\end{center}
+
+Le résultat est donc démontré dans le cas où $u$ est inversible. Si $u$ n'est pas inversible, $u+xId$ est inversible sauf pour un nombre fini de valeurs de $x$ et commute toujours avec $v$. Donc, pour tout $x$ sauf peut-être pour un nombre fini, $\text{det}(u+xId+v)=\text{det}(u+xId)$. Ces deux polynômes coïncident en une infinité de valeurs de $x$ et sont donc égaux. Ils prennent en particulier la même valeur en $0$ ce qui refournit $\text{det}(u+v)=\text{det}u$.
+\fincorrection
+\finexercice

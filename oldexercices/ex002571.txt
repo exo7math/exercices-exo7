@@ -1,0 +1,60 @@
+\exercice{2571, delaunay, 2009/05/19}
+\enonce
+Soit $f$ un endomorphisme de $E$ v\'erifiant $f^2={\rm mathrm{Id}}_E$.
+\begin {enumerate}
+  \item  D\'emontrer que les seules valeurs propres possibles de $f$ sont $1$ et $-1$.
+  \item V\'erifier que pour tout $\vec x\in E$, on a
+$$f(\vec x-f(\vec x))=-(\vec x-f(\vec x))\ \ {\hbox{et}}\ \ f(\vec x+f(\vec x))=(\vec x+f(\vec x))$$
+et en d\'eduire que $f$ admet toujours une valeur propre.
+  \item  D\'emontrer que si $1$ et $-1$ sont valeurs propres, alors $E$ est somme directe des sous-espaces propres correspondants.
+
+  \item Traduire g\'eom\'etriquement sur un dessin dans le cas $n=2$.
+\end {enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+Soit $f$ un endomorphisme de $E$ v\'erifiant $f^2={\rm mathrm{Id}}_E$.
+\begin {enumerate}
+  \item {\it D\'emontrons que les seules valeurs propres possibles de $f$ sont $1$ et $-1$}.
+
+Si $\lambda$ est une valeur propre de $f$, il existe un vecteur non nul $\vec x\in E$ tel que $f(\vec x)=\lambda\vec x$. On a donc
+$$f^2(\vec x)=f(\lambda\vec x)=\lambda f(\vec x)=\lambda^2\vec x.$$
+Mais, $f^2={\rm mathrm{Id}}_E$ donc si $\vec x$ est un vecteur propre associ\'e \`a la valeur propre $\lambda$ on a
+$$\vec x=f^2(\vec x)=\lambda^2\vec x,$$
+d'o\`u $\lambda^2=1$, c'est-\`a-dire (dans $\R$ ou $\C$), $\lambda=1$ ou $\lambda=-1$. ce qui prouve que les seules valeurs propres possibles de $f$
+ sont $1$ et $-1$.
+  \item {\it  V\'erifions que pour tout $\vec x\in E$, on a}
+$$f(\vec x-f(\vec x))=-(\vec x-f(\vec x))\ \ {\hbox{et}}\ \ f(\vec x+f(\vec x))=(\vec x+f(\vec x))$$
+Soit $\vec x\in E$, on a
+$$f(\vec x-f(\vec x))=f(\vec x)-f^2(\vec x)=f(\vec x)-\vec x=-(\vec x-f(\vec x))$$ et
+$$f(\vec x+f(\vec x))=f(\vec x)+f^2(\vec x)=f(\vec x)+\vec x$$
+
+{\it Nous allons en d\'eduire que $f$ admet toujours une valeur propre.}
+
+Supposons que $1$ ne soit pas valeur propre de $f$, alors, $\vec x=f(\vec x)\Rightarrow \vec x=\vec 0$. Or, pour tout $\vec x\in E$, on a
+$f(\vec x+f(\vec x))=f(\vec x)+\vec x$, donc pour tout $\vec x\in E$, on a $f(\vec x)+\vec x=\vec 0$, c'est-\`a-dire, $f(\vec x)=-\vec x$.
+Ce qui prouve que $-1$ est valeur propre de $f$. On a m\^eme dans ce cas $f=-{\rm mathrm{Id}_E}$. 
+
+Si $-1$ n'est pas valeur propre de $f$, on montre par un raisonnement
+analogue que pour tout $\vec x\in E$ on a $f(\vec x)-\vec x=\vec 0$. Ce qui prouve que $1$ est valeur propre de $f$, et dans ce cas $f={\rm mathrm{Id}_E}$.
+
+  \item  {\it D\'emontrons que si $1$ et $-1$ sont valeurs propres, alors $E$ est somme directe des sous-espaces propres correspondants.}
+
+Supposons maintenant que $1$ et $-1$ sont valeurs propres de $f$. Ce sont alors les seules et on a, pour tout $\vec x\in E$,
+$$\vec x={\frac{1}{2}}(\vec x+f(\vec x))+{\frac{1}{2}}(\vec x-f(\vec x))$$
+Et, quelque soit $\vec x\in E$, $f(\vec x-f(\vec x))=-(\vec x-f(\vec x))$ et $f(\vec x+f(\vec x))=(\vec x+f(\vec x))$, c'est-\`a-dire 
+$\vec x+f(\vec x)$ est dans le sous-espace propre associ\'e \`a la valeur propre $1$ et $\vec x-f(\vec x)$ est dans le sous-espace propre associ\'e \`a
+la valeur propre $-1$. Par ailleurs on sait que les sous-espaces propres sont en somme directe ( on peut le v\'erifier \'egalement puisque leur intersection
+est l'ensemble des vecteurs $\vec x$ tels que $\vec x=-\vec x$, donc r\'eduite au vecteur nul). par cons\'equent $E$ est bien somme directe des sous-espaces
+propres correspondants aux valeurs propres $1$ et $-1$.
+
+  \item {\it Traduisons g\'eom\'etriquement le cas $n=2$}.
+
+Rappelons que si il n'y a qu'une valeur propre, $f$ est l'identit\'e ou son oppos\'ee. Dans le cas o\`u $1$ et $-1$ sont valeur propres, leurs sous-espaces
+propres sont des droites vectorielles. Soit $u$ un vecteur
+propre tel que $f(u)=u$ et $v$ un vecteur propre tel que $f(v)=-v$, alors si $w=au+bv$, $f(w)=au-bv$.
+\end {enumerate}
+\fincorrection
+\finexercice

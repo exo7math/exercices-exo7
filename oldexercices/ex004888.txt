@@ -1,0 +1,27 @@
+\exercice{4888, quercia, 2010/03/17}
+\enonce[Suite récurente]
+
+Soient $A_0,A_1,A_2$ trois points donnés. On considère la suite $(A_k)$
+de points vérifiant la relation de récurrence~:
+$$\forall\ k\ge3,\ A_k = \text{Bar}( A_{k-1}:1, A_{k-2},1, A_{k-3}:2 ).$$
+\'Etudier la convergence de cette suite.
+
+
+
+\finenonce
+
+\noindication
+
+\correction
+$A_k = \text{Bar}(A_0 : \alpha_k, A_1 : \beta_k, A_2 : \gamma_k)$
+         où $\alpha_k$, $\beta_k$, $\gamma_k$ vérifient :
+         $x_k = x_{k-1} + x_{k-2} + 2x_{k-3}$.
+
+         Les racines de l'équation caractéristique sont $2,j,j^2$, donc
+         $x_k \sim \lambda2^k$ avec $\lambda = \frac{x_0+x_1+x_2}7 = \frac 17$.
+
+         Donc $\alpha_k \sim \beta_k \sim \gamma_k$, et $A_k \to G$,
+         isobarycentre de $A_0A_1A_2$.
+\fincorrection
+
+\finexercice

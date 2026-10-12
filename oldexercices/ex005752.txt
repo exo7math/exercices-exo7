@@ -1,0 +1,25 @@
+\exercice{5752, rouget, 2010/10/16}
+\enonce[***]
+Calculer $\sum_{n=1}^{+\infty}\frac{1}{n}\cos\left(\frac{2n\pi}{3}\right)x^n$ pour $x$ dans $]-1,1[$. 
+\finenonce
+
+\noindication
+
+\correction
+Pour tout entier naturel non nul, $|a_n|\leqslant\frac{1}{n}$ et donc $R\geqslant1$. Mais si $x > 1$, la suite $\left(\frac{1}{n}\cos\left(\frac{2n\pi}{3}\right)x^n\right)_{n\geqslant1}$ n'est pas bornée comme on le voit en considérant la suite extraite des termes d'indices multiples de $3$ et donc $R = 1$. Pour $x$ dans $]-1,1[$, $f(x)=\text{Re}\left(\sum_{n=1}^{+\infty}\frac{(jx)^n}{n}\right)$. Le problème est alors de ne pouvoir écrire $-\ln(1-jx)$. Il faut s'y prendre autrement.
+
+$f$ est donc dérivable sur $]-1,1[$ et pour $x$ dans $]-1;1[$,
+
+\begin{center}
+$f'(x)=\sum_{n=1}^{+\infty}\cos\left(\frac{2n\pi}{3}\right)x^{n-1}=\text{Re}\left(\sum_{n=0}^{+\infty}j^nx^{n-1}\right) =\text{Re}\left(\frac{j}{1-jx}\right)=\text{Re}\left(\frac{j(1-j^2x)}{x^2+x+1}\right) = -\frac{1}{2}\frac{2x+1}{x^2+x+1}$.
+\end{center}
+
+Par suite, pour $x\in]-1,1[$, $f(x) = f(0)+\int_{0}^{x}f'(t)\;dt= -\frac{1}{2}\ln(x^2+x+1)$.
+
+\begin{center}
+\shadowbox{
+$\forall x\in]-1,1[$, $\sum_{n=1}^{+\infty}\frac{1}{n}\cos\left(\frac{2n\pi}{3}\right)x^{n}=-\frac{1}{2}\ln(x^2+x+1)$.
+}
+\end{center}
+\fincorrection
+\finexercice

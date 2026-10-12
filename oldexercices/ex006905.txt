@@ -1,0 +1,28 @@
+\exercice{6905, ruette, 2013/01/24}
+\enonce
+Un transporteur aérien a observé que  25\% en moyenne des personnes ayant réservé 
+un siège pour un vol ne se présentent pas au départ. Il décide d'accepter jusqu'à  
+23  réservations alors qu'il ne dispose que de  20  sièges pour ce vol.
+\begin{enumerate}
+\item
+Soit $X$ la variable aléatoire ``nombre de clients qui viennent après
+réservation quand 23 places ont été réservées''.
+Quelle est la loi de $X$ (précisez les hypothèses que vous faites pour modéliser la situation) ?
+Quelle est son espérance ?
+\item
+Si 23 personnes ont réservé, quelle est la probabilité que toutes les personnes qui se présentent au départ aient un siège ?
+\end{enumerate}
+\finenonce
+\noindication
+
+\correction
+\begin{enumerate}
+\item
+La loi de $X$ est une loi binomiale de paramètres $n=23$, $p=0,75$ : 
+$P(X=k)={k\choose{n}}p^k(1-p)^{n-k}$ si $0\le k\le n$.
+Son espérance est $np=17,25$.
+\item
+$P(X\le 20)=1-P(X\in\{21, 22, 23\})\simeq 0,951$.
+\end{enumerate}
+\fincorrection
+\finexercice

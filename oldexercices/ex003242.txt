@@ -1,0 +1,40 @@
+\exercice{3242, quercia, 2010/03/08}
+
+\enonce[Mines MP 2001]
+Soit $ K$ un corps de caract{\'e}ristique $p$.
+\begin{enumerate}
+  \item Montrer que $\sigma\ :\ x \mapsto x^p$ est un morphisme de corps.
+
+  \item Montrer que $\sigma$ est surjectif si et seulement si tout polyn{\^o}me
+    $P\in K[X]$ irr{\'e}ductible v{\'e}rifie $P'\ne 0$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $p$ est premier car $ K$ est int{\`e}gre.
+
+    On a $1^p = 1$,
+    $(xy)^p = x^py^p$ (un corps est commutatif) et
+    $(x+y)^p = x^p + y^p + \sum_{k=1}^{p-1}C_p^kx^ky^{p-k} = x^p + y^p$
+    car $p$ divise $C_p^k$ si $1\le k \le p-1$.
+  \item Remarquer que $P'=0 \Leftrightarrow P\in  K[X^p]$.
+    
+    On suppose $\sigma$ surjectif. Soit $P(X) = Q(X^p) = a_0 + \dots + a_kX^{kp}$
+    un polyn{\^o}me non constant {\`a} d{\'e}riv{\'e}e nulle. Il existe $b_0,\dots,b_k$
+    tels que $b_i^p = a_i$. Alors $P(X) = Q(X)^p$ est r{\'e}ductible.
+    
+    On suppose que tout polyn{\^o}me irr{\'e}ductible a une d{\'e}riv{\'e}e non nulle.
+    Soit $a\in  K$ et $P(X) = X^p - a$. $P'=0$ donc $P$ est r{\'e}ductible.
+    Soit $Q$ un facteur unitaire irr{\'e}ductible de $X^p-a$. Alors $Q^p$ et $X^p-a$
+    ont $Q$ en facteur commun donc leur pgcd, $D$, est non constant.
+    Mais $Q^p$ et $X^p-a$ appartiennent {\`a} $ K[X^p]$ donc $D$, obtenu par l'algorithme
+    d'Euclide aussi, d'o{\`u} $D = X^p-a$ et $X^p-a$ divise $Q^p$. Par unicit{\'e} de
+    la d{\'e}composition de $Q^p$ en facteurs irr{\'e}ductibles, il existe $r\in\N$
+    tel que $X^p-a = Q^r$. Par examen du degr{\'e} on a $r=p$ donc $\deg Q = 1$,
+    $Q = X-b$ et finalement $b^p=a$.
+\end{enumerate}
+\fincorrection
+\finexercice 

@@ -1,0 +1,25 @@
+\exercice{4486, quercia, 2010/03/14}
+\enonce[ENS Cachan MP$^*$ 2005]
+
+Soit $P(n)=\max\{p \text{ premier},\, p\mid n\}$. Montrer que $\sum_{n}\frac{1}{nP(n)}$ converge.
+\finenonce
+
+\noindication
+
+\correction
+Soit $(p_0,p_1,\dots)$ la suite croissante des nombres premiers
+et $S_k = \sum_{P(n)\le k}\frac1n$.
+On a $S_k = S_{k-1}\sum_{i=0}^\infty \frac1{p_k^i} = \frac{p_k}{p_k-1}S_{k-1}$,
+ce qui prouve que $S_k$ est fini. La série demandée est
+$\frac{S_0}{p_0}+ \sum_{k=1}^\infty \frac{S_k-S_{k-1}}{p_k} =
+\frac{S_0}{p_0}+ \sum_{k=1}^\infty\frac{S_k}{p_k^2}$.
+
+Montrons que $S_k\le2\sqrt{p_k}$, ceci prouvera la convergence. C'est vrai pour $k=0$ et $k=1$, et si
+c'est vrai pour $k-1$ avec $k\ge 2$ alors on obtient $S_k\le 2\sqrt{p_k}\sqrt{\frac{p_kp_{k-1}}{(p_k-1)^2}}
+\le 2\sqrt{p_k}\sqrt{\frac{p_k(p_k-2)}{(p_k-1)^2}} \le 2\sqrt{p_k}$.
+
+Remarque~: on a en réalité $S_k\sim e^\gamma\ln(p_k)$ où $\gamma$ est la constante
+d'Euler (formule de Mertens).
+\fincorrection
+
+\finexercice

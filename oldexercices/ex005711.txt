@@ -1,0 +1,47 @@
+\exercice{5711, rouget, 2010/10/16}
+\enonce[****]
+Soient $(u_n)_{n\geqslant1}$ une suite réelle. Pour $n\geqslant 1$, on pose $v_n=\frac{u_1+\ldots+u_n}{n}$. Montrer que si la série de terme général $(u_n)^2$ converge alors la série de terme général $(v_n)^2$ converge et que $\sum_{n=1}^{+\infty}(v_n)^2\leqslant4\sum_{n=1}^{+\infty}(u_n)^2$ (indication : majorer $v_n^2 - 2u_nv_n$).
+\finenonce
+
+\noindication
+
+\correction
+Pour tout entier $n\geqslant 2$, on a $nv_n-(n-1)v_{n-1}=u_n$ ce qui reste vrai pour $n = 1$ si on pose de plus $v_0 = 0$. Par suite, pour $n\in\Nn^*$
+
+\begin{align*}\ensuremath
+v_n^2 -2u_nv_n&=v_n^2 - 2(nv_n - (n-1)v_{n-1})v_n = -(2n-1) v_n^2 + 2(n-1)v_{n-1}v_n\\
+ &\leqslant -(2n-1) v_n^2 +(n-1)(v_{n-1}2+v_n^2) =(n-1)v_{n-1}^2 - n v_n^2.
+\end{align*}
+	
+        
+Mais alors, pour $N\in\Nn^*$,
+
+\begin{center}
+$\sum_{n=1}^{N}(v_n^2 - 2u_nv_n)\leqslant\sum_{n=1}^{N}((n-1)v_{n-1}^2 - n v_n^2)= - nv_n^2\leqslant0$.
+\end{center}
+
+Par suite, 
+
+\begin{center}
+$\sum_{n=1}^{N}v_n^2\leqslant\sum_{n=1}^{N}2u_nv_n\leqslant2\left(\sum_{n=1}^{N}u_n^2\right)^{1/2}\left(\sum_{n=1}^{N}v_n^2\right)^{1/2}\;$ (inégalité de \textsc{Cauchy}-\textsc{Schwarz}).
+\end{center}
+
+Si $\left(\sum_{n=1}^{N}v_n^2\right)^{1/2}>0$, on obtient après simplification par $\left(\sum_{n=1}^{N}v_n^2\right)^{1/2}$ puis élévation au carré
+
+\begin{center}
+$\sum_{n=1}^{N}v_n^2\leqslant4\sum_{n=1}^{N}u_n^2$,
+\end{center}
+
+cette inégalité restant claire si $\left(\sum_{n=1}^{N}v_n^2\right)^{1/2}=0$. Finalement,
+
+\begin{center}
+$\sum_{n=1}^{N}v_n^2\leqslant4\sum_{n=1}^{N}u_n^2\leqslant4\sum_{n=1}^{+\infty}u_n^2$.
+\end{center}
+
+La suite des sommes partielles de la série de terme général $v_n^2(\geqslant0)$ est majorée. Donc la série de terme général $v_n^2$ converge et de plus, quand $N$ tend vers l'infini, on obtient
+
+\begin{center}
+$\sum_{n=1}^{+\infty}v_n^2\leqslant 4\sum_{n=1}^{+\infty}u_n^2$.
+\end{center} 
+\fincorrection
+\finexercice

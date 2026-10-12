@@ -1,0 +1,112 @@
+\exercice{2422, bodin, 2007/10/01}
+\enonce 
+%Abou-Jaoudé, Chevalier p76
+Soit $(E,d)$ un espace métrique. On dit que $d$ est \emph{ultramétrique} si elle vérifie:
+$$\forall (x,y,z)\in E^3 \qquad d(x,z) \le \sup \left( d(x,y), d(y,z)\right).$$
+Cette inégalité entraine évidemment l'inégalité triangulaire.
+
+\begin{enumerate}
+\item Montrer que $E$ muni de la distance $d$ définie par 
+$$d(x,y) = 1 \ \text{ si }\  x\neq y, \qquad d(x,x)=0$$
+est un espace ultramétrique.
+
+\medskip
+On suppose maintenant que $(E,d)$ est ultramétrique.
+  \item Montrer que si $d(x,y)\neq d(y,z)$, on a $ d(x,z) = \sup \left( d(x,y), d(y,z)\right)$.
+  
+  \item Montrer qu'une boule ouverte (resp. fermée) est une partie à la fois ouverte et fermée.
+
+  \item Montrer que si deux boules ont un point commun l'une est contenue dans l'autre. Montrer de plus que si ces boules ont même rayon et sont toutes les deux des boules ouvertes (resp. fermées) elles sont confondues.
+
+  \item Montrer que si deux boules ouvertes distinctes $B_1, B_2$  de rayon $r$ sont contenues dans une boule fermée de même rayon, alors leur distance est égale à $r$: 
+$$d(B_1,B_2) := \inf_{(a,b)\in B_1\times B_2}d(a,b) = r.$$
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Comme $d(x,y)  = 1$, si $x\neq y$, on a donc que $d(x,y) =
+0 \Leftrightarrow x = y$. 
+De plus, comme la relation $x\neq y$ est sym\'etrique, on $d(x,y) =
+d(y,x),\-\forall x,y \in E$.
+Soient $x,y,z\in E$, supposons $x = z$ ; ou bien $y = x$ ou bien $y$ est distinct de
+$x$.
+Dans le premier cas, $d(x,z) = d(x,y) = d(y,z) = 0$ et $d(x,z) = \sup(d(x,y),
+d(y,z))$.
+Dans le second cas, $d(x,y) = 1$ , d'o\`u 
+$$0= d(x,x) = d(x,z) < \sup(d(x,y),d(x,y)) = 1.$$
+
+Supposons $x\neq z $ ; ou $y $ est distinct de $x$ et de $z$, ou alors on a
+l'une des
+possibilit\'es: $y = x$ ou $y = z$.
+Si les trois éléments sont deux \`a deux distincts, l'in\'egalit\'e est
+trivialement
+v\'erif\'ee ($1 = 1$ !).
+Sinon, $d(x,y) = 1$ ou $d(y,z) = 1$, d'o\`u
+$$1= d(x,z)\le \sup(d(x,y), d(y,z)).$$
+
+  \item On suppose que $d(x,y) \neq d(y,z)$. Supposons alors que $d(x,z)
+<\sup(d(x,y),d(y,z))$ et pour fixer les id\'ees que
+$d(x,y) = \sup(d(x,y),d(y,z))$. Alors $d(y,z)< d(x,y)$ et $d(x,z)<d(x,y)$,
+d'o\`u on d\'eduit que $\sup(d(x,z),d(z,y))< d(x,y)$.
+Par ailleurs, $d(x,y)\le \sup(d(x,z), d(z,y))$. Les deux derni\`eres
+in\'egalit\'es sont contradictoires.
+
+  \item Soit $B_d(a,r)$ une boule ouverte; montrons qu'elle est ferm\'ee.
+Soit $y\in E\setminus B_d(a,r)$; montrons qu'il existe une boule ouverte $B_d(y,\eta)$,
+contenue dans $E \setminus B_d(a,r)$.
+Si on choisit $\eta  = r/2 $ ou plus g\'en\'eralement $\eta< r$,
+on obtient que, pour tout $z\in B_d(y,\eta)$,
+$$d(a,z)\le \sup(d(a,y), d(y,z))\le \sup(d(a,y),\eta)).$$
+Comme $d(a,y)\ge r$ et $d(y,z)<\eta<r$, on a , (d'apr\`es la deuxième question),
+$d(a,z) = d(a,y)\ge r$. On en d\'eduit que $B_d(y,\eta)\subset E \setminus B_d(a,r)$ et par suite la
+boule ouverte $B_d(a,r)$ est aussi ferm\'ee.
+
+La preuve du fait que la boule ferm\'ee $B'_d(a,r) $ est aussi ouverte est
+analogue.
+
+  \item Soient $B_d(a,r)$ et $B_d(b,s)$ deux boules ouvertes ayant une
+intersection non vide et soit $z_0\in B_d(a,r)\cap B_d(b,s)$. supposons que $r\le s$ et
+montrons qu'alors $B_d(a,r)\subset B_d(b,s)$.
+On regarde la distance \`a $b$ de tout $z\in B_d(a,r)$:
+$$d(b,z)\le \sup(d(b,z_0), d(z_0,z)) < \sup(s,d(z_0,z))$$ 
+puisque $z_0$ est dans $B_d(b,s)$.
+Par ailleurs, on a:
+$d(z_0,z)\le \sup(d(z_0,a), d(a,z))<r$.
+On obtient une majoration de $d(b,z)$:
+$d(b,z)< \sup(r,s) = s$, d'o\`u une inclusion de $B_d(a,r)$ dans $B_d(b,s)$.
+
+ Cons\'equence: deux boules ouvertes de m\^eme rayon $r$ qui se rencontrent sont confondues.
+
+
+  \item Soient $ A = B_d(a,r)$ et $B = B_d(b,r)$ deux boules ouvertes de rayon
+$r$ contenues
+dans une boule ferm\'ee  $C = B'_d(c,r)$ de m\^eme rayon.
+Montrons que : 
+$$\forall  x\in A,\quad \forall y \in B, \qquad r\le d(a,b)\le r.$$
+L'in\'egali\'e ultram\'etrique montre que $d(x,y)\le \sup(d(x,c),d(c,y))$
+et ce
+sup est inf\'erieure \`a $r$ puisque chacune des boules $A$ et $B$ est
+incluse dans $C$. Donc $d(x,y)\le r$.
+
+Par ailleurs, introduisons dans l'estimation de $d(x,y)$ le centre des boules
+respectives auxquelles ils appartiennent:
+$d(x,y)\le \sup(d(x,a),d(a,y))$.  Si $d(x,a) = d(a,y)$, on aurait
+$d(a,y)<r$ et
+$y$ serait dans $A$, ce qui est impossible, $A$ et $B$ \'etant disjoints
+d'apr\`es la quatrième question. Donc $d(a,y)\neq d(x,a)$, et en fait $d(a,y)> d(x,a)$ et 
+$$d(x,y) = d(a,y).$$
+On voit donc que dans le calcul de la distance $d(x,y)$ on peut remplacer
+$x$ ou $y$ par le centre de la boule ouverte \`a laquelle il appartient.
+Par suite 
+$$d(x,y) = d(a,b)\ge r,\quad \forall x\in A,\forall y\in B$$
+
+Et finalement
+$$r\le d(x,y)\le r, \quad \forall x\in A,\forall y\in B$$ 
+d'o\`u $d(A,B)= r$.
+
+\end{enumerate}
+\fincorrection
+\finexercice

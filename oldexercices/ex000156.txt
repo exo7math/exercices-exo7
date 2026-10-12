@@ -1,0 +1,53 @@
+\exercice{156, bodin, 1998/09/01}
+\enonce
+
+\begin{enumerate}
+\item
+Dans le plan, on consid\`ere trois droites $\Delta_{1},\Delta_{2},\Delta_{3}$ formant un
+``vrai'' triangle : elles ne sont pas concourantes, et il n'y en a pas deux parall\`eles.
+Donner le nombre $R_{3}$ de r\'egions (zones blanches) d\'ecoup\'ees par ces trois droites.
+\item
+On consid\`ere quatre droites $\Delta_{1},\ldots,\Delta_{4}$, telles qu'il n'en existe pas
+trois concourantes, ni deux parall\`eles. Donner le nombre $R_{4}$ de r\'egions d\'ecoup\'ees par
+ces quatre droites.
+\item
+On consid\`ere $n$ droites $\Delta_{1},\ldots,\Delta_{n}$, telles qu'il n'en existe pas
+trois concourantes, ni deux parall\`eles. Soit $R_{n}$ le nombre de r\'egions d\'elimit\'ees par
+$\Delta_{1}\ldots\Delta_{n}$, et $R_{n-1}$ le nombre de r\'egions d\'elimit\'ees par
+$\Delta_{1}\ldots\Delta_{n-1}$. Montrer que $R_{n}=R_{n-1}+n$.
+\item
+Calculer par r\'ecurrence le nombre de r\'egions d\'elimit\'ees par $n$ droites en position
+g\'en\'erale, c'est-\`a-dire telles qu'il n'en existe pas trois concourantes ni deux parall\`eles.
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+Montrons par r\'ecurrence sur $n \geqslant 1$ la proposition suivante :
+$$\mathcal{H}_n :  \quad n \text{\  droites en position g\'en\'erale d\'ecoupent le plan en \ } R_n = \frac{n(n+1)}{2}+1
+\text{\  r\'egions.}$$
+
+\begin{itemize}
+\item[$\bullet$] pour $n=1$ alors une droite divise le plan en deux r\'egions. $\mathcal{H}_1$ est vraie.
+
+\item[$\bullet$] Soit $n\geqslant 2$ et supposons que $\mathcal{H}_{n-1}$ soit vraie, et montrons $\mathcal{H}_n$.
+Soient $\Delta_1,\ldots,\Delta_n$ $n$ droites en position
+g\'en\'erale, la droite $\Delta_n$ rencontre les droites
+$\Delta_1,\ldots,\Delta_{n-1}$ en $n-1$ points, donc $\Delta_n$
+traverse (et d\'ecoupe en deux) $n$ r\'egions du d\'ecoupage
+$\Delta_1,\ldots,\Delta_{n-1}$. Le d\'ecoupage par $\Delta_n$
+donne donc la relation $R_n=R_{n-1}+n$.
+
+Or par hypoth\`ese de r\'ecurrence $\mathcal{H}_{n-1}$ : $R_{n-1}
+= \frac{(n-1)n}{2}+1$ donc
+$$  R_n = R_{n-1}+n =  \frac{(n-1)n}{2}+1+n=\frac{n(n+1)}{2}+1 $$
+Et $\mathcal{H}_n$ est vraie.\\
+Ainsi $\forall n\in\Nn^* \quad \mathcal{H}_{n-1}\Rightarrow
+\mathcal{H}_{n}$.
+
+\item[$\bullet$] Conclusion :  par r\'ecurrence on a montr\'e que $\mathcal{H}_n$ est vraie quelque soit $n \geqslant 1$.
+
+\end{itemize}
+\fincorrection
+\finexercice

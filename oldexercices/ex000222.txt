@@ -1,0 +1,32 @@
+\exercice{222, bodin, 1998/09/01}
+\video{GNMFCMiipyM}
+\enonce
+
+ En utilisant la formule du bin\^ome, d\'emontrer
+que :
+\begin{enumerate}
+    \item $2^n+1$ est divisible par $3$ si et seulement si $n$ est impair ;
+    \item $3^{2n+1}+2^{4n+2}$ est divisible par $7$.
+\end{enumerate}
+\finenonce 
+
+\indication
+Commencer par $2^{n} = (3-1)^{n}$.
+\finindication
+
+\correction
+L'astuce consiste \`a \'ecrire $2=3-1$ (!)
+$$2^{n} = (3-1)^{n} = 3\times p+ (-1)^{n}$$
+O\`u $3\times p$ ($p\in\Zz$) repr\'esente les $n$ premiers termes
+de $\sum_{k=0}^{n}C^k_{n}3^k(-1)^{n-k}$ et $(-1)^{n}$ est le
+dernier terme. 
+Donc $2^n -(-1)^n=3p$. 
+Si $n$ est impair l'\'egalit\'e s'\'ecrit
+$2^n+1=3p$ et donc $2^n+1$ est divisible par 3.
+Si $n$ est pair $2^n-1=3p$ donc $2^n+1=3p+2$ qui n'est pas
+divisible par $3$.
+
+
+Pour l'autre assertion regarder $3=7-4$.
+\fincorrection
+\finexercice

@@ -1,0 +1,54 @@
+\exercice{21, bodin, 1998/09/01}
+
+\enonce[partiel novembre 88]
+Soient $\alpha$ et $\beta$ deux nombres r\'eels. Mettre le nombre complexe $z  =
+e^{i\alpha}+e^{i\beta}$ sous forme trigonom\'etrique $z = \rho e^{i\gamma}$ (indication :
+poser $u = \frac {\alpha + \beta}{2}$, $v = \frac {\alpha - \beta}{2}$).
+
+En d\'eduire la valeur de
+$$ \sum_{p=0}^{n}C_n^p \cos  [p\alpha + (n-p)\beta ].$$
+
+
+\finenonce
+
+\noindication
+
+\correction
+Soit $(\alpha,\beta)\in\R^2$ et $z$ le nombre complexe
+$z=e^{i\alpha}+e^{i\beta}$. Soit $u=\frac{\alpha+\beta}{2}$ et
+$v=\frac{\alpha-\beta}{2}$. Alors, $\alpha=u+v$ et $\beta=u-v$ et
+:
+\begin{align*}
+   z &= e^{i\alpha}+e^{i\beta}\\
+     &= e^{iu+iv} + e^{iu-iv} \\
+     &= e^{iu} (e^{iv}+e^{-iv}) \\
+     &= 2 \cos(v)e^{iu} \\
+     &= 2 \cos(\frac{\alpha-\beta}{2})e^{i\frac{\alpha+\beta}{2}}
+\end{align*}
+On en d\'eduit la forme trigonom\'etrique de $z$ :
+$$
+   |z|=2|\cos(\frac{\alpha-\beta}{2})|
+ \quad\text{ et, lorsque $\cos(\frac{\alpha-\beta}{2})\neq0$ :}\quad
+ $$
+$$ Arg(z)=
+   \begin{cases}
+      \frac{\alpha+\beta}{2} [2\pi] & \text{ si $\cos\frac{\alpha-\beta}{2}> 0$}\\
+      \pi+\frac{\alpha+\beta}{2} [2\pi] & \text{ si $\cos\frac{\alpha-\beta}{2}< 0$}\\
+   \end{cases}
+$$
+(Attention, si $\cos\frac{\alpha-\beta}{2}<0$, $z=2\cos ve^{iu}$
+n'est pas la forme trigonom\'etrique de $z$ !).
+
+Soit $n\in\N$. Calculons $z^n$ de deux façons diff\'erentes :
+d'une part
+$$z^n=(e^{i\alpha}+e^{i\beta})^n = \sum_{p=0}^n{C_{n}^p e^{ip\alpha}e^{i(n-p)\beta}},$$ et d'autre
+part, en utilisant la forme obtenue plus haut: $z^n=2^n
+\cos^n{v}\,e^{inu}$. En comparant les parties r\'eelles des
+expressions obtenues on obtient :
+$$
+\sum_{p=0}^n C_{n}^p \cos[p\alpha+(n-p)\beta] =
+   2^n\cos^n\frac{\alpha-\beta}{2}\cos(n\frac{\alpha+\beta}{2}).
+$$
+\fincorrection
+
+\finexercice

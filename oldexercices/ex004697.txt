@@ -1,0 +1,27 @@
+\exercice{4697, quercia, 2010/03/16}
+\enonce[Radicaux it{\'e}r{\'e}s]
+
+Soit $u_n = \sqrt{ n + \sqrt{ n-1 + \dots + \sqrt 1 }}$.
+
+\begin{enumerate}
+  \item Montrer que la suite $\left(\frac{u_n}{\sqrt n}\right)$ est born{\'e}e.
+    
+  \item D{\'e}terminer $\lim_{n\to\infty} \left(\frac{u_n}{\sqrt n}\right)$.
+    
+  \item D{\'e}terminer $\lim_{n\to\infty}(u_n-\sqrt n\,)$.
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Par r{\'e}currence, $\sqrt n \le u_n \le \sqrt{2n}$.
+  \item $\sqrt n \le u_n \le \sqrt{n+\sqrt{2(n-1)}}  \Rightarrow  \lim = 1$.
+  \item $\sqrt{n+\sqrt{n-1}} \le u_n \le \sqrt{n+\sqrt{n-1+\sqrt{2(n-2)}}}
+               \Rightarrow  \lim = \frac 12$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

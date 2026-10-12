@@ -1,0 +1,73 @@
+\exercice{5231, rouget, 2010/06/30}
+\enonce[***]
+Montrer que les suites définies par la donnée de $u_0$, $v_0$ et $w_0$ réels tels que $0<u_0<v_0<w_0$ et les relations de récurrence~:
+ 
+$$\frac{3}{u_{n+1}}=\frac{1}{u_n}+\frac{1}{v_n}+\frac{1}{w_n}\;\mbox{et}\;v_{n+1}=\sqrt[3]{u_nv_nw_n}\;\mbox{et}\;w_{n+1}=\frac{u_n+v_n+w_n}{3},$$  
+ 
+ 
+ont une limite commune que l'on ne cherchera pas à déterminer.
+
+\finenonce
+
+\noindication
+
+\correction
+Montrons tout d'abord que~:
+
+$$\forall(x,y,z)\in]0,+\infty[^3,\;(x\leq y\leq z\Rightarrow\frac{3}{\frac{1}{x}+\frac{1}{y}+\frac{1}{z}}\leq\sqrt[3]{xyz}\leq\frac{x+y+z}{3}).$$
+Posons $m=\frac{x+y+z}{3}$, $g=\sqrt[3]{xyz}$ et $h=\frac{3}{\frac{1}{x}+\frac{1}{y}+\frac{1}{z}}$.
+Soient $y$ et $z$ deux réels strictement positifs tels que $y\leq z$. Pour $x\in]0,y]$, posons
+
+\begin{center}
+$u(x)=\ln m-\ln g=\ln\left(\frac{x+y+z}{3}\right)-\frac{1}{3}\left(\ln x+\ln y+\ln z\right)$.
+\end{center}
+$u$ est dérivable sur $]0,y]$ et pour $x\in]0,y]$, 
+
+$$u'(x)=\frac{1}{x+y+z}-\frac{1}{3x}\leq\frac{1}{x+x+x}-\frac{1}{3x}=0.$$
+$u$ est donc décroissante sur $]0,y]$ et pour $x$ dans $]0,y]$, $u(x)\geq u(y)=\ln\left(\frac{2y+z}{3}\right)-\frac{1}{3}(2\ln y+\ln z)$.
+Soit $z$ un réel strictement positif fixé. Pour $y\in]0,z]$, posons $v(y)=\ln\left(\frac{2y+z}{3}\right)-\frac{1}{3}(2\ln y+\ln z)$. $v$ est dérivable sur $]0,z]$ et pour $y\in]0,z]$, 
+
+$$v'(y)=\frac{2}{2y+z}-\frac{2}{3z}\leq\frac{2}{3z}-\frac{2}{3z}=0.$$
+$v$ est donc décroissante sur $]0,z]$ et pour $y$ dans $]0,z]$, on a $v(y)\geq v(z)=0$. On vient de montrer que $g\leq m$.
+En appliquant ce résultat à $\frac{1}{x}$, $\frac{1}{y}$ et $\frac{1}{z}$, on obtient $\frac{1}{g}\leq\frac{1}{h}$ et donc $h\leq g$.
+Enfin, $m\leq\frac{z+z+z}{3}=z$ et $h\geq\frac{3}{\frac{1}{x}+\frac{1}{x}+\frac{1}{x}}=x$. Finalement,
+
+\begin{center}
+\shadowbox{
+$x\leq h\leq g\leq m\leq z.$
+}
+\end{center}
+Ce résultat préliminaire étant établi, puisque $0<u_0<v_0<w_0$, par récurrence, les suites $u$, $v$ et $w$ sont définies puis, pour tout naturel $n$, on a $u_n\leq v_n\leq w_n$, et de plus $u_0\leq u_n\leq u_{n+1}\leq w_{n+1}\leq w_n\leq w_0$.
+La suite $u$ est croissante et majorée par $w_0$ et donc converge. La suite $w$ est décroissante et minorée par $u_0$ et donc converge. Enfin, puisque pour tout entier naturel $n$, $v_n=3w_{n+1}-u_n-w_n$, la suite $v$ converge.
+Soient alors $a$, $b$ et $c$ les limites respectives des suites $u$, $v$ et $w$.
+Puisque pour tout entier naturel $n$, on a $0<u_0\leq u_n\leq v_n\leq w_n$, on a déjà par passage à la limite $0<u_0\leq a\leq b\leq c$.
+Toujours par passage à la limite quand $n$ tend vers $+\infty$~:
+
+$$
+\left\{
+\begin{array}{l}
+\frac{3}{a}=\frac{1}{a}+\frac{1}{b}+\frac{1}{c}\\
+\rule{0mm}{5mm}b=\sqrt[3]{abc}\\
+c=\frac{a+b+c}{3}
+\end{array}
+\right.
+\Leftrightarrow
+\left\{
+\begin{array}{l}
+2bc=ab+ac\\
+b^2=ac\\
+a+b=2c
+\end{array}
+\right.
+\Leftrightarrow
+\left\{
+\begin{array}{l}
+b=2c-a\\
+a^2-5ac+4c^2=0\\
+\end{array}
+\right.
+\Leftrightarrow(a=c\;\mbox{et}\;b=c)\;\mbox{ou}\;(a=4c\;\mbox{et}\;b=-2c).$$
+$b=-2c$ est impossible car $b$ et $c$ sont strictement positifs et donc, $a=b=c$.
+Les suites $u$, $v$ et $w$ convergent vers une limite commune.
+\fincorrection
+\finexercice

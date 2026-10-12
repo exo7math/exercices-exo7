@@ -1,0 +1,39 @@
+\exercice{6976, blanc-centi, 2014/05/06}
+\video{pMuDpGtaNAM}
+\enonce 
+Soit $x$ un réel fixé. Pour $n\in\Nn^*$, on pose
+$$C_n=\sum_{k=1}^n\ch(kx)\qquad\text{ et }\qquad S_n=\sum_{k=1}^n\sh(kx).$$
+Calculer $C_n$ et $S_n$.
+\finenonce 
+
+\indication
+Commencer par calculer $C_n+S_n$ et $C_n-S_n$ à l'aide des fonctions $\ch$ et $\sh$.
+\finindication
+
+\correction
+Puisque $\ch x+\sh x=e^x$ et $\ch x-\sh x=e^{-x}$, 
+les expressions $C_n+S_n=\sum_{k=1}^ne^{kx}$ et $C_n-S_n=\sum_{k=1}^ne^{-kx}$ 
+sont des sommes de termes de suites géométriques, de raison respectivement $e^x$ et $e^{-x}$.
+
+Si $x=0$, on a directement $C_n=\sum_{k=1}^n1=n$ et $S_n=\sum_{k=1}^n0=0$.
+
+Supposons $x\not=0$, alors $e^{x}\not=1$. 
+Donc
+\begin{eqnarray*}
+C_n+S_n
+  &=& \sum_{k=1}^ne^{kx} = \frac{e^x-e^{(n+1)x}}{1-e^x}\\
+  &=& e^x\,\frac{1-e^{nx}}{1-e^x}\\
+  &=& e^x\ \frac{e^{\frac{nx}{2}}(e^{-\frac{nx}{2}}-e^{\frac{nx}{2}})}{e^{\frac x2}(e^{-\frac x2}-e^{\frac x2})}\\
+  &=& e^{\frac{(n+1)x}{2}}\ \frac{e^{\frac{nx}{2}}-e^{-\frac{nx}{2}}}{e^{\frac x2}-e^{-\frac x2}}\\
+  &=& e^{\frac{(n+1)x}{2}}\ \frac{\sh\frac{nx}{2}}{\sh\frac{x}{2}}
+\end{eqnarray*}
+
+De même $C_n-S_n = \sum_{k=1}^ne^{-kx}$ ; c'est donc la même formule que ci-dessus en remplaçant $x$ par $-x$.
+Ainsi :
+$$C_n-S_n = e^{-\frac{(n+1)x}{2}}\ \frac{\sh\frac{nx}{2}}{\sh\frac{x}{2}}$$
+
+En utilisant $C_n=\frac{(C_n+S_n)+(C_n-S_n)}{2}$ et $S_n=\frac{(C_n+S_n)-(C_n-S_n)}{2}$, on récupère donc
+$$C_n=\frac{e^{\frac{(n+1)x}{2}}+e^{-\frac{(n+1)x}{2}}}{2}\,\frac{\sh\frac{nx}{2}}{\sh\frac{x}{2}}=\ch\left(\tfrac{(n+1)x}{2}\right)\,\frac{\sh\frac{nx}{2}}{\sh\frac{x}{2}}$$
+$$S_n=\frac{e^{\frac{(n+1)x}{2}}-e^{-(n+1)\frac x2}}{2}\,\frac{\sh\frac{nx}{2}}{\sh\frac{x}{2}}=\sh\left(\tfrac{(n+1)x}{2}\right)\,\frac{\sh\frac{nx}{2}}{\sh\frac{x}{2}}$$
+\fincorrection
+\finexercice

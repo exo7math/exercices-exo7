@@ -1,0 +1,117 @@
+\exercice{5299, rouget, 2010/07/04}
+\enonce[**T]
+Résoudre dans $(\Nn^*)^2$ les équations ou systèmes d'équations suivants~:
+
+$$1)\;\left\{
+\begin{array}{l}
+x+y=56\\
+x\vee y=105
+\end{array}
+\right.
+\quad
+2)\;\left\{
+\begin{array}{l}
+x\wedge y=x-y\\
+x\vee y=72
+\end{array}
+\right.\quad3)\;x\vee y-x\wedge y=243.$$
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  Posons $d=x\wedge y$ et $m=x\vee y$. $d$ divise $m=105=3.5.7$ mais, puisque $d$ divise $x$ et $y$, $d$ divise aussi $x+y=56=2^3.7$. Donc, $d$ divise $105\wedge56=7$ et nécessairement $d=1$ ou $d=7$.
+
+\begin{itemize}
+\item[1er cas.] $d=1$ fournit, puisque $m=105$, $xy=md=105$. $x$ et $y$ sont donc les solutions de l'équation $X^2-56X+105=0$ qui n'admet pas de solutions entières.
+
+\item[2ème cas.] $d=7$ fournit $xy=7.105=735$. $x$ et $y$ sont donc les solutions de l'équation $X^2-56X+735=0$ qui admet les solutions $21$ et $35$.
+\end{itemize}
+
+Réciproquement, $21+35=56$ et $21\vee35=3.5.7=105$. $\mathcal{S}=\{(21,35),(35,21)\}$.
+
+\item  On pose $x=dx'$ et $y=dy'$ avec $x'$ et $y'$ premiers entre eux et $d=x\wedge y$. Le système s'écrit $\left\{
+\begin{array}{l}
+x'-y'=1\\
+dx'y'=72
+\end{array}
+\right.
+$ ou encore $\left\{
+\begin{array}{l}
+x'=y'+1\\
+d(y'+1)y'=72
+\end{array}
+\right.
+$. En particulier, $y'$ et $y'+1$ sont deux diviseurs consécutifs de $72$. $72=2^3.3^2$ admet $4.3=12$ diviseurs à savoir $1$, $2$, $3$, $4$, $6$, $8$, $9$, $12$, $18$, $24$, $36$ et $72$. Donc $y'$ est élément de $\{1,2,3,8\}$.
+
+\begin{itemize}
+\item[1er cas.] $y'=1$ fournit $d=\frac{72}{1.2}=36$ puis $y=36.1=36$ et $x=y+d=72$. Réciproquement, $72-36=36=36\wedge72$ et $36\vee72=72$.
+
+\item[2ème cas.] $y'=2$ fournit $d=12$, $y=24$, $x=36$ qui réciproquement conviennent.
+
+\item[3ème cas.] $y'=3$ fournit $d=6$, $y=18$, $x=24$ qui réciproquement conviennent.
+
+\item[4ème cas.] $y'= 8$ fournit $d=1$, $y=8$, $x=9$ qui réciproquement conviennent.
+\end{itemize}
+
+$$\mathcal{S}=\{(9,8),(24,18),(36,24),(72,36)\}.$$
+
+\item  $d$ divise $m$ et donc $d$ divise $243=3^5$ et $d\in\{1,3,9,27,81,243\}$. On pose alors $x=dx'$, $y=dy'$ avec $x'$ et $y'$ premiers entre eux.
+
+\begin{itemize}
+\item[1er cas.] Si $d=1$ on a $x'y'-1=243$ ou encore $x'y'=244$ ce qui fournit les possibilités (en n'oubliant pas que $x'$ et $y'$ sont premiers entre eux)~:
+
+$x'=1$, $y'=244$ puis $x=1$ et $y=244$, 
+
+$x'=4$, $y'=61$ puis $x=4$ et $y=61$,
+
+$x'=61$, $y'=4$ puis $x=61$ et $y=4$,
+ 
+$x'=244$, $y'=1$ puis $x=244$ et $y=1$ qui réciproquement conviennent.
+
+\item[2ème cas.] Si $d=3$, on a $x'y'=81+1=82$ ce qui fournit les possibilités~:
+
+$x'=1$, $y'=82$ puis $x=3$ et $y=246$,
+ 
+$x'=2$, $y'=41$ puis $x=6$ et $y=123$,
+
+$x'=41$, $y'=2$ puis $x=123$ et $y=6$,
+ 
+$x'=82$, $y'=1$ puis $x=246$ et $y=3$ qui réciproquement conviennent.
+
+\item[3ème cas.] Si $d=9$ on a $x'y'=27+1=28$ ce qui fournit les possibilités~:
+
+$x'=1$, $y'=28$ puis $x=9$ et $y=252$,
+ 
+$x'=4$, $y'=7$ puis $x=36$ et $y=63$,
+
+$x'=7$, $y'=4$ puis $x=63$ et $y=36$,
+ 
+$x'=28$, $y'=1$ puis $x=252$ et $y=9$ qui réciproquement conviennent.
+
+\item[4ème cas.] Si $d=27$ on a $x'y'=9+1=10$ ce qui fournit les possibilités~:
+
+$x'=1$, $y'=10$ puis $x=27$ et $y=270$,
+ 
+$x'=2$, $y'=5$ puis $x=54$ et $y=135$,
+
+$x'=5$, $y'=2$ puis $x=135$ et $y=54$,
+ 
+$x'=10$, $y'=1$ puis $x=270$ et $y=27$ qui réciproquement conviennent.
+
+\item[5ème cas.] Si $d=81$, on a $x'y'=3+1=4$ ce qui fournit les possibilités~:
+
+$x'=1$, $y'=4$ puis $x=81$ et $y=324$,
+ 
+$x'=4$, $y'=1$ puis $x=324$ et $y=81$ qui réciproquement conviennent.
+
+\item[6ème cas.] Si $d=243$, on a $x'y'=1+1=2$ ce qui fournit les possibilités~:
+
+$x'=1$, $y'=2$ puis $x=243$ et $y=486$,
+ 
+$x'=2$, $y'=1$ puis $x=486$ et $y=243$ qui réciproquement conviennent.
+\end{itemize}
+\end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,33 @@
+\exercice{6897, ruette, 2013/01/24}
+\enonce
+On a décelé dans une certaine population une probabilité de 0,01 pour
+qu'un enfant soit atteint par une maladie M. La 
+probabilité qu'un enfant qui n'est pas atteint par M ait une réaction 
+négative à un test T est de 0,9. S'il est atteint par M, la probabilité 
+qu'il ait une réaction positive au test est de 0,95.\\ 
+Quelle est la probabilité  qu'un enfant pris
+au hasard ait une réaction positive au test~?
+Quelle est la probabilité
+qu'un enfant pris au hasard et ayant une réaction 
+positive soit atteint par M~?
+\finenonce
+
+\noindication
+\correction
+On note $A$ l'événement ``l'enfant a la maladie M'', $A^c$ son
+complémentaire (événement ``l'enfant n'a pas la maladie M''), $B$ l'événement
+``l'enfant a une réaction positive au test'', $B^c$ son complémentaire
+(événement
+``l'enfant a une réaction négative au test''). D'après
+l'énoncé, $P(A)=0,01$, $P(A^c)=0,99$, $P(B^c|A^c)=0,9$ et
+$P(B|A)=0,95$. Donc,  
+\begin{eqnarray*}P(B)&=&P(A\cap B)+P(A^c\cap
+B)=P(B|A)P(A)+P(B|A^c)P(A^c)\\
+&=&P(B|A)P(A)+(1-P(B^c|A^c))P(A^c)=0,0095+0,099=0,1085.
+\end{eqnarray*}
+La probabilité
+qu'un enfant de moins de trois mois pris au hasard et ayant une réaction 
+positive soit atteint par M est donnée par $P(A|B)=\frac{P(B\cap
+A)}{P(B)}=\frac{P(B|A)P(A)}{P(B)}=\frac{95}{1085}\simeq 0,088$. Un tel test serait d'une utilité discutable.
+\fincorrection
+\finexercice

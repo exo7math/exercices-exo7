@@ -1,0 +1,39 @@
+\exercice{3354, quercia, 2010/03/09}
+\enonce[Automorphismes de $\mathcal{L}(E)$]
+
+Soit $E$ un ev de dimension $n$ et
+$\Phi : {\mathcal{L}(E)} \to {\mathcal{L}(E)}$ un automorphisme d'algèbre. On note
+$(\vec e_1, \dots, \vec e_n)$ une base fixée de $E$, $(\varphi_{ij})$ la
+base de $\mathcal{L}(E)$ associée
+$\bigl(\varphi_{ij}(\vec e_k) = \delta_{jk}\vec e_i\bigr)$ et
+$\psi_{ij} = \Phi(\varphi_{ij})$.
+
+\begin{enumerate}
+  \item  Simplifier $\psi_{ij} \circ \psi_{k\ell}$.
+     
+  \item  En déduire qu'il existe $\vec u_1 \in E\setminus\{\vec 0\}$ tel que
+     $\psi_{11}(\vec u_1) = \vec u_1$.
+     
+  \item  On note $\vec u_i = \psi_{i1}(\vec u_1)$.
+     Montrer que $\psi_{ij}(\vec u_k) = \delta_{jk}\vec u_i$ et en déduire que
+     $(\vec u_i)$ est une base de $E$.
+     
+  \item  Soit $f \in GL(E)$ définie par : $f(\vec e_i) = \vec u_i$.
+     Montrer que : $\forall\ g \in \mathcal{L}(E),\ \Phi(g) = f\circ g \circ f^{-1}$.
+     
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $\psi_{ij} \circ \psi_{k\ell} = \delta_{jk}\psi_{i\ell}$.
+  \item $\psi_{11}$ est un projecteur non trivial.
+  \item Si $\sum \lambda_k\vec u_k = \vec 0$, alors en appliquant
+              $\psi_{1j}$ : $\lambda_j\vec u_1 = \vec 0  \Rightarrow  \lambda_j = 0$.
+  \item Décomposer $g$ sur la base $(\varphi_{ij})$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

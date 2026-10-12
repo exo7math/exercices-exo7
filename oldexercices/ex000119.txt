@@ -1,0 +1,45 @@
+\exercice{119, ridde, 1999/11/01}
+\video{UK22qba7LV0}
+\enonce
+
+Montrer que 
+$$\forall \epsilon >0 \quad \exists N \in \Nn \text{ tel que }
+ (n \geq N \Rightarrow 2-\epsilon < \frac{2n + 1}{n + 2} < 2 + \epsilon).$$
+\finenonce 
+
+\indication
+En fait, on a toujours : $\frac{2n+1}{n+2} \leq 2$.
+Puis chercher une condition sur $n$ pour que
+l'in\'egalit\'e 
+$$2-\epsilon < \frac{2n + 1}{n + 2}$$
+soit vraie.
+\finindication
+
+\correction
+Remarquons d'abord que pour $n \in \Nn$, $\frac{2n+1}{n+2} \leq 2$
+car $2n+1 \leq 2(n+2)$.
+\'Etant donn\'e $\epsilon > 0$, nous avons donc 
+$$\forall n \in \Nn \quad \frac{2n+1}{n+2} < 2 + \epsilon$$
+Maintenant nous cherchons une condition sur $n$ pour que
+l'in\'egalit\'e 
+$$2-\epsilon < \frac{2n + 1}{n + 2}$$
+soit vraie.
+\begin{align*}
+2-\epsilon < \frac{2n + 1}{n + 2} 
+    &\Leftrightarrow (2-\epsilon)(n+2) < 2n+1 \\
+    &\Leftrightarrow 3  < \epsilon (n+2) \\
+   &\Leftrightarrow n >  \frac{3}{\epsilon}-2 \\
+\end{align*}
+
+Ici $\epsilon$ nous est donn\'e, nous prenons un $N\in \Nn$ tel
+que $N > \frac{3}{\epsilon}-2$, alors pour tout $n \geq N$ nous avons
+$n \geq N >  \frac{3}{\epsilon}-2$ et par
+cons\'equent: $2-\epsilon < \frac{2n + 1}{n + 2}$.
+Conclusion: \'etant donn\'e $\epsilon > 0$, nous avons trouv\'e un 
+$N\in \Nn$ tel que pour tout $n \geq N$ on ait
+$2-\epsilon < \frac{2n + 1}{n + 2}$ et $\frac{2n+1}{n+2} < 2 + \epsilon$.
+
+En fait nous venons de prouver que la suite 
+de terme $(2n+1)/(n+2)$ tend vers $2$ quand $n$ tend vers $+\infty$.
+\fincorrection
+\finexercice

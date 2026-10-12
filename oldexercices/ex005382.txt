@@ -1,0 +1,51 @@
+\exercice{5382, rouget, 2010/07/06}
+\enonce[***I]
+Soit $f$ une fonction réelle d'une variable réelle définie et continue sur un voisinage de $+\infty$. On suppose que la fonction $f(x+1)-f(x)$ admet dans $\Rr$ une limite $\ell$ quand $x$ tend vers $+\infty$. Etudier l'existence et la valeur eventuelle de $\lim_{x\rightarrow +\infty}\frac{f(x)}{x}$.
+\finenonce
+
+\noindication
+
+\correction
+Il existe $a>0$ tel que $f$ est définie et continue sur $[a,+\infty[$.
+
+1er cas. Supposons que $\ell$ est réel. Soit $\varepsilon>0$. 
+
+$$\exists A_1\geq a/\;\forall X\in[a,+\infty[,\;(X\geq A_1\Rightarrow \ell-\frac{\varepsilon}{2}<f(X+1)-f(X)<\ell+\frac{\varepsilon}{2}).$$
+
+Soit $X\geq A_1$ et $n\in\Nn^*$. On a~:
+$$\sum_{k=0}^{n-1}(\ell-\frac{\varepsilon}{2})<\sum_{k=0}^{n-1}(f(X+k+1)-f(X+k))=f(X+n)-f(X)<\sum_{k=0}^{n-1}(\ell+\frac{\varepsilon}{2}),$$ et on a donc montré que 
+
+$$\forall\varepsilon>0,\;\exists A_1\geq a/\;\forall X\geq A_1,\;\forall n\in\Nn^N*,\;n(\ell-\frac{\varepsilon}{2})<f(X+n)-f(X)<n(\ell+\frac{\varepsilon}{2}).$$ 
+
+Soit de nouveau $\varepsilon>0$. Soit ensuite $x\geq A_1+1$ puis $n=E(x-A_1)\in\Nn^*$ puis $X=x-n$.
+
+On a $X=x-E(x-A_1)\geq x-(x-A_1)=A_1$ et donc $n(\ell-\frac{\varepsilon}{2})<f(x)-f(x-n)<n(l+\frac{\varepsilon}{2})$ ou encore
+
+$$\frac{f(x-n)}{x}+\frac{n}{x}(\ell-\frac{\varepsilon}{2})<\frac{f(x)}{x}<\frac{f(x-n)}{x}+\frac{n}{x}(\ell+\frac{\varepsilon}{2}).$$
+
+Ensuite,
+
+$$1-\frac{A_1+1}{x}=\frac{x-A_1-1}{x}\leq\frac{n}{x}=\frac{E(x-A_1)}{x}\leq\frac{x-A_1}{x}=1-\frac{A_1}{x},$$ et comme $1-\frac{A_1+1}{x}$ et $1-\frac{A_1}{x}$ tendent vers $1$ quand $x$ tend vers $+\infty$, on en déduit que $\frac{n}{x}$ tend vers $1$ quand $x$ tend vers $+\infty$.
+
+Puis, puisque $f$ est continue sur le segment $[A_1,A_1+1]$, $f$ est bornée sur ce segment. Or $n\leq x-A_1<n+1$ s'écrit encore $A_1\leq x-n <A_1+1$ et donc, en posant $M=\mbox{sup}\{|f(t)|,\;t\in[A_1,A_1+1]\}$, on a $\left|\frac{x-n)}{x}\right|\leq\frac{M}{x}$ qui tend vers $0$ quand $x$ tend vers $+\infty$. En résumé, $\frac{f(x-n)}{x}+\frac{n}{x}(\ell-\frac{\varepsilon}{2})$ et $\frac{f(x-n)}{x}+\frac{n}{x}(\ell+\frac{\varepsilon}{2})$ tendent respectivement vers $\ell-\frac{\varepsilon}{2}$ et $\ell+\frac{\varepsilon}{2}$ quand $x$ tend vers $+\infty$. On peut donc trouver un réel $A_2\geq a$ tel que $x\geq A_2\Rightarrow\frac{f(x-n)}{x}+\frac{n}{x}(\ell+\frac{\varepsilon}{2})>(\ell-\frac{\varepsilon}{2})-\frac{\varepsilon}{2}=\ell-\varepsilon$ et un réel $A_3\geq a$ tel que $x\geq A_2\Rightarrow\frac{f(x-n)}{x}+\frac{n}{x}(\ell+\frac{\varepsilon}{2})<\ell+\varepsilon$.
+
+Soit $A=\mbox{Max}(A_1,A_2,A_3)$ et $x\geq A$. On a $\ell-\varepsilon<\frac{f(x)}{x}<\ell+\varepsilon$. On a montré que $\forall\varepsilon>0,\;(\exists A\geq a/\;\forall x\geq A,\;\ell-\varepsilon<\frac{f(x)}{x}<\ell+\varepsilon$ et donc $\lim_{x\rightarrow +\infty}=\ell$.
+
+2ème cas. Supposons $\ell=+\infty$ (si $\ell=-\infty$, remplacer $f$ par $-f$).
+
+Soit $B>0$. $\exists A_1\geq a/\;\forall X\geq A_1,\;f(X+1)-f(X)\geq 2B$.
+
+Pour $X\geq A_1$ et $n\in\Nn^*$, on a~:~$f(X+n)-f(X)=\sum_{k=0}^{n-1}(f(X+k+1)-f(X+k))\geq2nB$.
+
+Soient $x\geq1+A_1$, $n=E(x-A_1)$ et $X=x-n$. On a $f(x)-f(x-n)\geq2nB$ et donc,
+
+$$\frac{f(x)}{x}\geq\frac{f(x-n)}{x}+\frac{2nB}{x},$$
+
+qui tend vers $2B$ quand $x$ tend vers $+\infty$ (démarche identique au 1er cas).
+
+Donc $\exists A\geq A_1>a$ tel que $x\geq A\Rightarrow\frac{f(x-n)}{x}+\frac{2nB}{x}>B$.
+
+Finalement~:~($\forall B>0,\;\exists A>a/\;(\forall x\geq A,\;\frac{f(x)}{x}>B$ et donc, $\lim_{x\rightarrow +\infty}\frac{f(x)}{x}=+\infty$.
+
+\fincorrection
+\finexercice

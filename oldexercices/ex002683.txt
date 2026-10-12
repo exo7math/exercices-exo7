@@ -1,0 +1,386 @@
+\exercice{2683, matexo1, 2002/02/01}
+
+\enonce
+A 
+
+\begin{enumerate}
+\item Soient $a$ et $z$ deux réels. Soit $f$ une fonction de
+classe $C^{n+1}$ sur le segment d'extrémités
+$a$ et $z$ et $\phi$ un polynôme de degré $n$. Prouver que pour tout $t$ compris dans
+l'intervalle $[0,1]$,
+\[
+{d\over dt}\sum_{m=1}^n (-1)^m (z-a)^m
+                \phi^{(n-m)}(t) f^{(m)}\left(a+t(z-a)\right)
+\]\[
+  = -(z-a) \phi^{(n)}(t) f'\left(a+t(z-a)\right)
+    + (-1)^n (z-a)^{n+1} \phi(t) f^{(n+1)}\left(a+t(z-a)\right) 
+\]
+
+\item 
+
+\begin{enumerate}
+\item Montrer que la fonction $t\mapsto {t \over e^t-1}$ est prolongeable par continuité
+en zéro, que son prolongement est indéfiniment dérivable et admet des développements
+limités en zéro de la forme:
+$$ 1 - {t/2} + {b_1 t^2 \over 2!}
+                                + {b_2 t^4 \over 4!} + \dots + {b_n t^{2n} \over (2n)!}
++o(t^{2n+1}),$$
+où les $b_i$ sont des réels qu'on ne cherchera pas à déterminer.
+
+Montrer que la dérivée $n^{i\grave eme}$ en zéro, notée $\phi_n(z)$, de la fonction
+$t\mapsto t {e^{zt}-1 \over e^t-1}$
+est un polynôme en $z$ de degré $n$ et que
+$$\phi_n(z)= z^n - {1\over 2}nz^{n-1} + C_n^2 b_1 z^{n-2}
+                + C_n^4 b_2 z^{n-4} + \dots
+                + C_n^{2N} b_N z^{n-2N}$$
+où $N=E({n-1\over2})$, $E$ désignant la fonction partie entière.
+
+\item
+Prouver que $nz^{n-1}=\phi_n(z+1) - \phi_n(z)$
+\end{enumerate}
+
+\item 
+Prouver que
+$$
+\begin{matrix}
+(i)     &\phi_n^{(n-k)}(1) = \phi_n^{(n-k)}(0)\ \ (2\leq k\leq n) &\quad
+& (ii)  &\phi_n^{(n-2k-1)}(0) = 0 \ \ (1\leq k\leq N)             \cr
+(iii)   &\phi_n^{(n-2k)}(0) = {n! b_k \over (2k)!}  \ \ (1\leq k\leq N)  &\quad
+& (iv)  &\phi_n^{(n-1)}(0) = -{1\over2} n!         \cr
+ (v)    &\phi_n^{(n-1)}(1) = +{1\over2} n! & \quad
+&(vi)   &\phi_n^{(n)} = n!  \cr
+\end{matrix}
+$$
+
+\item 
+
+\begin{enumerate}
+\item 
+On suppose $f$ de classe $C^{2n+1}$. Prouver que
+\begin{eqnarray*}
+0 &=& f(z) - f(a) - {z-a \over 2} \left[ f'(z) + f'(a) \right] 
+\\
+&&+ \sum_{m=1}^{n-1} b_m {(z-a)^{2m} \over (2m)!} \left[ f^{(2m)}(z) - f^{(2m)}(a) \right] 
+\\
+&& - {(z-a)^{2n+1} \over (2n)!} \int_0^1 \phi_{2n}(t) f^{(2n+1)}\Big( a+(z-a)t \Big) dt
+ \end{eqnarray*}
+
+\item
+En déduire que si $F$ est de classe $C^{2n}$ sur $[a,a+r\omega]$
+où $r\in \Nn$ et $\omega>0$, alors
+\begin{eqnarray*}
+\int_a^{a+r\omega} F(x)dx &=&
+\omega \Big[ {1\over2} F(a) + F(a+\omega) + \dots 
++ F(a+{\scriptstyle (r-1)}\omega) + {1\over2} F(a+r\omega) \Big]
+\\
+&& - \sum_{m=1}^{n-1}      b_m {\omega^{2m} \over (2m)!} \left[ F^{(2m-1)}(a+r\omega) - F^{(2m-1)}(a) \right] 
++ R_n                                               
+ \end{eqnarray*} 
+où 
+\[
+R_n={\omega^{2n+1} \over (2n)!} \int_0^1 \phi_{2n}(t)
+\sum_{m=0}^{r-1} F^{(2n)}(a+m\omega+\omega t) dt \; .
+\]
+\end{enumerate}
+\end{enumerate}
+                        
+B
+
+\begin{enumerate}
+\item
+Soit $u_k: x>0 \mapsto \ln(x+k)-\ln(k)+x\ln\left({k\over k+1}\right)
+                                \qquad(k\in \Nn^*)$\par
+Montrer que pour tout $x$ strictement positif, la série
+$\sum_{k\geq 1}u_k(x)$ est convergente. On pose pour la suite
+$G(x)=\ln(x)+\sum_{k=1}^{\infty}u_k(x)$
+
+\item
+Prouver que $G$ vérifie l'équation fonctionnelle 
+$$\forall x>0 \quad G(x+1)=G(x)-\ln(x).$$
+
+\item
+En déduire que $\forall m\in \Nn \quad \exp(-G(m+1))=m!$
+
+\item
+Soit $x$ et $y$ deux réels strictement positifs. Montrer que la
+série\par
+\centerline{$\sum_{k\geq1}\bigl[ \ln(y+k) - \ln(x+k)
+                                + (y-x)\ln\left({k\over k+1}\right) \bigr]$}
+est convergente et que sa somme est $G(y) - G(x) - \ln y + \ln x$.
+
+\item
+Prouver à l'aide de A que pour tous entiers strictement positifs $n$
+et $p$ 
+\begin{eqnarray*}
+\sum_{k=0}^n \ln(y+k) - \ln(x+k) &=&
+\int_0^n f(t)dt + {1\over2} \big( f(0)+f(n) \big)
+\\
+&&+\sum_{h=1}^{p-1} {b_h\over(2h)!} \big( f^{(2h-1)}(n) - f^{(2h-1)}(0) \big) + T_{p,n}(x,y)
+ \end{eqnarray*}
+où $f: t\mapsto \ln(y+t) -\ln(x+t)$ et
+$T_{p,n}(x,y)$ est une expression que l'on précisera.
+
+\item
+Prouver que $R_p(x,y)=\lim_{n \to +\infty}T_{p,n}(x,y)$ existe.
+
+\item
+On pose $g(z)=z\ln z - z - {1\over2} \ln z + \sum_{h=1}^{p-1} 
+                                {b_h\over(2h)(2h-1)} {1\over z^{2h-1}}$.
+Montrer que $G(y)+g(y)=G(x)+g(x)+R_p(x,y)$
+
+\item
+Montrer que $ R_p(x,y)  = O\left( {1 \over \bigl[ \inf(x,y) \bigr]^{2p-1}} \right)$
+quand $\inf(x,y)\to +\infty$.
+
+\item
+Prouver à l'aide de la formule de Stirling que
+$G(m)+g(m)\to {1\over2}\ln2\pi$ quand
+$m \to +\infty$.
+
+\item
+Montrer que
+$$G(y)= -y\ln y + y + {1\over2}\ln y - {1\over2}\ln2\pi
+- \sum_{h=1}^{p-1}  {b_h\over(2h)(2h-1)} {1\over y^{2h-1}}
++ O({1\over y^{2p-1}})$$
+
+\item
+Donner un développement asymptotique de $\ln(m!)$ quand $m$ tend vers $+\infty$ à
+un $O({1\over m^7})$ près.
+\end{enumerate}
+
+\finenonce
+\noindication
+\correction
+\vfill
+{\leftskip=-1cm A\qquad  1.\par} 
+$$\begin{aligned}
+\qquad &{d\over dt}\sum_{m=1}^n (-1)^m (z-a)^m
+                \phi^{(n-m)}(t) f^{(m)}\left(a+t(z-a)\right) \cr
+        &=\sum_{m=1}^n (-1)^m (z-a)^m \Big[
+                \phi^{(n-m+1)}(t)f^{(m)}\left(a+t(z-a)\right)  \cr
+        &  \mkern260mu   +\phi^{(n-m)}(t) (z-a) f^{(m+1)}\left(a+t(z-a)\right)  \Big]  \cr
+        &=\sum_{m=1}^n (-1)^m 
+                (z-a)^m \phi^{(n-m+1)}(t)f^{(m)}\left(a+t(z-a)\right)   \cr
+        &  \mkern220mu  + \sum_{m=1}^n (-1)^m(z-a)^{m+1} \phi^{(n-m)}(t)f^{(m+1)}\left(a+t(z-a)\right)   \cr
+\end{aligned}
+$$
+Effectuons le changement d'indice de sommation $m=m'+1$ dans la deuxième somme; tous les
+termes s'éliminent deux à deux, à l'exception du premier terme de la première somme
+et du dernier terme de la deuxième somme, d'où le résultat demandé. 
+
+\medskip
+2.a. Plus généralement, on a le résultat suivant: si une fonction $f$ est nulle
+en zéro et de classe $C^{n+1}$ sur un intervalle $I$ contenant zéro, $g(t)=f(t)/t$ est
+prolongeable par continuité en zéro et son prolongement est de classe $C^n$.
+Gardons nous de déduire fallacieusement ce résultat de l'existence d'un développement
+limité d'ordre $n$ de $g$.
+On montre à l'aide d'un développement limité d'ordre 1 de $f$ que $g$ est
+prolongeable par continuité en $0$ en posant $\tilde g(0)=f'(0)$. Par ailleurs, $g$ est de
+classe $C^{n+1}$ sur $I\backslash\{0\}$. 
+Faisons l'hypothèse de
+récurrence $g^{(k-1)}(t)={f^{(k)}(0) \over k} + {f^{(k+1)}(0) \over k+1} {t \over 1!}
++ \dots + {f^{(n+1)}(0) \over n+1} {t^{n-k+1} \over (n-k+1)!}+o(t^{n-k+1})$
+$(1\leq k \leq n,\ t\neq0)$.
+En dérivant $k$ fois l'identité $f(t)=tg(t)$, on obtient que
+$\forall t\neq0 \ \ g^{(k)}(t)={ f^{(k)}(t) - k g^{(k-1)}(t) \over t }$.
+Or $f^{(k)}(t)=f^{(k)}(0)+f^{(k+1)}(0){t\over1!}+\dots
++f^{(n+1)}(0){t^{n+1-k}\over(n-k)!}+o(t^{n+1-k})$.
+En substituant ces développements limités dans l'identité précédente, on montre que
+l'hypothèse de récurrence est vérifiée au rang suivant, donc pour tout entier
+$k$ de 1 à $n+1$.
+ Faisons l'hypothèse de récurrence que $g^{(k)}(0)$ existe
+et est égale à $f^{(k+1)}(0)/(k+1)$ ($0\leq k\leq n$). Du développement limité
+de $g^{(k)}$ (tronqué à l'ordre 1) et de l'hypothèse de
+récurrence, il résulte que $g^{(k)}$ est continue et dérivable en zéro et que, si
+$k<n$, $g^{(k+1)}(0)=f^{(k+2)}(0)/(k+2)$, ce qui prouve par récurrence que $g$ est
+$n$ fois continument dérivable sur $I$.
+
+Par conséquent, $t\mapsto{e^t-1 \over t}$ est prolongeable par continuité en une
+fonction indéfiniment dérivable sur $\Rr$. Cette fonction ne s'annulant jamais,
+son inverse est également définie et indéfiniment dérivable sur $\Rr$.
+
+
+
+La fonction $t \mapsto {t \over e^t-1} + {t\over2}$ est paire car
+$$\begin{aligned}
+{-t \over e^{-t}-1} + {-t\over2}
+&= {-t e^t \over 1-e^t} - {t\over2}  \cr
+&= {t e^t - t + t \over e^t-1} - {t\over2}  \cr
+&= {t \over e^t-1} + {t\over2}  \cr
+\end{aligned}
+$$
+Donc  le développement limité de ${t \over e^t-1}$, dont l'existence est garantie par
+le fait que la fonction est indéfiniment dérivable, est de la forme demandée par
+l'énoncé.
+
+Par conséquent
+\begin{eqnarray*}
+{t \over e^t-1} (e^{zt}-1) &=&
+\Big( 1-{t\over2}+ {b_1 t^2 \over 2!} + {b_2 t^4 \over 4!} + \dots 
++  {b_N t^{2N} \over (2N)!} + o(t^n) \Big) 
+\\
+\times \Big( zt + {z^2 t^2 \over 2!} + \dots + {z^n t^n \over n!} + o(t^n)   \Big)   
+ \end{eqnarray*}
+et $\phi_n(z)/n!$ est le coefficient de $t^n$ dans ce développement:
+$$\phi_n(z)/n!= {z^n\over n!} - {1\over2} {z^{n-1}\over(n-1)!}
++ {b_1\over2!}{z^{n-2}\over(n-2)!} + {b_2\over4!}{z^{n-4}\over(n-4)!}
++ \dots + {b_N\over(2N)!}{z^{n-2N}\over(n-2N)!},$$
+d'où l'expression de $\phi_n$ demandée.
+
+\medskip
+2.b. 
+$$\begin{aligned}
+\phi_n(z+1)-\phi_n(z)&={d^n \over dt^n}_{| t=0}
+                      \left(t{e^{zt}-1 \over e^t-1} - t{e^{(z+1)t}-1 \over e^t-1} \right) \cr
+                     &={d^n \over dt^n}_{| t=0} \left(t e^{zt} \right) \cr
+\end{aligned}
+$$
+Comme $t \mapsto t e^{zt}$ est de classe $C^\infty$ et que son développement limité
+d'ordre $n$ en $t=0$ est $\sum_{k=0}^{n-1} {z^k\over k!} t^{k+1} + o(t^n)$, il vient
+$\phi_n(z+1)-\phi_n(z)=nz^{n-1}$.
+
+
+\medskip
+3. $(i)$ est obtenue en dérivant autant de fois que nécessaire l'identité précédente
+et en donnant à $z$ la valeur zéro.
+   $(ii)$, $(iii)$, $(iv)$, $(v)$ et $(vi)$ sont des conséquences immédiates de 2.a.
+
+4.a. On applique la question 1 au polynôme $\phi_{2n}$ de degré 2n et on
+intègre entre $0$ et $1$. Il vient
+\[
+\sum_{m=1}^{2n} (-1)^m (z-a)^m \Big[ \phi_{2n}^{(2n-m)}(1) f^{(m)}(z)
+- \phi_{2n}^{(2n-m)}(0) f^{(m)}(a)  \Big]
+\]\[
+ = -(2n)! \bigl( f(z)-f(a) \bigr) + (z-a)^{2n+1} \int_0^1 \phi_{2n}(t)f\Big( a+(z-a)t \Big)dt
+\]
+en tenant compte du fait que $\phi_{2n}^{(2n)}=(2n)!$
+
+On obtient l'égalité demandée en substituant aux  dérivées itérées
+de $\phi_{2n}$ les expressions déterminées dans la question 3.      
+
+\medskip
+4.b. Appliquons la question précédente en remplaçant $f$ par une
+primitive de $F$ et $z$ par $\omega$. Il vient
+\begin{eqnarray*}
+0 &=& \int_a^{a+\omega} F(t)dt - {\omega\over2} (F(a+\omega)+F(a)) 
++ \sum_{m=1}^{n-1} b_m {(z-a)^{2m} \over (2m)!} \left[ F^{(2m-1)}(a+\omega) - F^{(2m-1)}(a) \right] 
+\\
+&& - {\omega^{2n+1}\over (2n)!} \int_0^1 \phi_{2n}(t)F^{(2n)}\Big( a+(z-a)t \Big)dt  
+ \end{eqnarray*}
+Lorsqu'on somme les égalités obtenues en remplaçant $a$ successivement
+par lui-m{\^e}me, $a+\omega$, \dots, $a+(r-1)\omega$, on obtient le résultat demandé,
+certains termes se simplifiant deux à deux.
+
+\bigskip
+{\leftskip=-1cm B\qquad 1. On a pour tout $x>0$ fixé \par}
+$$u_k(x)=\ln \left( 1+{x\over k} \right)
+                        + x \ln \left( 1-{k\over k+1} \right)
+                        ={x\over k}-{x\over k+1}+O({1\over k^2})
+                        =O({1\over k^2})$$
+Donc la série $\sum_{k\geq1}u_k(x)$ converge.
+
+\medskip
+2. 
+$$\begin{aligned}
+\ln(x+1)+\sum_{k=1}^n &u_k(x+1)  \cr
+        &=\ln(x+1) + \sum_{k=2}^{n+1} \ln(x+k)
+                        + \sum_{k=1}^n \Big[ -\ln(k)
+                                + (x+1) \big(\ln(k)-\ln(k+1)\big) \Big] \cr
+        &=\sum_{k=1}^{n+1} \ln(x+k)                                
+                        + \sum_{k=1}^n  x (\ln(k)-\ln(k+1)) 
+                        - \sum_{k=1}^n \ln(k+1)        \cr
+        &=\sum_{k=1}^n u_k(x) + \ln(x+n+1) - \ln(n+1)  \cr
+\end{aligned}
+$$
+Lorsque $n$ tend vers $+\infty$,
+$\ln(x+n+1) - \ln(n+1)=\ln \left( {x+n+1 \over n+1} \right)$ tend vers zéro;
+on obtient donc par passage à la limite l'égalité souhaitée.
+
+\medskip
+3. Pour tout $k\geq1$ entier, $u_k(1)=0$, donc $G(1)=0$ et
+on prouve aisément par récurrence à l'aide de la question précédente
+que pour tout entier strictement positif $n$, $G(n+1)=\sum_{k=1}^n \ln(k)$,
+égalité de laquelle on déduit immédiatement le résultat demandé.
+
+\medskip
+4. immédiat
+
+\medskip
+5. C'est une application directe de la question A.4.b.\par
+$T_{p,n}(x,y)=-{1\over(2p)!}\int_0^1 \phi_{2p}(t)
+                        \sum_{m=0}^{n-1} f^{(2p)}(m+t) dt
+=-{1\over(2p)!} \int_0^n \phi_{(2p)} \big( t-E(t) \big) f^{(2p)}(t)dt$
+
+
+\medskip
+6. L'intégrande dans l'expression de $T_{p,n}(x,y)$ est majorée en valeur
+absolue par le produit de la borne supérieure de la fonction continue
+$\phi_{2p}$ sur le segment $[0,1]$ et de la valeur absolue de $f^{(2p)}$.
+
+On prouve aisément par récurrence que
+$f^{(m)}(t)=(-1)^{m-1}\left({1\over(y+t)^m}-{1\over(x+t)^m}\right)
+= O \left( {1\over t^{m+1}} \right)$ (quand $t \to +\infty$).
+Donc l'intégrale $\int_0^{+\infty} \phi_{(2p)} \big( t-E(t) \big) f^{(2p)}(t)dt$
+est absolument convergente, ce qui prouve que $T_{p,n}(x,y)$ admet une limite
+finie lorsque $n$ tend vers $+\infty$.
+
+
+
+\medskip
+7. D'après les questions 4 et 5,
+$$\begin{aligned}
+G(y)-G(x)&=\sum_{k=1}^{+\infty}\bigl[ \ln(y+k) - \ln(x+k)
+                        + (y-x)\ln\left({k\over k+1}\right) \bigr] + \ln y - \ln x \cr
+        &=\lim_{n\to +\infty}\Bigl\{\sum_{k=0}^n [\ln(y+k) - \ln(x+k)]
+                 + (y-x)\ln{1\over n+1} \Bigr\}                          \cr 
+        &\mkern-30mu =\lim_{n\to +\infty} \Biggl\{
+                 (y+n)\ln(y+n) - (y+n) - y\ln y + y - (x+n)\ln(x+n)             \cr
+        &\mkern40mu  + (x+n) + x\ln x - x
+         + {1\over2} \bigl( \ln y - \ln x + \ln(y+n) - \ln(x+n) \bigr)          \cr
+        &\mkern10mu +\sum_{h=1}^{p-1} {b_h\over(2h)!}
+                \big( f^{(2h-1)}(n) - {1\over y^{2h-1}} + {1\over x^{2h-1}}\big) 
+         + T_{p,n}(x,y) + (y-x)\ln{1\over n+1} \Biggr\}                  \cr
+\end{aligned}
+$$
+
+Or $(y+n)\ln(y+n) - (x+n)\ln(x+n) = (y-x)\ln n + y - x + o(1)$
+quand $n\to +\infty$. On obtient donc après simplifications
+$G(y)-G(x)=g(x)-g(y)+R_n(x,y)$, ce qu'il fallait démontrer.
+
+\medskip
+8. D'après la question 5 et l'expression des dérivées successives de $f$ donnée dans
+la question 6, $T_{p,n}(x,y)$ est majoré en valeur absolue par le produit d'une constante
+et de l'intégrale
+$\int_0^n \left| {1\over (y+t)^{2p}} - {1\over (x+t)^{2p}} \right| dt$.
+$|R_p(x,y)|$ est majoré de la m{\^e}me façon en remplaçant la borne finale d'intégration
+$n$ par $+\infty$. L'argument de la valeur absolue gardant un signe constant, l'intégrale
+majorante est égale à
+${1\over 2p-1} \left[ \ \left| {1\over (y+t)^{2p-1}}
+                                - {1\over (x+t)^{2p-1}} \right| \ \right]_0^{+\infty}$
+et on obtient ainsi l'estimée souhaitée.
+
+
+\medskip
+9. On a $g(m)=m\ln m - m - {1\over2}\ln m + o(1)$ et $G(m)=-\ln(m-1)!=-\ln m! + \ln m$ pour
+$m$ entier, donc
+le résultat demandé découle immédiatement de la formule de Stirling
+$m! \sim \sqrt{2\pi} m^{m+{1\over2}} e^{-m}$.
+
+\medskip
+10. Le résultat demandé est obtenu à partir de l'égalité de la question 7 par passage à la
+limite. On fait tendre $x$ vers $+\infty$ par valeurs entières et on tient compte de l'estimée
+obtenue dans la question 8.
+
+\medskip
+11. En calculant les premiers termes du développement limité de la question A.2.a,
+on trouve $b_1=1/6,\ b_2=-1/30,\ b_3=1/42$.
+Des questions 3 et 10, il résulte que
+$$\begin{aligned}
+\ln(m!) &= -G(m) + \ln m        \cr
+        &= m\ln m - m + {1\over2}\ln m + {1\over2}\ln2\pi
+        + {1\over12} {1\over m} - {1\over360} {1\over m^3} + {1\over1260} {1\over m^5}
+        + O({1\over m^7})  \cr
+\end{aligned}
+$$
+\fincorrection
+\finexercice

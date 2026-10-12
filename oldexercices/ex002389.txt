@@ -1,0 +1,43 @@
+\exercice{2389, mayer, 2003/10/01}
+\enonce 
+Soit $I$ un intervalle ouvert de $\Rr$ et soit $f:I\to \Rr$
+une application d\'erivable. Notons $A=\{(x,y)\in I\times I \; ;\;
+\; x<y \}$.
+\begin{enumerate}
+\item Montrer que $A$ est une partie connexe de $\Rr^2$.
+\item Pour $(x,y)\in A$, posons $g(x,y) =\frac{f(y)-f(x)}{y-x}$.
+Montrer que $g(A)\subset f'(I) \subset \overline{g(A)}$.
+\item Montrer que $f'(I)$ est un intervalle.
+\end{enumerate}
+Ce r\'esultat signifie que {\it la d\'eriv\'ee de toute fonction
+d\'erivable poss\`ede la propri\'et\'e de la valeur interm\'ediaire}
+ (un th\'eor\`eme de Darboux).
+\finenonce
+
+\indication
+\begin{enumerate}
+  \item Faire un dessin !
+
+  \item Utiliser le théorème des accroissements finis d'une part. La définition de la dérivée d'autre part.
+
+  \item Utiliser l'exercice \ref{exocon} ou refaire la demonstration.
+\end{enumerate}
+\finindication
+
+\correction
+\begin{enumerate}
+  \item $A$ est connexe car connexe par arcs.
+
+  \item Si $z \in g(A)$ alors il existe $(x,y) \in A$ tel que $g(x,y)=z$.
+Donc $z = \frac{f(y)-f(x)}{y-x}$ par le théorème des accroissements finis il existe $t \in ]x,y[ \subset I$ tel que $z = f'(t)$ donc $z \in f'(I)$.
+Donc $g(A) \subset f'(I)$.
+
+Si maintenant $z \in f'(I)$, il existe $y\in I$ tel que $z= f'(y)$, mais par définition de la dérivée $f'(y)$ est la limite de $\frac{f(y)-f(x)}{y-x}$  quand $x$ tend vers $y$ (et on peut m\^eme dire que c'est la limite à gauche, i.e. $x<y$). Donc $f'(y)$ est limite de points de $g(x,y)$ avec $x<y$, donc de points de $A$.
+Conclusion $z=f'(y)$ est dans $\overline {g(A)}$, et donc $f'(I) \subset \overline {g(A)}$.
+
+  \item $A$ est connexe, $g$ est continue sur $A$ donc $g(A)$ est un connexe de $\Rr$. Par l'exercice \ref{exocon} comme on a 
+$$ g(A)\subset f'(I) \subset \overline{g(A)}$$
+avec  ${g(A)}$ connexe alors $f'(I)$ est connexe. Comme $f'(I)$ est un connexe de $\Rr$ c'est un intervalle.
+\end{enumerate}
+\fincorrection
+\finexercice

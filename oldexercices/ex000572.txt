@@ -1,0 +1,120 @@
+\exercice{572, bodin, 1998/09/01}
+\video{ZTrWGqYQ0R8}
+\enonce
+\begin{enumerate}
+    \item Soient $a,b > 0$. Montrer que $\sqrt{ab} \leqslant \frac{a+b}{2}$.
+    \item Montrer les in\'egalit\'es suivantes ($b \geqslant a > 0$) :
+$$ a \leqslant \frac{a+b}{2} \leqslant b \qquad \text{et} \qquad a \leqslant \sqrt{ab} \leqslant b.$$
+    \item Soient $u_0$ et $v_0$ des r\'eels strictement positifs avec
+$u_0 < v_0$. On d\'efinit deux
+suites $(u_n)$ et $(v_n)$ de la fa\c{c}on suivante :
+$$ u_{n+1} = \sqrt{u_nv_n} \quad \text{et}\quad v_{n+1}=\frac{u_n+v_n}{2}.$$
+    \begin{enumerate}
+        \item Montrer que $u_n \leqslant v_n$ quel que soit $n\in\Nn$.
+        \item Montrer que $(v_n)$ est une suite d\'ecroissante.
+        \item Montrer que $(u_n)$ est croissante En d\'eduire que
+les suites $(u_n)$ et $(v_n)$ sont convergentes et quelles ont m\^eme limite.
+    \end{enumerate}
+\end{enumerate}
+\finenonce 
+
+\indication
+\begin{enumerate}
+  \item Regarder ce que donne l'inégalité en élevant au carré de chaque coté.
+  \item Petites manipulations des inégalités.
+  \item 
+  \begin{enumerate}
+     \item Utiliser 1.
+     \item Utiliser 2.
+     \item Une suite croissante et majorée converge ; une suite décroissante et minorée aussi.
+  \end{enumerate}
+\end{enumerate}
+\finindication
+
+\correction
+\begin{enumerate}
+    \item  Soient $a,b >0$. On veut d\'emontrer
+    que $\sqrt{ab}\leqslant \frac{a+b}{2}$. Comme les deux membres de cette
+in\'egalit\'e sont positifs, cette in\'egalit\'e est \'equivalente
+\`a $ ab\leqslant (\frac{a+b}{2})^2$. De plus,
+$$ ab\leqslant \left( \frac{a+b}{2}\right)^2  \Leftrightarrow 4ab\leqslant a^2+2ab+b$$
+$$ \Leftrightarrow 0\leqslant a^2-2ab+b^2$$ ce qui
+est toujours vrai car $a^2-2ab+b^2=(a-b)^2$ est un carr\'e parfait. On a
+donc bien l'in\'egalit\'e voulue.
+
+  \item  Quitte \`a \'echanger
+$a$ et $b$ (ce qui ne change pas les moyennes arithm\'etique et
+g\'eom\'etrique, et qui pr\'eserve le fait d'\^etre compris entre
+$a$ et $b$), on peut supposer que $a\leqslant b$. Alors en ajoutant les
+deux in\'egalit\'es $$a/2 \leqslant a/2 \leqslant b/2$$ $$a/2 \leqslant b/2 \leqslant
+b/2,$$ on obtient $$a\leqslant \frac{a+b}{2}\leqslant b.$$
+
+De m\^eme, comme tout est positif, en multipliant les deux
+in\'egalit\'es
+$$\sqrt{a} \leqslant \sqrt{a} \leqslant \sqrt{b}$$ $$\sqrt{a} \leqslant \sqrt{b} \leqslant
+\sqrt{b}$$ on obtient $$a\leqslant \sqrt{ab} \leqslant b.$$
+
+    \item  Il faut avant tout remarquer que pour tout $n$,
+    $u_n$ et $v_n$ sont strictement positifs, ce qui
+permet de dire que les deux suites sont bien d\'efinies. On le
+d\'emontre par r\'ecurrence: c'est clair pour $u_0$ et $v_0$, et
+si $u_n$ et $v_n$ sont strictement positifs alors leurs moyennes
+g\'eom\'etrique (qui est $u_{n+1}$) et arithm\'etique (qui est $v_{n+1}$) sont
+strictement positives.
+    \begin{enumerate}
+\item  On veut montrer que pour chaque $n$, $u_n\leqslant v_n$. L'in\'egalit\'e est claire pour $n=0$
+     gr\^ace aux hypoth\`eses faites sur $u_0$ et $v_0$.
+     Si maintenant $n$ est plus grand que 1, $u_{n}$ est la
+     moyenne g\'eom\'etrique de $u_{n-1}$ et $v_{n-1}$ et $v_{n}$
+     est la moyenne arithm\'etique de $u_{n-1}$ et $v_{n-1}$,
+     donc, par 1., $u_n\leqslant v_n$.
+
+ \item  On sait d'apr\`es 2. que $u_n\leqslant u_{n+1}\leqslant v_n$.
+ En particulier, $u_n\leqslant u_{n+1}$ i.e. $(u_n)$ est croissante.
+ De m\^eme, d'apr\`es 2., $u_n\leqslant v_{n+1}\leqslant v_n$. En particulier,
+ $v_{n+1}\leqslant v_n$ i.e. $(v_n)$ est d\'ecroissante.
+
+        \item  Pour tout $n$, on a $u_0\leqslant u_n\leqslant v_n\leqslant v_0$.
+        $(u_n)$ est donc croissante et major\'ee, donc converge
+        vers une limite $\ell$. Et $(v_n)$ est d\'ecroissante et
+        minor\'ee et donc converge vers une limite $\ell'$. 
+Nous savons maintenant que 
+$u_{n} \rightarrow \ell$, donc aussi $u_{n+1} \rightarrow \ell$, et $v_{n} \rightarrow \ell'$ ;
+la relation $u_{n+1}=\sqrt{u_n v_n}$ s'écrit à la limite :
+$$\ell=\sqrt{\ell\ell'}.$$
+De même la relation $v_{n+1}=\frac{u_n+v_n}{2}$ donnerait à la limite :
+$$\ell'=\frac{\ell+\ell'}{2}.$$
+Un petit calcul avec l'une ou l'autre de ces égalités implique $\ell=\ell'$.
+    \end{enumerate}
+\end{enumerate}
+
+Il y a une autre m\'ethode un peu plus longue mais toute aussi
+valable.
+
+{\bf D\'efinition} Deux suites $(u_n)$ et $(v_n)$ sont dites {\em
+adjacentes} si
+\begin{enumerate}
+\item $u_n\leqslant v_n$,
+\item $(u_n)$ est croissante et $(v_n)$ est d\'ecroissante,
+\item $\lim (u_n-v_n)=0$.
+\end{enumerate}
+
+Alors, on a le th\'eor\`eme suivant:\\
+ \textbf{Th\'eor\`eme} : Si
+$(u_n)$ et $(v_n)$ sont deux suites adjacentes, elles sont toutes les
+deux convergentes et ont la m\^eme limite.
+
+Pour appliquer ce th\'eor\`eme, vu qu'on sait d\'ej\`a que $(u_n)$
+et $(v_n)$ v\'erifient les points 1 et 2 de la d\'efinition, il
+suffit de d\'emontrer que $\lim (u_n-v_n)=0$. On a d'abord que
+$v_n-u_n\geqslant 0$. Or, d'apr\`es (a) $$v_{n+1}-u_{n+1}{\le}
+v_{n+1}-u_n=\frac{v_n-u_n}{2}. $$
+
+Donc, si on note $w_n= v_n-u_n$, on a que $0\leqslant w_{n+1}\leqslant w_n/2$.
+Donc, on peut d\'emontrer (par r\'ecurrence) que $0\leqslant w_n\le
+\frac{w_0}{2^n}$, ce qui implique que $\lim_{n\rightarrow\infty}w_n=0$.
+Donc $v_n-u_n$ tend vers 0, et ceci termine de d\'emontrer que les
+deux suites $(u_n)$ et $(v_n)$ sont convergentes et ont m\^eme limite
+en utilisant le th\'eor\`eme sur les suites adjacentes.
+\fincorrection
+\finexercice

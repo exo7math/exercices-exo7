@@ -1,0 +1,50 @@
+\exercice{5242, rouget, 2010/06/30}
+\enonce[***]
+\begin{enumerate}
+\item  Montrer que pour $x$ réel strictement positif, on a~:~$\ln(1+x)<x<(1+x)\ln(1+x)$.
+\item  Montrer que $\prod_{k=1}^{n}\left(1+\frac{1}{k}\right)^k<e^n<\prod_{k=1}^{n}\left(1+\frac{1}{k}\right)^{k+1}$ et en déduire la limite quand $n$ tend vers $+\infty$ de $\frac{\sqrt[n]{n!}}{n}$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  Pour $x$ réel positif, posons $f(x)=x-\ln(1+x)$ et $g(x)=(x+1)\ln(x+1)-x$.
+$f$ et $g$ sont dérivables sur $[0,+\infty[$ et pour $x>0$, on a
+
+$$f'(x)=1-\frac{1}{x+1}=\frac{x}{x+1}>0,$$
+
+et
+
+$$g'(x)=\ln(x+1)+1-1=\ln(x+1)>0.$$
+
+$f$ et $g$ sont donc strictement croissantes sur $[0,+\infty[$ et en particulier, pour $x>0$, $f(x)>f(0)=0$ et de même, $g(x)>g(0)=0$. Finalement, $f$ et $g$ sont strictement positives sur $]0,+\infty[$ ou encore,
+
+$$\forall x>0,\;\ln(1+x)<x<(1+x)\ln(1+x).$$
+
+\item  Soit $k$ un entier naturel non nul.
+
+D'après 1), $\ln(1+\frac{1}{k})<\frac{1}{k}<(1+\frac{1}{k})\ln(1+\frac{1}{k})$, ce qui fournit $k\ln(1+\frac{1}{k})<1<(k+1)Ln(1+\frac{1}{k})$, puis, par stricte croissance de la fonction exponentielle sur $\Rr$, 
+
+$$\forall k\in\Nn^*,\;0<(1+\frac{1}{k})^k<e<(1+\frac{1}{k})^{k+1}.$$
+
+En multipliant membre à membre ces encadrements, on obtient pour tout naturel non nul $n$~:
+
+$$\prod_{k=1}^{n}(1+\frac{1}{k})^k<e^n<\prod_{k=1}^{n}(1+\frac{1}{k})^{k+1}.$$
+
+Maintenant, 
+
+$$\prod_{k=1}^{n}(1+\frac{1}{k})^k=\prod_{k=1}^{n}\left(\frac{k+1}{k}\right)^k=\frac{\prod_{k=2}^{n+1}k^{k-1}}{\prod_{k=1}^{n}k^k}=\frac{(n+1)^n}{n!}.$$
+
+De même,
+$$\prod_{k=1}^{n}(1+\frac{1}{k})^{k+1}=\frac{\prod_{k=2}^{n+1}k^{k}}{\prod_{k=1}^{n}k^{k+1}}=\frac{(n+1)^{n+1}}{n!}.$$
+
+On a montré que $\forall n\in\Nn^*,\;\frac{(n+1)^n}{n!}<e^n<\frac{(n+1)^{n+1}}{n!}$ et donc 
+ 
+$$\forall n\in\Nn^*,\;\frac{1}{e}\frac{n+1}{n}<\frac{\sqrt[n]{n!}}{n}<\frac{1}{e}\frac{n+1}{n}(n+1)^{1/n}.$$  
+
+D'après le théorème de la limite par encadrements, comme $\frac{n+1}{n}$ tend vers 1 quand $n$ tend vers l'infini de même que $(n+1)^{1/n}=e^{\ln(n+1)/n}$, on a montré que $\frac{\sqrt[n]{n!}}{n}$ tend vers $\frac{1}{e}$ quand $n$ tend vers $+\infty$. 
+\end{enumerate}
+\fincorrection
+\finexercice

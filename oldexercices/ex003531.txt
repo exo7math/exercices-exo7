@@ -1,0 +1,42 @@
+\exercice{3531, quercia, 2010/03/10}
+\enonce[Centrale MP 2000]
+
+Soit $a_1,\dots,a_n,b_1,\dots,b_n \in \R$ et
+$A_n=\begin{pmatrix}a_1+b_1 & b_2 &\dots &\dots &b_n\cr
+b_1    &a_2+b_2 & b_3           &\dots &b_n\cr
+\vdots &b_2 &\ddots &\vdots  &\vdots\cr
+\vdots &\vdots &     & \ddots& \vdots\cr
+b_1  & b_2 & \dots &b_{n-1} & a_n+b_n\cr\end{pmatrix}$
+\begin{enumerate}
+  \item Calculer $\det A_n$.
+    
+  \item Calculer $\chi_A$ le polynôme caractéristique de $A$.
+  \item On suppose $a_1<a_2<\dots <a_n$ et, pour tout $i$, $b_i>0$. Montrer que $A_n$ est diagonalisable 
+    $\Bigl($on pourra utiliser ${\chi_A(t)}/{\prod_{i=1}^n(a_i-t)}\Bigr)$.
+    
+  \item Le résultat reste-t-il vrai si l'on suppose $a_1\le a_2\le \dots \le a_n$ et, pour tout $i$, 
+    $b_i>0$ ?
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $a_1\dots a_n + b_1a_2\dots a_n + a_1b_2a_3\dots a_n + \dots + a_1\dots a_{n-1}b_n$.
+  \item 
+  \item $\frac{\chi_A(t)}{\prod_{i=1}^n(a_i-t)} = 1 + \sum_{i=1}^n\frac{b_i}{a_i-t}$ change de signe
+    entre deux $a_i$ successifs et dans l'un des intervalles $]-\infty,a_1[$ ou $]a_n,+\infty[$
+    donc $\chi_A$ admet $n$ racines distinctes.
+  \item Oui. Supposons par exemple $a_1=\dots=a_p <a_{p+1}<\dots<a_n$~:
+    La question précédente met en évidence $n-p$ racines simples de $\chi_A$ entre
+    les $a_i$ et $\pm\infty$, et $a_1$ est aussi racine d'ordre $p-1$
+    de $\chi_A$. Or les $p$ premières lignes de $A-a_1I$ sont égales
+    donc $\mathrm{rg}(A-a_1I)\le n-p+1$ et $\dim(\mathrm{Ker}(A-a_1I))\ge p-1$ d'où la
+    diagonalisabilité. Le cas où il y a plusieurs groupes de $a_i$ égaux
+    se traite de même.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

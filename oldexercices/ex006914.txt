@@ -1,0 +1,64 @@
+\exercice{6914, ruette, 2013/01/24}
+\enonce
+Charles ne supporte pas les chats et Sophie déteste les chiens. 
+Charles n'élève pas plus d'un chien et Sophie pas plus d'un chat. 
+La probabilité pour que Charles ait un chien est de $0,2$. Si 
+Charles n'a pas de chien, la probabilité pour que Sophie ait un chat est de $0,1$.
+On note $X$ le nombre de chiens de Charles, $Y$ le nombre de chats de Sophie
+et $Z$ le nombre d'animaux du couple. 
+\begin{enumerate}
+\item 
+Calculer la probabilité pour qu'ils n'aient pas d'animaux.
+\item
+On suppose de plus que la probabilité que $Z$ soit égal à 1 est de $0,1$.
+\begin{enumerate}
+\item
+Calculer la probabilité pour que $Z$ soit égal à 2.
+\item
+Déterminer l'espérance et l'écart-type de $Z$.
+\item
+\'Etablir la loi de probabilité du couple $(X,Y)$.
+Quelle est la loi de probabilité de $Y$ ?
+\item
+Les variables $X$ et $Y$  sont-elles indépendantes ?
+\end{enumerate}\end{enumerate}
+\finenonce
+\noindication
+
+\correction
+\begin{enumerate}
+\item 
+Soit $A$ l'événement ``Charles n'a pas de chien'' et $B$ l'événement 
+``Sophie n'a pas de chat''. L'énoncé donne $P(B|A)=0,9$. Par conséquent, 
+la probabilité pour que le ménage n'ait aucun animal est $P(A\cap B)=P(B|A)P(A)=0,9\times 0,8=0,72$.
+\item
+\begin{enumerate}
+\item 
+$Z$ ne peut prendre que les valeurs 0, 1 et 2. L'événement $\{Z=0\}$ 
+coïncide avec $A\cap B$, donc $P(Z=0)=0,72$. Il vient $P(Z=2)=1-P(Z=0)-P(Z=1)=1-0,72-0,1=0,18$.
+\item
+$E(Z)=0 \cdot P(Z=0)+1 \cdot P(Z=1)+2 \cdot P(Z=2)=0,1+0,36=0,46$. $E(Z^2 )=0^2 P(Z=0)+1^2 
+P(Z=1)+2^2 P(Z=2)=0,1+0,72=0,82$, d'où $\text{Var}(Z)=E(Z^2 )-E(Z)^2 =0,6084$, $\sigma(Z)=\sqrt{\text{Var} (Z)}=0,78$.
+\item
+On calcule $P(X=0\mbox{ et } Y=0)=P(Z=0)=0,72$, $P(X=1\mbox{ et } Y=1)=P(Z=2)=0,18$, 
+$
+P(X=0\mbox{ et }Y=1)=P(A\cap B^c)=P(B^c|A)P(A)=(1-P(B|A))P(A)=0,1\times 0,8=0,08. 
+$
+On complète le tableau en utilisant le fait que le somme des probabilités des événements élémentaires vaut 1.
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+&$Y=0$&$Y=1$&Total\\\hline
+$X=0$&0,72&0,08&0,8\\\hline
+$X=1$&0,02&0,18&0,2\\\hline
+Total&0,74&0,26&1\\
+\hline
+\end{tabular}
+\end{center}
+La dernière ligne du tableau donne la loi de $Y$, $P(Y=0)=0,74$ et $P(Y=1)=0,26$.
+\item
+On constate que $P(X=1\mbox{ et } Y=1)=0,18$ n'est pas égal à 
+$P(X=1)P(Y=1)=0,2\times 0,26$, donc $X$ et $Y$ ne sont pas indépendantes.
+\end{enumerate}\end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,31 @@
+\exercice{5212, rouget, 2010/06/30}
+\enonce[**IT]
+Soit $A$ une partie non vide et bornée de $\Rr$. Montrer que $\mbox{sup}\{|x-y|,\;(x,y)\in A^2\}=\mbox{sup }A-\mbox{inf }A$.
+\finenonce
+
+\noindication
+
+\correction
+ Posons $B=\{|y-x|,\;(x,y)\in A^2\}$.
+$A$ est une partie non vide et bornée de $\Rr$, et donc $m=\mbox{inf }A$ et $M=\mbox{sup }A$ existent dans $\Rr$.
+Pour $(x,y)\in A^2$, on a $m\leq x\leq M$ et $m\leq y M$, et donc $y-x\leq M-m$ et $x-y\leq M-m$ ou encore $|y-x|\leq M-m$.
+Par suite, $B$ est une partie non vide et majorée de $\Rr$. $B$ admet donc une borne supérieure.
+Soit $\varepsilon>0$. Il existe $(x_0,y_0)\in A^2$ tel que $x_0<\mbox{inf }A+\frac{\varepsilon}{2}$ et $y_0>\mbox{sup }A-\frac{\varepsilon}{2}$.
+
+Ces deux éléments $x_0$ et $y_0$ vérifient, 
+
+$$|y_0-x_0|\geq y_0-x_0>\left(\mbox{sup }A-\frac{\varepsilon}{2}\right)-\left(\mbox{inf }A+\frac{\varepsilon}{2}\right)=\mbox{sup }A-\mbox{inf }A-\varepsilon.$$
+En résumé, 
+\begin{enumerate}
+ \item  $\forall(x,y)\in A^2,\;|y-x|\leq\mbox{sup }A-\mbox{inf }A$ et  
+ \item  $\forall\varepsilon>0,\;\exists(x,y)\in A^2/\;|y-x|>\mbox{sup }A-\mbox{inf }A-\varepsilon$.
+\end{enumerate}
+Donc, $\mbox{sup }B=\mbox{sup }A-\mbox{inf }A$.
+
+\begin{center}
+\shadowbox{
+$\mbox{sup }\{|y-x|,\;(x,y)\in A^2\}=\mbox{sup }A-\mbox{inf }A$.
+}
+\end{center}
+\fincorrection
+\finexercice

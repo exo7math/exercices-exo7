@@ -1,0 +1,47 @@
+\exercice{5900, rouget, 2010/10/16}
+\enonce[**]
+Soit $(E,\|\;\|)$ un espace vectoriel normé et $B=\{x\in E/\;\|x\| < 1\}$. Montrer que $\begin{array}[t]{cccc}
+f~:&E&\rightarrow&B\\
+ &x&\mapsto& \frac{x}{1+\|x\|}
+\end{array}$ est un homéomorphisme.
+\finenonce
+
+\noindication
+
+\correction
+\textbullet~Pour tout $x\in E$, $\|f(x)\|= \frac{\|x\|}{1+\|x\|}< \frac{\|x\|+1}{\|x\|+1}=1$. Donc $f$ est bien une application de $E$ dans $B$.
+
+\textbullet~Si $y=0$, pour $x\in E$, $f(x)=y\Leftrightarrow \frac{1}{1+\|x\|}x=0\Leftrightarrow x=0$.
+
+Soit alors $y\in B\setminus\{0\}$. Pour $x\in E$,
+
+\begin{center}
+$f(x)=y\Rightarrow x=(1+\|x\|)y\Rightarrow\exists\lambda\in\Kk/\;x=\lambda y$.
+\end{center}
+
+Donc un éventuel antécédent de $y$ est nécessairement de la forme $\lambda y$, $\lambda\in\Rr$. Réciproquement, pour $\lambda\in\Rr$, $f(\lambda y)= \frac{\lambda}{1+|\lambda|\|y\|}y$ et donc
+
+\begin{align*}\ensuremath
+f(\lambda y)=y&\Leftrightarrow \frac{\lambda}{1+|\lambda|\|y\|}=1\Leftrightarrow\lambda=1+|\lambda|\|y\|\\
+ &\Leftrightarrow(\lambda\geqslant0\;\text{et}\;(1-\|y\|)\lambda=1)\;\text{ou}\;(\lambda<0\;\text{et}\;(1+\|y\|)\lambda=1)\\
+ &\Leftrightarrow\lambda= \frac{1}{1-\|y\|}\;(\text{car}\;\|y\|<1).
+\end{align*}
+
+Dans tous les cas, $y$ admet un antécédent par $f$ et un seul à savoir $x= \frac{1}{1-\|y\|}y$. Ainsi,
+
+\begin{center}
+$f$ est bijective et $\forall x\in B$, $f^{-1}(x)= \frac{1}{1-\|x\|}x$.
+\end{center}
+
+\textbullet~On sait que l'application $x\mapsto\|x\|$ est continue sur $\Rr^2$. Donc l'application $x\mapsto \frac{1}{1+\|x\|}$ est continue sur $\Rr^2$ en tant qu'inverse d'une fonction continue sur $\Rr^2$ à valeurs dans $\Rr$, ne s'annulant pas sur $\Rr^2$. L'application $x\mapsto \frac{1}{1-\|x\|}$ est continue sur $B$ pour les mêmes raisons. Donc les applications $f$ et $f^{-1}$ sont continues sur $\Rr^2$ et $B$ respectivement et on a montré que
+
+\begin{center}
+\shadowbox{
+l'application $\begin{array}[t]{cccc}
+f~:&E&\rightarrow&B\\
+ &x&\mapsto& \frac{x}{1+\|x\|}
+\end{array}$ est un homéomorphisme.
+}
+\end{center}
+\fincorrection
+\finexercice

@@ -1,0 +1,36 @@
+\exercice{5248, rouget, 2010/07/04}
+\enonce[****]
+Montrer que l'ensemble $E$ des réels de la forme $u_n=\sin(\ln(n))$, $n$ entier naturel non nul, est dense dans 
+$[-1,1]$.
+\finenonce
+
+\noindication
+
+\correction
+Soit $x$ dans $[-1,1]$ et $\varepsilon>0$.
+
+Soit $\theta=\Arcsin x$ (donc $\theta$ est élément de $[-\frac{\pi}{2},\frac{\pi}{2}]$ et $x=\sin\theta$). Pour $k$ entier naturel non nul donné, il existe un entier $n_k$ tel que $\ln(n_k)\leq \theta+2k\pi<\ln(n_k+1)$ à savoir $n_k=E(e^{\theta+2k\pi})$.
+
+Mais,
+
+$$0<\ln(n_k+1)-\ln(n_k)=\ln(1+\frac{1}{n_k})<\frac{1}{n_k}$$
+
+(d'après l'inégalité classique $\ln(1+x)<x$ pour $x>0$, obtenue par exemple par l'étude de la fonction $f~:~x\mapsto\ln(1+x)-x$).
+Donc,
+
+$$0\leq\theta+2k\pi-\ln(n_k)<\ln(n_k+1)-\ln(n_k)<\frac{1}{n_k},$$
+
+puis 
+
+\begin{align*}\ensuremath
+|\sin(\theta)-\sin(\ln(n_k))|&=2|\sin(\frac{\theta+2k\pi-\ln(n_k)}{2})\cos(\frac{\theta+2k\pi+\ln(n_k)}{2})|\\
+ &\leq2\left|\frac{\theta+2k\pi-\ln(n_k)}{2}\right|=|\theta+2k\pi-\ln(n_k)|<\frac{1}{n_k}.
+\end{align*}
+
+Soit alors $\varepsilon$ un réel strictement positif.
+
+Puisque $n_k=E(e^{\theta+2k\pi})$ tend vers $+\infty$ quand $k$ tend vers $+\infty$, on peut trouver un entier $k$ tel que  $\frac{1}{n_k}<\varepsilon$ et pour cet entier $k$, on a $|\sin\theta-\sin(\ln(n_k))|<\varepsilon$.
+
+On a montré que $\forall x\in[-1,1],\;\forall\varepsilon>0,\;\exists n\in\Nn^*/\;|x-\sin(\ln n)|<\varepsilon$, et donc $\{\sin(\ln n),\;n\in\Nn^*\}$ est dense dans $[-1,1]$.
+\fincorrection
+\finexercice

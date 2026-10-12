@@ -1,0 +1,110 @@
+\exercice{6055, queffelec, 2011/10/16}
+\enonce
+\begin{enumerate}
+\item Soit $||.||$ une norme sur $\Rr^n$ et $K$ sa boule unité fermée. Montrer
+que   
+
+(i) $K$ est symétrique,
+
+(ii) $K$ est convexe, fermé, borné,
+
+(iii) $0$ est un point intérieur à $K$.
+
+\item Réciproquement, montrer que si $K$ possède les trois propriétés ci-dessus,
+il existe une norme dont $K$ soit la boule unité fermée, en considérant
+
+\qquad $p(x)=\inf\{a>0\ ;\ {x\over a}\in K\}$.
+\end{enumerate}
+
+
+
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item) La nécessité des conditions (i), (ii), (iii) résulte des propriétés d'une
+norme. En effet, si $x\in K$, $||-x||=||x||\leq1$ et $-x\in K$ ce qui prouve
+(i).
+
+$K$ est fermé car plus généralement toute boule fermée d'un espace métrique est
+fermée; et $K$ est borné par définition (un sous-ensemble de $\R^n$ est borné
+s'il est contenu dans une boule fermée). Enfin, $K$ est convexe car, si
+$x,y\in K$ et $\lambda\in[0,1]$, $||(1-\lambda)x+\lambda y||\leq
+(1-\lambda)||x||+\lambda ||y||\leq 1$ et $(1-\lambda)x+\lambda y\in K$.
+
+$0$ est un point intérieur à $K$ : par exemple $B(0,{1\over2})\subset K$ et
+$K$ contient un voisinage de $0$ (toute boule fermée de rayon $>0$ est un
+voisinage de son centre).
+
+\item Soit $K$ vérifiant les propriétés (i), (ii), (iii). Il nous faut montrer que
+$p(x)$ est bien définie pour tout
+$x$; que
+$p$ est une norme et que
+$K$ est la boule unité fermée qui lui est associée.
+
+Si $x=0$, ${x\over a}\in K$ pour tout $a>0$ et $p(0)=0$. Si $x\not=0$,
+l'ensemble
+$\{a>0\ ;\ {x\over a}\in K\}$ est minoré; s'il est non vide il admettra une
+borne inférieure. Or $0$ est point intérieur à $K$; il existe donc $\varepsilon
+>0$ tel que $B(0,\varepsilon)\subset K$ et pour $a$ assez grand, ${||x||\over
+a}\leq \varepsilon$, en particulier ${x\over a}\in K$, et l'ensemble est non
+vide.
+
+\smallskip
+
+Vérifions les trois axiomes d'une norme. 
+
+$\bullet$ Par définition d'une borne inférieure, $p(x)=0\Longrightarrow
+\forall\varepsilon>0 \ \exists\ 0<a< \varepsilon$ tel que ${x\over a}\in K$. $K$
+étant borné, on peut supposer que $K\subset \overline B(0,R)$, de sorte que
+$||{x\over a}||\leq R$ ou $||x||\leq \varepsilon R$, ceci pour tout
+$\varepsilon>0$, ce qui implique $x=0$.
+
+\smallskip 
+ 
+$\bullet$ Soit $\lambda>0$; $p(\lambda x)=
+\inf\{a>0\ ;\ {\lambda x\over a}\in K\}=\inf\{\lambda b>0\ ;\ {x\over
+b}\in K\}$ en posant $a=\lambda b$, et $p(\lambda x)=\lambda p(x)$.
+
+Il suffit de montrer que $p(- x)=p(x)$ pour avoir la propriété d'homogénéité.
+Mais 
+$p(- x)=\inf\{a>0\ ;\ -{ x\over a}\in K\}=\inf\{a>0\ ;\ { x\over a}\in
+-K\}=p(x)$ car $K$ est symétrique.
+
+\smallskip
+
+$\bullet$ En utilisant la définition d'une borne inférieure, on va montrer que
+pour tout
+$\varepsilon>0$,
+$p(x+y)\leq p(x)+p(y)+2\varepsilon$ ce qui donnera le résultat.
+
+Donc, fixons $\varepsilon>0$; on peut trouver $a>0$ tel que $p(x)\leq
+a<p(x)+\varepsilon$ et ${ x\over a}\in K$, puis $b>0$ tel que $p(y)\leq
+b<p(y)+\varepsilon$ et ${y\over b}\in K$. Si ${ x+y\over a+b}\in K$, alors
+$p(x+y)\leq a+b$ par propriété de la borne inf et on aura prouvé $p(x+y)\leq
+p(x)+p(y)+2\varepsilon$.
+
+Mais ${ x+y\over a+b}$ s'écrit ${ a\over a+b}{x\over a}+{
+b\over a+b}{y\over b}$,  combinaison convexe de ${ x\over a}$ et ${ y\over b}$,
+et $K$ est supposé convexe. La preuve de l'inégalité triangulaire est ainsi
+achevée.
+
+\smallskip
+
+Il nous reste à établir $K=\{x\ ;\ p(x)\leq 1\}$. 
+
+Si $x\in K$ et $a=1$, ${ x\over
+a}\in K$ ce qui implique $p(x)\leq 1$. 
+ Réciproquement supposons $ p(x)\leq 1$;
+on peut supposer $x\not=0$. Si $p(x)<1$, il existe $p(x)\leq a<1$ tel que
+${x\over a}\in K$; mais $x=a{x\over a}+(1-a)0$ est encore dans $K$.
+
+Si $p(x)=1$ il existe $(a_n)$ suite de nombres positifs tels
+que 
+${x\over a_n}\in K$ pour tout $n$ et tendant vers $1$.  Mais $K$ étant fermé,
+$x=\lim{x\over a_n}\in K$.
+\end{enumerate}
+\fincorrection
+\finexercice

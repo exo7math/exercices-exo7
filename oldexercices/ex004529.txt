@@ -1,0 +1,26 @@
+\exercice{4529, quercia, 2010/03/14}
+\enonce[Fonction définie par une série (Centrale MP 2003)]
+Soit~$f(a) = \sum_{n=0}^\infty e^{-a^2n^2}$ sous réserve de convergence $(a\in\R$).
+
+\begin{enumerate}
+  \item Domaine de définition de~$f$~?
+    
+  \item Limite de~$af(a)$ quand $a\to0$~?
+    
+  \item Limite de~$f(a)$ quand $a\to+\infty$~?
+    
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $\R^*$.
+  \item CSI~: $\frac{\sqrt\pi}{2a} =  \int_{x=0}^\infty e^{-a^2x^2}\,d x \le f(a) \le  \int_{x=0}^\infty e^{-a^2x^2}\,d x + 1 = \frac{\sqrt\pi}{2a} + 1$. Donc $af(a)\to \frac{\sqrt\pi}2$ lorsque $a\to0^+$.
+  \item TCM~: $f(a)\to 1$ lorsque $a\to+\infty$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

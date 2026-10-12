@@ -1,0 +1,195 @@
+\exercice{5928, tumpach, 2010/11/11}
+\enonce
+
+\emph{Le but de cet exercice est de prouver le Th\'eor\`eme de
+Carath\'eodory.} 
+
+\textbf{D\'efinition.}
+Une mesure ext\'erieure sur un ensemble $\Omega$ est une
+application~$m_*~:\mathcal{P}(\Omega) \rightarrow [0,+\infty]$
+telle que
+\begin{enumerate}
+\item[(i)] $m_*(\emptyset) = 0~;$ \item[(ii)] (monotonie) $A
+\subset B \Rightarrow m_*(A) \leq m_*(B)~;$ \item[(iii)]
+($\sigma$-sous-additivit\'e) Pour toute suite d'ensembles $\{
+A_{i} \}_{i\in\mathbb{N}^*} \subset \mathcal{P}(\Omega)$ on a
+$$
+m_{*}\left(\bigcup_{i=1}^{\infty} A_{i} \right) \leq
+\sum_{i=1}^{\infty} m_{*}(A_{i}).
+$$
+\end{enumerate}
+
+
+\textbf{Th\'eor\`eme de Carath\'eodory}
+Soit $m_*$ une mesure ext\'erieure sur $\Omega$. Un ensemble
+$A\subset\Omega$ est dit $m_*$-mesurable si pour tout $Q\subset
+\Omega$ on a
+$$
+m_*(Q) \geq m_*(Q \cap A) + m_*(Q\cap A^c).
+$$
+Notons $\mathcal{M}_{m_*} \subset \mathcal{P}(\Omega)$ l'ensemble
+des parties $m_*$-mesurables. Alors
+\begin{enumerate}
+\item $\mathcal{M}_{m_*}$ est une $\sigma$-alg\`ebre. \item $m =
+m_{*}|_{\mathcal{M}_{m_*}}$ est une mesure sur $(\Omega,
+\mathcal{M}_{m_*}).$ \item L'espace mesur\'e $(\Omega,
+\mathcal{M}_{m_*}, m)$ est complet, i.e. si $E \in
+\mathcal{M}_{m_*}$ et $m(E) = 0$, alors tout sous-ensemble
+$A\subset E$ appartient \`a $\mathcal{M}_{m_*}$.
+\end{enumerate}
+
+
+Début de l'exercice :
+\begin{enumerate} 
+\item 
+  \begin{enumerate} 
+  \item Rappeler la d\'efinition d'une $\sigma$-alg\`ebre.
+
+  \item V\'erifier que $\emptyset$ et $\Omega \in \mathcal{M}_{m_*}$, et
+$A\in\mathcal{M}_{m_*} \Rightarrow A^c\in\mathcal{M}_{m_*}$.
+  
+  \item Soit $\{A_{i}\}_{i\in \mathbb{N}^*}$ un suite quelconque
+d'ensembles $m_*$-mesurables. On pose $B_1 = \emptyset$,
+$B_{2}=A_1$ et $B_{j} = \cup_{i=1}^{j-1} A_{i}$, pour $j\geq 2$.
+Soit $Q$ un sous-ensemble de $\Omega$. Montrer par r\'ecurrence
+que l'assertion $(P_k)$ suivante est v\'erifi\'ee pour tout $k\geq
+1$~:
+$$
+(P_k)\quad \quad \quad m_*(Q) = m_*(Q \cap B_{k+1}^c) + \sum
+_{j=1}^{k} m_*(Q \cap B_{j}^c \cap A_j).
+$$
+
+  \item Soit $A = \cup_{j=1}^{\infty} A_{j}$. D\'eduire de la
+question pr\'ec\'edente que $$m_{*}(Q) \geq m_*(Q\cap A^c) +
+\sum_{j=1}^{\infty} m_*(Q \cap B_{j}^c\cap A_j).$$ $e)$ En
+remarquant que $Q\cap A = \bigcup_{j=1}^{\infty}(Q\cap B_{j}^c
+\cap A_{j})$, montrer~:
+$$
+m_*(Q\cap A^c) + m_*(Q\cap A) \leq m_*(Q),
+$$
+et conclure. 
+  \end{enumerate}
+
+\item 
+  \begin{enumerate} 
+  \item  Rappeler la d\'efinition d'une mesure.
+  
+  \item En utilisant la question 1.d), montrer la
+$\sigma$-additivit\'e de $m$. 
+  \end{enumerate}
+
+\item Montrer que $m$ est
+compl\`ete.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item 
+  \begin{enumerate}
+  \item cf cours.  
+  \item clair.  
+  \item Soit $\{A_{i}\}_{i\in
+\mathbb{N}^*}$ un suite quelconque d'ensembles $m_*$-mesurables. On
+pose $B_1 = \emptyset$, $B_{2}=A_1$ et $B_{j} = \cup_{i=1}^{j-1}
+A_{i}$, pour $j\geq 2$. Soit $Q$ un sous-ensemble de $\Omega$.
+Montrons par r\'ecurrence que l'assertion $(P_k)$ suivante est
+v\'erifi\'ee pour tout $k\geq 1$~:
+$$
+(P_k)\quad \quad \quad m_*(Q) = m_*(Q \cap B_{k+1}^c) + \sum
+_{j=1}^{k} m_*(Q \cap B_{j}^c \cap A_j).
+$$
+\begin{itemize}
+\item Pour $k = 1$, $(P_1)$ dit simplement que $m_*(Q) = m_*(Q\cap
+A_{1}^c) + m_*(Q\cap A_1)$. Ceci   est une cons\'equence de la
+$m_*$-mesurabilit\'e de $A_1$ et de fait que
+$$
+m_*(Q) \leq  m_*(Q\cap A_{1}^c) + m_*(Q\cap A_1)
+$$
+(on applique la $\sigma$-sous-additivit\'e de $m_*$ \`a $C_1 =
+Q\cap A_{1}^c$, $C_2 = Q\cap A_1$ et $C_i = \emptyset$ pour $i\geq
+3$.) 
+\item Montrons que $(P_{k}) \Rightarrow (P_{k+1})$~:\\
+Puisque $A_{k+1}$ est $m_*$-mesurable, on a~:
+$$
+m_*(Q\cap B_{k+1}^c) = m_*(Q \cap B_{k+1}^c \cap A_{k+1}^c) +
+m_*(Q\cap B_{k+1}^c \cap A_{k+1}).$$ Or $B_{k+1}^c \cap A_{k+1}^c
+= (B_{k+1}\cup A_{k+1})^{c} = B_{k+2}^{c}$. Ainsi~:
+\begin{equation}\label{la}
+m_*(Q\cap B_{k+1}^c) = m_*(Q \cap B_{k+2}^{c}) + m_*(Q\cap
+B_{k+1}^c \cap A_{k+1}).
+\end{equation}
+Supposons que l'assertion $(P_{k})$ soit v\'erifi\'ee, alors
+$$
+m_*(Q) = m_*(Q \cap B_{k+1}^c) + \sum _{j=1}^{k} m_*(Q \cap
+B_{j}^c \cap A_j),
+$$
+et d'apr\`es \eqref{la}
+\begin{eqnarray*} m_*(Q) &=& m_*(Q \cap B_{k+2}^{c})
++ m_*(Q\cap B_{k+1}^c \cap A_{k+1})+ \sum _{j=1}^{k} m_*(Q \cap
+B_{j}^c \cap A_j) \\&=& m_*(Q \cap B_{k+2}^{c})+ \sum _{j=1}^{k+1}
+m_*(Q \cap B_{j}^c \cap A_j),
+\end{eqnarray*}
+qui n'est autre que $(P_{k+1})$. \item En conclusion, comme
+$(P_1)$ est vrai et $(P_{k})\Rightarrow (P_{k+1})$, il en
+d\'ecoule que l'assertion $(P_{k})$ est vraie pour tout $k\geq
+1$.
+\end{itemize}
+
+  \item Comme $B_{k+1} \subset A$, on a $Q \cap B_{k+1}^c \supset Q
+\cap A^c$ et, par  monotonie de $m_*$, $$m_*(Q\cap B_{k+1}^c)
+\geq m_*(Q \cap A^c).$$ La condition $(P_{k})$ entra\^ine alors
+que pour tout $k$~:
+$$
+m_*(Q) \geq m_*(Q \cap A^c) + \sum_{j=1}^{k} m_*(Q\cap B_{j}^c
+\cap A_j).
+$$
+Donc, en faisant tendre $k$ vers $+\infty$~:
+$$
+m_*(Q) \geq m_*(Q \cap A^c) + \sum_{j=1}^{\infty} m_*(Q\cap
+B_{j}^c \cap A_j).
+$$
+
+  \item On a~:$~Q\cap A = \bigcup_{j=1}^{\infty}(Q\cap B_{j}^c \cap
+A_{j})~$ et par  $\sigma$-sous-additivit\'e de $m_*$~:
+\begin{eqnarray*}
+m_*(Q\cap A^c) + m_*(Q\cap A) &=&  m_*(Q\cap A^c) +
+m_*\left(\bigcup_{j=1}^{\infty}(Q\cap B_{j}^c \cap A_j\right)\\
+& \leq & m_*(Q\cap A^c) + \sum_{j=1}^{\infty} m_*(Q\cap B_{j}^c
+\cap A_j)\\&\leq & m_*(Q).
+\end{eqnarray*}
+On en conclut que $A = \cup_{j=1}^{\infty} A_{j}$ est
+$m_*$-mesurable.
+\end{enumerate}
+
+
+\item 
+  \begin{enumerate}
+  \item cf cours.
+  \item Soit $\{A_{i}\}_{i\in\mathbb{N}^*}$ une
+suite d'\'el\'ements $m_*$-mesurables, deux \`a deux disjoints.
+Choisissons $Q = A = \cup_{j=1}^{\infty} A_{j}$, alors $Q \cap A^c
+= \emptyset$ et $Q \cap B_{j}^c \cap A_j = A_j$ pour tout $j$.
+D'apr\`es la question 1.d),
+$$
+m_{*}(Q) \geq \sum_{j=1}^{\infty} m_*(A_{j}).
+$$
+D'apr\`es la $\sigma$-sous-additivit\'e de $m_*$, il vient~:
+$$
+m_{*}(Q) = \sum_{j=1}^{\infty} m_*(A_{j}).
+$$
+  \end{enumerate}
+
+
+ \item Soit $E$ un ensemble $m_*$-mesurable tel que $m_*(E) = 0$ et $B$ un sous-ensemble de $E$.
+ Comme $Q \cap B^c \subset Q$, on a par monotonie de
+ $m_*$ l'in\'egalit\'e $m_*(Q \cap B^c) \leq m_*(Q)$. Comme
+ $Q\cap B \subset E$, on a aussi $m_*(Q\cap B) = 0$. On en
+ d\'eduit que $$m_*(Q) \geq m_*(Q \cap B^c)+ m_*(Q\cap B).$$ Ainsi
+ $B$ est $m_*$-mesurable et $m$ est compl\`ete.
+\end{enumerate}
+\fincorrection
+
+\finexercice

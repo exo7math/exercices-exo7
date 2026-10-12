@@ -1,0 +1,31 @@
+\exercice{2858, burnol, 2009/12/15}
+\enonce[Morceaux de Résidus]
+\label{ex:burnol2.1}
+Soit $f$ présentant en $z_0$ un \emph{pôle simple}. Soit
+$C_r(\alpha,\beta)$ l'arc de cercle $w= z_0 + r
+e^{i\theta}$, $\alpha\leq \theta\leq\beta$, parcouru dans le
+sens direct des $\theta$ et avec $0<\beta - \alpha\leq
+2\pi$. Prouver:
+\[ \lim_{r\to0} \int_{C_r(\alpha,\beta)} f(z)\,dz = 2\pi
+i\;\frac{\beta-\alpha}{2\pi}\;\mathrm{Res}(f,z_0)\] 
+Que se passe-t-il si le pôle est d'ordre plus élevé? 
+\finenonce
+\noindication
+\correction
+Dans le calcul des int\'egrales on est souvent confront\'e \` a des passages \` a la limite
+(du genre $\lim_{R\to \infty } \int_{C_R} f(z) \, dz$
+ou $\lim_{r\to 0 } \int_{C_r} f(z) \, dz$  dans le cas ou $0$ est une singularit\'e que l'on contourne,
+$C_R$ un morceaux de cercle comme dans les exercices ici). Cet exercice et le suivant donnent des outils
+tr\`es pratiques pour ce genre de calculs.\\
+Si $f$ a $z_0$ comme p\^ole simple, sa s\'erie de Laurent en $z_0$ est de la forme
+$$ f(z) = a_{-1}(z-z_0)^{-1} +a_0 +a_1(z-z_0)+.... =\sum_{k\geq -1} a_k (z-z_0)^k .$$
+Par convergence normale de cette s\'erie
+\begin{eqnarray*}
+\int_{C_r(\alpha , \beta )} f(z) \, dz &=& \sum_{k\geq -1} a_k \int_{C_r(\alpha , \beta )} (z-z_0)^k \, dz
+= \sum_{k\geq -1} a_k \int_\alpha ^\beta (re^{i\theta })^k ire^{i\theta } \, d\theta \\
+&=& ia_{-1}(\beta -\alpha ) + r\sum_{k\geq 0}\left( r^k a_{k}\frac{e^{i(k+1)\beta } -e^{i(k+1)\alpha } }{(k+1)} \right).
+\end{eqnarray*}
+On en d\'eduit l'enonc\'e de l'exercice en observant que
+ $\left| \frac{e^{i(k+1)\beta } -e^{i(k+1)\alpha } }{(k+1)} \right| \leq \frac{2}{k+1}$ et en faisant tendre $r\to 0$.
+\fincorrection
+\finexercice

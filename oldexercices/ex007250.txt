@@ -1,0 +1,51 @@
+\exercice{7250, mourougane, 2021/08/10}
+\enonce[Diagramme de Voronoï. Médiatrice, diagramme de 2 points]
+
+% cf. 978-0-387-69216-6.pdf page 529
+
+Un \emph{diagramme de Voronoï} est une famille de parties du plan 
+(ou de l'espace, mais dans cet exercice on se limitera au plan) et 
+de points associés telle que:
+\begin{itemize}
+\item chaque partie du plan a un unique point associé, qui est 
+contenu dedans;
+\item chaque partie est exactement égale à l'ensemble des points 
+du plan qui sont plus proches du point associé à cette partie que 
+des points associés aux autres parties.
+\end{itemize}
+Autrement dit, c'est une famille \((A_i, P_i)_{i \in I}\), où:
+\begin{itemize}
+\item \(I\) est un ensemble;
+\item pour tout \(i \in I\), \(A_i\) est une partie (i.e. un 
+sous-ensemble) du plan et \(P_i \in A_i\);
+\item pour tout \(i \in I\), on~a (en notant \( \mathcal{P}\) le plan):
+\[
+A_i = \left\{ \; Q \in \mathcal{P} \; \middle/ \; \forall j \in I \setminus \{i\} \; P_iQ \leq P_jQ \; \right\}.
+\]
+\end{itemize}
+Les parties \(A_i\) sont appelées les \emph{cellules} du diagramme 
+de Voronoï. Le point \(P_i\) associé à la cellule \(A_i\) est appelé 
+le \emph{germe} de la cellule.
+
+Les diagrammes de Voronoï sont un outil utile pour représenter les 
+zones de couverture d'antennes radio, ou pour étudier l'implantation 
+d'écoles, d'hôpitaux, de bureaux de poste, etc, dans une région.
+
+
+\begin{enumerate}
+\item Soient \(A\) et \(B\) deux points du plan. Montrer que 
+l'ensemble des points équidistants de \(A\) et \(B\) (autrement 
+dit, l'ensemble des points \(P\) du plan tels que \(PA = PB\)) 
+est une droite (qu'on notera \( \Delta\), et qui est appelée la 
+\emph{médiatrice} du segment \([AB]\)).
+\item Montrer que la droite \( \Delta\) est orthogonale à la 
+droite \((AB)\).
+\item Montrer que l'ensemble des points \(P\) du plan tels 
+que \(PA \leq PB\) est le demi-plan de frontière \( \Delta\) contenant \(A\).
+\item Quel est le diagramme de Voronoï d'un ensemble de deux 
+points distincts?
+\end{enumerate}
+\finenonce
+\noindication
+\nocorrection
+\finexercice

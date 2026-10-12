@@ -1,0 +1,68 @@
+\exercice{5353, rouget, 2010/07/04}
+\enonce[**IT]
+Soit $\sigma$ l'élément de $S_{12}$~:~$\sigma=(3\;10\;7\;1\;2\;6\;4\;5\;12\;8\;9\;11)$.
+\begin{enumerate}
+\item  Combien $\sigma$ possède-t-elle d'inversions~?~Que vaut sa signature~?
+\item  Décomposer $\sigma$ en produit de transpositions. Retrouvez sa signature.
+\item  Déterminer les orbites de $\sigma$.
+\item  Déterminer $\sigma^{2005}$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  Les inversions de $\sigma$ sont :
+$\sigma=(3\;10\;7\;1\;2\;6\;4\;5\;12\;8\;9\;11)$. 
+
+$$\begin{array}{l}
+\{1,4\},\;\{1,5\},\;\{2,3\},\;\{2,4\},\;\{2,5\},\;\{2,6\},\;\{2,7\},\;\{2,8\},\;\{2,10\},\;\{2,11\},\;\{3,4\},\;\{3,5\},\;\{3,6\},\;\{3,7\},\\
+\{3,8\},\;\{6,7\},\;\{6,8\},\;\{9,10\},\;\{9,11\},\;\{9,12\}.
+\end{array}$$
+
+Au total, il y a $2+8+5+2+3=20$ inversions. $\sigma$ est donc une permutation paire (de signature $1$).
+
+\item  $\tau_{11,12}\circ\sigma=(3\;10\;7\;1\;2\;6\;4\;5\;11\;8\;9\;12)$. 
+
+Puis, $\tau_{9,11}\circ\tau_{11,12}\circ\sigma=(3\;10\;7\;1\;2\;6\;4\;5\;9\;8\;11\;12)$. 
+
+Puis, $\tau_{10,8}\circ\tau_{9,11}\circ\tau_{11,12}\circ\sigma=(3\;8\;7\;1\;2\;6\;4\;5\;9\;10\;11\;12)$. 
+
+Puis, 
+$\tau_{8,5}\circ\tau_{10,8}\circ\tau_{9,11}\circ\tau_{11,12}\circ\sigma=(3\;5\;7\;1\;2\;6\;4\;8\;9\;10\;11\;12)$. 
+
+Puis, $\tau_{7,4}\circ\tau_{8,5}\circ\tau_{10,8}\circ\tau_{9,11}\circ\tau_{11,12}\circ\sigma=(3\;5\;4\;1\;2\;6\;7\;8\;9\;10\;11\;12)$. 
+
+Puis, $\tau_{5,2}\circ\tau_{7,4}\circ\tau_{8,5}\circ\tau_{10,8}\circ\tau_{9,11}\circ\tau_{11,12}\circ\sigma=(3\;2\;4\;1\;5\;6\;7\;8\;9\;10\;11\;12)$.
+
+Puis, $\tau_{1,4}\circ\tau_{5,2}\circ\tau_{7,4}\circ\tau_{8,5}\circ\tau_{10,8}\circ\tau_{9,11}\circ\tau_{11,12}\circ\sigma=(3\;2\;1\;4\;5\;6\;7\;8\;9\;10\;11\;12)=\tau_{1,3}$.
+
+Par suite,
+
+$$\sigma=\tau_{11,12}\circ\tau_{9,11}\circ\tau_{10,8}\circ\tau_{8,5}\circ\tau_{7,4}\circ\tau_{5,2}\circ\tau_{1,4}\circ\tau_{1,3}.$$
+\item  $O(1)=\{1,3,4,7\}=O(3)=O(4)=O(7)$, puis $O(2)=\{2,5,8,10\}$ puis $O(6)=\{6\}$ et $O(9)=\{9,11,12\}=O(11)=O(12)$. $\sigma$ a $4$ orbites, deux de cardinal $4$, une de cardinal $3$ et un singleton (correspondant à un point fixe).
+
+\item  $\sigma$ est donc le produit commutatif des cycles $c_1=\left(\begin{array}{cccc}
+1&3&4&7\\
+3&7&7&4
+\end{array}
+\right)$, $c_2=\left(\begin{array}{cccc}
+2&5&8&10\\
+10&2&5&8
+\end{array}
+\right)$ et
+
+$c_3=\left(\begin{array}{ccc}
+9&11&12\\
+12&9&11
+\end{array}
+\right)$.
+
+On a $c_1^4=c_2^4=Id$ et $c_3^3=Id$. Or, $2005=4.1001+1$. Donc, $c_1^{2005}=c_1(c_1^4)^{1001}=c_1$, et de même $c_2^{2005}=c_2$. Puis, $c_3^{2005}=(c_3^{3})^{668}c_3=c_3$. Puisque $c_1$, $c_2$ et $c_3$ commutent, 
+
+$$\sigma^{2005}=c_1^{2005}c_2^{2005}c_3^{2005}=c_1c_2c_3=\sigma=(3\;10\;7\;1\;2\;6\;4\;5\;12\;8\;9\;11).$$
+\end{enumerate}
+
+\fincorrection
+\finexercice

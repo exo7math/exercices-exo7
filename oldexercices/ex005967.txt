@@ -1,0 +1,57 @@
+\exercice{5967, tumpach, 2010/11/11}
+\enonce
+Soit $\{f_{n}\}_{n\in\mathbb{N}}$ la suite de fonctions d\'efinies
+par~:
+$$
+f_{n}(x) = \frac{1}{\sqrt{n}} \mathbf{1}_{[n, 2n]}(x).
+$$
+\begin{enumerate}
+\item Montrer que $f_{n}$ converge faiblement vers $0$ dans
+$L^{2}([0, +\infty[)$ mais ne converge pas fortement dans $L^2([0,
++\infty[)$.
+
+\item Montrer que $f_{n}$ converge fortement vers $0$ dans
+$L^{p}([0, +\infty[)$ pour $p>2$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+Soit $\{f_{n}\}_{n\in\mathbb{N}}$ la suite de fonctions d\'efinies
+par~:
+$$
+f_{n}(x) = \frac{1}{\sqrt{n}} \mathbf{1}_{[n, 2n]}(x).
+$$
+\begin{enumerate}
+\item Quelque soit $g$ continue \`a support compact,
+$$
+\int_{[0, +\infty[} f_{n}(x) g(x)\,dx = \frac{1}{\sqrt{n}}
+\int_{n}^{2n} g(x)\,dx \rightarrow 0
+$$
+quand $n\rightarrow +\infty$. Par densit\'e des fonctions
+continues \`a support compact, $f_{n}$ converge faiblement vers
+$0$. D'autre part, $f_n$ converge presque partout vers $0$.
+Supposons que $f_n$ converge fortement vers une fonction $f$ dans
+$L^2([0, +\infty[)$. Alors il existe une sous-suite de $f_n$ qui
+converge presque-partout vers $f$, ce qui implique que $f =0$ est
+la seule limite possible. Or~:
+$$
+\|f_{n}\|_{2} = 1
+$$
+pour tout $n$, donc $\|f_{n}\|_2$ ne tend pas vers $\|f\|_2 = 0$
+ce qui contredit le fait que $f_n$ converge vers $f$ dans $L^2([0,
++\infty[)$.
+
+
+\item Pour $p>2$, on a~:
+$$
+\int_{[0, +\infty[} |f_{n}(x)|^p\,dx =  \int_{n}^{2n}
+n^{-\frac{p}{2}}\,dx = n^{1 - \frac{p}{2}} \rightarrow 0,
+$$
+quand $n\rightarrow+\infty$ donc $f_{n}$ converge fortement vers
+$0$ dans $L^{p}([0, +\infty[)$.
+\end{enumerate}
+\fincorrection
+
+\finexercice

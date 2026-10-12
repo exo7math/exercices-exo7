@@ -1,0 +1,61 @@
+\exercice{5273, rouget, 2010/07/04}
+\enonce[***I]
+Calculs par blocs.
+\begin{enumerate}
+\item  Soit $M=
+\left(
+\begin{array}{cc}
+A&B\\
+C&D
+\end{array}
+\right)
+$ et $N=\left(
+\begin{array}{cc}
+A'&B'\\
+C'&D'
+\end{array}
+\right)$ avec $(A,A')\in(\mathcal{M}_{p,r}(\Kk))^2$, $(B,B')\in(\mathcal{M}_{p,s}(\Kk))^2$, $(C,C')\in(\mathcal{M}_{q,r}(\Kk))^2$ et $(D,D')\in(\mathcal{M}_{q,s}(\Kk))^2$. Calculer $M+N$ en fonction de $A$, $B$, $C$, $D$, $A'$, $B'$, $C'$ et $D'$.
+\item  Question analogue pour $MN$ en analysant précisément les formats de chaque matrice.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  Soit $(i,j)\in\{1,...,p\}\times\{1,...,r\}$. Le coefficient ligne $i$, colonne $j$, de la matrice $M+N$ est la somme du coefficient ligne $i$, colonne $j$, de la matrice $M$ et du coefficient ligne $i$, colonne $j$, de la matrice $N$ ou encore la somme du coefficient ligne $i$, colonne $j$, de la matrice $A$ et du coefficient ligne $i$, colonne $j$, de la matrice $A'$. On a des résultats analogues pour les autres valeurs du couple $(i,j)$ et donc
+
+$$M+N=\left(
+\begin{array}{cc}
+A+A'&B+B'\\
+C+C'&D+D'
+\end{array}
+\right).$$
+
+\item  Posons $M=\left(
+\begin{array}{cc}
+A&B\\
+C&D
+\end{array}
+\right)$ et $N=\left(
+\begin{array}{cc}
+A'&B'\\
+C'&D'
+\end{array}
+\right)$ où $A\in\mathcal{M}_{p,r}(\Kk)$, $B\in\mathcal{M}_{q,r}(\Kk)$, $C\in\mathcal{M}_{p,s}(\Kk)$, $D\in\mathcal{M}_{q,s}(\Kk)$, puis $A'\in\mathcal{M}_{t,p}(\Kk)$, $B'\in\mathcal{M}_{u,p}(\Kk)$, $C'\in\mathcal{M}_{t,q}(\Kk)$, $D'\in\mathcal{M}_{u,q}(\Kk)$ (le découpage de $M$ en colonne est le même que le découpage de $N$ en lignes).
+
+Soit alors $(i,j)\in\{1,...,r\}\times\{1,...,t\}$. Le coefficient ligne $i$, colonne $j$ de la matrice $MN$ vaut 
+
+$$\sum_{k=1}^{p+q}m_{i,k}n_{k,j}=\sum_{k=1}^{p}m_{i,k}n_{k,j}+\sum_{k=p+1}^{p+q}m_{i,k}n_{k,j}.$$
+
+Mais, $\sum_{k=1}^{p}m_{i,k}n_{k,j}$ est le coefficient ligne $i$, colonne $j$ du produit $AA'$ et $\sum_{k=p+1}^{p+q}m_{i,k}n_{k,j}$ est le coefficient ligne $i$, colonne $j$ du produit $BC'$. Finalement, $\sum_{k=1}^{p+q}m_{i,k}n_{k,j}$ est le coefficient ligne $i$, colonne $j$ du produit $AA'+BC'$. On a des résultats analogues pour les autres valeurs du couple $(i,j)$ et donc
+
+$$MN=\left(
+\begin{array}{cc}
+AA'+BC'&AB'+BD'\\
+CA'+DC'&CB'+DD'
+\end{array}
+\right).$$
+\end{enumerate}
+\fincorrection
+\finexercice

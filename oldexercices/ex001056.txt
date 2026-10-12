@@ -1,0 +1,61 @@
+\exercice{1056, legall, 1998/09/01}
+
+\enonce
+Soit  $F$ et  $G$  les sous-ensembles de  $M_3({\Rr})$
+ d\' efinis par~:
+\vskip1mm
+$ F=\{ \begin{pmatrix} a+b & 0 & c \cr
+0 & b+c  & 0 \cr
+c+a & 0 & a+b \cr \end{pmatrix} \ a ,  b  ,  c \in {\Rr} \}$\hskip5mm $G=\{
+\begin{pmatrix} a+b +d & a & c
+\cr 0 & b+d & 0 \cr
+a+ c+d & 0 & a +c\cr \end{pmatrix} \ a ,  b  , c  ,  d\in {\Rr} \}$.
+
+Montrer que ce sont des sous espaces
+vectoriels de  $M_3({\Rr})$ dont on d\'eterminera des bases.
+
+\finenonce
+
+\noindication
+
+\correction
+Montrons que  $E$  est un sous-espace vectoriel de  $M_3({\R})$.
+Soient  $M=
+\begin{pmatrix} a & 0 & c \cr 0 & b & 0 \cr
+c & 0 & a \cr \end{pmatrix} $  et  $M'= \begin{pmatrix} a' & 0 &
+c' \cr 0 & b' & 0 \cr c' & 0 & a' \cr \end{pmatrix} $  deux \'
+el\' ements de  $E$. Alors  $M+M'=\begin{pmatrix} a +a' & 0 & c+c'
+\cr 0 & b+b' & 0 \cr c+c' & 0 & a+a' \cr \end{pmatrix} \in E$.
+Pour tout  $\lambda \in {\R}$  $\lambda M=
+\begin{pmatrix} \lambda a & 0 & \lambda c \cr
+0 & \lambda b & 0 \cr \lambda c & 0 & \lambda a \cr \end{pmatrix}
+$  appartient \`a $E$, tout comme la matrice  $0$. Donc  $E$  est
+un sous-espace vectoriel de  $M_3({\R})$.
+
+Soit  $M= \begin{pmatrix} a & 0 & c \cr 0 & b & 0 \cr c & 0 & a
+\cr \end{pmatrix} $  un \' el\' ement de  $E$.  Alors  $M=
+ a\begin{pmatrix} 1 & 0 & 0 \cr
+0 & 0 & 0 \cr 0 & 0 & 1 \cr \end{pmatrix} + b
+\begin{pmatrix} 0 & 0 & 0 \cr
+0 & 1 & 0 \cr 0 & 0 & 0 \cr \end{pmatrix}+c
+ \begin{pmatrix} 0 & 0 & 1 \cr
+0 & 0 & 0 \cr 1 & 0 & 0 \cr \end{pmatrix}
+ $. Posons  $M_1=
+ \begin{pmatrix} 1 & 0 & 0 \cr
+0 & 0 & 0 \cr 0 & 0 & 1 \cr \end{pmatrix} ,  M_2=
+\begin{pmatrix} 0 & 0 & 0 \cr
+0 & 1 & 0 \cr 0 & 0 & 0 \cr \end{pmatrix} ,  M_3=
+ \begin{pmatrix} 0 & 0 & 1 \cr
+0 & 0 & 0 \cr 1 & 0 & 0 \cr \end{pmatrix}
+ $.  Les matrices  $M_1 ,  M_2$  et  $M_3$  appartiennent \`a  $E$  et la relation qui pr\' ec\' ede
+montre que  elles engendrent  $E$. D'autre part, si  $\alpha M_1 +
+\beta M_2 + \gamma M_3 =0$, alors  $\begin{pmatrix} \alpha & 0 &
+\gamma \cr 0 & \beta  & 0 \cr \gamma & 0 & \alpha \cr
+\end{pmatrix} =\begin{pmatrix} 0 & 0 & 0 \cr 0 & 0 & 0 \cr 0 & 0 &
+0 \cr \end{pmatrix} $  donc  $\alpha = \beta =\gamma =0$. La
+famille  $\{ M_1 ,  M_2 , M_3 \}$  est libre et engendre  $E$.
+C'est une base de  $E$.
+\fincorrection
+
+\finexercice
+

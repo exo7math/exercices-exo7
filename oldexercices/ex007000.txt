@@ -1,0 +1,52 @@
+\exercice{7000, blanc-centi, 2015/07/04}
+\video{nFoOhAmqUtQ}
+\enonce
+Résoudre les équations différentielles suivantes à l'aide du changement de variable suggéré.
+\begin{enumerate}
+\item $x^2y''+xy'+y=0$, sur $]0;+\infty[$, en posant $x=e^t$;
+\item $(1+x^2)^2y''+2x(1+x^2)y'+my=0$, sur $\R$, en posant $x=\tan t$ (en fonction de $m\in\R$).
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item Puisqu'on cherche $y$ fonction de $x\in]0;+\infty[$, et que l'application $t\mapsto e^t$ 
+est bijective de $\R$ sur $]0;+\infty[$, on peut poser $x=e^t$ et $z(t)=y(e^t)$. 
+On a alors $t= \ln x$ et $y(x) = z(\ln x)$.
+Ce qui donne :
+\begin{eqnarray*}
+y(x)&=&z(\ln x)=z(t)\\
+y'(x)&=&\frac{1}{x}z'(\ln x)=e^{-t}z'(t)\\
+y''(x)&=&-\frac{1}{x^2}z'(\ln x)+\frac{1}{x^2}z''(\ln x)=-e^{-2t}z'(t)+e^{-2t}z''(t)
+\end{eqnarray*}
+En remplaçant, on obtient donc que 
+$$\forall x\in]0;+\infty[,\ x^2y''+xy'+y=0\Longleftrightarrow\forall t\in\R,\ z''(t)+z(t)=0$$
+autrement dit, $z(t)=\lambda\cos t+\mu\sin t$ où $\lambda,\mu\in\R$. 
+Finalement, les solutions de l'équation de départ sont de la forme 
+$$y(x) = z(\ln x) = \lambda\cos(\ln x)+\mu\sin(\ln x)$$ où $\lambda,\mu\in\R$.
+
+\item L'application $t\mapsto \tan t$ étant bijective de 
+$]-\frac{\pi}{2};\frac{\pi}{2}[$ sur $\R$, on peut poser 
+$x=\tan t$ et $z(t)=y(\tan t)$. On a alors $t = \arctan x$ et ainsi :
+\begin{eqnarray*}
+y(x)&=&z(\arctan x)=z(t)\\
+y'(x)&=&\frac{1}{1+x^2}z'(\arctan x)\\
+y''(x)&=&\frac{1}{(1+x^2)^2}\big(z''(\arctan x)-2xz'(\arctan x)\big)
+\end{eqnarray*}
+En remplaçant, on obtient que $z$ est solution de l'équation différentielle $z''+mz=0$. Pour résoudre cette équation, on doit distinguer trois cas:
+\begin{itemize}
+  \item $m<0$: alors $z(t)=\lambda e^{\sqrt{-m}t}+\mu e^{-\sqrt{-m}t}$ et donc  
+$$y(x)=\lambda e^{\sqrt{-m}\arctan x}+\mu e^{-\sqrt{-m}\arctan x},$$
+  
+  \item $m=0$: $z''=0$ et donc $z(t)=\lambda t+\mu$ et $y(x)=\lambda\arctan x+\mu$,
+  
+  \item $m>0$: alors $z(t)=\lambda\cos(\sqrt{m}t)+\mu\sin(\sqrt{m}t)$ et donc 
+$$y(x)=\lambda\cos(\sqrt{m}\arctan x)+\mu\sin(\sqrt{m}\arctan x)$$
+où $\lambda,\mu\in\R$.
+\end{itemize}
+
+\end{enumerate}
+\fincorrection
+\finexercice

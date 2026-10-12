@@ -1,0 +1,40 @@
+\exercice{6975, blanc-centi, 2014/05/06}
+\video{g13-StbHolQ}
+\enonce 
+Simplifier l'expression $\displaystyle\frac{2\ch^2(x)-\sh(2x)}{x-\ln(\ch x)-\ln 2}$ 
+et donner ses limites en $-\infty$ et $+\infty$.
+\finenonce 
+
+\indication
+On trouve $-\frac{1+e^{-2x}}{\ln(1+e^{-2x})}$.
+\finindication
+
+\correction
+Par définition des fonctions $\ch$ et $\sh$, on a 
+\begin{eqnarray*}
+2\ch^2(x)-\sh(2x)&=&2\left(\frac{e^x+e^{-x}}{2}\right)^2-\frac{e^{2x}-e^{-2x}}{2}\\
+ &=&\frac{e^{2x}+2+e^{-2x}}{2}+\frac{e^{-2x}-e^{2x}}{2}\\
+ &=&1+e^{-2x}
+\end{eqnarray*}
+
+Et en utilisant les deux relations $\ln(ab)=\ln a + \ln b$ et $\ln(e^x) = x$ on calcule :
+\begin{eqnarray*}
+x-\ln(\ch x)-\ln 2
+  &=& x-\ln\left(\frac{e^x+e^{-x}}{2}\right)-\ln 2\\
+  &=& x-\ln(e^x+e^{-x}) + \ln 2 - \ln 2\\
+  &=& x-\ln\big(e^x(1+e^{-2x})\big)\\
+  &=& x-\ln(e^x)-\ln(1+e^{-2x})\\
+  &=& x-x-\ln(1+e^{-2x})\\
+  &=& -\ln(1+e^{-2x})\\
+\end{eqnarray*}
+d'où 
+$$\frac{2\ch^2(x)-\sh(2x)}{x-\ln(\ch x)-\ln 2}=-\frac{1+e^{-2x}}{\ln(1+e^{-2x})}$$
+C'est une expression de la forme $-\frac{u}{\ln u}$ avec $u=1+e^{-2x}$ :
+\begin{itemize}
+  \item si $x\to +\infty$, alors $u\to 1^+$, $\frac{1}{\ln u} \to +\infty$ 
+  donc $-\frac{u}{\ln u}\to -\infty$ ;
+  \item si $x\to -\infty$, alors $u\to +\infty$ donc d'après les 
+  relations de croissances comparées, $-\frac{u}{\ln u}\to -\infty$.
+\end{itemize}
+\fincorrection
+\finexercice

@@ -1,0 +1,28 @@
+\exercice{2103, debes, 2008/02/12}
+\enonce
+Soit $X$ un ensemble non vide et ordonn\'e. Montrer qu'il existe une partie
+$Y$ totalement ordonn\'ee de $X$ qui v\'erifie la propri\'et\'e
+$$\forall x \notin Y \quad \exists y\in X \quad x\  \hbox {\rm et} \ y \ \hbox
+{non comparables}$$
+
+L'ensemble $Y$ est-il unique?
+\finenonce 
+
+\noindication
+
+
+\correction
+Pour tout $x\in X$, posons $C(x)=\{ y\in X \hskip 2pt |\hskip 2pt  x\ \hbox{\rm et}\ y \
+\hbox{\rm sont comparables}\}\ $ et consid\'erons $Y=\bigcap_{x\in X}C(x)$. La partie $Y$ est
+totalement ordonn\'ee puisque d\`es que $y,y^\prime \in Y$, alors $y^\prime \in C(y)$ et donc
+$y$ et
+$y^\prime$ sont comparables. De plus, pour tout $x\notin Y$, il existe $y\in X$ tel que 
+$x\notin C(y)$, c'est-\`a-dire, $y$ et $x$ non comparables.\smallskip
+
+Il n'y a pas unicit\'e de l'ensemble $Y$ en g\'en\'eral. En effet, dans un ensemble
+ordonn\'e o\`u il existe un \'el\'ement $y$ qui n'est comparable qu'\`a lui-m\^eme,
+on peut prendre $Y=C(y)=\{y\}$. Il est facile de construire des ensembles ordonn\'es
+poss\'edant plusieurs tels \'el\'ements $y$ (penser \`a la relation d'\'egalit\'e, dont     
+le graphe est la diagonale). 
+\fincorrection
+\finexercice

@@ -1,0 +1,37 @@
+\exercice{752, bodin, 1998/09/01}
+\video{AjgAXbaAu3E}
+\enonce
+Vérifier
+$$
+\Arcsin x + \Arccos x = \frac{\pi}{2}\qquad\text{ et } \quad
+\Arctan x + \Arctan\frac{1}{x} = \text{sgn}(x)\frac{\pi}{2}.
+$$
+
+\finenonce 
+\indication
+Faire une étude de fonction.
+La fonction $\text{sgn}(x)$ est la \emph{fonction signe} : elle vaut $+1$ si $x> 0$,
+$-1$ si $x < 0$ (et $0$ si $x=0$).
+\finindication
+
+\correction\ 
+\begin{enumerate}
+    \item Soit $f$ la fonction définie sur $[-1,1]$ par 
+$f(x) = \Arcsin x +\Arccos x$: $f$ est continue sur l'intervalle $[-1,1]$, 
+et dérivable sur $]-1,1[$. Pour tout $x\in]-1,1[$, 
+$f'(x)= \frac{1}{\sqrt{1-x^2}}+\frac{-1}{\sqrt{1-x^2}}  = 0$. 
+Ainsi $f$ est constante sur $]-1,1[$, donc sur $[-1,1]$ (car continue aux extrémités). 
+Or $f(0) = \Arcsin 0 +\Arccos 0 = \frac \pi 2$
+donc pour tout $x\in[-1,1]$, $f(x) = \frac \pi 2$.
+
+   \item Soit $g(x) = \Arctan x + \Arctan \frac 1x$.
+Cette fonction est définie sur $]-\infty,0[$ et sur $]0,+\infty[$ (mais pas en $0$).
+On a 
+$$g'(x)= \frac{1}{1+x^2} + \frac{-1}{x^2} \cdot \frac{1}{1+\frac{1}{x^2}} = 0,$$
+donc $g$ est constante sur chacun de ses intervalles de définition:
+$g(x) = c_1$ sur $]-\infty,0[$ et $g(x) = c_2$ sur $]0,+\infty[$.
+Sachant $\Arctan 1 = \frac\pi4$, on calcule $g(1)$ et $g(-1)$ on obtient $c_1 = -\frac \pi 2$
+et $c_2 = +\frac \pi 2$.
+\end{enumerate}
+\fincorrection
+\finexercice

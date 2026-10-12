@@ -1,0 +1,77 @@
+\exercice{5924, tumpach, 2010/11/11}
+\enonce
+\begin{enumerate}
+\item Montrer que si $f~:[a,b]\rightarrow\mathbb{R}$ est
+Riemann-int\'egrable, alors
+\begin{equation*}\int_{a}^{b}f(x)\,dx =
+\int_{a}^{b}f(a+b-x)\,dx. \end{equation*} \item Calculer (en
+utilisant 1.) les int\'egrales suivantes~:
+\begin{equation*}
+a)\quad\int_{0}^{\pi}\frac{x\sin
+x}{1+{\cos}^{2}x}\,dx\quad\quad\quad\quad
+b)\quad\int_{0}^{\frac{\pi}{4}}\log\left(1+\tan x\right)\,dx.
+\end{equation*}
+\end{enumerate}
+\begin{equation*}
+\textit{Rappel~:}\quad \tan(\alpha-\beta) =
+\frac{\tan(\alpha)-\tan(\beta)}{1+\tan(\alpha)\tan(\beta)}
+\end{equation*}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item
+\begin{multline*}
+\overset{b}{\underset{a}{\int }}f(a+b-x)dx=-\overset{b}{\underset{a}{\int }}%
+f(a+b-x)(a+b-x)^{\prime }dx\\
+=-\overset{\varphi (b)}{\underset{\varphi (a)}{%
+\int }}f(t)dt=-\overset{a}{\underset{b}{\int }}f(t)dt=\overset{b}{\underset{a%
+}{\int }}f(t)dt
+\end{multline*}
+
+o\`{u} $\varphi :[a,b]\rightarrow \lbrack a,b]$, $\varphi
+(x)=a+b-x$ est une fonction de classe $C^{1}$.
+
+\item $a)$
+\begin{multline*}
+I:=\overset{\pi }{\underset{0}{\int }}\frac{x\sin x}{1+\cos ^{2}x}dx=\overset%
+{\pi }{\underset{0}{\int }}\frac{(\pi -x)\sin (\pi -x)}{1+\cos ^{2}(\pi -x)}%
+dx=\overset{\pi }{\underset{0}{\int }}\frac{(\pi -x)\sin x}{1+\cos ^{2}x}%
+dx\\
+=\pi \overset{\pi }{\underset{0}{\int }}\frac{\sin x}{1+\cos
+^{2}x}dx-I
+\end{multline*}
+
+\begin{multline*}
+I =\frac{\pi }{2}\overset{\pi }{\underset{0}{\int }}\frac{\sin
+x}{1+\cos ^{2}x}dx=-\frac{\pi }{2}\overset{\pi }{\underset{0}{\int
+}}\frac{(\cos
+x)^{\prime }}{1+\cos ^{2}x}dx=-\frac{\pi }{2}\overset{\varphi (\pi )}{%
+\underset{\varphi (0)}{\int }}\frac{1}{1+t^{2}}dt\\
+=-\frac{\pi }{2}\overset{-1}%
+{\underset{1}{\int }}\frac{1}{1+t^{2}}dt=\frac{\pi }{2}\overset{1}{\underset{-1}{\int }}\frac{1}{1+t^{2}}dt=\frac{%
+\pi ^{2}}{4}.
+\end{multline*}
+
+o\`{u} $\varphi :[0,\pi ]\rightarrow \lbrack -1,1]$, $\varphi
+(x)=\cos x$ est une fonction de classe $C^{1}$.
+
+$b)$
+\begin{multline*}
+J :=\overset{\pi /4}{\underset{0}{\int }}\log (1+\tan x)dx=\overset{\pi /4}{%
+\underset{0}{\int }}\log \left(1+\tan (\frac{\pi }{4}-x)\right)dx\\
+=\overset{\pi /4}{%
+\underset{0}{\int }}\log \left(1+\frac{1-\tan x}{1+\tan x}\right)dx
+=\overset{\pi /4}{\underset%
+{0}{\int }}\log \left(\frac{2}{1+\tan x}\right)dx =\frac{\pi }{4}\log
+2-J
+\end{multline*}
+
+d'o\`{u} la valeur de l'int\'{e}grale est $J=\frac{\pi }{8}\log
+2.$
+\end{enumerate}
+\fincorrection
+
+\finexercice

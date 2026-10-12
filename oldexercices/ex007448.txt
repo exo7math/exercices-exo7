@@ -1,0 +1,35 @@
+\exercice{7448, mourougane, 2021/08/10}
+\enonce[Distance entre deux droites de l'espace]
+Soit $\mathcal{E}$ un espace affine euclidien de dimension $3$. Pour
+tout couple de droites $(D_1,D_2)$ on appelle $$d(D_1,D_2)=\inf\{ \|
+y_1-y_2 \| , y_1 \in D_1, y_2\in D_2\}.$$ 
+\begin{enumerate}
+ \item Calculer $d(D_1,D_2)$ quand $D_1$ et $D_2$ sont concourantes.
+
+ \item Soit $a_1\in D_1$ et $a_2\in D_2$. En décomposant $a_1-a_2$ dans
+ $\vec{D_1} +\vec{D_2}+(\vec{D_1} +\vec{D_2})^\perp$ montrer qu'il
+ existe $x_1\in D_1$ et $x_2\in D_2$ tels que
+ $d(D_1,D_2)=d(x_1,x_2)$. 
+
+ \item Montrer que pour $z_1\in D_1$ et $ z_2\in D_2$, 
+$$d(D_1,D_2)=d(z_1,z_2) _iff z_1-z_2\in \vec{D_1}^\perp \cap
+\vec{D_2}^\perp.$$ 
+
+ \item Montrer que si $e_i$ est un vecteur directeur de $D_i$
+ $$d(D_1,D_2)^2=\frac{Gram(a_1-a_2,e_1,e_2)}{Gram(e_1,e_2)}$$ 
+o{ù} $Gram(u_1,u_2,\cdots ,u_r):=det(\langle u_i,u_j\rangle
+)_{1\leq i,j\leq r}$.
+
+ \item Calculer la distance entre les deux droites données par les équations
+cartésiennes dans un repère orthonormé de $\mathcal{E}$~:
+\begin{eqnarray*}
+M\left( \begin{array}{c}x\\y\\z\end{array}\right)\in D_1
+\iff\left\{\begin{array}{c}x+y=1\\x+y+2z=1\end{array}\right.\ \ \ 
+M\left( \begin{array}{c}x\\y\\z\end{array}\right)\in D_2
+\iff\left\{\begin{array}{c}y+z=1\\x+y-2z=3\end{array}\right.
+\end{eqnarray*}
+\end{enumerate}
+\finenonce
+\noindication
+\nocorrection
+\finexercice

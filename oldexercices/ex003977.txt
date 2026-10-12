@@ -1,0 +1,19 @@
+\exercice{3977, quercia, 2010/03/11}
+\enonce[Mines MP 2000]
+
+Montrer que pour tout $x$ réel, il existe $a(x)$ unique tel que
+$ \int_{t=x}^{a(x)} e^{t^2}\, d t=1$. Montrez que $a$ est indéfiniment
+dérivable, et que son graphe est symétrique par rapport à la deuxième
+bissectrice. 
+\finenonce
+
+\noindication
+
+\correction
+Si l'on pose $F(x)= \int_{t=0}^x e^{t^2}\, d t$, on constate que
+$a(x)=F^{-1}(1+F(x))$ ce qui prouve l'existence, l'unicité et
+le caractère $\mathcal{C}^\infty$ de~$a$. Pour la symétrie, il faut montrer que
+$a(-a(x)) = -x$ soit $ \int_{t=-a(x)}^{-x} e^{t^2}\, d t=1$ ce qui est immédiat.
+\fincorrection
+
+\finexercice

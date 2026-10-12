@@ -1,0 +1,24 @@
+\exercice{7840, mourougane, 2021/08/11}
+\enonce
+Démontrer le théorème de Witt dans le cas particulier suivant :
+
+Soit $E$ et $E'$ deux espaces symplectiques non-singuliers de dimension $4$.
+Soit $d\subset E$ et $d'\subset E'$ deux droites 
+et $f$ une application linéaire bijective de $d$ sur $d'$.
+Montrer qu'il existe une isométrie de $E$ sur $E'$ qui prolonge $f$.
+\finenonce
+\noindication
+\correction
+Soit $(E,f)$ et $(E,f')'$ deux espaces symplectiques non-singuliers de dimension $4$.
+Soit $d\subset E$ et $d'=vect(x')\subset E'$ deux droites 
+et $f$ une application linéaire bijective de $d$ sur $d'$.
+On écrit $d=vect(x)$ et $d'=vect(x')$ où $x'=f(x)$.
+
+Notons que comme $d$ et $d'$ sont de dimension $1$ donc isotropes, $f$ est une isométrie (pour les formes bilinéaires induites). Puisque $f$ est non dégénérée, on choisit un vecteur $z$ (non colinéaire à $x$) tel que $f(x,z)$ est non nul donc inversible dans $k$. 
+On définit $y$ sous la forme $y=\alpha x+ f(x,z)^{-1}z$. Alors, $(x,y)$ est une paire symplectique.
+L'orthogonal de $vect(x,y)$ (muni de la forme induite) est un plan non-singulier puisque $vect(x,y)$ est non-singulier.
+Par la construction précédente, on y trouve une paire symplectique $(X,Y)$.
+Le même raisonnement permet de trouver une base $(x',y',X',Y')$ de $E'$ telle que $(x',y')$ et $(X',Y')$ soient deux paires symplectiques orthogonales de $E'$.
+L'application $f$ définie par $x\mapsto x'$, $y\mapsto y'$, $X\mapsto X'$ et $Y\mapsto Y'$ est une isométrie de $E$ sur $E'$ qui prolonge $f$.
+\fincorrection
+\finexercice

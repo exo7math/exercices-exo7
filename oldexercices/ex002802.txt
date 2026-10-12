@@ -1,0 +1,50 @@
+\exercice{2802, burnol, 2009/12/15}
+\enonce
+Lorsque $z$ est complexe les fonctions $\sin(z)$, $\cos(z)$, $\sh(z)$ et
+   $\ch(z)$ sont définies par les formules:
+\begin{align*}
+\sin(z) &= \frac{e^{iz} - e^{-iz}}{2i}&\qquad \sh(z) &=
+   \frac{e^{z} - e^{-z}}{2}  \\
+ \cos(z) &=
+   \frac{e^{iz} + e^{-iz}}{2}&\qquad \ch(z) &=
+   \frac{e^{z} + e^{-z}}{2}
+\end{align*}
+\begin{enumerate}
+  \item Montrer que $\cos$ et $\ch$ sont des fonctions paires et
+   $\sin$ et $\sh$ des fonctions impaires et donner leurs
+   représentations comme
+   séries entières. Prouver $e^{iz} = \cos(z) + i \sin(z)$,
+   $\sin(iz) = i\sh(z)$, $\cos(iz) = \ch(z)$, $\sh(iz) =
+   i\sin(z)$, $\ch(iz) = \cos(z)$.
+  \item Établir les formules:
+\[ \cos(z+w) = \cos(z)\cos(w) - \sin(z)\sin(w)\]
+\[ \sin(z+w) = \sin(z)\cos(w) + \cos(z)\sin(w)\]
+en écrivant de deux manières différentes $e^{\pm
+   i(z+w)}$. Donner une autre preuve en utilisant le
+   principe du prolongement analytique et la validité
+   (admise) des formules pour $z$ et $w$ réels. 
+  \item   Prouver pour tout $z$ complexe $\cos(\pi + z) = -\cos(z)$,
+  $\sin(\pi+ z) =
+     -\sin(z)$. Prouver $\cos(\frac\pi2 - z) = \sin(z)$.
+  \item   Prouver les formules $\cos^2 z + \sin^2 z = 1$ et $\ch^2 z
+   - \sh^2 z = 1$ pour tout $z\in\Cc$.
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+Il s'agit de formules bien connues lorsque les arguments $z,w$
+sont r\'eels. La v\'erification \`a partir des d\'efinitions des fonctions trigonom\'etriques donn\'ees
+dans l'\'enonc\'e de l'exercice est laiss\'ee au lecteur.
+Voici comment obtenir la formule :
+\begin{equation}\label{2} \cos(z+w) = \cos(z)\cos(w)-\sin(z)\sin(w) \qquad pour \quad z,w\in \C \, .
+\end{equation}
+Fixons $w\in \R$. Soit $f_w(z)=\cos (z+w)-\big( \cos(z)\cos(w)-\sin(z)\sin(w)\big)$.
+La formule \eqref{2} \'etant vraie pour $z,w\in \R$, $f_w(z)=0$ pour tout $z\in \R$. Il r\'esulte du principe des z\'eros
+isol\'es que $f_w$ est identiquement nulle. Autrement dit, on vient d'\'etablir la formule \eqref{2}
+pour $(z,w)\in \C\times \R$. Il suffit maintenant de refaire le m\^eme argument en fixant d'abord $z\in \C$
+arbitrairement et en observant que la fonction holomorphe
+$$g_z(w)= \cos(z+w) - ( \cos(z)\cos(w)-\sin(z)\sin(w))$$
+est nulle pour tout $w\in\R$. De nouveau $g_z\equiv 0$ par le principe des z\'eros isol\'es, d'o\`u la formule \eqref{2}
+pour tout $z,w\in \C$.
+\fincorrection
+\finexercice

@@ -1,0 +1,237 @@
+\exercice{5747, rouget, 2010/10/16}
+\enonce
+Développer en série entière les fonctions suivantes :
+
+\begin{center}
+\begin{tabular}{lll}
+\textbf{1) (*)} $\frac{1}{(x-1)(x-2)}$&\textbf{2) (*** I)} $\frac{1}{x^2-2tx+1}$, $t\in\Rr$&\textbf{3) (*)} $\ln(x^2-5x+6)$\\
+\textbf{4) (**)} $\Arctan\left(\frac{x\sin a}{1-x\cos a}\right)$, $a\in]0,\pi[$&
+\textbf{5) (**)} $\frac{1}{(x-1)(x-2)\ldots(x-p)}$&\textbf{6) (*** I)} $(\Arcsin x)^2$\\
+\textbf{7) (*)} $\int_{0}^{x}\cos(t^2)\;dt$&\textbf{8) (*** I)} $\int_{-\infty}^{x}\frac{dt}{t^4+t^2+1}$&
+\textbf{9) (**)} $\cos x\ch x$.
+\end{tabular}
+\end{center}
+\finenonce
+
+\noindication
+
+\correction
+Dans chaque question, on note $f$ la fonction considérée.
+
+\begin{enumerate}
+ \item  $f$ est développable en série entière à l'origine en tant que fraction rationelle n'admettant pas $0$ pour pôle. Le rayon du développement est le minimum des modules des pôles de $f$ à savoir $1$. Pour $x$ dans $]-1,1[$,
+
+\begin{center}
+$f(x)=\frac{1}{x-1}-\frac{1}{x-2}=\frac{1}{1-x}-\frac{1}{2}\times\frac{1}{1-\frac{x}{2}}=\sum_{n=0}^{+\infty}x^n -\frac{1}{2}\sum_{n=0}^{+\infty}\frac{x^n}{2^n}=\sum_{n=0}^{+\infty}\left(1-\frac{1}{2^{n+1}}\right)x^n$.
+\end{center}
+
+\item  $f$ est développable en série entière à l'origine en tant que fraction rationelle n'admettant pas $0$ pour pôle.
+
+\textbf{1er cas.} Si $|t| < 1$, soit $\theta=\Arccos t$. On a donc $\theta\in]0,\pi[$ et $t=\cos(\theta)$. Pour tout réel $x$, on a
+
+\begin{center}
+$x^2 -2tx +1 =x^2 -2x\cos(\theta)+1=(x-e^{i\theta})(x-e^{-i\theta})$,
+\end{center}
+
+avec $e^{i\theta}\neq e^{-i\theta}$. Les pôles sont de modules $1$ et le rayon du développement est donc égal à $1$. Pour $x$ dans $]-1,1[$,
+
+\begin{align*}\ensuremath
+ \frac{1}{x^2-2x\cos(\theta)+1}&=\frac{1}{2i\sin(\theta)}\left(\frac{1}{x-e^{i\theta}}-\frac{1}{x-e^{-i\theta}}\right) =\frac{1}{2i\sin(\theta)}\left(-\frac{e^{-i\theta}}{1-xe^{-i\theta}}+\frac{e^{i\theta}}{1-xe^{i\theta}}\right)\\
+  &=\frac{1}{2i\sin(\theta)}\left(e^{i\theta}\sum_{n=0}^{+\infty}e^{in\theta}x^n-e^{-i\theta}\sum_{n=0}^{+\infty}e^{-in\theta}x^n\right) =\sum_{n=0}^{+\infty}\frac{\sin((n+1)\theta)}{\sin\theta}x^n.
+\end{align*}
+
+\begin{center}
+\shadowbox{
+$\forall t\in]-1,1[$, $\forall x\in]-1,1[$, $\frac{1}{x^2-2xt+1}=\sum_{n=0}^{+\infty}\frac{\sin((n+1)\theta)}{\sin\theta}x^n$ où $\theta=\Arccos t$.
+}
+\end{center}
+
+\textbf{2ème cas.} Si $t > 1$, on peut poser $t =\ch(\theta)$ où $\theta$ est un certain réel positif ou nul. Plus précisément, $\theta=\Argch t=\ln(t+\sqrt{t^2-1})\in]0,+\infty[$. Pour tout réel $x$, on a
+
+\begin{center}
+$x^2 -2tx +1 =x^2 -2x\ch(\theta)+1=(x-e^{\theta})(x-e^{-\theta})$,
+\end{center}
+
+avec $e^\theta\neq e^{-\theta}$. Le minimum des modules des pôles de $f$ est $e^{-\theta}=\frac{1}{t+\sqrt{t^2-1}}= t-\sqrt{t^2-1}$. Le rayon du développement est donc $R=t-\sqrt{t^2-1}$. Pour $x\in]-R,R[$,
+
+\begin{align*}\ensuremath
+\frac{1}{x^2-2x\ch(\theta)+1}&=\frac{1}{2\sh(\theta)}\left(\frac{1}{x-e^{\theta}}-\frac{1}{x-e^{-\theta}}\right) =\frac{1}{2\sh(\theta)}\left(-\frac{e^{i\theta}}{1-xe^{-\theta}}+\frac{e^{\theta}}{1-xe^{\theta}}\right)\\
+  &=\frac{1}{2\sh(\theta)}\left(e^{\theta}\sum_{n=0}^{+\infty}e^{n\theta}x^n-e^{-\theta}\sum_{n=0}^{+\infty}e^{-n\theta}x^n\right) =\sum_{n=0}^{+\infty}\frac{\sh((n+1)\theta)}{\sh\theta}x^n.
+\end{align*}
+
+\textbf{3ème cas.} Si $t < -1$, on applique ce qui précède à $-t$ et $-x$.
+
+\textbf{4ème cas.} Si $t = 1$, pour $x\in]-1,1[$,
+
+\begin{center}
+$\frac{1}{x^2-2xt+1}=\frac{1}{(1-x)^2}=\left(\frac{1}{1-x}\right)'=\sum_{n=0}^{+\infty}(n+1)x^n$
+\end{center}
+
+Si $t = -1$, en remplaçant $x$ par $-x$,  on obtient pour $x\in]-1,1[$, $\frac{1}{(1+x)^2}=\sum_{n=0}^{+\infty}(-1)^n(n+1)x^n$.
+
+\item  Pour tout réel $x$, $x^2 -5x+6=(x-2)(x-3)$ et donc si $x < 2$, $x^2-5x+6>0$. Pour $x\in ]-2,2[$,
+
+\begin{center}
+$\ln(x^2-5x+6)=\ln(2-x)+\ln(3-x)=\ln(6)+\ln\left(1-\frac{x}{2}\right)+\ln\left(1-\frac{x}{3}\right)$,
+\end{center}
+
+et puisque pour $x$ dans $]-2,2[$, $\frac{x}{2}$ et $\frac{x}{3}$ sont dans $]-1,1[$, 
+
+\begin{center}
+$\ln(x^2-5x+6)=\ln(6)-\sum_{n=1}^{+\infty}\left(\frac{1}{2^n}+\frac {1}{3^n}\right)\frac{x^n}{n}$,
+\end{center}
+
+et en particulier la fonction $f$ est développable en série entière et le rayon du développement est $2$ clairement.
+
+\item  Si $\cos a = 0$, la fonction $f$ est définie et dérivable sur $\mathcal{D}=\Rr$ et si $\cos a\neq 0$, $f$ est définie et dérivable sur $\mathcal{D}=\left]-\infty,\frac{1}{\cos a}\right[\cup\left]\frac{1}{\cos a},+\infty\right[$. Pour $x\in\mathcal{D}$, 
+
+\begin{center}
+$f'(x) =\sin a\times\frac{1}{(1-x\cos a)^2}\times\frac{1}{1+\left(\frac{x\sin a}{1-x\cos a}\right)^2}=\frac{\sin a}{x^2-2x\cos a+1}$.
+\end{center}
+
+D'après 2), la fonction $f'$ est dans tous les cas développable en série entière, le rayon du développement est $1$ et pour $x$ dans $]-1,1[$
+
+\begin{center}
+$f'(x) =\sum_{n=0}^{+\infty}\frac{\sin((n+1)a)}{\sin a}x^n$.
+\end{center}
+
+On sait alors que la fonction $f$ est développable en série entière, que le développement a même rayon de convergence et s'obtient en intégrant terme à terme. Donc pour $x$ dans $]-1,1[$,
+
+\begin{center}
+$f(x)= f(0)+\int_{0}^{x}f'(t)\;dt=\sum_{n=0}^{+\infty}\frac{\sin(n+1)a)}{\sin a}x^{n+1}$.
+\end{center}
+
+\item  La fonction $f$ est développable en série entière en tant que fraction rationnelle n'admettant pas $0$ pour pôle. Le rayon est le minimum des modules des pôles de $f$ à savoir $1$.
+
+\begin{center}
+$\frac{1}{(x-1)(x-2)\ldots(x-p)}=\sum_{k=1}^{p}\frac{\lambda_k}{x-k}$
+\end{center}
+
+avec $\lambda_k=(-1)^{p-k}\frac{1}{(k-1)!(p-k)!}= (-1)^{p-k}\frac{k}{p!}C_p^k$.
+Par suite, pour $x$ dans $]-1,1[$
+
+\begin{align*}\ensuremath
+f(x)&=\sum_{k=1}^{p}(-1)^{p-k}\frac{k}{p!}C_p^k\left(-\frac{1}{k}\right)\frac{1}{1-\frac{x}{k}}=\frac{(-1)^p}{p!}\sum_{k=1}^{p} (-1)^{k+1}C_p^k\left(\sum_{n=0}^{+\infty}\frac{x^n}{k^n}\right)\\
+ &=\frac{(-1)^p}{p!}\sum_{n=0}^{+\infty}\left(\sum_{k=1}^{p}(-1)^{k+1}\frac{C_p^k}{k^n}\right)x^n.
+\end{align*}
+
+\item  La fonction $f$ est deux fois dérivable sur $]-1,1[$ et pour x dans $]-1,1[$, $f'(x) =2\frac{1}{\sqrt{1-x^2}}\Arcsin x$ puis
+
+\begin{center}
+$f''(x) =2x\frac{1}{(1-x^2)^{3/2}}\Arcsin x+\frac{2}{1-x^2}=\frac{x}{1-x^2}f'(x)+\frac{2}{1-x^2}$.
+\end{center}
+
+Donc, pour $x$ dans $]-1,1[$,
+
+\begin{center}
+$(1-x^2)f''(x)-xf'(x)=2$ \quad$(1)$\quad et $f(0)=f'(0) = 0$\quad$(2)$.
+\end{center}
+
+On admettra que ces égalités déterminent la fonction $f$ de manière unique.
+
+Soit $\sum_{n=0}^{+\infty}a_nx^n$ une série entière de rayon $R$ supposé à priori strictement positif. Pour $x\in]-R,R[$, on pose $g(x)=\sum_{n=0}^{+\infty}a_nx^n$.
+
+\begin{align*}\ensuremath
+g\;\text{est solution de}\;(1)\;\text{sur}\;]-R,R[&\Leftrightarrow\forall x\in]-R,R[,\;(1-x^2)  \sum_{n=2}^{+\infty}n(n-1)a_nx^{n-2} -x\sum_{n=1}^{+\infty}na_nx^{n-1}=2\\
+ &\Leftrightarrow \forall x\in]-R,R[,\;\sum_{n=2}^{+\infty}n(n-1)a_nx^{n-2}-\sum_{n=0}^{+\infty}n(n-1)a_nx^n+\sum_{n=0}^{+\infty}na_nx^n= 2\\
+ &\Leftrightarrow \forall x\in]-R,R[,\;\sum_{n=2}^{+\infty}n(n-1)a_nx^{n-2}-\sum_{n=0}^{+\infty}n^2a_nx^n = 2\\
+ &\Leftrightarrow \forall x\in]-R,R[,\;\sum_{n=0}^{+\infty}(n+2)(n+1)a_{n+2}x^{n}-\sum_{n=0}^{+\infty}n^2a_nx^n = 2\\
+ &\Leftrightarrow\forall x\in]-R,R[,\;\sum_{n=0}^{+\infty}((n+2)(n+1)a_{n+2}-n^2a_n)x^{n}= 2\\
+ &\Leftrightarrow a_2=1\;\text{et}\;\forall n\in\Nn^*,\;a_{n+2}=\frac{n^2}{(n+2)(n+1)}a_n\;(\text{par unicité des coefficients d'un DES}).
+\end{align*}
+
+En résumé, la fonction $g$ est solution de $(1)$ et $(2)$ sur $]-R,R[$ si et seulement si $a_0=a_1=0$ et $a_2=1$ et $\forall n\in\Nn^*,\;a_{n+2}=\frac{n^2}{(n+2)(n+1)}a_n$\quad(3) puis
+
+\begin{align*}\ensuremath
+(3)&\Leftrightarrow\forall n\in\Nn,\; a_{2n+1}= 0\;\text{et}\;a_0=0,\;a_2 =1\;\text{et}\;\forall n\geqslant2,\;a_{2n}= \frac{\left((2n-2)\times\ldots\times4\times2\right)^2}{(2n)\times(2n-1)\ldots\times4\times3}a_2\\
+ &\Leftrightarrow a_0 = 0\;\text{et}\;\forall n\in\Nn,\;a_{2n+1}= 0\;\text{et}\;\forall n\in\Nn^*,\;a_{2n}=\frac{2^{2n-1}((n-1)!)^2}{(2n)!}
+\end{align*}
+
+En résumé, sous l'hypothèse $R > 0$, la fonction $g$ est solution de (1) et (2) sur $]-R,R[$ si et seulement si $\forall x\in]-R,R[$, $g(x)=\sum_{n=1}^{+\infty}\frac{2^{2n-1}}{n^2C_{2n}^n}x^{2n}$.
+
+Réciproquement, calculons le rayon de la série entière précédente. Pour $x$ réel non nul,
+
+\begin{center} 
+$\left|\frac{2^{2n+1}(n!)^2x^{2n+2}}{(2n+2)!}\times\frac{(2n)!}{2^{2n-1}((n-1)!)^2x^{2n}}\right| = \frac{4x^2n^2}{(2n+2)(2n+1}\underset{n\rightarrow+\infty}{\rightarrow}x^2$.
+\end{center}
+
+D'après la règle de d'\textsc{Alembert}, la série proposée converge absolument pour $|x| < 1$ et diverge grossièrement pour $|x|> 1$. Le rayon de la série proposée est donc $1>0$ ce qui valide les calculs précédents.
+
+Par unicité de la solution de (1) et (2) sur $]-1,1[$, $f$ est développable en série entière et
+
+\begin{center}
+\shadowbox{
+$\forall x\in]-1,1[$, $\Arcsin^2x=\sum_{n=1}^{+\infty}\frac{2^{2n-1}}{n^2C_{2n}^n}x^{2n}$.
+}
+\end{center}
+
+\item  Pour tout réel $x$, $\cos(x^2) =\sum_{n=0}^{+\infty}(-1)^n\frac{x^{4n}}{(2n)!}$ (le rayon est infini).
+On sait alors que la fonction $f$ est développable en série entière, que le rayon du développement est encore infini et que l'on peut intégrer terme à terme pour obtenir (en tenant compte de $f(0)=0$) 
+
+\begin{center}
+\shadowbox{
+$\forall x\in\Rr$, $\int_{0}^{x}=\sum_{n=0}^{+\infty}(-1)^n\frac{x^{4n+1}}{(4n+1)\times(2n)!}$.
+}
+\end{center}
+
+\item  Les zéros du polynôme $t^4+t^2 + 1$ sont  $j$, $j^2$, $-j$ et $-j^2$. Donc la fonction $t\mapsto\frac{1}{t^4+t^2+1}$ est développable en série entière en tant que fraction rationnelle n'admettant pas zéro pour pôle et que le rayon de la série obtenue est $1$. Puis pour $t$ dans $]-1,1[$, 
+
+\begin{center}
+$\frac{1}{t^4+t^2+1}=\frac{1-t^2}{1-t^6}=(1-t^2)\sum_{n=0}^{+\infty}t^{6n}=\sum_{n=0}^{+\infty}t^{6n}-\sum_{n=0}^{+\infty}t^{6n+2}=1-t^2+t^6-t^8+t^{12}-t^{14}+\ldots$.
+\end{center}
+
+La fonction $t\mapsto\frac{1}{t^4+t^2+1}$ est continue sur $]-\infty,0]$ et négligeable devant $\frac{1}{t^2}$ quand $t$ tend vers $-\infty$. La fonction $t\mapsto\frac{1}{t^4+t^2+1}$ est donc intégrable sur $]-\infty,0]$.
+
+Par intégration terme à terme licite, on obtient pour $x$ dans $]-1,1[$,
+
+\begin{center}
+$f(x)=\int_{-\infty}^{0}\frac{1}{t^4+t^2+1}\;dt+\int_{0}^{x}\frac{1}{t^4+t^2+1}\;dt=\int_{-\infty}^{0}\frac{1}{t^4+t^2+1}\;dt+\sum_{n=0}^{+\infty}\left(\frac{t^{6n+1}}{6n+1}-\frac{t^{6n+3}}{6n+3}\right)$.
+\end{center}
+
+Calcul de $I=\int_{-\infty}^{0}\frac{1}{t^4+t^2+1}\;dt$. Par parité et réalité,
+
+\begin{center}
+$\frac{1}{t^4+t^2+1}=\frac{a}{t-j}+\frac{\overline{a}}{t-j^2}-\frac{a}{t+j}-\frac{\overline{a}}{t+j^2}$,
+\end{center}
+
+avec $a=\frac{1}{4j^3+2j}=\frac{1}{2(2+j)}=\frac{2+j^2}{2(2+j)(2+j^2)}=\frac{1-j}{6}$.
+Puis
+
+\begin{align*}\ensuremath
+\frac{1}{t^4+t^2+1}&=\frac{1}{6}\left(\frac{1-j}{t-j}+\frac{1-j^2}{t-j^2}-\frac{1-j}{t+j}-\frac{1-j^2}{t+j^2}\right)=\frac{1}{6}\left(\frac{3t+3}{t^2+t+1}+\frac{-3t+3}{t^2-t+1}\right)\\
+ &=\frac{1}{4}\left(\frac{2t+1}{t^2+t+1}+\frac{1}{t^2+t+1}-\frac{2t-1}{t^2-t+1}+\frac{1}{t^2-t+1}\right)\\
+ &=\frac{1}{4}\left(\frac{2t+1}{t^2+t+1}+\frac{1}{\left(t+\frac{1}{2}\right)^2+\left(\frac{\sqrt{3}}{2}\right)^2}-\frac{2t-1}{t^2-t+1}+\frac{1}{\left(t-\frac{1}{2}\right)^2+\left(\frac{\sqrt{3}}{2}\right)^2}\right).
+\end{align*}
+
+Par suite,
+
+\begin{align*}\ensuremath
+\int_{-\infty}^{0}\frac{1}{t^4+t^2+1}\;dt&=\frac{1}{4}\left[\ln\left(\frac{t^2+t+1}{t^2-t+1}\right)+\frac{2}{\sqrt{3}}\left(\Arctan\frac{2t+1}{\sqrt{3}}+\Arctan\frac{2t-1}{\sqrt{3}}\right)\right]_{-\infty}^0=\frac{1}{2\sqrt{3}}\left(\frac{\pi}{2}+\frac{\pi}{2}\right)=\frac{\pi}{2\sqrt{3}}.
+\end{align*}
+
+En résumé,
+
+\begin{center}
+\shadowbox{
+$\forall x\in]-1,1[$, $\int_{-\infty}^{x}\frac{1}{t^4+t^2+1}\;dt=\frac{\pi}{2\sqrt{3}}+\sum_{n=0}^{+\infty}\left(\frac{t^{6n+1}}{6n+1}-\frac{t^{6n+3}}{6n+3}\right)$.
+}
+\end{center}
+
+\item  $f$ est développable en série entière sur $\Rr$ en tant que produit de fonctions développables en série entière sur $\Rr$. Pour $x$ réel,
+
+\begin{align*}\ensuremath
+\cos x\ch x&=\frac{1}{4}\left(e^{(1+i)x}+e^{(1-i)x}+e^{(-1+i)x}+e^{(-1-i)x}\right)=\frac{1}{4}\sum_{n=0}^{+\infty}\left((1+i)^n+(1-i)^n+(-1+i)^n+(-1-i)^n\right)\frac{x^n}{n!}\\
+ &=\frac{1}{4}\sum_{n=0}^{+\infty}\left((\sqrt{2}e^{i\pi/4})^n+(\sqrt{2}e^{-i\pi/4})^n+(\sqrt{2}e^{3i\pi/4})^n+(\sqrt{2}e^{-3i\pi/4})^n\right)\frac{x^n}{n!}\\
+  &=\frac{1}{2}\sum_{n=0}^{+\infty}(\sqrt{2})^n\left(\cos\left(\frac{n\pi}{4}\right)+\cos\left(\frac{3n\pi}{4}\right)\right)\frac{x^n}{n!}
+=\frac{1}{4}\sum_{n=0}^{+\infty}(\sqrt{2})^n\cos\left(\frac{n\pi}{2}\right)\cos\left(\frac{n\pi}{4}\right)\frac{x^n}{n!}\\
+ &=\frac{1}{4}\sum_{p=0}^{+\infty}(\sqrt{2})^{2p}(-1)^p\cos\left(\frac{p\pi}{2}\right)\frac{x^{2p}}{(2p)!}=\frac{1}{4}\sum_{k=0}^{+\infty}(\sqrt{2})^{4k}(-1)^{2k}\cos\left(\frac{2k\pi}{2}\right)\frac{x^{4k}}{(4k)!}=\sum_{k=0}^{+\infty}(-1)^k2^{2k-2}\frac{x^{4k}}{(4k)!}.
+\end{align*}
+
+\begin{center}
+\shadowbox{
+$\forall x\in\Rr$, $\cos x\ch x=\sum_{k=0}^{+\infty}(-1)^k2^{2k-2}\frac{x^{4k}}{(4k)!}$.
+}
+\end{center}
+\end{enumerate}
+\fincorrection
+\finexercice

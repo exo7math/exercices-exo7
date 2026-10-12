@@ -1,0 +1,39 @@
+\exercice{1785, drutu, 2003/10/01}
+
+\enonce
+Soit $f \colon \R^2 \setminus \{(0,0)\} \to \R$ la fonction d\'efinie par
+\[
+f(x,y) = \frac{x^2y^2}{x^2y^2 + (x-y)^2} .
+\]
+Montrer que
+\begin{equation}
+\lim_{x\to 0}\lim_{y\to 0}f(x,y) =  \lim_{y\to 0}\lim_{x\to 0}f(x,y) = 0
+\label{non}
+\end{equation}
+et que $\lim_{(x,y)\to (0,0)} f(x,y)$ n'existe pas.
+\finenonce
+
+\indication 
+Diviser le num\'erateur et le d\'enominateur
+par $x^2$ resp. $y^2$ pour d\'eterminer $\lim_{y\to 0}f(x,y)$
+resp. $\lim_{x\to 0}f(x,y)$. Montrer que, 
+calcul\'ee le long d'une autre courbe
+convenable, $\lim_{(x,y)\to (0,0)} f(x,y)$ existe et ne vaut pas z\'ero.
+\finindication
+
+\correction
+\[ 
+\lim_{y\to 0}f(x,y) =  \lim_{y\to 0}\frac{y^2}{y^2 + (1-y/x)^2} 
+=\frac{\lim_{y\to 0} y^2}{\lim_{y\to 0} y^2 + (1-y/x)^2}
+=\frac{0}{1} =0
+\]
+De m\^eme $\lim_{x\to 0}f(x,y) =0$ d'o\`u \eqref{non}.
+D'autre part,
+$f(x,x) =  \frac{x^4}{x^4} =1$ d'o\`u
+$\lim_{x\to 0}f(x,x) = 1$ et
+$\lim_{(x,y)\to (0,0)} f(x,y)$ ne peut pas exister.
+
+\fincorrection
+
+\finexercice
+

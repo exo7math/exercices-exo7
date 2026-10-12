@@ -1,0 +1,31 @@
+\exercice{7154, megy, 2017/05/13}
+\enonce
+%[d'après bac Amérique du sud 2004]
+Soient $A$ et $B_0$ deux points et soit $s$ la similitude directe de centre $A$, de rapport $\frac12$ et  d'angle $\frac{3\pi}{4}$. On considère la suite de points $(B_n)_{n\in\N}$ définie par la relation de récurrence $\forall n\in \N,\: B_{n+1}=s(B_n)$.
+
+
+\begin{enumerate}
+\item Faire une figure avec $AB_0=8$ et placer les points $B_n$ jusqu'à $n=4$.
+\item Montrer que pour tout  $n\in\N$, les triangles $AB_nB_{n+1}$ et $AB_{n+1}B_{n+2}$ sont semblables.
+\item Dans la suite, on considère le sous-ensemble du plan $S = \bigcup_{n\in \N} [B_nB_{n+1}]$. C'est une spirale polyédrale. Sa longueur est-elle finie ou infinie ? Dans le premier cas, calculer sa longueur.
+\end{enumerate}
+\finenonce
+
+\noindication
+\correction 
+\begin{enumerate}
+\item Pour faire la figure on peut
+\begin{enumerate}
+\item tracer la droite $(AB_0)$, sa perpendiculaire passant par $A$, puis les deux bissectrices de ces deux droites. 
+\item Tracer les cercles de centre $A$ et de rayons $8$, $4$, $2$ et plus généralement $8\cdot 2^{-k}$. Les points de la suite $(B_n)$ sont sur les intersections de ces droites et cercles.
+\end{enumerate}
+\begin{center}
+\includegraphics{../images/img007154-1}
+\end{center}
+\item  Soit $n\in\N$. On a $AB_{n+1}B_{n+2} = s(A)s(B_n)s(B_{n+1})$. 
+\item Pour tout entier naturel $n$, on définit $l_n=B_nB_{n+1}$. La longueur (finie ou infinie) de la spirale est la somme de la série $\sum l_n$.
+
+D'après la question précédente, $B_{n+1}B_{n+2} = \frac12 B_{n}B_{n+1}$. Autrement dit, la suite $(l_n)_{n\in\N}$ est géométrique de raison $\frac12$, et donc pour tout $n\in \N$ on a $l_n = \left(\frac12\right)^n\cdot l_0$. On en déduit que la série $\sum l_n$ converge absolument, et que sa somme est $l_0\cdot \frac{1}{1-\frac12} = 2l_0=2B_0B_1$.
+\end{enumerate}
+\fincorrection  
+\finexercice 

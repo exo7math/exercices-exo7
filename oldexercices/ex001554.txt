@@ -1,0 +1,68 @@
+\exercice{1554, barraud, 2003/09/01}
+
+\enonce
+  Dans un espace euclidien $E$, on considère un vecteur unitaire $a$, et
+  à un réel $k\neq -1$ on associe l'endomorphisme $u_{k}$ de $E$ défini
+  par~:
+  $$
+  u_{k}(x)=k<x,a>a + x
+  $$
+  
+  \begin{enumerate}
+  \item
+    Montrer que $u_{k}$ est un isomorphisme. Déterminer $u_{k}^{-1}$.
+    \emph{(on pourra commencer par calculer $<u_{k}(x),a>$)}
+
+  \item 
+    Rappeler la caractérisation de l'adjoint d'un endomorphisme, et 
+    montrer que $u$ est auto adjoint.
+
+  \item  
+    Pour quelles valeurs de $k$ $u$ est-il orthogonal~? Interpréter alors
+    géométriquement cette transformation.
+
+  \item
+    Déterminer les valeurs propres et vecteurs propres de $u_{k}$.
+  \end{enumerate}
+
+\finenonce
+
+\noindication
+
+\correction
+  \begin{enumerate}
+  \item 
+    $<u_{k}(x),a>=k<x,a><a,a>+<x,a>=(k+1)<x,a>$ donc
+    $x=\frac{-k}{k+1}<u_{k}(x),a>a+u_{k}(x)$. On en déduit que $u_{k}$
+    est inversible, et que $u_{k}^{-1}=u_{\frac{-k}{k+1}}$.
+
+  \item
+    L'adjoint d'un endomorphisme $u$ est l'unique endomorphisme $v$ qui
+    satisfait~: $\forall(x,y)\in E^{2}, <u(x),y>=<x,u(y)>$. Or
+    $<u_{k}(x),y>=k<x,a><y,a>+<x,y>=<x,u_{k}(y)>$. Donc $u_{k}$ est égal
+    à son adjoint.
+
+  \item
+    Si $u_{k}$ est orthogonal, on doit avoir $\Vert u_{k}(a)\Vert=\Vert
+    a\Vert=1$, soit $|k+1|=1$. Ainsi $k=0$ ou $k=-2$.
+
+    Pour $k=0$, $u_{k}=\mathrm{id}$ est bien orthogonal. Pour $k=-2$,
+    $u_{-2}^{-1}=u_{\frac{-2}{-2+1}}=u_{-2}={}^t u_{-2}$. Donc
+    $u_{-2}$ est bien orthogonal. Il s'agit de la symétrie orthogonale
+    par rapport à l'hyperplan $\{a\}^{\bot}$
+
+
+  \item
+    Si $k=0$, 1 est la seule valeur propre et $E_{1}=E$
+
+    Si $k\neq 1$, $\forall x\in\{a\}^{\bot}, u_{k}(x)=x$ donc $1$ est
+    valeur propre de multiplicité au moins $n-1$. De plus
+    $u_{k}(a)=(k+1)a$ donc $(k+1)$ est valeur propre. Finalement, $1$
+    est valeur propre de multiplicité exactement $n-1$, avec pour espace
+    propre $\{a\}^{\bot}$, et $k+1$ est valeur propre simple avec espace
+    propre $\R a$.
+   \end{enumerate}
+\fincorrection
+
+\finexercice
+

@@ -1,0 +1,46 @@
+\exercice{305, gourio, 2001/09/01}
+\video{IXE-IGeo-ts}
+\enonce
+
+R\'{e}soudre dans ${\Zz}:1665x+1035y=45.$
+\finenonce 
+
+\indication
+Commencer par simplifier l'équation !
+Ensuite trouver une solution particulière $(x_0,y_0)$
+à l'aide de l'algorithme d'Euclide par exemple. Ensuite trouver
+un expression pour une solution générale.
+\finindication
+
+\correction
+En divisant par $45$ (qui est le pgcd de $1665, 1035, 45$) nous obtenons l'\'equation \'equivalente :
+$$37x+23y=1 \qquad (E)$$
+Comme le pgcd de $37$ et $23$ est $1$, alors d'apr\`es le th\'eor\`eme de B\'ezout
+cette \'equation $(E)$ a des solutions.
+
+L'algorithme d'Euclide pour le calcul du pgcd de $37$ et $23$ fourni
+les coefficients de Bézout: $37\times 5 + 23 \times (-8) = 1$.
+Une solution particuli\`ere de $(E)$ est donc 
+$(x_0,y_0) = (5,-8)$.
+
+Nous allons maintenant trouver l'expression générale pour les solutions de l'équation $(E)$.
+Soient $(x,y)$ une solution de l'équation $37x+23y=1$.
+Comme $(x_0,y_0)$ est aussi solution, nous avons $37x_0+23y_0=1$.
+Faisons la différence de ces deux égalités pour obtenir $37(x-x_0)+23(y-y_0)=0$.
+Autrement dit 
+$$37(x-x_0)=-23(y-y_0) \quad (*)$$
+On en déduit que $37 | 23 (y-y_0)$, or $\pgcd(23,37)=1$ donc par le lemme de Gauss,
+$37 | (y -y_0)$. (C'est ici qu'il est important d'avoir divisé par $45$ dès le début !)
+Cela nous permet d'écrire $y-y_0 = 37 k$ pour un $k \in \Zz$.
+
+Repartant de l'égalité $(*)$ : nous obtenons $37(x-x_0)=-23 \times 37 \times k$.
+Ce qui donne $x-x_0 = -23 k$.
+Donc si $(x,y)$ est solution de $(E)$ alors elle est de la forme :
+$(x,y)= (x_0 - 23k,y_0+37k)$, avec $k \in \Zz$.
+
+Réciproquement pour chaque  $k\in\Zz$, si $(x,y)$ est de cette forme alors c'est une solution de $(E)$
+(vérifiez-le !).
+
+Conclusion : les solutions sont 
+ $$\big\lbrace (5 - 23k,-8+37k) \mid k\in \Zz\big\rbrace.$$
+\fincorrection

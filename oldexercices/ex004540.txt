@@ -1,0 +1,28 @@
+\exercice{4540, quercia, 2010/03/14}
+\enonce[Fonction $\Gamma$]
+
+Soit $f_n(x) = \frac{n^x}{(1+x)(1+x/2)\dots(1+x/n)}$.
+\begin{enumerate}
+  \item \'Etudier la convergence simple des fonctions $f_n$.
+
+  \item On note $f = \lim f_n$. Calculer $f(x)$ en fonction de $f(x-1)$ lorsque
+    ces deux quantités existent.
+  \item Montrer que $f$ est de classe $\mathcal{C}^1$ sur son domaine de définition
+    (on calculera $f_n'(x)/f_n(x)$).
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $\frac{f_n(x)}{f_{n+1}(x)} = 1 - \frac{x(x+1)}{2n^2}
+         +  o\left(\frac1{n^2}\right)$
+         donc la série $\sum\ln f_n(x)$ est convergente pour tout $x\notin -\N^*$.
+  \item 
+  \item $\frac{f_n'(x)}{f_n(x)} \to -\gamma + \sum_{k=1}^\infty \frac x{k(k+x)}$ lorsque $n\to\infty$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

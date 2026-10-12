@@ -1,0 +1,37 @@
+\exercice{4375, quercia, 2010/03/12}
+\enonce[Lemme de Lebesgue, Centrale MP 2004]
+Soit $f$ continue par morceaux définie sur $\R$, à valeurs dans $\C$.
+
+\begin{enumerate}
+  \item Soient $a,b\in\R$.
+Montrer que $ \int_{t=a}^b f(t) \cos(nt)\,d t\to0$ lorsque $n\to\infty$.
+
+  \item On suppose que $f$ est intégrable sur $]0,+\infty[$.
+Soit $u_n=  \int_{t=0}^{n\pi}  \sin^2(nt) f(t)\,d t $.
+Montrer que $(u_n)_{n \in \N}$ admet une limite quand $n\to\infty$ et la préciser.
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item 
+  \item $\sin^2(nt) = \frac{1-\cos(2nt)}2$, donc il suffit d'étudier
+$I_n =  \int_{t=0}^{n\pi}\cos(2nt)f(t)\,d t$.
+
+Posons $I_{n,p} =  \int_{t=0}^{\min(n,p)\pi}\cos(2nt)f(t)\,d t$~:
+on a $|I_n-I_{n,p}| \le
+ \int_{t=p\pi}^{+\infty}|f(t)|\,d t$, quantité indépendante de~$n$ et
+tendant vers $0$ quand $p\to\infty$ donc le théorème d'interversion
+des limites s'applique~:
+
+$\lim_{n\to\infty}I_n
+= \lim_{n\to\infty}\lim_{p\to\infty}I_{n,p}
+= \lim_{p\to\infty}\lim_{n\to\infty}I_{n,p} = 0$.
+On en déduit $u_n \to \frac12 \int_{t=0}^{+\infty} f(t)\,d t$ lorsque $n\to\infty$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

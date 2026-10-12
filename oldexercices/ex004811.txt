@@ -1,0 +1,24 @@
+\exercice{4811, quercia, 2010/03/16}
+\enonce[$\mathrm{id} - u$ est bicontinu]
+Soit $E$ un $\C$-evn et $u \in {\cal L}_c(E)$ tel que $\mathrm{id}_E - u$ est
+bicontinu.
+Montrer que pour tout entier $n$, $\mathrm{id}_E - u^n$ est bicontinu et comparer son inverse
+{\`a} $\sum_{k=0}^{n-1} \bigl(\mathrm{id}_E - e^{2ik\pi/n}u\bigr)^{-1}$.
+
+
+\finenonce
+
+\indication
+D{\'e}composer en {\'e}l{\'e}ments simples la fraction $\frac1{1-X^n}$.
+\finindication
+
+\correction
+$\frac1{1-X^n} = \frac 1n \sum_{k=0}^{n-1} \frac{1}{1-\omega_k X}$,
+$\omega_k = e^{2ik\pi/n}$.
+Donc $1 = \sum_{k=0}^{n-1} \frac{1-X^n}{n(1-\omega_k X)}$.
+
+Il s'agit de polyn{\^o}mes, donc on peut remplacer $X$ par $u$, d'o{\`u} :
+$(\mathrm{id}_E - u^n)^{-1} = \frac1n \sum_{k=0}^{n-1}\bigl(\mathrm{id}_E - e^{2ik\pi/n}u\bigr)^{-1}$.
+\fincorrection
+
+\finexercice

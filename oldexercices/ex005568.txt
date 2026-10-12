@@ -1,0 +1,64 @@
+\exercice{5568, rouget, 2010/10/16}
+\enonce[**]
+Soit $f(x) =\ln(1+x)$ pour $x$ réel positif. Soient $f_1 = f$, $f_2=f\circ f$ et $f_3= f\circ f\circ f$. Etudier la liberté de $(f_1,f_2,f_3)$ dans $[0,+\infty[^{[0,+\infty[}$.
+\finenonce
+
+\noindication
+
+\correction
+Les fonctions $f_1$, $f_2$ et $f_3$ sont bien définies sur $\Rr^+$.
+
+Soient $a$, $b$ et $c$ trois réels tels que $af_1+bf_2 +cf_3=0$.
+
+\textbf{Première solution.} Si $a$ est non nul, la fonction $af_1+bf_2+cf_3$ est équivalente au voisinage de $+\infty$ à $a\ln x$ et ne peut donc être égale à la fonction nulle. Donc $a=0$. Puis si $b$ est non nul, la fonction $af_1+bf_2+cf_3=bf_2+cf_3$ est équivalente à $b\ln(\ln x)$ et ne peut être égale à la fonction nulle. Donc $b =0$. Puis $c=0$.
+
+\textbf{Deuxième solution.} On effectue un développement limité à un ordre suffisant de la fonction $af_1+bf_2+cf_3$ quand $x$ tend vers $0$ :
+
+$f_1(x)=\ln(1+x)\underset{x\rightarrow0}{=}x-\frac{x^2}{2}+\frac{x^3}{3}+o(x^3)$ puis
+
+\begin{align*}\ensuremath
+f_2(x)&=\ln(1+f_1(x))\underset{x\rightarrow0}{=}\ln\left(1+x-\frac{x^2}{2}+\frac{x^3}{3}+o(x^3)\right) =\left(x-\frac{x^2}{2}+\frac{x^3}{3}\right)-\frac{1}{2}\left(x-\frac{x^2}{2}\right)^2+\frac{1}{3}x^3+o(x^3)\\
+ &=x-x^2+\frac{7}{6}x^3+o(x^3)
+\end{align*}
+
+puis
+
+\begin{align*}\ensuremath
+f_3(x)&=\ln(1+f_2(x))\underset{x\rightarrow0}{=}\ln\left(1+x-x^2+\frac{7}{6}x^3+o(x^3)\right)=\left(x-x^2+\frac{7}{6}x^3\right)-\frac{1}{2}\left(x-x^2\right)^2+\frac{1}{3}x^3+o(x^3)\\
+ &=x-\frac{3}{2}x^2+\frac{5}{2}x^3+o(x^3).
+\end{align*}
+
+Par suite, $af_1(x)+bf_2(x)+cf_3(x)\underset{x\rightarrow0}{=}(a+b+c)x+\left(-\frac{a}{2}-b-\frac{3c}{2}\right)x^2+\left(\frac{a}{3}+\frac{7b}{6}+\frac{5c}{2}\right)x^3+o(x^3)$. L'égalité $af_1+bf_2+cf_3=0$ fournit, par identification des parties régulières des développements limités à l'ordre trois en zéro :
+
+\begin{center}
+$\left\{
+\begin{array}{l}
+a+b+c=0\\
+-\frac{a}{2}-b-\frac{3c}{2}=0\\
+\rule{0mm}{6mm}\frac{a}{3}+\frac{7b}{6}+\frac{5c}{2}
+\end{array}
+\right.$ ou encore $\left\{
+\begin{array}{l}
+a+b+c=0\\
+a+2b+3c=0\\
+2a+7b+15c=0
+\end{array}
+\right.$.
+ \end{center}
+ 
+ 
+Comme $\left|
+\begin{array}{ccc}
+1&1&1\\
+1&2&3\\
+2&7&15
+\end{array}
+\right|=\left|
+\begin{array}{ccc}
+1&0&0\\
+1&1&1\\
+2&5&8
+\end{array}
+\right|=3\neq0$, on a donc $a=b=c=0$.
+\fincorrection
+\finexercice

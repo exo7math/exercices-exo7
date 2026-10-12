@@ -1,0 +1,101 @@
+\exercice{1243, roussel, 2001/09/01}
+\video{eGl4xUQYh6Q}
+\enonce
+\begin{enumerate}
+\item Développement limité en $1$ à l'ordre $3$ de $f(x)=\sqrt{x}$.
+
+\item Développement limité en $1$ à l'ordre $3$ de $g(x)= e^{\sqrt{x}}$.
+
+\item Développement limité à l'ordre $3$ en $\frac\pi3$ de $h(x)=\ln (\sin x)$.
+\end{enumerate}
+
+\finenonce
+
+\indication
+Pour la première question vous pouvez appliquer la formule de Taylor ou bien 
+poser $h=x-1$ et considérer un dl au voisinage de $h=0$.
+\finindication
+
+\correction
+\begin{enumerate}
+  \item 
+Première méthode.
+On applique la formule de Taylor (autour du point $x=1$)
+$$f(x)=f(1)+f'(1)(x-1)+\frac{f''(1)}{2!}(x-1)^2 + \frac{f'''(1)}{3!}(x-1)^3 + o((x-1)^3)$$
+Comme $f(x) = \sqrt x= x^{\frac12}$ alors $f'(x) = \frac12 x^{-\frac12}$ et donc $f'(1)=\frac12$.
+Ensuite on calcule $f''(x)$ (puis $f''(1)$), $f'''(x)$ (et enfin $f'''(1)$).
+
+On trouve le dl de $f(x)=\sqrt x$ au voisinage de $x=1$ :
+$$\sqrt x = 1 + \frac12 (x-1) - \frac18 (x-1)^2 + \frac{1}{16} (x-1)^3 + o((x-1)^3)$$
+
+
+\bigskip
+
+Deuxième méthode.
+Posons $h=x-1$ (et donc $x=h+1$). On applique la formule du dl de $\sqrt{1+h}$ autour de $h=0$.
+\begin{align*}
+f(x)=\sqrt x  
+  & = \sqrt{1+h} \\
+  & = 1 + \frac 12 h - \frac18 h^2 + \frac{1}{16} h^3 + o(h^3)   \quad \text{ c'est la formule du dl de } \sqrt{1+h} \\
+  & = 1 + \frac12 (x-1) - \frac18 (x-1)^2 + \frac{1}{16} (x-1)^3 + o((x-1)^3) \\
+\end{align*}
+
+
+  \item La première méthode consiste à calculer $g'(x)=\frac{1}{2\sqrt x}\exp{\sqrt x}$, $g''(x)$, $g'''(x)$
+ puis $g(1)$, $g'(1)$, $g''(1)$, $g'''(1)$ pour pouvoir appliquer la formule de Taylor conduisant à :
+$$\exp(\sqrt x)= e + \frac{e}{2} (x-1) + \frac{e}{48} (x-1)^3 + o((x-1)^3)$$
+(avec $e=\exp(1)$).
+
+\bigskip
+
+Autre méthode. Commencer par calculer le dl de $k(x)=\exp x$ en $x=1$ ce qui est très facile car pour tout $n$, $k^{(n)}(x)=\exp x$
+et donc $k^{(n)}(1)=e$ :
+$$\exp x= e + e (x-1) + \frac{e}{2!} (x-1)^2 + \frac{e}{3!} (x-1)^3 + o((x-1)^3).$$
+
+Pour obtenir le dl $g(x)= h(\sqrt x)$ en $x=1$ on écrit d'abord :
+$$\exp (\sqrt x)= e + e (\sqrt{x}-1) + \frac{e}{2!} (\sqrt{x}-1)^2 + \frac{e}{3!} (\sqrt{x}-1)^3 + o((\sqrt{x}-1)^3).$$
+Il reste alors à substituer $\sqrt{x}$ par son dl obtenu dans la première question.
+
+  \item 
+
+Posons $u=x-\frac\pi3$ (et donc $x=\frac\pi3+u$).
+Alors 
+$$\sin(x)=\sin(\frac\pi3+u) = \sin(\frac\pi3)\cos(u)+\sin(u)\cos(\frac\pi3) = \frac{\sqrt3}{2}\cos u +\frac12\sin u$$
+On connaît les dl de $\sin u$ et $\cos u$ autour de $u=0$ (car on cherche un dl autour de $x=\frac\pi3$) donc
+
+\begin{align*}
+\sin x 
+  & = \frac{\sqrt3}{2}\cos u +\frac12\sin u \\
+  & = \frac{\sqrt3}{2} \bigg(1-\frac{1}{2!}u^2 + o(u^3) \bigg) + \frac{1}{2} \bigg( u -\frac{1}{3!}u^3 + o(u^3) \bigg) \\
+  & = \frac{\sqrt3}{2} + \frac{1}{2} u -  \frac{\sqrt3}{4} u^2 -\frac{1}{12}u^3 + o(u^3) \\
+  & = \frac{\sqrt3}{2} + \frac{1}{2} (x-\frac\pi3) -  \frac{\sqrt3}{4}(x-\frac\pi3)^2 -\frac{1}{12}(x-\frac\pi3)^3 + o((x-\frac\pi3)^3) \\
+\end{align*}
+
+
+\bigskip
+
+Maintenant pour le dl de la forme $\ln(a+v)$ en $v=0$ on se ramène au dl de $\ln(1+v)$ ainsi :
+$$\ln(a+v)=\ln\big(a(1 + \frac v a)\big) = \ln a + \ln(1 + \frac v a)
+= \ln a + \frac v a - \frac12 \frac{v^2}{a^2}  + \frac13 \frac{v^3}{a^3} + o(v^3)$$
+
+On applique ceci à $h(x)= \ln(\sin x)$ en posant toujours $u=x-\frac\pi3$ :
+\begin{align*}
+h(x)= \ln(\sin x)
+  & = \ln\left(\frac{\sqrt3}{2} + \frac{1}{2} u -  \frac{\sqrt3}{4} u^2 -\frac{1}{12}u^3 + o(u^3)\right) \\
+  & = \ln\left(\frac{\sqrt3}{2}\right) + \ln\left(1 + \frac{2}{\sqrt3}\left(\frac{1}{2} u -  \frac{\sqrt3}{4} u^2 -\frac{1}{12}u^3 + o(u^3)\right) \right) \\
+  & = \ \cdots \qquad \text{ on effectue le dl du } \ln \text{ et on regroupe les termes} \\
+  & = \ln\left(\frac{\sqrt3}{2}\right) + \frac{1}{\sqrt 3} u -\frac23 u^2 + \frac{4}{9\sqrt3}u^3 + o(u^3) \\
+  & = \ln\left(\frac{\sqrt3}{2}\right) + \frac{1}{\sqrt 3}(x-\frac\pi3)  -\frac23 (x-\frac\pi3)^2 + \frac{4}{9\sqrt3}(x-\frac\pi3)^3 + o((x-\frac\pi3)^3) \\
+\end{align*}
+
+On trouve donc :
+$$\ln(\sin x) = \ln\left(\frac{\sqrt3}{2}\right) + \frac{1}{\sqrt 3}(x-\frac\pi3) 
+ -\frac23 (x-\frac\pi3)^2 + \frac{4}{9\sqrt3}(x-\frac\pi3)^3 + o((x-\frac\pi3)^3)$$
+
+
+\bigskip Bien sûr une autre méthode consiste à calculer $h(1)$, $h'(1)$, $h''(1)$ et $h'''(1)$.
+
+\end{enumerate}
+\fincorrection
+
+\finexercice

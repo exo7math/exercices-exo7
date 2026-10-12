@@ -1,0 +1,38 @@
+\exercice{2499, sarkis, 2009/04/01}
+\enonce
+Soient $||.||_1$ et $||.||_2$
+deux normes sur $\mathbb{R}^2$ et $M=\left (
+\begin{array}{cc}
+a & b \\
+c & d
+\end{array}
+\right )$ une matrice de ${\cal M}_{n,n}(\mathbb{R} \mbox{ ou }
+\mathbb{C})$. On d\'efinit la norme de $M$ (ou de l'application
+lin\'eaire associ\'ee) de la mani\`ere suivante:
+$$||M||=\sup_{X \in S_1(0,1)}||M.X||_2$$
+o\`u $S_1(0,1)$ est la sph\`ere unit\'e pour la norme $||.||_1$.
+Dans chacun des cas suivant, calculez la norme de $M$.
+\begin{enumerate}
+\item $||(x,y)||_1=||(x,y)||_2=sup(|x|,|y|).$ 
+\item $||(x,y)||_1=||(x,y)||_2=\sqrt{x^2+y^2}.$ 
+\item $||(x,y)||_1=\sqrt{x^2+y^2}$ et $||(x,y)||_2=sup(|x|,|y|).$
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+Soit $X=(x,y)$, on a $M.X=(ax+by, cx+dy)$ or $$|ax+by|\leq
+|ax|+|by|\leq (|a|+|b|)\sup(|x|,|y|) \leq (|a|+|b|)||(x,y)||_1.$$
+de m\^eme,
+$$|cx+dy| \leq (|c|+|d|)||(x,y)||_1.$$
+Par cons\'equent $$||M.X||_2 \leq \sup(|a|+|b|,|c|+|d|)
+||(x,y)||_1$$ et donc $$||M|| \leq \sup(|a|+|b|,|c|+|d|).$$
+Supposons $|a|+|b| \geq |c|+|d|$ (inverser l'ordre sinon) et
+prenons $X_0=(a/|a|,b/|b|)$ (on suppose $a \neq 0$ et $b \neq 0$
+sinon v\'erification facile). On a alors $||X_0||=1$ et
+$$||M.X_0||_2=\sup(|a|+|b|,|ca/|a|+db/|b||) \geq |a|+|b|.1 \geq
+(|a|+|b|)||X_0||_1$$ et donc $$||M|| \geq \sup(|a|+|b|,|c|+|d|)$$
+et finalement $$||M||= \sup(|a|+|b|,|c|+|d|)$$
+\fincorrection
+\finexercice

@@ -1,0 +1,52 @@
+\exercice{5682, rouget, 2010/10/16}
+\enonce[**]
+Soit $A=\left(
+\begin{array}{cccc}
+0&\ldots&0&a_1\\
+\vdots& &\vdots&\vdots\\
+0&\ldots&0&a_{n-1}\\
+a_1&\ldots&a_{n-1}&a_n
+\end{array}
+\right)$ où $a_1$,..., $a_n$ sont $n$ nombres complexes ($n\geqslant2$). $A$ est-elle diagonalisable?
+\finenonce
+
+\noindication
+
+\correction
+(Si les $a_k$ sont réels, la matrice $A$ est symétrique réelle et les redoublants savent que la matrice $A$ est diagonalisable.)
+
+Si tous les $a_k$, $1\leqslant k\leqslant n-1$, sont nuls la matrice $A$ est diagonalisable car diagonale.
+
+On suppose dorénavant que l'un au moins des $a_k$, $1\leqslant k\leqslant n-1$, est non nul. Dans ce cas, $\text{rg}A = 2$.
+
+$0$ est valeur propre d'ordre $n-2$ au moins. Soient $\lambda$ et $\mu$ les deux dernières valeurs propres. On a
+
+\begin{center}
+$\lambda +\mu=\text{Tr}A=a_n$ et $\lambda^2 +\mu^2=\text{Tr}(A^2)=\sum_{k=1}^{n-1}a_k^2+\sum_{k=1}^{n}a_k^2 = 2\sum_{k=1}^{n-1}a_k^2 +a_n^2$.
+\end{center}
+
+$\lambda$ et $\mu$ sont solutions du système $\left\{
+\begin{array}{l}
+\lambda+\mu=a_n\\
+\lambda^2+\mu^2=2\sum_{k=1}^{n-1}a_k^2 +a_n^2
+\end{array}
+\right.$ qui équivaut au système $\left\{
+\begin{array}{l}
+\lambda+\mu=a_n\\
+\lambda^2+\mu^2=-\sum_{k=1}^{n-1}a_k^2
+\end{array}
+\right.$ $(S)$.
+
+On a alors les situations suivantes :
+
+\textbullet~Si $\lambda$ et $\mu$ sont distincts et non nuls, $A$ est diagonalisable car l'ordre de multiplicité de chaque valeur propre est égale à la dimension du sous-espace propre correspondant.
+
+\textbullet~Si $\lambda$ ou $\mu$ est nul, $A$ n'est  pas diagonalisable car l'ordre de multiplicité de la valeur propre $0$ est différent de $n-2$, la dimension du noyau de $A$.
+
+\textbullet~Si $\lambda=\mu\neq 0$, $A$ est diagonalisable si et seulement si $\text{rg}(A-\lambda I) = n-2$ mais on peut noter que si $\lambda$ n'est pas nul, on a toujours $\text{rg}(A-\lambda I)= n-1$ en considérant la matrice extraite formée des n-1 premières lignes et colonnes.
+
+En résumé, la matrice $A$ est diagonalisable si et seulement si le système $(S)$ admet deux solutions distinctes et non nulles.
+
+Mais $\lambda$ et $\mu$ sont solutions du système $(S)$ si et seulement si $\lambda$ et $\mu$ sont les racines de l'équation $(E)$ : $X^2 - a_nX- \sum_{k=1}^{n-1}a_k^2 = 0$. Par suite, $A$ est diagonalisable si et seulement si $\sum_{k=1}^{n-1}a_k^2 = 0$ et $\Delta= a_n^2+4\sum_{k=1}^{n-1}a_k^2\neq0$.
+\fincorrection
+\finexercice

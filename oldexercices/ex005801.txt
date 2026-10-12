@@ -1,0 +1,24 @@
+\exercice{5801, rouget, 2010/10/16}
+\enonce[**]
+Valeurs et vecteurs propres de l'endomorphisme de $\Rr^3$ euclidien orienté défini par
+
+\begin{center}
+$\forall x\in\Rr^3$, $f(x) = a\wedge(a\wedge x)$ où $a$ est un vecteur donné.
+\end{center}
+\finenonce
+
+\noindication
+
+\correction
+Si $a = 0$, $f = 0$ et il n'y a plus rien à dire.
+
+Si $a\neq0$, puisque $f(a) = 0$, $0$ est valeur propre de $f$ et $\text{Vect}(a)\subset E_0(f)$.
+D'autre part, si $x$ est orthogonal à $a$, d'après la formule du double produit vectoriel
+
+\begin{center}
+$f(x) = (a.x)a -\|a\|^2x = -\|a\|^2x$.
+\end{center}
+
+Donc le réel non nul $-\|a\|^2$ est valeur propre de $f$ et $a^\bot\subset E_{-\|a\|^2}$. Maintenant,  $\text{dim}\text{Vect}(a) +\text{dim}a^\bot= 3$ et donc $\text{Sp}(f)=(0,-\|a\|^2,-\|a\|^2)$ puis $E_0(f) = \text{Vect}(a)$ et  $E_{-\|a\|^2}= a^\bot$. On en déduit aussi que $f$ est diagonalisable. On peut noter que, puisque $f$ est diagonalisable et que les sous-espaces propres sont orthogonaux, $f$ est un endomorphisme symétrique.
+\fincorrection
+\finexercice

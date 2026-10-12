@@ -1,0 +1,36 @@
+\exercice{270, cousquer, 2003/10/01}
+\enonce
+
+\begin{enumerate}
+\item  Pour tout couple de nombres r\'eels $(x,y)$ montrer, par r\'ecurrence, que
+pour tout $n \in \mathbb{N}^{*}$ on a la relation
+$$(*)\; x^{n}-y^{n} = (x-y).\sum_{k=0}^{n-1}x^{k}y^{n-1-k}.$$
+Indication: on pourra \'ecrire de deux mani\`eres diff\'erentes la quantit\'e
+$y(x^{n}-y^{n}) + (x-y)x^{n}.$
+\item  \label{div} Soit $(a,b,p)$ des entiers \'el\'ements de $\mathbb{N}$. En utilisant
+la formule $(*),$ montrer que s'il existe un entier $l \in \mathbb{N}$ tel que $b = a+pl,$
+alors pour tout $n \in \mathbb{N}^{*},$ il existe un entier $m \in \mathbb{N}$ tel que $b^{n} =
+a^{n}+pm.$
+\item  \label{divv} Soient $a,b,p$ des entiers \'el\'ements de $\mathbb{N}$, en
+utilisant la question \ref{div}, montrer que si $a-b$ est divisible par $p,$
+$$\sum_{k=0}^{p-1}a^{k}b^{p-k-1}$$
+est aussi divisible par $p.$
+En d\'eduire, \`a l'aide de la question \ref{div} et de la formule $(*),$ que si $a-b$
+est divisible par $p^{n}$ i.e. il existe un entier $l \in \mathbb{N}$ tel que $a-b =
+l.p^{n},$ alors $a^{p}-b^{p}$ est divisible par $p^{n+1}.$
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+Pour \ref{div}. Si $p$ divise $b-a$ alors $p$ divise aussi $b^n-a^n$
+d'apr\`es la formule $(*)$.
+
+
+Pour \ref{divv}. On utilise le r\'esultat de la question pr\'ec\'edente
+avec $n=p-k-1$ pour \'ecrire $b^{p-k-1}$ en fonction de $a^{p-k-1}$
+modulo $p$ dans $$\sum_{k=0}^{p-1}a^{k}b^{p-k-1}.$$ 
+On peut alors conclure.
+\fincorrection
+\finexercice

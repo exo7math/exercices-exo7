@@ -1,0 +1,48 @@
+\exercice{5490, rouget, 2010/07/10}
+\enonce[***]
+Soit $M=\left(
+\begin{array}{ccc}
+a&b&c\\
+c&a&b\\
+b&c&a
+\end{array}
+\right)$ avec $a$, $b$ et $c$ réels.
+Montrer que $M$ est la matrice dans la base canonique orthonormée directe de $R^3$ d'une rotation si et seulement si $a$, $b$ et $c$ sont les solutions d'une équation du type $x^3-x^2+k=0$ où $0\leq k\leq\frac{4}{27}$.
+En posant $k=\frac{4\sin^2\varphi}{27}$, déterminer explicitement les matrices $M$ correspondantes ainsi que les axes et les angles des rotations qu'elles représentent.
+
+\finenonce
+
+\noindication
+
+\correction
+Soit $f$ l'endomorphisme de $\Rr^3$ de matrice $M$ dans la base canonique de $\Rr^3$.
+
+\begin{align*}\ensuremath
+f\;\mbox{est une rotation}&\Leftrightarrow M\in O_3^+(\Rr)\Leftrightarrow||C_1||=||C_2||=||C_3||=1\;\mbox{et}\;C_1|C_2=C_1|C_3=C_2|C_3=0\;\mbox{et}\;\mbox{det}M=1\\
+ &\Leftrightarrow a^2+b^2+c^2=1\;\mbox{et}\;ab+bc+ca=0\;\mbox{et}\;a^3+b^3+c^3-3abc=1.
+\end{align*}
+Posons $\sigma_1=a+b+c$, $\sigma_2=ab+bc+ca$ et $\sigma_3=abc$. On a $a^2+b^2+c^2=(a+b+c)^2-2(ab+ac+bc)=\sigma_1^2-2\sigma_2$.
+Ensuite,
+
+$$\sigma_1^3=(a+b+c)^3=a^3+b^3+c^3+3(a^2b+ba^2+a^2c+ca^2+b^2c+c^2b)+6abc,$$
+et 
+
+$$\sigma_1(\sigma_1^2-2\sigma_2)=(a+b+c)(a^2+b^2+c^2)=a^3+b^3+c^3+(a^2b+b^2a+a^2c+c^2a+b^2c+c^2b).$$
+Donc, 
+
+$$\sigma_1^3-3\sigma_1(\sigma_1^2-2\sigma_2)=-2(a^3+b^3+c^3)+6\sigma_3$$ 
+et finalement, $a^3+b^3+c^3=\sigma_1^3-3\sigma_1\sigma_2+3\sigma_3$. 
+
+\begin{align*}\ensuremath
+M\in O_3^+(\Rr)&\Leftrightarrow\sigma_2=0\;\mbox{et}\;\sigma_1^2-2\sigma_2=1\;\mbox{et}\;\sigma_1^3-3\sigma_1\sigma_2=1\\
+ &\Leftrightarrow\sigma_2=0\;\text{et}\;\sigma_1=1\\
+ &\Leftrightarrow a,\;b\;\mbox{et}\;c\;\mbox{sont les solutions réelles d'une équation du type}\;x^3-x^2+k=0\;(\mbox{où}\;k=-\sigma_3).
+\end{align*}
+Posons $P(x)=x^3-x^2+k$ et donc $P'(x)=3x^2-2x=x(2x-3)$.
+Sur $]-\infty,0]$, $P$ est strictement croissante, strictement décroissante sur $\left[0,\frac{3}{2}\right]$ et strictement croissante sur $\left[\frac{3}{2},+\infty\right[$. $P$ admet donc au plus une racine dans chacun de ces trois intervalles.
+\textbf{1er cas.} Si $P(0)=k>0$ et $P\left(\frac{2}{3}\right)=k-\frac{4}{27}<0$ ou ce qui revient au même, $0<k<\frac{4}{27}$, P admet trois racines réelles deux à deux distinctes ($P$ étant d'autre part continue sur $\Rr$), nécessairement toutes simples.
+\textbf{2ème cas.} Si $k\in\left\{0,\frac{4}{27}\right\}$, $P$ et $P'$ ont une racine réelle commune (à savoir $0$ ou $\frac{4}{27}$) et $P$ admet une racine réelle d'ordre au moins $2$. La troisième racine est alors nécessairement réelle.
+\textbf{3ème cas.} Si $k<0$ ou $k>\frac{4}{27}$, P admet une racine réelle exactement. Celle-ci est nécessairement simple au vu du 2ème cas et donc $P$ admet deux autres racines non réelles.
+En résumé, $P$ a toutes ses racines réelles si et seulement si $0\leq k\leq\frac{4}{27}$ et donc, $f$ est une rotation si et seulement si $a$, $b$ et $c$ sont les solutions d'une équation du type $x^3-x^2+k=0$ où $0\leq k\leq\frac{4}{27}$.
+\fincorrection
+\finexercice

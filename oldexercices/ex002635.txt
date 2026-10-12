@@ -1,0 +1,87 @@
+\exercice{2635, debievre, 2009/05/19}
+\enonce
+Calculer les diff\'erentielles suivantes, sans calculer des d\'eriv\'ees
+ partielles, en utilisant les 
+propri\'et\'es des diff\'erentielles de sommes, produits et compos\'ees:\\
+\[
+\mathrm{(a)}\ \mathrm{d} \left(\ln(xy)\right)
+\quad \mathrm{(b)}\ \mathrm{d} \left(xyz(1+\sinh(yz))\right)
+\quad \mathrm{(c)}\ \mathrm{d} \left(\sin(x^2y) \mathrm e^{x-y}\right)
+\]
+\finenonce
+
+\indication 
+Utiliser les r\`egles
+\begin{align*}
+d(f+g)&= df+dg , \\ 
+ d(fg)&=fdg+gdf ,\\
+d(f\circ h)&= (f'\circ h) dh .
+\end{align*}
+\finindication
+
+\correction
+\begin{align*}
+\mathrm{d} \left(\ln(xy)\right)&= \frac{\mathrm d(xy)}{xy}
+= \frac{x\mathrm dy+y\mathrm dx}{xy}= \frac{\mathrm dy}{y}
++\frac{\mathrm dx}{x} ;
+\\
+\mathrm{d} \left(xyz(1+\sinh(yz))\right)&=(1+\sinh(yz))\mathrm{d}(xyz)
++xyz\mathrm{d}(\sinh(yz))
+\\
+&=
+yz(1+\sinh(yz))\mathrm{d}x
++
+xz(1+\sinh(yz))\mathrm{d}y
++
+xy(1+\sinh(yz))\mathrm{d}z
+\\
+&\quad
++xyz\cosh(yz)\mathrm{d}(yz)
+\\
+&=
+yz(1+\sinh(yz))\mathrm{d}x
++
+xz(1+\sinh(yz))\mathrm{d}y
++
+xy(1+\sinh(yz))\mathrm{d}z
+\\
+&\quad
++xyz^2\cosh(yz)\mathrm{d}y
++xy^2z\cosh(yz)\mathrm{d}z
+\\
+&=
+yz(1+\sinh(yz))\mathrm{d}x
+\\
+&\quad
++
+xz(1+\sinh(yz) +yz\cosh(yz))
+\mathrm{d}y
+\\
+&\quad +
+xy(1+\sinh(yz)+ yz\cosh(yz))\mathrm{d}z ;
+\end{align*}
+
+\begin{align*}
+\mathrm{d} \left(\sin(x^2y) \mathrm e^{x-y}\right)&=
+\left(\cos(x^2y)\mathrm e^{x-y}\right)\mathrm{d}(x^2y)
++\sin(x^2y)\mathrm e^{x-y}\mathrm{d}(x-y)
+\\
+&=
+x^2\cos(x^2y)\mathrm e^{x-y}\mathrm{d}y
++
+2xy\cos(x^2y)\mathrm e^{x-y}\mathrm{d}x
+\\
+&\quad
++\sin(x^2y)\mathrm e^{x-y}\mathrm{d}x-
+\sin(x^2y)\mathrm e^{x-y}
+\mathrm{d}y
+\\
+&=
+\left(x^2\cos(x^2y)x-
+\sin(x^2y)\right)\mathrm e^{x-y}\mathrm{d}y
+\\
+&\quad +
+\left(2xy\cos(x^2y)+\sin(x^2y)\right) \mathrm e^{x-y}\mathrm{d}x .
+\end{align*}
+\fincorrection
+\finexercice

@@ -1,0 +1,22 @@
+\exercice{3679, quercia, 2010/03/11}
+\enonce[Coordonnées des vecteurs de Schmidt]
+
+Soit $E$ un espace euclidien, ${\cal B} = (\vec u_1,\dots,\vec u_n)$ une base de $E$
+et ${\cal B}' = (\vec e_1,\dots,\vec e_n)$ la base orthonormée déduite de
+$\cal B$ par la méthode de Schmidt.
+
+On note $G_n$ le déterminant de Gram de $\vec u_1,\dots,\vec u_n$,
+et $\Delta_{i,n}$ le cofacteur de $(\vec u_i\mid \vec u_n)$ dans $G_n$.
+
+Montrer que $\vec e_n = \frac1{\sqrt{G_{n-1}G_n}}\sum_{i=1}^n \Delta_{i,n}\vec u_i$.
+\finenonce
+
+\noindication
+
+\correction
+Soit $X$ la matrice de $\vec e_n$ dans ${\cal B}$.
+         On a $GX = \begin{pmatrix}0\cr\vdots\cr0\cr\lambda\cr\end{pmatrix}$ et ${}^tXGX = \lambda x_p = 1$.
+	 On applique alors les formules de Cramer.
+\fincorrection
+
+\finexercice

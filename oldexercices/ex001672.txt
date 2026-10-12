@@ -1,0 +1,53 @@
+\exercice{1672, gineste, 2001/11/01}
+
+\enonce[Endomorphisme diagonalisable de $\Rr^2$]
+ On
+considère l'endomorphisme $a$ de $E=\Rr^2$ dont la matrice
+représentative $A=[a]_e^e$ dans la base canonique $e$ est $\left[
+\begin{array}{ll}7&-10\\5&-8 \end{array} \right].$ Calculer la
+trace, le déterminant, le polynôme caractéristique et le spectre
+de $a$. Quel théorème du cours garantit l'existence d'une base
+$f=(\vec{f}_1,\vec{f}_2)$ de vecteurs propres? Choisir ensuite $f$
+telle que $[\mathrm{id}_E]_f^e$ et $[\mathrm{id}_E]_e^f$ soient à
+coefficients entiers. Dessiner $\vec{f}_1$ et $\vec{f}_2$, en
+prenant des unités d'axes assez petites. Dessiner quelques
+vecteurs $\vec{x}$ et leurs images $a(\vec{x})$ à l'aide de $f$.
+
+Trouver deux matrices $P$ et $D$ carrées d'ordre 2 telles que $D$ soit
+diagonale, $P$ inversible et $A=PDP^{-1}$. Calculer $[a^{50}]_f^f$,
+$[a^{50}]_e^e$ et $A^{50}$. Calculer $\lim_{n\infty}\frac{1}{3^{2n}}a^{2n}.$
+
+\finenonce
+
+\noindication
+
+\correction
+ $\mathrm{tr} a=\mathrm{tr} A=-1,$ $\det a=\det A=-6$
+$$P_a(X)=X^2-\mathrm{tr} X+\det a=X^2+X-6=(X-2)(X+3).$$ Donc le spectre est
+$\{2,-3\}$, il est de taille 2 comme l'espace est de dimension 2.
+D'apr\`es le cours, $a$ est diagonalisable et les espaces propres
+de dimension 1. L'espace propre associ\'e \`a la valeur propre 2
+est l'ensemble des $(x,y)$ tels que $7x-10y=2x$ ou $x=2y.$ On peut
+prendre $\vec{f}_1=(2,1)$ pour base de cet espace propre. L'espace
+propre associ\'e \`a la valeur propre $-3$ est l'ensemble des
+$(x,y)$ tels que $7x-10y=-3x$ ou $x=y.$ On peut prendre
+$\vec{f}_2=(1,1)$ pour base de cet espace propre. Alors si
+$f=(\vec{f}_1,\vec{f}_2)$ on a
+
+$$P=[\mathrm{id}_E]_f^e=\left[\begin{array}{rr}2&1\\1&1\end{array}\right],\ \
+P^{-1}=[\mathrm{id}_E]_e^f=\left[\begin{array}{rr}
+1&-1\\-1&2\end{array}\right],\ \
+D=[a]_f^f=\left[\begin{array}{rr}2&0\\0&-3\end{array}\right].$$
+
+$$D^{50}=[a^{50}]_f^f=\left[\begin{array}{rr}2^{50}&0\\0&(-3)^{50}\end{array}\right],
+\ A^{50}=[a^{50}]_e^e=PD^{50}P^{-1}=\left[\begin{array}{rr}
+2.2^{50}-(-3)^{50}&-2.2^{50}+2.(-3)^{50}\\2^{50}-(-3)^{50}&-2^{50}+2.(-3)^{50}
+\end{array}\right]$$
+Donc $\lim_{n\infty}\frac{1}{3^{2n}}[a^{2n}]_f^f=L=
+\left[\begin{array}{rr}0&0\\0&1\end{array}\right],$ et
+$\lim_{n\infty}\frac{1}{3^{2n}}[a^{2n}]_e^e=PLP^{-1}=\left[\begin{array}{rr}
+-1&2\\-1&2\end{array}\right].$
+\fincorrection
+
+\finexercice
+

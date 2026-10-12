@@ -1,0 +1,40 @@
+\exercice{639, bodin, 1998/09/01}
+\video{RMlTCZ6T9wc}
+\enonce
+Soit $I$ un intervalle ouvert de $\Rr$, $f$ et $g$ deux fonctions d\'efinies sur $I$.
+\begin{enumerate}
+        \item Soit $a\in I$. Donner une raison pour laquelle :
+$$\left( \lim_{x\rightarrow a}f(x)=f(a) \right) \Rightarrow
+\left( \lim_{x\rightarrow a} |f(x)|=|f(a)| \right). $$
+    \item On suppose que $f$ et $g$ sont continues sur $I$. En utilisant
+l'implication d\'emontr\'ee ci-dessus, la relation $\sup(f,g)=\frac{1}{2}(f+g+|f-g|)$,
+et les propri\'et\'es des fonctions continues, montrer que la fonction $\sup(f,g)$
+est continue sur $I$.
+\end{enumerate}
+\finenonce 
+
+\indication
+\begin{enumerate}
+    \item On pourra utiliser la variante de l'in\'egalit\'e triangulaire $|x-y|\geq \big| |x|-|y| \big|$.
+    \item Utiliser la premi\`ere question pour montrer que $|f-g|$ est continue.
+\end{enumerate}
+\finindication
+
+\correction
+\begin{enumerate}
+    \item On a pour tout $x,y\in\R$ $|x-y|\geq \big| |x|-|y|\big|$
+(c'est la deuxi\`eme formulation de l'in\'egalit\'e triangulaire).
+Donc pour tout $x\in I$ :$ \big| |f(x)|-|f(a)| \big| \leq |f(x)-f(a)| $.
+L'implication annonc\'ee r\'esulte alors imm\'ediatement de la
+d\'efinition de l'assertion $\lim_{x\to a} f(x)=f(a). $
+    \item  Si $f,g$ sont continues
+alors $\alpha f+\beta g$ est continue sur $I$, pour tout
+$\alpha,\beta\in\R$. Donc les fonctions $f+g$ et $f-g$ sont
+continues sur $I$. L'implication de $1.$ prouve alors que $|f-g|$
+est continue sur $I$, et finalement on peut
+conclure :\\
+La fonction $\sup (f,g) = \frac{1}{2}(f+g+|f-g|)$ est continue sur
+$I$.
+\end{enumerate}
+\fincorrection
+\finexercice

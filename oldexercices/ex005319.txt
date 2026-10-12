@@ -1,0 +1,27 @@
+\exercice{5319, rouget, 2010/07/04}
+\enonce[***]
+Soit $P$ un polynôme à coefficients réels tel que $\forall x\in\Rr,\;P(x)\geq0$. Montrer qu'il existe deux polynômes $R$ et $S$ à coefficients réels tels que $P=R^2+S^2$.
+\finenonce
+
+\noindication
+
+\correction
+Soit $P$ un polynôme non nul à coefficients réels.
+
+Pour tout réel $x$, on peut écrire 
+
+$$P(x)=\lambda\prod_{i=1}^{k}(x-a_i)^{\alpha_i}\prod_{j=1}^{l}((x-z_j)(x-\overline{z_j}))^{\beta_j},$$
+
+où $\lambda$ est un réel non nul, $k$ et $l$ sont des entiers naturels, les $a_i$ sont des réels deux à deux distincts, les $\alpha_i$ et les $\beta_i$ des entiers naturels et les $(x-z_j)(x-\overline{z_j})$ des polynômes deux à deux premiers entre eux à racines non réelles.
+
+Tout d'abord, pour tout réel $x$, $\prod_{j=1}^{l}((x-z_j)(x-\overline{z_j}))^{\beta_j}>0$ (tous les trinomes du second degré considérés étant unitaires sans racines réelles.)
+
+Donc, $(\forall x\in\Rr,\;P(x)\geq0)\Leftrightarrow(\forall x\in\Rr,\;\lambda\prod_{i=1}^{k}(x-a_i)^{\alpha_i}\geq0)$.
+
+Ensuite, si $\forall x\in\Rr,\;P(x)\geq0$, alors $\lim_{x\rightarrow +\infty}P(x)\geq0$ ce qui impose $\lambda>0$. Puis, si un exposant $\alpha_i$ est impair, $P$ change de signe en $a_i$,  ce qui contredit l'hypothèse faite sur $P$. Donc, $\lambda>0$ et tous les $\alpha_i$ sont pairs. Réciproquement, si $\lambda>0$ et si tous les $\alpha_i$ sont pairs, alors bien sûr, $\forall x\in\Rr,\;P(x)\geq0$.
+
+Posons $A=\sqrt{\lambda}\prod_{i=1}^{k}(x-a_i)^{\alpha_i/2}$. $A$ est un élément de $\Rr[X]$ car $\lambda>0$ et car les $\alpha_i$ sont des entiers pairs. Posons ensuite $Q_1=\prod_{j=1}^{l}(x-z_j)^{\beta_j}$ et $Q_2=\prod_{j=1}^{l}(x-\overline{z_j})^{\beta_j}$. $Q_1$ admet après développement une écriture de la forme $Q_1=B+iC$ où $B$ et $C$ sont des polynômes à coefficients réels. Mais alors, $Q_2=B-iC$. Ainsi, $$P=A^2Q_1Q_2=A^2(B+iC)(B-iC)=A^2(B^2+C^2)=(AB)^2+(AC)^2=R^2+S^2,$$
+
+où $R$ et $S$ sont des polynômes à coefficients réels.
+\fincorrection
+\finexercice

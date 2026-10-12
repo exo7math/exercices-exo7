@@ -1,0 +1,14 @@
+\exercice{2847, burnol, 2009/12/15}
+\enonce
+Que vaut $\int_{|z| = N} \tan(\pi z) \,dz$, pour $N\in\Nn$, $N\geq1$?
+\finenonce
+\noindication
+\correction
+Comme $\tan(\pi z) =\frac{\sin(\pi z)}{\cos(\pi z)}$ cette fonction est une fonction m\'eromorphe de $\C$ ayant que des p\^oles simples en
+$1/2 \; \mathrm{mod} \; 1$. En effet, $\cos(w)=0$ si et seulement si $w=\pi/2 \; \mathrm{mod} \;\pi$ et $\cos'(\pi/2+k\pi) \neq 0$. Notons
+$z_k =1/2+k$, $k\in \Z$. La formule (\ref{1}) s'applique et donne
+$$ \mathrm{Res}(\tan (\pi z) , z_k) =\frac{\sin(\pi z_k)}{-\pi \sin (\pi z_k)} = -\frac{1}{\pi}.$$
+Par cons\'equent :
+$$\int _{|z|=N} \tan(\pi z) \, dz = 2i\pi 2N \Big(-\frac{1}{\pi} \Big) = -4iN.$$
+\fincorrection
+\finexercice

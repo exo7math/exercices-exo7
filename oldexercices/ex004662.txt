@@ -1,0 +1,38 @@
+\exercice{4662, quercia, 2010/03/14}
+\enonce[\'Equirépartition modulo 1]
+
+
+
+\begin{enumerate}
+  \item Soit $f:\R \to \R$ de classe $\mathcal{C}^1$ 1-périodique,
+    $\alpha \in \R\setminus \Q$ et $x \in \R$.
+
+    Montrer que $\frac{f(x) + f(x+\alpha) + \dots + f(x+n\alpha)}{n+1}
+    \to  \int_{t=0}^1 f(t)\,d t$ lorsque $n\to\infty$.
+    
+
+  \item Montrer que le résultat est encore vrai en supposant seulement $f$ continue.
+    
+
+  \item En déduire la nature de la série $\sum_{n=1}^\infty \frac{\sin^2 n}n$.
+    
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Développer $f$ en série de Fourier.
+  \item Densité des polynômes trigonométriques dans $\mathcal{C}^0$.
+  \item $f(t) = \sin^2(\pi t)$, $\alpha = \frac1\pi$, $x = 0$ :
+             $S_n = \sin^21 + \dots + \sin^2n \sim \frac n2$.\par
+             Transformation d'Abel : $\sum_{n=1}^N \frac{\sin^2 n}n =
+             -\sin^21 + \sum_{n=2}^{N-1} \frac{S_k}{k(k-1)} + \frac{S_N}N
+             \to +\infty$ lorsque $N\to\infty$.
+    Remarque : on a un raisonnement plus simple en écrivant $2\sin^2(n) = 1-\cos(2n)$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

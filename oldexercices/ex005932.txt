@@ -1,0 +1,68 @@
+\exercice{5932, tumpach, 2010/11/11}
+\enonce
+
+\emph{Cet exercice fournit une autre m\'ethode de calcul du volume
+de la boule unit\'e $\mathcal{B}_{n}$ de $\mathbb{R}^{n}$ et de
+l'aire de la sph\`ere $\mathcal{S}_{n-1} \subset \mathbb{R}^{n}$.}
+On conserve les notations de l'exercice pr\'ec\'edent.
+\begin{enumerate}
+\item Montrer que $\mathcal{V}_{n} = I_{n} \cdot
+\mathcal{V}_{n-1}$, o\`u $I_{n} = \int_{0}^{\pi} \left(\sin \theta
+\right)^{n} \,d\theta.$ \item V\'erifier que $I_{n} =
+\frac{n-1}{n} I_{n-2}.$ \item Calculer $\mathcal{V}_{n}$ pour $n =
+ 1, 2, \dots, 7$. \item Calculer $\mathcal{A}_{n-1}$ pour $n = 
+1, 2, \dots, 6$.
+\end{enumerate}
+
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate} 
+\item On a
+\begin{eqnarray*}
+\mathcal{V}_n &= &\int_{\mathcal{B}_n} dx_1\dots dx_{n}=
+\int_{-1}^{1} dx_1 \int_{\sum_{i=2}^n x_i^2 \leq 1 - x_1^2} dx_2
+\dots dx_n\\
+& = & \mathcal{V}_{n-1}\int_{-1}^{1}  \left(\sqrt{1-
+x_1^2}\right)^{n-1} \,dx_1
+\end{eqnarray*}
+Posons $x_1=\cos \theta$, pour $\theta \in [0, \pi]$. Alors
+$\sqrt{1-x_1^2}=|\sin \theta| = \sin \theta$ et $dx_1 =-\sin\theta
+\;d\theta.$ On a donc
+$$ \mathcal{V}_n = -\mathcal{V}_{n-1}\int\limits_\pi^0 (\sin \theta)^n d\theta
+=\mathcal{V}_{n-1}\int\limits_0^\pi (\sin \theta)^n d\theta = I_n
+\cdot \mathcal{V}_{n-1}.$$
+
+\item On a
+\begin{eqnarray*}
+I_n & = &\int\limits_0^\pi (\sin \theta)^n d\theta=\int\limits_0^\pi (\sin \theta)^{n-1}\; \sin \theta\;d\theta= \\
+    & = &\left[-\cos\theta (\sin \theta)^{n-1} \right]_0^\pi + (n-1)\int\limits_0^\pi (\sin \theta)^{n-2}\; (\cos \theta)^2\;d\theta= \\
+    & = &(n-1) \int\limits_0^\pi (\sin \theta)^{n-2} (1-(\sin \theta)^2) \;d\theta =(n-1)(I_{n-2}-I_n).\\
+\end{eqnarray*}
+Donc $I_n=\frac{n-1}{n}\cdot I_{n-2}\;\;$.
+
+
+\item On a $I_0=\pi,\;I_1 = 2.$ Donc
+$I_2=\frac{\pi}{2}, \;
+I_3=\frac{4}{3},\;I_4=\frac{3\pi}{8},\;I_5=\frac{16}{15},\;I_6=
+\frac{15\pi}{48},\;I_7=\frac{32}{35}.$ 
+
+Comme $\mathcal{V}_1=2$ on trouve:
+$$\mathcal{V}_2=\pi,\;\mathcal{V}_3=\frac{4\pi}{3},\;\mathcal{V}_4=\frac{\pi^2}{2},\;
+\mathcal{V}_5=\frac{8\pi^2}{15},\;\mathcal{V}_6=\frac{\pi^3}{6},\;\mathcal{V}_7=\frac{16}{105}\pi^3
+.$$
+
+
+\item On a $\displaystyle\mathcal{V}_n =\int\limits_0^1
+\int\limits_{\mathcal{S}_{n-1}}
+  r^{n-1}dr d\sigma=\frac{1}{n}\mathcal{A}_{n-1},$ \,
+d'o\`{u} \, $\mathcal{A}_{n-1}=n\,\mathcal{V}_n$. Donc on a
+  $$\mathcal{A}_1=2\pi,\;\mathcal{A}_2=4\pi,\;\mathcal{A}_3=2\pi^2,\;
+  \mathcal{A}_4=\frac{8}{3}\pi^2,\;\mathcal{A}_5=\pi^3,\;\mathcal{A}_6=\frac{16}{15}\pi^3
+  .$$
+\end{enumerate}
+\fincorrection
+
+\finexercice

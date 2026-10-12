@@ -1,0 +1,44 @@
+\exercice{5723, rouget, 2010/10/16}
+\enonce[***]
+Soit $f$ définie, continue, positive et décroissante sur $[1,+\infty[$, intégrable sur $[1,+\infty[$.
+
+\begin{enumerate}
+ \item  Montrer que $xf(x)$ tend vers $0$ quand $x$ tend vers $+\infty$.
+
+\item  Existence et calcul de $\int_{1}^{+\infty}x(f(x+1)-f(x))dx$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Puisque $f$ est continue, positive et décroissante sur $[1,+\infty[$, pour $x\geqslant2$ on a
+
+\begin{center}
+$0\leqslant xf(x) = 2\left(x-\frac{x}{2}\right)f(x)\leqslant2\int_{x/2}^{x}f(t)\;dt =2\left(/dint{x/2}{+\infty}f(t)\;dt-\int_{x}^{+\infty}f(t)\;dt\right)$
+\end{center}
+
+Cette dernière expression tend vers $0$ quand $x$ tend vers $+\infty$ car $f$ est intégrable sur $[1,+\infty[$. Donc si $f$ est continue, positive, décroissante et intégrable sur $[1,+\infty[$ alors $f(x) \underset{x\rightarrow+\infty}{=}o\left(\frac{1}{x}\right)$.
+
+\item  La fonction $x\mapsto x(f(x) - f(x+1))$ est continue et positive sur $[1,+\infty[$.
+
+Soit $X\geqslant 1$.
+
+\begin{align*}\ensuremath
+\int_{1}^{X}x(f(x) - f(x+1))\;dx&=\int_{1}^{X}xf(x)\;dx -\int_{2}^{X+1}(x-1)f(x)\;dx =\int_{1}^{X}xf(x)\;dx -  \int_{2}^{X+1}xf(x)\;dx +\int_{2}^{X+1}f(x)\;dx\\
+ &=\int_{1}^{2}xf(x)\;dx -\int_{X}^{X+1}xf(x)\;dx +\int_{2}^{X+1} f(x)\;dx.
+\end{align*}
+
+Maintenant $0\leqslant\int_{X}^{X+1}xf(x)\;dx\leqslant(X+1-X)(X+1)f(X)\leqslant2Xf(X)$. D'après 1), cette dernière expression tend vers $0$ quand $X$ tend vers $+\infty$. Donc, quand $X$ tend vers $+\infty$,  $\int_{1}^{X}x(f(x) - f(x+1))\;dx$ tend vers $\int_{1}^{2}xf(x)\;dx+\int_{2}^{+\infty} f(x)\;dx$.
+
+Puisque la fonction $x\mapsto x(f(x) - f(x+1))$ est continue et positive sur $[1,+\infty[$, on sait que $x\mapsto x(f(x) - f(x+1))$ est intégrable sur $[1,+\infty[$ si et seulement si la fonction $X\mapsto\int_{1}^{X}x(f(x) - f(x+1))\;dx$ a une limite réelle quand $X$ tend vers $+\infty$. Donc la fonction $x\mapsto x(f(x) - f(x+1))$ est intégrable sur $[1,+\infty[$ et
+
+\begin{center}
+\shadowbox{
+$\int_{1}^{+\infty}x(f(x) - f(x+1))\;dx =\int_{1}^{2}xf(x)\;dx +\int_{2}^{+\infty}f(x)\;dx$.
+}
+\end{center}
+\end{enumerate}
+\fincorrection
+\finexercice

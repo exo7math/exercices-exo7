@@ -1,0 +1,22 @@
+\exercice{5463, rouget, 2010/07/10}
+\enonce[**]
+Déterminer les fonctions $f$ continues sur $[0,1]$ vérifiant $\left|\int_{0}^{1}f(t)\;dt\right|=\int_{0}^{1}|f(t)|\;dt$. 
+\finenonce
+
+\noindication
+
+\correction
+Si $\int_{0}^{1}f(t)\;dt\geq0$,
+
+\begin{align*}\ensuremath
+\left|\int_{0}^{1}f(t)\;dt\right|=\int_{0}^{1}|f(t)|\;dt&\Leftrightarrow\int_{0}^{1}f(t)\;dt=\int_{0}^{1}|f(t)|\;dt\Leftrightarrow
+\int_{0}^{1}(|f(t)|-f(t))\;dt=0\\
+ &\Leftrightarrow|f|-f=0\;(\mbox{fonction continue positive d'intégrale nulle})\\
+ &\Leftrightarrow f=|f|\Leftrightarrow f\geq0.
+\end{align*}
+
+Si $\int_{0}^{1}f(t)\;dt\leq0$, alors $\int_{0}^{1}-f(t)\;dt\geq0$ et d'après ce qui précède, $f$ est solution si et seulement si $-f=|-f|$ ou encore $f\leq0$.
+
+En résumé, $f$ est solution si et seulement si $f$ est de signe constant sur $[0,1]$.
+\fincorrection
+\finexercice

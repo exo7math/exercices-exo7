@@ -1,0 +1,83 @@
+\exercice{1087, ridde, 1999/11/01}
+\video{SRrzcCzYHo0}
+\enonce
+Soit $\Rr^2$ muni de la base canonique $\mathcal{B}=(\vec{i}, \vec{j})$.
+Soit $f : \Rr^2 \to \Rr^2$ la projection sur l'axe des abscisses $\Rr \vec{i}$ 
+parall\`element à $\Rr (\vec{i} + \vec{j})$.
+Déterminer $\textrm{Mat}_{\mathcal{B},\mathcal{B}}(f)$, la matrice de $f$ dans la base $(\vec{i}, \vec{j})$.
+
+Même question avec $\textrm{Mat}_{\mathcal{B}',\mathcal{B}}(f)$ où $\mathcal{B'}$ est la base 
+$(\vec{i} - \vec{j}, -2\vec{i}+3\vec{j})$ de $\Rr^2$.
+Même question avec $\textrm{Mat}_{\mathcal{B}',\mathcal{B}'}(f)$.
+\finenonce
+
+\indication
+$f$ est l'application qui à $\begin{pmatrix}x\\y\end{pmatrix}$ associe
+ $\begin{pmatrix}x-y\\0\end{pmatrix}$.
+\finindication
+
+\correction
+L'expression de $f$ dans la base $\mathcal{B}$ est la suivante $f(x,y)=(x-y,0)$.
+Autrement dit à un vecteur $\begin{pmatrix}x\\y\end{pmatrix}$ on associe
+le vecteur  $\begin{pmatrix}x-y\\0\end{pmatrix}$.
+On note que $f$ est bien une application linéaire.
+Cette expression nous permet de calculer les matrices demandées.
+
+
+Remarque : comme $\mathcal{B}$ est la base canonique on note
+$\begin{pmatrix}x\\y\end{pmatrix}$ pour $\begin{pmatrix}x\\y\end{pmatrix}_\mathcal{B}$
+qui est le vecteur $x \vec{i}+y\vec{j}$.
+
+
+
+\begin{enumerate}
+  \item Calcul de $\textrm{Mat}(f,\mathcal{B},\mathcal{B})$.
+Comme $\mathcal{B}=(\vec{i}, \vec{j})$, la matrice s'obtient en calculant $f(\vec{i})$ et $f(\vec{j})$ :
+$$f(\vec{i})=f\begin{pmatrix}1\\0\end{pmatrix} = \begin{pmatrix}1\\0\end{pmatrix} = \vec{i}
+\quad 
+f(\vec{j})=f\begin{pmatrix}0\\1\end{pmatrix} = \begin{pmatrix}-1\\0\end{pmatrix} = -\vec{i}$$
+donc
+$$\textrm{Mat}(f,\mathcal{B},\mathcal{B}) = \begin{pmatrix} 1 & -1 \\ 0 & 0 \end{pmatrix}$$
+
+  \item On garde la même application linéaire mais la base de départ change (la base d'arrivée reste $\mathcal{B}$).
+Si on note $\vec{u} = \vec{i}-\vec{j}$ et $\vec{v} = -2\vec{i}+3\vec{j}$, on a 
+$\mathcal{B'}=(\vec{i} - \vec{j}, -2\vec{i}+3\vec{j}) = (\vec{u},\vec{v})$. On exprime 
+$f(\vec{u})$ et $f(\vec{v})$ dans la base d'arrivée $\mathcal{B}$.
+$$f(\vec{u})=f(\vec{i}- \vec{j})=f\begin{pmatrix}1\\-1\end{pmatrix} = \begin{pmatrix}2\\0\end{pmatrix}
+\quad 
+f(\vec{v})=f(-2\vec{i}+3\vec{j})=f\begin{pmatrix}-2\\3\end{pmatrix} = \begin{pmatrix}-5\\0\end{pmatrix}$$
+donc
+$$\textrm{Mat}(f,\mathcal{B}',\mathcal{B}) = \begin{pmatrix} 2 & -5 \\ 0 & 0 \end{pmatrix}$$
+  
+  \item Toujours avec le même $f$ on prend $\mathcal{B}'$ comme base de départ et d'arrivée,
+il s'agit donc d'exprimer $f(\vec{u})$ et $f(\vec{v})$ dans la base $\mathcal{B}'=(\vec{u},\vec{v})$.
+Nous venons de calculer que 
+$$f(\vec{u})=f(\vec{i}- \vec{j})=f\begin{pmatrix}1\\-1\end{pmatrix} = \begin{pmatrix}2\\0\end{pmatrix}=2\vec{i}
+\quad 
+f(\vec{v})=f(2\vec{i}+3\vec{j})=f\begin{pmatrix}-2\\3\end{pmatrix} = \begin{pmatrix}-5\\0\end{pmatrix}=-5\vec{i}$$
+Mais il  nous faut obtenir une expression en fonction de la base $\mathcal{B}'$.
+Remarquons que 
+$$\left\{\begin{array}{lcr}
+\vec{u} &=& \vec{i}-\vec{j} \\
+\vec{v} &=& -2\vec{i}+3\vec{j} \\           
+         \end{array}\right.
+\implies
+\left\{\begin{array}{lcr}
+\vec{i} &=& 3\vec{u}+\vec{v} \\
+\vec{j} &=& 2\vec{u}+\vec{v} \\           
+         \end{array}\right.$$
+Donc 
+$$f(\vec{u})=f(\vec{i}- \vec{j})=2\vec{i}=6\vec{u}+2\vec{v} = \begin{pmatrix}6\\2\end{pmatrix}_{\mathcal{B}'}
+\quad
+f(\vec{v})=f(-2\vec{i}+3\vec{j})=-5\vec{i}=-15\vec{u}-5\vec{v} = \begin{pmatrix}-15\\-5\end{pmatrix}_{\mathcal{B}'}$$
+Donc
+$$\textrm{Mat}(f,\mathcal{B}',\mathcal{B}') = \begin{pmatrix} 6 & -15 \\ 2 & -5 \end{pmatrix}$$
+
+Remarque :
+$\begin{pmatrix}x\\y\end{pmatrix}_{\mathcal{B}'}$
+désigne le vecteur $x \vec{u}+y\vec{v}$.
+\end{enumerate}
+
+\fincorrection
+
+\finexercice

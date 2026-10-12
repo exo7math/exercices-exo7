@@ -1,0 +1,62 @@
+\exercice{2208, debes, 2008/02/12}
+\enonce
+ Soit $G$ un groupe d'ordre $399$. \smallskip
+
+(a) Montrer que $G$ admet un unique $19$-Sylow $P$ qui est distingu\'e dans $G$.
+\smallskip
+
+(b) Soit $Q$ un $7$-Sylow. Montrer que $N=PQ$ est un sous-groupe d'ordre $133$    
+de $G$ et que ce groupe est cyclique.
+\smallskip
+
+(c) On suppose que $Q$ n'est pas distingu\'e dans $G$. Montrer que $G$ admet $57$
+sous-groupes cycliques d'ordre $133$ distincts deux \`a deux. Quel serait le nombre
+d'\'el\'ements d'ordre $133$ dans $G$? Aboutir \`a  une contradiction. En d\'eduire
+que $Q$ est distingu\'e dans $G$ et que $N$ est distingu\'e dans $G$.
+\smallskip
+
+(d) Montrer que $G=NR$, o\`u $R$ est un $3$-Sylow. En d\'eduire que $G$ est
+isomorphe au produit semi-direct d'un groupe cyclique d'ordre $133$ par un groupe
+cyclique d'ordre $3$.
+\finenonce 
+
+\noindication
+\correction
+(a) Le nombre de $19$-Sylow de $G$ est $\equiv 1\
+[\hbox{\rm mod}\ 19]$ et divise $21$; ce ne peut \^etre que $1$. Le groupe $G$ a
+donc un unique $19$-Sylow $P$ qui est distingu\'e.
+\smallskip
+
+(b) Comme $P$ est distingu\'e dans $G$, $N=PQ$ est un sous-groupe de $G$. De
+$P\cap Q=\{1\}$, on d\'eduit que $PQ/P \simeq Q$ et donc que $PQ$ est d'ordre
+$7.19=133$. D'apr\`es l'exercice 15, le groupe $N$ est isomorphe au produit direct
+$\Z/19\Z \times \Z/7\Z$, lequel est isomorphe au groupe cyclique $\Z/133\Z$ par le
+lemme chinois.
+\smallskip
+
+(c) Le nombre de $7$-Sylow de $G$ est $\equiv 1\
+[\hbox{\rm mod}\ 7]$ et divise $57$. Les seules possibilit\'es sont $1$ et $57$. Or
+ce n'est pas $1$ non plus car on suppose que $Q$ n'est pas distingu\'e. Le groupe
+$G$ admet donc $57$ $7$-Sylow, et donc $57$ sous-groupes cycliques d'ordre $133$
+par la question pr\'ec\'edente. Ces $57$ groupes d'ordre $133$ sont bien distincts
+car deux
+$7$-Sylow distincts engendrent avec $P$ deux groupes cycliques d'ordre $133$
+distincts puisque le $7$-Sylow est l'unique sous-groupe d'ordre $7$ du groupe
+cyclique. Par cons\'equent leurs ensembles de g\'en\'erateurs sont deux \`a deux
+disjoints. On obtient ainsi $57 \times \phi(133)= 57\times 6\times 18$ \'el\'ements
+d'ordre
+$133$ dans $G$ ($\phi$ d\'esigne ici la fonction indicatrice d'Euler), ce qui est
+manifestement absurde. On peut donc conclure que $Q$ est distingu\'e dans $G$ et
+que l'unique sous-groupe cyclique $N=PQ$ d'ordre $133$ l'est aussi.
+\smallskip
+
+(d) Comme $N$ est distingu\'e dans $G$, $NR$ est un sous-groupe de $G$. De
+$N\cap R=\{1\}$, on d\'eduit que $NR/N \simeq R$ et donc que $NR$ est d'ordre
+$133.3=399$. Ainsi $G=NR$ et l'isomorphisme pr\'ec\'edent $G/N \simeq R$ montre que
+l'inclusion $R\rightarrow G$ est une section de la suite exacte $1\rightarrow
+N\rightarrow G
+\rightarrow R \rightarrow 1$. Le groupe $G$ est donc
+isomorphe au produit semi-direct du groupe cyclique $N$ d'ordre $133$ par le groupe
+cyclique $R$ d'ordre $3$. 
+\fincorrection
+\finexercice

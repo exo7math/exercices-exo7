@@ -1,0 +1,76 @@
+\exercice{5717, rouget, 2010/10/16}
+\enonce
+Deux calculs de $I =\int_{0}^{\pi/2}\ln(\sin x)\;dx$.
+
+\textbf{1) (** I)} En utilisant $J=\int_{0}^{\pi/2}\ln(\cos x)\;dx$, calculer $I$ (et $J$).
+
+\textbf{2) (*** I)} Calculer $P_n=\prod_{k=1}^{n-1}\sin\frac{k\pi}{2n}$ (commencer par $P_n^2$) et en déduire $I$.
+\finenonce
+
+\noindication
+
+\correction
+La fonction $f~:~x\mapsto\ln(\sin x)$ est continue sur $\left]0,\frac{\pi}{2}\right]$. De plus, quand $x$ tend vers $0$, $\ln(\sin x)\sim\ln x=o\left(\frac{1}{\sqrt{x}}\right)$. Par suite, $f$ est intégrable sur$\left]0,\frac{\pi}{2}\right]$.
+
+\begin{enumerate}
+ \item  Soient $I=\int_{0}^{\pi/2}\ln(\sin x)\;dx$ et $J =\int_{0}^{\pi/2}\ln(\cos x)\;dx$. Le changement de variables $x =\frac{\pi}{2}-t$ fournit $J$ existe et $J=I$. Par suite,
+
+\begin{align*}\ensuremath
+2I&= I+J =\int_{0}^{\pi/2}\ln(\sin x\cos x)\;dx=-\frac{\pi\ln2}{2}+\int_{0}^{\pi/2}\ln(\sin(2x))\;dx =-\frac{\pi\ln2}{2}+\frac{1}{2}\int_{0}^{\pi}\ln(\sin u)\;du\\
+ &= -\frac{\pi\ln2}{2}+\frac{1}{2}\left(I+\int_{\pi/2}^{\pi}\ln(\sin u)\;du\right)
+= -\frac{\pi\ln2}{2}+\frac{1}{2}\left(I+\int_{\pi/2}^{0}\ln(\sin (\pi-t))\;(-dt)\right)=-\frac{\pi\ln2}{2}+ I.
+\end{align*}
+
+Par suite, $I =-\frac{\pi\ln2}{2}$.
+
+\begin{center}
+\shadowbox{
+$\int_{0}^{\pi/2}\ln(\sin x)\;dx=\int_{0}^{\pi/2}\ln(\cos x)\;dx=-\frac{\pi\ln2}{2}$.
+}
+\end{center}
+
+\item  Pour $n\geqslant2$, posons $P_n =\prod_{k=1}^{n-1}\sin\left(\frac{k\pi}{2n}\right)$. Pour $1\leqslant k\leqslant n-1$, on a $0<\frac{k\pi}{2n}<\frac{\pi}{2}$ et donc $P_n > 0$. D'autre part, 
+$\sin\left(\frac{(2n-k)\pi}{2n}\right)=\sin\left(\frac{k\pi}{2n}\right)$ et $\sin\frac{n\pi}{2n}=1$. On en déduit que
+
+\begin{center}
+$P_n^2=\prod_{k=1}^{2n-1}\sin\left(\frac{k\pi}{2n}\right)$,
+\end{center}
+
+puis
+
+\begin{align*}\ensuremath
+P_n^2&=\prod_{k=1}^{2n-1}\frac{e^{ik\pi/(2n)}-e^{-ik\pi/(2n)}}{2i}=\frac{1}{(2i)^{2n-1}}\prod_{k=1}^{2n-1}\left(-e^{-ik\pi/(2n)}\right)\prod_{k=1}^{2n-1}\left(1-e^{2ik\pi/(2n)}\right)\\
+ &=\frac{1}{(2i)^{2n-1}}(-1)^{2n-1}(e^{-i\pi/2})^{2n-1}\prod_{k=1}^{2n-1}\left(1-e^{2ik\pi/(2n)}\right)=   \frac{1}{2^{2n-1}}\prod_{k=1}^{2n-1}\left(1-e^{2ik\pi/(2n)}\right)
+\end{align*}
+
+Maintenant, le polynôme $Q$ unitaire de degré $2n-1$ dont les racines sont les $2n-1$ racines $2n$-èmes de l'unité distinctes de $1$ est
+
+\begin{center}
+$\frac{X^{2n}-1}{X-1}= 1+X+X^2+...+X^{2n-1}$
+\end{center}
+
+et  donc $\prod_{k=1}^{2n-1}\left(1-e^{2ik\pi/(2n)}\right)=Q(1)=2n$. Finalement,
+
+\begin{center}
+$\prod_{k=1}^{n-1}\sin\left(\frac{k\pi}{2n}\right)=P_n=\sqrt{\frac{2n}{2^{2n-1}}}=\frac{\sqrt{n}}{2^{n-1}}$.
+\end{center}
+
+Pour $0\leqslant k\leqslant n$, posons alors $x_k=\frac{k\pi}{2n}$ de sorte que $0 = x_0 < x_1< ...< x_n =\frac{\pi}{2}$ est une subdivision de $\left[0,\frac{\pi}{2}\right]$
+à pas constant égal à $\frac{\pi}{2n}$.
+
+Puisque la fonction $x\mapsto\ln(\sin x)$ est continue et croissante sur $\left]0,\frac{\pi}{2}\right]$, pour $1\leqslant k\leqslant n-1$, on a  $\frac{\pi}{2n}\ln(\sin(x_k))\leqslant\int_{x_k}^{x_{k+1}}\ln(\sin x)\;dx$ puis en sommant  ces inégalités, on obtient 
+
+\begin{center}
+$\frac{\pi}{2n}\ln(P_n)\leqslant\int_{\pi/(2n)}^{\pi/2}\ln(\sin x)\;dx$
+\end{center}
+
+De même, pour $0\leqslant k\leqslant n-1$,  $\int_{x_k}^{x_{k+1}}\ln(\sin x)\;dx\leqslant\frac{\pi}{2n}\ln(\sin(x_{k+1}))$ et en sommant  
+
+\begin{center}
+$\int_{0}^{\pi/2}\ln(\sin x)\;dx\leqslant\frac{\pi}{2n}\ln(P_n)$.
+\end{center}
+
+Finalement,  $\forall n\geqslant2$, $\frac{\pi}{2n}\ln(P_n)+\int_{0}^{\pi/(2n)}\ln(\sin x)\;dx\leqslant I\leqslant\frac{\pi}{2n}\ln(P_n)$. Mais $\ln(P_n) =\ln n -(n-1)\ln2$ et donc  $\frac{\pi}{2n}\ln(P_n)$ tend vers $-\frac{\pi\ln2}{2}$ quand $n$ tend vers $+\infty$ et comme d'autre part, $\int_{0}^{\pi/(2n)}\ln(\sin x)\;dx$ tend vers $0$ quand $n$ tend vers $+\infty$ (puisque la fonction $x~:~\mapsto\ln(\sin x)$ est intégrable sur $\left]0,\frac{\pi}{2}\right]$), on a redémontré que $I = -\frac{\pi\ln2}{2}$.
+\end{enumerate}
+\fincorrection
+\finexercice

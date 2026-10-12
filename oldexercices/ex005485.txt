@@ -1,0 +1,14 @@
+\exercice{5485, rouget, 2010/07/10}
+\enonce[**]
+Sur $\Rr[X]$, on pose $P|Q=\int_{0}^{1}P(t)Q(t)\;dt$. Existe-t-il $A$ élément de $\Rr[X]$ tel que $\forall P\in\Rr[X],\;P|A=P(0)$~?
+\finenonce
+
+\noindication
+
+\correction
+Soit $A$ un éventuel polynôme solution c'est à dire tel que $\forall P\in\Rr[X],\;\int_{0}^{1}P(t)A(t)\;dt=P(0)$.
+
+$P=1$ fournit $\int_{0}^{1}A(t)\;dt=1$ et donc nécessairement $A\neq0$. $P=XA$ fournit $\int_{0}^{1}tA^2(t)\;dt=P(0)=0$.
+Mais alors, $\forall t\in[0,1],\;tA^2(t)=0$ (fonction continue positive d'intégrale nulle) puis $A=0$ (polynôme ayant une infinité de racines deux à deux distinctes). $A$ n'existe pas.
+\fincorrection
+\finexercice

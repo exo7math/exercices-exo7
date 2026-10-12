@@ -1,0 +1,40 @@
+\exercice{5230, rouget, 2010/06/30}
+\enonce[**]
+Soient $(u_n)$, $(v_n)$ et $(w_n)$ les suites définies par la donnée de $u_0$,
+$v_0$ et $w_0$ et les relations de récurrence 
+$$u_{n+1}=\frac{v_n+w_n}{2},\,v_{n+1}=\frac{u_n+w_n}{2}\;\mbox{et}\;
+w_{n+1}=\frac{u_n+v_n}{2}.$$
+
+Etudier les suites $u$, $v$ et $w$ puis déterminer $u_n$, $v_n$ et $w_n$ en fonction de $n$
+en recherchant des combinaisons linéaires intéressantes de $u$, $v$ et $w$. En
+déduire $\lim_{n\rightarrow +\infty}u_n$, $\lim_{n\rightarrow +\infty}v_n$et $\lim_{n\rightarrow +\infty}w_n$.
+
+\finenonce
+
+\noindication
+
+\correction
+Pour tout entier naturel $n$, on a $u_{n+1}-v_{n+1}=-\frac{1}{2}(u_n-v_n)$  et donc, $u_n-v_n=\left(-\frac{1}{2}\right)^n(u_0-v_0)$.
+De même, en échangeant les rôles de $u$, $v$ et $w$, $v_n-w_n=\left(-\frac{1}{2}\right)^n(v_0-w_0)$ et $w_n-u_n=\left(-\frac{1}{2}\right)^n(w_0-v_0)$ (attention, cette dernière égalité n'est autre que la somme des deux premières et il manque encore une équation).
+On a aussi, $u_{n+1}+v_{n+1}+w_{n+1}=u_n+v_n+w_n$ et donc, pour tout naturel $n$, $u_n+v_n+w_n=u_0+v_0+w_0$.
+Ainsi, $u_n$, $v_n$ et $w_n$ sont solutions du système
+
+$$\left\{
+\begin{array}{l}
+v_n-u_n=\left(-\frac{1}{2}\right)^n(v_0-u_0)\\
+\rule{0mm}{7mm}w_n-u_n=\left(-\frac{1}{2}\right)^n(w_0-u_0)\\
+\rule{0mm}{4mm}u_n+v_n+w_n=u_0+v_0+w_0
+\end{array}
+\right..$$
+Par suite, pour tout entier naturel $n$, on a
+
+$$\left\{
+\begin{array}{l}
+u_n=\frac{1}{3}\left((u_0+v_0+w_0)+\left(-\frac{1}{2}\right)^n(2u_0-v_0-w_0)\right)\\
+v_n=\frac{1}{3}\left((u_0+v_0+w_0)+\left(-\frac{1}{2}\right)^n(-u_0+2v_0-w_0)\right)\\
+w_n=\frac{1}{3}\left((u_0+v_0+w_0)+\left(-\frac{1}{2}\right)^n(-u_0-v_0+2w_0)\right)
+\end{array}
+\right..$$
+Les suites $u$, $v$ et $w$ convergent vers $\frac{u_0+v_0+w_0}{3}$.
+\fincorrection
+\finexercice

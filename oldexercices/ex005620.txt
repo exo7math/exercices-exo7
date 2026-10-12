@@ -1,0 +1,62 @@
+\exercice{5620, rouget, 2010/10/16}
+\enonce[***]
+Soit $A_n=
+\left(
+\begin{array}{cc}
+1&-\frac{a}{n}\\
+\frac{a}{n}&1
+\end{array}
+\right)$ ($a$ réel donné). Calculer $\lim_{n \rightarrow +\infty}A_n^n$.
+\finenonce
+
+\noindication
+
+\correction
+ Puisque $\left(\frac{1}{\sqrt{1+\frac{a^2}{n^2}}}\right)^2+\left(\frac{\frac{a}{n}}{\sqrt{1+\frac{a^2}{n^2}}}\right)^2=1$, il existe un unique réel $\theta_n\in[-\pi,\pi[$ tel que
+
+\begin{center}
+$\cos\theta_n=\frac{1}{\sqrt{1+\frac{a^2}{n^2}}}$ et $\sin\theta_n=\frac{\frac{a}{n}}{\sqrt{1+\frac{a^2}{n^2}}}$.
+\end{center}
+
+La matrice $A_n$ s'écrit alors $A_n=\sqrt{1+\frac{a^2}{n^2}}\left(
+\begin{array}{cc}
+\cos\theta_n&-\sin\theta_n\\
+\sin\theta_n&\cos\theta_n
+\end{array}
+\right)$ et donc
+
+\begin{center}
+$(A_n)^n=\left(1+\frac{a^2}{n^2}\right)^{n/2}\left(
+\begin{array}{cc}
+\cos(n\theta_n)&-\sin(n\theta_n)\\
+\sin(\theta_n)&\cos(n\theta_n)
+\end{array}
+\right)$.
+\end{center}
+
+Maintenant, 
+
+\begin{center}
+$\left(1+\frac{a^2}{n^2}\right)^{n/2}=\text{exp}\left(\frac{n}{2}\ln\left(1+\frac{a^2}{n^2}\right)\right)\underset{n\rightarrow+\infty}{=}\text{exp}\left(\frac{n}{2}\times o\left(\frac{1}{n}\right)\right)\underset{n\rightarrow+\infty}{=}\text{exp}(o(1))\underset{n\rightarrow+\infty}{\rightarrow}1$.
+\end{center}
+
+Ensuite, en notant $\varepsilon$ le signe de $a$, $\theta_n=\varepsilon\Arccos\left(\frac{1}{\sqrt{1+\frac{a^2}{n^2}}}\right)\underset{n\rightarrow+\infty}{\rightarrow}0$ et on en déduit que
+
+\begin{center}
+$n\theta_n \underset{n\rightarrow+\infty}{\sim}n\sin(\theta_n)=n\frac{\frac{a}{n}}{\sqrt{1+\frac{a^2}{n^2}}}\underset{n\rightarrow+\infty}{\rightarrow}a$.
+\end{center}
+
+Finalement
+
+\begin{center}
+\shadowbox{
+$\lim_{n \rightarrow +\infty}(A_n)^n=\left(
+\begin{array}{cc}
+\cos(a)&-\sin(a)\\
+\sin(a)&\cos(a)
+\end{array}
+\right)$.
+}
+\end{center}
+\fincorrection
+\finexercice

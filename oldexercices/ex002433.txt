@@ -1,0 +1,51 @@
+\exercice{2433, matexo1, 2002/02/01}
+\video{F1PmEC1haKY}
+\enonce
+Soit $f$ l'endomorphisme de $\R^3$ dont la matrice par
+rapport \`a la base canonique $(e_1, e_2, e_3)$ est
+$$A= \left( 
+       \begin{array}{ccc}
+        15 & -11 & 5 \\
+        20 & -15 & 8 \\
+        8 &  -7 & 6
+       \end{array}
+       \right).$$
+Montrer que les vecteurs
+$$ e'_1 = 2e_1+3e_2+e_3,\quad e'_2 = 3e_1+4e_2+e_3,\quad e'_3 =
+e_1+2e_2+2e_3$$
+forment une base de $\R^3$ et calculer la matrice de $f$ par
+rapport \`a cette base.
+\finenonce
+
+\noindication
+\correction
+Notons l'ancienne base $\mathcal{B}=(e_1,e_2,e_3)$
+et ce qui sera la nouvelle base $\mathcal{B}'=(e'_1,e'_2,e'_3)$.
+Soit $P$ la matrice de passage qui contient -en colonnes- les coordonnées des vecteurs
+de la nouvelle base $\mathcal{B}'$ exprimés dans l'ancienne base $\mathcal{B}$
+$$P=\begin{pmatrix}
+2 & 3 & 1 \\
+3 & 4 & 2 \\
+1 & 1 & 2 \\      
+\end{pmatrix}$$
+
+On vérifie que $P$ est inversible (on va même calculer son inverse) donc
+$\mathcal{B}'$ est bien une base.
+De plus 
+$$P^{-1} = \begin{pmatrix}
+-6 & 5 & -2 \\
+4 & -3 & 1 \\
+1 & -1 & 1 \\             
+           \end{pmatrix}
+\text{ et on calcule  } B=P^{-1} A P = 
+\begin{pmatrix}
+1 & 0 & 0 \\
+0 & 2 & 0 \\
+0 & 0 & 3 \\  
+\end{pmatrix}$$
+
+$B$ est la matrice de $f$ dans la base $\mathcal{B}'$.
+\fincorrection
+
+\finexercice
+

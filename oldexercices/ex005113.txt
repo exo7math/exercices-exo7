@@ -1,0 +1,98 @@
+\exercice{5113, rouget, 2010/06/30}
+\enonce[***IT]
+Soient $(A_i)_{i\in I}$ une famille de parties d'un ensemble $E$ indéxée par un ensemble $I$ et $(B_i)_{i\in I}$ une
+famille de parties d'un ensemble $F$ indéxée par un ensemble $I$. Soit $f$ une
+application de $E$ vers $F$. Comparer du point de vue de l'inclusion les parties suivantes~:
+
+\begin{enumerate}
+\item  $f(\bigcup_{i\in I}A_i)$ et $\bigcup_{i\in I}f(A_i)$ (recommencer par $f(A\cup B)$ si on n'a pas les 
+idées claires).
+\item  $f(\bigcap_{i\in I}A_i)$ et $\bigcap_{i\in I}f(A_i)$.
+\item  $f(E\setminus A_i)$ et $F\setminus f(A_i)$.
+\item  $f^{-1}(\bigcap_{i\in I}B_i)$ et $\bigcap_{i\in I}f^{-1}(B_i)$.
+\item  $f^{-1}(\bigcup_{i\in I}B_i)$ et $\bigcup_{i\in I}f^{-1}(B_i)$.
+\item  $f^{-1}(F\setminus B_i)$ et $E\setminus f^{-1}(Bi)$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Soit $x\in E$.
+
+\begin{align*}
+x\in f\left(\bigcup_{i\in I}A_i\right)&\Leftrightarrow\exists y\in\bigcup_{i\in I}A_i/\;x=f(y)\Leftrightarrow\exists i\in I,\;\exists y\in
+A_i/\;x=f(y)\\
+ &\Leftrightarrow\exists i\in I/\;x\in f(A_i)\Leftrightarrow x\in\bigcup_{i\in I}f(A_i)
+\end{align*}
+Donc
+
+\begin{center}
+\shadowbox{
+$f\left(\displaystyle\bigcup_{i\in I}A_i\right)=\displaystyle\bigcup_{i\in I}f(A_i)$.
+}
+\end{center}
+
+ \item  Soit $x\in E$.
+
+\begin{align*}
+x\in f\left(\bigcap_{i\in I}A_i\right)&\Leftrightarrow\exists y\in\bigcap_{i\in I}A_i/\;x=f(y)\Leftrightarrow\exists y\in E/\;\forall i\in I,\;
+y\in A_i\;\mbox{et}\;x=f(y)\\
+ &\Rightarrow\forall i\in I/\;\exists y\in A_i/\;x=f(y)\Leftrightarrow\forall i\in I/\;x\in f(A_i)\\
+ &\Leftrightarrow x\in\bigcap_{i\in I}f(A_i)
+\end{align*}
+Donc
+
+\begin{center}
+\shadowbox{
+$f\left(\displaystyle\bigcap_{i\in I}A_i\right)\subset\displaystyle\bigcap_{i\in I}f(A_i)$.
+}
+\end{center}
+L'inclusion contraire n'est pas toujours vraie. Par exemple, pour $x$ réel on pose $f(x)=x^2$ puis $A=\{-1\}$ et
+$B=\{1\}$. $A\cap B=\varnothing$ et donc $f(A\cap B)=\varnothing$ puis $f(A)=f(B)=\{1\}$ et donc $f(A)\cap f(B)=\{1\}$.
+
+ \item  Il n'y a aucune inclusion vraie entre $f(E\setminus A)$ et $F\setminus f(A)$. Par exemple, soit
+$\begin{array}[t]{cccc}
+f~:&\Rr&\rightarrow&\Rr\\
+ &x&\mapsto&x^2
+\end{array}$ et $A=[-1,2]$.
+$f(A)=[0,4]$ et donc $C_{\Rr}(f(A))=]-\infty,0[\cup]4,+\infty[$ mais $f(C_{\Rr}A)=f(]-\infty,-1[\cup]2,+\infty[)
+=]1,+\infty[$ et aucune inclusion entre les deux parties n'est vraie.
+ \item  Soit $x\in E$.
+
+$$x\in f^{-1}\left(\bigcap_{i\in I}B_i\right)\Leftrightarrow f(x)\in\bigcap_{i\in I}B_i\Leftrightarrow\forall i\in I,\;f(x)\in B_i\Leftrightarrow\forall i\in
+I,\;x\in f^{-1}(B_i)\Leftrightarrow x\in\bigcap_{i\in I}f^{-1}(B_i).$$
+Donc,
+
+\begin{center}
+\shadowbox{
+$f^{-1}(\displaystyle\bigcap_{i\in I}B_i)=\displaystyle\bigcap_{i\in I}f^{-1}(B_i)$.
+}
+\end{center}
+
+ \item  Soit $x\in E$.
+
+$$x\in f^{-1}(\bigcup_{i\in I}B_i)\Leftrightarrow f(x)\in\bigcup_{i\in I}B_i\Leftrightarrow\exists i\in I,\;f(x)\in B_i\Leftrightarrow\exists i\in
+I,\;x\in f^{-1}(B_i)\Leftrightarrow x\in\bigcup_{i\in I}f^{-1}(B_i).$$
+Donc,
+
+\begin{center}
+\shadowbox{
+$f^{-1}(\displaystyle\bigcup_{i\in I}B_i)=\displaystyle\bigcup_{i\in I}f^{-1}(B_i)$.
+}
+\end{center}
+ \item  Soit $x\in E$.
+
+$$x\in f^{-1}(F\setminus B_i)\Leftrightarrow f(x)\in F\setminus B_i\Leftrightarrow f(x)\notin B_i\Leftrightarrow x\notin f^{-1}(B_i)\Leftrightarrow x\in
+E\setminus f^{-1}(B_i).$$
+Donc,
+
+\begin{center}
+\shadowbox{
+$f^{-1}(F\setminus B_i)=E\setminus f^{-1}(B_i)$.
+}
+\end{center}
+\end{enumerate}
+\fincorrection
+\finexercice

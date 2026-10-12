@@ -1,0 +1,53 @@
+\exercice{1960, liousse, 2003/10/01}
+\video{tdFJc9r8NSM}
+\enonce
+On considère le triangle 
+$ABC$ dont les c\^otés ont pour équations
+$(AB) : x+2y=3 , (AC) : x+y=2 , (BC) : 2x+3y=4$.
+\begin{enumerate}
+\item Donner les coordonnées des points $A, B, C$.
+\item Donner les coordonnées des milieux $A', B', C'$ des segments $[BC]$, $[AC]$ et $[AB]$ respectivement.
+\item Donner une équation de chaque médiane et vérifier qu'elles sont concourantes.
+\end{enumerate}
+\finenonce
+
+\indication
+Les médianes sont les droites $(AA')$, $(BB')$, $(CC')$.
+\finindication
+
+\correction
+\begin{enumerate}
+  \item Le point $A$ est l'intersection des droites $(AB)$ et $(AC)$.
+Les coordonnées $(x,y)$ de $A$ sont donc solutions du système :
+$\left\{ \begin{array}{l}
+x+2y=3 \\ x+y=2 \\ 
+\end{array} \right.$ donné par 
+les équations des deux droites.
+La seule solution est $(x,y)=(1,1)$.
+On a donc $A=(1,1)$. On fait de même pour obtenir le point $B=(-1,2)$ et $C=(2,0)$.
+
+  \item Notons $A'$ le milieu de $[BC]$ alors les coordonnées se trouvent par la formule suivante
+$A'= (\frac{x_B+x_C}{2},\frac{y_B+y_C}{2}) = (\frac12,1)$.
+De même on trouve $B'=(\frac32,\frac12)$ et $C'=(0,\frac32)$.
+
+  \item 
+  \begin{enumerate}
+    \item Les médianes ont pour équations : 
+$(AA') : (y=1)$ ; $(BB') : (3x+5y=7)$ ; $(CC') : (3x+4y=6)$.
+    \item Vérifions que les trois médianes sont concourantes (ce qui est vrai quelque soit le triangle).
+On calcule d'abord l'intersection $I=(AA')\cap (BB')$, les coordonnées du point $I$ d'intersection vérifient 
+donc le système 
+$\left\{ \begin{array}{l}
+y=1 \\ 3x+5y=7 \\ 
+\end{array} \right.$. On trouve $I=(\frac23,1)$.
+
+Il ne reste plus qu'à vérifier que $I$ appartient à la droite $(CC')$ d'équation $3x+4y=6$.
+En effet $3x_I+4y_I=6$ donc $I \in (CC')$.
+
+Conclusion : les médianes sont concourantes au point $I=(\frac23,1)$.
+  \end{enumerate}
+\end{enumerate}
+
+\fincorrection
+
+\finexercice

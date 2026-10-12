@@ -1,0 +1,52 @@
+\exercice{5160, rouget, 2010/06/30}
+\enonce[***]
+Soit $n\in\Nn^*$ et $(x_1,x_2,...,x_n )\in[-1,1]^n$ tels que $x_1+x_2+...+x_n=0$.
+
+Montrer que $|x_1+2x_2+...+nx_n|\leq E(\frac{n^2}{4})$.
+\finenonce
+
+\noindication
+
+\correction
+Soient $n\in\Nn^*$ et $(x_1,x_2,...,x_n )\in[-1,1]^n$ tels que $x_1+x_2+...+x_n=0$.
+
+On écrit
+
+$$(x_1+2x_2+...+nx_n)=(x_1+x_2+...+x_n)+(x_2+x_3+....+x_n)+(x_3+...+x_n)+...+(x_{n-1}+x_n)+x_n,$$
+
+avec $x_1+...+x_n=0$ et donc $x_2+...+x_n=-x_1$ ...
+
+\begin{itemize}
+\item[\textbf{1er cas.}] Si $n=2p$ est pair, alors $\frac{n^2}{4}=p^2$ et
+donc, $E(\frac{n^2}{4})=p^2=\frac{n^2}{4}$. Dans ce cas, on peut écrire
+
+\begin{align*}
+|x_1+2x_2+...+nx_n|&\leq|x_1+x_2+...+x_{2p}|+|x_2+....+x_{2p}|+...+|x_p+...+x_{2p}|\\
+ &\;+|x_{p+1}+...+x_{2p}|...+|x_{2p-1}+
+x_{2p}|+|x_{2p}|\\
+ &=0+|-x_1|+|-x_1-x_2|+...+|-x_{1}+...-x_{p-1}|\\
+ &+|x_{p+1}+...+x_{2p}|...+|x_{2p-1}+x_{2p}|+|x_{2p}|\\
+ &\leq0+1+2+...+(p-1)+p+(p-1)+...+1=2\frac{p(p-1)}{2}+p=p^2=E(\frac{n^2}{4})
+\end{align*}
+
+\item[\textbf{2ème cas.}] Si $n=2p+1$ est impair, alors $\frac{n^2}{4}=p^2+p+\frac{1}{4}$ et
+donc, $E(\frac{n^2}{4})=p^2+p=\frac{n^2-1}{4}$. Dans ce cas, on peut écrire
+
+\begin{align*}
+|x_1+2x_2+...+nx_n|&\leq|x_1+x_2+...+x_{2p+1}|+...+|x_{p+1}+...+x_{2p+1}|\\
+ &+|x_{p+2}+...+x_{2p+1}|...+|x_{2p+1}|\\
+ &=0+|-x_1|+|-x_1-x_2|+...+|-x_{1}+...-x_{p}|\\
+ &+|x_{p+2}+...+x_{2p+1}|...+|x_{2p+1}|\\
+ &\leq0+1+2+...+(p-1)+p+p+(p-1)+...+1=2\frac{p(p+1)}{2}=p^2+p=E(\frac{n^2}{4})
+\end{align*}
+
+\end{itemize}
+
+Dans tous les cas, on a montré que
+\begin{center}
+\shadowbox{
+$\forall n\in\Nn^*,\;|x_1+2x_2+...+nx_n|\leq E(\frac{n^2}{4}).$
+}
+\end{center}
+\fincorrection
+\finexercice

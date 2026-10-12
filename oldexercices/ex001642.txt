@@ -1,0 +1,63 @@
+\exercice{1642, barraud, 2003/09/01}
+
+\enonce
+  Soit $A$ la matrice $A=
+  \begin{pmatrix}
+    1&-1&-1\\
+   -1& 1&-1\\
+   -1&-1& 1
+  \end{pmatrix}
+  $.
+  \begin{enumerate}
+  \item 
+    Calculer $^{t}\!A$. La matrice $A$ est-elle diagonalisable~? 
+  \item
+    Diagonaliser $A$.
+  \item
+    Diagonaliser $A$ dans une base orthonormée (pour le produit scalaire
+    usuel de $\R^{3}$).
+  \end{enumerate}
+
+\finenonce
+
+\noindication
+
+\correction
+  \begin{enumerate}
+  \item 
+    ${}^t{A}=A$ donc $A$ est diagonalisable dans une base
+    orthonormée.
+
+  \item
+    Par exemple~: $P=
+    \begin{pmatrix}
+      1& 1& 1\\
+      1&-1& 0\\
+      1& 0&-1
+    \end{pmatrix}
+$, $P^{-1}AP=
+\begin{pmatrix}
+  -1& 0& 0\\
+   0& 2& 0\\
+   0& 0& 2
+ \end{pmatrix}
+$.
+
+ \item
+   $Q=
+   \begin{pmatrix}
+     1/\sqrt{3} & 1/\sqrt{2} & 1/\sqrt{6} \\
+     1/\sqrt{3} &-1/\sqrt{2} & 1/\sqrt{6} \\
+     1/\sqrt{3} &          0 &-2/\sqrt{6} 
+   \end{pmatrix}
+$, $Q^{-1}AQ=\begin{pmatrix}
+  -1& 0& 0\\
+   0& 2& 0\\
+   0& 0& 2
+ \end{pmatrix}
+$ et ${}^t{Q}=Q^{-1}$
+  \end{enumerate}
+\fincorrection
+
+\finexercice
+

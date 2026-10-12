@@ -1,0 +1,79 @@
+\exercice{5634, rouget, 2010/10/16}
+\enonce[**]
+Rang du système de formes linéaires sur $\Rr^4$ 
+
+\begin{center}
+$\begin{array}{l}
+f_1 = x_1 + 2x_2 - x_3 - 2x_4\\
+f_2 = x_1 + x_2 + mx_3 + x_4\\
+f_3 = x_1+ x_3 + (m+4)x_4\\
+f_4=x_2 - 3x_3 - mx_4
+\end{array}
+$ ?
+\end{center}
+\finenonce
+
+\noindication
+
+\correction
+La matrice de la famille $(f_1,f_2,f_3,f_4)$ dans la base canonique du dual de $\Rr^4$ est $A =\left(
+\begin{array}{cccc}
+1&1&1&0\\
+2&1&0&1\\
+-1&m&1&-3\\
+-2&1&m+4&-m
+\end{array}
+\right)$. La matrice $A$ a même rang que la matrice $\left(
+\begin{array}{cccc}
+1&0&0&0\\
+2&-1&-2&1\\
+-1&m+1&2&-3\\
+-2&3&m+6&-m
+\end{array}
+\right)$ (pour $2\leqslant j\leqslant 3$, $C_j\leftarrow C_j-C_1$) puis que la matrice $\left(
+\begin{array}{cccc}
+1&0&0&0\\
+2&-1&0&0\\
+-1&m+1&-2m&m-2\\
+-2&3&m&-m+3
+\end{array}
+\right)
+$ ($C_3\leftarrow C_3-2C_2$ et $C_4\leftarrow C_4+C_2$)
+
+\textbullet~Si $m = 0$, $A$ a même rang que la matrice $\left(
+\begin{array}{cccc}
+1&0&0\\
+2&-1&0\\
+-1&1&-2\\
+-2&3&3
+\end{array}
+\right)
+$et donc $\text{rg}(A)=3$.
+
+\textbullet~Si $m\neq0$, $A$ a même rang que la matrice $\left(
+\begin{array}{cccc}
+1&0&0&0\\
+2&-1&0&0\\
+-1&m+1&-2&m-2\\
+-2&3&1&-m+3
+\end{array}
+\right)
+$ ($C_3\leftarrow\frac{1}{m}C_3$) puis que la matrice $\left(
+\begin{array}{cccc}
+1&0&0&0\\
+2&-1&0&0\\
+-1&m+1&-2&0\\
+-2&3&1&-m+4
+\end{array}
+\right)
+$ ($C_4\leftarrow2C_4+(m-2)C_3$)
+
+Donc, si $m =4$, $\text{rg}(A)= 3$ et si $m$ n'est ni $0$ ni $4$, $\text{rg}(A)=4$.
+
+\begin{center}
+\shadowbox{
+Si $m\notin\{0,4\}$, $\text{rg}(f_1,f_2,f_3,f_4)=4$ et si $m\in\{0,4\}$, $\text{rg}(f_1,f_2,f_3,f_4)=3$.
+}
+\end{center}
+\fincorrection
+\finexercice

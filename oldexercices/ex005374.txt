@@ -1,0 +1,145 @@
+\exercice{5374, rouget, 2010/07/06}
+\enonce[***I]
+Calculer
+
+\begin{enumerate}
+ \item  $\left|\begin{array}{ccccc}
+0&1&\ldots& &1\\
+1&0&\ddots& &\vdots\\
+\vdots&\ddots&\ddots&\ddots&\vdots\\
+\vdots& &\ddots&0&1\\
+1&\ldots&\ldots&1&0
+\end{array}
+\right|$ et $\left|\begin{array}{ccccc}
+1&1&\ldots& &1\\
+1&0&\ddots& &\vdots\\
+\vdots&\ddots&\ddots&\ddots&\vdots\\
+\vdots& &\ddots&0&1\\
+1&\ldots&\ldots&1&0
+\end{array}
+\right|$   \item  $\mbox{det}((i+j-1)^2)$  \item  $\left|\begin{array}{ccccc}
+a&b&\ldots& &b\\
+b&a&\ddots& &\vdots\\
+\vdots&\ddots&\ddots&\ddots&\vdots\\
+\vdots& &\ddots&a&b\\
+b&\ldots&\ldots&b&a
+\end{array}
+\right|$
+
+ \item  $\left|\begin{array}{ccccc}
+a_1+x&c+x&\ldots&\ldots&c+x\\
+b+x&a_2+x&\ddots& &\vdots\\
+\vdots&\ddots&\ddots&\ddots&\vdots\\
+\vdots& &\ddots&a_{n-1}+x&c+x\\
+b+x&\ldots&\ldots&b+x&a_n+x
+\end{array}
+\right|$$b$, $c$ complexes distincts   \item  $\left|\begin{array}{ccccc}
+2&1&0&\ldots&0\\
+1&2&\ddots&\ddots&\vdots\\
+0&\ddots&\ddots&\ddots&0\\
+\vdots&\ddots&\ddots&2&1\\
+1&\ldots&0&1&2
+\end{array}
+\right|$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Pour le premier déterminant, on retranche la première colonne à chacune des autres et on obtient un déterminant triangulaire inférieur dont la valeur est $(-1)^{n-1}$. Pour le deuxième, on ajoute à la première colonne la somme de toutes les autres, puis on met $(n-1)$ en facteurs de la première colonne et on tombe sur le premier déterminant. Le deuxième déterminant vaut donc $(-1)^{n-1}(n-1)$.
+ \item  Pour $(i,j)$ élément de $\llbracket1,n\rrbracket^2$, $(i+j-1)^2=j^2+2(i-1)j+(i-1)^2$. Donc, 
+
+$$\forall j\in\{1,...,n\},\;C_j=j^2(1)_{1\leq i\leq n}+2j(i-1)_{1\leq i\leq n}+((i-1)^2)_{1\leq i\leq n}.$$
+Les colonnes de la matrice sont donc éléments de $\mbox{Vect}((1)_{1\leq i\leq n},(i-1)_{1\leq i\leq n},((i-1)2)_{1\leq i\leq n})$ qui est de dimension inférieure ou égale à $3$ et la matrice proposée est de rang infèrieur ou égal à $3$. Donc, si $n\geq4$, $\Delta_n=0$. Il reste ensuite à calculer $\Delta_1=1$ puis $\Delta_2=\left|
+\begin{array}{cc}
+1&4\\
+4&9
+\end{array}
+\right|=-7$ puis $\Delta_3=\left|
+\begin{array}{ccc}
+1&4&9\\
+4&9&16\\
+9&16&25
+\end{array}
+\right|=(225-256)-4(100-144)+9(64-81)=-31+176-153=-8$.
+ \item 
+
+$$\Delta_n=\mbox{det}(C_1,...,C_n)=\mbox{det}(C_1+...+C_n,C_2,...,C_n)=(a+(n-1)b)
+\left|
+\begin{array}{ccccc}
+1&b&\ldots&\ldots&b\\
+1&a&\ddots& &\vdots\\
+\vdots&b&\ddots&\ddots&\vdots\\
+\vdots&\vdots&\ddots&\ddots&b\\
+1&b&\ldots&b&a
+\end{array}
+\right|,$$
+par linéarité par rapport à la première colonne. Puis, aux lignes numéros $2$,..., $n$, on retranche la première ligne pour obtenir~:
+
+$$\Delta_n=(a+(n-1)b)\left|
+\begin{array}{ccccc}
+1&b&\ldots&\ldots&b\\
+0&a-b&0&\ldots&0\\
+\vdots&0&\ddots&\ddots&\vdots\\
+\vdots&\vdots&\ddots&\ddots&0\\
+0&0&\ldots&0&a-b
+\end{array}
+\right|=(a+(n-1)b)(a-b)^{n-1}.$$
+ \item  Par $n$ linéarité, $D_n$ est somme de $2^n$ déterminants. Mais dans cette somme, un déterminant est nul dès qu'il contient au moins deux colonnes de $x$. Ainsi, en posant $\Delta_n=\mbox{det}(C_1+xC,...,C_n+xC)$ où $C_k=\left(
+\begin{array}{c}
+a_1\\
+\vdots\\
+a_{k-1}\\
+b\\
+a_{k+1}\\
+\vdots\\
+a_n
+\end{array}
+\right)$ et $C=(1)_{1\leq i\leq n}$,
+on obtient~:
+
+$$\Delta_n=\mbox{det}(C_1,...,C_n)+\sum_{k=1}^{n}\mbox{det}(C_1,...,C_{k-1},xC,C_{k+1},...,C_n),$$
+ce qui montre que $\Delta_n$ est un polynôme de degré infèrieur ou égal à $1$. Posons $\Delta_n=AX+B$ et $P=\prod_{k=1}^{n}(a_k-X)$. Quand $x=-b$ ou $x=-c$, le déterminant proposé est triangulaire et se calcule donc immédiatement. Donc~:
+\textbf{1er cas.} Si $b\neq c$. $\Delta_n(-b)=P(b)$ et $\Delta_n(-c)=P(c)$ fournit le système $\left\{
+\begin{array}{l}
+-bA+B=P(b)\\
+-cA+B=P(c)
+\end{array}
+\right.$ et donc $A=-\frac{P(c)-P(b)}{c-b}$ et $B=\frac{cP(b)-bP(c)}{c-b}$. Ainsi,
+
+\begin{center}
+\shadowbox{
+si $b\neq c$, $\Delta_n=-\frac{P(c)-P(b)}{c-b}x+\frac{cP(b)-bP(c)}{c-b}\;\mbox{où}\;P=\prod_{k=1}^{n}(a_k-X).$
+}
+\end{center}
+\textbf{2ème cas.} Si $b=c$, l'expression obtenue en fixant $x$ et $b$ est clairement une fonction continue de $c$ car polynômiale en $c$. On obtient donc la valeur de $\Delta_n$ quand $b=c$ en faisant tendre $c$ vers $b$ dans l'expression déjà connue de $\Delta_n$ pour $b\neq c$. Maintenant, quand $b$ tend vers $c$, $-\frac{P(c)-P(b)}{c-b}$ tend vers $-P'(b)$ et 
+$$\frac{cP(b)-bP(c)}{c-b}=\frac{c(P(b)-P(c))+(c-b)P(c)}{c-b},$$
+
+tend vers $-bP'(b)+P(b)$.
+
+\begin{center}
+\shadowbox{
+si $b=c$, $\Delta_n=-xP'(b)+P(b)-bP'(b)\;\mbox{où}\;P=\prod_{k=1}^{n}(a_k-X).$
+}
+\end{center}
+ \item  $\Delta_2=3$ et $\Delta_3=\left|
+\begin{array}{ccc}
+2&1&0\\
+1&2&1\\
+0&1&2
+\end{array}
+\right|=2\times3-2=4$. Puis, pour $n\geq4$, on obtient en développant suivant la première colonne~:
+
+$$\Delta_n=2\Delta_{n-1}-\Delta_{n-2}.$$
+D'où, pour $n\geq4$, $\Delta_n-\Delta_{n-1}=\Delta_{n-1}-\Delta_{n-2}$ et la suite $(\Delta_n-\Delta_{n-1})_{n\geq3}$ est constante. Par suite, pour $n\geq3$, $\Delta_n-\Delta_{n-1}=\Delta_3-\Delta_2=1$ et donc la suite $(\Delta_n)_{n\geq2}$ est arithmétique de raison $1$. On en déduit que, pour $n\geq2$, $\Delta_n=\Delta_2+(n-2)\times1=n+1$ (on pouvait aussi résoudre l'équation caractéristique de la récurrence double).
+
+\begin{center}
+\shadowbox{
+$\forall n\geq2,\;\Delta_n=n+1.$
+}
+\end{center}
+\end{enumerate}
+\fincorrection
+\finexercice

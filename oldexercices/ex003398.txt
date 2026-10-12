@@ -1,0 +1,61 @@
+\exercice{3398, quercia, 2010/03/10}
+\enonce[Inversion de matrices]
+
+Inverser les matrices suivantes :
+
+
+\begin{enumerate}
+  \item $\begin{pmatrix}0 &       &(1) \cr
+                 &\ddots      \cr
+              (1)&       &0   \cr\end{pmatrix}$.
+    
+
+  \item $\begin{pmatrix}a &       &(b) \cr
+                 &\ddots      \cr
+              (b)&       &a   \cr\end{pmatrix}$.
+    
+
+  \item $\begin{pmatrix} 1 &1      &       &(0) \cr
+                  &\ddots &\ddots      \cr
+                  &       &\ddots &1   \cr
+             \span(0)     &       &1   \cr\end{pmatrix}$.
+   
+
+  \item $\begin{pmatrix} 1        &\bar\alpha &\bar\alpha^2 \cr
+               \alpha   &1          &\bar\alpha   \cr
+               \alpha^2 &\alpha     &1            \cr \end{pmatrix}$, $\alpha \in \C$.
+   
+
+  \item $\begin{pmatrix} (0) &&a_n \cr &\cdots\cr a_1 &&(0) \cr\end{pmatrix}$.
+    
+
+  \item $\begin{pmatrix}  1+\frac 1{\lambda_1} &&(1)                 \cr
+                     &\ddots                               \cr
+               (1)   &               &1+\frac 1{\lambda_n} \cr \end{pmatrix}$.
+   
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $\frac {A + (2-n)I}{n-1}$.
+  \item $\frac 1{(a-b)(a+(n-1)b)}
+              \begin{pmatrix} a+(n-2)b &       &(-b)     \cr
+                                 &\ddots           \cr
+                       (-b)      &       &a+(n-2)b \cr\end{pmatrix}$.
+  \item $\begin{pmatrix} 1 &-1     &1      &\dots   &\pm1   \cr
+                          &\ddots &\ddots &\ddots  &\vdots \cr
+                          &       &\ddots &\ddots  &1      \cr
+                          &       &       &\ddots  &-1     \cr
+                       (0)&       &       &        &1      \cr \end{pmatrix}$.
+  \item $\frac 1{1-\alpha\bar\alpha}
+            \begin{pmatrix} 1       &-\bar\alpha        &0           \cr
+                      -\alpha &1+\alpha\bar\alpha &-\bar\alpha \cr
+                      0       &-\alpha            &1           \cr\end{pmatrix}$.
+  \item $\begin{pmatrix} (0) &&1/a_n \cr &\cdots\cr 1/a_1 &&(0) \cr\end{pmatrix}$.
+  \item $\text{diag}(\lambda_i) -            \frac 1{1 + \lambda_1 + \dots + \lambda_n}(\lambda_i\lambda_j)$.
+\end{enumerate}
+ \fincorrection
+\finexercice

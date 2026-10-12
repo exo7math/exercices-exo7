@@ -1,0 +1,34 @@
+\exercice{4652, quercia, 2010/03/14}
+\enonce[Convergence uniforme]
+
+Soit $(a_n)$ une suite décroissante de limite nulle.
+Montrer que la série $\sum_{n=1}^\infty a_n\sin nx$ converge uniformément sur
+$\R$ si et seulement si $na_n \to 0$ lorsque $n\to\infty$.
+
+Pour le sens direct : utiliser le critère de convergence uniforme de Cauchy
+et l'inégalité : $\sin x \ge \frac{2x}\pi$ sur $[0,\pi/2]$.
+\finenonce
+
+\noindication
+
+\correction
+S'il y a convergence uniforme :
+$\|a_n\sin nx + \dots + a_p\sin px\|_\infty \to 0$ lorsque $n,p\to\infty$.
+
+On prend $x = \frac\pi{2p}$ : $0 \le \frac{a_p}p(n+\dots+p)
+                                  \le \frac1p(na_n + \dots + pa_p)
+                               \to 0$ lorsque $n,p\to\infty$.
+$n = [p/2]  \Rightarrow $ cqfd.
+
+Si $na_n \to 0$ : Soit $x \in {]0,\pi]}$ et $n$ tel que
+$\frac 1n \le x\le \frac1{n-1}$.
+
+Transformation d'Abel :
+$|a_n\sin nx + \dots + a_p\sin px| \le \frac{2a_n}{\sin x/2} \le \frac{2na_n}\pi$,
+
+et $|a_k\sin kx + \dots + a_{n-1}\sin (n-1)x| \le (ka_k + \dots + (n-1)a_{n-1})x
+\le \frac{n-k}{n-1}a_k\le 2a_k$.
+
+\fincorrection
+
+\finexercice

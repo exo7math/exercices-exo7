@@ -1,0 +1,34 @@
+\exercice{5919, tumpach, 2010/11/11}
+\enonce
+Montrer qu'une fonction \emph{continue} sur $[a,b]$ est
+Riemann-int\'egrable sur $[a,b]$.
+\finenonce
+
+\noindication
+
+\correction
+Une fonction $f$ continue sur $[a, b]$ est uniform\'ement continue
+sur $[a, b]$. En particulier, pour tout $\varepsilon>0$, il existe
+$n>0$ tel que
+\begin{equation*}
+|x - y| < \left(\frac{b-a}{n}\right) \Rightarrow |f(x) - f(y)|<
+\varepsilon.
+\end{equation*}
+Soit $\sigma=\{a_{0}=a < \dots < a_{n} = b\}$ la subdivision
+r\'eguli\`ere de $[a,b]$, de pas $\left(\frac{b-a}{n}\right)$. On
+a~:
+\begin{equation*}
+\sup_{]a_{k-1}, a_{k}[} f - \inf_{]a_{k-1}, a_{k}[} f \leq
+2\varepsilon.
+\end{equation*}
+Il vient alors~:
+\begin{equation*}
+\overline{S}_{f}^{\sigma} - \underline{S}_{f}^{\sigma} \leq
+\left(\frac{b-a}{n}\right)\sum_{k=1}^{n} 2 \varepsilon = (b-a)
+2\varepsilon,
+\end{equation*}
+ce qui permet de conclure gr\^ace au th\'eor\`eme de l'introduction que $f$
+est Riemann-int\'egrable sur $[a,b]$.
+\fincorrection
+
+\finexercice

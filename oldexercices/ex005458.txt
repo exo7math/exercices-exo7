@@ -1,0 +1,22 @@
+\exercice{5458, rouget, 2010/07/10}
+\enonce[**]
+Montrer que  $\sum_{k=1}^{n}\sin\frac{k}{n}=\frac{1}{2}+\frac{1}{2n}+o(\frac{1}{n})$.
+\finenonce
+
+\noindication
+
+\correction
+Soit $n\in\Nn^*$.
+
+\begin{align*}\ensuremath
+\sum_{k=1}^{n}\sin\frac{k}{n^2}&=\mbox{Im}(\sum_{k=1}^{n}e^{ik/n^2})=\mbox{Im}\left(e^{i/n^2}\frac{1-e^{ni/n^2}}{1-e^{i/n^2}}\right)
+=\mbox{Im}\left(e^{i(1+\frac{n}{2}-\frac{1}{2})/n^2}\frac{\sin\frac{1}{2n}}{\sin\frac{1}{2n^2}}\right)
+=\frac{\sin\frac{n+1}{2n^2}\sin\frac{1}{2n}}{\sin\frac{1}{2n^2}}\\
+ &\underset{n\rightarrow+\infty}{=}(\frac{1}{2n}+\frac{1}{2n^2}+o(\frac{1}{n^2}))(\frac{1}{2n}+o(\frac{1}{n^2}))(\frac{1}{2n^2}+o(\frac{1}{n^3}))^{-1}\\
+ &=(1+\frac{1}{n}+o(\frac{1}{n}))(\frac{1}{2}+o(\frac{1}{n}))(1+o(\frac{1}{n}))^{-1}=\frac{1}{2}+\frac{1}{2n}
+ +o(\frac{1}{n}),
+\end{align*}
+
+(on peut aussi partir de l'encadrement $\frac{k}{n^2}-\frac{k^3}{6n^6}\leq\sin\frac{k}{n^2}\leq\frac{k}{n^2}$).
+\fincorrection
+\finexercice

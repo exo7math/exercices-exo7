@@ -1,0 +1,67 @@
+\exercice{1186, liousse, 2003/10/01}
+
+\enonce
+L'objectif de ce probl\`eme est de r\'esoudre l'\'enigme du berger :\\
+Un berger poss\`ede un troupeau de 101 moutons et remarque par hasard la 
+propri\'et\'e suivante : pour chaque mouton, il peut trouver une fa\c{c}on 
+de scinder 
+le troupeau des 100
+autres moutons en deux troupeaux de 50 moutons et de m\^eme poids total. Il en
+d\'eduit que tous les moutons ont le m\^eme poids. Comment a-t-il fait ? 
+On montre, 
+dans un premier temps, un r\'esultat utile pour la d\'emonstration finale.\\
+\begin{enumerate}
+\item
+\begin{enumerate}
+\item Montrer par r\'ecurrence que le d\'eterminant de 
+toute matrice carr\'ee, dont les \'el\'ements diagonaux sont des nombres impairs, 
+et dont tous les autres sont des nombres pairs, est un nombre impair.\\
+\item En d\'eduire qu'une matrice de cette forme est inversible.\\
+\end{enumerate}
+\item L'objectif de cette question est de r\'esoudre l'\'enigme du berger.
+On note $B$ la matrice carr\'ee de taille 101 construite de la mani\`ere suivante:\\
+On num\'erote les moutons de 1 \`a 101. Quand le berger retire le i\`eme mouton du
+troupeau, il s\'epare alors le reste du troupeau en deux
+troupeaux  \'egaux ( troupeau A, troupeau B) et de
+m\^eme poids. On note alors $B_{i,j}$ les coefficients de la i\`eme ligne de la
+matrice $B$ obtenu de la fa\c{c}on suivante
+$$ B_{i,j}= \left \{ \begin{array}{ll} 
+1 & \hbox{ si } j=i \\
+0 & \hbox{ si le j-i\`eme mouton se trouve dans le troupeau A }\\
+2 & \hbox{ si le j-i\`eme mouton se trouve dans le troupeau B }.
+\end{array} \right.$$
+
+On note $X$ la matrice de taille $101\times 1$ constitu\'ee des 
+poids des moutons
+$$X=\left ( \begin{array}{c}
+\hbox{ poids du monton 1} \\
+\hbox{ poids du mouton 2} \\
+\vdots \\
+\hbox{ poids du mouton 100 }\\
+\hbox{ poids du mouton 101 }
+\end{array} \right).$$
+
+On note $M$ le poids total du troupeau.\\
+\begin{enumerate}
+\item Calculer 
+$$ B\times \left ( \begin{array}{c}
+1\\
+1\\
+\vdots \\
+1\\
+1\\
+\end{array} \right).$$\\
+\item Calculer
+$$ BX. $$
+\item Montrer que $B$ est inversible.\\
+\item En d\'eduire $X$ et r\'esoudre l'\'enigme du berger.
+\end{enumerate}
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\nocorrection
+
+\finexercice
+

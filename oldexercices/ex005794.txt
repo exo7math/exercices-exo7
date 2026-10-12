@@ -1,0 +1,46 @@
+\exercice{5794, rouget, 2010/10/16}
+\enonce[***]
+Soit $A$ une matrice carrée réelle symétrique positive de format $n$.
+Montrer que $1 +\sqrt[n]{\text{det}(A)}\leqslant\sqrt[n]{\text{det}(I_n+A)}$.
+\finenonce
+
+\noindication
+
+\correction
+La matrice $A$ est symétrique réelle positive. Donc ses valeurs propres $\lambda_1$,..., $\lambda_n$ sont des réels positifs. De plus,
+
+\begin{center}
+$\text{det}A =\lambda_1...\lambda_n$ et $\text{det}(I_n+A) =\chi_A(-1) =(1+\lambda_1)...(1+\lambda_n)$.
+\end{center}
+
+L'inégalité à démontrer équivaut donc à :
+
+\begin{center}
+$\forall(\lambda_1,...,\lambda_n)\in(\Rr^+)^n$, $1+\sqrt[n]{\prod_{k=1}^{n}\lambda_k}\leqslant\sqrt[n]{\prod_{k=1}^{n}(1+\lambda_k)}$.
+\end{center}
+
+Soit donc $(\lambda_1,...,\lambda_n)\in(\Rr^+)^n$. Si l'un des $\lambda_k$ est nul, l'inégalité est immédiate.
+
+Supposons dorénavant tous les $\lambda_k$ strictement positifs. L'inégalité à démontrer s'écrit
+
+\begin{center}
+$\ln\left(1+\text{exp}\left(\frac{1}{n}\left(\ln(\lambda_1)+...+\ln(\lambda_n)\right)\right)\right)\leqslant\frac{1}{n}\left(\ln(1+\text{exp}(\ln(\lambda_1)))+ ... +\ln(1+\text{exp}(\ln(\lambda_n)))\right)$\quad$(*)$
+\end{center}
+
+ou encore $f\left(\frac{1}{n}(x_1+...+x_n)\right)\leqslant\frac{1}{n}(f(x_1)+...+f(x_n))$ où $\forall x\in\Rr$, $f(x) =\ln(1+e^x)$ et $\forall k\in\llbracket1,n\rrbracket$, $x_k =\ln(\lambda_k)$.
+
+L'inégalité à démontrer est une inégalité de convexité. La fonction $f$ est deux fois dérivable sur $\Rr$ et pour tout réel $x$,
+
+\begin{center}
+$f'(x)=\frac{e^x}{e^x+1}=1-\frac{1}{e^x+1}$ puis $f''(x) =\frac{e^x}{(e^x+1)^2}\geqslant0$.
+\end{center}
+
+La fonction $f$ est donc convexe sur $\Rr$ ce qui démontre l'inégalité $(*)$.
+
+\begin{center}
+\shadowbox{
+$\forall A\in\mathcal{S}_n^+(\Rr)$, $1 +\sqrt[n]{\text{det}(A)}\leqslant\sqrt[n]{\text{det}(I_n+A)}$.
+}
+\end{center}
+\fincorrection
+\finexercice

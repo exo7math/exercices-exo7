@@ -1,0 +1,29 @@
+\exercice{4818, quercia, 2010/03/16}
+\enonce[Thm de l'hyperplan ferm{\'e}]
+Soit $E$ un $\R$-evn et $f \in E^*$.
+
+\begin{enumerate}
+  \item Montrer que $f$ est continue si et seulement si $\mathrm{Ker} f$ est ferm{\'e}
+    (pour la r{\'e}ciproque : supposer $\mathrm{Ker} f$ ferm{\'e}, montrer que $\{x \text{ tq } f(x) > 0\}$
+     est ouvert, puis {\'e}tudier $\{ x \text{ tq } -1 < f(x) < 1\}$).
+  \item On suppose $f$ continue. Soit $x \in E$. Montrer que $|f(x)| = \|f\|d(x,\mathrm{Ker} f)$.
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item 
+  \item Si $x \notin \mathrm{Ker} f$ :
+             $\forall\ y \in \mathrm{Ker} f,\ |f(x)| = |f(x-y)| \le \|f\|\,\|x-y\|$
+             donc $|f(x)| \le \|f\|d(x,\mathrm{Ker} f)$.\par
+             Soit $z \in E : z = \alpha x + y$ avec $y \in \mathrm{Ker} f$.
+             Alors $|f(z)| = |\alpha||f(x)|$ et $\|z\| \ge |\alpha|d(x,\mathrm{Ker} f)$
+
+             donc $\frac{|f(z)|}{\|z\|} \le \frac{|f(x)|}{d(x,\mathrm{Ker} f)}$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

@@ -1,0 +1,27 @@
+\exercice{5893, rouget, 2010/10/16}
+\enonce[*]
+Soit $f$ une application de $\Rr^n$ dans $\Rr$ de classe $C^1$. On dit que $f$ est positivement homogène de degré $r$ ($r$ réel donné) si et seulement si $\forall\lambda\in]0,+\infty[$, $\forall x\in\Rr^n$, $f(\lambda x) =\lambda^rf(x)$.
+
+Montrer pour une telle fonction l'identité d'\textsc{Euler} :
+
+\begin{center}
+$\forall x = (x_1,...,x_n)\in \Rr^n$ $\sum_{i=1}^{n}x_i \frac{\partial f}{\partial x_i}(x) = rf(x)$.
+\end{center}
+\finenonce
+
+\noindication
+
+\correction
+On dérive par rapport à $\lambda$ les deux membres de l'égalité $f(\lambda x) =\lambda^rf(x)$ et on obtient
+
+\begin{center}
+$\forall x=(x_1,...,x_n)\in\Rr^n$, $\forall\lambda>0$, $\sum_{i=1}^{n}x_i \frac{\partial f}{\partial x_i}(\lambda x)=r\lambda^{r-1}f(x)$,
+\end{center}
+
+et pour $\lambda=1$, on obtient
+
+\begin{center}
+$\forall x = (x_1,...,x_n)\in \Rr^n$ $\sum_{i=1}^{n}x_i \frac{\partial f}{\partial x_i}(x) = rf(x)$.
+\end{center}
+\fincorrection
+\finexercice

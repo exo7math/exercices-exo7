@@ -1,0 +1,34 @@
+\exercice{4338, quercia, 2010/03/12}
+\enonce[Convolution (Mines MP 2003)]
+Soient $f,g\in\mathcal{C}([0,+\infty[,\R)$. On pose $h(x) =  \int_{t=0}^x f(x-t)g(t)\,d t$.
+
+\begin{enumerate}
+  \item Existence et continuité de~$h$.
+  \item Peut-on inverser $f$ et $g$~?
+  \item On suppose $f$ intégrable sur~$[0,+\infty[$ et $g$ bornée. Montrer que~$h$ est bornée.
+  \item On prend $f(x) = \frac{\sin x}x$ et $g(x) = \cos(\alpha x)$ avec $0\le\alpha\le 1$.
+    $h$ est-elle bornée (on pourra étudier les cas $\alpha=0$ et $\alpha=1$)~?
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item 
+  \item 
+  \item 
+  \item Pour $\alpha=0$ on a $h(x) =  \int_{t=0}^x\frac{\sin t}t\,d t$, quantité
+    bornée car l'intégrale converge en~$+\infty$.
+
+    Pour $\alpha=1$ on a $h(x) = \cos x \int_{t=0}^x \frac{\cos t\sin t}t\,d t
+                               + \sin x \int_{t=0}^x \frac{\sin^2 t}t\,d t$,
+    quantité non bornée car la deuxième intégrale diverge en~$+\infty$.
+
+    Pour $0<\alpha<1$, développer le $\cos(x-t)$ puis linéariser les produits
+    obtenus. On obtient quatre intégrales convergentes, donc $h$ est bornée.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

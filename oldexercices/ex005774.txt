@@ -1,0 +1,86 @@
+\exercice{5774, rouget, 2010/10/16}
+\enonce[** I Polynômes de \textsc{Tchebychev}]
+Soit $E=\Rr[X]$. Pour $(P,Q)\in E^2$, on pose $\varphi(P,Q)=\int_{-1}^{1}\frac{P(t)Q(t)}{\sqrt{1-t^2}}\;dt$. Pour $n\in\Nn$, on note $T_n$ le $n$-ème polynôme de \textsc{Tchebychev} de première espèce c'est-à-dire l'unique polynôme tel que $\forall\theta\in\Rr$, $T_n(\cos\theta)=\cos(n\theta)$.
+
+\begin{enumerate}
+ \item  Montrer que $\varphi$ est un produit scalaire sur $E$.
+
+\item 
+  \begin{enumerate}
+  \item Montrer que $(T_n)_{n\in\Nn}$ est une base orthogonale de l'espace préhilbertien $(E,\varphi)$.
+  \item Pour $n\in\Nn$, déterminer $\|T_n\|$.
+  \end{enumerate}
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  \textbullet~Soit $(P,Q)\in E^2$. L'application $t\mapsto\frac{P(t)Q(t)}{\sqrt{1-t^2}}$ est continue sur $]-1,1[$. Ensuite, l'application $t\mapsto\frac{P(t)Q(t)}{\sqrt{1+t}}$ est bornée au voisinage de $1$ car continue en $1$ et donc quand $t$ tend vers $1$, $\frac{P(t)Q(t)}{\sqrt{1-t^2}}=\frac{P(t)Q(t)}{\sqrt{1+t}}\times\frac{1}{\sqrt{1-t}}=O\left(\frac{1}{\sqrt{1-t}}\right)$. Puisque $\frac{1}{2}<1$, on en déduit que l'application $t\mapsto\frac{P(t)Q(t)}{\sqrt{1-t^2}}$ est intégrable sur un voisinage de $1$ à gauche. De même, quand $t$ tend vers $1$, $\frac{P(t)Q(t)}{\sqrt{1-t^2}}=O\left(\frac{1}{\sqrt{1+t}}\right)$ et l'application $t\mapsto\frac{P(t)Q(t)}{\sqrt{1-t^2}}$ est intégrable sur un voisinage de $-1$ à droite. Finalement, l'application $t\mapsto\frac{P(t)Q(t)}{\sqrt{1-t^2}}$ est intégrable sur $]-1,1[$ et $\varphi(P,Q)$ existe.
+
+\textbullet~La symétrie, la bilinéarité et la positivité de $\varphi$ sont claires. De plus, pour $P\in E$,
+
+\begin{align*}\ensuremath
+\varphi(P,P)=0&\Rightarrow\int_{-1}^{1}\frac{P^2(t)}{\sqrt{1-t^2}}\;dt=0\\
+ &\Rightarrow\forall t\in]-1,1[,\;\frac{P^2(t)}{\sqrt{1-t^2}}=0\;(\text{fonction continue, positive, d'intégrale nulle})\\
+ &\Rightarrow\forall t\in]-1,1[,P(t)=0\Rightarrow P=0\;(\text{polynôme ayant une infinité de racines}).
+\end{align*}
+
+Ainsi, l'application $\varphi$ est définie et finalement
+
+\begin{center}
+\shadowbox{
+l'application $\varphi$ est un produit scalaire sur $E$.
+}
+\end{center}
+
+\item 
+  \begin{enumerate}
+  \item Soit $(n,p)\in\Nn^2$. En posant $t=\cos\theta$, on obtient
+
+\begin{center}
+$\varphi(T_n,T_p)=\int_{-1}^{1}\frac{T_n(t)T_p(t)}{\sqrt{1-t^2}}\;dt=\int_{\pi}^{0}\frac{T_n(\cos\theta)T_p(\cos\theta)}{\sqrt{1-\cos^2\theta}}\;(-\sin\theta d\theta)=\int_{0}^{\pi}\cos(n\theta)\cos(p\theta)\;d\theta$.
+\end{center}
+
+Si de plus, $n\neq p$, 
+
+\begin{center}
+$\varphi(T_n,T_p)=\frac{1}{2}\int_{0}^{\pi}(\cos((n+p)\theta)+\cos((n-p)\theta))\;d\theta=\frac{1}{2}\left[\frac{\sin((n+p)\theta)}{n+p}+\frac{\sin((n-p)\theta)}{n-p}\right]_0^\pi=0$.
+\end{center}
+
+Ainsi, la famille $(T_n)_{n\in\Nn}$ est orthogonale. De plus, on sait que $\forall n\in\Nn$, $\text{deg}(T_n)=n$ et on a donc montré que
+
+\begin{center}
+\shadowbox{
+la famille $(T_n)_{n\in\Nn}$ est une base orthogonale de l'espace préhilbertien $(E,\varphi)$.
+}
+\end{center}
+
+  \item Soit $n\in\Nn$. Quand $p=n$, la formule précédente fournit
+
+\begin{center}
+$\|T_n\|^2=\frac{1}{2}\int_{0}^{\pi}(1+\cos(2n\theta))\;d\theta=\left\{
+\begin{array}{l}
+\pi\;\text{si}\;n=0\\
+\frac{\pi}{2}\;\text{si}\;n\geqslant1
+\end{array}
+\right.$,
+\end{center}
+
+et donc
+
+\begin{center}
+\shadowbox{
+$\forall n\in\Nn$, $\|T_n\|=\left\{
+\begin{array}{l}
+\rule[-2mm]{0mm}{0mm}\sqrt{\pi}\;\text{si}\;n=0\\
+\sqrt{\frac{\pi}{2}}\;\text{si}\;n\geqslant1
+\end{array}
+\right.$.
+}
+\end{center}
+  \end{enumerate}
+\end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,18 @@
+\exercice{7641, mourougane, 2021/08/10}
+\enonce[Singularités]
+ Que vaut, en fonction du nombre réel $r>0$, l'intégrale
+ $$I_r:=\int_{\Delta_r} \frac{dz}{2z^2-5z+2} \ \ ?$$
+ On précisera les valeurs de $r$ exclues.
+\finenonce
+\noindication
+\correction
+Les zéros du polynôme $2z^2-5z+2=(z-2)(2z-1)$ et donc les singularités de l'application méromorphe $f(z)=\frac{1}{2z^2-5z+2}$ sont $2$ et $1/2$. Ce sont des pôles simples.
+Leurs résidus respectifs sont $res_{2}(f)=\lim_{z\to 2}(z-2)\frac{1}{2z^2-5z+2}=\frac{1}{3}$ et $res_{1/2}(f)=\lim_{z\to 1/2}(z-\frac{1}{2})\frac{1}{2z^2-5z+2}=-\frac{1}{3}$. Leurs indices par rapport au chemin orienté ${\partial\Delta_r}$ sont $0$ ou $1$, suivant qu'ils sont ou pas dans le disque ${\Delta_r}$.
+On trouve donc, par le théorème des résidus appliqué à l'application méromorphe $f$ : (les valeurs de $r$ exclues sont $1/2$ et $2$ car les cercles correspondants passent par une singularité.)
+\begin{enumerate} 
+\item si $0<r<1/2$, $I_r=0$.
+\item si $1/2<r<2$, $I_r=-2i\pi/3$.
+\item si $2<r$, \ \ \ \ \ \ \ \ $I_r=1/3-1/3=0$.
+\end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,21 @@
+\exercice{5307, rouget, 2010/07/04}
+\enonce[***I]
+Montrer que tout nombre impair non divisible par $5$ admet un multiple qui ne s'écrit (en base $10$) qu'avec des $1$ (par exemple, $37.1=37$, $37.2=74$, $37.3=111$).
+\finenonce
+
+\noindication
+
+\correction
+Pour $k\in\Nn$, posons $a_k=11...1$ ($k+1$ chiffres $1$ en base $10$).
+
+Soit $n$ un entier naturel quelconque.
+
+La division euclidienne de $a_k$ par $n$ s'écrit~:~$a_k=n.q_k+r_k$ où $q_k$ et $r_k$ sont des entiers naturels tels que $0\leq r_k\leq n-1$.
+
+Les $n+1$ entiers $r_0$,..., $r_n$ sont à choisir parmi les $n$ entiers $0$, $1$,..., $n-1$. Les $n+1$ restes considérés ne peuvent donc être deux à deux distincts. Par suite,
+
+$$\exists(k,l)\in\Nn^2/\;0\leq k<l\leq n\;\mbox{et}\;r_k=r_l.$$
+
+Mais alors, $a_l-a_k=(q_l-q_k)n$ est un multiple de $n$. Comme $a_l-a_k=11...10...0$ ($l-k$ chiffres $1$ et $k+1$ chiffres $0$), on a montré que tout entier naturel admet un multiple de la forme $11...10...0=11...1.10^K$. Si de plus $n$ est impair, non divisible par $5$, alors $n$ est premier à $2$ et à $5$ et donc à $10^K$. D'après le théorème de \textsc{Gauss}, $n$ divise $11...1$.
+\fincorrection
+\finexercice

@@ -1,0 +1,30 @@
+\exercice{4559, quercia, 2010/03/14}
+\enonce[Recherche d'équivalents, Centrale MP 2006]
+Déterminer un équivalent au voisinage de $0$ de
+$S_{1}(x) = \sum_{n=1}^{\infty}{\frac{1}{\sh{(nx)}}}$ et
+$S_{2}(x) = \sum_{n=1}^{\infty}{\frac{1}{\sh^{2}{(nx)}}}$.
+
+
+
+\finenonce
+
+\noindication
+
+\correction
+On a
+$ \int_{t=x}^{+\infty}\frac{d t}{\sh t} \le xS_1(x)
+\le \frac x{\sh x} +  \int_{t=x}^{+\infty}\frac{d t}{\sh t}$
+et $\frac1{\sh t}=\frac1t + O(t)$ donc
+$ \int_{t=x}^{+\infty}\frac{d t}{\sh t}=-\ln(x)+ O(1)$.
+On en déduit $S_1(x)\sim-\frac{\ln x}x$.
+
+La même méthode ne marche pas pour $S_2$ car le terme résiduel,
+$\frac x{\sh^2(x)}$ n'est pas négligeable devant
+$ \int_{t=x}^{+\infty}\frac{d t}{\sh^2(t)}$.
+Par contre, on peut remarquer que la série
+$\sum_{n=1}^{\infty}{\frac{x^2}{\sh^{2}{(nx)}}}$ est normalement
+convergente sur~$\R$, d'où
+$S_2(x)\sim\frac{\zeta(2)}{x^2}$.
+\fincorrection
+
+\finexercice

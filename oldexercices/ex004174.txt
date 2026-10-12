@@ -1,0 +1,51 @@
+\exercice{4174, quercia, 2010/03/11}
+\enonce[Fonctions convexes]
+
+Soit $U$ un ouvert convexe de~$\R^n$ et $f : U \to \R$. On dit que
+$f$ est convexe lorsque~:
+$$\forall\ x,y\in U,\ \forall\ t\in{[0,1]},\ f(tx+(1-t)y) \le tf(x) + (1-t)f(y).$$
+On dit que $f$ est strictement convexe si l'inégalité précédente est
+stricte lorsque $x\ne y$ et $0<t<1$.
+
+\begin{enumerate}
+  \item On suppose que $f$ est convexe.
+  \begin{enumerate}
+    \item Soient $x\in U$, $h\in \R^n$ et $t\in{[0,1]}$ tel que $x-h\in U$ et $x+h\in U$. Montrer~:
+$$(1+t)f(x) - tf(x-h) \le f(x+th) \le (1-t)f(x) + tf(x+h).$$
+    \item Montrer que $f$ est continue (raisonner sur le cas $n=2$ puis généraliser).
+  \end{enumerate}
+  \item On suppose que $f$ est de classe $\mathcal{C}^1$.
+
+Montrer que $f$ est convexe si et seulement si pour tous $(x,y)\in U$
+on a~: $f(y) \ge f(x) + d f_x(y-x)$. Donner une interprétation
+géométrique de cette inégalité lorsque $n=2$.
+  \item On suppose que $f$ est de classe $\mathcal{C}^2$.
+  \begin{enumerate}
+    \item Montrer que $f$ est convexe si et seulement si pour tout~$x\in U$
+la forme bilinéaire symétrique $d^2f_x$ est positive.
+    \item Si, pour tout $x\in U$, $d^2f_x$ est définie positive, montrer
+que $f$ est strictement convexe. Montrer par un exemple que la réciproque est fausse.
+  \end{enumerate}
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item 
+  \begin{enumerate}
+    \item thm des trois cordes pour $u \mapsto f(x+uh)$ sur $[-1,1]$.
+    \item Soit $\overline{B}_\infty(x,r)\subset U$ et $y$ tel
+que $0<\|x-y\|_\infty \le r$. On note $t = \|x-y\|_\infty/r$ et $h=(y-x)/t$.
+Alors $y = x+th$ et $\|x\pm h\| = r$ donc~:
+$$|f(x)-f(y)| \le t\max(|f(x+h)-f(x)|,|f(x-h)-f(x)|) \le Mt$$
+car la restriction de~$f$ aux côtés de $\overline{B}_\infty(x,r)$ est
+bornée (fonction convexe en dimension~1).
+  \end{enumerate}  
+  \item La surface représentative de~$f$ est au dessus de ses plans tangents.
+  \item 
+\end{enumerate}
+ \fincorrection
+
+\finexercice

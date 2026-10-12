@@ -1,14 +1,13 @@
 \exercice{4554, quercia, 2010/03/14}
+
 \enonce[Centrale MP 2002]
-
-On pose $\phi (x)= d(x,\Z)=\inf\{ |x-n| \text{ tel que } n\in\Z\}$.
+On pose \( \phi (x) = d(x,\Zz) = \inf\{ |x-n| \text{ tel que } n\in\Zz\} \).
 \begin{enumerate}
-  \item Montrer que $f$ : $\R\ni x \mapsto \sum_{n=0}^{+\infty} (\frac34) ^n\phi (4^nx)$
-    est définie et continue.
+  \item Montrer que \( f \) : \( \Rr\ni x \mapsto \sum_{n = 0}^{+\infty} (\frac34)^n\phi (4^nx) \) est définie et continue.
 
-  \item Montrer que $\phi$ est lipschitzienne. Que peut-on en déduire pour $f$~?
+  \item Montrer que \( \phi \) est lipschitzienne. Que peut-on en déduire pour \( f \)?
 
-  \item Montrer que $f$ n'est dérivable en aucun point.
+  \item Montrer que \( f \) n'est dérivable en aucun point.
 
 \end{enumerate}
 \finenonce
@@ -17,15 +16,14 @@ On pose $\phi (x)= d(x,\Z)=\inf\{ |x-n| \text{ tel que } n\in\Z\}$.
 
 \correction
 \begin{enumerate}
-  \item La série converge normalement et $\phi$ est continue.
-  \item $\phi$ est $1$-lipschitzienne, mais on ne peut rien en déduire pour $f$~:
+  \item La série converge normalement et \( \phi \) est continue.
 
-pour $N$ fixé et $0<h\le \frac1{2.4^N}$, on a $|f(h)-f(0)| = f(h) \ge \sum_{n=1}^N3^nh = \frac{3^{N+1}-3}2h$
-donc $f$ n'est pas lipschitzienne au voisinage de~$0$.
-  \item D'après ce qui précède, le taux d'accroissement de~$f$ en $0$ est arbitrairement
-grand, donc $f$ n'est pas dérivable en~$0$. On montre de même que $f$ n'est pas dérivable
-en $x\in\R$.
+  \item \( \phi \) est \( 1 \)-lipschitzienne, mais on ne peut rien en déduire pour \( f \):
+
+        pour \( N \) fixé et \( 0<h\le \frac1{2.4^N} \), on a \( |f(h)-f(0)| = f(h) \ge \sum_{n = 1}^N3^nh = \frac{3^{N+1}-3}2h \) donc \( f \) n'est pas lipschitzienne au voisinage de \( 0 \).
+
+  \item D'après ce qui précède, le taux d'accroissement de \( f \) en \( 0 \) est arbitrairement grand, donc \( f \) n'est pas dérivable en \( 0 \). On montre de même que \( f \) n'est pas dérivable en \( x\in\Rr \).
 \end{enumerate}
- \fincorrection
+\fincorrection
 
 \finexercice

@@ -1,0 +1,77 @@
+\exercice{5330, rouget, 2010/07/04}
+\enonce[**]
+Résoudre dans $\Cc^3$ (resp. $\Cc^4$) le système~:
+
+$$1)\;\left\{
+\begin{array}{l}
+x+y+z=1\\
+\frac{1}{x}+\frac{1}{y}+\frac{1}{z}=1\\
+xyz=-4
+\end{array}
+\right.
+\quad2)\;\left\{
+\begin{array}{l}
+x+y+z+t=0\\
+x^2+y^2+z^2+t^2=10\\
+x^3+y^3+z^3+t^3=0\\
+x^4+y^4+z^4+t^4=26
+\end{array}
+\right.
+.$$ 
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  
+\begin{align*}\ensuremath
+S&\Leftrightarrow\left\{
+\begin{array}{l}
+x+y+z=1\\
+\frac{xy+xz+yz}{xyz}=1\\
+xyz=-4
+\end{array}\right.\Leftrightarrow\sigma_1=1,\;\sigma_2=\sigma_3=-4\\
+ &\Leftrightarrow x,\;y\;\mbox{et}\;z\;\mbox{sont les trois solutions de l'équation}\;X^3-X^2-4X+4=0\\
+ &\Leftrightarrow x,\;y\;\mbox{et}\;z\;\mbox{sont les trois solutions de l'équation}\;(X-1)(X-2)(X+2)=0\\
+ &\Leftrightarrow(x,y,z)\in\{(1,2,-2),(1,-2,2),(2,1,-2),(2,-2,1),(-2,1,2),(-2,2,1)\}
+\end{align*}
+
+\item  Pour $1\leq k\leq 4$, posons $S_k=x^k+y^k+z^k+t^k$. On a $S_2=\sigma_1^2-2\sigma_2$. Calculons $S_3$ en fonction des $\sigma_k$. On a $\sigma_1^3=S_3+3\sum_{}^{}x^2y+6\sum_{}^{}xyz=S_3+3\sum_{}^{}x^2y+6\sigma_3$ $(*)$. Mais on a aussi $S_1S_2=S_3+\sum_{}^{}x^2y$. Donc, $\sum_{}^{}x^2y=\sigma_1(\sigma_1^2-2\sigma_2)-S_3$. En reportant dans $(*)$, on obtient $\sigma_1^3=S_3+3(\sigma_1^3-2\sigma_1\sigma_2-S_3)+6\sigma_3$ et donc,
+
+$$S_3=\frac{1}{2}(-\sigma_1^3+3(\sigma_1^3-2\sigma_1\sigma_2-S_3)+6\sigma_3)=\sigma_1^3-3\sigma_1\sigma_2+3\sigma_3.$$
+
+Calculons $S_3$ en fonction des $\sigma_k$. Soit $P=(X-x)(X-y)(X-z)(X-t)=X^4-\sigma_1X^3+\sigma_2X^2-\sigma_3X+\sigma_4$.
+
+\begin{align*}\ensuremath
+P(x)+P(y)+P(z)+P(t)=0&\Leftrightarrow S_4-\sigma_1S_3+\sigma_2S_2-\sigma_3S_1+4\sigma_4=0\\
+ &\Leftrightarrow S_4=\sigma_1(\sigma_1^3-3\sigma_1\sigma_2+3\sigma_3)-\sigma_2(\sigma_1^2-2\sigma_2)+\sigma_3\sigma_1-4\sigma_4\\
+ &\Leftrightarrow S_4=\sigma_1^4-4\sigma_1^2\sigma_2+4\sigma_1\sigma_3+2\sigma_2^2-4\sigma_4.
+\end{align*}
+
+Par suite,
+
+\begin{align*}\ensuremath
+S&\Leftrightarrow
+\left\{
+\begin{array}{l}
+\sigma_1=0\\
+-2\sigma_2=10\\
+3\sigma_3=0\\
+2\sigma_2^2-4\sigma_4=26
+\end{array}
+\right.\Leftrightarrow\left\{
+\begin{array}{l}
+\sigma_1=0\\
+\sigma_2=-5\\
+\sigma_3=0\\
+\sigma_4=6
+\end{array}
+\right.\\
+ &\Leftrightarrow x,\;y,\;z,\;\mbox{et}\;t\;\mbox{sont les 4 solutions de l'équation}\;X^4-5X^2+6=0\\
+ &\Leftrightarrow(x,y,z,t)\;\mbox{est l'une des 24 permutations du quadruplet}\;(\sqrt{2},-\sqrt{2},\sqrt{3},-\sqrt{3})
+\end{align*}
+
+\end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,19 @@
+\exercice{3189, quercia, 2010/03/08}
+
+\enonce[Polytechnique MP 2002]
+Soient $x_1,\dots,x_n\in\C$ distincts et $y_1,\dots,y_n\in\C$.
+Trouver $E = \{P\in\C[X]\text{ tq }\forall\ i,\ P^{-1}(\{y_i\}) = \{x_i\}\}$.
+\finenonce
+
+\noindication
+
+\correction
+Clairement $E=\varnothing$ si les $y_i$ ne sont pas distincts.
+Si $y_1,\dots,y_n$ sont distincts, soit $P\in E$, $n=\deg(P)$ et $\lambda$
+le coefficient dominant de~$P$ ($P\ne0$ car les $y_i$ ne sont pas tous nuls).
+Alors $P(X) - y_i$ a pour seule racine $x_i$ donc $P(X) - y_i = \lambda(X-x_i)^n$.
+Pour $n=1$ on obtient $P(X) = y_1 + \lambda(X-x_1)$ avec $\lambda\in\C^*$.
+Pour $n\ge2$ on obtient $y_2-y_1 = \lambda(X-x_1)^n - \lambda(X-x_2)^n = n\lambda X^{n-1}(x_2-x_1) + \dots$
+ce qui est impossible donc $E=\varnothing$.
+\fincorrection
+\finexercice

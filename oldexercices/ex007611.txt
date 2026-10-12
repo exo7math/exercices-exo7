@@ -1,0 +1,31 @@
+\exercice{7611, mourougane, 2021/08/10}
+\enonce[Séries entières]
+\begin{enumerate}
+\item Soit $\sum_{n\geq 1}a_nz^n$ une série entière convergente (avec un rayon de convergence strictement positif).
+Déterminer le rayon de convergence de la série $\sum_{n\geq 1}\frac{a_n}{n!}z^n$.
+
+\item Soit deux séries entières centrées en $0$ de rayon de convergence $R>0$ et de somme respective $f$ et $g$.
+On suppose que pour tout $x\in]-R,R[, f(x)=g(x).$ Montrer que pour tout $z\in\Delta_r, f(z)=g(z)$. 
+
+\item En déduire que pour tout $a\in \Rr$, et pour tout $z\in\Cc$, $\sin(a+z)=\sin(a)\cos (z)+\cos(a)\sin (z).$
+
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+  \item On note $R$ le rayon de convergence de la série entière $\sum_{n\geq 1}a_nz^n$ et $r\in]0,R[$. 
+On sait alors que $(a_n r^n)_{n\in\Nn}$ est une suite bornée en module.
+Soit $z\in\Cc$
+$$\left|\frac{a_n}{n!}z^n\right|\leq \left|a_n r^n\right| \frac{\left|\frac{z}{r}\right|^n}{n!}$$
+est le terme général d'une suite bornée en module car $\frac{\left|\frac{z}{r}\right|^n}{n!}$ 
+est borné.
+Par conséquent, $\sum_{n\geq 1}\frac{a_n}{n!}z^n$ a un rayon de convergence infini.
+  \item L'application $f-g$ est somme sur $\Delta_r$ connexe d'une série entière centrée en $0$ et s'annule sur l'ensemble non discret $]-R,R[$.
+Par le principe des zéros isolés, $f=g$ sur $\Delta_r$.
+  \item Soit $a\in\Rr$. Les deux applications $z\mapsto \sin(a+z)$ et $z\mapsto \sin(a)\cos (z)+\cos(a)\sin (z)$ sont développables en séries entières
+sur $\Cc$ et coïncident sur $\Rr$ par la formule d'addition des sinus sur $\Rr$.
+Par la question précédente, elles coïncident sur $\Cc$.
+\end{enumerate}
+\fincorrection
+\finexercice

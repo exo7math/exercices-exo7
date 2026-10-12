@@ -1,0 +1,67 @@
+\exercice{2364, mayer, 2003/10/01}
+\enonce 
+Calculer la norme des op\'erateurs suivants:
+\begin{itemize}
+\item Le shift sur $l^\infty$ d\'efini par $S(x)_{n+1}= x_n$,
+$S(x)_0=0$.
+\item $X={\cal C}([0,1])$ muni de la norme $\|.\|_\infty$ et $Tf(x) = f(x)g(x)$ o\`u $g\in X$.
+\end{itemize}
+Calculer la norme des formes lin\'eaires suivantes:
+\begin{itemize}
+\item $X={\cal C}([0,1])$  muni de la norme $\|.\|_\infty$ et $u(f) = \int _0^1 f(x)g(x) \; dx$ o\`u $g\in X$ est
+une fonction qui ne s'annule qu'en $x=1/2$.
+\item $X= l^2$ et $u(x) = \sum a_nx_n$ o\`u $(a_n)$ est dans $X$.
+\item $X= l^1$ et $u(x) = \sum a_nx_n$ o\`u $(a_n)$ est dans $l^\infty$.
+\item $X$ l'espace des suites convergentes muni de la norme sup et $u:X\to \Rr$
+l'application $u(x) = \lim_{j\to \infty} x_j$.
+\end{itemize} 
+\finenonce
+
+\indication
+\begin{enumerate}
+  \item $\| S \| = 1$ ;
+  \item $\| T \| = \|g \|_\infty$ ;
+  \item $\|u\| = \int_0^1|g|$, on distinguera les cas o\`u $g$ reste de signe constant et $g$ change de signe ;
+  \item $\| u\| = \|a_n \|_2$ ;
+  \item $\| u \| = \|a \|_\infty$ ;
+  \item $\| u \| = 1$.
+\end{enumerate}
+\finindication
+
+\correction
+\begin{enumerate}
+  \item Pour tout $x$, $\|S(x)\| = \| x \|$ donc $\| S \| = 1$.
+  
+  \item $\| T(f) \|_\infty = \| f\times g \|_\infty \le \|f \|_\infty 
+\|g \|_\infty$. Donc pour $f\neq 0$, $\frac{\| T(f) \|_\infty }{\|f \|_\infty 
+} \le \|g \|_\infty$. De plus en $g$, on obtient   $\frac{\| T(g) \|_\infty }{\|g \|_\infty  }
+=\frac{\| g^2 \|_\infty }{\|g \|_\infty  }  = \|g \|_\infty$. Donc $\| T \| = \|g \|_\infty$.
+
+  \item On a $| u(f) | \le \| f\|_\infty \int_0^1|g(x)|dx$ donc
+$\| u\| \le \int_0^1|g(x)|dx$. Si $g$ ne change pas de signe sur $[0,1]$
+alors pour $f$ la fonction constant égale à $1$, on obtient $| u(f) | = \| f\|_\infty \int_0^1|g(x)|dx$ donc $\| u \| = \int_0^1|g(x)|dx$.
+Si $g$ change de signe alors il ne le fait qu'une fois et en $\frac 12$.
+Soit $h_n$ la fonction définie par $h_n(x) = 1$ si $x\in[0,\frac 12 -\frac 1n]$,
+$h_n(x) = -1$ si $x\in[\frac 12 +\frac 1n,1]$ et $h_n$ est affine sur $[\frac 12 -\frac 1n,\frac 12 +\frac 1n]$  et continue 
+sur $[0,1]$. Cette fonction est construite de telle sorte que si $g$ est positive puis négative alors $h_n\times g$ est une fonction continue qui converge uniformément vers $|g|$ : $\| h_n g - |g| \|_\infty \rightarrow 0$.
+Donc $| u(h_n) | = \int_0^1 h_n\times g$ 
+et par la convergence uniforme alors $| u(h_n) |$ converge vers
+$\int_0^1|g|$. Donc $\|u\| = \int_0^1|g|$.
+
+  \item $|u(x)| = |\sum a_nx_n| \le \|a_n \|_2\| x_n\|_2$ (c'est Cauchy-Schwartz)
+donc $\| u \| \le \|a_n \|_2$. Pour la suite $x=a$ on a égalité d'o\`u
+$\| u\| = \|a_n \|_2$.
+  
+  \item $|u(x)| = |\sum a_nx_n| \le \sum |a_nx_n| \le \|a \|_\infty \sum |x_n| = \|a \|_\infty \| x_n\|_1$, donc $\| u \| \le \|a \|_\infty$. 
+Soit $p$ fixé, soit $i(p)$ un indice tel que $|a_{i(p)}| = \max_{j=1,\ldots,p} |a_j|$.
+On construit une suite $x^p$ de la manière suivante : 
+$x^p = (0,0,\ldots,0,a_{i(p)},0,0,0\ldots)$ (des zéros partout sauf $a_{i(p)}$ à la place $i(p)$). Alors $\| x^p \|_1 = |a_{i(p)}|$ et $|u(x^p)| = a_{i(p)}^2$.
+Donc $\frac{|u(x^p)|}{\| x^p \|_1} = | a_{i(p)}|$.
+Lorsque $p$ tend vers $+\infty$, $| a_{i(p)}| \rightarrow \|a \|_\infty$.
+Donc $\| u \| = \|a \|_\infty$.
+  
+  \item $|u(x)| = |\lim x_n| \le \| x \|_\infty$, donc $\| u \| \le 1$.
+Pour $x=(1,1,1,\ldots)$ on obtient l'égalité $\| u \| = 1$.
+\end{enumerate}
+\fincorrection
+\finexercice

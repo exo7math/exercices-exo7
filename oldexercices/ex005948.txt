@@ -1,0 +1,77 @@
+\exercice{5948, tumpach, 2010/11/11}
+\enonce
+Soit $(\Omega, \Sigma, \mu)$ un espace mesur\'e.  On dit que
+$f_{n}$ converge vers $f$ \emph{en mesure} si pour tout
+$\varepsilon$,
+$$\lim_{n\rightarrow+\infty} \mu\{x\in\Omega, ~|f_{n}(x) - f(x)| ~> \varepsilon\} ~ =
+0.
+$$
+Montrer que si $f_{n}\rightarrow f$ en mesure, alors il existe une
+sous-suite $\{f_{n_{k}}\}_{k\in\mathbb{N}}$ de
+$\{f_{n}\}_{n\in\mathbb{N}}$ qui converge vers $f$ $\mu$-presque
+partout. 
+\finenonce
+
+\noindication
+
+\correction
+On cherche une sous-suite $\{ f_{n_{k}}\}_{n\in\mathbb{N}}$ de $\{
+f_{n}\}_{n\in\mathbb{N}}$ telle que pour $\mu$-presque tout
+$x\in\Omega$, \'etant donn\'e un $\varepsilon>0$, il existe un
+$k\in\mathbb{N}$ (d\'ependant \`a priori de $x$) v\'erifiant
+$j\geq k \Rightarrow |f_{n_{j}}(x) - f(x)| < \varepsilon$. Il
+suffit de montrer que pour $\mu$-presque tout $x$, il existe un
+$k\in\mathbb{N}$ tel que $j\geq k \Rightarrow |f_{n_{j}}(x) -
+f(x)| < \frac{1}{2^{j}} \leq \frac{1}{2^k}.$ Cela revient \`a
+montrer que le compl\'ementaire de l'ensemble
+$$
+A := \bigcup_{k=1}^{\infty} \bigcap_{j\geq k} \left\{|f_{n_{j}} -
+f|< \frac{1}{2^{j}}\right\}
+$$
+est de mesure nulle. Or
+$$
+A^{c} = \bigcap_{k=1}^{\infty} \bigcup_{j\geq k}\left\{|f_{n_{j}}
+- f|\geq \frac{1}{2^{j}}\right\}.
+$$
+Posons $B_{k} := \bigcup_{j\geq k}\left\{|f_{n_{j}} - f|\geq
+\frac{1}{2^{j}}\right\}$. On a $B_{1} \supset B_{2} \supset B_3
+\dots$ avec $B_1$ de mesure fini ; donc par continuit\'e de la mesure, il vient~:
+$$
+\mu(A^{c}) = \lim_{k\rightarrow +\infty} \mu(B_{k}).
+$$
+Par $\sigma$-additivit\'e, on a~:
+$$
+\mu(B_{k}) ~\leq~\sum_{j\geq k} \mu\left( \left\{|f_{n_{j}} -
+f|\geq \frac{1}{2^{j}}\right\}\right).
+$$
+On d\'efinit alors la sous-suite $\{ f_{n_{k}}\}_{n\in\mathbb{N}}$
+de la mani\`ere suivante. Puisque $f_{n}$ converge vers $f$ en
+mesure, il existe un indice $n_1$ tel que pour $n\geq n_1$,
+$$
+\mu\left( \left\{|f_{n} - f|\geq \frac{1}{2}\right\}\right) \leq
+\frac{1}{2}.
+$$
+Il existe un indice $n_{2}> n_1$ tel que pour $n\geq n_2$,
+$$
+\mu\left( \left\{|f_{n} - f|\geq \frac{1}{2^2}\right\}\right) \leq
+\frac{1}{2^2},
+$$
+et ainsi de suite: pour tout $k\in\mathbb{N}$, il existe un
+$n_{k}> n_{k-1}$, tel que pour $n\geq n_{k}$
+$$
+\mu\left( \left\{|f_{n} - f|\geq \frac{1}{2^k}\right\}\right) \leq
+\frac{1}{2^k}.
+$$
+Pour cette sous-suite on a alors~:
+$$
+\mu(B_{k}) ~\leq~\sum_{j\geq k} \mu\left( \left\{|f_{n_{j}} -
+f|\geq \frac{1}{2^{j}}\right\}\right) ~\leq ~\sum_{j\geq k}
+\frac{1}{2^j} = \frac{1}{2^{k-1}}.
+$$
+On a bien
+$$
+\mu(A^{c}) = \lim_{k\rightarrow +\infty} \mu(B_{k}) = 0.
+$$
+\fincorrection
+
+\finexercice

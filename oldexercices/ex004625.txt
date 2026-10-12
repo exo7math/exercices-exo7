@@ -1,0 +1,50 @@
+\exercice{4625, quercia, 2010/03/14}
+\enonce[Mines MP 2002]
+
+Soit $a\in {]-1,1[}$ et $g$ : $x \mapsto\frac{1-a\cos x}{ 1-2a\cos x +a^2}$.
+
+\begin{enumerate}
+  \item Prouver~: $\forall\ x\in\R,\ g(x)=\sum_{n=0}^{\infty} a^n\cos nx$.
+
+  \item Quel est le mode de convergence de la série~?
+
+  \item Soit $f : \R \to \C$ continue par morceaux et $2\pi$-périodique.
+    Montrer que $h$ : $x \mapsto \int_{t=0}^{2\pi}g(x-t)f(t)\,d t$
+    est somme d'une série trigonométrique uniformément convergente.
+    Que peut-on déduire pour~$h$~?\vrule height 12pt width 0pt
+
+  \item Soit $\lambda\in\R$. Trouver toutes les fonctions $f : \R \to \C$
+    continues par morceaux et $2\pi$-périodiques telles que~:
+    $\forall\ x\in\R,\ f(x)=\lambda \int_{t=0}^{2\pi}g(x-t)f(t)\,d t +\sum_{n=1}^{\infty}\frac{\cos nx}{n^2}$.
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $\sum_{n=0}^\infty a^n\cos nx = \Re\Bigl(\sum_{n=0}^\infty (ae^{ix})^n\Bigr)
+    =\Re\Bigl(\frac1{1-ae^{ix}}\Bigr) = g(x)$.
+  \item Il y a convergence normale.
+  \item \begin{align*} h(x)
+    &=  \int_{t=0}^{2\pi}\sum_{n=0}^\infty a^n\cos(nx-nt)f(t)\,d t\cr
+    &= \sum_{n=0}^\infty \int_{t=0}^{2\pi} a^n\cos(nx-nt)f(t)\,d t\cr
+    &= \sum_{n=0}^\infty\Bigl(\cos(nx) \int_{t=0}^{2\pi} a^n\cos(nt)f(t)\,d t + \sin(nx) \int_{t=0}^{2\pi} a^n\sin(nt)f(t)\,d t\Bigr)\cr
+    &= \sum_{n=0}^\infty(\pi a^na_n(f)\cos(nx) + \pi a^nb_n(f)\sin(nx)).\cr
+    \end{align*}
+    Il y a convergence normale car $|a|<1$ et les coefficients de Fourier
+    de~$f$ sont bornés.
+    On en déduit que $h$ est continue, puis que les coefficients de Fourier de~$h$
+    sont $a^na_n(f)$ et $a^nb_n(f)$.
+  \item Les coefficients de Fourier des deux membres doivent être égaux, ce qui
+    donne~: $a_n(f)= \frac1{n^2(1-\pi\lambda a^n)}$ et $b_n(f) = 0$ si pour
+    tout~$n\in\N^*$ on a $\pi\lambda a^n\ne 1$ (sinon il n'y a pas de solution),
+    et $a_0(f) = 0$ si $2\pi\lambda\ne1$, $a_0(f)$ quelconque sinon.
+    Réciproquement, en posant ${f(x) = [a_0/2] + \sum_{n=1}^\infty\frac{\cos nx}{n^2(1-\pi\lambda a^n)}}$
+    on définit $f$, $2\pi$-périodique continue (la série converge normalement),
+    solution de l'équation par égalité des coefficients de Fourier de chaque membre.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

@@ -1,0 +1,28 @@
+\exercice{5692, rouget, 2010/10/16}
+\enonce[*** I]
+Soit $(u_n)_{n\in\Nn}$ une suite décroissante de nombres réels strictement positifs telle que la série de terme général $u_n$ converge. Montrer que $u_n\underset{n\rightarrow+\infty}{=}o\left(\frac{1}{n}\right)$. Trouver un exemple de suite $(u_n)_{n\in\Nn}$ de réels strictement positifs telle que la série de terme général $u_n$ converge mais telle que la suite de terme général $nu_n$ ne tende pas vers $0$.
+\finenonce
+
+\noindication
+
+\correction
+Il faut vérifier que $nu_n\underset{n\rightarrow+\infty}{\rightarrow}0$. Pour $n\in\Nn$, posons $S_n =\sum_{k=0}^{n}u_k$. Pour $n\in\Nn$, on a
+
+\begin{align*}\ensuremath
+0<(2n)u_{2n}&=2(\underbrace{u_{2n}+\ldots+u_{2n}}_{n})\leqslant2\sum_{k=n+1}^{2n}u_k\;(\text{car la suite}\;u\;\text{est décroissante})\\
+ &= 2(S_{2n} - S_n).
+\end{align*}
+
+Puisque la série de terme général $u_n$ converge, $\lim_{n \rightarrow +\infty}2(S_{2n} - S_n)=0$ et donc $\lim_{n \rightarrow +\infty}(2n)u_{2n}=0$.
+
+Ensuite, $0 < (2n+1)u_{2n+1}\leqslant(2n+1)u_{2n}=(2n)u_{2n}+u_{2n}\underset{n\rightarrow+\infty}{\rightarrow}0$. Donc les suites des termes de rangs pairs et impairs extraites de la suite $(nu_n)_{n\in\Nn}$ convergent et ont même limite à savoir $0$. On en déduit que $\lim_{n \rightarrow +\infty}nu_n=0$ ou encore que $u_n\underset{n\rightarrow+\infty}{=}o\left(\frac{1}{n}\right)$.
+
+Contre exemple avec $u$ non monotone. Pour $n\in\Nn$, on pose $u_n=\left\{
+\begin{array}{l}
+0\;\text{si}\;n=0\\
+\rule[-4mm]{0mm}{10mm}\frac{1}{n}\;\text{si}\;n\;\text{est un carré parfait non nul}\\
+0\;\text{sinon}
+\end{array}
+\right.$. La suite $u$ est positive et $\sum_{n=0}^{+\infty}u_n=\sum_{p=1}^{+\infty}\frac{1}{p^2}<+\infty$. Pourtant, $p^2u_{p^2}=1\underset{p\rightarrow+\infty}{\rightarrow}1$ et la suite $(nu_n)$ admet une suite extraite convergeant vers $1$. On a donc pas $\lim_{n \rightarrow +\infty}nu_n=0$.
+\fincorrection
+\finexercice

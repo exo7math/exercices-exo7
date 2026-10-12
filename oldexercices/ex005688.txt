@@ -1,0 +1,130 @@
+\exercice{5688, rouget, 2010/10/16}
+\enonce
+\label{ex:rou1ter}
+Nature de la série de terme général 
+
+\begin{center}
+\begin{tabular}{llll}
+\textbf{1) (*)} $\ln\left(\frac{n^2+n+1}{n^2+n-1}\right)$&\textbf{2) (*)}  $\frac{1}{n+(-1)^n\sqrt{n}}$&\textbf{3) (**)} $\left(\frac{n+3}{2n+1}\right)^{\ln n}$  &\textbf{4) (**)} $\frac{1}{\ln(n)\ln(\ch n)}$\\
+\textbf{5) (**)} $\Arccos\sqrt[3]{1-\frac{1}{n^2}}$&\textbf{6) (*)} $\frac{n^2}{(n-1)!}$&\textbf{7)} $\left(\cos\frac{1}{\sqrt{n}}\right)^n-\frac{1}{\sqrt{e}}$&\textbf{8) (**)} $\ln\left(\frac{2}{\pi}\Arctan\frac{n^2+1}{n}\right)$\\
+\textbf{9) (*)} $\int_{0}^{\pi/2}\frac{\cos^2x}{n^2+\cos^2x}\;dx$&  
+\textbf{10) (**)} $n^{-\sqrt{2}\sin(\frac{\pi}{4}+\frac{1}{n})}$&
+\textbf{11) (**)} $e-\left(1+\frac{1}{n}\right)^n$
+\end{tabular}
+\end{center}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Pour $n\geqslant1$, on pose $u_n =\ln\left(\frac{n^2+n+1}{n^2+n-1}\right)$. $\forall n\geqslant 1$, $u_n$ existe
+
+\begin{center} 
+$u_n=\ln\left(1+\frac{1}{n}+\frac{1}{n^2}\right)-\ln\left(1+\frac{1}{n}-\frac{1}{n^2}\right)\underset{n\rightarrow+\infty}{=}\left(\frac{1}{n}+O\left(\frac{1}{n^2}\right)\right)-\left(\frac{1}{n}+O\left(\frac{1}{n^2}\right)\right)=O\left(\frac{1}{n^2}\right)$.
+\end{center}
+
+Comme la série de terme général $\frac{1}{n^2}$, $n\geqslant1$, converge (série de \textsc{Riemann} d'exposant $\alpha>1$), la série de terme général $u_n$ converge.
+
+\item  Pour $n\geqslant2$, on pose $u_n =\frac{1}{n+(-1)^n\sqrt{n}}$. $\forall n\geqslant 2$, $u_n$ existe et de plus $u_n\underset{n\rightarrow+\infty}{\sim}\frac{1}{n}$. Comme la série de terme général $\frac{1}{n}$, $n\geqslant 2$, diverge et est positive, la série de terme général $u_n$ diverge.
+
+\item  Pour $n\geqslant1$, on pose $u_n =\left(\frac{n+3}{2n+1}\right)^{\ln n}$. Pour $n\geqslant1$, $u_n > 0$ et 
+
+\begin{align*}\ensuremath
+\ln(u_n)&=\ln(n)\ln\left(\frac{n+3}{2n+1}\right) =\ln(n)\left(\ln\left(\frac{1}{2}\right)+\ln\left(1+\frac{3}{n}\right) -\ln\left(1+\frac{1}{2n}\right)\right)\\
+ &\underset{n\rightarrow+\infty}{=}\ln(n)\left(-\ln2+O\left(\frac{1}{n}\right)\right)\underset{n\rightarrow+\infty}{=}-\ln2\ln(n)+o(1).
+\end{align*}
+
+Donc $u_n=e^{\ln(u_n)}\underset{n\rightarrow+\infty}{\sim}e^{-\ln2\ln n}=\frac{1}{n^{\ln2}}$.  Comme la série de terme général $\frac{1}{n^{\ln 2}}$, $n\geqslant1$, diverge (série de \textsc{Riemann} d'exposant $\alpha\leqslant1$) et est positive, la série de terme général $u_n$ diverge.
+
+\item  Pour $n\geqslant2$, on pose $u_n=\frac{1}{\ln(n)\ln(\ch n)}$. $u_n$ existe pour $n\geqslant2$. $\ln(\ch n)\underset{n\rightarrow+\infty}{\sim}\ln\left(\frac{e^n}{2}\right)=n -\ln2\underset{n\rightarrow+\infty}{\sim}n$ et $un\underset{n\rightarrow+\infty}{\sim}\frac{1}{n\ln(n)}>0$.
+
+Vérifions alors que la série de terme général $\frac{1}{n\ln n}$, $n\geqslant2$, diverge. La fonction $x\rightarrow x\ln x$ est continue, croissante et strictement positive sur $]1,+\infty[$ (produit de deux fonctions strictement positives et croissantes sur $]1,+\infty[$). Par suite, la fonction $x\rightarrow\frac{1}{x\ln x}$ est continue et décroissante sur $]1,+\infty[$ et pour tout entier $k$ supérieur ou égal à $2$, 
+
+\begin{center}
+$\frac{1}{k\ln k}\geqslant\int_{k}^{k+1}\frac{1}{x\ln x}\;dx$
+\end{center}
+
+Par suite, pour $n\geqslant2$, 
+
+\begin{center}
+$\sum_{k=2}^{n}\frac{k\ln k}\geqslant\sum_{k=2}^{n}\int_{k}^{k+1}\frac{1}{x\ln x}\;dx=\int_{2}^{n+1}\frac{1}{x\ln x}\;dx=\ln(\ln(n+1)) -\ln(\ln(2)\underset{n\rightarrow+\infty}{\rightarrow}+\infty.$
+\end{center}
+
+Donc $u_n$ est positif et équivalent au terme général d'une série divergente. La série de terme général $u_n$ diverge.
+
+\item  Pour $n\geqslant1$, on pose $u_n=\Arccos\sqrt[3]{1-\frac{1}{n^2}}$. $u_n$ existe pour $n\geqslant 1$. De plus $u_n\underset{n\rightarrow+\infty}{\rightarrow}0$. On en déduit que 
+
+\begin{align*}\ensuremath
+u_n&\underset{n\rightarrow+\infty}{\sim}\sin(u_n)=\sin\left(\Arccos\sqrt[3]{1-\frac{1}{n^2}}\right) =\sqrt{1-\left(1-\frac{1}{n^2}\right)^{2/3}}\underset{n\rightarrow+\infty}{=}\sqrt{1-1+\frac{2}{3n^2}+o\left(\frac{1}{n^2}\right)}\\
+ &\underset{n\rightarrow+\infty}{\sim}\sqrt{\frac{2}{3}}\frac{1}{n}>0
+\end{align*}
+
+terme général d'une série de \textsc{Riemann} divergente. La série de terme général un diverge.
+
+\item  Pour $n\geqslant1$, on pose $u_n=\frac{n^2}{(n-1)!}$. $u_n$ existe  et $u_n \neq0$ pour $n\geqslant1$. De plus,
+
+\begin{center}
+$\left|\frac{u_{n+1}}{u_n}\right|=\frac{(n+1)^2}{n^2}\times\frac{(n-1)!}{n!}=\frac{(n+1)^2}{n^3}  \underset{n\rightarrow+\infty}{\sim}\frac{1}{n}\underset{n\rightarrow+\infty}{\rightarrow}0< 1$.
+\end{center}
+
+D'après la règle de d'\textsc{Alembert}, la série de terme général $u_n$ converge.
+
+\item  Pour $n\geqslant1$, on pose $u_n=\left(\cos\frac{1}{\sqrt{n}}\right)^n-\frac{1}{\sqrt{e}}$. $u_n$ est défini pour $n\geqslant1$ car pour $n\geqslant1$, $\frac{1}{\sqrt{n}}\in\left]0,\frac{\pi}{2}\right[$ et donc $\cos\frac{1}{\sqrt{n}}>0$. Ensuite
+
+\begin{align*}\ensuremath
+\ln\left(\cos\frac{1}{\sqrt{n}}\right)&\underset{n\rightarrow+\infty}{=}\ln\left(1-\frac{1}{2n}+\frac{1}{24n^2}+o\left(\frac{1}{n^2}\right)\right)\underset{n\rightarrow+\infty}{=}-\frac{1}{2n}+\frac{1}{24n^2}-\frac{1}{8n^2}+o\left(\frac{1}{n^2}\right)\\
+ &\underset{n\rightarrow+\infty}{=}-\frac{1}{2n}-\frac{1}{12n^2}+o\left(\frac{1}{n^2}\right).
+\end{align*}
+
+Puis $n\ln\left(\cos\frac{1}{\sqrt{n}}\right)\underset{n\rightarrow+\infty}{=}-\frac{1}{2}-\frac{1}{12n}+o\left(\frac{1}{n}\right)$ et donc
+
+\begin{center}
+$u_n=e^{n\ln(\cos(1/\sqrt{n})}-\frac{1}{\sqrt{e}}\underset{n\rightarrow+\infty}{=}\frac{1}{\sqrt{e}}\left(e^{-\frac{1}{12n}+o\left(\frac{1}{n}\right)}-1\right)\underset{n\rightarrow+\infty}{\sim}-\frac{1}{12n\sqrt{e}}<0$.
+\end{center}
+
+La série de terme général $-\frac{1}{12n\sqrt{e}}$ est  divergente et donc la série de terme général $u_n$ diverge.
+
+\item 
+
+\begin{align*}\ensuremath
+\ln\left(\frac{2}{\pi}\Arctan\left(\frac{n^2+1}{n}\right)\right)&=\ln\left(1-\frac{2}{\pi}\Arctan\left(\frac{n}{n^2+1}\right)\right)\\
+ &\underset{n\rightarrow+\infty}{\sim}-\frac{2}{\pi}\Arctan\left(\frac{n}{n^2+1}\right)\underset{n\rightarrow+\infty}{\sim}-\frac{2}{\pi}\frac{n}{n^2+1}\underset{n\rightarrow+\infty}{\sim}-\frac{2}{n\pi}<0.
+\end{align*}
+
+Donc, la série de terme général $u_n$ diverge.
+
+\item  Pour $n\geqslant1$, on pose $u_n=\int_{0}^{\pi/2}\frac{\cos^2x}{n^2+\cos^2x}\;dx$.
+
+Pour $n\geqslant1$, la fonction $x\mapsto\frac{\cos^2x}{n^2+\cos^2x}\;dx$ est continue sur $\left[0,\frac{\pi}{2}\right]$ et positive et donc, $u_n$ existe et est positif. De plus, pour $n\geqslant1$,
+
+\begin{center}
+$0\leqslant u_n\leqslant\int_{0}^{\pi/2}\frac{1}{n^2+0}\;dx=\frac{\pi}{2n^2}$.
+\end{center}
+
+La série de terme général $\frac{\pi}{2n^2}$ converge et donc la série de terme général $u_n$ converge.
+
+\item  $-\sqrt{2}\sin\left(\frac{\pi}{4}+\frac{1}{n}\right) =-\sin\left(\frac{1}{n}\right)-\cos\left(\frac{1}{n}\right)\underset{n\rightarrow+\infty}{=}-1+O\left(\frac{1}{n}\right)$ puis
+
+\begin{center}
+$-\sqrt{2}\sin\left(\frac{\pi}{4}+\frac{1}{n}\right)\ln n\underset{n\rightarrow+\infty}{=}-\ln(n)+O\left(\frac{\ln n}{n}\right)\underset{n\rightarrow+\infty}{=}-\ln(n)+o(1)$.
+\end{center}
+
+Par suite,
+
+\begin{center}
+$0< u_n=e^{-\sqrt{2}\sin\left(\frac{\pi}{4}+\frac{1}{n}\right)\ln n}\underset{n\rightarrow+\infty}{\sim}e^{-\ln n}=\frac{1}{n}$.
+\end{center}
+
+La série de terme général $\frac{1}{n}$ diverge et la série de terme général $u_n$ diverge.
+
+\item  $n\ln\left(1+\frac{1}{n}\right)\underset{n\rightarrow+\infty}{=}1-\frac{1}{2n}+o\left(\frac{1}{n}\right)$ et donc
+
+\begin{center}
+$u_n\underset{n\rightarrow+\infty}{=}e-e^{1-\frac{1}{2n}+o\left(\frac{1}{n}\right)}\underset{n\rightarrow+\infty}{=}e\left(1-1+\frac{1}{2n}+o\left(\frac{1}{n}\right)\right)\underset{n\rightarrow+\infty}{\sim}\frac{e}{2n}>0$.
+\end{center}
+
+La série de terme général $\frac{e}{2n}$ diverge et la série de terme général $u_n$ diverge.
+\end{enumerate}
+\fincorrection
+\finexercice

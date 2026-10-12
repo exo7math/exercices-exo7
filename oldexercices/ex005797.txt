@@ -1,0 +1,33 @@
+\exercice{5797, rouget, 2010/10/16}
+\enonce[***]
+Trouver tous les endomorphismes de $\Rr^3$ vérifiant $\forall(x,y)\in(\Rr^3)^2$, $f(x\wedge y) = f(x)\wedge f(y)$.
+\finenonce
+
+\noindication
+
+\correction
+Soit $(i,j,k)$ une base orthonormée directe de $\Rr^3$ euclidien orienté. Posons $u = f(i)$, $v = f(j)$ et $w = f(k)$. Nécessairement, $u\wedge v =f(i)\wedge f(j) = f(i\wedge j) = f(k) = w$ et de même $v\wedge w = u$ et $w\wedge u = v$.
+
+\textbf{1er cas.} Si l'un des vecteurs $u$ ou $v$ ou $w$ est nul alors $u = v = w = 0$ et donc $f = 0$. Réciproquement, l'application nulle convient.
+
+\textbf{2ème cas.} \textbullet~Si les trois vecteurs $u$, $v$ et $w$ sont non nuls alors $u\wedge v\neq 0$ et donc la famille $(u,v)$ est libre. Mais alors la famille $(u,v,w)$ est une base directe de $\Rr^3$.
+
+Ensuite $w = u\wedge v$ est orthogonal à $u$ et $v$ et $v = w\wedge u$ est orthogonal à $u$. On en déduit que la famille $(u,v,w)$ est une base orthogonale directe de $\Rr^3$.
+
+Enfin, puisque $u$ et $v$ sont orthogonaux, $\|w\|=\|u\wedge v\| =\|u\|\|v\|$ et de même $\|u\|=\|v\|\|w\|$ et $\|v\|=\|u\|\|w\|$. Puis $\|u\|\|v\|\|w\|= (\|u\|\|v\|\|w\|)^2$ et donc, puisque les vecteurs $u$, $v$ et $w$ sont non nuls, $\|u\|\|v\|\|w\| = 1$. Les égalités $\|u\|\|v\|\|w\| = 1$ et $\|u\|=\|v\|\|w\|$ fournissent $\|u\|^2 = 1$ et de même $\|v\|^2 =\|w\|^2 = 1$.
+
+Finalement, la famille $(u,v,w)$ est une base orthonormée directe.
+
+En résumé, l'image par $f$ d'une certaine base orthonormée directe de $\Rr^3$ est une base orthonormée directe de $\Rr^3$ et on sait que $f$ est un automorphisme orthogonal positif de $\Rr^3$ c'est-à-dire une rotation de $\Rr^3$.
+
+\textbullet~Réciproquement, si $f$ est la rotation d'angle $\theta$ autour du vecteur unitaire $e_3$. On considère $e_1$ et $e_2$ deux vecteurs de $\Rr^3$ tels que la famille $(e_1,e_2,e_3)$ soit une base orthonormée directe.
+
+Pour vérifier que $f$ est solution, par linéarité, il suffit de vérifier les $9$ égalités : $\forall(i,j)\in\{1,2,3\}^2$, $f(e_i\wedge e_j)=f(e_i)\wedge f(e_j)$. Pour vérifier ces $9$ égalités, il suffit se réduisent en fin de compte d'en vérifier $2$ :
+
+\begin{center}
+$f(e_1)\wedge f(e_2)= e_3 = f(e_3) = f(e_1\wedge e_2)$ et $f(e3)\wedge f(e1) = e_3\wedge f(e_1) = f(e_2) = f(e_3\wedge e_1)$.
+\end{center}
+
+Les endomorphismes cherchés sont donc l'application nulle et les rotations de $\Rr^3$.
+\fincorrection
+\finexercice

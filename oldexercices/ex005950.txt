@@ -1,0 +1,74 @@
+\exercice{5950, tumpach, 2010/11/11}
+\enonce
+\begin{enumerate}
+\item Montrer que pour tout $x\in \mathbb{R}_+$,
+$\displaystyle\left\{\left(1+\frac{x}{n}\right)^n\right\}$ est une
+suite croissante et
+$$\lim\limits_{n\rightarrow\infty}\left(1+\frac{x}{n}\right)^n
+= e^x = \sum\limits_{k=0}^{\infty} \frac{x^k}{k!}.$$
+
+\item Calculer la limite
+$$ \lim_{n\to\infty} \int_{\mathbb{R}_+} \left(1+\frac{x}{n}\right)^n\mathrm{e}^{-bx} d\lambda (x)$$
+o\`{u} $b>1$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item Montrons que pour tout $x\in \mathbb{R}_+$,
+$(1+\frac{x}{n})^n$ est une suite croissante et que
+$\lim\limits_{n\rightarrow\infty}(1+\frac{x}{n})^n=e^x$.
+ Pour $n\in \mathbb{N}$ on a
+$$\left(1+\frac{x}{n}\right)^n=\sum\limits_{k=0}^n
+{\binom{n}{k}}\left(\frac{x}{n}\right)^k=\sum\limits_{k=0}^n
+a_{n,k}\,\frac{x^k}{k!},$$ o\`{u} \; $\displaystyle
+a_{n,k}=\frac{n!}{(n-k)!n^k}=\frac{n(n-1)\cdots(n-k+1)}{n^k}.$
+
+\bigskip
+
+Les assertions suivantes sont vraies: 
+\begin{enumerate}
+\item[{i)}] $a_{n+1,k}\geq a_{n,k}$.  En effet,
+$\frac{n+1-l}{n+1}\geq \frac{n-l}{n}$ \, pour \, $l\in \mathbb{N}$
+\,  car \, $n^2+n-l\cdot n\geq n^2+n-l\cdot n-l$,
+
+\item[{ii)}] $a_{n,k}<1$ \; (\'{e}vident);
+
+\item[{iii)}] Pour tout $k\in \mathbb{N}$, \;
+$\lim\limits_{n\rightarrow\infty}a_{n,k}=1$.
+
+\end{enumerate}
+
+Comme $a_{n+1,n+1}>0$,
+$\displaystyle\left(1+\frac{x}{n+1}\right)^{n+1}=\sum\limits_{k=0}^{n+1}
+a_{n+1,k}\,\frac{x^k}{k!}>\sum\limits_{k=0}^{n}
+a_{n+1,k}\,\frac{x^k}{k!} .$ Il s'ensuit donc de (i) que la suite
+$\displaystyle\left\{\left(1+\frac{x}{n}\right)^n\right\}$  est
+croissante. Les assertions (ii) et (iii) impliquent que
+$$\left(1+\frac{x}{n}\right)^n=\sum\limits_{k=0}^n
+a_{n,k}\,\frac{x^k}{k!}\leq \sum\limits_{k=0}^n \frac{x^k}{k!}\leq
+\sum\limits_{k=0}^\infty \frac{x^k}{k!}=e^x$$ et que, pour tout
+$m\in\mathbb{N}$,\;
+$\displaystyle\lim\limits_{n\rightarrow\infty}\left(1+\frac{x}{n}\right)^n\geq
+\sum\limits_{k=0}^m \frac{x^k}{k!}$. \; \; Ainsi, \;
+$\displaystyle\lim\limits_{n\rightarrow\infty}\left(1+\frac{x}{n}\right)^n
+= e^x.$
+
+
+
+\item
+Par le th\'{e}or\`{e}me de convergence monotone, on a
+pour $b>1$,
+\begin{eqnarray*}
+\lim\limits_{n\rightarrow\infty}\int_{\mathbb{R}_+}\left(1+\frac{x}{n}\right)^n
+e^{-bx} d\lambda(x) &=
+\int_{\mathbb{R}_+}\lim\limits_{n\rightarrow\infty}\left(1+\frac{x}{n}\right)^n
+e^{-bx} d\lambda(x)\\ &=\int_0^\infty e^{(1-b)x}
+d\lambda(x)=\frac{1}{b-1}.
+\end{eqnarray*}
+\end{enumerate}
+\fincorrection
+
+\finexercice

@@ -1,0 +1,61 @@
+\exercice{5573, rouget, 2010/10/16}
+\enonce[**I Polynômes d'interpolation de \textsc{Lagrange}]
+Soient $a_0$,..., $a_n$ $n+1$ nombres complexes deux à deux distincts et $b_0$,..., $b_n$ $n+1$  nombres complexes.
+
+Montrer qu'il existe une unique famille de $n+1$ polynômes à coefficients complexes de degré $n$ exactement vérifiant $\forall(i,j)\in\llbracket0,n\rrbracket$,  $L_i(a_j)=1$ si $i=j$ et $0$ sinon. 
+
+Montrer que la famille $(L_i)_{0\leqslant i\leqslant n}$ est une base de $\Cc_n[X]$.
+
+Montrer qu'il existe un unique polynôme $P$ de degré inférieur ou égal à $n$ vérifiant $\forall i\in\llbracket0,n\rrbracket$, $P(a_i) =b_i$. Expliciter $P$ puis déterminer tous les polynômes vérifiant les égalités précédentes.
+\finenonce
+
+\noindication
+
+\correction
+\textbf{Unicité.} Soit $i\in\llbracket0,n\rrbracket$. $L_i$ doit admettre les $n$ racines deux à deux distinctes $a_j$ où $j$ est différent de $i$ et donc $L_i$ est divisible par le polynôme $\prod_{j\neq i}^{}(X-a_j)$.
+$L_i$ doit être de degré $n$ et donc il existe un réel non nul $\lambda$ tel que $L_i=\lambda
+\prod_{j\neq i}(X-a_j)$. Enfin $L_i(a_i)=1$ fournit $\lambda=\frac{1}{\prod_{j\neq i}^{}(a_i-a_j)}$. Ainsi nécessairement $L_i=\prod_{j\neq i}^{}\frac{X-a_j}{a_i-a_j}$.
+
+\textbf{Existence.} Les $L_i$ ainsi définis conviennent.
+
+\begin{center}
+\shadowbox{
+$\forall i\in\llbracket0,n\rrbracket,\;L_i=\prod_{j\neq i}^{}\frac{X-a_j}{a_i-a_j}$.
+}
+\end{center}
+
+Montrons que la famille $(L_i)_{0\leqslant i\leqslant n}$ est libre.
+
+Soient $\lambda_0$,..., $\lambda_n$ $n+1$ nombres complexes tels que $\lambda_0L_0 + ... +\lambda_nL_n =0$. En particulier, pour un indice $i$ de $\llbracket0,n\rrbracket$ donné, $\sum_{j=0}^{n}\lambda_jL_j(a_i)=0$ et donc $\lambda_i=0$ au vu des égalités définissant les $L_j$. La famille $(L_i)_{0\leqslant i\leqslant n}$ est libre.
+
+De plus les $L_i$ sont tous dans $\Cc_n[X]$ et vérifient $\text{card}(L_i)_{0\leqslant i\leqslant n}= n+1=\text{dim}\Cc_n[X]<+\infty$. Donc la famille $(L_i)_{0\leqslant i\leqslant n}$ est une base de $\Cc_n[X]$.
+
+Soit $P$ un polynôme quelconque de degré inférieur ou égal à $n$.
+
+On écrit $P$ dans la base $(L_j)_{0\leqslant j\leqslant n}$ : $P=\sum_{j=0}^{n}\lambda_jL_j$. 
+En prenant la valeur en $a_i$, $i$ donné dans $\llbracket0,n\rrbracket$, on obtient $\lambda_i= P(a_i)$. D'où l'écriture générale d'un polynôme de degré inférieur ou égal à $n$ dans la base $(L_i)_{0\leqslant i\leqslant n}$ : 
+
+\begin{center}
+\shadowbox{
+$\forall P\in\Cc_n[X]$, $P=P(a_0)L_0 + ... + P(a_n)L_n$.
+}
+\end{center}
+
+Mais alors : $(\forall i\in\llbracket0,n\rrbracket,\;P(a_i)=b_i)\Rightarrow P=b_0L_0 + ... + b_nL_n$.
+
+ 
+Réciproquement le polynôme $P= b_0L_0+ ... +b_nL_n$ vérifie bien sûr les égalités demandées et est de degré inférieur ou égal à $n$.
+
+Ainsi, il existe un et un seul polynôme de degré inférieur ou égal à $n$ vérifiant $\forall i\in\llbracket0,n\rrbracket$, $P(a_i)=b_i$ à savoir $P_0=\sum_{i=0}^{n}b_iL_i$.
+
+Soient $P\in\Cc[X]$ et $R=(X-a_0) ... (X-a_n)$ ($\text{deg}(R)=n+1$).
+
+\begin{align*}\ensuremath
+(\forall i\in\llbracket0,n\rrbracket\;P(a_i) = b_i)&\Leftrightarrow(\forall i\in\llbracket0,n\rrbracket\;P(a_i)=P_0(a_i))\\
+ &\Leftrightarrow P-P_0\;\text{admet les}\;n+1\;\text{racines deux à deux distinctes}\;a_0,...,a_n\\
+  &\Leftrightarrow P-P_0\;\text{est divisible par}\;R\Leftrightarrow\exists Q\in\Cc[X]/\;P= P_0+QR.
+\end{align*}
+
+Les polynômes cherchés sont les $P_0+QR$ où $Q$ décrit $\Cc[X]$.
+\fincorrection
+\finexercice

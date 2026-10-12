@@ -1,0 +1,86 @@
+\exercice{5936, tumpach, 2010/11/11}
+\enonce
+\label{ex:barb20}
+Soit $(\Omega, \Sigma)$ un espace mesurable. On dit que
+$\varphi~:\Omega \rightarrow \mathbb{R}$ est une \emph{fonction
+simple} ou \emph{\'etag\'ee} si $\varphi$ est mesurable et ne
+prend qu'un nombre fini de valeurs, i.e. si $\varphi$ s'\'ecrit~:
+$$
+\varphi = \sum_{j \in J} c_{j} \mathbf{1}_{E_{j}},
+$$
+o\`u $J$ est un ensemble fini, les ensembles $E_{j}$ sont
+mesurables et o\`u, pour $i\neq j$, $c_{i} \neq c_{j}$ et
+$E_{i}\cap E_{j} = \emptyset$. Soit $\varphi$ une fonction simple
+positive. On rappelle que l'int\'egrale de $\varphi$ par rapport
+\`a une mesure $\mu$ est d\'efinie par~:
+$$
+\int_{\Omega} \varphi \,d\mu = \int_{0}^{\infty}
+\mu\left(S_{\varphi}(t) \right)\,dt,
+$$
+o\`u $S_{\varphi}(t) = \{x\in \Omega, \varphi(x)>t\}$.
+\begin{enumerate}
+\item Montrer que $$\int_{\Omega} \varphi \,d\mu = \sum_{j \in J}
+c_{j} \mu(E_{j}).$$ 
+\item Montrer que pour toute fonction r\'eelle
+mesurable positive, $f \in \mathcal{M}^{+}(\Omega, \Sigma)$, il
+existe une suite $\{\varphi_{n}\}_{n\in\mathbb{N}}$ de fonctions
+simples positives telle que~:
+\begin{enumerate}
+\item[(a)] $0 \leq \varphi_{n}(x) \leq \varphi_{n+1}(x)$ pour tout
+$x\in\Omega$ et pour tout $n\in\mathbb{N}$~; 
+\item[(b)]
+$\lim_{n\rightarrow +\infty} \varphi_{n}(x) = f(x)$ pour tout
+$x\in\Omega$.
+\end{enumerate}
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+Soit $\varphi$ une fonction simple positive~:
+$$
+\varphi = \sum_{j \in J} c_{j} \mathbf{1}_{E_{j}},
+$$
+o\`u $J$ est un ensemble fini, les ensembles $E_{j}$ sont
+mesurables et o\`u, pour $i\neq j$, $c_{i} \neq c_{j}$ et
+$E_{i}\cap E_{j} = \emptyset$.
+\begin{enumerate}
+\item On a
+$$
+\int_{\Omega} \varphi \,d\mu = \int_{0}^{\infty}
+\mu\left(S_{\varphi}(t) \right)\,dt,
+$$
+o\`u $S_{\varphi}(t) = \{x\in \Omega, \varphi(x)>t\} =
+\cup_{c_{j}>t} E_{j}$ et o\`u $\mu\left(S_{\varphi}(t) \right) =
+\sum_{c_{j}>t} \mu\left(E_{j}\right)$. Ainsi
+$$
+\int_{\Omega} \varphi \,d\mu = \int_{0}^{\infty}\sum_{c_{j}>t}
+\mu\left(E_{j}\right)\,dt = \sum_{j\in
+J}\int_0^{c_{j}}\mu\left(E_{j}\right)\,dt =  \sum_{j \in J}\,
+c_{j} \mu(E_{j}).
+$$
+
+\item Pour tout $n\in\mathbb{N}$, posons
+\begin{eqnarray*}
+E_{k,n} &:=& \{x\in\Omega,~ k\, 2^{-n} \leq f(x) <(k+1) 2^{-n}\}
+ \quad \text{pour}\quad k = 0, \dots, n \,2^{n} - 1,\\
+E_{n, n} &:=& \{x\in\Omega,~ f(x)\geq n\} \quad \text{pour}\quad k
+= n\, 2^{n}.
+\end{eqnarray*}
+Puisque $f$ est mesurable, les ensembles $E_{k, n}$ appartiennent
+\`a $\Sigma$. Pour tout $n\in\mathbb{N}$ fix\'e, les ensembles
+$E_{k,n}$, $0\leq k\leq n 2^n - 1$ sont deux \`a deux disjoints et
+$\cup_{k} E_{k,n} = \Omega$. Posons
+$$
+\varphi_{n} = \sum_{k=0}^{n 2^{-n}-1} k\, 2^{-n} \mathbf{1}_{E_{k,n}}.
+$$
+Alors $\varphi_{n}$ est une fonction simple positive v\'erifiant
+$\varphi_{n} \leq f$. En outre $0 \leq \varphi_{n}(x) \leq
+\varphi_{n+1}(x)$ pour tout $x\in\Omega$ et pour tout
+$n\in\mathbb{N}$. De plus,  $\lim_{n\rightarrow +\infty}
+\varphi_{n}(x) = f(x)$ pour tout $x\in\Omega$.
+\end{enumerate}
+\fincorrection
+
+\finexercice

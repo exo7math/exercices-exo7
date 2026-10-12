@@ -1,0 +1,45 @@
+\exercice{1098, legall, 1998/09/01}
+
+\enonce
+Soit  $M_{\alpha , \beta }$  la matrice : $ M_{\alpha ,
+\beta }= \begin{pmatrix}
+1 &3
+& \alpha & \beta \cr
+2 & -1  & 2 & 1 \cr
+-1 & 1 & 2 & 0 \cr \end{pmatrix}\in M_{3,4}({\Rr})$. D\' eterminer pour quelles
+valeurs de  $\alpha $  et
+de  $\beta $  l'application lin\' eaire qui lui est associ\' ee est  surjective.
+
+\finenonce
+
+\noindication
+
+\correction
+Posons : $ e_1=\begin{pmatrix}1 \cr 2 \cr -1 \cr \end{pmatrix}  ,
+  e_2=\begin{pmatrix}3 \cr -1 \cr 1 \cr \end{pmatrix}  ,
+  e_{3,\alpha }=\begin{pmatrix}\alpha \cr 2 \cr 2 \cr \end{pmatrix} ,
+  e_{4, \beta }=\begin{pmatrix}\beta \cr 1 \cr 0 \cr \end{pmatrix}$. Notons  $\varphi _{\alpha , \beta }$
+l'application lin\' eaire associ\' ee \`a   $M _{\alpha , \beta }$
+et  $F=\hbox{Vect }\{ e_1 ,  e_2 \}$. Par d\' efinition de la
+matrice associ\' ee \`a une application lin\' eaire, $\hbox{Im
+}(\varphi _{\alpha , \beta })=\hbox{Vect }\{ e_1 ,  e_2  ,  e_{3,
+\alpha }  ,  e_{4, \beta }\}$. En particulier,
+ $F\subset \hbox{Im }(\varphi _{\alpha , \beta })$.
+Comme  $e_1$  et  $e_2$  sont lin\' eairement ind\' ependants,
+$\hbox{rg}(\varphi _{\alpha , \beta })\geq 2$. Ainsi  $\varphi
+_{\alpha , \beta }$  est surjective si et seulement si l'un des
+deux vecteurs  $e_{3, \alpha }$  ou  $e_{4, \beta }$  n'appartient
+pas \`a  $F$. En ce cas en effet, $\hbox{rg}(\varphi _{\alpha ,
+\beta })=3=\hbox{dim }{\R}^3$. Or  $e_{3, \alpha }$  et  $e_{4,
+\beta }$  appartiennent \`a  $F$
+ si et seulement si il existe  $\lambda  , \lambda '  ,  \mu  ,  \mu ' \in
+{\R}$  tels que : $e_{3, \alpha }=\lambda e_1 + \mu e_2$  et
+$e_{4, \beta }=\lambda 'e_1 + \mu 'e_2$. Un petit calcul montre
+donc que  $\varphi _{\alpha , \beta }$  n'est pas surjective si et
+seulement si  $\alpha =22$  et  $\beta=4$. Donc  $\varphi _{\alpha
+, \beta }$  est surjective si et seulement si  $\alpha \not =22$
+ou  $\beta\not =4$.
+\fincorrection
+
+\finexercice
+

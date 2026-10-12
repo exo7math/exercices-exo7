@@ -1,0 +1,38 @@
+\exercice{851, bodin, 1998/09/01}
+
+\enonce
+Soit l'\'equation diff\'erentielle
+$$(E)\qquad y'+2xy = x.$$
+\begin{enumerate}
+    \item R\'esoudre l'\'equation homog\`ene asoci\'ee.
+    \item Calculer la solution de $(E)$ v\'erifiant $y(0)=1$.
+\end{enumerate}
+
+\finenonce
+
+\noindication
+
+\correction
+Les primitives de la fonction $a(x)=2x$ sont les fonctions $A(x)=
+x^2/2 + k $ o\`u $k \in \R$ est une constante r\'eelle quelconque.
+Donc les solutions de l'\'equation homog\`ene associ\'ee \`a $E$
+sont toutes les fonctions d\'efinies sur $\R$ du type : $ y(x)=
+ce^{-x^2}$ o\`u $c\in\R$ est une constante arbitraire. On cherche
+maintenant une solution particuli\`ere de $E$ sous la forme
+$y_p(x)=c(x)e^{-x^2}$ (m\'ethode de la variation de la constante).
+On a :\\ $y_p^\prime(x)+ 2xy_p(x)= c^\prime(x)e^{-x^2}$. Donc
+$y_p$ est solution de $E$ si et seulement si :
+$c^\prime(x)=xe^{x^2}$ pour tout $x\in\R$. On choisit la fonction
+$c$ parmi les primitives de la fonction $xe^{x^2}$, par exemple :
+$c(x)=1/2e^{x^2}$. Donc la fonction $y_p$
+telle que $y_p(x)=1/2e^{x^2}e^{-x^2}=1/2$ est solution de $E$.\\
+Par cons\'equent les solutions de $E$ sont toutes les fonctions de
+la forme :
+  $$ y(x)= ce^{-x^2} + \frac{1}{2} \; c \in\R .$$
+Pour $y$ solution de $E_1$, la condition $y(0)=1$ \'equivaut \`a :
+$c=1/2$.
+
+\fincorrection
+
+\finexercice
+

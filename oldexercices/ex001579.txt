@@ -1,0 +1,33 @@
+\exercice{1579, barraud, 2003/09/01}
+
+\enonce
+ \'Enoncer le théorème de Cayley-Hamilton.  Le démontrer dans le cas
+ particulier où le polynôme caractéristique est scindé à racines simples.
+
+\finenonce
+
+\noindication
+
+\correction
+Soit $u$ un endomorphisme d'un espace vectoriel $E$ de dimension finie,
+alors le polynôme caractéristiaque de $u$ est aussi un polynôme
+annulateur de $u$.
+
+Preuve si $\chi_{u}$ est scindé à racines simples~: $u$ est alors
+diagonalisable et il existe donc une base $B$ dans laquelle $Mat_{B}(u)=
+\begin{pmatrix}
+  \lambda_{1}\\
+  &\ddots\\
+  &      &\lambda_{n}
+\end{pmatrix}
+$. Alors $Mat_{B}(\chi_{u}(u))=\begin{pmatrix}
+  \chi_{u}(\lambda_{1})\\
+  &\ddots\\
+  &      &\chi_{u}(\lambda_{n})
+\end{pmatrix}
+$. Et comme $\forall i\in\{1,\dots,n\}$ on a $\chi_{u}(\lambda_{i})=0$,
+on en déduit que $\chi_{u}(u)=0$. 
+\fincorrection
+
+\finexercice
+

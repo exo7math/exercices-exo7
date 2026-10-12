@@ -1,0 +1,34 @@
+\exercice{3500, quercia, 2010/03/10}
+\enonce[Calcul de valeurs propres]
+
+Soient $a_1,\dots,a_n \in \R$.
+
+Chercher les valeurs et les vecteurs propres de la matrice
+$A = \begin{pmatrix}    &        &        & a_1     \cr
+                  &(0)     &        & \vdots  \cr
+                  &        &        & a_{n-1} \cr
+              a_1 &\dots   &a_{n-1} & a_n     \cr \end{pmatrix}$.
+On distinguera les cas :
+
+\begin{enumerate}
+  \item $(a_1,\dots,a_{n-1}) \ne (0,\dots,0)$.
+  \item $(a_1,\dots,a_{n-1}) = (0,\dots,0)$.
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $\mathrm{rg}(A) = 2  \Rightarrow  0$ est valeur propre d'ordre au moins $n-2$.
+    $E_0 = \{ a_1x_1 + \dots + a_{n-1}x_{n-1} = x_n = 0 \}$.\par
+    vp $\lambda \ne 0$ :
+    $\lambda^2 - a_n\lambda - (a_1^2 + \dots + a_{n-1}^2) = 0$.
+    Il y a deux racines distinctes,
+    $E_\lambda = \text{vect}((a_1,\dots,a_{n-1},\lambda))$.
+  \item $A$ est diagonale. vp = 0 et $a_n$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

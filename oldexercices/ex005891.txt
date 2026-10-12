@@ -1,0 +1,59 @@
+\exercice{5891, rouget, 2010/10/16}
+\enonce[***]
+Soit $n\in\Nn$. Montrer que l'équation $y^{2n+1}+ y - x = 0$ définit implicitement une fonction $\varphi$ sur $\Rr$ telle que : $(\forall(x,y)\in\Rr^2),\;[y^{2n+1}+ y - x = 0\Leftrightarrow y =\varphi(x)]$.
+
+Montrer que $\varphi$ est de classe $C^\infty$ sur $\Rr$ et calculer $\int_{0}^{2}\varphi(t)\;dt$.
+\finenonce
+
+\noindication
+
+\correction
+Soit $n\in\Nn$. Soit $x\in\Rr$. La fonction $f_x:y\mapsto y^{2n+1}+y-x$ est continue et strictement croissante sur $\Rr$ en tant que somme de fonctions continues et strictement croissantes sur $\Rr$. Donc la fonction $f_x$ réalise une bijection de $\Rr$ sur $]\lim_{y \rightarrow -\infty}f_x(y),\lim_{y \rightarrow +\infty}f_x(y)[=\Rr$. En particulier, l'équation $f_x(y)=0$ a une et une seule solution dans $\Rr$ que l'on note $\varphi(x)$.
+
+La fonction $f:(x,y)\mapsto y^{2n+1}+y-x$ est de classe $C^1$ sur $\Rr^2$ qui est un ouvert de $\Rr^2$ et de plus, $\forall(x,y)\in\Rr^2$, $ \frac{\partial f}{\partial y}(x,y)=(2n+1)y^{2n}+1\neq0$. D'après le théorème des fonctions implicites, la fonction $\varphi$ implicitement définie par l'égalité $f(x,y)=0$ est dérivable en tout réel $x$ et de plus, en dérivant l'égalité $\forall x\in\Rr$, $(\varphi(x))^{2n+1}+\varphi(x)-x=0$, on obtient $\forall x\in\Rr$, $(2n+1)\varphi'(x)(\varphi(x))^{2n}+\varphi'(x)-1=0$ et donc
+
+\begin{center}
+$\forall x\in\Rr$, $\varphi'(x)= \frac{1}{(2n+1)(\varphi(x))^{2n}+1}$.
+\end{center}
+
+Montrons par récurrence que $\forall p\in\Nn^*$, la fonction $\varphi$ est $p$ fois dérivable sur $\Rr$.
+
+- C'est vrai pour $p=1$.
+
+- Soit $p\geqslant1$. Supposons que la fonction $\varphi$ soit $p$ fois dérivable sur $\Rr$. Alors la fonction $\varphi'= \frac{1}{(2n+1)\varphi^{2n}+1}$ est 
+
+$p$ fois dérivable sur $\Rr$ en tant qu'inverse d'une fonction $p$ fois dérivable sur $\Rr$ ne s'annulant pas sur $\Rr$. On en déduit
+
+que la fonction $\varphi$ est $p+1$ fois dérivable sur $\Rr$.
+
+On a montré par récurrence que $\forall p\in\Nn^*$, la fonction $\varphi$ est $p$ fois dérivable sur $\Rr$ et donc que
+
+\begin{center}
+\shadowbox{
+la fonction $\varphi$ est de classe $C^\infty$ sur $\Rr$.
+}
+\end{center}
+
+Calculons maintenant $I=\int_{0}^{2}\varphi(t)\;dt$. On note tout d'abord que, puisque $0^{2n+1}+0-0=0$, on a $\varphi(0)=0$ et puisque $1^{2n+1}+1-2=0$, on a $\varphi(2)=1$. 
+
+Maintenant, pour tout réel $x$ de $[0,2]$, on a $\varphi'(x)(\varphi(x))^{2n+1}+\varphi'(x)\varphi(x)-x\varphi'(x)=0$ (en multipliant par $\varphi'(x)$ les deux membres de l'égalité définissant $\varphi(x)$) et en intégrant sur le segment $[0,2]$, on obtient
+
+\begin{center}
+$\int_{0}^{2}\varphi'(x)(\varphi(x))^{2n+1}\;dx+\int_{0}^{2}\varphi'(x)\varphi(x)\;dx-\int_{0}^{2}x\varphi'(x)\;dx=0$ $(*)$.
+\end{center}
+
+Or, $\int_{0}^{2}\varphi'(x)(\varphi(x))^{2n+1}\;dx=\left[ \frac{(\varphi(x))^{2n+2}}{2n+2}\right]_0^2= \frac{1}{2n+2}$. De même, $\int_{0}^{2}\varphi'(x)\varphi(x)\;dx=\left[ \frac{(\varphi(x))^{2}}{2}\right]_0^2= \frac{1}{2}$ et donc $\int_{0}^{2}\varphi'(x)(\varphi(x))^{2n+1}\;dx+\int_{0}^{2}\varphi'(x)\varphi(x)\;dx= \frac{1}{2n+2}+ \frac{1}{2}= \frac{n+2}{2n+2}$. D'autre part, puisque les deux fonctions $x\mapsto x$ et $x\mapsto\varphi(x)$ sont de classe $C^1$ sur le segment $[0,2]$, on peut effectuer une intégration par parties qui fournit
+
+\begin{center}
+$-\int_{0}^{2}x\varphi'(x)\;dx=\left[-x\varphi(x)\right]_0^2+\int_{0}^{2}\varphi(x)\;dx=-2+I$.
+\end{center}
+
+L'égalité $(*)$ s'écrit donc $ \frac{n+2}{2n+2}-2+I=0$ et on obtient $I= \frac{3n+2}{2n+2}$.
+
+\begin{center}
+\shadowbox{
+$\int_{0}^{2}\varphi(x)\;dx= \frac{3n+2}{2n+2}$.
+}
+\end{center}
+\fincorrection
+\finexercice

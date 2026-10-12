@@ -1,26 +1,19 @@
 \exercice{6127, queffelec, 2011/10/16}
+
 \enonce
-Soit $a,b\in E$ evn, $B_1=\{x\in E/ \Vert x-a\Vert=\Vert x-b\Vert={1\over2}\Vert
-a-b\Vert\}$, et pour $n>1$,  $B_n=\{x\in B_{n-1}/ \Vert x-y\Vert\leq
-{1\over2}\delta(B_{n-1}),\
-\forall y\in B_{n-1}\}$, où $\delta(B)$ désigne le diamètre de l'ensemble $B$.
+Soit \( a,b\in E \) evn, \( B_1 = \{x\in E/ \Vert x-a\Vert = \Vert x-b\Vert = \frac{1}{2}\Vert a-b\Vert\} \), et pour \( n>1 \), \( B_n = \{x\in B_{n-1}/ \Vert x-y\Vert\le \frac{1}{2}\delta(B_{n-1}),\
+\forall y\in B_{n-1}\} \), où \( \delta(B) \) désigne le diamètre de l'ensemble \( B \).
 
-\begin{enumerate}  
-\item Montrer que $\delta(B_{n})\leq {1\over2}\delta(B_{n-1})$, et que $\bigcap_n
-B_n=\{{{a+b}\over2}\}$.
+\begin{enumerate}
+  \item Montrer que \( \delta(B_n)\le \frac{1}{2}\delta(B_{n-1}) \), et que \( \bigcap_n B_n = \{\frac{{a+b}}{2}\} \).
 
-\item Soit $f$ une isométrie de $E$ {\it sur} $F$ evn, telle que $f(0)=0$.
-Montrer en considérant la suite $(f(B_n))$ que pour tous $a,b\in E$,
-$$f({{a+b}\over2})={{f(a)+f(b)}\over2}.$$
-En déduire que $f$ est une isométrie linéaire. Que peut-on dire plus
-généralement d'une isométrie $f$ de $E$ sur $F$.
+  \item Soit \( f \) une isométrie de \( E \) {\it sur} \( F \) evn, telle que \( f(0) = 0 \). Montrer en considérant la suite \( (f(B_n)) \) que pour tous \( a,b\in E \),
+        \[
+          f(\frac{{a+b}}{2}) = \frac{{f(a)+f(b)}}{2}.
+        \]
+        En déduire que \( f \) est une isométrie linéaire. Que peut-on dire plus généralement d'une isométrie \( f \) de \( E \) sur \( F \).
 
-\item On note $l^\infty_n$ l'espace $\Rr^n$ muni de la norme
-$\sup_{1\leq i\leq n}\vert x_i\vert$, et on considère l'application $f:
-l^\infty_n\to l^\infty_{n+1}$ définie par
-$f(x_1,\cdots,x_n)=(x_1,\cdots,x_n,\sin x_1)$. Vérifier que $f$ est une
-isométrie non linéaire entre evn; pourquoi n'a-t-on pas de contra\-diction avec
-ce qui précède ?
+  \item On note \( l^\infty_n \) l'espace \( \Rr^n \) muni de la norme \( \sup_{1\le i\le n}\vert x_i\vert \), et on considère l'application \( f: l^\infty_n\to l^\infty_{n+1} \) définie par \( f(x_1,\cdots,x_n) = (x_1,\cdots,x_n,\sin x_1) \). Vérifier que \( f \) est une isométrie non linéaire entre evn; pourquoi n'a-t-on pas de contradiction avec ce qui précède ?
 \end{enumerate}
 \finenonce
 
@@ -28,4 +21,4 @@ ce qui précède ?
 
 \nocorrection
 
-\finexercice       
+\finexercice

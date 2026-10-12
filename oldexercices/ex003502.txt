@@ -1,0 +1,29 @@
+\exercice{3502, quercia, 2010/03/10}
+\enonce[Matrice tridiagonale]
+
+Déterminer les valeurs propres de la matrice
+$A = \begin{pmatrix} 1  &-1     &       &        &(0)     \cr
+               -1 &2      &-1     &        &        \cr
+                  &\ddots &\ddots &\ddots  &        \cr
+                  &       &-1     &2       &-1      \cr
+               (0)&       &       &-1      &1       \cr\end{pmatrix} \in \mathcal{M}_n(\R)$.
+\finenonce
+
+\noindication
+
+\correction
+Soit $P_n(x)$ le polynôme caractéristique de~$x$ et $Q_n(x)$ celui de la
+matrice obtenue à partir de~$A$ en rempla\c cant le premier~$1$ par $2$.
+On a les relations de récurrence~:
+$$P_n(x) = (1-x)Q_{n-1}(x) - Q_{n-2}(x),
+  \qquad
+  Q_n(x) = (2-x)Q_{n-1}(x) - Q_{n-2}(x).$$
+D'où pour $x\notin\{0,4\}$~:
+$$P_n(x) = \frac{(1-\alpha)(1-\alpha^{2n})}{\alpha^n(1+\alpha)},  \qquad\text{avec }
+x = 2 - \alpha - \frac1\alpha.$$
+Les valeurs propres de~$A$ autres que $0$ et $4$ sont les réels $x_k=2(1-\cos(k\pi/n))$
+avec $0< k< n$ et $0$ est aussi valeur propre (somme des colonnes nulle) donc
+il n'y en a pas d'autres.
+ \fincorrection
+
+\finexercice

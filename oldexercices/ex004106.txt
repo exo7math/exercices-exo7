@@ -1,0 +1,26 @@
+\exercice{4106, quercia, 2010/03/11}
+\enonce[X MP$^*$ 2000]
+
+On considère l'équation différentielle à coefficients continus sur
+$\R$ : $x''+p(t)x'+q(t)x=0$. Trouver une condtion nécessaire
+portant sur $p$ et $q$ pour qu'il existe deux solutions sur $\R$ dont
+le produit vaut constamment~un.
+
+
+
+\finenonce
+
+\noindication
+
+\correction
+$x$ et $1/x$ sont solution $ \Rightarrow $ $x'^2+qx^2=0$ donc une condition nécessaire
+est~: $q(t)\le 0$ et $q=-x'^2/x^2$ est de classe $\mathcal{C}^1$ .
+Réciproquement, supposons $q$ négative de classe $\mathcal{C}^1$ et soit $r(t)=\sqrt{-q(t)}$.
+Si $x$ est solution de $x'=r(t)x$ alors sur tout intervalle~$I$ où $q$ ne
+s'annule pas on a $x'' = r(t)x' + r'(t)x$ donc
+$$x''+p(t)x'+q(t)x = (r(t)+p(t))x'+(r'(t)+q(t))x = (r(t)p(t)+r'(t))x$$
+donc une deuxième condition nécessaire est~: $p(t)q(t)=-\frac12q'(t)$.
+Ces deux conditions sont suffisantes si $q$ est strictement négative.
+\fincorrection
+
+\finexercice

@@ -1,0 +1,291 @@
+\exercice{2610, delaunay, 2009/05/19}
+\enonce
+ Soit $\alpha\in\R$ et $A_\alpha\in M_3(\R)$ la matrice suivante
+$$A_\alpha=\begin{pmatrix}-1 & 0 & \alpha+1 \\  1&-2&0 \\ -1&1&\alpha\end{pmatrix}$$
+ \centerline{I} 
+
+\begin{enumerate} 
+\item Factoriser le polyn\^ome caract\'eristique $P_{A_\alpha}(X)$ en produit de facteurs du premier degr\'e.
+
+  \item D\'eterminer selon la valeur du param\`etre $\alpha$ les valeurs propres distinctes de $A_\alpha$ et leur multiplicit\'e.
+
+  \item D\'eterminer les valeurs de $\alpha$ pour lesquelles la matrice $A_\alpha$ est diagonalisable.
+
+  \item D\'eterminer selon la valeur de $\alpha$ le polyn\^ome minimal de $A_\alpha$.
+\end{enumerate}
+
+\centerline{II}  
+
+On suppose, dans cette partie, que $\alpha=0$, on note $A=A_0$ et $f$ l'endomorphisme de $\R^3$ associ\'e \`a la matrice $A$.
+
+\begin{enumerate} 
+\item D\'eterminer les sous-espaces propres et caract\'eristiques de $A$.
+
+  \item D\'emontrer que le sous-espace vectoriel $\ker(A+I)^2$ est un plan stable par $f$.
+
+  \item D\'emontrer qu'il existe une base de $\R^3$ dans laquelle la matrice de $f$ est 
+$$B=\begin{pmatrix}-1 & 1 & 0 \\  0&-1&1 \\ 0&0&-1\end{pmatrix}$$
+et trouver une matrice $P$ inversible telle que $A=PBP^{-1}$ ($AP=PB$).
+
+  \item Ecrire la d\'ecomposition de Dunford de $B$ (justifier).
+
+  \item Pour $t\in\R$, calculer $\exp tB$ et exprimer $\exp tA$ \`a l'aide de $P$ et $\exp tB$.
+
+  \item Donner les solutions des syst\`emes diff\'erentiels $Y'=BY$ et $X'=AX$.
+\end{enumerate}
+
+\centerline{III}  
+
+On suppose, dans cette partie, que $\alpha=-1$, on note $A=A_{-1}$.
+
+\begin{enumerate}  \item V\'erifier que la matrice $A$ est diagonalisable.
+ 
+  \item Diagonaliser la matrice $A$.
+
+  \item Donner les solutions du syst\`eme diff\'erentiel $X'=A.X$.
+\end{enumerate}
+
+\centerline{IV}
+
+On suppose, dans cette partie, que $\alpha=1$, on note $A=A_{1}$.
+
+\begin{enumerate} 
+  \item D\'eterminer les sous-espaces propres et caract\'eristiques de $A$.
+
+  \item Trigonaliser la matrice $A$.
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+
+\centerline{\bf I}
+
+Soit $\alpha\in\R$ et $A_\alpha\in M_3(\R)$ la matrice suivante
+$$A_\alpha=\begin{pmatrix}-1 & 0 & \alpha+1 \\  1&-2&0 \\ -1&1&\alpha\end{pmatrix}$$
+
+\begin{enumerate}  
+  \item{\it Factorisons le polyn\^ome caract\'eristique $P_{A_\alpha}(X)$ en produit de facteurs du premier degr\'e.}
+
+On a
+\begin{align*}P_{A_\alpha}(X)
+&=\begin{vmatrix}-1-X & 0 & \alpha+1 \\  1&-2-X&0 \\ -1&1&\alpha-X\end{vmatrix}
+=\begin{vmatrix}-1-X & 0 & \alpha+1 \\  -1-X&-2-X&0 \\ 0&1&\alpha-X\end{vmatrix} \\ 
+&=\begin{vmatrix}-1-X & 0 & \alpha+1 \\  0&-2-X&-\alpha-1 \\ 0&1&\alpha-X\end{vmatrix} \\ 
+&=(-1-X)[(-2-X)(\alpha-X)+\alpha+1] \\ 
+&=-(X+1)[X^2+(2-\alpha)X+1-\alpha].
+\end{align*}
+Factorisons le polyn\^ome $X^2+(2-\alpha)X+1-\alpha$, son discriminant est \'egal \`a
+$$\Delta=(2-\alpha)^2-4(1-\alpha)=\alpha^2.$$
+On a donc $\sqrt{\Delta}=|\alpha|$, ce qui nous donne les deux racines 
+$$\lambda_1={\frac{\alpha-2-\alpha}{2}}=-1\ \ {\hbox{et}}\ \ 
+\lambda_2={\frac{\alpha-2+\alpha}{2}}=\alpha-1.$$
+Le polyn\^ome caract\'eristique $P_{A_\alpha}(X)$ se factorise donc en
+$$P_{A_\alpha}(X)=-(X+1)^2(X-\alpha+1).$$ 
+
+  \item {\it D\'eterminons selon la valeur du param\`etre $\alpha$ les valeurs propres distinctes de $A_\alpha$ et leur multiplicit\'e.}
+
+Les valeurs propres de $A_\alpha$ sont les racines du polyn\^ome caract\'eristique $P_{A_\alpha}$, ainsi,
+
+- si $\alpha=0$, la matrice $A_\alpha$ admet une valeur propre triple $\lambda=-1$,
+
+- si $\alpha\neq0$, la matrice $A_\alpha$ admet deux valeurs propres distinctes
+$\lambda_1=-1$ valeur propre double et $\lambda_2=\alpha-1$, valeur propre simple.
+ 
+
+  \item {\it D\'eterminons les valeurs de $\alpha$ pour lesquelles la matrice $A_\alpha$ est diagonalisable.}
+
+Il est clair que dans le cas $\alpha=0$, la matrice n'est pas diagonalisable, en effet si elle l'\'etait, il existerait une matrice inversible $P$ telle que $A_\alpha=P(-I)P^{-1}=-I$, ce qui n'est pas le cas.
+
+Si $\alpha\neq0$, la matrice $A_\alpha$ est diagonalisable si le sous-espace propre associ\'e \`a la valeur propre $-1$ est de dimension $2$. D\'eterminons ce sous-espace propre.
+
+$$E_{-1}=\ker(A_\alpha+I)=\left\{(x,y,z)\in\R^3,\ \begin{pmatrix}-1 & 0 & \alpha+1 \\  1&-2&0 \\ -1&1&\alpha\end{pmatrix}\begin{pmatrix}x \\  y \\  z\end{pmatrix}= \begin{pmatrix}-x \\  -y \\  -z\end{pmatrix}\right\}$$
+ainsi,
+$$(x,y,z)\in E_{-1}\iff\left\{\begin{align*}-x+(\alpha+1)z&=-x \\  x-2y&=-y \\  -x+y+\alpha z&=-z\end{align*}\right.
+\iff\left\{\begin{align*}(\alpha+1)z&=0 \\  x-y=0\end{align*}\right.$$
+Il faut distinguer les cas $\alpha=-1$ et $\alpha\neq -1$.
+
+- Si $\alpha=-1$, le sous-espace $E_{-1}$ est le plan vectoriel d'\'equation $x=y$, dans ce cas la matrice $A_\alpha$ est diagonalisable.
+
+- Si $\alpha\neq -1$, le sous-espace $E_{-1}$ est la droite vectorielle engendr\'ee par le vecteur
+$(1,1,0)$, dans ce cas la matrice $A_\alpha$ n'est pas diagonalisable.
+
+  \item {\it D\'eterminons selon la valeur de $\alpha$ le polyn\^ome minimal de $A_\alpha$.}
+
+ Notons $Q_A$ le polyn\^ome minimal de $A_\alpha$. On sait que la matrice $A_\alpha$ est diagonalisable sur $\R$ si et seulement si son polyn\^ome minimal a toutes ses racines dans $\R$ et que celles-ci sont simples. Or, nous venons de d\'emontrer que $A_\alpha$ est diagonalisable sur $\R$ si et seulement $\alpha=-1$, on a donc 
+
+- Si $\alpha=-1$, $A_\alpha$ est diagonalisable, donc $Q_A(X)=(X+1)(X-\alpha+1)=(X+1)(X+2)$.
+
+- Si $\alpha\neq -1$, on doit distinguer les cas $\alpha=0$ et $\alpha\neq0$, en effet, 
+
+\indent - si $\alpha\neq 0$,  $A_\alpha$ n'est pas diagonalisable donc les racines de $Q_A$ ne sont pas toutes les deux simples, et $P_A$ admet deux racines distinctes, donc
+$$Q_A(X)=-P_A(X)=(X+1)^2(X-\alpha+1).$$
+
+\indent- si $\alpha=0$, on a $P_A(X)=-(X+1)^3$ et $A_0$ n'est pas diagonalisable, le polyn\^ome minimal peut donc \^etre \'egal \`a $(X+1)^2$ ou \`a $(X+1)^3$, or
+$$(A+I)^2=\begin{pmatrix}0 & 0 & 1 \\  1&-1&0 \\ -1&1&1\end{pmatrix}\begin{pmatrix}0 & 0 & 1 \\  1&-1&0 \\ -1&1&1\end{pmatrix}=\begin{pmatrix}-1 & 1 & 1 \\  -1&1&1 \\ 0&0&0\end{pmatrix}\neq0$$
+donc le polyn\^ome minimal $Q_A$ est \'egal \`a $(X+1)^3$.
+\end{enumerate}
+
+
+{\centerline{II}}  
+
+On suppose d\'esormais que $\alpha=0$, on note $A=A_0$ et $f$ l'endomorphisme de $\R^3$ associ\'e \`a la matrice $A$. On a donc 
+$$A=A_0=\begin{pmatrix}-1 & 0 & 1 \\  1&-2&0 \\ -1&1&0\end{pmatrix}$$
+et $P_A(X)=-(X+1)^3$.
+
+\begin{enumerate} 
+  \item {\it D\'eterminons les sous-espaces propres et caract\'eristiques de $A$.}
+
+La matrice $A$ admet une unique valeur propre $\lambda=-1$ de multiplicit\'e $3$, le sous-espace propre associ\'e est l'espace $E_{-1}=\ker(A+I)$, et on a
+$$(x,y,z)\in E_{-1}\iff\left\{\begin{align*}-x+z&=-x \\  x-2y&=-y \\  -x+y&=-z\end{align*}\right.
+\iff\left\{\begin{align*}z&=0 \\  x&=y\end{align*}\right.$$
+Le sous-espace $E_{-1}$ est la droite vectorielle engendr\'ee par le vecteur $(1,1,0)$.
+
+Le sous-espace caract\'eristique de $A$, associ\'e \`a l'unique valeur propre $\lambda=-1$, est le sous-espace $N_{-1}=\ker(A+I)^3$, or, compte tenu du th\'eor\`eme de Hamilton-Cayley, on sait que $P_A(A)=0$, ainsi, la matrice $(A+I)^3$ est la matrice nulle, ce qui implique $N_{-1}=\R^3$, c'est donc l'espace tout entier.
+
+  \item {\it D\'emontrons que le sous-espace vectoriel $\ker(A+I)^2$ est un plan stable par $f$.}
+
+On a $E_{-1}=\ker(A+I)\subset\ker(A+I)^2\subset\ker(A+I)^3=\R^3$, le sous-espace 
+$\ker(A+I)^2$ est clairement stable par $A$ car  pour tout $v\in\ker(A+I)^2$, $Av\in\ker(A+I)^2$, en effet 
+$$(A+I)^2Av=A(A+I)^2v=0.$$
+D\'emontrons que ce sous-espace est un plan. On a
+$$(A+I)^2=\begin{pmatrix}0 & 0 & 1 \\  1&-1&0 \\ -1&1&1\end{pmatrix}\begin{pmatrix}0 & 0 & 1 \\  1&-1&0 \\ -1&1&1\end{pmatrix}=\begin{pmatrix}-1 & 1 & 1 \\  -1&1&1 \\ 0&0&0\end{pmatrix}$$
+donc $\ker(A+I)^2=\{(x,y,z)\in\R^3,\ -x+y+z=0\}$, c'est bien un plan vectoriel.
+
+  \item {\it D\'emontrons qu'il existe une base de $\R^3$ dans laquelle la matrice de $f$ est }
+$$B=\begin{pmatrix}-1 & 1 & 0 \\  0&-1&1 \\ 0&0&-1\end{pmatrix}$$
+{\it et trouvons une matrice $P$ inversible telle que} $A=PBP^{-1}$.
+
+Nous cherchons des vecteurs $e_1,e_2,e_3$ tels que $Ae_1=e_1$, $Ae_2=e_1-e_2$ et $Ae_3=e_2-e_3$.
+Le vecteur $e_1$ appartient \`a $E_1=\ker(A+I)$, et $\ker(A+I)$ est la droite d'\'equations :
+
+$\{z=0,x-y=0\}$ ; nous choisirons $e_2\in \ker(A+I)^2$ tel que $(e_1,e_2)$ soit une base de $\ker(A+I)^2$. Remarquons que si l'on cherche $e_2=(x,y,z)$ tel que
+$Ae_2=e_1-e_2$, on obtient le syst\`eme 
+$$\begin{pmatrix}-1 & 0 & 1 \\  1&-2&0 \\ -1&1&0\end{pmatrix}\begin{pmatrix}x \\  y \\  z\end{pmatrix}=\begin{pmatrix}1-x \\  1-y \\ -z\end{pmatrix}\iff
+\left\{\begin{align*}-x+z&=1-x \\  x-2y&=1-y \\  -x+y&=-z\end{align*}\right.
+\iff\left\{\begin{align*}z&=1 \\  x-y&=1\end{align*}\right.$$
+ce qui nous donne bien un vecteur de $\ker(A+I)^2$.
+Ainsi, les vecteurs $e_1=(1,1,0)$ et $e_2=(1,0,1)$ conviennent. Il nous reste \`a chercher un vecteur $e_3$ tel que $Ae_3=e_2-e_3$, c'est-\`a-dire
+$$\begin{pmatrix}-1 & 0 & 1 \\  1&-2&0 \\ -1&1&0\end{pmatrix}\begin{pmatrix}x \\  y \\  z\end{pmatrix}=\begin{pmatrix}1-x \\  -y \\ 1-z\end{pmatrix}\iff
+\left\{\begin{align*}-x+z&=1-x \\  x-2y&=-y \\  -x+y&=1-z\end{align*}\right.
+\iff\left\{\begin{align*}z&=1 \\  x&=y\end{align*}\right.$$
+Le vecteur $e_3=(0,0,1)$ convient. On obtient alors la matrice $P$ suivante qui est inversible et v\'erifie $A=PBP^{-1}$,
+$$P=\begin{pmatrix}1 & 1 & 0 \\  1&0&0 \\ 0&1&1\end{pmatrix}$$  
+
+  \item{\it D\'ecomposition de Dunford de $B$}
+
+On a 
+$$B=\begin{pmatrix}-1 & 1 & 0 \\  0&-1&1 \\ 0&0&-1\end{pmatrix}=
+\begin{pmatrix}-1 & 0& 0 \\  0&-1&0 \\ 0&0&-1\end{pmatrix}+
+\begin{pmatrix}0& 1 & 0 \\  0&0&1 \\ 0&0&0\end{pmatrix}$$
+et il est clair que les deux matrices commutent car l'une est \'egale à $-I$. Or, il existe un unique couple de matrices $D$ et $N$, $D$ diagonalisable et $N$ nilpotente, telles que $B=D+N$ et $DN=ND$. Or si
+$$D=\begin{pmatrix}-1 & 0& 0 \\  0&-1&0 \\ 0&0&-1\end{pmatrix}\ \ {\hbox{et}}\ \ 
+N=\begin{pmatrix}0& 1 & 0 \\  0&0&1 \\ 0&0&0\end{pmatrix},$$
+On a 
+$$N^2=\begin{pmatrix}0& 1 & 0 \\  0&0&1 \\ 0&0&0\end{pmatrix}\begin{pmatrix}0& 1 & 0 \\  0&0&1 \\ 0&0&0\end{pmatrix}=\begin{pmatrix}0& 0 & 1 \\  0&0&0 \\ 0&0&0\end{pmatrix}$$
+et $N^3=0$. La d\'ecomposition $B=D+N$ est donc bien la d\'ecomposition de Dunford de la matrice $B$.
+
+  \item{\it Pour $t\in\R$, calculons $\exp tB$ et exprimons $\exp tA$ \`a l'aide de $P$ et $\exp tB$.}
+
+On a $N^3=0$ donc pour tout $t\in\R$, $(tN)^3=0$ et l'exponentielle est \'egale \`a $$\exp(tN)=I+tN+(t^2/2)N^2,$$ par ailleurs $ND=DN$, donc  pour tout $t\in\R$, les matrices $tN$ et $tD$ commutent \'egalement, $(tN)(tD)=(tD)(tN)$, on a donc
+$$\exp(tB)=\exp(tD+tN)=\exp(tD)\exp(tN)=\exp(-tI)\exp(tN)=e^{-t}I\left(I+tN+{\frac{t^2}{2}}N^2\right)$$
+D'o\`u
+$$\exp(tB)=e^{-t}\begin{pmatrix}1 & t & {\frac{t^2}{2}} \\  0&1&t \\ 0&0&1\end{pmatrix}.$$
+Pour d\'eterminer l'exponentielle de la matrice $tA$, on \'ecrit
+$$\exp(tA)=\exp(t(PBP^{-1}))=\exp(P(tA)P^{-1})=P\exp(tB)P^{-1}.$$
+  \item {\it Solutions des syst\`emes diff\'erentiels $Y'=BY$ et $X'=AX$.}
+
+La solution g\'en\'erale du syst\`eme $Y'=BY$ s'\'ecrit 
+$$S(t)=\exp(tB)v$$
+o\`u $v=(a,b,c)$ est un vecteur de $\R^3$. La solution $S: \R\mapsto \R^3$  s'\'ecrit donc
+$$S(t)=\begin{pmatrix}x(t) \\  y(t) \\  z(t)\end{pmatrix}
+=e^{-t}\begin{pmatrix}1 & t & {\frac{t^2}{2}} \\  0&1&t \\ 0&0&1\end{pmatrix}\begin{pmatrix}a \\  b \\  c\end{pmatrix}
+=e^{-t}\begin{pmatrix}a+bt+c{\frac{t^2}{2}} \\  b+ct \\  c\end{pmatrix}$$
+Pour obtenir la solution du syst\`eme $X'=AX$, on \'ecrit
+$$X'=AX\iff X'=(PBP^{-1})X\iff P^{-1}X'=(BP^{-1})X\iff (P^{-1}X)'=B(P^{-1}X)$$
+ainsi, en notant $Y=P^{-1}X$ ou encore $X=PY$, les solutions du syst\`eme $X'=AX$ sont les $PS(t)$ o\`u $P$ est la matrice v\'erifiant
+$A=PBP^{-1}$ et $S$ une solution du syst\`eme $Y'=BY$.
+
+La solution g\'en\'erale du syst\`eme $X'=AX$ s'\'ecrit donc 
+$$X(t)=\begin{pmatrix}x(t) \\  y(t) \\  z(t)\end{pmatrix}
+=\begin{pmatrix}1 & 1 & 0 \\  1&0&0 \\ 0&1&1\end{pmatrix}
+\begin{pmatrix}e^{-t}(a+bt+c{\frac{t^2}{2}}) \\  e^{-t}(b+ct) \\  e^{-t}c\end{pmatrix}
+=e^{-t}\begin{pmatrix}(a+b)+(c+b)t+c{\frac{t^2}{2}} \\  a+bt+c{\frac{t^2}{2}} \\  (b+c)+ct\end{pmatrix}$$
+o\`u $(a,b,c)\in\R^3$. 
+
+\end{enumerate}
+
+
+\centerline{III}  
+
+On suppose, dans cette partie, que $\alpha=-1$, on note $A=A_{-1}$.
+$$A=\begin{pmatrix}-1 & 0 & 0 \\  1&-2&0 \\ -1&1&-1\end{pmatrix}$$
+
+\begin{enumerate}  
+\item{\it  V\'erifions que la matrice $A$ est diagonalisable.}
+
+Nous avons vu dans la partie $I) 3)$ que lorsque $\alpha=-1$, la matrice est diagonalisable, en effet, dans ce cas, elle admet deux valeurs propres : $-1$, valeur propre double et $-2$, valeur propre simple. Le sous-espace propre associé à la valeur propre $-1$ étant le plan d'équation $x=y$.
+ 
+  \item {\it Diagonalisons la matrice $A$.}
+
+Pour cela déterminons une base de vecteurs propres. Le plan $x=y$ est engendré par les vecteurs $u(1,1,0)$ et $v(0,0,1)$, déterminons un vecteur directeur de la droite $E_{-2}$ :
+$$E_{-2}=\ker(A_\alpha+2I)=\left\{(x,y,z)\in\R^3,\ \begin{pmatrix}-1 & 0 & 0 \\  1&-2&0 \\ -1&1&-1\end{pmatrix}
+\begin{pmatrix}x \\  y \\  z\end{pmatrix}=
+\begin{pmatrix}-2x \\  -2y \\  -2z\end{pmatrix}\right\}$$
+ainsi,
+$$(x,y,z)\in E_{-2}\iff\left\{\begin{align*}-x&=-2x \\  x-2y&=-2y \\  -x+y-z&=-2z\end{align*}\right.
+\iff\left\{\begin{align*}x&=0 \\  y&=-z\end{align*}\right.$$
+Le sous-espace propre $E_{-2}$ est la droite vectorielle engendrée par le vecteur $w(0,1,-1)$. Ainsi, dans la base $(u,v,w)$ la matrice est diagonale et s'écrit
+$$D=\begin{pmatrix}-1 & 0 & 0 \\  0&-1&0 \\ 0&0&-2\end{pmatrix},$$ 
+on a $A=PDP^{-1}$, où 
+$$P=\begin{pmatrix}1 & 0 & 0 \\  1&0&1 \\ 0&1&-1\end{pmatrix}$$
+
+  \item {\it Donnons les solutions du syst\`eme diff\'erentiel $X'=A.X$.}
+
+ Si on note $X=PY$, les solutions du syst\`eme $X'=AX$ sont les $PS(t)$ o\`u $S$ une solution du syst\`eme $Y'=DY$. Ainsi, la solution générale du système $X'=A.X$ s'écrit
+ $$X(t)=\begin{pmatrix}x(t) \\  y(t) \\  z(t)\end{pmatrix}
+=\begin{pmatrix}1 & 0 & 0 \\  1&0&1 \\ 0&1&-1\end{pmatrix}
+\begin{pmatrix}ae^{-t} \\  be^{-t} \\  ce^{-2t}\end{pmatrix}
+=\begin{pmatrix}ae^{-t} \\  ae^{-t}+be^{-t} \\  be^{-t}+ce^{-2t}\end{pmatrix}$$
+o\`u $(a,b,c)\in\R^3$. 
+\end{enumerate}
+
+
+\centerline{IV}
+
+On suppose, dans cette partie, que $\alpha=1$, on note $A=A_{1}$.
+$$A=\begin{pmatrix}-1 & 0 & 2 \\  1&-2&0 \\ -1&1&1\end{pmatrix}$$
+
+\begin{enumerate}  
+\item {\it D\'eterminons les sous-espaces propres et caract\'eristiques de $A$.}
+
+La matrice $A$ admet deux valeurs propres : $-1$, valeur propre double et $0$, valeur propre simple. Le sous-espace propre $E_{-1}$, associé à la valeur propre $-1$, est la droite vectorielle engendr\'ee par le vecteur
+$(1,1,0)$. Déterminons le sous-espace $E_0$ :
+$$E_{0}=\ker(A)=\left\{(x,y,z)\in\R^3,\ \begin{pmatrix}-1 & 0 & 2 \\  1&-2&0 \\ -1&1&1\end{pmatrix}\begin{pmatrix}x \\  y \\  z\end{pmatrix}=\begin{pmatrix}0 \\  0 \\  0\end{pmatrix}\right\}$$
+ainsi,
+$$(x,y,z)\in E_{0}\iff\left\{\begin{align*}-x+2z&=0 \\  x-2y&=0 \\  -x+y+z&=0\end{align*}\right.
+\iff\left\{\begin{align*}x&=2z \\  x&=2y\end{align*}\right.$$
+Le sous-espace propre $E_0$ est la droite vectorielle engendrée par $(2,1,1)$. Le sous-espace caractéristique associé à la valeur propre $0$ est le sous-espace propre $E_0$. Déterminons le sous-espace caractéristique associé à la valeur propre double $-1$ c'est l'espace vectoriel $\ker(A+I)^2$. On a 
+$$(A+I)^2=\begin{pmatrix}0 & 0 & 2 \\  1&-1&0 \\ -1&1&2\end{pmatrix}^2=\begin{pmatrix}-2 & 2 & 4 \\  -1&1&2 \\ -1&1&2\end{pmatrix}.$$
+Ainsi, $\ker(A+I)^2$ est le plan vectoriel d'équation $-x+y+2z=0$, engendré par les vecteurs $(1,1,0)\in E_{-1}$ et $(2,0,1)$. 
+
+
+
+  \item {\it Trigonalisons la matrice $A$.}
+
+Dans la base $(u,v,w)$ où $u(2,1,1)$, $v(1,1,0)$ et $w(2,0,1)$ la matrice est triangulaire, 
+il existe $\lambda$ tel que $A.w=\lambda v-w.$
+$$A.w=\begin{pmatrix}-1 & 0 & 2 \\  1&-2&0 \\ -1&1&1\end{pmatrix}.
+\begin{pmatrix}2 \\  0 \\  1\end{pmatrix}=
+\begin{pmatrix}0 \\  2 \\  -1\end{pmatrix}=
+2\begin{pmatrix}1 \\  1 \\  0\end{pmatrix}-\begin{pmatrix}0 \\  2 \\  1\end{pmatrix}$$
+Ainsi $A=PTP^{-1}$ où 
+$$T=\begin{pmatrix}0 & 0 & 0 \\  0&-1&2 \\ 0&0&-1\end{pmatrix}\ {\hbox{et}}\ P=
+\begin{pmatrix}2 & 1 & 2 \\  1&1&0 \\ 1&0&1\end{pmatrix}.$$
+
+\end{enumerate}
+
+
+\fincorrection
+\finexercice

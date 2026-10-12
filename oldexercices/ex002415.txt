@@ -1,0 +1,41 @@
+\exercice{2415, mayer, 2003/10/01}
+\enonce 
+Soient $(E,d)$ un espace m\'etrique et ${\cal H}$ une famille \'equicontinue d'appli\-cations
+de $E$ dans $\Rr$. \'Etablir:
+\begin{enumerate}
+\item L'ensemble $A$ des $x\in E$ pour lesquels ${\cal H} (x)$ est born\'e est ouvert et ferm\'e.
+\item Si $E$ est compact et connexe et si ${\cal H} (x_0)$ est born\'e pour un point quelconque $x_0 \in E$,
+alors ${\cal H}$ est relativement compact dans ${\cal C} (E, \Rr )$.
+\end{enumerate}
+\finenonce
+
+\indication
+\begin{enumerate}
+  \item Pour ouvert et fermé, écrire l'\'equicontinuité pour $\epsilon=1$ en un point $x$ (à fixer).
+
+  \item Ascoli...
+\end{enumerate}
+\finindication
+
+\correction
+\begin{enumerate}
+  \item 
+  \begin{enumerate}
+    \item Montrons que $A$ est ouvert. Soit $x\in A$, alors $\mathcal{H}(x) = \{f(x) \mid f\in \mathcal{H}\}$ est bornée, notons $M$ une borne. \'Ecrivons l'équicontinuité pour $\epsilon = 1$, il existe $\eta >0$ tel que
+$$\forall f \in \mathcal{H} \quad \forall y\in E \quad (\|x-y\| < \eta \Rightarrow  |f(x)-f(y)| < 1).$$
+Or si $|f(x)-f(y)| < 1$ alors $|f(y)| < |f(x)| + 1 \le M+1$. On a donc montré
+$$\forall f \in \mathcal{H} \quad \forall y\in E \quad (y\in B(x,\eta) \Rightarrow  |f(y)| < M+1).$$
+Donc $B(x,\eta) \subset A$. Donc $A$ est ouvert.
+
+    \item Montrons que $A$ est fermé. Soit $(x_n)$ une suite d'éléments de $A$
+qui converge vers $x\in E$. On reprend $\epsilon = 1$ et on obtient un $\eta$ par équicontinuité. Comme $x_n\rightarrow x$ alors il existe $N$ tel que $\|x_N-x\| < \eta$. Donc pour tout $f$ dans $\mathcal{H}$, $|f(x)-f(x_N)| < 1$ ; donc
+$|f(x)| < |f(x_N)|+1$. Or $x_N \in A$, il existe $M$ tel  $|f(x_N)|$ soit bornée par $M$ pour tout $f$ dans $\mathcal{H}$.
+Donc pour tout $f\in \mathcal{H}$, $|f(x)| < M+1$. Donc $x\in A$. Donc $A$ est fermé.
+  \end{enumerate}
+
+  \item $x_0\in A$ donc $A$ est non vide, comme $A$ est ouvert et fermé et $E$ est connexe alors $A=E$. donc pour tout $x\in E$, $\mathcal{H}(x)$ est borné dans $\Rr$, donc $\overline{\mathcal{H}(x)}$ est un compact de $\Rr$.
+Par le théorème d'Ascoli, $\mathcal{H}$ étant équicontinue et $E$ étant compact
+alors $\bar{\mathcal{H}}$ est compact.
+\end{enumerate}
+\fincorrection
+\finexercice

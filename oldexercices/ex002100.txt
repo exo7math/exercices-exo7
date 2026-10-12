@@ -1,0 +1,48 @@
+\exercice{2100, bodin, 2008/02/04}
+\video{Mw9ODmfCvyM}
+\enonce
+Calculer la limite des suites suivantes :
+  \begin{enumerate}
+  \item $\displaystyle u_n=n\sum_{k=0}^{n-1}\frac 1{k^2+n^2}$
+  \item $\displaystyle v_n=\prod\limits_{k=1}^n\left(1+\frac{k^2}{n^2}\right) ^{\frac 1n}$
+  \end{enumerate}
+\finenonce 
+
+\indication
+On pourra essayer de reconnaître des sommes de Riemann, puis calculer des intégrales. 
+Pour le produit composer par la fonction $\ln$, afin de transformer le produit en une somme.
+\finindication
+
+\correction
+  \begin{enumerate}
+  \item Soit 
+$$u_n =n \sum_{k=0}^{n-1}\frac 1{k^2+n^2} = \frac 1n  \sum_{k=0}^{n-1}\frac 1{1+\big(\frac k n \big)^2}.$$
+En posant $f(x) = \frac 1 {1+x^2}$ nous venons d'écrire la somme de Riemann correspondant à 
+$\int_0^1 f(x) dx$. Cette intégrale se calcule facilement : 
+$$\int_0^1 f(t) dt = \int_0^1 \frac {dx} {1+x^2} = \big[\arctan x\big]_0^1 = \frac \pi 4.$$
+La somme de Riemann $u_n$ convergeant vers $\int_0^1 f(x) dx$ nous venons de montrer que
+$(u_n)$ converge vers $\frac \pi 4$.
+
+  \item Soit $v_n=\prod\limits_{k=1}^n\left(1+\frac{k^2}{n^2}\right) ^{\frac 1n}$, notons 
+$$w_n = \ln v_n = \sum_{k=1}^n \ln\left( \left(1+\frac{k^2}{n^2}\right)^{\frac 1n} \right) 
+= \frac 1 n \sum_{k=1}^n \ln \left(1+\frac{k^2}{n^2}\right).$$
+En posant $g(x) = \ln (1+x^2)$ nous reconnaissons la somme de Riemann correspondant à
+$I = \int_0^1 g(x)dx$.
+
+Calculons cette intégrale : 
+\begin{align*}
+ I &= \int_0^1 g(x)dx = \int_0^1 \ln(1+x^2) dx \\
+   &= \big[x\ln(1+x^2)\big]_0^1 - \int_0^1 x \frac{2x}{1+x^2}dx \quad \text{par intégration par parties} \\
+   &= \ln 2 -2 \int_0^1 1-\frac 1{1+x^2} dx \\
+   &= \ln 2  - 2\big[x-\arctan x\big]_0^1 \\
+   &= \ln 2 - 2 + \frac \pi 2. \\
+\end{align*}
+
+
+Nous venons de prouver que $w_n=\ln v_n$ converge vers $I=\ln 2 - 2 + \frac \pi 2$,
+donc $v_n = \exp w_n$ converge vers $\exp(\ln 2 - 2 + \frac \pi 2) = 2e^{\frac \pi 2 -2}$.
+Bilan $(v_n)$ a pour limite $2e^{\frac \pi 2 -2}$.
+
+  \end{enumerate}
+\fincorrection
+\finexercice

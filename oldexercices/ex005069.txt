@@ -1,0 +1,29 @@
+\exercice{5069, rouget, 2010/06/30}
+\enonce[***]
+Montrer que $\sum_{}^{}\cos\left(\pm a_1\pm a_2\pm...\pm
+a_n\right)=2^n\cos a_1\cos a_2...\cos a_n$ (la somme comporte $2^n$ termes).
+\finenonce
+
+\noindication
+
+\correction
+Pour $n$ naturel non nul, on pose $S_n=\sum_{}^{}e^{i(\pm a_1\pm...\pm a_n)}$.
+\textbullet~$S_1=e^{ia_1}+e^{-ia_1}=2\cos a_1$
+\textbullet~Soit $n\geq1$. Supposons que $S_n=2^n\cos a_1...\cos a_n$ alors
+
+\begin{align*}
+S_{n+1}&=\sum_{}^{}e^{i(\pm a_1\pm...\pm a_{n+1})}=e^{ia_{n+1}}\sum_{}^{}e^{i(\pm a_1\pm...\pm
+a_n)}+e^{-ia_{n+1}}\sum_{}^{}e^{i(\pm a_1\pm...\pm a_n)}\\
+ &=2\cos(a_{n+1})S_n=2^{n+1}\cos a_1...\cos a_{n+1}.
+\end{align*}
+On a montré par récurrence que : $\forall n\geq1,\;S_n=2^n\cos a_1...\cos a_n$.
+Ensuite, pour $n\geq1$, $\sum_{}^{}\cos(\pm a_1\pm...\pm a_n)=\Re(S_n)=2^n\cos a_1...\cos a_n$ (et on obtient aussi
+$\sum_{}^{}\sin(\pm a_1\pm...\pm a_n)=\Im(S_n)=0$).
+
+\begin{center}
+\shadowbox{
+$\forall n\in\Nn^*$, $\sum_{}^{}\cos(\pm a_1\pm...\pm a_n)=2^n\cos a_1...\cos a_n$.
+}
+\end{center}
+\fincorrection
+\finexercice

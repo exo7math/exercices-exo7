@@ -1,0 +1,54 @@
+\exercice{1428, legall, 1998/09/01}
+
+\enonce
+ Soit $  G  $ un groupe, $  H  $ et $  K  $ deux
+sous-groupes d'ordre fini de $  G  $ tels que $  H\cap K= \{ e_G\}
+.$
+\begin{enumerate}
+    \item Montrer que le cardinal de $  HK  $ est \'egal  $  \vert H\vert \vert K\vert   .$
+    \item En d\'eduire que si $  \vert G\vert =pq  $ o\`u $  p   $ est premier
+et $  p>q  $ alors $  G  $ a au plus un sous-groupe d'ordre $  p  .$ Montrer que si ce
+sous-groupe existe il est distingu\'e dans $  G  .$
+\end{enumerate}
+
+\finenonce
+
+\noindication
+
+\correction
+$HK = \left\lbrace hk \ / h\in H, k\in K \right\rbrace$.
+\begin{enumerate}
+    \item Soit $\phi : H\times K \rightarrow HK$ d\'efinie par
+$\phi(h,k) = hk$. Montrons que $\phi$ est bijective : $\phi$ est
+surjective par d\'efinition de $HK$ et si $\phi(h,k)=\phi(h',k')$
+alors $hk=h'k'$ et donc ${h'}^{-1}h = k'k^{-1}$ or $H\cap K =\{
+e_G \}$ et donc ${h'}^{-1}h = e_G$ et donc $h=h'$, de m\^eme
+$k=k'$ et donc $\phi$ est injective.
+
+Comme $\phi$ est bijective $\mathrm{Card} H\times K = \mathrm{Card} HK$ et donc
+$\mathrm{Card} HK = \mathrm{Card} H . \mathrm{Card} K$.
+
+    \item Supposons qu'il existe deux sous-groupes $H$ et $K$ distincts et d'ordre
+$p$. Montrons d'abord que $H\cap K =\{ e_G \}$. En effet $H\cap K$
+est un sous-groupe de $H$ et donc le cardinal de $H\cap K$ divise
+$\mathrm{Card} H = p$ avec $p$ premier. Or comme $H\not= K$ alors $H\cap K
+\not= H$ et donc $\mathrm{Card} H\cap K =1$, c'est ce que nous voulions
+d\'emontrer.
+
+Maintenant d'apr\`es la premi\`ere question $HK$ est un
+ensemble de cardinal $p^2$ dans le groupe  $G$ de cardinal $pq
+< p^2$. Donc il ne peut exister deux sous-groupe d'ordre $p$.
+
+Supposons maintenant que $H$ soit un sous-groupe d'ordre $p$,
+c'est donc l'unique sous-groupe d'ordre $p$ d'apr\`es ce que nous
+venons de d\'emontrer. Pour $g\in G$ le sous-groupe $gHg^{-1}$ est
+du m\^eme ordre que $H$ (car pour $g$ fix\'e le morphisme
+$\theta_g$ de $G$ dans $G$, $\theta_g(h) =ghg^{-1}$ est un
+automorphisme et en particulier un biction donc $\mathrm{Card}
+\theta_g(H)=\mathrm{Card} H$ ). Par cons\'equent $gHg^{-1} = H$ et donc
+$H$ est un sous-groupe distingu\'e.
+\end{enumerate}
+\fincorrection
+
+\finexercice
+

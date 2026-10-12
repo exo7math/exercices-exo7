@@ -1,0 +1,62 @@
+\exercice{5623, rouget, 2010/10/16}
+\enonce[***]
+Soit $H$ un élément de $\mathcal{M}_n(\Cc)$ tel que $\forall A\in\mathcal{M}_n(\Cc),\;\exists\lambda_A\in\Cc/\;HAH=\lambda_AH$. Montrer que $\text{rg}H\leqslant 1$.
+\finenonce
+
+\noindication
+
+\correction
+Soit $r$ le rang de $H$. Il existe deux matrices carrées inversibles $P$ et $Q$ de format $n$ telles que $H =PJ_rQ$ où $J_r=\left(
+\begin{array}{cc}
+I_r&0\\
+0&0
+\end{array}
+\right)$. L'égalité $HAH =\lambda_AH$ s'écrit après simplifications $J_rQAPJ_r=\lambda_AJ_r$.
+Maintenant , quand $A$ décrit $\mathcal{M}_n(\Kk)$, la matrice $B=QAP$ décrit également $\mathcal{M}_n(\Kk)$ (par exemple, l'application qui à $A$ associe $QAP$ est une permutation de $\mathcal{M}_n(\Kk)$ de réciproque l'application qui à $A$ associe $Q^{-1}AP^{-1}$).
+
+L'énoncé s'écrit maintenant de manière plus simple : montrons que $(\forall B\in\mathcal{M}_n(\Kk),\;\exists\lambda_B\in\Kk/\;J_rBJ_r =\lambda_BJ_r)\Rightarrow r\leqslant 1$.
+
+Un calcul par blocs fournit en posant $B=\left(
+\begin{array}{cc}
+B_1&B_3\\
+B_2&B_4
+\end{array}
+\right)$
+
+\begin{center}
+$J_rBJ_r=\left(
+\begin{array}{cc}
+I_r&0\\
+0&0
+\end{array}
+\right)\left(
+\begin{array}{cc}
+B_1&B_3\\
+B_2&B_4
+\end{array}
+\right)\left(
+\begin{array}{cc}
+I_r&0\\
+0&0
+\end{array}
+\right)=\left(
+\begin{array}{cc}
+B_1&0\\
+B_2&0
+\end{array}
+\right)\left(
+\begin{array}{cc}
+I_r&0\\
+0&0
+\end{array}
+\right)=\left(
+\begin{array}{cc}
+B_1&0\\
+0&0
+\end{array}
+\right)$
+\end{center} 
+
+Mais si $r\geqslant 2$, il existe des matrices carrées $B_1$ de format $r$ qui ne sont pas des matrices scalaires et donc telles que $B_1$ n'est pas colinéaire à $I_r$. Donc $r\leqslant 1$.
+\fincorrection
+\finexercice

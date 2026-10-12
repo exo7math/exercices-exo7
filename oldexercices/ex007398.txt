@@ -1,0 +1,23 @@
+\exercice{7398, mourougane, 2021/08/10}
+\enonce
+\begin{enumerate}
+ \item On rappelle que le seul polynôme irréductible de degré $2$ sur $\mathbb{F}_2$ est $X^2+X+1$.
+ Montrer que le polynôme $X^4+X+1$ est irréductible dans $\mathbb{F}_2[X]$.
+ \item On note $A:=\mathbb{F}_2[X]/<X^4+X+1>$ l'anneau quotient de $\mathbb{F}_2[X]$ par l'idéal engendré par $P$. La classe de $3X^5+X^2+X+7$ est-elle nulle dans $A$ ?
+ L'anneau $A$ est-il un corps ? Combien a-t-il d'éléments ?
+ \item On note $\alpha$ la classe du polynôme $X$ dans $A$.
+Déterminer $\alpha^4$ et $\alpha^{15}$ comme polynômes de degré au plus $3$ en $\alpha$.
+ \item Le polynôme $X^{15}-1$ est-il un multiple de $X^4+X+1$ dans $\mathbb{F}_2[X]$ ? 
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+ \item Si le polynôme $P=X^4+X+1$ est réductible, il est divisible par un polynôme de degré~ 1 (donc $X$ ou $X+1$) ou par un polynôme irréductible de degré 2 (donc $X^2+X+1$). On vérifie que les polynômes $X, X+1$ et $X^2+X+1$ ne divisent pas $P$, alors $P$ est irréductible. 
+ \item On effectue la division euclidienne de $3X^5+X^2+X+7$ par $X^4+X+1$. Puisque $3X^5+X^2+X+7=X^5+X^2+X+1=X(X^4+X+1)+1=1$ dans $A$, la classe de $3X^5+X^2+X+7$ n'est pas nulle. \\
+ L'anneau $\mathbb{F}_2[X]/P$ est un corps si et seulement si le polynôme $P$ est irréductible dans $\mathbb{F}_2[X]$. Comme $X^4+X+1$ est irréductible, $A$ est un corps. $A$ est de cardinal $2^4=16$. 
+ \item On a une relation $\alpha^4+\alpha+1=0$ dans $A$, alors $\alpha^4=\alpha+1$. Le groupe des inversibles $A^{\times}$ de $A$ contient $15$ éléments, alors le théorème de Lagrange implique que l'élément inversible $\alpha$ vérifie $\alpha^{15}=1$.
+ \item Puisque $\alpha^4+\alpha+1=0$ et $\alpha^{15}-1=0$, les polynômes $X^{15}-1$ et $X^4+X+1$ représentent la même classe (classe nulle) dans $A$. Alors $X^{15}-1$ est bien un multiple de $X^4+X+1$ dans $\mathbb{F}_2[X]$. 
+\end{enumerate} 
+\fincorrection
+\finexercice

@@ -1,0 +1,28 @@
+\exercice{646, ridde, 1999/11/01}
+\video{gC6TqV9IOPg}
+\enonce
+Soit $f : \Rr^ + \rightarrow \Rr$ continue admettant une limite finie en $ + \infty$.
+Montrer que $f$ est born\'ee. Atteint-elle ses bornes ?
+\finenonce 
+
+\indication
+Il faut raisonner en deux temps : d'abord \'ecrire la d\'efinition de la limite en $+\infty$, en fixant par exemple $\epsilon =1$, cela donne une borne sur $[A,+\infty]$. Puis travailler sur $[0,A]$.
+\finindication
+
+\correction
+Notons $\ell$ la limite de $f$ en $+\infty$:
+$$\forall \epsilon > 0 \quad \exists A \in \Rr
+\quad x>A \Rightarrow \ell - \epsilon \leq f(x) \leq \ell + \epsilon.$$
+Fixons $\epsilon = +1$, nous obtenons un $A$ correspondant tel que
+pour $x>A$, $\ell - 1 \leq f(x) \leq \ell +1$. Nous venons de montrer
+que $f$ est born\'ee ``\`a l'infini''.
+La fonction $f$ est continue sur l'intervalle ferm\'e born\'e $[0,A]$,
+donc $f$ est born\'ee sur cet intervalle: il existe $m,M$ tels que
+pour tout $x\in [0,A]$, $m \leq f(x) \leq M$.
+En prenant $M' = \max (M,\ell+1)$, et $m' = \min(m,\ell-1)$ nous avons que pour tout $x\in \Rr$,
+$m' \leq f(x) \leq M'$. Donc $f$ est born\'ee sur $\Rr$.
+
+La fonction n'atteint pas n\'ecessairement ses bornes: regardez
+$f(x) = \frac{1}{1+x}$.
+\fincorrection
+\finexercice

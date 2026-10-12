@@ -1,0 +1,23 @@
+\exercice{5378, rouget, 2010/07/06}
+\enonce
+Résoudre le système~:~$x_1+x_2=0$, $x_{k-1}+x_k+x_{k+1}=0$ pour $k=2,...,n-1$, $x_{n-1}+x_n=0$.
+\finenonce
+
+\noindication
+
+\correction
+Soit $D_n$ le déterminant du système pour $n\geq3$.
+
+En développant ce déterminant suivant sa première colonne, on obtient la relation de récurrence~:
+ 
+$$\forall n\geq5,\;D_n=D_{n-1}-D_{n-2},$$
+
+ce qui fournit aisément par récurrence, en tenant compte de $D_3=D_4=-1$~:
+
+$$\forall k\geq1,\;D_{3k}=D_{3k+1}=(-1)^k\;\mbox{et}\;D_{3k+2}=0.$$
+
+Pour $n$ élément de $3\Nn^*\cup(1+3\Nn^*)$, le système est de \textsc{Cramer} et homogène et admet donc une et une seule solution à savoir la solution nulle.
+
+Pour $n=3k+2$, puisque $D_n=0$ mais que le mineur de format $n-1$ constitué des $n-1$ premières lignes et colonnes est $D_{n-1}$ et est donc non nul, le système est homogène de rang $n-1$ et l'ensemble des solutions est un sous-espace vectoriel de $\Rr^n$ de dimension $1$. On trouve aisément $\mathcal{S}=\{\lambda(1,-1,0,1,-1,0...,1,-1),\;;\lambda\in\Rr\}$.
+\fincorrection
+\finexercice

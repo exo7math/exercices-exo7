@@ -1,0 +1,43 @@
+\exercice{5366, rouget, 2010/07/06}
+\enonce[****]
+Soit $A=(a_{i,j})_{1\leq i,j\leq n}$ où, pour tout $i$ et tout $j$, $a_{i,j}\in\{-1,1\}$. Montrer que $\mbox{det}\;A$ est un entier divisible par $2^{n-1}$.
+\finenonce
+
+\noindication
+
+\correction
+On procède par récurrence sur $n\geq1$.
+\textbullet~Pour $n=1$, c'est clair.
+\textbullet~Soit $n\geq1$. Supposons que tout déterminant $\Delta_n$ de format $n$ et du type de l'énoncé soit divisible par $2^{n-1}$. Soit $\Delta_{n+1}$ un déterminant de format $n+1$, du type de l'énoncé.
+Si tous les coefficients $a_{i,j}$ de $\Delta_{n+1}$ sont égaux à $1$, puisque $n+1\geq2$, $\Delta_{n+1}$ a deux colonnes égales et est donc nul. Dans ce cas, $\Delta_{n+1}$ est bien divisible par $2^n$.
+Sinon, on va changer petit à petit tous les $-1$ en $1$.
+Soit $(i,j)$ un couple d'indices tel que $a_{i,j}=-1$ et $\Delta_{n+1}'$ le déterminant dont tous les coefficients sont égaux à ceux de $\Delta_{n+1}$ sauf le coefficient ligne $i$ et colonne $j$ qui est égal à $1$.
+
+$$\Delta_{n+1}-\Delta_{n+1}'=\mbox{det}(C_1,...,C_j,...,C_n)-\mbox{det}(C_1,...,C_j',...,C_n)=\mbox{det}(C_1,...,C_j-C_j',...,C_n),$$ 
+
+où  $C_j-C_j'=\left(
+\begin{array}{c}
+0\\
+\vdots\\
+0\\
+-2\\
+0\\
+\vdots\\
+0
+\end{array}
+\right)$ ($-2$ en ligne $i$). En développant ce dernier déterminant suivant sa $j$-ème colonne, on obtient~:
+
+$$\Delta_{n+1}-\Delta_{n+1}'=-2\Delta_n,$$ 
+où $\Delta_n$ est un déterminant de format $n$ et du type de l'énoncé. Par hypothèse de récurrence, $\Delta_n$ est divisible par $2^{n-1}$ et donc $\Delta_{n+1}-\Delta_{n+1}'$ est divisible par $2^n$. Ainsi, en changeant les $-1$ en $1$ les uns après les autres, on obtient
+
+\begin{center}
+$\Delta_{n+1}\equiv\left|
+\begin{array}{ccc}
+1&\ldots&1\\
+\vdots& &\vdots\\
+1&\ldots&1
+\end{array}\right|\;(\text{mod}\;2^n)$.
+\end{center}
+Ce dernier déterminant étant nul, le résultat est démontré par récurrence.
+\fincorrection
+\finexercice

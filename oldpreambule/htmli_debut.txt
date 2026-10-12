@@ -1,0 +1,18 @@
+<div class="search-options-body">
+    <p>
+      Vous pouvez raffiner votre recherche et sélectionner les exercices souhaités,<br>
+      en cochant les cases correspondantes et en cliquant sur "Ok".
+    </p>
+
+    <form action="../bin/select1.php">
+      <div style="margin: 1em 0;">
+          <input type="submit" class="search-submit" value="    Ok    ">
+      </div>
+      
+      <div class="button-group" style="margin-bottom: 2em;">
+          <button type="button" class="search-submit" style="background: var(--primary-light); margin-right: 5px;" onClick="GereChkbox('div_chck','1');">Tout cocher</button>
+          <button type="button" class="search-submit" style="background: var(--primary-light); margin-right: 5px;" onClick="GereChkbox('div_chck','0');">Tout décocher</button>
+          <button type="button" class="search-submit" style="background: var(--primary-light);" onClick="GereChkbox('div_chck','2');">Inverser la sélection</button>
+      </div>
+
+      <div id="div_chck">

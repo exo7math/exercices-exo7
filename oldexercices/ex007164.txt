@@ -1,0 +1,27 @@
+\exercice{7164, megy, 2017/06/11}
+\enonce
+Soit $ABC$ un triangle équilatéral direct, et $M$ un point. On note $A'$ (resp. $B'$ et $C'$) le symétrique orthogonal de $M$ par rapport à la droite $(BC)$ (resp. $(CA)$ et $(AB)$). Le but de l'exercice est de démontrer que $ABC$ et $A'B'C'$ ont le même centre de gravité.
+\begin{enumerate}
+\item \'Ecrire en coordonnée complexe (relativement à un repère que l'on choisira judicieusement) la réflexion $\sigma_{AB}$ par rapport à l'axe $(AB)$. 
+\item Conclure.
+\end{enumerate}
+\finenonce
+
+\noindication
+\correction 
+
+Soit $O$ le centre de gravité de $ABC$. On choisit un repère de centre $O$ tel que l'affixe $a$ de $A$ soit réel. On a alors $b = ja$ et $c=j^2a$.
+\begin{enumerate}
+\item On a l'égalité d'angles de droites $(OA,BA)=-\pi/6$ (angle inscrit ou calcul en coordonnées). On en déduit que la réflexion d'axe $(AB)$ s'écrit $z\mapsto \alpha\bar z+\beta$, avec $\alpha=e^{-\pi/3}=-j$. Ensuite, l'image de l'origine $O$ par la réflexion $\sigma_{AB}$ est le point d'affixe $-j^2a$. Finalement, vis-à-vis du repère choisi, la réflexion $\sigma_{AB}$ est représentée en coordonnée complexe par:
+\[ z\mapsto -j\bar z -j^2.\]
+\item On calcule de même que les réflexions suivant $(BC)$ et $(CA)$ s'écrivent $z\mapsto -\bar z -1$ et $z\mapsto -j^2 \bar z -j$.  Soit $m$ l'affixe de $M$. D'après ce qui précède, ses images par les trois réflexions sont:
+\[ 
+a'= -\bar m-1,\quad
+b'=-j^2\bar m-j,\quad
+c'=-j\bar m-j^2.
+\]
+
+La relation $1+j+j^2=0$ donne alors $\frac{1}{3}(a'+b'+c')=0$, ce qu'il fallait démontrer.
+\end{enumerate}
+\fincorrection  
+\finexercice  

@@ -1,0 +1,61 @@
+\exercice{5768, rouget, 2010/10/16}
+\enonce[***]
+Existence et calcul de $\int_{0}^{+\infty}e^{-t^2}\ch(tx)\;dt$ (on admettra que $\int_{0}^{+\infty}e^{-t^2}\;dt=\frac{\sqrt{\pi}}{2}$).
+
+\finenonce
+
+\noindication
+
+\correction
+Soit $x\in\Rr$. La fonction $t\mapsto e^{-t^2}\ch(tx)$ est continue sur $[0,+\infty[$. Quand $t$ tend vers $+\infty$, $e^{-t^2}\ch(tx)=\frac{1}{2}(e^{-t^2+tx}+e^{-t^2-tx})=o\left(\frac{1}{t^2}\right)$ d'après un théorème de croissances comparées et donc la fonction $t\mapsto e^{-t^2}\ch(tx)$ est intégrable sur $[0,+\infty[$. Pour $x\in\Rr$, on peut poser $f(x)=\int_{0}^{+\infty}e^{-t^2}\ch(tx)\;dt$.
+
+\textbf{Calcul de $f(x)$.} Soit $A>0$. On pose $\begin{array}[t]{cccc}
+\Phi~:&[-A,A]\times[0,+\infty[&\rightarrow&\Rr\\
+ &(x,t)&\mapsto&e^{-t^2}\ch(tx)
+\end{array}$.
+
+\textbullet~Pour chaque $x\in[-A,A]$, la fonction $t\mapsto e^{-t^2}\ch(tx)$ est continue par morceaux et intégrable sur $[0,+\infty[$.
+
+\textbullet~La fonction $\Phi$ admet sur $[-A,A]\times[0,+\infty[$ une dérivée partielle par rapport à sa première variable définie par :
+
+\begin{center}
+$\forall(x,t)\in[-A,A]\times[0,+\infty[$, $\frac{\partial \Phi}{\partial x}(x,t)=te^{-t^2}\sh(tx)$.
+\end{center}
+
+De plus,
+
+- pour chaque $x\in[-A,A]$, la fonction $t\mapsto\frac{\partial \Phi}{\partial x}(x,t)$ est continue par morceaux sur $[0,+\infty[$,
+
+-pour chaque $t\in[0,+\infty[$, la fonction $x\mapsto\frac{\partial \Phi}{\partial x}(x,t)$ est continue sur $[-A,A]$,
+
+- pour chaque $(x,t)\in[-A,A]\times[0,+\infty[$,
+
+\begin{center}
+$\left|\frac{\partial \Phi}{\partial x}(x,t)\right|=te^{-t^2}|\sh(tx)|\leqslant te^{-t^2}\sh(t|A|)=\varphi(t)$.
+\end{center}
+
+La fonction $\varphi$ est continue par morceaux sur $[0,+\infty[$ et intégrable sur $[0,+\infty[$ car négligeable devant $\frac{1}{t^2}$ quand $t$ tend vers $+\infty$.
+
+D'après le théorème de dérivation des intégrales à paramètres (théorème de \textsc{Leibniz}), la fonction $f$ est de classe $C^1$ sur $[-A,A]$ et sa dérivée s'obtient par dérivation sous le signe somme. Ceci étant vrai pour tout réel $A>0$, la fonction $f$ est de classe $C^1$ sur $\Rr$ et
+
+\begin{center}
+$\forall x\in\Rr$, $f'(x)=\int_{0}^{+\infty}te^{-t^2}\sh(tx)\;dt$.
+\end{center}
+
+Soit $x\in\Rr$. On effectue maintenant une intégration par parties. Soit $A>0$. Les deux fonctions $t\mapsto te^{-t^2}$ et $t\mapsto\sh(tx)$ sont de classe $C^1$ sur le segment $[0,A]$. On peut donc effectuer une intégration par parties et on obtient
+
+\begin{center}
+$\int_{0}^{A}te^{-t^2}\sh(tx)\;dt=\left[-\frac{1}{2}e^{-t^2}\sh(tx)\right]_0^A+\frac{x}{2}\int_{0}^{A}e^{-t^2}\ch(tx)\;dt=-\frac{1}{2}e^{-A^2}\sh(tA)+\frac{x}{2}\int_{0}^{A}e^{-t^2}\ch(tx)\;dt$.
+\end{center}
+
+Quand $A$ tend vers $+\infty$, on obtient $f'(x)=\int_{0}^{+\infty}te^{-t^2}\sh(tx)\;dt=\frac{x}{2}\int_{0}^{+\infty}e^{-t^2}\ch(tx)\;dt=\frac{x}{2}f(x)$.
+
+Ensuite, pour tout réel $x$, $e^{-x^2/4}f'(x)-\frac{x}{2}e^{-x^2/4}f(x)=0$ ou encore $(e^{-x^2/4}f)'(x)=0$. On en déduit que $\forall x\in\Rr$, $e^{-x^2/4}f(x)=e^0f(0)=\int_{0}^{+\infty}e^{-t^2}\;dt=\frac{\sqrt{\pi}}{2}$ et donc que $\forall x\in\Rr$, $f(x)=\frac{\sqrt{\pi}}{2}e^{x^2/4}$.
+
+\begin{center}
+\shadowbox{
+$\forall x\in\Rr$, $\int_{0}^{+\infty}e^{-t^2}\ch(tx)\;dt=\frac{\sqrt{\pi}}{2}e^{x^2/4}$.
+}
+\end{center}
+\fincorrection
+\finexercice

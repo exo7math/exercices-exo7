@@ -1,0 +1,27 @@
+\exercice{2218, matos, 2008/04/23}
+\enonce
+Montrer que, pour $A\in\Cc^{n\times m}$
+\begin{enumerate}
+\item $\|A\|_2=\sigma_1$, la plus grande valeur singuli\`ere de $A$
+\item $\|A\|_F=\sqrt{\sigma_1^2 +\sigma_2^2 +\cdots +\sigma_r^2}$ o\`u les $\sigma_i$ sont les valeurs singuli\`eres de $A$.
+\item Les valeurs singuli\`eres non nulles de $A$ sont les racines carr\'es des valeurs propres non nulles de $A^*A$ et $AA^*$.
+\item pour $A\in\Cc^{m\times m}$ , $|\det (A)|=\prod_{i=1}^m \sigma_i$.
+\item Si $A=A^*$ alors les valeurs singuli\`eres de $A$ sont les valeurs absolues des valeurs propres de $A$
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item $\|A\|_2=\|U\Sigma V^*\|_2=\|\Sigma\|_2=\max |\sigma_j|=\sigma_1$
+\item $\|A\|^2_F =$tr$(A^*A)=$tr$(U^*A^*AU)=\|AU\|^2_F=$tr$(A^*U^*UA)=\|UA\|^2_F$ et donc
+$$\|A\|_F=\|U\Sigma V^*\|_F =\|\Sigma\|_F=\sqrt{\sigma_1^2 + \cdots +\sigma_r^2}$$
+\item $A^*A=(V\Sigma^*U^*) (U\Sigma V^*)=V(\Sigma^*\Sigma )V^*$ et donc $A^*A$ est semblable \`a $\Sigma^*\Sigma$, les deux matrices ont donc les m\^emes valeurs propres. Les valeurs propres de $\Sigma^*\Sigma$ sont $\sigma_1^2, \cdots , \sigma_r^2$ plus $n-r$ valeurs propres nulles si $n>r$.
+\item $|\det A|=|\det (U\Sigma V^*)|= |\det U|\det|\Sigma||\det V^*|= |\det \Sigma|=\prod_{i=1}^r \sigma_i$
+\item Une matrice hermitienne \'etant diagonalisable a une base orthonormale de vecteurs propres
+$$A=Q\Lambda Q^* = Q |\Lambda|\mbox{sign} (\Lambda)Q^*$$
+or $U=$sign$(\Lambda )Q^*$ est une matrice unitaire: $U^*U=Q$sign$(\Lambda) $sign$(\Lambda) Q^*= QQ^*=I$. Donc $Q |\Lambda|U$ est une d\'ecomposition en valeurs singuli\`eres de $A$, les valeurs singuli\`eres \'etant $|\lambda_1|,\cdots , |\lambda_n|$.
+\end{enumerate}
+\fincorrection
+\finexercice

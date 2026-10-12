@@ -1,0 +1,32 @@
+\exercice{5311, rouget, 2010/07/04}
+\enonce[***I Petit théorème de \textsc{Fermat}]
+Soit $p$ un nombre premier.
+\begin{enumerate}
+\item  Montrer que, pour tout entier $k$ tel que $1\leq k\leq p-1$, $p$ divise $C_p^k$.
+\item  Montrer que $\forall a\in\Nn^*$, $a^p\equiv a$ $(p)$ (par récurrence sur $a$).
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+(Petit théorème de \textsc{Fermat}) Soit $p$ un nombre premier.
+\begin{enumerate}
+\item  Soit $p$ un nombre premier et $k$ un entier tel que $1\leq k\leq p-1$. On a $kC_p^k=pC_{p-1}^{k-1}$. Donc, $p$ divise $kC_p^k$. Mais, $p$ est premier et donc $p$ est premier à tous les entiers compris entre $1$ et $p-1$ au sens large. D'après le théorème de \textsc{Gauss}, $p$ divise $C_p^k$.
+\item  Soit $p$ un nombre premier. Montrons par récurrence que $\forall a\in\Nn^*$, $a^p\equiv a\;(p)$.
+
+C'est clair pour $a=1$.
+
+Soit $a\geq1$. Supposons que $a^p\equiv a\;(p)$. On a alors 
+
+\begin{align*}\ensuremath
+(a+1)^p&=\sum_{k=0}^{p}C_p^ka^k=a^p+1+\sum_{k=1}^{p-1}C_p^ka^k\\
+ &\equiv a^p+1\;(p)\quad(\mbox{d'après 1)})\\
+ &\equiv a+1\;(p)\quad(\mbox{par hypothèse de récurrence})
+\end{align*}
+
+On a montré par récurrence que $\forall a\in\Nn^*,\;a^p\equiv a\;(p)$.
+
+\end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,25 @@
+\exercice{2293, barraud, 2008/04/24}
+\enonce
+Soit $f\in A[x]$ un polyn\^ome primitif de degr\'e positif sur l'anneau
+factoriel $A$. Soit $\pi\in A$ un \'el\'ement irr\'eductible.
+Supposons que le coefficient dominant de $f$ ne soit  pas divisible
+par $\pi$ et que  $f\mod \pi$ soit  irr\'eductible dans l'anneau quotient
+$A/(\pi)$. Montrer que $f$ est irr\'eductible dans $A[x]$.
+\finenonce 
+
+\noindication
+
+\correction
+  Notons $f=\sum_{i=0}^{d} a_{i}x^{i}$. On a
+  $\pgcd(a_{0},\dots,a_{d})\sim1$ et $\pi\!\!\!\not| a_{d}$. Notons
+  $\bar{f}\in A/(\pi)[X]$ la réduction de $f$ modulo $\pi$. Soit $f=gh$
+  une factorisation de $f$ dans $A[x]$. Alors $\bar{f}=\bar{g}\bar{h}$,
+  et donc (quitte à échanger $g$ et $h$) $\bar{g}\sim 1$ et $\bar{h}\sim
+  \bar{f}$. Comme $\pi\!\!\!\not| a_{d}$, on a $\deg(\bar{f})=d$, et donc
+  $\deg(\bar{h})=d$ puis $\deg(h)\geq d$, et finalement $\deg(h)=d$. Par
+  conséquent $\deg(g)=0$~: $g\in A$. Comme $g|f$, on a $g|c(f)\sim 1$
+  donc $g\sim 1$. Ainsi, toute  factorisation de $f$ dans $A[x]$ est
+  triviale~: $f$est irréductible.
+
+\fincorrection
+\finexercice

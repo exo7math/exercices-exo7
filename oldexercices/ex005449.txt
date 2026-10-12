@@ -1,0 +1,41 @@
+\exercice{5449, rouget, 2010/07/10}
+\enonce[***T]
+Soit $E$ l'ensemble des fonctions continues strictement positives sur $[a,b]$.
+
+Soit $\begin{array}[t]{cccc}
+\varphi~:&E&\rightarrow&\Rr\\
+ &f&\mapsto&\left(\int_{a}^{b}f(t)\;dt\right)\left(\int_{a}^{b}\frac{1}{f(t)}\;dt\right)
+ \end{array}$.
+	   
+\begin{enumerate}
+\item  Montrer que $\varphi(E)$ n'est pas majoré.
+\item  Montrer que $\varphi(E)$ est minoré. Trouver $m=\mbox{Inf}\{\varphi(f),\;f\in E\}$. Montrer que cette borne infèrieure est atteinte et trouver toutes les $f$ de $E$ telles que $\varphi(f)=m$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  Soient $m$ un réel strictement positif et, pour $t\in\Rr$, $f_m(t)=e^{mt}$. $f_m$ est bien un élément de $E$ et de plus,
+
+\begin{align*}\ensuremath
+\varphi(f_m)&=\frac{1}{m^2}(e^{mb}-e^{ma})(e^{-ma}-e^{-mb})\\
+ &=\frac{1}{m^2}e^{m(a+b)/2}(e^{m(b-a)/2}+e^{-m(b-a)/2})e^{-m(a+b)/2}(e^{m(b-a)/2}+e^{-m(b-a)/2})\\
+ &=\frac{4\sh^2(m(b-a)/2)}{m^2}.
+\end{align*} 
+
+Cette expression tend vers $+\infty$ quand $m$ tend vers $+\infty$ et $\varphi(E)$ n'est pas majoré.
+
+\item  Soit $f$ continue et strictement positive sur $[a,b]$. L'inégalité 
+de \textsc{Cauchy}-\textsc{Schwarz} montre que~:
+
+$$\varphi(f)=\int_{a}^{b}\left(\sqrt{f(t)}\right)^2\;dt\int_{a}^{b}\left(\frac{1}{\sqrt{f(t)}}\right)^2\;dt\geq\left(
+\int_{a}^{b}\sqrt{f(t)}\frac{1}{\sqrt{f(t)}}\;dt\right)^2=(b-a)^2,$$
+
+avec égalité si et seulement si la famille de fonctions $(\sqrt{f(t)},\frac{1}{\sqrt{f(t)}})$ est liée ou encore si et seulement si $\exists\lambda\in\Rr_+^*/\;\forall t\in[a,b],\;\sqrt{f(t)}=\lambda\frac{1}{\sqrt{f(t)}}$ ou enfin si et seulement si $\exists\lambda\in\Rr_+^*/\;\forall t\in[a,b],\;f(t)=\lambda$, c'est-à-dire que $f$ est une constante strictement positive.
+
+Tout ceci montre que $\varphi(E)$ admet un minimum égal à $(b-a)^2$ et obtenu pour toute fonction $f$ qui est une  constante strictement positive.
+\end{enumerate}
+\fincorrection
+\finexercice

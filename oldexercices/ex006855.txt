@@ -1,0 +1,89 @@
+\exercice{6855, gijs, 2011/10/16}
+\enonce
+Soit $\alpha $ un nombre réel, $\alpha >0$.
+\subparagraph{I}
+Pour tout $z$ dans $\C$ et tout $t$ dans ${\Rr}$, on pose
+$$f(z,t)={t^{\alpha -1}\over e^t-z}.$$
+\begin{enumerate}
+\item
+  \begin{enumerate}
+  \item On note $[1,+\infty\mathclose[=\{x\in{\Rr}\vert \ x\ge
+1\}$ et $\Omega =\C\setminus [1,+\infty\mathclose[$. Soit $K$ un
+compact inclus dans $\Omega $. Démontrer brièvement qu'il existe un
+réel $c$, $c>0$, tel que l'on ait $\inf_{z\in K}\inf_{x\in
+[1,+\infty\mathclose[} \vert x-z\vert \ge c$.
+  \item  Montrer que la fonction $F$ définie par
+$$F(z)=\int_0^{+\infty}f(z,t)\ dt$$
+ est holomorphe dans $\Omega $.
+  \end{enumerate}
+\item 
+  \begin{enumerate}
+  \item Déterminer le rayon de convergence de la série entière
+$\sum_{k=0}^{+\infty}{z^k\over (k+1)^\alpha }$.\\
+  \item Montrer que l'on a, pour tout $z$, $\vert z\vert<1$,
+$$F(z)=F(0)\sum_{k=0}^{+\infty}{z^k\over (k+1)^\alpha }.$$
+  \item La fonction $F$ admet-elle un prolongement holomorphe au
+voisinage de 1 ?
+  \end{enumerate}
+\end{enumerate}
+
+\subparagraph{II} Dans toute cette partie, $t$ appartient à $\C$.
+\begin{enumerate}
+\item Soit $a$ un réel, $0<a<\pi$ et $R$ un réel, $R>0$. On note
+$Q(a,R)=\{t\in \C\vert \ 0<\Re t<R,\vert \Im mt\vert <a\}$ et
+$Q(a)=\{t\in\C\vert \ 0<\Re t,\vert \Im\! mt\vert <a\}$. Soit $\mathrm{Log} z$ la 
+détermination du logarithme de $z$ holomorphe dans $\C\setminus
+\mathopen]-\infty, 0]$. On a donc $\mathrm{Log} z=\ln{\vert z\vert}+i\mathrm{Arg} z$,
+avec $-\pi<\mathrm{Arg} z<\pi$.
+  \begin{enumerate}
+  \item Déterminer $S(a,R)=\{z\in\C\vert \ \mathrm{Log} z\in Q(a,R)\}$ et $S(a)
+=\{z\in\C\vert \ \mathrm{Log} z\in Q(a)\}$. Faire des dessins.
+On note, pour $t$ dans $\C\setminus
+\mathopen]-\infty, 0]$, $t^{\alpha -1}=e^{(\alpha -1)\mathrm{Log} t}$. Déterminer,
+pour $z$ dans $S(a)$, le pôle de la fonction
+$$t\mapsto f(z,t)={t^{\alpha -1}\over e^t-z}$$
+situé dans la bande $Q(a)$. Quel est le résidu de cette fonction en ce
+pôle ?
+  \item Pour tout $z$ dans $S(a,R)$, calculer en fonction de $z$
+$$\int_{\partial Q_\varepsilon (a,R)}f(z,t)\ dt$$
+où $\partial Q_\varepsilon (a,R)$ désigne le chemin parcouru dans le
+sens positif dont l'image dans $\C$ est la frontière du domaine
+$Q(a,R)\setminus \{t\in\C\vert\ \vert t\vert <\varepsilon \}$.
+Quelle est la limite lorsque $\varepsilon $ tend vers 0 de 
+$\int_{\partial Q_\varepsilon (a,R)}f(z,t)\ dt$ ?
+  \end{enumerate}
+\item Soit $\Gamma _a$ le chemin dont l'image $\Gamma _a^*$ et le
+sens de parcours sont représentés ci-dessous.
+
+
+On pose
+$$F_a(z)=\int_{\Gamma _a}f(z,t)\ dt.$$
+  \begin{enumerate}
+  \item En reprenant brièvement les idées utilisées dans I.1.,
+montrer que $F_a$ est holomorphe dans $\C$ privé d'un chemin que l'on
+précisera et que l'on dessinera.\\
+  \item Montrer que, si $z$ appartient à $S(a)$ et $\Im\! m z<0$, on a
+$F_a(z)=F(z)$ (on pourra intégrer $f(z,t)$ le long d'un contour bien
+choisi).
+  \item Soit $\Gamma _a$ le chemin dont l'image $\Gamma _{-a}^*$ et
+le sens de parcours sont représentés ci-dessous.
+
+
+On pose
+$$F_{-a}(z)=\int_{\Gamma _{-a}}f(z,t)\ dt.$$
+Montrer brièvement que, si $z$ appartient à $S(a)$ et $\Im\! mz>0$, on a
+$F_{-a}=F(z)$.
+  \item  Montrer, en utilisant II.1.(b), que, pour tout $z$ dans
+$S(a)$, on a
+$$F_{-a}(z)-F_a(z)=2i\pi{(\mathrm{Log} z)^{\alpha -1}\over z}.$$
+En déduire que $F(z)$ n'a pas de limite lorsque $z$ tend vers un point de
+la demi-droite réelle $\mathopen]1,+\infty\mathclose[$.
+  \end{enumerate}
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\nocorrection
+
+\finexercice       

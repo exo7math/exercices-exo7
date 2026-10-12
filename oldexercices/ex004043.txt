@@ -1,0 +1,35 @@
+\exercice{4043, quercia, 2010/03/11}
+\enonce[Centrale MP 2001]
+
+Pour tout $n$ entier naturel non nul, on donne $f_n(x) = nx^{n+1} - (n+1)x^n - \frac12$.
+
+\begin{enumerate}
+  \item Montrer que $f_n$ admet une unique racine positive notée $x_n$.
+  \item Montrer que la suite $(x_n)$ converge vers une limite~$\ell$ et trouver
+    un équivalent de $x_n-\ell$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item 
+  \item \begin{align*} nx_n^n(x_n - 1) = x_n^n+\frac 12 & \Rightarrow 
+    f_{n+1}(x_n) = \frac{n+1}n\Bigl(x_n^{n+1} + \frac{x_n}2\Bigr) - x_n^{n+1} - \frac12
+                 = \frac{x_n^{n+1}}n + \frac{(n+1)x_n - n}{\strut 2n} > 0\\ & \Rightarrow  x_{n+1} < x_n.\\ \end{align*}
+    Donc la suite $(x_n)$ est décroissante et minorée par~$1$, elle converge vers~$\ell \ge 1$.
+    
+    $0 \le x_n - 1 = \frac 1n+ \frac1{2nx_n^n} \to 0$ (lorsque $n\to\infty$) donc $\ell = 1$.
+    
+    Soit $y_n = n(x_n-1) = 1 + \frac1{2x_n^n}$.
+    On a $f(y_n) = \frac{\ln(2(y_n-1))}{y_n} = -\frac{\ln x_n}{x_n-1} = -g(x_n)$
+    et $f,g$ sont strictement coissantes sur $[1,+\infty[$ donc les suites $(x_n)$
+    et $(y_n)$ varient en sens contraire. On en déduit que la suite $(y_n)$
+    décroît donc admet une limite $\lambda \ge 1$,
+    soit $x_n = 1 + \frac\lambda n + o\Bigl(\frac1n\Bigr)$.
+    Alors $x_n^n \to e^\lambda$ (lorsque $n\to\infty$) d'où $\lambda = 1 + \frac1{2e^\lambda}$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

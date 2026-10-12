@@ -1,0 +1,77 @@
+\exercice{2301, barraud, 2008/04/24}
+\enonce
+Trouver toutes les solutions des syst\`emes suivantes :
+\begin{enumerate}
+  \item $ \quad \begin{cases}
+x\equiv 1 \mod 3\\
+x \equiv 3 \mod 5\\
+x \equiv 4 \mod 7\\
+x\equiv 2 \mod 11
+\end{cases}
+$
+  \item $ \quad \begin{cases}
+x\equiv 997\mod 2001\\
+x \equiv 998 \mod 2002\\
+x \equiv 999 \mod 2003
+\end{cases}.
+$
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+  \begin{enumerate}
+  \item 
+    $3,5,7,11$ sont deux à deux premiers entre eux, donc la solution est
+    unique modulo $1155=3\cdot5\cdot 7\cdot11$.
+    
+    \begin{align*}
+      \begin{cases}        
+        x\equiv 1 \mod 3\\
+        x \equiv 3 \mod 5\\
+        x \equiv 4 \mod 7\\
+        x\equiv 2 \mod 11
+      \end{cases}
+      \Leftrightarrow
+      \begin{cases}        
+        x\equiv 13 \mod 15\\
+        x \equiv 4 \mod 7\\
+        x\equiv 2 \mod 11
+      \end{cases}
+      \Leftrightarrow&
+      \begin{cases}        
+        x\equiv 88 \mod 105\\
+        x\equiv 2 \mod 11
+      \end{cases}\\
+      \Leftrightarrow&
+      \begin{cases}        
+        x\equiv 508 \mod 1155
+      \end{cases}
+    \end{align*}
+    
+    \item
+      Un diviseur commun de $2001$ et $2002$ divise leur différence, et
+      donc $\pgcd(2001,2002)=1$. De même, $\pgcd(2002,2003)=1$, et comme
+      $2\!\!\!\not| 2001$, $\pgcd(2001,2003)=1$.
+
+      $2001,2002,2003$ sont donc deux à deux premiers entre eux, et la
+      solution est donc unique modulo $2001\cdot2002\cdot2003$.
+    \begin{align*}
+      \begin{cases}        
+        x \equiv 997 \mod 2001\\
+        x \equiv 998 \mod 2002\\
+        x \equiv 999 \mod 2003
+      \end{cases}
+      \Leftrightarrow&
+      \begin{cases}        
+        x \equiv -1004 \mod 2001\\
+        x \equiv -1004 \mod 2002\\
+        x \equiv -1004 \mod 2003
+      \end{cases}\\
+      \Leftrightarrow&
+        x \equiv -1004 \mod (2001\cdot2002\cdot2003)
+    \end{align*}
+  \end{enumerate}
+\fincorrection
+\finexercice

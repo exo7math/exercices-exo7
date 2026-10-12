@@ -1,0 +1,106 @@
+\exercice{5886, rouget, 2010/10/16}
+\enonce[*** I]
+ Montrer que $\forall x>0$, $\int_{0}^{+\infty} \frac{e^{-tx}}{1+t^2}\;dt=\int_{0}^{+\infty} \frac{\sin t}{t+x}\;dt$.
+\finenonce
+
+\noindication
+
+\correction
+\textbf{Existence de $F(x)=\int_{0}^{+\infty} \frac{e^{-tx}}{1+t^2}\;dt$.} Soit $x>0$. La fonction $t\mapsto \frac{e^{-tx}}{1+t^2}\;dt$ est continue sur $[0,+\infty[$ et est dominée par $ \frac{1}{t^2}$ quand $t$ tend vers $+\infty$. Donc la fonction $t\mapsto \frac{e^{-tx}}{1+t^2}\;dt$ est intégrable sur $[0,+\infty[$. On en déduit que
+
+\begin{center}
+$F$ est définie sur $]0,+\infty[$.
+\end{center}
+
+\textbf{Dérivées de $F$.} Soient $a>0$ puis $\begin{array}[t]{cccc}
+\Phi~:&[a,+\infty[\times[0,+\infty[&\rightarrow&\Rr\\
+ &(x,t)&\mapsto& \frac{e^{-tx}}{1+t^2}
+ \end{array}$.
+ 
+ 
+
+\textbullet~Pour tout réel $x\in[a,+\infty[$, la fonction $t\mapsto\Phi(x,t)$ est continue et intégrable sur $[0,+\infty[$.
+
+\textbullet~La fonction $\Phi$ admet sur $[a,+\infty[\times[0,+\infty[$ des dérivées partielles d'ordre $1$ et $2$ par rapport à sa première variable $x$ et pour tout $(x,t)\in[a,+\infty[\times[0,+\infty[$
+
+\begin{center}
+$ \frac{\partial \Phi}{\partial x}(x,t)=- \frac{te^{-tx}}{1+t^2}$ et $ \frac{\partial^2\Phi}{\partial x^2}(x,t)= \frac{t^2e^{-tx}}{1+t^2}$.
+\end{center}
+
+De plus
+
+- pour tout $x\in[a,+\infty[$, les fonctions $t\mapsto \frac{\partial \Phi}{\partial x}(x,t)$ et $t\mapsto \frac{\partial^2\Phi}{\partial x^2}(x,t)$ sont continues par morceaux sur $[0,+\infty[$.
+
+- pour tout $t\in[0,+\infty[$, les fonctions $x\mapsto \frac{\partial \Phi}{\partial x}(x,t)$ et $x\mapsto \frac{\partial^2\Phi}{\partial x^2}(x,t)$ sont continues sur $[0,+\infty[$.
+
+- pour tout $(x,t)\in[a,+\infty[\times[0,+\infty[$, $\left| \frac{\partial \Phi}{\partial x}(x,t)\right|\leqslant \frac{te^{-ta}}{1+t^2}=\varphi_1(t)$ et  $\left| \frac{\partial^2\Phi}{\partial x^2}(x,t)\right|\leqslant \frac{t^2e^{-ta}}{1+t^2}=\varphi_2(t)$ où les fonctions 
+
+$\varphi_1$ et $\varphi_2$ sont continues par morceaux et intégrables sur $[0,+\infty[$ car sont dominées en $+\infty$ par $ \frac{1}{t^2}$.
+ 
+ 
+ 
+
+ 
+ 
+D'après le théorème de dérivation des intégrales à paramètres (théorème de \textsc{Leibniz}), $F$ est deux fois dérivable sur $[a,+\infty[$ et les dérivées de $F$ s'obtiennent par dérivation sous le signe somme. Ceci étant vrai pour tout réel $a>0$, $F$ est deux fois dérivable sur $]0,+\infty[$ et pour $x>0$, $F''(x)=\int_{0}^{+\infty} \frac{\partial^2F}{\partial x^2} \frac{e^{-tx}}{1+t^2}\;dt=\int_{0}^{+\infty} \frac{t^2e^{-tx}}{1+t^2}\;dt$.
+
+\begin{center}
+$\forall x>0$, $F''(x)=\int_{0}^{+\infty} \frac{t^2e^{-tx}}{1+t^2}\;dt$.
+\end{center}
+
+\textbf{Equation différentielle vérifiée par $F$.} Pour $x>0$, $F''(x)+F(x)=\int_{0}^{+\infty}e^{-tx}\;dt=\left[- \frac{1}{x}e^{-tx}\right]_0^{+\infty}= \frac{1}{x}$.
+
+\begin{center}
+$\forall x>0$, $F''(x)+F(x)= \frac{1}{x}$.
+\end{center}
+
+\textbf{Existence de $G(x)=\int_{0}^{+\infty} \frac{\sin t}{t+x}\;dt$.} Soit $a>0$. Montrons l'existence de $\int_{a}^{+\infty} \frac{\sin u}{u}\;du$ et $\int_{a}^{+\infty} \frac{\cos u}{u}\;du$.
+
+Soit $A>a$. Une intégration par parties fournit $\int_{a}^{A} \frac{\sin u}{u}\;du=- \frac{\cos a}{a}+ \frac{\cos A}{A}-\int_{a}^{A} \frac{\cos u}{u^2}\;du$. Puisque $\left| \frac{\cos A}{A}\right|\leqslant \frac{1}{A}$, on a $\lim_{A \rightarrow +\infty} \frac{\cos A}{A}=0$. D'autre part, puisque $\forall u\geqslant a$, $\left| \frac{\cos u}{u^2}\right|\leqslant \frac{1}{u^2}$, la fonction $u\mapsto \frac{\cos u}{u^2}$ est intégrable sur $[a,+\infty[$ et en particulier, $\int_{a}^{A} \frac{\cos u}{u^2}\;du$ a une limite quand $A$ tend vers $+\infty$. On en déduit que $\int_{a}^{A} \frac{\sin u}{u}\;du$ a une limite quand $A$ tend vers $+\infty$ ou encore que l'intégrale $\int_{a}^{+\infty} \frac{\sin u}{u}\;du$ converge en $+\infty$. De même, $\int_{a}^{+\infty} \frac{\cos u}{u}\;du$ converge en $+\infty$. 
+
+Mais alors, pour $x>0$,
+
+\begin{center}
+$\cos x\int_{x}^{+\infty} \frac{\sin u}{u}\;du-\sin x\int_{x}^{+\infty} \frac{\cos u}{u}\;du=\int_{x}^{+\infty} \frac{\sin(u-x)}{u}\;du=\int_{0}^{+\infty} \frac{\sin t}{t+x}\;dt=G(x)$ existe.
+\end{center}
+
+\begin{center}
+$G$ est définie sur $]0,+\infty[$.
+\end{center}
+
+\textbf{Equation différentielle vérifiée par $G$.}  Puisque la fonction $u\mapsto \frac{\sin u}{u}$ est continue sur $]0,+\infty[$, la fonction $x\mapsto\int_{x}^{+\infty} \frac{\sin u}{u}\;du=\int_{1}^{+\infty} \frac{\sin u}{u}\;du-\int_{1}^{x} \frac{\sin u}{u}\;du$ est de classe $C^1$ sur $]0,+\infty[$. De même, la fonction $x\mapsto\int_{x}^{+\infty} \frac{\cos u}{u}\;du$ est de classe $C^1$ sur $]0,+\infty[$ puis $G$ est de classe $C^1$ sur $]0,+\infty[$. De plus, pour tout réel $x>0$,
+
+\begin{center}
+$G'(x)=-\sin x\int_{x}^{+\infty} \frac{\sin u}{u}\;du- \frac{\cos x\sin x}{x}-\cos x\int_{x}^{+\infty} \frac{\cos u}{u}\;du+ \frac{\cos x\sin x}{x}=-\sin x\int_{x}^{+\infty} \frac{\sin u}{u}\;du-\cos x\int_{x}^{+\infty} \frac{\cos u}{u}\;du$,
+\end{center}
+
+puis en redérivant
+
+\begin{center}
+$G''(x)=-\cos x\int_{x}^{+\infty} \frac{\sin u}{u}\;du+ \frac{\sin^2x}{x}+\sin x\int_{x}^{+\infty} \frac{\cos u}{u}\;du+ \frac{\cos^2x}{x}=-G(x)+ \frac{1}{x}$.
+\end{center}
+
+\begin{center}
+$\forall x>0$, $G''(x)+G(x)= \frac{1}{x}$.
+\end{center}
+
+\textbf{Limites de $F$ et $G$ en $+\infty$.} Puisque $\int_{1}^{+\infty} \frac{\sin u}{u}\;du$ et $\int_{1}^{+\infty} \frac{\cos u}{u}\;du$ sont deux intégrales convergentes, $\lim_{x \rightarrow +\infty}\int_{x}^{+\infty} \frac{\sin u}{u}\;du=\lim_{x \rightarrow +\infty}\int_{x}^{+\infty} \frac{\cos u}{u}\;du=0$. Puisque les fonctions sinus et cosinus sont bornées sur $\Rr$. On en déduit que $\lim_{x \rightarrow +\infty}G(x)=0$.
+
+Pour tout réel $x>0$, $|F(x)|=\int_{0}^{+\infty} \frac{e^{-tx}}{1+t^2}\;dt\leqslant\int_{0}^{+\infty}e^{-tx}\;dt= \frac{1}{x}$ et donc $\lim_{x \rightarrow +\infty}F(x)=0$.
+
+\begin{center}
+$\lim_{x \rightarrow +\infty}F(x)=\lim_{x \rightarrow +\infty}G(x)=0$.
+\end{center}
+
+\textbf{Egalité de $F$ et $G$.} D'après ce qui précède, $(F-G)''+(F-G)=0$ et donc il existe $(\lambda,\mu)\in\Rr^2$ tel que pour tout $x>0$, $F(x)-G(x)=\lambda\cos x+\mu\sin x$. Si $(\lambda,\mu)\neq(0,0)$, alors $\lambda\cos x+\mu\sin x=\sqrt{\lambda^2+\mu^2}\cos(x-x_0)$ ne tend pas vers $0$ quand $x$ tend vers $+\infty$. Puisque $\lim_{x \rightarrow +\infty}F(x)-G(x)=0$, on a nécessairement $\lambda=\mu=0$ et donc $F-G=0$. On a montré que
+
+\begin{center}
+\shadowbox{
+$\forall x>0$, $\int_{0}^{+\infty} \frac{e^{-tx}}{1+t^2}\;dt=\int_{0}^{+\infty} \frac{\sin t}{t+x}\;dt$.
+}
+\end{center}
+
+\textbf{Remarque.} On peut montrer que l'égalité persiste quand $x=0$ (par continuité) et on obtient $\int_{0}^{+\infty} \frac{\sin t}{t}\;dt= \frac{\pi}{2}$.
+
+\fincorrection
+\finexercice

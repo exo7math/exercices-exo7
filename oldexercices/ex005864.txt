@@ -1,0 +1,82 @@
+\exercice{5864, rouget, 2010/10/16}
+\enonce[**]
+Déterminer $\lim_{n \rightarrow +\infty}\left(
+\begin{array}{cc}
+1&- \frac{a}{n}\\
+ \frac{a}{n}&1
+\end{array}
+\right)^n$ ($a$ réel strictement positif donné).
+\finenonce
+
+\noindication
+
+\correction
+Soit $a\in\Rr$. Pour $n\in\Nn^*$, on pose $A_n=\left(
+\begin{array}{cc}
+1&- \frac{a}{n}\\
+ \frac{a}{n}&1
+\end{array}
+\right)$.
+
+Soit $n\in\Nn^*$. On peut écrire $A_n=\sqrt{1+ \frac{a^2}{n^2}}\left(
+\begin{array}{cc}
+ \frac{1}{\sqrt{1+ \frac{a^2}{n^2}}}&- \frac{a/n}{\sqrt{1+ \frac{a^2}{n^2}}}\\
+ \frac{a/n}{\sqrt{1+ \frac{a^2}{n^2}}}& \frac{1}{\sqrt{1+ \frac{a^2}{n^2}}}
+\end{array}
+\right)$. Les sommes des carrés des deux nombres $ \frac{1}{\sqrt{1+ \frac{a^2}{n^2}}}$ et $ \frac{a/n}{\sqrt{1+ \frac{a^2}{n^2}}}$ est égale à $1$. Donc il existe un réel $\theta_n\in]-\pi,\pi]$ tel que $\cos(\theta_n)= \frac{1}{\sqrt{1+ \frac{a^2}{n^2}}}$ et $\sin(\theta_n)= \frac{a/n}{\sqrt{1+ \frac{a^2}{n^2}}}$. De plus, $\cos(\theta_n)>0$ et $\sin(\theta_n)>0$ et donc on peut prendre 
+
+\begin{center}
+$\theta_n=\Arctan\left( \frac{a}{n}\right)\in\left]0, \frac{\pi}{2}\right[$.
+\end{center}
+
+Pour $n\in\Nn^*$, on a alors
+
+\begin{center}
+$A_n^n=\left(\sqrt{1+ \frac{a^2}{n^2}}\right)^n\left(
+\begin{array}{cc}
+\cos(\theta_n)&-\sin(\theta_n)\\
+\sin(\theta_n)&\cos(\theta_n)
+\end{array}
+\right)^n=\left(1+ \frac{a^2}{n^2}\right)^{n/2}\left(
+\begin{array}{cc}
+\cos(n\theta_n)&-\sin(n\theta_n)\\
+\sin(n\theta_n)&\cos(n\theta_n)
+\end{array}
+\right)$.
+\end{center}
+
+Maintenant, $\left(1+ \frac{a^2}{n^2}\right)^{n/2}=\text{exp}\left( \frac{n}{2}\ln\left(1+ \frac{a^2}{n^2}\right)\right)\underset{n\rightarrow+\infty}{=}\text{exp}\left( \frac{a^2}{2n}+o\left( \frac{1}{n}\right)\right)\underset{n\rightarrow+\infty}{=}1+o(1)$.
+
+D'autre part, $n\theta_n=n\Arctan\left( \frac{a}{n}\right)\underset{n\rightarrow+\infty}{=}n\times \frac{a}{n}=a$. Donc
+
+\begin{center}
+$\lim_{n \rightarrow +\infty}A_n^n=1.\left(
+\begin{array}{cc}
+\cos(a)&-\sin(a)\\
+\sin(a)&\cos(a)
+\end{array}
+\right)=\left(
+\begin{array}{cc}
+\cos(a)&-\sin(a)\\
+\sin(a)&\cos(a)
+\end{array}
+\right)$.
+\end{center}
+
+\begin{center}
+\shadowbox{
+$\forall a>0$, $\lim_{n \rightarrow +\infty}\left(
+\begin{array}{cc}
+1&- \frac{a}{n}\\
+ \frac{a}{n}&1
+\end{array}
+\right)^n=\left(
+\begin{array}{cc}
+\cos(a)&-\sin(a)\\
+\sin(a)&\cos(a)
+\end{array}
+\right)$.
+}
+\end{center}
+\fincorrection
+\finexercice

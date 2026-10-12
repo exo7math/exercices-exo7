@@ -1,0 +1,59 @@
+\exercice{2528, queffelec, 2009/04/01}
+\enonce
+\begin{enumerate}
+\item Montrer que l'application $\varphi: (r,\theta)\to
+(x,y)=(r\cos\theta, r\sin\theta)$ est un $C^1$-diff\'eomorphisme
+de l'ouvert $]0,\infty[\times]-\pi,\pi[$ sur le plan priv\'e de la
+demi-droite $\Rr^-$. Si $f(x,y)=g(r,\theta)$ donner les formules
+de passage entre les d\'eriv\'ees partielles de $f$ et celles de
+$g$.
+
+\item Soit $U$ le plan priv\'e de l'origine, et $f(x,y)=(x^2-y^2,
+2xy)$.
+
+Montrer que $f$ est un diff\'eomorphisme local au voisinage de
+tout point de $U$ mais n'est pas un diff\'eomorphisme global.
+
+\item Soit $g$ l'application de ${\Rr}^2$ dans ${\Rr}^2$ d\'efinie
+par $g(x,y)= (x+y,xy)$. Trouver un ouvert connexe maximal
+$U\subset\Rr^2$ tel que $g$ soit un diff\'eomorphisme de $U$ sur
+$g(U)$.
+
+\item Soit $h$ l'application de ${\Rr}^2$ dans ${\Rr}^2$ d\'efinie
+par $(x,y)\to (e^x\cos y,e^x\sin y)$.
+
+ Montrer que $h$ est de classe $C^1$ dans ${\Rr}^2$;
+que $h'(x,y)$ est un \'el\'ement de Isom(${\Rr}^2,{\Rr}^2$) pour
+tout $(x,y)$ de ${\Rr}^2$; mais que $h$ n'est pas un
+hom\'eomorphisme de ${\Rr}^2$ sur $h({\Rr}^2)$.
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item L'application $\varphi(r,\theta)=(r\cos \theta, r \sin
+\theta)$ est de classe $C^\infty$ car ses coordonn\'ees le sont.
+Pour montrer que c'est un diff\'eormorphisme global, il suffit de
+montrer que c'est un diff\'eo local (th\'eor\`eme de l'inverse
+local) et qu'elle est bijective. Calculons la matric jacobienne de
+$\varphi$:
+$$D\varphi(r,\theta)= \left (
+\begin{array}{cc}
+\cos \theta & -r\sin \theta \\
+\sin \theta & r \cos \theta
+\end{array} \right )  $$
+\end{enumerate}
+La jacobienne de $\varphi$ est
+$det(D\varphi(r,\theta))=r(\sin^2x+\cos^2x)=r >0$ si $(x,y) \neq
+(0,0)$. L'application $\varphi$ est donc bien un diff\'eomorphisme
+local au voisinage de chacun des point de
+$]0,+\infty[\times]-\pi,\pi[$. La bijectivit\'e se v\'erifie en
+explicitant par exemple la r\'eciproque de $\varphi$ (si on pose
+$x=r\cos \theta$ et $y=r\sin \theta$, on pourra consid\'erer les
+donn\'ees $x^2+y^2$ et $y/x$...).
+\item
+
+\fincorrection
+\finexercice

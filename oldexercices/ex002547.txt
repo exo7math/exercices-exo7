@@ -1,0 +1,44 @@
+\exercice{2547, tahani, 2009/04/01}
+\enonce
+Pour $\lambda \in
+\mathbb{R}$, soit $S_\lambda=\{(x_1,x_2,x_3)\in \mathbb{R}^3;
+x_1^2+x_2^2-x_3^2=\lambda\}$.
+\begin{enumerate}
+\item D\'eterminez les $\lambda \in \mathbb{R}$ pour lesquels
+$S_\lambda$ est une sous-vari\'et\'e de $\mathbb{R}^3$. Dessiner
+$S_\lambda$ en fonction de $\lambda$. 
+\item Pour $x,y \in \mathbb{R}^3$, soit $B(x,y)=x_1y_1+x_2y_2-x_3y_3$. Soit $x\in
+S_\lambda$, exprimer $T_x S_\lambda$ \`a l'aide de $B$.
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item Consid\'erons $F: \mathbb{R}^3 \rightarrow \mathbb{R}$ d\'efinie
+par $F(x_1,x_2,x_3)=x_1^2+x_2^2-x_3^2- \lambda$. Alors $F$ est de
+classe $C^1$, $Jac F(x_1,x_2,x_3)=(2x_1,2x_2,-2x_3)$ et
+$S_\lambda=\{(x_1,x_2,x_3) \in \mathbb{R}^3; F(x_1,x_2,x_3)=0\}$.
+Si $\lambda \neq 0$, $\mbox{rang}(JacF(x_1,x_2,x_3))=1$ (le
+maximum possible) car sinon $x_1,x_2,x_3$ seraient tous nuls:
+impossible car $x_1^2+x_2^2-x_3^2=\lambda \neq 0$. Comme $(0,0,0)
+\not \in S_\lambda, \forall a \in S_\lambda, \mbox{
+rang}JacF(a)=1$ et donc $S_\lambda$ est une sous-vari\'et\'e de
+$\mathbb{R}^3$ de dimension $2$.\\
+Si  $\lambda=0$ $T_0(S_\lambda)=\{\mbox{vecteurs tangents \`a }
+S_n \mbox{ en }0\}$. Alors $T_0S_0$ est un c\^one et donc $S_0$
+n'est pas une sous-vari\'et\'e. 
+\item Soientt $x,y \in
+\mathbb{R}^3$, $B(x,y)=x_1y_1+x_2y_2-x_3y_3$ et $x\in S_\lambda$.
+Si $\lambda \neq 0$, $JacF(x)=(2x_1,2x_2,-2x3)$ et donc
+$$T_xS_\lambda=\{u \in \mathbb{R}^3;
+DF(x).u=0\}=\{u=(u_1,u_2,u_3); (2x_1,2x_2,-2x_3). \left
+(\begin{array}{c}u_1 \\ u_2 \\u_3
+\end{array}\right)=0\}=$$
+$$\{(u_1,u_2,u_3); 2x_1u_1+2x_2u_2-2x_3u_3=0\}=\{(u_1,u_2,u_3);
+2B(x,u)=0\}$$ d'o\`u $$T_xS_\lambda=\{u \in \mathbb{R}^3;
+B(x,u)=0\}.$$
+\end{enumerate}
+\fincorrection
+\finexercice

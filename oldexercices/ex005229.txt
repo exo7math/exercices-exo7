@@ -1,0 +1,34 @@
+\exercice{5229, rouget, 2010/06/30}
+\enonce[**]
+Soient $(u_n)$ et $(v_n)$ les suites définies par la donnée de $u_0$ et $v_0$ et les relations de récurrence 
+
+$$u_{n+1}=\frac{2u_n+v_n}{3}\;\mbox{et}\;v_{n+1}=\frac{u_n+2v_n}{3}.$$
+Etudier les suites $u$ et $v$ puis déterminer $u_n$ et $v_n$ en fonction de $n$ en recherchant des combinaisons linéaires intéressantes de $u$ et $v$. En déduire $\lim_{n\rightarrow +\infty}u_n$ et $\lim_{n\rightarrow +\infty}v_n$.
+\finenonce
+
+\noindication
+
+\correction
+
+Pour tout entier naturel $n$, on a $\left\{
+\begin{array}{l}
+u_{n+1}-u_n=\frac{1}{3}(v_n-u_n)\\
+v_{n+1}-v_n=-\frac{1}{3}(v_n-u_n)\\
+v_{n+1}-u_{n+1}=\frac{1}{3}(v_n-u_n)
+\end{array}
+\right.$.
+La dernière relation montre que la suite $v-u$ garde un signe constant puis les deux premières relations montrent que pour tout entier naturel $n$, $\mbox{sgn}(u_{n+1}-u_n)=\mbox{sgn}(v_n-u_n)$ et 
+$\mbox{sgn}(v_{n+1}-v_n)=-\mbox{sgn}(v_n-u_n)$. Les suites $u$ et $v$ sont donc monotones de sens de variation opposés.
+Si par exemple $u_0\leq v_0$, alors, pour tout naturel $n$, on a~:
+
+$$u_0\leq u_n\leq u_{n+1}\leq v_{n+1}\leq v_n\leq v_0.$$
+Dans ce cas, la suite $u$ est croissante et majorée par $v_0$ et donc converge vers un certain réel $\ell$. De même, la suite $v$ est décroissante et minorée par $u_0$ et donc converge vers un certain réel $\ell'$. Enfin, puisque pour tout entier naturel $n$, on a $u_{n+1}=\frac{2u_n+v_n}{3}$, on obtient par passage à la limite quand $n$ tend vers l'infini,  $\ell=\frac{2\ell+\ell'}{3}$ et donc $\ell=\ell'$. Les suites $u$ et $v$ sont donc adjacentes. Si $u_0>v_0$, il suffit d'échanger les rôles de $u$ et $v$.
+\textbf{Calcul des suites $u$ et $v$.}
+Pour $n$ entier naturel donné, on a $v_{n+1}-u_{n+1}=\frac{1}{3}(v_n-u_n)$. La suite $v-u$ est géométrique de raison $\frac{1}{3}$. Pour tout naturel $n$, on a donc $v_n-u_n=\frac{1}{3^n}(v_0-u_0)$.
+D'autre part, pour $n$ entier naturel donné, $v_{n+1}+u_{n+1}=v_n+u_n$. La suite $v+u$ est constante et donc, pour tout entier naturel $n$, on a $v_n+u_n=v_0+u_0$.
+En additionnant et en retranchant les deux égalités précédentes, on obtient pour tout entier naturel $n$~:
+
+$$u_n=\frac{1}{2}\left(v_0+u_0+\frac{1}{3^n}(v_0-u_0)\right)\;\mbox{et}\;v_n=\frac{1}{2}\left(v_0+u_0-\frac{1}{3^n}(v_0-u_0)\right).$$
+En particulier, $\ell=\ell'=\frac{u_0+v_0}{2}$.
+\fincorrection
+\finexercice

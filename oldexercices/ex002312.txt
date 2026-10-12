@@ -1,0 +1,36 @@
+\exercice{2312, barraud, 2008/04/24}
+\enonce
+ Montrer que les polyn\^omes suivantes sont irr\'eductibles dans
+  $\Zz[x]$ :
+\begin{enumerate}
+  \item $P=x^{2004}+4x^{2002}+2000x^4+2002$;
+  \item $Q=x^6+6x^5+12x^4+12x^3+3x^2+6x+25$.
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Le critère d'Eisenstein avec $2$ pour module donne directement le
+résultat.
+  \item La réduction modulo $2$ de $Q$ est $Q_{[2]}=x^{6}+x^{2}+1$, qui n'a pas
+de racine, et n'est pas divisible par $x^{2}+x+1$, le seul irréductible
+de degré $2$ de $\Zz_{2}[x]$. Ainsi, $Q_{[2]}$ est soit irréductible,
+auquel cas $Q$ l'est aussi sur $\Zz$, soit le produit de deux
+irréductibles de degré $3$.
+
+Si $Q_{[2]}$ n'est pas irréductible, on considère la réduction modulo $3$
+de $Q$~: $Q_{[3]}=x^{6}+1=(x^{2}+1)^{3}$. $x^{2}+1$ est irréductible sur
+$\Zz_{3}$, car il est de degré $2$ et n'a pas de racine. Soit $Q=RS$ une
+factorisation non triviale de $Q$ sur $\Zz$. On peut supposer $R$ et $S$
+unitaires. Alors, en considérant la réduction modulo $2$, on obtient que
+$R_{[2]}$ et $S_{[2]}$ sont deux irréductibles de degré $3$ de
+$\Zz_{2}[x]$. En particulier $\deg(R)=\deg(R_{[2]})=3$ (car $R$ est
+unitaire) et $\deg(S)=\deg(S_{[2]})=3$. Cependant, la réduction modulo
+$3$ de $Q$ n'admet pas de factorisation suivant deux polynômes de degré
+3. C'est une contradiction~: on en déduit que $Q$ n'a pas de factorisation
+non triviale.
+\end{enumerate}
+\fincorrection
+\finexercice

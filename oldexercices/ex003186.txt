@@ -1,0 +1,27 @@
+\exercice{3186, quercia, 2010/03/08}
+
+\enonce[$X^n + 1/X^n = P_n(X+1/X)$]
+\begin{enumerate}
+  \item  Montrer que pour tout entier $n \in \N$ il existe un unique polyn{\^o}me
+     $P_n \in {\Z[X]}$ v{\'e}rifiant :
+     $$\forall\ z \in \C^*,\ z^n + z^{-n} = P_n(z + z^{-1}).$$
+
+  \item  D{\'e}terminer le degr{\'e}, le coefficient dominant, et les racines de $P_n$.
+
+  \item  Pour $P \in {\C[X]}$, on note $\tilde P$ le polyn{\^o}me tel que :
+     $$\forall\ z \in \C^*,\ P(z) + P(z^{-1}) = \tilde P(z + z^{-1}).$$
+
+     {\'E}tudier l'application $P  \mapsto \tilde P$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item $P_0(u) = 2$, $P_1(u) = u$, $P_{n+1}(u) = uP_n(u) - P_{n-1}(u)$.
+  \item $u_k = 2\cos\Bigl(\frac {(2k+1)\pi}{2n}\Bigr),\ k = 0, \dots, n-1$.
+  \item 
+\end{enumerate}
+\fincorrection
+\finexercice 

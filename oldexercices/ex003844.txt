@@ -1,0 +1,58 @@
+\exercice{3844, quercia, 2010/03/11}
+\enonce[Ulm  MP$^*$ 2000]
+Soit $A\in \mathcal{M}_n(\C)$. Montrer qu'elle admet une décomposition~$A=UT\,^tU$
+avec $U$ unitaire et $T$ triangulaire supérieure si et seulement si
+le spectre de~$A\overline A$ est inclus dans~$\R^+$.
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $A=UT\,^tU  \Rightarrow  A\overline A = UT\overline T\,{}^t\overline{U}$ est semblable à $T\overline T$.
+  \item $A\overline A$ est à valeurs propres positives distinctes. Soit $U$ unitaire trigonalisant
+$A\overline A$ et $T = U^{-1}A\,{}^tU^{-1}$. Donc $T\overline T$ est triangulaire supérieure
+à valeurs propres réelles distinctes. On montre que ceci implique $T$ triangulaire
+supérieure par récurrence sur~$n$.
+
+$T = \begin{pmatrix}t&X\cr Y&Z\cr\end{pmatrix}
+ \Rightarrow  T\overline T = \begin{pmatrix}|t|^2 + X\overline Y &t\overline X + X\overline Z\cr 
+                            \overline tY + Z\overline Y &Y\overline X + Z\overline Z\cr\end{pmatrix}
+                 = \begin{pmatrix}\text{réel}&*\cr 0&\text{tr.sup à vp réelles}\cr\end{pmatrix}$.
+
+
+Donc $X\overline Y = \overline XY$ et $Z\overline Y = -\overline tY$, d'où
+$(Y\overline X - X\overline YI)Y = 0 = (Z\overline Z - |t|^2I)Y$.
+
+Par hypothèse $Y\overline X + Z\overline Z - (|t|^2 + X\overline Y)I$ est inversible
+donc $Y=0$ et on est ramené au cas~$n-1$.
+  \item $A\overline A$ est à valeurs propres positives~: ???
+
+Solution de Pierre Février (MP$^*$ Neuilly sur Seine) :
+
+{\bf lemme :} Si $\lambda \in \text{Sp} (A\overline{A})$ alors il existe $W\ne 0$ et $\alpha \in \R$ 
+tels que $A\overline{W}=\alpha W$ et $\alpha ^2=\lambda$.
+
+Soit $V \in E_{\lambda}(A\overline{A}),\ V\ne 0$. Si $A\overline{V}=-\sqrt{\lambda}\,V$ on a le 
+r\'esultat voulu, sinon on pose $W=A\overline{V}+\sqrt{\lambda}\,V$. On a alors :
+$$\overline{A}W=\overline{A}A\overline{V}+\sqrt{\lambda}\,\overline{A}V=\lambda \overline{V}+
+\sqrt{\lambda}\,\overline{A}V=\sqrt{\lambda}\,\overline{W}$$
+On peut s'arranger pour que le vecteur pr\'ec\'edent soit unitaire et construire $U$ matrice unitaire 
+de premi\`ere colonne $W$. 
+
+On a alors $^t\overline UA\overline U=\begin{pmatrix}
+\alpha  & x & x & x\cr
+ 0      &   &   &  \cr
+\vdots  &   & B &  \cr
+ 0      &   &   &  \cr\end{pmatrix}$, 
+puis
+$^t\overline UA\overline AU=\begin{pmatrix}
+\alpha ^2 & y & y             & y\cr
+0         &   &               &  \cr
+\vdots    &   & B \overline B &  \cr
+0         &   &               &  \cr\end{pmatrix}$.
+On en d\'eduit le r\'esultat par r\'ecurrence.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

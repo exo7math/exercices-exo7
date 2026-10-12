@@ -1,0 +1,26 @@
+\exercice{2198, debes, 2008/02/12}
+\enonce 
+Soient $G$ un groupe et $H$ un sous-groupe distingu\'e
+de $G$. On se donne un nombre premier $p$ et un $p$-Sylow $P$ de
+$G$. Montrer que $H\cap P$ est un $p$-Sylow de $H$ et que
+$HP/H$ est un $p$-Sylow de $G/H$.
+\finenonce 
+
+\noindication
+\correction Le groupe $P$ est un $p$-sous groupe maximal de $G$ et donc
+aussi de $HP$ puisque $P\subset HP$ (noter que $HP$ est un sous-groupe car $H$ est
+suppos\'e distingu\'e dans $G$); $P$ est donc un $p$-Sylow de $HP$. Si $|P|=p^n$,
+alors $|HP|=p^n s$ avec $p$ ne divisant pas $s$. On peut aussi \'ecrire $|H|=p^{m}
+r$ avec $p$ ne divisant pas $r$; on a alors n\'ecessairement $m\leq n$ et $s$
+multiple de $r$. On a aussi $HP/H
+\simeq P/(H\cap P)$ ce qui donne $|H\cap P| = |P||H|/|HP| = p^m (r/s)$. On obtient donc
+que $s=r$ et que $H\cap P$ est un $p$-Sylow du groupe $H$.
+\smallskip
+
+On a aussi $|G|=p^n t$ avec $p$ ne divisant pas $t$ et $t$ multiple de $s$. On en
+d\'eduit $|G/H| = p^{n-m} (t/r)$. Comme $t/r$ est un entier non divisible par $p$
+et que $HP/H$ est un sous-groupe de $G/H$ d'ordre $|HP/H| = p^{n-m}$, le groupe
+$HP/H$ est un $p$-Sylow de $G/H$.
+  
+\fincorrection
+\finexercice

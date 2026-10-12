@@ -1,0 +1,25 @@
+\exercice{47, bodin, 1998/09/01}
+\video{MJT-lI-lt-M}
+\enonce
+
+ Calculer la somme $S_n = 1+z+z^2+\cdots+z^n$.
+\finenonce 
+
+\indication
+Calculer $(1-z)S_n$.
+\finindication
+
+\correction
+$$S_n = 1+z+z^2+\cdots+z^n = \sum_{k=0}^{n}z^k.$$
+Nous devons retrouver le r\'esultat sur la somme $S_n =
+\frac{1-z^{n+1}}{1-z}$d'une suite g\'eom\'etrique dans le cas o\`u
+$z\not=1$ est un r\'eel. Soit maintenant $z \not= 1$ un nombre
+complexe. Calculons $S_n(1-z)$.
+\begin{align*}
+S_n(1-z) & =(1+z+z^2+\cdots+z^n)(1-z) \text{ d\'eveloppons }\\
+         &= 1+z+z^2+\cdots+z^n - z-z^2-\cdots-z^{n+1} \text{ les termes interm\'ediaires s'annulent }\\
+         &= 1-z^{n+1}.
+\end{align*}
+Donc $$S_n = \frac{1-z^{n+1}}{1-z}, \text{ pour } z\not= 1.$$
+\fincorrection
+\finexercice

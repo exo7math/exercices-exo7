@@ -1,0 +1,46 @@
+\exercice{7627, mourougane, 2021/08/10}
+\enonce[Questions de cours]
+\begin{enumerate}
+\item Rappeler la définition de la branche principale du logarithme.
+
+\item Rappeler la définition d'une primitive d'une fonction continue $f$ sur $\Cc$.
+
+\item Donner si possible l'exemple d'une fonction continue non holomorphe $f$ sur $\Cc$ qui admet une primitive.
+
+\item Donner si possible l'exemple d'une fonction holomorphe non constante de $\Delta$ dans $\Cc$. Dans le cas contraire, démontrer la non-existence.
+
+\item Donner si possible l'exemple d'une fonction holomorphe non constante de $\Cc$ dans $\Delta$. Dans le cas contraire, démontrer la non-existence.
+
+\item Donner si possible l'exemple d'une fonction holomorphe non constante de $\mathbb{H}$ dans $\Delta$. Dans le cas contraire, démontrer la non-existence.
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+  \item 
+$$\begin{array}{cccc}
+ \log :& \Cc-]-\infty,0]&\longrightarrow&\Cc\\
+    &z         &\longmapsto& \ln_\Rr(r)+i\theta \ \ \substack{\textrm{ après avoir choisi l'écriture } z=re^{i\theta}\\ \textrm{ avec } r\in[0,+\infty[ \textrm{ et } \theta\in]-\pi,\pi[}
+\end{array}$$
+
+% $$\newfrac{\ln_\Rr(r)+i\theta}{\textrm{après avoir choisi l'écriture } z=re^{i\theta} \textrm{ avec } r\in[0,+\infty[ \textrm{ et } \theta\in]-\pi,\pi[}$$
+  \item Une primitive d'une application continue $f$ sur $\Cc$ est une application holomorphe $F$ sur $\Cc$ dont la dérivée complexe $F'$ est l'application $f$.
+  \item Comme la dérivée complexe d'une application holomorphe est holomorphe, il n'y a pas de tels exemples.
+  \item $$\begin{array}{cccc}
+ Id :& \Delta &\longrightarrow&\Cc\\
+    &z         &\longmapsto& z
+\end{array}$$
+est holomorphe non-constante.
+  \item Par le théorème de Liouville, toute application entière bornée est constante~: il n'y a donc pas de tels exemples.
+  \item $$\begin{array}{cccc}
+ C :& \mathbb{H} &\longrightarrow&\Delta\\
+    &z         &\longmapsto& \frac{z-i}{z+i}
+\end{array}\textrm{ ou bien } 
+\begin{array}{cccc}
+ e :& \mathbb{H} &\longrightarrow&\Delta\\
+    &z         &\longmapsto& \exp(2i\pi z)
+\end{array}
+$$
+\end{enumerate}
+\fincorrection
+\finexercice

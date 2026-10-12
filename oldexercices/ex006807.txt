@@ -1,0 +1,115 @@
+\exercice{6807, gijs, 2011/10/16}
+\enonce
+Soit $E$ un espace vectoriel normé sur $\Cc$. On
+désigne par $\overline B = \{x\in E \mid \Vert x\Vert
+\le1\}$ la boule fermée de centre $0$ et de rayon $1$.
+
+Soit $F\subset E$ un sous-espace vectoriel {\bf fermé}
+de $E$. Pour $x\in E$ on pose~:
+$$
+d(x,F) = \inf_{y\in F} \Vert\, x-y\,\Vert \equiv \inf \{\,
+\Vert\, x-y\, \Vert \mid y\in F\,\}
+\ .
+$$
+\begin{enumerate}
+\item Montrer que pour tout $x\in E$ on a $0\le d(x,F) \le
+\Vert x\Vert$.
+
+\item Montrer que les deux conditions suivantes sont
+équivalentes. 
+  \begin{enumerate}
+  \item $d(x,F) = 0$;
+  \item $x\in F$.
+  \end{enumerate}
+
+\item
+  \begin{enumerate}
+  \item Montrer que, quels que soient $x,x'\in E$,
+$\lambda\in \Cc$, $y\in F$, on a~:
+
+\begin{align*}
+%\forall x\in E, \lambda\in \Cc : &
+d(\lambda x,F) &= \vert\lambda\vert\,d(x,F)
+\\
+%\forall x\in E, y\in F : &
+d(x-y,F) &= d(x,F)
+\\
+%\forall x,x'\in E : &
+d(x+x',F) &\le d(x,F) + d(x',F)
+\end{align*}
+
+  \item Montrer que l'application $x\mapsto d(x,F)$ est
+uniformément continue dans $E$.
+  \end{enumerate}
+
+\item Soit $x\in \overline B$. On pose $\alpha =
+d(x,F)$ et on suppose $\alpha>0$. Soit de plus
+$\epsilon>0$.
+  \begin{enumerate}
+  \item Montrer qu'il existe $y\in F$ tel que 
+$$
+\alpha \le \Vert\, x-y\, \Vert < \alpha(1+\epsilon)
+\ .
+$$
+  \item Montrer qu'il existe $x' \in \overline B$
+tel que
+$$
+\tfrac{1}{1+\epsilon} = d(x',F)  <1
+\ .
+$$
+  \item Montrer que, si $F\not= E$, 
+${ \sup_{x\in \overline B}}\ d(x,F) = 1$.
+  \end{enumerate}
+
+\item Sachant que tout espace vectoriel normé de
+dimension finie est complet, dé\-mon\-trer que tout
+sous-espace vectoriel de dimension finie d'un espace
+vectoriel normé est fermé.
+
+\item On suppose maintenant que $\overline B$ est
+compact. 
+  \begin{enumerate}
+  \item Montrer que, pour tout $\epsilon>0$, il existe un nombre
+fini $k$ de points de $\overline B$~: $x_1, \dots, x_k \in
+\overline B$ tels que
+$$
+\overline B \subset \bigcup_{j=1}^k B_{\epsilon}(x_j)
+\ ,
+$$
+où $B_\epsilon(x_j)$ désigne la boule ouverte de
+centre $x_j$ et de rayon $\epsilon$.
+
+  \item Déduire de ce qui précède que $E$
+est de dimension finie (on pourra considérer le
+sous-espace vectoriel engendré par les vecteurs $x_1,
+\dots, x_k$).
+  \end{enumerate}
+
+\item On revient au cas général (c'est-à-dire~:
+on ne suppose plus que $\overline B$ est compact). Soit
+$u:E \to E$ une application linéaire continue. On
+suppose que $\overline{u(\overline B)}$ (l'adhérence de
+l'image de $\overline B$ par $u$) est compacte. Soit
+$\lambda \not= 0$ une valeur propre de $u$
+(c'est-à-dire~: il existe
+$x_0
+\in E$, $x_0\not= 0$ tel que
+$u(x_0) = \lambda\, x_0$). On pose
+$V_\lambda = \{\,x\in E \mid u(x) = \lambda x\,\}$.
+
+  \begin{enumerate}
+  \item Montrer que $V_\lambda$ est un sous-espace
+vectoriel fermé de $E$.
+  \item Montrer que $\overline B \cap V_\lambda
+\subset \frac1\lambda \, u(\overline B)$.
+  \item Montrer que $V_\lambda$ est de dimension
+finie.
+  \end{enumerate}
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\nocorrection
+
+\finexercice

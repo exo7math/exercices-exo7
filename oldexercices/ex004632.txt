@@ -1,0 +1,42 @@
+\exercice{4632, quercia, 2010/03/14}
+\enonce[$\sum_{n=1}^\infty  \frac{a}{n^2+a^2}$ (Centrale MP 2003)]
+\begin{enumerate}
+  \item Soit~$a\in\R$. Développer en série de Fourier la fonction $2\pi$-périodique
+    valant~$e^{ax}$ sur~$]0,2\pi]$.
+
+Soit~$a\in\R$. On pose~$I(a) =  \int_{u=0}^{+\infty}\frac{e^{-u}}{1-e^{-u}}\sin(au)\,d u$.
+
+  \item Exprimer $I(a)$ sous forme d'une série sans intégrale.
+    
+  \item Calculer $ \int_{u=0}^{+\infty}e^{-u}\sin(au)\,d u$.
+    
+  \item Conclure.
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Si $a\ne 0$~: $S_f(x) = \sum_{n=-\infty}^{+\infty} \frac{e^{2\pi a}-1}{\strut2\pi(a-in)}e^{inx}
+    = \frac{e^{2\pi a}-1}{2\pi a} + \sum_{n=1}^{+\infty}\frac{e^{2\pi a}-1}{\pi(a^2+n^2)}(a\cos(nx) - n\sin(nx))$.
+  \item On peut supposer $a > 0$ car $I(-a) = -I(a)$ et $I(0) = 0$.
+    On envisage d'intégrer terme à terme la
+    relation~: $$\frac{e^{-u}}{1-e^{-u}}\sin(au) = \sum_{n=1}^{\infty}e^{-nu}\sin(au).$$
+    On coupe l'intégrale $\int_0^{+\infty}$ en $\int_0^{\pi/a}+\int_{\pi/a}^{+\infty}$~:
+    sur~$[0,\pi/a]$ le sinus est positif et le théorème de convergence monotone
+    s'applique. Sur~$[\pi/a,+\infty[$ le théorème d'intégration terme
+    à terme s'applique (série des normes~$1$ convergente) car
+    $\int_{\pi/a}^{+\infty}|e^{-nu}\sin(au)|\,d u \le \int_{\pi/a}^{+\infty}e^{-nu}\,d u 
+    = e^{-n\pi/a}/n$. Ainsi,
+    $$I(a) = \sum_{n=1}^\infty  \int_{u=0}^{+\infty}e^{-nu}\sin(au)\,d u
+           = \sum_{n=1}^\infty  \frac{a}{n^2+a^2}.$$
+  \item Déjà fait, $ \int_{u=0}^{+\infty}e^{-u}\sin(au)\,d u =  \frac{a}{a^2+1}$.
+    Il doit y avoir une autre méthode pour la question précédente ?!
+  \item En comparant avec~{\bf 1)} pour~$x=0$ on obtient~:
+    $I(a) = \frac\pi{\strut2}\frac{e^{2a\pi}+1}{e^{2a\pi}-1}-\frac1{\strut2a}$ pour $a>0$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

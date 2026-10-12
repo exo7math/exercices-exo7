@@ -1,0 +1,59 @@
+\exercice{4054, quercia, 2010/03/11}
+\enonce[\'Equations linéaires d'ordre 1]
+
+Intégrer les équations suivantes :
+
+
+\begin{enumerate}
+  \item   $(2+x)y' = 2-y$.
+      
+
+  \item   $xy'+y = \cos x$.
+      
+
+  \item   $(1+x)y' + y = (1+x)\sin x$.
+      
+
+  \item   $x^3y' -x^2y = 1$.
+      
+
+  \item   $3xy' - 4y = x$.
+      
+
+  \item   $y'+y = \sin x + 3\sin 2x$.
+      
+
+  \item   $2x(1-x)y' + (1-2x)y = 1$.
+      
+
+
+  \item   $x(x+1)y' + y = \arctan x$. \label{arctan}
+
+  \item   $x(x^2-1)y' + 2y = x\ln x - x^2$.
+      
+
+pour \ref{arctan} : \'Etudier les problèmes de raccordement.
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $y = 2 + \frac\lambda{x+2}$.
+  \item $y = \frac{C+\sin x}x$.
+  \item $y = -\cos x + \frac{\sin x + \lambda}{1+x}$.
+  \item $y = \lambda x - \frac 1{3x^2}$.
+  \item $y = \lambda x^{4/3} - x$.
+  \item $y = \frac{\sin x - \cos x}2 + \frac{3\sin 2x - 6\cos 2x}5 + \lambda e^{-x}$.
+  \item $y = \frac{\Argch(1-2x)+\lambda}{2\sqrt{x^2-x}}$ pour $x < 0$\par
+               $y = \frac{\arcsin(2x-1)+\mu}{2\sqrt{x-x^2}}$ pour $0 < x < 1$\par
+               $y = \frac{-\Argch(2x-1)+\nu}{2\sqrt{x^2-x}}$ pour $1 < x$.
+  \item  $y = \frac {x-1}{2x} \arctan x +
+       \frac {x+1}{2x} \left(\ln\frac {|x+1|}{\sqrt{x^2+1}} + \lambda \right)$.
+  \item $y = \frac{x}{1-x^2}\Bigl( (1+x)\ln x + 1 + \lambda x\Bigr)$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

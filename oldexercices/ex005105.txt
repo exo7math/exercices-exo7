@@ -1,0 +1,45 @@
+\exercice{5105, rouget, 2010/06/30}
+\enonce[**IT]
+Les phrases suivantes sont-elles équivalentes~?
+
+\begin{enumerate}
+\item  \og~$\forall x\in\Rr,\;(f(x)=0\;\mbox{et}\;g(x)=0)$~\fg~et \og~$(\forall
+x\in\Rr,\;f(x)=0)\;\mbox{et}\;(\forall x\in\Rr,\;g(x)=0)$~\fg.
+\item  \og~$\forall x\in\Rr,\;(f(x)=0\;\mbox{ou}\;g(x)=0)$~\fg~et \og~$(\forall
+x\in\Rr,\;f(x)=0)\;\mbox{ou}\;(\forall x\in\Rr,\;g(x)=0)$~\fg.
+\end{enumerate}
+Donner un exemple de fonctions $f$ et $g$ de $\Rr$ dans $\Rr$, toutes deux non nulles et dont le produit est nul.
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Oui. Dans les deux cas, chaque fois que l'on se donne un réel $x_0$, $f(x_0)$ et $g(x_0)$ sont tous deux nuls.
+ \item  Non. La deuxième affirmation implique la première mais la première n'implique pas la deuxième. La première
+phrase est la traduction avec des quantificateurs de l'égalité $fg=0$. La deuxième phrase est la traduction avec
+quantificateurs de $(f=0\;\mbox{ou}\;g=0)$.
+Voici un exemple de fonctions $f$ et $g$ toutes deux non nulles dont le produit est nul.
+Soient $\begin{array}[t]{cccc}
+f~:&\Rr&\rightarrow&\Rr\\
+ &x&\mapsto&\left\{
+\begin{array}{l}
+0\;\mbox{si}\;x<0\\
+x\;\mbox{si}\;x\geq0
+\end{array}
+\right.
+\end{array}$ et $\begin{array}[t]{cccc}
+g~:&\Rr&\rightarrow&\Rr\\
+ &x&\mapsto&\left\{
+\begin{array}{l}
+0\;\mbox{si}\;x>0\\
+x\;\mbox{si}\;x\leq0
+\end{array}
+\right.
+\end{array}$. Pour chaque valeur de $x$, on a soit $f(x)=0$ (quand $x\leq0$), soit $g(x)=0$ (quand $x\geq0$). On a
+donc~:~$\forall x\in\Rr,\;(f(x)=0\;\mbox{ou}\;g(x)=0)$ ou encore $\forall x\in\Rr,\;f(x)g(x)=0$ ou enfin, $fg=0$.
+Cependant, $f(1)=1\neq0$ et donc $f\neq0$, et $g(-1)=-1\neq0$ et donc $g\neq0$. Ainsi, on n'a pas $(f=0\;\mbox{ou}\;g=0)$ ou
+encore, on n'a pas $((\forall x\in\Rr,\;f(x)=0)\;\mbox{ou}\;(\forall x\in\Rr,\;g(x)=0))$.
+\end{enumerate}
+\fincorrection
+\finexercice

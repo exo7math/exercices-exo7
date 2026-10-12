@@ -1,0 +1,33 @@
+\exercice{4604, quercia, 2010/03/14}
+\enonce[Fonction $\zeta$\label{recurzeta}]
+
+Pour $|x| < 1$ on pose~: $Z(x) = \sum_{n=1}^\infty \zeta(2n)x^n$.
+
+Montrer que $Z$ vérifie l'équation différentielle~:
+$2xZ'(x) - 2Z^2(x) + Z(x) = 3x\zeta(2)$ (écrire $Z(x)$ comme somme d'une
+série double, intervertir les sommations, remplacer et \dots\ simplifier).
+
+En déduire la relation de récurrence~:
+$\forall\ n\ge 2,\ (n+\frac12)\zeta(2n) = \sum_{p=1}^{n-1}\zeta(2p)\zeta(2n-2p)$.
+\finenonce
+
+\noindication
+
+\correction
+$Z(x) = \sum_{n,p\ge 1} \frac{x^n}{p^{2n}} = \sum_{p\ge 1}\frac{x}{p^2-x}$.
+
+$Z'(x) = \sum_{p\ge 1}\frac{p^2}{(p^2-x)^2} = \sum_{p\ge 1}\frac{1}{p^2-x} + \sum_{p\ge 1}\frac{x}{(p^2-x)^2}$.
+
+$Z^2(x) = \sum_{p,q\ge 1}\frac{x^2}{(p^2-x)(q^2-x)}
+  = \sum_{p\ne q}\frac{x^2}{q^2-p^2}\Bigl(\frac{1}{p^2-x} - \frac{1}{q^2-x}\Bigr) + \sum_{p\ge1}\frac{x^2}{(p^2-x)^2}$
+
+$Z^2(x)-xZ'(x) + Z(x) = 2\sum_{p\ne q}\frac{x^2}{(q^2-p^2)(p^2-x)}$.
+
+A $p$ fixé, $\sum_{q\ne p}\frac1{q^2-p^2} = \frac{1}{2p}\sum_{q\ne p}\Bigl(\frac1{q-p}-\frac1{q+p}\Bigr) = \frac1{2p}\Bigl(\frac1p + \frac1{2p}\Bigr) = \frac{3}{4p^2}$.
+
+Donc $Z^2(x)-xZ'(x) + Z(x) = \frac32\sum_{p\ge 1}\frac{x^2}{p^2(p^2-x)} = \frac32(Z(x)-x\zeta(2))$.
+
+Rmq~: $2Z(x^2) = 1-\pi x\mathrm{cotan}(\pi x)$ (Euler).
+\fincorrection
+
+\finexercice

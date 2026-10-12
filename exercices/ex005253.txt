@@ -1,21 +1,27 @@
 \exercice{5253, rouget, 2010/07/04}
+
 \enonce[***I]
-Montrer que  $\sum_{k=0}^{n}k!\sim n!$.
+Montrer que \( \sum_{k = 0}^nk!\sim n! \).
 \finenonce
 
 \noindication
 
 \correction
-Pour $n\geq2$, on a
+Pour \( n\ge2 \), on a
 
-$$\frac{1}{n!}\sum_{k=0}^{n}k!=1+\frac{1}{n}+\sum_{k=0}^{n-2}\frac{k!}{n!}.$$
+\[
+  \frac{1}{n!}\sum_{k = 0}^nk!=1+\frac{1}{n}+\sum_{k = 0}^{n-2}\frac{k!}{n!}.
+\]
+Mais, pour \( 0\le k\le n-2 \), \( \frac{k!}{n!} = \frac{1}{n(n-1)...(k+1)}\le\frac{1}{n(n-1)} \) (le produit contenant au moins les deux premiers facteurs. Par suite,
 
-Mais, pour $0\leq k\leq n-2$, $\frac{k!}{n!}=\frac{1}{n(n-1)...(k+1)}\leq\frac{1}{n(n-1)}$ (le produit contenant au moins les deux premiers facteurs. Par suite,
+\[
+  0\le\sum_{k = 0}^{n-2}\frac{k!}{n!}\le\frac{n-2}{n(n-1)}.
+\]
+On en déduit que \( \sum_{k = 0}^{n-2}\frac{k!}{n!} \) tend vers \( 0 \) quand \( n \) tend vers \( +\infty \). Comme \( \frac{1}{n} \) tend aussi vers \( 0 \) quand \( n \) tend vers \( +\infty \), on en déduit que \( \frac{1}{n!}\sum_{k = 0}^nk! \) tend vers \( 1 \) et donc que
 
-$$0\leq\sum_{k=0}^{n-2}\frac{k!}{n!}\leq\frac{n-2}{n(n-1)}.$$
-
-On en déduit que $\sum_{k=0}^{n-2}\frac{k!}{n!}$ tend vers $0$ quand $n$ tend vers $+\infty$. Comme $\frac{1}{n}$ tend aussi vers $0$ quand $n$ tend vers $+\infty$, on en déduit que $\frac{1}{n!}\sum_{k=0}^{n}k!$ tend vers $1$ et donc que
-
-$$\sum_{k=0}^{n}k!\sim n!.$$
+\[
+  \sum_{k = 0}^nk!\sim n!.
+\]
 \fincorrection
+
 \finexercice

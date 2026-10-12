@@ -1,0 +1,55 @@
+\exercice{2185, debes, 2008/02/12}
+\enonce
+\label{ex:deb85}
+Montrer qu'un sous-groupe primitif de $S_n$ qui contient une
+transposition est $S_n$
+tout entier.
+\finenonce 
+
+\indication
+Soit $H$ un tel sous-groupe. On peut supposer sans perte de
+g\'en\'eralit\'e que $H$ contient la transposition $(12)$. On 
+pourra ensuite proc\'eder comme suit.
+
+- montrer que $H$ est engendr\'e par le fixateur $H_1$ de $1$ et
+par $(12)$.
+
+- montrer que l'orbite de $2$ sous $H$ est l'union de l'orbite de
+$2$ sous $H_1$ et de $1$.
+
+- en d\'eduire que $H_1$ agit transitivement sur l'ensemble $\{ 2,
+\dots , n \} $ et que $H$
+agit $2$-transitivement sur $\{ 1, \dots , n \} $.
+
+- d\'eduire du point pr\'ec\'edent que $H$ contient toutes
+les transpositions.
+\finindication
+
+\correction
+Soit $H$ un sous-groupe primitif de $S_n$ contenant une transposition. On peut supposer que
+$H$ contient la transposition $(1\hskip 2pt 2)$. Le sous-groupe engendr\'e par le fixateur
+$H(1)$ et $(1\hskip 2pt 2)$ contient strictement $H(1)$. D'apr\`es
+l'exercice \ref{ex:deb84} (question (c)), ce groupe est $H$.
+\smallskip
+
+\hskip 5mm Consid\'erons l'ensemble ${\cal O}$ r\'eunion de l'orbite $H(1)\cdot 2$ de $2$ sous $H(1)$ et du singleton $\{1\}$. Pour montrer que ${\cal O}$ est l'orbite de $2$ sous $H$, il suffit de
+montrer que $2\in {\cal O}$ (ce qui est clair) et que ${\cal O}$ est stable sous l'action de
+$H$, ou, ce qui est \'equivalent, stable sous l'action de $H(1)$ et de $(1\hskip 2pt 2)$.
+L'\'el\'ement $1$ est envoy\'e sur $1\in {\cal O}$ par les \'el\'ements de $H(1)$
+et sur $2\in {\cal O}$ par $(1\hskip 2pt 2)$. L'ensemble $H(1)\cdot 2$ est invariant sous
+l'action de $H(1)$. Enfin, si $h\cdot 2$ d\'esigne un \'el\'ement quelconque de $H(1)\cdot
+2$, alors son image par la permutation $(1\hskip 2pt 2)$ est $2$ si $h\cdot 2=1$, $1$ si
+$h\cdot 2=2$ et $h\cdot 2$ si $h\cdot 2\not=1,2$; dans tous les cas, l'image est dans ${\cal
+O}$. 
+\smallskip
+
+\hskip 5mm On a donc ${\cal O} = H\cdot 2 = H(1)\cdot 2 \cup \{1\}$. L'action de $H$ \'etant
+transitive, cet ensemble est \'egal \`a $\{1,\ldots,n\}$ et donc $H(1)\cdot
+2=\{2,\ldots,n\}$ (puisque $1\notin H(1)\cdot 2$). Cela montre que l'action de $H(1)$ sur
+$\{2,\ldots,n\}$ est transitive, et donc que $H$ agit transitivement sur $\{1,\ldots,n\}$ (exercice 21).
+
+\hskip 5mm Pour $i,j$ entiers distincts entre $1$ et $n$, choisissons alors $g\in G$ tel que $g(1)=i$
+et $g(2)=j$. On a $g (1\hskip 2pt 2) g^{-1} = (g(1)\hskip 2pt g(2)) = (i\hskip 2pt j)$. Cela
+montre que $H$ contient toutes les transpositions. Conclusion: $H=S_n$.
+\fincorrection
+\finexercice

@@ -1,0 +1,107 @@
+\exercice{5973, tumpach, 2010/11/11}
+\enonce[Coordonn\'ees sph\'eriques dans $\mathbb{R}^{n}$]
+Soit $\Omega'$ l'ouvert de $\mathbb{R}^{n}$ d\'efini par
+$$
+\Omega' = \{(r, \theta_1, \dots, \theta_{n-1})\in\mathbb{R}^{n}~|~
+0< r, 0 <\theta_1, \dots, \theta_{n-2} < \pi, 0 < \theta_{n-1} <
+2\pi\}.
+$$
+Soit l'application $S$ de $\Omega'$ dans $\mathbb{R}^{n}$
+d\'efinie par
+$$
+\begin{array}{lcl}
+x_1 &= &r \cos \theta_1,\\
+x_2 &=& r \sin \theta_1 \cos \theta_2,\\
+\vdots & & \\
+x_{n-2} &=&  r \sin \theta_1 \sin \theta_2 \dots \cos \theta_{n-2}\\
+x_{n-1} &=& r \sin \theta_1 \sin\theta_2 \dots \sin \theta_{n-2}
+\cos \theta_{n-1}\\
+x_{n} &=& r \sin \theta_1 \sin \theta_2 \dots \sin\theta_{n-2}
+\sin \theta_{n-1},
+\end{array}
+$$
+o\`u $(x_1, \dots, x_n)$ sont les coordonn\'ees cart\'esiennes de
+$x\in\mathbb{R}^n$.
+\begin{enumerate}
+\item Soit $\Omega = \mathbb{R}^n\setminus\{
+x\in\mathbb{R}^n~|~x_{n} = 0~\text{et}~x_{n-1} \geq 0~\}.$ Montrer
+que $\Omega$ est une partie ouverte de $\mathbb{R}^n$ dont le
+compl\'ementaire est de mesure nulle, et que $S$ est un
+diff\'eomorphisme de $\Omega'$ sur $\Omega$.
+
+ \item Soit $f$
+une fonction bor\'elienne positive sur $\mathbb{R}^{n}$. Montrer
+que
+$$
+\begin{array}{lcl}
+\int_{\mathbb{R}^n} f(x)\,dx &=& \int_{\Omega'} (f\circ S)(r,
+\theta_1, \dots, \theta_{n-1})\,r^{n-1}
+\sin^{n-2}\theta_{1}\,\sin^{n-3}\theta_2 \dots \sin
+\theta_{n-2}\,dr\,d\theta_1 \dots d\theta_{n-1}\\ & & \\ & =&
+\int_{\Omega'} (f\circ S)(r, \theta_1, \dots,
+\theta_{n-1})\,r^{n-1}\,dr\,d\sigma,
+\end{array}
+$$
+o\`u $d\sigma$ est la mesure uniforme sur la sph\`ere unit\'e de
+$\mathbb{R}^{n}$. 
+
+\item En utilisant les coordonn\'ees
+sph\'eriques, calculer le volume $\mathcal{V}_4$ de la boule
+unit\'e de $\mathbb{R}^4$ et l'aire $\mathcal{A}_{3}$ de la
+sph\`ere unit\'e $\mathcal{S}^3$ de $\mathbb{R}^4$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item Posons $\Omega = \mathbb{R}^n\setminus\{
+x\in\mathbb{R}^n~|~x_{n} = 0~\text{et}~x_{n-1} \geq 0~\}.$ Comme
+$0 < \theta_{n-1} < 2\pi$, l'image de $\Omega'$ par $S$ est
+incluse dans $\Omega$. R\'eciproquement, soit $x$ un \'el\'ement
+de $\Omega$. Posons $r = |x|$, alors pour tout $i \in\{1, \dots,
+n-2\}$, on peut d\'efinir par r\'ecurrence $\theta_i\in(0, \pi)$
+gr\^ace \`a son cosinus~:
+$$
+\cos\theta_{i} = \frac{x_{i}}{r
+\sin\theta_1\dots\sin\theta_{i-1}}.
+$$
+Quant \`a $\theta_{n-1}$, il est d\'etermin\'e par son sinus et
+son cosinus. Comme $x_{n} \neq 0$ ou $x_{n-1} < 0$,
+n\'ecessairement $\theta_{n-1} \neq 0(\text{modulo}~2\pi)$.
+
+L'application $S$ est contin\^ument diff\'erentiable, car chacune
+de ses composantes l'est. La matrice jacobienne a ses vecteurs
+colonnes orthogonaux, et de norme respectivement $1$, $r$,
+$r\sin\theta_{1}$, $\dots$,
+$r\sin\theta_{1}\dots\sin\theta_{n-2}$. Son d\'eterminant vaut
+alors $r^{n-1}\left(\sin \theta_{1}\right)^{n-2}\dots
+\sin\theta_{n-2}.$ Comme ce d\'eterminant ne s'annule jamais, $S$
+est un diff\'eomorphisme de $\Omega'$ sur $\Omega$. 
+
+\item C'est la formule du changement de variable. 
+
+\item On a~:
+$$
+\begin{array}{lcl} \mathcal{V}_{4} &=& \int_{r = 0}^{1}\int_{\theta_1 =
+0}^{\pi}\int_{\theta_{2} = 0}^{\pi} \int_{\theta_3 = 0}^{2\pi}
+r^3\sin^{2}\theta_{1}\sin\theta_{2}\,dr
+d\theta_1 d\theta_2 d\theta_3\\
+& = &
+2\pi\left[\frac{r^4}{4}\right]_{0}^{1}\left(\int_{0}^{\pi}\sin^{2}\theta_1
+d\theta_1\right)\left(\int_{0}^{\pi}\sin\theta_2
+d\theta_2\right)\\
+& = & \frac{\pi}{2}\left(\int_{0}^{\pi}\frac{1 -\cos 2\theta_1}{2}
+d\theta_1\right)\left[-\cos\theta_2\right]_{0}^{\pi}\\
+& = & \frac{\pi^2}{2}.\\
+ \mathcal{A}_{3} &=& \int_{\theta_1 =0}^{\pi}\int_{\theta_{2} = 0}^{\pi} \int_{\theta_3 = 0}^{2\pi}
+\sin^{2}\theta_{1}\sin\theta_{2}\,
+d\theta_1 d\theta_2 d\theta_3\\
+& = & 2\pi^2.
+\end{array}
+$$
+\end{enumerate}
+\fincorrection
+
+\finexercice

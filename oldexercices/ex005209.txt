@@ -1,0 +1,201 @@
+\exercice{5209, rouget, 2010/06/30}
+\enonce[I]
+Montrer que les nombres suivants sont irrationnels.
+
+\begin{enumerate}
+\item (**) $\sqrt{2}$ et plus généralement $\sqrt[n]{m}$ où $n$ est un entier supérieur ou égal à $2$ et $m$ est un entier naturel supérieur ou égal à $2$, qui n'est pas une puissance $n$-ième parfaite. 
+\item (**) $\log 2$.
+\item (****) $\pi$ (\textsc{Lambert} a montré en 1761 que $\pi$ est irrationnel, \textsc{Legendre} a démontré en 1794 que $\pi^2$ est irrationnel, \textsc{Lindemann} a démontré en 1882 que $\pi$ est transcendant).
+
+Pour cela, supposer par l'absurde que $\pi=\frac{p}{q}$ avec $p$ et $q$ entiers naturels non nuls et premiers entre eux. Considérer alors $I_n=\int_{0}^{p/q}\frac{x^n(p-qx)^n}{n!}\sin x\;dx$, $n\in\Nn^*$ et montrer que $I_n$ vérifie 
+\begin{enumerate}
+\item $I_n$ est un entier relatif~;
+\item $I_n>0$~;
+\item $\lim_{n\rightarrow +\infty}I_n=0$ (voir devoir).
+\end{enumerate}
+\item (***) $e$ (\textsc{Hermite} a démontré en 1873 que $e$ est transcendant. C'est historiquement le premier \og~vrai~\fg~nombre dont on a réussi à démontrer la transcendance).
+
+Pour cela, établir que pour tout entier naturel $n$, $e=\sum_{k=0}^{n}\frac{1}{k!}+\int_{0}^{1}\frac{(1-t)^n}{n!}e^t\;dt$, puis que \textbf{pour tout} entier naturel non nul $n$, 
+$0<e-\sum_{k=0}^{n}\frac{1}{k!}<\frac{3}{(n+1)!}$. Raisonner alors par l'absurde.
+\item (***) $\cos(\frac{2\pi}{7})$. Pour cela trouver une équation du troisième degré à coefficients entiers dont les solutions sont $\cos(\frac{2\pi}{7})$, $\cos(\frac{4\pi}{7})$ et $\cos(\frac{6\pi}{7})$, puis vérifier que cette équation n'a pas de racine rationnelle (supposer par l'absurde qu'il y a une racine rationnelle $\frac{p}{q}$ avec $p\in\Zz^*$, $q\in\Nn^*$ et $\mbox{PGCD}(p,q)=1$ et montrer que $p$ divise $1$ et $q$ divise $8$). (On rappelle le théorème de \textsc{Gauss}~:~soient $a$, $b$ et $c$ trois entiers relatifs tous non nuls. Si $a$ divise $bc$ et $a$ et $b$ sont premiers entre eux, alors $a$ divise $c$).
+
+\item (***) $\sqrt{2}+\sqrt{3}+\sqrt{5}$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+
+\begin{enumerate}
+ \item  Soient $m$ et $n$ deux entiers naturels supérieurs à $2$.
+
+$$\sqrt[n]{m}\in\Qq\Leftrightarrow\exists(a,b)\in(\Nn^*)^2/\;\sqrt[n]{m}=\frac{a}{b}\Leftrightarrow\exists(a,b)\in(\Nn^*)^2/\;a^n=m\times b^n.$$
+Tout d'abord, si $b=1$, $m=a^n$ et $m$ est une puissance $n$-ième parfaite. Ensuite, $a=1$ est impossible car $m\times b^n\geq2$.
+Supposons alors que $a$ et $b$ soient des entiers supérieurs à $2$ (et que $a^n=m\times b^n$). L'exposant de tout facteur premier de $a^n$ ou de $b^n$ est un multiple de $n$ et par unicité de la décomposition en facteurs premiers, il en est de même de tout facteur premier de $m$. Ceci montre que, si $\sqrt[n]{m}$ est rationnel, $m$ est une puissance $n$-ième parfaite.
+Réciproquement, si $m$ est une puissance $n$-ième parfaite, $\sqrt[n]{m}$ est un entier et en particulier un rationnel. En résumé~:~
+
+\begin{center}
+\shadowbox{
+$\forall(m,n)\in(\Nn\setminus\{0,1\})^2,\;\sqrt[n]{m}\in\Qq\Leftrightarrow\sqrt[n]{m}\in\Nn\Leftrightarrow m\;\mbox{est une puissance}\;n\;\mbox{-ième parfaite}.$
+}
+\end{center}
+Par suite, si $m$ n'est pas une puissance $n$-ième parfaite, $\sqrt[n]{m}$ est irrationnel.
+ \item 
+
+\begin{align*}
+\log 2\in\Qq&\Rightarrow\exists(a,b)\in(\Nn^*)^2/\;\log2=\frac{a}{b}\Rightarrow\exists(a,b)\in(\Nn^*)^2/\;10^{a/b}=2
+\Rightarrow\exists(a,b)\in(\Nn^*)^2/\;10^a=2^b\\
+ &\Rightarrow\exists(a,b)\in(\Nn^*)^2/\;5^a=2^{b-a}.
+\end{align*} 
+Puisque $5^a>1$, ceci impose $b-a\in\Nn^*$. Mais alors, l'égalité ci-dessus est impossible pour $a\neq0$ et $b\neq0$ par unicité de la décomposition en facteurs premiers d'un entier naturel supérieur ou égal à $2$.
+On a montré par l'absurde que
+
+\begin{center}
+\shadowbox{
+$\log2$ est irrationnel.
+}
+\end{center}
+ \item  Supposons par l'absurde que $\pi$ soit rationnel. Il existe alors deux entiers naturels non nuls $p$ et $q$ tels que $\pi=\frac{p}{q}$.
+Pour $n$ entier naturel non nul donné, posons 
+
+$$I_n=\frac{1}{n!}\int_{0}^{\pi}x^n(p-qx)^n\sin x\;dx=\frac{1}{n!}\int_{0}^{p/q}x^n(p-qx)^n\sin x\;dx.$$
+\textbullet~Tout d'abord, pour $0\leq x\leq\frac{p}{q}$, on a $0\leq x(p-qx)=\frac{p}{2q}\left(p-\frac{p}{2q}\times q\right)=\frac{p^2}{4q}$, 
+et donc (puisque $0\leq\sin x\leq1$ pour $x\in[0,\pi]$), 
+
+$$0\leq I_n\leq\frac{1}{n!}\int_{0}^{p/q}\left(\frac{p^2}{4q}\right)^n\;dx=\frac{\pi}{n!}\left(\frac{p^2}{4q}\right)^n.$$
+D'après le résultat admis par l'énoncé, $\frac{\pi}{n!}\left(\frac{p^2}{4q}\right)^n$ tend vers $0$ quand $n$ tend vers $+\infty$, et donc d'après le théorème de la limite par encadrement, la suite $(I_n)$ converge et $\lim_{n\rightarrow +\infty}I_n=0$.
+\textbullet~Ensuite, puisque pour $x$ élément de $[0,\pi]$, on a $x^n(p-qx)^n\sin x\geq0$, pour $n$ entier naturel non nul donné, on a
+
+\begin{align*}
+I_n&=\frac{1}{n!}\int_{0}^{\pi}x^n(p-qx)^n\sin x\;dx\geq\frac{1}{n!}\int_{\pi/4}^{3\pi/4}x^n(p-qx)^n\sin x\;dx\geq
+\frac{1}{n!}\left(\frac{3\pi}{4}-\frac{\pi}{4}\right)\left(\frac{p}{4q}\left(p-\frac{p}{4q}\times q\right)\right)^n\frac{1}{\sqrt{2}}\\
+ &=\frac{\pi}{2\sqrt{2}n!}\left(\frac{3p^2}{16q}\right)^n>0.
+\end{align*}
+Donc, $\forall n\in\Nn,\;I_n>0$.
+\textbullet~Vérifions enfin que, pour tout entier naturel non nul $n$, $I_n$ est un entier (relatif).
+Soit $P_n=\frac{1}{n!}x^n(p-qx)^n$. $P_n$ est un polynôme de degré $2n$ et $0$ et $\frac{p}{q}$ sont racines d'ordre $n$ de $P_n$ et donc, pour $0\leq k\leq n$, racines d'ordre $n-k$ de $P_n^{(k)}$. En particulier, $P_n^{(k)}(0)$ et $P_n^{(k)}\left(\frac{p}{q}\right)$ sont, pour $0\leq k<n$, des entiers relatifs. De même, puisque $\mbox{deg }P_n=2n$, pour $k\geq2n+1$, $P_n^{(k)}\geq0$ et en particulier, $P_n^{(k)}(0)$ et $Pn^{(k)}\left(\frac{p}{q}\right)$ sont, pour $k\geq2n+1$, des entiers relatifs.
+Soit $k$ un entier tel que $n\leq k\leq2n$.
+
+$$\frac{1}{n!}x^n(p-qx)^n=\frac{1}{n!}x^n\sum_{i=0}^{n}C_n^ip^{n-i}(-1)^{i}q^ix^i
+=\sum_{i=0}^{n}\frac{C_n^i}{n!}p^{n-i}(-1)^{i}q^ix^{n+i}=
+\sum_{k=n}^{2n}\frac{C_n^{k-n}}{n!}p^{2n-k}(-1)^{k-n}q^{k-n}x^{k}.$$
+On sait alors que 
+
+$$P_n^{(k)}(0)=k!\times(\mbox{coefficient de}\;x^k)=(-1)^{k-n}\frac{k!}{n!}C_n^{k-n}p^{2n-k}q^{k-n}.$$
+ce qui montre que $P_n^{(k)}(0)$ est entier relatif (puisque $n\leq k\leq2n$). Puis, comme $P_n\left(\frac{p}{q}-x\right)=P_n(x)$, on a encore 
+$P_n^{(k)}\left(\frac{p}{q}-x\right)=(-1)^kP_n^{(k)}(x)$  et en particulier $P_n^{(k)}\left(\frac{p}{q}\right)=(-1)^kP_n^{(k)}(0)\in\Zz$.
+On a montré que pour tout entier naturel $k$, $P_n^{(k)}(0)$ et $P_n^{(k)}\left(\frac{p}{q}\right)$ sont des entiers relatifs.
+Montrons alors que $I_n$ est un entier relatif.
+Une première intégration par parties fournit~:~$I_n=\left[-P_n(x)\cos x\right]_{0}^{p/q}+\int_{0}^{p/q}P_n'(x)\cos x\;dx$.
+$\cos$ prend des valeurs entières en $0$ et  $\frac{p}{q}=\pi$ de même que $P_n$. Par suite,
+ 
+$$I_n\in\Zz\Leftrightarrow\int_{0}^{p/q}P_n'(x)\cos x\;dx\in\Zz.$$
+Une deuxième intégration par parties fournit~:~$\int_{0}^{p/q}P_n'(x)\cos x\;dx=\left[P_n'(x)\sin x\right]_{0}^{p/q}-\int_{0}^{p/q}P_n''(x)\sin x\;dx$.
+sin prend des valeurs entières en $0$ et $\frac{p}{q}=\pi$, de même que $P_n'$ et 
+
+$$I_n\in\Zz\Leftrightarrow\int_{0}^{p/q}P_n''(x)\sin x\;dx\in\Zz.$$
+En renouvelant les intégrations par parties et puisque sin et cos prennent des valeurs entières en $0$ et $\pi$ 
+de même que les dérivées succesives de $P_n$, on en déduit que~:
+
+$$I_n\in\Zz\Leftrightarrow\int_{0}^{p/q}P_n^{(2n)}(x)\sin x\;dx\in\Zz.$$
+Mais, 
+
+$$\int_{0}^{p/q}P_n^{(2n)}(x)\sin x\;dx=\int_{0}^{p/q}\frac{1}{n!}(-q)^n(2n)!\sin x\;dx=2(-q)^n(2n)(2n-1)...(n+1)\in\Zz.$$
+Donc pour tout naturel $n$, $I_n$ est un entier relatif, strictement positif d'après plus haut. On en déduit que pour tout naturel $n$, $I_n\geq1$. Cette dernière constatation contredit le fait que la suite $(I_n)$ converge vers $0$.
+L'hypothèse $\pi$ est rationnel est donc absurde et par suite,
+
+\begin{center}
+\shadowbox{
+$\pi$ est irrationnel.
+}
+\end{center}
+ \item  Montrons par récurrence que~:~$\forall n\in\Nn,\;e=\sum_{k=0}^{n}\frac{1}{k!}+\int_{0}^{1}\frac{(1-t)^n}{n!}e^t\;dt$.
+\textbullet~Pour $n=0$, $\int_{0}^{1}\frac{(1-t)^n}{n!}e^t\;dt=\int_{0}^{1}e^t\;dt=e-1$ et donc, $e=1+\int_{0}^{1}e^t\;dt=\sum_{k=0}^{0}\frac{1}{k!}+\int_{0}^{1}\frac{(1-t)^0}{0!}e^t\;dt$.
+\textbullet~Soit $n\geq0$. Supposons que $e=\sum_{k=0}^{n}\frac{1}{k!}+\int_{0}^{1}\frac{(1-t)^n}{n!}e^t\;dt$.
+Une intégrations par parties fournit~:
+
+$$\int_{0}^{1}\frac{(1-t)^n}{n!}e^t\;dt=\left[-\frac{(1-t)^{n+1}}{(n+1)\times n!}e^t\right]_0^1+\int_{0}^{1}\frac{(1-t)^{n+1}}{(n+1)!}e^t\;dt=\frac{1}{(n+1)!}+\int_{0}^{1}\frac{(1-t)^{n+1}}{(n+1)!}e^t\;dt,$$
+et donc,
+
+$$e=\sum_{k=0}^{n}\frac{1}{k!}+\frac{1}{(n+1)!}+\int_{0}^{1}\frac{(1-t)^{n+1}}{(n+1)!}e^t\;dt=
+\sum_{k=0}^{n+1}\frac{1}{k!}+\int_{0}^{1}\frac{(1-t)^{n+1}}{(n+1)!}e^t\;dt.$$
+Le résultat est ainsi démontré par récurrence.
+Soit $n$ un entier naturel non nul. D'après ce qui précède,
+
+$$0<e-\sum_{k=0}^{n}\frac{1}{k!}=\int_{0}^{1}\frac{(1-t)^n}{n!}e^t\;dt<e\int_{0}^{1}\frac{(1-t)^n}{n!}\;dt=\frac{e}{(n+1)!}<\frac{3}{(n+1)!}.$$
+Supposons alors par l'absurde que $e$ soit rationnel. Alors, il existe $(a,b)\in(\Nn^*)^2/\;e=\frac{a}{b}$.
+Soit $n$ un entier naturel non nul quelconque. D'après ce qui précède, on a 
+$0<\frac{a}{b}-\sum_{k=0}^{n}\frac{1}{k!}<\frac{3}{(n+1)!}$, ce qui s'écrit encore après multiplication des trois membres par $bn!$
+
+\begin{center}
+$0<a\times n!-b\sum_{k=0}^{n}\frac{n!}{k!}<\frac{3b}{n+1}$.
+\end{center}
+En particulier, pour $n=3b$, on a $0<a\times(3b)!-b\sum_{k=0}^{3b}\frac{(3b)!}{k!}<\frac{3b}{3b+1}<1$. Mais ceci est impossible car $a\times n!-b\sum_{k=0}^{3b}\frac{(3b)!}{k!}$ est un entier relatif. Il etait donc absurde de supposer que $e$ est rationnel et finalement,
+
+\begin{center}
+\shadowbox{
+$e$ est irrationnel.
+}
+\end{center}
+ \item  Une équation du troisième degré dont les solutions sont $\cos\frac{2\pi}{7}$, $\cos\frac{4\pi}{7}$ et $\cos\frac{6\pi}{7}$ est 
+
+\begin{center}
+$(X-\cos\frac{2\pi}{7})(X-\cos\frac{4\pi}{7})(X-\cos\frac{6\pi}{7})=0$,
+\end{center}
+ou encore
+
+$$X^3-\left(\cos\frac{2\pi}{7}+\cos\frac{4\pi}{7}+\cos\frac{6\pi}{7}\right)X^2+\left(\cos\frac{2\pi}{7}\cos\frac{4\pi}{7}+
+\cos\frac{2\pi}{7}\cos\frac{6\pi}{7}+\cos\frac{4\pi}{7}\cos\frac{6\pi}{7}\right)X-\cos\frac{2\pi}{7}\cos\frac{4\pi}{7}\cos\frac{6\pi}{7}=0.$$
+Calculons alors ces trois coefficients.
+Soit $\omega=e^{2i\pi/7}$. Puisque $\omega^7=1$ et que $\omega+\omega^2+\omega^3+\omega^4+\omega^5+\omega^6=-1$, on a d'après les formules d'\textsc{Euler}
+
+\begin{align*}
+\cos\frac{2\pi}{7}+\cos\frac{4\pi}{7}+\cos\frac{6\pi}{7}&=\frac{1}{2}(\omega+\omega^6+\omega^2+\omega^5+\omega^3+\omega^4)=-\frac{1}{2},
+\end{align*}
+puis,
+
+\begin{align*}
+\cos\frac{2\pi}{7}\cos\frac{4\pi}{7}+&
+\cos\frac{2\pi}{7}\cos\frac{6\pi}{7}+\cos\frac{4\pi}{7}\cos\frac{6\pi}{7}=\frac{1}{4}
+((\omega+\omega^6)(\omega^2+\omega^5)+(\omega+\omega^6)(\omega^3+\omega^4)+(\omega^2+\omega^5)(\omega^3+\omega^4))\\
+ &=\frac{1}{4}((\omega^3+\omega^6+\omega+\omega^4)+(\omega^4+\omega^5+\omega^2+\omega^3)+(\omega^5+\omega^6+\omega+\omega^2))\\
+ &=\frac{2(-1)}{4}=-\frac{1}{2},
+\end{align*}
+et enfin,
+
+\begin{align*}
+\cos\frac{2\pi}{7}\cos\frac{4\pi}{7}\cos\frac{6\pi}{7}&=\frac{1}{8}(\omega+\omega^6)(\omega^2+\omega^5)(\omega^3+\omega^4)\\
+ &=\frac{1}{8}(\omega^3+\omega^6+\omega+\omega^4)(\omega^3+\omega^4)=\frac{1}{8}(\omega^6+1+\omega^2+\omega^3+\omega^4+\omega^5+1+\omega)=\frac{1}{8}
+\end{align*}
+Les trois nombres $\cos\frac{2\pi}{7}$, $\cos\frac{4\pi}{7}$ et $\cos\frac{6\pi}{7}$ sont donc solution de l'équation $X^3+\frac{1}{2}X^2-\frac{1}{2}X-\frac{1}{8}=0$ ou encore de l'équation
+
+$$8X^3+4X^2-4X-1=0.$$
+Montrons que cette équation n'admet pas de racine rationnelle. Dans le cas contraire, si, pour $p$ entier relatif non nul et $q$ entier naturel non nul tels que $p$ et $q$ sont premiers entre eux, le nombre $r=\frac{p}{q}$ est racine de cette équation, alors $8p^3+4p^2q-4pq^2-q^3=0$. Ceci peut encore s'écrire $8p^3=q(-4p^2+4pq+q^2)$ ce qui montre que $q$ divise $8p^3$. Comme $q$ est premier avec $p$ et donc avec $p^3$, on en déduit d'après le théorème de \textsc{Gauss} que $q$ divise $8$. De même, l'égalité $q^3=p(8p^2+4pq-4q^2)$ montre que $p$ divise $q^3$ et donc que $p$ divise $1$.
+Ainsi, $p\in\{-1,1\}$ et $q\in\{1,2,4,8\}$ ou encore $r\in\left\{1,-1,\frac{1}{2},-\frac{1}{2},\frac{1}{4},-\frac{1}{4},\frac{1}{8},-\frac{1}{8}\right\}$.
+On vérifie alors aisément qu'aucun de ces nombres n'est racine de l'équation considérée et donc cette équation n'a pas de racine rationnelle. En particulier,
+
+\begin{center}
+\shadowbox{
+$\cos\frac{2\pi}{7}$ est irrationnel.
+}
+\end{center}
+ \item  On sait que $\sqrt{2}$, $\sqrt{3}$ et $\sqrt{5}$ sont irrationnels mais ceci n'impose rien à la somme $\sqrt{2}+\sqrt{3}+\sqrt{5}$.
+Soit $\alpha=\sqrt{2}+\sqrt{3}+\sqrt{5}$.
+
+\begin{align*}
+\alpha=\sqrt{2}+\sqrt{3}+\sqrt{5}&\Rightarrow(\alpha-\sqrt{2})^2=(\sqrt{3}+\sqrt{5})^2 \Rightarrow\alpha^2-2\sqrt{2}\alpha+2=8+2\sqrt{15}\\
+ &\Rightarrow(\alpha^2-2\sqrt{2}\alpha-6)^2=60\Rightarrow\alpha^4+8\alpha^2-24=4\sqrt{2}\alpha(\alpha^2-6)
+\end{align*}
+ 
+
+Si maintenant, on suppose que $\alpha$ est rationnel, puisque $\sqrt{2}$ est irrationnel, on a nécessairement $\alpha(\alpha^2-6)=0$ (dans le cas contraire, $\sqrt{2}=\frac{\alpha^4+8\alpha^2-24}{4\alpha(\alpha^2-6)}\in\Qq$). Mais $\alpha$ n'est ni $0$, ni $-\sqrt{6}$, ni $\sqrt{6}$ (car $\alpha^2>2+3+5=10>6$). Donc
+
+\begin{center}
+\shadowbox{
+$\sqrt{2}+\sqrt{3}+\sqrt{5}$ est irrationnel.
+}
+\end{center}
+\end{enumerate}
+\fincorrection
+\finexercice

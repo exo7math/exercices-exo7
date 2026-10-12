@@ -1,60 +1,77 @@
 \exercice{2210, matos, 2008/04/23}
-\enonce[Matrices triangulaires \'el\'ementaires]
-Soit $n \in \Nn$ et on d\'efinit les matrices suivantes dans $\Rr^{n\times n}$:
+
+\enonce[Matrices triangulaires élémentaires]
+Soit \( n \in \Nn \) et on définit les matrices suivantes dans \( \Rr^{n\times n} \):
 \begin{itemize}
-\item $E_{ij}$ matrice avec un $1$ dans la position $(i,j)$ et $0$ partout ailleurs;
-\item $V_{ij}(\lambda )=I +  \lambda E_{ij}$ , $\lambda \in\Rr , i>j$;
-\item $L(l_i) = I+l_ie_i^T$, $l_i\in\Rr^n$ tel que ses premi\`eres $i$ composantes sont nulles.
+  \item \( E_{ij} \) matrice avec un \( 1 \) dans la position \( (i,j) \) et \( 0 \) partout ailleurs;
+
+  \item \( V_{ij}(\lambda ) = I + \lambda E_{ij} \) , \( \lambda \in\Rr , i>j \);
+
+  \item \( L(l_i) = I+l_ie_i^T \), \( l_i\in\Rr^n \) tel que ses premières \( i \) composantes sont nulles.
 \end{itemize}
 \begin{enumerate}
-\item Quels sont les r\'esultats des op\'erations suivantes sur la matrice $A$:
-     $$B=V_{ij}(\lambda )A  , C=AV_{ij}(\lambda ) ?$$
-\item Quelle est la forme de la matrice 
-$$V_{ij}(\lambda )V_{kj}(\lambda ') ,  k>i ?$$
-\item Repr\'esenter $L(l_i)$ et montrer que $L(l_i)^{-1}=L(-l_i)$.
-\item D\'ecomposer $L(l_i)$ comme produit de matrices de la forme $V_{km}(\lambda )$.
-\item Calculer $L=\prod_{i=1}^{n-1}L(l_i)$ et son inverse $L^{-1}$
-\item On suppose les $l_i$ stock\'es dans un tableau bidimensionnel $Z$ et $b\in\Rr^n$ stock\'e dans un tableau unidimensionnel $B$. Donner un algorithme permettant de calculer dans $B$ la solution de $Lx=b$:
-\begin{enumerate}
-\item en utilisant l'expression de $L^{-1}$;
-\item en r\'esolvant le syst\`eme triangulaire.
+  \item Quels sont les résultats des opérations suivantes sur la matrice \( A \):
+        \[
+          B = V_{ij}(\lambda )A , C = AV_{ij}(\lambda ) ?
+        \]
+
+  \item Quelle est la forme de la matrice
+        \[
+          V_{ij}(\lambda )V_{kj}(\lambda ') , k>i ?
+        \]
+
+  \item Représenter \( L(l_i) \) et montrer que \( L(l_i)^{-1} = L(-l_i) \).
+
+  \item Décomposer \( L(l_i) \) comme produit de matrices de la forme \( V_{km}(\lambda ) \).
+
+  \item Calculer \( L = \prod_{i = 1}^{n-1}L(l_i) \) et son inverse \( L^{-1} \)
+
+  \item On suppose les \( l_i \) stockés dans un tableau bidimensionnel \( Z \) et \( b\in\Rr^n \) stocké dans un tableau unidimensionnel \( B \). Donner un algorithme permettant de calculer dans \( B \) la solution de \( Lx = b \):
+        \begin{enumerate}
+          \item en utilisant l'expression de \( L^{-1} \);
+
+          \item en résolvant le système triangulaire.
+        \end{enumerate}
+        Quelle est la conclusion?
 \end{enumerate}
-Quelle est la conclusion?
-\end{enumerate}
-\finenonce 
+\finenonce
 
 \noindication
 
 \correction
 \begin{enumerate}
-\item $VA$ remplace la ligne $i$ par sa somme avec la ligne $j$ multipli\'ee par $\lambda$.
+  \item \( VA \) remplace la ligne \( i \) par sa somme avec la ligne \( j \) multipliée par \( \lambda \).
 
-$AV$ remplace la colonne $j$ par sa somme avec la colonne $i$ multipli\'ee par $\lambda$.
-\item $V_{ij}(\lambda )V_{kj})=I+\lambda E_{ij} + \lambda ' E_{kj}$
-\item Il suffit de montrer que $(I+l_ie_i^T)(I-l_ie_i^T)=I$.
-\item  $L(l_i)=V_{i+1,i}(l_{i+1,i}) \cdots V_{n,i}(l_{n,i})$
-\item $L^{-1}=L(-l_{n-1}) L(-l_{n-2}) \cdots L(-l_1)\neq I-l_1e_1^T - \cdots -l_{n-1}e_{n-1}^T$
-\item (a) algorithme en utilisant l'expression de $L^{-1}$
+        \( AV \) remplace la colonne \( j \) par sa somme avec la colonne \( i \) multipliée par \( \lambda \).
 
-Pour $i=1$ \`a $n-1$
+  \item \( V_{ij}(\lambda )V_{kj} = I+\lambda E_{ij} + \lambda ' E_{kj} \)
 
-\hspace{2cm} calcul de $L(-l_i)b$
+  \item Il suffit de montrer que \( (I+l_ie_i^T)(I-l_ie_i^T) = I \).
 
-\hspace{3cm} Pour $j=i+1$ \`a $n$
+  \item \( L(l_i) = V_{i+1,i}(l_{i+1,i}) \cdots V_{n,i}(l_{n,i}) \)
 
-\hspace{4cm} $b_j\leftarrow b_j-l_{ji}b_i$
+  \item \( L^{-1} = L(-l_{n-1}) L(-l_{n-2}) \cdots L(-l_1)\neq I-l_1e_1^T - \cdots -l_{n-1}e_{n-1}^T \)
 
+  \item (a) algorithme en utilisant l'expression de \( L^{-1} \)
 
-(b) algorithme en r\'esolvant le syst\`eme triangulaire
+        Pour \( i = 1 \) à \( n-1 \)
 
-$x_1 =b_1$
+        \hspace{2cm} calcul de \( L(-l_i)b \)
 
-Pour $i=2$ \`a $n$ 
+        \hspace{3cm} Pour \( j = i+1 \) à \( n \)
 
-\hspace{2cm}$x_i=b_i-\sum_{j=1}^{i-1}l_{ij}x_j$
+        \hspace{4cm} \( b_j\leftarrow b_j-l_{ji}b_i \)
 
+        (b) algorithme en résolvant le système triangulaire
 
-conclusion: le nombre de calculs et l'espace m\'emoire utilis\'es sont les m\^emes.
+        \( x_1 = b_1 \)
+
+        Pour \( i = 2 \) à \( n \)
+
+        \hspace{2cm}\( x_i = b_i-\sum_{j = 1}^{i-1}l_{ij}x_j \)
+
+        conclusion: le nombre de calculs et l'espace mémoire utilisés sont les mêmes.
 \end{enumerate}
 \fincorrection
+
 \finexercice

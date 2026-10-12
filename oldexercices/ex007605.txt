@@ -1,0 +1,28 @@
+\exercice{7605, mourougane, 2021/08/10}
+\enonce[Racine de polynômes]
+\begin{enumerate}
+\item \'Enoncer le théorème de Rouché.
+
+\item Montrer que les zéros du polynôme $ p(z) = z^{4}-7z-1 $ 
+sont tous inclus dans le disque $\Delta_2(0)$ centré en l'origine de rayon 2.
+On vérifiera soigneusement toutes les hypothèses du théorème utilisé.
+
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+  \item Soit $f$ et $g$ deux applications holomorphes sur un ouvert étoilé $D$ de $\Cc$.
+Soit $\Gamma$ un chemin fermé simple dans $D$. 
+On suppose que $$\forall z\in \Gamma,\ \ |f(z)-g(z)|<|g(z)|.$$
+Alors $f$ et $g$ ont le même nombre de zéros compté avec multiplicité dans l'intérieur de $\Gamma$.
+  \item L'ouvert $\Cc$ est étoilé et contient le chemin $\partial\Delta_2$ dont l'intérieur est $\Delta_2$.
+Les deux applications $z\mapsto z^4$ et $p$ sont polynômiales donc holomorphes sur $\Cc$.
+Soit $z\in\partial\Delta_2$. Alors 
+$$|p(z)-z^4|=|7z+1|\leq 7|z|+1\leq 7\times 2+1=15<2^4=|z^4|.$$
+Par le théorème de Rouché, le polynôme $p$ et $z\mapsto z^4$ ont le même nombre de zéros compté avec multiplicités
+dans $\Delta_2$, c'est à dire $4$.
+Comme $p$ est non nul de degré $4$, tous ses zéros sont dans $\Delta_2$.
+\end{enumerate}
+\fincorrection
+\finexercice

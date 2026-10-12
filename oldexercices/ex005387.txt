@@ -1,0 +1,16 @@
+\exercice{5387, rouget, 2010/07/06}
+\enonce[**IT]
+Montrer que la fonction caractéristique de $\Qq$ est discontinue en chacun de ses points.
+\finenonce
+
+\noindication
+
+\correction
+Soit $\chi$ la fonction caractéristique de $\Qq$.
+Soit $x_0$ un réel. On note que
+
+$$x_0\in\Qq\Leftrightarrow\forall n\in\Nn^*,\;x_0+\frac{1}{n}\in\Qq Q\Leftrightarrow\forall n\in\Nn^*,\;x_0+\frac{\pi}{n}\notin\Qq.$$
+
+Donc, $\lim_{n\rightarrow +\infty}\chi(x_0+\frac{1}{n})$ existe, $\lim_{n\rightarrow +\infty}\chi(x_0+\frac{\pi}{n})$ existe et$\lim_{n\rightarrow +\infty}\chi(x_0+\frac{1}{n})\neq\lim_{n\rightarrow +\infty}\chi(x_0+\frac{\pi}{n})$ (bien que $\lim_{n\rightarrow +\infty}x_0+\frac{1}{n}=\lim_{n\rightarrow +\infty}x_0+\frac{\pi}{n}=x_0$. Ainsi, pour tout réel $x_0\in\Rr$, la fonction caractéristique de $\Qq$ n'a pas de limite en $x_0$ et est donc discontinue en $x_0$.
+\fincorrection
+\finexercice

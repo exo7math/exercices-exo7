@@ -1,0 +1,39 @@
+\exercice{5670, rouget, 2010/10/16}
+\enonce[*** Décomposition de \textsc{Dunford}]
+\label{ex:rou20}
+Soit $E$ un $\Kk$-espace vectoriel de dimension finie non nulle et $f$ un endomorphisme de $E$ dont le polynôme caractéristique est scindé sur $\Kk$.
+
+Montrer qu'il existe un couple d'endomorphismes $(d,n)$ et un seul tel que $d$ est diagonalisable,  $n$ est nilpotent $n$ et $f = d+n$.
+
+\finenonce
+
+\noindication
+
+\correction
+Posons $\chi_f =\prod_{k=1}^{p}(\lambda_k-X)^{\alpha_k}$  où $\lambda_1$,..., $\lambda_p$ sont les valeurs propres deux à deux distinctes de $f$.
+
+Soit $E_k'=\text{Ker}(f-\lambda_kId)^{\alpha_k}$ le sous-espace caractéristique de $f$ associé à la valeur propre $\lambda_k$, $1\leqslant k\leqslant p$. D'après le théorème de décomposition des noyaux, $E = E_1'\oplus...\oplus E_p'$. De plus, si $f_k$ est la restriction de $f$ à $E_k'$ alors $f_k$ est un endomorphisme de $E_k'$ (car $f$ et $(f-\lambda_kId)^{\alpha_k}$ commutent).
+
+On note que $(f_k-\lambda_k)^{\alpha_k} = 0$ et donc $\lambda_k$ est l'unique valeur propre de $f_k$ car toute valeur propre de $f_k$ est racine du polynôme annulateur $(X-\lambda_k)^{\alpha_k}$.
+
+\textbf{Existence de $d$ et $n$.} On définit $d$ par ses restrictions $d_k$ aux $E_k'$, $1\leqslant k\leqslant p$ : $d_k$ est l'homothétie de rapport $\lambda_k$. Puis on définit $n$ par $n = f-d$.
+
+$d$ est diagonalisable car toute base de $E$ adaptée à la décomposition $E = E_1'\oplus...\oplus E_p'$ est une base de vecteurs propres de $d$. De plus,  $f= d+n$.
+
+Soit $n_k$ la restriction de $n$ à $E_k'$. On a $n_k = f_k-\lambda_kId_{E_k'}$ et par définition de $E_k'$,  $n_k^{\alpha_k}= 0$. Mais alors, si on pose $\alpha=\text{Max}\{\alpha_1,...,\alpha_p\}$, on a $n_k^\alpha= 0$ pour tout $k$ de $\{1,...,p\}$ et donc $n^\alpha= 0$. Ainsi, $n$ est nilpotent.
+Enfin, pour tout $k\in\llbracket1,p\rrbracket$, $n_k$ commute avec $d_k$ car $d_k$ est une homothétie et donc $nd = dn$.
+
+\textbf{Unicité de $d$ et $n$.} Supposons que $f=d+n$ avec $d$ diagonalisable, $n$ nilpotent et $nd=dn$.
+
+$d$ commute avec $n$ et donc avec $f$ car $df= d^2+dn = d^2+nd = fd$. Mais alors, $n=f-d$ commute également avec $f$. $d$ et $n$ laissent donc stables les sous-espaces caractéristiques $E_k'$, $1\leqslant k\leqslant p$ de $f$. Pour $k\in\llbracket1,p\rrbracket$, on note $d_k$ et $n_k$ les restrictions de $d$ et $n$ à $E_k'$.
+
+Soient $k\in\llbracket1,p\rrbracket$ puis $\mu$ une valeur propre de $d_k$. D'après l'exercice \ref{ex:rou7},
+
+\begin{center}
+$\text{det}(f_k-\mu Id)=\text{det}(d_k-\mu Id+n)=\text{det}(d_k-\mu Id)=0$,
+\end{center}
+
+car $d_k-\mu Id$ n'est pas inversible. On en déduit que $f_k-\mu Id$ n'est pas inversible et donc que $\mu$ est valeur propre de $f_k$. Puisque $\lambda_k$ est l'unique valeur propre de $f_k$, on a donc $\mu=\lambda_k$. Ainsi, $\lambda_k$ est l'unique valeur propre de $d_k$ et puisque $d_k$ est diagonalisable (voir l'exercice \ref{ex:rou36}), on a nécessairement $d_k=\lambda_kId_{E_k'}$ puis $n_k=f_k-\lambda_k Id_{E_k'}$. Ceci montre l'unicité de $d$ et $n$.
+
+\fincorrection
+\finexercice

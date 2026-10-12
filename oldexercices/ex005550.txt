@@ -1,0 +1,40 @@
+\exercice{5550, rouget, 2010/07/15}
+\enonce[***]
+Soit $P$ un polynôme de degré $3$ à coefficients réels. Montrer que la courbe d'équation
+$P(x)=P(y)$ dans un certain repère orthonormé, est en général la réunion d'une droite et d'une ellipse d'excentricité
+fixe.
+\finenonce
+
+\noindication
+
+\correction
+Notons $\mathcal{C}$ l'ensemble des points considérés. Pour $x$ réel, posons $P(x)=x^3+Ax^2+Bx+C$.
+
+\begin{align*}\ensuremath
+P(x)=P(y)&\Leftrightarrow (x^3-y^3)+A(x^2-y^2)+B(x-y)=0\Leftrightarrow(x-y)((x^2+xy+y^2)+A(x+y)+B)=0\\
+ &\Leftrightarrow y=x\;\mbox{ou}\;x^2+xy+y^2+A(x+y)+B=0.
+\end{align*}
+$\mathcal{C}$ est donc la réunion de la droite d'équation $y=x$ et de la courbe $\mathcal{E}$
+d'équation $x^2+xy+y^2+A(x+y)+B=0$. Pour déterminer la nature de $\mathcal{E}$, on fait un changement de repère orthonormé en posant
+
+$$\left\{
+\begin{array}{l}
+x=\frac{1}{\sqrt{2}}(X-Y)\\
+y=\frac{1}{\sqrt{2}}(X+Y)
+\end{array}
+\right.
+$$
+On obtient
+
+\begin{align*}\ensuremath
+x^2+xy+y^2+A(x+y)+B=0&\Leftrightarrow\frac{1}{2}((X-Y)^2+(X-Y)(X+Y)+(X+Y)^2)+\frac{A}{\sqrt{2}}X+B=0\\
+ &\Leftrightarrow3X^2+Y^2+\sqrt{2}AX+2B=0\Leftrightarrow3\left(X+\frac{A\sqrt{2}}{6}\right)^2+Y^2=\frac{A^2-12B}{6}\;(*)
+\end{align*}
+$\mathcal{E}$ est une ellipse si et seulement si $A^2-12B>0$ (sinon $\mathcal{E}$ est un point ou est vide). Dans ce cas,
+puisque $a=\frac{1}{\sqrt{3}}<1=b$,
+
+\begin{center}
+$e=\frac{c}{b}=\frac{\sqrt{b^2-a^2}}{b}=\sqrt{1-\frac{a^2}{b^2}}=\sqrt{1-\frac{1}{3}}=\sqrt{\frac{2}{3}}$.
+\end{center}
+\fincorrection
+\finexercice

@@ -1,0 +1,126 @@
+\exercice{1956, liousse, 2003/10/01}
+\video{zrMBUrw-HzU}
+\enonce
+Soit $P$ un  plan muni d'un repère  $\mathcal{R}(O,\vec{i},\vec{j})$, les points et les vecteurs sont exprimés par leurs
+coordonnées dans $\mathcal{R}$.
+\begin{enumerate}
+\item
+ Donner un vecteur directeur, la pente 
+ une équation paramétrique et une équation cartésienne des droites $(AB)$ suivantes :
+
+ \begin{enumerate}
+   \item $A(2,3)$ et $B(-1,4)$    
+  \item  $A(-7,-2)$ et $B(-2,-5)$  
+  \item  $A(3,3)$ et $B(3,6)$
+  \end{enumerate} 
+
+ \item  Donner des équations paramétriques et cartésiennes des droites passant par $A$ et 
+dirigées par $\vec{v}$ avec : 
+  \begin{enumerate}
+    \item  $A(2,1)$ et $\vec{v}(-3,-1)$ 
+    \item  $A(0,1)$ et $\vec{v}(1,2)$
+    \item  $A(-1,1)$ et $\vec{v}(1,0)$
+  \end{enumerate} 
+
+\item   Donner des équations paramétriques et cartésiennes
+ des droites définies comme suit  :
+  \begin{enumerate}
+    \item  passant par le point $(0,4)$ et  de pente $3$,
+     \item  passant par le point $(2,-3)$ et  parallèle à l'axe des $x$,
+    \item  passant par le point $(-2,5)$ et  parallèle à la droite $D : 8x+4y=3$.
+\end{enumerate}
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item 
+  \begin{enumerate}
+    \item Un vecteur directeur est $\overrightarrow{AB}$ dont les coordonnées sont $(x_B-x_A,y_B-y_A)=(-3,1)$.
+Pour n'importe quel vecteur directeur $\vec v = (x_v,y_v)$ la pente est le réel $p=\frac{y_v}{x_v}$.
+La pente est indépendante du choix du vecteur directeur. On trouve ici $p=-\frac13$.
+Une équation paramétrique de la droite de vecteur directeur $\vec v$ passant par $A=(x_A,y_A)$ est donnée par
+$\left\{ \begin{array}{l}
+x = x_v t + x_A \\ y = y_v t+y_A \\ 
+\end{array} \right..$
+Donc ici pour le vecteur directeur $\overrightarrow{AB}$ on trouve l'équation paramétrique 
+$\left\{ \begin{array}{l}
+x = -3t + 2 \\ y = t+3 \\ 
+\end{array} \right.$
+
+Il y a plusieurs façons d'obtenir une équation cartésienne $ax+by+c=0$.
+
+
+\textbf{Première méthode.} 
+On sait que $A=(x_A,y_A)$ appartient à la droite donc ses coordonnées vérifient l'équation 
+$ax_A+by_A+c=0$, idem avec $B$.
+On en déduit le système 
+$\left\{ \begin{array}{l}
+2a+3b+c = 0 \\  -a+4b+c=0 \\ 
+\end{array} \right..$
+Les solutions s'obtiennent à une constante multiplicative près,
+on peut fixer $a=1$ et on trouve alors $b=3$ et $c=-11$.
+L'équation est donc $x+3y-11=0$.
+
+    \item On trouve $\vec v = \overrightarrow{AB}=(5,-3)$, $p=-\frac35$
+et $\left\{ \begin{array}{l}
+x = 5t -7 \\ y = -3t-2 \\ 
+\end{array} \right.$
+
+\textbf{Deuxième méthode.} 
+Pour trouver l'équation cartésienne on part de l'équation
+paramétrique réécrite ainsi
+$\left\{ \begin{array}{l}
+\frac{x+7}{5} = t \\ -\frac{y+2}{3} = t \\ 
+\end{array} \right.$
+On en déduit $\frac{x+7}{5}=-\frac{y+2}{3}$ ; d'où
+l'équation $3x+5y+31=0$.
+
+    \item On trouve $\vec v = \overrightarrow{AB}=(0,3)$, la droite est donc verticale (sa pente est infinie)
+une équation paramétrique est
+$\left\{ \begin{array}{l}
+x = 3 \\ y = 3t+6 \\ 
+\end{array} \right.$.
+Une équation cartésienne est simplement $(x=3)$.
+  \end{enumerate}
+
+
+  \item
+  \begin{enumerate}
+    \item Equation paramétrique
+$\left\{ \begin{array}{l}
+x = -3t+2 \\ y = -t+1 \\ 
+\end{array} \right.$
+
+\textbf{Troisième méthode.} 
+Pour une droite d'équation cartésienne $ax+by+c=0$, on sait que $\vec n = (a,b)$ est un vecteur normal à la droite et donc 
+$\vec v = (-b,a)$ est un vecteur directeur (car alors $\vec v \cdot \vec n =0$).
+Réciproquement si $\vec  v = (-b,a)$ est un vecteur directeur alors une équation 
+est de la forme $ax+by+c=0$ pour une certaine constante $c$ à déterminer.
+
+Ici on nous donne le vecteur directeur $\vec v= (-3,-1)$ donc on cherche une équation
+sous la forme $-x+3y+c=0$.
+Pour trouver $c$, on utilise que $A$ appartient à la droite donc
+$-x_A+3y_A+c=0$, ce qui conduit à $c=-1$.
+Ainsi une équation de la droite est $-x+3y=1$.
+
+
+    \item On trouve $2x-y+1=0$.
+
+    \item Droite horizontale d'équation $(y=1)$.
+  \end{enumerate}
+  \item Voici juste les résultats :
+  \begin{enumerate}
+    \item $y=3x+4$,
+    \item $y=-3$,
+    \item $8x+4y=4$ (les droites parallèles à $8x+4y=3$ sont de la forme $8x+4y=c$).
+  \end{enumerate}
+\end{enumerate}
+
+
+
+\fincorrection
+
+\finexercice

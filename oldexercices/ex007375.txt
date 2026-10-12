@@ -1,0 +1,56 @@
+\exercice{7375, mourougane, 2021/08/10}
+\enonce
+\begin{enumerate}
+ \item Quelle loi fait de l'ensemble de inversibles de l'anneau $\Z/17\Z$ un groupe ? Ce groupe est-il cyclique ?
+
+ \item Combien un groupe cyclique d'ordre $91$ a-t-il de générateurs ?
+
+ \item Décomposer en produits de cycles à supports disjoints, la permutation $$s=\left(\begin{array}{ccccccccc} 
+1&2&3&4&5&6&7&8&9\\
+5&7&2&6&1&9&3&8&4\end{array}
+\right).$$
+
+ \item Décomposer en produits de transpositions, la permutation
+$$\sigma=\left(\begin{array}{ccccccccc} 
+1&2&3&4&5&6&7&8&9\\
+9&8&6&7&2&3&1&4&5\end{array}
+\right).$$
+
+ \item Le polynôme $P(t_1,t_2,t_3,t_4)=t_1t_2+t_2t_3+t_3t_4+t_4t_1$ en quatre variables est-il symétrique ?
+
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+ \item C'est la multiplication. Puisque $\Z/17\Z$ est un corps fini, 
+par un théorème du cours, le groupe de ses inversibles est un groupe cyclique d'ordre $16$.
+ \item Il en a $\phi(91)=\phi(13\times17)=\phi(13)\times\phi(17)=12\times 16= 192$.
+ \item $s=(15)(273)(469)$.
+ \item \begin{eqnarray*}
+(19)\sigma&=&\left(\begin{array}{ccccccccc} 
+1&2&3&4&5&6&7&8&9\\
+1&8&6&7&2&3&9&4&5\end{array}\right)\\
+(28)(19)\sigma&=&\left(\begin{array}{ccccccccc} 
+1&2&3&4&5&6&7&8&9\\
+1&2&6&7&8&3&9&4&5\end{array}\right)\\
+(36)(28)(19)\sigma&=&\left(\begin{array}{ccccccccc} 
+1&2&3&4&5&6&7&8&9\\
+1&2&3&7&8&6&9&4&5\end{array}\right)\\
+(47)(36)(28)(19)\sigma&=&\left(\begin{array}{ccccccccc} 
+1&2&3&4&5&6&7&8&9\\
+1&2&3&4&8&6&9&7&5\end{array}\right)\\
+(58)(47)(36)(28)(19)\sigma&=&\left(\begin{array}{ccccccccc} 
+1&2&3&4&5&6&7&8&9\\
+1&2&3&4&5&6&9&7&8\end{array}\right)\\
+(79)(58)(47)(36)(28)(19)\sigma&=&\left(\begin{array}{ccccccccc} 
+1&2&3&4&5&6&7&8&9\\
+1&2&3&4&5&6&7&9&8\end{array}\right)=(89)\\
+\end{eqnarray*}
+Donc,
+$$\sigma=(19)(28)(36)(47)(58)(79)(89).$$
+\item Non, il change dans la transposition de $t_1$ par $t_2$.
+
+\end{enumerate}
+\fincorrection
+\finexercice

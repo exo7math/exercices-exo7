@@ -1,0 +1,46 @@
+\exercice{339, bodin, 1998/09/01}
+\video{RR5gG5ZLCGs}
+\enonce
+Soit $p$ un nombre premier.
+\begin{enumerate}
+    \item Montrer que $\forall i\in \Nn, 0< i < p$ on a : $$C_p^i\text{  est divisible par }p .$$
+    \item Montrer par r\'ecurence que : $$\forall p \text{ premier}, \forall a\in \Nn^* ,\text{ on a } a^p-a \text{ est divisible par } p.$$
+\end{enumerate}
+
+\finenonce 
+
+\indication
+\begin{enumerate}
+  \item \'Ecrire $$C_p^i = \frac{p(p-1)(p-2)\ldots(p-(i+1))}{i!}$$
+et utiliser le lemme de Gauss ou le lemme d'Euclide.
+  \item Raisonner avec les modulos, c'est-\`a-dire prouver $a^p \equiv a \pmod{p}$.
+
+\end{enumerate}
+\finindication
+
+\correction
+\begin{enumerate}
+  \item \'Etant donn\'e $0< i < p$, nous avons 
+$$C_p^i = \frac{p!}{i!(p-i)!} = \frac{p(p-1)(p-2)\ldots(p-(i+1))}{i!}$$
+Comme $C_p^i$ est un entier alors $i!$ divise $ p(p-1)\ldots(p-(i+1))$.
+Mais $i!$ et $p$ sont premiers entre eux (en utilisant l'hypoth\`ese $0 < i < p$).
+Donc d'apr\`es le th\'eor\`eme de Gauss: $i!$ divise $(p-1)\ldots(p-(i+1))$, autrement dit
+il existe $k\in\Zz$ tel que $k i! = (p-1)\ldots(p-(i+1))$. Maintenant nous avons
+$C_p^i = p k$ donc $p$ divise $C_p^i$.
+  \item Il s'agit de montrer le petit th\'eor\`eme de Fermat: pour $p$ premier et $a\in\Nn^*$, alors
+$a^p \equiv a \pmod{p}$. Fixons $p$. Soit l'assertion
+$$(\mathcal{H}_a) \ \ \ a^p \equiv a \pmod{p}.$$
+Pour $a=1$ cette assertion est vraie !
+\'Etant donn\'e $a \geq 1$ supposons que $\mathcal{H}_a$ soit vraie.
+Alors 
+$$(a+1)^p = \sum_{i=0}^p {C_p^i}a^i.$$
+Mais d'apr\`es la question pr\'ec\'edente pour $0 < i < p$, $p$ divise $C_p^i$.
+En termes de modulo nous obtenons:
+$$ (a+1)^p \equiv C_p^0 a^0 + C_p^pa^p \equiv 1+a^p \pmod{p}.$$
+Par l'hypoth\`ese de r\'ecurrence nous savons que $a^p \equiv a \pmod{p}$, donc
+$$(a+1)^p \equiv a+1 \pmod{p}.$$ Nous venons de prouver que $\mathcal{H}_{a+1}$ est vraie.
+Par le principe de r\'ecurrence alors quelque soit $a\in \Nn^*$ nous avons:
+$$a^p \equiv a \pmod{p}.$$
+\end{enumerate}
+\fincorrection
+\finexercice

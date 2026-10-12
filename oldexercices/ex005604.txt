@@ -1,0 +1,67 @@
+\exercice{5604, rouget, 2010/10/16}
+\enonce[***]
+Soit $A=(a_{i,j})_{1\leqslant i,j\leqslant n}$ définie par $a_{i,j}=1$ si $i=j$, $j$ si $i=j-1$ et $0$ sinon.
+Montrer que $A$ est inversible et calculer $A^{-1}$.
+\finenonce
+
+\noindication
+
+\correction
+$A= \left(
+\begin{array}{cccccc}
+1&2&0&\ldots&\ldots&0\\
+0&1&3&\ddots& &\vdots\\
+\vdots&\ddots&\ddots&\ddots&\ddots&\vdots\\
+ & & & &\ddots&0\\
+\vdots& & &\ddots&\ddots&n-1\\
+0&\ldots& &\ldots&0&1
+\end{array}
+\right)= I + N$ où $N=\left(
+\begin{array}{cccccc}
+0&2&0&\ldots&\ldots&0\\
+0&0&3&\ddots& &\vdots\\
+\vdots&\ddots&\ddots&\ddots&\ddots&\vdots\\
+ & & & &\ddots&0\\
+\vdots& & &\ddots&\ddots&n-1\\
+0&\ldots& &\ldots&0&0
+\end{array}
+\right)$.
+
+$N$ est nilpotente et donc $N^n = 0$. Par suite, 
+
+\begin{center}
+$I=I-(-N)^n=(I+N)(I -N + ... +(-N)^{n-1})$.
+\end{center}
+
+Ainsi $A$ est inversible à gauche et donc inversible, d'inverse $I -N + ... +(-N)^{n-1}$.
+
+Calcul de $N^p$ pour $1\leqslant p\leqslant n$.
+
+\begin{center}
+$N^2 =\left(\sum_{j=2}^{n}jE_{j-1,j}\right)^2=\sum_{2\leqslant j,k\leqslant n}^{}jkE_{j-1,j}E_{k-1,k}=\sum_{j=2}^{n-1}j(j+1)E_{j-1,j}E_{j,j+1}=\sum_{j=3}^{n}j(j-1)jE_{j-2,j}$.
+\end{center}
+
+c'est-à-dire $N^2=\left(
+\begin{array}{cccccc}
+0&0&2\times3&0&\ldots&0\\
+\vdots& &\ddots&3\times4&\ddots&\vdots\\
+ & & &\ddots&\ddots&0\\
+ & & & &\ddots&(n-1)n\\
+\vdots& & & & &0\\
+0&\ldots& &\ldots&0&0
+\end{array}
+\right)$.
+
+Ensuite, $N^3=\left(\sum_{j=3}^{n}(j-1)jE_{j-2,j}\right)\left(\sum_{k=2}^{n}kE_{k-1,k}\right)) =\sum_{j=4}^{n}j(j-1)(j-2)E_{j-3,j}$.
+
+Supposons que pour $p$ donné dans $\llbracket1,n-1\rrbracket$, $N^p=\sum_{j=p+1}^{n}j(j-1)...(j-p+1)E_{j-p,j}$.
+
+Alors $N^{p+1}=\left(\sum_{j=p+1}^{n}j(j-1)...(j-p+1)E_{j-p,j}\right)\left(\sum_{k=2}^{n}kE_{k-1,k}\right)=\sum_{j=p+2}^{n}j(j-1)...(j-p)E_{j-p-1,j}$. Ainsi 
+
+\begin{center}
+\shadowbox{
+$A^{-1}= (a_{i,j})_{1\leqslant i,j\leqslant n}$ où $a_{i,j}= 0$ si $i > j$, $1$ si $i = j$ et $(-1)^{i+j-2}\prod_{k=0}^{j-i-1}(j-k)$ sinon.
+}
+\end{center}
+\fincorrection
+\finexercice

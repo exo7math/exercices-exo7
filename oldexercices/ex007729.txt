@@ -1,0 +1,32 @@
+\exercice{7729, mourougane, 2021/08/11}
+\enonce[Coloriages]
+\begin{enumerate}
+  \item Rappeler la formule de Burnside qui calcule le nombre d'orbites de l'action d'un groupe fini sur un ensemble fini.
+
+ \item Rappeler la liste des éléments du groupe d'isométries directes (déplacements) d'un tétraédre régulier.
+On fera une figure pour chaque type d'axe de rotation, en indiquant l'ordre des rotations.
+
+ \item De combien de façons différentes peut-on peindre les faces d'un tétraèdre régulier avec $c$~couleurs ?
+Chaque face n'est peinte que d'une couleur.
+On ne distingue pas deux résultats qui se déduisent l'un de l'autre par un déplacement du tétraèdre.
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+ \item Soit $G$ un groupe fini agissant sur un ensemble fini $E$.
+ Alors le nombre $N$ d'orbites se calcule par 
+ $$N=\frac{1}{\text{Card} G}\sum_{g\in G}\text{Card} Fix(\phi(g))=
+ \frac{1}{\text{Card} G}\sum_{x\in E}\text{Card} Stab(x).$$
+ \item Le groupe des déplacements du tétraède est isomorphe à $\mathcal{A}_4$.
+ Il y a l'identité, les $8=4\times 2$ rotations d'ordre $3$, dont l'axe passe par un sommet et le centre de la face opposée,
+ les $3$ demi-tours (d'ordre 2) dont l'axe passe par les milieux de deux arêtes opposées.
+ \item On considère l'ensemble des coloriages. Il est de cardinal $c^4$, puisqu'il s'agit de choisir une couleur pour chacune des quatre faces. Le groupe des déplacements du tétraèdre agit sur cet ensemble et les façons différentes de colorier sont les orbites de cette action. Par la formule de Burnside, il suffit de déterminer le nombre de coloriages fixés par chacun des déplacements.
+ Pour l'identité : $c^4$.
+ Pour les rotations d'ordre $3$ : $c^2$ (si l'axe est vertical, toutes les trois faces obliques doivent avoir la même couleur et la face horizontale doit avoir une couleur.)
+ Pour les demi-tours : $c^2$ (les faces se correspondent deux à deux.).
+ En conclusion, le nombre de façons différentes de colorier est
+ $$N=\frac{1}{\text{Card} G}\sum_{g\in G}\text{Card} Fix(\phi(g))=\frac{1}{c^4}(c^4+11c^2)=\frac{1}{c^2}(c^2+11).$$  
+\end{enumerate}
+\fincorrection
+\finexercice

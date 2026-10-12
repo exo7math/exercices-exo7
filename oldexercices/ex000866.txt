@@ -1,0 +1,63 @@
+\exercice{866, bodin, 1998/09/01}
+\enonce
+ On consid\`ere l'\'equation  :
+$$ y^{\prime\prime} + 2y^\prime + 4y = xe^x \qquad (E) $$
+\begin{enumerate}
+    \item  R\'esoudre l'\'equation diff\'erentielle homog\`ene associ\'ee \`a $(E)$.
+    \item  Trouver une solution particuli\`ere de $(E)$ (expliquer votre
+d\'emarche), puis donner l'ensemble de toutes les solutions de
+$(E)$.
+    \item  D\'eterminer l'unique solution $h$ de $(E)$ v\'erifiant
+$h(0)=1$ et $h(1)=0$.
+    \item  Soit $f : ]0,\infty [ \longrightarrow \R$
+une fonction deux fois d\'erivable sur $]0,\infty [ $ et qui v\'erifie :
+$$ t^2f^{\prime \prime}(t) +3tf^\prime (t) + 4f(t) = t\log{t}. $$
+    \begin{enumerate}
+        \item  On pose $g(x)=f(e^x)$, v\'erifier que $g$ est solution de $(E)$.
+        \item  En d\'eduire une expression de $f$.
+    \end{enumerate}
+\end{enumerate}
+
+\finenonce 
+
+\noindication
+
+\correction
+\begin{enumerate}
+    \item Le polyn\^ome caract\'eristique associ\'e \`a $E$ est : $p(x) = x^2+2x+4$ ; son discriminant
+est $\Delta = -12$ et il a pour racines les 2 nombres complexes $
+-1+i\sqrt{3}$ et $-1-i\sqrt3$. Les solutions de l'\'equation
+homog\`ene sont donc toutes fonctions :
+$$ y(x) = e^{-x}(a\cos{\sqrt3 x} + b\sin{\sqrt3 x})$$ obtenues lorsque $a,b$ d\'ecrivent $\R$.
+    \item Le second membre est de la forme $ e^{\lambda x}Q(x) $ avec $\lambda = 1$ et $Q(x)=x$. On
+cherchera une solution de l'\'equation sous la forme : $ y_p(x)=
+R(x)e^x$ avec $R$ polyn\^ome de degr\'e \'egal \`a celui de $Q$
+puisque $p(1) \not =0$. On pose donc $R(x) = ax+b$. On a
+ $$ y_p^{\prime\prime}(x) + 2y_p^{\prime}(x) +4y_p(x) = (7ax+7b+4a)e^x.$$
+  Donc $y_p$ est solution
+si et seulement si $ 7ax + 7a+4b = x$. On trouve apr\`es
+identification des coefficients :
+ $$ a=\frac{1}{7} \qquad \hbox{et}\qquad b=\frac{-4}{49}.$$
+La fonction $y_p(x)=\frac{1}{7}(x-\frac{4}{7})e^x$ est donc
+solution de $E$ et la forme g\'en\'erale des solutions de $E$ est
+:
+$$ y(x)= e^{-x}(a\cos{\sqrt3 x} + b\sin{\sqrt3 x}) +\frac{1}{7}(x-\frac{4}{7})e^x \; ;\; a,b \in \R.$$
+
+    \item  Soit $h$ une solution de $E$. Les conditions $h(0)=1$, $h(1)=0$ sont r\'ealis\'ees ssi
+$$a=\frac{53}{49}\qquad \hbox{et} \qquad b=-\frac{53\cos\sqrt3+3e^2}{49\sin\sqrt3}.$$
+    \item
+    \begin{enumerate}
+        \item  On a : $g^\prime(x) =e^xf^\prime(e^x)$ et
+$g^{\prime\prime}(x)=e^xf^\prime(e^x)+e^{2x}f^{\prime\prime}(e^x)$
+d'o\`u pour tout $x\in\R$ :
+$$g^{\prime\prime}(x)+2g^\prime(x)+4g(x)=e^{2x}f^{\prime\prime}(e^x)+2e^xf^\prime(e^x)+4f(e^x)= e^x\log{e^x}=xe^x$$
+donc $g$ est solution de $E$.
+        \item  R\'eciproquement pour $f(t)= g(\log t)$ o\`u $g$ est une
+solution de $E$ on montre que $f$ est 2 fois d\'erivable et
+v\'erifie l'\'equation donn\'ee en 4. Donc les fonctions $f$
+recherch\'ees sont de la forme :
+$$\frac{1}{t}(a\cos{(\sqrt3\log t)} + b\sin{(\sqrt3\log t)}) +\frac{t}{7}(\log t-\frac{4}{7}) \; ;\; a,b \in \R.$$
+    \end{enumerate}
+\end{enumerate}
+\fincorrection
+\finexercice

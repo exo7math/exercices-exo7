@@ -1,0 +1,33 @@
+\exercice{5162, rouget, 2010/06/30}
+\enonce[***]
+Montrer que $\forall n\in\Nn^*,\;\sum_{k=1}^{n}|\cos k|\geq\frac{n}{4}$ (remarquer que si $x\in[0;1],\;x^2\leq x$).
+\finenonce
+
+\noindication
+
+\correction
+Soit $n\in\Nn^*$. Puisque, pour tout entier $k$, $|\cos k\;|\in[0,1]$, on a alors
+
+\begin{align*}
+\sum_{k=1}^{n}|\cos k\;|&\geq\sum_{k=1}^{n}\cos^2k=\sum_{k=1}^{n}\frac{1}{2}(1+\cos(2k))=\frac{n}{2}+\frac{1}{2}
+\Re(\sum_{k=1}^{n}e^{2ik})
+=\frac{n}{2}+\frac{1}{2}\Re(e^{2i}\frac{1-e^{2in}}{1-e^{2i}})\\
+ &=\frac{n}{2}+\frac{1}{2}\Re(e^{i(n-1+2)}
+ \frac{\sin n}{\sin 1})
+=\frac{n}{2}+\frac{\cos(n+1)\sin n}{2\sin 1}\geq\frac{n}{2}-\frac{1}{2\sin1}.
+\end{align*}
+
+Maintenant, $\frac{1}{2\sin1}=0,594...$. Par suite, pour $n\geq3$,
+$\frac{1}{2\sin1}\leq0,75=\frac{3}{4}\leq\frac{n}{4}$, et donc
+
+$$\frac{n}{2}-\frac{1}{2\sin1}\geq\frac{n}{2}-\frac{n}{4}=\frac{n}{4}.$$
+
+Enfin, si $n=1$, $|\cos1|=0.5...\geq0.25=\frac{1}{4}$ et si $n=2$, $|\cos1|+|\cos2|=0.9...\geq0.5=\frac{2}{4}$.
+Finalement,
+\begin{center}
+\shadowbox{
+$\forall n\in\Nn^*,\;\sum_{k=1}^{n}|\cos k|\geq\frac{n}{4}.$
+}
+\end{center}
+\fincorrection
+\finexercice

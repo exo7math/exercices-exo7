@@ -1,0 +1,208 @@
+\exercice{5265, rouget, 2010/07/04}
+\enonce[***]
+Soient $I=\left(
+\begin{array}{cc}
+1&0\\
+0&1
+\end{array}
+\right)$ et $J=\left(
+\begin{array}{cc}
+1&1\\
+0&1
+\end{array}
+\right)$ puis $E=\{M(x,y)=xI+yJ,\;(x,y)\in\Rr^2\}$.
+
+\begin{enumerate}
+\item  Montrer que $(E,+,.)$ est un sous-espace vectoriel de $\mathcal{M}_2(\Rr)$. Déterminer une base de $E$ et sa dimension.
+\item  Montrer que $(E,+,\times)$ est un anneau commutatif.
+\item  Quels sont les inversibles de $E$~?
+\item  Résoudre dans $E$ les équations suivantes~:
+
+$$a)\;X^2=I\quad b)\;X^2=0\quad c)\;X^2 = X.$$
+
+\item  Calculer $(M(x,y))^n$ pour $n$ entier naturel non nul.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  $E=\mbox{Vect}(I,J)$. Donc, $E$ est un sous-espace vectoriel de $\mathcal{M}_2(\Rr)$. La famille $(I,J)$ est clairement libre et donc est une base de $E$. Par suite, $\mbox{dim}E=2$.
+\item  $J^2=\left(
+\begin{array}{cc}
+1&1\\
+0&1
+\end{array}
+\right)
+\left(
+\begin{array}{cc}
+1&1\\
+0&1
+\end{array}
+\right)=\left(
+\begin{array}{cc}
+1&2\\
+0&1
+\end{array}
+\right)=2J-I$. Plus généralement, pour $(x,y,x',y')\in\Rr^4$,
+
+$$M(x,y)M(x',y')=(xI+yJ)(x'I+y'J)=xx'I+(xy'+yx')J+yy'J^2=(xx'-yy')I+(xy'+yx'+2yy')J\;(*).$$
+
+Montrons alors que $(E,+,\times)$ est un sous-anneau de $(\mathcal{M}_2(\Rr),+,\times)$.
+
+$E$ contient $I=1.I+0.J$. $(E,+)$ est un sous-groupe de $(\mathcal{M}_2(\Rr),+)$ et, d'après $(*)$, $E$ est stable pour $\times$. Donc, $(E,+,\times)$ est un sous-anneau de $(\mathcal{M}_2(\Rr),+,\times)$.
+
+\item  Soit $((x,y),(x',y'))\in(\Rr^2)^2$.
+
+$$M(x,y)M(x',y')=I\Leftrightarrow(xx'-yy')I+(xy'+yx'+2yy')J=I\Leftrightarrow
+\left\{
+\begin{array}{l}
+xx'-yy'=1\\
+yx'+(x+2y)y'=0
+\end{array}
+\right..$$
+
+Le déterminant de ce dernier système d'inconnues $x'$ et $y'$ vaut $x(x+2y)+y^2=x^2+2xy+y^2=(x+y)^2$. Si $y\neq-x$, ce système admet un et seule couple solution. Par suite, si $y\neq -x$, il existe $(x',y')\in\Rr^2$ tel que $M(x,y)M(x',y')=I$. Dans ce cas, la matrice $M(x,y)$ est inversible dans $E$.
+
+Si $y=-x$, le système s'écrit $\left\{
+\begin{array}{l}
+x(x'+y')=1\\
+-x(x'+y')=0
+\end{array}
+\right.$ et n'a clairement pas de solution.
+\item 
+\begin{enumerate}
+\item Soit $(x,y)\in\Rr^2$.
+
+$$M(x,y)^2=I\Leftrightarrow\left\{
+\begin{array}{l}
+x^2-y^2=1\\
+2y(x+y)=0
+\end{array}
+\right.\Leftrightarrow\left\{
+\begin{array}{l}
+y=0\\
+x^2=1
+\end{array}
+\right.
+\;\mbox{ou}
+\left\{
+\begin{array}{l}
+x^2-y^2=1\\
+x+y=0
+\end{array}
+\right.
+\Leftrightarrow\left\{
+\begin{array}{l}
+y=0\\
+x=1
+\end{array}
+\right.
+\;\mbox{ou}\;\left\{
+\begin{array}{l}
+y=0\\
+x=-1
+\end{array}
+\right..$$
+
+Dans $E$, l'équation $X^2=I$ admet exactement deux solutions à savoir $I$ et $-I$.
+
+\item Soit $(x,y)\in\Rr^2$.
+
+$$M(x,y)^2=0\Leftrightarrow\left\{
+\begin{array}{l}
+x^2-y^2=0\\
+2y(x+y)=0
+\end{array}
+\right.\Leftrightarrow\left\{
+\begin{array}{l}
+y=0\\
+x^2=0
+\end{array}
+\right.
+\;\mbox{ou}
+\left\{
+\begin{array}{l}
+y=-x\\
+0=0
+\end{array}
+\right.
+\Leftrightarrow y=-x.$$
+
+Dans $E$, l'équation $X^2=0$ admet pour solutions les matrices de la forme $\lambda(J-I)=\left(
+\begin{array}{cc}
+0&\lambda\\
+0&0
+\end{array}
+\right)$, $\lambda\in\Rr$.
+
+\item Soit $(x,y)\in\Rr^2$.
+
+\begin{align*}\ensuremath
+M(x,y)^2=M(x,y)&\Leftrightarrow\left\{
+\begin{array}{l}
+x^2-y^2=x\\
+2y(x+y)=y
+\end{array}
+\right.
+\Leftrightarrow\left\{
+\begin{array}{l}
+x^2-y^2=x\\
+y(2x+2y-1)=0
+\end{array}
+\right.
+\\
+ &
+\Leftrightarrow\left\{
+\begin{array}{l}
+y=0\\
+x^2=x
+\end{array}
+\right.
+\;\mbox{ou}\;
+\left\{
+\begin{array}{l}
+y=-x+\frac{1}{2}\\
+x^2-(-x+\frac{1}{2})^2=x
+\end{array}
+\right.
+\\
+ &\Leftrightarrow\left\{
+\begin{array}{l}
+y=0\\
+x=0
+\end{array}
+\right.
+\;\mbox{ou}\;\left\{
+\begin{array}{l}
+y=0\\
+x=1
+\end{array}
+\right.
+\;\mbox{ou}\;\left\{
+\begin{array}{l}
+\frac{1}{4}=0\\
+y=-x+\frac{1}{2}
+\end{array}
+\right.\Leftrightarrow\left\{
+\begin{array}{l}
+y=0\\
+x=0
+\end{array}
+\right.
+\;\mbox{ou}\;\left\{
+\begin{array}{l}
+y=0\\
+x=1
+\end{array}
+\right.
+.
+\end{align*}
+
+Dans $E$, l'équation $X^2=X$ admet exactement deux solutions à savoir $0$ et $I$.
+\end{enumerate}
+
+\end{enumerate}
+\fincorrection
+\finexercice

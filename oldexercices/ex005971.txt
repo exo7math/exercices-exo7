@@ -1,0 +1,132 @@
+\exercice{5971, tumpach, 2010/11/11}
+\enonce
+
+
+
+\textbf{D\'efinition.}
+Soient $\mu$ et $\nu$ deux mesures  sur un espace mesur\'e
+$(\Omega, \Sigma)$. On dit que $\nu$ est absolument continue par
+rapport \`a  $\mu$ et on \'ecrit $\nu<<\mu$ si
+$$
+\mu(S) = 0 \Rightarrow \nu(S) = 0
+$$
+pour tout $S\in\Sigma$. 
+
+\bigskip
+
+\textbf{Th\'eor\`eme de Radon-Nikodym.}
+%\label{t}
+Soient $\mu$ et $\nu$ deux mesures finies  sur un espace mesur\'e
+$(\Omega, \Sigma)$. Si $\nu$ est absolument continue par rapport
+\`a $\mu$, alors il existe une fonction positive $h\in L^1(\Omega,
+\mu)$ telle que pour toute fonction positive mesurable $F$ on a~:
+\begin{equation}\label{radon}
+\int_{\Omega} F(x) \,d\nu(x) = \int_{\Omega} F(x) h(x)\,d\mu(x).
+\end{equation}
+
+\bigskip
+
+
+Le but de cet exercice est de d\'emontrer ce th\'eor\`eme de Radon-Nikodym.
+\begin{enumerate}
+\item Posons
+$$
+\alpha = \mu + 2\nu, \quad\quad \omega = 2\mu + \nu.
+$$
+On consid\`ere l'espace de Hilbert $L^2(\Omega, \alpha)$ des
+fonctions de carr\'e int\'egrable par rapport \`a la mesure
+$\alpha$ et l'application lin\'eaire $\varphi~: L^2(\Omega,
+\alpha) \rightarrow \mathbb{C}$ donn\'ee par~:
+$$
+\varphi(f) = \int_{\Omega} f(x)\,d\omega(x).
+$$
+Montrer que $\varphi~: L^2(\Omega, \alpha) \rightarrow \mathbb{C}$
+est une application lin\'eaire continue.
+
+\item En d\'eduire qu'il existe $g\in L^{2}(\Omega, \alpha)$ tel
+que pour tout $f \in L^2(\Omega, \alpha)$~:
+$$
+\int_{\Omega} f(2g - 1) \,d\nu =  \int_{\Omega} f(2 - g) \,d\mu.
+$$
+\item Montrer que les ensembles $S_{1l} := \{x\in\Omega, g(x) <
+\frac{1}{2} - \frac{1}{l}\}$ et  $S_{2l} := \{x\in \Omega, g(x)
+> 2 + \frac{1}{l}\}$ o\`u $l\in\mathbb{N}^*$ v\'erifient $\mu(S_{jl}) = \nu(S_{jl})  = 0$.
+En d\'eduire que l'on peut choisir la fonction $g$ de telle
+mani\`ere que $\frac{1}{2} \leq g \leq 2$.  Montrer que l'ensemble
+$Z = \{ x\in \Omega~: g(x) = \frac{1}{2}\}$ est de $\mu$-mesure
+$0$.
+
+\item Montrer que la fonction $$h(x) = \frac{2 - g(x)}{2g(x) -
+1}$$ est bien d\'efinie, positive, appartient \`a $L^{1}(\Omega,
+\mu)$ et satisfait \eqref{radon}.
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+cf M.E. Taylor, {\it Measure Theory and Integration}, graduate
+studies in mathematics, vol. 76, AMS, 2001, pages 50--51.
+
+\begin{itemize}
+\item[$\bullet$] Les ensembles $S_{1l} := \{x\in\Omega, g(x) <
+\frac{1}{2} - \frac{1}{l}\}$ et $S_{2l} := \{x\in \Omega, g(x)
+> 2 + \frac{1}{l}\}$ sont introduits pour montrer que les
+ensembles $\{x\in\Omega, g(x) < \frac{1}{2}\}$ et $\{x\in\Omega,
+g(x) > 2\}$ sont de ${\mu}$-mesure nulle (voir plus bas). En
+cons\'equence, la fonction $g\in L^2(\Omega, \alpha)$ peut \^etre
+choisie telle que $\frac{1}{2} \leq g \leq 2$. (On rappelle que
+$L^2(\Omega, \alpha)$ d\'esigne l'ensemble des fonctions de
+carr\'e-int\'egrables d\'efinies modulo les ensembles de mesure
+nulle.) Cela implique que la fonction $h$ d\'efinie dans la
+question~3 est positive comme quotient de deux fonctions
+positives.
+
+\item[$\bullet$] Pour montrer que $\mu\left(\{x\in\Omega, g(x) <
+\frac{1}{2}\}\right) = 0$, on peut utiliser par exemple la
+continuit\'e de la mesure~: on a $S_{11} \subset S_{12} \subset
+S_{13} \subset \cdots$ et $\cup_{l\in\mathbb{N}^*} S_{1l} =
+\{x\in\Omega, g(x) < \frac{1}{2} \}$, ainsi
+$$
+\mu\left(\left\{x\in\Omega, g(x) < \frac{1}{2} \right\} \right) =
+\mu\left(\cup_{l\in\mathbb{N}^*} S_{1l} \right) =
+\lim_{l\rightarrow+\infty} \mu\left(S_{1l}\right) = 0.
+$$
+De m\^eme, $S_{21} \subset S_{22} \subset S_{23} \subset \cdots$
+et $\cup_{l\in\mathbb{N}^*} S_{2l} = \{x\in\Omega, g > 2\}$,
+d'o\`u $\mu\left(\{x\in\Omega, g > 2\}\right) = 0.$
+
+\item[$\bullet$] Pour montrer que l'on a l'\'egalit\'e \eqref{radon} du
+th\'eor\`eme pour toute fonction positive mesurable, on utilise le
+fait que les fonctions essentiellement born\'ees appartiennent \`a
+$L^2(\Omega, \alpha)$ (pour une mesure finie on a en effet
+$L^{\infty}(\Omega, \alpha) \subset L^2(\Omega, \alpha)$), donc
+l'\'egalit\'e
+$$
+\int_{\Omega} f(2g - 1) \,d\nu =  \int_{\Omega} f(2 - g) \,d\mu.
+$$
+de la question~2 est en particulier v\'erifi\'ee pour toute
+fonction mesurable positive born\'ee. Soit maintenant une fonction
+$f$ mesurable positive (non n\'ecessairement born\'ee). Le
+th\'eor\`eme de convergence monotone appliqu\'e \`a la suite de
+fonctions $f_n = f\,\mathbf{1}_{\{f \leq n\}}$ donne~:
+$$
+\begin{array}{lcl}
+\int_{\Omega} f(2g - 1) \,d\nu & = & \int_{\Omega}
+\lim_{n\rightarrow +\infty} f_{n}(2g - 1)\,d\,\nu \\ &=&
+\lim_{n\rightarrow +\infty} \int_{\Omega} f_n(2g - 1) \,d\nu =
+\lim_{n\rightarrow +\infty} \int_{\Omega} f_n(2 - g) \,d\mu\\ & =
+&
+\int_{\Omega}\lim_{n\rightarrow +\infty}f_n(2 - g) \,d\mu\\
+& = & \int_{\Omega} f(2-g) \,d\mu.
+\end{array}
+$$
+On en d\'eduit que l'\'egalit\'e $(1)$ du th\'eor\`eme est
+v\'erifi\'ee pour toute fonction $F$ de la forme $F = f(2g-1)$,
+o\`u $f\in\mathcal{M}^+$. Puisque $(2g-1)>0$, l'ensemble des
+fonctions $F$ de cette forme est \'egalement $\mathcal{M}^+$.
+\end{itemize}
+\fincorrection
+
+\finexercice

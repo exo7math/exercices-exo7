@@ -1,0 +1,53 @@
+\exercice{2809, burnol, 2009/12/15}
+\enonce
+  On veut exprimer le Laplacien avec les coordonnées
+  polaires $r$ et $\theta$: autrement dit pour toute
+  fonction deux fois différentiable $\Phi$ on veut calculer
+  la fonction $\Delta(\Phi)$ à l'aide des opérateurs de
+  dérivées partielles $\frac\partial{\partial r}$ et
+  $\frac\partial{\partial
+ \theta}$, lorsque l'on travaille sur un ouvert (ne
+ contenant pas l'origine) dans lequel une détermination
+ continue de l'argument $\theta$ est possible (par exemple
+ sur $\Omega = \Cc\setminus]-\infty,0]$). Une méthode
+ possible est d'utiliser les expressions obtenues dans
+ l'exercice \ref{exo:CRpolaires} :
+\[ \frac\partial{\partial x} =
+ \cos(\theta)\frac\partial{\partial r} - \sin(\theta)\frac1r
+ \frac\partial{\partial\theta}\qquad \frac\partial{\partial y} =
+ \sin(\theta)\frac\partial{\partial r} + \cos(\theta)\frac1r
+ \frac\partial{\partial\theta}\;,\]
+et de calculer ensuite $(\frac\partial{\partial x})^2$ et
+ $(\frac\partial{\partial y})^2$ puis de faire la
+ somme. Mais cela donne des calculs un peu longs. Voici une
+ ruse: en reprenant une formule déjà établie dans
+ l'exercice \ref{exo:CRpolaires} montrer
+\[ (x-iy)\left(\frac\partial{\partial x} +
+ i\frac\partial{\partial y}\right) = r\frac\partial{\partial r} + 
+ i\frac\partial{\partial \theta}\]
+\[ (x+iy)\left(\frac\partial{\partial x} -
+ i\frac\partial{\partial y}\right) = r\frac\partial{\partial r} - 
+ i\frac\partial{\partial \theta}\]
+On remarquera maintenant que l'opérateur différentiel
+ $\frac\partial{\partial x} + 
+ i\frac\partial{\partial y}$ appliqué à la fonction $x+iy$
+ donne zéro. Donc (expliquer!):
+\[ (x-iy)\left(\frac\partial{\partial x} +
+ i\frac\partial{\partial y}\right)(x+iy)\left(\frac\partial{\partial x} -
+ i\frac\partial{\partial y}\right) =
+ (x-iy)(x+iy)\left(\frac\partial{\partial x} + 
+ i\frac\partial{\partial y}\right)\left(\frac\partial{\partial x} -
+ i\frac\partial{\partial y}\right)\]
+Prouver alors en conclusion:
+\[ \frac{\partial^2\Phi}{\partial x^2}
++\frac{\partial^2\Phi}{\partial y^2} = \frac{1}{r^2}\left(
+ (r\frac\partial{\partial r})^2 + \frac{\partial^2}{\partial
+ \theta^2}\right)\Phi
+= \frac{\partial^2\Phi}{\partial r^2} + \frac1r
+ \frac{\partial\Phi}{\partial
+ r} +  \frac1{r^2}\frac{\partial^2\Phi}{\partial 
+ \theta^2}.\]
+\finenonce
+\noindication
+\nocorrection
+\finexercice

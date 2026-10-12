@@ -1,0 +1,39 @@
+\exercice{4551, quercia, 2010/03/14}
+\enonce[Mines MP 2001]
+
+Pour $x\in\R^+$ et $n\in\N$, $n\ge 2$ on pose $f_n(x) = \frac{xe^{-nx}}{\ln n}$
+et $S(x) = \sum_{n=2}^\infty f_n(x)$ sous réserve de convergence.
+
+\begin{enumerate}
+  \item \'Etudier la convergence simple, normale, uniforme de la série $\sum f_n$
+    sur $\R^+$.
+    
+
+  \item Montrer que $S$ est de classe $\mathcal{C}^1$ sur $\R^{+*}$.
+  \item Montrer que $S$ n'est pas dérivable à droite en $0$.
+    
+  \item Montrer que $x^kS(x)$ tend vers $0$ en $+\infty$ pour tout $k\in\N$.
+
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Il y a convergence normale sur tout intervalle $[a,+\infty[$ avec $a>0$.
+    Il n'y a pas convergence normale au voisinage de $0$ car
+    $\sup\Bigl\{\frac{xe^{-nx}}{\ln n},\ x\ge 0\Bigr\} = \frac1{en\ln n}$ atteint pour $x=\frac1n$ et
+    $\sum\frac1{n\ln n}$ diverge (série de Bertrand).
+    Par contre il y a convergence uniforme sur $[0,+\infty[$ car
+    $$0\le \sum_{k=n}^\infty f_k(x) \le \frac1{\ln n}\sum_{k=n}^\infty xe^{-kx}
+       = \frac{xe^{-nx}}{\ln n(1-e^{-x})} \le \frac{\sup\{t/(1-e^{-t}),\ t\ge 0\}}{\ln n}.$$
+  \item 
+  \item Lorsque $x\to0^+$, $\frac{S(x)-S(0)}x = \sum_{n=2}^\infty\frac{e^{-nx}}{\ln n}
+    \to \sum_{n=2}^\infty\frac1{\ln n} = +\infty$ par convergence monotone.
+  \item 
+\end{enumerate}
+ \fincorrection
+
+\finexercice

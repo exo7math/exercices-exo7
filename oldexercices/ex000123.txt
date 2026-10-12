@@ -1,0 +1,35 @@
+\exercice{123, bodin, 1998/09/01}
+\video{I6E-O_PNk1Y}
+\enonce
+ Soit $A,B$ deux ensembles, montrer
+$\complement(A\cup B) =\complement A\cap \complement B$ et
+$\complement (A\cap B) =\complement A\cup \complement B$.
+
+\finenonce 
+
+\indication
+Il est plus facile de raisonner en prenant un \'el\'ement $x\in E$.
+Par exemple, soit $F, G$ des sous-ensembles de $E$. Montrer que $F\subset G$
+revient à montrer que pour tout $x\in F$ alors $x\in G$.
+Et montrer $F=G$ est \'equivalent \`a $x\in F$ si et seulement si $x\in G$,
+et ce pour tout $x$ de $E$.
+Remarque : pour montrer $F=G$ on peut aussi montrer $F\subset G$ puis $G\subset F$.
+
+Enfin, se rappeler que $x\in \complement F$ si et seulement si $x\notin F$.
+\finindication
+
+\correction
+\begin{align*}
+x\in\complement (A\cup B) & \Leftrightarrow x\notin A\cup B \\
+&\Leftrightarrow x\notin A \text{ et } x\notin B\\
+&\Leftrightarrow x\in\complement A \text{ et } x\in\complement B\\
+&\Leftrightarrow x\in \complement A \cap \complement B.\\
+\end{align*}
+\begin{align*}
+x\in\complement (A\cap B) & \Leftrightarrow x\notin A\cap B\\
+&\Leftrightarrow x\notin A \text{ ou } x\notin B\\
+&\Leftrightarrow x\in\complement A \text{ ou } x\in\complement\\
+&\Leftrightarrow x\in \complement A \cup \complement B.\\
+\end{align*}
+\fincorrection
+\finexercice

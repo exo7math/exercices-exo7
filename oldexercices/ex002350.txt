@@ -1,0 +1,24 @@
+\exercice{2350, queffelec, 2003/10/01}
+\enonce
+Soit $E=C^1([0,1],{\Rr})$. Comparer les normes 
+$N_1(f)=||f||_\infty,\  N_2(f)=||f||_\infty+||f||_1,\
+N_3(f)=||f'||_\infty+||f||_\infty,\  N_4(f)=||f'||_1+||f||_\infty.$
+\finenonce
+
+\indication
+Les seules relations sont :
+$$N_1 \le N_2 \le 2N_1 \le 2N_4 \le 2N_3.$$
+\finindication
+
+\correction
+\begin{enumerate}
+  \item On montre facilement 
+$$N_1 \le N_2 \le 2N_1 \le 2N_4 \le 2N_3.$$
+\item Par contre il n'existe pas de constante $C>0$ telle que $N_3 \le CN_4$ ou $N_2 \le CN_4$.
+On suppose qu'il existe $C>0$ telle que $N_3 \le CN_4$ on
+regarde $f_k$ définie par $f_k(x) = x^k$, après calcul on obtient $N_3(f_k)=k+1$ et $N_4(f_k)=2$, pour $k$ suffisament grand on obtient une contradiction.
+Comme $N_1$ et $N_2$ sont équivalentes on va prouver qu'il n'existe pas de constante $C>0$ telle que $N_3 \le CN_1$. On prend $g_k$, définie par
+$g_k(x) = 1+\sin(2\pi k x)$. Alors $N_1(g_k) = 2$ et $N_3(g_k) = 4k$, ce qui prouve le résultat souhaité.
+\end{enumerate}
+\fincorrection
+\finexercice

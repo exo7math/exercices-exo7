@@ -1,0 +1,61 @@
+\exercice{5856, rouget, 2010/10/16}
+\enonce[*** I]
+On munit $E=C^0([0,1],\Rr)$ de la norme $1$ définie par $\forall f\in E$, $\|f\|_1=\int_{0}^{1}|f(t)|\;dt$.
+
+On pose $\begin{array}[t]{cccl}
+T~:&E&\rightarrow&\rule{1.5mm}{0mm}E\\
+ &f&\mapsto&\begin{array}[t]{cccc}Tf~:&[0,1]&\rightarrow&\Rr\\
+  &x&\mapsto&\int_{0}^{x}f(t)\;dt
+  \end{array}
+ \end{array}$ et on admet que $T$ est un endomorphisme de $E$.
+ 
+ 
+ \begin{enumerate}
+ \item  Démontrer que $T$ est continu sur $(E,\|\;\|_1)$ et déterminer $|||T|||$.
+ 
+ 
+ \item  Vérifier que la borne supérieure n'est pas atteinte.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Soit $f\in E$.
+
+\begin{align*}\ensuremath
+\|Tf\|_1&=\int_{0}^{1}|Tf(x)|\;dx=\int_{0}^{1}\left|\int_{0}^{x}f(t)\;dt\right|dx\\
+ &\leqslant\int_{0}^{1}\left(\int_{0}^{x}|f(t)|\;dt\right)dx\\
+ &\leqslant\int_{0}^{1}\left(\int_{0}^{1}|f(t)|\;dt\right)dx=\int_{0}^{1}\|f\|_1\;dx=\|f\|_1.
+\end{align*}
+
+Ceci montre que $\forall f\in E\setminus\{0\}$, $ \frac{\|Tf\|_1}{\|f\|_1}\leqslant1$. Ceci montre que $T$ est continu sur $(E,\|\;\|_1)$ et que $|||T|||\leqslant1$.
+
+Pour $n\in\Nn$ et $x\in[0,1]$, posons $f_n(x)=(1-x)^n$. Pour $n\in\Nn$,
+
+\begin{center}
+$\|f_n\|_1=\int_{0}^{1}(1-x)^n\;dx=\left[- \frac{(1-x)^{n+1}}{n+1}\right]_0^1= \frac{1}{n+1}$,
+\end{center}
+
+puis pour $x\in[0,1]$, $Tf_n(x)=\int_{0}^{x}(1-t)^n\;dt= \frac{1}{n+1}(1-(1-x)^{n+1})$ et donc
+
+\begin{center}
+$\|Tf_n\|_1=\int_{0}^{1}|Tf_n(x)|\;dx= \frac{1}{n+1}\int_{0}^{1}(1-(1-x)^{n+1})\;dx= \frac{1}{n+1}\left(1- \frac{1}{n+2}\right)= \frac{1}{n+2}$.
+\end{center}
+
+On en déduit que $\forall n\in\Nn$, $|||T|||\geqslant \frac{\|Tf_n\|_1}{\|f_n\|_1}= \frac{n+1}{n+2}$.
+
+En résumé, $\forall n\in\Nn$, $ \frac{n+1}{n+2}\leqslant|||T|||\leqslant 1$ et donc $|||T|||=1$.
+
+\begin{center}
+\shadowbox{
+$T$ est continu sur $(E,\|\;\|_1)$ et $|||T|||=1$.
+}
+\end{center}
+ 
+ 
+ \item  Supposons qu'il existe $f\in E\setminus\{0\}$ tel que $\|Tf\|_1=\|f\|_1$. On en déduit que chaque inégalité écrite au début de la question 1) est une égalité et en particulier $\int_{0}^{1}\left(\int_{0}^{x}|f(t)|\;dt\right)dx=\int_{0}^{1}\left(\int_{0}^{1}|f(t)|\;dt\right)dx$ ou encore $\int_{0}^{1}\left(\int_{0}^{1}|f(t)|\;dt-\int_{0}^{x}|f(t)|\;dt\right)dx=0$. Par suite, $\forall x\in[0,1]$, $\int_{0}^{1}|f(t)|\;dt-\int_{0}^{x}|f(t)|\;dt=0$ (fonction continue, positive, d'intégrale nulle) puis en dérivant la dernière inégalité, $\forall x\in[0,1]$, $|f(x)|=0$ et finalement $f=0$. Ceci est une contradiction et donc $|||T|||$ n'est pas atteinte.
+\end{enumerate}
+\fincorrection
+\finexercice

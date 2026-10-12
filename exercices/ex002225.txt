@@ -1,38 +1,48 @@
 \exercice{2225, matos, 2008/04/23}
-\enonce[Factorisation d'une matrice sym\'etrique] 
-Soit $A$ une matrice sym\'etrique inversible admettant une factorisation LU. Montrer que l'on peut \'ecrire $A$ sous la forme 
-$$A=B\tilde{B}^T  \mbox{ o\`u }$$ 
-\begin{itemize} 
-\item $B$ est une matrice triangulaire inf\'erieure ;
-\item $\tilde{B}$ est une matrice o\`u chaque colonne est soit \'egale \`a la colonne correspondante de $B$, soit \'egale \`a la colonne correspondante de $B$ chang\'ee de signe. 
-\end{itemize} 
-\emph{Application num\'erique} 
-$$A=\left(\begin{array}{cccc} 
-1&2&1&1\\ 
-2&3&4&3\\ 
-1&4&-4&0\\ 
-1&3&0&0 
-\end{array}\right).$$ 
-\finenonce 
+
+\enonce[Factorisation d'une matrice symétrique]
+Soit \( A \) une matrice symétrique inversible admettant une factorisation LU. Montrer que l'on peut écrire \( A \) sous la forme
+\[
+  A = B\tilde{B}^T \mbox{ où }
+\]
+\begin{itemize}
+  \item \( B \) est une matrice triangulaire inférieure ;
+
+  \item \( \tilde{B} \) est une matrice où chaque colonne est soit égale à la colonne correspondante de \( B \), soit égale à la colonne correspondante de \( B \) changée de signe.
+\end{itemize}
+\emph{Application numérique}
+\[
+  A = \left(\begin{array}{cccc}
+      1 & 2 & 1  & 1 \\
+      2 & 3 & 4  & 3 \\
+      1 & 4 & -4 & 0 \\
+      1 & 3 & 0  & 0
+    \end{array}\right).
+\]
+\finenonce
 
 \noindication
 
 \correction
-Soit $LU$ la factorisation $LU$ de $A$. On va intercaler dans cette factorisation la matrice r\'eelle $\Lambda=$diag$(\sqrt{|u_{ii}|})$.
+Soit \( LU \) la factorisation \( LU \) de \( A \). On va intercaler dans cette factorisation la matrice réelle \( \Lambda = \operatorname{diag}(\sqrt{|u_{ii}|}) \).
 
+\( A = (L\Lambda ) (\Lambda^{-1}U) = BC \). La symétrie de \( A \) entraine \( BC = C^TB^T \). On a
 
-$A=(L\Lambda ) (\Lambda^{-1}U) =BC$. La sym\'etrie de $A$ entraine $BC=C^TB^T. $ On a 
+\( C(B^T)^{-1} \) matrice triangulaire supérieure, \( B^{-1}C^T \) matrice triangulaire inférieure et \( C(B^T)^{-1} = B^{-1}C^T \) et donc
 
-$C(B^T)^{-1}$ matrice triangulaire sup\'erieure, $B^{-1}C^T$ matrice triangulaire inf\'erieure et $C(B^T)^{-1}=B^{-1}C^T$ et donc
+\( C(B^T)^{-1} = B^{-1}C^T = \operatorname{diag}(\operatorname{sign}(u_{ii})) = S \Rightarrow C(B^T)^{-1}S^{-1} = I = S^{-1}B^{-1}C^T \Leftrightarrow C^T = BS = \tilde{B} \). Donc \( A \) peut être mise sous la forme
+\[
+  A = B\tilde{B}^T \mbox{ avec } \tilde{B} = BS
+\]
+i.e. la \( i \)-ème colonne de \( \tilde{B} \) est égale à la \( i \)-ème colonne de \( B \) affectée du signe de \( u_{ii} \)
 
-$C(B^T)^{-1}=B^{-1}C^=$diag(sign$(u_{ii})=S$ $\Rightarrow C(B^T)^{-1}S^{-1}=I=S^{-1}B^{-1}C^T \Leftrightarrow C^T=BS=\tilde{B}$. Donc $A$ peut \^etre mise sous la forme
-$$A=B\tilde{B}^T \mbox{ avec } \tilde{B}=BS$$
-i.e. la $i$-\`eme colonne de $\tilde{B}$ est \'egale \`a la $i$-\`eme colonne de $B$ affect\'ee du signe de $u_{ii}$
-
-Application num\'erique:
-$$\tilde{B}=\left(\begin{array}{cccc}
-1&2&1&1\\
-&-1&2&1\\
-&&-1&-1\\&&&1\end{array}\right).$$
+Application numérique:
+\[
+  \tilde{B} = \left(\begin{array}{cccc}
+      1 & 2  & 1  & 1  \\
+        & -1 & 2  & 1  \\
+        &    & -1 & -1 \\&&&1\end{array}\right).
+\]
 \fincorrection
+
 \finexercice

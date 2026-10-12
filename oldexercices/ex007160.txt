@@ -1,0 +1,19 @@
+\exercice{7160, megy, 2017/05/13}
+\enonce[Isométries d'un triangle isocèle]
+Soit $\mathcal T=ABC$ un triangle isocèle non équilatéral. Déterminer son groupe d'isométries ainsi qu'un isomorphisme entre ce groupe et un groupe classique.
+\finenonce
+
+\noindication 
+\correction 
+
+Comme une isométrie est affine, elle conserve les barycentres. Soit $P$ un sommet du triangle. Comme ce n'est pas un barycentre d'autres points du triangle, son image par une isométrie fixant le triangle non plus, c'est-à-dire que son image est un sommet. On en déduit que les sommets sont envoyés sur les sommets.
+
+Dans la suite on suppose que $ABC$ est isocèle en $A$. Soit $f$ une isométrie de $ABC$. Comme une isométrie conserve les angles non orientés et que le triangle est isocèle en $A$ et non équilatéral, on en déduit que $B$ et $C$ sont envoyés soit sur $B$ soit sur $C$. Le point $A$ est donc fixe.
+
+Comme une application affine est déterminée par l'image de trois points non alignés, on conclut que le triangle $ABC$ n'admet que deux isométries : l'identité, et la réflexion $\sigma$ suivante la médiatrice de $[BC]$.
+
+Le groupe ${\rm Isom}(\mathcal T)$ est donc de cardinal deux, donc isomorphe à $\Z/2\Z$.
+
+(Un isomorphisme est donné par $\phi : \Z/2\Z \to {\rm Isom}(\mathcal T)$ l'application qui envoie $[0]=2\Z$ sur l'identité et $[1]=1+2\Z$ sur $\sigma$. C'est une bijection, et on vérifie que c'est un isomorphisme de groupes.)
+\fincorrection  
+\finexercice  

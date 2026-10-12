@@ -1,0 +1,62 @@
+\exercice{4574, quercia, 2010/03/14}
+\enonce[Développements en série entière]
+
+Développer en série entière les fonctions suivantes : 
+\begin{enumerate}
+  \item $\ln(1+x+x^2)$.
+  \item $(x-1)\ln(x^2-5x+6)$.
+  \item $x\ln(x+\sqrt{x^2+1}\,)$.
+  \item $\frac{x-2}{x^3-x^2-x+1}$.
+  \item $\frac1{1+x-2x^3}$.
+  \item $\frac{1-x}{(1+2x-x^2)^2}$.
+  \item $\sqrt{\frac{1-x}{1+x}}$.
+  \item $\Arctan(x+1)$.
+  \item $\Arctan(x+\sqrt3\,)$.
+  \item $ \int_{t=0}^x \frac{\ln(t^2-5t/2+1)}t\,d t$.
+  \item $\Bigl(\frac{(1+x)\sin x}x\Bigr)^2$.
+  \item $ \int_{t=x}^{2x} e^{-t^2}\,d t$.
+  \item $e^{-2x^2} \int_{t=0}^x e^{2t^2}\,d t$.
+  \item $\frac{\Arcsin \sqrt x}{\sqrt{x(1-x)}}$.
+  \item $\sin\left(\frac13\Arcsin x\right)$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $= \ln(1-x^3) - \ln(1-x)
+              = \sum_{n=0}^\infty\left( \frac{x^{3n+1}}{3n+1}
+              + \frac{x^{3n+2}}{3n+2} - 2\frac{x^{3n+3}}{3n+3}\right)$.
+  \item Factoriser : $-\ln 6 + \left(\frac56 + \ln6\right)x
+             - \sum_{n=2}^\infty\left(\frac{n+1}{2^n}
+             + \frac{2n+1}{3^n}\right)\frac{x^n}{n(n-1)}$.
+  \item Dériver le ln :
+             $\sum_{n=1}^\infty {\binom{-1/2}{n-1}}\frac{x^{2n}}{2n-1}$.
+  \item $\sum_{n=0}^\infty -\frac{2n+ 5 + 3(-1)^n}4 x^n$.
+  \item $\frac15\sum_{n=0}^\infty \Bigl(1+2{\sqrt2\,}^n
+              (2\cos(3n\pi/4)-\sin(3n\pi/4))\Bigr)x^n$.
+  \item Intégrer : $\sum_{n=0}^\infty \frac{n+1}{4\sqrt 2}
+             \Bigl((-\sqrt2-1)^{n+2} - (\sqrt2-1)^{n+2}\Bigr)x^n$.
+  \item $=\frac{1-x}{\sqrt{1-x^2}}
+              =\sum_{n=0}^\infty {\binom{-1/2}{n}}(-1)^n(x^{2n}-x^{2n+1})$.
+  \item Dériver : $\frac\pi4 - \sum_{n=1}^\infty
+                      \frac{\sin(n\pi/4)}{n{\sqrt2\,}^n}(-1)^nx^n$.
+  \item Dériver : $\frac\pi3 + \sum_{n=1}^\infty
+             (-1)^{n-1}\frac{\sin(n\pi/6)}{n2^n}x^n$.
+  \item Dériver, factoriser : $\sum_{n=1}^\infty
+             -\frac{2^n+2^{-n}}{n^2}x^n$.
+  \item Linéariser : $1 + \sum_{n=1}^\infty \frac{(-1)^{n+1}4^n}{(2n)!}
+             \Bigl(x^{2n-1} + \frac{(2n^2+3n-1)}{(2n+1)(2n+2)}x^{2n}\Bigr)$.
+  \item Dériver : $\sum_{n=0}^\infty
+             \frac{(-1)^n(2^{2n+1}-1)}{n!\,(2n+1)}x^{2n+1}$.
+  \item $y' = -4xy+1$ : $\sum_{n=0}^\infty
+             (-1)^n\frac{8^nn!}{(2n+1)!}x^{2n+1}$.
+  \item $2x(1-x)y'+(1-2x)y = 1$ : $\sum_{n=0}^\infty
+             \frac{4^n}{(2n+1)C_{2n}^n}x^n$.
+  \item $(1-x^2)y'' - xy' + \frac y9 = 0$ : $\sum_{n=0}^\infty
+              \frac{4^nC_{3n}^n}{(2n+1)3^{3n+1}}x^{2n+1}$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

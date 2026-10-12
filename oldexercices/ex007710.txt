@@ -1,0 +1,38 @@
+\exercice{7710, mourougane, 2021/08/11}
+\enonce
+Soit $I$ un intervalle de $\Rr$ et $c~:I\to \Rr^2$ une courbe plane paramétrée par la longueur d'arc. 
+On suppose que $c$ reste dans le disque de rayon $r>0$ et qu'au point de paramètre $\tau$,
+$\| c(\tau)\| = r$.
+\begin{enumerate} 
+ \item Rappeler la valeur absolue de la courbure d'un cercle de rayon $r$.
+
+ \item Montrer en dérivant une fois la fonction $\phi : t\mapsto \| c(t)\|^2$ 
+que $\ddot{c}(\tau)$ est colinéaire à $c(\tau)$.
+
+ \item Montrer en dérivant à nouveau la fonction $\phi$ 
+que la courbure en $\tau$ vérifie $|\kappa(\tau)|\geq 1/r$.
+
+ \item Interpréter graphiquement ce résultat.
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+ \item  La courbure d'un cercle de rayon $r$ est en valeur absolue $1/r$.
+ 
+ \item Puisque la fonction norme (au carré) $\phi$ est différentiablement continue et maximale au point de paramètre $\tau$,
+ sa dérivée en $\tau$ s'annule. On trouve $\phi'(\tau)=2<c(\tau),\dot{c}(\tau)>=0$.
+ Par ailleurs, comme la fonction $c$ donne un paramétrage par la longueur d'arc,
+ la fonction $t\mapsto \| \dot{c}(t)\|^2$ est constante égale à $1$,
+ donc aussi de dérivée nulle en $\tau$. On trouve $2<\ddot{c}(\tau),\dot{c}(\tau)>=0$.
+ Par conséquent, en notant $\vec{n}$ un vecteur normal unitaire à $\dot{c}(\tau)$,
+ on trouve $c(\tau)=+/-\vec{n}$ et $\ddot{c}(\tau)=\kappa(\tau)\vec{n}$.
+
+ \item Puisque la fonction norme $\phi$ est deux fois différentiablement continue et maximale au point de paramètre $\tau$,
+ sa dérivée seconde en $\tau$ est négative. On trouve $\phi''(\tau)=2<c(\tau),\ddot{c}(\tau)>+2<\dot{c}(\tau),\dot{c}(\tau)>=+/-2r\kappa(\tau)+2\leq 0$.
+ Donc, $-/+2r\kappa(\tau)\geq 2$ et par suite $-/+r\kappa(\tau)$ est positif de valeur absolue au moins $1$.
+ En divisant par $r>0$, on trouve le résultat.
+ \item La courbe est en ses points extrémaux plus courbée que le cercle de rayon $r$ qui la borde.   
+\end{enumerate}
+\fincorrection
+\finexercice

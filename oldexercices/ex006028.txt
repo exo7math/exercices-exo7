@@ -1,0 +1,43 @@
+\exercice{6028, quinio, 2011/05/20}
+
+\enonce
+Le staff médical d'une grande entreprise fait ses
+petites statistiques sur le taux de cholestérol de ses employés; les
+observations sur 100 employés tirés au sort sont les suivantes.
+
+\begin{tabular}{cc}
+taux de cholestérol en cg:(centre classe) & effectif d'employés: \\
+$120$ & $9$ \\ 
+$160$ & $22$ \\ 
+$200$ & $25$ \\ 
+$240$ & $21$ \\ 
+$280$ & $16$ \\ 
+$320$ & $7$
+\end{tabular}
+
+\begin{enumerate}
+\item Calculer la moyenne $m_{e}$ et l'écart-type $\sigma_{e}$ sur l'échantillon.
+\item Estimer la moyenne et l'écart-type pour le taux de cholestérol 
+dans toute l'entreprise.
+\item Déterminer un intervalle de confiance pour la moyenne.
+\item Déterminer la taille minimum d'échantillon pour que
+l'amplitude de l'intervalle de confiance soit inférieure à 10.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item On obtient, sur l'échantillon, la moyenne $m_{e}=214$, l'écart-type $\sigma _{e}=55.77$.
+\item La moyenne sur l'entreprise est estimée par $m_{e}$.
+L'écart-type est estimé par: $\widehat{\sigma _{e}}=\sqrt{\frac{100}{99}}55.77\simeq 56.05$.
+\item On en déduit, au seuil 95\%, un intervalle de confiance pour la
+moyenne :
+$[m_{e} - y_{\alpha }\frac{\widehat{\sigma _{e}}}{\sqrt{n}};
+m_{e} + y_{\alpha }\frac{\widehat{\sigma _{e}}}{\sqrt{n}}]=[203.01;224.99]$.
+Ainsi le taux moyen de cholestérol est, à un seuil de confiance $95$\%, 
+située entre $203$ et $225$ cg.
+\end{enumerate}
+\fincorrection
+\finexercice

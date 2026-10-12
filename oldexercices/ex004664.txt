@@ -1,0 +1,43 @@
+\exercice{4664, quercia, 2010/03/14}
+\enonce[Algèbre de séries trigonométriques]
+Soit $E$ l'ensemble des fonctions de~$\R$ dans~$\C$ de la forme~:
+$f(x)=\sum_{n=-\infty}^{+\infty} c_ne^{2i\pi nx}$ où $\sum |c_n|$ converge.
+On pose pour $f\in E$~: $\|f\| = \sum_{n=-\infty}^{+\infty}|c_n|$.
+
+\begin{enumerate}
+  \item Justifier la définition de $\|f\|$ et montrer que $E$ est un espace vectoriel normé complet.
+
+  \item Montrer que $E$ est une $\C$-algèbre et que $\|fg\| \le \|f\|\,\|g\|$.
+    
+
+  \item Soit $\varphi : E \to \C$ un morphisme d'algèbres.
+  \begin{enumerate}
+    \item On suppose $\varphi$ continu, montrer qu'il existe $z_0\in\mathbb{U}$ tel
+    que $\forall\ f\in E,\ \varphi(f) = \sum_{n=-\infty}^{+\infty}c_nz_0^n$.
+    
+
+    \item Vérifier que la formule précédente définit effectivement un morphisme
+    continu de~$E$ dans~$\C$.
+  \end{enumerate}
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Si $f=0$ alors $c_n = 0$ pour tout~$n$ par intégration
+    terme à terme. Donc une fonction $f\in E$ possède un unique développement
+    trigonométrique et $\|f\|$ est bien défini. Alors $E$ est isomorphe
+    à $\ell^1(\Z)$ qui est un espace vectoriel normé complet.
+  \item Produit de convolution de deux $\Z$-suites sommables.
+  \item 
+  \begin{enumerate}
+    \item $z_0 = \varphi(x \mapsto e^{2i\pi x})$. On a $|z_0| = 1$ car la suite
+    $(\varphi(x \mapsto e^{2in\pi x})_{n\in\Z})$ est bornée.
+    \item
+  \end{enumerate}
+\end{enumerate}
+ \fincorrection
+
+\finexercice

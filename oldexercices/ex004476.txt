@@ -1,0 +1,23 @@
+\exercice{4476, quercia, 2010/03/14}
+\enonce[$u_{n+1} = u_n + {a_n}/{u_n}$]
+
+Soit $(a_n)$ une suite réelle positive et $(u_n)$ la suite
+définie par la relation de récurrence~:
+$u_{n+1} = u_n + \frac{a_n}{u_n}$ avec $u_0 > 0$.
+Montrer que la suite $(u_n)$ converge si et seulement si la série
+$\sum a_n$ converge.
+
+
+\finenonce
+
+\noindication
+
+\correction
+$(u_n)$ est croissante. Si la suite $(u_n)$ converge alors
+         $a_n = u_n(u_{n+1} - u_n) \le M(u_{n+1} - u_n)$ donc les sommes
+         partielles de $\sum a_n$ sont bornées.\par
+         Si $\sum a_n$ converge, alors $u_{n+1} - u_n = \frac{a_n}{u_n}
+         \le \frac{a_n}{u_0}$ donc $\sum(u_{n+1}-u_n)$ converge.
+\fincorrection
+
+\finexercice

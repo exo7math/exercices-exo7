@@ -1,0 +1,102 @@
+\exercice{6993, blanc-centi, 2015/07/04}
+\video{Fg3TtiARvxI}
+\enonce
+
+\begin{enumerate}
+\item Résoudre l'équation différentielle $(x^2+1)y'+2xy=3x^2+1$ sur $\R$.
+Tracer des courbes intégrales. Trouver la solution vérifiant $y(0) = 3$.
+
+
+\item Résoudre l'équation différentielle $y'\sin x-y\cos x+1=0$ sur $]0;\pi[$.
+Tracer des courbes intégrales. Trouver la solution vérifiant $y(\frac\pi4) = 1$.
+
+\end{enumerate}
+\finenonce
+ 
+\indication\ 
+\begin{enumerate}
+  \item $x$ est solution particulière
+  \item $\cos$ est solution particulière
+\end{enumerate}
+\finindication
+
+\correction\
+\begin{enumerate}
+\item Comme le coefficient de $y'$ ne s'annule pas, on peut réécrire l'équation sous la forme
+$$y'+\frac{2x}{x^2+1}y=\frac{3x^2+1}{x^2+1}$$
+  \begin{enumerate}
+    \item Les solutions de l'équation homogène associée sont les $y(x)=\lambda e^{A(x)}$, 
+    où $A$ est une primitive de $a(x)=-\frac{2x}{x^2+1}$ et $\lambda\in\R$. 
+    Puisque $a(x)$ est de la forme $-\frac{u'}{u}$ avec $u>0$, on peut choisir $A(x)=-\ln(u(x))$ 
+    où $u(x)=x^2+1$. Les solutions sont donc les 
+    $\displaystyle y(x)=\lambda e^{-\ln(x^2+1)}=\frac{\lambda}{x^2+1}$.
+    
+    \item Il suffit ensuite de trouver une solution particulière de l'équation 
+    avec second membre: on remarque  que $y_0(x)=x$ convient.
+
+    \item Les solutions sont obtenues en faisant la somme:  
+    $$y(x)=x+\frac{\lambda}{x^2+1}\quad (x\in\R)$$
+    où $\lambda$ est un paramètre réel.
+    
+    \item $y(0)=3$ si et seulement si $\lambda=3$. La solution cherchée est donc
+    $y(x)=x+\frac{3}{x^2+1}$.
+  \end{enumerate}
+  
+  Voici les courbes intégrales pour $\lambda=-1,0,\ldots,5$.
+  
+  \begin{center}
+  \begin{tikzpicture}[scale=1]
+
+ \draw[->,>=latex,thick,gray] (-3,0)--(4,0);
+ \draw[->,>=latex,thick,gray] (0,-3)--(0,+5.5);
+
+\foreach \k in {-1,0,1,2,3,4,5}{
+ \draw [thick, color=red!60,samples=100,smooth, domain=-3:4] plot(\x,{\x + \k/(1+\x*\x)});
+}
+\draw [very thick, color=red,samples=100,smooth, domain=-3:4] plot(\x,{\x + 3/(1+\x*\x)});
+
+ \node[below right,gray] at (0,0) {$0$};
+\node[below,gray] at (1,0) {$1$};
+\node[left,gray] at (0,1) {$1$};
+\end{tikzpicture}
+\end{center}
+  
+\item On commence par remarquer que $y_0(x)=\cos x$ est une solution particulière. Pour l'équation homogène: sur l'intervalle considéré, le coefficient de $y'$ ne s'annule pas, et l'équation se réécrit
+$$y'-\frac{\cos x}{\sin x}y=0$$
+Les solutions sont les $y(x)=\lambda e^{A(x)}$, où $\lambda\in\R$ et $A$ est une primitive de $a(x)=\frac{\cos x}{\sin x}$. Puisque $a(x)$ est de la forme $\frac{u'}{u}$ avec $u>0$, on peut choisir $A(x)=\ln(u(x))$ avec $u(x)=\sin x$. Les solutions de l'équation sont donc les $\displaystyle y(x)=\lambda e^{\ln(\sin x)}=\lambda\sin x$.
+
+Finalement, les solutions de l'équation sont les 
+$$y(x)=\cos x+\lambda\sin x$$
+où $\lambda$ est un paramètre réel.
+
+  \item On a 
+  $$y(\frac\pi4) = 1 
+  \iff \cos\frac\pi4 +\lambda\sin \frac\pi4 = 1
+  \iff \frac{\sqrt 2}{2}(1+\lambda) = 1
+  \iff \lambda = \frac{2}{\sqrt 2}-1$$
+  La solution cherchée est $y(x)=\cos x+\left(\frac{2}{\sqrt 2}-1\right)\sin x$
+\end{enumerate}
+
+  Voici les courbes intégrales pour $\lambda=-2,-1,0,\ldots,4$
+  et $\frac{2}{\sqrt 2}-1$ (en gras).
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+ \draw[->,>=latex,thick,gray] (-0.5,0)--(4,0);
+ \draw[->,>=latex,thick,gray] (0,-2.5)--(0,+4.5);
+
+\foreach \k in {-2,-1,0,1,2,3,4}{
+ \draw [thick, color=red!60,samples=100,smooth, domain=0.0:3.14] plot(\x,{cos(\x r) + \k*sin(\x r)});
+}
+\def\k{0.4142}
+ \draw [ultra thick, color=red,samples=100,smooth, domain=0.0:3.14] plot(\x,{cos(\x r) + \k*sin(\x r)});
+
+ \node[below right,gray] at (0,0) {$0$};
+\node[below,gray] at (1,0) {$1$};
+\node[below right,gray] at (3.14,0) {$\pi$};
+\node[left,gray] at (0,1) {$1$};
+\end{tikzpicture}
+\end{center}
+
+\fincorrection
+\finexercice

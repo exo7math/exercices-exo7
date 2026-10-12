@@ -1,0 +1,32 @@
+\exercice{2791, burnol, 2009/12/15}
+\enonce
+\label{ex:burnol1.1.9}
+  Prouver qu'une fonction holomorphe sur un ouvert connexe,
+  de dérivée  identiquement nulle, est constante. Et si
+  l'ouvert n'est pas connexe?
+\finenonce
+\noindication
+\correction
+Pour \'eviter des raisonnements topologiques, supposons dans un premier temps que $\Omega$
+soit un disque, par exemple le disque unit\'e $\Omega =D =D (0,1)$, et montrons que $f$ est constante et \'egale \`a
+$f(0)$. Si $z\in D$, alors le segment $[0,z]\subset D$ (et c'est pour cette raison que l'on a pris $\Omega =D$).
+On peut \'ecrire
+$$f(z)-f(0)=\int_0^z f'(z) \, dz =0.$$
+Seulement, ici il faut expliquer le sens de cette int\'egrale (non connue pour l'instant). Soit $\gamma : [0,1]\to [0,z]$,
+$\gamma (t)=tz$, une param\'erisation du segment $[0,z]$. Alors,
+$$\begin{aligned}
+\int _{0} ^z f'(w)\, dw &= \int _0^1 f'(\gamma (t)) \gamma '(t) \, dt = \int _0^1 f'(tz)z\, dt\\
+&= \int _0^1 \Re \big( f'(tz)z\big) \, dt + i \int _0^1 \Im \big( f'(tz)z\big) \, dt =0.
+\end{aligned}$$
+Pour le cas d'un ouvert connexe $\Omega$ quelconque le pr\'ec\'edent raisonnement montre qu'au voisinage de tout point
+$z_0\in \Omega$ la fonction $f$ est constante. C'est donc une propri\'et\'e ouverte. Autrement dit, si $z_0\in \Omega$
+est un point quelconque, l'ensemble
+$$\mathcal{E} =\{z\in \Omega \, ; \;\; f(z)=f(z_0)\}$$
+est un ouvert. Pour conclure il faut \'etablir que $\mathcal{E}$ est aussi un ferm\'e de $\Omega$ (topologie induite!!).
+Or ceci est \'evident puisque $\mathcal{E} =f^{-1} (\{f(z_0)\})$ et $f$ est continue.
+Notons que $\mathcal{E} \neq \emptyset$ puisque $z_0\in \mathcal{E}$. Les seuls ensembles \`a la fois ouverts et ferm\'es du connexe
+$\Omega$ \'etant l'ensemble vide et $\Omega$, on a $\Omega = \mathcal{E}$. La fonction $f$ est constante sur $\Omega$.
+Si $\Omega$ n'est pas connexe, $f$ peut  prendre diff\'erentes valeurs sur les diff\'erentes composantes
+connexes de $\Omega$.
+\fincorrection
+\finexercice

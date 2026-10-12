@@ -1,0 +1,43 @@
+\exercice{120, bodin, 1998/09/01}
+\video{-Kid1jaNv5A}
+\enonce
+
+Soient $f,g$ deux fonctions de $\Rr$ dans $\Rr$. Traduire
+en termes de quantificateurs les expressions suivantes :
+\begin{enumerate}
+  \item $f$ est major\'ee;
+  \item $f$ est born\'ee;
+  \item $f$ est paire;
+  \item $f$ est impaire;
+  \item $f$ ne s'annule jamais;
+  \item $f$ est p\'eriodique;
+  \item $f$ est croissante;
+  \item $f$ est strictement d\'ecroissante;
+  \item $f$ n'est pas la fonction nulle;
+  \item $f$ n'a jamais les m\^{e}mes valeurs en deux points distincts;
+  \item $f$ atteint toutes les valeurs de $\Nn$;
+  \item $f$ est inf\'erieure \`a $g$;
+  \item $f$ n'est pas inf\'erieure \`a $g$.
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $\exists M \in \Rr \quad \forall x \in \Rr \qquad f(x) \leq M$;
+  \item $\exists M \in \Rr\quad \exists m \in \Rr \quad \forall x \in \Rr \qquad m \leq f(x) \leq M$;
+  \item $\forall x \in \Rr \qquad f(x) = f(-x)$;
+  \item $\forall x \in \Rr \qquad f(-x) = -f(x)$;
+  \item $\forall x \in \Rr \qquad f(x) \not= 0$;
+  \item $\exists a \in \Rr^* \quad \forall x \in \Rr \qquad f(x+a) = f(x)$;
+  \item $\forall (x,y) \in \Rr^2 \qquad (x\leq y \Rightarrow f(x) \leq f(y))$;
+  \item $\forall (x,y) \in \Rr^2 \qquad (x < y \Rightarrow f(x) > f(y))$;
+  \item $\exists x \in \Rr \qquad  f(x) \not= 0$;
+  \item $\forall (x,y) \in \Rr^2 \qquad (x\not= y \Rightarrow f(x) \not= f(y))$;
+  \item $\forall n\in \Nn \quad \exists x \in \Rr \qquad f(x)=n$;
+  \item $\forall x \in \Rr \qquad f(x) \leq g(x)$;
+  \item $\exists x \in \Rr \qquad f(x) > g(x)$.
+\end{enumerate}
+\fincorrection
+\finexercice

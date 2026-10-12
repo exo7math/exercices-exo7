@@ -1,0 +1,61 @@
+\exercice{2560, tahani, 2009/04/01}
+\enonce 
+Soit $f:\mathbb{R}^2
+\rightarrow \mathbb{R}$ donn\'ee par
+$f(t,x)=4\frac{t^3x}{t^4+x^2}$ si $(t,x)\neq (0,0)$ et $f(0,0)=0$.
+On s'interesse \`a l'\'equation diff\'erentielle
+$$x'(t)=f(t,x(t)).$$
+\begin{enumerate}
+\item L'application $f$, est-elle continue ? est-elle localement
+lipschitzienne par rapport à sa seconde variable ? Que peut-on en
+d\'eduire pour l'\'equation $(2)$ ? 
+\item Soit $\varphi$ une
+solution de $(2)$ qui est d\'efinie sur un intervalle $I$ ne
+contenant pas $0$. On d\'efinit une application $psi$ par
+$\varphi(t)=t^2\psi(t), t\in I$. D\'eterminer une \'equation
+diff\'erentielle $(E)$ telle que $\psi$ soit solution de cette
+\'equation, puis r\'esoudre cette \'equation $(E)$. 
+\item Que
+peut-on en d\'eduire pour l'existence et l'unicit\'e de
+l'\'equation diff\'erentielle $(2)$ avec donn\'ee initiale
+$(t_0,x_0)=(0,0)$
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+$f(t,x)=\frac{4t^3x}{t^4+x^2}$ (si $(t,x) \neq (0,0)$) est de
+classe $C^\infty$ en tant que quotient, somme et produit de
+fonctions $C^\infty$.
+\begin{enumerate}
+\item $|f(t,x)|=|2t|.|\frac{2t^2x=}{(t^2)^2+x^2}| \leq 2|t|
+\rightarrow_{(t,x) \rightarrow 0}0=f(0,0)$. $f$ est donc continue
+en $(0,0)$. $f$ n'est pas localement lipschitzienne au voisinage
+de $(0,0)$ car sinon il existerait $k, \alpha, \beta \in
+\mathbb{R}$ tels que $t\in ]-\alpha,\alpha[$, $x\in
+]-\beta,\beta[$ et
+$$|f(t,x)-f(t,0)| \leq k|x-0|$$
+D'o\`u $\frac{4t^3x}{t^4+x^2} \leq kx \Rightarrow
+\frac{4t^3}{t^4+x^2} \leq k \rightarrow \frac{4}{t} \leq k,
+\forall t \in ]0,\alpha[$ ce qui est absurde. Nous ne pouvons pas
+appliquer Cauchy-Lipschitz. 
+\item $(\varphi,I)$ solution de $(2)$
+avec $0\not \in I$, $$\psi(t)=t^{-2}\varphi(t) \Rightarrow
+\psi'(t)=t^{-2}\varphi'(t)-2t^{-3}\varphi(t)$$
+$$\psi'(t)=4t^{-2}\frac{t^3\varphi(t)}{t^4+\varphi^2(t)}-2t^{-1}\psi(t)$$
+d'o\`u en exprimant tout en fonction de $\psi$:
+$$\frac{\psi'(t)(1+\psi^2(t))}{\psi(t)(1-\psi(t))(1+\psi(t))}=\frac{2}{t}$$
+
+Or $\frac{1+\psi^2(t)}{\psi(t)(1-\psi(t))(1+\psi(t))}=
+\frac{1}{\psi(t)}+\frac{1}{1-\psi(t)}-\frac{1}{1+\psi(t)}$ d'o\`u
+$$\psi'(t)(\frac{1}{\psi(t)}+\frac{1}{1-\psi(t)}-\frac{1}{1+\psi(t)})=\frac{2}{t}$$
+En int\'egrant par rapport \`a $t$ on obtient:
+$$ln|\frac{\psi(t)}{1-\psi^2(t)}|=ln(t^2)+c$$
+d'o\`u $$\frac{\psi(t)}{1-\psi(t)}=ct^2.$$ $\psi(t)$ v\'erifie est
+donc une racine de l'\'equation $$ct^2\psi^2(t)+\psi(t)-ct^2=0$$
+et donc $$\psi(t)=\frac{-1 \pm \sqrt{1+4c^2t^4}}{2ct^2}$$ d'o\`u
+$\varphi=\frac{-1 \pm \sqrt{1+4c^2t^4}}{2c}$.
+\end{enumerate}
+\fincorrection
+\finexercice

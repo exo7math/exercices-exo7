@@ -1,0 +1,71 @@
+\exercice{5258, rouget, 2010/07/04}
+\enonce[**]
+Pour $x$ réel, on pose~:
+
+$$A(x)=
+\left(
+\begin{array}{cc}
+\ch x&\sh x\\
+\sh x&\ch x
+\end{array}
+\right)
+.$$
+
+Déterminer $(A(x))^n$ pour $x$ réel et $n$ entier relatif.
+\finenonce
+
+\noindication
+
+\correction
+Soient $x$ et $y$ deux réels.
+
+\begin{align*}\ensuremath
+A(x)A(y)&=\left(
+\begin{array}{cc}
+\ch x&\sh x\\
+\sh x&\ch x
+\end{array}
+\right)\left(
+\begin{array}{cc}
+\ch y&\sh y\\
+\sh y&\ch y
+\end{array}
+\right)=\left(
+\begin{array}{cc}
+\ch x\ch y+\sh x\sh y&\sh x\ch y+\ch x\sh y\\
+\sh x\ch y+\ch x\sh y&\ch x\ch y+\sh x\sh y
+\end{array}
+\right)\\
+ &=\left(
+\begin{array}{cc}
+\ch(x+y)&\sh(x+y)\\
+\sh(x+y)&\ch(x+y)
+\end{array}
+\right).
+\end{align*}
+
+En particulier,
+
+$$A(x)A(-x)=A(-x)A(x)=A(0)=\left(
+\begin{array}{cc}
+1&0\\
+0&1
+\end{array}
+\right)=I_2,$$
+
+et $A(x)$ est inversible d'inverse $A(-x)$.
+
+On a aussi, pour $n$ entier naturel non nul donné~:
+
+$$(A(x))^n=A(x)A(x)...A(x)=A(x+x...+x)=A(nx),$$
+
+ce qui reste clair pour $n=0$ car $A(x)^0=I_2=A(0)$. Enfin, $(A(x))^{-n}=(A(x)^{-1})^n=A(-x)^n=A(-nx)$. Finalement, 
+
+$$\forall n\in\Zz,\;(A(x))^n=A(nx)=\left(
+\begin{array}{cc}
+\ch(nx)&\sh(nx)\\
+\sh(nx)&\ch(nx)
+\end{array}
+\right).$$
+\fincorrection
+\finexercice

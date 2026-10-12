@@ -1,0 +1,66 @@
+\exercice{212, gourio, 2001/09/01}
+\video{t7QwqxS5RzQ}
+\enonce
+
+Montrer que la relation $\mathcal{R}$ d\'{e}finie sur $\Rr$ par :
+$$x\mathcal{R} y\Longleftrightarrow xe^{y}=ye^{x}$$
+est une relation d'\'{e}quivalence.
+Pr\'{e}ciser, pour $x$ fix\'{e} dans $\Rr$, le nombre d'\'{e}l\'{e}ments de
+la classe de $x$ modulo $\mathcal{R}$.
+\finenonce 
+
+\indication
+\begin{enumerate}
+ \item  Pour la transitivit\'e on pourra calculer $xye^z$.
+ \item Poser la fonction $t \mapsto \frac t {e^t}$, apr\`es une \'etude de fonction on calculera le nombre d'ant\'ec\'edents possibles.
+ \end{enumerate}
+\finindication
+
+\correction
+ \begin{enumerate}
+ \item 
+   \begin{itemize}
+   \item Reflexivit\'e : Pour tout $x\in \Rr$, $xe^x=xe^x$ donc $x\mathcal{R}x$.
+   \item Sym\'etrie : Pour $x,y \in \Rr$, si $x\mathcal{R} y$ alors $xe^y=ye^x$ donc 
+$ye^x=xe^y$ donc $y\mathcal{R} x$.
+   \item Transitivit\'e : Soient $x,y,z \in \Rr$ tels que $x\mathcal{R} y$ et $y\mathcal{R} z$,
+alors $xe^y=ye^x$ et $ye^z=ze^y$.
+Calculons $xye^z$ : 
+$$xye^z= x(ye^z) = x(ze^y)= z(xe^y)=z(ye^x)=yze^x.$$
+Donc $xye^z=yze^x$. Si $y \neq 0$ alors en divisant par $y$ on vient de montrer que
+$xe^z=ze^x$ donc $x\mathcal{R} z$ et c'est fini.
+Pour le cas $y=0$ alors $x=0$ et $z=0$ donc $x\mathcal{R} z$ \'egalement.
+   \end{itemize}
+
+ \item Soit $x\in \Rr$ fix\'e. On note $\mathcal{C}(x)$ la classe d'\'equivalence de $x$ modulo $\mathcal{R}$ :
+$$\mathcal{C}(x) := \left\lbrace y \in \Rr \mid y\mathcal{R} x \right\rbrace.$$
+Donc 
+$$\mathcal{C}(x) = \left\lbrace y \in \Rr \mid xe^y = ye^x \right\rbrace.$$
+Soit la fonction $f : \Rr \to \Rr$ d\'efinie par 
+$$f(t) = \frac t {e^t}.$$
+Alors 
+$$\mathcal{C}(x) = \left\lbrace y \in \Rr \mid f(x)=f(y) \right\rbrace.$$
+Autrement dit $\mathcal{C}(x)$ est l'ensemble des $y\in \Rr$ qui par $f$ prennent la m\^eme valeur que $f(x)$ ; en raccourci :
+$$\mathcal{C}(x) = f^{-1}\left( f(x) \right).$$
+
+\'Etudions maintenant la fonction $f$ afin de d\'eterminer le nombre d'ant\'ec\'edents:
+par un calcul de $f'$ on montrer que $f$ est strictement croissante sur $]-\infty,1]$ puis
+strictement d\'ecroissante sur $[1,+\infty[$. De plus en $-\infty$ la limite de $f$ est $-\infty$,
+$f(1) = \frac 1e$, et la limite en $+\infty$ est $0$.
+
+C'est le moment de dessiner le graphe de $f$ !!
+
+   \begin{itemize}
+      \item Pour $x\leqslant 0$ alors $f(x) \in ]-\infty,0]$ et alors $f(x)$ a un seul ant\'ec\'edent.
+
+      \item Pour $x>0$ avec $x\neq 1$ alors $f(x) \in ]0,\frac 1e[$ et alors $f(x)$ a deux ant\'ec\'edents.
+      
+      \item pour $x=1$, alors $f(x) = 1/e$ n'a qu'un seul antécédent.
+   \end{itemize}
+   
+   Bilan : si $x \in {}]0,1[ \cup ]1,+\infty[$ alors $\text{Card\,} \mathcal{C}(x) = \text{Card\,} f^{-1}\left( f(x) \right) = 2$,
+   si $x\leqslant 0$ ou $x=1$ alors $\text{Card\,} \mathcal{C}(x) = \text{Card\,} f^{-1}\left( f(x) \right) = 1$.
+
+ \end{enumerate}
+\fincorrection
+\finexercice

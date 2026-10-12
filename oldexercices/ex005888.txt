@@ -1,0 +1,78 @@
+\exercice{5888, rouget, 2010/10/16}
+\enonce[*** I]
+Pour  $(x,y)\in\Rr^2$, on pose $f(x,y) =\left\{
+\begin{array}{l}
+ \frac{xy(x^2-y^2)}{x^2+y^2}\;\text{si}\;(x,y)\neq(0,0)\\
+\rule{0mm}{5mm}0\;\text{si}\;(x,y)=(0,0)
+\end{array}
+\right.$. Montrer que $f$ est de classe $C^1$ (au moins) sur $\Rr^2$.
+\finenonce
+
+\noindication
+
+\correction
+\textbullet~$f$ est définie sur $\Rr^2$.
+
+\textbullet~$f$ est de classe $C^\infty$ sur $\Rr^2\setminus\{(0,0)\}$ en tant que fraction rationnelle dont le dénominateur ne s'annule pas sur $\Rr^2\setminus\{(0,0)\}$.
+
+\textbullet~\textbf{Continuité en $(0,0)$.} Pour $(x,y)\neq(0,0)$,
+
+\begin{center}
+$|f(x,y)-f(0,0)|= \frac{|xy||x^2-y^2|}{x^2+y^2}\leqslant|xy|\times \frac{x^2+y^2}{x^2+y^2}=|xy|$.
+\end{center}
+
+Comme $|xy|$ tend vers $0$ quand le couple $(x,y)$ tend vers le couple $(0,0)$, on a donc $\displaystyle\lim_{\substack{(x,y)\rightarrow(0,0)\\(x,y)\neq(0,0)}}f(x,y)=f(0,0)$. On en déduit que $f$ est continue en $(0,0)$ et finalement $f$ est continue sur $\Rr^2$.
+
+\begin{center}
+$f$ est de classe $C^0$ au moins sur $\Rr^2$.
+\end{center}
+
+\textbullet~\textbf{Dérivées partielles d'ordre $1$ sur $\Rr^2\setminus\{(0,0)\}$.} $f$ est de classe $C^1$ au moins sur $\Rr^2\setminus\{(0,0)\}$ et pour $(x,y)\neq(0,0)$,
+
+\begin{center}
+$ \frac{\partial f}{\partial x}(x,y)=y \frac{(3x^2-y^2)(x^2+y^2)-(x^3-xy^2)(2x)}{(x^2+y^2)^2}= \frac{y(x^4+4x^2y^2-y^4)}{(x^2+y^2)^2}$,
+\end{center}
+
+D'autre part, pour $(x,y)\neq(0,0)$ $f(x,y)=-f(y,x)$. Donc pour $(x,y)\neq(0,0)$,
+
+\begin{center}
+$ \frac{\partial f}{\partial y}(x,y)=- \frac{\partial f}{\partial x}(y,x)= \frac{x(x^4-4x^2y^2-y^4)}{(x^2+y^2)^2}$.
+\end{center}
+
+\textbullet~\textbf{Existence de $ \frac{\partial f}{\partial x}(0,0)$ et $ \frac{\partial f}{\partial y}(0,0)$.} Pour $x\neq0$,
+
+\begin{center}
+$ \frac{f(x,0)-f(0,0)}{x-0}= \frac{0-0}{x}=0$,
+\end{center}
+
+et donc $\lim_{x \rightarrow 0} \frac{f(x,0)-f(0,0)}{x-0}=0$. Ainsi, $ \frac{\partial f}{\partial x}(0,0)$ existe et $ \frac{\partial f}{\partial x}(0,0)=0$. De même, $ \frac{\partial f}{\partial y}(0,0)=0$. Ainsi, $f$ admet des dérivées partielles premières sur $\Rr^2$ définies par
+
+\begin{center}
+$\forall(x,y)\in\Rr^2$, $ \frac{\partial f}{\partial x}(x,y)=\left\{
+\begin{array}{l}
+ \frac{y(x^4+4x^2y^2-y^4)}{(x^2+y^2)^2}\;\text{si}\;(x,y)\neq(0,0)\\
+0\;\text{si}\;(x,y)=(0,0)
+\end{array}
+\right.$ et $ \frac{\partial f}{\partial y}(x,y)=\left\{
+\begin{array}{l}
+ \frac{x(x^4-4x^2y^2-y^4)}{(x^2+y^2)^2}\;\text{si}\;(x,y)\neq(0,0)\\
+0\;\text{si}\;(x,y)=(0,0)
+\end{array}
+\right.$.
+\end{center}
+
+\textbullet~\textbf{Continuité de $ \frac{\partial f}{\partial x}$ et $ \frac{\partial f}{\partial y}$ en $(0,0)$.} Pour $(x,y)\neq(0,0)$,
+
+\begin{center}
+$\left| \frac{\partial f}{\partial x}(x,y)- \frac{\partial f}{\partial x}(0,0)\right|= \frac{|y||x^4+4x^2y^2-y^4|}{(x^2+y^2)^2}\leqslant|y| \frac{x^4+4x^2y^2+y^4}{(x^2+y^2)^2}\leqslant|y| \frac{2x^4+4x^2y^2+2y^4}{(x^2+y^2)^2}=2|y|$.
+\end{center}
+
+Comme $2|y|$ tend vers $0$ quand $(x,y)$ tend vers $(0,0)$, on en déduit que $\left| \frac{\partial f}{\partial x}(x,y)- \frac{\partial f}{\partial x}(0,0)\right|$ tend vers $0$ quand $(x,y)$ tend vers $(0,0)$. Donc la fonction $ \frac{\partial f}{\partial x}$ est continue en $(0,0)$ et finalement sur $\Rr^2$. Il en est de même de la fonction $ \frac{\partial f}{\partial y}$ et on a montré que
+
+\begin{center}
+\shadowbox{
+$f$ est au moins de classe $C^1$ sur $\Rr^2$.
+}
+\end{center}
+\fincorrection
+\finexercice

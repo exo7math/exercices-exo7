@@ -1,0 +1,25 @@
+\exercice{3244, quercia, 2010/03/08}
+
+\enonce[X MP$^*$ 2004]
+Soit $P\in\C[X]$ de degr{\'e} $d$ dont toutes les racines sont de module
+strictement inf{\'e}rieur {\`a}~$1$. Pour $\omega\in\mathbb{U}$ on note $\overline P$ le polyn{\^o}me dont les
+coefficients sont les conjugu{\'e}s de ceux de~$P$ et $Q(X) = P(X) + \omega X^d\overline P(1/X)$.
+Montrer que les racines de~$Q$ sont de module~$1$.
+\finenonce
+
+\noindication
+
+\correction
+Pour $z\in\mathbb{U}$, on a $Q(z) = 0 \Leftrightarrow {P(z)}/{z^d\overline P(\overline
+z)} = -\omega$. Comme $\overline P(\overline z) = \overline{P(z)}$, les
+deux membres ont m{\^e}me module pour tout~$z\in\mathbb{U}$, il faut et il suffit donc
+que les arguments soient {\'e}gaux modulo $2\pi$.
+Pour $a\in\C$ avec $|a| < 1$, une d{\'e}termination continue de
+$\mathrm{Arg}(e^{i\theta}-a)$ augmente de~$2\pi$ lorsque $\theta$ varie de~$0$ {\`a}~$2\pi$
+donc, vu l'hypoth{\`e}se sur les racines de~$P$, une d{\'e}termination continue
+de $\mathrm{Arg}(P(z)/z^d\overline{P(z)}\,)$ augmente de $2\pi d$ lorsque $\theta$ varie
+de~$0$ {\`a}~$2\pi$. Une telle d{\'e}termination prend donc au moins $d$ fois
+une valeur congrue {\`a} $\mathrm{Arg}(-\omega)$ modulo~$2\pi$, ce qui prouve que $Q$
+admet au moins $d$ racines distinctes dans~$\mathbb{U}$.
+\fincorrection
+\finexercice 

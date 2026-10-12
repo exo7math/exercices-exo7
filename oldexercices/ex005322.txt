@@ -1,0 +1,48 @@
+\exercice{5322, rouget, 2010/07/04}
+\enonce[*** Polynômes $P$ vérifiant $P(\Zz)\subset\Zz$]
+Soit $E$ la partie de $\Cc[X]$ formée des polynômes $P$ vérifiant $\forall a\in\Zz,\;P(a)\in\Zz$.
+\begin{enumerate}
+\item  On pose $P_0=1$ et pour $n$ entier naturel non nul, $P_n=\frac{1}{n!}\prod_{k=1}^{n}(X+k)$ (on peut définir la notation $P_n=C_{X+n}{n}$). Montrer que $\forall n\in\Nn,\;P_n\in E$.
+\item  Montrer que toute combinaison linéaire à coefficients entiers relatifs des $P_n$ est encore un élément de $E$.
+\item  Montrer que $E$ est l'ensemble des combinaisons linéaires à coefficients entiers relatifs des $P_n$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  Déjà, $P_0$ est dans $E$.
+
+Soit $n$ un naturel non nul. $P_n=\frac{1}{n!}(X+1)...(X+n)$ et donc, si $k$ est élément de $\{-1,...,-n\}$, $P_n(k)=0\in\Zz$.
+
+Si $k$ est un entier positif, $P_n(k)=\frac{1}{n!}(k+1)...(k+n)=C_{n+k}^n\in\Zz$.
+
+Enfin, si $k$ est un entier strictement plus petit que $-n$, 
+
+$$P_n(k)=\frac{1}{n!}(k+1)...(k+n)=(-1)^n\frac{1}{n!}(-k-1)...(-k-n)=(-1)^nC_{-k-1}^n\in\Zz.$$
+
+Ainsi, $\forall k\in\Zz,\;P_(k)\in\Zz$, ou encore $P_(\Zz)\subset\Zz$.
+
+\item  Evident
+
+\item  Soit $P\in\Cc[X]\setminus\{0\}$ tel que $\forall k\in\Zz,\;P(k)\in\Zz$ (si $P$ est nul, $P$ est combinaison linéaire à coefficients entiers des $P_k$).
+
+Puisque $\forall k\in\Nn,\;\mbox{deg}(P_k)=k$, on sait que pour tout entier naturel $n$, $(P_k)_{0\leq k\leq n}$ est une base de $\Cc_n[X]$ et donc, $(P_k)_{k\in\Nn}$ est une base de $\Cc[X]$ (tout polynôme non nul ayant un degré $n$, s'écrit donc de manière unique comme combinaison linéaire des $P_k$).
+
+Soit $n=\mbox{deg}P$.
+
+Il existe $n+1$ nombres complexes $a_0$,..., $a_n$ tels que $P=a_0P_0+...+a_nP_n$. Il reste à montrer que les $a_i$ sont des entiers relatifs.
+
+L'égalité $P(-1)$ est dans $\Zz$, fournit~:~$a_0$ est dans $\Zz$.
+
+L'égalité $P(-2)$ est dans $\Zz$, fournit~:~$a_0-a_1$ est dans $\Zz$ et donc $a_1$ est dans $\Zz$.
+
+L'égalité $P(-3)$ est dans $\Zz$, fournit~:~$a_0-2a_1+a_2$ est dans $\Zz$ et donc $a_2$ est dans $\Zz$...
+
+L'égalité $P(-(k+1))$ est dans $\Zz$, fournit~:~$a_0-a_1+...+(-1)^ka_k$ est dans $\Zz$ et si par hypothèse de récurrence, $a_0$,..., $a_{k-1}$ sont des entiers relatifs alors $a_k$ l'est encore.
+
+Tous les coefficients $a_k$ sont des entiers relatifs et $E$ est donc constitué des combinaisons linéaires à coefficients entiers relatifs des $P_k$.
+\end{enumerate}
+\fincorrection
+\finexercice

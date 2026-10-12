@@ -1,0 +1,34 @@
+\exercice{3797, quercia, 2010/03/11}
+\enonce[Série d'autoadjoints positifs]
+
+Soit $H$ un espace de Hilbert et $(u_n)$ une suite d'endomorphismes
+de~$H$ autoadjoints positifs continus telle que la suite
+$(u_0+\dots+u_n)$ est bornée dans~${\cal L}_c(H)$.
+Montrer que pour tout~$x\in H$ la série $\sum_{n=0}^\infty u_n(x)$ est
+convergente.
+
+
+
+\finenonce
+
+\noindication
+
+\correction
+Soit $K = \sup\{\|u_0+\dots+u_n\|\}$ et~$x\in H$.
+On note $v_{p,q} = \sum_{n=p}^q u_n$ pour $p\le q$.
+La série $\sum (u_n(x)\mid x)$ est convergente (termes positifs, sommes
+partielles majorées) donc elle vérifie le critère de Cauchy~:
+$(v_{p,q}(x)\mid x) \to 0$ lorsque $p,q\to\infty$.
+
+Comme $v_{p,q}$ est positif, il vérifie l'inégalité de Cauchy-Schwarz~:
+$$|(v_{p,q}(x)\mid y)|^2 \le (v_{p,q}(x)\mid x)(v_{p,q}(y)\mid y) \le 2K\|y\|^2(v_{p,q}(x)\mid x).$$
+En particulier pour $y=v_{p,q}(x)$ on obtient~: $\|v_{p,q}(x)\|^2 \le 2K(v_{p,q}(x)\mid x)$
+donc la série $\sum u_n(x)$ est de Cauchy.
+
+
+\emph{Remarque :} exemple où $\sum u_n$ ne converge pas dans~${\cal L}_c(H)$~:
+$H = \ell^2(\N)$ et $u_n =$ projection orthogonale sur $<\!e_n\!>$ où $e_n(p) = \delta_{n,p}$.
+$\sum u_n$ converge simplement et non uniformément vers l'identité.
+\fincorrection
+
+\finexercice

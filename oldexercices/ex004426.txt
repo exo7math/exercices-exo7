@@ -1,0 +1,20 @@
+\exercice{4426, quercia, 2010/03/14}
+\enonce[$1/a^{\text{nb de chiffres de }n}$]
+
+Pour $n \in \N^*$ on note $p_n$ le nombre de chiffres de l'écriture décimale
+de $n$ (sans zéros inutiles).
+Soit $a > 0$. \'Etudier la convergence et déterminer la somme éventuelle
+de la série $\sum_{k=1}^\infty \frac1{a^{p_k}}$.
+
+\finenonce
+
+\noindication
+
+\correction
+Regroupement de termes par valeur constante de $p_k$
+         $ \Rightarrow  \sum_{k=1}^\infty \frac1{a^{p_k}}
+         = \sum_{p=1}^\infty \frac{10^p-10^{p-1}}{a^p}
+         = \frac{9}{a-10}$.
+\fincorrection
+
+\finexercice

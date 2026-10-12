@@ -1,11 +1,13 @@
 \exercice{4980, quercia, 2010/03/17}
-\enonce[Groupes d'isotropie]
 
+\enonce[Groupes d'isotropie]
 Déterminer {\it toutes\/} les isométries
 
 \begin{enumerate}
   \item d'un tétraèdre régulier.
+
   \item d'un cube.
+
   \item de deux droites non coplanaires.
 \end{enumerate}
 \finenonce
@@ -14,36 +16,49 @@ Déterminer {\it toutes\/} les isométries
 
 \correction
 \begin{enumerate}
-  \item       $24$ éléments :
-      \halign{ \hskip 5cm #\hfill&\quad(#)\cr
-      identité &1\cr
-      rotations autour de l'axe d'une face &8\cr
-      symétries \% plan médiateur d'une arête &6\cr
-      $\frac12$-tour autour de la perpendiculaire commune à deux arêtes opposées &3\cr
-      $\frac14$-tour autour de la perp. \dots + symétrie \% plan médian &6\cr }
-  \item       $48$ éléments :
-      \halign{ \hskip 5cm #&\hfill#\hfill&\quad(#)\cr
-      identité &&1\cr
-      symétries &\% plan médian d'une face &3\cr
-      &\% plan diagonal d'une face &6\cr
-      &\% axe d'une face &3\cr
-      &\% axe d'une arête &6\cr
-      &\% centre du cube &1\cr
-      rotation &$\pm 2\pi/3$ autour d'une diagonale &8\cr
-      &$\pm \pi/2$ autour de l'axe d'une face &6\cr
-      symétries-rotations &$\pm \pi/2$ \% axe face &6\cr
-      &$\pm \pi/3$ \% diagonale &8\cr }
+  \item \( 24 \) éléments :
+        \begin{center}
+          \begin{tabular}{ll}
+            identité                                                                           & (1) \\
+            rotations autour de l'axe d'une face                                               & (8) \\
+            symétries \% plan médiateur d'une arête                                            & (6) \\
+            \( \frac{1}{2} \)-tour autour de la perpendiculaire commune à deux arêtes opposées & (3) \\
+            \( \frac{1}{4} \)-tour autour de la perp. \dots + symétrie \% plan médian          & (6) \\
+          \end{tabular}
+        \end{center}
 
-  \item       si les droites ne sont pas perpendiculaires :
-      \halign{ \hskip 5cm #\hfill&\quad(#)\cr
-      identité &1\cr
-      $\frac12$-tour autour de la perpendiculaire commune &1\cr
-      $\frac12$-tour autour d'une bissectrice &2\cr }
-      si elles sont perpendiculaires, il y a aussi :
-      \halign{ \hskip 5cm #\hfill&\quad(#)\cr
-      symétrie \% plan contenant une droite et la perp. commune &2\cr
-      symétrie-$\frac14$-tour autour de la perp. commune &2\cr }
+  \item \( 48 \) éléments :
+        \begin{center}
+          \begin{tabular}{lll}
+            identité            &                                            & (1) \\
+            symétries           & \% plan médian d'une face                  & (3) \\
+                                & \% plan diagonal d'une face                & (6) \\
+                                & \% axe d'une face                          & (3) \\
+                                & \% axe d'une arête                         & (6) \\
+                                & \% centre du cube                          & (1) \\
+            rotation            & \( \pm 2\pi/3 \) autour d'une diagonale    & (8) \\
+                                & \( \pm \pi/2 \) autour de l'axe d'une face & (6) \\
+            symétries-rotations & \( \pm \pi/2 \) \% axe face                & (6) \\
+                                & \( \pm \pi/3 \) \% diagonale               & (8) \\
+          \end{tabular}
+        \end{center}
+
+  \item si les droites ne sont pas perpendiculaires :
+        \begin{center}
+          \begin{tabular}{ll}
+            identité                                                    & (1) \\
+            \( \frac{1}{2} \)-tour autour de la perpendiculaire commune & (1) \\
+            \( \frac{1}{2} \)-tour autour d'une bissectrice             & (2) \\
+          \end{tabular}
+        \end{center}
+        si elles sont perpendiculaires, il y a aussi :
+        \begin{center}
+          \begin{tabular}{ll}
+            symétrie \% plan contenant une droite et la perp. commune  & (2) \\
+            symétrie-\( \frac{1}{4} \)-tour autour de la perp. commune & (2) \\
+          \end{tabular}
+        \end{center}
 \end{enumerate}
- \fincorrection
+\fincorrection
 
 \finexercice

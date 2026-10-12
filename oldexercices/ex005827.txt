@@ -1,0 +1,33 @@
+\exercice{5827, rouget, 2010/10/16}
+\enonce[***]
+Démontrer que toute équation du second degré symétrique en $x$, $y$ et $z$ est l'équation d'une surface de révolution (une surface $(\mathcal{S})$ est dite de révolution d'axe $(\mathcal{D})$ si et seulement si $(\mathcal{S})$ est invariante par toute rotation d'axe $(\mathcal{D})$).
+
+\finenonce
+
+\noindication
+
+\correction
+Soit $(\mathcal{S})$ une surface du second degré d'équation $f(x,y,z)=0$ où $f$ est symétrique en $x$, $y$ et $z$. Soient $\sigma_1$, $\sigma_2$ et $\sigma_3$ les trois fonctions symétriques élémentaires en $x$, $y$ et $z$.
+
+Puisque $f$ est symétrique en $x$, $y$ et $z$, $f$ est un polynôme en $\sigma_1$, $\sigma_2$ et $\sigma_3$. $f$ est d'autre part un polynôme de degré $2$ en $x$, $y$ et $z$ et donc 
+
+\begin{center}
+il existe $(a,b,c,d)\in\Rr^4$ avec $(a,b)\neq(0,0)$ tel que $f = a\sigma_1^2+b\sigma_2+c\sigma_1+d$.
+\end{center}
+
+Réciproquement, si $f$ est de la forme ci-dessus, alors $f$ est symétrique en $x$, $y$ et $z$.
+
+Puisque $\sigma_2 = xy+yz+zx =\frac{1}{2}((x+y+z)^2-(x^2+y^2+z^2))$, $(\mathcal{S})$ admet une une équation cartésienne de la forme :
+
+\begin{center}
+$\left(a+\frac{b}{2}\right)(x+y+z)^2-b(x^2+y^2+z^2)+c(x+y+z)+d = 0$ où $(a,b)\neq(0,0)$.
+\end{center}
+
+Soit $(\mathcal{D})$ la droite passant par $O$ dirigée par $\overrightarrow{n}=\overrightarrow{i}+\overrightarrow{j}+\overrightarrow{k}$ ($\overrightarrow{n}$ est vecteur normal à tout plan d'équation $x+y+z = k$, $k\in\Rr$) et soit $r$ une rotation quelconque d'axe $(\mathcal{D})$.
+
+Si $M$ est un point de coordonnées $(x,y,z)$ et $M'=r(M)$ a pour coordonnées $(x',y',z')$ alors $x+y+z=x'+y'+z'$ car $M$ et $M'$ sont dans un plan perpendiculaire à $(\mathcal{D})$
+et $x^2+y^2+z^2=x'^2+y'^2+z'^2$ car une rotation est une isométrie et car $r(O) = O$.
+
+Finalement, pour toute rotation $r$ d'axe $(\mathcal{D})$, $M\in(\mathcal{S})\Leftrightarrow r(M)\in(\mathcal{S})$ et donc la surface $(\mathcal{S})$ est une surface de révolution d'axe $(\mathcal{D})$.
+\fincorrection
+\finexercice

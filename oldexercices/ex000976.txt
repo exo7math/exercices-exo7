@@ -1,0 +1,36 @@
+\exercice{976, gourio, 2001/09/01}
+\video{yivtpWQkPFg}
+\enonce
+Soit $E={\Rr}_{n}[X]$ l'espace vectoriel des polyn\^{o}mes de degr\'{e} $%
+\leq n$, et $f:E\rightarrow E$ d\'{e}finie par:
+$$f(P)=P+(1-X)P'. $$
+Montrer que $f$ est une application linéaire et donner une base de $\Im f$ et de $\ker f.$
+\finenonce 
+
+\indication
+$P'$ désigne la dérivée de $P$.
+Pour trouver le noyau, résoudre une équation différentielle.
+Pour l'image calculer les $f(X^k)$.
+\finindication
+
+\correction
+\begin{enumerate}
+  \item $f$ est bien lin\'eaire...
+  \item Soit $P$ tel que $f(P)=0$. Alors $P$ v\'erifie l'\'equation diff\'erentielle
+$$P+(1-X)P'=0.$$ Dont la solution est $P = \lambda(X-1)$, $\lambda \in \Rr$.
+Donc $\ker f$ est de dimension $1$ et une base est donn\'ee par un seul vecteur : $X-1$.
+
+\item Par le th\'eor\`eme du rang la dimension de l'image est :
+$$\dim \Im f = \dim \Rr_n[X]-\dim \ker f = (n+1) - 1 = n.$$
+Il faut donc trouver $n$ vecteurs lin\'eairement ind\'ependants dans $\Im f$.
+\'Evaluons $f(X^k)$, alors 
+$$f(X^k) = (1-k)X^k+kX^{k-1}.$$
+Cela donne $f(1)=1, f(X)=1, f(X^2)=-X^2+2X,...$
+on remarque que pour $k= 2,\ldots n$, $f(X^k)$ est de degr\'e $k$ sans terme constant.
+Donc l'ensemble 
+$$\big\{ f(X), f(X^2), \ldots, f(X^n)\big\}$$
+est une famille de $n$ vecteurs, appartenant \`a $\Im f$, et libre (car les degr\'es sont distincts).
+Donc ils forment une base de $\Im f$.
+\end{enumerate}
+\fincorrection
+\finexercice

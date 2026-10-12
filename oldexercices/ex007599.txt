@@ -1,0 +1,33 @@
+\exercice{7599, mourougane, 2021/08/10}
+\enonce[Intégrales]
+\begin{enumerate}
+\item Paramétrer le cercle unité parcouru dans le sens trigonométrique.
+
+\item Calculer à l'aide du paramétrage précédent $\int_{\partial\Delta} \frac{\cosh z}{z} dz$.
+
+\item La fonction $\frac{\cosh(z)}{z}$ admet-elle une primitive sur $\Cc^\times$ ? Si oui, l'expliciter.
+
+% \item Reprendre les questions précédentes avec la fonction $\frac{\sinh (z)}{z}$.
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+\item L'application 
+$$\begin{array}{cccc}
+  \gamma :& [0,2\pi[ &\longrightarrow & \Cc\\ & \theta &\longmapsto& e^{i\theta}
+ \end{array}$$
+est un paramétrage du cercle unité du plan complexe euclidien parcouru dans le sens trigonométrique.
+\item Comme le rayon de convergent de la série qui définit $\cosh$ est infini, 
+la série de fonctions $\sum_{n=0}^{+\infty} \frac{z^{2n-1}}{(2n)!}$ est normalement donc uniformément convergente sur le cercle unité vers
+la fonction $\frac{\cosh z}{z}$.
+Par conséquent, 
+\begin{eqnarray*}\int_{\partial\Delta} \frac{\cosh z}{z} dz&=&\sum_{n=0}^{+\infty} \int_{\partial\Delta}\frac{z^{2n-1}}{(2n)!}
+=\sum_{n=0}^{+\infty} \int_0^{2\pi}\frac{(\gamma(\theta))^{2n-1}}{(2n)!}\gamma'(\theta)d\theta\\
+&=&\sum_{n=0}^{+\infty} \int_0^{2\pi} i e^{i(2n)\theta} d\theta=2i\pi.
+\end{eqnarray*}
+\item Comme l'intégrale de la fonction $\frac{\cosh(z)}{z}$ sur le chemin fermé $\partial\Delta$ de $\Cc^\times$ n'est pas nulle,
+la fonction $\frac{\cosh(z)}{z}$ n'admet pas de primitive sur $\Cc^\times$.
+\end{enumerate}
+\fincorrection
+\finexercice

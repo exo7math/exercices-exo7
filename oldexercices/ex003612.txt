@@ -1,0 +1,32 @@
+\exercice{3612, quercia, 2010/03/10}
+\enonce[Recherche de sev stables]
+
+Soit $A = \begin{pmatrix} 1 &1 &\phantom-0 \cr -3 &-2 &0 \cr 0 &0 &1 \cr \end{pmatrix}$.
+
+\begin{enumerate}
+  \item Déterminer les sev de $\R^3$ stables pour l'endomorphisme associé à $A$.
+    
+
+  \item Quelles sont les matrices réelles commutant avec $A$ ?
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Valeurs propres : $1,j,j^2$.
+    sev stables : $\{\vec 0\}$, vect$\{\vec e_3\}$, vect$\{\vec e_1,\vec e_2\}$
+    et $\R^3$.
+  \item {$\left.\vcenter{\halign{&$#$\hfil\cr
+    AB = BA                     & \Rightarrow  \phi_B(\vec e_3) = \lambda\vec e_3       \cr
+    {}^t\!A{}^tB = {}^tB{}^t\!A & \Rightarrow  \phi_{{}^tB}(\vec e_3) = \lambda\vec e_3 \cr}
+    }\right\rbrace  \Rightarrow  B = 
+    \begin{pmatrix} a+\mu &a       &0       \cr
+                                     -3a   &-2a+\mu &0       \cr
+                                      0    &0       &\lambda \cr \end{pmatrix}$.}
+\end{enumerate}
+ \fincorrection
+
+\finexercice

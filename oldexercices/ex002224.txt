@@ -1,0 +1,27 @@
+\exercice{2224, matos, 2008/04/23}
+\enonce[Factorisation LU d'une matrice bande] 
+ 
+Montrer que la factorisation LU pr\'eserve la structure des matrices bande au sens suivant : 
+$$a_{ij}=0 \mbox{ pour } |i-j| \geq p \Rightarrow \left\{ \begin{array}{ll} 
+l_{ij}=0 & \mbox{ pour } i-j \geq p\\ 
+u_{ij}=0 & \mbox{ pour } j-i \geq p 
+\end{array}\right.$$ 
+\finenonce 
+
+\noindication
+
+\correction
+Montrons par r\'ecurrence que $A_n=U$ est une matrice bande.
+
+$A_1=A, \quad A_{k+1}=L_kA_k= L_kL_{k-1} \cdots L_1A, \quad k=1,\cdots , n-1.$
+
+Supposons que $A_k$ est une matrice bande i.e., $a_{ij}^k=0$ pour $|i-j|\geq p$ et montrons que $A_{k+1}$ est une matrice bande.
+$$a_{ij}^{k+1}=a_{ij}^k-\frac{a_{ik}^k a_{kj}^k}{a_{kk}^k}$$
+Soit $|i-j|\geq p\Leftrightarrow |(i-k)-(j-k)|\geq p$. On consid\`ere deux cas:
+\begin{itemize}
+\item $k+1\leq i\leq n$ et $k\leq j\leq n$. Alors $i-k\geq p$ ou $j-k\geq p$ $\Rightarrow a_{ik}^ka_{kj}^k=0\Rightarrow a_{ij}^{k+1}=a_{ij}^k=0$
+\item $i\leq k$ ou $j\leq k-1$ alors $ a_{ij}^{k+1}=a_{ij}^k=0$
+\end{itemize}
+donc $A_{k+1}$ est une matrice bande et $U$ est une matrice bande. On a $A=LU$ et la matrice triangulaire inf\'erieure $L$ a pour \'el\'ements $l_{ij}=a_{ij}^j/a_{jj}^j,\quad j\leq i\leq n$. Toutes les matrices $ A_j$ \'etant des matrices bandes on a $a_{ij}^j=0$ pour $i-j\geq p\Rightarrow l_{ij}=0$ pour $i-j\geq p$.
+\fincorrection
+\finexercice

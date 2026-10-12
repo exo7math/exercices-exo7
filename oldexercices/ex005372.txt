@@ -1,0 +1,30 @@
+\exercice{5372, rouget, 2010/07/06}
+\enonce[***I]
+Calculer $\mbox{det}(\mbox{com}A)$ en fonction de $\mbox{det}A$ puis étudier le rang de $\mbox{com}A$ en fonction du rang de $A$.
+
+\finenonce
+
+\noindication
+
+\correction
+On a toujours $A\times{^t}\mbox{com}A=(\mbox{det}A)I_n$ et donc 
+
+$$(\mbox{det}A)(\mbox{det}(\mbox{com}A))=(\mbox{det}A)(\mbox{det}(^t\mbox{com}A))=\mbox{det}(\mbox{det}A\;I_n)=(\mbox{det}A)^n.$$
+\textbullet~Si $\mbox{det}A\neq0$, on obtient $\mbox{det}(\mbox{com}A)=(\mbox{det}A)^{n-1}$.
+\textbullet~Si $\mbox{det}A=0$, alors $A{^t\mbox{com}A}=0$ et $\mbox{com}A$ n'est pas inversible car sinon, $A=0$ puis $\mbox{com}A=0$ ce qui est absurde. Donc, $\mbox{det}(\mbox{com}A)=0$. Ainsi, dans tous les cas,
+
+\begin{center}
+\shadowbox{
+$\forall A\in M_n(\Cc),\;\mbox{det}(\mbox{com}A)=(\mbox{det}A)^{n-1}$.
+}
+\end{center}
+\textbullet~Si $\mbox{rg}A=n$, alors  $\mbox{com}A\in GL_n(\Kk)$ (car $\mbox{det}(\mbox{com}A)\neq0$) et $\mbox{rg}(\mbox{com}A)=n$.
+\textbullet~Si $\mbox{rg}A\leq n-2$, alors tous les mineurs de format $n-1$ sont nuls et $\mbox{com}A=0$. Dans ce cas, $\mbox{rg}(\mbox{com}A)=0$.
+\textbullet~Si $\mbox{rg}A=n-1$, il existe un mineur de format $n-1$ non nul et $\mbox{com}A\neq0$. Dans ce cas, $1\leq\mbox{rg}(\mbox{com}A)\leq n-1$.
+Plus précisément, 
+$$A{^t\mbox{com}A}=0\Rightarrow\mbox{com}A{^tA}=0\Rightarrow\mbox{Im}({^tA})\subset\mbox{Ker}(\mbox{com}A)
+\Rightarrow\mbox{dim}(\mbox{Ker}(\mbox{com}A))\geq\mbox{rg}({^tA})=\mbox{rg}A=n-1\Rightarrow\mbox{rg}(\mbox{com}A)\leq1,$$
+et finalement si $\mbox{rg}A=n-1$, $\mbox{rg}(\mbox{com}A)=1$.
+
+\fincorrection
+\finexercice

@@ -1,28 +1,23 @@
 \exercice{1147, barraud, 2003/09/01}
 
 \enonce
-  Soient $a,b,c$ trois réels et $\Delta_{n}$ le déterminant de taille
-  $n$ suivant~:
-$$
-\Delta_{n}=\left\vert
+Soient \( a,b,c \) trois réels et \( \Delta_n \) le déterminant de taille \( n \) suivant :
+\[
+  \Delta_n = \left\vert
   \begin{array}{c@{\ }c@{}c@{\ }c}
-   a     & b      &        & 0
-\\[-1ex]
-   c     & \ddots & \ddots &                  \\[-2ex]
-         & \ddots & \ddots & b \\[-1ex]
-   0 & & c      & a \\
-\end{array}
-\right\vert
-$$
+    a & b &  & 0
+    \\[-1ex] c & \ddots & \ddots & \\[-2ex] & \ddots & \ddots & b \\[-1ex] 0 & & c & a
+  \end{array}
+  \right\vert
+\]
 \begin{enumerate}
-\item 
-On pose $\Delta_{0}=1$, $\Delta_{1}=a$. Montrer que $\forall n\in\N,
-\Delta_{n+2}=a\Delta_{n+1}-bc\Delta_{n}$.
+  \item On pose \( \Delta_0 = 1 \), \( \Delta_1 = a \). Montrer que \( \forall n\in\Nn,
+        \Delta_{n+2} = a\Delta_{n+1}-bc\Delta_n \).
 
-\item 
-On suppose que $a^{2}=4bc$. Montrer par récurrence que~: 
-$$\forall
-n\in\N, \Delta_{n}=(n+1)\,\frac{a^{n}}{2^{n}}$$
+  \item On suppose que \( a^2 = 4bc \). Montrer par récurrence que :
+        \[
+          \forall n\in\Nn, \Delta_n = (n+1)\,\frac{a^n}{2^n}
+        \]
 \end{enumerate}
 \finenonce
 
@@ -31,4 +26,3 @@ n\in\N, \Delta_{n}=(n+1)\,\frac{a^{n}}{2^{n}}$$
 \nocorrection
 
 \finexercice
-

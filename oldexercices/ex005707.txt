@@ -1,0 +1,61 @@
+\exercice{5707, rouget, 2010/10/16}
+\enonce[*** I]
+Développement limité à l'ordre $4$ de $\sum_{k=n+1}^{+\infty}\frac{1}{k^2}$ quand $n$ tend vers l'infini.
+\finenonce
+
+\noindication
+
+\correction
+Pour $n\in\Nn^*$, posons $R_n=\sum_{k=n+1}^{+\infty}\frac{1}{k^2}$. Puisque la série de terme général $\frac{1}{k^2}$, $k\geqslant 1$, converge, la suite $(R_n)$ est définie et tend vers $0$ quand $n$ tend vers $+\infty$.
+
+$0<\frac{1}{k^2}\underset{k\rightarrow+\infty}{\sim}\frac{1}{k(k-1)}=\frac{1}{k-1}-\frac{1}{k}$  et puisque la série de terme général $\frac{1}{k^2}$ converge, la règle de l'équivalence des restes de séries à termes positifs convergentes permet d'affirmer que
+
+\begin{align*}\ensuremath
+R_n&= \sum_{k=n+1}^{+\infty}\frac{1}{k^2}\underset{n\rightarrow+\infty}{\sim} \sum_{k=n+1}^{+\infty}\left(\frac{1}{k-1}-\frac{1}{k}\right)\\
+ &=\lim_{N \rightarrow +\infty}\sum_{k=n+1}^{N}\left(\frac{1}{k-1}-\frac{1}{k}\right)\;(\text{surtout ne pas décomposer en deux sommes})\\
+ &=\lim_{N \rightarrow +\infty}\left(\frac{1}{n}-\frac{1}{N}\right)\;(\text{somme télescopique})\\
+ &=\frac{1}{n} 
+\end{align*}
+
+ou encore $R_n\underset{n\rightarrow+\infty}{=}\frac{1}{n}+o\left(\frac{1}{n}\right)$.
+
+Plus précisément, pour $n\in\Nn^*$, $R_n-\frac{1}{n}=\sum_{k=n+1}^{+\infty}\frac{1}{k^2}-\sum_{k=n+1}^{+\infty}\frac{1}{k(k-1)}=-\sum_{k=n+1}^{+\infty}\frac{1}{k^2(k-1)}$.
+
+Or $-\frac{1}{k^2(k-1)}+\frac{1}{k(k-1)(k-2)}=\frac{2}{k^2(k-1)(k-2)}$ puis
+
+$\frac{2}{k^2(k-1)(k-2)}-\frac{2}{k(k-1)(k-2)(k-3)}=-\frac{6}{k^2(k-1)(k-2)(k-3)}$ et donc
+
+\begin{align*}\ensuremath
+R_n&=\frac{1}{n}-\sum_{k=n+1}^{+\infty}\frac{1}{k^2(k-1)}=\frac{1}{n}-\sum_{k=n+1}^{+\infty}\frac{1}{k(k-1)(k-2)}+\sum_{k=n+1}^{+\infty}\frac{2}{k^2(k-1)(k-2)}\\
+ &=\frac{1}{n}-\sum_{k=n+1}^{+\infty}\frac{1}{k(k-1)(k-2)}+\sum_{k=n+1}^{+\infty}\frac{2}{k(k-1)(k-2)(k-3)}-\sum_{k=n+1}^{+\infty}\frac{6}{k^2(k-1)(k-2)(k-3)}
+\end{align*}
+
+Ensuite  $\sum_{k=n+1}^{+\infty}\frac{1}{k^2(k-1)(k-2)(k-3)}\underset{n\rightarrow+\infty}{\sim}\sum_{k=n+1}^{+\infty}\frac{1}{k^5}\underset{n\rightarrow+\infty}{\sim}\frac{1}{4n^4}$ ou encore $-\sum_{k=n+1}^{+\infty}\frac{6}{k^2(k-1)(k-2)(k-3)}\underset{n\rightarrow+\infty}{=}-\frac{3}{2n^4}+o\left(\frac{1}{n^4}\right)$. Puis
+
+\begin{align*}\ensuremath
+\sum_{k=n+1}^{+\infty}\frac{1}{k(k-1)(k-2)}&=\lim_{N \rightarrow +\infty}\frac{1}{2}\sum_{k=n+1}^{N}\left(\frac{1}{(k-1)(k-2)}-\frac{1}{k(k-1)}\right)=\lim_{N \rightarrow +\infty}\frac{1}{2}\left(\frac{1}{n(n-1)}-\frac{1}{N(N-1)}\right)=\frac{1}{2n(n-1)}\\
+ &=\frac{1}{2n^2}\left(1-\frac{1}{n}\right)^{-1}\underset{n\rightarrow+\infty}{=}\frac{1}{2n^2}+\frac{1}{2n^3}+\frac{1}{2n^4}+o\left(\frac{1}{n^4}\right)
+\end{align*}
+
+et
+
+\begin{align*}\ensuremath
+\sum_{k=n+1}^{+\infty}\frac{2}{k(k-1)(k-2)(k-3)}&=\lim_{N \rightarrow +\infty}\frac{2}{3}\sum_{k=n+1}^{N}\left(\frac{1}{(k-1)(k-2)(k-3)}-\frac{1}{k(k-1)(k-2)}\right)\\
+ &=\lim_{N \rightarrow +\infty}\frac{2}{3}\left(\frac{1}{n(n-1)(n-2)}-\frac{1}{N(N-1)(N-2)}\right)=\frac{2}{3n(n-1)(n-2)}\\
+ &=\frac{2}{3n^3}\left(1-\frac{1}{n}\right)^{-1}\left(1-\frac{2}{n}\right)^{-1}\underset{n\rightarrow+\infty}{=}\frac{2}{3n^3}\left(1+\frac{1}{n}+o\left(\frac{1}{n}\right)\right)\left(1+\frac{2}{n}+o\left(\frac{1}{n}\right)\right)\\
+  &\underset{n\rightarrow+\infty}{=}\frac{2}{3n^3}+\frac{2}{n^4}+o\left(\frac{1}{n^4}\right)
+\end{align*}
+
+et finalement
+
+\begin{center}
+$R_n\underset{n\rightarrow+\infty}{=}\frac{1}{n}-\left(\frac{1}{2n^2}+\frac{1}{2n^3}+\frac{1}{2n^4}\right)+\left(\frac{2}{3n^3}+\frac{2}{n^4}\right)-\frac{3}{2n^4}+o\left(\frac{1}{n^4}\right)\underset{n\rightarrow+\infty}{=}\frac{1}{n}-\frac{1}{2n^2}+\frac{1}{6n^3}+o\left(\frac{1}{n^4}\right)$.
+\end{center}
+
+\begin{center}
+\shadowbox{
+$\sum_{k=n+1}^{+\infty}\frac{1}{k^2}\underset{n\rightarrow+\infty}{=}\frac{1}{n}-\frac{1}{2n^2}+\frac{1}{6n^3}+o\left(\frac{1}{n^4}\right)$.
+}
+\end{center}
+\fincorrection
+\finexercice

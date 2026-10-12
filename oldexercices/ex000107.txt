@@ -1,0 +1,63 @@
+\exercice{107, bodin, 1998/09/01}
+\video{ZCLCoGR3hcc}
+\enonce
+ Soit  $f$  une application de  ${\Rr}$  dans
+${\Rr}$. Nier, de la mani\`ere la plus pr\' ecise possible, les \'
+enonc\' es qui suivent :
+\begin{enumerate}
+    \item Pour tout  $x\in {\Rr}\ f(x)\leq 1$.
+    \item L'application  $f$  est croissante.
+    \item L'application  $f$  est croissante et positive.
+    \item Il existe  $x\in {\Rr}^+$  tel que  $f(x)\leq 0$.
+    \item  Il existe $x\in \Rr$ tel que quel que soit $y\in \Rr$, si $x<y$ alors $f(x)>f(y)$.
+\end{enumerate}
+\noindent On ne demande pas de d\' emontrer quoi que ce soit, juste d'\' ecrire le contraire
+d'un \' enonc\' e.
+
+\finenonce 
+
+\noindication
+
+\correction
+Dans ce corrig\'e, nous donnons une justification, ce qui n'\'etait
+pas demand\'e.
+\begin{enumerate}
+\item Cette assertion se d\'ecompose de la mani\`ere suivante : ( Pour tout $x\in
+  {\Rr}$) ($f(x)\leq 1$). La n\'egation de ``( Pour tout $x\in
+  {\Rr}$)" est ``Il existe $x\in {\Rr}$" et la n\'egation de ``($f(x)\leq 1$)" est
+$ f(x)>1$. Donc la n\'egation de l'assertion compl\`ete est : ``Il
+existe $x\in {\Rr},  f(x)>1$".
+
+\item Rappelons comment se traduit l'assertion ``L'application $f$ est
+  croissante" : ``pour tout couple de r\'eels $(x_1,x_2)$, si $x_1\leq x_2$
+  alors $f(x_1) \leq f(x_2)$". Cela se d\'ecompose en : ``(pour tout couple de
+  r\'eels $x_1$ et $x_2$) ($x_1\leq x_2$ implique $f(x_1) \leq f(x_2)$)".
+La n\'egation de la premi\`ere partie est : ``(il existe un couple de
+r\'eels $(x_1,x_2)$)" et la n\'egation de la deuxi\`eme partie est :
+``($x_1\leq x_2$ et $f(x_1) > f(x_2)$)". Donc la n\'egation de
+l'assertion compl\`ete est : ``Il existe $x_1\in \Rr$ et $x_2\in
+\Rr$ tels que $x_1 \leq x_2$ et $f(x_1) > f(x_2)$".
+
+\item La n\'egation est : ``l'application $f$ n'est pas croissante ou n'est pas
+  positive". On a d\'ej\`a traduit ``l'application $f$ n'est pas croissante",
+  traduisons ``l'application $f$ n'est pas positive" : ``il existe $x \in \Rr,
+  f(x)<0$". Donc la n\'egation de l'assertion compl\`ete est : ``
+Il existe $x_1\in \Rr$ et $x_2\in \Rr$ tels que $x_1<x_2$ et
+$f(x_1) \geq f(x_2)$, ou il existe $x \in \Rr,
+  f(x)<0$".
+
+\item Cette assertion se d\'ecompose de la mani\`ere suivante : ``(Il existe $x\in
+  {\Rr}^+$) ($f(x)\leq 0$)". La n\'egation de la premi\`ere partie est : ``(pour
+  tout $x\in  {\Rr}^+$)", et celle de la seconde est :``($f(x)> 0$)".
+  Donc la n\'egation de l'assertion compl\`ete est : ``Pour tout $x\in {\Rr}^+$,  $f(x)> 0$".
+
+\item Cette assertion se d\'ecompose de la mani\`ere suivante : 
+``($\exists x \in {\Rr}$)($\forall y \in {\Rr}$)($ x<y \Rightarrow f(x)>f(y)$)".  
+La n\'egation de la premi\`ere partie est ``($\forall x \in  {\Rr}$)", celle de la
+seconde est ``($\exists y \in {\Rr}$)", et celle de la troisi\`eme est
+``($ x<y \mathrm{\ et\ } f(x)\leq f(y)$)". Donc la n\'egation de
+l'assertion compl\`ete est : `` $\forall x \in {\Rr}, \exists y \in
+{\Rr} \text{ tels que } x<y \text{ et } f(x)\leq f(y)$".
+\end{enumerate}
+\fincorrection
+\finexercice

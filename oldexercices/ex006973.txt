@@ -1,0 +1,45 @@
+\exercice{6973, blanc-centi, 2014/05/06}
+\video{70pEydvJEw4}
+\enonce
+Montrer que pour tout $x>0$, on a
+$$\Arctan\left(\frac{1}{2x^2}\right)=\Arctan\left(\frac{x}{x+1}\right)-\Arctan\left(\frac{x-1}{x}\right).$$
+En déduire une expression de $\displaystyle S_n=\sum_{k=1}^n\Arctan\left(\frac{1}{2k^2}\right)$ 
+et calculer $\displaystyle\lim_{n\to +\infty}S_n$.
+\finenonce 
+
+\indication
+Dériver la différence des deux expressions.
+\finindication
+
+\correction
+Posons $f(x)=\Arctan\left(\frac{1}{2x^2}\right)-\Arctan\left(\frac{x}{x+1}\right)+\Arctan\left(\frac{x-1}{x}\right)$ 
+pour tout $x>0$. La fonction $f$ est dérivable, et
+\begin{eqnarray*}
+f'(x)
+ &=& \frac{-\frac{2}{2x^3}}{1+\left(\frac{1}{2x^2}\right)^2}-
+\frac{\frac{1}{(1+x)^2}}{1+\left( \frac{x}{x+1} \right)^2}
++\frac{\frac{1}{x^2}}{1+\left( \frac{x-1}{x} \right)^2}\\
+ &=& \frac{-4x}{4x^4+1}-\frac{1}{(1+x)^2+x^2}+\frac{1}{x^2+(x-1)^2}\\
+ &=& \frac{-4x}{4x^4+1}+\frac{-\big(x^2+(x-1)^2\big)+\big((1+x)^2+x^2\big)}{\big((1+x)^2+x^2\big)\big(x^2+(x-1)^2\big)}\\
+ &=& 0
+\end{eqnarray*}
+Ainsi $f$ est une fonction constante. 
+Or $f(x)\xrightarrow[x\to +\infty]{}\Arctan 0-\Arctan 1+\Arctan 1=0$. Donc la constante vaut $0$, 
+d'où l'égalité cherchée. 
+
+Alors :
+\begin{eqnarray*}
+S_n
+ &=&\sum_{k=1}^n\Arctan\left(\frac{1}{2k^2}\right)\\
+ &=&\sum_{k=1}^n\Arctan\left(\frac{k}{k+1}\right)-\sum_{k=1}^n\Arctan\left(\frac{k-1}{k}\right)
+ \quad \text{(par l'identité prouvée)}\\
+ &=&\sum_{k=1}^n\Arctan\left(\frac{k}{k+1}\right)-\sum_{k'=0}^{n-1}\Arctan\left(\frac{k'}{k'+1}\right)
+ \quad \text{(en posant $k'=k-1$)}\\
+ &=&\Arctan\left(\frac{n}{n+1}\right)-\Arctan\left(\frac{0}{0+1}\right)
+ \quad \text{(les sommes se simplifient)}\\
+ &=&\Arctan\left(1-\frac{1}{n+1}\right)
+ \quad \text{(car $\tfrac{n}{n+1} = 1-\tfrac{1}{n+1}$)} \\
+\end{eqnarray*} 
+Ainsi $S_n\xrightarrow[n\to +\infty]{}\Arctan 1=\frac{\pi}{4}$.
+\fincorrection
+\finexercice

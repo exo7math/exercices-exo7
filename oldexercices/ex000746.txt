@@ -1,0 +1,27 @@
+\exercice{746, bodin, 1998/09/01}
+\enonce
+D\'emontrer les in\'egalit\'es suivantes :
+$$
+\Arcsin a < \frac{a}{\sqrt{1-a^2}} \quad \text{ si } 0<a<1 ;
+$$
+$$
+\Arctan a > \frac{a}{1+a^2} \quad  \text{ si } a>0.
+$$
+\finenonce 
+
+\indication
+On pourra \'etudier les fonctions d\'efinies par la diff\'erence des deux termes de chaque in\'egalit\'e.
+\finindication
+
+\correction
+\begin{enumerate}
+    \item Soit $f(a) = \Arcsin a - \frac{a}{\sqrt{1-a^2}}$ sur $]0,1[$.
+Alors $f'(a) = \frac{1}{\sqrt{1-a^2}} - \frac{1}{\sqrt{1-a^2}(1-a^2)} = \frac{1}{\sqrt{1-a^2}}\cdot \frac{-a^2}{1-a^2}$
+donc $f'(a) \leq 0$. Ainsi $f$ est strictement décroissante et $f(0)=0$
+donc $f(a) < 0$ pout tout $a \in ]0,1[$.
+  \item Si $g(a) = \Arctan a - \frac{a}{1+a^2}$
+alors $g'(a) = \frac1{1+a^2}-\frac{1-a^2}{(1+a^2)^2}=\frac{2a^2}{(1+a^2)^2} > 0$.
+Donc $g$ est strictement croissante et $g(0) = 0$ donc $g$ est strictement positive sur $]0,+\infty[$.
+\end{enumerate}
+\fincorrection
+\finexercice

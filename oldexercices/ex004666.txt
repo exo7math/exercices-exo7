@@ -1,0 +1,38 @@
+\exercice{4666, quercia, 2010/03/14}
+\enonce[Ens Lyon MP$^*$ 2003]
+On note~: 
+$E^{\phantom 1} = \{\text{fonctions continues }2\pi\text{-périodiques }f : \R \to \C\}$ ;\par
+$E^1 = \{f\in E \text{ de classe }\mathcal{C}^1\}$ ;\par
+$E_n = \{f\in E\text{ tel que }\forall\ k\in[[-n,n]],\ {\textstyle \int}_{t=0}^{2\pi}f(t)e^{-ikt}\,d t = 0\}$ ;\par
+$E_n^1 = E_n \cap E^1.$
+
+On considère sur~$E$ la norme~$\|\ \|_2$ $\Bigl(\|f\|_2 = \sqrt{\frac1{2\pi}\int |f|^2}\;\Bigr)$.
+
+\begin{enumerate}
+  \item Montrer que~$D : {E_0^1} \to {E_0},  f  \mapsto {f'}$ est une bijection.
+    
+  \item $D$ est-elle continue~?
+    
+  \item Montrer que~$D^{-1}$ est continue.
+    
+  \item Montrer que~$D^{-1}(E_n) = E_n^1$ et calculer $\|\kern-1.2pt|D^{-1}_{|E_n}\|\kern-1.2pt|$.
+        
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Si~$f$ est $\mathcal{C}^1$ $2\pi$-périodique alors $f'$ est continue,
+    $2\pi$-périodique de moyenne nulle donc $D(E_0^1)\subset E_0$.
+    Ré\-ci\-pro\-que\-ment, si $g\in E_0$ alors toutes les primitives de~$g$ sont
+    $2\pi$-périodiques de classe~$\mathcal{C}^1$ et il y en a exactement une qui a
+    une valeur moyenne nulle (une seule possibilité de régler la constante).
+  \item Non (et ceci quelle que soit la norme) car le spectre de~$D$ n'est par borné.
+  \item $\|f\|_2^2 = \sum_{k\in\Z^*}|c_k(f)|^2 \le \sum_{k\in\Z^*}|ikc_k(f)|^2 = \|f'\|^2$.
+  \item Idem, $\|\kern-1.2pt|D^{-1}_{|E_n}\|\kern-1.2pt| = \frac1{n+1}$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

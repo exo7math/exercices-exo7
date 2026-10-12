@@ -1,0 +1,24 @@
+\exercice{5346, rouget, 2010/07/04}
+\enonce
+Soit $P$ un polynôme à coefficients complexes de degré $4$.
+
+Montrer que les images dans le plan complexe des racines de $P$ forment un parallélogramme si et seulement si $P'$ et $P^{(3)}$ ont une racine commune
+\finenonce
+
+\noindication
+
+\correction
+Soit $P$ un polynôme à coefficients complexes de degré $4$. On suppose $P$ unitaire sans perte de généralité. On note $z_1$, $z_2$, $z_3$ et $z_4$ les racines de $P$ dans $\Cc$.
+
+Si $z_1$, $z_2$, $z_3$ et $z_4$ forment un parallélogramme, notons $a$ le centre de ce parallélogramme. Les racines de $P$ s'écrivent alors $z_1$, $z_2$, $2_a-z_1$, $2a-z_2$ et si $Q=P(X+a)$ alors 
+$Q(-a+z_1)=Q(a-z_1)=Q(-a+z_2)=Q(a-z_2)=0$. Les racines du polynôme $Q$ sont deux à deux opposées, ce qui équivaut à dire que le polynôme $Q$ est bicarré ou encore de la forme $X^4+\alpha X^2+\beta$ ou enfin que
+
+$$P=(X-a)^4+\alpha(X-a)^2+\beta.$$
+
+Mais alors $a$ est racine de $P'=4(X-a)^3+2\alpha(X-a)$ et de $P^{(3)}=24(X-a)$.
+
+Réciproquement, si $P'$ et $P^{(3)}$ ont une racine commune $a$. $P^{(3)}$ est de degré $1$ et de coefficient dominant $24$ et donc $P^{(3)}=24(X-a)$ puis en intégrant $P''=12(X-a)^2+\lambda$ puis $P'=4(X-a)^3+\lambda(X-a)+\mu$.
+La condition $a$ est racine de $P'$ fournit $\mu=0$ et donc $P=(X-a)^4+\alpha(X-a)^2+\beta$. Donc, le polynôme $Q=P(X+a)$ est bicarré et ses racines sont deux à deux opposées et donc de la forme $Z_1=a-z_1$, $Z_2=z1-a$, $Z_3=a-z_2$, $Z_4=z_2-a$ et on a bien $Z_1-Z_3=Z_4-Z_2$.
+
+\fincorrection
+\finexercice

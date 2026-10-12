@@ -1,0 +1,43 @@
+\exercice{5225, rouget, 2010/06/30}
+\enonce[***]
+Soient $a$ et $b$ deux réels tels que $0<a<b$. On pose $u_0=a$ et $v_0=b$ puis, pour $n$ entier naturel donné, $u_{n+1}= \frac{u_n+v_n}{2}$ et $v_{n+1}=\sqrt{u_{n+1}v_n}$.
+Montrer que les suites $(u_n)$ et $(v_n)$ sont adjacentes et que leur limite commune est égale à $\frac{b\sin(\Arccos(\frac{a}{b}))}{\Arccos(\frac{a}{b})}$.
+\finenonce
+
+\noindication
+
+\correction
+Posons $\alpha=\Arccos\frac{a}{b}$. $\alpha$ existe car $0<\frac{a}{b}<1$ et est élément de $\left]0,\frac{\pi}{2}\right[$. De plus, $a=b\cos\alpha$. Enfin, pour tout entier naturel $n$, $\frac{\alpha}{2^n}\in\left]0,\frac{\pi}{2}\right[$ et donc, $\cos\frac{\alpha}{2^n}>0$.
+On a $u_0=b\cos\alpha$ et $v_0=b$ puis $u_1=\frac{1}{2}(u_0+v_0)=\frac{b}{2}(1+\cos\alpha)=b\cos^2\frac{\alpha}{2}$ et $v_1=\sqrt{u_1v_0}=\sqrt{b\cos^2\frac{\alpha}{2}\times b}=b\cos\frac{\alpha}{2}$ puis $u_2=\frac{b}{2}\cos\frac{\alpha}{2}(1+\cos\frac{\alpha}{2})=b\cos\frac{\alpha}{2}\cos^2\frac{\alpha}{2^2}$ et 
+$v_2=\sqrt{b\cos\frac{\alpha}{2}\cos^2\frac{\alpha}{2^2}\times b\cos\frac{\alpha}{2}}=b\cos\frac{\alpha}{2}\cos\frac{\alpha}{2^2}$...
+Montrons par récurrence que pour tout entier naturel non nul $n$, $v_n=b\prod_{k=1}^{n}\cos\frac{\alpha}{2^k}$ et $u_n=v_n\cos\frac{\alpha}{2^n}$.
+C'est vrai pour $n=1$ et si pour $n\geq1$ donné, on a $v_n=b\prod_{k=1}^{n}\cos\frac{\alpha}{2^k}$ et $u_n=v_n\cos\frac{\alpha}{2^n}$ alors, 
+
+$$u_{n+1}=\frac{1}{2}(v_n\cos\frac{\alpha}{2^n}+v_n)=v_n\cos^2\frac{\alpha}{2^{n+1}}$$ puis 
+
+$$v_{n+1}=\sqrt{u_{n+1}v_n}=v_n\cos\frac{\alpha}{2^{n+1}}\;(\mbox{car}\;\cos\frac{\alpha}{2^{n+1}}>0),$$
+et donc, $v_{n+1}=b\prod_{k=1}^{n+1}\cos\frac{\alpha}{2^k}$ puis $u_{n+1}=v_{n+1}\cos\frac{\alpha}{2^{n+1}}$.
+On a montré par récurrence que
+
+\begin{center}
+\shadowbox{
+$\forall n\in\Nn^*,\;v_n=b\prod_{k=1}^{n}\cos\frac{\alpha}{2^k}\;\mbox{et}\;u_n=v_n\cos\frac{\alpha}{2^n}.$
+}
+\end{center}
+Pour tout entier naturel non nul $n$, on a $v_n>0$ et $\frac{v_{n+1}}{v_n}=\cos\frac{\alpha}{2^{n+1}}<1$. La suite $v$ est donc strictement décroissante. Ensuite, pour tout entier naturel non nul $n$, on a $u_n>0$ et
+ 
+$$\frac{u_{n+1}}{u_n}=\frac{v_{n+1}}{v_n}\frac{\cos\frac{\alpha}{2^{n+1}}}{\cos\frac{\alpha}{2^n}}
+=\frac{\cos^2\frac{\alpha}{2^{n+1}}}{\cos\frac{\alpha}{2^n}}
+=\frac{1}{2}\left(1+\frac{1}{\cos\frac{\alpha}{2^n}}\right)>\frac{1}{2}(1+1)=1.
+$$
+La suite $u$ est strictement croissante. Maintenant, pour $n\in\Nn^*$,
+
+\begin{align*}
+v_n&=b\prod_{k=1}^{n}\cos\frac{\alpha}{2^k}=b\prod_{k=1}^{n}\frac{\sin\frac{\alpha}{2^{k-1}}}
+{2\sin\frac{\alpha}{2^k}}\\
+ &=\frac{\sin\alpha}{2^n\sin\frac{\alpha}{2^n}}
+\end{align*}
+Donc, quand $n$ tend vers $+\infty$, $v_n\sim\frac{\sin\alpha}{2^n\frac{\alpha}{2^n}}=\frac{\sin\alpha}{\alpha}$, puis $u_n=v_n\cos\frac{\alpha}{2^n}\sim v_n\sim\frac{\sin\alpha}{\alpha}$.
+Ainsi, les suites $u$ et $v$ sont adjacentes de limite commune $b\frac{\sin\alpha}{\alpha}=\frac{\sqrt{b^2-a^2}}{\Arccos\left(\frac{a}{b}\right)}$.
+\fincorrection
+\finexercice

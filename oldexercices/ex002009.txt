@@ -1,0 +1,25 @@
+\exercice{2009, ridde, 1999/11/01}
+
+\enonce
+Soient $A, B, C, D$ quatre points distincts du plan tels que $\overrightarrow{AB}
+ \neq \overrightarrow{CD}$. Montrer que le centre de la similitude directe transformant $A$ en $C$
+et $B$ en $D$ est aussi le centre de celle transformant $A$ en $B$ et $C$ en $D$.
+\finenonce
+
+\indication
+Utiliser par exemple les nombres complexes.
+\finindication
+
+\correction
+Soit $z\mapsto \alpha z + \beta$ la représentation en coordonnée complexe de la similitude directe envoyant $A$ sur $C$ et $B$ sur $D$. On a donc
+\[
+\left\{\begin{array}{lc}\alpha a+\beta &= c \\ \alpha b+\beta &= d\\ \end{array}\right.
+\] ce qui donne $\alpha = \frac{c-d}{a-b}$ et $\beta=\frac{ad-bc}{a-b}$. D'après la condition fixée par l'énoncé, on a $\alpha\neq 1$ donc cette similitude admet un unique point fixe $\Omega$ d'affixe 
+\[
+\omega = \frac{\beta}{1-\alpha} = \frac{ad-bc}{a-b-c+d}.
+\]
+On remarque que l'expression de $\omega$ est inchangée en permutant $b$ et $c$. Cela  signifie qu'en faisant les mêmes calculs pour déterminer la représentation complexe de la similitude envoyant $A$ sur $B$ et $C$ sur $D$, on obtient le même point fixe.
+\fincorrection
+
+\finexercice
+

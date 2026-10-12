@@ -1,0 +1,24 @@
+\exercice{3980, quercia, 2010/03/11}
+\enonce[$f^{2} + (1+f')^{2} \le 1$, Polytechnique MP$^*$ 2006]
+Soit $f:\R \to \R$ dérivable telle que $f^{2} + (1+f')^{2} \le 1$.
+Montrer que $f$ est nulle.
+
+
+\finenonce
+
+\noindication
+
+\correction
+On a $f'\le 0$ donc $f$ est décroissante sur~$\R$,
+et en particulier elle admet des limites finies, $a$ et $b$ en $-\infty$ et $+\infty$
+avec $-1\le b\le a\le 1$.
+
+Supposons $a>0$~: soit $\alpha\in{]0,a[}$. Il existe $x_0\in\R$
+tel que $\forall\ x\le x_0,\ f(x)\ge a-\alpha > 0$, d'où
+$f'(x)\le -1+\sqrt{a-\alpha}< 0$. Ceci est incompatible avec le caractère
+borné de~$f$, donc on a en fait $a\le 0$.
+On montre de même que $b\ge 0$ et comme $b\le a$, on a finalement
+$a=b=0$.
+\fincorrection
+
+\finexercice

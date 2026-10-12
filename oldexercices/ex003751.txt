@@ -1,0 +1,36 @@
+\exercice{3751, quercia, 2010/03/11}
+\enonce[Transformations orthogonales sur $\mathcal{M}_n(\R)$]
+
+$E = \mathcal{M}_n(\R)$ muni du produit scalaire : $(A\mid B) = \mathrm{tr}({}^tAB)$.
+
+\begin{enumerate}
+  \item Vérifier que c'est un produit scalaire.
+
+  \item Soit $P \in {\cal O}(n)$. Montrer que les applications
+    $\begin{cases} \phi_P : A \longmapsto AP \cr
+             \psi_P : A \longmapsto P^{-1}AP \cr\end{cases}$
+    sont orthogonales.
+
+  \item Réciproquement, si $\phi_P$ ou $\psi_P \in {\cal O}(\mathcal{M}_n(\R))$,
+    est-ce que $P \in {\cal O}(n)$ ?
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item 
+  \item 
+  \item oui pour $\phi_P$.
+
+Pour $\psi_P : \forall\ A,B,\ \mathrm{tr}({}^tAB) = \mathrm{tr}({}^tP^tA^t(P^{-1})P^{-1}BP )
+      =\mathrm{tr}(P^tP^tA^t(P^{-1})P^{-1}B )$.
+
+Donc $P^tP^tA^t(P^{-1})P^{-1} = A$, donc $P^tP$ est scalaire, donc $P$ est une
+matrice de similitude.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

@@ -1,0 +1,25 @@
+\exercice{2814, burnol, 2009/12/15}
+\enonce
+Soit $0<a<b$ sur l'axe réel positif et soit $C=\{|z|=r\}$ le
+cercle de rayon $r$ centré en l'origine, parcouru dans le
+sens direct. Montrer:
+\[ \int_C \frac1{(z-a)(z-b)}\,dz = 2\pi i \begin{cases}
+0& r<a\\
+\frac1{a-b}& a<r<b\\
+0& r>b
+\end{cases}\]
+On pourra réduire la fraction en élément simples, puis se
+ ramener au résultat de l'exercice précédent. Ou encore, on
+ pourra envisager des développements en
+séries, pour se ramener par étapes aux intégrales $\int_C
+z^n dz$, $n\in\Zz$.
+\finenonce
+\noindication
+\correction
+On a
+$$\frac{1}{(z-a)(z-b)}=\frac{1}{a-b}\left( \frac{1}{z-a}-\frac{1}{z-b}\right)$$
+$$\int _C \frac{1}{z-a}dz = 2i\pi \mathrm{Ind} (C,a).$$
+Or, $\mathrm{Ind}(C,a)=0$ si $r<a$ et $\mathrm{Ind}(C,a)=1$ si $r>a$. Le m\^eme raisonnement s'applique \`a $\int_C \frac{1}{z-b}dz$,
+d'o\`u le r\'esultat annonc\'e.
+\fincorrection
+\finexercice

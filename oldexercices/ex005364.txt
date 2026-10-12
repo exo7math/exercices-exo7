@@ -1,0 +1,205 @@
+\exercice{5364, rouget, 2010/07/06}
+\enonce[***]
+Calculer :
+
+\begin{enumerate}
+ \item  $\mbox{det}(|i-j|)_{1\leq i,j\leq n}$  
+ \item  $\mbox{det}(\sin(a_i+a_j))_{1\leq i,j\leq n}$ ($a_1$,...,$a_n$ étant $n$ réels donnés) 
+ \item  $\left|
+\begin{array}{cccccc}
+a&0&\ldots& &\ldots&b\\
+0&a&\ddots& &b&0\\
+\vdots&0&\ddots& &0&\vdots\\
+\vdots&0& &\ddots&0&\vdots\\
+0&b& & &a&0\\
+b&0&\ldots& &\ldots&a
+\end{array}
+\right|$
+
+ \item  $\left|\begin{array}{ccccc}
+1&1&\ldots& &1\\
+1&1&0&\ldots&0\\
+\vdots&0&\ddots&\ddots&\vdots\\
+\vdots&\vdots&\ddots&1&0\\
+1&0&\ldots&0&1
+\end{array}
+\right|$   
+  \item  $\mbox{det}(C_{n+i-1}^{j-1})_{1\leq i,j\leq p+1}$   
+  \item  $\left|\begin{array}{cccccc}
+-X&1&0&\ldots&\ldots&0\\
+0&-X&1&\ddots& &\vdots\\
+\vdots&\ddots&\ddots&\ddots&\ddots&\vdots\\
+\vdots& &\ddots&\ddots&\ddots&0\\
+0&\ldots&\ldots&0&-X&1\\
+a_0&\ldots& &\ldots&a_{n-2}&a_{n-1}-X
+\end{array}
+\right|$
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+
+\begin{enumerate}
+ \item  Pour $n\geq2$, posons $\Delta_n=\left|
+\begin{array}{ccccc}
+0&1&2&\ldots&n-1\\
+1&0&1& &n-2\\
+2&1&0&\ddots&\vdots\\
+\vdots& &\ddots&\ddots&1\\
+n-1&n-2&\ldots&1&0
+\end{array}
+\right|$. Tout d'abord, on fait apparaître beaucoup de $1$.
+Pour cela, on effectue les transformations $C_1\leftarrow C_1-C_2$ puis $C_2\leftarrow C_2-C_3$ puis \ldots puis $C_{n-1}=C_{n-1}-C_n$. On obtient
+
+$$\Delta_n=\mbox{det}(C_1-C_2,C_2-C_3,...,C_{n-1}-C_n,C_n)=\left|
+\begin{array}{ccccc}
+-1&-1&\ldots&-1&n-1\\
+1&-1& &\vdots&n-2\\
+1&1&-1&\vdots&\vdots\\
+\vdots& &\ddots&-1&1\\
+1&1&\ldots&1&0
+\end{array}
+\right|.$$
+On fait alors apparaître un déterminant triangulaire en constatant que $\mbox{det}(L_1,L_2,...,L_n)=\mbox{det}(L_1,L_2+L_1,...,L_{n-1}+L_1,L_n+L_1)$. On obtient
+
+$$\Delta_n=\left|
+\begin{array}{ccccc}
+-1&\times&\ldots&\ldots&\times\\
+0&-2&\ddots& &\vdots\\
+0&0&\ddots&\ddots&\vdots\\
+\vdots& &\ddots&-2&\times\\
+0&\ldots&\ldots&0&n-1
+\end{array}
+\right|=(1-n)(-2)^{n-2}.$$.
+
+\begin{center}
+\shadowbox{
+$\forall n\geq2,\;\Delta_n=(1-n)(-2)^{n-2}$.
+}
+\end{center}
+ \item  $\forall(i,j)\in\llbracket1,n\rrbracket^2,\;\sin(a_i+a_j)=\sin a_i\cos a_j+\cos a_i\sin a_j$ et donc si on pose $C=\left(
+\begin{array}{c}
+\cos a_1\\
+\cos a_2\\
+\vdots\\
+\cos a_n
+\end{array}
+\right)$ et $S=\left(
+\begin{array}{c}
+\sin a_1\\
+\sin a_2\\
+\vdots\\
+\sin a_n
+\end{array}
+\right)$,
+on a $\forall j\in\llbracket1,n\rrbracket,\;C_j=\cos a_jS+\sin a_jC$. En particulier, $\mbox{Vect}(C_1,...,C_n)\subset\mbox{Vect}(C,S)$ et le rang de la matrice proposée est inférieur ou égal à $2$. Donc,
+
+\begin{center}
+\shadowbox{
+$\forall n\geq3,\;\mbox{det}(\sin(a_i+a_j))_{1\leq i,j\leq n}=0.$
+}
+\end{center}
+Si $n=2$, $\mbox{det}(\sin(a_i+a_j))_{1\leq i,j\leq 2}=\sin(2a_1)\sin(2a_2)-\sin^2(a_1+a_2)$.
+ \item  L'exercice n'a de sens que si le format $n$ est pair. Posons $n=2p$ où $p$ est un entier naturel non nul.
+
+\begin{align*}\ensuremath
+\Delta_n&=\left|\begin{array}{cccccc}
+a&0&\ldots&\ldots&0&b\\
+0&\ddots&0&0& &0\\
+\vdots&0&a&b&0&\vdots\\
+\vdots&0&b&a&0&\vdots\\
+0& &0&0&\ddots&0\\
+b&0&\ldots&\ldots&0&a
+\end{array}
+\right|
+=\left|\begin{array}{cccccc}
+a+b&0&\ldots&\ldots&0&b\\
+0&\ddots&0&0& &0\\
+\vdots&0&a+b&b&0&\vdots\\
+\vdots&0&b+a&a&0&\vdots\\
+0& &0&0&\ddots&0\\
+b+a&0&\ldots&\ldots&0&a
+\end{array}
+\right|\;(\mbox{pour}\;1\leq j\leq p,\;C_j\leftarrow C_j+C_{2p+1-j})\\
+ &=(a+b)^p\left|\begin{array}{cccccc}
+1&0&\ldots&\ldots&0&b\\
+0&\ddots&0&0& &0\\
+\vdots&0&1&b&0&\vdots\\
+\vdots&0&1&a&0&\vdots\\
+0& &0&0&\ddots&0\\
+1&0&\ldots&\ldots&0&a
+\end{array}
+\right|\;(\mbox{par linéarité par rapport aux colonnes}\;C_1,\;C_2,...,\;C_p)
+\end{align*}
+
+$$
+=(a+b)^p\left|\begin{array}{cccccc}
+1&0&\ldots&\ldots&0&b\\
+0&\ddots&0&0& &0\\
+\vdots&0&1&b&0&\vdots\\
+ & &\ddots&a-b&0&\vdots\\
+\vdots& & &\ddots&\ddots&0\\
+0&0&\ldots&\ldots&0&a-b
+\end{array}
+\right| (\mbox{pour}\;p+1\leq i\leq2p,\;L_i\leftarrow L_i-L_{2p+1-i}).
+$$
+et $\Delta_n=(a+b)^p(a-b)^p=(a^2-b^2)^p$.
+
+\begin{center}
+\shadowbox{
+$\forall p\in\Nn^*,\;\Delta_{2p}=(a^2-b^2)^p$.
+}
+\end{center}
+ \item  On retranche à la première colonne la somme de toutes les autres et on obtient
+
+$$D_n=\left|\begin{array}{ccccc}
+1&1&\ldots& &1\\
+1&1&0&\ldots&0\\
+\vdots&0&\ddots&\ddots&\vdots\\
+\vdots&\vdots&\ddots&1&0\\
+1&0&\ldots&0&1
+\end{array}
+\right|=\left|\begin{array}{ccccc}
+-(n-2)&1&\ldots& &1\\
+0&1&0&\ldots&0\\
+\vdots&\ddots&\ddots&\ddots&\vdots\\
+\vdots& &\ddots&1&0\\
+0&\ldots&\ldots&0&1
+\end{array}
+\right|=-(n-2).$$
+ \item  Pour $1\leq i\leq p$,
+
+$$L_{i+1}-L_i=(C_{n+i}^0-C_{n+i-1}^0,C_{n+i}^1-C_{n+i-1}^1,...,C_{n+i}^p-C_{n+i-1}^p)=(0,C_{n+i-1}^0,C_{n+i-1}^1,...,C_{n+i-1}^{p-1}).$$
+On remplace alors dans cet ordre $L_p$ par $L_p-L_{p-1}$ puis $L_{p-1}$ par $L_{p-1}-L_{p-2}$ puis ... puis $L_2$ par $L_2-L_1$ pour obtenir, avec des notations évidentes
+
+$$\mbox{det}(A_p)=\left|
+\begin{array}{cc}
+1& \\
+0&A_{p-1}
+\end{array}\right|=\mbox{det}(A_{p-1}).$$
+Par suite, $\mbox{det}(A_p)=\mbox{det}(A_{p-1})=...=\mbox{det}(A_1)=1$.
+ \item  En développant suivant la dernière ligne, on obtient~:
+
+$$D_n=(a_{n-1}-X)(-X)^{n-1}+\sum_{k=0}^{n-2}(-1)^{n+k+1}a_k\Delta_k,$$
+où $\Delta_k=\left|
+\begin{array}{ccc|ccc}
+-X&1&0& & & \\
+0&\ddots&1& & & \\
+0&0&-X& & & \\
+\hline
+0& &0&1&0&0\\
+ & & &-X&\ddots&0\\
+0& &0&0&-X&1\\
+\end{array}
+\right|=(-1)^{k}X^k$ et donc 
+
+\begin{center}
+\shadowbox{
+$\forall n\geq2,\;D_n=(-1)^n\left(X^n-\sum_{k=0}^{n-1}a_kX^k\right).$
+}
+\end{center} 
+\end{enumerate}
+\fincorrection
+\finexercice

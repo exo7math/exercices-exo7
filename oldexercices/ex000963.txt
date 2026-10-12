@@ -1,0 +1,54 @@
+\exercice{963, legall, 1998/09/01}
+\video{ZIq3tKZZgfg}
+\enonce
+Soit  $E$  et  $F$  deux espaces vectoriels de dimension finie
+et  $\phi $  une application lin\' eaire  de  $E$  dans  $F$.
+Montrer que  $\phi $  est un isomorphisme si et seulement si l'image par  $\phi $  de
+toute base de  $E$  est une base de  $F$.
+\finenonce 
+
+\indication
+Pour une base $\mathcal{B} =\{ e_1, \ldots , e_n \}$ de $E$ considérer la famille 
+$\{ \phi (e_1), \ldots, \phi (e_n) \} $.
+\finindication
+
+\correction
+\begin{enumerate}
+    \item Montrons que si  $\phi $  est un isomorphisme,
+l'image de toute base de  $E$  est une base de  $F$ : soit
+$\mathcal{B} =\{ e_1, \ldots , e_n \} $  une base de  $E$  et
+nommons  $\mathcal{B} ' $  la famille  $\{ \phi (e_1), \ldots ,
+\phi (e_n) \} $.
+    \begin{enumerate}
+        \item $\mathcal{B} '$  est libre. Soient en effet  $\lambda _1 , \ldots , \lambda _n\in {\R}$  tels
+que  $\lambda _1\phi (e_1)+ \cdots + \lambda _n \phi (e_n)
+=0 $. Alors  $ \phi (\lambda _1e_1+ \cdots + \lambda _ne_n) =0
+$  donc, comme  $\phi$  est injective,  $\lambda _1e_1+ \cdots
++ \lambda _ne_n=0$  puis, comme  $\mathcal{B} $  est libre,
+$\lambda _1=\cdots =\lambda _n=0$.
+        \item $\mathcal{B} '$  est g\' en\' eratrice. Soit  $y\in F$. Comme  $\phi $  est surjective, il
+existe  $x\in E$  tel que  $y=\phi (x)$. Comme  $\mathcal{B}$
+est g\' en\' eratrice, on peut choisir   $\lambda _1 , \cdots ,
+\lambda _n\in {\R}$  tels que  $x=\lambda _1 e_1 +\cdots + \lambda
+_n e_n $. Alors  $y=\lambda _1\phi (e_1)+ \cdots + \lambda _n
+\phi (e_n)  $.
+    \end{enumerate}
+    \item Supposons que l'image par  $\phi $  de toute base de  $E$  soit une base  $F$. Soient  $\mathcal{B}
+=\{ e_1,\ldots , e_n\} $  une base de  $E$  et  $\mathcal{B} ' $
+la base  $\{ \phi (e_1), \ldots , \phi (e_n) \} $.
+    \begin{enumerate}
+        \item $\Im \phi$  contient  $\mathcal{B} '$  qui est une partie g\' en\' eratrice de $F$. Donc  $\phi $  est surjective.
+        \item Soit maintenant  $x\in E$  tel que  $\phi (x)=0$.
+Comme  $\mathcal{B} $  est une base, il existe  $\lambda _1 ,
+\ldots , \lambda _n\in {\R}$  tels que  $x= \lambda _1e_1+ \cdots
++ \lambda _ne_n$. Alors  $\phi (x)=0=\lambda _1\phi (e_1)+
+\cdots + \lambda _n \phi (e_n) $ donc puisque  $\mathcal{B} '$
+est libre :  $\lambda _1=\cdots =\lambda _n=0$. En cons\' equence
+si  $\phi (x)=0$  alors  $x=0$ : $\phi$  est injective.
+    \end{enumerate}
+\end{enumerate}
+
+En fait on montrerait de la même façon que ``$\phi $  est un isomorphisme si et seulement si l'image par 
+$\phi $  \textbf{d'une} base de  $E$  est une base de  $F$''.
+\fincorrection
+\finexercice

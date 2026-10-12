@@ -1,0 +1,25 @@
+\exercice{5341, rouget, 2010/07/04}
+\enonce
+On pose $P=a(X-x_1) ... (X-x_n)$ où les $x_i$ sont des complexes non nécessairement deux à deux distincts et $a$ est un complexe non nul.
+
+Calculer $\frac{P'}{P}$. De manière générale, déterminer la décomposition en éléments simples de $\frac{P'}{P}$ quand $P$ est un polynôme scindé. Une application~:~déterminer tous les polynômes divisibles par leur dérivées.
+\finenonce
+
+\noindication
+
+\correction
+$P'=a\sum_{k=1}^{n}\prod_{j\neq k}(X-x_j)=\sum_{k=1}^{n}\frac{P}{X-x_k}$, et donc
+
+$$\frac{P'}{P}=\sum_{k=1}^{n}\frac{1}{X-x_k}.$$
+
+Regroupons maintenant les pôles identiques, ou encore posons $P=a(X-z_1)^{\alpha_1}...(X-z_k)^{\alpha_k}$ où cette fois-ci les $z_j$ sont deux à deux distincts. La formule ci-dessus s'écrit alors
+
+$$\frac{P'}{P}=\sum_{j=1}^{k}\frac{\alpha_j}{X-z_j}\quad(*).$$
+
+Déterminons les polynômes divisibles par leur dérivée. Soit $P$ un tel polynôme. Nécessairement $\mbox{deg}P\ge1$ puis, il existe deux complexes $a$ et $b$, $a\neq0$ tel que $P=(aX+b)P'$ ou encore $\frac{P'}{P}=\frac{1}{aX+b}$. $(*)$ montre que $P$ a une et une seule racine. Par suite, $P$ est de la forme $\lambda(X-a)^n$, $\lambda\neq0$, $n\geq1$ et $a$ quelconque.
+
+Réciproquement, on a dans ce cas $P=\frac{1}{n}(X-a)n(X-a)^{n-1}=(\frac{1}{n}X-\frac{a}{n})P'$ et $P'$ divise effectivement $P$.
+
+Les polynômes divisibles par leur dérivée sont les polynômes de la forme $\lambda(X-a)^n$, $\lambda\in\Cc^*$, $n\in\Nn^*$ et $a\in\Cc$.
+\fincorrection
+\finexercice

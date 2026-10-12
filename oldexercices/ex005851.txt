@@ -1,0 +1,36 @@
+\exercice{5851, rouget, 2010/10/16}
+\enonce[*** I]
+Soit $f~:~\Rr\rightarrow\Rr$ une application uniformément continue sur $\Rr$. Montrer qu'il existe deux réels $a$ et $b$ tels que $\forall x\in\Rr$, $|f(x)|\leqslant a|x| +b$.
+\finenonce
+
+\noindication
+
+\correction
+Soit $f$ une application uniformément continue sur $\Rr$. 
+$\exists\alpha> 0/\;\forall(x,y)\in\Rr^2,\;(|x-y|\leqslant\alpha\Rightarrow|f(x)-f(y)|\leqslant1)$.
+
+Soit $x\in\Rr^+$ (le travail est analogue si $x\in\Rr^-$). 
+
+Pour $n\in\Nn$
+
+\begin{center}
+$|x-n\alpha|\leqslant\alpha\Leftrightarrow-\alpha\leqslant x-n\alpha\leqslant\alpha\Leftrightarrow \frac{x}{\alpha}-1\leqslant n\leqslant \frac{x}{\alpha}+1\Leftarrow n = E\left( \frac{x}{\alpha}\right).$
+\end{center}
+
+On pose $n_0=E\left( \frac{x}{\alpha}\right)$.
+
+\begin{align*}\ensuremath
+|f(x)| &\leqslant|f(x)-f(x-\alpha)|+|f(x-\alpha)-f(x-2\alpha)|+\ldots+|f(x-(n_0-1)\alpha)-f(x-n_0\alpha)|+|f(x-n_0\alpha)-f(0)|+|f(0)|\\
+ &\leqslant n_0+1+|f(0)|\;(\text{car}\;|x-n_0\alpha-0|\leqslant\alpha)\\
+ &\leqslant \frac{x}{\alpha}+2+|f(0)| .
+\end{align*}
+
+Ainsi, $\forall x\in\Rr^+$, $|f(x)|\leqslant \frac{x}{\alpha}+2+|f(0)|$. Par symétrie des calculs, $\forall x\in\Rr^-$, $|f(x)|\leqslant \frac{-x}{\alpha}+2+|f(0)|$ et donc $\forall x\in\Rr$, $|f(x)|\leqslant \frac{|x|}{\alpha}+2+|f(0)|$.
+
+\begin{center}
+\shadowbox{
+$f$ uniformément continue sur $\Rr\Rightarrow\exists(a,b)\in\Rr^2/\;\forall x\in\Rr,\;|f(x)\leqslant a|x|+b$.
+}
+\end{center}
+\fincorrection
+\finexercice

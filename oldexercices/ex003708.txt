@@ -1,0 +1,27 @@
+\exercice{3708, quercia, 2010/03/11}
+\enonce[Exponentielle d'une application antisymétrique]
+
+Soit $E$ un espace vectoriel euclidien orienté de dimension 3\ et
+$\vec a \in E\setminus\{\vec 0\}$. On note $\alpha = \|\vec a\,\|$.
+Soit $f$ l'endomorphisme de $E$ défini par : $f(\vec x) = \vec a\wedge\vec x$.
+
+\begin{enumerate}
+  \item Vérifier que $f^3 = -\alpha^2f$.
+  \item On pose $g(\vec x) = \sum_{k=0}^\infty \frac{f^k(\vec x)}{k!}$.
+    Simplifier $g(\vec x)$ et en déduire que $g$ est une rotation.
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item 
+  \item $g(\vec x) = (\cos\alpha)\vec x
+                        + (1-\cos\alpha)\frac{(\vec a\mid\vec x)\vec a}{\alpha^2}
+                        + \frac{\sin\alpha(\vec a\wedge\vec x)}\alpha$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

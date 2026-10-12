@@ -1,0 +1,29 @@
+\exercice{5295, rouget, 2010/07/04}
+\enonce[****]
+Montrer que, pour tout entier naturel $n$, $2^{n+1}$ divise $E((1+\sqrt{3})^{2n+1})$.
+\finenonce
+
+\noindication
+
+\correction
+Posons $(1+\sqrt{3})^n=a_n+b_n\sqrt{3}$ où $a_n$ et $b_n$ sont des entiers naturels. On a alors $(1-\sqrt{3})^n=a_n-b_n\sqrt{3}$ et donc 
+
+$$(1+\sqrt{3})^{2n+1}+(1-\sqrt{3})^{2n+1}=2a_{2n+1}\in\Nn.$$
+
+Mais de plus, $-1<1-\sqrt{3}< 0$ et donc, puisque $2n+1$ est impair, $-1<(1-\sqrt{3})^{2n+1}<0$. Par suite, 
+
+$$2a_{2n+1}<(1+\sqrt{3})^{2n+1}<2a_{2n+1}+1,$$
+
+ce qui montre que $E((1+\sqrt{3})^{2n+1})=2a_{2n+1}=(1+\sqrt{3})^{2n+1}+(1-\sqrt{3})^{2n+1}$ et montre déjà que $E((1+\sqrt{3})^{2n+1})$ est un entier pair. Mais on en veut plus~:
+
+\begin{align*}\ensuremath
+(1+\sqrt{3})^{2n+1}+(1-\sqrt{3})^{2n+1}&=(1+\sqrt{3})((1+\sqrt{3})^2)^n+(1-\sqrt{3})((1-\sqrt{3})^2)^n\\
+ &=(1+\sqrt{3})(4+2\sqrt{3})^n+(1-\sqrt{3})(4-2\sqrt{3})^n\\
+ &=2^n((1+\sqrt{3})(2+\sqrt{3})^n+(1-\sqrt{3})(2-\sqrt{3})^n)
+\end{align*}
+
+Montrons enfin que $(1+\sqrt{3})(2+\sqrt{3})^n+(1-\sqrt{3})(2-\sqrt{3})^n$ est un entier, pair. Mais, $(1+\sqrt{3})(2+\sqrt{3})^n$ est de la forme $A+B\sqrt{3}$ où $A$ et $B$ sont des entiers naturels et donc, puisque $(1-\sqrt{3})(2-\sqrt{3})^n=A-B\sqrt{3}$, on a finalement $(1+\sqrt{3})(2+\sqrt{3})^n+(1-\sqrt{3})(2-\sqrt{3})^n=2A$ où $A$ est un entier.
+
+Donc, $(1+\sqrt{3})(2+\sqrt{3})^n+(1-\sqrt{3})(2-\sqrt{3})^n$ est un entier pair, ou encore $(1+\sqrt{3})^{2n+1}+(1-\sqrt{3})^{2n+1}=E((1+\sqrt{3})^{2n+1})$ est un entier divisible par $2^{n+1}$.
+\fincorrection
+\finexercice

@@ -1,0 +1,53 @@
+\exercice{4132, quercia, 2010/03/11}
+\enonce[Centrale MP 2001]
+
+On définit une suite de fonctions sur $[0,1]$ de la manière suivante~:
+$f_0$ est la fonction constante $1$ et pour tout $x\in{[0,1]}$ et $n\in\N$,
+$f_{n+1}(x) = 1 +  \int_{t=0}^x f_n(t-t^2)\,d t$.
+
+\begin{enumerate}
+  \item En étudiant $f_{n+1}-f_n$ montrer que la suite $(f_n)$ converge
+    uniformément sur~$[0,1]$. On note $f$ sa limite.
+    
+
+  \item Montrer que $f$ est de classe $\mathcal{C}^\infty$ sur $[0,1]$.
+    Que valent $f'(0)$ et $f'(1)$~?
+    
+
+  \item \'Etudier la concavité de~$f$.
+    
+
+  \item Montrer que pour tout $x\in{[0,1]}$ on a $1+x \le f(x)\le \exp(x)$.
+    
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $f_{n+1}(x) - f_n(x) =  \int_{t=0}^x (f_n-f_{n-1})(t-t^2)\,d t$
+    donc par récurrence $f_{n+1}-f_n \ge 0$.
+
+    De plus $f_{n+1}(x) - f_n(x) \le x\|f_n-f_{n-1}\|_\infty$
+    d'où $f_{n+2}(x) - f_{n+1}(x) \le \|f_n-f_{n-1}\|_\infty \int_{t=0}^x(t-t^2)\,d t
+                                  \le \frac16\|f_n-f_{n-1}\|_\infty$
+    et $\|f_{n+2} - f_{n+1}\|_\infty \le \frac16\|f_n-f_{n-1}\|_\infty$
+    ce qui prouve que la série télescopique $\sum(f_{n+1}-f_n)$ est normalement
+    convergente.
+  \item Par passage à la limite uniforme sous le signe intégral
+    on a $f(x) = 1 +  \int_{t=0}^x f(t-t^2)\,d t$ d'où $f$ est $\mathcal{C}^1$
+    et $f'(x) = f(x-x^2)$ ce qui entraine le caractère $\mathcal{C}^\infty$ de $f$ par
+    récurrence.
+    $f'(0) = f'(1) = f(0) = 1$.
+  \item $f'$ est positive d'après l'équation différentielle vérifiée par~$f$
+    et $f''(x) = (1-2x)f'(x-x^2)$ est du signe de $1-2x$, c'est-à-dire que $f$
+    est convexe sur $[0,\frac12]$ et concave sur $[\frac12,1]$.
+  \item $1+x = f_1(x) \le f(x) = f_1(x) + \sum_{k=1}^\infty(f_{k+1}(x) - f_k(x))$.
+    De plus, $f'(x) = f(x-x^2) \le f(x)$ d'où $x \mapsto f(x)e^{-x}$ est décroissante
+    et vaut $1$ en $0$ ce qui prouve que $f(x) \le e^x$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

@@ -1,0 +1,44 @@
+\exercice{5763, rouget, 2010/10/16}
+\enonce[***]
+\label{ex:rou19x}
+Soit $I_n$ le nombre d'involutions de $\llbracket1,n\rrbracket$. Rayon de convergence et somme de la série entière associée à la suite $\left(\frac{I_n}{n!}\right)_{n\in\Nn^*}$.
+\finenonce
+
+\noindication
+
+\correction
+On a $I_0 = 0$, $I_1 = 1$ et $I_2 = 2$ (l'identité et la transposition $\tau_{1,2}$).
+
+Soit $n\in\Nn^*$. Il y a $I_{n+1}$ involutions $\sigma$ de $\llbracket1,n+2\rrbracket$ vérifiant $\sigma(n+2) =n+2$ car la restriction d'une telle permutation à $\llbracket1,n+1\rrbracket$ est une involution de $\llbracket1,n+1\rrbracket$ et réciproquement.
+
+Si $\sigma(n+2) = k\in\llbracket1,n+1\rrbracket$, nécessairement $\sigma(k) =n+2$ puis la restriction de $\sigma$ à $\llbracket1,n+2\rrbracket\setminus\{k,n+2\}$ est une involution et réciproquement  Il y a $I_n$ involutions de $\llbracket1,n+2\rrbracket\setminus\{k,n+2\}$ et $n+1$ choix possibles de $k$ et donc $(n+1)I_n$ involutions de $\llbracket1,n+2\rrbracket$ telles que $\sigma(n+2)\neq n+2$. En résumé, 
+
+\begin{center}
+$\forall n\in\Nn^*$, $I_{n+2}= I_{n+1}+(n+1)I_n$.
+\end{center}
+
+Le rayon $R$ de la série entière associée à la suite $\left(\frac{I_n}{n!}\right)_{n\in\Nn^*}$ est supérieur ou égal à $1$ car $\forall n\in\Nn^*$, $\frac{I_n}{n!}\leqslant1$. Pour $x$ dans $]-R,R[$, posons $f(x)=\sum_{n=1}^{+\infty}\frac{I_n}{n!}x^n$. $f$ est dérivable sur $]-R,R[$ et pour $x\in]-R,R[$
+
+\begin{align*}\ensuremath
+f'(x)&=\sum_{n=1}^{+\infty}\frac{I_n}{(n-1)!}x^{n-1}=1+2x+\sum_{n=1}^{+\infty}\frac{I_{n+2}}{(n+1)!}x^{n+1}=1+2x+\sum_{n=1}^{+\infty}\frac{I_{n+1}+(n+1)I_n}{(n+1)!}x^{n+1}\\
+ &=1+2x+\sum_{n=2}^{+\infty}\frac{I_n}{n!}x^n+x\sum_{n=1}^{+\infty}\frac{I_n}{n!}x^n\\
+  &=1+2x+f(x)-x+xf(x)=1+x+(x+1)f(x).
+\end{align*}
+
+Donc, pour $x\in]-R,R[$, $f'(x)+(x+1)f(x)=x+1$ ou encore $e^{\frac{x^2}{2}+x}f'(x)+(x+1)e^{\frac{x^2}{2}+x}f(x)=(x+1)e^{\frac{x^2}{2}+x}$. Par suite, pour $x\in]-R,R[$,
+
+\begin{center}
+$e^{\frac{x^2}{2}+x}f(x)-f(0)=\int_{0}^{x}(t+1)e^{\frac{t^2}{2}+t}\;dt=e^{\frac{x^2}{2}+x}-1$,
+\end{center}
+
+et puisque $f(0)=0$, $\forall x\in]-R,R[$, $f(x)=e^{\frac{x^2}{2}+x}-1$.
+
+Réciproquement, la fonction précédente est développable en série entière sur $\Rr$ en vertu de théorèmes généraux ($=e^{\frac{x^2}{2}}\times e^x$) et les coefficients de ce développement vérifient les relations définissant $\frac{I_n}{n!}$ de manière unique. Donc, ces coefficients sont les $\frac{I_n}{n!}$ ce qui montre que $R = +\infty$.
+
+\begin{center}
+\shadowbox{
+$\forall x\in\Rr$, $\sum_{n=1}^{+\infty}\frac{I_n}{n!}x^n=e^{\frac{x^2}{2}+x}-1$.
+}
+\end{center}
+\fincorrection
+\finexercice

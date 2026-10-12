@@ -1,0 +1,54 @@
+\exercice{5203, rouget, 2010/06/30}
+\enonce[*T]
+Soit $\mathcal{C}$ la courbe d'équation $x^2+y^2-2x+4y+1=0$.
+\begin{enumerate}
+\item  Déterminer une équation de la tangente au point de $\mathcal{C}$ de coordonnées $(2,-2+\sqrt{3})$.
+\item  Déterminer l'intersection de $\mathcal{C}$ et du cercle de centre $(1,0)$ et de rayon $2$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+ Tout d'abord, pour $(x,y)\in\Rr^2$, $x^2+y^2-2x+4y+1=0\Leftrightarrow(x-1)^2+(y+2)^2=4$ et $\mathcal{C}$ est le cerlce de centre $\Omega(1,-2)$ et de rayon $2$.
+\begin{enumerate}
+\item  Le point $A(2,-2+\sqrt{3})$ est effectivement sur $\mathcal{C}$ car $(2-1)^2+(-2+\sqrt{3}+2)^2=1+3=4$. La tangente $(T)$ en $A$ à $\mathcal{C}$ est la droite passant par $A$ et de vecteur normal $\overrightarrow{A\Omega}$.
+
+$$M(x,y)\in(T)\Leftrightarrow\overrightarrow{AM}.\overrightarrow{A\Omega}=0\Leftrightarrow(x-2)+\sqrt{3}(y+2-\sqrt{3})=0
+\Leftrightarrow x+\sqrt{3}y-5+2\sqrt{3}=0.$$
+\item  Soit $\mathcal{C}'$ le cercle de centre $(1,0)$ et de rayon $2$. Une équation de ce cercle est $x^2+y^2-2x-3=0$. Par suite,
+
+\begin{align*}
+M(x,y)\in\mathcal{C}\cap\mathcal{C}'&\Leftrightarrow
+\left\{
+\begin{array}{l}
+x^2+y^2-2x+4y+1=0\\
+x^2+y^2-2x-3=0
+\end{array}
+\right.\Leftrightarrow
+\left\{
+\begin{array}{l}
+4y+4=0\quad((1)-(2))\\
+x^2+y^2-2x-3=0
+\end{array}
+\right.
+\Leftrightarrow
+\left\{
+\begin{array}{l}
+y=-1\\
+x^2-2x-2=0
+\end{array}
+\right.
+\\
+ &\Leftrightarrow\left\{
+\begin{array}{l}
+y=-1\\
+x=1+\sqrt{3}\;\mbox{ou}\;x=1-\sqrt{3}
+\end{array}
+\right.
+\end{align*}
+
+Il ya donc deux points d'intersection~:~$(1+\sqrt{3},-1)$ et $(1-\sqrt{3},-1)$.
+\end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,45 @@
+\exercice{609, bodin, 1998/09/01}
+\video{db5yEXsEbYc}
+\enonce
+\begin{enumerate}
+    \item  D\'emontrer que $\displaystyle{ \lim_{x\rightarrow 0}\frac{\sqrt{1+x}-\sqrt{1-x}}{ x}=1}$.
+    \item  Soient $m,n$ des entiers positifs. \'Etudier $\displaystyle{\lim_{x\rightarrow 0}\frac{\sqrt{1+x^m}-
+\sqrt{1-x^m}}{ x^n}}$.
+    \item D\'emontrer que $\displaystyle{ \lim_{x\rightarrow 0}\frac{1}{ x}(\sqrt{1+x+x^2}-1)=
+\frac{1}{ 2}}$.
+\end{enumerate}
+\finenonce 
+
+\indication
+Utiliser l'expression conjugu\'ee.
+\finindication
+
+\correction
+ G\'en\'eralement pour calculer des limites faisant intervenir des sommes de racines carr\'ees,  il est utile de faire intervenir ``l'expression conjugu\'ee": 
+$$\sqrt a - \sqrt b = \frac{(\sqrt a - \sqrt b)(\sqrt a + \sqrt b)}{\sqrt a + \sqrt b} = \frac{a-b}{\sqrt a + \sqrt b}.$$
+Les racines au num\'erateur ont ``disparu" en utilisant l'identit\'e
+$(x-y)(x+y) = x^2-y^2$.
+
+Appliquons ceci sur un exemple :
+\begin{align*}
+ f(x) &= 
+  \frac{\sqrt{1+x^m}-\sqrt{1-x^m}}{x^n} \\
+     &=  \frac{(\sqrt{1+x^m}-\sqrt{1-x^m})(\sqrt{1+x^m}+\sqrt{1-x^m})}{x^n(\sqrt{1+x^m}+\sqrt{1-x^m})} \\
+   &= \frac{1+x^m-(1-x^m)}{x^n(\sqrt{1+x^m}+\sqrt{1-x^m})}  \\
+   &= \frac{2x^m}{x^n(\sqrt{1+x^m}+\sqrt{1-x^m})}  \\
+   &= \frac{2x^{m-n}}{\sqrt{1+x^m}+\sqrt{1-x^m}}  \\
+\end{align*}
+Et nous avons 
+$$ \lim_{x \rightarrow 0} \frac 2 {\sqrt{1+x^m}+\sqrt{1-x^m}} = 1.$$
+Donc l'\'etude de la limite de $f$ en $0$ est la m\^eme que celle de la fonction $x \mapsto x^{m-n}$.
+
+Distinguons plusieurs cas pour la limite de $f$ en $0$.
+\begin{itemize}
+  \item Si $m > n$ alors $x^{m-n}$, et donc $f(x)$, tendent vers $0$.
+  \item Si $m=n$ alors $x^{m-n}$ et $f(x)$ tendent vers $1$.
+  \item Si $m < n$ alors $x^{m-n} = \frac 1 {x^{n-m}}  = \frac 1 {x^k}$ avec $k = n-m$ un exposant positif. Si $k$ est pair alors les limites 
+\`a droite et \`a gauche de $\frac 1{x^k}$ sont $+\infty$. 
+Pour $k$ impair la limite \`a droite vaut $+\infty$ et la limite \`a gauche vaut $-\infty$. Conclusion pour $k=n-m>0$ pair, la limite de $f$ en $0$ vaut $+\infty$ et pour $k = n-m>0$ impair $f$ \emph{n'a pas de limite en $0$} car les limites \`a droite et \`a gauche ne sont pas \'egales.
+\end{itemize}
+\fincorrection
+\finexercice

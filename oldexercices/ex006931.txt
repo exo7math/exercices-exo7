@@ -1,0 +1,29 @@
+\exercice{6931, ruette, 2013/01/24}
+\enonce  
+La firme Comtec vient de développer un 
+nouveau dispositif électronique. Avant de le mettre en production, on 
+veut en estimer la fiabilité en termes de durée de vie. D'après le 
+bureau de Recherche et Développement de l'entreprise, l'écart-type 
+de la durée de vie de ce dispositif serait de l'ordre de  100 heures.
+
+Déterminer le nombre d'essais requis pour estimer, avec un niveau de 
+confiance de 95\%, la durée de vie moyenne d'une grande production 
+de sorte que la marge d'erreur dans l'estimation n'excède pas  $\pm$ 50 heures.
+ Même question pour une marge d'erreur n'excédant pas $\pm$ 20 heures.
+\finenonce
+\noindication
+
+\correction
+On suppose que la variable $X=$ ``durée de vie d'un appareil'' suit 
+une loi normale d'espérance $m_{pop}$ et d'écart-type $\sigma_{pop}=100$h. 
+Si on fait $n$ essais indépendants, alors $T=\sqrt{n}\frac{\bar{X}-m_{pop}}{\sigma_{pop}}$ 
+suit une loi normale standard, donc $p(|T|>1,96)<0,05$. Au niveau de confiance 95\%,
+on peut affirmer que l'intervalle 
+$[\bar{x}-1,96\frac{100}{\sqrt{n}},\bar{x}+1,96\frac{100}{\sqrt{n}}]$ 
+contient la durée de vie moyenne cherchée $m_{pop}$. 
+
+La marge d'erreur n'excède pas 50h dès que $1,96\frac{100}{\sqrt{n}}<50$, i.e. si $n\geq 16$.
+
+La marge d'erreur n'excède pas 20h dès que $1,96\frac{100}{\sqrt{n}}<20$, i.e. si $n\geq 97$.
+\fincorrection
+\finexercice

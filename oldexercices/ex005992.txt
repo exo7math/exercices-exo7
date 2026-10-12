@@ -1,0 +1,27 @@
+\exercice{5992, quinio, 2011/05/11}
+
+\enonce
+Dans la salle des profs $60$\% sont des femmes ; une femme sur trois
+porte des lunettes et un homme sur deux porte des lunettes : quelle est la
+probabilité pour qu'un porteur de lunettes pris au hasard soit une femme?
+\finenonce
+
+\noindication
+
+\correction
+Notons les différents événements :
+$Fe$ : <<être femme>>, $Lu$ : <<porter des lunettes>>, $H$ : <<être homme>>
+
+Alors on a $P(Fe)=0.6,$ $P(Lu/Fe)=\frac{1}{3};$ il s'agit de la 
+probabilité conditionnelle probabilité de 
+<<porter des lunettes>> sachant que la personne est une femme.
+De même, on a $P(Lu/H)=0.5$. On cherche la probabilité
+conditionnelle $P(Fe/Lu)$.
+D'après la formule des probabilités totales on a :
+$P(Fe/Lu)P(Lu)=P(Lu/Fe)P(Fe)$ avec $P(Lu)=P(Lu/Fe)P(Fe)+P(Lu/H)P(H)$.
+
+Application numérique : $P(Lu)=0.4$, donc  $P(Fe/Lu)=\frac{P(Lu/Fe)P(Fe)}{P(Lu)}=0.5$.
+Remarque : on peut trouver les mêmes réponses par des raisonnements 
+élémentaires.
+\fincorrection
+\finexercice

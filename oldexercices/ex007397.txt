@@ -1,0 +1,15 @@
+\exercice{7397, mourougane, 2021/08/10}
+\enonce
+\begin{enumerate}
+ \item La classe $[51]$ est-elle inversible dans l'anneau $\Z/131\Z$. Si oui, calculer $92\times 51^{-1}$ dans $\Z/131\Z$. Le résultat doit être représenté par un nombre compris entre 0 et 130. 
+ \item Trouver l'ensemble des diviseurs de zéro dans $\Z/16\Z$. (Dans cet exercice on ne considère pas le 0 comme un diviseur de zéro.) Représenter chaque classe par un nombre compris entre 1 et 15.
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+ \item Puisque $\text{pgcd}(51,131)=1$, la classe $[51]$ est inversible dans $\Z/131\Z$. En utilisant l'algorithme d'Euclide on trouve que $1=131\times (-7)+51\times 18$. Alors, dans $\Z/131\Z$ on a $51^{-1}=18$ et $92\times 51^{-1}=-39\times 18=-47=84$. 
+ \item Un élément $a$ dans $\Z/16\Z$ est un diviseur de 0 s'il existe un élément non nul $b$ tel que $ab=0 \text{ mod } 16$. Alors les diviseurs de 0 sont tous les éléments $a$ dans $\Z/16\Z$ tels que $\text{pgcd}(a,16)\neq 1$. On trouve: $2, 4, 6, 8, 10, 12, 14$.
+\end{enumerate} 
+\fincorrection
+\finexercice

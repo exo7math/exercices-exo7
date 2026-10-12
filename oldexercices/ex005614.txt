@@ -1,0 +1,26 @@
+\exercice{5614, rouget, 2010/10/16}
+\enonce[**I]
+\label{ex:rou17}
+Soit $A$ une matrice carrée de format $n$. Calculer le déterminant de sa comatrice.
+\finenonce
+
+\noindication
+
+\correction
+On a toujours $A{^t}(\text{com}A)=(\text{det}A)I_n$. Par passage au déterminant et puisqu'une matrice a même déterminant que sa transposée, on obtient
+
+\begin{center}
+$(\text{det}A)(\text{det}(\text{com}A)) = (\text{det}A)^n$.
+\end{center}
+
+\textbullet~Si $\text{det}A$ n'est pas nul, on en déduit $\text{det}(\text{com}A)=(\text{det}A)^{n-1}$.
+
+\textbullet~Si $\text{det}A$ est nul, on a $A{^t}(\text{com}A) = 0$ et donc ${^t}\text{com}A$ est soit nulle, soit diviseur de zéro, et donc dans tous les cas non inversible. Il en est de même de $\text{com}A$ et donc $\text{det}(\text{com}A) = 0=(\text{det}A)^{n-1}$. Finalement 
+
+\begin{center}
+\shadowbox{
+$\forall A\in\mathcal{M}_(\Rr),\;\text{det}(\text{com}A)=(\text{det}A)^{n-1}$.
+}
+\end{center}
+\fincorrection
+\finexercice

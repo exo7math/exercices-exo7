@@ -1,0 +1,60 @@
+\exercice{635, gourio, 2001/09/01}
+\video{rxI8iTwhH6E}
+\enonce
+ Calculer :
+$$\lim\limits_{x\rightarrow 0}\frac{x}{2+\sin \frac{1}{x}}
+,\ \ \lim\limits_{x\rightarrow +\infty }(\ln (1+e^{-x}))^{\frac{1}{x}}
+,\ \ \lim\limits_{x\rightarrow 0^{+}}x^{\frac{1}{\ln (e^{x}-1)}}.$$
+\finenonce 
+
+\indication
+R\'{e}ponses : $0,\frac{1}{e},e.$
+\begin{enumerate}
+ \item Borner $\sin\frac 1x$.
+ \item Utiliser que $\ln(1+t) = t \cdot \mu(t)$, pour une certaine fonction $\mu$ qui vérifie $\mu(t) \to 1$ lorsque $t\to 0$.
+ \item Utiliser que $e^t-1 = t \cdot \mu(t)$, pour une certaine fonction $\mu$ qui vérifie $\mu(t) \to 1$ lorsque $t\to 0$.
+\end{enumerate}
+
+\finindication
+
+\correction
+\begin{enumerate}
+ \item Comme $-1 \le \sin \frac 1x \le +1$ alors $1 \le 2 + \sin \frac 1x \le +3$.
+Donc pour $x>0$, nous obtenons $\frac x3 \le \frac{x}{2+\sin \frac{1}{x}} \le x$.
+On obtient une inégalité similaire pour $x<0$.
+Cela implique $\lim\limits_{x\rightarrow 0}\frac{x}{2+\sin \frac{1}{x}} = 0$.
+
+ \item Sachant que $\frac{\ln (1+t)}{t} \to 1$ lorsque $t \to 0$, on peut le reformuler
+ainsi $\ln(1+t) = t \cdot \mu(t)$, pour une certaine fonction $\mu$ qui vérifie $\mu(t) \to 1$ lorsque $t\to 0$.
+Donc $\ln (1+e^{-x}) = e^{-x} \mu(e^{-x})$.
+Maintenant 
+
+\begin{align*}
+(\ln (1+e^{-x}))^{\frac{1}{x}} 
+  &= \exp \left(\frac{1}{x} \ln\left( \ln (1+e^{-x}) \right)  \right) \\
+  &= \exp \left(\frac{1}{x} \ln \left( e^{-x} \mu(e^{-x}) \right)  \right) \\
+  &= \exp \left(\frac{1}{x} \left( -x + \ln \mu(e^{-x}) \right)  \right) \\
+  &= \exp \left( -1 + \frac{\ln \mu(e^{-x})}{x}  \right) \\
+\end{align*}
+$\mu(e^{-x}) \to 1$ donc $\ln\mu(e^{-x}) \to 0$, donc $\frac{\ln \mu(e^{-x})}{x} \to 0$ lorsque $x \to +\infty$.
+
+Bilan : la limite est $\exp(-1)=\frac 1 e$.
+ \item
+
+
+ \item Sachant $\frac{e^x - 1}{x} \to 1$ lorsque $x\to 0$, on reformule ceci
+en $e^x-1 = x \cdot \mu(x)$, pour une certaine fonction $\mu$ qui vérifie $\mu(x) \to 1$ lorsque $x\to 0$.
+Cela donne $\ln (e^x-1) = \ln (x \cdot \mu(x)) = \ln x + \ln \mu(x).$
+\begin{align*}
+ x^{\frac{1}{\ln (e^{x}-1)}} 
+  &= \exp\left( \frac{1}{\ln (e^{x}-1)} \ln x  \right) \\
+  &= \exp\left( \frac{1}{\ln x + \ln \mu(x)} \ln x  \right) \\
+  &= \exp\left( \frac{1}{1 + \frac{\ln \mu(x)}{\ln x}} \right) \\
+\end{align*}
+Maintenant $\mu(x) \to 1$ donc $\ln \mu(x) \to 0$, et $\ln x \to - \infty$ lorsque $x \to 0$.
+Donc $\frac{\ln \mu(x)}{\ln x} \to 0$.
+Cela donne 
+$$\lim\limits_{x\rightarrow 0^{+}}x^{\frac{1}{\ln (e^{x}-1)}} = \lim\limits_{x\rightarrow 0^{+}} \exp\left( \frac{1}{1 + \frac{\ln \mu(x)}{\ln x}} \right) = \exp\left(1\right) = e.$$
+
+\fincorrection
+\finexercice

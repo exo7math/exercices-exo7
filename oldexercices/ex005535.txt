@@ -1,0 +1,103 @@
+\exercice{5535, rouget, 2010/07/15}
+\enonce
+Longueur $L$ de $(\Gamma)$ dans chacun des cas suivants~:
+\begin{enumerate}
+\item  $\Gamma$ est l'astroïde de représentation paramétrique $\left\{
+\begin{array}{l}
+x=a\cos^3t\\
+y=a\sin^3t
+\end{array}
+\right.$ ($a>0$ donné).
+\item  $\Gamma$ est l'arche de cycloïde de représentation paramétrique $\left\{
+\begin{array}{l}
+x=R(t-\sin t)\\
+y=R(1-\cos t)
+\end{array}
+\right.$, $0\leqslant t\leqslant2\pi$.
+\item  $\Gamma$ est l'arc de parabole d'équation cartésienne $x^2=2py$, $0\leq x\leq a$ ($p>0$ et $a>0$ donnés).
+\item  $\Gamma$ est la cardioïde d'équation polaire $r=a(1+\cos\theta)$ ( $a>0$ donné).
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  L'astroïde complète est obtenue quand $t$ décrit $[-\pi,\pi]$ et pour des raisons de symétrie, $L=4\int_{0}^{\pi}{2}\left\|\overrightarrow{\frac{dM}{dt}}\right\| dt$.
+Or $\overrightarrow{\frac{dM}{dt}}=\left(\begin{array}{c}
+-3a\sin t\cos^2t\\
+3a\cos t\sin^2t
+\end{array}
+\right)=3a\sin t\cos t\left(\begin{array}{c}
+-\cos t\\
+\sin t
+\end{array}
+\right)$ et donc $\left\|\overrightarrow{\frac{dM}{dt}}\right\|=3a|\sin t\cos t|=\frac{3a}{2}|\sin(2t)|$ puis
+
+\begin{center}
+$L=4\int_{0}^{\pi/2}\left\|\overrightarrow{\frac{dM}{dt}}\right\| dt=6a\int_{0}^{\pi/2}\sin(2t)\;dt=6a\left[-\frac{\cos(2t)}{2}\right]_0^{\pi/2}=6a$.
+\end{center}
+
+\begin{center}
+\shadowbox{
+$L=6a$.
+}
+\end{center}
+
+ \item   $\overrightarrow{\frac{dM}{dt}}=\left(\begin{array}{c}
+R(1-\cos t)\\
+R\sin t
+\end{array}
+\right)=2R\sin\left(\frac{t}{2}\right)\sin t\cos t\left(\begin{array}{c}
+\sin(t/2)\\
+\cos(t/2)
+\end{array}
+\right)$ et donc $\left\|\overrightarrow{\frac{dM}{dt}}\right\|=2R\left|\sin\left(\frac{t}{2}\right)\right|$ puis
+
+\begin{center}
+$L=\int_{0}^{2\pi}\left\|\overrightarrow{\frac{dM}{dt}}\right\| dt=2R\int_{0}^{2\pi}\sin\left(\frac{t}{2}\right)\;dt=4R\left[-\cos\left(\frac{t}{2}\right)\right]_0^{2\pi}=8R$.
+\end{center}
+
+\begin{center}
+\shadowbox{
+$L=8R$.
+}
+\end{center}
+ \item  Une représentation paramétrique de $\Gamma$ est $\left\{
+\begin{array}{l}
+x=t\\
+y=\frac{t^2}{2p}
+\end{array}
+\right.$, $0\leqslant t\leqslant a$ et donc
+
+\begin{align*}\ensuremath
+L&=\int_{0}^{a}\sqrt{(x'(t))^2+(y'(t))^2}\;dt=\int_{0}^{a}\sqrt{1+\frac{t^2}{p^2}}\;dt=p\int_{0}^{a/p}\sqrt{u^2+1}\;du\\
+ &=p\left(\left[u\sqrt{u^2+1}\right]_0^{a/p}-\int_{0}^{a/p}\frac{u^2}{\sqrt{u^2+1}}\;du\right)=a\sqrt{1+\frac{a^2}{p^2}}-p\int_{0}^{a/p}\frac{u^2+1-1}{\sqrt{u^2+1}}\;du\\
+ &=a\sqrt{1+\frac{a^2}{p^2}}-L+p\Argsh\left(\frac{a}{p}\right),
+\end{align*}
+et donc
+
+\begin{center}
+\shadowbox{
+$L=\frac{1}{2}\left(a\sqrt{1+\frac{a^2}{p^2}}+p\Argsh\left(\frac{a}{p}\right)\right)$.
+}
+\end{center}
+ \item  La cardioïde complète est obtenue quand $\theta$ décrit $[-\pi,\pi]$.
+
+\begin{center}
+$\overrightarrow{\frac{dM}{d\theta}}=a\left((-\sin\theta)\overrightarrow{u}_\theta+(1+\cos\theta)\overrightarrow{v}_\theta\right)=2a\cos\left(\frac{\theta}{2}\right)\left(-\sin\left(\frac{\theta}{2}\right)\overrightarrow{u}_\theta+\cos\left(\frac{\theta}{2}\right)\overrightarrow{v}_\theta\right)$.
+\end{center}
+Comme le vecteur $-\sin\left(\frac{\theta}{2}\right)\overrightarrow{u}_\theta+\cos\left(\frac{\theta}{2}\right)\overrightarrow{v}_\theta$ est unitaire, $\left\|\overrightarrow{\frac{dM}{d\theta}}\right\|=\left|2a\cos\left(\frac{\theta}{2}\right)\right|$ puis
+
+\begin{center}
+$L=\int_{-\pi}^{\pi}\left|2a\cos\left(\frac{\theta}{2}\right)\right|dt=4a\int_{0}^{\pi}\cos\left(\frac{\theta}{2}\right)dt=8a\left[\sin\left(\frac{\theta}{2}\right)\right]_0^{\pi}=8a$.
+\end{center}
+
+\begin{center}
+\shadowbox{
+$L=8a$.
+}
+\end{center}
+\end{enumerate}
+\fincorrection
+\finexercice

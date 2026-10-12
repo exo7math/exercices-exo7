@@ -1,0 +1,34 @@
+\exercice{6901, ruette, 2013/01/24}
+\enonce
+Deux urnes sont remplies de boules. La première contient
+10 boules noires et 30 boules blanches. La seconde contient 20
+boules noires et 20 boules blanches.
+On tire une des urnes au hasard, de façon équiprobable, et dans cette urne, 
+on tire une boule au hasard. La boule est blanche. Quelle est la probabilité 
+qu'on ait tiré cette boule dans la première urne sachant qu'elle est blanche ?
+\finenonce
+\noindication
+\correction
+Soit $U_1$ l'événement ``on tire la boule dans la première urne''
+et $U_2$ l'événement ``on tire la boule dans la seconde urne''. Le choix
+de l'urne étant équiprobable, on a : $P(U_1)=P(U_2)=0,5$.
+Soit $B$ l'événement ``on tire une boule blanche''.
+L'énoncé donne les probabilités conditionnelles suivantes : \\
+$P(B|U_1)=30/40=0,75$ et $P(B|U_2)=20/40=0,5$. 
+
+On cherche la probabilité $P(U_1|B)$.
+La formule de Bayes,
+appliquée à la partition $(H_1,H_2)$, nous donne :
+$$
+P(U_1|B)=\frac{P(B|U_1)P(U_1)}{P(B|U_1)P(U_1)+P(B|U_2)P(U_2)}=
+\frac{0,75\times 0,5}{0,75\times 0,5+0,5\times 0,5}=0,6$$
+(probabilité
+a posteriori)
+
+\medskip
+\textit{Interprétation : avant de regarder la couleur de la boule, la probabilité d'avoir choisi la 
+première urne est une probabilité a priori $P(U_1)$ soit 50 \%. 
+Après avoir regardé la boule, on révise notre jugement et on considère 
+$P(U_1|B)$, soit 60 \%.}
+\fincorrection
+\finexercice

@@ -1,0 +1,52 @@
+\exercice{5649, rouget, 2010/10/16}
+\enonce[**I]
+\label{exo:rou15}
+Soient $a_0$, ... , $a_{n-1}$ $n$ nombres complexes et $A=\left(
+\begin{array}{ccccc}
+0&\ldots&\ldots&0&a_0\\
+1&\ddots& &\vdots&a_1\\
+0&\ddots&\ddots&\vdots&\vdots\\
+\vdots&\ddots&\ddots&0&\vdots\\
+0&\ldots&0&1&a_{n-1}
+\end{array}
+\right)$. Calculer $\text{det}(A-xI_n)$.
+\finenonce
+
+\noindication
+
+\correction
+En développant suivant la dernière colonne, on obtient
+
+\begin{center}
+$\text{det}(A-xI_n)=\left|
+\begin{array}{ccccc}
+-x&0&\ldots&0&a_0\\
+1&\ddots&\ddots&\vdots&a_1\\
+0&\ddots&\ddots&0&\vdots\\
+\vdots&\ddots&\ddots&-x&a_{n-1}\\
+0&\ldots&0&1&a_n-x
+\end{array}
+\right|= (-x)^n(a_n-x)+\sum_{k=0}^{n-1}(-1)^{n-k+1}a_k\Delta_k$
+\end{center}
+
+où $\Delta_k=\left|
+\begin{array}{cccccccc}
+-x&0&\ldots&0&\times&\ldots&\ldots&\times\\
+\times&\ddots&\ddots&\vdots&\vdots& & &\vdots\\
+\vdots&\ddots&\ddots&0&\vdots& &  &\vdots\\
+\times&\ldots&\times&-x&\times&\ldots&\ldots&\times\\
+0&\ldots&\ldots&0&1&\times&\ldots&\times\\
+\vdots& & &\vdots&0&\ddots &\ddots&\vdots\\
+\vdots& & &\vdots&\vdots&\ddots&\ddots&\times\\
+0&\ldots&\ldots&0&0&\ldots&0&1\\
+\end{array}
+\right|= (-x)^k1^{n-k}=(-x)^k$ (déterminant par blocs)
+		
+
+Finalement, 
+
+\begin{align*}\ensuremath
+\text{det}(A-xI_n)=(-x)^n(a_n-x) +\sum_{k=0}^{n-1}(-1)^{n-k+1}a_k(-x)^k=(-1)^{n+1}\left(x^{n+1}-\sum_{k=0}^{n}a_kx^k\right).
+\end{align*}
+\fincorrection
+\finexercice

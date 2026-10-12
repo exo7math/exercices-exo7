@@ -1,0 +1,25 @@
+\exercice{7726, mourougane, 2021/08/11}
+\enonce
+\begin{enumerate}
+ \item Montrer que deux formes quadratiques équivalentes sur un espace $E$ prennent les mêmes valeurs dans $k$.
+
+ \item Soit $(E,f)$ un espace muni d'une forme bilinéaire symétrique non dégénérée de forme quadratique associée $q$.
+Montrer que si $f$ admet un vecteur non nul isotrope, la forme $q$ prend toutes les valeurs de $k$.
+
+ \item Montrer que $E$ se décompose comme somme directe orthogonale de plans hyperboliques et d'un sous-espace sur lequel la forme quadratique n'a pas de vecteur isotrope non nul.
+
+ \item Montrer que le nombre de plans hyperboliques dans une telle décomposition est indépendant de la décomposition.
+Le décrire à l'aide d'un invariant défini en cours.
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+ \item Si $q$ et $Q$ sont équivalents, il existe un isomorphisme linéaire $u$ de $E$ tel que $Q=q\circ u$. Par conséquent $Q$ prend toutes les valeurs que prend $q$.
+ \item On sait dans ce cas, que le vecteur isotrope est dans un plan hyperbolique, sur lequel $q$ est équivalente à la forme $Q(x,y)=xy$ qui prend toutes les valeurs de $k$.
+ \item On procède par récurrence comme dans le cours en utilisant le fait que l'orthogonal d'un espace non singulier dan un espace non-singulier est non-singulier et on s'arrête quand la forme n'a plus de vecteurs isotropes non nuls.
+ \item Si dans une telle décomposition, il y a $k$ plans hyperboliques, et dans une autre $k'$, si $k\leq k'$, par le théorème de Witt, l'isométrie entre $k$ des plans hyperboliques des deux décompositions induit une équivalence des orthogonaux. En particulier, ils n'ont pas de vecteurs isotropes. Donc $k'=k$. A l'aide de la décomposition, on peut facilement construire un sous-espace totalement isotrope $I$ de dimension $k$. Ce nombre $k$ est donc inférieur à l'indice de $q$. 
+ On injecte $I$ dans un sous-espace totalement isotrope de dimension maximale $M$. Par le théorème de Witt, les orthogonaux sont isomorphes et ne contiennent donc pas de vecteurs isotropes. Donc, $I$ est de dimension maximale, et $k=\nu(q)$.  
+\end{enumerate}
+\fincorrection
+\finexercice

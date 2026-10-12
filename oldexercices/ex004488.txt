@@ -1,0 +1,39 @@
+\exercice{4488, quercia, 2010/03/14}
+\enonce[Discontinuités d'une fonction monotone]
+
+\begin{enumerate}
+  \item Soit $f:\R \to \R$ croissante. Montrer que l'ensemble des points
+de discontinuité de~$f$ est dénombrable (pour $[a,b]\subset \R$,
+considérer la famille $(f(x^+)-f(x^-))_{x\in{[a,b]}}$).
+
+  \item Donner un exemple de fonction $f:\R \to \R$ croissante ayant
+une infinité dénombrable de discontinuités.
+
+  \item $(**)$ Trouver une fonction $f:\R \to \R$ {\it strictement\/} croissante dont
+l'ensemble des points de discontinuité est égal à~$\Q$.
+
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item 
+  \item 
+  \item Soit $(r_n)$ une énumération de~$Q$.
+On pose $f(x) = \sum_{r_n<x} \frac 1{(n+1)^2}$.
+$f$ est strictement croissante car pour $x< y$ il existe $n\in\N$
+tel que $x< r_n< y$ donc $f(y)-f(x)\ge \frac1{(n+1)^2}$.
+Si $x\in\Q$, $x=r_k$ alors $f(x^+)-f(x^-)\ge \frac 1{(k+1)^2}$
+d'où $f$ est discontinue en~$x$.
+Si $x\in\R\setminus\Q$ et $n\in\N$ alors il existe un voisinage de~$x$
+ne contenant aucun $r_i$, $i\le n$ d'où
+
+$f(x^+)-f(x^-)\le \sum_{i> n}\frac1{(i+1)^2}$
+et $f$ est continue en~$x$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

@@ -1,0 +1,37 @@
+\exercice{7631, mourougane, 2021/08/10}
+\enonce[Applications sur le disque]
+Soit $f$ une fonction holomorphe sur le disque unité $\Delta$. 
+Le but de l'exercice est de montrer que $|f(z)|$ ne tend pas vers $+\infty$ quand $|z|$ tend vers $1$.
+\begin{enumerate}
+\item Vérifier l'énoncé pour l'application $\Delta\to\Cc$, $z\mapsto \frac{1}{z^6-1}$.
+ 
+\item Supposons d'abord que $f$ n'a pas de zéro dans $\Delta$. 
+Soit $r_n$ une suite de réels de $[0,1[$, tels que pour tout entier naturel non nul $n$ et tout $z$ de $\Delta$ de module supérieur à $r_n$, $f(z)$ est de module supérieur à $n$. 
+Montrer alors que pour tout $n$, $|f(0)|\geq n$ et conclure.
+ 
+\item Dans le cas général, supposons que $|f(z)|$ tende vers $+\infty$ quand $|z|$ tend vers $1$.
+Montrer qu'on peut écrire $f$ comme produit sur $\Delta$ d'un polynôme et d'une application holomorphe $g$ qui n'a pas de zéro dans $\Delta$. Conclure.
+
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+  \item   Cette application est continue en $i$ : elle ne tend donc pas vers $+\infty$ en module quand $z$ tend vers $i$.
+  Elle ne tend donc pas vers $+\infty$ en module quand $|z|$ tend vers $1$.
+  \item Par le principe du maximum appliqué à la fonction holomorphe $\Delta\to\Cc$, $z\mapsto 1/f(z)$,
+ $$|1/f(0)|\leq \sup_{|z|=r_n}|1/f(z)|=\frac{1}{\inf_{|z|=r_n} |f(z)|}\leq 1/n.$$
+ Donc, pour tout $n$, $|f(0)|\geq n$, ce qui est absurde.
+ Il n'existe donc pas de telle suite. Donc, dans le cas où $f$ n'a pas de zéro, $|f(z)|$ ne tend pas vers $+\infty$ quand $|z|$ tend vers $1$.
+  \item  Comme $|f(z)|$ tend vers $+\infty$ quand $|z|$ tend vers $1$, il existe $r\in ]0,1[$ tel que pour tout $z\in\Delta$ avec $|z|>r$, $|f(z)|>1$. L'application $f$ ne s'annule donc pas sur $\Delta-\overline{\Delta_r}$.
+ Par le théorème des zéros isolés, puisque $f$ holomorphe n'est pas constante, elle n'admet qu'un nombre fini de zéro dans le compact $\overline{\Delta_r}$ et par suite dans tout le disque $\Delta$.
+ Soit $P(z)$ le polynôme unitaire qui a pour zéros les zéros de $f$ avec les mêmes multiplicités.
+ L'application $h=\frac{f}{P}$ a des singularités isolées en les zéros de $f$. Au voisinage de ces zéros, le développement en séries entières de $f$ montre que les singularités 
+ sont apparentes et que $h$ tend vers une valeur finie non nulle en ces points. L'application $h$ se prolonge donc par continuité en une application holomorphe $g$ sur $\Delta$. 
+ L'égalité $f=hP$ sur $\Delta-f^{-1}(0)$ se prolonge par continuité en $f=gP$ sur $\Delta$.
+ Par construction, par le choix des multiplicités, l'application $g$ n'a pas de zéro aux zéros de $f$, et n'a donc pas de zéro sur $\Delta$.
+ Comme $|f(z)|$ tend vers $+\infty$ quand $|z|$ tend vers $1$ et que $|P|$ tend vers une valeur finie en tout point de $\partial\Delta$, $|g|$ tend vers $+\infty$ quand $|z|$ tend vers $1$. Le cas précédent montre que l'existence d'une telle application $g$ est absurde.
+ Donc, $|f(z)|$ ne tend pas vers $+\infty$ quand $|z|$ tend vers $1$. 
+\end{enumerate}
+\fincorrection
+\finexercice

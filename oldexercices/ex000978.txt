@@ -1,0 +1,51 @@
+\exercice{978, cousquer, 2003/10/01}
+
+\enonce
+On désigne par $\mathcal{P}_q$ l'espace vectoriel des polynômes à
+coefficients réels de degré inférieur ou égal à $q$, et $\mathcal{O}_q$
+l'espace vectoriel des polynômes d'ordre supérieur ou égal à $q$,
+c'est-à-dire divisibles par $x^q$. $P$ étant un polynôme, on note $T(P)$ le
+polynôme défini par~: 
+$$T(P)(x)=xP(0)-{1\over20}x^5P^{(4)}(0)+
+\int_0^x t^2[P(t+1)-P(t)-P'(t)]\,dt.$$
+\begin{enumerate}
+\item  Montrer que $T$ est linéaire. Déterminer $T(e_i)$ où
+$e_0=1$, $e_1=x$, $e_2=x^2$, $e_3=x^3$, $e_4=x^4$, et vérifier que
+$T(\mathcal{P}_4) \subset\mathcal{P}_4$. Désormais, on considère $T$ comme application
+linéaire de $\mathcal{P}_4$ dans $\mathcal{P}_4$. Écrire sa matrice par 
+rapport à la base $(e_0, e_1, e_2, e_3, e_4)$.
+
+\item  Déterminer soigneusement les espaces $T(\mathcal{P}_4\cap\mathcal{O}_3)$ et
+$T(\mathcal{P}_4\cap\mathcal{O}_2)$.
+
+\item  La restriction $T'$ de $T$ à $\mathcal{P}_4\cap\mathcal{O}_2$ est-elle injective~?
+Sinon déterminer une base du noyau de $T'$.
+
+\item  Montrer que $\Im T = (\mathcal{O}_1\cap\mathcal{P}_1)\oplus(\mathcal{O}_3\cap\mathcal{P}_4)$. Quel est le 
+rang de $T$~?
+
+\item  Montrer que $\mathrm{Ker} T$ peut s'écrire sous la forme
+$(\mathcal{O}_1\cap\mathcal{P}_1)\oplus V$~; expliciter un sous-espace $V$ possible.
+Déterminer $\mathrm{Ker} T\cap\Im T$.
+
+\item  On cherche un vecteur non nul $u=ae_3+be_4$ de $\mathcal{O}_3\cap\mathcal{P}_4$, et un
+nombre réel~$\lambda$, tels que $T(u)=\lambda u$.
+Écrire les équations que doivent vérifier $a,b,\lambda$.
+Montrer qu'il existe deux valeurs possibles de $\lambda$,
+$\lambda_1$ et $\lambda_2$, telles $0<\lambda_1<\lambda_2$~; les
+calculer. Trouver deux vecteurs non nuls $u_3$ et $u_4$ de
+$\mathcal{O}_3\cap\mathcal{P}_4$ tels que $T(u_3)=\lambda_1u_3$ et
+$T(u_4)=\lambda_2u_4$.
+
+\item  On pose $u_0=e_1$, $u_1=e_2-4e_3+3e_4$, $u_2=e_0$. Montrer que
+$\{u_0,u_1,u_2,u_3,u_4\}$ est une base de $\mathcal{P}_4$. Écrire la matrice
+de $T$ dans cette base.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\nocorrection
+
+\finexercice
+

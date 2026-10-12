@@ -1,0 +1,20 @@
+\exercice{4003, quercia, 2010/03/11}
+\enonce[DL d'une fonction convexe]
+Soit $f$ continue et croissante sur $\R^+$. On pose
+$F(x)= \int_0^x f$, et l'on suppose que $F(x)=x^2+ o(x)$. Montrer que
+$f(x)=2x+ o(\sqrt x)$.
+
+\finenonce
+
+\noindication
+
+\correction
+Soit $F(x) = x^2 + xG(x)$.
+On a pour $h>0$~: $f(x) \le \frac{F(x+xh)-F(x)}{xh} = 2x + xh + \frac{G(x+xh)-G(x)}h + G(x+xh)$.
+Soit $\varepsilon>0$ et $A$ tel que $y\ge A \Rightarrow |G(y)|\le\varepsilon^2$. On prend
+$h=\varepsilon/\sqrt{x}$ et on obtient
+$f(x)- 2x -\varepsilon\sqrt x \le \varepsilon\sqrt x + \varepsilon^2$
+d'où $f(x)\le 2x+ o(\sqrt x)$. L'inégalité inverse se montre de même.
+\fincorrection
+
+\finexercice

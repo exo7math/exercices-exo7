@@ -1,0 +1,112 @@
+\exercice{5502, rouget, 2010/07/10}
+\enonce[**T]
+Dans $E_3$ rapporté à un repère $(O,i,j,k)$, on donne~:
+la droite $(D)$ dont un système d'équations paramétriques est $\left\{
+\begin{array}{l}
+x=2+3t\\
+y=-t\\
+z=1+t
+\end{array}
+\right.
+$,
+le plan $P$ dont un système d'équations paramétriques est $\left\{
+\begin{array}{l}
+x=1+2\lambda+\mu\\
+y=-1-3\lambda+2\mu\\
+z=1+\lambda
+\end{array}
+\right.
+$,
+le plan $P'$ dont un système d'équations paramétriques est $\left\{
+\begin{array}{l}
+x=-5-\nu\\
+y=3+\nu+3\eta\\
+z=\nu+\eta
+\end{array}
+\right.
+$,
+Etudier $D\cap P$ et $P\cap P'$
+\finenonce
+
+\noindication
+
+\correction
+Les vecteurs $(2,-3,1)$ et $(1,2,0)$ ne sont pas colinéaires, de sorte que $(P)$ est bien un plan. Trouvons alors une équation cartésienne de $(P)$
+
+\begin{align*}\ensuremath
+M(x,y,z)\in(P)&\Leftrightarrow\exists(\lambda,\mu)\in\Rr^2/\;
+\left\{
+\begin{array}{l}
+x=1+2\lambda+\mu\\
+y=-1-3\lambda+2\mu\\
+z=1+\lambda
+\end{array}
+\right.
+\Leftrightarrow\exists(\lambda,\mu)\in\Rr^2/\;
+\left\{
+\begin{array}{l}
+\lambda=z-1\\
+x=1+2(z-1)+\mu\\
+y=-1-3(z-1)+2\mu
+\end{array}
+\right.
+\\
+ &\Leftrightarrow\exists(\lambda,\mu)\in\Rr^2/\;
+\left\{
+\begin{array}{l}
+\lambda=z-1\\
+\mu=x-2z+1\\
+y=-1-3(z-1)+2(x-2z+1)
+\end{array}
+\right.
+\\
+ &\Leftrightarrow
+-2x+y+7z-4=0
+\end{align*}
+Soit alors $M(2+3t,-t,1+t)$, $t\in\Rr$, un point de $(D)$
+
+\begin{align*}\ensuremath
+M\in(P)&\Leftrightarrow-2(2+3t)+(-t)+7(1+t)-4=0
+\Leftrightarrow
+0\times t-1=0.
+\end{align*}
+Ce dernier système n'a pas de solution et donc $(D)\cap(P)=\varnothing$. La droite $(D)$ est strictement parallèle au plan $(P)$.
+
+\begin{align*}\ensuremath
+M(x,y,z)\in(P)\cap(P')&\Leftrightarrow\exists(\nu,\eta)\in\Rr^2/\;\left\{
+\begin{array}{l}
+x=-5-\nu\\
+y=3+\nu+3\eta\\
+z=\nu+\eta\\
+-2x+y+7z-4=0
+\end{array}
+\right.\\
+ &\Leftrightarrow\exists(\nu,\eta)\in\Rr^2/\;\left\{
+\begin{array}{l}
+x=-5-\nu\\
+y=3+\nu+3\eta\\
+z=\nu+\eta\\
+-2(-5-\nu)+(3+\nu+3\eta)+7(\nu+\eta)-4=0
+\end{array}
+\right.\\
+ &\Leftrightarrow\exists(\nu,\eta)\in\Rr^2/\;\left\{
+\begin{array}{l}
+\eta=-\nu-\frac{9}{10}\\
+x=-5-\nu\\
+y=3+\nu+3\left(-\nu-\frac{9}{10}\right)\\
+z=\nu+\left(-\nu-\frac{9}{10}\right)
+\end{array}
+\right.
+\Leftrightarrow
+\exists\nu\in\Rr/\;
+\left\{
+\begin{array}{l}
+x=-\nu-5\\
+y=-2\nu+\frac{3}{10}\\
+z=-\frac{9}{10}
+\end{array}
+\right.
+\end{align*}
+$(P)$ et $(P')$ sont donc sécants en la droite passant par le point $\left(-5,\frac{3}{10},-\frac{9}{10}\right)$ et de vecteur directeur $(1,2,0)$.
+\fincorrection
+\finexercice

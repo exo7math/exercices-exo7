@@ -1,0 +1,104 @@
+\exercice{5773, rouget, 2010/10/16}
+\enonce[*** I]
+Soit $E=\Rr[X]$. Pour $(P,Q)\in E^2$, on pose $\varphi(P,Q)=\int_{0}^{+\infty}P(t)Q(t)e^{-t}\;dt$. Pour $n\in\Nn$, on pose $h_n=(X^ne^{-X})^{(n)}e^X$.
+
+\begin{enumerate}
+ \item  Montrer que $\varphi$ est un produit scalaire sur $E$.
+
+\item 
+  \begin{enumerate}
+   \item  Pour $n\in\Nn$, préciser les coefficients de $h_n$. Montrer que la famille $(h_n)_{n\in\Nn}$ est une base de $E$.
+   \item Montrer que la famille $(h_n)_{n\in\Nn}$ est une base orthogonale de l'espace préhilbertien $(E,\varphi)$.
+   \item Pour $n\in\Nn$, déterminer $\|h_n\|$. En déduire une base orthonormée de l'espace préhilbertien $(E,\varphi)$.
+  \end{enumerate}
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  \textbullet~Soient $P$ et $Q$ deux polynômes. La fonction $t\mapsto P(t)Q(t)e^{-t}$ est continue sur $[0,+\infty[$ et est négligeable en $+\infty$ devant $\frac{1}{t^2}$ d'après un théorème de croissances comparées. Donc la fonction $t\mapsto P(t)Q(t)e^{-t}$ est intégrable sur $[0,+\infty[$ et $\varphi(P,Q)$ existe dans $\Rr$.
+
+\textbullet~La symétrie, la bilinéarité et la positivité de l'application $\varphi$ sont claires. De plus, pour $P\in E$,
+
+\begin{align*}\ensuremath
+\varphi(P,P)=0&\Rightarrow\int_{0}^{+\infty}P^2(t)e^{-t}\;dt=0\\
+ &\Rightarrow\forall t\in[0,+\infty[,\;P^2(t)e^{-t}=0\;(\text{fonction continue positive d'intégrale nulle})\\
+ &\Rightarrow\forall t\in[0,+\infty[,\;P(t)=0\Rightarrow P=0\;(\text{polynôme ayant une infinité de racines}).
+\end{align*}
+
+Ainsi, la forme $\varphi$ est définie et finalement
+
+\begin{center}
+\shadowbox{
+l'application $\varphi$ est un produit scalaire sur $E$.
+}
+\end{center}
+
+\item 
+  \begin{enumerate}
+  \item Soit $n\in\Nn$. La formule de \textsc{Leibniz} permet d'écrire
+
+\begin{center}
+$(X^ne^{-X})^{(n)}e^X=\left(\sum_{k=0}^{n}\dbinom{n}{k}(X^n)^{(n-k)}(e^{-X})^{(k)}\right)e^X=\sum_{k=0}^{n}(-1)^{k}\dbinom{n}{k}\frac{n!}{k!}X^k$.
+\end{center}
+
+En particulier, $\forall n\in\Nn$, $\text{deg}(h_n)=n$ (et $\text{dom}(h_n)=(-1)^n$) et on sait que
+
+\begin{center}
+\shadowbox{
+la famille $(h_n)_{n\in\Nn}$ est une base de $\Rr[X]$.
+}
+\end{center}
+
+  \item Soient $P\in E$ et $n\in\Nn^*$. Soit $A>0$. Les deux fonctions $t\mapsto(t^ne^{-t})^{(n-1)}$ et $P$ sont de classe $C^1$ sur le segment $[0,A]$. On peut donc effectuer une intégration par parties et on obtient
+
+\begin{center}
+$\int_{0}^{A}P(t)h_n(t)e^{-t}\;dt=\int_{0}^{A}P(t)(t^ne^{-t})^{(n)}\;dt=\left[P(t)(t^ne^{-t})^{(n-1)}\right]_0^A-\int_{0}^{A}P'(t)(t^ne^{-t})^{(n-1)}\;dt$
+\end{center}
+
+Maintenant, $(t^ne^{-t})^{(n-1)}$ peut s'écrire $Q(t)e^{-t}$ où $Q$ est un polynôme et donc $P(t)(t^ne^{-t})^{(n-1)}(t)$ tend vers $0$ quand $t$ tend vers $+\infty$ d'après un théorème de croissances comparées. D'autre part, la formule de \textsc{Leibniz} montre que le polynôme $Q$ a
+une valuation au moins égale à $1$. On en déduit que la fonction $t\mapsto P(t)(t^ne^{-t})^{(n-1)}(t)$ s'annule en $0$. En faisant tendre $A$ vers $+\infty$, on obtient
+
+\begin{center}
+$\int_{0}^{+\infty}P(t)h_n(t)e^{-t}\;dt=-\int_{0}^{+\infty}P'(t)(t^ne^{-t})^{(n-1)}\;dt$.
+\end{center}
+
+De manière générale, pour $0\leqslant k\leqslant n$, les remarques précédentes s'appliquent à la fonction $t\mapsto P^{(k)}(t)(t^ne^{-t})^{(n-k)}$ et par récurrence on obtient
+
+\begin{center}
+$\forall k\in\llbracket0,n\rrbracket$, $\int_{0}^{+\infty}P(t)h_n(t)e^{-t}\;dt=(-1)^k\int_{0}^{+\infty}P^{(k)}(t)(t^ne^{-t})^{(n-k)}\;dt$.
+\end{center}
+
+En particulier, pour $k=n$ on obtient $\int_{0}^{+\infty}P(t)h_n(t)e^{-t}\;dt=(-1)^n\int_{0}^{+\infty}P^{(n)}(t)t^ne^{-t}\;dt$. Cette égalité reste vraie quand $n=0$ et on a montré que
+
+\begin{center}
+$\forall P\in\Rr[X]$, $\forall n\in\Nn$, $\varphi(P,h_n)=\int_{0}^{+\infty}P(t)h_n(t)e^{-t}\;dt=(-1)^n\int_{0}^{+\infty}P^{(n)}(t)t^ne^{-t}\;dt$.
+\end{center}
+
+En particulier, si $n\in\Nn^*$ et $\text{deg}(P)<n$, on a $P^{(n)}=0$ et donc $\varphi(P,h_n)=0$. Ainsi, $\forall n\in\Nn^*$, $h_n\in(\Rr_{n-1}[X])^\bot$. Puisque $\forall n\in\Nn$, $\text{deg}(h_n)=n$, on en déduit en particulier que $\forall n\in\Nn^*$, $\forall k\in\llbracket0,n-1\rrbracket$, $\varphi(hn,h_k)=0$ et on a montré que
+
+\begin{center}
+\shadowbox{
+la famille $(h_n)_{n\in\Nn}$ est une base orthogonale de l'espace préhilbertien $(\Rr[X],\varphi)$.
+}
+\end{center}
+
+  \item  Soit $n\in\Nn$. Puisque $\text{deg}(h_n)=n$ et $\text{dom}(h_n)=(-1)^n$, on a $h_n^{(n)}=(-1)^nn!$. La question précédente fournit alors
+
+\begin{center}
+$\|h_n\|^2=(-1)^n\int_{0}^{+\infty}h_n^{(n)}(t)t^ne^{-t}\;dt=n!\int_{0}^{+\infty}t^ne^{-t}\;dt=n!\Gamma(n+1)=n!^2$,
+\end{center}
+
+et donc $\|h_n\|=n!$. Par suite,
+
+\begin{center}
+\shadowbox{
+la famille $\left(\frac{1}{n!}h_n\right)_{n\in\Nn}$ est une base orthonormale de l'espace préhilbertien $(\Rr[X],\varphi)$.
+}
+\end{center}
+  \end{enumerate}
+\end{enumerate}
+\fincorrection
+\finexercice

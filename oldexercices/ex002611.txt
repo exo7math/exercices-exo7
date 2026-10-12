@@ -1,0 +1,58 @@
+\exercice{2611, delaunay, 2009/05/19}
+\enonce
+ Soit $A$ une matrice $2\times 2$ \`a coefficients r\'eels.
+$$A=\begin{pmatrix}a&b \\  c&d\end{pmatrix}$$
+On suppose $a+c=b+d=1$ et $a-b\neq 1$. 
+\begin{enumerate}
+ \item Soient $(x_1,x_2)$, $(y_1,y_2)$ deux vecteurs de $\R^2$, tels que  
+$$A\begin{pmatrix}x_1 \\  x_2\end{pmatrix}=\begin{pmatrix}y_1 \\  y_2\end{pmatrix}$$ 
+montrer qu'alors 
+$$y_1+y_2=x_1+x_2.$$
+
+ \item  Soit le vecteur $\vec x=(1,-1)$, vérifier que $\vec x$ est un vecteur propre de $A$, et déterminer sa valeur propre.
+ \item Déterminer le polynôme caractéristique de $A$ et calculer ses racines.
+
+ \item Déterminer un vecteur propre, $\vec y$, de $A$ non colinéaire à $\vec x$ et exprimer la matrice de l'endomorphisme défini par $A$ dans la base $(\vec x,\vec y)$.
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+ Soit $A$ une matrice $2\times 2$ \`a coefficients r\'eels.
+$$A=\begin{pmatrix}a&b \\  c&d\end{pmatrix}$$
+On suppose $a+c=b+d=1$ et $a-b\neq 1$. 
+\begin{enumerate}
+ \item Soient $(x_1,x_2)$, $(y_1,y_2)$ deux vecteurs de $\R^2$, tels que  
+$$A\begin{pmatrix}x_1 \\  x_2\end{pmatrix}=\begin{pmatrix}y_1 \\  y_2\end{pmatrix}$$ 
+{\it On montre que $y_1+y_2=x_1+x_2.$}
+
+ On a
+$$A\begin{pmatrix}x_1 \\  x_2\end{pmatrix}=\begin{pmatrix}a&b \\  c&d\end{pmatrix}\begin{pmatrix}x_1 \\  x_2\end{pmatrix}=\begin{pmatrix}ax_1+bx_2 \\  cx_1+dx_2\end{pmatrix}=\begin{pmatrix}y_1 \\  y_2\end{pmatrix},$$
+d'où $y_1+y_2=ax_1+bx_2+cx_1+dx_2=(a+c)x_1+(b+d)x_2=x_1+x_2.$
+ \item {\it Soit le vecteur $\vec x=(1,-1)$, vérifions que $\vec x$ est un vecteur propre de $A$, et déterminons sa valeur propre.}
+$$A.\vec x=\begin{pmatrix}a&b \\  c&d\end{pmatrix}\begin{pmatrix}1 \\  -1\end{pmatrix}=\begin{pmatrix}a-b \\  c-d\end{pmatrix},$$
+or $c-d=(1-a)-(1-b)=-(a-b)$, car $a+b=c+d=1$. Ainsi,
+$$\begin{pmatrix}a&b \\  c&d\end{pmatrix}\begin{pmatrix}1 \\  -1\end{pmatrix}=
+\begin{pmatrix}a-b \\  -(a-b)\end{pmatrix}=(a-b)\begin{pmatrix}1 \\  -1\end{pmatrix}.$$
+Ainsi, le vecteur $\vec x$ est un vecteur propre de $A$ pour la valeur propre $a-b$.
+ \item  {\it Déterminons le polynôme caractéristique de $A$ et calculons ses racines.}
+
+Tout d'abord, compte tenu de l'hypothèse
+$a+b=c+d=1$, nous écrirons
+$$A=\begin{pmatrix}a&b \\  1-a&1-b\end{pmatrix}.$$
+D'où 
+$$P_A(X)=\begin{vmatrix}a-X&b \\  1-a&1-b-X\end{vmatrix}=(a-X)(1-b-X)-b(1-a)=X^2-(a-b+1)X+(a-b).$$
+On sait, d'après la question précédente que $a-b$ est racine de ce polyn\^ome, or, le produit des racines est égal à $a-b$ et la somme à $a-b+1$, ainsi la seconde racine est égale é $1$.
+
+ \item {\it Déterminons un vecteur propre, $\vec y$, de $A$ non colinéaire à $\vec x$ et exprimons la matrice de l'endomorphisme défini par $A$ dans la base $(\vec x,\vec y)$.}
+
+Un vecteur propre non colinéaire à $\vec x$ est vecteur propre pour la valeur propre $1$. Ainsi, si on note $\vec y=(y_1,y_2)$, on a
+$$A\vec y=\vec y\iff\begin{pmatrix}a&b \\  1-a&1-b\end{pmatrix}\begin{pmatrix}y_1 \\  y_2\end{pmatrix}=
+\begin{pmatrix}y_1 \\  y_2\end{pmatrix},$$
+ce qui équivaut à
+$$\left\{\begin{align*}ay_1+by_2&=y_1 \\  (1-a)y_1+(1-b)y_2&=y_2\end{align*}\right.\iff (a-1)y_1+by_2=0.$$
+Le vecteur $\vec y=(b,1-a)$ est un vecteur propre de $A$ pour la valeur propre $1$.
+\end{enumerate}
+\fincorrection
+\finexercice

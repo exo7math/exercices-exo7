@@ -1,0 +1,164 @@
+\exercice{5732, rouget, 2010/10/16}
+\enonce[**]
+Etudier (convergence simple, convergence absolue, convergence uniforme, convergence normale) les séries de fonctions de termes généraux :
+
+\begin{enumerate}
+\item  $f_n(x) = nx^2e^{-x\sqrt{n}}$ sur $\Rr^+$
+\item  $f_n(x) =\frac{1}{n+n^3x^2}$   sur $\Rr_+^*$
+\item  $f_n(x) = (-1)^n\frac{x}{(1+x^2)^n}$.
+\end{enumerate}
+
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  \textbf{Convergence simple.} Chaque fonction $f_n$, $n\in\Nn$, est définie sur $\Rr$. Soit $x\in\Rr$.
+
+\textbullet~Si $x<0$, $f_n(x)\underset{n\rightarrow+\infty}{\rightarrow}+\infty$ et la série de terme général $f_n(x)$, $n\in\Nn$, diverge grossièrement.
+
+\textbullet~Si $x=0$, puisque $\forall n\in\Nn$, $f_n(x)=f_n(0)=0$, la série de terme général $f_n(x)$, $n\in\Nn$, converge.
+
+\textbullet~Si $x>0$, $n^2f_n(x)=x^2e^{-x\sqrt{n}+3\ln n}\underset{n\rightarrow+\infty}{\rightarrow}0$ et donc $f_n(x)\underset{n\rightarrow+\infty}{=}o\left(\frac{1}{n^2}\right)$. Dans ce cas aussi, la série de terme général $f_n(x)$, $n\in\Nn$, converge.
+
+\begin{center}
+\shadowbox{
+La série de fonctions de terme général $f_n$, $n\in\Nn$, converge simplement sur $\Rr^+$.
+}
+\end{center}
+
+\textbf{Convergence normale.} La fonction $f_0$ est la fonction nulle. Soit $n\in\Nn^*$. La fonction $f_n$ est dérivable sur $\Rr^+$ et pour tout réel positif $x$,
+
+\begin{center}
+$f_n'(x)=n(2x-x^2\sqrt{n})e^{-x\sqrt{n}}=nx(2-x\sqrt{n})e^{-x\sqrt{n}}$.
+\end{center}
+
+La fonction $f_n$ est positive sur $[0,+\infty[$, croissante sur $\left[0,\frac{2}{\sqrt{n}}\right]$ et décroissante sur $\left[\frac{2}{\sqrt{n}},+\infty\right[$. On en déduit que
+
+\begin{center}
+$\|f_n\|_\infty=\underset{x\in[0,+\infty[}{\text{sup}}|f_n(t)|=f_n\left(\frac{2}{\sqrt{n}}\right)=4e^{-2}$.
+\end{center}
+
+Par suite, la série numérique de terme général $\|f_n\|_\infty$, $n\in\Nn$, diverge grossièrement et donc
+
+\begin{center}
+\shadowbox{
+La série de fonctions de terme général $f_n$, $n\in\Nn$, ne converge pas normalement sur $\Rr^+$.
+}
+\end{center}
+
+Soit $a>0$. Pour $n\geqslant\frac{4}{a^2}$, on a $\frac{2}{\sqrt{n}}\leqslant a$ et donc la fonction $f_n$ est décroissante sur $[a,+\infty[$. Soit donc $n$ un entier supérieur ou égal à $\frac{4}{a^2}$. Pour tout réel $t$ supérieur ou égal à $a$, on a $|f_n(t)|=f_n(t)\leqslant f_n(a)$ et donc $\underset{x\in[a,+\infty[}{\text{sup}}|f_n(t)|=f_n(a)$.
+
+Comme la série numérique de terme général $f_n(a)$, $n\in\Nn$, converge, la série de fonctions de terme général $f_n$, $n\in\Nn$, converge normalement et donc uniformément sur $[a,+\infty[$.
+
+\begin{center}
+\shadowbox{
+Pour tout $a>0$, la série de fonctions de terme général $f_n$, $n\in\Nn$, converge normalement et uniformément sur $[a,+\infty[$.
+}
+\end{center}
+
+\textbf{Convergence uniforme sur $[0,+\infty[$.} Pour $n\in\Nn$ et $t\in\Rr^+$,
+
+\begin{center}
+$|R_n(t)|=\sum_{k=n+1}^{+\infty}f_k(t)\geqslant f_{n+1}(t)$,
+\end{center}
+
+et donc $\underset{t\in[0,+\infty[}{\text{sup}}|R_n(t)|\geqslant\underset{t\in[0,+\infty[}{\text{sup}}|f_{n+1}(t)|4e^{-2}$. Par suite, $\underset{t\in[0,+\infty[}{\text{sup}}|R_n(t)|$ ne tend pas vers $0$ quand $n$ tend vers $+\infty$ et donc
+
+\begin{center}
+\shadowbox{
+la série de fonctions de terme général $f_n$, $n\in\Nn$, ne converge pas uniformément sur $\Rr^+$.
+}
+\end{center}
+
+\item  \textbf{Convergence simple.} Chaque fonction $f_n$, $n\in\Nn^*$, est définie sur $]0,+\infty[$. Soit $x\in]0,+\infty[$. Puisque $f_n(x)\underset{n\rightarrow+\infty}{\sim}\frac{1}{n^3x^2}>0$, la série numérique de terme général $f_n(x)$ converge. Donc
+
+\begin{center}
+\shadowbox{
+la série de fonctions de terme général $f_n$, $n\in\Nn^*$, converge simplement sur $]0,+\infty[$.
+}
+\end{center}
+
+\textbf{Convergence normale.} Soit $n\in\Nn^*$. La fonction $f_n$ est décroissante et positive sur $]0,+\infty[$. Donc $\underset{x\in]0,+\infty}{\text{sup}}|f_n(x)|=f_n(0)=\frac{1}{n}$.Puisque la série numérique de terme général $\frac{1}{n}$, $n\in\Nn^*$, diverge
+
+\begin{center}
+\shadowbox{
+la série de fonctions de terme général $f_n$, $n\in\Nn^*$, ne converge pas normalement sur $\Rr^+$.
+}
+\end{center}
+
+Soit $a>0$. Pour $n\in\Nn^*$, la fonction $f_n$ est décroissante et positive sur $5a,+\infty[$ et donc $\underset{x\in[a,+\infty}{\text{sup}}|f_n(x)|=f_n(a)$.
+
+Comme la série numérique de terme général $f_n(a)$, $n\in\Nn^*$, converge, la série de fonctions de terme général $f_n$, $n\in\Nn$, converge normalement et donc uniformément sur $[a,+\infty[$.
+
+\begin{center}
+\shadowbox{
+Pour tout $a>0$, la série de fonctions de terme général $f_n$, $n\in\Nn^*$, converge normalement et uniformément sur $[a,+\infty[$.
+}
+\end{center}
+
+\item  \textbf{Convergence simple.} Chaque fonction $f_n$, $n\in\Nn$, est définie sur $\Rr$ et impaire. Soit $x\in\Rr^+$.
+
+\textbullet~Si $x=0$, pour tout entier naturel $n$, $f_n(x)=f_n(0)=0$. Dans ce cas, la série numérique de terme général $f_n(x)$ converge.
+
+\textbullet~Si $x>0$, la suite $\left(\frac{x}{(x^2+1)^n}\right)_{n\in\Nn}$ est une suite géométrique de premier $x>0$ et de raison $\frac{1}{x^2+1}\in]0,1[$. On en déduit que la suite $\left(\frac{x}{(x^2+1)^n}\right)_{n\in\Nn}$ est positive décroissante de limite nulle. Par suite, la série numérique de terme général $f_n(x)$ converge en vertu du critère spécial aux séries alternées.
+
+\textbullet~Si $x<0$, puisque pour tout entier naturel $n$, $f_n(x)=-f_n(-x)$, la série numérique de terme général $f_n(x)$ converge.
+
+Finalement
+
+\begin{center}
+\shadowbox{
+la série de fonctions de terme général $f_n$, $n\in\Nn$, converge simplement sur $\Rr$.
+}
+\end{center}
+
+\textbf{Convergence normale.} La fonction $f_0$ n'est pas bornée sur $\Rr$ et donc la série de fonctions de terme général $f_n$, $n\in\Nn$, n'est pas normalement convergente sur $\Rr$.
+
+Analysons la convergence normale de la série de fonctions de terme général $f_n$, $n\geqslant1$, sur $\Rr$.
+
+Soit $n\in\Nn^*$. La fonction $g_n=(-1)^nf_n$ est dérivable sur $\Rr$ et pour tout réel $x$,
+
+\begin{center}
+$g_n'(x)=\frac{1}{(1+x^2)^n}+x\times\frac{-2nx}{(1+x^2)^{n+1}}=\frac{1-(2n-1)x^2}{(1+x^2)^{n+1}}$.
+\end{center}
+
+La fonction $g_n$ est positive sur $\Rr^+$, croissante sur $\left[0,\frac{1}{\sqrt{2n-1}}\right]$ et décroissante sur $\left[\frac{1}{\sqrt{2n-1}},+\infty\right[$. Puisque la fonction $g_n$ est impaire, on en déduit que
+
+\begin{center}
+$\|f_n\|_\infty=\underset{x\in\Rr}{\text{sup}}|f_n(x)|=g_n\left(\frac{1}{\sqrt{2n-1}}\right)=\frac{1}{\sqrt{2n-1}}\times\frac{1}{\left(1+\frac{1}{2n-1}\right)^{n+1}}=\frac{1}{\sqrt{2n-1}}\left(1-\frac{1}{2n}\right)^{-(n+1)}$.
+\end{center}
+
+Mais $\left(1-\frac{1}{2n}\right)^{-(n+1)}=\text{exp}\left(-(n+1)\ln\left(1-\frac{1}{2n}\right)\right)\underset{n\rightarrow+\infty}{=}\text{exp}\left(\frac{1}{2}+o(1)\right)$ et donc 
+
+\begin{center}
+$\|f_n\|_\infty=\frac{1}{\sqrt{2n-1}}\left(1-\frac{1}{2n}\right)^{-(n+1)}\underset{n\rightarrow+\infty}{\sim}\frac{1}{e\sqrt{2}\times\sqrt{n}}>0$.
+\end{center}
+
+Par suite, la série numérique de terme général $\|f_n\|_\infty$, $n\in\Nn^*$, diverge et donc
+
+\begin{center}
+\shadowbox{
+la série de fonctions de terme général $f_n$, $n\in\Nn^*$, ne converge pas normalement sur $\Rr$.
+}
+\end{center}
+
+\textbf{Convergence uniforme sur $\Rr$.} Soit $n\in\Nn$. Pour $x\in\Rr^+$, puisque la suite $\left(\frac{x}{(1+x^2)^n}\right)_{n\in\Nn}$ est positive décroissante et de limite nulle, d'après une majoration classique du reste à l'ordre $n$ d'une série alternée,
+
+\begin{center}
+$R_n(x)|=\left|\sum_{k=n+1}^{+\infty}(-1)^k\frac{x}{(1+x^2)^k}\right|\leqslant\left|(-1)^{n+1}\frac{x}{(1+x^2)^{n+1}}\right|=\frac{x}{(1+x^2)^{n+1}}=g_{n+1}(x)\leqslant g_{n+1}\left(\frac{1}{\sqrt{2n+1}}\right)$,
+\end{center}
+
+cette inégalité restant valable pour $x<0$ par parité. Donc $\underset{x\in\Rr}{\text{sup}}|R_n(x)|\leqslant g_{n+1}\left(\frac{1}{\sqrt{2n+1}}\right)$. D'après ci-dessus, 
+
+$g_{n+1}\left(\frac{1}{\sqrt{2n+1}}\right)$ tend vers $0$ quand $n$ tend vers $+\infty$ et il en est de même de $\underset{x\in\Rr}{\text{sup}}|R_n(x)|$. On a montré que
+
+\begin{center}
+\shadowbox{
+la série de fonctions de terme général $f_n$, $n\in\Nn$, converge uniformément sur $\Rr$.
+}
+\end{center}
+\end{enumerate}
+\fincorrection
+\finexercice

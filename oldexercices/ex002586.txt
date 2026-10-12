@@ -1,0 +1,254 @@
+\exercice{2586, delaunay, 2009/05/19}
+\enonce
+\centerline{\bf I}
+
+Soit $\alpha\in\R$ et $A_\alpha\in M_3(\R)$ la matrice suivante
+$$A_\alpha=\begin{pmatrix}-1 & 0 & \alpha+1 \\  1&-2&0 \\ -1&1&\alpha\end{pmatrix}$$
+{\it Premi\`ere partie} :
+
+\begin{enumerate} 
+  \item Factoriser le polyn\^ome caract\'eristique $P_{A_\alpha}(X)$ en produit de facteurs du premier degr\'e.
+
+  \item D\'eterminer selon la valeur du param\`etre $\alpha$ les valeurs propres distinctes de $A_\alpha$ et leur multiplicit\'e.
+
+  \item D\'eterminer les valeurs de $\alpha$ pour lesquelles la matrice $A_\alpha$ est diagonalisable.
+
+  \item D\'eterminer selon la valeur de $\alpha$ le polyn\^ome minimal de $A_\alpha$.
+ \end{enumerate}
+ 
+{\it Seconde partie} : 
+
+On suppose d\'esormais que $\alpha=0$, on note $A=A_0$ et $f$ l'endomorphisme de $\R^3$ associ\'e \`a la matrice $A$.
+
+\begin{enumerate} 
+  \item D\'eterminer les sous-espaces propres et caract\'eristiques de $A$.
+
+  \item D\'emontrer que $f$ admet un plan stable (c'est-\`a-dire $f$-invariant).
+
+  \item D\'emontrer qu'il existe une base de $\R^3$ dans laquelle la matrice de $f$ est 
+$$B=\begin{pmatrix}-1 & 1 & 0 \\  0&-1&1 \\ 0&0&-1\end{pmatrix}$$
+et trouver une matrice $P$ inversible telle que $A=PBP^{-1}$.
+
+  \item Ecrire la d\'ecomposition de Dunford de $B$ (justifier).
+
+  \item Pour $t\in\R$, calculer $\exp tB$ et exprimer $\exp tA$ \`a l'aide de $P$ et $\exp tB$.
+
+  \item Donner les solutions des syst\`emes diff\'erentiels $Y'=BY$ et $X'=AX$.
+ \end{enumerate}
+  
+
+\centerline{\bf II}
+
+On rappelle qu'une matrice $N\in M_n(\C)$ est dite nilpotente d'ordre $m$ si $N^m=0$, et si pour tout $k$ dans $\N$, $k<m$, on a $N^k\neq0$. Soient $N\in M_n(\C)$ une matrice nilpotente d'ordre $m$ et $A\in M_n(\C)$ une matrice telle que $AN=NA$.
+
+
+\begin{enumerate} 
+  \item D\'eterminer un polyn\^ome annulateur de $N$. En d\'eduire le polyn\^ome minimal et le polyn\^ome caract\'eristique de $N$.
+
+  \item D\'eterminer les valeurs propres de $N$.
+
+  \item D\'emontrer que $\det (I+N)=1$.
+
+  \item On suppose $A$ inversible. D\'emontrer que les matrices $AN$ et $NA^{-1}$  sont nilpotentes.
+En d\'eduire que $$\det(A+N)=\det A.$$
+
+  \item On suppose $A$ non inversible. En exprimant $(A+N)^k$ pour tout $k\in\N$, d\'emontrer que $$\det(A+N)=0.$$ 
+ \end{enumerate}
+
+\finenonce 
+
+\noindication
+
+\correction
+
+\centerline{\bf I}
+
+Soit $\alpha\in\R$ et $A_\alpha\in M_3(\R)$ la matrice suivante
+$$A_\alpha=\begin{pmatrix}-1 & 0 & \alpha+1 \\  1&-2&0 \\ -1&1&\alpha\end{pmatrix}$$
+{\it Premi\`ere partie} :
+
+\begin{enumerate} 
+ \item{\it Factorisons le polyn\^ome caract\'eristique $P_{A_\alpha}(X)$ en produit de facteurs du premier degr\'e.}
+
+On a
+\begin{align*}
+P_{A_\alpha}(X)
+&=\begin{vmatrix}-1-X & 0 & \alpha+1 \\  1&-2-X&0 \\ -1&1&\alpha-X\end{vmatrix}
+=\begin{vmatrix}-1-X & 0 & \alpha+1 \\  -1-X&-2-X&0 \\ 0&1&\alpha-X\end{vmatrix} \\ 
+&=\begin{vmatrix}-1-X & 0 & \alpha+1 \\  0&-2-X&-\alpha-1 \\ -1&1&\alpha-X\end{vmatrix} \\ 
+&=(-1-X)[(-2-X)(\alpha-X)+\alpha+1] \\ 
+&=-(X+1)[X^2+(2-\alpha)X+1-\alpha].
+\end{align*}
+Factorisons le polyn\^ome $X^2+(2-\alpha)X+1-\alpha$, son discriminant est \'egal \`a
+$$\Delta=(2-\alpha)^2-4(1-\alpha)=\alpha^2.$$
+On a donc $\sqrt{\Delta}=|\alpha|$, ce qui nous donne les deux racines 
+$$\lambda_1={\frac{\alpha-2-\alpha}{2}}=-1\ \ {\hbox{et}}\ \ 
+\lambda_2={\frac{\alpha-2+\alpha}{2}}=\alpha-1.$$
+Le polyn\^ome caract\'eristique $P_{A_\alpha}(X)$ se factorise donc en
+$$P_{A_\alpha}(X)=-(X+1)^2(X-\alpha+1).$$ 
+
+  \item {\it D\'eterminons selon la valeur du param\`etre $\alpha$ les valeurs propres distinctes de $A_\alpha$ et leur multiplicit\'e.}
+
+Les valeurs propres de $A_\alpha$ sont les racines du polyn\^ome caract\'eristique $P_{A_\alpha}$, ainsi,
+
+- si $\alpha=0$, la matrice $A_\alpha$ admet une valeur propre triple $\lambda=-1$,
+
+- si $\alpha\neq0$, la matrice $A_\alpha$ admet deux valeurs propres distinctes
+$\lambda_1=-1$ valeur propre double et $\lambda_2=\alpha-1$, valeur propre simple.
+ 
+
+  \item {\it D\'eterminons les valeurs de $\alpha$ pour lesquelles la matrice $A_\alpha$ est diagonalisable.}
+
+Il est clair que dans le cas $\alpha=0$, la matrice n'est pas diagonalisable, en effet si elle l'\'etait, il existerait une matrice inversible $P$ telle que $A_\alpha=P(-I)P^{-1}=-I$, ce qui n'est pas le cas.
+
+Si $\alpha\neq0$, la matrice $A_\alpha$ est diagonalisable si le sous-espace propre associ\'e \`a la valeur propre $-1$ est de dimension $2$. D\'eterminons ce sous-espace propre.
+
+$$E_{-1}=\ker(A_\alpha+I)=\left\{(x,y,z)\in\R^3,\ \begin{pmatrix}-1 & 0 & \alpha+1 \\  1&-2&0 \\ -1&1&\alpha\end{pmatrix}\begin{pmatrix}x \\  y \\  z\end{pmatrix}=\begin{pmatrix}-x \\  -y \\  -z\end{pmatrix}\right\}$$
+ainsi,
+$$(x,y,z)\in E_{-1}\iff\left\{\begin{align*}-x+(\alpha+1)z&=-x \\  x-2y&=-y \\  -x+y+\alpha z&=-z\end{align*}\right.
+\iff\left\{\begin{align*}(\alpha+1)z&=0 \\  x-y=0\end{align*}\right.$$
+Il faut distinguer les cas $\alpha=-1$ et $\alpha\neq -1$.
+
+- Si $\alpha=-1$, le sous-espace $E_{-1}$ est le plan vectoriel d'\'equation $x=y$, dans ce cas la matrice $A_\alpha$ est diagonalisable.
+
+- Si $\alpha\neq -1$, le sous-espace $E_{-1}$ est la droite vectorielle engendr\'ee par le vecteur
+$(1,1,0)$, dans ce cas la matrice $A_\alpha$ n'est pas diagonalisable.
+
+  \item {\it D\'eterminons selon la valeur de $\alpha$ le polyn\^ome minimal de $A_\alpha$.}
+
+ Notons $Q_A$ le polyn\^ome minimal de $A_\alpha$. On sait que la matrice $A_\alpha$ est diagonalisable sur $\R$ si et seulement si son polyn\^ome minimal a toutes ses racines dans $\R$ et que celles-ci sont simples. Or, nous venons de d\'emontrer que $A_\alpha$ est diagonalisable sur $\R$ si et seulement $\alpha=-1$, on a donc 
+
+- Si $\alpha=-1$, $A_\alpha$ est diagonalisable, donc $Q_A(X)=(X+1)(X-\alpha+1)=(X+1)(X+2)$.
+
+- Si $\alpha\neq -1$, $A_\alpha$ n'est pas diagonalisable, donc $Q_A(X)=P_A(X)=(X+1)^2(X-\alpha+1)$.
+\end{enumerate}
+
+{\it Seconde partie} : 
+
+On suppose d\'esormais que $\alpha=0$, on note $A=A_0$ et $f$ l'endomorphisme de $\R^3$ associ\'e \`a la matrice $A$. On a donc 
+$$A=A_0=\begin{pmatrix}-1 & 0 & 1 \\  1&-2&0 \\ -1&1&0\end{pmatrix}$$
+et $P_A(X)=-(X+1)^3$.
+
+\begin{enumerate}  
+ \item {\it D\'eterminons les sous-espaces propres et caract\'eristiques de $A$.}
+
+La matrice $A$ admet une unique valeur propre $\lambda=-1$ de multiplicit\'e $3$, le sous-espace propre associ\'e est l'espace $E_{-1}=\ker(A+I)$, et on a
+$$(x,y,z)\in E_{-1}\iff\left\{\begin{align*}-x+z&=-x \\  x-2y&=-y \\  -x+y&=-z\end{align*}\right.
+\iff\left\{\begin{align*}z&=0 \\  x=y\end{align*}\right.$$
+Le sous-espace $E_{-1}$ est la droite vectorielle engendr\'ee par le vecteur $(1,1,0)$.
+
+Le sous-espace caract\'eristique de $A$, associ\'e \`a l'unique valeur propre $\lambda=-1$, est le sous-espace $N_{-1}=\ker(A+I)^3$, or, compte tenu du th\'eor\`eme de Hamilton-Cayley, on sait que $P_A(A)=0$, ainsi, la matrice $(A+I)^3$ est la matrice nulle, ce qui implique $N_{-1}=\R^3$, c'est donc l'espace tout entier.
+
+  \item {\it D\'emontrons que $f$ admet un plan stable.}
+
+La matrice de $f$ n'est pas diagonalisable, mais comme son polyn\^ome caract\'eristique se factorise sur $\R$, elle est trigonalisable, ce qui prouve qu'elle admet un plan stable, le plan engendr\'e par les deux premiers vecteurs d'une base de trigonalisation.
+
+Par ailleurs, on a $E_{-1}=\ker(A+I)\subset\ker(A+I)^2\subset\ker(A+I)^3=\R^3$, le sous-espace 
+$\ker(A+I)^2$ est clairement stable par $A$ car  pour tout $v\in\ker(A+I)^2$, $Av\in\ker(A+I)^2$, en effet 
+$$(A+I)^2Av=A(A+I)^2v=0.$$
+D\'emontrons que ce sous-espace est un plan. On a
+$$A^2=\begin{pmatrix}-1 & 0 & 1 \\  1&-2&0 \\ -1&1&0\end{pmatrix}\begin{pmatrix}-1 & 0 & 1 \\  1&-2&0 \\ -1&1&0\end{pmatrix}=\begin{pmatrix}-1 & 1 & 1 \\  -1&1&1 \\ 0&0&0\end{pmatrix},$$
+donc $\ker(A+I)^2=\{(x,y,z)\in\R^3,\ -x+y+z=0\}$, c'est bien un plan vectoriel.
+
+  \item {\it D\'emontrons qu'il existe une base de $\R^3$ dans laquelle la matrice de $f$ est }
+$$B=\begin{pmatrix}-1 & 1 & 0 \\  0&-1&1 \\ 0&0&-1\end{pmatrix}$$
+{\it et trouvons une matrice $P$ inversible telle que} $A=PBP^{-1}$.
+
+Nous cherchons des vecteurs $e_1,e_2,e_3$ tels que $Ae_1=e_1$, $Ae_2=e_1-e_2$ et $Ae_3=e_2-e_3$.
+Le vecteur $e_1$ appartient \`a $E_1=\ker(A+I)$, nous choisirons $e_2\in \ker(A+I)^2$ tel que $(e_1,e_2)$ soit une base de $\ker(A+I)^2$. Remarquons que si l'on cherche $e_2=(x,y,z)$ tel que
+$Ae_2=e_1-e_2$, on obtient le syst\`eme 
+$$\begin{pmatrix}-1 & 0 & 1 \\  1&-2&0 \\ -1&1&0\end{pmatrix}\begin{pmatrix}x \\  y \\  z\end{pmatrix}=\begin{pmatrix}1-x \\  1-y \\ -z\end{pmatrix}\iff
+\left\{\begin{align*}-x+z&=1-x \\  x-2y&=1-y \\  -x+y&=-z\end{align*}\right.
+\iff\left\{\begin{align*}z&=1 \\  x-y&=1\end{align*}\right.$$
+ce qui nous donne bien un vecteur de $\ker(A+I)^2$.
+Ainsi, les vecteurs $e_1=(1,1,0)$ et $e_2=(1,0,1)$ conviennent. Il nous reste \`a chercher un vecteur $e_3$ tel que $Ae_3=e_2-e_3$, c'est-\`a-dire
+$$\begin{pmatrix}-1 & 0 & 1 \\  1&-2&0 \\ -1&1&0\end{pmatrix}\begin{pmatrix}x \\  y \\  z\end{pmatrix}=\begin{pmatrix}1-x \\  -y \\ 1-z\end{pmatrix}\iff
+\left\{\begin{align*}-x+z&=1-x \\  x-2y&=-y \\  -x+y&=1-z\end{align*}\right.
+\iff\left\{\begin{align*}z&=1 \\  x&=y\end{align*}\right.$$
+Le vecteur $e_3=(0,0,1)$ convient. On obtient alors la matrice $P$ suivante qui est inversible et v\'erifie $A=PBP^{-1}$,
+$$P=\begin{pmatrix}1 & 1 & 0 \\  1&0&0 \\ 0&1&1\end{pmatrix}$$  
+
+  \item{\it D\'ecomposition de Dunford de $B$}
+
+On a 
+$$B=\begin{pmatrix}-1 & 1 & 0 \\  0&-1&1 \\ 0&0&-1\end{pmatrix}=
+\begin{pmatrix}-1 & 0& 0 \\  0&-1&0 \\ 0&0&-1\end{pmatrix}+
+\begin{pmatrix}0& 1 & 0 \\  0&0&1 \\ 0&0&0\end{pmatrix}$$
+et il est clair que les deux matrices commutent car l'une est \'egale à $-I$. Or, il existe un unique couple de matrice $D$ et $N$, $D$ diagonalisable et $N$ nilpotente, telles que $B=D+N$ et $DN=ND$. C'est donc l\`a la d\'ecomposition de Dunford, $B=D+N$ avec
+$$D=\begin{pmatrix}-1 & 0& 0 \\  0&-1&0 \\ 0&0&-1\end{pmatrix}\ \ {\hbox{et}}\ \ 
+N=\begin{pmatrix}0& 1 & 0 \\  0&0&1 \\ 0&0&0\end{pmatrix}.$$
+
+  \item{\it Pour $t\in\R$, calculons $\exp tB$ et exprimons $\exp tA$ \`a l'aide de $P$ et $\exp tB$.}
+
+Remarquons tout d'abord que $N^2=0$ donc pour tout $t\in\R$, $(tN)^2=0$ et l'expenentielle est \'egale \`a $\exp(tN)=I+tN$, par ailleurs $ND=DN$, donc  pour tout $t\in\R$, les matrices $tN$ et $tD$ commutent \'egalement, $(tN)(tD)=(tD)(tN)$, on a donc
+$$\exp(tB)=\exp(tD+tN)=\exp(tD)\exp(tN)=\exp(-tI)\exp(-tN)=e^{-t}(I+tN).$$
+D'o\`u
+$$\exp(tB)=e^{-t}\begin{pmatrix}1 & t & 0 \\  0&1&t \\ 0&0&1\end{pmatrix}.$$
+Pour d\'eterminer l'exponentielle de la matrice $tA$, on \'ecrit
+$$\exp(tA)=\exp(t(PBP^{-1}))=\exp(P(tA)P^{-1})=P\exp(tB)P^{-1}.$$
+  \item {\it Solutions des syst\`emes diff\'erentiels $Y'=BY$ et $X'=AX$.}
+
+La solution g\'en\'erale du syst\`eme $Y'=BY$ s'\'ecrit 
+$$S(t)=\exp(tB)v$$
+o\`u $v=(a,b,c)$ est un vecteur de $\R^3$. La solution $S: \R\mapsto \R^3$  s'\'ecrit donc
+$$S(t)=\begin{pmatrix}x(t) \\  y(t) \\  z(t)\end{pmatrix}
+=e^{-t}\begin{pmatrix}1 & t & 0 \\  0&1&t \\ 0&0&1\end{pmatrix}\begin{pmatrix}a \\  b \\  c\end{pmatrix}
+=e^{-t}\begin{pmatrix}a+bt \\  b+ct \\  c\end{pmatrix}$$
+Pour obtenir la solution du syst\`eme $X'=AX$, on \'ecrit
+$$X'=AX\iff X'=(PBP^{-1})X\iff P^{-1}X'=(BP^{-1})X\iff (P^{-1}X)'=B(P^{-1}X)$$
+ainsi, en notant $Y=P^{-1}X$ ou encore $X=PY$, les solutions du syst\`eme $X'=AX$ sont les $PS(t)$ o\`u $P$ est la matrice v\'erifiant
+$A=PBP^{-1}$ et $S$ une solution du syst\`eme $Y'=BY$.
+
+La solution g\'en\'erale du syst\`eme $X'=AX$ s'\'ecrit donc 
+$$X(t)=\begin{pmatrix}x(t) \\  y(t) \\  z(t)\end{pmatrix}
+=\begin{pmatrix}1 & 1 & 0 \\  1&0&0 \\ 0&1&1\end{pmatrix}
+\begin{pmatrix}e^{-t}(a+bt) \\  e^{-t}(b+ct) \\  e^{-t}c\end{pmatrix}
+=e^{-t}\begin{pmatrix}a+b+(c+b)t \\  a+bt \\  b+c+ct\end{pmatrix}$$
+o\`u $(a,b,c)\in\R^3$. 
+
+\end{enumerate}
+
+
+\centerline{\bf II}
+
+Soient $K$ un corps,  $N\in M_n(K)$ une matrice nilpotente et $A$ une matrice telle que 
+
+$AN=NA$.
+
+\begin{enumerate}  
+ \item {\it D\'eterminons les valeurs propres de $N$.}
+
+La matrice $N$ \'etant nilpotente, il existe un entier naturel $m$ tel que $N^n=0$, on a donc 
+$\det N^m=(\det N)^m=0$ donc $\det N=0$, l'endomophisme de matrice $N$ n'est pas bijectif ce qui prouve que $0$ est valeur propre de $N$, c'est la seule, en effet si $\lambda$ est une autre valeur propre et $x\neq 0$ un vecteur propre associ\'e \`a $\lambda$ on a 
+$$Nx=\lambda x\Rightarrow N^m x=\lambda^m x$$
+d'o\`u $\lambda^mx=0$, mais $x\neq 0$ donc $\lambda=0$. Ainsi la matrice $N$ admet une unique valeur propre $\lambda=0$ de multiplicit\'e $n$.
+
+  \item{\it D\'emontrons que $N$ est trigonalisable.}
+
+Le polyn\^ome caract\'eristique de $N$ admet une unique racine $0\in K$, toutes ses racines sont donc dans $K$, ce qui prouve que la matrice $N$ est trigonalisable. Elle est semblable \`a une matrice triangulaire n'ayant que des $0$ sur la diagonale.
+
+  \item{\it D\'emontrons que $\det (I+N)=1$.}
+
+Compte tenu de ce qui pr\'ec\`ede, la matrice $N+I$ est une matrice triangulaire n'ayant que des $1$ sur la diagonale, or le d\'eterminant d'une matrice triangulaire est le produit de ses termes diagonaux, ainsi on a bien $\det(N+I)=1$.
+
+  \item {\it On suppose $A$ inversible. D\'emontrons que les matrices $AN$ et $NA^{-1}$  sont nilpotentes.}
+
+Comme les matrices $A$ et $N$ commutent, pour tout $k\in \N$, on a $(AN)^k=A^kN^k$ donc pour $k=m$, 
+$(AN)^m=A^mN^m=A.0=0$ ce qui prouve que $AN$ est nilpotente. De m\^eme $NA^{-1}=A^{-1}N$ et $NA^{-1}$ est nilpotente.
+
+{\it On en d\'eduit que $$\det(A+N)=\det A.$$}
+
+L'\'egalit\'e $AN=NA$ implique $N=ANA^{-1}$ ainsi, on a
+$$\det(N+A)=\det(ANA^{-1}+A)=\det(A(NA^{-1}+I))=\det A\det(NA^{-1}+I)=\det A.$$
+
+  \item{\it On suppose $A$ non inversible. En exprimant $(A+N)^k$ pour $k\in\N$, d\'emontrons que $\det(A+N)=0.$}
+
+Comme les matrices $A$ et $N$ commutent, on peut utiliser la formule du bin\^ome de Newton pour calculer les puissances de $A+N$. Soit $m$ tel que $N^m=0$ et, pour tout $k<m, N^k\neq 0$ on a alors
+$$(A+N)^m=\sum_{k=0}^mC_m^kA^kN^{m-k}=\sum_{k=1}^mC_m^kA^kN^{m-k}=A\sum_{k=1}^mC_m^kA^{k-1}N^{m-k}$$
+ainsi
+$$\det((A+N)^m)=\det A.\det\sum_{k=1}^mC_m^kA^{k-1}N^{m-k}=0$$
+car $\det A=0$. Or, $\det((A+N)^m)=(\det(A+N))^m$, on a donc bien $\det(A+N)=0$.
+
+\end{enumerate}
+\fincorrection
+\finexercice

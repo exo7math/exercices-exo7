@@ -1,0 +1,39 @@
+\exercice{5261, rouget, 2010/07/04}
+\enonce[***I]
+Soit $f$ un endomorphisme de $\Rr^3$, nilpotent d'indice $2$. Montrer qu'il existe une base de $\Rr^3$ dans 
+laquelle la matrice de $f$ s'écrit $\left(
+\begin{array}{ccc}
+0&0&0\\
+1&0&0\\
+0&0&0
+\end{array}
+\right)$.
+\finenonce
+
+\noindication
+
+\correction
+$f$ n'est pas nul et donc $\mbox{dim}(\mbox{Ker}f)\leq 2$. Puisque $f^2=0$, $\mbox{Im}f\subset\mbox{Ker}f$. En particulier, $\mbox{dim}(\mbox{Ker}f)\geq\mbox{rg}f=3-\mbox{dim}(\mbox{Ker}f)$ et $\mbox{dim}(\mbox{Ker}f)\geq\frac{3}{2}$.
+
+Finalement, $\mbox{dim}(\mbox{Ker}f)=2$. $\mbox{Ker}f$ est un plan vectoriel et $\mbox{Im}f$ est une droite vectorielle contenue dans $\mbox{Ker}f$.
+
+$f$ n'est pas nul et donc il existe $e_1$ tel que $f(e_1)\neq0$ (et en particulier $e_1\neq0$). Posons $e_2=f(e_1)$. 
+Puisque $f^2=0$, $f(e_2)=f^2(e_1)=0$ et $e_2$ est un vecteur non nul de $\mbox{Ker}f$. D'après le théorème de la base incomplète, il existe un vecteur $e_3$ de $\mbox{Ker}f$ tel que $(e_2,e_3)$ soit une base de $\mbox{Ker}f$.
+
+Montrons que $(e_1,e_2,e_3)$ est une base de $\Rr^3$.
+
+Soit $(\alpha,\beta,\gamma)\in\Rr^3$.
+
+$$\alpha e_1+\beta e_2+\gamma e_3=0\Rightarrow f(\alpha e_1+\beta e_2+\gamma e_3)=0\Rightarrow\alpha e_2=0\Rightarrow\alpha=0\;(\mbox{car}\;e_2\neq0).$$
+
+Puis, comme $\beta e_2+\gamma e_3=0$, on obtient $\beta=\gamma=0$ (car la famille $(e_2,e_3)$ est libre).
+
+Finalement, $\alpha=\beta=\gamma=0$ et on a montré que $(e_1,e_2,e_3)$ est libre. Puisque cette famille est de cardinal $3$, c'est une base de $R^3$. Dans cette base, la matrice $A$ de $f$ s'écrit~:~$A= \left(
+\begin{array}{ccc}
+0&0&0\\
+1&0&0\\
+0&0&0
+\end{array}
+\right)$.
+\fincorrection
+\finexercice

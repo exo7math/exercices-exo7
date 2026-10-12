@@ -1,0 +1,126 @@
+\exercice{7001, blanc-centi, 2015/07/04}
+\video{k9R8_U4-Pyk}
+% extrait de 4112, 4113
+\enonce[\'Equations de Bernoulli et Riccatti]
+\ 
+\begin{enumerate}
+  \item \textbf{\'Equation de Bernoulli}
+  \begin{enumerate}
+    \item Montrer que l'équation de Bernoulli
+    $$y'+a(x)y+b(x)y^n = 0 \qquad n \in \Zz \quad n \neq 0, n\neq 1$$
+    se ramène à une équation linéaire par le changement de fonction 
+    $z(x) = 1/ y(x)^{n-1}$.
+    
+    
+    \item Trouver les solutions de l'équation $xy'+y-xy^3 = 0$.
+    
+  \end{enumerate}
+    \item \textbf{\'Equation de Riccati}
+  \begin{enumerate}
+    \item Montrer que si $y_0$ est une solution particulière de l'équation de Riccati 
+    $$y'+ a(x)y +b(x)y^2 = c(x)$$
+    alors la fonction définie par $u(x) = y(x)-y_0(x)$ vérifie une équation de Bernoulli
+    (avec $n=2$).
+    
+    \item Résoudre $x^2(y'+y^2) = xy-1$ en vérifiant d'abord que $y_0(x) = \frac1x$ est une solution.
+  \end{enumerate}
+
+\end{enumerate}
+\finenonce
+
+\indication
+\begin{enumerate}
+  \item
+  \begin{enumerate}
+    \item Se ramener à $\frac{1}{1-n}z'+a(x)z+b(x)=0$.
+    \item $y = \pm\frac{1}{\sqrt{\lambda x^2 + 2x}}$ ou $y=0$.
+  \end{enumerate}
+    \item 
+  \begin{enumerate}
+    \item Remplacer $y$ par $u+y_0$.
+    \item $y=\frac1x+\frac1{x\ln|x|+\lambda x}$ ou $y = \frac1x$.
+  \end{enumerate}
+\end{enumerate}    
+\finindication
+
+\correction
+\begin{enumerate}
+  \item \textbf{\'Equation de Bernoulli}
+  \begin{enumerate}
+    \item On suppose qu'une solution $y$ ne s'annule pas.
+    On divise l'équation $y'+a(x)y+b(x)y^n = 0$ par $y^n$, ce qui donne
+    $$\frac{y'}{y^n} +a(x) \frac{1}{y^{n-1}} + b(x) = 0.$$
+    On pose $z(x) = \frac{1}{y^{n-1}}$ et donc $z'(x) = (1-n)\frac{y'}{y^{n}}$.
+    L'équation de Bernoulli devient une équation différentielle linéaire :
+    $$\tfrac{1}{1-n} z' + a(x) z +b(x) = 0$$
+    
+    
+    \item \'Equation $xy'+y-xy^3 = 0$.
+    
+    Cherchons les solutions $y$ qui ne s'annulent pas. On peut alors diviser par $y^3$ pour obtenir :
+    $$x \frac{y'}{y^3} + \frac{1}{y^2} - x=0$$
+    On pose $z(x) = \frac{1}{y^2(x)}$, et donc $z'(x) = -2\frac{y'(x)}{y(x)^3}$.
+    L'équation différentielle s'exprime alors $\frac{-1}{2} xz'+z -x = 0$, c'est-à-dire :
+    $$xz'-2z = -2x.$$
+    Les solutions  sur $\Rr$ de cette dernière équation sont les 
+    $$z(x) =\begin{cases} \lambda_+ x^2+2x\ \text{si}\ x\ge 0 \cr\lambda_- x^2+2x\ 
+    \text{si}\ x< 0 \end{cases} ,\quad\lambda_+,\lambda_- \in \Rr$$
+    
+    Comme on a posé $z(x) = \frac{1}{y^2(x)}$, on se retreint à un intervalle $I$ sur lequel $z(x)>0$: nécessairement $0\notin I$, donc on considère $z(x)=\lambda x^2+2x$, qui est strictement positif sur $I_\lambda$ où
+$$I_\lambda=\begin{cases}
+]0;+\infty[\quad\text{si}\ \lambda=0\\
+\left]0;-\frac{2}{\lambda}\right[\quad\text{si}\ \lambda<0\\
+\left]-\infty;-\frac{2}{\lambda}\right[\ \mathrm{ou}\ \left]0;+\infty\right[\quad\text{si}\ \lambda>0              
+            \end{cases}
+$$
+On a $(y(x))^2 = \frac{1}{z(x)}$ pour tout $x\in I_\lambda$ et donc  $y(x) = \epsilon(x)\frac{1}{\sqrt{z(x)}}$, 
+où $\epsilon(x)=\pm 1$. Or $y$ est continue sur l'intervalle $I_\lambda$, et 
+ne s'annule pas par hypothèse: d'après le théorème des valeurs intermédiaires, $y$ 
+ne peut pas prendre à la fois des valeurs strictement positives et des valeurs 
+strictement négatives, donc $\epsilon(x)$ est soit constant égal à $1$, soit constant égal à $-1$.
+    Ainsi les solutions cherchées sont les :
+    $$y(x) = \frac{1}{\sqrt{\lambda x^2 + 2x}}\ \mathrm{ou}\ y(x) = \frac{-1}{\sqrt{\lambda x^2 + 2x}}\quad\mathrm{sur}\ I_\lambda\qquad (\lambda\in \Rr)$$
+    
+    Noter que la solution nulle est aussi solution.
+  \end{enumerate}
+  \item \textbf{\'Equation de Riccati}
+  \begin{enumerate}
+    \item Soit $y_0$ une solution de $y'+ a(x)y +b(x)y^2 = c(x)$.
+    Posons $u(x) = y(x)-y_0(x)$, donc $y = u +y_0$. L'équation devient :
+    $$u'+y_0' + a(x) (u+y_0)  + b(x) (u^2+2uy_0 + y_0^2) = c(x)$$
+    Comme $y_0$ est une solution particulière alors
+    $$y_0'+ a(x)y_0 +b(x)y_0^2 = c(x)$$
+    Et donc l'équation se simplifie en :
+    $$u' + \big(a(x)+2y_0(x)b(x)\big) u + b(x) u^2 = 0$$
+    qui est une équation du type Bernoulli.
+    
+    \item \'Equation $x^2(y'+y^2) = xy-1$.
+    
+    \begin{itemize}
+      \item Après division par $x^2$ c'est bien une équation de Riccati sur $I=]-\infty;0[$ ou $I=]0;+\infty[$.
+    
+      \item $y_0 = \frac{1}{x}$ est bien une solution particulière.
+      
+      \item On a $u(x) = y(x)-y_0(x)$ et donc $y = u + \frac1x$.
+      L'équation $x^2(y'+y^2) = xy-1$ devient 
+      $$x^2 \left( u'-\frac{1}{x^2} + u^2 + 2\frac{u}{x} + \frac{1}{x^2} \right) = x\left(u+\frac1x\right)-1$$
+      qui se simplifie en
+      $$x^2 \left( u' + u^2 + 2\frac{u}{x}  \right) = xu$$
+      ce qui correspond à l'équation de Bernoulli :
+      $$u'+\frac{1}{x}u+u^2 = 0.$$
+      
+      \item Si $u$ ne s'annule pas, en divisant par $u^2$, cette équation devient 
+      $\frac{u'}{u^2} + \frac{1}{x}\frac{1}{u} + 1 =0$.
+      On pose $z(x) = \frac{1}{u}$, l'équation devient
+      $-z'+\frac1x z+1 =0$.
+      Ses solutions sur $I$ sont les $z(x) = \lambda x + x\ln |x|$, $\lambda \in \Rr$.
+      Ainsi $u(x) = \frac{1}{z(x)} = \frac1{\lambda x + x\ln |x|}$ mais il y a aussi la solution nulle $u(x)= 0$.
+      
+      \item Conclusion. Comme $y = u + \frac1x$, on obtient alors des solutions de l'équation de départ sur $]-\infty;0[$ et $]0;+\infty[$:
+      $$y(x) = \frac1x \qquad \text{ ou } \qquad y(x) = \frac1x +  \frac1{\lambda x + x\ln |x|} \qquad (\lambda \in \Rr).$$
+    \end{itemize}
+
+  \end{enumerate}
+  \end{enumerate}  
+\fincorrection
+\finexercice

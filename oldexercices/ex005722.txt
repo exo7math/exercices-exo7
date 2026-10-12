@@ -1,0 +1,49 @@
+\exercice{5722, rouget, 2010/10/16}
+\enonce[***]
+(Hors programme) Convergence et calcul de $\int_{1}^{+\infty}\frac{(-1)^{E(x)}}{x}\;dx$.
+\finenonce
+
+\noindication
+
+\correction
+La fonction $f~:~x\mapsto\frac{(-1)^{E(x)}}{x}$ est continue par morceaux sur $[1,+\infty[$ et donc localement intégrable sur $[1,+\infty[$.
+
+Soient $X$ un réel élément de $[2,+\infty[$ et $n=E(X)$.
+
+\begin{center}
+$\int_{1}^{X}\frac{(-1)^{E(x)}}{x}\;dx=\sum_{k=1}^{n-1}\int_{k}^{k+1}\frac{(-1)^{E(x)}}{x}\;dx+\int_{n}^{X}\frac{(-1)^{E(x)}}{x}\;dx =\sum_{k=1}^{n-1}(-1)^k\ln\left(1+\frac{1}{k}\right)+\int_{n}^{X}\frac{(-1)^{E(x)}}{x}\;dx$.
+\end{center}
+
+Or, $\left|\int_{n}^{X}\frac{(-1)^{E(x)}}{x}\;dx\right|\leqslant\frac{X-n}{n}\leqslant\frac{1}{E(X)}$. Cette dernière expression tend vers $0$ quand le réel $X$ tend vers $+\infty$ et donc $\lim_{X \rightarrow +\infty}\int_{n}^{X}\frac{(-1)^{E(x)}}{x}\;dx=0$.
+
+D'autre part, la suite $\left((-1)^k\ln\left(1+\frac{1}{k}\right)\right)_{k\geqslant1}$ est de signe alternée et sa valeur absolue tend vers $0$ en décroissant. La série de terme général $(-1)^k\ln\left(1+\frac{1}{k}\right)$, $k\geqslant1$, converge en vertu du critère spécial aux séries alternées ou encore, quand le réel $X$ tend vers $+\infty$, $\sum_{k=1}^{n-1}(-1)^k\ln\left(1+\frac{1}{k}\right)$ a une limite réelle.
+
+Il en est de même de $\int_{1}^{X}\frac{(-1)^{E(x)}}{x}\;dx$ et l'intégrale $\int_{1}^{+\infty}\frac{(-1)^{E(x)}}{x}\;dx$ converge. De plus 
+
+\begin{center}
+$\int_{1}^{+\infty}\frac{(-1)^{E(x)}}{x}\;dx=\sum_{n=1}^{+\infty}(-1)^n\ln\left(1+\frac{1}{n}\right)$.
+\end{center}
+
+\textbf{Calcul.} Puisque la série converge, on a $\sum_{k=1}^{+\infty}(-1)^k\ln\left(1+\frac{1}{k}\right)=\lim_{n \rightarrow +\infty}\sum_{k=1}^{2n}(-1)^k\ln\left(1+\frac{1}{k}\right)$. Pour $n\in\Nn^*$,
+
+\begin{align*}
+\sum_{k=1}^{2n}(-1)^k\ln\left(1+\frac{1}{k}\right)&=\sum_{k=1}^{n}\left(-\ln\left(1+\frac{1}{2k-1}\right)+\ln\left(1+\frac{1}{2k}\right)\right)=\sum_{k=1}^{n}\ln\left(\frac{(2k-1)(2k+1)}{(2k)^2}\right)\\
+ &=\ln\left(\frac{(1\times3\times\ldots\times(2n-1))^2\times(2n+1)}{(2\times4\times\ldots\times(2n))^2}\right) =\ln\left(\frac{1}{2^{4n}}\times\left(\frac{(2n)!}{(n!)^2}\right)^2\times(2n+1)\right) .
+\end{align*}
+ 
+
+D'après la formule de \textsc{Stirling},   
+
+\begin{center}
+$\frac{1}{2^{4n}}\times\left(\frac{(2n)!}{(n!)^2}\right)^2\times(2n+1)\underset{n\rightarrow+\infty}{\sim}\frac{1}{2^{4n}}\times\frac{\left(\frac{2n}{e}\right)^{4n}(\sqrt{4\pi n})^2}{\left(\frac{n}{e}\right)^{4n}(\sqrt{2\pi n})^4}\times(2n)=\frac{2}{\pi}$.
+\end{center}
+
+Donc $\sum_{n=1}^{+\infty}(-1)^n\ln\left(1+\frac{1}{n}\right)=\ln\left(\frac{2}{\pi}\right)$ et on a montré que
+
+\begin{center}
+\shadowbox{
+$\int_{1}^{+\infty}\frac{(-1)^{E(x)}}{x}\;dx=\sum_{n=1}^{+\infty}(-1)^n\ln\left(1+\frac{1}{n}\right)=\ln\left(\frac{2}{\pi}\right)$.
+}
+\end{center}
+\fincorrection
+\finexercice

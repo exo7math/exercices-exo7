@@ -1,0 +1,93 @@
+\exercice{5548, rouget, 2010/07/15}
+\enonce[***]
+Soit, dans $\Rr^3$ rapporté à un repère orthonormé $(O,\overrightarrow{i},\overrightarrow{j},\overrightarrow{k})$, la courbe
+$(\Gamma)$ d'équations $\left\{
+\begin{array}{l}
+y=x^2+x+1\\
+x+y+z=1
+\end{array}\right.$. Montrer que $(\Gamma)$ est une parabole dont on déterminera le sommet, l'axe, le foyer et la 
+directrice.
+\finenonce
+
+\noindication
+
+\correction
+On choisit un repère orthonormé $\mathcal{R}_1=\left(O',\overrightarrow{I},\overrightarrow{J},\overrightarrow{K}\right)$ tel que le plan d'équation $x+y+z=1$ dans $\mathcal{R}$ soit le plan d'équation $Z=0$ dans $\mathcal{R}_1$.
+On prend $O'=(1,0,0)$ puis $\overrightarrow{K}=\left(\frac{1}{\sqrt{3}},\frac{1}{\sqrt{3}},\frac{1}{\sqrt{3}}\right)$, $\overrightarrow{I}=\left(\frac{1}{\sqrt{2}},-\frac{1}{\sqrt{2}},0\right)$ et enfin $\overrightarrow{J}=\overrightarrow{K}\wedge\overrightarrow{I}=\left(\frac{1}{\sqrt{6}},\frac{1}{\sqrt{6}},-\frac{2}{\sqrt{6}}\right)$. Les formules de changement de repère s'écrivent
+
+\begin{center}
+$\left\{
+\begin{array}{l}
+x=\frac{X}{\sqrt{2}}+\frac{Y}{\sqrt{6}}+\frac{Z}{\sqrt{3}}+1\\
+y=-\frac{X}{\sqrt{2}}+\frac{Y}{\sqrt{6}}+\frac{Z}{\sqrt{3}}\\
+z=-\frac{2Y}{\sqrt{6}}+\frac{Z}{\sqrt{3}}
+\end{array}
+\right.
+$
+\end{center}
+Ensuite, soit $M$ un point de l'espace dont les coordonnées dans $\mathcal{R}$ sont notées $(x,y,z)$ et les coordonnées dans $\mathcal{R}_1$ sont notées $(X,Y,Z)$.
+
+\begin{align*}\ensuremath
+M\in(\Gamma)&\Leftrightarrow\left\{
+\begin{array}{l}
+y=x^2+x+1\\
+x+y+z=1
+\end{array}\right.\Leftrightarrow\left\{
+\begin{array}{l}
+-\frac{X}{\sqrt{2}}+\frac{Y}{\sqrt{6}}+\frac{Z}{\sqrt{3}}=\left(\frac{X}{\sqrt{2}}+\frac{Y}{\sqrt{6}}+\frac{Z}{\sqrt{3}}+1\right)^2+\left(\frac{X}{\sqrt{2}}+\frac{Y}{\sqrt{6}}+\frac{Z}{\sqrt{3}}+1\right)+1\\
+Z=0
+\end{array}\right.
+\\
+ &\Leftrightarrow\left\{
+\begin{array}{l}
+Z=0\\
+-\frac{X}{\sqrt{2}}+\frac{Y}{\sqrt{6}}=\left(\frac{X}{\sqrt{2}}+\frac{Y}{\sqrt{6}}+1\right)^2+\frac{X}{\sqrt{2}}+\frac{Y}{\sqrt{6}}+2\end{array}\right.
+\\
+ &\Leftrightarrow\left\{
+\begin{array}{l}
+Z=0\\
+\left(\frac{X}{\sqrt{2}}+\frac{Y}{\sqrt{6}}\right)^2+\frac{4X}{\sqrt{2}}+\frac{2Y}{\sqrt{6}}+3=0\end{array}\right..
+\end{align*}
+On travaille maintenant en dimension $2$ et on note encore $\mathcal{R}_1$ le repère $\left(O',\overrightarrow{I},\overrightarrow{J}\right)$. Une équation de $(\Gamma)$ dans $\mathcal{R}_1$ est 
+$\left(\frac{X}{\sqrt{2}}+\frac{Y}{\sqrt{6}}\right)^2+\frac{4X}{\sqrt{2}}+\frac{2Y}{\sqrt{6}}+3=0$ ou encore $\frac{2}{3}\left(\frac{\sqrt{3}X}{2}+\frac{Y}{2}\right)^2+\frac{4X}{\sqrt{2}}+\frac{2Y}{\sqrt{6}}+3=0$.
+On pose $\left\{
+\begin{array}{l}
+x'=\frac{\sqrt{3}X}{2}+\frac{Y}{2}\\
+\rule{0mm}{7mm}y'=-\frac{X}{2}+\frac{\sqrt{3}Y}{2}
+\end{array}
+\right.$ ou encore $\left\{
+\begin{array}{l}
+X=\frac{\sqrt{3}x'}{2}-\frac{y'}{2}\\
+\rule{0mm}{7mm}Y=\frac{x'}{2}+\frac{\sqrt{3}y'}{2}
+\end{array}
+\right.$ et on note $\mathcal{R}'=\left(O',\overrightarrow{i'},\overrightarrow{j'}\right)$ le nouveau repère défini par ces formules.
+\begin{align*}\ensuremath
+M\in(\Gamma)&\Leftrightarrow\frac{2}{3}x'^2+\frac{4}{\sqrt{2}}\left(\frac{\sqrt{3}x'}{2}-\frac{y'}{2}\right)+\frac{2}{\sqrt{6}}\left(\frac{x'}{2}+\frac{\sqrt{3}y'}{2}\right)+3=0\Leftrightarrow\frac{2}{3}x'^2+\frac{7x'}{\sqrt{6}}-\frac{y'}{\sqrt{2}}+3=0\\
+ &\Leftrightarrow\frac{2}{3}\left(x'+\frac{21}{4\sqrt{6}}\right)^2=\frac{y'}{\sqrt{2}}+\frac{1}{16}\Leftrightarrow\left(x'+\frac{21}{4\sqrt{6}}\right)^2=\frac{3}{2\sqrt{2}}\left(y'+\frac{1}{8\sqrt{2}}\right).
+\end{align*}
+$\left(\Gamma\right)$ est une parabole de paramètre $p=\frac{3}{4\sqrt{2}}$.
+Eléments de $(\Gamma)$ dans $\mathcal{R}'$ : sommet $S\left(-\frac{21}{4\sqrt{6}},-\frac{1}{8\sqrt{2}}\right)_{\mathcal{R}'}$, axe : $x'=-\frac{21}{4\sqrt{6}}$, foyer $F\left(-\frac{21}{4\sqrt{6}},\frac{1}{4\sqrt{2}}\right)_{\mathcal{R}'}$, directrice : $y'=-\frac{1}{2\sqrt{2}}$.
+Eléments de $(\Gamma)$ dans $\mathcal{R}_1$ en repassant à trois coordonnées : sommet $S\left(-\frac{41}{16\sqrt{2}},-\frac{45}{16\sqrt{6}},0\right)_{\mathcal{R}_1}$, axe : $\left\{
+\begin{array}{l}
+\sqrt{3}X+Y=-\frac{21}{2\sqrt{6}}\\
+Z=0\\
+\end{array}
+\right.$, foyer $F\left(-\frac{11}{4\sqrt{2}},-\frac{3}{\sqrt{6}},0\right)_{\mathcal{R}_1}$, directrice : $\left\{
+\begin{array}{l}
+-X+\sqrt{3}Y=-\frac{1}{\sqrt{2}}\\
+Z=0
+\end{array}
+\right.$.
+Eléments de $(\Gamma)$ dans $\mathcal{R}$ : sommet $S\left(-\frac{3}{4},\frac{13}{16},\frac{15}{16}\right)_{\mathcal{R}}$, axe : $\left\{
+\begin{array}{l}
+8x-4y-4z+21=0\\
+x+y+z=1\\
+\end{array}
+\right.$, foyer $F\left(-\frac{7}{8},\frac{7}{8},10\right)_{\mathcal{R}}$, directrice : $\left\{
+\begin{array}{l}
+2y-2z+1=0\\
+x+y+z=1
+\end{array}
+\right.$.
+\fincorrection
+\finexercice

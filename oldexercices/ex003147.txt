@@ -1,0 +1,40 @@
+\exercice{3147, quercia, 2010/03/08}
+
+\enonce[D{\'e}composition en inverses]
+Soit $x\in\Q$, $0<x<1$. On d{\'e}finit une suite $(x_n)$ de rationnels par
+r{\'e}currence :
+\begin{itemize}
+ \item $x_0 = x$,
+ \item  Si $x_n$ existe et est non nul, soit $k_n \in \N^*$ le plus
+              petit entier tel que $\frac1{k_n}\le x_n$. On pose
+              $x_{n+1} = x_n - \frac1{k_n}$,
+ \item Si $x_n = 0$, on s'arr{\^e}te. Dans ce cas,
+              $x = \frac 1{k_0} + \frac 1{k_1} + \dots + \frac1{k_{n-1}}$.
+\end{itemize}
+
+\begin{enumerate}
+  \item Montrer que la suite est toujours finie.
+
+  \item Montrer que si $k_{i+1}$ existe, alors $k_{i+1} > k_i(k_i-1)$.
+
+  \item R{\'e}ciproquement, soit une d{\'e}composition :
+    $x = \frac1{n_0} + \dots + \frac1{n_p}$ avec $n_i \in \N^*$ et
+    $n_{i+1} > n_i(n_i-1)$. Montrer que pour tout $i$, on a $n_i = k_i$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Si $x_n = \frac pq \ne 0$ : $\frac 1{k_n}\le \frac pq < \frac 1{k_n-1},
+     \Rightarrow  x_{n+1} = \frac {k_np-q}{k_nq}$ et $0\le k_np-q < p$.
+    Donc la suite des num{\'e}rateurs est strictement d{\'e}croissante.
+  \item Car $x_{n+1} = \frac pq-\frac1{k_n} < \frac1{k_n-1}-\frac1{k_n}$.
+  \item $n_p > n_{p-1}(n_{p-1}-1)  \Rightarrow  \frac 1{n_{p-1}} + \frac 1{n_p} < \frac 1{n_{p-1}-1}$.\par
+    $n_{p-1}-1 \ge n_{p-2}(n_{p-2}-1)  \Rightarrow  \frac 1{n_{p-2}} + \frac 1{n_{p-1}-1} \le \frac 1{n_{p-2}-1}$, etc.\par
+    Finalement, $x < \frac 1{n_0-1}  \Rightarrow  n_0 = k_0$.\par
+    (cf. INA opt. 1977)
+\end{enumerate}
+\fincorrection
+\finexercice 

@@ -1,0 +1,42 @@
+\exercice{4741, quercia, 2010/03/16}
+\enonce[Distance {\`a} un ensemble (ENS Cachan MP 2002)]
+
+Soit $A$ une partie de~$\R^n$ non vide. On note pour $x\in\R^n$~:
+$d_A(x) = \inf\{\|x-y\|\text{ tq }y\in A\}$.
+
+\begin{enumerate}
+  \item Montrer que $d_A$ est continue.
+
+  \item Soient deux parties de $\R^n$ non vides $A,B$. Donner une condition {\'e}quivalente
+    {\`a} $d_A=d_B$.
+
+  \item On note $\rho(A,B) = \sup\{|d_A(y)-d_B(y)|,\ y\in\R^n\}$, valant {\'e}ventuellement~$+\infty$.
+
+    Montrer que l'on a $\rho(A,B) = \max\Bigl(\sup\limits_{x\in A} d_B(x),\ \sup\limits_{x\in B} d_A(x)\Bigr)$.
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Pour $x,x'\in\R^n$ et $y\in A$ on a $d_A(x)\le \|x-y\| \le \|x-x'\| + \|x'-y\|$.
+    En prenant la borne inf{\'e}rieure sur~$y$ on obtient $d_A(x) \le \|x-x'\| + d_A(x')$.
+    Par sym{\'e}trie on a aussi $d_A(x') \le \|x-x'\| + d_A(x)$ d'o{\`u}
+    $|d_A(x)-d_A(x')\le\|x-x'\|$.
+  \item On sait que $\overline A = \{x\in\R^n\text{ tq }d_A(x)=0\}$.
+    Donc $d_A = d_B \Rightarrow \overline A = \overline B$ et la r{\'e}ciproque r{\'e}sulte
+    de la propri{\'e}t{\'e} facile $d_A = d_{\overline A}$.
+  \item On note~: $M = \sup\{|d_A(y)-d_B(y)|,\ y\in\R^n\}$,
+    $\alpha = \sup\{d_B(x), x\in A\}$ et $\beta=\sup\{d_A(x),\ x\in B\}$.
+    Par restriction de $y$ {\`a} $A\cup B$ on obtient $M \ge \max(\alpha,\beta)$.
+    Par ailleurs, pour $y\in\R^n$, $a\in A$ et $b\in B$ on a
+    $\|y-a\|-\|y-b\|\le\|a-b\|$ d'o{\`u} $d_A(y)-\|y-b\|\le d_A(b)$ puis
+    $d_A(y)-d_B(y)\le \beta$. Par sym{\'e}trie on a aussi
+    $d_B(y)-d_A(y)\le \alpha$ donc $|d_A(y)-d_B(y)|\le\max(\alpha,\beta)$
+    et finalement $M\le\max(\alpha,\beta)$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

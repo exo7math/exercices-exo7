@@ -1,0 +1,30 @@
+\exercice{7086, megy, 2017/01/21}
+
+\enonce[Cercle d'Euler]
+% tags : homothéties, cercle circonscrit, cercle des neuf points
+% cercle de Feuerbach, cercle de Terquem, cercle médian
+Soit $ABC$ un triangle. On note $G$, $\Omega$ et $H$ le centre de gravité, le centre du cercle circonscrit $\mathcal C$ et l'orthocentre. Soit $\mathcal C'$ le cercle passant par les milieux $I_A$, $I_B$ et $I_C$ des côtés de $ABC$.
+\begin{enumerate}
+\item Montrer que le centre de $\mathcal C'$ appartient à la droite $(G\Omega)$. Calculer son rayon.
+\item Montrer que $\mathcal C'$ coupe les segments reliant les sommets à l'orthocentre $H$ en leur milieu.
+\end{enumerate}
+% il y a beaucoup d'autres choses à montrer, mais c'est plus pratique avec les angles inscrits.
+\begin{center}
+\includegraphics{../images/img007086-1}
+\end{center}
+
+\finenonce
+\indication   
+\begin{enumerate}
+\item Considérer une homothétie de centre $G$.
+\item Considérer une homothétie de centre $H$. On rappelle que $\overrightarrow{G\Omega}=-\frac12\overrightarrow{GH}$.
+\end{enumerate}
+\finindication      
+\correction 
+\begin{enumerate}
+\item Le triangle des milieux est l'image de $ABC$ par l'homothétie de centre $G$ et de rapport $-1/2$. On en déduit que $\mathcal C$ est l'image du cercle circonscrit par cette homothétie, et donc que son centre est l'image de $\Omega$ par cette homothétie : il est donc sur la droite $(G\Omega)$.
+
+\item Montrons que $\mathcal C'$ est l'image de $\mathcal C$ par l'homothétie de centre $H$ et de rapport $1/2$. Considérons la composition de l'homothétie de centre $G$ et de rapport $-1/2$ avec l'homothétie de rapport $-1$ et de centre $J$. C'est une homothétie de rapport $1/2$ qui envoie $\mathcal C$ sur $\mathcal C'$. Comme elle envoie de plus $\Omega$ sur $J$, son centre est le point $M$ tel que $\overrightarrow{MJ}=\frac12\overrightarrow{M\Omega}$. Or on sait déjà, par exemple en considérant l'homothétie de centre $G$ et de rapport $-\frac12$, que $\overrightarrow{G\Omega}=-\frac12\overrightarrow{GH}$. On en déduit que $M=H$.
+\end{enumerate}
+\fincorrection  
+\finexercice  

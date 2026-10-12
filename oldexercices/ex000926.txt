@@ -1,0 +1,31 @@
+\exercice{926, gourio, 2001/09/01}
+\video{uLIAnT8Tc2w}
+\enonce
+Soit $$E=\big\{(u_{n})_{n\in
+  \Nn}\in \Rr^{\Nn}\ |\ (u_{n})_{n} \text{ converge }\big\}.$$
+Montrer que
+l'ensemble des suites constantes et l'ensemble des suites convergeant
+vers $0$ sont des sous-espaces suppl\'{e}mentaires dans $E.$
+\finenonce 
+
+\indication
+Pour une suite $(u_n)$ qui converge vers $\ell$ regarder la suite $(u_n-\ell)$.
+\finindication
+
+\correction
+ On note $F$ l'espace vectoriel des suites constantes et $G$ l'espace
+  vectoriel des suites convergeant vers $0$.
+\begin{enumerate}
+\item $F\cap G = \{0\}$. En effet une suite constante qui converge
+  vers $0$ est la suite nulle.
+  \item $F+G=E$. Soit $(u_n)$ un \'el\'ement de $E$. Notons $\ell$ la
+    limite de $(u_n)$.  Soit $(v_n)$ la suite d\'efinie par
+    $v_n=u_n-\ell$, alors $(v_n)$ converge vers $0$. Donc $(v_n)\in
+    G$.  Notons $(w_n)$ la suite constante \'egale \`a $\ell$. Alors nous
+    avons $u_n=\ell+u_n-\ell$, ou encore $u_n=w_n+v_n$, ceci pour tout
+    $n\in\Nn$. En terme de suite cela donne $(u_n)=(w_n)+(v_n)$. Ce
+    qui donne la d\'ecomposition cherch\'ee.
+\end{enumerate}
+Bilan : $F$ et $G$ sont en somme directe dans $E$ : $E=F\oplus G$.
+\fincorrection
+\finexercice

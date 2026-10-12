@@ -1,0 +1,31 @@
+\exercice{3904, quercia, 2010/03/11}
+\enonce[Centrale MP 2000]
+Soit ${f} : {\R^{+*}} \to {\R^{+*}}$ telle que : 
+$\forall\ x,y>0,\ f(xf(y))=yf(x)$ et $f(x)\to +\infty$ lorsque $x\to 0^+$
+\begin{enumerate}
+  \item Montrer que $f$ est involutive.
+    
+  \item Montrer que $f$ conserve le produit. Que peut-on dire de la monotonie de $f$, de sa continuité ? 
+    
+  \item Trouver $f$.
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Pour $x=1$ on a $f\circ f(y) = yf(1)$ donc $f$ est injective
+    et pour $y=1$~: $f(xf(1))=f(x)$ d'où $f(1)=1$.
+  \item $f(xy) = f(xf(f(y))) = f(y)f(x)$.\par
+    Pour $0<x<1$ on a $f(x^n) = f(x)^n \to +\infty$ (lorsque $n\to\infty$) donc
+    $f(x)>1$ ce qui entraîne par morphisme la décroissance de~$f$.
+    Enfin $f$ est monotone et $f(]0,+\infty[) = {]0,+\infty[}$ donc $f$
+    n'a pas de saut et est continue.
+  \item En tant que morphisme continu, $f$ est de la forme $x \mapsto x^\alpha$
+    avec $\alpha\in\R$ et l'involutivité et la décroissance donnent $\alpha=-1$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

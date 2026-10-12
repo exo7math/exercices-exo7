@@ -1,0 +1,51 @@
+\exercice{5077, rouget, 2010/06/30}
+\enonce[**]
+Calculer $I=\int_{\pi/6}^{\pi/3}\cos^4x\sin^6x\;dx$ et
+$J=\int_{\pi/6}^{\pi/3}\cos^4x\sin^7x\;dx$.
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item   Pour $x$ réel , on a~:
+\begin{align*}
+\cos^4x\sin^6x&=\left(\frac{1}{2}(e^{ix}+e^{-ix})\right)^4\left(\frac{1}{2i}(e^{ix}-e^{-ix})\right)^6\\
+ &=-\frac{1}{2^{10}}(e^{4ix}+4e^{2ix}+6+4e^{-2ix}+e^{-4ix})
+(e^{6ix}-6e^{4ix}+15e^{2ix}-20+15e^{-2ix}-6e^{-4ix}+e^{-6ix})\\
+ &= -\frac{1}{2^{10}}(e^{10ix}-2e^{8ix}-3e^{6ix}+8e^{4ix}+2e^{2ix}-12
++2e^{-2ix}+8e^{-4ix}-3e^{-6ix}-2e^{-8ix}+e^{-10ix})\\
+ &=-\frac{1}{2^9}(\cos10x-2\cos8x-3\cos6x+8\cos4x+2\cos2x-6)\\
+ &=-\frac{1}{512}(\cos10x-2\cos8x-3\cos6x+8\cos4x+2\cos2x-6)
+\end{align*}
+(Remarque. La fonction proposée était paire et l'absence de sinus était donc prévisible. Cette remarque guidait aussi
+les calculs intermédiaires~:~les coefficients de $e^{-2ix}$, $e^{-4ix}$,... étaient les mêmes que ceux
+de $e^{2ix}$, $e^{4ix}$,...) Par suite,
+
+\begin{align*}
+I&=-\frac{1}{512}\left(\left[\frac{\sin10x}{10}-\frac{\sin8x}{4}-\frac{\sin6x}{2}+2\sin4x+\sin2x\right]_{\pi/6}^{\pi/3}
+-6\left(\frac{\pi}{3}-\frac{\pi}{6}\right)\right)\\
+ &=-\frac{1}{512}\left(\frac{1}{10}(-\frac{\sqrt{3}}{2}+\frac{\sqrt{3}}{2})-\frac{1}{4}(\frac{\sqrt{3}}{2}+\frac{\sqrt{3}}{2})-\frac{1}{2}(0-0)+2(-\frac{\sqrt{3}}{2}-\frac{\sqrt{3}}{2})+(\frac{\sqrt{3}}{2}-\frac{\sqrt{3}}{2})-\pi\right)\\
+ &=-\frac{1}{512}\left(-\frac{\sqrt{3}}{4}-2\sqrt{3}-\pi\right)=\frac{9\sqrt{3}+4\pi}{2048}.
+\end{align*}
+
+ \item   Pour $x$ réel, on a
+
+\begin{align*}
+\cos^4x\sin^7x&=\cos^4x\sin^6x\sin x=\cos^4x(1-\cos^2x)^3\sin x\\
+ &=\cos^4x\sin x-3\cos^6x\sin x+3\cos^8x\sin x-\cos^{10}x\sin x.
+\end{align*}
+
+Par suite,
+
+\begin{align*}
+J&=\left[-\frac{\cos^5x}{5}+\frac{3\cos^7x}{7}-\frac{\cos^9x}{3}+\frac{\cos^{11}x}{11}\right]_{\pi/6}^{\pi/3}\\
+ &=-\frac{1}{5}\times\frac{1-9\sqrt{3}}{32}+\frac{3}{7}\times\frac{1-27\sqrt{3}}{128}-\frac{1}{3}\times\frac{1-81\sqrt
+{3}}{512}+\frac{1}{11}\times\frac{1-243\sqrt{3}}{2048}\\
+ &=\frac{1}{2^{11}\times3\times5\times7\times11}(-14784(1-9\sqrt{3})+7920(1-27\sqrt{3})-154
+0(1-81\sqrt{3})+105(1-243\sqrt{3}))\\
+ &=\frac{1}{{2365440}}(-{8299}+{18441}\sqrt{3}).
+\end{align*}
+\end{enumerate}
+\fincorrection
+\finexercice

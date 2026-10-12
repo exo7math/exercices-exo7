@@ -1,0 +1,79 @@
+\exercice{5645, rouget, 2010/10/16}
+\enonce[**I]
+\begin{enumerate}
+ \item  Soient $a_{i,j}$, $1\leqslant i,j\leqslant n$, $n^2$ fonctions dérivables sur $\Rr$ à valeurs dans $\Cc$. Soit $d=\text{det}(a_{i,j})_{1\leqslant i,j\leqslant n}$.
+
+Montrer que $d$ est dérivable sur $\Rr$ et calculer $d'$.
+
+\item  Application : calculer $d_n(x)=\left|
+\begin{array}{cccc}
+x+1&1&\ldots&1\\
+1&\ddots&\ddots&\vdots\\
+\vdots&\ddots&\ddots&1\\
+1&\ldots&1&x+1
+\end{array}
+\right|$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  $d=\sum_{\sigma\in  S_n}^{}\varepsilon(\sigma)a_{\sigma(1),1}...a_{\sigma(n),n}$ est dérivable sur $\Rr$ en tant que combinaison linéaire de produits de fonctions dérivables sur $\Rr$ et de plus
+
+\begin{align*}\ensuremath
+d'&=\sum_{\sigma\in  S_n}^{}\varepsilon(\sigma)(a_{\sigma(1),1}...a_{\sigma(n),n})'=\sum_{\sigma\in  S_n}^{}\varepsilon(\sigma)\sum_{i=1}^{n}a_{\sigma(1),1}...a_{\sigma(i),i}'\ldots a_{\sigma(n),n}=\sum_{i=1}^{n}\sum_{\sigma\in  S_n}^{}\varepsilon(\sigma)a_{\sigma(1),1}...a_{\sigma(i),i}'\ldots a_{\sigma(n),n}\\
+   &=\sum_{i=1}^{n}\text{det}(C_1,...,C_i',...,C_n)\;(\text{où}\;C_1,...,C_n\;\text{sont les colonnes de la matrice}).
+\end{align*}
+
+\item  \textbf{1 ère solution.} D'après ce qui précède, la fonction $d_n$ est dérivable sur $\Rr$ et pour $n\geqslant 2$ et $x$ réel, on a
+
+\begin{align*}\ensuremath
+d_n'(x)&=\sum_{i=1}^{n}\left|
+\begin{array}{ccccccccc}
+x+1&1&\ldots&1&0&1&\ldots&\ldots&1\\
+1&\ddots&\ddots&\vdots&\vdots&\vdots\\
+\vdots&\ddots&\ddots&1&\vdots\\
+ & &\ddots&x+1&0&\vdots\\
+\vdots& & &1&1&1\\
+ & & &\vdots&0&x+1&\ddots\\
+ & & & &\vdots&1&\ddots&\ddots&\vdots\\
+\vdots& & &\vdots&\vdots&\vdots&\ddots&\ddots&1\\
+1&\ldots&\ldots&1&0&1&\ldots&1&x+1
+\end{array}
+\right|(\text{la colonne particulière est la colonne}\;i)\\
+ &=\sum_{i=1}^{n}d_{n-1}(x)(\text{en développant le}\;i\text{-ème déterminant par rapport à sa}\;i\text{-ème colonne})\\
+ &=nd_{n-1}(x).
+\end{align*}
+
+En résumé, $\forall n\geqslant 2$, $\forall x\in\Rr$, $d_n(x)=nd_{n-1}(x)$. D'autre part $\forall x\in\Rr$, $d_1(x)=x+1$ et $\forall n\geqslant 2$, $d_n(0) = 0$ (déterminant ayant deux colonnes identiques).
+
+Montrons alors par récurrence que 
+$\forall n\geqslant 1$, $\forall x\in\Rr$, $d_n(x) =x^n+nx^{n-1}$.
+
+\textbullet~C'est vrai pour $n=1$.
+
+\textbullet~Soit $n\geqslant1$. Supposons que $\forall n\geqslant 1$, $\forall x\in\Rr$, $d_n(x) =x^n+nx^{n-1}$. Alors, pour $x\in\Rr$,
+
+\begin{center}
+$d_{n+1}(x)=d_{n+1}(0)+\int_{0}^{x}d_{n+1}'(t)\;dt=(n+1)\int_{0}^{x}d_n(t\;dt)=x^{n+1}+(n+1)x^n$.
+\end{center}
+
+On a montré que
+
+\begin{center}
+\shadowbox{
+$\forall n\geqslant 1$, $\forall x\in\Rr$, $d_n(x)=x^n+nx^{n-1}$.
+}
+\end{center}
+
+\textbf{2 ème solution.} $d_n$ est clairement un polynôme de degré $n$ unitaire.
+Pour $n\geqslant 2$, puisque dn(0) = 0 et que $d_n'= nd_{n-1}$, $0$ est racine de $d_n$, $d_n'$, ..., $d_n^{(n-2)}$ et est donc racine d'ordre $n-1$ au moins de $d_n$. 
+Enfin, $d_n(-n)=0$ car la somme des colonnes du déterminant obtenu est nulle.
+Finalement $\forall n\geqslant2$, $\forall x\in\Rr$, $d_n(x) = x^{n-1}(x+n)$ ce qui reste vrai pour $n=1$.
+
+Une variante peut être obtenue avec des connaissances sur la réduction.
+\end{enumerate}
+\fincorrection
+\finexercice

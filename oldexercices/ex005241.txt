@@ -1,0 +1,34 @@
+\exercice{5241, rouget, 2010/06/30}
+\enonce[***]
+Montrer que, pour $n\geq2$, 
+
+\begin{center}
+$\cos\left(\frac{\pi}{2^{n}}\right)=\frac{1}{2}\sqrt{2+\sqrt{2+...+\sqrt{2}}}$ ($n-1$ radicaux) et $\sin\left(\frac{\pi}{2^{n}}\right)=\frac{1}{2}\sqrt{2-\sqrt{2+...+\sqrt{2}}}$ ($n-1$ radicaux).
+\end{center}
+En déduire $\lim_{n\rightarrow +\infty}2^n\sqrt{2-\sqrt{2+...+\sqrt{2}}}$ ($n$ radicaux).
+\finenonce
+
+\noindication
+
+\correction
+L'égalité proposée est vraie pour $n=2$ car $\cos\frac{\pi}{2^2}=\cos\frac{\pi}{4}=\frac{\sqrt{2}}{2}$.
+
+Soit $n\geq2$. Supposons que $\cos(\frac{\pi}{2^{n}})=\frac{1}{2}\sqrt{2+\sqrt{2+...\sqrt{2}}}$ ($n-1$ radicaux).
+
+Alors, puisque $\cos(\frac{\pi}{2^{n+1}})>0$ (car $\frac{\pi}{2^{n+1}}$ est dans $]0,\frac{\pi}{2}[$), 
+
+$$\cos(\frac{\pi}{2^{n+1}})=\sqrt{\frac{1+\cos(\frac{\pi}{2^{n}})}{2}}=\sqrt{\frac{1}{2}(1+\frac{1}{2}\sqrt{2+\sqrt{2+...\sqrt{2}}})}=\frac{1}{2}\sqrt{2+\sqrt{2+...\sqrt{2}}},\;(n\;\mbox{radicaux}).$$
+
+On a montré par récurrence que, pour $n\geq2$, $\cos(\frac{\pi}{2^{n}})=\frac{1}{2}\sqrt{2+\sqrt{2+...\sqrt{2}}}$ ($n-1$ radicaux).
+ 
+Ensuite, pour $n\geq2$, 
+
+$$\sin(\frac{\pi}{2^{n}})=\sqrt{\frac{1}{2}(1-\cos(\frac{\pi}{2^{n-1}})}=\frac{1}{2}\sqrt{2-\sqrt{2+...\sqrt{2}}}\;(n-1\;\mbox{radicaux})$$
+
+Enfin, 
+
+$$2^n\sqrt{2-\sqrt{2+...\sqrt{2}}}=2^n.2\sin\frac{\pi}{2^{n+1}}\sim2^{n+1}\frac{\pi}{2^{n+1}}=\pi.$$
+
+Donc, $\lim_{n\rightarrow +\infty}2^n\sqrt{2-\sqrt{2+...\sqrt{2}}}=\pi$.
+\fincorrection
+\finexercice

@@ -1,0 +1,27 @@
+\exercice{5986, quinio, 2011/05/18}
+
+\enonce
+Un QCM comporte $10$ questions, pour chacune desquelles $4$ réponses sont proposées, une seule est exacte. Combien y-a-t-il de
+grilles-réponses possibles? Quelle est la probabilité de répondre au hasard au moins $6$ fois correctement?
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item Une grille-réponses est une suite ordonnée de $10$ réponses,
+il y a $4$ choix possibles pour chacune. Il y a donc $4^{10}$ grilles-réponses possibles.
+\item L'événement $E$ <<répondre au hasard au moins $6$ fois correctement>> est 
+réalisé si le candidat répond bien à $6$ ou $7$ ou $8$ ou $9$ ou $10$ questions. Notons $A_{n}$ l'événement : <<répondre au hasard
+exactement $n$ fois correctement>>. Alors, $A_{n}$ est réalisé si $n$ réponses sont correctes et $10-n$
+sont incorrectes : $3$ choix sont possibles pour chacune de ces dernières.
+Comme il y a $\binom{10}{n}$ choix de $n$ objets parmi $10$, et donc il y a :
+$\binom{10}{n} \times 3^{10-n}$ façons de réaliser $A_{n}$ et :
+\begin{equation*}
+P(A_n)=\frac{\binom{10}{n}\cdot 3^{10-n}}{4^{10}}
+\end{equation*}
+pour $n= 6, 7, 8, 9, 10$.
+$P(E)=\sum_{n=6}^{10}\frac{\binom{10}{n}\cdot 3^{10-n}}{4^{10}} \simeq 1.9728\times 10^{-2}$, soit environ $2$\%.
+\end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,21 @@
+\exercice{2844, burnol, 2009/12/15}
+\enonce Soit $\Omega$ un domaine, de
+bord le cycle $\partial\Omega$ orienté dans le sens direct. 
+Soit $f$ une fonction holomorphe sur
+$\overline\Omega$, soient $z_1$ et $z_2$ deux points de
+$\Omega$. Que vaut
+\[ \int_{\partial\Omega}
+\frac{f(z)\,dz}{(z-z_1)(z-z_2)}\;?\]
+Qu'obtient-on pour $z_2\to z_1$, $z_1$ fixé ?
+\finenonce
+\noindication
+\correction
+On a
+\begin{eqnarray*}
+\int_{\partial\Omega} \frac{f(z)\,dz}{(z-z_1)(z-z_2)} &=& \int_\gamma \frac{f(z)\,dz}{(z-z_1)(z-z_2)} -\sum_{j=1}^N \int_{\gamma_j} \frac{f(z)\,dz}{(z-z_1)(z-z_2)} \\
+&=& 2i\pi \Big( \mathrm{Res} (f, z_1)+\mathrm{Res} (f, z_2) \Big) = 2i\pi \Big( \frac{f(z_1)}{z_1-z_2}+\frac{f(z_2)}{z_2-z_1}\Big).
+\end{eqnarray*}
+D'o\`u
+$$\lim_{z_2\to z_1} \int_{\partial\Omega} \frac{f(z)\,dz}{(z-z_1)(z-z_2)}= 2i\pi f'(z_1).$$
+\fincorrection
+\finexercice

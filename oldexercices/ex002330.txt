@@ -1,0 +1,40 @@
+\exercice{2330, matexo1, 2002/02/01}
+\enonce
+{\bf Fonction Gamma - }
+Pour tout $x>0$, on pose
+$$ \Gamma (x) = \int_0^{+\infty} {t^{x-1} e^{-t}} dt $$
+(on admettra que l'int\'egrale converge). Montrer que 
+$\Gamma(x+1) = x \Gamma(x)$. Calculer la valeur de 
+$\Gamma(1)$. En d\'eduire celle de $\Gamma(n)$, pour tout
+entier $n>0$.
+
+\item Soit $a>0$ un r\'eel, et $n>0$ un entier. Montrer que
+$$ \int {dt \over (x^2 + a^2)^n} = {1 \over a^{2n-1}}
+	\int \cos^{2n-2}\theta d\theta \qquad \mbox{\rm o\`u}\qquad
+\theta = \arctan{x \over a}. $$
+En d\'eduire la primitive de $\displaystyle{ x+4 \over (x^2+2x+2)^3 }$.
+
+\item Soient $x$ et $y$ deux r\'eels v\'erifiant $1>y>x>0$. Calculer
+$$ \lim_{x\to  0 \atop y\to  1} 
+ \int_x^y {\ln t \over (1+t)\sqrt{1-t^2}} dt. $$
+
+\item Soit $f$ une fonction continue et positive sur $[0, +\infty[$.
+On pose pour tout $x>0$ et tout entier $n>0$
+$$ u_n(x) = \left[ \int_0^x f(t)^n\ dt \right]^{1/n} $$
+et
+$$ M(x) = \sup_{t \in [0, x]} \left| f(t) \right|. $$
+
+\begin{enumerate}
+\item Montrer que $u_n(x)  \leq M(x) x^{1/n}$.
+\item En utilisant la continuit\'e de $f$, montrer que, quel que 
+soit $\varepsilon > 0$, il existe $\delta > 0$ tel que 
+$u_n(x) \geq \delta^{1/n} [ M(x)-\varepsilon ]$.
+\item En d\'eduire que 
+$$\lim_{n \to +\infty} u_n(x) = M(x).$$
+\end{enumerate}
+\finenonce
+\noindication
+
+\nocorrection
+
+\finexercice

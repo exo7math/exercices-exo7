@@ -1,0 +1,17 @@
+\exercice{3884, quercia, 2010/03/11}
+\enonce[Fonction localement monotone à droite]
+Soit $f : \R \to \R$ continue telle que~:
+$\forall\ x\in\R,\ \exists\ \delta>0,\text{ tq }\forall\ y\in[x,x+\delta],\ f(y)\ge f(x)$.
+Montrer que $f$ est croissante.
+
+\finenonce
+
+\noindication
+
+\correction
+Supposons qu'il existe $a,b\in\R$ avec $a<b$ et $f(b)<f(a)$.
+On note $E=\{x\in{[a,b]}\text{ tq }f(x) < f(a)\}$ et $c=\inf(E)$.
+On a $c\in E$ et $c>a$ par hypothèse et donc $f(c)=\lim_{x\to c^-}f(x)\ge f(a)$, absurde.
+\fincorrection
+
+\finexercice

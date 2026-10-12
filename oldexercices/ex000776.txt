@@ -1,0 +1,42 @@
+\exercice{776, ridde, 1999/11/01}
+\video{_TunkNZcaeI}
+\enonce
+R\'esoudre l'\'equation $x^y = y^x$ o\`u $x$ et $y$ sont des entiers positifs non nuls.
+\finenonce 
+
+\indication
+Montrer que l'\'equation $x^y=y^x$ est \'equivalente \`a $\frac{\ln x}{x}= \frac{\ln y}{y}$,
+puis \'etudier la fonction $x \mapsto \frac{\ln x}{x}$.
+\finindication
+
+\correction
+$$x^y=y^x \Leftrightarrow e^{y\ln x}= e^{x\ln y}
+\Leftrightarrow {y\ln x}= {x\ln y}\Leftrightarrow \frac{\ln x}{x}= \frac{\ln y}{y}$$
+(la fonction exponentielle est bijective).
+Etudions la fonction $f(x) = \frac{\ln x}{x}$ sur $[1,+\infty[$.
+$$f'(x)= \frac{1-\ln x}{x^2},$$
+donc $f$ est croissante sur $[1,e]$ et d\'ecroissante
+sur $[e,+\infty[$. Donc pour $z \in ]0,f(e)[=]0,1/e[$, l'\'equation $f(x)=z$ a exactement deux solutions, une 
+dans $]1,e[$ et une dans $]e,+\infty[$.
+
+Revenons \`a l'\'equation $x^y=y^x$ \'equivalente \`a $f(x)=f(y)$.
+Prenons $y$ un entier, nous allons distinguer trois cas :
+$y=1$, $y=2$ et $y \geq 3$.
+Si $y=1$ alors $f(y)=z=0$ on doit
+donc r\'esoudre $f(x)=0$ et alors $x=1$.
+Si $y=2$ alors il faut r\'esoudre l'\'equation $f(x) = \frac{\ln 2}{2} \in ]0,1/e[$.
+Alors d'apr\`es l'\'etude pr\'ec\'edente, il existe deux solutions
+une sur $]0,e[$ qui est $x=2$ (!) et une sur $]e,+\infty[$
+qui est $4$, en effet $\frac {\ln 4}4= \frac {\ln 2}2$.
+Nous avons pour l'instant les solutions correspondant à $2^2=2^2$ et $2^4=4^2$.
+
+Si $y \geq 3$ alors $y> e$ donc il y a une solution $x$ 
+de l'\'equation $f(x)=f(y)$ dans $]e,+\infty[$ qui est $x=y$,
+et une solution $x$ dans l'intervalle $]1,e[$.
+Mais comme $x$ est un entier alors $x=2$ (c'est le seul entier appartenant à $]1,e[$)
+c'est un cas que nous avons d\'ej\`a \'etudi\'e conduisant à $4^2 = 2^4$.
+
+Conclusion : les couples d'entiers qui v\'erifient l'\'equation $x^y=y^x$
+sont les couples $(x,y=x)$ et les couples $(2,4)$ et $(4,2)$.
+\fincorrection
+\finexercice

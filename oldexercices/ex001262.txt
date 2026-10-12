@@ -1,0 +1,64 @@
+\exercice{1262, legall, 2003/10/01}
+
+\enonce
+Soit $g$ la
+fonction $x\mapsto \dfrac{\arctan x}{(\sin x)^3}-\dfrac {1}{x^2}$.
+\begin{enumerate}
+\item Donner le domaine de d\'efinition de $g$.
+\item Montrer qu'elle se prolonge par continuit\'e en $0$ en
+une fonction
+d\'erivable.
+\item D\'eterminer la tangente en $0$ au graphe de cette fonction et la
+position de ce graphe par rapport \`a celle-ci.
+\end{enumerate}
+
+
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item La fonction
+$g$ est d\'efinie en $x$ sauf si $\sin (x)=0$ ou $x=0$.
+Son domaine de d\'efinition est donc $\Rr -\{ k\pi , k\in \Zz \} .$
+
+
+\item
+On peut prolonger $g$ en une fonction continue en $0$ si et seulement si elle y
+admet une limite.
+Elle est d\'erivable en ce point si et seulement si elle y admet un 
+d\'eveloppement limit\'e \`a l'ordre
+$1$. Toutefois, comme l'\'enonc\'e demande la position du graphe de 
+$g$ par rapport
+\`a sa tangente en $0$, nous allons calculer directement le 
+d\'eveloppement limit\'e \`a l'ordre
+$2$ de $g$ en $0$.
+
+
+
+Le d\'eveloppement limit\'e en $0$ \`a l'ordre $5$ de $\arctan x = x 
+-\dfrac{x^3}{3} +\dfrac{x^5}{5}+x^5\epsilon_1 (x).$
+
+Or $\sin x =x-\dfrac{x^3}{3!} +\dfrac{x^5}{5!}+x^5\epsilon_2 (x).$ Donc
+$\sin ^3 x =x^3-\dfrac{x^5}{2} + \dfrac{13x^7}{120}   +x^7\epsilon_3 (x)$
+et $\dfrac{1}{\sin ^3 x}=\dfrac{1}{x^3} 
+(1+\dfrac{x^2}{2}+\dfrac{9x^4}{40} +x^4\epsilon_4 (x)).$
+On en d\'eduit que :
+
+$ \dfrac{\arctan x}{(\sin x)^3}-\dfrac {1}{x^2}=\dfrac 
+{1}{x^3}(x+\dfrac{x^3}{6}+\dfrac{31x^5}{120}+x^5\epsilon_5 (x))
+-\dfrac {1}{x^2}=\dfrac{1}{6}+\dfrac{31x^2}{120}+x^2\epsilon_5 (x)
+.$
+
+Ainsi on peut prolonger $g$ en une fonction continue en $0$ en posant 
+$g(0)=\dfrac{1}{6}$.
+La fonction obtenue est d\'erivable en $0$ et sa d\'eriv\'ee est 
+nulle. La tangente en $0$ \`a son graphe est la droite d'\'equation
+$y=\dfrac{1}{6}$. Enfin le graphe de $g$ est au-dessus de cette 
+droite au voisinage de $0$.
+\end{enumerate}
+\fincorrection
+
+\finexercice
+

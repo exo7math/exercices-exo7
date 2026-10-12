@@ -1,0 +1,52 @@
+\exercice{7725, mourougane, 2021/08/11}
+\enonce
+\begin{enumerate}
+ \item Déterminer le centre de $SL(4,\mathbb{F}_2)$ et calculer l'ordre de $PSL(4,\mathbb{F}_2)$.
+
+ \item Dans $SL(4,\mathbb{F}_2)$ déterminer l'ordre de 
+$$A=\left[\begin{array}{cccc}1&0&0&0\\0&1&0&0\\0&0&1&1\\0&0&0&1
+    \end{array}\right] 
+\textrm{ et de }
+B=\left[\begin{array}{cccc}1&1&0&0\\0&1&0&0\\0&0&1&1\\0&0&0&1
+    \end{array}\right]$$
+Ces deux matrices sont-elles conjuguées dans $SL(4,\mathbb{F}_2)$ ?
+
+ \item Déterminer le centre de $SL(3,\mathbb{F}_4)$ et calculer l'ordre de $PSL(3,\mathbb{F}_4)$.
+
+ \item Le but de cette question est de montrer que toutes les involutions de $PSL(3,\mathbb{F}_4)$ sont des applications projectives associées à des transvections.
+Soit $F$ une homographie de $PSL(3,\mathbb{F}_4)$ involutive (i.e. $F^2=Id\in PSL(3,\mathbb{F}_4)$) et $f\in SL(3,\mathbb{F}_4)$ telle que $P(f)=F$. 
+\begin{enumerate}
+ \item Montrer que $P(f^3)=F$ et que $f^3$ est d'ordre $2$ dans $SL(3,\mathbb{F}_4)$. On notera $g=f^3$.
+
+\item Quelle est la caractéristique de $\mathbb{F}_4$ ?
+Montrer que $(g-Id)^2=0$. Déterminer $\dim Ker(g-Id)$ et $\dim Im(g-Id)$. 
+
+\item Conclure.
+\end{enumerate}
+ \item En étudiant les classes de conjugaison des éléments d'ordre $2$, déterminer si $PSL(4,\mathbb{F}_2)$ et $PSL(3,\mathbb{F}_4)$ sont isomorphes.
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+ \item Comme le seul élément non nul de $\mathbb{F}^2$ est $1$, $SL(4,\mathbb{F}^2)=GL(4,\mathbb{F}_2)$. Le centre de $GL(4,\mathbb{F}_2)$ composé des homothéties inversibles est donc réduit à l'identité ainsi que celui de $SL(4,\mathbb{F}_2)$. Ainsi, $|PSL(4,\mathbb{F}^2)|=|GL(4,\mathbb{F}^2)|=(2^4-1)(2^4-2)(2^4-2^2)(2^4-2^3)=15\times 14\times 12\times 8=7\times 5\times 3^2\times 2^6$.
+ 
+ \item Ces deux matrices sont d'ordre $2$.
+ Elles ne sont pas conjuguées car la dimension des espaces propres de valeurs propres $1$ n'est pas la même pour les deux.
+ 
+ \item Tous les éléments de $\mathbb{F}^\times_4$ sont des racines $3$-ième d'unité par le théorème de Lagrange. Par conséquent toutes les homothéties inversibles sont dans le centre de $SL(3,\mathbb{F}_4)$.
+ Donc, 
+ $|PSL(3,\mathbb{F}^4)=GL(3,\mathbb{F}_4)/(3\times 3)=(4^3-1)(4^3-4)(4^3-4^2)/9
+ =63\times 60\times 48/9=7\times 5\times 3^2\times 2^6$.
+ 
+ \item 
+\begin{enumerate}
+ \item $P(f^3)=F^3=F$ car $F$ est une involution.
+ $g=f^3$ n'est donc pas l'identité, mais $g^2=f^6=(f^2)^3=Id$ car $f^2$ est dans le centre de $SL(3,\mathbb{F}_4)$ qui est d'ordre $3$. 
+ \item Le corps $\mathbb{F}_4$ est de caractéristique $2$. $(g-Id)^2=g^2-2g+Id=0$. Par conséquent, $\dim Im(g-Id)\leq\dim Ker(g-Id)$ et $\dim Im(g-Id)+\dim Ker(g-Id)=3$. Comme $g\not=Id$, $\dim Ker(g-Id)=2$.
+ \item Ainsi $g$ est un élément de $SL(3,\mathbb{F}_4)$ qui admet un plan de points fixes. C'est donc une transvection.
+\end{enumerate}
+\item Dans $PSL(4,\mathbb{F}_2)$, il y a au moins deux classes de conjugaison d'éléments d'ordre $2$ par la question $1$. Dans $SL(3,\mathbb{F}_4)$ comme toutes les transvections sont conjuguées, la question 4 permet d'affirmer qu'il n'y a qu'une classe de conjugaison d'éléments d'ordre $2$. Les deux groupes ne sont donc pas isomorphes.  
+\end{enumerate}
+\fincorrection
+\finexercice

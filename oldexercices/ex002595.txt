@@ -1,0 +1,75 @@
+\exercice{2595, delaunay, 2009/05/19}
+\enonce
+Soit $A$ la matrice suivante
+$$A=\begin{pmatrix}1&1 \\  2&1\end{pmatrix}$$
+\begin{enumerate}
+ \item  Calculer le polyn\^ome caract\'eristique et d\'eterminer les valeurs propres de $A$.
+ \item On note $\lambda_1>\lambda_2$ les valeurs propres de $A$, $E_1$ et $E_2$ les sous-espaces propres associ\'es. D\'eterminer une base $(\vec{\varepsilon_1},\vec{\varepsilon_2})$ de $\R^2$ telle que 
+$\vec{\varepsilon_1}\in E_1$, $\vec{\varepsilon_2}\in E_2$, les deux vecteurs ayant des coordonn\'ees de la forme $(1,y)$.
+ \item  Soit $\vec x$ un vecteur de $\R^2$, on note $(\alpha,\beta)$ ses coordonn\'ees dans la base
+$(\vec{\varepsilon_1},\vec{\varepsilon_2})$. D\'emontrer que, pour $n\in\N$, on a
+$$A^n\vec x=\alpha\lambda_1^n\vec{\varepsilon_1}+\beta\lambda_2^n\vec{\varepsilon_2}$$
+ \item Notons $A^n\vec x=\begin{pmatrix}a_n \\  b_n\end{pmatrix}$ dans la base canonique de $\R^2$. Exprimer $a_n$ et $b_n$ en fonction de $\alpha$, $\beta$, $\lambda_1$ et $\lambda_2$. En d\'eduire que, si $\alpha\neq 0$, la suite ${\frac{b_n}{a_n}}$ tend vers $\sqrt2$ quand $n$ tend vers $+\infty$.
+ \item  Expliquer, sans calcul, comment obtenir \`a partir des questions pr\'ec\'edentes une approximation de $\sqrt2$ par une suite  de nombres rationnels.
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+ Soit $A$ la matrice suivante
+$$A=\begin{pmatrix}1&1 \\  2&1\end{pmatrix}$$
+\begin{enumerate}
+ \item {\it On calcule le polyn\^ome caract\'eristique et on d\'etermine les valeurs propres de $A$.}
+
+Le polyn\^ome caract\'eristique $P_A(X)$ est \'egal \`a
+$$P_A(X)=\begin{vmatrix}1-X&1 \\  2&1-X\end{vmatrix}=(1-X)^2-2=X^2-2X-1.$$
+Calculons ses racines, le discriminant r\'eduit de ce polyn\^ome du second degr\'e est \'egal \`a $\Delta'=(-1)^2-(-1)=2$, les racines sont donc
+$$\lambda_1=1+\sqrt2\ \ {\hbox{et}}\ \ \lambda_2=1-\sqrt2,$$
+ce sont les valeurs propres de $A$.
+ \item  On note $\lambda_1>\lambda_2$ les valeurs propres de $A$, $E_1$ et $E_2$ les sous-espaces propres associ\'es. {\it On d\'etermine une base $(\vec{\varepsilon_1},\vec{\varepsilon_2})$ de $\R^2$ telle que 
+$\vec{\varepsilon_1}\in E_1$, $\vec{\varepsilon_2}\in E_2$, les deux vecteurs ayant des coordonn\'ees de la forme $(1,y)$.}
+
+On cherche $\vec\varepsilon_1=\begin{pmatrix}1 \\  y\end{pmatrix}$ tel que $A.\vec\varepsilon_1=(1+\sqrt2)\vec\varepsilon_1,$
+on calcule donc $y$ tel que
+$$\begin{pmatrix}1&1 \\  2&1\end{pmatrix}\begin{pmatrix}1 \\  y\end{pmatrix}=(1+\sqrt2)\begin{pmatrix}1 \\  y\end{pmatrix}$$
+ce qui \'equivaut \`a
+$$\left\{\begin{align*}1+y&=1+\sqrt2 \\  2+y&=(1+\sqrt2)y\end{align*}\right.$$
+d'o\`u $y=\sqrt2$ et $\vec\varepsilon_1=\begin{pmatrix}1 \\  \sqrt2\end{pmatrix}$.
+
+On cherche $\vec\varepsilon_2=\begin{pmatrix}1 \\  y\end{pmatrix}$ tel que $A.\vec\varepsilon_2=(1-\sqrt2)\vec\varepsilon_2,$
+on calcule donc $y$ tel que
+$$\begin{pmatrix}1&1 \\  2&1\end{pmatrix}\begin{pmatrix}1 \\  y\end{pmatrix}=(1-\sqrt2)\begin{pmatrix}1 \\  y\end{pmatrix}$$
+ce qui \'equivaut \`a
+$$\left\{\begin{align*}1+y&=1-\sqrt2 \\  2+y&=(1-\sqrt2)y\end{align*}\right.$$
+d'o\`u $y=-\sqrt2$ et $\vec\varepsilon_2=\begin{pmatrix}1 \\  -\sqrt2\end{pmatrix}$.
+ \item  Soit $\vec x$ un vecteur de $\R^2$, on note $(\alpha,\beta)$ ses coordonn\'ees dans la base
+$(\vec{\varepsilon_1},\vec{\varepsilon_2})$.{\it On d\'emontre que, pour $n\in\N$, on a
+$$A^n\vec x=\alpha\lambda_1^n\vec{\varepsilon_1}+\beta\lambda_2^n\vec{\varepsilon_2}.$$}
+
+On a $\vec x=\alpha\vec\varepsilon_1+\beta\vec\varepsilon_2$, d'o\`u, par lin\'earit\'e
+$A\vec x=\alpha A\vec\varepsilon_1+\beta A\vec\varepsilon_2$ et $A^n\vec x=\alpha A^n\vec\varepsilon_1+\beta A^n\vec\varepsilon_2$. Or, on montre, par r\'ecurrence sur $n$, que $A^n\vec\varepsilon_1=\lambda_1^n\vec\varepsilon_1$ et de m\^eme $A^n\vec\varepsilon_2=\lambda_2^n\vec\varepsilon_2$. Pour $n=1$, c'est la d\'efinition des vecteurs propres. Soit $n$ fix\'e, tel que $A^n\vec\varepsilon_1=\lambda_1^n\vec\varepsilon_1$, on a alors
+$A^{n+1}\vec\varepsilon_1=A.A^n\vec\varepsilon_1=\lambda_1^nA\vec\varepsilon_1=\lambda_1^{n+1}\vec\varepsilon_1$. Ainsi, pour tout $n\in\N$, on a $A^n\vec\varepsilon_1=\lambda_1^n\vec\varepsilon_1$, et, de m\^eme, $A^n\vec\varepsilon_2=\lambda_2^n\vec\varepsilon_2$. D'o\`u le r\'esultat.
+ \item  Notons $A^n\vec x=\begin{pmatrix}a_n \\  b_n\end{pmatrix}$ dans la base canonique de $\R^2$. {\it On exprime $a_n$ et $b_n$ en fonction de $\alpha$, $\beta$, $\lambda_1$ et $\lambda_2$ et on en d\'eduit que, si $\alpha\neq 0$, la suite ${\frac{b_n}{a_n}}$ tend vers $\sqrt2$ quand $n$ tend vers $+\infty$.}
+
+D'apr\`es la question pr\'ec\'edente et les vecteurs $\vec \varepsilon_1$ et $\vec\varepsilon_2$ obtenus en 2) on a
+$$A^n\vec x=\alpha\lambda_1^n\begin{pmatrix}1 \\ \sqrt2\end{pmatrix}+\beta\lambda_2^n\begin{pmatrix}1 \\ -\sqrt2\end{pmatrix}=\begin{pmatrix}a_n \\  b_n\end{pmatrix}$$
+d'o\`u
+$$\left\{\begin{align*}a_n&=\alpha\lambda_1^n+\beta\lambda_2^n \\  b_n &=\sqrt2(\alpha\lambda_1^n-\beta\lambda_2^n)\end{align*}\right.$$
+On suppose $\alpha\neq 0$, pour $n$ assez grand, on a 
+$${\frac{b_n}{a_n}}=\sqrt2{\frac{\alpha\lambda_1^n-\beta\lambda_2^n}{\alpha\lambda_1^n+\beta\lambda_2^n}},$$
+or, 
+$$|\lambda_1|=|1+\sqrt2|>1\Longrightarrow \lim_{n\rightarrow+\infty}\lambda_1^n=+\infty,$$
+et
+$$|\lambda_2|=|1-\sqrt2|<1\Longrightarrow \lim_{n\rightarrow+\infty}\lambda_2^n=0.$$
+D'o\`u l'\'equivalence
+$${\frac{b_n}{a_n}}=\sqrt2{\frac{\alpha\lambda_1^n-\beta\lambda_2^n}{\alpha\lambda_1^n+\beta\lambda_2^n}}
+\sim\sqrt2{\frac{\alpha\lambda_1^n}{\alpha\lambda_1^n}}=\sqrt2.$$
+On a donc bien
+$$\lim_{n\rightarrow+\infty}{\frac{b_n}{a_n}}=\sqrt2.$$
+ \item {\it On explique, sans calcul, comment obtenir, \`a partir des questions pr\'ec\'edentes, une approximation de $\sqrt2$ par une suite  de nombres rationnels.}
+
+La matrice $A$ est \`a coefficients entiers, aussi, pour tout $n\in\N$, la matrice $A^n$ est \`a coefficients entiers. Si l'on choisit un vecteur $\vec x$ \`a coordonn\'ees enti\`eres dans la base canonique de $\R^2$, alors les coordonn\'ees $a_n$ et $b_n$ du vecteur $A^n\vec x$ sont des entiers et elles nous fournissent une suite $\displaystyle{\frac{b_n}{a_n}}$ de nombres rationnels qui tend vers $\sqrt2$.
+\end{enumerate}
+\fincorrection
+\finexercice

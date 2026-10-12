@@ -1,0 +1,24 @@
+\exercice{4385, quercia, 2010/03/12}
+\enonce[Ensi Chimie P 93]
+\begin{enumerate}
+  \item Calculer $\iiint_D \frac{d x\,d y\,d z}{(1+x^2z^2)(1+y^2z^2)}$ avec
+    $D = \{(x,y,z) \text{ tel que } 0\le x \le 1,\ 0\le y\le 1,\ 0\le z\}$.
+    
+  \item En déduire $ \int_{t=0}^{+\infty} \Bigl(\frac{\Arctan t}t\Bigr)^2d t$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Intégrer en $z$ d'abord :
+             $\frac1{(1+x^2z^2)(1+y^2z^2)} =
+              \frac 1{x^2-y^2}\Bigl(\frac{x^2}{1+x^2z^2} - \frac{y^2}{1+y^2z^2}\Bigr)$.
+             On obtient $I = \pi\ln 2$.
+  \item Intégrer $I$ en $x$ et $y$ d'abord. On obtient
+    $I =  \int_{z=0}^{+\infty} \Bigl(\frac{\Arctan z}z\Bigr)^2 d z$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

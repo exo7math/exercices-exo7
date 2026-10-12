@@ -1,0 +1,80 @@
+\exercice{1426, ortiz, 1999/04/01}
+
+\enonce
+\begin{enumerate}
+    \item  Montrer que $\mathcal{S}_n$ est isomorphe \`a un sous-groupe de $\mathcal{A}_{n+2}.$
+    \item  Montrer que $\mathcal{S}_4$ n'est pas isomorphe \`a un sous-groupe de $\mathcal{A}_5.$
+    \item  Montrer que $\mathcal{S}_5$ n'est pas isomorphe \`a un sous-groupe de $\mathcal{A}_6.$
+\end{enumerate}
+
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $\mathcal{S}_{N}$ est l'ensemble des permutations de l'ensemble
+$\{ 1,2,\ldots,N \}$. Dans $\mathcal{S}_{n+2}$ notons $\tau$ la
+permutation $(n+1,n+2)$. Nous définissons une application $\phi :
+\mathcal{S}_{n} \longrightarrow \mathcal{S}_{n+2}$ par les
+relations
+$$ \phi(\sigma) = \sigma \text{ si } \epsilon(\sigma) = +1 \quad ;
+\quad \phi(\sigma) =  \sigma \circ \tau \text{ sinon ;}
+$$
+o\`u $\epsilon$ désigne la signature. Alors $\phi$ est un
+morphisme de groupe, de plus quelque soit $\sigma \in
+\mathcal{S}_{n}$ alors $\epsilon (\phi(\sigma))=+1$ (si
+$\epsilon(\sigma)= +1$ c'est clair, sinon $\epsilon
+(\phi(\sigma))=\epsilon(\sigma)\times \epsilon(\tau) = (-1)\times
+(-1) = +1$). Donc $\phi (\mathcal{S}_{n})$ est un sous-groupe de
+$\mathcal{A}_{n+2}$.
+
+Enfin $\phi$ est injective : en effet soit $\sigma$ tel que
+$\phi(\sigma)=\mathrm{id}$. Soit $\epsilon(\sigma) = +1 $ et alors
+$\phi(\sigma)= \sigma = \mathrm{id}$ ; soit $\epsilon(\sigma) = -1$ et
+alors $\phi(\sigma)= \sigma \circ \tau$, pour $j \in
+\{1,2,\ldots,n\}$
+ $j = \phi(\sigma)(j)= \sigma \circ \tau(j) = \sigma(j)$, et donc
+quelque soit $j\in \{1,2,\ldots,n\}$ $\sigma(j)=j$ et donc $\sigma
+= \mathrm{id}$. On vient de démontrer que la composée de deux permutations
+à supports disjoint est l'identité si et seulement si les
+permutations sont déjà l'identité !
+
+
+Notons encore $\phi : \mathcal{S}_{n} \longrightarrow
+\phi(\mathcal{S}_{n} )$ le morphisme induit par $\phi$. Il est
+injectif et surjectif, donc $\mathcal{S}_{n}$ est isomorphe
+$\phi(\mathcal{S}_{n})$ qui est un sous-groupe de
+$\mathcal{A}_{n+2}$.
+
+  \item $\mathcal{A}_5$ est  de cardinal $5 !/2=60$, et comme $24 = \mathrm{Card} \mathcal{S}_4$ ne divise
+pas $60$    alors $\mathcal{A}_5$  n'a pas de sous-groupe d'ordre
+$24$.
+  \item C'est un peu plus délicat car $\mathrm{Card} \mathcal{S}_5 = 5 ! = 120$ divise
+$\mathrm{Card} \mathcal{A}_6 = 6 !/2 = 360$ donc l'argument ci-dessus
+n'est pas valide. Cependant s'il existe un isomorphisme entre
+$\mathcal{S}_5$ et un sous-groupe de $\mathcal{A}_6$ alors un
+cycle d'ordre $5$ de $\mathcal{S}_5$ est envoyé sur une
+permutation $\sigma \in \mathcal{A}_6$ d'ordre $5$.
+
+Décomposons $\sigma$ en produit de cycles à supports disjoints,
+$\sigma = \sigma_1 \circ \sigma_2 \circ \cdots$. Comme les cycles
+$\sigma_i$ sont à supports disjoints, il y a au plus trois cycles
+(de longueur $\geq 2$) dans la décomposition (car dans
+$\mathcal{A}_6$ on peut permuter au plus $6$ éléments).
+\begin{itemize}
+  \item Le cas $\sigma = \sigma_1$ n'est pas possible car alors $\sigma_1$ serait un cycle d'ordre $5$ et donc
+de signature $-1$ dans $\mathcal{A}_6$.
+  \item Si $\sigma = \sigma_1 \circ \sigma_2$ alors les longueurs de $\sigma_1$
+  et $\sigma_2$ sont $(4,2)$ ou $(2,2)$, et l'ordre de leur composée
+  $\sigma_1 \circ \sigma_2$ est donc $4$ ou $2$ mais pas $5$.
+  \item Si $\sigma = \sigma_1 \circ \sigma_2 \circ \sigma_3$ alors
+les $\sigma_i$ sont des transpositions, et la signature de
+$\sigma$ est alors $-1$ ce qui contredit $\sigma \in
+\mathcal{A}_6$.
+\end{itemize}
+\end{enumerate}
+\fincorrection
+
+\finexercice
+

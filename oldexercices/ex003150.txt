@@ -1,0 +1,39 @@
+\exercice{3150, quercia, 2010/03/08}
+
+\enonce[$x^y = y^x$]
+On cherche les couples $(x,y) \in \bigl(\Q^{+*}\bigr)^2$ tels que $x < y$
+et $x^y = y^x$ ($x^y,y^x\in\R$).
+
+On pose $x = \frac pq$, $y = \frac {p'}{q'}$ (formes irr{\'e}ductibles),
+$d = pq'\wedge p'q$,\quad $pq' = ad$ et $p'q = bd$.
+\begin{enumerate}
+  \item Montrer qu'il existe $m,n\in\N^*$ tels que :
+    $p=m^a$, $p'=m^b$, $q=n^a$ et $q'=n^b$.
+
+  \item En d{\'e}duire : $b-a = m^{b-a} - n^{b-a}$.
+
+  \item Montrer que $b-a \le 1$ et conclure.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $x^y = y^x \Leftrightarrow \frac{p^{p'q}}{q^{p'q}} = \frac{p'^{pq'}}{q'^{pq'}}$
+    (formes irr{\'e}ductibles) \\
+    $ \Rightarrow  \begin{cases} p^{p'q} = p'^{pq'} \cr q^{p'q} = q'^{pq'}\end{cases}
+      \Rightarrow  \begin{cases} p^b = p'^a \cr q^b = q'^a.\end{cases}$\par
+    Comme $a\wedge b = 1$, on d{\'e}compose $p,p',q,q'$ en facteurs premiers
+    $ \Rightarrow $ le r{\'e}sultat.
+  \item $\Bigl( pq' = m^a n^b,\ p'q = m^b n^a,\ m\wedge n = 1,\ a<b \Bigr)
+              \Rightarrow  d=m^a n^a$, $a=n^{b-a}$ et $b = m^{b-a}$.
+  \item $m\ge n+1$ donc si $b-a \ge 2$, on a :
+             $m^{b-a}-n^{b-a} = (m-n)(m^{b-a-1} + \dots + n^{b-a-1}) > b-a$.\par
+             Donc $b-a=1=m-n$, $a=n$, $x=\Bigl(1+\frac1n\Bigr)^n$ et
+             $y=\Bigl(1+\frac1n\Bigr)^{n+1}$.\par
+             Ces valeurs conviennent.
+
+\end{enumerate}
+\fincorrection
+\finexercice 

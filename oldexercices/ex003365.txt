@@ -1,0 +1,29 @@
+\exercice{3365, quercia, 2010/03/09}
+\enonce[Opérations par blocs]
+
+\begin{enumerate}
+  \item Soient $A_1 \in \mathcal{M}_{n,p_1}(K)$, $A_2 \in \mathcal{M}_{n,p_2}(K)$,
+    $B_1 \in \mathcal{M}_{p_1,q}(K)$, $B_2 \in \mathcal{M}_{p_2,q}(K)$.
+
+    On pose $A = \begin{pmatrix} A_1 &A_2 \end{pmatrix} \in \mathcal{M}_{n,p_1+p_2}(K)$
+    et $B = \begin{pmatrix} B_1 \cr B_2 \cr \end{pmatrix} \in \mathcal{M}_{p_1+p_2,q}(K)$.
+    Montrer que $AB = A_1B_1 + A_2B_2$.
+
+  \item Soit $M = \begin{pmatrix}A & B \cr 0 & C \cr\end{pmatrix}$
+    où $A,B,0,C$ sont des matrices de tailles $p\times p$, $p \times q$,
+    $q\times p$, $q \times q$ (matrice triangulaire par blocs).
+    Montrer que $M$ est inversible si et seulement si $A$ et $C$ le sont.
+    Le cas échéant, donner $M^{-1}$ sous la même forme.
+  \item En déduire une nouvelle démonstration de la propriété :
+    {\it L'inverse d'une matrice triangulaire est triangulaire.}
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+2. $M^{-1} = \begin{pmatrix} A^{-1} & -A^{-1}BC^{-1} \cr 0 & C^{-1} \cr\end{pmatrix}$.
+ \fincorrection
+
+\finexercice

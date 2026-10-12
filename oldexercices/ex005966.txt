@@ -1,0 +1,191 @@
+\exercice{5966, tumpach, 2010/11/11}
+\enonce
+Soit $\Omega = \mathbb{R}^{n}$ muni de la mesure de Lebesgue. Pour
+tout $1\leq p <+\infty$, on note $L^p(\mathbb{R}^{n})$ l'espace
+des fonctions $f~:\mathbb{R}^{n} \rightarrow \mathbb{C}$ telles
+que $\|f\|_{p} := \left(\int_{\mathbb{R}^{n}}
+|f|^{p}(x)\,dx\right)^{\frac{1}{p}}<+\infty$ modulo
+l'\'equivalence $f\sim g \Leftrightarrow f-g = 0 ~\mu-p.p$.
+L'espace des fonctions essentiellement born\'ees sera not\'e
+$L^{\infty}(\mathbb{R}^n).$
+\begin{enumerate}
+\item 
+  \begin{itemize} 
+  \item Pour quelle valeur de $\alpha$ la
+fonction $x\mapsto \frac{1}{\left(1 + |x|^2 \right)^{\alpha}}$
+appartient-elle \`a $L^{p}(\mathbb{R}^{n})$ ?
+  \item Pour
+quelle valeur de $\beta$ la fonction $x\mapsto
+\frac{1}{|x|^{\beta}} e^{-\frac{|x|^2}{2}}$ appartient-elle \`a
+$L^{p}(\mathbb{R}^{n})$ ? 
+  \item Soit $1\leq q < p \leq
++\infty$. En utilisant $(a)$ et $(b)$, trouver une fonction $f$
+qui appartienne \`a $L^{q}(\mathbb{R}^{n})$ mais pas \`a
+$L^{p}(\mathbb{R}^{n})$ et une fonction $g$ qui appartienne \`a
+$L^{p}(\mathbb{R}^{n})$ mais pas \`a $L^{q}(\mathbb{R}^{n})$.
+  \end{itemize}
+\item 
+  \begin{itemize} 
+  \item Soit $1\leq q< p<+\infty$.
+Montrer que l'espace $L^{p}(\mathbb{R}^{n}) \cap
+L^{q}(\mathbb{R}^{n})$ est un espace de Banach pour la norme
+$\|\cdot \|_{p,q} = \| \cdot \|_{p} + \| \cdot \|_{q}$.  
+  \item
+Soit $r$ tel que $q< r<p$. Montrer que
+$$
+\|f\|_{r} \leq \|f\|_{p}^{\alpha}\|f\|_{q}^{1-\alpha}
+$$
+o\`u $\frac{1}{r} = \frac{\alpha}{p} + \frac{1-\alpha}{q}$,
+$\alpha\in[0, 1]$. On pourra \'ecrire $r = r\alpha + r(1-\alpha)$
+et utiliser l'in\'egalit\'e de H\"older pour un couple de r\'eels
+conjugu\'es bien choisi.
+ \item En d\'eduire que si $f_{n}$
+converge vers $f$ dans $L^{p}(\mathbb{R}^{n}) \cap
+L^{q}(\mathbb{R}^{n})$ alors $f_{n}$ converge vers $f$ dans
+$L^{r}(\mathbb{R}^{n})$, i.e $L^{p}(\mathbb{R}^{n}) \cap
+L^{q}(\mathbb{R}^{n})$ est un sous-espace de Banach de
+$L^{r}(\mathbb{R}^{n})$.
+\end{itemize}
+ \item  Soit $f\in L^{p}([0, +\infty[)\cap
+L^{q}([0, +\infty[)$ avec $1\leq q<2<p$. Montrer que la fonction
+$h$ d\'efinie par $h(r) = \frac{1}{\sqrt{r}}f(r)$ appartient \`a
+$L^{1}([0, +\infty[)$ et trouver des constantes $C_{p,q}$ et
+$\gamma$ telles que $\|h\|_{1} \leq C_{p, q}
+\|f\|_{q}^{\gamma}\|f\|_{p}^{(1-\gamma)}$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+Soit $\Omega = \mathbb{R}^{n}$ muni de la mesure de Lebesgue. Pour
+tout $1\leq p <+\infty$, on note $L^p(\mathbb{R}^{n})$ l'espace
+des fonctions $f~:\mathbb{R}^{n} \rightarrow \mathbb{C}$ telles
+que $\|f\|_{p} := \left(\int_{\mathbb{R}^{n}}
+|f|^{p}(x)\,dx\right)^{\frac{1}{p}}<+\infty$ modulo
+l'\'equivalence $f\sim g \Leftrightarrow f-g = 0 ~\mu-p.p$.
+L'espace des fonctions essentiellement born\'ees sera not\'e
+$L^{\infty}(\mathbb{R}^n).$
+\begin{enumerate}
+\item 
+  \begin{itemize} 
+  \item  La fonction $x\mapsto
+\frac{1}{\left(1 + |x|^2 \right)^{\alpha}}$ appartient \`a
+$L^{p}(\mathbb{R}^{n})$ pour $2\alpha p > n$. 
+  \item La fonction $x\mapsto \frac{1}{|x|^{\beta}} e^{-\frac{|x|^2}{2}}$
+appartient \`a $L^{p}(\mathbb{R}^{n})$ pour $p\beta< n$.
+  \item Soit $1\leq q < p \leq +\infty$. La fonction
+$$
+f(x) = (1+|x|^2)^{-\frac{n}{p+q}}
+$$
+v\'erifient $f \in L^{p}(\mathbb{R}^{n})$ et $f\notin
+L^{q}(\mathbb{R}^{n})$.  La fonction
+$$
+g(x) = |x|^{-\frac{n}{2}\left(\frac{1}{p}+\frac{1}{q}\right)}
+e^{-\frac{|x|^2}{2}}
+$$
+v\'erifient $g\in L^{q}(\mathbb{R}^{n})$ et $g\notin
+L^{p}(\mathbb{R}^{n})$.
+
+\end{itemize}
+\item 
+  \begin{itemize} 
+  \item Soit $1\leq q< p<+\infty$ et
+$f_n$ une suite de Cauchy pour la norme $\|\cdot\|_{p, q}= \|
+\cdot \|_{p} + \| \cdot \|_{q}$. Comme $\|\cdot\|_{p} \leq
+\|\cdot\|_{p, q}$, $f_{n}$ est une suite de Cauchy dans
+$L^{p}(\mathbb{R}^{n})$, donc elle converge vers une fonction
+$f\in L^{p}(\mathbb{R}^{n})$ pour la norme $\|\cdot\|_{p}$. De
+m\^eme,  $\|\cdot\|_{q}\leq \|\cdot\|_{p, q}$, donc $f_{n}$
+converge vers une fonction $g\in L^{q}(\mathbb{R}^{n})$ pour la
+norme $\|\cdot\|_q$. De plus, il existe une sous-suite de
+$f_{n_{k}}$ qui converge vers $f$ presque-partout et il existe une
+sous-suite de $f_{n_{k}}$ qui converge vers $g$ presque-partout.
+Ainsi $f=g ~\mu$-p.p. et $f_{n}$ converge vers $f = g$ dans
+$L^{p}(\mathbb{R}^{n})\cap L^{q}(\mathbb{R}^{n})$.
+
+  \item Soit $r$ tel que $q< r<p$. Montrons que
+$$
+\|f\|_{r} \leq \|f\|_{p}^{\alpha}\|f\|_{q}^{1-\alpha}
+$$
+o\`u $\frac{1}{r} = \frac{\alpha}{p} + \frac{1-\alpha}{q}$,
+$\alpha\in[0, 1]$. Puisque $1 = \frac{\alpha r}{p} +
+\frac{(1-\alpha)r}{q}$, les r\'eels $p' = \frac{p}{\alpha r}$ et
+$q' = \frac{q}{(1 - \alpha)r}$ sont conjugu\'es. D'apr\`es
+l'in\'egalit\'e de H\"older,
+\begin{eqnarray*}
+\int_{\mathbb{R}^{n}} |f|^{r}(x)\,dx& =& \int_{\mathbb{R}^{n}}
+|f|^{r\alpha}(x)\cdot |f|^{(1-\alpha) r}(x)\,dx\\
+& \leq & \left(\int_{\mathbb{R}^{n}} |f|^{\alpha r p'}(x)\,dx
+\right)^{\frac{1}{p'}} \left( \int_{\mathbb{R}^{n}}
+|f|^{(1-\alpha)r q'}(x)\,dx\right)^{\frac{1}{q'}}\\
+& \leq & \left(\int_{\mathbb{R}^{n}} |f|^{p}(x)\,dx
+\right)^{\frac{\alpha r}{p}} \left( \int_{\mathbb{R}^{n}}
+|f|^{q}(x)\,dx\right)^{\frac{(1-\alpha)r}{q}}\\
+& \leq & \|f\|_{p}^{\alpha r} \|f\|_{q}^{(1-\alpha)r},
+\end{eqnarray*}
+ce qui \'equivaut \`a $\|f\|_{r} \leq
+\|f\|_{p}^{\alpha}\|f\|_{q}^{(1-\alpha)}$. On peut \'egalement
+\'ecrire  $r = \beta q + (1-\beta)p$ avec $\beta \in ]0, 1[$ et
+appliquer H\"older avec les r\'eels conjugu\'es $\frac{1}{\beta}$
+et $ \frac{1}{1-\beta}$~:
+\begin{eqnarray*}
+\int_{\mathbb{R}^{n}} |f|^{r}(x)\,dx& =& \int_{\mathbb{R}^{n}}
+|f|^{\beta q}(x)\cdot|f|^{(1-\beta)p}(x)\,dx \\
+&\leq & \left(\int_{\mathbb{R}^{n}} |f|^{q}(x)\,dx \right)^{\beta}
+\left( \int_{\mathbb{R}^{n}} |f|^{p}(x)\,dx\right)^{(1-\beta)},
+\end{eqnarray*}
+ce qui implique
+$$
+\|f\|_{r} \leq
+\|f\|_{q}^{\frac{q\beta}{r}}\|f\|_{p}^{\frac{p(1-\beta)}{r}}
+$$
+qui est l'in\'egalit\'e cherch\'ee car $\alpha = \frac{p\beta}{r}$
+v\'erifie bien $\frac{1}{r} = \frac{\alpha}{p} +
+\frac{1-\alpha}{q}$.
+
+
+  \item Si $f_{n}$ converge vers $f$ dans
+$L^{p}(\mathbb{R}^{n}) \cap L^{q}(\mathbb{R}^{n})$ alors $f_{n}$
+converge vers $f$ dans $L^{p}(\mathbb{R}^{n})$ et dans
+$L^{q}(\mathbb{R}^{n})$, donc dans $L^{r}(\mathbb{R}^{n})$
+d'apr\`es l'in\'egalit\'e pr\'ec\'edente. En conclusion,
+$L^{p}(\mathbb{R}^{n}) \cap L^{q}(\mathbb{R}^{n})$ est ferm\'e
+dans $L^{r}(\mathbb{R}^{n})$ donc un sous-espace de Banach de
+$L^{r}(\mathbb{R}^{n})$.
+\end{itemize}
+
+\item  Soit $f\in L^{p}([0, +\infty[)\cap L^{q}([0, +\infty[)$ et
+$h$ la fonction d\'efinie par $h(r) = \frac{1}{\sqrt{r}}f(r)$. On
+notera $p'$ le conjugu\'e de $p$ et $q'$ le conjugu\'e de $q$.
+Montrons que $h$ appartient \`a $L^{1}([0, +\infty[)$. On a~:
+\begin{eqnarray*}
+\int_{0}^{+\infty} \frac{1}{\sqrt{r}} |f(r)|\,dr = \int_{0}^{R}
+\frac{1}{\sqrt{r}} |f(r)|\,dr + \int_{R}^{+\infty}
+\frac{1}{\sqrt{r}} |f(r)|\,dr\\
+\leq \left( \int_{0}^{R}
+r^{-\frac{p'}{2}}\,dr\right)^{\frac{1}{p'}} \left(\int_{0}^{R}
+|f(r)|^{p} \,dr\right)^{\frac{1}{p}} + \left(\int_{R}^{+\infty}
+r^{-\frac{q'}{2}}\,dr \right)^{\frac{1}{q'}} \left(
+\int_{R}^{+\infty}
+|f(r)|^{q}\,dr\right)^{\frac{1}{q}}\\
+ \leq  \left(\frac{1}{1-\frac{p'}{2}}\right)^{\frac{1}{p'}}
+R^{\left(\frac{1}{p'}-\frac{1}{2}\right)}\|f\|_{p} +
+\left(\frac{1}{\frac{q'}{2} - 1}\right)^{\frac{1}{q'}}
+R^{\left(\frac{1}{q'}-\frac{1}{2}\right)} \|f\|_{q}.
+\end{eqnarray*}
+En optimisant par rapport \`a $R$, on obtient~:
+\begin{eqnarray*}
+\int_{0}^{+\infty} \frac{1}{\sqrt{r}} |f(r)|\,dr &\leq & C_{p,q}
+\|f\|_{p}^{1-\gamma}\|f\|_{q}^{\gamma},
+\end{eqnarray*}
+o\`u, en posant $\alpha =  \frac{1}{2}- \frac{1}{p}$ et $\beta =
+ \frac{1}{q} - \frac{1}{2}$, on a $\gamma =
+\frac{\alpha}{\alpha+\beta}$, et $C_{p,q} = \frac{\alpha +
+\beta}{\alpha^{\gamma} \beta^{1-\gamma}}\left(1-\frac{p'}{2}
+\right)^{-\frac{1-\gamma}{p'}}\left(\frac{q'}{2} - 1
+\right)^{-\frac{\gamma}{q'}}$.
+\end{enumerate}
+\fincorrection
+
+\finexercice

@@ -1,0 +1,145 @@
+\exercice{2879, burnol, 2009/12/15}
+\enonce
+\begin{enumerate}
+  \item Prouver pour $n\in\Nn$, $n>1$:
+\[ \int_0^\infty \frac{dx}{1+x^n} = \frac{\pi/n}{\sin
+  (\pi/n)}\] en utilisant le secteur angulaire $0\leq \mathrm{Arg}
+z\leq \frac{2\pi}n$, $0\leq |z|\leq R$, $R\to+\infty$, et en
+montrant que la contribution de l'arc de cercle tend vers
+zéro pour $R\to+\infty$. 
+  \item   Montrer, en utilisant les contours
+$\epsilon\leq x\leq R$, $z= Re^{i\theta}$ ($0\leq \theta
+\leq \frac{2\pi}a$), $z=r e^{i\frac{2\pi}a}$ ($R\geq r\geq
+  \epsilon)$, $z = \epsilon e^{i\theta}$ ($\frac{2\pi}a \geq \theta
+\geq 0$):
+\[ a\in\Rr,\; a>1\quad\implies\qquad\int_0^\infty \frac{dx}{1+x^a} = 
+  \frac{\pi/a}{\sin (\pi/a)}\;.\]
+ Pour définir $z^a $ comme
+fonction holomorphe 
+sur $\{ z = r e^{i\alpha}\,|\, 0<r<\infty,\;0\leq \alpha
+\leq \frac{2\pi}a\}$, on pose $z^a = r^a
+e^{a\,i\alpha} = \exp(a(\log r+i\alpha))$ (car $\log r + i\alpha = \mathrm{Log}(z
+e^{-i\frac\pi a}) + i\frac\pi a$; no comments).
+  \item Soit $J(a) = \int_0^\infty
+\frac{dx}{1+x^a}$; justifier que l'intégrale définissant
+$J(a)$ est convergente et analytique comme fonction de $a$
+pour $\Re(a)>1$ et prouver $J(a)
+= \frac{\pi/a}{\sin (\pi/a)}$.
+  \item  On définit maintenant 
+\[ K(p) = \int_{-\infty}^{+\infty}
+\frac{e^{pt}}{1+e^t}dt\]
+ pour $0<p<1$.  Justifier les identités (pour $0<p<1$):
+\[ K(p) = \int_{-\infty}^{+\infty} \frac{e^{pt}}{1+e^t}dt =
+\int_0^{+\infty} \frac{t^{p-1}}{1+t}dt = \frac1p \int_0^{+\infty}
+\frac{dt}{1+t^{1/p}} = \frac1p J(\frac1p) = \frac\pi{\sin(\pi p)}
+\] 
+  \item Expliquer pourquoi l'intégrale $K(p) = \int_{-\infty}^{+\infty}
+\frac{e^{pt}}{1+e^t}dt$ est convergente et analytique pour
+$p$ complexe avec $0<\Re(p)<1$ et établir la formule
+$K(p) = \frac\pi{\sin(\pi p)}$ pour  $0<\Re(p)<1$.
+  \item Donner une preuve simple directe de la
+formule  $K(p) = \frac\pi{\sin(\pi p)}$ pour tout $p$
+complexe avec $0<\Re(p)<1$ en appliquant le théorème des
+résidus avec des contours liés aux  droites $z=x$,
+$x\in\Rr$ et $z = x+2\pi i$, $x\in\Rr$.
+  \item Déduire de ce qui précède avec $p = \frac12 + i\xi$,
+$\xi\in\Rr$:
+\[ \int_{-\infty}^{+\infty} \frac{\cos(\xi t)}{\ch(t/2)}dt
+= \frac{2\pi}{\ch(\pi\xi)}\;,\]
+Montrer  que  la transformation de Fourier $\widehat f(\xi)=\int_\Rr
+e^{2\pi i \xi x} f(x)\,dx$ appliquée à la fonction $f(x) = \frac1{\ch(\pi x)}$
+donne simplement $\widehat f = f$ (remarque: c'est aussi le cas
+avec $f(x) = e^{-\pi x^2}$).
+  \item On revient à la formule générale $K(p)= \frac\pi{\sin(\pi p)}$. En 
+séparant parties réelles et imaginaires dans $\int_{-\infty}^{+\infty}
+\frac{e^{pt}}{1+e^t}dt$ déterminer (en simplifiant le plus
+possible) les valeurs de :
+\[ \int_{-\infty}^{+\infty} \frac{e^{u
+t}\cos(vt)}{1+e^t}dt\qquad,\qquad
+\int_{-\infty}^{+\infty} \frac{e^{u
+t}\sin(vt)}{1+e^t}dt\;,\]
+pour $0<u<1$, $v\in\Rr$.
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+  \item Soit $C_R=\{R e^{i\theta } \,;\; 0\leq \theta \leq \frac{2\pi}{n}\}$.
+La fonction $$f(z)=\frac{1}{1+z^n} $$ a un seul p\^ole $z_0=e^{i\pi/n}$ dans le secteur. C'est un p\^ole simple et le
+r\'esidu est
+$$\mathrm{Res} \left(f, e^{i\frac{\pi}{n}}\right)=\frac{1}{nz_0^{n-1}}=-\frac{z_0}{n}= -\frac{1}{n} e^{i\frac{\pi}{n}}.$$
+D'o\`u
+$$-\frac{2i\pi}{n} e^{i\pi /n}= \int _0^R \frac{dx}{1+x^n}+\int_{C_R}\frac{dz}{1+z^n}+\int_{Re^{i\pi /n}}^0\frac{dz}{1+z^n}$$
+pour tout $R>1$. Puisque $n>1$, on a :
+$$\lim_{R\to\infty} \left| \int_{C_R}\frac{dz}{1+z^n} \right|\leq \lim_{R\to\infty} \left( \frac{1}{R^n-1}\int_{C_R} |dz|\right) =0.$$
+D'autre part,
+$$\int_{Re^{2i\pi /n}}^0\frac{dz}{1+z^n}= -\int_0^R \frac{1}{1+x^n}e^{2i\pi /n}dx =-e^{2i\pi /n}\int _0^R \frac{dx}{1+x^n}.$$
+Il en r\'esulte que
+$$\int _0^R \frac{dx}{1+x^n}=\frac{-\frac{2i\pi}{n} e^{i\pi /n}-\int_{C_R}\frac{dz}{1+z^n}}{1-e^{2i\pi /n} }
+\longrightarrow \frac{-\frac{2i\pi}{n} e^{i\pi /n}}{1-e^{2i\pi /n} } =\frac{2i\pi}{n}\frac{1}{2i\sin \left(\frac{\pi}{n}\right)}
+= \frac{\frac{\pi}{n}}{\sin \left(\frac{\pi}{n}\right)}$$
+lorsque $R\to\infty$.
+  \item La fonction $z^a=\exp \left( a(\log r +i\alpha )\right)$ n'est  pas d\'efinie au voisinage de l'origine.
+C'est la raison pourquoi on est amen\'e de consid\'erer le petit morceau de cercle $\gamma_\epsilon =\{\epsilon e^{i\theta } \,;\; \frac{2\pi}{a} \geq \theta \geq 0\}$. On va de nouveau noter $C_R=\{R e^{i\theta } \,;\; 0\leq \theta \leq \frac{2\pi}{n}\}$
+et $$\Omega = \left\{z=re^{i\alpha} \,;\; 0<r<\infty \;\; , \; 0\leq \alpha \leq \frac{2\pi}{a}\right\}.$$
+Pour $z=re^{i\alpha }\in \Omega$ on a
+$$\begin{aligned}
+&z^a =-1   \\
+\Longleftrightarrow \quad & a(\log r +i \alpha ) = i\pi \; (\mathrm{mod} 2i\pi \, ) \\
+\Longleftrightarrow\quad & r=1 \quad \text{et} \quad \alpha =\frac{\pi}{a}\, .
+\end{aligned}$$
+Par cons\'equent, $f(z)=\frac{1}{1+z^a}$ a une seule singularit\'e $z_0= e^{i\frac{\pi}{a}}$ dans $\Omega$.
+Comme $f(z)=\frac{1}{h(z)}$ avec $h(z_0)=1+z_0^a =0$ et
+$$h'(z_0)=\left(  \exp (a\log z)\right)'_{|z=z_0}=\frac{a}{z_0}z_0^a \neq 0$$
+le point $z_0$ est un p\^ole simple et on a
+$$\mathrm{Res} (f,z_0) =\frac{1}{h'(z_0)} =-\frac{z_0}{a} = -\frac{1}{a} e^{i\frac{\pi}{a}}.$$
+Il suffit alors de proc\'eder comme dans la question 1. pour \'etablir
+$$\int_0^\infty \frac{dx}{1+x^a}=\frac{\frac{\pi}{a}}{\sin\left(\frac{\pi}{a}\right)} \quad \text{pour} \quad a>1\, .$$
+  \item Soit $x\in(0,\infty )$ et $a=u+iv$ avec $u>1$. Alors
+$$|x^a|=|x^{iv}||x^u|=|\exp \left( i(v\log x)\right)|x^u =x^u.$$
+Par cons\'equent on a, pour tout $x>1$,
+$$\left| \frac{1}{1+x^a}\right|\leq  \frac{1}{x^u-1}$$
+ce qui implique la convergence de l'int\'egrale $J(a)$.
+Montrons que l'application $a\mapsto J(a)$ est holomorphe dans $\Omega=\{ \Re a >1\}$.
+Pour ce faire on utilise des critères d'holomorphie des intégrales avec paramètres (voir le chapitre 14 du polycopi\'e 2005/2006 de J.-F.~Burnol).
+Consid\'erons d'abord
+$J_1(a)=\int_0^2 \frac{dx}{1+x^a}$. On a
+(1) $(a,x)\mapsto g(a,x)=\frac{1}{1+x^a}$ est continue.
+(2) $\forall x\in [0,2]$: $a\mapsto g(a,x)$ est holomorphe dans $\Omega$.
+\noindent Par un critère d'holomorphie des intégrales avec paramètres  (th\'eor\`eme 26 du chapitre 14 du polycopi\'e 2005/2006 de J.-F.~Burnol)\, $a\mapsto J_1(a)$ est holomorphe dans $\Omega$.
+Pour $J_2(a)=\int_2^\infty \frac{dx}{1+x^a}$ il faut en plus de (1) et (2) majorer
+$g(a,x)=\frac{1}{1+x^a}$ par une fonction int\'egrable $k$ (d\'ependant que de la variable $x$).
+Pour ce faire il faut travailler dans un domaine plus petit
+$$\Omega_T =\left\{ \Re a>T\right\} \subset \Omega \quad , \quad T>1\, .$$
+Dans ce cas
+$$|g(a,x)| = \left| \frac{1}{1+x^a} \right| \leq \frac{1}{x^T-1} \quad \forall x\geq 2 \;\; \text{et} \;\; a\in \Omega _T.$$
+Comme $T>1$, $k(x)=\frac{1}{x^T-1}$ est int\'egrable: $\int _2^\infty k(x)\, dx <\infty$.
+Par un critère d'holomorphie des intégrales avec paramètres (ici le th\'eor\`eme 27 du chapitre 14 du polycopi\'e 2005/2006 de J.-F.~Burnol), $a\in \Omega_T \mapsto J_2(a)$ est holomorphe.
+Ceci \'etant vrai pour tout $T>1$, $J_2$ est holomorphe dans $\Omega$. En conclusion,
+$$a \mapsto J(a)=J_1(a)+J_2(a)$$
+est holomorphe sur $\Omega$.
+L'affirmation $J(a)= \frac{\frac{\pi}{a}}{\sin\left(\frac{\pi}{a}\right)}$, $a\in \Omega$, est une cons\'equence
+du principe des z\'eros isol\'es et du fait que nous avons d\'eja \'etabli cette relation pour tout r\'eel $a>1$.
+  \item \'Evident.
+  \item On peut proc\'eder comme dans la question 3. Notons que
+$$|h(p,t)| =\left| \frac{e^{pt}}{1+e^t}\right|=\frac{e^{\Re (p) t}}{1+e^t}.$$
+Par cons\'equent, $|h(p,t) | \sim e^{(\Re (p) -1)t}$ pour $t\to\infty$ et
+$|h(p,t) | \sim e^{\Re (p) t}$ pour $t\to -\infty$. L'int\'egrale $K(p)$
+est donc convergente. Pour \'etablir l'holomorphie de cette fonction il faut travailler
+u©ì$$U_\epsilon =\left\{ 0< \Re (p) < 1-\epsilon \right\} \quad\text{ avec } \quad \epsilon >0 \; \; \text{petit}\, .$$
+  \item Nous avons vu dans la question pr\'ec\'edente que la fonction $h(p,t)=\frac{e^{pt}}{1+e^t}$
+d\'ecroit exponentiellement pour $0< \Re (p) < 1$ lorsque $t\to \pm \infty$. On en d\'eduit
+``facilement'' (faire les d\'etails!) que
+$$\lim_{R\to\infty }\int_R^{R+2i\pi}\frac{e^{pz}}{1+e^z}dz = \lim_{R\to\infty }\int_{-R+2i\pi}^{-R}\frac{e^{pz}}{1+e^z}dz =0$$
+Par le th\'eor\`eme des r\'esidus il en r\'esulte que :
+$$2i\pi \mathrm{Res} \left(\frac{e^{pz}}{1+e^z} , i\pi \right)= \lim_{R\to\infty}
+\left[ \int_{-R}^{R}\frac{e^{pt}}{1+e^t}dt+ \int_{R+2i\pi}^{-R+2i\pi}\frac{e^{pz}}{1+e^z}dz\right].$$
+Or $\int_{R+2i\pi}^{-R+2i\pi}\frac{e^{pz}}{1+e^z}dz= -e^{2i\pi p}\int_{-R}^{R}\frac{e^{pt}}{1+e^t}dt$.
+D'o\`u :
+$$2i\pi \left( -e^{i\pi p }\right) = 2i\pi \mathrm{Res} \left(\frac{e^{pz}}{1+e^z} , i\pi \right)
+=\left( 1-e^{2i\pi p}\right) K(p).$$
+Finalement on a
+$$K(p)=\pi \frac{2i}{e^{i\pi p}-e^{-i\pi p}} =\frac{\pi}{\sin (\pi p)}.$$
+\end{enumerate}
+\fincorrection
+\finexercice

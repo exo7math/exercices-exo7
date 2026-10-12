@@ -1,0 +1,19 @@
+\exercice{2130, debes, 2008/02/12}
+\enonce
+Soient $G$ un groupe et $H$ et $K$ deux sous-groupes de $G$.
+
+(a) Montrer que l'ensemble $HK=\{xy \hskip 2pt | \hskip 2pt x\in H, y\in K\}$ est un sous-groupe de $G$ si et seulement si $HK=KH$.
+
+(b) Montrer que si $H$ et $K$ sont finis alors $\displaystyle |HK| = \frac{|H|\cdot |K|}{|H\cap K|}$.
+\finenonce 
+
+\noindication
+\correction
+(a) ($\Rightarrow$) Si $HK$ est un groupe, pour tous $h\in H$ et $k\in K$, on a $(hk)^{-1} =k^{-1} h^{-1} \in HK$ et donc $kh\in (HK)^{-1} = K^{-1} H^{-1} = KH$. D'o\`u $HK\subset KH$. L'autre inclusion s'obtient similairement.
+
+($\Leftarrow$) On v\'erifie ais\'ement en utilisant l'hypoth\`ese $HK=KH$ que $(HK)\cdot (HK) \subset HK$ et que $(HK)^{-1}\subset HK$.
+\smallskip
+
+(b) Etant donn\'es $h_0, h \in H$ et $k_0,k\in K$, on a $h_0 k_0 = hk$ si et seulement si $h_0^{-1} h = k_0 k^{-1}$. Cet \'el\'ement est n\'ecessairement dans l'intersection $H\cap K$. On a donc $h_0 k_0 = hk$ si et seulement s'il existe $u\in H\cap K$ tel que $h=h_0 u$ et $k=u^{-1} k_0$. Pour chaque \'el\'ement fix\'e $h_0k_0 \in HK$, il y a donc $|H\cap K|$ fa\c cons de l'\'ecrire $hk$ avec $(h,k)\in H\times K$. D'o\`u le r\'esultat.
+\fincorrection
+\finexercice

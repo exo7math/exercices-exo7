@@ -1,0 +1,18 @@
+\exercice{2368, mayer, 2003/10/01}
+\enonce 
+Soit $X={\cal C}([0,1])$ avec la norme $\| f\| = \int _0^ 1 |f(t)|\, dt$.
+Montrer que la forme lin\'eaire $f\in X \mapsto f(0)\in \Rr$ n'est pas continue.
+Que peut-on en d\'eduire pour le sous-espace des fonctions de $X$ nulles en 0?
+\finenonce
+
+\noindication
+
+\correction
+Notons $L : X \rightarrow \Rr$ l'application linéaire définie par
+$L(f) = f(0)$. Prenons $f_n$ définie par
+$f_n(t) = 2n(1-nt)$ pour $t\in[0,\frac 1n]$ et $f(t)=0$ si $t>\frac 1n$.
+Alors $\|f_n\| = 1$ alors que $L(f_n) = 2n$. Donc le rapport
+$\frac{|L(f_n)|}{\| f_n \|} = 2n$ n'est pas borné, donc $L$ n'est pas continue.
+Si $H = \{ f \mid f(0)=0 \}$ alors $H= \mathrm{Ker}\, L = L^{-1}(0)$. Comme $L$ n'est pas continue alors $H$ n'est pas fermé (voir l'exercice \ref{exoferm}).
+\fincorrection
+\finexercice

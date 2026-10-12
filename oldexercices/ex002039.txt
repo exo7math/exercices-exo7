@@ -1,0 +1,86 @@
+\exercice{2039, liousse, 2003/10/01}
+\video{csVlnEEMcVw}
+\enonce
+\begin{enumerate}
+\item Définir analytiquement la projection orthogonale sur le plan  d'équation $2x+2y-z=1$.
+
+\item Définir analytiquement la projection orthogonale sur la droite 
+d'équation $\left\{\begin{array}{l}x+y+z=1 \\2x-z=2 \end{array}\right.$.
+
+\item   Donner l'expression analytique de la projection sur le plan $(P)$ contenant 
+le point $C(2,-1,1)$ et ayant pour vecteurs directeurs $\vec {u}(0,-1,1)$ et $\vec {u'}(-2,0,1)$,  
+selon la droite $(AB)$, où $A(1,-1,0)$ et $B(0,-1,3)$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item 
+Notons $P$ le plan d'équation $2x+2y-z=1$. Et soit $M_0=(x_0,y_0,z_0)$ un point quelconque.
+$\vec n = (2, 2, -1)$ est un vecteur normal au plan. On cherche $p(M_0)$ appartenant au plan
+sous la forme $M_0 + \lambda\cdot \vec n$.
+
+\begin{align*}
+p(M_0)\in P 
+& \iff M_0 + \lambda\cdot \vec n \in P \\
+& \iff (x_0,y_0,z_0)+ \lambda (2, 2, -1) \in P  \\
+& \iff (x_0+2\lambda, y_0+2\lambda,z_0-\lambda) \in P \\
+& \iff 2(x_0+2\lambda)+2(y_0+2\lambda)-(z_0-\lambda)=1 \\
+& \iff \lambda = \frac{1-2x_0-2y_0+z_0}{9} \\
+\end{align*}
+
+En posant $\lambda_0= \frac{1-2x_0-2y_0+z_0}{9}$, 
+le projeté orthogonal de $M_0$ sur $P$ est défini par 
+$p(M_0)=(x_0+2\lambda_0,y_0+2\lambda_0,z_0-\lambda_0)$.
+ 
+  \item
+Notons $D$ la droite d'équation $\left\{\begin{array}{l}x+y+z=1 \\2x-z=2 \end{array}\right.$
+et soit $M_0=(x_0,y_0,z_0)$ un point quelconque.
+
+Il nous faut deux vecteurs normaux : par exemple $\vec{n_1}=(1,1,1)$
+et $\vec{n_2}=(2,0,-1)$ (qui sont les vecteurs normaux aux deux plans définissant $D$).
+
+On cherche le projeté orthogonal $\pi(M_0)$ sur la droite $D$ sous la forme
+$M_0+\lambda_1 \vec{n_1}+\lambda_2\vec{n_2}$. On va déterminer $\lambda_1,\lambda_2 \in \Rr$ de sorte que ce point
+appartienne à $D$.
+
+\begin{align*}
+\pi(M_0)\in D
+& \iff M_0 + \lambda_1 \vec{n_1}+\lambda_2\vec{n_2}\in D \\
+& \iff (x_0,y_0,z_0)+ \lambda_1 (1, 1, 1) +\lambda_2(2,0,-1) \in D  \\
+& \iff (x_0+\lambda_1+2\lambda_2, y_0+\lambda_1,z_0+\lambda_1-\lambda_2) \in D \\
+& \iff 
+\left\{\begin{array}{l}
+(x_0+\lambda_1+2\lambda_2)+(y_0+\lambda_1)+(z_0+\lambda_1-\lambda_2)=1 \\
+2(x_0+\lambda_1+2\lambda_2)-(z_0+\lambda_1-\lambda_2)=2 \end{array}\right. \\
+& \iff 
+\left\{\begin{array}{l}
+3\lambda_1+\lambda_2=1-x_0-y_0-z_0 \\
+\lambda_1+5\lambda_2=2-2x_0+z_0 \\
+\end{array}\right. \\
+& \iff 
+\lambda_1 = \frac{1}{14}\big(3-3x_0-5y_0-6z_0\big)\text{ et } \lambda_2 = \frac{1}{14}\big(5-5x_0+y_0+4z_0\big) \\
+\end{align*}
+
+Ainsi $\pi(M_0)= (x_0,y_0,z_0)+ \lambda_1 (1, 1, 1) +\lambda_2(2,0,-1)$
+avec les valeurs de $\lambda_1,\lambda_2$ obtenues.
+  
+  \item Le principe est similaire, voici les étapes :
+  \begin{enumerate} 
+     \item Trouver une équation du plan. Un vecteur normal au plan est $\vec u \wedge \vec{u'}=(-1,-2,-2)$.
+Donc le plan est d'équation $x+2y+2z-2=0$.
+     \item Chercher le projeté d'un point $M_0=(x_0,y_0,z_0)$ sous la forme 
+$M_0+\lambda \cdot \overrightarrow{AB}$. Trouver $\lambda_0$ de sorte que $M_0+\lambda_0 \cdot \overrightarrow{AB}$
+appartiennent au plan. 
+     \item On trouve $\overrightarrow{AB}=(-1,0,3)$ et $\lambda_0=-\frac15(x_0+2y_0+2z_0-2)$
+et donc le projeté cherché est $p(M_0)=(x_0-\lambda_0,y_0,z_0+3\lambda_0)$.
+   \end{enumerate}
+  
+\end{enumerate}
+
+
+\fincorrection
+
+\finexercice

@@ -1,0 +1,93 @@
+\exercice{5313, rouget, 2010/07/04}
+\enonce[***I]
+Calculer $a_n=\prod_{k=1}^{n}\sin\frac{k\pi}{n}$, $b_n=\prod_{k=1}^{n}\cos(a+\frac{k\pi}{n})$ et $c_n=\prod_{k=1}^{n}\tan(a+\frac{k\pi}{n})$ en éliminant tous les cas particuliers concernant $a$.
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  Soit $n\geq2$. On a 
+
+$$a_n=\prod_{k=1}^{n-1}\frac{1}{2i}(e^{ik\pi/n}-e^{-ik\pi/n})=\frac{1}{(2i)^{n-1}}\prod_{k=1}^{n-1}e^{ik\pi/n}\prod_{k=1}^{n-1}(1-e^{-2ik\pi/n}).$$
+
+Maintenant, 
+
+$$\prod_{k=1}^{n-1}e^{ik\pi/n}=e^{\frac{i\pi}{n}(1+2+...+(n-1))}=e^{i\pi(n-1)/2}(e^{i\pi/2})^{n-1}=i^{n-1},$$
+
+et donc $\frac{1}{(2i)^{n-1}}\prod_{k=1}^{n-1}e^{ik\pi/n}=\frac{1}{2^{n-1}}$.
+
+Il reste à calculer $\prod_{k=1}^{n-1}(1-e^{-2ik\pi/n})$.
+
+\begin{itemize}
+\item[\textbf{1ère solution.}]
+Les $e^{-2ik\pi/n}$, $1\leq k\leq n-1$, sont les $n-1$ racines $n$-ièmes de $1$ distinctes de $1$ et puisque 
+$X^n-1=(X-1)(1+X+...+X^{n-1})$, ce sont donc les $n-1$ racines deux deux distinctes du polynôme $1+X+...+X^{n-1}$. Par suite, $1+X+...+X^{n-1}=\prod_{k=1}^{n-1}(X-e^{-2ik\pi/n})$, et en particulier $\prod_{k=1}^{n-1}(1-e^{-2ik\pi/n})=1+1...+1=n$.
+
+\item[\textbf{2ème solution.}]
+Pour $1\leq k\leq n-1$, posons $z_k=1-e^{-2ik\pi/n}$. Les $z_k$ sont deux à deux distincts et racines du polynôme 
+$P=(1-X)^n-1=-X+...+(-1)^nX^n=X(-n+X-...+(-1)^nX^{n-1})$. Maintenant, $z_k=0\Leftrightarrow e^{-2ik\pi/n}=1\leq k\in n\Zz$ (ce qui n'est pas pour $1\leq k\leq n-1$). Donc, les $z_k$, $1\leq k\leq n-1$, sont $n-1$ racines deux à deux distinctes du polynôme de degré $n-1$~:~$-n+X-...+(-1)^nX^{n-1}$. Ce sont ainsi toutes les racines de ce polynôme ou encore
+
+$$-n+X-...+(-1)^nX^{n-1}=(-1)^n\prod_{k=1}^{n-1}(X-z_k).$$
+
+En particulier, en égalant les coefficients constants,
+
+$$(-1)^n.(-1)^{n-1}\prod_{k=1}^{n-1}z_k=-n,$$
+
+et donc encore une fois $\prod_{k=1}^{n-1}(1-e^{-2ik\pi/n})=n$.
+\end{itemize}
+
+Finalement,
+
+$$\forall n\geq2,\;\prod_{k=1}^{n-1}\sin\frac{k\pi}{n}=\frac{n}{2^{n-1}}.$$
+
+\item  Soit $n$ un entier naturel non nul.
+
+$$b_n=\prod_{k=1}^{n}\frac{1}{2}(e^{i(a+\frac{k\pi}{n})}+e^{-i(a+\frac{k\pi}{n})})=\frac{1}{2^n}\prod_{k=1}^{n}e^{-i(a+\frac{k\pi}{n})}\prod_{k=1}^{n}(e^{2i(a+\frac{k\pi}{n})}+1).$$
+
+Ensuite, 
+
+$$\prod_{k=1}^{n}e^{-i(a+\frac{k\pi}{n})}=e^{-ina}e^{-\frac{i\pi}{n}(1+2+...+n)}=e^{-ina}e^{-i(n+1)\pi/2}.$$
+
+D'autre part, soit $P=\prod_{k=1}^{n}(X+e^{2i(a+\frac{k\pi}{n})})=\prod_{k=1}^{n}(X-(-e^{2i(a+\frac{k\pi}{n})}))$.
+Pour tout $k$, on a $(-e^{2i(a+\frac{k\pi}{n}})^n=(-1)^ne^{2ina}$. Par suite, les $n$ nombres deux à deux distincts $-e^{2i(a+\frac{k\pi}{n}}$, $1\leq k\leq n$ sont racines du polynôme $X^n-(-1)^ne^{2ina}$, de degré $n$. On en déduit que, $P=X^n-(-1)^ne^{2ina}$.
+
+Par suite, $\prod_{k=1}^{n}(e^{2i(a+\frac{k\pi}{n})}+1)=P(1)=1-(-1)^ne^{2ina}=1-e^{2ina+n\pi}$, puis 
+
+\begin{align*}\ensuremath
+b_n&=\frac{1}{2^n}e^{-ina}e^{-i(n+1)\pi/2}(1-e^{2ina+n\pi})=\frac{1}{2^n}(e^{-i(na+(n+1)\frac{\pi}{2})}-e^{i(na+(n-1)\frac{\pi}{2})})\\
+ &=\frac{1}{2^n}(e^{-i(na+(n+1)\frac{\pi}{2})}+e^{i(na+(n+1)\frac{\pi}{2})})=\frac{\cos(na+(n+1)\frac{\pi}{2})}{2^{n-1}}.
+\end{align*}
+
+\item  
+\begin{align*}\ensuremath
+c_n\;\mbox{est défini}\Leftrightarrow\forall k\in\{1,...,n\},\;a+\frac{k\pi}{n}\notin\frac{\pi}{2}+\pi\Zz\Leftrightarrow\forall k\in\Nn,\;a-\frac{k\pi}{n}+\frac{\pi}{2}+\pi\Zz\Leftrightarrow a\notin\frac{\pi}{2}+\frac{\pi}{n}\Zz
+\end{align*}
+
+Pour les $a$ tels que $c_n$ est défini, on a $c_n=\prod_{k=1}^{n}\frac{1}{i}\frac{e^{2i(a+k\pi/n)}-1}{e^{2i(a+k\pi/n)}+1}$.
+
+Pour $1\leq k\leq n$, posons $\omega_k=e^{2i(a+k\pi/n)}$ puis $z_k=\frac{\omega_k-1}{\omega_k+1}$. On a donc $c_n=\frac{1}{i^n}\prod_{k=1}^{n}z_k$.
+
+Puisque $z_k=\frac{\omega_k-1}{\omega_k+1}$, on a $\omega_k(1-z_k)=1+z_k$ et donc, pour $1\leq k\leq n$, $\omega_k^n(1-z_k)^n=(1+z_k)^n$ ou encore, les $z_k$ sont racines du polynôme $P=(1+X)^n-e^{2ina}(1-X)^n$. Maintenant, les $a+\frac{k\pi}{n}$ sont dans $[a,a+\pi[$ et donc deux à deux distincts puisque la fonction tangente est injective sur tout intervalle de cette forme.
+
+\begin{itemize}
+\item[1er cas.] Si $e^{2ina}\neq(-1)^n$ alors $P$ est de degré $n$ et $P=(1-(-1)^ne^{2ina})\prod_{k=1}^{n}(X-z_k)$. En évaluant en $0$, on obtient
+
+$$(1-(-1)^ne^{2ina})\prod_{k=1}^{n}(-z_k)=1-e^{2ina}.$$
+
+D'où,
+
+$$\prod_{k=1}^{n}z_k=\frac{1-e^{2ina}}{(-1)^n-e^{2ina}}=\frac{1-e^{2ina}}{e^{in\pi}-e^{2ina}}=\frac{e^{ina}}{e^{in\pi/2}e^{ina}}\frac{-2i\sin(na)}{-2i\sin n(a-\frac{\pi}{2})}=\frac{1}{i^n} \frac{\sin(na)}{\sin n(a-\frac{\pi}{2})}.$$
+
+Finalement, $c_n=(-1)^n\frac{\sin(na)}{\sin(n(a-\frac{\pi}{2}))}$.
+
+Si $n$ est pair, posons $n=2p$, $p\in\Nn^*$. $c_n=c_{2p}=\frac{\sin(2pa)}{\sin (2pa-p\pi)}=(-1)^p$.
+
+Si $n$ est impair, posons $n=2p+1$. $c_n=c_{2p+1}=(-1)^p\tan((2p+1)a)$.
+
+\item[2ème cas.] Si $e^{2ina}=(-1)^n$, alors $2na\in n\pi+2\pi\Zz$ ou encore $a\in\frac{\pi}{2}+\pi\Zz$. Dans ce cas, $c_n$ n'est pas défini.
+\end{itemize}
+\end{enumerate}
+
+\fincorrection
+\finexercice

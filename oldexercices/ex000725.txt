@@ -1,0 +1,23 @@
+\exercice{725, bodin, 1998/09/01}
+\enonce
+Par application du th\'eor\`eme des accroissements finis \`a
+$f(x) = \ln x$ sur $[n,n+1]$
+montrer que
+$$ S_n = \sum_{k=1}^n \frac{1}{k}$$
+tend vers l'infini quand $n$ tend vers l'infini.
+\finenonce 
+
+\indication
+Une fois le th\'eor\`eme des accroissements finis utilis\'e vous obtenez une somme t\'el\'escopique.
+\finindication
+
+\correction
+Le th\'eor\`eme des accroissements finis donne : 
+$\ln(n+1)-\ln(n) = \frac1{c_n} (n+1-n) = \frac1{c_n}$, avec $c_n \in [n,n+1]$. Or $c_n \geq n$ donc $\frac 1n \geq \frac 1{c_n}$.
+Donc :
+$$S_n=\sum_{k=1}^n \frac 1k \geq \sum_{k=1}^n \frac 1{c_k}
+= \sum_{k=1}^n \ln(k+1)-\ln(k) = \ln(n+1).$$
+La derni\`ere \'egalit\'e s'obtient car la somme est t\'el\'escopique et $\ln 1 = 0$.
+Donc $S_n \geq \ln(n+1)$, donc $S_n \rightarrow +\infty$.
+\fincorrection
+\finexercice

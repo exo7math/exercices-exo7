@@ -1,0 +1,62 @@
+\exercice{954, cousquer, 2003/10/01}
+\video{nAFU6wBhyrE}
+\enonce
+ Soit $E$ un espace vectoriel de dimension $3$, $\{e_1,e_2,e_3\}$ une base
+de $E$, et $t$ un param\`etre r\'eel. \\
+D\'emontrer que la donn\'ee de
+$\left\{
+\begin{array}{rcl}
+    \phi(e_1) & = & e_1+e_2  \\
+    \phi(e_2) & = & e_1-e_2  \\
+    \phi(e_3) & = & e_1+t e_3
+\end{array}\right.$
+d\'efinit une application lin\'eaire
+$\phi$ de $E$ dans $E$. \'Ecrire le transform\'e du vecteur 
+$x=\alpha_1e_1+\alpha_2e_2+\alpha_3e_3$. Comment choisir $t$ pour que 
+$\phi$ soit injective ? surjective ?
+\finenonce 
+
+\indication
+$t=0$ est un cas à part.
+\finindication
+
+\correction
+\begin{enumerate}
+  \item Comment est d\'efinie $\phi$ \`a partir de la d\'efinition sur les \'el\'ements de la base ?
+Pour  $x\in E$ alors $x$ s'\'ecrit dans la base  $\{e_1,e_2,e_3\}$, $x=\alpha_1e_1+\alpha_2e_2+\alpha_3e_3$. 
+Et $\phi$ est d\'efinie sur $E$ par la formule
+$$\phi(x)=\alpha_1 \phi(e_1) + \alpha_2 \phi(e_2) + \alpha_3 \phi(e_3).$$
+Soit ici :
+$$\phi(x) = (\alpha_1+\alpha_2+\alpha_3) e_1 + (\alpha_1-\alpha_2)e_2 + t\alpha_3e_3.$$
+
+Cette d\'efinition rend automatiquement $\phi$ lin\'eaire (v\'erifiez-le si vous n'\^etes pas convaincu !).
+  \item On cherche \`a savoir si $\phi$ est injective.
+Soit $x\in E$ tel que $\phi(x)=0$ donc
+$(\alpha_1+\alpha_2+\alpha_3) e_1 + (\alpha_1-\alpha_2)e_2 + t\alpha_3e_3=0$. Comme $\{e_1,e_2,e_3\}$ est une base alors tous les coefficients sont nuls :
+$$\alpha_1+\alpha_2+\alpha_3=0, \quad \alpha_1-\alpha_2=0, \quad  t\alpha_3 = 0.$$
+Si $t \neq 0$ alors en résolvant le syst\`eme on obtient $\alpha_1=0$, $\alpha_2=0$,
+$\alpha_3=0$. Donc $x=0$ et $\phi$ est injective.
+
+Si $t =0$, alors $\phi$ n'est pas injective, en résolvant le m\^eme syst\`eme on obtient
+des solutions non triviales, par exemple $\alpha_1=1$, $\alpha_2=1$, $\alpha_3=-2$.
+Donc pour $x= e_1+e_2-2e_3$ on obtient $\phi(x)=0$.
+
+  \item Pour la surjectivité on peut soit faire des calculs, soit appliquer la formule du rang. 
+Examinons cette deuxi\`eme m\'ethode. $\phi$ est surjective si et seulement si 
+la dimension de $\Im \phi$ est \'egale
+\`a la dimension de l'espace d'arriv\'ee (ici $E$ de dimension $3$).
+Or on a une formule pour $\dim \Im \phi$ :
+$$\dim \ker \phi + \dim \Im \phi = \dim E.$$
+Si $t \neq 0$, $\phi$ est injective donc $\ker \phi = \{0\}$ est de dimension $0$.
+Donc $\dim \Im \phi =3$ et $\phi$ est surjective.
+
+Si $t = 0$ alors $\phi$ n'est pas injective donc $\ker \phi$ est de dimension au moins $1$
+(en fait $1$ exactement), donc  $\dim \Im \phi \leqslant 2$. Donc $\phi$ n'est pas surjective.
+
+
+On remarque que $\phi$ est injective si et seulement si elle est surjective.
+Ce qui est un r\'esultat du cours pour les applications ayant l'espace 
+de d\'epart et d'arriv\'ee de m\^eme dimension (finie).
+\end{enumerate}
+\fincorrection
+\finexercice

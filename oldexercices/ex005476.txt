@@ -1,0 +1,158 @@
+\exercice{5476, rouget, 2010/07/10}
+\enonce[**IT]
+Résoudre sur l'intervalle $I$ de $\Rr$ proposé les équations différentielles suivantes~:
+
+$$\begin{array}{ll}
+1)\;x\ln xy'+y=x,\;I=]1,+\infty[&2)\;x(xy'+y-x)=1,\;I=]-\infty,0[\\
+3)\;2xy'+y=x^4,\;I=]-\infty,0[&4)\;y'+2y=x^2-3x,\;I=\Rr\\
+5)\;y'+y=\frac{1}{1+2e^x},\;I=\Rr&6)\;y'\sin x-y\cos x+1=0,\;I=]0,\pi[
+\end{array}$$
+\finenonce
+
+\noindication
+
+\correction
+ Les équations différentielles à résoudre dans cet exercice sont toutes linéaires du premier ordre.
+On note $(E)$ l'équation différentielle proposée et $(E_H)$ l'équation homogène associée.
+
+\begin{enumerate}
+
+\item  Les fonctions $x\mapsto\frac{1}{x\ln x}$ et $x\mapsto\frac{1}{\ln x}$ sont continues sur $I$ et on sait
+que les solutions de $(E)$ sur $I$ sont de la forme
+$f_0+\lambda f_1$ où $f_0$ est une solution particulière de $(E)$ et $f_1$ est une solution particulière non nulle de
+$(E_H)$.
+
+Soit $f$ une fonction dérivable sur $I$.
+
+\begin{align*}\ensuremath
+f\;\mbox{solution de}\;(E)\;\mbox{sur}\;I&\Leftrightarrow\forall x\in I,\;x\ln xf'(x)+f(x)=x\Leftrightarrow\forall x\in I,\;\ln
+xf'(x)+\frac{1}{x}f(x)=1\\
+ &\Leftrightarrow\forall x\in I,\;(\ln x.f)'(x)=1\Leftrightarrow\exists \lambda\in\Rr/\;\forall x\in I,\;f(x)=\frac{x+\lambda}{\ln x}
+\end{align*}
+
+\item  Les fonctions $x\mapsto\frac{1}{x}$ et $x\mapsto1+\frac{1}{x^2}$ sont continues sur $I$ et on sait
+que les solutions de $(E)$ sur $I$ sont de la forme
+$f_0+\lambda f_1$ où $f_0$ est une solution particulière de $(E)$ et $f_1$ est une solution particulière non nulle de
+$(E_H)$.
+
+Soit $f$ une fonction dérivable sur $I$.
+
+\begin{align*}\ensuremath
+f\;\mbox{solution de}\;(E)\;\mbox{sur}\;I&\Leftrightarrow\forall x\in I,\;x(xf'(x)+f(x)-x)=1
+\Leftrightarrow\forall x\in I,\;(xf)'(x)=x+\frac{1}{x}\\
+ &\Leftrightarrow\exists\lambda\in\Rr/\;\forall x\in I,\;
+xf(x)=\frac{x^2}{2}+\ln(-x)+\lambda\Leftrightarrow\exists\lambda\in\Rr/\;\forall x\in I,\;f(x)=\frac{x}{2}+\frac{\ln
+(-x)+\lambda}{x}.
+\end{align*}
+
+Les solutions de $(E)$ sur  $I$ sont les fonctions de la forme $x\mapsto\frac{x}{2}+\frac{\ln(-x)+\lambda}{x}$,
+$\lambda\in\Rr$.
+
+\item  Les fonctions $x\mapsto\frac{1}{2x}$ et $x\mapsto\frac{x^3}{2}$ sont continues sur $I=]-\infty,0[$ et on
+saitque les solutions de $(E)$ sur $I$ sont de la forme
+$f_0+\lambda f_1$ où $f_0$ est une solution particulière de $(E)$ et $f_1$ est une solution particulière non nulle de
+$(E_H)$.
+
+Soit $f$ une fonction dérivable sur $I$.
+
+\begin{align*}\ensuremath
+f\;\mbox{solution de}\;(E)\;\mbox{sur}\;I&\Leftrightarrow\forall x\in I,\;f'(x)+\frac{1}{2x}f(x)=\frac{x^3}{2}\\
+ &\forall x\in I,\;e^{\ln|x|/2}f'(x)+\frac{1}{2x}e^{\ln|x|/2}f(x)=\frac{x^3}{2}e^{\ln|x|/2}\Leftrightarrow\forall x\in
+I,\;(\sqrt{-x}f)'(x)=-\frac{1}{2}(-x)^{7/2}\\
+ &\Leftrightarrow\exists\lambda\in\Rr/\;\forall x\in I,\;\sqrt{-x}f(x)=\frac{1}{9}(-x)^{9/2}+\lambda\\
+ &\Leftrightarrow\exists\lambda\in\Rr/\;\forall x\in I,\;f(x)=\frac{1}{9}x^4+\frac{\lambda}{\sqrt{-x}}
+\end{align*}
+
+Les solutions de $(E)$ sur  $I$ sont les fonctions de la forme $x\mapsto\frac{x^4}{9}+\frac{\lambda}{\sqrt{-x}}$,
+$\lambda\in\Rr$.
+
+\item  Les fonctions $x\mapsto2$ et $x\mapsto x^2-3x$ sont continues sur $\Rr$ et on sait
+que les solutions de $(E)$ sur $\Rr$ sont de la forme
+$f_0+\lambda f_1$ où $f_0$ est une solution particulière de $(E)$ et $f_1$ est une solution particulière non nulle de
+$(E_H)$.
+
+Soit $f$ une fonction dérivable sur $\Rr$.
+
+\begin{align*}\ensuremath
+f\;\mbox{solution de}\;(E)\;\mbox{sur}\;\Rr&\Leftrightarrow\forall x\in\Rr,\;f'(x)+2f(x)=x^2-3x\\
+ &\Leftrightarrow\forall x\in\Rr,\;e^{2x}f'(x)+2e^{2x}f(x)=(x^2-3x)e^{2x}\Leftrightarrow\forall
+x\in\Rr,\;(e^{2x}f)'(x)=(x^2-3x)e^{2x}
+\end{align*}
+
+Recherche d'une primitive sur ${\Rr}$ de la fonction $x\mapsto(x^2-3x)e^{2x}$.
+\begin{itemize}
+\item[\textbf{1ère méthode}.] Deux intégrations par parties fournissent~:
+
+\begin{align*}\ensuremath
+\int_{}^{}(x^2-3x)e^{2x}\;dx&=\frac{1}{2}(x^2-3x)e^{2x}-\frac{1}{2}\int_{}^{}(2x-3)e^{2x}\;dx\\
+ &=\frac{1}{2}(x^2-3x)e^{2x}-\frac{1}{4}(2x-3)e^{2x}+\frac{1}{2}\int_{}^{}e^{2x}\;dx\\
+ &=\frac{1}{4}(2x^2-8x+3)e^{2x}+\frac{1}{4}e^{2x}+C=\frac{1}{2}(x^2-4x+2)e^{2x}+C
+\end{align*}
+
+\item[\textbf{2ème méthode}.] Cherchons les primitives de $x\mapsto(x^2-3x)e^{2x}$ sous la forme
+$x\mapsto(ax^2+bx+c)e^{2x}$.
+
+$$((ax^2+bx+c)e^{2x})'=(2(ax^2+bx+c)+(2ax+b))e^{2x}=(2ax^2+2(a+b)x+b+2c)e^{2x}.$$
+
+Donc,
+
+$$((ax^2+bx+c)e^{2x})'=(x^2-3x)e^{2x}\Leftrightarrow
+\left\{
+\begin{array}{l}
+2a=1\\
+2(a+b)=-3\\
+b+2c=0
+\end{array}
+\right.\Leftrightarrow\left\{
+\begin{array}{l}
+a=\frac{1}{2}\\
+b=-2\\
+c=1
+\end{array}
+\right..$$
+
+\end{itemize}
+
+\textbf{Résolution de} $\bf{(E)}$.
+
+\begin{align*}\ensuremath
+f\;\mbox{solution de}\;(E)\;\mbox{sur}\;\Rr&\Leftrightarrow\forall
+x\in\Rr,\;(e^{2x}f)'(x)=(x^2-3x)e^{2x}\Leftrightarrow\exists\lambda\in\Rr/\;\forall
+x\in\Rr,\;e^{2x}f(x)=(\frac{x^2}{2}-2x+1)e^{2x}+\lambda\\
+ &\Leftrightarrow\exists\lambda\in\Rr/\;\forall
+x\in\Rr,\;f(x)=\frac{x^2}{2}-2x+1+\lambda e^{-2x}.
+\end{align*}
+
+Les solutions de $(E)$ sur  $\Rr$ sont les fonctions de la
+forme$x\mapsto\frac{x^2}{2}-2x+1+\lambda e^{-2x}$,$\lambda\in\Rr$.
+
+\item  Les fonctions $x\mapsto1$ et $x\mapsto\frac{1}{1+2e^x}$ sont continues sur $\Rr$ et on sait
+que les solutions de $(E)$ sur $\Rr$ sont de la forme
+$f_0+\lambda f_1$ où $f_0$ est une solution particulière de $(E)$ et $f_1$ est une solution particulière non nulle de
+$(E_H)$.
+
+Soit $f$ une fonction dérivable sur $\Rr$.
+
+\begin{align*}\ensuremath
+f\;\mbox{solution de}\;(E)\;\mbox{sur}\;\Rr&\Leftrightarrow\forall x\in\Rr,\;f'(x)+f(x)=\frac{1}{1+2e^x}
+\Leftrightarrow\forall x\in\Rr,\;e^xf'(x)+e^xf(x)=\frac{e^x}{1+2e^x}\\
+ &\Leftrightarrow\exists\lambda\in\Rr/\;\forall x\in\Rr,\;e^xf(x)=\frac{1}{2}\ln(1+2e^x)+\lambda\\
+ &\Leftrightarrow\exists\lambda\in\Rr/\;\forall x\in\Rr,\;f(x)=(\frac{1}{2}\ln(1+2e^x)+\lambda)e^{-x}
+\end{align*}
+
+Les solutions de $(E)$ sur  $\Rr$ sont les fonctions de la forme
+$x\mapsto(\frac{1}{2}\ln(1+2e^x)+\lambda)e^{-x}$,$\lambda\in\Rr$.
+
+\item  Les fonctions $x\mapsto-\frac{\cos x}{\sin x}$ et $x\mapsto-\frac{1}{\sin x}$ sont continues sur $I=]0,\pi[$
+et on sait que les solutions de $(E)$ sur $\Rr$ sont de la forme
+$f_0+\lambda f_1$ où $f_0$ est une solution particulière de $(E)$ et $f_1$ est une solution particulière non nulle de
+$(E_H)$.
+
+Mais $x\mapsto\sin x$ est une solution non nulle de $(E_H)$ sur $I$ et $x\mapsto\cos x$ est une solution de $(E)$ sur
+$]0,\pi[$.
+
+Les solutions de $(E)$ sur  $]0,\pi[$ sont les fonctions de la forme $x\mapsto\lambda\sin x+\cos x$, $\lambda\in\Rr$.
+
+\end{enumerate}
+\fincorrection
+\finexercice

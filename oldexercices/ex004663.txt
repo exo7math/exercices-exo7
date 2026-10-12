@@ -1,0 +1,38 @@
+\exercice{4663, quercia, 2010/03/14}
+\enonce[Cachan MP$^*$ 2000]
+
+Soit un réel $\beta > 1$ et
+$a_k = \iint_{[0,1]^2}e^{-|x-x'|^\beta}e^{2i\pi k(x-x')}\,d x\,d x'$.
+Trouver un équivalent quand $n$ tend vers l'infini de
+$\sum_{|k|>n\text{ ou }|\ell|>n} a_ka_\ell$,
+$k$ et~$\ell$ étant des entiers relatifs.
+\finenonce
+
+\noindication
+
+\correction
+Intégration à $x'-x$ constant~: $a_k =  \int_{y=-1}^1 e^{-|y|^\beta}(1-|y|)e^{-2ik\pi y}\,d y$
+est le $2k$-ème coefficient de Fourier de la fonction $f$, $2$-périodique,
+telle que ${f(y) = e^{-|y|^\beta}(1-|y|)}$ si $-1\le y\le 1$
+donc le $k$-ème coefficient de Fourier de $g$, $1$-périodique, telle
+que ${g(y) = \frac12(f(y) + f(y+1))}$.
+Soit $g_n$ la $n$-ème somme partielle de la série de Fourier de~$g$,
+$g_n(y) = \sum_{|k|\le n}a_ke^{2ik\pi y}$.
+
+On a par convergence normale de la série de Fourier de~$g$~:
+$\sum_{|k|>n\text{ ou }|\ell|>n} a_ka_\ell = g^2(0) - g_n^2(0)$.
+
+\begin{align*}
+g(0)-g_n(0) 
+&=  \int_{y=-{\frac 1 2}}^{\frac 1 2} \frac{g(0)-g(y)}{\sin\pi y}\sin((2n+1)\pi y)\,d y\cr
+&= 2 \int_{y=0}^{\frac 1 2} \frac{g(0)-g(y)}{\sin\pi y}\sin((2n+1)\pi y)\,d y\cr
+&= 2\Bigl[-\frac{g(0)-g(y)}{\sin\pi y}\frac{\cos((2n+1)\pi y)}{(2n+1)\pi}\Bigr]_{y=0}^{\frac 1 2}
++2 \int_{y=0}^{\frac 1 2} \frac{d}{d y}\Bigl(\frac{g(0)-g(y)}{\sin\pi y}\Bigr)\frac{\cos((2n+1)\pi y)}{(2n+1)\pi}\,d y\cr
+&=\frac{1-e^{-1}}{(2n+1)\pi^2} +  \int_{y=0}^{\frac 1 2}\mathrm{fct continue}(y)\frac{\cos((2n+1)\pi y)}{(2n+1)\pi}\,d y\cr
+&\sim\frac{1-e^{-1}}{(2n+1)\pi^2}.\cr
+\end{align*}
+$g(0)+g_n(0) \to 2g(0) = 1$ (lorsque $n\to\infty$) d'où
+$\sum_{|k|>n\text{ ou }|\ell|>n} a_ka_\ell\sim\frac{1-e^{-1}}{(2n+1)\pi^2}$.
+\fincorrection
+
+\finexercice

@@ -1,0 +1,87 @@
+\exercice{5920, tumpach, 2010/11/11}
+\enonce
+\begin{enumerate}
+\item Montrer que la fonction $f~:[0,1]\rightarrow \mathbb{R}$
+d\'efinie par~:
+$$
+ f(x) = \left\{\begin{array}{l} 1 \quad\text{si}\quad  x\in\mathbb{Q}\\
+0 \quad\text{si} \quad x\in\mathbb{R}\setminus\mathbb{Q}
+\end{array}\right.
+$$
+n'est pas Riemann-int\'egrable sur $[0,1]$. 
+
+\item Montrer que la
+fonction $g~:[0,1]\rightarrow \mathbb{R}$ d\'efinie par~:
+$$
+ g(x) = \left\{\begin{array}{l} \frac{1}{q} \quad\text{si}\quad
+ \, x=\frac{p}{q} \quad\text{avec}\,\, p \,\,\text{et} \,\,q \,\,\text{premiers entre eux}\\
+0 \quad\text{si} \quad x\in\mathbb{R}\setminus\mathbb{Q} \text{ ou } x=0
+\end{array}\right.
+$$
+est Riemann-int\'egrable sur $[0,1]$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item Consid\'erons la fonction $f~:[0,1]\rightarrow \mathbb{R}$
+d\'efinie par~:
+$$
+ f(x) = \left\{\begin{array}{l} 1 \quad\text{si}\quad  x\in\mathbb{Q}\\
+0 \quad\text{si} \quad x\in\mathbb{R}\setminus\mathbb{Q}
+\end{array}\right..
+$$
+Pour toute subdivision $\sigma$ de $[a,b]$, on a~:
+\begin{equation*}
+\overline{S}_{f}^{\sigma} = 1 \quad \text{et}\quad
+\underline{S}_{f}^{\sigma} = 0.
+\end{equation*}
+On en d\'eduit que $1 = \sup_{\sigma}\overline{S}_{f}^{\sigma}
+\neq \inf_{\sigma}\underline{S}_{f}^{\sigma} = 0$, ce qui implique
+que $f$ n'est pas Riemann-int\'egrable sur $[0, 1]$.
+
+\item Consid\'erons la fonction $g~:[0,1]\rightarrow \mathbb{R}$
+d\'efinie par~:
+$$
+ g(x) = \left\{\begin{array}{l} \frac{1}{q} \quad\text{si}\quad
+ \, x=\frac{p}{q} \quad\text{avec}\,\, p \,\,\text{et} \,\,q \,\,\text{premiers entre eux}\\
+0 \quad\text{si} \quad x\in\mathbb{R}\setminus\mathbb{Q} \text{ ou } x=0
+\end{array}\right..
+$$
+Pour toute subdivision $\sigma$ de $[a,b]$, on a~:
+\begin{equation*}
+\underline{S}_{g}^{\sigma} = 0.
+\end{equation*}
+Pour tout $\varepsilon>0$ donn\'e, la fonction $g$ prend des
+valeurs sup\'erieures \`a $\frac{\varepsilon}{b-a}$ en un nombre fini de
+points seulement (les points $\frac{k}{q}$, avec
+$\frac{1}{q}>\frac{\varepsilon}{b-a}$ ce qui équivaut à $q < \frac{b-a}{\varepsilon}$). Notons $x_{i}$, $i= 1,\dots, p$ ces
+points ordonn\'es par ordre (strictement) croissant. 
+
+Sur $[0,1]\setminus \{x_1,\ldots,x_p\}$ la fonction $g$ prend des valeurs
+$\le \varepsilon$ et $\ge 0$. Ainsi avec la subdivision
+$\sigma = \{x_1,\ldots,x_p\}$ nous obtenons :
+\begin{equation*}
+ 0 \leq \overline{S}_{g}^{\sigma} \leq \frac{\varepsilon}{b-a} (b-a) = \varepsilon
+\end{equation*}
+
+% On a $p \leq \frac{1}{\varepsilon^2}$.
+%  Notons \'egalement $\delta$ le minimum
+% de la distance entre deux de ces points. Consid\'erons la
+% subdivision $\sigma=\{a_{0}=a<\dots<a_{2p}=b\}$ d\'efinie par
+% $a_{2k-1}=x_{i}-\min(\frac{\delta}{3}, \varepsilon^3)$ pour $k=1,
+% \dots, p$, $a_{2k}=x_{i}+\min(\frac{\delta}{3},\varepsilon^3)$
+% pour $k = 1, \dots, p-1$, et $a_{2p} = b$. Alors~:
+% \begin{equation*}
+% \overline{S}_{g}^{\sigma} \leq \varepsilon +
+% p\min\left(\frac{\delta}{3},\varepsilon^3\right) \leq \varepsilon
+% + \frac{1}{\varepsilon^{2}}\varepsilon^3 \leq 2\varepsilon.
+% \end{equation*}
+
+Comme On en conclut que $g$ est Riemann-int\'egrable sur $[0,1]$.
+\end{enumerate}
+\fincorrection
+
+\finexercice

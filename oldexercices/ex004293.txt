@@ -1,0 +1,23 @@
+\exercice{4293, quercia, 2010/03/12}
+\enonce[$x(f(x)-f(x+1))$]
+
+Soit $f : {[1,+\infty[} \to {\R^+}$ une fonction décroissante telle que
+$ \int_{t=1}^{+\infty} f(t)\,d t$ converge.
+
+Montrer que $xf(x) \to 0$ lorsque $x\to+\infty$, puis que
+$ \int_{t=1}^{+\infty} t(f(t)-f(t+1))\,d t$ converge, et calculer la valeur
+de cette intégrale.
+
+\finenonce
+
+\noindication
+
+\correction
+$0 \le xf(x) \le 2 \int_{t=x/2}^x f(t)\,d t \to 0$ (lorsque $x\to+\infty$).\par
+         $ \int_{t=1}^x t(f(t)-f(t+1))\,d t =
+           \int_{t=1}^2 tf(t)\,d t +  \int_{t=2}^x f(t)\,d t -  \int_{t=x}^{x+1} (t-1)f(t)\,d t
+          \to
+           \int_{t=1}^2 tf(t)\,d t +  \int_{t=2}^{+\infty} f(t)\,d t$ (lorsque $x\to+\infty$).
+\fincorrection
+
+\finexercice

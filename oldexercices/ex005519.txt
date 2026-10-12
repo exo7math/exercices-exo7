@@ -1,0 +1,112 @@
+\exercice{5519, rouget, 2010/07/15}
+\enonce[**T]
+Déterminer la perpendiculaire commune aux droites $(D)$ et $(D')$~:~$(D)$ $\left\{
+\begin{array}{l}
+x+y-3z+4=0\\
+2x-z+1=0
+\end{array}
+\right.$ et $(D')$ $\left\{
+\begin{array}{l}
+x=z-1\\
+y=z-1
+\end{array}
+\right.$. 
+\finenonce
+
+\noindication
+
+\correction
+\textbullet~Déterminons un repère de $(D)$.
+
+\begin{center}
+$\left\{
+\begin{array}{l}
+x+y-3z+4=0\\
+2x-z+1=0
+\end{array}
+\right.\Leftrightarrow\left\{
+\begin{array}{l}
+y-3z=-x-4\\
+z=2x+1
+\end{array}
+\right.\Leftrightarrow\left\{
+\begin{array}{l}
+y=5x-1\\
+z=2x+1
+\end{array}
+\right.$
+\end{center}
+Un repère de $(D)$ est $\left(A,\overrightarrow{u}\right)$ où $A(0,-1,1)$ et $\overrightarrow{u}(1,5,2)$.
+\textbullet~Puisque un système d'équations de $(D')$ est $\left\{
+\begin{array}{l}
+x=z-1\\
+y=z-1
+\end{array}
+\right.$, un repère de $(D')$ est $\left(A',\overrightarrow{u'}\right)$ où $A'(-1,-1,0)$ et $\overrightarrow{u'}(1,1,1)$.
+\textbullet~$\overrightarrow{u}\wedge\overrightarrow{u'}=\left(
+\begin{array}{c}
+1\\
+5\\
+2
+\end{array}
+\right)\wedge\left(
+\begin{array}{c}
+1\\
+1\\
+1
+\end{array}
+\right)=\left(
+\begin{array}{c}
+3\\
+1\\
+-4
+\end{array}
+\right)\neq\overrightarrow{0}$.
+\rule{0mm}{5mm}Puisque $\overrightarrow{u}$ et $\overrightarrow{u'}$ ne sont pas colinéaires, les droites $(D)$ et $(D')$ ne sont parallèles. Ceci assure l'unicité de la perpendiculaire commune  à $(D)$ et $(D')$.
+
+\textbullet~Un système d'équations de la perpendiculaire commune est 
+$\left\{
+\begin{array}{l}
+\left[\overrightarrow{AM},\overrightarrow{u},\overrightarrow{u}\wedge\overrightarrow{u'}\right]=0\\
+\rule{0mm}{6mm}\left[\overrightarrow{A'M},\overrightarrow{u'},\overrightarrow{u}\wedge\overrightarrow{u'}\right]=0
+\end{array}
+\right.$. Or,
+
+\begin{center}
+$\left[\overrightarrow{AM},\overrightarrow{u},\overrightarrow{u}\wedge\overrightarrow{u'}\right]=\left|
+\begin{array}{ccc}
+x&1&3\\
+y+1&5&1\\
+z-1&2&-4
+\end{array}
+\right|=-22x+10(y+1)-14(z-1)=-22x+10y-14z+24$,
+\end{center}
+et
+
+\begin{center}
+$\left[\overrightarrow{A'M},\overrightarrow{u'},\overrightarrow{u}\wedge\overrightarrow{u'}\right]=\left|
+\begin{array}{ccc}
+x+1&1&3\\
+y+1&1&1\\
+z&1&-4
+\end{array}
+\right|=-5(x+1)+7(y+1)-2z=-5x+7y-2z+2$.
+\end{center}
+Donc
+
+\begin{center}
+\shadowbox{
+\begin{tabular}{c}
+un système d'équations cartésienne de la perpendiculaire commune à $(D)$ et $(D')$ est\\
+$\left\{
+\begin{array}{l}
+11x-5y+7z=12\\
+5x-7y+2z=2
+\end{array}
+\right.$.
+\end{tabular}
+}
+\end{center}
+
+\fincorrection
+\finexercice

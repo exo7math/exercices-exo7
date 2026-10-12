@@ -1,0 +1,29 @@
+\exercice{2215, matos, 2008/04/23}
+\enonce[Projection orthogonale sur un sous-espace vectoriel de $\Rr^n$]
+Soient
+\begin{itemize}
+\item $H=$span$\{v_1, \cdots , v_r\}$ le sous--espace vectoriel de $\Rr^n$ engendr\'e par les vecteurs $\{v_i\}$ suppos\'es ind\'ependants;
+\item $V=\left[ \begin{array}{cccc}
+v_1&v_2 & \cdots & v_r\end{array}\right]$ la matrice de type $n\times r$ dont les colonnes sont les composantes des $v_i$ dans la base canonique $\epsilon = (e_1, \cdots , e_n)$
+\end{itemize}
+Pour tout $x\in \Rr^n$ on d\'esigne par $y$ sa projection orthogonale sur $H$ et par $X$ et $Y$ les matrices colonnnes des composantes de $x$ et $y$ dans la base $\epsilon$.
+On pose
+$$y=\sum_{i=1}^r \alpha_i v_i .$$
+\begin{enumerate}
+\item Montrer que la matrice $G=G(v_1, \cdots ,v_r)=V^TV$ est inversible.
+ \item Montrer que les $\alpha_i$ v\'erifient le syst\`eme
+$$G\left( \begin{array}{c}\alpha_1 \\ \vdots \\ \alpha_r\end{array}
+\right) = V^TX$$
+\item En d\'eduire que $Y=VG^{-1}V^TX= PX$ avec $P=VG^{-1}V^T$ ($P$ est donc la matrice de la projection orthogonale de $\Rr^n$ sur $H$
+\item \emph{Application}: on consid\`ere $n=3, v_1=e_1, v_2=e_1+e_2+e_3$. D\'eterminer la projection orthogonale sur $H=$ span $\{v_1, v_2\}$ de $x=2e_1-e_2+e_3$.
+\item Quelle est la matrice de la projection orthogonale sur $H=$span $\{v\}$?
+\item Montrer que, pour $x\in\Rr^n$
+$$d^2(x,H)= \frac{\mbox{det} G(x,v_1,\cdots ,v_r)}{\mbox{det} G(v_1, \cdots , v_r)}$$
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\nocorrection
+
+\finexercice

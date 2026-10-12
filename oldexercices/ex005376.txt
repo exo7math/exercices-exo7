@@ -1,0 +1,66 @@
+\exercice{5376, rouget, 2010/07/06}
+\enonce
+Donner une base du sous-espace vectoriel de $\Rr^5$ défini par~:
+
+$$\left\{
+\begin{array}{l}
+x_1+2x_2-x_3+3x_4+x_5=0\\
+x_2+x_3-2x_4+2x_5=0\\
+2x_1+x_2-5x_3-4x_5=0
+\end{array}
+\right..$$
+\finenonce
+
+\noindication
+
+\correction
+$\left|
+\begin{array}{ccc}
+1&2&3\\
+0&1&-2\\
+2&1&0
+\end{array}
+\right|=2+2(-7)=-12\neq0$ et le sytème est de \textsc{Cramer} en $x_1$, $x_2$ et $x_4$. On note aussi que le système est homogène de rang $3$ et donc que l'ensemble des solutions $F$ est un sous-espace vectoriel de $\Rr^5$ de dimension $5-3=2$.
+
+\begin{align*}\ensuremath
+\left\{
+\begin{array}{l}
+x_1+2x_2-x_3+3x_4+x_5=0\\
+x_2+x_3-2x_4+2x_5=0\\
+2x_1+x_2-5x_3-4x_5=0
+\end{array}
+\right.&\Leftrightarrow\left\{
+\begin{array}{l}
+x_1+2x_2+3x_4=x_3-x_5\\
+x_2-2x_4=-x_3-2x_5\\
+2x_1+x_2=5x_3+4x_5
+\end{array}
+\right.\Leftrightarrow\left\{
+\begin{array}{l}
+x_2=-2x_1+5x_3+4x_5\\
+x_4=\frac{1}{2}((-2x_1+5x_3+4x_5)+x_3+2x_5)\\
+x_1+2x_2+3x_4=x_3-x_5
+\end{array}
+\right.
+\\
+ &\Leftrightarrow\left\{
+\begin{array}{l}
+x_2=-2x_1+5x_3+4x_5\\
+x_4=-x_1+3x_3+3x_5\\
+x_1+2(-2x_1+5x_3+4x_5)+3(-x_1+3x_3+3x_5)=x_3-x_5
+\end{array}
+\right.
+\\
+ &\Leftrightarrow
+ \left\{
+\begin{array}{l}
+x_1=3x_3+3x_5
+x_2=-x_3-2x_5\\
+x_4=0
+\end{array}
+\right.
+\end{align*}
+
+L'ensemble des solutions est $F=\{(3x_3+3x_5,-x_3-2x_5,x_3,0,x_5),\;(x_3,x_5)\in\Rr^2\}=\mbox{Vect}(e_1,e_2)$ où $e_1=(3,-1,1,0,0)$ et $e_2=(3,-2,0,0,1)$ et, puisque $\mbox{dim}F=2$, une base de $F$ est $(e_1,e_2)$.
+\fincorrection
+\finexercice

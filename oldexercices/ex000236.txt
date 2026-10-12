@@ -1,0 +1,40 @@
+\exercice{236, bodin, 1998/09/01}
+\video{zkb9m4IjyfM}
+\enonce
+
+ Pour $A,B$ deux ensembles de $E$ on note $A\Delta
+B= (A\cup B )\setminus(A\cap B)$. Pour $E$ un ensemble fini,
+montrer :
+$$\text{Card\,} A\Delta B = \text{Card\,} A + \text{Card\,} B -2\text{Card\,} A\cap B.$$
+\finenonce 
+
+\indication
+Tout d'abord faire un dessin (avec des patates !).
+
+Pour $A$ et $B$ deux ensembles finis quelconques, commencer par (re)démontrer la formule : 
+$\text{Card\,} A\cup B = \text{Card\,} A + \text{Card\,} B - \text{Card\,} A\cap B$.
+\finindication
+
+\correction
+Tout d'abord si deux ensembles finis $A$ et $B$ sont disjoints
+alors $\text{Card\,} A\cup B = \text{Card\,} A + \text{Card\,} B$.
+
+Si maintenant $A$ et $B$ sont deux ensembles finis quelconques : nous décomposons $A\cup B$ en trois ensembles :
+$$A \cup B = (A \setminus (A\cap B)) \cup (B \setminus (A\cap B))  \cup (A\cap B).$$
+Ces trois ensembles sont disjoints deux à deux donc :
+$\text{Card\,} A\cup B = \text{Card\,} A\setminus (A\cap B) + \text{Card\,} B \setminus (A\cap B) + \text{Card\,} A\cap B$.
+
+Mais pour $R \subset S$ nous avons
+$\text{Card\,} S\setminus R = \text{Card\,} S - \text{Card\,} R$.
+
+Donc 
+$\text{Card\,} A\cup B = \text{Card\,} A - \text{Card\,} A\cap B  + \text{Card\,}B - \text{Card\,} A\cap B  + \text{Card\,} A\cap B$.
+
+Donc $\text{Card\,} A\cup B = \text{Card\,} A + \text{Card\,} B - \text{Card\,} A\cap B$.
+
+
+Appliquons ceci à $A \Delta B  = (A \cup B) \setminus (A \cap B)$ :
+$$ \text{Card\,} A \Delta B = \text{Card\,} A\cup B - \text{Card\,} A\cap B =
+\text{Card\,} A + \text{Card\,} B - 2\text{Card\,} A\cap B.$$
+\fincorrection
+\finexercice

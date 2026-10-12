@@ -1,0 +1,50 @@
+\exercice{2102, debes, 2008/02/12}
+\enonce
+(I) Soit $X$ un ensemble et ${\cal P} (X)$ l'ensemble des parties de $X$ ordonn\'e par l'inclusion. Soit $\varphi$ une application croissante de
+${\cal P}(X)$ dans lui-m\^eme.
+\smallskip 
+
+(a) Montrer que l'ensemble $E$ des parties $A$ de $X$ qui v\'erifient $\varphi (A)\subset A$
+est non vide et admet un plus petit \'el\'ement $A_0$.
+
+\smallskip
+(b) Montrer que $\varphi (A_0)=A_0$.
+
+\medskip
+(II) Soit deux ensembles $X$ et $Y$ munis de deux injections $g$ de $X$ dans $Y$ et $h$ de $Y$
+dans $X$. 
+\smallskip
+
+(a) Montrer que l'application de ${\cal P}(X)$ dans lui-m\^eme d\'efini par 
+$$\varphi (A)=X-h(Y-g(A))$$
+est croissante.
+
+\smallskip
+(b) D\'eduire de ce qui pr\'ec\`ede qu'il existe une bijection de $X$ sur $Y$.
+\finenonce 
+
+\indication
+Pour la question (II) (b) on consid\`erera la partie $A_0$ minimale associ\'ee \`a $\varphi$
+et l'on montrera que $A_0$ et $h(Y-g(A_0))$ forment une partition de $X$. La bijection sera
+d\'efinie par $g$ sur $A_0$ et par $h^{-1} $ sur $h(Y-g(A_0))$.
+\finindication
+
+\correction
+(I) (a) $E\not= \emptyset$ car $X\in E$. L'ensemble $A_0=\bigcap_{A\in E} A$ est
+de mani\`ere \'evidente le plus petit \'el\'ement de $E$.\smallskip
+
+(b) On a $\varphi(A_0) \subset A_0$ puisque $A_0\in E$.  On d\'eduit, par la croissance
+de $\varphi$, que $\varphi(\varphi(A_0)) \subset \varphi(A_0)$, ce qui donne
+$\varphi(A_0)\in E$ et donc $A_0\subset \varphi(A_0)$.\medskip
+
+(II) (a) La croissance de $\varphi$ est imm\'ediate. \smallskip
+
+(b) Consid\'erons la partie $A_0$ associ\'ee \`a $\varphi$. D'apr\`es le (b) du (I), on a
+$X\setminus h(X\setminus g(A_0))=A_0$. Autrement dit, les parties $A_0$ et $h(X\setminus
+g(A_0))$ constituent une partition de $X$. Consid\'erons l'application $f:X\rightarrow X$
+d\'efinie comme \'etant $g$ sur $A_0$ et $h^{-1}$ sur $h(Y\setminus g(A_0))$. On voit sans
+difficult\'e que $f$ est une bijection (noter que les images respectives des deux restrictions
+pr\'ec\'edentes sont $g(A_0)$ et $Y\setminus g(A_0)$ et qu'elles constituent une partition de
+$Y$).\smallskip
+\fincorrection
+\finexercice

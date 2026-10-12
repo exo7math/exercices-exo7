@@ -1,0 +1,35 @@
+\exercice{5188, rouget, 2010/06/30}
+\enonce[**]
+Soit $\begin{array}[t]{cccc}
+f~:&\Cc&\rightarrow&\Cc\\
+ &z&\mapsto&z+a{\bar z}
+\end{array}
+$ où $a$ est un nombre complexe donné non nul.
+Montrer que $f$ est un endomorphisme du $\Rr$-espace vectoriel $\Cc$. $f$ est-il un endomorphisme du $\Cc$-espace
+vectoriel $\Cc$~?~Déterminer le noyau et l'image de $f$.
+\finenonce
+
+\noindication
+
+\correction
+Soient $(z,z')\in\Cc^2$ et $(\lambda,\mu)\in\Rr^2$.
+
+$$f(\lambda z+\mu z')=(\lambda z+\mu z')+a(\overline{\lambda z+\mu
+z'})=\lambda(z+a{\bar z})+\mu(z'+a\overline{z'})=\lambda f(z)+\mu f(z').$$
+$f$ est donc $\Rr$-linéaire. On note que $f(ia)=i(a-|a|^2)$ et que $if(a)=i(a+|a|^2)$. Comme $a\neq0$, on a
+$f(ia)\neq if(a)$. $f$ n'est pas $\Cc$-linéaire.
+Soit $z\in\Cc\setminus\{0\}$. Posons $z=re^{i\theta}$ où $r\in\Rr^*_+$ et $\theta\in\Rr$.
+
+$$z\in\mbox{Ker }f\Leftrightarrow z+a{\bar z}=0\Leftrightarrow e^{i\theta}+ae^{-i\theta}=0\Leftrightarrow e^{2i\theta}=-a.$$
+\textbf{1er cas.} Si $|a|\neq1$, alors, pour tout réel $\theta$, $e^{2i\theta}\neq-a$. Dans ce cas, $\mbox{Ker }f=\{0\}$ et
+d'après le théorème du rang, $\mbox{Im }f=\Cc$.
+\textbf{2ème cas.} Si $|a|=1$, posons $a=e^{i\alpha}$.
+
+$$e^{2i\theta}=-a\Leftrightarrow
+e^{2i\theta}=e^{i(\alpha+\pi)}\Leftrightarrow2\theta\in\alpha+\pi+2\pi\Zz\Leftrightarrow\theta\in\frac{\alpha+\pi}{2}+\pi\Zz.$$
+Dans ce cas, $\mbox{Ker }f=\mbox{Vect}(e^{i(\alpha+\pi)/2})$. D'après le théorème du rang, $\mbox{Im }f$ est une droite
+vectorielle et pour déterminer $\mbox{Im }f$, il suffit d'en fournir un vecteur non nul, comme par exemple $f(1)=1+a$.
+Donc, si $a\neq-1$, $\mbox{Im }f=\mbox{Vect}(1+a)$. Si $a=-1$, $\forall z\in\Cc,\;f(z)=z-{\bar z}=2i\mbox{Im }(z)$ et
+$\mbox{Im }f=i\Rr$.
+\fincorrection
+\finexercice

@@ -1,0 +1,53 @@
+\exercice{5254, rouget, 2010/07/04}
+\enonce[***I]
+\begin{enumerate}
+\item  Soient $u$ et $v$ deux suites réelles strictement positives. Pour $n\in\Nn$, on pose $U_n=\sum_{k=0}^{n}u_k$ et $V_n=\sum_{k=0}^{n}v_k$. Montrer que si $u_n\sim v_n$ et si $\lim_{n\rightarrow +\infty}V_n=+\infty$, alors $U_n\sim V_n$.
+\item  Application. Trouver un équivalent de $\sum_{k=1}^{n}\frac{1}{\sqrt{k}}$ et $\sum_{k=1}^{n}\ln(k)$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  Soit $\varepsilon>0$.
+
+Les suites $u$ et $v$ sont équivalentes et la suite $v$ est strictement positive. Donc, il existe un rang $n_0$ tel que, pour $n\geq n_0$, $|u_n-v_n|<\frac{\varepsilon}{2}v_n$. Soit $n>n_0$.
+
+\begin{align*}\ensuremath
+\left|\frac{U_n}{V_n}-1\right|&=\frac{|U_n-V_n|}{V_n}\leq\frac{1}{V_n}\sum_{k=0}^{n}|u_k-v_k|\\
+ &\leq \frac{1}{V_n}(\sum_{k=0}^{n_0}|u_k-v_k|+\frac{\varepsilon}{2}\sum_{k=n_0+1}^{n}v_k)\\
+ &\leq\frac{1}{V_n}(\sum_{k=0}^{n_0}|u_k-v_k|+\frac{\varepsilon}{2}V_n)=\frac{1}{V_n}\sum_{k=0}^{n_0}|u_k-v_k|+\frac{\varepsilon}{2}
+\end{align*}
+
+Maintenant, l'expression $\sum_{k=0}^{n_0}|u_k-v_k|$ est constante quand $n$ varie, et d'autre part, $V_n$ tend vers $+\infty$ quand $n$ tend vers $+\infty$. On en déduit que $\frac{1}{V_n}\sum_{k=0}^{n_0}|u_k-v_k|$ tend vers $0$ quand $n$ tend vers $+\infty$. Par suite, il existe un rang $n_1>n_0$ tel que, pour $n\geq n_1$, $\frac{1}{V_n}\sum_{k=0}^{n_0}|u_k-v_k|<\frac{\varepsilon}{2}$.
+
+Pour $n\geq n_1$, on a alors $\left|\frac{U_n}{V_n}-1\right|<\frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon$.
+
+On a montré que
+
+$$\forall\varepsilon>0,\;\exists n_1\in\Nn/\;\forall n\in\Nn,\;(n\geq n_1\Rightarrow\left|\frac{U_n}{V_n}-1\right|<\varepsilon.$$
+
+Ainsi, la suite $\frac{U_n}{V_n}$ tend vers $1$ quand $n$ tend vers $+\infty$ et donc $U_n\sim V_n$.
+
+\item  $$2(\sqrt{n+1}-\sqrt{n})=\frac{2}{\sqrt{n+1}+\sqrt{n}}\sim\frac{2}{2\sqrt{n}}=\frac{1}{\sqrt{n}}.$$
+
+De plus, 
+
+$$\sum_{k=1}^{n}2(\sqrt{k+1}-\sqrt{k})=2\sqrt{n+1}-2\sqrt{1}.$$
+
+Cette dernière expression tend vers $+\infty$ quand $n$ tend vers $+\infty$.
+
+En résumé, pour $n\geq1$, $\frac{1}{\sqrt{n}}>0$, $2(\sqrt{n+1}-\sqrt{n})>0$, de plus quand $n$ tend vers $+\infty$, 
+$\frac{1}{\sqrt{n}}\sim2(\sqrt{n+1}-\sqrt{n})$ et enfin, $\sum_{k=1}^{n}2(\sqrt{k+1}-\sqrt{k})$ tend vers $+\infty$ quand $n$ tend vers $+\infty$. D'après 1),
+
+$$\sum_{k=1}^{n}\frac{1}{\sqrt{k}}\sim\sum_{k=1}^{n}2(\sqrt{k+1}-\sqrt{k})=2\sqrt{n+1}-2\sqrt{1}\sim2\sqrt{n}.$$
+
+$$(n+1)\ln(n+1)-n\ln n=(n+1-n)\ln n+(n+1)\ln(1+\frac{1}{n})=\ln n+1+o(1)\sim\ln n.$$
+
+Comme $\sum_{k=1}^{n}((k+1)\ln(k+1)-k\ln k)=(n+1)\ln(n+1)$ tend vers $+\infty$ et que les suites considéres sont positives, on en déduit que 
+
+$$\ln(n!)=\sum_{k=1}^{n}\ln k\sim\sum_{k=1}^{n}((k+1)\ln(k+1)-k\ln k)=(n+1)\ln(n+1)\sim n\ln n.$$
+\end{enumerate}
+\fincorrection
+\finexercice

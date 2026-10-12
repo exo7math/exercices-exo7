@@ -1,0 +1,33 @@
+\exercice{5496, rouget, 2010/07/10}
+\enonce[****]
+Soit $E$ un espace vectoriel euclidien de dimension $n\geq1$.
+Une famille de $p$ vecteurs $(x_1,...,x_p)$ est dite obtusangle si et seulement si pour tout $(i,j)$ tel que $i\neq j$, $x_i|x_j<0$. Montrer que l'on a nécessairement $p\leq n+1$.
+\finenonce
+
+\noindication
+
+\correction
+\textbf{1ère solution.}
+Montrons par récurrence que sur $n=\mbox{dim}(E)$ que, si $(x_i)_{1\leq i\leq p}$ est obtusangle, $p\leq n+1$.
+\textbullet~Pour $n=1$, une famille obtusangle ne peut contenir au moins trois vecteurs car si elle contient les vecteurs $x_1$ et $x_2$ verifiant $x_1.x_2<0$, un vecteur $x_3$ quelconque est soit nul (auquel cas $x_3.x_1=0$), soit de même sens que $x_1$ (auquel cas $x_1.x_3>0$) soit de même sens que $x_2$ (auquel cas $x_2.x_3>0$). Donc $p\leq2$.
+\textbullet~Soit $n\geq 1$. Suppososons que toute famille obtusangle d'un espace de dimension $n$ a un cardinal inférieur ou égal à $n+1$.
+Soit $(x_i)_{1\leq i\leq p}$ une famille obtusangle d'un espace $E$ de dimension $n+1$. Si $p=1$, il n'y a plus rien à dire. Supposons $p\geq2$. $x_p$ n'est pas nul et $H=x_p^\bot$ est un hyperplan de $E$ et donc est de dimension $n$.
+Soit, pour $1\leq i\leq p-1$, $y_i=x_i-\frac{(x_i|x_p)}{||x_p||^2}x_p$ le projeté orthogonal de $x_i$ sur $H$.
+Vérifions que la famille $(y_i)_{1\leq i\leq p-1}$ est une famille obtusangle. Soit $(i,j)\in\llbracket1,p-1\rrbracket$ tel que $i\neq j$.
+ 
+$$y_i.y_j=x_i.x_j-\frac{(x_i|x_p)(x_j|x_p)}{||x_p||^2}-\frac{(x_j|x_p)(x_i|x_p)}{||x_p||^2}+\frac{(x_i|x_p)(x_j|x_p)(x_p|x_p)}{||x_p||^4}= x_i|x_j-\frac{(x_i|x_p)(x_j|x_p)}{||x_p||^2}<0.$$
+Mais alors, par hypothèse de récurrence, $p-1\leq 1+\mbox{dim}H=n+1$ et donc $p\leq n+2$. 
+Le résultat est démontré par récurrence.
+\textbf{2ème solution.}
+Montrons que si la famille $(x_i)_{1\leq i\leq p}$ est obtusangle, la famille $(x_i)_{1\leq i\leq p-1}$ est libre.
+Supposons par l'absurde, qu'il existe une famille de scalaires $(\lambda_i)_{1\leq i\leq p-1}$ non tous nuls tels que $\sum_{i=1}^{p-1}\lambda_ix_i=0\;(*)$.
+Quite à multiplier les deux membres de $(*)$ par $-1$, on peut supposer qu'il existe au moins un réel $\lambda_i>0$. Soit $I$ l'ensemble des indices $i$ tels que $\lambda_i>0$ et $J$ l'ensemble des indices $i$ tels que $\lambda_i\leq0$ (éventuellement $J$ est vide). $I$ et $J$ sont disjoints.
+(*) s'écrit $\sum_{i\in I}^{}\lambda_ix_i=-\sum_{i\in J}^{}\lambda_ix_i$ (si $J$ est vide, le second membre est nul).
+On a 
+
+$$0\leq\left\|\sum_{i\in I}^{}\lambda_ix_i\right\|^2=\left(\sum_{i\in I}^{}\lambda_ix_i\right).\left(-\sum_{i\in  J}^{}\lambda_ix_i\right)=\sum_{(i,j)\in I\times J}^{}\lambda_i(-\lambda_j)x_i.x_j\leq 0.$$
+Donc, $\left\|\sum_{i\in I}^{}\lambda_ix_i\right\|^2=0$ puis $\sum_{i\in I}^{}\lambda_ix_i=0$.
+Mais, en faisant le produit scalaire avec $x_p$, on obtient $\left(\sum_{i\in I}^{}\lambda_ix_i\right).x_p=\sum_{i\in I}^{}\lambda_i(x_i.x_p)<0$ ce qui est une contradiction.
+La famille $(x_i)_{1\leq i\leq p-1}$ est donc libre. Mais alors son cardinal $p-1$ est inférieur ou égal à la dimension $n$ et donc $p\leq n+1$.
+\fincorrection
+\finexercice

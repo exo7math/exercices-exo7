@@ -1,0 +1,53 @@
+\exercice{6943, ruette, 2013/01/24}
+\enonce[La loi exponentielle est sans mémoire]
+\begin{enumerate}
+\item Soit $X$ une variable aléatoire de loi  $\mathcal{E}(\lambda)$. Montrer que
+$P(X> t+s\mid X> t)=P(X> s)$ pour tous $s,t\geq 0$.
+\item  Soit $X$ une variable aléatoire positive avec une densité continue sur
+$\Rr_+$. Si
+$P(X> t+s\mid X> t)=P(X> s)$  pour tous $s,t\geq 0$, montrer
+que $X$ suit une loi exponentielle.
+
+\medskip
+\textit{
+Ce résultat montre que la loi exponentielle est une loi sans mémoire,
+et que c'est la seule sous l'hypothèse du 2.
+En fait, cette hypothèse n'est pas nécessaire
+mais le résultat est alors plus difficile à montrer.}
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+\item
+$P(A\mid B):= \frac{P(A\cap B)}{P(B)}$ donc
+$P(X> t+s\mid X> t)=\frac{P(X> t+s)}{P(X> t)}$.
+Or $\displaystyle P(X> y)=\displaystyle\int_y^{+\infty}\lambda e^{-\lambda x}dx=
+e^{-\lambda y}$ si $y\geq 0.$
+Donc $\displaystyle
+P(X> t+s\mid X> t)=\frac{e^{-\lambda(t+s)}}{e^{-\lambda t}}=
+e^{-\lambda s}=P(X> s).$
+\item
+Soit $H(t)=1-F_X(t)=P(X>t)$. Par hypothèse, on a $H(t+s)=H(t)H(s)$.
+Comme la densité de $X$ est continue sur $\Rr_+$, $F$ est dérivable sur
+$\Rr_+$, donc $H$
+aussi. Si on dérive par rapport à $s$, on trouve : $H'(t+s)=H(t)H'(s)$.
+Si $s=0$, on a $H'(t)=H(t)H'(0)$. Posons $\lambda=-H'(0)$. La fonction $H$
+est solution sur $[0,+\infty[$ de l'équation $y'+\lambda y=0$, 
+donc il existe $K$ tel que
+$H(t)=Ke^{-\lambda t}$, et $F_X(t)=1-Ke^{-\lambda t}$ pour tout $t\geq 0$. 
+Le cas $K=0$ est exclu, sinon
+$P_X=\delta_0$, ce qui est impossible car $X$ est une variable aléatoire à densité.
+On a
+$$
+\lim_{t\to+\infty}F_X(t)=1\quad \mbox{et}\quad
+F_X(0)=0\quad \mbox{car}\quad X\mbox{ est une variable aléatoire positive},
+$$ 
+donc nécessairement $\lambda>0$ et $K=1$. 
+En dérivant $F_X(t)=1-e^{-\lambda t}$,
+on trouve que la densité de $X$ sur $\Rr_+$ 
+est $\lambda e^{-\lambda t}$, c'est-à-dire
+que $X$ est de loi exponentielle de paramètre $\lambda$.
+\end{enumerate}
+\fincorrection
+\finexercice

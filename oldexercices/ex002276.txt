@@ -1,0 +1,28 @@
+\exercice{2276, barraud, 2008/04/24}
+\enonce
+Soient $A=\Zz [\sqrt{-3}]$ et $K$ son corps de fractions. 
+Montrer que $x^2-x+1$ est irr\'eductible dans $A[x]$ sans 
+pour autant \^etre irr\'eductible dans $K[x]$. Expliquer la contradiction
+apparente avec le corollaire du lemme de Gauss.
+\finenonce 
+
+\noindication
+
+\correction
+ Soit $P=x^{2}-x+1$. Si $P$ a une factorisation non triviale, $P$ est
+  divisible par un polynôme de degré $1$, et comme $P$ est unitaire, ce
+  diviseur peut être choisi unitaire~: on en déduit que $P$ a une racine.
+  On calcule $P(a+bi\sqrt{3})=(a^{2}-3b^{2}-a+1)+(2ab-b)i\sqrt{3}$. Comme
+  $1/2\notin A=\Zz[i\sqrt{3}]$, $2a-1\neq 0$, donc si
+  $P(a+bi\sqrt{3})=0$, alors $b=0$, et $P(a)=0$. Mais $x^{2}-x+1$ est
+  primitif et se réduction modulo $2$ est irréductible, donc il est
+  irréductible sur $\Zz[x]$. En particulier il n'a pas de racine dans
+  $\Zz$. On en déduit que $P$ n'a pas de racine sur $A$, et est donc
+  irréductible.
+
+  \medskip
+  Soit $K=\mathrm{frac}(A)=\Qq[i\sqrt{3}]$. On a
+  $P(\frac{1+i\sqrt{3}}{2})=0$ donc $P$ a une racine dans $K$, donc $P$
+  est réductible sur $K$.
+\fincorrection
+\finexercice

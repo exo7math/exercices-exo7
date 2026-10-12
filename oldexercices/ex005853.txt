@@ -1,0 +1,47 @@
+\exercice{5853, rouget, 2010/10/16}
+\enonce[*** I]
+Soit $z$ un nombre complexe. Déterminer $\lim_{n \rightarrow +\infty}\left(1+ \frac{z}{n}\right)^n$.
+\finenonce
+
+\noindication
+
+\correction
+\textbf{1ère solution.} Soit $z\in\Cc$. Posons $z = x+iy$ où $(x,y)\in\Rr^2$ et $1+ \frac{r}{n}=r_ne^{i\theta}$ où $r_n\geqslant0$ et $\theta_n\in]-\pi,\pi]$ de sorte que 
+
+\begin{center}
+$\left(1+ \frac{z}{n}\right)^n=r_n^n\;e^{in\theta_n}$.
+\end{center}
+
+Puisque $1+ \frac{z}{n}$ tend vers $1$ quand $n$ tend vers $+\infty$, pour $n$ assez grand on a $r_n > 0$ et $\theta_n\in\left]- \frac{\pi}{2}, \frac{\pi}{2}\right[$. Mais alors pour $n$ assez grand
+
+\begin{center}
+$r_n =\sqrt{\left(1+ \frac{x}{n}\right)^2+\left( \frac{y}{n}\right)^2}$ et $\theta_n=\Arctan\left( \frac{ \frac{y}{n}}{1+ \frac{x}{n}}\right)$.
+\end{center}
+
+Maintenant, $r_n^n=\exp\left( \frac{n}{2}\ln\left(\left(1+ \frac{x}{n}\right)^2+\left( \frac{y}{n}\right)^2 \right)\right)\underset{n\rightarrow+\infty}{=}\exp\left( \frac{n}{2}\ln\left(1+ \frac{2x}{n}+o\left( \frac{1}{n}\right)\right)\right) \underset{n\rightarrow+\infty}{=} \exp(x+o(1))$ et donc $r_n^n$ tend vers $e^x$ quand $n$ tend vers $+\infty$.
+
+Ensuite $n\theta_n\underset{n\rightarrow+\infty}{=}n\Arctan\left( \frac{ \frac{y}{n}}{1+ \frac{x}{n}}\right)\underset{n\rightarrow+\infty}{=}n\Arctan\left( \frac{y}{n}+o\left( \frac{1}{n}\right)\right)\underset{n\rightarrow+\infty}{=}y+o(1)$ et donc $n\theta_n$ tend vers $y$ quand $n$ tend vers $+\infty$.
+
+Finalement, $\left(1+ \frac{z}{n}\right)^n =r_n^n\;e^{in\theta_n}$ tend vers $e^x\times e^{iy}= e^z$.
+
+\begin{center}
+\shadowbox{
+$\forall z\in\Cc$, $\lim_{n \rightarrow +\infty}\left(1+ \frac{z}{n}\right)^n=e^z$.
+}
+\end{center}
+
+\textbf{2ème solution.} Le résultat est connu quand $z$ est réel. Soit $z\in\Cc$. Soit $n\in\Nn^*$.
+
+\begin{center}
+$\left|\sum_{k=0}^{n} \frac{z^k}{k!}-\left(1+ \frac{z}{n}\right)^n\right| =\left|\sum_{k=0}^{n}\left( \frac{1}{k!}- \frac{C_n^k}{n^k}\right)z^k\right|\leqslant\sum_{k=0}^{n}\left| \frac{1}{k!}- \frac{C_n^k}{n^k}\right||z|^k $.
+\end{center}
+
+Maintenant, $\forall k\in\llbracket0,n\rrbracket$, $ \frac{1}{k!}- \frac{C_n^k}{n^k}= \frac{1}{k!}\left(1-  \frac{\overbrace{n\times(n-1)\times\ldots\times(n-k+1)}^{k}}{\underbrace{n\times n\times\ldots\times n}_{k}}\right)\geqslant 0$. Donc,
+
+\begin{center}
+$\sum_{k=0}^{n}\left| \frac{1}{k!}- \frac{C_n^k}{n^k}\right||z|^k=\sum_{k=0}^{n} \frac{|z|^k}{k!}-\left(1+ \frac{|z|^n}{n}\right)^n\underset{n\rightarrow+\infty}{\rightarrow}e^{|z|}-e^{|z|}= 0$.
+\end{center}
+
+On en déduit que $\sum_{k=0}^{n} \frac{z^k}{k!}-\left(1+ \frac{z}{n}\right)^n$ tend vers $0$ quand $n$ tend vers $+\infty$ et puisque $\sum_{k=0}^{n} \frac{z^k}{k!}$ tend vers $e^z$ quand $n$ tend vers $+\infty$, il en est de même de $\left(1+ \frac{z}{n}\right)^n$.
+\fincorrection
+\finexercice

@@ -1,0 +1,64 @@
+\exercice{2810, burnol, 2009/12/15}
+\enonce
+\label{ex:burnol2.2.1}
+  Soit $\gamma = [A,B]+[B,C]+[C,D]+[D,A]$ le bord (parcouru
+ dans le sens direct) du carré de sommets $A = 1-i$, $B
+ = 1+i$, $C=-1+i$, $D=-1-i$. Déterminer les intégrales suivantes:
+\begin{enumerate}
+\item $\int_\gamma \,dx$, $\int_\gamma x\,dx$, $\int_\gamma
+  x^2\,dx$, $\int_\gamma y\,dx$, $\int_\gamma
+  y^2\,dx$, $\int_\gamma
+  y^3 \,dx$,
+\item $\int_\gamma x\,dx+y\,dy$,  $\int_\gamma x\,dy+y\,dx$,
+ $\int_\gamma x\,dy-y\,dx$, 
+\item $\int_\gamma \,dz$, $\int_\gamma z\,dz$, 
+$\int_\gamma
+ x\,dz$, $\int_\gamma z\,dx$, 
+\item  $\int_\gamma
+  z^{-1} \,dz$, $\int_\gamma
+  z^{-2} \,dz$, $\int_\gamma
+  z^{n} \,dz$, pour $n\in\Zz$. 
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+Soit $Q$ le carr\'e dont le bord est $\gamma = \gamma_1+...+\gamma_4$ o\`u
+$$\gamma_1 (t)=A+2it , \quad \gamma_2 (t)=B-2t , \quad \gamma_3 (t)=C-2it , \quad et \quad \gamma_4 (t)=D+2t, \quad t\in [0,1] .$$
+Notons aussi $\gamma_{j,x}=\Re (\gamma_j )$ et $\gamma_{j,y}=\Im (\gamma_j )$, $j=1,...,4$. Alors :
+$$\int_\gamma dx= \sum_{j=1}^4 \int_{\gamma_j}dx= \sum_{j=1}^4 \int_0^1 \gamma'_{j,x}(t) \, dt=0$$
+et $$\begin{aligned}
+\int_\gamma x\, dx &=\sum_{j=1}^4 \int_{\gamma_j}x\, dx = \sum_{j=1}^4 \int_0^1 \gamma_{j,x}(t)\gamma'_{j,x}(t)\, dt\\
+&= \int_0^1 (1-2t)(-2)dt +\int_0^1 (-1+2t)2dt=0.
+\end{aligned}$$
+\bigskip
+Passons \`a la correction de la question 3. Alors
+$$\int _\gamma dz =\int _\gamma z\, dz =0$$
+puisque dans les deux cas on int\`egre une fonction holomorphe $(f(z)\equiv 1$ et $f(z)=z$) dans le carr\'e $Q$. On a :
+$$\begin{aligned}
+\int_\gamma x\, dz &=\sum_{j=1}^4 \int_0^1 \gamma_{j,x}(t)d\gamma_{j}(t) =\sum_{j=1}^4 \int_0^1 \gamma_{j,x}(t)\gamma'_{j}(t)\, dt\\
+&=\int_0^1 2idt +\int_0^1 (1-2t)(-2)dt +  \int _0^1 (-1)(-2i)dt +\int_0^1 (-1+2t)2dt\\
+&= 2i +2i =4i.
+\end{aligned}$$
+En ce qui concerne la question 4., on y int\`egre la fonction $f_n(z)=z^n$ le long du chemin ferm\'e $\gamma$.
+Mais attention, cette fonction admet une primitive seulement si $n\neq -1$. D'o\`u
+$$\int_\gamma z^n dz =0 \quad \text{pour } \; n\neq -1.$$
+Dans le cas restant $n=-1$ on trouve :
+$$\int_\gamma f_{-1}(z)dz =2i\pi.$$
+D'ailleurs, et l\`a on rejoint l'exercice \ref{ex:burnol2.2.3}, on a :
+$$\int_\gamma f_n(z)\, dz = \int_C f_n(z)\, dz $$
+o\`u $C=\{ |z|=1\}$. Ce cercle se param\'etrise par $\sigma (\theta ) =e^{2i\pi \theta}$. D'o\`u :
+$$\int_C f_n(z)\, dz=\int_0^1 e^{2i\pi n\theta} 2i\pi e^{2i\pi \theta} \, d\theta
+=2i\pi \int_0^1 e^{2i\pi (n+1) \theta}\, d\theta =\left\{ \begin{array}{c}
+                                                            2i\pi \;\; \text{si} \;\; n=-1 \\
+                                                            0 \quad \text{sinon}.
+                                                          \end{array}
+\right.$$
+De mani\`ere analogue on a
+$$\int_C \overline{z}^n\, dz=\int_0^1 e^{-2i\pi n\theta} 2i\pi e^{2i\pi \theta} \, d\theta
+=2i\pi \int_0^1 e^{2i\pi (1-n) \theta}\, d\theta =\left\{ \begin{array}{c}
+                                                            2i\pi \;\; \text{si} \;\; n=1 \\
+                                                            0 \quad \text{sinon.}
+                                                          \end{array}
+\right.$$
+\fincorrection
+\finexercice

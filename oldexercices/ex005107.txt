@@ -1,0 +1,45 @@
+\exercice{5107, rouget, 2010/06/30}
+\enonce[**IT]
+Pour $z\neq i$, on pose $f(z)=\frac{z+i}{z-i}$. Montrer que $f$ réalise une bijection
+de $D=\{z\in\Cc/\;|z|<1\}$ sur $P=\{z\in\Cc/\;\Re(z)< 0\}$. Préciser $f^{-1}$.
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Montrons que la restriction de $f$ à $D$, notée $g$, est bien une application de $D$ dans $P$.
+Soit $z\in D$. On a $|z|<1$ et en particulier $z\neq i$. Donc, $f(z)$ existe. De plus,
+
+$$\Re(f(z))=\frac{1}{2}(f(z)+\overline{f(z)})=\frac{1}{2}\left(\frac{z+i}{z-i}+\frac{{\bar z}-i}{{\bar z}+i}\right)=
+\frac{1}{2}\frac{2z{\bar z}-2}{(z-i)(\overline{z-i})}=\frac{|z|^2-1}{|z-i|^2}<0.$$
+Donc, $f(z)$ est élément de $P$. $g$ est donc une application de $D$ dans $P$.
+ \item  Montrons que $g$ est injective.
+Soit $(z,z')\in D^2$.
+
+$$g(z)=g(z')\Rightarrow\frac{z+i}{z-i}=\frac{z'+i}{z'-i}\Rightarrow iz'-iz=iz-iz'\Rightarrow 2i(z'-z)=0\Rightarrow
+z=z'.$$
+ \item  Montrons que $g$ est surjective.
+Soient $z\in D$ et $Z\in P$.
+
+$$g(z)=Z\Leftrightarrow\frac{z+i}{z-i}=Z\Leftrightarrow z=\frac{i(Z+1)}{Z-1}\;(\text{car}\;Z\neq1,$$
+(ce qui montre que $Z$ admet au plus un antécédent dans $D$, à savoir $z=\frac{i(Z+1)}{Z-1}$ (mais on le sait déjà car
+$g$ est injective). Il reste cependant à vérifier que $\frac{i(Z+1)}{Z-1}$ est effectivement dans $D$).
+Réciproquement, puisque
+$\Re(Z)<0$, 
+
+\begin{center}
+$\left|\frac{i(Z+1)}{Z-1}\right|=\frac{|Z+1|}{|Z-1|}<1$
+\end{center}
+($Z$ étant strictement plus proche de $-1$ que
+de $1$) et $z\in D$. Finalement $g$ est une bijection de $D$ sur $P$, et~:~
+
+\begin{center}
+\shadowbox{
+$\forall z\in
+P,\;g^{-1}(z)=\frac{i(z+1)}{z-1}$.
+}
+\end{center}
+\end{enumerate}
+\fincorrection
+\finexercice

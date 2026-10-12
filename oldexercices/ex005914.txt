@@ -1,0 +1,30 @@
+\exercice{5914, rouget, 2010/10/16}
+\enonce[***]
+Calculer $I=\displaystyle\iint_{\frac{x^2}{a^2}+\frac{y^2}{b^2}\leqslant1}(x^2-y^2)\;dxdy$.
+\finenonce
+
+\noindication
+
+\correction
+On pose déjà $x=ua$ et $y=vb$ de sorte que $ \frac{D(u,v)}{D(x,y)}=ab$. On obtient
+
+\begin{center}
+$I=\displaystyle\iint_{\frac{x^2}{a^2}+\frac{y^2}{b^2}\leqslant1}(x^2-y^2)\;dxdy=ab\displaystyle\iint_{u^2+v^2\leqslant1}(a^2u^2-b^2v^2)\;dudv$.
+\end{center}
+
+Ensuite,
+
+\begin{align*}\ensuremath
+\displaystyle\iint_{u^2+v^2\leqslant1}u^2\;dudv&=\displaystyle\iint_{u^2+v^2\leqslant1}v^2\;dudv= \frac{1}{2}\displaystyle\iint_{u^2+v^2\leqslant1}(u^2+v^2)\;dudv= \frac{1}{2}\int_{r=0}^{r=1}\int_{\theta=0}^{2\pi}r^2\times rdrd\theta\\
+ &= \frac{1}{2}\int_{0}^{1}r^3dr\int_{0}^{2\pi}d\theta= \frac{1}{2}\times \frac{1}{4}\times2\pi= \frac{\pi}{4},
+\end{align*}
+
+et donc
+
+\begin{center}
+\shadowbox{
+$I= \frac{\pi ab(a^2-b^2)}{4}$.
+}
+\end{center}
+\fincorrection
+\finexercice

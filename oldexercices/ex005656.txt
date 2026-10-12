@@ -1,0 +1,45 @@
+\exercice{5656, rouget, 2010/10/16}
+\enonce[***]
+Soit $A$ une matrice rectangulaire de format $(p,q)$ et $B$ une matrice de format $(q,p)$. Comparer les polynômes caractéristiques de $AB$ et $BA$.
+\finenonce
+
+\noindication
+
+\correction
+Si $p = q$, le résultat est connu : $\chi_{AB}=\chi_{BA}$.
+
+Supposons par exemple $p < q$. On se ramène au cas de matrices carrées en complétant. 
+Soient $A'=\left(
+\begin{array}{c}
+A\\
+0_{q-p,q}
+\end{array}
+\right)$ et $B'=\left(
+\begin{array}{cc}
+B&0_{q,q-p}
+\end{array}
+\right)$. $A'$ et $B'$ sont des matrices carrées de format $q$ et $A'B'$ et $B'A'$ ont même polynôme caractéristique.
+
+Un calcul par blocs donne $B'A'=BA$ et $A'B'=\left(
+\begin{array}{c}
+A\\
+0_{q-p,q}
+\end{array}
+\right)\left(
+\begin{array}{cc}
+B&0_{q,q-p}
+\end{array}
+\right)=\left(
+\begin{array}{cc}
+AB&0_{p,q-p}\\
+0_{q-p,p}&0_{q-p,q-p}
+\end{array}
+\right)$. Donc $\chi_{BA}=(-X)^{q-p}\chi_{AB}$ ou encore, avec une écriture plus symétrique, $(-X)^p\chi_{BA}= (-X)^q\chi_{AB}$ ce qui vrai dans tous les cas.
+
+\begin{center}
+\shadowbox{
+$\forall A\in\mathcal{M}_{p,q}(\Kk)$, $\forall B\in\mathcal{M}_{q,p}(\Kk)$, $(-X)^p\chi_{BA}= (-X)^q\chi_{AB}$.
+}
+\end{center}
+\fincorrection
+\finexercice

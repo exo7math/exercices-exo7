@@ -1,0 +1,35 @@
+\exercice{7377, mourougane, 2021/08/10}
+\enonce
+\begin{enumerate}
+ \item Factoriser $221$ en produit de nombres premiers.
+ \item Déterminer l'ensemble des solutions entières de l'équation
+$$(X-3)(X-5)=0\pmod{221}.$$
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+ \item $221=13\times17$
+ \item Par le théorème chinois,
+\begin{eqnarray*}
+ (X-3)(X-5)=0\pmod{221}&\iff& \left\{\begin{array}{c}(X-3)(X-5)=0\pmod{13} \\ (X-3)(X-5)=0\pmod{17}.\end{array}\right.
+\end{eqnarray*}
+Puisque $13$ et $17$ sont premiers, par le lemme d'Euclide,
+\begin{eqnarray*}
+\lefteqn{\left\{\begin{array}{c}(X-3)(X-5)=0\pmod{13} \\ (X-3)(X-5)=0\pmod{17}.\end{array}\right.}\\
+&\iff&\left\{\begin{array}{c} (X=3\pmod{13}\quad\text{ou}\quad X=5\pmod{13})\\
+\quad \text{ et } \quad (X=3\pmod{17}\quad\text{ou}\quad X=5\pmod{17})\end{array}\right.\\
+&\iff& \left\{\begin{array}{ccc}
+    X=3\pmod{13}&\quad \text{ et } \quad &X=3\pmod{17}\\ &\quad\text{ou}\quad&\\
+ X=3\pmod{13}&\quad \text{ et } \quad &X=5\pmod{17}\\ &\quad\text{ou}\quad&\\
+ X=5\pmod{13}&\quad \text{ et } \quad &X=3\pmod{17}\\ &\quad\text{ou}\quad&\\
+ X=5\pmod{13}&\quad \text{ et } \quad &X=5\pmod{17}\\ 
+    \end{array}\right.\\
+&\iff&X=3\pmod{221}\quad\text{ou}\quad X=107\pmod{221}\\
+&&\quad\text{ou}\quad X=122\pmod{221}\quad\text{ou}\quad X=5\pmod{221}.
+\end{eqnarray*}
+Les solutions entières de l'équation
+$(X-3)(X-5)=0\pmod{221}$ sont les entiers congrus à $3$, $107$, $122$ ou $5$ modulo $221$.
+\end{enumerate}
+\fincorrection
+\finexercice

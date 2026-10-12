@@ -1,0 +1,52 @@
+\exercice{476, bodin, 1998/09/01}
+\video{72sAcDZMmL8}
+\enonce
+Soient $A$ et $B$ deux parties born\'ees de $\Rr$.
+On note $A+B = \{ a+b \mid (a,b)\in A\times B \}$.
+\begin{enumerate}
+    \item Montrer que $\sup A + \sup B$ est un majorant de $A+B$.
+    \item Montrer que $\sup(A+B)=\sup A + \sup B$.
+\end{enumerate}
+\finenonce 
+
+\indication
+Il faut revenir à la définition de la borne supérieure d'un ensemble borné :
+c'est le plus petit des majorants. En particulier la borne supérieure est un majorant.
+\finindication
+
+\correction
+\begin{enumerate}
+
+    \item  Soient $A$ et $B$ deux parties born\'ees de $\R$.
+On sait que $\sup A$ est un majorant de $A$, c'est-\`a-dire,
+pour tout $a\in A$, $a\leqslant \sup A$. De m\^eme, pour tout $b\in B$, $b\le
+\sup B$. On veut montrer que $\sup A+\sup B$ est un majorant de
+$A+B$. Soit donc $x\in A+B$. Cela signifie que $x$ est de la forme
+$a+b$ pour un $a\in A$ et un $b\in B$. Or $a\leqslant \sup A$, et $b \le
+\sup B$, donc $x=a+b\leqslant \sup A+\sup B$. Comme ce raisonnement est
+valide pour tout $x\in A+B$ cela signifie que  $\sup A+\sup B$ est
+un majorant de $A+B$.
+
+    \item On veut montrer que, quel que soit
+$\epsilon>0$, $\sup A +\sup B-\epsilon$ n'est pas un majorant de $A+B$. On
+prend donc un $\epsilon >0$ quelconque, et on veut montrer que $\sup A
++\sup B-\epsilon$ ne majore pas $A+B$. On s'interdit donc dans la
+suite de modifier $\epsilon$. Comme $\sup A$ est le plus petit des
+majorants de $A$, $\sup A-\epsilon/2$ n'est pas un majorant de $A$.
+Cela signifie qu'il existe un \'el\'ement $a$ de $A$ tel que
+$a>\sup A-\epsilon/2$. {\em Attention: $\sup A-\epsilon/2$ n'est pas
+forc\'ement dans $A$ ; $\sup A$ non plus.} De la m\^eme mani\`ere, il existe $b\in B$ tel que
+$b>\sup B-\epsilon/2$. Or l'\'el\'ement $x$ d\'efini par $x=a+b$ est
+un \'el\'ement de $A+B$, et il v\'erifie $x>(\sup A-\epsilon/2)+(\sup
+B-\epsilon/2)=\sup A +\sup B-\epsilon.$ Ceci implique que $\sup A +\sup
+B-\epsilon$ n'est pas un majorant de $A+B$.
+
+    \item  $\sup A+\sup B$
+est un majorant de $A+B$ d'apr\`es la partie 1. Mais, d'apr\`es la
+partie 2., d\`es qu'on prend un $\epsilon>0$, $\sup A+\sup B -\epsilon$
+n'est pas un majorant de $A+B$. Donc $\sup A+\sup B$ est bien le
+plus petit des majorants de $A+B$, c'est donc la borne supérieure de $A+B$. Autrement dit
+ $\sup (A+B)= \sup A +\sup B$.
+\end{enumerate}
+\fincorrection
+\finexercice

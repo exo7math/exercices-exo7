@@ -1,0 +1,94 @@
+\exercice{2311, barraud, 2008/04/24}
+\enonce
+Soit $\Zz_{36}=\Zz/36\Zz\ $ l'anneau des entiers modulo $36$.
+\begin{enumerate}
+  \item D\'ecrire tous les \'el\'ements inversibles, tous les diviseurs
+de z\'ero et tous les \'el\'ements nilpotents de l'anneau $\Zz_{36}$.
+({\it Un \'el\'ement $a$ d'un anneau $A$ est dit nilpotent
+si il existe $n$ tel que $a^n=0$.})
+  \item Trouver tous les id\'eaux de l'anneau $\Zz_{36}$.
+  \item Soit $A$ un anneau arbitraire. Montrer que
+  $$
+  (a\in A^{\times} \hbox{ et } b\in A^{\times}) \Longleftrightarrow
+  (a\cdot b)\in A^{\times}.
+  $$
+  \item Donner un exemple d'un polyn\^ome inversible de degr\'e $1$ sur
+  $\Zz_{36}$.
+  \item D\'ecrire tous les \'el\'ements inversibles de l'anneau
+  $\Zz_{36}[x]$.
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item  $\bar{n}$ est inversible ssi $\pgcd(n,36)=1$ (Bezout~!), i.e.
+$\bar{n}\in\{\pm1, \pm5, \pm7, \pm11, \pm13, \pm17\}$. Les autres
+éléments sont tous des diviseurs de $0$ puisque $\bar{n}$ divise $0$ ssi
+$\pgcd(n,36)\neq1$. Enfin, $\bar{n}$ est nilpotent ssi $2|n$ et $3|n$,
+donc ssi $6|n$, soit $\bar{n}\in\{0,\pm6,\pm12,18\}$.
+
+  \item Montrons que l'ensemble $\mathcal{I}$ des idéaux de $\Zz/36\Zz$ est en
+bijection avec l'ensemble $\mathcal{D}=\{1,2,3,4,6,9,12,18,36\}$  des
+diviseurs (positifs) de $36$.
+
+Considérons l'application $\phi:\mathcal{D}\to\mathcal{I}$ définie par
+$\phi(d)=(\bar{d})$.
+
+\textsl{Injectivité~:} Si $\phi(d)=\phi(d')$, alors $\exists a,b\in\Zz,
+d=d'a+36b$. Comme $d|36$, on en déduit que $d|d'$. De même, on a $d'|d$,
+et donc $d=d'$.
+
+\textsl{Surjectivité~:}Soit $I\in\mathcal{I}$. $\Zz/36\Zz$ est principal,
+donc $\exists a\in\Zz, I=(\bar{a})$. Soit $d=\pgcd(a,36)$. Notons
+$a=da'$~: $\pgcd(a',36)=1$. On en déduit que $\bar{a}'$ est inversible
+dans $\Zz/36\Zz$. Alors $\bar{d}\sim\bar{a}$ dans $\Zz/36\Zz$. On en
+déduit que $I=(\bar{d})=\phi(d)$.
+
+Finalement, il y a donc 9 idéaux dans $\Zz_{36}$~:
+\begin{itemize}
+\item $(\overline{ 1})=\Zz_{36}$,
+\item $(\overline{ 2})=\{0,\pm2,\pm4,\pm6,\pm8,\pm10,\pm12,\pm14,\pm16,18\}$, 
+\item $(\overline{ 3})=\{0,\pm3,\pm6,\pm9,\pm12,\pm15,18\}$,
+\item $(\overline{ 4})=\{0,\pm4,\pm8,\pm12,\pm16\}$,
+\item $(\overline{ 6})=\{0,\pm6,\pm12\}$
+\item $(\overline{ 9})=\{0,\pm9,18\}$
+\item $(\overline{12})=\{0,\pm12\}$
+\item $(\overline{18})=\{0,18\}$
+\item $(\overline{36})=\{0\}$,
+\end{itemize}
+
+  \item Si $a,b\in A^{\times}$, alors $(a b)(b^{-1} a^{-1})=1$ donc $ab\in
+A^{\times}$.
+
+Si $ab\in A^{\times}$, soit $c=(ab)^{-1}$. Alors $a(bc)=1$ donc $a\in
+A^{\times}$ et $b(ac)=1$ donc $b\in A^{\times}$.
+  \item On a $(6x+1)(-6x+1)=1$ dans $\Zz_{36}[x]$, donc $18x+1$ y est inversible.
+  \item Soit $f$ un inversible de $\Zz_{36}[x]$. Choisissons $P\in\Zz[x]$ tel que
+$\bar{P}=f$ et $Q\in\Zz[x]$ tel que $\bar{Q}=f^{-1}$.
+
+La projection $\Zz\to\Zz_{2}$ se factorise par
+$\Zz\to\Zz_{36}\to\Zz_{2}$. Ces projections sont bien définies, et sont
+des morphismes d'anneaux. Notons $P_{[2]}$ la réduction de $P$ modulo
+$2$~: on a alors $P_{[2]}Q_{[2]}=(PQ)_{[2]}=1$, et comme $\Zz_{2}$ est un
+corps, $P_{[2]}=1$, $Q_{[2]}=1$. On en déduit que $2$ divise tous les
+coefficients de $P$, sauf celui de degré $0$. De même, en considérant la
+réduction modulo $3$, on obtient que $3$ divise tous les coefficients de
+$P$, sauf celui de degré $0$. Finalement, $6$ divise tous les
+coefficients de $P$ sauf celui de degré $0$, qui est inversible modulo
+$36$~: à association (dans $\Zz_{36}$) près, $f$ est donc de la forme~:
+$$
+f=\sum_{i=1}^{d} 6a_{i} x^{i}+1,\qquad (a_{i})\in\Zz_{36}.
+$$
+
+Réciproquement, si $f$ est de cette forme, c'est à dire  $f=1+6xf_{1}$,
+avec $f_{1}\in\Zz_{36}[x]$, alors~:
+$$
+ (1+6xf_{1})(1-6xf_{1})=1
+$$
+donc $f$ est inversible.
+
+\end{enumerate}
+\fincorrection
+\finexercice

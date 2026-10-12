@@ -1,0 +1,33 @@
+\exercice{349, gourio, 2001/09/01}
+\video{HuY48EkNke0}
+\enonce
+Soit $a\in \Nn  $ tel que $a^{n}+1 $ soit premier, montrer que $\exists
+ k\in \Nn,n=2^{k}.$
+Que penser de la conjecture : $\forall  n\in \Nn,2^{2^{n}}+1$ est
+premier ?
+
+\finenonce 
+
+\indication
+Raisonner par contraposition (ou par l'absurde) : supposer que $n$ n'est pas de la forme $2^k$,
+alors $n$ admet un facteur irr\'eductible $p>2$.
+Utiliser aussi $x^p+1 = (x+1)(1-x+x^2-x^3+\ldots+x^{p-1})$ avec $x$ bien choisi.
+\finindication
+
+\correction
+\begin{enumerate}
+  \item Supposons que $a^n + 1$ est premier. Nous allons montrer la contrapos\'ee. Supposons
+que $n$ n'est pas de la forme $2^k$, c'est-\`a-dire que $n=p\times q$ avec
+$p$ un nombre premier $>2$ et $q\in\Nn$.
+Nous utilisons la formule
+$$x^p+1 = (x+1)(1-x+x^2-x^3+\ldots+x^{p-1})$$
+avec $x = a^q$ :
+$$a^n+1 = a^{pq}+1 = (a^q)^p+1 = (a^q+1)(1-a^q+(a^q)^2+\cdots+(a^q)^{p-1}).$$
+Donc $a^q+1$ divise $a^n+1$ et comme $1 < a^q+1 < a^{n}+1$ alors $a^n+1$ n'est pas premier.
+Par contraposition si $a^n+1$ est premier alor $n = 2^k$.
+  \item Cette conjecture est fausse, mais pas facile \`a v\'erifier
+sans une bonne calculette ! En effet pour $n=5$ nous obtenons :
+$$2^{2^5} + 1 = 4294967297 = 641 \times 6700417.$$
+\end{enumerate}
+\fincorrection
+\finexercice

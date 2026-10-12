@@ -1,0 +1,64 @@
+\exercice{6980, blanc-centi, 2014/05/06}
+\video{QkvgaXwOwyU}
+\enonce 
+Montrer que l'équation $\Argsh x+\Argch x=1$ admet une unique solution, puis la déterminer.
+\finenonce 
+
+\indication
+Faire le tableau de variations de $f:x\mapsto\Argsh x+\Argch x$.
+\finindication
+
+\correction
+Soit $f(x)=\Argsh x+\Argch x$. La fonction $f$ est bien définie, continue, et strictement croissante, 
+sur $[1,+\infty[$ (comme somme de deux fonctions continues strictement croissantes). 
+
+\begin{center}
+\begin{tikzpicture}[scale=2]
+      \draw[->,>=latex, gray] (-0.5,0)--(2.5,0) node[below,black] {$x$};
+      \draw[->,>=latex, gray] (0,-0.5)--(0,3) node[right,black] {$y$};  
+ 
+      \draw[ultra thick, color=red,domain=1.0:2,samples=100,smooth] plot (\x,{ln(\x+sqrt(\x^2+1)) + ln(\x+sqrt(\x^2-1))}) node[above left] {$f(x)$}; 
+
+   \draw (0,1.1)--(1.03,1.1)--(1.03,0);
+
+   
+   \draw (0,0.9)--(0.98,0.9)--(0.98,0);
+   
+
+     \fill (0,0) circle (1pt);
+     \fill (0,0.9) circle (1pt); 
+     \fill (0.96,0) circle (1pt);
+     \fill (1.04,0) circle (1pt);
+     
+     \fill (0,1.1) circle (1pt);     
+     \node at (0,1)[above left] {$1$};
+     \node at (0,0.9)[below left] {$f(1)$};
+     \node at (1,0)[below left] {$1$};
+     \node at (1.03,0)[below right] {$a$};
+     \node at (0,0)[below right] {$0$};
+\end{tikzpicture}  
+\end{center}
+
+De plus, $f(x)\xrightarrow[x\to +\infty]{}+\infty$, donc $f$ atteint exactement une fois 
+toute valeur de l'intervalle $[f(1),+\infty[$. Comme (par la formule logarithmique)
+$f(1)=\Argsh 1=\ln(1+\sqrt{2})<\ln(e)=1$, 
+on a $1\in[f(1),+\infty[$. Par le théorème des valeurs intermédiaires
+l'équation $f(x)=1$ admet une unique solution, que l'on notera $a$. 
+
+\medskip
+
+Déterminons la solution :
+\begin{eqnarray*}
+\sh 1&=&\sh(\Argsh a+\Argch a)\\ 
+ &=&\sh(\Argsh a)\ch(\Argch a)+\sh(\Argch a)\ch(\Argsh a)\\
+ &=&a^2+\sqrt{a^2-1}\sqrt{a^2+1}=a^2+\sqrt{a^4-1}
+\end{eqnarray*}
+donc $\sqrt{a^4-1}=\sh 1-a^2$. En élevant au carré et en simplifiant, on obtient
+$a^2=\frac{1+\sh^21}{2\sh 1}=\frac{\ch^2 1}{2\sh 1}$. Comme on cherche $a$ positif 
+(et que $\ch 1>0$), on en déduit $a=\frac{\ch 1}{\sqrt{2\sh 1}}$. 
+Cette valeur est la seule solution possible de l'équation $f(x)=1$, il faudrait normalement 
+vérifier qu'elle convient bien, puisqu'on a seulement raisonné par implication (et pas par équivalence).
+Or on sait déjà que l'équation admet une unique solution: c'est donc nécessairement 
+$$a=\frac{\ch 1}{\sqrt{2\sh 1}}= \tfrac{1}{2}\frac{e+\frac1e}{\sqrt{e-\frac1e}} = 1,0065\ldots.$$
+\fincorrection
+\finexercice

@@ -1,0 +1,95 @@
+\exercice{5754, rouget, 2010/10/16}
+\enonce[****]
+ Pour $n$ entier naturel, on pose $u_n=\frac{(-1)^n}{2n+1}\sum_{k=0}^{n}\frac{1}{4k+1}$. Convergence et somme de la série (numérique) de terme général $u_n$.
+\finenonce
+
+\noindication
+
+\correction
+Pour tout entier naturel $n$, $|a_n|\geqslant\frac{1}{2n+1}$ et donc la série proposée ne converge pas absolument.
+
+Pour tout entier naturel $n$,
+
+\begin{align*}\ensuremath
+|u_n| - |u_{n+1}|&=\frac{1}{2n+1}\sum_{k=0}^{n}\frac{1}{4k+1}-\frac{1}{2n+3}\sum_{k=0}^{n+1}\frac{1}{4k+1}=\left(\frac{1}{2n+1}-\frac{1}{2n+3}\right)\sum_{k=0}^{n}\frac{1}{4k+1}-\frac{1}{2n+3}\times\frac{1}{4n+5}\\
+ &=\frac{2}{(2n+1)(2n+3)}\sum_{k=0}^{n}\frac{1}{4k+1}-\frac{1}{(2n+3)(4n+5)}\geqslant\frac{1}{(2n+3)(2n+1)}-\frac{1}{(2n+3)(4n+5)}> 0.
+\end{align*}
+
+ 
+La suite $(|u_n|)_{n\in\Nn}$ est donc décroissante. De plus, pour tout entier naturel non nul $n$,
+
+\begin{center}
+$\sum_{k=0}^{n}\frac{1}{4k+1}\leqslant\sum_{k=1}^{4n+1}\frac{1}{k}\leqslant1+\sum_{k=2}^{4n+1}\int_{k-1}^{k}\frac{1}{t}\;dt=1 +\ln(4n+1)$
+\end{center}
+
+et donc $|u_n|\leqslant\frac{1 +\ln(4n+1)}{2n+1}$\rule[-4mm]{0mm}{0mm}. On en déduit que $\lim_{n \rightarrow +\infty}u_n=0$. Finalement, la série proposée converge en vertu du critère spécial aux séries alternées.
+
+Considérons la série entière $\sum_{n=0}^{+\infty}u_n x^{2n+1}$.  La série de terme général $a_n$ converge et donc $R\geqslant1$ mais puisque la série de terme général $|a_n|$ diverge et donc $R\leqslant1$. Finalement, $R=1$. Pour $x\in]-1,1[$, posons $f(x)=\sum_{n=0}^{+\infty}u_n x^{2n+1}$. Pour $x$ dans $]-1,1[$, 
+
+\begin{align*}\ensuremath
+f'(x)&=\sum_{n=0}^{+\infty}(-1)^n\left(\sum_{k=0}^{n}\frac{1}{4k+1}\right)x^{2n}=\sum_{n=0}^{+\infty}\left(\sum_{k=0}^{n}\frac{1}{4k+1}\right)(-x^2)^n\\
+ &=\left(\sum_{n=0}^{+\infty}\frac{(-x^2)^n}{4n+1}\right)\left(\sum_{n=0}^{+\infty}(-x^2)^n\right)\;(\text{produit de \textsc{Cauchy} de deux séries numériques absolument convergentes})
+\end{align*}
+
+Donc, pour $x$ dans $]0,1[$, $f'(x)  = g(x)h(x)$ où $h(x) =\sum_{n=0}^{+\infty}(-x^2)^n =\frac{1}{1+x^2}$ puis 
+
+\begin{center}
+$g(x) =\frac{1}{\sqrt{x}}\sum_{n=0}^{+\infty}(-1)^n\frac{1}{4n+1}(\sqrt{x})^{4n+1}$.
+\end{center}
+
+Maintenant, en posant $k(X)=\sum_{n=0}^{+\infty}(-1)^n X^{4n+1}$ pour $X$ dans $]-1,1[$, $k'(X)=\sum_{n=0}^{+\infty}(-1)^nX^{4n}=\frac{1}{X^4+1}$. Ensuite, en posant $\omega=e^{i\pi/4}$, par réalité et parité
+
+\begin{center}
+$\frac{1}{X^4+1}=\frac{a}{X-\omega}+\frac{\overline{a}}{X-\overline{\omega}}-\frac{a}{X+\omega}-\frac{\overline{a}}{X+\overline{\omega}}$
+\end{center}
+
+où $a=\frac{1}{4\omega^3}=-\frac{\omega}{4}$. Il vient alors
+
+\begin{align*}\ensuremath
+\frac{1}{X^4+1}&=-\frac{1}{4}\left(\frac{\omega}{X-\omega}+\frac{\overline{\omega}}{X-\overline{\omega}}-\frac{\omega}{X+\omega}-\frac{\overline{\omega}}{X+\overline{\omega}}\right)=\frac{1}{4}\left(-\frac{X\sqrt{2}-2}{X^2-\sqrt{2}X+1}+\frac{X\sqrt{2}+2}{X^2+\sqrt{2}X+1}\right)\\
+ &=\frac{1}{4\sqrt{2}}\left(\frac{2X+2\sqrt{2}}{X^2+\sqrt{2}X+1}-\frac{2X-2\sqrt{2}}{X^2-\sqrt{2}X+1}\right)\\
+ &=\frac{1}{4\sqrt{2}}\left(\frac{2X+\sqrt{2}}{X^2+\sqrt{2}X+1}+\frac{\sqrt{2}}{\left(X+\frac{1}{\sqrt{2}}\right)^2+\left(\frac{1}{\sqrt{2}}\right)^2}-\frac{2X-\sqrt{2}}{X^2-\sqrt{2}X+1}+\frac{\sqrt{2}}{\left(X-\frac{1}{\sqrt{2}}\right)^2+\left(\frac{1}{\sqrt{2}}\right)^2}\right)
+\end{align*}
+ 
+
+En tenant compte de $k(0) = 0$, on obtient donc pour $X\in]-1,1[$,
+
+\begin{center}
+$k(X) =\frac{1}{4\sqrt{2}}\left(\ln(X^2+X\sqrt{2}+1)-\ln(X^2-X\sqrt{2}+1))+2\left(\Arctan(X\sqrt{2}+1)+\Arctan(X\sqrt{2}-1)\right)\right)$.
+\end{center}
+
+Ensuite, pour tout réel $x\in]0,1[$, $f'(x) =\frac{1}{\sqrt{x}}k\left(\sqrt{x}\right)\frac{1}{1+x^2}=\frac{1}{\sqrt{x}}k'\left(\sqrt{x}\right)k\left(\sqrt{x}\right)$ et donc 
+
+\begin{align*}\ensuremath
+f(x)&=f(0)+\left(k\left(\sqrt{x}\right)^2 -k(0)^2\right)=k\left(\sqrt{x}\right)^2\\
+ &=\frac{1}{32}\left(\ln(X^2+X\sqrt{2}+1)-\ln(X^2-X\sqrt{2}+1))+2\left(\Arctan(X\sqrt{2}+1)+\Arctan(X\sqrt{2}-1)\right)\right)^2.
+\end{align*}
+
+Quand $x$ tend vers $1$, $f(x)$ tend vers 
+
+\begin{center}
+$\frac{1}{32}
+\left(\ln\left(\frac{2+\sqrt{2}}{2-\sqrt{2}}\right)+ 2 (\Arctan (\sqrt{2}+1)+\Arctan(\sqrt{2}-1))\right)^2=  \frac{1}{32}\left(\ln(3+2\sqrt{2}) +\pi\right)^2$.
+\end{center}
+
+(car $\Arctan (\sqrt{2}+1)+\Arctan(\sqrt{2}-1)=\Arctan (\sqrt{2}+1)+\Arctan\left(\frac{1}{\sqrt{2}+1}\right)=\frac{\pi}{2}$).
+
+Enfin, pour $x$ dans $[0,1]$ et $n$ dans $\Nn$, $|u_n|x^n - |u_{n+1}|x^{n+1}\geqslant(|u_n| - |u_{n+1}|)x^n\geqslant 0$ et la série numérique de terme général $u_nx^n$ est alternée. D'après une majoration classique du reste à l'ordre $n$ d'une telle série, pour tout entier naturel $n$ et tout réel $x$ de $[0,1]$,
+
+\begin{center}
+$|R_n(x)|=\left|\sum_{k=n+1}^{+\infty}u_kx^k\right|\leqslant\left|u_{n+1}x^{n+1}\right|\leqslant |u_{n+1}|$,
+\end{center}
+
+et donc $\underset{x\in[0,1]}{\text{Sup}}|R_n(x)|\leqslant|a_{n+1}|\underset{n\rightarrow+\infty}{\rightarrow}0$. La convergence est uniforme sur $[0,1]$ et on en déduit que la somme est continue sur $[0,1]$. En particulier 
+
+\begin{center}
+$\sum_{n=0}^{+\infty}u_n=f(1)=\displaystyle\lim_{\substack{x\rightarrow1\\ x<1}}f(x)=\frac{1}{32}\left(\ln(3+2\sqrt{2}) +\pi\right)^2$.
+\end{center}
+
+\begin{center}
+\shadowbox{
+$\sum_{n=0}^{+\infty}\left(\frac{(-1)^n}{2n+1}\sum_{k=0}^{n}\frac{1}{4k+1}\right)=\frac{1}{32}\left(\ln(3+2\sqrt{2}) +\pi\right)^2$.
+}
+\end{center}
+\fincorrection
+\finexercice

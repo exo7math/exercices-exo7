@@ -1,0 +1,32 @@
+\exercice{2831, burnol, 2009/12/15}
+\enonce
+  Soit $f$ une fonction entière vérifiant $\lim_{|z|\to\infty}
+|f(z)| = +\infty$. Donner plusieurs démonstrations que $f$
+est un polynôme:
+\begin{itemize}
+\item en montrant, par un théorème du cours, que $w=0$ est
+  une singularité polaire de $g(w) = f(\frac1w)$, et en en
+  déduisant qu'il existe un polynôme $P$ tel que $f(z) -
+  P(z)$ tende vers $0$ pour $|z|\to\infty$, puis Liouville,
+\item ou en montrant que $f$ n'a qu'un nombre fini de zéros
+  $z_j$, $1\leq j\leq n$, et en appliquant à $(z-z_1)\dots
+  (z- z_n)/f(z)$ le résultat de l'exercice précédent, plus
+  quelques réflexions de conclusion pour achever la preuve.
+\end{itemize}
+  Montrer que la fonction entière $z+e^z$ tend vers l'infini
+le long de tout rayon partant de l'origine. D'après
+ce qui précède $z+e^z$ est donc un
+polynôme. Commentaires?
+\finenonce
+\noindication
+\correction
+Soit $z=Re^{i\theta }$. Alors $|e^z| =e^{R\Re (e^{i\theta })} =e^{R\cos(\theta
+  )}$. Pour $f(z)= z+e^z$, on a,  pour $\theta $ tel que $\cos(\theta )\leq
+0$, $|f(z)|\geq R - e^{R\cos(\theta)}\geq R-1$. Si par contre $\cos(\theta )>
+0$ alors $|f(z)|\geq e^{R\cos\theta} - R$. Dans les deux cas
+$$|f(Re^{i\theta})| \to\infty \quad \text{pour}\;\; R \to \infty .$$
+Nos calculs n'impliquent pas  $\lim_{|z|\to \infty } |f(z)|
+=\infty$! Comme en fait $e^z$ n'est PAS un polynôme, on peut même affirmer que $\lim_{|z|\to \infty } |f(z)|
+=\infty$ est FAUX.  
+\fincorrection
+\finexercice

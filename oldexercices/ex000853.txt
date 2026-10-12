@@ -1,0 +1,56 @@
+\exercice{853, ridde, 1999/11/01}
+
+\enonce
+R\'esoudre le syst\`eme diff\'erentiel :
+$\begin{cases} \dot{x} (t) = x (t) + y (t) \\ \dot{y} (t) = 3x (t)-y (t) \end{cases}$
+et $ \begin{cases} x (0) = 2 \\ y (0) = -2 \end{cases}$.
+\finenonce
+
+\indication
+Chercher deux réels $a,b$ tels que, si on pose $u=x+ay$ et $v=x+by$, alors
+$\dot u(t)=A u(t)$ et $\dot v(t)=B v(t)$, où $A,B$ sont des constantes.
+\finindication
+
+
+\correction
+% Correction : Sylvie Ruette
+Si $z=x+\lambda y$, alors $\dot z=x(1+3\lambda)+y(1-\lambda)$.
+Pour que $\dot z$ soit proportionnel à $z$, il suffit que $\lambda(1+3\lambda)
+=1-\lambda$, autrement dit $3\lambda^2+2\lambda-1=0$. Il y a deux
+solutions : $a=-1$ et $b=1/3$. On pose $u=x-y$ et $v=x+\frac 13 y$.
+On a alors : $\dot u=-2u$ et $\dot v=2v$. On en déduit que les solutions
+$u$ et $v$ sont de la forme 
+$u(t)=C_1 e^{-2t}$ et $v(t)=C_2e^{2t}$, avec $C_1,C_2\in\mathbb{R}$.
+De plus,
+$$
+\left\{\begin{array}{rcl}
+u&=&x-y\\
+v&=&x+\frac 13 y
+\end{array}\right.
+\Longleftrightarrow
+\left\{\begin{array}{rcl}
+x&=&\frac 14(u+3v)\\
+y&=&\frac 34(v-u)
+\end{array}\right.
+$$
+Donc les solutions du système différentiel sont les couples de fonctions 
+$(x,y)$ de la forme 
+$$x(t)=D_1 e^{-2t}+3D_2e^{2t},\ y(t)=-3D_1 e^{-2t}+3D_2e^{2t},\ 
+D_1,D_2\in\mathbb{R}.$$
+
+On veut $x(0)=2$ et $y(0)=-2$. Ceci est équivalent à
+$$
+\left\{\begin{array}{rcrcr}
+D_1&+&3D_2&=&2\\
+-3D_1&+&3D_2&=&-2
+\end{array}\right.\Longleftrightarrow
+\left\{\begin{array}{rcr}
+D_1&=&1\\D_2&=&1/3
+\end{array}\right.
+$$
+Conclusion : il y a une unique solution, donnée par
+$$x(t)=e^{-2t}+e^{2t},\ y(t)=-3e^{-2t}+e^{2t}.$$
+
+\fincorrection
+
+\finexercice

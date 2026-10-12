@@ -1,0 +1,18 @@
+\exercice{2373, mayer, 2003/10/01}
+\enonce 
+Soit $E$ un espace compact et soit $(F,d)$ un espace m\'etrique. Soit
+$f:E\to F$ une application localement born\'ee, ce qui signifie que, pour tout $y\in E$,
+il existe un voisinage $V_y$ de $y$ sur lequel $f$ est born\'ee. Montrer que $f$ est born\'ee
+sur $E$.
+\finenonce
+
+\noindication
+
+\correction
+Comme $E$ est compact et $E \subset \bigcup_{y\in E} V_y$
+il existe un ensemble fini $\mathcal{Y} \subset E$ tel que 
+$E \subset \bigcup_{y\in \mathcal{Y}} V_y$. Sur chaque voisinage $V_y$, $f$ est bornée par une constante $M_y$. Notons $M= \max_{ y\in \mathcal{Y}} M_y$.
+Alors $f$ est bornée sur $E$ par $M$. En effet pour un élément quelconque $x\in E$, il existe $y\in \mathcal{Y}$ tel que $y \subset V_y$ donc 
+$f(x)$ est bornée par $M_y$ donc par $M$.
+\fincorrection
+\finexercice

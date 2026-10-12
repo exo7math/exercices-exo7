@@ -1,0 +1,34 @@
+\exercice{519, ridde, 1999/11/01}
+\video{d6n_rWtLv1Y}
+\enonce
+ Montrer qu'une suite d'entiers qui converge est
+constante \`a partir d'un certain rang.
+\finenonce 
+
+\indication
+\'Ecrire la convergence de la suite et fixer $\epsilon = \frac 12$.
+Une suite est \emph{stationnaire} si, à partir d'un certain rang, elle est constante.
+\finindication
+
+\correction
+Soit $(u_n)$ une suite d'entiers qui converge vers $\ell \in
+\Rr$.
+Dans l'intervalle $I = ] \ell - \frac12, \ell +\frac12[$ de
+longueur $1$, il existe au plus un \'el\'ement de $\Nn$. Donc $I \cap
+\Nn$ est soit vide soit un singleton $\{a \}$.
+
+La convergence de  $(u_n)$ s'\'ecrit :
+$$ \forall \epsilon > 0 \ \ \exists N \in \Nn \text{\  \ tel que\ \  }
+(n \geqslant N \Rightarrow |u_n-\ell| < \epsilon).$$ Fixons $\epsilon =
+\frac 12$, nous obtenons un $N$ correspondant. Et pour $n \geqslant N$,
+$u_n \in I$. Mais de plus $u_n$ est un entier, donc
+  $$ n \geqslant N \Rightarrow u_n \in I \cap \Nn.$$
+En cons\'equent, $I\cap \Nn$ n'est pas vide (par exemple $u_N$ en
+est un \'el\'ement) donc $I \cap \Nn = \{ a \}$. L'implication
+pr\'ec\'edente s'\'ecrit maintenant :
+$$ n \geqslant N \Rightarrow u_n = a.$$
+Donc la suite $(u_n)$ est stationnaire (au moins) \`a partir de
+$N$. En prime, elle est bien \'evidemment convergente vers $\ell = a
+\in \Nn$.
+\fincorrection
+\finexercice

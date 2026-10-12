@@ -1,0 +1,50 @@
+\exercice{4592, quercia, 2010/03/14}
+\enonce[Théorème de réalisation de Borel]
+
+Soit $(a_n)$ une suite complexe donnée, on construit dans cet exercice
+une fonction $f:\R \to \R$ de classe $\mathcal{C}^\infty$ telle que pour tout
+entier~$n$ on ait $f^{(n)}(0) = n!\,a_n$.
+
+Soit $\varphi : \R \to \R$ une fonction de classe $\mathcal{C}^\infty$
+vérifiant~: $\forall\ x\in{[-1,1]},\ \varphi(x)=1$ et
+$\forall\ x\notin{[-2,2]},\ \varphi(x)=0$
+(l'existence de $\varphi$ fait l'objet de la question {2.}).
+On pose $\varphi_n(x) = x^n\varphi(x)$,
+$M_n = \max(\|\varphi_n'\|_\infty,\dots,\|\varphi_n^{(n)}\|_\infty)$
+et $f(x) = \sum_{n=0}^\infty a_nx^n\varphi(\lambda_nx)$
+où $(\lambda_n)$ est une suite de réels strictement
+positifs, tendant vers $+\infty$ et telle que $\sum |a_n|M_n/\lambda_n$
+converge.
+
+\begin{enumerate}
+  \item Montrer que $f$ est bien définie, est
+    de classe $\mathcal{C}^\infty$ sur $\R$ et vérifie $f^{(n)}(0) = n!\,a_n$.
+  \item Construction de~$\varphi$~: à l'aide de fonctions
+    du type $x \mapsto\exp(-1/x)$ construire une fonction~$\psi$
+    de classe $\mathcal{C}^\infty$ sur~$[0,+\infty[$ nulle sur
+    $[0,1]\cup[2,+\infty[$ et strictement positive sur~$]1,2[$.
+
+    Vérifier alors que $\varphi(x) =  \int_{t=|x|}^{+\infty}\psi(t)\,d t\Bigm/ \int_{t=0}^{+\infty}\psi(t)\,d t$
+    convient.
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item     Pour $x\ne 0$ la série comporte un nombre fini de termes non nuls
+    au voisinage de~$x$, donc est $\mathcal{C}^\infty$ au voisinage de~$x$.
+    On a $|f^{(k)}(x)| = \Bigl|\sum_{n=0}^\infty a_n\lambda_n^{k-n}\varphi_n^{(k)}(\lambda_nx)\Bigr|
+                    \le\sum_{n=0}^\infty |a_n|\lambda_n^{k-n}M_n
+                    \le \text{cste}(k) + \sum_{n=k+1}^\infty|a_n|M_n/\lambda_n$
+    en supposant $\lambda_n\ge 1$ pour $n\ge k$, donc $f^{(k)}$ est bornée
+    sur~$\R$. Ceci implique que $f$ est $\mathcal{C}^\infty$ en $0$ et on a le
+    développemment limité~: $f(x) = \sum_{n=0}^k a_nx^n +  o(x^k)$ car
+    $\phi \equiv 1$ au voisinage de~$0$ donc $f^{(k)}(0) = k!\,a_k$.
+  \item $\psi(x) = \exp\Bigl(\frac1{(1-x)(x-2)}\Bigr)$ sur $]1,2[$, $\psi(x) = 0$ ailleurs.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

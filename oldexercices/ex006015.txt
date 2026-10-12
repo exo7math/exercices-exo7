@@ -1,0 +1,33 @@
+\exercice{6015, quinio, 2011/05/20}
+
+\enonce
+Des machines fabriquent des plaques de tôle destinées à être
+empilées. 
+\begin{enumerate}
+\item Soit $X$ la variable aléatoire <<épaisseur de la plaque en mm>> ; 
+on suppose que $X$ suit une loi normale de paramètres $m=0.3$ et $\sigma =0.1$. 
+Calculez la probabilité pour que $X$ soit inférieur à 0.36mm et la
+probabilité pour que $X$ soit compris entre 0.25 et 0.35mm.
+
+\item L'utilisation de ces plaques consiste à en empiler $n$, numérotées de $1$ à $n$ 
+en les prenant au hasard : soit $X_{i}$ la variable aléatoire <<épaisseur de la plaque numéro $i$ en mm>> 
+et $Z$ la variable aléatoire <<épaisseur des $n$ plaques en mm>>.
+Pour $n = 20$, quelle est la loi de $Z$, son espérance et sa variance?
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item La probabilité pour que $X$ soit inférieur à 0.36mm est :
+$P[X\leq 0.36]=P[\frac{X-0.3}{0.1}\leq 0.6]=0.726,$ soit $72.6$\%.
+
+ La probabilité pour que $X$ soit compris entre $0.25$ et $0.35\text{mm}$ est
+$P[0.25\leq X\leq 0.35]=2 F(0.5)-1= 0.383$, soit $38.3$\%.
+
+\item Pour $n = 20$, la loi de $Z=\sum X_{i}$ est une loi normale de paramètres: d'espérance $E(Z)=20 m = 6$
+et de variance $\text{Var}\,Z=20 \sigma^2 = 0.2$.
+\end{enumerate}
+\fincorrection
+\finexercice

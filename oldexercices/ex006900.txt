@@ -1,0 +1,42 @@
+\exercice{6900, ruette, 2013/01/24}
+\enonce
+Il y a $5\%$ de daltoniens chez les hommes et $0,25\%$
+chez les femmes. Il y a $48\%$ d'hommes et
+$52\%$ de femmes dans la population. Quelle est la probabilité pour
+qu'un daltonien soit un homme ?
+
+\medskip
+\textit{Remarque : la forme la plus courante du daltonisme est génétique, due
+à un gène récessif porté par le chromosome X. Un homme (XY) est daltonien
+dès que le chromosome X porte ce gène. Une femme (XX) n'est daltoniene
+que si les 2 chromosomes X portent ce gène. Ceci explique les taux
+très différents chez les hommes et les femmes.}
+\finenonce
+\noindication
+\correction
+La méthode la plus simple consiste à introduire la population
+totale $N$ et à compter les daltoniens. Soit $d_H=5\%$, $d_F=0,25\%$
+(taux de daltoniens chez les hommes et les femmes),
+$p_H=48\%$, $p_F=52\%$ (proportions d'hommes et de femmes dans la population).
+Le nombre d'hommes est $Np_H$, le nombre d'hommes daltoniens
+est $Np_Hd_H$. De même, le nombre de femmes daltoniennes est
+$Np_Fd_F$. La proportion de daltoniens hommes parmi les daltoniens est
+donc
+$$
+\frac{\mbox{nombre de daltoniens hommes}}{\mbox{nombre de daltoniens}}=
+\frac{N p_Hd_H}{Np_Hd_H+Np_Fd_F}=\frac{p_Hd_H}{p_Hd_H+p_Fd_F}\approx 0,95.
+$$
+La probabilité pour qu'un daltonien soit un homme est d'environ 95\%.
+
+\medskip
+Une formulation plus élaborée (mais strictement équivalente) 
+consiste à utiliser la formule de Bayes.
+Soit $H$ l'événement ``être un homme'' et $D$ l'événement ``être daltonien''.
+On veut calculer $P(H|D)$. Selon la formule de Bayes,
+$P(H|D)=\frac{P(D|H)P(H)}{P(D)}.$ En utilisant que
+$P(D)=P(D|H)P(H)+P(D|F)P(F)$ (formule des probabilités totales), on
+obtient
+$$P(H|D)=\frac{P(D|H)P(H)}{P(D|H)P(H)+P(D|F)P(F)}=\frac{p_Hd_H}{p_Hd_H+p_Fd_F}
+.$$
+\fincorrection
+\finexercice

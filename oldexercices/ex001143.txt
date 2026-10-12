@@ -1,0 +1,108 @@
+\exercice{1143, barraud, 2003/09/01}
+\video{64911kcKNmg}
+\enonce
+  Soit $(a_{0},...,a_{n-1})\in\C^{n}$, $x\in\C$. Calculer
+ $$
+ \Delta_{n}=
+ \left|
+   \begin{matrix}
+   x &  0    &        & a_{0}   \\
+    -1 &\ddots &\ddots  &\vdots  \\
+      &\ddots &x      & a_{n-2} \\
+    0 &       & -1      & x+a_{n-1}
+   \end{matrix}
+\right|
+ $$
+\finenonce
+
+\indication
+Développer par rapport à la dernière colonne.
+\finindication
+
+\correction
+
+
+Commençons par un travail préparatoire : le calcul du déterminant de taille $(n-1)\times (n-1)$ :
+{\footnotesize$$\Gamma_k = 
+\begin{array}{|cccc|cccc|} 
+x  &        &        &   &&&&\\
+-1 & x      &        &   &&&&\\
+   & \ddots & \ddots &   &&&&\\
+   &        & -1     & x &&&&\\ 
+   \hline
+&&&&  -1 & x      &       &   \\
+&&&&     &\ddots & \ddots      &   \\
+&&&&     & &\ddots & x  \\
+&&&&     &       &     & -1 \\
+\end{array}
+$$}
+où le bloc en haut à gauche est de taille $k\times k$.
+
+On développe, en commençant par la première ligne, puis encore une fois par la première ligne,...
+pour trouver que 
+$$\Gamma_k = x^k\times (-1)^{n-1-k}$$
+
+Autre méthode : on retrouve le même résultat en utilisant les déterminant par blocs :
+$$\begin{array}{|c|c|} 
+A & B \\
+\hline
+(0) & C \\ 
+\end{array}
+= \det A \times \det C$$
+
+\bigskip
+
+
+Revenons à l'exercice !
+
+Contrairement à l'habitude on développe par rapport à la colonne qui a le moins de $0$.
+En développant par rapport à la dernière colonne on obtient :
+{\footnotesize
+\begin{align*}
+ \Delta_{n}
+& =
+   \begin{vmatrix}
+   x &  0    &        & a_{0}   \\
+    -1 &\ddots &\ddots  &\vdots  \\
+      &\ddots &x      & a_{n-2} \\
+    0 &       & -1      & x+a_{n-1}
+   \end{vmatrix} \\
+ & = (-1)^{n-1} a_0 
+   \begin{vmatrix}
+   -1 &  x    &        &    \\
+     & -1 & x  &  \\
+      & & \ddots & \ddots       \\
+     &       &       & -1
+   \end{vmatrix}
++ (-1)^{n} a_1   
+\begin{vmatrix}
+   x & &&&\\
+   & -1 &  x    &        &    \\
+   &  & -1 & x  &  \\
+    &  & & \ddots & \ddots       \\
+    & &       &       & -1
+   \end{vmatrix} 
+\\
+& \quad + \cdots +
+(-1)^{2n-3} a_{n-2}   
+\begin{vmatrix}
+  x &      &    & &      \\
+    -1 &\ddots &  & & \\
+     &\ddots &\ddots & &  \\
+      && -1 & x    &   \\
+    &&&& -1 \\
+   \end{vmatrix}
++ (-1)^{2n-2}(x+a_{n-1})
+\begin{vmatrix}
+  x &      &    &       \\
+    -1 &\ddots &  &  \\
+     &\ddots &\ddots &   \\
+    &  & -1 & x       \\
+   \end{vmatrix} \\
+ & = \sum_{k=0}^{n-2} (-1)^{n-1+k} a_ k \times \Gamma_k \quad  + \quad (-1)^{2n-2}(x+a_{n-1})\Gamma_{n-1} \\
+ & = \sum_{k=0}^{n-2} (-1)^{n-1+k} a_ k \times x^k\times (-1)^{n-1-k} \quad + \quad (x+a_{n-1})x^{n-1}\\
+ & = a_0+a_1x+a_2x^2+\cdots + a_{n-1}x^{n-1} + x^n\\
+\end{align*}
+}
+\fincorrection
+\finexercice

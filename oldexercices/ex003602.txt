@@ -1,0 +1,25 @@
+\exercice{3602, quercia, 2010/03/10}
+\enonce[ $A^m\to 0$ lorsque $m\to\infty$ (Mines MP 2003)]
+\smallskip
+Soit $A=\begin{pmatrix}a^2&ab&ab&b^2\cr ab&a^2&b^2&ab\cr ab&b^2&a^2&ab\cr b^2&ab&ab&a^2\cr\end{pmatrix}$.
+Représenter dans un plan l'ensemble des couples~$(a,b)$ tels que $A^m \to 0$ lorsque $m\to\infty-$.
+
+\finenonce
+
+\noindication
+
+\correction
+%Diagonalisation par blocs.
+En prenant $P=\begin{pmatrix}I_2&I_2\cr-I_2&I_2\cr\end{pmatrix}$
+on trouve $P^{-1}MP = \begin{pmatrix}a^2-ab&ab-b^2&0&0\cr ab-b^2&a^2-ab&0&0\cr0&0&a^2+ab&b^2+ab\cr0&0&b^2+ab&a^2+ab\cr\end{pmatrix}
+= \begin{pmatrix}M_1&0\cr0&M_2\cr\end{pmatrix}$.
+
+En prenant $P_1=\begin{pmatrix}1&1\cr-1&1\cr\end{pmatrix}$ on a
+$P_1^{-1}M_1P_1 = \begin{pmatrix}(a-b)^2&0\cr0&a^2-b^2\cr\end{pmatrix}$ et 
+$P_1^{-1}M_2P_1 = \begin{pmatrix}a^2-b^2&0\cr0&(a+b)^2\cr\end{pmatrix}$.
+
+Ainsi, $\mathrm{Spec}{A} = \{(a+b)^2,(a-b)^2,(a+b)(a-b)\}$, donc l'ensemble cherché
+est la boule unité ouverte pour $\|\ \|_1$.
+\fincorrection
+
+\finexercice

@@ -1,0 +1,63 @@
+\exercice{5739, rouget, 2010/10/16}
+\enonce[**]
+Montrer que $\int_{0}^{1}x^{-x}\;dx =\sum_{n=1}^{+\infty}\frac{1}{n^n}$ et $\int_{0}^{1}x^{x}\;dx =\sum_{n=1}^{+\infty}\frac{(-1)^n}{n^n}$.
+\finenonce
+
+\noindication
+
+\correction
+Pour $x\in]0,1]$, $x^{-x}=e^{-x\ln(x)}$ et donc $\lim_{x \rightarrow 0^+}x^{-x}=1$. Donc si on pose $\forall x\in[0,1]$, $f(x)=\left\{
+\begin{array}{l}
+x^{-x}\;\text{si}\;x\in]0,1]\\
+1\;\text{si}\;x=0
+\end{array}
+\right.$, $f$ est une fonction continue sur le segment $[0,1]$ et donc intégrable sur le segment $[0,1]$.
+
+Pour $x\in]0,1]$, $x^{-x}=e^{-x\ln(x)}=\sum_{n=0}^{+\infty}\frac{(-x\ln(x))^n}{n!}$. Posons alors $\forall x\in[0,1]$, $f_0(x)=1$ puis $\forall n\in\Nn^*$,  $\forall x\in[0,1]$, $f_n(x)=\left\{
+\begin{array}{l}
+\frac{(-x\ln(x))^n}{n!}\;\text{si}\;x\in]0,1]\\
+\rule{0mm}{4mm}0\;\text{si}\;x=0
+\end{array}
+\right.$. La fonction $f_0$ est continue sur $[0,1]$ et pour $n\in\Nn^*$, puisque $-x\ln(x)\underset{x\rightarrow0^+}{\rightarrow}0$, la fonction $f_n$ est continue sur $[0,1]$. En résumé, chaque fonction $f_n$, $n\in\Nn$, est continue sur $[0,1]$. De plus,
+
+\begin{center}
+$\forall x\in[0,1]$, $f(x)=\sum_{n=0}^{+\infty}f_n(x)$.
+\end{center}
+
+Vérifions alors que la série de fonctions de terme général $f_n$ converge normalement et donc uniformément vers $f$ sur le segment $[0,1]$. Pour $x\in[0,1]$, posons $g(x)=\left\{
+\begin{array}{l}
+-x\ln x\;\text{si}\;x\in]0,1]\\
+0\;\text{si}\;x=0
+\end{array}
+\right.$. La fonction $g$ est continue sur le segment $[0,1]$ et admet donc un maximum $M$ sur ce segment. Pour $x\in[0,1]$, on a $0\leqslant g(x)\leqslant M$ (on peut montrer que $M=g\left(\frac{1}{e}\right)=\frac{1}{e}$). Mais alors $\forall n\in\Nn$, $\forall x\in]0,1]$, $|f_n(x)|=\frac{(g(x))^n}{n!}\leqslant\frac{M^n}{n!}$ ce qui reste vrai pour $x=0$. Comme la série numérique de terme général $\frac{M^n}{n!}$ converge, on a montré que la série de fonctions de terme général $f_n$ converge normalement et donc uniformément vers $f$ sur le segment $[0,1]$.
+
+D'après le théorème d'intégration terme à terme sur un segment, la série numérique de terme général $\int_{0}^{1}f_n(x)\;dx$, converge et
+
+\begin{center}
+$\int_{0}^{1}f(x)\;dx=\sum_{n=0}^{+\infty}\int_{0}^{1}f_n(x)\;dx$\quad$(*)$.
+\end{center}
+
+Pour $n\in\Nn$, posons $I_n=\int_{0}^{1}f_n(x)\;dx$. Soit $n\in\Nn$. En posant $u=-\ln(x)$ puis $v=(n+1)u$, on obtient
+
+\begin{align*}\ensuremath
+I_n&=\frac{1}{n!}\int_{0}^{1}(-x\ln x)^n\;dx=\frac{1}{n!}\int_{+\infty}^{0}(ue^{-u})^n\times(-e^{-u}\;du)=\frac{1}{n!}\int_{0}^{+\infty}u^ne^{-(n+1)u}\;du\\
+ &=\frac{1}{n!(n+1)^{n+1}}\int_{0}^{+\infty}v^ne^{-v}\;dv=\frac{\Gamma(n+1)}{n!(n+1)^{n+1}}=\frac{1}{(n+1)^{n+1}}.
+\end{align*}
+
+L'égalité $(*)$ s'écrit alors $\int_{0}^{1}x^{-x}\;dx=\sum_{n=0}^{+\infty}\frac{1}{(n+1)^{n+1}}=\sum_{n=1}^{+\infty}\frac{1}{n^n}$.
+
+\textbf{Remarque.} Pour calculer $I_n=\int_{0}^{1}\frac{(-x\ln x)^n}{n!}\;dx$, on peut aussi s'intéresser plus généralement à $J_{n,p}=\int_{0}^{1}\frac{x^n(-\ln x)^p}{n!}\;dx$ que l'on calcule par récurrence grâce à une intégration par parties.
+
+Le travail qui précède permet encore d'écrire
+
+\begin{center}
+$\int_{0}^{1}x^x\;dx=\sum_{n=0}^{+\infty}\int_{0}^{1}\frac{(x\ln x)^n}{n!}\;dx=\sum_{n=1}^{+\infty}\frac{(-1)^n}{n^n}$.
+\end{center}
+
+\begin{center}
+\shadowbox{
+$\int_{0}^{1}x^{-x}\;dx =\sum_{n=1}^{+\infty}\frac{1}{n^n}$ et $\int_{0}^{1}x^{x}\;dx =\sum_{n=1}^{+\infty}\frac{(-1)^n}{n^n}$.
+}
+\end{center}
+\fincorrection
+\finexercice

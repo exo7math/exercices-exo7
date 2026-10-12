@@ -1,0 +1,29 @@
+\exercice{5213, rouget, 2010/06/30}
+\enonce[***IT]
+Soient $A$ et $B$ deux parties non vides et majorées de $\Rr$. Que dire de $\mbox{sup}(A\cap B)$, $\mbox{sup}(A\cup B)$, $\mbox{sup}(A+B)$ et $\mbox{sup}(AB)$~?~($A+B$ (resp. $AB$) désigne l'ensemble des sommes (resp. des produits) d'un élément de $A$ et d'un élément de $B$).
+\finenonce
+
+\noindication
+
+\correction
+
+\begin{enumerate}
+ \item  $A\cap B$ peut être vide et on n'a rien à dire. Supposons donc $A\cap B$ non vide.
+Pour $x\in A\cap B$, on a $x\leq\mbox{sup }A$ et $x\leq\mbox{sup }B$ et donc $x\leq\mbox{min}\{\mbox{sup }A,\mbox{sup }B\}$.
+Dans ce cas, $\mbox{sup}(A\cap B)$ existe et $\mbox{sup}(A\cap B)\leq\mbox{min}\{\mbox{sup }A,\mbox{sup }B\}$.
+On ne peut pas améliorer. Par exemple, soit $A=[0,1]\cap\Qq$ et $B=([0,1]\cap(\Rr\setminus\Qq))\cup\{0\}$. On a $\mbox{sup }A=1$, $\mbox{sup }B=1$, $A\cap B=\{0\}$ et donc $\mbox{sup}(A\cap B)=0<1=\mbox{min}\{\mbox{sup }A,\mbox{sup }B\}$.
+ \item  Pour $x\in A\cup B$, on a $x\leq\mbox{max}\{\mbox{sup }A,\mbox{sup }B\}$. Donc $\mbox{sup}(A\cup B)$ existe dans $\Rr$ et $\mbox{sup}(A\cup B)\leq\mbox{max}\{\mbox{sup }A,\mbox{sup }B\}$.
+Inversement, supposons par exemple $\mbox{sup }A\geq\mbox{sup }B$ de sorte que $\mbox{max}\{\mbox{sup }A,\mbox{sup }B\}=\mbox{sup }A$.
+Soit alors $\varepsilon>0$. Il existe $a\in A$ tel que $\mbox{sup }A-\varepsilon<a\leq\mbox{sup }A$. $a$ est dans $A$ et donc dans $A\cup B$.
+En résumé, $\forall x\in(A\cup B),\;x\leq\mbox{max}\{\mbox{sup }A,\mbox{sup }B\}$ et $\forall\varepsilon>0,\;\exists x\in(A\cup B)/\;\mbox{max}\{\mbox{sup }A,\mbox{sup }B\}-\varepsilon<x$ et donc
+
+\begin{center}
+\shadowbox{
+$\mbox{sup}(A\cup B)=\mbox{max}\{\mbox{sup }A,\mbox{sup }B\}$.
+}
+\end{center}
+ \item  D'après l'exercice \ref{exo:suprou2bis}, $\mbox{sup}(A+B)=\mbox{sup }A+\mbox{sup }B$.
+ \item  Pour $\mbox{sup}(AB)$, tout est possible. Par exemple, si $A=B=]-\infty,0]$ alors $\mbox{sup }A=\mbox{sup }B=0$, mais $AB=[0,+\infty[$ et $\mbox{sup}(AB)$ n'existe pas dans $\Rr$.
+\end{enumerate}
+\fincorrection
+\finexercice

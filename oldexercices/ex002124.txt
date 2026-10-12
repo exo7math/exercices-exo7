@@ -1,0 +1,21 @@
+\exercice{2124, debes, 2008/02/12}
+\enonce
+\label{ex:deb24}
+Soit $G$ un groupe ab\'elien et $a$ et $b$ deux \'el\'ements d'ordres finis.
+Montrer que $ab$ est d'ordre fini et que l'ordre de $ab$ divise le ppcm des ordres de $a$
+et $b$. Montrer que si les ordres de $a$ et $b$ sont premiers entre eux, l'ordre de $ab$
+est \'egal au ppcm des ordres de $a$ et de $b$.
+\finenonce 
+
+\noindication
+\correction
+Soient $a,b\in G$ d'ordre respectifs $m$ et $n$. Posons $\mu = \mathrm{ppcm}(m,n)$. 
+On a $(ab)^\mu=a^\mu \cdot b^\mu = e\cdot e = e$ ($a^\mu = b^\mu = e$ r\'esultant du fait
+que $m$ et $n$ divisent $\mu$). L'ordre de $ab$ divise donc $\mu$.\smallskip
+
+Supposons que $\mathrm{pgcd}(m,n)=1$. Soit $k\in \Z$ tel que $(ab)^k=1$, soit $a^k=b^{-k}$. On en
+d\'eduit que $a^{nk} = e$ et $b^{mk}=e$. D'o\`u $m|nk$ et $n|mk$. L'hypoth\`ese 
+$\mathrm{pgcd}(m,n)=1$ donne alors $m|k$ et $n|k$ et donc $\mathrm{ppcm}(m,n)|k$. Cela combin\'e \`a la
+premi\`ere partie montre que $ab$ est d'ordre $\mathrm{ppcm}(m,n)=mn$.
+\fincorrection
+\finexercice

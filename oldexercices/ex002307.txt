@@ -1,0 +1,23 @@
+\exercice{2307, barraud, 2008/04/24}
+\enonce
+ Trouver les facteurs multiples des polyn\^omes suivants :
+\begin{enumerate}
+  \item $x^6-15x^4+8x^3+51x^2-72x+27$;
+  \item $x^6-2x^5-x^4-2x^3+5x^2+4x+4$.
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+Pour obtenir les facteurs multiples, on utilise la remarque suivante~:
+$g$ est un facteur multiple de $f$ ssi $g$ est un facteur commun à $f$ et
+à $f'$ (dérivé formel de $f$).
+
+Ainsi $\pgcd(f,f')$ est le produit de tous les facteurs multiples de $f$,
+avec exposant diminué de $1$ par rapport à $f$. Ainsi $f/\pgcd(f,f')$ est
+le produit de tous les facteurs irréductibles de $f$, avec exposant $1$
+pour tous. Finalement, $\pgcd(\pgcd(f,f'),f/\pgcd(f,f'))$ est le produit
+de tous les facteurs multiples de $f$ avec exposant $1$.
+\fincorrection
+\finexercice

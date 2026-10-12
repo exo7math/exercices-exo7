@@ -1,0 +1,23 @@
+\exercice{5580, rouget, 2010/10/16}
+\enonce[**]
+Soient $E$ et $F$ deux espaces vectoriels de dimension finie et soient $f$ et $g$ deux applications linéaires de $E$ dans $F$. Montrer que $|\text{rg}f-\text{rg}g|\leqslant\text{rg}(f+g)\leqslant\text{rg}f+\text{rg}g$.
+\finenonce
+
+\noindication
+
+\correction
+$\text{Im}(f+g)=\{f(x)+g(x),\;x\in E\}\subset\{f(x)+g(x'),\;(x,x')\in E^2\}=\text{Im}f+\text{Im}g$. Donc 
+
+\begin{center}
+$\text{rg}(f+g)\leqslant\text{dim}(\text{Im}f+\text{Im}g)\leqslant\text{rg}f+\text{rg}g$
+\end{center}
+
+puis $\text{rg}f=\text{rg}((f+g)+(-g))\leqslant\text{rg}(f+g)+\text{rg}(-g)=\text{rg}(f+g)+\text{rg}g$ (car $\text{Im}(-g)=\{-g(x),\;x\in E\}=\{g(-x),\;x\in E\}=\{g(x'),\;x'\in E\}=\text{Im}g$) et donc $\text{rg}(f+g)\geqslant\text{rg}f-\text{rg}g$. De même , en échangeant les rôles de $f$ et $g$, $\text{rg}(f+g)\geqslant\text{rg}g-\text{rg}f$ et finalement $\text{rg}(f+g)\geqslant|\text{rg}f -\text{rg}g|$.
+
+\begin{center}
+\shadowbox{
+$\forall(f,g)\in\mathcal{L}(E,F)^2,\;|\text{rg}f -\text{rg}g|\leqslant\text{rg}(f+g)\leqslant\text{rg}f+\text{rg}g$.
+}
+\end{center}
+\fincorrection
+\finexercice

@@ -1,0 +1,98 @@
+\exercice{7412, mourougane, 2021/08/10}
+\enonce
+Soit $\R[X]$ l'ensemble de polynômes dans $\R$ et soit $\R_{n}[X]$ l'ensemble des polynômes de degré au plus $n$.
+
+On considère l'application $\Phi:\R_{2}[X]\longrightarrow\R[X]$ définie par :
+\begin{equation*}
+\Phi(P)(X):=(2X+1)P(X)-(X^2-1)P'(X).
+\end{equation*}
+\begin{enumerate}
+	\item Montrer que l'application $\Phi$ est un endomorphisme.
+
+	\item Montrer que la matrice $A$ de l'application $\Phi$ dans la base $(1,X,X^2)$ s'écrit :
+\begin{equation*}
+A=\begin{pmatrix}
+1&1&0\\
+2&1&2\\
+0&1&1
+\end{pmatrix}.
+\end{equation*}
+
+	\item Déterminer le rang de $\Phi$.
+
+	\item En déduire que $\Phi$ est une application inversible.
+
+	\item Déterminer une base du noyau de l'application $\Phi-Id$, où $Id$ désigne l'application identité.
+
+	\item Montrer que la dimension de l'image de $\Phi-Id$ est de dimension $2$. Déterminer une base de l'image.
+
+	\item Déterminer l'ensemble des polynômes de $\R[X]$ vérifiant l'identité : $2X\,P=(X^2-1)\,P'$.
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+	\item Soit $\lambda,\,\mu\in\R$ et $P,\, Q\in \R[X]$. Comme la dérivation est une application linéaire on a bien :
+\begin{equation*}
+\Phi(\lambda\,P+\mu\,Q)=\lambda\Phi(P)+\mu\Phi(Q).
+\end{equation*}
+$\Phi$ est une application linéaire. Examinons l'image des vecteurs de base $(1,X,X^2)$ par $\Phi$ :
+\begin{equation*}
+\Phi(1)(X)=2X+1,\qquad \Phi(X)(X)=X^2+X+1,\qquad \Phi(X^2)(X)=X^2+2X.
+\end{equation*}
+donc $\Phi(X^{j})\in\R_{2}[X]$ pour $j\in\{0,1,2\}$. C'est bien un endomorphisme.
+
+	\item En appliquant la question précédente, on a bien :
+\begin{equation*}
+[\Phi]_{\mathcal{B}}^{\mathcal{B}}=\left[[\Phi(1)]_{\mathcal{B}}\,|\,[\Phi(X)]_{\mathcal{B}}\,|\,[\Phi(X^2)]_{\mathcal{B}}\right]=A
+\end{equation*}
+
+	\item $rg(A)=rg(\Phi)$. On applique une méthode de Gauss à la matrice $A$:
+\begin{equation*}
+rg(A)=rg\begin{pmatrix}
+1&1&0\\
+2&1&2\\
+0&1&1
+\end{pmatrix}=rg\begin{pmatrix}
+1&1&0\\
+0&-1&2\\
+0&1&1
+\end{pmatrix}=rg\begin{pmatrix}
+1&1&0\\
+0&-1&2\\
+0&0&3
+\end{pmatrix}=3
+\end{equation*}
+
+	\item Comme $rg\,A=3=dim\R_{2}[X]$, l'application $\Phi$ est surjective. La matrice $A$ est carrée donc en appliquant le théorème du rang, elle est aussi injective donc bijective.
+
+	\item Le noyau est donnée par :
+
+\begin{align*}
+Ker\, (A-I_{3})&=\left\{(x,y,z)\in\R^3,\ \text{tels que}\, (A-I_{3})^t(x,y,z)=0\right\}.
+\end{align*}
+\begin{equation*}
+(A-I_{3})^t(x,y,z)=0\Leftrightarrow y=0,\quad 2x=-2z.
+\end{equation*}
+Ainsi $Ker\, (A-I_{3})=\left\{(x,0,-x),\, x\in\R\right\}=vect\left((1,0,-1)\right)$. $(-1,0,1)$ est une base de $Ker\, (A-I_{3})$. Une base de $Ker\,(\Phi-I_{d})$ est donc : $X^2-1$.
+
+	\item Par le théorème du rang : $dim\ Im(\Phi-Id)=dim \R_{2}[X]-dim\ Ker\,(\Phi-Id)=3-1=2$. Il reste à déterminer une base de l'image. 
+\begin{align*}
+Im(A-I_{3})&=\left\{(A-I_{3})^t(x,y,z),\quad (x,y,z)\in\R^3\right\}=\left\{(y,2(x+z),y),\quad (x,y,z)\in\R^3\right\}\\
+&=\left\{(y,x,y),\quad (x,y)\in\R^2\right\}=\left\{y(1,0,1)+x(0,1,0),\quad (x,y)\in\R^2\right\}\\
+&=vect\left((1,0,1),\, (0,1,0)\right).
+\end{align*}
+La famille $((1,0,1),\, (0,1,0))$ est une famille génératrice de l'image qui est de dimension $2$. C'est donc une base. On en déduit qu'une base de $Ker\,(\Phi-Id)$ est $((X^2+1),X)$.
+
+	\item On a l'égalité ensembliste :
+\begin{align*}
+\left\{P\in\R_{2}[X],\, \text{tels que}\ 2X\,P=(X^2-1)\,P'\right\}&=\left\{P\in\R_{2}[X],\ \text{tels que}\, (\Phi-Id)P=0\right\}\\
+&=Ker\,(\Phi-Id).
+\end{align*}
+Or une base de $Ker\, (\Phi-Id)$ est $X^2-1$. Ainsi on obtient :
+\begin{equation*}
+\left\{P\in\R_{2}[X],\, \text{tels que}\ 2X\,P=(X^2-1)\,P'\right\}=\R(X^2-1).
+\end{equation*}
+\end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,20 @@
+\exercice{2213, matos, 2008/04/23}
+\enonce
+Montrer que si $\rho (A) <1$ alors
+\begin{itemize}
+\item $I-A$ est r\'eguli\`ere;
+\item $(I-A)^{-1}=\lim_{k \rightarrow \infty} C_k$ avec $C_k=I+A+\cdots +A^k$.
+\end{itemize}
+\finenonce 
+
+\noindication
+
+\correction
+$\rho (A)<1 \Rightarrow 1$ n'est pas valeur propre de $A \Rightarrow 0$ n'est pas valeur propre de $I-A\Rightarrow I-A$ inversible
+$$(I-A)C_k= (I-A)(I+A+\cdots +A^k)=I-A^{k+1}$$
+$C_k=(I-A)^{-1} (I-A^{k+1}) \Rightarrow (I-A)^{-1} -C_k =(I-A)^{-1} A^{k+1}$ et conc
+$$\|(I-A)^{-1} -C_k\|\leq \|(I-A)^{-1}\|\|A^{k+1}\|\leq \|(I-A)^{-1}\|\|A\|^{k+1}$$
+Comme $\|A\|<1$ pour au moins une norme subordonn\'ee on obtient finalement
+$$\lim_{k\rightarrow \infty}\|(I-A)^{-1}-C_k\|=0$$
+\fincorrection
+\finexercice

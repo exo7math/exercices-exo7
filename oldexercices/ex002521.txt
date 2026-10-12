@@ -1,0 +1,42 @@
+\exercice{2521, queffelec, 2009/04/01}
+\enonce
+On consid\`ere
+l'application $F:{\Rr^2}\to{\Rr^2}$ d\'efinie par $F(x,y)=(\cos
+x-\sin y,\ \sin x-\cos y)$; on note $F^{(k)}$ l'application $F$
+compos\'ee $k$-fois
+\begin{enumerate}
+\item Montrer que $||DF(x,y)||\leq \sqrt2$ pour tout $(x,y)$.
+
+\item En d\'eduire que la suite r\'ecurrente d\'efinie par
+$x_0,y_0$ et pour $n\geq 1$
+$$x_{n+1}=
+{\frac 1 2}(\cos x_n-\sin y_n),\quad y_{n+1}= {\frac 1 2}(\sin
+x_n-\cos y_n)$$ converge pour tout $(x_0,y_0)$. Donnez
+l'\'equation que v\'erifie sa limite ?
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item On a
+$$Df(x,y)=\left(\begin{array}{cc}
+-\sin x & - \cos y \\ \cos x & \sin y
+\end{array}\right)$$
+
+On a
+$$|||Df(x,y)|||=\sup_{(a,b) \in \mathbb{R}^2\backslash
+\{(0,0)\}}\frac{ ||Df(x,y).(a,b)||}{||(a,b)||}=$$
+$$\frac{\sqrt{a^2 \sin^2 x + b^2 \cos^2 y +2ab \sin x \cos x + a^2 \cos^2 x + b^2 \sin^2 y + 2ab \cos x \sin y}}{\sqrt{a^2+b^2}}=$$
+$$\frac{\sqrt{a^2+b^2+2ab \sin(x+y)}}{\sqrt{a^2+b^2}} \leq \sqrt{1+\frac{2|a||b|}{a^2+b^2}} \leq \sqrt 2$$
+car $$(|a|-|b|)^2 \geq0\Rightarrow a^2+b^2 \geq 2 |a||b|.$$
+\item Soient $U_n=(x_n,y_n)$ et $G(x,y)=1/2F(x,y)$, alors $|||G|||
+\leq \frac{\sqrt 2}{2}$ et $U_{n+1}=G(U_n)$. D'apr\`es les
+accroissements finis, $G$ est contractante et donc le th\'eor\`eme
+du point fixe donne le r\'esultat demand\'e.
+
+\end{enumerate}
+
+\fincorrection
+\finexercice

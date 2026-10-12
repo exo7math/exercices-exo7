@@ -1,0 +1,44 @@
+\exercice{3663, quercia, 2010/03/11}
+\enonce[Inversion]
+
+Soit $E$ un espace vectoriel euclidien. On pose pour $\vec x \ne \vec 0$ :
+$i(\vec x) = \frac{\vec x}{\|\vec x\,\|^2}$.
+
+\begin{enumerate}
+  \item Montrer que $i$ est une involution et conserve les angles de vecteurs.
+  \item Vérifier que : $\forall\ \vec x,\vec y \in E \setminus\{\vec 0\}$,
+    $\|i(\vec x) - i(\vec y)\| = \frac{\|\vec x - \vec y\,\|}{\|\vec x\,\|\,\|\vec y\,\|}$.
+    
+  \item Déterminer l'image par $i$ :
+  \begin{enumerate}
+    \item d'un hyperplan affine ne passant pas par $\vec 0$.
+        
+    \item d'une sphère passant par $\vec 0$.
+        
+    \item d'une sphère ne passant pas par $\vec 0$.
+        
+    \end{enumerate}
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item 
+  \item \'Elever au carré.
+  \item   
+  \begin{enumerate}
+    \item $(\vec x\mid \vec u) = 1
+                  \Leftrightarrow (i(\vec x) \mid \vec u-i(\vec x)) = 0$ :
+                  sphère passant par $\vec 0$.
+    \item Hyperplan ne passant pas par $\vec 0$.
+    \item $\|\vec x-\vec a\,\|^2 = R^2 \Leftrightarrow
+                  \left\|\vec x -\frac{\vec a}{\|\vec a\,\|^2-R^2}\right\|^2 =
+                  \frac{R^2}{(\|\vec a\,\|^2-R^2)^2}$ :
+                  sphère ne passant pas par $\vec 0$.
+  \end{enumerate}    
+\end{enumerate}
+ \fincorrection
+
+\finexercice

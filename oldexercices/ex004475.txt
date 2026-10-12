@@ -1,0 +1,32 @@
+\exercice{4475, quercia, 2010/03/14}
+\enonce[$u_n/R_n^p$]
+
+Soit $(a_n)$ une série positive convergente, $A = \sum_{k=0}^\infty a_k$,
+$R_n = \sum_{k=n}^\infty a_k$ et $p\in{]0,1[}$.
+
+\begin{enumerate}
+  \item Montrer qu'il existe $C_p \in \R$ tel que
+    $\sum_{n=0}^\infty \frac {a_n}{R_n^p} \le C_p A^{1-p}$.
+    
+  \item Trouver la meilleure constante $C_p$.
+    
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item TAF : $\exists\ x_n \in {[R_{n+1},R_n]} \text{ tel que }
+             R_n^{1-p} - R_{n+1}^{1-p} = (1-p) \frac {R_n-R_{n+1}}{x_n^p}
+             \ge (1-p) \frac {a_n}{R_n^p}$.
+             Donc, $\sum_{n=0}^{\infty} \frac {a_n}{R_n^p} \le
+             \frac {A^{1-p}}{1-p}$.
+  \item C'est $\frac 1{1-p}$ : Pour $a_n = k^n$,
+             $A^{p-1}\sum_{n=0}^{\infty} \frac {a_n}{R_n^p}
+             = \frac {1-k}{1-k^{1-p}} \to \frac 1{1-p}$ lorsque $k\to1^-$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

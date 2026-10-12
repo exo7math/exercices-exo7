@@ -1,0 +1,48 @@
+\exercice{2857, burnol, 2009/12/15}
+\enonce 
+Soit $f$ une fonction holomorphe sur
+$\overline\Omega\setminus\{z_1, \dots, z_N\}$, avec $\Omega$
+le domaine intérieur à une courbe de Jordan $\gamma$. Soit
+$g_n(z)$ la partie principale (partie singulière) de $f$ en
+la singularité isolée $z_n$. Prouver \emph{la formule
+intégrale générale de Cauchy}:
+\[\forall z\in
+\Omega\setminus\{z_1,\dots,z_N\}\qquad f(z) = \sum_{1\leq
+n\leq N} g_n(z) + \frac1{2\pi i
+}\int_{\partial\Omega}\frac{f(w)}{w-z}dw\]
+Pour cela, remarquer d'abord $\mathrm{Res}(\frac{f(w)}{w-z},z_n)=
+ \mathrm{Res}(\frac{g_n(w)}{w-z},z_n)$; puis montrer que le résidu à
+ l'infini de la fonction $\frac{g_n(w)}{w-z}$  de $w \in
+ \Cc\setminus\{z_n\}$, 
+ est nul. On pourra utiliser l'exercice \ref{exo:residuinfini}.
+\finenonce
+\noindication
+\correction
+Rappelons la formule de Cauchy pour $f$ holomorphe sur $\overline{\Omega}$
+(donc sans singularit\'es):
+$$f(z)=\frac{1}{2i\pi}\int _{\partial \Omega} \frac{f(w)}{w-z}dw.$$
+Il s'agit ici d'obtenir une version g\'en\'eralis\'ee pour des fonctions $f$ ayant des singularit\'es
+$z_1,...,z_N\in \Omega$. Fixons $z\in \Omega \setminus \{z_1,...,z_N\}$ et consid\'erons $G(w)=\frac{f(w)}{w-z}$.
+Cette fonction a un p\^ole simple en $w=z$ et :
+$$\mathrm{Res} (G,z)=\lim_{w\to z} (w-z)G(w)=f(z).$$
+Les autres singularit\'es de $G$ dans $\Omega$ sont $z_1,...,z_N$.
+Par d\'efinition, le r\'esidu de $G$ en $z_j$ est le \og coefficient
+$a_{-1}$\fg{} de la s\'erie de Laurent de $G$ en $z_j$. Or
+$$G(w)= \frac{1}{w-z} f(w) = \sum _{k\geq 0} b_k (w-z_j)^k \sum _{l\in \Z} c_l (w-z_j)^l$$
+puisque $w\mapsto \frac{1}{w-z}$ est holomorphe au voisinage de $z_j$ (et bien s\^ur on peut calculer les $b_k$,
+mais ce n'est pas utile). On remarque que pour calculer $a_{-1}$ interviennent seulement les indices $(k,l)$
+qui v\'erifient $k+l=-1$. Comme $k\geq 0$ on a $l=-1-k<0$. D'o\`u :
+$$\mathrm{Res} (G,z_j)= \mathrm{Res} \left(\frac{g_j(w)}{w-z},z_j\right).$$
+On peut maintenant utiliser l'exercice \ref{exo:residuinfini} ou alors conclure directement: si $R_0=2\max \{|z| , |z_j|\}$,
+alors pour tout $R>R_0$,
+$$\frac{1}{2i\pi}\int_{|w|=R}\frac{g_j(w)}{w-z}dw = \sum_{\xi \in \{z,z_j \}} \mathrm{Res} \left(\frac{g_j(w)}{w-z},\xi \right).$$
+Par cons\'equent, l'int\'egrale $\int_{|w|=R}\frac{g_j(w)}{w-z}dw$ ne d\'epend pas de $R> R_0$. Or, il existe $C>0$ tel que
+$$\left|\frac{g_j(w)}{w-z} \right| \leq \frac{C}{|w|^2} \quad , \quad |w| > R_0 \,,$$
+ce qui entra\^ine
+$$\left|\int_{|w|=R_0}\frac{g_j(w)}{w-z}dw \right|\leq \lim_{|w|=R} \int_{|w|=R_0}\frac{C}{|w|^2} |dw| =0.$$
+D'o\`u
+$$0= \frac{1}{2i\pi} \int_{|w|=R_0}\frac{g_j(w)}{w-z}dw = \mathrm{Res} \left(\frac{g_j(w)}{w-z},z_j\right)+g_j(z).$$
+Il suffit alors d'appliquer le th\'eor\`eme des r\'esidus \`a $G$ pour conclure:
+$$\frac{1}{2i\pi} \int_{\partial \Omega } G(w) \, dw = f(z) -g_1(z) -...-g_N(z).$$
+\fincorrection
+\finexercice

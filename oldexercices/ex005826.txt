@@ -1,0 +1,58 @@
+\exercice{5826, rouget, 2010/10/16}
+\enonce[**]
+Déterminer la quadrique contenant le point $A(2,3,2)$ et les deux paraboles $(\mathcal{P})$ d'équations $\left\{
+\begin{array}{l}
+z=0\\
+y^2=2x
+\end{array}
+\right.$ et $(\mathcal{P}')$ d'équations  $\left\{
+\begin{array}{l}
+x=0\\
+y^2=2z
+\end{array}
+\right.$.
+\finenonce
+
+\noindication
+
+\correction
+On cherche $(a,b,c,d,e,f,g,h,i,j)\neq (0,...,0)$ tel que la surface $(\mathcal{S})$ d'équation $ax^2+by^2+cz^2+2dxy+2eyz+2fzx+2gx+2hy+2iz+j = 0$ contienne la parabole $(\mathcal{P})$ de représentation paramétrique $\left\{
+\begin{array}{l}
+x=\frac{t^2}{2}\\
+y=t\\
+z=0
+\end{array}
+\right.$, $t\in\Rr$, la parabole $(\mathcal{P}')$ de représentation paramétrique $\left\{
+\begin{array}{l}
+x=0\\
+y=t\\
+z=\frac{t^2}{2}
+\end{array}
+\right.$, $t\in\Rr$, et le point $A(2,3,2)$.
+
+\begin{align*}
+(\mathcal{P})\subset(\mathcal{S})&\Leftrightarrow \forall t\in\Rr,\;\frac{a}{4}t^4+bt^2+dt^3+gt^2+2ht+j=0\Leftrightarrow \forall t\in\Rr,\;\frac{a}{4}t^4+dt^3+(b+g)t^2+2ht+j=0\\
+ &\Leftrightarrow a=d=h=j=0\;\text{et}\;g = -b.
+\end{align*}
+
+Donc $(\mathcal{P})$ est contenue dans $(\mathcal{S})$ si et seulement si $(\mathcal{S})$ a une équation de la forme $by^2+cz^2+2eyz+2fzx-2bx+2iz = 0$ avec $(b,c,e,f,i)\neq(0,0,0,0,0)$. 
+
+\begin{align*}
+(\mathcal{P'})\subset(\mathcal{S})&\Leftrightarrow \forall t\in\Rr,\;bt^2+\frac{c}{4}t^4+et^3+it^2=0\Leftrightarrow \forall t\in\Rr,\;\frac{c}{4}t^4+et^3+(b+i)t^2=0\\
+ &\Leftrightarrow c=e=0\;\text{et}\;i=-b.
+\end{align*}
+
+Donc $(\mathcal{P})$ et $(\mathcal{P}')$ sont contenues dans $(\mathcal{S})$ si et seulement si $(\mathcal{S})$ a une équation de la forme $by^2+2fzx-2bx-2bz = 0$ avec $(b,f)\neq(0,0)$. 
+
+Enfin, $A\in(\mathcal{S})\Leftrightarrow 9b+8f-4b-4b = 0\Leftrightarrow b = -8f$ et $f\neq0$. On trouve donc une et une seule quadrique à savoir la surface $(\mathcal{S})$ d'équation $-4y2+zx+8x+8z=0$.
+
+En posant $X=\frac{1}{\sqrt{2}}(x+z)$, $Y=y$ et $Z=\frac{1}{\sqrt{2}}(x-z)$, on obtient
+
+\begin{align*}\ensuremath
+-4y2+zx+8x+8z&=-4Y^2+\frac{1}{2}(X+Z)(X-Z)+8\sqrt{2}X\\
+ &=\frac{1}{2}\left(X+8\sqrt{2}\right)^2-4Y^2+\frac{1}{2}Z^2 - 64.
+\end{align*}
+
+Dans le nouveau repère ainsi défini, une équation cartésienne de la surface $(\mathcal{S})$ est $\frac{1}{128}\left(X+8\sqrt{2}\right)^2-\frac{1}{16}Y^2+\frac{1}{128}Z^2=1$ et $(\mathcal{S})$ est  un hyperboloïde à deux nappes.
+\fincorrection
+\finexercice

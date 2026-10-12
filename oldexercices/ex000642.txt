@@ -1,0 +1,36 @@
+\exercice{642, bodin, 1998/09/01}
+\video{Uh9semrdJvk}
+\enonce
+ Soit $f:[a,b]\longrightarrow\R$ une fonction continue telle que
+$f(a)=f(b)$. Montrer que la fonction $g(t)=f(t+\frac{b-a}{2})-f(t)$ s'annule en au moins un point
+de $[a,\frac{a+b}{2}]$.
+
+\emph{Application :} une personne parcourt 4 km en 1 heure.
+Montrer qu'il existe un intervalle de 30 mn pendant lequel elle parcourt exactement 2 km.
+
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $g(a) = f(\frac{a+b}{2})-f(a)$ et
+$g(\frac{a+b}{2}) = f(b) - f(\frac{a+b}{2})$.
+Comme $f(a) = f(b)$ alors nous obtenons que $g(a) = -g(\frac{a+b}{2})$.
+Donc ou bien $g(a) \leq 0$ et $g(\frac{a+b}{2}) \geq 0$
+ou bien $g(a) \geq 0$ et $g(\frac{a+b}{2}) \leq 0$.
+D'après le théorème des valeurs intermédiaires, $g$
+s'annule en $c$ pour un $c$ entre $a$ et $\frac{a+b}{2}$.
+  \item Notons $t$ le temps (en heure) et $d(t)$ la distance parcourue (en km) entre les instants $0$ et $t$.
+Nous supposons que la fonction $t \mapsto d(t)$ est continue.
+Soit $f(t) = d(t) - 4t$. Alors $f(0) = 0$ et par hypothèse $f(1) = 0$.
+Appliquons la question précédente avec $a=0$, $b=1$. 
+Il existe $c\in [0,\frac 12]$ tel que $g(c) = 0$, c'est-à-dire
+$f(c+\frac12)= f(c)$. Donc $d(c+\frac 12)-d(c) = 4(c+\frac12)-4c = 2$.
+Donc entre $c$ et $c+\frac 12$, (soit 1/2 heure), la personne parcourt
+exactement $2$ km.
+\end{enumerate}
+\fincorrection
+
+\finexercice
+

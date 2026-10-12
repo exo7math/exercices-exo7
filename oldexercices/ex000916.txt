@@ -1,0 +1,41 @@
+\exercice{916, ridde, 1999/11/01}
+\enonce
+Soit $\alpha \in \Rr$ et
+soit $f_{\alpha} : \Rr\rightarrow \Rr$ la fonction définie par 
+$$
+\begin{cases}
+f_{\alpha}(x)= 1 & \text{ si } x = \alpha \\
+f_{\alpha}(x)= 0 & \text{ si } x \neq \alpha
+ \end{cases}
+.$$ 
+Montrer que la famille $ (f_{\alpha})_{\alpha \in\Rr}$ est libre.
+\finenonce 
+
+\indication
+Supposer qu'il existe des r\'eels $\lambda_1,\ldots, \lambda_n$
+et des indices  $\alpha_1,\ldots,\alpha_n$ (tout cela en nombre fini !)
+tels que 
+$$\lambda_1f_{\alpha_1}+\cdots+\lambda_nf_{\alpha_n} = 0.$$
+Ici le $0$ est la fonction constante \'egale \`a $0$. \'Evaluer cette expression en
+des valeurs bien choisies.
+\finindication
+
+
+\correction
+  \`A partir de la famille $(f_\alpha)_{\alpha\in \Rr}$ nous
+  consid\'erons une combinaison lin\'eaire (qui ne correspond qu'\`a un
+  nombre \emph{fini} de termes).
+
+  
+  Soient $\alpha_1,\ldots,\alpha_n$ des r\'eels distincts, consid\'erons la
+  famille (finie) : $(f_{\alpha_i})_{i=1,\ldots,n}$. Supposons qu'il
+  existe des r\'eels $\lambda_1,\ldots, \lambda_n$ tels que
+  $\sum_{i=1}^n \lambda_i f_{\alpha_i}=0$. Cela signifie que, quelque
+  soit $x \in \Rr$, alors $\sum_{i=1}^n \lambda_i f_{\alpha_i}(x) = 0$
+  ; en particulier pour $x = \alpha_j$ l'\'egalit\'e devient $\lambda_j =
+  0$ car $f_{\alpha_i}(\alpha_j)$ vaut $0$ si $i\neq j$ et $1$ si
+  $i=j$. En appliquant le raisonnement ci-dessus pour $j=1$ jusqu'\`a
+  $j=n$ on obtient : $\lambda_j = 0$, $j=1,\ldots,n$. Donc la famille
+  $(f_\alpha)_{\alpha}$ est une famille libre.
+\fincorrection
+\finexercice

@@ -1,0 +1,23 @@
+\exercice{2506, queffelec, 2009/04/01}
+\enonce
+Soit $E^n$ l'espace des
+polyn\^omes de degr\'e $\leq n$. Etudier la diff\'erentiabilit\'e
+des applications $P\mapsto\int_0^1(P^3(t)-P^2(t))\ dt$ et \
+$P\mapsto P'-P^2$. 
+\finenonce 
+
+\noindication
+
+\correction
+Soit $F_1(P)=\int_0^1 P^3-P^2 dt$, et soit $h$ un polyn\^ome de
+degr\'e $n$ alors $$F_1(P+h)-F_1(P)= \int_0^1
+[(P^3+3P^2h+3Ph^2+h^3)+(P^2+2Ph+h^2) -P^3-P^2 ]dt=$$
+$$\int_0^1h(3P^2+2P)dt +\int_0^13Ph^2+h^3+h^2dt$$
+Or $|\int_0^13Ph^2+h^3+h^2dt|=o(||h||_\infty)$ donc
+$$DF_1(h)=\int_0^1(3P^2+2P)hdt.$$
+Soit $F_2(P)=P'-P^2$ et soit $h$ un polyn\^ome de degr\'e $n$
+alors $$F_2(P+h)-F_2(P)=(P+h)'-(P+h)^2-P'+P^2 =h'-2Ph-h^2$$ Or
+$h^2=o(||h||)$ (pour toute norme a choisir). On a donc
+$$DF_2(h)=h'-2Ph.$$
+\fincorrection
+\finexercice

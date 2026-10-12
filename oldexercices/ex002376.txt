@@ -1,0 +1,26 @@
+\exercice{2376, mayer, 2003/10/01}
+\enonce 
+Soit $E$ un espace norm\'e. Si $A$ et $B$ sont deux parties de $E$, on note
+$A+B$ l'ensemble $\{a+b \; ; \; a\in A \; \text{et} \; b\in B\}$.
+\begin{enumerate}
+\item Montrer que si $A$ est compact et $B$ est ferm\'e, alors $A+B$ est ferm\'e.
+\item Donner un exemple de deux ferm\'es de $\Rr^2$ dont la somme n'est pas ferm\'e.
+\end{enumerate}
+\finenonce
+
+\indication
+On pourra utiliser la caractérisation de la fermeture par des suites.
+\finindication
+
+\correction
+\begin{enumerate}
+  \item Pour montrer que $A+B$ est fermé, nous allons montrer que toute suite de $A+B$ qui converge, converge vers un élément de $A+B$. Soit $(x_n)$ un suite
+de $A+B$ qui converge vers $x\in E$. Alors il existe $a_n\in A$ et $b_n\in B$ tel que $x_n = a_n+b_n$.
+Comme $A$ est compact on peut extraire une sous-suite $(a_{\phi(n)})$ qui converge vers $a\in A$. Alors $b_{\phi(n)} = x_{\phi(n)}-a_{\phi(n)}$ est convergente vers $x-a$. Notons $b= x-a$ comme $B$ est fermé alors $b\in B$.
+Maintenant $x = a+b$ donc $x\in A+B$.
+  \item Soit $F = \{ (x,y)\in \Rr^2 \mid xy\ge 1 \text{ et } x \ge 0\}$ , soit
+$G = \{ (x,y)\in \Rr^2 \mid y \le 0 \text{ et } x\ge0\}$. Alors
+$F+G = \{ (x,y)\in \Rr^2 \mid x > 0\}$ qui n'est pas un fermé.
+\end{enumerate}
+\fincorrection
+\finexercice

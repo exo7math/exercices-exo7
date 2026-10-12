@@ -1,0 +1,65 @@
+\exercice{5112, rouget, 2010/06/30}
+\enonce[**T]
+$A$ et $B$ sont des parties d'un ensemble $E$. Montrer que :
+
+\begin{enumerate}
+\item  $(A\Delta B=A\cap B)\Leftrightarrow(A=B=\varnothing)$.
+\item  $(A\cup B)\cap(B\cup C)\cap(C\cup A)=(A\cap B)\cup(B\cap C)\cup(C\cap A)$.
+\item  $A\Delta B=B\Delta A$.
+\item  $(A\Delta B)\Delta C=A\Delta(B\Delta C)$.
+\item  $A\Delta B=\varnothing\Leftrightarrow A=B$.
+\item  $A\Delta C=B\Delta C\Leftrightarrow A=B$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Si $A=B=\varnothing$ alors $A\Delta B=\varnothing=A\cap B$.
+Si $A\Delta B=A\cap B$, supposons par exemple $A\neq\varnothing$.
+Soit $x\in A$. Si $x\in B$, $x\in A\cap B=A\Delta B$ ce qui est absurde et si $x\notin B$, $x\in A\Delta B=A\cap B$ ce
+qui est absurde. Donc $A=B=\varnothing$. Finalement, $A\Delta B=A\cap B\Leftrightarrow A=B=\varnothing$.
+
+ \item  Par distributivité de $\cap$ sur $\cup$,
+
+\begin{align*}
+(A\cup B)\cap(B\cup C)\cap(C\cup A)&=((A\cap B)\cup(A\cap C)\cup(B\cap B)\cup(B\cap C))\cap(C\cup A)\\
+ &=((A\cap C)\cup B)\cap(C\cup A)\;(\mbox{car}\;B\cap B=B\;\mbox{et}\;A\cap B\subset B\;\mbox{et}\;B\cap C\subset B)\\
+ &=\left((A\cap C)\cap C\right)\cup\left((A\cap C)\cap A\right)\cup\left(B\cap C\right)\cup\left(B\cap A\right)\\
+ &=(A\cap C)\cup(A\cap C)\cup(B\cap C)\cup(B\cap A)\\
+ &=(A\cap B)\cup(B\cap C)\cup(C\cap A)
+\end{align*}
+
+ \item  $A\Delta B=(A\setminus B)\cup(B\setminus A)=(B\setminus A)\cup(A\setminus B)=B\Delta A$.
+
+ \item 
+\begin{align*}
+x\in(A\Delta B)\Delta C&\Leftrightarrow x\;\mbox{est dans}\;A\Delta B\;\mbox{ou dans}\;C\;\mbox{mais pas dans les deux}\\
+ &\Leftrightarrow((x\in A\;\mbox{et}\;x\notin B\;\mbox{et}\;x\notin C)\;\mbox{ou}\;(x\in B\;\mbox{et}\;x\notin
+A\;\mbox{et}\;x\notin C)\;\mbox{ou}\;(x\in C\;\mbox{et}\;x\notin A\Delta B)\\
+ &\Leftrightarrow x\;\mbox{est dans une et une seule des trois parties ou dans les trois}.
+\end{align*}
+Par symétrie des rôles de $A$, $B$ et $C$, $A\Delta(B\Delta C)$ est également l'ensemble des éléments qui sont dans une
+et une seule des trois parties $A$, $B$ ou $C$ ou dans les trois. Donc $(A\Delta B)\Delta C=A\Delta(B\Delta C)$. Ces
+deux ensembles peuvent donc se noter une bonne fois pour toutes $A\Delta B\Delta C$.
+
+ \item  $A=B\Rightarrow A\setminus B=\varnothing$ et $B\setminus A=\varnothing\Rightarrow A\Delta B =\varnothing$.
+
+$A\neq B\Rightarrow\exists x\in E/\;((x\in A\;\mbox{et}\;x\notin B)\;\mbox{ou}\;(x\notin A\;\mbox{et}\;
+x\in B))\Rightarrow\exists x\in E/\;x\in(A\setminus B)\cup(B\setminus A)=A\Delta B\Rightarrow A\Delta B\neq\varnothing$.
+
+ \item 
+\begin{itemize}
+\item[$\Leftarrow$] Immédiat.
+\item[$\Rightarrow$] Soit $x$ un élément de $A$.
+
+Si $x\notin C$ alors $x\in A\Delta C=B\Delta C$ et donc $x\in B$ car $x\notin C$.
+
+Si $x\in C$ alors $x\notin A\Delta C=B\Delta C$. Puis $x\notin B\Delta C$ et $x\in C$ et donc $x\in B$. Dans tous les
+cas, $x$ est dans $B$. Tout élément de $A$ est dans $B$ et donc $A\subset B$.
+En échangeant les rôles de $A$ et $B$, on a aussi $B\subset A$ et finalement $A=B$.
+\end{itemize}
+\end{enumerate}
+\fincorrection
+\finexercice

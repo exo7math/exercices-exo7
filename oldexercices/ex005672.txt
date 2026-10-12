@@ -1,0 +1,35 @@
+\exercice{5672, rouget, 2010/10/16}
+\enonce[**I]
+Calculer $\left|
+\begin{array}{cccc}
+a&b&\ldots&b\\
+b&a&\ddots&\vdots\\
+\vdots&\ddots&\ddots&b\\
+b&\ldots&b&a
+\end{array}
+\right|$.
+\finenonce
+
+\noindication
+
+\correction
+Soit $A$ la matrice de l'énoncé. $\text{det}A$ est le produit des valeurs propres de $A$.
+
+\textbullet~Si $b = 0$, $\text{det}A = a^n$.
+
+\textbullet~Si $b\neq0$, $\text{rg}(A-(a-b)I) = 1$ ou encore $\text{dim}(\text{Ker}(A-(a-b)I))= n-1$. Par suite, $a-b$ est valeur propre d'ordre $n-1$ au moins. On obtient la valeur propre manquante $\lambda$ par la trace de $A$ : $(n-1)(a-b) +\lambda= na$ et donc $\lambda = a + (n-1)b$. Finalement $\text{det}A = (a-b)^{n-1}(a+(n-1)b)$ ce qui reste vrai quand $b = 0$.
+
+\begin{center}
+\shadowbox{
+$\left|
+\begin{array}{cccc}
+a&b&\ldots&b\\
+b&a&\ddots&\vdots\\
+\vdots&\ddots&\ddots&b\\
+b&\ldots&b&a
+\end{array}
+\right|=(a-b)^{n-1}(a+(n-1)b)$.
+}
+\end{center}
+\fincorrection
+\finexercice

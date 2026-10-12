@@ -1,0 +1,90 @@
+\exercice{5411, rouget, 2010/07/06}
+\enonce[*** Inégalités de convexité]
+\begin{enumerate}
+\item  Soient $x_1$, $x_2$,..., $x_n$, $n$ réels positifs ou nuls et $\alpha_1$,..., $\alpha_n$, $n$ réels strictement positifs tels que $\alpha_1+...+\alpha_n=1$. Montrer que $x_1^{\alpha_1}..x_n^{\alpha_n}\leq\alpha_1x_1+...+\alpha_nx_n$. En déduire que $\sqrt[n]{x_1...x_n}\leq\frac{x_1+...+x_n}{n}$.
+\item  Soient $p$ et $q$ deux réels strictement positifs tels que $\frac{1}{p}+\frac{1}{q}=1$.
+\begin{enumerate}
+\item Montrer que, pour tous réels $a$ et $b$ positifs ou nuls, $ab\leq\frac{a^p}{p}+\frac{b^q}{q}$ avec égalité si et seulement si $a^p=b^q$. 
+\item Soient $a_1$,..., $a_n$ et $b_1$,..., $b_n$, $2n$ nombres complexes. Montrer que~:
+
+$$\left|\sum_{k=1}^{n}a_kb_k\right|\leq\sum_{k=1}^{n}|a_kb_k|\leq\left(\sum_{k=1}^{n}|a_k|^p\right)^{1/p} \left(\sum_{k=1}^{n}|b_k|^q\right)^{1/q}\;(\mbox{Inégalité de \textsc{Hölder}}).$$
+
+\item Montrer que la fonction $x\mapsto x^p$ est convexe et retrouver ainsi l'inégalité de \textsc{Hölder}.
+\item Trouver une démonstration directe et simple dans le cas $p=q=2$ (inégalité de \textsc{Cauchy}-\textsc{Schwarz}).
+\end{enumerate}
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  La fonction $f~:~x\mapsto\ln x$ est deux fois dérivable sur $]0,+\infty[$ et, pour $x>0$, $f''(x)=-\frac{1}{x^2}<0$. Par suite, $f$ est concave sur $]0,+\infty[$. On en déduit que~:
+
+$$\forall n\in\Nn,\;\forall(x_1,...,x_n)\in(]0,+\infty[)^n,\;\forall(\alpha_1,...,\alpha_n)\in(]0,1[)^n,\;
+(\sum_{k=1}^{n}\alpha_k=1\Rightarrow\ln(\sum_{k=1}^{n}\alpha_kx_k)\geq\sum_{k=1}^{n}\alpha_k\ln(x_k),$$
+
+et donc par croissance de $f$ sur $]0,+\infty[$,
+
+$$\prod_{k=1}^{n}x_k^{\alpha_k}\leq\sum_{k=1}^{n}\alpha_kx_k.$$
+
+Si l'un des $x_k$ est nul, l'inégalité précédente est immédiate.
+
+En choisissant en particulier $\alpha_1=...=\alpha_n=\frac{1}{n}$, de sorte que $(\alpha_1,...,\alpha_n)\in(]0,1[)^n$ et que $\sum_{k=1}^{n}\alpha_k=1$, on obtient
+ 
+$$\forall n\in\Nn^*,\;\forall(x_1,...,x_n)\in([0,+\infty[)^n,\;\sqrt[n]{x_1...x_n}\leq\frac{1}{n}(x_1+...+x_n).$$
+
+\item 
+\begin{enumerate}
+\item Soient $p$ et $q$ deux réels strictement positifs vérifiant $\frac{1}{p}+\frac{1}{q}=1$ (de sorte que l'on a même $\frac{1}{p}<\frac{1}{p}+\frac{1}{q}=1$ et donc $p>1$ et aussi $q>1$).
+
+Si $a=0$ ou $b=0$, l'inégalité proposée est immédiate.
+
+Soit alors $a$ un réel strictement positif puis, pour $x\geq0$, $f(x)=\frac{a^p}{p}+\frac{x^q}{q}-ax$.
+
+$f$ est dérivable sur $[0,+\infty[$ (car $q>1$) et pour $x\geq0$, $f'(x)=x^{q-1}-a$.
+$q$ étant un réel strictement plus grand que $1$, $q-1$ est strictement positif et donc, la fonction $x\mapsto x^{q-1}$ est strictement croissante sur $[0,+\infty[$. Par suite,
+
+$$f'(x)>0\Leftrightarrow x^{q-1}>a\Leftrightarrow x>a^{1/(q-1)}.$$
+
+$f$ est donc strictement décroissante sur $[0,a^{1/(q-1)}]$ et strictement croissante sur $[a^{1/(q-1)},+\infty[$. Ainsi,
+
+$$\forall x\geq0,\;f(x)\geq f(a^{1/(q-1)})=\frac{1}{p}a^{p}+\frac{1}{q}a^{q/(q-1)}-a.a^{1/(q-1)}.$$
+
+Maintenant, $\frac{1}{p}+\frac{1}{q}=1$ fournit $q=\frac{p}{p-1}$ puis $q-1=\frac{1}{p-1}$. Par suite, $\frac{q}{q-1}=p$. Il en résulte que
+
+$$\frac{1}{p}a^{p}+\frac{1}{q}a^{q/(q-1)}-a.a^{1/(q-1)}=(\frac{1}{p}+\frac{1}{q}-1)a^p=0.$$
+
+$f$ est donc positive sur $[0,+\infty[$, ce qui fournit $f(b)\geq0$. De plus, 
+
+$$f(b)=0\Leftrightarrow b=a^{1/(q-1)}\Leftrightarrow b^q=a^{q/(q-1)}\Leftrightarrow b^q=a^p.$$
+
+\item Soient $A=\sum_{k=1}^{n}|a_k|^p$ et $B=\sum_{k=1}^{n}|b_k|^q$.
+
+Si $A=0$, alors $\forall k\in\{1,...,n\},\;a_k=0$ et l'inégalité est immédiate. De même, si $B=0$.
+
+Si $A>0$ et $B>0$, montrons que $\sum_{k=1}^{n}\frac{|a_k|}{A^{1/p}}\frac{|b_k|}{B^{1/q}}\leq1$.
+
+D'après a),
+
+$$\sum_{k=1}^{n}\frac{|a_k|}{A^{1/p}}\frac{|b_k|}{B^{1/q}}\leq
+\sum_{k=1}^{n}(\frac{1}{p}\frac{|a_k|^p}{A}+\frac{1}{q}\frac{|b_k|^q}{B})=\frac{1}{pA}.A+\frac{1}{qB}.B=1,$$
+
+ce qu'il fallait démontrer.
+
+\item Pour $p>1$, la fonction $x\mapsto x^p$ est deux fois dérivable sur $]0,+\infty[$ et $(x^p)''=p(p-1)x^{p-2}>0$. Donc, la fonction $x\mapsto x^p$ est strictement convexe sur $]0,+\infty[$ et donc sur $[0,+\infty[$ par continuité en $0$. Donc,
+
+$$\forall(x_1,...,x_n)\in(]0,+\infty[)^n,\;\forall(\lambda_1,...,\lambda_n)\in([0,+\infty[)^n\setminus\{(0,...,0)\},
+\;\left(\frac{\sum_{k=1}^{n}\lambda_kx_k}{\sum_{k=1}^{n}\lambda_k}\right)^p\leq
+\frac{\sum_{k=1}^{n}\lambda_kx_k^p}{\sum_{k=1}^{n}\lambda_k},$$
+
+et donc 
+$$\sum_{k=1}^{n}\lambda_kx_k\leq(\sum_{k=1}^{n}\lambda_k)^{1-\frac{1}{p}}(\sum_{k=1}^{n}\lambda_kx_k^p)^{\frac{1}{p}}.$$
+
+On applique alors ce qui précède à $\lambda_k=|b_k|^q$ puis $x_k=\lambda_k^{-1/p}|a_k|$ (de sorte que $\lambda_kx_k=|a_kb_k|$) et on obtient l'inégalité désirée.
+
+\item Pour $p=q=2$, c'est l'inégalité de \textsc{Cauchy}-\textsc{Schwarz} démontrée dans une planche précédente.
+\end{enumerate}
+\end{enumerate}
+\fincorrection
+\finexercice

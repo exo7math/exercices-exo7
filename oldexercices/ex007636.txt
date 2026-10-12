@@ -1,0 +1,34 @@
+\exercice{7636, mourougane, 2021/08/10}
+\enonce[Localisations de racines]
+On considère le polynôme $P(z)=z^4+6z+3$.
+\begin{enumerate}
+ \item Démontrer que $P$ a ses quatre racines dans le disque $\Delta_2$.
+ 
+ \item Démontrer que $P$ n'admet qu'une racine dans $\Delta$.
+
+ \item Démontrer que $P$ n'admet pas de racine dans $\Delta_{\frac{1}{3}}$.
+
+ \item Soit $a$ la racine de $P$ dans le disque $\Delta$. Démontrer que
+$$ a=\frac{1}{2i\pi}\int_{\partial\Delta} \frac{4z^3+6}{z^4+6z+3}zdz.$$
+
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+  \item Sur le bord de $\Delta_2$
+$$|P(z)-z^4|=|6z+3|\leq 6\times 2+3=15<16=2^4=|z|^4.$$
+Par le théorème de Rouché, $P$ de degré $4$ a donc, comme $z\mapsto z^4$ ses quatre racines dans $\Delta_2$.
+  \item Sur le bord de $\Delta$
+$$|P(z)-(6z+3)|=|z^4|=1< 6-3\leq |6z|-3\leq |6z+3|.$$
+Par le théorème de Rouché, le polynôme $P$ n'a, comme $z\mapsto 6z+3$ qu'une racine dans $\Delta$.
+  \item Sur le bord de $\Delta_{\frac{1}{3}}$
+$$|P(z)-(6z+3)|=|z^4|=\frac{1}{81}<3-6/3=3-|6z|\leq |6z+3|.$$
+Par le théorème de Rouché, le polynôme $P$ n'a, comme $z\mapsto 6z+3$ aucune racine dans $\Delta_{\frac{1}{3}}$.
+  \item Par la question $2$, $z\mapsto \frac{4z^3+6}{z^4+6z+3}z$ est méromorphe sur $\Delta_{1+\epsilon}$ avec comme seul pôle un point $a$.
+Le résidu en $a$ de $P'/P$ est la multiplicité $1$ de $a$ comme zéro de $P$.
+Par conséquent, le résidu en $a$ de $\frac{4z^3+6}{z^4+6z+3}z$ est $a$.
+La formule demandée résulte donc du théorème des résidus.
+\end{enumerate}
+\fincorrection
+\finexercice

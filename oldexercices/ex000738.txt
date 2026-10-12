@@ -1,0 +1,82 @@
+\exercice{738, bodin, 2001/11/01}
+\video{MqjLEkOQD3w}
+\enonce
+ Soient $f,g :[a , b] \longrightarrow \R$ deux
+fonctions continues
+ sur $[a, b]$ ($a < b$) et d\'erivables sur $]a , b[.$ On suppose que
+ $g' (x) \neq 0$ pour tout $x \in ]a , b[.$
+
+\begin{enumerate}
+\item
+ Montrer que $g (x) \neq g (a)$ pour tout $x \in ]a , b[.$
+
+\item Posons $p = \frac{f (b) - f (a)}{g (b) - g (a)}$ et
+consid\'erons  la fonction $h (x) = f
+ (x) - p g (x)$ pour $x \in [a , b].$
+ Montrer que $h$ v\'erifie les hypoth\`eses du th\'eor\`eme de Rolle
+ et en d\'eduire qu'il existe un nombre r\'eel $c \in ]a , b[$ tel que
+ $$ \frac{f (a) - f (b)}{g (a) - g (b)} = \frac{f' (c)}{g' (c)}.$$
+\item On suppose que $\lim_{x \to b^{-}} \frac{f' (x)}{g' (x)} =
+\ell,$ o\`u $\ell $ est un nombre r\'eel.
+ Montrer que  $$ \lim_{x \to b^{-}} \frac{f (x) - f (b)}{g (x) - g (b)} = \ell.$$
+\item  \emph{Application.} Calculer la limite suivante:
+ $$ \lim_{x \to 1^{-}} \frac{\Arccos x}{\sqrt{1- x^{2}}}.$$
+\end{enumerate}
+\finenonce 
+
+\indication
+\begin{enumerate}
+ \item Raisonner par l'absurde et appliquer le th\'eor\`eme de Rolle.
+ \item Calculer $h(a)$ et $h(b)$.
+ \item Appliquer la question 2. sur l'intervalle $[x,b]$.
+ \item Calculer $f'$ et $g'$.
+\end{enumerate}
+\finindication
+
+\correction
+
+ Le th\'eor\`eme de Rolle dit que si $h :[a,b]
+\longrightarrow \R$ est une fonction continue sur l'intervalle
+ferm\'e $[a,b]$ et d\'erivable sur l'ouvert $]a,b[$ alors il
+existe $c \in ]a,b[$ tel que $h' (c) = 0.$
+
+  \begin{enumerate}
+  \item Supposons par l'absurde, qu'il existe $x_{0}\in ]a,b]$  tel
+que $g (x_{0}) = g (a).$ Alors en appliquant le th\'eor\`eme de
+Rolle \`a la restriction de $g$ \`a l'intervalle $[a,x_{0}]$ (les
+hypoth\`eses \'etant clairement v\'erifi\'ees), on en d\'eduit
+qu'il existe $c \in ]a,x_{0}[$ tel que $g' (c) = 0,$ ce qui
+contredit les hypoth\`eses faites sur $g.$ Par cons\'equent on a
+d\'emontr\'e que $g (x) \neq g (a)$ pour tout $x \in ]a,b].$
+
+  \item D'apr\`es la question pr\'ec\'edente, on a en particulier  $g (b)
+\neq g (a)$ et donc $p$ est un nombre r\'eel bien d\'efini et $h =
+f - p \cdot g$ est alors une fonction continue sur $[a,b]$ et
+d\'erivable sur $]a,b[.$ Un calcul simple montre que $h (a) = h
+(b).$ D'apr\`es le th\'eor\`eme de Rolle il en r\'esulte  qu'il
+existe $c \in ]a,b[$ tel que $h' (c) = 0.$ Ce qui implique la
+relation requise.
+
+  \item  Pour chaque $x \in ]a,b[,$ on peut appliquer
+la question 2. aux
+ restrictions de $f$ et $g$ \`a l'intervalle $[x,b],$ on en d\'eduit qu'il
+ existe un point $c (x) \in ]x,b[,$ d\'ependant de $x$ tel que
+ $$\frac{f (x) - f (b)}{g (x) - g (b)} = \frac{f' (c (x))}{g' (c (x))} .
+ \leqno (*)$$
+ Alors, comme $\lim_{x \to b^{-}} \frac{f' (t)}{g' (t)} = \ell$ et
+ $\lim_{x \to b^{-}} c (x) = b,$ (car $c(x) \in ]x,b[$) on en d\'eduit en passant \`a la
+ limite dans $(*)$ que
+ $$ \lim_{x \to b^{-}} \frac{f (x) - f (b)}{g (x) - g (b)} = \ell.$$
+ Ce r\'esultat est connu sous le nom de ``r\`egle de
+ l'H\^opital''.
+
+ \item Consid\'erons les deux fonctions $f
+ (x) = \Arccos x$ et $g (x) = \sqrt{1-x^2}$ pour $x \in [0,1].$ Ces fonctions sont continues sur  $[0,1]$ et
+ d\'erivables sur $]0,1[$ et $f' (x) = - 1 \slash \sqrt{1-x^2}$,
+ $g' (x) = - x \slash \sqrt{1-x^2} \neq 0$ pour tout $ x
+ \in ]0,1[.$ En appliquant les r\'esultats de la question 3., on en
+ d\'eduit que
+ $$ \lim_{x \to 1^{-}} \frac{\Arccos x}{\sqrt{1-x^2}} = \lim_{x \to 1^{-}} \frac{\frac{-1}{\sqrt{1-x^2}}} {\frac{-x}{\sqrt{1-x^2}}}= \lim_{x \to 1^{-}} \frac{1}{x} = 1.$$
+\end{enumerate}
+\fincorrection
+\finexercice

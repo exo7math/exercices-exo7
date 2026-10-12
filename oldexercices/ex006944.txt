@@ -1,0 +1,127 @@
+\exercice{6944, ruette, 2013/01/24}
+\enonce[Loi d'un temps d'arrêt avec un jeu de pile ou face]
+Soit $(X_n)_{n\geq 1}$ une suite de variables aléatoires indépendantes de même loi de
+Bernoulli de paramètre $p$. On définit la variable aléatoire $T_1$ à valeurs dans
+$\Nn\cup\{+\infty\}$ par $T_1=\inf\{k>0 \mid X_k=1\}$, avec la
+convention $\inf(\emptyset)=+\infty$.\\ \textit{(si on joue à pile $=0$ ou
+ face $=1$,
+$T_1$ est le temps nécessaire pour obtenir face une première fois)}
+\begin{enumerate}
+\item
+Montrer que $T_1$ est fini presque sûrement.
+\item
+Déterminer la loi et l'espérance de $T_1$ \textit{(cette loi est appelée loi géométrique, $E(T_1)$ est le nombre
+moyen de lancers qu'il faut effectuer pour obtenir face une première fois)}.
+\item
+Pour tout $n\geq 2$, on définit par récurrence
+$T_n=\inf\{k>T_{n-1}\mid X_k=1\}$.\\
+\textit{(si on joue à pile  ou face, $T_n$
+est le temps nécessaire pour obtenir exactement $n$ fois face)}\\
+Montrer que les variables aléatoires $T_1,\ (T_2-T_1), \ldots,\ (T_n-T_{n-1}),\ldots$
+sont indépendantes et de même loi.
+\item
+Quelle est la loi de $T_n$ ?
+\end{enumerate}
+\smallskip
+\textit{Définition générale d'un temps d'arrêt : une variable aléatoire $T$ à valeurs
+dans $\Nn$ est un temps d'arrêt relativement à la suite de variable aléatoire 
+$(X_n)_{n\geq 1}$ si pour tout $n$
+l'événement $\{T\leq n\}$ appartient à la tribu 
+engendrée par les variables aléatoires $X_1,\ldots, X_n$ (autrement dit, il suffit de 
+connaître les valeurs de $X_1,\ldots, X_n$ pour savoir si $T\leq n$).}
+\finenonce
+\noindication
+
+\correction
+\begin{enumerate}
+\item
+$\{\omega\mid T_1(\omega)=+\infty\}=\{\omega\mid X_n(\omega) =0
+\mbox{ pour tout } n\geq 1\}\subset \{\omega\mid X_n(\omega) =0 \mbox{ pour }
+1\leq n\leq N\}$. Donc
+$\displaystyle
+P(T_1=+\infty)\leq P(X_n=0\mbox{ pour } 1\leq n\leq N)=\prod_{n=1}^N P(X_n=0)
+\ \mbox{ par indépendance}
+$
+d'où $P(T_1=+\infty)\leq (1-p)^N$. Or $1-p\in ]0,1[$ et $N$
+est arbitrairement grand, donc $P(T_1=+\infty)=0$, autrement dit $T_1$
+est fini presque sûrement.
+\item
+Pour tout $k\in\Nn^*$, $\{T_1=k\}=\{X_1=0, X_2=0,\ldots, X_{k-1}=0, X_k=1\}$ donc
+par indépendance $P(T_1=k)=p(1-p)^{k-1}$.
+
+$\displaystyle
+E(T_1)=\sum_{k\geq 1} k P(T_1=k)=p\sum_{k\geq 1} k(1-p)^{k-1}$.
+On reconnaît une série dérivée. Si on introduit la série
+$\displaystyle f(x)=\sum_{k\geq 0} x^k$ (bien définie si $|x|<1$), alors 
+$E(T_1)=p f'(1-p)$. Or
+$f(x)=\frac{1}{1-x}$, donc $f'(x)=\frac{1}{(1-x)^2}$. D'où
+$E(T_1)=p f'(1-p)=\frac{1}{p}$.
+
+\item
+Montrons par récurrence que $T_n$ est finie presque sûrement
+(hypothèse vérifiée par $T_1$ par a) et que les variables aléatoires
+$T_1, (T_2-T_1),\ldots (T_n-T_{n-1}),\ldots$
+ont la même loi que $T_1$ (hypothèse évidemment vérifiée par $T_1$).
+
+Supposons que $T_{n-1}$ est finie presque sûrement et montrons que $T_n-T_{n-1}$
+a la même loi que $T_1$ et que $T_n$ est finie
+presque sûrement
+Si $T_{n-1}=j$ alors $\{T_n=j+k\}=\{X_{j+1}=0,\ldots,X_{j+k-1}=0,
+X_{j+k}=1\}$. Comme $T_{n-1}$ est finie presque sûrement, la formule des 
+probabilités conditionnelles s'applique et donne :
+\begin{eqnarray*}
+P(T_n-T_{n-1}=k)&=&\sum_{j\in\Nn}P(T_n-T_{n-1}=k\mid T_{n-1}=j)
+P(T_{n-1}=j)\\
+&=&\sum_{j\in\Nn}P(X_{j+1}=0,\ldots,X_{j+k-1}=0,
+X_{j+k}=1)P(T_{n-1}=j)\\
+&=&\sum_{j\in\Nn}p(1-p)^{k-1}P(T_{n-1}=j)\ \mbox{ par indépendance}\\
+&=&p(1-p)^{k-1} \sum_{j\in\Nn}P(T_{n-1}=j)
+\end{eqnarray*}
+Or 
+$\displaystyle\quad \sum_{j\in\Nn}P(T_{n-1}=j)=P(T_{n-1}<+\infty)=1 \quad\mbox{(hypothèse
+de récurrence pour $n-1$)},$ \\
+donc
+$P(T_n-T_{n-1}=k)=(1-p)^{k-1}p$. On vérifie que
+$\displaystyle\quad \sum_{k\in\Nn}P(T_n-T_{n-1}=k)=1,$ 
+donc $T_n-T_{n-1}<+\infty$
+presque sûrement, et par conséquent $T_n<+\infty$ presque sûrement
+(on peut aussi calculer directement $P(T_n-T_{n-1}=+\infty)=0$, comme
+pour $T_1$). On vient de montrer que $T_n-T_{n-1}$ a la même loi que $T_1$.
+Ceci termine la récurrence.
+
+\medskip
+Pour montrer l'indépendance, on regarde $\{T_1=k_1, T_2-T_1=k_2,\ldots, 
+T_n-T_{n-1}=k_n\}$, ce qui décrit exactement les valeurs de $X_i$ pour
+$0\leq i\leq k_1+k_2+\cdots+k_n $. C'est un peu lourd à écrire :
+%\medskip
+$$
+\{T_1=k_1, T_2-T_1=k_2,\ldots, T_n-T_{n-1}=k_n\}=
+\{\begin{array}[t]{l}
+X_0=\cdots=X_{k_1-1}=0, X_{k_1}=1,\\ 
+X_{k_1+1}=\cdots=X_{k_1+k_2-1}=0, X_{k_1+k_2}=1,\\
+\cdots\\ 
+X_{k_1+\cdots+k_{n-1}+1}=\cdots=X_{k_1+\cdots+k_n-1}=0,
+X_{k_1+\cdots+k_n}=1\ \}\end{array}$$
+
+\medskip
+D'où par indépendance des $X_i$ :
+\begin{eqnarray*}
+P(T_1=k_1, T_2-T_1=k_2,\ldots, T_n-T_{n-1}=k_n)
+&=&p^n(1-p)^{(k_1-1)+\cdots+(k_n-1)}\\
+&=&P(T_1=k_1)P(T_2-T_1=k_2)\cdots P(T_n-T_{n-1}=k_n)
+\end{eqnarray*}
+Conclusion : les variables aléatoires $T_1, T_2-T_1,\ldots, T_n-T_{n-1}$ sont indépendantes.
+
+\item
+Ce qui précède permet de voir que, pour avoir
+$T_n=k$, d'une part il faut que $X_k=1$, et d'autre part parmi les
+$(X_i)_{1\leq i\leq k-1}$ il faut que $n-1$ soient égaux à $1$ et les autres
+soient égaux à $0$. Il y a $C^{n-1}_{k-1}$ façons de choisir les $1$ (à 
+condition bien sûr que $k\leq n$), et chaque
+combinaison a la même probabilité, qui est $p^n(1-p)^{k-n}$. 
+On peut en déduire que la loi de
+$T_n$ est $P(T_n=k)=C^{n-1}_{k-1} p^n(1-p)^{k-n}$ si $k\geq n$ et
+$P(T_n=k)=0$ si $k<n$.
+\end{enumerate}
+\fincorrection
+\finexercice

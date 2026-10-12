@@ -1,0 +1,63 @@
+\exercice{4189, quercia, 2010/03/11}
+\enonce[ENS MP 2002]
+
+Soit $n$ un entier $>0$, $\|\ \|$ la norme euclidienne 
+sur $\R^n$ et $f : {\R^n} \to \R$ de classe $\mathcal{C}^2$. On suppose
+que $f(x)/\|x\| \to +\infty$ lorsque $\|x\|\to\infty$, et 
+qu'en tout point la matrice hessienne de $f$ est 
+définie positive.
+
+On pose $g(y)= \sup\{ (x\mid y) -f(x),\ x\in \R^n\}$.
+Étudier les propriétés  de $g$. 
+\finenonce
+
+\noindication
+
+\correction
+Remarques~:\par
+-- la transformation $f \mapsto g$ est appelée {\it transformation de Legendre.}
+On notera $g = f^*$ ci-dessous.\par
+-- l'hypothèse \og\ $H_f$ est définie positive en tout point \fg\ implique que $f$ est convexe.
+
+{\bf Étude d'un cas particulier~:} $f(x) = \alpha\|x\|^2 + \beta(x\mid a) + \gamma$
+avec $\alpha \in\R^{+*}$, $\beta,\gamma\in\R$ et $a\in\R^n$.
+
+Alors $(x\mid y) - f(x) =
+- \alpha\Bigl\|x - \frac{y-\beta a}{2\alpha}\Bigr\|^2
++ \alpha\Bigl\|\frac{y-\beta a}{2\alpha}\Bigr\|^2 - \gamma$
+d'où $f^*(y) = \alpha\Bigl\|\frac{y-\beta a}{2\alpha}\Bigr\|^2 - \gamma
+= \alpha^*\|y\|^2 + \beta^*(y\mid a) + \gamma^*$
+avec $\alpha^* = 1/4\alpha$, $\beta^* = -\beta/2\alpha$ et
+$\gamma^* = \beta^2\|a\|^2/4\alpha - \gamma$.
+Ainsi, $f^*$ a la même forme que $f$, et on vérifie immédiatement que $f^{**} = f$.
+
+{\bf Cas général~:} on montre que $f^*$ est bien définie, vérifie les mêmes hypothèses
+que~$f$ et que l'on a $f^{**} = f$.
+
+{\bf 1.} Bonne définition de~$f^*$~: à $y$ fixé on a $(x\mid y) -f(x) \to -\infty$ lorsque $\|x\|\to\infty$
+donc le sup existe et est un max, atteint en un point $x$ tel que $\nabla f(x) = y$.
+Ce point $x$ est unique~: en effet, si $h\in\R^n\setminus\{0\}$ alors la fonction
+$\R\ni t \mapsto(h\mid\nabla f(x+th))$ est strictement croissante (définie-positivité
+de~$H_f$) ce qui implique $\nabla f(x+h) \ne \nabla f(x)$.
+Ainsi, $$f^*(y) = (y\mid y^*) - f(y^*) \text{ avec } \nabla f(y^*) = y.$$
+
+{\bf 2.} $f^*$ est $\mathcal{C}^2$ et $H_{f^*}$ est définie-positive~:
+d'après ce qui précède, la fonction $\nabla f$ est un $\mathcal{C}^1$ difféomorphisme de~$\R^n$~;
+sa différentielle est l'endomorphisme de~$\R^n$ de matrice $H_f$ dans la base
+canonique de~$\R^n$. Donc $f^*$ est de classe $\mathcal{C}^1$ et pour $y,h\in\R^n$~:
+$$d (f^*)_y(h) = (\nabla f^*(y)\mid h) = (h\mid y^*) + (y\mid d y^*(h)) - (\nabla f(y^*)\mid d y^*(h))
+= (h\mid y^*)$$
+puisque $\nabla f(y^*) = y$. On en déduit~: $\nabla f^*(y) = y^*$,
+puis $H_{f^*}(y) = (H_f(y^*))^{-1}$, matrice symétrique définie positive.
+
+{\bf 3.} $f^*(y)/\|y\|\to +\infty$ lorsque $\|y\|\to\infty$~:
+soit $a>1$ et $M_a = \sup\{f(x),\ \|x\|\le a\}$.
+Pour $y\in\R^n\setminus\{0\}$ et $x=ay/\|y\|$ on a
+$f^*(y) \ge (x\mid y) - f(x) \ge a\|y\|-M_a\ge (a-1)\|y\|$ si $\|y\|$ est assez grand.
+
+{\bf 4.} $f^{**} = f$~: car pour $x\in\R^n$ on a $f^{**}(x) = (x\mid y) - f^*(y)$ où $y$ est
+défini par $\nabla f^*(y) = x$, c'est-à-dire $y^* = x$ et donc
+$f^{**}(x) = (y^*\mid y) - f^*(y) = f(y^*) = f(x)$.
+\fincorrection
+
+\finexercice

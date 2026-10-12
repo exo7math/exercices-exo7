@@ -1,0 +1,27 @@
+\exercice{378, gourio, 2001/09/01}
+\video{ypZfDoacMUs}
+\enonce
+Quels sont les polynômes $P\in\Cc[X]$ tels que $P'$ divise $P$?
+\finenonce 
+
+\indication
+Si $P=P'Q$ avec $P\not=0$, regarder le degré de $Q$.
+\finindication
+
+\correction
+Le polynôme nul convient. Dans la suite on suppose que $P$ n'est pas le polynôme nul.
+
+Notons $n = \deg P$ son degré. Comme $P'$ divise $P$, alors $P$ est non constant, 
+donc $n\ge 1$. Soit $Q\in\Cc[X]$ tel que $P=P'Q$.
+Puisque $\deg(P')=\deg(P)-1\ge 0$, alors $Q$ est de degré $1$.
+Ainsi $Q(X)=aX+b$ avec $a\neq0$, et donc  
+$$P(X)=P'(X)(aX+b)=aP'(X)(X+\frac{b}{a})$$
+Donc si $z\not=\frac{-b}{a}$ et si $z$ est racine de $P$ de multiplicité $k \ge 1$, 
+alors $z$ est aussi racine de $P'$ avec la même multiplicité, ce qui est impossible. 
+Ainsi la seule racine possible de $P$ est $\frac{-b}{a}$.
+
+Réciproquement, soit $P$ un polynôme avec une seule racine $z_0 \in \Cc$ : 
+il existe $\lambda\not=0$, $n\ge 1$ tels que $P=\lambda(X-z_0)^n$, 
+qui est bien divisible par son polynôme dérivé.
+\fincorrection
+\finexercice

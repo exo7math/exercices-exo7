@@ -1,0 +1,23 @@
+\exercice{5733, rouget, 2010/10/16}
+\enonce[** I]
+Montrer que pour tout réel $a > 0$, $\int_{0}^{1}\frac{1}{1+x^a}\;dx=\sum_{n=0}^{+\infty}\frac{(-1)^n}{1+na}$.
+\finenonce
+
+\noindication
+
+\correction
+Soit $n\in\Nn$.
+
+\begin{center}
+$\sum_{k=0}^{n}\frac{(-1)^k}{1+ka}=\sum_{k=0}^{n}(-1)^k\int_{0}^{1}t^{ka}\;dt=\int_{0}^{1}\left(\sum_{k=0}^{n}(-t^a)^k\right)\;dt=\int_{0}^{1}\frac{1}{1+t^a}\;dt+(-1)^n\int_{0}^{1}\frac{t^{(n+1)a}}{1+t^a}\;dt$,
+\end{center}
+
+avec $\left|(-1)^n\int_{0}^{1}\frac{t^{(n+1)a}}{1+t^a}\;dt\right|\leqslant\int_{0}^{1}t^{(n+1)a}\;dt=\frac{1}{1+(n+1)a}$. Par suite, $\lim_{n \rightarrow +\infty}(-1)^n\int_{0}^{1}\frac{t^{(n+1)a}}{1+t^a}\;dt=0$. On en déduit que la série de terme général $\frac{(-1)^k}{1+ka}$, $k\geqslant 0$, converge et que
+
+\begin{center}
+\shadowbox{
+$\sum_{k=0}^{+\infty}\frac{(-1)^k}{1+ka}=\int_{0}^{1}\frac{1}{1+t^a}\;dt$.
+}
+\end{center}
+\fincorrection
+\finexercice

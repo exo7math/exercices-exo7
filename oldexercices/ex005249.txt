@@ -1,0 +1,32 @@
+\exercice{5249, rouget, 2010/07/04}
+\enonce[***]
+Calculer $\mbox{inf}_{\alpha\in]0,\pi[}(\mbox{sup}_{n\in\Nn}(|\sin(n\alpha)|))$.
+\finenonce
+
+\noindication
+
+\correction
+Pour $\alpha\in]0,\pi[$, posons $f(\alpha)=\mbox{sup}_{n\in\Nn}(|\sin(n\alpha)|)$. $\{(\sin(n\alpha),\;n\in\Nn\}$ est une partie non vide et majorée (par $1$) de $\Rr$. Donc, pour tout réel $\alpha$ de $]0,\pi[$, $f(\alpha)$ existe dans $\Rr$.
+
+Si $\alpha$ est dans $[\frac{\pi}{3},\frac{2\pi}{3}]$,
+
+$$f(\alpha)=\mbox{sup}_{n\in\Nn}(|\sin(n\alpha)|)\geq\sin\alpha\geq\frac{\sqrt{3}}{2}=f(\frac{\pi}{3}).$$
+
+Si $\alpha$ est dans $]0,\frac{\pi}{3}]$. Soit $n_0$ l'entier naturel tel que $(n_0-1)\alpha<\frac{\pi}{3}\leq n_0\alpha$ ($n_0$ existe car la suite $(n\alpha)_{n\in\Nn}$ est strictement croissante). Alors, 
+ 
+$$\frac{\pi}{3}\leq n_0\alpha=(n_0-1)\alpha+\alpha<\frac{\pi}{3}+\alpha\leq\frac{\pi}{3}+\frac{\pi}{3}=\frac{2\pi}{3}.$$
+
+Mais alors,
+
+$$f(\alpha)=\mbox{sup}_{n\in\Nn}(|\sin(n\alpha)|)\geq|\sin(n_0\alpha)|\geq\frac{\sqrt{3}}{2}=f(\frac{\pi}{3}).$$
+
+Si $\alpha$ est dans $[\frac{2\pi}{3},\pi[$, on note que 
+$$f(\alpha)=\mbox{sup}_{n\in\Nn}(|\sin(n\alpha)|)=\mbox{sup}_{n\in\Nn}(|\sin(n(\pi-\alpha)|)=f(\pi-\alpha)\geq f(\frac{\pi}{3}),$$
+
+car $\pi-\alpha$ est dans $]0,\frac{\pi}{3}]$.
+
+On a montré que $\forall\alpha\in]0,\pi[,\;f(\alpha)\geq f(\frac{\pi}{3})=\frac{\sqrt{3}}{2}$. Donc, $\mbox{inf}_{\alpha\in]0,\pi[}(\mbox{sup}_{n\in\Nn}(|\sin(n\alpha)|))$ existe dans $\Rr$ et 
+
+$$\mbox{inf}_{\alpha\in]0,\pi[}(\mbox{sup}_{n\in\Nn}(|\sin(n\alpha)|))= \mbox{Min}_{\alpha\in]0,\pi[}(\mbox{sup}_{n\in\Nn}(|\sin(n\alpha)|))=f(\frac{\pi}{3})=\frac{\sqrt{3}}{2}.$$
+\fincorrection
+\finexercice

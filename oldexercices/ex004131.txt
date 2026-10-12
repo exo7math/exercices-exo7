@@ -1,0 +1,28 @@
+\exercice{4131, quercia, 2010/03/11}
+\enonce[ENS MP$^*$ 2001]
+
+Soit un vecteur $v=(v_1,v_2,v_3)$ de~$\R^3$ muni de sa base canonique $(e_1,e_2,e_3)$.
+Montrer qu'il existe une unique fonction $u = (u_1,u_2,u_3)$ de classe~$\mathcal{C}^1$
+de~$\R$ dans~$\R^3$ telle que $u' + u\wedge u' = -u\wedge(u_3e_3)$ et $u(0) = v$.
+
+{\it Indication : étudier la fonction $p \mapsto p + u\wedge p$ avant de pouvoir
+évoquer le théorème de Cauchy-Lipschitz.}
+
+\finenonce
+
+\noindication
+
+\correction
+$f_u$ : $p \mapsto p + u\wedge p$ est linéaire injective car
+$f_u(p) = 0  \Rightarrow  p\perp p$, donc bijective. L'application $u  \mapsto f_u$
+de $\R^3$ dans $\mathcal{L}(\R^3)$ est $\mathcal{C}^\infty$, donc il en est de même
+de l'application inverse~: $u \mapsto(f_u)^{-1}$ et l'équation différentielle
+donnée équivaut à $u' = (f_u)^{-1}(-u\wedge(u_3e_3))$ qui relève de la théorie
+de Cauchy-Lipschitz~: il existe une unique solution maximale
+définie sur un intervalle ouvert~$I$.
+D'après l'équation différentielle, $(u' \mid u) = 0$ d'où $\|u\|$ est constant.
+Alors $u' = (f_u)^{-1}(-u\wedge(u_3e_3))$ est borné, donc $u$ admet une limite
+finie en tout point fini par uniforme continuité, ceci prouve que $I=\R$.
+\fincorrection
+
+\finexercice

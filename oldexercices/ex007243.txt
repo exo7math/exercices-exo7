@@ -1,0 +1,29 @@
+\exercice{7243, megy, 2021/03/06}
+
+\enonce
+(Raffinement de Goursat.)
+L'objectif de cet exercice est de démontrer la version suivante du lemme de Goursat :\\
+\textbf{Lemme. (Raffinement de Goursat)}\\
+Soit \(U\) un ouvert. Soit  \(\Delta\) un triangle dans \(U\). Soit \(z_0\in \Delta\). Soit \(f:U\to \C\) une fonction continue sur \(U\) holomorphe sur \(U\setminus\{z_0\}\). Alors,
+\[\int_{\partial \Delta}f(z)dz=0.\]
+
+\begin{enumerate}
+\item On traite d'abord le cas où \(z_0\) est un sommet du triangle. On dénote les deux autres sommets par \(z_1\) et \(z_2\).
+% AJOUTER FIGURE ?
+\begin{enumerate}
+\item Montrer que pour tout \(z_1'\) sur le segment \([z_0,z_1]\) et pour tout \(z_2'\) sur le segment \([z_0,z_2]\), on a 
+\[\int_{\partial \Delta_{z_0z_1z_2}}f(z)dz=\int_{\partial \Delta_{z_0z'_1z'_2}}f(z)dz.\]
+\item Montrer que quand \(z_1'\to z_0\) et \(z_2'\to z_0\), alors \(\displaystyle{\int_{\partial \Delta_{z_0z'_1z'_2}}f(z)dz\to 0}\).
+\item Démontrer le lemme dans ce cas.
+\end{enumerate}
+\item On suppose dans cette question que \(z_0\in \partial \Delta\). À l'aide de la question précédente, démontrer le lemme  dans ce cas.
+\item On suppose maintenant que \(z_0\in \mathring{\Delta}\). Démontrer le lemme  dans ce cas. Conclure.
+\item Déduire de ce résultat que si \(f:U\to \C\) est une fonction continue, et holomorphe sauf peut-être en un nombre fini de points, alors \(f\) est holomorphe sur \(U\)
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\nocorrection
+
+\finexercice

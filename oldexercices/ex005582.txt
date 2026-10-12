@@ -1,0 +1,21 @@
+\exercice{5582, rouget, 2010/10/16}
+\enonce[***]
+Soient $E$ un espace de dimension finie et $F$ et $G$ deux sous-espaces de $E$. Condition nécessaire et suffisante sur $F$ et $G$ pour qu'il existe un endomorphisme $f$ de $E$ tel que $F=\text{Ker}f$ et $G=\text{Im}f$.
+\finenonce
+
+\noindication
+
+\correction
+Une condition nécessaire est bien sur $\text{dim}F +\text{dim}G =\text{dim}E$ (et non pas $F\oplus G = E$).
+
+Montrons que cette condition est suffisante. Soient $F$ et $G$ deux sous-espaces de $E$ tels que $\text{dim}F+\text{dim}G =\text{dim}E$.
+
+Soit $F'$ un supplémentaire de $F$ dans $E$ ($F'$ existe car $E$ est de dimension finie).
+
+Si $G=\{0\}$ (et donc $F = E$), $f=0$ convient.
+
+Si $G\neq\{0\}$, il existe un isomorphisme $\varphi$ de $F'$ sur $G$ (car $F'$ et $G$ ont même dimension finie) puis il existe un unique endomorphisme de $E$ vérifiant : $f_{/F}=0_{/F}$ et $f_{/F'}=\varphi$.
+
+Mais alors $\text{Im}f=f(F\oplus F') = f(F)+f(F') =\{0\}+G=G$ puis $F\subset\text{Ker}f$ et pour des raisons de dimension, $F=\text{Ker}f$.
+\fincorrection
+\finexercice

@@ -1,0 +1,24 @@
+\exercice{5405, rouget, 2010/07/06}
+\enonce[***]
+Trouver les fonctions bijectives de $[0,1]$ sur lui-même vérifiant $\forall x\in[0,1],\;f(2x-f(x))=x$.
+\finenonce
+
+\noindication
+
+\correction
+$Id$ est solution.
+
+Réciproquement, soit $f$ une bijection de $[0,1]$ sur lui-même vérifiant $\forall x\in[0,1],\;f(2x-f(x))=x$. Nécessairement, $\forall x\in[0,1],\;0\leq 2x-f(x)\leq 1$ et donc $\forall x\in[0,1],\;2x-1\leq f(x)\leq 2x$.
+
+Soit $f^{-1}$ la réciproque de $f$.
+
+\begin{align*}\ensuremath
+\forall x\in[0,1],\;f(2x-f(x))=x&\Leftrightarrow\forall x\in[0,1],\;2x-f(x)=f^{-1}(x)\\
+ &\Leftrightarrow\forall y\in[0,1],\;f(f(y))-2f(y)+y=0\;(\mbox{car}\;\forall x\in[0,1],\;\exists!y\;[0,1]/\;x=f(y))
+\end{align*}
+
+Soit $y\in[0,1]$ et $u_0=y$. En posant $\forall n\in\Nn,\;u_{n+1}=f(u_n)$, on définit une suite de réels de $[0,1]$ (car $[0,1]$ est stable par $f$). La condition $\forall y\in[0,1],\;f(f(y))-2f(y)+ y=0$ fournit $\forall n\in\Nn, \;u_{n+2}-2u_{n+1}+u_n=0$, ou encore $\forall n\in\Nn,\;u_{n+2}-u_{n+1}=u_{n+1}-u_n$. La suite $(u_{n+1}-u_n)_{n\in\Nn}$ est constante ou encore $u$ est arithmétique. Mais, $u$ est également bornée et donc $u$ est constante.
+
+En particulier, $u_1=u_0$ ce qui fournit $f(y)=y$. On a montré que $\forall y\in[0,1],\;f(y)=y$ et donc $f=Id$.
+\fincorrection
+\finexercice

@@ -1,0 +1,32 @@
+\exercice{3589, quercia, 2010/03/10}
+\enonce[Chimie P' 1996]
+
+Soit $(M_n)$ une suite de points dans le plan, de coordonnées $(x_n,y_n)$
+définies par la relation de récurrence~:
+$$\left\{
+\begin{array}{lllll}
+x_{n+1} &= &-x_n + 2y_n\cr y_{n+1} &= &-3x_n + 4y_n.\cr
+\end{array}\right.$$
+
+\begin{enumerate}
+  \item Montrer que, quelque soit $M_0$, les points $M_n$ sont alignés.
+
+  \item Étudier la suite $(M_n)$ quand $n$ tend vers l'infini.
+
+  \item Quelle est la limite de $y_n/x_n$ (utiliser une méthode géométrique)~?
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Diagonaliser ${}^tM  \Rightarrow  y_n -\frac 32x_n = \text{cste}$.
+  \item $y_n-x_n = 2^n(y_0-x_0)$ donc si $y_0\ne x_0$ alors $M_n \to\infty$
+sinon la suite est constante.
+  \item $\frac32$ si $y_0\ne x_0$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

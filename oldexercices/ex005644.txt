@@ -1,0 +1,53 @@
+\exercice{5644, rouget, 2010/10/16}
+\enonce[**** Déterminants circulants]
+Soient $a_0$,...,$a_{n-1}$ $n$ nombres complexes. Calculer $\left|
+\begin{array}{ccccc}
+a_0&a_1&\ldots&a_{n-2}&a_{n-1}\\
+a_{n-1}&a_0&\ddots& &a_{n-2}\\
+\vdots&\ddots&\ddots&\ddots&\vdots\\
+a_2& &\ddots&\ddots&a_1\\
+a_1&a_2&\ldots&a_{n-1}&a_0
+\end{array}
+\right|=\text{det}A$.
+Pour cela, on calculera d'abord $A\Omega$ où $\Omega=(\omega^{(j-1)(k-1)})_{1\leqslant j,k\leqslant n}$ avec $\omega=e^{2i\pi/n}$.
+\finenonce
+
+\noindication
+
+\correction
+Le coefficient ligne $j$, colonne $k$, $(j,k)\in\llbracket1,n\rrbracket^2$, de la matrice $A$ vaut $a_{k-j}$ avec la convention : si $-(n-1)\leqslant u\leqslant -1$, $a_u = a_{n+u}$.
+
+Le coefficient ligne $j$, colonne $k$, $(j,k)\in\llbracket1,n\rrbracket^2$, de la matrice  $A\Omega$ vaut 
+
+\begin{align*}\ensuremath
+\sum_{u=1}^{n}a_{u-j}\omega^{(u-1)(k-1)}&=\sum_{v=-(j-1)}^{n-j}a_v\omega^{(v+j-1)(k-1)}=\sum_{v=-(j-1)}^{-1}a_v\omega^{(v+j-1)(k-1)}+\sum_{v=0}^{n-j}a_v\omega^{(v+j-1)(k-1)}\\
+ &=\sum_{v=-(j-1)}^{-1}a_{v+n}\omega^{(v+n+j-1)(k-1)}+\sum_{u=0}^{n-j}a_u\omega^{(u+j-1)(k-1)}\;(\text{car}\;a_{v+n}=a_v\;\text{et}\;\omega^n = 1)\\
+ &=\sum_{u=n-j+1}^{n-1}a_{u}\omega^{(u+j-1)(k-1)}+\sum_{u=0}^{n-j}a_u\omega^{(u+j-1)(k-1)}=\sum_{u=0}^{n-1}a_u\omega^{(u+j-1)(k-1)}\\
+ &=\omega^{(j-1)(k-1)}\sum_{u=0}^{n-1}a_u\omega^{u(k-1)}.
+\end{align*}
+
+Pour $k\in\llbracket1,n\rrbracket$, posons $S_k =\sum_{u=0}^{n-1}a_u\omega^{u(k-1)}$. Le coefficient ligne $j$, colonne $k$ de $A\Omega$ vaut donc $\omega^{(j-1)(k-1)}S_k$. Par passage au détereminant, on en déduit que :
+
+\begin{center}
+$\text{det}(A\Omega)=\text{det}\left(\omega^{(j-1)(k-1)}S_k\right)_{1\leqslant j,k\leqslant n}=\left(\prod_{k=1}^{n}S_k\right)\text{det}(\omega^{(j-1)(k-1)})_{1\leqslant j,k\leqslant n}$
+\end{center}
+
+($S_k$ est en facteur de la colonne $k$) ou encore $(\text{det}A)(\text{det}\Omega)=\left(\prod_{k=1}^{n}S_k\right)(\text{det}\Omega)$. Enfin, $\Omega$ est la matrice de \textsc{Vandermonde} des racines $n$-èmes de l'unité et est donc inversible puisque celles-ci sont deux à deux distinctes. Par suite $\text{det}\Omega\neq0$ et après simplification on obtient
+
+\begin{center}
+\shadowbox{
+$\text{det}A=\prod_{k=1}^{n}S_k$ où $S_k=\sum_{u=0}^{n-1}a_u\omega^{u(k-1)}$.
+}
+\end{center}
+
+Par exemple, $\left|
+\begin{array}{ccc}
+a&b&c\\
+c&a&b\\
+b&c&a
+\end{array}
+\right|=S_1S_2S_3 =(a+b+c)(a+jb+j^2c)(a+j^2b+jc)$ où $j =e^{2i\pi/3}$.
+
+Un calcul bien plus simple sera fourni dans la planche \og Réduction \fg.
+\fincorrection
+\finexercice

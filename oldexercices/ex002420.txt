@@ -1,0 +1,122 @@
+\exercice{2420, drutu, 2007/10/01}
+\enonce 
+On appelle \textit{base} d'une topologie $\mathcal{T}$ un sous-ensemble
+$\mathcal{B}$ de $\mathcal{T}$ tel que tout ouvert $\mathcal{O} \in \mathcal{T}$ s'\'ecrit comme
+$\mathcal{O}=\bigcup_{i\in I} B_i$, o\`u $B_i \in \mathcal{B}$ pour tout $i\in I$.
+
+\begin{enumerate}
+  \item Montrer que $\mathcal{B}$ est une base de $\mathcal{T}$ si et
+  seulement si pour tout ouvert $\mathcal{O}$ et tout point $x\in \mathcal{O}$ il
+  existe un $B\in \mathcal{B}$ tel que $x\in B\subset \mathcal{O}$.
+
+  \item Soit $\mathcal{T}_n$ la topologie sur $\R^n$ induite par la
+  m\'etrique euclidienne
+  $$\mathrm{dist} (\bar{x}, \bar{y})=\sqrt{(x_1-y_1)^2+...+(x_n-y_n)^2}\, .
+  $$ Montrer que l'ensemble $\mathcal{B}$ de boules ouvertes ayant leur centre dans
+  $\Q^n$et leur rayon dans $\Q$ est une base de $\mathcal{T}_n$.
+
+  \item Soit $\mathcal{B}'$ l'ensemble de parallelipip\`edes ouverts dans
+  $\R^n$ dont les ar\^etes sont parall\`eles aux axes de
+  coordonn\'ees. Est-ce que $\mathcal{B}'$ est une base de $\mathcal{T}_n$ ?
+ 
+  \item Est-ce que $\{ ]-\infty ,a[\; ;\; a\in \R  \}\cup \{ ]b, +\infty[\; ;\; b\in \R
+  \}$ est une base pour $\mathcal{T}_1$ ?
+
+  \item Pour tout $a\in \Q$ on note par $\delta_a$ la droite d'\'equation $y=ax$
+   dans $\R^2$, et on note par $Y$ la r\'eunion des droites $\delta_a$. Soit $\mathcal{T}$ la
+  topologie sur $Y$ induite par la topologie sur $\R^2$ et soit
+  $\mathcal{T}'$ la topologie de base $\mathcal{B}'$ compos\'ee par tous les
+  segments ouverts
+   $]M,N[\subset \delta_a$, $O\not\in ]M,N[$, et par toutes les reunions $\bigcup_{a\in \Q, O\in ]M_a,N_a[} ]M_a,N_a[$. Les
+  deux topologies $\mathcal{T}$ et $\mathcal{T}'$ sont-elles \'equivalentes ?
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  Supposons que $\mathcal{B}$ est une base de $\mathcal{T}$, et soit $\mathcal{O}$ un
+ouvert arbitraire dans $\mathcal{T}$ et $x$ un point de $\mathcal{O}$. L'ouvert
+$\mathcal{O}$ s'\'ecrit comme $\mathcal{O}=\bigcup_{i\in I} B_i$, o\`u $B_i \in
+\mathcal{B}$ pour tout $i\in I$. En particulier il existe un $i_0\in I$
+tel que $x\in B_{i_0}$.
+
+\item R\'eciproquement, si $\mathcal{O}$ est un ouvert arbitraire, pour tout point $x\in \mathcal{O}$ il
+  existe un $B_x\in \mathcal{B}$ tel que $x\in B_x\subset \mathcal{O}$. Par
+  cons\'equent $\mathcal{O}=\bigcup_{x\in \mathcal{O}}B_x$.
+
+\item Il suffit de montrer la propri\'et\'e \'enonc\'ee dans (1).
+Soit $\mathcal{O}\in \mathcal{T}_n$ et soit $x$ un point arbitraire de $\mathcal{O}$.
+D'apr\`es le cours, il existe un $r>0$ tel que $B(x,r)\subset
+\mathcal{O}$.
+ \emph{Remarque.} Une autre manni\`ere de formuler ceci
+est de dire que l'ensemble des boules ouvertes euclidiennes forme
+une base de la topologie $\mathcal{T}_n$.
+
+
+
+Puisque l'ensemble $\Q^n$ est dense dans $\R^n$, il s'ensuit que
+$B\left( x, \frac{r}{2}\right)$ contient un vecteur $q\in \Q^n$.
+En particulier $\mathrm{dist} (x,q)< \frac{r}{2}$, d'o\`u $B\left( q,
+\frac{r}{2}\right)\subset B\left( x, r\right)\subset \mathcal{O}$.
+
+L'intervalle $]\mathrm{dist} (x,q),\frac{r}{2}[ $ est non-vide, donc il
+contient un nombre rationnel $R$. Ainsi $x\in B(q,R)\subset
+B\left( q, \frac{r}{2}\right)\subset \mathcal{O}$.
+
+\item Puisque $\mathcal{B}'\subset \mathcal{T}_n$, ce qu'il reste \`a d\'emontrer
+est \`a nouveau la propri\'et\'e \'enonc\'ee dans (1). Soit $\mathcal{O}$
+un ouvert et $x\in \mathcal{O}$. Il existe un $r>0$ tel que $B(x,r)\subset
+\mathcal{O}$.
+
+D'apr\`es le cours
+$$
+\mathrm{dist} (y,x)= \|y-x\|_2\leq \sqrt{n}\|y-x\|_\infty\, .
+$$
+
+Il s'ensuit que
+\begin{equation}\label{bile}
+B_\infty \left( x,\frac{r}{\sqrt{n}} \right) =\left\{y\; ;\;
+\|y-x\|_\infty<\frac{r}{\sqrt{n}}\right\}\subset B(x,r) \subset
+\mathcal{O}\, .
+\end{equation}
+
+
+Or $B_\infty \left( x,\frac{r}{\sqrt{n}} \right)$ n'est rien
+d'autre que le cube de centre de sym\'etrie $x$ et de longueur des
+ar\^etes $\frac{2r}{\sqrt{n}}$. En particulier $B_\infty \left(
+x,\frac{r}{\sqrt{n}} \right)\in \mathcal{B}'$.
+
+On conclut que $\mathcal{B}'$ est une base de $\mathcal{T}_n$.
+
+\item Soit $]0,1[\in \mathcal{T}_1$. Il n'existe pas d'intervalle de la
+forme $]-\infty ,a[\, ,\; a\in \R \, ,$ ou $ ]b, +\infty[\, ,\;
+b\in \R \, ,$ contenu dans $]0,1[$. Donc $\mathcal{B}''$ n'est pas une
+base pour $\mathcal{T}_1$.
+
+\item Supposons que $\mathcal{T}'\subset \mathcal{T}$. En particulier $\mathcal{B}'\subset
+\mathcal{T}$.
+
+Pour tout $a=\frac{m}{n}\in \Q$, o\`u $m\in \Z^*\, ,\, n\in \N^*\,
+,$ p.g.c.d. $(m,n)=1$, on choisit $M_a,N_a$ deux points sur la
+droite $\delta_a$ tels que $O\in ]M_a,N_a[$ et $\mathrm{dist}
+(O,M_a)=\mathrm{dist} (O,N_a)=\frac{1}{n}$. Pour $a=0$ on choisit
+$M_0=(1,0)\, ,\, N_0=(-1,0)$. Soit
+$$
+\mathcal{C}=\bigcup_{a\in \Q} ]M_a,N_a[\, .
+$$
+
+Par hypoth\`ese $\mathcal{C}\in \mathcal{B}'\subset \mathcal{T}$. En particulier,
+puisque $O$ est un point de $\mathcal{C}$, il existe $r>0$ tel que
+$Y\cap B(O,r)\subset \mathcal{C}$. Pour tout $a\in \Q$ on a donc
+$\delta_a\cap B(O,r)\subset ]M_a,N_a[$, d'o\`u $r<\mathrm{dist}
+(O,M_a)=\frac{1}{n}$. Comme ceci est v\'erifi\'e pour tout $n\in
+\N^*$, il s'ensuit que $r\leq 0$, ce qui contredit le choix de
+$r$.
+
+On a obtenu une contradiction. Donc on ne peut pas avoir
+$\mathcal{T}'\subset \mathcal{T}$.
+\end{enumerate}
+\fincorrection
+\finexercice

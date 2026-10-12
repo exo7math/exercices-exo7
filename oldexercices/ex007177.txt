@@ -1,0 +1,37 @@
+\exercice{7177, megy, 2017/07/26}
+\enonce
+%[application directe d'AM>GM après avoir développé et séparé les termes]
+% question ouverte
+Soient $a$ et $b$ deux réels positifs tels que $a+b=8$. Déterminer la valeur minimale de
+\[ \left(1+\frac1a\right)\left(1+\frac1b\right)\]
+et préciser pour quelles valeurs elle est atteinte.
+\finenonce
+
+\indication 
+Utiliser l'inégalité arithmético-géométrique.
+\finindication
+\correction 
+On peut essayer d'appliquer l'inégalité arithmético-géométrique à chaque facteur. Ceci donne
+\[ 
+\left(1+\frac1a\right)\left(1+\frac1b\right)
+\geq 
+\left(\frac{2}{\sqrt a}\right)\left(\frac{2}{\sqrt b}\right)
+= \frac{4}{\sqrt{ab}},
+\]
+ce qui minore la quantité par $1$ après une deuxième utilisation de l'inégalité arithmético-géométrique sur le dénominateur et utilisation de $a+b=8$, mais cette dernière minoration est évidente vu la forme initiale de l'expression : les deux facteurs sont supérieurs à $1$.
+
+(Remarque : lors de la première utilisation de l'inégalité arithmético-géométrique, il y avait égalité ssi $a=1$ et $b=1$ ce qui est impossible vu l'énoncé. L'inégalité est donc toujours stricte, ce qui indique que la minoration n'est sans doute pas très précise.)
+
+Commençons donc plutôt par développer la quantité à minorer. On a 
+\[ \left(1+\frac1a\right)\left(1+\frac1b\right)
+=
+\frac{1+a+b+ab}{ab} = \frac{9+ab}{ab} = 1+\frac{9}{ab}.\]
+Il s'agit donc de majorer le produit $ab$. L'inégalité arithmético-géométrique donne $\sqrt{ab} \leq \frac{a+b}{2}=4$, donc $ab\leq 16$. On en déduit que $\frac{1}{ab} \geq \frac{1}{16}$ et donc que 
+\[
+\left(1+\frac1a\right)\left(1+\frac1b\right) \geq 1+\frac{9}{16} = \frac{25}{16},
+\]
+avec égalité ssi $a=b=4$.
+
+Remarque : il est préférable d'utiliser les contraintes (ici $a+b=8$) le plus tôt possible dans les majorations ou minorations successives, pour gagner en précision.
+\fincorrection  
+\finexercice  

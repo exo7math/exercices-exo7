@@ -1,0 +1,39 @@
+\exercice{7693, mourougane, 2021/08/11}
+\enonce
+Soit $C$ une courbe régulière plane fermée simple convexe paramétrée 
+par la longueur d'arc par l'application
+$[0,\ell]\to\Rr^2, t\mapsto c(t)$. Un coin est un point de la courbe 
+où la fonction courbure a une dérivée nulle. Le but de l'exercice est de montrer 
+que la courbe $C$ a au moins trois coins. On suppose que $C$ n'est pas un cercle.
+ On notera $v(t)=\dot{c}(t)$ et $\gamma(t)=\ddot{c}(t)$ 
+et $\kappa(t)$ la courbure au point de paramètre $t$.
+\begin{enumerate}
+ \item Montrer que $C$ a au moins deux coins distincts $P$ et $Q$. Faire une figure.
+ \item Montrer à l'aide d'une intégration par partie que $\int_0^\ell \dot{\kappa}(t)c(t)=0$.
+ \item On suppose que $P$ et $Q$ sont sur l'axe des $x$ et qu'il n'y a pas d'autres coins.
+Aboutir à une contradiction.
+ \item Montrer que la courbe $C$ a au moins quatre coins.
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+ \item La fonction courbure est continue et non constante sur le compact $[0,\ell]$.
+ Elle atteint donc son maximum et son minimum en deux points distincts $P$ et $Q$.
+ Comme elle est continûment dérivable, en ces points sa dérivée est nulle.
+ Ce sont donc des coins.
+ \item On utilise la formule de Frenet $\dot{n}(t)=-\kappa(t)\dot{c}(t)$.
+ \begin{eqnarray*}
+  \int_0^\ell \dot{\kappa}c(t)&=-&\int_0^\ell \kappa\dot{c}(t)=\int_0^\ell \dot{n}(t)
+ =n(\ell)-n(0)=0.
+ \end{eqnarray*}
+ \item Par hypothèse, l'ordonnée de $\dot{\kappa}(t)c(t)$ serait de signe constant sur les deux
+ parties de la courbe délimitées par $P$ et $Q$. Ceci contredit l'annulation de l'intégrale.
+ \item S'il n'y a que trois coins, la courbe est partagée en trois parties.
+ Sur deux des parties adjacentes $\dot{\kappa}$ a le même signe.
+ Le raisonnement précédent en déplaçant la courbe,
+ de sorte que $\dot{\kappa}$ soit de signe constant sur chaque demi-plan $(y\geq 0)$
+ et $(y\leq 0)$ aboutit à une contradiction.  
+\end{enumerate}
+\fincorrection
+\finexercice

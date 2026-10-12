@@ -1,0 +1,96 @@
+\exercice{740, monthub, 2001/11/01}
+\video{EVKKvovB3ps}
+\enonce
+On consid\`ere la fonction $f : \R \to \R$ d\'efinie par
+\begin{equation*}
+f(t) =
+\begin{cases}
+  e^{1/t} & \mathrm{\ si\ } t<0\\
+0  & \mathrm{\ si\ } t \geq 0
+\end{cases}
+\end{equation*}
+
+\begin{enumerate}
+\item D\'emontrer  que $f$ est d\'erivable sur $\R$, en particulier en $t=0$.
+\item Etudier l'existence de $f''(0)$.
+\item On veut montrer que pour $t<0$, la d\'eriv\'ee $n$-i\`eme de $f$ s'\'ecrit
+$$f^{(n)}(t)=\frac{P_n(t)}{t^{2n}}e^{1/t}$$
+o\`u $P_n$ est un polyn\^ome.
+\begin{enumerate}
+\item Trouver $P_1$ et $P_2$.
+\item Trouver une relation de r\'ecurrence entre $P_{n+1}, P_n$ et $P'_n$ pour
+  $n\in \N^*$.
+\end{enumerate}
+\item Montrer que $f$ est de classe $C^{\infty}$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item $f$ est d\'erivable sur $\R_-^*$ en tant que compos\'ee de fonctions
+  d\'erivables, et sur $\R_+^*$ car elle est nulle sur cet intervalle ; \'etudions donc la
+  d\'erivabilit\'e en $0$.
+
+On a
+$$\frac{f(t)-f(0)}{t}=\begin{cases}
+  e^{1/t}/t & \mathrm{\ si\ } t<0\\
+0  & \mathrm{\ si\ } t > 0
+\end{cases}$$
+or $e^{1/t}/t$ tend vers $0$ quand $t$ tend vers $0$ par valeurs
+n\'egatives. Donc $f$ est d\'erivable \`a gauche et \`a droite en 0 et ces
+d\'eriv\'ees sont identiques, donc $f$ est d\'erivable et $f'(0)=0$.
+\item On a
+$$f'(t)=\begin{cases}
+  -e^{1/t}/t^2 & \mathrm{\ si\ } t<0\\
+0  & \mathrm{\ si\ } t \geq 0
+\end{cases}$$
+donc le taux d'accroissement de $f'$ au voisinage de 0 est
+$$\frac{f'(t)-f'(0)}{t}=\begin{cases}
+  -e^{1/t}/t^3& \mathrm{\ si\ } t<0\\
+0  & \mathrm{\ si\ } t > 0
+\end{cases}$$
+et il tend vers $0$ quand $t$ tend vers $0$ par valeurs sup\'erieures
+comme inf\'erieures. Donc $f$ admet une d\'eriv\'ee seconde en $0$, et
+$f''(0)=0$.
+
+\item
+  \begin{enumerate}
+  \item On a d\'ej\`a trouv\'e que $f'(t)=-e^{1/t}/t^2$, donc  $f'(t)=P_1(t)/t^2
+    e^{1/t}$ si on pose $P_1(t)=-1$.
+
+Par ailleurs, $f''(t)=e^{1/t}/t^4+e^{1/t}
+(2/t^3)=\frac{1+2t}{t^4}e^{1/t}$ donc la formule est vraie pour
+$n=2$ en posant $P_2(t)=1+2t$.
+\item Supposons que la formule est vraie au rang $n$.
+Alors $f^{(n)}(t)=\frac{P_n(t)}{t^{2n}}e^{1/t}$ d'o\`u
+\begin{equation*}
+\begin{split}
+  f^{(n+1)}(t)&=\frac{P'_n(t)t^{2n}-P_n(t)(2n)t^{2n-1}}{t^{4n}}e^{1/t}+\frac{P_n(t)}{t^{2n}}e^{1/t}(-1/t^2)\\
+&= \frac{P'_n(t)t^{2}-(2n t+1) P_n(t)}{t^{2(n+1)}}e^{1/t}
+\end{split}
+\end{equation*}
+donc la formule est vraie au rang $n+1$ avec
+$$P_{n+1}(t)=P'_n(t)t^{2}-(2n t+1) P_n(t).$$
+  \end{enumerate}
+\item Sur $\R_-^*$ et sur $\R_+^*$, $f$ est ind\'efiniment d\'erivable, donc il
+  suffit d'\'etudier ce qui se passe en $0$.
+
+Montrons  par r\'ecurrence que $f$ est ind\'efiniment d\'erivable en $0$,
+et que pour tout   $n \in \N,   f^{(n)}(0)=0$. On sait que
+  c'est vrai au rang 1. Supposons que $f$ est $n$-fois d\'erivable, et que
+  $f^{(n)}(0)=0$. Alors le taux d'accroissement de $f^{(n)}$ en $0$ est :
+$$\frac{f^{(n)}(t)-f^{(n)}(0)}{t}=\begin{cases}
+  P_n(t)e^{1/t}/t^{2n+1} & \mathrm{\ si\ } t<0\\
+0  & \mathrm{\ si\ } t > 0
+\end{cases}$$
+et sa limite est $0$ quand  $t$ tend vers $0$ par valeurs sup\'erieures
+comme inf\'erieures. Donc $f^{(n)}$ est d\'erivable  en $0$, et
+$f^{(n+1)}(0)=0$. Donc l'hypoth\`ese de r\'ecurrence est v\'erifi\'ee  au
+rang $n+1$.
+
+Par cons\'equent, $f$ est de classe $C^\infty$.
+\end{enumerate}
+\fincorrection
+\finexercice

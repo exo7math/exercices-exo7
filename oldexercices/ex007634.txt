@@ -1,0 +1,21 @@
+\exercice{7634, mourougane, 2021/08/10}
+\enonce[Applications proportionnelles]
+Soit $D$ un ouvert connexe de $\Cc$ contenant le disque unité fermé.
+Soient $f$ et $g$ deux applications holomorphes sur $D$ telles que pour tout $z\in\partial\Delta$, $|f(z)|=|g(z)|$. 
+\begin{enumerate}
+\item On suppose que $f$ et $g$ n'ont pas de zéro dans $D$. Montrer qu'il existe un nombre complexe $\lambda$ de module $1$ tel que $f=\lambda g$ sur $D$. 
+
+\item La conclusion est-elle encore vraie si on ne suppose plus que $f$ et $g$ n'ont pas de zéro dans $D$ ?
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+  \item Sous cette hypothèse, on peut considérer les applications holomorphes sur $D$, $f/g$ et $g/f$. Elles sont majorées en module par $1$ sur le disque unité, et donc aussi sur le disque fermé par le principe du maximum.
+Elles sont donc toutes les deux de module $1$ sur le disque unité, et donc constantes sur le disque unité par le théorème de l'application ouverte. Par connexité de $D$, elles sont constantes sur $D$.
+Il existe donc $\lambda\in\Cc$ tel que $f=\lambda g$ sur $D$.
+Par égalité des modules, on conclut que $|\lambda|=1$.
+  \item Non, les applications $z\mapsto z$ et $z\mapsto z^2$ sont de même module sur le disque unité, mais ne sont pas proportionnelles.
+\end{enumerate}
+\fincorrection
+\finexercice

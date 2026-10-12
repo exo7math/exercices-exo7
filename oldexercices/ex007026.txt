@@ -1,0 +1,79 @@
+\exercice{7026, megy, 2016/10/28}
+
+\enonce
+% source : une partie de ces systèmes provient de Lebossé & Hémery, classe de troisième (!), 1964.
+Résoudre les systèmes suivants, en précisant auparavant le domaine de résolution.
+
+\[
+\begin{cases}
+\frac{x+2}{x}=\frac{y+1}{y-2}\\
+\frac{5x+1}{5x-2}=\frac{y-1}{y-2}
+\end{cases}
+\quad
+\begin{cases}
+\frac{(x+3)^2+(y-1)^2}{x^2+y^2}=1\\
+3x+2y=73
+\end{cases}
+\quad 
+\begin{cases}
+\frac{(x-1)^2-(x-5)^2}{(y+1)^2-(y-1)^2}=1\\
+2y-x=45
+\end{cases}
+\]
+
+\[
+\begin{cases}
+\frac{5}{x}+\frac{4}{y}=18\\
+\frac{3}{x}-\frac{7}{y}=-55
+\end{cases}
+\quad
+\begin{cases}
+\frac{1}{x}+\frac{1}{y}=3\\
+\frac{2}{x}+\frac{3}{y}=9
+\end{cases}
+\quad 
+\begin{cases}
+\frac{1-2x}{x}+\frac{3}{y}=0\\
+\frac{1-x}{x}+\frac{3-y}{y}=0
+\end{cases}
+\]
+
+\[ \begin{cases}
+\frac{3}{4(x-2)}+\frac{7}{3(y-1)}=41\\
+\frac{5}{2(x-2)}-\frac{3}{5(y-1)}=11
+\end{cases}
+\quad
+\begin{cases}
+\frac{9}{x-y}+\frac{10}{x+y}=75\\
+\frac{12}{x-y}+\frac{25}{x+y}=135
+\end{cases}
+\]
+\finenonce
+
+\indication
+Se ramener à des systèmes linéaires soit en éliminant les quotients, soit en effectuant un changement de variable.
+\finindication
+
+\correction
+Pour les trois premiers systèmes, on élimine les dénominateurs en multipliant, et les termes de degré deux se simplifient ce qui conduit à des systèmes linéaires. Les ensembles de solutions sont: 
+\[ 
+\{ (4,8)\}; \quad 
+\{ (7,26)\}; \quad
+\{ (19,32)\}.
+\]
+Pour les trois suivants, on effectue des changements de variable simples du type $X=\frac{1}{x}$, ce qui conduit à des systèmes linéaires. Il faut alors vérifier la compatibilité avec le domaine de résolution des équations, le cas échéant. Le second système aboutit en effet à un système linéaire auxiliaire qui a une unique solution dont une composante est nulle, ce qui ne convient pas. Le troisième système aboutit à un système linéaire ayant une infinité de solutions. L'ensemble de solutions du système initial est alors  une hyperbole privée d'un point. Plus précisément, les ensembles de solutions sont :
+\[ 
+\left\{ \left(-\frac{1}{2},\frac{1}{7}\right)\right\}; \quad 
+\emptyset; \quad
+\left\{ \left(t,\frac{3t}{2t-1}\right), t\in \R\setminus \left\{0,\frac{1}{2}\right\}\right\}.
+\]
+
+Pour les deux systèmes restants, on effectue également des changements de variable : $X=\frac{1}{4(x-2)}$ et $Y=\frac{1}{15(y-1)}$ pour le premier, et $X=\frac{1}{x-y}$, $Y=\frac{1}{x+y}$ pour le dernier, ce qui conduit à la résolution d'un deuxième système linéaire pour conclure. Les ensembles de solutions sont :
+
+\[ 
+\left\{ \left(\frac{17}{8},\frac{16}{5}\right)\right\}; \quad 
+\left\{ \left(\frac{4}{15},\frac{1}{15}\right)\right\}.
+\]
+\fincorrection
+
+\finexercice

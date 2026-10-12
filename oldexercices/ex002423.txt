@@ -1,0 +1,62 @@
+\exercice{2423, bodin, 2007/10/01}
+\enonce 
+%Abou-Jaoudé, Chevalier p75
+Soit $p$ un nombre premier. Pour $n\in \Nn$ on définit $\nu(n)$ comme étant l'exposant de $p$ dans la décomposition de $n$ en facteurs premiers.
+Pour $x = \pm \frac ab$, ($a,b\in \Nn^*$), on définit $\nu(x) = \nu(a)-\nu(b)$.
+\begin{enumerate}
+\item Montrer que $\nu(x)$ est indépendant du choix de la représentation $\pm \frac ab$.
+  
+  \item Montrer que $\nu(xy) = \nu(x)+\nu(y)$, $x,y\in \Qq$.
+
+  \item Montrer que $\nu(x+y) \ge \min (\nu(x),\nu(y))$ pour $x,y\in \Zz$, puis pour $x,y\in \Qq$.
+
+  \item Montrer que sur $\Qq$, $d$ définie par :
+$$d(x,y) = p^{-\nu(x-y)} \ \text{ si } \ x\neq y, \qquad d(x,x)=0$$
+est une distance ultramétrique.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Soit $x= \pm \frac ab = \pm \frac{a'}{b'}$. 
+On écrit $a= p^\alpha a_1$, $b= p^\beta b_1$,... Alors l'équation  $ab'=a'b$ devient
+$p^{\alpha+\beta'}a_1b_1'=p^{\alpha'+\beta}a_1'b_1$. Donc $\alpha+\beta'=\alpha'+\beta$ ou encore
+$\alpha-\beta=\alpha'-\beta'$. Donc $\nu(\pm \frac ab)= \nu(\frac{a'}{b'})$.
+
+  \item Soit $x=p^\alpha x_1$, $y=p^\beta y_1$ avec $\alpha,\beta\in \Zz$ et les numérateurs et dénominateurs de $x_1,y_1\in \Qq$ non divisibles par $p$. Alors $xy= p^{\alpha+\beta}x_1y_1$. Donc $\nu(xy)=\alpha+\beta=\nu(x)+\nu(y)$.
+
+  \item Soit $x,y\in \Zz$, $x=p^\alpha x_1$, $y=p^\beta y_1$. Supposons par exemple $\alpha \le \beta$,
+alors
+$x+y=p^\alpha(x_1+p^{\beta-\alpha}y_1)$, avec $x_1+p^{\beta-\alpha}y_1 \in \Zz$.
+Donc $\nu(x+y) \ge \alpha = \min(\nu(x),\nu(y))$.
+
+Soit maintenant $x = \frac ab,y= \frac{a'}{b'}\in \Qq$.
+Alors 
+\begin{align*}
+  \nu(x+y)  
+  &= \nu( \frac ab+\frac{a'}{b'}) \\
+  &= \nu(\frac{ab'+a'b}{bb'}) \\
+  &= \nu(ab'+a'b)-\nu(bb') \\
+  &\ge \min(\nu(ab'),\nu(a'b))-\nu(bb') \qquad \text{(grâce à l'inégalité sur les entiers)}, \\
+  &\ge \min(\nu(a)+\nu(b'),\nu(a')+\nu(b))-\nu(b)-\nu(b') \\
+  &\ge \min(\nu(a)+\nu(b')-\nu(b)-\nu(b'),\nu(a')+\nu(b)-\nu(b)-\nu(b')) \\
+  &\ge \min(\nu(a)-\nu(b),\nu(a')-\nu(b')) \\
+  &\ge \min(\nu(x),\nu(y)).\\
+\end{align*}
+
+  \item Il est clair que $d(x,y)=0$ si et seulement si $x=y$ et que
+$d(x,y)=d(y,x)$.
+Pour un triplet $(x,y,z)$ on a 
+\begin{align*}
+ d(x,z) 
+  &= p^{-\nu(x-z)} \\
+  &= p^{-\nu(x-y+y-z)} \\
+  &\le p^{-\min(\nu(x-y),\nu(y-z))} \\
+  &\le \max(p^{-\nu(x-y)},p^{-\nu(y-z)}) \\
+  &\le \max(d(x,y),d(y,z)).\\ 
+\end{align*}
+\end{enumerate}
+\fincorrection
+\finexercice

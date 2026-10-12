@@ -1,0 +1,55 @@
+\exercice{457, bodin, 1998/09/01}
+\video{KX375CPpZjU}
+\enonce
+ Soit $p(x) = \sum_{i=0}^{n} a_i \cdot x^i$. On suppose que tous les
+$a_i$ sont des entiers.
+\begin{enumerate}
+    \item  Montrer que si $p$ a une racine rationnelle $\frac{\alpha}{\beta}$ (avec $\alpha$ et $\beta$ premiers entre eux)
+alors $\alpha$ divise $a_0$ et $\beta$ divise $a_n$.
+
+    \item On consid\`ere le nombre $\sqrt 2+\sqrt 3$. En calculant son carr\'e, montrer que ce
+carr\'e est racine d'un polyn\^ome de degr\'e 2. En d\'eduire, \`a
+l'aide du r\'esultat pr\'ec\'edent qu'il n'est pas rationnel.
+\end{enumerate}
+\finenonce 
+
+\indication
+\begin{enumerate}
+  \item Calculer $\beta^n p(\frac \alpha \beta)$ et utiliser le lemme de Gauss.
+  \item Utiliser la premi\`ere question avec $p(x)=(x^2-5)^2-24$.
+
+\end{enumerate}
+\finindication
+
+\correction
+\begin{enumerate}
+\item
+  Soit $\frac \alpha \beta \in \Qq$ avec $\pgcd(\alpha,\beta) = 1$.
+Pour $p(\frac \alpha \beta) = 0$, alors $\sum_{i=0}^n {a_i
+\left(\frac \alpha \beta \right)^i} = 0$. Apr\`es multiplication par
+$\beta^n$ nous obtenons l'\'egalit\'e suivante :
+$$
+a_n\alpha^n+a_{n-1}\alpha^{n-1}\beta + \cdots +
+a_1\alpha\beta^{n-1}+a_0\beta^n = 0.$$ 
+En factorisant tous les termes de cette somme sauf le premier par $\beta$, nous \'ecrivons
+$a_n\alpha^n+\beta q=0$. Ceci entra\^{\i}ne que $\beta$ divise
+$a_n\alpha^n$, mais comme $\beta$ et $\alpha^n$ sont premier entre
+eux alors par le lemme de Gauss
+$\beta$ divise $a_n$. De m\^eme en factorisant par $\alpha$ tous les termes
+de la somme ci-dessus, sauf le dernier,  nous obtenons $\alpha q'
++a_0\beta^n = 0$ et par un raisonnement similaire $\alpha$ divise
+$a_0$.
+  \item  Notons $\gamma = \sqrt 2+\sqrt 3$.
+Alors $\gamma^2 = 5 +2\sqrt 2 \sqrt 3$ Et donc
+$\left(\gamma^2-5\right)^2= 4\times 2 \times 3$, Nous choisissons
+$p(x) = (x^2-5)^2-24$, qui s'\'ecrit aussi $p(x)=x^4-10x^2+1$. Vu
+notre choix de $p$, nous avons $p(\gamma)=0$. Si nous supposons
+que $\gamma$ est rationnel, alors $\gamma = \frac \alpha \beta$ et
+d'apr\`es la premi\`ere question $\alpha$ divise le terme constant de
+$p$, c'est-\`a-dire $1$. Donc $\alpha=\pm 1$. De m\^eme $\beta$
+divise le coefficient du terme de plus haut degr\'e de $p$, donc
+$\beta$ divise $1$, soit $\beta = 1$. Ainsi $\gamma = \pm 1$, ce
+qui est \'evidemment absurde !
+\end{enumerate}
+\fincorrection
+\finexercice

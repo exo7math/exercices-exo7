@@ -1,0 +1,39 @@
+\exercice{7603, mourougane, 2021/08/10}
+\enonce[Primitive et résidus]
+\begin{enumerate}
+ \item Soit $D$ un ouvert de $\Cc$, $c$ un point de $D$ et $f : D-\{c\}\to \Cc$ une application holomorphe.
+Rappeler la définition du résidu de $f$ en $c$.
+
+ \item Soit $D$ un ouvert de $\Cc$ et $f : D-\{c\}\to \Cc$ une application holomorphe.
+ On suppose que $f$ admet une primitive sur $D-\{c\}$.
+ Que peut-on dire du résidu de $f$ en $c$ ? 
+ 
+  \item Soit $c$ un point de $\Delta$ et $f :\Delta-\{c\}\to\Cc$ 
+  une application holomorphe qui admet un pôle d'ordre $3$ en $c$.
+  Sous quelle condition $f$ admet-elle une primitive sur $\Delta-\{c\}$ ?  
+  
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+  \item Soit $r>0$ tel que $\overline{\Delta_r(c)}$ est un disque fermé inclus dans $D$.
+Le résidu de $f$ en $c$ est 
+$$Res_c(f):=\frac{1}{2i\pi}\int_{\partial\Delta_r(c)}f(z)dz.$$
+Cette intégrale ne dépend pas de $r$ tel que $\overline{\Delta_r(c)}$ est inclus dans $D$.
+  \item Si $f$ admet une primitive sur $D-\{c\}$, l'intégrale de $f$ sur tout chemin fermé de $D-\{c\}$ est nulle.
+ En particulier, le résidu de $f$ en $c$ est nul.
+  \item D'après la question précédente, il est nécessaire que le résidu de $f$ en $c$ soit nul.
+  Réciproquement, si le résidu de $f$ en $c$ est nul, montrons que $f$ admet une primitive sur $\Delta$.
+  Par le développement au voisinage de $c$, on sait qu'il existe $a_{-3}, a_{-2}, a_{-1}\in\Cc$ et une fonction $\tilde f$
+  holomorphe sur $\Delta$ tels que
+  $$\forall z\in\Delta,\ \ f(z)=\frac{a_{-3}}{(z-c)^3}+ \frac{a_{-2}}{(z-c)^2}+ \frac{a_{-1}}{z-c}+ \tilde{f}(z).$$
+  Comme le résidu de $f$ en $c$ est nul, $a_{-1}=0$.
+  L'application $z\mapsto \frac{a_{-3}}{(z-c)^3}+ \frac{a_{-2}}{(z-c)^2}$ admet 
+  $z\mapsto -\frac{a_{-3}}{2(z-c)^2}- \frac{a_{-2}}{z-c}$ comme primitive sur $\Delta-\{c\}$.
+  Puisque $\Delta$ est étoilé et que $\tilde{f}$ est holomorphe sur $\Delta$, elle admet une primitive sur $\Delta$
+  donc sur $\Delta-\{c\}$.
+  En conclusion, si le résidu de $f$ en $c$ est nul, $f$ admet-elle une primitive sur $\Delta-\{c\}$.
+\end{enumerate}
+\fincorrection
+\finexercice

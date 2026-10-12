@@ -1,0 +1,19 @@
+\exercice{3806, quercia, 2010/03/11}
+\enonce[Rayon spectral, Centrale MP 2006]
+Soient $A,B$ des matrices de $\mathcal{M}_n(\R)$ symétriques et 
+$f : \R \to \R, t \mapsto {\max(\mathrm{Sp}(A+tB)).}$
+Montrer que $f$ est convexe.
+
+
+\finenonce
+
+\noindication
+
+\correction
+Pour $A$ symétrique réelle on a $\max(\mathrm{Sp}(A)) = \sup\{(x\mid Ax)/\|x\|^2,\ x\in\R^n\setminus\{0\}\}$
+donc $f$ est la borne supérieure des fontions affines $t \mapsto((x\mid Ax) + t(x\mid Bx))/\|x\|^2$
+lorsque $x$ décrit $\R^n\setminus\{0\}$. En tant que sup de fonctions convexes,
+c'est une fonction convexe.
+\fincorrection
+
+\finexercice

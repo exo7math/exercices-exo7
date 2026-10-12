@@ -1,0 +1,21 @@
+\exercice{5221, rouget, 2010/06/30}
+\enonce[***]
+Soit $(u_n)_{n\in\Nn}$ une suite réelle. Montrer que si la suite $(u_n)_{n\in\Nn}$ converge au sens de \textsc{Césaro} et est monotone, alors la suite $(u_n)_{n\in\Nn}$ converge.
+\finenonce
+
+\noindication
+
+\correction
+Supposons sans perte de généralité $u$ croissante (quite à remplacer $u$ par $-u$).
+Dans ce cas, ou bien $u$ converge, ou bien $u$ tend vers $+\infty$.
+Supposons que $u$ tende vers $+\infty$, et montrons qu'il en est de même pour la suite $v$.
+Soit $A\in\Rr$. Il existe un rang $n_0$ tel que pour n naturel supérieur ou égal à $n_0$, $u_n\geq2A$.
+Pour $n\geq n_0+1$, on a alors,
+
+\begin{align*}
+v_n&=\frac{1}{n+1}\left(\sum_{k=0}^{n_0}u_k+\sum_{k=n_0+1}^{n}u_k\right)\geq \frac{1}{n+1}\sum_{k=0}^{n_0}u_k+\frac{(n-n_0)2A}{n+1}
+\end{align*}
+Maintenant, quand $n$ tend vers $+\infty$, $\frac{1}{n+1}\sum_{k=0}^{n_0}u_k+\frac{(n-n_0)2A}{n+1}$ tend vers $2A$ et donc, il existe un rang $n_1$ à partir duquel $v_n\geq\frac{1}{n+1}\sum_{k=0}^{n_0}u_k+\frac{(n-n_0)2A}{n+1}>A$.
+On a montré que~:~$\forall n\in\Nn,\;\exists n_1\in\Nn/\;(\forall n\in\Nn),\;(n\geq n_1\Rightarrow v_n>A)$. Par suite, $\lim_{n\rightarrow +\infty}v_n=+\infty$. Par contraposition, si $v$ ne tend pas vers $+\infty$, la suite $u$ ne tend pas vers $+\infty$ et donc converge, d'après la remarque initiale.
+\fincorrection
+\finexercice

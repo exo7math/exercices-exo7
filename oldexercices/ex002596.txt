@@ -1,0 +1,79 @@
+\exercice{2596, delaunay, 2009/05/19}
+\enonce
+Soit $P(X)$ un polyn\^ome de $\C[X]$, soit $A$ une matrice de $M_n(\C)$. On note $B$ la matrice : $B=P(A)\in M_n(\C)$.
+\begin{enumerate}
+ \item  D\'emontrer que si $\vec x$ est un vecteur propre de $A$ de valeur propre $\lambda$, alors $\vec x$ est un vecteur propre de $B$ de valeur propre $P(\lambda)$.
+
+ \item  Le but de cette question est de d\'emontrer que les valeurs propres de $B$ sont toutes de la forme $P(\lambda)$, avec $\lambda$ valeur propre de $A$.
+
+ Soit $\mu\in\C$, on d\'ecompose le polyn\^ome $P(X)-\mu$ en produit de facteurs de degr\'e $1$ :
+$$P(X)-\mu=a(X-\alpha_1)\cdots(X-\alpha_r).$$
+  \begin{enumerate}
+   \item D\'emontrer que 
+$$\det(B-\mu I_n)=a^n\det(A-\alpha_1I_n)\cdots\det(A-\alpha_rI_n).$$
+   \item En d\'eduire que si $\mu$ est valeur propre de $B$, alors il existe une valeur propre $\lambda$ de $A$ telle que $\mu=P(\lambda)$.
+  \end{enumerate}
+ \item On note $S_A$ l'ensemble des valeurs propres de $A$, d\'emontrer que 
+$$S_B=\{P(\lambda)/\  \lambda\in S_A\}.$$
+
+ \item  Soient $\lambda_1,\dots,\lambda_r$ les valeurs propres de $A$ et soit $Q(X)$ le polyn\^ome :
+$$Q(X)=(X-\lambda_1)\cdots(X-\lambda_r),$$
+on note $C$ la matrice $C=Q(A)$. 
+  \begin{enumerate}
+   \item D\'emontrer que $S_C=\{0\}$.
+   \item  En d\'eduire que le polyn\^ome caract\'eristique de $C$ est $(-1)^nX^n$ et que $C^n=0$.
+  \end{enumerate}
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+Soit $P(X)$ un polyn\^ome de $\C[X]$, soit $A$ une matrice de $M_n(\C)$. On note $B$ la matrice : $B=P(A)\in M_n(\C)$.
+\begin{enumerate}
+ \item {\it On d\'emontre que si $\vec x$ est un vecteur propre de $A$ de valeur propre $\lambda$, alors $\vec x$ est un vecteur propre de $B$ de valeur propre $P(\lambda)$.}
+
+Soit $\vec x\neq0$ tel que $A\vec x=\lambda\vec x$, notons $P(X)=\sum_{k=0}^da_kX^k$, on a
+$$P(A)=\sum_{k=0}^da_kA^k=a_0I_n+a_1 A+\dots+a_d A^d,$$
+o\`u $I_n$ d\'esigne la matrice unit\'e.
+
+Or, pour $k\in\N$, on a $A^k\vec x=\lambda^k\vec x$, d'o\`u
+$$B\vec x=P(A)\vec x=\sum_{k=0}^da_kA^k\vec x=\left(\sum_{k=0}^da_k\lambda^k\right)\vec x=P(\lambda)\vec x,$$
+ce qui prouve que $\vec x$ est un vecteur propre de la matrice $B=P(A)$ pour la valeur propre $P(\lambda)$.
+
+ \item  Le but de cette question est de d\'emontrer que les valeurs propres de $B$ sont toutes de la forme $P(\lambda)$, avec $\lambda$ valeur propre de $A$.
+
+ Soit $\mu\in\C$, on d\'ecompose le polyn\^ome $P(X)-\mu$ en produit de facteurs de degr\'e $1$ :
+$$P(X)-\mu=a(X-\alpha_1)\cdots(X-\alpha_r).$$
+   \begin{enumerate}
+   \item {\it On d\'emontre que} 
+$\det(B-\mu I_n)=a^n\det(A-\alpha_1I_n)\cdots\det(A-\alpha_rI_n).$
+
+Compte tenu de la d\'ecomposition du polyn\^ome $P(X)-\mu$, on a 
+$$P(A)-\mu I_n=aI_n(A-\alpha_1I_n)\cdots(A-\alpha_rI_n)$$
+d'o\`u
+$$\det(B-\mu I_n)=a^n\det(A-\alpha_1I_n)\cdots\det(A-\alpha_rI_n)$$
+car le d\'eterminant est une forme multilin\'eaire (d'o\`u le $a^n$) et le d\'eterminant d'un produit de matrices est \'egal au produit de leurs d\'eterminants.
+   \item {\it On en d\'eduit que si $\mu$ est valeur propre de $B$, alors il existe une valeur propre $\lambda$ de $A$ telle que $\mu=P(\lambda)$.}
+
+Si $\mu$ est une valeur propre de $B$, alors, par d\'efinition, $\det(B-\mu I_n)=0$, ainsi, compte tenu de la question pr\'ec\'edente, il existe un $\alpha_i$, $1\leq i\leq r$, tel que $\det(A-\alpha_iI_n)=0$, c'est-\`a-dire que l'un des $\alpha_i$, $1\leq i\leq r$, est valeur propre de $A$. Or, pour $1\leq i\leq r$, $P(\alpha_i)-\mu=0$ donc si $\mu$ est une valeur propre de $B$, on a $\mu=P(\alpha_i)$ o\`u $\alpha_i$ est une valeur propre de $A$.
+
+  \end{enumerate}
+ \item On note $S_A$ l'ensemble des valeurs propres de $A$. {\it On d\'emontre que }
+$$S_B=\{P(\lambda)/\  \lambda\in S_A\}.$$
+
+Soit $\lambda$ une valeur propre de $A$, on a d\'emontr\'e en 1) que $P(\lambda)$ est une valeur propre de $B$, ainsi $\{P(\lambda)/\  \lambda\in S_A\}\subset S_B$. R\'eciproquement, si $\mu$ est une valeur propre de $B$ alors, d'apr\`es 2), il existe une valeur propre $\lambda$ de $A$ telle que $\mu=P(\lambda)$, ainsi on a $S_B\subset\{P(\lambda)/\  \lambda\in S_A\}$, d'o\`u l'\'egalit\'e des deux ensembles.
+ \item  Soient $\lambda_1,\dots,\lambda_r$ les valeurs propres de $A$ et soit $Q(X)$ le polyn\^ome
+$$Q(X)=(X-\lambda_1)\cdots(X-\lambda_r),$$
+on note $C$ la matrice $C=Q(A)$. 
+   \begin{enumerate}
+   \item {\it On d\'emontre que $S_C=\{0\}$}.
+
+D'apr\`es la question pr\'ec\'edente, on a $S_C=\{Q(\lambda)/\  \lambda\in S_A\}.$ Or, par d\'efinition du polyn\^ome $Q(X)$, on a $Q(\lambda)=0$ pour toute valeur propre $\lambda$ de $A$, ainsi, $S_C=\{0\}$.
+   \item {\it On en d\'eduit que le polyn\^ome caract\'eristique de $C$ est $(-1)^nX^n$ et que $C^n=0$.}
+
+Les valeurs propres de $C$ sont les racines de son polyn\^ome caract\'eristique, or $C$ admet une unique valeur propre : $0$, ainsi $P_C(X)=(-1)^nX^n$. Par ailleurs, d'apr\`es le th\'eor\`eme de Cayley-Hamilton, on a $P_C(C)=0$, ainsi $(-1)^nC^n=0$, donc $C^n=0$.
+  \end{enumerate}
+\end{enumerate}
+\fincorrection
+\finexercice

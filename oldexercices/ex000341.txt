@@ -1,0 +1,59 @@
+\exercice{341, bodin, 1998/09/01}
+\video{I-7jctXUUZk}
+\enonce
+\begin{enumerate}
+\item
+Montrer par r\'ecurrence que $\forall n\in \Nn ,\forall k\geqslant 1$ on a :
+$$2^{2^{n+k}}-1=\left( 2^{2^n}-1 \right) \times \prod_{i=0}^{k-1}(2^{2^{n+i}}+1).$$
+\item
+On pose $F_n=2^{2^n}+1$. Montrer que pour $m\not= n$,
+ $F_n$ et $F_m$ sont premiers entre eux.
+\item En d\'eduire qu'il y a une infinit\'e de nombres premiers.
+\end{enumerate}
+
+
+\finenonce 
+
+\indication
+\begin{enumerate}
+  \item Il faut \^etre tr\`es soigneux : $n$ est fix\'e une fois pour toute, la r\'ecurrence se fait sur $k \ge 1$.
+  \item Utiliser la question pr\'ec\'edente avec $m=n+k$.
+  \item Par l'absurde, supposer qu'il y a seulement $N$ nombres premiers, consid\'erer
+$N+1$ nombres du type $F_i$. Appliquer le ``principe du tiroir'' : \emph{si vous avez $N+1$ chaussettes rang\'ees dans $N$ tiroirs alors il existe (au moins) un tiroir contenant (plus de) deux chaussettes.}
+\end{enumerate}
+\finindication
+
+\correction
+\begin{enumerate}
+  \item Fixons $n$ et montrons la r\'ecurrence sur $k \ge 1$.
+La formule est vraie pour $k=1$.
+Supposons la formule vraie au rang $k$.
+Alors
+\begin{align*}
+(2^{2^n}-1) \times \prod_{i=0}^{k}{(2^{2^{n+i}}+1)} 
+&= (2^{2^n}-1) \times \prod_{i=0}^{k-1}{(2^{2^{n+i}}+1)} \times (2^{2^{n+k}}+1) \\
+&= (2^{2^{n+k}}-1)\times (2^{2^{n+k}}+1) = (2^{2^{n+k}})^2-1
+= 2^{2^{n+k+1}}-1.\\
+\end{align*}
+Nous avons utiliser l'hypoth\`ese de r\'ecurrence dans ces \'egalit\'es.
+Nous avons ainsi montrer la formule au rang $k+1$. Et donc par
+le principe de r\'ecurrence elle est vraie.
+  \item \'Ecrivons $m=n+k$, alors l'\'egalit\'e pr\'ec\'edente devient:
+$$F_m+2 = (2^{2^n}-1) \times \prod_{i=n}^{m-1} {F_i}.$$
+Soit encore :
+$$F_n \times (2^{2^n}-1) \times \prod_{i=n+1}^{m-1} {F_i} \ \ \  - \ \ F_m = 2.$$
+Si $d$ est un diviseur de $F_n$ et $F_m$ alors $d$ divise $2$
+(ou alors on peut utiliser le th\'eor\`eme de B\'ezout). En cons\'equent $d=1$ ou $d=2$. Mais $F_n$ est impair donc $d=1$. Nous avons montrer
+que tous diviseurs de $F_n$ et $F_m$ est $1$, cela signifie que
+$F_n$ et $F_m$ sont premiers entre eux.
+  \item Supposons qu'il y a un nombre fini de nombres premiers.
+Nous les notons alors $\{p_1,\ldots,p_N\}$. Prenons alors $N+1$
+nombres de la famille $F_i$, par exemple $\{F_1,\ldots,F_{N+1}\}$.
+Chaque $F_i$, $i=1,\ldots,N+1$ est divisible par (au moins) un facteur 
+premier $p_j$, $j=1,\ldots,N$. Nous avons $N+1$ nombres $F_i$ et seulement $N$ facteurs premiers $p_j$. Donc par le principe des tiroirs
+il existe deux nombres distincts $F_k$ et $F_{k'}$ 
+(avec $1 \leq k,k' \leq N+1$) qui ont un facteur premier en commun.
+En cons\'equent $F_k$ et $F_{k'}$ ne sont pas premiers entre eux. Ce qui contredit la question pr\'ec\'edente. Il existe donc une infinit\'e de nombres premiers.
+\end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,46 @@
+\exercice{5457, rouget, 2010/07/10}
+\enonce[***]
+Partie principale quand $n$ tend vers $+\infty$ de $u_n=\sum_{k=1}^{n}\sin\frac{1}{(n+k)^2}$. 
+\finenonce
+
+\noindication
+
+\correction
+Soit $x\in[0,1]\subset[0,\frac{\pi}{2}]$. 
+
+D'après la formule de \textsc{Taylor}-\textsc{Laplace} à l'ordre 1 fournit
+ 
+$$\sin x=x-\int_{0}^{x}(x-t)\sin t\;dt\leq x,$$
+
+car pour $t\in[0,x]$, $(x-t)\geq0$ et pour $t\in[0,x]\subset[0,\frac{\pi}{2}]$, $\sin t\geq0$. 
+
+De même, la formule de \textsc{Taylor}-\textsc{Laplace} à l'ordre 3 fournit
+ 
+$$\sin x=x-\frac{x^3}{6}+\int_{0}^{x}\frac{(x-t)^3}{6}\sin t\;dt\geq x-\frac{x^3}{6}.$$
+
+Donc, $\forall x\in[0,1],\;x-\frac{x^3}{6}\leq\sin x\leq x$.
+
+Soient alors $n\geq1$ et $k\in\{1,...,n\}$. On a $0\leq\frac{1}{(n+k)^2}\leq1$ et donc 
+
+$$\frac{1}{(n+k)^2}-\frac{1}{6(n+k)^6}\leq\sin\frac{1}{(n+k)^2}\leq\frac{1}{(n+k)^2},$$
+
+puis en sommant 
+
+$$\sum_{k=1}^{n}\frac{1}{(n+k)^2}-\sum_{k=1}^{n}\frac{1}{6(n+k)^6}\leq\sum_{k=1}^{n}\sin\frac{1}{(n+k)^2}\leq\sum_{k=1}^{n}\frac{1}{(n+k)^2}.$$
+
+Maintenant, quand $n$ tend vers $+\infty$,
+
+$$\sum_{k=1}^{n}\frac{1}{(n+k)^2}=\frac{1}{n}.\frac{1}{n}\sum_{k=1}^{n}\frac{1}{(1+\frac{k}{n})^2}
+=\frac{1}{n}\left(\int_{0}^{1}\frac{1}{(1+x)^2}\;dx+o(1)\right)=\frac{1}{2n}+o(\frac{1}{n}).$$
+
+D'autre part,
+
+$$0\leq\sum_{k=1}^{n}\frac{1}{6(n+k)^6}\leq n.\frac{1}{6n^6}=\frac{1}{6n^5},$$
+
+et donc, $\sum_{k=1}^{n}\frac{1}{6(n+k)^6}=o(\frac{1}{n})$.
+
+On en déduit que $2n(\frac{1}{(n+k)^2}-\frac{1}{6(n+k)^6})=2n(\frac{1}{2n}+o(\frac{1}{n}))=1+o(1)$ et que $2n\frac{1}{(n+k)^2}=1+o(1)$. Mais alors, d'après le théorème des gendarmes, $2n\sum_{k=1}^{n}\sin\frac{1}{(n+k)^2}$ tend vers $1$ quand $n$ tend vers $+\infty$, ou encore
+
+$$\sum_{k=1}^{n}\sin\frac{1}{(n+k)^2}\underset{n\rightarrow+\infty}{\sim}\frac{1}{2n}.$$
+\fincorrection
+\finexercice

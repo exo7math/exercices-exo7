@@ -1,0 +1,19 @@
+\exercice{5251, rouget, 2010/07/04}
+\enonce[***]
+Soit $(u_n)$ une suite de réels éléments de $]0,1[$ telle que $\forall n\in\Nn,\;(1-u_n)u_{n+1}>\frac{1}{4}$. Montrer que $(u_n)$ converge vers $\frac{1}{2}$.
+\finenonce
+
+\noindication
+
+\correction
+Si $u$ converge vers un réel $\ell$, alors $\ell\in[0,1]$ puis, par passage à la limite quand $n$ tend vers $+\infty$,  $\ell(1-\ell)\geq\frac{1}{4}$, et donc $(\ell-\frac{1}{2})^2\leq0$ et finalement $\ell=\frac{1}{2}$. Par suite, si $u$ converge, $\lim_{n\rightarrow +\infty}u_n=\frac{1}{2}$.
+
+De plus, puisque la suite $u$ est à valeurs dans $]0,1[$, pour $n$ naturel donné, on a~:
+
+$$u_n(1-u_n)=\frac{1}{4}-(\frac{1}{2}-u_n)^2\leq\frac{1}{4}<u_{n+1}(1-u_n),$$
+
+et puisque $1-u_n>0$, on a donc $\forall n\in\Nn,\;u_n<u_{n+1}$.
+
+$u$ est croissante et majorée. Donc $u$ converge et $\lim_{n\rightarrow +\infty}u_n=\frac{1}{2}$ (amusant).
+\fincorrection
+\finexercice

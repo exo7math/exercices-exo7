@@ -1,0 +1,21 @@
+\exercice{5369, rouget, 2010/07/06}
+\enonce[**I]
+Soit $A=(a_{i,j})_{1\leq i,j\leq n}$ et $B=(b_{i,j})_{1\leq i,j\leq n}$ avec $b_{i,j}=(-1)^{i+j}a_{i,j}$. Montrer que $\mbox{det}B=\mbox{det}A$.
+
+\finenonce
+
+\noindication
+
+\correction
+
+\textbf{1ère solution.}
+
+\begin{align*}\ensuremath
+\mbox{det}B&=\sum_{\sigma\in S_n}\varepsilon(\sigma)(-1)^{1+\sigma(1)+2+\sigma(2)+...+n+\sigma(n)}a_{\sigma(1),1}a_{\sigma(2),2}...a_{\sigma(n),n}\\
+ &=\sum_{\sigma\in S_n}\varepsilon(\sigma)a_{\sigma(1),1}a_{\sigma(2),2}...a_{\sigma(n),n}\;(\mbox{car}\;1+\sigma(1)+2+\sigma(2)+...+n+\sigma(n)=2(1+2+...+n)\in2\Nn)\\
+ &=\mbox{det}A
+\end{align*}
+\textbf{2ème solution.} On multiplie par $-1$ les lignes $2$, $4$, $6$... puis les colonnes $2$, $4$, $6$...On obtient 
+$\mbox{det}B=(-1)^{2p}\mbox{det}A=\mbox{det}A$ (où $p$ est le nombre de lignes ou de colonnes portant un numéro pair).
+\fincorrection
+\finexercice

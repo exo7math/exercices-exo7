@@ -1,0 +1,43 @@
+\exercice{6892, ruette, 2013/01/24}
+\enonce
+On lance trois dés non pipés. On note le nombre de points (1, 2, 3, 4, 5 ou 6) qui 
+apparaît sur la face supérieure de chaque dé. Calculer la probabilité d'avoir :
+\begin{enumerate}
+\item trois 3,
+\item deux 2 et un 1,
+\item un 1, un 3, un 5,
+\item la somme des points égale à 9,
+\item la somme des points égale à 10.
+\end{enumerate}
+\textit{Remarque : Ces calculs ont été effectués à l'origine par Galilée pour expliquer 
+la différence entre 4. et 5.}
+\finenonce
+
+\noindication
+\correction
+\begin{enumerate}
+\item 
+Dés non pipés signifie que la probabilité de tirer 3 (ou tout autre chiffre) sur un 
+dé est $1/6$. Les tirages étant indépendants, la probabilité
+d'avoir trois 3 est $(1/6)^3 =1/216$.
+\item
+Il y a trois manières d'obtenir deux 2 et un 1, et 216 tirages possibles, donc la probabilité cherchée est $3/216=1/72$.
+\item $6/216$
+\item
+Un total de 9 s'obtient par l'une des additions suivantes,
+$$9=6+2+1=5+3+1=5+2+2=4+4+1=4+3+2=3+3+3,$$
+où on a rangé les résultats d'un tirage par ordre décroissant. On rencontre 
+l'addition 6+2+1 dans $3!=6$ tirages différents. De même pour 5+3+1 et 4+3+2. 
+En revanche, 5+2+2 et 4+4+1 ne correspondent qu'à 3 tirages et 3+3+3 à un seul. 
+Il y a donc 6+6+6+3+3+1=25 tirages qui donnent une somme de 9. La probabilité 
+que la somme soit 9 vaut donc $25/216$.
+\item
+Un total de 10 s'obtient par l'une des additions suivantes, 
+$$10=6+3+1=6+2+2=5+4+1=5+3+2=4+4+2=4+3+3.$$ 
+On rencontre les additions 6+3+1, 5+4+1, 5+3+2 dans $3!=6$ tirages différents. 
+En revanche, 6+2+2, 4+4+2 et 4+3+3 ne correspondent qu'à 3 tirages. Il y a donc 
+6+6+6+3+3+3=27 tirages qui donnent une somme de 9. La probabilité que la somme 
+soit 9 vaut donc $27/216$.
+\end{enumerate}
+\fincorrection
+\finexercice

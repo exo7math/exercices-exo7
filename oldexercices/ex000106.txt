@@ -1,0 +1,41 @@
+\exercice{106, bodin, 1998/09/01}
+\video{nfJizOU7DbA}
+\enonce
+
+Soient les quatre assertions suivantes :
+$$ (a) \ \exists x\in \Rr \quad \forall y\in \Rr \quad x+y > 0 \quad ; \quad
+ (b) \ \forall x\in \Rr \quad \exists y\in \Rr \quad x+y > 0  \ ;$$
+$$ (c) \ \forall x\in \Rr \quad \forall y\in \Rr \quad x+y > 0  \quad ; \quad
+(d) \ \exists x\in \Rr \quad \forall y\in \Rr \quad y^2 > x .$$
+\begin{enumerate}
+    \item Les assertions $a$, $b$, $c$, $d$ sont-elles vraies ou fausses ?
+    \item Donner leur n\'egation.
+\end{enumerate}
+\finenonce 
+
+\indication
+Attention : la n\'egation d'une in\'egalit\'e stricte est une in\'egalit\'e large
+(et r\'eci\-pro\-quement).
+\finindication
+
+\correction
+\begin{enumerate}
+\item (a) est fausse. Car sa n\'egation qui est 
+ $\forall x\in \Rr \ \exists y\in \Rr \quad x+y \leq 0$
+est vraie. \'Etant donn\'e $x\in \Rr$ il existe toujours un $y\in\Rr$ tel que
+$x+y \leq 0$, par exemple on peut prendre $y=-(x+1)$ et alors $x+y=x-x-1=-1 \leq 0$.
+
+\item (b) est vraie, pour un $x$ donn\'e, on peut prendre (par exemple) $y=-x+1$
+et alors $x+y=1>0$.
+La n\'egation de (b) est 
+ $\exists x\in \Rr \ \forall y\in \Rr \quad x+y \leq 0$.
+
+\item (c) : $\forall x\in \Rr \ \forall y\in \Rr \quad x+y > 0$
+est fausse, par exemple $x=-1$, $y=0$. La n\'egation est 
+$\exists x\in \Rr\ \exists y\in \Rr\ x+y \leq 0$.
+
+\item (d) est vraie, on peut prendre $x=-1$. La n\'egation est:
+$\forall x\in \Rr \ \exists y\in \Rr \quad y^2 \leq x$. 
+\end{enumerate}
+\fincorrection
+\finexercice

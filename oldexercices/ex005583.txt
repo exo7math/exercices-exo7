@@ -1,0 +1,36 @@
+\exercice{5583, rouget, 2010/10/16}
+\enonce[***]
+Soient $E$ un espace vectoriel non nul de dimension finie et $f$ un endomorphisme de $E$.
+
+Montrer que : 
+\begin{enumerate}
+ \item  $(f\;\text{non injective})\Leftrightarrow(f=0\;\text{ou}\;f\;\text{diviseur de zéro à gauche})$.
+
+ \item  $(f\;\text{non surjective})\Leftrightarrow(f=0\;\text{ou}\;f\;\text{diviseur de zéro à droite})$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item 
+
+ $\Leftarrow$/ Si $f=0$, $f$ n'est pas injective (car $E\neq\{0\}$).
+
+Si $f\neq 0$ et s'il existe un endomorphisme non nul $g$ de $E$ tel que $f\circ g= 0$ alors il existe un vecteur $x$ de E tel que $g(x)\neq 0$ et $f(g(x)) = 0$. Par suite $\text{Ker}f\neq\{0\}$ et $f$ n'est pas injective.
+
+$\Rightarrow$/ Supposons $f$ non injective et non nulle. Soient $F=\text{Ker}f$ et $G$ un supplémentaire quelconque de $F$ dans $E$. Soit $p$ la projection sur $F$ parallèlement à $G$.
+
+Puisque $F=\text{Ker}f$, on a $f\circ p=0$ et puisque $f$ n'est pas nul, $F$ est distinct de $E$ et donc $G$ n'est pas nul ($E$ étant de dimension finie) ou encore $p$ n'est pas nul. $f$ est donc diviseur de zéro à gauche.
+
+\item  $\Leftarrow$/ Si $f=0$, $f$ n'est pas surjective.
+
+Si $f$ n'est pas nul et s'il existe un endomorphisme non nul $g$ de $E$ tel que $g\circ f=0$ alors $f$ ne peut être surjective car sinon $g(E)=g(f(E))=\{0\}$ contredisant $g\neq0$.
+
+$\Rightarrow$/ Supposons $f$ non surjective et non nulle.
+
+Soient $G=\text{Im}f$ et $F$ un supplémentaire quelconque de $G$ dans $E$ puis $p$ la projection sur $F$ parallèlement à $G$. $F$ et $G$ sont non nuls et distincts de $E$ et donc $p$ n'est pas nulle et vérifie $p\circ f= 0$. $f$ est donc diviseur de zéro à droite.
+\end{enumerate}
+\fincorrection
+\finexercice

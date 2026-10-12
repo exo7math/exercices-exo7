@@ -1,0 +1,28 @@
+\exercice{717, legall, 1998/09/01}
+\video{w_zY_6IuJnE}
+\enonce
+Montrer que le polyn\^ome $  X^n+aX+b  $,  ($  a  $ et $  b  $ r\' eels) admet au plus trois racines r\' eelles.
+\finenonce 
+
+\indication
+On peut appliquer le th\'eor\`eme de Rolle plusieurs fois.
+\finindication
+
+\correction
+\begin{enumerate}
+\item Par l'absurde on suppose qu'il y a (au moins) quatre racines distinctes  pour 
+$  P_n(X) =  X^n+aX+b  $. Notons les $x_1 <x_2<x_3<x_4$.
+Par le th\'eor\`eme de Rolle appliqu\'e trois fois (entre $x_1$ et $x_2$, entre $x_2$ et $x_3$,...) il existe $x'_1<x'_2<x'_3$ des racines de $P'_n$. On applique deux fois le th\'eor\`eme Rolle entre $x'_1$ et $x'_2$ et entre $x'_2$ et $x'_3$. On obtient deux racines distinctes pour $P''_n$. Or 
+$P''_n = n(n-1)X^{n-2}$ ne peut avoir que $0$ comme racines. Donc nous avons 
+obtenu une contradiction. 
+\item \emph{Autre m\'ethode :} 
+Le r\'esultat est \'evident si $  n\leq 3  .$ On suppose donc $
+n\geq 3  .$ Soit $  P_n  $ l'application $  X\mapsto X^n+aX+b  $
+de $  \R   $ dans lui-m\^eme. Alors $  P'_n(X)=nX^{n-1}+a  $
+s'annule en au plus deux valeurs. Donc $P_n$ est successivement
+croissante-d\'ecroissante-croissante ou bien
+d\'ecroissante-croissante-d\'ecroissante. Et donc $P_n$ s'annule au plus 
+trois fois.
+\end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,105 @@
+\exercice{5969, tumpach, 2010/11/11}
+\enonce
+
+
+\textbf{D\'efinition.}
+
+On dit qu'un espace m\'etrique $E$ est \emph{s\'eparable} s'il
+existe un sous-ensemble $\mathcal{F} \subset E$ d\'enombrable et
+dense. 
+
+
+\bigskip
+
+\textbf{Th\'eor\`eme}
+L'espace $L^p(\mathbb{R}^{n})$ est s\'eparable pour $1\leq p
+<+\infty$.
+
+\bigskip
+
+Le but de cet exercice  est de d\'emontrer ce th\'eor\`eme.
+
+
+\begin{enumerate}
+\item Pour $j = 1, 2, 3, \dots$ et $m = (m_1,\ldots,m_n) \in\mathbb{Z}^{n}$, on
+consid\`ere les cubes
+$$
+\Gamma_{j, m}~:= \{ x\in\mathbb{R}^n,~ 2^{-j}m_{i} < x_i \leq
+2^{-j}(m_i + 1),~ i = 1, \dots, n\}.
+$$
+Montrer que pour tout $j \in \mathbb{N}^*$,
+$\bigcup_{m\in\mathbb{Z}^n} \Gamma_{j, m} = \mathbb{R}^{n}$. 
+
+\item Pour $j\in\mathbb{N}^*$, on consid\`ere l'ensemble
+$\mathcal{F}_{j}$ de fonctions $\varphi$ de la forme~:
+$$
+\varphi(x) = \sum_{m\in\mathbb{Z}^n} c_{j, m}\, \mathbf{1}_{\Gamma_{j,
+m}},
+$$
+o\`u les constantes $c_{j, m}\in\mathbb{Q}$ et sont nulles sauf un
+nombre fini. Montrer que l'ensemble
+$$
+\mathcal{F} = \bigcup_{j = 1}^{\infty} \mathcal{F}_{j}
+$$
+est d\'enombrable.
+
+\item Le but de cette question est de montrer que toute fonction
+continue \`a support compact peut \^etre approch\'ee \`a
+$\varepsilon$ pr\`es en norme $L^{p}$ par un \'el\'ement de la
+famille $\mathcal{F}$. Soit $\tilde{f}$ une fonction continue \`a
+support compact et soit $\varepsilon>0$ fix\'e.
+
+\begin{itemize}
+\item  Montrer que pour tout $\varepsilon'>0$, il existe $j
+\in\mathbb{N}^*$, tel que $\forall m\in\mathbb{Z}^n$,
+$$
+x, y \in \Gamma_{j, m} \Rightarrow |\tilde{f}(x) - \tilde{f}(y)|<
+\varepsilon'.
+$$
+\item Soit $\varepsilon'>0$ fix\'e et $j$ comme dans la
+question pr\'ec\'edente. On consid\`ere la fonction
+$\tilde{f}_{j}$ d\'efinie par~:
+$$
+\tilde{f}_{j}(x) = 2^{nj} \int_{\Gamma_{j, m}}\tilde{f}(y)\,dy
+\quad\text{lorsque}\quad x\in\Gamma_{j, m},
+$$
+i.e. la valeur de $\tilde{f}_{j}$ en un point $x\in\mathbb{R}^{n}$
+est la valeur moyenne de la fonction $\tilde{f}$ sur le cube
+$\Gamma_{j, m}$ de cot\'e $2^{-j}$ qui contient $x$. Montrer que
+$\forall m\in\mathbb{Z}^n$,
+$$
+x \in \Gamma_{j, m} \Rightarrow |\tilde{f}(x) - \tilde{f}_{j}(x)|<
+\varepsilon',
+$$
+et en d\'eduire que
+$$
+\|\tilde{f} - \tilde{f}_{j}\|_p <
+\text{Volume}(\gamma)^{\frac{1}{p}}\cdot\varepsilon'
+$$
+o\`u $\gamma$ est un cube de la forme $\{x\in\mathbb{R}^{n},
+-2^{J} \leq x_i \leq 2^J\}$ en dehors duquel $\tilde{f}$ est
+nulle.
+
+
+\item En d\'eduire qu'il existe $f_{j}\in\mathcal{F}_{j}$
+telle que $\|\tilde{f} -f_{j}\|_{p} < \varepsilon.$ (On rappelle
+que les \'el\'ements de $\mathcal{F}_{j}$ ne prennent que des
+valeurs rationnelles.)
+\end{itemize}
+
+
+\item Montrer que toute fonction $f\in L^{p}(\mathbb{R}^{n})$,
+$1\leq p <+\infty$, peut \^etre approch\'ee \`a $\varepsilon$
+pr\`es en norme $L^{p}$ par un \'el\'ement de la famille
+$\mathcal{F}$. Conclure.
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+Voir le lemme 2.17 p.61 dans \textit{Analysis} de E.~Lieb et M.~Loss, American Mathematical Society (2001).
+\fincorrection
+
+\finexercice

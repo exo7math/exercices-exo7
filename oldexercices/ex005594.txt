@@ -1,0 +1,20 @@
+\exercice{5594, rouget, 2010/10/16}
+\enonce[***]
+\label{ex:rou32}
+Soit $G$ un sous-groupe fini de $GL_n(\Rr)$ tel que $\sum_{M\in G}^{}\text{Tr}(M)=0$. Montrer que $\sum_{M\in G}^{}M=0$. 
+\finenonce
+
+\noindication
+
+\correction
+Soit $A=\sum_{M\in G}^{}M$. Alors $A^2=\sum_{(M,N)\in G^2}^{}MN$.
+
+Soit $M\in G$ fixée. Considérons l'application $\varphi$ de $G$ dans $G$ qui à un élément $N$ de $G$ associe $MN$. Puisque $G$ est stable pour le produit, $\varphi$ est bien une application. Plus précisément, $\varphi$ est une permutation de $G$ car l'application $\psi$ de $G$ dans lui-même  qui à un élément $N$ de $G$ associe $M^{-1}N$ vérifie $\psi\circ\varphi=\varphi\circ\psi=Id_G$. On en déduit que
+
+\begin{center}
+$A^2=\sum_{M\in G}^{}\left(\sum_{N\in G}^{}MN\right)=\sum_{M\in G}^{}A=pA$ où $p=\text{card}(G)$.
+\end{center}
+
+Finalement, la matrice $P=\frac{1}{p}A$ est idempotente car $\left(\frac{1}{p}A\right)^2=\frac{1}{p^2}pA=\frac{1}{p}A$. Comme $A$ est une matrice de projection, on sait que $\text{rg}P=\text{Tr}P =\sum_{M\in G}^{}\text{Tr}M=0$ et donc $P=0$ ou encore $\sum_{M\in G}^{}M= 0$.
+\fincorrection
+\finexercice

@@ -1,0 +1,139 @@
+\exercice{6994, blanc-centi, 2015/07/04}
+\video{4M0txOmYb1I}
+\enonce[Variation de la constante]
+Résoudre les équations différentielles suivantes en trouvant 
+une solution particulière par la méthode de variation de la constante :
+\begin{enumerate}
+\item $y' - (2x - \frac{1}{x})y = 1$ sur $]0;+\infty[$
+\item $y'-y = x^k \exp(x)$ sur $\R$, avec $k \in \Nn$
+\item $x(1+\ln^2(x))y'+2\ln(x)y=1$ sur $]0;+\infty[$
+\end{enumerate}
+\finenonce
+ 
+\indication
+Solution particulière :
+\begin{enumerate}
+  \item $-\frac1{2x}$
+  
+  \item $\frac{x^{k+1}}{k+1} \exp(x)$
+  
+  \item $\frac{\ln x}{1+\ln^2(x)}$
+\end{enumerate}
+
+\finindication
+
+\correction\ 
+\begin{enumerate}
+  \item $y' - (2x - \frac{1}{x})y = 1$ sur $]0;+\infty[$
+  \begin{enumerate}
+    \item  \textbf{Résolution de l'équation homogène $y' - (2x - \frac{1}{x})y = 0$.}
+    
+    Une primitive de $a(x) = 2x - \frac1x$ est $A(x) = x^2 - \ln x$,
+    donc les solutions de l'équation homogène sont les $y(x) = \lambda \exp(x^2 - \ln x) = \lambda \frac1x\exp(x^2)$,
+    pour $\lambda$ une constante réelle quelconque.
+    
+    
+    \item \textbf{Recherche d'une solution particulière.}
+    
+    Nous allons utiliser la méthode de variation de la constante pour trouver une solution particulière 
+    à l'équation $y' - (2x - \frac{1}{x})y = 1$.
+    On cherche une telle solution sous la forme $y_0(x) = \lambda(x) \frac1x\exp(x^2)$ 
+    où $x \mapsto \lambda(x)$ est maintenant une fonction.
+    
+    On calcule d'abord 
+    $$y_0'(x) = \lambda'(x) \frac1x\exp(x^2) + \lambda(x) \left(-\frac{1}{x^2}+2\right) \exp(x^2)$$
+    
+    Maintenant :
+    \begin{align*}
+          & y_0 \quad \text{ est  solution de }  y' - (2x + \frac{1}{x})y = 1 \\
+    \iff & y_0' - (2x - \frac{1}{x})y_0 = 1 \\
+    \iff& \lambda'(x) x\exp(x^2) + \lambda(x) \left(-\frac{1}{x^2}+2\right) \exp(x^2)
+        - (2x - \frac{1}{x})\lambda(x) \frac1x\exp(x^2) = 1 \\
+    \iff& \lambda'(x) \frac1x\exp(x^2) = 1 \qquad \text{cela doit se simplifier !}\\
+    \iff& \lambda'(x) = x\exp(-x^2)
+    \end{align*}
+    
+    Ainsi on peut prendre $\lambda(x) = -\frac12\exp(x^2)$, ce qui fournit la solution particulière :
+    $$y_0(x) = \lambda(x) \frac1x\exp(x^2) = -\frac12\exp(-x^2)\frac1x\exp(x^2) = -\frac1{2x}$$
+    
+    Pour se rassurer, on n'oublie pas de vérifier que c'est bien une solution !
+    
+    \item \textbf{Solution générale.}    
+    
+    L'ensemble des solutions s'obtient par la somme de la solution particulière avec les solutions de l'équation
+    homogène. Autrement dit, les solutions sont les :
+    $$y(x) = -\frac1{2x} + \lambda \frac1x\exp(x^2)\qquad (\lambda\in\Rr).$$
+    
+  \end{enumerate}  
+
+  \item $y'-y = x^k \exp(x)$ sur $\R$, avec $k \in \Nn$
+  \begin{enumerate}
+    \item  \textbf{Résolution de l'équation homogène $y' - y = 0$.}
+    
+    Les solutions de l'équation homogène sont les $y(x) = \lambda \exp(x)$, $\lambda \in \Rr$.
+        
+    \item \textbf{Recherche d'une solution particulière.}
+    
+    On cherche une solution particulière sous la forme $y_0(x) = \lambda(x) \exp(x)$ 
+    où $x \mapsto \lambda(x)$ est maintenant une fonction.
+    
+    Comme $y_0'(x) = \lambda'(x)\exp(x) + \lambda(x) \exp(x)$
+    alors
+
+    \begin{align*}
+          & y_0 \quad \text{ est  solution de }  y' - y = x^k \exp(x) \\
+    \iff& \lambda'(x)\exp(x) + \lambda(x) \exp(x) - \lambda(x) \exp(x) = x^k \exp(x)\\
+    \iff& \lambda'(x)\exp(x) = x^k \exp(x)\\
+    \iff& \lambda'(x) = x^k
+    \end{align*}
+    
+    On fixe $\lambda(x) = \frac{x^{k+1}}{k+1}$, ce qui conduit à la solution particulière :
+    $$y_0(x) = \frac{x^{k+1}}{k+1} \exp(x)$$
+    
+    \item \textbf{Solution générale.}    
+    
+    L'ensemble des solutions est formé des 
+    $$y(x) =\frac{x^{k+1}}{k+1} \exp(x) + \lambda \exp(x)\qquad (\lambda\in\Rr).$$
+    
+  \end{enumerate}  
+  
+  
+\item $x(1+\ln^2(x))y'+2\ln(x)y=1$ sur $]0;+\infty[$
+
+Le coefficient de $y'$ ne s'annule pas sur $]0;+\infty[$, l'équation peut donc se mettre sous la forme
+$$y'+\frac{2\ln x}{x(1+\ln^2(x))}y=\frac{1}{x(1+\ln^2(x))}$$
+  \begin{enumerate}
+  
+    \item Les solutions de l'équation homogène associée sont les $y(x)=\lambda e^{A(x)}$, 
+    où $A$ est une primitive de $a(x)=-\frac{2\ln x}{x(1+\ln^2(x))}$ et $\lambda\in\R$. 
+    On peut donc choisir $A(x)=-\ln(u(x))$ avec $u(x)=1+\ln^2(x)$. Les solutions 
+    de l'équation sont les $\displaystyle y(x)=\lambda e^{-\ln(1+\ln^2(x))}=\frac{\lambda}{1+\ln^2(x)}$.
+    
+    \item Utilisons la méthode de variation de la constante pour trouver une solution 
+    particulière de l'équation avec second membre. On cherche $y_0(x)=\frac{\lambda(x)}{1+\ln^2(x)}$, 
+    avec $\lambda$ une fonction dérivable. Or $z(x)=\frac{1}{1+\ln^2(x)}$ est solution 
+    de l'équation homogène et $y_0(x)=\lambda(x)z(x)$:
+    
+    \begin{align*}
+          & y_0 \quad \text{ est  solution} \\
+    \iff&  y_0'+\frac{2\ln x}{x(1+\ln^2(x))}y_0  =  \frac{1}{x(1+\ln^2(x))}\\
+    \iff& \lambda'(x)z(x)+\lambda(x)\underbrace{\left[z'(x)+\frac{2\ln x}{x(1+\ln^2(x))}z(x)\right]}_{=0} = \frac{1}{x(1+\ln^2(x))} \\
+    \iff& \frac{\lambda'(x)}{1+\ln^2(x)} = \frac{1}{x(1+\ln^2(x))}\\
+    \iff& \lambda'(x)=\frac{1}{x}
+    \end{align*}    
+    On peut donc choisir $\lambda(x)=\ln x$, ce qui donne la solution particulière 
+$y_0(x)=\frac{\ln x}{1+\ln^2(x)}$.
+     
+
+    \item Les solutions sont obtenues en faisant la somme de cette solution particulière et 
+    des solutions de l'équation homogène: ce sont les 
+$$y(x)=\frac{\ln x +\lambda}{1+\ln^2(x)}\qquad (\lambda\in\R)$$
+où $\lambda$ est un paramètre réel.
+  \end{enumerate}
+Remarque: le choix d'une primitive de $\lambda'$ se fait à constante additive près. 
+Si on avait choisi par exemple $\lambda(x)=\ln x + 1$, la solution particulière aurait été différente, mais les solutions de l'équation avec second membre auraient été les 
+$$y(x)=\frac{\ln x +1+\lambda}{1+\ln^2(x)}\quad (x\in\R)$$
+Quitte à poser $\lambda_0'=1+\lambda$, ce sont évidemment les m\^emes que celles trouvées précédemment!
+\end{enumerate}
+\fincorrection
+\finexercice

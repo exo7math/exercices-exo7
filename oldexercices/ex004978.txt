@@ -1,0 +1,30 @@
+\exercice{4978, quercia, 2010/03/17}
+\enonce[Composée de demi-tours par rapport aux arêtes d'un tétraèdre]
+
+Soit $ABCD$ un tétraèdre régulier, et $d_{AB},d_{AC},d_{AD}$ les $\frac12$-tours
+autour des droites $(AB),(AC),(AD)$.
+Simplifier $f = d_{AB} \circ d_{AC} \circ d_{AD}$.
+\finenonce
+
+\noindication
+
+\correction
+$d_{AD}(D) = D,\quad d_{AC}(D) = D'$ tq $\vec{AD'} = \vec{DC}$. \par
+La droite $(AD')$ est parallèle à $(DC)$ qui est perpendiculaire à $(AB)$.
+
+Donc $f(D) = d_{AB}(D') = D''$ tq $\vec{AD''} = \vec{CD}$.
+
+$d_{AD}(D'') = C,\quad d_{AC}(C) = C,\quad f(D'') = d_{AB}(C) = C'$
+tq $\vec{AC'} = \vec{CB}$.
+
+$d_{AD}(C') = C''$ tq $\vec{AC''} = \vec{BC},\quad d_{AC}(C'') = B,\quad
+ f(C') = d_{AB}(B) = B$.
+
+$d_{AD}(B) = B'$ tq $\vec{AB'} = \vec{BD},\quad d_{AC}(B') = B''$
+tq $\vec{AB''} = \vec{DB},\quad f(B) = d_{AB}(B'') = D$.
+
+Soit $E$ le symétrique de $C$ par rapport à $(BD)$ : $f$ est le
+$\frac14$-tour autour de $(AE)$ envoyant $D$ sur $B$.
+\fincorrection
+
+\finexercice

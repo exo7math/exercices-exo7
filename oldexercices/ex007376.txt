@@ -1,0 +1,26 @@
+\exercice{7376, mourougane, 2021/08/10}
+\enonce
+\begin{enumerate}
+ \item Combien l'anneau $\Z/24\Z$ a-t-il d'éléments inversibles ? 
+
+ \item Donner un isomorphisme entre $\Z/24\Z$ et un groupe produit.
+
+ \item Le groupe des inversibles de $\Z/24\Z$ est-il cyclique ?
+Si oui, combien a-t-il de générateurs ?
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+ \item D'après le cours, il en a $\phi(24)=\phi(2^3\times3)
+=(2^3-2^2)(2)=8$.
+ \item Par le théorème chinois, comme $3$ et $8$ sont premiers entre eux,
+$$\Z/24\Z \simeq \Z/3\times\Z/8\Z.$$
+ \item Par la question précédente, $(\Z/24\Z)^\times\simeq (\Z/3\times\Z/8\Z)^\times
+\simeq (\Z/3\Z)^\times\times (\Z/8\Z)^\times\simeq \Z/2\Z\times (\Z/8\Z)^\times.$
+Pour déterminer le groupe $(\Z/8\Z)^\times$, on observe que c'est un groupe à $\phi(8)=4$ éléments.
+$(\Z/8\Z)^\times=\{1,3,-1,-3\}$. Comme $3^2=1$, tous les éléments sont d'ordre $2$.
+Par conséquent, tous les éléments de $(\Z/24\Z)^\times$ sont d'ordre 2, et ce groupe n'est pas cyclique.
+\end{enumerate}
+\fincorrection
+\finexercice

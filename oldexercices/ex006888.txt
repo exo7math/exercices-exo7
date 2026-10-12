@@ -1,0 +1,302 @@
+\exercice{6888, bodin, 2012/09/05}
+\video{oBG5H6nDyhk}
+\enonce Donner le développement limité en $0$ des fonctions :
+
+\begin{enumerate}
+  \item $\cos x \cdot \exp x$ \quad à l'ordre $3$
+
+  \item $\left( \ln (1+x) \right)^2$ \quad à l'ordre $4$
+
+  \item $\displaystyle{\frac{\sh x-x}{x^3}}$ \quad à l'ordre $6$
+
+  \item $\exp\big(\sin(x)\big)$ \quad à l'ordre $4$
+
+  \item  $\sin^6(x)$ \quad à l'ordre $9$
+
+  \item $\ln \big(\cos(x)\big)$ \quad à l'ordre $6$
+
+  \item $\displaystyle{\frac{1}{\cos x}}$ \quad à l'ordre $4$
+
+  \item $\tan x$ \quad à l'ordre $5$ (ou $7$ pour les plus courageux)
+
+  \item $(1+x)^{\frac{1}{1+x}}$ \quad à l'ordre $3$
+
+  \item $\arcsin \left ( \ln(1+x^2) \right )$ \quad à l'ordre $6$
+\end{enumerate}
+\finenonce
+
+\indication
+\begin{enumerate}
+  \item $\cos x \cdot \exp x = 1 + x - \frac13 x^3 + o(x^3)$
+
+  \item $\left( \ln (1+x) \right)^2= x^2-x^3+\frac{11}{12}x^4+ o(x^4)$
+
+  \item $\frac{\sh x-x}{x^3} = \frac{1}{3!}+\frac{1}{5!}x^2+\frac{1}{7!}x^4+\frac{1}{9!}x^6 + o(x^6)$
+
+  \item $\exp\big(\sin(x)\big)=1+x + \frac12 x^2 - \frac18 x^4+ o(x^4)$
+
+  \item $\sin^6 (x)  =  x^6-x^8 + o(x^9)$
+
+  \item $\ln(\cos x) =  - \frac{1}{2} x^2 -\frac{1}{12}x^4 -\frac{1}{45}x^6  + o(x^6)$
+
+  \item $\frac{1}{\cos x} = 1+\frac{1}{2}x^2+\frac{5}{24}x^4 + o(x^4)$
+
+  \item $\tan x = x + \frac{x^3}{3} + \frac{2x^5}{15} + \frac{17x^7}{315} + o(x^7)$
+
+  \item $(1+x)^{\frac{1}{1+x}} =  \exp\left( \frac{1}{1+x} \ln(1+x) \right) = 1+x-x^2 + \frac{x^3}{2} + o(x^3)$
+
+  \item  $\arcsin \left ( \ln(1+x^2) \right ) = x^2-\frac{x^4}{2}+\frac{x^6}{2}+o(x^6)$
+\end{enumerate}
+\finindication
+
+\correction
+\begin{enumerate}
+  \item $\cos x \cdot \exp x$ (à l'ordre $3$).
+  
+Le dl de $\cos x$ à l'ordre $3$ est
+$$\cos x = 1 - \frac{1}{2!} x^2 + \epsilon_1(x)x^3.$$
+
+Le dl de $\exp x$ à l'ordre $3$ est
+$$\exp x =1+x+\frac1{2!}x^2+\frac1{3!}x^3 + \epsilon_2(x)x^3.$$
+
+Par convention toutes nos fonctions $\epsilon_i(x)$ vérifierons $\epsilon_i(x)\to 0$ lorsque $x\to0$.
+
+\bigskip
+
+On multiplie ces deux expressions  
+\begin{align*}
+\cos x \times \exp x 
+  & =  \Big(1 - \frac{1}{2} x^2   + \epsilon_1(x)x^3\Big) \times \Big( 1+x+\frac1{2!}x^2+\frac1{3!}x^3 + \epsilon_2(x)x^3\Big) \\
+  & =  1 \cdot \Big(1+x+\frac1{2!}x^2+\frac1{3!}x^3 + \epsilon_2(x)x^3 \Big)  \quad \text{on développe la ligne du dessus}\\  
+  & \qquad  - \frac{1}{2} x^2 \cdot \Big( 1+x+\frac1{2!}x^2+\frac1{3!}x^3 + \epsilon_2(x)x^3 \Big) \\
+  & \qquad  + \epsilon_1(x)x^3 \cdot \Big(1+x+\frac1{2!}x^2+\frac1{3!}x^3 + \epsilon_2(x)x^3 \Big) \\
+\end{align*}
+
+On va développer chacun de ces produits, par exemple pour le deuxième produit :
+$$- \frac{1}{2!} x^2 \cdot \Big(  1+x+\frac1{2!}x^2+\frac1{3!}x^3 +  \epsilon_2(x)x^3\Big)
+= - \frac{1}{2} x^2 - \frac{1}{2} x^3 - \frac14x^4  -\frac1{12}x^5 -\frac12x^2\cdot \epsilon_2(x)x^3.$$
+
+Mais on cherche un dl à l'ordre $3$ donc tout terme en $x^4$, $x^5$ ou plus se met dans $\epsilon_3(x)x^3$,
+y compris $x^2 \cdot \epsilon_2(x)x^3$ qui est un bien de la forme $\epsilon(x)x^3$.
+Donc $$- \frac{1}{2} x^2 \cdot \Big(1+x+\frac1{2!}x^2+\frac1{3!}x^3 + \epsilon_2(x)x^3\Big)
+= - \frac{1}{2} x^2 - \frac{1}{2} x^3  + \epsilon_3(x)x^3.$$
+
+Pour le troisième produit on a
+$$\epsilon_1(x)x^3 \cdot \Big(1+x+\frac1{2!}x^2+\frac1{3!}x^3 + \epsilon_2(x)x^3\Big) 
+= \epsilon_1(x)x^3+x\epsilon_1(x)x^3+\cdots = \epsilon_4(x)x^3$$
+
+On en arrive à :
+\begin{align*}
+\cos x \cdot \exp x 
+  & =  \Big(1 - \frac{1}{2} x^2 + \epsilon_1(x)x^3 \Big) \times \Big( 1+x+\frac1{2!}x^2+\frac1{3!}x^3 + \epsilon_2(x)x^3\Big) \\
+  & = 1+x+\frac1{2!}x^2+\frac1{3!}x^3 +  \epsilon_1(x)x^3\\
+  & \qquad - \frac{1}{2} x^2- \frac{1}{2} x^3  + \epsilon_3(x)x^3 \\
+  & \qquad  + \epsilon_4(x)x^3 \qquad \text{il ne reste plus qu'à regrouper les termes :}  \\    
+  & =  1 + x + (\frac12-\frac12) x^2 + (\frac{1}{6}- \frac{1}{2})x^3 + \epsilon_5(x)x^3 \\
+  & =  1 + x - \frac13 x^3 + \epsilon_5(x)x^3 \\
+\end{align*}
+
+Ainsi le dl de $\cos x \cdot \exp x$ en $0$ à l'ordre $3$ est :
+$$\cos x \cdot \exp x = 1 + x - \frac13 x^3 + \epsilon_5(x)x^3.$$
+
+
+\item $\left( \ln (1+x) \right)^2$ (à l'ordre $4$).
+
+Il s'agit juste de multiplier le dl de $\ln(1+x)$ par lui-même.
+En fait si l'on réfléchit un peu on s'aperçoit qu'un dl à l'ordre $3$ sera suffisant (car le terme constant est nul) :
+$$\ln(1+x)=x-\frac12x^2+\frac13x^3+ \epsilon(x)x^3$$
+ $\epsilon_5(x)\to 0$ lorsque $x\to0$.
+
+\begin{align*}
+\left( \ln (1+x) \right)^2 
+  & = \ln (1+x)  \times \ln (1+x)  \\
+  & = \left(x-\frac12x^2+\frac13x^3+ \epsilon(x)x^3\right) \times \left( x-\frac12x^2+\frac13x^3+ \epsilon(x)x^3\right) \\
+  & = x \times \left( x-\frac12x^2+\frac13x^3+ \epsilon(x)x^3\right) \\
+  & \qquad  -\frac12x^2\times \left( x-\frac12x^2+\frac13x^3+ \epsilon(x)x^3\right) \\
+  & \qquad +\frac13x^3\times \left( x-\frac12x^2+\frac13x^3+ \epsilon(x)x^3\right) \\
+  & \qquad + \epsilon(x)x^3\times \left( x-\frac12x^2+\frac13x^3+ \epsilon(x)x^3\right) \\
+  & =  x^2-\frac12x^3+\frac13x^4+ \epsilon(x)x^4 \\
+  & \qquad -\frac12x^3+\frac14x^4+ \epsilon_1(x)x^4 \\
+  & \qquad +\frac13x^4 + \epsilon_2(x)x^4 \\
+  & \qquad + \epsilon_3(x)x^4 \\  
+  & =  x^2-x^3+\frac{11}{12}x^4+ \epsilon_4(x)x^4 \\
+\end{align*}
+
+
+\item $\displaystyle{\frac{\sh x-x}{x^3}}$ (à l'ordre $6$).
+
+Pour le dl de $\displaystyle{\frac{\sh x-x}{x^3}}$ on commence par faire un dl du numérateur.
+Tout d'abord :
+$$\sh x = x+\frac{1}{3!}x^3+\frac{1}{5!}x^5+\frac{1}{7!}x^7+\frac{1}{9!}x^9 +\epsilon(x) x^9$$
+donc 
+$$\sh x - x = \frac{1}{3!}x^3+\frac{1}{5!}x^5+\frac{1}{7!}x^7+\frac{1}{9!}x^9 +\epsilon(x) x^9.$$
+
+Il ne reste plus qu'à diviser par $x^3$ :
+$$\frac{\sh x-x}{x^3} = \frac{\frac{1}{3!}x^3+\frac{1}{5!}x^5+\frac{1}{7!}x^7+\frac{1}{9!}x^9 +\epsilon(x) x^9 }{x^3} 
+= \frac{1}{3!}+\frac{1}{5!}x^2+\frac{1}{7!}x^4+\frac{1}{9!}x^6 +\epsilon(x) x^6$$
+
+Remarquez que nous avons commencé par calculer un dl du numérateur à l'ordre $9$,
+pour obtenir après division un dl à l'ordre $6$.
+
+
+  \item $\exp\big(\sin(x)\big)$ (à l'ordre $4$).
+
+On sait $\sin x= x -\frac{1}{3!}x^3 + o(x^4)$
+et $\exp(u)=1+u+\frac1{2!} u^2+\frac{1}{3!}u^3+\frac{1}{4!}u^4+o(u^4)$.
+
+
+On note désormais toute fonction $\epsilon(x)x^n$ (où $\epsilon(x)\to 0$ lorsque $x\to0$) par $o(x^n)$.
+Cela évite les multiples expressions $\epsilon_i(x)x^n$.
+
+
+On substitue $u=\sin(x)$, il faut donc calculer $u, u^2, u^3$ et $u^4$ : 
+$$u = \sin x= x -\frac{1}{3!}x^3 + o(x^4)$$
+$$u^2 = \big( x -\frac{1}{3!}x^3 + o(x^4)\big)^2 = x^2-\frac13 x^4 + o(x^4)$$
+$$u^3 = \big( x -\frac{1}{3!}x^3 + o(x^4)\big)^3 = x^3 + o(x^4)$$
+$$u^3 = x^4 + o(x^4) \quad \text{ et } \quad o(u^4)=o(x^4)$$
+
+Pour obtenir :
+\begin{align*}
+  \exp(\sin(x)) 
+    & =  1+ x -\frac{1}{3!}x^3 + o(x^4)\\
+    &  \qquad   + \frac1{2!}\big(x^2-\frac13 x^4 + o(x^4)\big) \\
+    &  \qquad   + \frac1{3!}\big(x^3 + o(x^4)\big) \\
+    &  \qquad   + \frac1{4!}\big(x^4 + o(x^4)\big) \\    
+    & \qquad + o(x^4) \\
+    & = 1+x + \frac12 x^2 - \frac18 x^4 + o(x^4).
+\end{align*}
+
+
+
+  \item  $\sin^6(x)$ (à l'ordre $9$).
+
+On sait $\sin (x)= x -\frac{1}{3!}x^3 + o(x^4)$.
+
+
+
+Si l'on voulait calculer un dl de $\sin^2(x)$ à l'ordre $5$ on écrirait :
+$$\sin^2 (x)  =  \big(x -\frac{1}{3!}x^3 + o(x^4)\big)^2 =  
+\big(x -\frac{1}{3!}x^3 + o(x^4)\big) \times  \big(x -\frac{1}{3!}x^3 + o(x^4)\big) 
+= x^2 -2\frac{1}{3!}x^4 + o(x^5).$$
+En effet tous les autres termes sont dans $o(x^5)$.
+
+
+Le principe est le même pour $\sin^6(x)$:
+$$\sin^6 (x)  =  \big(x -\frac{1}{3!}x^3 + o(x^4)\big)^6 =  
+\big(x -\frac{1}{3!}x^3 + o(x^4) \big) \times  \big(x -\frac{1}{3!}x^3 + o(x^4) \big) 
+\times  \big(x -\frac{1}{3!}x^3 + o(x^4) \big) \times \cdots$$
+Lorsque l'on développe ce produit en commençant par les termes de plus petits degrés on obtient 
+$$\sin^6 (x)  =  x^6 + 6 \cdot x^5 \cdot (-\frac1{3!} x^3) + o(x^9) = x^6-x^8 + o(x^9)$$
+
+
+
+  \item $\ln \big(\cos(x)\big)$ (à l'ordre $6$).
+
+Le dl de $\cos x$ à l'ordre $6$ est
+$$\cos x = 1 - \frac{1}{2!} x^2 + \frac{1}{4!}x^4 - \frac{1}{6!}x^6 + o(x^6).$$
+Le dl de $\ln(1+u)$ à l'ordre $6$ est
+$\ln(1+u)=u-\frac12u^2+\frac13u^3-\frac14u^4+\frac15u^5-\frac16u^6+o(u^6)$.
+
+On pose $u= - \frac{1}{2!} x^2 + \frac{1}{4!}x^4 - \frac{1}{6!}x^6 + o(x^6)$ de sorte que
+$$\ln(\cos x) = \ln (1+u)=u-\frac12u^2+\frac13u^3-\frac14u^4+\frac15u^5-\frac16u^6+o(u^6).$$
+
+Il ne reste qu'à développer les $u^k$, ce qui n'est pas si dur que cela si les calculs sont bien menés et 
+les puissances trop grandes écartées.
+
+Tout d'abord :
+\begin{align*}
+u^2
+  & = \left(- \frac{1}{2!} x^2 + \frac{1}{4!}x^4 - \frac{1}{6!}x^6 + o(x^6)\right)^2 \\
+  & = \left(- \frac{1}{2!} x^2 + \frac{1}{4!}x^4 \right)^2 + o(x^6) \\
+  & = \left(- \frac{1}{2!} x^2\right)^2 + 2 \left(- \frac{1}{2!} x^2\right) \left(\frac{1}{4!}x^4 \right) + o(x^6) \\
+  & = \frac14 x^4 - \frac1{24} x^6 + o(x^6) \\
+\end{align*}
+
+Ensuite :
+\begin{align*}
+u^3 
+  & = \left(- \frac{1}{2!} x^2 + \frac{1}{4!}x^4 - \frac{1}{6!}x^6 + o(x^6)\right)^3 \\
+  & = \left(- \frac{1}{2!} x^2 \right)^3 + o(x^6) \\
+  & =  -\frac18 x^6 + o(x^6) \\
+\end{align*}
+En effet lorsque l'on développe $u^3$ le terme $(x^2)^6$ est le seul terme dont l'exposant est $\le 6$.
+
+Enfin les autres termes $u^4$, $u^5$, $u^6$ sont tous des $o(x^6)$. Et en fait développer $\ln(1+u)$ à l'ordre $3$ est suffisant.
+
+Il ne reste plus qu'à rassembler :
+\begin{align*}
+\ln(\cos x) 
+  & = \ln (1+u) \\
+  & = u-\frac12u^2+\frac13u^3+o(u^3) \\
+  & = \left(- \frac{1}{2!} x^2 + \frac{1}{4!}x^4 - \frac{1}{6!}x^6 + o(x^6)\right)\\
+  & \qquad   -\frac12 \left(\frac14 x^4 - \frac{1}{24} x^6 + o(x^6)\right) \\
+  & \qquad   +\frac13 \left(-\frac18 x^6 + o(x^6)\right)\\
+  & = - \frac{1}{2} x^2 -\frac{1}{12}x^4 -\frac{1}{45}x^6  + o(x^6)\\
+\end{align*}
+
+  \item $\displaystyle{\frac{1}{\cos x}}$ à l'ordre $4$.
+
+Le dl de $\cos x$ à l'ordre $4$ est
+$$\cos x = 1 - \frac{1}{2!} x^2 + \frac{1}{4!}x^4 + o(x^4).$$
+Le dl de $\frac{1}{1+u}$ à l'ordre $2$ (qui sera suffisant ici) est
+$\frac{1}{1+u}=1-u+u^2+o(u^2)$.
+
+On pose $u=- \frac{1}{2!} x^2 + \frac{1}{4!}x^4 + o(x^4)$ et on a $u^2 = \frac14 x^4 + o(x^4)$.
+
+\begin{align*}
+\frac{1}{\cos x}
+  & =  \frac{1}{1+u} \\
+  & =  1-u+u^2+o(u^2) \\
+  & = 1 -\big(- \frac{1}{2!} x^2 + \frac{1}{4!}x^4 + o(x^4)\big)+\big(- \frac{1}{2!} x^2 + \frac{1}{4!}x^4 + o(x^4)\big)^2 +o(x^4)  \\
+  & = 1+\frac{1}{2}x^2+\frac{5}{24}x^4 + o(x^4) \\
+\end{align*}
+
+
+  \item $\tan x$ (à l'ordre $5$ (ou $7$ pour les plus courageux)).
+
+Pour ceux qui souhaitent seulement un dl à l'ordre $5$ de $\tan x =\sin x \times \frac{1}{\cos x}$ alors
+il faut multiplier le dl de $\sin x$ à l'ordre $5$ par le dl de $\frac{1}{\cos x}$ à l'ordre $4$ (voir question précédente).
+
+
+Si l'on veut un dl de $\tan x$ à l'ordre $7$ il faut d'abord refaire le dl $\frac{1}{\cos x}$ mais cette fois à l'ordre $6$ :
+$$\frac{1}{\cos x}=1+\frac{1}{2}x^2+\frac{5}{24}x^4 +\frac{61}{720}x^6 + o(x^6)$$
+
+Le dl à l'ordre $7$ de $\sin x$ étant :
+$$\sin x = x -\frac{1}{3!}x^3 +\frac{1}{5!}x^5 - \frac{1}{7!}x^7 +o(x^7)$$
+
+Comme  $\tan x = \sin x \times \frac{1}{\cos x}$, il ne reste donc qu'à multiplier les deux dl
+pour obtenir après calculs :
+$$\tan x = x + \frac{x^3}{3} + \frac{2x^5}{15} + \frac{17x^7}{315} + o(x^7)$$
+
+
+
+  \item $(1+x)^{\frac{1}{1+x}}$ (à l'ordre $3$).
+
+Si l'on pense bien à écrire $(1+x)^{\frac{1}{1+x}}= \exp\left( \frac{1}{1+x} \ln(1+x) \right)$
+alors c'est juste des calculs utilisant les dl à l'ordre $3$ de $\ln(1+x)$, $\frac{1}{1+x}$ et 
+$\exp x$.
+
+On trouve 
+$$(1+x)^{\frac{1}{1+x}} = 1+x-x^2 + \frac{x^3}{2} + o(x^3).$$
+
+
+  \item $\arcsin \left ( \ln(1+x^2) \right )$ (à l'ordre $6$).
+
+Tout d'abord $\ln(1+x^2)=x^2-\frac{x^4}{2}+\frac{x^6}{3}+o(x^6)$.
+Et $\arcsin u =  u + \frac{u^3}{6} + o(u^3)$.
+Donc en posant $u=x^2-\frac{x^4}{2}+\frac{x^6}{3}+o(x^6)$ on a :
+\begin{align*}
+\arcsin \left ( \ln(1+x^2) \right ) 
+  & =  \arcsin \left ( x^2-\frac{x^4}{2}+\frac{x^6}{3}+o(x^6) \right )  \\
+  & = \arcsin u \\
+  & = u + \frac{1}{6}u^3 + o(u^3) \\
+  & = \left ( x^2-\frac{x^4}{2}+\frac{x^6}{3} \right ) + \frac{1}{6}\left (x^2-\frac{x^4}{2}+\frac{x^6}{3} \right )^3 + o(x^6) \\
+  & = \left ( x^2-\frac{x^4}{2}+\frac{x^6}{3}\right ) + \frac{x^6}{6} + o(x^6) \\
+  & = x^2-\frac{x^4}{2}+\frac{x^6}{2}+o(x^6) \\
+\end{align*}
+
+
+\end{enumerate}
+\fincorrection
+
+\finexercice

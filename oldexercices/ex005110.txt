@@ -1,0 +1,26 @@
+\exercice{5110, rouget, 2010/06/30}
+\enonce[*IT]
+\label{exo:suprou8}
+Montrer que~:~($g\circ f\;\mbox{injective}\Rightarrow f\;\mbox{injective}$) et ($g\circ
+f\;\mbox{surjective}\Rightarrow g\;\mbox{surjective}$).
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Soit $(x_1,x_2)\in E^2$.
+
+\begin{align*}
+f(x_1)=f(x_2)&\Rightarrow g(f(x_1))=g(f(x_2))\;(\mbox{car}\;g\;\mbox{est une application})\\
+ &\Rightarrow x_1=x_2\;(\mbox{car}\;g\circ f\;\mbox{est injective}).
+\end{align*}
+On a montré que $\forall(x_1,x_2)\in E^2,\;f(x_1)=f(x_2)\Rightarrow x_1=x_2$, et donc $f$ est injective.
+
+ \item  Soit $y\in H$. Puisque $g\circ f$ est surjective, il existe un élément $x$ dans $E$ tel que $g(f(x))=y$. En
+posant $z=f(x)\in G$, on a trouvé $z$ dans $G$ tel que $g(z)=y$. On a montré~:~$\forall y\in H,\;\exists z\in G/\;g(z)=
+y$, et donc $g$ est surjective.
+
+\end{enumerate}
+\fincorrection
+\finexercice

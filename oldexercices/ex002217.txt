@@ -1,0 +1,57 @@
+\exercice{2217, matos, 2008/04/23}
+\enonce[Pseudo--inverse d'une matrice]
+\emph{D\'efinition}: Soit $\Sigma$ une matrice diagonale de type $(m\times n)$:
+$$\Sigma =\left( \begin{array}{cccccc}
+\mu_1&&&&&\\
+&\ddots&&&&\\
+&&\mu_r&&&\\
+&&&0&&\\
+&&&&\ddots &\\
+&&&&&0\\
+&&\bigcirc&&&
+\end{array}\right)$$
+On appelle pseudo--inverse de $\Sigma$ la matrice $\Sigma^\dagger$ de type $(n\times m)$ d\'efinie par
+$$\Sigma^\dagger=\left(\begin{array}{cccc}
+\mu_1^{-1}&&0&\\
+&\ddots &&\bigcirc\\
+0&&\mu_r^{-1}&
+\end{array}\right)$$
+Soit $A$ une matrice de type $(m\times n)$ dont la d\'ecomposition en valeurs singuli\`eres est $A=U\Sigma V^*$.
+
+On appelle {\it pseudo-inverse } de la matrice $A$ la matrice $A^\dagger$ de type $(n\times m)$ d\'efinie par
+$$A^\dagger = V\Sigma^\dagger U^* .$$
+\begin{enumerate}
+\item Quelle application repr\'esente la restriction de $\Sigma^\dagger \Sigma$ au sous-espace span$\{e_1, \cdots , e_r\}$ ?
+\item Montrer que si $A$ est carr\'ee r\'eguli\`ere alors $A^\dagger =A^{-1}$.
+\item Montrer que
+$$A^\dagger =\sum_{i=1}^r \frac{1}{\mu_i}v_iu_i^*.$$
+\item Montrer que
+\begin{itemize}
+\item $AA^\dagger $ est la matrice de la projection orthogonale sur Im$(A)$;
+\item $A^\dagger A $ est la matrice de la projection orthogonale sur Im$(A^*)$
+\end{itemize}
+\item Montrer que la restriction \`a Im$(A^*)=$Ker$(A)^\bot$ de $A^*A$ est une matrice inversible et
+$$(A^*A)^{-1} = \sum_{i=1}^r \mu_i^{-2} v_iv_i^* .$$
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item $\Sigma^{\dagger}\Sigma e_i=e_i, i=1,\cdots, r$ c'est l'application identit\'e
+\item $AA^{\dagger} =U\Sigma V^*V\Sigma^{\dagger} U =U\Sigma \Sigma^{\dagger}U^*=I$
+
+On a donc obtenu une g\'en\'eralisation de l'inverse.
+\item $U^*\sum_{i=1}^m \epsilon_iu_i^*$ avec$ \{\epsilon_1, \cdots , \epsilon_m\}$ base canonique de $\Rr^m$. Comme $\Sigma^{\dagger} \epsilon_i=0$ pour $r+1\leq i\leq m$ on a
+$$\Sigma^{\dagger}U^*=\sum_{i=1}^r \mu_i^{-1}e_iu_i^* \Rightarrow A^{\dagger} =V\Sigma^{\dagger}U^* =\sum_{i=1}^r \mu_i^{-1}(Ve_i)u_i^* =\sum_{i=1}^r \mu_i^{-1}v_iu_i^*$$
+\item On a
+ $$AA^{\dagger} =\sum_{i=1}^r \mu_iu_iv_i^* \sum_{j=1}^r\mu_j^{-1}v_ju_j^*=\sum_{j=1}^r\mu_j\mu_j^{-1}u_ju_j^*$$
+Comme Im($A$) =span$\{u_1,\cdots , u_r\}$ le r\'esultat suit.
+\item soit $y\in$ Im$A^*$ $\Leftrightarrow u=\sum_{i=1}^r x_iv_i$. Alors
+$$A^*A=V\Sigma^* U^*U\Sigma V^* =V\Sigma^*\Sigma V^*=\sum_{i=1}^r \mu_i^2 v_iv_i^*\Rightarrow A^*Ay=\sum_{i=1}^r \mu_i^2x_iv_i$$
+et finalement
+$$(\sum_{i=1}^r\mu_i^{-2}v_iv_i^*) (A^*Ay) =\sum_{i=1}^rx_iv_i$$
+\end{enumerate}
+\fincorrection
+\finexercice

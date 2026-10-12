@@ -1,0 +1,135 @@
+\exercice{7411, mourougane, 2021/08/10}
+\enonce
+Soit $f : \Rr^3 \rightarrow \Rr^3$ l'application linéaire définie par
+$$f(x,y,z) = (4x + y + z, 4x + 7y +2z, -6x -6y-z).$$ 
+\begin{enumerate}
+ \item \'Ecrire la matrice $A$ de $f$ dans la base canonique $\mathcal{B}$ de $\Rr^3$.
+
+ \item Montrer que les vecteurs $v_1 = (1,0,-2)$, $v_2 = (1,-1,0)$ et $v_3 = (0,-1,1)$ forment une base de $\Rr^3$ que l'on note $\mathcal{B}'$.
+
+ \item Déterminer la matrice de passage $[Id_{R^3}]_{\mathcal{B}'}^{\mathcal{B}}$ de $\mathcal{B}$ à $\mathcal{B}'$, et la matrice de passage $[Id_{R^3}]_{\mathcal{B}}^{\mathcal{B}'}$ de $\mathcal{B}'$ à $\mathcal{B}$.
+
+ \item Déterminer la matrice $M$ de $f$ dans la base $\mathcal{B}'$.
+
+ \item En déduire $A^n$ pour tout $n \in \mathbb{N}^{*}$.
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+ \item $$A = [f]_{\mathcal{B}}^{\mathcal{B}} = \left( {\begin{array}{ccc}
+ 4 & 1 & 1 \\
+ 4 & 7 & 2 \\
+ -6 & -6 & -1 \\
+ \end{array} } \right)$$
+
+ \item Pour montrer que les vecteurs $v_1$, $v_2$ et $v_3$ forment un système libre de $\Rr^3$, on considère $\lambda_1,~\lambda_2,~\lambda_3 \in \Rr$ tels que 
+	$$\lambda_1 v_1 + \lambda_2 v_2 + \lambda_3 v_3 = 0$$
+et on veut montrer qu'alors nécessairement $\lambda_1 = \lambda_2 = \lambda_3 = 0$. Cela revient à montrer que le système
+	$$\left( {\begin{array}{ccc}
+ 1 & 1 & 0 \\
+ 0 & -1 & -1 \\
+ -2 & 0 & 1 \\
+ \end{array} } \right) 
+\left( {\begin{array}{c}
+\lambda_1 \\
+\lambda_2 \\
+\lambda_3
+ \end{array} } \right) = 
+ \left( {\begin{array}{c}
+0 \\
+0 \\
+0
+ \end{array} } \right)$$ 
+possède pour unique solution $\lambda_1 = \lambda_2 = \lambda_3 = 0$.
+On applique alors l'algorithme de Gauss à la matrice 
+$$\left( {\begin{array}{ccc}
+ 1 & 1 & 0 \\
+ 0 & -1 & -1 \\
+ -2 & 0 & 1 \\
+ \end{array} } \right) $$
+ Après avoir échelonné complètement cette matrice, on obtient le système équivalent suivant
+ $$\left( {\begin{array}{ccc}
+ 1 & 0 & 0 \\
+ 0 & 1 & 0 \\
+ 0 & 0 & 1 \\
+ \end{array} } \right)
+\left( {\begin{array}{c}
+\lambda_1 \\
+\lambda_2 \\
+\lambda_3
+ \end{array} } \right) = 
+ \left( {\begin{array}{c}
+0 \\
+0 \\
+0
+ \end{array} } \right)$$ 
+ qui a pour unique solution $\lambda_1 = \lambda_2 = \lambda_3 = 0$. Les vecteurs $v_1$, $v_2$ et $v_3$ forment donc un système libre de $3$ éléments dans l'espace vectoriel $\Rr^3$ qui est de dimension $3$, donc ils forment un système également générateur de $\Rr^3$ et c'est une base de $\Rr^3$.
+
+ \item La matrice de passage $P := [Id_{R^3}]_{\mathcal{B}'}^{\mathcal{B}}$ de $\mathcal{B}$ à $\mathcal{B}'$ est 
+	$$P = 
+\left( {\begin{array}{ccc}
+ 1 & 1 & 0 \\
+ 0 & -1 & -1 \\
+ -2 & 0 & 1 \\
+ \end{array} } \right)$$
+ La matrice de passage $[Id_{\Rr^3}]_{\mathcal{B}}^{\mathcal{B}'}$ de $\mathcal{B}'$ à $\mathcal{B}$ est l'inverse de la matrice de passage $[Id_{\Rr^3}]_{\mathcal{B}'}^{\mathcal{B}}$ de $\mathcal{B}$ à $\mathcal{B}'$ i.e. $[Id_{R^3}]_{\mathcal{B}}^{\mathcal{B}'} = P^{-1}$. Pour calculer l'inverse de $P$, on applique l'algorithme de Gauss à la matrice 
+$$\left( {\begin{array}{ccc | ccc}
+ 1 & 1 & 0 & 1 & 0 & 0 \\
+ 0 & -1 & -1 & 0 & 1 & 0 \\
+ -2 & 0 & 1 & 0 & 0 & 1 \\
+ \end{array} } \right)$$
+ Pour ce faire, on reprend les opérations effectuées sur la matrice $P$ lors de la question précédente pour obtenir 
+$$\left( {\begin{array}{ccc | ccc}
+ 1 & 0 & 0 & -1 & -1 & -1 \\
+ 0 & 1 & 0 & 2 & 1 & 1 \\
+ 0 & 0 & 1 & -2 & -2 & -1 \\
+ \end{array} } \right)$$ 
+et ainsi 
+$$[Id_{R^3}]_{\mathcal{B}}^{\mathcal{B}'} = P^{-1} = 
+\left( {\begin{array}{ccc}
+  -1 & -1 & -1 \\
+ 2 & 1 & 1 \\
+ -2 & -2 & -1 \\
+ \end{array} } \right)$$
+
+ \item On utilise la formule 
+ $$[f]_{\mathcal{B}'}^{\mathcal{B}'} = [Id_{\Rr^3}]_{\mathcal{B}}^{\mathcal{B}'} [f]_{\mathcal{B}}^{\mathcal{B}} [Id_{\Rr^3}]_{\mathcal{B}'}^{\mathcal{B}}$$
+ et on a alors 
+\begin{equation*}
+M = P^{-1}A P = 
+ \left( {\begin{array}{ccc}
+ 2 & 0 & 0 \\
+ 0 & 3 & 0 \\
+ 0 & 0 & 5 \\
+ \end{array} } \right)\end{equation*}
+
+ \item On a
+ $$A = P M P^{-1}$$
+ donc pour tout $n \in \mathbb{N}^*$
+ $$A^n = P M^n P^{-1} = 
+ \left( {\begin{array}{ccc}
+ 1 & 1 & 0 \\
+ 0 & -1 & -1 \\
+ -2 & 0 & 1 \\
+ \end{array} } \right) 
+ \left( {\begin{array}{ccc}
+  2^n & 0 & 0 \\
+ 0 & 3^n & 0 \\
+ 0 & 0 & 5^n \\
+ \end{array} } \right) 
+ \left( {\begin{array}{ccc}
+  -1 & -1 & -1 \\
+ 2 & 1 & 1 \\
+ -2 & -2 & -1 \\
+ \end{array} } \right) $$
+ $$= 
+ \left( {\begin{array}{ccc}
+  -2^n + 2.3^n & -2^n + 3^n & -2^n + 3^n \\
+ -2.3^n + 2.5^n & -3^n + 2.5^n & -3^n + 5^n \\
+ 2.2^n - 2.5^n & 2.2^n - 2.5^n & 2.2^n - 5^n \\
+ \end{array} } \right)$$
+
+\end{enumerate}
+\fincorrection
+\finexercice

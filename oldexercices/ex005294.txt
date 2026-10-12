@@ -1,0 +1,21 @@
+\exercice{5294, rouget, 2010/07/04}
+\enonce[**IT]
+Pour $n\in\Nn^*$, on pose $(1+\sqrt{2})^n=a_n+b_n\sqrt{2}$ où $(a_n,b_n)\in(\Nn^*)^2$. Montrer que $a_n\wedge b_n=1$.
+\finenonce
+
+\noindication
+
+\correction
+Soit $n\in\Nn^*$. En développant $(1+\sqrt{2})^n$ par la formule du binôme de \textsc{Newton} et en séparant les termes où $\sqrt{2}$ apparaît à un exposant pair des termes où $\sqrt{2}$ apparaît à un exposant impair, on écrit $(1+\sqrt{2})^n$ sous la forme $a_n+b_n\sqrt{2}$ où $a_n$ et $b_n$ sont des entiers naturels non nuls.
+
+Mais alors $(1-\sqrt{2})^n=a_n-b_n\sqrt{2}$ et donc 
+
+$$(-1)^n=(1+\sqrt{2})^n(1-\sqrt{2})^n=(a_n+b_n\sqrt{2})(a_n-b_n\sqrt{2})=a_n^2-2b_n^2$$
+ou finalement,
+ 
+$$((-1)^na_n)a_n+(2(-1)^{n+1}b_n)b_n=1$$
+ 
+où $(-1)^na_n=u$ et $2(-1)^{n+1}b_n=v$ sont des entiers relatifs. Le théorème de \textsc{Bezout} permet d'affirmer que $a_n$ et $b_n$ sont premiers entre eux.
+
+\fincorrection
+\finexercice

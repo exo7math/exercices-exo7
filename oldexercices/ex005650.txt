@@ -1,0 +1,119 @@
+\exercice{5650, rouget, 2010/10/16}
+\enonce[**]
+Calculer les déterminants suivants :
+
+\begin{enumerate}
+ \item  $\text{det}A$ où $A\in M_{2n}(\Kk)$ est telle que $a_{i,i}= a$ et $a_{i,2n+1-i}=b$ et $a_{i,j}= 0$ sinon.
+
+\item  $\left|\begin{array}{cccccc}
+1&0&\ldots&\ldots&0&1\\
+0&0& & &0&0\\
+\vdots& & & & &\vdots\\
+\vdots& & & & &\vdots\\
+0&0& & &0&0\\
+1&0&\ldots&\ldots&0&1
+\end{array}
+\right|$ \item  $\left|\begin{array}{ccccc}
+1&\ldots& &\ldots&1\\
+\vdots&0&1&\ldots&1\\
+ &1&\ddots&\ddots&\vdots\\
+\vdots&\vdots&\ddots&\ddots&1\\
+1&1&\ldots&1&0
+\end{array}
+\right|$ et $\left|\begin{array}{ccccc}
+0&1&\ldots&\ldots&1\\
+1&\ddots&\ddots& &\vdots\\
+\vdots&\ddots& &\ddots&\vdots\\
+\vdots& &\ddots&\ddots&1\\
+1&\ldots&\ldots&1&0
+\end{array}
+\right|$ $(n\geqslant2$)
+
+\item (I) $\left|\begin{array}{cccc}
+a&b&\ldots&b\\
+b&\ddots&\ddots&\vdots\\
+\vdots&\ddots&\ddots&b\\
+b&\ldots&b&a
+\end{array}
+\right|$ $(n\geqslant2$).
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Sans modifier la valeur de $\text{det}A$, on effectue les transformations :$\forall j\in\llbracket1,n\rrbracket$, $C_j\leftarrow C_j+C_{2n+1-j}$.
+
+On obtient alors par linéarité du déterminant par rapport à chacune des $n$ premières colonnes
+
+\begin{center}
+$\text{det}A =(a+b)^p\left|
+\begin{array}{cccccccc}
+1&0&\ldots&0&0&\ldots&0&b\\
+0&\ddots&\ddots&\vdots&\vdots& & &0\\
+\vdots&\ddots&\ddots&0&0& & &\vdots\\
+0&\ldots&0&1&b&0&\ldots&0\\
+0&\ldots&0&1&a&0&\ldots&0\\
+\vdots& & &0&0&\ddots&\ddots&\vdots\\
+0& & &\vdots&\vdots&\ddots&\ddots&0\\
+1&0&\ldots&0&0&\ldots&0&a 
+\end{array}
+\right|$.
+\end{center}
+
+On effectue ensuite les transformations : $\forall i\in\llbracket n+1, 2n\rrbracket$, $L_i\leftarrow L_i - L_{2n+1-i}$ et par linéarité du déterminant par rapport aux $n$ dernières lignes, on obtient
+
+\begin{center}
+$\text{det}A = (a+b)^n(a-b)^n= (a^2-b^2)^n$.
+\end{center}
+
+\item  Ce déterminant a deux colonnes égales et est donc nul.
+
+\item  On retranche la première colonne à toutes les autres et on obtient un déterminant triangulaire : $D_n=(-1)^{n-1}$.
+
+Pour le deuxième déterminant, on ajoute les $n-1$ dernières colonnes à la première puis on met $n-1$ en facteur de la première colonne et on retombe sur le déterminant précédent. On obtient :
+$D_n=(-1)^{n-1}(n-1)$.
+
+\item  On ajoute les $n-1$ dernières colonnes à la première puis on met $a+(n-1)b$ en facteur de la première colonne. On obtient
+
+\begin{center}
+$D_n=(a+(n-1)b)\left|
+\begin{array}{ccccc}
+1&b&\ldots&\ldots&b\\
+\vdots&a&\ddots& &\vdots\\
+ &b&\ddots&\ddots&\vdots\\
+\vdots&\vdots&\ddots&\ddots&b\\
+1&b&\ldots&b&a
+\end{array}
+\right|$.
+\end{center}
+
+On retranche ensuite la première ligne à toutes les autres et on obtient
+
+\begin{center}
+$D_n=(a+(n-1)b)\left|
+\begin{array}{ccccc}
+1&b&\ldots&\ldots&b\\
+0&a-b&0&\ldots&0\\
+\vdots&0&\ddots&\ddots&\vdots\\
+\vdots&\vdots&\ddots&\ddots&0\\
+0&0&\ldots&0&a-b
+\end{array}
+\right|=(a+(n-1)b)(a-b)^{n-1}$.
+\end{center}
+
+\begin{center}
+\shadowbox{
+$\left|\begin{array}{cccc}
+a&b&\ldots&b\\
+b&\ddots&\ddots&\vdots\\
+\vdots&\ddots&\ddots&b\\
+b&\ldots&b&a
+\end{array}
+\right|=(a+(n-1)b)(a-b)^{n-1}$.
+}
+\end{center}
+\end{enumerate}
+\fincorrection
+\finexercice

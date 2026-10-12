@@ -1,0 +1,28 @@
+\exercice{7597, mourougane, 2021/08/10}
+\enonce[Deux équations]
+\begin{enumerate}
+\item Trouver toutes les solutions complexes de l'équation $\cosh(z)=4i$.
+
+\item Trouver toutes les solutions complexes de l'équation $z^i=-1$.
+
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+\item Par définition de $\cosh$, on a pour tout $z\in\Cc$, $\cosh (z)=\frac{e^z+e^{-z}}{2}$.
+Par conséquent, $z$ est solution de $\cosh(z)=8i$ si et seulement si $e^z$ est solution de
+$$X^2-8iX+1=0.$$
+si et seulement si $e^z=(4+\sqrt{17})i=(4+\sqrt{17})e^{-i\frac{\pi}{2}}$ \\quad\text{ou}\quad $e^z=(4-\sqrt{17})i=(\sqrt{17}-4)e^{-i\frac{\pi}{2}}$,
+si et seulement si $z\in\log (4+\sqrt{17})+i(\frac{\pi}{2}+2\pi\Zz)$ ou $z\in\log (\sqrt{17}-4)+i(-\frac{\pi}{2}+2\pi\Zz)$.
+\item Soit $z\in\Cc$.
+\begin{eqnarray*}
+ z^i=-1&\iff& e^{i\log z}=e^{i\pi}\\
+ &\iff& i\log z=i\pi \mod 2i\pi\\
+ &\iff& \log z=\pi \mod 2\pi\\
+ &\iff& \exists k\in\Zz, z = e^{(2k+1)\pi}.
+\end{eqnarray*}
+Les solutions sont les nombres complexes de la forme $e^{(2k+1)\pi}$ avec $k$ entier.
+\end{enumerate}
+\fincorrection
+\finexercice

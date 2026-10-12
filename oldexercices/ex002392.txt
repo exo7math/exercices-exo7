@@ -1,0 +1,29 @@
+\exercice{2392, queffelec, 2003/10/01}
+\enonce
+ \`A l'aide du th\'eor\`eme de Baire, montrer qu'un ferm\'e d\'enombrable non vide $X$ de
+$\Rr$ a au moins un point isol\'e.
+\emph{Indication :} on pourra considérer $\omega_x = X \setminus \{x\}$.
+
+Que peut-on dire de l'ensemble de Cantor ?
+\finenonce
+
+\indication
+Raisonner par l'absurde et montrer que $\omega_x$ est un ouvert dense.
+\finindication
+
+\correction
+\begin{enumerate}
+  \item Par l'absurde supposons que $X$ n'a aucun point isolé.
+Comme $\{x\}$ est un fermé alors $\omega_x = X \setminus \{x\}$
+est un ouvert (de $X$). De plus comme le point $x$ n'est pas isolé
+alors $\omega_x$ est dense dans $X$.
+
+Maintenant on peut appliquer le théorème de Baire à $X$ qui est un fermé de l'espace complet $\Rr$. Donc une intersection dénombrable d'ouverts denses dans $X$ est encore dense.
+Mais ici nous obtenons une contradiction car les $\omega_x$ sont des ouverts denses, $X$ est dénombrable mais $$\bigcap_{x\in X} \omega_x = \varnothing.$$
+Et l'ensemble vide n'est pas dense dans $X$ !!
+
+  \item Pour l'ensemble de Cantor aucun point n'est isolé, donc par la question précédente
+l'ensemble de Cantor n'est pas dénombrable.
+\end{enumerate}
+\fincorrection
+\finexercice       

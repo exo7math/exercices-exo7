@@ -1,0 +1,17 @@
+\exercice{4359, quercia, 2010/03/12}
+\enonce 
+
+On pose pour $n\ge2$~: $v_n= \int_{x=0}^1 \frac 1{1+x^n}\, d x$.
+Montrer que la suite $(v_n)$ converge. Nature de la série $\sum(v_n-1)$ ?
+
+\finenonce
+
+\noindication
+
+\correction
+$v_n\to 1$ (lorsque $n\to\infty$) par convergence dominée.
+$v_n-1 =  \int_{x=0}^1\frac{x^n}{1+x^n}\, d x = \frac1n \int_{u=0}^1\frac{u^{-1/n}}{1+u}\,d u
+\sim \frac{\ln 2}n$ donc la série diverge.
+\fincorrection
+
+\finexercice

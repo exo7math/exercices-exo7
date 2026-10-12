@@ -1,0 +1,28 @@
+\exercice{5741, rouget, 2010/10/16}
+\enonce[**]
+Calculer $\int_{0}^{+\infty}\frac{x}{\sh x}\;dx$ en écrivant cette intégrale comme somme d'une série.
+\finenonce
+
+\noindication
+
+\correction
+C'est presque le même exercice que l'exercice \ref{ex:rou3bis}. Pour tout réel $x>0$,
+
+\begin{center}
+$\frac{x}{\sh x}=\frac{2xe^{-x}}{1-e^{-2x}}=2xe^{-x}\sum_{n=0}^{+\infty}e^{-2nx}=\sum_{n=0}^{+\infty}2xe^{-(2n+1)x}$,
+\end{center}
+
+puis avec la même démarche que dans l'exercice précédent
+
+\begin{align*}\ensuremath
+\int_{0}^{+\infty}\frac{x}{\sh x}\;dx&=\sum_{n=0}^{+\infty}\int_{0}^{+\infty}2xe^{-(2n+1)x}\;dx=\sum_{n=0}^{+\infty}\frac{2}{(2n+1)^2}\int_{0}^{+\infty}ue^{-u}\;du=\sum_{n=0}^{+\infty}\frac{2\Gamma(2)}{(2n+1)^2}\\
+ &=2\sum_{n=0}^{+\infty}\frac{1}{(2n+1)^2}=2\left(\sum_{n=1}^{+\infty}\frac{1}{n^2}-\sum_{n=1}^{+\infty}\frac{1}{(2n)^2}\right)=2\left(1-\frac{1}{4}\right)\frac{\pi^2}{6}=\frac{\pi^2}{4}.
+\end{align*}
+
+\begin{center}
+\shadowbox{
+$\int_{0}^{+\infty}\frac{x}{\sh x}\;dx=\frac{\pi^2}{4}$.
+}
+\end{center}
+\fincorrection
+\finexercice

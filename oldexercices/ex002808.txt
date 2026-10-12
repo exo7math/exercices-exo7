@@ -1,0 +1,61 @@
+\exercice{2808, burnol, 2009/12/15}
+\enonce
+  Il est intéressant que l'équation de l'exercice précédent
+ $\frac{\partial F}{\partial\theta} = i\, r\frac{\partial 
+ F}{\partial r}$, peut se réécrire dans le système de coordonnées $(a,b) =
+ (\log(r),\theta)$ sous la forme: 
+\[ \frac{\partial F}{\partial b} = i\, \frac{\partial
+ F}{\partial a}\;,\]
+autrement dit exactement sous la même forme qu'ont les
+ équations de Cauchy-Riemann originelles dans les
+ coordonnées cartésiennes $(x,y)$.\footnote{$\frac{\partial
+F}{\partial y} = i \frac{\partial
+ F}{\partial x}$, ou, plus mnémotechnique: $\frac{\phantom{i}\,\partial
+F}{i\,\partial y} = \frac{\partial
+ F}{\partial x}$ qui dit ``holomorphe $\Leftrightarrow$ $iy$
+ est comme $x$''.} 
+ Or $a$ et $b$ sont les parties réelles et imaginaires de la
+ combinaison $a+ib$ qui est holomorphe comme fonction de
+ $x+iy$: $a+ib = \log(x+iy)$. Montrer que cela est général:
+ dans un système de coordonnées $(a,b)$ telles que $w= a+ib$
+ est une fonction holomorphe de $z = x+iy$ les équations de
+ Cauchy-Riemann pour l'holomorphie (par rapport à $(x,y)$)
+ d'une fonction $F$ sont $\frac{\partial F}{\partial
+ b} = i \frac{\partial F}{\partial a}$ (ce qui équivaut à
+ l'holomorphie de $F$ comme fonction ``sur le plan de
+ $w=a+ib$''\footnote{autrement dit pour qu'une fonction
+ soit holomorphe comme fonction de $x+iy$ il est nécessaire
+ et suffisant qu'elle soit holomorphe comme fonction de
+ $a+ib$. En particulier $x+iy$ est une fonction holomorphe
+ de $a+ib$: on a donc prouvé que la réciproque d'une
+ bijection holomorphe est aussi holomorphe. Nous reviendrons
+ là-dessus avec d'autres méthodes (dont celle très concrète de
+ l'``inversion'' d'une série entière).}). Indication: prouver
+ l'identité :
+\[ \frac\partial{\partial x} +
+ i\frac\partial{\partial y} = \left(\frac{\partial
+ a}{\partial x} - i \frac{\partial
+ b}{\partial x}\right)\left(\frac\partial{\partial a} +
+ i\frac\partial{\partial b}\right)\;,\]
+en exploitant les équations de Cauchy-Riemann
+$\frac{\partial
+ b}{\partial x} = -\frac{\partial a}{\partial y}$,
+ $\frac{\partial a}{\partial x} = +\frac{\partial
+ b}{\partial y}$ pour $a+ib = g(x+iy)$.
+\finenonce
+\noindication
+\correction
+On a $w=g(z)$ avec $g(z)=a(z)+ib(z)$ une fonction holomorphe et avec $z=x+iy$. Utilisons de nouveau le changement
+de coordonn\'ees:
+$$\frac{\partial }{\partial x}= \frac{\partial a(z)}{\partial x}\frac{\partial }{\partial a}+\frac{\partial b(z)}{\partial x}\frac{\partial }{\partial b}$$
+$$\frac{\partial }{\partial y}= \frac{\partial a(z)}{\partial y}\frac{\partial }{\partial a}+\frac{\partial b(z)}{\partial y}\frac{\partial }{\partial b}.$$
+En utilisant les \'equations de Cauchy-Riemann on en d\'eduit
+$$\begin{aligned}
+\frac{\partial }{\partial x}+i\frac{\partial }{\partial y}&= \left(\frac{\partial a(z)}{\partial x}+i \frac{\partial a(z)}{\partial y} \right)\frac{\partial }{\partial a}
++ \left(\frac{\partial b(z)}{\partial x}+i \frac{\partial b(z)}{\partial y} \right)\frac{\partial }{\partial b}\\
+&= \left(\frac{\partial a(z)}{\partial x}-i \frac{\partial b(z)}{\partial x} \right)\frac{\partial }{\partial a}
++ \left(\frac{\partial b(z)}{\partial x}+i \frac{\partial a(z)}{\partial x} \right)\frac{\partial }{\partial b}\\
+&=\left(\frac{\partial a(z)}{\partial x}-i \frac{\partial b(z)}{\partial x} \right)\left(\frac{\partial }{\partial a}+i\frac{\partial }{\partial b}\right).
+\end{aligned}$$
+\fincorrection
+\finexercice

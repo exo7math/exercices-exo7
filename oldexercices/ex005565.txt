@@ -1,0 +1,24 @@
+\exercice{5565, rouget, 2010/10/16}
+\enonce[** I]
+$E=\Kk^n$ où $\Kk$ est un sous-corps de $\Cc$.
+
+Soient $F=\{(x_1,...,x_n)\in  E/\;x_1+...+x_n=0\}$ et $G=\text{Vect}\left((1,...,1)\right)$. Montrer que $F$ est un sous-espace vectoriel de $E$. Montrer que $F$ et $G$ sont supplémentaires dans $E$. Préciser le projeté d'un vecteur $x$ de $E$ sur $F$ parallèlement à $G$ et sur $G$ parallèlement à $F$.
+\finenonce
+
+\noindication
+
+\correction
+\textbf{1ère solution.} $F$ est le noyau d'une forme linéaire non nulle sur $E$ et est donc un hyperplan de $E$.
+
+Soit $x=(x_1,...,x_n)$ un élément de $F\cap G$. Il existe $\lambda\in\Kk$ tel que $x=(\lambda,...,\lambda)$ et $n\lambda=0$ et donc $\lambda=0$ puis $x=0$. Donc $F\cap G=\{0\}$. De plus $\text{dim}(F)+\text{dim}(G)=n-1+1=n=\text{dim}(E)<+\infty$ et donc $F\oplus G=E$.
+
+Soit $x=(x_1,...,x_n)$ un vecteur de $E$. Soit $\lambda\in \Kk$. $x -(\lambda,...,\lambda)\in F\Leftrightarrow (x_1-\lambda)+...+(x_n-\lambda)=0\Leftrightarrow\lambda=\frac{1}{n}\sum_{i=1}^{n}x_i$. Le projeté de $x$ sur $G$ parallèlement à $F$ est donc $\frac{1}{n}\sum_{i=1}^{n}x_i(1,...,1)$ et
+le projeté de $x$ sur $F$ parallèlement à $G$ est $x-\frac{1}{n}\sum_{i=1}^{n}x_i(1,...,1)$.
+
+\textbf{2ème solution} (dans le cas où $\Kk=\Rr$). On munit $\Rr^n$ de sa structure euclidienne canonique. Posons $\overrightarrow{u}=(1,\ldots,1)$.
+
+On a $F=\overrightarrow{u}^\bot=G^\bot$. Par suite, $F$ est le supplémentaire orthogonal de $F$.
+
+Soit $x\in E$. Le projeté orthogonal de $x$ sur $G$ est $\frac{x.u}{\|u\|^2}u=\frac{x_1+\ldots+x_n}{n}(1,\ldots,1)$.
+\fincorrection
+\finexercice

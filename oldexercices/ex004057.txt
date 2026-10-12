@@ -1,0 +1,59 @@
+\exercice{4057, quercia, 2010/03/11}
+\enonce[Résolution par DSE]
+
+Chercher les solutions développables en série entière des équations suivantes
+et résoudre complètement ces équations.
+
+\begin{enumerate}
+  \item $4xy'' - 2y' + 9x^2y = 0$.
+    
+
+
+  \item $xy'' + 2y' - xy = 0$.
+    
+
+
+  \item $4xy'' + 2y' - y = 0$.
+    
+
+  \item $y'' + xy' + 3y = 0$.\label{y2+xy1+3y}
+    
+
+
+  \item $x^2y'' + 6xy' + (6-x^2)y = -1$.
+    
+
+
+  \item $x(x-1)y'' + 3xy' + y = 0$.
+    
+
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $2n(2n-3)a_n = -9a_{n-3}
+                   \Rightarrow  y = \begin{cases} a_0\cos(x^{3/2})  &\text{ si }x \ge 0\cr
+                                  a_0\ch(|x|^{3/2}) &\text{ si }x \le 0.\cr\end{cases}$\par
+             Solution générale :
+             $y = \begin{cases} a\cos u + b\sin u &\text{ si } x \ge 0\cr
+                          a\ch u + b\sh u   &\text{ si } x \le 0,\cr\end{cases}$ avec $u = |x|^{3/2}$.
+  \item $n(n+1)a_n = a_{n-2}  \Rightarrow  y = a_0\frac{\sh x}x$.\par
+             Solution générale : $y = \frac{a\ch x + b\sh x}x$.
+  \item $(2n+1)(2n+2)a_{n+1} = a_n  \Rightarrow  y = a_0\ch(\sqrt x\,)$.\par
+             Solution générale sur $\R^+$ : $u = a\ch(\sqrt x\,) + b\sh(\sqrt x\,)$.
+  \item $n(n-1)a_n + (n+1)a_{n-2} = 0
+                   \Rightarrow  y = a_0(1-x^2)e^{-x^2/2} + a_1z$.\par
+             Solution générale : $y = (1-x^2)e^{-x^2/2}(a+bF(x)) + bx$
+             avec $F(x) =  \int_{t=0}^x e^{t^2/2}\,d t$.
+  \item $(n+2)(n+3)a_n = a_{n-2}  \Rightarrow  y = \frac{x-\sh x}{x^3}$.\par
+             Solution générale : $y = \frac{a\ch x + b\sh x + x}{x^3}$.
+  \item $na_{n+1} = (n+1)a_n  \Rightarrow  y = \frac{\lambda x}{(1-x)^2}$.\par
+             Solution générale : $y = \frac {ax + b(1+x\ln|x|)}{(1-x)^2}$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

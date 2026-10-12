@@ -1,0 +1,101 @@
+\exercice{6868, chataur, 2012/05/13}
+\video{QSafAt0zfGk}
+\enonce
+Montrer que les ensembles ci-dessous sont des espaces vectoriels (sur $\Rr$) :
+\begin{itemize}
+  \item  $E_1 = \big\{ f : [0,1] \to \Rr \big\}$ : l'ensemble
+des fonctions à valeurs r\'eelles d\'efinies sur l'intervalle $[0,1]$, 
+muni de l'addition $f+g$ des fonctions et de la multiplication par un nombre r\'eel $\lambda \cdot f$.
+
+  \item $E_2 = \big\{ (u_n) : \Nn \to \Rr \big\}$ : l'ensemble
+des suites r\'eelles muni de l'addition des suites définie par $(u_n)+(v_n)=(u_n+v_n)$
+et de la multiplication par un nombre r\'eel $\lambda \cdot (u_n) = (\lambda \times u_n)$.
+
+  \item $E_3 = \big\{ P \in \Rr[x] \mid \deg P \le n \big\}$ : l'ensemble des polynômes
+à coefficients réels de degré inférieur ou égal à $n$
+muni de l'addition $P+Q$ des polynômes et de la multiplication par un nombre r\'eel $\lambda \cdot P$. 
+\end{itemize}
+\finenonce
+
+\indication
+On v\'erifiera sur ces exemples la d\'efinition donn\'ee en cours.
+\finindication
+
+\correction
+Pour qu'un ensemble $E$, muni d'une addition $x+y \in E$ (pour tout $x,y \in E$)
+et d'une multiplication par un scalaire $\lambda \cdot x \in E$ (pour tout $\lambda \in K$, $x\in E$),
+soit un $K$-espace vectoriel il faut qu'il vérifie les huit points suivants.
+
+\begin{enumerate}
+  \item $x+(y+z)=(x+y)+z$ (pour tout $x,y,z \in E$)
+  \item il existe un vecteur nul $0 \in E$ tel que $x+0=x$ (pour tout $x\in E$)
+  \item il existe un opposé $-x$ tel que $x+(-x)=0$ (pour tout $x\in E$)
+  \item $x+y=y+x$ (pour tout $x,y \in E$) \\
+Ces quatre premières propriétés font de $(E,+)$ un groupe abélien.
+
+  \item $1\cdot x = x$ (pour tout $x\in E$)
+  \item $\lambda \cdot (x+y) = \lambda\cdot x + \lambda \cdot y$ (pour tout $\lambda \in K=$, pour tout $x,y \in E$)
+  \item $(\lambda+\mu) \cdot x = \lambda\cdot x+ \mu \cdot x$ (pour tout $\lambda, \mu \in K$, pour tout $x \in E$)
+  \item $(\lambda\times\mu) \cdot x = \lambda\cdot (\mu\cdot x)$ (pour tout $\lambda, \mu \in K$, pour tout $x \in E$)
+\end{enumerate}
+
+
+Il faut donc vérifier ces huit points pour chacun des ensembles (ici $K=\Rr$).
+
+Commençons par $E_1$.
+\begin{enumerate}
+  \item $f+(g+h)=(f+g)+h$ ; en effet on bien pour tout $t\in[0,1]$ : $f(t)+\big(g(t)+h(t)\big)=\big(f(t)+g(t)\big)+h(t)$
+d'où l'égalité des fonctions $f+(g+h)$ et $(f+g)+h$. Ceci est vrai pour tout $f,g,h \in E_1$.
+  \item le vecteur nul est ici la fonction constante égale à $0$, que l'on note encore $0$, on a bien $f+0=f$ 
+(c'est-à-dire pour tout $x\in[0,1]$, $(f+0)(t)=f(t)$, ceci pour toute fonction $f$).
+  \item il existe un opposé $-f$ définie par $-f(t) = - \big(f(t)\big)$ tel que $f+(-f)=0$ 
+  \item $f+g=g+f$ (car $f(t)+g(t)=g(t)+f(t)$ pour tout $t\in[0,1]$).
+  \item $1\cdot f = f$ ; en effet pour tout $t\in[0,1]$, $(1\cdot f)(t) = 1\times f(t) = f(t)$.
+Et une fois que l'on compris que $\lambda\cdot f$ vérifie par définition 
+$(\lambda\cdot f)(t) = \lambda\times f(t)$ les autres points se vérifient sans peine.
+  \item $\lambda \cdot (f+g) = \lambda\cdot f + \lambda \cdot g$
+  \item $(\lambda+\mu) \cdot f = \lambda\cdot f+ \mu \cdot f$
+  \item $(\lambda\times\mu) \cdot f = \lambda\cdot (\mu\cdot f)$ ; en effet pour tout $t\in [0,1]$,
+ $(\lambda\times\mu)  f (t) = \lambda (\mu f(t))$
+\end{enumerate}
+
+\bigskip
+
+Voici les huit points à vérifier pour $E_2$ en notant $u$ la suite $(u_n)_{n\in\Nn}$
+
+\begin{enumerate}
+  \item $u+(v+w)=(u+v)+w$ 
+  \item le vecteur nul est la suite dont tous les termes sont nuls.
+  \item La suite $-u$ est définie par $(-u_n)_{n\in\Nn}$
+  \item $u+v=v+u$
+
+  \item $1\cdot u = u$
+  \item $\lambda \cdot (u+v) = \lambda\cdot u + \lambda \cdot v$ : montrons celui-ci en détails
+par définition $u+v$ est la suite $(u_n+v_n)_{n\in\Nn}$ et par définition de la multiplication par un scalaire
+$\lambda \cdot (u+v)$ est la suite $\big(\lambda\times (u_n+v_n)\big)_{n\in\Nn}$ qui est bien la suite
+$\big(\lambda u_n+ \lambda v_n)\big)_{n\in\Nn}$ qui est exactement la suite $\lambda\cdot u + \lambda\cdot v$.
+  \item $(\lambda+\mu) \cdot u = \lambda\cdot u+ \mu \cdot v$ 
+  \item $(\lambda\times\mu) \cdot u = \lambda\cdot (\mu\cdot u)$ 
+\end{enumerate}
+
+\bigskip
+
+Voici ce qu'il faut vérifier pour $E_3$, après avoir remarqué que la somme de deux polynômes de degré 
+$\le n$ est encore un polynôme de degré $\le n$
+(même chose pour $\lambda\cdot P$), on vérifie :
+
+\begin{enumerate}
+  \item $P+(Q+R)=(P+Q)+R$ 
+  \item il existe un vecteur nul $0 \in E_3$ : c'est le polynôme nul
+  \item il existe un opposé $-P$ tel que $P+(-P)=0$ 
+  \item $P+Q=Q+P$ 
+  \item $1\cdot P = P$ 
+  \item $\lambda \cdot (P+Q) = \lambda\cdot P + \lambda \cdot Q$ 
+  \item $(\lambda+\mu) \cdot P = \lambda\cdot P+ \mu \cdot P$ 
+  \item $(\lambda\times\mu) \cdot P = \lambda\cdot (\mu\cdot P)$ 
+\end{enumerate}
+
+
+\fincorrection
+
+\finexercice

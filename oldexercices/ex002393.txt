@@ -1,0 +1,65 @@
+\exercice{2393, queffelec, 2003/10/01}
+\enonce
+Soit $f$ une application d\'efinie sur un espace m\'etrique complet $(X,d)$,
+\`a valeurs r\'eelles et semi-continue inf\'erieurement. Montrer qu'il existe un
+ouvert non vide $O$ sur lequel $f$ est major\'ee.
+
+Application : soit $(f_n)$ une suite de formes lin\'eaires continues sur un Banach $B$,
+v\'erifiant
+$$\forall {x\in B},\;  \sup_n\vert f_n(x)\vert<\infty.$$
+
+En utilisant ce qui pr\'ec\`ede, montrer que $ \sup_n\Vert f_n\Vert<\infty$.
+\finenonce
+
+\indication
+\begin{enumerate}
+  \item Une application $f :  X \to \Rr$ est \emph{semi-continue inf\'erieurement}
+si 
+$$\forall \lambda \in \Rr \qquad  \{ x\in X \mid f(x) > \lambda \} \qquad \text{est un ouvert.}$$
+De façon équivalente  $f$ est \emph{semi-continue inf\'erieurement} si pour tout $x \in X$
+$$\forall \epsilon >0 \quad \exists \delta >0 \quad \forall y \in X \quad (d(x,y)< \delta \Rightarrow f(x)-f(y) < \epsilon).$$
+Attention il n'y a pas de valeur absolue autour de $f(x)-f(y)$.
+
+  \item Pour la première question considérer $O_n =  \{ x\in X \mid f(x) > n \}$ et utiliser le théorème de Baire.
+
+  \item Pour l'application utiliser la première question avec la fonction 
+$$\phi : B \to \Rr, \text{ définie par } \phi(x) = \sup_{n\in\Nn} |f_n(x)|.$$
+\end{enumerate}
+\finindication
+
+\correction
+\begin{enumerate}
+  \item  
+Par l'absurde supposons que sur aucun ouvert $f$ n'est majorée.
+$f :  X \to \Rr$ est {semi-continue inf\'erieurement} donc 
+$$\forall \lambda \in \Rr \qquad  O_\lambda := \{ x\in X \mid f(x) > \lambda \} \qquad \text{est un ouvert.}$$
+De plus $O_\lambda$ est dense, en effet pour $x \in X$ et pour $V_x$ un voisinage ouvert de $x$,
+alors par hypothèse $f$ n'est pas majorée sur $V_x$ donc en particulier il existe $y \in V_x$ tel que $f(y) > \lambda$ donc $y\in V_x \cap O_\lambda$. Ceci prouve  que $O_\lambda$ est dense dans $X$ ($V_x$ étant aussi petit que l'on veut).
+
+Maintenant pour $n = 0,1,2,\ldots$, les $O_n$ sont un ensemble dénombrable d'ouverts denses. Comme $X$ est complet il vérifie le théorème de Baire donc l'intersection des $O_n$ est encore un ensemble dense. Mais il est facile de voir par la définition des $O_n$ que
+$$\bigcap_{n\in\Nn}O_n = \varnothing.$$
+Ce qui donne la contradiction cherchée.
+
+
+  \item On note $\phi : B \to \Rr$ la fonction définie par 
+$$\phi(x) = \sup_{n\in\Nn} |f_n(x)|.$$
+Il n'est pas difficile de montrer que $\phi$ est semi-continue inf\'erieurement :
+en effet soit $F_\lambda := \{ x\in X \mid \phi(x) \le \lambda \}$.
+Soit $\lambda$  fixé et soit $(x_k)$ une suite d'éléments de $F_\lambda$.
+Pour $n$ fixé et pour tout $k$ on a $f_n(x_k) \le k$, donc par continuité de $f_n$,
+on a $f_n(x) \le k$, ceci étant vrai pour tout $n$ on a $x\in F_\lambda$.
+Donc $F_\lambda$ est un fermé donc $O_\lambda := \{ x\in X \mid f(x) > \lambda \}$ est un ouvert.
+Donc $\phi$ est semi-continue inf\'erieurement.
+
+Par la première question il existe un ouvert non vide $O$ et une constante $M>0$ tel que
+$\phi$ soit majorée par $M$ sur $O$.
+C'est-à-dire
+$$\forall n\in \Nn \quad \forall x \in O \quad |f_n(x)| \le M.$$
+Par translation on peut supposer que l'origine $o$ est inclus dans $O$. Donc il existe $\epsilon >0$ tel que $\bar B(o,\epsilon) \subset O$. Donc
+$$\forall n\in \Nn \quad \forall x \in \bar B(o,\epsilon) \quad |f_n(x)| \le M$$
+ce qui est équivalent à 
+$$\forall n\in \Nn \quad \forall x \in \bar B(o,1) \quad |f_n(x)| \le \frac M \epsilon$$
+Donc $$\forall n\in \Nn \quad  \|f_n\| \le \frac M \epsilon.$$
+\end{enumerate}
+\fincorrection
+\finexercice       

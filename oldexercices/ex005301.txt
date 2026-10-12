@@ -1,0 +1,17 @@
+\exercice{5301, rouget, 2010/07/04}
+\enonce[***IT]
+Pour $n\in\Nn$, on pose $F_n=2^{2^n}+1$ (nombres de \textsc{Fermat}). Montrer que les nombres de Fermat sont deux à deux premiers entre eux.
+\finenonce
+
+\noindication
+
+\correction
+Soient $n$ et $m$ deux entiers naturels tels que $n<m$. Posons $m=n+k$ avec $k>0$. On note que 
+
+$$F_m=2^{2^{n+k}}+1=(2^{2^n})^{2^k}+1=(F_n-1)^{2^k}+1.$$
+
+En développant l'expression précédente par la formule du binôme de \textsc{Newton} et en tenant compte du fait que $2^k$ est pair puisque $k$ est strictement positif, on obtient une expression de la forme $q.F_n+1+1=q.F_n+2$.
+
+Le P.G.C.D. de $F_n$ et $F_m$ doit encore diviser $F_m-q.F_n=2$ et vaut donc $1$ ou $2$. Enfin, puisque $2^n$ et $2^m$ sont strictement positifs, $F_n$ et $F_m$ sont impairs et leur P.G.C.D. vaut donc $1$ (ce résultat redémontre l'existence d'une infinité de nombres premiers).
+\fincorrection
+\finexercice

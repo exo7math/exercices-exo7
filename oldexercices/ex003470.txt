@@ -1,0 +1,26 @@
+\exercice{3470, quercia, 2010/03/10}
+\enonce[Calcul de rang]
+
+Soient $x_1, \dots, x_p, y_1, \dots y_p \in  K$. On note $A,B$ les matrices
+de termes généraux $x_i + y_j$ et $(x_i+y_j)^2$.
+
+Chercher les rangs de A et~B.
+\finenonce
+
+\noindication
+
+\correction
+$A = \begin{pmatrix} 1 &x_1 \cr \vdots &\vdots \cr 1 &x_n \cr \end{pmatrix}
+     \begin{pmatrix} y_1 &\dots &y_n \cr 1 &\dots &1 \cr \end{pmatrix}  \Rightarrow 
+     \mathrm{rg}(A) = \begin{cases} 2 &\text{ si } (x_i) \text{ et } (y_j) \text{ ne sont pas constantes }\cr
+                      1 &\text{ ou } 0 \text{ sinon.}\cr \end{cases}$
+
+$B = \begin{pmatrix} 1 &x_1 &x_1^2 \cr \vdots &\vdots &\vdots \cr 1 &x_n &x_n^2 \cr \end{pmatrix}
+     \begin{pmatrix} y_1^2 &\dots &y_n^2 \cr 2y_1 &\dots &2y_n \cr 1 &\dots &1 \cr \end{pmatrix}
+      \Rightarrow 
+     \mathrm{rg}(B) = \begin{cases} 3 &\text{ si } \mathrm{Card}\,(x_i)\ge 3 \text{ et } \mathrm{Card}\,(y_j) \ge 3 \cr
+                      2 &\text{ si } \min\bigl(\mathrm{Card}\,(x_i),\mathrm{Card}\,(y_j)\bigr) = 2 \cr
+                      1 &\text{ ou } 0 \text{ sinon.} \cr \end{cases}$
+\fincorrection
+
+\finexercice

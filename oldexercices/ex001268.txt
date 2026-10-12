@@ -1,0 +1,74 @@
+\exercice{1268, legall, 1998/09/01}
+\video{kxEXonvTl5g}
+\enonce
+Soit $a$ un nombre réel et $f : ] a , +\infty [ \rightarrow \Rr$ une application de classe $C^2$. 
+On suppose $f$ et $f''$ bornées ; on pose $\displaystyle  M_0=\sup _{x>a}\vert f(x)\vert$ et 
+$\displaystyle  M_2=\sup_{x> a}\vert f''(x)\vert$.
+\begin{enumerate}
+    \item En appliquant une formule de Taylor reliant $f(x)$ et $f(x+h)$, montrer que, pour tout 
+$x>a$ et tout $h>0$, on a~: $\displaystyle \vert f'(x)\vert \leq \frac{h}{2}M_2+\frac{2}{h}M_0$.
+
+    \item En déduire que $f'$ est bornée sur $]a,+\infty[$.
+
+    \item \'Etablir le résultat suivant : soit $g : ]0,+\infty[ \rightarrow \Rr$ une application
+de classe $C^2$ à dérivée seconde bornée et telle que $\displaystyle \lim _{x\rightarrow +\infty }g(x)=0$. 
+Alors $\displaystyle\lim _{x\rightarrow +\infty }g'(x)=0$.
+\end{enumerate}
+\finenonce
+
+\indication
+\begin{enumerate}
+  \item La formule à appliquer est celle de Taylor-Lagrange à l'ordre $2$.
+  \item \'Etudier la fonction $\phi(h) = \frac{h}{2}M_2+\frac{2}{h}M_0$ et trouver $\inf_{h>0} \phi(h)$.
+  \item Il faut choisir un $a>0$ tel que $g(x)$ soit assez petit sur $]a,+\infty[$ ; puis appliquer
+les questions précédentes à $g$ sur cet intervalle.
+\end{enumerate}
+\finindication
+
+\correction
+\begin{enumerate}
+  \item La formule de Taylor-Lagrange à l'ordre $2$ entre $x$ et $x+h$ (avec $h>0$) donne :
+$$f(x+h) = f(x) + f'(x) h  + f''(c_{x,h}) \frac{h^2}{2!} $$
+où $c_{x,h} \in ]x,x+h[$.
+
+Cela donne :
+$$f'(x) h = f(x+h) - f(x)  - f''(c_{x,h}) \frac{h^2}{2!}.$$
+
+On peut maintenant majorer $f'(x)$ :
+\begin{align*}
+h|f'(x)| 
+   & \le \left|f(x+h) \right| + \left| f(x) \right| + \frac{h^2}{2}\left| f''(c_{x,h})\right|  \\
+   & \le 2M_0 + \frac {h^2}{2} M_2 \\
+\end{align*}
+Donc
+$$|f'(x)|\le \frac{2}{h}{M_0} + \frac{h}{2}M_2.$$
+
+  \item Soit $\phi : ]0,+\infty[ \rightarrow \Rr$ la fonction définie par $\phi(h) = \frac {h}{2}M_2+\frac{2}{h}M_0$.
+C'est une fonction continue et dérivable. La limite en $0$ et $+\infty$ est $+\infty$.
+La dérivée $\phi'(h)=\frac12 M_2-\frac{2M_0}{h^2}$ s'annule en $h_0 = 2\sqrt{\frac{M_0}{M_2}}$ et en ce point 
+$\phi$ atteint son minimum
+$\phi(h_0) = 2\sqrt{M_0M_2}$.
+
+Fixons $x>a$. Comme pour tout $h>0$ on a $|f'(x)| \le \frac {h}{2}M_2+\frac{2}{h}M_0 =\phi(h)$ alors en particulier pour 
+$h=h_0$ on obtient $|f'(x)| \le \phi(h_0)= 2\sqrt{M_0M_2}$. Et donc $f'$ est bornée.
+
+  \item Fixons $\epsilon >0$. $g''$ est bornée, notons $M_2 = \sup_{x> 0}\vert g''(x)\vert$. Comme $g(x)\to 0$ alors il 
+existe $a>0$ tel que sur l'intervalle $]a,+\infty[$, $g$ soit aussi petit que l'on veut. Plus précisément nous choisissons $a$ de sorte que 
+$$M_0 = \sup_{x>a}\vert g(x)\vert \le \frac{\epsilon^2}{4M_2}.$$
+
+
+La première question appliquée à $g$ sur l'intervalle $]a,+\infty[$ implique 
+que pour tout $h>0$ : 
+$$|g'(x)| \le  \frac{2}{h}M_0 + \frac {h}{2} M_2 $$
+
+En particulier pour $h = \frac{\epsilon}{M_2}$ et en utilisant $M_0  \le \frac{\epsilon^2}{4M_2}$
+on obtient :
+$$|g'(x)| \le  \frac{2}{\frac{\epsilon}{M_2}}\frac{\epsilon^2}{4M_2} + \frac{\frac{\epsilon}{M_2}}{2} M_2 \le \epsilon.$$
+
+Ainsi pour chaque $\epsilon$ on a trouvé $a>0$ tel que si $x>a$ alors $|g'(x)|\le \epsilon$.
+C'est exactement dire que $\lim_{x\to+\infty} g'(x)=0$.
+
+\end{enumerate}
+\fincorrection
+
+\finexercice

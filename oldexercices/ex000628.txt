@@ -1,0 +1,104 @@
+\exercice{628, bodin, 1998/09/01}
+\video{llaMFH13iLQ}
+\enonce
+Calculer, lorsqu'elles existent, les limites suivantes :
+$$
+\lim_{x\rightarrow \alpha} \frac{x^{n+1}-\alpha^{n+1}}{x^n-\alpha^n},
+$$
+
+$$
+\lim_{x\rightarrow 0} \frac{\tan x - \sin x}{\sin x(\cos 2x - \cos x)},
+$$
+
+$$
+\lim_{x\rightarrow +\infty} \sqrt{x+\sqrt{x+\sqrt{x}}}-\sqrt{x},
+$$
+
+$$
+ \lim_{x\rightarrow \alpha^+} \frac{\sqrt{x}-\sqrt{\alpha}-\sqrt{x-\alpha}}{\sqrt{x^2-\alpha^2}}, \quad (\alpha >0)
+$$
+
+$$
+\lim_{x\rightarrow 0} xE\left(\frac{1}{x}\right),
+$$
+
+$$
+\lim_{x\rightarrow 2} \frac{e^x-e^2}{x^2+x-6},
+$$
+
+$$
+\lim_{x\rightarrow +\infty} \frac{x^4}{1+x^\alpha\sin^2x}, \text{ en fonction de $\alpha \in \Rr$.}
+$$
+\finenonce 
+
+\indication
+\begin{enumerate}
+    \item Calculer d'abord la limite de $f(x) = \frac{x^k-\alpha^k}{x-\alpha}$.
+    \item Utiliser $\cos 2x =  2\cos^2 x - 1$ et faire un changement de variable $u = \cos x$.
+    \item Utiliser l'expression conjugu\'ee.
+    \item Diviser num\'erateur et d\'enominateur par $\sqrt{x-\alpha}$ puis utiliser l'expression conjugu\'ee.
+    \item On a toujours $y-1 \leq E(y) \leq y$, poser $y=1/x$.
+    \item Diviser num\'erateur et d\'enominateur par $x-2$.
+    \item  Pour $\alpha \geq 4$ il n'y a pas de  limite, pour $\alpha <4$ la limite est $+\infty$.
+\end{enumerate}
+\finindication
+
+\correction
+\begin{enumerate}
+  \item Montrons d'abord que la limite de $$f(x) = \frac{x^k-\alpha^k}{x-\alpha}$$ en $\alpha$ est 
+$k\alpha^{k-1}$, $k$ étant un entier fixé. Un calcul montre que 
+$f(x) = x^{k-1} + \alpha x^{k-2} + \alpha^2x^{k-3} + \cdots + \alpha^{k-1}$ ;
+en effet $(x^{k-1} + \alpha x^{k-2} + \alpha^2x^{k-3} + \cdots + \alpha^{k-1})(x-\alpha) = x^k-\alpha^k$.
+Donc la limite en $x=\alpha$ est $k\alpha^{k-1}$.
+Une autre m\'ethode consiste \`a dire que $f(x)$ est la taux d'accroissement de la fonction $x^k$, et donc la limite de
+$f$ en $\alpha$ est exactement la valeur de la d\'eriv\'ee de $x^k$ en $\alpha$, soit $k\alpha^{k-1}$.
+Ayant fait ceci revenons \`a la limite de l'exercice : comme 
+$$
+\frac{x^{n+1}-\alpha^{n+1}}{x^n-\alpha^n} = \frac{x^{n+1}-\alpha^{n+1}}{x-\alpha} \times \frac{x-\alpha}{x^n-\alpha^n}.$$
+Le premier terme du produit tend vers $(n+1)\alpha^n$ et le second
+terme, \'etant l'inverse d'un taux d'accroissement, tend vers $1/(n\alpha^{n-1})$.
+Donc la limite cherch\'ee est 
+$$\frac {(n+1)\alpha^n}{n\alpha^{n-1}}= \frac {n+1}{n} \alpha.$$
+  \item La fonction $f(x)=\frac{\tan x - \sin x}{\sin x(\cos 2x - \cos x)}$ s'\'ecrit aussi $f(x) = \frac{1-\cos x}{\cos x (\cos 2x- \cos x)}$. Or $\cos 2x =  2\cos^2 x - 1$. Posons $u = \cos x$, alors 
+$$f(x) = \frac {1-u}{u(2u^2-u-1)} = \frac {1-u}{u(1-u)(-1-2u)}= \frac {1}{u(-1-2u)}$$
+Lorsque $x$ tend vers $0$, $u = \cos x$ tend vers $1$, et donc $f(x)$ tend vers $-\frac 13$.
+
+  \item 
+\begin{align*}
+\sqrt{x+\sqrt{x+\sqrt x}}-\sqrt x 
+  &= \frac{\left(\sqrt{x+\sqrt{x+\sqrt x}}-\sqrt x\right)\left(\sqrt{x+\sqrt{x+\sqrt x}}+\sqrt x\right)}{\sqrt{x+\sqrt{x+\sqrt x}}+\sqrt x} \\
+  &= \frac{\sqrt{x+\sqrt x}}{\sqrt{x+\sqrt{x+\sqrt x}}+\sqrt x} \\
+ &= \frac{\sqrt{1+\frac 1 {\sqrt x}}}{\sqrt{1+\frac{\sqrt{x+\sqrt x}}{x}}+1} \\
+\end{align*}
+Quand $x \rightarrow +\infty$ alors $\frac 1 {\sqrt x} \rightarrow 0$
+et $\frac{\sqrt{x+\sqrt x}}{x}=\sqrt{\frac 1x + \frac{1}{x\sqrt{x}}}\rightarrow 0$, donc la limite recherch\'ee 
+est $\frac 12$.
+  \item La fonction s'\'ecrit 
+$$f(x) = \frac{\sqrt{x}-\sqrt{\alpha}-\sqrt{x-\alpha}}{\sqrt{x^2-\alpha^2}} = \frac{\sqrt x - \sqrt \alpha - \sqrt{x-\alpha}}{\sqrt{x-\alpha}\sqrt{x+\alpha}} = 
+\frac{\frac{\sqrt x - \sqrt \alpha}{\sqrt{x-\alpha}}-1}{\sqrt{x+\alpha}}.$$
+Notons $g(x) = \frac{\sqrt x - \sqrt \alpha}{\sqrt{x-\alpha}}$ alors 
+\`a l'aide de l'expression conjugu\'ee $$g(x) = \frac{x -  \alpha}{(\sqrt{x-\alpha})(\sqrt x +\sqrt \alpha)} = \frac{\sqrt{x -  \alpha}}{\sqrt x +\sqrt \alpha}.$$
+Donc $g(x)$ tend vers $0$ quand $x \rightarrow \alpha^+$. Et maintenant 
+$f(x) = \frac{g(x)-1}{\sqrt{x+\alpha}}$ tend vers $-\frac {1}{\sqrt{2 \alpha}}$.
+  \item Pour tout r\'eel $y$ nous avons la double in\'egalit\'e $y-1 < E(y) \leq y$. Donc pour $y>0$,
+$\frac{y-1}{y} < \frac{E(y)}{y} \leq 1$.
+On en d\'eduit que lorsque $y$ tend vers $+\infty$  alors
+$\frac{E(y)}{y}$ tend $1$. On obtient le même résultat quand $y$ tend vers $-\infty$. 
+En posant $y = 1/x$, et en faisant tendre
+$x$ vers $0$, alors $xE(\frac 1x) = \frac{E(y)}{y}$ tend vers $1$.
+  \item 
+$$\frac {e^x-e^2}{x^2+x-6} = \frac {e^x-e^2}{x-2} \times \frac{x-2}{x^2+x-6} =\frac {e^x-e^2}{x-2} \times \frac{x-2}{(x-2)(x+3)} = \frac {e^x-e^2}{x-2} \times \frac{1}{x+3}.$$
+La limite de $\frac {e^x-e^2}{x-2}$ en $2$ vaut $e^2$ ($\frac {e^x-e^2}{x-2}$ est la taux d'accroissement de la fonction $x \mapsto e^x$ en la valeur $x=2$), la limite voulue est $\frac {e^2}{5}$.
+
+  \item Soit $f(x) = \frac{x^4}{1+x^\alpha\sin^2x}$. Supposons $\alpha \geq 4$, alors on prouve que $f$ n'a pas de limite en $+\infty$.
+En effet pour pour $u_k = 2k\pi$, $f(2k\pi) = (2k\pi)^4$ tend vers $+\infty$ lorsque $k$ (et donc $u_k$) tend vers $+\infty$.
+Cependant pour $v_k = 2k\pi + \frac\pi 2$, $f(v_k) = \frac{v_k^4}{1+v_k^\alpha}$ tend vers $0$ (ou vers $1$ si $\alpha = 4$) lorsque $k$ (et donc $v_k$) tend vers $+\infty$. Ceci prouve que $f(x)$ n'a pas de limite lorsque $x$ tend vers $+\infty$.
+
+Reste le cas $\alpha < 4$. Il existe $\beta$ tel que
+$\alpha < \beta < 4$. 
+$$f(x)= \frac {x^4}{1+x^\alpha \sin^2 x}= \frac {x^{4-\beta}}{\frac 1 {x^\beta} +\frac{x^\alpha}{x^\beta} \sin^2 x}.$$
+Le num\'erateur tend $+\infty$ car $4-\beta >0$.
+$\frac 1 {x^\beta}$ tend vers $0$ ainsi que $\frac{x^{\alpha}}{x^\beta} \sin^2 x$ (car $\beta > \alpha$ et $\sin^2 x$ est born\'ee par $1$). Donc le d\'enominateur tend vers $0$ (par valeurs positives). La limite est donc de type $+\infty / 0^+$ (qui n'est pas ind\'etermin\'ee !) et vaut donc $+\infty$.
+\end{enumerate}
+\fincorrection
+\finexercice

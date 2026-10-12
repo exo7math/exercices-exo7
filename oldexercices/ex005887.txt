@@ -1,0 +1,54 @@
+\exercice{5887, rouget, 2010/10/16}
+\enonce[** I]
+Etudier l'existence et la valeur éventuelle des limites suivantes :
+
+\begin{enumerate}
+ \item  $ \frac{xy}{x^2+y^2}$ en $(0,0)$
+ \item  $ \frac{x^2y^2}{x^2+y^2}$ en $(0,0)$
+ \item  $ \frac{x^3+y^3}{x^2+y^4}$  en $(0,0)$
+ \item  $ \frac{\sqrt{x^2+y^2}}{|x|\sqrt{|y|}+|y|\sqrt{|x|}}$  en $(0,0)$
+ \item  $ \frac{(x^2-y)(y^2-x)}{x+y}$ en $(0,0)$
+ \item  $ \frac{1-\cos\sqrt{|xy|}}{|y|}$ en $(0,0)$
+ \item  $ \frac{x+y}{x^2-y^2+z^2}$ en $(0,0,0)$
+ \item  $ \frac{x+y}{x^2-y^2+z^2}$ en $(2,-2,0)$
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  $f$ est définie sur $\Rr^2\setminus\{(0,0)\}$.
+
+Pour $x\neq0$, $f(x,0)=0$. Quand $x$ tend vers $0$, le couple $(x,0)$ tend vers le couple $(0,0)$ et $f(x,0)$ tend vers $0$. Donc, si $f$ a une limite réelle en $0$, cette limite est nécessairement $0$.
+
+Pour $x\neq0$, $f(x,x)= \frac{1}{2}$. Quand $x$ tend vers $0$, le couple $(x,x)$ tend vers $(0,0)$ et $f(x,x)$ tend vers $ \frac{1}{2}\neq0$. Donc $f$ n'a pas de limite réelle en $(0,0)$.
+
+\item  $f$ est définie sur $\Rr^2\setminus\{(0,0)\}$.
+
+Pour $(x,y)\neq(0,0)$, $|f(x,y)|= \frac{x^2y^2}{x^2+y^2}= \frac{|xy|}{x^2+y^2}\times |xy|\leqslant \frac{1}{2}|xy|$. Comme $ \frac{1}{2}|xy|$ tend vers $0$ quand le couple $(x,y)$ tend vers le couple  $(0,0)$, il en est de même de $f$. $f(x,y)$ tend vers $0$ quand $(x,y)$ tend vers $(0,0)$.
+
+\item  $f$ est définie sur $\Rr^2\setminus\{(0,0)\}$.
+
+Pour $y\neq0$, $f(0,y)= \frac{y^3}{y^4}= \frac{1}{y}$. Quand $y$ tend vers $0$ par valeurs supérieures, le couple $(0,y)$ tend vers le couple $(0,0)$ et $f(0,y)$ tend vers $+\infty$. Donc $f$ n'a pas de limite réelle en $(0,0)$.
+
+\item  $f$ est définie sur $\Rr^2\setminus\{(0,0)\}$.
+
+Pour $x\neq0$, $f(x,x)= \frac{\sqrt{2x^2}}{2|x|\sqrt{|x|}}= \frac{1}{\sqrt{2|x|}}$.Quand $x$ tend vers $0$, le couple $(x,x)$ tend vers le couple $(0,0)$ et $f(x,x)$ tend vers $+\infty$. Donc $f$ n'a pas de limite réelle en $(0,0)$.
+
+\item  $f$ est définie sur $\Rr^2\setminus\{(x,-x),\;x\in\Rr\}$.
+
+Pour $x\neq0$, $f(x,-x+x^3)= \frac{(x+x^2-x^3)(-x+(-x+x^2)^2)}{x^3}\underset{x\rightarrow0}{\sim}- \frac{1}{x}$. Quand $x$ tend vers $0$ par valeurs supérieures, le couple $(x,-x+x^3)$ tend vers $(0,0$ et $f(x,-x+x^3)$ tend vers $-\infty$. Donc $f$ n'a pas de limite réelle en $(0,0)$.
+
+\item  $f$ est définie sur $\Rr^2\setminus\{(x,0),\;x\in\Rr\}$.
+
+$ \frac{1-\cos\sqrt{|xy|}}{|y|}\underset{(x,y)\rightarrow(0,0)}{\sim} \frac{(\sqrt{|xy|})^2}{2|y|}= \frac{|x|}{2}$ et donc $f$ tend vers $0$ quand $(x,y)$ tend vers $(0,0)$.
+
+\item  $f$ est définie sur $\Rr^3$ privé du cône de révolution d'équation $x^2-y^2+z^2=0$.
+
+$f(x,0,0)= \frac{1}{x}$ qui tend vers $+\infty$ quand $x$ tend vers $0$ par valeurs supérieures. Donc $f$ n'a pas de limite réelle en $(0,0,0)$.
+
+\item  $f(2+h,-2+k,l)= \frac{h+k}{h^2-k^2+l^2+4h+4k}=g(h,k,l)$. $g(h,0,0)$ tend vers $ \frac{1}{4}$ quand $h$ tend vers $0$ et $g(0,0,l)$ tend vers $0\neq \frac{1}{4}$ quand $l$ tend vers $0$. Donc, $f$ n'a pas de limite réelle quand $(x,y,z)$ tend vers $(2,-2,0)$.
+\end{enumerate}
+\fincorrection
+\finexercice

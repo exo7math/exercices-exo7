@@ -1,0 +1,73 @@
+\exercice{5923, tumpach, 2010/11/11}
+\enonce
+Montrer que, si $f~:[a,b] \rightarrow \mathbb{R}$ est une fonction
+int\'egrable au sens de Riemann, on a~:
+\begin{equation*}
+\frac{1}{b-a}\int_{a}^{b}f(t)\,dt=\lim_{n\rightarrow+\infty}\frac{1}{n}\sum_{k=1}^{n}f\left(a+k\frac{b-a}{n}\right).
+\end{equation*}
+En d\'eduire les limites suivantes~:
+\begin{equation*}
+a)\quad\lim_{n\rightarrow+\infty}
+\frac{1}{n}\sum_{k=1}^{n}\tan\frac{k}{n} \quad\quad\quad
+b)\quad\lim_{n\rightarrow+\infty}\sum_{k=1}^{n}\frac{n}{n^2+k^2}
+\quad\quad\quad
+c)\quad\lim_{n\rightarrow+\infty}\sum_{k=1}^{n}\log\left(\frac{n}{n+k}\right)^{\frac{1}{n}}
+\end{equation*}
+\finenonce
+
+\noindication
+
+\correction
+Soit $f~:[a,b] \rightarrow \mathbb{R}$ une fonction int\'egrable
+au sens de Riemann. 
+
+Notons $x_k = a+k\frac{b-a}{n}$, $k=1,\ldots,n$ les points où
+
+Soit $a_0=a$, $a_{n+1}=b$ et $a_k = a+\frac{2k+1}{2n}$ pour $k=1,\ldots,n$.
+
+Consid\'erons la subdivision 
+$\sigma=\{a_{0}=a< \cdots<a_k<\cdots < a_{n}=b\}$ de $[a,b]$. 
+Cette subdivision est presque régulière, seul le premier intervalle et le dernier
+ont des longueurs différentes. Pour $k=1,\ldots,n-1$, $x_k$
+est le milieu de $]a_k,a_{k+1}[$.
+
+Notons 
+$m_{k} = \inf\{ f(x), x\in ]a_{k-1},a_k[\}$ et
+$M_k = \sup\{ f(x), x\in ]a_{k-1},a_k[\}$. 
+
+Donc pour $k=1,\ldots,n-1$ on a $m_k \le f(x_k) \le M_k$.
+Mais il faut aussi tenir compte de $f(x_n)=f(b)$ et des premiers et derniers intervalles.
+D'où pour la minoration:
+\begin{equation*}
+\underline{S}_{f}^{\sigma} = (m_0+m_n)\frac{b-a}{2n} + \frac{b-a}{n} \sum_{k=1}^{n} m_k
+\le (m_0+m_n)\frac{b-a}{2n} + \frac{b-a}{n} \sum_{k=1}^{n-1} f(x_k).
+\end{equation*}
+Cela donne 
+\begin{equation*}
+ \underline{S}_{f}^{\sigma} - (m_0+m_n+2f(b)) \frac{b-a}{2n} \le  \frac{b-a}{n}\sum_{k=1}^{n} f(x_k).
+\end{equation*}
+
+Quand $n$ tend vers $+\infty$ on trouve que $\underline{S}_{f}^{\sigma} \to \int_a^b f$
+et $(m_0+m_n+2f(b)) \frac{b-a}{2n}\to 0$ cela donne l'inégalité :
+$$\int_a^b f \le \lim_{n\rightarrow+\infty} \frac{b-a}{n}\sum_{k=1}^{n} f(x_k).$$
+
+La somme $\overline{S}_{f}^{\sigma}$ conduit de manière similaire à l'inégalité inverse,
+d'o\`u :
+\begin{equation*}
+\int_{a}^{b} f(x)\,dx =
+\lim_{n\rightarrow+\infty}\left(\frac{b-a}{n}\right)
+\sum_{k=1}^{n}f\left(a+k\frac{b-a}{n}\right).
+\end{equation*}
+On a~:
+\begin{eqnarray*}
+a)\quad\lim_{n\rightarrow+\infty}
+\frac{1}{n}\sum_{k=1}^{n}\tan\frac{k}{n} = -\log(\cos 1)
+\quad\quad\quad &
+b)\quad\lim_{n\rightarrow+\infty}\sum_{k=1}^{n}\frac{n}{n^2+k^2} =
+\frac{\pi}{4} \quad\quad\quad\\
+c)\quad\lim_{n\rightarrow+\infty}\sum_{k=1}^{n}\log\left(\frac{n}{n+k}\right)^{\frac{1}{n}}
+= -2\ln 2 + 1. &
+\end{eqnarray*}
+\fincorrection
+
+\finexercice

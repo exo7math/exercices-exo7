@@ -1,0 +1,35 @@
+\exercice{5006, quercia, 2010/03/17}
+\enonce[$MC = kMN$]
+
+Trouver les courbes $\Gamma$ du plan ayant la propriété suivante :
+Soit $M \in \Gamma$, $C$ le centre de courbure de $\Gamma$ en $M$ et $N$
+le projeté de $O$ sur la normale à $\Gamma$ en $M$.
+Alors $\vec{MC} = k\vec{MN}$ où $k$ est un réel fixé.
+
+\'Etudier les cas particuliers :
+$k=1$, $k=\frac23$, $k=2$, $k=\frac13$ et $k=-1$.
+
+\finenonce
+
+\noindication
+
+\correction
+Soit $\theta$ l'angle polaire de $\vec{OM}$ :
+$\vec{MC} = \frac{d s}{ d\varphi}\vec n$ et
+$\vec{MN} = \frac{d s}{ d\theta}\vec n$.
+
+$\frac{d s}{ d\theta} = k\frac{d s}{ d\varphi}  \Rightarrow 
+\varphi = \frac\theta k+b  \Rightarrow  V = a\theta+b$ avec $a = \frac1k-1$.
+
+$\frac\rho{\rho'} = \tan(a\theta+b)  \Rightarrow  \rho = \lambda\cos(a\theta+b)^{-1/a}$
+si $a \ne 0$ ou $\rho = \lambda e^{\mu\theta}$ si $a=0$.
+
+\leavevmode\vbox{\halign{$k=#$\hfil &$ \Rightarrow $ #\hfil\cr
+1       & Spirale logarithmique.\cr
+\frac23 & Parabole de foyer $O$.\cr
+2       & Cardioïde.\cr
+\frac13 & Hyperbole de centre $O$.\cr
+-1      & Lemniscate de Bernouilli.\cr}}
+\fincorrection
+
+\finexercice

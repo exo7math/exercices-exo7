@@ -1,0 +1,23 @@
+\exercice{5631, rouget, 2010/10/16}
+\enonce[**]
+Soit $E$ un $\Kk$-espace vectoriel et $\varphi$ et $\psi$ deux formes linéaires sur $E$. On suppose que pour tout $x$ de $E$, on a  $\varphi(x)\psi(x) = 0$. Montrer que $\varphi= 0$ ou $\psi= 0$.
+\finenonce
+
+\noindication
+
+\correction
+\textbf{1 ère solution.} On utilise le fait qu'une réunion de deux sous-espaces vectoriels est un sous-espace vectoriel si et seulement si l'un des deux contient l'autre. Donc
+
+\begin{center}
+$\varphi\psi= 0\Rightarrow\text{Ker}\varphi\cup\text{Ker}\psi = E\Rightarrow\text{Ker}\psi \subset\text{Ker}\varphi=\text{Ker}\varphi\cup\text{Ker}\psi= E\;\text{ou}\;\text{Ker}\varphi\subset\text{Ker}\psi=\text{Ker}\varphi\cup\text{Ker}\psi = E\Rightarrow \varphi= 0\;\text{ou}\;\psi = 0$.
+\end{center}
+
+\textbf{2ème solution.} Supposons que $\varphi\psi= 0$ et qu'il existe $x$ et $y$ tels que $\varphi(x)\neq 0$ (et donc $\psi(x) = 0$) et $\psi(y)\neq 0$ (et donc $\varphi(y) = 0$). Alors $0 = \varphi(x+y)\psi(x+y)=(\varphi(x)+\varphi(y))(\psi(x)+\psi(y))=\varphi(x)\psi(y)$ ce qui est une contradiction.
+
+\begin{center}
+\shadowbox{
+$\forall(\varphi,\psi)\in(E^*)^2,\;(\forall x\in E,\;\varphi(x)\psi(x)=0)\Rightarrow\varphi=0\;\text{ou}\;\psi=0$.
+}
+\end{center}
+\fincorrection
+\finexercice

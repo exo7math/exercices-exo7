@@ -1,0 +1,116 @@
+\exercice{6996, blanc-centi, 2015/07/04}
+\video{1-v-EhSJHlk}
+\enonce
+Pour les équations différentielles suivantes,
+trouver les solutions définies sur $\R$ tout entier :
+\begin{enumerate}
+\item $x^2y'-y = 0$ $(E_1)$
+\item $xy'+y-1 = 0$ $(E_2)$
+\end{enumerate}
+\finenonce
+ 
+\indication\ 
+\begin{enumerate}
+  \item une infinité de solutions
+  \item une solution
+\end{enumerate}
+\finindication
+
+\correction\
+\begin{enumerate}
+\item $x^2y'-y = 0$ $(E_1)$
+
+
+Pour se ramener à l'étude d'une équation différentielle de la forme $y'+ay=b$, 
+on résout d'abord sur les intervalles où le coefficient de $y'$ ne s'annule pas: 
+on se place donc sur $]-\infty;0[$ ou $]0;+\infty[$.
+
+\begin{enumerate}
+ \item \textbf{Résolution sur $]-\infty;0[$ ou $]0;+\infty[$.}
+ 
+Sur chacun de ces intervalles, l'équation différentielle se réécrit 
+$$y'-\frac{1}{x^2}y=0$$ 
+qui est une équation différentielle linéaire homogène d'ordre 1 à coefficients non constants. Ses solutions sont de la forme $y(x)=\lambda e^{-1/x}$ (en effet, sur $]-\infty;0[$ ou $]0;+\infty[$, une primitive de $\frac{1}{x^2}$ est $\frac{-1}{x}$).
+
+  \item \textbf{Recollement en $0$.}
+  
+Une solution $y$ de $(E_1)$ sur $\R$ doit \^etre solution sur $]-\infty;0[$ et $]0;+\infty[$, il existe donc $\lambda_+,\ \lambda_-\in\R$ tels que 
+$$y(x)=\left\lbrace\begin{array}{l}
+\lambda_+e^{-1/x}\ \mathrm{si}\ x>0\\
+\lambda_-e^{-1/x}\ \mathrm{si}\ x<0
+\end{array}\right.$$
+Il reste à voir si l'on peut recoller les deux expressions pour obtenir une solution sur $\R$: autrement dit, pour quels choix de $\lambda_+,\ \lambda_-$ la fonction $y$ se prolonge-t-elle en 0 en une fonction dérivable vérifiant $(E_1)$? 
+\begin{itemize}
+\item $e^{-1/x}\xrightarrow[x\to\,0^-]{}+\infty$ et $e^{-1/x}\xrightarrow[x\to\,0^+]{}0$, donc $y$ est prolongeable par continuité en 0 si et seulement si \fbox{$\lambda_-=0$}. On peut alors poser \fbox{$y(0)=0$}, quel que soit le choix de $\lambda_+$.
+\item Pour voir si la fonction ainsi prolongée est dérivable en 0, on étudie son taux d'accroissement:
+$$\left\{\begin{array}{l}
+\text{pour}\ x>0,\ \frac{y(x)-y(0)}{x-0}=\frac{\lambda_+e^{-1/x}}{x}=-\lambda_+(\frac{-1}{x})e^{-1/x}\xrightarrow[x\to\,0^+]{}0\\
+\ \\
+\text{pour}\ x<0,\ \frac{y(x)-y(0)}{x-0}=0\xrightarrow[x\to\,0^-]{}0
+\end{array}\right.$$
+Ainsi la fonction $y$ est dérivable en 0 et \fbox{$y'(0)=0$}.
+\item Par construction, l'équation différentielle $(E_1)$ est satisfaite sur $\R^*$. 
+Vérifions qu'elle est également satisfaite au point $x=0$: $0^2 \cdot y'(0)-y(0)=-y(0)=0$.
+\end{itemize}
+
+  \item \textbf{Conclusion.}
+  
+Finalement, les solutions sur $\R$ sont exactement les fonctions suivantes: 
+$$y(x)=\left\lbrace\begin{array}{l}
+\lambda e^{-1/x}\quad \text{si}\ x>0\\
+0\qquad \text{si}\ x\le 0
+\end{array}\right. \qquad (\lambda\in\R)$$
+  \end{enumerate}
+
+\item $xy'+y-1 = 0$ $(E_2)$
+
+Pour se ramener à l'étude d'une équation différentielle de la forme 
+$y'+ay=b$, on résout d'abord sur les intervalles où le coefficient 
+de $y'$ ne s'annule pas: on se place donc sur $I=]-\infty;0[$ ou $I=]0;+\infty[$.
+
+  \begin{enumerate}
+  \item \textbf{Résolution sur $I$.}
+  
+  Sur l'intervalle $I$, l'équation différentielle se réécrit 
+$$y'+\frac{1}{x}y=\frac{1}{x}$$ 
+qui est une équation différentielle linéaire d'ordre 1 à 
+coefficients non constants.
+
+  \begin{itemize}
+    \item Pour l'équation homogène $y'+\frac{1}{x}y=0$
+ une primitive de $-\frac{1}{x}$ sur $I$, est $-\ln|x|$.
+Les solutions de l'équation homogène sont donc les $\lambda e^{-\ln|x|}=\lambda\frac{1}{|x|}$. 
+Quitte à changer $\lambda$ en $-\lambda$ si $I=]-\infty;0[$, on peut écrire les solutions de 
+l'équation homogène sous la forme $y(x)=\lambda \frac1x$.
+    
+    \item Pour trouver les solutions de 
+l'équation avec second membre, on applique la méthode de variation de la constante 
+en cherchant $y(x)=\lambda(x) \frac 1x$: en remplaçant, on voit que $y$ est solution sur $I$ 
+si et seulement si $\lambda'(x)=1$. En intégrant, on obtient $\lambda(x)=x$. 
+Une solution particulière en donc $y_0(x) = 1$.
+    
+    \item Sur $I$ les solutions de $(E_2)$ sont les $y(x)=1+\frac{\lambda}{x}$ où $\lambda$ est un paramètre réel.
+  \end{itemize}
+
+ 
+  \item \textbf{Recollement en $0$.}
+  
+Une solution $y$ de $(E_2)$ sur $\R$ doit \^etre solution sur $]-\infty;0[$ et $]0;+\infty[$, 
+il existe donc $\lambda_+,\ \lambda_-\in\R$ tels que 
+$$y(x)=\left\lbrace\begin{array}{l}
+1+\frac{\lambda_+}{x}\quad \text{si}\ x>0\\
+1+\frac{\lambda_-}{x}\quad \text{si}\ x<0
+\end{array}\right.$$
+Il reste à voir si l'on peut recoller les deux expressions pour obtenir 
+une solution sur $\R$. On voit tout de suite que $y$ a une limite (finie) 
+en $0$ si et seulement si \fbox{$\lambda_+=\lambda_-=0$}. 
+Dans ce cas, on peut alors poser \fbox{$y(0)=1$} et $y$ est la fonction constante 
+égale à 1, qui est bien s\^ur dérivable sur $\R$. De plus, $(E_2)$ est bien satisfaite au point $x=0$.
+
+  \item \textbf{Conclusion.}
+  
+Finalement, $(E_2)$ admet sur $\R$ une unique solution, qui est la fonction constante égale à $1$.
+  \end{enumerate}
+\end{enumerate}
+\fincorrection
+\finexercice

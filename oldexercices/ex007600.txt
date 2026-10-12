@@ -1,0 +1,49 @@
+\exercice{7600, mourougane, 2021/08/10}
+\enonce[Intégrales]
+\begin{enumerate}
+ \item Enoncer la formule de Cauchy pour les disques, en précisant les hypothèses.
+ 
+ \item Calculer $I_1:=\int_{\partial \Delta}\frac{\sin(z)}{z}dz.$
+ 
+ \item Calculer $I_2:=\int_{\partial \Delta}\frac{\sin(z)}{z^2}dz.$ 
+  
+  \item Calculer $I_3:=\int_{\partial \Delta}\frac{\sin(z)}{z^3}dz.$ 
+  
+  \item Parmi les applications $\sin(z)$, $\frac{\sin(z)}{z}$, $\frac{\sin(z)}{z^2}$
+  et $\frac{\sin(z)}{z^3}$ sur $\Cc^\times$, lesquelles ont une primitive holomorphe sur $\Cc^\times$ ?
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+  \item Question de cours.
+  \item L'application $\sin$ est holomorphe sur $\Cc$, donc $$I_1=\int_{\partial \Delta}\frac{\sin(z)}{z}dz=\int_{\partial \Delta}\frac{\sin(z)}{z-0}dz=(2i\pi)\sin(0)=0.$$
+
+  \item L'application $\frac{\sin(z)}{z}$ se prolonge en $0$ par la somme de la série entière $\sum_{n\in\Nn}\frac{(-1)^n}{(2n+1)!}z^{2n}$ de rayon de convergence infini donc holomorphe sur $\Cc$.
+  Donc $$I_2=\int_{\partial \Delta}\frac{\sin(z)}{z^2}dz=\int_{\partial \Delta}\frac{\frac{\sin(z)}{z}}{z-0}dz=(2i\pi)\sum_{n=0}^{+\infty}\frac{(-1)^n}{(2n+1)!}z^{2n}(0)=2i\pi.$$
+
+  \item L'application $\frac{\sin(z)-1}{z^2}$ se prolonge en $0$ par la somme de la série entière $\sum_{n\geq 1}\frac{(-1)^n}{(2n+1)!}z^{2n-1}$ holomorphe sur $\Cc$.
+  Donc $\int_{\partial \Delta}\frac{\sin(z)-1}{z^3}dz=(2i\pi)\sum_{n=1}^{+\infty}\frac{(-1)^n}{(2n+1)!}z^{2n-1}(0)=0$.
+  Donc, 
+  \begin{eqnarray*}
+  I_3&=&\int_{\partial \Delta}\frac{\sin(z)}{z^3}dz=\int_{\partial \Delta}\frac{\sin(z)-1}{z^3}dz + \int_{\partial \Delta}\frac{1}{z^3}dz
+  =\int_{\partial \Delta}\frac{1}{z^3}dz=0.
+  \end{eqnarray*}
+
+  \item L'application $\sin(z)$ admet $-\cos(z)$ comme primitive sur $\Cc^\times$ et même sur $\Cc$.
+  
+  
+  L'application $\frac{\sin(z)}{z}$ se prolonge sur $\Cc$ en la somme de la série entière $\sum_{n\in\Nn}\frac{(-1)^n}{(2n+1)!}z^{2n}$.
+  Elle admet donc sur $\Cc$ et donc sur $\Cc^\times$ la primitive $\sum_{n\in\Nn}\frac{(-1)^n}{(2n+1)!}\frac{z^{2n+1}}{2n+1}$.
+  
+  
+  L'application $\frac{\sin(z)}{z^2}$ a une intégrale non nulle sur le chemin fermé $\partial\Delta$ de $\Cc^\times$ : elle n'admet donc pas de primitive sur $\Cc^\times$.
+  
+  
+  L'application $\frac{\sin(z)}{z^3}=\frac{\sin(z)-1}{z^3}+\frac{1}{z^3}=\sum_{n=1}^{+\infty}\frac{(-1)^n}{(2n+1)!}z^{2n-1}+\frac{1}{z^3}$ 
+  admet comme primitive sur $\Cc^\times$
+  $$\sum_{n=1}^{+\infty}\frac{(-1)^n}{(2n+1)!}\frac{z^{2n}}{2n}-\frac{1}{4z^4}.$$
+
+\end{enumerate}
+\fincorrection
+\finexercice

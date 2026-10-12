@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Exo7 : Exercices de mathématiques</title>
+    <link rel="icon" type="image/png" href="../assets/LogoExo7-petit-notext.png">
+    <link rel="stylesheet" type="text/css" href="../assets/exo7.css">
+
+	<script>
+        function GereChkbox(conteneur, a_faire) {
+            const checkboxes = document.querySelectorAll(`#${conteneur} input[type="checkbox"]`);
+            checkboxes.forEach(checkbox => {
+                if (a_faire === '0') checkbox.checked = false;
+                else if (a_faire === '1') checkbox.checked = true;
+                else if (a_faire === '2') checkbox.checked = !checkbox.checked;
+            });
+        }
+
+        function montre_div(nom_div) {
+            // On cherche la div
+            const div = document.getElementById(nom_div);
+            
+            // Si la div n'existe pas, on force le navigateur à afficher un message d'erreur clair !
+            if (!div) {
+                alert("ERREUR : Impossible de trouver le bloc caché qui s'appelle -> " + nom_div);
+                return;
+            }
+
+            // Si on la trouve, on l'affiche ou on la cache
+            if (window.getComputedStyle(div).display === "none") {
+                div.style.display = "block";
+            } else {
+                div.style.display = "none";
+            }
+        }
+    </script>
+
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                macros: {
+                    Rr: '{\\mathbf{R}}', R: '{\\mathbf{R}}', Nn: '{\\mathbf{N}}', N: '{\\mathbf{N}}', 
+                    Cc: '{\\mathbf{C}}', C: '{\\mathbf{C}}', Zz: '{\\mathbf{Z}}', Z: '{\\mathbf{Z}}',  
+                    Kk: '{\\mathbf{K}}', K: '{\\mathbf{K}}', Qq: '{\\mathbf{Q}}', Q: '{\\mathbf{Q}}',
+                    ch: '\\cosh', sh: '\\sinh', 
+                    Arcsin: '\\arcsin', Arccos: '\\arccos', Arctan: '\\arctan', cotan: '\\cot',
+                    Argsh: '\\operatorname{Argsh}', Argch: '\\operatorname{Argch}', Argth: '\\operatorname{Argth}', 
+                    pgcd: '\\operatorname{pgcd}', Ker: '\\operatorname{Ker}', dd: '\\mathrm{d}'
+                }
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<div id="upbg"></div>
+<div id="outer">
+    <header id="header">
+        <div id="headercontent">
+            <h1>Exo7</h1>
+            <h2>Exercices de mathématiques</h2>
+        </div>
+        <div id="headerlogo">
+            <a href="http://exo7.emath.fr/"> 
+                <img src="../assets/LogoExo7-mini.png" alt="Exo7">
+            </a>
+        </div>
+    </header>
+    <main id="content">
+        <div id="normalcontent">
+            <div class="contentarea">

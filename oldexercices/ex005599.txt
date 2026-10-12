@@ -1,0 +1,21 @@
+\exercice{5599, rouget, 2010/10/16}
+\enonce[**I]
+Soient $E$ un $\Cc$-espace vectoriel non nul de dimension finie $n$ et $f$ un endomorphisme de $E$ tel que $\forall x\in E$, $\exists p\in\Nn^*$ tel que $f^p(x)=0$. Montrer que $f$ est nilpotent.
+\finenonce
+
+\noindication
+
+\correction
+(Ne pas confondre : ($\forall x\in E,\; \exists p\in\Nn^*/\;f^p(x)=0$) et ($\exists p\in\Nn^*/\;\forall x\in E,\;f^p(x) = 0)$. Dans le deuxième cas, $p$ est indépendant de $x$ alors que dans le premier cas, $p$ peut varier quand $x$ varie).
+
+Soit $\mathcal{B}=(e_i)_{1\leqslant i\leqslant n}$ une base de $E$. Pour chaque $i\in\llbracket1,n\rrbracket$, il existe un entier non nul $p_i$ tel que $f^{p_i}(e_i)=0$. Soit $p=\text{Max}\{p_1,...,p_n\}$. $p$ est un entier naturel non nul et pour $i$ dans $\llbracket1,n\rrbracket$, on a
+
+\begin{center}
+$f^{p}(e_i)=f^{p-p_i}(f^{p_i}(e_i))=f^{p-p_i}(0)=0$.
+\end{center}
+
+Ainsi l'endomorphisme $f^p$ s'annule sur une base de $E$ et on sait que $f^p=0$.
+
+On a donc trouvé un entier non nul $p$ tel que $f^p=0$ et par suite $f$ est nilpotent.
+\fincorrection
+\finexercice

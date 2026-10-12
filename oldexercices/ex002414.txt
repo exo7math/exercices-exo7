@@ -1,0 +1,30 @@
+\exercice{2414, mayer, 2003/10/01}
+\enonce 
+Soient $E,F$ des espaces norm\'es et $(f_n)$ une suite d'applications \'equi\-continues
+de $E$ dans $F$. Montrer que l'ensemble des $x\in E$, pour lesquels $(f_n(x))$
+est une suite de Cauchy dans $F$, est un ferm\'e.
+\finenonce
+
+\noindication
+
+\correction
+Notons $G$ l'ensemble des $x\in E$, pour lesquels $(f_n(x))$
+est une suite de Cauchy dans $F$. Soit $(x_n)$ une suite d'éléments de $G$ qui converge vers $x \in E$. Il faut montrer $x\in G$, c'est-à-dire que
+$(f_n(x))$ est une suite de Cauchy de $F$.
+\'Ecrivons pour $p,q,n \in \Nn$,
+$$\| f_p(x)-f_q(x) \| \le \| f_p(x)-f_p(x_n) \| + \| f_p(x_n)-f_q(x_n) \|+\| f_q(x_n)-f_q(x) \|.$$
+
+Soit $\epsilon >0$, comme $(f_n)$ est équicontinue en $x$, il existe $\eta >0$ tel que 
+$$\forall n\in \Nn \quad \forall y\in E  \quad \| x-y\| < \eta \quad \Rightarrow \| f_n(x)-f_n(y)\| < \frac \epsilon 3.$$
+Comme $x_n \rightarrow x$ il existe $N \ge 0$ tel que
+$\|x_N-x\| < \eta$. 
+Donc 
+$$\forall p,q \ge 0 \quad \| f_p(x_N)-f_p(x)\| < \frac \epsilon 3 \quad 
+\text{ et  }\quad \| f_q(x_N)-f_q(x)\| < \frac \epsilon 3.$$
+Enfin $N$ étant fixé, $x_N \in G$, la suite $(f_n(x_N))_n$ est une suite de Cauchy, donc il existe $N'\ge N$ tel que pour $p,q \ge N'$ on a,
+$$\| f_p(x_N)-f_q(x_N)\| < \frac \epsilon 3.$$
+Le bilan de toute ces inégalités est donc 
+$$\forall p,q \ge N' \quad \| f_p(x)-f_q(x) \| <\epsilon.$$
+Donc $(f_n(x))_n$ est une suite de Cauchy, donc $x\in G$ et $G$ est fermé.
+\fincorrection
+\finexercice

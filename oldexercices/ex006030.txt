@@ -1,0 +1,56 @@
+\exercice{6030, quinio, 2011/05/20}
+
+\enonce
+Une compagnie aérienne a demandé des statistiques afin d'améliorer la sûreté au décollage 
+et définir un poids
+limite de bagages. Pour l'estimation du poids des voyageurs et du poids des
+bagages, un échantillon est constitué de 300 passagers qui ont accepté d'être pesés : on a obtenu une moyenne $m_{e}$ de 68kg, 
+avec un écart-type $\sigma_{e}$ de 7 kg.
+\begin{enumerate}
+\item Définir un intervalle de confiance pour la moyenne des
+passagers. (On admet que le poids des passagers suit une loi normale de moyenne
+$m$, d'écart-type $\sigma $.)
+\item Montrer que l'on peut considérer que le poids des passagers est
+une variable aléatoire $X$ de moyenne 70 kg, d'écart-type 8 kg.
+\item En procédant de même pour le poids des bagages, on admet les résultats :
+\begin{itemize}
+\item Si le poids maximum autorisé est de 20 kg, le poids des bagages
+peut être considéré comme une variable aléatoire $Y$ de
+moyenne 15 kg, d'écart-type 5 kg.
+\item La capacité de l'avion est de 300 passagers; l'avion pèse, 
+à vide, 250 tonnes. Le décollage est interdit si le poids total dépasse 276.2 tonnes.
+Quelle est la probabilité pour que le décollage soit interdit ? 
+\end{itemize}
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item On peut estimer $m$ par la moyenne de l'échantillon: $68$ kg, et $\sigma$ par
+$\sigma _{e}\sqrt{\frac{300}{299}}=7\sqrt{\frac{300}{299}} \simeq 7.0117$ kg. 
+On en déduit un intervalle de confiance pour la moyenne $m$ : $I_\alpha = [67.2;68.8]$.
+\item La borne supérieure de l'intervalle étant de $69$ kg, il est
+raisonnable de prendre $70$ kg comme espérance de la variable poids d'un passager.
+\item Le décollage est autorisé si le poids total des voyageurs et de
+leurs bagages ne dépasse pas $26.2$ tonnes.
+Pour chacun des $300$ passagers, notons: $X_{i}$ son poids et $Y_{i}$ le poids de ses bagages.
+Faisons l'hypothèse d'indépendance entre les variables $X_{i}$ et $Y_{i}$.
+Le poids total $Z=\sum_{i=1}^{300}(X_{i}+Y_{i})$ est la somme de $600$
+variables aléatoires indépendantes; le théorème central
+limite s'applique sous cette hypothèse.
+Comme l'espérance totale est $E(Z)=300 \cdot (70+15)=25\,500$ et la variance
+de $Z$ est :
+$\text{Var}\, Z=300 \cdot(\text{Var}\,X_{i}+\text{Var}\,Y_{i})$.
+ Alors $Z$ suit approximativement une loi
+normale de moyenne $m=25\,500$, d'écart-type $\sigma =\sqrt{300\cdot(8^{2}+5^{2})}=163.4$.
+Alors $Z' =\frac{Z-m}{\sigma}$ suit approximativement une loi normale
+centrée réduite.
+Le décollage est interdit si : $Z>26\,200$, c'est-à-dire si  $Z' >4.284$.
+On lit dans la table de Gauss: pour $t=4$, $F(t)=0.999\,968=P[Z' \leq 4]$.
+Le décollage est interdit pour cause de surcharge pondérale avec une
+probabilité inférieure à $0.000\,04$.
+\end{enumerate}
+\fincorrection
+\finexercice

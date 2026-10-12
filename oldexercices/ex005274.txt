@@ -1,0 +1,23 @@
+\exercice{5274, rouget, 2010/07/04}
+\enonce[***I Matrice de \textsc{Vandermonde} des racines $n$-ièmes de l'unité]
+Soit $\omega=e^{2i\pi/n}$, $(n\geq 2)$. Soit $A=(\omega^{(j-1)(k-1)})_{1\leq j,k\leq n}$. Montrer que $A$ est inversible et calculer $A^{-1}$ (calculer d'abord $A\overline{A}$).
+\finenonce
+
+\noindication
+
+\correction
+Soient $k$ et $l$ deux entiers tels que $1\leq k\leq n$ et $1\leq l\leq n$. Le coefficient ligne $k$, colonne $l$ de $A\overline{A}$ vaut~:
+
+$$\sum_{j=1}^{n}\omega^{(k-1)(j-1)}\omega^{-(j-1)(l-1)}=\sum_{j=1}^{n}(\omega^{k-l})^{j-1}.$$
+
+\begin{itemize}
+\item[1er cas.]  Si $k=l$, $\omega^{k-l}=1$, et le coefficient vaut $\sum_{j=1}^{n}1=n$.
+
+\item[2ème cas.] Si $k\neq l$. On a $-(n-1)\leq k-l\leq n-1$ avec $k-l\neq0$ et donc, $k-l$ n'est pas multiple de $n$. Par suite, $\omega^{k-l}\neq1$ et 
+
+$$\sum_{j=1}^{n}(\omega^{k-l})^{j-1}=\frac{1-(\omega^{k-l})^n}{1-\omega}=\frac{1-1^{k-l}}{1-\omega}=0.$$
+\end{itemize}
+
+En résumé, $A\overline{A}=nI_n$. Donc $A$ est inversible à gauche et donc inversible et $A^{-1}=\frac{1}{n}\overline{A}$.
+\fincorrection
+\finexercice

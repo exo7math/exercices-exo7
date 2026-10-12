@@ -1,0 +1,41 @@
+\exercice{5724, rouget, 2010/10/16}
+\enonce[***]
+\begin{enumerate}
+ \item  Soit $f$ de classe $C^1$ sur $\Rr^+$ à valeurs dans $\Rr$ telle que l'intégrale $\int_{0}^{+\infty}f(x)\;dx$ converge en $+\infty$. Montrer que $\int_{0}^{+\infty}f'(x)\;dx$ converge en $+\infty$ si et seulement si $f(x)$ tend vers $0$ quand $x$ tend vers $+\infty$.
+
+\item
+ \begin{enumerate}
+ \item On suppose que $f$ est une fonction de classe $C^2$ sur $\Rr^+$ à valeurs dans $\Rr$ telle que $f$ et $f''$ admettent des limites réelles quand $x$ tend vers $+\infty$. Montrer que $f'$ tend vers $0$ quand $x$ tend vers $+\infty$.
+
+ \item En déduire que si les intégrales $\int_{0}^{+\infty}f(x)\;dx$ et $\int_{0}^{+\infty}f''(x)\;dx$ convergent alors $f$ tend vers $0$ quand $x$ tend vers $+\infty$.
+ \end{enumerate}
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Puisque $f$ est de classe $C^1$ sur $\Rr^+$, pour $x\geqslant0$,  $\int_{0}^{x}f'(t)\;dt =f(x)-f(0)$. Donc l'intégrale $\int_{0}^{+\infty}f'(t)\;dt$ converge en $+\infty$ si et seulement si $f$ a une limite réelle $\ell$ quand $x$ tend vers $+\infty$.
+
+Si de plus l'intégrale $\int_{0}^{+\infty}f(t)\;dt$ converge, il est exclus d'avoir $\ell\neq0$ et réciproquement si $\ell= 0$ alors $\int_{0}^{x}f'(t)\;dt$ tend vers $-f(0)$ quand $x$ tend vers $+\infty$.
+Donc l'intégrale $\int_{0}^{+\infty}f'(t)\;dt$ converge si et seulement si $\lim_{x \rightarrow +\infty}f(x)=0$. 
+
+\item  
+  \begin{enumerate} 
+  \item Soit $x\geqslant0$. D'après la formule de \textsc{Taylor}-\textsc{Lagrange}, il existe un réel $\theta_x\in]x,x+1[$
+
+\begin{center}
+$f(x+1) = f(x) +(x+1-x)f'(x) +\frac{1}{2}f''(\theta_x)$.
+\end{center}
+
+ce qui s'écrit encore $f'(x) = f(x+1) -f(x) -\frac{1}{2}f''(\theta_x)$. Quand $x$ tend vers $+\infty$, $f(x+1)-f(x)$ tend vers $0$ et d'autre part, $\theta_x$ tend vers $+\infty$. Ainsi, si $f$ et $f''$ ont une limite réelle quand $x$ tend vers $+\infty$, $f'$ a également une limite réelle et de plus $\lim_{x \rightarrow +\infty}f'(x) = -\frac{1}{2}\lim_{x \rightarrow +\infty}f''(x)$.
+
+Ensuite, puisque pour $x\geqslant0$, $\int_{0}^{x}f'(t)\;dt = f(x) - f(0)$ et $\int_{0}^{x}f''(t)\;dt = f'(x) - f'(0)$, les intégrales $\int_{0}^{+\infty}f'(t)\;dt$ et $\int_{0}^{+\infty}f''(t)\;dt$  convergent et d'après 1), $\lim_{x \rightarrow +\infty}f'(x) = 0$ ($=\lim_{x \rightarrow +\infty}f''(x)$).
+
+  \item Soit $F~:~x\mapsto\int_{0}^{x}f(t)\;dt$. $F$ est de classe $C^3$ sur $\Rr^+$. De plus, $F(x) =\int_{0}^{x}f(t)\;dt$ tend vers $\int_{0}^{+\infty}f(t)\;dt$ et 
+$F''(x) =f'(x) = f'(0) +\int_{0}^{x}f''(t)\;dt$ tend vers $f'(0) +\int_{0}^{+\infty}f''(t)\;dt$. Donc $F$ et $F''$ ont des limites réelles en $+\infty$. D'après a), $f =F'$ tend vers $0$ quand $x$ tend vers $+\infty$.
+  \end{enumerate}
+\end{enumerate}
+\fincorrection
+\finexercice

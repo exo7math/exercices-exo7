@@ -1,0 +1,37 @@
+\exercice{3817, quercia, 2010/03/11}
+\enonce[Centrale MP 2001]
+
+\begin{enumerate}
+  \item Montrer que toute matrice symétrique réelle positive a ses coefficients
+diagonaux positifs. Montrer que si l'un des coefficients diagonaux $u_{ii}$
+est nul, alors pour tout $j$ on a $u_{ij} = 0$.
+
+  \item $U$ est une matrice symétrique réelle positive de la forme
+$U = \begin{pmatrix}A&C\cr{}^tC&B\cr\end{pmatrix}$ avec $A$ et $B$ carrées.
+Montrer que la matrice $U' = \begin{pmatrix}A&C\cr0&0\cr\end{pmatrix}$ est diagonalisable.
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Inégalité de Cauchy-Schwarz.
+  \item Il existe $P$ orthogonale de même taille que $A$ telle
+que $D = {}^tPAP$ est diagonale positive.
+
+Alors $\begin{pmatrix}{}^tP&0\cr0&I\cr\end{pmatrix}U\begin{pmatrix}P&0\cr0&I\cr\end{pmatrix}
+= \begin{pmatrix}D&{}^tPC\cr{}^tCP&B\cr\end{pmatrix}$ est symétrique positive
+donc si $d_{ii} = 0$ alors la ligne $i$ de ${}^tPC$ est nulle.
+Ainsi $\begin{pmatrix}{}^tP&0\cr0&I\cr\end{pmatrix}U'\begin{pmatrix}P&0\cr0&I\cr\end{pmatrix}
+= \begin{pmatrix}D&{}^tPC\cr0&0\cr\end{pmatrix}$ est, après renumérotation éventuelle des
+lignes et colonnes,
+de la forme $U'' = \begin{pmatrix}D'&C'\cr0&0\cr\end{pmatrix}$ où $D'$ est diagonale inversible
+et $U'$ est semblable à $U''$.
+Enfin $U''$ est diagonalisable~:
+$\begin{pmatrix}I&D'^{-1}C'\cr0&I\cr\end{pmatrix}U''\begin{pmatrix}I&-D'^{-1}C'\cr0&I\cr\end{pmatrix} = \begin{pmatrix}D'&0\cr0&0\cr\end{pmatrix}$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

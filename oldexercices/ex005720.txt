@@ -1,0 +1,64 @@
+\exercice{5720, rouget, 2010/10/16}
+\enonce
+\textbf{1) (** I)} Trouver un équivalent simple quand $x$ tend vers $+\infty$ de $e^{x^2}\int_{x}^{+\infty}e^{-t^2}\;dt$.
+
+\textbf{2) (***)} Montrer que $\int_{a}^{+\infty}\frac{\cos x}{x}\;dx\underset{a\rightarrow0}{\sim}-\ln a$.
+
+\textbf{3) (*)} Montrer que $\int_{0}^{1}\frac{1}{x^3+a^2}\;dx\underset{a\rightarrow+\infty}{\sim}\frac{1}{a^2}$.
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  La fonction $t\mapsto e^{-t^2}$ est continue, positive et intégrable sur $[0,+\infty[$. De plus, quand $t$ tend $+\infty$,  
+
+\begin{center}
+$e^{-t^2}\sim\left(1+\frac{1}{t^2}\right)=\frac{d}{dt}\left(-\frac{1}{2t}e^{-t^2}\right)$.
+\end{center}
+
+D'après un théorème de sommation des relations de comparaison, quand $x$ tend vers $+\infty$,   
+
+\begin{center}
+$\int_{x}^{+\infty}e^{-t^2}\;dt\sim\int_{x}^{+\infty}\left(-\frac{1}{2t}e^{-t^2}\right)'\;dt =\frac{1}{2x}e^{-x^2}$,
+\end{center}
+
+et donc 
+
+\begin{center}
+\shadowbox{
+$e^{x^2}\int_{x}^{+\infty}e^{-t^2}\;dt\underset{x\rightarrow+\infty}{\sim}\frac{1}{2x}$.
+}
+\end{center}
+
+\item  Pour $a> 0$ fixé, $\int_{a}^{+\infty}\frac{\cos x}{x}\;dx$ converge (se montre en intégrant par parties (voir exercice \ref{ex:rou3})) puis
+
+\begin{align*}\ensuremath
+\int_{a}^{+\infty}\frac{\cos x}{x}\;dx&=-\int_{1}^{a}\frac{\cos x}{x}\;dx+\int_{1}^{+\infty}\frac{\cos x}{x}\;dx\underset{a\rightarrow0}{=}-\int_{1}^{a}\frac{\cos x}{x}\;dx + O(1)\\
+ &\underset{a\rightarrow0}{=}-\int_{1}^{a}\frac{1}{x}\;dx+\int_{1}^{a}\frac{1-\cos x}{x}\;dx+O(1)\underset{a\rightarrow0}{=}-\ln a+\int_{1}^{a}\frac{1-\cos x}{x}\;dx+O(1) .
+\end{align*}
+
+Maintenant, $\frac{1-\cos x}{x}\underset{x\rightarrow0}{\sim}\frac{x}{2}$ et en particulier, $\frac{1-\cos x}{x}$ tend vers $0$ quand $x$ tend vers $0$. Par suite, la fonction $x\mapsto\frac{1-\cos x}{x}$ est continue sur $]0,1]$ et  se prolonge par continuité en $0$. Cette fonction est donc intégrable sur $]0,1]$ et en particulier, $\int_{1}^{a}\frac{1-\cos x}{x}\;dx$ a une limite réelle quand $a$ tend vers $0$. On en déduit que $\int_{a}^{+\infty}\frac{\cos x}{x}\;dx\underset{a\rightarrow0}{=}-\ln a + O(1)$ et finalement
+
+\begin{center}
+\shadowbox{
+$\int_{a}^{+\infty}\frac{\cos x}{x}\;dx\underset{a\rightarrow0}{\sim}-\ln a$.
+}
+\end{center}
+
+\item  Soit $a>0$.
+
+\begin{center}
+$\left|\int_{0}^{1}\frac{1}{x^3+a^2}\;dx -\frac{1}{a^2}\right| =\left|\int_{0}^{1}\left(\frac{1}{x^3+a^2}-\frac{1}{a^2}\right)\;dx\right| =\int_{0}^{1}\frac{x^3}{(x^3+a^2)a^2}\;dx\leqslant\frac{1}{a^4}$
+\end{center}
+
+Donc, $\int_{0}^{1}\frac{1}{x^3+a^2}\;dx\underset{a\rightarrow+\infty}{=}\frac{1}{a^2}+o\left(\frac{1}{a^2}\right)$ ou encore
+
+\begin{center}
+\shadowbox{
+$\int_{0}^{1}\frac{1}{x^3+a^2}\;dx\underset{a\rightarrow+\infty}{\sim}\frac{1}{a^2}$.
+}
+\end{center}
+\end{enumerate}
+\fincorrection
+\finexercice

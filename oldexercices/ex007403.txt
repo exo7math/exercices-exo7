@@ -1,0 +1,57 @@
+\exercice{7403, mourougane, 2021/08/10}
+\enonce
+\begin{enumerate}
+	\item On rappelle que le seul polynôme irréductible de degré $2$ sur $\mathbb{F}_2$ est $X^2+X+1$.
+	Montrer que le polynôme $X^4+X^3+1$ est irréductible dans $\mathbb{F}_2[X]$.
+	\item On note $A:=\mathbb{F}_2[X]/(X^4+X^3+1)$ l'anneau quotient de	$\mathbb{F}_2[X]$ par l'idéal engendré par $P$.	L'anneau $A$ est-il un corps ? Combien a-t-il d'éléments ?
+	\item On note $\alpha$ la classe du polynôme $X$ dans $A$. Déterminer $\alpha^4$ et $\alpha^{15}$ comme polynômes de degré au
+	plus $3$ en $\alpha$.
+	\item Déterminer toutes les puissances de $\alpha$, $\alpha$ jusqu'à $\alpha^{15}$, comme polynômes de degré au plus~$3$ en $\alpha$.
+	\item Déterminer $\alpha^7+\alpha^8+\alpha^9$ comme polynômes de degré au plus $3$ en $\alpha$.
+	\item Ecrire l'inverse de $1+\alpha+\alpha^3$ comme	puissance de $\alpha$.
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+ \item Soit $P=X^2+X+1$. Le polynôme $P$ est sans racine, donc s'il
+est réductible, il se factorise en deux polynômes de degré 2. Or
+$(X^2+X+1)^2=X^4+X^2+1$, qui est différent de $P$. Donc $P$ est
+irréductible.
+ \item L'idéal $(X^4+X^3+1)$ est premier car $X^4+X^3+1$ est
+irréductible, donc il est maximal car $\mathbb{F}_2[X]$ est principal, comme
+tout anneau de polynômes sur un corps. Or le quotient par un idéal
+maximal est un corps. Donc $A$ est un corps. De plus, il est
+isomorphe au polynôme de $\mathbb{F}_2[X]$ de degré au plus 3, donc $A$
+possède 16 éléments.
+ \item Puisque $A$ est un corps, $A^*$ contient 15 éléments, donc
+l'ordre de tout élément de $A^*$ est un diviseur de 15. En
+particulier, $\alpha^{15}=1$.
+ \item 
+$$\begin{array}{l}
+\alpha^1=\alpha\\
+\alpha^2=\alpha^2\\
+\alpha^3=\alpha^3\\
+\alpha^4=\alpha^3+1\\
+\alpha^5=\alpha^4+\alpha=\alpha^3+\alpha+1\\
+\end{array}$$
+$$\begin{array}{l}
+\alpha^6=\alpha^4+\alpha^2+\alpha=\alpha^3+\alpha^2+\alpha+1\\
+\alpha^7=\alpha^4+\alpha^3+\alpha^2+\alpha=\alpha^2+\alpha+1\\
+\alpha^8=\alpha^3+\alpha^2+\alpha\\
+\alpha^9=\alpha^4+\alpha^3+\alpha^2=\alpha^2+1\\
+\alpha^{10}=\alpha^3+\alpha\\
+\end{array}$$
+$$\begin{array}{l}
+\alpha^{11}=\alpha^4+\alpha^2=\alpha^3+\alpha^2+1\\
+\alpha^{12}=\alpha^4+\alpha^3+\alpha=\alpha+1\\
+\alpha^{13}=\alpha^2+\alpha\\
+\alpha^{14}=\alpha^3+\alpha^2\\
+\alpha^{15}=1
+\end{array}$$
+
+ \item $\alpha^7+\alpha^8+\alpha^9=\alpha^7(1+\alpha+\alpha^2)=\alpha^{7+7}=\alpha^{14}=\alpha^3+\alpha^2$.
+ \item $(1+\alpha+\alpha^3)^{-1}=(\alpha^5)^{-1}=\alpha^{10}$.
+\end{enumerate} 
+\fincorrection
+\finexercice

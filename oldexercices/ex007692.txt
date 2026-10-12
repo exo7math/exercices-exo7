@@ -1,0 +1,33 @@
+\exercice{7692, mourougane, 2021/08/11}
+\enonce[Paraboloïde hyperbolique]
+Calculer une application de Weingarten du paraboloïde hyperbolique $S$ d'équation $z=x^2-y^2$
+au point $p(0,0,0)$. En déduire sa courbure de Gauss et ses directions principales.
+\finenonce
+\noindication
+\correction
+On paramètre la surface $S$ par
+$F(u,v)=(u,v,u^2-v^2)$.
+L'espace tangent en $p$ est engendré par $(\frac{\partial F}{\partial u})_p=(1,0,2u)_p=(1,0,0)$ et
+$(\frac{\partial F}{\partial v})_p=(0,1,-2v)_p=(0,1,0)$.
+La matrice de la première forme fondamentale dans cette base est en $p$ de paramètre $(0,0)$
+$\begin{pmatrix}
+ 1+4u^2&-4uv\\-4uv&1+4v^2
+\end{pmatrix}=Id$.
+ La matrice de la seconde forme fondamentale se calcule à l'aide du vecteur normal 
+$n=(\frac{\partial F}{\partial u}\times\frac{\partial F}{\partial v})_p=(0,0,1)$
+par
+$\begin{pmatrix}
+ <\frac{\partial^2 F}{\partial u^2},n>&<\frac{\partial^2 F}{\partial u\partial v},n>\\
+<\frac{\partial^2 F}{\partial u\partial v},n>&<\frac{\partial^2 F}{\partial v^2},n>
+ \end{pmatrix}=
+\begin{pmatrix}
+ 2&0\\0&-2
+\end{pmatrix}$.
+Comme la matrice de la première forme fondamentale est l'identité,
+cette dernière matrice est aussi celle de l'endomorphisme de Weingarten.
+La courbure de Gauss est donc le déterminant $-4$.
+Les deux directions principales sont dirigées par les vecteurs
+ $\frac{\partial F}{\partial u}_p=(1,0,0)$ et
+$\frac{\partial F}{\partial v}_p=(0,1,0)$.
+\fincorrection
+\finexercice

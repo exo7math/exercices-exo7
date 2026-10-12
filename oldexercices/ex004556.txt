@@ -1,0 +1,29 @@
+\exercice{4556, quercia, 2010/03/14}
+\enonce[Centrale MP 2002]
+
+Soit $f : \R \to \R$ continue et $2\pi$-périodique. Pour $n\in\N^*$, on pose
+$F_n(x)=\frac{1}{n} \int_{t=0}^nf(x+t)f(t)\,d t$.
+
+\begin{enumerate}
+  \item Montrer que la suite $(F_n)$ converge vers une fonction $F$ que l'on précisera.
+
+  \item Nature de la convergence~?
+
+  \item Prouver $\|F\|_{\infty}= |F(0)|$.
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Soit $k=\lfloor n/2\pi\rfloor$.
+    On a $F_n(x) = \frac{2k\pi}n \int_{t=0}^{2\pi}f(x+t)f(t)\,d t + \frac1n \int_{t=2k\pi}^nf(x+t)f(t)\,d t
+    \to \int_{t=0}^{2\pi}f(x+t)f(t)\,d t$  lorsque $n\to\infty$.
+  \item Uniforme.
+  \item Cauchy-Schwarz.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

@@ -1,0 +1,35 @@
+\exercice{5991, quinio, 2011/05/18}
+
+\enonce
+La famille Potter comporte $2$ enfants; les événements $A$ : 
+<<il y a deux enfants de sexes différents chez les Potter>> 
+et $B$ : <<la famille Potter a au
+plus une fille>> sont-ils indépendants? 
+Même question si la famille Potter comporte $3$ enfants. Généraliser.
+\finenonce
+
+\noindication
+
+\correction
+Notons, pour le cas où la famille Potter comporte $2$
+enfants, l'univers des possibles pour les enfants :
+$\Omega =\{(G,G),(G,F),(F,G),(F,F)\}$, représente les cas possibles, 
+équiprobables, d'avoir garçon-garçon, garçon-fille etc... :
+Alors $P(A)=\frac{2}{4},$ $P(B)=\frac{3}{4}, P(A\cap B) = \frac{2}{4}$.
+On en conclut que : $P(A\cap B)\neq P(A)P(B)$ et donc que les événements $A$ et $B$ ne sont pas indépendants.
+
+Si maintenant la famille Potter comporte $3$ enfants :
+Alors $\Omega' = \{ (a,b,c) \mid a \in \{ G,F \}, b\in \{G,F\}, c\in \{G,F\}\}$ 
+représente les $2^{3}=8$ cas possibles, équiprobables.
+Cette fois, $P(A)=1-P(\{(G,G,G),(F,F,F)\})=\frac{6}{8}$ ;
+$P(B)=\frac{4}{8}, P(A\cap B)=P\{(F,G,G),(G,F,G),\{(G,G,F)\}=\frac{3}{8}$.
+On a $P(A)P(B)=\frac{3}{8}=P(A\cap B),$ et les événements $A$ et $B$
+sont indépendants
+
+Avec $n$ enfants, on peut généraliser sans difficulté : 
+$P(A)=1-\frac{2}{2^{n}},$ $P(B)=\frac{1+n}{2^{n}}$
+$P(A\cap B)=\frac{n}{2^{n}}$
+Un petit calcul montre que
+$P(A)P(B)=P(A\cap B)$ si et seulement si $n=3$.
+\fincorrection
+\finexercice

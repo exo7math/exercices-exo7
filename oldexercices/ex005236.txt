@@ -1,0 +1,45 @@
+\exercice{5236, rouget, 2010/06/30}
+\enonce[***T]
+Etudier les deux suites $u_n=\left(1+\frac{1}{n}\right)^n$  et $v_n=\left(1+\frac{1}{n}\right)^{n+1}$.
+\finenonce
+
+\noindication
+
+\correction
+Les suites $u$ et $v$ sont définies à partir du rang $1$ et strictement positives.
+Pour tout naturel non nul $n$, on a~:
+
+$$\frac{u_{n+1}}{u_n}=\left(\frac{n+2}{n+1}\right)^{n+1}\left(\frac{n}{n+1}\right)^n=e^{(n+1)\ln(n+2)+n\ln n-(2n+1)\ln(n+1)}.$$
+Pour $x$ réel strictement positif, posons alors $f(x)=(x+1)\ln(x+2)+x\ln x-(2x+1)\ln(x+1)$.
+$f$ est dérivable sur $]0,+\infty[$ et pour $x>0$,
+
+\begin{align*}
+f'(x)&=\frac{x+1}{x+2}+\ln(x+2)+1+\ln x-\frac{2x+1}{x+1}-2\ln(x+1)\\
+ &=\frac{x+2-1}{x+2}+\ln(x+2)+1+\ln x-\frac{2x+2-1}{x+1}-2\ln(x+1)\\
+ &=-\frac{1}{x+2}+\frac{1}{x+1}+\ln x+\ln(x+2)-2\ln(x+1).
+\end{align*}
+De même, $f'$ est dérivable sur $]0,+\infty[$ et pour $x>0$,
+
+\begin{align*}
+f''(x)&=\frac{1}{(x+2)^2}-\frac{1}{(x+1)^2}+\frac{1}{x}+\frac{1}{x+2}-\frac{2}{x+1}\\ 
+ &=\frac{x(x+1)^2-x(x+2)^2+(x+1)^2(x+2)^2+x(x+1)^2(x+2)-2x(x+1)(x+2)^2}{x(x+1)^2(x+2)^2}\\
+ &=\frac{-2x^2-3x+(x^2+2x+1)(x^2+4x+4)+(x^2+2x)(x^2+2x+1)-2(x^2+x)(x^2+4x+4)}{x(x+1)^2(x+2)^2}\\
+ &=\frac{3x+4}{x(x+1)^2(x+2)^2}>0.
+\end{align*}
+$f'$ est strictement croissante sur $]0,+\infty[$ et donc, pour $x>0$, 
+
+$$f'(x)<\lim_{t\rightarrow +\infty}f'(t)=\lim_{t\rightarrow +\infty}\left(-\frac{1}{t+2}+\frac{1}{t+1}+\ln\frac{t(t+2)}{(t+1)^2}\right)=0.$$
+Donc, $f$ est strictement décroissante sur $]0,+\infty[$. Or, pour $x>0$,
+
+\begin{align*}
+f(x)&=(x+1)\ln(x+2)+x\ln x-(2x+1)\ln(x+1)\\
+ &=(x+(x+1)-(2x+1))\ln x+(x+1)\ln\left(1+\frac{2}{x}\right)-(2x+1)\ln\left(1+\frac{1}{x}\right)\\
+ &=\ln\left(1+\frac{2}{x}\right)-\ln\left(1+\frac{1}{x}\right)+2\frac{\ln\left(1+\frac{2}{x}\right)}{\frac{2}{x}}-2\frac{\ln\left(1+\frac{1}{x}\right)}{\frac{1}{x}}.
+\end{align*}
+On sait que $\lim_{u\rightarrow 0}\frac{\ln(1+u)}{u}=1$, et donc, quand $x$ tend vers $+\infty$, $f(x)$ tend vers $0+0+2-2=0$. Comme $f$ est strictement décroissante sur $]0,+\infty[$, pour tout réel $x>0$, on a $f(x)>\lim_{t\rightarrow +\infty}f(t)=0$.
+f est donc strictement positive sur $]0,+\infty[$. Ainsi, $\forall n\in\Nn^*,\;f(n)>0$ et donc $\frac{u_{n+1}}{u_n}=e^{f(n)}>1$. La suite $u$ est strictement croissante.
+(Remarque. On pouvait aussi étudier directement la fonction $x\mapsto\left(1+\frac{1}{x}\right)^x$ sur $]0,+\infty[$.)
+On montre de manière analogue que la suite $v$ est strictement décroissante. Enfin, puisque $u_n$ tend vers $e$, et que $v_n=\left(1+\frac{1}{n}\right)u_n$ tend vers $e$, les suites $u$ et $v$ sont adjacentes.
+(Remarque. En conséquence, pour tout entier naturel non nul $n$, $\left(1+\frac{1}{n}\right)^n<e<\left(1+\frac{1}{n}\right)^{n+1}$. Par exemple, pour $n=10$, on obtient $\left(\frac{11}{10}\right)^{10}<e<\left(\frac{11}{10}\right)^{11}$ et donc, $2,59...<e<2,85...$ et pour $n=100$, on obtient $1,01^{100}<e<1,01^{101}$ et donc $2,70...<e<2,73...$ Ces deux suites convergent vers $e$ lentement).
+\fincorrection
+\finexercice

@@ -1,0 +1,44 @@
+\exercice{5367, rouget, 2010/07/06}
+\enonce[***]
+Résoudre le système $MX=U$ où $M=\left(
+\begin{array}{ccccc}
+1&1&\ldots&\ldots&1\\
+1&2&\ldots&\ldots&n\\
+1&2^2&\ldots&\ldots&n^2\\
+\vdots&\vdots& & &\vdots\\
+1&2^{n-1}&\ldots&\ldots&n^{n-1}
+\end{array}
+\right)$.
+\finenonce
+
+\noindication
+
+\correction
+$\Delta=\mbox{det}M=\mbox{Van}(1,2,...,n)\neq0$ et le système est de \textsc{Cramer}. Les formules de \textsc{Cramer} fournissent alors pour $k\in\llbracket1,n\rrbracket$, $x_k=\frac{\Delta_k}{\Delta}$ où 
+
+$$\Delta_k=\mbox{Van}(1,...,k-1,0,k+1,...,n)=(-1)^{k+1}\left|
+\begin{array}{cccccc}
+1&\ldots&k-1&k+1&\ldots&n\\
+1& &(k-1)^2&(k+1)^2& &n^2\\
+\vdots& &\vdots&\vdots& &\vdots\\
+ & & & & & \\
+\vdots& &\vdots&\vdots& &\vdots\\
+1& &(k-1)^{n-1}&(k+1)^{n-1}& &n^{n-1}
+\end{array}
+\right|.$$
+(en développant par rapport à la $k$-ème colonne). Par linéarité par rapport à chaque colonne, on a alors
+
+\begin{align*}\ensuremath
+\Delta_k&=(-1)^{k+1}1\times2...\times(k-1)\times(k+1)\times...\times n\times\mbox{Van}(1,2,...,k-1,k+1,...,n)\\
+ &=(-1)^{k+1}\frac{n!}{k}\frac{\mbox{Van}(1,2,...,n)}{(k-(k-1))...(k-1)((k+1)-k)....(n-k)}=(-1)^{k+1}\frac{n!}{k!(n-k)!}\Delta,
+\end{align*}
+et donc,
+
+\begin{center}
+\shadowbox{
+$\forall k\in\llbracket1,n\rrbracket,\;x_k=(-1)^{k+1}C_n^k$.
+}
+\end{center}
+
+\fincorrection
+\finexercice

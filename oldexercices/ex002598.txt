@@ -1,0 +1,87 @@
+\exercice{2598, delaunay, 2009/05/19}
+\enonce
+\begin{enumerate}
+ \item  On note $(\vec e_1, \vec e_2, \vec e_3)$ la base canonique de $\R^3$. Soit $A$ la matrice 
+$$A=\begin{pmatrix}1&0&0 \\  0&2&0 \\  0&0&3\end{pmatrix}.$$
+Donner sans calcul les valeurs propres de $A$ et une base de vecteurs propres. 
+ \item On cherche \`a d\'eterminer, s'il en existe, les matrices $B$ telles que $\exp B=A$.
+   \begin{enumerate}
+   \item  Montrer que si $A=\exp B$, alors $AB=BA$. 
+   \item En d\'eduire que la base $(\vec e_1,\vec e_2, \vec e_3)$ est une base de vecteurs propres de  B.
+   \item D\'eterminer toutes les matrices  $B\in M_3(\R)$ telles que $\exp B=A$. Justifier. 
+  \end{enumerate}
+ \item Soit la matrice $C$, 
+$$C=\begin{pmatrix}0&1&0 \\  0&0&1 \\  0&0&0\end{pmatrix}.$$
+Montrer qu'il n'existe pas de matrice $D\in M_3(\R)$ telle que $C=\exp D$.
+ \item  Calculer le polyn\^ome caract\'eristique et le polyn\^ome minimal de $C$.
+ \item Supposons qu'il existe une matrice $E\in M_3(\R)$ telle que $E^2=C$. Notons $Q_E(X)$ son polyn\^ome minimal et $Q_C(X)$ le polyn\^ome minimal de $C$.
+    \begin{enumerate}
+   \item  Montrer que $Q_E(X)$ divise $Q_C(X^2)$. 
+   \item En d\'eduire que $E^3=0$ et que $C^2=0$. 
+   \item D\'eduire de ce qui pr\'ec\`ede qu'il n'existe pas de matrice $E$ telle que $E^2=C$. 
+  \end{enumerate}
+ \item Soient $F$ et $G$ des matrices de $M_3(\R)$ telles que $F=\exp G$. D\'emontrer que pour tout $n\in \N^*$, il existe une matrice $H$ telle que $H^n=F$. 
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  On note $(\vec e_1, \vec e_2, \vec e_3)$ la base canonique de $\R^3$. Soit $A$ la matrice 
+$$A=\begin{pmatrix}1&0&0 \\  0&2&0 \\  0&0&3\end{pmatrix}.$$
+{\it Donnons sans calcul les valeurs propres de $A$ et une base de vecteurs propres.}
+
+La matrice $A$ est diagonale dans la base canonique de $\R^3$, on a $A\vec e_1=\vec e_1$, $A\vec e_2=2\vec e_2$ et $A\vec e_3=3\vec e_3$. Les valeurs propres de $A$ sont les r\'eels $1$, $2$ et $3$ et les sous-espaces propres associ\'es sont les droites vectorielles engendr\'ees respectivement par $\vec e_1$, $\vec e_2$ et $\vec e_3$.
+
+ \item On cherche \`a d\'eterminer, s'il en existe, les matrices $B$ telles que $\exp B=A$.
+   \begin{enumerate}
+   \item  {\it Montrons que si $A=\exp B$, alors $AB=BA$.}
+
+On suppose qu'il existe $B$ telle que $A=\exp B$. On a alors, par d\'efinition, 
+$$A=\sum_{k=0}^{+\infty}{\frac{1}{k!}}B^k,\ 
+{\hbox{d'o\`u}}\  AB=BA=\sum_{k=0}^{+\infty}{\frac{1}{k!}}B^{k+1}$$
+   \item {\it On en d\'eduit que la base $(\vec e_1,\vec e_2, \vec e_3)$ est une base de vecteurs propres de  B.}
+
+On a $(BA)\vec e_1=B(A\vec e_1)=B\vec e_1$, mais $BA=AB$, on a donc $B\vec e_1=(AB)\vec e_1=A(B\vec e_1)$. Ce qui prouve que $B\vec e_1$ est un vecteur propre de $A$ associ\'e \`a la valeur propre $1$, il est donc colin\' eaire \`a $\vec e_1$ , ainsi, $\vec e_1$ est bien un vecteur propre de $B$. De m\^eme, $BA\vec e_2=2B\vec e_2=AB\vec e_2$ donc $B\vec e_2$ est colin\'eaire \`a $\vec e_2$ et $\vec e_2$ est un vecteur propre de $B$. Et aussi, $BA\vec e_3=3B\vec e_3=AB\vec e_3$ d'o\`u $B\vec e_3$ colin\'eaire \`a $\vec e_3$ et $\vec e_3$ vecteur propre de $B$.
+   \item {\it D\'eterminons les matrices  $B\in M_3(\R)$ telles que $\exp B=A$.}
+
+Les vecteurs $\vec e_1, \vec e_2, \vec e_3$ \'etant vecteurs propres de $B$, la matrice $B$ est diagonale dans la base canonique, il existe donc des r\'eels $\lambda_1,\lambda_2$ et $\lambda_3$ tels que 
+$$B=\begin{pmatrix}\lambda_1&0&0 \\  0&\lambda_2&0 \\  0&0&\lambda_3\end{pmatrix},\ {\hbox{ainsi}}\ \exp B=
+\begin{pmatrix}e^{\lambda_1}&0&0 \\  0& e^{\lambda_2}&0 \\  0&0&e^{\lambda_3}\end{pmatrix}=\begin{pmatrix}1&0&0 \\  0&2&0 \\  0&0&3\end{pmatrix}$$
+ce qui implique $e^{\lambda_1}=1$, $e^{\lambda_2}=2$ et $e^{\lambda_3}=3$ et donc $\lambda_1=\ln 1=0$, $\lambda_2=\ln2$ et $\lambda_3=\ln3$ d'o\`u l'existence d'une unique matrice $B$ telle que $\exp B=A$, c'est la matrice
+$$B=\begin{pmatrix}0&0&0 \\  0&\ln2&0 \\  0&0&\ln3\end{pmatrix}$$ 
+  \end{enumerate}
+ \item Soit la matrice $C$, 
+$$C=\begin{pmatrix}0&1&0 \\  0&0&1 \\  0&0&0\end{pmatrix}.$$
+{\it Montrons qu'il n'existe pas de matrice $D\in M_3(\R)$ telle que $C=\exp D$.}
+
+Quelque soit la matrice $D$, la matrice $\exp D$ est inversible d'inverse $\exp (-D)$, or, il est clair que la matrice $C$ n'est pas inversible, son d\'eterminant est nul, ainsi, il n'existe pas de matrice $D$ telle que $C=\exp D$.
+
+ \item  {\it Calculons le polyn\^ome caract\'eristique et le polyn\^ome minimal de $C$.}
+
+Soit $P_C(X)$ le polyn\^ome caract\'eristique de $C$, on a 
+$$P_C(X)=\begin{vmatrix}-X&1&0 \\  0&-X&1 \\  0&0&-X\end{vmatrix}=-X\begin{vmatrix}-X&1 \\ 0&-X\end{vmatrix}=-X^3.$$
+Le polyn\^ome minimal $Q_C$ de $C$ est unitaire, divise son polyn\^ome caract\'eristique $P_C$ et s'annule en $C$, or
+$C^2=\begin{pmatrix}0&0&1 \\  0&0&0 \\  0&0&0\end{pmatrix}\neq 0$, mais $C^3=0$, d'o\`u $Q_C(X)=X^3$.
+ \item Supposons qu'il existe une matrice $E\in M_3(\R)$ telle que $E^2=C$. Notons $Q_E(X)$ son polyn\^ome minimal et $Q_C(X)$ le polyn\^ome minimal de $C$.
+
+    \begin{enumerate}
+   \item  {\it Montrons que $Q_E(X)$ divise $Q_C(X^2)$.}
+
+On a $Q_C(C)=Q_C(E^2)=0$, ainsi le polyn\^ome $S(X)=Q_C(X^2)$ s'annule en $E$, ce qui prouve que $Q_E(X)$, polyn\^ome minimal de $E$, divise $Q_C(X^2)$.
+   \item {\it On en d\'eduit que $E^3=0$ et que $C^2=0$.}
+
+Le polyn\^ome minimal de $E$ divise $Q_C(X^2)=-X^6$, or son degr\'e est inf\'erieur ou \'egal \`a $3$, par ailleurs on suppose $E^2=C$ donc $E^2\neq 0$ ainsi, on a bien $Q_E(X)=X^3$ et $E^3=0$, or, $E^3=0$ implique $E^4=0$ et, comme $E^4=C^2$, on a $C^2=0$.
+
+   \item {\it On d\'eduit de ce qui pr\'ec\`ede qu'il n'existe pas de matrice $E$ telle que $E^2=C$.}
+
+Si une telle matrice existe, alors on a vu qu'elle v\'erifie $E^3=0$, ainsi on a $E^4=0$, or $E^4=C^2\neq0$, d'o\`u  la conclusion.
+
+  \end{enumerate}
+ \item Soient $F$ et $G$ des matrices de $M_3(\R)$ telles que $F=\exp G$. {\it D\'emontrons que pour tout $n\in \N^*$, il existe une matrice $H$ telle que $H^n=F$}.
+
+Soit $F=\exp G$ et $n\in\N^*$, posons $H=\exp{\frac{1}{n}}G$, on a $$H^n=\left(\exp{\frac{1}{n}}G\right)^n=\exp{\frac{n}{n}}G=\exp G=F.$$
+\end{enumerate}
+\fincorrection
+\finexercice

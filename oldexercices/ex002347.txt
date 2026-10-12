@@ -1,0 +1,40 @@
+\exercice{2347, queffelec, 2003/10/01}
+\enonce
+Soit $E=\{f\in C^1([0,1],{\Rr})\ ;\ f(0)=0\}$. On pose 
+$$||f||=\sup_{0\leq x\leq 1}|f(x)+f'(x)|,\ \hbox{et}\ N(f)=\sup_{0\leq x\leq
+1}|f(x)|+\sup_{0\leq x\leq 1}|f'(x)|.$$
+Montrer que ce sont deux normes \'equivalentes sur $E$. 
+\finenonce
+
+\indication
+Montrer
+\begin{itemize}
+  \item $\| f \| \le N(f)$ ;
+  \item $\|f'\|_\infty \le \| f \|_\infty + \|f\|$ ;
+  \item $\|f\|_\infty \le \|f\|$.
+\end{itemize}
+\finindication
+
+\correction
+Par l'inégalité triangulaire $|f(x)+f'(x)| \le |f(x)|+|f'(x)|$ on obtient $\| f \| \le N(f)$.
+Pour une inégalité dans l'autre sens décomposons le travail :
+\begin{itemize}
+  \item $\|f'\|_\infty \le \| f \|_\infty + \|f\|$ : en effet
+par l'inégalité triangulaire $|f'(x)| \le |f(x)|+|f'(x)+f(x)|$.
+
+  \item $\|f\|_\infty \le \|f\|$ : en effet $f$ est continue sur $[0,1]$
+donc elle est bornée et atteint ses bornes. Soit $x_0 \in [0,1]$ ce point du maximum. Si $x_0 \in ]0,1[$ alors $f'(x_0)=0$ donc
+$\|f\|_\infty = |f(x_0)| = |f(x_0)+f'(x_0)| \le \|f\|$.
+Si $x_0 = 1$ alors $f$ et $f'$ ont m\^eme signe sur un intervalle 
+$[1-\epsilon,1]$ donc sur cet intervalle $|f(x)| \le |f(x)+f'(x)|$
+et donc $\|f\|_\infty = |f(1)|  \le \|f\|$. (Enfin $f(0)=0$ donc si $x_0=0$
+alors $f$ est nulle et l'inégalité est triviale.)
+
+  \item Il reste à rassembler les expressions :
+$$ N(f) = \|f'\|_\infty  + \|f\|_\infty \le \|f\|_\infty + \|f\| + \|f\|_\infty \le 3\|f\|.$$
+(La première inégalité vient du premier point et la deuxième du second.)
+\end{itemize}
+Les normes $\| f \|$ et $N(f)$ sont équivalentes :
+$$ \frac13 N(f) \le \| f \| \le N(f).$$
+\fincorrection
+\finexercice

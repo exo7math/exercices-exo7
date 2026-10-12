@@ -1,0 +1,29 @@
+\exercice{5280, rouget, 2010/07/04}
+\enonce[***]
+Combinaisons avec répétitions. Montrer que le nombre de solutions en nombres entiers $x_i\geq0$ de l'équation $x_1+x_2+...+x_n=k$ ($k$ entier naturel donné) est $C_{n+k-1}^k$. (Noter $a_{n,k}$ le nombre de solutions et procéder par récurrence.) 
+\finenonce
+
+\noindication
+
+\correction
+Clairement, $\forall n\in\Nn^*,\;a_{n,0}=1$ (unique solution~:~$0+0+...+0=0$) et $\forall k\in\Nn,\;a_{1,k}=1$ (unique solution~:~$k=k$).
+
+Soient $n\geq 1$ et $k\geq 0$ fixés. $a_{n+1,k}$ est le nombre de solutions en nombre entiers positifs $x_i$ de l'équation $x_1+...+x_n+x_{n+1}=k$.
+Il y a $a_{n,k}$ solutions telles que $x_{n+1}=0$ puis $a_{n,k-1}$ solutions telles que $x_{n+1}=1$ ... puis $a_{n,0}$ solutions telles que $x_{n+1}=k$.
+
+Donc, $\forall n\in\Nn^*,\;\forall k\in\Nn,\;a_{n+1,k}=a_{n,k}+a_{n,k-1}+...+a_{n,0}$ (et on rappelle $a_{n,0}=a_{1,k}=1$).
+
+Montrons alors par récurrence sur $n$, entier naturel non nul, que~:~$\forall n\in\Nn^*,\;\forall k\in\Nn,\;a_{n,k}=C_{n+k-1}^k$.
+ 
+Pour $n=1$, on a pour tout naturel $k$, $a_{1,k}=1=C_{1+k-1}^k$.
+
+Soit $n\geq1$, supposons que $\forall k\in\Nn,\;a_{n,k}=C_{n+k-1}^k$. Soit $k\geq1$.
+
+$$a_{n+1,k}=\sum_{i=0}^{k}a_{n,i}=\sum_{i=0}^{k}C_{n+i-1}^i=1+\sum_{i=1}^{k}(C_{n+i}^{i+1}-C_{n+i}^i)=1+C_{n+k}^{k+1}-1=
+C_{n+k}^{k+1},$$
+
+ce qui reste clair pour $k=0$.
+ 
+On a montré par récurrence que $\forall n\in\Nn^*,\;\forall k\in\Nn,\;a_{n,k}=C_{n+k-1}^k$.
+\fincorrection
+\finexercice

@@ -1,0 +1,75 @@
+\exercice{1788, drutu, 2003/10/01}
+
+\enonce
+Pour chacune des fonctions $f$ suivantes, \'etudier l'existence d'une
+limite en $(0,0,0)$  :
+\begin{enumerate}
+\item $f(x,y,z)= \frac{xyz}{x+y+z}$ ;
+\item $f(x,y,z)= \frac{x+y}{x^2-y^2+z^2}$.
+\end{enumerate}
+\finenonce
+
+\indication
+\begin{enumerate}
+\item Raisonner \`a l'aide d'une fonction $h$ des variables $x$ et $y$
+telle que $x+y+z=h(x,y)$ et $\lim_{(x,y) \to (0,0)} h(x,y)=0$.
+
+\item Montrer que, d\'ej\`a sous la contrainte suppl\'ementaire $z=0$,
+la limite ne peut pas exister.
+\end{enumerate}
+\finindication
+
+\correction 
+\begin{enumerate} 
+\item Supposons $x+y+z \ne 0$. Alors
+\[
+\frac{xyz}{x+y+z} =\frac{xy(h(x,y)-x-y)}{h(x,y)}
+=xy -\frac{xy(x+y)}{h(x,y)}
+\]
+ d'o\`u, avec
+\[h(x,y)=(x+y)^4,
+\]
+nous obtenons
+\[
+\frac{xyz}{x+y+z} 
+=xy -\frac{xy}{(x+y)^3} .
+\]
+Il s'ensuit que
+\[
+\mathrm{lim}_{\begin{smallmatrix}(x,y,z)\to (0,0,0)\\x+y+z=(x+y)^4\\
+x\ne 0, y\ne  0, z \ne 0\end{smallmatrix}}\frac{xyz}{x+y+z} 
+\]
+n'existe pas, au moins non pas en tant que limite finie.
+D'autre part,
+\[
+\mathrm{lim}_{\begin{smallmatrix}(x,y,z)\to (0,0,0)\\
+x+z\ne 0,y= 0\end{smallmatrix}}\frac{xyz}{x+y+z} =0.
+\]
+Par cons\'equent,
+\[
+\mathrm{lim}_{\begin{smallmatrix}(x,y,z)\to (0,0,0)\\
+x+y+z\ne 0\end{smallmatrix}}\frac{xyz}{x+y+z}
+\]
+ne peut pas exister.
+
+\item La limite
+\[
+\mathrm{lim}_{\begin{smallmatrix}(x,y,z) \to (0,0,0)\\ x\ne \pm y, z = 0\end{smallmatrix}}f(x,y,z)= 
+\mathrm{lim}_{\begin{smallmatrix}(x,y) \to (0,0)\\
+x \ne y\end{smallmatrix}}\frac 1{x-y}
+\]
+n'existe pas car $\mathrm{lim}_{\begin{smallmatrix}(x,y) \to (0,0)\\
+y=x-x^2\end{smallmatrix}}\frac 1{x-y}$ n'existe pas.
+Par cons\'equent,
+\[
+\mathrm{lim}_{\begin{smallmatrix}(x,y,z) \to (0,0,0)\\x^2-y^2+z^2\ne 0\end{smallmatrix}}f(x,y,z)
+= 
+\mathrm{lim}_{\begin{smallmatrix}(x,y,z) \to (0,0,0)\\x^2-y^2+z^2\ne 0\end{smallmatrix}}\frac{x+y}{x^2-y^2+z^2}
+\]
+ne peut pas exister.
+\end{enumerate}
+
+\fincorrection
+
+\finexercice
+

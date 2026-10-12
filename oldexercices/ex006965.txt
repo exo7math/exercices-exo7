@@ -1,0 +1,65 @@
+\exercice{6965, blanc-centi, 2014/04/08}
+\video{7jn7oh2DdnQ}
+\enonce
+Soit $F=\frac{P}{Q}$ une fraction rationnelle écrite sous forme irréductible. 
+On suppose qu'il existe une fraction rationnelle $G$ telle que 
+$$G\left(\frac{P(X)}{Q(X)}\right)=X$$
+\begin{enumerate}
+\item Si $G=\frac{a_nX^n+\cdots+a_1X+a_0}{b_nX^n+\cdots+b_1X+b_0}$, montrer que $P$ divise $(a_0-b_0X)$ et que $Q$ divise $(a_n-b_nX)$.
+\item En déduire que $F=\frac{P}{Q}$ est de la forme $F(X)=\frac{aX+b}{cX+d}$.
+\item Pour $Y=\frac{aX+b}{cX+d}$, exprimer $X$ en fonction de $Y$. En déduire l'expression de $G$.
+\end{enumerate}
+\finenonce 
+
+\indication
+\'Ecrire $G=\frac{A}{B}$ sous forme irréductible (on pourra choisir par exemple 
+$n=\mathrm{max}(\mathrm{deg}A,\mathrm{deg}B)$).
+\finindication
+
+\correction\ 
+\begin{enumerate}
+\item Posons $G=\frac{A}{B}$ et $F = \frac{P}{Q}$ (avec $A,B,P,Q$ des polynômes).
+On réécrit l'identité $G(F(X))=X$ sous la forme $A(F(X))=XB(F(X))$. 
+Posons $n=\mathrm{max}(\mathrm{deg}A,\mathrm{deg}B)$.
+Alors $n\ge 1$ car sinon, 
+$A$ et $B$ seraient constants et $G(\frac{P}{Q})=X$ aussi.
+
+On a donc $A=\sum_{k=0}^na_kX^k$ et $B=\sum_{k=0}^nb_kX^k$, où $(a_n,b_n)\neq(0,0)$, et l'identité devient
+$$\sum_{k=0}^na_k\left(\frac{P}{Q}\right)^k=X\sum_{k=0}^nb_k\left(\frac{P}{Q}\right)^k$$
+En multipliant par $Q^n$, cela donne
+$$\sum_{k=0}^n a_kP^kQ^{n-k}= \sum_{k=0}^n b_k X P^kQ^{n-k}.$$
+Donc 
+$$(a_0-b_0X)Q^n \quad + \quad (\cdots + (a_k-b_kX) P^kQ^{n-k} + \cdots)\quad + \quad (a_n-b_nX)P^n = 0$$
+où les termes dans la parenthèse centrale sont tous divisibles par $P$ et par $Q$. 
+Comme $Q$ divise aussi le premier terme, alors $Q$ divise $(a_n-b_nX)P^n$.
+D'après le lemme de Gauss, puisque $P$ et $Q$ sont premiers entre eux, alors $Q$ divise $(a_n-b_nX)$. 
+De même, $P$ divise tous les termes de la parenthèse centrale et le dernier, donc $P$ divise aussi $(a_0-b_0X)Q^n$, 
+donc $P$ divise $(a_0-b_0X)$.
+
+\item Supposons de plus qu'on a écrit $G=\frac{A}{B}$ sous forme irréductible, 
+c'est-à-dire avec $\pgcd(A,B)=1$. 
+Vu que $a_n$ et $b_n$ ne sont pas tous les deux nuls, alors $a_n-b_nX$ n'est pas le polynôme nul.
+Comme $Q$ divise $a_n-b_nX$ alors nécessairement $Q$ est de degré au plus $1$ ; on écrit $Q(X)=cX+d$. 
+Par ailleurs, $a_0-b_0X$ n'est pas non plus le polynôme nul, car sinon on aurait $a_0=b_0=0$ et 
+donc $A$ et $B$ seraient tous les deux sans terme constant, donc divisibles par $X$ 
+(ce qui est impossible puisqu'ils sont premiers entre eux).  
+Donc $P$ est aussi de degré au plus $1$ et on écrit $P(X)=aX+b$. 
+Conclusion : $F(X)=\frac{aX+b}{cX+d}$.
+Notez que $a$ et $b$ ne sont pas tous les deux nuls en même temps (de même pour $b$ et $d$).
+
+\item Si $Y = \frac{aX+b}{cX+d}$ avec $(a,b) \neq (0,0)$,
+alors $X = -\frac{dY-b}{cY-a}$. 
+Autrement dit si on note
+$\phi(X)= \frac{aX+b}{cX+d}$, alors sa bijection réciproque est 
+$\phi^{-1}(Y) = -\frac{dY-b}{cY-a}$.
+
+Nous avons prouvé que $G\left( \frac{aX+b}{cX+d}\right) =X$.
+Cette identité s'écrit $G\big( \phi(X) \big)=X$.
+Appliquée en $X = \phi^{-1}(Y)$ elle devient
+$G\big( \phi( \phi^{-1}(Y) ) \big)=\phi^{-1}(Y)$, c'est-à-dire
+$G(Y) = \phi^{-1}(Y)$.
+Ainsi $G(Y) = -\frac{dY-b}{cY-a}$.
+\end{enumerate}
+\fincorrection
+\finexercice
+

@@ -1,0 +1,34 @@
+\exercice{4087, quercia, 2010/03/11}
+\enonce[Centrale MP 2004]
+
+Soit $\lambda\in\R$ et $({\cal E})\Leftrightarrow \frac{d^2 u(x)}{d x^2} + (1-\lambda)x^2u(x) = 0$.
+
+\begin{enumerate}
+  \item Montrer que les solutions de~$({\cal E})$ sont de la forme $H(x)e^{-x^2/2}$
+    où $H$ est une fonction développable en série entière.
+    
+  \item Déterminer les valeurs de~$\lambda$ telles que $H$ soit une fonction
+    polynomiale non nulle.
+    
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Il suffit de démontrer que les solutions de~$({\cal E})$ sont développables en série entière.
+    La méthode des coefficients indéterminés donne $n(n-1)a_n = (\lambda-1)a_{n-4}$ si $n\ge 4$
+    et $a_2 = a_3 = 0$ d'où $a_{4k} = \frac{(\lambda - 1)^ka_0}{\prod_{i=1}^k4i(4i-1)}$,
+    $a_{4k+1} = \frac{(\lambda - 1)^ka_1}{\prod_{i=1}^k4i(4i+1)}$, $a_{4k+2} = a_{4k+3} = 0$.
+    On obtient une série de rayon infini pour tout choix de~$a_0,a_1$ donc les solutions DSE
+    forment un espace vectoriel de dimension~$2$ et on a ainsi trouvé toutes les solutions.
+  \item On doit avoir $H''(x) - 2xH'(x) + ((2-\lambda)x^2 - 1)H(x) = 0$.
+    Si $H$ est une fonction polynomiale non nulle, en examinant les termes de
+    plus haut degré on obtient une contradiction. Donc il n'existe pas de
+    telle solution.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

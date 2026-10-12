@@ -1,0 +1,62 @@
+\exercice{2564, delaunay, 2009/05/19}
+\enonce
+Soit $E$ un espace vectoriel sur un corps $K$ ($K=\R$ ou $\C$), on appelle {\it projecteur}
+un endomorphisme $p$ de $E$ v\'erifiant $p\circ p=p$. Soit $p$ un projecteur.
+\begin{enumerate}
+  \item Montrer que $\mathrm{\mathrm{Id}}_E-p$ est un projecteur, calculer $p\circ(\mathrm{Id}_E-p)$ et $(\mathrm{Id}_E-p)\circ p$. 
+  \item Montrer que pour tout $\vec x\in \Im p$, on a $p(\vec x)=\vec x$.
+  \item En d\'eduire que $\Im p$ et $\ker p$ sont suppl\'ementaires.
+  \item Montrer que le rang de $p$ est \'egal \`a la trace de $p$. (On rappelle que la trace de la matrice
+ d'un endomorphisme ne d\'epend pas de la base dans laquelle on exprime cette matrice.)
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+
+\correction
+ Soit $E$ un espace vectoriel sur un corps $K$ ($K=\R$ ou $\C$), on appelle {\it projecteur}
+un endomorphisme $p$ de $E$ v\'erifiant $p\circ p=p$. Soit $p$ un projecteur.
+
+\begin{enumerate}  \item {\it Montrons que $\mathrm{Id}_E-p$ est un projecteur et calculons $p\circ(\mathrm{Id}_E-p)$ et $(\mathrm{Id}_E-p)\circ p$.}
+
+On a $(\mathrm{Id}_E-p)\circ(\mathrm{Id}_E-p)=\mathrm{Id}_E-p-p+p^2=\mathrm{Id}_E-p$, car $p^2=p$, ce qui prouve que $\mathrm{Id}_E-p$ est un projecteur.
+
+Par ailleurs, on a
+$$p\circ(\mathrm{Id}_E-p)=p-p^2=p-p=0=(\mathrm{Id}_E-p)\circ p$$
+donc pour tout $\vec x\in E$, on a $p(\vec x-p(\vec x))=\vec 0$.
+
+
+  \item {\it Montrons que pour tout $\vec x\in \Im p$, on a $p(\vec x)=\vec x$.}
+
+Soit $\vec x\in \Im p$, il existe $\vec y\in E$ tel que $\vec x=p(\vec y)$, on a donc 
+$p(\vec x)=p^2(\vec y)=p(\vec y)=\vec x$.
+
+  \item{\it On en d\'eduit que $\Im p$ et $\ker p$ sont suppl\'ementaires.}
+
+Soit $\vec x\in E$, on peut \'ecrire $\vec x=p(\vec x)+\vec x -p(\vec x)$, consid\'erons $\vec x -p(\vec x)$, on a
+$p(\vec x-p(\vec x))=0$
+
+ce qui prouve que $\vec x -p(\vec x)\in \ker p$. Ainsi tout \'el\'ement de $E$ s'\'ecrit comme somme d'un 
+\'el\'ement de $\Im p$, $p(\vec x)$, et d'un \'el\'ement de $\ker p$, $\vec x -p(\vec x)$, il nous reste \`a 
+d\'emontrer que la somme est directe.
+
+Soit $\vec x\in \Im p\cap\ker p$, on a, d'une part $p(\vec x)=\vec x$ d'apr\`es la question $2)$ car $\vec x\in \Im p$
+et, d'autre part $p(\vec x)=\vec 0$ car $\vec x\in \ker p$, d'o\`u $\vec x=\vec 0$. On a donc 
+$$E=\Im p\oplus\ker p.$$
+(Sachant que $\dim E=\dim\ker p+\dim\Im p$, on pouvait se contenter de d\'emontrer que $\Im p\cap \ker p={\vec 0}$, ici nous avons
+explicitement la d\'ecomposition.)
+
+
+  \item{\it Montrons que le rang de $p$ est \'egal \`a la trace de $p$.}
+
+Notons $n$ la dimension de $E$ et consid\'erons une base de $E$ de la forme
+$$(\vec{e_1},\cdots,\vec{e_k},\vec {e_{k+1}},\cdots,\vec{e_n})$$
+o\`u $(\vec{e_1},\cdots,\vec{e_k})$ est une base de $\Im p$ et $(\vec {e_{k+1}},\cdots,\vec{e_n})$ une base de $\ker p$.
+dans une telle base, la matrice de $p$ s'\'ecrit
+$$M=\begin{pmatrix}I_k&0 \\ 0&0\end{pmatrix}$$
+o\`u $I_k$ d\'esigne la matrice identit\'e $k\times k$, et les $0$ des blocs de z\'eros. Le rang de $p$ est \'egal \`a la 
+dimension de $\Im p$ c'est-\`a-dire ici \`a $k$ et on a bien $k=\mathrm{Tr} M=\mathrm{Tr} p.$
+\end{enumerate}
+\fincorrection
+\finexercice

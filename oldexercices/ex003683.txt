@@ -1,0 +1,37 @@
+\exercice{3683, quercia, 2010/03/11}
+\enonce[Centrale PSI 1997]
+
+Soit $E = \R_n[X]$ et $(P\mid Q) =  \int_{t=0}^1 P(t)Q(t)\,d t$.
+
+\begin{enumerate}
+  \item Montrer que $E$, muni de $(\ \mid\ )$, est un espace euclidien.
+  \item Soit $K = \R_{n-1}[X]^\bot$ et $P \in K\setminus\{0\}$.
+    Quel est le degré de~$P$~?
+  \item Soit $\Phi\ :\ x  \mapsto  \int_{t=0}^1 P(t)t^x\,d t$.
+    Montrer que $\Phi$ est une fonction rationnelle.
+    
+  \item Trouver $\Phi$ à une constante multiplicative près.
+    
+  \item En déduire les coefficients de~$P$.
+    
+  \item En déduire une base orthogonale de~$E$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item 
+  \item 
+  \item $ \int_{t=0}^1 t^kt^x\,d t = \frac 1{k+x+1}$.
+  \item $\Phi$ a pour pôles au plus simples $-1,-2,\dots,-n-1$ et
+             pour racines $0,1,\dots,n-1$. Comme $\Phi(x) \to 0$ lorsque $x\to\infty$,
+             on a donc $\Phi(x) = \lambda\frac{x(x-1)\dots(x-n+1)}{(x+1)\dots(x+n+1)}$.
+  \item $a_k =$ résidu de $\Phi$ en $-k-1 =
+             (-1)^{n+k}\lambda\frac{(n+k)!}{(k!)^2(n-k)!}$.
+  \item
+\end{enumerate}
+ \fincorrection
+
+\finexercice

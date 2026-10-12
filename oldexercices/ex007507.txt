@@ -1,0 +1,60 @@
+\exercice{7507, mourougane, 2021/08/10}
+\enonce
+\begin{enumerate}
+    \item Démontrer que si $A, B, C$ sont trois points distincts d'un plan affine euclidien $\mathcal{P}$
+    la somme des angles de vecteurs 
+    $$((\vec{AB}, \vec{AC}))+((\vec{BC},\vec{BA}))+((\vec{CA},\vec{CB}))$$
+    est un angle plat.
+    \item Soit $\mathcal{C}$ un cercle de $\mathcal{P}$ et $A$ un point de $\mathcal{C}$.
+    Soit $\mathcal{C}'$ l'image par une rotation $r$ de centre $A$ du cercle $\mathcal{C}$.
+    Soit $B$ l'autre point d'intersection de $\mathcal{C}$ et $\mathcal{C}'$.
+    Soit $D$ le point de $\mathcal{C}$ diamétralement opposé à $A$ sur $\mathcal{C}$.
+    Soit $D'=r(D)$ son image par $r$. Montrer que $D$, $D'$ et $B$ sont alignés.
+    \item Soit $M$ un point quelconque de $\mathcal{C}$.
+    Montrer que $M$, $M'=r(M)$ et $B$ sont alignés.
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+    \item Soit $A, B, C$ sont trois points distincts d'un plan affine euclidien $\mathcal{P}$.
+    La somme des angles de vecteurs se réécrit par symétrie centrale par rapport à $C$ comme
+    \begin{eqnarray*}
+        \lefteqn{((\vec{AB}, \vec{AC}))+((\vec{BC},\vec{BA}))+((\vec{CA},\vec{CB}))}
+        &&\\
+        &=&((\vec{AB}, \vec{AC}))+((\vec{BC},\vec{BA}))+((-\vec{CA},-\vec{CB}))\\
+        &=&((\vec{AB}, \vec{AC}))+((\vec{BC},\vec{BA}))+((\vec{AC},\vec{BC}))\\
+        &=&((\vec{AB}, \vec{AC}))+((\vec{AC},\vec{BC}))+((\vec{BC},\vec{BA}))\\
+        &=&((\vec{AB},\vec{BA}))\\
+    \end{eqnarray*}
+    c'est à dire l'angle plat.
+    
+    \item Soit $\mathcal{C}$ un cercle de $\mathcal{P}$ et $A$ un point de $\mathcal{C}$.
+    Soit $\mathcal{C}'$ l'image par une rotation $r$ de centre $A$ du cercle $\mathcal{C}$.
+    Soit $B$ l'autre point d'intersection de $\mathcal{C}$ et $\mathcal{C}'$.
+    Soit $D$ le point de $\mathcal{C}$ diamétralement opposé à $A$ sur $\mathcal{C}$.
+    Soit $D'=r(D)$ son image par $r$. 
+    Soit $O$ le centre de $\mathcal{C}$ et $O'$ le centre de $\mathcal{C}'$.
+    
+    Comme $D$ appartient à $(AO)$, le point $D'=r(D)$ appartient à $r((AO))=(A'O')$.
+    Donc $[A'D']$ est un diamètre de $\mathcal{C}'$.
+    Comme $B$ appartient à $\mathcal{C}$ et comme $[AD]$ est un diamètre de $\mathcal{C}$, la droite $(BD)$ est orthogonale à $(AB)$.
+    De même, comme $B$ appartient à $\mathcal{C}'$ et comme $[AD']$ est un diamètre de $\mathcal{C}$, la droite $(BD')$ est orthogonale à $(AB)$.
+    Par conséquent, les droites $(BD)$ et $(BD')$ sont confondues et $D$, $D'$ et $B$ sont alignés.
+    \item Soit $M$ un point quelconque de $\mathcal{C}$.
+    Dans les triangles $BAM'$ et $BAM$
+    $$((\vec{BM'}, \vec{BA}))+((\vec{AB},\vec{AM'}))+((\vec{M'A},\vec{M'B}))$$
+    et $$(( \vec{BA},\vec{BM}))+((\vec{AM},\vec{AB}))+((\vec{MB},\vec{MA}))$$
+    sont deux angles plats.
+    Par somme,$$((\vec{BM'},\vec{BM}))+((\vec{AM},\vec{AM'}))
+    +((\vec{M'A},\vec{M'B}))+((\vec{MB},\vec{MA}))$$ est un angle nul.
+    
+    Par propriété des angles inscrits, $((\vec{M'A},\vec{M'B}))=((\vec{D'A},\vec{D'B}))$ et $((\vec{MB},\vec{MA}))=((\vec{DB},\vec{DA}))$.
+    Dans le triangle $ADD'$, on trouve que
+    $$((\vec{D'A},\vec{D'B}))+((\vec{DB},\vec{DA}))$$
+    et la différence d'un angle plat et de $((\vec{AD},\vec{AD'}))=((\vec{AM},\vec{AM'}))$ l'angle de la rotation.
+    En conséquence,
+    $((\vec{BM'},\vec{BM}))$ est un angle plat et $M$, $M'=r(M)$ et $B$ sont alignés.
+\end{enumerate}
+\fincorrection
+\finexercice

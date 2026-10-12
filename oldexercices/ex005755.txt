@@ -1,0 +1,32 @@
+\exercice{5755, rouget, 2010/10/16}
+\enonce[***]
+Soit $A$ une matrice carrée complexe de format $p\in\Nn^*$.
+Rayon de convergence et somme en fonction de $\chi_A$ de la série entière $\sum_{n=0}^{+\infty}\text{Tr}(A^n)z^n$.
+\finenonce
+
+\noindication
+
+\correction
+Posons $\text{Sp}_\Cc A=\left(\lambda_1,\ldots,\lambda_p\right)$. On sait que pour tout entier naturel $n$, $\text{Tr}(A^n) =\lambda_1^n+...+\lambda_p^n$.
+
+Soit $\lambda$ un nombre complexe. 
+
+\textbullet~Si $\lambda= 0$, la série entière associée à la suite $(\lambda^n)_{n\in\Nn}$ est de rayon infini et pour tout nombre complexe $z$, $\sum_{n=0}^{+\infty}\lambda^nz^n=1=\frac{1}{1-\lambda z}$.
+
+\textbullet~Si $\lambda\neq0$, la série entière associée à la suite $(\lambda^n)$ est de rayon $\frac{1}{|\lambda|}$ et pour $|z| <\frac{1}{|\lambda|}$,  $\sum_{n=0}^{+\infty}\lambda^nz^n=\frac{1}{1-\lambda z}$.
+
+Soit $\rho=\text{Max}\left(|\lambda_1|,\ldots,|\lambda_p|\right)$ ($\rho$ est le rayon spectral de la matrice $A$) et $R=\frac{1}{\rho}$  si $\rho\neq0$ et $R = +\infty$ si $\rho= 0$.
+
+Pour $|z| < R$,  
+
+\begin{align*}\ensuremath
+\sum_{n=0}^{+\infty}\text{Tr}(A^n)z^n&=\sum_{n=0}^{+\infty}\left(\sum_{k=1}^{p}(\lambda_kz)^n\right)
+=\sum_{k=1}^{p}\left(\sum_{n=0}^{+\infty}(\lambda_kz)^n\right)\;(\text{somme de}\;p\;\text{séries convergentes})\\
+ &=\sum_{k=1}^{p}\frac{1}{1-\lambda_kz}.
+\end{align*}
+
+Il est alors clair que $R$ est le rayon de convergence de la série entière proposée (développement en série entière d'une fraction rationnelle).
+
+Si de plus, $0< |z| < R$,  $\sum_{n=0}^{+\infty}\text{Tr}(A^n)z^n=\frac{1}{z}\left(\sum_{k=1}^{p}\frac{1}{\frac{1}{z}-\lambda_k}\right)=\frac{\chi_A'\left(\frac{1}{z}\right)}{\frac{1}{z}\chi_A\left(\frac{1}{z}\right)}$ (décomposition usuelle de $\frac{P'}{P}$). 
+\fincorrection
+\finexercice

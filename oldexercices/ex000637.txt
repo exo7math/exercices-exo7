@@ -1,0 +1,24 @@
+\exercice{637, gourio, 2001/09/01}
+\enonce
+ Trouver pour $(a,b)\in (\Rr^{+*})^{2}$ :
+$$\lim\limits_{x\rightarrow +\infty}\left(\frac{a^{x}+b^{x}}{2}\right)^{\frac{1}{x}}.$$
+\finenonce 
+
+\indication
+R\'{e}ponse: $\max(a,b)$.
+\finindication
+
+\correction
+Supposons $a \ge b$.
+Alors 
+$$\left(\frac{a^{x}+b^{x}}{2}\right)^{\frac{1}{x}} = \left( a^x \times \frac{1+ (\frac{b}{a})^x}{2}\right)^{\frac{1}{x}}
+= a \left( \frac{1+ (\frac{b}{a})^x}{2}\right)^{\frac{1}{x}}.$$
+Or $0 \le \frac b a \le 1$, donc $0 \le (\frac ba)^x \le 1$ pour tout $x \ge 1$.
+Donc $(\frac 12)^{\frac{1}{x}} \le \left( \frac{1+ (\frac{b}{a})^x}{2}\right)^{\frac{1}{x}} \le 1^{\frac{1}{x}}$.
+Les deux termes extrêmes tendent vers $1$ lorsque $x$ tend vers $+\infty$ donc le terme du milieu tend aussi vers $1$.
+Conclusion : si $a \ge b$ alors  $\lim\limits_{x\rightarrow +\infty}\left(\frac{a^{x}+b^{x}}{2}\right)^{\frac{1}{x}} = a.$
+Si $b \ge a$ alors cette limite vaudrait $b$.
+Cela se résume dans le cas général o\`u $a,b$ sont quelconques par 
+ $\lim\limits_{x\rightarrow +\infty}\left(\frac{a^{x}+b^{x}}{2}\right)^{\frac{1}{x}} = \max(a,b).$
+\fincorrection
+\finexercice

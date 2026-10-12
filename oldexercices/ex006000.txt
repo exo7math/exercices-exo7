@@ -1,0 +1,44 @@
+\exercice{6000, quinio, 2011/05/20}
+
+\enonce
+On sait qu'à une date donnée, 3\% d'une population
+est atteinte d'hépatite
+On dispose de tests de dépistage de la maladie :
+\begin{itemize}
+\item Si la personne est malade, alors le test est positif avec une probabilité de 95\%.
+\item Si la personne est saine, alors le test est positif avec une probabilité de 10\%.
+\end{itemize}
+
+\begin{enumerate}
+\item Quelle est la probabilité pour une personne d'être malade
+si son test est positif ?
+\item Quelle est la probabilité pour une personne d'être saine si
+son test est positif ?
+\item Quelle est la probabilité pour une personne d'être malade
+si son test est négatif ?
+\item Quelle est la probabilité pour une personne d'être saine si
+son test est négatif ?
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item La probabilité pour une personne d'être malade si son test est
+positif est $P(M/T^{+})=P(T^{+}/M)P(M)/P(T^{+})$
+or $P(T^{+})=P(T^{+}/M)P(M)+P(T^{+}/S)P(S)=0.95\cdot 0.03+0.1\cdot
+0.97=0.125\,5$. 
+D'où : $P(M/T^{+})=22.7\%$.
+
+\item La probabilité pour une personne d'être saine si son test est
+positif est $P(S/T^{+})=1-P(M/T^{+})=77.3\%$.
+
+\item La probabilité pour une personne d'être malade si son test est négatif 
+est $P(M/T^{-})=0.0017$.
+
+\item La probabilité pour une personne d'être saine si son test est négatif
+est $1-P(M/T^{-})=0.998=99.8\%$.
+\end{enumerate}
+\fincorrection
+\finexercice

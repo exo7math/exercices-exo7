@@ -1,0 +1,61 @@
+\exercice{5906, rouget, 2010/10/16}
+\enonce[**]
+Calculer l' intégrale de la forme différentielle $\omega$ le long du contour orienté $C$ dans les cas suivants :
+
+\begin{enumerate}
+ \item  $\omega= \frac{x}{x^2+y^2}dx+ \frac{y}{x^2+y^2}dy$ et $C$ est l'arc de la parabole d'équation $y^2=2x+1$ joignant les points $(0,-1)$ et $(0,1)$
+parcouru une fois dans le sens des $y$ croissants.
+
+\item  $\omega=(x-y^3)dx+x^3dy$ et $C$ est le cercle de centre $O$ et de rayon $1$ parcouru une fois dans le sens direct.
+
+\item  $\omega=xyzdx$ et $C$ est l'arc $x=\cos t$, $y=\sin t$, $z=\cos t\sin t$, $t$ variant en croissant de $0$ à $ \frac{\pi}{2}$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  $C$ est l'arc paramétré $t\mapsto\left( \frac{t^2-1}{2},t\right)$, $t$ variant en croissant de $-1$ à $1$.
+
+\begin{align*}\ensuremath
+\int_{C}^{}\omega&=\int_{-1}^{1}\left( \frac{(t^2-1)/2}{\left( \frac{t^2-1}{2}\right)^2+t^2}t+ \frac{t}{\left( \frac{t^2-1}{2}\right)^2+t^2}\right)dt\\
+ &=0\;(\text{fonction impaire}).
+\end{align*}
+
+\begin{center}
+\shadowbox{
+$\int_{C}^{}\omega=2\ln2$.
+}
+\end{center}
+
+\item  
+
+\begin{align*}\ensuremath
+\int_{C}^{}\omega&=\int_{0}^{2\pi}((\cos t-\sin^3t)(-\sin t)+\cos^3t(\cos t))dt=\int_{0}^{2\pi}(\cos^4t+\sin^4t-\cos t\sin t)dt\\
+ &=\int_{0}^{2\pi}((\cos^2t+\sin^2t)^2-2\cos^2t\sin^2t-\cos t\sin t)dt=\int_{0}^{2\pi}\left(1- \frac{\sin(2t)}{2}- \frac{\sin^2(2t)}{2}\right)dt\\
+ &=\int_{0}^{2\pi}\left(1- \frac{\sin(2t)}{2}- \frac{1}{4}(1-\cos(4t))\right)dt=2\pi\left(1- \frac{1}{4}\right)= \frac{3\pi}{2}.
+\end{align*}
+
+\begin{center}
+\shadowbox{
+$\int_{C}^{}\omega= \frac{3\pi}{2}$.
+}
+\end{center}
+
+\item  
+
+\begin{align*}\ensuremath
+\int_{C}^{}\omega&=\int_{0}^{\pi/2}(\cos t\sin t\cos t\sin t)(-\sin t)\;dt=-\int_{0}^{\pi/2}\cos^2t\sin^3t\;dt\\
+ &=\int_{0}^{\pi/2}(-\cos^2t\sin t+\cos^4t\sin t)dt=\left[ \frac{\cos^3t}{3}- \frac{\cos^5t}{5}\right]_0^{\pi/2}=- \frac{1}{3}+ \frac{1}{5}\\
+ &=- \frac{2}{15}.
+\end{align*}
+
+\begin{center}
+\shadowbox{
+$\int_{C}^{}\omega=- \frac{2}{15}$.
+}
+\end{center}
+\end{enumerate}
+\fincorrection
+\finexercice

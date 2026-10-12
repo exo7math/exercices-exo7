@@ -1,0 +1,83 @@
+\exercice{5708, rouget, 2010/10/16}
+\enonce
+Partie principale quand $n$ tend vers $+\infty$ de
+
+\begin{center}
+\textbf{1) (***)} $\sum_{p=n+1}^{+\infty}(-1)^p\frac{\ln p}{p}$\qquad\textbf{2) (**)} $\sum_{p=1}^{n}p^p$.
+\end{center}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  La suite $\left(\frac{\ln n}{n}\right)_{n\in\Nn^*}$ tend vers $0$, en décroissant à partir du rang $3$ (fourni par l'étude de la fonction $x\mapsto\frac{\ln x}{x}$ sur $[e,+\infty[$) et donc la série de terme général $(-1)^n\frac{\ln n}{n}$, $n\geqslant1$, converge en vertu du critère spécial aux séries alternées. Pour $n\in\Nn^*$, on pose $R_n=\sum_{p=n+1}^{+\infty}(-1)^p\frac{\ln p}{p}$.
+
+$(-1)^k\frac{\ln k}{k}$  n'est pas de signe constant à partir d'un certain rang et on ne peut donc lui appliquer la règle de l'équivalence des restes.
+
+Par contre, puisque la série de terme général $(-1)^k\frac{\ln k}{k}$ converge, on sait que l'on peut associer les termes à volonté et pour $k\in\Nn^*$, on a
+
+\begin{center}
+$R_{2k-1}=\sum_{p=2k}^{+\infty}(-1)^p\frac{\ln p}{p}=\sum_{p=k}^{+\infty}\left(\frac{\ln(2p)}{2p}-\frac{\ln(2p+1)}{2p+1}\right)$.
+\end{center}
+
+Puisque la fonction  $x\mapsto\frac{\ln x}{x}$ est décroissante sur $[e,+\infty[$ et donc sur $[3,+\infty[$, pour $p\geqslant 2$, $\frac{\ln(2p)}{2p}-\frac{\ln(2p+1)}{2p+1}\geqslant0$ et on peut utiliser la règle de l'équivalence des restes de séries à termes positifs convergentes.
+
+Cherchons déjà un équivalent plus simple de $\frac{\ln(2p)}{2p}-\frac{\ln(2p+1)}{2p+1}$ quand $p$ tend vers $+\infty$.
+
+\begin{align*}\ensuremath
+\frac{\ln(2p)}{2p}-\frac{\ln(2p+1)}{2p+1}&=\frac{\ln(2p)}{2p}-\frac{1}{2p}\left(\ln(2p)+\ln\left(1+\frac{1}{2p}\right)\right)\left(1+\frac{1}{2p}\right)^{-1}\\
+ &\underset{p\rightarrow+\infty}{=}\frac{\ln(2p)}{2p}-\frac{1}{2p}\left(\ln(2p)+\frac{1}{2p}+o\left(\frac{1}{p}\right)\right)\left(1-\frac{1}{2p}+o\left(\frac{1}{p}\right)\right)\\
+ &\underset{p\rightarrow+\infty}{=}\frac{\ln(2p)}{4p^2}+o\left(\frac{\ln p}{p^2}\right)\underset{p\rightarrow+\infty}{=}\frac{\ln p+\ln2}{4p^2}+o\left(\frac{\ln p}{p^2}\right)\\
+ &\underset{p\rightarrow+\infty}{\sim}\frac{\ln p}{4p^2}.
+\end{align*}   
+
+et donc $R_{2k-1}\underset{k\rightarrow+\infty}{\sim}\frac{1}{4}\sum_{p=k}^{+\infty}\frac{\ln p}{p^2}$.
+
+Cherchons maintenant un équivalent simple de $\frac{\ln p}{p^2}$  de la forme $v_p - v_{p+1}$. 
+
+Soit $v_p=\frac{\ln p}{p}-\frac{\ln(p+1)}{p+1}$ (suggéré par $\left(\frac{\ln x}{x}\right)'=\frac{1-\ln x}{x^2}\underset{x\rightarrow+\infty}{\sim}-\frac{\ln x}{x^2}$). Alors 
+
+\begin{align*}\ensuremath
+v_p- v_{p+1}&=\frac{\ln p}{p}-\frac{1}{p}\left(\ln p+\ln\left(1+\frac{1}{p}\right)\right)\left(1+\frac{1}{p}\right)^{-1}\underset{p\rightarrow+\infty}{=}\frac{\ln p}{p}-\frac{1}{p}\left(\ln p+\frac{1}{p}+o\left(\frac{1}{p}\right)\right)\left(1-\frac{1}{p}+o\left(\frac{1}{p}\right)\right)\\
+ &\underset{p\rightarrow+\infty}{\sim}\frac{\ln p}{p^2}.
+\end{align*}
+
+D'après la règle de l'équivalence des restes de séries à termes positifs convergentes, $R_{2k-1}\underset{k\rightarrow+\infty}{\sim}\frac{1}{4}\sum_{p=k}^{+\infty}\left(\frac{\ln p}{p}-\frac{\ln(p+1)}{p+1}\right)=\frac{\ln k}{4k}$ (série télescopique). 
+
+Puis, $R_{2k}=R_{2k-1}-\frac{\ln(2k)}{2k}\underset{k\rightarrow+\infty}{\sim}\frac{\ln k}{4k}-\frac{\ln(2k)}{2k}+o\left(\frac{\ln k}{k}\right)\underset{k\rightarrow+\infty}{\sim}\frac{\ln k}{4k}-\frac{\ln k}{2k}+o\left(\frac{\ln k}{k}\right)\underset{k\rightarrow+\infty}{\sim}-\frac{\ln k}{4k}+o\left(\frac{\ln k}{k}\right)$.
+
+En résumé, $R_{2k-1}\underset{k\rightarrow+\infty}{\sim}\frac{\ln k}{4k}$ et $R_{2k}\underset{k\rightarrow+\infty}{\sim}-\frac{\ln k}{4k}$.
+
+On peut unifier : $R_{2k-1}\underset{k\rightarrow+\infty}{\sim}\frac{\ln k}{4k}\underset{k\rightarrow+\infty}{\sim}\frac{\ln(2k-1)}{2(2k-1)}$   et $R_{2k}\underset{k\rightarrow+\infty}{\sim}-\frac{\ln k}{4k}\underset{k\rightarrow+\infty}{\sim}-\frac{\ln(2k)}{2(2k)}$. Finalement,
+
+\begin{center}
+\shadowbox{
+$\sum_{p=n+1}^{+\infty}(-1)^p\frac{\ln p}{p}\underset{n\rightarrow+\infty}{\sim}(-1)^{n-1}\frac{\ln n}{2n}$.
+}
+\end{center}
+
+\item  $\sum_{}^{}n^n$ est une série à termes positifs grossièrement divergente.
+
+\textbf{1 ère solution.}
+
+$0< n^n\underset{n\rightarrow+\infty}{\sim} n^n - (n-1)^{n-1}$ car $\frac{n^n - (n-1)^{n-1}}{n^n}=  1-\frac{1}{n-1}\left(1-\frac{1}{n}\right)^{n}\underset{n\rightarrow+\infty}{=}1-\frac{1}{ne}+o\left(\frac{1}{n}\right)\underset{n\rightarrow+\infty}{\rightarrow}1$.
+
+D'après la règle de l'équivalence des sommes partielles de séries à termes positifs divergentes,
+
+\begin{center}
+$\sum_{p=1}^{n}p^p\underset{n\rightarrow+\infty}{\sim}\sum_{p=2}^{n}p^p\underset{n\rightarrow+\infty}{\sim}\sum_{p=2}^{n}(p^p-(p-1)^{p-1}) = n^n-1\underset{n\rightarrow+\infty}{\sim}n^n$.
+\end{center}
+
+(La somme est équivalente à son dermier terme.)
+
+\textbf{2 ème solution.} Pour $n\geqslant3$, $0\leqslant\frac{1}{n^n}\sum_{p=1}^{n-2}p^p\leqslant\frac{1}{n^n}\times(n-2)(n-2)^{n-2}\leqslant \frac{n^{n-1}}{n^n}=\frac{1}{n}$. Donc $\frac{1}{n^n}\sum_{p=1}^{n-2}p^p$. On en déduit que $\frac{1}{n^n}\sum_{p=1}^{n}p^p=1+\frac{(n-1)^{n-1}}{n^n}+\frac{1}{n^n}\sum_{p=1}^{n-2}p^p\underset{n\rightarrow+\infty}{=}1+o(1)+o(1)=1+o(1)$.
+
+\begin{center}
+\shadowbox{
+$\sum_{p=1}^{n}p^p\underset{n\rightarrow+\infty}{\sim}n^n$.
+}
+\end{center}
+\end{enumerate}
+\fincorrection
+\finexercice

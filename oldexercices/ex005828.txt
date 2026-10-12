@@ -1,0 +1,79 @@
+\exercice{5828, rouget, 2010/10/16}
+\enonce[***]
+Former l'équation de la surface de révolution $(\mathcal{S})$ engendrée par la rotation de la droite $(\mathcal{D})$ $\left\{
+\begin{array}{l}
+x=z+2\\
+y=2z+1
+\end{array}
+\right.$ autour de la droite $(\Delta)$ d'équations $x = y = z$. Quelle surface obtient-on ?
+\finenonce
+
+\noindication
+
+\correction
+Soit $A(a,b,c)$ un point quelconque de l'espace $E_3$.
+
+Déterminons un système d'équation du cercle $(C_A)$ d'axe $(\Delta)$ d'équations $x=y=z$ passant par $A$.
+
+Ce cercle est par exemple l'intersection du plan passant par $A$ de vecteur normal $(1,1,1)$ et de la sphère de centre $O$ et de rayon $OA$.
+
+Un système d'équations de $(C_A)$ est $\left\{
+\begin{array}{l}
+x+y+z=a+b+c\\\
+x^2+y^2+z^2=a^2+b^2+c^2
+\end{array}
+\right.$.
+
+Déterminons alors une équation cartésienne de la surface $\mathcal{S}$. Une condition nécessaire et suffisante pour qu'un point $M(x,y,z)$ soit un point de $(\mathcal{S})$ est $(C_M)\cap(\mathcal{D})\neq\varnothing$. Donc
+
+\begin{align*}
+M\in(\mathcal{S})&\Leftrightarrow\exists(\alpha,\beta,\gamma)\in\Rr^3/\;\left\{
+\begin{array}{l}
+x+y+z=\alpha+\beta+\gamma\\
+x^2+y^2+z^2=\alpha^2+\beta^2+\gamma^2\\
+\alpha=\gamma+2\\
+\beta=2\gamma+1
+\end{array}
+\right.\Leftrightarrow\exists(\alpha,\beta,\gamma)\in\Rr^3/\;\left\{
+\begin{array}{l}
+\alpha=\gamma+2\\
+\beta=2\gamma+1\\
+x+y+z=\gamma+2+2\gamma+1+\gamma\\
+x^2+y^2+z^2=\alpha^2+\beta^2+\gamma^2
+\end{array}
+\right. \\
+&\Leftrightarrow\exists(\alpha,\beta,\gamma)\in\Rr^3/\;\left\{
+\begin{array}{l}
+\alpha=\gamma+2\\
+\beta=2\gamma+1\\
+\gamma=\frac{1}{4}(x+y+z-3)\\
+x^2+y^2+z^2=\alpha^2+\beta^2+\gamma^2
+\end{array}
+\right.\\
+ &\Leftrightarrow x^2+y^2+z^2 =\left(\frac{1}{4}(x+y+z-3)+2\right)^2 +\left(\frac{2}{4}(x+y+z-3)+1\right)^2 +\left(\frac{1}{4}(x+y+z-3)\right)^2\\
+ &\Leftrightarrow16(x^2+y^2+z^2) =(x+y+z+5)^2+4(x+y+z-1)^2+(x+y+z-3)^2 \\
+ &\Leftrightarrow16(x^2+y^2+z^2) = 6(x+y+z)^2-2(x+y+z) + 38\\
+ &\Leftrightarrow5(x^2+y^2+z^2) -6(xy+yz+zx)-(x+y+z)-19 = 0.
+\end{align*}
+
+\begin{center}
+\shadowbox{
+Une équation cartésienne de $(\mathcal{S})$ est $5(x^2+y^2+z^2) -6(xy+yz+zx)-(x+y+z)-19 = 0$.
+}
+\end{center}
+
+La matrice de la forme quadratique $(x,y,z)\mapsto5(x^2+y^2+z^2) -6(xy+yz+zx)$ dans la base canonique de $\Rr^3$ est $\left(
+\begin{array}{ccc}
+5&-3&-3\\
+-3&5&-3\\
+-3&-3&5
+\end{array}
+\right)$. Ses valeurs propres sont $8$, valeur propre d'ordre $2$ associée au plan d'équation $x+y+z=0$ et $-1$ valeur propre d'ordre $1$ associé à la droite d'équation. Dans le repère $\left(O,\overrightarrow{e_1},\overrightarrow{e_2},\overrightarrow{e_3}\right)$ où $\overrightarrow{e_1}=\frac{1}{\sqrt{2}}(1,-1,0)$, $\overrightarrow{e_2}=\frac{1}{\sqrt{6}}(1,1,-2)$ et $\overrightarrow{e_3}=\frac{1}{\sqrt{3}}(1,1,1)$ 
+
+\begin{center}
+$M\in(\mathcal{S})\Leftrightarrow8x'^2+8y'^2-z'^2-\sqrt{3}z'-19=0\Leftrightarrow8\left(x'-\frac{\sqrt{3}}{16}\right)^28y'^2-z'^2=19+\frac{3}{32}$.
+\end{center}
+
+La surface $(\mathcal{S})$ est un hyperboloïde à une nappe.
+\fincorrection
+\finexercice

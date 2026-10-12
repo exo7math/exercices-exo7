@@ -1,0 +1,42 @@
+\exercice{4853, quercia, 2010/03/16}
+\enonce[Centre de gravit{\'e} d'une courbe param{\'e}tr{\'e}e]
+
+Soit $\varphi : {[a,b]} \to {\R^2}, t \mapsto {M_t}$ une courbe param{\'e}tr{\'e}e de classe
+$\mathcal{C}^1$ de longueur non nulle.
+Le centre de gravit{\'e} de la courbe est le point $G$ tel que
+$ \int_{t=a}^b \vec{GM_t}\|\vec M\,'(t)\|\,dt = \vec 0$.
+
+\begin{enumerate}
+  \item Montrer l'existence et l'unicit{\'e} de $G$.
+  \item D{\'e}terminer le centre de gravit{\'e} d'un demi-cercle.
+    (On admet que $G$ est ind{\'e}pendant du param{\'e}trage)
+    
+  \item Montrer que $G$ appartient {\`a} l'enveloppe convexe de la courbe.
+    
+  \item Montrer que si la courbe admet un axe de sym{\'e}trie, $\Delta$, alors $G \in \Delta$.
+    (Si $\sigma$ est la sym{\'e}trie associ{\'e}e, consid{\'e}rer la courbe d{\'e}crite par
+    $N_t = \sigma(M_t)$)
+    
+  \item Soit $\Phi : {\R^2} \to {\R^2}$ une isom{\'e}trie affine.
+    Montrer que si $G$ est le centre de gravit{\'e} de $\mathcal{C}$, alors $\Phi(G)$ est le centre
+    de gravit{\'e} de $\Phi(\mathcal{C})$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item 
+  \item demi-cercle unit{\'e} $ \Rightarrow  x = 0$, $y = \frac 2\pi$.
+  \item Sommes de Riemann + l'enveloppe convexe d'un compact est compacte.
+  \item $\vec N\,'(t) = \vec\sigma(\vec M\,'(t))  \Rightarrow 
+             \|\vec N\,'(t)\| = \|\vec M\,'(t))\|$.\par
+             $ \int_{t=a}^b \vec{GN_t}\|\vec N\,'(t)\|\,dt = \vec 0
+             =  \int_{t=a}^b \vec{\sigma(G)N_t}\|\vec M\,'(t)\|\,dt$,
+             donc $\sigma(G) = G$.
+  \item 
+\end{enumerate}
+ \fincorrection
+
+\finexercice

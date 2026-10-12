@@ -1,0 +1,45 @@
+\exercice{7149, megy, 2017/05/01}
+\enonce
+Soit $ABC$ un triangle tel que $C$ soit l'image de $B$ par la rotation de centre $A$ et d'angle $\pi/2$.
+Soit $s$ une similitude envoyant $A$ sur $B$ et $B$ sur $C$.
+\begin{enumerate}
+\item Que peut valoir $s(C)$ ?
+\item On suppose que $s$ est directe. Déterminer son centre $\Omega$. On l'exprimera comme barycentre de $A$, $B$ et $C$.
+\item Si la similitude est indirecte, déterminer son centre et son axe.
+\end{enumerate}
+\finenonce
+
+\noindication   
+     
+\correction 
+\begin{enumerate}
+\item Il y a exactement deux similitudes envoyant le couple $(A,B)$ sur le couple $(B,C)$ : une directe et une indirecte, et l'une se déduit de l'autre en composant (à gauche) par la réflexion d'axe $(BC)$.
+
+D'après l'énoncé, le triangle $ABC$ est rectangle isocèle en $A$. On a donc $BC = \sqrt 2 AB$ et donc $s$ est de rapport $\sqrt 2$.
+De plus, une similitude conservant les angles non orientés, on a $(AB)\bot (AC) \Rightarrow (s(A)s(B)) \bot (s(A)s(C))$, c'est-à-dire que $s(C)$ appartient à la perpendiculaire à $(s(A)s(B)) = (BC)$ passant par $s(A)=B$. Comme d'autre part on sait que $Cs(C)=\sqrt 2 BC$, cela donne deux possibilités, suivant que la similitude est directe ou indirecte.
+\item Si la similitude est directe, son angle est $3\pi/4$ puisque $(\overrightarrow{AB},\overrightarrow{BC}) = 3\pi/4$.\\
+
+On fixe maintenant un repère orthonormé direct du plan dont l'origine est $A$. On note $a$, $b$ et $c$ les affixes des trois points et on a donc $a=0$ et $c=ib$ d'après l'énoncé.\\
+Soit $(\alpha,\beta) \in \C^*\times \C$ tel que $s$ s'écrive $z\mapsto \alpha z+\beta$ en coordonnée complexe. Par ce qui précède, on a $\alpha = \sqrt 2 e^{3i\pi/4} = -1+i$. D'autre part, comme $A$ est envoyé sur $B$, on a $b = \beta$.\\
+La similitude s'écrit donc $z\mapsto (i-1)z + b$. Son unique point fixe $\Omega$ a pour affixe 
+\[
+\omega = \frac{b}{1-(i-1)} 
+= \frac{b}{2-i} 
+= \frac{2b+ib}{5} 
+= \frac{2b+c}{5}. 
+\]
+On peut reformuler ceci sous la forme $\omega = \frac{2}{5} a + \frac{2}{5} b + \frac{1}{5} c $, ce qui montre que $\Omega$ est le barycentre  de $(A,2/5)$, $(B,2/5)$ et $(C,1/5)$.
+
+\item On fixe maintenant un repère orthonormé direct du plan dont l'origine est $A$, et tel que $B$ soit sur l'axe des abscisses (donc son affixe est réel). Soit $(\alpha,\beta) \in \C^*\times \C$ tel que $s$ s'écrive $z\mapsto \alpha \bar z+\beta$ en coordonnée complexe. On a $s(0)=b$ donc $\beta=b$, et $s(b)=c=ib$ donc $\alpha\bar b + b = ib$ ce qui donne $\alpha = i-1$. La transformation s'écrit donc dans ce repère 
+\[ z\mapsto (i-1)\bar z + b,\]
+ et $c$ est envoyé sur $(i+2)b$.
+
+Cherchons un point fixe $\omega$ pour $s$ : si $s(\omega)=\omega$, alors en particulier $s(s(\omega))=\omega$, ce qui s'écrit $(i-1)\overline{(i-1)\overline{z}+b}+b=\omega $, autrement dit $2\omega+ib = \omega$ et finalement $\omega=-ib$. Réciproquement, on vérifie que le point d'affixe $-ib$ est bien fixe sous $S$. Comme on peut écrire $\omega = -ib = -c = 2\cdot a - c$, on en déduit que $\Omega$ est le barycentre de $(A,2)$ et $(C,-1)$.
+
+Cherchons maintenant l'axe de la similitude indirecte. C'est une droite passant par le centre de la similitude et d'après l'écriture de la similitude, elle est dirigée par un vecteur d'affixe $e^{3i\pi/8}$. Un paramétrage en coordonnée complexe de cette droite est donc :
+\[\Delta = \{ -c+t.e^{3i\pi/8}\:|\: t\in \R\}
+\]
+
+\end{enumerate}
+\fincorrection  
+\finexercice  

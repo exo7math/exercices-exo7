@@ -1,0 +1,62 @@
+\exercice{5500, rouget, 2010/07/10}
+\enonce[****I]
+Sur $E=\Rr_n[X]$, on pose $P|Q=\int_{-1}^{1}P(t)Q(t)\;dt$.
+\begin{enumerate} 
+\item  Montrer que $(E,|)$ est un espace euclidien.
+\item  Pour $p$ entier naturel compris entre $0$ et $n$, on pose $L_p=((X^2-1)^p)^{(p)}$.
+Montrer que $\left(\frac{L_p}{||L_p||}\right)_{0\leq p\leq n}$ est l'orthonormalisée de \textsc{Schmidt} de la base canonique de $E$.
+
+Déterminer $||Lp||$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  La symétrie, la bilinéarité et la positivité sont claires. Soit alors $P\in\Rr_n[X]$. 
+
+\begin{align*}\ensuremath
+P|P=0&\Rightarrow\int_{0}^{1}P^2(t)\;dt=0\\
+ &\Rightarrow\forall t\in[0,1],\;P^2(t)=0\;(\mbox{fonction continue, positive, d'intégrale nulle})\\
+ &\Rightarrow P=0\;(\mbox{polynôme ayant une infinité de racines}).
+\end{align*}
+Ainsi, l'application $(P,Q)\mapsto\int_{0}^{1}P(t)Q(t)\;dt$ est un produit scalaire sur $\Rr_n[X]$.
+ \item  Pour vérifier que la famille $\left(\frac{L_p}{||L_p||}\right)_{0\leq p\leq n}$ est l'orthonormalisée de \textsc{Schmidt} de la base canonique de $E$, nous allons vérifier que
+  \begin{enumerate}
+  \item $\forall p\in\llbracket0,n\rrbracket,\;\mbox{Vect}(L_0,L_1,...,L_p)=\mbox{Vect}(1,X,...,X^p)$,\rule[-4mm]{0mm}{0mm}
+  \item la famille $\left(\frac{L_p}{||L_p||}\right)_{0\leq p\leq n}$ est orthonormale,
+  \item $\forall p\in\llbracket0,n\rrbracket,\;L_p|X^p>0$.\rule{0mm}{5mm}
+  \end{enumerate}
+Pour a), on note que $L_p$ est un polynôme de degré $p$ (et de coefficient dominant $\frac{(2p)!}{p!}$). Par suite, $(L_0,L_1,...,L_p)$ est une base de $\Rr_p[X]$, ou encore, $\forall p\in\llbracket0,n\rrbracket,\;\mbox{Vect}(L_0,L_1,...,L_p)=\mbox{Vect}(1,X,...,X^p)$.
+Soit $p\in\llbracket0,n\rrbracket$. Soit $P$ un polynôme de degré inférieur ou égal à $p$. Si $p\geq1$, une intégration par parties fournit :
+
+\begin{align*}\ensuremath
+L_p|P&=\int_{-1}^{1}((t^2-1)^p)^{(p)}P(t)\;dt=\left[((t^2-1)^p)^{(p-1)}P(t)\right]_{-1}^1-\int_{-1}^{1}((t^2-1)^p)^{(p-1)}P'(t)\;dt\\
+ &=-\int_{-1}^{1}((t^2-1)^p)^{(p-1)}P'(t)\;dt.
+\end{align*}
+En effet, $1$ et $-1$ sont racines d'ordre $p$ de $(t^2-1)^p$ et donc d'ordre $p-k$ de $((t^2-1)^p)^{(k)}$ pour $0\leq k\leq p$ et en particulier, racines de chaque $((t^2-1)^p)^{(k)}$ pour $0\leq k\leq p-1$.
+En réitérant, on obtient pour tout $k\in\llbracket0,p\rrbracket$, $L_p|P=(-1)^k\int_{-1}^{1}((t^2-1)^p)^{(p-k)}P^{(k)}(t)\;dt$ et pour $k=p$, on obtient enfin $L_p|P=(-1)^p\int_{-1}^{1}(t^2-1)^pP^{(p)}(t)\;dt$, cette formule restant vraie pour $p=0$.
+Soient $p$ et $q$ deux entiers tels que $0\leq q<p\leq n$. D'après ce qui précède, $L_p|L_q=(-1)^p\int_{-1}^{1}(t^2-1)^pL_q^{(p)}(t)\;dt=0$ car $q=\mbox{deg}(L_q)<q$. Ainsi, la famille $(L_p)_{0\leq p\leq n}$ est donc une famille orthogonale de $n+1$ polynômes tous non nuls et est par suite est une base orthogonale de $\Rr_n[X]$. On en déduit que la famille $\left(\frac{L_p}{||L_p||}\right)_{0\leq p\leq n}$ est une base orthonormale de $\Rr_n[X]$.
+Enfin, $L_p|X^p=(-1)^p\int_{-1}^{1}(t^2-1)^p(t^p)^{(p)}\;dt=p!\int_{-1}^{1}(1-t^2)^p\;dt>0$. On a montré que 
+
+\begin{center}
+\shadowbox{
+la famille $\left(\frac{L_p}{||L_p||}\right)_{0\leq p\leq n}$ est l'orthonormalisée de la base canonique de $\Rr_n[X]$.
+}
+\end{center}
+Calculons $\|L_p\|$. On note que $L_p\in(L_0,...,L_{p-1})^\bot=(\Rr_{p-1}[X])^\bot$. Par suite,
+
+\begin{align*}\ensuremath
+||L_p||^2&=L_p|L_p=L_p|\mbox{dom}(L_p)X^p\;(\mbox{car}\;L_p\in(\Rr_{p-1}[X])^\bot)\\
+ &=\frac{(2p)!}{p!}L_p|X^p=\frac{(2p)!}{p!}p!\int_{-1}^{1}(1-t^2)^p\;dt=2(2p)!\int_{0}^{1}(1-t^2)^p\;dt\\
+ &=2(2p)!\int_{\pi/2}^{0}(1-\cos^2u)^p(-\sin u)\;du=2(2p)!\int_{0}^{\pi/2}\sin^{2p+1}u\;du\\
+ &=2(2p)!W_{2p+1}\;(\mbox{intégrales de \textsc{Wallis}})\\
+ &=2(2p)!\frac{2^{2p}(p!)^2}{(2p+1)!}\;(\mbox{à revoir})\\
+ &=\frac{2}{2p+1}2^{2p}(p!)^2.
+\end{align*}
+Donc, $\forall p\in\llbracket0,n\rrbracket,\;\|L_p\|=\sqrt{\frac{2}{2p+1}}2^pp!$. On en déduit que la famille $\left(
+\sqrt{\frac{2p+1}{2}}\frac{1}{2^pp!}((X^2-1)^p)^{(p)}\right)_{0\leq p\leq n}$ est une base orthonormale de $\Rr_n[X]$ (pour le produit scalaire considéré).
+\end{enumerate}
+\fincorrection
+\finexercice

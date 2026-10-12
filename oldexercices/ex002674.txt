@@ -1,0 +1,21 @@
+\exercice{2674, matexo1, 2002/02/01}
+
+\enonce
+Calculer par la m{\'e}thode des r{\'e}sidus l'int{\'e}grale de Wallis
+$$ W_n = \int_0^{\pi \over 2} \cos^{2n} \theta\,d\theta. $$
+\finenonce
+\noindication
+\correction
+On a, sachant que $2\cos\theta = e^{i\theta}+e^{-i\theta}$:
+$$ W_n = {1\over 4}\int_0^{2\pi } \cos^{2n}\theta\,d\theta
+ = {1\over 2^{2n+2}} \int_C \left(z+{1\over z}\right)^{2n}\ {dz\over iz}$$
+o{\`u} $C$ est le cercle trigonom{\'e}trique et $z=e^{i\theta}$. En posant
+$$f(z) = {1\over z} \left(z+{1\over z}\right)^{2n} $$
+on a imm{\'e}diatement
+$$ W_n = {\pi \over 2^{2n+1}} \mbox{\rm Res}(f, 0) $$
+car $0$ est le seul p{\^o}le de $f$. Le r{\'e}sidu est en fait le coefficient en $1/z$ dans
+le d{\'e}veloppement de $f$, c'est-{\`a}-dire le coefficient constant dans $(z+1/z)^{2n}$,
+soit par la formule du bin{\^o}me, $C_{2n}^n$. Donc
+$$ W_n =  {\pi \over 2^{2n+1}} {(2n)!\over (n!)^2}.$$
+\fincorrection
+\finexercice

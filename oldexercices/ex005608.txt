@@ -1,0 +1,155 @@
+\exercice{5608, rouget, 2010/10/16}
+\enonce[**]
+Soient $I=\left(
+\begin{array}{cc}
+1&0\\
+0&1
+\end{array}
+\right)$ et $J=\left(
+\begin{array}{cc}
+1&1\\
+0&1
+\end{array}
+\right)$. Soit $E=\{M(x,y)=xI+yJ,\;(x,y)\in\Rr^2\}$.
+
+\begin{enumerate}
+ \item  Montrer que $(E,+,.)$ est un $\Rr$-espace vectoriel et préciser sa dimension.
+
+\item  Montrer que $(E,+,\times)$ est un anneau commutatif.
+
+\item  Quels sont les éléments inversibles de l'anneau $(E,+,\times)$ ?
+
+\item  Résoudre dans $E$ les équations : 
+  \begin{enumerate}
+  \item $X^2=I$ 
+  \item $X^2=0$ 
+  \item $X^2=X$.
+  \end{enumerate}
+\item  Calculer $(M(x,y))^n$ pour $n$ entier naturel et $x$ et $y$ réels.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  $E=\text{Vect}(I,J)$ est un sous-espace vectoriel de $\mathcal{M}_2(\Rr)$ de dimension inférieure ou égale à 2. De plus, la famille $(I,J)$ est libre car la matrice $J$ n'est pas une matrice scalaire et donc $\text{dim}E= 2$.
+
+\item  Puisque $(E,+,.)$ est un espace vectoriel, $(E,+)$ est un groupe commutatif.
+
+Ensuite, $I^2=I\in E$, $IJ=JI=J\in E$ et $J^2=(I + E_{1,2})^2=I +2E_{1,2}= I+2(J-I) - I =2J -I\in E$. Par bilinéarité du produit matriciel, la multiplication est interne dans $E$ et commutative. De plus, $I\in E$ et finalement $E$ est un sous-anneau commutatif de $\mathcal{M}_2(\Rr)$.
+
+ 
+\textbf{Remarque.} $M(x,y)M(x',y')= xx'I +(xy'+yx')J +yy'(2J-I)= (xx'-yy')I + (xy'+yx'+2yy')J$.
+
+\item  Soit $(x,y)\in\Rr^2$. 
+
+\begin{align*}\ensuremath
+M(x,y)\;\text{est inversible dans}\;E&\Leftrightarrow\exists(x',y')\in\Rr^2/;(xx'-yy')I + (xy'+yx'+2yy')J=I\\
+ &\Leftrightarrow\exists(x',y')\in\Rr^2/;\left\{
+ \begin{array}{l}
+ xx'-yy'=1\\
+ yx'+(x+2y)y'=0
+ \end{array}
+ \right.\;(\text{car la famille}\;(I,J)\;\text{est libre})\quad(*).
+\end{align*}
+
+Le déterminant de ce système d'inconnue $(x',y')$ est $x(x+2y)+y^2=(x+y)^2$.
+
+ 
+
+\textbullet~Si $x+y\neq0$, le système $(*)$ admet une et une seule solution. Dans ce cas, $M(x,y)$ est inversible dans $E$.
+
+\textbullet~Si $x+y=0$, le système $(*)$ s'écrit $\left\{
+ \begin{array}{l}
+ x(x'+y')=1\\
+ -x(x'+y')=0
+ \end{array}
+ \right.$ et n'a pas de solution. Dans ce cas, $M(x,y)$ n'est pas inversible dans $E$.
+ 
+ \begin{center}
+ \shadowbox{
+ $M(x,y)$ est inversible dans $E\Leftrightarrow x+y\neq0$.
+ }
+ \end{center}
+ 
+
+\textbf{Remarque.} Puisque $I\in E$, $M(x,y)$ est inversible dans $E$ si et seulement si $M(x,y)$ est inversible dans $\mathcal{M}_2(\Rr)$.
+
+\item  Posons $X= xI+yJ$, $(x,y)\in\Rr^2$. 
+
+  \begin{enumerate}
+  \item D'après 1), $X^2=(x^2-y^2)I+(2xy+2y^2)J$. Donc
+
+\begin{align*}\ensuremath
+X^2= I&\Leftrightarrow x^2-y^2 = 1\;\text{et}\;2xy+2y^2= 0\;(\text{car la famille}\;(I,J)\;\text{est libre})\\
+ &\Leftrightarrow (y = 0\;\text{et}\;x^2 = 1)\;\text{ou}\;(y = -x et 0 = 1)\Leftrightarrow(y = 0\;\text{et}\;x = 1)\;\text{ou}\;(y = 0\;\text{et}\;x = -1)\\
+  &\Leftrightarrow X = I\;\text{ou}\;X = -I.
+\end{align*}
+ 
+\begin{center}
+\shadowbox{
+$\mathcal{S}=\{I,-I\}$.
+}
+\end{center}
+
+  \item
+\begin{align*}\ensuremath
+X^2=0&\Leftrightarrow x^2-y^2 =0\;\text{et}\;2xy+2y^2= 0\Leftrightarrow (y = 0\;\text{et}\;x^2 = 0)\;\text{ou}\;(y = -x et 0 = 0)\Leftrightarrow y=-x.
+\end{align*}
+
+\begin{center}
+\shadowbox{
+$\mathcal{S}=\{x(I-J),\;x\in\Rr\}$.
+}
+\end{center}
+
+\textbf{Remarque.} L'équation $X^2=0$, de degré 2, admet une infinité de solutions dans $E$ ce qui montre une nouvelle fois que $(E,+,\times)$ n'est pas un corps.
+
+  \item 
+
+\begin{align*}\ensuremath
+X^2=X&\Leftrightarrow x^2-y^2 =x\;\text{et}\;2xy+2y^2= y\Leftrightarrow y(2x+2y-1)= 0\;\text{et}\;x^2-y^2=x\\
+ &\Leftrightarrow(y = 0\;\text{et}\;x^2= x)\;\text{ou}\;(2(x+y)=1\;\text{et}\;(x+y)(x-y)=x)\Leftrightarrow(X = 0\;\text{ou}\;X = I)\;\text{ou}\;(2(x+y)=1\;\text{et}\;x-y=2x)\\
+  &\Leftrightarrow X = 0\;\text{ou}\;X =I.
+\end{align*}
+
+\begin{center}
+\shadowbox{
+$\mathcal{S}=\{0,I\}$.
+}
+\end{center}
+  \end{enumerate}
+
+\item  Soit $n\in\Nn^*$. On pose $N=J-I=\left(
+\begin{array}{cc}
+0&1\\
+0&0
+\end{array}
+\right)$. Alors $M(x,y)=xI+y(I+N)=(x+y)I + yN$.
+
+Puisque $I$ et $N$ commutent, la formule du binôme de \textsc{Newton} fournit
+
+\begin{align*}\ensuremath
+(M(x,y))^n&=((x+y)I+yN)=(x+y)^nI +ny(x+y)^{n-1}N\;(\text{car}\;N^k=0\;\text{pour}\;k\geqslant 2)\\
+ &=\left(
+\begin{array}{cc}
+(x+y)^n&ny(x+y)^{n-1}\\
+0&(x+y)^n
+\end{array}
+\right).
+\end{align*}
+
+\begin{center}
+\shadowbox{
+$\forall n\in\Nn^*,\;(M(x,y))^n=\left(
+\begin{array}{cc}
+(x+y)^n&ny(x+y)^{n-1}\\
+0&(x+y)^n
+\end{array}
+\right)$.
+}
+\end{center}
+\end{enumerate}
+\fincorrection
+\finexercice

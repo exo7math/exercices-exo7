@@ -1,0 +1,39 @@
+\exercice{2387, mayer, 2003/10/01}
+\enonce  
+\begin{enumerate}
+\item Montrer qu'il existe une surjection continue de $\Rr $ sur
+$\mathbb{S}^1 =\{z\in \Cc \; ; \;\; |z|=1\}$ et qu'il n'existe pas
+d'injection continue de $\mathbb{S}^1$ dans $\Rr$.
+\item Montrer qu'il n'existe pas d'injection continue de $\Rr^2$
+dans $\Rr$.
+\end{enumerate}
+\finenonce
+
+\indication
+\begin{enumerate}
+  \item Pour la surjection, pensez à l'exponentielle ou aux sinus et cosinus...
+Pour l'injection, raisonner par l'absurde et utiliser la connexité du cercle privé d'un point.
+
+  \item   Raisonner par l'absurde et utiliser la connexité de $\Rr^2$ privé d'un point.
+\end{enumerate}
+\finindication
+
+\correction
+\begin{enumerate}
+  \item 
+    \begin{enumerate}
+      \item $\phi : \Rr \longrightarrow \mathbb{S}^1$ définie par $\phi(t)=e^{it}$ est une surjection continue.
+      \item $\mathbb{S}^1$ est un compact connexe donc, par l'absurde, si $\psi : \mathbb{S}^1 \longrightarrow \Rr$ est une injection continue alors $\psi(\mathbb{S}^1)$ est un compact connexe de $\Rr$ donc un segment compact $I$. Soit $y \in \mathring I$, comme $I$ est l'image de $\mathbb{S}^1$ alors il existe un unique $x \in \mathbb{S}^1$ tel que $f(x)=y$. L'application $f$ induit alors une bijection continue 
+$f : \mathbb{S}^1 \setminus \{ x \} \longrightarrow I \setminus \{ y \}$.
+Mais $\mathbb{S}^1 \setminus \{ x \}$ est connexe alors que son image par
+$f$, qui est $ I \setminus \{ y \}$ ne l'est pas (car $y\in \mathring I$).
+L'image d'un connexe par une application continue doit être un connexe, donc nous avons une contradiction.
+    \end{enumerate}
+
+
+  \item Si $\chi : \Rr^2 \longrightarrow \Rr$ est une injection continue. 
+Comme $\Rr^2$ est connexe $f(\Rr^2)=I$ est un connexe de $\Rr$ donc un segment
+(non réduit à un point !). Prenons $y$ un élément de $\mathring I$, soit $x\in \Rr^2$ tel que $f(x)=y$. Alors $\Rr^2 \setminus \{ x\}$ est connexe,  $I \setminus\{ y \}$ ne l'est pas, et $f$ est une bijection continue entre ces deux ensembles, d'o\`u une contradiction.
+\end{enumerate}
+\fincorrection
+\finexercice

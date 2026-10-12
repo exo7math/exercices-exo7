@@ -1,51 +1,44 @@
 \exercice{2561, tahani, 2009/04/01}
+
 \enonce
-Soit l'\'equation
-diff\'erentielle $$x'''-xx''=0$$ o\`u $x$ est une application
-trois fois d\'erivable, d\'efinie sur un intervalle ouvert de
-$\mathbb{R}$ et \`a valeurs dans $\mathbb{R}$.
+Soit l'équation différentielle
+\[
+  x'''-xx'' = 0
+\]
+où \( x \) est une application trois fois dérivable, définie sur un intervalle ouvert de \( \Rr \) et à valeurs dans \( \Rr \).
 \begin{enumerate}
-\item Mettre cette \'equation diff\'erentielle sous la forme
-canonique $y'(t)=f(t,y(t))$, o\`u $f$ est une application que l'on
-d\'eterminera. 
-\item Soient $t_0, a, b, c \in \mathbb{R}$. Montrer
-qu'il existe une unique solution maximale $\varphi$ de
-l'\'equation $(3)$ qui satisfasse aux conditions initiales
-$$\varphi(t_0)=a, \varphi'(t_0) \mbox{ et }
-\varphi''(t_0)=c.$$ 
-\item Soit $\varphi$ une telle solution
-maximale. Calculer la d\'eriv\'ee de la fonction $$t \rightarrow
-\varphi''(t)exp\left(- \int_{t_0}^t \varphi(u)du \right)$$ En
-d\'eduire que la fonction $\varphi$ est soit convexe, soit concave
-sur son intervalle de d\'efinition. D\'eterminer $\varphi$ dans le
-cas o\`u $\varphi''(t_0)=0$.
+  \item Mettre cette équation différentielle sous la forme canonique \( y'(t) = f(t,y(t)) \), où \( f \) est une application que l'on déterminera.
+
+  \item Soient \( t_0, a, b, c \in \Rr \). Montrer qu'il existe une unique solution maximale \( \varphi \) de l'équation \( (3) \) qui satisfasse aux conditions initiales
+        \[
+          \varphi(t_0) = a, \varphi'(t_0) = b \mbox{ et }
+          \varphi''(t_0) = c.
+        \]
+
+  \item Soit \( \varphi \) une telle solution maximale. Calculer la dérivée de la fonction
+        \[
+          t \rightarrow
+          \varphi''(t)exp\left(- \int_{t_0}^t \varphi(u)du \right)
+        \]
+        En déduire que la fonction \( \varphi \) est soit convexe, soit concave sur son intervalle de définition. Déterminer \( \varphi \) dans le cas où \( \varphi''(t_0) = 0 \).
 \end{enumerate}
-\finenonce 
+\finenonce
 
 \noindication
 
 \correction
 \begin{enumerate}
-\item Posons $y_1=x$, $y_2=x'=y_1'$, $y_3=x''=y_2'$. L'\'equation
-devient $y_3'-y_1y_3=0$ et donc en posant $f(t,y_1,y_2,y_3)=
-\left( \begin{array}{c} y_2 \\ y_3 \\ y_1y_3
-\end{array}\right)$ l'\'equation s'\'ecrit
-$$\left( \begin{array}{c} y_1' \\ y_2' \\ y_3'
-\end{array}\right) = f(t,y_1,y_2,y_3).$$
+  \item Posons \( y_1 = x \), \( y_2 = x' = y_1' \), \( y_3 = x'' = y_2' \). L'équation devient \( y_3'-y_1y_3 = 0 \) et donc en posant \( f(t,y_1,y_2,y_3) = \left( \begin{array}{c} y_2 \\ y_3 \\ y_1y_3
+          \end{array}\right) \) l'équation s'écrit
+        \[
+          \left( \begin{array}{c} y_1' \\ y_2' \\ y_3'
+            \end{array}\right) = f(t,y_1,y_2,y_3).
+        \]
 
-\item $f$ \'etant de classe $C^\infty$, elle est lipschitzienne
-par rapport \`a la deuxi\`eme variable $(y_1,y_2,y_3)$ et donc le
-th\'eor\`eme de Cauchy-Lipschitz permet de conclure. 
+  \item \( f \) étant de classe \( C^\infty \), elle est lipschitzienne par rapport à la deuxième variable \( (y_1,y_2,y_3) \) et donc le théorème de Cauchy-Lipschitz permet de conclure.
 
-\item La d\'eriv\'ee de la fonction donn\'ee est nulle. Par cons\'equent,
-elle est constante et donc, l'exponentielle \'etant strictement
-positive, le signe de $\varphi''$ est constant. Si cette constante
-est strictement positive, $\varphi$ est convexe, si elle est
-strictement n\'egative, $\varphi$ est concave. Si elle est nulle
-$\varphi''=0$ et donc $\varphi(t)=at+b$ qui est bien une solution
-de l'\'equation diff\'erentielle et v\'erifie $\varphi''(t_0)=0$.
-L'unicit\'e montre que toutes les solutions qui v\'erifient
-$\varphi''(t_0)=0$ sont bien de la forme $at+b$.
+  \item La dérivée de la fonction donnée est nulle. Par conséquent, elle est constante et donc, l'exponentielle étant strictement positive, le signe de \( \varphi'' \) est constant. Si cette constante est strictement positive, \( \varphi \) est convexe, si elle est strictement négative, \( \varphi \) est concave. Si elle est nulle \( \varphi'' = 0 \) et donc \( \varphi(t) = at+b \) qui est bien une solution de l'équation différentielle et vérifie \( \varphi''(t_0) = 0 \). L'unicité montre que toutes les solutions qui vérifient \( \varphi''(t_0) = 0 \) sont bien de la forme \( at+b \).
 \end{enumerate}
 \fincorrection
+
 \finexercice

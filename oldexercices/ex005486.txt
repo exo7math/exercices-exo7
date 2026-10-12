@@ -1,0 +1,96 @@
+\exercice{5486, rouget, 2010/07/10}
+\enonce[***I Matrices et déterminants de \textsc{Gram}]
+Soit $E$ un espace vectoriel euclidien de dimension $p$ sur $\Rr$ ($p\geq2$).
+Pour $(x_1,...,x_n)$ donné dans $E^n$, on pose $G(x_1,...,x_n)=(x_i|x_j)_{1\leq i,j\leq n}$ (matrice de \textsc{Gram})
+et $\gamma(x_1,...,x_n)=\mbox{det}(G(x_1 , ... , x_n))$ (déterminant de \textsc{Gram}).
+\begin{enumerate}
+\item  Montrer que $\mbox{rg}(G(x_1,...,x_n))=\mbox{rg}(x_1, ... ,x_n)$.
+\item  Montrer que $(x_1,...,x_n)$ est liée si et seulement si $\gamma(x_1,...,x_n)=0$ et que $(x_1,...,x_n)$ est libre si et seulement si $\gamma(x_1,...,x_n)>0$.
+\item  On suppose que $(x_1,...,x_n)$ est libre dans $E$ (et donc $n\leq p$). On pose $F=\mbox{Vect}(x_1,...,x_n)$.
+
+Pour $x\in E$, on note $p_F(x)$ la projection orthogonale de $x$ sur $F$ puis $d_F(x)$ la distance de $x$ à $F$ (c'est-à-dire $d_F(x)=||x-p_F(x)||$). Montrer que $d_F(x)=\sqrt{\frac{\gamma(x,x_1,...,x_n)}{\gamma(x_1,...,x_n)}}$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Soit $\mathcal{B}$ une base orthonormée de $E$ et $M=\mbox{Mat}_{\mathcal{B}}(x_1,...,x_n)$ ($M$ est une matrice de format $(p,n)$).
+Puisque $\mathcal{B}$ est orthonormée, le produit scalaire usuel des colonnes $C_i$ et $C_j$ est encore $x_i|x_j$.
+Donc, $\forall(i,j)\in\llbracket1,n\rrbracket^2,\;{^t}C_iC_j=x_i|x_j$ ou encore 
+
+\begin{center}
+\shadowbox{
+$G={^t}MM$.
+}
+\end{center}
+Il s'agit alors de montrer que $\mbox{rg}(M)=\mbox{rg}({^t}MM)$. Ceci provient du fait que $M$ et ${^t}MM$ ont même noyau. En effet, pour $X\in\mathcal{M}_{n,1}(\Rr)$, 
+
+$$X\in\mbox{Ker}M\Rightarrow MX=0\Rightarrow{^t}M\times MX=0\Rightarrow({^t}MM)X=0\Rightarrow X\in\mbox{Ker}({^t}MM)$$
+et
+
+\begin{align*}\ensuremath
+X\in\mbox{Ker}({^t}MM)&\Rightarrow{^t}MMX=0\Rightarrow{^t}X{^t}MMX=0\Rightarrow{^t}(MX)MX=0\Rightarrow||MX||^2=0\Rightarrow MX=0\\
+ &\Rightarrow X\in\mbox{Ker}M.
+\end{align*}
+Ainsi, $\text{Ker}(M)=\text{Ker}({^t}MM)=\text{Ker}(G(x_1,\ldots,x_n))$. Mais alors, d'après le théorème du rang, $\text{rg}(x_1,\ldots,x_n)=\text{rg}(M)=\text{rg}(G(x_1,\ldots,x_n))$.
+
+\begin{center}
+\shadowbox{
+$\text{rg}(G(x_1,\ldots,x_n))=\text{rg}(x_1,\ldots,x_n)$.
+}
+\end{center}
+ \item  Si la famille $(x_1,...,x_n)$ est liée, $\mbox{rg}(G)=\mbox{rg}(x_1,...,x_n)<n$, et donc, puisque $G$ est une matrice carrée de format $n$, $\gamma(x_1,...,x_n)=\mbox{det}(G)=0$.
+Si la famille $(x_1, ... ,x_n)$ est libre, $(x_1,...,x_n)$ engendre un espace $F$ de dimension $n$. Soient $\mathcal{B}$ une base orthonormée de $F$ et $M$ la matrice de la famille $(x_1,...,x_n)$ dans $\mathcal{B}$. D'après 1), on a $G={^t}MM$ et d'autre part, $M$ est une matrice carrée. Par suite,
+
+$$\gamma(x_1,...,x_n)=\mbox{det}({^t}MM)=\mbox{det}({^t}M)\mbox{det}(M)=(\mbox{det}M)^2>0.$$
+
+ \item  On écrit $x=x-p_F(x)+p_F(x)$. La première colonne de $\gamma(x,x_1,...,x_n)$ s'écrit~:
+
+$$\left(
+\begin{array}{c}
+||x||^2\\
+x|x_1\\
+x|x_2\\
+\vdots\\
+x|x_n
+\end{array}
+\right)=\left(
+\begin{array}{c}
+||x-p_F(x)+p_F(x)||^2\\
+x-p_F(x)+p_F(x)|x_1\\
+x-p_F(x)+p_F(x)|x_2\\
+\vdots\\
+x-p_F(x)+p_F(x)|x_n
+\end{array}
+\right)=\left(
+\begin{array}{c}
+||x-p_F(x)||^2\\
+0|x_1\\
+0|x_2\\
+\vdots\\
+0|x_n
+\end{array}
+\right)+\left(
+\begin{array}{c}
+||p_F(x)||^2\\
+p_F(x)|x_1\\
+p_F(x)|x_2\\
+\vdots\\
+p_F(x)|x_n
+\end{array}
+\right).$$  
+(en 1ère ligne, c'est le théorème de \textsc{Pythagore} et dans les suivantes, $x-p_F(x)\in F^\bot$). Par linéarité par rapport à la première colonne, $\gamma(x,x_1,...,x_n)$ est somme de deux déterminants. Le deuxième est  $\gamma(p_F(x),x_1,...,x_n)$ et est nul car la famille $(p_F(x),x_1,...,x_n)$ est liée. On développe le premier suivant sa première colonne et on obtient~:
+
+$$\gamma(x,x_1,...,x_n)=||x-p_F(x)||^2\gamma(x_1,...,x_n),$$
+ce qui fournit la formule désirée.
+
+\begin{center}
+\shadowbox{
+$\forall x\in E,\;d(x,F)=\|x-p_F(x)\|=\sqrt{\frac{\gamma(x,x_1,\ldots,x_n)}{\gamma(x_1,\ldots,x_n)}}$.
+}
+\end{center}
+\end{enumerate}
+\fincorrection
+\finexercice

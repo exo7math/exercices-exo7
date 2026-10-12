@@ -1,0 +1,55 @@
+\exercice{285, gourio, 2001/09/01}
+\video{goNvkUJGM88}
+\enonce
+\begin{enumerate}
+\item Montrer que le reste de la division euclidienne par $8$ du carr\'{e} de tout
+nombre impair est $1$.
+\item Montrer de m\^{e}me que tout nombre pair v\'{e}rifie $x^{2}=0 \pmod{8} $ ou
+$x^{2}=4 \pmod{8}.$
+\item Soient $a,b,c$ trois entiers impairs. D\'{e}terminer le reste modulo $8$ de
+$a^{2}+b^{2}+c^{2}$ et celui de $2(ab+bc+ca).$
+\item En d\'{e}duire que ces deux nombres ne sont pas des carr\'{e}s puis que
+$ab+bc+ca$ non plus.
+\end{enumerate}
+
+\finenonce 
+
+\indication
+\begin{enumerate}
+  \item \'Ecrire $n=2p+1$.
+  \item  \'Ecrire $n=2p$ et discuter selon que $p$ est pair ou impair.
+  \item Utiliser la premi\`ere question.
+  \item Par l'absurde supposer que cela s'\'ecrive comme un carr\'e, par exemple $a^2+b^2+c^2=n^2$
+puis discuter selon que $n$ est pair ou impair.
+\end{enumerate}
+\finindication
+
+\correction
+\begin{enumerate}
+  \item Soit $n$ un nombre impair, alors il s'\'ecrit $n=2p+1$ avec $p\in \Nn$.
+Maintenant $n^2 = (2p+1)^2 = 4p^2+4p+1 = 4p(p+1) + 1$. Donc $n^2 \equiv 1 \pmod{8}$.
+  \item Si $n$ est pair alors il existe $p\in \Nn$ tel que $n=2p$. Et $n^2 = 4p^2$.
+Si $p$ est pair alors $p^2$ est pair et donc $n^2 = 4p^2$ est divisible par $8$, donc
+$n^2 \equiv 0 \pmod{8}$. Si $p$ est impair alors $p^2$ est impair et donc $n^2 = 4p^2$ est divisible par $4$ mais pas par $8$, donc
+$n^2 \equiv 4 \pmod{8}$. 
+  \item Comme $a$ est impair alors d'apr\`es la premi\`ere question $a^2 \equiv 1 \pmod{8}$, et de m\^eme
+$c^2 \equiv 1 \pmod{8}$, $c^2 \equiv 1 \pmod{8}$. Donc $a^2+b^2+c^2 \equiv 1+1+1 \equiv 3 \pmod{8}$. 
+Pour l'autre reste, \'ecrivons $a = 2p+1$ et $b=2q+1$, $c=2r+1$, alors $2ab = 2(2p+1)(2q+1) = 8pq + 4(p+q)+2$.
+Alors $2(ab+bc+ca)= 8pq+8qr+8pr + 8(p+q+r)+6$, donc $2(ab+bc+ca) \equiv 6 \pmod{8}$.
+  \item Montrons par l'absurde que le nombre $a^2+b^2+c^2$ n'est pas le carr\'e d'un nombre entier.
+Supposons qu'il existe $n\in \Nn$ tel que $a^2+b^2+c^2=n^2$. Nous savons que 
+$a^2+b^2+c^2 \equiv 3 \pmod{8}$. Si $n$ est impair alors $n^2 \equiv 1 \pmod{8}$ et si $n$ est pair alors
+$n^2 \equiv 0 \pmod{8}$ ou $n^2 \equiv 4 \pmod{8}$. Dans tous les cas $n^2$ n'est pas congru \`a $3$ modulo $8$.
+Donc il y a une contradiction. La conclusion est que l'hypoth\`ese de d\'epart est fausse donc 
+$a^2+b^2+c^2$ n'est pas un carr\'e.
+Le m\^eme type de raisonnement est valide pour $2(ab+bc+ca)$.
+
+Pour $ab+bc+ca$ l'argument est similaire : 
+d'une part $2(ab+bc+ca)\equiv 6 \pmod{8}$
+et d'autre part si, par l'absurde, on suppose $ab+bc+ca=n^2$ alors
+selon la parit\'e de $n$ nous avons $2(ab+bc+ca)\equiv 2n^2 \equiv 2 \pmod{8}$
+ou \`a $0 \pmod{8}$. Dans les deux cas cela aboutit \`a une contradiction. Nous avons montrer que
+$ab+bc+ca$ n'est pas un carr\'e.
+\end{enumerate}
+\fincorrection
+\finexercice

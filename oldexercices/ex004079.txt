@@ -1,0 +1,24 @@
+\exercice{4079, quercia, 2010/03/11}
+\enonce[Matexo]
+
+Soit $k\in\R^*$ fixé. On considère :
+$E=\{f\in\mathcal{C}^2([0,1],\R)\text{ tq } f(0) = 0 \text{ et } f(1)=3\}$.
+
+Déterminer $\displaystyle \inf_{f\in E}  \int_{t=0}^1 (f'(t)+kf(t))^2\,d t$.
+{\it Indication~: poser $f'+kf = g$ et calculer $f(1)$ en fonction de~$g$.}
+
+\finenonce
+
+\noindication
+
+\correction
+$f(1) = e^{-k} \int_{t=0}^1 g(t)e^{kt}\,d t$.
+
+Avec Cauchy-Schwarz on obtient
+ $ \int_{t=0}^1 (f'(t)+kf(t))^2\,d t \ge
+            \frac{2k}{1-e^{-2k}}f(1)^2 = 9\frac{2k}{1-e^{-2k}}$.
+
+Il y a égalité pour $f(t) = 3\frac{e^{kt}-e^{-kt}}{e^{k}-e^{-k}}$.
+\fincorrection
+
+\finexercice

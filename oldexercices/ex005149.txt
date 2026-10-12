@@ -1,0 +1,34 @@
+\exercice{5149, rouget, 2010/06/30}
+\enonce[***I]
+\label{exo:suprou4bis}
+Soient $n\in\Nn^*$ et $a_1$, $a_2$,..., $a_n$, $n$ réels strictement positifs.
+
+Montrer que $(a_1+a_2+ ... +a_n)(\frac{1}{a_1}+...+\frac{1}{a_n})\geq n^2$ (développer et penser à
+$f(x)=x+\frac{1}{x}$).
+\finenonce
+
+\noindication
+
+\correction
+Soient $n\in\Nn^*$ et $a_1$, $a_2$,..., $a_n$, $n$ réels strictement positifs.
+
+\begin{align*}
+\left(\sum_{i=1}^{n}a_i\right)\left(\sum_{j=1}^{n}\frac{1}{a_j}\right)&=\sum_{1\leq i,j\leq n}^{}\frac{a_i}{a_j}
+=\sum_{i=1}^{n}\frac{a_i}{a_i}+\sum_{1\leq i<j\leq n}^{}(\frac{a_i}{a_j}+\frac{a_j}{a_i})
+=n+\sum_{1\leq i<j\leq n}^{}(\frac{a_i}{a_j}+\frac{a_j}{a_i})
+\end{align*}
+
+Pour $x>0$, posons alors $f(x)=x+\frac{1}{x}$. $f$ est dérivable sur $]0,+\infty[$ et pour $x>0$,
+$f'(x)=1-\frac{1}{x^2}=\frac{(x-1)(x+1)}{x^2}$. $f$ est donc strictement décroissante sur $]0,1]$ et strictement
+croissante sur $[1,+\infty[$. $f$ admet ainsi un minimum en $1$. Par suite,
+
+$$\forall x>0,\;f(x)\geq f(1)=1+\frac{1}{1}=2.$$
+
+(\textbf{Remarque.} L'inégalité entre moyenne géométrique et arithmétique permet aussi d'obtenir le résultat~:~
+$$\frac{1}{2}(x+\frac{1}{x})\geq\sqrt{x.\frac{1}{x}}=1.)$$
+
+On en déduit alors que
+
+$$\sum_{i=1}^{n}a_i\sum_{j=1}^{n}\frac{1}{a_j}\geq n+\sum_{1\leq i<j\leq n}^{}2=n+2\frac{n^2-n}{2}=n^2.$$
+\fincorrection
+\finexercice

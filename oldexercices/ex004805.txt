@@ -1,0 +1,34 @@
+\exercice{4805, quercia, 2010/03/16}
+\enonce[Centrale MP 2006]
+$E$ est l'ensemble des fonctions de $\R$ dans $\R$ continues et born{\'e}es sur $\R$.
+
+Pour $p \in \N$ et $f \in E$ on pose : 
+$N_{p}(f) = \sup\{|t^{p} e^{-|t|} f(t)|,\ t\in\R\}$.
+
+\begin{enumerate}
+  \item Montrer que $N_{p}$ est une norme sur $E$.
+
+  \item Soit $c \in \R$ et ${P_{c}} : E \to \R, f \mapsto {f(c).}$
+    {\'E}tudier la continuit{\'e} de $P_c$ sur $(E,N_p)$.
+    
+
+  \item Montrer que, pour $p$ et $q$ distincts dans $\N$, les normes $N_p$ et $N_q$ ne sont pas {\'e}quivalentes.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item 
+  \item Si $c\ne 0$ alors $P_c$ est continue pour toutes les normes $N_p$
+    et $\|\!|P_c|\!\|_{N_p}=|c|^{-p}e^{|c|}$.
+    Par contre $P_0$ n'est continue que pour~$N_0$ car si $p>0$ alors
+    $N_p(x \mapsto e^{-n|x|})=\frac{p^pe^{-p}}{(n+1)^p}\xrightarrow[n\to\infty]{}0$
+    donc la suite $(x \mapsto e^{-n|x|})$ converge vers la fonction nulle
+    pour $N_p$, mais $P_0(x \mapsto e^{-n|x|})=1\rlap{\hskip9pt/}\to0$.
+  \item Si $p<q$ alors $N_p(x \mapsto e^{-n|x|})/N_q(x \mapsto e^{-n|x|}) \to \infty$ losrque $n\to \infty$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

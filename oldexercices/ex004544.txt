@@ -1,0 +1,42 @@
+\exercice{4544, quercia, 2010/03/14}
+\enonce[Développement de $\coth(x)$]
+
+\begin{enumerate}
+  \item Décomposer en éléments simples sur $\C$ la fractions rationnelle~:
+    $F_n(X) = \frac1{(1+X/n)^n-1}$.
+
+  \item En déduire pour $x\in\R^*$~:
+    $\coth x = \frac1{e^{2x}-1} - \frac1{e^{-2x}-1} = \frac1x + \sum_{k=1}^\infty\frac{2x}{x^2+k^2\pi^2}$.
+
+  \item En déduire la valeur de $\zeta(2)$.
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $F_n(X) = \sum_{k=0}^{n-1}\frac{e^{2ik\pi/n}}{X+n(1-e^{2ik\pi/n})}$.
+  \item     $F_n(2x) - F_n(-2x) = \sum_{k=0}^{n-1}\frac{4xe^{2ik\pi/n}}{4x^2-n^2(1-e^{2ik\pi/n})^2}
+                        = \sum_{k=0}^{n-1}\frac{x}{x^2e^{-2ik\pi/n}+n^2\sin(k\pi/n)^2}$.
+
+    Supposons $n$ impair, et regroupons les termes conjugués obtenus pour $k$ et $n-k$~:
+
+    $F_n(2x) - F_n(-2x) = \frac1x + \sum_{k=1}^{(n-1)/2}\Bigl(\underbrace{
+    \frac{x}{x^2e^{-2ik\pi/n}+n^2\sin(k\pi/n)^2} + \frac{x}{x^2e^{2ik\pi/n}+n^2\sin(k\pi/n)^2}
+    }_{=u(k,n,x)}\Bigr)$.
+
+    On transforme la somme en série de $k=1$ à $k=\infty$ en posant $u(k,n,x) = 0$
+    si $k>(n-1)/2$, puis on passe à la limite, sous réserve de justification,
+    dans cette série pour $n\to\infty$, ce qui donne la formule demandée.
+    
+    Justification de l'interversion limite-série~: en utilisant $\sin(t)\ge \frac{2t}{\pi}$
+    pour $0\le t\le \frac{\pi}2$ on a $|u(k,n,x)| \le \frac{2|x|}{4k^2-x^2}$ pour tout
+    $k\ge |x/2|$, donc il y a convergence normale par rapport à $n$, à $x$ fixé.
+  \item $\sum_{k=1}^\infty\frac{2}{x^2+k^2\pi^2} = \frac{\coth(x)}x-\frac1{x^2}$
+    est normalement convergente sur $\R$, on peut passer à la limite pour $x\to 0$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

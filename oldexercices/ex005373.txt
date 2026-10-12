@@ -1,0 +1,62 @@
+\exercice{5373, rouget, 2010/07/06}
+\enonce[***I Dérivée d'un déterminant]
+Soient $a_{i,j}$ ($(i,j)$ élément de $\{1,...,n\}^2$) $n^2$ fonctions de $\Rr$ dans $\Rr$, dérivables sur $\Rr$ et $A=(ai,j)_{1\leq i,j\leq n}$. Calculer la dérivée de la fonction $x\mapsto\mbox{det}(A(x))$.
+
+Applications. Calculer \begin{enumerate}
+ \item  $\left|\begin{array}{ccccc}
+x+1&1&\ldots& &1\\
+1&x+1&\ddots& &\vdots\\
+\vdots&\ddots&\ddots&\ddots&\vdots\\
+\vdots& &\ddots&\ddots&1\\
+1&\ldots&\ldots&1&x+1
+\end{array}
+\right|$   \item  $\left|\begin{array}{ccccc}
+x+a_1&x&\ldots& &x\\
+x&x+a_2&\ddots& &\vdots\\
+\vdots&\ddots&\ddots&\ddots&\vdots\\
+\vdots& &\ddots&\ddots&x\\
+x&\ldots&\ldots&x&x+a_n
+\end{array}
+\right|$
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{align*}\ensuremath
+(\mbox{det}A)'&=\left(\sum_{\sigma\in S_n}^{}\varepsilon(\sigma)a_{\sigma(1),1}a_{\sigma(2),2}...a_{\sigma(n),n}\right)'=\sum_{\sigma\in S_n}^{}\varepsilon(\sigma)\left(\sum_{k=1}^{n}a_{\sigma(1),1}...a_{\sigma(k),k}'...a_{\sigma(n),n}\right)\\
+ &=\sum_{k=1}^{n}\sum_{\sigma\in S_n}^{}\varepsilon(\sigma)a_{\sigma(1),1}...a_{\sigma(k),k}'...a_{\sigma(n),n}
+=\sum_{k=1}^{n}\mbox{det}(C_1,...,C_k',...,C_n)
+\end{align*}
+\textbf{Applications.}
+\begin{enumerate}
+ \item  Soit $\Delta_n(x)=\left|\begin{array}{ccccc}
+x+1&1&\ldots& &1\\
+1&x+1&\ddots& &\vdots\\
+\vdots&\ddots&\ddots&\ddots&\vdots\\
+\vdots& &\ddots&\ddots&1\\
+1&\ldots&\ldots&1&x+1
+\end{array}
+\right|$. $\Delta_n$ est un polynôme dont la dérivée est d'après ce qui précède, $\Delta_{n}'=\sum_{k=1}^{n}\delta_k$ où $\delta_k$ est le déterminant déduit de $\Delta_n$ en remplaçant sa $k$-ème colonne par le $k$-ème vecteur de la base canonique de $M_{n,1}(\Kk)$. En développant $\delta_k$ par rapport à sa $k$-ème colonne, on obtient $\delta_k=\Delta_{n-1}$ et donc $\Delta_{n}'=n\Delta_{n-1}$.
+Ensuite, on a déjà $\Delta_1=X+1$ puis $\Delta_2=(X+1)^2-1=X^2+2X$ ...
+Montrons par récurrence que pour $n\geq1$, $\Delta_n=X^n+nX^{n-1}$.
+C'est vrai pour $n=1$ puis, si pour $n\geq1$, $\Delta_n=X^n+nX^{n-1}$ alors $\Delta_{n+1}'=(n+1)X^n+(n+1)nX^{n-1}$ et, par intégration,  $\Delta_{n+1}=X^{n+1}+(n+1)X^n+\Delta_{n+1}(0)$. Mais, puisque $n\geq1$, on a $n+1\geq2$ et $\Delta_{n+1}(0)$ est un déterminant ayant au moins deux colonnes identiques. Par suite, $\Delta_{n+1}(0)=0$ ce qui montre que $\Delta_{n+1}=X^{n+1}+(n+1)X^n$. Le résultat est démontré par récurrence.
+
+\begin{center}
+\shadowbox{
+$\forall n\in\Nn^*,\;\Delta_n=x^n+nx^{n-1}$.
+}
+\end{center}
+ \item  Soit $\Delta_n(x)=\left|\begin{array}{ccccc}
+x+a_1&x&\ldots& &x\\
+x&x+a_2&\ddots& &\vdots\\
+\vdots&\ddots&\ddots&\ddots&\vdots\\
+\vdots& &\ddots&\ddots&x\\
+x&\ldots&\ldots&x&x+a_n
+\end{array}
+\right|$. $\Delta_n=\mbox{det}(a_1e_1+xC,...,a_ne_n+xC)$ où $e_k$ est le $k$-ème vecteur de la base canonique de $M_{n,1}(\Kk)$ et $C$ est la colonne dont toutes les composantes sont égales à $1$. Par linéarité par rapport à chaque colonne, $\Delta_n$ est somme de $2^n$ déterminants mais dès que $C$ apparait deux fois, le déterminant correspondant est nul. Donc, $\Delta_n=\mbox{det}(a_1e_1,...,a_ne_n)+\sum_{}^{}\mbox{det}(a_1e_1,...,xC,...,a_ne_n)$. Ceci montre que $\Delta_n$ est un polynôme de degré inférieur ou égal à $1$.
+La formule de \textsc{Taylor} fournit alors : $\Delta_n=\Delta_n(0)+X\Delta_{n}'(0)$. Immédiatement, $\Delta_n(0)=\prod_{k=1}^{n}a_k=\sigma_n$ puis $\Delta_{n}'(0)=\sum_{k=1}^{n}\mbox{det}(a_1e_1,...,C,...,a_ne_n)=\sum_{k=1}^{n}\prod_{i\neq k}^{}a_i=\sigma_{n-1}$. Donc, $\Delta_n=\sigma_n+X\sigma_{n-1}$.
+\end{enumerate}
+\fincorrection
+\finexercice

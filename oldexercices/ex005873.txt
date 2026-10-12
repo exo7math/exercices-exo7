@@ -1,0 +1,29 @@
+\exercice{5873, rouget, 2010/10/16}
+\enonce[**]
+Montrer que $\forall A\in\mathcal{M}_n(\Rr)$, $\text{exp}(A)$ est un polynôme en $A$.
+\finenonce
+
+\noindication
+
+\correction
+Soit $A\in\mathcal{M}_n(\Rr)$. Soit $k\in\Nn$. Puisque $\chi_A$ est de degré $n$, la division euclidienne de $X^k$ par $\chi_A$ s'écrit
+
+\begin{center}
+$X^k=Q_k\times\chi_A+a_{n-1}^{(k)}X^{n-1}+\ldots+a_1^{(k)}X+a_0^{(k)}$ où $Q_k\in\Rr[\Cc]$ et $(a_0^{(k)},\ldots,a_{n-1}^{(k)})\in\Cc^n$.
+\end{center}
+
+Le théorème de \textsc{Cayley}-\textsc{Hamilton} montre alors que $A^k=a_{n-1}^{(k)}A^{n-1}+\ldots+a_1^{(k)}A+a_0^{(k)}I_n$.
+
+Ainsi, $\forall k\in\Nn$, $A^k\in\text{Vect}(A^{n-1},\ldots,A,I_n)$ puis $\forall p\in\Nn$, $\sum_{k=0}^{p} \frac{A^k}{k!}\in\text{Vect}(A^{n-1},A^{n-2},\ldots,A,I_n)$. Enfin, puisque
+
+$\text{Vect}(A^{n-1},A^{n-2},\ldots,A,I_n)$ est un fermé de $\mathcal{M}_n(\Cc)$ en tant que sous-espace vectoriel d'un espace vectoriel de dimension finie, $\text{exp}(A)=\lim_{p \rightarrow +\infty}\sum_{k=0}^{p} \frac{A^k}{k!}\in\text{Vect}(A^{n-1},A^{n-2},\ldots,A,I_n)$.
+
+On a montré que
+
+\begin{center}
+\shadowbox{
+$\forall A\in\mathcal{M}_n(\Cc)$, $\text{exp}(A)\in\Cc_{n-1}[A]$.
+}
+\end{center}
+\fincorrection
+\finexercice

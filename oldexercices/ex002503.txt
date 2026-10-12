@@ -1,0 +1,80 @@
+\exercice{2503, queffelec, 2009/04/01}
+\enonce 
+Soit $f$ une application
+$f$ de $E$ dans $F$ espaces vectoriels norm\'es de dimension
+finie.
+
+
+ On rappelle les implica\-tions suivantes : si $x_0\in E$,  ``$f$ de
+classe $C^1$ en $x_0$'' $\Rightarrow$ ``$f$ diff\'erentiable en
+$x_0$'' $\Rightarrow$ ``$f$ continue en $x_0$''.
+ On sait de m\^eme que ``$f$ diff\'erentiable en
+$x_0$'' $\Rightarrow$ ``$f$ admet des d\'eriv\'ees partielles en
+$x_0$'' montrer que les r\'eciproques sont fausses en g\'en\'eral
+en s'inspirant de :
+
+$$f(x)= \left
+\{\begin{array}{ccc}
+        & x^2\sin{\frac 1 x}+y^2\sin{\frac 1 y} & {\rm si}\ \ xy\neq0\\
+        & x^2\sin{\frac 1 1 x}     &{\rm si}\ \ y=0\\
+
+        & y^2\sin{\frac 1 y}     &{\rm si}\ \ x=0\\
+        &0      &{\rm en}\ \ (0,0)\\
+
+ \end{array}\right.$$
+
+
+
+ou de
+$$f(x)= \left \{\begin{array}{ccc}
+        & {\frac{xy^2}{x^2+y^2}}& {\rm si}\ \ (x,y)\neq(0,0)\\
+        &0    &{\rm si}\ \ (x,y)=(0,0)\\
+  \end{array}\right.$$
+\finenonce 
+
+\noindication
+
+\correction
+\begin{enumerate}
+
+\item (Etude en $0$). $|sin(1/x)| \leq 1$ par cons\'equent
+$|x^2sin(1/x)| \leq x^2$. De m\^eme $|y^2sin(1/y)| \leq y^2$. Par
+cons\'equent
+$$|f(x,y)| \leq x^2+y^2 \leq (\sqrt{x^2+y^2})^2 \leq (||(x,y)||_2)^2$$ Et donc $$\lim_{||(x,y)||
+\rightarrow 0}|f(x)-f(0)|=0$$ et donc $f$ est continue à
+l'origine. En remarquant que $||(x,y)||_2^2=o(||(x,y)-(0,0)||_2)$
+on a $f(x,y)=0 +o(||(x,y)-(0,0)||_2)$ et donc $f$ est
+diff\'erentiable en $0$ et $$Df(0)=0.$$ Par cons\'equent $f$ admet
+des d\'eriv\'ees partielles dans toutes les directions \`a
+l'origine qui sont nulles. La fonction $f$ n'est pas contre par de
+classe $C^1$ \`a l'origine. Il suffit de remarquer que la
+d\'eriv\'ee partielle $\frac{\partial f}{\partial x}$ sur la
+droite $y=0$ n'est pas continue en $0$.
+
+\item Pour $(x,y) \neq (0,0)$, $f$ est continue en $(x,y)$ et même
+de classe $C^\infty$ en tant que compos\'es sommes, produits et
+quotient de telles fonctions. Il reste \`a \'etudier $f$ \`a
+l'origine. Or, $$|f(x,y)|=\frac{|xy^2|}{x^2+y^2}\leq
+\frac{|x|(x^2+y^2)}{x^2+y^2} \leq |x| \leq ||(x,y)||_2.$$ Ainsi,
+$f$ est continue \`a l'origine et y tend vers $0$.
+
+Montrons par l'absurde que $f$ n'est pas d\'erivable \`a
+l'origine. Notons $Df(0)$ la (suppos\'ee) diff\'erentielle de $f$
+\`a l'origine. L'application lin\'eaire $Df(0)$ s'obtient par la
+calcul de l'image de vecteurs de la base de $\mathbb{R}^2$.
+Calculons pour `les d\'eriv\'ees directionnelles de $f$ \`a
+l'origine: $$D_{(1,0)}f(0)=[Df(0)]((1,0))= \lim_{h \rightarrow 0}
+\frac{f(0+h(1,0))-f(0)}{h}=\lim_{h \rightarrow 0}
+\frac{f(h,0)}{h}=\lim_{h \rightarrow 0} 0=0.$$
+$$D_{(0,1)}f(0)=[Df(0)]((0,1))= \lim_{h \rightarrow 0}
+\frac{f(0+h(0,1))-f(0)}{h}=\lim_{h \rightarrow 0}
+\frac{f(0,h)}{h}=\lim_{h \rightarrow 0} 0=0.$$ Par cons\'equent,
+on a n\'ecessairement $$Df(0)=0$$
+Or,$$D_{(1,1)}f(0)=[Df(0)]((1,1))= \lim_{h \rightarrow 0}
+\frac{f(0+h(1,1))-f(0)}{h}=\lim_{h \rightarrow 0}
+\frac{f(h,h)}{h}=\lim_{h \rightarrow 0}
+\frac{\frac{h^3}{2h^2}}{h}=\frac{1}{2} \neq 0$$ ce qui donne la
+contradiction recherch\'ee.
+\end{enumerate}
+\fincorrection
+\finexercice

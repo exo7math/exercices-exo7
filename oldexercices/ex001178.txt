@@ -1,0 +1,50 @@
+\exercice{1178, ridde, 1999/11/01}
+\video{LKkeqctcOMw}
+\enonce
+Trouver les solutions de
+$$\left\{ \begin{array}{l} 3x + 2z = 0 \\ 3y + z + 3t = 0 \\ x + y + z + t = 0 \\
+2x-y + z-t = 0 \end{array}\right.$$
+\finenonce
+
+\noindication
+
+\correction
+On commence par simplifier le système :
+\begin{itemize}
+  \item on place la ligne $L_3$ en première position pour le pivot de Gauss ;
+  \item on réordonne les variables dans l'ordre : $y,t,x,z$ pour profiter des lignes déjà simples.
+\end{itemize}
+$$
+  \left\{
+    \begin{array}{rcrcrcrcl}
+y &+& t &+& x &+& z &=&  0  \\
+3y &+& 3t &&  &+& z &=&  0  \\
+-y &-& t &+& 2x &+& z &=&  0  \\
+ &&  && 3x &+& 2z &=&  0  \\
+    \end{array}\right.
+$$
+On commence le pivot de Gauss avec les opération $L_2 \leftarrow L_2-3L_1$ et
+$L_3\leftarrow L_3+L_1$ pour obtenir :
+$$
+  \left\{
+    \begin{array}{rcrcrcrcl}
+y &+& t &+& x &+& z &=&  0  \\
+ &&  &-& 3x &-& 2z &=&  0  \\
+ &&  && 3x &+& 2z &=&  0  \\
+ &&  && 3x &+& 2z &=&  0  \\
+    \end{array}\right.
+$$
+Les $3$ dernières lignes sont identiques, on se ramène donc à un système avec $2$ équations et $4$ inconnues :
+$$
+  \left\{
+    \begin{array}{rcrcrcrcl}
+y &+& t &+& x &+& z &=&  0  \\
+ &&  && 3x &+& 2z &=&  0  \\
+    \end{array}\right.
+$$
+Nous choisissons $x$ et $y$ comme paramètres, alors $z=-\frac32x$
+et $t = -x-y-z = \frac12x-y$.
+Les solutions du système sont donc les 
+$$\bigg\{ \big(x,y,z=-\frac32x,t=\frac12x-y\big) \mid x,y \in \Rr\bigg\}$$
+\fincorrection
+\finexercice

@@ -1,0 +1,82 @@
+\exercice{2288, barraud, 2008/04/24}
+\addcommand{\usepackage[all]{xy}}
+\enonce
+\label{ex:bar49}
+\begin{enumerate}
+  \item Soit $A$ un anneau principal, $I$ un id\'eal
+de $A$. Montrer que  tous les id\'eaux de l'anneau quotient $A/I$ 
+sont  principaux.
+  \item Trouver tous les id\'eaux des anneaux suivants:
+$\Zz/n\Zz$, 
+$\Qq[x]/(f)$ o\`u $(f)$ est l'id\'eal principal engendr\'e par 
+un polyn\^ome $f$. 
+  \item Trouver les id\'eaux maximaux de $\Zz /n\Zz$ et de $\Qq[x]/(f)$.
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+ \begin{enumerate}
+  \item 
+    Soit $\mathcal{J}$ un idéal de $A/I$. Soit $\pi$ la projection
+    canonique $A\to A/I$, et $J=\pi^{-1}(\mathcal{J})$. $J$ est un idéal
+    de $A$ qui est principal donc $\exists a\in A, J=(a)$. Montrons que
+    $\mathcal{J}=(\pi(a))$.
+
+    On a $\pi(a)\in\mathcal{J}$ donc $(\pi(a))\subset\mathcal{J}$. Soit
+    $\alpha\in\mathcal{J}$, et $b$ un représentant de $\alpha$, i.e.
+    $b\in A$ et $\pi(b)=\alpha$. Alors $b\in J=(a)$, donc $\exists k\in
+    A, b=ka$. Alors $\pi(b)=\pi(ka)=\pi(k)\pi(a)$, donc
+    $\pi(b)\in(\pi(a))$. Donc $\mathcal{J}\subset(\pi(a))$.
+
+    Finalement, $\mathcal{J}=(\pi(a))$. On en déduit que $A/I$ est
+    principal.
+
+  \item
+    \begin{itemize}
+    \item $\Zz/n\Zz$~:
+      Soit $I$ un idéal de $\Zz/n\Zz$. $I$ est principal, donc $\exists
+      a\in\Zz, I=(\bar{a})$. Or $(\bar{a}) =
+      \{\alpha\bar{a},\alpha\in\Zz/n\Zz\} = \{\bar{p}\bar{a},p\in\Zz\} =
+      \{\overline{pa},p\in\Zz\}$. Donc $\pi^{-1}(I)=
+      \{pa+qn,(p,q)\in\Zz^{2}\}$ est l'idéal engendré sur $\Zz$ par $a$
+      et $n$ donc l'idéal engendré par $d=(\pgcd(n,a))$. On en déduit que
+      $I=(\bar{d})$. En particulier, $I$ est engendré par un diviseur de
+      $n$.
+
+      Soit maintenant $d_{1}$ et $d_{2}$ deux diviseurs (positifs) de $n$
+      tels que $(\bar{d_{1}})=(\bar{d_{2}})$. On a
+      $\pi^{-1}((d_{1}))=d_{1}\Zz=d_{2}\Zz$ donc $d_{1}=d_{2}$.
+
+      Ainsi, les idéaux de $\Zz/n\Zz$ sont engendrés par les diviseurs de
+      $n$, et deux diviseurs distincts engendrent deux idéaux distincts~:
+      il y a donc autant d'idéaux dans $\Zz/n\Zz$ que de diviseurs de $n$.
+
+    \item $\Qq[X]/(f)$~:
+      On raisonne de la même manière~: la remarque clef étant si
+      $I=(\bar{g})$ est un idéal de $\Qq[X]/(f)$, alors
+      $\pi^{-1}(I)=(f,g)=(\pgcd(f,g))$.
+    \end{itemize}
+
+  \item
+    Les idéaux maximaux sont ceux pour lesquels le quotient est un corps,
+    (donc aussi ceux pour lesquels le quotient est intègre puisque
+    $\Zz/n\Zz$ est fini). On a le diagramme suivant ($I=(\bar{d})$)~:
+    $$    
+    \xymatrix{%
+       \Zz      \ar[r]^{\pi_{1}}\ar[d]^{\pi}\ar@(ur,ul)[rr]^{\pi_{2}\circ\pi_{1}} & 
+       \Zz/n\Zz \ar[r]^{\pi_{2}}&(\Zz/n\Zz)/I \\ 
+       \Zz/d\Zz \ar[urr]_{\sim}
+     }%
+     $$
+     En effet, $\pi_{1}$ et $\pi_{2}$ sont des morphismes d'anneaux, et
+     $\ker(\pi_{2}\circ\pi_{1})=d\Zz$. Donc $(\Zz/n\Zz)/I$ est un corps
+     ssi $d$ est premier. 
+     
+     De même, $(\Qq[X]/(f))/I$ est un corps ssi $I=(\bar{g})$ où $g$ est
+     un facteur premier de $f$.
+     
+  \end{enumerate}
+\fincorrection
+\finexercice

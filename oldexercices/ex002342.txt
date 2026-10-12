@@ -1,0 +1,35 @@
+\exercice{2342, queffelec, 2003/10/01}
+\enonce
+On va montrer que l'ensemble $D$ des r\'eels de la forme $p+q\sqrt 2$ o\`u $p$ et
+$q$ d\'ecrivent ${\Zz}$, est dense dans ${\Rr}$.
+\begin{enumerate}
+\item Remarquer que $D$ est stable par addition et multiplication.
+
+\item Posons $u=\sqrt 2 -1$; montrer que pour tous $a<b$, on peut trouver $n\geq 1$
+tel que $0<u^n<b-a$, puis $m\in \Zz$ v\'erifiant $a<mu^n<b$.
+
+ En d\'eduire le r\'esultat.
+\end{enumerate}
+
+\finenonce
+
+\indication
+Pour trouver $m$, que prendriez-vous si on voulait seulement $m\in \Rr$ ?
+\finindication
+
+\correction
+\begin{enumerate}
+  \item Soient $d = p+q \sqrt 2$ et $d'=p'+q'\sqrt 2$ deux éléments de $D$.
+Alors $d+d'=(p+p')+(q+q')\sqrt 2$ est un élément de $D$ et $dd'=
+(pp'+2qq')+(pq'+p'q)\sqrt 2$ aussi.
+  
+  \item On a $u < 1$ donc $u^k$ tend vers $0$ quand $k$ tend vers $+\infty$.
+Donc pour $\epsilon = b-a$, il existe $n \in \Nn$ tel que si $k \ge n$ on
+a $u^k < \epsilon = b-a$. En particulier $u^n < b-a$. Si on cherchait un réel alors $r = \frac a {u^n} + 1$ conviendrait, mais on cherche un entier, posons $m = E(\frac a {u^n})+1$. Alors $m-1 \le \frac{a}{u^n} < m$. L'inégalité de droite donne $a < mu^n$. L'inégalité de gauche s'écrit aussi $mu^n-u^n \le a$ soit
+$mu^n \le a+ u^n < a+b-a=b$ donc $a<mu^n<b$.
+
+Déduisons de cela que $D$ est dense dans $\Rr$ : pour tout intervalle $[a,b]$, $a<b$ il existe $m,n$ des entiers tels que $mu^n \in [a,b]$. Or $mu^n$ est dans $D$ car $u\in D$ donc par multiplication $u^n \in D$.
+
+\end{enumerate}
+\fincorrection
+\finexercice

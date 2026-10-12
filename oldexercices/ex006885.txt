@@ -1,0 +1,166 @@
+\exercice{6885, exo7, 2012/09/05}
+\video{ifWv3IZcAKU}
+% D'après #1134 barraud et #2755 tumpach
+\enonce
+  Calculer les déterminants des matrices suivantes :
+$$
+  \begin{pmatrix}
+    7 & 11 \\
+    -8 & 4
+  \end{pmatrix}
+\quad
+  \begin{pmatrix}
+    1 & 0 & 6 \\
+    3 & 4 & 15\\
+    5 & 6 & 21
+  \end{pmatrix}
+\quad
+  \begin{pmatrix}
+    1 & 0 & 2 \\
+    3 & 4 & 5  \\
+    5 & 6  & 7
+  \end{pmatrix}
+\quad
+  \begin{pmatrix}
+    1 & 0 & -1 \\
+    2 & 3 & 5  \\
+    4 & 1 & 3
+  \end{pmatrix}
+$$
+
+$$
+  \begin{pmatrix} 0 & 1 & 2 & 3\\ 1 & 2 & 3 & 0\\ 2 & 3 & 0 & 1\\3 & 0 & 1 & 2\end{pmatrix}
+  \begin{pmatrix} 0 & 1 & 1 & 0\\ 1 & 0 & 0 & 1\\ 1 & 1 & 0 & 1\\  1 & 1 & 1 &0\end{pmatrix}
+  \begin{pmatrix} 1 & 2 & 1 & 2\\ 1 & 3 & 1 & 3\\ 2 & 1 & 0& 6\\ 1 & 1& 1&7\end{pmatrix}
+$$
+
+
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item  Le déterminant de la matrice $\begin{pmatrix} a & b \\ c & d \end{pmatrix}$
+est $\begin{vmatrix} a & b \\ c & d \end{vmatrix} =  ad-bc$.
+Donc $\begin{vmatrix} 7 & 11 \\ -8 & 4 \end{vmatrix} = 7 \times 4 - 11 \times (-8) = 116$.
+
+  \item Nous allons voir différentes méthodes pour calculer les déterminants.
+
+\textbf{Première méthode.} \emph{Règle de Sarrus.} 
+Pour le matrice $3\times 3$ il existe une formule qui permet de calculer directement le déterminant.
+$$\begin{vmatrix} 
+a_{11} & a_{12} & a_{13} \\   
+a_{21} & a_{22} & a_{23} \\  
+a_{31} & a_{32} & a_{33} \\ 
+  \end{vmatrix}
+= a_{11}a_{22}a_{33} + a_{12}a_{23}a_{31} + a_{21}a_{32}a_{13}
+- a_{13}a_{22}a_{31} - a_{11} a_{32}a_{23}  - a_{12}a_{21}a_{33}$$
+Donc 
+$$\begin{vmatrix}
+    1 & 0 & 6 \\
+    3 & 4 & 15\\
+    5 & 6 & 21
+  \end{vmatrix}
+= 1\times 4 \times 21 + 0 \times 15 \times 5 + 3\times 6 \times 6
+- 5\times 4\times 6 -6\times 15 \times 1 -3 \times 0 \times 21 = -18$$
+
+
+Attention ! La règle de Sarrus ne s'applique qu'aux matrices $3\times 3$.
+
+  \item \textbf{Deuxième méthode.} \emph{Se ramener à une matrice diagonale ou triangulaire.}
+
+
+Si dans une matrice on change un ligne $L_i$ en $L_i-\lambda L_j$ alors le déterminant reste le même.
+Même chose avec les colonnes. 
+
+$$ \begin{array}{l|ccc|}
+    _{L_1} & 1 & 0 & 2 \\
+    _{L_2} & 3 & 4 & 5\\
+    _{L_3} & 5 & 6  & 7
+  \end{array}
+= \begin{array}{l|ccc|}
+    & 1 & 0 & 2  \\
+    _{L_2 \leftarrow L_2-3L_1} & 0 & 4 & -1 \\
+    _{L_3 \leftarrow L_3-5L_1} & 0 & 6  & -3 \\
+  \end{array}
+= \begin{array}{l|ccc|}
+    & 1 & 0 & 2 \\
+    & 0 & 4 & -1 \\
+    _{L_3 \leftarrow L_3-\frac32 L_2} & 0 & 0  & -\frac32 \\
+  \end{array} = 1\times 4 \times (-\tfrac32) = -6
+$$
+On a utilisé le fait  que le déterminant d'une matrice diagonale (ou triangulaire) est le produit
+des coefficients sur la diagonale.
+
+
+  \item \textbf{Troisième méthode.} \emph{Développement par rapport à une ligne ou une colonne.}
+Nous allons développer par rapport à la deuxième colonne. 
+$$\begin{vmatrix}
+    1 & 0 & -1 \\
+    2 & 3 & 5  \\
+    4 & 1 & 3
+  \end{vmatrix}
+= (-0) \times \begin{vmatrix}
+    2 & 5  \\
+    4 & 3
+  \end{vmatrix}
++ (+3)\times \begin{vmatrix}
+    1 & -1 \\
+    4 & 3
+  \end{vmatrix}
++ (-1) \times \begin{vmatrix}
+    1 & -1 \\
+    2 & 5  \\
+  \end{vmatrix}
+= 0 + 3 \times 7 - 1  \times 7 = 14$$
+
+
+Bien souvent on commence par simplifier la matrice en faisant apparaître un maximum de $0$
+par les opérations élémentaires sur les lignes et les colonnes. Puis on développe en choisissant 
+la ligne ou la colonne qui a le plus de $0$.
+
+
+  \item 
+On fait apparaître des $0$ sur la première colonne puis on développe par rapport à cette colonne.
+$$\Delta = \begin{array}{l|cccc|} 
+_{L_1} & 0 & 1 & 2 & 3 \\ _{L_2} & 1 & 2 & 3 & 0 \\ _{L_3} & 2 & 3 & 0 & 1 \\ _{L_4} & 3 & 0 & 1 & 2 \end{array}
+=  \begin{array}{l|cccc|}& 0 & 1 & 2 & 3\\  & 1 & 2 & 3 & 0\\ _{L_3 \leftarrow L_3 -2 L_2} & 0 & -1 & -6 & 1\\ _{L_4\leftarrow L_4 -3 L_2} & 0 & -6 & -8 & 2\end{array}
+= - \begin{array}{|ccc|}  1 & 2 & 3\\  -1 & -6 & 1\\  -6 & -8 & 2\end{array}
+$$
+Pour calculer le déterminant $3\times 3$ on fait apparaître des $0$ sur la première colonne, puis on la développe.
+$$-\Delta = \begin{array}{l|ccc|} _{L_1} & 1 & 2 & 3\\ _{L_2} & -1 & -6 & 1\\ _{L_3} & -6 & -8 & 2\end{array}
+= \begin{array}{l|ccc|}  & 1 & 2 & 3\\ _{L_2\leftarrow L_2+L_1} & 0 & -4 & 4\\ _{L_3\leftarrow L_3+6L_1} & 0 & 4 & 20\end{array}
+=1\begin{vmatrix}-4 & 4 \\ 4 & 20\end{vmatrix} = -96
+$$
+Donc $\Delta=96$.
+
+
+  \item La matrice a déjà beaucoup de $0$ mais on peut en faire apparaître davantage sur la dernière colonne, puis on développe par rapport à la dernière colonne.
+$$
+\Delta'= \begin{array}{l|cccc|} 
+_{L_1} & 0 & 1 & 1 & 0\\ _{L_2} & 1 & 0 & 0 & 1\\ _{L_3} & 1 & 1 & 0 & 1\\  _{L_4} & 1 & 1 & 1 &0  
+\end{array}
+= \begin{array}{l|cccc|}  & 0 & 1 & 1 & 0\\  & 1 & 0 & 0 & 1\\ _{L_3 \leftarrow L_3-L_2} & 0 & 1 & 0 & 0 \\  & 1 & 1 & 1 &0  
+\end{array}
+= \begin{array}{|ccc|}  0 & 1 & 1 \\  0 & 1 & 0  \\   1 & 1 & 1  
+\end{array}
+$$
+On développe ce dernier déterminant par rapport à la première colonne :
+$$ \Delta'=\begin{array}{|ccc|}  0 & 1 & 1 \\  0 & 1 & 0  \\   1 & 1 & 1  
+\end{array} = 1 \times \begin{vmatrix} 1 & 1 \\ 1 & 0 \end{vmatrix} = -1$$
+
+  \item Toujours la même méthode, on fait apparaître des $0$ sur la première colonne, puis on développe par rapport à cette colonne.
+$$
+\Delta''= \begin{array}{l|cccc|} 
+_{L_1} & 1 & 2 & 1 & 2\\  _{L_2} &1 & 3 & 1 & 3\\  _{L_3} &2 & 1 & 0& 6\\  _{L_4} &1 & 1& 1&7\end{array}
+=\begin{array}{l|cccc|}  & 1 & 2 & 1 & 2\\  _{L_2\leftarrow L_2-L_1} &0 & 1 & 0 & 1\\  _{L_3\leftarrow L_3-2L_1} & 0 & -3 & -2 & 2 \\ 
+ _{L_4\leftarrow L_4-L_1} & 0 & -1 & 0 & 5 \end{array}
+= \begin{array}{|ccc|} 1 & 0 & 1\\-3 & -2 & 2 \\ -1 & 0 & 5 \end{array}
+$$
+On développe par rapport à la deuxième colonne :
+$$\Delta''= -2 \times \begin{vmatrix}  1 & 1 \\ -1 & 5 \end{vmatrix} = -12$$
+\end{enumerate}
+\fincorrection
+
+\finexercice

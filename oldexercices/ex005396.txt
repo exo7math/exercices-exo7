@@ -1,0 +1,15 @@
+\exercice{5396, rouget, 2010/07/06}
+\enonce[****]
+Soit $f$ croissante sur $[a,b]$ telle que $f([a,b])=[f(a),f(b)]$. Montrer que $f$ est continue sur $[a,b]$.
+\finenonce
+
+\noindication
+
+\correction
+Puisque $f$ est croissante sur $[a,b]$, on sait que $f$ admet en tout point $x_0$ de $]a,b[$ une limite à gauche et une limite à droite réelles vérifiant $f(x_0^-)\leq f(x_0)\leq f(x_0^+)$ puis une limite à droite en $a$ élément de $[f(a),+\infty[$ et une limite à gauche en $b$ élément de $]-\infty,f(b)]$.
+
+Si $f$ est discontinue en un $x_0$ de $]a,b[$, alors on a $f(x_0^-)<f(x_0)$ ou $f(x_0)<f(x_0^+)$. Mais, si par exemple $f(x_0^-)<f(x_0)$ alors, $\forall x\in[a,x_0[\;(\neq\emptyset),\;f(x)\leq f(x_0-)$ et $\forall x\in[x_0,b],\;f(x)\geq f(x_0)$.
+
+Donc $]f(x_0^-),f(x_0)[\cap f([a,b])=\emptyset$ ce qui est exclu puisque d'autre part $]f(x_0^-),f(x_0)[\neq\emptyset$ et $]f(x_0^-),f(x_0)[\subset[f(a),f(b)]$ (la démarche est identique si $f(x_0^+)>f(x_0)$). Donc, $f$ est continue sur $]a,b[$. Par une démarche analogue, $f$ est aussi continue en $a$ ou $b$ et donc sur $[a,b]$.
+\fincorrection
+\finexercice

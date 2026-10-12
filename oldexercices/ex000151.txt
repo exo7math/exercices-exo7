@@ -1,0 +1,44 @@
+\exercice{151, bodin, 1998/09/01}
+\video{RHiN60xhmoo}
+\enonce
+\begin{enumerate}
+\item
+Soit $p_{1},p_{2},\ldots ,p_{r}$, $r$ nombres premiers. Montrer que l'entier
+$N=p_{1}p_{2}\ldots p_{r}+1$ n'est divisible par aucun des entiers $p_{i}$.
+\item
+Utiliser la question pr\'ec\'edente pour montrer par l'absurde qu'il existe une infinit\'e de
+nombres premiers.
+\end{enumerate}
+
+\finenonce 
+
+\indication
+Pour la premi\`ere question vous pouvez raisonner par contraposition ou par l'absurde.
+\finindication
+
+\correction
+\begin{enumerate}
+\item
+Montrons en fait la contrapos\'ee.
+
+S'il existe $i$ tel que $p_i$ divise $N=p_1p_2 \ldots p_r +1$ ($i$
+est fix\'e) alors il existe $k \in \Zz$ tel que $N = kp_i$ donc
+$$p_i(k-p_1p_2\ldots p_{i-1}p_{i+1}\ldots p_r) = 1$$
+ soit $p_iq = 1$ (avec
+$q = k-p_1p_2\ldots p_{i-1}p_{i+1}\ldots p_r $ un nombre entier).
+Donc $p_i \in \Zz$ et $1/p_i = q \in \Zz$,  alors $p_i$ vaut $1$
+ou $-1$. Et donc $p_i$ n'est pas un nombre premier.
+
+Conclusion : par contraposition il est vrai que $N$ n'est
+divisible par aucun des $p_i$
+
+\item Raisonnons par l'absurde : s'il n'existe qu'un nombre fini $r$ de nombres premiers $p_1,\ldots,p_r$
+alors $N=p_1p_2 \ldots p_r +1$ est un nombre premier car divisible
+par aucun nombre premier autre que lui m\^eme (c'est le 1.).
+
+ Mais $N$ est strictement sup\'erieur \`a tous les $p_i$. Conclusion on a construit un
+nombre premier $N$ diff\'erent des $p_i$, il y a donc au moins
+$r+1$ nombres premiers, ce qui est absurde.
+\end{enumerate}
+\fincorrection
+\finexercice

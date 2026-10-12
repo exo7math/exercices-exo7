@@ -1,0 +1,33 @@
+\exercice{5459, rouget, 2010/07/10}
+\enonce[**]
+Déterminer les limites quand $n$ tend vers $+\infty$ de
+ 
+$$1)\;u_n=\frac{1}{n!}\int_{0}^{1}\Arcsin^nx\;dx\;2)\;\int_{0}^{1}\frac{x^n}{1+x}\;dx\;3)\;\int_{0}^{\pi}\frac{n\sin x}{x+n}\;dx.$$ 
+
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  Soit $n\in\Nn$. Pour $x\in[0,\frac{\pi}{2}]$, $0\leq\Arcsin^x\leq(\frac{\pi}{2})^n$ et donc, par croissance de l'intégrale,
+
+$$0\leq u_n\leq\frac{1}{n!}\int_{0}^{1}(\frac{\pi}{2})^ndx=\frac{1}{n!}(\frac{\pi}{2})^n.$$
+
+D'après un théorème de croissances comparées, $\frac{1}{n!}(\frac{\pi}{2})^n$ tend vers $0$ quand $n$ tend vers $+\infty$. D'après le théorème des gendarmes, $u_n$ tend vers $0$ quand $n$ tend vers $+\infty$.
+
+\item  $0\leq\int_{0}^{1}\frac{x^n}{1+x}\;dx\leq\int_{0}^{1}\frac{x^n}{1+0}\;dx=\frac{1}{n+1}$. Comme $\frac{1}{n+1}$ tend vers $0$ quand $n$ tend vers $+\infty$, $\int_{0}^{1}\frac{x^n}{1+x}\;dx$ tend vers $0$ quand $n$ tend vers $+\infty$.
+
+\item  Soit $n\in\Nn^*$.
+
+\begin{align*}\ensuremath
+\left|\int_{0}^{\pi}\frac{n\sin x}{x+n}\;dx-\int_{0}^{\pi}\sin x\;dx\right|=\left|
+\int_{0}^{\pi}\frac{-x\sin x}{x+n}\;dx\right|\leq\int_{0}^{\pi}\left|\frac{-x\sin x}{x+n}\;dx\right|
+\leq\int_{0}^{\pi}\frac{\pi}{0+n}\;dx=\frac{\pi^2}{n}.
+\end{align*}
+
+Or, $\frac{\pi^2}{n}$ tend vers $0$ quand $n$ tend vers $+\infty$, et donc $\int_{0}^{\pi}\frac{n\sin x}{x+n}\;dx$ tend vers $\int_{0}^{\pi}\sin x\;dx=2$ quand $n$ tend vers $+\infty$.
+
+\end{enumerate}
+\fincorrection
+\finexercice

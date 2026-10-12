@@ -1,0 +1,44 @@
+\exercice{5084, rouget, 2010/06/30}
+\enonce[***IT]
+Domaine de définition et calcul des fonctions suivantes :
+\begin{enumerate}
+ \item  $x\mapsto\sin(\Arcsin x)$,  \item  $x\mapsto\Arcsin(\sin x)$,
+ \item  $x\mapsto\cos(\Arccos x)$,  \item  $x\mapsto\Arccos(\cos x)$,  \item  $x\mapsto\tan(\Arctan x)$,  \item  $x\mapsto\Arctan(\tan
+x)$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+$\Arcsin x$ existe si et seulement si $x$ est dans $[-1,1]$. Donc, $\sin(\Arcsin x)$ existe si et seulement si
+$x$ est dans $[-1,1]$ et pour $x$ dans $[-1,1]$, $\sin(\Arcsin x)=x$.
+ \item  $\Arcsin(\sin x)$ existe pour tout réel $x$ mais ne vaut $x$ que si $x$ est 
+dans $\left[-\frac{\pi}{2},\frac{\pi}{2}\right]$.
+\textbullet~S'il existe un entier relatif $k$ tel que
+$-\frac{\pi}{2}+2k\pi\leq x<\frac{\pi}{2}+2k\pi$, alors $-\frac{\pi}{2}\leq x-2k\pi<\frac{\pi}{2}$ et
+donc
+
+$$\Arcsin(\sin x)=\Arcsin(\sin(x-2k\pi))=x-2k\pi.$$
+De plus, on a $k\leq\frac{x}{2\pi}+\frac{1}{4}<k+\frac{1}{2}$
+et donc $k=E\left(\frac{x}{2\pi}+\frac{1}{4}\right)$.
+\textbullet~S'il existe un entier relatif $k$ tel que $\frac{\pi}{2}+2k\pi\leq
+x<\frac{3\pi}{2}+2k\pi$, alors $-\frac{\pi}{2}<\pi-x+2k\pi\leq\frac{\pi}{2}$ 
+et donc
+
+$$\Arcsin(\sin x)=\Arcsin(\sin(\pi-x+2k\pi))=\pi-x+2k\pi.$$
+De plus, $k\leq\frac{x}{2\pi}-\frac{1}{4}<k+\frac{1}{2}$ et donc $k=E\left(\frac{x}{2\pi}-\frac{1}{4}\right)$.
+ \item  $\Arccos x$ existe si et seulement si $x$ est dans $[-1,1]$. Donc, $\cos(\Arccos x)$ existe si et seulement si
+$x$ est dans $[-1,1]$ et pour $x$ dans $[-1,1]$, $\cos(\Arccos x)=x$.
+ \item  $\Arccos(\cos x)$ existe pour tout réel $x$ mais ne vaut $x$ que si $x$ est dans $[0,\pi]$.
+\textbullet~S'il existe un
+entier relatif $k$ tel que $2k\pi\leq x<\pi+2k\pi$, alors $\Arccos(\cos x)=x-2k\pi$ avec $k=E\left(\frac{x}{2\pi}\right)$.
+\textbullet~S'il existe un entier relatif $k$ tel que $-\pi+2k\pi\leq x<2k\pi$ alors 
+$\Arccos(\cos x)=\Arccos(\cos(2k\pi-x))=2k\pi-x$ avec $k=E\left(\frac{x+\pi}{2\pi}\right)$.
+ \item  Pour tout réel $x$, $\tan(\Arctan x)=x$.
+ \item  $\Arctan(\tan x)$ existe si et seulement si $x$ n'est pas
+dans $\frac{\pi}{2}+\pi\Zz$ et pour ces $x$, il existe un entier relatif $k$ 
+tel que $-\frac{\pi}{2}+k\pi<x<\frac{\pi}{2}+k\pi$. Dans ce cas, $\Arctan(\tan x)=\Arctan(\tan(x-k\pi))=x-k\pi$ avec
+$k=E\left(\frac{x}{\pi}+\frac{1}{2}\right)$.
+\fincorrection
+\finexercice

@@ -1,0 +1,217 @@
+\exercice{5869, rouget, 2010/10/16}
+\enonce[** I]
+Calculer $\text{exp}(tA)$, $t\in\Rr$, si 
+\begin{enumerate}
+ \item  $A=\left(
+\begin{array}{ccc}
+3&2&2\\
+1&0&1\\
+-1&1&0
+\end{array}
+\right)$ \item  $A=\left(
+\begin{array}{ccc}
+4&1&1\\
+6&4&2\\
+-10&-4&-2
+\end{array}
+\right)$ 
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  $\chi_A=\left|
+\begin{array}{ccc}
+3-X&2&2\\
+1&-X&1\\
+-1&1&-X
+\end{array}
+\right|=(3-X)(X^2-1)-(-2X-2)-(2X+2)=-(X+1)(X-1)(X-3)$.
+
+Soit $n\in\Nn$. La division euclidienne de $X^n$ par $\chi_A$ s'écrit $X^n=Q_n\times\chi_A+a_nX^2+b_nX+c_n$ où $Q_n\in\Rr[X]$ et $(a_n,b_n,c_n)\in\Rr^3$. En évaluant les deux membres de cette égalité en $-1$, $1$ et $3$, on obtient
+
+\begin{center}
+$\left\{
+\begin{array}{l}
+a_n-b_n+c_n=(-1)^n\\
+a_n+b_n+c_n=1\\
+9a_n+3b_n+c_n=3^n
+\end{array}
+\right.
+\Rightarrow\left\{
+\begin{array}{l}
+b_n= \frac{1}{2}(1-(-1)^n)\\
+a_n+c_n= \frac{1}{2}(1+(-1)^n)\\
+8a_n+ \frac{3}{2}(1-(-1)^n)+ \frac{1}{2}(1+(-1)^n)=3^n
+\end{array}
+\right.\Rightarrow\left\{
+\begin{array}{l}
+a_n= \frac{1}{8}(3^n-2+(-1)^n)\\
+\rule[-4mm]{0mm}{10mm}b_n= \frac{1}{2}(1-(-1)^n)\\
+c_n= \frac{1}{8}(-3^n+6+3(-1)^n)
+\end{array}
+\right.$.
+\end{center}
+
+Le théorème de \textsc{Cayley}-\textsc{Hamilton} fournit alors 
+
+\begin{center}
+$\forall n\in\Nn$, $A^n= \frac{1}{8}((3^n-2+(-1)^n)A^2+4(1-(-1)^n)A+(-3^n+6+3(-1)^n)I_3)$.
+\end{center}
+
+Maintenant,
+
+\begin{center}
+$A^2=\left(
+\begin{array}{ccc}
+3&2&2\\
+1&0&1\\
+-1&1&0
+\end{array}
+\right)\left(
+\begin{array}{ccc}
+3&2&2\\
+1&0&1\\
+-1&1&0
+\end{array}
+\right)=\left(
+\begin{array}{ccc}
+9&8&8\\
+2&3&2\\
+-2&-2&-1
+\end{array}
+\right)$
+\end{center}
+
+et donc, pour tout réel $t$,
+
+\begin{align*}\ensuremath
+\text{exp}(tA)&=\sum_{n=0}^{+\infty} \frac{t^n}{n!}A^n=\sum_{n=0}^{+\infty} \frac{t^n}{n!}. \frac{1}{8}((3^n-2+(-1)^n)A^2+4(1-(-1)^n)A+(-3^n+6+3(-1)^n)I_3)\\
+ &= \frac{e^{3t}-2e^t+e^{-t}}{8}\left(
+\begin{array}{ccc}
+9&8&8\\
+2&3&2\\
+-2&-2&-1
+\end{array}
+\right)+ \frac{4(e^t-e^{-t})}{8}\left(
+\begin{array}{ccc}
+3&2&2\\
+1&0&1\\
+-1&1&0
+\end{array}
+\right)+ \frac{-e^{3t}+6e^t+3e^{-t}}{8}\left(
+\begin{array}{ccc}
+1&0&0\\
+0&1&0\\
+0&0&1
+\end{array}
+\right)\\
+&= \frac{1}{8}\left(
+\begin{array}{ccc}
+8e^{3t}&8e^{3t}-8e^t&8e^{3t}-8e^t\\
+2e^{3t}-2e^{-t}&2e^{3t}+6e^{-t}&2e^{3t}-2e^{-t}\\
+-2e^{3t}+2e^{-t}&-2e^{3t}+8e^t-6e^{-t}&2e^{3t}+8e^t+2e^{-t}
+\end{array}
+\right)\\
+ &= \frac{1}{4}\left(
+\begin{array}{ccc}
+4e^{3t}&4e^{3t}-4e^t&4e^{3t}-4e^t\\
+e^{3t}-e^{-t}&e^{3t}+3e^{-t}&e^{3t}-e^{-t}\\
+-e^{3t}+e^{-t}&-e^{3t}+4e^t-3e^{-t}&e^{3t}+4e^t+e^{-t}
+\end{array}
+\right).
+\end{align*}
+
+\begin{center}
+\shadowbox{
+$\forall t\in\Rr$, $\text{exp}(tA)= \frac{1}{4}\left(
+\begin{array}{ccc}
+4e^{3t}&4e^{3t}-4e^t&4e^{3t}-4e^t\\
+e^{3t}-e^{-t}&e^{3t}+3e^{-t}&e^{3t}-e^{-t}\\
+-e^{3t}+e^{-t}&-e^{3t}+4e^t-3e^{-t}&e^{3t}+4e^t+e^{-t}
+\end{array}
+\right)$.
+}
+\end{center}
+
+\item  $\chi_A=\left|
+\begin{array}{ccc}
+4-X&1&1\\
+6&4-X&2\\
+-10&-4&-2-X
+\end{array}
+\right|=(4-X)(X^2-2X)-6(-X+2)-10(X-2)=(X-2)[-X(X-4)+6-10]=-(X-2)(X^2-4X+4)=-(X-2)^3$. On est dans la situation où $A$ a une unique valeur propre. D'après le théorème de \textsc{Cayley}-\textsc{Hamilton}, $(A-2I_3)^3=0$ et donc pour tout réel $t$,
+
+\begin{align*}\ensuremath
+\text{exp}(tA)&=\text{exp}(t(A-2I_3)+2tI_3)=\text{exp}(t(A-2I_3))\times\text{exp}(2tI_3)\;(\text{car les matrices}\;t(A-2I_3)\;\text{et}\;2tI_3\;\text{commutent})\\
+ &=\left(I_3+t(A-2I_3)+ \frac{t^2}{2}(A-2I_3)^2\right)\times e^{2t}I_3\\
+ &=e^{2t}\left(
+\begin{array}{ccc}
+1&0&0\\
+0&1&0\\
+0&0&1
+\end{array}
+\right)+te^{2t}\left(
+\begin{array}{ccc}
+2&1&1\\
+6&2&2\\
+-10&-4&-4
+\end{array}
+\right)+ \frac{t^2e^{2t}}{2}\left(
+\begin{array}{ccc}
+2&1&1\\
+6&2&2\\
+-10&-4&-4
+\end{array}
+\right)\left(
+\begin{array}{ccc}
+2&1&1\\
+6&2&2\\
+-10&-4&-4
+\end{array}
+\right)
+\\
+ &=e^{2t}\left(
+\begin{array}{ccc}
+1&0&0\\
+0&1&0\\
+0&0&1
+\end{array}
+\right)+te^{2t}\left(
+\begin{array}{ccc}
+2&1&1\\
+6&2&2\\
+-10&-4&-4
+\end{array}
+\right)+ \frac{t^2e^{2t}}{2}\left(
+\begin{array}{ccc}
+0&0&0\\
+4&2&2\\
+-4&-2&-2
+\end{array}
+\right)\\
+ &=\left(
+\begin{array}{ccc}
+(2t+1)e^{2t}&te^{2t}&te^{2t}\\
+(2t^2+6t)e^{2t}&(t^2+2t+1)e^{2t}&(t^2+2t)e^{2t}\\
+(-2t^2-10t)e^{2t}&(-t^2-4t)e^{2t}&(-t^2-4t)e^{2t}
+\end{array}
+\right).
+\end{align*}
+
+\begin{center}
+\shadowbox{
+$\forall t\in\Rr$, $\text{exp}(tA)=\left(
+\begin{array}{ccc}
+(2t+1)e^{2t}&te^{2t}&te^{2t}\\
+(2t^2+6t)e^{2t}&(t^2+2t+1)e^{2t}&(t^2+2t)e^{2t}\\
+(-2t^2-10t)e^{2t}&(-t^2-4t)e^{2t}&(-t^2-4t)e^{2t}
+\end{array}
+\right)$.
+}
+\end{center}
+\end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,82 @@
+\exercice{2645, debievre, 2009/05/19}
+\enonce
+Soit $\cal C$ la courbe plane 
+d'\'equation $f(x,y)=ye^{x}+e^y\sin(2x)=0$.
+\begin{enumerate}
+ \item  Appliquer le th\'eor\`eme des fonctions implicites
+\`a la courbe ${\cal C}$ au point $(0,0)$.
+ \item D\'eterminer la limite de $y/x$ quand $(x,y)$ tend  le long la courbe ${\cal C}$
+vers
+$(0,0)$.
+\end{enumerate}
+\finenonce
+
+\indication 
+Rappel du th\'eor\`eme des fonctions implicites
+pour une fonction $f$ de classe $C^1$
+de deux variables d\'efinie dans un ouvert du plan: {\em Soit $(x_0,y_0)$ un point tel que
+$\frac{\partial f}{\partial y}(x_0,y_0)~\ne~0$.
+Au voisinage de $x_0$,
+il existe une fonction $h$ de classe $C^1$ de la variable $x$
+d\'efinie dans un intervalle ouvert 
+appropri\'e telle que $h(x_0)=y_0$ et telle que,
+pour qu'au voisinage de $(x_0,y_0)$
+les coordonn\'ees $x$ et $y$ du point $(x,y)$
+satisfassent \`a l'\'equation
+$f(x,y)=0$
+il faut et il suffit que $y=h(x)$ et, s'il en est ainsi,}
+\[
+h'(x_0)=-\frac{\frac{\partial f}{\partial x}(x_0,y_0)}
+{\frac {\partial f}{\partial y}(x_0,y_0)}.
+\]
+{\em D\`es que l'intervalle de d\'efinition de la fonction $h$ est fix\'e la fonction
+$h$ est unique.\/}
+
+
+\finindication
+
+\correction
+\begin{enumerate} 
+\item 
+Puisque 
+$\frac{\partial f}{\partial x}= ye^{x}+2e^y\cos(2x)$ et 
+$\frac{\partial f}{\partial y}=e^{x}+e^y\sin(2x)$ il s'ensuit que
+$\frac{\partial f}{\partial x}(0,0)=2$ et 
+$\frac{\partial f}{\partial y}(0,0)=1$.
+Par cons\'equent,
+il existe une fonction 
+$h$ de la variable $x$ d\'efinie au voisinage de $0$ telle que
+$h(0)=0$ et telle que,
+pour qu'au voisinage de $(0,0)$
+les coordonn\'ees $x$ et $y$ du point $(x,y)$
+satisfassent \`a l'\'equation $ye^{x}+e^y\sin(2x)=0$
+il faut et il suffit que
+$y=h(x)$; 
+de m\^eme il existe une fonction $k$ 
+de la variable $y$ d\'efinie au voisinage de $0$  telle que
+$h(0)=0$ et telle que,
+pour qu'au voisinage de $(0,0)$
+les coordonn\'ees $x$ et $y$ du point $(x,y)$
+satisfassent \`a  l'\'equation $ye^{x}+e^y\sin(2x)=0$
+il faut et il suffit que $x=k(y)$. 
+En plus,
+\[
+h'(0)=-\frac{\frac{\partial f}{\partial x}(0,0)}
+{\frac{\partial f}{\partial y}(0,0)}= -2,
+\ 
+k'(0)= -\frac{\frac{\partial f}{\partial y}(0,0)}
+{\frac{\partial f}{\partial x}(0,0)} =-\tfrac 12.
+\]
+
+\item Puisque le point $(0,0)$ appartient \`a la courbe $\cal C$,
+en $0$, les fonctions $h$ et $k$ prennent les valeurs
+$h(0)=0$ et $k(0)=0$. Par cons\'equent,
+\[
+\mathrm{lim}_{\begin{smallmatrix}
+(x,y)\to(0,0), (x,y)\ne 0\\
+ye^{x}+e^y\sin(2x)=0
+\end{smallmatrix}}y/x =h'(0) = -2.
+\]
+\end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,52 @@
+\exercice{3443, quercia, 2010/03/10}
+\enonce[Résultant]
+
+Soient $P = a_0 + a_1X + \dots + a_pX^p$, et $Q = b_0 + b_1X + \dots + b_qX^q$,
+avec $a_p \ne 0,\ b_q \ne 0$.
+
+
+\def\fleche{$\hskip2pt
+            \mathord\leftarrow\mkern-6mu
+            \cleaders\hbox{$\mkern-2mu\mathord-\mkern-2mu$}\hfill
+            \mkern-6mu\mathord\rightarrow
+            \hskip2pt$}
+
+Le résultant de $P$ et $Q$ est :
+$\text{Res}(P,Q) = \left|\vcenter{
+  \halign{&\hskip3pt$#$\hfil\hskip3pt\cr
+  a_0    &      &      &       &b_0              &                        \cr
+  a_1    &\ddots&      &       &\vdots           &\ddots                  \cr
+  \vdots &\ddots&\ddots&       &\vdots           &\ddots&b_0              \cr
+  a_p    &\ddots&\ddots&a_0    &b_{q-1}\hidewidth&\ddots&\vdots           \cr
+         &\ddots&\ddots&a_1    &b_q              &\ddots&\vdots           \cr
+         &      &\ddots&\vdots &                 &\ddots&b_{q-1}\hidewidth\cr
+         &      &      &a_p    &                 &      &b_q              \cr
+  \multispan4\fleche &\multispan3\fleche \cr
+  \noalign{\vskip-0.5\baselineskip}
+  \multispan4 $q$    &\multispan3 $p$    \cr}
+  \vskip-\baselineskip}\hskip5pt\right|$\quad
+  $\vcenter{\hbox{les positions non remplies}
+            \hbox{correspondent à des zéros.}}$\vspace{0.2cm}\\
+
+
+
+
+En considérant l'application
+${\Phi} : { K_{q-1}[X] \times  K_{p-1}[X]} \to { K_{p+q-1}[X]},
+ {(U,V)} \mapsto {UP+VQ,}$
+
+montrer que : $\text{Res}(P,Q) \ne 0 \iff P \wedge Q = 1$.
+
+
+Application : CNS pour que le polynôme $P = X^4 + aX + b$ ait une racine
+multiple ?
+
+\finenonce
+
+\noindication
+
+\correction
+$27a^4 = 256b^3$.
+\fincorrection
+
+\finexercice

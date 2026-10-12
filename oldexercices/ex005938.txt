@@ -1,0 +1,82 @@
+\exercice{5938, tumpach, 2010/11/11}
+\enonce
+Soit $p>0$. Soit $f~:\mathbb{R}^n \rightarrow\mathbb{R}^+$ la fonction
+d\'efinie par $$f(x) = |x|^{-p} \mathbf{1}_{\{|x|<1\}}(x).$$ Calculer
+l'int\'egrale de $f$ par rapport \`a la mesure de Lebesgue de
+$\mathbb{R}^n$ de deux mani\`eres diff\'erentes~:
+\begin{enumerate}
+\item [(i)] En utilisant les coordonn\'ees polaires et les
+m\'ethodes standard de calcul d'int\'egrales~; 
+\item[(ii)] En
+calculant la mesure des ensembles $S_{f}(a) = \{x\in\Omega,
+f(x)>a\}$ et la d\'efinition de l'int\'egrale de Lebesgue.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+Soit $f~:\mathbb{R}^n \rightarrow\mathbb{R}^+$ la fonction
+d\'efinie par $$f(x) = |x|^{-p} \mathbf{1}_{\{|x|<1\}}(x).$$
+\begin{enumerate}
+\item [(i)] On a~:
+\begin{eqnarray*} \int_{\mathbb{R}^{n}} f(x)\,dx & = &
+\int_{\mathbb{R}^n}|x|^{-p} \mathbf{1}_{\{|x|<1\}}(x) \,dx = \int_{|x|<1}
+|x|^{-p}\,dx = \int_{r=0}^{1}\int_{\sigma \in \mathcal{S}_{n-1}}
+r^{n-p-1} dr d\sigma\\
+& = & \frac{2\pi^{\frac{n}{2}}}{\Gamma\left(\frac{n}{2}\right)}
+\int_{0}^{1} r^{n-p-1}\,dr.
+\end{eqnarray*}
+Pour $n \leq p$, il vient
+\begin{eqnarray*}
+ \int_{\mathbb{R}^{n}} f(x)\,dx &=& +\infty.
+\end{eqnarray*}
+Pour $p < n$, il vient
+\begin{eqnarray*}
+\int_{\mathbb{R}^{n}} f(x)\,dx &=&
+\frac{2\pi^{\frac{n}{2}}}{\Gamma\left(\frac{n}{2}\right)}
+\left[\frac{r^{n-p}}{(n-p)}\right]_{0}^{1} =
+\frac{2\pi^{\frac{n}{2}}}{(n - p)\Gamma\left(\frac{n}{2}\right)}
+\end{eqnarray*}
+
+
+
+
+ \item[(ii)] Pour $a\in[0,+\infty[$,
+\begin{eqnarray*}
+S_{f}(a) = \{ x\in\mathbb{R}^{n}, |x|^{-p} \mathbf{1}_{|x|<1} > a\} =
+\{x\in\mathbb{R}^{n}, |x|^{-p} > a\}\cap \mathcal{B}(0, 1),
+\end{eqnarray*}
+o\`u $\mathcal{B}(0, 1)$ est la boule de centre 0 et de rayon 1.
+Ainsi
+\begin{eqnarray*}
+S_{f}(a) = \{ x\in\mathbb{R}^{n}, a^{-\frac{1}{p}} > |x|\}\cap
+\mathcal{B}(0, 1).
+\end{eqnarray*}
+On en d\'eduit que $S_{f}(a) = \mathcal{B}(0, 1)$ si
+$a^{-\frac{1}{p}}>1$, i.e. si $a<1$ et que $S_{f}(a)$ est \'egale
+\`a la boule $\mathcal{B}(0, a^{-\frac{1}{p}})$ de centre 0 et de
+rayon $a^{-\frac{1}{p}}$ lorsque $a\geq 1$. Il vient alors~:
+\begin{eqnarray*}
+\int_{\mathbb{R}^{n}} f(x)\,dx &=& \int_{0}^{+\infty}
+\mu\left(S_{f}(a)\right)\,da = \int_{0}^{1}
+\mu\left(\mathcal{B}(0,1) \right)\,da + \int_{1}^{+\infty}
+\mu\left(\mathcal{B}(0, a^{-\frac{1}{p}})\right)\,da\\
+& = & \frac{\pi^{\frac{n}{2}}}{\Gamma\left(\frac{n}{2}+1\right)} +
+\frac{\pi^{\frac{n}{2}}}{\Gamma\left(\frac{n}{2}+1\right)}\int_{1}^{+\infty}
+a^{-\frac{n}{p}}\,da.
+\end{eqnarray*}
+Si $p\geq n$, on obtient $\int_{\mathbb{R}^{n}} f(x)\,dx =+\infty$
+et pour $p<n$, on a~:
+\begin{eqnarray*}
+\int_{\mathbb{R}^{n}} f(x)\,dx & =
+&\frac{\pi^{\frac{n}{2}}}{\Gamma\left(\frac{n}{2}+1\right)} +
+\frac{\pi^{\frac{n}{2}}}{\Gamma\left(\frac{n}{2}+1\right)}\left[\frac{a^{-\frac{n}{p}+1}}{-\frac{n}{p}+1}\right]_{1}^{+\infty}\\
+&=&\frac{\pi^{\frac{n}{2}}}{\Gamma\left(\frac{n}{2}+1\right)}\left(1
++ \frac{p}{n-p} \right) = \frac{2\pi^{\frac{n}{2}}}{(n -
+p)\Gamma\left(\frac{n}{2}\right)}.
+\end{eqnarray*}
+\end{enumerate}
+\fincorrection
+
+\finexercice

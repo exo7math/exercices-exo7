@@ -1,0 +1,31 @@
+\exercice{700, bodin, 1998/09/01}
+\video{K9yZt1R0xW8}
+\enonce
+Soit $f : \Rr^* \longrightarrow \Rr$ d\'efinie par
+$\displaystyle{f(x)= x^2\sin \frac{1}{x} }$. Montrer que
+$f$ est prolongeable par continuit\'e en $0$ ; on note encore
+$f$ la fonction prolong\'ee. Montrer que $f$ est
+d\'erivable sur $\Rr$ mais que $f'$ n'est pas continue en $0$.
+\finenonce 
+
+\indication
+$f$ est continue en $0$ en la prolongeant par $f(0)=0$.
+$f$ est alors d\'erivable en $0$ et $f'(0)=0$.
+\finindication
+
+\correction
+$f$ est $C^\infty$ sur $\Rr^*$.
+\begin{enumerate}
+  \item Comme $|\sin (1/x)| \leq 1$ alors
+$f$ tend vers $0$ quand $x\rightarrow 0$. Donc en prolongeant $f$ par $f(0) =0$,
+la fonction  $f$ prolongée est continue sur $\Rr$.
+  \item Le taux d'accroissement est
+$$\frac{f(x)-f(0)}{x-0}= x \sin\frac{1}{x}.$$
+Comme ci-dessus il y a une limite (qui vaut $0$) en $x=0$.
+Donc $f$ est d\'erivable en $0$ et $f'(0)=0$.
+  \item Sur $\Rr^*$, $f'(x) = 2x\sin (1/x) -\cos(1/x)$,
+Donc $f'(x)$ n'a pas de limite quand $x\rightarrow 0$.
+Donc $f'$ n'est pas continue en $0$.
+\end{enumerate}
+\fincorrection
+\finexercice

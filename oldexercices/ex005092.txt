@@ -1,0 +1,55 @@
+\exercice{5092, rouget, 2010/06/30}
+\enonce[** Mines de DOUAI 1984]
+On considère la fonction numérique $f$ telle que~:
+
+$$f(x)=(x^2-1)\Arctan\frac{1}{2x-1},$$
+et on appelle $(\mathcal{C})$ sa courbe représentative dans un repère orthonormé.
+
+\begin{enumerate}
+ \item  Quel est l'ensemble de définition $\mathcal{D}$ de $f$~?
+
+ \item  Exprimer, sur $\mathcal{D}\setminus\{0\}$, la dérivée de $f$ sous la forme~:~$f'(x)=2xg(x)$.
+
+ \item  Montrer que~:~$\forall x\in\Rr,\;2x^4-4x^3+9x^2-4x+1>0$ et en déduire le tableau de variation de $g$.
+
+ \item  Dresser le tableau de variation de $f$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  $f$ est définie et dérivable sur $\mathcal{D}=\Rr\setminus\{\frac{1}{2}\}$.
+ \item  Pour $x$ élément de $\mathcal{D}$,
+
+$$f'(x)=2x\Arctan\frac{1}{2x-1}+(x^2-1)\frac{-2}{(2x-1)^2}\frac{1}{1+\frac{1}{(2x-1)^2}}=2x\Arctan\frac{1}{2x-1}-
+\frac{x^2-1}{2x^2-2x+1}.$$
+De plus, pour $x$ non nul~:~$f'(x)=2xg(x)$ où
+$g(x)=\Arctan\frac{1}{2x-1}-\frac{1}{2x}\frac{x^2-1}{2x^2-2x+1}$.
+ \item  Pour $x$ élément de $\mathcal{D}\setminus\{0\}$,
+
+\begin{align*}
+g'(x)&=-\frac{1}{2x^2-2x+1}-\frac{1}{2}\frac{2x(2x^3-2x^2+x)-(x^2-1)(6x^2-4x+1)}{x^2(2x^2-2x+1)^2}\\
+ &=\frac{-2x^2(2x^
+2-2x+1)+2x^4-7x^2+4x-1}{2x^2(2x^2-2x+1)^2}=-\frac{2x^4-4x^3+9x^2-4x+1}{2x^2(x^2-2x+1)^2}.
+\end{align*}
+Maintenant,
+
+$$2x^4-4x^3+9x^2-4x+1=2x^2(x-1)^2+7x^2-4x+1=2x^2(x-1)^2+7\left(x-\frac{2}{7}\right)^2+\frac{3}{7}>0.$$
+Donc, $g$ est
+strictement décroissante sur $]-\infty,0[$, sur $\left]0,\frac{1}{2}\right[$ et sur $\left]\frac{1}{2},+\infty\right[$. En $+\infty$, $g(x)$
+tend vers $0$. Donc $g$ est strictement positive sur $\left]\frac{1}{2},+\infty\right[$. Quand $x$ tend vers $\frac{1}{2}$ par
+valeurs inférieures, $g$ tend vers $-\frac{\pi}{2}+\frac{3}{2}<0$ et quand $x$ tend vers $0$ par valeurs
+supérieures, $g(x)$ tend vers $+\infty$. Donc $g$ s'annule une et une seule fois sur l'intervalle $]0,\frac{1}{2}[$ en
+un certain réel $x_0$ de $\left]0,\frac{1}{2}\right[$. $g$ est de plus strictement négative sur $\left]x_0,\frac{1}{2}\right[$ 
+et strictement positive sur $]0,x_0[$. Quand $x$ tend vers $-\infty$, $g(x)$ tend vers $0$. Donc $g$ est strictement
+négative sur $]-\infty,0[$. Enfin, puisque $f'(x)=2xg(x)$ pour $x\neq0$, on a les résultats suivants~:
+sur
+$]-\infty,0[$, $f'> 0$, sur $]0,x_0[$, $f'> 0$, sur $\left]x_0,\frac{1}{2}\right[$, $f'< 0$, sur $\left]\frac{1}{2},+\infty\right[$, $f'>
+0$. Comme $f'(0)=1>0$, on a donc~:~sur $]-\infty,x_0[$, $f'>0$,
+sur $\left]x_0,\frac{1}{2}\right[$, $f'< 0$ et sur $\left]\frac{1}{2},+\infty\right[$, $f'> 0$. $f$ est strictement croissante sur
+$]-\infty,x_0]$ et sur $\left]\frac{1}{2},+\infty\right[$ et est strictement décroissante sur $\left[x_0,\frac{1}{2}\right[$.
+\end{enumerate}
+\fincorrection
+\finexercice

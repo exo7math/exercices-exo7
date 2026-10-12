@@ -1,0 +1,18 @@
+\exercice{2853, burnol, 2009/12/15}
+\enonce
+Prouver pour $a>1$:
+\[ \frac1{2\pi}\int_0^{2\pi} \frac{\sin\theta}{a+\sin\theta}d\theta =
+\frac{\sqrt{a^2-1} - a}{\sqrt{a^2 - 1}}\]
+En utilisant l'un des exercices précédents montrer que la
+formule a un sens et est valable pour $a\in\Cc\setminus[-1,+1]$.
+\finenonce
+\noindication
+\correction
+Si $z=e^{i\theta}$, alors $\sin \theta =\frac{z-\overline{z}}{2i}$ et $dz = ie^{i\theta} d\theta$.
+D'o\`u
+$$\frac{1}{2\pi} \int_0^{2\pi} \frac{\sin \theta}{a+\sin \theta} d\theta = \frac{1}{2\pi} \int_{ |z|=1}
+\frac{z-\overline{z}}{2ia +z-\overline{z}}\frac{dz}{iz}=
+\frac{1}{2i\pi} \int_{ |z|=1} \frac{z^2-1}{z^2 +2iaz -1}\frac{dz}{z}.$$
+Il suffit alors d'utiliser le th\'eor\`eme des r\'esidus.
+\fincorrection
+\finexercice

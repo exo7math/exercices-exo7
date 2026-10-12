@@ -1,0 +1,44 @@
+\exercice{2356, queffelec, 2003/10/01}
+\enonce
+Une application de $X$ dans $Y$ est dite {\it ouverte} si l'image de tout ouvert
+de $X$ est un ouvert de $Y$; {\it ferm\'ee} si l'image de tout ferm\'e de $X$ est un
+ferm\'e de $Y$. 
+
+\begin{enumerate}
+\item Montrer qu'une fonction polynomiale de ${\Rr}$ dans ${\Rr}$ est une
+application ferm\'ee.
+
+\item Montrer que l'application $(x,y)\in X\times Y \to x\in X$ est ouverte mais pas
+n\'ecessairement ferm\'ee (consid\'erer l'hyperbole \'equilat\`ere de  ${\Rr}^2$).
+
+\item Montrer que la fonction indicatrice de l'intervalle $[0, {1\over2}]$, comme
+application de $\Rr$ dans $\{0,1\}$, est surjective, ou\-verte, ferm\'ee, mais
+pas continue.
+
+\item Montrer que toute application ouverte de $\Rr$ dans $\Rr$ et continue est monotone.
+\end{enumerate}
+\finenonce
+
+\indication
+\begin{enumerate}
+  \item Pour un polynôme $P$, la limite de $P(x)$ ne vaut $\pm \infty$
+que lorsque $x$ tend vers $\pm \infty$. 
+\end{enumerate}
+\finindication
+
+\correction
+\begin{enumerate}
+  \item Soit $P$ un polynôme, et $F$ un fermé de $\Rr$.  Soit $(y_n)$
+une suite convergente d'éléments de $P(F)$, et $y\in \Rr$ sa limite.
+Il existe $x_n\in F$ tel que $y_n=P(x_n)$. Comme $(y_n)$ est bornée (car convergente) alors $(x_n)$ aussi est bornée, en effet un polynôme
+n'a une limite infini qu'en $\pm \infty$. Comme $(x_n)$ est une suite bornée de $\Rr$ on peut en extraire une sous-suite convergente $(x_{\phi(n)})$ de limite $x$. Comme $F$ est fermé, $x\in F$. Comme $P$ est continue (c'est un polynôme)
+alors $y_{\phi(n)} = P(x_ {\phi(n)}) \rightarrow P(x)$, mais $(y_{\phi(n)})$ 
+converge aussi vers $y$. Par unicité de la limite $y = P(x) \in P(F)$.
+Donc $P(F)$ est fermé. 
+
+  \item Soit $X=Y=\Rr$ et  $H=(xy=1)$ est un fermé de $X\times Y$, mais
+si $\pi(x,y)=x$ alors $\pi(H)=\Rr^*$ n'est pas un fermé de $X=\Rr$.
+  \item A vérifier...
+   \end{enumerate}
+\fincorrection
+\finexercice

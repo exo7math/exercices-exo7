@@ -1,0 +1,27 @@
+\exercice{4402, quercia, 2010/03/12}
+\enonce[Ens MP 2002]
+
+Soit $f\in\mathcal{C}([0,1],\R^+)$ telle que $ \int_0^1f = 1$. Pour $\psi\in\mathcal{C}([0,1],\R)$
+on pose $$\Lambda_n(\psi) =  \int_0^1\!\dots \int_0^1\psi\Bigl(\frac{x_1+\dots+x_n}n\Bigr)f(x_1)\dots f(x_n)\,d x_1\dots d x_n.$$
+Montrer que $\Lambda_n(\psi)\to\psi\Bigl( \int_{x=0}^1xf(x)\,d x\Bigr)$  lorsque $n\to\infty$.
+
+
+\finenonce
+
+\noindication
+
+\correction
+C'est manifestement vrai pour $\psi\equiv 1$ et aussi pour $\psi(t)=t$.
+De manière générale, si $\psi(t) = t^k$ avec $k\in\N$ alors pour $n\ge k$,
+$(x_1+\dots+x_n)^k$ est une somme de $n^k$ monômes parmi lesquels il y a
+$n(n-1)\dots(n-k+1)$ monômes où chaque variable apparaît avec l'exposant $0$ ou $1$.
+On a alors~:
+$$\Lambda_n(\psi) = \frac{n(n-1)\dots(n-k+1)}{n^k}\Bigl( \int_{x=0}^1xf(x)\,d x\Bigr)^k\Bigl( \int_{x=0}^1f(x)\,d x\Bigr)^{n-k}
++\Bigl(1-\frac{n(n-1)\dots(n-k+1)}{n^k}\Bigr) O(1),$$
+ce qui prouve que $\Lambda_n(\psi) \to\psi\Bigl( \int_{x=0}^1xf(x)\,d x\Bigr)$ (lorsque $n\to\infty$) lorsque
+$\psi(t) = t^k$. Par linéarité, cette relation est encore vraie pour tout $\psi$
+polynôme. On conclut pour $\psi$ continue quelconque avec le théorème de
+Stone-Weierstrass.
+\fincorrection
+
+\finexercice

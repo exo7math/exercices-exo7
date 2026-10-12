@@ -1,0 +1,50 @@
+\exercice{5740, rouget, 2010/10/16}
+\enonce[**]
+\label{ex:rou3bis}
+Montrer que $\int_{0}^{+\infty}\frac{x^2}{e^x-1}\;dx=2\sum_{n=1}^{+\infty}\frac{1}{n^3}$.
+\finenonce
+
+\noindication
+
+\correction
+Pour $x>0$, posons $f(x)=\frac{x^2}{e^x-1}$. $f$ est continue sur $]0,+\infty[$.
+
+Ensuite, pour tout réel strictement positif $x$, on a $0<e^{-x}<1$ et donc
+
+\begin{center}
+$\frac{x^2}{e^x-1}=\frac{x^2e^{-x}}{1-e^{-x}}=x^2e^{-x}\sum_{n=0}^{+\infty}e^{-nx}=\sum_{n=0}^{+\infty}x^2e^{-(n+1)x}=\sum_{n=1}^{+\infty}x^2e^{-nx}$.
+\end{center}
+
+Pour $n\in\Nn^*$ et $x>0$, posons $f_n(x)=x^2e^{-nx}$. Chaque fonction $f_n$, $n\in\Nn^*$, est continue et intégrable sur $[0,+\infty[$ car négligeable devant $\frac{1}{x^2}$ quand $x$ tend vers $+\infty$. En particulier, chaque fonction $f_n$, $n\in\Nn^*$, est intégrable sur $]0,+\infty[$. De plus, pour $n\in\Nn^*$,
+
+\begin{center}
+$\int_{0}^{+\infty}|f_n(x)|\;dx=\int_{0}^{+\infty}x^2e^{-nx}\;dx=\frac{1}{n^3}\int_{0}^{+\infty}u^2e^{-u}\;du=\frac{\Gamma(3)}{n^3}=\frac{2}{n^3}$,
+\end{center}
+
+qui est le terme général d'une série numérique convergente.
+
+En résumé,
+
+\textbullet~chaque fonction $f_n$, $n\in\Nn^*$, est continue et intégrable sur $]0,+\infty[$,
+
+\textbullet~la série de fonctions de terme général $f_n$, $n\in\Nn^*$, converge simplement vers la fonction $f$ sur $]0,+\infty[$ et la fonction $f$
+
+est continue sur $]0,+\infty[$.
+
+\textbullet~$\sum_{n=1}^{+\infty}\int_{0}^{+\infty}|f_n(x)|\;dx<+\infty$.
+
+D'après un théorème d'intégration terme à terme, $f$ est intégrable sur $]0,+\infty[$, la série numérique de terme général $\int_{0}^{1}f_n(x)\;dx$, $n\in\Nn^*$, converge et
+
+\begin{center}
+$\int_{0}^{+\infty}f(x)\;dx=\sum_{n=1}^{+\infty}\int_{0}^{+\infty}f_n(x)\;dx=\sum_{n=1}^{+\infty}\frac{2}{n^3}$.
+\end{center}
+
+On a montré que
+
+\begin{center}
+\shadowbox{
+$\int_{0}^{+\infty}\frac{x^2}{e^x-1}\;dx=2\sum_{n=1}^{+\infty}\frac{1}{n^3}$.
+}
+\end{center}
+\fincorrection
+\finexercice

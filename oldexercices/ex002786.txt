@@ -1,0 +1,25 @@
+\exercice{2786, burnol, 2009/12/15}
+\enonce
+\label{ex:burnol1.1.4}
+Montrer la formule pour la dérivée d'une composition $g\circ f$.
+\finenonce
+\noindication
+\correction
+On utilise de nouveau la d\'efinition de la d\'eriv\'ee, d'abord pour $f$ en
+$z$ puis pour $g$ au point $f(z)$:
+$$f(z+h)=f(z)+ f'(z)h +h \epsilon(h).$$
+Notons $w_h=f'(z)h +h\epsilon(h)$. Alors (et comme dans les exercices
+précédents on utilise \og epsilon\fg{} pour n'importe quelle fonction tendant
+vers zéro lorsque sa variable tend vers zéro):
+$$g(f(z+h))=g(f(z)+w_h) =g(f(z))+g'(f(z))w_h +w_h \epsilon(w_h).$$
+Ainsi:
+$$\frac{1}{h} \big(g(f(z+h))-g(f(z))\big) = \big(g'(f(z)) +
+\epsilon(w_h)\big)\frac{w_h}h.$$
+Lorsque $h\to0$, on a $w_h\to0$, donc $\epsilon(w_h)\to0$ et par ailleurs
+$\frac{w_h}h\to f'(z)$. Au final
+$$
+(g\circ f)'(z) = \lim_{h\to 0} \big(g'(f(z)) +
+\epsilon(w_h)\big)\frac{w_h}h = g'(f(z)) f'(z).
+$$
+\fincorrection
+\finexercice

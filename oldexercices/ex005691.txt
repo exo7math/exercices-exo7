@@ -1,0 +1,160 @@
+\exercice{5691, rouget, 2010/10/16}
+\enonce
+\label{ex:rou4}
+Calculer les sommes des séries suivantes après avoir vérifié leur convergence.
+
+\begin{center}
+\begin{tabular}{lll}
+\textbf{1) (**)} $\sum_{n=0}^{+\infty}\frac{n+1}{3^n}$&\textbf{2) (**)} $\sum_{n=3}^{+\infty}\frac{2n-1}{n^3-4n}$&\textbf{3) (***)} $\sum_{n=0}^{+\infty}\frac{1}{(3n)!}$\\
+\textbf{4) (*)} $\sum_{n=2}^{+\infty}\left(\frac{1}{\sqrt{n-1}}+\frac{1}{\sqrt{n+1}}-\frac{2}{\sqrt{n}}\right)$&
+\textbf{5) (**)} $\sum_{n=2}^{+\infty}\ln\left(1+\frac{(-1)^n}{n}\right)$&\textbf{6) (***)} $\sum_{n=0}^{+\infty}\ln\left(\cos\frac{a}{2^n}\right)$  $a\in\left]0,\frac{\pi}{2}\right[$\\
+textbf{7)}  $\sum_{n=0}^{+\infty}\frac{\tanh\frac{a}{2^n}}{2^n}$
+\end{tabular}
+\end{center}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  $\frac{n+1}{3^n}\underset{n\rightarrow+\infty}{=}o\left(\frac{1}{n^2}\right)$. Par suite, la série de terme général $\frac{n+1}{3^n}$ converge.
+
+\textbf{1er calcul.} Soit $S=\sum_{n=0}^{+\infty}\frac{n+1}{3^n}$. Alors
+
+\begin{align*}\ensuremath
+\frac{1}{3}S&=\sum_{n=0}^{+\infty}\frac{n+1}{3^{n+1}}=\sum_{n=1}^{+\infty}\frac{n}{3^{n}}=\sum_{n=1}^{+\infty}\frac{n+1}{3^{n}}-\sum_{n=1}^{+\infty}\frac{1}{3^{n}}\\
+ &=(S-1)-\frac{1}{3}\frac{1}{1-\frac{1}{3}}=S-\frac{3}{2}.
+\end{align*}
+
+On en déduit que $S=\frac{9}{4}$.
+
+\begin{center}
+\shadowbox{
+$\sum_{n=0}^{+\infty}\frac{n+1}{3^n}=\frac{9}{4}$.
+}
+\end{center}
+
+\textbf{2ème calcul.} Pour $x\in\Rr$ et $n\in\Nn$, on pose $f_n(x)=\sum_{k=0}^{n}x^k$.
+
+Soit $n\in\Nn^*$. $f_n$ est dérivable sur $\Rr$ et pour $x\in\Rr$,
+
+\begin{center}
+$f_n'(x)=\sum_{k=1}^{n}kx^{k-1}=\sum_{k=0}^{n-1}(k+1)x^k$.
+\end{center}
+
+Par suite, pour $n\in\Nn^*$ et $x\in\Rr\setminus\{1\}$
+
+\begin{center}
+$\sum_{k=0}^{n-1}(k+1)x^k=f_n'(x)=\left(\frac{x^n-1}{x-1}\right)'(x)=\frac{nx^{n-1}(x-1)-(x^n-1)}{(x-1)^2}=\frac{(n-1)x^n-nx^{n-1}+1}{(x-1)^2}$.
+\end{center}
+
+Pour $x=\frac{1}{3}$, on obtient  $\sum_{k=0}^{n-1}\frac{k+1}{3^k}=\frac{\frac{n-1}{3^n}-\frac{n}{3^{n-1}}+1}{\left(\frac{1}{3}-1\right)^2}$ et quand $n$ tend vers l'infini, on obtient de nouveau $S=\frac{9}{4}$.
+
+\item  Pour $k\geqslant3$, $\frac{2k-1}{k^3-4k}=\frac{3}{8(k-2)}+\frac{1}{4k}-\frac{5}{8(k+2)}$. Puis
+
+\begin{align*}\ensuremath
+\sum_{k=3}^{n}\frac{2k-1}{k^3-4k}&=\frac{3}{8}\sum_{k=3}^{n}\frac{1}{k-2}+\frac{1}{4}\sum_{k=3}^{n}\frac{1}{k}-\frac{5}{8}\sum_{k=3}^{n}\frac{1}{k+2}=\frac{3}{8}\sum_{k=1}^{n-2}\frac{1}{k}+\frac{1}{4}\sum_{k=3}^{n}\frac{1}{k}-\frac{5}{8}\sum_{k=5}^{n+2}\frac{1}{k}\\
+ &\underset{n\rightarrow+\infty}{=}\frac{3}{8}\left(1+\frac{1}{2}+\sum_{k=3}^{n}\frac{1}{k}\right)+\frac{1}{4}\sum_{k=3}^{n}\frac{1}{k}-\frac{5}{8}\left(-\frac{1}{3}-\frac{1}{4}\sum_{k=3}^{n}\frac{1}{k}\right)+o(1)\\
+ &\underset{n\rightarrow+\infty}{=}\frac{3}{8}\times\frac{3}{2}+\frac{5}{8}\times\frac{7}{12}+o(1)\underset{n\rightarrow+\infty}{=}\frac{89}{96}+ o(1) .
+\end{align*}
+
+La série proposée est donc convergente de somme $\frac{89}{96}$.
+
+\begin{center}
+\shadowbox{
+$\sum_{n=3}^{+\infty}\frac{2n-1}{n^3-4n}=\frac{89}{96}$.
+}
+\end{center}
+
+\item  Pour $k\in\Nn$, on a $1^{3k}+j^{3k}+(j^2)^{3k}=3$ puis $1^{3k+1}+j^{3k+1}+(j^2)^{3k+1} =1+j+j^2= 0$ et $1^{3k+2}+j^{3k+2}+(j^2)^{3k+2}=1+j^2 + j^4 = 0$. Par suite,
+
+\begin{center}
+$e+e^j+e^{j^2}=\sum_{n=0}^{+\infty}\frac{1^n+j^n+(j^2)^n}{n!}=3\sum_{n=0}^{+\infty}\frac{1}{(3n)!}$,
+\end{center}
+
+et donc
+
+\begin{align*}\ensuremath
+\sum_{n=0}^{+\infty}\frac{1}{(3n)!}&=\frac{1}{3}(e+e^j+e^{j^2})=\frac{1}{3}\left(e+e^{-\frac{1}{2}+i\frac{\sqrt{3}}{2}}+e^{-\frac{1}{2}-i\frac{\sqrt{3}}{2}}\right) =\frac{1}{3}\left(e + 2e^{-1/2}\text{Re}(e^{-i\sqrt{3}/2})\right)\\
+ &=\frac{1}{3}\left(e +2e^{-1/2}\cos\left(\frac{\sqrt{3}}{2}\right)\right).
+\end{align*}
+
+\begin{center}
+\shadowbox{
+$\sum_{n=0}^{+\infty}\frac{1}{(3n)!}=\frac{1}{3}\left(e +\frac{2}{\sqrt{e}}\cos\left(\frac{\sqrt{3}}{2}\right)\right)$.
+}
+\end{center}
+
+\item 
+
+\begin{align*}\ensuremath
+\sum_{k=2}^{n}\left(\frac{1}{\sqrt{k-1}}+\frac{1}{\sqrt{k+1}}-\frac{2}{\sqrt{k}}\right)&=\sum_{k=2}^{n}\left(\left(\frac{1}{\sqrt{k-1}}-\frac{1}{\sqrt{k}}\right)-\left(\frac{1}{\sqrt{k}}-\frac{1}{\sqrt{k+1}}\right)\right)\\
+ &=\left(1-\frac{1}{\sqrt{2}}\right)-\left(\frac{1}{\sqrt{n}}-\frac{1}{\sqrt{n+1}}\right)\;(\text{somme télescopique})\\
+ &\underset{n\rightarrow+\infty}{=}1-\frac{1}{\sqrt{2}}+o(1) 
+\end{align*}
+
+\begin{center}
+\shadowbox{
+$\sum_{n=2}^{+\infty}\left(\frac{1}{\sqrt{n-1}}+\frac{1}{\sqrt{n+1}}-\frac{2}{\sqrt{n}}\right)=1-\frac{1}{\sqrt{2}}$.
+}
+\end{center}
+
+\item  $\ln\left(1+\frac{(-1)^n}{n}\right)\underset{n\rightarrow+\infty}{=}\frac{(-1)^n}{n}+O\left(\frac{1}{n^2}\right)$. Donc la série de terme général $\ln\left(1+\frac{(-1)^n}{n}\right)$ converge.
+
+Posons $S=\sum_{k=2}^{+\infty}\ln\left(1+\frac{(-1)^k}{k}\right)$ puis pour $n\geqslant2$, $S_n=\sum_{k=2}^{n}\ln\left(1+\frac{(-1)^k}{k}\right)$. Puisque la série converge $S=\lim_{n \rightarrow +\infty}S_n=\lim_{p \rightarrow +\infty}S_{2p+1}$ avec
+
+\begin{align*}\ensuremath
+S_{2p+1}&=\sum_{k=2}^{2p+1}\ln\left(1+\frac{(-1)^k}{k}\right)=\sum_{k=1}^{p}\left(\ln\left(1-\frac{1}{2k+1}\right)+\ln\left(1+\frac{1}{2k}\right)\right)\\
+ &=\sum_{k=1}^{p}(\ln(2k)-\ln(2k+1)+\ln(2k+1)-\ln(2k))=0
+\end{align*}
+
+et quand $p$ tend vers $+\infty$, on obtient $S = 0$.
+
+\begin{center}
+\shadowbox{
+$\sum_{n=2}^{+\infty}\ln\left(1+\frac{(-1)^n}{n}\right)=0$.
+}
+\end{center}
+
+\item  Si $a\in\left]0,\frac{\pi}{2}\right[$ alors, pour tout entier naturel $n$, $\frac{a}{2^n}\in\left]0,\frac{\pi}{2}\right[$ et donc $\cos\left(\frac{a}{2^n}\right)>0$.
+
+Ensuite, $\ln\left(\cos\left(\frac{a}{2^n}\right)\right)\underset{n\rightarrow+\infty}{=}\ln\left(1+O\left(\frac{1}{2^{2n}}\right)\right)\underset{n\rightarrow+\infty}{=}O\left(\frac{1}{2^{2n}}\right)$ et la série converge. Ensuite,
+
+\begin{align*}\ensuremath
+\sum_{k=0}^{n}\ln\left(\cos\left(\frac{a}{2^k}\right)\right)&=\ln\left(\prod_{k=0}^{n}\cos\left(\frac{a}{2^k}\right)\right)=\ln\left(\prod_{k=0}^{n}\frac{\sin\left(2\times\frac{a}{2^k}\right)}{2\sin\left(\frac{a}{2^k}\right)}\right)=\ln\left(\frac{1}{2^{n+1}}\prod_{k=0}^{n}\frac{\sin\left(\frac{a}{2^{k-1}}\right)}{\sin\left(\frac{a}{2^k}\right)}\right)\\
+ &=\ln\left(\frac{\sin(2a)}{2^{n+1}\sin\left(\frac{a}{2^n}\right)}\right)\;(\text{produit télescopique})\\
+ &\underset{n\rightarrow+\infty}{\sim}\ln\left(\frac{\sin(2a)}{2^{n+1}\times\frac{a}{2^n}}\right)=\ln\left(\frac{\sin(2a)}{2a}\right).
+\end{align*}
+
+\begin{center}
+\shadowbox{
+$\forall a\in\left]0,\frac{\pi}{2}\right[$, $\sum_{n=0}^{+\infty}\ln\left(\cos\left(\frac{a}{2^n}\right)\right)=\ln\left(\frac{\sin(2a)}{2a}\right)$.
+}
+\end{center}
+
+\item  Vérifions que pour tout réel $x$ on a $\tanh(2x)=\frac{2\tanh x}{1+\tanh^2x}$. Soit $x\in\Rr$.
+
+$\ch^2x+\sh^2x=\frac{1}{4}((e^x+e^{-x})^2+(e^x-e^{-x})^2)=\frac{1}{2}(e^{2x}+e^{-2x})=\ch(2x)$ et $2\sh x\ch x=\frac{1}{2}(e^{x}-e^{-x})(e^x+e^{-x})=\frac{1}{2}(e^{2x}-e^{-2x})=\sh(2x)$ puis
+
+\begin{center}
+$\frac{2\tanh x}{1+\tanh^2x}=\frac{2\sh x\ch x}{\ch^2x+\sh^2x}=\frac{\sh(2x)}{\ch(2x)}=\tanh(2x)$.
+\end{center}
+
+Par suite, pour $x\in\Rr^*$, $\tanh x=\frac{2}{\tanh(2x)}-\frac{1}{\tanh x}$. Mais alors, pour $a\in\Rr^*$ et $n\in\Nn$
+
+\begin{align*}\ensuremath
+\sum_{k=0}^{n}\frac{1}{2^k}\tanh\left(\frac{a}{2^k}\right)&=\sum_{k=0}^{n}\frac{1}{2^k}\left(\frac{2}{\tanh\frac{a}{2^{k-1}}}-\frac{1}{\tanh\frac{a}{2^{k}}}\right)=\sum_{k=0}^{n}\left(\frac{1}{2^{k-1}\tanh\frac{a}{2^{k-1}}}-\frac{1}{2^k\tanh\frac{a}{2^{k}}}\right)\\
+ &=\frac{2}{\tanh(2a)}-\frac{1}{2^n\tanh\frac{a}{2^{n}}}\;(\text{somme télescopique})\\
+ &\underset{n\rightarrow+\infty}{\rightarrow}\frac{2}{\tanh(2a)}-\frac{1}{a},
+\end{align*}
+
+ce qui reste vrai quand $a=0$.
+
+\begin{center}
+\shadowbox{
+$\forall a\in\Rr$, $\sum_{n=0}^{+\infty}\frac{1}{2^n}\tanh\left(\frac{a}{2^n}\right)=\frac{2}{\tanh(2a)}-\frac{1}{a}$.
+}
+\end{center}
+\end{enumerate}	
+\fincorrection
+\finexercice

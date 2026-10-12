@@ -1,0 +1,43 @@
+\exercice{4373, quercia, 2010/03/12}
+\enonce[Centrale MP 2004]
+Soit~$(a_n)_{n\in\N}$ la suite définie par $a_0=1$ et $a_n =
+\frac1{n!} \int_{t=0}^1t(t-1)\dots(t-n)\,d t$.
+
+\begin{enumerate}
+  \item Quel est le rayon de convergence de la série entière $\sum_{n=0}^\infty
+    a_nx^n$~?
+    
+  \item Donner un équivalent de~$a_n$.
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Pour $0\le t\le 1$ on a $t(1-t)(n-1)! \le t(1-t)\dots(n-t)\le n!$
+    d'où $\frac1{6n}\le|a_n|\le1$ et $R=1$.
+  \item $(-1)^na_n= \int_{t=0}^1t(1-t)(1-t/2)\dots(1-t/n)\,d t$.
+    Pour $0\le x\le\frac12$ on a $x\le-\ln(1-x)\le x+x^2$ (étude
+    de fonction) donc pour $k\ge 2$ et $0\le t\le 1$~:
+    $e^{-t/k-t^2/k^2}\le 1-t/k\le e^{-t/k}$ d'où~:
+ 
+    $$b_n =  \int_{t=0}^1t(1-t)e^{-t(H_n-1)-t^2K_n}\,d t\le (-1)^na_n
+    \le  \int_{t=0}^1te^{-tH_n}\,d t = c_n$$
+    avec $H_n = 1+1/2+\dots+1/n$ et $K_n = 1/2^2+\dots+1/n^2$.
+
+    \'Equivalent du majorant~:
+    $$c_n = \frac{1-(1+H_n)e^{-H_n}}{H_n^2}\sim\frac1{H_n^2}.$$
+
+    \'Equivalent du minorant~:
+    \begin{align*}b_n&\ge  \int_{t=0}^1t(1-t)(1-t^2K_n)e^{-t(H_n-1)}\,d t\cr
+    &=  \int_{t=0}^1te^{-t(H_n-1)}\,d t -  \int_{t=0}^1t^2(1+t(1-t)K_n)e^{-t(H_n-1)}\,d t\cr
+    &\ge  \int_{t=0}^1te^{-t(H_n-1)}\,d t - (1+{\textstyle\frac14}K_n) \int_{t=0}^1t^2e^{-t(H_n-1)}\,d t\cr
+    &\ge \frac{1-H_ne^{1-H_n}}{(H_n-1)^2} - (1+{\textstyle\frac14}K_n)\frac{2-(H_n^2+1)e^{1-H_n}}{(H_n-1)^3}\cr
+    &\sim\frac1{H_n^2}.\cr\end{align*}
+    Finalement, $a_n\sim\frac{(-1)^n}{H_n^2}\sim\frac{(-1)^n}{\ln^2n}$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

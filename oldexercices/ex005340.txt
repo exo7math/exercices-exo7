@@ -1,0 +1,17 @@
+\exercice{5340, rouget, 2010/07/04}
+\enonce
+Calculer la dérivée $n$-ième de $\frac{1}{X^2+1}$.
+\finenonce
+
+\noindication
+
+\correction
+Soit $n\in\Nn^*$. $\frac{1}{X^2+1}=\frac{1}{2i}(\frac{1}{X-i}-\frac{1}{X+i})$. Donc,
+
+\begin{align*}\ensuremath
+\left(\frac{1}{X^2+1}\right)^{(n)}&=\frac{1}{2i}(\left(\frac{1}{X-i}\right)^{(n)}-\left(\frac{1}{X+i}\right)^{(n)})=\frac{1}{2i}(\frac{(-1)(-2)...(-n)}{(X-i)^{n+1}}-\frac{(-1)(-2)...(-n)}{(X+i)^{n+1}})\\
+ &=(-1)^n.n!\mbox{Im}(\frac{1}{(X-i)^{n+1}})=(-1)^n.n!\mbox{Im}(\frac{(X+i)^{n+1}}{(X^2+1)^{n+1}})
+=\frac{(-1)^n.n!\sum_{}^{}C_{n+1}^{2k+1}(-1)^kX^{2n-2k}}{(X^2+1)^{n+1}}
+\end{align*}
+\fincorrection
+\finexercice

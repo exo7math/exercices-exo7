@@ -1,0 +1,48 @@
+\exercice{2357, queffelec, 2003/10/01}
+\enonce
+\begin{enumerate}
+\item Montrer que $f$ est continue si et seulement si $f(\overline A)\subset
+\overline{f(A)}$ pour tout $A$ dans $X$. Que peut-on dire alors de l'image par
+$f$ d'un ensemble dense dans $X$?  
+
+\item Montrer que $f$ est ferm\'ee si et seulement si $\overline{f(A)}\subset
+f(\overline A)$, et que $f$ est ouverte si et seulement si ${f(\stackrel\circ
+A)}\subset \stackrel\circ{f( A)}$.
+\end{enumerate}
+\finenonce
+
+\indication
+\begin{enumerate}
+\item Pour le sens direct utiliser la caractérisation de l'adhérence par les suites. Pour le sens réciproque, montrer que l'image réciproque d'un fermé est un fermé. 
+   \end{enumerate}
+\finindication
+
+\correction
+\begin{enumerate} 
+ \item $\Rightarrow$.
+Soit $f$ continue et $y\in f(\bar A)$. Il existe $x\in \bar A$ tel que $y=f(x)$. Soit $x_n \in A$ tel que $(x_n)$ converge vers $x$. Alors
+ $y_n=f(x_n)\in A$. Comme $f$ est continue alors 
+$(y_n)$ converge vers $f(x)=y$. Donc $y$ est adhérent à $f(A)$.
+Conclusion $f(\bar A) \subset \overline{f(A)}$.
+
+$\Leftarrow$. Soit $f : X \rightarrow Y$ et soit $F$ un fermé de $Y$.
+Notons $A = f^{-1}(F)$. Alors $f(A) \subset F$ donc l'équation 
+$f(\bar A) \subset \overline{f(A)}$
+devient $f(\bar A) \subset \bar F = F$ car $F$ est fermé.
+Donc $\bar A \subset f^{-1}(F)=A$. Donc
+$\bar A \subset A$, d'o\`u $\bar A=A$. Donc $A$ est fermé. Bilan l'image réciproque de tout fermé $F$ est un fermé, donc $f$ est continue.
+
+Application : si $A$ est dense, alors $\bar A= X$, et sous les hypothèses précédentes alors $f(A)$ est dense dans l'image de $X$ par $f$ : en effet $\overline{f(A)}$ contient $f(\bar A) = f(X)$
+
+  \item $\Rightarrow$. Soit $f$ fermé et soit $A \subset X$.
+Alors $A \subset \bar A$ donc $f(A) \subset f(\bar A)$, donc
+comme $\bar A$ est un fermé et $f$ est fermée alors $f(\bar A)$ est un fermé contenant $f(A)$. Mais comme $\overline {f(A)}$ est le plus petit fermé contenant $f(A)$ alors $\overline {f(A)} \subset f(\bar A)$.
+
+$\Leftarrow$. La relation pour un fermé $F$ donne 
+$\overline {f(F)} \subset f(\bar F) = f(F)$. Donc $\overline {f(F)} = f(F)$.
+Donc $f(F)$ est fermé. Donc $f$ est fermée.
+
+Même type de raisonnement avec $f$ ouverte.
+\end{enumerate}
+\fincorrection
+\finexercice

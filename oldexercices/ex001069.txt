@@ -1,0 +1,42 @@
+\exercice{1069, gourio, 2001/09/01}
+\video{XdgqhVnKjTg}
+\enonce
+$A=\left( a_{i,j}\right) \in \mathcal{M}_{n}(\Rr)$
+telle que :
+$$\forall i =1,\ldots,n \qquad \left| a_{i,i}\right| >\sum_{j\neq i}\left|a_{i,j}\right| . $$
+Montrer que $A$ est inversible.
+\finenonce
+
+\indication
+Prendre un vecteur $X=\left(
+\begin{array}{c}
+x_1\\
+\vdots\\
+x_n
+\end{array}
+\right)$ tel que $AX=0$, considérer le rang $i_0$ tel $|x_{i_0}|=\max\big\{|x_i| \mid i=1,...,n\big\}$.
+\finindication
+
+\correction
+Soit $X=\left(
+\begin{array}{c}
+x_1\\
+\vdots\\
+x_n
+\end{array}
+\right)$  un vecteur tel que $AX=0$. 
+Nous allons montrer qu'alors $X$ est le vecteur nul ce qui entraîne que $A$ est inversible.
+
+Par l'absurde supposons $X\neq0$. 
+Alors, si $i_0$ est un indice tel que $|x_{i_0}|=\max\big\{|x_i| \mid i=1,\ldots,n\big\}$, on a  $|x_{i_0}|>0$.
+
+Mais alors comme $AX=0$ on a pour tout $i=1,\ldots,n$ :
+$$\sum_{j=1}^{n}a_{i,j}x_j=0$$
+donc 
+$$|a_{i_0,i_0}x_{i_0}|=\left|-\sum_{j\neq i_0}^{}a_{i_0,j}x_j\right|\leq\sum_{j\neq i_0}^{}|a_{i_0,j}|.|x_j|
+ \leq|x_{i_0}|\sum_{j\neq i_0}^{}|a_{i_0,j}|
+$$
+et, puisque $|x_{i_0}|> 0$, on obtient $|a_{i_0,i_0}|\leq\sum_{j\neq i_0}^{}|a_{i_0,j}|$ contredisant les hypothèses de l'énoncé. 
+Ainsi $X=0$. On a donc prouvé <<$AX=0 \Rightarrow X=0$>> ce qui équivaut à $A$ inversible.
+\fincorrection
+\finexercice

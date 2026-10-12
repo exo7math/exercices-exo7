@@ -1,0 +1,38 @@
+\exercice{1064, ridde, 1999/11/01}
+\video{IfhgaXB6Oh0}
+\enonce
+Que peut-on dire d'une matrice $A \in \mathcal{M}_n (\Rr)$ qui vérifie $\text{tr} (A \ {}^{t}\!{A}) = 0$ ?
+\finenonce
+
+\indication
+Appliquer la formule du produit pour calculer les coefficients diagonaux de $A\ {}^{t}\!{A}$
+\finindication
+
+\correction
+Notons $A=(a_{ij})$, notons $B = {}^{t}\!{A}$ si les coefficients sont $B=(b_{ij})$ 
+alors par définition de la transposée on a $b_{ij}= a_{ji}$.
+
+Ensuite notons $C = A \times B$ alors par définition du produit de matrices 
+le coefficients $c_{ij}$ de $C$ s'obtient par la formule :
+$$c_{ij} = \sum_{k=1}^n a_{ik}b_{kj}.$$
+
+Appliquons ceci avec $B = {}^{t}\!{A}$
+$$c_{ij} = \sum_{k=1}^n a_{ik}b_{kj} = \sum_{k=1}^n a_{ik}a_{jk}.$$
+Et pour un coefficient de la diagonale on a $i=j$ donc 
+$$c_{ii} =  \sum_{k=1}^n a_{ik}^2.$$
+
+La trace étant la somme des coefficients sur la diagonale on a :
+$$\text{tr} (A \ {}^{t}\!{A}) = \text{tr} (C) 
+= \sum_{i=1}^n c_{ii} =  \sum_{i=1}^n \sum_{k=1}^n a_{ik}^2 = \sum_{1\le i,k \le n} a_{ik}^2.$$
+
+Si on change l'indice $k$ en $j$ on obtient 
+$$\text{tr} (A \ {}^{t}\!{A})  = \sum_{1\le i,j \le n} a_{ij}^2.$$
+
+Donc cette trace vaut la somme des carrés de tous les coefficients.
+
+Conséquence : si $\text{tr} (A \ {}^{t}\!{A}) = 0$ alors la somme des carrés 
+$\sum_{1\le i,j \le n} a_{ij}^2$ est nulle 
+donc chaque carré $a_{ij}^2$ est nul. Ainsi $a_{ij}=0$ (pour tout $i,j$) autrement dit $A$ est la matrice nulle.
+\fincorrection
+
+\finexercice

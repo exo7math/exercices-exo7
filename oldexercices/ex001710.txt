@@ -1,0 +1,93 @@
+\exercice{1710, barraud, 2003/09/01}
+
+\enonce
+Donner toutes les suites $(x_{n})$, $(y_{n})$ et $(z_{n})$ telles que~:
+{\it(on notera $\omega=e^{\frac{i\pi}{3}}$)}
+$$
+\forall n\in\N,\ 
+\left\{
+\begin{array}{r}
+  x_{n+1}= x_{n}+y_{n}\\
+  y_{n+1}= y_{n}+z_{n}\\
+  z_{n+1}= z_{n}+x_{n}
+\end{array}
+\right.
+$$
+
+Parmi les solutions de ce système, donner celle qui satisfait $x_{0}=2$
+et $y_{0}=z_{0}=1$.
+
+\finenonce
+
+\noindication
+
+\correction
+Soit $A=\Big(\begin{smallmatrix}%
+  1&1&0\\0&1&1\\1&0&1%
+\end{smallmatrix}\Big)$.
+$\chi_{A}=(2-X)(\omega-X)(\bar\omega-X)$ donc $A$ est diagonalisable sur
+$\C$.
+
+$\ker(A-2I)=\C\Big(\begin{smallmatrix}%
+  1\\1\\1%
+\end{smallmatrix}\Big)$  
+
+$\Big(\begin{smallmatrix}x\\y\\z\end{smallmatrix}\Big)\in\ker(A-\omega I)%
+\Leftrightarrow\Big\{\begin{smallmatrix}%
+  (1-\omega)x+y=0\\(1-\omega)y+z=0\\(1-\omega)z+x=0%
+\end{smallmatrix}
+\Leftrightarrow\big\{\begin{smallmatrix}%
+  y=(\omega-1)x\\z=(\omega-1)^{2}x%
+\end{smallmatrix} 
+\Leftrightarrow\big\{\begin{smallmatrix}%
+  y=\omega^{2}x\\z=\omega^{4}x%
+\end{smallmatrix}$ 
+donc $\ker(A-\omega I)=\C\Big(\begin{smallmatrix}1\\\omega^{2}\\\omega^{4}\end{smallmatrix}\Big)$
+
+On en déduit que $\ker(A-\bar\omega I)=\C\Big(\begin{smallmatrix}1\\\bar\omega^{2}\\\bar\omega^{4}\end{smallmatrix}\Big)$.
+
+Ainsi en posant $P=\Big(\begin{smallmatrix}
+  1&1&1\\1&\omega^{2}&\bar\omega^{2}\\1&\omega^{4}&\bar\omega^{4}\end{smallmatrix}\Big)$ on obtient
+$P^{-1}AP=\Big(\begin{smallmatrix}
+  2&0&0\\
+  0&\omega&0\\
+  0&0&\bar\omega\end{smallmatrix}\Big)$
+
+On en déduit que les solutions sont les suites de la forme%
+$\Big(\begin{smallmatrix}
+  x_{n}\\
+  y_{n}\\
+  z_{n}  
+\end{smallmatrix}\Big)=
+P\Big(\begin{smallmatrix}
+  2^n&0&0\\
+  0&\omega^{n}&0\\
+  0&0&\bar\omega^{n}\end{smallmatrix}\Big)
+\Big(\begin{smallmatrix}
+  a\\b\\c\end{smallmatrix}\Big)
+=
+P\Big(\begin{smallmatrix}2^na\\\omega^n b\\\bar\omega^nc\end{smallmatrix}\Big)
+$ soit~:
+$\Big\{\begin{smallmatrix}
+  x_{n}=&2^na&+\omega^{n}b  &+\bar\omega^{n}c\\
+  y_{n}=&2^na&+\omega^{n+2}b&+\bar\omega^{n+2}c\\
+  z_{n}=&2^na&+\omega^{n+4}b&+\bar\omega^{n+4}c\\
+\end{smallmatrix}$ où $a,b,c$ sont trois complexes.
+
+En résolvant le système%
+$\Big\{\begin{smallmatrix}
+  a+b+c&=2\\
+  a+b\omega^{2}+c\bar\omega^{2}&=1\\
+  a+b\omega^{4}+c\bar\omega^{4}&=1\\
+\end{smallmatrix}$
+on obtient la solution particulière cherchée,  c'est la solution
+associée à $a=4/3, b=c=1/3$ :
+$$\left\{\begin{array}{llll}
+  x_{n}=&2^{n+2}/3 &+&2/3 \cos(n\pi/3)\\
+  y_{n}=&2^{n+2}/3 &+&2/3 \cos((n+2)\pi/3)\\
+  z_{n}=&2^{n+2}/3 &+&2/3 \cos((n+4)\pi/3)\\
+\end{array}\right..$$ 
+
+\fincorrection
+
+\finexercice

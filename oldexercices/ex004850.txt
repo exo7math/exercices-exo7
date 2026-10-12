@@ -1,0 +1,20 @@
+\exercice{4850, quercia, 2010/03/16}
+\enonce[Th{\'e}or{\`e}me de Baire]
+Soit $E$ un espace vectoriel norm{\'e} complet et $(F_n)$
+une suite de ferm{\'e}s de $E$ d'int{\'e}rieurs vides.
+On pose $\smash{F = \bigcup_n F_n}$. Montrer que $\mathring F = \varnothing$.
+
+\finenonce
+
+\noindication
+
+\correction
+Soit $a \in \mathring F$ et $B(a,r) \subset \bigcup_n F_n$ :
+$B \setminus F_1$ est un ouvert non vide donc contient une boule
+$B_1(a_1,r_1)$.
+De m{\^e}me, $B_1 \setminus F_2$ contient une boule $B_2(a_2,r_2)$ etc.
+On peut imposer $r_n \xrightarrow[n\to\infty]{} 0$, donc il existe $c \in \bigcap_n B_n$,
+c.a.d. $c\in B$ mais pour tout $n$, $c \notin F_n$. Contradiction.
+\fincorrection
+
+\finexercice

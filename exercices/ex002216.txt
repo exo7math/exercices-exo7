@@ -1,34 +1,52 @@
 \exercice{2216, matos, 2008/04/23}
+
 \enonce
-Soit $A\in\Rr^{m\times n}$ de rang $r\leq p=\min (m,n)$. On consid\`ere la d\'ecomposition en valeurs singuli\`eres de $A$
- $$U^TAV = \mbox{diag} (\sigma_1, \cdots , \sigma_p )$$
-o\`u les $\sigma_i$ sont les valeurs singuli\`eres de $A$
+Soit \( A\in\Rr^{m\times n} \) de rang \( r\le p = \min (m,n) \). On considère la décomposition en valeurs singulières de \( A \)
+\[
+  U^TAV = \mbox{diag} (\sigma_1, \cdots , \sigma_p )
+\]
+où les \( \sigma_i \) sont les valeurs singulières de \( A \)
 \begin{enumerate}
-\item Montrer que Im$(A)=$ span$\{u^1, u^2, \cdots , u^r\}$ et 
- Ker$(A)=$ span$\{v^{r+1}, \cdots , v^n\}$.
-\item  Montrer que Im$(^TA)=$ span$\{v^1, u^2, \cdots , v^r\}$ et 
- Ker$(A^T)=$ span$\{u^{r+1}, \cdots , u^m\}$.
-\item D\'eterminer les matrices des projections orthogonales sur Im$(A)$, Ker$(A)$, Im$(A^T)$, Ker$(A^T)$ \`a l'aide de $U$ et $V$.
-\item \emph{Application:} calculer la d\'ecomposition en valeurs singuli\`eres de la matrice
-$$A=\left(\begin{array}{cc}1&1\\
-2&1\\
--1&1\end{array}\right)$$
-et les matrices correspondantes aux projections orthogonales de l'exercice pr\'ec\'edent.
+  \item Montrer que Im\( (A) =  \) span\( \{u_1, u_2, \cdots , u_r\} \) et Ker\( (A) =  \) span\( \{v_{r+1}, \cdots , v_n\} \).
+
+  \item Montrer que Im\( (A^T) =  \) span\( \{v_1, v_2, \cdots , v_r\} \) et Ker\( (A^T) =  \) span\( \{u_{r+1}, \cdots , u_m\} \).
+
+  \item Déterminer les matrices des projections orthogonales sur Im\( (A) \), Ker\( (A) \), Im\( (A^T) \), Ker\( (A^T) \) à l'aide de \( U \) et \( V \).
+
+  \item \emph{Application:} calculer la décomposition en valeurs singulières de la matrice
+        \[
+          A = \left(\begin{array}{cc}1 & 1 \\
+             2     & 1 \\
+             -1    & 1\end{array}\right)
+        \]
+        et les matrices correspondantes aux projections orthogonales de l'exercice précédent.
 \end{enumerate}
-\finenonce 
+\finenonce
 
 \noindication
 
 \correction
 4.On calcule
-$$A^TA=\left(\begin{array}{cc}6&2\\2& 3\end{array}\right)$$ et ses valeurs propres
-$$\mbox{det} \left(\begin{array}{cc}6-\lambda &2\\2& 3-\lambda\end{array}\right)=0\Leftrightarrow \lambda_1=7=\mu_1^2, \lambda_2=2=\mu_2^2$$
-On calcule ensuite les vecteurs propres associ\'es \`a ces valeurs propres
-$$\left(\begin{array}{cc}6&2\\2& 3\end{array}\right)\left(\begin{array}{c}x_1\\x_2\end{array}\right) =\lambda \left(\begin{array}{c}x_1\\x_2\end{array}\right)$$
-et la matrice $V$ est la matrice dont les colonnes sont
-$$v_1=(2/\sqrt{5}, 1/\sqrt{5})^T,\quad v_2=(1/\sqrt{5}, -2/\sqrt{5})^T$$
-les colonnes de $U$ sont alors donn\'ees par
-$$u_1=Av_1/\mu_1=1/(\sqrt{7}\sqrt{5})(3,5,-1)^T ,\quad u_2=Av_2/\mu_2=1/(\sqrt{2}\sqrt{5})(-1,0,-3)^T$$
-quant \`a $u_3$ il est choisi orthogonal \`a $u_1$ et $u_2$ et de norme 1.
+\[
+  A^TA = \left(\begin{array}{cc}6&2\\2& 3\end{array}\right)
+\]
+et ses valeurs propres
+\[
+  \mbox{det} \left(\begin{array}{cc}6-\lambda &2\\2& 3-\lambda\end{array}\right) = 0\Leftrightarrow \lambda_1 = 7 = \mu_1^2, \lambda_2 = 2 = \mu_2^2
+\]
+On calcule ensuite les vecteurs propres associés à ces valeurs propres
+\[
+  \left(\begin{array}{cc}6&2\\2& 3\end{array}\right)\left(\begin{array}{c}x_1\\x_2\end{array}\right) = \lambda \left(\begin{array}{c}x_1\\x_2\end{array}\right)
+\]
+et la matrice \( V \) est la matrice dont les colonnes sont
+\[
+  v_1 = (2/\sqrt{5}, 1/\sqrt{5})^T,\quad v_2 = (1/\sqrt{5}, -2/\sqrt{5})^T
+\]
+les colonnes de \( U \) sont alors données par
+\[
+  u_1 = Av_1/\mu_1 = 1/(\sqrt{7}\sqrt{5})(3,5,-1)^T ,\quad u_2 = Av_2/\mu_2 = 1/(\sqrt{2}\sqrt{5})(-1,0,-3)^T
+\]
+quant à \( u_3 \) il est choisi orthogonal à \( u_1 \) et \( u_2 \) et de norme 1.
 \fincorrection
+
 \finexercice

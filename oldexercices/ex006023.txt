@@ -1,0 +1,48 @@
+\exercice{6023, quinio, 2011/05/20}
+
+\enonce
+Aux dernières élections présidentielles en France, le candidat A
+a obtenu $20$\% des voix. On prend au hasard dans des bureaux de vote de
+grandes villes des lots de $200$ bulletins: on note $X$ la variable aléatoire 
+<<nombre de voix pour A dans les différents bureaux>>.
+\begin{enumerate}
+\item Quelle est la loi de probabilité de $X$?
+
+\item Comment peut-on l'approcher?
+
+\item Quelle est alors la probabilité pour que : $X$ soit supérieur 
+à $45$? $X$ compris entre $30$ et $50$?
+
+\item Pour un autre candidat B moins heureux le pourcentage des voix est de $2$\%.
+En notant $Y$ le nombre de voix pour B dans les différents bureaux, sur $100$ bulletins, 
+reprendre les questions 1 et 2. Quelle est alors la probabilité pour que : $Y$ soit supérieur à
+$5$? $Y$ compris entre $1$ et $4$ ?
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item Lorsque l'on tire un bulletin au hasard, la probabilité que ce soit
+un bulletin pour A est de $0.2.$
+
+\item Il y a suffisamment de bulletins de vote en tout pour que l'on puisse
+assimiler ces tirages à des tirages avec remise; alors la loi de
+probabilité de $X$ est une loi binomiale de paramètres $n=200$ et $p=0.2;$ or
+ $np=40$; on peut faire l'approximation normale. L'espérance de $X$ est 
+donc $m=40$ et l'écart-type: $\sqrt{40\times 0.8}=4\sqrt{2}$.
+
+\item $P[X\geq 45]=1-P[X\leq 44]\simeq 1-F(\frac{44.5-40}{4\sqrt{2}})\simeq 21\%$,
+c'est la probabilité pour que le nombre de voix pour A
+soit supérieur à $45$ dans un lot de $200$ bulletins.
+De même, $P[30\leq X\leq 50]\simeq F(\frac{50.5-m}{\sigma })-F(\frac{29.\text{$5$}-m}{\sigma })\simeq 93.6\%$.
+
+\item Reprenons le calcul pour le candidat B qui n'a obtenu que $2$\% des voix.
+Alors pour $n=100$ et $p=0.02$ l'approximation par une loi de Poisson d'espérance $\lambda =2$ est légitime.
+On peut dire que $P[Y\geq 5]=1-P[Y\leq 4]=1-\sum_{k=0}^{4}\frac{e^{-2}2^{k}}{k!}$, de l'ordre de $5$\%.
+
+Enfin $P[1\leq Y\leq 4]=\sum_{k=1}^{4}\frac{e^{-2}2^{k}}{k!}\simeq 0.812$.
+\end{enumerate}
+\fincorrection
+\finexercice

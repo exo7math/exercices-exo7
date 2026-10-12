@@ -1,0 +1,12 @@
+\exercice{2833, burnol, 2009/12/15}
+\enonce Déterminer la série de Laurent à l'origine de
+la fonction analytique $\exp(\frac 1z)$, et son résidu à
+l'origine. En $z_0\neq0$ quel est le résidu de cette fonction?
+\finenonce
+\noindication
+\correction
+Comme $e^w =\sum_{n\geq 0} \frac{w^n}{n!}$,
+$$\exp (\frac{1}{z}) =\sum_{n\geq 0} \frac{1}{n!}\frac{1}{z^n} = \sum_{n=-\infty}^0 \frac{1}{(-n)!} z^n.$$
+Par cons\'equent, $\mathrm{Res}(f,0) = 1$. Sinon, si $z_0\neq 0$, alors $\mathrm{Res}(f,z_0) = 0$ par holomorphie de $f$ dans  $\C\setminus \{0\}$.
+\fincorrection
+\finexercice

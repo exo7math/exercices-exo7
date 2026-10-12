@@ -1,0 +1,98 @@
+\exercice{5777, rouget, 2010/10/16}
+\enonce[****]
+ Soit $E$ un $\Rr$-espace vectoriel muni d'une norme, notée $\|\;\|$, vérifiant l'identité du parallélogramme. Montrer que cette norme est hilbertienne.
+\finenonce
+
+\noindication
+
+\correction
+Soit $N$ une norme sur $E$ vérifiant $\forall(x,y)\in E^2$ $(N(x+y))^2+(N(x-y))^2 = 2((N(x))^2+(N(y))^2)$.
+
+Il faut montrer que la norme $N$ est associée à un produit scalaire $B$. Si $B$ existe, $B$ est nécessairement défini par
+
+\begin{center}
+$\forall(x,y)\in E^2$, $B(x,y) =\frac{1}{4}((N(x+y))^2-(N(x-y))^2)$.
+\end{center}
+
+Réciproquement, 
+
+\textbullet~Pour tout $x\in E$, $B(x,x) =\frac{1}{4}((N(2x))^2-(N(0))^2)=\frac{1}{4}(4(N(x))^2-0) =(N(x))2$ et donc $\forall x\in E$, $B(x,x)\geqslant0$ puis $B(x,x)=0\Leftrightarrow x=0$. De plus, $\forall x\in E$, $N(x)=\sqrt{B(x,x)}$.
+
+\textbullet~$\forall (x,y)\in E^2$, $B(y,x)=\frac{1}{4}((N(y+x))^2-(N(y-x))^2)=\frac{1}{4}((N(x+y))^2-(N(x-y))^2)=B(x,y)$.
+
+\textbullet~Vérifions alors que l'application $B$ est bilinéaire.
+
+1) Montrons que $\forall(x,y,z)\in E^3$, $B(x+y,z)+B(x-y,z)=2B(x,z)$.
+
+\begin{align*}\ensuremath
+B(x+y,z) + B(x-y,z)&=\frac{1}{4}((N(x+y+z))^2-(N(x+y-z))^2 +(N(x-y+z))^2-(N(x-y-z))^2)\\
+ &=\frac{1}{4}((N(x+y+z))^2+(N(x-y+z))^2)-((N(x+y-z))^2+(N(x-y-z))^2)\\
+ &=\frac{1}{4}(2(N(x+z))^2 +(N(y))^2)-2((N(x-z))^2 +(N(y))^2)\;(\text{par hypothèse sur}\;N)\\
+ &=\frac{2}{4}((N(x+z))^2-(N(x-z))^2) =2B(x,z).
+\end{align*}
+
+2) Montrons que $\forall(x,z)\in E^2$, $B(2x,z) = 2B(x,z)$. Tout d'abord, $B(0,z)=\frac{1}{4}((N(z))^2-(N(-z))^2)=0$ puis d'après 1)
+
+\begin{align*}\ensuremath
+B(2x,z)&= B(x+x,z)+B(x-x,z) = 2B(x,z).
+\end{align*}
+
+3) Montrons que $\forall(x,y,z)\in E^3$, $B(x,z) + B(y,z) = B(x+y,z)$.
+
+\begin{align*}\ensuremath
+B(x,z) + B(y,z)&= B\left(\frac{x+y}{2}+\frac{x-y}{2},z\right)+ B\left(\frac{x+y}{2}-\frac{x-y}{2},z\right)\\
+ &=2B\left(\frac{x+y}{2},z\right)\;(\text{d'après 1)})\\
+ &= B(x+y,z)\;(\text{d'après 2)}).
+\end{align*}
+
+4) Montrons que $\forall n\in\Nn$, $\forall(x,y)\in E^2$, $B(nx,y) = nB(x,y)$.
+
+\textbullet~~C'est vrai pour $n = 0$ et $n=1$.
+
+\textbullet~Soit $n\geqslant0$. Supposons que $\forall(x,y)\in E^2$, $B(nx,y) = nB(x,y)$ et $B((n+1)x,y) = (n+1)B(x,y)$. Alors
+
+\begin{center}
+$B((n+2)x,y) + B(nx,y) = B((n+2)x+nx,y) = B(2(n+1)x,y) = 2B((n+1)x,y)$,
+\end{center}
+
+et donc, par hypothèse de récurrence, $B((n+2)x,y)=2(n+1)B(x,y)-nB(x,y) =(n+2)B(x,y)$.
+
+5) Montrons que $\forall n\in\Zz$, $\forall(x,y)\in E^2$, $B(nx,y) = nB(x,y)$. Le résultat est acquis pour $n\geqslant 0$. Pour $n\in\Nn$,
+
+\begin{center}
+$B(nx,y) + B(-nx,y) = B(0,y) = 0$ et donc $B(-nx,y) =- B(nx,y)=-nB(x,y)$,
+\end{center}
+
+6) Montrons que $\forall n\in\Nn^*$, $\forall(x,y)\in E^2$, $B\left(\frac{1}{n}x,y\right) =\frac{1}{n}B(x,y)$.
+
+\begin{center}
+$B(x,y) =B\left(\frac{1}{n}nx,y\right) =nB\left(\frac{1}{n}x,y\right)$ et donc $B\left(\frac{1}{n}x,y\right) =\frac{1}{n}B(x,y)$.
+\end{center}
+
+7) Montrons que $\forall r\in\Qq$, $\forall(x,y)\in E^2$, $B(rx,y) = rB(x,y)$. Soient $(p,q)\in\Zz\times\Nn^*$ puis $r=\frac{p}{q}$.
+
+\begin{center}
+$B(rx,y) = B\left(\frac{p}{q}x,y\right) =pB\left(\frac{1}{q}x,y\right)=\frac{p}{q}B(x,y) = rB(x,y)$.
+\end{center}
+
+8) Montrons que $\forall\lambda\in\Rr$, $\forall(x,y)\in E^2$, $B(\lambda x,y) =\lambda B(x,y)$. Soit $\lambda$ un réel. Puisque $\Qq$ est dense dans $\Rr$, il existe une
+
+suite de rationnels $(r_n)_{n\in\Nn}$ convergente de limite $\lambda$.
+
+Maintenant, l'application $\begin{array}[t]{cccc}N~:&(E,N)&\rightarrow&(\Rr,|\;|)\\
+ &x&\mapsto&N(x)
+ \end{array}$ est continue sur $E$ car $1$-Lipschitzienne sur $E$. Donc
+ 
+\begin{center}
+$B(\lambda x,y) =B(\lim_{n \rightarrow +\infty}r_nx,y)=\lim_{n \rightarrow +\infty}B(r_nx,y)=\lim_{n \rightarrow +\infty}r_nB(x,y)=\lambda B(x,y)$.
+\end{center}
+
+Finalement, l'application $B$ est une forme bilinéaire symétrique définie positive et donc un produit scalaire. Puisque $\forall x\in E$, $N(x)=\sqrt{B(x,x)}$, $N$ est la norme associée à ce produit scalaire. On a montré que
+
+\begin{center}
+\shadowbox{
+toute norme vérifiant l'identité du parallélogramme est une norme hilbertienne.
+}
+\end{center}
+\fincorrection
+\finexercice

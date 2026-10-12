@@ -1,0 +1,56 @@
+\exercice{5233, rouget, 2010/06/30}
+\enonce[***]
+\begin{enumerate}
+\item  Soit $u$ une suite de réels strictement positifs. Montrer que si la suite $(\frac{u_{n+1}}{u_n})$ converge vers un réel $\ell$, alors $(\sqrt[n]{u_n})$ converge et a même limite.
+\item  Etudier la réciproque.
+\item  Application~:~limites de 
+  \begin{enumerate}
+  \item $\sqrt[n]{C_{2n}^n}$,
+  \item $\frac{n}{\sqrt[n]{n!}}$,
+  \item $\frac{1}{n^2}\sqrt[n]{\frac{(3n)!}{n!}}$.
+  \end{enumerate}
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Supposons $\ell>0$. Soit $\varepsilon$ un réel strictement positif, élément de $]0,\ell[$.
+$\exists n_0\in\Nn/\;\forall n\in\Nn,\;(n\geq n_0\Rightarrow0< \ell-\frac{\varepsilon}{2}<\frac{u_{n+1}}{u_n}<\ell+\frac{\varepsilon}{2})$.
+Pour $n>n_0$, puisque $u_n=\frac{u_n}{u_{n-1}}\frac{u_{n-1}}{u_{n-2}}\frac{u_{n-2}}{u_{n-3}}...\frac{u_{n_0+1}}{u_{n_0}}u_{n_0}$, on a 
+$u_{n_0}\left(\ell-\frac{\varepsilon}{2}\right)^{n-n_0}\leq  u_n\leq u_{n_0}\left(\ell+\frac{\varepsilon}{2}\right)^{n-n_0}$, et donc 
+
+$$(u_{n_0})^{1/n}\left(\ell-\frac{\varepsilon}{2}\right)^{-n_0/n}\left(\ell-\frac{\varepsilon}{2}\right)\leq \sqrt[n]{u_n}\leq(u_{n_0})^{1/n}\left(\ell+\frac{\varepsilon}{2}\right)^{-n_0/n}\left(\ell+\frac{\varepsilon}{2}\right).$$
+Maintenant, le membre de gauche de cet encadrement tend vers $\ell-\frac{\varepsilon}{2}$, et le membre de droite rend vers $\ell+\frac{\varepsilon}{2}$. Par suite, on peut trouver un entier naturel $n_1\geq n_0$ tel que, pour $n\geq n_1$, $(u_{n_0})^{1/n}\left(\ell-\frac{\varepsilon}{2}\right)^{-n_0/n}\left(\ell-\frac{\varepsilon}{2}\right)>\ell-\varepsilon$, et $(u_{n_0})^{1/n}\left(\ell+\frac{\varepsilon}{2}\right)^{-n_0/n}\left(\ell+\frac{\varepsilon}{2}\right)<\ell+\varepsilon$. Pour $n\geq n_1$, on a alors $\ell-\varepsilon<\sqrt[n]{u_n}<\ell+\varepsilon$.
+On a montré que $\forall\varepsilon>0,\;\exists n_1\in\Nn/\;(\forall n\in\Nn),\;(n\geq n_1\Rightarrow\ell-\varepsilon<\sqrt[n]{u_n}<\ell+\varepsilon)$. Donc, $\sqrt[n]{u_n}$ tend vers $\ell$.
+On traite de façon analogue le cas $\ell=0$.
+ \item  Soient $a$ et $b$ deux réels tels que $0<a<b$. Soit $u$ la suite définie par 
+
+$$\forall p\in\Nn,\;u_{2p}=a^pb^p\;\mbox{et}\;u_{2p+1}=a^{p+1}b^p.$$
+(on part de $1$ puis on multiplie alternativement par $a$ ou $b$).
+Alors, $\sqrt[2p]{u_{2p}}=\sqrt{ab}$ et $\sqrt[2p+1]{u_{2p+1}}=a^{\frac{p+1}{2p+1}}b^{\frac{p}{2p+1}}\rightarrow\sqrt{ab}$. Donc, $\sqrt[n]{u_n}$ tend vers $\sqrt{ab}$ (et en particulier converge).
+On a bien sûr $\frac{u_{2p+1}}{u_{2p}}=a$ et $\frac{u_{2p+2}}{u_{2p+1}}=b$. La suite $\left(\frac{u_{n+1}}{u_n}\right)$ admet donc deux suites extraites convergentes de limites distinctes et est ainsi divergente. La réciproque du 1) est donc fausse.
+ \item  
+  \begin{enumerate}
+  \item  Pour $n$ entier naturel donné, posons $u_n=\dbinom{2n}{n}$.
+ 
+$$\frac{u_{n+1}}{u_n}=\frac{(2n+2)!}{(2n)!}\frac{n!^2}{(n+1)!^2}=\frac{(2n+2)(2n+1)}{(n+1)^2}=\frac{4n+2}{n+1}.$$
+Ainsi, $\frac{u_{n+1}}{u_n}$ tend vers $4$ quand $n$ tend vers $+\infty$, et donc $\sqrt[n]{\dbinom{2n}{n}}$ tend vers $4$ quand $n$ tend vers $+\infty$.
+  \item Pour $n$ entier naturel donné, posons $u_n=\frac{n^n}{n!}$.
+ 
+$$\frac{u_{n+1}}{u_n}=\frac{(n+1)^{n+1}}{n^n}\frac{n!}{(n+1)!}=\left(1+\frac{1}{n}\right)^n.$$
+Ainsi, $\frac{u_{n+1}}{u_n}$ tend vers $e$ quand $n$ tend vers $+\infty$, et donc $\sqrt[n]{u_n}=\frac{n}{\sqrt[n]{n!}}$ tend vers $e$ quand $n$ tend vers $+\infty$.
+  \item Pour $n$ entier naturel donné, posons $u_n=\frac{(3n)!}{n^{2n}n!}$.
+
+\begin{align*}
+\frac{u_{n+1}}{u_n}&=\frac{(3n+3)!}{(3n)!}\frac{n^{2n}}{(n+1)^{2n+2}}\frac{n!}{(n+1)!}
+=\frac{(3n+3)(3n+2)(3n+1)}{(n+1)^2(n+1)}\left(\frac{n}{n+1}\right)^{2n}\\
+ &=
+\frac{3(3n+2)(3n+1)}{(n+1)^2}\left(1+\frac{1}{n}\right)^{-2n}.
+\end{align*}
+Maintenant, $\left(1+\frac{1}{n}\right)^{-2n}=e^{-2n\ln(1+1/n)}=e^{-2n(\frac{1}{n}+o(\frac{1}{n}))}=e^{-2+o(1)}$, et donc $\frac{u_{n+1}}{u_n}$ tend vers $27e^{-2}$. Par suite, $\frac{1}{n^2}\sqrt[n]{\frac{(3n)!}{n!}}$ tend vers $\frac{27}{e^2}$.
+  \end{enumerate}
+\end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,32 @@
+\exercice{5381, rouget, 2010/07/06}
+\enonce
+Soient $a_1$,..., $a_n$, $b_1$,..., $b_n$ $2n$ nombres complexes deux à deux distincts tels que les sommes $a_i+b_j$ soient toutes non nulles. Résoudre le système $\sum_{j=1}^{n}\frac{x_j}{a_i+b_j}=1$, pour tout $i=1,...,n$ (en utilisant la décomposition en éléments simples de $R=\sum_{j=1}^{n}\frac{x_j}{X+b_j}$).
+\finenonce
+
+\noindication
+
+\correction
+Soit $(x_1,...,x_n)\in\Rr^n$ et $F=\sum_{k=1}^{n}\frac{x_k}{X+b_k}$.
+
+La fraction rationnelle $F$ s'écrit, après réduction au même dénominateur~:
+
+$$F=\frac{P}{Q}\;\mbox{où}\;Q=\prod_{k=1}^{n}(X+b_k)\;\mbox{et}\;P\mbox{est un polynôme de degré infèrieur ou égal à}\;n-1.$$
+
+Maintenant,
+
+$$(x_1,...,x_n)\;\mbox{solution de}\;(S)\Leftrightarrow\forall k\in\{1,...,n\},\;F(a_k)=1\Leftrightarrow\forall k\in\{1,...,n\},\;(Q-P)(a_k)=0.$$
+
+Par suite, puisque les $a_k$ sont deux à deux distincts, $Q-P$ est divisible par $\prod_{k=1}^{n}(X-a_k)$. Mais, $Q$ est unitaire de degré $n$ et $P$ est de degré infèrieur ou égal à $n-1$, et donc $Q-P$ est unitaire de degré $n$ ce qui montre que $Q-P=\prod_{k=1}^{n}(X-a_k)$ ou encore que 
+
+$$P=\prod_{k=1}^{n}(X+b_k)-\prod_{k=1}^{n}(X-a_k).$$
+
+Réciproquement, si $F=\frac{\prod_{k=1}^{n}(X+b_k)-\prod_{k=1}^{n}(X-a_k)}{\prod_{k=1}^{n}(X+b_k)}$, alors $\forall k\in\{1,...,n\},\;F(a_k)=1$.
+
+En résumé, 
+
+\begin{align*}\ensuremath
+(x_1,...,x_n)\;\mbox{solution de}\;(S)&\Leftrightarrow\sum_{k=1}^{n}\frac{x_k}{X+b_k}=  \frac{\prod_{k=1}^{n}(X+b_k)-\prod_{k=1}^{n}(X-a_k)}{\prod_{k=1}^{n}(X+b_k)}\\
+ &\Leftrightarrow\forall i\in\{1,...,n\},\;x_i=\lim_{x\rightarrow -b_i}(x+b_i)\frac{\prod_{k=1}^{n}(x+b_k)-\prod_{k=1}^{n}(x-a_k)}{\prod_{k=1}^{n}(x+b_k)}\\&\Leftrightarrow\forall i\in\{1,...,n\},\;x_i=\frac{\prod_{k=1}^{n}(b_i+a_k)}{\prod_{k=1}^{n}(b_k-b_i)}
+\end{align*}
+\fincorrection
+\finexercice

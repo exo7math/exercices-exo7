@@ -1,34 +1,29 @@
 \exercice{6652, queffelec, 2011/10/16}
-\enonce 
+
+\enonce
 \begin{enumerate}
-\item Soient $\rho $ un réel strictement positif, $z$ et $w$ des
-nombres complexes tels que $\vert z\vert >\rho $ et $\vert w\vert
->\rho $, et $n$ un entier naturel.
+  \item Soient \( \rho \) un réel strictement positif, \( z \) et \( w \) des nombres complexes tels que \( \vert z\vert >\rho \) et \( \vert w\vert >\rho \), et \( n \) un entier naturel.
 
-Montrer que 
-$$\left\vert {1\over w^n}-{1\over z^n}\right\vert\le \vert z-w\vert
-{n\over \rho ^{n+1}}$$
-et que
-$$\left\vert {1\over z-w}\left({1\over w^n}-{1\over
-z^n}\right)-{n\over z^{n+1}}\right\vert =
-\left\vert\sum_{k=1}^n\left({1\over w^n}-{1\over z^n}\right){1\over
-z^{n-k+1}}\right\vert \le \vert z-w\vert {n^2\over \rho ^{n+2}}$$
+        Montrer que
+        \[
+          \left\vert \frac{1}{w^n}-\frac{1}{z^n}\right\vert\le \vert z-w\vert \frac{n}{\rho^{n+1}}
+        \]
+        et que
+        \[
+          \left\vert \frac{1}{z-w}\left(\frac{1}{w^n}-\frac{1}{z^n}\right)-\frac{n}{z^{n+1}}\right\vert =
+          \left\vert\sum_{k = 1}^n\left(\frac{1}{w^k}-\frac{1}{z^k}\right)\frac{1}{z^{n-k+1}}\right\vert \le \vert z-w\vert \frac{n^2}{\rho^{n+2}}
+        \]
 
-Soient maintenant $\sigma $ et $\phi $ deux fonctions continues à
-valeurs complexes définies sur un intervalle $I=[a,b]$. On fixe un point
-$z\in \C\setminus \sigma (I)$ et on pose $\rho ={1\over 2}\inf_{a\le
-t\le b}\vert \sigma (t)-z\vert $.
+        Soient maintenant \( \sigma \) et \( \phi \) deux fonctions continues à valeurs complexes définies sur un intervalle \( I = [a,b] \). On fixe un point \( z\in \Cc\setminus \sigma (I) \) et on pose \( \rho = \frac{1}{2}\inf_{a\le t\le b}\vert \sigma (t)-z\vert \).
 
-\item Soit $\displaystyle g(z)=\int_a^b{\phi (t)\over (\sigma (t)-z)^n}dt$.
-En remplaçant dans a) $z$ par $\sigma (t)-z$ et $w$ par $\sigma
-(t)-z-h$ avec $\vert h\vert <\rho $, montrer que
-$$\left\vert {g(z+h)-g(z)\over h}-n\int_a^b{\phi (t)\over (\sigma
-(t)-z)^{n+1}}dt\right\vert\le {\vert h\vert n^2\over \rho
-^{n+2}}\int_a^b\vert \phi (t)\vert dt$$
-
-En déduire que $g(z)$ est holomorphe sur $\C\setminus \sigma (I)$ et
-que $g'$ est donnée par
-$$g'(z)=n\int_a^b{\phi (t)\over (\sigma (t)-z)^{n+1}}dt$$
+  \item Soit \( \displaystyle g(z) = \int_a^b\frac{\phi (t)}{(\sigma (t)-z)^n}dt \). En remplaçant dans a) \( z \) par \( \sigma (t)-z \) et \( w \) par \( \sigma (t)-z-h \) avec \( \vert h\vert <\rho \), montrer que
+        \[
+          \left\vert \frac{g(z+h)-g(z)}{h}-n\int_a^b\frac{\phi (t)}{(\sigma (t)-z)^{n+1}}dt\right\vert\le \frac{\vert h\vert n^2}{\rho^{n+2}}\int_a^b\vert \phi (t)\vert dt
+        \]
+        En déduire que \( g(z) \) est holomorphe sur \( \Cc\setminus \sigma (I) \) et que \( g' \) est donnée par
+        \[
+          g'(z) = n\int_a^b\frac{\phi (t)}{(\sigma (t)-z)^{n+1}}dt
+        \]
 \end{enumerate}
 \finenonce
 

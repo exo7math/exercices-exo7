@@ -1,0 +1,152 @@
+\exercice{5874, rouget, 2010/10/16}
+\enonce[**]
+Résoudre sur $\Rr$ l'équation différentielle proposée :
+
+\begin{enumerate}
+ \item  $y'+y = 1$
+ \item  $2y'-y =\cos x$
+ \item  $y'-2y = xe^{2x}$  
+ \item  $y''-4y'+4y = e^{2x}$
+ \item  $y''+4y =\cos(2x)$
+ \item  $y''+2y'+2y=\cos x\ch x$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+Dans tout l'exercice, on note $(E)$ l'équation différentielle considérée et $(E_H)$ l'équation homogène associée.
+
+\begin{enumerate}
+ \item  Les solutions de $(E)$ sur $\Rr$ forment un $\Rr$-espace affine de direction l'espace des solutions de $(E_H)$ sur $\Rr$ qui est de dimension $1$. La fonction $x\mapsto1$ est une solution de $(E)$ sur $\Rr$ et la fonction $x\mapsto e^{-x}$ est une solution non nulle de $(E_H)$ sur $\Rr$. Donc
+
+\begin{center}
+\shadowbox{
+$\mathcal{S}_\Rr=\left\{x\mapsto1+\lambda e^{-x},\;\lambda\in\Rr\right\}$.
+}
+\end{center}
+
+\item  Les solutions de $(E_H)$ sur $\Rr$ sont les fonctions de la forme $x\mapsto \lambda e^{x/2}$. Déterminons maintenant une solution particulière de $(E)$ sur $\Rr$.
+
+\textbf{1ère solution.} Il existe une solution particulière de $(E)$ sur $\Rr$ de la forme $x\mapsto a\cos x+b\sin x$, $(a,b)\in\Rr^2$. Soit $f$ une telle fonction. Alors, pour tout réel $x$,
+
+\begin{center}
+$2f'(x)-f(x)=2(-a\sin x+b\cos x)-(a\cos x+b\sin x)=(-a+2b)\cos x+(-2a-b)\sin x$.
+\end{center}
+
+Par suite,
+
+\begin{align*}\ensuremath
+f\;\text{solution de}\;(E)\;\text{sur}\;\Rr&\Leftarrow\forall x\in\Rr,\;2f'(x)-f(x)=\cos x\Leftarrow
+\left\{
+\begin{array}{l}
+-a+2b=1\\
+-2a-b=0
+\end{array}
+\right.
+\\
+ &\Leftarrow a=- \frac{1}{5}\;\text{et}\;b= \frac{2}{5}.
+\end{align*}
+
+\begin{center}
+\shadowbox{
+$\mathcal{S}_\Rr=\left\{x\mapsto \frac{1}{5}(-\cos x+2\sin x)+\lambda e^{x/2},\;\lambda\in\Rr\right\}$.
+}
+\end{center}
+
+\textbf{2ème solution.} Par la méthode de variation de la constante, il existe une solution particulière de $(E)$ sur $\Rr$ de la forme $x\mapsto\lambda(x)e^{x/2}$ où $\lambda$ est une fonction dérivable sur $\Rr$. Soit $f$ une telle fonction.
+
+\begin{align*}\ensuremath
+f\;\text{solution de}\;(E)\;\text{sur}\Rr&\Leftarrow\forall x\in\Rr,\;2\left(\lambda'(x)e^{x/2}+ \frac{1}{2}\lambda(x)e^{x/2}\right)-2\lambda(x)e^{x/2}=\cos(x)\\
+ &\Leftarrow\forall x\in\Rr,\;\lambda'(x)= \frac{1}{2}e^{-x/2}\cos x.
+\end{align*}
+
+Or, 
+
+\begin{align*}\ensuremath
+\int_{}^{} \frac{1}{2}e^{-x/2}\cos x\;dx&= \frac{1}{2}\text{Re}\left(\int_{}^{}e^{(-\frac{1}{2}+i)x}\;dx\right)= \frac{1}{2}\text{Re}\left( \frac{e^{(-\frac{1}{2}+i)x}}{- \frac{1}{2}+i}\right)+C= \frac{1}{5}e^{-x/2}\text{Re}\left((\cos x+i\sin x)(-1-2i)\right)+C\\
+ &= \frac{1}{5}e^{-x/2}(-\cos x+2\sin x)+C.
+\end{align*}
+
+Par suite, on peut prendre $\lambda(x)= \frac{1}{5}e^{-x/2}(-\cos x+2\sin x)$ ce qui fournit la solution particulière $f_0(x)= \frac{1}{5}(-\cos x+2\sin x)$.
+
+\item  Puisque les fonctions $x\mapsto-2$ et $x\mapsto xe^{2x}$ sont continues sur $\Rr$, l'ensemble des solutions de $(E)$ sur $\Rr$ est un $\Rr$-espace affine de dimension $1$. Soit $f$ une fonction dérivable sur $\Rr$.
+
+\begin{align*}\ensuremath
+f\;\text{solution de}\;(E)\;\text{sur}\;\Rr&\Leftrightarrow\forall x\in\Rr,\;f'(x)-2f(x)=xe^{2x}\Leftrightarrow\forall x\in\Rr,\;e^{-2x}f'(x)-2e^{-2x}f(x)=x\Leftrightarrow\forall x\in\Rr,\;(e^{-2x}f)'(x)=x\\
+ &\Leftrightarrow\exists\lambda\in\Rr/\;\forall x\in\Rr,\;e^{-2x}f(x)= \frac{x^2}{2}+\lambda\Leftrightarrow\exists\lambda\in\Rr/\;\forall x\in\Rr,\;f(x)=\left( \frac{x^2}{2}+\lambda\right)e^{2x}.
+\end{align*}
+
+\begin{center}
+\shadowbox{
+$\mathcal{S}_\Rr=\left\{x\mapsto\left( \frac{x^2}{2}+\lambda\right)e^{2x},\;\lambda\in\Rr\right\}$.
+}
+\end{center}
+
+\item  L'équation caractéristique $(E_c)$ associée à l'équation homogène $y''-4y'+4y =0$ est $z^2-4z+4=0$ et admet $z_0=2$ pour racine double. On sait que les solutions de $(E_H)$ sur $\Rr$ sont les fonctions de la forme $x\mapsto(\lambda x+\mu)e^{2x}$, $(\lambda,\mu)\in\Rr^2$.
+
+Puisque $2$ est racine double de l'équation caractéristique, l'équation $y''-4y'+4y=e^{2x}$ admet une solution particulière $f_0$ de la forme : $\forall x\in\Rr$, $f_0(x)=ax^2e^{2x}$, $a\in\Rr$. La formule de \textsc{Leibniz} fournit pour tout réel $x$,
+
+\begin{center}
+$f_0''(x)-4f_0'(x)+4f_0(x)=a(4x^2+8x+2)e^{2x}-4a(2x^2+2x)e^{2x}+4ax^2e^{2x}=2ae^{2x}$,
+\end{center}
+
+et $f_0$ est solution de $(E)$ sur $\Rr$ si et seulement si $a= \frac{1}{2}$.
+
+\begin{center}
+\shadowbox{
+$\mathcal{S}_\Rr=\left\{x\mapsto\left( \frac{x^2}{2}+\lambda x+\mu\right)e^{2x},\;(\lambda,\mu)\in\Rr^2\right\}$.
+}
+\end{center}
+
+\item  L'équation caractéristique $(E_c)$ associée à l'équation homogène $y''+4y =0$ est $z^2+4=0$ et admet deux racines non réelles conjuguées $z_1=2i$ et $z_2=\overline{z_1}=-2i$. On sait que les solutions de $(E_H)$ sur $\Rr$ sont les fonctions de la forme $x\mapsto\lambda \cos(2x)+\mu\sin(2x)$, $(\lambda,\mu)\in\Rr^2$.
+
+Une solution réelle de l'équation $y''+4y =\cos(2x)$ est la partie réelle d'une solution de l'équation $y''+4y=e^{2ix}$. Puisque le nombre $2i$ est racine simple de $(E_c)$, cette dernière équation admet une solution de la forme $f_1~:~x\mapsto axe^{2ix}$, $a\in\Cc$. La formule de \textsc{Leibniz} fournit pour tout réel $x$,
+
+\begin{center}
+$f_1''(x)+4f_1(x)=a((-4x+4i)e^{2ix}+4xe^{2ix})=4iae^{2ix}$.
+\end{center}
+
+et $f_1$ est solution de $y''+4y=e^{2ix}$ si et seulement si $a= \frac{1}{4i}$. On obtient $f_1(x)= \frac{1}{4i}xe^{2ix}= \frac{1}{4}x(-i\cos(2x)+\sin(2x))$ ce qui fournit une solution particulière de $(E)$ sur $\Rr$ : $\forall x\in\Rr$, $f_0(x)= \frac{1}{4}x\sin(2x)$.
+
+\begin{center}
+\shadowbox{
+$\mathcal{S}_\Rr=\left\{x\mapsto \frac{1}{4}x\sin(2x)+\lambda\cos(2x)+\mu\sin(2x),\;(\lambda,\mu)\in\Rr^2\right\}$.
+}
+\end{center}
+
+\item  L'équation caractéristique $(E_c)$ associée à l'équation $(E_H)$ est $z^2+2z+2=0$ et admet deux racines non réelles conjuguées $z_1=-1+i$ et $z_2=\overline{z_1}=-1-i$. On sait que les solutions de $(E_H)$ sur $\Rr$ sont les fonctions de la forme $x\mapsto(\lambda \cos(x)+\mu\sin(x))e^{-x}$, $(\lambda,\mu)\in\Rr^2$.
+
+Pour tout réel $x$, $\cos(x)\ch(x)=\text{Re}\left(e^{ix}\ch(x)\right)= \frac{1}{2}\text{Re}\left(e^{(1+i)x}+e^{(-1+i)x}\right)$. Notons $(E_1)$ l'équation $y''+2y'+2y=e^{(1+i)x}$ et $(E_2)$ l'équation $y''+2y'+2y=e^{(-1+i)x}$. Si $f_1$ est une solution de $(E_1)$ et $f_2$ est une solution de $(E_2)$ alors $f_0= \frac{1}{2}\text{Re}(f_1+f_2)$ est une solution de $(E)$ sur $\Rr$ d'après le principe de superposition des solutions.
+
+\textbullet~$(E_1)$ admet une solution particulière de la forme $f_1~:~x\mapsto ae^{(1+i)x}$, $a\in\Cc$. Pour tout réel $x$,
+
+\begin{center}
+$f_1''(x)+2f_1'(x)+2f_1(x)=a((1+i)^2+2(1+i)+2)e^{(1+i)x}=a(4+4i)e^{(1+i)x}$
+\end{center}
+
+et $f_1$ est solution de $(E_1)$ sur $\Rr$ si et seulement si $a= \frac{1}{4+4i}= \frac{1-i}{8}$. On obtient $f_1(x)= \frac{1-i}{8}e^{(1+i)x}$.
+
+\textbullet~$(E_2)$ admet une solution particulière de la forme $f_2~:~x\mapsto axe^{(-1+i)x}$, $a\in\Cc$. La formule de \textsc{Leibniz} fournit pour tout réel $x$,
+
+\begin{center}
+$f_2''(x)+2f_2'(x)+2f_2(x)=a(((-1+i)^2x+2(-1+i))+2((-1+i)x+1)+2x)e^{(-1+i)x}=2iae^{(-1+i)x}$
+\end{center}
+
+et $f_2$ est solution de $(E_2)$ sur $\Rr$ si et seulement si $a= \frac{1}{2i}=- \frac{i}{2}$. On obtient $f_2(x)=- \frac{i}{2}e^{(-1+i)x}$.
+
+\textbullet~Une solution particulière $f_0$ de $(E)$ sur $\Rr$ est donc définie pour tout réel $x$ par
+
+\begin{align*}\ensuremath
+f_0(x)&= \frac{1}{2}\text{Re}\left( \frac{1-i}{8}e^{(1+i)x}- \frac{i}{2}e^{(-1+i)x}\right)= \frac{1}{2}\text{Re}\left( \frac{1}{8}(1-i)(\cos(x)+i\sin(x))e^{x}- \frac{i}{2}(\cos(x)+i\sin(x))e^{-x}\right)\\
+ &= \frac{1}{2}\left( \frac{1}{8}(\cos(x)+\sin(x))e^{x}+ \frac{1}{2}\sin(x)e^{-x}\right)
+\end{align*}
+
+\begin{center}
+\shadowbox{
+$\mathcal{S}_\Rr=\left\{x\mapsto \frac{1}{16}(\cos(x)+\sin(x))e^{x}+ \frac{1}{4}\sin(x)e^{-x}+(\lambda \cos(x)+\mu\sin(x))e^{-x},\;(\lambda,\mu)\in\Rr^2\right\}$.
+}
+\end{center}
+\end{enumerate}
+\fincorrection
+\finexercice

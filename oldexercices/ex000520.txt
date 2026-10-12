@@ -1,0 +1,55 @@
+\exercice{520, ridde, 1999/11/01}
+\video{HZBJUfv7fSA}
+\enonce
+ Soit $H_n = 1 + \dfrac12 + \cdots + \dfrac1n$.
+\begin{enumerate}
+\item En utilisant une int\'egrale, montrer que pour tout $n>0$ : $\dfrac1{n + 1} \leq
+\ln (n + 1)-\ln (n) \leq \dfrac1n$.
+\item En d\'eduire que $\ln (n + 1) \leq H_n \leq \ln (n) + 1$.
+\item D\'eterminer la limite de $H_n$.
+\item Montrer que $u_n = H_n-\ln (n)$ est d\'ecroissante et positive.
+\item Conclusion ?
+\end{enumerate}
+\finenonce 
+
+\indication
+\begin{enumerate}
+\item En se rappelant que l'int\'egrale calcule une aire montrer : 
+$$\frac{1}{n+1} \leqslant \int_n^{n+1} \frac{dt}{t} \leqslant \frac 1n.$$
+\item Pour chacune des majorations, il s'agit de faire la somme de l'in\'egalit\'e pr\'ec\'edente et de s'apercevoir que d'un cot\'e on calcule $H_n$ et de l'autre les termes s'\'eliminent presque tous deux \`a deux.
+\item La limite est $+\infty$.
+\item Calculer $u_{n+1}-u_n$.
+\item Que fait une suite décroissante et minorée ?
+\end{enumerate}
+\finindication
+
+\correction
+\begin{enumerate}
+\item La fonction $t \mapsto \frac 1 t$ est d\'ecroissante
+sur $[n,n+1]$ donc
+$$\frac{1}{n+1} \leqslant \int_n^{n+1} \frac{dt}{t} \leqslant \frac 1n$$
+(C'est un encadrement de l'aire de l'ensemble des points $(x,y)$
+du plan tels que $x\in[n,n+1]$ et $0\leqslant y\leqslant 1/x$ par l'aire de
+deux rectangles.) Par calcul de l'intégrale nous obtenons l'in\'egalit\'e :
+$$\frac{1}{n+1} \leqslant \ln(n+1)-\ln(n)  \leqslant \frac 1n.$$
+\item $H_n = \frac1n+\frac{1}{n-1}+\cdots +\frac12+1$, nous majorons chaque terme de cette somme en utilisant l'in\'egalit\'e $\frac1k \leqslant \ln(k)-\ln (k-1)$ obtenue pr\'ec\'edemment : nous obtenons
+$H_n \leqslant \ln(n)-\ln (n-1) + \ln(n-1)-\ln (n-2)+\cdots-\ln(2) +\ln (2) - \ln
+(1) + 1$. Cette somme est t\'elescopique (la plupart des termes
+s'\'eliminent et en plus $\ln (1) =0$) et donne $H_n \leqslant \ln (n) + 1$.
+
+L'autre in\'egalit\'e  s'obtient de la fa\c{c}on similaire en
+utilisant l'in\'egalit\'e $ \ln(k+1)-\ln(k) \leqslant \frac{1}{k}$ .
+\item Comme $H_n \geqslant \ln (n+1)$ et que $\ln(n+1) \rightarrow +\infty$ quand $n\rightarrow +\infty$ alors $H_n \rightarrow +\infty$ quand $n\rightarrow +\infty$.
+\item $u_{n+1}-u_n = H_{n+1}-H_n - \ln(n+1)+\ln(n) = \frac{1}{n+1}-(\ln (n+1)-\ln (n))\leqslant 0$ d'apr\`es la premi\`ere question. Donc $u_{n+1}-u_n  \leqslant 0$. Ainsi $u_{n+1} \leqslant u_n$ et la suite
+$(u_n)$ est d\'ecroissante.
+
+Enfin comme $H_n \geqslant \ln(n+1)$ alors $H_n \geqslant \ln (n)$ et donc
+$u_n\geqslant 0$.
+\item La suite $(u_n)$ est d\'ecroissante et minor\'ee (par $0$) donc elle converge
+vers un r\'eel $\gamma$. Ce r\'eel $\gamma$ s'appelle \emph{la constante d'Euler}
+(d'après Leonhard Euler, 1707-1783, math\'ematicien d'origine suisse). Cette
+constante vaut environ $0,5772156649\ldots$ mais on ne sait pas si
+$\gamma$ est rationnel ou irrationnel.
+\end{enumerate}
+\fincorrection
+\finexercice

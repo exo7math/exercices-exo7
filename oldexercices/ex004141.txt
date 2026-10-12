@@ -1,0 +1,20 @@
+\exercice{4141, quercia, 2010/03/11}
+\enonce[Dérivées secondes composées]
+
+Soient ${u,v,f,g} : {\R^2} \mapsto \R$ des fonctions de classe $\mathcal{C}^2$ liées
+par la relation :
+$$\forall\ (x,y) \in {\R^2},\ f(x,y) = g(u(x,y),v(x,y)).$$
+
+Calculer les dérivées partielles premières et secondes de $f$
+en fonction de celles de $g$.
+
+\finenonce
+
+\noindication
+
+\correction
+$\frac{\partial^2 f}{\partial x \partial y}= \frac{\partial u}{\partial x}\frac{\partial u}{\partial y}\frac{\partial^2 g}{\partial u^2} + \left(\frac{\partial u}{\partial x}\frac{\partial v}{\partial y}+\frac{\partial u}{\partial y}\frac{\partial v}{\partial x}\right)\frac{\partial^2 g}{\partial u \partial v}
+         + \frac{\partial v}{\partial x}\frac{\partial v}{\partial y}\frac{\partial^2 g}{\partial v^2} + \frac{\partial^2 u}{\partial x \partial y}\frac{\partial g}{\partial u} + \frac{\partial^2 u}{\partial x \partial y}\frac{\partial g}{\partial v}$.
+\fincorrection
+
+\finexercice

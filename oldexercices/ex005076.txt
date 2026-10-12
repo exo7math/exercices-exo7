@@ -1,0 +1,60 @@
+\exercice{5076, rouget, 2010/06/30}
+\enonce[**I]
+Calculer une primitive de chacune des fonctions suivantes~:
+\begin{enumerate}
+ \item $x\mapsto\cos^2x$,
+ \item $x\mapsto\cos^4x$,
+ \item $x\mapsto\sin^4x$,
+ \item $x\mapsto\cos^2x\sin^2x$,
+ \item $x\mapsto\sin^6x$,
+ \item $x\mapsto\cos x\sin^6x$,
+ \item $x\mapsto\cos^5x\sin^2x$,
+ \item $x\mapsto\cos^3x$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  $\cos^2x=\frac{1}{2}(1+\cos(2x))$ et une primitive de $x\mapsto\cos^2x$ est
+$x\mapsto\frac{1}{2}(x+\frac{1}{2}\sin(2x))$.
+
+ \item  D'après les formules d'\textsc{Euler},
+
+\begin{align*}
+\cos^4x&=\left(\frac{1}{2}(e^{ix}+e^{-ix})\right)^4=\frac{1}{16}(e^{4ix}+4e^{2ix}+6+4e^{-2ix}+e^{-4ix})\\
+ &=\frac{1}{16}(2\cos(4x)+8\cos(2x)+6)=\frac{1}{8}(\cos(4x)+4\cos(2x)+3)
+\end{align*}
+Donc, une primitive de la fonction $x\mapsto\cos^4x$ est $x\mapsto\frac{1}{8}(\frac{1}{4}\sin(4x)+2\sin(2x)+3x)$.
+
+ \item  
+
+\begin{align*}
+\sin^4x&=\left(\frac{1}{2i}(e^{ix}-e^{-ix})\right)^4=\frac{1}{16}(e^{4ix}-4e^{2ix}+6-4e^{-2ix}+e^{-4ix})\\
+ &=\frac{1}{16}(2\cos(4x)-8\cos(2x)+6)=\frac{1}{8}(\cos(4x)-4\cos(2x)+3)
+\end{align*}
+Donc, une primitive de la fonction $x\mapsto\sin^4x$ est $x\mapsto\frac{1}{8}(\frac{1}{4}\sin(4x)-2\sin(2x)+3x)$.
+
+ \item   $\cos^2x\sin^2x=\frac{1}{4}\sin^2(2x)=\frac{1}{8}(1-\cos(4x))$ et une primitive de la fonction $x\mapsto\cos^2x\sin^2x$
+est $x\mapsto\frac{1}{8}(x-\frac{1}{4}\sin(4x))$.
+
+ \item  
+
+\begin{align*}
+\sin^6x&=\left(\frac{1}{2i}(e^{ix}-e^{-ix})\right)^6=-\frac{1}{64}(e^{6ix}-6e^{4ix}+15e^{2ix}-20+15e^{-2ix}-6e^{-4ix}+
+e^{-6ix})\\
+ &=-\frac{1}{64}(2\cos(6x)-12\cos(4x)+30\cos(2x)-20)=\frac{1}{32}(-\cos(6x)+6\cos(4x)-15\cos(2x)+10)
+\end{align*}
+Donc, une primitive de la fonction $x\mapsto\sin^6x$ est
+$x\mapsto\frac{1}{32}(-\frac{1}{6}\sin(6x)+\frac{3}{2}\sin(4x)-\frac{15}{2}\sin(2x)+10x)$.
+
+ \item   $\cos x\sin^6x=\sin'x\sin^6x$ et une primitive de $x\mapsto\cos x\sin^6x$ est $x\mapsto\frac{1}{7}\sin^7x$.
+
+ \item   $\cos^5x\sin^2x=\cos x(1-\sin^2x)^2\sin^2x=\sin'x\sin^2x-2\sin'x\sin^4x+\sin'x\sin^6x$ et une primitive de
+$x\mapsto\cos^5x\sin^2x$ est $x\mapsto\frac{1}{3}\sin^3x-\frac{2}{5}\sin^5x+\frac{1}{7}\sin^7x$.
+
+ \item   $\cos^3x=\sin'x-\sin'x\sin^2x$ et une primitive de $x\mapsto\cos^3x$ est $x\mapsto\sin x-\frac{1}{3}\sin^3x$.
+\end{enumerate}
+\fincorrection
+\finexercice

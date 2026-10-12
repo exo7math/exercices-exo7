@@ -1,0 +1,39 @@
+\exercice{5922, tumpach, 2010/11/11}
+\enonce
+Pour tout $n\in\mathbb{N}$, on d\'efinit
+$f_{n}~:]0,1]\rightarrow\mathbb{R}$ par~: $f_{n}(x)= n e^{-nx}$.
+Montrer que la suite $(f_{n})_{n\in\mathbb{R}}$ converge
+simplement vers une fonction $f$ sur $]0,1]$ mais que
+\begin{equation*}
+\int_{0}^{1}\lim_{n\rightarrow+\infty}f_{n}(x)\,dx \quad\neq\quad
+\lim_{n\rightarrow+\infty}\int_{0}^{1}f_{n}(x)\,dx.
+\end{equation*}
+V\'erifier que la convergence de $(f_{n})_{n\in\mathbb{N}}$ vers
+$f$ n'est pas \emph{uniforme} sur $]0,1]$.
+\finenonce
+
+\noindication
+
+\correction
+Pour tout $n\in\mathbb{N}$, on d\'efinit
+$f_{n}:]0,1]\rightarrow\mathbb{R}$ par~: $f_{n}(x)= n e^{-nx}$.
+Pour tout $x\in]0,1]$, on a $\lim_{n\rightarrow+\infty}f_{n}(x) =
+\lim_{n\rightarrow+\infty}ne^{-nx} = 0$. On en d\'eduit que la
+suite de fonctions $f_{n}$ converge ponctuellement (ou
+\emph{simplement}) vers la fonction identiquement nulle
+$f\equiv0$. On a $\int_{0}^{1}f(x)\,dx = 0$ mais
+\begin{equation*}
+\int_{0}^{1} f_{n}(x)\,dx = 1- e^{-n},
+\end{equation*}
+et $\lim_{n\rightarrow+\infty}\int_{0}^{1}f_{n}(x)\,dx = 1$. La
+suite $(f_{n})_{n\in\mathbb{R}}$ ne converge pas uniform\'ement
+vers $f$ sur $]0,1]$, car pour tout $\varepsilon>0$, et pour tout
+$n\in\mathbb{N}$, on a~:
+\begin{equation*}
+\sup_{]0,
+-\frac{1}{n}\log\left(\frac{\varepsilon}{n}\right)[}|f_{n}(x)-f(x)|
+> \varepsilon.
+\end{equation*}
+\fincorrection
+
+\finexercice

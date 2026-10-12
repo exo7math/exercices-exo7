@@ -1,0 +1,41 @@
+\exercice{2366, mayer, 2003/10/01}
+\enonce 
+Soit $l^\infty$ l'espace des suites r\'eelles muni avec la norme
+uniforme, i.e. $\|x\| _\infty = \sup _n |x_n|$. On consid\'ere
+l'application $A:l^\infty \to l^\infty$ d\'efinie par
+$$A(x_1,x_2,...,x_n,...) = (x_1, x_2/2,..., x_n/n,...) \; .$$ Montrer
+que :
+\begin{enumerate}
+\item $A$ est injective et continue avec $\|A\| =1$. Par contre, $A$
+n'est pas surjective.
+\item $A$ admet un inverse \`a gauche mais qu'il n'est pas continu.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $A$ injective : Si $A(x_1,x_2,\ldots) = A(y_1,y_2,\ldots)$ alors
+$(x_1, x_2/2,..., x_n/n,...) = (y_1, y_2/2,..., y_n/n,...)$ donc
+$x_1=y_1$, $x_2=y_2$,..., $x_n=y_n$,... Donc $A$ est injective.
+
+$A$ continue : $\| A(x) \|_\infty = \sup_n \frac {x_n}{n} \le \sup_n x_n  \le \| x \|_\infty$. Donc $\| A \| \le 1$ donc $A$ est continue.
+
+Norme de $A$ : Pour $x=(1,0,0,\ldots)$. On a $\|x\|_\infty = 1$ et $\|A(x)\|_\infty = 1$
+Donc la norme de $A$ est exactement $1$.
+
+$A$ n'est pas surjective : posons $y = (1,1,1,\ldots) \in l^\infty$. 
+Soit $x$ une suite telle que $A(x)=y$ alors $x=(1,2,3,4,\ldots)$.
+Mais $\|x\|_\infty = +\infty$ donc $x \notin l^\infty$. En conséquence
+$A : l^\infty \rightarrow l^\infty$ n'est pas surjective.
+  
+  \item L'inverse \`a gauche de $A$ est $B$ définie par 
+$$B(x_1,x_2,...,x_n,...) = (x_1, 2x_2,..., nx_n,...)$$
+de sorte que pour $x\in l^\infty$ on ait $B\circ A(x) = x$.
+Posons la suite $x^p = (0,0,\ldots,0,1,0,0\ldots) \in l^\infty$
+(des zéros partout et le $1$ à la $p$-ième place). Alors $\| x^p \|_\infty = 1$
+et $\| B(x^p)\|_\infty = p$. Donc $\frac{\| B(x^p)\|_\infty }{\| x^p \|_\infty } = k$, donc la norme de $B$ n'est pas finie et $B$ n'est pas continue.
+\end{enumerate}
+\fincorrection
+\finexercice

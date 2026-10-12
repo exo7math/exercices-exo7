@@ -1,0 +1,55 @@
+\exercice{5505, rouget, 2010/07/15}
+\enonce[*T]
+Dans $\Rr^3$ affine, déterminer un repère de la droite $(D)$ $\left\{
+\begin{array}{l}
+x-y+2z+7=0\\
+2x+2y+3z-5=0
+\end{array}
+\right.$.
+\finenonce
+
+\noindication
+
+\correction
+Puisque $\left|
+\begin{array}{cc}
+1&2\\
+2&3
+\end{array}\right|=-1$, on choisit d'exprimer $x$ et $z$ en fonction de $y$.
+Soit $M(x,y,z)\in\Rr^3$. D'après les formules de \textsc{Cramer}, on a
+\begin{align*}\ensuremath
+M\in(D)&\Leftrightarrow\left\{
+\begin{array}{l}
+x-y+2z+7=0\\
+2x+2y+3z-5=0
+\end{array}
+\right.\Leftrightarrow\left\{
+\begin{array}{l}
+x+2z=y-7\\
+-2x-3z=2y-5
+\end{array}
+\right.\\
+ &\Leftrightarrow x=\frac{1}{1}\left|
+\begin{array}{cc}
+y-7&2\\
+2y-5&-3
+\end{array}
+\right|\;\text{et}\;z=\frac{1}{1}\left|
+\begin{array}{cc}
+1&y-7\\
+-2&2y-5
+\end{array}
+\right|\\
+ &\Leftrightarrow\left\{\begin{array}{l}
+ x=31-7y\\
+ z=-19+4y
+ \end{array}\right..
+\end{align*}
+
+\begin{center}
+\shadowbox{
+$(D)$ est la droite passant par $A(31,0,-19)$ dirigée par le vecteur $u(-7,1,4)$.
+}
+\end{center}
+\fincorrection
+\finexercice

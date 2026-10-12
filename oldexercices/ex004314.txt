@@ -1,0 +1,20 @@
+\exercice{4314, quercia, 2010/03/12}
+\enonce[Calcul de limite, Ensi P 90]
+
+    Calculer les limites : $\lim_{x\to0} \int_x^{3x} \frac t{\tan^2t}\,dt$
+    et $\lim_{x\to0} \frac1{x^3} \int_0^x \frac {t^2}{t+e^{3t}}\,dt$.
+    
+
+\finenonce
+
+\noindication
+
+\correction
+
+\fincorrection
+$\frac t{\tan^2t} = \frac1t + \varphi(t)$ avec $\varphi$
+	     prolongeable par continuité en $0$, donc
+	     $\lim_{x\to0} \int_x^{3x} \frac t{\tan^2t}\,dt = \ln 3$.\par
+	     $\frac{t^2}{t+e^{3t}} = t^2 + \text{o}(t^2)$ donc
+	     $\lim_{x\to0} \frac1{x^3} \int_0^x \frac {t^2}{t+e^{3t}}\,dt = \frac13$.
+\finexercice

@@ -1,0 +1,21 @@
+\exercice{3717, quercia, 2010/03/11}
+\enonce[Décomposition en carrés]
+
+Décomposer en carrés la forme quadratique définie sur~$\R^n$ par~:
+$q(x_1,\dots,x_n) = \sum_{1\le i\le j\le n} x_ix_j
+                  = \frac12\sum_{i\ge 1} x_i^2 + \frac12\Bigl(\sum_{i\ge1} x_i\Bigr)^2$.
+On posera $y_i = x_i + (x_{i+1} + \dots + x_n)/(i+1)$.
+
+
+\finenonce
+
+\noindication
+
+\correction
+Récurrence,
+$q(x_1,\dots,x_n) = \sum_{i<k} \frac{i+1}{2i}y_i^2
+                  + \frac12\sum_{i\ge k} x_i^2
+                  + \frac1{2k}\Bigl(\sum_{i\ge k} x_i\Bigr)^2$.
+\fincorrection
+
+\finexercice

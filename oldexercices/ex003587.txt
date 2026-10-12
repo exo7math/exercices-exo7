@@ -1,0 +1,25 @@
+\exercice{3587, quercia, 2010/03/10}
+\enonce[Suites récurrentes linéaires]
+
+Soit $(u_n)$ une suite réelle vérifiant l'équation de récurrence :
+$u_{n+3} = 6u_{n+2} - 11u_{n+1} + 6u_n$.
+
+\begin{enumerate}
+  \item On pose $X_n = \begin{pmatrix} u_n\cr u_{n+1} \cr u_{n+2} \cr \end{pmatrix}$.
+    Montrer qu'il existe une matrice $A \in \mathcal{M}_{3}(\R)$ telle que $X_{n+1} = AX_n$.
+
+  \item Diagonaliser $A$.
+    En déduire $u_n$ en fonction de $u_0$, $u_1$, $u_2$ et $n$.
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+2. $P = \begin{pmatrix} 1 &1 &1 \cr 1 & 2 & 3 \cr 1 &4 &9 \cr \end{pmatrix}$,
+             $D = \begin{pmatrix} 1 &2 &3 \end{pmatrix}$.\par
+             $2u_n = (6-6.2^n+2.3^n)u_0 + (-5+8.2^n-3.3^n)u_1 + (1-2.2^n+3^n)u_2$.
+ \fincorrection
+
+\finexercice

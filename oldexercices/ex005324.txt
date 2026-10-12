@@ -1,0 +1,28 @@
+\exercice{5324, rouget, 2010/07/04}
+\enonce[****I Théorème de \textsc{Lucas}]
+Soit $P\in\Cc[X]$ de degré supérieur ou égal à $1$.
+Montrer que les racines de $P'$ sont barycentres à coefficients positifs des racines de $P$ (on dit que les racines de $P'$ sont dans l'enveloppe convexe des racines de $P$). Indication~:~calculer $\frac{P'}{P}$.
+\finenonce
+
+\noindication
+
+\correction
+Soit $P$ un polynôme de degré $n$ supèrieur ou égal à $2$.
+
+Posons $P=\lambda(X-z_1)(X-z_2)...(X-z_n)$ où $\lambda$ est un complexe non nuls et les $z_k$ des complexes pas nécessairement deux à deux distincts.
+
+$$P'=\lambda\sum_{i=1}^{n}(\prod_{j\neq i}^{}(X-z_j))=\sum_{i=1}^{n}\frac{P}{X-z_i},$$
+
+et donc 
+ 
+$$\frac{P'}{P}=\sum_{i=1}^{n}\frac{1}{X-z_i}.$$
+
+Soit alors $z$ une racine de $P'$ dans $\Cc$. Si z est racine de $P$ (et donc racine de $P$ d'ordre au moins $2$) le résultat est clair. Sinon,
+
+$$0=\frac{P'(z)}{P(z)}=\sum_{i=1}^{n}\frac{1}{z-z_i}=\sum_{i=1}^{n}\frac{\overline{z-z_i}}{|z-z_i|^2}.$$
+
+En posant $\lambda_i=\frac{1}{|z-z_i|^2}$, ($\lambda_i$ est un réel strictement positif) et en conjugant, on obtient
+$\sum_{i=1}^{n}\lambda_i(z-z_i)=0$ et donc 
+$$z=\frac{\sum_{i=1}^{n}\lambda_iz_i}{\sum_{i=1}^{n}\lambda_i}=\mbox{bar}(z_1(\lambda_1),...,z_n(\lambda_n)).$$
+\fincorrection
+\finexercice

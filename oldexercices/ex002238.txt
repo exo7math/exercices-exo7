@@ -1,0 +1,89 @@
+\exercice{2238, matos, 2008/04/23}
+\enonce
+Soient $A$ et $B$ deux matrices r\'eelles d'ordre $N$ et $a,b$ deux vecteurs de $\Rr^n$. On consid\`ere les deux it\'erations suivantes:
+\begin{equation}\label{ite}
+\left\{ \begin{array}{ccc}
+x_{k+1}&=& By_k +a\\
+y_{k+1}&=& Ax_k + b
+\end{array}\right.  \ \ k=0, 1, \cdots
+\end{equation}
+avec $x_0, y_0 \in\Rr^n$ donn\'es.
+\begin{enumerate}
+\item D\'eterminer une condition n\'ecessaire et suffisante de convergence des deux suites de vecteurs.
+\item Soit $z_k= ( x_k, y_k)^T \in\Rr^{2n}$. Montrer que (\ref{ite}) peut s'\'ecrire
+$$z_{k+1}= Cz_k+c$$
+o\`u  $C$ est une matrice d'ordre $2n$. Expliciter $C$ et $c$.
+\item Montrer que $\rho^2(C)=\rho(AB)$.
+\item On consid\`ere maintenant les deux it\'erations suivantes:
+\begin{equation}\label{ite2}
+\left\{ \begin{array}{ccc}
+x_{k+1}&=& By_k +a\\
+y_{k+1}&=& Ax_{k+1} + b
+\end{array}\right.  \ \ k=0, 1, \cdots
+\end{equation}
+Donner une condition n\'ecessaire et suffisante de convergence.
+
+Montrer que (\ref{ite2}) est \'equivalent \`a
+$$z_{k+1}= Dz_k+d$$
+o\`u  $D$ est une matrice d'ordre $2N$.
+
+Montrer que $\rho (D)=\rho (AB)$.
+\item {\bf Taux de convergence}
+
+On appelle taux de convergence asymptotique de la matrice it\'erative $M$ le nombre
+$$R(M) =-\ln (\rho (M))) .$$
+On pose $e^k=x^k-x^*$ l'erreur de l'it\'er\'e d'ordre $k$.
+\begin{enumerate}
+\item Montrer que le nombre d'it\'erations $k$ pour r\'eduire l'erreur d'un facteur $\epsilon$ , i.e., $\frac{\|e^k\|}{\|e^0\|}\leq \epsilon $ v\'erifie
+$$k\geq \frac{-\ln \epsilon}{R(M)} .$$
+\item Comparer le taux de convergence des algorithmes (\ref{ite}) et (\ref{ite2}).
+\end{enumerate}
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item C'est facile \`a voir que si $(x_k)$ converge vers $x^*$ et $(y_k)$
+  converge vers $y^*$, alors $x^*$ et $y^*$ sont solution des syst\`emes
+  $(I-BA)x^*=Bb+a$ et $(I-AB)y^*=Aa+b$. On a:
+$$\left\{\begin{array}{l}x_{k+1}=B(Ax_{k-1}+b)+a=BAx_{k-1}+Bb+a\\
+y_{k+1}=A(By_{k-1}+a)+b = ABy_{k-1}+Aa+b\end{array}\right.$$
+et donc $(x_k)$ converge ssi $\rho (BA) <1$ et $(y_k)$ converge ssi $\rho
+(AB)<1$.
+\item $z_{k+1}=Cz_k+c$ avec
+  $C=\left(\begin{array}{cc}0&B\\A&0\end{array}\right),
+  c=\left(\begin{array}{c}a\\b\end{array}\right)$
+\item Soit $\lambda$ valeur propre  non nulle de $C$ et $z=(x,y)^T$ vecteur
+  propre associ\'e
+$$Cz=\lambda z\Leftrightarrow\left\{\begin{array}{l}By=\lambda x\\Ax=\lambda
+    y\end{array}\right.\Rightarrow ABy=\lambda Ax=\lambda^2 y\Rightarrow$$
+$\lambda^2$ est valeur propre de $AB$.
+
+Soit maintenant $\alpha$ valeur propre de $AB$ $\Leftrightarrow \exists u\neq 0: \quad
+ABu=\alpha u$. On pose $\beta^2=\alpha$ et $x=Bu$, $y=\beta u$
+$$C\left(\begin{array}{c}x\\y\end{array}\right)= \left(\begin{array}{c}\beta
+    Bu\\ABu\end{array}\right)=\left(\begin{array}{c}\beta Bu\\\beta^2
+    u\end{array}\right)=\beta \left(\begin{array}{c}x\\y\end{array}\right)$$
+et donc $\rho^2 (C)=\rho (AB)$
+\item $D=\left(\begin{array}{cc}0&B\\0&AB\end{array}\right),\quad
+  d=\left(\begin{array}{c}a\\Aa+b\end{array}\right)$.
+La d\'emonstration de $\rho (D)=\rho (AB)$ se fait comme dans la question
+  pr\'ec\'edente.
+\item \begin{enumerate}
+\item $e^k=M^ke^0\Rightarrow\frac{\|e^k\|}{\|e^0\|}\leq \|M^k\|\leq
+  \epsilon$. Il suffit donc d'avoir $\|M^k\|^{1/k} \leq \epsilon^{1/k}\Rightarrow
+  \log (\|M^k\|^{1/k})\leq \frac{1}{k}\log\epsilon$ c'est- \`a dire $k\geq
+  \frac{\log \epsilon}{\log (\|M^k\|^{1/k})}$ Mais comme $\rho (M) \leq
+  \|M^k\|^{1/k}$ on obtient finalement
+ $$k\geq -\log\epsilon /R(M)$$
+\item nous avons $\rho^2(C) = \rho (AB) \Rightarrow \rho (C) =\sqrt{\rho (AB)}$ et
+  $\rho (D)=\rho (AB)$ . Donc $\rho (D)<\rho (C) \Rightarrow R(D) >R(C)$. Donc on
+  atteint la m\^eme r\'eduction d'erreur avec un plus petit nombre
+  d'it\'erations de la m\'ethode 2)
+\end{enumerate}
+
+\end{enumerate} 
+\fincorrection
+\finexercice

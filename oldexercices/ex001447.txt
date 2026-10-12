@@ -1,0 +1,50 @@
+\exercice{1447, ortiz, 1999/04/01}
+
+\enonce
+ Les questions sont ind\'ependantes.
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+         \item Montrer que l'application $f:\Zz^2\to \Zz$, $(x,y)\mapsto3x+6y$
+est un morphisme de groupes.
+         \item D\'eterminer le noyau $\ker f$ de $f$ et montrer qu'il n'existe pas
+$(p,q)\in\Zz^2$ tel que $\ker f=p\Zz\times q\Zz.$
+         \item Montrer que le groupe-quotient $\Zz^2/\Zz(-2,1)$ est isomorphe au groupe $3\Zz.$
+    \end{enumerate}
+    \item  Soit $G$ le sous-groupe de $\Zz^2$ engendr\'e par $(2,0)$ et $(0,2).$
+Montrer que le groupe-quotient $\Zz^2/G$ est
+isomorphe \`a $\Zz/2\Zz\times\Zz/2\Zz.$
+\end{enumerate}
+
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item
+  \begin{enumerate}
+    \item $f((x,y)+(x',y'))=f(x+x',y+y')=3(x+x')+6(y+y')=3x+6y+3x'+6y'=f(x,y)+f(x',y')$.
+    \item $\mathrm{Ker} f = \{ (x,y) ; f(x,y)=0\} = \{ (x,y) ; 3x+6y=0\}=
+\{ (x,y) ; x=-2y \}= \{ (-2k,k) ; k\in \Zz\}$. Si $\mathrm{Ker} f =
+p\Zz\times q\Zz$ alors $f(p,0)=0$ donc $3p=0$ soit $p=0$. De même
+$f(0,q)=0$ implique $q=0$ et alors $\mathrm{Ker} f = \{ (0,0) \}$, ceci
+contredit le fait que $f(-2,1)=0$.
+    \item On a $f(\Zz^2) = 3\Zz$, le morphisme
+$f : \Zz^2 \longrightarrow 3\Zz$ définit par passage au quotient
+par le noyau un morphisme injectif $\bar{f} : \Zz^2/\mathrm{Ker} f
+\longrightarrow 3\Zz$ (c'est le théorème de factorisation). De
+plus comme $f$ est surjectif alors $\bar{f}$ l'est aussi. Ainsi
+$\bar{f}$ est un isomorphisme entre $\Zz^2/\mathrm{Ker} f
+=\Zz^2/(-2,1)\Zz$ et $3\Zz$.
+  \end{enumerate}
+  \item Définissons $g : \Zz^2 \longrightarrow \Zz/2\Zz \times \Zz/2\Zz$
+par $g(x,y)=(\bar{x},\bar{y})$ o\`u $\bar{n}$ désigne la classe de
+$n$ dans $\Zz/2\Zz$. Le noyau de $g$ est $2\Zz \times 2\Zz =
+\langle (2,0) ;(0,2) \rangle = G$. Le passage au quotient par le
+noyau définit l'isomorphisme $\bar{g}$ cherché.
+\end{enumerate}
+\fincorrection
+
+\finexercice
+

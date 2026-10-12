@@ -1,85 +1,59 @@
 \exercice{2023, liousse, 2003/10/01}
 
 \enonce
-
-On se donne $2$ droites $D_1$ et $D_2$ ayant comme vecteurs directeurs respectifs
- $ \vec{u_1}$ et $\vec{u_2}$.
+On se donne \( 2 \) droites \( D_1 \) et \( D_2 \) ayant comme vecteurs directeurs respectifs \( \vec{u_1} \) et \( \vec{u_2} \).
 \begin{enumerate}
-\item 
-  Perpendiculaire commune \`a ces deux droites.
+  \item Perpendiculaire commune à ces deux droites.
 
-\begin{enumerate}
-\item  On suppose que $ \vec{u_1}$ et $\vec{u_2}$ ne sont pas colin\'eaires et 
-  on note $  \vec{n}:=\vec{u_1} \wedge \vec{u_2} $.
+        \begin{enumerate}
+          \item On suppose que \( \vec{u_1} \) et \( \vec{u_2} \) ne sont pas colinéaires et on note \( \vec{n}:=\vec{u_1} \wedge \vec{u_2} \).
 
+                \begin{enumerate}
+                  \item Montrer que le plan \( P_1 \) contenant \( D_1 \) et admettant \( \vec{n} \) comme vecteur normal et le plan \( P_2 \) contenant \( D_2 \) et admettant \( \vec{n} \) comme vecteur normal se coupent en une droite \( \Delta \).
 
+                  \item Montrer que \( \Delta \) est une perpendiculaire commune à \( D_1 \) et \( D_2 \) (c'est-à-dire \( \Delta \) coupe \( D_1 \) et \( D_2 \), et est orthogonale à \( D_1 \) et à \( D_2 \)).
 
-\begin{enumerate}
-\item
- Montrer que le plan $P_1$ contenant $D_1$ et admettant  $\vec{n}$ comme vecteur directeur et
-le plan $P_2$ contenant $D_2$ et admettant  $\vec{n}$ comme vecteur directeur se coupent en une droite
-$\Delta$.
+                  \item Montrer que \( \Delta \) est la seule perpendiculaire commune à \( D_1 \) et \( D_2 \).
+                \end{enumerate}
 
-\item  Montrer que $\Delta$ est une perpendiculaire commune \`a $D_1$ et $D_2$
- (c'est \`a dire $\Delta$ coupe  $D_1$  et $D_2$, et 
- est  orthogonale \`a $D_1$ et \`a  $D_2$).
+          \item Comment construire \( \Delta \) dans le cas où \( D_1 \) et \( D_2 \) sont parallèles ?
 
+        \end{enumerate}
 
-\item  Montrer que $\Delta$ est la seule  perpendiculaire commune \`a $D_1$ et $D_2$.
-\end{enumerate} 
+  \item Distance entre ces deux droites.
 
+        Soit \( H_1:= D_1\cap \Delta \) et \( H_2:= D_2\cap \Delta \).
 
-\item   Comment  construire $\Delta$ dans le cas o\`u 
-$D_1$ et $D_2$ sont parall\`elles ?
+        Montrer que pour tout \( A_1\in D_1 \) et tout \( A_2\in D_2 \), on a \( d(A_1,A_2)\ge d(H_1,H_2) \).
 
-\end{enumerate} 
+        \( d(H_1,H_2) \) est appelée {\it distance entre les deux droites \( D_1 \) et \( D_2 \)}.
 
-\item   Distance entre  ces deux droites.
+  \item Donner des équations cartésiennes pour \( \Delta \) et calculer la distance entre les deux droites \( D_1 \) et \( D_2 \) dans le cas suivant :
 
-Soit $H_1:= D_1\cap \Delta$ et $H_2:= D_2\cap \Delta$.
+        \begin{enumerate}
+          \item \( (D_1): \left\{\begin{array}{l}
+                  x-y-z+4 = 0 \\
+                  -x-2y-3z+9 = 0\end{array} \right. \) et \( (D_2): \left\{\begin{array}{l} -x+2y+z+2 = 0 \\-2x+4y-z+1 = 0\end{array} \right. \)
 
+          \item \( (D_1): \left\{\begin{array}{l}
+                  x+y-z+2 = 0 \\
+                  x+y+z+1 = 0\end{array} \right. \) et \( (D_2):\left\{\begin{array}{l} 3x-y+2z-7 = 0 \\ x-y = 0 \end{array} \right. \)
 
- Montrer que pour tout
-$A_1\in D_1$ et tout $A_2\in D_2$, on  a $d(A_1,A_2)\geq d(H_1,H_2)$.
+          \item \( (D_1):\left\{\begin{array}{l}
+                  x = 1-2t \\
+                  y = t+2  \\
+                  z = 3t+1\end{array} \right. \) et \( (D_2):\left\{\begin{array}{l}
+                  x = 3t-1 \\
+                  y = -t+2 \\
+                  z = 2t\end{array} \right. \)
 
- $ d(H_1,H_2)$ est appel\'ee {\it distance entre les deux droites $D_1$ et $D_2$}.
-
-
-\item Donner des \'equations cart\'esiennes pour $\Delta$ et calculer
-la distance entre les  deux droites $D_1$ et $D_2$ dans le cas suivant :
-
-
-\begin{enumerate}
-\item $(D_1): \left\{\begin{array}{l} 
-                           x-y-z+4=0 \\
-                         -x-2y-3z+9=0\end{array} \right.$ et 
-$(D_2): \left\{\begin{array}{l} -x+2y+z+2=0 \\-2x+4y-z+1=0\end{array} \right. $
-
-
-
-
-\item  $(D_1): \left\{\begin{array}{l}
-                   x+y-z+2=0 \\
-            x+y+z+1=0 \end{array} \right.$ et 
-$(D_2):\left\{\begin{array}{l} 3x-y+2z-7=0 \\ x-y=0 \end{array} \right.$
-
-\item  $(D_1):\left\{\begin{array}{l}
-                              x=1-2t\\ 
-                  y=t+2\\  
-                   z=3t+1  \end{array} \right.$ et 
-$(D_2):\left\{\begin{array}{l}
-                      x=3t-1\\
-              y=-t+2\\   
-              z=2t \end{array} \right. $
-
-\item  $(D_1): \left\{ \begin{array}{l}
-                                   x-y-z-2=0 \\
-                   x-2y-3z+1=0 \end{array} \right. $ et 
-$(D_2): \left\{\begin{array}{l}
-                        x+y+2z-1=0 \\
-             2x+y+z+2=0  \end{array} \right.$
-\end{enumerate} 
- \end{enumerate} 
+          \item \( (D_1): \left\{ \begin{array}{l}
+                  x-y-z-2 = 0 \\
+                  x-2y-3z+1 = 0\end{array} \right. \) et \( (D_2): \left\{\begin{array}{l}
+                  x+y+2z-1 = 0 \\
+                  2x+y+z+2 = 0\end{array} \right. \)
+        \end{enumerate}
+\end{enumerate}
 \finenonce
 
 \noindication
@@ -87,4 +61,3 @@ $(D_2): \left\{\begin{array}{l}
 \nocorrection
 
 \finexercice
-

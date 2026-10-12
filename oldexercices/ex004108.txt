@@ -1,0 +1,45 @@
+\exercice{4108, quercia, 2010/03/11}
+\enonce[ENS MP 2002]
+
+Soit une application $A$ de classe $\mathcal{C}^\infty$ sur~$\R$ à valeurs dans~$\mathcal{M}_n(\C)$,
+telle que les valeurs propres de $A(0)$ aient toutes une partie réelle
+strictement positive. Soit~$F$ de classe $\mathcal{C}^\infty$ sur~$\R$, à valeurs
+dans~$\C^n$. Montrer qu'il existe $X$ de classe $\mathcal{C}^\infty$ sur~$\R$, à valeurs
+dans $\C^n$, solution de $tX'(t) + A(t)X(t) = F(t)$.
+
+{\it Indication~: commencer par le cas $n=1$, $A$ constante.}
+
+\finenonce
+
+\noindication
+
+\correction
+Pour $n=1$ et $A(t)=a>0$ on trouve après les incantations usuelles
+(équation homogène, variation de la constante et mise en forme de l'intégrale) que
+$X\ :\ t \mapsto \int_{u=0}^1F(tu)u^{a-1}\,d u$ est l'unique solution
+prolongeable en $0$ et qu'elle est de classe $\mathcal{C}^\infty$ sur~$\R$.
+Pour $n=1$ et $A$ non constante, on trouve de même~:
+$$X(t) =  \int_{u=0}^1F(tu)u^{A(0)-1}\exp\Bigl( \int_{v=t}^{tu}\frac{A(v)-A(0)}v\,d v\Bigr)\,d u$$
+et l'on voit que $X$ est $\mathcal{C}^\infty$ en écrivant
+$\frac{A(v)-A(0)}v =  \int_{w=0}^1A'(vw)\,d w$.
+
+Pour $n$ quelconque et $A$ constante~: alors la fonction $X\ :\ t \mapsto \int_{u=0}^1u^{A(0)-I}F(tu)\,d u$ est
+l'unique solution prolongeable en $0$,
+en convenant que $u^{A(0)-I} = \exp((A(0)-I)\ln(u))$ (l'intégrale converge en~$0$
+car $u^{A(0)-I} = O(u^{\alpha-1}\ln(u)^n)$ pour tout $\alpha>0$
+minorant les parties réelles des valeurs propres de~$A(0)$).
+
+Pour $A$ non constante, on met l'équation sous forme intégrale~:
+$$tX'(t) + A(t)X(t) = F(t)\Leftrightarrow X(t) =  \int_{u=0}^1u^{A(0)-I}\{F(tu)-(A(tu)-A(0))X(tu)\}\,d u .$$
+Soit $a>0$ à choisir.
+Posons $E = \mathcal{C}([-a,a],\C^n)$ et pour $X\in E$~: $$\Phi(X) = t \mapsto \int_{u=0}^1u^{A(0)-I}\{F(tu)-(A(tu)-A(0))X(tu)\}\,d u.$$
+On a facilement~: $\Phi(X)\in E$ si $X\in E$ et $\Phi$ est contractante sur~$E$ pour $\|\ \|_\infty$
+si $a$ est choisi suffisament petit. Donc l'équation $tX'(t) + A(t)X(t) = F(t)$
+admet une solution (unique) définie au voisinage de $0$, et cette solution est prolongeable
+en une solution sur~$\R$ car le théorème de Cauchy-Lipschitz s'applique
+en dehors de~$0$. Par ailleurs, on a~:
+$$\forall\ t\in\R,\ X(t) =  \int_{u=0}^1u^{A(0)-I}\{F(tu)-(A(tu)-A(0))X(tu)\}\,d u,$$
+ce qui montre par récurrence sur~$k\in\N$ que $X$ est de classe $\mathcal{C}^k$ sur~$\R$.
+\fincorrection
+
+\finexercice

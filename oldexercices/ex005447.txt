@@ -1,0 +1,47 @@
+\exercice{5447, rouget, 2010/07/10}
+\enonce[***I]
+Soit $f$ une fonction de classe $C^2$ sur $[0,1]$. Déterminer le réel $a$ tel que :
+ 
+$$\int_{0}^{1}f(t)\;dt-\frac{1}{n}\sum_{k=1}^{n-1}f(\frac{k}{n})\underset{n\rightarrow+\infty}{=}\frac{a}{n}+o(\frac{1}{n}).$$
+
+\finenonce
+
+\noindication
+
+\correction
+Supposons $f$ de classe $C^2$ sur $[0,1]$.
+Soit $F$ une primitive de $f$ sur $[0,1]$. Soit $n$ un entier naturel non nul.
+
+$$u_n=\int_{0}^{1}f(t)\;dt-\frac{1}{n}\sum_{k=0}^{n-1}f(\frac{k}{n})=\sum_{k=0}^{n-1}(\int_{k/n}^{(k+1)/n}f(t)\;dt-\frac{1}{n}f(\frac{k}{n}))=\sum_{k=0}^{n-1}(F(\frac{k+1}{n})-F(\frac{k}{n})-\frac{1}{n}F'(\frac{k}{n})).$$
+
+$f$ est de classe $C^2$ sur le segment $[0,1]$. Par suite, $F^{(3)}=f''$ est définie et bornée sur ce segment. En notant $M_2$ la borne supérieure de $|f''|$ sur $[0,1]$, l'inégalité de \textsc{Taylor}-\textsc{Lagrange} à l'ordre 3 appliquée à $F$ sur le segment $[0,1]$ fournit
+
+$$\left|F(\frac{k+1}{n})-F(\frac{k}{n})-\frac{1}{n}F'(\frac{k}{n})-\frac{1}{2n^2}F''(\frac{k}{n})\right|
+\leq\frac{(1/n)^3M_2}{6},$$
+
+et donc,
+ 
+\begin{align*}\ensuremath
+\left|\sum_{k=0}^{n-1}[F(\frac{k+1}{n})-F(\frac{k}{n})-\frac{1}{n}F'(\frac{k}{n})-\frac{1}{2n^2}F''(\frac{k}{n})]
+\right|&\leq\sum_{k=0}^{n-1}|F(\frac{k+1}{n})-F(\frac{k}{n})-\frac{1}{n}F'(\frac{k}{n})-\frac{1}{2n^2}F''(\frac{k}{n})|\\
+ &\leq\sum_{k=0}^{n-1}\frac{(1/n)^3M_2}{6}=\frac{M_2}{6n^2}.
+\end{align*}
+
+Ainsi, $\sum_{k=0}^{n-1}[F(\frac{k+1}{n})-F(\frac{k}{n})-\frac{1}{n}F'(\frac{k}{n})-\frac{1}{2n^2}F''(\frac{k}{n})]=O(\frac{1}{n^2})$, ou encore $\sum_{k=0}^{n-1}[F(\frac{k+1}{n})-F(\frac{k}{n})-\frac{1}{n}F'(\frac{k}{n})-\frac{1}{2n^2}F''(\frac{k}{n})]=o(\frac{1}{n})$, ou enfin,
+
+$$u_n=\sum_{k=0}^{n-1}\frac{1}{2n^2}F''(\frac{k}{n})+o(\frac{1}{n}).$$
+
+Maintenant, 
+
+$$\sum_{k=0}^{n-1}\frac{1}{2n^2}F''(\frac{k}{n})=\frac{1}{2n}.\frac{1}{n}\sum_{k=0}^{n-1}f'(\frac{k}{n}).$$
+
+Or, la fonction $f'$ est continue sur le segment $[0,1]$. Par suite, la somme de \textsc{Riemann} $\frac{1}{n}\sum_{k=0}^{n-1}f'(\frac{k}{n})$ tend vers $\int_{0}^{1}f'(t)\;dt=f(1)-f(0)$ et donc 
+
+$$\frac{1}{2n}\frac{1}{n}\sum_{k=0}^{n-1}f'(\frac{k}{n})=\frac{1}{2n}(f(1)-f(0)+o(1))=\frac{f(1)-f(0)}{2n}+o(\frac{1}{n}).$$
+
+Finalement,
+
+$$\int_{0}^{1}f(t)\;dt-\frac{1}{n}\sum_{k=0}^{n-1}f(\frac{k}{n})=\frac{f(1)-f(0)}{2n}+o(\frac{1}{n}).$$
+
+\fincorrection
+\finexercice

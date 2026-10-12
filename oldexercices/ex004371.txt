@@ -1,0 +1,34 @@
+\exercice{4371, quercia, 2010/03/12}
+\enonce[Centrale MP 2002]
+
+Soit $f$ : $x \mapsto  \int_{t=0}^{+\infty}\frac{d t}{t^{x+1}+t+1}$.
+Déterminer son domaine de définition~; étudier sa continuité et sa monotonie.
+Calculer $ \int_{t=1}^{+\infty}\frac{d t }{t^{x+1}+t}$ et en déduire des
+équivalents et les limites de~$f$ en~$0$ et en~$+\infty$.
+\finenonce
+
+\noindication
+
+\correction
+$D_f = {]0,+\infty[}$. Il y a domination locale, donc $f$ est continue.
+
+De même, pour $x>0$ on a $f'(x) =  \int_{t=0}^{+\infty}\frac{-\ln(t)t^{x+1}}{(t^{x+1}+t+1)^2}\,d t$.
+En coupant l'intégrale en~$1$ et en posant $u=1/t$ dans l'intégrale sur $[1,+\infty[$
+il vient~: $f'(x) =  \int_{t=0}^1\ln(t)t^{x+1}\Bigl(\frac1{(t+t^{x+1}+t^{x+2})^2} - \frac1{(t^{x+1}+t+1)^2}\Bigr)\,d t < 0$
+car $\ln(t)<0$ et $t^{x+2}<1$ si $t\in{]0,1[}$. Donc $f$ est strictement décroissante sur~$]0,+\infty[$.
+
+$ \int_{t=1}^{+\infty}\frac{d t }{t^{x+1}+t}
+=  \int_{t=1}^{+\infty}\sum_{k=0}^\infty\frac{(-1)^k}{t^{(k+1)x+1}}\,d t =$
+(domination du reste avec le CSA)
+$= \sum_{k=0}^\infty\frac{(-1)^k}{(k+1)x}= \frac{\ln 2}x$.
+
+$\Bigl|f(x)- \int_{t=1}^{+\infty}\frac{1}{t^{x+1}+t}\Bigr|
+= \int_{t=0}^1\frac{d t}{t^{x+1}+t+1} +  \int_{t=1}^{+\infty}\frac{d t}{(t^{x+1}+t)(t^{x+1}+t+1)}
+\le  \int_{t=0}^1\frac{d t}{t+1} +  \int_{t=1}^{+\infty}\frac{d t}{t(t+1)} = 2\ln 2$ 
+donc $f(x) = \frac{\ln 2}x + O_{x\to0^+}(1)$.
+
+Pour $x\to+\infty$, on a avec le TCM séparément sur $[0,1]$ et sur $[1,+\infty[$~:
+lorsque $x\to+\infty$, $f(x)\to \int_{t=0}^1\frac{d t}{t+1} = \ln 2$.
+\fincorrection
+
+\finexercice

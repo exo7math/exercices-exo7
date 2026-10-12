@@ -1,0 +1,28 @@
+\exercice{20, bodin, 1998/09/01}
+\video{8nXKgqMsucU}
+\enonce
+ Soit $z$ un nombre complexe de module $\rho$,
+d'argument $\theta$, et soit $\overline{z}$ son conjugu\'e.
+Calculer
+$(z+\overline{z})(z^2+\overline{z}^2)\ldots(z^n+\overline{z}^n)$
+en fonction de $\rho$ et $\theta$.
+
+\finenonce
+
+\indication
+Utiliser la formule d'Euler pour faire appara\^{\i}tre des cosinus.
+\finindication
+
+\correction
+\'Ecrivons $z = \rho e^{i\theta}$, alors $\overline{z} = \rho
+e^{-i\theta}$. Donc
+\begin{align*}
+P &= \prod_{k=1}^n \left(z^k+{\overline{z}}^k \right)\\
+&= \prod_{k=1}^n \rho^k \left(  (e^{i\theta})^k + (e^{-i\theta})^k \right)\\
+&= \prod_{k=1}^n \rho^k \left(  e^{ik\theta} + e^{-ik\theta}) \right)\\
+&= \prod_{k=1}^n 2 \rho^k \cos {k\theta}\\
+&= 2^n.\rho.\rho^2.\ldots.\rho^n \prod_{k=1}^n \cos {k\theta}\\
+&= 2^n\rho^{\frac{n(n+1)}{2}} \prod_{k=1}^n \cos {k\theta}.\\
+\end{align*}
+\fincorrection
+\finexercice

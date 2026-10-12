@@ -1,0 +1,131 @@
+\exercice{2643, debievre, 2009/05/19}
+\enonce
+\begin{enumerate}
+ \item  Soit 
+$f$ une fonction r\'eelle d'une variable r\'eelle
+de classe ${\rm C}^2$ dans un voisinage de $0\in \mathbb R$ 
+telle que $f(0)=0$ et
+$f^\prime(0)\not=0$. Montrer que la fonction 
+r\'eelle $F$ des deux variables $x$ et $y$
+d\'efinie dans un voisinage de $(0,0)$
+par 
+$F(x,y)= f(x) f(y)$ n'a pas d'extremum relatif en $(0,0)$.
+Est-ce que  le point $(0,0)$ est quand m\^eme critique?
+Si oui caract\'eriser sa nature.
+ \item D\'eterminer les points critiques, puis les minima et les maxima locaux de
+\[
+f(x,y)=\sin(2\pi x)\sin(2\pi y).
+\]
+Remarque: en utilisant la 
+p\'eriodicit\'e de la fonction, on peut limiter le nombre de cas \`a \'etudier.
+\end{enumerate}
+\finenonce
+
+\indication  
+Voir les exercices pr\'ec\'edents.
+\finindication
+
+\correction
+\begin{enumerate}  
+\item $dF=f(y) f'(x)\mathrm dx + f(x) f'(y)\mathrm dy$ et
+\begin{equation}
+\mathrm{Hess}_f(x,y)=\left[\begin{matrix} 
+f(y) f''(x) &  f'(x) f'(y)\\  f'(x) f'(y) & f(x)  f''(y)
+\end{matrix}\right]
+\label{Hess}
+\end{equation} 
+d'o\`u
+$\mathrm{Hess}_f(0,0)= (f'(0))^2\left[\begin{matrix} 
+0 &  1\\  1 & 0
+\end{matrix}\right]$
+et
+\[
+(u,v)\mathrm{Hess}_f(0,0)
+\left[\begin{matrix} u \\ v \end{matrix}\right]
+=(f'(0))^2
+(u,v)\left[\begin{matrix} 
+0 & 1\\ 1 &  0
+\end{matrix}\right]
+\left[\begin{matrix} u \\ v \end{matrix}\right]
+=2(f'(0))^2uv
+\]
+Par cons\'equent la forme hessienne au point $(0,0)$
+est non d\'eg\'en\'er\'ee et 
+ind\'efinie et ce point ne peut pas pr\'esenter 
+un extremum relatif.
+En effet, 
+le point $(0,0)$ est critique mais  un point selle.
+
+\item D'apr\`es la partie (1.) et la p\'eriodicit\'e, les points de la forme
+\begin{equation}
+(x,y)=(k,l) \in \R^2,\ k,l \in \mathbb Z,
+\label{selle}
+\end{equation} 
+pr\'esentent des points selle.
+\'Egalement d'apr\`es la partie (1.),
+\begin{align*}
+\frac{\partial f}{\partial x}&=f(y) f'(x)=2 \pi \sin (2\pi y) \cos (2\pi x)
+\\
+\frac{\partial f}{\partial y}&=f(x) f'(y)=2 \pi \sin (2 \pi x) \cos (2 \pi y).
+\end{align*}
+Par cons\'equent,
+pour que le point $(x,y)$  soit critique
+il faut et il suffit qu'il soit de la forme
+\[
+(k,l),\ (k+\tfrac 12,l),\ (k,l+\tfrac 12),\ (k+\tfrac 12,l+\tfrac 12),\  
+k,l \in \mathbb Z,
+\]
+ou
+\[
+ (k+\tfrac 14,l+\tfrac 14),
+\
+ (k+\tfrac 14,l+\tfrac 34),
+\
+ (k+\tfrac 34,l+\tfrac 14),
+\
+ (k+\tfrac 34,l+\tfrac 34), \ k,l \in \mathbb Z.
+\]
+D'apr\`es la p\'eriodicit\'e, il suffit d'examiner les huit points
+\[
+(0,0),\ (\tfrac 12,0),\ (0,\tfrac 12),\ (\tfrac 12,\tfrac 12),
+\
+ (\tfrac 14,\tfrac 14),
+\
+ (\tfrac 14,\tfrac 34),
+\
+ (\tfrac 34,\tfrac 14),
+\
+ (\tfrac 34,\tfrac 34)
+\]
+et, d'apr\`es (1.), l'origine pr\'esente un point selle.
+D'apr\`es \eqref{Hess},
+\begin{align*}
+\mathrm{Hess}_f(0,\tfrac 12)&=\left[\begin{matrix} 
+f(\tfrac 12) f''(0) &  f'(0) f'(\tfrac 12)\\  f'(0) f'(\tfrac 12) & f(0)  f''(\tfrac 12)
+\end{matrix}\right]=16 \pi^2\left[\begin{matrix} 
+0 &  -1\\  -1 & 0
+\end{matrix}\right]
+\\
+\mathrm{Hess}_f(\tfrac 12,0)&=\left[\begin{matrix} 
+f(0) f''(\tfrac 12) &  f'(\tfrac 12) f'(0)\\  f'(\tfrac 12) f'(0) & f(\tfrac 12)  f''(0)
+\end{matrix}\right]=16 \pi^2\left[\begin{matrix} 
+0 &  -1\\  -1 & 0
+\end{matrix}\right]
+\\
+\mathrm{Hess}_f(\tfrac 12,\tfrac 12)&=\left[\begin{matrix} 
+f(\tfrac 12) f''(\tfrac 12) &  f'(\tfrac 12) f'(\tfrac 12)\\  f'(\tfrac 12) f'(\tfrac 12) & f(\tfrac 12)  f''(\tfrac 12)
+\end{matrix}\right]=16 \pi^2\left[\begin{matrix} 
+0 &  1\\  1 & 0
+\end{matrix}\right]
+\end{align*}
+d'o\`u les points $(0,\frac 12)$, $(\tfrac 12,0)$ et $(\tfrac 12,\tfrac 12)$
+pr\'esentent des points selle.
+Il est g\'eo\-m\'etri\-quement 
+\'evident que le comportement de la fonction sin entra\^\i ne
+que les points $(\tfrac 14,\tfrac 14)$ et  $(\tfrac 34,\tfrac 34)$
+pr\'esentent des maxima et que les points
+$(\tfrac 14,\tfrac 34)$ et  $(\tfrac 34,\tfrac 14)$
+pr\'esentent des minima.
+\end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,31 @@
+\exercice{2830, burnol, 2009/12/15}
+\enonce
+  Soit $f$ une fonction entière telle que $|f(z)|\leq
+M\,(1+ |z|)^n$ pour un certain $M$ et un certain
+$n\in\Nn$. Donner plusieurs démonstrations que $f$ est un
+polynôme de degré au plus $n$:
+\begin{itemize}
+\item en utilisant une formule intégrale de Cauchy pour
+  $f^{(n+1)}(z)$, avec comme contour les cercles de rayon
+  $R$ centrés en l'origine, ou en $z$ si l'on veut,
+\item en utilisant les formules de Cauchy pour
+  $f^{(m)}(0)$, avec $m\geq n+1$,
+\item en appliquant le théorème de Liouville à $(f(z) -
+  P(z))/z^{n+1}$ avec $P$ le polynôme de McLaurin-Taylor à
+  l'origine à l'ordre $n$.
+\end{itemize} 
+\finenonce
+\noindication
+\correction
+La formule de Cauchy pour $f^{(n+1)}(z)$ est
+$$\frac{f^{(n+1)}(z)}{(n+1)!} =\frac{1}{2\pi i} \int_{C_R} \frac{f(\xi )}{(\xi -z)^{n+2}}\, d\xi $$
+o\`u $C_R= \{|\xi|=R\}$. Pour les estimations suivantes, prenons $R> \min(2|z|,1)$. Comme $|\xi -z| \geq |\xi| -|z| =R-|z| \geq R/2$,
+$$ \frac{|f(\xi )|}{|(\xi -z)^{n+2}|}\leq M \frac{(1+R)^n}{(R/2)^{n+2}} \leq M\frac{(2R)^n}{(R/2)^{n+2}}=2^{2n+2}M\frac{1}{R^2}.$$
+Ensemble avec la formule de Cauchy on a donc
+$$\frac{|f^{(n+1)}(z)|}{(n+1)!}\leq \frac{1}{2\pi} \int _{C_R} 2^{2n+2}M \frac{1}{R^2} |d\xi| =2^{2n+2} M\frac{1}{R}$$
+pour n'importe quel $R>2|z|$. On vient de montrer que $f^{n+1}(z) =0$ pour tout $z\in \C$.
+Utilisons maintenant $g(z) = \frac{f(z) -P(z)}{z^{n+1}}$ o\`u $P$ est le polyn\^ome de Taylor de $f$ \`a l'origine \`a l'ordre $n$. On remarque d'abord que l'origine est z\'ero d'ordre $n+1$ de $f(z) -P(z)$ ce qui explique que $g$ se prolonge holomorphiquement \`a l'origine. C'est donc une fonction enti\`ere pour laquelle on a
+$$|g(z) | \leq \frac{C|z|^n}{|z|^{n+1}}=C\frac{1}{|z|}$$
+pour un certain $C>0$ et pour $z$ de module suffisamment grand. De nouveau, $g$ est une fonction enti\`ere born\'ee, elle est donc constante (notre estimation donne m\^eme $g\equiv 0$ et donc $f=P$).
+\fincorrection
+\finexercice

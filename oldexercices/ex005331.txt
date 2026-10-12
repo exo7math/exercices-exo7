@@ -1,0 +1,21 @@
+\exercice{5331, rouget, 2010/07/04}
+\enonce[**T]
+Trouver tous les polynômes $P$ vérifiant $P(2X)=P'(X)P''(X)$.
+\finenonce
+
+\noindication
+
+\correction
+Le polynôme nul est solution. Soit $P$ un polynôme non nul de degré $n$ solution alors $n=n-1+n-2$ et donc $n=3$. Posons donc $P=aX^3+bX^2+cX+d$ avec $a\neq0$.
+
+\begin{align*}\ensuremath
+P(2X)=P'(X)P''(X)&\Leftrightarrow8aX^3+4bX^2+2cX+d=(3aX^2+2bX+c)(6aX+2b)\\
+ &\Leftrightarrow(18a^2-8a)X^3+(18ab-4b)X^2+(4b^2+6ac-2c)X+2bc-d=0\\
+ &\Leftrightarrow18a^2-8a=18ab-4b=4b^2+6ac-2c=2bc-d=0\\
+ &\Leftrightarrow a=\frac{4}{9}\;\mbox{et}\;b=c=d=0.
+\end{align*}
+
+Les polynômes solutions sont $0$ et $\frac{4}{9}X^3$.
+
+\fincorrection
+\finexercice

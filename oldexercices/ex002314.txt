@@ -1,0 +1,50 @@
+\exercice{2314, barraud, 2008/04/24}
+\enonce
+ Soient $f=x^6+x^5+x^4+x^3+1\in \Zz_2[x]\ $, $g=x^3+x^2+1 \in
+  \Zz_2[x]$ deux polyn\^omes sur le corps $\Zz_2$.
+\begin{enumerate}
+  \item En utilisant l'algorithme d'Euclide trouver le p.g.c.d. de $f$ et
+  $g$ et sa repr\'esentation lin\'eaire.
+  \item Les polyn\^omes $f$ et $g$ sont-ils irr\'eductibles ?
+  \item Soit $(g)$ l'id\'eal principal engendr\'e par $g$.  Combien
+  d'\'el\'ements contient l'anneau quotient $A=\Zz_2[x]/(g)$ ?
+  \item Soit $\pi\,:\,\Zz_2[x]\to A$ la projection canonique.  On pose
+  $\pi(x)=\bar x\in A$. Trouver l'inverse de l'\'el\'ement $\pi(f)$
+  dans l'anneau quotient $A$.
+  \item L'anneau quotient $B=\Zz_2[x]/(f)$ est-il un corps ?  Justifier
+  la r\'eponse, i.e. donner une d\'emonstration si $B$ est un corps ou
+  trouver un \'el\'ement non-inversible dans $B$ dans le cas
+  contraire.
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item \begin{align*}
+%(x^{6}+x^{5}+x^{4}+x^{3}+1)&=(x^{3}+x^{2}+1)(x^{3}+x+1)+(x^{2}+x)\\
+%(x^{3}+x^{2}+1)&=(x^{2}+x)x+1
+f&=g(x^{3}+x+1)+(x^{2}+x)\\
+g&=(x^{2}+x)x+1
+\end{align*}
+donc $\pgcd(f,g)=1$ et
+$$
+1=g-(x^{2}+x)x=g-(f-g(x^{3}+x+1))x=(x^{4}+x^{2}+x+1)g-xf
+$$
+  \item $f=(x^{4}+x+1)(x^{2}+x+1)$ donc $f$ n'est pas irréductible.
+
+$g$ est de degré $3$ et n'a pas de racine, donc $g$ est irréductible.
+  \item Les éléments de $A$ sont en bijection avec les polynômes de $\Zz_{2}[x]$
+de degré $<\deg(g)=3$. Il y a $8$ polynômes de degré au plus $2$ sur
+$\Zz_{2}$, donc $A$ a $8$ éléments.
+  \item On utilise la représentation linéaire $uf+vg=1$ de $\pgcd(f,g)$ obtenue
+plus haut. $uf=1+vg$, donc $\bar{u} \bar{f}=\bar{1}+\bar{0}=\bar{1}$.
+Donc $(\bar{f})^{-1}=\bar{u}=\bar{x}$.
+  \item Soit $f_{1}=x^{2}+x+1$ et $f_{2}=x^{4}+x+1$. Alors $f_{1}f_{2}=f$ donc
+$\bar{f_{1}}\bar{f_{2}}=\bar{0}$. Pourtant, $f$ ne divise ni $f_{1}$ ni
+$f_{2}$, donc $\bar{f_{1}}\neq \bar{0}$ et $\bar{f_{2}}\neq \bar{0}$~:
+ $B$ n'est pas intègre, donc $B$ n'est pas un corps.
+\end{enumerate}
+\fincorrection
+\finexercice

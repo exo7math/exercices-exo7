@@ -1,0 +1,28 @@
+\exercice{5700, rouget, 2010/10/16}
+\enonce[**]
+Soit $\alpha\in\Rr$. Nature de la série de terme général $u_n=\frac{1+(-1)^nn^\alpha}{n^{2\alpha}}$, $n\geqslant1$.  
+\finenonce
+
+\noindication
+
+\correction
+Si $\alpha<0$, $u_n\underset{n\rightarrow+\infty}{\sim}n^{-2\alpha}$  et si $\alpha=0$, $u_n=1+(-1)^n$. Donc si $\alpha\leqslant0$, $u_n$ ne tend pas vers $0$. La série de terme général $u_n$ diverge grossièrement dans ce cas.
+
+On suppose dorénavant que $\alpha> 0$. Pour tout entier naturel non nul $n$, $|u_n|\underset{n\rightarrow+\infty}{\sim}\frac{1}{n^\alpha}$ et donc la série de terme général $u_n$ converge absolument si et seulement si $\alpha> 1$.
+
+Il reste à étudier le cas où $0 <\alpha\leqslant1$. On a $u_n=\frac{(-1)^n}{n^\alpha}+\frac{1}{n^{2\alpha}}$. La suite $\left(\frac{1}{n^\alpha}\right)_{n\geqslant1}$ tend vers $0$ en décroissant et donc la série de terme général $\frac{(-1)^n}{n^\alpha}$ converge en vertu du critère spécial aux séries alternées. On en déduit que la série de terme général $u_n$ converge si et seulement si la série de terme général $\frac{1}{n^{2\alpha}}$ converge ou encore si et seulement si $\alpha>\frac{1}{2}$.
+
+En résumé
+
+\begin{center}
+\shadowbox{
+\begin{tabular}{l}
+Si $\alpha\leqslant0$, la série de terme général $\frac{1+(-1)^nn^\alpha}{n^{2\alpha}}$ diverge grossièrement,\\
+\rule[-4mm]{0mm}{10mm}si $0 <\alpha\leqslant\frac{1}{2}$, la série de terme général $\frac{1+(-1)^nn^\alpha}{n^{2\alpha}}$ diverge,\\
+\rule[-4mm]{0mm}{10mm}si  $\frac{1}{2}<\alpha\leqslant1$, la série de terme général $\frac{1+(-1)^nn^\alpha}{n^{2\alpha}}$ est semi convergente,\\
+si $\alpha> 1$, la série de terme général $\frac{1+(-1)^nn^\alpha}{n^{2\alpha}}$ converge absolument.
+\end{tabular}
+}
+\end{center}
+\fincorrection
+\finexercice

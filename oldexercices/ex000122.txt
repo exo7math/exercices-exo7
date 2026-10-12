@@ -1,0 +1,39 @@
+\exercice{122, bodin, 1998/09/01}
+\video{MxucdpW0WDI}
+\enonce
+
+ Montrer par contraposition les assertions suivantes, $E$ \'etant
+un ensemble :
+\begin{enumerate}
+\item $\forall A,B \in \mathcal{P}(E) \quad (A\cap B=A\cup B)\Rightarrow A=B$,
+\item $\forall A,B,C \in \mathcal{P}(E) \quad
+(A\cap B=A\cap C \text{ et } A\cup B=A\cup C)\Rightarrow B=C$.
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+Nous allons d\'emontrer l'assertion $1.$ de deux mani\`eres diff\'erentes.
+\begin{enumerate}
+  \item Tout d'abord de fa\c{c}on ``directe". Nous supposons
+que $A$ et $B$ sont tels que $A\cap B = A \cup B$. Nous devons montrer 
+que $A=B$. 
+
+Pour cela \'etant donn\'e $x \in A$ montrons qu'il est aussi dans $B$.
+Comme $x\in A$ alors $x \in A\cup B$ donc $x \in A \cap  B$ (car $A\cup B= A \cap B$). Ainsi $x \in B$. 
+
+Maintenant nous prenons $x\in B$ et le m\^eme raisonnement implique $x \in A$.
+Donc tout \'el\'ement de $A$ est dans $B$ et tout \'el\'ement de $B$ est dans $A$.
+Cela veut dire $A=B$.
+
+  \item Ensuite, comme demand\'e, nous le montrons par contraposition.
+Nous supposons que $A\not= B$ et nous devons montrer que 
+$A\cap B \not= A\cup B$.
+
+Si $A\not= B$ cela veut dire qu'il existe un \'el\'ement $x \in A\setminus B$
+ou alors un \'el\'ement $x\in B \setminus A$. Quitte \`a \'echanger $A$ et $B$, nous supposons qu'il existe $x\in A \setminus B$. Alors $x \in A \cup B$ mais
+$x \notin A\cap B$. Donc $A\cap B \not= A\cup B$.
+\end{enumerate}
+\fincorrection
+\finexercice

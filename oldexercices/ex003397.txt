@@ -1,0 +1,41 @@
+\exercice{3397, quercia, 2010/03/10}
+\enonce[Calcul de $A^k$]
+
+Calculer $A^k$ pour $k \in \N$ :
+\begin{enumerate}
+  \item $A = \begin{pmatrix}1 &       &(2)\cr
+                     &\ddots     \cr
+                  (2)&       &1  \cr\end{pmatrix}$.
+   
+
+  \item $A = \begin{pmatrix} 1 &2 &3 &4 \cr
+                    0 &1 &2 &3 \cr
+                    0 &0 &1 &2 \cr
+                    0 &0 &0 &1 \cr \end{pmatrix}$.
+   
+
+  \item $A = \begin{pmatrix} x^2 &xy  &xz  \cr
+                    xy  &y^2 &yz  \cr
+                    xz  &yz  &z^2 \cr \end{pmatrix}$.
+   
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $\begin{pmatrix} a & &b    \cr
+                          &\ddots \cr
+                        b & &a    \cr\end{pmatrix}$ avec
+            $\begin{cases} a = \frac1n\bigl( (2n-1)^k + (n-1)(-1)^k \bigr) \cr
+                     b = \frac1n\bigl( (2n-1)^k -      (-1)^k \bigr).\cr \end{cases}$
+  \item $\begin{pmatrix} 1 &2k &2k^2+k &\frac 13(4k^3 + 6k^2 + 2k) \cr
+                       0 &1  &2k     &2k^2+k                     \cr
+                       0 &0  &1      &2k                         \cr
+                       0 &0  &0      &1                          \cr \end{pmatrix}$.
+  \item $\left[{ \begin{pmatrix} x\cr y\cr z \cr\end{pmatrix} \begin{pmatrix} x &y &z \cr\end{pmatrix} }\right]^k            = (x^2+y^2+z^2)^{k-1}A$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

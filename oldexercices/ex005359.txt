@@ -1,0 +1,67 @@
+\exercice{5359, rouget, 2010/07/04}
+\enonce[***I]
+$\sigma$ étant une permutation de $\{1,...,n\}$ donnée, on définit la matrice notée $P_\sigma$, carrée d'ordre $n$ dont le terme ligne $i$ colonne $j$ est $\delta_{i,\sigma(j)}$ (où $\delta_{i,j}$ est le symbôle de \textsc{Kronecker}. On note $G$ l'ensemble des $P_\sigma$ où $\sigma$ décrit $S_n$.
+\begin{enumerate}
+\item  
+\begin{enumerate}
+\item $\sigma$ et $\sigma'$ étant deux éléments de $S_n$, calculer $P_\sigma\times P_{\sigma'}$.
+\item En déduire que $(G,\times)$ est un sous-groupe de $(GL_n(\Rr),\times)$, isomorphe à $(S_n,\circ)$ (les matrices $P_\sigma$ sont appelées \og~matrices de permutation~\fg).
+\end{enumerate}
+\item  (Une utilisation des $P_\sigma$) $A$ étant une matrice carrée donnée, calculer $AP_\sigma$ et $P_\sigma A$. Que constate-t-on~?
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  
+\begin{enumerate}
+\item Soient $\sigma$ et $\sigma'$ deux éléments de $S_n$. Soit $(i,j)\in\{1,...,n\}^2$. Le coefficient ligne $i$, colonne $j$ de $P_\sigma P_{\sigma'}$ vaut
+
+$$\sum_{k=1}^{n}\delta_{i,\sigma(k)}\delta_{k,\sigma'(j)}=\delta_{i,\sigma(\sigma'(j))},$$
+
+et est donc aussi le coefficient ligne $i$, colonne $j$ de la matrice $P_{\sigma\circ\sigma'}$. Par suite,
+
+$$\forall(\sigma,\sigma')\in(S_n)^2,\;P_\sigma\times P_{\sigma'}=P_{\sigma\circ\sigma'}.$$
+
+\item Soit $\sigma\in S_n$. D'après a), $P_\sigma P_{\sigma^{-1}}=P_{\sigma\circ\sigma^{-1}}=P_{Id}=I_n=P_{\sigma^{-1}}P_\sigma$. On en déduit que toute matrice $P_\sigma$ est inversible, d'inverse $P_{\sigma^{-1}}$. Par suite, $G\subset GL_n(\Rr)$ (et clairement, $G\neq\emptyset$).
+
+Soit alors $(\sigma,\sigma')\in(S_n)^2$.
+
+$$P_\sigma P_{\sigma'}^{-1}=P_\sigma P_{{\sigma'}^{-1}}=P_{\sigma\circ{\sigma'}^{-1}}\in G.$$
+
+On a montré que $G$ est un sous-groupe de $(GL_n(\Rr),\times)$.
+
+Soit $\begin{array}[t]{cccc}
+\varphi~:&S_n&\rightarrow&G\\
+ &\sigma&\mapsto&P_\sigma
+\end{array}$. D'après a), $\varphi$ est un morphisme de groupes. $\varphi$ est clairement surjectif. Il reste à vérifier que $\varphi$ est injectif.
+
+Soit $\sigma\in S_n$.
+
+\begin{align*}\ensuremath
+\sigma\in\mbox{Ker}\varphi\Rightarrow P_\sigma=I_n&\Rightarrow\forall(i,j)\in\{1,...,n\}^2,\;\delta_{i,\sigma(j)}=\delta_{i,j}\\
+ &\Rightarrow \forall i\in\{1,...,n\},\;\delta_{i,\sigma(i)}=1\Rightarrow\forall i\in\{1,...,n\},\;\sigma(i)=i\\
+ &\Rightarrow\sigma=Id.
+\end{align*}
+
+Puisque le noyau du morphisme $\varphi$ est réduit à $\{Id\}$, $\varphi$ est injectif.
+
+Ainsi, $\varphi$ est un isomorphisme du groupe $(S_n,\circ)$ sur le groupe $(G,\times)$ et on a montré que $(G,\times)$ est un sous-groupe de $(GL_n(\Rr),\times)$, isomorphe à $(S_n,\circ)$.
+\end{enumerate}
+
+\item  Soit $(i,j)\in\{1,...,n\}^2$. Le coefficient ligne $i$, colonne $j$ de $AP_\sigma$ vaut~:
+
+$$\sum_{k=1}^{n}a_{i,k}\delta_{k,\sigma(j)}=a_{i,\sigma(j)}.$$
+
+Ainsi, l'élément ligne $i$, colonne $j$, de $AP_{\sigma}$ est l'élément ligne $i$, colonne $\sigma(j)$, de $A$, ou encore, si $j$ est un élément donné de $\{1,...,n\}$, la $j$-ème colonne de $AP_\sigma$ est la $\sigma(j)$-ème colonne de $A$. Ainsi, si on note $C_1$,...,$C_n$ les colonnes de $A$ (et donc $A=(C_1,...,C_n)$), alors $AP_\sigma=(C_{\sigma(1)},...,C_{\sigma(n)})$. En clair, multiplier $A$ par $P_\sigma$ à droite a pour effet d'appliquer la permutation $\sigma$ aux colonnes de $A$ (puisque $P_\sigma$ est inversible, on retrouve le fait que permuter les colonnes de $A$ ne modifie pas le rang de $A$).
+
+De même, le coefficient ligne $i$, colonne $j$, de $P_\sigma A$ vaut 
+
+$$\sum_{k=1}^{n}\delta_{i,\sigma(k)}a_{k,j}=\sum_{k=1}^{n}\delta_{\sigma^{-1}(i),k}a_{k,j}=a_{\sigma^{-1}(i),j},$$
+
+(on a utilisé $\sigma(k)=i\Leftrightarrow k=\sigma^{-1}(i)$) et multiplier $A$ par $P_\sigma$ à gauche a pour effet d'appliquer la permutation $\sigma^{-1}$ aux lignes de $A$.
+\end{enumerate}
+\fincorrection
+\finexercice

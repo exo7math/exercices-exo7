@@ -1,0 +1,36 @@
+\exercice{5383, rouget, 2010/07/06}
+\enonce[***]
+Soit $f$ une fonction définie sur un voisinage de $0$ telle que $\lim_{x\rightarrow 0}f(x)=0$ et $\lim_{x\rightarrow 0}\frac{f(2x)-f(x)}{x}=0$. Montrer que $\lim_{x\rightarrow 0}\frac{f(x)}{x}=0$. (Indication. Considérer $g(x)=\frac{f(2x)-f(x)}{x}$.)
+\finenonce
+
+\noindication
+
+\correction
+Pour $x\neq 0$, posons $g(x)=\frac{f(2x)-f(x)}{x}$. $f$ est définie sur un voisinage de $0$ et donc il existe $a>0$ tel que $]-a,a[\subset D_f$. Mais alors, $]-\frac{a}{2},\frac{a}{2}[\setminus\{0\}\subset D_g$.
+
+Soit $x\in]-\frac{a}{2},\frac{a}{2}[\setminus\{0\}$ et $n\in\Nn^*$.
+
+$$f(x)=\sum_{k=0}^{n-1}(f(\frac{x}{2^k})-f(\frac{x}{2^{k+1}}))+f(\frac{x}{2^n})=\sum_{k=0}^{n-1}\frac{x}{2^{k+1}}g(\frac{x}{2^{k+1}})+f(\frac{x}{2^n}).$$
+
+Par suite, pour $x\in]-\frac{a}{2},\frac{a}{2}[\setminus\{0\}$ et $n\in\Nn^*$, on a~:
+
+$$\left|\frac{f(x)}{x}\right|\leq\sum_{k=0}^{n-1}\frac{1}{2^{k+1}}\left|g(\frac{x}{2^{k+1}})\right|+\left|\frac{f(x/2^n)}{x}\right|.$$
+
+Soit $\varepsilon>0$. Puisque par hypothèse, $g$ tend vers $0$ quand $x$ tend vers $0$,
+
+$$\exists\alpha\in]0,\frac{a}{2}[/\;\forall X\in]-\alpha,\alpha[,\;|g(X)|<\frac{\varepsilon}{2}.$$
+
+Or, pour $x\in]-\alpha,\alpha[\setminus\{0\}$ et pour $k$ dans $N*$, $\frac{x}{2^k}$ est dans $]-\alpha,\alpha[\setminus\{0\}$ et par suite,
+
+$$\sum_{k=0}^{n-1}\frac{1}{2^{k+1}}\left|g(\frac{x}{2^{k+1}})\right|\leq\frac{\varepsilon}{2}\sum_{k=0}^{n-1}\frac{1}{2^{k+1}}=\frac{\varepsilon}{2}\frac{1}{2}\frac{1-\frac{1}{2^n}}{1-\frac{1}{2}}=\frac{\varepsilon}{2}(1-\frac{1}{2^n})<\frac{\varepsilon}{2},$$
+
+et donc, $\left|\frac{f(x)}{x}\right|\leq\frac{\varepsilon}{2}+\left|\frac{f(x/2^n)}{x}\right|$. On a ainsi montré que 
+
+$$\forall x\in]-\alpha,\alpha[\setminus\{0\},\;\forall n\in\Nn^*,\;\left|\frac{f(x)}{x}\right|\leq\frac{\varepsilon}{2}+\left|\frac{f(x/2^n)}{x}\right|.$$
+
+Mais, à $x$ fixé, $\frac{f(x/2^n)}{x}$ tend vers $0$ quand $n$ tend vers $+\infty$. Donc, on peut choisir $n$ tel que  $\frac{f(x/2^n)}{x}<\frac{\varepsilon}{2}$ et on a alors  $\left|\frac{f(x)}{x}\right|<\frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon$. On a montré que 
+
+$$\forall\varepsilon>0,\;\exists\alpha>0/\;(\forall x\in D_f,\;0<|x|<\alpha\Rightarrow\left|\frac{f(x)}{x}\right|<\varepsilon,$$ ce qui montre que ($f$ est dérivable en $0$ et que) $\lim_{x\rightarrow 0}\frac{f(x)}{x}=0$.
+
+\fincorrection
+\finexercice

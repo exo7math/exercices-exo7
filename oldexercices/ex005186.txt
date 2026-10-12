@@ -1,0 +1,51 @@
+\exercice{5186, rouget, 2010/06/30}
+\enonce[***I]
+Soit $E=\Rr_n[X]$, le $\Rr$-espace vectoriel des polynômes à coefficients réels de degré inférieur ou égal à $n$ ($n$
+entier naturel donné). Soit $\varphi$ l'application définie par~:~$\forall P\in E,\;\varphi(P)=P(X+1)-P(X)$.
+\begin{enumerate}
+\item  Vérifier que $\varphi$ est un endomorphisme de $E$.
+\item  Déterminer $\mbox{Ker}\varphi$ et $\mbox{Im}\varphi$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+ \begin{enumerate}
+ \item  Si $P$ est un polynôme de degré inférieur ou égal à $n$, alors $P(X+1)-P(X)$ est encore un polynôme de degré
+inférieur ou égal à $n$. Par suite, $\varphi$ est bien une application de $E$ dans lui-même.
+Soient alors $(P,Q)\in E^2$ et $(\lambda,\mu)\in\Rr^2$.
+
+\begin{align*}
+\varphi(\lambda P+\mu Q)&=(\lambda P+\mu Q)(X+1)-(\lambda P+\mu
+Q)(X)=\lambda(P(X+1)-P(X))+\mu(Q(X+1)-Q(X))\\
+ &=\lambda\varphi(P)+\mu\varphi(Q).
+\end{align*}
+$\varphi$ est linéaire de $E$ vers lui-même et donc un endomorphisme de $E$.
+ \item  Soit $P\in E$.
+$P\in\mbox{Ker }\varphi\Leftrightarrow\forall x\in\Rr,\;P(x+1)=P(x)$. Montrons alors que $P$ est constant.
+Soit $Q=P-P(0)$. $Q$ est un polynôme de degré inférieur ou égal à $n$ s'annulant en les entiers naturels 0, 1, 2,...
+(car $P(0)=P(1)=P(2)=...$) et a ainsi une infinité de racines deux à deux distinctes. $Q$ est donc le polynôme nul ou
+encore $\forall x\in\Rr,\;P(x)=P(0)$. Par suite, $P$ est un polynôme constant.
+Réciproquement, les polynômes constants sont clairement dans $\mbox{Ker }\varphi$ et donc
+
+$$\mbox{Ker }\varphi=\{\mbox{polynômes constants}\}=\Rr_0[X].$$
+Pour déterminer $\mbox{Im }\varphi$, on note tout d'abord que si $P$ est un polynôme de degré inférieur ou égal à $n$,
+alors $\varphi(P)=P(X+1)-P(X)$ est un polynôme de degré inférieur ou égal à $n-1$. En effet, si
+$P=a_nX^n+\sum_{k=0}^{n-1}a_kX^k$ (avec $a_n$ quelconque, éventuellement nul) alors
+
+\begin{align*}
+\varphi(P)&=a_n((X+1)^n-X^n)+\mbox{termes de degré inférieur on égal à}\;n-1\\
+ &=a_n(X^n-X^n)+\mbox{termes de degré
+inférieur on égal à}\;n-1\\
+ &=\mbox{termes de degré inférieur on égal à}\;n-1.
+\end{align*}
+Donc, $\mbox{Im }(\varphi)\subset\Rr_{n-1}[X]$. Mais d'après le théorème du rang,
+
+$$\mbox{dim }\mbox{Im }(\varphi)=\mbox{dim }\Rr_n[X]-\mbox{dim }\mbox{Ker }(\varphi)=(n+1)-1=n=\mbox{dim }\Rr_{n-1}[X]
+<+\infty,$$
+et donc $\mbox{Im }\varphi=\Rr_{n-1}[X]$. (On peut noter que le problème difficile~\og~soit $Q\in\Rr_{n-1}[X]$.
+Existe-t-il $P\in\Rr_n[X]$ tel que $P(X+1)-P(X)=Q$~?~\fg~a été résolu simplement par le théorème du rang.)
+\end{enumerate}
+\fincorrection
+\finexercice

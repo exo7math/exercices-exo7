@@ -1,0 +1,16 @@
+\exercice{4312, quercia, 2010/03/12}
+\enonce[X MP$^*$ 2000]
+Donnez un équivalent pour $x\to+\infty$ de $ \int_{t=0}^x \Bigl|\frac{\sin t}{t}\Bigr|\,d t$.
+\finenonce
+
+\noindication
+
+\correction
+On pose $u_n= \int_{t=n\pi}^{(n+1)\pi} \Bigl|\frac{\sin t}{t}\Bigr|\,d t
+= \int_{t=0}^{\pi} \frac{\sin t}{t+n\pi}\,d t$. Par encadrement du dénominateur
+on a $u_n\sim \frac2{n\pi}$, d'où
+$u_0+\dots+u_n\sim \frac{2\ln n}\pi$ et, par encadrement encore, l'intégrale
+arrêtée en $x$ est équivalente à $\frac{2\ln x}\pi$.
+\fincorrection
+
+\finexercice

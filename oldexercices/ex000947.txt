@@ -1,0 +1,26 @@
+\exercice{947, ridde, 1999/11/01}
+\video{qUT7yUQxk4w}
+\enonce
+Soient $f$ et $g$ deux endomorphismes de $E$ tels que $f \circ g = g \circ f$.
+Montrer que $\ker f$ et $\Im f$ sont stables par $g$.
+\finenonce 
+
+\indication
+Dire qu'un sous-espace $F$ est stable par $g$ signifie que $g(F) \subset F$.
+\finindication
+
+\correction
+On va montrer $g(\ker f) \subset \ker f$.
+Soit $y \in g(\ker f)$. Il existe $x\in \ker f$ tel que $y=g(x)$.
+Montrons $y\in \ker f$:
+$$f(y)=f(g(x))=f\circ g (x) = g\circ f(x) = g(0)=0.$$
+
+\bigskip
+
+On fait un raisonnement similaire pour montrer $g(\Im f) \subset \Im f$.
+Soit $z\in g(\Im f)$, il existe $y \in \Im f$ tel que $z=g(y)$. Il existe alors $x\in E$ tel que $y=f(x)$.
+Donc 
+$$z=g(y)=g(f(x))=g\circ f(x)= f\circ g (x) = f(g(x)) \in \Im f.$$
+
+\fincorrection
+\finexercice

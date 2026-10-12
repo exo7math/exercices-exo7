@@ -1,0 +1,57 @@
+\exercice{996, legall, 1998/09/01}
+\video{Pmhg9aR10aA}
+\enonce
+D\'eterminer pour quelles valeurs de $ t\in {\Rr} $ les
+vecteurs  
+$$\big\{(1, 0, t),  (1, 1, t), (t,0,1)\big\}$$
+forment une base de  $\Rr^3$.
+\finenonce 
+
+\indication
+C'est une base pour $t\neq \pm 1$.
+\finindication
+
+\correction
+
+Quand le nombre de vecteurs égal la dimension de l'espace  nous avons les équivalences, entre 
+\emph{être une famille libre} et \emph{être une famille génératrice} et donc aussi \emph{être une base}.
+
+Trois vecteurs dans $\Rr^3$ forment donc une base si et seulement s'ils forment une famille libre.
+Vérifions quand c'est le cas.
+
+
+\begin{align*}
+      & a (1, 0, t) + b (1, 1, t) + c (t,0,1) = (0,0,0) \\
+\iff  & (a+b+tc,b,at+bt+c)=(0,0,0) \\
+\iff  & \begin{cases}
+         a+b+tc = 0 \\
+         b = 0 \\
+         at+bt+c = 0 \\
+        \end{cases} 
+\iff \begin{cases}
+         b = 0 \\
+         a+tc = 0 \\
+         at+c = 0 \\
+        \end{cases} \\
+\iff & \begin{cases}
+         b = 0 \\
+         a=-tc \\
+         (-tc)t+c = 0 \\
+        \end{cases} 
+\iff \begin{cases}
+         b = 0 \\
+         a=-tc \\
+         (t^2-1)c = 0 \\
+        \end{cases} \\
+\end{align*}
+
+Premier cas : si $t\neq \pm 1$. Alors $t^2-1 \neq 0$ et donc
+la seule solution du système est $(a=0,b=0,c=0)$.
+Dans ce cas la famille est libre et est donc aussi une base.
+
+
+Deuxième cas : si $t=\pm1$. Alors la dernière ligne du système disparaît
+et il existe des solutions non triviales (par exemple si $t=1$, $(a=1,b=0,c=-1)$ est une solution).
+La famille n'est pas libre et n'est donc pas une base. 
+\fincorrection
+\finexercice

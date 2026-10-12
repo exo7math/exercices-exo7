@@ -1,0 +1,36 @@
+\exercice{412, cousquer, 2003/10/01}
+\enonce
+  Dans $\mathbb{R}[X]$ et dans $\mathbb{C}[X]$, 
+d\'ecomposer les polyn\^omes suivants en facteurs
+irr\'eductibles.
+\begin{enumerate}
+    \item $X^3-3$.
+    \item $X^{12}-1$.
+\end{enumerate}
+\finenonce 
+\noindication
+\correction
+\begin{enumerate}
+    \item $\left \lbrace\begin{array}{rcl}
+  X^3-3 & = &(X-\sqrt[3]{3})(X^2+\sqrt[3]{3}\, X+\sqrt[3]{9})\\
+  & = & (X-\sqrt[3]{3}) 
+         (X+{\sqrt[3]{3}\over2}- i{\sqrt3\sqrt[3]{3}\over2})
+         (X+{\sqrt[3]{3}\over2}+ i{\sqrt3\sqrt[3]{3}\over2}).
+\end{array}\right.$
+
+    \item $\left\lbrace\begin{array}{rcl}
+  X^{12}-1 & = & \textstyle(X-1) (X+1) (X^2+1) (X^2-X+1) (X^2+X+1)\times{}\\
+           &   & \qquad\textstyle(X^2-\sqrt3\,X+1) (X^2+\sqrt3\,X+1)\\
+           & = & \textstyle(X-1) (X+1) (X- i) (X+ i)\times{}\\
+           &   & \qquad\textstyle\bigl(X-{1+ i\sqrt3\over2}\bigr)
+                 \bigl(X-{1- i\sqrt3\over2}\bigr)
+                 \bigl(X-{-1+ i\sqrt3\over2}\bigr) 
+                 \bigl(X-{-1- i\sqrt3\over2}\bigr)\times{}\\
+           &   & \qquad\textstyle\bigl(X-{\sqrt3+ i\over2}\bigr) 
+                 \bigl(X-{\sqrt3- i\over2}\bigr)
+                 \bigl(X-{-\sqrt3+ i\over2}\bigr) 
+                 \bigl(X-{-\sqrt3- i\over2}\bigr).
+\end{array}\right.$
+\end{enumerate}
+\fincorrection
+\finexercice

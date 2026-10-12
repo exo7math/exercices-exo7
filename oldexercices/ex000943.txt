@@ -1,0 +1,33 @@
+\exercice{943, legall, 1998/09/01}
+\video{yGZYazY1EhM}
+\enonce
+Soit $E$  un espace vectoriel de dimension  $n$
+et $f$ une application lin\' eaire de  $E$  dans lui-m\^eme.
+Montrer que les deux assertions qui suivent sont \' equivalentes :
+\begin{enumerate}
+\item[(i)] $\ker f = \Im f$
+\item[(ii)] $f^2=0 \ \text{ et } \  n=2\cdot \text{rg}(f)$
+\end{enumerate}
+\finenonce
+ 
+\indication
+Pour chacune des implications utiliser la formule du rang.
+\finindication
+
+\correction
+\begin{itemize}
+  \item[(i) $\Rightarrow$ (ii)] Supposons
+$\ker f = \Im f$. Soit $x\in E$, alors $f(x) \in \Im f$ donc $f(x)
+\in \ker f$, cela entraîne $f(f(x)) = 0$ ; donc $f^2=0$. De plus
+d'apr\`es la formule du rang $\dim \ker f + \text{rg}  (f) = n$, mais $\dim
+\ker f = \dim \Im f = \text{rg}  f$, ainsi $2\text{rg}  (f)=n$.
+  \item[(ii) $\Rightarrow$ (i)] Si $f^2 = 0$ alors
+$\Im f \subset \ker f$ car pour $y\in \Im f$ il existe $x$ tel que
+$y=f(x)$ et $f(y)=f^2(x)=0$. De plus si $2 \text{rg}  (f) = n$ alors la
+formule du rang donne $\dim \ker f = \text{rg}  (f)$ c'est-\`a-dire $\dim \ker f =
+\dim \Im f$. Nous savons donc que $\Im f$ est inclus dans $\ker f$
+mais ces espaces sont de m\^eme dimension donc sont \'egaux :
+$\ker f = \Im f$.
+ \end{itemize}
+\fincorrection
+\finexercice

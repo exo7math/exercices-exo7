@@ -1,0 +1,37 @@
+\exercice{3, cousquer, 2003/10/01}
+\video{2kur52c78pA}
+\enonce
+ Écrire sous la forme $a+ib$ les nombres complexes suivants :
+\begin{enumerate}
+\item Nombre de module $2$ et d'argument $\pi /3$.
+\item Nombre de module $3$ et d'argument $-\pi /8$.
+\end{enumerate}
+
+\finenonce
+
+\indication
+Il faut bien connaître ses formules trigonométriques.
+En particulier si l'on connait $\cos(2\theta)$ ou $\sin(2\theta)$ on sait
+calculer $\cos \theta$ et $\sin \theta$.
+\finindication
+
+\correction
+\begin{enumerate}
+\item $z_1 = 2 e^{i\frac \pi 3} = 2(\cos \frac \pi 3 + i \sin \frac \pi 3) = 2 (\frac 12+ i\frac{\sqrt3}{2}) = 1+i\sqrt 3$.
+\item $z_2 = 3e^{-i\frac \pi 8} = 3\cos {\pi \over 8}-3i\sin{\pi \over8}={3\sqrt{2+\sqrt2}\over 2}-{3i\sqrt{2-\sqrt2}\over 2}$.
+
+
+Il nous reste à expliquer comment nous avons calculé $\cos \frac \pi 8$ et $\sin \frac\pi 8$: 
+posons $\theta=\frac{\pi}{8}$,
+alors $2\theta = \frac \pi 4$ et donc $\cos(2\theta)= \frac {\sqrt 2}{2} = \sin(2\theta)$.
+Mais $\cos(2\theta) = 2\cos^2 \theta - 1$. Donc $\cos^2\theta = \frac{\cos(2\theta) + 1}{2} = \frac 14 (2 + \sqrt 2)$.
+Et ensuite  $\sin^2 \theta = 1- \cos^2 \theta = \frac 14 (2 - \sqrt 2)$.
+Comme $0 \le \theta = \frac \pi 8 \le \frac \pi 2$, $\cos \theta$ et $\sin \theta$ sont des nombres positifs. Donc
+$$\cos \frac \pi 8 = \frac 12 \sqrt{2 + \sqrt 2} \quad, \quad \sin \frac \pi 8 = \frac 12 \sqrt{2 - \sqrt 2}.$$ 
+
+\end{enumerate}
+\fincorrection
+
+
+\finexercice
+

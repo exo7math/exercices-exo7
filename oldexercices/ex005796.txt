@@ -1,0 +1,71 @@
+\exercice{5796, rouget, 2010/10/16}
+\enonce
+Soit $f$ une application de $\Cc$ dans $\Cc$, $\Rr$-linéaire.
+
+\begin{enumerate}
+ \item  Montrer qu'il existe deux complexes $a$ et $b$ tels que pour tout $z\in\Cc$, $f(z) =az + b\overline{z}$.
+
+\item  Calculer $\text{Tr}(f)$ et $\text{det}(f)$ en fonction de $a$ et $b$.
+
+\item  C.N.S. pour que $f$ soit autoadjoint dans $\Cc$ muni de sa structure euclidienne canonique.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Soit $f$ un endomorphisme du $\Rr$-espace vectoriel $\Cc$. Pour tout nombre complexe $z$
+
+\begin{align*}\ensuremath
+f(z)&= f((\text{Re}(z)).1 +(\text{Im}(z)).i) =(\text{Re}(z))f(1) +(\text{Im}(z))f(i) =\frac{1}{2}(z+\overline{z})f(1)+\frac{1}{2i}(z-\overline{z})f(i)\\
+ &= \frac{f(1)-if(i)}{2}z +\frac{f(1)+if(i)}{2}\overline{z},
+\end{align*}
+
+et on peut prendre $a =\frac{f(1)-if(i)}{2}$ et $b =\frac{f(1)+if(i)}{2}$. (Réciproquement pour $a$ et $b$ complexes donnés, l'application $f$ ainsi définie est $\Rr$-linéaire et on a donc l'écriture générale complexe d'un endomorphisme du plan).
+
+\item  
+
+\begin{center}
+$\text{Tr}(f) =\text{Re}(f(1)) +\text{Im}(f(i)) =\text{Re}(a+b)+\text{Im}(i(a-b)) =\text{Re}(a+b)+\text{Re}(a-b) = 2\text{Re}(a)$
+\end{center}
+
+et
+
+\begin{align*}\ensuremath
+\text{det}(f)&=\text{Re}(a+b)\text{Im}(i(a-b))-\text{Im}(a+b)\text{Re}(i(a-b))=\text{Re}(a+b)\text{Re}(a-b)+\text{Im}(a+b)\text{Im}(a-b)\\
+ &=(\text{Re}(a))^2 -(\text{Re}(b))^2+(\text{Im}(a))^2-(\text{Im}(b))^2=|a|^2 - |b|^2.
+\end{align*}
+
+\begin{center}
+\shadowbox{
+$\text{Tr}(f)=2\text{Re}(a)$ et $\text{det}(f)=|a|^2 - |b|^2$.
+}
+\end{center}
+
+\item  Soient $z$ et $z'$ deux nombres complexes. On rappelle que
+
+\begin{center}
+$z|z'= (\text{Re}z)(\text{Re}z')+(\text{Im}z)(\text{Im}z') =\frac{1}{4}(z+\overline{z})(z'+\overline{z'})-\frac{1}{4}(z-\overline{z})(z'-\overline{z'})=\frac{1}{2}(\overline{z}z'+z\overline{z'}) =\text{Re}(\overline{z}z')$.
+\end{center}
+
+et au passage si on oriente le plan de sorte que la base orthonormée $(1,i)$ soit directe,
+
+\begin{center}
+$[z,z']= (\text{Re}z)(\text{Im}z')+(\text{Im}z)(\text{Re}z') =\frac{1}{4i}(z+\overline{z})(z'-\overline{z'})-\frac{1}{4i}(z-\overline{z})(z'+\overline{z'})=\frac{1}{2i}(\overline{z}z'-z\overline{z'}) =\text{Im}(\overline{z}z')$.
+\end{center}
+
+Notons $M$ la matrice de $f$ dans la base $(1,i)$. Puisque la base $(1,i)$ est orthonormée,
+
+\begin{center}
+$f = f^*\Leftrightarrow M ={^t}M\Leftrightarrow\text{Im}(a+b) =\text{Re}(i(a-b))\Leftrightarrow\text{Im}(a+b) =-\text{Im}(a-b)\Leftrightarrow2\text{Im}a = 0\Leftrightarrow a\in\Rr$.
+\end{center}
+
+\begin{center}
+\shadowbox{
+$f=f^*\Leftrightarrow a\in\Rr$.
+}
+\end{center}
+\end{enumerate}
+\fincorrection
+\finexercice

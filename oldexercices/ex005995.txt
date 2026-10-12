@@ -1,0 +1,31 @@
+\exercice{5995, quinio, 2011/05/20}
+
+\enonce
+Un professeur oublie fréquemment ses clés. Pour tout $n$, on note :
+$E_n$ l'événement <<le jour $n$, le professeur oublie ses clés>>, 
+$P_{n}=P(E_n)$, $Q_n=P(\overline{E_n})$.
+
+On suppose que : $P_{1}=a$ est donné et que si le jour $n$ il oublie ses clés, 
+le jour suivant il les oublie avec la probabilité $\frac{1}{10}$ ; 
+si le jour $n$ il n'oublie pas ses clés, le jour suivant il les oublie
+avec la probabilité $\frac{4}{10}$.
+
+Montrer que $P_{n+1}=\frac{1}{10}P_{n}+\frac{4}{10}Q_{n}$.
+En déduire une relation entre $P_{n+1}$ et $P_{n}$
+
+Quelle est la probabilité de l'événement <<le jour $n$, le professeur oublie ses clés>> ?
+\finenonce
+
+\noindication
+
+\correction
+ $P_{n+1}=P(E_{n+1})=
+P(E_{n+1}/E_n)P(E_n)+P(E_{n+1}/\overline{E_n})P(\overline{E_n})=\frac{1}{10}P_{n}+\frac{4}{10}Q_{n}$.
+Donc
+$P_{n+1}=\frac{1}{10}P_{n}+\frac{4}{10}(1-P_{n})=\frac{4}{10}-\frac{3}{10}P_{n}$.
+
+La suite ($P_{n}-\ell)$ est géométrique, où $\ell$ est solution
+de $\frac{4}{10}-\frac{3}{10}\ell=\ell$ soit $\ell=\frac{4}{13}$.
+Donc $P_{n}=\frac{4}{13}+(-\frac{3}{10})^{n-1} \times (a-\frac{4}{13})$.
+\fincorrection
+\finexercice

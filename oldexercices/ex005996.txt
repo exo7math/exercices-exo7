@@ -1,0 +1,23 @@
+\exercice{5996, quinio, 2011/05/20}
+
+\enonce
+Dans les barres de chocolat N., on trouve des images équitablement
+réparties des cinq personnages du dernier Walt Disney, une image par
+tablette. Ma fille veut avoir le héros Princecharmant : combien dois-je
+acheter de barres pour que la probabilité d'avoir la figurine attendue dépasse $80$\%? 
+Même question pour être sûr à $90$\%.
+\finenonce
+
+\noindication
+
+\correction
+La probabilité d'avoir Princecharmant dans la barre B est $\frac{1}{5}; $ si j'achète $n$ barres, la probabilité de n'avoir la
+figurine dans aucune des $n$ barres est $(\frac{4}{5})^{n}$, puisqu'il
+s'agit de $n$ événements indépendants de probabilité $\frac{4}{5}$.
+Je cherche donc $n$ tel que : $1-(\frac{4}{5})^{n}\geq 0.8$. On a facilement : $n\geq 8$.
+
+Puis, je cherche $m$ tel que : $1-(\frac{4}{5})^{m}\geq 0.9$ ; il
+faut au moins $11$ barres pour que la probabilité dépasse $90$\%.
+Pour la probabilité $99$\%, $n\geq 21$ .
+\fincorrection
+\finexercice

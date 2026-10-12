@@ -1,0 +1,40 @@
+\exercice{2548, tahani, 2009/04/01}
+\enonce
+ On muni $\mathbb{R}^n$ de la norme $||x||=<x,x>=\sum_{i=1}^n
+ x_i^2$ o\`u $x=(x_1,...,x_n)$ et $<x,y>=\sum_{i=1}^n x_iy_i$.
+ Soit $u: \mathbb{R}^n \rightarrow \mathbb{R}^n$ lin\'eaire telle
+ que $<u(x),y>=<x,u(y)>$ et soit $Q=\{x \in \mathbb{R}^n;
+ <u(x),x>=1\}$ Montrez que $Q$ est une sous-vari\'et\'e et
+ d\'eterminez le plan tangent.
+\finenonce 
+
+\noindication
+
+\correction
+Cas de $\mathbb{R}^2$. $$u=\left (\begin{array}{cc} u_{11} &
+u_{12} \\ u_{21} & u_{22}\end{array}\right).$$ L'hypoth\`ese sur
+$u$ implique que $u_{12}=u{21}$. Si $x=(x_1,x_2)$, on a
+$$u(x)=\left (\begin{array}{c} u_{11}x_1+ u_{12}x_2 \\ u_{21}x_1 +
+u_{22}x_2\end{array}\right)$$ et
+$$<u(x),x>=\sum_{i=1}^2
+u_i(x)x_i=(u_{11}x_1+u_{12}x_2)x_1+(u_{21}x_1+u_{22}x_2)x_2=u_{11}x_1^2+u_{12}x_1x_2+u_{21}x_1x_2+u_{22}x_2^2.$$
+Posons $f(x)=<u(x),x>-1$ alors $$\frac{\partial f}{\partial x_1}=
+2u_{11}x_1+u_{12}x_2+u_{21}x_2=2u_{11}x_1+2u_{12}x_2$$ et
+$$\frac{\partial f}{\partial x_2}=
+2u_{22}x_2+u_{12}x_1+u_{21}x_1=2u_{21}x_1+2u_{22}x_2.$$ Calculons
+$$Df(x).x=x_1\frac{\partial f}{\partial x_1}+x_2\frac{\partial
+f}{\partial
+x_2}=2(u_{11}x_1^2+u_{12}x_2x_1+u_{21}x_1x_2+u_{22}x_2^2)=2<u(x),x>.$$
+Si $x=(x_1,x_2) \in Q$ alors $<u(x),x>=1\neq 0$ et donc $Df(x)$
+\'etant non nul, il est de rang au moins $1$ et donc de rang
+maximal. $Q$ est bien une sous-vari\'et\'e de $\mathbb{R}^2$ de
+dimension $1$.
+
+D\'eterminons le plan tangent de $Q$.
+$$T_xQ=\{y \in \mathbb{R}^2; Df(x)(y)=0\}=
+\{y \in \mathbb{R}^n; \sum_{i=1}^n \frac{\partial f}{\partial
+x_1}(x)y_i=0\}=$$
+$$\{y \in \mathbb{R}^n; 2<u(x),y>=0\}.$$
+
+\fincorrection
+\finexercice

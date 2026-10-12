@@ -1,0 +1,58 @@
+\exercice{4952, quercia, 2010/03/17}
+\video{zldT8ImfOX8}
+\enonce[Point équidistant d'une famille de droites]
+
+Pour $\lambda \in \R$ on considère la droite $D_\lambda$ d'équation
+cartésienne : $(1-\lambda^2)x + 2\lambda y = 4\lambda + 2$.
+
+Montrer qu'il existe un point $M_0$ équidistant de toutes les droites
+$D_\lambda$.
+\finenonce
+
+\indication
+La distance d'un point $M_0(x_0,y_0)$ à une droite $D$ d'équation $ax+by+c=0$ est donnée par la formule
+$d(M_0,D) = \frac{|ax_0+by_0+c_0|}{\sqrt{a^2+b^2}}$.
+\finindication
+
+\correction
+Nous savons que la distance d'un point $M_0(x_0,y_0)$ à une droite $D$ d'équation $ax+by+c=0$ est donnée par la formule
+$d(M_0,D) = \frac{|ax_0+by_0+c_0|}{\sqrt{a^2+b^2}}$.
+
+Pour une droite $D_\lambda$ la formule donne :
+$d(M_0,D_\lambda)  = \frac{|(1-\lambda^2)x_0 + 2\lambda y_0 - (4\lambda + 2)|}{\sqrt{(1-\lambda^2)^2+4\lambda^2}}$.
+
+\bigskip
+\textbf{Analyse.}
+
+On cherche un point $M_0=(x_0,y_0)$ tel que pour tout $\lambda$, $d(M_0,D_\lambda)=k$ où $k\in \Rr$ est une constante.
+
+L'égalité $d(M_0,D_\lambda)^2=k^2$ conduit à 
+$$\Big((1-\lambda^2)x_0 + 2\lambda y_0 - (4\lambda + 2)\Big)^2 
+= k^2 \Big( (1-\lambda^2)^2+4\lambda^2 \Big)$$
+pour tout $\lambda\in \Rr$.
+Nos inconnues sont $x_0,y_0,k$.
+On regarde l'égalité comme une égalité de deux polynômes en la variable $\lambda$.
+
+Pour ne pas avoir à tout développer on raffine un peu :
+on identifie les termes de plus haut degré en $\lambda^4$ :
+$x_0^2 \lambda^4=k^2\lambda^4$ donc $x_0^2=k^2$.
+
+En évaluant l'égalité pour $\lambda=0$ cela donne $(x_0-2)^2=k^2$.
+On en déduit $(x_0-2)^2=x_0^2$ dont la seule solution est $x_0=1$.
+Ainsi $k=1$ (car $k>0$).
+
+L'égalité pour $\lambda=+1$ donne $(2y_0-6)^2=4k^2$
+et pour $\lambda=-1$ donne $(-2y_0+2)^2=4k^2$.
+La seule solution est  $y_0=2$. 
+
+\bigskip
+\textbf{Synthèse.}
+Vérifions que le point de coordonnées $M_0=(1,2)$ est situé à une distance $k=1$ de
+toutes les droites $D_\lambda$.
+
+Pour $(x_0,y_0)=(1,2)$, on trouve :
+$d(M_0,D_\lambda)  = \frac{|(1-\lambda^2) + 4\lambda - (4\lambda + 2)|}{\sqrt{(1-\lambda^2)^2+4\lambda^2}}
+= \frac{|\lambda^2+1|}{\sqrt{(\lambda^2+1)^2}} =  \frac{|\lambda^2+1|}{|\lambda^2+1|}=1$.
+Donc $M_0=(1,2)$ est bien équidistant de toutes les droites $D_\lambda$.
+\fincorrection
+\finexercice

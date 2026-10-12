@@ -1,15 +1,13 @@
 \exercice{2263, barraud, 2008/04/24}
+
 \enonce
-Soit $f(x)\in A[x]$ un polyn\^ome
-sur un anneau $A$. Supposons que $(x-1)\,|\,f(x^n)$. Montrer que
-$(x^n-1)\,|\,f(x^n)$.
-\finenonce 
+Soit \( f(x)\in A[x] \) un polynôme sur un anneau \( A \). Supposons que \( (x-1)\,|\,f(x^n) \). Montrer que \( (x^n-1)\,|\,f(x^n) \).
+\finenonce
 
 \noindication
 
 \correction
-  Notons $f(x^{n})=P(x-1)$. Alors $f(1)=0\cdot P(1)=0$ et donc $(x-1)|f$.
-  Notons $f=Q(x-1)$. On a alors $f(x^{n})=Q(x^{n})(x^{n}-1)$. $(x^{n}-1)$
-  divise bien $f$.
+Puisque \( (x-1) \mid f(x^n) \), alors \( f(1) = 0 \), donc \( (x-1) \mid f(x) \) dans \( A[x] \). Il existe ainsi un polynôme \( Q \in A[x] \) tel que \( f(x) = (x-1)Q(x) \). En substituant \( x \) par \( x^n \), on obtient \( f(x^n) = (x^n-1)Q(x^n) \), ce qui prouve directement que \( (x^n-1) \mid f(x^n) \).
 \fincorrection
+
 \finexercice

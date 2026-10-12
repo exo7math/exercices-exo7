@@ -1,0 +1,39 @@
+\exercice{1636, barraud, 2003/09/01}
+
+\enonce
+  Soit $J=\left(
+  \begin{smallmatrix}
+    \frac{1}{2}&\frac{1}{2}  \\[.5ex]
+    \frac{1}{2}&\frac{1}{2}
+  \end{smallmatrix}\right)
+ $ et $A=
+  \begin{pmatrix}
+    0 &\vline& J  \\ \hline
+    J &\vline&0
+  \end{pmatrix}$. 
+  Calculer $A^{2}$, puis $A^{3}$. A l'aide d'un polynôme annulateur de
+  $A$, montrer que $A$ est diagonalisable.
+
+  Sans chercher à calculer le polynôme caractéristique de $A$, donner un
+  ensemble fini contenant toutes les valeurs propres de $A$, puis donner
+  les valeurs valeurs propres elles mêmes ainsi que leurs multiplicités. En
+  déduire le polynôme caractéristique de $A$.
+\finenonce
+
+\noindication
+
+\correction
+  On a $A^{3}=A$, donc $P=X^{3}-X=(X-1)(X+1)X$ est un polyn\^ome
+  annulateur de $A$. Il s'agit d'un poyn\^ome scindé à racine simples
+  donc $A$ est diagonalisable. Les valeurs propres de $A$ sont des
+  racines de $P$ donc $\mathrm{Sp}(A)\subset\{0,1,-1\}$. On a $\mathrm{rg} A=2$
+  donc $0$ est valeur propre de multiplicité 2. La résolution de système
+  $(A+I)X=0$ montre que $\ker (A+I)=\R\Big(\begin{smallmatrix}%
+    1\\1\\-1\\-1%
+  \end{smallmatrix}\Big)$,
+  donc $-1$ est valeur propre de multiplicité 1 donc $1$ est
+  nécessairement valeur propre de multiplicité 1~: on en déduit que
+  $\chi_{A}=X^{2}(X-1)(X+1)$.
+\fincorrection
+\finexercice
+

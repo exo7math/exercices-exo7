@@ -1,0 +1,37 @@
+\exercice{2788, burnol, 2009/12/15}
+\enonce
+\label{ex:burnol1.1.6}
+  On se donne deux séries entières $f(z) = \sum_{n=0}^\infty
+  a_n z^n$ et $g(z) = \sum_{n=0}^\infty
+  b_n z^n$ de rayons de convergences $R_1$ et $R_2$ non
+  nuls. En utilisant le théorème sur les séries doubles
+  prouver $f(z)g(z) = \sum_{n=0}^\infty c_n z^n$ pour $|z|<R
+  = \min(R_1,R_2)$ avec (formules dites de Cauchy):
+\[ \forall n\in\Nn\qquad c_n = \sum_{j=0}^n a_j b_{n-j}\]
+Le rayon de convergence de la série $\sum_{n=0}^\infty c_n
+     z^n$ est-il toujours égal à 
+$\min(R_1,R_2)$ ou peut-il être plus grand?
+\finenonce
+\noindication
+\correction
+Prenons $r<\min(R_1,R_2)$. Alors, il existe $C>0$ et $0<\lambda <1$ tels que
+$|a_n|r^n \leq C\lambda^n $ et $|b_n|r^n \leq C\lambda ^n$ (v\'erifiez-le !). D'o\`u
+$$\sum_{j=0}^n |a_j|r^j |b_{n-j}|r^{n-j} \leq (n+1) C^2 \lambda^n\;, $$
+ce qui permet d'affirmer, pour tout $z$ avec $|z|=r$:
+$$\sum_{n=0}^\infty \big(\sum_{j=0}^n |a_j z^j||b_{n-j} z^{n-j}|\big) < \infty\;.$$
+Par le th\'eor\`eme du cours sur les séries doubles (voir le polycopi\'e
+2005/2006 de J.-F.~Burnol, Annexe 8.2), ceci signifie que la série double
+$$\sum_{j=0}^\infty\sum_{k=0}^\infty (a_j z^j b_k z^k)$$
+est absolument convergente. On peut donc d'après ce théorème affirmer:
+$$f(z)g(z) = \sum_{j=0}^\infty a_jz^j \sum_{k=0}^\infty b_k z^k =
+\sum_{n=0}^\infty \big(\sum_{j=0}^n (a_j z^j)(b_{n-j} z^{n-j})\big)\;.$$
+Or, la série de droite est $\sum_{n=0}^\infty  c_n z^n$ avec $c_n = \sum_{j=0}^n
+a_j b_{n-j}$. Au passage on obtient que le rayon de convergence de cette série
+est au moins
+égal à $r$. Comme $r<\min(R_1,R_2)$ est arbitraire, le rayon de convergence
+est en fait au moins égal à $\min(R_1,R_2)$
+(il peut \^etre plus grand comme on le voit par exemple avec $f(z) =
+\frac1{1-z}$ et $g(z) = 1-z$, ou encore avec $f(z) = \frac{2-z}{(1-z)(3-z)}$
+et $g(z) = \frac{1-z}{(2-z)(3-z)}$).
+\fincorrection
+\finexercice

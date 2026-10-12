@@ -1,0 +1,21 @@
+\exercice{2169, debes, 2008/02/12}
+\enonce
+\label{ex:deb69}
+Montrer que  les permutations circulaires engendrent $S_n$ si
+$n$ est pair, et $A_n$ si $n$ est impair.
+\finenonce 
+
+\noindication
+\correction
+Les cas $n=1$ et $n=2$ sont imm\'ediats. On peut supposer $n\geq 3$. On v\'erifie
+ais\'ement la formule $(a_1 \hskip 2pt a_2\hskip 2pt\ldots\hskip 2pt a_{n-1}\hskip 2pt a_n)\ 
+(a_{n-1} \hskip 2pt a_n\hskip 2pt a_{n-2} \ldots\hskip 2pt a_2\hskip 2pt a_1) = (a_1 \hskip
+2pt a_n \hskip 2pt  a_{n-1})$ o\`u $a_1,\ldots,a_n$ sont les \'el\'ements d'un ensemble de
+cardinal $n$. On en d\'eduit que le groupe $PC_n$ engendr\'e par les permutations circulaires
+contient les $3$-cycles et donc le groupe altern\'e $A_n$ (voir exercice \ref{ex:deb67}). Les
+permutations circulaires sont de signature $(-1)^{n-1}$. Si $n$ est impair, elles sont donc
+paires d'o\`u $PC_n\subset A_n$ et donc finalement $PC_n = A_n$ dans ce cas. Si $n$ pair, les
+permutations circulaires sont impaires, donc $PC_n\not=A_n$. L'indice de $PC_n$ dans $S_n$
+devant diviser $2$ (puisque $PC_n\supset A_n$), il vaut $1$, c'est-\`a-dire $PC_n=S_n$.
+\fincorrection
+\finexercice

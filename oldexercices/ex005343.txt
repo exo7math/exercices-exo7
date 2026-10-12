@@ -1,0 +1,26 @@
+\exercice{5343, rouget, 2010/07/04}
+\enonce
+\label{exo:suprou9}
+Soit $P=$ où $n$ est un entier naturel non nul, les $a_i$ sont des entiers relatifs et $a_0$ et $a_n$ sont non nuls. Soient $p$ un entier relatif non nul et $q$ un entier naturel non nul tels que $p\wedge q=1$.
+
+Montrer que, si $r=\frac{p}{q}$ est une racine (rationnelle) de $P$ alors $p$ divise $a_0$ et $q$ divise $a_n$.
+
+Application. Résoudre dans $\Cc$ l'équation $9z^4-3z^3+16z^2-6z-4=0$.
+\finenonce
+
+\noindication
+
+\correction
+On suppose $a_0\neq0$ de sorte que $0$ n'est pas racine de $P$. Soient $p$ un relatif non nul et $q$ un entier naturel non nul tels que $p$ et $q$ soient premiers entre eux.
+
+Si $r=\frac{p}{q}$ est racine de $P$ alors $a_n(\frac{p}{q})^n+...+a_0=0$ et donc
+ 
+$$a_np^n=-q(a_0q^{n-1}+...+a_{n-1}p^{n-1})\;\mbox{et}\;a_0q^n=-p(a^np^{n-1}+...+a_1q^{n-1}).$$
+
+Donc $p$ divise $a_0q^n$, mais $p$ est premier à $q^n$ et d'après le théorème de \textsc{Gauss}, $p$ divise $a_0$. De même $q$ divise $a_n$.
+
+Application. Soit $P=9X^4-3X^3+16X^2-6X-4$ et soit $p$ un entier relatif non nul et $q$ un entier naturel non nul tels que $p\wedge q=1$. Si $\frac{p}{q}$ est racine de $P$, $p$ divise $-4$ et $q$ divise $9$ de sorte que $p$ est élément de $\{1,-1,2,-2,4,-4\}$ et $q$ est élément de $\{1,3,9\}$ puis $\frac{p}{q}$ est élément de $\{\pm1,\pm2,\pm4,\pm\frac{1}{3},\pm\frac{2}{3},\pm\frac{4}{3},\pm\frac{1}{9},\pm\frac{2}{9},\pm\frac{4}{9}\}$.
+On trouve $P(\frac{2}{3})=P(-\frac{1}{3})=0$ et P est divisible par $(3X-2)(3X+1)=9X^2-3X-2$.
+Plus précisément $P=9X^4-3X^3+16X^2-6X-4=(9X^2-3X-2)(X^2+2)$ et les racines de $P$ dans $\Cc$ sont $\frac{2}{3}$, $-\frac{1}{3}$, $i\sqrt{2}$ et $-i\sqrt{2}$.
+\fincorrection
+\finexercice

@@ -1,0 +1,61 @@
+\exercice{2400, mayer, 2003/10/01}
+\enonce 
+Soit $E$ un espace vectoriel norm\'e. On dit qu'une s\'erie $\sum u_k$ est normalement convergente
+si la s\'erie $\sum \| u_k \|$ est convergente. On veut d\'emontrer que $E$ est complet si et seulement
+si toute s\'erie normalement convergente est convergente.
+\begin{enumerate}
+\item Soit $(x_n)$ une suite de Cauchy de $E$; montrer qu'on peut en extraire une sous-suite
+$(x_{n_k})$ telle que la s\'erie de terme g\'en\'eral $u_k = x_{n_{k+1}} - x_{n_k}$ 
+soit normalement convergente.
+En d\'eduire que si toute s\'erie normalement convergente est convergente, alors $E$ est complet.
+
+\item Soit $\sum u_k$ une s\'erie normalement convergente. On note $S_n = \sum _{k=0}^nu_k$. 
+Montrer que $S_n$ est une suite de Cauchy.
+En d\'eduire que si $E$ est complet, alors toute série normalement convergente est convergente.
+\end{enumerate}
+\finenonce
+
+\indication
+\begin{enumerate}
+  \item \'Ecrire ce que donne la définition de ``$(x_n)$ est une suite de Cauchy''
+pour $\epsilon=1$, puis $\epsilon = \frac 12$, ..., puis $\epsilon = \frac 1{2^k}$.
+Faire la somme. Remarquer que si $T_N = \sum _{k=0}^N u_k$ alors $T_N =  x_{n_{N+1}}-x_{n_0}$.
+
+  \item ...
+\end{enumerate}
+\finindication
+
+\correction
+\begin{enumerate}
+  \item Soit $(x_n)$ une suite de Cauchy. 
+Pour $\epsilon = 1$ il existe $n_0\in \Nn$ tel que
+$$\forall q \ge n_0 \qquad \| x_{n_0}-x_q \| < 1.$$
+Puis pour $\epsilon = \frac 12$ il existe $n_1 > n_0$ tel que
+$$\forall q \ge n_1 \qquad \| x_{n_1}-x_q \| < \frac 12.$$
+Puis par récurrence pour $\epsilon = \frac 1{2^k}$, on pose
+$n_k > n_{k-1}$ tel que 
+$$\forall q \ge n_k \qquad \| x_{n_k}-x_q \| < \frac 1{2^k}.$$
+
+Donc en particulier à chaque étape on a
+$$\| x_{n_{k+1}}-x_{n_k} \| < \frac 1 {2^k}.$$
+Posons $u_k = x_{n_{k+1}} - x_{n_k}$ 
+Alors $\|u_k\| \le \frac 1 {2^k}$ donc
+$$\sum_{k\ge 0} \| u_k \| \le \sum_{k\ge 0} \frac 1 {2^k} = 2.$$
+Donc la série $\sum_{k\ge 0} u_k$ est normalement convergente.
+Si cette série converge notons $T=\sum_{k= 0}^{+\infty} u_k$ sa somme,
+C'est-à-dire la limite de $T_N = \sum_{k= 0}^{N} u_k$. 
+Mais alors $T_N = x_{n_{N+1}}-x_{n_0}$ converge vers $T$.
+Donc la suite extraite $(x_{n_k})_k$ converge (vers $T+x_{n_0}$).
+Conséquence : si toute s\'erie normalement convergente est convergente, alors on peut extraire de toute suite de Cauchy une sous-suite convergente donc $E$ est complet.
+
+  \item Soit $p \le q$.
+$$\| S_q-S_p\| = \| \sum_{k=p+1}^q u_k \| \le  \sum_{k=p+1}^{q} \| u_k \|
+\le  \sum_{k=p+1}^{+\infty} \| u_k \|$$
+Or la série $\sum_{k\ge 0} u_k$ est normalement convergente donc le reste
+$\sum_{k=p+1}^{+\infty} \| u_k \|$ tend vers $0$ quand $p\rightarrow +\infty$.
+Fixons $\epsilon >0$, il existe donc $N \in \Nn$ tel que pour $p\ge N$ on a
+$\sum_{k=p+1}^{+\infty} \| u_k \| \le \epsilon$, donc pour tout $p,q \ge N$ on a aussi $\| S_q-S_p\| \le \epsilon$. Donc la suite $(S_n)$ est de Cauchy.
+Si $E$ est complet alors $(S_n)$ converge, notons $S$ sa limite. Donc $\| S_n -S\|$ tend vers $0$. Dons la série $\sum_{k\ge 0} u_k$ est convergente (de somme $S$).  
+\end{enumerate}
+\fincorrection
+\finexercice

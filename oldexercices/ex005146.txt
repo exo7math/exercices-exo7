@@ -1,0 +1,49 @@
+\exercice{5146, rouget, 2010/06/30}
+\enonce[**I Moyennes arithmétique, géométrique et harmonique]
+Soient $x$ et $y$ deux réels tels que $0<x\leq y$. On pose $m=\frac{x+y}{2}$ (moyenne arithmétique), $g=\sqrt{xy}$
+(moyenne géométrique) et $\frac{1}{h}=\frac{1}{2}(\frac{1}{x}+\frac{1}{y})$ (moyenne harmonique). Montrer que $x\leq
+h\leq g\leq m\leq y$.
+\finenonce
+
+\noindication
+
+\correction
+Soient $x$ et $y$ deux réels tels que $0<x\leq y$.
+\begin{enumerate}
+\item  On a déjà $x=\frac{x+x}{2}\leq\frac{x+y}{2}=m\leq\frac{y+y}{2}=y$ et donc \shadowbox{$x\leq m\leq y$}.
+
+(on peut aussi écrire~:~$m-x=\frac{x+y}{2}-x=\frac{y-x}{2}\geq0$).
+\item  On a ensuite $x=\sqrt{x.x}\leq\sqrt{xy}=g\leq\sqrt{y.y}=y$ et donc \shadowbox{$x\leq g\leq y$}.
+\item 
+$m-g=\frac{x+y}{2}-\sqrt{xy}=\frac{1}{2}((\sqrt{x})^2-2\sqrt{xy}+(\sqrt{y})^2)=\frac{1}{2}(\sqrt{y}-\sqrt{x})^2
+\geq0$ et donc, \shadowbox{$x\leq g\leq m\leq y$}.
+\item  D'après 1), la moyenne arithmétique de $\frac{1}{x}$ et $\frac{1}{y}$ est comprise entre $\frac{1}{x}$ et
+$\frac{1}{y}$, ce qui fournit $\frac{1}{y}\leq\frac{1}{h}\leq\frac{1}{x}$, ou encore \shadowbox{$x\leq h\leq y$}.
+\item  D'après 3), la moyenne géométrique des deux réels $\frac{1}{x}$ et $\frac{1}{y}$ est inférieure ou égale à leur moyenne arithmétique. Ceci
+fournit $\sqrt{\frac{1}{x}.\frac{1}{y}}\leq\frac{1}{2}(\frac{1}{x}+\frac{1}{y})$ ou encore
+$\frac{1}{g}\leq\frac{1}{h}$ et finalement 
+\begin{center}
+\shadowbox{$x\leq h\leq g\leq m\leq y$ où $\frac{1}{h}=\frac{1}{2}\left(\frac{1}{x}+\frac{1}{y}\right)$, $g=\sqrt{xy}$ et $m=\frac{x+y}{2}$.}
+\end{center}
+\end{enumerate}
+
+\textbf{Remarque 1.} On a $h=\frac{2xy}{x+y}$, mais cette expression ne permet pas de comprendre que $\frac{1}{h}$ est
+la moyenne arithmétique de $\frac{1}{x}$ et $\frac{1}{y}$.
+
+\textbf{Remarque 2.} On peut visualiser l'inégalité entre moyenne arithmétique et géométrique.
+
+Si $(ABC)$ est un triangle rectangle en $A$ et $A'$ est le pied de la hauteur issue de $A$, on sait que $AA'^2=A'B.A'C$. On
+se sert de cette remarque pour construire $g$ et la comparer graphiquement à $m$.
+
+On accolle deux segments de longueurs respectives $x$ et $y$. On construit alors un triangle rectangle d'hypothénuse
+ce segment (de longueur $x+y$) noté [BC], tel que le troisième sommet $A$ ait une projection orthogonale $A'$ sur $(BC)$
+vérifiant $BA'=x$ et $CA'=y$.
+
+
+$$\includegraphics{../images/img005146-1}$$
+
+
+La moyenne arithmétique de $x$ et $y$ est $m=\frac{x+y}{2}$, le rayon du cercle, et la moyenne géométrique de $x$
+et $y$ est $g=\sqrt{xy}=\sqrt{A'B.A'C}=AA'$, la hauteur issue de $A$ du triangle $(ABC)$.
+\fincorrection
+\finexercice

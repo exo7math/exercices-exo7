@@ -1,0 +1,41 @@
+\exercice{7609, mourougane, 2021/08/10}
+\enonce[Représentation]
+\begin{enumerate}
+\item \'Enoncer la formule de représentation de Cauchy pour les disques.
+
+% \item \'Enoncer le théorème des résidus.
+
+\item \`A l'aide de la formule de représentation de Cauchy, montrer que si une fonction holomorphe sur $\Delta$
+ne prend que des valeurs réelles sur le cercle $\partial\Delta_{\frac{1}{2}}$,
+alors $f$ prend une valeur réelle en $0$.
+
+\item \`A l'aide du théorème de représentation de Cauchy et sans le théorème des zéros isolés, montrer que si une fonction holomorphe sur $\Delta$
+est constante sur le cercle $\partial\Delta_{\frac{1}{2}}$,
+alors $f$ est constante sur $\overline{\Delta_{\frac{1}{2}}}$.
+
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+  \item Soit $D$ un ouvert de $\Cc$ et $f : D\to \Cc$ une application holomorphe.
+Alors, pour tout disque $\Delta_r(a)$ dont l'adhérence est incluse dans $D$,
+$$\forall b\in\Delta_r(a), \ \ \ \frac{1}{2i\pi}\int_{\partial\Delta_r(a)}\frac{f(z)dz}{z-b}=f(b).$$
+
+% 
+% \item Soit $D$ un ouvert étoilé de $\Cc$. Soit $\Gamma$ un chemin fermé dans $D$. Soit $C$ un ensemble fini de points de $D-\Gamma$.
+% Soit $f : D-C\to\Cc$ holomorphe.
+% Alors,
+% $$\sum_{c\in C\cap Int(\Gamma)} Ind_\Gamma(c) Res_c(f)=\frac{1}{2i\pi}\int_\Gamma f(z)dz.$$
+
+  \item Soit $f$ une fonction holomorphe sur $\Delta$. On paramètre le cercle $\partial\Delta_{\frac{1}{2}}$ par $z=\frac{1}{2}e^{i\theta}$.
+Alors, $f(0)=\frac{1}{2i\pi}\int_{\partial\Delta}\frac{f(z)dz}{z-0}=\frac{1}{2i\pi}\int_0^{2\pi}\frac{f(\frac{1}{2}e^{i\theta})}{\frac{1}{2}e^{i\theta}}\frac{1}{2}ie^{i\theta}d\theta
+=\frac{1}{2\pi}\int_0^{2\pi}f(\frac{1}{2}e^{i\theta})d\theta$ est une quantité réelle car $f$ prend des valeurs réelle sur le cercle $\partial\Delta_{\frac{1}{2}}$.
+L'application $f$ prend donc une valeur réelle en $0$.
+  \item Soit $f$ une fonction holomorphe sur $\Delta$ constante égale à $c$ sur le cercle $\partial\Delta_{\frac{1}{2}}$. 
+Soit $b\in\Delta_{\frac{1}{2}}$. Par le théorème de représentation, 
+$$f(b)=\frac{1}{2i\pi}\int_{\partial\Delta_{\frac{1}{2}}}\frac{f(z)dz}{z-b}=c\frac{1}{2i\pi}\int_{\partial\Delta_{\frac{1}{2}}}\frac{dz}{z-b}
+=c Res_b(\frac{1}{z-b})=c.$$
+\end{enumerate}
+\fincorrection
+\finexercice

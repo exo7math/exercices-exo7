@@ -1,0 +1,21 @@
+\exercice{4630, quercia, 2010/03/14}
+\enonce[DSF d'une série]
+On pose $f(x) = \sum_{n=-\infty}^{+\infty} e^{-(x-2n\pi)^2}$.
+Montrer que $f$ est définie sur~$\R$, $2\pi$-périodique et de classe~$\mathcal{C}^1$.
+Déterminer sa série de Fourier.
+
+\finenonce
+
+\noindication
+
+\correction
+$c_k = \frac1{2\pi} \int_{x=0}^{2\pi}\sum_{n=-\infty}^{+\infty}e^{-(x-2n\pi)^2-ikx}\,d x
+              = \frac1{2\pi}\sum_{n=-\infty}^{+\infty} \int_{x=0}^{2\pi}e^{-(x-2n\pi)^2-ikx}\,d x
+              = \frac1{2\pi} \int_{x=-\infty}^{+\infty}e^{-x^2-ikx}\,d x
+              = \frac{e^{-k^2/4}}{2\sqrt\pi}$
+
+$\Bigl($calculer $ \int_{x=-\infty}^{+\infty}e^{-x^2-i\xi x}\,d x = \sqrt\pi e^{-\xi^2/4}$
+par équation différentielle$\Bigr)$.
+\fincorrection
+
+\finexercice

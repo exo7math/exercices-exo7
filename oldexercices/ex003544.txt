@@ -1,0 +1,26 @@
+\exercice{3544, quercia, 2010/03/10}
+\enonce[INT gestion 94]
+
+    Soit $A=\left(\begin{smallmatrix}1&1&1&1\cr -1&1&-1&1\cr -1&1&1&-1\cr -1&-1&1&1\cr\end{smallmatrix}\right)$.\par
+ \begin{enumerate}   
+      \item Calculer $\det A$.
+      \item Calculer $(A-xI)(\,{}^t\!A-xI)$ et en déduire $\chi_A(x)$.
+    
+      \item Montrer que $A$ est $\C$-diagonalisable.
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item 
+  \item $(A-xI)(\,{}^t\!A-xI) = (x^2-2x+4)I$, $\chi_A(x) = x^2-2x+4$.
+  \item $\,{}^t\!A = 2I-A$ donc $(A-xI)((2-x)I-A) = (x^2-2x+4)I$.
+             En prenant pour $x$ une des racines du polynôme $x^2-2x+4$, on obtient
+             un polynôme scindé à racines simples annulant $A$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

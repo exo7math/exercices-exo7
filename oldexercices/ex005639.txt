@@ -1,0 +1,57 @@
+\exercice{5639, rouget, 2010/10/16}
+\enonce[**]
+Résoudre le système $MX = U$ où $M =(j^{i-1})_{1\leqslant i,j\leqslant n}\in M_n(\Rr)$, $U=(\delta_{i,1})_{1\leqslant i\leqslant n}\in M_{n,1}(\Rr)$ et $X$ est un vecteur colonne inconnu.
+\finenonce
+
+\noindication
+
+\correction
+ Le déterminant du système est $\Delta=\text{Van}(1,\ldots,n)\neq0$. Le système proposé est donc un système de \textsc{Cramer}.
+
+Les formules de \textsc{Cramer} donnent : $\forall j\in\llbracket1,n\rrbracket$, $x_j=\frac{\Delta_j}{\Delta}$   où
+
+\begin{align*}\ensuremath
+\Delta_j&=\left|
+\begin{array}{ccccccc}
+1&\ldots&1&1&1&\ldots&1\\
+1& &j-1&0&j+1& &n\\
+\vdots& &\vdots&\vdots&\vdots& &\vdots\\
+ & \\
+ & \\
+\vdots& &\vdots&\vdots&\vdots& &\vdots\\
+1&\ldots&(j-1)^{n-1}&0&(j+1)^{n-1}&\ldots&n^{n-1}
+\end{array}
+\right|\\
+ &= (-1)^{j+1}\left|
+\begin{array}{cccccc}
+1&\ldots&j-1&j+1&\ldots&n\\
+\vdots& &\vdots&\vdots& &\vdots\\
+ & \\
+  & \\
+\vdots& &\vdots&\vdots& &\vdots\\
+1&\ldots&(j-1)^{n-1}&(j+1)^{n-1}&\ldots&n^{n-1}
+\end{array}
+\right|(\text{en développant suivant la}\;j\text{-ème colonne})\\
+  &= (-1)^{j+1}1...(j-1)(j+1)...n\left|
+\begin{array}{cccccc}
+1&\ldots&1&1&\ldots&1\\
+1& &j-1&j+1& &n\\
+\vdots& &\vdots&\vdots& &\vdots\\
+  & \\
+\vdots& &\vdots&\vdots& &\vdots\\
+1&\ldots&(j-1)^{n-2}&(j+1)^{n-2}&\ldots&n^{n-2}
+\end{array}
+\right|(\text{par}\;n-\text{linéarité})\\
+ & = (-1)^{j+1}\frac{n!}{j}\text{Van}(1,...,(j-1),(j+1),...,n) = (-1)^{j+1}\frac{n!}{j}\frac{\text{Van}(1,...,n)}{(j-1)\ldots(j-(j-1))((j+1)-j)\ldots(n-j)}\\
+  &= (-1)^{j+1}\frac{n!}{j!(n-j)!}\text{Van}(1,...,n)=(-1)^{j+1}\dbinom{n}{j}\text{Van}(1,...,n).
+\end{align*}
+
+Finalement,
+
+\begin{center}
+\shadowbox{
+$\forall j\in\llbracket1,n\rrbracket$, $x_j =(-1)^{j+1}\dbinom{n}{j}$.
+}
+\end{center}
+\fincorrection
+\finexercice

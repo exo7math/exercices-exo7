@@ -1,0 +1,27 @@
+\exercice{6992, blanc-centi, 2015/07/04}
+\video{hVq0LPY0kV0}
+\enonce
+Déterminer toutes les fonctions $f:[0;1]\to\R$, dérivables, telles que 
+$$\forall x\in[0;1],\ f'(x)+f(x)=f(0)+f(1)$$
+\finenonce
+ 
+\indication
+Une telle fonction $f$ est solution d'une équation différentielle $y'+y=c$.
+\finindication
+
+\correction
+Une fonction $f:[0;1]\to\R$ convient si et seulement si 
+\begin{itemize}
+\item $f$ est dérivable
+\item $f$ est solution de $y'+y=c$ 
+\item $f$ vérifie $f(0)+f(1)=c$ (où $c$ est un réel quelconque)
+\end{itemize}
+Or les solutions de l'équation différentielle $y'+y=c$ sont exactement les 
+$f:x\mapsto \lambda e^{-x}+c$, où $\lambda\in\R$ (en effet, on voit facilement que 
+la fonction constante égale à $c$ est une solution particulière de $y'+y=c$). \'Evidemment ces fonctions sont dérivables, et $f(0)+f(1)=\lambda(1+e^{-1})+2c$, donc la troisième condition est satisfaite si et seulement si $-\lambda(1+e^{-1})=c$.
+
+Ainsi les solutions du problème sont exactement les 
+$$f(x)=\lambda(e^{-x}-1-e^{-1})$$
+pour $\lambda\in\R$.
+\fincorrection
+\finexercice

@@ -1,0 +1,81 @@
+\exercice{5187, rouget, 2010/06/30}
+\enonce[**T]
+Soient $(e_i)_{1\leq i\leq 4}$ la base canonique de $\Rr^4$ et $f$ l'endomorphisme de $\Rr^4$ défini
+par~:~$f(e_1)=2e_1+e_3$, $f(e_2)=-e_2+e_4$, $f(e_3)=e_1+2e_3$ et $f(e_4)=e_2-e_4$. Déterminer $\mbox{Ker}f$ et
+$\mbox{Im}f$.
+
+\finenonce
+
+\noindication
+
+\correction
+Soit $u=(x,y,z,t)=xe_1+ye_2+ze_3+te_4\in\Rr^4$. Alors,
+
+\begin{align*}
+f(u)&=xf(e_1)+yf(e_2)+zf(e_3)+tf(e_4)=x(2e_1+e_3)+y(-e_2+e_4)+z(e_1+2e_3)+t(e_2-e_4)\\
+ &=(2x+z)e_1+(-y+t)e_2+(x+2z)e_3+(y-t)e_4.
+\end{align*}
+Par suite,
+
+$$u\in\mbox{Ker }f\Leftrightarrow
+\left\{
+\begin{array}{l}
+2x+z=0\\
+-y+t=0\\
+x+2z=0\\
+y-t=0
+\end{array}
+\right.\Leftrightarrow
+\left\{
+\begin{array}{l}
+x=z=0\\
+y=t
+\end{array}
+\right..$$
+Donc, $\mbox{Ker }f=\{(0,y,0,y),\;y\in\Rr\}=\mbox{Vect}((0,1,0,1))$.
+
+\begin{center}
+\shadowbox{
+$\mbox{Ker }f=\mbox{Vect}((0,1,0,1))$.
+}
+\end{center}
+
+Soit $u'=(x',y',z',t')\in\Rr^4$.
+
+\begin{align*}
+u'= (x',y',z',t')\in\mbox{Im }f&\Leftrightarrow\exists(x,y,z,t)\in\Rr^4/\;\left\{
+\begin{array}{l}
+2x+z=x'\\
+-y+t=y'\\
+x+2z=z'\\
+y-t=t'
+\end{array}
+\right.\Leftrightarrow\exists(x,y,z,t)\in\Rr^4/\;\left\{
+\begin{array}{l}
+x=\frac{1}{3}(2x'-z')\\
+z=\frac{1}{3}(-x'+2z')\\
+t=y+y'\\
+y'+t'=0
+\end{array}
+\right.\\
+ &\Leftrightarrow y'=-t'
+\end{align*}
+(si $y'\neq-t'$, le système ci-dessus, d'inconnues $x$, $y$, $z$ et $t$, n'a pas de solution et si $y'=-t'$, le système
+ci-dessus admet au moins une solution comme par exemple
+$(x,y,z,t)=\left(\frac{1}{3}(2x'-z'),0,\frac{1}{3}(-x'+2z'),y')\right)$.
+Donc,
+$\mbox{Im }f=\{(x,y,z,t)\in\Rr^4/\;y+t=0\}=\{(x,y,z,-y)/(x,y,z)\in\Rr^3\}=\{xe_1+y(e_2-e_4)+ze_3,\;(x,y,z)\in\Rr^4\}=
+\mbox{Vect}(e_1,e_2-e_4,e_3)$.
+
+\begin{center}
+\shadowbox{
+$\mbox{Im }f==\{(x,y,z,-y)/(x,y,z)\in\Rr^3\}=\mbox{Vect}(e_1,e_2-e_4,e_3)$.
+}
+\end{center}
+
+\textbf{Autre solution} pour la détermination de $\mbox{Im }f$.
+$\mbox{Im }f=\mbox{Vect}(f(e_1),f(e_2),f(e_3),f(e_4))=\mbox{Vect}(2e_1+e_3,-e_2+e_4,e_1+2e_3,e_2-e_4)
+=\mbox{Vect}(2e_1+e_3,e_1+2e_3,e_2-e_4)$. Mais d'autre part, d'après le théorème du rang,
+$\mbox{dim }(\mbox{Im }f)=4-1=3$. Donc, $(2e_1+e_3,e_1+2e_3,e_2-e_4)$ est une base de $\mbox{Im }f$.
+\fincorrection
+\finexercice

@@ -1,0 +1,29 @@
+\exercice{5098, rouget, 2010/06/30}
+\enonce[**]
+Trouver la plus grande valeur de $\sqrt[n]{n}$, $n\in\Nn^*$.
+\finenonce
+
+\noindication
+
+\correction
+Pour $n\in\Nn^*$, posons $u_n=\sqrt[n]{n}$ puis, pour $x$ réel strictement positif, $f(x)=x^{1/x}$
+de sorte que pour tout naturel non nul $n$, on a $u_n=f(n)$.
+$f$ est définie sur $]0,+\infty[$ et pour $x>0$, $f(x)=e^{\ln x/x}$. $f$ est dérivable sur $]0,+\infty[$ et pour
+$x>0$,
+
+$$f'(x)=\frac{1-\ln x}{x^2}e^{\ln x/x}.$$
+Pour $x>0$, $f'(x)$ est du signe de $1-\ln x$ et donc $f'$ est strictement positive sur $]0,e[$ et strictement négative
+sur $]e,+\infty[$. $f$ est donc strictement croissante sur $]0,e]$ et strictement décroissante sur $[e,+\infty[$. En
+particulier, pour $n\geq3$,
+
+$$u_n=f(n)\leq f(3)=u_3=\sqrt[3]{3}.$$
+Comme $u_2=\sqrt{2}>1=u_1$, on a donc $\mbox{Max}\{u_n,\;n\in\Nn^*\}=\mbox{Max}\{\sqrt{2},\sqrt[3]{3}\}$. Enfin,
+$\sqrt{2}=1,41...<1,44..=\sqrt[3]{3}$ (on peut aussi constater que $(\sqrt{2})^6=8<9=(\sqrt[3]{3})^6$). Finalement,
+
+\begin{center}
+\shadowbox{
+$\text{Max}\left\{\sqrt[n]{n},\;n\in\Nn^*\right\}=\sqrt[3]{3}=1,44...$
+}
+\end{center}
+\fincorrection
+\finexercice

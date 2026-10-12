@@ -1,0 +1,27 @@
+\exercice{4259, quercia, 2010/03/12}
+\enonce[Centrale PC 1998]
+Soit $f : {[a,b]} \to {\R^{+*}}$ continue.
+
+\begin{enumerate}
+  \item Montrer qu'il existe une subdivision de $[a,b]$~:
+    ${a=x_0 < x_1 < \dots < x_n = b}$ telle que~:
+
+    $\forall\ k \in [[0,n-1]],\  \int_{t=x_k}^{x_{k+1}}f(t)\,d t =
+        \frac1n  \int_{t=a}^{b}f(t)\,d t$.
+  \item Étudier $\lim_{n\to\infty} \frac1n \sum_{k=0}^{n-1}f(x_k)$.
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item 
+  \item Soit $F(x) =  \int_{t=a}^{x}f(t)\,d t$ et $G = F^{-1}$.
+Alors $\frac1n \sum_{k=0}^{n-1}f(x_k) = \frac 1n \sum_{k=0}^{n-1} f\circ G(\frac kn)
+\to  \int_{t=a}^{b}f^2(t)\,d t\Bigm/ \int_{t=a}^{b}f(t)\,d t$ lorsque $n\to\infty$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

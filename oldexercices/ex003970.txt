@@ -1,0 +1,24 @@
+\exercice{3970, quercia, 2010/03/11}
+\enonce[Dérivée $n$-ème de $f(x^2)$]
+Soit $f : \R \to \R$ une fonction de classe $\mathcal{C}^n$.
+On pose $g(x) = f(x^2)$.
+
+\begin{enumerate}
+  \item Montrer qu'il existe des entiers $a_{n,k}$ tels que :
+    $\forall\ x,\ g^{(n)}(x) = \sum_{k= [(n+1)/2]}^n a_{n,k}f^{(k)}(x^2)(2x)^{2k-n}$.
+    
+  \item Calculer $a_{n,k}$ en fonction de $n$ et $k$.
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $a_{n+1,k} = a_{n,k-1} + 2(2k-n)a_{n,k}$.
+  \item $a_{n,k} = \frac {n!}{(n-k)!(2k-n)!}$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

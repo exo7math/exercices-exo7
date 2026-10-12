@@ -1,0 +1,72 @@
+\exercice{1229, legall, 1998/09/01}
+
+\enonce
+Pour tout $  n   $ entier sup\'erieur o\`u \'egal \`a $  2  $, on consid\`ere le polyn\^ome de
+degr\' e $  n   $ \`a coefficients r\' eels~:
+$$P_n(X)=X^n+X^{n-1}+X^2+X-1$$
+\begin{enumerate}
+    \item Soit $  n \geq 2  .$ Montrer que $  P_n  $ a une unique racine r\' eelle positive que l'on nommera $  \lambda _n  .$ (On pourra \'etudier l'application $  X\mapsto P_n(X)  .$)
+    \item Montrer que la suite $  (\lambda _n)_{n\geq 2}  $ est croissante puis qu'elle
+converge vers une limite que l'on notera $  \ell   .$
+    \item Montrer que $  \ell  $ est racine du polyn\^ome $  X^2+X-1  .$ En d\' eduire sa valeur.
+\end{enumerate}
+
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+    \item Pour tout $  n \geq 2  $ on a : $  P_n(0)=-1  $ et $  P_n(1)=3  .$ Comme l'application
+$  X\mapsto P_n(X)  $ est continue, elle s'annulle en (au moins)
+un point de l'intervalle $ \rbrack 0, 1 \lbrack .$  Comme par
+ailleurs, pour tout $  X $ positif, $
+P'_n(X)=nX^{n-1}+(n-1)X^{n-2}+2X+1    $ est strictement positif,
+l'application $  X\mapsto P_n(X)  $ est strictement croissante sur
+$  {\R}_+  $ et s'annule en au plus un point de $  {\R}_+  .$ En
+cons\' equence $  P_n   $ a une unique racine positive $  \lambda
+_n  $ qui de plus satisfait \`a l'in\' egalit\' e $  0<\lambda
+_n<1   .$
+    \item Pour tout $  X\in   \rbrack 0, 1
+\lbrack   ,   P_n(X)-P_{n-1}(X)=X^n-X^{n-2}<0  .$ En particulier $
+P_n(\lambda _{n-1})<0 $ donc $ \lambda _n>\lambda _{n-1}  .$ La
+suite $  (\lambda _n)_{n\geq 2}  $ est donc croissante et major\'
+ee (cf 1.) : elle est convergente.
+    \item Pour tout $  n \geq 2  $ on a  :
+$  \lambda _n^n+\lambda _n^{n-1}=-\lambda _n^2-\lambda _n+1  .$ Or
+$ \displaystyle{ P_n\Bigl( \frac{3}{ 4}\Bigr) >\Bigl( \frac{3}{
+4}\Bigr) ^2+\frac{3}{ 4}-1>0} $ donc la suite $  (\lambda
+_n^n+\lambda _n^{n-1})_{n\in {\N}}  $ satisfait aux in\' egalit\'
+es $  0<\lambda _n^n+\lambda _n^{n-1}<\displaystyle{ \Bigl(
+\frac{3}{ 4}\Bigr) ^n+\Bigl(\frac {3}{ 4} \Bigr) ^{n+1}}  $ et
+converge vers $  0  .$ Il en va de m\^eme de la suite $  (-\lambda
+_n^2-\lambda _n+1)_{n\geq 2}  .$ En passant \`a la limite, on
+obtient l'\' egalit\' e~: $  \ell ^2+\ell -1=0  .$ La seule
+solution positive de cette \' equation \' etant $
+\displaystyle{\frac { -1+\sqrt{5} }{ 2}}  ,$ on a l'\' egalit\'
+e~: $  \ell =\displaystyle{ \frac{ -1+\sqrt{5}}{ 2}}  .$
+\end{enumerate}
+
+\bigskip
+\noindent \textbf{Remarques}
+\begin{enumerate}
+    \item  L'in\'egalit\'e $ 0<\lambda _n <1 $ (pour tout $ n\geq 2 $) n'implique pas que $ (\lambda _n^n )_{n\geq 2} $ converge vers $ 0 .$ Par exemple
+la suite $ (v_n)_{n \geq 1} $ d\'efinie par $ v_n=\displaystyle
+{(1 -\frac{1}{ n})^n} $ converge vers $ \displaystyle{\frac{ 1}{ e
+}} .$ (Pour le v\'erifier appliquer le 1. du probl\`eme \`a $
+\hbox{log }(v_n) .$)
+    \item La propri\'et\'e
+$ \displaystyle{\lim _{n\rightarrow \infty} \frac{1}{
+n+k}\epsilon \Bigl( \frac{1}{ n+k}  \Bigr) }
+ =0  $ n'implique pas que
+$ \displaystyle{\lim _{n\rightarrow \infty} \sum _{\scriptstyle
+k=0}^{\scriptstyle  n}\frac{1}{ n+k}\epsilon \Bigl( \frac{1}{
+n+k}  \Bigr) } =0 .  $ Par exemple... $ \displaystyle{\lim
+_{n\rightarrow \infty} \sum _{\scriptstyle k=0}^{\scriptstyle
+n}\frac{1}{ n+k}}=\hbox{log }(2) .$
+\end{enumerate}
+
+\fincorrection
+
+\finexercice
+

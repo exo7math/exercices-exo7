@@ -1,0 +1,116 @@
+\exercice{7410, mourougane, 2021/08/10}
+\enonce
+Dans $\Rr^4$ on considère les quatre vecteurs
+$$v_1=(1,0,-1,1),\ \ v_2=(2,1,0,1), \ \ v_3 =(1,1,1,0), \ \ v_4=(3,1,-1,2). $$ 
+Soit $V=Vect(v_1,v_2,v_3,v_4)$. De plus, soit 
+$$H=\{(x,y,z,t)\in\Rr^4 \ / \ \ -3x+y+2z-t=0 \}.$$
+
+\begin{enumerate}
+ \item Montrer que $\dim V =2$. Le systême $(v_1,v_2,v_3,v_4)$ est-il libre? Est-il générateur de $\Rr^4$?
+
+\item Donner une base de $V$, la compléter en une base de $\Rr^4$.
+
+\item Calculer des équations cartésiennes pour $V$.
+
+\item Montrer que $H$ est un sous-espace vectoriel de $\Rr^4$.
+
+\item Trouver une représentation paramétrique de $H$, et en déduire une base de $H$. Que vaut $\dim H$? 
+
+\item Montrer que $v_3\in H$ et que $v_1\notin H$. En déduire $\dim(V\cap H)$ et $\dim(V+H)$.
+
+\item Donner une base de $V\cap H$.
+ \end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+ \item On observe que $v_3 = v_2 - v_1$ et que $v_4=v_1+v_2$ donc $V=Vect(v_1,v_2,v_3,v_4)=Vect(v_1,v_2)$. Comme de plus $v_1$ et $v_2$ sont linéairement indépendants, $(v_1,v_2)$ est une base de $V$. Donc $\dim(V)=2$. Le système n'est pas libre car par exemple $v_3=v_2-v_1$ est une relation de dépendance linéaire non triviale. Le système n'est pas générateur de $\Rr^4$ car $\dim(V)=2<4$ donc $Vect(v_1,v_2,v_3,v_4)=V\neq \Rr^4$.
+
+ \item Comme nous l'avons vu dans la question 1, $(v_1,v_2)$ est une base de $V$. On échelonne la matrice dont les lignes sont les vecteurs $v_1$ et $v_2$.
+
+\[
+\left( {\begin{array}{cccc}
+ 1 & 0 & -1& 1 \\
+ 2 & 1 & 0 &1 \\
+ \end{array} } \right)
+\to
+\left( {\begin{array}{cccc}
+ 1 & 0 & -1& 1 \\
+ 0 & 1 & 2 & -1 \\
+ \end{array} } \right)
+\]
+
+Maintenant on voit que l'on peut compléter la base $(v_1,v_2)$ en une base de $\Rr^4$ en ajoutant les vecteurs $(0,0,1,0)$ et $(0,0,0,1)$ car la matrice
+\[
+\left( {\begin{array}{cccc}
+ 1 & 0 & -1& 1 \\
+ 0 & 1 & 2 &-1 \\
+ 0& 0& 1 & 0 \\
+ 0 & 0 & 0 & 1\\
+ \end{array} } \right)
+\]
+est de rang 4.
+
+ \item $V=Vect(v_1,v_2)$. Maintenant soit $(x,y,z,t)\in \Rr^4$. $(x,y,z,t)\in V$ si et seulement si $\exists \lambda,\mu \in \Rr $ tels que $(x,y,z,t)=\lambda v_1 + \mu v_2$.
+Il nous suffit donc de voir pour quelles valeurs de $(x,y,z,t)$ ce système d'équations a une solution. Le système s'écrit :
+\[
+\left( {\begin{array}{cc|c}
+ 1 & 2 & x \\
+ 0 & 1 & y \\
+ -1& 0& z \\
+ 1 & 1 & t\\
+ \end{array} } \right)
+ \to
+ \left( {\begin{array}{cc|c}
+ 1 & 2 & x \\
+ 0 & 1 &y \\
+ 0& 2& z+x \\
+ 0 & -1 & t-x\\
+ \end{array} } \right)
+ \to
+ \left( {\begin{array}{cc|c}
+ 1 & 2 & x \\
+ 0 & 1 & y \\
+ 0& 0& z+x-2y \\
+ 0 & 0 & t-x+y\\
+ \end{array} } \right)
+\]
+Le système a donc une solution si et seulement si $z+x-2y=0$ et $t-x+y=0$,ce sont des équations cartesiennes pour $V$, c'est à dire que
+$$V=\{(x,y,z,t)\in\Rr^4 \ / \ \ x-2y+z=0 \ \ et \ \ -x+y+t=0 \}.$$
+
+ \item $H$ est un sous-espace vectoriel de $\Rr^4$ car c'est l'ensemble des solutions d'une équation linéaire et homogène.
+
+ \item \begin{eqnarray}
+H &=& \{(x,y,z,t)\in\Rr^4 \ / \ \ -3x+y+2z-t=0 \} \nonumber \\
+ &=& \{(x,y,z,t)\in\Rr^4 \ / \ \ y=3x-2z+t \} \nonumber \\
+ &=& \{(x,3x-2z+t,z,t) \ / \ \ x,z,t\in \Rr \} \nonumber \\
+ &=& \{x(1,3,0,0)+z(0,-2,1,0)+t(0,1,0,1) \ / \ \ x,z,t\in \Rr \} \nonumber
+\end{eqnarray}
+On a donc $H=Vect((1,3,0,0),(0,-2,1,0),(0,1,0,1))$. De plus le système $((1,3,0,0),(0,-2,1,0),(0,1,0,1))$ est une base de $H$ car 
+ \[
+rang \left( {\begin{array}{cccc}
+ 1 & 3 & 0& 0 \\
+ 0 & 1 & 0 &1 \\
+ 0 & -2 & 1 &0 \\
+ \end{array} } \right)
+=
+rang \left( {\begin{array}{cccc}
+ 1 & 3 & 0& 0 \\
+ 0 & 1 & 0 &1 \\
+ 0 & 0 & 1 &2 \\
+ \end{array} } \right)=3.
+\]
+Et donc $\dim(H)=3$.
+
+ \item $v_3\in H$ car $-3\times 1 +1\times 1 + 2\times 1 -1\times 0 = 0$. Mais $v_1\notin H$ car $-3\times 1 +1\times 0 + 2\times -1 -1\times 1 = -6\neq 0$.
+
+Comme $v_3\in V$ et que l'on vient de voir que $v_3\in H$, on en déduit que $v_3\in V\cap H$ et donc que $Vect(v_3)\subseteq V\cap H$.
+ On a donc obtenu que $\dim (V\cap H)\geq 1$. Comme de plus $V\cap H \subseteq V$ on sait que $\dim (V\cap H)\leq 2$. Maintenant si on avait $\dim (V\cap H)=2$ cela impliquerait que $V\cap H =V$ et donc que $V\subseteq H$, ce qui est faux car $v_1\in V$ mais $v_1\notin H$. 
+ On obtient donc $\dim (V \cap H)=1$.
+ 
+En utilisant la formule de Grassmann on obtient alors que $$\dim (V+H)=\dim (V)+\dim (H)-\dim (V\cap H)=2+3-1=4.$$
+
+ \item On a vu que $\dim(V\cap H)=1$ et que $Vect(v_3)\in V\cap H$ donc on obtient $Vect(v_3)= V\cap H$ et donc $(v_3)$ est une base de $V\cap H$.
+ \end{enumerate}
+\fincorrection
+\finexercice

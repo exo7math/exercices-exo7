@@ -1,0 +1,53 @@
+\exercice{6871, chataur, 2012/05/13}
+\video{u7JkO7A-9ZA}
+\enonce
+Par des considérations géométriques répondez aux questions suivantes :
+\begin{enumerate}
+  \item Deux droites vectorielles de $\mathbb{R}^3$ sont-elles suppl\'ementaires ?
+  \item Deux plans vectoriels de $\mathbb{R}^3$ sont-ils suppl\'ementaires ?
+  \item A quelle condition un plan vectoriel et une droite vectorielle de $\mathbb{R}^3$ sont-ils supplémentaires ?
+\end{enumerate}
+\finenonce
+
+\indication
+\begin{enumerate}
+  \item Jamais.
+  \item Jamais.
+  \item Considérer un vecteur directeur de la droite.
+\end{enumerate}
+\finindication
+
+
+\correction
+\begin{enumerate}
+  \item Si les deux droites vectorielles sont distinctes alors elles engendrent un plan vectoriel 
+et donc pas $\Rr^3$ tout entier. Si elles sont confondues c'est pire : elles n'engendrent qu'une droite.
+Dans tout les cas elles n'engendrent pas $\Rr^3$ et ne sont donc pas supplémentaires.
+  \item Si $P$ et $P'$ sont deux plans vectoriels alors $P\cap P'$ est une droite vectorielle si $P \neq P'$
+ou le plan $P$ tout entier si $P=P'$. Attention, tous les plans vectoriels ont une équation du type 
+$ax+by+cz=0$ et doivent passer par l'origine, il n'existe donc pas deux plans parallèles par exemple.
+Donc l'intersection $P\cap P'$ n'est jamais réduite au vecteur nul. Ainsi $P$ et $P'$ ne sont pas supplémentaires.
+
+  \item Soit $D$ une droite et $P$ un plan, $u$ un vecteur directeur de $D$. 
+Si le vecteur $u$ appartient au plan $P$ alors $D\subset P$ et les espaces ne sont pas suppl\'ementaires 
+(ils n'engendrent pas tout $\Rr^3$). 
+Si $u \notin P$ alors d'une part $D\cap P$ est juste le vecteur nul
+d'autre part $D$ et $P$ engendrent tout $\Rr^3$ ; $D$ et $P$ sont supplémentaires.
+
+Détaillons un exemple : si $P$ est le plan d'équation $z=0$ alors il est engendré par les deux vecteurs $v=(1,0,0)$ et $w=(0,1,0)$.
+Soit $D$ une droite de vecteur directeur $u=(a,b,c)$.
+
+Alors  $u \notin P \iff u \notin \text{Vect}\{v,w\} \iff c \neq 0$.
+Dans ce cas on bien que d'une part que $D = \text{Vect}\{ u\}$ intersecté avec $P$ est réduit au vecteur nul.
+Ainsi $D\cap P = \{(0,0,0)\}$.
+Et d'autre part tout vecteur $(x,y,z)\in \Rr^3$ appartient à $D+P = \text{Vect}\{u,v,w\}$.
+Il suffit de remarquer que $(x,y,z) - \frac zc (a,b,c) = (x-\frac{za}{c},y-\frac{zb}{c},0) = (x-\frac{za}{c}) (1,0,0) + 
+(y-\frac{zb}{c})(0,1,0)$. Et ainsi $(x,y,z)= \frac zc u + (x-\frac{za}{c}) v + 
+(y-\frac{zb}{c}) w$. Donc $D+P = \Rr^3$.
+
+Bilan on a bien $D\oplus P = \Rr^3$ : $D$ et $P$ sont en somme directe.
+
+\end{enumerate}
+\fincorrection
+
+\finexercice

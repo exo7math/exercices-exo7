@@ -1,0 +1,50 @@
+\exercice{2298, barraud, 2008/04/24}
+\enonce
+\begin{enumerate}
+  \item Montrer que  les id\'eaux $(5, x^2+3)$, $(x^2+1,x+2)$, $(x^3-1,x^4-1)$
+ne sont pas principaux dans $\Zz[x]$. 
+  \item  Les id\'eaux $(x,x+1)$, $(5, x^2+4)$ et  $(x^2+1,x+2)$  
+sont-ils  premiers  ou maximaux dans $\Zz[x]$ ?
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+  \begin{enumerate}
+  \item 
+    $I=(5,x^{2}+3)$. On a $\pgcd(5, x^{2}+3)=1$, donc si $I$ était
+    principal, on aurait $1\in I$, et donc $I=\Zz[X]$. Si $1\in I$, il
+    existe $P,Q\in\Zz[x]$,  tels que $1=5P+(x^{2}+3)Q$. En considérant la
+    réduction modulo $5$ de ces polynômes, on obtient
+    $(x^{2}+\bar{3})\bar{Q}=\bar{1}$, ce qui est impossible pour des
+    raisons de degré ($\Zz/5\Zz$ est intègre). Donc $1\notin I$, et $I$
+    n'est donc pas intègre.
+
+    \smallskip
+    $x^{2}+1=(x+2)(x-2)+5$, donc $(x^{2}+1,x+2)=(x+2,5)$. Or $(x+2,5)$
+    n'est pas principal pour les mêmes raisons que précédemment.
+
+    \smallskip
+    On a $(x-1)=(x^{4}-1)-x(x^{3}-1)$ donc $(x-1)\subset
+    (x^{4}-1,x^{3}-1)$. Par ailleurs, $(x-1)|(x^{4}-1)$ et
+    $(x-1)|(x^{3}-1)$ donc $x^{4}-1\in(x-1)$ et $x^{3}-1\in(x-1)$, donc
+    $(x^{4}-1,x^{3}-1)\subset (x-1)$. Donc $(x^{4}-1,x^{3}-1)$ est
+    principal.
+
+  \item
+    $I=(x,x+1)=\Zz$ car $1=(x+1) - x$. Donc $I$ n'est pas propre.
+
+    $I=(5,x^{2}+4)$. $\Zz[X]/I\sim\Zz_{5}/(x^{2}+\bar{4})$. Mais
+    $(x^{2}+\bar{4})=(x-\bar{1})(x+\bar{1})$ est réductible dans
+    $\Zz_{5}[x]$, donc $\Zz_{5}/(x^{2}+\bar{4})$ n'est pas intègre~: $I$
+    n'est pas premier.
+
+    $I=(x^{2}+1,x+2)=(x+2,5)$. $\Zz[x]/I\simeq\Zz_{5}[x]/(x+\bar{2})$.
+    $x+\bar{2}$ est irréductible dans $\Zz_{5}[x]$, qui est principal,
+    donc $(x+\bar{2})$ est maximal, donc le quotient est un corps, et $I$
+    est maximal.
+    
+  \end{enumerate}
+\fincorrection
+\finexercice

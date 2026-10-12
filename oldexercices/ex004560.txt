@@ -1,0 +1,31 @@
+\exercice{4560, quercia, 2010/03/14}
+\enonce[Étude de $\sum t^{p-1}\sin(px)$ pour~$x\in{]0,\pi[}$, TPE MP 2005]
+
+\begin{enumerate}
+  \item Calculer $S_n(t) = \sum_{p=1}^n t^{p-1}\sin(px)$ puis $S(t) = \lim_{n\to\infty} S_n(t)$.
+    
+
+  \item Calculer $ \int_{t=0}^1 S_n(t)\,d t$ et  $ \int_{t=0}^1 S(t)\,d t$.
+    
+  \item En déduire que $\sum_{n=1}^\infty \frac{\sin nx}n$ converge et donner sa valeur.
+    
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Lorsque $n\to\infty$, $S_n(t) = \Im\Bigl(\frac{e^{ix}-t^{n}e^{i(n+1)x}}{1-te^{ix}}\Bigr) \to
+              \Im\Bigl(\frac{e^{ix}}{1-te^{ix}}\Bigr) = 
+              \frac{\sin x}{1-2t\cos x + t^2}$ pour $-1<t<1$.
+  \item $ \int_{t=0}^1 S_n(t)\,d t = \sum_{p=1}^n \frac{\sin(px)}{p}$.
+             \par
+             $ \int_{t=0}^1 S(t)\,d t
+	      = (t-\cos x = u\sin x) =  \int_{u=-\cot x}^{\tan x/2} \frac{d u}{1+ u^2} = \frac{\pi-x}2$.
+  \item TCD~: $|S_n(t)|\le \frac2{\sin x}$ intégrable par rapport à~$t$ sur $[0,1]$. On en déduit $\sum_{p=1}^\infty \frac{\sin(px)}{p} = \frac{\pi-x}2$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

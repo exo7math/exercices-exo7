@@ -1,0 +1,20 @@
+\exercice{2300, barraud, 2008/04/24}
+\enonce
+Soient $A$ un anneau et $I$ et $J$ les  idéaux de $A$ tels que $I+J=(1)$. Démontrer que $I^n+J^m=(1)$ quels que soient entiers positifs non-nuls $n$ et $m$.
+\finenonce 
+
+\noindication
+
+\correction
+  $1\in I+J$ donc $\exists(x,y)\in I\times J, 1=x+y$. En multipliant
+  cette égalité par $x$, on obtient $x^{2}+xy=x$. On en déduit que $xy\in
+  I$, donc $\forall p\in\Nn~; x^{p}y\in I^{p}$, et donc
+  $\forall(p,q)\in\Nn^{2}, x^{p}y^{q}\in I^{p}$. Par symétrie, on a aussi
+  $\forall(p,q)\in\Nn^{2}, x^{p}y^{q}\in J^{q}$.
+
+  Soit maintenant $(m,n)\in\Nn^{2}$. Notons $N=2\sup(m,n)$. Alors
+  $1=1^{N}=(x+y)^{N}=\sum_{p+q=N}C^{p}_{N}x^{p}y^{q}$. Comme~:
+  $(p+q=2N)\Rightarrow (p\geq n \text{ ou }q\geq m)$, tous les termes de
+  cette somme sont dans $I^{n}$ ou dans $J^{m}$, et donc $1\in I^{n}+J^{m}$
+\fincorrection
+\finexercice

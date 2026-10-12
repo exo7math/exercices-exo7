@@ -1,0 +1,53 @@
+\exercice{5593, rouget, 2010/10/16}
+\enonce[***]
+Soit $E$ un espace vectoriel. Soit $G$ un sous-groupe fini de $\mathcal{GL}(E)$ de cardinal $n$. Soit $F$ un sous-espace de $E$ stable par tous les éléments de $G$ et $p$ un projecteur d'image $F$. Montrer que $\frac{1}{n}\sum_{g\in G}^{}g\circ p\circ g^{-1}$ est un projecteur d'image $F$.
+\finenonce
+
+\noindication
+
+\correction
+Soit $q=\frac{1}{n}\sum_{g\in G}^{}g\circ p\circ g^{-1}$.
+
+\begin{center}
+$q^2=\frac{1}{n}\sum_{(g,h)\in G^2}^{}h\circ p\circ h^{-1}\circ g\circ p\circ g^{-1}$.
+\end{center}
+
+Mais si $g$ et $h$ sont deux éléments de $G$ et $x$ est un vecteur quelconque de $E$, $p(g^{-1}(x))$ est dans $F$ et donc par hypothèse $h^{-1}\circ g\circ p\circ g^{-1}(x)$ est encore dans $F$ ($h^{-1}$ est dans $G$ puisque $G$ est un groupe). On en déduit que
+
+\begin{center}
+$h\circ p\circ h^{-1}\circ g\circ p\circ g^{-1}=h\circ h^{-1}\circ g\circ p\circ g^{-1}=g\circ p\circ g^{-1}$.
+\end{center}
+
+Mais alors
+
+\begin{center}
+$q^2=\frac{1}{n^2}\sum_{(g,h)\in G^2}^{}g\circ p\circ g^{-1}=\frac{1}{n^2}\times n\sum_{g\in G}^{}g\circ p\circ g^{-1}=\frac{1}{n}\sum_{g\in G}^{}g\circ p\circ g^{-1}= q$
+\end{center}
+
+et $q$ est un projecteur.
+
+Montrons que $F\subset\text{Im}q$. Soit $x$ un élément de $F$. Pour chaque $g\in G$, $g^{-1}(x)$ est encore dans $F$ et donc $p(g^{-1}(x))=g^{-1}(x)$ puis $g(p(g^{-1}(x)))=x$. Mais alors
+
+\begin{center}
+$q(x)=\frac{1}{n}\sum_{g\in G}^{}x=x$,
+\end{center}
+
+ou encore $x$ est dans $\text{Im}q$. On a montré que $F\subset\text{Im}q$.
+
+Montrons que $\text{Im}q\subset F$. Soit $x$ un élément de $\text{Im}q$. 
+
+\begin{align*}\ensuremath
+p(x)&=p(q(x))=\frac{1}{n}\sum_{g\in G}^{}p\circ g\circ p\circ g^{-1}(x)\\
+ &=\frac{1}{n}\sum_{g\in G}^{}g\circ p\circ g^{-1}(x)\;(\text{car}\;p\circ g^{-1}(x)\in F\;\text{et donc}\;g\circ p\circ g^{-1}(x)\in F)\\
+ &=q(x) = x,
+\end{align*}
+
+et $x$ est dans $F$. On a montré que $\text{Im}q\subset F$ et finalement que $\text{Im}q=F$.
+
+\begin{center}
+\shadowbox{
+$q$ est un projecteur d'image $F$.
+}
+\end{center}
+\fincorrection
+\finexercice

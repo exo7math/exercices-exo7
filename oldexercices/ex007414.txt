@@ -1,0 +1,28 @@
+\exercice{7414, mourougane, 2021/08/10}
+\enonce
+Soit $E$ l'espace vectoriel des fonctions de classe $\mathcal C^1$ de $\Rr$ dans $\Rr$. Soit $F$ l'ensemble de toutes les fonctions de $\Rr$ dans $\Rr$ qui s'\'{e}crivent $x\mapsto ax+b$, pour certains r\'{e}els $a$ et $b$.
+Soit enfin $G=\{f\in E | f(0)=0, f'(0)=0\}$.
+\begin{enumerate}
+	\item Montrer que $F$ et $G$ sont des sous-espaces vectoriels de $E$.
+	\item Montrer que $$E=F\oplus G.$$
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+	\item On v\'{e}rifie ais\'{e}ment que $F$ et $G$ sont des sous-ensembles non vides de $E$ stables par combinaison lin\'{e}aire.
+
+	\item 
+	\begin{itemize}
+\item L'intersection des sous-espaces $F$ et $G$ est triviale:
+si $f\in F\cap G$, $f\in F$ implique que $f$ est une fonction polynomiale de degr\'{e} 1, soit $x\mapsto ax+b$, pour certains r\'{e}els $a$ et $b$,
+mais alors on a $f(0)=b$ et $f'(0)=a$ donc $f\in G$ implique $a=b=0$ et finalement $f=0$.\\
+\item Il reste \`{a} v\'{e}rifier que $E$ est la somme de $F$ et $G$. Comme $F$ et $G$ sont des sous-espaces vectoriels de $E$ on a \'{e}videmment $F+G\subset E$.
+Pour l'inclusion inverse, soit $f\in E$, soit $g$ la fonction d\'{e}finie sur $\Rr$ par $x\mapsto f'(0)x+f(0)$.
+Soit $h=f-g$. On a $g\in F$, et $h\in G$ puisque la d\'{e}rivation est lin\'{e}aire; de plus, $f=g+h$.
+On a donc montr\'{e} $E=F+G$. 
+\end{itemize}
+Des deux points pr\'{e}c\'{e}dents, il r\'{e}sulte que $E=F\oplus G$.
+\end{enumerate}
+\fincorrection
+\finexercice

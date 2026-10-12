@@ -1,0 +1,23 @@
+\exercice{2797, burnol, 2009/12/15}
+\enonce
+Déterminer en  tout $z_0\neq 1,\;2$ la série de Taylor et son rayon
+de convergence pour la fonction analytique
+$\frac1{(z-1)(z-2)}$. On aura intérêt à réduire en éléments
+simples. De plus on demande d'indiquer le rayon de
+convergence \emph{avant} de déterminer explicitement la série
+de Taylor.
+\finenonce
+\noindication
+\correction
+La fonction $f(z)=\frac{1}{(z-1)(z-2)}$ est holomorphe dans $U=\C\setminus\{1,2\}$.
+Par ce que l'on vient de dire \`a l'exercice pr\'ec\'edent, 
+le rayon de convergence demand\'e est $R=\min \{|z_0-1|,|z_0-2| \}$,
+o\`u $z_0\in U$ est un point quelconque fix\'e.
+On a $\frac{1}{(z-1)(z-2)}=\frac{1}{z-2}-\frac{1}{z-1}$ et:
+$$\frac{1}{z-2}=\frac{1}{z-z_0+z_0-2}=\frac{1}{z_0-2}\frac{1}{1-\left( \frac{z_0-z}{z_0-2}\right)}
+=\frac{1}{z_0-2}\sum_{k\geq0} \left( \frac{z_0-z}{z_0-2}\right)^k$$
+pour $|z-z_0|<|z_0-2|=R_2$. La s\'erie demand\'ee est alors la diff\'erence entre celle-ci et celle de
+l'exercice pr\'ec\'edent. Notons aussi que le rayon de convergence est exactement le minimum des rayons
+$R_1$ et $R_2$.
+\fincorrection
+\finexercice

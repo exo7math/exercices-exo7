@@ -1,0 +1,75 @@
+\exercice{5226, rouget, 2010/06/30}
+\enonce[**]
+Limite quand $n$ tend vers $+\infty$ de 
+\begin{enumerate}
+ \item $\frac{\sin n}{n}$,
+ \item $\left(1+\frac{1}{n}\right)^n$,
+ \item $\frac{n!}{n^n}$,
+ \item $\frac{E\left((n+\frac{1}{2})^2\right)}{E\left((n-\frac{1}{2})^2\right))}$,
+ \item $\sqrt[n]{n^2}$,
+ \item $\sqrt{n+1}-\sqrt{n}$,
+ \item $\frac{\sum_{k=1}^{n}k^2}{n^3}$,
+ \item $\prod_{k=1}^{n}2^{k/2^{2^k}}$.
+\end{enumerate}
+
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Pour $n\in\Nn^*$, $\left|\frac{\sin n}{n}\right|\leq\frac{1}{n}$. Comme $\frac{1}{n}\underset{n\rightarrow+\infty}{\longrightarrow}0$, $\frac{\sin n}{n}\underset{n\rightarrow+\infty}{\longrightarrow}0$.
+
+\begin{center}
+\shadowbox{
+$\lim_{n\rightarrow +\infty}\frac{\sin n}{n}=0$.
+}
+\end{center}
+ \item  Quand $n$ tend vers $+\infty$, $\ln\left(\left(1+\frac{1}{n}\right)^n\right)=n\ln\left(1+\frac{1}{n}\right)\sim n\times \frac{1}{n}=1$. Donc, $\ln\left(\left(1+\frac{1}{n}\right)^n\right)$ tend vers $1$ puis, $\left(1+\frac{1}{n}\right)^n=e^{n\ln(1+1/n)}$ tend vers $e^1=e$.
+
+\begin{center}
+\shadowbox{
+$\lim_{n\rightarrow +\infty}\left(1+\frac{1}{n}\right)^n=e$.
+}
+\end{center}
+ \item  Pour $n\in\Nn^*$, posons $u_n=\frac{n!}{n^n}$. Pour $n$ entier naturel non nul, on a
+
+$$\frac{u_{n+1}}{u_n}=\frac{(n+1)!}{n!}\times\frac{n^n}{(n+1)^{n+1}}=\left(\frac{n}{n+1}\right)^n=\left(1+\frac{1}{n}\right)^{-n}.$$
+Donc, quand $n$ tend vers $+\infty$, $\frac{u_{n+1}}{u_n}=e^{-n\ln(1+1/n)}=e^{-n(1/n+o(1/n))}=e^{-1+o(1)}$. Ainsi, $\frac{u_{n+1}}{u_n}$ tend vers $\frac{1}{e}=0.36...<1$. On sait alors que $\lim_{n\rightarrow +\infty}u_n=0$.
+
+\begin{center}
+\shadowbox{
+$\lim_{n\rightarrow +\infty}\frac{n!}{n^n}=0$.
+}
+\end{center}
+
+ \item  Pour $n\geq1$, $\frac{(n+\frac{1}{2})^2-1}{(n-\frac{1}{2})^2}\leq u_n\leq\frac{(n+\frac{1}{2})^2}{(n-\frac{1}{2})^2-1}$. Or, $\frac{(n+\frac{1}{2})^2-1}{(n-\frac{1}{2})^2}$ et $\frac{(n+\frac{1}{2})^2}{(n-\frac{1}{2})^2-1}$ tendent vers $1$ quand $n$ tend vers $+\infty$ et donc, d'après le théorème de la limite par encadrement, la suite $u$ converge et a pour limite $1$.
+
+\begin{center}
+\shadowbox{
+$\lim_{n\rightarrow +\infty}\frac{E\left(\left(n+\frac{1}{2}\right)^2\right)}{E\left(\left(n-\frac{1}{2}\right)^2\right)}=1$.
+}
+\end{center}
+
+ \item  Quand $n$ tend vers $+\infty$, $\sqrt[n]{n^2}=e^{\frac{1}{n}\ln(n^2)}=e^{2\ln n/n}=e^{o(1)}$, et donc $\sqrt[n]{n^2}$ tend vers $1$.
+
+\begin{center}
+\shadowbox{
+$\lim_{n\rightarrow +\infty}\sqrt[n]{n^2}=1$.
+}
+\end{center}
+ \item  $\sqrt{n+1}-\sqrt{n}=\frac{1}{\sqrt{n+1}+\sqrt{n}}\rightarrow0$.
+ \item  $\frac{1}{n^3}\sum_{k=1}^{n}k^2=\frac{n(n+1)(2n+1)}{6n^3}\sim\frac{2n^3}{6n^3}=\frac{1}{6}$.
+ \item  $\prod_{k=1}^{n}2^{k/2^k}=2^{\frac{1}{2}\sum_{k=1}^{n}\frac{k}{2^{k-1}}}$. Pour $x$ réel, posons $f(x)=\sum_{k=1}^{n}kx^{k-1}$. $f$ est dérivable sur $\Rr$ en tant que polynôme et pour tout réel $x$, 
+
+$$f(x)=\left(\sum_{k=1}^{n}x^k\right)'(x)=\left(\sum_{k=0}^{n}x^k\right)'(x).$$
+Pour $x\neq1$, on a donc 
+
+$$f(x)=\left(\frac{x^{n+1}-1}{x-1}\right)'(x)=\frac{(n+1)x^n(x-1)-(x^{n+1}-1)}{(x-1)^2}=\frac{nx^{n+1}-(n+1)x^n+1}{(x-1)^2}.$$
+En particulier, $\sum_{k=1}^{n}\frac{k}{2^{k-1}}=f\left(\frac{1}{2}\right)=\frac{\frac{n}{2^{n+1}}-\frac{n+1}{2^n}+1}{(\frac{1}{2}-1)^2}
+\rightarrow4$ (d'après un théorème de croissances comparées). Finalement,
+
+$$\prod_{k=1}^{n}2^{k/2^k}\rightarrow2^{4/2}=4.$$
+\end{enumerate}
+\fincorrection
+\finexercice

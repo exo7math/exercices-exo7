@@ -1,0 +1,31 @@
+\exercice{6884, rouget, 2012/09/05}
+\video{CGIhcrD5Jtg}
+\enonce
+% Exos de J.-L. Rouget #5197 légèrement modifié
+Déterminer le projeté orthogonal du point $M_0(x_0,y_0)$ sur la droite $(D)$ 
+d'équation $2x-3y=5$ ainsi que son symétrique orthogonal.
+\finenonce
+
+\noindication
+
+\correction
+$(D)$ est une droite de vecteur normal $\vec n = (2,-3)$. Le projeté orthogonal 
+$p(M_0)$ de $M_0$ sur $(D)$ est de la forme $M_0+\lambda.\vec{n}$ 
+où $\lambda$ est un réel à déterminer.
+Le point $M_0+\lambda.\vec{n}$ a pour coordonnées $(x_0+2\lambda,y_0-3\lambda)$.
+
+$$M_0+\lambda.\vec{n}\in(D)\iff 2(x_0+2\lambda)-3(y_0-3\lambda)=5
+\iff\lambda=\frac{-2x_0+3y_0+5}{13}.$$
+
+$p(M_0)$ a pour coordonnées $\big(x_0+2\frac{-2x_0+3y_0+5}{13},y_0-3\frac{-2x_0+3y_0+5}{13}\big)$ ou encore
+$p(M_0)= \big(\frac{9x_0+6y_0+10}{13},\frac{6x_0+4y_0-15}{13}\big)$.
+
+Le symétrique orthogonal $s(M_0)$ vérifie~:~$s(M_0)=M_0+2\overrightarrow{M_0p(M_0)}$
+ (car $p(M_0)$ est le milieu du segment $[M_0,s(M_0)]$)
+autrement dit $s(M_0)=M_0+2\lambda . \vec n$ (pour le $\lambda$ obtenu ci-dessus).
+
+Ses coordonnées sont donc 
+$s(M_0) = \big(x_0+4\frac{-2x_0+3y_0+5}{13},y_0-6\frac{-2x_0+3y_0+5}{13}\big)$ ou encore
+$\big(\frac{5x_0+12y_0+20}{13},\frac{12x_0-5y_0-30}{13}\big)$.
+\fincorrection
+\finexercice

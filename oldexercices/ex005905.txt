@@ -1,0 +1,95 @@
+\exercice{5905, rouget, 2010/10/16}
+\enonce[*** I]
+Soit $f~:~\Rr^2\rightarrow\Rr^2$ de classe $C^2$ dont la différentielle en tout point est une rotation. Montrer que $f$ est une rotation affine.
+\finenonce
+
+\noindication
+
+\correction
+Soit $(x,y)\in\Rr^2$. La matrice jacobienne de $f$ en $(x,y)$ s'écrit $\left(
+\begin{array}{cc}
+c(x,y)&-s(x,y)\\
+s(x,y)&c(x,y)
+\end{array}
+\right)$ où $c$ et $s$ sont deux fonctions de classe $C^1$ sur $\Rr^2$ telle que $c^2+s^2=1$ $(*)$. Il s'agit dans un premier temps de vérifier que les fonctions $c$ et $s$ sont constantes sur $\Rr^2$.
+
+Puisque $f$ est de classe $C^2$ sur $\Rr^2$, d'après le théorème de \textsc{Schwarz}, $ \frac{\partial^2f}{\partial x\partial y}= \frac{\partial^2f}{\partial x\partial y}$. Ceci s'écrit encore $ \frac{\partial}{\partial y}\left(
+\begin{array}{c}
+c\\
+s
+\end{array}
+\right)= \frac{\partial}{\partial x}\left(
+\begin{array}{c}
+-s\\
+c
+\end{array}
+\right)$ ou enfin
+
+\begin{center}
+$\forall(x,y)\in\Rr^2$, $\left(
+\begin{array}{c}
+ \frac{\partial c}{\partial y}(x,y)\\
+\rule{0mm}{6mm} \frac{\partial s}{\partial y}(x,y)
+\end{array}
+\right)=\left(
+\begin{array}{c}
+- \frac{\partial s}{\partial x}(x,y)\\
+\rule{0mm}{6mm} \frac{\partial c}{\partial x}(x,y)
+\end{array}
+\right)$ $(**)$.
+\end{center}
+
+En dérivant $(*)$ par rapport à $x$ ou à $y$, on obtient les égalités $c \frac{\partial c}{\partial x}+s \frac{\partial s}{\partial x}=0$ et $c \frac{\partial c}{\partial y}+s \frac{\partial s}{\partial y}=0$. Ceci montre que les deux vecteurs $\left(
+\begin{array}{c}
+ \frac{\partial c}{\partial x}\\
+\rule{0mm}{6mm} \frac{\partial s}{\partial x}
+\end{array}
+\right)$ et $\left(
+\begin{array}{c}
+ \frac{\partial c}{\partial y}\\
+\rule{0mm}{6mm} \frac{\partial s}{\partial y}
+\end{array}
+\right)$ sont orthogonaux au vecteur non nul $\left(
+\begin{array}{c}
+c\\
+s
+\end{array}
+\right)$ et sont donc colinéaires. Mais l'égalité $(**)$ montre que les deux vecteurs $\left(
+\begin{array}{c}
+ \frac{\partial c}{\partial x}\\
+\rule{0mm}{6mm} \frac{\partial s}{\partial x}
+\end{array}
+\right)$ et $\left(
+\begin{array}{c}
+ \frac{\partial c}{\partial y}\\
+\rule{0mm}{6mm} \frac{\partial s}{\partial y}
+\end{array}
+\right)$ sont aussi orthogonaux l'un à l'autre. Finalement, pour tout $(x,y)\in\Rr^2$, les deux vecteurs $\left(
+\begin{array}{c}
+ \frac{\partial c}{\partial x}(x,y)\\
+\rule{0mm}{6mm} \frac{\partial s}{\partial x}(x,y)
+\end{array}
+\right)$ et $\left(
+\begin{array}{c}
+ \frac{\partial c}{\partial y}(x,y)\\
+\rule{0mm}{6mm} \frac{\partial s}{\partial y}(x,y)
+\end{array}
+\right)$ sont nuls. On en déduit que les deux applications $c$ et $s$ sont constantes sur $\Rr^2$ et donc, il existe $\theta$ dans $\Rr$ tel que pour tout $(x,y)\in\Rr^2$, la matrice jacobienne de $f$ en $(x,y)$ est $\left(
+\begin{array}{cc}
+\cos(\theta)&-\sin(\theta)\\
+\sin(\theta)&\cos(\theta)
+\end{array}
+\right)$.
+
+Soit $g$ la rotation d'angle $\theta$ prenant la même valeur que $f$ en $(0,0)$. $f$ et $g$ ont mêmes différentielles en tout point et coïncident en un point. Donc $f=g$ et $f$ est une rotation affine.
+
+\begin{center}
+\shadowbox{
+\begin{tabular}{c}
+Soit $f~:~\Rr^2\rightarrow\Rr^2$ de classe $C^2$ dont la différentielle en tout point est une rotation.\\
+Alors $f$ est une rotation affine.
+\end{tabular}
+}
+\end{center}
+\fincorrection
+\finexercice

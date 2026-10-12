@@ -1,0 +1,28 @@
+\exercice{524, monthub, 2001/11/01}
+\video{WW2PHzsJGkw}
+\enonce
+Soit $q$ un entier au moins {\'e}gal {\`a} $2$. Pour tout $n\in
+\N$, on pose $u_n=\cos{\dfrac{2n\pi}{q}}$.
+\begin{enumerate}
+\item Montrer que $u_{n+q}=u_n$ pour tout $n \in \N$.
+\item Calculer $u_{nq}$ et $u_{nq+1}$. En d{\'e}duire que la suite $(u_n)$
+  n'a pas de limite.
+\end{enumerate}
+\finenonce 
+
+\indication
+Pour la deuxi\`eme question, raisonner par l'absurde et trouver deux sous-suites ayant des limites distinctes.
+\finindication
+
+\correction
+\begin{enumerate}
+  \item $u_{n+q} = \cos \left( \frac{2(n+q)\pi}{q} \right) = \cos \left(\frac{2n\pi}{q}+2\pi\right) = \cos \left(\frac{2n\pi}{q}\right) = u_n$.
+  \item $u_{nq} = \cos \left(\frac{2nq\pi}{q}\right) = \cos \left({2n\pi}\right)= 1 = u_0$ et $u_{nq+1} = \cos \left(\frac{2(nq+1)\pi}{q}\right) = \cos \left(\frac{2\pi}{q}\right) = u_1$.
+Supposons, par l'absurde que $(u_n)$ converge vers $\ell$.
+Alors la sous-suite $(u_{nq})_n$ converge vers $\ell$ comme 
+$u_{nq}= u_0 = 1$ pour tout $n$ alors $\ell = 1$. D'autre part
+la sous-suite $(u_{nq+1})_n$ converge aussi vers $\ell$, mais 
+$u_{nq+1}= u_1 = \cos \frac{2\pi}{q}$, donc $\ell = \cos \frac{2\pi}{q}$. Nous obtenons une contradiction car pour $q\geq 2$, nous avons $\cos \frac{2\pi}{q} \not= 1$. Donc la suite $(u_n)$ ne converge pas.
+\end{enumerate}
+\fincorrection
+\finexercice

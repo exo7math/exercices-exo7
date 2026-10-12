@@ -1,18 +1,19 @@
 \exercice{3425, quercia, 2010/03/10}
+
 \enonce[Système non linéaire]
-
-Résoudre le système : $$\left\{
-\begin{array} {lll}
-x^3y^2z^6    &=& 1 \cr
-                              x^4y^5z^{12} &=& 2 \cr
-                              x^2y^2z^5    &=& 3.\cr 
-                              \end{array}\right.$$
-
+Résoudre le système :
+\[
+  \left\{
+  \begin{array} {lll}
+    x^3y^2z^6    & = & 1  \\
+    x^4y^5z^{12} & = & 2  \\
+    x^2y^2z^5    & = & 3.
+  \end{array}\right.
+\]
 \begin{enumerate}
-  \item Lorsque $x,y,z$ sont réels strictement positifs.
-  \item Lorsque $x,y,z \in \C$.
+  \item Lorsque \( x,y,z \) sont réels strictement positifs.
 
-
+  \item Lorsque \( x,y,z \in \Cc \).
 
 \end{enumerate}
 \finenonce
@@ -20,18 +21,23 @@ x^3y^2z^6    &=& 1 \cr
 \noindication
 
 \correction
-2. $$\begin{pmatrix} 3 &2 &6             \cr
-                    4 &5 &\llap{$1$}2   \cr
-                    2 &2 &5             \cr \end{pmatrix}^{-1} =
-          \begin{pmatrix} -1 &         -2 & \hfill  6 \cr
-                    -4 &         -3 & \hfill 12 \cr
-              \hfill 2 &  \hfill  2 &        -7 \cr \end{pmatrix}  \Rightarrow 
-          \left\{
-          \begin{array}{lll} 
-          x &=& 2^{-2} 3^6    \cr
-                  y &=& 2^{-3}3^{12}  \cr
-                  z &=& 2^2 3^{-7}.   \cr 
-                  \end{array}\right.$$
- \fincorrection
+2.
+\[
+  \begin{pmatrix} 3 & 2 & 6               \\
+                4 & 5 & \llap{\( 1 \)}2 \\
+                2 & 2 & 5
+  \end{pmatrix}^{-1} =
+  \begin{pmatrix} -1       & -2       & \hfill 6  \\
+                -4       & -3       & \hfill 12 \\
+                \hfill 2 & \hfill 2 & -7
+  \end{pmatrix} \Rightarrow
+  \left\{
+  \begin{array}{lll}
+    x & = & 2^{-2} 3^6   \\
+    y & = & 2^{-3}3^{12} \\
+    z & = & 2^2 3^{-7}.
+  \end{array}\right.
+\]
+\fincorrection
 
 \finexercice

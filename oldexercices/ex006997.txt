@@ -1,0 +1,27 @@
+\exercice{6997, blanc-centi, 2015/07/04}
+\video{P_IrLQoPqYs}
+\enonce
+Résoudre
+\begin{enumerate}
+\item $y''-3y'+2y=0$
+\item $y''+2y'+2y=0$
+\item $y''-2y'+y=0$
+\item $y''+y=2\cos^2x$
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item Il s'agit d'une équation homogène du second ordre. L'équation caractéristique associée est $r^2-3r+2=0$, qui admet deux solutions: $r=2$ et $r=1$. Les solutions sont donc les fonctions définies sur $\R$ par $y(x)=\lambda e^{2x}+\mu e^x$ ($\lambda,\mu\in\R$).
+\item L'équation caractéristique associée est $r^2+2r+2=0$, qui admet deux solutions: $r=-1+i$ et $r=-1-i$. On sait alors que les solutions sont donc les fonctions définies sur $\R$ par $y(x)=e^{-x}(A\cos x+ B\sin x)$ ($A, B\in\R$). Remarquons que, en utilisant l'expression des fonctions $\cos$ et $\sin$ à l'aide d'exponentielles, ces solutions peuvent aussi s'écrire sous la forme $\lambda e^{(-1+i)x}+\mu e^{(-1-i)x}$ $(\lambda,\mu\in\R)$.
+\item L'équation caractéristique est $r^2-2r+1=0$, dont 1 est racine double. 
+Les solutions de l'équation homogène sont donc de la forme $(\lambda x+\mu)e^x$. 
+\item Les solutions de l'équation homogène sont les $\lambda\cos x+\mu \sin x$. 
+Le second membre peut en fait se réécrire $\cos^2 x=1+\cos(2x)$: 
+d'après le principe de superposition, on cherche une solution particulière sous 
+la forme $a+b\cos(2x)+c\sin(2x)$. En remplaçant, on trouve qu'une telle fonction est solution si $a=1$, $b=-\frac{1}{3}$, $c=0$. Les solutions générales sont donc les $\lambda\cos x+\mu \sin x-\frac{1}{3}\cos(2x)+1$.
+\end{enumerate}
+\fincorrection
+\finexercice

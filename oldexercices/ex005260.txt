@@ -1,0 +1,53 @@
+\exercice{5260, rouget, 2010/07/04}
+\enonce[**]
+Soit $\begin{array}[t]{cccc}
+f~:&\Rr_n[X]&\rightarrow&\Rr_{n+1}[X]\\
+ &P&\mapsto&Q=e^{X^2}(Pe^{-X^2})'
+\end{array}$.
+
+\begin{enumerate}
+\item  Vérifier que $f\in(\mathcal{L}(\Rr_n[X],\Rr_{n+1}[X])$.
+\item  Déterminer la matrice de $f$ relativement aux bases canoniques de $\Rr_n[X]$ et $\Rr_{n+1}[X]$.
+\item  Déterminer $\mbox{Ker}f$ et $\mbox{rg}f$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  Pour $P$ élément de $\Rr_n[X]$, 
+
+$$f(P)=e^{X^2}(Pe^{-X^2})'=e^{X^2}(P'e^{-X^2}-2XPe^{-X^2})=P'-2XP.$$
+
+Ainsi, si $P$ est un polynôme de degré infèrieur ou égal à $n$, $f(P)=P'-2XP$ est un polynôme de degré inférieur ou égal à $n+1$, et $f$ est bien une application de $\Rr_n[X]$ dans $\Rr_{n+1}[X]$.
+
+De plus, pour $(\lambda,\mu)\in\Rr^2$ et $(P,Q)\in\Rr_n[X]$, on a~:
+
+$$f(\lambda P+\mu Q)=(\lambda P+\mu Q)'-2X(\lambda P+\mu Q)=\lambda(P'-2XP)+\mu(Q'-2XQ)=\lambda f(P)+\mu f(Q).$$
+
+$f$ est élément de $\mathcal{L}(\Rr_n[X],\Rr_{n+1}[X])$.
+
+\item  La matrice $A$ cherchée est élément de $\mathcal{M}_{n+1,n}(\Rr)$.
+
+Pour $k=0$, $f(X^k)=f(1)=-2X$ et pour $1\leq k\leq n$, $f(X^k)=kX^{k-1}-2X^{k+1}$. On a donc~:
+
+$$A=
+\left(
+\begin{array}{cccccc}
+0&1&0&\ldots&\ldots&0\\
+-2&0&2&0& &\vdots\\
+0&-2&0&\ddots&\ddots&\vdots\\
+\vdots&\ddots&\ddots&\ddots&\ddots&0\\
+ & & &\ddots&\ddots&n\\
+\vdots& & &\ddots&-2&0\\
+0&\ldots& &\ldots&0&-2
+\end{array}
+\right).$$
+
+\item  Soit $P\in\Rr_n[X]$ tel que $f(P)=0$.
+
+Si $P$ n'est pas nul, $-2XP$ a un degré strictement plus grand que $P'$ et donc $f(P)$ n'est pas nul. Par suite, $\mbox{Ker}f=\{0\}$ ($f$ est donc injective) et d'après le théorème du rang, $\mbox{rg}f=\mbox{dim}(\Rr_n[X])-0=n+1$, ce qui montre que $\mbox{Im}f$ n'est pas $\Rr_{n+1}[X]$ ($f$ n'est pas surjective).
+\end{enumerate}
+\fincorrection
+\finexercice

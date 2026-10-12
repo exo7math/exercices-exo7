@@ -1,41 +1,35 @@
 \exercice{5947, tumpach, 2010/11/11}
+
 \enonce
-On rappelle qu'une fonction $f~:\Omega \rightarrow \mathbb{R}$ est
-dite int\'egrable si $f_{+} := \max\{f, 0\}$ et $f_{-} = \max\{-f,
-0\}$ v\'erifient $\int_{\Omega} f_{+} \,d\mu ~<~+\infty$ et
-$\int_{\Omega} f_{-} \,d\mu ~<~+\infty$. On note
-$\mathcal{L}^{1}(\Omega, \Sigma, \mu)$ l'ensemble des fonctions
-r\'eelles int\'egrables. Pour $f\in \mathcal{L}^{1}(\Omega,
-\Sigma, \mu)$, on pose
-$$
-\int_{\Omega} f\,d\mu = \int_{\Omega} f_{+}\,d\mu - \int_{\Omega}
-f_{-}\,d\mu.
-$$
+On rappelle qu'une fonction \( f :\Omega \rightarrow \Rr \) est dite intégrable si \( f_{+} := \max\{f, 0\} \) et \( f_{-} = \max\{-f, 0\} \) vérifient \( \int_{\Omega} f_{+} \,d\mu  < +\infty \) et \( \int_{\Omega} f_{-} \,d\mu  < +\infty \). On note \( \mathcal{L}^1(\Omega, \Sigma, \mu) \) l'ensemble des fonctions réelles intégrables. Pour \( f\in \mathcal{L}^1(\Omega,
+\Sigma, \mu) \), on pose
+\[
+  \int_{\Omega} f\,d\mu = \int_{\Omega} f_{+}\,d\mu - \int_{\Omega}
+  f_{-}\,d\mu.
+\]
 \begin{enumerate}
-\item Montrer l'\'equivalence
-$$
-f\in \mathcal{L}^{1}(\Omega, \Sigma, \mu) \Leftrightarrow |f| \in
-\mathcal{L}^{1}(\Omega, \Sigma, \mu)
-$$
-et \begin{equation}\label{leq} \left|\int_{\Omega} f\,d\mu
-\right|~\leq~ \int_{\Omega} |f|\,d\mu.
-\end{equation}
+  \item Montrer l'équivalence
+        \[
+          f\in \mathcal{L}^1(\Omega, \Sigma, \mu) \Leftrightarrow |f| \in
+          \mathcal{L}^1(\Omega, \Sigma, \mu)
+        \]
+        et \begin{equation}\label{leq} \left|\int_{\Omega} f\,d\mu
+          \right| \le  \int_{\Omega} |f|\,d\mu.
+        \end{equation}
 
-\item  Montrer que si $f$ est mesurable, $g$ int\'egrable et
-$|f|~\leq |g|$, alors $f$ est int\'egrable et
-$$
-\int_{\Omega} |f|\,d\mu ~\leq~\int_{\Omega} |g|\,d\mu.
-$$
+  \item Montrer que si \( f \) est mesurable, \( g \) intégrable et \( |f| \le |g| \), alors \( f \) est intégrable et
+        \[
+          \int_{\Omega} |f|\,d\mu  \le \int_{\Omega} |g|\,d\mu.
+        \]
 
-\item On rappelle qu'une fonction $f~:\Omega \rightarrow
-\mathbb{C}$ est dite int\'egrable si la partie r\'eelle $\text{Re}
-f$ et la partie imaginaire $\text{Im} f$ de $f$ sont
-int\'egrables. On pose alors
-$$
-\int_{\Omega} f\,d\mu =  \int_{\Omega}\text{Re} f\,d\mu + i
-\int_{\Omega}\text{Im} f\,d\mu.
-$$
-Montrer que l'in\'egalit\'e  \eqref{leq} est v\'erifi\'ee.
+  \item On rappelle qu'une fonction \( f :\Omega \rightarrow
+        \Cc \) est dite intégrable si la partie réelle \( \text{Re}
+        f \) et la partie imaginaire \( \text{Im} f \) de \( f \) sont intégrables. On pose alors
+        \[
+          \int_{\Omega} f\,d\mu = \int_{\Omega}\text{Re} f\,d\mu + i
+          \int_{\Omega}\text{Im} f\,d\mu.
+        \]
+        Montrer que l'inégalité \eqref{leq} est vérifiée.
 \end{enumerate}
 \finenonce
 
@@ -43,40 +37,32 @@ Montrer que l'in\'egalit\'e  \eqref{leq} est v\'erifi\'ee.
 
 \correction
 \begin{enumerate}
-\item Par d\'efinition, $ f\in \mathcal{L}^{1}(\Omega,
-\Sigma, \mu)$ si et seulement si $f_{+}$ et $f_{-}$ sont
-int\'egrables. On note que $|f| = f_{+} + f_{-}$. Donc $f\in
-\mathcal{L}^{1}(\Omega, \Sigma, \mu)\Rightarrow |f| \in
-\mathcal{L}^{1}(\Omega, \Sigma, \mu)$. R\'eciproquement, on a $0
-\leq f_{\pm} \leq |f|$, donc $ |f| \in \mathcal{L}^{1}(\Omega,
-\Sigma, \mu)\Rightarrow f\in \mathcal{L}^{1}(\Omega, \Sigma,
-\mu)$. D'autre part~:
-\begin{equation*} \left|\int_{\Omega} f\,d\mu
-\right| ~=~ \left|\int_{\Omega} f_{+}\,d\mu - \int_{\Omega}
-f_{-}\,d\mu\right|~\leq~ \int_{\Omega} f_{+}\,d\mu + \int_{\Omega}
-f_{-}\,d\mu ~=~\int_{\Omega} |f|\,d\mu.
-\end{equation*}
+  \item Par définition, \( f\in \mathcal{L}^1(\Omega,
+        \Sigma, \mu) \) si et seulement si \( f_{+} \) et \( f_{-} \) sont intégrables. On note que \( |f| = f_{+} + f_{-} \). Donc \( f\in
+        \mathcal{L}^1(\Omega, \Sigma, \mu)\Rightarrow |f| \in
+        \mathcal{L}^1(\Omega, \Sigma, \mu) \). Réciproquement, on a \( 0
+        \le f_{\pm} \le |f| \), donc \( |f| \in \mathcal{L}^1(\Omega,
+        \Sigma, \mu)\Rightarrow f\in \mathcal{L}^1(\Omega, \Sigma,
+        \mu) \). D'autre part :
+        \begin{equation*} \left|\int_{\Omega} f\,d\mu
+          \right|  =  \left|\int_{\Omega} f_{+}\,d\mu - \int_{\Omega}
+          f_{-}\,d\mu\right| \le  \int_{\Omega} f_{+}\,d\mu + \int_{\Omega}
+          f_{-}\,d\mu  = \int_{\Omega} |f|\,d\mu.
+        \end{equation*}
 
-\item Par monotonie de l'int\'egrale, on a
-$$
-\int_{\Omega} |f|\,d\mu ~\leq~\int_{\Omega} |g|\,d\mu < +\infty.
-$$
-D'apr\`es la question $(a)$, il en d\'ecoule que $f$ est
-int\'egrable.
+  \item Par monotonie de l'intégrale, on a
+        \[
+          \int_{\Omega} |f|\,d\mu  \le \int_{\Omega} |g|\,d\mu < +\infty.
+        \]
+        D'après la question \( (a) \), il en découle que \( f \) est intégrable.
 
-\item D\'efinissons $z = \int_{\Omega} f\,d\mu$. Comme $z$
-est un nombre complexe, il s'\'ecrit $z = |z|e^{i\theta}$. Soit
-$u$ la partie r\'eelle de $e^{-i\theta} f$. On a $u \leq
-|e^{-i\theta}f| = |f|.$ Donc
-$$
-\left|\int_{\Omega} f\,d\mu \right|~=~ e^{-i\theta}\int_{\Omega}
-f\,d\mu ~=~\int_{\Omega}e^{-i\theta} f\,d\mu ~=~ \int_{\Omega}
-u\,d\mu ~\leq~ \int_{\Omega} |f|\,d\mu,
-$$
-o\`u la troisi\`eme \'egalit\'e d\'ecoule du fait que le nombre
-$\int_{\Omega}e^{-i\theta} f\,d\mu$ est r\'eel donc est
-l'int\'egrale de la partie r\'eelle de $e^{-i\theta} f$
-c'est-\`a-dire de $u$.
+  \item Définissons \( z = \int_{\Omega} f\,d\mu \). Comme \( z \) est un nombre complexe, il s'écrit \( z = |z|e^{i\theta} \). Soit \( u \) la partie réelle de \( e^{-i\theta} f \). On a \( u \le |e^{-i\theta}f| = |f| \). Donc
+        \[
+          \left|\int_{\Omega} f\,d\mu \right|  =   e^{-i\theta}\int_{\Omega}
+          f\,d\mu   =  \int_{\Omega}e^{-i\theta} f\,d\mu   =   \int_{\Omega}
+          u\,d\mu  \le  \int_{\Omega} |f|\,d\mu,
+        \]
+        où la troisième égalité découle du fait que le nombre \( \int_{\Omega}e^{-i\theta} f\,d\mu \) est réel donc est l'intégrale de la partie réelle de \( e^{-i\theta} f \) c'est-à-dire de \( u \).
 \end{enumerate}
 \fincorrection
 

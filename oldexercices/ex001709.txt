@@ -1,0 +1,77 @@
+\exercice{1709, barraud, 2003/09/01}
+
+\enonce
+
+Etant donnés quatre nombres réels $(u_{0},v_{0},w_{0},x_{0})$, on définit quatre nouveaux nombres $(u_{1},v_{1},w_{1},x_{1})$ en calculant les
+moyennes suivantes :
+ $u_{1}= \frac{2u_{0}+ v_{0}+ w_{0}+ x_{0}}{5}$,
+ $v_{1}= \frac{ u_{0}+2v_{0}+ w_{0}+ x_{0}}{5}$,
+ $w_{1}= \frac{ u_{0}+ v_{0}+2w_{0}+ x_{0}}{5}$, et
+ $x_{1}= \frac{ u_{0}+ v_{0}+ w_{0}+2x_{0}}{5}$.
+En itérant ce procédé, on définit quatre suites $(u_{n})$, $(v_{n})$, $(w_{n})$, et $(x_{n})$ telles que pour tout $n\in\N$ on ait :
+$$
+\left\{
+\begin{array}{r@{\,}l} 
+  u_{n+1}&= \frac{1}{5} (2u_{n}+ v_{n}+ w_{n}+ x_{n}) \\[1.5ex]
+  v_{n+1}&= \frac{1}{5} ( u_{n}+2v_{n}+ w_{n}+ x_{n}) \\[1.5ex]
+  w_{n+1}&= \frac{1}{5} ( u_{n}+ v_{n}+2w_{n}+ x_{n}) \\[1.5ex]
+  x_{n+1}&= \frac{1}{5} ( u_{n}+ v_{n}+ w_{n}+2x_{n})
+\end{array}
+\right.
+$$ 
+
+\begin{enumerate}
+\item
+Ecrire la matrice $A$ associée à cette relation de récurrence, et la
+matrice $B=5A$. Que dire de la diagonalisabilité de $B$ ?
+
+\item
+Sans calculer le polynôme caractéristique de $B$, montrer que $1$ est
+valeur propre de $B$. Quelle est la dimension de l'espace propre
+associé ? Que dire de la multiplicité de $1$ comme valeur propre de $B$ ?
+
+\item
+En utilisant la trace de $B$, déterminer toutes les valeurs propres de $B$.
+
+\item
+Donner un polynôme annulateur de $B$ de degré 2.
+
+\item
+En déduire l'existence de deux réels $a_{n}$ et $b_{n}$, que l'on
+calculera, tels que $B^{n}=a_{n}B+b_{n}I$.
+
+\item
+Calculer $\displaystyle \lim_{n\rightarrow\infty}{\frac{a_{n}}{5^{n}}}$ et
+$\displaystyle \lim_{n\rightarrow\infty}{\frac{b_{n}}{5^{n}}}$. En déduire que la
+suite de matrices $(A^{n})_{n\in\N}$ est convergente et donner sa
+limite.
+
+{\it (On rappelle qu'une suite de matrices $M_{n}$ est dite
+convergente si chaque suite de coefficient est convergente. On pourra
+utiliser sans démonstration la continuité des opérations élémentaires
+sur les matrices pour cette notion de limite, c'est à dire que :
+\\
+\ - si $(\lambda_{n})$ est une suite convergente alors pour toute matrice
+$M$, la suite $(\lambda_{n}M)$ est convergente et
+$\lim\limits_{n\rightarrow\infty}(\lambda_{n}M) =
+(\lim\limits_{n\rightarrow\infty}\lambda_{n})M$  
+\\
+\ - si $(M_{n})$ est une suite de matrices convergente alors pour tout
+vecteur $X$, la suite de vecteurs $(M_{n}X)$ est convergente et
+ $\lim\limits_{n\rightarrow\infty}(M_{n}X) = 
+ (\lim\limits_{n\rightarrow\infty} M_{n})X$.)}
+
+\item
+En déduire que les suites $(u_{n})_{n\in\N}$, $(v_{n})_{n\in\N}$,
+$(w_{n})_{n\in\N}$, et $(x_{n})_{n\in\N}$ sont convergentes, et
+donner leur limite.
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\nocorrection
+
+\finexercice
+

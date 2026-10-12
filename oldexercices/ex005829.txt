@@ -1,0 +1,90 @@
+\exercice{5829, rouget, 2010/10/16}
+\enonce[***]
+Equation du cône de sommet $S$ et de directrice $(\mathcal{C})$ dans les cas suivants :
+
+\begin{enumerate}
+ \item  $S(0,0,0)$ et $(\mathcal{C})$ : $x = t$, $y = t^2$, $z = t^3$, $t\in\Rr^*$.
+
+\item  $S(1,-1,0)$ et $(\mathcal{C})$ : $\left\{
+\begin{array}{l}
+y+z=1\\
+x^2+y^2=z
+\end{array}
+\right.$. 
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  On note $(\mathcal{S})$ le cône de sommet $S$ et de directrice $(\mathcal{C})$.
+
+\begin{align*}\ensuremath
+M(x,y,z)\in(\mathcal{S})\setminus\{O\}&\Leftrightarrow\exists\lambda\in\Rr^*/\;O+\lambda\overrightarrow{OM}\in(\mathcal{C})\Leftrightarrow\exists\lambda\in\Rr^*,\;\exists t\in\Rr^*/\;\left\{
+\begin{array}{l}
+\lambda x=t\\
+\lambda y=t^2\\
+\lambda z=t^3
+\end{array}
+\right.\\
+ &\Leftrightarrow \exists\lambda\in\Rr^*,\;\exists t\in\Rr^*/\;\left\{
+\begin{array}{l}
+t=\lambda x\\
+y=\lambda x^2\\
+z=\lambda^2x^3
+\end{array}
+\right. \Leftrightarrow x\neq0\;\text{et}\;y\neq0\;\text{et}\;z=\left(\frac{y}{x^2}\right)^2x^3 \\
+ &\Leftrightarrow x\neq0\;\text{et}\;y\neq0\;\text{et}\;z = y^2x.
+\end{align*}
+
+Si on récupère le point $O$, $M(x,y,z)\in(\mathcal{S})\Leftrightarrow(x=y=0\;\text{ou}\;xy\neq0)\;\text{et}\;z=y^2x$.
+
+On peut noter que la surface d'équation $z = y^2x$ est la réunion du cône, sommet $O$ compris, et des axes $(Ox)$ et $(Oy)$ qui ne font pas partie du cône (à l'exception du point $O$).
+
+\item  On note $(\mathcal{S})$ le cône de sommet $S$ et de directrice $(\mathcal{C})$.
+
+\begin{align*}\ensuremath
+M(x,y,z)\in(\mathcal{S})\setminus\{S\}&\Leftrightarrow\exists\lambda\in\Rr^*/\;S+\lambda\overrightarrow{SM}\in(\mathcal{C})\Leftrightarrow\exists\lambda\in\Rr^*/\;(1+\lambda(x-1),-1+\lambda(y+1),\lambda z)\in(\mathcal{C})\\
+ &\Leftrightarrow \exists\lambda\in\Rr^*/\;\left\{
+\begin{array}{l}
+-1+\lambda(y+1)+\lambda z=1\\
+(1+\lambda(x-1))^2+(-1+\lambda(y+1))^2=\lambda z
+\end{array}
+\right.\\
+ &\Leftrightarrow\left(1+\frac{2}{y+z+1}(x-1)\right)^2+\left(-1+\frac{2}{y+z+1}(y+1)\right)^2=\frac{2}{y+z+1}z \\
+ &\Leftrightarrow (2x+y+z-1)^2 + (y-z+1)^2 = 2(y+z+1)z\;\text{et}\;y+z+1\neq0.
+\end{align*}
+
+En résumé, $M(x,y,z)$ est dans $(\mathcal{S})$ si et seulement si $M=S$ ou $M\neq S$ et $(2x+y+z-1)^2 + (y-z+1)^2 = 2(y+z+1)z\;\text{et}\;y+z+1\neq0$.
+
+Maintenant le point $S(1,-1,0)$ est dans le plan $(P)$ d'équation $y+z+1 = 0$ et la courbe $(\mathcal{C})$ n'a aucun point dans ce plan. Donc la surface $(\mathcal{S})$ contient un et un seul point de ce plan.
+
+Notons alors $(\mathcal{S}')$ la surface d'équation $(2x+y+z-1)^2 + (y-z+1)^2 = 2(y+z+1)z$ et vérifions que l'intersection de $(\mathcal{S}')$ et de $(P)$ est $\{S\}$. Ceci montrera que $(\mathcal{S}')=(\mathcal{S})$.
+
+\begin{align*}\ensuremath
+M(x,y,z)\in(\mathcal{S})\cap(P)&\Leftrightarrow\left\{
+\begin{array}{l}
+y+z+1=0\\
+(2x+y+z-1)^2 + (y-z+1)^2 = 2(y+z+1)z
+\end{array}
+\right.\\
+ &\Leftrightarrow\left\{
+\begin{array}{l}
+y+z+1=0\\
+2x+y+z-1=0\\
+y-z+2=0
+\end{array}
+\right.\Leftrightarrow\left\{
+\begin{array}{l}
+y=-1\\
+z=0\\
+x=1
+\end{array}
+\right.\Leftrightarrow M=S
+\end{align*}
+
+Finalement $(\mathcal{S}')=(\mathcal{S})$. Une équation de $(\mathcal{S})$ est donc $(2x+y+z-1)^2 + (y-z+1)^2 = 2(y+z+1)z$ ou encore $4x^2+2y^2+4xy+4xz-2yz-4x+2y-6z+2= 0$. $(\mathcal{S})$ est donc un cône du second degré.
+\end{enumerate}
+\fincorrection
+\finexercice

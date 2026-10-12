@@ -1,0 +1,65 @@
+\exercice{5509, rouget, 2010/07/15}
+\enonce[**T]
+Dans $\Rr^3$, soient $(D)$ $\left\{
+\begin{array}{l}
+x+y+z=1\\
+x-2y-z=0
+\end{array}
+\right.$ et $(\Delta)~:~6x=2y=3z$ puis $(P)~:~x+3y+2z=6$. Déterminer la projection de $(D)$ sur $(P)$ parallèlement à $(\Delta)$.
+
+\finenonce
+
+\noindication
+
+\correction
+Notons $p$ la projection sur $(P)$ parallèlement à $(\Delta)$.
+\textbullet~Déterminons un repère de $(D)$. 
+\begin{center}$\left\{
+\begin{array}{l}
+x+y+z=1\\
+x-2y-z=0
+\end{array}
+\right.\Leftrightarrow
+\left\{
+\begin{array}{l}
+y+z=-x+1\\
+2y+z=x
+\end{array}
+\right.
+\Leftrightarrow
+\left\{
+\begin{array}{l}
+y=2x-1\\
+z=-3x+2
+\end{array}
+\right.
+$
+\end{center}
+$(D)$ est la droite de repère $(A,\overrightarrow{u})$ où $A(0,-1,2)$ et $\overrightarrow{u}(1,2,-3)$.
+\textbullet~$(\Delta)$ est dirigée par le vecteur $\overrightarrow{u'}(1,3,2)$. $\overrightarrow{u}$ n'est pas colinéaire à $\overrightarrow{u'}$ et donc $(D)$ n'est pas parallèle à $(\Delta)$. On en déduit que $p(D)$ est une droite. 
+Plus précisément, $p(D)$ est la droite intersection du plan $(P)$ et du plan $(P')$ contenant $(D)$ et parallèle à $(\Delta)$. Déterminons une équation de $(P')$. Un repère de $(P')$ est $(A,\overrightarrow{u},\overrightarrow{u'})$. Donc
+
+\begin{center}
+$M(x,y,z)\in(P')\Leftrightarrow\left|
+\begin{array}{ccc}
+x&1&1\\
+y+1&2&3\\
+z-2&-3&2
+\end{array}
+\right|=0\Leftrightarrow 13x-5(y+1)+(z-2)=0\Leftrightarrow13x-5y+z=7$.
+\end{center}
+
+Finalement
+
+\begin{center}
+\shadowbox{
+$p(D)$ est la droite dont un système d'équations cartésiennes est $\left\{
+\begin{array}{l}
+13x-5y+z=7\\
+x+3y+2z=6
+\end{array}
+\right.$
+}
+\end{center}
+\fincorrection
+\finexercice

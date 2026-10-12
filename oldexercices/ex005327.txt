@@ -1,0 +1,40 @@
+\exercice{5327, rouget, 2010/07/04}
+\enonce[***I]
+Trouver les polynômes $P$ de $\Rr[X]$ vérifiant $P(X^2)=P(X)P(X+1)$ (penser aux racines de $P$).
+\finenonce
+
+\noindication
+
+\correction
+Les polynômes de degré inférieur ou égal à $0$ solutions sont clairement $0$ et $1$.
+
+Soit $P$ un polynôme de degré supérieur ou égal à $1$ tel que $P(X^2)=P(X)P(X+1)$.
+
+Soit $a$ une racine de $P$ dans $\Cc$. Alors, $a^2$, $a^4$, $a^8$..., sont encore racines de $P$. Mais, $P$ étant non nul, $P$ ne doit admettre qu'un nombre fini de racines. La suite $(a^{2^n})_{n\in\Nn}$ ne doit donc prendre qu'un nombre fini de valeurs ce qui impose $a=0$ ou $|a|=1$ car si $|a|\in]0,1[\cap]1,+\infty[$, la suite $(|a^{2^n}|)$ est strictement monotone et en particulier les $a^{2^n}$ sont deux à deux distincts.
+
+De même, si $a$ est racine de $P$ alors $(a-1)^2$ l'est encore mais aussi $(a-1)^4$, $(a-1)^8$..., ce qui impose $a=1$ ou $|a-1|=1$.
+
+En résumé,
+
+$$(a\;\mbox{racine de}\;P\;\mbox{dans}\;\Cc)\Rightarrow((a=0\;\mbox{ou}\;|a|=1)\;\mbox{et}\;(a=1\;\mbox{ou}\;|a-1|= 1))\Rightarrow(a=0\;\mbox{ou}\;a=1\;\mbox{ou}\;|a|=|a-1|=1).$$
+
+Maintenant, $|a|=|a-1|=1\Leftrightarrow|a|=1\;\mbox{et}\;|a|=|a-1|\Leftrightarrow a\in\mathcal{C}((0,0),1)\cap\mbox{med}[(0,0),(1,0)]=\{-j,-j^2\}$.
+
+Donc, si $P\in\Rr[X]$ est solution, il existe $K$, $\alpha$, $\beta$, $\gamma$, $K$ complexe non nul et $\alpha$, $\beta$ et $\gamma$ entiers naturels tels que $P=KX^\alpha(X-1)^\beta(X+j)^\gamma(X+j^2)^\gamma$ ($-j$ et $-j^2$ devant avoir même ordre de multiplicité).
+
+Réciproquement, si $P=KX^\alpha(X-1)^\beta(X+j)^\gamma(X+j^2)^\gamma=KX^\alpha(X-1)^\beta(X^2-X+1)^\gamma$.
+$$P(X^2)=KX^{2\alpha}(X^2-1)^\beta(X4-X^2+1)^\gamma=KX^{2\alpha}(X-1)^\beta(X+1)^\beta(X^2-\sqrt{3}X+1)^\gamma(X^2+
+\sqrt{3}X+1)^\gamma,$$
+
+et 
+
+\begin{align*}\ensuremath
+P(X)P(X+1)&=KX^\alpha(X-1)^\beta(X^2-X+1)\gamma K(X+1)^\alpha X^\beta(X^2+X+1)^\gamma\\
+ &=K^2X^{\alpha+\beta}(X-1)^\beta(X+1)^\alpha(X^2-X+1)^\gamma(X^2+X+1)^\gamma.
+\end{align*}
+
+Par unicité de la décompôsition en produit de facteurs irréductibles d'un polynôme non nul, $P$ est solution si et seulement si $P=0$ ou $K=1$ et $\alpha=\beta$ et $\gamma=0$.
+
+Les polynômes solutions sont $0$ et les $(X^2-X)^\alpha$ où $\alpha$ est un entier naturel quelconque.
+\fincorrection
+\finexercice

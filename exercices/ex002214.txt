@@ -1,16 +1,25 @@
 \exercice{2214, matos, 2008/04/23}
+
 \enonce[Estimation de l'erreur dans le calcul de l'inverse]
-Soit $A$ une matrice carr\'ee d'ordre $n$ inversible et $B$ une approximation de $A^{-1}$ On pose $X=I-AB$ et on suppose que $\|X\|<1$. Montrer que
-$$\|A^{-1}-B\| \leq \frac{\|BX\|}{1-\|X\|}.$$
-\finenonce 
+Soit \( A \) une matrice carrée d'ordre \( n \) inversible et \( B \) une approximation de \( A^{-1} \). On pose \( X = I-AB \) et on suppose que \( \|X\|<1 \). Montrer que
+\[
+  \|A^{-1}-B\| \le \frac{\|BX\|}{1-\|X\|}.
+\]
+\finenonce
 
 \noindication
 
 \correction
-$AB=I-X\Rightarrow B^{-1}A^{-1} = (I-X)^{-1}\Rightarrow A^{-1}=B(I-X)^{-1}=B(I+X+X^2+\cdots )$
+Puisque \( \|X\| < 1 \), la matrice \( I-X \) est inversible et la série converge : \( (I-X)^{-1} = \sum_{k = 0}^{\infty} X^k = I + X + X^2 + \cdots \)
 
-$$\|A^{-1}-B\|\leq \|BX\|\|I+X+\cdots \|\leq \|BX\|(1+\|X\|
-+\|X\|^2+ \cdots )\leq \frac{\|BX\|}{1-\|X\|} .$$
-pour $\|X\|<1$ 
+De \( AB = I-X \), on tire \( AB(I-X)^{-1} = I \), ce qui prouve que \( A^{-1} = B(I-X)^{-1} \). On a alors :
+\[
+  A^{-1} - B = B(I + X + X^2 + \cdots) - B = B(X + X^2 + \cdots) = BX(I + X + X^2 + \cdots).
+\]
+En passant à la norme et par sous-multiplicativité, on obtient directement :
+\[
+  \|A^{-1}-B\| \le \|BX\| \sum_{k = 0}^{\infty} \|X\|^k = \frac{\|BX\|}{1-\|X\|}.
+\]
 \fincorrection
+
 \finexercice

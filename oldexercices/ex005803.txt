@@ -1,0 +1,73 @@
+\exercice{5803, rouget, 2010/10/16}
+\enonce[** I]
+Soit $P$ le plan de $\Rr^4$ d'équations $\left\{
+\begin{array}{l}
+x+y+z+t=0\\
+x+y-2z-t=0
+\end{array}
+\right.$ dans une base orthonormée $\mathcal{B}$ de $\Rr^4$ muni de sa structure euclidienne canonique.
+
+\begin{enumerate}
+ \item Déterminer les matrices dans $\mathcal{B}$ de la projection orthogonale sur $P$ et de la symétrie orthogonale par rapport à $P$.
+
+\item  Calculer la distance d'un vecteur quelconque de $\Rr^4$ à $P$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+Les deux formes linéaires considérées sont indépendantes et donc $P$ est un plan. Une base de $P$ est par exemple $(i,j) = ((1,-1,0,0)(1,0,2,-3))$. On orthonormalise la base $(i,j)$.
+
+On prend $e_1= \frac{1}{\sqrt{2}}(1,-1,0,0)$ puis $e_2'= j - (j|e_1)e_1 = (1,0,2,-3) -\frac{1}{2}(1,-1,0,0) = \frac{1}{2}(1,1,4,-6)$
+puis $e_2=\frac{1}{3\sqrt{6}}(1,1,4,-6)$.
+
+\begin{center}
+Une base orthonormée de $P$ est $(e_1,e_2)$ où $e_1= \frac{1}{\sqrt{2}}(1,-1,0,0)$ et $e_2=\frac{1}{3\sqrt{6}}(1,1,4,-6)$.
+\end{center}
+
+\begin{enumerate}
+ \item  Le projeté orthogonal de $u = (x,y,z,t)$ sur $P$ est
+
+\begin{align*}\ensuremath 
+p_P(u)&=(u|e_1)e_1 + (u|e_2)e_2  =\frac{1}{2}(x-y) (1,-1,0,0) +\frac{1}{54}(x+y+4z-6t) (1,1,4,-6)\\
+ &= \frac{1}{27}(14x-13y+2z-3t,-13x+14y+2z-3t,2x+2y+8z-12t,-3x-3y-12z+18t).
+\end{align*}
+
+La matrice dans la base canonique de la projection orthogonale sur $P$ est
+
+\begin{center}
+\shadowbox{
+$M=\frac{1}{27}\left(
+\begin{array}{cccc}
+14&-13&2&-3\\
+-13&14&2&-3\\
+2&2&8&-12\\
+-3&-3&-12&18
+\end{array}\right)$.
+}
+\end{center}
+
+La matrice dans la base canonique de la symétrie orthogonale par rapport à $P$ est
+
+\begin{center}
+\shadowbox{
+$S = 2M - I_4= \frac{1}{27}\left(
+\begin{array}{cccc}
+1&-26&4&-6\\
+-26&1&4&-6\\
+4&4&-11&-24\\
+-6&-6&-24&9
+\end{array}\right)$.
+}
+\end{center}
+
+\item  La distance de u = (x,y,z,t) à P est
+
+\begin{align*}\ensuremath
+\|u -p_P(u)\|&=\frac{1}{27}\|(14x+13y-2z+3t,13x+14y-2z+3t,-2x-2y+19z+12t,3x+3y+12z+9t)\|\\
+ &=\frac{1}{27}\sqrt{(14x+13y-2z+3t)^2+(13x+14y-2z+3t)^2+(-2x-2y+19z+12t)^2+(3x+3y+12z+9t)^2}.
+\end{align*}  
+\end{enumerate}
+\fincorrection
+\finexercice

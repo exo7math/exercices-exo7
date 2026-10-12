@@ -1,0 +1,37 @@
+\exercice{2626, debievre, 2009/05/19}
+\enonce
+Soit $f\colon\R^3 \rightarrow \R$ une
+fonction de classe $C^1$
+et soit  $g\colon \R^3 \rightarrow \R$
+la fonction d\'efinie par
+\[
+g(x,y,z) = f(x-y,y-z,z-x). 
+\]
+Montrer que
+\begin{equation}
+\frac{\partial g}{\partial x}  + \frac{\partial g}{\partial y}  + \frac{\partial g}{\partial z} = 0.
+\label{ex3}
+\end{equation}
+\finenonce
+
+\indication
+Calculer m\`ene \`a la v\'erit\'e.
+\finindication
+
+\correction
+\begin{align*}
+\frac{\partial g}{\partial x}
+&=
+\frac{\partial f}{\partial x}-\frac{\partial f}{\partial z}
+\\
+\frac{\partial g}{\partial y}
+&=
+\frac{\partial f}{\partial y}-\frac{\partial f}{\partial x}
+\\
+\frac{\partial g}{\partial z}
+&=
+\frac{\partial f}{\partial z}-\frac{\partial f}{\partial y}
+\end{align*}
+d'o\`u \eqref{ex3}.
+\fincorrection
+\finexercice

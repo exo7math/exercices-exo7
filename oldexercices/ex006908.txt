@@ -1,0 +1,31 @@
+\exercice{6908, ruette, 2013/01/24}
+\enonce
+Dans une dictature militaire, le dictateur veut augmenter le nombre de
+naissances de garçons. Il impose la règle suivante : 
+si une femme donne naissance à une fille, elle doit continuer à faire
+des enfants ; si elle donne naissance à un garçon, elle doit arrêter
+d'avoir des enfants. On suppose que chaque femme a au moins un enfant et 
+pas plus de 5 enfants.
+\begin{enumerate}
+\item
+Soit $X$ le nombre de filles par femme. Quelle est la loi de $X$ ?
+\item
+Quel est le nombre moyen de filles d'une femme ? Le nombre moyen 
+de garçons ?
+Cette règle est-elle efficace pour augmenter le nombre de garçons ?
+\end{enumerate}
+\finenonce
+\noindication
+
+\correction
+\begin{enumerate}
+\item
+$P(X=k)=0,5^k 0,5= 0,5^{k+1}$ si $0\le k\le 4$, $P(X=5)=0,5^5$.
+\item $E(X)=\sum_{0\le k\le 5} kP(X=k)= \frac 14+ 2\frac 18+3\frac 1{16}+4\frac{1}{32}+5\frac{1}{32}=0,96875$.
+
+$Y=$ nombre de garçons. Il y a exactement 1 garçon sauf s'il y a 5 filles.
+$P(Y=0)=0,5^5=1/32$. $E(Y)=P(Y=1)\times 1=0,96875$.  $E(X)=E(Y)$, donc pas
+efficace.
+\end{enumerate}
+\fincorrection
+\finexercice

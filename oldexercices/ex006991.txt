@@ -1,0 +1,70 @@
+\exercice{6991, blanc-centi, 2015/07/04}
+\video{aFS_Z30s_RY}
+\enonce
+Résoudre sur $\R$ les équations différentielles suivantes: 
+\begin{enumerate}
+\item $y'+2y=x^2$ $(E_1)$
+\item $y'+y=2\sin x$ $(E_2)$
+\item $y'-y=(x+1)e^x$ $(E_3)$
+\item $y'+y=x-e^x+\cos x$ $(E_4)$
+\end{enumerate}
+\finenonce
+ 
+\noindication
+
+\correction\
+\begin{enumerate}
+\item Il s'agit d'une équation différentielle linéaire d'ordre 1, à coefficients constants, avec second membre.\\ 
+
+On commence par résoudre l'équation homogène associée $y'+2y=0$: les solutions sont les $y(x)=\lambda e^{-2x}$, $\lambda\in\R$.\\
+
+Il suffit ensuite de trouver une solution particulière de $(E_1)$. Le second membre étant polynomial de degré 2, on cherche une solution particulière de la m\^eme forme: \\
+$y_0(x)=ax^2+bx+c$ est solution de $(E_1)$\\
+\ \ \ $\Longleftrightarrow \forall x\in\R,\ y_0'(x)+2y_0(x)=x^2$ \\
+\ \ \  $\Longleftrightarrow \forall x\in\R,\ 2ax^2+(2a+2b)x+b+2c=x^2$ 
+
+\noindent Ainsi, en identifiant les coefficients, on voit que $y_0(x)=\frac{1}{2}x^2-\frac{1}{2}x+\frac{1}{4}$ convient.
+
+Les solutions de $(E_1)$ sont obtenues en faisant la somme de cette solution particulière et des solutions 
+de l'équation homogène: 
+$$y(x)=\frac{1}{2}x^2-\frac{1}{2}x+\frac{1}{4}+\lambda e^{-2x}\quad (x\in\R)$$
+où $\lambda$ est un paramètre réel.
+\item Il s'agit d'une équation différentielle linéaire d'ordre 1, à coefficients constants, avec second membre.\\ 
+
+
+Les solutions de l'équation homogène associée $y'+y=0$ sont les $y(x)=\lambda e^{-x}$, $\lambda\in\R$.\\
+
+Il suffit ensuite de trouver une solution particulière de $(E_2)$. Le second membre est cette fois une fonction trigonométrique, on cherche une solution particulière sous la forme d'une combinaison linéaire de $\cos$ et $\sin$:\\
+ $y_0(x)=a\cos x+b\sin x$ est solution de $(E_2)$\\
+$\Longleftrightarrow \forall x\in\R,\ y_0'(x)+y_0(x)=2\sin x$ \\
+$\Longleftrightarrow \forall x\in\R,\ (a+b)\cos x+(-a+b)\sin x=2\sin x$ 
+
+\noindent Ainsi, en identifiant les coefficients, on voit que $y_0(x)=-\cos x+\sin x$ convient.
+
+Les solutions de $(E_2)$ sont obtenues en faisant la somme de cette solution particulière et des solutions 
+de l'équation homogène:
+$$y(x)=-\cos x+\sin x+\lambda e^{-x}\quad (x\in\R)$$
+où $\lambda$ est un paramètre réel.
+\item Les solutions de l'équation homogène associée $y'-y=0$ sont les $y(x)=\lambda e^{x}$, $\lambda\in\R$. On remarque que le second membre est le produit d'une fonction exponentielle par une fonction polynomiale de degré $d=1$: or la fonction exponentielle du second membre est la m\^eme ($e^x$) que celle qui appara\^it dans les solutions de l'équation homogène. On cherche donc une solution particulière sous la forme d'un produit de $e^x$ par une fonction polynomiale de degré $d+1=2$:\\
+$y_0(x)=(ax^2+bx+c)e^x$ est solution de $(E_3)$ \\
+$\Longleftrightarrow \forall x\in\R,\ y_0'(x)-y_0(x)=(x+1)e^x$ \\
+$\Longleftrightarrow \forall x\in\R,\ (2ax+b)e^x=(x+1)e^x$ 
+
+\noindent Ainsi, en identifiant les coefficients, on voit que $y_0(x)=(\frac{1}{2}x^2+x)e^x$ convient.
+
+Les solutions de $(E_3)$ sont obtenues en faisant la somme de cette solution particulière et des solutions de l'équation homogène: 
+$$y(x)=(\frac{1}{2}x^2+x+\lambda)e^{x}\quad (x\in\R)$$
+où $\lambda$ est un paramètre réel.
+\item Les solutions de l'équation homogène associée $y'+y=0$ sont les $y(x)=\lambda e^{-x}$, $\lambda\in\R$. On remarque que le second membre est la somme d'une fonction polynomiale de degré 1, d'une fonction exponentielle (différente de $e^{-x}$) et d'une fonction trigonométrique. D'après le principe de superposition, on cherche donc une solution particulière sous la forme d'une telle somme:\\
+$y_0(x)=ax+b+\mu e^x+\alpha\cos x+\beta\sin x$ est solution de $(E_4)$ \\
+$\Longleftrightarrow \forall x\in\R,\ y_0'(x)+y_0(x)=x-e^x+\cos x$ \\
+$\Longleftrightarrow \forall x\in\R,\ ax+a+b+2\mu e^x+(\alpha+\beta)\cos x+(-\alpha +\beta)\sin x=x-e^x+\cos x$ 
+
+\noindent Ainsi, en identifiant les coefficients, on voit que $$y_0(x)=x-1-\frac{1}{2}e^x+\frac{1}{2}\cos x+\frac{1}{2}\sin x$$ convient.
+
+Les solutions de $(E_4)$ sont obtenues en faisant la somme de cette solution particulière et des solutions de l'équation homogène:
+$$y(x)=x-1-\frac{1}{2}e^x+\frac{1}{2}\cos x+\frac{1}{2}\sin x+\lambda e^{-x}\quad (x\in\R)$$
+où $\lambda$ est un paramètre réel.
+\end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,43 @@
+\exercice{7248, megy, 2021/03/06}
+
+\enonce
+Cet exercice a pour but de donner une introduction à la géométrie du disque. Cela donnera aussi une interprétation géométrique du lemme de Schwarz. On note \(\mathbb{D}\) le disque unité. Étant donné un vecteur tangent \(\xi\) en un point \(z\in \mathbb{D}\), on note sa norme euclidienne par \(\|\xi\|_{2}\) et on défini sa norme \emph{hyperbolique} ou sa norme de \emph{Poincaré} 
+par \[\|\xi\|_{\rm hyp}:=\frac{\|\xi\|_2}{1-|z|^2}.\]
+La \emph{longueur hyperbolique} d'un chemin \(\gamma:[a,b]\to\mathbb D\) est définie par
+\[\ell_{\rm hyp}(\gamma)=\int_{a}^b\|\gamma'(t)\|_{\rm hyp}dt=\int_a^b\frac{\|\gamma'(t)\|_2}{1-|\gamma(t)|^2}dt.\]
+La \emph{distance hyperbolique} ou \emph{distance de Poincaré} entre deux points \(z_0,z_1\in \mathbb D\) est définie par
+\[d_{\rm hyp}(z_0,z_1):=\inf_{\gamma}\ell_{\rm hyp}(\gamma)\]
+où le \(\inf\) est pris sur tous les chemins \(\mathcal{C}^1\) par morceaux de \(\mathbb D\) allant de \(z_0\) à \(z_1\). L'espace métrique \((\mathbb D,d_{\rm hyp})\) est appelé \emph{disque de Poincaré}. Les courbes de longueur minimale sont appelées \emph{géodésiques} ou \emph{droites hyperboliques}.
+\begin{enumerate}
+\item \begin{enumerate}
+\item
+À l'aide du lemme de Schwarz-Pick, montrer que toute application holomorphe \(f:\mathbb D\to \mathbb D\) est décroissante par rapport à la distance de Poincaré, c'est à dire que pour tout \(z_0,z_1\in \mathbb D\),
+\[d_{\rm hyp}(f(z_1),f(z_1))\leqslant d_{\rm hyp}(z_0,z_1).\]
+\item En déduire que pour tout automorphisme du disque \(f\in \rm{Aut}(\mathbb D)\) est une isométrie de \((\mathbb D,d_{\rm hyp})\).
+\end{enumerate}
+\item On veut maintenant obtenir une expression explicite pour \(d_{\rm hyp}\).
+\begin{enumerate}
+\item Soit \(w\in ]0,1[\). Montrer que la géodésique allant de \(0\) à \(w\) est le segment \([0,w]\) et montrer  \[d_{\rm hyp}(0,w)=\frac{1}{2}\ln\left(\frac{1+w}{1-w}\right).\]
+\item Soit \(w\in\mathbb D^*\). À l'aide d'un automorphisme judicieusement choisi, montrer que la géodésique de allant de \(0\) à \(w\) est le segment \([0,w]\) et montrer que 
+\[d_{\rm hyp}(0,w)=\frac{1}{2}\ln\left(\frac{1+|w|}{1-|w|}\right).\]
+\item Soit \(z_1,z_2\in \mathbb D^*\). À l'aide d'un automorphisme judicieusement choisi, montrer que la géodésique de allant de \(z_1\) à \(z_2\) est une partie du cercle orthogonal à \(\partial \mathbb D\) passant par \(z_1\) et \(z_2\) et que 
+\[d_{\rm hyp}(z_1,z_2)=\frac{1}{2}\ln\left(\frac{|1-z_1\bar z_2|+|z_1-z_2|}{|1-z_1\bar z_2|-|z_1-z_2|}\right)=2{\rm argtanh}\left|\frac{z_1-z_2}{1-z_1\bar z_2}\right|.\]
+\item Montrer que \(d_{\rm {\rm hyp}}\) est bien une distance sur \(\mathbb D\). Montrer aussi que les \emph{boules hyperboliques}  sont des boules euclidiennes (pas nécessairement avec le même centre ou le même rayon).
+\end{enumerate}
+\item La géométrie du disque hyperbolique définie ci-dessus est appelée \emph{géométrie hyperbolique}. Vérifier qu'en géométrie hyperbolique, les axiomes d'Euclide sont vérifiés, à l'exception du cinquième postulat.
+\item Rappelons que \(\mathbb D\) est biholomorphe au demi-plan \(\mathbb{H}:=\left\{z\in \C;\ \Im(z)>0\right\}\)  (dit \emph{demi-plan de Poincaré}), via l'application \(\varphi:z\mapsto i\frac{1+z}{1-z}\). Décrire les géodésiques de \((\mathbb{H},d_{\mathbb{H}})\) où \(d_{\mathbb{H}}\) est la métrique induite par \(d_{\rm hyp}\) via \(\varphi\).
+\item Nous concluons maintenant par une preuve plus <<géométrique>> du théorème de Liouville. Soit \(f:\C\to \C\) une application holomorphe bornée.
+\begin{enumerate}
+\item Montrer que l'on peut supposer que \(f(z)\in \mathbb{D}\) pour tout \(z\in \C\) (ce que l'on supposera dans la suite).
+\item Pour tout \(R\in \R_+^*\) on considère l'application \(f_R:\mathbb D\to \mathbb D\) définie par \(f_R(z)=f(Rz)\) \(\forall z\in \mathbb{D}\). À l'aide la propriété de décroissance de la distance de Poincaré, montrer que pour tout  \(R\in \mathbb{R}_+^*\) et pour tout \(z_1,z_2\in B(0,R)\), 
+\[d_{\rm hyp}(f(z_1),f(z_2))=d_{\rm hyp}\big(f_R\big(\frac{z_1}{R}\big),\big(\frac{z_2}{R}\big)\big)\leqslant d_{\rm hyp}\big(\frac{z_1}{R},\frac{z_2}{R}\big)\]
+\item En déduire  que \(f\) est constante.
+\end{enumerate}
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\nocorrection
+
+\finexercice

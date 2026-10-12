@@ -1,0 +1,97 @@
+\exercice{5266, rouget, 2010/07/04}
+\enonce[****]
+Soit $A\in\mathcal{M}_{3,2}(\Rr)$ et $B\in\mathcal{M}_{2,3}(\Rr)$ telles que~:
+
+$$AB=
+\left(
+\begin{array}{ccc}
+0&-1&-1\\
+-1&0&-1\\
+1&1&2
+\end{array}
+\right)
+.$$
+
+Montrer l'existence d'au moins un couple $(A,B)$ vérifiant les conditions de l'énoncé puis calculer $BA$. (Indication. Calculer $(AB)^2$ et utiliser le rang.)
+\finenonce
+
+\noindication
+
+\correction
+Soit $(i,j)$ la base canonique de $\Rr^2$ et $(e_1,e_2,e_3)$ la base canonique de $\Rr^3$. On cherche $f\in\mathcal{L}(\Rr^2,\Rr^3)$ et $g\in\mathcal{L}(\Rr^3,\Rr^2)$ tels que
+
+$$f\circ g(e_1)=-e_2+e_3,\;f\circ g(e_2)=-e_1+e_3\;\mbox{et}\;f\circ g(e_3)=-e_1-e_2+2e_3(=f\circ g(e_1+e_2)).$$
+
+On pose $g(e_1)=i$, $g(e_2)=j$ et $g(e_3)=i+j$, puis $f(i)=-e_2+e_3$ et $f(j)=-e_1+e_3$. Les applications linéaires $f$ et $g$ conviennent, ou encore si on pose
+
+$$A=\left(
+\begin{array}{cc}
+0&-1\\
+-1&0\\
+1&1
+\end{array}
+\right)\;\mbox{et}\;B=\left(
+\begin{array}{ccc}
+1&0&1\\
+0&1&1
+\end{array}
+\right),$$
+
+alors $AB=\left(
+\begin{array}{cc}
+0&-1\\
+-1&0\\
+1&1
+\end{array}
+\right)\left(
+\begin{array}{ccc}
+1&0&1\\
+0&1&1
+\end{array}
+\right)=\left(
+\begin{array}{ccc}
+0&-1&-1\\
+-1&0&-1\\
+1&1&2
+\end{array}
+\right)$.
+
+$A$ et $B$ désignent maintenant deux matrices quelconques, éléments de $\mathcal{M}_{3,2}(\Rr)$ et $\mathcal{M}_{2,3}(\Rr)$ respectivement, telles que $AB=\left(
+\begin{array}{ccc}
+0&-1&-1\\
+-1&0&-1\\
+1&1&2
+\end{array}
+\right)$. Calculons $(AB)^2$. On obtient
+
+$$(AB)^2=\left(
+\begin{array}{ccc}
+0&-1&-1\\
+-1&0&-1\\
+1&1&2
+\end{array}
+\right)\left(
+\begin{array}{ccc}
+0&-1&-1\\
+-1&0&-1\\
+1&1&2
+\end{array}
+\right)=\left(
+\begin{array}{ccc}
+0&-1&-1\\
+-1&0&-1\\
+1&1&2
+\end{array}
+\right)=AB.$$
+
+Mais alors, en multipliant les deux membres de cette égalité par $B$ à gauche et $A$ à droite, on obtient
+
+$$(BA)^3=(BA)^2\;(*).$$
+
+Notons alors que 
+
+$$\mbox{rg}(BA)\geq\mbox{rg}(ABAB)=\mbox{rg}((AB)^2)=\mbox{rg}(AB)=2,$$
+
+et donc, $BA$ étant une matrice carrée de format $2$, $\mbox{rg}(BA)=2$. $BA$ est donc une matrice inversible. Par suite, on peut simplifier les deux membres de l'égalité $(*)$ par $(BA)^2$ et on obtient $BA=I_2$.
+\fincorrection
+\finexercice

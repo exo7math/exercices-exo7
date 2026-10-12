@@ -1,0 +1,149 @@
+\exercice{1097, cousquer, 2003/10/01}
+\video{jQcF6rnWgyI}
+\enonce
+Soient trois vecteurs $e_1,e_2,e_3$ formant une base de $\Rr^3$.
+On note $\phi$ l'application linéaire définie par
+$\phi(e_1)=e_3$, $\phi(e_2)=-e_1+e_2+e_3$ et $\phi(e_3)=e_3$.
+
+\begin{enumerate}
+\item Écrire la matrice $A$ de $\phi$ dans la base $(e_1,e_2,e_3)$.
+Déterminer le noyau de cette application. 
+
+\item On pose $f_1=e_1-e_3$, $f_2=e_1-e_2$,  $f_3=-e_1+e_2+e_3$.
+Calculer $e_1,e_2,e_3$ en fonction de $f_1,f_2,f_3$.
+Les vecteurs $f_1,f_2,f_3$ forment-ils une base de $\Rr^3$ ?
+
+\item Calculer $\phi(f_1), \phi(f_2), \phi(f_3)$ en fonction de $f_1,f_2,f_3$.
+Écrire la matrice $B$ de $\phi$ dans la base $(f_1,f_2,f_3)$ et trouver la nature
+de l'application $\phi$.
+
+\item On pose $P=\begin{pmatrix}1&1&-1\cr 0&-1&1\cr-1&0&1\cr\end{pmatrix}$. Vérifier que $P$ est
+inversible et calculer $P^{-1}$. Quelle relation lie $A$, $B$, $P$ et $P^{-1}$ ?
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item 
+  On note la base $\mathcal{B}=(e_1,e_2,e_3)$
+  et $X=\begin{pmatrix}x\\y\\z\end{pmatrix}_{\mathcal{B}}= x e_1+y e_2+z e_3$.
+  La matrice $A=\textrm{Mat}_{\mathcal{B}}(f)$ est composée des vecteurs colonnes $\phi(e_i)$,
+on sait 
+$$\phi(e_1)=e_3 = \begin{pmatrix}0\\0\\1\end{pmatrix}_{\mathcal{B}} \quad
+\phi(e_2)=-e_1+e_2+e_3 = \begin{pmatrix}-1\\1\\1\end{pmatrix}_{\mathcal{B}} \quad 
+\phi(e_3)=e_3 = \begin{pmatrix}0\\0\\1\end{pmatrix}_{\mathcal{B}} \quad
+$$
+
+$$\text{donc } \quad A=\begin{pmatrix}
+0 & -1 & 0 \\
+0 & 1  & 0 \\
+1 & 1  & 1 \\    
+\end{pmatrix}$$
+
+Le noyau de $\phi$ (ou celui de $A$) est l'ensemble de $X=\begin{pmatrix}x\\y\\z\end{pmatrix}$
+tel que $AX=0$.
+
+$$AX=0 \iff \begin{pmatrix}
+0 & -1 & 0 \\
+0 & 1  & 0 \\
+1 & 1  & 1 \\  
+\end{pmatrix} \times \begin{pmatrix}x\\y\\z\end{pmatrix}
+=\begin{pmatrix}0\\0\\0\end{pmatrix}
+\iff \left\{
+\begin{array}{rcl}
+-y&=&0\\
+y&=&0\\
+x+y+z&=&0\\
+\end{array}\right.
+$$
+Donc $\Ker \phi = \big\{ \begin{pmatrix}x \\ 0 \\-x\end{pmatrix}_{\mathcal{B}}  \in \Rr^3 \mid x\in \Rr \big\}= 
+\textrm{Vect} \begin{pmatrix}1\\0\\-1\end{pmatrix}_{\mathcal{B}} = \textrm{Vect} (e_1-e_3)$.
+Le noyau est donc de dimension $1$.
+
+
+  \item On applique le pivot de Gauss comme si c'était un système linéaire :
+$$\left\{
+\begin{array}{cccccclr}
+e_1  & &     &-& e_3  &=& f_1 &_{L_1}\\
+e_1  &-& e_2 & &      &=& f_2 &_{L_2}\\
+-e_1 &+& e_2 &+& e_3  &=& f_3 &_{L_3}\\
+\end{array}\right.
+\iff  \left\{
+\begin{array}{cccccclr}
+e_1  & &     &-& e_3  &=& f_1 &\\
+     &-& e_2 &+& e_3  &=& f_2-f_1 &_{L_2-L_1}\\
+     & & e_2 & &      &=& f_3+f_1 &_{L_3+L_1}\\
+\end{array}\right.
+$$
+On en déduit
+$$\left\{
+\begin{array}{rcl}
+ e_1 &=& f_1+f_2+f_3 \\
+ e_2 &=& f_1+f_3\\
+ e_3 &=& f_2+f_3 \\
+\end{array}\right.
+$$
+
+Donc tous les vecteurs de la base $\mathcal{B}=(e_1,e_2,e_3)$ s'expriment en fonction
+de $(f_1,f_2,f_3)$, ainsi la famille $(f_1,f_2,f_3)$ est génératrice.
+Comme elle a exactement $3$ éléments dans l'espace vectoriel $\Rr^3$ de dimension $3$ alors
+$\mathcal{B}'=(f_1,f_2,f_3)$ est une base.
+
+
+  \item
+$$\phi(f_1)=\phi(e_1-e_3)=\phi(e_1)-\phi(e_3)=e_3-e_3=0$$
+
+$$\phi(f_2)=\phi(e_1-e_2)= \phi(e_1)-\phi(e_2)=e_3 - (-e_1+e_2+e_3) = e_1-e_2 = f_2$$
+
+$$\phi(f_3)=\phi(-e_1+e_2+e_3)=-\phi(e_1)+\phi(e_2)+\phi(e_3)=-e_1+e_2+e_3=f_3$$
+
+Donc, dans la base $\mathcal{B}'=(f_1,f_2,f_3)$, nous avons
+$$\phi(f_1)=0=\begin{pmatrix}0\\0\\0\end{pmatrix}_{\mathcal{B}'}\quad
+\phi(f_2)=f_2=\begin{pmatrix}0\\1\\0\end{pmatrix}_{\mathcal{B}'}
+\phi(f_3)=f_3=\begin{pmatrix}0\\0\\1\end{pmatrix}_{\mathcal{B}'}$$
+
+Donc la matrice de $\phi$ dans la base $\mathcal{B}'$ est
+$$B=\begin{pmatrix}
+0 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1 \\    
+\end{pmatrix}$$
+
+$\phi$ est la projection sur  $\textrm{Vect} (f_2,f_3)$ parallèlement à $\textrm{Vect} (f_1)$ (autrement dit
+c'est la projection sur le plan d'équation $(x'=0)$, parallèlement à l'axe des $x'$, ceci dans la base $\mathcal{B}'$).
+
+  \item $P$ est la matrice de passage de $\mathcal{B}$ vers $\mathcal{B}'$.
+En effet la matrice de passage contient -en colonnes- les coordonnées des vecteurs
+de la nouvelle base $\mathcal{B}'$ exprimés dans l'ancienne base $\mathcal{B}$.
+
+
+Si un vecteur a pour coordonnées $X$ dans la base $\mathcal{B}$ et $X'$ dans la base $\mathcal{B}'$
+alors $PX'=X$ (attention à l'ordre).
+Et si $A$ est la matrice de $\phi$ dans la base $\mathcal{B}$ et $B$ est la matrice de $\phi$ dans la base
+$\mathcal{B}'$ alors
+$$B=P^{-1}AP$$
+(Une matrice de passage entre deux bases est inversible.)
+
+Ici on calcule l'inverse de $P$ :
+$$P^{-1} = \begin{pmatrix}
+1 & 1 & 0 \\
+1 & 0 & 1 \\
+1 & 1 & 1 \\    
+\end{pmatrix}
+\quad \text{ donc } \quad 
+B=P^{-1}AP=\begin{pmatrix}
+0 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1 \\   
+\end{pmatrix}
+$$
+
+On retrouve donc bien les mêmes résultats que précédemment.
+
+\end{enumerate}
+
+\fincorrection
+
+\finexercice

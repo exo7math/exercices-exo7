@@ -1,0 +1,43 @@
+\exercice{505, bodin, 1998/09/01}
+\video{FRpMiQ8DOwI}
+\enonce
+ Soit $(u_n)_{n\in\N}$ une suite de $\R$. Que pensez-vous des
+propositions suivantes :
+\par\noindent $\bullet$ Si $(u_{n})_n$ converge vers un r\'eel $\ell$ alors $(u_{2n})_n$ et $(u_{2n+1})_n$
+convergent vers $\ell$.
+\par\noindent  $\bullet$ Si $(u_{2n})_n$ et $(u_{2n+1})_n$ sont convergentes, il en est
+de m\^{e}me de $(u_{n})_n$.
+\par\noindent $\bullet$ Si $(u_{2n})_n$ et $(u_{2n+1})_n$ sont convergentes, de m\^{e}me
+limite $\ell$, il en est de m\^{e}me de $(u_{n})_n$.
+\finenonce 
+
+\indication
+Dans l'ordre c'est vrai, faux et vrai. Lorsque c'est faux chercher un contre-exemple, lorsque c'est vrai il faut le prouver.
+\finindication
+
+\correction
+\begin{enumerate}
+  \item Vrai. Toute sous-suite d'une suite convergente est convergente
+et admet la m\^eme limite (c'est un résultat du cours).
+  \item Faux. Un contre-exemple est la suite $(u_n)_n$ d\'efinie
+par $u_n = (-1)^n$. Alors $(u_{2n})_n$ est la suite constante
+(donc convergente) de valeur $1$, et $(u_{2n+1})_n$ est constante
+de valeur $-1$. Cependant la suite $(u_n)_n$ n'est pas
+convergente.
+  \item Vrai.
+La convergence de la suite $(u_n)_n$ vers $\ell$, que nous
+souhaitons d\'emontrer, s'\'ecrit :
+$$ \forall \epsilon > 0\  \ \exists N \in \Nn \ \text{\  tel que\ \  }
+(n \geqslant N \Rightarrow |u_n-\ell| < \epsilon).$$ 
+Fixons $\epsilon >
+0$. Comme, par hypoth\`ese, la suite $(u_{2p})_p$  converge vers
+$\ell$ alors il existe $N_1$ tel
+$$ 2p \geqslant N_1 \Rightarrow |u_{2p}-\ell| < \epsilon.$$
+Et de m\^eme, pour la suite $(u_{2p+1})_p$ il existe $N_2$ tel que
+$$ 2p+1 \geqslant N_2 \Rightarrow |u_{2p+1}-\ell| < \epsilon.$$
+Soit $N = \max(N_1,N_2)$, alors
+$$n \geqslant N\Rightarrow |u_{n}-\ell| < \epsilon.$$
+Ce qui prouve la convergence de $(u_n)_n$ vers $\ell$.
+\end{enumerate}
+\fincorrection
+\finexercice

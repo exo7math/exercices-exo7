@@ -1,0 +1,19 @@
+\exercice{5795, rouget, 2010/10/16}
+\enonce[**]
+Déterminer $\text{card}(O_n(\Rr)\cap\mathcal{M}_n(\Zz))$.
+\finenonce
+
+\noindication
+
+\correction
+Soit $A$ une matrice orthogonale à coefficients entiers. Puisque les colonnes ou les lignes de $A$ sont unitaires, on trouve par ligne ou par colonne un et un seul coefficient de valeur absolue égale à $1$, les autres coefficients étant nuls. $A$ est donc obtenue en multipliant chaque coefficient d'une matrice de permutation par $1$ ou $-1$. Réciproquement, une telle matrice est orthogonale à coefficients entiers.
+
+Il y a $n!$ matrices de permutation et pour chaque matrice de permutation $2^n$ façons d'attribuer un signe $+$ ou $-$ à chaque coefficient égal à $1$. Donc
+
+\begin{center}
+\shadowbox{
+$\text{card}(O_n(\Rr)\cap\mathcal{M}_n(\Zz)) = 2^nn!$.
+}
+\end{center}
+\fincorrection
+\finexercice

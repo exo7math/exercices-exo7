@@ -1,60 +1,41 @@
 \exercice{1609, barraud, 2003/09/01}
 
 \enonce
-  Soit $f$ un endomorphisme de $E=\C^{n}$. Soit $\pi_{1},...,\pi_{N}$ des
-  endomorphismes tous non nuls de $E$ et $\lambda_{1},...,\lambda_{N}$
-  $N$ nombres complexes distincts. On suppose que~:
-  $$
-  \forall m\in\N \quad f^{m}=\sum_{k=1}^{N}\lambda_{k}^{m}\pi_{k}.
-  $$
+Soit \( f \) un endomorphisme de \( E = \Cc^n \). Soit \( \pi_1,...,\pi_N \) des endomorphismes tous non nuls de \( E \) et \( \lambda_1,...,\lambda_N \) sont \( N \) nombres complexes distincts. On suppose que :
+\[
+  \forall m\in\Nn \quad f^m = \sum_{k = 1}^N\lambda_k^m\pi_k.
+\]
+\begin{enumerate}
+  \item Montrer que \( \forall P\in\Cc[X],\quad P(f) = \sum_{k = 1}^NP(\lambda_k)\pi_k \)
 
-  \begin{enumerate}
-\item
-    Montrer que $\forall P\in\C[X],\quad
-    P(f)=\sum_{k=1}^{N}P(\lambda_{k})\pi_{k}$
+        \medskip
 
-\medskip
+        On considère le polynôme \( Q = \prod_{1\le k\le N}(X-\lambda_k) \) et pour chaque \( p\in\{1,...,N\} \) les polynômes suivants :
+        \[
+          Q_p = \prod_{\substack{ 1\le k\le N \\k\neq p}}
+          (X-\lambda_k)\qquad\text{et}\qquad
+          \tilde Q_p = \frac{1}{Q_p(\lambda_p)}\ Q_p
+        \]
 
-  On considère le polynôme $Q=\prod_{1\leq k\leq N}(X-\lambda_{k})$ et
-  pour chaque $p\in\{1,...,N\}$ les polynômes suivants~:  
-  $$
-  Q_{p}=\prod_{\substack{ 1\leq k\leq N \\k\neq p}}
-             (X-\lambda_{k})\qquad\text{et}\qquad
-  \tilde Q_{p}=\frac{1}{Q_{p}(\lambda_{p})}\ Q_{p}
-  $$
-\item
- 
-    Calculer $Q(f)$. Qu'en déduit-on pour $f$~?
-\item
+  \item Calculer \( Q(f) \). Qu'en déduit-on pour \( f \)?
 
-    Montrer que $Sp(f)\subset\{\lambda_{1},...,\lambda_{N}\}$
-\item
+  \item Montrer que \( Sp(f)\subset\{\lambda_1,...,\lambda_N\} \)
 
-    Montrer que $\tilde Q_{p}(f)=\pi_{p}$. Vérifier alors que
-    $\pi_{p}\circ\pi_{q}= \left\{
-    \begin{array}{l}
-      0       \text{ si } p\neq q\\
-      \pi_{p} \text{ si } p=q
-    \end{array}
-    \right. $
-\item
+  \item Montrer que \( \tilde Q_p(f) = \pi_p \). Vérifier alors que \( \pi_p\circ\pi_q = \left\{
+        \begin{array}{l}
+          0 \text{ si } p\neq q \\
+          \pi_p \text{ si } p = q
+        \end{array}
+        \right. \).
 
-    Calculer $f\circ\pi_{p}$. En déduire que
-    $Sp(f)=\{\lambda_{1},...,\lambda_{N}\}$.
+  \item Calculer \( f\circ\pi_p \). En déduire que \( Sp(f) = \{\lambda_1,...,\lambda_N\} \).
 
+        \medskip On note \( E_p \) l'espace propre associé à la valeur propre \( \lambda_p \).
 
-\medskip
-  On note $E_{p}$ l'espace propre associé à la valeur propre
-  $\lambda_{p}$. 
-\item
-    Montrer que $\mathrm{Im}\pi_{p}\subset E_{p}$. Réciproquement, pour $x\in
-    E_{p}$, montrer que $x\in\mathrm{Ker}\pi_{q}$ pour $q\neq p$ (on calculera
-    par exemple $\pi_{q}\circ f(x)$ de deux façons différentes) puis que
-    $x=\pi_{p}(x)$. En déduire que $E_{p}\subset\mathrm{Im}\pi_{p}$.
-\item    En déduire que $\mathrm{Im}\pi_{p}=E_{p}$ et que
-    $\mathrm{Ker}\pi_{p}=\bigoplus_{q\neq p}E_{q}$. Décrire géométriquement
-    $\pi_{p}$.
-  \end{enumerate}
+  \item Montrer que \( \mathrm{Im}\pi_p\subset E_p \). Réciproquement, pour \( x\in E_p \), montrer que \( x\in\mathrm{Ker}\pi_q \) pour \( q\neq p \) (on calculera par exemple \( \pi_q\circ f(x) \) de deux façons différentes) puis que \( x = \pi_p(x) \). En déduire que \( E_p\subset\mathrm{Im}\pi_p \).
+
+  \item En déduire que \( \mathrm{Im}\pi_p = E_p \) et que \( \mathrm{Ker}\pi_p = \bigoplus_{q\neq p}E_q \). Décrire géométriquement \( \pi_p \).
+\end{enumerate}
 \finenonce
 
 \noindication
@@ -62,4 +43,3 @@
 \nocorrection
 
 \finexercice
-

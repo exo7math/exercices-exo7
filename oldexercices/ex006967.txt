@@ -1,0 +1,86 @@
+\exercice{6967, exo7, 2014/04/08}
+\video{KHEyahxXAKk}
+\enonce
+% De 444, cousquer
+Décomposer les fractions suivantes en éléments simples sur $\Rr$, 
+par identification des coefficients.
+\begin{enumerate}
+\item $F=\frac{X}{X^2-4}$
+\item $G=\frac{X^3-3X^2+X-4}{X-1}$
+\item $H=\frac{2X^3+X^2-X+1}{X^2-2X+1}$
+\item $K=\frac{X+1}{X^4+1}$
+\end{enumerate}
+\finenonce 
+
+\indication
+Pour $G$ et $H$, commencer par faire une division euclidienne 
+pour trouver la partie polynomiale.
+\finindication
+
+\correction\
+\begin{enumerate}
+\item $F=\frac{X}{X^2-4}$. 
+
+Commençons par factoriser le dénominateur : $X^2-4=(X-2)(X+2)$, 
+d'où une décomposition en éléments simples du type
+$F=\frac{a}{X-2}+\frac{b}{X+2}$. 
+En réduisant au même dénominateur, il vient
+$\frac{X}{X^2-4}=\frac{(a+b)X+2(a-b)}{X^2-4}$ et en identifiant les coefficients, on obtient le système
+$\left\{\begin{array}{l}a+b=1\\2(a-b)=0\end{array}\right.$. Ainsi $a=b=\frac{1}{2}$ et 
+$$\frac{X}{X^2-4} = \frac{\frac12}{X-2} + \frac{\frac12}{X+2}$$
+
+\item $G=\frac{X^3-3X^2+X-4}{X-1}$. 
+
+Lorsque le degré du numérateur (ici $3$) est supérieur 
+ou égal au degré du dénominateur (ici $1$), il
+faut effectuer la division euclidienne du numérateur par le dénominateur pour 
+faire apparaître la partie polynomiale (ou partie entière).
+Ici la division euclidienne s'écrit $X^3-3X^2+X-4=(X-1)(X^2-2X-1)-5$. 
+Ainsi en divisant les deux membres par $X-1$ on obtient 
+$$\frac{X^3-3X^2+X-4}{X-1} = X^2-2X-1-\frac{5}{X-1}$$
+La fraction est alors déjà décomposée en éléments simples.
+
+\item $H=\frac{2X^3+X^2-X+1}{X^2-2X+1}$. 
+
+Commençons par faire la division euclidienne du numérateur par le dénominateur :
+$2X^3+X^2-X+1=(X^2-2X+1)(2X+5)+7X-4$, ce qui donne
+$H=2X+5+\frac{7X-4}{X^2-2X+1}$. 
+Il reste à décomposer en éléments simples la fraction rationnelle $H_1=\frac{7X-4}{X^2-2X+1}$. 
+Puisque le dénominateur se factorise en $(X-1)^2$, elle sera de la forme 
+$H_1=\frac{a}{(X-1)^2}+\frac{b}{X-1}$.
+En réduisant au même dénominateur, il vient
+$\frac{7X-4}{X^2-2X+1}=\frac{bX+a-b}{X^2-2X+1}$ et en identifiant les coefficients, on obtient 
+$b=7$ et $a=3$. Finalement,
+$$\frac{2X^3+X^2-X+1}{X^2-2X+1} =
+2X+5+\frac{3}{(X-1)^2}+\frac{7}{X-1}$$
+
+\item $K=\frac{X+1}{X^4+1}$. 
+
+Ici, il n'y a pas de partie polynomiale puisque le degré du numérateur 
+est strictement inférieur au degré du dénominateur. 
+Le dénominateur admet quatre racines complexes 
+$e^{\frac{i\pi}{4}}$, $e^{\frac{3i\pi}{4}}$, $e^{\frac{5i\pi}{4}}=e^{-\frac{3i\pi}{4}}$ et 
+$e^{\frac{7i\pi}{4}}=e^{-\frac{i\pi}{4}}$. 
+En regroupant les racines complexes conjuguées, on obtient sa factorisation sur $\Rr$:
+\begin{eqnarray*}
+X^4+1 &=& \big( (X-e^{\frac{i\pi}{4}})(X-e^{-\frac{i\pi}{4}}) \big)\big( (X-e^{\frac{3i\pi}{4}})(X-e^{-\frac{3i\pi}{4}}) \big) \\
+      &=&\big(X^2-2\cos\tfrac{\pi}{4}+1\big)\big(X^2-2\cos\tfrac{3\pi}{4}+1\big)\\
+      &=&(X^2-\sqrt{2}X+1)(X^2+\sqrt{2}X+1)
+\end{eqnarray*}
+Puisque les deux facteurs $(X^2-\sqrt{2}X+1)$ et $(X^2+\sqrt{2}X+1)$ sont irréductibles sur $\R$, la décomposition en éléments simples de $K$ est de la forme
+$K=\frac{aX+b}{X^2-\sqrt{2}X+1}+\frac{cX+d}{X^2+\sqrt{2}X+1}$.
+
+En réduisant au même dénominateur et en identifiant les coefficients avec ceux de $K=\frac{X+1}{X^4+1}$, 
+on obtient le système
+$$\left\{\begin{array}{l}
+a+c=0\\
+\sqrt{2}a+b-\sqrt{2}c+d=0\\
+a+\sqrt{2}b+c-\sqrt{2}d=1\\
+b+d=1
+\end{array}\right.$$
+Système que l'on résout en $a=\frac{-\sqrt{2}}{4}$, $c=\frac{\sqrt{2}}{4}$, $b=\frac{2+\sqrt{2}}{4}$ et $d=\frac{2-\sqrt{2}}{4}$. Ainsi
+$$\frac{X+1}{X^4+1} = \frac{-\frac{\sqrt{2}}{4}X+\frac{2+\sqrt{2}}{4}}{X^2-\sqrt{2}X+1} + \frac{\frac{\sqrt{2}}{4}X+\frac{2-\sqrt{2}}{4}}{X^2+\sqrt{2}X+1}$$ 
+\end{enumerate}
+\fincorrection
+\finexercice
+

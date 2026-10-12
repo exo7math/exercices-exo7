@@ -1,0 +1,208 @@
+\exercice{5955, tumpach, 2010/11/11}
+\enonce
+\ \\
+
+\textbf{Th\'eor\`eme 1.}(Th\'eor\`eme de Riesz)
+Pour tout $1\leq p\leq +\infty$, l'espace $L^{p}(\mu)$ est
+complet.
+
+\bigskip
+
+\textbf{Th\'eor\`eme 2.}
+Soit $p$  tel que $1\leq p \leq +\infty$ et soit
+$\{f_{n}\}_{n\in\mathbb{N}}$ une suite de Cauchy dans $L^{p}(\mu)$
+convergeant vers une fonction $f\in L^{p}(\mu)$. Alors il existe
+une sous-suite de $\{f_{n}\}_{n\in\mathbb{N}}$ qui converge
+ponctuellement presque-partout vers $f$.
+
+\bigskip
+
+\emph{Le but de cet exercice est de d\'emontrer les
+th\'eor\`emes~1 et 2.}
+
+
+\begin{enumerate}
+\item \emph{Cas de $L^{\infty}(\mu)$.}
+  \begin{enumerate}
+  \item Soit $\{f_{n}\}_{n\in\mathbb{N}}$ une suite de Cauchy
+de $L^{\infty}(\mu)$. Pour $k, m, n\geq 1$,  consid\'erons les
+ensembles
+\begin{eqnarray*}
+A_{k} := \{ x\in\Omega, |f_{k}(x)| > \|f_{k}\|_{\infty}\}~; &
+B_{m,n} := \{ x\in\Omega, |f_{m}(x) - f_{n}(x)| > \|f_{m} -
+f_n\|_{\infty} \}.
+\end{eqnarray*}
+Montrer que $E := \bigcup_{k} A_{k}  \bigcup_{n,m} B_{m,n}$ est de
+mesure nulle. 
+  \item Montrer que sur le compl\'ementaire de
+$E$, la suite $\{f_n\}_{n\in\mathbb{N}}$ converge uniform\'ement
+vers une fonction $f$. 
+  \item En d\'eduire que
+$L^{\infty}(\mu)$ est complet.
+  \end{enumerate}
+\item \emph{Cas de $L^{p}(\mu)$.}
+  \begin{enumerate}
+  \item Soit $1\leq p<+\infty$ et $\{f_{n}\}_{n\in\mathbb{N}}$
+une suite de Cauchy dans $L^{p}(\mu)$. Montrer qu'il existe une
+sous-suite $\{f_{n_{k}}\}_{k\in\mathbb{N}}$ de
+$\{f_{n}\}_{n\in\mathbb{N}}$ telle que
+$\|f_{n_{k+1}}-f_{n_{k}}\|_{p}\leq 2^{-k}$. 
+  \item Posons
+\begin{eqnarray*}
+g_{k} = \sum_{i=1}^{k}|f_{n_{i+1}} - f_{n_{i}}|\quad
+\text{et}\quad g= \sum_{i=1}^{+\infty}|f_{n_{i+1}} - f_{n_{i}}|,
+\end{eqnarray*}
+o\`u $g$ est \`a valeurs dans $\mathbb{R}\cup\{+\infty\}$. Montrer
+que pour tout $k\geq1$, on a $\|g_{k}\|_{p} < 1$, puis que
+$\|g\|_{p} \leq 1$. 
+  \item En d\'eduire que la s\'erie
+$$f_{n_{1}} + \sum_{i=1}^{\infty} \left(f_{n_{i+1}} -
+f_{n_{i}}\right)$$ est absolument convergente pour presque tout
+$x\in\Omega$. Notons $f(x)$ sa somme lorsque celle-ci est finie et
+posons $f(x)=0$ sinon. V\'erifier que $f$ est la limite ponctuelle
+des $\{f_{n_{k}}\}_{k\in\mathbb{N}}$ pour presque tout
+$x\in\Omega$. 
+  \item Montrer que $f - f_{m} \in L^{p}(\mu)$,
+$f\in L^{p}(\mu)$ et  que $\|f - f_{m}\|_{p}\rightarrow 0$ quand
+$m\rightarrow +\infty$. Conclure.
+\end{enumerate}
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item \emph{Cas de $L^{\infty}(\mu)$.}
+
+\begin{enumerate}
+\item Soit $\{f_{n}\}_{n\in\mathbb{N}}$ une suite de Cauchy
+de $L^{\infty}(\mu)$. Pour $k, m, n\geq 1$,  soient les ensembles
+\begin{eqnarray*}
+A_{k} := \{ x\in\Omega, |f_{k}(x)| > \|f_{k}\|_{\infty}\}~; &
+B_{m,n} := \{ x\in\Omega, |f_{m}(x) - f_{n}(x)| > \|f_{m} -
+f_n\|_{\infty} \},
+\end{eqnarray*}
+et $E := \bigcup_{k} A_{k}  \bigcup_{n,m} B_{m,n}$. Par
+d\'efinition de la norme infinie, les ensembles $A_k$ et $B_{n,m}$
+sont de mesure nulle. Par $\sigma$-sous-additivit\'e de $\mu$, on
+a
+$$
+\mu(E) \leq \sum_{k} \mu(A_k) + \sum_{n,m}\mu(B_{n,m}) = 0.
+$$
+
+\item Sur $\Omega\setminus E$, on a~:
+$$
+\sup_{x\in\Omega\setminus E}|f_{n} - f_{m}| \leq \| f_{n} -
+f_{m}\|_{\infty},
+$$
+i.e. $\{f_{n}\}_{n\in\mathbb{N}}$ est une suite de Cauchy uniforme
+sur $\Omega\setminus E$. En particulier, pour tout
+$x\in\Omega\setminus E$, la suite $\{f_{n}(x)\}_{n\in\mathbb{N}}$
+est une suite de Cauchy r\'eelle, donc est convergeante  car
+$\mathbb{R}$ est complet. Notons $f$ la limite ponctuelle de
+$f_{n}$ sur $\Omega\setminus E$. Montrons que la suite
+$\{f_n\}_{n\in\mathbb{N}}$ converge uniform\'ement vers $f$ sur le
+compl\'ementaire de $E$. On a
+$$
+|f_{n}(x) - f(x)| = \lim_{m\rightarrow +\infty}|f_{n}(x) -
+f_{m}(x)|\leq\lim_{m\rightarrow +\infty}\|f_{n} -
+f_{m}\|_{\infty}.
+$$
+Comme $\{f_{n}\}_{n\in\mathbb{N}}$ est de Cauchy dans
+$L^{\infty}(\mu)$, pour tout $\varepsilon>0$, il existe un rang
+$N_{\varepsilon}$ tel que pour $n,m > N_{\varepsilon}$, $\|f_{n} -
+f_{m}\|_{\infty} < \varepsilon$.  Alors pour $n> N_{\varepsilon}$,
+$$
+\sup_{x\in\Omega\setminus E}|f_{n}(x) - f(x)| \leq \varepsilon.
+$$
+Il est d\'ecoule que  $\{f_n\}_{n\in\mathbb{N}}$ converge
+uniform\'ement vers $f$ sur $\Omega\setminus E$.
+
+
+
+
+\item \'Etendons la fonction $f$ \`a $\Omega$ en posant $f =
+0$ sur $E$. Il reste \`a montrer que la fonction $f$ appartient
+\`a $L^{\infty}(\mu)$. Pour $n> N_{\varepsilon}$, et
+$x\in\Omega\setminus E$, on a
+$$
+|f(x)| < |f_n(x)| + \varepsilon \leq \|f_n(x)\|_{\infty}  +
+\varepsilon
+$$
+On en d\'eduit que $\|f\|_{\infty} \leq \|f_n(x)\|_{\infty}  +
+\varepsilon < +\infty$. Ainsi $L^{\infty}(\mu)$ est complet.
+
+\end{enumerate}
+
+
+\item \emph{Cas de $L^{p}(\mu)$.}
+\begin{enumerate}
+\item Soit $1\leq p<+\infty$ et $\{f_{n}\}_{n\in\mathbb{N}}$
+une suite de Cauchy dans $L^{p}(\mu)$. Il existe $n_{1}$ tel que
+pour $n,m\geq n_{1}$, $\|f_{n} - f_{m}\|_{p} < 2^{-1}$. On prend
+ensuite $n_{2}>n_{1}$ tel que pour $n,m \geq n_{2}$, $\|f_{n} -
+f_{m}\|_{p} < {2}^{-2}$, et ainsi de suite, pour tout $k$, il
+existe un $n_{k} > n_{k-1}$ tel que $n,m\geq n_{k}\Rightarrow
+\|f_{n} - f_{m}\|_{p} < {2}^{-k} $.
+
+ \item
+Posons
+\begin{eqnarray*}
+g_{k} = \sum_{i=1}^{k}|f_{n_{i+1}} - f_{n_{i}}|\quad
+\text{et}\quad g= \sum_{i=1}^{+\infty}|f_{n_{i+1}} - f_{n_{i}}|,
+\end{eqnarray*}
+o\`u $g$ est \`a valeurs dans $\mathbb{R}\cup\{+\infty\}$. Pour
+tout $k\geq 1$, on a
+$$
+\|g_{k}\|_{p} = \| \sum_{i=1}^{k}|f_{n_{i+1}} - f_{n_{i}}|
+~\|_{p}.
+$$
+D'apr\`es l'in\'egalit\'e de Minkowski,
+$$
+\|g_{k}\|_{p} \leq \sum_{i=1}^{k} \|f_{n_{i+1}} - f_{n_{i}}\|_{p}
+=\sum_{i=1}^{k} 2^{-i} < 1.
+$$
+D'apr\`es le lemme de Fatou, on en d\'eduit que $\|g\|_{p} \leq
+1$.
+
+
+
+\item Comme $\int_{\Omega} |g|^{p} \,d\mu < +\infty$,
+n\'ecessairement $|g| < +\infty$ $\mu$-pp, i.e. pour presque tout
+$x\in\Omega$ la s\'erie
+$$f_{n_{1}} + \sum_{i=1}^{\infty} \left(f_{n_{i+1}} -
+f_{n_{i}}\right)$$ est absolument convergente. Notons $f(x)$ sa
+somme lorsque celle-ci est finie et posons $f(x)=0$ sinon. On a~:
+$$
+f_{n_{1}} + \sum_{i=1}^{k-1} \left(f_{n_{i+1}} -
+f_{n_{i}}\right) = f_{n_{k}}
+$$
+et $f(x) = \lim_{k\rightarrow
++\infty}f_{n_{k}}\quad\mu-\text{pp}$.
+
+\item Soit $\varepsilon>0$. Comme
+$\{f_{n}\}_{n\in\mathbb{N}}$ est de Cauchy dans $L^{p}(\mu)$, il
+existe $N_{\varepsilon}>0$ tel que pour $n, m > N_{\varepsilon}$,
+$\|f_{n} - f_{m}\|_{p} < \varepsilon$. Pour $m>N_{\varepsilon}$ on
+a par le lemme de Fatou~:
+$$
+\int_{\Omega}| f - f_{m}|^{p}\,d\mu = \int_{\Omega}
+|\lim_{k\rightarrow+\infty} f_{n_{k}} - f_{m}|^{p}\,d\mu \leq
+\lim\inf_{k\rightarrow+\infty}\int_{\Omega} |f_{n_{k}} -
+f_{m}|^{p}\,d\mu \leq \varepsilon^{p}.
+$$
+Ainsi $f - f_{m} \in L^{p}(\mu)$ et $\|f - f_{m}\|_{p}\rightarrow
+0$ quand $m\rightarrow +\infty$. De plus, d'apr\`es
+l'in\'egalit\'e de Minkowski, on a
+$$
+\|f\|_{p} = \|(f - f_{m}) + f_{m}\|_{p}\leq \|(f - f_{m}) \|_{p} +
+\|f_{m}\|_{p}<+\infty,
+$$
+c'est-\`a-dire $f\in L^{p}(\mu)$. En conclusion $L^{p}(\mu)$ est
+complet.
+\end{enumerate}
+\end{enumerate}
+\fincorrection
+
+\finexercice

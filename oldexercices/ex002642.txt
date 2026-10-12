@@ -1,0 +1,33 @@
+\exercice{2642, debievre, 2009/05/19}
+\enonce
+Trouver les points critiques de la  fonction $f$  suivante et
+d\'eterminer si ce sont des minima locaux, des maxima locaux ou
+des points selle.
+\[
+f(x,y)=\sin x+y^2-2y+1
+\] 
+\finenonce
+
+\indication 
+Voir l'exercice pr\'ec\'edent.
+\finindication
+
+\correction 
+Puisque
+$df=\cos x \,\mathrm dx + (2y-2)\mathrm dy$, les points critiques sont les points
+$((k+1/2)\pi,1)$ ($k\in \mathbb Z)$.
+En plus,
+$\mathrm{Hess}_f=\left[\begin{matrix} - \sin x & 0\\ 0 & 2 \end{matrix}\right]$ 
+et 
+\[
+-\sin ((k+1/2)\pi)=(-1)^{k+1}
+\]
+d'o\`u 
+$\mathrm{Hess}_f((k+1/2)\pi,1)
+=\left[\begin{matrix} (-1)^{k+1} & 0\\ 0 & 2 \end{matrix}\right]$.
+Par cons\'equent,  si
+$k$ est impaire,
+le point $((k+1/2)\pi,1)$ pr\'esente un minimum local et,
+ si $k$ est paire, le point $((k+1/2)\pi,1)$ pr\'esente un point selle. 
+\fincorrection
+\finexercice

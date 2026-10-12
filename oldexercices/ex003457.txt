@@ -1,0 +1,33 @@
+\exercice{3457, quercia, 2010/03/10}
+\enonce[Racines de l'unité]
+
+On note $\omega = e^{2i\pi/n}$, $\alpha = e^{i\pi/n}$ et $D$ le déterminant
+$n \times n$ : $D = \det\Bigl( \omega^{(k-1)(l-1)} \Bigr)$.
+
+\begin{enumerate}
+  \item  Calculer $D^2$.
+     
+  \item  Montrer que $D = \prod_{k < \ell}(\omega^\ell - \omega^k)
+            = \prod_{k < \ell}\left(\alpha^{k+\ell}\cdot
+              2i\sin\frac {\ell-k}n \pi\right)$.
+  \item  Exprimer $D$ sous forme trigonométrique.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $M^2 = \begin{pmatrix}n      &0      &\dots     &0     \cr
+                              0      &0      &          &n     \cr
+                              \vdots &       &\dots           \cr
+                              0      &n      &          &0     \cr \end{pmatrix}
+                \Rightarrow  D^2 = \varepsilon_{n-1}n^n$.
+  \item
+  \item $n^{n/2}\exp\left({i\frac \pi4 (n-1)(3n+2)}\right)$.
+\end{enumerate}
+Avec la notation : $\varepsilon_n = \begin{cases}1 &\text{si}n \equiv 0 \text{ ou  }1 (\mathrm{mod}\, 4) \cr
+                                   -1 &\text{sinon.}\end{cases}$
+ \fincorrection
+
+\finexercice

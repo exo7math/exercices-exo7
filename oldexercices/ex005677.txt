@@ -1,0 +1,41 @@
+\exercice{5677, rouget, 2010/10/16}
+\enonce[***]
+Soient $f$ et $g$ deux endomorphismes d'un $\Cc$-espace vectoriel de dimension finie non nulle qui commutent. Montrer que $f$ et $g$ sont simultanément trigonalisables.
+\finenonce
+
+\noindication
+
+\correction
+Montrons le résultat par récurrence sur $n =\text{dim} E\geqslant 1$.
+
+\textbullet~Si $n = 1$, c'est clair.
+
+\textbullet~Soit $n\geqslant 1$. Supposons que deux endomorphismes d'un $\Cc$-espace de dimension $n$ qui commutent soient simultanément trigonalisables.
+
+Soient $f$ et $g$ deux endomorphismes d'un $\Cc$-espace vectoriel de dimension $n+1$ tels que $fg = gf$.
+
+$f$ et $g$ ont au moins un vecteur propre en commun. En effet, $f$ admet au moins une valeur propre $\lambda$. Soit $E_\lambda$ le sous-espace propre de $f$ associé à $\lambda$. $g$ commute avec $f$ et donc laisse stable $E_\lambda$. La restriction de $g$ à $E_\lambda$ est un endomorphisme de $E_\lambda$ qui est de dimension finie non nulle. Cette restriction admet donc une valeur propre et donc un vecteur propre. Ce vecteur est un vecteur propre commun à $f$ et $g$.
+
+Commençons à construire une base de trigonalisation simultanée de $f$ et $g$. Soit $x$ un vecteur propre commun à $f$ et $g$. On complète la famille libre $(x)$ en une base $\mathcal{B}= (x,...)$ de $E$. Dans la base $\mathcal{B}$, les matrices $M$ et $N$ de $f$ et $g$ s'écrivent respectivement  $M=\left(
+\begin{array}{cc}
+\lambda&\times\\
+0&M_1
+\end{array}
+\right)$ et  $N=\left(
+\begin{array}{cc}
+\mu&\times\\
+0&N_1
+\end{array}
+\right)$ où $M_1$ et $N_1$ sont de format $n$. Un calcul par blocs montre que $M_1$ et $N_1$ commutent ou encore si $f_1$ et $g_1$ sont les endomorphismes de $\Cc^n$ de matrices $M_1$ et $N_1$ dans la base canonique de $\Cc^n$, $f_1$ et $g_1$ commutent. Par hypothèse de récurrence, $f_1$ et $g_1$ sont simultanément trigonalisables. Donc il existe une matrice inversible de format $n$  $P_1$ et deux matrices triangulaires supérieures de format
+$n$ $T_1$ et $T_1'$ telles que $P_1^{-1}M_1P_1=T_1$ et $P_1^{-1}N_1P_1 = T_1'$.
+
+Soit $P=\left(
+\begin{array}{cc}
+1&0\\
+0&P_1
+\end{array}
+\right)$. $P$ est inversible de format $n+1$ car $\text{det}P =\text{det}P_1\neq0$ et un calcul par blocs montre que $P^{-1}MP$ et $P^{-1}NP$ sont triangulaires supérieures.
+
+$P$ est donc la matrice de passage de la base $\mathcal{B}$ à une base de trigonalisation simultanée de $f$ et $g$.
+\fincorrection
+\finexercice

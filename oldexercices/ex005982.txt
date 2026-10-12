@@ -1,0 +1,51 @@
+\exercice{5982, bodin, 2010/12/06}
+\video{DJNMuwA-0Ts}
+\enonce
+
+Soit $x$ un r\'eel.
+\begin{enumerate}
+  \item Donner l'encadrement qui définit la partie entière $E(x)$.
+  \item Soit $(u_n)_{n\in \Nn^*}$ la suite définie par $u_n = \dfrac{E (x) + E (2x) + \ldots + E (nx)}{n^2}$. \\
+  Donner un encadrement simple de $n^2 \times u_n$, qui utilise $\sum_{k=1}^n k$.
+  \item En déduire que $(u_n)$ converge et calculer sa limite.
+  \item En d\'eduire que $\Qq$ est dense dans $\Rr$.
+\end{enumerate}
+\finenonce
+
+\indication
+\begin{enumerate}
+ \item Rappelez-vous que la partie entière de $x$ est le plus grand entier, inférieur ou égal à $x$. Mais il est ici préférable de donner la définition de $E(x)$ en disant que $E(x) \in \Zz$ et que $x$ vérifie un certain encadrement...
+
+ \item Encadrer $E(kx)$, pour $k=1,\ldots,n$.
+
+ \item Rappelez-vous d'abord de la formule $1+2+\cdots+n$ puis utilisez le fameux théorème des gendarmes.
+
+ \item Les $u_n$ ne seraient-ils pas des rationnels ? 
+\end{enumerate}
+\finindication
+
+\correction
+\begin{enumerate}
+ \item Par définition est l'unique nombre $E(x) \in \Zz$ tel que 
+ $$E(x) \le x < E(x)+1.$$
+
+ \item Pour le réel $kx$, ($k=1,\ldots,n$) l'encadrement précédent s'écrit $E(kx) \le kx < E(kx)+1$.
+ Ces deux inégalités s'écrivent aussi $E(kx) \le kx$ et $E(kx) > kx - 1$, d'où l'encadrement
+ $kx-1 < E(kx) \le kx$. On somme cet encadrement, $k$ variant de $1$ à $n$, pour obtenir :
+ $$\sum_{k=1}^n (kx-1) < \sum_{k=1}^n E(kx) \le \sum_{k=1}^n kx.$$
+Ce qui donne 
+$$ x \cdot \sum_{k=1}^n k \quad - n < n^2 \cdot u_n \le x \cdot  \sum_{k=1}^n k.$$
+
+ \item On se rappelle que $\sum_{k=1}^n k = \frac{n(n+1)}{2}$ donc 
+ nous obtenons l'encadrement :
+ $$ x\cdot  \frac{1}{n^2} \cdot \frac{n(n+1)}{2} -   \frac{1}{n} < u_n \le x \cdot  \frac{1}{n^2} \cdot  \frac{n(n+1)}{2}.$$
+ $\frac{1}{n^2} \cdot \frac{n(n+1)}{2}$ tend vers $\frac 12$, donc par le théorème des gendarmes $(u_n)$ tend vers $\frac x2$.
+
+ \item Chaque $u_n$ est un rationnel (le numérateur et le dénominateur sont des entiers).
+Comme la suite $(u_n)$ tend vers $\frac x 2$, alors la suite de rationnels $(2u_n)$ tend vers $x$.
+Chaque réel $x\in \Rr$ peut être approché d'aussi près que l'on veut par des rationnels, donc 
+$\Qq$ est dense dans $\Rr$. 
+\end{enumerate}
+\fincorrection
+
+\finexercice

@@ -1,0 +1,30 @@
+\exercice{4589, quercia, 2010/03/14}
+\enonce[$\prod_{n=1}^\infty (1-q^nx)$]
+
+Soit $q \in {]-1,1[}$ et $f(x) = \prod_{n=1}^\infty (1-q^nx)$.
+
+\begin{enumerate}
+  \item Montrer que $f(x)$ existe pour tout $x \in \R$ et que $f$ est développable
+    en série entière au voisinage de 0.
+    On admettra que si une fonction $g$ est DSE alors $e^g$ l'est.
+    
+  \item A l'aide de la relation : $f(x) = (1-qx)f(qx)$, calculer les coefficients
+    du développement de $f$ et le rayon de convergence.
+    
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Pour $|x| < \frac1q$ : $\ln f(x) = \sum_{n=1}^\infty \ln(1-q^nx)
+             = -\sum_{n=1}^\infty\sum_{k=1}^\infty \frac{q^{kn}x^k}k
+             = -\sum_{k=1}^\infty \frac{q^kx^k}{k(1-q^k)}$,\par
+             $f = e^{\ln f}$ est DSE par composition.
+  \item $a_n = \frac{q^{n(n+1)/2}}{(q-1)\dots(q^n-1)}$, $R = \infty$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

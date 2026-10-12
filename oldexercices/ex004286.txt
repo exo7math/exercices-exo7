@@ -1,0 +1,48 @@
+\exercice{4286, quercia, 2010/03/12}
+\enonce[Constante d'Euler]
+
+Soit $\gamma$ la constante d'Euler. Montrer que~\dots
+
+\begin{enumerate}
+  \item $ \int_{t=0}^{+\infty} e^{-t}\ln t\,d t = -\gamma$.
+
+
+  \item $ \int_{t=0}^1 \frac{1-e^{-t}-e^{-1/t}}t\,d t = \gamma$.
+
+
+  \item $ \int_{t=0}^1 \left(\frac 1t + \frac 1{\ln(1-t)}\right)d t = \gamma$.
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Intégrations par parties successives,\par
+\begin{align*}
+ \int_{t=0}^{+\infty} e^{-t}\ln t\,d t
+&=  \int_{t=0}^{+\infty} e^{-t}\frac{t^k}{k!}\left(\ln t - \frac 11 - \frac 12 - \dots - \frac 1k\right)\,d t\cr
+&=  \int_{t=0}^{+\infty} e^{-t}\frac{t^k}{k!}\ln(t/k)\,d t + \left(\ln k - \frac 11 - \frac 12 - \dots - \frac 1k\right).\cr\end{align*}
+
+Soit $I_k =  \int_{t=0}^{+\infty} e^{-t}\frac{t^k}{k!}\ln(t/k)\,d t$.
+On pose $t=ku$~:
+\begin{align*}I_k
+          &= \frac{k^{k+1}}{k!} \int_{u=0}^{+\infty} (ue^{-u})^k\ln u\,d u\cr
+          &= \frac{k^{k+1}}{k!} \int_{u=0}^{+\infty}  d\left(\frac{(ue^{-u})^{k-1}}{k-1}\right) \frac{u^2e^{-u}\ln u}{1-u}\cr
+          &= -\frac{k^{k+1}}{k!(k-1)} \int_{u=0}^{+\infty} (ue^{-u})^{k-1}  d\left(\frac{u^2e^{-u}\ln u}{1-u}\right).\cr\end{align*}
+
+Comme $0\le ue^{-u}\le e^{-1}$, il reste $\sqrt k$ au dénominateur multiplié par quelque chose de borné.
+  \item 
+\begin{align*}
+ \int_{t=0}^1 \frac{1-e^{-t}-e^{-1/t}}t\,d t
+&=  \int_{t=0}^1 \frac{1-e^{-t}}t\,d t -  \int_{t=1}^{+\infty}\frac{e^{-t}}t\,d t\cr
+&= \lim_{x\to0^+}\left(-\ln x -  \int_{t=x}^{+\infty}\frac{e^{-t}}t\,d t\right)\cr
+&= \lim_{x\to0^+}\left((e^{-x}-1)\ln x -  \int_{t=x}^{+\infty}e^{-t}\ln t\,d t\right)\cr
+&= - \int_{t=0}^{+\infty} e^{-t}\ln t\,d t.\cr\end{align*}
+  \item $ \int_{t=x}^{+\infty}\frac{e^{-t}}t\,d t = (t=-\ln(1-u)) =
+ \int_{u=1-e^{-x}}^1 \frac{-d u}{\ln(1-u)}$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

@@ -1,0 +1,30 @@
+\exercice{7146, megy, 2017/05/01}
+\enonce
+\'Ecrire en coordonnée complexe :
+\begin{enumerate}
+\item la rotation d'angle $\pi/4$ et de centre d'affixe $2+3i$;
+\item la réflexion d'axe d'équation  $y=2x+1$.
+\end{enumerate}
+\finenonce
+
+\noindication      
+\correction  
+\begin{enumerate}
+\item 
+Par le cours, la rotation d'angle $\theta$ et de centre d'affixe $\omega$ est représentée par l'application 
+\[\C\to \C, \: z\mapsto e^{i\theta}(z-\omega)+\omega.\]
+
+La rotation d'angle $\pi/4$ et de centre d'affixe $2+3i$ est donc représentée par l'application
+\[ \C\to \C,\: z\mapsto e^{i\pi/4}(z-(2+3i)) + 2+3i = e^{i\pi/4}z +\frac{4 + \sqrt 2 + i(6-5\sqrt 2)}{2}.\]
+
+\item La réflexion d'axe d'équation  $y=2x+1$ est représentée par une application de la forme
+\[ \C\to \C, z\mapsto a\overline z+b,\]
+où $a \in \C^*$ et $b\in \C$ sont des paramètres à déterminer. On sait que $a$ est le nombre complexe de module un dont l'argument est le double de l'angle entre l'axe des abscisses et l'axe de la réflexion. Donc dans ce cas, $a=e^{2i \arctan(2)}$. On peut aussi calculer la forme algébrique de $a$ en écrivant $a=\frac{(1+2i)^2}{|(1+2i)^2|} = \frac{-3+4i}{5}$.
+
+Calculons $b$. On peut par exemple injecter un affixe particulier $z$ et son image $z'$ dans l'équation $z'=\frac{-3+4i}{5} \overline z+b$ et obtenir $b$. Le plus simple est de prendre l'affixe d'un point sur l'axe de la réflexion, qui est donc un point fixe de la réflexion. Prenons par exemple $z=i=z'$. On obtient l'égalité $i =\frac{3-4i}{5} i+b$, d'où $b=i\left(1-\frac{3-4i}{5}\right) = i\frac{2+4i}{5} = \frac{-4+2i}{5}$.
+
+Finalement, la réflexion d'axe d'équation  $y=2x+1$ est représentée par l'application:
+\[ \C\to \C, z\mapsto \frac{(-3+4i)\overline z-4+2i}{5}.\]
+\end{enumerate}
+\fincorrection
+\finexercice  

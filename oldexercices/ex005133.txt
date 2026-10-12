@@ -1,0 +1,91 @@
+\exercice{5133, rouget, 2010/06/30}
+\enonce[**T]
+ Pour $z\in\Cc\setminus\{1\}$, on pose $Z=\frac{1+z}{1-z}$. Déterminer et construire
+l'ensemble des points $M$ d'affixes $z$ tels que
+\begin{enumerate}
+\item  $|Z|=1$.
+\item  $|Z|=2$.
+\item  $Z\in\Rr$.
+\item  $Z\in i\Rr$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\textbf{A- Solutions algébriques.}] Pour $z\in\Cc$, posons $z=x+iy$ où $(x,y)\in\Rr^2$.
+\begin{enumerate}
+ \item  $$|Z|=1\Leftrightarrow\frac{|1+z|^2}{|1-z|^2}=1\Leftrightarrow(1+x)^2+y^2=(1-x)^2+y^2\;\text{et}\;(x,y)\neq(1,0)\Leftrightarrow4x=0\Leftrightarrow x=0.$$
+L'ensemble cherché est la droite $(Oy)$.
+
+ \item 
+
+\begin{align*}
+|Z|=2&\Leftrightarrow(1+x)^2+y^2=4((1-x)^2+y^2)\Leftrightarrow3x^2+3y^2-10x+3=0\;\text{et}\;(x,y)\neq(1,0)\\
+ &\Leftrightarrow x^2+y^2-\frac{10}{3}x+1=0\;\text{et}\;(x,y)\neq(1,0)\\
+ &\Leftrightarrow\left(x-\frac{5}{3}\right)^2+y^2=\frac{16}{9}\;\text{et}\;(x,y)\neq(1,0)\\
+ &\Leftrightarrow\left(x-\frac{5}{3}\right)^2+y^2=\frac{16}{9}.
+\end{align*}
+L'ensemble cherché est le cercle de centre $\Omega\left(\frac{5}{3},0\right)$ et de rayon $\frac{4}{3}$.
+
+ \item 
+
+\begin{align*}
+Z\in\Rr&\Leftrightarrow Z=\overline{Z}\Leftrightarrow\frac{1+z}{1-z}=\frac{1+{\bar z}}{1-{\bar z}}\\
+ &\Leftrightarrow(1+z)(1-{\bar z})=(1-z)(1+{\bar z})\;\text{et}\;z\neq1\Leftrightarrow z-{\bar z}={\bar z}-z\;\text{et}\;z\neq1\\
+  &\Leftrightarrow z={\bar z}\;\text{et}\;z\neq1\Leftrightarrow z\in\Rr\;\text{et}\;z\neq1.
+\end{align*}
+L'ensemble cherché est la droite $(Ox)$ privé du point $(1,0)$.
+ \item 
+
+\begin{align*}
+Z\in i\Rr&\Leftrightarrow Z=-\overline{Z}\Leftrightarrow\frac{1+z}{1-z}=-\frac{1+{\bar z}}{1-{\bar z}}\Leftrightarrow(1+z)(1-{\bar z})=-(1-z)(1+{\bar z})\;\text{et}\;z\neq1\\
+ &\Leftrightarrow 1-z{\bar z}=-1+z{\bar z}\;\text{et}\;z\neq1\Leftrightarrow|z|^2=1\;\text{et}\;z\neq1\Leftrightarrow|z|=1\;\text{et}\;z\neq1.
+\end{align*}
+L'ensemble cherché est donc le cercle de centre $O$ et de rayon $1$ privé du point $(1,0)$.
+\end{enumerate}
+\textbf{B- Solutions géométriques.} Soient $A$ et $B$ les points d'affixes respectives $-1$ et $1$ et
+$\mathcal{E}$ l'ensemble cherché. Soit $M$ un point du plan distinct de $B$ d'affixe $z$.
+\begin{enumerate}
+ \item 
+
+$$M\in\mathcal{E}\Leftrightarrow|z+1|=|z-1|\Leftrightarrow AM=BM\Leftrightarrow M\in\mbox{med}[AB]=(Oy).$$
+ \item  Soit $\Omega=\mbox{bar}(A(1),B(-4))$. On a $x_\Omega=\frac{-1}{5}(x_A-4x_B)=\frac{5}{3}$ et
+$y_\Omega=\frac{-1}{5}(y_A-4y_B)=0$.
+
+\begin{align*}
+M\in\mathcal{E}&\Leftrightarrow|z+1|^2=4|z-1|^2\Leftrightarrow AM^2=4BM^2\\
+ &\Leftrightarrow\overrightarrow{AM}^2-4\overrightarrow{BM}^2=0\Leftrightarrow(\overrightarrow{A\Omega}+\overrightarrow{\Omega
+M})^2-4(\overrightarrow{B\Omega}+\overrightarrow{\Omega M})^2=0\\
+ &\Leftrightarrow-3\overrightarrow{\Omega M}^2+2(\overrightarrow{A\Omega}-4\overrightarrow{B\Omega}).\overrightarrow{\Omega
+M}+\overrightarrow{A\Omega}^2-4\overrightarrow{B\Omega}^2=0\\
+ &\Leftrightarrow\Omega M^2=\frac{1}{3}(\Omega A^2-4\Omega B^2)
+\end{align*}
+Or, $\Omega A^2=(\frac{5}{3}+1)^2=\frac{64}{9}$ et $\Omega B^2=(\frac{5}{3}-1)^2=\frac{4}{9}$. Par suite,
+
+$$\frac{1}{3}(\Omega A^2-4\Omega B^2)=\frac{1}{3}(\frac{64}{9}-\frac{16}{9})=\frac{16}{9}.$$
+Ainsi,
+
+$$M\in\mathcal{E}\Leftrightarrow\Omega M^2=\frac{16}{9}\Leftrightarrow\Omega M=\frac{4}{3},$$
+et on retrouve le cercle de centre $\Omega(\frac{5}{3},0)$ et de rayon $\frac{4}{3}$.
+ \item 
+
+\begin{align*}
+M\in\mathcal{E}&\Leftrightarrow z=-1\;\mbox{ou}\;\mbox{arg}\left(\frac{1+z}{1-z}\right)=0\;(\pi)
+\Leftrightarrow M=A\;\mbox{ou}\;(\overrightarrow{BM},\overrightarrow{AM})=0\;(\pi)\\
+ &\Leftrightarrow M\in(AB)\setminus\{B\}.
+\end{align*}
+et on retrouve la droite $(Ox)$ privée du point $(1,0)$.
+ \item 
+
+\begin{align*}
+M\in\mathcal{E}&\Leftrightarrow z=-1\;\mbox{ou}\;\mbox{arg}\left(\frac{1+z}{1-z}\right)=\frac{\pi}{2}\;(\pi)
+\Leftrightarrow M=A\;\mbox{ou}\;\left(\overrightarrow{BM},\overrightarrow{AM}\right)=\frac{\pi}{2}\;(\pi)\\
+ &\Leftrightarrow M\;\mbox{est sur le cercle de diamètre}\;[AB]\;\mbox{privé de}\;B.
+\end{align*}
+et on retrouve le cercle de centre $O$ et de rayon $1$ privé du point $(1,0)$.
+
+\end{enumerate}
+
+\fincorrection
+\finexercice

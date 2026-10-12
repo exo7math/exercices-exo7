@@ -1,0 +1,111 @@
+\exercice{2722, matexo1, 2002/02/01}
+\enonce
+Montrer qu'il existe deux r\'eels $\alpha$, $\beta$, tels que pour tout $n\in\N^*$, 
+$$ \int_0^\pi  (\alpha t+\beta t^2) \cos(nt) \,dt = \frac 1{n^2}.$$
+En d\'eduire la valeur de
+$$S = \sum_{n=1}^{+ \infty} \frac 1{n^2}.$$
+\finenonce
+\noindication
+
+\correction
+
+Soit $\alpha, \beta \in \mathbb{R}$ et 
+$I_{(\alpha,\beta)} = \int_{0}^{\pi} (\alpha t + \beta t^2) \cos(nt) \, dt$.
+Une intégration par partie nous donne 
+\[ 
+I_{(\alpha,\beta)} = \underbrace{  \left[ (\alpha t + \beta t^2)\frac{\sin(nt)}{n} \right]_{0}^{\pi} }_{ = 0 }
+                       - \frac{1}{n} \int_{0}^{\pi} (\alpha + 2\beta t)\sin(nt)\, dt 
+\]
+En faisant une intégration par partie sur la deuxième intégrale, on a: 
+\begin{eqnarray*}
+I_{(\alpha,\beta)} &=& 
+\left[ \frac{\alpha + 2\beta t}{n^2}\cos(nt) \right]_{0}^{\pi}  + \int_{0}^{\pi} \frac{2\beta \cos(nt)}{n^2}\, dt 
+\\
+&=& \left( \frac{\alpha + 2\beta \pi}{n^2}\cos(n\pi) - \frac{\alpha}{n^2} \right) + \underbrace{ \frac{2\beta}{n^2} \left[ \frac{\sin(nt)}{n} \right]_{0}^{\pi} }_{ = 0}  \; \cdotp
+\end{eqnarray*}
+On obtient $I_{(\alpha,\beta)} = \frac{\alpha + 2 \beta \pi}{n^2}\cos(n \pi) - \frac{\alpha}{n^2}$.
+\begin{eqnarray*} 
+I_{(\alpha,\beta)} = \frac{1}{n^2} & \Longleftrightarrow &
+(\alpha + 2 \beta \pi) \underbrace{ \cos(n\pi) }_{ = (-1)^n} - \alpha = 1 
+\\
+& \Longleftrightarrow & (\alpha + 2 \beta \pi)(-1)^n - (1 +\alpha) = 0 
+{}\end{eqnarray*}
+Donc pour tout $n\in \mathbb{N}$
+\[
+\left\{
+\begin{array}{rcl}
+(\alpha + 2 \beta \pi)(-1)^n &=& 0 \\
+(1 +\alpha) &=& 0
+\end{array}
+\right.
+\]
+Ainsi en prenant $\alpha = -1$ et $\beta = \frac{1}{2\pi}$, on obtient: 
+\[ 
+I_{ (-1,\frac{1}{2\pi}) } = \int_{0}^{\pi} \left(-t + \frac{1}{2\pi} t^2 \right) \cos(nt)\, dt = \frac{1}{n^2} 
+\; \cdotp
+\]
+D'où,
+\[ 
+\sum_{k = 1}^{n} \frac{1}{k^2} = \int_{0}^{\pi} \left(-t + \frac{1}{2\pi} t^2 \right) \sum_{k = 1}^{n}\cos(kt)\, dt  \qquad \qquad (1) 
+\]
+Or 
+\begin{eqnarray*}
+\sum_{k = 1}^{n} \cos(kt) &=& 
+\Re \left(\sum_{k = 0}^{n}e^{ikt}\right) - 1 = \cfrac{ \sin(\frac{n+1}{2}t)} { \sin(\frac{t}{2}) }\text{Re}(e^{i \frac{nt}{2} })  - 1 
+\\
+&=& \cos \left( \frac{nt}{2} \right) \times \cfrac{ \sin( \frac{n}{2}t )\cos( \frac{t}{2} ) + \cos( \frac{n}{2}t )\sin( \frac{t}{2} ) } { \sin(\frac{t}{2}) } - 1 
+\\
+&=& \cos \left( \frac{nt}{2} \right) \sin \left( \frac{nt}{2} \right) \cot \left( \frac{t}{2} \right) + \underbrace{ \cos^2 \left( \frac{nt}{2} \right) - 1 }_{ = -\sin^2(\frac{nt}{2}) }  
+\end{eqnarray*}
+Donc $\sum_{k = 1}^{n} \cos(kt) 
+= \frac{1}{2}\sin(nt)\cot \left( \frac{t}{2} \right) - \sin^2 \left( \frac{nt}{2} \right)$.
+
+En appliquant ce résultat à (1) on obtient:
+\[  
+\sum_{k = 1}^{n} \frac{1}{k^2} 
+=  \int_{0}^{\pi} \frac{1}{2} \left(-t + \frac{t^2}{2\pi} \right) \sin(nt)\cot \left( \frac{t}{2} \right) \, dt 
+- \int_{0}^{\pi} \left(-t + \frac{t^2}{2\pi} \right) \sin^2 \left(\frac{nt}{2} \right) \, dt  
+\] 
+En posant $ \phi (t) = (-t + \frac{1}{2\pi} t^2)\cot(\frac{t}{2}) $, on a:
+\[ \sum_{k = 1}^{+\infty} \frac{1}{k^2} 
+= \lim_{n \to +\infty} \int_{0}^{\pi} \phi (t)\sin(nt)\, dt 
+- \lim_{n \to +\infty}\int_{0}^{\pi} \left(-t + \frac{1}{2\pi} t^2 \right) \sin^2 \left(\frac{nt}{2} \right) \, dt 
+\]
+Comme
+\[ 
+(-t + \frac{1}{2\pi} t^2)\cot \frac{t}{2}
+= (-t + \frac{1}{2\pi} t^2) \cfrac{\cos \frac{t}{2}}{\sin \frac{t}{2}}  
+\thicksim_{t \to 0} - t \cfrac{\cos \frac{t}{2}} {\frac{t}{2}} = - 2 \cos \frac{t}{2}
+\thicksim - 2
+\] 
+l'application $\phi$ se prolonge par continuité en $0$.
+Utilisons le résultat classique suivant: si $h$ est une fonction continue sur $[0, \pi]$, alors
+\[ 
+\lim_{n \to +\infty} \int_{0}^{\pi} h(t)\sin(nt)\, dt = 0 \quad \text{ et } \quad
+\lim_{n \to +\infty} \int_{0}^{\pi} h(t)\cos(nt)\, dt = 0 \; .
+\]
+appliqué à $\phi$: $\lim_{n \to +\infty} \int_{0}^{\pi} \phi (t)\sin(nt)\, dt = 0$.
+De plus, \[ \int_{0}^{\pi} \left(-t + \frac{t^2}{2\pi} \right) \sin^2 \left(\frac{nt}{2} \right) \, dt 
+          = \int_{0}^{\pi} \left(-t + \frac{t^2}{2\pi} \right) \left(\frac{1 - \cos(nt)}{2} \right)\, dt 
+\]
+par conséquent 
+\[
+\lim_{n \to +\infty} \int_{0}^{\pi} \left(-t + \frac{t^2}{2\pi} \right) \sin^2 \left( \frac{nt}{2} \right) \, dt 
+= \int_{0}^{\pi} \frac{1}{2} \left( -t + \frac{t^2}{2\pi} \right) \, dt \; .
+\]
+Finalement
+\[ 
+\sum_{k = 1}^{+\infty} \frac{1}{k^2} 
+= - \int_{0}^{\pi} \frac{1}{2} \left(-t + \frac{t^2}{2\pi} \right) \, dt 
+= -\frac{1}{2} \left( \left[ -\frac{t^2}{2} \right]_{0}^{\pi} + \frac{1}{2\pi} 
+\left[ \frac{1}{3}t^3 \right]_{0}^{\pi} \right) 
+= \frac{\pi^2}{4} - \frac{\pi^2}{12} = \frac{\pi^2}{6}
+\]
+
+\medskip
+
+(\emph{Corrigé de Eugène Ndiaye})
+
+\fincorrection
+
+\finexercice

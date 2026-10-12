@@ -1,0 +1,25 @@
+\exercice{6933, ruette, 2013/01/24}
+\enonce 
+Chaque jour, un train subit un retard aléatoire au départ, évalué en minutes,
+indépendant des retards des autres jours et dont la loi est approximativement 
+$\mathcal{E}(\lambda)$ (\textit{on rappelle qu'une loi exponentielle $\mathcal{E}(\lambda)$
+a pour espérance $1/\lambda$ et pour écart-type $1/\lambda$}).
+Sur 400 jours, le retard moyen est de 10 minutes. 
+Donner un intervalle de confiance de niveau approximativement 95\% pour 
+$\lambda$. 
+\finenonce
+\noindication
+
+\correction
+Loi estimée $\mathcal{E}(\lambda)$ d'espérance
+$m=1/\lambda$ et d'écart-type $\sigma=1/\lambda$. 
+Estimateur de $m$ : $\bar X_n=10$. Donc on approxime $\sigma$ par $10$.
+TCL : $P(\frac{|S_n-n m|}{\sigma\sqrt{n}}<c)\simeq P(|\mathcal{N}(0,1)|<c)$.
+Pour avoir un intervalle de confiance à 95\%, on prend $c=1,96$.
+L'encadrement $-c<\frac{\bar X_n-1/\lambda}{\sigma/\sqrt{n}}<c$ donne
+$$
+\frac{1}{\bar X_n+c\sigma/\sqrt{n}}<\lambda<\frac{1}{\bar X_n-c\sigma/\sqrt{n}}
+$$
+d'où l'intervalle de confiance $[0,091,0,111]$.
+\fincorrection
+\finexercice

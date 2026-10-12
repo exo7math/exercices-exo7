@@ -1,0 +1,29 @@
+\exercice{5574, rouget, 2010/10/16}
+\enonce[**]
+ \begin{enumerate}
+ \item  Calculer pour $p$ et $q$ entiers naturels donnés les intégrales suivantes :
+
+\begin{center}
+$J(p,q)=\int_{0}^{2\pi}\cos(px)\cos(qx)\;dx$, $K(p,q)=\int_{0}^{2\pi}\cos(px)\sin(qx)\;dx$ et $L(p,q)=\int_{0}^{2\pi}\sin(px)\sin(qx)\;dx$.
+\end{center}
+
+\item  Montrer que la famille de fonctions $(\cos(px))_{p\in\Nn}\cup(\sin(qx))_{q\in\Nn^*}$ est libre.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Pour $p$ et $q$ entiers relatifs, posons $I(p,q)=\int_{0}^{2\pi}e^{i(p-q)x}\;dx$.
+
+Si $p\neq q$, $I(p,q)=\frac{1}{i(p-q)}\left[e^{i(p-q)x}\right]_0^{2\pi}=0$. Soient alors $p$ et $q$ deux entiers naturels.
+
+Donc si $p\neq q$, $J(p,q)\frac{1}{2}\text{Re}(I(p,q) + I(p,-q))=0$ puis $K(p,q)=\frac{1}{2}\text{Im}(I(p,-q)-I(p,q))=0$ puis $L(p,q)=\frac{1}{2}\text{Re}(I(p,-q)-I(p,q))=0$.
+
+Si $p=q$, $J(p,p)=2\pi$ si $p=0$ et $\pi$ si $p\neq 0$ puis $K(p,p)=0$ puis $L(p,p)=\pi$ si $p\neq0$ et $0$ si $p=0$.
+
+\item  Sur l'espace $E$ des fonctions continues sur $\Rr$ à valeurs dans $\Rr$ et $2\pi$-périodiques, l'application qui à $(f,g)$ élément de $E^2$ associe $\int_{0}^{2\pi}f(t)g(t)\;dt$ est classiquement un produit scalaire. La famille de fonctions proposée est une famille orthogonale pour ce produit scalaire et ne contient pas le vecteur nul de $E$. Cette famille est donc est libre.
+\end{enumerate}
+\fincorrection
+\finexercice

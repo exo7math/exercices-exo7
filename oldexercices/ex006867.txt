@@ -1,0 +1,124 @@
+\exercice{6867, bodin, 2012/04/13}
+\video{Bydd17Yz8RA}
+\enonce
+Calculer les intégrales suivantes :
+\begin{enumerate}
+  \item $\int_0^{\frac \pi 2}x\sin x \, dx$ \quad (intégration par parties)
+
+  \item $\int_0^1 \frac{e^x}{\sqrt{e^x+1}} \,  dx$ \quad (à l'aide d'un changement de variable simple)
+
+  \item $\int_0^1\frac 1{\left( 1+x^2\right) ^2} \, dx$ \quad (changement de variable $x=\tan t$)
+
+  \item $\int_0^1\frac{3x+1}{\left( x+1\right) ^2} \,  dx$ \quad (décomposition en
+éléments simples)
+
+  \item $\int_{\frac 12}^2\left( 1+\frac 1{x^2}\right) \arctan x \, dx$ \quad (changement de variable $u=\frac 1x$)
+
+\end{enumerate}
+\finenonce 
+
+\indication
+\begin{enumerate}
+  \item $\int_0^{\frac \pi 2}x\sin x \, dx=1$ (intégration par parties $v'=\sin x$, $u=x$)
+
+  \item $\int_0^1 \frac{e^x}{\sqrt{e^x+1}} \,  dx=2\sqrt{e+1} -2\sqrt 2$ (à l'aide du changement de variable $u=e^x$)
+
+  \item $\int_0^1\frac 1{\left( 1+x^2\right) ^2} \, dx=\frac \pi 8+\frac 14$
+(changement de variable $x=\tan t$, $dx = (1+\tan^2 t) dt$ et $1+\tan^2 t = \frac{1}{\cos^2 t}$)
+
+  \item $\int_0^1\frac{3x+1}{\left( x+1\right) ^2} \, dx=3\ln 2-1$ (décomposition en
+éléments simples de la forme
+$\frac{3x+1}{\left( x+1\right) ^2} = \frac{\alpha}{x+1}+\frac{\beta}{(x+1)^2}$)
+
+  \item $\int_{\frac 12}^2\left( 1+\frac 1{x^2}\right) \arctan x \, dx=\frac{3\pi }4$
+(changement de variables $u=\frac 1x$ et $\arctan x+\arctan \frac 1x= \pm \frac \pi 2$)
+
+\end{enumerate}
+\finindication
+
+\correction
+\begin{enumerate}
+  \item $\int_0^{\frac \pi 2}x\sin x \, dx$
+
+Par intégration par parties avec $u=x$, $v'=\sin x$ :
+\begin{align*}
+\int_0^{\frac \pi 2}x\sin x \, dx 
+  &= \big[ uv \big]_0^{\frac \pi 2} - \int_0^{\frac \pi 2} u'v \\
+  &= \big[ -x\cos x \big]_0^{\frac \pi 2}  + \int_0^{\frac \pi 2} \cos x \, dx \\
+  &= \big[ -x\cos x \big]_0^{\frac \pi 2} +  \big[ \sin x \big]_0^{\frac \pi 2} \\
+  &= 0-0 \quad + \quad 1-0 \\
+  &= 1 \\
+\end{align*}
+
+  \item $\int_0^1 \frac{e^x}{\sqrt{e^x+1}} \,  dx$
+
+Posons le changement de variable $u=e^x$ avec $x=\ln u$ et $du = e^x\, dx$.
+La variable $x$ varie de $x=0$ à $x=1$, donc la variable $u=e^x$ varie de
+$u=1$ à $u=e$.
+
+\begin{align*}
+\int_0^1 \frac{e^x \, dx}{\sqrt{e^x+1}} \,  dx 
+  &= \int_1^e \frac{du}{\sqrt{u+1}} \\
+  &= \big[ 2\sqrt{u+1} \big]_1^e \\
+  &= 2\sqrt{e+1} -2\sqrt 2 \\
+\end{align*}
+
+
+
+  \item $\int_0^1\frac 1{\left( 1+x^2\right) ^2} \, dx$
+
+Posons le changement de variable $x=\tan t$, 
+alors on a $dx = (1+\tan^2 t) dt$, $t=\arctan x$ et  on sait aussi que $1+\tan^2 t = \frac{1}{\cos^2 t}$.
+Comme $x$ varie de $x=0$ à $x=1$ alors $t$ doit varier de $t=\arctan 0=0$ à $t=\arctan 1 = \frac \pi4$.
+
+\begin{align*}
+\int_0^1\frac 1{\left( 1+x^2\right) ^2} \, dx 
+  &= \int_0^{\frac\pi4}  \frac{1}{(1+\tan^2 t)^2} (1+\tan^2 t) dt \\
+  &= \int_0^{\frac\pi4}  \frac{dt}{1+\tan^2 t}\\
+  &=  \int_0^{\frac\pi4}  \cos^2 t \, dt \\
+  & = \frac 12 \int_0^{\frac\pi4} (\cos(2t)+1) \, dt\\
+  &= \frac12 \Big[ \frac12 \sin(2t) + t \Big]_0^{\frac\pi4} \\
+  &= \frac 14 + \frac \pi8 \\
+\end{align*}
+
+
+
+  \item $\int_0^1\frac{3x+1}{\left( x+1\right) ^2} \,  dx$
+
+Commençons par décomposer la fraction en éléments simples :
+$$\frac{3x+1}{\left( x+1\right) ^2} = \frac{\alpha}{x+1}+\frac{\beta}{(x+1)^2}
+= \frac{3}{x+1}-\frac{2}{(x+1)^2}$$
+où l'on a trouvé $\alpha=3$ et $\beta=-2$.
+La première est une intégrale du type $\int \frac 1u = [\ln |u|]$ et la seconde
+$\int \frac 1{u^2} = [ -\frac 1u ]$.
+
+\begin{align*}
+\int_0^1\frac{3x+1}{\left( x+1\right) ^2} \,  dx
+  &=   3 \int_0^1 \frac{1}{x+1} dx   - 2 \int_0^1 \frac{1}{(x+1)^2} \, dx \\
+  &= 3 \Big[ \ln|x+1| \Big]_0^1  - 2 \Big[ - \frac{1}{x+1} \Big]_0^1 \\
+  &= 3 \ln 2 - 0 \quad + \quad 1 - 2 \\
+  &= 3 \ln 2 - 1 \\
+\end{align*}
+
+
+  \item Notons $I = \int_{\frac 12}^2\left( 1+\frac 1{x^2}\right) \arctan x \, dx$.
+
+Posons le changement de variable $u=\frac 1x$ et 
+on a $x=\frac 1u$, $dx = -\frac{du}{u^2}$.
+Alors $x$ variant de $x=\frac 12$ à $x=2$,
+$u$ varie lui de $u=2$ à $u=\frac 12$ (l'ordre est important !).
+
+\begin{align*}
+I &= \int_{\frac 12}^2\left( 1+\frac 1{x^2}\right) \arctan x \, dx  \\
+  &= \int_2^{\frac 12}\left( 1+u^2 \right) \arctan \frac 1u  \, \left(-\frac{du}{u^2}\right)  \\
+  &= \int_{\frac 12}^2 \left( \frac1{u^2} + 1\right) \arctan \frac 1u  \, du  \\
+  &= \int_{\frac 12}^2 \left( \frac1{u^2} + 1\right) \left( \frac \pi 2 - \arctan u \right)   \, du  \quad \text{car} \quad \arctan u+\arctan \frac1u=\frac\pi2\\
+  &= \frac \pi 2\int_{\frac 12}^2 \left( \frac1{u^2} + 1 \right)\, du  -  \int_{\frac 12}^2  \left( \frac1{u^2} + 1\right)\arctan u  \, du  \\  
+  &= \frac \pi 2 \left[ -\frac1{u} + u\right]_{\frac 12}^2  -  I \\  
+  &= \frac{3\pi}{2} - I\\
+\end{align*}
+
+Conclusion : $I = \frac{3\pi}{4}.$
+\end{enumerate}
+\fincorrection
+\finexercice

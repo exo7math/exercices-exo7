@@ -1,0 +1,42 @@
+\exercice{653, gourio, 2001/09/01}
+\video{ZCT1KDuJcsI}
+\enonce
+Soit $f:[0,1]\rightarrow [0,1]$ croissante, montrer qu'elle a un point fixe.
+
+\emph{Indication} : \'{e}tudier
+$$E=\big\{x\in [0,1] \mid \forall t\in [0,x],f(t)>t\big\}.$$
+\finenonce 
+
+\indication
+Un \emph{point fixe} est une valeur $c \in [0,1]$ telle que $f(c)=c$.
+Montrer que $c = \sup E$ est un point fixe. 
+Pour cela montrer que $f(c) \leqslant c$ puis $f(c) \geqslant c$.
+\finindication
+
+\correction
+\begin{enumerate}
+  \item  Si $f(0) = 0$ et c'est fini, on a trouver le point fixe !
+Sinon $f(0)$ n'est pas nul.  Donc $f(0) > 0$ et $0 \in E$. Donc $E$ n'est pas vide. 
+  \item Maintenant $E$ est un partie de $[0,1]$ non vide
+donc $\sup E$ existe et est fini. Notons $c = \sup E \in [0,1]$.
+Nous allons montrer que $c$ est un point fixe.
+  \item Nous approchons ici $c = \sup E$ par des éléments de $E$ :
+ Soit $(x_n)$ une suite de $E$ telle que $x_n \rightarrow c$
+et $x_n \leq c$. Une telle suite existe d'apr\`es les propri\'et\'es de
+$c= \sup E$. Comme $x_n \in E$ alors
+$x_n < f(x_n)$. Et comme $f$ est croissante $f(x_n) \leq f(c)$.
+Donc pour tout $n$, $x_n < f(c)$ ; comme $x_n \rightarrow c$ alors \`a la limite nous avons $c \leq f(c)$.
+  \item Si $c=1$ alors $f(1)=1$ et nous avons notre point fixe. Sinon, nous utilisons maintenant le fait que 
+les élements supérieurs à $\sup E$ ne sont pas dans $E$ :
+Soit $(t_n)$ une suite telle que 
+$t_n \rightarrow c$, $t_n \geq c$
+et telle que $f(t_n) \leq t_n$. Une telle suite existe
+car sinon $c$ ne serait pas \'egal \`a $\sup E$.
+Nous avons $f(c) \leq f(t_n) \leq t_n$ et donc \`a la limite
+$f(c) \leq c$.
+
+Nous concluons donc que $c \leq f(c) \leq c$, donc $f(c) = c$
+et $c$ est  un point fixe de $f$.
+\end{enumerate}
+\fincorrection
+\finexercice

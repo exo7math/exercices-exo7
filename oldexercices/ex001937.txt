@@ -1,0 +1,62 @@
+\exercice{1937, gineste, 2001/11/01}
+
+\enonce
+Étudier, suivant les valeurs de $p \in \Nn$, la nature de la série de terme général 
+\[
+u_n = \frac{1! + 2! + \cdots + n!}{(n+p)!} \cdotp
+\]
+\finenonce
+
+\noindication
+
+\correction 
+
+\begin{itemize}
+\item Pour $p = 0$:
+\[ 
+u_n = \frac{ 1! + 2! + \cdots + n! }{ n! } = 1 + \frac{ 1! + 2! + \cdots + (n-1)! }{ n! } > 1 
+\]
+$u_n$ ne tend pas vers $ 0 $ donc, $ \sum u_n $ diverge grossièrement pour $ p=0 $. 
+
+\item Pour $p = 1$:
+\[ 
+u_n = \frac{1}{ (n+1)! } + \frac{2!}{ (n+1)! } + \cdots + \frac{ (n-1)! }{ (n+1)! } + \frac{n!}{ (n+1)! } 
+\]
+\[ 
+u_n \geq \frac{n!}{ (n+1)! } = \frac{1}{ n + 1 }  \cdotp
+\]
+Or $\sum \frac{1}{n + 1}$ diverge, donc $\sum u_n$ diverge pour $p = 1$ .
+
+\item Pour $p = 2$:
+\[ u_n = \frac{1}{ (n+2)! } + \frac{2!}{ (n+2)! } + \cdots + \frac{ (n-1)! }{ (n+2)! } + \frac{n!}{ (n+2)! } 
+\]
+On serait tenté de dire que l'on a une somme de séries convergentes, donc $\sum u_n$ converge. 
+Pas de chance, le nombre de terme croît en fonction de $n$, donc à l'infini, on en a une infinité 
+et on ne peut rien conclure.
+\[ 
+u_n = \sum_{k=1}^{n} \frac{k!}{ (n + 2)!} = \sum_{k=1}^{n-1} \frac{k!}{(n + 2)!} + \frac{n!}{(n + 2)!}  
+   \leq \frac{n (n - 1)!}{(n + 2)!} + \frac{n!}{(n + 2)!} \]
+\[ u_n \leq 2\frac{n!}{(n + 2)!} = \frac{2}{(n + 1)(n + 2)} \sim \frac{2}{n^2} \]
+Or $\sum \frac{1}{n^2}$ converge, donc $\sum u_n$ converge pour $p = 2$. 
+
+\item Pour $p \geq 3$:
+\[ 
+u_n = \frac{ 1! + 2! + \cdots + n! }{( n + p)! } \leq \frac{ n \, n! }{ (n + p)! } = \frac{ n \, n! }{n! (n+1) \cdots (n+p) } 
+\]
+En simplifiant par $ n! $ et en posant $ u_n \leq \frac{ n }{ (n+1) \cdots (n+p)}$ et
+\[ 
+\frac{ n }{ (n+1) \cdots (n+p)} \thicksim  \frac{n}{n^p} 
+= \frac{1}{n^{p - 1}} \text{ avec } p \geq 3
+\] 
+Or $\sum \frac{1}{n^{p - 1}}$ est une série de Riemann convergente car $p-1 \geq 2$, 
+donc $\sum u_n $ converge pour $p \geq 3$. 
+
+Note: on peut aussi remarquer que $u_n$ (quand $p\geq3$) est majoré par $u_n$ (quand $p=2$), or ce dernier est convergent.
+\end{itemize}
+\medskip
+
+(\emph{Corrigé de Eugène Ndiaye})
+
+\fincorrection
+
+\finexercice

@@ -1,0 +1,31 @@
+\exercice{6998, blanc-centi, 2015/07/04}
+\video{iRTCx-ikFP0}
+\enonce
+On considère $y''-4y'+4y=d(x)$. 
+Résoudre l'équation homogène, puis trouver une solution particulière 
+lorsque $d(x)=e^{-2x}$, puis $d(x)=e^{2x}$. 
+Donner la forme générale des solutions quand $d(x)=\frac{1}{2}\ch(2x)$.
+\finenonce
+
+\indication
+Pour la fin: principe de superposition.
+\finindication
+
+\correction
+L'équation caractéristique associée à l'équation homogène est $r^2-4r+4=0$, 
+pour laquelle $r=2$ est racine double. Les solutions de l'équation homogène 
+sont donc les $(\lambda x+\mu)e^{2x}$. 
+
+Lorsque $d(x)=e^{-2x}$, on cherche une solution particulière sous la forme $ae^{-2x}$, 
+qui convient si $a=\frac{1}{16}$.
+
+Lorsque $d(x)=e^{2x}$, comme 2 est la racine double de l'équation caractéristique, 
+on cherche une solution comme le produit de $e^{2x}$ par un polyn\^ome de degré 2. 
+Comme on sait déjà que $(\lambda x+\mu)e^{2x}$ est solution de l'équation homogène, 
+il est inutile de faire intervenir des termes de degré $1$ et $0$: on cherche 
+donc une solution de la forme $ax^2e^{2x}$, qui convient si et seulement si $a=\frac{1}{2}$. 
+
+Puisque $\frac{1}{2}\ch(2x) =\frac{1}{4}(e^{2x}+e^{-2x})$, les solutions générales sont obtenues sous 
+la forme $y(x)=\frac{1}{64}e^{-2x}+\frac{1}{8}x^2e^{2x}+(\lambda x+\mu)e^{2x}$.
+\fincorrection
+\finexercice

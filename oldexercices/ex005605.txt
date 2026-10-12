@@ -1,0 +1,38 @@
+\exercice{5605, rouget, 2010/10/16}
+\enonce[***]
+Soient $n$ un entier naturel non nul puis $A\in\mathcal{M}_n(\Kk)$.
+Soit $f$ l'endomorphisme de $M_n(\Kk)$ qui à une matrice $X$ associe $AX+XA$. Calculer $\text{Tr}(f)$.
+\finenonce
+
+\noindication
+
+\correction
+On note $\mathcal{B}=(E_{i,j})_{1\leqslant i,j\leqslant n}$ la base canonique de $\mathcal{M}_n(\Kk)$.
+
+$\text{Tr}f=\sum_{1\leqslant i,j\leqslant n}^{}\alpha_{i,j}$ où $\alpha_{i,j}$ désigne la $(i,j)$-ème coordonnée de $f(E_{i,j})=AE_{i,j}+E_{i,j}A$ dans la base $\mathcal{B}$.
+
+Mais pour $(i,j)\in\llbracket1,n\rrbracket^2$ donné, 
+
+\begin{center}
+$AE_{i,j}=\sum_{1\leqslant k,l\leqslant n}^{}a_{k,l}E_{k,l}E_{i,j}=\sum_{k=1}^{n}a_{k,i}E_{k,j}$
+\end{center}
+
+et de même,
+
+\begin{center}
+$E_{i,j}A=\sum_{1\leqslant k,l\leqslant n}^{}a_{k,l}E_{i,j}E_{k,l}=\sum_{l=1}^{n}a_{j,l}E_{i,l}$.
+\end{center}
+
+Donc $\forall(i,j)\in\llbracket1,n\rrbracket^2$, $\alpha_{i,j}=a_{i,i}+a_{j,j}$ puis
+
+\begin{center}
+$\text{Tr}f=\sum_{1\leqslant i,j\leqslant n}^{}(a_{i,i}+a_{j,j})=2\sum_{1\leqslant i,j\leqslant n}^{}a_{i,i}=2\sum_{j=1}^{n}\left(\sum_{i=1}^{n}a_{i,i}\right)=2\sum_{j=1}^{n}\text{Tr}A=2n\text{Tr}A$.
+\end{center}
+
+\begin{center}
+\shadowbox{
+$\text{Tr}f=2n\text{Tr}A$.
+}
+\end{center}
+\fincorrection
+\finexercice

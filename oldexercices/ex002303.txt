@@ -1,0 +1,68 @@
+\exercice{2303, barraud, 2008/04/24}
+\enonce
+\begin{enumerate}
+  \item Montrer que $20^{15}-1$ est divisible par $11\times 31\times 61$.
+  \item Trouver le reste de la division de $2^{6754}$  par $1155$.
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item 
+  $11,31,61$ sont premiers donc $2$ à $2$ premiers entre eux. Ainsi
+  $20^{15}\equiv 1[11\cdot31\cdot61]\Leftrightarrow 
+  \begin{cases}
+    20^{15}\equiv1[11]\\
+    20^{15}\equiv1[31]\\
+    20^{15}\equiv1[61]
+  \end{cases}
+  $
+
+  \begin{itemize}
+  \item 
+    En utilisant le petit théorème de Fermat, on obtient que, modulo
+    $11$~: $20^{15}\equiv 20^{5}\equiv -2^{5}\equiv 1[11]$.
+
+  \item
+    $(20^{15})^{2}=20^{30}\equiv 1[31]$. On en déduit que
+    $20^{15}\equiv\pm1[31]$. Comme $31\not\equiv1[4]$, d'après le
+    théorème de Wilson, $x^{2}=-1$ n'a pas de solution modulo $31$, et
+    donc $20^{15}\equiv1[31]$. $20^{2}\equiv-3[31]$ est premier
+
+  \item
+    $20^{15}\equiv(9^{2})^{15}\equiv3^{60}\equiv1[61]$
+  \end{itemize}
+  
+\item
+  $1155=11\cdot7\cdot5\cdot3$. De plus (petit théorème de Fermat)
+  $2^{6754}\equiv 2^{4}\equiv5[11]$. De même,
+  $2^{6754}\equiv2^{4}\equiv2[7]$, $2^{6754}\equiv2^{2}\equiv-1[5]$, et
+  $2^{6754}\equiv2^{0}\equiv1[3]$. Or 
+  $$
+  \begin{cases}
+    a\equiv5[11]\\
+    a\equiv2[ 7]\\
+    a\equiv4[ 5]\\
+    a\equiv1[ 3]
+  \end{cases}
+  \Leftrightarrow
+  \begin{cases}
+    a\equiv5[11]\\
+    a\equiv2[ 7]\\
+    a\equiv4[15]
+  \end{cases}
+  \Leftrightarrow
+  \begin{cases}
+    a\equiv5[11]\\
+    a\equiv-26[105]
+  \end{cases}
+  \Leftrightarrow
+    a\equiv709[1155]\\
+  $$
+  Donc le reste de la division de $2^{6754}$ par $1155$ est $709$.
+\end{enumerate}
+
+\fincorrection
+\finexercice

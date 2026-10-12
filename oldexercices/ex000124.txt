@@ -1,0 +1,39 @@
+\exercice{124, bodin, 1998/09/01}
+\video{64sBWnSD4nM}
+\enonce
+
+Soient $E$ et $F$ deux ensembles, $f:E\rightarrow F$. D\'emontrer que :\\
+$\forall A,B \in \mathcal{P}(E) \quad (A\subset B)\Rightarrow (f(A)\subset f(B))$,\\
+$\forall A,B \in \mathcal{P}(E) \quad f(A\cap B)\subset f(A)\cap f(B)$,\\
+$\forall A,B \in \mathcal{P}(E) \quad f(A\cup B) = f(A)\cup f(B)$,\\
+$\forall A,B \in \mathcal{P}(F) \quad f^{-1}(A\cup B) = f^{-1}(A)\cup f^{-1}(B)$,\\
+$\forall A \in \mathcal{P}(F) \quad f^{-1}(F\setminus A)=E\setminus f^{-1}(A)$.
+
+\finenonce 
+
+\noindication
+
+\correction
+Montrons quelques assertions.
+
+$f(A\cap B) \subset f(A)\cap f(B)$.\\
+Si $y\in f(A\cap B)$, il existe $x\in A\cap B$ tel que $y=f(x)$,
+or $x\in A$ donc $y=f(x) \in f(A)$ et de m\^eme $x\in B$ donc
+$y\in f(B)$. D'o\`u $y\in f(A)\cap f(B)$. Tout \'el\'ement de
+$f(A\cap B)$ est un \'el\'ement de $f(A)\cap f(B)$ donc $f(A\cap
+B) \subset f(A)\cap f(B)$.
+
+Remarque : l'inclusion r\'eciproque est fausse. Exercice : trouver
+un contre-exemple.
+
+\bigskip
+
+$f^{-1}(F\setminus A) = E\setminus f^{-1}(A)$.\\
+\begin{align*}
+x\in f^{-1}(F\setminus A) &\Leftrightarrow f(x) \in F\setminus A\\
+&\Leftrightarrow f(x) \notin A\\
+&\Leftrightarrow x \notin f^{-1}(A) \quad \text{ car } f^{-1}(A) = \{ x\in E \ / \ f(x) \in A \}\\
+&\Leftrightarrow x\in E\setminus f^{-1}(A)\\
+\end{align*}
+\fincorrection
+\finexercice

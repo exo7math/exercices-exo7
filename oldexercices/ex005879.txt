@@ -1,0 +1,534 @@
+\exercice{5879, rouget, 2010/10/16}
+\enonce[**]
+Résoudre les systèmes suivants :
+
+\begin{enumerate}
+ \item  $\left\{
+\begin{array}{l}
+x'=4x-2y\\
+y'=x+y
+\end{array}
+\right.$\quad\item  $\left\{
+\begin{array}{l}
+x'=x-y+ \frac{1}{\cos t}\\
+y'=2x-y
+\end{array}
+\right.$  sur $\left]- \frac{\pi}{2}, \frac{\pi}{2}\right[$\quad\item  $\left\{
+\begin{array}{l}
+x'=5x-2y+e^t\\
+y'=-x+6y+t
+\end{array}
+\right.$  
+
+\item   $\left\{
+\begin{array}{l}
+x'=5x+y-z\\
+y'=2x+4y-2z\\
+z'=x-y+z
+\end{array}
+\right.$\quad\item  $\left\{
+\begin{array}{l}
+x'=2x+y\\
+y'=-x\\
+z'=x+y+z
+\end{array}
+\right.$ (trouver la solution telle que $x(0)=0$, $y(0)=1$ et $z(0)=-1$).
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Posons $A=\left(
+\begin{array}{cc}
+4&-2\\
+1&1
+\end{array}
+\right)$.
+
+$\chi_A=\lambda^2-5\lambda+6=(\lambda-2)(\lambda-3)$ puis $A=PDP^{-1}$ où $D=\text{diag}(2,3)$ et $P=\left(
+\begin{array}{cc}
+1&2\\
+1&1
+\end{array}
+\right)$.
+
+Posons $X=\left(
+\begin{array}{c}
+x\\
+y
+\end{array}
+\right)$ puis $X_1=P^{-1}X=\left(
+\begin{array}{c}
+x_1\\
+y_1
+\end{array}
+\right)$.
+
+\begin{align*}\ensuremath
+\left\{
+\begin{array}{l}
+x'=4x-2y\\
+y'=x+y
+\end{array}
+\right.&\Leftrightarrow X'=AX\Leftrightarrow X'=PDP^{-1}X\Leftrightarrow P^{-1}X'=DP^{-1}X\Leftrightarrow(P^{-1}X)'=D(P^{-1}X)\Leftrightarrow X_1'=DX_1\\
+ &\Leftrightarrow\left\{
+\begin{array}{l}
+x_1'=2x_1\\
+y_1'=3y_1
+\end{array}
+\right.\Leftrightarrow\exists(a,b)\in\Rr/\;\forall t\in\Rr,\;\left\{
+\begin{array}{l}
+x_1(t)=ae^{2t}\\
+y_1(t)=be^{3t}
+\end{array}
+\right.\\
+&\Leftrightarrow\exists(a,b)\in\Rr/\;\forall t\in\Rr,\;\left(
+\begin{array}{l}
+x(t)\\
+y(t)
+\end{array}
+\right)=\left(
+\begin{array}{cc}
+1&2\\
+1&1
+\end{array}
+\right)\left(
+\begin{array}{l}
+ae^{2t}\\
+be^{3t}
+\end{array}
+\right)\\
+ &\Leftrightarrow\exists(a,b)\in\Rr/\;\forall t\in\Rr,\;\left(
+\begin{array}{l}
+x(t)\\
+y(t)
+\end{array}
+\right)=\left(
+\begin{array}{l}
+ae^{2t}+2be^{3t}\\
+ae^{2t}+be^{3t}
+\end{array}
+\right)\\
+\end{align*}
+
+\begin{center}
+\shadowbox{
+$\mathcal{S}=\left\{t\mapsto \left(
+\begin{array}{l}
+ae^{2t}+2be^{3t}\\
+ae^{2t}+be^{3t}
+\end{array}
+\right),\;(a,b)\in\Rr^2\right\}$.
+}
+\end{center}
+
+\item  Puisque la fonction $t\mapsto\left(
+\begin{array}{c}
+ \frac{1}{\cos t}\\
+\rule{0mm}{5mm}0
+\end{array}
+\right)$ est continue sur $\left]- \frac{\pi}{2}, \frac{\pi}{2}\right[$, les solutions réelles sur $\left]- \frac{\pi}{2}, \frac{\pi}{2}\right[$ du système proposé constituent un $\Rr$-espace affine de dimension $2$.
+
+\textbf{Résolution du système homogène associé.} Posons $A=\left(
+\begin{array}{cc}
+1&-1\\
+2&-1
+\end{array}
+\right)$. $\chi_A=\lambda^2+1=(\lambda-i)(\lambda+i)$ et en particulier $A$ est diagonalisable dans $\Cc$. Un vecteur propre de $A$ associé à la valeur propre $i$ est $\left(
+\begin{array}{c}
+1\\
+1-i
+\end{array}
+\right)$ et un vecteur propre de $A$ associé à la valeur propre $-i$ est $\left(
+\begin{array}{c}
+1\\
+1+i
+\end{array}
+\right)$. On sait alors que les solutions complexes sur $\Rr$ du système homogène associé sont les fonctions de la forme $X~:~t\mapsto ae^{it}\left(
+\begin{array}{c}
+1\\
+1-i
+\end{array}
+\right)+be^{-it}\left(
+\begin{array}{c}
+1\\
+1+i
+\end{array}
+\right)$, $(a,b)\in\Cc^2$.
+
+Déterminons alors les solutions réelles du système homogène.
+
+\begin{align*}\ensuremath
+X\;\text{réelle}&\Leftrightarrow\forall t\in\Rr,\;ae^{it}\left(
+\begin{array}{c}
+1\\
+1-i
+\end{array}
+\right)+be^{-it}\left(
+\begin{array}{c}
+1\\
+1+i
+\end{array}
+\right)=\overline{a}e^{-it}\left(
+\begin{array}{c}
+1\\
+1+i
+\end{array}
+\right)+\overline{b}e^{it}\left(
+\begin{array}{c}
+1\\
+1-i
+\end{array}
+\right)\\
+ &\Leftrightarrow b=\overline{a}\;(\text{car la famille de fonctions}\;(e^{it},e^{-it})\;\text{est libre}.)
+\end{align*}
+
+Les solutions réelles sur $\Rr$ du système homogène sont les fonctions de la forme $X~:~t\mapsto ae^{it}\left(
+\begin{array}{c}
+1\\
+1-i
+\end{array}
+\right)+\overline{a}e^{-it}\left(
+\begin{array}{c}
+1\\
+1+i
+\end{array}
+\right)=2\text{Re}\left(ae^{it}\left(
+\begin{array}{c}
+1\\
+1-i
+\end{array}
+\right)\right)$, $a\in\Cc$. En posant $a=\lambda+i\mu$, $(\lambda,\mu)\in\Rr^2$, 
+
+\begin{center}
+$2\text{Re}\left(ae^{it}\left(
+\begin{array}{c}
+1\\
+1-i
+\end{array}
+\right)\right)=2\text{Re}\left(\left(
+\begin{array}{c}
+(\lambda+i\mu)(\cos t+i\sin t)\\
+(\lambda+i\mu)(1-i)(\cos t+i\sin t)
+\end{array}
+\right)\right)=2\left(
+\begin{array}{c}
+\lambda\cos t-\mu\sin t\\
+\lambda(\cos t+\sin t)+\mu(\cos t-\sin t)
+\end{array}
+\right)$.
+\end{center}
+
+Maintenant, le couple $(\lambda,\mu)$ décrit $\Rr^2$ si et seulement si le couple $(2\lambda,2\mu)$ décrit $\Rr^2$ et en renommant les constantes $\lambda$ et $\mu$, on obtient les solutions réelles du système homogène : $t\mapsto\lambda\left(\begin{array}{c}
+\cos t\\
+\cos t+\sin t
+\end{array}
+\right)+\mu\left(\begin{array}{c}
+-\sin t\\
+\cos t-\sin t
+\end{array}
+\right)$, $(\lambda,\mu)\in\Rr^2$.
+
+\textbf{Résolution du système.} D'après la méthode de variation de la constante, il existe une solution particulière du système de la forme $t\mapsto\lambda(t)\left(
+\begin{array}{c}
+\cos t\\
+\cos t+\sin t
+\end{array}
+\right)+\mu(t)
+\left(
+\begin{array}{c}
+-\sin t\\
+\cos t-\sin t
+\end{array}
+\right)$ où $\lambda$ et $\mu$ sont deux fonctions dérivables sur $\left]- \frac{\pi}{2}, \frac{\pi}{2}\right[$ telles que pour tout réel $t$ de $\left]- \frac{\pi}{2}, \frac{\pi}{2}\right[$, $\lambda'(t)\left(
+\begin{array}{c}
+\cos t\\
+\cos t+\sin t
+\end{array}
+\right)+\mu'(t)
+\left(
+\begin{array}{c}
+-\sin t\\
+\cos t-\sin t
+\end{array}
+\right)=\left(
+\begin{array}{c}
+ \frac{1}{\cos t}\\
+\rule{0mm}{5mm}0
+\end{array}
+\right)$. Les formules de \textsc{Cramer} fournissent $\lambda'(t)= \frac{1}{\cos t}(\cos t-\sin t)=1- \frac{\sin t}{\cos t}$ et $\mu'(t)=- \frac{1}{\cos t}(\cos t+\sin t)=-1- \frac{\sin t}{\cos t}$. On peut prendre $\lambda(t)=t+\ln(\cos t)$ et $\mu(t)=-t+\ln(\cos t)$ et on obtient la solution particulière 
+\begin{center}
+$X(t)=(t+\ln(\cos t))\left(
+\begin{array}{c}
+\cos t\\
+\cos t+\sin t
+\end{array}
+\right)+(-t+\ln(\cos t))\left(
+\begin{array}{c}
+-\sin t\\
+\cos t-\sin t
+\end{array}
+\right)=\left(
+\begin{array}{c}
+t(\cos t+\sin t)+\ln(\cos t)(\cos t-\sin t)\\
+2t\sin t+2\cos t\ln(\cos t)
+\end{array}.
+\right)$.
+\end{center}
+
+\begin{center}
+\shadowbox{
+$\mathcal{S}_{\left]- \frac{\pi}{2}, \frac{\pi}{2}\right[}=\left\{t\mapsto \left(
+\begin{array}{l}
+t(\cos t+\sin t)+\ln(\cos t)(\cos t-\sin t)+\lambda\cos t-\mu\sin t\\
+2t\sin t+2\cos t\ln(\cos t)+\lambda(\cos t+\sin t)+\mu(\cos t-\sin t)
+\end{array}
+\right),\;(\lambda,\mu)\in\Rr^2\right\}$.
+}
+\end{center}
+
+\item  Puisque la fonction $t\mapsto\left(
+\begin{array}{c}
+e^t\\
+t
+\end{array}
+\right)$ est continue sur $\Rr$, les solutions sur $\Rr$ du système proposé constituent un $\Rr$-espace affine de dimension $2$.
+
+\textbf{Résolution du système homogène associé.} Posons $A=\left(
+\begin{array}{cc}
+5&-2\\
+-1&6
+\end{array}
+\right)$. $\chi_A=\lambda^2-11\lambda+28=(\lambda-4)(\lambda-7)$. Un vecteur propre de ${^t}A$ associé à la valeur propre $4$ est $\left(
+\begin{array}{c}
+1\\
+1
+\end{array}
+\right)$ et un vecteur propre de ${^t}A$ associé à la valeur propre $7$ est $\left(
+\begin{array}{c}
+1\\
+-2
+\end{array}
+\right)$. Ces vecteurs fournissent des combinaisons linéaires intéressantes des équations :
+
+\begin{align*}\ensuremath
+\left\{
+\begin{array}{l}
+x'=5x-2y+e^t\\
+y'=-x+6y+t
+\end{array}
+\right.&\Leftrightarrow\left\{
+\begin{array}{l}
+(x+y)'=4(x+y)+e^t+t\\
+(x-2y)'=7(x-2y)+e^t-2t
+\end{array}
+\right.\\
+ &\Leftrightarrow\exists(\lambda,\mu)\in\Rr^2/\;\forall t\in\Rr,\;\left\{
+\begin{array}{l}
+x(t)+y(t)=- \frac{e^t}{3}- \frac{t}{4}- \frac{1}{16}+\lambda e^{4t}\\
+x(t)-2y(t)=- \frac{e^t}{6}+ \frac{2t}{7}+ \frac{2}{49}+\mu e^{7t}
+\end{array}
+\right.\\
+ &\Leftrightarrow\exists(\lambda,\mu)\in\Rr^2/\;\forall t\in\Rr,\;\left\{
+\begin{array}{l}
+x(t)=- \frac{5e^t}{6}- \frac{3t}{14}- \frac{33}{392}++2\lambda e^{4t}+\mu e^{4t}\\
+y(t)=- \frac{e^t}{6} \frac{15t}{28}- \frac{81}{784}+\lambda e^{4t}-\mu e^{7t}
+\end{array}
+\right.
+\end{align*}  
+
+\item  Posons $A=\left(
+\begin{array}{ccc}  
+5&1&-1\\
+2&4&-2\\
+1&-1&1
+\end{array}
+\right)$.
+
+\begin{align*}\ensuremath
+\chi_A&=\left|
+\begin{array}{ccc}  
+5-\lambda&1&-1\\
+2&4-\lambda&-2\\
+1&-1&1-\lambda
+\end{array}
+\right|=(5-\lambda)(\lambda^2-5\lambda+2)-2(-\lambda)+(-\lambda+2)=-\lambda^3+10\lambda^2-26\lambda+12\\
+ &=-(\lambda-6)(\lambda^2-4\lambda+2)=-(\lambda-6)(\lambda-2+\sqrt{2})(\lambda-2-\sqrt{2}),
+\end{align*}
+
+et en particulier $A$ est diagonalisable dans $\Rr$.
+
+\begin{center}
+$(x,y,z)\in\text{Ker}(A-6I)\Leftrightarrow\left\{
+\begin{array}{l}
+-x+y-z=0\\
+2x-2y-2z=0\\
+x-y-5z=0
+\end{array}
+\right.\Leftrightarrow z=0\;\text{et}\;x=y$.
+\end{center}
+
+$\text{Ker}(A-6I)$ est la droite vectorielle engendrée par le vecteur $(1,1,0)$.
+
+\begin{align*}\ensuremath
+(x,y,z)\in\text{Ker}(A-(2+\sqrt{2})I)&\Leftrightarrow\left\{
+\begin{array}{l}
+(3-\sqrt{2})x+y-z=0\\
+2x+(2-\sqrt{2})y-2z=0\\
+x-y-(1+\sqrt{2})z=0
+\end{array}
+\right.\Leftrightarrow\left\{
+\begin{array}{l}
+z=(3-\sqrt{2})x+y\\
+2x+(2-\sqrt{2})y-2((3-\sqrt{2})x+y)=0\\
+x-y-(1+\sqrt{2})((3-\sqrt{2})x+y)=0
+\end{array}
+\right.
+\\
+ &\Leftrightarrow\left\{
+\begin{array}{l}
+z=(3-\sqrt{2})x+y\\
+(-4+2\sqrt{2})x-\sqrt{2}y=0\\
+-2\sqrt{2}x-(2+\sqrt{2})y=0
+\end{array}
+\right.\Leftrightarrow\left\{
+\begin{array}{l}
+z=(3-\sqrt{2})x+y\\
+y=(-2\sqrt{2}+2)x
+\end{array}
+\right.\\
+ &\Leftrightarrow\left\{
+\begin{array}{l}
+y=(-2\sqrt{2}+2)x\\
+z=(5-3\sqrt{2})x
+\end{array}
+\right..
+\end{align*} $\text{Ker}(A-(2+\sqrt{2})I)$ est la droite vectorielle engendrée par le vecteur $(1,2-2\sqrt{2},5-3\sqrt{2})$. Un calcul conjugué montre alors que $\text{Ker}(A-(2-\sqrt{2})I)$ est la droite vectorielle engendrée par le vecteur $(1,2+2\sqrt{2},5+3\sqrt{2})$.
+
+On sait alors que les solutions du système homogène $t\mapsto ae^{6t}\left(
+\begin{array}{c}
+1\\
+1\\
+0
+\end{array}
+\right)+be^{(2+\sqrt{2})t}\left(
+\begin{array}{c}
+1\\
+2-2\sqrt{2}\\
+5-3\sqrt{2})
+\end{array}
+\right)+ce^{(2-\sqrt{2})t}\left(
+\begin{array}{c}
+1\\
+2+2\sqrt{2}\\
+5+3\sqrt{2})
+\end{array}
+\right)$, $(a,b,c)\in\Rr^3$.
+
+\item  Posons $A=\left(
+\begin{array}{ccc}
+2&1&0\\
+-1&0&0\\
+1&1&1
+\end{array}
+\right)$. $\chi_A=\left|
+\begin{array}{ccc}
+2-\lambda&1&0\\
+-1&-\lambda&0\\
+1&1&1-\lambda
+\end{array}
+\right|=(1-\lambda)(\lambda^2-2\lambda+1)=(1-\lambda)^3$. Le théorème de \textsc{Cayley}-\textsc{Hamilton} permet alors d'affirmer que $(A-I)^3=0$. 
+
+On sait que les solutions du système $X'=AX$ sont les fonctions de la forme $t\mapsto e^{tA}X_0$ où $X_0\in\mathcal{M}_{3,1}(\Rr)$. Or, pour $t\in\Rr$,
+
+\begin{align*}\ensuremath
+e^{tA}&=e^{t(A-I)}\times e^{tI}\;(\text{car les matrices}\;t(A-I)\;\text{et}\;tI\;\text{commutent})\\
+ &=\left(\sum_{n=0}^{+\infty} \frac{t^n}{n!}(A-I)^n\right)\times e^tI=e^t\left(\sum_{n=0}^{2} \frac{t^n}{n!}(A-I)^n\right)\\
+ &=e^t\left(\left(
+ \begin{array}{ccc}
+ 1&0&0\\
+ 0&1&0\\
+ 0&0&1
+ \end{array}
+ \right)+t\left(
+ \begin{array}{ccc}
+ 1&1&0\\
+ -1&-1&0\\
+ 1&1&0
+ \end{array}
+ \right)+ \frac{t^2}{2}\left(
+ \begin{array}{ccc}
+ 1&1&0\\
+ -1&-1&0\\
+ 1&1&0
+ \end{array}
+ \right)\left(
+ \begin{array}{ccc}
+ 1&1&0\\
+ -1&-1&0\\
+ 1&1&0
+ \end{array}
+ \right)\right)\\
+ &=e^t\left(
+ \begin{array}{ccc}
+ 1+t&t&0\\
+ -t&1-t&0\\
+ t&t&1
+ \end{array}
+ \right).
+\end{align*}
+
+Les solutions du système sont les fonctions de la forme $t\mapsto e^{tA}X_0=e^t\left(
+ \begin{array}{ccc}
+ 1+t&t&0\\
+ -t&1-t&0\\
+ t&t&1
+ \end{array}
+ \right)\left(
+ \begin{array}{c}
+ a\\
+ b\\
+ c
+ \end{array}
+ \right)=\left(
+ \begin{array}{c}
+ (a+(a+b)t)e^t\\
+ (b-(a+b)t)e^t\\
+ ((a+b)t+c)e^t
+ \end{array}
+ \right)$, $(a,b,c)\in\Rr^3$. Maintenant,
+ 
+\begin{center}
+$\left(
+\begin{array}{c}
+x(0)\\
+y(0)\\
+z(0)
+\end{array}
+\right)=\left(
+\begin{array}{c}
+0\\
+1\\
+-1
+\end{array}
+\right)\Leftrightarrow\left\{
+\begin{array}{l}
+a=0\\
+b=1\\
+c=-1
+\end{array}
+\right.$.
+\end{center}
+
+La solution cherchée est $t\mapsto\left(
+ \begin{array}{c}
+ te^t\\
+ (1-t)e^t\\
+ (t-1)e^t
+ \end{array}
+ \right)$.
+\end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,20 @@
+\exercice{3729, quercia, 2010/03/11}
+\enonce[Centrale MP 2000]
+Soit $S$ une matrice carrée d'ordre~$n$, à coefficients réels, symétrique
+définie positive. Soit~$X=\begin{pmatrix}x_1\cr\vdots\cr x_n\cr\end{pmatrix}$.
+Montrer que $q$ : $X \mapsto\begin{vmatrix}0&x_1&\dots&x_n\cr x_1\cr\vdots&&S\cr x_n\cr\end{vmatrix}$
+est définie négative.
+
+\finenonce
+
+\noindication
+
+\correction
+Soit $P$ orthogonale diagonalisant~$S$~: ${}^t\!PSP=\mathrm{Diag}(\lambda_1,\dots,\lambda_n)$
+et $Y={}^t\!PX$.
+
+On a~: $q(X) = \begin{vmatrix}0&y_1&\dots&y_n\cr y_1&\lambda_1\cr\vdots&&\ddots\cr y_n&&&\lambda_n\cr\end{vmatrix}
+=-\lambda_1\dots\lambda_n\Bigl(\frac{y_1^2}{\lambda_1} +\dots +\frac{y_n^2}{\lambda_n}\Bigr)$.
+\fincorrection
+
+\finexercice

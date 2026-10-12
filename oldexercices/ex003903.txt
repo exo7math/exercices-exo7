@@ -1,0 +1,32 @@
+\exercice{3903, quercia, 2010/03/11}
+\enonce[Racine d'une somme d'exponentielles]
+
+Soient $0 < a_1 < a_2 < \dots < a_p$ des réels fixés.
+
+\begin{enumerate}
+  \item   Montrer que pour tout réel $a > a_p$ il existe un unique réel $x_a > 0$
+      solution de l'équation : $a_1^x + \dots + a_p^x = a^x$.
+      
+  \item   Pour $a < b$, comparer $x_a$ et $x_b$.
+      
+  \item   Chercher $\lim_{a\to+\infty} x_a$ puis
+      $\lim_{a\to+\infty} x_a\ln a$
+      
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item \'Etude de $x \mapsto \left(\frac{a_1}a\right)^x + \dots + \left(\frac{a_p}a\right)^x$.
+  \item $x_a > x_b$.
+  \item $x_a\to\ell$.
+               Si $\ell > 0$, $a^{a_a} \to +\infty$, mais
+               $a_1^{x_a} + \dots + a_p^{x_a} \to a_1^\ell + \dots + a_p^\ell$.
+
+               Donc $\ell = 0$, et $x_a\ln a \to \ln p$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

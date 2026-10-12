@@ -1,0 +1,31 @@
+\exercice{4134, quercia, 2010/03/11}
+\enonce[X MP$^*$ 2005]
+
+Soit $J$ un intervalle de~$\R$ et $f : {J\times \R^n} \to {\R^n}$ continue.
+On suppose qu'il existe $a,b$ continues de $J$ dans $\R^+$ telles que,
+pour tous $t,y$~: $(f(t,y)\mid y) \le a(t)\|y\|^2 + b(t)$.
+Montrer que toute solution maximale de $y' = f(t,y)$ est définie sur $J$ entier.
+
+
+\finenonce
+
+\noindication
+
+\correction
+Remarque~: la seule continuité de~$f$ implique l'existence d'une solution
+maximale à condition initiale donnée (thm. de Cauchy-Arzela, HP), mais pas son unicité.
+
+thm des bouts~: supposons $y$ solution, définie sur $[t_0,\alpha[$ avec $\alpha < \sup J$.
+
+On a $\frac{d}{d t}(\|y\|^2) = 2(y'\mid y) = 2(f(t,y)\mid y) \le 2a\|y\|^2 + 2b$,
+ce que l'on écrit $z' = 2az + 2b-c$ avec $z=\|y\|^2$ et $c$ fonction continue positive.
+Donc $z(t) = \exp(2A(t)-2A(t_0))z(t_0) +  \int_{s=t_0}^t\exp(2A(t)-2A(s))(2b(s)-c(s))\,d s$
+où $A$ est une primitive de $a$ sur $J$. On en déduit que $z$ est majorée
+sur $[t_0,\alpha[$ car $A$ et $b$ sont continues sur $[t_0,\alpha]$ et $c\ge 0$, donc
+$\|y'\| = \|f(t,y)\|$ est aussi majorée, et $ \int_{s=t_0}^\alpha y'(s)d s$
+est absolument convergente. Ainsi $y$ admet une limite finie en $\alpha^{-}$, et
+l'on peut prolonger $y$ au dela de $\alpha$ avec le thm de Cauchy-Arzela~; $y$ n'est
+pas maximale.
+\fincorrection
+
+\finexercice

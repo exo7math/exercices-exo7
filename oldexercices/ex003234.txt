@@ -1,0 +1,29 @@
+\exercice{3234, quercia, 2010/03/08}
+
+\enonce[Valeur moyenne]
+
+Soient $z_0,z_1,\dots,z_n \in \C$ tels que :
+$\forall\ P \in \C_{n-1}[X]$, on a $P(z_0) = \frac {P(z_1) +\dots+ P(z_n)}n$.
+\\
+On note $\Phi(X) = \prod_{i=1}^n (X-z_i)$.
+\begin{enumerate}
+  \item  Calculer $\frac {\Phi(z_0)}{z_0-z_k}$.
+  \item  En d{\'e}duire que $\Phi(X) = \frac {(X-z_0)\Phi'(X)}n + \Phi(z_0)$.
+  \item  D{\'e}montrer que $z_1,\dots,z_n$ sont les sommets d'un polygone r{\'e}gulier de centre
+     $z_0$.
+  \item  R{\'e}ciproque ?
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $P = \frac \Phi{X-z_k}  \Rightarrow 
+     \frac {\Phi(z_0)}{z_0-z_k}  = \frac {\Phi'(z_k)}n$.
+  \item Les deux membres sont {\'e}gaux en $z_0,\dots,z_n$.
+  \item D{\'e}composer $\Phi$ sur la base $\bigl((X-z_0)^k\bigr)$.
+  \item $\sum_k e^{2ikp/n} = 0$ pour $p < n  \Rightarrow $ OK.
+\end{enumerate}
+\fincorrection
+\finexercice 

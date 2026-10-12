@@ -1,0 +1,47 @@
+\exercice{5119, rouget, 2010/06/30}
+\enonce[**IT]
+Calculer de deux façons les racines carrées de $1+i$ et en déduire les valeurs exactes de $\cos\left(\frac{\pi}{8}\right)$
+et $\sin\left(\frac{\pi}{8}\right)$.
+\finenonce
+
+\noindication
+
+\correction
+D'abord on a $1+i=\sqrt{2}e^{i\pi/4}$. Les racines carrées de $1+i$ dans $\Cc$ sont donc
+$\sqrt[4]{2}e^{i\pi/8}$ et $-\sqrt[4]{2}e^{i\pi/8}$.
+On a aussi, pour $(x,y)\in\Rr^2$,
+\begin{align*}
+(x+iy)^2=1+i&\Leftrightarrow\left\{
+\begin{array}{l}
+x^2-y^2=1\\
+x^2+y^2=\sqrt{2}\\
+xy>0
+\end{array}
+\right.
+\Leftrightarrow
+\left\{
+\begin{array}{l}
+\rule[-4mm]{0mm}{0mm}x^2=\frac{1}{2}(\sqrt{2}+1)\\
+y^2=\frac{1}{2}(\sqrt{2}-1)\\
+xy>0
+\end{array}
+\right.\Leftrightarrow
+(x,y)\in\left\{\pm\left(\sqrt{\frac{\sqrt{2}+1}{2}},\sqrt{\frac{\sqrt{2}-1}{2}}\right)\right\}.
+\end{align*}
+Les racines carrées de $1+i$ sont donc aussi
+$\pm\left(\sqrt{\frac{\sqrt{2}+1}{2}}+i\sqrt{\frac{\sqrt{2}-1}{2}}\right)$. Puisque
+$\Re(e^{i\pi/8})=\cos\frac{\pi}{8}>0$, on
+obtient $\sqrt[4]{2}e^{i\pi/8}=\sqrt{\frac{\sqrt{2}+1}{2}}+i\sqrt{\frac{\sqrt{2}-1}{2}}$, ou encore
+
+$$e^{i\pi/8}=\sqrt{\frac{\sqrt{2}+1}{2\sqrt{2}}}+i\sqrt{\frac{\sqrt{2}-1}{2\sqrt{2}}}=\frac{1}{2}\left(\sqrt{2+\sqrt{2}}+i
+\sqrt{2-\sqrt{2}}\right)$$
+et donc, par identification des parties réelles et imaginaires,
+\begin{center}
+\shadowbox{
+$\cos\frac{\pi}{8}=\frac{1}{2}\sqrt{2+\sqrt{2}}\;\mbox{et}\;\sin\frac{\pi}{8}
+=\frac{1}{2}\sqrt{2-\sqrt{2}}.$
+}
+\end{center}
+
+\fincorrection
+\finexercice

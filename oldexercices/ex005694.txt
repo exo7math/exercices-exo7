@@ -1,0 +1,22 @@
+\exercice{5694, rouget, 2010/10/16}
+\enonce[**]
+Soit $(u_n)_{n\in\Nn}$ une suite de réels strictement positifs. Montrer que les séries de termes généraux $u_n$, $\frac{u_n}{1+u_n}$, $\ln(1+u_n)$ et $\int_{0}^{u_n}\frac{dx}{1+x^e}$  sont de mêmes natures.
+\finenonce
+
+\noindication
+
+\correction
+Pour $n\in\Nn$, posons $v_n=\ln(1+u_n)$, $w_n=\frac{u_n}{1+u_n}$ et $t_n=\int_{0}^{u_n}\frac{dx}{1+x^e}$.
+
+\textbullet~Si $u_n\underset{n\rightarrow+\infty}{\rightarrow}0$, alors $0\leqslant u_n\underset{n\rightarrow+\infty}{\sim}v_n\underset{n\rightarrow+\infty}{\sim}w_n$. Dans ce cas, les séries de termes généraux $u_n$, $v_n$ et $w_n$ sont de même nature.
+
+D'autre part, pour $n\in\Nn$, $\frac{u_n}{1+u_n^e}\leqslant t_n\leqslant u_n$ puis $\frac{1}{1+u_n^e}\leqslant\frac{t_n}{u_n}\leqslant1$et donc $t_n\underset{n\rightarrow+\infty}{\sim}u_n$. Les séries de termes généraux $u_n$ et $t_n$ sont aussi de même nature.
+
+\textbullet~Si $u_n$ ne tend pas vers $0$, la série de terme général $u_n$ est grossièrement divergente. Puisque $u_n =e^{v_n}-1$, $v_n$ ne tend pas vers $0$ et la série de terme général $v_n$ est grossièrement divergente. Dans ce cas aussi, les séries de termes généraux sont de même nature.
+
+De même, puisque $w_n=\frac{u_n}{1+u_n}<1$, on a $u_n =\frac{w_n}{1-w_n}$ et $w_n$ ne peut tendre vers $0$.
+
+Enfin, puisque $u_n$ ne tend pas vers $0$, il existe $\varepsilon> 0$ tel que pour tout entier naturel $N$, il existe $n = n(N)\geqslant N$ tel que $u_n\geqslant\varepsilon$. Pour cet $\epsilon$ et ces $n$, on a $t_n\geqslant\int_{0}^{\varepsilon}\frac{dx}{1+x^e}>0$ (fonction continue, positive et non nulle) et la suite $t_n$ ne tend pas vers $0$. Dans le cas où $u_n$ ne tend pas vers $0$, les quatre séries sont grossièrement divergentes.
+
+\fincorrection
+\finexercice

@@ -1,0 +1,31 @@
+\exercice{2383, mayer, 2003/10/01}
+\enonce
+\label{exocon}
+Soit $X$ un espace m\'etrique. 
+\begin{enumerate}
+\item Montrer que $X$ est connexe si et seulement si toute application
+continue $f:X\to \{0,1\}$ est constante.
+\item Soit $A$ une partie de $X$ connexe. Montrer que toute partie
+$B \subset E$ v\'erifiant $A \subset B\subset \overline{A}$ est
+connexe.
+\item Si $(A_n)_{n\geq 0}$ est une suite de parties connexes de
+$X$ telle que $A_n \cap A_{n+1}\neq \emptyset$ pour tout $n\geq
+0$. Prouver que $\bigcup _{n\geq 0} A_n $ est connexe.
+\end{enumerate}
+\finenonce
+
+\indication
+Utiliser la première question pour les deux suivantes.
+\finindication
+
+\correction
+\begin{enumerate}
+  \item C'est du cours.
+  \item Si $f : B \longrightarrow \{ 0,1 \}$ est continue alors elle induit une application restreinte $f_{|A} : A \longrightarrow \{ 0,1 \}$ continue. Donc $f$ est constante sur $A$. Soit $b \in B$ et soit $(a_n)$ une suite d'éléments de $A$ qui tendent vers $b$ (c'est possible car $B \subset \bar A$), alors $f(a_n)$ est constante, par exemple égal à $1$, car $A$ est connexe. Mais $f$ est continue sur $B$, donc $f(b) = \lim f(a_n) = 1$. On montre ainsi que $f$ est constante sur $B$. Donc $B$ est connexe. (Au passage on a montrer que $\bar A$ était connexe.)
+  \item Soit $f : A \longrightarrow \{ 0,1 \}$ une fonction continue, o\`u $A = \bigcup A_n$. $A_0$ est connexe donc $f$ est constante sur $A_0$ et vaut $v_0$,
+de même $A_1$ est connexe donc $f$ est constante sur $A_1$ et vaut $v_1$. Mais 
+pour $a \in A_0\cap A_1 \neq \varnothing$, on a $f(a)=v_0$ car $a\in A_0$ et
+$f(a)=v_1$ car $a\in A_1$. Donc $v_0=v_1$. Donc $f$ est constante sur $A_0 \cup A_1$. Par récurrence $f$ est constante sur $A$.
+\end{enumerate}
+\fincorrection
+\finexercice

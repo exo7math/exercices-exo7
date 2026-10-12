@@ -1,0 +1,27 @@
+\exercice{3450, quercia, 2010/03/10}
+\enonce[Formule de Cauchy-Binet]
+
+Soit $M=(a_{ij})\in\mathcal{M}_{np}(K)$ et $q\in[[1,\min(n,p)]]$.
+
+Pour $X=\{x_1,\dots,x_q\}$
+et $Y=\{y_1,\dots,y_q\}$
+avec $1\le x_1< x_2< \dots< x_q\le n$ et $1\le y_1< y_2< \dots< y_q\le p$
+on note $\Delta_{X,Y}(M)$ le déterminant de la matrice $q\times q$ de terme général $a_{x_i,y_j}$.
+
+\begin{enumerate}
+  \item Soient $M\in\mathcal{M}_{np}(K)$ et $N\in\mathcal{M}_{pn}(K)$ avec $n\le p$.
+    Montrer que $\det(MN) = \sum_{X\subset[[1,p]];\mathrm{Card}\, X =
+    n}\Delta_{[[1,n]],X}(M)\Delta_{X,[[1,n]]}(N)$
+    (considérer les deux membres comme des fonctions des colonnes de~$N$).
+  \item Donner une formule pour $\det(MN)$ quand $n>p$.
+  \item Soient $M\in\mathcal{M}_{np}(K)$, $N\in\mathcal{M}_{pq}(K)$ et $r\in{[[1,\min(n,q)]]}$.
+    Montrer, pour $X\subset{[[1,n]]}$ et $Y\subset{[[1,q]]}$ avec $\mathrm{Card}\,(X) =
+    \mathrm{Card}\,(Y) = r$~: $\Delta_{X,Y}(MN) = \sum_{Z\subset{[[1,p]]} ;\mathrm{Card}\,(Z)=r}\Delta_{X,Z}(M)\Delta_{Z,Y}(N)$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\nocorrection
+
+\finexercice

@@ -1,0 +1,89 @@
+\exercice{2602, delaunay, 2009/05/19}
+\enonce
+ Soit $A$ la matrice 
+$$A=\begin{pmatrix}3&2&4 \\  -1&3&-1 \\  -2&-1&-3\end{pmatrix}$$ 
+et $f$ l'endomorphisme de $\R^3$ associ\'e.
+\begin{enumerate}
+ \item  Factoriser le polyn\^ome caract\'eristique de $A$.
+ \item D\'eterminer les sous-espaces propres et caract\'eristiques de $A$. 
+ \item  D\'emontrer qu'il existe une base de $\R^3$ dans laquelle la matrice de $f$ est 
+$$B=\begin{pmatrix}-1 &0& 0 \\  0&2&1 \\ 0&0&2\end{pmatrix}$$
+et trouver une matrice $P$ inversible telle que $A=PBP^{-1}$.
+
+ \item Ecrire la d\'ecomposition de Dunford de $B$ (justifier).
+
+ \item Calculer $\exp B$.
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+ Soit $A$ la matrice 
+$$A=\begin{pmatrix}3&2&4 \\  -1&3&-1 \\  -2&-1&-3\end{pmatrix}$$ 
+et $f$ l'endomorphisme de $\R^3$ associ\'e.
+\begin{enumerate}
+ \item  {\it Factorisons le polyn\^ome caract\'eristique de $A$.} (1 point)
+
+On a 
+\begin{align*}
+P_A(X)&=\begin{vmatrix}3-X&2&4 \\  -1&3-X&-1 \\  -2&-1&-3-X\end{vmatrix} \\ 
+&=\begin{vmatrix}-1-X&2&4 \\  0&3-X&-1 \\  1+X&-1&-3-X\end{vmatrix} \\ 
+&=\begin{vmatrix}-1-X&2&4 \\ 0&3-X&-1 \\  0&1&1-X\end{vmatrix} \\ 
+&=(-1-X)(X^2-4X+4)=-(X+1)(X-2)^2
+\end{align*}
+Les valeurs propres de la matrice $A$ sont $\lambda_1=-1$, valeur propre simple et $\lambda_2=2$, valeur propre double.
+ \item  {\it D\'eterminons les sous-espaces propres et caract\'eristiques de $A$.} (2 points)
+ 
+Le sous-espace propre associ\'e \`a la valeur propre $-1$ est le sous-espace vectoriel $E_{-1}$ d\'efini par
+$$E_{-1}=\{\vec u\in\R^3,\ A\vec u=-u\}.$$
+Soit $\vec u=(x,y,z)\in\R^3$, 
+$$\vec u\in E_{-1}\iff \left\{\begin{align*}4x+2y+4z&=0 \\  -x+4y-z&=0 \\  -2x-y-2z&=0\end{align*}\right.
+\iff\left\{ \begin{align*}2x+y+2z&=0 \\  x-4y+z&=0 \end{align*}\right.$$
+L'espace $E_{-1}$ est une droite vectorielle dont un vecteur directeur est donn\'e par 
+$$\vec u_1=(1,0,-1).$$
+Le sous-espace propre associ\'e \`a la valeur propre $2$ est le sous-espace vectoriel $E_{2}$ d\'efini par
+$$E_{2}=\{\vec u\in\R^3,\ A\vec u=2u\}.$$
+Soit $\vec u=(x,y,z)\in\R^3$, 
+$$\vec u\in E_{2}\iff \left\{\begin{align*}x+2y+4z&=0 \\  -x+y-z&=0 \\  -2x-y-5z&=0\end{align*}\right.
+\iff \left\{\begin{align*}x+2y+4z&=0 \\  x-y+z&=0 \end{align*}\right.$$
+L'espace $E_{2}$ est une droite vectorielle dont un vecteur directeur est donn\'e par 
+$$\vec u_2=(2,1,-1).$$
+Le sous-espace $E_2$ \'etant de dimension $1$, la matrice $A$ n'est pas diagonalisable.
+
+Le sous-espace caract\'eristique $N_{-1}$ associ\'e \`a la valeur propre $-1$ est \'egal au sous-espace propre $E_{-1}$. Le sous-espace caract\'eristique $N_{2}$ associ\'e \`a la valeur propre $2$ est \'egal \`a
+$$N_2=\ker(A-2I)^2.$$ 
+D\'eterminons-le 
+$$(A-2I)^2=\begin{pmatrix}1&2&4 \\  -1&1&-1 \\  -2&-1&-5\end{pmatrix}
+\begin{pmatrix}1&2&4 \\  -1&1&-1 \\  -2&-1&-5\end{pmatrix}=\begin{pmatrix}-9&0&-18 \\  0&0&0 \\  9&0&18\end{pmatrix}.$$
+D'o\`u $\ker(A-2I)^2=\{(x,y,z)\R^3,\ x+2z=0\}$, c'est le plan vectoriel d'\'equation $x+2z=0$.
+
+ \item  {\it D\'emontrons qu'il existe une base de $\R^3$ dans laquelle la matrice de $f$ est} ( 1 point)
+$$B=\begin{pmatrix}-1 &0& 0 \\  0&2&1 \\ 0&0&2\end{pmatrix}.$$
+Les vecteurs $\vec u_1$ et $\vec u_2$, vecteurs propres associ\'es aux valeurs propres $-1$ et $2$ conviennent pour les deux premiers vecteurs de la base recherch\'ee, on va alors chercher un vecteur 
+$\vec u_3\in\ker(A-2I)^2$ tel que $A\vec u_3=\vec u_2+2\vec u_3$, notons $\vec u_3=(-2z,y,z)$, on d\'etermine $y$ et $z$ tels que 
+$$\begin{pmatrix}2y-2z \\ 3y+z \\ -y+z\end{pmatrix})=\begin{pmatrix}2 \\ 1 \\ -1\end{pmatrix}+\begin{pmatrix}-4z \\ 2y \\ 2z\end{pmatrix}$$
+on obtient
+$y+z=1$, le vecteur $\vec u_3=(0,1,0)$ convient.
+
+{\it Trouvons une matrice $P$ inversible telle que $A=PBP^{-1}$.} (1 point)
+
+La matrice de passage $P$ qui exprime la base $(\vec u_1, \vec u_2, \vec u_3)$ dans la base canonique de $\R^3$ r\'epond \`a la question,
+$$P=\begin{pmatrix}1 &2&0 \\  0&1&1 \\ -1&-1&0\end{pmatrix}\ {\hbox{et}}\ 
+P^{-1}=\begin{pmatrix}-1 &0&-2 \\  1&0&1 \\ -1&1&-1\end{pmatrix}.$$
+ \item  {\it Ecrivons la d\'ecomposition de Dunford de $B$.} (1 point)
+
+On a 
+$$B=\begin{pmatrix}-1 &0& 0 \\  0&2&1 \\ 0&0&2\end{pmatrix}=\underbrace{\begin{pmatrix}-1 &0& 0 \\  0&2&0 \\ 0&0&2\end{pmatrix}}_D+
+\underbrace{\begin{pmatrix}0&0& 0 \\  0&0&1 \\ 0&0&0\end{pmatrix},}_N$$
+la matrice $D$ est diagonale, la matrice $N$ est nilpotente, $N^2=0$, et $ND=DN$, c'est donc bien la d\'ecomposition de Dunford de la matrice $B$.
+ \item {\it Calculons $\exp B$}. (1 point)
+
+Compte tenu de la question pr\'ec\'edente, on a $B=N+D$, avec $DN=ND$, ainsi $\exp B=\exp D\exp N$, or
+$$\exp D=\begin{pmatrix}e^{-1} &0& 0 \\  0&e^2&0 \\ 0&0&e^2\end{pmatrix}\ {\hbox{et}}\ 
+\exp N=I+N=\begin{pmatrix}1 &0& 0 \\  0&1&1 \\ 0&0&1\end{pmatrix}.$$
+D'o\`u
+$$\exp B=\begin{pmatrix}e^{-1} &0& 0 \\  0&e^2&e^2 \\ 0&0&e^2\end{pmatrix}.$$
+\end{enumerate}
+\fincorrection
+\finexercice

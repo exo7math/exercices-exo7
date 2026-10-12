@@ -1,0 +1,31 @@
+\exercice{4361, quercia, 2010/03/12}
+\enonce[Centrale MP 2000]
+Domaine de définition de~$I(\alpha) =  \int_{x=0}^{+\infty}\frac{x\ln x}{(1+x^2)^\alpha}\,d x$.
+Calculer $I(2)$ et~$I(3)$.
+Déterminer la limite de $I(\alpha)$ en~$+\infty$.
+
+\finenonce
+
+\noindication
+
+\correction
+$I(\alpha)$ est définie pour tout~$\alpha>1$.
+\smallskip
+$I(2) = (x=e^u) =  \int_{u=-\infty}^{+\infty} \frac{ue^{2u}}{(1+e^{2u})^2}\,d u
+      =  \int_{u=-\infty}^{+\infty} \frac{u}{(e^u+e^{-u})^2}\,d u
+      = 0$ (parité).
+\smallskip
+$I(3) =  \int_{u=-\infty}^{+\infty} \frac{ue^{-u}}{(e^u+e^{-u})^3}\,d u
+      =  \int_{u=0}^{+\infty} \frac{-u(e^u-e^{-u})}{(e^u+e^{-u})^3}\,d u
+      = \Bigl[\frac{u}{2(e^u+e^{-u})^2}\Bigr]_{u=0}^{+\infty}
+      -  \int_{u=0}^{+\infty} \frac{d u}{2(e^u+e^{-u})^2}$
+\smallskip
+$\phantom{I(3)}
+      = - \int_{u=0}^{+\infty} \frac{e^{2u}\,d u}{2(1+e^{2u})^2}
+      = \Bigl[\frac{1}{4(1+e^{2u})}\Bigr]_{u=0}^{+\infty}
+      = -\frac18$.
+\smallskip
+$I(\alpha)\to 0$ (lorsque $\alpha\to+\infty$) par convergence dominée.
+\fincorrection
+
+\finexercice

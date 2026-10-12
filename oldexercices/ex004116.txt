@@ -1,0 +1,25 @@
+\exercice{4116, quercia, 2010/03/11}
+\enonce[Chimie P 91]
+
+Résoudre numériquement le système 
+$$\begin{cases} y'=-y\cr z'=y-z\cr y(0)=1 \text{ et } z(0)=0. \end{cases}$$
+Prendre $h = 0.1$ et faire un tableau avec $10$ valeurs.
+Faire la résolution analytique.
+\finenonce
+
+\noindication
+
+\correction
+Méthode d'Euler : \\
+{\small \vbox{\hrule
+	     \vtop{\offinterlineskip
+		   \halign{\vrule \ \strut$#$\hfil\ \vrule&&\quad$#$\hfil\cr
+	     x &0.0   &0.1   &0.2   &0.3   &0.4   &0.5	 &0.6	&0.7   &0.8   &0.9   &1.0\phantom{00}	\ \vrule\cr\noalign{\hrule}
+	     y &1.000 &0.900 &0.810 &0.729 &0.656 &0.590 &0.531 &0.478 &0.430 &0.387 &0.348		\ \vrule\cr\noalign{\hrule}
+	     z &0.000 &0.100 &0.180 &0.243 &0.292 &0.328 &0.354 &0.372 &0.383 &0.387 &0.387		\ \vrule\cr\noalign{\hrule}}}}
+}
+	     \par
+	     Solution théorique : $y = e^{-x}$, $z = xe^{-x}$.
+\fincorrection
+
+\finexercice

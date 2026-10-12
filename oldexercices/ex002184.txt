@@ -1,0 +1,92 @@
+\exercice{2184, debes, 2008/02/12}
+\enonce
+\label{ex:deb84}
+Soit $G$ un groupe fini et $X$ un $G$-ensemble transitif. On
+dira que $X$ est
+{\it imprimitif } si $X$ admet une partition $X=\bigcup _{1\leq i\leq r}
+X_i$ telle que tout \'el\'ement
+$g$ de $G$ respecte cette partition, i.e. envoie un sous-ensemble $X_i$
+sur un sous-ensemble $X_k$
+(\'eventuellement $k=i$) et telle que $2\leq r$ et les parties $X_i$ ne
+sont pas r\'eduites \`a un
+\'el\'ement. Dans le cas contraire on dit que $X$ est {\it primitif}.
+\smallskip
+
+(a) Montrer que dans la d\'ecomposition pr\'ec\'edente, si elle existe,
+tous les sous-ensembles $X_i$ ont
+m\^eme nombre $m$ d'\'el\'ements.
+\smallskip
+
+(b) Soit $H$ un sous-groupe de $G$. Montrer que $G/H$ est imprimitif si et
+seulement s'il existe un
+sous-groupe propre $K$ de $G$ diff\'erent de $H$ tel que $H\subset K
+\subset G$ (on regardera la
+partition de $G/H$ en classes modulo $K$).
+\smallskip
+
+(c) D\'eduire de ce qui pr\'ec\`ede que $X$ est primitif si et seulement si
+le fixateur d'un \'el\'ement $x$
+de $X$ est maximal parmi les sous-groupes propres de $G$.
+\smallskip
+
+(d) On suppose ici que $X$ est primitif et que $H$ est un sous-groupe
+distingu\'e de $G$ dont l'action
+n'est pas triviale sur $X$. Montrer qu'alors $H$ agit transitivement sur $X$.
+\finenonce 
+
+\indication
+Question (d): Si $K$ le fixateur d'un \'el\'ement $x\in X$, alors $K$ est un sous-groupe
+propre maximal de $G$ et $X$ est isomorphe \`a $G/\cdot K$ en tant que $G$-ensemble. D\'eduire
+du fait que $H$ n'est pas contenu dans $K$ que $HK=G$ et que
+$H/\cdot H\cap K\simeq G/\cdot K$.
+\finindication
+
+\correction
+(a) Pour $1\leq i,j \leq r$ quelconques et $x_i,x_j \in X_i \times X_j$, il existe $g\in G$
+tel que $g\cdot x_i=x_j$ (par transitivit\'e de $G$). On a alors $g\cdot X_i = X_j$. En
+particulier
+$\hbox{\rm card}(X_i)= \hbox{\rm card}(g\cdot X_i)=\hbox{\rm card}(X_j)$.
+\medskip
+
+(b) Si l'action de $G$ sur $G/\cdot H$ est imprimitive, le sous-ensemble $K=\{g\in G\hskip 2pt
+|\hskip 2pt g\cdot X_1 = X_1\}$, o\`u $X_1$ est par exemple celui des sous-ensembles
+$X_i\subset X$ qui contient la classe neutre $H$ de $G/\cdot H$, est un sous-groupe propre de
+$G$ ($K\not=G$ car
+$G$ agissant transitivement, il existe $g\in G$ tel que $(g\cdot X_1) \cap X_2\not=\emptyset$)
+et contenant strictement $H$ (car encore par transitivit\'e, il existe $g\in G$ tel que
+$g\cdot H$ soit un \'el\'ement de $X_1$ (ce qui assure que $g\in K$) mais diff\'erent de $H$
+(ce qui assure que $g\notin H$)). 
+
+\hskip 5mm Inversement, si un tel sous-groupe $K$ de $G$ existe, la relation ``$gH \sim g^\prime H$
+si $(g^\prime)^{-1} g\in K$'' est bien d\'efinie sur $G/\cdot H$ (la d\'efinition ne
+d\'epend pas des repr\'esentants dans $G$ des classes $gH$ et $g^\prime H$) et est une
+relation d'\'equivalence (imm\'ediat). La partition associ\'ee de $G/\cdot H$ en classes
+d'\'equivalence v\'erifie les conditions de la d\'efinition d'imprimitivit\'e (pour l'action
+de $G$ sur $G/\cdot H$): la partition est non triviale car $K$ est strictement contenu entre
+$H$ et $K$; et si $(\gamma H)K$ est une de ces classes d'\'equivalence et
+$g\in G$, alors $g\cdot (\gamma H)K$ est la classe $(g\gamma H)K$: l'action de $G$ permute
+bien les classes constituant la partition de $X$.
+\medskip
+
+(c) D'apr\`es l'exercice \ref{ex:deb83}, les ensembles $X$ et $G/\cdot G(x)$ sont isomorphes comme
+$G$-ensembles. L'action de $G$ sur $X$ est primitive si et seulement si celle de $G$ sur
+$G/\cdot G(x)$ l'est, ce qui, d'apr\`es la question pr\'ec\'edente, \'equivaut \`a dire que le
+fixateur $G(x)$ est maximal parmi les sous-groupes de $G$.
+\medskip 
+
+(d) Soient $x\in X$ et $G(x)$ son fixateur. Le sous-groupe $H$ \'etant distingu\'e dans
+$G$, l'ensemble $HG(x)$ est un sous-groupe; c'est le sous-groupe engendr\'e par $H$ et
+$G(x)$. De plus, l'action de $H$ sur $G$ n'\'etant pas triviale, $H$ n'est pas contenu dans
+$G(x)$ et par cons\'equent $HG(x)$ contient strictement $G(x)$. D'apr\`es la question (c), il
+en r\'esulte que $HG(x) = G$. On v\'erifie sans peine que l'application $H/\cdot (H\cap G(x))
+\rightarrow (HG(x))/\cdot G(x)$ qui \`a toute classe $h(H\cap G(x))$ associe la classe $hG(x)$
+est une bijection (ce qui g\'en\'eralise le th\'eor\`eme d'isomorphisme
+$HK/K\simeq H/(H\cap K)$ qui est vrai sous l'hypoth\`ese suppl\'ementaire ``$K$
+distingu\'e'' (qui assure que les ensembles $HK/K$ et $H/(H\cap K)$ sont des groupes et non
+de simples ensembles comme ici)). On obtient donc que les ensembles $H/\cdot (H\cap
+G(x))$ et $G/\cdot G(x)$ sont isomorphes comme $G$-ensembles (la compatibilit\'e des
+actions est imm\'ediate). Or ces deux ensembles sont en bijection avec les orbites de $x$
+sous $H$ et sous $G$ respectivement. Conclusion: l'action de $H$ est, comme celle de $G$,
+transitive sur l'ensemble $X$. 
+\fincorrection
+\finexercice

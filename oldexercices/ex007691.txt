@@ -1,0 +1,26 @@
+\exercice{7691, mourougane, 2021/08/11}
+\enonce
+Calculer l'aire de l'ellipsoïde $\mathcal{E}$ d'équation $x^2+y^2+5z^2=1$.
+\finenonce
+\noindication
+\correction
+On paramètre $\mathcal{E}$ en coordonnées sphériques par $F(\theta,\varphi)=
+(\cos\theta\sin\varphi,\sin\theta\sin\varphi,1/\sqrt{5}\cos\varphi)$ avec $\theta\in[0,2\pi[$ et 
+$\varphi\in [0,\pi]$.
+Le plan tangent est engendré par les vecteurs
+$\frac{\partial F}{\partial \theta}=(-\sin\theta\sin\varphi,\cos\theta\sin\varphi,0)$ 
+et $\frac{\partial F}{\partial \varphi}=(\cos\theta\cos\varphi,\sin\theta\cos\varphi,-1/\sqrt{5}\sin\varphi)$.
+Dans cette base, la matrice de la première forme fondamentale est 
+$\begin{pmatrix}\sin^2\varphi&0\\0&\cos^2\varphi+1/5\sin^2\varphi\end{pmatrix}$.
+L'élément de volume est $1/\sqrt{5}\sin\varphi\sqrt{1+4\cos^2\varphi}d\theta d\varphi$.
+L'aire de l'ellipsoïde est donc
+\begin{eqnarray*}
+ A[\mathcal{E}]&=&\int_{\varphi=0}^{\pi}\int_{\theta=0}^{2\pi}\frac{1}{\sqrt{5}}
+\sin\varphi\sqrt{1+4\cos^2\varphi} d\varphi d\theta\\
+&=&2\pi\int_{\varphi=0}^{\pi}\frac{1}{\sqrt{5}}
+\sin\varphi\sqrt{1+4\cos^2\varphi}d\varphi\\
+&=&\frac{2\pi}{\sqrt{5}}\int_{t=-1}^1\sqrt{1+4t^2}dt=\frac{\pi}{\sqrt{5}}(2\sqrt{5}+\ln(2+\sqrt{5}))\\
+&=&\pi(2+\frac{\ln(2+\sqrt{5})}{\sqrt{5}}).
+\end{eqnarray*}
+\fincorrection
+\finexercice

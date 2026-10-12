@@ -1,0 +1,66 @@
+\exercice{5664, rouget, 2010/10/16}
+\enonce[***]
+Soient $a$ et $b$ deux réels tels que $|a|\neq|b|$. Soit $A=\left(\begin{array}{cccc}
+0&b&\ldots&b\\
+a&\ddots&\ddots&\vdots\\
+\vdots&\ddots&\ddots&b\\
+a&\ldots&a&0
+\end{array}
+\right)$.
+
+Montrer que les images dans le plan complexe des valeurs propres de $A$ sont cocycliques. (Indication : pour calculer $\chi_A$, considérer $f(x) =\left|
+\begin{array}{cccc}
+-X+x&b+x&\ldots&b+x\\
+a+x&\ddots&\ddots&\vdots\\
+\vdots&\ddots&\ddots&b+x\\
+a+x&\ldots&a+x&-X+x
+\end{array}
+\right|$.)
+\finenonce
+
+\noindication
+
+\correction
+$\chi_A=\left|
+\begin{array}{cccc}
+-X&b&\ldots&b\\
+a&\ddots&\ddots&\vdots\\
+\vdots&\ddots&\ddots&b\\
+a&\ldots&a&-X
+\end{array}
+\right|$. Soit $f(x) =\left|
+\begin{array}{cccc}
+-X+x&b+x&\ldots&b+x\\
+a+x&\ddots&\ddots&\vdots\\
+\vdots&\ddots&\ddots&b+x\\
+a+x&\ldots&a+x&-X+x
+\end{array}
+\right|$.
+
+$f$ est un polynôme en $x$. Par $n$ linéarité du déterminant, $f(x)$ est somme de $2^n$ déterminants dont $2^n-(n+1)$ sont nuls car contiennent deux colonnes de $x$. Les déterminants restant contiennent au plus une colonne de x et sont donc de degré inférieur ou égal à $1$ en $x$. $f$ est donc une fonction affine. Il existe donc deux nombres $A$ et $B$ tels que $\forall x\in \Cc$, $f(x)=Ax+B$. Les égalités $f(-a)=(-X-a)^n$ et $f(-b)=(-X-b)^n$ fournissent $\left\{
+\begin{array}{l}
+-aA+B=(-X-a)^n\\
+-bA+B=(-X-b)^n
+\end{array}
+\right.$ et comme $a\neq b$,  les formules de \textsc{Cramer} fournissent
+
+\begin{center}
+$\chi_A= f(0)=B=\frac{1}{b-a}(b(-X-a)^n-a(-X-b)^n)$.
+\end{center}
+
+Soit $\lambda\in\Cc$.
+
+\begin{center}
+$\lambda$ valeur propre de $A\Rightarrow \ch_A(\lambda) = 0\Rightarrow\left(\frac{\lambda+a}{\lambda+b}\right)^n=\frac{a}{b}\Rightarrow\left|\frac{\lambda+a}{\lambda+b}\right|=\left|\frac{a}{b}\right|^{1/n}$.
+\end{center}
+
+Soient $M$ le point du plan d'affixe $\lambda$, $A$ le point du plan d'affixe $-a$ et $B$ le point du plan d'affixe $-b$ puis $k =\left|\frac{a}{b}\right|^{1/n}$. $k$ est un réel strictement positif et distinct de $1$. On peut donc poser $I =\text{bar}(A(1),B(-k))$ et $J =\text{bar}(A(1),B(k))$.
+
+\begin{align*}\ensuremath
+\lambda\;\text{valeur propre de}\;A&\Rightarrow MA = kMB \Rightarrow MA^2 - k^2MB^2 = 0\Rightarrow (\overrightarrow{MA}-k\overrightarrow{MB})(\overrightarrow{MA}+k\overrightarrow{MB}) = 0\\ 
+ &\Rightarrow(1-k)\overrightarrow{MI}.(1+k)\overrightarrow{MJ}= 0 \Rightarrow\overrightarrow{MI}.\overrightarrow{MJ}= 0\\
+  &\Rightarrow M\;\text{est sur le cercle de diamètre}\;[I,J]\;(\text{cercles d'\textsc{Appolonius} (de Perga)}).
+\end{align*}
+
+\fincorrection
+\finexercice

@@ -1,0 +1,40 @@
+\exercice{3187, quercia, 2010/03/08}
+
+\enonce[Polytechnique MP$^*$ 2000]
+\begin{enumerate}
+  \item Donner un isomorphisme $f$ en\-tre $\C^{n+1}$ et $\C_n[X]$.
+  \item Montrer que $\sigma:{\C^{n+1}}\to{\C^{n+1}},
+    {(a_0,\dots,a_n)}\mapsto{(a_n,a_0,\dots,a_{n-1})}$ est lin{\'e}aire.
+  \item Si $(P,Q)\in(\C[X])^2$, on d{\'e}finit le produit $\overline{PQ}$
+    comme le reste de la division euclidienne de $PQ$ par $X^{n+1}-1$.
+    Montrer que l'application induite par~$\sigma$ sur~$\C_n[X]$
+    (c'est-{\`a}-dire $f\circ \sigma\circ f^{-1}$) est l'application
+    qui {\`a}~$P$ associe $\overline{XP}$.
+
+  \item Soit~$F$ un sous-espace de~$\C^{n+1}$ stable par~$\sigma$.
+
+    Montrer qu'il existe un polyn{\^o}me $Q$ tel que
+    $f(F) = \{\overline{RQ},\ R\in\C_n[X]\}$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item 
+  \item Trivialement vrai ou trivialement faux selon le choix qu'on
+    a fait en {\bf 1}.
+  \item 
+  \item Soit $Q\in \C[X]$ et $F_Q = \{\overline{RQ},\ R\in\C_n[X]\}$.
+    On a $F_Q = \{\overline{RQ},\ R\in\C[X]\}$ de mani{\`e}re {\'e}vidente, donc
+    $F_Q$ est stable par la multiplication modulaire par~$X$.
+    
+    Soit r{\'e}ciproquement $F$ un sev de $\C_n[X]$ stable par la multiplication
+    modulaire par $X$. Si $(P_1,\dots,P_k)$ est une famille g{\'e}n{\'e}ratrice de~$F$
+    alors $Q = \mathrm{pgcd}(P_1,\dots,P_k)\in F$ d'apr{\`e}s la relation de
+    B{\'e}zout et la stabilit{\'e} de~$F$ donc $F_Q\subset F$ et $P_i\in F_Q$ puisque
+    $Q$ divise $P_i$ d'o{\`u} $F\subset F_Q$ et $F=F_Q$.
+\end{enumerate}
+\fincorrection
+\finexercice 

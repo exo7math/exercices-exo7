@@ -1,0 +1,28 @@
+\exercice{5907, rouget, 2010/10/16}
+\enonce[**]
+Soit $\omega=x^2dx+y^2dy$. Calculer l'intégrale de $\omega$ le long de tout cercle du plan parcouru une fois dans le sens trigonométrique. Même question avec $\omega=y^2dx+x^2dy$.
+
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  $\omega=x^2dx+y^2dy$ est de classe $C^1$ sur $\Rr^2$ qui est un ouvert étoilé de $\Rr^2$ et est fermée car $ \frac{\partial P}{\partial y}=0= \frac{\partial Q}{\partial x}$. On en déduit que $\omega$ est exacte sur $\Rr^2$ d'après le théorème de \textsc{Schwarz}. Par suite, l'intégrale de $\omega$ le long de tout cercle parcouru une fois dans le sens trigonométrique est nulle.
+
+\item  $\omega=y^2dx+x^2dy$ est de classe $C^1$ sur $\Rr^2$ et n'est pas fermée car $ \frac{\partial P}{\partial y}=2y\neq2x= \frac{\partial Q}{\partial x}$. On en déduit que $\omega$ n'est pas exacte sur $\Rr^2$. L'intégrale de $\omega$ le long d'un cercle parcouru une fois dans le sens trigonométrique n'est plus nécessairement nulle.
+
+On parcourt le cercle $C$ le cercle de centre $(a,b)$ et de rayon $R>0$ une fois dans le sens trigonométrique ou encore on considère l'arc paramétré $\gamma~:~t\mapsto(a+R\cos t,b+R\sin t)$, $t$ variant en croissant de $0$ à $2\pi$.
+
+\begin{align*}\ensuremath
+\int_{\gamma}^{}\omega&=\int_{0}^{2\pi}\left((b+R\sin t)^2(-R\sin t)+(a+R\cos t)^2(R\cos t)\right)\;dt\\
+ &=R\int_{0}^{2\pi}(a\cos t-b\sin t+2aR\cos^2t-2bR\sin^2t+R^2(\cos^3t-\sin^3t))\;dt\\
+ &=R^2\int_{0}^{2\pi}(2a\cos^2t-2b\sin^2t+R(\cos^3t-\sin^3t))\;dt\\
+ &=R^2\int_{0}^{2\pi}(a(1+\cos t)-b(1-\cos t)+R(\cos t-\sin t)(\cos^2t+\cos t\sin t+\sin^2t))\;dt\\
+ &=R^2\int_{0}^{2\pi}(a-b+R(\cos t-\sin t)(1+\cos t\sin t))\;dt\\
+ &=R^2\left(2\pi(b-a)+\int_{0}^{2\pi}R(\cos t-\sin t+\cos^2t\sin t-\cos t\sin^2t)\;dt\right)\\
+ &=2\pi R^2(b-a).
+\end{align*}
+\end{enumerate}
+\fincorrection
+\finexercice

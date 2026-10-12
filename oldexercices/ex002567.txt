@@ -1,0 +1,20 @@
+\exercice{2567, delaunay, 2009/05/19}
+\enonce
+ Soit $$A=\begin{pmatrix}1&1&-1 \\ 0&1&0 \\ 1&0&1\end{pmatrix}$$
+Factoriser le polyn\^ome caract\'eristique de $A$. La matrice $A$ est-elle diagonalisable dans $\R$~? dans $\C$ ?
+\finenonce 
+
+\noindication
+
+\correction
+Soit $$A=\begin{pmatrix}1&1&-1 \\ 0&1&0 \\ 1&0&1\end{pmatrix}$$
+{\it Factorisons le polyn\^ome caract\'eristique de $A$}. 
+$$P_A(X)=\begin{vmatrix}1-X&1&-1 \\  0&1-X&0 \\ 1&0&1-X\end{vmatrix}=(1-X)^3+(1-X)=(1-X)((1-X)^2+1)=(1-X)(X^2-2X+2)$$
+factorisons maintenant le polyn\^ome $X^2-2X+2$, le discriminant r\'eduit $\Delta'=1-2=-1$, ce polyn\^ome n'admet donc pas de racines r\'eelles, mais 
+deux racines complexes conjugu\'ees qui sont : $1+i$ et $1-i$. On a $P_A(X)=(1-X)(1-i-X)(1+i-X)$.
+
+La matrice $A$ n'est pas diagonalisable dans $\R$ car son polyn\^ome caract\'eristique n'a pas toutes ses racines dans $\R$, elle est diagonalisable dans
+$\C$ car c'est une matrice $3\times 3$ qui admet trois valeurs propres distinctes.
+
+\fincorrection
+\finexercice

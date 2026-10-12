@@ -1,0 +1,30 @@
+\exercice{5584, rouget, 2010/10/16}
+\enonce[*** I]
+Soient $E$ un espace de dimension finie $n$ non nulle et $f$ un endomorphisme nilpotent de $E$. Montrer que $f^n=0$.
+\finenonce
+
+\noindication
+
+\correction
+\textbf{1ère solution.} Si $f=0$, c'est immédiat . Sinon, soit $p$ l'indice de nilpotence de $f$ ($p\geqslant2$).
+
+Par définition de $p$, il existe un vecteur $x_0$ tel que $f^{p-1}(x_0)\neq 0$ (et $f^p(x_0)=0$).
+
+Montrons que la famille $(f^k(x_0))_{0\leqslant k\leqslant p-1}$ est libre. Dans le cas contraire, il existe $a_0$,..., $a_{p-1}$ $p$ scalaires non tous nuls tels que $a_0x_0+...+a_{p-1}f^{p-1}(x_0)=0$.
+
+Soit $k=\text{Min}\{i\in\llbracket0,p-1\rrbracket/\;a_i\neq0\}$.
+
+\begin{align*}\ensuremath
+\sum_{i=0}^{p-1}a_if^i(x_0)=0&\Rightarrow\sum_{i=k}^{p-1}a_if^i(x_0)=0\Rightarrow f^{p-1}\left(\sum_{i=k}^{p-1}a_if^i(x_0)\right)=0\\
+ &\Rightarrow a_kf^{p-1}(x_0)=0\;(\text{car pour}\;i\geqslant p,\;f^i=0\\
+ &\Rightarrow a_k=0\;(\text{car}\;f^{p-1}(x_0)\neq0).
+\end{align*}
+
+Ceci contredit la définition de $k$ et donc la famille $(f^k(x_0))_{0\leqslant k\leqslant p-1}$ est libre. Puisque le cardinal d'une famille libre est inférieur à la dimension de
+l'espace, on a montré que $p\leqslant n$ ou, ce qui revient au même, $f^n=0$.
+
+\textbf{2ème solution.} (pour les redoublants)
+
+Soit $p\in\Nn^*$ l'indice de nilpotence de $f$. Le polynôme $X^p$ est annulateur de $f$. Son polynôme minimal est un diviseur de $X^p$ et donc égal à $X^k$ pour un certain $k\in\llbracket1,p\rrbracket$. Par définition de l'indice de nilpotence, $k=p$ puis $\mu_f=X^p$. D'après le théorème de \textsc{Cayley}-\textsc{Hamilton}, $\mu_f$ divise $\chi_f$ qui est de degré $n$ et en particulier $p\leqslant n$.
+\fincorrection
+\finexercice

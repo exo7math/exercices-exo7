@@ -1,0 +1,65 @@
+\exercice{2194, debes, 2008/02/12}
+\enonce 
+
+Soit $G$ un groupe non commutatif d'ordre $8$.\smallskip 
+
+(a) Montrer que $G$ contient un \'el\'ement $a$ d'ordre $4$ et que le
+sous-groupe $H$ de $G$ engendr\'e par $a$ est distingu\'e dans $G$.
+\smallskip
+
+(b) On suppose ici qu'il existe un \'el\'ement $b$ de $G\setminus  H$ qui est
+d'ordre $2$. Soit $K$ le sous-groupe engendr\'e par $b$. Montrer que dans ce cas $G$
+est isomorphe au produit semi-direct de $H$ par $K$, le g\'en\'erateur $b$ de $K$
+agissant sur $H$ via l'automorphisme $x
+\rightarrow x^{-1}$. Le groupe est alors isomorphe au groupe di\'edral $D_4$.
+\smallskip
+
+(c) Dans le cas contraire, soit $b$ un \'el\'ement d'ordre $4$ de $G$
+n'appartenant pas \`a $H$. Montrer que $a^2$ est le seul \'el\'ement d'ordre $2$ de
+$G$, que le centre $Z(G)$ de $G$ est \'egal \`a $\{ 1, a^2 \}$. On pose
+$-1=a^2$. Montrer que $a$ et $b$ v\'erifient les relations suivantes: $a^2=b^2=-1$,
+$bab^{-1} =a^{-1}$. Enfin on pose $ab=c$. V\'erifier les relations suivantes:
+$$a^2=b^2=c^2=-1 \quad ab=-ba=c \quad bc=-cb=a \quad ca=-ac=b$$
+(l'\'ecriture $-x$ signifiant ici $(-1)x$). Ce dernier groupe est le groupe des
+quaternions.
+\finenonce 
+
+\noindication
+\correction
+(a) Le groupe $G$ n'\'etant pas ab\'elien n'est pas cyclique d'ordre $8$ et
+poss\`ede au moins un \'el\'ement $a\not= 1$ qui n'est pas d'ordre $2$ (cf l'exercice \ref{ex:deb14}). 
+Cet \'el\'ement est n\'ecessairement d'ordre $4$. Le sous-groupe
+$H=\hskip 2pt <a>$ est distingu\'e car d'indice $2$.
+\smallskip
+
+(b) Supposons qu'il existe $b\in G\setminus H$ d'ordre $2$ et posons $K=\hskip
+2pt <b>$. On a $H\cap K=\{1\}$ car $b\notin H$. Le sous-groupe
+$H$ \'etant distingu\'e dans $G$, on peut \'ecrire que $HK/H \simeq K$, ce qui
+donne $|HK|= |H|\hskip 2pt |K| = 8$ et donc $G=HK$. De plus, l'inclusion $K\subset
+G$ est une section de la suite exacte $1 \rightarrow H \rightarrow G \rightarrow
+K \rightarrow 1$. Le groupe
+$G$ est donc isomorphe au produit semi-direct de $H$ par $K$. L'action sur $H$ du
+g\'en\'erateur
+$b$ d'ordre $2$ de $K$ est n\'ecessairement donn\'ee par le passage \`a l'inverse
+(cf exercice \ref{ex:deb93}).
+\smallskip
+
+(c) Dans le cas contraire \`a (b), tous les \'el\'ements de $G\setminus H$ sont
+n\'ecessairement d'ordre $4$. Les \'el\'ements de $G$ d'ordre $2$ sont donc dans
+$H$, qui n'en poss\`ede qu'un: $a^2$, qu'on note $-1$.
+
+\hskip 5mm Le centre $Z(G)$ est d'ordre diff\'erent de $1$ car $G$ est un
+$2$-groupe et diff\'erent de $8$ car $G$ est non ab\'elien. Il n'est pas non plus
+d'ordre $4$ car alors on aurait $G=Z(G) \cup x Z(G)$ pour un $x\in G\setminus
+Z(G)$ mais alors $G$ serait ab\'elien. Le centre $Z(G)$ est donc d'ordre $2$.
+D'apr\`es ce qui pr\'ec\`ede $Z(G)=\{1,-1\}$. 
+
+\hskip 5mm Soit $b\in G\setminus H$. Alors $G$ est engendr\'e par
+$a$ et $b$. D'autre part $b$ est d'ordre $4$ et $b^2$ d'ordre $2$ ce qui
+entraine $b^2=-1$. La conjugaison par $b$ induit un automorphisme du sous-groupe
+distingu\'e $<a>$; on a donc $bab^{-1} = a^{-1}$, le seul autre cas $bab^{-1} = a$
+\'etant exclu car $G$ non ab\'elien. On obtient ensuite ais\'ement que si $ab=c$, 
+on a $c^2=-1$ ($c^2=abab=aa^{-1}bb=b^2=-1$) et $ba=-ab=-c$, $bc=-cb=a$,
+$ca=-ac=b$.
+\fincorrection
+\finexercice

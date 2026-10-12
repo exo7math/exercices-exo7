@@ -1,0 +1,42 @@
+\exercice{2346, queffelec, 2003/10/01}
+\enonce
+On note $X=l^{\infty}$ l'espace des suites r\'eelles born\'ees, et $Y=c_0$
+l'espace des suites r\'eelles tendant vers $0$, tous deux munis de la
+m\'etrique (\`a v\'erifier) $d(x,y)=\sup_n\vert x(n)-y(n)\vert$. Montrer que $Y$
+est ferm\'e dans $X$.  Montrer que l'ensemble des suites nulles \`a
+partir d'un certain rang est dense dans
+$Y$ mais pas dans $X$.
+\finenonce
+
+\indication
+Une suite de $l^\infty$ est notée $(x^p)_{p\in \Nn}$, pour chaque $p \ge 0$, $x^p$ est elle m\^eme une suite $x^p = (x^p(0), x^p(1), x^p(2), \ldots)$. 
+\finindication
+
+\correction
+\begin{enumerate}
+  \item Une suite de $l^\infty$ est notée $(x^p)_{p\in \Nn}$, pour chaque $p \ge 0$, $x^p$ est elle m\^eme une suite $x^p = (x^p(0), x^p(1), x^p(2), \ldots)$. 
+(Il convient de garder la tête froide : on regarde des suites de suites !)
+Il faut montrer que $Y$ est fermé  dans $X$.
+Soit donc $(x^p)$ une suite de $Y$ qui converge vers $x \in X$. Il faut donc montrer qu'en fait $x\in Y$, c'est-à-dire que $x= (x(0),x(1),\ldots)$ est une suite tendant vers $0$.
+Soit $\epsilon >0$ comme $x^p \rightarrow x$ alors il existe $P$ tel que
+si $p \ge P$ on ait $d(x^p,x) < \epsilon$. Par la définition
+de $d$ on a pour $p \ge P$ et pour tout $n\in \Nn$, $|x^p(n)-x(n)| < \epsilon$.
+Fixons $p=P$, alors $x^P \in Y$ donc $x^P$ est une suite tendant vers $0$,
+donc il existe $N$ tel que si $n\ge N$ alors $|x^P(n)|<\epsilon$.
+Réunissons tout cela, pour $n\ge N$ :
+$$|x(n)|=|x(n)-x^P(n)+x^P(n)| \le | x(n)-x^P(n)|+|x^P(n)| \le 2\epsilon.$$
+ Donc la suite $x$ tend vers $0$, donc $x\in Y$ et $Y$ est fermé.
+
+  \item Notons $Z$ l'ensemble des suites nulles à partir d'un certain rang.
+Pour $y = (y(0),y(1),y(2),\ldots) \in Y$, définissons la suite 
+$y^0 = (y(0),0,0,\ldots)$, $y^1=(y(0),y(1),0,0,\ldots)$,... $y^p=(y(0),\ldots,y(p-1),y(p),0,0,0,\ldots)$. La suite
+$(y^p)$ est bien une suite d'éléments de $Z$. De plus
+$d(y^p,y) = \sup_{n\in \Nn} |y^p(n)-y(n)| = \sup_{n > p} |y(n)|$
+or la suite $y(n)$ tend vers $0$ donc $d(y^p,y)$ tend vers $0$ quand
+$p$ tend vers $+\infty$.
+
+On montre facilement (par l'absurde) que l'élément $x = (1,1,1,\ldots )\in X$
+n'est limite d'aucune suite d'éléments de $Z$, (ni d'ailleurs de $Y$).
+\end{enumerate}
+\fincorrection
+\finexercice

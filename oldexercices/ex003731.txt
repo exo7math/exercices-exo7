@@ -1,0 +1,26 @@
+\exercice{3731, quercia, 2010/03/11}
+\enonce[Ensae MP$^*$ 2000]
+Soit $q$ une forme quadratique non nulle sur $M_2(\C)$ telle que $q(AB)=q(A) q(B)$. Déterminer $q$.
+
+\finenonce
+
+\noindication
+
+\correction
+Soit $(E_{ij})$ la base canonique de~$\mathcal{M}_2(\C)$~:
+$E_{12}^2=0$ donc $q(E_{12}) = 0$ et si $A$ est une matrice quelconque
+de rang~$1$, $A$ est équivalente à~$E_{12}$ d'où $q(A) = 0$.
+Si $A=0$ on a aussi $q(A)=0$ et si $A$ est inversible alors toute matrice
+est multiple de~$A$ donc $q(A)\ne 0$, en particulier $q(I)=1$
+car $q^2(I)=q(I)$. On en déduit $q(A) = 0 \Leftrightarrow\det(A)=0$.
+
+Pour $A$ quelconque, les applications~: $z \mapsto\det(A-zI)$ et $z \mapsto q(A-zI)$
+sont polynomiales de degré~$2$, avec le même coefficient de~$z^2$
+et les mêmes racines, donc sont égales d'où $q=\det$.
+
+\emph{Remarque :} le même raisonnement est applicable sur un corps quelconque en se limitant
+aux matrices triangulaires, et toute matrice est produit de triangulaires
+(algorithme du pivot de Gauss).
+\fincorrection
+
+\finexercice

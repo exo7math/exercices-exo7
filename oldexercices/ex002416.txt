@@ -1,0 +1,63 @@
+\exercice{2416, mayer, 2003/10/01}
+\enonce 
+On consid\`ere la suite de fonctions $f_n(t) = \sin (\sqrt{t+ 4(n\pi )^2})$,
+$t\in [0, \infty [$.
+\begin{enumerate}
+\item Montrer qu'il s'agit d'une suite de fonctions \'equicontinues convergent
+simplement vers $f\equiv 0$.
+\item  La suite $(f_n)$ est elle relativement compacte
+dans $({\cal C}_b ([0, \infty [), \|.\|_\infty )$, l'ensemble des fonctions continues et bornées ?
+Que dit le th\'eor\`eme d'Ascoli?
+\end{enumerate}
+\finenonce
+
+\indication
+\begin{enumerate}
+  \item Pour l'équicontinuité utiliser le théorème des  accroissement finis.
+Pour la convergence simple montrer que pour $t$ fixé :
+$f_n(t)= \sin (\frac{t}{4n\pi})+o(\frac1n)$.
+
+  \item Montrer que $(f_n)$ ne converge par vers la fonction nulle pour la norme $\|.\|_\infty$
+(c'est-\`a-dire il y a convergence simple mais pas convergence uniforme).
+Le théorème d'Acoli serait-il faux ? 
+\end{enumerate}
+\finindication
+
+\correction
+\begin{enumerate}
+  \item
+  \begin{enumerate}
+    \item Pour $t \ge 0$ fixé, alors
+\begin{align*}
+f_n(t) 
+  &= \sin \sqrt{t+4(n\pi)^2} \\
+  &= \sin 2n\pi\sqrt{1+\frac{t}{4n^2\pi^2}} \\
+  &= \sin 2n\pi(1+\frac12\frac{t}{4n^2\pi^2}+o(\frac{1}{n^2})) \\
+  &= \sin (2n\pi + \frac{t}{4n\pi}+o(\frac1n)) \\
+  &= \sin (\frac{t}{4n\pi})+o(\frac1n) \\
+\end{align*}
+Donc quand $n\rightarrow +\infty$ alors $f_n(t) \rightarrow 0$.
+Donc $(f_n)$ converge simplement vers $0$.
+  
+    \item Pour $n\ge 1$, 
+$$|f_n'(t)| = \frac 12 \frac{1}{\sqrt{t+4n^2\pi^2}}\cos\sqrt{t+4n^2\pi^2}
+\le \frac 12 \frac{1}{\sqrt{t+4\pi^2}} \le \frac 1{4\pi}. $$
+Pour $t\ge0$ fixé et $\epsilon >0$ donné, on pose $\eta = 4\pi\epsilon$, alors
+par l'inégalité des accroissement finis
+$$\forall n \ge 1 \quad |t-t'| < \eta \Rightarrow |f_n(t)-f_n(t')| \le \frac{1}{4\pi}|t-t'| < \epsilon.$$
+Donc $(f_n)$ est une famille équicontinue.
+  \end{enumerate}
+
+  \item Notons $\mathcal{H} = \{ f_n \mid n\in \Nn^*\}$, $\mathcal{H}(t)=\{ f_n(t) \mid n\in \Nn^*\}$, 
+  alors d'après la convergence simple, $\overline{\mathcal{H}(t)} = \mathcal{H}(t) \cup \{0\}$. 
+Mais $(f_n)$ ne converge pas uniformément (i.e. pour la norme $\| . \|_\infty$)
+vers $f=0$. En effet pour $n$ impair, posons $t_n = 5n^2\pi^2$, alors $f_n(t_n) = \sin \sqrt{9n^2\pi^2}= \sin (3n\pi) = 0$.
+Pour $n$ pair, on pose $t_n= \frac{\pi^2}{4} + 2n\pi^2$ alors 
+$$f_n(t_n)=\sin\sqrt{\frac{\pi^2}{4} + 2n\pi^2 + 4n^2\pi^2} = \sin \sqrt{(\frac\pi2 + 2n\pi)^2} = \sin(\frac\pi2 + 2n\pi) = 1.$$
+Donc pour tout $n$, $\|f_n-f\|_\infty = 1$.
+Supposons que $\mathcal{H}$ soit relativement compact alors de la suite $(f_n)$ on peut extraire une sous-suite qui converge, nécessairement la limite est $f=0$, mais comme pour tout $n$, $\|f_n-f\|_\infty = 1$, nous obtenons une contradiction.
+
+Bien s\^ur le théorème d'Ascoli n'est pas mis en défaut, car toutes les hypothèses sont vérifiées sauf $E=[0,+\infty[$ qui n'est pas compact.
+\end{enumerate}
+\fincorrection
+\finexercice

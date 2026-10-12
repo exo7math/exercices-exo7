@@ -1,0 +1,44 @@
+\exercice{5791, rouget, 2010/10/16}
+\enonce[***]
+Soit $A$ une matrice orthogonale. Montrer que la valeur absolue de la somme des coefficients de $A$ est inférieure ou égale à $n$. Cas d'égalité si de plus tous les coefficients de $A$ sont positifs ?
+\finenonce
+
+\noindication
+
+\correction
+Soit $A =(a_{i,j})_{1\leqslant i,j\leqslant n}$ une matrice orthogonale. On pose $X =\left(
+\begin{array}{c}
+1\\
+\vdots\\
+1
+\end{array}
+\right)\in\mathcal{M}_{n,1}(\Rr)$.
+
+D'après l'inégalité de \textsc{Cauchy}-\textsc{Schwarz}
+
+\begin{align*}\ensuremath
+\left|\sum_{1\leqslant i,j\leqslant n}^{}a_{i,j}\right|&=\left|\sum_{1\leqslant i,j\leqslant n}^{}1\times a_{i,j}\times1\right|=\left|{^t}XAX\right| =\left|\left(AX|X\right)\right|\\
+ &\leqslant\|AX\|\|X\|\;(\text{d'après l'inégalité de \textsc{Cauchy}-\textsc{Schwarz}})\\
+ &=\|X\|^2\;(\text{puisque la matrice}\;A\;\text{est orthogonale})\\
+ &=n.
+\end{align*}
+	        
+
+On a l'égalité si et seulement si la famille $(X,AX)$ est liée ce qui équivaut à $X$ vecteur propre de $A$.
+
+On sait que les valeurs propres (réelles) de $A$ ne peuvent être que $1$ ou $-1$. Donc, 
+
+\begin{center}
+égalité $\Leftrightarrow AX = X\;\text{ou}\;AX = -X\Leftrightarrow \forall i\in\llbracket1,n\rrbracket,\;\left|\sum_{j=1}^{n}a_{i,j}\right|= 1$
+\end{center}
+
+Il paraît difficile d'améliorer ce résultat dans le cas général. Supposons de plus que $\forall(i,j)\in\llbracket1,n\rrbracket^2$, $a_{i,j}\geqslant 0$. Soit $i\in\llbracket1,n\rrbracket$. Puisque tous les $a_{i,j}$ sont éléments de $[0,1]$,
+
+\begin{center}
+$1=\sum_{j=1}^{n}a_{i,j}\geqslant\sum_{j=1}^{n}a_{i,j}^2=1$.
+\end{center}
+
+L'inégalité écrite est donc une égalité et on en déduit que chaque inégalité $a_{i,j}\geqslant a_{i,j}^2$, $1\leqslant j\leqslant n$, est une égalité. Par suite, $\forall(i,j)\in\llbracket1,n\rrbracket^2$, $a_{i,j}\in\{0,1\}$. Ceci montre que la matrice $A$ est une matrice de permutation qui réciproquement convient.
+
+\fincorrection
+\finexercice

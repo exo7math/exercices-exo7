@@ -1,0 +1,39 @@
+\exercice{2275, barraud, 2008/04/24}
+\enonce
+Montrer que $f$ est irr\'eductible dans 
+$\Qq[x]$ :
+\begin{enumerate}
+  \item $f=x^4-8x^3+12x^2-6x+2$;
+  \item $f=x^5-12x^3+36x-12$;
+  \item $f=x^4-x^3+2x+1$;
+  \item $f=x^{p-1}+\dots+x+1$, o\`u $p$ est premier.
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+  \begin{enumerate}
+  \item 
+    $P$ est primitif, $2$ divise tous les coefficients de $P$ sauf le
+    dominant, et $4$ ne divise pas le terme constant~: d'après le critère
+    d'Eisenstein, on en déduit que $P$ est irréductible dans $\Zz[x]$
+    (puis dans $\Qq[x]$ car il est unitaire...).
+
+  \item
+    On peut appliquer le même critère, avec $3$ cette fois.
+
+  \item
+    $f$ est primitif, et sa réduction modulo $2$ est irréductible. Donc
+    $f$ est irréductible dans $\Zz[x]$.
+
+  \item
+    $f(x+1)=\sum_{k=1}^{p}C_{p}^{k}x^{k-1}$. Or $p|\frac{p!}{k!(p-k)!}$
+    (car $p$ apparaît au numérateur, tandis que tous les facteurs du
+    dénominateur sont $<p$~; comme $p$ est premier, ils sont donc
+    premiers avec $p$). De plus $C_{p}^{1}=p$, donc $p^{2}$ ne divise pas
+    le terme constant de $f(x+1)$. D'après le critère d'Eisenstein,
+    $f(x+1)$ est irréductible, et donc $f$ aussi.
+  \end{enumerate}
+\fincorrection
+\finexercice

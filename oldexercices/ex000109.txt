@@ -1,0 +1,72 @@
+\exercice{109, bodin, 1998/09/01}
+\video{q07OjCbDg3o}
+\enonce
+
+Dans $\R^2$, on d\'efinit les ensembles $F_{1}=\{(x,y)\in\R^2,\ y\leq0\}$ et
+$F_{2}=\{(x,y)\in\R^2,\ xy\geq1,\ x\geq0\}$. On note $M_1M_2$ la distance usuelle entre deux points $M_1$ et $M_2$ de $\R^2$.
+\'Evaluer les propositions suivantes :
+\begin{enumerate}
+\item $
+ \forall\epsilon\in]0,+\infty[\quad
+ \exists M_{1}\in F_{1}\quad
+ \exists M_{2}\in F_{2}
+ \qquad M_{1}M_{2}<\epsilon$
+\item $
+ \exists M_{1}\in F_{1}\quad
+ \exists M_{2}\in F_{2}\quad
+ \forall\epsilon\in]0,+\infty[
+ \qquad M_{1}M_{2}<\epsilon$
+\item $
+ \exists\epsilon\in]0,+\infty[\quad 
+ \forall M_{1}\in F_{1}\quad
+ \forall M_{2}\in F_{2}
+ \qquad M_{1}M_{2}<\epsilon$
+\item $
+ \forall M_{1}\in F_{1}\quad
+ \forall M_{2}\in F_{2}\quad
+ \exists\epsilon\in]0,+\infty[
+ \qquad M_{1}M_{2}<\epsilon$
+\end{enumerate}
+Quand elles sont fausses, donner leur n\'egation.
+\finenonce 
+
+\indication
+Faire un dessin de $F_1$ et de $F_2$.
+Essayer de voir si la difficult\'e pour r\'ealiser les assertions vient de
+$\epsilon$ ``petit'' (c'est-\`a-dire proche de $0$) ou de $\epsilon$ ``grand''
+(quand il tend vers $+\infty$).
+\finindication
+
+\correction
+\begin{enumerate}
+\item
+ Cette proposition est vraie. En effet soit $\epsilon > 0$,  d\'efinissons $M_1 = (\frac{2}{\epsilon},0)  \in F_1$ et
+ $M_2 = (\frac{2}{\epsilon},\frac{\epsilon}{2}) \in F_2$, alors $M_1M_2=\frac{\epsilon}{2} < \epsilon$. Ceci \'etant vrai quelque soit
+$\epsilon >0$ la proposition est donc d\'emontr\'ee.
+
+
+\item
+Soit deux points fix\'es $M_1$, $M_2$ v\'erifiant cette
+proposition, la distance $d= M_1M_2$ est
+ aussi petite que l'on veut donc elle est nulle, donc $M_1 = M_2$ ; or les ensembles $F_1$ et $F_2$
+sont disjoints. Donc la proposition est fausse. La n\'egation de
+cette proposition est :
+$$ \forall M_1 \in F_1 \ \  \forall M_2 \in F_2 \quad \exists \epsilon \in ]0,+\infty[ \quad  \quad M_1M_2 \geqslant \epsilon $$ et cela exprime le fait que les ensembles $F_1$ et $F_2$ sont disjoints.
+
+\item
+Celle ci est \'egalement fausse, en effet supposons qu'elle soit
+vraie, soit alors $\epsilon$ correspondant \`a cette proposition.
+Soit $M_1=(\epsilon +2,0)$ et $M_2 = (1,1)$, on a $M_1M_2 >
+\epsilon+1$ ce qui est absurde. La n\'egation est :
+$$\forall \epsilon \in ]0,+\infty[ \quad  \exists M_1 \in F_1 \ \  \exists M_2 \in F_2 \quad   \quad M_1M_2 \geqslant \epsilon $$
+C'est-\`a-dire que l'on peut trouver deux points aussi
+\'eloign\'es l'un de l'autre  que l'on veut.
+
+\item
+Cette proposition est vraie, il suffit de choisir
+$\epsilon=M_1M_2+1$. Elle signifie que la distance entre deux
+points donn\'es est un nombre fini !
+
+\end{enumerate}
+\fincorrection
+\finexercice

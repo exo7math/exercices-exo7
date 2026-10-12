@@ -1,0 +1,73 @@
+\exercice{5156, rouget, 2010/06/30}
+\enonce[****]
+Montrer que~:~$\forall n\in\Nn^*,\;\forall x\in\Rr,\;\sum_{k=0}^{n-1}E(x+\frac{k}{n})=E(nx)$ (poser
+la division euclidienne de $E(nx)$ par $n$).
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  Par définition d'un entier, il y a $n$ entiers entre $1$ et $n$. Ensuite, pour tout entier naturel $k$, on a
+
+$$1\leq k\leq x\Leftrightarrow 1\leq k\leq E(x).$$
+
+Il y a donc $E(x)$ entiers entre $1$ et $x$.
+
+\item  Il y a $n+1$ entiers entre $0$ et $n$ et $E(x)+1$ entiers entre $0$ et $x$.
+
+\item  Les entiers naturels pairs sont les entiers de la forme $2k$, $k\in\Nn$. Or,
+
+$$0\leq2k\leq x\Leftrightarrow 0\leq k\leq \frac{x}{2}.$$
+
+Le nombre des entiers pairs compris entre $0$ et $x$ est encore le nombre des entiers $k$ compris au sens large entre
+$0$ et $\frac{x}{2}$. D'après 2), il y a $E(\frac{x}{2})+1$ entiers pairs entre $0$ et $x$. De même, il y a
+$E(\frac{x}{3})+1$ multiples de $3$ entre $0$ et $x$.
+
+De même,
+
+$$0\leq2k+1\leq x\Leftrightarrow-\frac{1}{2}\leq k\leq\frac{x-1}{2}\Leftrightarrow0\leq k\leq E(\frac{x-1}{2}).$$
+
+Il y a donc $E(\frac{x-1}{2})+1=E(\frac{x+1}{2})$ entiers impairs entre $0$ et $x$.
+
+\item  Il y a $E(\frac{x}{3})+1$ multiples de $3$ entre $0$ et $x$.
+
+\item  Soient $n\in\Nn$ et $(x,y)\in\Nn^2$. On a
+
+$$x+2y=n\Leftrightarrow x=n-2y.$$
+
+Donc, $(x,y)$ est solution si et seulement si $y\in\Nn$ et $n-2y\in\Nn$ ou encore si et seulement si $0\leq2y\leq n$.
+Il y a donc $E(\frac{n}{2})+1$ couples solutions.
+
+\item  Si $x$ et $y$ sont respectivement le nombre de pièces de $10$ centimes d'euros et le nombre de pièces de $20$
+centimes d'euros, le nombre cherché est le nombre de couples d'entiers naturels solutions de l'équation $10x+20y=1000$
+qui s'écrit encore $x+2y=100$. D'après 5), il y a $E(\frac{100}{2})+1=51$ façons de payer $10$ euros avec des pièces de
+$10$ et $20$ centimes d'euros.
+
+\item  Soient $n\in\Nn$ et $(x,y)\in\Nn^2$. On a
+
+$$2x+3y=n\Leftrightarrow x=\frac{n-3y}{2}.$$
+
+Donc,
+
+$$(x,y)\;\mbox{solution}\Leftrightarrow x=\frac{n-3y}{2}\;\mbox{et}\;y\in\Nn\;\mbox{et}\;n-3y\in2\Nn.$$
+
+Maintenant, comme $n-3y=(n-y)-2y$ et que $2y$ est un entier pair, $n-3y$ est pair si et seulement si $n-y$ est pair ce
+qui revient à dire que $y$ a la parité de $n$. Ainsi,
+
+$$(x,y)\;\mbox{solution}\Leftrightarrow x=\frac{n-3y}{2}\;\mbox{et}\;y\in\Nn\;\mbox{et}\;0\leq y\leq
+\frac{n}{3}\;\mbox{et}\;y\;\mbox{a la parité de}\;n.$$
+
+\begin{itemize}
+\item[\textbf{1er cas.}] Si $n$ est pair, le nombre de couples solutions est encore le nombre d'entiers pairs $y$
+compris au sens large entre $0$ et $\frac{n}{3}$. Il y a $E(\frac{n}{6}))+1=E(\frac{n+6}{6})$ tels entiers.
+\item[\textbf{2ème cas.}] Si $n$ est impair, le nombre de couples solutions est encore le nombre d'entiers impairs $y$
+compris au sens large entre $0$ et $\frac{n}{3}$. Il y a  $E(\frac{\frac{n}{3}-1}{2}))+1=E(\frac{n+3}{6})$ tels
+entiers.
+\end{itemize}
+Finalement, le nombre cherché est $E(\frac{n+6}{6})$ si $n$ est pair et $E(\frac{n+3}{6})$ si $n$ est impair.
+
+\end{enumerate}
+
+\fincorrection
+\finexercice

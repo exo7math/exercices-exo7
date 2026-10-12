@@ -1,0 +1,24 @@
+\exercice{3251, quercia, 2010/03/08}
+
+\enonce[Polyn{\^o}mes irr{\'e}ductibles sur $\Z$]
+Soient $a_1, \dots, a_n \in \Z$ distincts.
+\begin{enumerate}
+  \item Montrer que $(X-a_1) \dots (X-a_n) - 1$ est irr{\'e}ductible dans ${\Z[X]}$.
+  \item M{\^e}me question avec $(X-a_1) \dots (X-a_n) + 1$, $n$ impair.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Si $P = QR$ alors $Q(a_i)R(a_i) = -1  \Rightarrow  Q(a_i) = -R(a_i) = \pm1$,
+    donc $Q+R$ a $n$ racines, donc est nul, et $P = -Q^2$~:
+    contradiction pour $x \to \infty$.
+  \item M{\^e}me raisonnement : $P = Q^2$, donc
+    $Q^2-1 = (Q-1)(Q+1) = (X-a_1) \dots (X-a_n)$.
+    \par
+    On r{\'e}partit les facteurs entre $Q-1$ et $Q+1$ : $n = 2p$, contradiction.
+\end{enumerate}
+\fincorrection
+\finexercice 

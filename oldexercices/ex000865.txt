@@ -1,0 +1,32 @@
+\exercice{865, bodin, 1998/09/01}
+\enonce
+R\'esoudre l'\'equation suivante :
+$$4y^{\prime\prime}+4y^\prime + 5y = \sin x e^{-x/2} .$$
+\finenonce 
+\noindication
+\correction
+% $4y^{\prime\prime}+4y^\prime + 5y = \sin x e^{-x/2} $. L'\'equation
+%caract\'eristique a 2 racines complexes $r_1 = -1/2+i$ et
+%$r_2=\overline{r_1}$ et les solutions de l'\'equation homog\`ene
+%sont :
+%$$ y(x) = e^{-x/2}(c_1\cos x +c_2\sin x) \hbox{ avec } c_1,c_2\in \R $$
+%On a $\sin x e^{-x/2} =\mathop{\mathrm{Im}}\nolimits(e^{(-1/2+i)x})$, on commence donc par
+%chercher une solution $z_p$ de l'\'equation  avec le nouveau
+%second membre $e^{(-1/2+i)x}$.Comme $-1/2+i$ est racine de
+%l'\'equation caract\'eristique, on cherchera $
+%z_p(x)=P(x)e^{(-1/2+i)x}$ avec $P$ de degr\'e 1. Par cons\'equent
+%la condition $(*)$ sur $P$ :
+%$$ 4P^{\prime\prime}+f^\prime(-1/2+i)P^\prime+f(-1/2+i)P = 1$$
+%s'\'ecrit ici : $8iP^\prime =1$ ( $P^{\prime\prime} = 0$,
+%$f(-1/2+i)=0$ et $f^\prime(-1/2+i)=8i$), on peut donc prendre
+%$P(x)=-i/8x$ et $z_p(x)=-i/8xe^{(-1/2+i)x}$, par cons\'equent sa
+%partie imaginaire $y_p(x)=\mathop{\mathrm{Im}}\nolimits(-i/8xe^{(-1/2+i)x})= 1/8 x\sin
+%xe^{-x/2}$ est une solution de notre \'equation. Les solutions
+%sont donc toutes les fonctions de la forme :
+%$$y(x) = e^{-x/2}(c_1\cos x +(c_2+1/8x)\sin x) \hbox{ avec } c_1,c_2\in \R.$$
+
+La solution générale est de la forme
+$$y(x) = K_1 \cos(x) e^{-x/2} + K_2 \sin(x) e^{-x/2} - \frac18 x e^{-x/2} \cos(x)$$
+($K_1$ et $K_2$ constantes réelles) et les conditions initiales donnent $K_1=0$, $K_2=1/8$.
+\fincorrection
+\finexercice

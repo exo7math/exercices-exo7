@@ -1,0 +1,109 @@
+\exercice{5975, tumpach, 2010/11/11}
+\enonce
+Soit $x\in\mathbb{R}^{d}$, $d = 1, 2$ et $r = |x|$. On consid\`ere
+$f~: \mathbb{R}^d\rightarrow \mathbb{R}$ donn\'ee par $$f(x) =
+h(r) = r^2 (1+r^2)^{-2}.$$ 
+\begin{enumerate} 
+\item Calculer
+pour $d = 1$  le r\'earrangement \`a sym\'etrie sph\'erique
+d\'ecroissant $f^*$ de $f$. 
+\item M\^eme question pour $d =
+2$. 
+\item Calculer $\|f\|_{2}^{2}$ pour $d = 1$ puis $d = 2$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+Soit $x\in\mathbb{R}^{d}$, $d = 1, 2$ et $r = |x|$. On consid\`ere
+$f~: \mathbb{R}^d\rightarrow \mathbb{R}$ donn\'ee par $$f(x) =
+h(r) = r^2 (1+r^2)^{-2}.$$
+\begin{enumerate} 
+\item
+La fonction $h$ atteint son maximum en $r = 1$ et $h(1) =
+\frac{1}{4}.$ Pour un r\'eel positif $t\leq\frac{1}{4}$ donn\'e,
+on cherche \`a r\'esoudre $t = h(r) = r^2 (1+r^2)^{-2}.$ On
+obtient deux solutions
+$$
+\begin{array}{lcl}
+r_+ &=& \left(\frac{1-2t}{2t} + \frac{\sqrt{1-4t}}{2t}
+\right)^{\frac{1}{2}}\\
+r_{-} & = & \left(\frac{1-2t}{2t} - \frac{\sqrt{1-4t}}{2t}
+\right)^{\frac{1}{2}}
+\end{array}
+$$
+Ainsi $\mu\left(f > t\right) = \mathcal{V}_{d}\left(r_{+}^d -
+r_-^d\right)$. De plus, par d\'efinition, $f^*$ v\'erifie
+$\mu\left(f^*>t\right) = \mu\left(f > t\right)$ et
+$\mu\left(f^*>t\right) = \mathcal{V}_{d}\, r^{d}$ o\`u $r$ et $t$
+sont li\'es par $t = f^*(r)$. Pour $d = 1$, on a donc $r = r_+ -
+r_-$ et $t$ est donn\'e par~:
+$$
+\begin{array}{lcl} r^2 &=& r_+^2 + r_-^2 - 2r_+ r_- = \frac{1-2t}{t} -
+2\sqrt{\frac{(1-2t)^2}{4t^2} - \frac{1-4t}{4t^2}}\\
+& = & \frac{1 - 4t}{t}.
+\end{array}
+$$
+Il en d\'ecoule que $t = f^*(r) = (4 + r^2)^{-1}.$
+
+\item Pour $d = 2$, on a
+$$
+r^2 = r_+^2 - r_-^2 = \frac{\sqrt{1-4t}}{t},
+$$
+ce qui implique que
+$$
+t = f^*(r) = r^{-4}\left(\sqrt{4 + r^4} - 2 \right).
+$$
+
+ \item Calculons $\|f\|_{2}^{2}$ pour $d = 1$. On a
+ $$
+ \begin{array}{lcl}
+\|f\|_{2}^{2} & = & \|f^{*}\|_{2}^{2}\\
+& = & 2\int_{0}^{+\infty} (4 + r^2)^{-2}\,dr \\
+& = & \frac{1}{4} \int_{0}^{+\infty}(1 + s^2)^{-2}\,ds\\ & =
+&\frac{1}{8} \int_{\mathbb{R}} (1 + |x|^2)^{-2}\,dx =
+\frac{\pi}{16},
+\end{array}
+ $$
+ o\`u la derni\`ere \'egalit\'e d\'ecoule de l'exercice \ref{exo:beta} (question 3.) sur la fonction Bêta, car~:
+$$
+\int_{\mathbb{R}} (1 + |x|^2)^{-2}\,dx = 2\mathcal{V}_1
+B\left(\frac{3}{2}, \frac{3}{2}\right) = 4
+\frac{\Gamma(3/2)^2}{\Gamma(3)} = 4\frac{(1/2\Gamma(1/2))^2}{2!} =
+\frac{\pi}{2}.
+$$
+
+Pour $d = 2$, on a
+$$
+\|f\|_{2}^2 = \int_{\mathbb{R}^2} f(x)^2\,dx =
+\int_{r=0}^{+\infty}\int_{\theta=0}^{2\pi} h(r)^2 \,r dr d\theta =
+2\pi \int_{0}^{+\infty} r^5 (1+r^2)^{-4}\,dr = \frac{\pi}{3},
+$$
+o\`u la derni\`ere \'egalit\'e d\'ecoule de l'exercice \ref{exo:beta} sur la fonction Bêta, car~:
+$$
+\int_{\mathbb{R}^2} (1 + |x|^2)^{-4}\,dx = 4\mathcal{V}_{6}
+B\left(4 - \frac{6}{2}, \frac{6}{2} + 1\right) = 4 \mathcal{V}_{6}
+B\left(1, 4\right),
+$$
+et
+$$
+\int_{\mathbb{R}^2} (1 + |x|^2)^{-4}\,dx = \int_{r =
+0}^{+\infty}\int_{\mathcal{S}^5} (1 + r^{2})^{-4}\, r^5 \,dr
+d\sigma = \mathcal{A}_{5} \int_{0}^{+\infty} (1 + r^{2})^{-4}\,
+r^5 \,dr
+$$
+d'o\`u~:
+$$
+\begin{array}{lcl}
+\int_{0}^{+\infty} (1 + r^{2})^{-4}\, r^5 \,dr  & =&  4
+\frac{\mathcal{V}_{6}}{\mathcal{A}_5} B\left(1, 4\right) =
+\frac{4}{6} \frac{\Gamma(1)\Gamma(4)}{\Gamma(5)},
+ =
+\frac{2}{3}\frac{3!}{4!} = \frac{1}{6}
+\end{array}
+$$
+\end{enumerate}
+\fincorrection
+
+\finexercice

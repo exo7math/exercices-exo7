@@ -1,0 +1,20 @@
+\exercice{2796, burnol, 2009/12/15}
+\enonce
+Déterminer en tout $z_0\neq1$ la série de Taylor et son rayon
+de convergence pour la fonction analytique $\frac1{z-1}$.
+\finenonce
+\noindication
+\correction
+Discutons d'abord le rayon de convergence. D'ailleurs, ce qui suit s'applique \'egalement aux exercices suivants.
+Donc, d'apr\`es le th\'eor\`eme d'analycit\'e des fonctions holomoephes 
+(voir le polycopi\'e 2005/2006 de J.-F.~Burnol : th\'eor\`eme 10 du chapitre 6), 
+si $f$ est holomorphe dans $U\subset \C$, si $z_0\in U$ et si $r>0$ tel que
+$D(z_0,r)\subset U$, alors la s\'erie de Taylor de $f$ en $z_0$ converge et sa somme vaut $f$ dans ce disque $D(z_0,r)$.
+Ici $f(z)=\frac{1}{z-1}$. Cette fonction est holomorphe dans $U=\C\setminus \{1\}$. Par cons\'equent, si $z_0\in U$,
+alors la s\'erie de Taylor de $f$ en $z_0$ vaut $f$ dans le disque $D(z_0,R_1)$ si $R_1=|z_0-1|$.
+Le calcul de la s\'erie est classique:
+$$\frac{1}{z-1}=\frac{1}{z-z_0+z_0-1} =\frac{1}{z_0-1}\frac{1}{1-\left(\frac{z_0-z}{z_0-1}\right)}
+ =\frac{1}{z_0-1}\sum_{k\geq 0} \left(\frac{z_0-z}{z_0-1}\right)^k$$
+ pour $|z-z_0|< |z_0-1|=R_1$.
+\fincorrection
+\finexercice

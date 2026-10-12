@@ -1,0 +1,169 @@
+\exercice{5689, rouget, 2010/10/16}
+\enonce
+Nature de la série de terme général 
+
+\textbf{1) (***)} $\sqrt[4]{n^4+2n^2}-\sqrt[3]{P(n)}$  où $P$ est un polynôme. \qquad\textbf{2) (**)} $\frac{1}{n^\alpha}S(n)$ où $S(n) =\sum_{p=2}^{+\infty}\frac{1}{p^n}$. 
+
+\textbf{3) (**)} $u_n$ où $\forall n\in\Nn^*$, $u_n=\frac{1}{n}e^{-u_{n-1}}$.
+
+\textbf{4) (****)} $u_n=\frac{1}{p_n}$ où $p_n$ est le $n$-ème nombre premier
+
+(indication : considérer 
+$\sum_{n=1}^{N}\ln\left(\frac{1}{1-\frac{1}{p_n}}\right)=\sum_{n=1}^{N}\ln(1+p_n+p_n^2+\ldots)$).
+
+\textbf{5) (***)} $u_n=\frac{1}{n(c(n))^\alpha}$  où $c(n)$ est le nombre de chiffres de $n$ en 
+base $10$.
+
+\textbf{6) (*)} $\frac{\left(\prod_{k=2}^{n}\ln k\right)^a}{(n!)^b}$ $a > 0$ et $b> 0$.\qquad \textbf{7) (**)} $\Arctan\left(\left(1+\frac{1}{n}\right)^a\right) -\Arctan\left(\left(1-\frac{1}{n}\right)^a\right)$.
+
+\textbf{8) (**)} $\frac{1}{n^\alpha}\sum_{k=1}^{n}k^{3/2}$.\qquad \textbf{9) (***) } $\left(\prod_{k=1}^{n}\left(1+\frac{k}{n^\alpha}\right)\right)-1$.
+
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item  Si $P$ n'est pas unitaire de degré $3$, $u_n$ ne tend pas vers $0$ et la série de terme général $u_n$ diverge grossièrement.
+
+Soit $P$ un polynôme unitaire de degré $3$. Posons $P =X^3+aX^2+bX+c$.
+
+\begin{align*}\ensuremath
+u_n&=n\left(\left(1+\frac{2}{n^2}\right)^{1/4}-\left(1+\frac{a}{n}+\frac{b}{n^2}+\frac{c}{n^3}\right)^{1/3}\right)\\
+ &\underset{n\rightarrow+\infty}{=}n\left(\left(1+\frac{1}{2n^2}+O\left(\frac{1}{n^3}\right)\right)-\left(1+\frac{a}{3n}+\frac{b}{3n^2}-\frac{a^2}{9n^2}+O\left(\frac{1}{n^3}\right)\right)\right)\\
+ &\underset{n\rightarrow+\infty}{=}-\frac{a}{3}+\left(\frac{1}{2}-\frac{b}{3}+\frac{a^2}{9}\right)\frac{1}{n}+O\left(\frac{1}{n^2}\right).
+\end{align*}
+
+\textbullet~Si $a\neq0$, $u_n$ ne tend pas vers $0$ et la série de terme général $u_n$ diverge grossièrement.
+
+\textbullet~Si $a=0$ et $\frac{1}{2}-\frac{b}{3}\neq0$, $u_n\underset{n\rightarrow+\infty}{\sim}\left(\frac{1}{2}-\frac{b}{3}\right)\frac{1}{n}$. $u_n$ est donc de signe constant pour $n$ grand et est équivalent au terme général d'une série divergente. Donc la série de terme général $u_n$ diverge.
+
+\textbullet~Si $a = 0$ et $\frac{1}{2}-\frac{b}{3}= 0$, $u_n\underset{n\rightarrow+\infty}{=}O\left(\frac{1}{n^2}\right)$. Dans ce cas, la série de terme général $u_n$ converge (absolument).
+
+En résumé, la série de terme général $u_n$ converge si et seulement si $a = 0$ et  $b=\frac{3}{2}$ ou encore la série de terme général $u_n$ converge si et seulement si $P$ est de la forme $X^3+\frac{3}{2}X+c$, $c\in\Rr$.
+
+\item  Pour $n\geqslant2$, posons $u_n=\frac{1}{n^\alpha}S(n)$. Pour $n\geqslant2$,
+
+\begin{center}
+$0<S(n+1)=\sum_{p=2}^{+\infty}\frac{1}{p}\times\frac{1}{p^n}\leqslant\frac{1}{2}\sum_{p=2}^{+\infty}\frac{1}{p^n}=\frac{1}{2}S(n)$
+\end{center}
+
+et donc $\forall n\geqslant2$, $S(n)\leqslant\frac{S(2)}{2^{n-2}}$. Par suite,
+
+\begin{center}
+$u_n\leqslant\frac{1}{n^\alpha}\frac{S(2)}{2^{n-2}}\underset{n\rightarrow+\infty}{=}o\left(\frac{1}{n^2}\right)$.
+\end{center}
+
+Pour tout réel $\alpha$, la série de terme général $u_n$ converge.
+
+\item  $\forall u_0\in\Rr$, $\forall n\in\Nn^*$, $u_n > 0$. Par suite, $\forall n\geqslant 2$, $0< u_n<\frac{1}{n}$.
+
+On en déduit que $\lim_{n \rightarrow +\infty}u_n=0$ et par suite $u_n\underset{n\rightarrow+\infty}{\sim}\frac{1}{n}>0$. La série de terme général $u_n$ diverge.
+
+\item  On sait qu'il existe une infinité de nombres premiers.
+
+Notons $(p_n)_{n\in\Nn^*}$ la suite croissante des nombres premiers. La suite $(p_n)_{n\in\Nn^*}$ est une suite strictement croissante d'entiers et donc $\lim_{n \rightarrow +\infty}p_n= +\infty$ ou encore $\lim_{n \rightarrow +\infty}\frac{1}{p_n}=0$.
+
+Par suite, $0<\frac{1}{p_n}\underset{n\rightarrow+\infty}{\sim}\ln\left(\left(1-\frac{1}{p_n}\right)^{-1}\right)$ et les séries de termes généraux $\frac{1}{p_n}$ et $\ln\left(\left(1-\frac{1}{p_n}\right)^{-1}\right)$ sont de même nature.
+
+Il reste donc à étudier la nature de la série de terme général $\ln\left(\left(1-\frac{1}{p_n}\right)^{-1}\right)$.
+
+Montrons que $\forall N\in\Nn^*$,  $\sum_{n=1}^{+\infty}\ln\left(\left(1-\frac{1}{p_n}\right)^{-1}\right)\geqslant\ln\left(\sum_{k=1}^{N}\frac{1}{k}\right)$.
+
+Soit $n\geqslant$. Alors $\frac{1}{p_n}<1$ et la série de terme général $\frac{1}{p_n^k}$, $k\in\Nn$, est une série géométrique convergente de somme : $\sum_{k=0}^{+\infty}\frac{1}{p_n^k}= \left(1-\frac{1}{p_n}\right)^{-1}$.
+
+Soit alors $N$ un entier naturel supérieur ou égal à $2$ et $p_1 < p_2... < p_n$ la liste des nombres premiers inférieurs ou égaux à $N$.
+
+Tout entier entre $1$ et $N$ s'écrit de manière unique $p_1^{\beta_1}\ldots p_k^{\beta_k}$ où $\forall i\in\llbracket1,n\rrbracket$, $0\leqslant\beta_i\leqslant\alpha_i=E\left(\frac{\ln(N)}{\ln(p_i)}\right)$ et deux entiers distincts ont des décompositions distinctes. Donc
+
+\begin{align*}\ensuremath
+\sum_{k=1}^{+\infty}\ln\left(\left(1-\frac{1}{p_k}\right)^{-1}\right)&\geqslant\sum_{k=1}^{n}\ln\left(\left(1-\frac{1}{p_k}\right)^{-1}\right)\;(\text{car}\;\forall k\in\Nn^*,\;\left(1-\frac{1}{p_k}\right)^{-1}> 1)\\
+ &=\sum_{k=1}^{n}\ln\left(\sum_{i=0}^{+\infty}\frac{1}{p_k^i}\right)\geqslant\sum_{k=1}^{n}\ln\left(\sum_{i=0}^{\alpha_k}\frac{1}{p_k^i}\right)\\
+  &=\ln\left(\prod_{k=1}^{n}\left(\sum_{i=0}^{\alpha_k}\frac{1}{p_k^i}\right)\right)=\ln\left(\sum_{0\leqslant\beta_1\leqslant\alpha_1,\ldots,\ldots0\leqslant\beta_n\leqslant\alpha_n}^{}\frac{1}{p_1^{\beta_1}\ldots,\;p_n^{\beta_n}}\right)\\
+   &\geqslant\ln\left(\sum_{k=1}^{N}\frac{1}{k}\right).
+\end{align*}
+
+Or $\lim_{N \rightarrow +\infty}\ln\left(\sum_{k=1}^{N}\frac{1}{k}\right)=+\infty$ et donc $\sum_{k=1}^{+\infty}\ln\left(\left(1-\frac{1}{p_k}\right)^{-1}\right)=+\infty$.
+
+La série de terme général $\ln\left(1-\frac{1}{p_k}\right)^{-1}$ diverge et il en est de même de la série de terme général $\frac{1}{p_n}$.
+
+(Ceci montre qu'il y a beaucoup de nombres premiers et en tout cas beaucoup plus de nombres premiers que de carrés parfaits par exemple).
+
+\item  Soit $n\in\Nn^*$. Posons $n =a_p\times10^p+\ldots+a_1\times10+a_0$ où $\forall i\in\llbracket0,p\rrbracket$, $a_i\in\{0,1;...,9\}$ et $a_p\neq 0$. Alors $c(n) = p+1$.
+
+Déterminons $p$ est  en fonction de $n$. On a $10^p\leqslant n <10^{p+1}$ et donc $p=E\left(\log(n)\right)$. Donc
+
+\begin{center}
+$\forall n\in\Nn^*$, $u_n=\frac{1}{n(E(\log n)+1)^\alpha}$.
+\end{center}
+
+Par suite, $u_n\underset{n\rightarrow+\infty}{\sim}\frac{\ln^\alpha(10)}{n\ln^\alpha(n)}$ et la série de terme général $u_n$ converge si et seulement si $\alpha> 1$ (séries de \textsc{Bertrand}). Redémontrons ce résultat qui n'est pas un résultat de cours.
+
+La série de terme général $\frac{1}{n\ln n}$ est divergente (voir l'exercice \ref{ex:rou1ter}, 4)). Par suite, si $\alpha\leqslant1$, la série de terme général $\frac{1}{n\ln^\alpha(n)}$ est divergente car $\forall n\geqslant2$, $\frac{1}{n\ln^\alpha(n)}\geqslant\frac{1}{n\ln n}$.
+
+Soit $\alpha>1$. Puisque la fonction $x\mapsto\frac{1}{x\ln^\alpha x}$ est continue et strictement décroissante sur $]1,+\infty[$, pour $k\geqslant3$,
+
+\begin{center}
+$\frac{1}{k\ln^\alpha k}\leqslant\int_{k-1}^{k}\frac{1}{x\ln^\alpha x}\;dx$
+\end{center}
+
+puis, pour $n\geqslant3$, en sommant pour $k\in\llbracket3,n\rrbracket$
+
+\begin{center}
+$\sum_{k=3}^{n}\frac{1}{k\ln^\alpha k}\leqslant\sum_{k=3}^{n}\int_{k-1}^{k}\frac{1}{x\ln^\alpha x}\;dx=\int_{2}^{n}\frac{1}{x\ln^\alpha x}\;dx=\frac{1}{\alpha-1}\left(\frac{1}{\ln^{\alpha-1}(2)}-\frac{1}{\ln^{\alpha-1}(n)}\right)\leqslant\frac{1}{\alpha-1}\frac{1}{\ln^{\alpha-1}(2)}$.
+\end{center}
+
+Ainsi, la suite des sommes partielles de la série à termes positifs, de terme général $\frac{1}{k\ln^\alpha k}$, est majorée et donc la série de terme général $\frac{1}{k\ln^\alpha k}$ converge.
+
+\textbf{6} Soit $n\geqslant2$.
+
+\begin{center}
+$\left|\frac{u_{n+1}}{u_n}\right|=\frac{\ln^a(n+1)}{(n+1)^b}\underset{n\rightarrow+\infty}{\rightarrow}0 < 1$
+\end{center}
+
+et d'après la règle de d'\textsc{Alembert}, la série de terme général $u_n$ converge.
+
+\item  $\lim_{n \rightarrow +\infty}u_n=\frac{\pi}{4}-\frac{\pi}{4}= 0$. Donc
+
+\begin{align*}\ensuremath
+u_n&\underset{n\rightarrow+\infty}{\sim}\tan(u_n)\\
+ &=\frac{\left(1+\frac{1}{n}\right)^a-\left(1-\frac{1}{n}\right)^a}{1+\left(1-\frac{1}{n^2}\right)^a}\underset{n\rightarrow+\infty}{=}\frac{\frac{2a}{n}+O\left(\frac{1}{n^2}\right)}{2+O\left(\frac{1}{n^2}\right)}\underset{n\rightarrow+\infty}{=}\frac{a}{n}+O\left(\frac{1}{n^2}\right).
+\end{align*}
+
+Par suite, la série de terme général $u_n$ converge si et seulement si $a = 0$.
+
+\item  La fonction $x\mapsto x^{3/2}$ est continue et croissante sur $\Rr^+$. Donc pour $k\geqslant 1$, $\int_{k-1}^{k}x^{3/2}\;dx\leqslant k^{3/2}\leqslant\int_{k}^{k+1}x^{3/2}\;dx$ puis pour $n\in\Nn^*$ :
+
+\begin{center}
+$\int_{0}^{n}x^{3/2}\;dx\sum_{k=1}^{n}\int_{k-1}^{k}x^{3/2}\;dx\leqslant\sum_{k=1}^{n}k^{3/2}\leqslant\sum_{k=1}^{n}\int_{k}^{k+1}x^{3/2}\;dx=\int_{1}^{n+1}x^{3/2}\;dx$
+\end{center}
+
+ce qui fournit
+
+\begin{center}
+$\frac{2}{5}n^{5/2}\leqslant\sum_{k=1}^{n}k^{3/2}\leqslant\frac{2}{5}((n+1)^{5/2}-1)$ et donc $\sum_{k=1}^{n}k^{3/2}\underset{n\rightarrow+\infty}{\sim}\frac{2n^{5/2}}{5}$.
+\end{center}
+
+Donc $u_n\underset{n\rightarrow+\infty}{\sim}\frac{2n^{\frac{5}{2}-\alpha}}{5}>0$. La série de terme général $u_n$ converge si et seulement si $\alpha>\frac{7}{2}$.
+
+\item  Pour $n\geqslant1$,
+
+\begin{center}
+$u_n =\left(1+\frac{1}{n^\alpha}\right)\left(1+\frac{2}{n^\alpha}\right)\ldots\left(1+\frac{n}{n^\alpha}\right)-1\geqslant\frac{1}{n^\alpha}+\frac{2}{n^\alpha}+\ldots+\frac{n}{n^\alpha}=\frac{n(n+1)}{2n^\alpha}>0$.
+\end{center}
+
+Comme $\frac{n(n+1)}{2n^\alpha}\underset{n\rightarrow+\infty}{\sim}\frac{1}{2n^{\alpha-2}}$, si $\alpha\leqslant3$, on a $\alpha-2\leqslant1$ et la série de terme général $u_n$ diverge.
+
+Si $\alpha> 3$,
+
+\begin{align*}\ensuremath
+0 < u_n&\leqslant\left(1+\frac{n}{n^\alpha}\right)^n -1= e^{n\ln\left(1+\frac{1}{n^{\alpha-1}}\right)}-1\\
+ &\underset{n\rightarrow+\infty}{\sim}n\ln\left(1+\frac{1}{n^{\alpha-1}}\right)\\
+ &\underset{n\rightarrow+\infty}{\sim}\frac{1}{n^{\alpha-2}}\;\text{terme général d'une série de \textsc{Riemann} convergente},
+\end{align*}
+			   
+			   
+et, puisque $\alpha-2>1$,  la série de terme général $u_n$ converge. Finalement, la série de terme général $u_n$ converge si et seulement si $\alpha > 3$.
+\end{enumerate}
+\fincorrection
+\finexercice

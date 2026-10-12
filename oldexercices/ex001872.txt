@@ -1,0 +1,42 @@
+\exercice{1872, roussel, 2001/09/01}
+
+\enonce
+Lorsqu'un espace vectoriel $E$ est en outre muni d'une multiplication,
+ l'application
+ $\nolinebreak {N:\ E \rightarrow \mathbb{R}}$  est dite norme
+multiplicative si:
+\begin{itemize}
+\item $N$ est une norme,
+\item pour tous $A$ et $B$ dans $E$, $N(A.B)\leq N(A).N(B)$.
+\end{itemize}
+Soit $E=M_n(\mathbb{R})$, l'espace vectoriel des matrices carr\'ees \`a $n$
+lignes et $n$ colonnes. $A\in E$ se  note
+$A=(a_{i,j})_{1\leq i,j\leq n}$
+\begin{enumerate}
+\item Montrer que $\displaystyle N_{\infty }(A)=
+\max_{1\leq i\leq n}\{\  \sum_{j=1}^n|a_{i,j}|\ \}$ d\'efinit une norme
+multiplicative sur $E$.
+\item Montrer que $\displaystyle N_{\infty }(A)=\max_{\{ X\in \mathbb{R}^n,\ \|{X}\|_\infty=1\} }
+\{\  \| {A.X}\|_\infty \}$.
+\item Soit $A\in M_n(\mathbb{R})$ telle que $\displaystyle \forall \ 1\leq i \leq n,\ |a_{i,i}|>
+\sum_{j=1,j\neq i}^n|a_{i,j}|$ et $D$ la matrice diagonale form\'ee avec les
+\'el\'ements diagonaux de $A$. Soit aussi $F$ un vecteur de $\mathbb{R}^n$.
+On consid\`ere la suite des $X^{(p)}\in \mathbb{R}^n$ d\'efinie pour $p\geq 0$ par:
+$$
+  \left\{
+ \begin{array}{lll}
+X^{(0)} &=X_0\in \mathbb{R}^n &\\
+X^{(p+1)} &=(I-D^{-1}A)X^{(p)}+D^{-1}F &\mbox{ pour p}\geq 0
+\end{array}
+\right.
+$$
+Montrer qu'elle est convergente et calculer sa limite.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\nocorrection
+
+\finexercice
+

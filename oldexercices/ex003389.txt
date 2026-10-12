@@ -1,0 +1,44 @@
+\exercice{3389, quercia, 2010/03/09}
+\enonce[Rayon spectral d'une matrice à coefficients positifs]
+
+Soit $A = (a_{ij}) \in \mathcal{M}_n(\R)$ avec : $\forall\ i,j,\ a_{ij} > 0$.
+On munit $\mathcal{M}_{n,1}(\R)$ de la relation d'ordre :
+$$(X \ge Y) \iff (\forall\ i,\ x_i \ge y_i),$$
+et on pose pour $X \in \mathcal{M}_{n,1}(\R)$, $X \ge 0$, $X\ne 0$ :
+$$\left\{
+\begin{array}{lll} R(X)    &=& \text{sup}\{ r \ge 0 \text{ tq } AX \ge rX \},    \cr
+         \hfil R &=& \text{sup}\{R(X) \text{ tq } X \ge 0, X \ne 0 \}. \cr
+         \end{array}\right.$$
+
+\begin{enumerate}
+  \item Montrer que $R$ est fini et qu'il existe $X_0 \in \R^n$ tel que
+    $R(X_0) = R$.
+    
+
+  \item Montrer que toutes les coordonnées de $X_0$ sont strictement positives.
+  \item On pose $AX_0 = RX_0 + Y$. Montrer que $Y = 0$.
+  \item Soit $\lambda$ une valeur propre complexe de $A$.
+    Montrer que $|\lambda| \le R$, et $(|\lambda| = R) \Leftrightarrow (\lambda = R)$.
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Compacité.
+  \item    Si $x_1 = 0$, on pose $Y = \begin{pmatrix}\alpha \cr x_2 \cr \vdots \cr x_n \cr\end{pmatrix}$ :
+
+    $R(Y) \ge \text{min}\Big( a_{11} + \frac {a_{12}x_2 + \dots + a_{1n}x_n}{\alpha},
+    \frac {\alpha a_{21}}{x_2} + R(X_0), \dots, \frac {\alpha a_{n1}}{x_n} + R(X_0) \Big)
+    > R(X_0)$ pour $\alpha > 0$ assez petit.
+  \item Si $y_1 > 0$, on pose $X = X_0 + \begin{pmatrix}\alpha\cr0\cr\vdots\cr0\cr\end{pmatrix}$ :
+
+    $AX - RX = Y + \alpha\begin{pmatrix}a_{11}-R\cr a_{21}\cr\vdots\cr a_{n1}\cr\end{pmatrix}$,
+    donc pour $\alpha > 0$ assez petit, $R(X) > R$.
+  \item Inégalité triangulaire.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

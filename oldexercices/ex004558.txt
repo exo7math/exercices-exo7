@@ -1,0 +1,35 @@
+\exercice{4558, quercia, 2010/03/14}
+\enonce[Fonction définie par une série]
+
+On pose pour $x\in\R$~: $f(x) = \sum_{n=1}^\infty \frac{(-1)^{n-1}}{\sqrt{n^2+x^2}}$.
+
+\begin{enumerate}
+  \item Déterminer $\lim_{x\to\infty}f(x)$.
+
+  \item Chercher un équivalent de~$f(x)$ en $+\infty$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item CSA~: $0\le f(x)\le \frac1{\sqrt{1+x^2}}$ donc $f(x)\to 0$ lorsque $x\to+\infty$.
+  \item {$xf(x)$}
+$= \sum_{p=0}^\infty \frac{x}{\sqrt{(2p+1)^2+x^2}} - \frac{x}{\sqrt{(2p+2)^2+x^2}}$\par
+$= \sum_{p=0}^\infty \int_{t=2p+1}^{2p+2}\frac{xt}{(t^2+x^2)^{3/2}}\,d t$\par
+$= \sum_{p=0}^\infty \int_{u=(2p+1)/x}^{(2p+2)/x}\frac{u}{(u^2+1)^{3/2}}\,d u$.\par
+
+
+On a $ \int_{u=0}^\infty\frac u{(u^2+1)^{3/2}}\,d u = 1 = a + b$ avec~:
+
+$a = \sum_{p=0}^\infty \int_{u=(2p)/x}^{(2p+1)/x}\frac{u}{(u^2+1)^{3/2}}\,d u$ et
+$b = \sum_{p=0}^\infty \int_{u=(2p+1)/x}^{(2p+2)/x}\frac{u}{(u^2+1)^{3/2}}\,d u = xf(x)$.
+
+$h$ : $u \mapsto\frac{u}{(u^2+1)^{3/2}}$ est croissante sur~$[0,\sqrt{\frac12}]$ et
+décroissante sur $[\sqrt{\frac12},+\infty[$ donc $|a-b| \le \frac{3\|h\|_\infty}x$,
+et $xf(x)\to \frac12$ lorsque $x\to+\infty$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

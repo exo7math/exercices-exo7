@@ -1,0 +1,36 @@
+\exercice{4654, quercia, 2010/03/14}
+\enonce[$\sum_{n=-\infty}^\infty R(n)e^{inx}$, $R =$ fraction rationnelle]
+
+Soit $R$ une fraction rationnelle à coefficients complexes, de degré strictement
+négatif, n'ayant pas de pôle dans $\Z$.
+On pose $f(x) = \sum_{n=-\infty}^\infty R(n)e^{inx}$.
+
+\begin{enumerate}
+  \item \'Etudier l'existence et la continuité de $f$.
+    
+
+  \item Montrer que $f$ est de classe $\mathcal{C}^\infty$ sur $\R\setminus 2\pi\Z$.
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $R(n) = \frac an + S(n)$ avec $\deg S \le -2$.
+             Donc $f(x) = R(0) + 2ia\sum_{n=1}^\infty \frac{\sin nx}n
+                        + \sum_{n=1}^\infty (S(n)e^{inx} + S(-n)e^{-inx})$
+             converge pour tout $x \in \R$.
+  \item $R(n) = \frac {a_1}n + \dots + \frac{a_k}{n^k} + S(n)$
+             avec $\deg S \le -k-1  \Rightarrow 
+             f(x) = R(0) + a_1f_1(x) + \dots + a_kf_k(x) + g(x)$
+             avec $f_p(x) = \sum_{n=1}^\infty
+             \frac{e^{inx}+(-1)^pe^{-inx}}{n^p}$
+             et $g$ de classe $\mathcal{C}^k$ sur $\R\setminus2\pi\Z$.
+             $f_p' = if_{p-1}$ et $f_1$ est $\mathcal{C}^\infty$ sur $\R\setminus2\pi\Z$
+             donc $f_p$ aussi.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

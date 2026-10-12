@@ -1,0 +1,23 @@
+\exercice{5680, rouget, 2010/10/16}
+\enonce[** (ESTP1994)]
+Soit $M_{a,b}=\left(
+\begin{array}{cccc}
+1&1&0&0\\
+0&1&a&0\\
+0&0&1&b\\
+0&0&0&1
+\end{array}
+\right)$. Peut-on trouver deux matrices distinctes semblables parmi
+les quatre matrices $M_{0,0}$, $M_{0,1}$, $M_{1,0}$ et $M_{1,1}$ ?
+\finenonce
+
+\noindication
+
+\correction
+$\text{rg}(M_{a,b}-I) =1$, si $a = b = 0$, $2$ si l'un des deux nombres $a$ ou $b$ est nul et l'autre pas et $3$ si $a$ et $b$ ne sont pas nuls. Donc $M_{0,0}$ n'est semblable à aucune des trois autres matrices et de même pour $M_{1,1}$.
+
+Il reste à savoir si les matrices $M_{1,0}$ et $M_{0,1}$ sont semblables.
+
+$(M_{1,0}-I)^2 = (E_{1,2}+E_{2,3})^2 =E_{1,3}\neq0$ et $(M_{0,1}-I)^2 = (E_{1,2}+E_{3,4})^2 = 0$. Donc les matrices $M_{1,0}$ et $M_{0,1}$ ne sont pas semblables.
+\fincorrection
+\finexercice

@@ -1,0 +1,18 @@
+\exercice{5385, rouget, 2010/07/06}
+\enonce[***I Distance d'un point à une partie]
+\label{exo:roudist}
+Soit $A$ une partie non vide de $\Rr$. Pour $x\in\Rr$, on pose $f(x)=\mbox{Inf}\{|y-x|,\;y\in A\}$. Montrer que $f$ est continue en tout point de $\Rr$.
+\finenonce
+
+\noindication
+
+\correction
+Soit $(x,y)\in\Rr^2$ et $z\in A$. $|x-z|\leq|x-y|+|y-z|$. Or, $forall z\in A,\;|x-z|\geq d(x,A)$ et donc $d(x,A)-|x-y|$ est un minorant de $\{|y-z|,\;z\in A\}$. Par suite, $d(x,A)-|x-y|\leq d(y,A)$. On a montré que 
+
+$$\forall(x,y)\in\Rr^2,\;d(x,A)-d(y,A)\leq|y-x|.$$
+
+En échangeant les roles de $x$ et $y$, on a aussi montré que $\forall(x,y)\in\Rr^2,\;d(y,A)-d(x,A)\leq|y-x|$.
+
+Finalement, $\forall(x,y)\in\Rr^2,\|f(y)-f(x)|\leq|y-x|$. Ainsi, $f$ est donc $1$-Lipschitzienne et en particulier continue sur $\Rr$.
+\fincorrection
+\finexercice

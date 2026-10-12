@@ -1,0 +1,27 @@
+\exercice{4083, quercia, 2010/03/11}
+\enonce[X MP$^*$ 2000]
+
+On considère l'équation différentielle $y'=\sin(x+y)$. Montrer que
+pour toute condition initiale l'intervalle maximal est
+$\R$. Ensemble des points d'inflexion des courbes solutions ?
+
+
+\finenonce
+
+\noindication
+
+\correction
+$y'$ étant bornée, $y$ admet une limite finie en tout point fini
+donc la solution non prolongeable est définie sur~$\R$.
+
+Une solution $y$ est de classe $\mathcal{C}^\infty$ vu l'équation et
+$y'' = (1+\sin(x+y))\cos(x+y)$ est du signe de $\cos(x+y)$.
+En un point $(x_0,y_0)$ tel que $x_0+y_0\equiv \frac\pi2(\mathrm{mod}\,{\pi})$
+on a $y'' = 0$ et $\frac{d}{d x}(x+y)\ne 0$ donc $y''$ change
+de signe et il y a inflexion.
+En un point $(x_0,y_0)$ tel que $x_0+y_0\equiv \frac{3\pi}2(\mathrm{mod}\,{\pi})$
+on a $x+y=$cste (car $y=\text{cste}-x$ est solution et il y a unicité)
+donc il n'y a pas inflexion.
+\fincorrection
+
+\finexercice

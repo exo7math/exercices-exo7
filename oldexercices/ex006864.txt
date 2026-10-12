@@ -1,0 +1,120 @@
+\exercice{6864, bodin, 2012/04/13}
+\video{15IrPAzKwzc}
+\enonce
+Calculer les primitives suivantes par intégration par parties.
+\begin{enumerate}
+  \item $\int x^2 \ln x \, dx$
+
+  \item $\int x \arctan x \, dx$
+
+  \item $\int \ln x \, dx$ \quad  puis \quad  $\int (\ln x)^2 \, dx$
+
+  \item $\int \cos x\exp x \, dx$
+\end{enumerate}
+\finenonce 
+
+\indication
+\begin{enumerate}
+  \item Pour $\int x^2 \ln x \, dx$ poser $v'=x^2$, $u=\ln x$.
+
+  \item Pour $\int x \arctan x \, dx$ poser $v'=x$ et $u= \arctan x$.
+
+  \item Pour les deux il faut faire une intégration par parties avec $v'=1$.
+
+  \item Pour $\int \cos x\exp x \,dx$ il faut faire deux intégrations par parties.
+\end{enumerate}
+\finindication
+
+\correction
+\begin{enumerate}
+  \item $\int x^2 \ln x \, dx$
+
+Considérons l'intégration par parties avec $u=\ln x$ et $v'=x^2$.
+On a donc $u'=\frac 1x$ et $v = \frac{x^3}3$.
+Donc
+\begin{align*}
+\int  \ln x \times x^2\, dx 
+  &= \int uv' = \big[ uv \big] - \int u'v \\
+  &= \left[ \ln x \times \frac{x^3}3 \right] - \int  \frac 1x\times\frac{x^3}3  \, dx \\
+  &= \left[ \ln x  \times \frac{x^3}3\right] - \int \frac{x^2}3 \, dx \\
+  &= \frac{x^3}3 \ln x - \frac{x^3}9 + c \\
+\end{align*}
+
+
+  \item $\int x \arctan x \, dx$
+
+Considérons l'intégration par parties avec $u=\arctan x$ et $v'=x$.
+On a donc $u'=\frac 1{1+x^2}$ et $v = \frac{x^2}2$.
+Donc
+\begin{align*}
+\int  \arctan x \times x \, dx 
+&= \int uv' = \big[ uv \big] - \int u'v \\
+&= \left[ \arctan x \times \frac{x^2}2  \right] - \int \frac 1{1+x^2} \times\frac{x^2}2  \, dx  \\
+&= \left[  \arctan x \times \frac{x^2}2\right] - \frac12 \int \left( 1 -  \frac 1{1+x^2} \right)\, dx  \\
+&= \frac{x^2}2  \arctan x -\frac 12 x + \frac 12 \arctan x + c \\
+&= \frac 12 (1+x^2) \arctan x -\frac 12 x+ c \\
+\end{align*}
+
+  \item $\int \ln x \, dx$ puis $\int (\ln x)^2 \, dx$
+
+Pour la primitive $\int \ln x \, dx$, regardons l'intégration par parties avec $u=\ln x$ et $v'=1$.
+Donc $u' = \frac 1x$ et $v=x$.
+\begin{align*}
+\int \ln x \, dx
+&= \int uv' = \big[ uv \big] - \int u'v \\
+&= \left[ \ln x \times x \right] - \int \frac 1x \times x \, dx \\
+&= \left[  \ln x \times x \right] - \int 1 \, dx \\
+&= x\ln x - x + c \\
+\end{align*}
+
+\bigskip
+
+Par la primitive $\int (\ln x)^2 \, dx$ soit l'intégration par parties définie par $u=(\ln x)^2$ et  $v'=1$.
+Donc $u' = 2 \frac 1x \ln x$ et $v=x$.
+\begin{align*}
+\int (\ln x)^2 \, dx
+&= \int uv' = \big[ uv \big] - \int u'v \\
+&= \left[ x (\ln x)^2 \right] - 2 \int \ln x \, dx \\
+&= x(\ln x)^2 -2 (x\ln x - x) + c \\
+\end{align*}
+Pour obtenir la dernière ligne on a utilisé la primitive calculée précédemment.
+
+  \item Notons $I=\int \cos x\exp x \, dx$.
+
+Regardons l'intégration par parties avec $u=\exp x$ et $v'=\cos x$.
+Alors  $u' = \exp x$ et $v=\sin x$.
+
+Donc
+
+$$I = \int \cos x\exp x \,dx= \big[ \sin x \exp x \big] - \int \sin x \exp x\,dx$$
+
+Si l'on note $J = \int \sin x \exp x\,dx$, alors on a obtenu
+\begin{equation}
+\label{eq:intI}
+I = \big[ \sin x \exp x \big] - J  
+\end{equation}
+ 
+Pour calculer $J$ on refait une deuxième intégration par parties
+avec  $u=\exp x$ et $v'=\sin x$.
+Ce qui donne
+$$J = \int \sin x \exp x\,dx = \big[ -\cos x \exp x \big] - \int -\cos x \exp x\,dx
+= \big[ -\cos x \exp x \big] + I$$
+Nous avons ainsi une deuxième équation :
+\begin{equation}
+\label{eq:intJ}
+J = \big[ -\cos x \exp x \big] + I
+\end{equation}
+
+Repartons de l'équation (\ref{eq:intI}) dans laquelle on remplace $J$ par la formule obtenue dans l'équation 
+(\ref{eq:intJ}).
+
+
+$$I=\big[ \sin x \exp x \big] - J  = \big[ \sin x \exp x \big] - \big[ -\cos x \exp x \big] - I$$
+D'où
+$$2I = \big[ \sin x \exp x \big] + \big[ \cos x \exp x \big]$$
+
+Ce qui nous permet de calculer notre intégrale :
+$$I= \frac12 (\sin x + \cos x) \exp x + c.$$
+\end{enumerate}
+\fincorrection
+\finexercice

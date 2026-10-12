@@ -1,0 +1,51 @@
+\exercice{5129, rouget, 2010/06/30}
+\enonce[**IT]
+Forme trigonométrique de $\frac{1+\cos\theta-i\sin\theta}{1-\cos\theta+i\sin\theta}$ et de
+$\frac{1+e^{i\theta}}{1-e^{i\theta}}$.
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+ \item Soit $\theta\in\Rr$.
+
+$$1-\cos\theta+i\sin\theta=0\Leftrightarrow\cos\theta=1\;\mbox{et}\;\sin\theta=0\Leftrightarrow\theta\in0+2\pi\Zz.$$
+Donc, $\frac{1+\cos\theta-i\sin\theta}{1-\cos\theta+i\sin\theta}$ existe pour $\theta\notin 2\pi\Zz$. Pour un tel
+$\theta$,
+
+$$\frac{1+\cos\theta-i\sin\theta}{1-\cos\theta+i\sin\theta}=\frac{2\cos^2\frac{\theta}{2}-2i\sin\frac{\theta}{2}\cos
+\frac{\theta}{2}}{2\sin^2\frac{\theta}{2}+2i\sin\frac{\theta}{2}\cos\frac{\theta}{2}}
+=\frac{\cos\frac{\theta}{2}}{\sin\frac{\theta}{2}}\frac{\cos(\theta/2)-i\sin(\theta/2)}{\sin(\theta/2)+i\cos(\theta/2)}
+=\frac{\cos\frac{\theta}{2}}{\sin\frac{\theta}{2}}\frac{e^{-i\theta/2}}{e^{i(\pi-\theta)/2}}=-i\cotan\left(\frac{\theta}{2}\right).$$
+\textbf{- 1er cas.}
+$\cotan\frac{\theta}{2}>0\Leftrightarrow\frac{\theta}{2}\in\displaystyle\bigcup_{k\in\Zz}]k\pi,\frac{\pi}{2}+k\pi[\Leftrightarrow\theta\in
+\displaystyle\bigcup_{k\in\Zz}]2k\pi,\pi+2k\pi[$.
+Dans ce cas, la forme trigonométrique de $\frac{1+\cos\theta-i\sin\theta}{1-\cos\theta+i\sin\theta}$ est 
+$\cotan(\frac{\theta}{2})e^{-i\pi/2}$ (module$=\cotan(\frac{\theta}{2})$ et argument$=-\frac{\pi}{2}\;(2\pi)$).
+
+$$\frac{1+\cos\theta-i\sin\theta}{1-\cos\theta+i\sin\theta}=\left[\cotan\left(\frac{\theta}{2}\right),-\frac{\pi}{2}\right].$$
+\textbf{- 2ème cas.} $\cotan\frac{\theta}{2}<0\Leftrightarrow\theta\in
+\displaystyle\bigcup_{k\in\Zz}]\pi+2k\pi,2(k+1)\pi[$.
+Dans ce cas,
+
+$$\frac{1+\cos\theta-i\sin\theta}{1-\cos\theta+i\sin\theta}=-\cotan(\frac{\theta}{2}).e^{i\pi/2}
+=|\cotan(\frac{\theta}{2})|e^{i\pi/2},$$
+et donc,
+
+$$\frac{1+\cos\theta-i\sin\theta}{1-\cos\theta+i\sin\theta}=\left[-\cotan\left(\frac{\theta}{2}\right),\frac{\pi}{2}\right].$$
+\textbf{- 3ème cas.} $\cotan\frac{\theta}{2}=0\Leftrightarrow\theta\in\pi+2\pi\Zz$. Dans ce cas, on
+a $\frac{1+\cos\theta-i\sin\theta}{1-\cos\theta+i\sin\theta}=0$.
+\item Pour $\theta\notin2\pi\Zz$, on a
+
+$$\frac{1+e^{i\theta}}{1-e^{i\theta}}=\frac{e^{i\theta/2}(e^{-i\theta/2}+e^{i\theta/2})}{e^{i\theta/2}(e^{-i\theta/2}-
+e^{i\theta/2})}=\frac{2\cos\frac{\theta}{2}}{-2i\sin\frac{\theta}{2}}=i\cotan\frac{\theta}{2}.$$
+Si $\theta\in\displaystyle\bigcup_{k\in\Zz}]2k\pi,\pi+2k\pi[$,
+$\frac{1+e^{i\theta}}{1-e^{i\theta}}=[\cotan\frac{\theta}{2},\frac{\pi}{2}]$.
+Si $\theta\in\displaystyle\bigcup_{k\in\Zz}]\pi+2k\pi,2(k+1)\pi[$,
+$\frac{1+e^{i\theta}}{1-e^{i\theta}}=[-\cotan\frac{\theta}{2},-\frac{\pi}{2}]$.
+Si $\theta\in\pi+2\pi\Zz$, $\frac{1+e^{i\theta}}{1-e^{i\theta}}=0$.
+\end{enumerate}
+
+\fincorrection
+\finexercice

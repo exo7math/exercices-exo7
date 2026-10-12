@@ -1,0 +1,111 @@
+\exercice{1702, barraud, 2003/09/01}
+
+\enonce
+Soit $E$ un $\R$-espace vectoriel de dimension finie $n$, et $u$ un
+endomorphisme de $E$.
+
+Soit $x_{0}\in E\setminus\{0\}$. On note $x_{k}=u^{k}(x_{0})$ et $F$ le
+sous espace vectoriel engendré par la famille $\{x_{k}, k\in\N\}$, c'est à
+dire l'ensemble des combinaisons linéaires finies de vecteurs de ${x_{k},
+  k\in\N}$~:
+$$
+ F=\left\{x\in E\ /\ \exists N\in\N,
+   \exists(\alpha_{0}\dots\alpha_{N})\in\R^{N+1},\
+   x=\sum_{i=0}^{N}\alpha_{i}x_{i}\right\}
+$$
+
+\begin{enumerate}
+\item
+Montrer que $F$ est stable par $u$, c'est à dire que $\forall x\in F,
+u(x)\in F$. 
+
+\item 
+Montrer qu'il existe un entier $k\leq n$ tel que
+$(x_{0},x_{1},\dots,x_{k})$ soit libre et $(x_{0},x_{1},\dots,x_{k+1})$
+soit liée. Montrer alors qu'il existe des scalaires
+$(a_{0},a_{1},\dots,a_{k})$ tels que
+$$
+  x_{k+1}=a_{0}x_{0}+a_{1}x_{1}+\dots+a_{k}x_{k}
+$$
+
+\item\label{q:P0(u)x0=0}
+En déduire que le polynôme $P_{0}=X^{k+1}-\sum_{i=0}^{k}a_{i}X^{i}$
+satisgfait $\big(P_{0}(u)\big)(x_{0})=0$.
+
+\item\label{q:x=P(u)x0}
+Montrer que pour tout $x$ de $F$, il existe un polynôme $P\in\R[X]$ tel
+que $x=\big(P(u)\big)(x_{0})$.
+
+\item
+A l'aide des questions (\ref{q:P0(u)x0=0}) et (\ref{q:x=P(u)x0}), montrer
+que $\forall x\in F, \exists R\in\R_{k}[X], x=\big(R(u)\big)(x_{0})$.
+
+{\it(on pourra effectuer la division eulidienne de $P$ par $P_{0}$)}
+
+\item
+En déduire que $(x_{0}\dots x_{k})$ est une base de $F$.
+
+\item
+Ecrire la matrice de la restriction $u_{|_{F}}$ de $u$ à $F$ dans cette
+base. Quel est le polynôme caractéristique de $\tilde{u}$~?
+
+\item
+Montrer qu'il existe une base $\mathcal{B}$ de $E$ dans la quelle
+$$
+ \mathrm{Mat}_{_{\mathcal{B}}}(u)=
+ \begin{pmatrix}
+   C_{1} &0    &\cdots&0\\
+   0     &C_{2}&      &\vdots\\
+   \vdots&     &\ddots&0     \\
+   0     &\cdots&0    &C_{r}
+ \end{pmatrix}
+$$
+où les matrices $C_{i}$ sont des matrices Compagnon.
+\end{enumerate}
+
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item
+    $u\big(\sum_{i=1}^{N}\alpha_{i}x_{i}\big)=\sum_{i=1}^{N}\alpha_{i}u(u^{i}(x_{0}))=\sum_{i=1}^{N}\alpha_{i} x_{i+1}$. Donc $\forall x\in F,\ u(x)\in F$.
+  \item
+    Si à un rang $k$, $x_{k+1}$ est une combinaison linéaire des $x_{i}$
+    pour $i\leq k$~: $x_{k+1}=\sum_{i=0}^{k}a_{i}x_{i}$. On en déduit que
+    $x_{k+2}=\sum_{i=0}^{k}a_{i}x_{i+1}$, et donc que $x_{k+2}\in
+    Vect(x_{1},\dots,x_{k+1})\subset Vect(x_{0},\dots, x_{k})$, et par
+    récurrence, on obtient finalement que $\forall p>k, x_{p}\in
+    Vect(x_{0},\dots,x_{k})$. On en déduit que le rang de la famille
+    $\{x_{0},\dots,x_{m}\}$, est strictement croissant avec $m$ puis
+    éventuellement constant à partir d'un certain rang. Comme $E$ est de
+    dimension finie $n$, on en déduit que ce rang est constant à partir
+    d'un rang $k\leq n$~: la famille $(x_{0},\dots,x_{k})$ est alors
+    libre, et $x_{k+1}$ est une combinaison linéaire de
+    $(x_{0},\dots,x_{k})$. 
+  \item
+    $x_{k+1}-\sum_{i=0}^{k}a_{i}x_{i}=u^{k+1}(x_{0})-\sum_{i=0}^{k}a_{i}u^{i}(x_{0})=0$ donc $P_{0}(u)(x_{0})=0$.
+  \item
+    Si $x\in F$ alors $x=\sum_{i=0}^{N}\alpha_{i}u^{i}(x_{0})$. En posant
+    $P=\sum_{i=0}^{N}\alpha_{i} X^{i}$, on a $x=P(u)(x_{0})$.
+  \item
+    Soit $P=QP_{0}+R$ la division euclidienne de $P$ par $P_{0}$, alors
+    $\deg(R)<\deg(P_{0})=k+1$. Notons $R=\sum_{i=0}^{k}r_{i} X^{i}$. On a
+    $x=P(u)(x_{0})=Q(u)P_{0}(u)(x_{0})+R(u)(x_{0})=R(u)(x_{0})$ 
+  \item
+    La famille $(x_{0},\dots,x_{k})$ est donc libre et génératrice dans
+    $F$~: c'est une base.
+  \item
+    La matrice de $u_{|_{F}}$ dans cette base est la matrice compagnon
+    associée au polynôme $P_{0}$, et $\chi_{u_{|_{F}}}=P_{0}$.
+  \item
+    On choisit un vecteur $y\in E\setminus F$, et on recommence le même
+    travail avec ce vecteur, et on continue ainsi jusqu'à avoir obtenu
+    une base de tout l'espace. La matrice de $u$ dans la base finale est
+    alors du type demandé.
+  \end{enumerate}
+\fincorrection
+
+\finexercice
+

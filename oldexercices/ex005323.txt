@@ -1,0 +1,50 @@
+\exercice{5323, rouget, 2010/07/04}
+\enonce[***]
+Division euclidienne de $P=\sin aX^n-\sin(na)X+\sin((n-1)a)$ par $Q=X^2-2X\cos a+1$, $a$ réel donné.
+\finenonce
+
+\noindication
+
+\correction
+On prend $n\geq2$ (sinon tout est clair).
+
+$Q=(X-e^{ia})(X-e^{-ia})$ est à racines simples si et seulement si $e^{ia}\neq e^{-ia}$ ou encore $e^{2ia}\neq 1$ ou enfin, $a\notin\pi\Zz$.
+
+1er cas. Si $a\in\pi\Zz$ alors, $P=0=0.Q$.
+
+2ème cas. Si $a\notin\pi\Zz$, alors 
+
+\begin{align*}\ensuremath
+P(e^{ia})&=\sin a(\cos(na)+i\sin(na))-\sin(na)(\cos a+i\sin a)+\sin((n-1)a)\\
+ &=\sin((n-1)a)-(\sin(na)\cos a-\cos(na)\sin a)=0.
+\end{align*}
+
+Donc, $e^{ia}$ est racine de $P$ et de même, puisque $P$ est dans $\Rr[X]$, $e^{-ia}$ est racine de $P$. $P$ est donc divisible par $Q$.
+
+\begin{align*}\ensuremath
+P&=P-P(e^{ia})=\sin a(X^n-e^{ina})-\sin(na)(X-e^{ia})=(X-e^{ia})(\sin a\sum_{k=0}^{n-1}X^{n-1-k}e^{ika}-\sin(na))\\
+ &=(X-e^{ia})S.
+\end{align*}
+ 
+Puis,
+
+\begin{align*}\ensuremath
+S&=S-S(e^{-ia})=\sin a\sum_{k=0}^{n-1}e^{ika}(X^{n-1-k}-e^{-i(n-1-k)a})=\sin a(X-e^{-ia})\sum_{k=0}^{n-2}e^{ika}(\sum_{j=0}^{n-2-k}X^{n-2-k-j}e^{-ija})\\
+ &=\sin a(X-e^{-ia})\sum_{k=0}^{n-2}(\sum_{j=0}^{n-2-k}X^{n-2-k-j}e^{i(k-j)a})
+=\sin a(X-e^{-ia})\sum_{l=0}^{n-2}(\sum_{k+j=l}^{}e^{i(k-j)a})X^{n-2-l}\\
+ &=\sin a(X-e^{-ia})\sum_{l=0}^{n-2}(\sum_{k=0}^{l}e^{i(2k-l)a})X^{n-2-l}
+\end{align*}
+ 
+Maintenant,
+
+$$\sum_{k=0}^{l}e^{i(2k-l)}a=e^{-ila}\frac{1-e^{2i(l+1)a}}{1-e^{2ia}}=\frac{\sin((l+1)a)}{\sin a}.$$
+
+Donc
+
+$$S=\sin a(X-e^{-ia})\sum_{l=0}^{n-2}\frac{\sin((l+1)a)}{\sin a}X^{n-2-l}=(X-e^{-ia})\sum_{l=0}^{n-2}\sin((l+1)a)X^{n-2-l},$$
+
+et finalement 
+
+$$P=(X-e^{ia})(X-e^{-ia})\sum_{k=0}^{n-2}\sin((k+1)a)X^{n-2-k}=(X^2-2X\cos a+1)\sum_{k=0}^{n-2}\sin((k+1)a).$$
+\fincorrection
+\finexercice

@@ -1,0 +1,24 @@
+\exercice{701, bodin, 1998/09/01}
+\enonce
+Calculer la fonction d\'eriv\'ee d'ordre $n$ des fonctions $f,g,h$ d\'efinies par :
+$$f(x) = \sin x \quad ; \quad g(x)=\sin^2x \quad ; \quad h(x)=\sin^3x+\cos^3x.$$
+\finenonce 
+
+\indication
+On ne cherchera pas \`a utiliser la formule de Leibniz mais \`a lin\'eariser les expressions trigonom\'etriques.
+\finindication
+
+\correction
+\begin{enumerate}
+  \item Selon que $n \equiv 0 \pmod 4, 1 \pmod 4, 2 \pmod 4 , 3\pmod 4$ alors
+$f^{(n)}(x)$ vaut respectivement $\sin x$, $\cos x$, $-\sin x$,
+$-\cos x$.
+  \item La d\'eriv\'ee de $\sin^2 x$ est $2\sin x \cos x = \sin 2x$.
+Et donc les d\'eriv\'ees suivantes seront :
+$2\cos 2x, -4\sin 2x, -8\cos 2x, 16\sin 2x$,...
+Et selon que $n \equiv 1 \pmod 4, 2 \pmod 4 , 3\pmod 4, 0 \pmod 4,$ alors
+$g^{(n)}(x)$ vaut respectivement $2^{n-1}\sin 2x$, $2^{n-1}\cos 2x$, $-2^{n-1}\sin 2x$, $-2^{n-1}\cos 2x$.
+  \item $\sin(x)^3+\cos(x)^3 = -\frac14\sin(3x)+\frac34\sin(x)+\frac14\cos(3x)+\frac34\cos(x)$ et on d\'erive...
+\end{enumerate}
+\fincorrection
+\finexercice

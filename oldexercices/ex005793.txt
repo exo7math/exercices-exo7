@@ -1,0 +1,93 @@
+\exercice{5793, rouget, 2010/10/16}
+\enonce[**]
+Soit $(e_1,e_2,e_3)$ une base orthonormée directe d'un espace euclidien orienté $E$ de dimension $3$. Matrice de la rotation d'angle $\frac{\pi}{3}$ autour de $e_1+e_2$.
+\finenonce
+
+\noindication
+
+\correction
+Posons $k =\frac{1}{\sqrt{2}}(e_1+e_2)$. Soit $u=xe_1+ye_2+ze_3\in E$. On sait que
+
+\begin{align*}\ensuremath
+r(u)&=(\cos\theta)u+(1-\cos\theta)\left(u|k\right)k+(\sin\theta)k\wedge u=\frac{1}{2}u +\frac{1}{4}(u|(e_1+e_2))(e_1+e_2)+\frac{\sqrt{6}}{4}(e_1+e_2)\wedge u\\
+ &\text{\og}=\text{\fg}\;\frac{1}{2}\left(
+ \begin{array}{c}
+ x\\
+ y\\
+ z
+ \end{array}
+ \right)+\frac{1}{4}(x+y)\left(
+ \begin{array}{c}
+ 1\\
+ 1\\
+ 0
+ \end{array}
+ \right)+\frac{\sqrt{6}}{4}\left(
+ \begin{array}{c}
+ 1\\
+ 1\\
+ 0
+ \end{array}
+ \right)\wedge\left(
+ \begin{array}{c}
+ x\\
+ y\\
+ z
+ \end{array}
+ \right)\\
+  &=\frac{1}{2}\left(
+ \begin{array}{c}
+ x\\
+ y\\
+ z
+ \end{array}
+ \right)+\frac{1}{4}(x+y)\left(
+ \begin{array}{c}
+ 1\\
+ 1\\
+ 0
+ \end{array}
+ \right)+\frac{\sqrt{6}}{4}\left(
+ \begin{array}{c}
+ z\\
+ -z\\
+ -x+y
+ \end{array}
+ \right)\\
+ &=\left(
+ \begin{array}{c}
+ \frac{3}{4}x+\frac{1}{4}y+\frac{\sqrt{6}}{4}z\\
+\rule[-4mm]{0mm}{11mm}\frac{1}{4}x+\frac{3}{4}y-\frac{\sqrt{6}}{4}z\\
+-\frac{\sqrt{6}}{4}x+\frac{\sqrt{6}}{4}y+\frac{1}{2}z
+ \end{array}
+ \right)=\left(
+ \begin{array}{cccc}
+ \frac{3}{4}&\frac{1}{4}&\frac{\sqrt{6}}{4}\\
+\rule[-4mm]{0mm}{11mm}\frac{1}{4}&\frac{3}{4}&-\frac{\sqrt{6}}{4}\\
+-\frac{\sqrt{6}}{4}&\frac{\sqrt{6}}{4}&\frac{1}{2}
+ \end{array}
+ \right)\left(
+ \begin{array}{c}
+x\\
+y\\
+z
+ \end{array}
+ \right)
+\end{align*}
+
+et la matrice cherchée est
+
+\begin{center}
+\shadowbox{
+$M=\left(
+ \begin{array}{cccc}
+ \frac{3}{4}&\frac{1}{4}&\frac{\sqrt{6}}{4}\\
+\rule[-4mm]{0mm}{11mm}\frac{1}{4}&\frac{3}{4}&-\frac{\sqrt{6}}{4}\\
+-\frac{\sqrt{6}}{4}&\frac{\sqrt{6}}{4}&\frac{1}{2}
+ \end{array}
+ \right)
+ $.
+ }
+ \end{center}
+\fincorrection
+\finexercice

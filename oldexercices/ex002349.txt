@@ -1,0 +1,35 @@
+\exercice{2349, queffelec, 2003/10/01}
+\enonce
+\begin{enumerate}
+\item Montrer que 
+$||f||_\infty= \sup_{0\leq x\leq
+1}|f(x)|$ et  $||f||_1=\int_0^1|f(t)|\ dt$ sont deux normes 
+sur $C([0,1],{\Rr})$. Sont-elles \'equivalentes ?
+
+\item Les deux m\'etriques associ\'ees sont-elles topologiquement \'equivalentes ?
+\end{enumerate}
+\finenonce
+
+\indication
+\begin{itemize}
+  \item Montrer $\| f \|_1 \le \|f\|_\infty$.
+  \item Par un contre-exemple, montrer qu'il n'existe 
+aucune constante $C>0$ tel que $\|f\|_\infty \le C \| f \|_1$ pour tout $f$.
+\end{itemize}
+\finindication
+
+\correction
+\begin{enumerate}
+  \item $\| f \|_1 = \int_0^1|f(t)|dt \le \int_0^1 \|f\|_\infty dt \le \|f\|_\infty$.
+Donc $\| f \|_1 \le \|f\|_\infty$ Par contre il n'existe aucune constante $C>0$ tel que $\|f\|_\infty \le C \| f \|_1$ pour tout $f$. Pour montrer ceci par l'absurde, supposons qu'il existe une constante $C>0$ telle que
+$\|f\|_\infty \le C \| f \|_1$ pour tout $f$ de $ C([0,1],{\Rr})$.
+Regardons les fonctions $f_k$ définies par $f_k(x) = 2k(1-kx)$ si
+$x\in[0,\frac1k]$ et $f_k(x)=0$ si $x > \frac1k$. 
+Alors $f_k \in C([0,1],{\Rr})$ et  $\| f_k \|_\infty = 2k$ alors que $\| f_k \|_1 = 1$. On obtient $2k \le C.1$ ce qui est contradicoire pour
+$k$ assez grand. Cela prouve que les normes ne sont pas équivalentes.
+  
+  \item Comme les métriques sont définies par des normes et que les normes ne sont pas équivalentes alors les métriques ne définissent pas la même topologie.
+
+\end{enumerate}
+\fincorrection
+\finexercice

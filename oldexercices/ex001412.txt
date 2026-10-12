@@ -1,0 +1,47 @@
+\exercice{1412, legall, 1998/09/01}
+
+\enonce
+\begin{enumerate}
+    \item Rappeler $  \vert S_3\vert   .$ Montrer que $  S_3  $ ne contient pas d'\'el\'ement d'ordre $  6  .$
+    \item Montrer que $  S_3  $ contient un unique sous-groupe d'ordre $  3  .$ D\'eterminer tous
+les sous-groupes d'ordre $  2  $ de $  S_3  .$
+    \item D\'eduire de ce qui pr\'ec\`ede tous
+les sous-groupes de $  S_3  .$
+\end{enumerate}
+
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+    \item $|S_n| = n!$ donc $|S_3| = 3! =6$. Montrons plus g\'en\'eralement
+qu'il n'existe pas d'\'el\'ement d'ordre $n!$ dans $S_n$ ($n\ge
+3$). Par l'absurde soit $\alpha$ un tel \'el\'ement. Alors par
+hypoth\`ese $S_n$ est engendr\'e par $\alpha$ et donc $S_n$ est un
+groupe commutatif. Mais $(1,2)(2,3) \not= (2,3)(1,2)$ ce qui est
+absurde. En conclusion il n'existe pas d'\'el\'ements d'ordre $6$.
+    \item Explicitons $S_3$ :
+$$S_3 = \left\lbrace  id ; \tau_1=(1,2) ; \tau_2=(2,3) ;
+\tau_3=(1,3) ; \sigma_1 = (1,2,3) ; \sigma_2 = \sigma_1^{-1}=
+(3,2,1) \right\rbrace.$$ Remarquons
+
+Les sous-groupes d'ordre $2$ sont de la forme $\{ id ; \tau \}$
+avec $\tau^2 = id$. Les seuls \'el\'ements d'ordre $2$ sont les
+transpositions et donc se sont les groupes $\{ id ; (1,2) \}, $\{
+id ; (1,3) \}, $\{ id ; (2,3) \}$.
+
+Les sous-groupes d'ordre trois sont de la forme $\{
+id,\sigma,\sigma^2 \}$ avec $\sigma^2=\sigma^{-1}$. Et donc le
+seul sous-groupe d'ordre $3$ est $\{ id ; (1,2,3) ; (3,2,1) \}$.
+
+    \item Les sous-groupes de $S_3$ ont un ordre qui divise
+$|S_3| = 6$. Donc un sous-groupe peut-\^etre  d'ordre $1,2,3$ ou
+$6$. L'unique sous-groupe d'ordre $1$ est $\{ id \}$, et l'unique
+sous-groupe d'ordre $6$ est $S_3$. Les sous-groupes d'ordre $2$ et
+$3$ ont \'et\'es donn\'es \`a la question pr\'ec\'edente.
+\end{enumerate}
+\fincorrection
+
+\finexercice
+

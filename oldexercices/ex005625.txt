@@ -1,0 +1,19 @@
+\exercice{5625, rouget, 2010/10/16}
+\enonce[***I]
+Soient $A$ et $B$ deux matrices carrées de format $n$ telles que $AB-BA=A$. Calculer la trace de $A^{2010}$.
+\finenonce
+
+\noindication
+
+\correction
+Soit $p$ un entier supérieur ou égal à $2$.
+
+\begin{align*}
+A^pB -BA^p&=A^pB-A^{p-1}BA+A^{p-1}BA-A^{p-2}BA^2+A^{p-2}BA^2-...+ABA^{p-1}-BA^p\\
+ &=\sum_{k=0}^{}(A^{p-k}BA^k-A^{p-k-1}BA^{k+1})=\sum_{k=0}^{}A^{p-k-1}(AB-BA)A^k=\sum_{k=0}^{}A^{p-k-1}AA^k\sum_{k=0}^{}A^p\\
+ &=pA^p.
+\end{align*}
+
+Donc $2010\times\text{Tr}(A^{2010})=\text{Tr}(2010\;A^{2010})=\text{Tr}(A^{2010}B)-\text{Tr}(BA^{2010})=0$ et $\text{Tr}(A^{2010})=0$.
+\fincorrection
+\finexercice

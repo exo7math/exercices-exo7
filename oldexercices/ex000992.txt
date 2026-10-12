@@ -1,0 +1,82 @@
+\exercice{992, cousquer, 2003/10/01}
+\video{FZf39lWtpZw}
+\enonce
+\begin{enumerate}
+  \item Soit $E=\Rr_n[X]$ l'espace vectoriel des polynômes de degré inférieur ou égal à $n$.
+Montrer que toute famille de polyn\^omes $\{P_0,P_1,\ldots,P_n\}$ avec $\deg P_i = i$ 
+(pour $i=0,1,\ldots,n$) forme une base de $E$.
+
+\item  \'Ecrire le polyn\^ome $F=3X-X^2+8X^3$ sous la forme $F=a+b(1-X)+c(X-X^2)+d(X^2-X^3)$
+($a,b,c,d \in \Rr$) puis sous la forme
+$F=\alpha+\beta(1+X)+\gamma(1+X+X^2)+\delta(1+X+X^2+X^3)$
+($\alpha,\beta,\gamma,\delta \in \Rr$).
+
+\end{enumerate}
+\finenonce 
+
+\indication
+Il suffit de montrer que la famille est libre (pourquoi ?). 
+Prendre ensuite une combinaison linéaire nulle et regarder le terme de plus haut degré.
+\finindication
+
+\correction
+\begin{enumerate}
+  \item Tout d'abord la famille $\{P_0,P_1,P_2,\ldots,P_n\}$ contient $n+1$ vecteurs 
+dans l'espace $E=\Rr_n[X]$ de dimension $n+1$. Ici un vecteur est un polynôme :
+$P_0$ est un polynôme constant non nul, $P_1$ est un polynôme de degré exactement $1$,...
+Rappelons que lorsque le nombre de vecteurs égal la dimension de l'espace  nous avons les équivalences, entre 
+\emph{être une famille libre} et \emph{être une famille génératrice} et donc aussi \emph{être une base}.
+
+\medskip
+
+Nous allons donc montrer que $\{P_0,P_1,\ldots,P_n\}$ est une famille libre.
+Soit une combinaison linéaire nulle :
+$$\lambda_0 P_0+\lambda_1 P_1 + \cdots + \lambda_n P_n = 0.$$
+
+Introduisons l'hypothèse concernant les degrés :
+$\deg P_0 = 0$, $\deg P_1=1$, \ldots, $\deg P_n=n$.
+Définissons le polynôme $P(X) = \lambda_0 P_0+\lambda_1 P_1 + \cdots + \lambda_n P_n$.
+
+\medskip
+
+Nous allons montrer successivement $\lambda_n=0$ puis $\lambda_{n-1}=0$,\ldots, $\lambda_0=0$.
+
+Par l'absurde supposons $\lambda_n \neq 0$ et écrivons 
+$P_n(X) = a_n X^n + a_{n-1}X^{n-1}+\cdots+a_1X+a_0$, comme
+$\deg P_n(X)=n$ alors $a_n\neq0$.
+Maintenant 
+$P(X)$ est aussi un polynôme de degré exactement $n$ qui s'écrit
+$$P(X) = \lambda_n \cdot a_n \cdot X^n + \text{termes de plus bas degré}$$
+La combinaison linéaire nulle implique que $P(X)=0$ (le polynôme nul).
+Donc en identifiant les coefficients devant $X^n$ on obtient $\lambda_n\cdot a_n=0$
+On obtient  $a_n=0$ ou $\lambda_n=0$. Ce qui est une contradiction.
+Conclusion $\lambda_n=0$.
+
+\medskip
+
+Maintenant la combinaison linéaire nulle s'écrit $\lambda_0 P_0+\lambda_1 P_1 + \cdots + \lambda_{n-1} P_{n-1}=0$.
+Par récurrence descendante on trouve $\lambda_{n-1}=0$, \ldots, jusqu'à $\lambda_0=0$.
+
+Bilan : $\lambda_0=0$, \ldots, $\lambda_n=0$ donc la famille $\{P_0,P_1,\ldots,P_n\}$ est libre,
+elle donc aussi génératrice ; ainsi $\{P_0,P_1,\ldots,P_n\}$ est une base de $E=\Rr_n[X]$.
+
+\medskip
+
+Un point que nous avons utilisé et qu'il est peut-être utile de détailler est le suivant : 
+si un polynôme égal le polynôme nul alors tous ces coefficients sont nul.
+
+Voici une justification : écrivons $a_nX^n+ a_{n-1}X^{n-1}+\cdots+a_1X+a_0=0$
+et divisons par $X^n$ :
+$$a_n + \frac {a_{n-1}}{X} + \frac{a_{n-2}}{X^2} + \cdots + \frac{a_1}{X^{n-1}} + \frac{a_0}{X^n} = 0$$
+Lorsque l'on fait tendre $X$ vers $+\infty$ alors le terme de gauche tend vers $a_n$ et celui de droite vaut $0$ donc 
+par unicité de la limite $a_n=0$.
+On fait ensuite une récurrence descendante pour prouver $a_{n-1}=0$,\ldots, $a_0=0$.
+
+Une conséquence est que si deux polynômes sont égaux alors leurs coefficients sont égaux.
+Et une autre formulation est de dire que $\{1,X,X^2,\ldots,X^n\}$ est une base de $\Rr_n[X]$.
+
+  \item On trouve $a=10, b= -10, c = -7, d= -8$.
+Puis $\alpha=-3,\beta=4,\gamma=-9,\delta=8$.
+\end{enumerate}
+\fincorrection
+\finexercice

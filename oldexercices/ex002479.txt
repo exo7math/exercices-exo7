@@ -1,0 +1,37 @@
+\exercice{2479, matexo1, 2002/02/01}
+
+\enonce
+On considère la matrice $N\times N$
+\[                          
+ M=\begin{pmatrix}
+b & c & 0   &.. & 0 & 0\cr 
+a & b & c & ..& 0 & 0\cr
+0   & a & b & ..& 0 & 0\cr
+..  &..   &..   &.. &.. & ..\cr
+0   & 0   &0    &.. &b&c  \cr
+0   & 0   &0    &.. &a    &b  \cr
+\end{pmatrix}                       
+\]     
+où $a,b$ et $c$ sont trois nombres complexes, avec $c\neq 0$.            
+On note $V$ un vecteur propre associé à la valeur propre $\lambda$ de $M$.\\
+Ecrire les relations reliant les composantes de $V$.\\ 
+Déterminer toutes les valeurs propres de $M$.
+\finenonce
+
+\noindication
+\correction
+On a une suite récurrente à trois termes reliant les composantes  $v_i$ du vecteur
+propre. On calcule le terme général de la suite en résolvant le 
+polynôme caractéristique. Les deux constantes sont identifiées en 
+écrivant que $v_0=v_{n+1}=0$. On trouve $n+1$ valeurs propres distinctes:
+\[
+\lambda_k=b+2c\left(\frac{a}{c}\right)^{1/2}cos\left(\frac{2 k \pi}{n+1}\right)
+\mbox{~~~pour~~~}k=1,...n
+\]
+avec le vecteur propre $v^k$ associé, de composantes
+\[
+v_j^k=\left(\frac{a}{c}\right)^{j/2} sin\left(\frac{2 k j \pi}{n+1}\right)
+\mbox{~~~pour~~~}j=1,...n
+\]
+\fincorrection
+\finexercice

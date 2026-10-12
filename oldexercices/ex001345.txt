@@ -1,0 +1,39 @@
+\exercice{1345, legall, 1998/09/01}
+
+\enonce
+ Soit  $f:{\Rr}\rightarrow {\Cc}^*$  l'application
+qui \`a tout $x\in {\Rr}$  associe  $e^{ix}\in {\Cc}^*$. Montrer
+que $f$ est un homomorphisme de groupes. Calculer son noyau et son
+image. $f$ est-elle injective ?
+
+\finenonce
+
+\noindication
+
+\correction
+\begin{align*}
+f : (\Rr,+)& \longrightarrow (\Cc^*,\times) \\
+x& \mapsto e^{ix}\\
+\end{align*}
+
+V\'erifions que $f$ est un morphisme de groupe. Soit $x,y \in
+\Rr$, alors
+$$f(x+y) = e^{i(x+y)}=e^{ix}e^{iy}=f(x)\times f(y),$$
+et
+$$f(x^{-1})= e^{i(-x)} = \frac{1}{e^{ix}}={f(x)}^{-1}.$$
+Donc $f$ est un morphisme de groupe.
+
+Montrons que $f$ n'est pas injective en prouvant que le noyau
+n'est pas r\'eduit \`a $0$ :
+$$ \text{Ker}\, f = \left\lbrace x\in\Rr \text{ tels que } f(x)=1 \right\rbrace
+   = \left\lbrace x\in\Rr \text{ tels que } e^{ix}=1 \right\rbrace
+= \left\lbrace x = 0+2k\pi,\ \ k\in\Zz \right\rbrace. $$
+
+Enfin
+$$\text{Im}\, f =  \left\lbrace y\in\Cc^*, y = e^{ix} \right\rbrace$$
+est l'ensemble des complexes de module $1$, c'est-\`a-dire le
+cercle de centre $0$ et de rayon $1$.
+\fincorrection
+
+\finexercice
+

@@ -1,0 +1,92 @@
+\exercice{1803, gourio, 2001/09/01}
+
+\enonce
+Soit $f :  \R^{2} \rightarrow \R$, d\'efinie par  
+\[
+\begin{array}{lll}
+ f(x, y)=x &\mathrm{si}&
+\left|x\right|>\left|y\right|\\ 
+f(x, y)=y &\mathrm{ si }&\left|x\right|<\left|y\right|\\ 
+f(x, y)= 0 &\mathrm{ si }&
+\left|x\right| = \left|y\right|. 
+\end{array}
+\]
+\'Etudier la continuit\'e de $f$, l'existence des d\'eriv\'ees partielles et leur continuit\'e.
+
+\finenonce
+
+\indication 
+Distinguer tout de suite la partie triviale et la partie non triviale
+de l'exercice.
+\finindication
+
+\correction
+Il est \'evident que, en tout point tel que  $\left|x\right|<\left|y\right|$
+ou   $\left|x\right|>\left|y\right|$,
+la fonction est continue et les d\'eriv\'ees
+partielles existent.
+
+Soit $x \ne 0$. Alors $f$ n'est ni continue en $(x,x)$ ni en $(x,-x)$.
+Car
+\begin{align*}
+\mathrm{lim}_{\begin{smallmatrix} (u,v) \to (x,x)\\ |u|>|v| \end{smallmatrix}}f(u,v)
+&= \mathrm{lim}_{u \to x}u = x \ne 0,
+\\
+\mathrm{lim}_{(u,u) \to (x,x)} f(u,u) &=0,
+\\
+\mathrm{lim}_{\begin{smallmatrix} (u,v) \to (x,-x)\\ |u|>|v| \end{smallmatrix}}f(u,v)
+&= \mathrm{lim}_{u \to x}u = x \ne 0,
+\\
+\mathrm{lim}_{(u,-u) \to (x,-x)} f(u,u) &=0.
+\end{align*}
+Par contre, $f$ est continue en $(0,0)$. Car
+\[
+\mathrm{lim}_{(u,v) \to (0,0)}f(u,v)=0
+\]
+puisque
+\[
+\begin{array}{lll}
+ f(u, v)=u &\mathrm{si}&
+\left|u\right|>\left|v\right|,\\ 
+f(u, v)=v &\mathrm{ si }&\left|u\right|<\left|v\right|,\\ 
+f(u, v)= 0 &\mathrm{ si }&
+\left|u\right| = \left|v\right|, 
+\end{array}
+\]
+et puisque alors $\mathrm{lim}_{u \to 0}u=0$ et $\mathrm{lim}_{v \to 0}v=0$.
+
+Soit  $(x,y)$ un point o\`u 
+$\left|x\right| = \left|y\right|$.
+Il reste \`a \'etudier les d\'eriv\'ees partielles en un tel point $(x,y)$.
+Soit $x \ne 0$.
+Alors la fonction $h$ de la variable $t$ d\'efinie par
+\[
+h(t)=f(x+t,y)=\begin{cases} x+t,\quad & |x+t|>|y|\\ y,\quad & |x+t|<|y| \end{cases}
+\]
+n'est pas d\'erivable en $t=0$ donc la d\'eriv\'ee partielle
+$\frac{\partial f}{\partial x}(x,y)$ n'existe pas.
+De m\^eme,
+la fonction $k$ de la variable $t$ d\'efinie par
+\[
+k(t)=f(x,y+t)=\begin{cases} x,\quad & |x|>|y+t|,\\ y+t,\quad & |x|<|y+t|, \end{cases}
+\]
+n'est pas d\'erivable en $t=0$ donc la d\'eriv\'ee partielle
+$\frac{\partial f}{\partial y}(x,y)$ n'existe pas.
+Enfin soit $x = 0$.
+Alors la fonction $h$ de la variable $t$ d\'efinie par
+\[
+h(t)=f(t,0)=t
+\]
+est d\'erivable en $t=0$ donc la d\'eriv\'ee partielle
+$\frac{\partial f}{\partial x}(0,0)$ existe.
+De m\^eme,
+la fonction $k$ de la variable $t$ d\'efinie par
+\[
+k(t)=f(0,t)=t
+\]
+est d\'erivable en $t=0$ donc la d\'eriv\'ee partielle
+$\frac{\partial f}{\partial y}(0,0)$ existe.
+\fincorrection
+
+\finexercice
+

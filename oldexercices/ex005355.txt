@@ -1,0 +1,21 @@
+\exercice{5355, rouget, 2010/07/04}
+\enonce[***IT]
+Démontrer que $A_n$ est engendré par les cycles de longueur $3$ (pour $n\geq3$).
+\finenonce
+
+\noindication
+
+\correction
+Les éléments de $A_n$ sont les produits pairs de transpositions. Il suffit donc de vérifier qu'un produit de deux transpositions est un produit de cycles de longueur $3$.
+
+Soient $i$, $j$ et $k$ trois éléments deux à deux distincts de $\{1,...,n\}$. $\tau_{i,k}\circ\tau_{i,j}$ est le $3$-cycle~:~$i\rightarrow j$ $j\rightarrow k$ $k\rightarrow i$, ce qui montre qu'un $3$-cycle est pair et que le produit de deux transpositions dont les supports ont en commun un singleton est un $3$-cycle.
+
+Le cas $\tau_{i,j}\circ\tau_{i,j}=Id=(2 3 1)(3 1 2)$ est immédiat. Il reste à étudier le produit de deux transpositions à supports disjoints.
+
+Soient $i$, $j$, $k$ et $l$ quatre éléments de deux à deux distincts de $\{1,...,n\}$.
+
+$$\tau_{i,j}\circ\tau_{k,l}=(j i k l)(i j l k)=(j i l k)=(j k i l)(l j i k).$$ 
+
+Donc, $\tau_{i,j}\circ\tau_{k,l}$ est un bien un produit de $3$-cycles ce qui achève la démonstration.
+\fincorrection
+\finexercice

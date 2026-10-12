@@ -1,0 +1,102 @@
+\exercice{5173, rouget, 2010/06/30}
+\enonce[**T]
+Dans $E=\Rr^4$, on considère $V=\{(x,y,z,t)\in E/\;x-2y=0\;\mbox{et}\;y-2z=0\}$ et $W=\{(x,y,z,t)\in E/\;x+z=y+t\}$.
+\begin{enumerate}
+\item  Montrer que $V$ et $W$ sont des sous espaces vectoriels de $E$.
+\item  Donner une base de $V$, $W$ et $V\cap W$.
+\item  Montrer que $E=V+W$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item  Pour $(x,y,z,t)\in\Rr^4$, on pose $f((x,y,z,t))=x-2y$, $g((x,y,z,t))=y-2z$ et $h((x,y,z,t))=x-y+z-t$. $f$,
+$g$ et $h$ sont des formes linéaires sur $\Rr^4$. Donc, $V=\mbox{Ker}f\cap\mbox{Ker}g$ est un sous-espace vectoriel de
+$\Rr^4$ en tant qu'intersection de sous-espaces vectoriels de $\Rr^4$ et $W=\mbox{Ker}h$ est un sous-espace vectoriel
+de $\Rr^4$.
+
+\item  Soit $(x,y,z,t)\in\Rr^4$.
+
+\begin{align*}
+(x,y,z,t)\in V\Leftrightarrow
+\left\{
+\begin{array}{l}
+x=2y\\
+y=2z
+\end{array}
+\right.\Leftrightarrow
+\Leftrightarrow
+\left\{
+\begin{array}{l}
+x=4z\\
+y=2z
+\end{array}
+\right.
+.
+\end{align*}
+
+Donc, $V=\{(4z,2z,z,t),\;(z,t)\in\Rr^2\}=\mbox{Vect}(e_1,e_2)$ où $e_1=(4,2,1,0)$ et $e_2=(0,0,0,1)$. Montrons alors
+que $(e_1,e_2)$ est libre. Soit $(z,t)\in\Rr^2$.
+
+$$ze_1+te_2=0\Rightarrow(4z,2z,z,t)=(0,0,0,0)\Rightarrow z=t=0.$$
+
+Donc, $(e_1,e_2)$ est une base de $V$.
+
+Pour $(x,y,z,t)\in\Rr^4$, $(x,y,z,t)\in W\Leftrightarrow t=x-y+z$. Donc,
+$W=\{(x,y,z,x-y+z),\;(x,y,z)\in\Rr^3\}=\mbox{Vect}(e_1',e_2',e_3')$ où $e_1'=(1,0,0,1)$, $e_2'=(0,1,0,-1)$ et
+$e_3'=(0,0,1,1)$.
+
+Montrons alors que $(e_1',e_2',e_3')$ est libre. Soit $(x,y,z)\in\Rr^3$.
+
+$$xe_1'+ye_2'+ze_3'=0\Rightarrow(x,y,z,x-y+z)=(0,0,0,0)\Rightarrow x=y=z=0.$$
+
+Donc, $(e_1',e_2',e_3')$ est une base de $W$.
+Soit $(x,y,z,t)\in\Rr^4$.
+
+$$(x,y,z,t)\in V\cap W\Leftrightarrow
+\left\{
+\begin{array}{l}
+x=2y\\
+y=2z\\
+x-y+z-t=0
+\end{array}
+\right.\Leftrightarrow
+\left\{
+\begin{array}{l}
+x=4z\\
+y=2z\\
+t=3z
+\end{array}
+\right..$$
+
+Donc, $V\cap W=\{(4z,2z,z,3z),\;z\in\Rr\}=\mbox{Vect}(e)$ où $e=(4,2,1,3)$. De plus, $e$ étant non nul, la famille
+$(e)$ est libre et est donc une base de $V\cap W$.
+
+\item  Soit $u=(x,y,z,t)$ un vecteur de $\Rr^4$.
+
+On cherche $v=(4\alpha,2\alpha,\alpha,\beta)\in V$ et $w=(a,b,c,a-b+c)\in W$ tels que $u=v+w$.
+
+$$u=v+w\Leftrightarrow\left\{
+\begin{array}{l}
+4\alpha+a=x\\
+2\alpha+b=y\\
+\alpha+c=z\\
+\beta+a-b+c=t
+\end{array}
+\right.\Leftrightarrow
+\left\{
+\begin{array}{l}
+a=x-4\alpha\\
+b=y-2\alpha\\
+c=z-\alpha\\
+\beta=-x+y-z+t-3\alpha
+\end{array}
+\right..$$
+
+et $\alpha=0$, $\beta=-x+y-z+t$, $a=x$, $b=y$ et $c=z$ conviennent. Donc, $\forall u\in\Rr^4,\;\exists(v,w)\in
+V\times W/\;u=v+w$. On a montré que $\Rr^4=V+W$.
+\end{enumerate}
+\fincorrection
+\finexercice

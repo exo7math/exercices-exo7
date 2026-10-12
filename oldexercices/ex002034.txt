@@ -1,0 +1,135 @@
+
+\exercice{2034, liousse, 2003/10/01}
+\video{W0w1WraqsVc}
+\enonce
+
+\begin{enumerate}
+\item  On considère le point $A (-2,4,1) $, les vecteurs ${\buildrel\rightarrow \over {u}}
+ (1,1,1), {\buildrel\rightarrow \over {v}} (2,2,-4) $, 
+${\buildrel\rightarrow \over {w}} (3,-1,1)$
+et le repère $(A, {\buildrel\rightarrow \over {u}} , 
+{\buildrel\rightarrow \over {v}} , {\buildrel\rightarrow \over {w}}) $.
+On note $x',y'$et $z'$ les coordonnées dans ce repère. Donner les formules analytiques du changement de 
+repère exprimant $x,y,z$ en fonction de $x',y',z'$.
+
+\item On considère la droite $(D):\left\{\begin{array}{l} y-z=3 \\ x+y=2 \end{array}\right.$. 
+Utiliser le changement de repère pour donner une équation de $D$ dans le repère
+$(A, {\buildrel\rightarrow \over {u}} , 
+{\buildrel\rightarrow \over {v}} , {\buildrel\rightarrow \over {w}}) $.
+
+\item  Donner les formules analytiques du changement de repère inverse.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Notons $\mathcal{R}$ le repère initial $(0,\vec i,\vec j,\vec k)$.
+Dire qu'un point $M$ du plan a pour coordonnées $(x,y,z)$ dans $\mathcal{R}$ 
+signifie $\overrightarrow{OM} = x \vec i + y \vec j+ z\vec k$.
+
+Si $\mathcal{R}'$ désigne un autre repère $(A, \vec u, \vec v,\vec w)$
+alors le même point $M$ a pour coordonnées $(x',y',z')$ dans $\mathcal{R}'$ signifie
+$\overrightarrow{AM} = x' \vec u + y'\vec v+z'\vec w$.
+
+La formule de changement c'est simplement écrire les coordonnées de l'égalité
+$\overrightarrow{OM} = \overrightarrow{OA}+\overrightarrow{AM}$.
+
+
+$$\begin{pmatrix} x \\ y \\ z \end{pmatrix}
+= \begin{pmatrix} -2 \\ 4 \\ 1 \end{pmatrix} + x'\vec u + y'\vec v+z'\vec w 
+$$
+Mais on connaît les coordonnées de 
+$\vec u, \vec v,\vec w$ dans $\mathcal{R}$ :
+$$\begin{pmatrix} x \\ y \\ z \end{pmatrix}
+= \begin{pmatrix} -2 \\ 4 \\ 1 \end{pmatrix} +
+ x' \begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatrix}
++ y' \begin{pmatrix} 2 \\ 2 \\ -4 \end{pmatrix}
++ z' \begin{pmatrix} 3 \\ -1 \\ 1 \end{pmatrix}$$
+
+D'où l'égalité de changement de repère :
+$$(\mathcal{S}) \qquad \left\lbrace
+\begin{array}{l}
+ x = -2 + x' + 2y' + 3z' \\  
+ y = 4 + x' + 2y' - z' \\ 
+ z = 1 + x'- 4y' + z' \\
+\end{array}
+\right.$$
+
+  \item  Dans l'équation de la droite $(D)$ 
+$\left\{\begin{array}{l} y-z=3 \\ x+y=2 \end{array}\right.$ dans le repère $\mathcal{R}$
+on remplace $x,y,z$ par la formule $(\mathcal{S})$  obtenue à la question précédente.
+
+On obtient :
+$$\left\{\begin{array}{l} \big(4 + x' + 2y' - z'\big)-
+\big(1 + x'- 4y' + z'\big)=3 \\ 
+\big(-2 + x' + 2y' + 3z'\big)+
+\big(4 + x' + 2y' - z'\big) = 2 \end{array}\right..$$
+Ce qui donne une équation de $(D)$ dans le repère $\mathcal{R}'$ :
+$$\left\{\begin{array}{l} 
+6y'-2z'=0   \\ 
+2x'+4y'+2z'=0 \end{array}\right.
+\quad \text{ou encore} \quad 
+\left\{\begin{array}{l} 
+3y'-z'=0   \\ 
+x'+2y'+z'=0 \end{array}\right.$$
+En particulier en faisant $(x',y',z')=(0,0,0)$ on remarque que cette droite passe par $A$.
+
+  \item Nous avions obtenu l'égalité $(\mathcal{S})$ de changement de repère de $\mathcal{R}'$ 
+vers $\mathcal{R}$ qui s'écrit :
+$$\left\lbrace
+\begin{array}{l}
+ x + 2 =  x' + 2y' + 3z' \\  
+ y - 4 =  x' + 2y' - z' \\ 
+ z - 1 =  x'- 4y' + z' \\
+\end{array}
+\right. 
+\quad \implies \quad 
+\left\lbrace
+\begin{array}{l}
+ X =  x' + 2y' + 3z' \\  
+ Y =  x' + 2y' - z' \\ 
+ Z =  x'- 4y' + z' \\
+\end{array}
+\right. $$
+Où l'on a noté $X=x+2$, $Y=y-4$, $Z=z-1$. On inverse le système 
+par la méthode de Gauss pour obtenir après calculs :
+$$\left\lbrace
+\begin{array}{l}
+ x' =  \frac{1}{12}\big(X+7Y+4Z\big) \\  
+ y' =  \frac{1}{12}\big(X+Y-2Z\big) \\ 
+ z' =  \frac{1}{12}\big(3X-3Y\big) \\
+\end{array}
+\right. $$
+
+Donc 
+$$\left\lbrace
+\begin{array}{l}
+ x' =  \frac{1}{12}\big(x+7y+4z -30\big) \\  
+ y' =  \frac{1}{12}\big(x+y-2z\big) \\ 
+ z' =  \frac{1}{12}\big(3x-3y +18\big) \\
+\end{array}
+\right. $$
+
+\bigskip
+
+Avec les matrices cela se fait ainsi :
+le système $(\mathcal{S})$ devient
+$$\begin{pmatrix} x+2 \\ y-4 \\ z-1 \end{pmatrix}= M \begin{pmatrix} x' \\ y' \\ z' \end{pmatrix}
+\quad \text{ où } \quad 
+M = \begin{pmatrix}
+     1 & 2 & 3 \\ 1 & 2 & -1 \\ 1 & -4 & 1 \\
+    \end{pmatrix}.
+$$
+Ainsi
+$$\begin{pmatrix} x' \\ y' \\ z' \end{pmatrix}= M^{-1} \begin{pmatrix} x+2 \\ y-4 \\ z-1 \end{pmatrix}
+\quad \text{ où } \quad 
+M^{-1} = \frac{1}{12}\begin{pmatrix}
+     1 & 7 & 4 \\ 1 & 1 & -2 \\ 3 & -3 & 0 \\
+    \end{pmatrix}.
+$$
+\end{enumerate}
+\fincorrection
+
+\finexercice

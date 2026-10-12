@@ -1,0 +1,70 @@
+\exercice{4115, quercia, 2010/03/11}
+\enonce[Centrale MP 2004]
+
+Soit $n>0$ et $(S)\Leftrightarrow\begin{cases}x'(t) = \frac2nx(t)y(t)\cr y'(t) = -x^2(t)+y^2(t).\cr\end{cases}$
+
+\begin{enumerate}
+  \item Soit $\gamma$ : $t \mapsto(x(t),y(t))$ une solution de~$(S)$. Trouver
+une autre solution présentant une symétrie avec $\gamma$. Peut-on
+avoir comme solution $\sigma(t) = \lambda\gamma(\mu t)$~? En déduire
+une propriété géométriques des solutions maximales de~$(S)$.
+
+  \item Déterminer les courbes du plan formées des points $(x_0,y_0)$ où
+les solutions de~$(S)$ ont des tangentes parallèles aux axes $(Ox)$ et
+$(Oy)$. En déduire quelques solutions particulières.
+
+  \item A supposer qu'il existe $\Phi : {I\subset \R} \to \R$ telle que
+$\gamma(t) = (x(t),y(t))$ vérifie $y(t) = \Phi(x(t))$, déterminer
+$\Phi$ et en déduire toutes les courbes intégrales.
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $\gamma_1(t) = (-x(t),y(t))$ et $\gamma_2(t) = (x(-t),-y(-t))$
+sont aussi solutions de~$(S)$.
+
+Par ailleurs, la théorie de Cauchy-Lipschitz s'applique, en particulier
+s'il existe $t_0$ tel que $x(t_0) = 0$ alors $x(t) = 0$ pour tout $t$.
+De même s'il existe $t_0$ tel que $x(t_0) = y(t_0) = 0$ alors
+$x(t)=y(t)=0$ pour tout~$t$.
+
+Pour $\lambda,\mu$ non nuls et $x$ ne s'annulant pas, $t \mapsto(\lambda x(\mu t), \lambda y(\mu t))$
+est solution de~$(S)$ si et seulement si $\mu=\lambda$.
+
+L'ensemble des trajectoires maximales
+est donc stable par les symétries par rapport aux deux axes et par les
+homothéties de centre~$(0,0)$. De plus toute
+trajectoire maximale qui touche l'axe des $x$ est symétrique par
+rapport à cet axe.
+  \item $x'(t_0) = 0 \Leftrightarrow x(t_0) = 0$ ou $y(t_0) = 0$. Dans le premier cas on
+a $x(t) = 0$ pour tout $t$ et $y(t)$ est arbitraire (solution de $y' = y^2$).
+Dans le second cas $x(t_0)$ est arbitraire (Cauchy-Lipschitz) donc
+l'ensemble des points à tangente verticale est la réunion des deux
+axes privé de $(0,0)$ (où il n'y a pas de tangente).
+
+$y'(t_0) = 0 \Leftrightarrow x(t_0) = \pm y(t_0)$, quantité arbitraire, donc
+l'ensemble des points à tangente horizontale est la réunion des deux
+bissectrices des axes, privée de $(0,0)$.
+
+Solutions particulières~: $x(t)=0, y(t) = \frac{1}{\lambda-t}$.
+  \item En supposant $\Phi$ de classe $\mathcal{C}^1$ on obtient l'équation
+$\frac2nx\Phi\Phi' = \Phi^2-x^2$ soit $\frac2nx\psi' = \psi-x^2$ avec $\psi=\Phi^2$.
+On obtient $\psi(x) = |x|^n\Bigl(\lambda + \frac{n}{(n-1)x}\Bigr)$ si $n\ne 1$
+et $\psi(x) = |x|(\lambda  - \ln|x|)$ si $n=1$.
+
+Une courbe intégrale (en fait une trajectoire) qui
+ne touche aucun des deux axes vérifie l'hypothèse $y = $
+fonction de $x$ car $x'$ ne peut s'annuler donc $x$ est une fonction
+injective de~$t$. Une trajectoire qui touche l'axe des $y$ est incluse
+dans cet axe (déjà vu) et une trajectoire qui touche l'axe des $x$ en
+dehors de $(0,0)$ le traverse ($y' \ne 0$), donc est réunion de
+sous-arcs localement d'un seul côté de l'axe des $x$,
+de la forme $y = \Phi(x)=\pm\sqrt{\psi(x)}$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

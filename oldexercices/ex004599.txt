@@ -1,0 +1,34 @@
+\exercice{4599, quercia, 2010/03/14}
+\enonce[DSE de $(\Arcsin x)^2$]
+
+On pose $f(x) = \frac{\Arcsin x}{\sqrt{1-x^2}}$.
+
+\begin{enumerate}
+  \item Montrer que $f$ admet un développement en série entière au voisinage de $0$
+    et préciser le rayon de convergence.
+    
+  \item Chercher une équation différentielle d'ordre 1 vérifiée par $f$.
+    En déduire les coefficients du développement en série entière de $f$.
+    
+  \item Donner le développement en série entière de $\Arcsin^2 x$.
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item Produit de deux séries $ \Rightarrow  R \ge 1$.
+          Lorsque $x\to1^-$   $f(x) \to +\infty  \Rightarrow  R = 1$.
+  \item $(1-x^2)y' = xy+1  \Rightarrow  (n+2)a_{n+2} = (n+1)a_n  \Rightarrow 
+              a_{2k} = a_0\frac{C_{2k}^k}{4^k}$,
+             $a_{2k+1} = a_1\frac{4^k}{(2k+1)C_{2k}^k}$.\par
+             $a_0 = 0$, $a_1 = 1  \Rightarrow 
+             y = \sum_{k=0}^\infty \frac{4^kx^{2k+1}}{(2k+1)C_{2k}^k}$.
+  \item $\Arcsin^2x = 2 \int_{t=0}^x f(t)\,d t
+              = \sum_{k=1}^\infty \frac{2^{2k-1}x^{2k}}{k^2C_{2k}^k}$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

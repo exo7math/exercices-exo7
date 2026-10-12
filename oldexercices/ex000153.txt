@@ -1,0 +1,36 @@
+\exercice{153, bodin, 1998/09/01}
+\video{SUMAdDoMPto}
+\enonce
+\label{ex104}
+Montrer :
+\begin{enumerate}
+    \item $\displaystyle{\sum_{k=1}^{n}k=\frac{n(n+1)}{2} \quad \forall n \in \Nn^{*} \,.}$
+    \item $\displaystyle{\sum_{k=1}^{n}k^2=\frac{n(n+1)(2n+1)}{6} \quad \forall n \in \Nn^{*} \,.}$
+\end{enumerate}
+
+\finenonce 
+
+\noindication
+
+\correction
+R\'edigeons la deuxi\`eme \'egalit\'e.
+Soit $\mathcal{A}_n$, $n\in \Nn^*$ l'assertion suivante:
+$$(\mathcal{A}_n) \ \ \ \sum_{k=1}^n k^2= \frac{n(n+1)(2n+1)}{6}.$$
+\begin{itemize}
+  \item $\mathcal{A}_0$ est vraie ($1=1$).
+  \item \'Etant donn\'e $n\in\Nn^*$ supposons que $\mathcal{A}_n$
+soit vraie. Alors
+\begin{align*}
+\sum_{k=1}^{n+1} k^2
+  &= \sum_{k=1}^n k^2 \ \ + (n+1)^2 \\
+  &= \frac{n(n+1)(2n+1)}{6} + (n+1)^2\\
+  &= \frac{n(n+1)(2n+1)+6(n+1)^2}{6} \\
+  &= \frac{(n+1)(n(2n+1)+6(n+1))}{6} \\
+  &= \frac{(n+1)(n+2)(2(n+1)+1)}{6} \\
+\end{align*}
+Ce qui prouve $\mathcal{A}_{n+1}$.
+  \item Par le principe de r\'ecurrence nous venons de montrer 
+que $\mathcal{A}_n$ est vraie pour tout $n\in\Nn^*$.
+\end{itemize}
+\fincorrection
+\finexercice

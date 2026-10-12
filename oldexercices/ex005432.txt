@@ -1,0 +1,29 @@
+\exercice{5432, exo7, 2010/07/06}
+\enonce[**IT]
+Développement asymptotique à la précision $\frac{1}{n^3}$ de $u_n=\frac{1}{n!}\sum_{k=0}^{n}k!$.
+\finenonce
+
+\noindication
+
+\correction
+Pour $n\geq 5$, on a
+
+$$u_n=1+\frac{1}{n}+\frac{1}{n(n-1)}+\frac{1}{n(n-1)(n-2)}+\frac{1}{n(n-1)(n-2)(n-3)}+\sum_{k=0}^{n-5}\frac{1}{n(n-1)...(k+1)}.$$
+Ensuite, 
+
+$$0\leq n^3\sum_{k=0}^{n-5}\frac{1}{n(n-1)...(k+1)}\leq n^3(n-4)\frac{1}{n(n-1)(n-2)(n-3)(n-4)}\underset{n\rightarrow+\infty}{\sim}\frac{1}{n}\underset{n\rightarrow+\infty}{\rightarrow}0.$$
+Donc, $\sum_{k=0}^{n-5}\frac{1}{n(n-1)...(k+1)}\underset{n\rightarrow+\infty}{=}o\left(\frac{1}{n^3}\right)$ et de même $\frac{1}{n(n-1)(n-2)(n-3)}\underset{n\rightarrow+\infty}{=} o\left(\frac{1}{n^3}\right)$. Il reste
+
+\begin{align*}\ensuremath
+u_n&\underset{n\rightarrow+\infty}{=}1+\frac{1}{n}+\frac{1}{n^2}\left(1-\frac{1}{n}\right)^{-1}+\frac{1}{n^3}+o\left(\frac{1}{n^3}\right)=1+\frac{1}{n}
++\frac{1}{n^2}\left(1+\frac{1}{n}\right)+\frac{1}{n^3}+o\left(\frac{1}{n^3}\right)\\
+ &=1+\frac{1}{n}+\frac{1}{n^2}+\frac{2}{n^3}+o\left(\frac{1}{n^3}\right).
+\end{align*}
+
+\begin{center}
+\shadowbox{
+$\frac{1}{n!}\sum_{k=0}^{n}k!\underset{n\rightarrow+\infty}{=}1+\frac{1}{n}+\frac{1}{n^2}+\frac{2}{n^3}+o\left(\frac{1}{n^3}\right)$.
+}
+\end{center}
+\fincorrection
+\finexercice

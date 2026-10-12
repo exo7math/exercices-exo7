@@ -1,0 +1,18 @@
+\exercice{5400, rouget, 2010/07/06}
+\enonce[***]
+Soient $a$ et $b$ deux réels tels que $0<a<b$. Montrer que $\bigcup_{k\geq1}]ka,kb[$ contient un intervalle de la forme $]A,+\infty[$ puis déterminer la plus petite valeur possible de $A$.
+\finenonce
+
+\noindication
+
+\correction
+Soient $a$ et $b$ deux réels fixés tels que $0<a<b$. Trouvons les entiers naturels non nuls $k$ tels que 
+$]ka,kb[\cap](k+1)a,(k+1)b[\neq\emptyset$. Pour $k$ dans $\Nn^*$, posons $I_k=]ka,kb[$.
+
+$$I_k\cap I_{k+1}\neq\emptyset\Leftrightarrow ka<(k+1)a<kb<(k+1)b\Leftrightarrow k>\frac{a}{b-a}\Leftrightarrow k\geq E(\frac{a}{b-a})+1.$$
+
+Posons $k_0=E(\frac{a}{b-a})+1$. Pour $k\geq k_0$, on a donc $I_k\cap I_{k+1}\neq\emptyset$ et donc $\displaystyle\bigcup_{k\geq k_0}]ka,kb[=]k_0a,+\infty[$.
+
+Maintenant, si $k_0=1$, $\displaystyle\bigcup_{k\geq k_0}]ka,kb[=]a,+\infty[$ et si $k_0>1$, $\displaystyle\bigcup_{k\geq k_0}]ka,kb[=(\displaystyle\bigcup_{k=1}^{k_0-1}]ka,kb[)\cup]k_0a,+\infty[$. Mais, si $x$ est dans $\displaystyle\bigcup_{k=1}^{k_0-1}]ka,kb[$, alors $x<(k_0-1)b<k_0a$ et donc, $(\displaystyle\bigcup_{k=1}^{k_0-1}]ka,kb[)\cap]k_0a,+\infty[=\emptyset$. La plus petite valeur de $A$ est donc $(E(\frac{a}{b-a})+1)a$.
+\fincorrection
+\finexercice

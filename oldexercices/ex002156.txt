@@ -1,0 +1,73 @@
+\exercice{2156, debes, 2008/02/12}
+\enonce
+On consid\`ere les groupes suivants :
+$$T= \{z\in\C \hskip 2pt | \hskip 2pt |z|=1\} \quad \mu _n = \{ z \in \C \hskip 2pt |
+\hskip 2pt z ^n =1 \}
+\quad 
+\mu _\infty =
+\{ z
+\in \C \hskip 2pt | \hskip 2pt \exists n \quad z ^n =1 \}$$
+
+(a) Montrer les isomorphismes suivants :
+$${\rm } \R /\Z \simeq T \quad {\rm } \C ^\times  / \R ^{\times } _{>0}\simeq T \quad {\rm } \C ^{\times } /\R ^{\times } \simeq T  \quad {\rm } T/ \mu _n \simeq T \quad {\rm } \C ^{\times } /\mu _n \simeq \C ^{\times } $$
+
+(b) Montrer que $\mu _ \infty \simeq \Q /\Z $. Quels sont les sous-groupes finis de $\mu
+_\infty $? 
+
+\smallskip
+(c) Montrer qu'un sous-groupe de type fini de $\Q $ contenant $\Z$ est de la forme
+$\frac{1}{q} \Z$. En d\'eduire la forme des sous-groupes de type fini de $\Q /\Z $ et de $\mu
+_\infty$.
+
+\smallskip
+(d) Soit $p$ un nombre premier. Montrer que $\mu _{p^\infty }= \{ z \in \C \hskip 2pt |
+\hskip 2pt \exists n \in \N \quad z^{p ^n }=1 \}$ est un sous-groupe de $\mu _\infty $.
+Est-il de type fini?
+\finenonce 
+
+\noindication
+\correction
+(a) La correspondance $x\rightarrow e^{2i\pi x}$ induit un morphisme $\R\rightarrow T$,
+surjectif et de noyau $\Z$. D'o\`u $\R/\Z \simeq T$. La correspondance $z\rightarrow
+z/|z|$ induit l'isomorphisme $\C^\times/\R_+^\times \simeq T$. Similairement
+$z\rightarrow z^2/|z|^2$ fournit l'isomorphisme $\C^\times/\R^\times \simeq T$. Les
+isomorphismes $T/\mu_n \simeq T$ et $\C^\times/\mu_n \simeq \C^\times$ s'obtiennent \`a
+partir  de la correspondance
+$z\rightarrow z^n$.
+\smallskip
+
+(b) La correspondance $x\rightarrow e^{2i\pi x}$ induit un morphisme $\Q\rightarrow
+\mu_\infty$, surjectif et de noyau $\Z$. D'o\`u $\Q/\Z \simeq \mu_\infty$. Si $G$ est un
+sous-groupe fini de $\mu_\infty$, alors il existe $m\in \N$ tel que $G\subset \mu_m$. Les
+sous-groupes du groupe cyclique $\mu_m$ sont les $\mu_n$ o\`u $n|m$. \smallskip
+
+(c) Soit $G$ un sous-groupe de $\Q$ de type fini, c'est-\`a-dire engendr\'e par un nombre
+fini de rationnels $p_1/q_1,\ldots,p_r/q_r$. On a alors $q_1\cdots q_r G \subset \Z$. Soit
+$q$ le plus petit entier $>0$ tel que $qG\subset \Z$. Le sous-groupe $qG$ est de la forme
+$a\Z$ avec $a\in \N$ premier avec $q$ (car l'existence d'un facteur commun contredirait la
+minimalit\'e de $q$). On obtient $G=(a/q)\Z$. Si de plus $\Z \subset G$ alors $1\in G$ et
+s'\'ecrit donc $1=ka/q$ avec $k\in \Z$, ce qui donne $ka=q$. Comme $\mathrm{pgcd}(a,q)=1$, on a
+n\'ecessairement $a=1$ et donc $G = (1/q)\Z$.
+\smallskip
+
+Soit $s:\Q\rightarrow \Q/\Z$ la surjection canonique. Si $\overline G$ est un
+sous-groupe de type fini de $\Q/\Z$, alors $G=s^{-1}(\overline G)$ est un sous-groupe de
+$\Q$, contenant $\Z$ et de type fini (si $p_1/q_1,\ldots,p_r/q_r$ sont des ant\'ec\'edents
+par $s$ de g\'en\'erateurs de $\overline G$, alors $1,p_1/q_1,\ldots,p_r/q_r$ engendrent $G$).
+D'apr\`es ce qui pr\'ec\`ede, on a $G= \frac{1}{q}\Z$ et donc $\overline G =
+\frac{1}{q}\Z/\Z$, qui est isomorphe \`a $\Z/q\Z$.
+\smallskip
+
+Via l'isomorphisme de la question (b), on d\'eduit les sous-groupes de $\Q/\Z$ de type fini:
+ce sont les sous-groupes $\{e^{2ik\pi/q}\hskip 2pt |\hskip 2pt  k\in \Z\} = \mu_q$ avec $q$
+d\'ecrivant
+$\N^\times$. \smallskip
+
+(d) On v\'erifie sans difficult\'e que pour tout nombre premier $p$, $\mu_{p^\infty}$ est
+un sous-groupe de $\mu_\infty$. Il n'est pas de type fini: en effet le sous-groupe de
+$\Q/\Z$ qui lui correspond par l'isomorphisme de la question (b) est engendr\'e par les
+classes de rationnels $1/p^n$ modulo $\Z$, $n$ d\'ecrivant $\N$. Un tel sous-groupe $G$ n'a
+pas de d\'enominateur commun, c'est-\`a-dire, il n'existe pas d'entier $q\in \Z$ tel que
+$qG\subset G$. En cons\'equence il ne peut pas \^etre de type fini. 
+\fincorrection
+\finexercice

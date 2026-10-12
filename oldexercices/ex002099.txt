@@ -1,0 +1,38 @@
+\exercice{2099, bodin, 2008/02/04}
+\video{1rhApdE7JPY}
+\enonce
+Calculer l'aire de la région délimitée par les courbes
+d'équation $\displaystyle y=\frac{x^2}2$ et $\displaystyle y=\frac 1{1+x^2}$. 
+\finenonce 
+
+\indication
+Un dessin ne fait pas de mal !
+Il faut ensuite résoudre l'équation $\frac{x^2}2=\frac 1{x^2+1}$
+puis calculer deux intégrales.
+\finindication
+
+\correction
+La courbe d'équation $y=x^2/2$ est une parabole, la courbe 
+d'équation $y=\frac 1{1+x^2}$ est une courbe en cloche. Dessinez les deux graphes.
+Ces deux courbes délimitent une région dont nous allons calculer l'aire.
+Tout d'abord ces deux courbes s'intersectent
+aux points d'abscisses $x=+1$ et $x=-1$ : cela se devine sur le graphique puis
+se vérifie en résolvant l'équation $\frac{x^2}2=\frac 1{x^2+1}$.
+
+Nous allons calculer deux aires :
+\begin{itemize}
+  \item L'aire $\mathcal{A}_1$ de la région sous la parabole, au-dessus de l'axe des abscisses et 
+entre les droites d'équation $(x=-1)$ et $(x=+1)$.
+Alors 
+$$\mathcal{A}_1 = \int_{-1}^{+1} \frac{x^2}2 \, dx = \left[ \frac{x^3}{6} \right]_{-1}^{+1} = \frac 13.$$
+
+  \item L'aire $\mathcal{A}_2$ de la région sous la cloche, au-dessus de l'axe des abscisses et 
+entre les droites d'équation $(x=-1)$ et $(x=+1)$.
+Alors 
+$$\mathcal{A}_2 = \int_{-1}^{+1} \frac 1{x^2+1} \, dx = \left[ \arctan x \right]_{-1}^{+1} = \frac{\pi}{2}.$$
+
+  \item L'aire $\mathcal{A}$ sous la cloche et au-dessus de la parabole vaut maintenant
+$$\mathcal{A}= \mathcal{A}_2 - \mathcal{A}_1 = \frac{\pi}{2} - \frac 13.$$
+\end{itemize}
+\fincorrection
+\finexercice

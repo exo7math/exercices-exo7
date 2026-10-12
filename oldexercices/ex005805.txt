@@ -1,0 +1,34 @@
+\exercice{5805, rouget, 2010/10/16}
+\enonce[***]
+$O_n(\Rr)$ est-il convexe ?
+$O_n(\Rr)$ contient-il trois points alignés?
+\finenonce
+
+\noindication
+
+\correction
+Pour la première question, une simple observation suffit :
+les matrices $I$ et $-I$ sont dans $O_n(\Rr)$,
+mais pas la matrice nulle qui est leur milieu.
+
+
+
+Soient $A$ et $B$ deux matrices orthogonales distinctes. Montrons que pour tout réel $\lambda\in]0,1[$, la matrice $(1-\lambda)A +\lambda B$ n'est pas orthogonale.
+
+Supposons par l'absurde qu'il existe $\lambda\in]0,1[$ tel que la matrice $(1-\lambda)A +\lambda B$ soit orthogonale.
+
+Pour $j\in\llbracket1,n\rrbracket$, on note respectivement $A_j$, $B_j$ et $C_j$ la $j$-ème colonne de matrice $A$, de la matrice $B$ et de la matrice $(1-\lambda)A +\lambda B$. Ces trois matrices étant orthogonales, pour tout $j\in\llbracket1,n\rrbracket$,
+
+\begin{center}
+$1 =\|C_j\|\leqslant(1-\lambda)\|A_j\|+\lambda\|B_j\|=(1 -\lambda)+\lambda= 1$,
+\end{center}
+
+et donc $\|C_j\| =(1-\lambda)\|A_j\|+\lambda\|B_j\|$. On est dans un cas d'égalité de l'inégalité de \textsc{Minkowski}. Puisque $\lambda\in]0,1[$, les colonnes $(-\lambda)A_j$ et $\lambda B_j$ ne sont pas nulles et donc sont colinéaires et de même sens. Puisque les réels $1-\lambda$ et $\lambda$ sont strictement positifs, il en est de même des colonnes $A_j$ et $B_j$ et puisque ces colonnes sont des vecteurs unitaires, ces colonnes sont en fin de compte égales. En résumé, si il existe $\lambda\in]0,1[$ tel que la matrice $(1-\lambda)A +\lambda B$ soit orthogonale, alors $A = B$. Ceci est une contradiction et on a montré que
+
+\begin{center}
+\shadowbox{
+$O_n(\Rr)$ n'est pas convexe.
+}
+\end{center}
+\fincorrection
+\finexercice

@@ -1,0 +1,40 @@
+\exercice{7740, mourougane, 2021/08/11}
+\enonce[Sylow des groupes diédraux]
+Soit $\mathcal{P}_n$ un polygone régulier à $n$ côtés dans le plan euclidien orienté.
+On appelle groupe diédral $D_{n}$ le groupe des isométries de $\mathcal{P}_n$.
+\begin{enumerate}
+ \item Parmi les translations, les rotations, les symétries orthogonales, et les symétries glissées, décrire des isométries du plan qui conservent le polygone régulier $\mathcal{P}_n$.
+
+ \item Déterminer, à l'aide de l'action naturelle de $D_{n}$ sur l'ensemble des sommets de $\mathcal{P}_n$, le cardinal de $D_{n}$. En déduire la liste complète des éléments de $D_{n}$.
+
+ \item On suppose $n$ impair. Déterminer les $2$-Sylow de $D_{n}$ et vérifier (sans référence au cours) qu'ils sont conjugués.
+
+ \item On suppose $n=6$. Déterminer un $2$-Sylow de $D_{6}$.
+Ce $2$-Sylow est-il distingué ?
+Déterminer deux sous-groupes d'ordre $2$ de $D_6$ non conjugués dans $D_6$.
+Donner un $3$-Sylow de $D_{6}$.
+\end{enumerate}
+\finenonce
+\noindication
+\correction
+\begin{enumerate}
+ \item On note $O$ le centre de gravité de $\mathcal{P}_n$.
+  Dans $D_{n}$, toutes les isométries, qui sont affines, conservent le centre de gravité. Il n'y a donc aucune translation ni symétrie glissée. Il y a les $n$ rotations de centre $O$ et d'angle $2k\pi/n$ avec $k = 0, \cdots, n-1$. Si $n$ est pair, il y a les $n/2$ symétries orthogonales d'axe $(OS)$ pour chaque sommet $S$ et les $n/2$ symétries d'axe médiateur d'un des $n$ côtés. Si $n$ est impair, il y a les $n$ symétries d'axe médiateur d'un des $n$ côtés.
+ \item On considère l'action de $D_{n}$ sur l'ensemble fini des $n$ sommets de $\mathcal{P}_n$.
+ \`A l'aide des rotations de centre $O$ et d'angle $2k\pi/n$, on montre que l'action est transitive.
+ Le stabilisateur d'un sommet $S$ est le sous-groupe d'ordre $2$ engendré par la symétrie orthogonale d'axe $(OS)$ où $O$ est le centre du polygone. Par la seconde formule des classes, $D_{n}$ est d'ordre $2n$.
+ La liste précédente est donc complète.
+ \item Comme $n$ est impair, les $2$-Sylow sont d'ordre $2$. Ce sont les sous-groupes engendrés par les symétries orthogonales.
+ Si $s$ est une symétrie d'axe $d$ et $r$ la rotation de centre $O$ et d'angle $2k\pi/n$, 
+ $rsr^{-1}$ est la symétrie d'axe $r(d)$.
+ Comme $n$ est impair, le groupe engendré par $r$ agit transitivement sur les axes de symétrie. Toutes les symétries sont donc conjuguées. 
+ \item Les $2$-Sylow sont d'ordre $4$ dans $D_{6}$ d'ordre $2^2\times 3$.
+ Le groupe engendré par deux symétries d'axe orthogonal (qui commutent) est d'ordre $4$. En conjuguant par la rotation de centre $O$ et d'angle $2\pi/6$, on obtient un autre $2$-Sylow.
+ Les $2$-Sylow ne sont donc pas distingués. Le nombre de $2$-Sylow est congru à $1$ modulo $2$ et divise $12$ et n'est pas $1$.
+ Il y a donc trois $2$-Sylow.
+ \item La conjuguée, par une rotation d'angle $2k\pi/6$ ou par une symétrie, d'une symétrie d'axe médiateur d'un coté est une symétrie d'axe médiateur d'un coté. 
+ Les symétries d'axe médiateur d'un coté et les symétries d'axe passant par un sommet (qui diffèrent car $6$ est pair) ne sont donc pas conjuguées dans $D_{6}$.
+ \item Le sous-groupe engendré par une rotation d'angle $4\pi/6$ est d'ordre $3$ et c'est un $3$-Sylow.  
+\end{enumerate}
+\fincorrection
+\finexercice

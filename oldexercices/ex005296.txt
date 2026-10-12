@@ -1,0 +1,22 @@
+\exercice{5296, rouget, 2010/07/04}
+\enonce[***IT]
+Soient $A$ la somme des chiffres de $4444^{4444}$ et $B$ la somme des chiffres de $A$. Trouver la somme des chiffres de $B$. (Commencer par majorer la somme des chiffres de $n=a_0+10a_1...+10^pa_p$.)
+\finenonce
+
+\noindication
+
+\correction
+Soit $n$ un entier naturel non nul. On note $\sigma(n)$ la somme de ses chiffres en base $10$ (voir l'exercice \ref{exo:suprou19}). Si $n=a_0+10a_1+...+10^ka_k$ où $k\in\Nn$, $0\leq a_i\leq9$ pour $0\leq i\leq k$ et $a_k\neq0$, alors
+
+$$\sigma(n)=a_0+...+a_k\leq9(k+1)\leq 9(E(\log n)+1)\leq9(\log n+1).$$
+
+Donc, 
+
+$$A=\sigma(4444^{4444})\leq9(\log(4444^{4444})+1)\leq9(4444\log(10^5)+1)=9(4444.5+1)=9.22221=199989.$$
+
+Puis, $B=\sigma(A)\leq1+5.9=46$, puis $\sigma(B)\leq\sigma(39)=12$. Donc, $1\leq\sigma(B)\leq12$.
+
+D'autre part, on sait que modulo 9~:~$\sigma(B)\equiv B\equiv A=4444^{4444}$.
+Enfin, $4444^{4444}=(9.443+7)^{4444}\equiv7^{4444}\;(9)$. De plus, $7\equiv-2\;(9)$ puis $7^2\equiv4\;(9)$ puis $7^3\equiv 28\equiv1\;(9)$ et donc $7^{4444}=(7^3)^{1481}.7\equiv(1^3)^{1481}.7\equiv7\;(9)$. Finalement, $1\leq\sigma(B)\leq12$ et $C\equiv7\;(9)$ ce qui impose $C=7$.
+\fincorrection
+\finexercice

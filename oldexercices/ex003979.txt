@@ -1,0 +1,49 @@
+\exercice{3979, quercia, 2010/03/11}
+\enonce[$f' = f^{-1}$ (Ens Cachan MP$^*$ 2003)]
+
+On note~$E$ l'ensemble des fonctions~$f$ de classe~$\mathcal{C}^1$ bijectives
+de~$]0,+\infty[$ sur~$]0,+\infty[$ telles que $f' = f^{-1}$.
+
+\begin{enumerate}
+  \item Trouver un élément de~$E$ du type $x \mapsto c x^m$, où $c$ et $m$ sont réels.
+    
+  \item Quelle est la limite en~$0$ de~$f$~?
+  \item Montrer que~$f$ est un $\mathcal{C}^\infty$ difféomorphisme de~$]0,+\infty[$ sur~$]0,+\infty[$.
+  \item Montrer que~$f$ admet un unique point fixe.
+    
+  \item Soit~$g$ un deuxième élément de~$E$. Montrer que $g$ admet le même
+    point fixe que~$f$.
+    
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $m=\frac{1+\sqrt5}2$, $c=m^{-1/m}$.
+  \item 
+  \item 
+  \item $f$ et $f'$ ont des limites nulles en $0^+$ et infinies en~$+\infty$
+    donc $f(x) = o_{x\to0^+}(x)$ et $x = o_{x\to+\infty}(f(x))$,
+    ce qui implique que $f(x)-x$ s'annule sur~$]0,+\infty[$.
+    S'il y a deux points fixes, $a<b$, alors par le thm. des accroissements
+    finis l'équation $f'(x) = 1$ admet une solution dans~$]0,a[$ et une dans~$]a,b[$,
+    en contradiction avec la bijectivité de~$f' = f^{-1}$.
+  \item On note~$a$ le point fixe de~$f$, $b$ celui de~$g$ et on suppose
+    $a\ne b$, par exemple $a<b$. On a $g(x) < x$ pour $x\in{]0,b[}$ donc $g(a) < a=f(a)$.
+    Par conséquent $g(x) < x \le f(x)$ si $x\in{[a,b[}$~; soit $]c,b[$ le plus grand
+    intervalle sur lequel $g(x) < f(x)$.
+    On a $0\le c < a$, $g(c^+) = f(c^+) \le c$ et $f$, $g$ sont strictement
+    croissantes, donc $g^{-1}(x) > f^{-1}(x)$ pour $x\in{]c,b[}$. Ainsi
+    $g-f$ est strictement croissante sur~$]c,b[$ a une limite nulle en~$c^+$
+    et est négative en~$b$, c'est absurde.
+    
+    Remarque~: le point fixe est le nombre d'or~$m$. De plus, si $f$ et $g$
+    sont deux éléments de~$E$ distincts alors $f-g$ n'est de signe constant
+    sur aucun voisinage de~$m^-$ (même démonstration).
+\end{enumerate}
+ \fincorrection
+
+\finexercice

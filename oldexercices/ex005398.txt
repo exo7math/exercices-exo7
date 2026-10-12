@@ -1,0 +1,27 @@
+\exercice{5398, rouget, 2010/07/06}
+\enonce[***IT]
+Soit $f$ continue sur $\Rr^+$ à valeurs dans $\Rr$ admettant une limite réelle quand $x$ tend vers $+\infty$. Montrer que $f$ est uniformément continue sur $\Rr^+$.
+\finenonce
+
+\noindication
+
+\correction
+Posons $\ell=\lim_{x\rightarrow +\infty}f(x)$.
+
+Soit $\varepsilon>0$. $\exists A>0/\;\forall x\in\Rr^+,\;(x\geq A\Rightarrow|f(x)-\ell|<\frac{\varepsilon}{3}$.
+ 
+Soit $(x,y)\in[A,+\infty[^2$. Alors, $|f(x)-f(y)|\leq|f(x)-\ell|+|\ell-f(y)|<\frac{2\varepsilon}{3}(<\varepsilon)$. D'autre part, $f$ est continue sur le segment $[0,A]$ et donc est uniformément continue sur ce segment d'après le théorème de \textsc{Heine}. Donc, $\exists\alpha>0/\;\forall(x,y)\in[0,A]^2,\;|x-y|<\alpha\Rightarrow|f(x)-f(y)|<\frac{\varepsilon}{3}(<\varepsilon)$.
+
+Résumons. $\alpha>0$ étant ainsi fourni, soient $x$ et $y$ deux réels de $[0,+\infty[$ vérifiant $|x-y|<\alpha$.
+
+Si $(x,y)\in[0,A]^2$, on a $|f(x)-f(y)|<\frac{\varepsilon}{3}<\varepsilon$.
+
+Si $(x,y)\in[A,+\infty[^2$, on a $|f(x)-f(y)|<\frac{2\varepsilon}{3}<\varepsilon$.
+
+Si enfin on a $x\leq A\leq y$, alors, puisque $|A-x|\leq|x-y|<\alpha$, on a $|f(x)-f(A)|<\frac{\varepsilon}{3}$ et puisque $A$ et $y$ sont dans $[A,+\infty[$, on a $|f(y)-f(A)|<\frac{2\varepsilon}{3}$. Mais alors,
+
+$$|f(x)-f(y)|\leq|f(x)-f(A)|+|f(y)-f(A)|<\frac{\varepsilon}{3}+\frac{2\varepsilon}{3}=\varepsilon.$$
+
+On a montré que $\forall\varepsilon>0,\;\exists\alpha>0/\;\forall(x,y)\in[0,+\infty[^2,\;(|x-y|<\alpha\Rightarrow|f(x)-f(y)|<\varepsilon)$. $f$ est donc uniformément continue sur $[0,+\infty[$.
+\fincorrection
+\finexercice

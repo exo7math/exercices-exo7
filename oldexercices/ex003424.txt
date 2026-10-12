@@ -1,0 +1,52 @@
+\exercice{3424, quercia, 2010/03/10}
+\video{wKgDXlqxneE}
+\enonce[Formule d'intégration numérique]
+
+Trouver trois réels $\alpha, \beta, \gamma$ tels que pour tout polynôme
+de degré $\le 3$ on ait :
+$$  \int_{2}^4 P(x)\; dx = \alpha P(2) + \beta P(3) + \gamma P(4).$$
+\finenonce
+
+\indication
+\'Ecrire les polynômes sous la forme 
+$P(x)=ax^3+bx^2+cx+d$.
+Calculer $  \int_{2}^4 P(x)\; dx$ d'une part 
+et $\alpha P(2) + \beta P(3) + \gamma P(4)$ d'autre part.
+L'identification conduit à un système linéaire à quatre équations,
+ d'inconnues $\alpha,\beta,\gamma$.
+\finindication
+
+\correction
+Notons $P(x)=ax^3+bx^2+cx+d$ un polynôme de degré $\le 3$.
+\begin{enumerate}
+  \item Tout d'abord calculons l'intégrale :
+$$\int_{2}^4 P(x)\; dx = \left[a\frac{x^4}{4} + b\frac{x^3}{3}+c\frac{x^2}{2} +dx \right]_2^4
+= 60a+\frac{56}{3}b+6c+2d.$$
+
+  \item D'autre part
+$$\alpha P(2) + \beta P(3) + \gamma P(4)
+=  \alpha\big(8a+4b+2c+d\big)+\beta\big(27a+9b+3c+d\big)+\gamma\big(64a+16b+4c+d\big).$$
+Donc 
+$$\alpha P(2) + \beta P(3) + \gamma P(4)
+= (8\alpha+27\beta+64\gamma)a + (4\alpha+9\beta+16\gamma)b+(2\alpha+3\beta+4\gamma)c+(\alpha+\beta+\gamma)d.$$
+
+  \item Pour avoir l'égalité $\int_{2}^4 P(x)\; dx =\alpha P(2) + \beta P(3) + \gamma P(4)$
+quelque soit les coefficients $a,b,c,d$ il faut et il suffit que 
+$$(8\alpha+27\beta+64\gamma)a + (4\alpha+9\beta+16\gamma)b+(2\alpha+3\beta+4\gamma)c+(\alpha+\beta+\gamma)d =
+60a+\frac{56}{3}b+6c+2d$$ 
+ce qui équivaut à 
+$$\left\{\begin{array}{rcrcrcl}
+ \alpha & + &  \beta & + &  \gamma & = & 2 \\
+ 2\alpha & + & 3\beta & + & 4\gamma & = & 6 \\   
+ 4\alpha & + & 9\beta & + &  16\gamma & = & \frac{56}{3} \\ 
+ 8\alpha & + &  27\beta & + &  64\gamma & = & 60 \\     
+         \end{array}
+ \right.$$
+
+De façon surprenante ce système à $3$ inconnues et $4$ équations a une solution unique :
+$$\alpha = \frac 13,\quad \beta = \frac 43,\quad \gamma = \frac 13.$$
+\end{enumerate}
+\fincorrection
+
+\finexercice
+

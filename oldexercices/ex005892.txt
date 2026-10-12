@@ -1,0 +1,49 @@
+\exercice{5892, rouget, 2010/10/16}
+\enonce[***]
+Donner un développement limité à l'ordre $3$ en $0$ de la fonction implicitement définie sur un voisinage de $0$ par l'égalité $e^{x+y}+y-1 = 0$.
+\finenonce
+
+\noindication
+
+\correction
+Soit $x\in\Rr$. La fonction $f_x:y\mapsto e^{x+y}+y-1$ est continue et strictement croissante sur $\Rr$ en tant que somme de fonctions continues et strictement croissantes sur $\Rr$. Donc la fonction $f_x$ réalise une bijection de $\Rr$ sur $]\lim_{y \rightarrow -\infty}f_x(y),\lim_{y \rightarrow +\infty}f_x(y)[=\Rr$. En particulier, l'équation $f_x(y)=0$ a une et une seule solution dans $\Rr$ que l'on note $\varphi(x)$.
+
+La fonction $f:(x,y)\mapsto e^{x+y}+y-1$ est de classe $C^1$ sur $\Rr^2$ qui est un ouvert de $\Rr^2$ et de plus, $\forall(x,y)\in\Rr^2$, $ \frac{\partial f}{\partial y}(x,y)=e^{x+y}+1\neq0$. D'après le théorème des fonctions implicites, la fonction $\varphi$ implicitement définie par l'égalité $f(x,y)=0$ est dérivable en tout réel $x$ et de plus, en dérivant l'égalité $\forall x\in\Rr$, $e^{x+\varphi(x)}+\varphi(x)-1=0$, on obtient $\forall x\in\Rr$, $(1+\varphi'(x))e^{x+\varphi(x)}+\varphi'(x)=0$ ou encore
+
+\begin{center}
+$\forall x\in\Rr$, $\varphi'(x)=- \frac{e^{x+\varphi(x)}}{e^{x+\varphi(x)}+1}$ $(*)$.
+\end{center}
+
+On en déduit par récurrence que $\varphi$ est de classe $C^\infty$ sur $\Rr$ et en particulier admet en $0$ un développement limité d'ordre $3$. Déterminons ce développement limité.
+
+\textbf{1ère solution.} Puisque $e^{0+0}+0-1=0$, on a $\varphi(0)=0$. L'égalité $(*)$ fournit alors $\varphi'(0)=- \frac{1}{2}$ et on peut poser $\varphi(x)\underset{x\rightarrow0}{=}- \frac{1}{2}x+ax^2+bx^3+o(x^3)$. On obtient
+
+\begin{align*}\ensuremath
+e^{x+\varphi(x)}&\underset{x\rightarrow0}{=}e^{\frac{x}{2}+ax^2+bx^3+o(x^3)}\\
+ &\underset{x\rightarrow0}{=}1+\left( \frac{x}{2}+ax^2+bx^3\right)+ \frac{1}{2}\left( \frac{x}{2}+ax^2\right)^2+ \frac{1}{6}\left( \frac{x}{2}\right)^3+o(x^3)\\
+  &\underset{x\rightarrow0}{=}1+ \frac{x}{2}+\left(a+ \frac{1}{8}\right)x^2+\left(b+ \frac{a}{2}+ \frac{1}{48}\right)x^3+o(x^3).
+\end{align*}
+
+L'égalité $e^{x+\varphi(x)}+\varphi(x)-1=0$ fournit alors $a+ \frac{1}{8}+a=0$ et $b+ \frac{a}{2}+ \frac{1}{48}+b=0$ ou encore $a=- \frac{1}{16}$ et $b= \frac{1}{192}$.
+
+\textbf{2ème solution.} On a déjà $\varphi(0)=0$ et $\varphi'(0)=0$. En dérivant l'égalité $(*)$, on obtient
+
+\begin{center}
+$\varphi''(x)=- \frac{(1+\varphi'(x))e^{x+\varphi(x)}(e^{x+\varphi(x)}+1)-(1+\varphi'(x))e^{x+\varphi(x)}(e^{x+\varphi(x)})}{\left(e^{x+\varphi(x)}+1\right)^2}=- \frac{(1+\varphi'(x))e^{x+\varphi(x)}}{\left(e^{x+\varphi(x)}+1\right)^2}$,
+\end{center}
+
+et donc $ \frac{\varphi''(0)}{2}=- \frac{ \frac{1}{2}}{2\times2^2}=- \frac{1}{16}$. De même,
+
+\begin{center}
+$\varphi^{(3)}(x)=-\varphi''(x) \frac{e^{x+\varphi(x)}}{\left(e^{x+\varphi(x)}+1\right)^2}-(1+\varphi'(x))e^{x+\varphi(x)} \frac{(1+\varphi'(x))}{\left(e^{x+\varphi(x)}+1\right)^2}+(1+\varphi'(x))e^{x+\varphi(x)} \frac{2(1+\varphi'(x))e^{x+\varphi(x)}}{\left(e^{x+\varphi(x)}+1\right)^3}$,
+\end{center}
+
+et donc $ \frac{\varphi^{(3)}(0)}{6}= \frac{1}{6}\left( \frac{1}{8}\times \frac{1}{4}- \frac{1}{2}\times \frac{1/2}{4}+ \frac{1}{2}\times \frac{1}{8}\right)= \frac{1}{192}$. La formule de \textsc{Taylor}-\textsc{Young} refournit alors
+
+\begin{center}
+\shadowbox{
+$\varphi(x)\underset{x\rightarrow0}{=}- \frac{x}{2}- \frac{x^2}{16}+ \frac{x^3}{384}+o(x^3)$.
+}
+\end{center}
+\fincorrection
+\finexercice

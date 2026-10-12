@@ -1,0 +1,32 @@
+\exercice{3803, quercia, 2010/03/11}
+\enonce[IIE MP 2004]
+Soit $E = \mathcal{C}([0,1],\R)$ muni du produit scalaire défini par $(f\mid g) =  \int_0^1 fg$.
+
+Soient $u,v$ les endomorphismes de~$E$ définis par
+$u(f)(x) =  \int_0^x f$ et $v(f)(x) =  \int_x^1 f$.
+
+\begin{enumerate}
+  \item Montrer que $(u(f)\mid g) = (f\mid v(g))$.
+  \item Déterminer les valeurs propres de~$u\circ v$.
+
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item 
+  \item On a pour~$f,g\in E$~: $u\circ v(f) = g \Leftrightarrow g$ est $\mathcal{C}^2$,
+$g(0)=g'(1)=0$ et $g''=-f$.
+En particulier $u\circ v$ est injectif, $0$ n'est pas valeur propre de~$u\circ v$.
+
+Pour $\lambda\in\R^*$ et $f\in E$ on a $u\circ v(f) = \lambda f$
+si et seulement si $f$ est de la forme $x \mapsto ae^{\alpha x} + be^{-\alpha x}$
+avec $\alpha^2 = -\frac1\lambda$ et $a+b=a\alpha e^\alpha - b\alpha e^{-\alpha} = 0$.
+On obtient $f\ne 0$ en prenant $a\ne 0$, $b=-a$ et $\alpha=i\pi(\frac12+k)$, $k\in\Z$.
+Donc $\mathrm{Spec}(u\circ v) = \Bigl\{\frac{1}{\pi^2(\frac 12+k)^2},\ k\in\Z\Bigr\}$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

@@ -1,0 +1,47 @@
+\exercice{6012, quinio, 2011/05/20}
+
+\enonce
+Un industriel doit vérifier l'état de marche de ses machines et en
+remplacer certaines le cas échéant. D'après des statistiques précédentes, 
+il évalue à 30\% la probabilité pour une
+machine de tomber en panne en 5 ans; parmi ces dernières, 
+la probabilité de devenir hors d'usage suite à une panne plus grave est 
+évaluée à 75\%; cette probabilité est de 40\% pour une machine
+n'ayant jamais eu de panne.
+\begin{enumerate}
+\item Quelle est la probabilité pour une machine donnée de plus de cinq
+ans d'être hors d'usage ?
+
+\item Quelle est la probabilité pour une machine hors d'usage de n'avoir
+jamais eu de panne auparavant ?
+
+\item Soit $X$ la variable aléatoire <<nombre de machines
+qui tombent en panne au bout de 5 ans, parmi 10 machines choisies au
+hasard>>. Quelle est la loi de probabilité de $X$, (on
+donnera le type de loi et les formules de calcul), son espérance, sa
+variance et son écart-type ?
+
+\item Calculer $P[X=5]$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item 30\% est la probabilité de l'événement Panne, noté $Pa$;
+la probabilité pour une machine donnée de plus de cinq ans, d'être hors d'usage est
+$P(HU)=P(HU/Pa) P(Pa)+P(HU/nonPa) P(nonPa)=0.3\cdot 0.75+0.4\cdot
+0.7=0.505$.
+
+\item La probabilité pour une machine hors d'usage de n'avoir jamais eu de
+panne auparavant est 
+$P(\text{non}\,Pa/HU)=P(HU/\text{non}\,Pa) P(\text{non}\,Pa)/P(HU)=0.4\cdot 0.7/
+0.505\,=0.554\,46$.
+
+\item La loi de probabilité de $X$ est une loi binomiale, $n= 10$, $p=0.3$, espérance $3$.
+
+\item $P[X=5]=\binom{10}{5}(0.3)^{5}(0.7)^{5}=0.102\,92$
+\end{enumerate}
+\fincorrection
+\finexercice

@@ -1,0 +1,33 @@
+\exercice{3696, quercia, 2010/03/11}
+\enonce[$a\wedge b$, $b\wedge c$, $c\wedge a$ donnés]
+
+Soit $E$ un espace vectoriel euclidien orienté de dimension 3.\par
+Trouver $\vec a,\vec b,\vec c$ connaissant
+$\vec u = \vec a\wedge\vec b$,
+$\vec v = \vec b\wedge\vec c$
+et $\vec w = \vec c\wedge\vec a$
+(calculer $\vec u\wedge\vec v$).
+
+\finenonce
+
+\noindication
+
+\correction
+$p = [\vec a,\vec b,\vec c]  \Rightarrow 
+ \begin{cases} \vec u\wedge\vec v = p\vec b \cr
+         \vec v\wedge\vec w = p\vec c \cr
+         \vec w\wedge\vec u = p\vec a \cr\end{cases}$
+et $[\vec u,\vec v,\vec w] = p^2$.
+
+si $[\vec u,\vec v,\vec w] < 0$ : pas de solutions.
+
+si $[\vec u,\vec v,\vec w] = 0$ et $\mathrm{rg}(\vec u,\vec v,\vec w) > 1$ :
+   pas de solutions.
+
+si $[\vec u,\vec v,\vec w] = 0$ et $\mathrm{rg}(\vec u,\vec v,\vec w) \le 1$ :
+   une infinité de solutions.
+
+si $[\vec u,\vec v,\vec w] > 0$ : 2 solutions.
+\fincorrection
+
+\finexercice

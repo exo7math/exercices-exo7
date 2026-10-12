@@ -1,0 +1,22 @@
+\exercice{2919, quercia, 2010/03/08}
+
+\enonce[Nombre de relations d'{\'e}quivalence]
+Soit $R_n$ le nombre de relations d'{\'e}quivalence sur un ensemble {\`a} $n$ {\'e}l{\'e}ments.
+\begin{enumerate}
+  \item Trouver une relation de r{\'e}currence entre $R_n$ et les $R_k$, $k < n$
+    \par
+    (fixer un {\'e}l{\'e}ment, et raisonner sur la classe d'{\'e}quivalence de cet
+    {\'e}l{\'e}ment).
+  \item Calculer $R_n$ pour $n \le 6$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $R_n = \sum_{k=0}^{n-1}C_{n-1}^kR_k$ avec $R_0 = 1$.
+  \item 1,1,2,5,15,52,203.
+\end{enumerate}
+\fincorrection
+\finexercice 

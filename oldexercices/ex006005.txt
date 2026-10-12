@@ -1,0 +1,40 @@
+\exercice{6005, quinio, 2011/05/20}
+
+\enonce
+Une entreprise pharmaceutique décide de faire des économies sur les
+tarifs d'affranchissements des courriers publicitaires à envoyer aux
+clients.
+Pour cela, elle décide d'affranchir, au hasard, une proportion de 3
+lettres sur 5 au tarif urgent, les autres au tarif normal.
+\begin{enumerate}
+\item Quatre lettres sont envoyées dans un cabinet médical de quatre médecins:
+quelle est la probabilité des événements:
+
+A : <<Au moins l'un d'entre eux reçoit une lettre au tarif urgent>>.
+
+B : <<Exactement 2 médecins sur les quatre reçoivent une lettre au tarif urgent>>.
+
+\item Soit $X$ la variable aléatoire: <<nombre de lettres affranchies au tarif
+urgent parmi 10 lettres>>:
+Quelle est la loi de probabilité de $X$, quelle est son espérance,
+quelle est sa variance?
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+\item On utilise une loi binomiale, loi de la variable aléatoire:
+<<nombre de lettres affranchies au tarif urgent parmi 4 lettres>>
+$n=5$, $p=\frac{3}{5}$. 
+On obtient $P(A)=1-(\frac{2}{5})^{4}=0.9744$, 
+$P(B)=\binom{4}{2}(\frac{2}{5})^{2}(\frac{3}{5})^{2}=0.3456$.
+
+\item La loi de probabilité de $X$ est une loi binomiale, loi de la variable
+aléatoire: <<nombre de lettres affranchies au tarif
+urgent parmi 10 lettres>>.
+$n=10$, $p=\frac{3}{5}$, son espérance est $np=6$, sa variance est $np(1-p)=\frac{12}{5}$.
+\end{enumerate}
+\fincorrection
+\finexercice

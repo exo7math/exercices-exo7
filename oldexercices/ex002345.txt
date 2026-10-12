@@ -1,0 +1,42 @@
+\exercice{2345, queffelec, 2003/10/01}
+\enonce
+\begin{enumerate}
+\item Si $(x,y)\in\Rr^2$, on pose $||(x,y)||=\max(|x+y|,|x-2y|)$. Montrer qu'il
+s'agit d'une norme sur $\Rr^2$ et dessiner sa boule unit\'e ferm\'ee.
+
+\item Soit $p,q$ deux normes sur $\Rr^n$, $B_p$ et $B_q$ leurs boules unit\'es
+ferm\'ees. Montrer que 
+$$ B_q\subset B_p\Longleftrightarrow p\leq q.$$
+
+Que signifie $ {1\over2}B_p\subset B_q\subset 2B_p$ ? Exemples.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item
+   \begin{enumerate}
+     \item Si $||(x,y)||=0$ alors $\max(|x+y|,|x-2y|)=0$ donc $x+y=0$ et $x-2y=0$ donc $x=0$ et $y=0$. Réciproquement $\|(0,0)\|=0$. 
+     \item $||\lambda.(x,y)||= ||(\lambda x,\lambda y)||=\max(|\lambda x+ \lambda y|,|\lambda x-2\lambda y|) = |\lambda|\max(|x+y|,|x-2y|) = |\lambda|.||(x,y)||$.
+     \item $\|(x,y)+(x',y')\| = \|(x+x',y+y')\| =  \max(|x+x'+y+y'|,|x+x'-2y-2y'|) \le \max (|x+y|+|x'+y'|,|x-2y|+|x'-2y'|) \le \max(|x+y|,|x-2y|)+\max(|x'+y'|, |x'-2y'|) \le ||(x,y)||+ ||(x',y')||$.
+   \end{enumerate}
+  
+La boule unité fermée centrée à l'origine est la région du plan comprise entre les droites d'équations $x+y=+1$, $x+y=-1$, $x-2y=+1$, $x-2y=-1$.
+
+  \item Sens $\Leftarrow$ : Si $x \in B_q$ alors $q(x) \le 1$ donc $p(x) \le 1$
+donc $x\in B_p$. Sens $\Rightarrow$ : Soit $x\in \Rr^n \setminus \{0\}$ alors $q(\frac{x}{q(x)}) = 1$ donc  $\frac{x}{q(x)}\in B_q $ donc $\frac{x}{q(x)}\in B_p $ donc $p(\frac{x}{q(x)}) \le 1$ soir $p(x) \le q(x)$. Ceci étant aussi valable pour $x=0$.
+
+$B_q \subset 2B_p$ est équivalent à $p(x) \le 2q(x)$ pour tout $x\in \Rr^n$
+(attention au sens !). Et $\frac12 B_p \subset B_q$ est équivalent à 
+$\frac12q(x) \le p(x)$. Si les deux inclusions sont vraies alors
+$\frac12 p \le q \le 2p$ et en particulier les normes $p$ et $q$ sont équivalentes. 
+
+Par exemple dans $\Rr^2$ pour les normes $\|.\|_1$, $\|.\|_2$, $\|.\|_\infty$
+On a 
+$$B_1 \subset B_2 \subset B_\infty \subset 2B_1 \subset 2B_2 \subset \cdots$$
+
+\end{enumerate}
+\fincorrection
+\finexercice

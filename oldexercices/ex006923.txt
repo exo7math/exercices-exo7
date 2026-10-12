@@ -1,0 +1,47 @@
+\exercice{6923, ruette, 2013/01/24}
+\enonce  
+Une machine est conçue pour confectionner 
+des paquets d'un poids de 500g, mais ils n'ont pas exactement tous le même poids. 
+On a constaté que la distribution des poids autour de la valeur moyenne de 500g avait un écart-type de 25g.
+\begin{enumerate}
+\item
+Par quelle loi est-il raisonnable de modéliser le poids des paquets ?
+\item
+Sur 1000 paquets, quel est le nombre moyen de paquets pesant entre 480g et 520g ? 
+(\textit{utiliser la table  de $\mathcal{N}(0,1)$})
+\item
+Combien de paquets pèsent entre 480g et 490g ?
+\item
+Sur 1000 paquets, quel est le nombre moyen de paquets pesant plus de 450g ?
+\item
+Trouver $a$ tel que les 9/10 de cette production aient un poids compris
+entre $500-a$ et $500+a$.
+\end{enumerate}
+\finenonce
+\noindication
+
+\correction
+\begin{enumerate}
+\item
+L'énoncé suggère que le poids en grammes des paquets est une variable aléatoire 
+qui suit une loi normale d'espérance 500 et d'écart-type 25. Soit $X$ la variable aléatoire correspondante, et $Y=(X-500)/25$. 
+\item
+ 
+$P(480\leq X\leq 520)=P(|Y|\leq  0,8)=0,576.$
+On s'attend donc à ce que, sur 1000 paquets, il y en ait 576 dont le poids est compris entre 480g et 520g.
+\item\begin{eqnarray*}
+P(480\leq X\leq 490)&=&P(-0,8\leq Y\leq -0,4)\\
+&=&P(0,4\leq Y\leq 0,8)\\
+&=&p(Y\leq 0,8)-p(Y\leq 0,4)=0,1327.
+\end{eqnarray*}
+On s'attend donc à ce que, sur 1000 paquets, il y en ait 132 dont le poids est compris entre 480g et 490g.
+\item
+$P(450\leq X)=0,5+P(0\le Y\leq 2)=0,5+\frac 12 P(-2\le Y\leq 2)=0,5+0,4772=0,9772.$
+On s'attend donc à ce que, sur 1000 paquets, il y en ait 977 dont le poids est supérieur à 450g.
+\item
+Il faut trouver $t$ tel que $p(|Y|<t)=0,9$. La table donne $t=1,645$, 
+puis $a=25t=41$. Par conséquent, environ 90\% de la production a un poids 
+compris entre $500-41=459$g et $500+41=541$g.
+\end{enumerate}
+\fincorrection
+\finexercice

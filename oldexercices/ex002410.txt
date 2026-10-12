@@ -1,0 +1,33 @@
+\exercice{2410, bodin, 2003/10/01}
+\enonce 
+Soit $E$ un espace compact. Soit $f_i$, $i=1,\ldots,n$ une famille de $n$ élements
+de $\mathcal{C}(E,\Rr)$ qui sépare les points de $E$. Montrer que $E$ est homéomorphe 
+à une partie de $\Rr^n$.
+\finenonce
+
+\indication
+Considérer l'application $\Phi : E \to \Rr^n$ définie par $\Phi = (f_1,\ldots, f_n)$.
+\finindication
+
+\correction
+ Soit $\Phi : E \to \Rr^n$ définie par $\Phi = (f_1,\ldots, f_n)$ alors 
+$\Phi$ est continue car les $f_i$ sont continues. $\Phi$ est injective :
+en effet si $x\neq y$ alors comme  $\{f_i\}$ sépare les points on a $\Phi(x)\neq \Phi(y)$, par contraposition
+$\Phi$ est injective.
+Notons $F =  \Phi(E)$ l'image directe de $E$. Alors $\Phi : E \to F$ est continue et bijective.
+Comme $E$ est compact alors $\Phi$ est un homéomorphisme.
+Donc $E$ est homéomorphe à $F$ qui est une partie de $\Rr^n$.
+\bigskip
+
+\emph{Rappel : } Si  $\Phi : E \to F$ est continue et bijective et $E$ est un espace compact alors 
+$\Phi$ est un homéomorphisme.
+
+La preuve est simple : soit $K$ un ensemble fermé de $E$,
+comme $E$ est compact alors $K$ l'est aussi. Comme $\Phi$ est continue alors
+$\Phi(K)$ est un compact de $F$ donc un fermé.
+Mais en écrivant ceci à l'aide de l'application $\Phi^{-1}$ nous venons de  montrer
+que pour tout fermé $K$ de $E$, l'image réciproque de $K$ par  $\Phi^{-1}$ (qui est 
+$(\Phi^{-1})^{-1}(K)=\Phi(K)$) est un fermé. Donc $\Phi^{-1}$ est continue. Donc 
+$\Phi$ est un homéomorphisme.
+\fincorrection
+\finexercice

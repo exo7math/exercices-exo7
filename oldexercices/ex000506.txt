@@ -1,0 +1,24 @@
+\exercice{506, bodin, 1998/09/01}
+\video{lyrZpWFC8AM}
+\enonce
+ Montrer que toute suite convergente est born\'ee.
+\finenonce 
+
+\indication
+\'Ecrire la d\'efinition de la convergence d'une suite $(u_n)$ avec les ``$\epsilon$''. Comme on a une proposition qui est vraie pour tout $\epsilon >0$, c'est en particulier vrai pour $\epsilon =1$. Cela nous donne un ``$N$''. Ensuite s\'eparez la suite en deux : regardez les $n<N$ (il n'y a qu'un nombre fini de termes) et les $n\geqslant N$ (pour lequel on utilise notre $\epsilon=1$).
+\finindication
+
+\correction
+Soit $(u_n)$ une suite convergeant vers $\ell \in \Rr$. Par
+d\'efinition
+$$\forall \epsilon > 0 \quad \exists N \in \Nn \quad  \forall n\geqslant N \qquad |u_n-\ell| < \epsilon.$$
+Choisissons $\epsilon = 1$, nous obtenons le  $N$ correspondant.
+Alors pour $n\geqslant N$, nous avons $|u_n-\ell| < 1$ ; 
+autrement dit $\ell -1 <
+u_n < \ell + 1$. Notons $M = \max_{n=0,\ldots,N-1}  \{u_n\}$  et
+puis $ M' = \max (M,\ell+1)$. Alors  pour tout $n \in \Nn$ $u_n
+\leq M'$. De m\^eme en posant $m = \min_{n=0,\ldots,N-1} \{u_n\}$ et
+$m' = \min(m,\ell -1)$ nous obtenons pour tout $n\in \Nn$, $u_n
+\geq m'$.
+\fincorrection
+\finexercice

@@ -1,0 +1,55 @@
+\exercice{5537, rouget, 2010/07/15}
+\enonce
+Trouver le point de la courbe d'équation $y=\ln x$ en lequel la valeur absolue du rayon de courbure est minimum.
+\finenonce
+
+\noindication
+
+\correction
+$\mathcal{C}$ est le support de l'arc paramétré $t\mapsto\left(
+\begin{array}{c}
+t\\
+\ln t
+\end{array}
+\right)$, $t>0$. 
+
+\begin{center}
+$\overrightarrow{\frac{dM}{dt}}=\left(\begin{array}{c}
+1\\
+1/t
+\end{array}
+\right)=\sqrt{1+\frac{1}{t^2}}\left(\begin{array}{c}
+1/\sqrt{1+\frac{1}{t^2}}\\
+1/\left(t\sqrt{1+\frac{1}{t^2}}\right)
+\end{array}
+\right)=\frac{\sqrt{1+t^2}}{t}\left(
+\begin{array}{c}
+\frac{t}{\sqrt{1+t^2}}\\
+\frac{1}{\sqrt{1+t^2}}
+\end{array}
+\right)$.
+\end{center}
+Donc, $\frac{ds}{dt}=\frac{\sqrt{1+t^2}}{t}$ et on peut prendre $\alpha(t)=\Arcsin\left(\frac{1}{\sqrt{1+t^2}}\right)$ puis 
+
+\begin{center}
+$\frac{d\alpha}{dt}=-\frac{t}{(t^2+1)^{3/2}}\frac{1}{\sqrt{1-\frac{1}{1+t^2}}}=-\frac{1}{t^2+1}$,
+\end{center}
+et finalement
+
+\begin{center}
+$R(t)=\frac{ds/dt}{d\alpha/dt}=-\frac{1}{t}(t^2+1)^{3/2}$.
+\end{center}
+Pour $t>0$, posons $f(t)=|R(t)|=\frac{1}{t}(t^2+1)^{3/2}$. $f$ est dérivable sur $]0,+\infty[$ et pour $t>0$, 
+
+\begin{center}
+$f'(t)=-\frac{1}{t^2}(t^2+1)^{3/2}+3(t^2+1)^{1/2}=\frac{\sqrt{t^2+1}}{t^2}(-(t^2+1)+3t^2)=\frac{\sqrt{t^2+1}}{t^2}(2t^2-1)$.
+\end{center}
+$f$ admet un minimum en $t=\frac{1}{\sqrt{2}}$ égal à $\sqrt{2}\left(\frac{1}{2}+1\right)^{3/2}=\frac{3\sqrt{3}}{2}$.
+
+\begin{center}
+\shadowbox{
+Le rayon de courbure minimum est $\frac{3\sqrt{3}}{2}$ et est le rayon de courbure en $M\left(\frac{1}{\sqrt{2}}\right)$, $-\frac{\pi}{2}<t<\frac{\pi}{2}$.
+}
+\end{center}
+\fincorrection
+\finexercice

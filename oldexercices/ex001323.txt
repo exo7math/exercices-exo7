@@ -1,0 +1,31 @@
+\exercice{1323, legall, 1998/09/01}
+
+\enonce
+ Soit $  G  $ un groupe, $  H  $ et $  K  $ deux
+sous-groupes de $ G  .$ Montrer que $  H\cup K  $ est un
+sous-groupe de $  G  $ si et seulement si $  H\subset K  $ ou $
+K\subset H  .$
+
+\finenonce
+
+\noindication
+
+\correction
+\begin{itemize}
+    \item[$\bullet$] Si $H \subset K$ alors $H\cup K = K$, qui est un sous-groupe
+de H. M\^eme chose si $K \subset H$.
+    \item[$\bullet$] R\'eciproquement, supposons que
+$H\cup K$ est un sous-groupe de $G$. Par l'absurde supposons que
+$H \not\subset K$ et $K \not\subset H$. Alors il existe $x\in
+H\setminus K$ et $y \in K\setminus H$. Comme $x,y \in H\cup K$ et
+que $H\cup K$ est un groupe alors $x.y \in H\cup K$. Donc $x.y \in
+H$ ou $x.y \in K$. Par exemple supposons $x.y \in H$ alors comme
+$x\in H$, $x^{-1}\in H$ et donc comme $H$ est un groupe
+$x^{-1}.x.y \in H$ et donc $y\in H$. Ce qui est en contradiction
+avec l'hypoth\`ese $ y \in K\setminus H$. En conclusion, parmi les
+sous-groupes $H,K$ l'un est inclus dans l'autre.
+\end{itemize}
+\fincorrection
+
+\finexercice
+

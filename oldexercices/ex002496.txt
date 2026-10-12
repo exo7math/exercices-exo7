@@ -1,0 +1,33 @@
+\exercice{2496, sarkis, 2009/04/01}
+\enonce
+ Soit $E$ l'ensemble des
+fonctions continues de l'intervalle $[0,1]$ dans $\mathbb{R}$ qui
+sont continues. Montrez que l'application $\|f\|_1=\int_a^b
+|f(t)|dt$ est une norme sur $E$. Montrez que $E$ n'est pas
+complet.
+\finenonce 
+
+\noindication
+
+\correction
+Il faut trouver une suite de cauchy de fonctions de $E$ qui ne
+converge pas dans $E$. Il suffit, par exemple, de prendre une
+suites de fonctions $\{f_n\}$  convergeant pour $\|.\|$ vers une
+fonction non continue. Par exemple, prendre
+$$f_n(x)= \left\{\begin{array}{c}
+1 \mbox{ si } x < 1/2\\
+1-n(x-1/2) \mbox{ si } 1/2 \leq x \leq 1/2+1/n \\
+0 \mbox{ si } x > 1/2+1/n
+\end{array} \right \} $$
+et
+$$f_0(x)= \left\{\begin{array}{c}
+1 \mbox{ si } x < 1/2\\
+0 \mbox{ si } x \geq 1/2
+\end{array} \right \} $$
+ On a alors $\|f_n - f_0\|_1=1/(2n)$, la suite converge
+simplement et en norme $\|.\|$ vers la fonction  $f_0$ qui n'est
+pas continue. Il suffit de montrer alors qu'il n'existe aucune
+fonction continue $g$ telle que $\|f-g\|=0$ ce qui interdit
+l'existence d'une limite à $f_n$ dans $E$.
+\fincorrection
+\finexercice

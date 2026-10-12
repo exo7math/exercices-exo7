@@ -1,0 +1,64 @@
+\exercice{2530, tahani, 2009/04/01}
+\enonce
+Soit $f:
+\mathbb{R}^n \rightarrow \mathbb{R}^n$ une application $C^1$. On
+suppose qu'il existe $\alpha >0$ tel que pour tout $h,x \in
+\mathbb{R}^n$,
+\[
+\langle Df(x)(h),h \rangle \geq \alpha\langle h,h\rangle.
+\]
+
+\begin{enumerate}
+
+\item En consid\'erant la fonction 
+$t \rightarrow \varphi(t)= \langle f(a+t(b-a)),b_a) \rangle$, montrez que
+$$ \langle f(b)-f(a),b-a \rangle \geq \alpha \langle b-a,b-a \rangle 
+\text{ pour tout } a,b \in \mathbb{R}^n.$$ 
+En déduire que $f$ est une application ferm\'ee.
+
+\item D\'emontrer que, pour tout $x \in E, Df(x)$ est un
+isomorphisme de $\mathbb{R}^n$. En déduire que $f$ est une
+application ouverte. 
+
+\item Conclure que $f$ est un diff\'eomorphisme de classe $C^1$ de $\mathbb{R}^n$ sur lui même.
+\end{enumerate}
+\finenonce 
+
+\noindication
+
+\correction
+Posons $\theta(t)=a+t(b-a)$ et $\Psi(x)= \langle x,b-a \rangle$ qui est lin\'eaire
+et continue (donc $C^\infty$).  
+\begin{enumerate}
+\item $f$ et $\varphi$ sont de classe $C^1$ car compos\'ees d'applications de classe $C^1$. On a
+$$
+D\varphi(t)= \varphi'(t)=(\Psi \circ f \circ \theta)(t)'(t)
+= D\Psi(f(\theta(t)))\circ Df(\theta(t))\circ D\theta(t)
+= \langle Df(a+t(b-a))(b-a),b-a \rangle.
+$$ 
+Par cons\'equent:
+$$
+\varphi'(t) \geq \alpha \langle b-a,b-a \rangle.
+$$
+Or, $\varphi(1)-\varphi(0)=\langle f(b)-f(a),(b-a)\rangle$ et il existe $t\in
+]0,1[$ tel que $\varphi(1)-\varphi(0)=\varphi'(t)$ d'o\`u
+$$
+\langle f(b)-f(a),b-a\rangle \geq \alpha \langle b-a,b-a\rangle.
+$$
+Indications pour mq $f$ est ferm\'ee: Posons $\|x\|=\sqrt{\langle x,x\rangle}$
+alors
+$$
+\alpha \|b-a\|^2 \leq \langle f(b)-f(a),b-a\rangle 
+\leq \|f(b)-f(a)\|.\|b-a\|.
+$$ 
+D'o\`u $$\|b-a\| \leq 1/\alpha \|f(b)-f(a)\|.
+$$ 
+Soit $F$ un ferm\'e et $y_n$ une suite de points
+de $f(F)$ convergeant vers un point limite $y_\infty$. Il faut
+montrer que $y_\infty \in f(F)$. Soit $x_n$ une suite de points de
+$\mathbb{R}^n$ tels que $f(x_n)=y_n$. Il reste \`a montrer que
+cette suite admet est de Cauchy, qu'elle converge donc et que sa
+limite $x_\infty$ v\'erifie $f(x_\infty)=y_\infty$.
+\end{enumerate}
+\fincorrection
+\finexercice

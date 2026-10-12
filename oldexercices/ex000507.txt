@@ -1,0 +1,75 @@
+\exercice{507, bodin, 1998/09/01}
+\video{HI2i2rdz3_A}
+\enonce
+  Montrer que la suite $(u_n)_{n\in\Nn}$ d\'efinie par
+$$u_n = (-1)^n+\frac{1}{n}$$
+n'est pas convergente.
+\finenonce 
+
+\indication
+On prendra garde \`a ne pas parler de limite d'une suite sans savoir au pr\'ealable qu'elle converge !
+
+Vous pouvez utiliser le r\'esultat du cours suivant :
+Soit $(u_n)$ une suite convergeant  vers la limite $\ell$ alors toute sous-suite $(v_n)$ de $(u_n)$ a pour limite $\ell$.
+\finindication
+
+\correction
+Il est facile de se convaincre que $(u_n)$ n'a pas de
+ limite, mais plus délicat d'en donner une d\'emonstration
+ formelle. En effet, d\`es lors qu'on ne sait pas qu'une suite $(u_n)$
+converge, on ne peut pas \'ecrire $\lim u_n$, c'est un nombre qui
+n'est pas d\'efini. Par exemple l'\'egalit\'e $$\lim_{n \rightarrow
+\infty}\: (-1)^n+1/n=\lim_{n\rightarrow \infty} (-1)^n$$ n'a pas de
+sens. Par contre voil\`a ce qu'on peut dire : \emph{Comme la
+suite $1/n$ tend vers $0$ quand $n \rightarrow \infty$, la suite $u_n$ est
+convergente si et seulement si la suite $(-1)^n$ l'est. De plus,
+dans le cas o\`u elles sont toutes les deux convergentes, elles
+ont m\^eme limite.} Cette affirmation provient tout simplement du
+th\'eor\`eme suivant
+
+\textbf{Th\'eor\`eme} : Soient $(u_n)$ et $(v_n)$ deux suites
+convergeant vers deux limites $\ell$ et $\ell'$. Alors la suite $(w_n)$ définie par
+$w_n=u_n+v_n$ est convergente (on peut donc parler de sa limite)
+et $\lim w_n=\ell+\ell'$.
+
+De plus, il n'est pas vrai que toute suite convergente
+doit forc\'ement \^etre croissante et major\'ee ou d\'ecroissante
+et minor\'ee. Par exemple, $(-1)^n/n$ est une suite qui converge
+vers $0$ mais qui n'est ni croissante, ni d\'ecroissante. 
+
+\bigskip
+
+Voici maintenant un exemple de r\'edaction de l'exercice.  On veut
+montrer que la suite $(u_n)$ n'est pas convergente. Supposons donc
+par l'absurde qu'elle soit convergente et notons
+$\ell=\lim_{n\rightarrow\infty} u_n$. (Cette expression a un sens puisqu'on
+suppose que $u_n$ converge).
+
+{\bf  Rappel.} Une {\em sous-suite} de $(u_n)$ (on dit aussi  {\em
+suite extraite} de $(u_n)$) est une suite $(v_n)$ de la forme
+$v_n=u_{\phi(n)}$ o\`u $\phi$ est une application strictement
+croissante de $\N$ dans $\N$. Cette fonction $\phi$ correspond
+``au choix des indices qu'on veut garder'' dans notre sous-suite.
+Par exemple, si on ne veut garder dans la suite $(u_n)$ que les
+termes pour lesquels $n$ est un multiple de trois, on pourra poser
+$\phi(n)=3n$, c'est \`a dire $v_n=u_{3n}$.
+
+\vspace{0.3cm}
+
+Consid\'erons maintenant les sous-suites $v_n=u_{2n}$ et
+$w_n=u_{2n+1}$ de $(u_n)$. On a que $v_n=1+1/2n\rightarrow1$ et que
+$w_n=-1+1/(2n+1)\rightarrow -1$. Or on a le th\'eor\`eme suivant sur les
+sous-suites d'une suite convergente:
+
+\textbf{Th\'eor\`eme} : Soit $(u_n)$ une suite convergeant  vers la
+limite $\ell$ (le th\'eor\`eme est encore vrai si $\ell=+\infty$ ou
+$\ell=-\infty$). Alors, toute sous-suite $(v_n)$ de $(u_n)$ a pour limite
+$\ell$.
+
+
+Par cons\'equent, ici, on a que $\lim v_n=\ell$ et $\lim w_n=\ell$  donc
+$\ell=1$ et $\ell=-1$ ce qui est une contradiction. L'hypoth\`ese disant
+que $(u_n)$ \'etait convergente est donc fausse. Donc $(u_n)$ ne
+converge pas.
+\fincorrection
+\finexercice

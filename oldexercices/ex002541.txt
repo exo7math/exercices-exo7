@@ -1,0 +1,39 @@
+\exercice{2541, tahani, 2009/04/01}
+\enonce
+Soit $f:\mathbb{R}^3 \rightarrow \mathbb{R}^2$ d\'efinie par
+$f(x,y,z)=(x^2-y^2+z^2-1, xyz-1)$. Soit $(x_0,y_0,z_0) \in
+\mathbb{R}^3$ tel que $f(x_0,y_0,z_0)=(0,0)$. Montrez qu'il existe
+un intervalle $I$ contenant $x_0$ et une application $\varphi: I
+\rightarrow \mathbb{R}^2$ tels que $\varphi(x_0)=(y_0,z_0)$ et
+$f(x,\varphi(x))=0$ pour tout $x\in I$.
+\finenonce 
+
+\noindication
+
+\correction
+Soit $(x_0,y_0,z_0) \in \mathbb{R}^3$ tel que
+$f(x_0,y_0,z_0)=(0,0)$ (par exemple $(1,1,1)$). $f$ est $C^1$ car
+coordonn\'ees polynomiales.
+
+$$\text{Mat}\, D_2f(x_0,y_0,z_0)=
+\left(
+\begin{array}{cc}
+\frac{\partial f_1}{\partial y}(x_0,y_0,z_0) &\frac{\partial
+f_1}{\partial
+z}(x_0,y_0,z_0)\\
+\frac{\partial f_2}{\partial y}(x_0,y_0,z_0) & \frac{\partial
+f_2}{\partial z}(x_0,y_0,z_0)
+\end{array} \right )=\left(
+\begin{array}{cc}
+-2y_0 & 2z_0 \\
+x_0z_0 & x_0y_0
+\end{array} \right )$$
+
+$\det(\text{Mat}\, D_2f(x_0,y_0,z_0))=-2x_0(y_0^2+z_0^2) \neq 0$ car
+$x_0y_0z_0=1$ donc $x_0 \neq 0, y_0 \neq 0, z_0 \neq 0$. D'apr\`es
+le th\'eor\`eme des fonctions implicites, il existe $I$ intervalle
+contenant $x_0$ et $\varphi:I \rightarrow \mathbb{R}^2$ tel que
+$f(x,\varphi(x))=0$ pour tout $x \in I$ et $\varphi(x_0)=(y_0,z_0)$.
+
+\fincorrection
+\finexercice

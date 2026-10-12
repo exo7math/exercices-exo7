@@ -1,0 +1,45 @@
+\exercice{3243, quercia, 2010/03/08}
+
+\enonce[Centrale MP 2001]
+Soit $P \in \R_n[X]\setminus\{0\}$.
+
+Pour $x\in\R$ on note $V(x)$ le
+nombre de changements de signe dans la suite $(P(x),P'(x),\dots,P^{(n)}(x))$
+en convenant de retirer les termes nuls.
+Soient $\alpha<\beta$ deux r{\'e}els non racines de~$P$. Montrer que le nombre
+de racines de~$P$ dans $[\alpha,\beta]$, compt{\'e}es avec leur ordre de multiplicit{\'e},
+a m{\^e}me parit{\'e} que~$V(\alpha)-V(\beta)$ et que $V(\alpha)-V(\beta)\ge 0$.
+\finenonce
+
+\noindication
+
+\correction
+$V(\alpha)$ est pair si et seulement si $P(\alpha)$ et $P^{(n)}(\alpha)$
+ont m{\^e}me signe, de m{\^e}me pour $V(\beta)$. Comme $P^{(n)}(\alpha) = P^{(n)}(\beta)$
+on en d{\'e}duit que $V(\alpha)-V(\beta)$ est pair si et seulement si $P(\alpha)$
+et $P(\beta)$ ont m{\^e}me signe, donc si et seulement si $P$ a un nombre pair
+de racines dans $[\alpha,\beta]$.
+
+D{\'e}croissance de~$V$~: $V$ est constant sur tout intervalle ne contenant
+aucune racine de $P,P',\dots,P^{(n-1)}$. Consid{\'e}rons $x_0\in{[\alpha,\beta[}$
+tel que $P^{(k)}(x_0) \ne 0$, $P^{(k+1)}(x_0) = \dots = P^{(\ell-1)}(x_0) = 0$
+et $P^{(\ell)}(x_0) \ne 0$. Alors pour $x$ proche de $x_0$ avec $x>x_0$, $P^{(k)}(x)$
+a m{\^e}me signe que $P^{(k)}(x_0)$ et $P^{(k+1)}(x),\dots,P^{(\ell)}(x)$ ont
+m{\^e}me signe que $P^{(\ell)}(x_0)$ donc les nombres de changements de signe dans
+les sous-suites $(P^{(k)}(x),\dots,P^{(\ell)}(x))$ et $(P^{(k)}(x_0),\dots,P^{(\ell)}(x_0))$
+sont {\'e}gaux. De m{\^e}me si $P(x_0) = \dots = P^{(\ell-1)}(x_0) = 0$ et
+$P^{(\ell)}(x_0) \ne 0$. Ceci prouve que $V(x_0^+) = V(x_0)$ pour tout
+$x_0\in{[\alpha,\beta[}$.
+
+On consid{\`e}re {\`a} pr{\'e}sent $x_0\in{]\alpha,\beta]}$ tel que
+$P^{(k)}(x_0) \ne 0$, $P^{(k+1)}(x_0) = \dots = P^{(\ell-1)}(x_0) = 0$
+et $P^{(\ell)}(x_0) \ne 0$. Alors pour $x$ proche de $x_0$ avec $x<x_0$
+la sous-suite $(P^{(k)}(x),\dots,P^{(\ell)}(x))$ a $\ell-k-1$ changements de
+signe si $P^{(k)}(x_0)$ et  $P^{(\ell)}(x_0)$ ont m{\^e}me signe, $\ell-k$
+changements de signe sinon tandis que la sous-suite $(P^{(k)}(x_0),\dots,P^{(\ell)}(x_0))$
+en a un ou z{\'e}ro. De m{\^e}me, si $P(x_0) = \dots = P^{(\ell-1)}(x_0) = 0$ et
+$P^{(\ell)}(x_0) \ne 0$ on trouve $\ell$ changements de signe pour
+$(P(x),\dots,P^{(\ell)}(x))$ et z{\'e}ro pour $(P(x_0),\dots,P^{(\ell)}(x_0))$
+donc dans tous les cas $V(x_0^-) \ge V(x_0)$. Ceci ach{\`e}ve la d{\'e}monstration.
+\fincorrection
+\finexercice 

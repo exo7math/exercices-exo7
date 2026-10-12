@@ -1,0 +1,18 @@
+\exercice{4363, quercia, 2010/03/12}
+\enonce[Ensae MP$^*$ 2000]
+
+Soit $\alpha \in \R$. Trouver la limite de $u_n=\sum_{k=1}^n \frac{\sin (k\alpha)}{n+k}\cdotp$
+
+\finenonce
+
+\noindication
+
+\correction
+Si $\alpha\in2\pi\,\Z$ alors $u_n=0$ pour tout~$n$.
+
+Sinon, $u_n = \Im\Bigl( \int_{t=0}^1 \sum_{k=1}^nt^{n+k-1}e^{ik\alpha}\,d t\Bigr)
+=\Im\Bigl( \int_{t=0}^1\frac{t^ne^{i\alpha}-t^{2n}e^{i(n+1)\alpha}}{1-te^{i\alpha}}\,d t\Bigr)
+\to 0$ (lorsque $n\to\infty$) par convergence dominée.
+\fincorrection
+
+\finexercice

@@ -1,0 +1,39 @@
+\exercice{5554, rouget, 2010/07/15}
+\enonce[***]
+On pose $\begin{array}[t]{cccc}f_{x,y}~:&[-1,1]&\rightarrow&\Rr\\
+ &t&\mapsto&xt^2+yt
+\end{array}$ puis $F(x,y) =\underset{t\in[-1,1]}{\text{sup}}f_{x,y}(t)$. Etudier la continuité de $F$ sur $\Rr^2$.
+\finenonce
+
+\noindication
+
+\correction
+Déterminons tout d'abord $F(x,y)$ pour $(x,y)\in\Rr^2$.
+\textbullet~Pour $y\in\Rr$, $F(x,y)=\text{Max}\left\{f_{0,y}(-1),f_{0,y}(1)\right\}=\text{Max}\left\{y,-y\right\}=|y|$.
+\textbullet~Si $x\neq0$, $F(x,y)=\text{Max}\left\{f_{x,y}(-1),f_{x,y}\left(-\frac{y}{2x}\right),f_{x,y}(1)\right\}=\text{Max}\left\{x+y,x-y,-\frac{y^2}{4x}\right\}=\text{Max}\left\{x+|y|,-\frac{y^2}{4x}\right\}$.
+Plus précisément, si $x>0$, on a $x+|y|>0$ et $-\frac{y^2}{4x}\leqslant0$. Donc $F(x,y)=x+|y|$ ce qui reste vrai quand $x=0$.
+Si $x<0$, $x+|y|-\left(-\frac{y^2}{4x}\right)=\frac{4x^2+4x|y|+y^2}{4x}=\frac{(2x+|y|)^2}{4x}<0$ et donc $F(x,y)=-\frac{y^2}{4x}$.
+
+\begin{center}
+\shadowbox{
+$\forall(x,y)\in\Rr^2,\;F(x,y)=\left\{
+\begin{array}{l}
+x+|y|\;\text{si}\;x\geqslant0\\
+-\frac{y^2}{4x}\;\text{si}\;x<0
+\end{array}
+\right.$.
+}
+\end{center}
+En vertu de théorèmes généraux, $F$ est continue sur $\{(x,y)\in\Rr^2,\;x>0\}$ et $\{(x,y)\in\Rr^2,\;x<0\}$.
+Soit $y_0\neq0$. $\displaystyle\lim_{\substack{(x,y)\rightarrow(0,y_0)\\
+x<0,\;y=y_0}}F(x,y)=+\infty\neq|y_0|=F(0,y_0)$ et donc $F$ n'est pas continue en $(0,y_0)$.
+Enfin, $\displaystyle\lim_{\substack{(x,y)\rightarrow(0,0)\\
+x<0,\;y=\sqrt{-x}}}F(x,y)=\frac{1}{4}\neq 0=F(0,0)$ et donc $F$ n'est pas continue en $(0,0)$.
+
+\begin{center}
+\shadowbox{
+$F$ est continue sur $\Rr^2\setminus\{(0,y),\;y\in\Rr\}$ et est discontinue en tout $(0,y)$, $y\in\Rr$.
+}
+\end{center}
+\fincorrection
+\finexercice

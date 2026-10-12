@@ -1,0 +1,35 @@
+\exercice{3578, quercia, 2010/03/10}
+\enonce[Trigonalisation de matrices]
+
+Soit $A = \begin{pmatrix} -1 &\phantom-2 & 0 \cr 2 &2 &-3 \cr -2 &2 &1 \cr \end{pmatrix}$
+et $\varphi$ l'endomorphisme de $\R^3$ canoniquement associé à $A$.
+
+\begin{enumerate}
+  \item Vérifier que $A$ n'est pas diagonalisable.
+    
+  \item Chercher deux vecteurs propres de $A$ linéairement indépendants.
+    
+  \item Compléter ces vecteurs en une base de $\R^3$.
+    
+  \item \'Ecrire la matrice de $\varphi$ dans cette base.
+    
+  \item Résoudre le système différentiel : $X' = AX$.
+    
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item 1 est valeur propre double, $d_1 = 1$.
+  \item $\begin{pmatrix} 1\cr 1 \cr 1\end{pmatrix}$, $\begin{pmatrix} 2 \cr 1 \cr 2\end{pmatrix}$.
+  \item $\begin{pmatrix} 1 \cr 0 \cr 0\end{pmatrix}$.
+  \item $\begin{pmatrix} 1 &0 &6 \cr 0 &0 &-4 \cr 0 &0 &1 \cr\end{pmatrix}$.
+  \item $X = \begin{pmatrix} (6\alpha t + \gamma)e^t           + 2\beta \cr
+                            (6\alpha t + \gamma + 3\alpha)e^t + \beta  \cr
+                            (6\alpha t + \gamma -  \alpha)e^t + 2\beta \cr \end{pmatrix}$.
+\end{enumerate}
+ \fincorrection
+
+\finexercice

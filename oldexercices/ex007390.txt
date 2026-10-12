@@ -1,0 +1,25 @@
+\exercice{7390, mourougane, 2021/08/10}
+\enonce
+On admet $281$ est un nombre premier.
+\begin{enumerate}
+ \item Peut-on écrire $281$ comme somme de deux carrés ? Si oui, faîtes le.
+ \item Factoriser $280$. On choisit $x=3$. On admet que $3^{35}=60[281]$. Déterminer une racine $c$ de $-1$ modulo $281$.
+ \item Calculer le $\pgcd(281, c+i)$ dans l'anneau $\Z[i]$ des entiers de Gauss.
+\end{enumerate}
+\finenonce
+\noindication
+
+\correction
+\begin{enumerate}
+	\item
+	\item $60^2=-53[281]$.
+$53^2=-1[281]$.
+Donc, $c=53$ est une racine de $-1$ modulo $281$.
+	\item 
+$281=5\times(53+i)+(16-5i)$.
+$53-i=(3+i)(16-5i)$.
+Donc, $\pgcd(281, c+i)=16-5i$.
+En calculant $N(16-5i)$ on trouve $$16^2+5^2=281.$$
+\end{enumerate}
+\fincorrection
+\finexercice

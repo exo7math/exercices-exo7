@@ -1,0 +1,27 @@
+\exercice{2924, quercia, 2010/03/08}
+
+\enonce[$\sum z_i+z_j$]
+\begin{enumerate}
+  \item Soient $u,v \in \C$.
+    Montrer que $|u+v| + |u-v| \ge |u| + |v|$, et d{\'e}terminer les cas d'{\'e}galit{\'e}.
+  \item Soient $z_1,z_2,z_3,z_4 \in \C$. Montrer que
+    $\sum_{k=1}^4|z_k| \le \sum_{k=1}^3\sum_{\ell=k+1}^4 |z_k+z_\ell|$.
+\end{enumerate}
+\finenonce
+
+\noindication
+
+\correction
+\begin{enumerate}
+  \item $|u+v| + |u-v| \ge 2|u|$ et
+             $|u+v| + |u-v| \ge 2|v|$. Il y a {\'e}galit{\'e} ssi $u = \pm v$.
+  \item $|z_1| + |z_2| + |z_3| + |z_4| \le
+              |z_1+z_2| + |z_1-z_2| + |z_3+z_4| + |z_3-z_4|$,
+              \\
+             $|z_1-z_2| + |z_3-z_4| \le
+              |z_1-z_2 + z_3-z_4| + |z_1-z_2 - z_3+z_4| \le
+              |z_1+z_3| + |z_2+z_4| + |z_1+z_4| + |z_2+z_3|$.
+\end{enumerate}
+\fincorrection
+
+\finexercice 

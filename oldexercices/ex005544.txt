@@ -1,0 +1,22 @@
+\exercice{5544, rouget, 2010/07/15}
+\enonce[***]
+Déterminer l'image du cercle trigonométrique par la fonction
+$\begin{array}[t]{cccc}f~:&\Cc&\rightarrow&\Cc\\
+ &z&\mapsto&\frac{1}{1+z+z^2}
+\end{array}$.
+\finenonce
+
+\noindication
+
+\correction
+Un point du plan est sur le cercle de centre $O$ et de rayon $1$ si et seulement si son affixe $z$
+est de module $1$ ou encore si et seulement si il existe un réel $\theta$ tel que $z=e^{i\theta}$. Or, pour $\theta$
+réel,
+
+$$f(e^{i\theta})=\frac{1}{1+e^{i\theta}+e^{2i\theta}}=\frac{e^{-i\theta}}{e^{i\theta}+1+e^{-i\theta}}
+=\overline{\left(\frac{e^{i\theta}}{1+2\cos\theta}\right)}.$$
+L'ensemble cherché est donc la symétrique par rapport à $(Ox)$ de la courbe d'équation polaire
+$r=\frac{1}{1+2\cos\theta}$. Cette dernière est une ellipse, symétrique par rapport à $(0x)$. Donc l'ensemble cherché
+est l'ellipse d'équation polaire $r=\frac{1}{1+2\cos\theta}$ (voir l'exercice \ref{exo:routhe4}, 1)).
+\fincorrection
+\finexercice
