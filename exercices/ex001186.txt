@@ -12,12 +12,12 @@ Un berger possède un troupeau de 101 moutons et remarque par hasard la proprié
         \end{enumerate}
 
   \item L'objectif de cette question est de résoudre l'énigme du berger. On note \( B \) la matrice carrée de taille 101 construite de la manière suivante :\\
-        On numérote les moutons de 1 à 101. Quand le berger retire le $i$-ème mouton du troupeau, il sépare alors le reste du troupeau en deux troupeaux égaux ( troupeau A, troupeau B) et de même poids. On note alors \( B_{i,j} \) les coefficients de la \( i \)-ème ligne de la matrice \( B \) obtenus de la façon suivante :
+        On numérote les moutons de 1 à 101. Quand le berger retire le \( i \)-ème mouton du troupeau, il sépare alors le reste du troupeau en deux troupeaux égaux ( troupeau A, troupeau B) et de même poids. On note alors \( B_{i,j} \) les coefficients de la \( i \)-ème ligne de la matrice \( B \) obtenus de la façon suivante :
         \[
           B_{i,j} = \left \{ \begin{array}{ll}
             1 & \hbox{ si } j = i                                         \\
-            0 & \hbox{ si le $j$-ème mouton se trouve dans le troupeau A }  \\
-            2 & \hbox{ si le $j$-ème mouton se trouve dans le troupeau B }.
+            0 & \hbox{ si le \( j \)-ème mouton se trouve dans le troupeau A }  \\
+            2 & \hbox{ si le \( j \)-ème mouton se trouve dans le troupeau B }.
           \end{array} \right.
         \]
         On note \( X \) la matrice de taille \( 101\times 1 \) constituée des poids des moutons
